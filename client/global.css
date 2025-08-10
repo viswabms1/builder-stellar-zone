@@ -111,3 +111,14 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  .animate-gradient-shift {
+    background-size: 200% auto;
+    animation: gradient-shift 3s ease-in-out infinite;
+  }
+
+  .text-glow {
+    text-shadow: 0 0 10px currentColor;
+  }
+}
