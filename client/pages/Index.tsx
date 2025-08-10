@@ -155,8 +155,8 @@ export default function Index() {
                 style={{ animationDelay: feature.delay }}
               >
                 <CardHeader>
-                  <div className={`w-12 h-12 rounded-2xl bg-${feature.color}/10 flex items-center justify-center mb-4 group-hover:bg-${feature.color}/20 transition-colors`}>
-                    <feature.icon className={`w-6 h-6 text-${feature.color} group-hover:scale-110 transition-transform`} />
+                  <div className="w-12 h-12 rounded-2xl bg-neon-purple/10 flex items-center justify-center mb-4 group-hover:bg-neon-purple/20 transition-colors">
+                    <feature.icon className="w-6 h-6 text-neon-purple group-hover:scale-110 transition-transform" />
                   </div>
                   <CardTitle className="text-xl font-bold group-hover:text-neon-purple transition-colors">
                     {feature.title}
