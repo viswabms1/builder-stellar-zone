@@ -48,13 +48,18 @@
     --sidebar-border: 240 4% 20%;
     --sidebar-ring: 330 100% 65%;
 
-    /* Gen Z Neon Colors */
+    /* University Theme Colors */
     --neon-pink: 330 100% 65%;
     --neon-blue: 195 100% 65%;
     --neon-green: 120 100% 65%;
     --neon-purple: 270 100% 70%;
     --neon-yellow: 60 100% 65%;
-    --neon-orange: 30 100% 65%;
+    --neon-orange: 25 100% 55%;
+
+    /* DSU Brand Colors */
+    --dsu-orange: 25 100% 55%;
+    --dsu-red: 0 85% 55%;
+    --dsu-gold: 45 100% 55%;
 
     /* Cyber theme colors */
     --cyber-dark: 240 4% 8%;
