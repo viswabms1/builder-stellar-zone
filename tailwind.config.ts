@@ -57,6 +57,20 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        // Gen Z inspired colors
+        neon: {
+          pink: "hsl(var(--neon-pink))",
+          blue: "hsl(var(--neon-blue))",
+          green: "hsl(var(--neon-green))",
+          purple: "hsl(var(--neon-purple))",
+          yellow: "hsl(var(--neon-yellow))",
+          orange: "hsl(var(--neon-orange))",
+        },
+        cyber: {
+          dark: "hsl(var(--cyber-dark))",
+          light: "hsl(var(--cyber-light))",
+          glow: "hsl(var(--cyber-glow))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -80,10 +94,42 @@ export default {
             height: "0",
           },
         },
+        "gradient-shift": {
+          "0%, 100%": {
+            "background-position": "0% 50%",
+          },
+          "50%": {
+            "background-position": "100% 50%",
+          },
+        },
+        "float": {
+          "0%, 100%": {
+            transform: "translateY(0px)",
+          },
+          "50%": {
+            transform: "translateY(-20px)",
+          },
+        },
+        "glow-pulse": {
+          "0%": {
+            "box-shadow": "0 0 5px hsl(var(--neon-purple)), 0 0 10px hsl(var(--neon-purple)), 0 0 15px hsl(var(--neon-purple))",
+          },
+          "100%": {
+            "box-shadow": "0 0 10px hsl(var(--neon-purple)), 0 0 20px hsl(var(--neon-purple)), 0 0 30px hsl(var(--neon-purple))",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "gradient-shift": "gradient-shift 3s ease-in-out infinite",
+        "float": "float 6s ease-in-out infinite",
+        "glow-pulse": "glow-pulse 2s ease-in-out infinite alternate",
+      },
+      backgroundImage: {
+        "cyber-gradient": "linear-gradient(135deg, hsl(var(--neon-purple)), hsl(var(--neon-blue)), hsl(var(--neon-pink)))",
+        "neon-gradient": "linear-gradient(45deg, hsl(var(--neon-pink)), hsl(var(--neon-yellow)), hsl(var(--neon-green)))",
+        "holographic": "linear-gradient(45deg, #ff00ff, #00ffff, #ffff00, #ff00ff)",
       },
     },
   },
