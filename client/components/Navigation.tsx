@@ -4,11 +4,13 @@ import { Badge } from "@/components/ui/badge";
 import { 
   Menu, 
   X, 
-  Sparkles, 
+  GraduationCap, 
   Home, 
-  Palette, 
+  BookOpen, 
   Users, 
-  Zap,
+  Building,
+  FlaskConical,
+  Calendar,
   ChevronDown 
 } from "lucide-react";
 import { useState } from "react";
@@ -19,28 +21,30 @@ export default function Navigation() {
 
   const navigation = [
     { name: "Home", href: "/", icon: Home },
-    { name: "Features", href: "/features", icon: Zap },
-    { name: "Gallery", href: "/gallery", icon: Palette },
-    { name: "Community", href: "/community", icon: Users },
+    { name: "Academics", href: "/academics", icon: BookOpen },
+    { name: "Admissions", href: "/admissions", icon: GraduationCap },
+    { name: "Campus Life", href: "/campus-life", icon: Building },
+    { name: "Research", href: "/research", icon: FlaskConical },
+    { name: "About", href: "/about", icon: Users },
   ];
 
   const isActive = (href: string) => location.pathname === href;
 
   return (
-    <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border/50">
+    <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur-lg border-b border-border/50">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2 group">
-            <div className="w-8 h-8 bg-gradient-to-r from-neon-purple to-neon-pink rounded-lg flex items-center justify-center group-hover:from-neon-pink group-hover:to-neon-purple transition-all duration-300">
-              <Sparkles className="w-5 h-5 text-white" />
+          <Link to="/" className="flex items-center space-x-3 group">
+            <div className="w-10 h-10 bg-gradient-to-r from-orange-500 to-red-600 rounded-lg flex items-center justify-center group-hover:from-red-600 group-hover:to-orange-500 transition-all duration-300">
+              <GraduationCap className="w-6 h-6 text-white" />
             </div>
-            <span className="text-xl font-bold bg-gradient-to-r from-neon-purple to-neon-pink bg-clip-text text-transparent">
-              GenZ Studio
-            </span>
-            <Badge variant="secondary" className="text-xs font-medium">
-              BETA
-            </Badge>
+            <div className="flex flex-col">
+              <span className="text-lg font-bold bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
+                Dayananda Sagar
+              </span>
+              <span className="text-xs text-muted-foreground -mt-1">University</span>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
@@ -51,14 +55,14 @@ export default function Navigation() {
                 to={item.href}
                 className={`flex items-center space-x-2 px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 group ${
                   isActive(item.href)
-                    ? "bg-neon-purple/10 text-neon-purple"
+                    ? "bg-orange-500/10 text-orange-500"
                     : "text-muted-foreground hover:text-foreground hover:bg-accent/50"
                 }`}
               >
                 <item.icon className="w-4 h-4" />
                 <span>{item.name}</span>
                 {isActive(item.href) && (
-                  <div className="w-1 h-1 bg-neon-purple rounded-full" />
+                  <div className="w-1 h-1 bg-orange-500 rounded-full" />
                 )}
               </Link>
             ))}
@@ -71,13 +75,13 @@ export default function Navigation() {
               size="sm"
               className="text-muted-foreground hover:text-foreground"
             >
-              Sign In
+              Student Portal
             </Button>
             <Button 
               size="sm"
-              className="bg-gradient-to-r from-neon-purple to-neon-pink hover:from-neon-pink hover:to-neon-purple text-white px-6 rounded-xl shadow-lg hover:shadow-neon-purple/25 transition-all duration-300"
+              className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-red-600 hover:to-orange-500 text-white px-6 rounded-xl shadow-lg hover:shadow-orange-500/25 transition-all duration-300"
             >
-              Get Started
+              Apply Now
             </Button>
           </div>
 
@@ -106,7 +110,7 @@ export default function Navigation() {
                 onClick={() => setIsOpen(false)}
                 className={`flex items-center space-x-3 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 ${
                   isActive(item.href)
-                    ? "bg-neon-purple/10 text-neon-purple"
+                    ? "bg-orange-500/10 text-orange-500"
                     : "text-muted-foreground hover:text-foreground hover:bg-accent/50"
                 }`}
               >
@@ -120,13 +124,13 @@ export default function Navigation() {
                 size="sm"
                 className="w-full justify-start text-muted-foreground hover:text-foreground"
               >
-                Sign In
+                Student Portal
               </Button>
               <Button 
                 size="sm"
-                className="w-full bg-gradient-to-r from-neon-purple to-neon-pink hover:from-neon-pink hover:to-neon-purple text-white rounded-xl shadow-lg hover:shadow-neon-purple/25 transition-all duration-300"
+                className="w-full bg-gradient-to-r from-orange-500 to-red-600 hover:from-red-600 hover:to-orange-500 text-white rounded-xl shadow-lg hover:shadow-orange-500/25 transition-all duration-300"
               >
-                Get Started
+                Apply Now
               </Button>
             </div>
           </div>
