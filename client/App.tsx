@@ -1,7 +1,11 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navigation from "./components/Navigation";
 import Index from "./pages/Index";
-import Placeholder from "./pages/Placeholder";
+import Academics from "./pages/Academics";
+import Admissions from "./pages/Admissions";
+import CampusLife from "./pages/CampusLife";
+import Research from "./pages/Research";
+import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 
 function App() {
@@ -12,51 +16,11 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<Index />} />
-            <Route 
-              path="/academics" 
-              element={
-                <Placeholder 
-                  title="Academics" 
-                  description="Explore our comprehensive academic programs across Engineering, Business, Liberal Arts, and Sciences. Discover cutting-edge curricula designed for tomorrow's leaders." 
-                />
-              } 
-            />
-            <Route 
-              path="/admissions" 
-              element={
-                <Placeholder 
-                  title="Admissions" 
-                  description="Start your journey at Dayananda Sagar University. Learn about admission requirements, application deadlines, scholarships, and how to apply." 
-                />
-              } 
-            />
-            <Route 
-              path="/campus-life" 
-              element={
-                <Placeholder 
-                  title="Campus Life" 
-                  description="Experience the vibrant campus community with 100+ student organizations, cultural events, sports, and modern facilities that make DSU feel like home." 
-                />
-              } 
-            />
-            <Route 
-              path="/research" 
-              element={
-                <Placeholder 
-                  title="Research" 
-                  description="Discover groundbreaking research initiatives and innovation centers. Join faculty and students in advancing knowledge across multiple disciplines." 
-                />
-              } 
-            />
-            <Route 
-              path="/about" 
-              element={
-                <Placeholder 
-                  title="About DSU" 
-                  description="Learn about our history, mission, vision, and commitment to academic excellence. Discover what makes Dayananda Sagar University a leader in higher education." 
-                />
-              } 
-            />
+            <Route path="/academics" element={<Academics />} />
+            <Route path="/admissions" element={<Admissions />} />
+            <Route path="/campus-life" element={<CampusLife />} />
+            <Route path="/research" element={<Research />} />
+            <Route path="/about" element={<About />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
