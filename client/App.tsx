@@ -13,29 +13,47 @@ function App() {
           <Routes>
             <Route path="/" element={<Index />} />
             <Route 
-              path="/features" 
+              path="/academics" 
               element={
                 <Placeholder 
-                  title="Features" 
-                  description="Discover all the amazing features that make our platform the go-to choice for modern creators. From AI-powered design tools to lightning-fast deployment." 
+                  title="Academics" 
+                  description="Explore our comprehensive academic programs across Engineering, Business, Liberal Arts, and Sciences. Discover cutting-edge curricula designed for tomorrow's leaders." 
                 />
               } 
             />
             <Route 
-              path="/gallery" 
+              path="/admissions" 
               element={
                 <Placeholder 
-                  title="Gallery" 
-                  description="Explore stunning creations from our community of talented designers and developers. Get inspired and find templates for your next project." 
+                  title="Admissions" 
+                  description="Start your journey at Dayananda Sagar University. Learn about admission requirements, application deadlines, scholarships, and how to apply." 
                 />
               } 
             />
             <Route 
-              path="/community" 
+              path="/campus-life" 
               element={
                 <Placeholder 
-                  title="Community" 
-                  description="Connect with creators, share your work, and collaborate on exciting projects. Join thousands of passionate builders in our vibrant community." 
+                  title="Campus Life" 
+                  description="Experience the vibrant campus community with 100+ student organizations, cultural events, sports, and modern facilities that make DSU feel like home." 
+                />
+              } 
+            />
+            <Route 
+              path="/research" 
+              element={
+                <Placeholder 
+                  title="Research" 
+                  description="Discover groundbreaking research initiatives and innovation centers. Join faculty and students in advancing knowledge across multiple disciplines." 
+                />
+              } 
+            />
+            <Route 
+              path="/about" 
+              element={
+                <Placeholder 
+                  title="About DSU" 
+                  description="Learn about our history, mission, vision, and commitment to academic excellence. Discover what makes Dayananda Sagar University a leader in higher education." 
                 />
               } 
             />
