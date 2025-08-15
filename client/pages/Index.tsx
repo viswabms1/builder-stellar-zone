@@ -31,46 +31,46 @@ export default function Index() {
             alt="Dayananda Sagar University Campus"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
         </div>
         
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 right-10 w-72 h-72 bg-orange-500/10 rounded-full filter blur-3xl animate-float"></div>
-          <div className="absolute bottom-20 left-10 w-96 h-96 bg-red-600/10 rounded-full filter blur-3xl animate-float" style={{ animationDelay: "2s" }}></div>
+          <div className="absolute top-20 right-10 w-72 h-72 bg-brand-magenta/10 rounded-full filter blur-3xl animate-float"></div>
+          <div className="absolute bottom-20 left-10 w-96 h-96 bg-brand-orange/10 rounded-full filter blur-3xl animate-float" style={{ animationDelay: "2s" }}></div>
         </div>
         
         {/* Hero Content */}
         <div className="relative max-w-7xl mx-auto px-6 text-center lg:text-left lg:flex lg:items-center lg:space-x-12">
           <div className="lg:w-2/3">
-            <div className="inline-flex items-center px-4 py-2 bg-orange-500/10 rounded-full border border-orange-500/20 mb-8 animate-glow-pulse">
-              <Award className="w-4 h-4 text-orange-500 mr-2" />
-              <span className="text-sm font-medium text-orange-500">
+            <div className="inline-flex items-center px-4 py-2 bg-brand-orange/10 rounded-full border border-brand-orange/20 mb-8 animate-glow-pulse">
+              <Award className="w-4 h-4 text-brand-orange mr-2" />
+              <span className="text-sm font-medium text-brand-orange font-gilroy">
                 Ranked #1 Private University in Karnataka
               </span>
             </div>
             
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight">
+            <h1 className="headline-1 mb-8 leading-tight">
               <span className="text-white">Shape Your</span>
               <br />
-              <span className="bg-gradient-to-r from-orange-400 via-red-500 to-pink-500 bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient-shift">
+              <span className="bg-brand-gradient bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient-shift">
                 Future
               </span>
               <br />
               <span className="text-white">at DSU</span>
             </h1>
             
-            <p className="text-xl md:text-2xl text-gray-200 mb-12 max-w-3xl leading-relaxed">
+            <p className="subheadline text-gray-200 mb-12 max-w-3xl leading-relaxed font-gilroy">
               Experience world-class education at Dayananda Sagar University. 
-              <span className="text-orange-400 font-semibold"> Innovation meets tradition</span> in our 
-              <span className="text-red-400 font-semibold"> state-of-the-art campus</span>.
+              <span className="text-brand-orange font-semibold"> Innovation meets tradition</span> in our 
+              <span className="text-brand-magenta font-semibold"> state-of-the-art campus</span>.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-16">
               <Button 
                 size="lg" 
-                className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-red-600 hover:to-orange-500 text-white px-8 py-6 text-lg font-semibold rounded-2xl shadow-lg hover:shadow-orange-500/25 transition-all duration-300 group"
+                className="bg-brand-gradient hover:opacity-90 text-white px-8 py-6 text-lg font-semibold font-gilroy rounded-2xl shadow-lg hover:shadow-brand-magenta/25 transition-all duration-300 group"
               >
                 Apply Now
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -78,7 +78,7 @@ export default function Index() {
               <Button 
                 variant="outline" 
                 size="lg"
-                className="border-2 border-white/20 text-white hover:bg-white hover:text-background px-8 py-6 text-lg font-semibold rounded-2xl transition-all duration-300 backdrop-blur-sm"
+                className="border-2 border-white/20 text-white hover:bg-white hover:text-background px-8 py-6 text-lg font-semibold font-gilroy rounded-2xl transition-all duration-300 backdrop-blur-sm"
               >
                 Virtual Tour
               </Button>
@@ -93,9 +93,9 @@ export default function Index() {
                 { number: "95%", label: "Placement", icon: TrendingUp },
               ].map((stat, index) => (
                 <div key={index} className="text-center group backdrop-blur-sm bg-white/10 rounded-xl p-4 border border-white/20">
-                  <stat.icon className="w-6 h-6 text-orange-400 mx-auto mb-2 group-hover:text-red-400 transition-colors" />
-                  <div className="text-2xl font-bold text-white mb-1">{stat.number}</div>
-                  <div className="text-sm text-gray-300">{stat.label}</div>
+                  <stat.icon className="w-6 h-6 text-brand-orange mx-auto mb-2 group-hover:text-brand-magenta transition-colors" />
+                  <div className="text-2xl font-bold text-white mb-1 font-gilroy">{stat.number}</div>
+                  <div className="text-sm text-gray-300 font-graphik">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -107,13 +107,13 @@ export default function Index() {
       <section className="px-6 py-20 relative">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
+            <h2 className="headline-2 mb-6">
+              <span className="bg-brand-gradient bg-clip-text text-transparent">
                 Academic Excellence
               </span>
               <span className="text-foreground"> That Inspires</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="subheadline text-muted-foreground max-w-3xl mx-auto font-gilroy">
               Discover cutting-edge programs designed to prepare you for tomorrow's challenges
             </p>
           </div>
@@ -125,7 +125,7 @@ export default function Index() {
                 title: "Engineering & Technology",
                 description: "World-class engineering programs with hands-on experience in state-of-the-art labs and industry partnerships.",
                 programs: ["Computer Science", "Mechanical", "Electronics", "Civil"],
-                color: "orange",
+                color: "brand-orange",
                 delay: "0s"
               },
               {
@@ -133,7 +133,7 @@ export default function Index() {
                 title: "Business & Management",
                 description: "Innovative business programs that blend traditional management with modern digital transformation strategies.",
                 programs: ["MBA", "BBA", "Finance", "Marketing"],
-                color: "red",
+                color: "brand-magenta",
                 delay: "0.2s"
               },
               {
@@ -141,38 +141,38 @@ export default function Index() {
                 title: "Liberal Arts & Sciences",
                 description: "Comprehensive programs that develop critical thinking and prepare students for diverse career paths.",
                 programs: ["Psychology", "Literature", "Physics", "Chemistry"],
-                color: "pink",
+                color: "brand-blue",
                 delay: "0.4s"
               },
             ].map((school, index) => (
               <Card 
                 key={index} 
-                className="bg-card/50 backdrop-blur-sm border border-border/50 hover:border-orange-500/30 transition-all duration-300 group hover:shadow-lg hover:shadow-orange-500/10 hover:-translate-y-2"
+                className="bg-card/50 backdrop-blur-sm border border-border/50 hover:border-brand-magenta/30 transition-all duration-300 group hover:shadow-lg hover:shadow-brand-magenta/10 hover:-translate-y-2"
                 style={{ animationDelay: school.delay }}
               >
                 <CardHeader>
-                  <div className="w-12 h-12 rounded-2xl bg-orange-500/10 flex items-center justify-center mb-4 group-hover:bg-orange-500/20 transition-colors">
-                    <school.icon className="w-6 h-6 text-orange-500 group-hover:scale-110 transition-transform" />
+                  <div className="w-12 h-12 rounded-2xl bg-brand-magenta/10 flex items-center justify-center mb-4 group-hover:bg-brand-magenta/20 transition-colors">
+                    <school.icon className="w-6 h-6 text-brand-magenta group-hover:scale-110 transition-transform" />
                   </div>
-                  <CardTitle className="text-xl font-bold group-hover:text-orange-500 transition-colors">
+                  <CardTitle className="headline-4 group-hover:text-brand-magenta transition-colors">
                     {school.title}
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  <CardDescription className="text-muted-foreground leading-relaxed">
+                  <CardDescription className="text-muted-foreground leading-relaxed font-graphik">
                     {school.description}
                   </CardDescription>
                   <div className="space-y-2">
-                    <p className="text-sm font-medium text-foreground">Popular Programs:</p>
+                    <p className="text-sm font-medium text-foreground font-gilroy">Popular Programs:</p>
                     <div className="flex flex-wrap gap-2">
                       {school.programs.map((program, idx) => (
-                        <Badge key={idx} variant="secondary" className="text-xs">
+                        <Badge key={idx} variant="secondary" className="text-xs font-graphik">
                           {program}
                         </Badge>
                       ))}
                     </div>
                   </div>
-                  <Button variant="ghost" size="sm" className="w-full justify-between group-hover:text-orange-500">
+                  <Button variant="ghost" size="sm" className="w-full justify-between group-hover:text-brand-magenta font-gilroy">
                     Learn More
                     <ChevronRight className="w-4 h-4" />
                   </Button>
@@ -184,16 +184,16 @@ export default function Index() {
       </section>
       
       {/* Campus Life Section */}
-      <section className="px-6 py-20 bg-gradient-to-r from-orange-500/5 to-red-600/5">
+      <section className="px-6 py-20 bg-gradient-to-r from-brand-magenta/5 to-brand-orange/5">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <h2 className="headline-2 mb-6">
               <span className="text-foreground">Experience </span>
-              <span className="bg-gradient-to-r from-red-500 to-pink-500 bg-clip-text text-transparent">
+              <span className="bg-brand-gradient-alt bg-clip-text text-transparent">
                 Campus Life
               </span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="subheadline text-muted-foreground max-w-2xl mx-auto font-gilroy">
               More than education - it's about building lifelong connections and memories
             </p>
           </div>
@@ -225,11 +225,11 @@ export default function Index() {
                 highlight: "95% Placement Rate"
               },
             ].map((feature, index) => (
-              <Card key={index} className="text-center p-6 bg-card/30 backdrop-blur-sm border border-border/30 hover:border-orange-500/30 transition-all duration-300 group">
-                <feature.icon className="w-12 h-12 text-orange-500 mx-auto mb-4 group-hover:scale-110 transition-transform" />
-                <h3 className="text-lg font-bold mb-2 group-hover:text-orange-500 transition-colors">{feature.title}</h3>
-                <p className="text-sm text-muted-foreground mb-3">{feature.description}</p>
-                <Badge variant="outline" className="text-xs border-orange-500/30 text-orange-500">
+              <Card key={index} className="text-center p-6 bg-card/30 backdrop-blur-sm border border-border/30 hover:border-brand-magenta/30 transition-all duration-300 group">
+                <feature.icon className="w-12 h-12 text-brand-magenta mx-auto mb-4 group-hover:scale-110 transition-transform" />
+                <h3 className="headline-4 mb-2 group-hover:text-brand-magenta transition-colors">{feature.title}</h3>
+                <p className="text-sm text-muted-foreground mb-3 font-graphik">{feature.description}</p>
+                <Badge variant="outline" className="text-xs border-brand-magenta/30 text-brand-magenta font-graphik">
                   {feature.highlight}
                 </Badge>
               </Card>
@@ -241,35 +241,28 @@ export default function Index() {
       {/* CTA Section */}
       <section className="px-6 py-20 relative">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="bg-gradient-to-r from-orange-500/10 via-red-600/10 to-pink-500/10 rounded-3xl p-12 border border-orange-500/20">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <div className="bg-gradient-to-r from-brand-magenta/10 via-brand-orange/10 to-brand-blue/10 rounded-3xl p-12 border border-brand-magenta/20">
+            <h2 className="headline-2 mb-6">
               Ready to 
-              <span className="bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent"> Begin Your Journey</span>?
+              <span className="bg-brand-gradient bg-clip-text text-transparent"> Begin Your Journey</span>?
             </h2>
-            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+            <p className="subheadline text-muted-foreground mb-8 max-w-2xl mx-auto font-gilroy">
               Join thousands of students who've chosen DSU for their academic and personal growth.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
               <Button 
                 size="lg" 
-                className="bg-gradient-to-r from-orange-500 via-red-600 to-pink-500 hover:shadow-lg hover:shadow-orange-500/25 text-white px-12 py-6 text-lg font-semibold rounded-2xl transition-all duration-300 group"
+                className="bg-brand-gradient hover:opacity-90 hover:shadow-lg hover:shadow-brand-magenta/25 text-white px-12 py-6 text-lg font-semibold font-gilroy rounded-2xl transition-all duration-300 group"
               >
-                Apply Now
+                Get Started Free
                 <GraduationCap className="w-5 h-5 ml-2 group-hover:rotate-12 transition-transform" />
-              </Button>
-              <Button 
-                variant="outline" 
-                size="lg"
-                className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white px-12 py-6 text-lg font-semibold rounded-2xl transition-all duration-300"
-              >
-                Schedule Visit
               </Button>
             </div>
             
             <div className="flex flex-wrap justify-center gap-2">
-              {["No Application Fee", "Rolling Admissions", "Merit Scholarships Available"].map((badge, index) => (
-                <Badge key={index} variant="secondary" className="px-3 py-1 text-xs font-medium">
+              {["No Application Fee", "14-Day Free Trial", "Merit Scholarships Available"].map((badge, index) => (
+                <Badge key={index} variant="secondary" className="px-3 py-1 text-xs font-medium font-graphik">
                   {badge}
                 </Badge>
               ))}
