@@ -57,19 +57,14 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        // Gen Z inspired colors
-        neon: {
-          pink: "hsl(var(--neon-pink))",
-          blue: "hsl(var(--neon-blue))",
-          green: "hsl(var(--neon-green))",
-          purple: "hsl(var(--neon-purple))",
-          yellow: "hsl(var(--neon-yellow))",
-          orange: "hsl(var(--neon-orange))",
-        },
-        cyber: {
-          dark: "hsl(var(--cyber-dark))",
-          light: "hsl(var(--cyber-light))",
-          glow: "hsl(var(--cyber-glow))",
+        // DSU Brand Colors
+        brand: {
+          magenta: "hsl(var(--brand-magenta))",
+          orange: "hsl(var(--brand-orange))",
+          "off-white": "hsl(var(--brand-off-white))",
+          blue: "hsl(var(--brand-blue))",
+          yellow: "hsl(var(--brand-yellow))",
+          gray: "hsl(var(--brand-gray))",
         },
       },
       borderRadius: {
@@ -126,10 +121,15 @@ export default {
         "float": "float 6s ease-in-out infinite",
         "glow-pulse": "glow-pulse 2s ease-in-out infinite alternate",
       },
+      fontFamily: {
+        'gilroy': ['Gilroy', 'Inter', 'sans-serif'],
+        'graphik': ['Graphik', 'Inter', 'sans-serif'],
+        'sans': ['Gilroy', 'Inter', 'Graphik', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+      },
       backgroundImage: {
-        "cyber-gradient": "linear-gradient(135deg, hsl(var(--neon-purple)), hsl(var(--neon-blue)), hsl(var(--neon-pink)))",
-        "neon-gradient": "linear-gradient(45deg, hsl(var(--neon-pink)), hsl(var(--neon-yellow)), hsl(var(--neon-green)))",
-        "holographic": "linear-gradient(45deg, #ff00ff, #00ffff, #ffff00, #ff00ff)",
+        "brand-gradient": "linear-gradient(135deg, hsl(var(--brand-magenta)), hsl(var(--brand-orange)))",
+        "brand-gradient-alt": "linear-gradient(135deg, hsl(var(--brand-blue)), hsl(var(--brand-magenta)))",
+        "brand-gradient-warm": "linear-gradient(45deg, hsl(var(--brand-orange)), hsl(var(--brand-yellow)))",
       },
     },
   },
