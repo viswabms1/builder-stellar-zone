@@ -31,20 +31,17 @@ export default function Navigation() {
   const isActive = (href: string) => location.pathname === href;
 
   return (
-    <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur-lg border-b border-border/50">
+    <nav className="sticky top-0 z-50 bg-[#E58A00] border-b border-orange-600/20">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-16">
-          {/* Logo - Following brand guidelines: minimum 128px x 35px */}
-          <Link to="/" className="flex items-center space-x-3 group" style={{ minWidth: '128px', minHeight: '35px' }}>
-            <div className="w-10 h-10 bg-brand-gradient rounded-lg flex items-center justify-center group-hover:scale-105 transition-all duration-300">
-              <GraduationCap className="w-6 h-6 text-white" />
-            </div>
-            <div className="flex flex-col">
-              <span className="text-lg font-gilroy font-semibold bg-brand-gradient bg-clip-text text-transparent">
-                Dayananda Sagar
-              </span>
-              <span className="text-xs text-muted-foreground -mt-1 font-graphik">University</span>
-            </div>
+          {/* Official DSU Logo */}
+          <Link to="/" className="flex items-center group" style={{ minWidth: '128px', minHeight: '35px' }}>
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F7780ec15004a435f8de3f5f98762eed4?format=webp&width=800"
+              alt="Dayananda Sagar University Logo"
+              className="h-12 w-auto object-contain group-hover:scale-105 transition-all duration-300"
+              style={{ minHeight: '35px' }}
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -55,14 +52,14 @@ export default function Navigation() {
                 to={item.href}
                 className={`flex items-center space-x-2 px-4 py-2 rounded-xl text-sm font-medium font-gilroy transition-all duration-200 group ${
                   isActive(item.href)
-                    ? "bg-brand-magenta/10 text-brand-magenta"
-                    : "text-muted-foreground hover:text-foreground hover:bg-accent/50"
+                    ? "bg-white/20 text-white font-semibold"
+                    : "text-white/80 hover:text-white hover:bg-white/10"
                 }`}
               >
                 <item.icon className="w-4 h-4" />
                 <span>{item.name}</span>
                 {isActive(item.href) && (
-                  <div className="w-1 h-1 bg-brand-magenta rounded-full" />
+                  <div className="w-1 h-1 bg-white rounded-full" />
                 )}
               </Link>
             ))}
@@ -70,16 +67,16 @@ export default function Navigation() {
 
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button 
-              variant="ghost" 
+            <Button
+              variant="ghost"
               size="sm"
-              className="text-muted-foreground hover:text-foreground font-gilroy"
+              className="text-white/80 hover:text-white hover:bg-white/10 font-gilroy"
             >
               Student Portal
             </Button>
-            <Button 
+            <Button
               size="sm"
-              className="bg-brand-gradient hover:opacity-90 text-white px-6 rounded-xl shadow-lg hover:shadow-brand-magenta/25 transition-all duration-300 font-gilroy font-semibold"
+              className="bg-white text-[#E58A00] hover:bg-white/90 px-6 rounded-xl shadow-lg hover:shadow-white/25 transition-all duration-300 font-gilroy font-semibold"
             >
               Apply Now
             </Button>
@@ -91,7 +88,7 @@ export default function Navigation() {
               variant="ghost"
               size="sm"
               onClick={() => setIsOpen(!isOpen)}
-              className="text-muted-foreground hover:text-foreground"
+              className="text-white/80 hover:text-white"
             >
               {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </Button>
@@ -101,7 +98,7 @@ export default function Navigation() {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="md:hidden border-t border-border/50 bg-background/95 backdrop-blur-lg">
+        <div className="md:hidden border-t border-orange-600/20 bg-[#E58A00]">
           <div className="px-6 py-4 space-y-3">
             {navigation.map((item) => (
               <Link
@@ -110,25 +107,25 @@ export default function Navigation() {
                 onClick={() => setIsOpen(false)}
                 className={`flex items-center space-x-3 px-4 py-3 rounded-xl text-sm font-medium font-gilroy transition-all duration-200 ${
                   isActive(item.href)
-                    ? "bg-brand-magenta/10 text-brand-magenta"
-                    : "text-muted-foreground hover:text-foreground hover:bg-accent/50"
+                    ? "bg-white/20 text-white font-semibold"
+                    : "text-white/80 hover:text-white hover:bg-white/10"
                 }`}
               >
                 <item.icon className="w-4 h-4" />
                 <span>{item.name}</span>
               </Link>
             ))}
-            <div className="pt-4 space-y-3 border-t border-border/50">
-              <Button 
-                variant="ghost" 
+            <div className="pt-4 space-y-3 border-t border-white/20">
+              <Button
+                variant="ghost"
                 size="sm"
-                className="w-full justify-start text-muted-foreground hover:text-foreground font-gilroy"
+                className="w-full justify-start text-white/80 hover:text-white hover:bg-white/10 font-gilroy"
               >
                 Student Portal
               </Button>
-              <Button 
+              <Button
                 size="sm"
-                className="w-full bg-brand-gradient hover:opacity-90 text-white rounded-xl shadow-lg hover:shadow-brand-magenta/25 transition-all duration-300 font-gilroy font-semibold"
+                className="w-full bg-white text-[#E58A00] hover:bg-white/90 rounded-xl shadow-lg hover:shadow-white/25 transition-all duration-300 font-gilroy font-semibold"
               >
                 Apply Now
               </Button>
