@@ -251,17 +251,17 @@ export default function Index() {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 className="bg-brand-gradient hover:opacity-90 hover:shadow-lg hover:shadow-brand-magenta/25 text-white px-12 py-6 text-lg font-semibold font-gilroy rounded-2xl transition-all duration-300 group"
               >
-                Get Started Free
+                Apply Now
                 <GraduationCap className="w-5 h-5 ml-2 group-hover:rotate-12 transition-transform" />
               </Button>
             </div>
             
             <div className="flex flex-wrap justify-center gap-2">
-              {["No Application Fee", "14-Day Free Trial", "Merit Scholarships Available"].map((badge, index) => (
+              {["No Application Fee", "Merit Scholarships Available", "Industry Partnerships"].map((badge, index) => (
                 <Badge key={index} variant="secondary" className="px-3 py-1 text-xs font-medium font-graphik">
                   {badge}
                 </Badge>
