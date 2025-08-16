@@ -268,15 +268,15 @@ export default function About() {
             {[
               {
                 role: "Chancellor",
-                name: "Dr. S. Sandya",
+                name: "",
                 experience: "25+ Years",
                 expertise: "Educational Leadership, Policy Development",
-                achievements: ["Padma Shri Recipient", "Former Vice-Chancellor", "Education Reformer"],
+                achievements: ["Distinguished Academic Leader", "Former Vice-Chancellor", "Education Reformer"],
                 quote: "Education is the foundation of a progressive society."
               },
               {
                 role: "Vice-Chancellor",
-                name: "Dr. Goutam Sarkar",
+                name: "",
                 experience: "20+ Years",
                 expertise: "Academic Administration, Research Management",
                 achievements: ["IIT Alumni", "Research Publications: 150+", "Innovation Leader"],
@@ -284,15 +284,15 @@ export default function About() {
               },
               {
                 role: "Pro Vice-Chancellor",
-                name: "Dr. Manjunatha K",
+                name: "",
                 experience: "18+ Years",
                 expertise: "Curriculum Development, International Relations",
-                achievements: ["PhD from Cambridge", "Global Education Expert", "Industry Connect"],
+                achievements: ["PhD from Leading University", "Global Education Expert", "Industry Connect"],
                 quote: "Global education prepares students for worldwide opportunities."
               },
               {
                 role: "Registrar",
-                name: "Dr. Priya Sharma",
+                name: "",
                 experience: "15+ Years",
                 expertise: "Academic Operations, Student Affairs",
                 achievements: ["Excellence in Administration", "Student Welfare Champion", "Process Innovation"],
@@ -300,7 +300,7 @@ export default function About() {
               },
               {
                 role: "Dean - Engineering",
-                name: "Dr. Rajesh Kumar",
+                name: "",
                 experience: "22+ Years",
                 expertise: "Engineering Education, Technology Innovation",
                 achievements: ["IEEE Fellow", "Patent Holder: 25+", "Industry Expert"],
@@ -308,7 +308,7 @@ export default function About() {
               },
               {
                 role: "Dean - Research",
-                name: "Dr. Anita Menon",
+                name: "",
                 experience: "20+ Years",
                 expertise: "Research Strategy, Innovation Management",
                 achievements: ["Research Funding: ₹100Cr+", "International Collaborations", "Patent Expert"],
