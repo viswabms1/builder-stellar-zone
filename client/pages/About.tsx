@@ -321,9 +321,13 @@ export default function About() {
                     <Users className="w-10 h-10 text-orange-500 group-hover:scale-110 transition-transform" />
                   </div>
                   <div className="text-center">
-                    <CardTitle className="text-xl font-bold group-hover:text-orange-500 transition-colors mb-1">
-                      {leader.name}
-                    </CardTitle>
+                    {leader.name ? (
+                      <CardTitle className="text-xl font-bold group-hover:text-brand-magenta transition-colors mb-1">
+                        {leader.name}
+                      </CardTitle>
+                    ) : (
+                      <div className="h-6 mb-1"></div>
+                    )}
                     <Badge variant="outline" className="text-xs border-orange-500/30 text-orange-500 mb-2">
                       {leader.role}
                     </Badge>
