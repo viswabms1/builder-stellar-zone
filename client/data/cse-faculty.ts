@@ -89,7 +89,7 @@ export const cseFaculty: Faculty[] = [
   { name: "Preeti  Gajdhane", title: "Assistant Professor", image: "/images/Engineering/CSE-dept/faculty/Preeti_Gajdhane.jpg", qualifications: "M.Tech", profileUrl: "/preeti-g" },
   { name: "Priya Pudke", title: "Assistant Professor", image: "/images/Engineering/CSE-dept/faculty/Priya_Pudke.jpg", qualifications: "M.Tech", profileUrl: "/priya-p" },
   { name: "Raunit Maurya", title: "Assistant Professor", image: "/images/Engineering/CSE-dept/faculty/Raunit.jpg", qualifications: "M.Tech", profileUrl: "/raunit-m" },
-  { name: "Rohit Kumar Singh", title: "Assistant Professor", image: "/images/Engineering/CSE-dept/faculty/Rohit_KS.jpg", qualifications: "M.Tech", profileUrl: "/rohit-k" },
+  { name: "Rohit Kumar Singh", title: "Assistant Professor", image: "/images/Engineering/CSE-dept/faculty/Rohit_KS.jpg", qualifications: "M.Tech", interests: ["Robotics", "Autonomous Systems", "Embedded ML"], profileUrl: "/rohit-k" },
   { name: "Rupam Sah", title: "Assistant Professor", image: "/images/Engineering/CSE-dept/faculty/Rupam_Sah.jpg", qualifications: "M.Tech", profileUrl: "/rupam-s" },
   { name: "Shahid Raza", title: "Assistant Professor", image: "/images/Engineering/CSE-dept/faculty/Shahid.jpg", qualifications: "M.Tech", profileUrl: "/shahid-r" },
   { name: "Sonali Bairagi", title: "Assistant Professor", image: "/images/Engineering/CSE-dept/faculty/Sonali_B.jpg", qualifications: "M.Tech", profileUrl: "/sonali-ba" },
