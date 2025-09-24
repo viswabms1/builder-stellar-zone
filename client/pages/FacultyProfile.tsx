@@ -1,12 +1,24 @@
 import { useParams, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { cseFaculty, getFacultyBySlug } from "@/data/cse-faculty";
-import { Mail, GraduationCap, ChevronLeft, FileText } from "lucide-react";
+import { Mail, GraduationCap, ChevronLeft } from "lucide-react";
 
 export default function FacultyProfile() {
   const { slug } = useParams();
   const f = slug ? getFacultyBySlug(slug) : undefined;
+
+  const imgFor = (kw: string) => {
+    const k = kw.toLowerCase();
+    if (k.includes("ai") || k.includes("ml")) return "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1200&auto=format&fit=crop";
+    if (k.includes("data")) return "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop";
+    if (k.includes("cyber")) return "https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1200&auto=format&fit=crop";
+    if (k.includes("network") || k.includes("iot")) return "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop";
+    if (k.includes("cloud")) return "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop";
+    if (k.includes("web")) return "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop";
+    return "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1200&auto=format&fit=crop";
+  };
 
   if (!f) {
     return (
@@ -23,16 +35,24 @@ export default function FacultyProfile() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <section className="relative">
-        <div className="h-[40vh] w-full overflow-hidden">
-          <img src={f.image} alt={f.name} className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-        </div>
-        <div className="absolute inset-0 flex items-end">
-          <div className="max-w-6xl mx-auto px-6 pb-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/40 backdrop-blur text-white text-xs mb-3">CSE Faculty</div>
-            <h1 className="text-3xl md:text-5xl font-bold text-white font-gilroy">{f.name}</h1>
-            <p className="text-white/80 mt-1 font-graphik">{f.title}{f.qualifications ? ` • ${f.qualifications}` : ''}</p>
+      <section className="px-6 pt-10">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 items-start">
+          <Card className="overflow-hidden border border-border/50 bg-card/50">
+            <AspectRatio ratio={3/4}>
+              <img src={f.image} alt={f.name} className="absolute inset-0 h-full w-full object-cover object-center" />
+            </AspectRatio>
+          </Card>
+          <div className="md:col-span-2">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-magenta/10 text-brand-magenta text-xs mb-3">CSE Faculty</div>
+            <h1 className="text-3xl md:text-5xl font-bold font-gilroy">{f.name}</h1>
+            <p className="text-muted-foreground mt-1 font-graphik">{f.title}{f.qualifications ? ` • ${f.qualifications}` : ''}</p>
+            {f.email && (
+              <div className="mt-5">
+                <a href={`mailto:${f.email}`}>
+                  <Button variant="outline"><Mail className="w-4 h-4 mr-2"/>Email</Button>
+                </a>
+              </div>
+            )}
           </div>
         </div>
       </section>
@@ -58,6 +78,24 @@ export default function FacultyProfile() {
                 )}
               </CardContent>
             </Card>
+
+            {f.interests && f.interests.length > 0 ? (
+              <div className="space-y-3">
+                <h3 className="font-semibold font-gilroy">Research Gallery</h3>
+                <div className="grid sm:grid-cols-2 gap-4">
+                  {f.interests.map((kw, i) => (
+                    <Card key={i} className="overflow-hidden border border-border/40 bg-card/40">
+                      <AspectRatio ratio={16/9}>
+                        <img src={imgFor(kw)} alt={kw} className="absolute inset-0 h-full w-full object-cover" />
+                      </AspectRatio>
+                      <CardContent className="pt-3">
+                        <div className="text-sm text-muted-foreground font-graphik">{kw}</div>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              </div>
+            ) : null}
           </div>
           <div className="space-y-4">
             {f.email && (
