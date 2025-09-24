@@ -65,11 +65,6 @@ export default function FacultyProfile() {
                 <Button variant="outline" className="w-full"><Mail className="w-4 h-4 mr-2"/>Email</Button>
               </a>
             )}
-            {f.profileUrl && (
-              <a href={f.profileUrl} target="_blank" rel="noreferrer">
-                <Button className="w-full bg-brand-gradient text-white"><FileText className="w-4 h-4 mr-2"/>Detailed Profile</Button>
-              </a>
-            )}
             <Link to="/academics/engineering/computer-science/faculty">
               <Button variant="ghost" className="w-full"><ChevronLeft className="w-4 h-4 mr-2"/>Back to Faculty</Button>
             </Link>
