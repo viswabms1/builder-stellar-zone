@@ -2,14 +2,14 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Brain, CheckCircle2, ChevronRight, Cpu, Database, GraduationCap, Network, Robot, Shield, Sparkles } from "lucide-react";
+import { Brain, CheckCircle2, ChevronRight, Cpu, Database, GraduationCap, Network, Bot, Shield, Sparkles } from "lucide-react";
 
 export default function DeptCSE() {
   const specializations = [
     { icon: Brain, label: "AI & ML" },
     { icon: Database, label: "Data Science" },
     { icon: Shield, label: "Cyber Security" },
-    { icon: Robot, label: "AI & Robotics" },
+    { icon: Bot, label: "AI & Robotics" },
     { icon: Network, label: "Networks & IoT" },
     { icon: Cpu, label: "Cloud & Web Tech" },
   ];
