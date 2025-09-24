@@ -21,7 +21,9 @@ import {
   Stethoscope,
   Palette,
   Film,
-  Microscope
+  Microscope,
+  CalendarDays,
+  Newspaper
 } from "lucide-react";
 
 export default function Index() {
@@ -244,6 +246,122 @@ export default function Index() {
         </div>
       </section>
       
+      {/* Featured News Section */}
+      <section className="px-6 py-20 bg-gradient-to-r from-brand-blue/5 via-brand-magenta/5 to-brand-orange/5">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="headline-2 mb-6">
+              <span className="text-foreground">Featured </span>
+              <span className="bg-brand-gradient bg-clip-text text-transparent">News</span>
+            </h2>
+            <p className="subheadline text-muted-foreground max-w-2xl mx-auto font-gilroy">
+              Stories from research, campus life, and our community — inspired by CMU's editorial layout
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-3 gap-8 items-stretch">
+            {/* Featured story */}
+            <Link to="/Research" className="group relative overflow-hidden rounded-3xl border border-border/50 lg:col-span-2">
+              <img
+                src="https://images.unsplash.com/photo-1554475901-4538ddfbccc2?q=80&w=1600&auto=format&fit=crop"
+                alt="DSU launches Center for AI & Robotics"
+                className="h-96 w-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+              <div className="absolute inset-x-0 bottom-0 p-8">
+                <div className="flex items-center gap-3 mb-4">
+                  <Badge className="bg-brand-magenta/20 text-brand-magenta">Research</Badge>
+                  <div className="flex items-center text-white/80 text-xs font-graphik">
+                    <CalendarDays className="w-4 h-4 mr-1" /> Sep 12, 2025
+                  </div>
+                </div>
+                <h3 className="text-3xl font-semibold text-white mb-3 font-gilroy">DSU launches Center for AI & Robotics</h3>
+                <p className="text-white/80 max-w-3xl mb-6 hidden sm:block font-graphik">
+                  A state-of-the-art hub advancing intelligent systems, human-robot interaction, and applied AI with strong industry partnerships.
+                </p>
+                <Button variant="secondary" className="group bg-white text-black hover:opacity-90">
+                  Read Story
+                  <ChevronRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </div>
+              <div className="absolute top-4 left-4 inline-flex items-center gap-2 rounded-full bg-black/40 backdrop-blur px-3 py-1 text-white text-xs">
+                <Newspaper className="w-4 h-4" /> Featured
+              </div>
+            </Link>
+
+            {/* Secondary stories */}
+            <div className="grid gap-8 content-start">
+              {[
+                {
+                  href: "/About",
+                  image: "https://images.unsplash.com/photo-1537202108838-e7072bad1927?q=80&w=1200&auto=format&fit=crop",
+                  category: "University",
+                  title: "DSU climbs in national rankings",
+                  excerpt: "Recognition for excellence in research output, industry collaboration, and student outcomes.",
+                  date: "Aug 28, 2025",
+                  color: "brand-orange"
+                },
+                {
+                  href: "/CampusLife",
+                  image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=1200&auto=format&fit=crop",
+                  category: "Campus Life",
+                  title: "Students win national hackathon",
+                  excerpt: "Interdisciplinary team develops assistive tech using edge AI and IoT, winning top honors.",
+                  date: "Aug 12, 2025",
+                  color: "brand-magenta"
+                },
+                {
+                  href: "/Research",
+                  image: "https://images.unsplash.com/photo-1580281657527-47c455c8d7bf?q=80&w=1200&auto=format&fit=crop",
+                  category: "Health Sciences",
+                  title: "MoU with leading hospital for collaborative research",
+                  excerpt: "Strengthening clinical research, translational medicine, and student training pathways.",
+                  date: "Jul 30, 2025",
+                  color: "brand-blue"
+                },
+                {
+                  href: "/CampusLife",
+                  image: "https://images.unsplash.com/photo-1522158637959-30385a09e0da?q=80&w=1200&auto=format&fit=crop",
+                  category: "Design & Media",
+                  title: "Design and Digital Trans Media festival draws creators nationwide",
+                  excerpt: "Workshops, showcases, and competitions celebrating animation, UX, and storytelling.",
+                  date: "Jul 18, 2025",
+                  color: "brand-orange"
+                },
+              ].map((item, idx) => (
+                <Link key={idx} to={item.href} className="group rounded-2xl overflow-hidden border border-border/50 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-magenta/10 transition-all">
+                  <div className="relative">
+                    <img src={item.image} alt={item.title} className="h-44 w-full object-cover group-hover:scale-[1.02] transition-transform duration-500" />
+                    <div className="absolute top-3 left-3">
+                      <Badge className={`bg-${item.color}/20 text-${item.color}`}>{item.category}</Badge>
+                    </div>
+                  </div>
+                  <div className="p-5 space-y-2">
+                    <h4 className="text-lg font-semibold font-gilroy group-hover:text-brand-magenta transition-colors">{item.title}</h4>
+                    <p className="text-sm text-muted-foreground font-graphik">{item.excerpt}</p>
+                    <div className="flex items-center justify-between pt-1">
+                      <span className="text-xs text-muted-foreground font-graphik flex items-center">
+                        <CalendarDays className="w-4 h-4 mr-1" /> {item.date}
+                      </span>
+                      <ChevronRight className="w-4 h-4 text-muted-foreground group-hover:text-brand-magenta" />
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-12 text-center">
+            <Link to="/Research">
+              <Button variant="outline" className="border-brand-magenta/30 hover:bg-brand-magenta/10 font-gilroy">
+                View all news
+                <ChevronRight className="w-4 h-4 ml-2" />
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Campus Life Section */}
       <section className="px-6 py-20 bg-gradient-to-r from-brand-magenta/5 to-brand-orange/5">
         <div className="max-w-7xl mx-auto">
