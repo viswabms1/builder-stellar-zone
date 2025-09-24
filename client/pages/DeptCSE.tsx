@@ -157,8 +157,11 @@ export default function DeptCSE() {
             ].map((f, i) => (
               <Link key={i} to={`/academics/engineering/computer-science/faculty/${f.name.toLowerCase().replace(/\./g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'')}`}>
                 <div className="group relative overflow-hidden rounded-2xl border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-magenta/10 transition-all">
-                  <img src={f.image} alt={f.name} className="h-56 w-full object-cover group-hover:scale-[1.03] transition-transform duration-500" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+                  <div className="relative">
+                    <div className="aspect-[3/4] w-full"></div>
+                    <img src={f.image} alt={f.name} className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-500" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+                  </div>
                   <div className="absolute bottom-0 p-4">
                     <div className="text-white text-sm opacity-80">{f.title}</div>
                     <div className="text-white font-semibold text-lg font-gilroy">{f.name}</div>
