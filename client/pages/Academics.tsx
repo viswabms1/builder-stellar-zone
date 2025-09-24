@@ -231,28 +231,52 @@ export default function Academics() {
               {
                 icon: Award,
                 title: "Excellence Recognition",
-                description: "NAAC A+ grade and top rankings across multiple disciplines"
+                description: "NAAC A+ grade and top rankings across multiple disciplines",
+                image: "https://images.unsplash.com/photo-1609091839311-d5365f9ff1c0?q=80&w=1600&auto=format&fit=crop",
+                badgeClass: "bg-brand-magenta/20 text-brand-magenta"
               },
               {
                 icon: Users,
                 title: "Expert Faculty",
-                description: "Learn from industry leaders and renowned academicians"
+                description: "Learn from industry leaders and renowned academicians",
+                image: "https://images.unsplash.com/photo-1558021212-51b6ecfa0db9?q=80&w=1600&auto=format&fit=crop",
+                badgeClass: "bg-brand-orange/20 text-brand-orange"
               },
               {
                 icon: Laptop,
                 title: "Modern Infrastructure",
-                description: "State-of-the-art labs, libraries, and learning spaces"
+                description: "State-of-the-art labs, libraries, and learning spaces",
+                image: "https://images.unsplash.com/photo-1581093588401-16f8c4387b65?q=80&w=1600&auto=format&fit=crop",
+                badgeClass: "bg-brand-blue/20 text-brand-blue"
               },
               {
                 icon: TrendingUp,
                 title: "Industry Connect",
-                description: "Strong partnerships with leading companies and organizations"
+                description: "Strong partnerships with leading companies and organizations",
+                image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1600&auto=format&fit=crop",
+                badgeClass: "bg-brand-magenta/20 text-brand-magenta"
               },
             ].map((feature, index) => (
-              <Card key={index} className="text-center p-6 bg-card/30 backdrop-blur-sm border border-border/30 hover:border-orange-500/30 transition-all duration-300 group">
-                <feature.icon className="w-12 h-12 text-orange-500 mx-auto mb-4 group-hover:scale-110 transition-transform" />
-                <h3 className="text-lg font-bold mb-3 group-hover:text-orange-500 transition-colors">{feature.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{feature.description}</p>
+              <Card key={index} className="group relative overflow-hidden h-80 rounded-3xl border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-xl hover:shadow-brand-magenta/10 transition-all duration-500 hover:-translate-y-1">
+                <img src={feature.image} alt={feature.title} className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent" />
+
+                {/* Decorative blobs */}
+                <div className="absolute -top-6 -right-6 w-40 h-40 bg-brand-magenta/10 rounded-full blur-2xl" />
+                <div className="absolute -bottom-8 -left-8 w-48 h-48 bg-brand-orange/10 rounded-full blur-2xl" />
+
+                <div className="absolute top-4 left-4 inline-flex items-center gap-2 rounded-full bg-black/40 backdrop-blur px-3 py-1 text-white text-xs">
+                  <feature.icon className="w-4 h-4" />
+                  Feature
+                </div>
+
+                <div className="absolute bottom-0 inset-x-0 p-6">
+                  <div className="inline-flex mb-3">
+                    <span className={`px-3 py-1 rounded-full text-xs font-medium ${feature.badgeClass}`}>{feature.title}</span>
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-2 font-gilroy">{feature.title}</h3>
+                  <p className="text-white/80 text-sm font-graphik">{feature.description}</p>
+                </div>
               </Card>
             ))}
           </div>
