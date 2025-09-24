@@ -20,7 +20,8 @@ import {
   Stethoscope,
   Palette,
   Film,
-  Microscope
+  Microscope,
+  Laptop
 } from "lucide-react";
 
 export default function Academics() {
