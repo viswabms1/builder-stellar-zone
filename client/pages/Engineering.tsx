@@ -6,34 +6,23 @@ import { Award, Beaker, BookOpen, Building, ChevronRight, Cpu, FlaskConical, Gra
 
 export default function Engineering() {
   const ugPrograms = [
-    "B.Tech",
-    "BCA",
-    "BBA",
-    "B.Com",
-    "B.Sc Biological Sciences",
-    "B.Sc Data Science",
-    "B.Sc Allied Health Science",
-    "B.Sc Nursing",
-    "B.Pharm",
-    "BPT",
-    "B.Design",
-    "B.A (JMC)",
-    "B.Voc",
-    "B.B.A., LL.B.",
-    "B.A., LL.B.",
-    "LL.B."
+    "Computer Science & Engineering",
+    "Computer Science & Engineering (AI & ML)",
+    "Computer Science & Engineering (AI & Data Science)",
+    "AI & Robotics",
+    "Computer Science & Engineering (Data Science)",
+    "Computer Science & Engineering (Cyber Security)",
+    "Electronics & Communication Engineering",
+    "Mechanical Engineering",
+    "Computer Science & Technology",
+    "Aerospace Engineering",
+    "Computer Science and Medical Engineering"
   ];
 
   const pgPrograms = [
-    "M.Tech",
-    "MCA",
-    "MBA",
-    "M.Sc Biological Sciences",
-    "M.Sc Data Science",
-    "M.Sc Nursing",
-    "M.Pharm",
-    "MPT",
-    "Pharm.D"
+    "Computer Science & Engineering",
+    "Embedded Systems",
+    "Design Engineering"
   ];
 
   const highlights = [
@@ -143,9 +132,16 @@ export default function Engineering() {
               <CardContent className="p-6">
                 <div className="grid sm:grid-cols-2 gap-3">
                   {ugPrograms.map((p, idx) => (
-                    <div key={idx} className="flex items-center text-sm text-muted-foreground">
-                      <ChevronRight className="w-3 h-3 text-brand-magenta mr-2" /> {p}
-                    </div>
+                    p === "Computer Science & Engineering" ? (
+                      <Link key={idx} to="/academics/engineering/computer-science" className="flex items-center text-sm text-brand-magenta hover:underline">
+                        <ChevronRight className="w-3 h-3 text-brand-magenta mr-2" /> {p}
+                        <ChevronRight className="w-3 h-3 ml-1" />
+                      </Link>
+                    ) : (
+                      <div key={idx} className="flex items-center text-sm text-muted-foreground">
+                        <ChevronRight className="w-3 h-3 text-brand-magenta mr-2" /> {p}
+                      </div>
+                    )
                   ))}
                 </div>
               </CardContent>

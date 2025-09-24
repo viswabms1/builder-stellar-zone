@@ -229,9 +229,17 @@ export default function Index() {
                     <p className="text-sm font-medium text-foreground font-gilroy">Popular Programs:</p>
                     <div className="flex flex-wrap gap-2">
                       {school.programs.map((program, idx) => (
-                        <Badge key={idx} variant="secondary" className="text-xs font-graphik">
-                          {program}
-                        </Badge>
+                        school.title === "Engineering" && program === "B.Tech CSE" ? (
+                          <Link key={idx} to="/academics/engineering/computer-science">
+                            <Badge variant="secondary" className="text-xs font-graphik hover:bg-brand-magenta/20 hover:text-brand-magenta cursor-pointer">
+                              {program}
+                            </Badge>
+                          </Link>
+                        ) : (
+                          <Badge key={idx} variant="secondary" className="text-xs font-graphik">
+                            {program}
+                          </Badge>
+                        )
                       ))}
                     </div>
                   </div>

@@ -198,10 +198,17 @@ export default function Academics() {
                     <p className="text-sm font-semibold text-foreground">Key Programs:</p>
                     <div className="grid grid-cols-1 gap-2">
                       {school.programs.slice(0, 4).map((program, idx) => (
-                        <div key={idx} className="flex items-center text-sm text-muted-foreground">
-                          <ChevronRight className="w-3 h-3 text-brand-magenta mr-2 flex-shrink-0" />
-                          {program}
-                        </div>
+                        program === "B.Tech CSE" ? (
+                          <Link key={idx} to="/academics/engineering/computer-science" className="flex items-center text-sm text-brand-magenta hover:underline">
+                            <ChevronRight className="w-3 h-3 text-brand-magenta mr-2 flex-shrink-0" />
+                            {program}
+                          </Link>
+                        ) : (
+                          <div key={idx} className="flex items-center text-sm text-muted-foreground">
+                            <ChevronRight className="w-3 h-3 text-brand-magenta mr-2 flex-shrink-0" />
+                            {program}
+                          </div>
+                        )
                       ))}
                     </div>
                   </div>
