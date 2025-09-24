@@ -333,7 +333,7 @@ export default function Index() {
                   <div className="relative">
                     <img src={item.image} alt={item.title} className="h-44 w-full object-cover group-hover:scale-[1.02] transition-transform duration-500" />
                     <div className="absolute top-3 left-3">
-                      <Badge className={`bg-${item.color}/20 text-${item.color}`}>{item.category}</Badge>
+                      <Badge className={`${item.color === 'brand-orange' ? 'bg-brand-orange/20 text-brand-orange' : item.color === 'brand-magenta' ? 'bg-brand-magenta/20 text-brand-magenta' : 'bg-brand-blue/20 text-brand-blue'}`}>{item.category}</Badge>
                     </div>
                   </div>
                   <div className="p-5 space-y-2">
