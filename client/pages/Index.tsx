@@ -2,21 +2,26 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { 
-  ArrowRight, 
-  Sparkles, 
-  GraduationCap, 
-  BookOpen, 
-  Users, 
+import {
+  ArrowRight,
+  GraduationCap,
+  BookOpen,
+  Users,
   Award,
   Building,
   FlaskConical,
   TrendingUp,
   Globe,
-  Calendar,
-  MapPin,
   Star,
-  ChevronRight
+  ChevronRight,
+  Cog,
+  Cpu,
+  Gavel,
+  Briefcase,
+  Stethoscope,
+  Palette,
+  Film,
+  Microscope
 } from "lucide-react";
 
 export default function Index() {
@@ -121,32 +126,88 @@ export default function Index() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                icon: FlaskConical,
-                title: "Engineering & Technology",
-                description: "World-class engineering programs with hands-on experience in state-of-the-art labs and industry partnerships.",
-                programs: ["Computer Science", "Mechanical", "Electronics", "Civil"],
+                icon: Cog,
+                title: "Engineering",
+                description: "Cutting-edge engineering education with practical immersion, industry mentorship, and future-ready specializations.",
+                programs: ["B.Tech CSE", "B.Tech Mechanical", "B.Tech ECE", "B.Tech Civil"],
                 color: "brand-orange",
                 delay: "0s"
               },
               {
-                icon: Building,
-                title: "Business & Management",
-                description: "Innovative business programs that blend traditional management with modern digital transformation strategies.",
-                programs: ["MBA", "BBA", "Finance", "Marketing"],
+                icon: Cpu,
+                title: "Computer Applications",
+                description: "Build software careers with strong foundations in programming, data, cloud, and modern application development.",
+                programs: ["BCA", "MCA", "Data Science", "Cloud Computing"],
                 color: "brand-magenta",
+                delay: "0.1s"
+              },
+              {
+                icon: Gavel,
+                title: "School of Law",
+                description: "Comprehensive legal education blending theory, practice, moot courts, internships, and research opportunities.",
+                programs: ["BA LLB", "BBA LLB", "LLB", "LLM"],
+                color: "brand-blue",
                 delay: "0.2s"
               },
               {
-                icon: Globe,
-                title: "Liberal Arts & Sciences",
-                description: "Comprehensive programs that develop critical thinking and prepare students for diverse career paths.",
-                programs: ["Psychology", "Literature", "Physics", "Chemistry"],
-                color: "brand-blue",
+                icon: Briefcase,
+                title: "Commerce & Management Studies",
+                description: "Business education that merges core management with analytics, entrepreneurship, and industry projects.",
+                programs: ["B.Com", "BBA", "MBA", "Finance & Marketing"],
+                color: "brand-orange",
+                delay: "0.3s"
+              },
+              {
+                icon: FlaskConical,
+                title: "Basic & Applied Sciences",
+                description: "Foundational and interdisciplinary sciences with strong lab exposure and research-driven learning.",
+                programs: ["Physics", "Chemistry", "Mathematics", "Biotechnology"],
+                color: "brand-magenta",
                 delay: "0.4s"
               },
+              {
+                icon: Stethoscope,
+                title: "Health Sciences",
+                description: "Health professions education with clinical immersion, simulation labs, and strong patient-care focus.",
+                programs: ["Pharmacy", "Physiotherapy", "Nursing", "Allied Health"],
+                color: "brand-blue",
+                delay: "0.5s"
+              },
+              {
+                icon: Palette,
+                title: "Arts, Design and Humanities",
+                description: "Creative and humanistic disciplines that nurture expression, critical thought, and cultural literacy.",
+                programs: ["Psychology", "English", "Economics", "Sociology"],
+                color: "brand-orange",
+                delay: "0.6s"
+              },
+              {
+                icon: Film,
+                title: "Design & Digital Trans Media",
+                description: "Design and digital media programs spanning UX/UI, graphics, animation, and storytelling for modern platforms.",
+                programs: ["Animation", "UX/UI", "Graphic Design", "Digital Media"],
+                color: "brand-magenta",
+                delay: "0.7s"
+              },
+              {
+                icon: Microscope,
+                title: "Medical Education & Research",
+                description: "Advanced medical education and translational research with a focus on innovation and community impact.",
+                programs: ["MBBS", "MD/MS", "Biomedical Research", "Public Health"],
+                color: "brand-blue",
+                delay: "0.8s"
+              },
+              {
+                icon: Globe,
+                title: "Online Degree Programs",
+                description: "Flexible, career-aligned online degrees with live sessions, projects, and placement assistance.",
+                programs: ["BBA", "BCA", "B.Com"],
+                color: "brand-orange",
+                delay: "0.9s"
+              },
             ].map((school, index) => (
-              <Card 
-                key={index} 
+              <Card
+                key={index}
                 className="bg-card/50 backdrop-blur-sm border border-border/50 hover:border-brand-magenta/30 transition-all duration-300 group hover:shadow-lg hover:shadow-brand-magenta/10 hover:-translate-y-2"
                 style={{ animationDelay: school.delay }}
               >
