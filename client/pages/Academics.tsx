@@ -2,23 +2,25 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { 
-  ArrowRight, 
-  BookOpen, 
-  GraduationCap, 
-  FlaskConical, 
-  Building, 
+import {
+  ArrowRight,
+  BookOpen,
+  GraduationCap,
+  FlaskConical,
+  Building,
   Globe,
   Users,
   Award,
-  Calendar,
   ChevronRight,
-  Star,
   TrendingUp,
-  Lightbulb,
-  Laptop,
-  Heart,
-  Briefcase
+  Briefcase,
+  Cog,
+  Cpu,
+  Gavel,
+  Stethoscope,
+  Palette,
+  Film,
+  Microscope
 } from "lucide-react";
 
 export default function Academics() {
@@ -94,100 +96,115 @@ export default function Academics() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                icon: FlaskConical,
-                title: "School of Engineering & Technology",
-                description: "Leading-edge engineering programs with state-of-the-art labs and industry partnerships.",
-                programs: ["Computer Science & Engineering", "Electronics & Communication", "Mechanical Engineering", "Civil Engineering", "Information Science", "Biotechnology"],
-                highlight: "NAAC A+ Accredited",
-                students: "8,000+",
-                color: "orange"
+                icon: Cog,
+                title: "Engineering",
+                image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=1600&auto=format&fit=crop",
+                description: "Cutting-edge engineering education with practical immersion, industry mentorship, and future-ready specializations.",
+                programs: ["B.Tech CSE", "B.Tech Mechanical", "B.Tech ECE", "B.Tech Civil"],
+                color: "brand-orange"
+              },
+              {
+                icon: Cpu,
+                title: "Computer Applications",
+                image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1600&auto=format&fit=crop",
+                description: "Build software careers with strong foundations in programming, data, cloud, and modern application development.",
+                programs: ["BCA", "MCA", "Data Science", "Cloud Computing"],
+                color: "brand-magenta"
+              },
+              {
+                icon: Gavel,
+                title: "School of Law",
+                image: "https://images.unsplash.com/photo-1575378839152-38d99f1fbfde?q=80&w=1600&auto=format&fit=crop",
+                description: "Comprehensive legal education blending theory, practice, moot courts, internships, and research opportunities.",
+                programs: ["BA LLB", "BBA LLB", "LLB", "LLM"],
+                color: "brand-blue"
               },
               {
                 icon: Briefcase,
-                title: "School of Business & Management",
-                description: "Innovative business education combining theory with real-world application and entrepreneurship.",
-                programs: ["MBA", "BBA", "M.Com", "B.Com", "Economics", "International Business"],
-                highlight: "AICTE Approved",
-                students: "3,500+",
-                color: "red"
+                title: "Commerce & Management Studies",
+                image: "https://images.unsplash.com/photo-1551836022-4c4c79ecde51?q=80&w=1600&auto=format&fit=crop",
+                description: "Business education that merges core management with analytics, entrepreneurship, and industry projects.",
+                programs: ["B.Com", "BBA", "MBA", "Finance & Marketing"],
+                color: "brand-orange"
               },
               {
-                icon: Laptop,
-                title: "School of Computer Applications",
-                description: "Comprehensive computing programs preparing students for the digital economy.",
-                programs: ["MCA", "BCA", "Data Science", "Artificial Intelligence", "Cybersecurity", "Software Engineering"],
-                highlight: "Industry Partnerships",
-                students: "2,800+",
-                color: "blue"
+                icon: FlaskConical,
+                title: "Basic & Applied Sciences",
+                image: "https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?q=80&w=1600&auto=format&fit=crop",
+                description: "Foundational and interdisciplinary sciences with strong lab exposure and research-driven learning.",
+                programs: ["Physics", "Chemistry", "Mathematics", "Biotechnology"],
+                color: "brand-magenta"
               },
               {
-                icon: Heart,
-                title: "School of Health Sciences",
-                description: "Healthcare education with emphasis on practical training and community service.",
-                programs: ["Nursing", "Physiotherapy", "Medical Lab Technology", "Pharmacy", "Public Health", "Nutrition"],
-                highlight: "Clinical Excellence",
-                students: "2,200+",
-                color: "green"
+                icon: Stethoscope,
+                title: "Health Sciences",
+                image: "https://images.unsplash.com/photo-1584985251444-7acbadda4b61?q=80&w=1600&auto=format&fit=crop",
+                description: "Health professions education with clinical immersion, simulation labs, and strong patient-care focus.",
+                programs: ["Pharmacy", "Physiotherapy", "Nursing", "Allied Health"],
+                color: "brand-blue"
+              },
+              {
+                icon: Palette,
+                title: "Arts, Design and Humanities",
+                image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=1600&auto=format&fit=crop",
+                description: "Creative and humanistic disciplines that nurture expression, critical thought, and cultural literacy.",
+                programs: ["Psychology", "English", "Economics", "Sociology"],
+                color: "brand-orange"
+              },
+              {
+                icon: Film,
+                title: "Design & Digital Trans Media",
+                image: "https://images.unsplash.com/photo-1529101091764-c3526daf38fe?q=80&w=1600&auto=format&fit=crop",
+                description: "Design and digital media programs spanning UX/UI, graphics, animation, and storytelling for modern platforms.",
+                programs: ["Animation", "UX/UI", "Graphic Design", "Digital Media"],
+                color: "brand-magenta"
+              },
+              {
+                icon: Microscope,
+                title: "Medical Education & Research",
+                image: "https://images.unsplash.com/photo-1581093588401-16f8c4387b65?q=80&w=1600&auto=format&fit=crop",
+                description: "Advanced medical education and translational research with a focus on innovation and community impact.",
+                programs: ["MBBS", "MD/MS", "Biomedical Research", "Public Health"],
+                color: "brand-blue"
               },
               {
                 icon: Globe,
-                title: "School of Liberal Arts & Sciences",
-                description: "Interdisciplinary programs fostering critical thinking and global perspectives.",
-                programs: ["Psychology", "English Literature", "Journalism", "Mass Communication", "Political Science", "Sociology"],
-                highlight: "Research Focus",
-                students: "1,800+",
-                color: "purple"
-              },
-              {
-                icon: Lightbulb,
-                title: "School of Design & Architecture",
-                description: "Creative programs blending artistic vision with technical expertise.",
-                programs: ["Architecture", "Interior Design", "Fashion Design", "Graphic Design", "Product Design", "Urban Planning"],
-                highlight: "Creative Excellence",
-                students: "1,500+",
-                color: "pink"
+                title: "Online Degree Programs",
+                image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1600&auto=format&fit=crop",
+                description: "Flexible, career-aligned online degrees with live sessions, projects, and placement assistance.",
+                programs: ["BBA", "BCA", "B.Com"],
+                color: "brand-orange"
               },
             ].map((school, index) => (
-              <Card key={index} className="group hover:shadow-xl hover:shadow-orange-500/10 transition-all duration-500 hover:-translate-y-2 bg-card/50 backdrop-blur-sm border border-border/50 hover:border-orange-500/30">
-                <CardHeader>
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="w-14 h-14 rounded-2xl bg-orange-500/10 flex items-center justify-center group-hover:bg-orange-500/20 transition-colors">
-                      <school.icon className="w-7 h-7 text-orange-500 group-hover:scale-110 transition-transform" />
-                    </div>
-                    <Badge variant="secondary" className="text-xs font-medium">
-                      {school.students} Students
-                    </Badge>
+              <Card key={index} className="group hover:shadow-xl hover:shadow-brand-magenta/10 transition-all duration-500 hover:-translate-y-2 bg-card/50 backdrop-blur-sm border border-border/50 hover:border-brand-magenta/30 overflow-hidden">
+                <div className="relative h-44 w-full overflow-hidden">
+                  <img src={school.image} alt={school.title} className="h-full w-full object-cover group-hover:scale-[1.03] transition-transform duration-700" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                  <div className="absolute top-3 left-3 inline-flex items-center gap-2 rounded-full bg-black/40 backdrop-blur px-3 py-1 text-white text-xs">
+                    <school.icon className="w-4 h-4" /> School
                   </div>
-                  <CardTitle className="text-xl font-bold group-hover:text-orange-500 transition-colors leading-tight">
+                </div>
+                <CardHeader>
+                  <CardTitle className="text-xl font-bold group-hover:text-brand-magenta transition-colors leading-tight">
                     {school.title}
                   </CardTitle>
-                  <Badge variant="outline" className="w-fit text-xs border-orange-500/30 text-orange-500">
-                    {school.highlight}
-                  </Badge>
                 </CardHeader>
                 <CardContent className="space-y-6">
                   <CardDescription className="text-muted-foreground leading-relaxed">
                     {school.description}
                   </CardDescription>
-                  
                   <div className="space-y-3">
                     <p className="text-sm font-semibold text-foreground">Key Programs:</p>
                     <div className="grid grid-cols-1 gap-2">
                       {school.programs.slice(0, 4).map((program, idx) => (
                         <div key={idx} className="flex items-center text-sm text-muted-foreground">
-                          <ChevronRight className="w-3 h-3 text-orange-500 mr-2 flex-shrink-0" />
+                          <ChevronRight className="w-3 h-3 text-brand-magenta mr-2 flex-shrink-0" />
                           {program}
                         </div>
                       ))}
-                      {school.programs.length > 4 && (
-                        <div className="text-sm text-orange-500 font-medium">
-                          +{school.programs.length - 4} more programs
-                        </div>
-                      )}
                     </div>
                   </div>
-                  
-                  <Button variant="ghost" size="sm" className="w-full justify-between group-hover:text-orange-500 group-hover:bg-orange-500/5">
+                  <Button variant="ghost" size="sm" className="w-full justify-between group-hover:text-brand-magenta group-hover:bg-brand-magenta/5">
                     Explore School
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Button>
