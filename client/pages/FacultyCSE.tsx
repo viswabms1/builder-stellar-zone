@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { cseFaculty } from "@/data/cse-faculty";
 import { Search, GraduationCap, ChevronRight } from "lucide-react";
 
@@ -41,8 +42,10 @@ export default function FacultyCSE() {
             {list.map((f) => (
               <Link key={f.slug} to={`/academics/engineering/computer-science/faculty/${f.slug}`} data-faculty data-name={f.name} data-title={f.title}>
                 <Card className="group relative overflow-hidden rounded-2xl border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-magenta/10 transition-all">
-                  <img src={f.image} alt={f.name} className="h-56 w-full object-cover group-hover:scale-[1.03] transition-transform duration-500" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+                  <AspectRatio ratio={3/4}>
+                    <img src={f.image} alt={f.name} className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-500" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+                  </AspectRatio>
                   <div className="absolute bottom-0 p-4">
                     <div className="text-white text-sm opacity-80">{f.title}</div>
                     <div className="text-white font-semibold text-lg font-gilroy flex items-center">
