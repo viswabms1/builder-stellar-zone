@@ -235,10 +235,19 @@ export default function Index() {
                       ))}
                     </div>
                   </div>
-                  <Button variant="ghost" size="sm" className="w-full justify-between group-hover:text-brand-magenta font-gilroy">
-                    Learn More
-                    <ChevronRight className="w-4 h-4" />
-                  </Button>
+                  {school.title === "Engineering" ? (
+                    <Link to="/academics/engineering">
+                      <Button variant="ghost" size="sm" className="w-full justify-between group-hover:text-brand-magenta font-gilroy">
+                        Learn More
+                        <ChevronRight className="w-4 h-4" />
+                      </Button>
+                    </Link>
+                  ) : (
+                      <Button variant="ghost" size="sm" className="w-full justify-between group-hover:text-brand-magenta font-gilroy">
+                        Learn More
+                        <ChevronRight className="w-4 h-4" />
+                      </Button>
+                  )}
                 </CardContent>
               </Card>
             ))}

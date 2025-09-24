@@ -205,10 +205,19 @@ export default function Academics() {
                       ))}
                     </div>
                   </div>
-                  <Button variant="ghost" size="sm" className="w-full justify-between group-hover:text-brand-magenta group-hover:bg-brand-magenta/5">
-                    Explore School
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </Button>
+                  {school.title === "Engineering" ? (
+                    <Link to="/academics/engineering">
+                      <Button variant="ghost" size="sm" className="w-full justify-between group-hover:text-brand-magenta group-hover:bg-brand-magenta/5">
+                        Explore School
+                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      </Button>
+                    </Link>
+                  ) : (
+                    <Button variant="ghost" size="sm" className="w-full justify-between group-hover:text-brand-magenta group-hover:bg-brand-magenta/5">
+                      Explore School
+                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </Button>
+                  )}
                 </CardContent>
               </Card>
             ))}
