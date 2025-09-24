@@ -9,6 +9,7 @@ import Engineering from "./pages/Engineering";
 import DeptCSE from "./pages/DeptCSE";
 import FacultyCSE from "./pages/FacultyCSE";
 import FacultyProfile from "./pages/FacultyProfile";
+import FacultyRohitKumarSingh from "./pages/faculty/RohitKumarSingh";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 
@@ -24,6 +25,7 @@ function App() {
             <Route path="/academics/engineering" element={<Engineering />} />
             <Route path="/academics/engineering/computer-science" element={<DeptCSE />} />
             <Route path="/academics/engineering/computer-science/faculty" element={<FacultyCSE />} />
+            <Route path="/academics/engineering/computer-science/faculty/rohit-kumar-singh" element={<FacultyRohitKumarSingh />} />
             <Route path="/academics/engineering/computer-science/faculty/:slug" element={<FacultyProfile />} />
             <Route path="/admissions" element={<Admissions />} />
             <Route path="/campus-life" element={<CampusLife />} />
