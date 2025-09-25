@@ -31,7 +31,7 @@ export default function Navigation() {
   const isActive = (href: string) => location.pathname === href;
 
   return (
-    <nav className="sticky top-0 z-50 bg-[#E58A00] border-b border-orange-600/20">
+    <nav className="sticky top-0 z-50 bg-gradient-to-r from-orange-500 to-red-600 border-b border-orange-600/20">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-20">
           {/* Official DSU Logo */}
@@ -76,7 +76,7 @@ export default function Navigation() {
             </Button>
             <Button
               size="sm"
-              className="bg-white text-[#E58A00] hover:bg-white/90 px-6 rounded-xl shadow-lg hover:shadow-white/25 transition-all duration-300 font-gilroy font-semibold"
+              className="bg-white text-orange-600 hover:bg-white/90 px-6 rounded-xl shadow-lg hover:shadow-white/25 transition-all duration-300 font-gilroy font-semibold"
             >
               Apply Now
             </Button>
@@ -98,7 +98,7 @@ export default function Navigation() {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="md:hidden border-t border-orange-600/20 bg-[#E58A00]">
+        <div className="md:hidden border-t border-orange-600/20 bg-gradient-to-r from-orange-500 to-red-600">
           <div className="px-6 py-4 space-y-3">
             {navigation.map((item) => (
               <Link
@@ -125,7 +125,7 @@ export default function Navigation() {
               </Button>
               <Button
                 size="sm"
-                className="w-full bg-white text-[#E58A00] hover:bg-white/90 rounded-xl shadow-lg hover:shadow-white/25 transition-all duration-300 font-gilroy font-semibold"
+                className="w-full bg-white text-orange-600 hover:bg-white/90 rounded-xl shadow-lg hover:shadow-white/25 transition-all duration-300 font-gilroy font-semibold"
               >
                 Apply Now
               </Button>
