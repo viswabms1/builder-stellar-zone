@@ -2,11 +2,11 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { 
-  ArrowRight, 
-  FlaskConical, 
-  Lightbulb, 
-  Microscope, 
+import {
+  ArrowRight,
+  FlaskConical,
+  Lightbulb,
+  Microscope,
   Atom,
   Brain,
   Cpu,
@@ -27,7 +27,11 @@ import {
   ChevronRight,
   Telescope,
   Dna,
-  Rocket
+  Rocket,
+  Shield,
+  Briefcase,
+  ClipboardList,
+  Megaphone
 } from "lucide-react";
 
 export default function Research() {
@@ -36,10 +40,11 @@ export default function Research() {
       {/* Hero Section */}
       <section className="relative py-20 lg:py-32 bg-gradient-to-br from-orange-500/10 via-red-600/5 to-background">
         <div className="absolute inset-0 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1581092335397-9583eb92d232?q=80&w=2000&auto=format&fit=crop" alt="Research at DSU" className="absolute inset-0 w-full h-full object-cover opacity-20" />
           <div className="absolute top-20 left-10 w-72 h-72 bg-orange-500/10 rounded-full filter blur-3xl animate-float"></div>
           <div className="absolute bottom-20 right-10 w-96 h-96 bg-red-600/10 rounded-full filter blur-3xl animate-float" style={{ animationDelay: "2s" }}></div>
         </div>
-        
+
         <div className="relative max-w-7xl mx-auto px-6 text-center">
           <div className="inline-flex items-center px-4 py-2 bg-orange-500/10 rounded-full border border-orange-500/20 mb-8">
             <FlaskConical className="w-4 h-4 text-orange-500 mr-2" />
@@ -86,6 +91,40 @@ export default function Research() {
                 <div className="text-3xl font-bold text-foreground mb-1">{stat.number}</div>
                 <div className="text-sm text-muted-foreground">{stat.label}</div>
               </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Research Hub Quick Links (DSU-style menu) */}
+      <section className="px-6 py-14 bg-gradient-to-r from-brand-blue/5 via-brand-magenta/5 to-brand-orange/5">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-10">
+            <h2 className="headline-3">Research Hub</h2>
+            <p className="text-muted-foreground font-graphik">Quick access to Ph.D admissions, regulations, supervisors, and more</p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { icon: Calendar, title: "Ph.D Calendar of Events", href: "https://www.dsu.edu.in/research/phd-calendar-of-events" },
+              { icon: ClipboardList, title: "Ph.D Admission - July '25", href: "https://www.dsu.edu.in/research/phd-admission" },
+              { icon: Users, title: "Research Supervisor List", href: "https://www.dsu.edu.in/research/research-supervisor-list" },
+              { icon: FileText, title: "Ph.D Regulations", href: "https://www.dsu.edu.in/research/phd-regulations" },
+              { icon: FileText, title: "Templates for Supervisors & Scholars", href: "https://www.dsu.edu.in/research/templates" },
+              { icon: Shield, title: "Code of Ethics, Projects & Publications", href: "https://www.dsu.edu.in/research/code-of-ethics" },
+              { icon: Briefcase, title: "Research Positions", href: "https://www.dsu.edu.in/research/research-positions" },
+              { icon: Award, title: "Research Promotion Policy", href: "https://www.dsu.edu.in/research/research-promotion-policy" },
+              { icon: Megaphone, title: "Calls: Proposals, Conferences, Sponsorships", href: "https://www.dsu.edu.in/research/calls" },
+            ].map((item, idx) => (
+              <a key={idx} href={item.href} target="_blank" rel="noreferrer" className="group rounded-2xl overflow-hidden border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-magenta/10 transition-all">
+                <div className="relative h-28">
+                  <img src={`https://images.unsplash.com/photo-15${80+idx}5066931-4365d14bab8c?q=80&w=1200&auto=format&fit=crop`} alt={item.title} className="absolute inset-0 h-full w-full object-cover opacity-70 group-hover:opacity-80" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                  <div className="absolute bottom-0 p-4 flex items-center gap-3">
+                    <item.icon className="w-5 h-5 text-white" />
+                    <div className="text-white font-medium font-gilroy">{item.title}</div>
+                  </div>
+                </div>
+              </a>
             ))}
           </div>
         </div>
@@ -216,7 +255,7 @@ export default function Research() {
         </div>
       </section>
 
-      {/* Research Achievements */}
+      {/* Research Achievements & Inspiration */}
       <section className="px-6 py-20 bg-gradient-to-r from-orange-500/5 to-red-600/5">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -286,6 +325,47 @@ export default function Research() {
                 <div className="text-3xl font-bold text-orange-500 mb-3">{achievement.number}</div>
                 <p className="text-sm text-muted-foreground leading-relaxed">{achievement.description}</p>
               </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Spotlight Stories */}
+      <section className="px-6 py-16">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="headline-3">Research Spotlights</h2>
+            <p className="text-muted-foreground font-graphik">Stories to inspire students and faculty to pursue impactful research</p>
+          </div>
+          <div className="grid lg:grid-cols-3 gap-8 items-stretch">
+            {[
+              {
+                image: "https://images.unsplash.com/photo-1554475901-4538ddfbccc2?q=80&w=1600&auto=format&fit=crop",
+                tag: "AI & Robotics",
+                title: "Field robots navigate unstructured terrain with learning-based control",
+                href: "/research"
+              },
+              {
+                image: "https://images.unsplash.com/photo-1580281657527-47c455c8d7bf?q=80&w=1600&auto=format&fit=crop",
+                tag: "Health Sciences",
+                title: "Clinical collaboration accelerates translational diagnostics",
+                href: "/research"
+              },
+              {
+                image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1600&auto=format&fit=crop",
+                tag: "Sustainability",
+                title: "Smart energy lab pilots grid-scale storage algorithms",
+                href: "/research"
+              },
+            ].map((s, i) => (
+              <a key={i} href={s.href} className="group relative overflow-hidden rounded-3xl border border-border/50">
+                <img src={s.image} alt={s.title} className="h-64 w-full object-cover group-hover:scale-[1.02] transition-transform duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                <div className="absolute bottom-0 p-6">
+                  <Badge className="bg-white/10 text-white mb-3">{s.tag}</Badge>
+                  <h3 className="text-white font-semibold text-xl font-gilroy">{s.title}</h3>
+                </div>
+              </a>
             ))}
           </div>
         </div>
