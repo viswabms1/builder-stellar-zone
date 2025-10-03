@@ -149,7 +149,8 @@ export default function Academics() {
                 image: "https://images.unsplash.com/photo-1584985251444-7acbadda4b61?q=80&w=1600&auto=format&fit=crop",
                 description: "Health professions education with clinical immersion, simulation labs, and strong patient-care focus.",
                 programs: ["Pharmacy", "Physiotherapy", "Nursing", "Allied Health"],
-                color: "brand-blue"
+                color: "brand-blue",
+                href: "/academics/health-sciences"
               },
               {
                 icon: Palette,
