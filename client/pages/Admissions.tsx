@@ -157,7 +157,9 @@ export default function Admissions() {
                   <div className="space-y-2">
                     {process.details.map((detail, idx) => {
                       const key = `${process.title}-${idx}-${detail}`;
-                      const isHostelDetail = typeof detail === "string" && detail.toLowerCase().includes("hostel");
+                      const lowerDetail = typeof detail === "string" ? detail.toLowerCase() : "";
+                      const isHostelDetail = lowerDetail.includes("hostel");
+                      const isTourDetail = lowerDetail.includes("tour");
 
                       return (
                         <div key={key} className="flex items-center text-sm text-muted-foreground">
@@ -165,6 +167,15 @@ export default function Admissions() {
                           {isHostelDetail ? (
                             <a
                               href="https://myposhtell.com"
+                              target="_blank"
+                              rel="noreferrer"
+                              className="text-brand-magenta hover:underline"
+                            >
+                              {detail}
+                            </a>
+                          ) : isTourDetail ? (
+                            <a
+                              href="https://dsu.edu.in/virtual-tour/"
                               target="_blank"
                               rel="noreferrer"
                               className="text-brand-magenta hover:underline"
@@ -394,7 +405,9 @@ export default function Admissions() {
                 icon: MapPin,
                 title: "Visit Campus",
                 info: "DSU Campus, Bangalore",
-                description: "Schedule a campus tour"
+                description: "Schedule a campus tour",
+                linkLabel: "Take Virtual Tour",
+                linkHref: "https://dsu.edu.in/virtual-tour/"
               },
               {
                 icon: Users,
@@ -408,6 +421,17 @@ export default function Admissions() {
                 <h3 className="text-lg font-bold mb-2 group-hover:text-orange-500 transition-colors">{contact.title}</h3>
                 <p className="text-orange-500 font-semibold mb-2">{contact.info}</p>
                 <p className="text-sm text-muted-foreground">{contact.description}</p>
+                {contact.linkHref && contact.linkLabel && (
+                  <a
+                    href={contact.linkHref}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-3 inline-flex items-center justify-center gap-2 text-sm font-medium text-orange-500 hover:underline"
+                  >
+                    {contact.linkLabel}
+                    <ArrowRight className="h-4 w-4" />
+                  </a>
+                )}
               </Card>
             ))}
           </div>
