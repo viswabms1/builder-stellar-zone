@@ -105,7 +105,7 @@ const USP_HIGHLIGHTS: Highlight[] = [
     title: "Integrated Health Ecosystem",
     description: "Colleges of Nursing, Pharmaceutical Sciences, Physiotherapy and Allied Health share a collaborative campus with clinical partners.",
     image: "https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?q=80&w=1600&auto=format&fit=crop",
-    icon: ClipboardHeart,
+    icon: ClipboardCheck,
     stat: "4 Constituent Colleges"
   },
   {
