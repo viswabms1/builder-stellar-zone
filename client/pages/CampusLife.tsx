@@ -269,8 +269,8 @@ export default function CampusLife() {
                 features: ["Student Lounges", "Game Rooms", "Entertainment", "Social Spaces"]
               },
             ].map((facility) => {
-              const content = (
-                <Card className="text-center p-6 bg-card/30 backdrop-blur-sm border border-border/30 hover:border-orange-500/30 transition-all duration-300 group">
+              const body = (
+                <>
                   <facility.icon className="w-12 h-12 text-orange-500 mx-auto mb-4 group-hover:scale-110 transition-transform" />
                   <h3 className="text-lg font-bold mb-3 group-hover:text-orange-500 transition-colors">{facility.title}</h3>
                   <p className="text-sm text-muted-foreground mb-4 leading-relaxed">{facility.description}</p>
@@ -281,7 +281,7 @@ export default function CampusLife() {
                       </div>
                     ))}
                   </div>
-                </Card>
+                </>
               );
 
               if (facility.href) {
@@ -293,15 +293,17 @@ export default function CampusLife() {
                     rel="noreferrer"
                     className="block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                   >
-                    {content}
+                    <Card className="text-center p-6 bg-card/30 backdrop-blur-sm border border-border/30 hover:border-orange-500/30 transition-all duration-300 group">
+                      {body}
+                    </Card>
                   </a>
                 );
               }
 
               return (
-                <div key={facility.title} className="contents">
-                  {content}
-                </div>
+                <Card key={facility.title} className="text-center p-6 bg-card/30 backdrop-blur-sm border border-border/30 hover:border-orange-500/30 transition-all duration-300 group">
+                  {body}
+                </Card>
               );
             })}
           </div>
