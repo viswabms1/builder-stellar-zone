@@ -224,6 +224,12 @@ const RESOURCES: Resource[] = [
     description: "Experience teaching hospitals through CDSIMER's smart campus and simulation-enabled hospital.",
     href: "https://cdsimer.edu.in",
     badge: "Clinical"
+  },
+  {
+    title: "Medical Education & Research",
+    description: "Learn how DSU integrates CDSIMER's medical college, hospital and research ecosystem.",
+    href: "/academics/medical-education-research",
+    badge: "Medical"
   }
 ];
 
