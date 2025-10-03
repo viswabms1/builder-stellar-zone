@@ -167,7 +167,7 @@ export default function Admissions() {
                               href="https://myposhtell.com"
                               target="_blank"
                               rel="noreferrer"
-                              className="text-brand-orange hover:underline"
+                              className="text-brand-magenta hover:underline"
                             >
                               {detail}
                             </a>
