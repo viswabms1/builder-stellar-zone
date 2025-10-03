@@ -65,9 +65,16 @@ export default function About() {
               Our Story
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
-            <Button variant="outline" size="lg" className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white px-8 py-6 text-lg font-semibold rounded-2xl">
-              Campus Tour
-            </Button>
+            <a
+              href="https://dsu.edu.in/virtual-tour/"
+              target="_blank"
+              rel="noreferrer"
+              className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            >
+              <Button variant="outline" size="lg" className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white px-8 py-6 text-lg font-semibold rounded-2xl">
+                Campus Tour
+              </Button>
+            </a>
           </div>
           
           {/* Key Numbers */}
