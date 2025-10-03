@@ -158,6 +158,15 @@ export default function Academics() {
                 color: "brand-orange"
               },
               {
+                icon: PenSquare,
+                title: "Journalism & Mass Communication",
+                image: "https://images.unsplash.com/photo-1525182008055-f88b95ff7980?q=80&w=1600&auto=format&fit=crop",
+                description: "Future-ready storytellers trained across multimedia newsrooms, podcasts, films and global communication projects.",
+                programs: ["BA (JMC)", "Podcast Lab", "Global Comm Project", "Industry Internships"],
+                color: "brand-blue",
+                href: "/academics/journalism-mass-communication"
+              },
+              {
                 icon: Film,
                 title: "Design & Digital Trans Media",
                 image: "https://images.unsplash.com/photo-1529101091764-c3526daf38fe?q=80&w=1600&auto=format&fit=crop",
