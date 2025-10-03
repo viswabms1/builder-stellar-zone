@@ -266,6 +266,8 @@ interface LifestyleFeature {
   description: string;
   points: string[];
   icon: LucideIcon;
+  ctaLabel?: string;
+  ctaHref?: string;
 }
 
 interface Programme {
