@@ -209,7 +209,7 @@ function QuickLinkCard({ link }: { link: QuickLink }) {
         </span>
         <ChevronRight className="h-4 w-4 text-transparent transition-colors duration-500 group-hover:text-brand-magenta" />
       </div>
-      <h3 className="mt-5 text-lgfont-semibold font-gilroy">{link.title}</h3>
+      <h3 className="mt-5 text-lg font-semibold font-gilroy">{link.title}</h3>
       <p className="mt-3 text-sm text-muted-foreground font-graphik">{link.description}</p>
       <div className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-brand-magenta">
         {link.external ? "Open resource" : "Jump to section"}
