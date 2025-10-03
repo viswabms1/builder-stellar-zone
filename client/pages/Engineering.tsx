@@ -440,7 +440,7 @@ export default function Engineering() {
                 <div className="grid gap-3 sm:grid-cols-2">
                   {UG_PROGRAMS.map((program) => (
                     program === "Computer Science & Engineering" ? (
-                      <Link
+                      <RouterLink
                         key={program}
                         to="/academics/engineering/computer-science"
                         className="flex items-center text-sm text-brand-magenta hover:underline"
@@ -448,7 +448,7 @@ export default function Engineering() {
                         <ChevronRight className="mr-2 h-3 w-3 text-brand-magenta" />
                         {program}
                         <ChevronRight className="ml-1 h-3 w-3" />
-                      </Link>
+                      </RouterLink>
                     ) : (
                       <div key={program} className="flex items-center text-sm text-muted-foreground">
                         <ChevronRight className="mr-2 h-3 w-3 text-brand-magenta" />
@@ -661,12 +661,12 @@ export default function Engineering() {
               Explore programmes, take a virtual tour and begin your journey at the DSU School of Engineering.
             </p>
             <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <Link to="/admissions">
+              <RouterLink to="/admissions">
                 <Button className="bg-brand-gradient text-white">
                   Apply Now
                   <GraduationCap className="ml-2 h-4 w-4" />
                 </Button>
-              </Link>
+              </RouterLink>
               <a href="https://dsu.edu.in/virtual-tour/#SchoolOfEngineering_03,-1.3,1.1,75,4" target="_blank" rel="noreferrer">
                 <Button variant="outline" className="border-brand-magenta/40 hover:bg-brand-magenta/10">
                   Virtual Tour
