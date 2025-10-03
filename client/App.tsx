@@ -11,6 +11,7 @@ import Law from "./pages/Law";
 import AppliedSciences from "./pages/AppliedSciences";
 import ManagementStudies from "./pages/ManagementStudies";
 import HealthSciences from "./pages/HealthSciences";
+import MedicalEducationResearch from "./pages/MedicalEducationResearch";
 import CEE from "./pages/CEE";
 import JournalismMassComm from "./pages/JournalismMassComm";
 import BDesignOverview from "./pages/BDesignOverview";
