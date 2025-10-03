@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import type { LucideIcon } from "lucide-react";
 import {
   Award,
-  Balance,
+  Scale,
   BookOpen,
   CalendarDays,
   ChevronRight,
