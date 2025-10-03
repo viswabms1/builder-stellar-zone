@@ -128,8 +128,9 @@ export default function Academics() {
                 title: "Commerce & Management Studies",
                 image: "https://images.unsplash.com/photo-1551836022-4c4c79ecde51?q=80&w=1600&auto=format&fit=crop",
                 description: "Business education that merges core management with analytics, entrepreneurship, and industry projects.",
-                programs: ["B.Com", "BBA", "MBA", "Finance & Marketing"],
-                color: "brand-orange"
+                programs: ["B.Com", "BBA", "MBA", "Doctoral Programmes"],
+                color: "brand-orange",
+                href: "/academics/management-studies"
               },
               {
                 icon: FlaskConical,
