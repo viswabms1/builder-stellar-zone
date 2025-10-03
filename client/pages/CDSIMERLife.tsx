@@ -9,6 +9,7 @@ import {
   Dumbbell,
   GraduationCap,
   House,
+  Mail,
   Music,
   Palette,
   ShieldCheck,
@@ -232,17 +233,20 @@ const CONTACT_INFO = [
   {
     label: "Student Affairs",
     value: "+91 88844 07479",
-    href: "tel:+918884407479"
+    href: "tel:+918884407479",
+    icon: Users
   },
   {
     label: "Hostel Office",
     value: "+91 63668 85501",
-    href: "tel:+916366885501"
+    href: "tel:+916366885501",
+    icon: House
   },
   {
     label: "Email",
     value: "studentlife.cdsimer@dsu.edu.in",
-    href: "mailto:studentlife.cdsimer@dsu.edu.in"
+    href: "mailto:studentlife.cdsimer@dsu.edu.in",
+    icon: Mail
   }
 ] satisfies ContactDetail[];
 
@@ -290,6 +294,7 @@ interface ContactDetail {
   label: string;
   value: string;
   href: string;
+  icon: LucideIcon;
 }
 
 function StatCard({ stat }: { stat: Stat }) {
@@ -618,7 +623,7 @@ export default function CDSIMERLife() {
                       href={item.href}
                       className="inline-flex items-center gap-2 rounded-full border border-brand-magenta/30 px-4 py-2 text-sm text-brand-magenta transition hover:bg-brand-magenta/10"
                     >
-                      <PhoneIcon label={item.label} />
+                      <item.icon className="h-4 w-4" />
                       <span className="font-medium font-gilroy">{item.label}:</span>
                       <span className="font-graphik">{item.value}</span>
                     </a>
@@ -641,16 +646,4 @@ export default function CDSIMERLife() {
       </footer>
     </div>
   );
-}
-
-function PhoneIcon({ label }: { label: string }) {
-  let IconComponent: LucideIcon = Users;
-
-  if (label.includes("Hostel")) {
-    IconComponent = House;
-  } else if (label.includes("Email")) {
-    IconComponent = BadgeCheck;
-  }
-
-  return <IconComponent className="h-4 w-4" />;
 }
