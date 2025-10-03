@@ -218,9 +218,33 @@ export default function Index() {
                   <div className="w-12 h-12 rounded-2xl bg-brand-magenta/10 flex items-center justify-center mb-4 group-hover:bg-brand-magenta/20 transition-colors">
                     <school.icon className="w-6 h-6 text-brand-magenta group-hover:scale-110 transition-transform" />
                   </div>
-                  <CardTitle className="headline-4 group-hover:text-brand-magenta transition-colors">
-                    {school.title}
-                  </CardTitle>
+                  {school.href ? (
+                    school.href.startsWith("http") ? (
+                      <a
+                        href={school.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="block rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-magenta/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                      >
+                        <CardTitle className="headline-4 group-hover:text-brand-magenta transition-colors">
+                          {school.title}
+                        </CardTitle>
+                      </a>
+                    ) : (
+                      <Link
+                        to={school.href}
+                        className="block rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-magenta/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                      >
+                        <CardTitle className="headline-4 group-hover:text-brand-magenta transition-colors">
+                          {school.title}
+                        </CardTitle>
+                      </Link>
+                    )
+                  ) : (
+                    <CardTitle className="headline-4 group-hover:text-brand-magenta transition-colors">
+                      {school.title}
+                    </CardTitle>
+                  )}
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <CardDescription className="text-muted-foreground leading-relaxed font-graphik">
