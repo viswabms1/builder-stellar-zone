@@ -26,6 +26,9 @@ function App() {
             <Route path="/" element={<Index />} />
             <Route path="/academics" element={<Academics />} />
             <Route path="/academics/engineering" element={<Engineering />} />
+            <Route path="/academics/computer-applications" element={<ComputerApplications />} />
+            <Route path="/academics/law" element={<Law />} />
+            <Route path="/academics/basic-applied-sciences" element={<AppliedSciences />} />
             <Route path="/academics/engineering/computer-science" element={<DeptCSE />} />
             <Route path="/academics/engineering/computer-science/faculty" element={<FacultyCSE />} />
             <Route path="/academics/engineering/computer-science/faculty/rohit-kumar-singh" element={<FacultyRohitKumarSingh />} />
