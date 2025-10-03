@@ -21,7 +21,9 @@ import {
   Palette,
   Film,
   Microscope,
-  Laptop
+  Laptop,
+  PenSquare,
+  Presentation
 } from "lucide-react";
 
 export default function Academics() {
