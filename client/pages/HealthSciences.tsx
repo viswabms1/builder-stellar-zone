@@ -12,7 +12,7 @@ import {
   Pill,
   Stethoscope,
   Syringe,
-  UsersRound
+  Users
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
