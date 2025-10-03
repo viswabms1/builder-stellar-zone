@@ -490,6 +490,16 @@ export default function CDSIMERLife() {
                   Explore Hospital Services
                 </Button>
               </Link>
+              <a
+                href="https://myposhtell.com"
+                target="_blank"
+                rel="noreferrer"
+                className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              >
+                <Button className="bg-orange-500 text-white hover:bg-orange-500/90">
+                  Hostel Portal
+                </Button>
+              </a>
             </div>
           </div>
         </div>
