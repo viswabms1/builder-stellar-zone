@@ -162,8 +162,9 @@ export default function Academics() {
                 title: "Design & Digital Trans Media",
                 image: "https://images.unsplash.com/photo-1529101091764-c3526daf38fe?q=80&w=1600&auto=format&fit=crop",
                 description: "Design and digital media programs spanning UX/UI, graphics, animation, and storytelling for modern platforms.",
-                programs: ["Animation", "UX/UI", "Graphic Design", "Digital Media"],
-                color: "brand-magenta"
+                programs: ["B.Design", "UX/UI", "Animation & VFX", "Game Design"],
+                color: "brand-magenta",
+                href: "/academics/design/bdesign"
               },
               {
                 icon: Microscope,
