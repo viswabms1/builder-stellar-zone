@@ -5,7 +5,7 @@ import {
   BadgeCheck,
   CalendarDays,
   ChevronRight,
-  ClipboardHeart,
+  ClipboardCheck,
   GraduationCap,
   HeartPulse,
   Microscope,
