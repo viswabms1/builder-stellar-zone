@@ -202,6 +202,12 @@ const GALLERY_IMAGES = [
 
 const RESOURCE_LINKS = [
   {
+    title: "Hostel Portal",
+    description: "Manage accommodation preferences, payments and services through the MyPoshtell platform.",
+    href: "https://myposhtell.com",
+    badge: "Residences"
+  },
+  {
     title: "Hostel Handbook",
     description: "Guidelines, schedules and amenities for residents across CDSIMER hostels.",
     href: "https://cdsimer.edu.in/images/hospital/CDSIMER-Hostel-Guidelines.pdf",
