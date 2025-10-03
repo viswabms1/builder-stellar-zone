@@ -223,7 +223,8 @@ export default function CampusLife() {
                 icon: Building,
                 title: "Modern Hostels",
                 description: "Comfortable accommodation with all amenities",
-                features: ["AC Rooms", "WiFi", "Study Areas", "Recreation Rooms"]
+                features: ["AC Rooms", "WiFi", "Study Areas", "Recreation Rooms"],
+                href: "https://myposhtell.com"
               },
               {
                 icon: Utensils,
@@ -267,20 +268,42 @@ export default function CampusLife() {
                 description: "Spaces for relaxation and social interaction",
                 features: ["Student Lounges", "Game Rooms", "Entertainment", "Social Spaces"]
               },
-            ].map((facility, index) => (
-              <Card key={index} className="text-center p-6 bg-card/30 backdrop-blur-sm border border-border/30 hover:border-orange-500/30 transition-all duration-300 group">
-                <facility.icon className="w-12 h-12 text-orange-500 mx-auto mb-4 group-hover:scale-110 transition-transform" />
-                <h3 className="text-lg font-bold mb-3 group-hover:text-orange-500 transition-colors">{facility.title}</h3>
-                <p className="text-sm text-muted-foreground mb-4 leading-relaxed">{facility.description}</p>
-                <div className="space-y-1">
-                  {facility.features.map((feature, idx) => (
-                    <div key={idx} className="text-xs text-muted-foreground">
-                      • {feature}
-                    </div>
-                  ))}
+            ].map((facility) => {
+              const content = (
+                <Card className="text-center p-6 bg-card/30 backdrop-blur-sm border border-border/30 hover:border-orange-500/30 transition-all duration-300 group">
+                  <facility.icon className="w-12 h-12 text-orange-500 mx-auto mb-4 group-hover:scale-110 transition-transform" />
+                  <h3 className="text-lg font-bold mb-3 group-hover:text-orange-500 transition-colors">{facility.title}</h3>
+                  <p className="text-sm text-muted-foreground mb-4 leading-relaxed">{facility.description}</p>
+                  <div className="space-y-1">
+                    {facility.features.map((feature) => (
+                      <div key={feature} className="text-xs text-muted-foreground">
+                        • {feature}
+                      </div>
+                    ))}
+                  </div>
+                </Card>
+              );
+
+              if (facility.href) {
+                return (
+                  <a
+                    key={facility.title}
+                    href={facility.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                  >
+                    {content}
+                  </a>
+                );
+              }
+
+              return (
+                <div key={facility.title} className="contents">
+                  {content}
                 </div>
-              </Card>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
