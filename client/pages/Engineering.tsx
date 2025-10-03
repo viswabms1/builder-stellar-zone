@@ -352,7 +352,7 @@ export default function Engineering() {
               Science & Technology based education that develops high-caliber engineers for industry, startups and scientific organisations.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <a href="https://dsu.edu.in/virtual-tour/#SchoolOfEngineering_03,-1.3,1.1,75,4" target="_blank" rel="noreferrer">
+              <a href="https://dsu.edu.in/virtual-tour/" target="_blank" rel="noreferrer">
                 <Button className="bg-brand-gradient text-white">Virtual Tour</Button>
               </a>
               <a href="https://www.dsu.edu.in/engineering/programs-engineering" target="_blank" rel="noreferrer">
@@ -667,7 +667,7 @@ export default function Engineering() {
                   <GraduationCap className="ml-2 h-4 w-4" />
                 </Button>
               </RouterLink>
-              <a href="https://dsu.edu.in/virtual-tour/#SchoolOfEngineering_03,-1.3,1.1,75,4" target="_blank" rel="noreferrer">
+              <a href="https://dsu.edu.in/virtual-tour/" target="_blank" rel="noreferrer">
                 <Button variant="outline" className="border-brand-magenta/40 hover:bg-brand-magenta/10">
                   Virtual Tour
                 </Button>
