@@ -163,7 +163,7 @@ const CENTRES: Centre[] = [
   {
     title: "Legal Aid & Outreach Clinic",
     description: "Serve communities, run legal literacy drives and collaborate with NGOs for social justice projects.",
-    icon: Balance,
+    icon: Scale,
     href: "https://www.dsu.edu.in/law/cells-committees-law"
   },
   {
