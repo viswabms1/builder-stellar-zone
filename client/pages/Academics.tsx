@@ -153,14 +153,6 @@ export default function Academics() {
                 href: "/academics/health-sciences"
               },
               {
-                icon: Palette,
-                title: "Arts, Design and Humanities",
-                image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=1600&auto=format&fit=crop",
-                description: "Creative and humanistic disciplines that nurture expression, critical thought, and cultural literacy.",
-                programs: ["Psychology", "English", "Economics", "Sociology"],
-                color: "brand-orange"
-              },
-              {
                 icon: PenSquare,
                 title: "Journalism & Mass Communication",
                 image: "https://images.unsplash.com/photo-1525182008055-f88b95ff7980?q=80&w=1600&auto=format&fit=crop",
