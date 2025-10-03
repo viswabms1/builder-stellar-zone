@@ -133,7 +133,8 @@ export default function Index() {
                 description: "Cutting-edge engineering education with practical immersion, industry mentorship, and future-ready specializations.",
                 programs: ["B.Tech CSE", "B.Tech Mechanical", "B.Tech ECE", "B.Tech Civil"],
                 color: "brand-orange",
-                delay: "0s"
+                delay: "0s",
+                href: "/academics/engineering"
               },
               {
                 icon: Cpu,
@@ -141,7 +142,8 @@ export default function Index() {
                 description: "Build software careers with strong foundations in programming, data, cloud, and modern application development.",
                 programs: ["BCA", "MCA", "Data Science", "Cloud Computing"],
                 color: "brand-magenta",
-                delay: "0.1s"
+                delay: "0.1s",
+                href: "/academics/computer-applications"
               },
               {
                 icon: Gavel,
@@ -149,7 +151,8 @@ export default function Index() {
                 description: "Comprehensive legal education blending theory, practice, moot courts, internships, and research opportunities.",
                 programs: ["BA LLB", "BBA LLB", "LLB", "LLM"],
                 color: "brand-blue",
-                delay: "0.2s"
+                delay: "0.2s",
+                href: "/academics/law"
               },
               {
                 icon: Briefcase,
@@ -157,7 +160,8 @@ export default function Index() {
                 description: "Business education that merges core management with analytics, entrepreneurship, and industry projects.",
                 programs: ["B.Com", "BBA", "MBA", "Finance & Marketing"],
                 color: "brand-orange",
-                delay: "0.3s"
+                delay: "0.3s",
+                href: "/academics/management-studies"
               },
               {
                 icon: FlaskConical,
@@ -165,7 +169,8 @@ export default function Index() {
                 description: "Foundational and interdisciplinary sciences with strong lab exposure and research-driven learning.",
                 programs: ["Physics", "Chemistry", "Mathematics", "Biotechnology"],
                 color: "brand-magenta",
-                delay: "0.4s"
+                delay: "0.4s",
+                href: "/academics/basic-applied-sciences"
               },
               {
                 icon: Stethoscope,
@@ -173,15 +178,8 @@ export default function Index() {
                 description: "Health professions education with clinical immersion, simulation labs, and strong patient-care focus.",
                 programs: ["Pharmacy", "Physiotherapy", "Nursing", "Allied Health"],
                 color: "brand-blue",
-                delay: "0.5s"
-              },
-              {
-                icon: Palette,
-                title: "Arts, Design and Humanities",
-                description: "Creative and humanistic disciplines that nurture expression, critical thought, and cultural literacy.",
-                programs: ["Psychology", "English", "Economics", "Sociology"],
-                color: "brand-orange",
-                delay: "0.6s"
+                delay: "0.5s",
+                href: "/academics/health-sciences"
               },
               {
                 icon: Film,
@@ -189,7 +187,8 @@ export default function Index() {
                 description: "Design and digital media programs spanning UX/UI, graphics, animation, and storytelling for modern platforms.",
                 programs: ["Animation", "UX/UI", "Graphic Design", "Digital Media"],
                 color: "brand-magenta",
-                delay: "0.7s"
+                delay: "0.7s",
+                href: "/academics/design/bdesign"
               },
               {
                 icon: Microscope,
@@ -197,7 +196,8 @@ export default function Index() {
                 description: "Advanced medical education and translational research with a focus on innovation and community impact.",
                 programs: ["MBBS", "MD/MS", "Biomedical Research", "Public Health"],
                 color: "brand-blue",
-                delay: "0.8s"
+                delay: "0.8s",
+                href: "/academics/medical-education-research"
               },
               {
                 icon: Globe,
@@ -205,7 +205,8 @@ export default function Index() {
                 description: "Flexible, career-aligned online degrees with live sessions, projects, and placement assistance.",
                 programs: ["BBA", "BCA", "B.Com"],
                 color: "brand-orange",
-                delay: "0.9s"
+                delay: "0.9s",
+                href: "https://www.dsu.edu.in/online-degree-programs"
               },
             ].map((school, index) => (
               <Card
