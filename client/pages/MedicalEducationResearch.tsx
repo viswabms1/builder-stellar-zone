@@ -80,9 +80,8 @@ const QUICK_LINKS: QuickLink[] = [
   {
     title: "Campus Life",
     description: "Experience holistic living, clubs and wellness across the 140-acre medical campus.",
-    href: "https://cdsimer.edu.in/life-at-cdsimer",
-    icon: Sparkle,
-    external: true
+    href: "/academics/health-sciences/cdsimer/life",
+    icon: Sparkle
   },
   {
     title: "Events & Outreach",
@@ -156,7 +155,7 @@ const PILLARS: Pillar[] = [
     title: "Life at CDSIMER",
     description: "Holistic campus life blending academic rigour, wellness, culture and leadership programmes.",
     icon: Sparkle,
-    href: "https://cdsimer.edu.in/life-at-cdsimer"
+    href: "/academics/health-sciences/cdsimer/life"
   }
 ];
 
