@@ -102,23 +102,26 @@ export default function Academics() {
                 image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=1600&auto=format&fit=crop",
                 description: "Cutting-edge engineering education with practical immersion, industry mentorship, and future-ready specializations.",
                 programs: ["B.Tech CSE", "B.Tech Mechanical", "B.Tech ECE", "B.Tech Civil"],
-                color: "brand-orange"
+                color: "brand-orange",
+                href: "/academics/engineering"
               },
               {
                 icon: Cpu,
                 title: "Computer Applications",
                 image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1600&auto=format&fit=crop",
                 description: "Build software careers with strong foundations in programming, data, cloud, and modern application development.",
-                programs: ["BCA", "MCA", "Data Science", "Cloud Computing"],
-                color: "brand-magenta"
+                programs: ["BCA", "B.Sc Data Science", "MCA", "M.Sc Data Science"],
+                color: "brand-magenta",
+                href: "/academics/computer-applications"
               },
               {
                 icon: Gavel,
                 title: "School of Law",
                 image: "https://images.unsplash.com/photo-1575378839152-38d99f1fbfde?q=80&w=1600&auto=format&fit=crop",
                 description: "Comprehensive legal education blending theory, practice, moot courts, internships, and research opportunities.",
-                programs: ["BA LLB", "BBA LLB", "LLB", "LLM"],
-                color: "brand-blue"
+                programs: ["B.B.A., LL.B.", "B.A., LL.B.", "LL.B.", "Research Centres"],
+                color: "brand-blue",
+                href: "/academics/law"
               },
               {
                 icon: Briefcase,
@@ -133,8 +136,9 @@ export default function Academics() {
                 title: "Basic & Applied Sciences",
                 image: "https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?q=80&w=1600&auto=format&fit=crop",
                 description: "Foundational and interdisciplinary sciences with strong lab exposure and research-driven learning.",
-                programs: ["Physics", "Chemistry", "Mathematics", "Biotechnology"],
-                color: "brand-magenta"
+                programs: ["B.Sc Biological Sciences", "B.Sc Data Science", "M.Sc Biological Sciences", "M.Sc Data Science"],
+                color: "brand-magenta",
+                href: "/academics/basic-applied-sciences"
               },
               {
                 icon: Stethoscope,
