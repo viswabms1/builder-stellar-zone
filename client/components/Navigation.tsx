@@ -132,6 +132,7 @@ export default function Navigation() {
                     href={item.href}
                     target="_blank"
                     rel="noreferrer"
+                    onClick={() => setIsOpen(false)}
                     className={sharedClasses}
                   >
                     <item.icon className="w-4 h-4" />
