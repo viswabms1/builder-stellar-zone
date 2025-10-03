@@ -340,7 +340,7 @@ function LifestyleFeatureCard({ feature }: { feature: LifestyleFeature }) {
           {feature.description}
         </CardDescription>
       </CardHeader>
-      <CardContent className="pt-0">
+      <CardContent className="pt-0 space-y-4">
         <ul className="space-y-3 text-sm text-muted-foreground font-graphik">
           {feature.points.map((point) => (
             <li key={point} className="flex items-start gap-2">
@@ -349,6 +349,17 @@ function LifestyleFeatureCard({ feature }: { feature: LifestyleFeature }) {
             </li>
           ))}
         </ul>
+        {feature.ctaHref && feature.ctaLabel && (
+          <a
+            href={feature.ctaHref}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 text-sm font-medium text-brand-magenta"
+          >
+            {feature.ctaLabel}
+            <ChevronRight className="h-4 w-4" />
+          </a>
+        )}
       </CardContent>
     </Card>
   );
