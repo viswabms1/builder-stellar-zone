@@ -206,9 +206,20 @@ export default function Academics() {
                   </div>
                 </div>
                 <CardHeader>
-                  <CardTitle className="text-xl font-bold group-hover:text-brand-magenta transition-colors leading-tight">
-                    {school.title}
-                  </CardTitle>
+                  {school.href ? (
+                    <Link
+                      to={school.href}
+                      className="block rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-magenta/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                    >
+                      <CardTitle className="text-xl font-bold group-hover:text-brand-magenta transition-colors leading-tight">
+                        {school.title}
+                      </CardTitle>
+                    </Link>
+                  ) : (
+                    <CardTitle className="text-xl font-bold group-hover:text-brand-magenta transition-colors leading-tight">
+                      {school.title}
+                    </CardTitle>
+                  )}
                 </CardHeader>
                 <CardContent className="space-y-6">
                   <CardDescription className="text-muted-foreground leading-relaxed">
