@@ -63,10 +63,17 @@ export default function CampusLife() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-            <Button size="lg" className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-red-600 hover:to-orange-500 text-white px-8 py-6 text-lg font-semibold rounded-2xl">
-              Virtual Campus Tour
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </Button>
+            <a
+              href="https://dsu.edu.in/virtual-tour/"
+              target="_blank"
+              rel="noreferrer"
+              className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            >
+              <Button size="lg" className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-red-600 hover:to-orange-500 text-white px-8 py-6 text-lg font-semibold rounded-2xl">
+                Virtual Campus Tour
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+            </a>
             <Button variant="outline" size="lg" className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white px-8 py-6 text-lg font-semibold rounded-2xl">
               Download Campus Guide
             </Button>
