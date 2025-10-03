@@ -63,7 +63,9 @@ const LIFESTYLE_FEATURES = [
       "Multi-cuisine dining halls with hygienic kitchens, RO water and dietician oversight",
       "Common lounges, reading rooms and recreation corners that encourage peer learning"
     ],
-    icon: House
+    icon: House,
+    ctaLabel: "Visit Hostel Portal",
+    ctaHref: "https://myposhtell.com"
   },
   {
     title: "Campus Dining",
@@ -87,7 +89,9 @@ const LIFESTYLE_FEATURES = [
       "Guest suites for visiting parents and guardians with prior booking",
       "Digital access control and CCTV coverage for holistic safety"
     ],
-    icon: ShieldCheck
+    icon: ShieldCheck,
+    ctaLabel: "Access Hostel Services",
+    ctaHref: "https://myposhtell.com"
   }
 ] satisfies LifestyleFeature[];
 
