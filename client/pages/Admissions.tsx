@@ -155,12 +155,28 @@ export default function Admissions() {
                   </CardDescription>
                   
                   <div className="space-y-2">
-                    {process.details.map((detail, idx) => (
-                      <div key={idx} className="flex items-center text-sm text-muted-foreground">
-                        <CheckCircle className="w-3 h-3 text-green-500 mr-2 flex-shrink-0" />
-                        {detail}
-                      </div>
-                    ))}
+                    {process.details.map((detail, idx) => {
+                      const key = `${process.title}-${idx}-${detail}`;
+                      const isHostelDetail = typeof detail === "string" && detail.toLowerCase().includes("hostel");
+
+                      return (
+                        <div key={key} className="flex items-center text-sm text-muted-foreground">
+                          <CheckCircle className="w-3 h-3 text-green-500 mr-2 flex-shrink-0" />
+                          {isHostelDetail ? (
+                            <a
+                              href="https://myposhtell.com"
+                              target="_blank"
+                              rel="noreferrer"
+                              className="text-brand-orange hover:underline"
+                            >
+                              {detail}
+                            </a>
+                          ) : (
+                            detail
+                          )}
+                        </div>
+                      );
+                    })}
                   </div>
                 </CardContent>
               </Card>
