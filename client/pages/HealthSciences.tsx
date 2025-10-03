@@ -74,9 +74,8 @@ const QUICK_LINKS: QuickLink[] = [
   {
     title: "Teaching Hospitals",
     description: "Connect with clinical training at Sagar Hospitals and CDSIMER campus.",
-    href: "https://cdsimer.edu.in",
-    icon: Stethoscope,
-    external: true
+    href: "/academics/health-sciences/cdsimer/hospital",
+    icon: Stethoscope
   },
   {
     title: "Calendar & Notices",
@@ -222,7 +221,7 @@ const RESOURCES: Resource[] = [
   {
     title: "Clinical Partner Spotlight",
     description: "Experience teaching hospitals through CDSIMER's smart campus and simulation-enabled hospital.",
-    href: "https://cdsimer.edu.in",
+    href: "/academics/health-sciences/cdsimer/hospital",
     badge: "Clinical"
   },
   {
@@ -262,6 +261,17 @@ function QuickLinkCard({ link }: { link: QuickLink }) {
       >
         {content}
       </a>
+    );
+  }
+
+  if (link.href.startsWith("/")) {
+    return (
+      <Link
+        to={link.href}
+        className="rounded-3xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-magenta focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+      >
+        {content}
+      </Link>
     );
   }
 
@@ -366,15 +376,25 @@ function ResourceCard({ resource }: { resource: Resource }) {
       </CardHeader>
       <CardContent className="space-y-5 text-sm text-muted-foreground font-graphik">
         <p>{resource.description}</p>
-        <a
-          href={resource.href}
-          target="_blank"
-          rel="noreferrer"
-          className="inline-flex items-center gap-2 text-sm font-medium text-brand-magenta"
-        >
-          View resource
-          <ChevronRight className="h-4 w-4" />
-        </a>
+        {resource.href.startsWith("/") ? (
+          <Link
+            to={resource.href}
+            className="inline-flex items-center gap-2 text-sm font-medium text-brand-magenta"
+          >
+            View resource
+            <ChevronRight className="h-4 w-4" />
+          </Link>
+        ) : (
+          <a
+            href={resource.href}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 text-sm font-medium text-brand-magenta"
+          >
+            View resource
+            <ChevronRight className="h-4 w-4" />
+          </a>
+        )}
       </CardContent>
     </Card>
   );
