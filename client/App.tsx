@@ -35,6 +35,8 @@ function App() {
             <Route path="/academics/computer-applications" element={<ComputerApplications />} />
             <Route path="/academics/law" element={<Law />} />
             <Route path="/academics/management-studies" element={<ManagementStudies />} />
+            <Route path="/academics/health-sciences" element={<HealthSciences />} />
+            <Route path="/academics/health-sciences/cdsimer" element={<CDSIMER />} />
             <Route path="/academics/cee" element={<CEE />} />
             <Route path="/academics/journalism-mass-communication" element={<JournalismMassComm />} />
             <Route path="/academics/design/bdesign" element={<BDesignOverview />} />
