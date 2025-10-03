@@ -1,17 +1,18 @@
 import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { 
-  Menu, 
-  X, 
-  GraduationCap, 
-  Home, 
-  BookOpen, 
-  Users, 
+import {
+  Menu,
+  X,
+  GraduationCap,
+  Home,
+  BookOpen,
+  Users,
   Building,
   FlaskConical,
   Calendar,
-  ChevronDown 
+  ChevronDown
 } from "lucide-react";
 import { useState } from "react";
 
@@ -26,6 +27,12 @@ export default function Navigation() {
     { name: "Campus Life", href: "/campus-life", icon: Building },
     { name: "Research", href: "/research", icon: FlaskConical },
     { name: "About", href: "/about", icon: Users },
+    {
+      name: "Public Self Disclosure",
+      href: "https://www.dsu.edu.in/images/University/Public_Self_Disclosure_DSU.pdf",
+      icon: Calendar,
+      external: true
+    }
   ];
 
   const isActive = (href: string) => location.pathname === href;
@@ -46,23 +53,35 @@ export default function Navigation() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-1">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                to={item.href}
-                className={`flex items-center space-x-2 px-4 py-2 rounded-xl text-sm font-medium font-gilroy transition-all duration-200 group ${
-                  isActive(item.href)
-                    ? "bg-white/20 text-white font-semibold"
-                    : "text-white/80 hover:text-white hover:bg-white/10"
-                }`}
-              >
-                <item.icon className="w-4 h-4" />
-                <span>{item.name}</span>
-                {isActive(item.href) && (
-                  <div className="w-1 h-1 bg-white rounded-full" />
-                )}
-              </Link>
-            ))}
+            {navigation.map((item) => {
+              const active = !item.external && isActive(item.href);
+              const sharedClasses = `flex items-center space-x-2 px-4 py-2 rounded-xl text-sm font-medium font-gilroy transition-all duration-200 group ${
+                active ? "bg-white/20 text-white font-semibold" : "text-white/80 hover:text-white hover:bg-white/10"
+              }`;
+
+              if (item.external) {
+                return (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className={sharedClasses}
+                  >
+                    <item.icon className="w-4 h-4" />
+                    <span>{item.name}</span>
+                  </a>
+                );
+              }
+
+              return (
+                <Link key={item.name} to={item.href} className={sharedClasses}>
+                  <item.icon className="w-4 h-4" />
+                  <span>{item.name}</span>
+                  {active && <div className="w-1 h-1 bg-white rounded-full" />}
+                </Link>
+              );
+            })}
           </div>
 
           {/* Desktop Actions */}
@@ -100,21 +119,39 @@ export default function Navigation() {
       {isOpen && (
         <div className="md:hidden border-t border-orange-600/20 bg-gradient-to-r from-orange-500 to-red-600">
           <div className="px-6 py-4 space-y-3">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                to={item.href}
-                onClick={() => setIsOpen(false)}
-                className={`flex items-center space-x-3 px-4 py-3 rounded-xl text-sm font-medium font-gilroy transition-all duration-200 ${
-                  isActive(item.href)
-                    ? "bg-white/20 text-white font-semibold"
-                    : "text-white/80 hover:text-white hover:bg-white/10"
-                }`}
-              >
-                <item.icon className="w-4 h-4" />
-                <span>{item.name}</span>
-              </Link>
-            ))}
+            {navigation.map((item) => {
+              const active = !item.external && isActive(item.href);
+              const sharedClasses = `flex items-center space-x-3 px-4 py-3 rounded-xl text-sm font-medium font-gilroy transition-all duration-200 ${
+                active ? "bg-white/20 text-white font-semibold" : "text-white/80 hover:text-white hover:bg-white/10"
+              }`;
+
+              if (item.external) {
+                return (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className={sharedClasses}
+                  >
+                    <item.icon className="w-4 h-4" />
+                    <span>{item.name}</span>
+                  </a>
+                );
+              }
+
+              return (
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  onClick={() => setIsOpen(false)}
+                  className={sharedClasses}
+                >
+                  <item.icon className="w-4 h-4" />
+                  <span>{item.name}</span>
+                </Link>
+              );
+            })}
             <div className="pt-4 space-y-3 border-t border-white/20">
               <Button
                 variant="ghost"
