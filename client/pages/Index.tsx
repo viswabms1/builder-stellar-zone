@@ -244,18 +244,27 @@ export default function Index() {
                       ))}
                     </div>
                   </div>
-                  {school.title === "Engineering" ? (
-                    <Link to="/academics/engineering">
-                      <Button variant="ghost" size="sm" className="w-full justify-between group-hover:text-brand-magenta font-gilroy">
-                        Learn More
-                        <ChevronRight className="w-4 h-4" />
-                      </Button>
-                    </Link>
+                  {school.href ? (
+                    school.href.startsWith("http") ? (
+                      <a href={school.href} target="_blank" rel="noreferrer">
+                        <Button variant="ghost" size="sm" className="w-full justify-between group-hover:text-brand-magenta font-gilroy">
+                          Learn More
+                          <ChevronRight className="w-4 h-4" />
+                        </Button>
+                      </a>
+                    ) : (
+                      <Link to={school.href}>
+                        <Button variant="ghost" size="sm" className="w-full justify-between group-hover:text-brand-magenta font-gilroy">
+                          Learn More
+                          <ChevronRight className="w-4 h-4" />
+                        </Button>
+                      </Link>
+                    )
                   ) : (
-                      <Button variant="ghost" size="sm" className="w-full justify-between group-hover:text-brand-magenta font-gilroy">
-                        Learn More
-                        <ChevronRight className="w-4 h-4" />
-                      </Button>
+                    <Button variant="ghost" size="sm" className="w-full justify-between group-hover:text-brand-magenta font-gilroy">
+                      Learn More
+                      <ChevronRight className="w-4 h-4" />
+                    </Button>
                   )}
                 </CardContent>
               </Card>
