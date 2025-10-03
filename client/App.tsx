@@ -17,6 +17,7 @@ import JournalismMassComm from "./pages/JournalismMassComm";
 import BDesignOverview from "./pages/BDesignOverview";
 import CDSIMER from "./pages/CDSIMER";
 import CDSIMERHospital from "./pages/CDSIMERHospital";
+import CDSIMERLife from "./pages/CDSIMERLife";
 import DeptCSE from "./pages/DeptCSE";
 import FacultyCSE from "./pages/FacultyCSE";
 import FacultyProfile from "./pages/FacultyProfile";
@@ -41,6 +42,7 @@ function App() {
             <Route path="/academics/medical-education-research" element={<MedicalEducationResearch />} />
             <Route path="/academics/health-sciences/cdsimer" element={<CDSIMER />} />
             <Route path="/academics/health-sciences/cdsimer/hospital" element={<CDSIMERHospital />} />
+            <Route path="/academics/health-sciences/cdsimer/life" element={<CDSIMERLife />} />
             <Route path="/academics/cee" element={<CEE />} />
             <Route path="/academics/journalism-mass-communication" element={<JournalismMassComm />} />
             <Route path="/academics/design/bdesign" element={<BDesignOverview />} />
