@@ -9,14 +9,16 @@ import {
   CalendarDays,
   ChevronRight,
   Droplet,
+  FlaskConical,
   GraduationCap,
   HeartPulse,
+  Hospital,
+  Mail,
   MapPin,
   Phone,
   ShieldCheck,
   Stethoscope,
-  Syringe,
-  TestTubes
+  Syringe
 } from "lucide-react";
 
 import { AspectRatio } from "@/components/ui/aspect-ratio";
@@ -135,7 +137,7 @@ const SPECIALTY_SERVICES = [
       "Quality systems aligned with NABL benchmarks",
       "Research collaboration pipeline for translational discoveries"
     ],
-    icon: TestTubes
+    icon: FlaskConical
   }
 ] satisfies SpecialtyService[];
 
@@ -197,17 +199,20 @@ const CONTACT_INFO = [
   {
     label: "General Enquiry",
     value: "1800 425 9900",
-    href: "tel:18004259900"
+    href: "tel:18004259900",
+    icon: Phone
   },
   {
     label: "MBBS Admission",
     value: "+91 6366885501",
-    href: "tel:+916366885501"
+    href: "tel:+916366885501",
+    icon: Phone
   },
   {
     label: "Email",
     value: "admissions.cdsimer@dsu.edu.in",
-    href: "mailto:admissions.cdsimer@dsu.edu.in"
+    href: "mailto:admissions.cdsimer@dsu.edu.in",
+    icon: Mail
   }
 ] satisfies ContactDetail[];
 
@@ -251,6 +256,7 @@ interface ContactDetail {
   label: string;
   value: string;
   href: string;
+  icon: LucideIcon;
 }
 
 function StatCard({ stat }: { stat: Stat }) {
@@ -412,7 +418,7 @@ export default function CDSIMERHospital() {
                 href="https://cdsimer.edu.in/enquiry"
                 target="_blank"
                 rel="noreferrer"
-                className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brand-magenta"
+                className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background"
               >
                 <Button className="bg-brand-gradient text-white">Enquire Now</Button>
               </a>
@@ -420,7 +426,7 @@ export default function CDSIMERHospital() {
                 href="https://cdsimer.edu.in/images/Admission-Brochure.pdf"
                 target="_blank"
                 rel="noreferrer"
-                className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brand-magenta"
+                className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background"
               >
                 <Button variant="outline" className="border-white/40 bg-white/10 text-white hover:bg-white hover:text-background">
                   Download MBBS Brochure
@@ -556,7 +562,7 @@ export default function CDSIMERHospital() {
                         href={item.href}
                         className="inline-flex items-center gap-2 rounded-full border border-brand-magenta/30 px-4 py-2 text-sm text-brand-magenta transition hover:bg-brand-magenta/10"
                       >
-                        <Phone className="h-4 w-4" />
+                        <item.icon className="h-4 w-4" />
                         <span className="font-medium font-gilroy">{item.label}:</span>
                         <span className="font-graphik">{item.value}</span>
                       </a>
