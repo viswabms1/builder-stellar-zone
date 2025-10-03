@@ -184,7 +184,8 @@ export default function Academics() {
                 image: "https://images.unsplash.com/photo-1581093588401-16f8c4387b65?q=80&w=1600&auto=format&fit=crop",
                 description: "Advanced medical education and translational research with a focus on innovation and community impact.",
                 programs: ["MBBS", "MD/MS", "Biomedical Research", "Public Health"],
-                color: "brand-blue"
+                color: "brand-blue",
+                href: "/academics/medical-education-research"
               },
               {
                 icon: Presentation,
