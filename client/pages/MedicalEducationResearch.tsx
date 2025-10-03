@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import type { LucideIcon } from "lucide-react";
 import {
   Building2,
@@ -60,7 +61,7 @@ const QUICK_LINKS: QuickLink[] = [
   {
     title: "Teaching Hospital",
     description: "Discover tertiary care specialities, simulation suites and patient-centric services.",
-    href: "#pillars",
+    href: "/academics/health-sciences/cdsimer/hospital",
     icon: Hospital
   },
   {
@@ -132,7 +133,7 @@ const PILLARS: Pillar[] = [
     title: "Teaching Hospital",
     description: "Tertiary care, multi-speciality hospital enabling immersive clinical rotations and residencies.",
     icon: Hospital,
-    href: "https://cdsimer.edu.in/hospital"
+    href: "/academics/health-sciences/cdsimer/hospital"
   },
   {
     title: "Research & Innovation",
@@ -219,6 +220,17 @@ function QuickLinkCard({ link }: { link: QuickLink }) {
     );
   }
 
+  if (link.href.startsWith("/")) {
+    return (
+      <Link
+        to={link.href}
+        className="rounded-3xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-magenta focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+      >
+        {content}
+      </Link>
+    );
+  }
+
   return (
     <a
       href={link.href}
@@ -275,8 +287,21 @@ function PillarCard({ pillar }: { pillar: Pillar }) {
     return card;
   }
 
+  if (pillar.href.startsWith("/")) {
+    return (
+      <Link to={pillar.href} className="block h-full transform transition-all duration-500 hover:-translate-y-1">
+        {card}
+      </Link>
+    );
+  }
+
   return (
-    <a href={pillar.href} target="_blank" rel="noreferrer" className="block h-full transform transition-all duration-500 hover:-translate-y-1">
+    <a
+      href={pillar.href}
+      target="_blank"
+      rel="noreferrer"
+      className="block h-full transform transition-all duration-500 hover:-translate-y-1"
+    >
       {card}
     </a>
   );
