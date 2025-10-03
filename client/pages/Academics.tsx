@@ -184,6 +184,15 @@ export default function Academics() {
                 color: "brand-blue"
               },
               {
+                icon: Presentation,
+                title: "Center for Executive Education",
+                image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1600&auto=format&fit=crop",
+                description: "Executive MBA and leadership programmes tailored for working professionals with CXO mentorship.",
+                programs: ["Executive MBA", "Speaker Series", "Leadership Clinics", "Industry Associations"],
+                color: "brand-blue",
+                href: "/academics/cee"
+              },
+              {
                 icon: Globe,
                 title: "Online Degree Programs",
                 image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1600&auto=format&fit=crop",
