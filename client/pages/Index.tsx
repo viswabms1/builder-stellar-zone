@@ -82,13 +82,20 @@ export default function Index() {
                 Apply Now
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button 
-                variant="outline" 
-                size="lg"
-                className="border-2 border-white/20 text-white hover:bg-white hover:text-background px-8 py-6 text-lg font-semibold font-gilroy rounded-2xl transition-all duration-300 backdrop-blur-sm"
+              <a
+                href="https://dsu.edu.in/virtual-tour/"
+                target="_blank"
+                rel="noreferrer"
+                className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background"
               >
-                Virtual Tour
-              </Button>
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="border-2 border-white/20 text-white hover:bg-white hover:text-background px-8 py-6 text-lg font-semibold font-gilroy rounded-2xl transition-all duration-300 backdrop-blur-sm"
+                >
+                  Virtual Tour
+                </Button>
+              </a>
             </div>
             
             {/* Quick Stats */}
