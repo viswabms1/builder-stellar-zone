@@ -3,16 +3,15 @@ import type { LucideIcon } from "lucide-react";
 import {
   Award,
   BadgeCheck,
-  BarChart,
   Building,
   CalendarDays,
   ChevronRight,
   DollarSign,
   GraduationCap,
   Layers,
-  LineChart,
   Network,
-  Sparkles,
+  Star,
+  TrendingUp,
   Users
 } from "lucide-react";
 
@@ -63,7 +62,7 @@ const QUICK_LINKS: QuickLink[] = [
     title: "USP",
     description: "Recalibrate, collaborate and elevate with SCMS differentiators.",
     href: "#usp",
-    icon: Sparkles
+    icon: Star
   },
   {
     title: "Programs",
@@ -111,13 +110,13 @@ const USP_HIGHLIGHTS: Highlight[] = [
     title: "Industry-Embedded Curriculum",
     description: "Experiential projects, simulations and capstone immersions that align coursework with management consulting and startup realities.",
     image: "https://images.unsplash.com/photo-1521790362495-1c9c6e5bff09?q=80&w=1600&auto=format&fit=crop",
-    icon: BarChart
+    icon: TrendingUp
   },
   {
     title: "Global & Digital Focus",
     description: "Live business caseathons, analytics sprints and global exchange sessions nurture agile leadership mindsets.",
     image: "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1600&auto=format&fit=crop",
-    icon: LineChart
+    icon: Star
   },
   {
     title: "Innovation Ecosystem",
@@ -353,7 +352,7 @@ export default function ManagementStudies() {
         <div className="absolute inset-0 flex items-center">
           <div className="mx-auto max-w-7xl px-6">
             <div className="mb-6 inline-flex items-center rounded-full border border-brand-magenta/20 bg-brand-magenta/10 px-4 py-2">
-              <BarChart className="mr-2 h-4 w-4 text-brand-magenta" />
+              <TrendingUp className="mr-2 h-4 w-4 text-brand-magenta" />
               <span className="text-sm font-medium text-brand-magenta font-gilroy">School of Commerce & Management Studies</span>
             </div>
             <h1 className="mb-4 font-gilroy text-4xl leading-tight text-white md:text-6xl">Recalibrate. Collaborate. Elevate.</h1>
