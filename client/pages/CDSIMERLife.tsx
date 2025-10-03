@@ -672,6 +672,14 @@ export default function CDSIMERLife() {
                 <Link to="/academics/health-sciences/cdsimer/hospital" className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-magenta">
                   <Button className="bg-brand-gradient text-white">Explore Hospital Services</Button>
                 </Link>
+                <a
+                  href="https://myposhtell.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-magenta"
+                >
+                  <Button className="bg-orange-500 text-white hover:bg-orange-500/90">Hostel Portal</Button>
+                </a>
               </div>
             </CardContent>
           </Card>
