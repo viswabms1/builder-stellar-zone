@@ -12,7 +12,7 @@ import {
   Layers,
   Mic,
   PenSquare,
-  Sparkles,
+  Star,
   Users
 } from "lucide-react";
 
@@ -114,7 +114,7 @@ const USP_HIGHLIGHTS: Highlight[] = [
     title: "Ethics & Emerging Media",
     description: "Curriculum blends ethical storytelling with new media literacy across podcasts, digital and social formats.",
     image: "https://images.unsplash.com/photo-1525182008055-f88b95ff7980?q=80&w=1600&auto=format&fit=crop",
-    icon: Sparkles
+    icon: Star
   },
   {
     title: "Industry Immersion",
