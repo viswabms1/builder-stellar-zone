@@ -95,7 +95,7 @@ const QUICK_LINKS: QuickLink[] = [
     title: "Admissions Support",
     description: "Reach the School office for counselling and guidance.",
     href: "mailto:admissions@dsu.edu.in",
-    icon: UsersRound,
+    icon: Users,
     external: true
   }
 ];
