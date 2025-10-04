@@ -76,13 +76,28 @@ export default function Index() {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-16">
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 className="bg-brand-gradient hover:opacity-90 text-white px-8 py-6 text-lg font-semibold font-gilroy rounded-2xl shadow-lg hover:shadow-brand-magenta/25 transition-all duration-300 group"
               >
                 Apply Now
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
+              <a
+                href="https://ums.mydsi.org/Login.aspx/DSU"
+                target="_blank"
+                rel="noreferrer"
+                className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              >
+                <Button
+                  variant="secondary"
+                  size="lg"
+                  className="bg-white/90 text-brand-magenta hover:bg-white text-lg font-semibold font-gilroy rounded-2xl transition-all duration-300 backdrop-blur-sm"
+                >
+                  <Laptop className="w-5 h-5 mr-2" />
+                  Student Portal
+                </Button>
+              </a>
               <a
                 href="https://dsu.edu.in/virtual-tour/"
                 target="_blank"
