@@ -612,7 +612,3 @@ function ContactSection() {
     </section>
   );
 }
-
-function cnBadge(className?: string) {
-  return cn("rounded-xl px-4 py-2 text-sm", className);
-}
