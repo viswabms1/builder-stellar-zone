@@ -10,7 +10,7 @@ import {
   Building,
   FlaskConical,
   Calendar,
-  CalendarClock
+  CalendarClock,
 } from "lucide-react";
 import { useState } from "react";
 
@@ -30,8 +30,8 @@ export default function Navigation() {
       name: "Public Self Disclosure",
       href: "https://www.dsu.edu.in/images/University/Public_Self_Disclosure_DSU.pdf",
       icon: Calendar,
-      external: true
-    }
+      external: true,
+    },
   ];
 
   const isActive = (href: string) => location.pathname === href;
@@ -41,12 +41,16 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-20">
           {/* Official DSU Logo */}
-          <Link to="/" className="flex items-center group" style={{ minWidth: '128px', minHeight: '35px' }}>
+          <Link
+            to="/"
+            className="flex items-center group"
+            style={{ minWidth: "128px", minHeight: "35px" }}
+          >
             <img
               src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F7780ec15004a435f8de3f5f98762eed4?format=webp&width=800"
               alt="Dayananda Sagar University Logo"
               className="h-16 w-auto object-contain group-hover:scale-105 transition-all duration-300"
-              style={{ minHeight: '35px' }}
+              style={{ minHeight: "35px" }}
             />
           </Link>
 
@@ -55,7 +59,9 @@ export default function Navigation() {
             {navigation.map((item) => {
               const active = !item.external && isActive(item.href);
               const sharedClasses = `flex items-center space-x-2 px-4 py-2 rounded-xl text-sm font-medium font-gilroy transition-all duration-200 group ${
-                active ? "bg-white/20 text-white font-semibold" : "text-white/80 hover:text-white hover:bg-white/10"
+                active
+                  ? "bg-white/20 text-white font-semibold"
+                  : "text-white/80 hover:text-white hover:bg-white/10"
               }`;
 
               if (item.external) {
@@ -91,7 +97,11 @@ export default function Navigation() {
               size="sm"
               className="text-white/80 hover:text-white hover:bg-white/10 font-gilroy"
             >
-              <a href="https://ums.mydsi.org/Login.aspx/DSU" target="_blank" rel="noreferrer">
+              <a
+                href="https://ums.mydsi.org/Login.aspx/DSU"
+                target="_blank"
+                rel="noreferrer"
+              >
                 Student Portal
               </a>
             </Button>
@@ -111,7 +121,11 @@ export default function Navigation() {
               onClick={() => setIsOpen(!isOpen)}
               className="text-white/80 hover:text-white"
             >
-              {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {isOpen ? (
+                <X className="w-5 h-5" />
+              ) : (
+                <Menu className="w-5 h-5" />
+              )}
             </Button>
           </div>
         </div>
@@ -124,7 +138,9 @@ export default function Navigation() {
             {navigation.map((item) => {
               const active = !item.external && isActive(item.href);
               const sharedClasses = `flex items-center space-x-3 px-4 py-3 rounded-xl text-sm font-medium font-gilroy transition-all duration-200 ${
-                active ? "bg-white/20 text-white font-semibold" : "text-white/80 hover:text-white hover:bg-white/10"
+                active
+                  ? "bg-white/20 text-white font-semibold"
+                  : "text-white/80 hover:text-white hover:bg-white/10"
               }`;
 
               if (item.external) {
@@ -162,7 +178,12 @@ export default function Navigation() {
                 size="sm"
                 className="w-full justify-start text-white/80 hover:text-white hover:bg-white/10 font-gilroy"
               >
-                <a href="https://ums.mydsi.org/Login.aspx/DSU" target="_blank" rel="noreferrer" onClick={() => setIsOpen(false)}>
+                <a
+                  href="https://ums.mydsi.org/Login.aspx/DSU"
+                  target="_blank"
+                  rel="noreferrer"
+                  onClick={() => setIsOpen(false)}
+                >
                   Student Portal
                 </a>
               </Button>

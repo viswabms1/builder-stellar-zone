@@ -1,6 +1,12 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import {
   Accordion,
   AccordionContent,
@@ -69,63 +75,72 @@ type Guideline = {
 const APPLICATION_DOCUMENTS: ExamDocument[] = [
   {
     title: "Application for Migration Certificate",
-    description: "Request a migration certificate when you plan to transfer from DSU to another institution.",
+    description:
+      "Request a migration certificate when you plan to transfer from DSU to another institution.",
     href: "https://www.dsu.edu.in/images/PDF/Migration-Certificate.pdf",
     icon: FileText,
     tag: "Form",
   },
   {
     title: "PDC Application for UG/PG",
-    description: "Apply for your provisional degree certificate after completing undergraduate or postgraduate studies.",
+    description:
+      "Apply for your provisional degree certificate after completing undergraduate or postgraduate studies.",
     href: "https://www.dsu.edu.in/images/PDF/PDC-Applicaton.pdf",
     icon: ScrollText,
     tag: "Certificate",
   },
   {
     title: "Application for Transfer Certificate",
-    description: "Submit this form to obtain your transfer certificate when discontinuing from DSU.",
+    description:
+      "Submit this form to obtain your transfer certificate when discontinuing from DSU.",
     href: "https://www.dsu.edu.in/images/PDF/TC-Applicaton-format.pdf",
     icon: ClipboardList,
     tag: "Form",
   },
   {
     title: "Application for Duplicate Grade Card / Degree Certificate",
-    description: "Use this application to request duplicate copies of grade cards or the degree certificate.",
+    description:
+      "Use this application to request duplicate copies of grade cards or the degree certificate.",
     href: "https://www.dsu.edu.in/images/PDF/Duplicate_Grade_Card.pdf",
     icon: FileText,
     tag: "Records",
   },
   {
     title: "Application for Backlog / Repeat Examination",
-    description: "Register for backlog or repeat examinations for courses requiring an additional attempt.",
+    description:
+      "Register for backlog or repeat examinations for courses requiring an additional attempt.",
     href: "https://www.dsu.edu.in/images/PDF/Application_For_Backlog_SEE.pdf",
     icon: ClipboardList,
     tag: "Examination",
   },
   {
     title: "Application for Re-valuation / Photocopy of Answer Booklet",
-    description: "Request a re-valuation or photocopy of your evaluated answer booklet within the notified timelines.",
+    description:
+      "Request a re-valuation or photocopy of your evaluated answer booklet within the notified timelines.",
     href: "https://www.dsu.edu.in/images/PDF/TT/Re_val_appln_Form.pdf",
     icon: ClipboardList,
     tag: "Revaluation",
   },
   {
     title: "PDC Application for Ph.D",
-    description: "Apply for the provisional degree certificate after the successful completion of doctoral requirements.",
+    description:
+      "Apply for the provisional degree certificate after the successful completion of doctoral requirements.",
     href: "https://www.dsu.edu.in/images/PDF/PDC_Applicaton_for_PhD.pdf",
     icon: ScrollText,
     tag: "Certificate",
   },
   {
     title: "Application for Transcript",
-    description: "Request official academic transcripts for employment or higher education needs.",
+    description:
+      "Request official academic transcripts for employment or higher education needs.",
     href: "https://www.dsu.edu.in/images/PDF/Application_for_Transcript_2019-20.pdf",
     icon: FileText,
     tag: "Transcript",
   },
   {
     title: "Application for Name Correction in Grade Card / Degree Certificate",
-    description: "Submit this form to correct spelling or personal details in official academic records.",
+    description:
+      "Submit this form to correct spelling or personal details in official academic records.",
     href: "https://www.dsu.edu.in/images/PDF/Name_Correction_in_Grade_or_Marks_Card.pdf",
     icon: FileText,
     tag: "Correction",
@@ -134,64 +149,81 @@ const APPLICATION_DOCUMENTS: ExamDocument[] = [
 
 const CIRCULAR_DOCUMENTS: ExamDocument[] = [
   {
-    title: "Timetable for MCA (2024 Batch) Summer Term Examinations - October 2025",
-    description: "Detailed schedule covering first and second semester summer term examinations for MCA 2024 batch.",
+    title:
+      "Timetable for MCA (2024 Batch) Summer Term Examinations - October 2025",
+    description:
+      "Detailed schedule covering first and second semester summer term examinations for MCA 2024 batch.",
     href: "https://www.dsu.edu.in/images/PDF/TT/Sept_25/23092025_MCA_ST_T.pdf",
     icon: CalendarClock,
     tag: "Timetable",
   },
   {
-    title: "Circular for B.Tech 1st & 2nd Semester Summer Term Examinations - Aug/Sep 2025",
-    description: "Official circular outlining guidelines for B.Tech summer term examinations for 1st and 2nd semesters.",
+    title:
+      "Circular for B.Tech 1st & 2nd Semester Summer Term Examinations - Aug/Sep 2025",
+    description:
+      "Official circular outlining guidelines for B.Tech summer term examinations for 1st and 2nd semesters.",
     href: "https://www.dsu.edu.in/images/PDF/TT/Sept_25/23092025_BTech_ST_C.pdf",
     icon: Megaphone,
     tag: "Circular",
   },
   {
-    title: "Timetable for B.Voc 5th & 6th Semester Summer Term Examinations - September 2025",
-    description: "Summer term examination timetable for B.Voc programmes delivered in partnership with NTTF.",
+    title:
+      "Timetable for B.Voc 5th & 6th Semester Summer Term Examinations - September 2025",
+    description:
+      "Summer term examination timetable for B.Voc programmes delivered in partnership with NTTF.",
     href: "https://www.dsu.edu.in/images/PDF/TT/Sept_25/17092025_BVoc_ST_T.pdf",
     icon: CalendarClock,
     tag: "Timetable",
   },
   {
-    title: "Circular for M.Pharm, B.Pharm Summer Term and Pharm.D Makeup Examinations - September 2025",
-    description: "Instructions and reporting details for pharmacy summer term and makeup examinations.",
+    title:
+      "Circular for M.Pharm, B.Pharm Summer Term and Pharm.D Makeup Examinations - September 2025",
+    description:
+      "Instructions and reporting details for pharmacy summer term and makeup examinations.",
     href: "https://www.dsu.edu.in/images/PDF/TT/Aug_25/21082025_Pharm_C.pdf",
     icon: Megaphone,
     tag: "Circular",
   },
   {
-    title: "Time Table for B.Tech (2024 Batch) 1st & 2nd Semester Summer Term Examinations",
-    description: "Check dates and session slots for B.Tech 2024 batch summer term examinations.",
+    title:
+      "Time Table for B.Tech (2024 Batch) 1st & 2nd Semester Summer Term Examinations",
+    description:
+      "Check dates and session slots for B.Tech 2024 batch summer term examinations.",
     href: "https://www.dsu.edu.in/images/PDF/TT/Aug_25/07_BTech_ST_24B.pdf",
     icon: CalendarClock,
     tag: "Timetable",
   },
   {
-    title: "Timetable for M.Tech (2024 Batch) Even Semester End Examinations - August 2025",
-    description: "Schedule for even semester end examinations for the M.Tech 2024 cohort.",
+    title:
+      "Timetable for M.Tech (2024 Batch) Even Semester End Examinations - August 2025",
+    description:
+      "Schedule for even semester end examinations for the M.Tech 2024 cohort.",
     href: "https://www.dsu.edu.in/images/PDF/TT/Aug_25/29_MTech_24B.pdf",
     icon: CalendarClock,
     tag: "Timetable",
   },
   {
-    title: "Revaluation Circular for B.Tech 2nd Semester Examinations - June/July 2025",
-    description: "Revaluation and photocopy process for B.Tech 2nd semester summer term examinations.",
+    title:
+      "Revaluation Circular for B.Tech 2nd Semester Examinations - June/July 2025",
+    description:
+      "Revaluation and photocopy process for B.Tech 2nd semester summer term examinations.",
     href: "https://www.dsu.edu.in/images/PDF/TT/July_25/30_BTech_24B.pdf",
     icon: Megaphone,
     tag: "Circular",
   },
   {
-    title: "Timetable for M.Sc Summer Term Theory Examinations - July/August 2025",
-    description: "Theory examination schedule for M.Sc programmes conducted during July and August 2025.",
+    title:
+      "Timetable for M.Sc Summer Term Theory Examinations - July/August 2025",
+    description:
+      "Theory examination schedule for M.Sc programmes conducted during July and August 2025.",
     href: "https://www.dsu.edu.in/images/PDF/TT/July_25/21072025_Msc.pdf",
     icon: CalendarClock,
     tag: "Timetable",
   },
   {
     title: "Timetable for MBA Summer Term Examinations - July 2025",
-    description: "MBA summer term examination time table with slot-wise details for July 2025.",
+    description:
+      "MBA summer term examination time table with slot-wise details for July 2025.",
     href: "https://www.dsu.edu.in/images/PDF/TT/July_25/04072025_T.pdf",
     icon: CalendarClock,
     tag: "Timetable",
@@ -201,7 +233,8 @@ const CIRCULAR_DOCUMENTS: ExamDocument[] = [
 const RESULT_DOCUMENTS: ExamDocument[] = [
   {
     title: "Ph.D Provisional List of Selected Candidates – July 2025",
-    description: "Review the provisional selection list for the Ph.D intake published in July 2025.",
+    description:
+      "Review the provisional selection list for the Ph.D intake published in July 2025.",
     href: "https://www.dsu.edu.in/images/research/31072025_phd.pdf",
     icon: GraduationCap,
     tag: "Result",
@@ -236,25 +269,29 @@ const QUICK_LINKS: QuickLink[] = [
   {
     anchor: "#applications",
     title: "Download Forms",
-    description: "Access migration, PDC, transcript, and revaluation applications instantly.",
+    description:
+      "Access migration, PDC, transcript, and revaluation applications instantly.",
     icon: FileText,
   },
   {
     anchor: "#circulars",
     title: "Exam Timetables",
-    description: "Review circulars and timetables for upcoming examinations across programmes.",
+    description:
+      "Review circulars and timetables for upcoming examinations across programmes.",
     icon: CalendarClock,
   },
   {
     anchor: "#results",
     title: "Results Desk",
-    description: "Check the newest results and official examination notifications.",
+    description:
+      "Check the newest results and official examination notifications.",
     icon: GraduationCap,
   },
   {
     anchor: "https://ums.mydsi.org/Login.aspx/DSU",
     title: "Student ERP",
-    description: "Login to the ERP portal for hall tickets, fee payment, and attendance records.",
+    description:
+      "Login to the ERP portal for hall tickets, fee payment, and attendance records.",
     icon: ExternalLink,
   },
 ];
@@ -274,19 +311,13 @@ const CONTACT_CARDS: ContactCard[] = [
   {
     title: "Examination Department Contacts",
     icon: Phone,
-    lines: [
-      "School of Engineering",
-      "School of Health Sciences & MBBS",
-    ],
+    lines: ["School of Engineering", "School of Health Sciences & MBBS"],
     phones: ["+91 9606022151", "+91 9606022147"],
   },
   {
     title: "City Innovation Campus",
     icon: MapPin,
-    lines: [
-      "Kudlu Gate, Hosur Road",
-      "Bengaluru – 560 068, Karnataka",
-    ],
+    lines: ["Kudlu Gate, Hosur Road", "Bengaluru – 560 068, Karnataka"],
     phones: ["080 4909 2979", "080 4909 2978"],
   },
 ];
@@ -342,18 +373,35 @@ function HeroSection() {
           Examination Services Portal
         </span>
         <h1 className="mt-8 text-4xl font-bold leading-tight md:text-6xl">
-          Access Official <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">Examination Resources</span>
+          Access Official{" "}
+          <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
+            Examination Resources
+          </span>
         </h1>
         <p className="mt-6 max-w-3xl text-lg text-muted-foreground md:text-xl">
-          Download forms, view circulars, and preview examination documents instantly. Each PDF opens in an on-page viewer so you can skim the content before downloading.
+          Download forms, view circulars, and preview examination documents
+          instantly. Each PDF opens in an on-page viewer so you can skim the
+          content before downloading.
         </p>
         <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row">
-          <Button size="lg" className="bg-gradient-to-r from-orange-500 via-red-600 to-pink-500 text-white">
+          <Button
+            size="lg"
+            className="bg-gradient-to-r from-orange-500 via-red-600 to-pink-500 text-white"
+          >
             Explore Resources
             <ArrowRight className="h-5 w-5" />
           </Button>
-          <Button variant="outline" size="lg" className="border-orange-500 text-orange-500 hover:bg-orange-500/10" asChild>
-            <a href="https://ums.mydsi.org/Login.aspx/DSU" target="_blank" rel="noreferrer">
+          <Button
+            variant="outline"
+            size="lg"
+            className="border-orange-500 text-orange-500 hover:bg-orange-500/10"
+            asChild
+          >
+            <a
+              href="https://ums.mydsi.org/Login.aspx/DSU"
+              target="_blank"
+              rel="noreferrer"
+            >
               Open Student ERP
             </a>
           </Button>
@@ -370,7 +418,8 @@ function QuickLinksSection() {
         <div className="mb-10 flex flex-col gap-4 text-center">
           <h2 className="text-3xl font-bold md:text-4xl">Quick Access</h2>
           <p className="text-muted-foreground md:text-lg">
-            Jump directly to the section you need or launch the ERP portal for hall tickets and personalised updates.
+            Jump directly to the section you need or launch the ERP portal for
+            hall tickets and personalised updates.
           </p>
         </div>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
@@ -389,8 +438,16 @@ function QuickLinksSection() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <CardDescription>{item.description}</CardDescription>
-                <Button variant="ghost" className="w-full justify-between text-orange-500 hover:bg-orange-500/10" asChild>
-                  <a href={item.anchor} target={item.anchor.startsWith("http") ? "_blank" : "_self"} rel="noreferrer">
+                <Button
+                  variant="ghost"
+                  className="w-full justify-between text-orange-500 hover:bg-orange-500/10"
+                  asChild
+                >
+                  <a
+                    href={item.anchor}
+                    target={item.anchor.startsWith("http") ? "_blank" : "_self"}
+                    rel="noreferrer"
+                  >
                     Open
                     <ArrowRight className="h-4 w-4" />
                   </a>
@@ -422,10 +479,16 @@ function ExamResourceSection({ section }: { section: ExamSection }) {
       <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
         <div>
           <h3 className="text-3xl font-bold md:text-4xl">{section.title}</h3>
-          <p className="mt-2 max-w-2xl text-base text-muted-foreground md:text-lg">{section.summary}</p>
+          <p className="mt-2 max-w-2xl text-base text-muted-foreground md:text-lg">
+            {section.summary}
+          </p>
         </div>
-        <Badge variant="secondary" className="self-start rounded-xl px-4 py-2 text-sm">
-          {section.documents.length} document{section.documents.length > 1 ? "s" : ""}
+        <Badge
+          variant="secondary"
+          className="self-start rounded-xl px-4 py-2 text-sm"
+        >
+          {section.documents.length} document
+          {section.documents.length > 1 ? "s" : ""}
         </Badge>
       </div>
       <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
@@ -451,7 +514,10 @@ function ExamDocumentCard({ document }: { document: ExamDocument }) {
             <CardTitle className="text-lg font-semibold text-foreground">
               {document.title}
             </CardTitle>
-            <Badge variant="outline" className="mt-2 border-orange-500/40 text-xs uppercase tracking-wide text-orange-500">
+            <Badge
+              variant="outline"
+              className="mt-2 border-orange-500/40 text-xs uppercase tracking-wide text-orange-500"
+            >
               {document.tag}
             </Badge>
           </div>
@@ -464,7 +530,10 @@ function ExamDocumentCard({ document }: { document: ExamDocument }) {
         <div className="flex flex-wrap gap-3">
           <Dialog>
             <DialogTrigger asChild>
-              <Button size="sm" className="bg-gradient-to-r from-orange-500 to-red-600 text-white">
+              <Button
+                size="sm"
+                className="bg-gradient-to-r from-orange-500 to-red-600 text-white"
+              >
                 View PDF
               </Button>
             </DialogTrigger>
@@ -490,7 +559,12 @@ function ExamDocumentCard({ document }: { document: ExamDocument }) {
               </DialogFooter>
             </DialogContent>
           </Dialog>
-          <Button variant="ghost" size="sm" className="text-orange-500 hover:bg-orange-500/10" asChild>
+          <Button
+            variant="ghost"
+            size="sm"
+            className="text-orange-500 hover:bg-orange-500/10"
+            asChild
+          >
             <a href={document.href} target="_blank" rel="noreferrer">
               Open in New Tab
               <ExternalLink className="ml-2 h-4 w-4" />
@@ -507,14 +581,21 @@ function GuidelinesSection() {
     <section className="px-6 py-16">
       <div className="mx-auto flex max-w-5xl flex-col gap-6">
         <div className="text-center">
-          <h2 className="text-3xl font-bold md:text-4xl">How to Use These Resources</h2>
+          <h2 className="text-3xl font-bold md:text-4xl">
+            How to Use These Resources
+          </h2>
           <p className="mt-3 text-muted-foreground md:text-lg">
-            Follow these best practices to stay organised during the examination process.
+            Follow these best practices to stay organised during the examination
+            process.
           </p>
         </div>
-        <Accordion type="single" collapsible className="w-full divide-y divide-border/40 rounded-3xl border border-border/40 bg-card/50 backdrop-blur">
+        <Accordion
+          type="single"
+          collapsible
+          className="w-full divide-y divide-border/40 rounded-3xl border border-border/40 bg-card/50 backdrop-blur"
+        >
           {GUIDELINES.map((item, index) => (
-            <AccordionItem key={item.title} value={`guideline-${index}`}> 
+            <AccordionItem key={item.title} value={`guideline-${index}`}>
               <AccordionTrigger className="text-left text-base font-semibold text-foreground">
                 {item.title}
               </AccordionTrigger>
@@ -540,7 +621,8 @@ function ContactSection() {
         <div className="text-center">
           <h2 className="text-3xl font-bold md:text-4xl">Need Assistance?</h2>
           <p className="mt-3 text-muted-foreground md:text-lg">
-            Connect with the examination department between 9:00 AM and 4:00 PM for support on applications, schedules, and results.
+            Connect with the examination department between 9:00 AM and 4:00 PM
+            for support on applications, schedules, and results.
           </p>
         </div>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -598,9 +680,17 @@ function ContactSection() {
         <Card className="border border-orange-500/30 bg-card/70 backdrop-blur-sm">
           <CardContent className="flex flex-col gap-4 rounded-3xl p-6 text-sm text-muted-foreground md:flex-row md:items-center md:justify-between md:text-base">
             <div>
-              <span className="font-semibold text-foreground">Submission Window:</span> Forms and requests are accepted on working days between 9:00 AM and 4:00 PM.
+              <span className="font-semibold text-foreground">
+                Submission Window:
+              </span>{" "}
+              Forms and requests are accepted on working days between 9:00 AM
+              and 4:00 PM.
             </div>
-            <Button variant="ghost" className="text-orange-500 hover:bg-orange-500/10" asChild>
+            <Button
+              variant="ghost"
+              className="text-orange-500 hover:bg-orange-500/10"
+              asChild
+            >
               <a href="mailto:coe@dsu.edu.in">
                 Email the Controller of Examinations
                 <Mail className="ml-2 h-4 w-4" />

@@ -12,12 +12,18 @@ import {
   Pill,
   Stethoscope,
   Syringe,
-  Users
+  Users,
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
 type QuickLink = {
   title: string;
@@ -56,180 +62,210 @@ type Resource = {
   badge: string;
 };
 
-const HERO_IMAGE = "https://images.unsplash.com/photo-1580281657521-8a19aa08c8c8?q=80&w=2000&auto=format&fit=crop";
+const HERO_IMAGE =
+  "https://images.unsplash.com/photo-1580281657521-8a19aa08c8c8?q=80&w=2000&auto=format&fit=crop";
 
 const QUICK_LINKS: QuickLink[] = [
   {
     title: "USP",
-    description: "Understand how DSU pioneers integrative health sciences education.",
+    description:
+      "Understand how DSU pioneers integrative health sciences education.",
     href: "#usp",
-    icon: HeartPulse
+    icon: HeartPulse,
   },
   {
     title: "Programs",
-    description: "Explore undergraduate and postgraduate programmes spanning nursing, pharmacy and allied health.",
+    description:
+      "Explore undergraduate and postgraduate programmes spanning nursing, pharmacy and allied health.",
     href: "#programs",
-    icon: GraduationCap
+    icon: GraduationCap,
   },
   {
     title: "Teaching Hospitals",
-    description: "Connect with clinical training at Sagar Hospitals and CDSIMER campus.",
+    description:
+      "Connect with clinical training at Sagar Hospitals and CDSIMER campus.",
     href: "/academics/health-sciences/cdsimer/hospital",
-    icon: Stethoscope
+    icon: Stethoscope,
   },
   {
     title: "Calendar & Notices",
-    description: "Download academic calendars, anti-ragging guidelines and campus advisories.",
+    description:
+      "Download academic calendars, anti-ragging guidelines and campus advisories.",
     href: "#resources",
-    icon: CalendarDays
+    icon: CalendarDays,
   },
   {
     title: "Allied Health Sciences",
-    description: "Discover high-demand programmes across diagnostics, therapeutics and community health.",
+    description:
+      "Discover high-demand programmes across diagnostics, therapeutics and community health.",
     href: "https://www.dsu.edu.in/health-sciences/allied-health-sciences",
     icon: Syringe,
-    external: true
+    external: true,
   },
   {
     title: "Admissions Support",
     description: "Reach the School office for counselling and guidance.",
     href: "mailto:admissions@dsu.edu.in",
     icon: Users,
-    external: true
-  }
+    external: true,
+  },
 ];
 
 const USP_HIGHLIGHTS: Highlight[] = [
   {
     title: "Integrated Health Ecosystem",
-    description: "Colleges of Nursing, Pharmaceutical Sciences, Physiotherapy and Allied Health share a collaborative campus with clinical partners.",
-    image: "https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?q=80&w=1600&auto=format&fit=crop",
+    description:
+      "Colleges of Nursing, Pharmaceutical Sciences, Physiotherapy and Allied Health share a collaborative campus with clinical partners.",
+    image:
+      "https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?q=80&w=1600&auto=format&fit=crop",
     icon: ClipboardCheck,
-    stat: "4 Constituent Colleges"
+    stat: "4 Constituent Colleges",
   },
   {
     title: "Patient-Centric Learning",
-    description: "Clinical rotations at multi-speciality hospitals cultivate empathy, evidence-based care and inter-professional teamwork.",
-    image: "https://images.unsplash.com/photo-1519494080410-f9aa76cb4283?q=80&w=1600&auto=format&fit=crop",
-    icon: Stethoscope
+    description:
+      "Clinical rotations at multi-speciality hospitals cultivate empathy, evidence-based care and inter-professional teamwork.",
+    image:
+      "https://images.unsplash.com/photo-1519494080410-f9aa76cb4283?q=80&w=1600&auto=format&fit=crop",
+    icon: Stethoscope,
   },
   {
     title: "Research & Simulation Labs",
-    description: "Advanced simulation centres, diagnostics labs and pharmaceutics facilities accelerate skill immersion.",
-    image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1600&auto=format&fit=crop",
-    icon: Microscope
+    description:
+      "Advanced simulation centres, diagnostics labs and pharmaceutics facilities accelerate skill immersion.",
+    image:
+      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1600&auto=format&fit=crop",
+    icon: Microscope,
   },
   {
     title: "Community Impact",
-    description: "Health camps, outreach and NSS drives foster preventive healthcare and public health leadership.",
-    image: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?q=80&w=1600&auto=format&fit=crop",
-    icon: Activity
-  }
+    description:
+      "Health camps, outreach and NSS drives foster preventive healthcare and public health leadership.",
+    image:
+      "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?q=80&w=1600&auto=format&fit=crop",
+    icon: Activity,
+  },
 ];
 
 const PROGRAMMES: Programme[] = [
   {
     name: "B.Sc Nursing",
     level: "UG",
-    focus: "Holistic four-year programme with simulation labs, clinical postings and global certifications.",
-    href: "https://www.dsu.edu.in/health-sciences/nursing"
+    focus:
+      "Holistic four-year programme with simulation labs, clinical postings and global certifications.",
+    href: "https://www.dsu.edu.in/health-sciences/nursing",
   },
   {
     name: "B.Pharm",
     level: "UG",
-    focus: "Professional degree covering pharmaceutics, pharmacology and regulatory sciences.",
-    href: "https://www.dsu.edu.in/health-sciences/pharmacy"
+    focus:
+      "Professional degree covering pharmaceutics, pharmacology and regulatory sciences.",
+    href: "https://www.dsu.edu.in/health-sciences/pharmacy",
   },
   {
     name: "Bachelor of Physiotherapy (BPT)",
     level: "UG",
-    focus: "Comprehensive physiotherapy education with sports, neuro and cardiorespiratory specialisations.",
-    href: "https://www.dsu.edu.in/health-sciences/physiotherapy"
+    focus:
+      "Comprehensive physiotherapy education with sports, neuro and cardiorespiratory specialisations.",
+    href: "https://www.dsu.edu.in/health-sciences/physiotherapy",
   },
   {
     name: "Allied Health Sciences (B.Sc)",
     level: "UG",
-    focus: "Programmes across medical laboratory technology, imaging, anaesthesia and emergency care.",
-    href: "https://www.dsu.edu.in/health-sciences/allied-health-sciences"
+    focus:
+      "Programmes across medical laboratory technology, imaging, anaesthesia and emergency care.",
+    href: "https://www.dsu.edu.in/health-sciences/allied-health-sciences",
   },
   {
     name: "M.Pharm",
     level: "PG",
-    focus: "Research-intensive postgraduate degree with specialisations in pharmaceutics, analysis and pharmacology.",
-    href: "https://www.dsu.edu.in/health-sciences/pharmacy"
+    focus:
+      "Research-intensive postgraduate degree with specialisations in pharmaceutics, analysis and pharmacology.",
+    href: "https://www.dsu.edu.in/health-sciences/pharmacy",
   },
   {
     name: "MPT",
     level: "PG",
-    focus: "Advanced physiotherapy programme emphasising musculoskeletal, neuro and cardiorespiratory expertise.",
-    href: "https://www.dsu.edu.in/health-sciences/physiotherapy"
+    focus:
+      "Advanced physiotherapy programme emphasising musculoskeletal, neuro and cardiorespiratory expertise.",
+    href: "https://www.dsu.edu.in/health-sciences/physiotherapy",
   },
   {
     name: "M.Sc Nursing",
     level: "PG",
-    focus: "Leadership-oriented specialisations with focus on clinical excellence, pedagogy and research.",
-    href: "https://www.dsu.edu.in/health-sciences/nursing"
-  }
+    focus:
+      "Leadership-oriented specialisations with focus on clinical excellence, pedagogy and research.",
+    href: "https://www.dsu.edu.in/health-sciences/nursing",
+  },
 ];
 
 const SUPPORT_UNITS: SupportUnit[] = [
   {
     title: "College of Nursing Sciences",
-    description: "Modern nursing labs, community postings and competency-based training for compassionate care.",
+    description:
+      "Modern nursing labs, community postings and competency-based training for compassionate care.",
     icon: Stethoscope,
-    href: "https://www.dsu.edu.in/health-sciences/nursing"
+    href: "https://www.dsu.edu.in/health-sciences/nursing",
   },
   {
     title: "College of Pharmaceutical Sciences",
-    description: "State-of-the-art formulation, analysis and quality assurance labs aligned with industry standards.",
+    description:
+      "State-of-the-art formulation, analysis and quality assurance labs aligned with industry standards.",
     icon: Pill,
-    href: "https://www.dsu.edu.in/health-sciences/pharmacy"
+    href: "https://www.dsu.edu.in/health-sciences/pharmacy",
   },
   {
     title: "College of Physiotherapy",
-    description: "Robotics-enabled rehab, sports therapy suites and research in functional recovery.",
+    description:
+      "Robotics-enabled rehab, sports therapy suites and research in functional recovery.",
     icon: Activity,
-    href: "https://www.dsu.edu.in/health-sciences/physiotherapy"
+    href: "https://www.dsu.edu.in/health-sciences/physiotherapy",
   },
   {
     title: "College of Allied Health Sciences",
-    description: "High-tech diagnostics, imaging and emergency labs supporting multidisciplinary healthcare teams.",
+    description:
+      "High-tech diagnostics, imaging and emergency labs supporting multidisciplinary healthcare teams.",
     icon: Syringe,
-    href: "https://www.dsu.edu.in/health-sciences/allied-health-sciences"
-  }
+    href: "https://www.dsu.edu.in/health-sciences/allied-health-sciences",
+  },
 ];
 
 const RESOURCES: Resource[] = [
   {
     title: "Academic Calendar 2025-26",
-    description: "Download the latest DSU academic calendar to plan coursework, internships and evaluations.",
+    description:
+      "Download the latest DSU academic calendar to plan coursework, internships and evaluations.",
     href: "https://www.dsu.edu.in/images/AC_11082025.pdf",
-    badge: "Calendar"
+    badge: "Calendar",
   },
   {
     title: "Anti-Ragging & Compliance",
-    description: "Review national anti-ragging guidelines and DSU stakeholder feedback for safe campuses.",
+    description:
+      "Review national anti-ragging guidelines and DSU stakeholder feedback for safe campuses.",
     href: "https://dsu.org.in/content/stakeholders-feedback-design-and-review-curricula-and-syllabi",
-    badge: "Policy"
+    badge: "Policy",
   },
   {
     title: "Health Sciences Admissions",
-    description: "Explore admission criteria, counselling schedule and contact details for prospective students.",
+    description:
+      "Explore admission criteria, counselling schedule and contact details for prospective students.",
     href: "https://www.dsu.edu.in/admissions",
-    badge: "Admissions"
+    badge: "Admissions",
   },
   {
     title: "Clinical Partner Spotlight",
-    description: "Experience teaching hospitals through CDSIMER's smart campus and simulation-enabled hospital.",
+    description:
+      "Experience teaching hospitals through CDSIMER's smart campus and simulation-enabled hospital.",
     href: "/academics/health-sciences/cdsimer/hospital",
-    badge: "Clinical"
+    badge: "Clinical",
   },
   {
     title: "Medical Education & Research",
-    description: "Learn how DSU integrates CDSIMER's medical college, hospital and research ecosystem.",
+    description:
+      "Learn how DSU integrates CDSIMER's medical college, hospital and research ecosystem.",
     href: "/academics/medical-education-research",
-    badge: "Medical"
-  }
+    badge: "Medical",
+  },
 ];
 
 function QuickLinkCard({ link }: { link: QuickLink }) {
@@ -243,7 +279,9 @@ function QuickLinkCard({ link }: { link: QuickLink }) {
         <ChevronRight className="h-4 w-4 text-transparent transition-colors duration-500 group-hover:text-brand-magenta" />
       </div>
       <h3 className="mt-5 text-lg font-semibold font-gilroy">{link.title}</h3>
-      <p className="mt-3 text-sm text-muted-foreground font-graphik">{link.description}</p>
+      <p className="mt-3 text-sm text-muted-foreground font-graphik">
+        {link.description}
+      </p>
       <div className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-brand-magenta">
         {link.external ? "Open resource" : "Jump to section"}
         <ChevronRight className="h-4 w-4" />
@@ -299,10 +337,16 @@ function HighlightCard({ highlight }: { highlight: Highlight }) {
         <Icon className="h-4 w-4" /> USP
       </div>
       <div className="absolute inset-x-0 bottom-0 p-5 text-white">
-        <h3 className="mb-2 text-lg font-semibold font-gilroy">{highlight.title}</h3>
-        <p className="text-sm text-white/80 font-graphik">{highlight.description}</p>
+        <h3 className="mb-2 text-lg font-semibold font-gilroy">
+          {highlight.title}
+        </h3>
+        <p className="text-sm text-white/80 font-graphik">
+          {highlight.description}
+        </p>
         {highlight.stat ? (
-          <div className="mt-3 text-xs uppercase tracking-wide text-white/70 font-graphik">{highlight.stat}</div>
+          <div className="mt-3 text-xs uppercase tracking-wide text-white/70 font-graphik">
+            {highlight.stat}
+          </div>
         ) : null}
       </div>
     </Card>
@@ -313,8 +357,12 @@ function ProgrammeCard({ programme }: { programme: Programme }) {
   const content = (
     <Card className="h-full rounded-3xl border border-border/50 bg-card/50 backdrop-blur-sm">
       <CardHeader>
-        <Badge className="bg-brand-magenta/15 text-brand-magenta">{programme.level} Programme</Badge>
-        <CardTitle className="mt-4 text-xl font-gilroy">{programme.name}</CardTitle>
+        <Badge className="bg-brand-magenta/15 text-brand-magenta">
+          {programme.level} Programme
+        </Badge>
+        <CardTitle className="mt-4 text-xl font-gilroy">
+          {programme.name}
+        </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4 text-sm text-muted-foreground font-graphik">
         <p>{programme.focus}</p>
@@ -361,7 +409,12 @@ function SupportUnitCard({ unit }: { unit: SupportUnit }) {
   }
 
   return (
-    <a href={unit.href} target="_blank" rel="noreferrer" className="block h-full transform transition-all duration-500 hover:-translate-y-1">
+    <a
+      href={unit.href}
+      target="_blank"
+      rel="noreferrer"
+      className="block h-full transform transition-all duration-500 hover:-translate-y-1"
+    >
       {card}
     </a>
   );
@@ -371,8 +424,12 @@ function ResourceCard({ resource }: { resource: Resource }) {
   return (
     <Card className="h-full rounded-3xl border border-border/40 bg-card/60 backdrop-blur">
       <CardHeader className="pb-2">
-        <Badge className="bg-brand-magenta/15 text-brand-magenta">{resource.badge}</Badge>
-        <CardTitle className="mt-4 text-lg font-gilroy">{resource.title}</CardTitle>
+        <Badge className="bg-brand-magenta/15 text-brand-magenta">
+          {resource.badge}
+        </Badge>
+        <CardTitle className="mt-4 text-lg font-gilroy">
+          {resource.title}
+        </CardTitle>
       </CardHeader>
       <CardContent className="space-y-5 text-sm text-muted-foreground font-graphik">
         <p>{resource.description}</p>
@@ -405,7 +462,11 @@ export default function HealthSciences() {
     <div className="min-h-screen bg-background text-foreground">
       <section className="relative" id="top">
         <div className="h-[60vh] w-full overflow-hidden md:h-[70vh]">
-          <img src={HERO_IMAGE} alt="School of Health Sciences" className="h-full w-full object-cover" />
+          <img
+            src={HERO_IMAGE}
+            alt="School of Health Sciences"
+            className="h-full w-full object-cover"
+          />
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
         </div>
@@ -413,18 +474,33 @@ export default function HealthSciences() {
           <div className="mx-auto max-w-7xl px-6">
             <div className="mb-6 inline-flex items-center rounded-full border border-brand-magenta/20 bg-brand-magenta/10 px-4 py-2">
               <HeartPulse className="mr-2 h-4 w-4 text-brand-magenta" />
-              <span className="text-sm font-medium text-brand-magenta font-gilroy">School of Health Sciences</span>
+              <span className="text-sm font-medium text-brand-magenta font-gilroy">
+                School of Health Sciences
+              </span>
             </div>
-            <h1 className="mb-4 font-gilroy text-4xl leading-tight text-white md:text-6xl">Advancing Care. Inspiring Wellness.</h1>
+            <h1 className="mb-4 font-gilroy text-4xl leading-tight text-white md:text-6xl">
+              Advancing Care. Inspiring Wellness.
+            </h1>
             <p className="max-w-2xl text-white/90 font-graphik text-lg">
-              Build a career in nursing, pharmacy, physiotherapy and allied health with simulation-rich learning and patient-centric hospital immersion.
+              Build a career in nursing, pharmacy, physiotherapy and allied
+              health with simulation-rich learning and patient-centric hospital
+              immersion.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link to="/admissions">
-                <Button className="bg-brand-gradient text-white">Apply Now</Button>
+                <Button className="bg-brand-gradient text-white">
+                  Apply Now
+                </Button>
               </Link>
-              <a href="https://www.dsu.edu.in/academics/schools/health-sciences" target="_blank" rel="noreferrer">
-                <Button variant="outline" className="border-brand-magenta/40 hover:bg-brand-magenta/10">
+              <a
+                href="https://www.dsu.edu.in/academics/schools/health-sciences"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Button
+                  variant="outline"
+                  className="border-brand-magenta/40 hover:bg-brand-magenta/10"
+                >
                   Visit School Portal
                 </Button>
               </a>
@@ -433,14 +509,21 @@ export default function HealthSciences() {
         </div>
       </section>
 
-      <section id="quick-links" className="bg-gradient-to-r from-brand-blue/5 via-brand-magenta/5 to-brand-orange/5 px-6 py-12">
+      <section
+        id="quick-links"
+        className="bg-gradient-to-r from-brand-blue/5 via-brand-magenta/5 to-brand-orange/5 px-6 py-12"
+      >
         <div className="mx-auto max-w-7xl">
           <div className="mb-10 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div>
-              <Badge className="bg-brand-magenta/15 text-brand-magenta">Important Sub Menus</Badge>
+              <Badge className="bg-brand-magenta/15 text-brand-magenta">
+                Important Sub Menus
+              </Badge>
               <h2 className="mt-4 font-gilroy text-3xl">Navigate the School</h2>
               <p className="mt-3 max-w-2xl text-sm text-muted-foreground font-graphik">
-                Quickly access programme highlights, clinical partners, compliance resources and admissions support for the School of Health Sciences.
+                Quickly access programme highlights, clinical partners,
+                compliance resources and admissions support for the School of
+                Health Sciences.
               </p>
             </div>
             <a
@@ -461,13 +544,21 @@ export default function HealthSciences() {
         </div>
       </section>
 
-      <section id="usp" className="bg-gradient-to-r from-brand-magenta/5 via-brand-orange/5 to-brand-blue/5 px-6 py-16">
+      <section
+        id="usp"
+        className="bg-gradient-to-r from-brand-magenta/5 via-brand-orange/5 to-brand-blue/5 px-6 py-16"
+      >
         <div className="mx-auto max-w-7xl">
           <div className="mb-12 text-center">
-            <Badge className="bg-white/20 text-brand-magenta backdrop-blur" variant="secondary">
+            <Badge
+              className="bg-white/20 text-brand-magenta backdrop-blur"
+              variant="secondary"
+            >
               Unique Strengths
             </Badge>
-            <h2 className="mt-5 font-gilroy text-3xl md:text-4xl">Why Future Health Professionals Choose DSU</h2>
+            <h2 className="mt-5 font-gilroy text-3xl md:text-4xl">
+              Why Future Health Professionals Choose DSU
+            </h2>
           </div>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {USP_HIGHLIGHTS.map((highlight) => (
@@ -480,10 +571,16 @@ export default function HealthSciences() {
       <section id="programs" className="px-6 py-16">
         <div className="mx-auto max-w-7xl">
           <div className="mb-10 text-center">
-            <Badge className="bg-brand-magenta/15 text-brand-magenta">Academic Pathways</Badge>
-            <h2 className="mt-4 font-gilroy text-3xl md:text-4xl">Programmes that Transform Healthcare</h2>
+            <Badge className="bg-brand-magenta/15 text-brand-magenta">
+              Academic Pathways
+            </Badge>
+            <h2 className="mt-4 font-gilroy text-3xl md:text-4xl">
+              Programmes that Transform Healthcare
+            </h2>
             <p className="mt-3 text-sm text-muted-foreground font-graphik max-w-3xl mx-auto">
-              Undergraduate and postgraduate programmes foster clinical excellence, research readiness and leadership across pharmacy, nursing, physiotherapy and allied health sciences.
+              Undergraduate and postgraduate programmes foster clinical
+              excellence, research readiness and leadership across pharmacy,
+              nursing, physiotherapy and allied health sciences.
             </p>
           </div>
           <div className="grid gap-6 lg:grid-cols-3">
@@ -494,14 +591,23 @@ export default function HealthSciences() {
         </div>
       </section>
 
-      <section id="supporting" className="bg-gradient-to-r from-brand-blue/5 to-brand-orange/5 px-6 py-16">
+      <section
+        id="supporting"
+        className="bg-gradient-to-r from-brand-blue/5 to-brand-orange/5 px-6 py-16"
+      >
         <div className="mx-auto max-w-7xl">
           <div className="mb-12 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div className="max-w-3xl">
-              <Badge className="bg-brand-magenta/15 text-brand-magenta">Constituent Colleges</Badge>
-              <h2 className="mt-4 font-gilroy text-3xl md:text-4xl">Collaborative Health Sciences Ecosystem</h2>
+              <Badge className="bg-brand-magenta/15 text-brand-magenta">
+                Constituent Colleges
+              </Badge>
+              <h2 className="mt-4 font-gilroy text-3xl md:text-4xl">
+                Collaborative Health Sciences Ecosystem
+              </h2>
               <p className="mt-3 text-sm text-muted-foreground font-graphik">
-                Four specialised colleges work together on shared curriculum, simulation labs and clinical postings to deliver comprehensive healthcare education.
+                Four specialised colleges work together on shared curriculum,
+                simulation labs and clinical postings to deliver comprehensive
+                healthcare education.
               </p>
             </div>
             <a
@@ -526,10 +632,16 @@ export default function HealthSciences() {
         <div className="mx-auto max-w-7xl">
           <div className="mb-10 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div className="max-w-3xl">
-              <Badge className="bg-brand-magenta/15 text-brand-magenta">Calendar & Resources</Badge>
-              <h2 className="mt-4 font-gilroy text-3xl md:text-4xl">Stay Prepared for Every Milestone</h2>
+              <Badge className="bg-brand-magenta/15 text-brand-magenta">
+                Calendar & Resources
+              </Badge>
+              <h2 className="mt-4 font-gilroy text-3xl md:text-4xl">
+                Stay Prepared for Every Milestone
+              </h2>
               <p className="mt-3 text-sm text-muted-foreground font-graphik">
-                Access calendars, compliance handbooks, admissions updates and hospital partners to plan your journey at the School of Health Sciences.
+                Access calendars, compliance handbooks, admissions updates and
+                hospital partners to plan your journey at the School of Health
+                Sciences.
               </p>
             </div>
             <a
@@ -553,9 +665,13 @@ export default function HealthSciences() {
       <section className="px-6 pb-20">
         <div className="mx-auto max-w-4xl text-center">
           <div className="rounded-3xl border border-brand-magenta/20 bg-brand-magenta/5 p-10">
-            <h3 className="mb-3 font-gilroy text-3xl">Champion Health & Wellbeing with DSU</h3>
+            <h3 className="mb-3 font-gilroy text-3xl">
+              Champion Health & Wellbeing with DSU
+            </h3>
             <p className="mb-6 text-muted-foreground font-graphik">
-              Engage with expert mentors, cutting-edge labs and community outreach that empower you to deliver compassionate, evidence-based care.
+              Engage with expert mentors, cutting-edge labs and community
+              outreach that empower you to deliver compassionate, evidence-based
+              care.
             </p>
             <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
               <Link to="/admissions">
@@ -565,7 +681,10 @@ export default function HealthSciences() {
                 </Button>
               </Link>
               <a href="https://cdsimer.edu.in" target="_blank" rel="noreferrer">
-                <Button variant="outline" className="border-brand-magenta/40 hover:bg-brand-magenta/10">
+                <Button
+                  variant="outline"
+                  className="border-brand-magenta/40 hover:bg-brand-magenta/10"
+                >
                   Explore CDSIMER
                 </Button>
               </a>

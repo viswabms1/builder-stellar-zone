@@ -12,12 +12,18 @@ import {
   Presentation,
   Rocket,
   Shapes,
-  Sparkle
+  Sparkle,
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
 type QuickLink = {
   title: string;
@@ -48,127 +54,146 @@ type Resource = {
   badge: string;
 };
 
-const HERO_IMAGE = "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?q=80&w=2000&auto=format&fit=crop";
+const HERO_IMAGE =
+  "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?q=80&w=2000&auto=format&fit=crop";
 
 const QUICK_LINKS: QuickLink[] = [
   {
     title: "Programme Overview",
     description: "Understand the four-track B.Design structure and philosophy.",
     href: "#overview",
-    icon: Palette
+    icon: Palette,
   },
   {
     title: "Specializations",
     description: "Dive into Product, UX, Animation & Game Design pathways.",
     href: "https://www.dsu.edu.in/about-bdesign/specializations-bdesign",
     icon: Shapes,
-    external: true
+    external: true,
   },
   {
     title: "Eligibility & Admissions",
-    description: "Review eligibility criteria, assessment process and key dates.",
+    description:
+      "Review eligibility criteria, assessment process and key dates.",
     href: "https://www.dsu.edu.in/about-bdesign/eligibility-bdesign",
     icon: BadgeCheck,
-    external: true
+    external: true,
   },
   {
     title: "Salient Features",
-    description: "Explore design culture, industry collaborations and studio life.",
+    description:
+      "Explore design culture, industry collaborations and studio life.",
     href: "https://www.dsu.edu.in/about-bdesign/salient-features-bdesign",
     icon: Sparkle,
-    external: true
+    external: true,
   },
   {
     title: "Career Prospects",
     description: "Discover roles, recruiters and global pathways for alumni.",
     href: "https://www.dsu.edu.in/about-bdesign/career-prospects-bdesign",
     icon: Rocket,
-    external: true
+    external: true,
   },
   {
     title: "Calendar & Handbook",
     description: "Download academic calendar, handbook and NAAC documents.",
     href: "#resources",
-    icon: CalendarDays
-  }
+    icon: CalendarDays,
+  },
 ];
 
 const USP_HIGHLIGHTS: Highlight[] = [
   {
     title: "Project-Based Learning",
-    description: "Every semester features micro, mini and major projects to transform ideas into launch-ready prototypes.",
-    image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1600&auto=format&fit=crop",
+    description:
+      "Every semester features micro, mini and major projects to transform ideas into launch-ready prototypes.",
+    image:
+      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1600&auto=format&fit=crop",
     icon: PenTool,
-    stat: "160 Credits"
+    stat: "160 Credits",
   },
   {
     title: "Global Immersions & Internships",
-    description: "Mandatory three-month industry or overseas research internship plus monthly workshops with design icons.",
-    image: "https://images.unsplash.com/photo-1523475472560-d2df97ec485c?q=80&w=1600&auto=format&fit=crop",
-    icon: Compass
+    description:
+      "Mandatory three-month industry or overseas research internship plus monthly workshops with design icons.",
+    image:
+      "https://images.unsplash.com/photo-1523475472560-d2df97ec485c?q=80&w=1600&auto=format&fit=crop",
+    icon: Compass,
   },
   {
     title: "Interdisciplinary Foundation",
-    description: "Common foundation and liberal studies build a broad, human-centred design perspective across specialisations.",
-    image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?q=80&w=1600&auto=format&fit=crop",
-    icon: Award
+    description:
+      "Common foundation and liberal studies build a broad, human-centred design perspective across specialisations.",
+    image:
+      "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?q=80&w=1600&auto=format&fit=crop",
+    icon: Award,
   },
   {
     title: "Industry Studios",
-    description: "Design & Innovation Centre, IBM CoE, automotive and healthcare labs support experimentation with emerging tech.",
-    image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1600&auto=format&fit=crop",
-    icon: Presentation
-  }
+    description:
+      "Design & Innovation Centre, IBM CoE, automotive and healthcare labs support experimentation with emerging tech.",
+    image:
+      "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1600&auto=format&fit=crop",
+    icon: Presentation,
+  },
 ];
 
 const STRUCTURE_POINTS: StructurePoint[] = [
   {
     title: "Year I: Foundation",
-    description: "Shared foundation studio, liberal studies and micro projects shape core design sensibilities across tracks.",
-    icon: Palette
+    description:
+      "Shared foundation studio, liberal studies and micro projects shape core design sensibilities across tracks.",
+    icon: Palette,
   },
   {
     title: "Year II: Core Studios",
-    description: "Discipline studios with mini projects, liberal studies and micro explorations across design research.",
-    icon: PenTool
+    description:
+      "Discipline studios with mini projects, liberal studies and micro explorations across design research.",
+    icon: PenTool,
   },
   {
     title: "Year III: Electives & Research",
-    description: "Deeper dive into chosen specialisation with electives, design research project and industry briefs.",
-    icon: Shapes
+    description:
+      "Deeper dive into chosen specialisation with electives, design research project and industry briefs.",
+    icon: Shapes,
   },
   {
     title: "Year IV: Internship & Major Project",
-    description: "Capstone major project, portfolio review and mandatory three-month internship grounded in professional practice.",
-    icon: Rocket
-  }
+    description:
+      "Capstone major project, portfolio review and mandatory three-month internship grounded in professional practice.",
+    icon: Rocket,
+  },
 ];
 
 const RESOURCES: Resource[] = [
   {
     title: "Academic Calendar 2025-26",
-    description: "Plan studio cycles, critiques and internship timelines with the latest academic calendar.",
+    description:
+      "Plan studio cycles, critiques and internship timelines with the latest academic calendar.",
     href: "https://www.dsu.edu.in/images/AC_11082025.pdf",
-    badge: "Calendar"
+    badge: "Calendar",
   },
   {
     title: "Programme Handbook",
-    description: "Download the official handbook covering policies, assessment rubrics and student support.",
+    description:
+      "Download the official handbook covering policies, assessment rubrics and student support.",
     href: "https://www.dsu.edu.in/images/SBAS/pdf/Handbook_2023.pdf",
-    badge: "Handbook"
+    badge: "Handbook",
   },
   {
     title: "B.Design Brochure",
-    description: "Explore specialisations, curriculum map and placement highlights in one place.",
+    description:
+      "Explore specialisations, curriculum map and placement highlights in one place.",
     href: "https://www.dsu.edu.in/about-bdesign/bdesign-brochure",
-    badge: "Brochure"
+    badge: "Brochure",
   },
   {
     title: "NAAC Documents",
-    description: "Access ATR, code of conduct and stakeholder feedback to understand quality benchmarks.",
+    description:
+      "Access ATR, code of conduct and stakeholder feedback to understand quality benchmarks.",
     href: "https://www.dsu.edu.in/about-bdesign",
-    badge: "Quality"
-  }
+    badge: "Quality",
+  },
 ];
 
 function QuickLinkCard({ link }: { link: QuickLink }) {
@@ -182,7 +207,9 @@ function QuickLinkCard({ link }: { link: QuickLink }) {
         <ChevronRight className="h-4 w-4 text-transparent transition-colors duration-500 group-hover:text-brand-magenta" />
       </div>
       <h3 className="mt-5 text-lg font-semibold font-gilroy">{link.title}</h3>
-      <p className="mt-3 text-sm text-muted-foreground font-graphik">{link.description}</p>
+      <p className="mt-3 text-sm text-muted-foreground font-graphik">
+        {link.description}
+      </p>
       <div className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-brand-magenta">
         {link.external ? "Open resource" : "Jump to section"}
         <ChevronRight className="h-4 w-4" />
@@ -227,10 +254,16 @@ function HighlightCard({ highlight }: { highlight: Highlight }) {
         <Icon className="h-4 w-4" /> B.Design USP
       </div>
       <div className="absolute inset-x-0 bottom-0 p-5 text-white">
-        <h3 className="mb-2 text-lg font-semibold font-gilroy">{highlight.title}</h3>
-        <p className="text-sm text-white/80 font-graphik">{highlight.description}</p>
+        <h3 className="mb-2 text-lg font-semibold font-gilroy">
+          {highlight.title}
+        </h3>
+        <p className="text-sm text-white/80 font-graphik">
+          {highlight.description}
+        </p>
         {highlight.stat ? (
-          <div className="mt-3 text-xs uppercase tracking-wide text-white/70 font-graphik">{highlight.stat}</div>
+          <div className="mt-3 text-xs uppercase tracking-wide text-white/70 font-graphik">
+            {highlight.stat}
+          </div>
         ) : null}
       </div>
     </Card>
@@ -260,8 +293,12 @@ function ResourceCard({ resource }: { resource: Resource }) {
   return (
     <Card className="h-full rounded-3xl border border-border/40 bg-card/60 backdrop-blur">
       <CardHeader className="pb-2">
-        <Badge className="bg-brand-magenta/15 text-brand-magenta">{resource.badge}</Badge>
-        <CardTitle className="mt-4 text-lg font-gilroy">{resource.title}</CardTitle>
+        <Badge className="bg-brand-magenta/15 text-brand-magenta">
+          {resource.badge}
+        </Badge>
+        <CardTitle className="mt-4 text-lg font-gilroy">
+          {resource.title}
+        </CardTitle>
       </CardHeader>
       <CardContent className="space-y-5 text-sm text-muted-foreground font-graphik">
         <p>{resource.description}</p>
@@ -284,7 +321,11 @@ export default function BDesignOverview() {
     <div className="min-h-screen bg-background text-foreground">
       <section className="relative" id="top">
         <div className="h-[60vh] w-full overflow-hidden md:h-[70vh]">
-          <img src={HERO_IMAGE} alt="Bachelor of Design Program" className="h-full w-full object-cover" />
+          <img
+            src={HERO_IMAGE}
+            alt="Bachelor of Design Program"
+            className="h-full w-full object-cover"
+          />
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
         </div>
@@ -292,18 +333,37 @@ export default function BDesignOverview() {
           <div className="mx-auto max-w-7xl px-6">
             <div className="mb-6 inline-flex items-center rounded-full border border-brand-magenta/20 bg-brand-magenta/10 px-4 py-2">
               <Palette className="mr-2 h-4 w-4 text-brand-magenta" />
-              <span className="text-sm font-medium text-brand-magenta font-gilroy">B.Design · School of Design & Digital Trans Media</span>
+              <span className="text-sm font-medium text-brand-magenta font-gilroy">
+                B.Design · School of Design & Digital Trans Media
+              </span>
             </div>
-            <h1 className="mb-4 font-gilroy text-4xl leading-tight text-white md:text-6xl">Design Experiences that Inspire</h1>
+            <h1 className="mb-4 font-gilroy text-4xl leading-tight text-white md:text-6xl">
+              Design Experiences that Inspire
+            </h1>
             <p className="max-w-2xl text-white/90 font-graphik text-lg">
-              A four-track Bachelor of Design programme combining foundation studios, interdisciplinary electives and industry immersions to craft designers of the future.
+              A four-track Bachelor of Design programme combining foundation
+              studios, interdisciplinary electives and industry immersions to
+              craft designers of the future.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <a href="https://www.dsu.edu.in/apply/bdesign" target="_blank" rel="noreferrer">
-                <Button className="bg-brand-gradient text-white">Apply for B.Design</Button>
+              <a
+                href="https://www.dsu.edu.in/apply/bdesign"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Button className="bg-brand-gradient text-white">
+                  Apply for B.Design
+                </Button>
               </a>
-              <a href="https://www.dsu.edu.in/about-bdesign/bdesign-brochure" target="_blank" rel="noreferrer">
-                <Button variant="outline" className="border-brand-magenta/40 hover:bg-brand-magenta/10">
+              <a
+                href="https://www.dsu.edu.in/about-bdesign/bdesign-brochure"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Button
+                  variant="outline"
+                  className="border-brand-magenta/40 hover:bg-brand-magenta/10"
+                >
                   Download Brochure
                 </Button>
               </a>
@@ -312,14 +372,23 @@ export default function BDesignOverview() {
         </div>
       </section>
 
-      <section id="quick-links" className="bg-gradient-to-r from-brand-blue/5 via-brand-magenta/5 to-brand-orange/5 px-6 py-12">
+      <section
+        id="quick-links"
+        className="bg-gradient-to-r from-brand-blue/5 via-brand-magenta/5 to-brand-orange/5 px-6 py-12"
+      >
         <div className="mx-auto max-w-7xl">
           <div className="mb-10 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div>
-              <Badge className="bg-brand-magenta/15 text-brand-magenta">Important Sub Menus</Badge>
-              <h2 className="mt-4 font-gilroy text-3xl">Navigate the Programme</h2>
+              <Badge className="bg-brand-magenta/15 text-brand-magenta">
+                Important Sub Menus
+              </Badge>
+              <h2 className="mt-4 font-gilroy text-3xl">
+                Navigate the Programme
+              </h2>
               <p className="mt-3 max-w-2xl text-sm text-muted-foreground font-graphik">
-                Explore specialisations, eligibility, salient features, recruiters and quality documents shaping the B.Design experience.
+                Explore specialisations, eligibility, salient features,
+                recruiters and quality documents shaping the B.Design
+                experience.
               </p>
             </div>
             <a
@@ -340,13 +409,21 @@ export default function BDesignOverview() {
         </div>
       </section>
 
-      <section id="overview" className="bg-gradient-to-r from-brand-magenta/5 via-brand-orange/5 to-brand-blue/5 px-6 py-16">
+      <section
+        id="overview"
+        className="bg-gradient-to-r from-brand-magenta/5 via-brand-orange/5 to-brand-blue/5 px-6 py-16"
+      >
         <div className="mx-auto max-w-7xl">
           <div className="mb-12 text-center">
-            <Badge className="bg-white/20 text-brand-magenta backdrop-blur" variant="secondary">
+            <Badge
+              className="bg-white/20 text-brand-magenta backdrop-blur"
+              variant="secondary"
+            >
               Unique Strengths
             </Badge>
-            <h2 className="mt-5 font-gilroy text-3xl md:text-4xl">Why Designers Choose DSU</h2>
+            <h2 className="mt-5 font-gilroy text-3xl md:text-4xl">
+              Why Designers Choose DSU
+            </h2>
           </div>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {USP_HIGHLIGHTS.map((highlight) => (
@@ -359,10 +436,16 @@ export default function BDesignOverview() {
       <section id="structure" className="px-6 py-16">
         <div className="mx-auto max-w-7xl">
           <div className="mb-10 text-center">
-            <Badge className="bg-brand-magenta/15 text-brand-magenta">Curriculum Architecture</Badge>
-            <h2 className="mt-4 font-gilroy text-3xl md:text-4xl">Studio Journey Across Eight Semesters</h2>
+            <Badge className="bg-brand-magenta/15 text-brand-magenta">
+              Curriculum Architecture
+            </Badge>
+            <h2 className="mt-4 font-gilroy text-3xl md:text-4xl">
+              Studio Journey Across Eight Semesters
+            </h2>
             <p className="mt-3 text-sm text-muted-foreground font-graphik max-w-3xl mx-auto">
-              Move from foundational studios to advanced specialisation projects with liberal studies, research engagements and internships interwoven throughout the programme.
+              Move from foundational studios to advanced specialisation projects
+              with liberal studies, research engagements and internships
+              interwoven throughout the programme.
             </p>
           </div>
           <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
@@ -373,14 +456,22 @@ export default function BDesignOverview() {
         </div>
       </section>
 
-      <section id="resources" className="bg-gradient-to-r from-brand-blue/5 to-brand-orange/5 px-6 py-16">
+      <section
+        id="resources"
+        className="bg-gradient-to-r from-brand-blue/5 to-brand-orange/5 px-6 py-16"
+      >
         <div className="mx-auto max-w-7xl">
           <div className="mb-12 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div className="max-w-3xl">
-              <Badge className="bg-brand-magenta/15 text-brand-magenta">Calendar & Resources</Badge>
-              <h2 className="mt-4 font-gilroy text-3xl md:text-4xl">Plan Your Design Journey</h2>
+              <Badge className="bg-brand-magenta/15 text-brand-magenta">
+                Calendar & Resources
+              </Badge>
+              <h2 className="mt-4 font-gilroy text-3xl md:text-4xl">
+                Plan Your Design Journey
+              </h2>
               <p className="mt-3 text-sm text-muted-foreground font-graphik">
-                Access calendars, handbooks, brochures and quality documents to stay prepared from foundation studios to final juries.
+                Access calendars, handbooks, brochures and quality documents to
+                stay prepared from foundation studios to final juries.
               </p>
             </div>
             <a
@@ -404,19 +495,30 @@ export default function BDesignOverview() {
       <section className="px-6 pb-20">
         <div className="mx-auto max-w-4xl text-center">
           <div className="rounded-3xl border border-brand-magenta/20 bg-brand-magenta/5 p-10">
-            <h3 className="mb-3 font-gilroy text-3xl">Design Tomorrow's Experiences</h3>
+            <h3 className="mb-3 font-gilroy text-3xl">
+              Design Tomorrow's Experiences
+            </h3>
             <p className="mb-6 text-muted-foreground font-graphik">
-              Collaborate with mentors, industry leaders and global studios to graduate with a portfolio that shapes inclusive, sustainable futures.
+              Collaborate with mentors, industry leaders and global studios to
+              graduate with a portfolio that shapes inclusive, sustainable
+              futures.
             </p>
             <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <a href="https://www.dsu.edu.in/apply/bdesign" target="_blank" rel="noreferrer">
+              <a
+                href="https://www.dsu.edu.in/apply/bdesign"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <Button className="bg-brand-gradient text-white">
                   Start Application
                   <GraduationCap className="ml-2 h-4 w-4" />
                 </Button>
               </a>
               <Link to="/admissions">
-                <Button variant="outline" className="border-brand-magenta/40 hover:bg-brand-magenta/10">
+                <Button
+                  variant="outline"
+                  className="border-brand-magenta/40 hover:bg-brand-magenta/10"
+                >
                   Talk to Admissions
                 </Button>
               </Link>

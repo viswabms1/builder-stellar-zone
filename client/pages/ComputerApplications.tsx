@@ -13,12 +13,18 @@ import {
   Laptop,
   Sparkles,
   Star,
-  Trophy
+  Trophy,
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
 type QuickLink = {
   title: string;
@@ -54,138 +60,148 @@ type LabExperience = {
   icon: LucideIcon;
 };
 
-const HERO_IMAGE = "https://images.unsplash.com/photo-1523475472560-d2df97ec485c?q=80&w=2000&auto=format&fit=crop";
+const HERO_IMAGE =
+  "https://images.unsplash.com/photo-1523475472560-d2df97ec485c?q=80&w=2000&auto=format&fit=crop";
 
 const QUICK_LINKS: QuickLink[] = [
   {
     title: "USP",
-    description: "Discover what sets the School of Computer Applications apart.",
+    description:
+      "Discover what sets the School of Computer Applications apart.",
     href: "#usp",
-    icon: Star
+    icon: Star,
   },
   {
     title: "Programs",
     description: "Explore undergraduate and postgraduate pathways in tech.",
     href: "#programs",
-    icon: GraduationCap
+    icon: GraduationCap,
   },
   {
     title: "Innovation Labs",
     description: "Access industry-partnered labs that power applied learning.",
     href: "#labs",
-    icon: Cpu
+    icon: Cpu,
   },
   {
     title: "Calendar & Updates",
     description: "Stay current with academic schedules and events.",
     href: "#calendar",
-    icon: CalendarDays
+    icon: CalendarDays,
   },
   {
     title: "Dean's Message",
     description: "Read the vision from the School leadership.",
     href: "https://www.dsu.edu.in/computer-applications/dean-msg-sca",
     icon: BookOpen,
-    external: true
+    external: true,
   },
   {
     title: "Student Achievements",
     description: "Celebrate milestones from our learners and alumni community.",
     href: "https://www.dsu.edu.in/computer-applications/student-achievements-sca",
     icon: Trophy,
-    external: true
+    external: true,
   },
   {
     title: "Placements",
     description: "See top recruiters and placement readiness initiatives.",
     href: "https://www.dsu.edu.in/computer-applications/placement-sca",
     icon: Briefcase,
-    external: true
-  }
+    external: true,
+  },
 ];
 
 const USP_HIGHLIGHTS: Highlight[] = [
   {
     title: "Nurturing Fresh IT Talent",
-    description: "Established in 2016-17 to empower the next generation of developers, analysts and product builders with future-ready skills.",
-    image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1600&auto=format&fit=crop",
+    description:
+      "Established in 2016-17 to empower the next generation of developers, analysts and product builders with future-ready skills.",
+    image:
+      "https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1600&auto=format&fit=crop",
     icon: Award,
-    stat: "8+ Years of Impact"
+    stat: "8+ Years of Impact",
   },
   {
     title: "Skill-First Curriculum",
-    description: "Specialise early in app development, cloud, AI or analytics with project studios and hackathons embedded in each semester.",
-    image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=1600&auto=format&fit=crop",
-    icon: Sparkles
+    description:
+      "Specialise early in app development, cloud, AI or analytics with project studios and hackathons embedded in each semester.",
+    image:
+      "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=1600&auto=format&fit=crop",
+    icon: Sparkles,
   },
   {
     title: "Industry Immersion Labs",
-    description: "Gain hands-on time in IBM, NVIDIA, VMware and Automation Technology labs for real-world problem solving.",
-    image: "https://images.unsplash.com/photo-1526498460520-4c246339dccb?q=80&w=1600&auto=format&fit=crop",
-    icon: Cpu
+    description:
+      "Gain hands-on time in IBM, NVIDIA, VMware and Automation Technology labs for real-world problem solving.",
+    image:
+      "https://images.unsplash.com/photo-1526498460520-4c246339dccb?q=80&w=1600&auto=format&fit=crop",
+    icon: Cpu,
   },
   {
     title: "Expanding Data Science Futures",
-    description: "Launching B.Sc and M.Sc in Data Science from 2025-26 to elevate advanced analytics talent.",
-    image: "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?q=80&w=1600&auto=format&fit=crop",
-    icon: BadgeCheck
-  }
+    description:
+      "Launching B.Sc and M.Sc in Data Science from 2025-26 to elevate advanced analytics talent.",
+    image:
+      "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?q=80&w=1600&auto=format&fit=crop",
+    icon: BadgeCheck,
+  },
 ];
 
 const PROGRAM_GROUPS: ProgramGroup[] = [
   {
     label: "Undergraduate",
-    programs: [
-      "Bachelor of Computer Applications",
-      "B.Sc in Data Science"
-    ]
+    programs: ["Bachelor of Computer Applications", "B.Sc in Data Science"],
   },
   {
     label: "Postgraduate",
-    programs: [
-      "Master of Computer Applications",
-      "M.Sc in Data Science"
-    ]
-  }
+    programs: ["Master of Computer Applications", "M.Sc in Data Science"],
+  },
 ];
 
 const LAB_EXPERIENCES: LabExperience[] = [
   {
     title: "IBM Software Lab for Emerging Technologies",
-    description: "Co-innovate on enterprise stack modernisation and full-stack development challenges.",
-    icon: Laptop
+    description:
+      "Co-innovate on enterprise stack modernisation and full-stack development challenges.",
+    icon: Laptop,
   },
   {
     title: "NVIDIA – Boston Innovation Lab",
-    description: "Prototype AI, XR and accelerated computing solutions with industry-grade toolchains.",
-    icon: Cpu
+    description:
+      "Prototype AI, XR and accelerated computing solutions with industry-grade toolchains.",
+    icon: Cpu,
   },
   {
     title: "VMware IT Academy",
-    description: "Master cloud infrastructure, virtualisation and automation workflows with certifications.",
-    icon: Beaker
-  }
+    description:
+      "Master cloud infrastructure, virtualisation and automation workflows with certifications.",
+    icon: Beaker,
+  },
 ];
 
 const RESOURCE_LINKS: ResourceLink[] = [
   {
     title: "Academic Calendar 2025-26",
-    description: "Download the latest academic roadmap for Computer Applications cohorts.",
+    description:
+      "Download the latest academic roadmap for Computer Applications cohorts.",
     href: "https://www.dsu.edu.in/images/AC_11082025.pdf",
-    badge: "Calendar"
+    badge: "Calendar",
   },
   {
     title: "Events Conducted",
-    description: "Catch up on ideathons, tech talks and community meetups hosted by the school.",
+    description:
+      "Catch up on ideathons, tech talks and community meetups hosted by the school.",
     href: "https://www.dsu.edu.in/news-events/events-computer-applications",
-    badge: "Events"
+    badge: "Events",
   },
   {
     title: "Research Updates",
-    description: "Explore publications and projects undertaken by faculty and students.",
+    description:
+      "Explore publications and projects undertaken by faculty and students.",
     href: "https://www.dsu.edu.in/computer-applications/research-sca",
-    badge: "Research"
-  }
+    badge: "Research",
+  },
 ];
 
 function QuickLinkCard({ link }: { link: QuickLink }) {
@@ -199,7 +215,9 @@ function QuickLinkCard({ link }: { link: QuickLink }) {
         <ChevronRight className="h-4 w-4 text-transparent transition-colors duration-500 group-hover:text-brand-magenta" />
       </div>
       <h3 className="mt-5 text-lg font-semibold font-gilroy">{link.title}</h3>
-      <p className="mt-3 text-sm text-muted-foreground font-graphik">{link.description}</p>
+      <p className="mt-3 text-sm text-muted-foreground font-graphik">
+        {link.description}
+      </p>
       <div className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-brand-magenta">
         {link.external ? "Open resource" : "Jump to section"}
         <ChevronRight className="h-4 w-4" />
@@ -244,10 +262,16 @@ function HighlightCard({ highlight }: { highlight: Highlight }) {
         <Icon className="h-4 w-4" /> USP
       </div>
       <div className="absolute inset-x-0 bottom-0 p-5 text-white">
-        <h3 className="mb-2 text-lg font-semibold font-gilroy">{highlight.title}</h3>
-        <p className="text-sm text-white/80 font-graphik">{highlight.description}</p>
+        <h3 className="mb-2 text-lg font-semibold font-gilroy">
+          {highlight.title}
+        </h3>
+        <p className="text-sm text-white/80 font-graphik">
+          {highlight.description}
+        </p>
         {highlight.stat ? (
-          <div className="mt-3 text-xs uppercase tracking-wide text-white/70 font-graphik">{highlight.stat}</div>
+          <div className="mt-3 text-xs uppercase tracking-wide text-white/70 font-graphik">
+            {highlight.stat}
+          </div>
         ) : null}
       </div>
     </Card>
@@ -258,8 +282,12 @@ function ResourceCard({ resource }: { resource: ResourceLink }) {
   return (
     <Card className="h-full rounded-3xl border border-border/40 bg-card/60 backdrop-blur">
       <CardHeader className="pb-2">
-        <Badge className="bg-brand-magenta/15 text-brand-magenta">{resource.badge}</Badge>
-        <CardTitle className="mt-4 text-lg font-gilroy">{resource.title}</CardTitle>
+        <Badge className="bg-brand-magenta/15 text-brand-magenta">
+          {resource.badge}
+        </Badge>
+        <CardTitle className="mt-4 text-lg font-gilroy">
+          {resource.title}
+        </CardTitle>
       </CardHeader>
       <CardContent className="space-y-5 text-sm text-muted-foreground font-graphik">
         <p>{resource.description}</p>
@@ -301,7 +329,11 @@ export default function ComputerApplications() {
     <div className="min-h-screen bg-background text-foreground">
       <section className="relative" id="top">
         <div className="h-[60vh] w-full overflow-hidden md:h-[70vh]">
-          <img src={HERO_IMAGE} alt="School of Computer Applications" className="h-full w-full object-cover" />
+          <img
+            src={HERO_IMAGE}
+            alt="School of Computer Applications"
+            className="h-full w-full object-cover"
+          />
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
         </div>
@@ -309,18 +341,33 @@ export default function ComputerApplications() {
           <div className="mx-auto max-w-7xl px-6">
             <div className="mb-6 inline-flex items-center rounded-full border border-brand-magenta/20 bg-brand-magenta/10 px-4 py-2">
               <Cpu className="mr-2 h-4 w-4 text-brand-magenta" />
-              <span className="text-sm font-medium text-brand-magenta font-gilroy">School of Computer Applications</span>
+              <span className="text-sm font-medium text-brand-magenta font-gilroy">
+                School of Computer Applications
+              </span>
             </div>
-            <h1 className="mb-4 font-gilroy text-4xl leading-tight text-white md:text-6xl">Build Tomorrow's Digital Experiences</h1>
+            <h1 className="mb-4 font-gilroy text-4xl leading-tight text-white md:text-6xl">
+              Build Tomorrow's Digital Experiences
+            </h1>
             <p className="max-w-2xl text-white/90 font-graphik text-lg">
-              From full-stack development to data science and cloud-native innovation, DSU prepares tech creators with experiential labs, industry mentorship and product-focused learning.
+              From full-stack development to data science and cloud-native
+              innovation, DSU prepares tech creators with experiential labs,
+              industry mentorship and product-focused learning.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link to="/admissions">
-                <Button className="bg-brand-gradient text-white">Apply Now</Button>
+                <Button className="bg-brand-gradient text-white">
+                  Apply Now
+                </Button>
               </Link>
-              <a href="https://www.dsu.edu.in/computer-applications/usp-sca" target="_blank" rel="noreferrer">
-                <Button variant="outline" className="border-brand-magenta/40 hover:bg-brand-magenta/10">
+              <a
+                href="https://www.dsu.edu.in/computer-applications/usp-sca"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Button
+                  variant="outline"
+                  className="border-brand-magenta/40 hover:bg-brand-magenta/10"
+                >
                   Explore USP
                 </Button>
               </a>
@@ -329,14 +376,21 @@ export default function ComputerApplications() {
         </div>
       </section>
 
-      <section id="quick-links" className="bg-gradient-to-r from-brand-blue/5 via-brand-magenta/5 to-brand-orange/5 px-6 py-12">
+      <section
+        id="quick-links"
+        className="bg-gradient-to-r from-brand-blue/5 via-brand-magenta/5 to-brand-orange/5 px-6 py-12"
+      >
         <div className="mx-auto max-w-7xl">
           <div className="mb-10 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div>
-              <Badge className="bg-brand-magenta/15 text-brand-magenta">Important Sub Menus</Badge>
+              <Badge className="bg-brand-magenta/15 text-brand-magenta">
+                Important Sub Menus
+              </Badge>
               <h2 className="mt-4 font-gilroy text-3xl">Navigate the School</h2>
               <p className="mt-3 max-w-2xl text-sm text-muted-foreground font-graphik">
-                Jump straight to USP, programmes, innovation labs, achievements and resources that define the School of Computer Applications at DSU.
+                Jump straight to USP, programmes, innovation labs, achievements
+                and resources that define the School of Computer Applications at
+                DSU.
               </p>
             </div>
             <a
@@ -357,13 +411,21 @@ export default function ComputerApplications() {
         </div>
       </section>
 
-      <section id="usp" className="bg-gradient-to-r from-brand-magenta/5 via-brand-orange/5 to-brand-blue/5 px-6 py-16">
+      <section
+        id="usp"
+        className="bg-gradient-to-r from-brand-magenta/5 via-brand-orange/5 to-brand-blue/5 px-6 py-16"
+      >
         <div className="mx-auto max-w-7xl">
           <div className="mb-12 text-center">
-            <Badge className="bg-white/20 text-brand-magenta backdrop-blur" variant="secondary">
+            <Badge
+              className="bg-white/20 text-brand-magenta backdrop-blur"
+              variant="secondary"
+            >
               Unique Strengths
             </Badge>
-            <h2 className="mt-5 font-gilroy text-3xl md:text-4xl">Why Learners Choose DSU Computer Applications</h2>
+            <h2 className="mt-5 font-gilroy text-3xl md:text-4xl">
+              Why Learners Choose DSU Computer Applications
+            </h2>
           </div>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {USP_HIGHLIGHTS.map((highlight) => (
@@ -376,18 +438,31 @@ export default function ComputerApplications() {
       <section id="programs" className="px-6 py-16">
         <div className="mx-auto max-w-7xl">
           <div className="mb-10 text-center">
-            <Badge className="bg-brand-magenta/15 text-brand-magenta">Academic Pathways</Badge>
-            <h2 className="mt-4 font-gilroy text-3xl md:text-4xl">Programs That Transform Tech Aspirations</h2>
+            <Badge className="bg-brand-magenta/15 text-brand-magenta">
+              Academic Pathways
+            </Badge>
+            <h2 className="mt-4 font-gilroy text-3xl md:text-4xl">
+              Programs That Transform Tech Aspirations
+            </h2>
             <p className="mt-3 text-sm text-muted-foreground font-graphik max-w-3xl mx-auto">
-              Choose focused routes into software development, analytics and data science with curriculum co-designed by industry partners and research mentors.
+              Choose focused routes into software development, analytics and
+              data science with curriculum co-designed by industry partners and
+              research mentors.
             </p>
           </div>
           <div className="grid gap-6 lg:grid-cols-2">
             {PROGRAM_GROUPS.map((group) => (
-              <Card key={group.label} className="rounded-3xl border border-border/50 bg-card/50 backdrop-blur-sm">
+              <Card
+                key={group.label}
+                className="rounded-3xl border border-border/50 bg-card/50 backdrop-blur-sm"
+              >
                 <CardHeader>
-                  <Badge className="bg-brand-magenta/15 text-brand-magenta">{group.label}</Badge>
-                  <CardTitle className="mt-4 text-xl font-gilroy">{group.label} Programmes</CardTitle>
+                  <Badge className="bg-brand-magenta/15 text-brand-magenta">
+                    {group.label}
+                  </Badge>
+                  <CardTitle className="mt-4 text-xl font-gilroy">
+                    {group.label} Programmes
+                  </CardTitle>
                 </CardHeader>
                 <CardContent className="grid gap-3 text-sm text-muted-foreground font-graphik">
                   {group.programs.map((program) => (
@@ -403,14 +478,23 @@ export default function ComputerApplications() {
         </div>
       </section>
 
-      <section id="labs" className="bg-gradient-to-r from-brand-blue/5 to-brand-orange/5 px-6 py-16">
+      <section
+        id="labs"
+        className="bg-gradient-to-r from-brand-blue/5 to-brand-orange/5 px-6 py-16"
+      >
         <div className="mx-auto max-w-7xl">
           <div className="mb-12 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div className="max-w-3xl">
-              <Badge className="bg-brand-magenta/15 text-brand-magenta">Experiential Learning</Badge>
-              <h2 className="mt-4 font-gilroy text-3xl md:text-4xl">Innovation Labs & Career Readiness</h2>
+              <Badge className="bg-brand-magenta/15 text-brand-magenta">
+                Experiential Learning
+              </Badge>
+              <h2 className="mt-4 font-gilroy text-3xl md:text-4xl">
+                Innovation Labs & Career Readiness
+              </h2>
               <p className="mt-3 text-sm text-muted-foreground font-graphik">
-                Access cross-disciplinary labs and mentorship programmes that spark product engineering, AI, automation and cloud-native careers.
+                Access cross-disciplinary labs and mentorship programmes that
+                spark product engineering, AI, automation and cloud-native
+                careers.
               </p>
             </div>
             <a
@@ -435,10 +519,15 @@ export default function ComputerApplications() {
         <div className="mx-auto max-w-7xl">
           <div className="mb-10 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div className="max-w-3xl">
-              <Badge className="bg-brand-magenta/15 text-brand-magenta">Calendar & Updates</Badge>
-              <h2 className="mt-4 font-gilroy text-3xl md:text-4xl">Stay Ahead of Every Milestone</h2>
+              <Badge className="bg-brand-magenta/15 text-brand-magenta">
+                Calendar & Updates
+              </Badge>
+              <h2 className="mt-4 font-gilroy text-3xl md:text-4xl">
+                Stay Ahead of Every Milestone
+              </h2>
               <p className="mt-3 text-sm text-muted-foreground font-graphik">
-                Download academic schedules, explore event recaps and tap into ongoing research that keeps learners future focused.
+                Download academic schedules, explore event recaps and tap into
+                ongoing research that keeps learners future focused.
               </p>
             </div>
             <a
@@ -462,9 +551,13 @@ export default function ComputerApplications() {
       <section className="px-6 pb-20">
         <div className="mx-auto max-w-4xl text-center">
           <div className="rounded-3xl border border-brand-magenta/20 bg-brand-magenta/5 p-10">
-            <h3 className="mb-3 font-gilroy text-3xl">Launch Your Tech Career with DSU</h3>
+            <h3 className="mb-3 font-gilroy text-3xl">
+              Launch Your Tech Career with DSU
+            </h3>
             <p className="mb-6 text-muted-foreground font-graphik">
-              Collaborate with mentors, build real products, showcase your portfolio and secure roles with the ecosystem of recruiters partnering with the School of Computer Applications.
+              Collaborate with mentors, build real products, showcase your
+              portfolio and secure roles with the ecosystem of recruiters
+              partnering with the School of Computer Applications.
             </p>
             <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
               <Link to="/admissions">
@@ -473,8 +566,15 @@ export default function ComputerApplications() {
                   <GraduationCap className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
-              <a href="https://www.dsu.edu.in/computer-applications/placement-sca" target="_blank" rel="noreferrer">
-                <Button variant="outline" className="border-brand-magenta/40 hover:bg-brand-magenta/10">
+              <a
+                href="https://www.dsu.edu.in/computer-applications/placement-sca"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Button
+                  variant="outline"
+                  className="border-brand-magenta/40 hover:bg-brand-magenta/10"
+                >
                   Placement Snapshot
                 </Button>
               </a>

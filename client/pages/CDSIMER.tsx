@@ -11,12 +11,18 @@ import {
   ShieldCheck,
   Sparkle,
   Stethoscope,
-  Users
+  Users,
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
 type QuickLink = {
   title: string;
@@ -48,142 +54,167 @@ type Resource = {
   badge: string;
 };
 
-const HERO_IMAGE = "https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?q=80&w=2000&auto=format&fit=crop";
+const HERO_IMAGE =
+  "https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?q=80&w=2000&auto=format&fit=crop";
 
 const QUICK_LINKS: QuickLink[] = [
   {
     title: "Medical College",
-    description: "Discover the smart campus nurturing next-generation physicians.",
+    description:
+      "Discover the smart campus nurturing next-generation physicians.",
     href: "#pillars",
-    icon: GraduationCap
+    icon: GraduationCap,
   },
   {
     title: "Hospital",
-    description: "Access the 650-bed tertiary care hospital offerings and departments.",
+    description:
+      "Access the 650-bed tertiary care hospital offerings and departments.",
     href: "/academics/health-sciences/cdsimer/hospital",
-    icon: Hospital
+    icon: Hospital,
   },
   {
     title: "Research & Innovation",
-    description: "Explore CDSIMER research initiatives and central laboratory capabilities.",
+    description:
+      "Explore CDSIMER research initiatives and central laboratory capabilities.",
     href: "https://cdsimer.edu.in/research/cri",
     icon: Microscope,
-    external: true
+    external: true,
   },
   {
     title: "Admissions",
-    description: "Enquire about programmes, eligibility and timelines for CDSIMER.",
+    description:
+      "Enquire about programmes, eligibility and timelines for CDSIMER.",
     href: "https://cdsimer.edu.in/enquiry",
     icon: Users,
-    external: true
+    external: true,
   },
   {
     title: "Events & Community",
-    description: "Stay updated with campus events, community service drives and video tours.",
+    description:
+      "Stay updated with campus events, community service drives and video tours.",
     href: "#resources",
-    icon: CalendarDays
+    icon: CalendarDays,
   },
   {
     title: "Life at CDSIMER",
-    description: "Experience student life, clubs and cultural vibrancy across the 140-acre campus.",
+    description:
+      "Experience student life, clubs and cultural vibrancy across the 140-acre campus.",
     href: "/academics/health-sciences/cdsimer/life",
-    icon: Sparkle
-  }
+    icon: Sparkle,
+  },
 ];
 
 const HERO_HIGHLIGHTS: Highlight[] = [
   {
     title: "140 Acre Smart Campus",
-    description: "A digitally-enabled environment promoting creativity, innovation and scholarly pursuits across medicine and allied sciences.",
-    image: "https://images.unsplash.com/photo-1580281657521-8a19aa08c8c8?q=80&w=1600&auto=format&fit=crop",
+    description:
+      "A digitally-enabled environment promoting creativity, innovation and scholarly pursuits across medicine and allied sciences.",
+    image:
+      "https://images.unsplash.com/photo-1580281657521-8a19aa08c8c8?q=80&w=1600&auto=format&fit=crop",
     icon: Building2,
-    stat: "140 Acres"
+    stat: "140 Acres",
   },
   {
     title: "650 Bed Tertiary Hospital",
-    description: "Comprehensive care facility serving over 200 villages with multi-speciality departments and simulation-supported care.",
-    image: "https://images.unsplash.com/photo-1584985251444-7acbadda4b61?q=80&w=1600&auto=format&fit=crop",
+    description:
+      "Comprehensive care facility serving over 200 villages with multi-speciality departments and simulation-supported care.",
+    image:
+      "https://images.unsplash.com/photo-1584985251444-7acbadda4b61?q=80&w=1600&auto=format&fit=crop",
     icon: Hospital,
-    stat: "650 Beds"
+    stat: "650 Beds",
   },
   {
     title: "Research & Innovation",
-    description: "Central laboratory and research initiatives turning clinical curiosity into translational breakthroughs.",
-    image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1600&auto=format&fit=crop",
-    icon: Microscope
+    description:
+      "Central laboratory and research initiatives turning clinical curiosity into translational breakthroughs.",
+    image:
+      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1600&auto=format&fit=crop",
+    icon: Microscope,
   },
   {
     title: "Community Impact",
-    description: "Outreach programmes, community health camps and holistic campus life influenced by DSU's rich heritage.",
-    image: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?q=80&w=1600&auto=format&fit=crop",
-    icon: ShieldCheck
-  }
+    description:
+      "Outreach programmes, community health camps and holistic campus life influenced by DSU's rich heritage.",
+    image:
+      "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?q=80&w=1600&auto=format&fit=crop",
+    icon: ShieldCheck,
+  },
 ];
 
 const PILLARS: SectionCard[] = [
   {
     title: "Medical College",
-    description: "Competency-based medical curriculum with smart classrooms, skills labs and interdisciplinary faculty.",
+    description:
+      "Competency-based medical curriculum with smart classrooms, skills labs and interdisciplinary faculty.",
     icon: GraduationCap,
-    href: "https://cdsimer.edu.in/medical-college"
+    href: "https://cdsimer.edu.in/medical-college",
   },
   {
     title: "Hospital",
-    description: "Tertiary care hospital integrating patient safety, advanced diagnostics and compassionate care.",
+    description:
+      "Tertiary care hospital integrating patient safety, advanced diagnostics and compassionate care.",
     icon: Hospital,
-    href: "/academics/health-sciences/cdsimer/hospital"
+    href: "/academics/health-sciences/cdsimer/hospital",
   },
   {
     title: "Research & Innovation",
-    description: "Clinical research ecosystem fostering discovery and innovation through disciplined inquiry.",
+    description:
+      "Clinical research ecosystem fostering discovery and innovation through disciplined inquiry.",
     icon: Microscope,
-    href: "https://cdsimer.edu.in/research/cri"
+    href: "https://cdsimer.edu.in/research/cri",
   },
   {
     title: "Central Laboratory",
-    description: "Comprehensive diagnostics spanning clinical biochemistry, pathology and microbiology.",
+    description:
+      "Comprehensive diagnostics spanning clinical biochemistry, pathology and microbiology.",
     icon: Stethoscope,
-    href: "https://cdsimer.edu.in/central-laboratory"
+    href: "https://cdsimer.edu.in/central-laboratory",
   },
   {
     title: "Life at CDSIMER",
-    description: "Holistic student life blending academics, wellness, culture and co-curricular growth.",
+    description:
+      "Holistic student life blending academics, wellness, culture and co-curricular growth.",
     icon: Sparkle,
-    href: "/academics/health-sciences/cdsimer/life"
+    href: "/academics/health-sciences/cdsimer/life",
   },
   {
     title: "Medical Education",
-    description: "Patient-centred teaching bridging classrooms with real-world care for diverse learning cohorts.",
+    description:
+      "Patient-centred teaching bridging classrooms with real-world care for diverse learning cohorts.",
     icon: Compass,
-    href: "https://cdsimer.edu.in/medical-education"
-  }
+    href: "https://cdsimer.edu.in/medical-education",
+  },
 ];
 
 const RESOURCES: Resource[] = [
   {
     title: "Enquire Now",
-    description: "Reach out to CDSIMER admissions for detailed programme guidance and campus visits.",
+    description:
+      "Reach out to CDSIMER admissions for detailed programme guidance and campus visits.",
     href: "https://cdsimer.edu.in/enquiry",
-    badge: "Admissions"
+    badge: "Admissions",
   },
   {
     title: "Events & Community Service",
-    description: "Stay current with campus events calendar and community outreach initiatives.",
+    description:
+      "Stay current with campus events calendar and community outreach initiatives.",
     href: "https://cdsimer.edu.in/events",
-    badge: "Events"
+    badge: "Events",
   },
   {
     title: "Library & Learning Resources",
-    description: "Access the digital and physical library assets powering lifelong medical learning.",
+    description:
+      "Access the digital and physical library assets powering lifelong medical learning.",
     href: "https://cdsimer.edu.in/library",
-    badge: "Library"
+    badge: "Library",
   },
   {
     title: "Video Tour",
-    description: "Experience CDSIMER through an immersive video tour of the campus and facilities.",
+    description:
+      "Experience CDSIMER through an immersive video tour of the campus and facilities.",
     href: "https://www.youtube.com/channel/UCaM-Ha3YDgcH203jPh0iReQ",
-    badge: "Tour"
-  }
+    badge: "Tour",
+  },
 ];
 
 function QuickLinkCard({ link }: { link: QuickLink }) {
@@ -197,7 +228,9 @@ function QuickLinkCard({ link }: { link: QuickLink }) {
         <ChevronRight className="h-4 w-4 text-transparent transition-colors duration-500 group-hover:text-brand-magenta" />
       </div>
       <h3 className="mt-5 text-lg font-semibold font-gilroy">{link.title}</h3>
-      <p className="mt-3 text-sm text-muted-foreground font-graphik">{link.description}</p>
+      <p className="mt-3 text-sm text-muted-foreground font-graphik">
+        {link.description}
+      </p>
       <div className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-brand-magenta">
         {link.external ? "Open resource" : "Jump to section"}
         <ChevronRight className="h-4 w-4" />
@@ -253,10 +286,16 @@ function HighlightCard({ highlight }: { highlight: Highlight }) {
         <Icon className="h-4 w-4" /> Highlight
       </div>
       <div className="absolute inset-x-0 bottom-0 p-5 text-white">
-        <h3 className="mb-2 text-lg font-semibold font-gilroy">{highlight.title}</h3>
-        <p className="text-sm text-white/80 font-graphik">{highlight.description}</p>
+        <h3 className="mb-2 text-lg font-semibold font-gilroy">
+          {highlight.title}
+        </h3>
+        <p className="text-sm text-white/80 font-graphik">
+          {highlight.description}
+        </p>
         {highlight.stat ? (
-          <div className="mt-3 text-xs uppercase tracking-wide text-white/70 font-graphik">{highlight.stat}</div>
+          <div className="mt-3 text-xs uppercase tracking-wide text-white/70 font-graphik">
+            {highlight.stat}
+          </div>
         ) : null}
       </div>
     </Card>
@@ -287,7 +326,10 @@ function SectionCardComponent({ section }: { section: SectionCard }) {
 
   if (section.href.startsWith("/")) {
     return (
-      <Link to={section.href} className="block h-full transform transition-all duration-500 hover:-translate-y-1">
+      <Link
+        to={section.href}
+        className="block h-full transform transition-all duration-500 hover:-translate-y-1"
+      >
         {card}
       </Link>
     );
@@ -309,8 +351,12 @@ function ResourceCard({ resource }: { resource: Resource }) {
   return (
     <Card className="h-full rounded-3xl border border-border/40 bg-card/60 backdrop-blur">
       <CardHeader className="pb-2">
-        <Badge className="bg-brand-magenta/15 text-brand-magenta">{resource.badge}</Badge>
-        <CardTitle className="mt-4 text-lg font-gilroy">{resource.title}</CardTitle>
+        <Badge className="bg-brand-magenta/15 text-brand-magenta">
+          {resource.badge}
+        </Badge>
+        <CardTitle className="mt-4 text-lg font-gilroy">
+          {resource.title}
+        </CardTitle>
       </CardHeader>
       <CardContent className="space-y-5 text-sm text-muted-foreground font-graphik">
         <p>{resource.description}</p>
@@ -333,7 +379,11 @@ export default function CDSIMER() {
     <div className="min-h-screen bg-background text-foreground">
       <section className="relative" id="top">
         <div className="h-[60vh] w-full overflow-hidden md:h-[70vh]">
-          <img src={HERO_IMAGE} alt="CDSIMER" className="h-full w-full object-cover" />
+          <img
+            src={HERO_IMAGE}
+            alt="CDSIMER"
+            className="h-full w-full object-cover"
+          />
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
         </div>
@@ -341,18 +391,37 @@ export default function CDSIMER() {
           <div className="mx-auto max-w-7xl px-6">
             <div className="mb-6 inline-flex items-center rounded-full border border-brand-magenta/20 bg-brand-magenta/10 px-4 py-2">
               <Hospital className="mr-2 h-4 w-4 text-brand-magenta" />
-              <span className="text-sm font-medium text-brand-magenta font-gilroy">CDSIMER · DSU Medical Campus</span>
+              <span className="text-sm font-medium text-brand-magenta font-gilroy">
+                CDSIMER · DSU Medical Campus
+              </span>
             </div>
-            <h1 className="mb-4 font-gilroy text-4xl leading-tight text-white md:text-6xl">Empowering Healthcare with Knowledge, Discovery & Healing</h1>
+            <h1 className="mb-4 font-gilroy text-4xl leading-tight text-white md:text-6xl">
+              Empowering Healthcare with Knowledge, Discovery & Healing
+            </h1>
             <p className="max-w-3xl text-white/90 font-graphik text-lg">
-              CDSIMER blends a smart medical campus, tertiary care hospital and research innovation hub to drive excellence in patient care, education and community wellbeing.
+              CDSIMER blends a smart medical campus, tertiary care hospital and
+              research innovation hub to drive excellence in patient care,
+              education and community wellbeing.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <a href="https://cdsimer.edu.in/enquiry" target="_blank" rel="noreferrer">
-                <Button className="bg-brand-gradient text-white">Enquire Now</Button>
+              <a
+                href="https://cdsimer.edu.in/enquiry"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Button className="bg-brand-gradient text-white">
+                  Enquire Now
+                </Button>
               </a>
-              <a href="https://cdsimer.edu.in/medical-college" target="_blank" rel="noreferrer">
-                <Button variant="outline" className="border-brand-magenta/40 hover:bg-brand-magenta/10">
+              <a
+                href="https://cdsimer.edu.in/medical-college"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Button
+                  variant="outline"
+                  className="border-brand-magenta/40 hover:bg-brand-magenta/10"
+                >
                   Medical College Overview
                 </Button>
               </a>
@@ -361,14 +430,20 @@ export default function CDSIMER() {
         </div>
       </section>
 
-      <section id="quick-links" className="bg-gradient-to-r from-brand-blue/5 via-brand-magenta/5 to-brand-orange/5 px-6 py-12">
+      <section
+        id="quick-links"
+        className="bg-gradient-to-r from-brand-blue/5 via-brand-magenta/5 to-brand-orange/5 px-6 py-12"
+      >
         <div className="mx-auto max-w-7xl">
           <div className="mb-10 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div>
-              <Badge className="bg-brand-magenta/15 text-brand-magenta">Key Shortcuts</Badge>
+              <Badge className="bg-brand-magenta/15 text-brand-magenta">
+                Key Shortcuts
+              </Badge>
               <h2 className="mt-4 font-gilroy text-3xl">Navigate CDSIMER</h2>
               <p className="mt-3 max-w-2xl text-sm text-muted-foreground font-graphik">
-                Jump to programme pillars, admissions, research and campus life resources shaping the CDSIMER experience.
+                Jump to programme pillars, admissions, research and campus life
+                resources shaping the CDSIMER experience.
               </p>
             </div>
             <a
@@ -389,13 +464,21 @@ export default function CDSIMER() {
         </div>
       </section>
 
-      <section id="highlights" className="bg-gradient-to-r from-brand-magenta/5 via-brand-orange/5 to-brand-blue/5 px-6 py-16">
+      <section
+        id="highlights"
+        className="bg-gradient-to-r from-brand-magenta/5 via-brand-orange/5 to-brand-blue/5 px-6 py-16"
+      >
         <div className="mx-auto max-w-7xl">
           <div className="mb-12 text-center">
-            <Badge className="bg-white/20 text-brand-magenta backdrop-blur" variant="secondary">
+            <Badge
+              className="bg-white/20 text-brand-magenta backdrop-blur"
+              variant="secondary"
+            >
               Campus Highlights
             </Badge>
-            <h2 className="mt-5 font-gilroy text-3xl md:text-4xl">Smart Campus. Tertiary Care. Translational Research.</h2>
+            <h2 className="mt-5 font-gilroy text-3xl md:text-4xl">
+              Smart Campus. Tertiary Care. Translational Research.
+            </h2>
           </div>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {HERO_HIGHLIGHTS.map((highlight) => (
@@ -408,10 +491,15 @@ export default function CDSIMER() {
       <section id="pillars" className="px-6 py-16">
         <div className="mx-auto max-w-7xl">
           <div className="mb-10 text-center">
-            <Badge className="bg-brand-magenta/15 text-brand-magenta">Academic & Care Pillars</Badge>
-            <h2 className="mt-4 font-gilroy text-3xl md:text-4xl">Holistic Medical Ecosystem</h2>
+            <Badge className="bg-brand-magenta/15 text-brand-magenta">
+              Academic & Care Pillars
+            </Badge>
+            <h2 className="mt-4 font-gilroy text-3xl md:text-4xl">
+              Holistic Medical Ecosystem
+            </h2>
             <p className="mt-3 text-sm text-muted-foreground font-graphik max-w-3xl mx-auto">
-              CDSIMER unifies medical education, hospital services, research innovation and vibrant student life on a single connected campus.
+              CDSIMER unifies medical education, hospital services, research
+              innovation and vibrant student life on a single connected campus.
             </p>
           </div>
           <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
@@ -422,14 +510,22 @@ export default function CDSIMER() {
         </div>
       </section>
 
-      <section id="resources" className="bg-gradient-to-r from-brand-blue/5 to-brand-orange/5 px-6 py-16">
+      <section
+        id="resources"
+        className="bg-gradient-to-r from-brand-blue/5 to-brand-orange/5 px-6 py-16"
+      >
         <div className="mx-auto max-w-7xl">
           <div className="mb-12 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div className="max-w-3xl">
-              <Badge className="bg-brand-magenta/15 text-brand-magenta">Resources</Badge>
-              <h2 className="mt-4 font-gilroy text-3xl md:text-4xl">Plan Your CDSIMER Journey</h2>
+              <Badge className="bg-brand-magenta/15 text-brand-magenta">
+                Resources
+              </Badge>
+              <h2 className="mt-4 font-gilroy text-3xl md:text-4xl">
+                Plan Your CDSIMER Journey
+              </h2>
               <p className="mt-3 text-sm text-muted-foreground font-graphik">
-                Access enquiry support, campus events, library resources and video tours to experience CDSIMER before you arrive.
+                Access enquiry support, campus events, library resources and
+                video tours to experience CDSIMER before you arrive.
               </p>
             </div>
             <a
@@ -453,19 +549,29 @@ export default function CDSIMER() {
       <section className="px-6 pb-20">
         <div className="mx-auto max-w-4xl text-center">
           <div className="rounded-3xl border border-brand-magenta/20 bg-brand-magenta/5 p-10">
-            <h3 className="mb-3 font-gilroy text-3xl">Join a Purpose-Driven Medical Community</h3>
+            <h3 className="mb-3 font-gilroy text-3xl">
+              Join a Purpose-Driven Medical Community
+            </h3>
             <p className="mb-6 text-muted-foreground font-graphik">
-              Learn, heal and innovate on a campus where compassionate care meets cutting-edge technology and global vision.
+              Learn, heal and innovate on a campus where compassionate care
+              meets cutting-edge technology and global vision.
             </p>
             <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <a href="https://cdsimer.edu.in/enquiry" target="_blank" rel="noreferrer">
+              <a
+                href="https://cdsimer.edu.in/enquiry"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <Button className="bg-brand-gradient text-white">
                   Enquire Now
                   <GraduationCap className="ml-2 h-4 w-4" />
                 </Button>
               </a>
               <Link to="/academics/health-sciences">
-                <Button variant="outline" className="border-brand-magenta/40 hover:bg-brand-magenta/10">
+                <Button
+                  variant="outline"
+                  className="border-brand-magenta/40 hover:bg-brand-magenta/10"
+                >
                   Explore Health Sciences @ DSU
                 </Button>
               </Link>

@@ -14,12 +14,18 @@ import {
   Library,
   ScrollText,
   ShieldCheck,
-  Users
+  Users,
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
 type QuickLink = {
   title: string;
@@ -57,148 +63,164 @@ type ResourceLink = {
   badge: string;
 };
 
-const HERO_IMAGE = "https://images.unsplash.com/photo-1489515217757-5fd1be406fef?q=80&w=2000&auto=format&fit=crop";
+const HERO_IMAGE =
+  "https://images.unsplash.com/photo-1489515217757-5fd1be406fef?q=80&w=2000&auto=format&fit=crop";
 
 const QUICK_LINKS: QuickLink[] = [
   {
     title: "USP",
     description: "Understand our philosophy of New Age Lawyering.",
     href: "#usp",
-    icon: Award
+    icon: Award,
   },
   {
     title: "Programs",
     description: "Explore integrated and postgraduate legal pathways.",
     href: "#programs",
-    icon: GraduationCap
+    icon: GraduationCap,
   },
   {
     title: "Centres & Clinics",
     description: "Discover experiential hubs, clinics and research centres.",
     href: "#centres",
-    icon: Landmark
+    icon: Landmark,
   },
   {
     title: "Calendar & Events",
     description: "Stay updated on conferences, FDPs and signature events.",
     href: "#resources",
-    icon: CalendarDays
+    icon: CalendarDays,
   },
   {
     title: "Faculty List",
     description: "Meet the experts guiding every cohort.",
     href: "https://www.dsu.edu.in/law/law-faculty",
     icon: Users,
-    external: true
+    external: true,
   },
   {
     title: "Research Centres",
     description: "Review interdisciplinary legal research initiatives.",
     href: "https://www.dsu.edu.in/law/law-research-centres",
     icon: Globe,
-    external: true
+    external: true,
   },
   {
     title: "Newsletter",
     description: "Read the latest edition of the School of Law newsletter.",
     href: "https://www.dsu.edu.in/law/newsletter-law",
     icon: ScrollText,
-    external: true
-  }
+    external: true,
+  },
 ];
 
 const USP_HIGHLIGHTS: Highlight[] = [
   {
     title: "New Age Lawyering",
-    description: "Curriculum anchored in emerging domains like technology law, ADR, fintech regulation and human rights advocacy.",
-    image: "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1600&auto=format&fit=crop",
+    description:
+      "Curriculum anchored in emerging domains like technology law, ADR, fintech regulation and human rights advocacy.",
+    image:
+      "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1600&auto=format&fit=crop",
     icon: ShieldCheck,
-    stat: "Outcome-Focused"
+    stat: "Outcome-Focused",
   },
   {
     title: "Experiential Pedagogy",
-    description: "Moot courts, legal aid clinics and simulation labs embed practice-ready skills into every semester.",
-    image: "https://images.unsplash.com/photo-1528740579684-5809094cdaa1?q=80&w=1600&auto=format&fit=crop",
-    icon: Gavel
+    description:
+      "Moot courts, legal aid clinics and simulation labs embed practice-ready skills into every semester.",
+    image:
+      "https://images.unsplash.com/photo-1528740579684-5809094cdaa1?q=80&w=1600&auto=format&fit=crop",
+    icon: Gavel,
   },
   {
     title: "Research & Policy Impact",
-    description: "Faculty-led centres address contemporary legal issues with publications, policy briefs and community engagement.",
-    image: "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=1600&auto=format&fit=crop",
-    icon: Globe
+    description:
+      "Faculty-led centres address contemporary legal issues with publications, policy briefs and community engagement.",
+    image:
+      "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=1600&auto=format&fit=crop",
+    icon: Globe,
   },
   {
     title: "Mentor Network",
-    description: "Learn from advocates, judges, general counsels and public policy experts through masterclasses and internships.",
-    image: "https://images.unsplash.com/photo-1450101215322-bf5cd27642fc?q=80&w=1600&auto=format&fit=crop",
-    icon: Users
-  }
+    description:
+      "Learn from advocates, judges, general counsels and public policy experts through masterclasses and internships.",
+    image:
+      "https://images.unsplash.com/photo-1450101215322-bf5cd27642fc?q=80&w=1600&auto=format&fit=crop",
+    icon: Users,
+  },
 ];
 
 const PROGRAMMES: Programme[] = [
   {
     name: "B.B.A., LL.B. (Hons)",
     level: "Integrated Undergraduate",
-    duration: "5 Years"
+    duration: "5 Years",
   },
   {
     name: "B.A., LL.B. (Hons)",
     level: "Integrated Undergraduate",
-    duration: "5 Years"
+    duration: "5 Years",
   },
   {
     name: "LL.B.",
     level: "Postgraduate",
-    duration: "3 Years"
-  }
+    duration: "3 Years",
+  },
 ];
 
 const CENTRES: Centre[] = [
   {
     title: "Moot Court & Simulation Arena",
-    description: "Practice oral advocacy, client counselling and arbitration in a purpose-built space mirroring real courtrooms.",
+    description:
+      "Practice oral advocacy, client counselling and arbitration in a purpose-built space mirroring real courtrooms.",
     icon: Gavel,
-    href: "https://www.dsu.edu.in/law/activities-law"
+    href: "https://www.dsu.edu.in/law/activities-law",
   },
   {
     title: "Legal Aid & Outreach Clinic",
-    description: "Serve communities, run legal literacy drives and collaborate with NGOs for social justice projects.",
+    description:
+      "Serve communities, run legal literacy drives and collaborate with NGOs for social justice projects.",
     icon: Scale,
-    href: "https://www.dsu.edu.in/law/cells-committees-law"
+    href: "https://www.dsu.edu.in/law/cells-committees-law",
   },
   {
     title: "Research Centres",
-    description: "Interdisciplinary centres focused on public policy, technology law, constitutionalism and human rights.",
+    description:
+      "Interdisciplinary centres focused on public policy, technology law, constitutionalism and human rights.",
     icon: Globe,
-    href: "https://www.dsu.edu.in/law/law-research-centres"
+    href: "https://www.dsu.edu.in/law/law-research-centres",
   },
   {
     title: "Specialised Library & Knowledge Hub",
-    description: "Access a curated repository of journals, online databases and international case law resources.",
+    description:
+      "Access a curated repository of journals, online databases and international case law resources.",
     icon: Library,
-    href: "https://www.dsu.edu.in/law/sol-library"
-  }
+    href: "https://www.dsu.edu.in/law/sol-library",
+  },
 ];
 
 const RESOURCE_LINKS: ResourceLink[] = [
   {
     title: "Newsletter",
-    description: "Insights into achievements, student stories and legal discourse from the School of Law community.",
+    description:
+      "Insights into achievements, student stories and legal discourse from the School of Law community.",
     href: "https://www.dsu.edu.in/law/newsletter-law",
-    badge: "Updates"
+    badge: "Updates",
   },
   {
     title: "Annual Conference",
-    description: "Converge with practitioners and scholars at DSU's flagship legal conferences and conclaves.",
+    description:
+      "Converge with practitioners and scholars at DSU's flagship legal conferences and conclaves.",
     href: "https://www.dsu.edu.in/law/conference-law",
-    badge: "Conference"
+    badge: "Conference",
   },
   {
     title: "Faculty Development Programmes",
-    description: "Continuous upskilling initiatives for faculty and legal academics.",
+    description:
+      "Continuous upskilling initiatives for faculty and legal academics.",
     href: "https://www.dsu.edu.in/law/fdp-law",
-    badge: "FDP"
-  }
+    badge: "FDP",
+  },
 ];
 
 function QuickLinkCard({ link }: { link: QuickLink }) {
@@ -212,7 +234,9 @@ function QuickLinkCard({ link }: { link: QuickLink }) {
         <ChevronRight className="h-4 w-4 text-transparent transition-colors duration-500 group-hover:text-brand-magenta" />
       </div>
       <h3 className="mt-5 text-lg font-semibold font-gilroy">{link.title}</h3>
-      <p className="mt-3 text-sm text-muted-foreground font-graphik">{link.description}</p>
+      <p className="mt-3 text-sm text-muted-foreground font-graphik">
+        {link.description}
+      </p>
       <div className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-brand-magenta">
         {link.external ? "Open resource" : "Jump to section"}
         <ChevronRight className="h-4 w-4" />
@@ -257,10 +281,16 @@ function HighlightCard({ highlight }: { highlight: Highlight }) {
         <Icon className="h-4 w-4" /> USP
       </div>
       <div className="absolute inset-x-0 bottom-0 p-5 text-white">
-        <h3 className="mb-2 text-lg font-semibold font-gilroy">{highlight.title}</h3>
-        <p className="text-sm text-white/80 font-graphik">{highlight.description}</p>
+        <h3 className="mb-2 text-lg font-semibold font-gilroy">
+          {highlight.title}
+        </h3>
+        <p className="text-sm text-white/80 font-graphik">
+          {highlight.description}
+        </p>
         {highlight.stat ? (
-          <div className="mt-3 text-xs uppercase tracking-wide text-white/70 font-graphik">{highlight.stat}</div>
+          <div className="mt-3 text-xs uppercase tracking-wide text-white/70 font-graphik">
+            {highlight.stat}
+          </div>
         ) : null}
       </div>
     </Card>
@@ -271,8 +301,12 @@ function ProgrammeCard({ programme }: { programme: Programme }) {
   return (
     <Card className="h-full rounded-3xl border border-border/50 bg-card/50 backdrop-blur-sm">
       <CardHeader>
-        <Badge className="bg-brand-magenta/15 text-brand-magenta">{programme.level}</Badge>
-        <CardTitle className="mt-4 text-xl font-gilroy">{programme.name}</CardTitle>
+        <Badge className="bg-brand-magenta/15 text-brand-magenta">
+          {programme.level}
+        </Badge>
+        <CardTitle className="mt-4 text-xl font-gilroy">
+          {programme.name}
+        </CardTitle>
       </CardHeader>
       <CardContent className="text-sm text-muted-foreground font-graphik">
         <div className="flex items-center gap-2">
@@ -322,8 +356,12 @@ function ResourceCard({ resource }: { resource: ResourceLink }) {
   return (
     <Card className="h-full rounded-3xl border border-border/40 bg-card/60 backdrop-blur">
       <CardHeader className="pb-2">
-        <Badge className="bg-brand-magenta/15 text-brand-magenta">{resource.badge}</Badge>
-        <CardTitle className="mt-4 text-lg font-gilroy">{resource.title}</CardTitle>
+        <Badge className="bg-brand-magenta/15 text-brand-magenta">
+          {resource.badge}
+        </Badge>
+        <CardTitle className="mt-4 text-lg font-gilroy">
+          {resource.title}
+        </CardTitle>
       </CardHeader>
       <CardContent className="space-y-5 text-sm text-muted-foreground font-graphik">
         <p>{resource.description}</p>
@@ -346,7 +384,11 @@ export default function Law() {
     <div className="min-h-screen bg-background text-foreground">
       <section className="relative" id="top">
         <div className="h-[60vh] w-full overflow-hidden md:h-[70vh]">
-          <img src={HERO_IMAGE} alt="School of Law" className="h-full w-full object-cover" />
+          <img
+            src={HERO_IMAGE}
+            alt="School of Law"
+            className="h-full w-full object-cover"
+          />
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
         </div>
@@ -354,18 +396,33 @@ export default function Law() {
           <div className="mx-auto max-w-7xl px-6">
             <div className="mb-6 inline-flex items-center rounded-full border border-brand-magenta/20 bg-brand-magenta/10 px-4 py-2">
               <Gavel className="mr-2 h-4 w-4 text-brand-magenta" />
-              <span className="text-sm font-medium text-brand-magenta font-gilroy">School of Law</span>
+              <span className="text-sm font-medium text-brand-magenta font-gilroy">
+                School of Law
+              </span>
             </div>
-            <h1 className="mb-4 font-gilroy text-4xl leading-tight text-white md:text-6xl">Your Gateway to New Age Lawyering</h1>
+            <h1 className="mb-4 font-gilroy text-4xl leading-tight text-white md:text-6xl">
+              Your Gateway to New Age Lawyering
+            </h1>
             <p className="max-w-2xl text-white/90 font-graphik text-lg">
-              Engage with contemporary legal challenges through immersive learning, interdisciplinary research and mentorship from leading practitioners.
+              Engage with contemporary legal challenges through immersive
+              learning, interdisciplinary research and mentorship from leading
+              practitioners.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link to="/admissions">
-                <Button className="bg-brand-gradient text-white">Apply Now</Button>
+                <Button className="bg-brand-gradient text-white">
+                  Apply Now
+                </Button>
               </Link>
-              <a href="https://www.dsu.edu.in/law/about-school-law" target="_blank" rel="noreferrer">
-                <Button variant="outline" className="border-brand-magenta/40 hover:bg-brand-magenta/10">
+              <a
+                href="https://www.dsu.edu.in/law/about-school-law"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Button
+                  variant="outline"
+                  className="border-brand-magenta/40 hover:bg-brand-magenta/10"
+                >
                   About School of Law
                 </Button>
               </a>
@@ -374,14 +431,20 @@ export default function Law() {
         </div>
       </section>
 
-      <section id="quick-links" className="bg-gradient-to-r from-brand-blue/5 via-brand-magenta/5 to-brand-orange/5 px-6 py-12">
+      <section
+        id="quick-links"
+        className="bg-gradient-to-r from-brand-blue/5 via-brand-magenta/5 to-brand-orange/5 px-6 py-12"
+      >
         <div className="mx-auto max-w-7xl">
           <div className="mb-10 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div>
-              <Badge className="bg-brand-magenta/15 text-brand-magenta">Important Sub Menus</Badge>
+              <Badge className="bg-brand-magenta/15 text-brand-magenta">
+                Important Sub Menus
+              </Badge>
               <h2 className="mt-4 font-gilroy text-3xl">Navigate the School</h2>
               <p className="mt-3 max-w-2xl text-sm text-muted-foreground font-graphik">
-                Access programme details, faculty, research centres and signature publications powering the School of Law.
+                Access programme details, faculty, research centres and
+                signature publications powering the School of Law.
               </p>
             </div>
             <a
@@ -402,13 +465,21 @@ export default function Law() {
         </div>
       </section>
 
-      <section id="usp" className="bg-gradient-to-r from-brand-magenta/5 via-brand-orange/5 to-brand-blue/5 px-6 py-16">
+      <section
+        id="usp"
+        className="bg-gradient-to-r from-brand-magenta/5 via-brand-orange/5 to-brand-blue/5 px-6 py-16"
+      >
         <div className="mx-auto max-w-7xl">
           <div className="mb-12 text-center">
-            <Badge className="bg-white/20 text-brand-magenta backdrop-blur" variant="secondary">
+            <Badge
+              className="bg-white/20 text-brand-magenta backdrop-blur"
+              variant="secondary"
+            >
               Unique Strengths
             </Badge>
-            <h2 className="mt-5 font-gilroy text-3xl md:text-4xl">Why Future Advocates Choose DSU Law</h2>
+            <h2 className="mt-5 font-gilroy text-3xl md:text-4xl">
+              Why Future Advocates Choose DSU Law
+            </h2>
           </div>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {USP_HIGHLIGHTS.map((highlight) => (
@@ -421,10 +492,15 @@ export default function Law() {
       <section id="programs" className="px-6 py-16">
         <div className="mx-auto max-w-7xl">
           <div className="mb-10 text-center">
-            <Badge className="bg-brand-magenta/15 text-brand-magenta">Academic Pathways</Badge>
-            <h2 className="mt-4 font-gilroy text-3xl md:text-4xl">Programmes Crafting Practice-Ready Lawyers</h2>
+            <Badge className="bg-brand-magenta/15 text-brand-magenta">
+              Academic Pathways
+            </Badge>
+            <h2 className="mt-4 font-gilroy text-3xl md:text-4xl">
+              Programmes Crafting Practice-Ready Lawyers
+            </h2>
             <p className="mt-3 text-sm text-muted-foreground font-graphik max-w-3xl mx-auto">
-              Programmes integrate doctrinal knowledge with internships, live projects, drafting marathons and research assignments.
+              Programmes integrate doctrinal knowledge with internships, live
+              projects, drafting marathons and research assignments.
             </p>
           </div>
           <div className="grid gap-6 lg:grid-cols-3">
@@ -435,14 +511,23 @@ export default function Law() {
         </div>
       </section>
 
-      <section id="centres" className="bg-gradient-to-r from-brand-blue/5 to-brand-orange/5 px-6 py-16">
+      <section
+        id="centres"
+        className="bg-gradient-to-r from-brand-blue/5 to-brand-orange/5 px-6 py-16"
+      >
         <div className="mx-auto max-w-7xl">
           <div className="mb-12 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div className="max-w-3xl">
-              <Badge className="bg-brand-magenta/15 text-brand-magenta">Experiential Hubs</Badge>
-              <h2 className="mt-4 font-gilroy text-3xl md:text-4xl">Clinics, Centres & Knowledge Spaces</h2>
+              <Badge className="bg-brand-magenta/15 text-brand-magenta">
+                Experiential Hubs
+              </Badge>
+              <h2 className="mt-4 font-gilroy text-3xl md:text-4xl">
+                Clinics, Centres & Knowledge Spaces
+              </h2>
               <p className="mt-3 text-sm text-muted-foreground font-graphik">
-                Transform classroom insights into societal impact through moot courts, legal aid clinics, research collaborations and resource-rich libraries.
+                Transform classroom insights into societal impact through moot
+                courts, legal aid clinics, research collaborations and
+                resource-rich libraries.
               </p>
             </div>
             <a
@@ -467,10 +552,15 @@ export default function Law() {
         <div className="mx-auto max-w-7xl">
           <div className="mb-10 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div className="max-w-3xl">
-              <Badge className="bg-brand-magenta/15 text-brand-magenta">Calendar & Engagements</Badge>
-              <h2 className="mt-4 font-gilroy text-3xl md:text-4xl">Stay Engaged with Law Events</h2>
+              <Badge className="bg-brand-magenta/15 text-brand-magenta">
+                Calendar & Engagements
+              </Badge>
+              <h2 className="mt-4 font-gilroy text-3xl md:text-4xl">
+                Stay Engaged with Law Events
+              </h2>
               <p className="mt-3 text-sm text-muted-foreground font-graphik">
-                From newsletters and conferences to faculty development programmes, keep up with the vibrant legal discourse at DSU.
+                From newsletters and conferences to faculty development
+                programmes, keep up with the vibrant legal discourse at DSU.
               </p>
             </div>
             <a
@@ -494,9 +584,12 @@ export default function Law() {
       <section className="px-6 pb-20">
         <div className="mx-auto max-w-4xl text-center">
           <div className="rounded-3xl border border-brand-magenta/20 bg-brand-magenta/5 p-10">
-            <h3 className="mb-3 font-gilroy text-3xl">Shape the Future of Justice with DSU</h3>
+            <h3 className="mb-3 font-gilroy text-3xl">
+              Shape the Future of Justice with DSU
+            </h3>
             <p className="mb-6 text-muted-foreground font-graphik">
-              Gain courtroom confidence, global exposure and thought leadership by immersing yourself in DSU's vibrant legal ecosystem.
+              Gain courtroom confidence, global exposure and thought leadership
+              by immersing yourself in DSU's vibrant legal ecosystem.
             </p>
             <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
               <Link to="/admissions">
@@ -505,8 +598,15 @@ export default function Law() {
                   <GraduationCap className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
-              <a href="https://www.dsu.edu.in/law/conference-law" target="_blank" rel="noreferrer">
-                <Button variant="outline" className="border-brand-magenta/40 hover:bg-brand-magenta/10">
+              <a
+                href="https://www.dsu.edu.in/law/conference-law"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Button
+                  variant="outline"
+                  className="border-brand-magenta/40 hover:bg-brand-magenta/10"
+                >
                   Upcoming Conferences
                 </Button>
               </a>

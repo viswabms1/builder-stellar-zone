@@ -18,41 +18,51 @@ import {
   Phone,
   ShieldCheck,
   Stethoscope,
-  Syringe
+  Syringe,
 } from "lucide-react";
 
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
-const HERO_IMAGE = "https://images.unsplash.com/photo-1584984360498-9b5eec6f5c86?q=80&w=2000&auto=format&fit=crop";
+const HERO_IMAGE =
+  "https://images.unsplash.com/photo-1584984360498-9b5eec6f5c86?q=80&w=2000&auto=format&fit=crop";
 
 const HERO_STATS = [
   {
     label: "Bed Strength",
     value: "900+",
-    description: "Tertiary-care beds expanding to 1,350 with step-down and specialty units",
-    icon: BedDouble
+    description:
+      "Tertiary-care beds expanding to 1,350 with step-down and specialty units",
+    icon: BedDouble,
   },
   {
     label: "Emergency",
     value: "24×7",
-    description: "Integrated trauma, emergency medicine and rapid response teams",
-    icon: Ambulance
+    description:
+      "Integrated trauma, emergency medicine and rapid response teams",
+    icon: Ambulance,
   },
   {
     label: "Critical Care",
     value: "100",
-    description: "Adult, neonatal and pediatric intensive care beds with advanced monitoring",
-    icon: Activity
+    description:
+      "Adult, neonatal and pediatric intensive care beds with advanced monitoring",
+    icon: Activity,
   },
   {
     label: "Accreditations",
     value: "NABH & NABL",
     description: "Quality assured patient safety and laboratory excellence",
-    icon: BadgeCheck
-  }
+    icon: BadgeCheck,
+  },
 ] satisfies Stat[];
 
 const CARE_CONTINUUM = [
@@ -64,9 +74,9 @@ const CARE_CONTINUUM = [
       "Unified OPD hub with specialty clinics and private examination rooms",
       "Electronic medical records and HIS that streamline consult-to-care",
       "Comfortable waiting areas with hydration points, guidance desks and wayfinding",
-      "Dedicated wards for adults, pediatrics, labour and high-dependency support"
+      "Dedicated wards for adults, pediatrics, labour and high-dependency support",
     ],
-    icon: Stethoscope
+    icon: Stethoscope,
   },
   {
     title: "Accident & Emergency Services",
@@ -76,9 +86,9 @@ const CARE_CONTINUUM = [
       "Red, yellow and green triage bays with rapid stabilization pathways",
       "On-site laboratory, radiology and blood bank operating day and night",
       "Emergency evacuation and ambulance coordination teams on standby",
-      "Simulation-led drills preparing teams and learners for real-world response"
+      "Simulation-led drills preparing teams and learners for real-world response",
     ],
-    icon: Ambulance
+    icon: Ambulance,
   },
   {
     title: "Intensive & Critical Care",
@@ -88,10 +98,10 @@ const CARE_CONTINUUM = [
       "Central monitoring and ventilator support across modular ICU pods",
       "Dialysis, respiratory therapy and pain management services within reach",
       "Infection control protocols embedded through negative-pressure rooms",
-      "Hands-on training opportunities for residents and allied health teams"
+      "Hands-on training opportunities for residents and allied health teams",
     ],
-    icon: HeartPulse
-  }
+    icon: HeartPulse,
+  },
 ] satisfies CareService[];
 
 const SPECIALTY_SERVICES = [
@@ -102,9 +112,9 @@ const SPECIALTY_SERVICES = [
     highlights: [
       "Live procedure streaming for academic mentorship",
       "Enhanced recovery pathways anchored in multimodal pain medicine",
-      "Support for minimal access and robotic-assisted interventions"
+      "Support for minimal access and robotic-assisted interventions",
     ],
-    icon: Syringe
+    icon: Syringe,
   },
   {
     title: "Transfusion Medicine",
@@ -113,9 +123,9 @@ const SPECIALTY_SERVICES = [
     highlights: [
       "Component therapy including platelets, cryo and FFP",
       "Pre-transfusion testing and hemovigilance protocols",
-      "Community outreach and donor mobilisation initiatives"
+      "Community outreach and donor mobilisation initiatives",
     ],
-    icon: Droplet
+    icon: Droplet,
   },
   {
     title: "Radiology & Imaging",
@@ -124,9 +134,9 @@ const SPECIALTY_SERVICES = [
     highlights: [
       "Image-guided interventions supporting trauma and oncology",
       "Digital PACS workflow integrating wards and outpatient clinics",
-      "Point-of-care ultrasound for emergency and critical care teams"
+      "Point-of-care ultrasound for emergency and critical care teams",
     ],
-    icon: ShieldCheck
+    icon: ShieldCheck,
   },
   {
     title: "Laboratory Medicine",
@@ -135,10 +145,10 @@ const SPECIALTY_SERVICES = [
     highlights: [
       "Clinical, histopathology and microbiology verticals in one hub",
       "Quality systems aligned with NABL benchmarks",
-      "Research collaboration pipeline for translational discoveries"
+      "Research collaboration pipeline for translational discoveries",
     ],
-    icon: FlaskConical
-  }
+    icon: FlaskConical,
+  },
 ] satisfies SpecialtyService[];
 
 const LEARNING_FEATURES = [
@@ -146,53 +156,58 @@ const LEARNING_FEATURES = [
     title: "Integrated Medical Education",
     description:
       "Competency-based MBBS, postgraduate and allied health training embed real patient scenarios with simulation and bedside teaching.",
-    icon: GraduationCap
+    icon: GraduationCap,
   },
   {
     title: "Smart Campus Infrastructure",
     description:
       "Digitally synced lecture halls, skills labs and hospital information systems power evidence-based learning and care planning.",
-    icon: Building2
+    icon: Building2,
   },
   {
     title: "Community Outreach",
     description:
       "Community health programmes, rural health postings and public health drives extend the hospital's impact across 200+ villages.",
-    icon: CalendarDays
-  }
+    icon: CalendarDays,
+  },
 ] satisfies LearningFeature[];
 
 const RESOURCE_LINKS = [
   {
     title: "Vision, Mission & Values",
-    description: "Understand the guiding principles shaping CDSIMER's patient care philosophy.",
+    description:
+      "Understand the guiding principles shaping CDSIMER's patient care philosophy.",
     href: "https://cdsimer.edu.in/images/hospital/CDSIMER_MVVQP.pdf",
-    badge: "Overview"
+    badge: "Overview",
   },
   {
     title: "Statutory Compliance",
-    description: "Review statutory submissions and governance documents for the hospital.",
+    description:
+      "Review statutory submissions and governance documents for the hospital.",
     href: "https://cdsimer.edu.in/images/hospital/CDSIMER-1.pdf",
-    badge: "Governance"
+    badge: "Governance",
   },
   {
     title: "MBBS Admission Process",
-    description: "Track the latest MBBS admission timeline, eligibility and counselling flow.",
+    description:
+      "Track the latest MBBS admission timeline, eligibility and counselling flow.",
     href: "https://cdsimer.edu.in/images/Admission/Admission_Process_2025_as_on_15082025.pdf",
-    badge: "Admissions"
+    badge: "Admissions",
   },
   {
     title: "PG Admission Process",
-    description: "Understand postgraduate programme intake, seat matrix and key dates.",
+    description:
+      "Understand postgraduate programme intake, seat matrix and key dates.",
     href: "https://cdsimer.edu.in/images/Admission/PG_Admission_Process_2024_24122024.pdf",
-    badge: "Admissions"
+    badge: "Admissions",
   },
   {
     title: "Central Laboratory Overview",
-    description: "Explore diagnostic capabilities, turnaround times and department workflows.",
+    description:
+      "Explore diagnostic capabilities, turnaround times and department workflows.",
     href: "https://cdsimer.edu.in/central-laboratory",
-    badge: "Diagnostics"
-  }
+    badge: "Diagnostics",
+  },
 ] satisfies ResourceLink[];
 
 const CONTACT_INFO = [
@@ -200,23 +215,24 @@ const CONTACT_INFO = [
     label: "General Enquiry",
     value: "1800 425 9900",
     href: "tel:18004259900",
-    icon: Phone
+    icon: Phone,
   },
   {
     label: "MBBS Admission",
     value: "+91 6366885501",
     href: "tel:+916366885501",
-    icon: Phone
+    icon: Phone,
   },
   {
     label: "Email",
     value: "admissions.cdsimer@dsu.edu.in",
     href: "mailto:admissions.cdsimer@dsu.edu.in",
-    icon: Mail
-  }
+    icon: Mail,
+  },
 ] satisfies ContactDetail[];
 
-const CAMPUS_ADDRESS = "Dr. Chandramma Dayananda Sagar Institution for Medical Education & Research, Deverakaggalahalli, Kanakapura Road, Bengaluru South District, Karnataka — 562 112";
+const CAMPUS_ADDRESS =
+  "Dr. Chandramma Dayananda Sagar Institution for Medical Education & Research, Deverakaggalahalli, Kanakapura Road, Bengaluru South District, Karnataka — 562 112";
 
 interface Stat {
   label: string;
@@ -268,8 +284,12 @@ function StatCard({ stat }: { stat: Stat }) {
           <Icon className="h-5 w-5" />
         </span>
         <div>
-          <CardTitle className="text-2xl font-semibold font-gilroy">{stat.value}</CardTitle>
-          <p className="text-sm text-muted-foreground font-graphik">{stat.label}</p>
+          <CardTitle className="text-2xl font-semibold font-gilroy">
+            {stat.value}
+          </CardTitle>
+          <p className="text-sm text-muted-foreground font-graphik">
+            {stat.label}
+          </p>
         </div>
       </CardHeader>
       <CardContent className="pt-0">
@@ -368,7 +388,9 @@ function ResourceCard({ resource }: { resource: ResourceLink }) {
   return (
     <Card className="h-full border border-border/40 bg-card/60 backdrop-blur-sm">
       <CardHeader className="pb-2">
-        <Badge className="bg-brand-magenta/15 text-brand-magenta">{resource.badge}</Badge>
+        <Badge className="bg-brand-magenta/15 text-brand-magenta">
+          {resource.badge}
+        </Badge>
         <CardTitle className="mt-4 text-lg font-semibold font-gilroy leading-tight">
           {resource.title}
         </CardTitle>
@@ -396,7 +418,11 @@ export default function CDSIMERHospital() {
     <div className="min-h-screen bg-background text-foreground">
       <section className="relative" id="top">
         <div className="h-[60vh] w-full overflow-hidden md:h-[75vh]">
-          <img src={HERO_IMAGE} alt="CDSIMER Hospital campus" className="h-full w-full object-cover" />
+          <img
+            src={HERO_IMAGE}
+            alt="CDSIMER Hospital campus"
+            className="h-full w-full object-cover"
+          />
           <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/45 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
         </div>
@@ -404,14 +430,18 @@ export default function CDSIMERHospital() {
           <div className="mx-auto max-w-7xl px-6">
             <div className="mb-4 inline-flex items-center rounded-full border border-white/20 bg-white/10 px-4 py-2 backdrop-blur">
               <Hospital className="mr-2 h-4 w-4 text-white" />
-              <span className="text-sm font-medium text-white/90 font-gilroy">CDSIMER Teaching Hospital</span>
+              <span className="text-sm font-medium text-white/90 font-gilroy">
+                CDSIMER Teaching Hospital
+              </span>
             </div>
             <h1 className="max-w-3xl text-4xl font-gilroy leading-tight text-white md:text-6xl">
               Compassionate Care, Advanced Infrastructure & Integrated Learning
             </h1>
             <p className="mt-5 max-w-2xl text-white/90 font-graphik text-lg">
-              A NABH and NABL accredited tertiary-care destination serving Bengaluru South and surrounding communities with
-              24×7 emergency, speciality and critical care supported by DSU's medical education ecosystem.
+              A NABH and NABL accredited tertiary-care destination serving
+              Bengaluru South and surrounding communities with 24×7 emergency,
+              speciality and critical care supported by DSU's medical education
+              ecosystem.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a
@@ -420,7 +450,9 @@ export default function CDSIMERHospital() {
                 rel="noreferrer"
                 className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background"
               >
-                <Button className="bg-brand-gradient text-white">Enquire Now</Button>
+                <Button className="bg-brand-gradient text-white">
+                  Enquire Now
+                </Button>
               </a>
               <a
                 href="https://cdsimer.edu.in/images/Admission-Brochure.pdf"
@@ -428,7 +460,10 @@ export default function CDSIMERHospital() {
                 rel="noreferrer"
                 className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background"
               >
-                <Button variant="outline" className="border-white/40 bg-white/10 text-white hover:bg-white hover:text-background">
+                <Button
+                  variant="outline"
+                  className="border-white/40 bg-white/10 text-white hover:bg-white hover:text-background"
+                >
                   Download MBBS Brochure
                 </Button>
               </a>
@@ -440,15 +475,19 @@ export default function CDSIMERHospital() {
       <section className="bg-gradient-to-r from-brand-blue/5 via-brand-magenta/5 to-brand-orange/5 px-6 py-16">
         <div className="mx-auto max-w-7xl">
           <div className="mb-12 text-center">
-            <Badge className="bg-white/20 text-white backdrop-blur" variant="secondary">
+            <Badge
+              className="bg-white/20 text-white backdrop-blur"
+              variant="secondary"
+            >
               Hospital at a Glance
             </Badge>
             <h2 className="mt-6 text-3xl font-gilroy text-foreground md:text-4xl">
               Holistic Healthcare for Patients, Learners and Communities
             </h2>
             <p className="mt-4 text-sm text-muted-foreground font-graphik max-w-3xl mx-auto">
-              CDSIMER Hospital complements the medical college with comprehensive services, digitally connected departments
-              and compassionate teams who place patient safety and outcomes first.
+              CDSIMER Hospital complements the medical college with
+              comprehensive services, digitally connected departments and
+              compassionate teams who place patient safety and outcomes first.
             </p>
           </div>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
@@ -462,11 +501,16 @@ export default function CDSIMERHospital() {
       <section className="px-6 py-16">
         <div className="mx-auto max-w-7xl">
           <div className="mb-12 text-center">
-            <Badge className="bg-brand-magenta/15 text-brand-magenta">Continuum of Care</Badge>
-            <h2 className="mt-5 text-3xl font-gilroy md:text-4xl">Patient Journeys Designed for Every Need</h2>
+            <Badge className="bg-brand-magenta/15 text-brand-magenta">
+              Continuum of Care
+            </Badge>
+            <h2 className="mt-5 text-3xl font-gilroy md:text-4xl">
+              Patient Journeys Designed for Every Need
+            </h2>
             <p className="mt-4 text-sm text-muted-foreground font-graphik max-w-3xl mx-auto">
-              From first touch in the OPD to advanced intensive care, every service line is integrated with diagnostics,
-              information systems and specialist teams.
+              From first touch in the OPD to advanced intensive care, every
+              service line is integrated with diagnostics, information systems
+              and specialist teams.
             </p>
           </div>
           <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
@@ -481,12 +525,15 @@ export default function CDSIMERHospital() {
         <div className="mx-auto max-w-7xl">
           <div className="mb-12 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
-              <Badge className="bg-brand-orange/15 text-brand-orange">Specialty Excellence</Badge>
+              <Badge className="bg-brand-orange/15 text-brand-orange">
+                Specialty Excellence
+              </Badge>
               <h2 className="mt-4 text-3xl font-gilroy md:text-4xl">
                 Advanced Services Powering Clinical Outcomes
               </h2>
               <p className="mt-3 text-sm text-muted-foreground font-graphik max-w-2xl">
-                Operating theatres, diagnostics, laboratory sciences and transfusion medicine collaborate seamlessly to support
+                Operating theatres, diagnostics, laboratory sciences and
+                transfusion medicine collaborate seamlessly to support
                 high-acuity care and surgical specialities.
               </p>
             </div>
@@ -512,11 +559,16 @@ export default function CDSIMERHospital() {
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-12 lg:grid-cols-[2fr,1.2fr] lg:items-center">
             <div>
-              <Badge className="bg-brand-blue/15 text-brand-blue">Learning in Action</Badge>
-              <h2 className="mt-5 text-3xl font-gilroy md:text-4xl">Hospital-based Education & Community Impact</h2>
+              <Badge className="bg-brand-blue/15 text-brand-blue">
+                Learning in Action
+              </Badge>
+              <h2 className="mt-5 text-3xl font-gilroy md:text-4xl">
+                Hospital-based Education & Community Impact
+              </h2>
               <p className="mt-4 text-sm text-muted-foreground font-graphik">
-                Clinical postings, interdisciplinary simulations and community outreach connect learners with real-world health
-                challenges while strengthening public health outcomes.
+                Clinical postings, interdisciplinary simulations and community
+                outreach connect learners with real-world health challenges
+                while strengthening public health outcomes.
               </p>
               <div className="mt-8 grid gap-5 sm:grid-cols-2">
                 {LEARNING_FEATURES.map((feature) => (
@@ -527,10 +579,15 @@ export default function CDSIMERHospital() {
             <div className="space-y-6">
               <Card className="overflow-hidden border border-border/40 bg-card/60 backdrop-blur">
                 <CardHeader className="pb-2">
-                  <Badge className="bg-brand-magenta/15 text-brand-magenta">Watch</Badge>
-                  <CardTitle className="mt-4 text-lg font-gilroy">Inside CDSIMER Hospital</CardTitle>
+                  <Badge className="bg-brand-magenta/15 text-brand-magenta">
+                    Watch
+                  </Badge>
+                  <CardTitle className="mt-4 text-lg font-gilroy">
+                    Inside CDSIMER Hospital
+                  </CardTitle>
                   <CardDescription className="mt-2 text-sm text-muted-foreground font-graphik">
-                    Take a quick look at the campus, clinical environments and simulation-backed learning in action.
+                    Take a quick look at the campus, clinical environments and
+                    simulation-backed learning in action.
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
@@ -547,8 +604,12 @@ export default function CDSIMERHospital() {
               </Card>
               <Card className="border border-border/40 bg-card/60 backdrop-blur-sm">
                 <CardHeader className="pb-2">
-                  <Badge className="bg-brand-orange/15 text-brand-orange">Quick Access</Badge>
-                  <CardTitle className="mt-4 text-lg font-gilroy">Plan Your Visit</CardTitle>
+                  <Badge className="bg-brand-orange/15 text-brand-orange">
+                    Quick Access
+                  </Badge>
+                  <CardTitle className="mt-4 text-lg font-gilroy">
+                    Plan Your Visit
+                  </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="flex items-start gap-3 text-sm text-muted-foreground font-graphik">
@@ -563,7 +624,9 @@ export default function CDSIMERHospital() {
                         className="inline-flex items-center gap-2 rounded-full border border-brand-magenta/30 px-4 py-2 text-sm text-brand-magenta transition hover:bg-brand-magenta/10"
                       >
                         <item.icon className="h-4 w-4" />
-                        <span className="font-medium font-gilroy">{item.label}:</span>
+                        <span className="font-medium font-gilroy">
+                          {item.label}:
+                        </span>
                         <span className="font-graphik">{item.value}</span>
                       </a>
                     ))}
@@ -575,13 +638,21 @@ export default function CDSIMERHospital() {
         </div>
       </section>
 
-      <section className="bg-gradient-to-r from-brand-magenta/5 via-brand-orange/5 to-brand-blue/5 px-6 py-16" id="resources">
+      <section
+        className="bg-gradient-to-r from-brand-magenta/5 via-brand-orange/5 to-brand-blue/5 px-6 py-16"
+        id="resources"
+      >
         <div className="mx-auto max-w-7xl">
           <div className="mb-12 text-center">
-            <Badge className="bg-brand-magenta/15 text-brand-magenta">Key Resources</Badge>
-            <h2 className="mt-5 text-3xl font-gilroy md:text-4xl">Stay Informed & Connected</h2>
+            <Badge className="bg-brand-magenta/15 text-brand-magenta">
+              Key Resources
+            </Badge>
+            <h2 className="mt-5 text-3xl font-gilroy md:text-4xl">
+              Stay Informed & Connected
+            </h2>
             <p className="mt-4 text-sm text-muted-foreground font-graphik max-w-3xl mx-auto">
-              Download admissions guidance, statutory information and laboratory resources to plan your journey with CDSIMER.
+              Download admissions guidance, statutory information and laboratory
+              resources to plan your journey with CDSIMER.
             </p>
           </div>
           <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
@@ -597,15 +668,24 @@ export default function CDSIMERHospital() {
           <Card className="border border-border/40 bg-card/60 backdrop-blur">
             <CardContent className="flex flex-col gap-6 p-8 md:flex-row md:items-center md:justify-between">
               <div>
-                <h3 className="text-2xl font-gilroy">Ready to collaborate with CDSIMER Hospital?</h3>
+                <h3 className="text-2xl font-gilroy">
+                  Ready to collaborate with CDSIMER Hospital?
+                </h3>
                 <p className="mt-2 max-w-2xl text-sm text-muted-foreground font-graphik">
-                  Reach out for partnerships, clinical rotations, research collaborations or patient services. We are here to
-                  support every step of your journey.
+                  Reach out for partnerships, clinical rotations, research
+                  collaborations or patient services. We are here to support
+                  every step of your journey.
                 </p>
               </div>
               <div className="flex flex-wrap gap-3">
-                <Link to="/academics/health-sciences/cdsimer" className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-magenta">
-                  <Button variant="outline" className="border-brand-magenta/40 hover:bg-brand-magenta/10">
+                <Link
+                  to="/academics/health-sciences/cdsimer"
+                  className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-magenta"
+                >
+                  <Button
+                    variant="outline"
+                    className="border-brand-magenta/40 hover:bg-brand-magenta/10"
+                  >
                     Visit CDSIMER Overview
                   </Button>
                 </Link>
@@ -615,7 +695,9 @@ export default function CDSIMERHospital() {
                   rel="noreferrer"
                   className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-magenta"
                 >
-                  <Button className="bg-brand-gradient text-white">Chat on WhatsApp</Button>
+                  <Button className="bg-brand-gradient text-white">
+                    Chat on WhatsApp
+                  </Button>
                 </a>
               </div>
             </CardContent>
