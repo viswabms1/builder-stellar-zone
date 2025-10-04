@@ -2,7 +2,12 @@ import { Button } from "@/components/ui/button";
 import { useTheme } from "@/providers/theme-provider";
 import { Moon, Sun } from "lucide-react";
 
-export function ThemeToggle({ className }: { className?: string }) {
+type ThemeToggleProps = {
+  className?: string;
+  onToggle?: () => void;
+};
+
+export function ThemeToggle({ className, onToggle }: ThemeToggleProps) {
   const { theme, toggleTheme } = useTheme();
   const isLight = theme === "light";
 
@@ -10,7 +15,10 @@ export function ThemeToggle({ className }: { className?: string }) {
     <Button
       variant="ghost"
       size="icon"
-      onClick={toggleTheme}
+      onClick={() => {
+        toggleTheme();
+        onToggle?.();
+      }}
       aria-label={isLight ? "Switch to dark theme" : "Switch to light theme"}
       className={className}
     >
