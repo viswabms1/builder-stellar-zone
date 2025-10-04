@@ -152,6 +152,11 @@ const UG_PROGRAMS = [
   "Computer Science and Medical Engineering",
 ];
 
+const UG_PROGRAM_LINKS: Record<string, string> = {
+  "Computer Science & Engineering": "/academics/engineering/computer-science",
+  "Computer Science & Engineering (AI & ML)": "/academics/engineering/ai-ml",
+};
+
 const PG_PROGRAMS = [
   "Computer Science & Engineering",
   "Embedded Systems",
