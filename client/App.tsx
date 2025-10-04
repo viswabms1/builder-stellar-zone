@@ -22,6 +22,7 @@ import CDSIMERLife from "./pages/CDSIMERLife";
 import DeptAIML from "./pages/DeptAIML";
 import DeptCSE from "./pages/DeptCSE";
 import FacultyCSE from "./pages/FacultyCSE";
+import { ThemeProvider } from "./providers/theme-provider";
 import FacultyProfile from "./pages/FacultyProfile";
 import FacultyRohitKumarSingh from "./pages/faculty/RohitKumarSingh";
 import About from "./pages/About";
