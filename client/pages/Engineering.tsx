@@ -548,18 +548,24 @@ export default function Engineering() {
             <Card className="border border-border/50 bg-card/50 backdrop-blur-sm">
               <CardContent className="p-6">
                 <div className="grid gap-3 sm:grid-cols-2">
-                  {UG_PROGRAMS.map((program) =>
-                    program === "Computer Science & Engineering" ? (
-                      <RouterLink
-                        key={program}
-                        to="/academics/engineering/computer-science"
-                        className="flex items-center text-sm text-brand-magenta hover:underline"
-                      >
-                        <ChevronRight className="mr-2 h-3 w-3 text-brand-magenta" />
-                        {program}
-                        <ChevronRight className="ml-1 h-3 w-3" />
-                      </RouterLink>
-                    ) : (
+                  {UG_PROGRAMS.map((program) => {
+                    const link = UG_PROGRAM_LINKS[program];
+
+                    if (link) {
+                      return (
+                        <RouterLink
+                          key={program}
+                          to={link}
+                          className="flex items-center text-sm text-brand-magenta hover:underline"
+                        >
+                          <ChevronRight className="mr-2 h-3 w-3 text-brand-magenta" />
+                          {program}
+                          <ChevronRight className="ml-1 h-3 w-3" />
+                        </RouterLink>
+                      );
+                    }
+
+                    return (
                       <div
                         key={program}
                         className="flex items-center text-sm text-muted-foreground"
@@ -567,8 +573,8 @@ export default function Engineering() {
                         <ChevronRight className="mr-2 h-3 w-3 text-brand-magenta" />
                         {program}
                       </div>
-                    ),
-                  )}
+                    );
+                  })}
                 </div>
               </CardContent>
             </Card>
