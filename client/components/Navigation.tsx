@@ -174,6 +174,10 @@ export default function Navigation() {
               );
             })}
             <div className="pt-4 space-y-3 border-t border-white/20">
+              <ThemeToggle
+                className="self-start text-white/80 hover:text-white hover:bg-white/10"
+                onToggle={() => setIsOpen(false)}
+              />
               <Button
                 asChild
                 variant="ghost"
