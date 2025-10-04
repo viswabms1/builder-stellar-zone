@@ -157,11 +157,14 @@ export default function Navigation() {
             })}
             <div className="pt-4 space-y-3 border-t border-white/20">
               <Button
+                asChild
                 variant="ghost"
                 size="sm"
                 className="w-full justify-start text-white/80 hover:text-white hover:bg-white/10 font-gilroy"
               >
-                Student Portal
+                <a href="https://ums.mydsi.org/Login.aspx/DSU" target="_blank" rel="noreferrer" onClick={() => setIsOpen(false)}>
+                  Student Portal
+                </a>
               </Button>
               <Button
                 size="sm"
