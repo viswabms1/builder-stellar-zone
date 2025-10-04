@@ -13,7 +13,6 @@ import {
   Cpu,
   Languages,
   LineChart,
-  Microscope,
   Network,
   Rocket,
   Sparkles,
