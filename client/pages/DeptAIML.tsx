@@ -13,11 +13,11 @@ import {
   Cpu,
   Languages,
   LineChart,
-  MessageSquareCode,
   Microscope,
   Network,
   Rocket,
-  Sparkles
+  Sparkles,
+  SquareCode
 } from "lucide-react";
 
 const specializations = [
@@ -25,7 +25,7 @@ const specializations = [
   { icon: Cpu, label: "Deep Learning" },
   { icon: Languages, label: "Natural Language Processing" },
   { icon: Network, label: "Computer Vision" },
-  { icon: MessageSquareCode, label: "Intelligent Automation" },
+  { icon: SquareCode, label: "Intelligent Automation" },
   { icon: Rocket, label: "Autonomous Robotics" }
 ];
 
@@ -82,7 +82,7 @@ const labsAndStudios = [
     description:
       "Hands-on lab for autonomous systems integrating sensors, embedded platforms, and control frameworks for intelligent robotics.",
     image:
-      "https://images.unsplash.com/photo-150160196 f82-8362-9fcdc84c6616?q=80&w=1600&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1501601966780-6ea9a272e3df?q=80&w=1600&auto=format&fit=crop"
   },
   {
     title: "Healthcare AI Living Lab",
