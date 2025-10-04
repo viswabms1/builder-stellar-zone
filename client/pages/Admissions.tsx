@@ -411,6 +411,14 @@ export default function Admissions() {
                 linkHref: "https://dsu.edu.in/virtual-tour/"
               },
               {
+                icon: Laptop,
+                title: "Student ERP",
+                info: "ums.mydsi.org",
+                description: "Access academic and administrative services",
+                linkLabel: "Open ERP",
+                linkHref: "https://ums.mydsi.org/Login.aspx/DSU"
+              },
+              {
                 icon: Users,
                 title: "Chat Support",
                 info: "Live Chat Available",
