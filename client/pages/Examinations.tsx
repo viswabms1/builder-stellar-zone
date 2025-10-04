@@ -31,8 +31,6 @@ import {
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
-import { cn } from "@/lib/utils";
-
 type ExamDocument = {
   title: string;
   description: string;
