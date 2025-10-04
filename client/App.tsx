@@ -54,6 +54,7 @@ function App() {
             <Route path="/academics/engineering/computer-science/faculty/:slug" element={<FacultyProfile />} />
             <Route path="/admissions" element={<Admissions />} />
             <Route path="/campus-life" element={<CampusLife />} />
+            <Route path="/examinations" element={<Examinations />} />
             <Route path="/research" element={<Research />} />
             <Route path="/about" element={<About />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
