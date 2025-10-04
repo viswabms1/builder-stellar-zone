@@ -23,7 +23,8 @@ import {
   Film,
   Microscope,
   CalendarDays,
-  Newspaper
+  Newspaper,
+  Laptop
 } from "lucide-react";
 
 export default function Index() {
