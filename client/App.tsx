@@ -30,10 +30,11 @@ import NotFound from "./pages/NotFound";
 
 function App() {
   return (
-    <BrowserRouter>
-      <div className="min-h-screen bg-background text-foreground">
-        <Navigation />
-        <main>
+    <ThemeProvider>
+      <BrowserRouter>
+        <div className="min-h-screen bg-background text-foreground">
+          <Navigation />
+          <main>
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/academics" element={<Academics />} />
@@ -107,7 +108,8 @@ function App() {
           </Routes>
         </main>
       </div>
-    </BrowserRouter>
+      </BrowserRouter>
+    </ThemeProvider>
   );
 }
 
