@@ -86,11 +86,14 @@ export default function Navigation() {
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center space-x-4">
             <Button
+              asChild
               variant="ghost"
               size="sm"
               className="text-white/80 hover:text-white hover:bg-white/10 font-gilroy"
             >
-              Student Portal
+              <a href="https://ums.mydsi.org/Login.aspx/DSU" target="_blank" rel="noreferrer">
+                Student Portal
+              </a>
             </Button>
             <Button
               size="sm"
