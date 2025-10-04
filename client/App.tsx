@@ -19,6 +19,7 @@ import BDesignOverview from "./pages/BDesignOverview";
 import CDSIMER from "./pages/CDSIMER";
 import CDSIMERHospital from "./pages/CDSIMERHospital";
 import CDSIMERLife from "./pages/CDSIMERLife";
+import DeptAIML from "./pages/DeptAIML";
 import DeptCSE from "./pages/DeptCSE";
 import FacultyCSE from "./pages/FacultyCSE";
 import FacultyProfile from "./pages/FacultyProfile";
