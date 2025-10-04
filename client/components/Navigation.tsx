@@ -92,6 +92,7 @@ export default function Navigation() {
 
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center space-x-4">
+            <ThemeToggle className="text-white/80 hover:text-white hover:bg-white/10" />
             <Button
               asChild
               variant="ghost"
