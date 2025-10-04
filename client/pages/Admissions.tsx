@@ -2,12 +2,12 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { 
-  ArrowRight, 
-  GraduationCap, 
-  Calendar, 
-  FileText, 
-  DollarSign, 
+import {
+  ArrowRight,
+  GraduationCap,
+  Calendar,
+  FileText,
+  DollarSign,
   Award,
   Users,
   Clock,
@@ -17,6 +17,7 @@ import {
   Mail,
   Phone,
   MapPin,
+  Laptop,
   Star,
   TrendingUp,
   BookOpen,
