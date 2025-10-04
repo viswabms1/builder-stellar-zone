@@ -1,6 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import {
   Menu,
   X,
@@ -11,7 +10,7 @@ import {
   Building,
   FlaskConical,
   Calendar,
-  ChevronDown
+  CalendarClock
 } from "lucide-react";
 import { useState } from "react";
 
@@ -23,6 +22,7 @@ export default function Navigation() {
     { name: "Home", href: "/", icon: Home },
     { name: "Academics", href: "/academics", icon: BookOpen },
     { name: "Admissions", href: "/admissions", icon: GraduationCap },
+    { name: "Examinations", href: "/examinations", icon: CalendarClock },
     { name: "Campus Life", href: "/campus-life", icon: Building },
     { name: "Research", href: "/research", icon: FlaskConical },
     { name: "About", href: "/about", icon: Users },
