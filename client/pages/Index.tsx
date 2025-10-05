@@ -61,12 +61,7 @@ export default function Index() {
         {/* Hero Content */}
         <div className="relative max-w-7xl mx-auto px-6 text-center lg:text-left lg:flex lg:items-center lg:space-x-12">
           <div className="lg:w-2/3">
-            <div className="inline-flex items-center px-4 py-2 bg-brand-orange/10 rounded-full border border-brand-orange/20 mb-8 animate-glow-pulse">
-              <Award className="w-4 h-4 text-brand-orange mr-2" />
-              <span className="text-sm font-medium text-brand-orange font-gilroy">
-                Ranked #1 Private University in Karnataka
-              </span>
-            </div>
+            
 
             <h1 className="headline-1 mb-8 leading-tight">
               <span className="text-white">Shape Your</span>
@@ -75,22 +70,12 @@ export default function Index() {
                 Future
               </span>
               <br />
-              <span className="text-white">at DSU</span>
+              <span className="text-white">at Dayananda Sagar University</span>
             </h1>
 
-            <p className="subheadline text-gray-200 mb-12 max-w-3xl leading-relaxed font-gilroy">
-              Experience world-class education at Dayananda Sagar University.
-              <span className="text-brand-orange font-semibold">
-                {" "}
-                Innovation meets tradition
-              </span>{" "}
-              in our
-              <span className="text-brand-magenta font-semibold">
-                {" "}
-                state-of-the-art campus
-              </span>
-              .
-            </p>
+            <p className="subheadline text-gray-200 mb-12 max-w-3xl mx-auto leading-relaxed">
+                Experience world-class education at Dayananda Sagar University. Innovation meets tradition on our state-of-the-art campus.
+                </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-16">
               <Button
@@ -122,12 +107,15 @@ export default function Index() {
                 className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background"
               >
                 <Button
-                  variant="outline"
-                  size="lg"
-                  className="border-2 border-white/20 text-white hover:bg-white hover:text-background px-8 py-6 text-lg font-semibold font-gilroy rounded-2xl transition-all duration-300 backdrop-blur-sm"
-                >
-                  Virtual Tour
-                </Button>
+  variant="outline"
+  size="lg"
+  className="border-2 border-white/30 bg-black/40 text-white 
+             hover:bg-white hover:text-orange-600 
+             px-8 py-6 text-lg font-semibold font-gilroy 
+             rounded-2xl transition-all duration-300 backdrop-blur-sm"
+>
+  Virtual Tour
+</Button>
               </a>
             </div>
 
