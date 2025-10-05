@@ -403,8 +403,7 @@ export default function Index() {
               </span>
             </h2>
             <p className="subheadline text-muted-foreground max-w-2xl mx-auto font-gilroy">
-              Stories from research, campus life, and our community — inspired
-              by CMU's editorial layout
+              Stories from research, campus life, and our community
             </p>
           </div>
 
