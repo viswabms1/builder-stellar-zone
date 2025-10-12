@@ -270,6 +270,68 @@ export default function ComputerApplications() {
         </div>
       </section>
 
+      <section id="programs" className="px-6 py-16">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-10 lg:grid-cols-[1.15fr_minmax(0,1fr)] lg:items-center">
+            <div className="space-y-6">
+              <Badge className="bg-brand-magenta/15 text-brand-magenta">
+                Academic Pathways
+              </Badge>
+              <h2 className="font-gilroy text-3xl md:text-4xl">
+                Programs that transform tech aspirations into careers
+              </h2>
+              <p className="text-sm text-muted-foreground font-graphik">
+                Choose focused routes into software development, analytics, data science and emerging tech with curriculum co-designed by industry mentors and research leaders.
+              </p>
+              <div className="grid gap-4 sm:grid-cols-2">
+                {PROGRAM_GROUPS.map((group) => (
+                  <Card
+                    key={group.label}
+                    className="rounded-3xl border border-border/40 bg-card/60 backdrop-blur-sm"
+                  >
+                    <CardHeader className="pb-3">
+                      <Badge className="bg-brand-magenta/15 text-brand-magenta">
+                        {group.label}
+                      </Badge>
+                      <CardTitle className="mt-4 text-xl font-gilroy">
+                        {group.label} Programmes
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent className="grid gap-2 text-sm text-muted-foreground font-graphik">
+                      {group.programs.map((program) => (
+                        <div key={program} className="flex items-center">
+                          <ChevronRight className="mr-2 h-3 w-3 text-brand-magenta" />
+                          {program}
+                        </div>
+                      ))}
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+            <div className="rounded-3xl border border-brand-magenta/25 bg-brand-magenta/10 p-8 shadow-[0_30px_120px_-50px_rgba(233,97,255,0.6)]">
+              <h3 className="font-gilroy text-2xl text-brand-magenta">
+                Programme Highlights
+              </h3>
+              <ul className="mt-4 space-y-3 text-sm text-brand-magenta/90 font-graphik">
+                <li className="flex items-start gap-2">
+                  <Sparkles className="mt-0.5 h-4 w-4" />
+                  Industry-aligned curriculum with Capstone Studios from year one
+                </li>
+                <li className="flex items-start gap-2">
+                  <Laptop className="mt-0.5 h-4 w-4" />
+                  Dedicated labs for full-stack, data science, cybersecurity and cloud-native engineering
+                </li>
+                <li className="flex items-start gap-2">
+                  <Award className="mt-0.5 h-4 w-4" />
+                  Global certifications and internship immersion with partner companies
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section
         id="usp"
         className="bg-gradient-to-r from-brand-magenta/5 via-brand-orange/5 to-brand-blue/5 px-6 py-16"
@@ -289,49 +351,6 @@ export default function ComputerApplications() {
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {USP_HIGHLIGHTS.map((highlight) => (
               <HighlightCard key={highlight.title} highlight={highlight} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="programs" className="px-6 py-16">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-10 text-center">
-            <Badge className="bg-brand-magenta/15 text-brand-magenta">
-              Academic Pathways
-            </Badge>
-            <h2 className="mt-4 font-gilroy text-3xl md:text-4xl">
-              Programs That Transform Tech Aspirations
-            </h2>
-            <p className="mt-3 text-sm text-muted-foreground font-graphik max-w-3xl mx-auto">
-              Choose focused routes into software development, analytics and
-              data science with curriculum co-designed by industry partners and
-              research mentors.
-            </p>
-          </div>
-          <div className="grid gap-6 lg:grid-cols-2">
-            {PROGRAM_GROUPS.map((group) => (
-              <Card
-                key={group.label}
-                className="rounded-3xl border border-border/50 bg-card/50 backdrop-blur-sm"
-              >
-                <CardHeader>
-                  <Badge className="bg-brand-magenta/15 text-brand-magenta">
-                    {group.label}
-                  </Badge>
-                  <CardTitle className="mt-4 text-xl font-gilroy">
-                    {group.label} Programmes
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="grid gap-3 text-sm text-muted-foreground font-graphik">
-                  {group.programs.map((program) => (
-                    <div key={program} className="flex items-center">
-                      <ChevronRight className="mr-2 h-3 w-3 text-brand-magenta" />
-                      {program}
-                    </div>
-                  ))}
-                </CardContent>
-              </Card>
             ))}
           </div>
         </div>
