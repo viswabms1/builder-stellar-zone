@@ -177,14 +177,14 @@ function HighlightCard({ highlight }: { highlight: Highlight }) {
         <Icon className="h-4 w-4" /> USP
       </div>
       <div className="absolute inset-x-0 bottom-0 p-5 text-white">
-        <h3 className="mb-2 text-lg font-semibold font-gilroy">
+        <h3 className="mb-2 text-lg font-semibold font-display">
           {highlight.title}
         </h3>
-        <p className="text-sm text-white/80 font-graphik">
+        <p className="text-sm text-white/80 font-body">
           {highlight.description}
         </p>
         {highlight.stat ? (
-          <div className="mt-3 text-xs uppercase tracking-wide text-white/70 font-graphik">
+          <div className="mt-3 text-xs uppercase tracking-wide text-white/70 font-body">
             {highlight.stat}
           </div>
         ) : null}
@@ -201,12 +201,12 @@ function DepartmentInfoCard({ department }: { department: DepartmentCard }) {
         <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-magenta/10 text-brand-magenta">
           <Icon className="h-5 w-5" />
         </span>
-        <CardTitle className="text-base font-gilroy">
+        <CardTitle className="text-base font-display">
           {department.title}
         </CardTitle>
       </CardHeader>
       <CardContent className="pt-0">
-        <CardDescription className="text-sm leading-relaxed text-muted-foreground font-graphik">
+        <CardDescription className="text-sm leading-relaxed text-muted-foreground font-body">
           {department.description}
         </CardDescription>
       </CardContent>
@@ -236,11 +236,11 @@ function ResourceCard({ resource }: { resource: ResourceLink }) {
         <Badge className="bg-brand-magenta/15 text-brand-magenta">
           {resource.badge}
         </Badge>
-        <CardTitle className="mt-4 text-lg font-gilroy">
+        <CardTitle className="mt-4 text-lg font-display">
           {resource.title}
         </CardTitle>
       </CardHeader>
-      <CardContent className="space-y-5 text-sm text-muted-foreground font-graphik">
+      <CardContent className="space-y-5 text-sm text-muted-foreground font-body">
         <p>{resource.description}</p>
         <a
           href={resource.href}
@@ -273,14 +273,14 @@ export default function AppliedSciences() {
           <div className="mx-auto max-w-7xl px-6">
             <div className="mb-6 inline-flex items-center rounded-full border border-brand-magenta/20 bg-brand-magenta/10 px-4 py-2">
               <Atom className="mr-2 h-4 w-4 text-brand-magenta" />
-              <span className="text-sm font-medium text-brand-magenta font-gilroy">
+              <span className="text-sm font-medium text-brand-magenta font-display">
                 School of Basic & Applied Sciences
               </span>
             </div>
-            <h1 className="mb-4 font-gilroy text-4xl leading-tight text-white md:text-6xl">
+            <h1 className="mb-4 font-display text-4xl leading-tight text-white md:text-6xl">
               Deciphering the Codes of Life
             </h1>
-            <p className="max-w-2xl text-white/90 font-graphik text-lg">
+            <p className="max-w-2xl text-white/90 font-body text-lg">
               Build scientific acumen across life sciences, physical sciences
               and data-driven experimentation with research-intensive mentorship
               at DSU.
@@ -314,10 +314,10 @@ export default function AppliedSciences() {
             <Badge className="bg-brand-magenta/15 text-brand-magenta">
               Academic Pathways
             </Badge>
-            <h2 className="mt-4 font-gilroy text-3xl md:text-4xl">
+            <h2 className="mt-4 font-display text-3xl md:text-4xl">
               Programmes bridging science & society
             </h2>
-            <p className="mt-3 text-sm text-muted-foreground font-graphik max-w-3xl mx-auto">
+            <p className="mt-3 text-sm text-muted-foreground font-body max-w-3xl mx-auto">
               Programmes nurture curiosity, experimentation and analytical rigour, preparing graduates for research, healthcare, product development and analytics roles.
             </p>
           </div>
@@ -331,11 +331,11 @@ export default function AppliedSciences() {
                   <Badge className="bg-brand-magenta/15 text-brand-magenta">
                     {group.label}
                   </Badge>
-                  <CardTitle className="mt-4 text-xl font-gilroy">
+                  <CardTitle className="mt-4 text-xl font-display">
                     {group.label} Programmes
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="grid gap-3 text-sm text-muted-foreground font-graphik">
+                <CardContent className="grid gap-3 text-sm text-muted-foreground font-body">
                   {group.programmes.map((programme) => (
                     <div key={programme} className="flex items-center">
                       <ChevronRight className="mr-2 h-3 w-3 text-brand-magenta" />
@@ -361,7 +361,7 @@ export default function AppliedSciences() {
             >
               Unique Strengths
             </Badge>
-            <h2 className="mt-5 font-gilroy text-3xl md:text-4xl">
+            <h2 className="mt-5 font-display text-3xl md:text-4xl">
               Why Innovators Choose SBAS
             </h2>
           </div>
@@ -383,10 +383,10 @@ export default function AppliedSciences() {
               <Badge className="bg-brand-magenta/15 text-brand-magenta">
                 Departments & Labs
               </Badge>
-              <h2 className="mt-4 font-gilroy text-3xl md:text-4xl">
+              <h2 className="mt-4 font-display text-3xl md:text-4xl">
                 Interdisciplinary Science Ecosystem
               </h2>
-              <p className="mt-3 text-sm text-muted-foreground font-graphik">
+              <p className="mt-3 text-sm text-muted-foreground font-body">
                 Collaborate across life sciences, physical sciences, health
                 sciences and computational domains through integrated
                 coursework, labs and research projects.
@@ -420,10 +420,10 @@ export default function AppliedSciences() {
               <Badge className="bg-brand-magenta/15 text-brand-magenta">
                 Calendar & Resources
               </Badge>
-              <h2 className="mt-4 font-gilroy text-3xl md:text-4xl">
+              <h2 className="mt-4 font-display text-3xl md:text-4xl">
                 Plan, Engage & Excel
               </h2>
-              <p className="mt-3 text-sm text-muted-foreground font-graphik">
+              <p className="mt-3 text-sm text-muted-foreground font-body">
                 Download calendars, revisit event highlights and access the
                 official SBAS handbook to navigate every term with clarity.
               </p>
@@ -449,10 +449,10 @@ export default function AppliedSciences() {
       <section className="px-6 pb-20">
         <div className="mx-auto max-w-4xl text-center">
           <div className="rounded-3xl border border-brand-magenta/20 bg-brand-magenta/5 p-10">
-            <h3 className="mb-3 font-gilroy text-3xl">
+            <h3 className="mb-3 font-display text-3xl">
               Join the Science & Innovation Movement
             </h3>
-            <p className="mb-6 text-muted-foreground font-graphik">
+            <p className="mb-6 text-muted-foreground font-body">
               Engage with cross-disciplinary mentors, modern labs and industry
               collaborations that position SBAS graduates for global research
               and innovation careers.
