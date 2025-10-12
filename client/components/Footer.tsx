@@ -184,29 +184,63 @@ export default function Footer() {
               </a>
             </div>
 
-            <div className="grid gap-6 sm:grid-cols-2">
-              <div className="space-y-3 text-sm text-white/80 font-body">
-                <div className="inline-flex items-center gap-2 text-white">
-                  <MapPin className="h-4 w-4" />
-                  Main Campus
+            <div className="grid gap-8 lg:grid-cols-3">
+              {CONTACT_LOCATIONS.map((location) => (
+                <div key={location.title} className="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-[0_20px_80px_-50px_rgba(255,255,255,0.6)]">
+                  <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.28em] text-white/60">
+                    <MapPin className="h-4 w-4" />
+                    {location.title}
+                  </div>
+                  <div className="mt-3 space-y-1 text-sm text-white/80 font-body">
+                    {location.address.map((line) => (
+                      <p key={line}>{line}</p>
+                    ))}
+                  </div>
+                  <div className="mt-4 space-y-2 text-sm text-white/75 font-body">
+                    {location.phones.map((phone) => (
+                      <p key={`${location.title}-${phone.value}`} className="flex flex-wrap items-center gap-2">
+                        <span className="text-white/50">{phone.label}:</span>
+                        <a
+                          href={`tel:${phone.value.replace(/[^+0-9]/g, "")}`}
+                          className="text-white/80 transition hover:text-white"
+                        >
+                          {phone.value}
+                        </a>
+                      </p>
+                    ))}
+                  </div>
                 </div>
-                <p className="text-white/70">
-                  Shavige Malleshwara Hills, Kumaraswamy Layout,
-                  <br />
-                  Bengaluru, Karnataka 560111, India
-                </p>
-              </div>
-              <div className="space-y-3 text-sm text-white/80 font-body">
-                <div className="inline-flex items-center gap-2 text-white">
-                  <Phone className="h-4 w-4" />
-                  +91 80 4646 1800 / 1810
-                </div>
+              ))}
+            </div>
+
+            <div className="mt-10 grid gap-4 rounded-3xl border border-white/10 bg-white/5 p-6 text-sm text-white/80 font-body sm:flex sm:flex-wrap sm:items-center sm:justify-between">
+              <div className="flex flex-wrap items-center gap-3 text-white">
+                <Phone className="h-4 w-4" />
+                <span className="text-white/70">Helpline</span>
                 <a
-                  href="mailto:admissions@dsu.edu.in"
-                  className="inline-flex items-center gap-2 text-white/80 transition hover:text-white"
+                  href="tel:+918046461800"
+                  className="font-medium text-white/85 transition hover:text-white"
                 >
-                  <Mail className="h-4 w-4" /> admissions@dsu.edu.in
+                  +91 80 4646 1800
                 </a>
+                <span className="hidden text-white/40 sm:inline">/</span>
+                <a
+                  href="tel:+918049092800"
+                  className="font-medium text-white/85 transition hover:text-white"
+                >
+                  +91 80 4909 2800
+                </a>
+              </div>
+              <div className="flex flex-wrap items-center gap-3">
+                {CONTACT_EMAILS.map((email) => (
+                  <a
+                    key={email.value}
+                    href={`mailto:${email.value}`}
+                    className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-medium uppercase tracking-wide text-white/80 transition hover:text-white"
+                  >
+                    <Mail className="h-3 w-3" /> {email.label}
+                  </a>
+                ))}
               </div>
             </div>
 
