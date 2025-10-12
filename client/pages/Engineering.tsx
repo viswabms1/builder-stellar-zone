@@ -44,6 +44,16 @@ type USPHighlight = {
   stat?: string;
 };
 
+type EngineeringDepartment = {
+  name: string;
+  area: string;
+  description: string;
+  image: string;
+  link: string;
+  highlights: string[];
+  featured?: boolean;
+};
+
 type SupportingDepartment = {
   name: string;
   focus: string;
