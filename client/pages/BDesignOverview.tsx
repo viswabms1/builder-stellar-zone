@@ -11,6 +11,7 @@ import {
   Rocket,
   Shapes,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
