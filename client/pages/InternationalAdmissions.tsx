@@ -17,18 +17,14 @@ import {
 } from "@/components/ui/card";
 import {
   ArrowRight,
-  BadgeCheck,
-  BookOpen,
-  Building,
-  CheckCircle2,
   CloudLightning,
-  Compass,
   ContactRound,
   FileText,
   Globe2,
-  GraduationCap,
+  Mail,
   MapPin,
   MessageCircle,
+  PhoneCall,
   ShieldCheck,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
