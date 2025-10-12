@@ -313,7 +313,7 @@ const voiceScriptLines = [
   "Remember the key codes: Comed-K E182, CET DSU-E240, and PGCET T970 for M.Tech, B365MB for MBA, and C520MC for MCA.",
   "Visit admissions dot d s u dot e d u dot i n to start your application and download program brochures for detailed curricula.",
   "Our counselors can be reached at zero eight zero four six four six one eight zero zero or admissions at d s u dot e d u dot i n.",
-  "We look forward to welcoming you to DSU." ,
+  "We look forward to welcoming you to DSU.",
 ];
 
 const supportHighlights = [
