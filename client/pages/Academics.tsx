@@ -70,7 +70,7 @@ export default function Academics() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
             <Button
               size="lg"
-              className="bg-brand-gradient hover:opacity-90 text-white px-8 py-6 text-lg font-semibold font-gilroy rounded-2xl"
+              className="bg-brand-gradient hover:opacity-90 text-white px-8 py-6 text-lg font-semibold font-display rounded-2xl"
             >
               Explore Programs
               <ArrowRight className="w-5 h-5 ml-2" />
@@ -78,7 +78,7 @@ export default function Academics() {
             <Button
               variant="outline"
               size="lg"
-              className="border-2 border-brand-orange text-brand-orange hover:bg-brand-orange hover:text-white px-8 py-6 text-lg font-semibold font-gilroy rounded-2xl"
+              className="border-2 border-brand-orange text-brand-orange hover:bg-brand-orange hover:text-white px-8 py-6 text-lg font-semibold font-display rounded-2xl"
             >
               Download Brochure
             </Button>
@@ -462,10 +462,10 @@ export default function Academics() {
                       {feature.title}
                     </span>
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-2 font-gilroy">
+                  <h3 className="text-xl font-bold text-white mb-2 font-display">
                     {feature.title}
                   </h3>
-                  <p className="text-white/80 text-sm font-graphik">
+                  <p className="text-white/80 text-sm font-body">
                     {feature.description}
                   </p>
                 </div>
