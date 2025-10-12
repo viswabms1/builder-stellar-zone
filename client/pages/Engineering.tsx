@@ -451,9 +451,9 @@ function DepartmentCard({
             </span>
           ))}
         </div>
-        <span className="inline-flex items-center gap-2 text-sm font-medium">
+        <span className="inline-flex items-center gap-2 text-sm font-medium text-white transition-colors group-hover:text-brand-magenta">
           Explore department
-          <ChevronRight className="h-4 w-4" />
+          <ChevronRight className="h-4 w-4 transition-colors group-hover:text-brand-magenta" />
         </span>
       </div>
     </div>
