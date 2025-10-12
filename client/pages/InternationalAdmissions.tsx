@@ -504,7 +504,7 @@ function GallerySection() {
             Explore Our Campus &amp; Facilities
           </h2>
           <p className="mt-3 text-lg text-muted-foreground">
-            Glimpse into DSUs laboratories, collaborative spaces, and vibrant student life.
+            Glimpse into DSU's laboratories, collaborative spaces, and vibrant student life.
           </p>
         </div>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
