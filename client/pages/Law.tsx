@@ -330,6 +330,48 @@ export default function Law() {
         </div>
       </section>
 
+      <section id="programs" className="px-6 py-16">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-12 lg:grid-cols-[1.1fr_minmax(0,1fr)] lg:items-center">
+            <div className="space-y-6">
+              <Badge className="bg-brand-magenta/15 text-brand-magenta">
+                Academic Pathways
+              </Badge>
+              <h2 className="font-gilroy text-3xl md:text-4xl">
+                Programmes shaping practice-ready advocates
+              </h2>
+              <p className="text-sm text-muted-foreground font-graphik">
+                Integrated and postgraduate programmes combine rigorous legal scholarship with drafting studios, internships, clinics and research to prepare you for new age lawyering.
+              </p>
+              <div className="grid gap-4 sm:grid-cols-2">
+                {PROGRAMMES.map((programme) => (
+                  <ProgrammeCard key={programme.name} programme={programme} />
+                ))}
+              </div>
+            </div>
+            <div className="rounded-3xl border border-brand-magenta/25 bg-brand-magenta/10 p-8 shadow-[0_30px_120px_-50px_rgba(233,97,255,0.6)]">
+              <h3 className="font-gilroy text-2xl text-brand-magenta">
+                DSU Law advantages
+              </h3>
+              <ul className="mt-4 space-y-3 text-sm text-brand-magenta/90 font-graphik">
+                <li className="flex items-start gap-2">
+                  <Scale className="mt-0.5 h-4 w-4" />
+                  Case-led pedagogy with moot courts, judgement writing and policy labs every semester
+                </li>
+                <li className="flex items-start gap-2">
+                  <ShieldCheck className="mt-0.5 h-4 w-4" />
+                  Mandatory internships across litigation, corporate, policy and legal aid organisations
+                </li>
+                <li className="flex items-start gap-2">
+                  <BookOpen className="mt-0.5 h-4 w-4" />
+                  Faculty-led research centres publishing on constitutional law, ADR, cyber law and human rights
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section
         id="usp"
         className="bg-gradient-to-r from-brand-magenta/5 via-brand-orange/5 to-brand-blue/5 px-6 py-16"
@@ -349,28 +391,6 @@ export default function Law() {
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {USP_HIGHLIGHTS.map((highlight) => (
               <HighlightCard key={highlight.title} highlight={highlight} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="programs" className="px-6 py-16">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-10 text-center">
-            <Badge className="bg-brand-magenta/15 text-brand-magenta">
-              Academic Pathways
-            </Badge>
-            <h2 className="mt-4 font-gilroy text-3xl md:text-4xl">
-              Programmes Crafting Practice-Ready Lawyers
-            </h2>
-            <p className="mt-3 text-sm text-muted-foreground font-graphik max-w-3xl mx-auto">
-              Programmes integrate doctrinal knowledge with internships, live
-              projects, drafting marathons and research assignments.
-            </p>
-          </div>
-          <div className="grid gap-6 lg:grid-cols-3">
-            {PROGRAMMES.map((programme) => (
-              <ProgrammeCard key={programme.name} programme={programme} />
             ))}
           </div>
         </div>
