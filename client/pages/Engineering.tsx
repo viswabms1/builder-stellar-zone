@@ -396,10 +396,10 @@ function DepartmentCard({
         <div className={panelClasses}>
           <div className="space-y-4">
             <div>
-              <h3 className="font-gilroy text-2xl leading-tight text-white">
+              <h3 className="font-display text-2xl leading-tight text-white">
                 {department.name}
               </h3>
-              <p className="mt-3 text-sm text-white/85 font-graphik">
+              <p className="mt-3 text-sm text-white/85 font-body">
                 {department.description}
               </p>
             </div>
@@ -470,13 +470,13 @@ function SupportingDepartmentCard({
             >
               Supporting Department
             </Badge>
-            <h3 className="mt-3 text-xl font-semibold text-white font-gilroy">
+            <h3 className="mt-3 text-xl font-semibold text-white font-display">
               {department.name}
             </h3>
           </div>
         </div>
         <CardContent className="space-y-4 p-6">
-          <p className="text-sm leading-relaxed text-muted-foreground font-graphik">
+          <p className="text-sm leading-relaxed text-muted-foreground font-body">
             {department.focus}
           </p>
           <span className="inline-flex items-center gap-2 text-sm font-medium text-brand-magenta">
@@ -497,15 +497,15 @@ function CalendarResourceCard({ entry }: { entry: CalendarEntry }) {
           <Badge className="bg-brand-magenta/15 text-brand-magenta">
             {entry.tag}
           </Badge>
-          <span className="text-xs text-muted-foreground font-graphik">
+          <span className="text-xs text-muted-foreground font-body">
             {entry.academicYear}
           </span>
         </div>
-        <CardTitle className="mt-4 text-lg font-gilroy">
+        <CardTitle className="mt-4 text-lg font-display">
           {entry.title}
         </CardTitle>
       </CardHeader>
-      <CardContent className="space-y-5 text-sm text-muted-foreground font-graphik">
+      <CardContent className="space-y-5 text-sm text-muted-foreground font-body">
         <p>{entry.description}</p>
         <a
           href={entry.documentUrl}
@@ -538,14 +538,14 @@ export default function Engineering() {
           <div className="mx-auto max-w-7xl px-6">
             <div className="mb-6 inline-flex items-center rounded-full border border-brand-magenta/20 bg-brand-magenta/10 px-4 py-2">
               <FlaskConical className="mr-2 h-4 w-4 text-brand-magenta" />
-              <span className="text-sm font-medium text-brand-magenta font-gilroy">
+              <span className="text-sm font-medium text-brand-magenta font-display">
                 School of Engineering
               </span>
             </div>
-            <h1 className="mb-4 font-gilroy text-4xl leading-tight text-white md:text-6xl">
+            <h1 className="mb-4 font-display text-4xl leading-tight text-white md:text-6xl">
               Innovate. Create. Develop.
             </h1>
-            <p className="max-w-2xl text-white/90 font-graphik text-lg">
+            <p className="max-w-2xl text-white/90 font-body text-lg">
               Science & Technology based education that develops high-caliber
               engineers for industry, startups and scientific organisations.
             </p>
@@ -588,7 +588,7 @@ export default function Engineering() {
             >
               Unique Strengths (USP)
             </Badge>
-            <h2 className="mt-5 font-gilroy text-3xl md:text-4xl">
+            <h2 className="mt-5 font-display text-3xl md:text-4xl">
               Why Students and Industry Choose DSU Engineering
             </h2>
           </div>
@@ -608,14 +608,14 @@ export default function Engineering() {
                   <highlight.icon className="h-4 w-4" /> USP
                 </div>
                 <div className="absolute inset-x-0 bottom-0 p-5 text-white">
-                  <h3 className="mb-2 text-lg font-semibold font-gilroy">
+                  <h3 className="mb-2 text-lg font-semibold font-display">
                     {highlight.title}
                   </h3>
-                  <p className="text-sm text-white/80 font-graphik">
+                  <p className="text-sm text-white/80 font-body">
                     {highlight.description}
                   </p>
                   {highlight.stat ? (
-                    <div className="mt-3 text-xs uppercase tracking-wide text-white/70 font-graphik">
+                    <div className="mt-3 text-xs uppercase tracking-wide text-white/70 font-body">
                       {highlight.stat}
                     </div>
                   ) : null}
@@ -640,10 +640,10 @@ export default function Engineering() {
               <Badge className="bg-brand-magenta/15 text-brand-magenta">
                 Engineering Departments
               </Badge>
-              <h2 className="mt-4 font-gilroy text-3xl md:text-4xl">
+              <h2 className="mt-4 font-display text-3xl md:text-4xl">
                 Future-ready engineering disciplines
               </h2>
-              <p className="mt-3 text-sm text-muted-foreground font-graphik">
+              <p className="mt-3 text-sm text-muted-foreground font-body">
                 Discover flagship majors and emerging specialisations built with experiential learning, industry mentorship and research-driven pathways.
               </p>
             </div>
@@ -681,44 +681,44 @@ export default function Engineering() {
               <Badge className="bg-brand-blue/15 text-brand-blue">
                 Programs & Pathways
               </Badge>
-              <h2 className="font-gilroy text-3xl md:text-4xl">
+              <h2 className="font-display text-3xl md:text-4xl">
                 Programs crafted with industry-aligned outcomes
               </h2>
-              <p className="text-sm text-muted-foreground font-graphik">
+              <p className="text-sm text-muted-foreground font-body">
                 Our undergraduate and postgraduate offerings integrate project studios, global certifications and interdisciplinary minors so every learner can customise their journey.
               </p>
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="rounded-3xl border border-brand-magenta/20 bg-brand-magenta/10 p-5 text-brand-magenta">
-                  <div className="text-3xl font-gilroy">11</div>
+                  <div className="text-3xl font-display">11</div>
                   <p className="mt-1 text-xs uppercase tracking-wide text-brand-magenta/80">
                     Undergraduate majors
                   </p>
-                  <p className="mt-2 text-xs text-brand-magenta/80 font-graphik">
+                  <p className="mt-2 text-xs text-brand-magenta/80 font-body">
                     Specialise with honours, minors and industry electives from semester one.
                   </p>
                 </div>
                 <div className="rounded-3xl border border-brand-blue/20 bg-brand-blue/10 p-5 text-brand-blue">
-                  <div className="text-3xl font-gilroy">3</div>
+                  <div className="text-3xl font-display">3</div>
                   <p className="mt-1 text-xs uppercase tracking-wide text-brand-blue/80">
                     Postgraduate specialisations
                   </p>
-                  <p className="mt-2 text-xs text-brand-blue/80 font-graphik">
+                  <p className="mt-2 text-xs text-brand-blue/80 font-body">
                     Deep-dive into advanced systems, research and leadership roles.
                   </p>
                 </div>
                 <div className="rounded-3xl border border-border/40 bg-card/70 p-5">
-                  <div className="text-lg font-gilroy text-foreground">
+                  <div className="text-lg font-display text-foreground">
                     Project studio pedagogy
                   </div>
-                  <p className="mt-2 text-sm text-muted-foreground font-graphik">
+                  <p className="mt-2 text-sm text-muted-foreground font-body">
                     Hands-on product build sprints with mentors from startups and global tech companies.
                   </p>
                 </div>
                 <div className="rounded-3xl border border-border/40 bg-card/70 p-5">
-                  <div className="text-lg font-gilroy text-foreground">
+                  <div className="text-lg font-display text-foreground">
                     Global certifications
                   </div>
-                  <p className="mt-2 text-sm text-muted-foreground font-graphik">
+                  <p className="mt-2 text-sm text-muted-foreground font-body">
                     Earn credentials with IBM, NVIDIA, AWS, VMware and GE while you study.
                   </p>
                 </div>
@@ -731,8 +731,8 @@ export default function Engineering() {
               />
               <CardContent className="relative space-y-8 p-6">
                 <div>
-                  <h3 className="font-gilroy text-2xl">Undergraduate Majors</h3>
-                  <p className="mt-2 text-sm text-muted-foreground font-graphik">
+                  <h3 className="font-display text-2xl">Undergraduate Majors</h3>
+                  <p className="mt-2 text-sm text-muted-foreground font-body">
                     Choose from future-proof majors and emerging specialisations.
                   </p>
                   <div className="mt-4 grid gap-3 sm:grid-cols-2">
@@ -766,10 +766,10 @@ export default function Engineering() {
                 </div>
                 <div className="h-px w-full bg-border/50" />
                 <div>
-                  <h3 className="font-gilroy text-2xl">
+                  <h3 className="font-display text-2xl">
                     Postgraduate Specialisations
                   </h3>
-                  <p className="mt-2 text-sm text-muted-foreground font-graphik">
+                  <p className="mt-2 text-sm text-muted-foreground font-body">
                     Advance into research, product leadership and domain expertise.
                   </p>
                   <div className="mt-4 grid gap-3 sm:grid-cols-2">
@@ -817,10 +817,10 @@ export default function Engineering() {
               <Badge className="bg-brand-magenta/15 text-brand-magenta">
                 Supporting Departments
               </Badge>
-              <h2 className="mt-4 font-gilroy text-3xl md:text-4xl">
+              <h2 className="mt-4 font-display text-3xl md:text-4xl">
                 Holistic foundations that amplify every major
               </h2>
-              <p className="mt-3 text-sm text-muted-foreground font-graphik">
+              <p className="mt-3 text-sm text-muted-foreground font-body">
                 Specialist faculty from sciences and humanities co-create
                 immersive modules with core departments to sharpen research
                 depth, analytical rigour and human-centred design thinking.
@@ -863,10 +863,10 @@ export default function Engineering() {
                 <Badge className="bg-brand-magenta/15 text-brand-magenta">
                   Notice Board
                 </Badge>
-                <h2 className="font-gilroy text-3xl md:text-4xl">
+                <h2 className="font-display text-3xl md:text-4xl">
                   School of Engineering Notice Board
                 </h2>
-                <p className="text-sm text-muted-foreground font-graphik">
+                <p className="text-sm text-muted-foreground font-body">
                   Curated updates for the ongoing academic year 2025-26. Stay
                   aligned with assessment windows, immersion weeks and
                   University-hosted experiences.
@@ -900,12 +900,12 @@ export default function Engineering() {
       >
         <div className="mx-auto max-w-7xl">
           <div className="mb-8 flex items-center justify-between">
-            <h3 className="font-gilroy text-3xl">Innovation & Labs</h3>
+            <h3 className="font-display text-3xl">Innovation & Labs</h3>
             <a
               href="https://www.dsu.edu.in/innovation"
               target="_blank"
               rel="noreferrer"
-              className="text-sm font-medium text-brand-magenta hover:underline font-graphik"
+              className="text-sm font-medium text-brand-magenta hover:underline font-body"
             >
               See all
             </a>
@@ -922,7 +922,7 @@ export default function Engineering() {
                   </div>
                 </CardHeader>
                 <CardContent className="pt-0">
-                  <CardTitle className="text-base font-gilroy">{lab}</CardTitle>
+                  <CardTitle className="text-base font-display">{lab}</CardTitle>
                 </CardContent>
               </Card>
             ))}
@@ -942,13 +942,13 @@ export default function Engineering() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
             </div>
             <CardHeader>
-              <CardTitle className="font-gilroy">Leadership</CardTitle>
-              <CardDescription className="font-graphik">
+              <CardTitle className="font-display">Leadership</CardTitle>
+              <CardDescription className="font-body">
                 Guidance that drives excellence in engineering education,
                 research and student success.
               </CardDescription>
             </CardHeader>
-            <CardContent className="grid gap-4 pt-0 text-sm font-graphik text-muted-foreground sm:grid-cols-2">
+            <CardContent className="grid gap-4 pt-0 text-sm font-body text-muted-foreground sm:grid-cols-2">
               <div>
                 <div className="text-muted-foreground">Dean (Engineering)</div>
                 <div className="font-medium text-foreground">
@@ -977,11 +977,11 @@ export default function Engineering() {
           </Card>
           <Card className="rounded-3xl border border-border/50 bg-card/50">
             <CardHeader>
-              <CardTitle className="font-gilroy">
+              <CardTitle className="font-display">
                 More Engineering Resources
               </CardTitle>
             </CardHeader>
-            <CardContent className="grid gap-3 text-sm font-graphik">
+            <CardContent className="grid gap-3 text-sm font-body">
               <a
                 href="https://www.dsu.edu.in/engineering/programs-engineering"
                 target="_blank"
@@ -1038,10 +1038,10 @@ export default function Engineering() {
       <section className="px-6 pb-20">
         <div className="mx-auto max-w-4xl text-center">
           <div className="rounded-3xl border border-brand-magenta/20 bg-brand-magenta/5 p-10">
-            <h3 className="mb-3 font-gilroy text-3xl">
+            <h3 className="mb-3 font-display text-3xl">
               Ready to shape the future?
             </h3>
-            <p className="mb-6 text-muted-foreground font-graphik">
+            <p className="mb-6 text-muted-foreground font-body">
               Explore programmes, take a virtual tour and begin your journey at
               the DSU School of Engineering.
             </p>
