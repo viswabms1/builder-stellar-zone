@@ -81,7 +81,7 @@ const SOCIAL_LINKS = [
 
 export default function Footer() {
   return (
-    <footer className="relative mt-24 border-t border-border/50 bg-gradient-to-br from-background via-background/95 to-background">
+    <footer className="relative mt-24 border-t border-white/10 bg-[#070311] text-white">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute -top-32 right-10 h-64 w-64 rounded-full bg-brand-magenta/20 blur-3xl"
