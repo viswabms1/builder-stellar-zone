@@ -3,17 +3,11 @@ import type { LucideIcon } from "lucide-react";
 import {
   Award,
   Beaker,
-  BookOpen,
-  CalendarDays,
   ChevronRight,
-  Cpu,
   FlaskConical,
   GraduationCap,
-  Layers,
   Microscope,
   Network,
-  Star,
-  TrendingUp,
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
