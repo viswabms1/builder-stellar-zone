@@ -71,17 +71,31 @@ type CalendarEntry = {
 
 const QUICK_LINKS: QuickLink[] = [
   {
-    title: "USP",
-    description: "Explore what differentiates DSU School of Engineering.",
+    title: "Engineering Departments",
+    description:
+      "Explore flagship majors, emerging specialisations and centres of excellence.",
+    href: "#departments",
+    icon: Cpu,
+  },
+  {
+    title: "Programs & Pathways",
+    description:
+      "Compare undergraduate & postgraduate pathways, honours and minors.",
+    href: "#programs",
+    icon: GraduationCap,
+  },
+  {
+    title: "Unique Strengths (USP)",
+    description:
+      "Discover the differentiators that power DSU engineering experiences.",
     href: "#usp",
     icon: Star,
   },
   {
-    title: "Supporting Departments",
-    description:
-      "Meet the interdisciplinary foundation that powers every program.",
-    href: "#supporting-departments",
-    icon: Layers,
+    title: "Innovation & Labs",
+    description: "Discover industry-partnered labs and centers of excellence.",
+    href: "#labs",
+    icon: Beaker,
   },
   {
     title: "Calendar of Events",
@@ -90,10 +104,11 @@ const QUICK_LINKS: QuickLink[] = [
     icon: CalendarDays,
   },
   {
-    title: "Innovation & Labs",
-    description: "Discover industry-partnered labs and centers of excellence.",
-    href: "#labs",
-    icon: Beaker,
+    title: "Supporting Departments",
+    description:
+      "Meet the interdisciplinary foundation that powers every program.",
+    href: "#supporting-departments",
+    icon: Layers,
   },
   {
     title: "Dean's Message",
