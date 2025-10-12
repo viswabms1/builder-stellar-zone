@@ -59,7 +59,7 @@ export default function Navigation() {
           <div className="hidden md:flex items-center space-x-1">
             {navigation.map((item) => {
               const active = !item.external && isActive(item.href);
-              const sharedClasses = `flex items-center space-x-2 px-4 py-2 rounded-xl text-sm font-medium font-gilroy transition-all duration-200 group ${
+              const sharedClasses = `flex items-center space-x-2 px-4 py-2 rounded-xl text-sm font-medium font-display transition-all duration-200 group ${
                 active
                   ? "bg-white/20 text-white font-semibold"
                   : "text-white/80 hover:text-white hover:bg-white/10"
@@ -97,7 +97,7 @@ export default function Navigation() {
               asChild
               variant="ghost"
               size="sm"
-              className="text-white/80 hover:text-white hover:bg-white/10 font-gilroy"
+              className="text-white/80 hover:text-white hover:bg-white/10 font-display"
             >
               <a
                 href="https://ums.mydsi.org/Login.aspx/DSU"
@@ -109,7 +109,7 @@ export default function Navigation() {
             </Button>
             <Button
               size="sm"
-              className="bg-white text-orange-600 hover:bg-white/90 px-6 rounded-xl shadow-lg hover:shadow-white/25 transition-all duration-300 font-gilroy font-semibold"
+              className="bg-white text-orange-600 hover:bg-white/90 px-6 rounded-xl shadow-lg hover:shadow-white/25 transition-all duration-300 font-display font-semibold"
             >
               Apply Now
             </Button>
@@ -139,7 +139,7 @@ export default function Navigation() {
           <div className="px-6 py-4 space-y-3">
             {navigation.map((item) => {
               const active = !item.external && isActive(item.href);
-              const sharedClasses = `flex items-center space-x-3 px-4 py-3 rounded-xl text-sm font-medium font-gilroy transition-all duration-200 ${
+              const sharedClasses = `flex items-center space-x-3 px-4 py-3 rounded-xl text-sm font-medium font-display transition-all duration-200 ${
                 active
                   ? "bg-white/20 text-white font-semibold"
                   : "text-white/80 hover:text-white hover:bg-white/10"
@@ -182,7 +182,7 @@ export default function Navigation() {
                 asChild
                 variant="ghost"
                 size="sm"
-                className="w-full justify-start text-white/80 hover:text-white hover:bg-white/10 font-gilroy"
+                className="w-full justify-start text-white/80 hover:text-white hover:bg-white/10 font-display"
               >
                 <a
                   href="https://ums.mydsi.org/Login.aspx/DSU"
@@ -195,7 +195,7 @@ export default function Navigation() {
               </Button>
               <Button
                 size="sm"
-                className="w-full bg-white text-orange-600 hover:bg-white/90 rounded-xl shadow-lg hover:shadow-white/25 transition-all duration-300 font-gilroy font-semibold"
+                className="w-full bg-white text-orange-600 hover:bg-white/90 rounded-xl shadow-lg hover:shadow-white/25 transition-all duration-300 font-display font-semibold"
               >
                 Apply Now
               </Button>
