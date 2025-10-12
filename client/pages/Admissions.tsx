@@ -112,8 +112,9 @@ const quickLinks: QuickLink[] = [
     title: "International Admissions",
     description:
       "Dedicated guidance for foreign nationals, NRIs, and PIO applicants.",
-    href: "https://www.dsu.edu.in/international/",
+    href: "/admissions/international",
     icon: Globe,
+    external: false,
   },
   {
     title: "Online Degree",
@@ -194,7 +195,7 @@ const admissionTracks: AdmissionTrack[] = [
       "Support for visa letters and equivalence certificates",
       "Scholarship consideration for exceptional profiles",
     ],
-    href: "https://www.dsu.edu.in/international/",
+    href: "/admissions/international",
     icon: Globe,
     ctaLabel: "Explore International Pathway",
   },
