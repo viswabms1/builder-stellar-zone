@@ -316,42 +316,6 @@ export default function MedicalEducationResearch() {
       </section>
 
       <section
-        id="quick-links"
-        className="bg-gradient-to-r from-brand-blue/5 via-brand-magenta/5 to-brand-orange/5 px-6 py-12"
-      >
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-10 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-            <div>
-              <Badge className="bg-brand-magenta/15 text-brand-magenta">
-                Important Sub Menus
-              </Badge>
-              <h2 className="mt-4 font-gilroy text-3xl">
-                Navigate Medical Education & Research
-              </h2>
-              <p className="mt-3 max-w-2xl text-sm text-muted-foreground font-graphik">
-                Access medical college pillars, admissions, research initiatives
-                and campus life information in one place.
-              </p>
-            </div>
-            <a
-              href="https://cdsimer.edu.in"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 text-sm font-medium text-brand-magenta"
-            >
-              Explore cdsimer.edu.in
-              <ChevronRight className="h-4 w-4" />
-            </a>
-          </div>
-          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-            {QUICK_LINKS.map((link) => (
-              <QuickLinkCard key={link.title} link={link} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section
         id="highlights"
         className="bg-gradient-to-r from-brand-magenta/5 via-brand-orange/5 to-brand-blue/5 px-6 py-16"
       >
