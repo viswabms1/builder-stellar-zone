@@ -116,10 +116,10 @@ export default function FacultyDirectory() {
             <Badge className="bg-brand-magenta/15 text-brand-magenta">
               Faculty Directory
             </Badge>
-            <h1 className="font-gilroy text-4xl leading-tight md:text-5xl">
+            <h1 className="font-display text-4xl leading-tight md:text-5xl">
               Discover Experts Across Every DSU School
             </h1>
-            <p className="text-sm text-muted-foreground font-graphik md:text-base">
+            <p className="text-sm text-muted-foreground font-body md:text-base">
               Search and filter the complete faculty ecosystem by school,
               department, research interest or keyword. Find the right mentors
               to collaborate with or contact as you explore DSU&apos;s
@@ -188,10 +188,10 @@ export default function FacultyDirectory() {
         <div className="mx-auto max-w-7xl">
           <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <div>
-              <h2 className="font-gilroy text-3xl">
+              <h2 className="font-display text-3xl">
                 {filteredFaculty.length} faculty matched
               </h2>
-              <p className="text-sm text-muted-foreground font-graphik">
+              <p className="text-sm text-muted-foreground font-body">
                 Showing results filtered by {activeSchoolLabel.toLowerCase()}{" "}
                 and {activeFocusLabel}.
               </p>
@@ -211,10 +211,10 @@ export default function FacultyDirectory() {
           {filteredFaculty.length === 0 ? (
             <Card className="border-dashed border-border/60 bg-muted/40 p-10 text-center">
               <CardHeader>
-                <CardTitle className="font-gilroy text-2xl">
+                <CardTitle className="font-display text-2xl">
                   No faculty found yet
                 </CardTitle>
-                <CardDescription className="font-graphik">
+                <CardDescription className="font-body">
                   We&apos;re still cataloguing profiles for this selection. Try
                   another school or focus area.
                 </CardDescription>
@@ -285,8 +285,8 @@ function StatisticsCard({ label, value, icon: Icon }: StatisticsCardProps) {
           <Icon className="h-5 w-5" />
         </div>
         <div>
-          <div className="text-2xl font-semibold font-gilroy">{value}</div>
-          <div className="text-xs uppercase tracking-wide text-muted-foreground font-graphik">
+          <div className="text-2xl font-semibold font-display">{value}</div>
+          <div className="text-xs uppercase tracking-wide text-muted-foreground font-body">
             {label}
           </div>
         </div>
@@ -317,22 +317,22 @@ function SchoolOverviewGrid({ counts }: SchoolOverviewGridProps) {
                   <Library className="h-5 w-5" />
                 </div>
                 <div>
-                  <CardTitle className="text-lg font-gilroy">
+                  <CardTitle className="text-lg font-display">
                     {school.name}
                   </CardTitle>
-                  <p className="text-xs uppercase tracking-wide text-muted-foreground font-graphik">
+                  <p className="text-xs uppercase tracking-wide text-muted-foreground font-body">
                     {profileCount} {profileCount === 1 ? "profile" : "profiles"}
                   </p>
                 </div>
               </div>
               {meta?.highlight ? (
-                <p className="text-sm text-muted-foreground font-graphik">
+                <p className="text-sm text-muted-foreground font-body">
                   {meta.highlight}
                 </p>
               ) : null}
             </CardHeader>
             <CardContent className="flex-1">
-              <p className="text-sm text-muted-foreground font-graphik">
+              <p className="text-sm text-muted-foreground font-body">
                 {school.description}
               </p>
             </CardContent>
@@ -391,18 +391,18 @@ function FacultyCard({ member }: FacultyCardProps) {
           {member.image ? (
             <AvatarImage src={member.image} alt={member.name} />
           ) : null}
-          <AvatarFallback className="font-gilroy text-base">
+          <AvatarFallback className="font-display text-base">
             {initials}
           </AvatarFallback>
         </Avatar>
         <div className="space-y-1">
-          <CardTitle className="text-lg font-gilroy leading-tight">
+          <CardTitle className="text-lg font-display leading-tight">
             {member.name}
           </CardTitle>
-          <CardDescription className="font-graphik text-sm">
+          <CardDescription className="font-body text-sm">
             {member.title}
           </CardDescription>
-          <div className="flex flex-wrap items-center gap-2 text-xs font-medium text-brand-magenta font-graphik">
+          <div className="flex flex-wrap items-center gap-2 text-xs font-medium text-brand-magenta font-body">
             <Badge className="bg-brand-magenta/15 text-brand-magenta">
               {member.department}
             </Badge>
@@ -410,7 +410,7 @@ function FacultyCard({ member }: FacultyCardProps) {
         </div>
       </CardHeader>
       <CardContent className="space-y-4">
-        <div className="space-y-2 text-sm text-muted-foreground font-graphik">
+        <div className="space-y-2 text-sm text-muted-foreground font-body">
           <div className="flex items-center gap-2">
             <GraduationCap className="h-4 w-4 text-brand-magenta" />
             <span>{schoolName}</span>
@@ -453,7 +453,7 @@ function FacultyCard({ member }: FacultyCardProps) {
           <div className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
             Research Interests
           </div>
-          <p className="mt-1 text-sm text-foreground font-graphik">
+          <p className="mt-1 text-sm text-foreground font-body">
             {member.interests.join(", ")}
           </p>
         </div>
