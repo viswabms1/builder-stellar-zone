@@ -117,13 +117,11 @@
   }
 
   /* Typography utility classes */
-  .font-display,
-  .font-gilroy {
+  .font-display {
     font-family: 'Poppins', 'Inter', sans-serif;
   }
 
-  .font-body,
-  .font-graphik {
+  .font-body {
     font-family: 'Inter', 'Poppins', sans-serif;
   }
 
