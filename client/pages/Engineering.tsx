@@ -409,6 +409,76 @@ function QuickLinkCard({ link }: { link: QuickLink }) {
   );
 }
 
+function DepartmentCard({
+  department,
+}: {
+  department: EngineeringDepartment;
+}) {
+  const isInternal = department.link.startsWith("/");
+  const wrapperClasses = `group block h-full ${
+    department.featured ? "lg:col-span-2" : ""
+  } focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-magenta focus-visible:ring-offset-2 focus-visible:ring-offset-background`;
+
+  const content = (
+    <div
+      className={`relative flex h-full flex-col justify-end overflow-hidden rounded-3xl border border-border/40 bg-card/40 backdrop-blur-sm transition-all duration-700 hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-magenta/10 ${
+        department.featured ? "min-h-[340px]" : "min-h-[280px]"
+      }`}
+    >
+      <img
+        src={department.image}
+        alt={department.name}
+        className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-transparent" />
+      <div className="absolute left-6 top-6 inline-flex items-center rounded-full bg-white/10 px-3 py-1 text-xs uppercase tracking-wide text-white/80 backdrop-blur">
+        {department.area}
+      </div>
+      <div className="relative z-10 space-y-5 p-6 text-white">
+        <div>
+          <h3 className="font-gilroy text-2xl leading-tight">{department.name}</h3>
+          <p className="mt-3 text-sm text-white/80 font-graphik">
+            {department.description}
+          </p>
+        </div>
+        <div className="flex flex-wrap gap-2">
+          {department.highlights.map((item) => (
+            <span
+              key={item}
+              className="rounded-full border border-white/30 bg-white/10 px-3 py-1 text-xs uppercase tracking-wide text-white/80"
+            >
+              {item}
+            </span>
+          ))}
+        </div>
+        <span className="inline-flex items-center gap-2 text-sm font-medium">
+          Explore department
+          <ChevronRight className="h-4 w-4" />
+        </span>
+      </div>
+    </div>
+  );
+
+  if (isInternal) {
+    return (
+      <RouterLink to={department.link} className={wrapperClasses}>
+        {content}
+      </RouterLink>
+    );
+  }
+
+  return (
+    <a
+      href={department.link}
+      target="_blank"
+      rel="noreferrer"
+      className={wrapperClasses}
+    >
+      {content}
+    </a>
+  );
+}
+
 function SupportingDepartmentCard({
   department,
 }: {
