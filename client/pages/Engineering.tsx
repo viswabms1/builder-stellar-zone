@@ -626,9 +626,9 @@ export default function Engineering() {
                 Navigate the School of Engineering
               </h2>
               <p className="mt-3 max-w-2xl text-sm text-muted-foreground font-graphik">
-                Jump straight to leadership insights, programme highlights,
-                supporting departments, innovation hubs and official
-                communication channels.
+                Jump straight to engineering departments, programme highlights,
+                innovation hubs, leadership insights and official communication
+                channels.
               </p>
             </div>
             <a
