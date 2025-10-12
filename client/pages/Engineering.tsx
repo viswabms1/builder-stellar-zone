@@ -891,12 +891,12 @@ export default function Engineering() {
                 Supporting Departments
               </Badge>
               <h2 className="mt-4 font-gilroy text-3xl md:text-4xl">
-                Interdisciplinary Backbone of Engineering
+                Holistic foundations that amplify every major
               </h2>
               <p className="mt-3 text-sm text-muted-foreground font-graphik">
-                Foundational departments work in tandem with every programme to
-                build scientific temper, analytical depth and human-centred
-                design perspectives.
+                Specialist faculty from sciences and humanities co-create
+                immersive modules with core departments to sharpen research
+                depth, analytical rigour and human-centred design thinking.
               </p>
             </div>
             <a
