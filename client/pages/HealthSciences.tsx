@@ -65,52 +65,6 @@ type Resource = {
 const HERO_IMAGE =
   "https://images.unsplash.com/photo-1580281657521-8a19aa08c8c8?q=80&w=2000&auto=format&fit=crop";
 
-const QUICK_LINKS: QuickLink[] = [
-  {
-    title: "USP",
-    description:
-      "Understand how DSU pioneers integrative health sciences education.",
-    href: "#usp",
-    icon: HeartPulse,
-  },
-  {
-    title: "Programs",
-    description:
-      "Explore undergraduate and postgraduate programmes spanning nursing, pharmacy and allied health.",
-    href: "#programs",
-    icon: GraduationCap,
-  },
-  {
-    title: "Teaching Hospitals",
-    description:
-      "Connect with clinical training at Sagar Hospitals and CDSIMER campus.",
-    href: "/academics/health-sciences/cdsimer/hospital",
-    icon: Stethoscope,
-  },
-  {
-    title: "Calendar & Notices",
-    description:
-      "Download academic calendars, anti-ragging guidelines and campus advisories.",
-    href: "#resources",
-    icon: CalendarDays,
-  },
-  {
-    title: "Allied Health Sciences",
-    description:
-      "Discover high-demand programmes across diagnostics, therapeutics and community health.",
-    href: "https://www.dsu.edu.in/health-sciences/allied-health-sciences",
-    icon: Syringe,
-    external: true,
-  },
-  {
-    title: "Admissions Support",
-    description: "Reach the School office for counselling and guidance.",
-    href: "mailto:admissions@dsu.edu.in",
-    icon: Users,
-    external: true,
-  },
-];
-
 const USP_HIGHLIGHTS: Highlight[] = [
   {
     title: "Integrated Health Ecosystem",
