@@ -156,14 +156,14 @@ function HighlightCard({ highlight }: { highlight: Highlight }) {
         <Icon className="h-4 w-4" /> Executive USP
       </div>
       <div className="absolute inset-x-0 bottom-0 p-5 text-white">
-        <h3 className="mb-2 text-lg font-semibold font-gilroy">
+        <h3 className="mb-2 text-lg font-semibold font-display">
           {highlight.title}
         </h3>
-        <p className="text-sm text-white/80 font-graphik">
+        <p className="text-sm text-white/80 font-body">
           {highlight.description}
         </p>
         {highlight.stat ? (
-          <div className="mt-3 text-xs uppercase tracking-wide text-white/70 font-graphik">
+          <div className="mt-3 text-xs uppercase tracking-wide text-white/70 font-body">
             {highlight.stat}
           </div>
         ) : null}
@@ -180,12 +180,12 @@ function OfferingCard({ offering }: { offering: Offering }) {
         <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-magenta/10 text-brand-magenta">
           <Icon className="h-5 w-5" />
         </span>
-        <CardTitle className="text-base font-gilroy">
+        <CardTitle className="text-base font-display">
           {offering.title}
         </CardTitle>
       </CardHeader>
       <CardContent className="pt-0">
-        <CardDescription className="text-sm leading-relaxed text-muted-foreground font-graphik">
+        <CardDescription className="text-sm leading-relaxed text-muted-foreground font-body">
           {offering.description}
         </CardDescription>
       </CardContent>
@@ -200,11 +200,11 @@ function ResourceCard({ resource }: { resource: Resource }) {
         <Badge className="bg-brand-magenta/15 text-brand-magenta">
           {resource.badge}
         </Badge>
-        <CardTitle className="mt-4 text-lg font-gilroy">
+        <CardTitle className="mt-4 text-lg font-display">
           {resource.title}
         </CardTitle>
       </CardHeader>
-      <CardContent className="space-y-5 text-sm text-muted-foreground font-graphik">
+      <CardContent className="space-y-5 text-sm text-muted-foreground font-body">
         <p>{resource.description}</p>
         <a
           href={resource.href}
@@ -237,14 +237,14 @@ export default function CEE() {
           <div className="mx-auto max-w-7xl px-6">
             <div className="mb-6 inline-flex items-center rounded-full border border-brand-magenta/20 bg-brand-magenta/10 px-4 py-2">
               <Presentation className="mr-2 h-4 w-4 text-brand-magenta" />
-              <span className="text-sm font-medium text-brand-magenta font-gilroy">
+              <span className="text-sm font-medium text-brand-magenta font-display">
                 Center for Executive Education
               </span>
             </div>
-            <h1 className="mb-4 font-gilroy text-4xl leading-tight text-white md:text-6xl">
+            <h1 className="mb-4 font-display text-4xl leading-tight text-white md:text-6xl">
               Executive MBA & Leadership Ecosystem
             </h1>
-            <p className="max-w-2xl text-white/90 font-graphik text-lg">
+            <p className="max-w-2xl text-white/90 font-body text-lg">
               Propel your career with weekend executive programmes, CXO
               mentorship and innovation labs tailored for working professionals.
             </p>
@@ -281,10 +281,10 @@ export default function CEE() {
             <Badge className="bg-brand-magenta/15 text-brand-magenta">
               Programme Spectrum
             </Badge>
-            <h2 className="mt-4 font-gilroy text-3xl md:text-4xl">
+            <h2 className="mt-4 font-display text-3xl md:text-4xl">
               Pathways for working professionals
             </h2>
-            <p className="mt-3 text-sm text-muted-foreground font-graphik max-w-3xl mx-auto">
+            <p className="mt-3 text-sm text-muted-foreground font-body max-w-3xl mx-auto">
               Modular journeys blend weekend residencies, leadership labs, industry immersions and personalised mentoring to elevate executive careers.
             </p>
           </div>
@@ -308,7 +308,7 @@ export default function CEE() {
             >
               Executive Differentiators
             </Badge>
-            <h2 className="mt-5 font-gilroy text-3xl md:text-4xl">
+            <h2 className="mt-5 font-display text-3xl md:text-4xl">
               Why Leaders Choose DSU CEE
             </h2>
           </div>
@@ -330,10 +330,10 @@ export default function CEE() {
               <Badge className="bg-brand-magenta/15 text-brand-magenta">
                 Calendar & Resources
               </Badge>
-              <h2 className="mt-4 font-gilroy text-3xl md:text-4xl">
+              <h2 className="mt-4 font-display text-3xl md:text-4xl">
                 Plan Your Executive Journey
               </h2>
-              <p className="mt-3 text-sm text-muted-foreground font-graphik">
+              <p className="mt-3 text-sm text-muted-foreground font-body">
                 Access calendars, brochures and speaker archives to stay ahead
                 of application timelines and learning engagements.
               </p>
@@ -359,10 +359,10 @@ export default function CEE() {
       <section className="px-6 pb-20">
         <div className="mx-auto max-w-4xl text-center">
           <div className="rounded-3xl border border-brand-magenta/20 bg-brand-magenta/5 p-10">
-            <h3 className="mb-3 font-gilroy text-3xl">
+            <h3 className="mb-3 font-display text-3xl">
               Accelerate Your Leadership Impact
             </h3>
-            <p className="mb-6 text-muted-foreground font-graphik">
+            <p className="mb-6 text-muted-foreground font-body">
               Join an executive cohort that blends innovation labs, global
               mentors and actionable playbooks to elevate your organisation.
             </p>
