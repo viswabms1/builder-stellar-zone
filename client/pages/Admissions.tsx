@@ -453,7 +453,11 @@ function QuickLinksSection() {
                   className="w-full justify-center rounded-xl bg-orange-500/10 text-orange-500 hover:bg-orange-500 hover:text-white"
                   asChild
                 >
-                  <a href={item.href} target="_blank" rel="noreferrer">
+                  <a
+                    href={item.href}
+                    target={item.external === false ? undefined : "_blank"}
+                    rel={item.external === false ? undefined : "noreferrer"}
+                  >
                     Open Resource
                     <ArrowRight className="h-4 w-4" />
                   </a>
