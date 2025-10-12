@@ -156,14 +156,14 @@ function HighlightCard({ highlight }: { highlight: Highlight }) {
         <Icon className="h-4 w-4" /> USP
       </div>
       <div className="absolute inset-x-0 bottom-0 p-5 text-white">
-        <h3 className="mb-2 text-lg font-semibold font-gilroy">
+        <h3 className="mb-2 text-lg font-semibold font-display">
           {highlight.title}
         </h3>
-        <p className="text-sm text-white/80 font-graphik">
+        <p className="text-sm text-white/80 font-body">
           {highlight.description}
         </p>
         {highlight.stat ? (
-          <div className="mt-3 text-xs uppercase tracking-wide text-white/70 font-graphik">
+          <div className="mt-3 text-xs uppercase tracking-wide text-white/70 font-body">
             {highlight.stat}
           </div>
         ) : null}
@@ -179,11 +179,11 @@ function ResourceCard({ resource }: { resource: ResourceLink }) {
         <Badge className="bg-brand-magenta/15 text-brand-magenta">
           {resource.badge}
         </Badge>
-        <CardTitle className="mt-4 text-lg font-gilroy">
+        <CardTitle className="mt-4 text-lg font-display">
           {resource.title}
         </CardTitle>
       </CardHeader>
-      <CardContent className="space-y-5 text-sm text-muted-foreground font-graphik">
+      <CardContent className="space-y-5 text-sm text-muted-foreground font-body">
         <p>{resource.description}</p>
         <a
           href={resource.href}
@@ -207,10 +207,10 @@ function LabCard({ lab }: { lab: LabExperience }) {
         <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-magenta/10 text-brand-magenta">
           <Icon className="h-5 w-5" />
         </span>
-        <CardTitle className="text-base font-gilroy">{lab.title}</CardTitle>
+        <CardTitle className="text-base font-display">{lab.title}</CardTitle>
       </CardHeader>
       <CardContent className="pt-0">
-        <CardDescription className="text-sm leading-relaxed text-muted-foreground font-graphik">
+        <CardDescription className="text-sm leading-relaxed text-muted-foreground font-body">
           {lab.description}
         </CardDescription>
       </CardContent>
@@ -235,14 +235,14 @@ export default function ComputerApplications() {
           <div className="mx-auto max-w-7xl px-6">
             <div className="mb-6 inline-flex items-center rounded-full border border-brand-magenta/20 bg-brand-magenta/10 px-4 py-2">
               <Cpu className="mr-2 h-4 w-4 text-brand-magenta" />
-              <span className="text-sm font-medium text-brand-magenta font-gilroy">
+              <span className="text-sm font-medium text-brand-magenta font-display">
                 School of Computer Applications
               </span>
             </div>
-            <h1 className="mb-4 font-gilroy text-4xl leading-tight text-white md:text-6xl">
+            <h1 className="mb-4 font-display text-4xl leading-tight text-white md:text-6xl">
               Build Tomorrow's Digital Experiences
             </h1>
-            <p className="max-w-2xl text-white/90 font-graphik text-lg">
+            <p className="max-w-2xl text-white/90 font-body text-lg">
               From full-stack development to data science and cloud-native
               innovation, DSU prepares tech creators with experiential labs,
               industry mentorship and product-focused learning.
@@ -277,10 +277,10 @@ export default function ComputerApplications() {
               <Badge className="bg-brand-magenta/15 text-brand-magenta">
                 Academic Pathways
               </Badge>
-              <h2 className="font-gilroy text-3xl md:text-4xl">
+              <h2 className="font-display text-3xl md:text-4xl">
                 Programs that transform tech aspirations into careers
               </h2>
-              <p className="text-sm text-muted-foreground font-graphik">
+              <p className="text-sm text-muted-foreground font-body">
                 Choose focused routes into software development, analytics, data science and emerging tech with curriculum co-designed by industry mentors and research leaders.
               </p>
               <div className="grid gap-4 sm:grid-cols-2">
@@ -293,11 +293,11 @@ export default function ComputerApplications() {
                       <Badge className="bg-brand-magenta/15 text-brand-magenta">
                         {group.label}
                       </Badge>
-                      <CardTitle className="mt-4 text-xl font-gilroy">
+                      <CardTitle className="mt-4 text-xl font-display">
                         {group.label} Programmes
                       </CardTitle>
                     </CardHeader>
-                    <CardContent className="grid gap-2 text-sm text-muted-foreground font-graphik">
+                    <CardContent className="grid gap-2 text-sm text-muted-foreground font-body">
                       {group.programs.map((program) => (
                         <div key={program} className="flex items-center">
                           <ChevronRight className="mr-2 h-3 w-3 text-brand-magenta" />
@@ -310,10 +310,10 @@ export default function ComputerApplications() {
               </div>
             </div>
             <div className="rounded-3xl border border-brand-magenta/25 bg-brand-magenta/10 p-8 shadow-[0_30px_120px_-50px_rgba(233,97,255,0.6)]">
-              <h3 className="font-gilroy text-2xl text-brand-magenta">
+              <h3 className="font-display text-2xl text-brand-magenta">
                 Programme Highlights
               </h3>
-              <ul className="mt-4 space-y-3 text-sm text-brand-magenta/90 font-graphik">
+              <ul className="mt-4 space-y-3 text-sm text-brand-magenta/90 font-body">
                 <li className="flex items-start gap-2">
                   <Sparkles className="mt-0.5 h-4 w-4" />
                   Industry-aligned curriculum with Capstone Studios from year one
@@ -344,7 +344,7 @@ export default function ComputerApplications() {
             >
               Unique Strengths
             </Badge>
-            <h2 className="mt-5 font-gilroy text-3xl md:text-4xl">
+            <h2 className="mt-5 font-display text-3xl md:text-4xl">
               Why Learners Choose DSU Computer Applications
             </h2>
           </div>
@@ -366,10 +366,10 @@ export default function ComputerApplications() {
               <Badge className="bg-brand-magenta/15 text-brand-magenta">
                 Experiential Learning
               </Badge>
-              <h2 className="mt-4 font-gilroy text-3xl md:text-4xl">
+              <h2 className="mt-4 font-display text-3xl md:text-4xl">
                 Innovation Labs & Career Readiness
               </h2>
-              <p className="mt-3 text-sm text-muted-foreground font-graphik">
+              <p className="mt-3 text-sm text-muted-foreground font-body">
                 Access cross-disciplinary labs and mentorship programmes that
                 spark product engineering, AI, automation and cloud-native
                 careers.
@@ -400,10 +400,10 @@ export default function ComputerApplications() {
               <Badge className="bg-brand-magenta/15 text-brand-magenta">
                 Calendar & Updates
               </Badge>
-              <h2 className="mt-4 font-gilroy text-3xl md:text-4xl">
+              <h2 className="mt-4 font-display text-3xl md:text-4xl">
                 Stay Ahead of Every Milestone
               </h2>
-              <p className="mt-3 text-sm text-muted-foreground font-graphik">
+              <p className="mt-3 text-sm text-muted-foreground font-body">
                 Download academic schedules, explore event recaps and tap into
                 ongoing research that keeps learners future focused.
               </p>
@@ -429,10 +429,10 @@ export default function ComputerApplications() {
       <section className="px-6 pb-20">
         <div className="mx-auto max-w-4xl text-center">
           <div className="rounded-3xl border border-brand-magenta/20 bg-brand-magenta/5 p-10">
-            <h3 className="mb-3 font-gilroy text-3xl">
+            <h3 className="mb-3 font-display text-3xl">
               Launch Your Tech Career with DSU
             </h3>
-            <p className="mb-6 text-muted-foreground font-graphik">
+            <p className="mb-6 text-muted-foreground font-body">
               Collaborate with mentors, build real products, showcase your
               portfolio and secure roles with the ecosystem of recruiters
               partnering with the School of Computer Applications.
