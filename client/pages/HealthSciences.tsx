@@ -408,6 +408,48 @@ export default function HealthSciences() {
         </div>
       </section>
 
+      <section id="programs" className="px-6 py-16">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-12 lg:grid-cols-[1.1fr_minmax(0,1fr)] lg:items-center">
+            <div className="space-y-6">
+              <Badge className="bg-brand-magenta/15 text-brand-magenta">
+                Academic Pathways
+              </Badge>
+              <h2 className="font-gilroy text-3xl md:text-4xl">
+                Programmes that transform healthcare delivery
+              </h2>
+              <p className="text-sm text-muted-foreground font-graphik">
+                Nursing, pharmaceutical sciences, physiotherapy and allied health programmes integrate clinical rotations, research immersion and simulation-based training to graduate compassionate health professionals.
+              </p>
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {PROGRAMMES.map((programme) => (
+                  <ProgrammeCard key={programme.name} programme={programme} />
+                ))}
+              </div>
+            </div>
+            <div className="rounded-3xl border border-brand-magenta/25 bg-brand-magenta/10 p-8 shadow-[0_30px_120px_-50px_rgba(233,97,255,0.6)]">
+              <h3 className="font-gilroy text-2xl text-brand-magenta">
+                Clinical learning highlights
+              </h3>
+              <ul className="mt-4 space-y-3 text-sm text-brand-magenta/90 font-graphik">
+                <li className="flex items-start gap-2">
+                  <HeartPulse className="mt-0.5 h-4 w-4" />
+                  Multispecialty hospital rotations across Sagar Hospitals and CDSIMER teaching hospital
+                </li>
+                <li className="flex items-start gap-2">
+                  <Pill className="mt-0.5 h-4 w-4" />
+                  Dedicated simulation and skills labs for critical care, pharmaceutics, diagnostics and rehabilitation
+                </li>
+                <li className="flex items-start gap-2">
+                  <Microscope className="mt-0.5 h-4 w-4" />
+                  Research mentorship in community health, precision medicine, biotechnology and clinical trials
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section
         id="usp"
         className="bg-gradient-to-r from-brand-magenta/5 via-brand-orange/5 to-brand-blue/5 px-6 py-16"
@@ -427,29 +469,6 @@ export default function HealthSciences() {
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {USP_HIGHLIGHTS.map((highlight) => (
               <HighlightCard key={highlight.title} highlight={highlight} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="programs" className="px-6 py-16">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-10 text-center">
-            <Badge className="bg-brand-magenta/15 text-brand-magenta">
-              Academic Pathways
-            </Badge>
-            <h2 className="mt-4 font-gilroy text-3xl md:text-4xl">
-              Programmes that Transform Healthcare
-            </h2>
-            <p className="mt-3 text-sm text-muted-foreground font-graphik max-w-3xl mx-auto">
-              Undergraduate and postgraduate programmes foster clinical
-              excellence, research readiness and leadership across pharmacy,
-              nursing, physiotherapy and allied health sciences.
-            </p>
-          </div>
-          <div className="grid gap-6 lg:grid-cols-3">
-            {PROGRAMMES.map((programme) => (
-              <ProgrammeCard key={programme.name} programme={programme} />
             ))}
           </div>
         </div>
