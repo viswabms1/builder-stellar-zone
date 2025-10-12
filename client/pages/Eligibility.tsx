@@ -25,7 +25,6 @@ import {
   ArrowRight,
   BadgeCheck,
   BookOpen,
-  Building2,
   CheckCircle2,
   ClipboardList,
   Download,
