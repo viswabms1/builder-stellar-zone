@@ -772,39 +772,49 @@ export default function Engineering() {
         </div>
       </section>
 
-      <section id="calendar" className="px-6 py-16">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-10 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-            <div className="max-w-3xl">
-              <Badge className="bg-brand-magenta/15 text-brand-magenta">
-                Calendar of Events
-              </Badge>
-              <h2 className="mt-4 font-gilroy text-3xl md:text-4xl">
-                Academic & Activity Schedules
-              </h2>
-              <p className="mt-3 text-sm text-muted-foreground font-graphik">
-                Download the latest engineering calendars covering coursework
-                timelines, skill studio checkpoints, evaluation cycles and
-                innovation showcases.
-              </p>
+      <section id="notice-board" className="px-6 py-16">
+        <div className="mx-auto max-w-6xl">
+          <div className="relative overflow-hidden rounded-[36px] border-[3px] border-dashed border-brand-magenta/30 bg-card/70 p-10 shadow-[0_35px_120px_-45px_rgba(175,80,255,0.65)] backdrop-blur">
+            <div
+              className="pointer-events-none absolute -left-16 top-10 h-32 w-32 rounded-full bg-brand-magenta/15 blur-3xl"
+              aria-hidden="true"
+            />
+            <div
+              className="pointer-events-none absolute -right-12 bottom-0 h-36 w-36 rounded-full bg-brand-blue/15 blur-3xl"
+              aria-hidden="true"
+            />
+            <div className="relative grid gap-10 lg:grid-cols-[1.1fr_minmax(0,1fr)]">
+              <div className="space-y-5">
+                <Badge className="bg-brand-magenta/15 text-brand-magenta">
+                  Notice Board
+                </Badge>
+                <h2 className="font-gilroy text-3xl md:text-4xl">
+                  School of Engineering Notice Board
+                </h2>
+                <p className="text-sm text-muted-foreground font-graphik">
+                  Curated updates for the ongoing academic year 2025-26. Stay
+                  aligned with assessment windows, immersion weeks and
+                  University-hosted experiences.
+                </p>
+                <a
+                  href="https://www.dsu.edu.in/engineering/coe-engineering"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 text-sm font-medium text-brand-magenta hover:underline"
+                >
+                  Browse previous circulars
+                  <ChevronRight className="h-4 w-4" />
+                </a>
+              </div>
+              <div className="grid gap-6">
+                {ENGINEERING_CALENDAR.map((entry) => (
+                  <CalendarResourceCard
+                    key={`${entry.title}-${entry.academicYear}`}
+                    entry={entry}
+                  />
+                ))}
+              </div>
             </div>
-            <a
-              href="https://www.dsu.edu.in/engineering/coe-engineering"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 text-sm font-medium text-brand-magenta"
-            >
-              View full calendar archive
-              <ChevronRight className="h-4 w-4" />
-            </a>
-          </div>
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {ENGINEERING_CALENDAR.map((entry) => (
-              <CalendarResourceCard
-                key={`${entry.title}-${entry.academicYear}`}
-                entry={entry}
-              />
-            ))}
           </div>
         </div>
       </section>
