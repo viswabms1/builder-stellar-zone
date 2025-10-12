@@ -30,11 +30,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const ALL_SCHOOLS_VALUE = "all";
 const ALL_SCHOOLS_LABEL = "All Schools";
@@ -42,7 +38,10 @@ const ALL_AREAS = "All Focus Areas";
 
 const schoolOptions = [
   { label: ALL_SCHOOLS_LABEL, value: ALL_SCHOOLS_VALUE },
-  ...facultySchoolsMeta.map((school) => ({ label: school.name, value: school.id })),
+  ...facultySchoolsMeta.map((school) => ({
+    label: school.name,
+    value: school.id,
+  })),
 ];
 
 const focusOptions = [ALL_AREAS, ...facultyFocusAreas];
@@ -50,7 +49,8 @@ const focusOptions = [ALL_AREAS, ...facultyFocusAreas];
 type SelectedSchool = typeof ALL_SCHOOLS_VALUE | FacultySchoolId;
 
 export default function FacultyDirectory() {
-  const [schoolFilter, setSchoolFilter] = useState<SelectedSchool>(ALL_SCHOOLS_VALUE);
+  const [schoolFilter, setSchoolFilter] =
+    useState<SelectedSchool>(ALL_SCHOOLS_VALUE);
   const [focusFilter, setFocusFilter] = useState<string>(ALL_AREAS);
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -103,7 +103,7 @@ export default function FacultyDirectory() {
   const activeSchoolLabel =
     schoolFilter === ALL_SCHOOLS_VALUE
       ? "all schools"
-      : getFacultySchoolMeta(schoolFilter)?.name ?? "all schools";
+      : (getFacultySchoolMeta(schoolFilter)?.name ?? "all schools");
 
   const activeFocusLabel =
     focusFilter === ALL_AREAS ? "all focus areas" : focusFilter.toLowerCase();
@@ -120,7 +120,10 @@ export default function FacultyDirectory() {
               Discover Experts Across Every DSU School
             </h1>
             <p className="text-sm text-muted-foreground font-graphik md:text-base">
-              Search and filter the complete faculty ecosystem by school, department, research interest or keyword. Find the right mentors to collaborate with or contact as you explore DSU&apos;s programmes.
+              Search and filter the complete faculty ecosystem by school,
+              department, research interest or keyword. Find the right mentors
+              to collaborate with or contact as you explore DSU&apos;s
+              programmes.
             </p>
             <div className="grid gap-4 sm:grid-cols-3">
               <StatisticsCard
@@ -189,7 +192,8 @@ export default function FacultyDirectory() {
                 {filteredFaculty.length} faculty matched
               </h2>
               <p className="text-sm text-muted-foreground font-graphik">
-                Showing results filtered by {activeSchoolLabel.toLowerCase()} and {activeFocusLabel}.
+                Showing results filtered by {activeSchoolLabel.toLowerCase()}{" "}
+                and {activeFocusLabel}.
               </p>
             </div>
             <Button
@@ -211,7 +215,8 @@ export default function FacultyDirectory() {
                   No faculty found yet
                 </CardTitle>
                 <CardDescription className="font-graphik">
-                  We&apos;re still cataloguing profiles for this selection. Try another school or focus area.
+                  We&apos;re still cataloguing profiles for this selection. Try
+                  another school or focus area.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -237,7 +242,12 @@ type FilterPillsProps = {
   onSelect: (value: string) => void;
 };
 
-function FilterPills({ label, options, activeValue, onSelect }: FilterPillsProps) {
+function FilterPills({
+  label,
+  options,
+  activeValue,
+  onSelect,
+}: FilterPillsProps) {
   return (
     <div>
       <div className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">

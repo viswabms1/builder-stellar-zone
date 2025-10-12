@@ -61,8 +61,6 @@ export default function Index() {
         {/* Hero Content */}
         <div className="relative max-w-7xl mx-auto px-6 text-center lg:text-left lg:flex lg:items-center lg:space-x-12">
           <div className="lg:w-2/3">
-            
-
             <h1 className="headline-1 mb-8 leading-tight">
               <span className="text-white">Shape Your</span>
               <br />
@@ -74,8 +72,9 @@ export default function Index() {
             </h1>
 
             <p className="subheadline text-gray-200 mb-12 max-w-3xl mx-auto leading-relaxed">
-                Experience world-class education at Dayananda Sagar University. Innovation meets tradition on our state-of-the-art campus.
-                </p>
+              Experience world-class education at Dayananda Sagar University.
+              Innovation meets tradition on our state-of-the-art campus.
+            </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-16">
               <Button
@@ -107,15 +106,15 @@ export default function Index() {
                 className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background"
               >
                 <Button
-  variant="outline"
-  size="lg"
-  className="border-2 border-white/30 bg-black/40 text-white 
+                  variant="outline"
+                  size="lg"
+                  className="border-2 border-white/30 bg-black/40 text-white 
              hover:bg-white hover:text-orange-600 
              px-8 py-6 text-lg font-semibold font-gilroy 
              rounded-2xl transition-all duration-300 backdrop-blur-sm"
->
-  Virtual Tour
-</Button>
+                >
+                  Virtual Tour
+                </Button>
               </a>
             </div>
 
@@ -157,7 +156,9 @@ export default function Index() {
                 Explore scholars, mentors, and industry experts across DSU
               </h2>
               <p className="text-muted-foreground font-graphik max-w-3xl">
-                Connect with faculty by school, discipline, or research focus in our new directory. Filter by the programmes you care about and reach out for collaborations, mentorship, and academic guidance.
+                Connect with faculty by school, discipline, or research focus in
+                our new directory. Filter by the programmes you care about and
+                reach out for collaborations, mentorship, and academic guidance.
               </p>
               <div className="flex flex-col gap-3 sm:flex-row">
                 <Link to="/faculty-directory" className="flex-1">
@@ -181,7 +182,11 @@ export default function Index() {
             </div>
             <div className="rounded-2xl border border-border/50 bg-card/60 p-6 backdrop-blur-sm">
               <div className="grid gap-4">
-                {["Search across schools", "Filter by research focus", "Connect via email"].map((item) => (
+                {[
+                  "Search across schools",
+                  "Filter by research focus",
+                  "Connect via email",
+                ].map((item) => (
                   <div key={item} className="flex items-start gap-3">
                     <div className="mt-1 h-2.5 w-2.5 rounded-full bg-brand-magenta" />
                     <p className="text-sm text-muted-foreground font-graphik">

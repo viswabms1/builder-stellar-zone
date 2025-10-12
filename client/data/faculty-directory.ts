@@ -85,9 +85,12 @@ export const facultySchoolsMeta: FacultySchoolMeta[] = [
 
 export type FacultySchoolId = (typeof facultySchoolsMeta)[number]["id"];
 
-const schoolLookup = new Map(facultySchoolsMeta.map((school) => [school.id, school]));
+const schoolLookup = new Map(
+  facultySchoolsMeta.map((school) => [school.id, school]),
+);
 
-export const getFacultySchoolMeta = (id: FacultySchoolId) => schoolLookup.get(id);
+export const getFacultySchoolMeta = (id: FacultySchoolId) =>
+  schoolLookup.get(id);
 
 const slugify = (value: string) =>
   value
@@ -120,7 +123,11 @@ const engineeringFaculty: FacultyDirectoryMemberBase[] = [
     title: "Professor & Dean (School of Engineering)",
     schoolId: "engineering",
     department: "Computer Science & Engineering",
-    focusAreas: ["Academic Leadership", "Artificial Intelligence", "Systems Engineering"],
+    focusAreas: [
+      "Academic Leadership",
+      "Artificial Intelligence",
+      "Systems Engineering",
+    ],
     interests: ["Engineering Education", "AI Strategy", "Institution Building"],
     email: "dean-soe@dsu.edu.in",
     office: "Engineering Block · Level 5",
@@ -221,7 +228,11 @@ const lawFaculty: FacultyDirectoryMemberBase[] = [
     schoolId: "law",
     department: "Management & Law",
     focusAreas: ["Management", "Business Law"],
-    interests: ["Strategic Management", "Corporate Regulation", "Entrepreneurship"],
+    interests: [
+      "Strategic Management",
+      "Corporate Regulation",
+      "Entrepreneurship",
+    ],
   },
   {
     name: "Prof. Shivani Dutta",
@@ -237,7 +248,11 @@ const lawFaculty: FacultyDirectoryMemberBase[] = [
     schoolId: "law",
     department: "Economics for Law",
     focusAreas: ["Economics", "Public Policy"],
-    interests: ["Development Economics", "Policy Analysis", "Quantitative Research"],
+    interests: [
+      "Development Economics",
+      "Policy Analysis",
+      "Quantitative Research",
+    ],
   },
   {
     name: "Prof. Cauvery M T",
@@ -331,7 +346,9 @@ const lawFaculty: FacultyDirectoryMemberBase[] = [
 
 const cseLookup = new Map(cseFaculty.map((f) => [f.name, f]));
 
-const applyCSEAssets = (member: FacultyDirectoryMemberBase): FacultyDirectoryMember => {
+const applyCSEAssets = (
+  member: FacultyDirectoryMemberBase,
+): FacultyDirectoryMember => {
   const cseMatch = cseLookup.get(member.name);
   const id = slugify(member.name);
 
