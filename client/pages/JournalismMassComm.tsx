@@ -1,9 +1,6 @@
-import { Link } from "react-router-dom";
 import type { LucideIcon } from "lucide-react";
 import {
-  Award,
   Camera,
-  CalendarDays,
   ChevronRight,
   Film,
   Globe,
@@ -13,8 +10,8 @@ import {
   Mic,
   PenSquare,
   Star,
-  Users,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -25,14 +22,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-
-type QuickLink = {
-  title: string;
-  description: string;
-  href: string;
-  icon: LucideIcon;
-  external?: boolean;
-};
 
 type Highlight = {
   title: string;
@@ -46,6 +35,12 @@ type Programme = {
   name: string;
   level: string;
   description: string;
+};
+
+type ProgramFeature = {
+  title: string;
+  description: string;
+  icon: LucideIcon;
 };
 
 type Experience = {
@@ -63,55 +58,6 @@ type Resource = {
 
 const HERO_IMAGE =
   "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2000&auto=format&fit=crop";
-
-const QUICK_LINKS: QuickLink[] = [
-  {
-    title: "The CJMC Advantage",
-    description: "Explore what makes our journalism programmes future ready.",
-    href: "https://www.dsu.edu.in/about-journalism-mass-comm/advantage-journalism",
-    icon: Award,
-    external: true,
-  },
-  {
-    title: "Facilities",
-    description:
-      "Tour convergence labs, studios and creative production spaces.",
-    href: "https://www.dsu.edu.in/about-journalism-mass-comm/facilities-features",
-    icon: Camera,
-    external: true,
-  },
-  {
-    title: "Projects",
-    description:
-      "Review flagship storytelling, multimedia and global comm projects.",
-    href: "https://www.dsu.edu.in/about-journalism-mass-comm/projects-cjmc",
-    icon: Film,
-    external: true,
-  },
-  {
-    title: "Internships & Placements",
-    description:
-      "Understand internship pipelines, newsroom immersion and placements.",
-    href: "https://www.dsu.edu.in/about-journalism-mass-comm/internship-placements-journalism",
-    icon: PenSquare,
-    external: true,
-  },
-  {
-    title: "Life @ CJMC",
-    description:
-      "Catch the vibe of student communities, clubs and productions.",
-    href: "https://www.dsu.edu.in/about-journalism-mass-comm/life-at-cjmc",
-    icon: Users,
-    external: true,
-  },
-  {
-    title: "Academic Calendar",
-    description: "Download the latest academic calendar to plan semesters.",
-    href: "https://www.dsu.edu.in/images/AC_11082025.pdf",
-    icon: CalendarDays,
-    external: true,
-  },
-];
 
 const USP_HIGHLIGHTS: Highlight[] = [
   {
@@ -155,6 +101,27 @@ const PROGRAMMES: Programme[] = [
     level: "Undergraduate",
     description:
       "Three-year programme covering print, television, digital media, filmmaking, podcasting, advertising, public relations and theatre with a compulsory two-month internship.",
+  },
+];
+
+const PROGRAM_FEATURES: ProgramFeature[] = [
+  {
+    title: "Immersive Newsroom Labs",
+    description:
+      "Weekly reporting drills across TV, digital, print and mobile newsrooms with live editorial feedback from faculty mentors.",
+    icon: Mic,
+  },
+  {
+    title: "Audio, Video & Film Projects",
+    description:
+      "Produce short films, podcasts and documentaries using CJMC's broadcast studios, sound labs and VFX suites.",
+    icon: Camera,
+  },
+  {
+    title: "Global Collaboration Network",
+    description:
+      "Work with international partners through the Global Communication Project and engage with industry storytellers.",
+    icon: Globe,
   },
 ];
 
@@ -215,50 +182,6 @@ const RESOURCES: Resource[] = [
     badge: "Stories",
   },
 ];
-
-function QuickLinkCard({ link }: { link: QuickLink }) {
-  const Icon = link.icon;
-  const content = (
-    <div className="group h-full rounded-3xl border border-border/40 bg-card/60 p-6 transition-all duration-500 hover:-translate-y-1 hover:border-brand-magenta/60 hover:shadow-xl hover:shadow-brand-magenta/10">
-      <div className="flex items-center justify-between">
-        <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-magenta/10 text-brand-magenta">
-          <Icon className="h-5 w-5" />
-        </span>
-        <ChevronRight className="h-4 w-4 text-transparent transition-colors duration-500 group-hover:text-brand-magenta" />
-      </div>
-      <h3 className="mt-5 text-lg font-semibold font-gilroy">{link.title}</h3>
-      <p className="mt-3 text-sm text-muted-foreground font-graphik">
-        {link.description}
-      </p>
-      <div className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-brand-magenta">
-        {link.external ? "Open resource" : "Jump to section"}
-        <ChevronRight className="h-4 w-4" />
-      </div>
-    </div>
-  );
-
-  if (link.external) {
-    return (
-      <a
-        href={link.href}
-        target="_blank"
-        rel="noreferrer"
-        className="rounded-3xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-magenta focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-      >
-        {content}
-      </a>
-    );
-  }
-
-  return (
-    <a
-      href={link.href}
-      className="rounded-3xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-magenta focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-    >
-      {content}
-    </a>
-  );
-}
 
 function HighlightCard({ highlight }: { highlight: Highlight }) {
   const Icon = highlight.icon;
@@ -381,9 +304,7 @@ export default function JournalismMassComm() {
               Storytellers for the Now & Next
             </h1>
             <p className="max-w-2xl text-white/90 font-graphik text-lg">
-              Craft narratives across platforms with convergence labs, industry
-              mentors and global collaborations at DSU's College of Journalism &
-              Mass Communication.
+              Craft narratives across platforms with convergence labs, industry mentors and global collaborations at DSU's College of Journalism & Mass Communication.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link to="/admissions">
@@ -408,36 +329,48 @@ export default function JournalismMassComm() {
         </div>
       </section>
 
-      <section
-        id="quick-links"
-        className="bg-gradient-to-r from-brand-blue/5 via-brand-magenta/5 to-brand-orange/5 px-6 py-12"
-      >
+      <section id="programs" className="px-6 py-16">
         <div className="mx-auto max-w-7xl">
-          <div className="mb-10 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-            <div>
+          <div className="grid gap-12 lg:grid-cols-[1.1fr_minmax(0,1fr)] lg:items-center">
+            <div className="space-y-6">
               <Badge className="bg-brand-magenta/15 text-brand-magenta">
-                Important Sub Menus
+                Academic Pathways
               </Badge>
-              <h2 className="mt-4 font-gilroy text-3xl">Navigate CJMC</h2>
-              <p className="mt-3 max-w-2xl text-sm text-muted-foreground font-graphik">
-                Explore programme details, facilities, projects, career pathways
-                and student life experiences at CJMC.
+              <h2 className="font-gilroy text-3xl md:text-4xl">
+                Programmes shaping multimedia storytellers
+              </h2>
+              <p className="text-sm text-muted-foreground font-graphik">
+                Build expertise across reporting, filmmaking, podcasting and strategic communication through immersive studios, global collaborations and industry internships.
               </p>
+              <div className="grid gap-4 sm:grid-cols-1">
+                {PROGRAMMES.map((programme) => (
+                  <ProgrammeCard key={programme.name} programme={programme} />
+                ))}
+              </div>
             </div>
-            <a
-              href="https://www.dsu.edu.in/about-journalism-mass-comm"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 text-sm font-medium text-brand-magenta"
-            >
-              Visit CJMC portal
-              <ChevronRight className="h-4 w-4" />
-            </a>
-          </div>
-          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-            {QUICK_LINKS.map((link) => (
-              <QuickLinkCard key={link.title} link={link} />
-            ))}
+            <div className="rounded-3xl border border-brand-magenta/25 bg-brand-magenta/10 p-8 shadow-[0_30px_120px_-50px_rgba(233,97,255,0.6)]">
+              <h3 className="font-gilroy text-2xl text-brand-magenta">
+                Programme Highlights
+              </h3>
+              <ul className="mt-4 space-y-3 text-sm text-brand-magenta/90 font-graphik">
+                {PROGRAM_FEATURES.map((feature) => {
+                  const Icon = feature.icon;
+                  return (
+                    <li key={feature.title} className="flex items-start gap-3">
+                      <Icon className="mt-1 h-4 w-4" />
+                      <div className="space-y-1">
+                        <p className="font-medium text-brand-magenta">
+                          {feature.title}
+                        </p>
+                        <p className="text-xs text-brand-magenta/80">
+                          {feature.description}
+                        </p>
+                      </div>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
           </div>
         </div>
       </section>
@@ -466,29 +399,6 @@ export default function JournalismMassComm() {
         </div>
       </section>
 
-      <section id="programs" className="px-6 py-16">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-10 text-center">
-            <Badge className="bg-brand-magenta/15 text-brand-magenta">
-              Academic Pathways
-            </Badge>
-            <h2 className="mt-4 font-gilroy text-3xl md:text-4xl">
-              Undergraduate Programme
-            </h2>
-            <p className="mt-3 text-sm text-muted-foreground font-graphik max-w-3xl mx-auto">
-              A future-ready BA (Journalism & Mass Communication) that blends
-              storytelling craft with new-age media skills, culminating in a
-              two-month professional internship.
-            </p>
-          </div>
-          <div className="grid gap-6 lg:grid-cols-1">
-            {PROGRAMMES.map((programme) => (
-              <ProgrammeCard key={programme.name} programme={programme} />
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section
         id="experiences"
         className="bg-gradient-to-r from-brand-blue/5 to-brand-orange/5 px-6 py-16"
@@ -503,8 +413,7 @@ export default function JournalismMassComm() {
                 Studios, Labs & Creative Pods
               </h2>
               <p className="mt-3 text-sm text-muted-foreground font-graphik">
-                Immerse in production labs, podcast studios and storytelling
-                residencies that bring journalistic narratives to life.
+                Immerse in production labs, podcast studios and storytelling residencies that bring journalistic narratives to life.
               </p>
             </div>
             <a
@@ -536,8 +445,7 @@ export default function JournalismMassComm() {
                 Stay in Sync with CJMC
               </h2>
               <p className="mt-3 text-sm text-muted-foreground font-graphik">
-                Access calendars, industry overviews, career guides and
-                galleries to plan your creative journey.
+                Access calendars, industry overviews, career guides and galleries to plan your creative journey.
               </p>
             </div>
             <a
@@ -565,9 +473,7 @@ export default function JournalismMassComm() {
               Tell Stories that Matter
             </h3>
             <p className="mb-6 text-muted-foreground font-graphik">
-              Join CJMC to amplify narratives, collaborate with creatives
-              worldwide and graduate with a portfolio that resonates with
-              industry.
+              Join CJMC to amplify narratives, collaborate with creatives worldwide and graduate with a portfolio that resonates with industry.
             </p>
             <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
               <Link to="/admissions">
