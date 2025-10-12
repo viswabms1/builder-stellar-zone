@@ -3,7 +3,6 @@ import type { LucideIcon } from "lucide-react";
 import {
   Award,
   BadgeCheck,
-  CalendarDays,
   ChevronRight,
   ClipboardList,
   Compass,
@@ -24,14 +23,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-
-type QuickLink = {
-  title: string;
-  description: string;
-  href: string;
-  icon: LucideIcon;
-  external?: boolean;
-};
 
 type Highlight = {
   title: string;
@@ -56,50 +47,6 @@ type Resource = {
 
 const HERO_IMAGE =
   "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2000&auto=format&fit=crop";
-
-const QUICK_LINKS: QuickLink[] = [
-  {
-    title: "Executive USP",
-    description: "Discover the differentiators of DSU Executive Education.",
-    href: "#usp",
-    icon: Award,
-  },
-  {
-    title: "Programs",
-    description:
-      "Map the spectrum of executive pathways and learning outcomes.",
-    href: "#offerings",
-    icon: GraduationCap,
-  },
-  {
-    title: "Speaker Series",
-    description: "Access thought leadership from global CXOs and innovators.",
-    href: "https://www.dsu.edu.in/academics/cee/speaker-series",
-    icon: Presentation,
-    external: true,
-  },
-  {
-    title: "Admissions & FAQs",
-    description: "Review admissions calendar, policies and onboarding details.",
-    href: "https://www.dsu.edu.in/academics/cee/admission",
-    icon: ClipboardList,
-    external: true,
-  },
-  {
-    title: "Clubs & Experience",
-    description: "Immerse in EMBA clubs, experiences and leadership labs.",
-    href: "https://www.dsu.edu.in/academics/cee/experience",
-    icon: Network,
-    external: true,
-  },
-  {
-    title: "Calendar of Events",
-    description:
-      "Stay updated with executive education schedules and milestones.",
-    href: "#resources",
-    icon: CalendarDays,
-  },
-];
 
 const USP_HIGHLIGHTS: Highlight[] = [
   {
@@ -194,50 +141,6 @@ const RESOURCES: Resource[] = [
     badge: "Brochure",
   },
 ];
-
-function QuickLinkCard({ link }: { link: QuickLink }) {
-  const Icon = link.icon;
-  const content = (
-    <div className="group h-full rounded-3xl border border-border/40 bg-card/60 p-6 transition-all duration-500 hover:-translate-y-1 hover:border-brand-magenta/60 hover:shadow-xl hover:shadow-brand-magenta/10">
-      <div className="flex items-center justify-between">
-        <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-magenta/10 text-brand-magenta">
-          <Icon className="h-5 w-5" />
-        </span>
-        <ChevronRight className="h-4 w-4 text-transparent transition-colors duration-500 group-hover:text-brand-magenta" />
-      </div>
-      <h3 className="mt-5 text-lg font-semibold font-gilroy">{link.title}</h3>
-      <p className="mt-3 text-sm text-muted-foreground font-graphik">
-        {link.description}
-      </p>
-      <div className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-brand-magenta">
-        {link.external ? "Open resource" : "Jump to section"}
-        <ChevronRight className="h-4 w-4" />
-      </div>
-    </div>
-  );
-
-  if (link.external) {
-    return (
-      <a
-        href={link.href}
-        target="_blank"
-        rel="noreferrer"
-        className="rounded-3xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-magenta focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-      >
-        {content}
-      </a>
-    );
-  }
-
-  return (
-    <a
-      href={link.href}
-      className="rounded-3xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-magenta focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-    >
-      {content}
-    </a>
-  );
-}
 
 function HighlightCard({ highlight }: { highlight: Highlight }) {
   const Icon = highlight.icon;
