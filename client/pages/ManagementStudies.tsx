@@ -338,6 +338,74 @@ export default function ManagementStudies() {
         </div>
       </section>
 
+      <section id="programs" className="px-6 py-16">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-12 lg:grid-cols-[1.1fr_minmax(0,1fr)] lg:items-center">
+            <div className="space-y-6">
+              <Badge className="bg-brand-magenta/15 text-brand-magenta">
+                Academic Pathways
+              </Badge>
+              <h2 className="font-gilroy text-3xl md:text-4xl">
+                Programmes that create agile business leaders
+              </h2>
+              <p className="text-sm text-muted-foreground font-graphik">
+                Build a career-ready portfolio across B.Com, BBA, MBA and doctoral tracks with immersive labs, consulting clinics and global immersion opportunities.
+              </p>
+              <div className="grid gap-4 sm:grid-cols-2">
+                {PROGRAMMES.map((programme) => (
+                  <Card
+                    key={programme.name}
+                    className="h-full rounded-3xl border border-border/40 bg-card/60 backdrop-blur-sm"
+                  >
+                    <CardHeader className="pb-3">
+                      <Badge className="bg-brand-magenta/15 text-brand-magenta">
+                        {programme.level}
+                      </Badge>
+                      <CardTitle className="mt-4 text-xl font-gilroy">
+                        {programme.name}
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent className="space-y-4 text-sm text-muted-foreground font-graphik">
+                      <p>{programme.focus}</p>
+                      {programme.link ? (
+                        <a
+                          href={programme.link}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="inline-flex items-center gap-2 text-sm font-medium text-brand-magenta"
+                        >
+                          Know more
+                          <ChevronRight className="h-4 w-4" />
+                        </a>
+                      ) : null}
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+            <div className="rounded-3xl border border-brand-magenta/25 bg-brand-magenta/10 p-8 shadow-[0_30px_120px_-50px_rgba(233,97,255,0.6)]">
+              <h3 className="font-gilroy text-2xl text-brand-magenta">
+                What you gain at SCMS
+              </h3>
+              <ul className="mt-4 space-y-3 text-sm text-brand-magenta/90 font-graphik">
+                <li className="flex items-start gap-2">
+                  <TrendingUp className="mt-0.5 h-4 w-4" />
+                  Strategic specialisations in finance, analytics, marketing and entrepreneurship
+                </li>
+                <li className="flex items-start gap-2">
+                  <Layers className="mt-0.5 h-4 w-4" />
+                  Live business labs, hackathons and consulting clinics with corporate partners
+                </li>
+                <li className="flex items-start gap-2">
+                  <DollarSign className="mt-0.5 h-4 w-4" />
+                  Placement readiness, venture acceleration and alumni mentorship to fast-track careers
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section
         id="usp"
         className="bg-gradient-to-r from-brand-magenta/5 via-brand-orange/5 to-brand-blue/5 px-6 py-16"
@@ -357,29 +425,6 @@ export default function ManagementStudies() {
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {USP_HIGHLIGHTS.map((highlight) => (
               <HighlightCard key={highlight.title} highlight={highlight} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="programs" className="px-6 py-16">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-10 text-center">
-            <Badge className="bg-brand-magenta/15 text-brand-magenta">
-              Academic Pathways
-            </Badge>
-            <h2 className="mt-4 font-gilroy text-3xl md:text-4xl">
-              Programmes that Build Business Trailblazers
-            </h2>
-            <p className="mt-3 text-sm text-muted-foreground font-graphik max-w-3xl mx-auto">
-              Full-spectrum commerce and management programmes blend classroom
-              mastery with analytics labs, consulting simulations and venture
-              creation opportunities.
-            </p>
-          </div>
-          <div className="grid gap-6 lg:grid-cols-2">
-            {PROGRAMMES.map((programme) => (
-              <ProgrammeCard key={programme.name} programme={programme} />
             ))}
           </div>
         </div>
