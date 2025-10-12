@@ -415,7 +415,7 @@ function DepartmentCard({
   department: EngineeringDepartment;
 }) {
   const isInternal = department.link.startsWith("/");
-  const wrapperClasses = `group block h-full ${
+  const wrapperClasses = `group block h-full rounded-3xl ${
     department.featured ? "lg:col-span-2" : ""
   } focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-magenta focus-visible:ring-offset-2 focus-visible:ring-offset-background`;
 
