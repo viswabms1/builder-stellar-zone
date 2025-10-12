@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import type { LucideIcon } from "lucide-react";
 import {
   Building2,
-  CalendarDays,
   ChevronRight,
   Compass,
   GraduationCap,
@@ -23,14 +22,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-
-type QuickLink = {
-  title: string;
-  description: string;
-  href: string;
-  icon: LucideIcon;
-  external?: boolean;
-};
 
 type Highlight = {
   title: string;
@@ -56,53 +47,6 @@ type Resource = {
 
 const HERO_IMAGE =
   "https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?q=80&w=2000&auto=format&fit=crop";
-
-const QUICK_LINKS: QuickLink[] = [
-  {
-    title: "Medical College",
-    description:
-      "Explore competency-based medical education, smart classrooms and clinical skills labs.",
-    href: "#pillars",
-    icon: GraduationCap,
-  },
-  {
-    title: "Teaching Hospital",
-    description:
-      "Discover tertiary care specialities, simulation suites and patient-centric services.",
-    href: "/academics/health-sciences/cdsimer/hospital",
-    icon: Hospital,
-  },
-  {
-    title: "Research & Innovation",
-    description:
-      "View DSU's clinical research initiatives and translational discovery programmes.",
-    href: "https://cdsimer.edu.in/research/cri",
-    icon: Microscope,
-    external: true,
-  },
-  {
-    title: "Admissions",
-    description:
-      "Connect with counsellors for MBBS, allied health and residency pathways.",
-    href: "https://cdsimer.edu.in/enquiry",
-    icon: Users,
-    external: true,
-  },
-  {
-    title: "Campus Life",
-    description:
-      "Experience holistic living, clubs and wellness across the 140-acre medical campus.",
-    href: "/academics/health-sciences/cdsimer/life",
-    icon: Sparkle,
-  },
-  {
-    title: "Events & Outreach",
-    description:
-      "Stay updated on clinical conferences, community service and simulation workshops.",
-    href: "#resources",
-    icon: CalendarDays,
-  },
-];
 
 const HIGHLIGHTS: Highlight[] = [
   {
@@ -216,61 +160,6 @@ const RESOURCES: Resource[] = [
     badge: "Tour",
   },
 ];
-
-function QuickLinkCard({ link }: { link: QuickLink }) {
-  const Icon = link.icon;
-  const content = (
-    <div className="group h-full rounded-3xl border border-border/40 bg-card/60 p-6 transition-all duration-500 hover:-translate-y-1 hover:border-brand-magenta/60 hover:shadow-xl hover:shadow-brand-magenta/10">
-      <div className="flex items-center justify-between">
-        <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-magenta/10 text-brand-magenta">
-          <Icon className="h-5 w-5" />
-        </span>
-        <ChevronRight className="h-4 w-4 text-transparent transition-colors duration-500 group-hover:text-brand-magenta" />
-      </div>
-      <h3 className="mt-5 text-lg font-semibold font-gilroy">{link.title}</h3>
-      <p className="mt-3 text-sm text-muted-foreground font-graphik">
-        {link.description}
-      </p>
-      <div className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-brand-magenta">
-        {link.external ? "Open resource" : "Jump to section"}
-        <ChevronRight className="h-4 w-4" />
-      </div>
-    </div>
-  );
-
-  if (link.external) {
-    return (
-      <a
-        href={link.href}
-        target="_blank"
-        rel="noreferrer"
-        className="rounded-3xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-magenta focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-      >
-        {content}
-      </a>
-    );
-  }
-
-  if (link.href.startsWith("/")) {
-    return (
-      <Link
-        to={link.href}
-        className="rounded-3xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-magenta focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-      >
-        {content}
-      </Link>
-    );
-  }
-
-  return (
-    <a
-      href={link.href}
-      className="rounded-3xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-magenta focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-    >
-      {content}
-    </a>
-  );
-}
 
 function HighlightCard({ highlight }: { highlight: Highlight }) {
   const Icon = highlight.icon;
