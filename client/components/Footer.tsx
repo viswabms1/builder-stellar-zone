@@ -247,9 +247,10 @@ export default function Footer() {
                   <a
                     key={email.value}
                     href={`mailto:${email.value}`}
+                    aria-label={`${email.label} email ${email.value}`}
                     className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-medium uppercase tracking-wide text-white/80 transition hover:text-white"
                   >
-                    <Mail className="h-3 w-3" /> {email.label}
+                    <Mail className="h-3 w-3" aria-hidden="true" /> {email.label}
                   </a>
                 ))}
               </div>
