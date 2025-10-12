@@ -173,6 +173,71 @@ const PG_PROGRAMS = [
   "Design Engineering",
 ];
 
+const ENGINEERING_DEPARTMENTS: EngineeringDepartment[] = [
+  {
+    name: "Computer Science & Engineering",
+    area: "Flagship UG Major",
+    description:
+      "AI-ready curriculum spanning full stack engineering, cyber defence, cloud-native architectures and product innovation studios.",
+    image:
+      "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1600&auto=format&fit=crop",
+    link: "/academics/engineering/computer-science",
+    highlights: ["AI & ML Studio", "Product Labs", "Industry Hackathons"],
+    featured: true,
+  },
+  {
+    name: "Electronics & Communication Engineering",
+    area: "Intelligent Systems",
+    description:
+      "Design advanced electronics, VLSI, embedded and communication systems empowered by 5G, IoT and semiconductor labs.",
+    image:
+      "https://images.unsplash.com/photo-1582719478146-b041da2ec82a?q=80&w=1600&auto=format&fit=crop",
+    link: "https://www.dsu.edu.in/engineering/electronics-communication",
+    highlights: ["VLSI Lab", "5G Research", "IoT Systems"],
+    featured: true,
+  },
+  {
+    name: "Mechanical Engineering",
+    area: "Core Engineering",
+    description:
+      "Master sustainable manufacturing, automotive systems, robotics and design thinking with hands-on prototyping studios.",
+    image:
+      "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1600&auto=format&fit=crop",
+    link: "https://www.dsu.edu.in/engineering/mechanical-engineering",
+    highlights: ["Advanced Manufacturing", "Robotics Studio", "CAE Tools"],
+  },
+  {
+    name: "Aerospace Engineering",
+    area: "High Altitude Futures",
+    description:
+      "Explore flight mechanics, propulsion, avionics and composite materials in specialised aerospace laboratories.",
+    image:
+      "https://images.unsplash.com/photo-1489515217757-5fd1be406fef?q=80&w=1600&auto=format&fit=crop",
+    link: "https://www.dsu.edu.in/engineering/aerospace-engineering",
+    highlights: ["Wind Tunnel", "Avionics Lab", "UAV Projects"],
+  },
+  {
+    name: "AI & Robotics",
+    area: "Interdisciplinary Edge",
+    description:
+      "Build human-centric intelligent systems blending robotics, machine vision, automation and IoT.",
+    image:
+      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1600&auto=format&fit=crop",
+    link: "https://www.dsu.edu.in/engineering/artificial-intelligence-robotics",
+    highlights: ["Robotics Arena", "Machine Vision", "Automation"],
+  },
+  {
+    name: "Computer Science & Engineering (AI & ML)",
+    area: "Specialised UG Major",
+    description:
+      "Deep-dives into responsible AI, data engineering, ML pipelines and NLP with industry-certified projects.",
+    image:
+      "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1600&auto=format&fit=crop",
+    link: "/academics/engineering/ai-ml",
+    highlights: ["Capstone Studios", "AI Research", "Dual Certifications"],
+  },
+];
+
 const SUPPORTING_DEPARTMENTS: SupportingDepartment[] = [
   {
     name: "Basic Engineering",
