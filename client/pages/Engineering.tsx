@@ -127,9 +127,14 @@ const ENGINEERING_DEPARTMENTS: EngineeringDepartment[] = [
     description:
       "AI-ready curriculum spanning full stack engineering, cyber defence, cloud-native architectures and product innovation studios.",
     image:
-      "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=1600&auto=format&fit=crop",
     link: "/academics/engineering/computer-science",
     highlights: ["AI & ML Studio", "Product Labs", "Industry Hackathons"],
+    overlay:
+      "bg-gradient-to-br from-brand-magenta/80 via-black/75 to-black/60 mix-blend-multiply",
+    badgeClass:
+      "bg-brand-magenta/25 text-white/90 border border-white/30 backdrop-blur",
+    panelClass: "bg-black/55 backdrop-blur-xl",
     featured: true,
   },
   {
@@ -138,9 +143,14 @@ const ENGINEERING_DEPARTMENTS: EngineeringDepartment[] = [
     description:
       "Design advanced electronics, VLSI, embedded and communication systems empowered by 5G, IoT and semiconductor labs.",
     image:
-      "https://images.unsplash.com/photo-1582719478146-b041da2ec82a?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1580894908361-967195033215?q=80&w=1600&auto=format&fit=crop",
     link: "https://www.dsu.edu.in/engineering/electronics-communication",
     highlights: ["VLSI Lab", "5G Research", "IoT Systems"],
+    overlay:
+      "bg-gradient-to-br from-brand-blue/80 via-black/75 to-black/60 mix-blend-multiply",
+    badgeClass:
+      "bg-brand-blue/30 text-white/90 border border-white/25 backdrop-blur",
+    panelClass: "bg-black/60 backdrop-blur-xl",
     featured: true,
   },
   {
@@ -149,9 +159,14 @@ const ENGINEERING_DEPARTMENTS: EngineeringDepartment[] = [
     description:
       "Master sustainable manufacturing, automotive systems, robotics and design thinking with hands-on prototyping studios.",
     image:
-      "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1517677129300-07b130802f46?q=80&w=1600&auto=format&fit=crop",
     link: "https://www.dsu.edu.in/engineering/mechanical-engineering",
     highlights: ["Advanced Manufacturing", "Robotics Studio", "CAE Tools"],
+    overlay:
+      "bg-gradient-to-br from-brand-orange/80 via-black/75 to-black/60 mix-blend-multiply",
+    badgeClass:
+      "bg-brand-orange/35 text-white/90 border border-white/25 backdrop-blur",
+    panelClass: "bg-black/65 backdrop-blur-xl",
   },
   {
     name: "Aerospace Engineering",
@@ -162,6 +177,11 @@ const ENGINEERING_DEPARTMENTS: EngineeringDepartment[] = [
       "https://images.unsplash.com/photo-1489515217757-5fd1be406fef?q=80&w=1600&auto=format&fit=crop",
     link: "https://www.dsu.edu.in/engineering/aerospace-engineering",
     highlights: ["Wind Tunnel", "Avionics Lab", "UAV Projects"],
+    overlay:
+      "bg-gradient-to-tr from-brand-blue/70 via-black/70 to-black/55 mix-blend-multiply",
+    badgeClass:
+      "bg-brand-blue/35 text-white/90 border border-white/25 backdrop-blur",
+    panelClass: "bg-black/55 backdrop-blur-xl",
   },
   {
     name: "AI & Robotics",
@@ -169,9 +189,14 @@ const ENGINEERING_DEPARTMENTS: EngineeringDepartment[] = [
     description:
       "Build human-centric intelligent systems blending robotics, machine vision, automation and IoT.",
     image:
-      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1600&auto=format&fit=crop",
     link: "https://www.dsu.edu.in/engineering/artificial-intelligence-robotics",
     highlights: ["Robotics Arena", "Machine Vision", "Automation"],
+    overlay:
+      "bg-gradient-to-br from-brand-magenta/70 via-black/70 to-black/55 mix-blend-multiply",
+    badgeClass:
+      "bg-brand-magenta/30 text-white/90 border border-white/25 backdrop-blur",
+    panelClass: "bg-black/55 backdrop-blur-xl",
   },
   {
     name: "Computer Science & Engineering (AI & ML)",
@@ -179,9 +204,14 @@ const ENGINEERING_DEPARTMENTS: EngineeringDepartment[] = [
     description:
       "Deep-dives into responsible AI, data engineering, ML pipelines and NLP with industry-certified projects.",
     image:
-      "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1534759846116-5799c33ce22a?q=80&w=1600&auto=format&fit=crop",
     link: "/academics/engineering/ai-ml",
     highlights: ["Capstone Studios", "AI Research", "Dual Certifications"],
+    overlay:
+      "bg-gradient-to-br from-brand-magenta/70 via-brand-blue/60 to-black/60 mix-blend-multiply",
+    badgeClass:
+      "bg-brand-magenta/30 text-white/90 border border-white/25 backdrop-blur",
+    panelClass: "bg-black/55 backdrop-blur-xl",
   },
   {
     name: "Computer Science & Engineering (AI & Data Science)",
@@ -189,9 +219,14 @@ const ENGINEERING_DEPARTMENTS: EngineeringDepartment[] = [
     description:
       "Engineer data products with applied analytics, data governance, cloud-native pipelines and real-time dashboards.",
     image:
-      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?q=80&w=1600&auto=format&fit=crop",
     link: "https://www.dsu.edu.in/engineering/artificial-intelligence-data-science",
     highlights: ["Data Engineering", "Analytics Studio", "Cloud Pipelines"],
+    overlay:
+      "bg-gradient-to-br from-brand-blue/75 via-black/70 to-black/55 mix-blend-multiply",
+    badgeClass:
+      "bg-brand-blue/30 text-white/90 border border-white/25 backdrop-blur",
+    panelClass: "bg-black/55 backdrop-blur-xl",
   },
   {
     name: "Computer Science & Engineering (Data Science)",
@@ -199,9 +234,14 @@ const ENGINEERING_DEPARTMENTS: EngineeringDepartment[] = [
     description:
       "Dive into statistical computing, big data processing, intelligent automation and visual analytics.",
     image:
-      "https://images.unsplash.com/photo-1483478550801-ceba5fe50e8e?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1600&auto=format&fit=crop",
     link: "https://www.dsu.edu.in/engineering/computer-science-data-science",
     highlights: ["Big Data Lab", "Predictive Models", "Visualization"],
+    overlay:
+      "bg-gradient-to-br from-brand-blue/70 via-brand-magenta/60 to-black/55 mix-blend-multiply",
+    badgeClass:
+      "bg-brand-blue/30 text-white/90 border border-white/25 backdrop-blur",
+    panelClass: "bg-black/55 backdrop-blur-xl",
   },
   {
     name: "Computer Science & Engineering (Cyber Security)",
@@ -209,9 +249,14 @@ const ENGINEERING_DEPARTMENTS: EngineeringDepartment[] = [
     description:
       "Protect digital infrastructure through secure coding, ethical hacking, digital forensics and governance frameworks.",
     image:
-      "https://images.unsplash.com/photo-1510511459019-5dda7724fd87?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1600&auto=format&fit=crop",
     link: "https://www.dsu.edu.in/engineering/computer-science-cyber-security",
     highlights: ["Cyber Range", "Ethical Hacking", "Forensics"],
+    overlay:
+      "bg-gradient-to-br from-black/80 via-brand-magenta/60 to-brand-blue/60 mix-blend-multiply",
+    badgeClass:
+      "bg-black/50 text-white/90 border border-white/30 backdrop-blur",
+    panelClass: "bg-black/60 backdrop-blur-xl",
   },
   {
     name: "Computer Science & Technology",
@@ -219,9 +264,14 @@ const ENGINEERING_DEPARTMENTS: EngineeringDepartment[] = [
     description:
       "Blend software engineering, systems integration and platform engineering oriented towards digital enterprises.",
     image:
-      "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1523475472560-d2df97ec485c?q=80&w=1600&auto=format&fit=crop",
     link: "https://www.dsu.edu.in/engineering/computer-science-technology",
     highlights: ["Platform Engineering", "Systems Design", "Enterprise Projects"],
+    overlay:
+      "bg-gradient-to-br from-brand-orange/70 via-black/70 to-black/55 mix-blend-multiply",
+    badgeClass:
+      "bg-brand-orange/35 text-white/90 border border-white/25 backdrop-blur",
+    panelClass: "bg-black/55 backdrop-blur-xl",
   },
   {
     name: "Computer Science and Medical Engineering",
@@ -232,6 +282,11 @@ const ENGINEERING_DEPARTMENTS: EngineeringDepartment[] = [
       "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1600&auto=format&fit=crop",
     link: "https://www.dsu.edu.in/engineering/computer-science-medical-engineering",
     highlights: ["Digital Health", "Medical Imaging", "Bio-Informatics"],
+    overlay:
+      "bg-gradient-to-br from-brand-magenta/65 via-brand-blue/55 to-black/55 mix-blend-multiply",
+    badgeClass:
+      "bg-brand-magenta/30 text-white/90 border border-white/25 backdrop-blur",
+    panelClass: "bg-black/55 backdrop-blur-xl",
   },
 ];
 
