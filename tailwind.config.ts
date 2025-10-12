@@ -122,6 +122,8 @@ export default {
         "glow-pulse": "glow-pulse 2s ease-in-out infinite alternate",
       },
       fontFamily: {
+        gilroy: ["Poppins", "Inter", "sans-serif"],
+        graphik: ["Inter", "Poppins", "sans-serif"],
         display: ["Poppins", "Inter", "sans-serif"],
         body: ["Inter", "Poppins", "sans-serif"],
         sans: ["Inter", "Poppins", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "sans-serif"],
