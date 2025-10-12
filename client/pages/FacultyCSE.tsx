@@ -13,8 +13,8 @@ export default function FacultyCSE() {
       <section className="px-6 py-14 bg-gradient-to-r from-brand-magenta/5 via-brand-orange/5 to-brand-blue/5">
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-4 flex-wrap">
           <div>
-            <h1 className="headline-2 font-gilroy">CSE Faculty</h1>
-            <p className="text-muted-foreground font-graphik">Meet the people behind DSU Computer Science & Engineering</p>
+            <h1 className="headline-2 font-display">CSE Faculty</h1>
+            <p className="text-muted-foreground font-body">Meet the people behind DSU Computer Science & Engineering</p>
           </div>
           <Link to="/academics/engineering/computer-science">
             <Button variant="outline" className="border-brand-magenta/40 hover:bg-brand-magenta/10">
@@ -48,7 +48,7 @@ export default function FacultyCSE() {
                   </AspectRatio>
                   <div className="absolute bottom-0 p-4">
                     <div className="text-white text-sm opacity-80">{f.title}</div>
-                    <div className="text-white font-semibold text-lg font-gilroy flex items-center">
+                    <div className="text-white font-semibold text-lg font-display flex items-center">
                       {f.name}
                       <ChevronRight className="w-4 h-4 ml-1 opacity-80 group-hover:translate-x-0.5 transition-transform" />
                     </div>
