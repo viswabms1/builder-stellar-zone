@@ -56,6 +56,53 @@ const FOOTER_LINK_GROUPS = [
   },
 ];
 
+const CONTACT_LOCATIONS = [
+  {
+    title: "DSU Main Campus",
+    address: [
+      "Devarakaggalahalli, Harohalli",
+      "Kanakapura Road, Bengaluru South Dt.",
+      "Karnataka 562 112, India",
+    ],
+    phones: [
+      { label: "Registrar", value: "080 4909 2910 / 11" },
+      { label: "Dean (Engineering)", value: "+91 80 4909 2986 / 32 / 33" },
+      { label: "Dean (MBA)", value: "080 4909 2931" },
+      { label: "EMBA Enquiry", value: "080 4909 2930" },
+      { label: "Research Cell", value: "080 4909 2912" },
+    ],
+  },
+  {
+    title: "DSU City Innovation Campus",
+    address: [
+      "Administrative & Main Admissions Office",
+      "Kudlu Gate, Hosur Road",
+      "Bengaluru - 560 114",
+    ],
+    phones: [
+      { label: "Admissions Helpline", value: "080 4646 1800 / 080 4909 2800" },
+      { label: "Mobile", value: "+91 77609 64277 / 82963 16737 / 63668 85507" },
+    ],
+  },
+  {
+    title: "DSU City Admissions Office",
+    address: [
+      "Gate 2, 6th Floor, University Building",
+      "Dental Block, Kumaraswamy Layout",
+      "Bengaluru - 560 111",
+    ],
+    phones: [
+      { label: "Admissions Helpline", value: "080 4646 1800 / 080 4909 2800" },
+    ],
+  },
+];
+
+const CONTACT_EMAILS = [
+  { label: "Admissions", value: "admissions@dsu.edu.in" },
+  { label: "DSAT / Technical", value: "dsat@dsu.edu.in" },
+  { label: "General Enquiry", value: "enquiry@dsu.edu.in" },
+];
+
 const SOCIAL_LINKS = [
   {
     label: "Facebook",
