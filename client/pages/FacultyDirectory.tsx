@@ -86,7 +86,7 @@ export default function FacultyDirectory() {
               Discover Experts Across Schools & Focus Areas
             </h1>
             <p className="text-sm text-muted-foreground font-graphik md:text-base">
-              Search and filter  to connect with DSU faculty by school, discipline, or research interest. Each profile highlights leadership roles, focus areas, and direct contact information where available.
+              Search and filter to connect with DSU faculty by school, discipline, or research interest. Each profile highlights leadership roles, focus areas, and direct contact information where available.
             </p>
             <div className="grid gap-4 sm:grid-cols-3">
               <StatisticsCard
