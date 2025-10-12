@@ -4,7 +4,6 @@ import {
   Award,
   Scale,
   BookOpen,
-  CalendarDays,
   ChevronRight,
   FileText,
   Gavel,
@@ -26,14 +25,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-
-type QuickLink = {
-  title: string;
-  description: string;
-  href: string;
-  icon: LucideIcon;
-  external?: boolean;
-};
 
 type Highlight = {
   title: string;
@@ -65,54 +56,6 @@ type ResourceLink = {
 
 const HERO_IMAGE =
   "https://images.unsplash.com/photo-1489515217757-5fd1be406fef?q=80&w=2000&auto=format&fit=crop";
-
-const QUICK_LINKS: QuickLink[] = [
-  {
-    title: "USP",
-    description: "Understand our philosophy of New Age Lawyering.",
-    href: "#usp",
-    icon: Award,
-  },
-  {
-    title: "Programs",
-    description: "Explore integrated and postgraduate legal pathways.",
-    href: "#programs",
-    icon: GraduationCap,
-  },
-  {
-    title: "Centres & Clinics",
-    description: "Discover experiential hubs, clinics and research centres.",
-    href: "#centres",
-    icon: Landmark,
-  },
-  {
-    title: "Calendar & Events",
-    description: "Stay updated on conferences, FDPs and signature events.",
-    href: "#resources",
-    icon: CalendarDays,
-  },
-  {
-    title: "Faculty List",
-    description: "Meet the experts guiding every cohort.",
-    href: "https://www.dsu.edu.in/law/law-faculty",
-    icon: Users,
-    external: true,
-  },
-  {
-    title: "Research Centres",
-    description: "Review interdisciplinary legal research initiatives.",
-    href: "https://www.dsu.edu.in/law/law-research-centres",
-    icon: Globe,
-    external: true,
-  },
-  {
-    title: "Newsletter",
-    description: "Read the latest edition of the School of Law newsletter.",
-    href: "https://www.dsu.edu.in/law/newsletter-law",
-    icon: ScrollText,
-    external: true,
-  },
-];
 
 const USP_HIGHLIGHTS: Highlight[] = [
   {
@@ -222,50 +165,6 @@ const RESOURCE_LINKS: ResourceLink[] = [
     badge: "FDP",
   },
 ];
-
-function QuickLinkCard({ link }: { link: QuickLink }) {
-  const Icon = link.icon;
-  const content = (
-    <div className="group h-full rounded-3xl border border-border/40 bg-card/60 p-6 transition-all duration-500 hover:-translate-y-1 hover:border-brand-magenta/60 hover:shadow-xl hover:shadow-brand-magenta/10">
-      <div className="flex items-center justify-between">
-        <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-magenta/10 text-brand-magenta">
-          <Icon className="h-5 w-5" />
-        </span>
-        <ChevronRight className="h-4 w-4 text-transparent transition-colors duration-500 group-hover:text-brand-magenta" />
-      </div>
-      <h3 className="mt-5 text-lg font-semibold font-gilroy">{link.title}</h3>
-      <p className="mt-3 text-sm text-muted-foreground font-graphik">
-        {link.description}
-      </p>
-      <div className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-brand-magenta">
-        {link.external ? "Open resource" : "Jump to section"}
-        <ChevronRight className="h-4 w-4" />
-      </div>
-    </div>
-  );
-
-  if (link.external) {
-    return (
-      <a
-        href={link.href}
-        target="_blank"
-        rel="noreferrer"
-        className="rounded-3xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-magenta focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-      >
-        {content}
-      </a>
-    );
-  }
-
-  return (
-    <a
-      href={link.href}
-      className="rounded-3xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-magenta focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-    >
-      {content}
-    </a>
-  );
-}
 
 function HighlightCard({ highlight }: { highlight: Highlight }) {
   const Icon = highlight.icon;
