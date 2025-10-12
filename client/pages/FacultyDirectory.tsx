@@ -2,15 +2,23 @@ import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import {
   ArrowUpRight,
+  ArrowRight,
   Filter,
   GraduationCap,
-  MapPin,
+  Library,
   Mail,
+  MapPin,
   Search,
   Users,
 } from "lucide-react";
 
-import { facultyDirectory, facultyFocusAreas, facultySchools } from "@/data/faculty-directory";
+import {
+  facultyDirectory,
+  facultyFocusAreas,
+  facultySchoolsMeta,
+  getFacultySchoolMeta,
+} from "@/data/faculty-directory";
+import type { FacultySchoolId } from "@/data/faculty-directory";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -28,22 +36,40 @@ import {
   AvatarImage,
 } from "@/components/ui/avatar";
 
-const ALL_SCHOOLS = "All Schools";
+const ALL_SCHOOLS_VALUE = "all";
+const ALL_SCHOOLS_LABEL = "All Schools";
 const ALL_AREAS = "All Focus Areas";
 
-const schoolOptions = [ALL_SCHOOLS, ...facultySchools];
+const schoolOptions = [
+  { label: ALL_SCHOOLS_LABEL, value: ALL_SCHOOLS_VALUE },
+  ...facultySchoolsMeta.map((school) => ({ label: school.name, value: school.id })),
+];
+
 const focusOptions = [ALL_AREAS, ...facultyFocusAreas];
 
+type SelectedSchool = typeof ALL_SCHOOLS_VALUE | FacultySchoolId;
+
 export default function FacultyDirectory() {
-  const [schoolFilter, setSchoolFilter] = useState<string>(ALL_SCHOOLS);
+  const [schoolFilter, setSchoolFilter] = useState<SelectedSchool>(ALL_SCHOOLS_VALUE);
   const [focusFilter, setFocusFilter] = useState<string>(ALL_AREAS);
   const [searchTerm, setSearchTerm] = useState("");
 
   const stats = useMemo(() => {
     const total = facultyDirectory.length;
-    const schools = facultySchools.length;
+    const schoolsRepresented = new Set(
+      facultyDirectory.map((member) => member.schoolId),
+    ).size;
     const focus = facultyFocusAreas.length;
-    return { total, schools, focus };
+    return { total, schoolsRepresented, focus };
+  }, []);
+
+  const schoolCountMap = useMemo(() => {
+    return facultySchoolsMeta.reduce<Record<string, number>>((acc, school) => {
+      acc[school.id] = facultyDirectory.filter(
+        (member) => member.schoolId === school.id,
+      ).length;
+      return acc;
+    }, {});
   }, []);
 
   const filteredFaculty = useMemo(() => {
@@ -51,7 +77,7 @@ export default function FacultyDirectory() {
 
     return facultyDirectory.filter((member) => {
       const matchesSchool =
-        schoolFilter === ALL_SCHOOLS || member.school === schoolFilter;
+        schoolFilter === ALL_SCHOOLS_VALUE || member.schoolId === schoolFilter;
 
       const matchesFocus =
         focusFilter === ALL_AREAS || member.focusAreas.includes(focusFilter);
@@ -62,7 +88,7 @@ export default function FacultyDirectory() {
           member.name,
           member.title,
           member.department,
-          member.school,
+          getFacultySchoolMeta(member.schoolId)?.name ?? "",
           member.focusAreas.join(" "),
           member.interests.join(" "),
         ]
@@ -74,6 +100,14 @@ export default function FacultyDirectory() {
     });
   }, [focusFilter, schoolFilter, searchTerm]);
 
+  const activeSchoolLabel =
+    schoolFilter === ALL_SCHOOLS_VALUE
+      ? "all schools"
+      : getFacultySchoolMeta(schoolFilter)?.name ?? "all schools";
+
+  const activeFocusLabel =
+    focusFilter === ALL_AREAS ? "all focus areas" : focusFilter.toLowerCase();
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <section className="bg-gradient-to-r from-brand-magenta/5 via-brand-blue/5 to-brand-orange/5 px-6 py-16">
@@ -83,10 +117,10 @@ export default function FacultyDirectory() {
               Faculty Directory
             </Badge>
             <h1 className="font-gilroy text-4xl leading-tight md:text-5xl">
-              Discover Experts Across Schools & Focus Areas
+              Discover Experts Across Every DSU School
             </h1>
             <p className="text-sm text-muted-foreground font-graphik md:text-base">
-              Search and filter to connect with DSU faculty by school, discipline, or research interest. Each profile highlights leadership roles, focus areas, and direct contact information where available.
+              Search and filter the complete faculty ecosystem by school, department, research interest or keyword. Find the right mentors to collaborate with or contact as you explore DSU&apos;s programmes.
             </p>
             <div className="grid gap-4 sm:grid-cols-3">
               <StatisticsCard
@@ -95,8 +129,8 @@ export default function FacultyDirectory() {
                 icon={Users}
               />
               <StatisticsCard
-                label="Schools Represented"
-                value={stats.schools.toString()}
+                label="Schools Covered"
+                value={stats.schoolsRepresented.toString()}
                 icon={GraduationCap}
               />
               <StatisticsCard
@@ -110,30 +144,40 @@ export default function FacultyDirectory() {
             <div className="mb-4 text-sm font-medium uppercase tracking-wide text-muted-foreground">
               Refine your search
             </div>
-            <div className="space-y-3">
+            <div className="space-y-4">
               <div className="relative">
                 <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
                 <Input
                   value={searchTerm}
                   onChange={(event) => setSearchTerm(event.target.value)}
-                  placeholder="Search by name, department, or expertise"
+                  placeholder="Search by name, department, research focus"
                   className="pl-10"
+                  aria-label="Search faculty directory"
                 />
               </div>
               <FilterPills
                 label="Schools"
                 options={schoolOptions}
-                active={schoolFilter}
-                onSelect={setSchoolFilter}
+                activeValue={schoolFilter}
+                onSelect={(value) => setSchoolFilter(value as SelectedSchool)}
               />
               <FilterPills
                 label="Focus Areas"
-                options={focusOptions}
-                active={focusFilter}
-                onSelect={setFocusFilter}
+                options={focusOptions.map((option) => ({
+                  label: option,
+                  value: option,
+                }))}
+                activeValue={focusFilter}
+                onSelect={(value) => setFocusFilter(value)}
               />
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="px-6 pb-4">
+        <div className="mx-auto max-w-7xl">
+          <SchoolOverviewGrid counts={schoolCountMap} />
         </div>
       </section>
 
@@ -145,13 +189,13 @@ export default function FacultyDirectory() {
                 {filteredFaculty.length} faculty matched
               </h2>
               <p className="text-sm text-muted-foreground font-graphik">
-                Showing results filtered by {schoolFilter.toLowerCase()} and {focusFilter.toLowerCase()}.
+                Showing results filtered by {activeSchoolLabel.toLowerCase()} and {activeFocusLabel}.
               </p>
             </div>
             <Button
               variant="outline"
               onClick={() => {
-                setSchoolFilter(ALL_SCHOOLS);
+                setSchoolFilter(ALL_SCHOOLS_VALUE);
                 setFocusFilter(ALL_AREAS);
                 setSearchTerm("");
               }}
@@ -164,10 +208,10 @@ export default function FacultyDirectory() {
             <Card className="border-dashed border-border/60 bg-muted/40 p-10 text-center">
               <CardHeader>
                 <CardTitle className="font-gilroy text-2xl">
-                  No faculty found
+                  No faculty found yet
                 </CardTitle>
                 <CardDescription className="font-graphik">
-                  Try adjusting your filters or search for another focus area.
+                  We&apos;re still cataloguing profiles for this selection. Try another school or focus area.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -184,14 +228,16 @@ export default function FacultyDirectory() {
   );
 }
 
+type FilterOption = { label: string; value: string };
+
 type FilterPillsProps = {
   label: string;
-  options: string[];
-  active: string;
-  onSelect: (option: string) => void;
+  options: FilterOption[];
+  activeValue: string;
+  onSelect: (value: string) => void;
 };
 
-function FilterPills({ label, options, active, onSelect }: FilterPillsProps) {
+function FilterPills({ label, options, activeValue, onSelect }: FilterPillsProps) {
   return (
     <div>
       <div className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
@@ -200,14 +246,14 @@ function FilterPills({ label, options, active, onSelect }: FilterPillsProps) {
       <div className="flex flex-wrap gap-2">
         {options.map((option) => (
           <Button
-            key={option}
+            key={option.value}
             type="button"
-            variant={option === active ? "secondary" : "outline"}
+            variant={option.value === activeValue ? "secondary" : "outline"}
             size="sm"
             className="rounded-full border-border/60"
-            onClick={() => onSelect(option)}
+            onClick={() => onSelect(option.value)}
           >
-            {option}
+            {option.label}
           </Button>
         ))}
       </div>
@@ -239,11 +285,88 @@ function StatisticsCard({ label, value, icon: Icon }: StatisticsCardProps) {
   );
 }
 
+type SchoolOverviewGridProps = {
+  counts: Record<string, number>;
+};
+
+function SchoolOverviewGrid({ counts }: SchoolOverviewGridProps) {
+  return (
+    <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+      {facultySchoolsMeta.map((school) => {
+        const profileCount = counts[school.id] ?? 0;
+        const meta = getFacultySchoolMeta(school.id);
+
+        return (
+          <Card
+            key={school.id}
+            className="group flex h-full flex-col justify-between rounded-3xl border border-border/40 bg-card/60 backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-brand-magenta/40 hover:shadow-xl hover:shadow-brand-magenta/10"
+          >
+            <CardHeader className="space-y-2">
+              <div className="flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-magenta/10 text-brand-magenta">
+                  <Library className="h-5 w-5" />
+                </div>
+                <div>
+                  <CardTitle className="text-lg font-gilroy">
+                    {school.name}
+                  </CardTitle>
+                  <p className="text-xs uppercase tracking-wide text-muted-foreground font-graphik">
+                    {profileCount} {profileCount === 1 ? "profile" : "profiles"}
+                  </p>
+                </div>
+              </div>
+              {meta?.highlight ? (
+                <p className="text-sm text-muted-foreground font-graphik">
+                  {meta.highlight}
+                </p>
+              ) : null}
+            </CardHeader>
+            <CardContent className="flex-1">
+              <p className="text-sm text-muted-foreground font-graphik">
+                {school.description}
+              </p>
+            </CardContent>
+            <CardFooter className="flex items-center justify-between">
+              {school.href ? (
+                school.href.startsWith("http") ? (
+                  <a
+                    href={school.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 text-sm font-medium text-brand-magenta"
+                  >
+                    Visit school page
+                    <ArrowUpRight className="h-4 w-4" />
+                  </a>
+                ) : (
+                  <Link
+                    to={school.href}
+                    className="inline-flex items-center gap-2 text-sm font-medium text-brand-magenta"
+                  >
+                    Visit school page
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                )
+              ) : (
+                <span className="text-sm font-medium text-muted-foreground">
+                  Info coming soon
+                </span>
+              )}
+            </CardFooter>
+          </Card>
+        );
+      })}
+    </div>
+  );
+}
+
 type FacultyCardProps = {
   member: (typeof facultyDirectory)[number];
 };
 
 function FacultyCard({ member }: FacultyCardProps) {
+  const schoolMeta = getFacultySchoolMeta(member.schoolId);
+  const schoolName = schoolMeta?.name ?? "";
   const initials = member.name
     .split(" ")
     .filter(Boolean)
@@ -280,7 +403,7 @@ function FacultyCard({ member }: FacultyCardProps) {
         <div className="space-y-2 text-sm text-muted-foreground font-graphik">
           <div className="flex items-center gap-2">
             <GraduationCap className="h-4 w-4 text-brand-magenta" />
-            <span>{member.school}</span>
+            <span>{schoolName}</span>
           </div>
           {member.office ? (
             <div className="flex items-center gap-2">
@@ -343,7 +466,7 @@ function FacultyCard({ member }: FacultyCardProps) {
               className="inline-flex w-full items-center justify-between rounded-2xl border border-brand-magenta/40 px-4 py-2 text-sm font-medium text-brand-magenta transition-colors hover:bg-brand-magenta/10"
             >
               View profile
-              <ArrowUpRight className="h-4 w-4" />
+              <ArrowRight className="h-4 w-4" />
             </Link>
           )}
         </CardFooter>
