@@ -2,9 +2,7 @@ import { Link } from "react-router-dom";
 import type { LucideIcon } from "lucide-react";
 import {
   Award,
-  BadgeCheck,
   Building,
-  CalendarDays,
   ChevronRight,
   DollarSign,
   GraduationCap,
@@ -24,14 +22,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-
-type QuickLink = {
-  title: string;
-  description: string;
-  href: string;
-  icon: LucideIcon;
-  external?: boolean;
-};
 
 type Highlight = {
   title: string;
@@ -63,50 +53,6 @@ type Resource = {
 
 const HERO_IMAGE =
   "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=2000&auto=format&fit=crop";
-
-const QUICK_LINKS: QuickLink[] = [
-  {
-    title: "USP",
-    description:
-      "Recalibrate, collaborate and elevate with SCMS differentiators.",
-    href: "#usp",
-    icon: Star,
-  },
-  {
-    title: "Programs",
-    description: "Preview undergraduate, postgraduate and doctoral pathways.",
-    href: "#programs",
-    icon: GraduationCap,
-  },
-  {
-    title: "Centres & Labs",
-    description: "Access DSU innovation labs and industry immersion platforms.",
-    href: "#advantages",
-    icon: Network,
-  },
-  {
-    title: "Calendar & Resources",
-    description: "Download academic calendar, view events and key documents.",
-    href: "#resources",
-    icon: CalendarDays,
-  },
-  {
-    title: "Dean's Office",
-    description:
-      "Connect with the School leadership for guidance and mentoring.",
-    href: "mailto:dean-scms@dsu.edu.in",
-    icon: Users,
-    external: true,
-  },
-  {
-    title: "Apply to SCMS",
-    description:
-      "Begin your application journey into business leadership programmes.",
-    href: "https://www.dsu.edu.in/admissions",
-    icon: BadgeCheck,
-    external: true,
-  },
-];
 
 const USP_HIGHLIGHTS: Highlight[] = [
   {
@@ -232,50 +178,6 @@ const RESOURCES: Resource[] = [
     badge: "Culture",
   },
 ];
-
-function QuickLinkCard({ link }: { link: QuickLink }) {
-  const Icon = link.icon;
-  const content = (
-    <div className="group h-full rounded-3xl border border-border/40 bg-card/60 p-6 transition-all duration-500 hover:-translate-y-1 hover:border-brand-magenta/60 hover:shadow-xl hover:shadow-brand-magenta/10">
-      <div className="flex items-center justify-between">
-        <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-magenta/10 text-brand-magenta">
-          <Icon className="h-5 w-5" />
-        </span>
-        <ChevronRight className="h-4 w-4 text-transparent transition-colors duration-500 group-hover:text-brand-magenta" />
-      </div>
-      <h3 className="mt-5 text-lg font-semibold font-gilroy">{link.title}</h3>
-      <p className="mt-3 text-sm text-muted-foreground font-graphik">
-        {link.description}
-      </p>
-      <div className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-brand-magenta">
-        {link.external ? "Open resource" : "Jump to section"}
-        <ChevronRight className="h-4 w-4" />
-      </div>
-    </div>
-  );
-
-  if (link.external) {
-    return (
-      <a
-        href={link.href}
-        target="_blank"
-        rel="noreferrer"
-        className="rounded-3xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-magenta focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-      >
-        {content}
-      </a>
-    );
-  }
-
-  return (
-    <a
-      href={link.href}
-      className="rounded-3xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-magenta focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-    >
-      {content}
-    </a>
-  );
-}
 
 function HighlightCard({ highlight }: { highlight: Highlight }) {
   const Icon = highlight.icon;
