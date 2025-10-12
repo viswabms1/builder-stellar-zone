@@ -54,56 +54,6 @@ type ResourceLink = {
 const HERO_IMAGE =
   "https://images.unsplash.com/photo-1581091870622-5f1e9b8d2f70?q=80&w=2000&auto=format&fit=crop";
 
-const QUICK_LINKS: QuickLink[] = [
-  {
-    title: "USP",
-    description:
-      "Learn how SBAS redefines interdisciplinary science education.",
-    href: "#usp",
-    icon: ShieldCheck,
-  },
-  {
-    title: "Programs",
-    description: "Browse undergraduate and postgraduate science programmes.",
-    href: "#programs",
-    icon: GraduationCap,
-  },
-  {
-    title: "Departments",
-    description:
-      "Explore the academic departments driving research and discovery.",
-    href: "#departments",
-    icon: Network,
-  },
-  {
-    title: "Calendar & Events",
-    description: "Access academic schedules, events and handbook resources.",
-    href: "#resources",
-    icon: CalendarDays,
-  },
-  {
-    title: "Research",
-    description: "Dive into SBAS research publications and collaborations.",
-    href: "https://www.dsu.edu.in/basic-applied-sciences/research-publications-sbas",
-    icon: Microscope,
-    external: true,
-  },
-  {
-    title: "Departments at a Glance",
-    description: "View detailed department information and faculty.",
-    href: "https://www.dsu.edu.in/basic-applied-sciences/department-sbas",
-    icon: Atom,
-    external: true,
-  },
-  {
-    title: "Training & Placements",
-    description: "Understand talent development and industry engagement.",
-    href: "https://www.dsu.edu.in/basic-applied-sciences/sbas-placements",
-    icon: FlaskConical,
-    external: true,
-  },
-];
-
 const USP_HIGHLIGHTS: Highlight[] = [
   {
     title: "Deciphering the Codes of Life",
