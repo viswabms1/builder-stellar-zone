@@ -4,16 +4,11 @@ import {
   Award,
   BadgeCheck,
   Beaker,
-  BookOpen,
-  Briefcase,
-  CalendarDays,
   ChevronRight,
   Cpu,
   GraduationCap,
   Laptop,
   Sparkles,
-  Star,
-  Trophy,
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -25,14 +20,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-
-type QuickLink = {
-  title: string;
-  description: string;
-  href: string;
-  icon: LucideIcon;
-  external?: boolean;
-};
 
 type Highlight = {
   title: string;
@@ -62,55 +49,6 @@ type LabExperience = {
 
 const HERO_IMAGE =
   "https://images.unsplash.com/photo-1523475472560-d2df97ec485c?q=80&w=2000&auto=format&fit=crop";
-
-const QUICK_LINKS: QuickLink[] = [
-  {
-    title: "USP",
-    description:
-      "Discover what sets the School of Computer Applications apart.",
-    href: "#usp",
-    icon: Star,
-  },
-  {
-    title: "Programs",
-    description: "Explore undergraduate and postgraduate pathways in tech.",
-    href: "#programs",
-    icon: GraduationCap,
-  },
-  {
-    title: "Innovation Labs",
-    description: "Access industry-partnered labs that power applied learning.",
-    href: "#labs",
-    icon: Cpu,
-  },
-  {
-    title: "Calendar & Updates",
-    description: "Stay current with academic schedules and events.",
-    href: "#calendar",
-    icon: CalendarDays,
-  },
-  {
-    title: "Dean's Message",
-    description: "Read the vision from the School leadership.",
-    href: "https://www.dsu.edu.in/computer-applications/dean-msg-sca",
-    icon: BookOpen,
-    external: true,
-  },
-  {
-    title: "Student Achievements",
-    description: "Celebrate milestones from our learners and alumni community.",
-    href: "https://www.dsu.edu.in/computer-applications/student-achievements-sca",
-    icon: Trophy,
-    external: true,
-  },
-  {
-    title: "Placements",
-    description: "See top recruiters and placement readiness initiatives.",
-    href: "https://www.dsu.edu.in/computer-applications/placement-sca",
-    icon: Briefcase,
-    external: true,
-  },
-];
 
 const USP_HIGHLIGHTS: Highlight[] = [
   {
@@ -203,50 +141,6 @@ const RESOURCE_LINKS: ResourceLink[] = [
     badge: "Research",
   },
 ];
-
-function QuickLinkCard({ link }: { link: QuickLink }) {
-  const Icon = link.icon;
-  const content = (
-    <div className="group h-full rounded-3xl border border-border/40 bg-card/60 p-6 transition-all duration-500 hover:-translate-y-1 hover:border-brand-magenta/60 hover:shadow-xl hover:shadow-brand-magenta/10">
-      <div className="flex items-center justify-between">
-        <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-magenta/10 text-brand-magenta">
-          <Icon className="h-5 w-5" />
-        </span>
-        <ChevronRight className="h-4 w-4 text-transparent transition-colors duration-500 group-hover:text-brand-magenta" />
-      </div>
-      <h3 className="mt-5 text-lg font-semibold font-gilroy">{link.title}</h3>
-      <p className="mt-3 text-sm text-muted-foreground font-graphik">
-        {link.description}
-      </p>
-      <div className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-brand-magenta">
-        {link.external ? "Open resource" : "Jump to section"}
-        <ChevronRight className="h-4 w-4" />
-      </div>
-    </div>
-  );
-
-  if (link.external) {
-    return (
-      <a
-        href={link.href}
-        target="_blank"
-        rel="noreferrer"
-        className="rounded-3xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-magenta focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-      >
-        {content}
-      </a>
-    );
-  }
-
-  return (
-    <a
-      href={link.href}
-      className="rounded-3xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-magenta focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-    >
-      {content}
-    </a>
-  );
-}
 
 function HighlightCard({ highlight }: { highlight: Highlight }) {
   const Icon = highlight.icon;
