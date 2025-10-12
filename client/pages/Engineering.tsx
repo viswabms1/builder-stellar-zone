@@ -179,6 +179,56 @@ const ENGINEERING_DEPARTMENTS: EngineeringDepartment[] = [
     link: "/academics/engineering/ai-ml",
     highlights: ["Capstone Studios", "AI Research", "Dual Certifications"],
   },
+  {
+    name: "Computer Science & Engineering (AI & Data Science)",
+    area: "Data Innovation",
+    description:
+      "Engineer data products with applied analytics, data governance, cloud-native pipelines and real-time dashboards.",
+    image:
+      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1600&auto=format&fit=crop",
+    link: "https://www.dsu.edu.in/engineering/artificial-intelligence-data-science",
+    highlights: ["Data Engineering", "Analytics Studio", "Cloud Pipelines"],
+  },
+  {
+    name: "Computer Science & Engineering (Data Science)",
+    area: "Analytical Systems",
+    description:
+      "Dive into statistical computing, big data processing, intelligent automation and visual analytics.",
+    image:
+      "https://images.unsplash.com/photo-1483478550801-ceba5fe50e8e?q=80&w=1600&auto=format&fit=crop",
+    link: "https://www.dsu.edu.in/engineering/computer-science-data-science",
+    highlights: ["Big Data Lab", "Predictive Models", "Visualization"],
+  },
+  {
+    name: "Computer Science & Engineering (Cyber Security)",
+    area: "Security & Resilience",
+    description:
+      "Protect digital infrastructure through secure coding, ethical hacking, digital forensics and governance frameworks.",
+    image:
+      "https://images.unsplash.com/photo-1510511459019-5dda7724fd87?q=80&w=1600&auto=format&fit=crop",
+    link: "https://www.dsu.edu.in/engineering/computer-science-cyber-security",
+    highlights: ["Cyber Range", "Ethical Hacking", "Forensics"],
+  },
+  {
+    name: "Computer Science & Technology",
+    area: "Industry Technology",
+    description:
+      "Blend software engineering, systems integration and platform engineering oriented towards digital enterprises.",
+    image:
+      "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1600&auto=format&fit=crop",
+    link: "https://www.dsu.edu.in/engineering/computer-science-technology",
+    highlights: ["Platform Engineering", "Systems Design", "Enterprise Projects"],
+  },
+  {
+    name: "Computer Science and Medical Engineering",
+    area: "Healthcare Technology",
+    description:
+      "Create clinical-grade software, biomedical instrumentation and AI-assisted diagnostics for next-gen healthcare.",
+    image:
+      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1600&auto=format&fit=crop",
+    link: "https://www.dsu.edu.in/engineering/computer-science-medical-engineering",
+    highlights: ["Digital Health", "Medical Imaging", "Bio-Informatics"],
+  },
 ];
 
 const SUPPORTING_DEPARTMENTS: SupportingDepartment[] = [
