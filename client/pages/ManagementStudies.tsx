@@ -193,14 +193,14 @@ function HighlightCard({ highlight }: { highlight: Highlight }) {
         <Icon className="h-4 w-4" /> USP
       </div>
       <div className="absolute inset-x-0 bottom-0 p-5 text-white">
-        <h3 className="mb-2 text-lg font-semibold font-gilroy">
+        <h3 className="mb-2 text-lg font-semibold font-display">
           {highlight.title}
         </h3>
-        <p className="text-sm text-white/80 font-graphik">
+        <p className="text-sm text-white/80 font-body">
           {highlight.description}
         </p>
         {highlight.stat ? (
-          <div className="mt-3 text-xs uppercase tracking-wide text-white/70 font-graphik">
+          <div className="mt-3 text-xs uppercase tracking-wide text-white/70 font-body">
             {highlight.stat}
           </div>
         ) : null}
@@ -217,12 +217,12 @@ function AdvantageCard({ advantage }: { advantage: Advantage }) {
         <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-magenta/10 text-brand-magenta">
           <Icon className="h-5 w-5" />
         </span>
-        <CardTitle className="text-base font-gilroy">
+        <CardTitle className="text-base font-display">
           {advantage.title}
         </CardTitle>
       </CardHeader>
       <CardContent className="pt-0">
-        <CardDescription className="text-sm leading-relaxed text-muted-foreground font-graphik">
+        <CardDescription className="text-sm leading-relaxed text-muted-foreground font-body">
           {advantage.description}
         </CardDescription>
       </CardContent>
@@ -237,11 +237,11 @@ function ResourceCard({ resource }: { resource: Resource }) {
         <Badge className="bg-brand-magenta/15 text-brand-magenta">
           {resource.badge}
         </Badge>
-        <CardTitle className="mt-4 text-lg font-gilroy">
+        <CardTitle className="mt-4 text-lg font-display">
           {resource.title}
         </CardTitle>
       </CardHeader>
-      <CardContent className="space-y-5 text-sm text-muted-foreground font-graphik">
+      <CardContent className="space-y-5 text-sm text-muted-foreground font-body">
         <p>{resource.description}</p>
         <a
           href={resource.href}
@@ -274,14 +274,14 @@ export default function ManagementStudies() {
           <div className="mx-auto max-w-7xl px-6">
             <div className="mb-6 inline-flex items-center rounded-full border border-brand-magenta/20 bg-brand-magenta/10 px-4 py-2">
               <TrendingUp className="mr-2 h-4 w-4 text-brand-magenta" />
-              <span className="text-sm font-medium text-brand-magenta font-gilroy">
+              <span className="text-sm font-medium text-brand-magenta font-display">
                 School of Commerce & Management Studies
               </span>
             </div>
-            <h1 className="mb-4 font-gilroy text-4xl leading-tight text-white md:text-6xl">
+            <h1 className="mb-4 font-display text-4xl leading-tight text-white md:text-6xl">
               Recalibrate. Collaborate. Elevate.
             </h1>
-            <p className="max-w-2xl text-white/90 font-graphik text-lg">
+            <p className="max-w-2xl text-white/90 font-body text-lg">
               Shape business leaders with immersive management education,
               innovation labs and global exposure tailored for the trust
               economy.
@@ -312,10 +312,10 @@ export default function ManagementStudies() {
               <Badge className="bg-brand-magenta/15 text-brand-magenta">
                 Academic Pathways
               </Badge>
-              <h2 className="font-gilroy text-3xl md:text-4xl">
+              <h2 className="font-display text-3xl md:text-4xl">
                 Programmes that create agile business leaders
               </h2>
-              <p className="text-sm text-muted-foreground font-graphik">
+              <p className="text-sm text-muted-foreground font-body">
                 Build a career-ready portfolio across B.Com, BBA, MBA and doctoral tracks with immersive labs, consulting clinics and global immersion opportunities.
               </p>
               <div className="grid gap-4 sm:grid-cols-2">
@@ -328,11 +328,11 @@ export default function ManagementStudies() {
                       <Badge className="bg-brand-magenta/15 text-brand-magenta">
                         {programme.level}
                       </Badge>
-                      <CardTitle className="mt-4 text-xl font-gilroy">
+                      <CardTitle className="mt-4 text-xl font-display">
                         {programme.name}
                       </CardTitle>
                     </CardHeader>
-                    <CardContent className="space-y-4 text-sm text-muted-foreground font-graphik">
+                    <CardContent className="space-y-4 text-sm text-muted-foreground font-body">
                       <p>{programme.focus}</p>
                       {programme.link ? (
                         <a
@@ -351,10 +351,10 @@ export default function ManagementStudies() {
               </div>
             </div>
             <div className="rounded-3xl border border-brand-magenta/25 bg-brand-magenta/10 p-8 shadow-[0_30px_120px_-50px_rgba(233,97,255,0.6)]">
-              <h3 className="font-gilroy text-2xl text-brand-magenta">
+              <h3 className="font-display text-2xl text-brand-magenta">
                 What you gain at SCMS
               </h3>
-              <ul className="mt-4 space-y-3 text-sm text-brand-magenta/90 font-graphik">
+              <ul className="mt-4 space-y-3 text-sm text-brand-magenta/90 font-body">
                 <li className="flex items-start gap-2">
                   <TrendingUp className="mt-0.5 h-4 w-4" />
                   Strategic specialisations in finance, analytics, marketing and entrepreneurship
@@ -385,7 +385,7 @@ export default function ManagementStudies() {
             >
               Unique Strengths
             </Badge>
-            <h2 className="mt-5 font-gilroy text-3xl md:text-4xl">
+            <h2 className="mt-5 font-display text-3xl md:text-4xl">
               Why Future Leaders Choose SCMS
             </h2>
           </div>
@@ -407,10 +407,10 @@ export default function ManagementStudies() {
               <Badge className="bg-brand-magenta/15 text-brand-magenta">
                 Career Advantages
               </Badge>
-              <h2 className="mt-4 font-gilroy text-3xl md:text-4xl">
+              <h2 className="mt-4 font-display text-3xl md:text-4xl">
                 Beyond the Classroom
               </h2>
-              <p className="mt-3 text-sm text-muted-foreground font-graphik">
+              <p className="mt-3 text-sm text-muted-foreground font-body">
                 Leverage innovation hubs, corporate mentorship, global
                 immersions and placement readiness platforms that make DSU
                 graduates highly sought after.
@@ -441,10 +441,10 @@ export default function ManagementStudies() {
               <Badge className="bg-brand-magenta/15 text-brand-magenta">
                 Calendar & Resources
               </Badge>
-              <h2 className="mt-4 font-gilroy text-3xl md:text-4xl">
+              <h2 className="mt-4 font-display text-3xl md:text-4xl">
                 Stay Synced with SCMS
               </h2>
-              <p className="mt-3 text-sm text-muted-foreground font-graphik">
+              <p className="mt-3 text-sm text-muted-foreground font-body">
                 Download official documents, explore co-curricular platforms and
                 plan your journey with key schedules, activities and galleries.
               </p>
@@ -470,10 +470,10 @@ export default function ManagementStudies() {
       <section className="px-6 pb-20">
         <div className="mx-auto max-w-4xl text-center">
           <div className="rounded-3xl border border-brand-magenta/20 bg-brand-magenta/5 p-10">
-            <h3 className="mb-3 font-gilroy text-3xl">
+            <h3 className="mb-3 font-display text-3xl">
               Drive Business Impact with DSU
             </h3>
-            <p className="mb-6 text-muted-foreground font-graphik">
+            <p className="mb-6 text-muted-foreground font-body">
               Join a vibrant management community that transforms purpose-driven
               ideas into scalable ventures through mentorship, labs and global
               networks.
