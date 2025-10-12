@@ -28,14 +28,6 @@ import {
 
 const HERO_IMAGE = "https://www.dsu.edu.in/images/Engineering/engg-landing.jpg";
 
-type QuickLink = {
-  title: string;
-  description: string;
-  href: string;
-  icon: LucideIcon;
-  external?: boolean;
-};
-
 type USPHighlight = {
   title: string;
   description: string;
@@ -68,64 +60,6 @@ type CalendarEntry = {
   documentUrl: string;
   tag: string;
 };
-
-const QUICK_LINKS: QuickLink[] = [
-  {
-    title: "Engineering Departments",
-    description:
-      "Explore flagship majors, emerging specialisations and centres of excellence.",
-    href: "#departments",
-    icon: Cpu,
-  },
-  {
-    title: "Programs & Pathways",
-    description:
-      "Compare undergraduate & postgraduate pathways, honours and minors.",
-    href: "#programs",
-    icon: GraduationCap,
-  },
-  {
-    title: "Unique Strengths (USP)",
-    description:
-      "Discover the differentiators that power DSU engineering experiences.",
-    href: "#usp",
-    icon: Star,
-  },
-  {
-    title: "Innovation & Labs",
-    description: "Discover industry-partnered labs and centers of excellence.",
-    href: "#labs",
-    icon: Beaker,
-  },
-  {
-    title: "Calendar of Events",
-    description: "Access the latest academic and co-curricular schedules.",
-    href: "#calendar",
-    icon: CalendarDays,
-  },
-  {
-    title: "Supporting Departments",
-    description:
-      "Meet the interdisciplinary foundation that powers every program.",
-    href: "#supporting-departments",
-    icon: Layers,
-  },
-  {
-    title: "Dean's Message",
-    description: "Read the vision from the School of Engineering leadership.",
-    href: "https://www.dsu.edu.in/engineering/dean-engineering",
-    icon: BookOpen,
-    external: true,
-  },
-  {
-    title: "Weekly Newsletter",
-    description:
-      "Stay informed with highlights from the engineering community.",
-    href: "https://www.dsu.edu.in/engineering/weekly-newsletter-soe",
-    icon: TrendingUp,
-    external: true,
-  },
-];
 
 const USP_HIGHLIGHTS: USPHighlight[] = [
   {
@@ -364,50 +298,6 @@ const INNOVATION_LABS = [
   "VMware IT Academy",
   "IBM Centre of Excellence",
 ];
-
-function QuickLinkCard({ link }: { link: QuickLink }) {
-  const Icon = link.icon;
-  const content = (
-    <div className="group relative h-full overflow-hidden rounded-3xl border border-border/40 bg-card/60 p-6 transition-all duration-500 hover:-translate-y-1 hover:border-brand-magenta/60 hover:shadow-xl hover:shadow-brand-magenta/10">
-      <div className="flex items-center justify-between">
-        <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-magenta/10 text-brand-magenta">
-          <Icon className="h-5 w-5" />
-        </span>
-        <ChevronRight className="h-4 w-4 text-transparent transition-colors duration-500 group-hover:text-brand-magenta" />
-      </div>
-      <h3 className="mt-5 text-lg font-semibold font-gilroy">{link.title}</h3>
-      <p className="mt-3 text-sm text-muted-foreground font-graphik">
-        {link.description}
-      </p>
-      <div className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-brand-magenta">
-        {link.external ? "Open resource" : "Jump to section"}
-        <ChevronRight className="h-4 w-4" />
-      </div>
-    </div>
-  );
-
-  if (link.external) {
-    return (
-      <a
-        href={link.href}
-        target="_blank"
-        rel="noreferrer"
-        className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-magenta focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-3xl"
-      >
-        {content}
-      </a>
-    );
-  }
-
-  return (
-    <a
-      href={link.href}
-      className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-magenta focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-3xl"
-    >
-      {content}
-    </a>
-  );
-}
 
 function DepartmentCard({
   department,
