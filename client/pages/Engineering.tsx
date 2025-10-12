@@ -284,51 +284,6 @@ const ENGINEERING_CALENDAR: CalendarEntry[] = [
       "https://www.dsu.edu.in/images/Engineering/coe/Odd_Sem_25_26.pdf",
     tag: "B.Tech",
   },
-  {
-    title: "1st Semester B.Tech Calendar",
-    academicYear: "2024-25",
-    description:
-      "Academic roadmap for the incoming B.Tech batch with onboarding, foundation labs and assessment checkpoints.",
-    documentUrl:
-      "https://www.dsu.edu.in/images/Engineering/coe/1st_sem_2024_25_2.pdf",
-    tag: "Year 1",
-  },
-  {
-    title: "3rd & 5th Semester B.Tech Calendar",
-    academicYear: "2024-25",
-    description:
-      "Planned milestones for higher semester coursework, community projects and industry interactions.",
-    documentUrl:
-      "https://www.dsu.edu.in/images/Engineering/coe/3rd_5th_sem_2024_25_2.pdf",
-    tag: "Year 2 & 3",
-  },
-  {
-    title: "7th Semester B.Tech Calendar",
-    academicYear: "2024-25",
-    description:
-      "Capstone timelines covering research reviews, internships and pre-placement preparation for final year.",
-    documentUrl:
-      "https://www.dsu.edu.in/images/Engineering/coe/7th_sem_2024_25_2.pdf",
-    tag: "Year 4",
-  },
-  {
-    title: "Even Semester B.Tech Calendar",
-    academicYear: "2024-25",
-    description:
-      "Consolidated even-semester plan featuring assessments, innovation challenges and inter-college events.",
-    documentUrl:
-      "https://www.dsu.edu.in/images/Engineering/coe/Even_Sem_24_25.pdf",
-    tag: "Even Term",
-  },
-  {
-    title: "6th Sem B.Tech & 4/6th Sem BCA Calendar",
-    academicYear: "2023-24",
-    description:
-      "Integrated schedule aligning advanced B.Tech and BCA cohorts with shared lab intensives and evaluations.",
-    documentUrl:
-      "https://www.dsu.edu.in/images/Engineering/coe/2024_6th_sem_btec_bca.pdf",
-    tag: "B.Tech & BCA",
-  },
 ];
 
 const INNOVATION_LABS = [
