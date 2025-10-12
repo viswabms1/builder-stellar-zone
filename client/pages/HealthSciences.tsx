@@ -228,14 +228,14 @@ function HighlightCard({ highlight }: { highlight: Highlight }) {
         <Icon className="h-4 w-4" /> USP
       </div>
       <div className="absolute inset-x-0 bottom-0 p-5 text-white">
-        <h3 className="mb-2 text-lg font-semibold font-gilroy">
+        <h3 className="mb-2 text-lg font-semibold font-display">
           {highlight.title}
         </h3>
-        <p className="text-sm text-white/80 font-graphik">
+        <p className="text-sm text-white/80 font-body">
           {highlight.description}
         </p>
         {highlight.stat ? (
-          <div className="mt-3 text-xs uppercase tracking-wide text-white/70 font-graphik">
+          <div className="mt-3 text-xs uppercase tracking-wide text-white/70 font-body">
             {highlight.stat}
           </div>
         ) : null}
@@ -251,11 +251,11 @@ function ProgrammeCard({ programme }: { programme: Programme }) {
         <Badge className="bg-brand-magenta/15 text-brand-magenta">
           {programme.level} Programme
         </Badge>
-        <CardTitle className="mt-4 text-xl font-gilroy">
+        <CardTitle className="mt-4 text-xl font-display">
           {programme.name}
         </CardTitle>
       </CardHeader>
-      <CardContent className="space-y-4 text-sm text-muted-foreground font-graphik">
+      <CardContent className="space-y-4 text-sm text-muted-foreground font-body">
         <p>{programme.focus}</p>
       </CardContent>
     </Card>
@@ -285,10 +285,10 @@ function SupportUnitCard({ unit }: { unit: SupportUnit }) {
         <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-magenta/10 text-brand-magenta">
           <Icon className="h-5 w-5" />
         </span>
-        <CardTitle className="text-base font-gilroy">{unit.title}</CardTitle>
+        <CardTitle className="text-base font-display">{unit.title}</CardTitle>
       </CardHeader>
       <CardContent className="pt-0">
-        <CardDescription className="text-sm leading-relaxed text-muted-foreground font-graphik">
+        <CardDescription className="text-sm leading-relaxed text-muted-foreground font-body">
           {unit.description}
         </CardDescription>
       </CardContent>
@@ -318,11 +318,11 @@ function ResourceCard({ resource }: { resource: Resource }) {
         <Badge className="bg-brand-magenta/15 text-brand-magenta">
           {resource.badge}
         </Badge>
-        <CardTitle className="mt-4 text-lg font-gilroy">
+        <CardTitle className="mt-4 text-lg font-display">
           {resource.title}
         </CardTitle>
       </CardHeader>
-      <CardContent className="space-y-5 text-sm text-muted-foreground font-graphik">
+      <CardContent className="space-y-5 text-sm text-muted-foreground font-body">
         <p>{resource.description}</p>
         {resource.href.startsWith("/") ? (
           <Link
@@ -365,14 +365,14 @@ export default function HealthSciences() {
           <div className="mx-auto max-w-7xl px-6">
             <div className="mb-6 inline-flex items-center rounded-full border border-brand-magenta/20 bg-brand-magenta/10 px-4 py-2">
               <HeartPulse className="mr-2 h-4 w-4 text-brand-magenta" />
-              <span className="text-sm font-medium text-brand-magenta font-gilroy">
+              <span className="text-sm font-medium text-brand-magenta font-display">
                 School of Health Sciences
               </span>
             </div>
-            <h1 className="mb-4 font-gilroy text-4xl leading-tight text-white md:text-6xl">
+            <h1 className="mb-4 font-display text-4xl leading-tight text-white md:text-6xl">
               Advancing Care. Inspiring Wellness.
             </h1>
-            <p className="max-w-2xl text-white/90 font-graphik text-lg">
+            <p className="max-w-2xl text-white/90 font-body text-lg">
               Build a career in nursing, pharmacy, physiotherapy and allied
               health with simulation-rich learning and patient-centric hospital
               immersion.
@@ -407,10 +407,10 @@ export default function HealthSciences() {
               <Badge className="bg-brand-magenta/15 text-brand-magenta">
                 Academic Pathways
               </Badge>
-              <h2 className="font-gilroy text-3xl md:text-4xl">
+              <h2 className="font-display text-3xl md:text-4xl">
                 Programmes that transform healthcare delivery
               </h2>
-              <p className="text-sm text-muted-foreground font-graphik">
+              <p className="text-sm text-muted-foreground font-body">
                 Nursing, pharmaceutical sciences, physiotherapy and allied health programmes integrate clinical rotations, research immersion and simulation-based training to graduate compassionate health professionals.
               </p>
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -420,10 +420,10 @@ export default function HealthSciences() {
               </div>
             </div>
             <div className="rounded-3xl border border-brand-magenta/25 bg-brand-magenta/10 p-8 shadow-[0_30px_120px_-50px_rgba(233,97,255,0.6)]">
-              <h3 className="font-gilroy text-2xl text-brand-magenta">
+              <h3 className="font-display text-2xl text-brand-magenta">
                 Clinical learning highlights
               </h3>
-              <ul className="mt-4 space-y-3 text-sm text-brand-magenta/90 font-graphik">
+              <ul className="mt-4 space-y-3 text-sm text-brand-magenta/90 font-body">
                 <li className="flex items-start gap-2">
                   <HeartPulse className="mt-0.5 h-4 w-4" />
                   Multispecialty hospital rotations across Sagar Hospitals and CDSIMER teaching hospital
@@ -454,7 +454,7 @@ export default function HealthSciences() {
             >
               Unique Strengths
             </Badge>
-            <h2 className="mt-5 font-gilroy text-3xl md:text-4xl">
+            <h2 className="mt-5 font-display text-3xl md:text-4xl">
               Why Future Health Professionals Choose DSU
             </h2>
           </div>
@@ -476,10 +476,10 @@ export default function HealthSciences() {
               <Badge className="bg-brand-magenta/15 text-brand-magenta">
                 Constituent Colleges
               </Badge>
-              <h2 className="mt-4 font-gilroy text-3xl md:text-4xl">
+              <h2 className="mt-4 font-display text-3xl md:text-4xl">
                 Collaborative Health Sciences Ecosystem
               </h2>
-              <p className="mt-3 text-sm text-muted-foreground font-graphik">
+              <p className="mt-3 text-sm text-muted-foreground font-body">
                 Four specialised colleges work together on shared curriculum,
                 simulation labs and clinical postings to deliver comprehensive
                 healthcare education.
@@ -510,10 +510,10 @@ export default function HealthSciences() {
               <Badge className="bg-brand-magenta/15 text-brand-magenta">
                 Calendar & Resources
               </Badge>
-              <h2 className="mt-4 font-gilroy text-3xl md:text-4xl">
+              <h2 className="mt-4 font-display text-3xl md:text-4xl">
                 Stay Prepared for Every Milestone
               </h2>
-              <p className="mt-3 text-sm text-muted-foreground font-graphik">
+              <p className="mt-3 text-sm text-muted-foreground font-body">
                 Access calendars, compliance handbooks, admissions updates and
                 hospital partners to plan your journey at the School of Health
                 Sciences.
@@ -540,10 +540,10 @@ export default function HealthSciences() {
       <section className="px-6 pb-20">
         <div className="mx-auto max-w-4xl text-center">
           <div className="rounded-3xl border border-brand-magenta/20 bg-brand-magenta/5 p-10">
-            <h3 className="mb-3 font-gilroy text-3xl">
+            <h3 className="mb-3 font-display text-3xl">
               Champion Health & Wellbeing with DSU
             </h3>
-            <p className="mb-6 text-muted-foreground font-graphik">
+            <p className="mb-6 text-muted-foreground font-body">
               Engage with expert mentors, cutting-edge labs and community
               outreach that empower you to deliver compassionate, evidence-based
               care.
