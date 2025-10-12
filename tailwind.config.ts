@@ -122,9 +122,9 @@ export default {
         "glow-pulse": "glow-pulse 2s ease-in-out infinite alternate",
       },
       fontFamily: {
-        'gilroy': ['Gilroy', 'Inter', 'sans-serif'],
-        'graphik': ['Graphik', 'Inter', 'sans-serif'],
-        'sans': ['Gilroy', 'Inter', 'Graphik', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+        display: ["Poppins", "Inter", "sans-serif"],
+        body: ["Inter", "Poppins", "sans-serif"],
+        sans: ["Inter", "Poppins", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "sans-serif"],
       },
       backgroundImage: {
         "brand-gradient": "linear-gradient(135deg, hsl(var(--brand-magenta)), hsl(var(--brand-orange)))",
