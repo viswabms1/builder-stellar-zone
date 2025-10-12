@@ -26,6 +26,7 @@ import {
   Layers,
   Laptop,
   ListChecks,
+  Mail,
   MapPin,
   MessageSquare,
   Mic,
