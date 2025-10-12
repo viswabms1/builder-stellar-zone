@@ -197,17 +197,28 @@ export default function Footer() {
                     ))}
                   </div>
                   <div className="mt-4 space-y-2 text-sm text-white/75 font-body">
-                    {location.phones.map((phone) => (
-                      <p key={`${location.title}-${phone.value}`} className="flex flex-wrap items-center gap-2">
-                        <span className="text-white/50">{phone.label}:</span>
-                        <a
-                          href={`tel:${phone.value.replace(/[^+0-9]/g, "")}`}
-                          className="text-white/80 transition hover:text-white"
+                    {location.phones.map((phone) => {
+                      const sanitised = phone.value.replace(/[^+0-9]/g, "");
+                      const isSingleNumber = !/[\/|]/.test(phone.value) && sanitised.length > 6;
+                      return (
+                        <p
+                          key={`${location.title}-${phone.label}-${phone.value}`}
+                          className="flex flex-wrap items-center gap-2"
                         >
-                          {phone.value}
-                        </a>
-                      </p>
-                    ))}
+                          <span className="text-white/50">{phone.label}:</span>
+                          {isSingleNumber ? (
+                            <a
+                              href={`tel:${sanitised}`}
+                              className="text-white/80 transition hover:text-white"
+                            >
+                              {phone.value}
+                            </a>
+                          ) : (
+                            <span className="text-white/80">{phone.value}</span>
+                          )}
+                        </p>
+                      );
+                    })}
                   </div>
                 </div>
               ))}
