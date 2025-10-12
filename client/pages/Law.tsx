@@ -11,7 +11,6 @@ import {
   GraduationCap,
   Landmark,
   Library,
-  ScrollText,
   ShieldCheck,
   Users,
 } from "lucide-react";
