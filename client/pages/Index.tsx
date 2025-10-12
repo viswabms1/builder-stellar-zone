@@ -145,6 +145,56 @@ export default function Index() {
         </div>
       </section>
 
+      {/* Faculty Directory CTA */}
+      <section className="px-6 py-16 bg-gradient-to-r from-brand-blue/5 via-brand-magenta/5 to-brand-orange/5">
+        <div className="mx-auto max-w-7xl overflow-hidden rounded-3xl border border-border/40 bg-background/80 p-10 shadow-[0_40px_120px_-60px_rgba(233,97,255,0.45)] backdrop-blur">
+          <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center">
+            <div className="space-y-4">
+              <Badge className="bg-brand-magenta/15 text-brand-magenta">
+                Meet Our Faculty
+              </Badge>
+              <h2 className="headline-3 font-gilroy">
+                Explore scholars, mentors, and industry experts across DSU
+              </h2>
+              <p className="text-muted-foreground font-graphik max-w-3xl">
+                Connect with faculty by school, discipline, or research focus in our new directory. Filter by the programmes you care about and reach out for collaborations, mentorship, and academic guidance.
+              </p>
+              <div className="flex flex-col gap-3 sm:flex-row">
+                <Link to="/faculty-directory" className="flex-1">
+                  <Button className="h-full w-full bg-brand-gradient text-white">
+                    Explore Faculty Directory
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
+                <Link
+                  to="/academics/engineering/computer-science/faculty"
+                  className="flex-1"
+                >
+                  <Button
+                    variant="outline"
+                    className="h-full w-full border-brand-magenta/40 hover:bg-brand-magenta/10"
+                  >
+                    CSE Faculty Hub
+                  </Button>
+                </Link>
+              </div>
+            </div>
+            <div className="rounded-2xl border border-border/50 bg-card/60 p-6 backdrop-blur-sm">
+              <div className="grid gap-4">
+                {["Search across schools", "Filter by research focus", "Connect via email"].map((item) => (
+                  <div key={item} className="flex items-start gap-3">
+                    <div className="mt-1 h-2.5 w-2.5 rounded-full bg-brand-magenta" />
+                    <p className="text-sm text-muted-foreground font-graphik">
+                      {item}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Academics Section */}
       <section className="px-6 py-20 relative">
         <div className="max-w-7xl mx-auto">
