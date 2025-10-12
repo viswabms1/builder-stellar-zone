@@ -79,7 +79,7 @@ export default function Index() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-16">
               <Button
                 size="lg"
-                className="bg-brand-gradient hover:opacity-90 text-white px-8 py-6 text-lg font-semibold font-gilroy rounded-2xl shadow-lg hover:shadow-brand-magenta/25 transition-all duration-300 group"
+                className="bg-brand-gradient hover:opacity-90 text-white px-8 py-6 text-lg font-semibold font-display rounded-2xl shadow-lg hover:shadow-brand-magenta/25 transition-all duration-300 group"
               >
                 Apply Now
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -93,7 +93,7 @@ export default function Index() {
                 <Button
                   variant="secondary"
                   size="lg"
-                  className="bg-white/90 text-brand-magenta hover:bg-white text-lg font-semibold font-gilroy rounded-2xl transition-all duration-300 backdrop-blur-sm"
+                  className="bg-white/90 text-brand-magenta hover:bg-white text-lg font-semibold font-display rounded-2xl transition-all duration-300 backdrop-blur-sm"
                 >
                   <Laptop className="w-5 h-5 mr-2" />
                   Student Portal
@@ -110,7 +110,7 @@ export default function Index() {
                   size="lg"
                   className="border-2 border-white/30 bg-black/40 text-white 
              hover:bg-white hover:text-orange-600 
-             px-8 py-6 text-lg font-semibold font-gilroy 
+             px-8 py-6 text-lg font-semibold font-display 
              rounded-2xl transition-all duration-300 backdrop-blur-sm"
                 >
                   Virtual Tour
@@ -131,10 +131,10 @@ export default function Index() {
                   className="text-center group backdrop-blur-sm bg-white/10 rounded-xl p-4 border border-white/20"
                 >
                   <stat.icon className="w-6 h-6 text-brand-orange mx-auto mb-2 group-hover:text-brand-magenta transition-colors" />
-                  <div className="text-2xl font-bold text-white mb-1 font-gilroy">
+                  <div className="text-2xl font-bold text-white mb-1 font-display">
                     {stat.number}
                   </div>
-                  <div className="text-sm text-gray-300 font-graphik">
+                  <div className="text-sm text-gray-300 font-body">
                     {stat.label}
                   </div>
                 </div>
@@ -152,10 +152,10 @@ export default function Index() {
               <Badge className="bg-brand-magenta/15 text-brand-magenta">
                 Meet Our Faculty
               </Badge>
-              <h2 className="headline-3 font-gilroy">
+              <h2 className="headline-3 font-display">
                 Explore scholars, mentors, and industry experts across DSU
               </h2>
-              <p className="text-muted-foreground font-graphik max-w-3xl">
+              <p className="text-muted-foreground font-body max-w-3xl">
                 Connect with faculty by school, discipline, or research focus in
                 our new directory. Filter by the programmes you care about and
                 reach out for collaborations, mentorship, and academic guidance.
@@ -189,7 +189,7 @@ export default function Index() {
                 ].map((item) => (
                   <div key={item} className="flex items-start gap-3">
                     <div className="mt-1 h-2.5 w-2.5 rounded-full bg-brand-magenta" />
-                    <p className="text-sm text-muted-foreground font-graphik">
+                    <p className="text-sm text-muted-foreground font-body">
                       {item}
                     </p>
                   </div>
@@ -210,7 +210,7 @@ export default function Index() {
               </span>
               <span className="text-foreground"> That Inspires</span>
             </h2>
-            <p className="subheadline text-muted-foreground max-w-3xl mx-auto font-gilroy">
+            <p className="subheadline text-muted-foreground max-w-3xl mx-auto font-display">
               Discover cutting-edge programs designed to prepare you for
               tomorrow's challenges
             </p>
@@ -372,11 +372,11 @@ export default function Index() {
                   )}
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  <CardDescription className="text-muted-foreground leading-relaxed font-graphik">
+                  <CardDescription className="text-muted-foreground leading-relaxed font-body">
                     {school.description}
                   </CardDescription>
                   <div className="space-y-2">
-                    <p className="text-sm font-medium text-foreground font-gilroy">
+                    <p className="text-sm font-medium text-foreground font-display">
                       Popular Programs:
                     </p>
                     <div className="flex flex-wrap gap-2">
@@ -389,7 +389,7 @@ export default function Index() {
                           >
                             <Badge
                               variant="secondary"
-                              className="text-xs font-graphik hover:bg-brand-magenta/20 hover:text-brand-magenta cursor-pointer"
+                              className="text-xs font-body hover:bg-brand-magenta/20 hover:text-brand-magenta cursor-pointer"
                             >
                               {program}
                             </Badge>
@@ -398,7 +398,7 @@ export default function Index() {
                           <Badge
                             key={idx}
                             variant="secondary"
-                            className="text-xs font-graphik"
+                            className="text-xs font-body"
                           >
                             {program}
                           </Badge>
@@ -412,7 +412,7 @@ export default function Index() {
                         <Button
                           variant="ghost"
                           size="sm"
-                          className="w-full justify-between group-hover:text-brand-magenta font-gilroy"
+                          className="w-full justify-between group-hover:text-brand-magenta font-display"
                         >
                           Learn More
                           <ChevronRight className="w-4 h-4" />
@@ -423,7 +423,7 @@ export default function Index() {
                         <Button
                           variant="ghost"
                           size="sm"
-                          className="w-full justify-between group-hover:text-brand-magenta font-gilroy"
+                          className="w-full justify-between group-hover:text-brand-magenta font-display"
                         >
                           Learn More
                           <ChevronRight className="w-4 h-4" />
@@ -434,7 +434,7 @@ export default function Index() {
                     <Button
                       variant="ghost"
                       size="sm"
-                      className="w-full justify-between group-hover:text-brand-magenta font-gilroy"
+                      className="w-full justify-between group-hover:text-brand-magenta font-display"
                     >
                       Learn More
                       <ChevronRight className="w-4 h-4" />
@@ -457,7 +457,7 @@ export default function Index() {
                 News
               </span>
             </h2>
-            <p className="subheadline text-muted-foreground max-w-2xl mx-auto font-gilroy">
+            <p className="subheadline text-muted-foreground max-w-2xl mx-auto font-display">
               Stories from research, campus life, and our community
             </p>
           </div>
@@ -479,14 +479,14 @@ export default function Index() {
                   <Badge className="bg-brand-magenta/20 text-brand-magenta">
                     Research
                   </Badge>
-                  <div className="flex items-center text-white/80 text-xs font-graphik">
+                  <div className="flex items-center text-white/80 text-xs font-body">
                     <CalendarDays className="w-4 h-4 mr-1" /> Sep 12, 2025
                   </div>
                 </div>
-                <h3 className="text-3xl font-semibold text-white mb-3 font-gilroy">
+                <h3 className="text-3xl font-semibold text-white mb-3 font-display">
                   DSU launches Center for AI & Robotics
                 </h3>
-                <p className="text-white/80 max-w-3xl mb-6 hidden sm:block font-graphik">
+                <p className="text-white/80 max-w-3xl mb-6 hidden sm:block font-body">
                   A state-of-the-art hub advancing intelligent systems,
                   human-robot interaction, and applied AI with strong industry
                   partnerships.
@@ -573,14 +573,14 @@ export default function Index() {
                     </div>
                   </div>
                   <div className="p-5 space-y-2">
-                    <h4 className="text-lg font-semibold font-gilroy group-hover:text-brand-magenta transition-colors">
+                    <h4 className="text-lg font-semibold font-display group-hover:text-brand-magenta transition-colors">
                       {item.title}
                     </h4>
-                    <p className="text-sm text-muted-foreground font-graphik">
+                    <p className="text-sm text-muted-foreground font-body">
                       {item.excerpt}
                     </p>
                     <div className="flex items-center justify-between pt-1">
-                      <span className="text-xs text-muted-foreground font-graphik flex items-center">
+                      <span className="text-xs text-muted-foreground font-body flex items-center">
                         <CalendarDays className="w-4 h-4 mr-1" /> {item.date}
                       </span>
                       <ChevronRight className="w-4 h-4 text-muted-foreground group-hover:text-brand-magenta" />
@@ -595,7 +595,7 @@ export default function Index() {
             <Link to="/Research">
               <Button
                 variant="outline"
-                className="border-brand-magenta/30 hover:bg-brand-magenta/10 font-gilroy"
+                className="border-brand-magenta/30 hover:bg-brand-magenta/10 font-display"
               >
                 View all news
                 <ChevronRight className="w-4 h-4 ml-2" />
@@ -615,7 +615,7 @@ export default function Index() {
                 Campus Life
               </span>
             </h2>
-            <p className="subheadline text-muted-foreground max-w-2xl mx-auto font-gilroy">
+            <p className="subheadline text-muted-foreground max-w-2xl mx-auto font-display">
               More than education - it's about building lifelong connections and
               memories
             </p>
@@ -656,12 +656,12 @@ export default function Index() {
                 <h3 className="headline-4 mb-2 group-hover:text-brand-magenta transition-colors">
                   {feature.title}
                 </h3>
-                <p className="text-sm text-muted-foreground mb-3 font-graphik">
+                <p className="text-sm text-muted-foreground mb-3 font-body">
                   {feature.description}
                 </p>
                 <Badge
                   variant="outline"
-                  className="text-xs border-brand-magenta/30 text-brand-magenta font-graphik"
+                  className="text-xs border-brand-magenta/30 text-brand-magenta font-body"
                 >
                   {feature.highlight}
                 </Badge>
@@ -683,7 +683,7 @@ export default function Index() {
               </span>
               ?
             </h2>
-            <p className="subheadline text-muted-foreground mb-8 max-w-2xl mx-auto font-gilroy">
+            <p className="subheadline text-muted-foreground mb-8 max-w-2xl mx-auto font-display">
               Join thousands of students who've chosen DSU for their academic
               and personal growth.
             </p>
@@ -691,7 +691,7 @@ export default function Index() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
               <Button
                 size="lg"
-                className="bg-brand-gradient hover:opacity-90 hover:shadow-lg hover:shadow-brand-magenta/25 text-white px-12 py-6 text-lg font-semibold font-gilroy rounded-2xl transition-all duration-300 group"
+                className="bg-brand-gradient hover:opacity-90 hover:shadow-lg hover:shadow-brand-magenta/25 text-white px-12 py-6 text-lg font-semibold font-display rounded-2xl transition-all duration-300 group"
               >
                 Apply Now
                 <GraduationCap className="w-5 h-5 ml-2 group-hover:rotate-12 transition-transform" />
@@ -707,7 +707,7 @@ export default function Index() {
                 <Badge
                   key={index}
                   variant="secondary"
-                  className="px-3 py-1 text-xs font-medium font-graphik"
+                  className="px-3 py-1 text-xs font-medium font-body"
                 >
                   {badge}
                 </Badge>
