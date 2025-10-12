@@ -275,6 +275,27 @@ export default function CEE() {
         </div>
       </section>
 
+      <section id="offerings" className="px-6 py-16">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-10 text-center">
+            <Badge className="bg-brand-magenta/15 text-brand-magenta">
+              Programme Spectrum
+            </Badge>
+            <h2 className="mt-4 font-gilroy text-3xl md:text-4xl">
+              Pathways for working professionals
+            </h2>
+            <p className="mt-3 text-sm text-muted-foreground font-graphik max-w-3xl mx-auto">
+              Modular journeys blend weekend residencies, leadership labs, industry immersions and personalised mentoring to elevate executive careers.
+            </p>
+          </div>
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            {OFFERINGS.map((offering) => (
+              <OfferingCard key={offering.title} offering={offering} />
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section
         id="usp"
         className="bg-gradient-to-r from-brand-magenta/5 via-brand-orange/5 to-brand-blue/5 px-6 py-16"
@@ -294,29 +315,6 @@ export default function CEE() {
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {USP_HIGHLIGHTS.map((highlight) => (
               <HighlightCard key={highlight.title} highlight={highlight} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="offerings" className="px-6 py-16">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-10 text-center">
-            <Badge className="bg-brand-magenta/15 text-brand-magenta">
-              Programme Spectrum
-            </Badge>
-            <h2 className="mt-4 font-gilroy text-3xl md:text-4xl">
-              Pathways for Working Professionals
-            </h2>
-            <p className="mt-3 text-sm text-muted-foreground font-graphik max-w-3xl mx-auto">
-              Modular learning journeys crafted for managers, entrepreneurs and
-              CXOs equipped with leadership labs, residencies and personalised
-              mentorship.
-            </p>
-          </div>
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-            {OFFERINGS.map((offering) => (
-              <OfferingCard key={offering.title} offering={offering} />
             ))}
           </div>
         </div>
