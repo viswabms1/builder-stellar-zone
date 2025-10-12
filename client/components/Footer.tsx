@@ -44,8 +44,8 @@ const FOOTER_LINK_GROUPS = [
         href: "/examinations",
       },
       {
-        label: "Builder.io Projects",
-        href: "https://www.dsu.edu.in",
+        label: "Placements",
+        href: "https://www.dsu.edu.in/placements",
         external: true,
       },
       {
