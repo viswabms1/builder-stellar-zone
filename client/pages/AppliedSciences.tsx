@@ -24,14 +24,6 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-type QuickLink = {
-  title: string;
-  description: string;
-  href: string;
-  icon: LucideIcon;
-  external?: boolean;
-};
-
 type Highlight = {
   title: string;
   description: string;
