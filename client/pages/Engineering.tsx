@@ -699,33 +699,154 @@ export default function Engineering() {
         </div>
       </section>
 
-      <section className="px-6 py-16">
-        <div className="mx-auto grid max-w-7xl items-start gap-10 lg:grid-cols-2">
-          <div>
-            <h3 className="mb-4 font-gilroy text-2xl">
-              Undergraduate Programs
-            </h3>
-            <Card className="border border-border/50 bg-card/50 backdrop-blur-sm">
-              <CardContent className="p-6">
-                <div className="grid gap-3 sm:grid-cols-2">
-                  {UG_PROGRAMS.map((program) => {
-                    const link = UG_PROGRAM_LINKS[program];
+      <section
+        id="departments"
+        className="relative overflow-hidden px-6 py-16"
+      >
+        <div
+          className="pointer-events-none absolute inset-x-0 -top-32 h-64 bg-gradient-to-b from-brand-magenta/20 via-transparent to-transparent blur-3xl"
+          aria-hidden="true"
+        />
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-12 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+            <div className="max-w-3xl">
+              <Badge className="bg-brand-magenta/15 text-brand-magenta">
+                Engineering Departments
+              </Badge>
+              <h2 className="mt-4 font-gilroy text-3xl md:text-4xl">
+                Future-ready engineering disciplines
+              </h2>
+              <p className="mt-3 text-sm text-muted-foreground font-graphik">
+                Discover flagship majors and emerging specialisations built with experiential learning, industry mentorship and research-driven pathways.
+              </p>
+            </div>
+            <RouterLink
+              to="/admissions"
+              className="inline-flex items-center gap-2 text-sm font-medium text-brand-magenta"
+            >
+              View admissions
+              <ChevronRight className="h-4 w-4" />
+            </RouterLink>
+          </div>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-12">
+            {ENGINEERING_DEPARTMENTS.map((department) => (
+              <DepartmentCard key={department.name} department={department} />
+            ))}
+          </div>
+        </div>
+      </section>
 
-                    if (link) {
+      <section
+        id="programs"
+        className="relative overflow-hidden px-6 py-16"
+      >
+        <div
+          className="pointer-events-none absolute -right-32 top-0 hidden h-64 w-64 rounded-full bg-brand-blue/20 blur-3xl lg:block"
+          aria-hidden="true"
+        />
+        <div
+          className="pointer-events-none absolute -left-32 bottom-0 hidden h-64 w-64 rounded-full bg-brand-magenta/15 blur-3xl lg:block"
+          aria-hidden="true"
+        />
+        <div className="relative mx-auto max-w-7xl">
+          <div className="grid gap-12 lg:grid-cols-[1.15fr_minmax(0,1fr)]">
+            <div className="space-y-6">
+              <Badge className="bg-brand-blue/15 text-brand-blue">
+                Programs & Pathways
+              </Badge>
+              <h2 className="font-gilroy text-3xl md:text-4xl">
+                Programs crafted with industry-aligned outcomes
+              </h2>
+              <p className="text-sm text-muted-foreground font-graphik">
+                Our undergraduate and postgraduate offerings integrate project studios, global certifications and interdisciplinary minors so every learner can customise their journey.
+              </p>
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div className="rounded-3xl border border-brand-magenta/20 bg-brand-magenta/10 p-5 text-brand-magenta">
+                  <div className="text-3xl font-gilroy">11</div>
+                  <p className="mt-1 text-xs uppercase tracking-wide text-brand-magenta/80">
+                    Undergraduate majors
+                  </p>
+                  <p className="mt-2 text-xs text-brand-magenta/80 font-graphik">
+                    Specialise with honours, minors and industry electives from semester one.
+                  </p>
+                </div>
+                <div className="rounded-3xl border border-brand-blue/20 bg-brand-blue/10 p-5 text-brand-blue">
+                  <div className="text-3xl font-gilroy">3</div>
+                  <p className="mt-1 text-xs uppercase tracking-wide text-brand-blue/80">
+                    Postgraduate specialisations
+                  </p>
+                  <p className="mt-2 text-xs text-brand-blue/80 font-graphik">
+                    Deep-dive into advanced systems, research and leadership roles.
+                  </p>
+                </div>
+                <div className="rounded-3xl border border-border/40 bg-card/70 p-5">
+                  <div className="text-lg font-gilroy text-foreground">
+                    Project studio pedagogy
+                  </div>
+                  <p className="mt-2 text-sm text-muted-foreground font-graphik">
+                    Hands-on product build sprints with mentors from startups and global tech companies.
+                  </p>
+                </div>
+                <div className="rounded-3xl border border-border/40 bg-card/70 p-5">
+                  <div className="text-lg font-gilroy text-foreground">
+                    Global certifications
+                  </div>
+                  <p className="mt-2 text-sm text-muted-foreground font-graphik">
+                    Earn credentials with IBM, NVIDIA, AWS, VMware and GE while you study.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <Card className="relative overflow-hidden rounded-3xl border border-border/50 bg-card/60 backdrop-blur-sm">
+              <div
+                className="pointer-events-none absolute right-0 top-0 h-40 w-40 rounded-full bg-brand-magenta/15 blur-2xl"
+                aria-hidden="true"
+              />
+              <CardContent className="relative space-y-8 p-6">
+                <div>
+                  <h3 className="font-gilroy text-2xl">Undergraduate Majors</h3>
+                  <p className="mt-2 text-sm text-muted-foreground font-graphik">
+                    Choose from future-proof majors and emerging specialisations.
+                  </p>
+                  <div className="mt-4 grid gap-3 sm:grid-cols-2">
+                    {UG_PROGRAMS.map((program) => {
+                      const link = UG_PROGRAM_LINKS[program];
+
+                      if (link) {
+                        return (
+                          <RouterLink
+                            key={program}
+                            to={link}
+                            className="flex items-center text-sm text-brand-magenta hover:underline"
+                          >
+                            <ChevronRight className="mr-2 h-3 w-3 text-brand-magenta" />
+                            {program}
+                          </RouterLink>
+                        );
+                      }
+
                       return (
-                        <RouterLink
+                        <div
                           key={program}
-                          to={link}
-                          className="flex items-center text-sm text-brand-magenta hover:underline"
+                          className="flex items-center text-sm text-muted-foreground"
                         >
                           <ChevronRight className="mr-2 h-3 w-3 text-brand-magenta" />
                           {program}
-                          <ChevronRight className="ml-1 h-3 w-3" />
-                        </RouterLink>
+                        </div>
                       );
-                    }
-
-                    return (
+                    })}
+                  </div>
+                </div>
+                <div className="h-px w-full bg-border/50" />
+                <div>
+                  <h3 className="font-gilroy text-2xl">
+                    Postgraduate Specialisations
+                  </h3>
+                  <p className="mt-2 text-sm text-muted-foreground font-graphik">
+                    Advance into research, product leadership and domain expertise.
+                  </p>
+                  <div className="mt-4 grid gap-3 sm:grid-cols-2">
+                    {PG_PROGRAMS.map((program) => (
                       <div
                         key={program}
                         className="flex items-center text-sm text-muted-foreground"
@@ -733,26 +854,25 @@ export default function Engineering() {
                         <ChevronRight className="mr-2 h-3 w-3 text-brand-magenta" />
                         {program}
                       </div>
-                    );
-                  })}
+                    ))}
+                  </div>
                 </div>
-              </CardContent>
-            </Card>
-          </div>
-          <div>
-            <h3 className="mb-4 font-gilroy text-2xl">Postgraduate Programs</h3>
-            <Card className="border border-border/50 bg-card/50 backdrop-blur-sm">
-              <CardContent className="p-6">
-                <div className="grid gap-3 sm:grid-cols-2">
-                  {PG_PROGRAMS.map((program) => (
-                    <div
-                      key={program}
-                      className="flex items-center text-sm text-muted-foreground"
-                    >
-                      <ChevronRight className="mr-2 h-3 w-3 text-brand-magenta" />
-                      {program}
-                    </div>
-                  ))}
+                <div className="h-px w-full bg-border/50" />
+                <div className="flex flex-wrap items-center gap-3">
+                  <RouterLink
+                    to="/academics"
+                    className="inline-flex items-center gap-2 text-sm font-medium text-brand-magenta hover:underline"
+                  >
+                    Explore curriculum
+                    <ChevronRight className="h-4 w-4" />
+                  </RouterLink>
+                  <RouterLink
+                    to="/admissions"
+                    className="inline-flex items-center gap-2 text-sm font-medium text-brand-magenta hover:underline"
+                  >
+                    Admissions process
+                    <ChevronRight className="h-4 w-4" />
+                  </RouterLink>
                 </div>
               </CardContent>
             </Card>
