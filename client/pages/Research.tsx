@@ -101,7 +101,7 @@ export default function Research() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-10">
             <h2 className="headline-3">Research Hub</h2>
-            <p className="text-muted-foreground font-graphik">Quick access to Ph.D admissions, regulations, supervisors, and more</p>
+            <p className="text-muted-foreground font-body">Quick access to Ph.D admissions, regulations, supervisors, and more</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
@@ -121,7 +121,7 @@ export default function Research() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                   <div className="absolute bottom-0 p-4 flex items-center gap-3">
                     <item.icon className="w-5 h-5 text-white" />
-                    <div className="text-white font-medium font-gilroy">{item.title}</div>
+                    <div className="text-white font-medium font-display">{item.title}</div>
                   </div>
                 </div>
               </a>
@@ -335,7 +335,7 @@ export default function Research() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="headline-3">Research Spotlights</h2>
-            <p className="text-muted-foreground font-graphik">Stories to inspire students and faculty to pursue impactful research</p>
+            <p className="text-muted-foreground font-body">Stories to inspire students and faculty to pursue impactful research</p>
           </div>
           <div className="grid lg:grid-cols-3 gap-8 items-stretch">
             {[
@@ -363,7 +363,7 @@ export default function Research() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
                 <div className="absolute bottom-0 p-6">
                   <Badge className="bg-white/10 text-white mb-3">{s.tag}</Badge>
-                  <h3 className="text-white font-semibold text-xl font-gilroy">{s.title}</h3>
+                  <h3 className="text-white font-semibold text-xl font-display">{s.title}</h3>
                 </div>
               </a>
             ))}
