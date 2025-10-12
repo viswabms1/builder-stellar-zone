@@ -170,7 +170,7 @@ export default function Footer() {
               >
                 <RouterLink to="/admissions" className="gap-2">
                   Apply Now
-                  <ArrowUpRight className="h-4 w-4" />
+                  <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
                 </RouterLink>
               </Button>
               <a
@@ -180,7 +180,7 @@ export default function Footer() {
                 className="inline-flex items-center gap-2 text-sm font-medium text-white/80 transition hover:text-white"
               >
                 Take a virtual tour
-                <ArrowUpRight className="h-4 w-4" />
+                <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
               </a>
             </div>
 
@@ -188,7 +188,7 @@ export default function Footer() {
               {CONTACT_LOCATIONS.map((location) => (
                 <div key={location.title} className="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-[0_20px_80px_-50px_rgba(255,255,255,0.6)]">
                   <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.28em] text-white/60">
-                    <MapPin className="h-4 w-4" />
+                    <MapPin className="h-4 w-4" aria-hidden="true" />
                     {location.title}
                   </div>
                   <div className="mt-3 space-y-1 text-sm text-white/80 font-body">
@@ -226,7 +226,7 @@ export default function Footer() {
 
             <div className="mt-10 grid gap-4 rounded-3xl border border-white/10 bg-white/5 p-6 text-sm text-white/80 font-body sm:flex sm:flex-wrap sm:items-center sm:justify-between">
               <div className="flex flex-wrap items-center gap-3 text-white">
-                <Phone className="h-4 w-4" />
+                <Phone className="h-4 w-4" aria-hidden="true" />
                 <span className="text-white/70">Helpline</span>
                 <a
                   href="tel:+918046461800"
@@ -290,7 +290,7 @@ export default function Footer() {
                             className="flex items-center gap-2 transition hover:text-white"
                           >
                             {link.label}
-                            <ArrowUpRight className="h-3 w-3" />
+                            <ArrowUpRight className="h-3 w-3" aria-hidden="true" />
                           </a>
                         </li>
                       );
