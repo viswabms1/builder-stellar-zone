@@ -308,30 +308,6 @@ export default function AppliedSciences() {
         </div>
       </section>
 
-      <section
-        id="usp"
-        className="bg-gradient-to-r from-brand-magenta/5 via-brand-orange/5 to-brand-blue/5 px-6 py-16"
-      >
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-12 text-center">
-            <Badge
-              className="bg-white/20 text-brand-magenta backdrop-blur"
-              variant="secondary"
-            >
-              Unique Strengths
-            </Badge>
-            <h2 className="mt-5 font-gilroy text-3xl md:text-4xl">
-              Why Innovators Choose SBAS
-            </h2>
-          </div>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {USP_HIGHLIGHTS.map((highlight) => (
-              <HighlightCard key={highlight.title} highlight={highlight} />
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section id="programs" className="px-6 py-16">
         <div className="mx-auto max-w-7xl">
           <div className="mb-10 text-center">
@@ -339,12 +315,10 @@ export default function AppliedSciences() {
               Academic Pathways
             </Badge>
             <h2 className="mt-4 font-gilroy text-3xl md:text-4xl">
-              Programmes Bridging Science & Society
+              Programmes bridging science & society
             </h2>
             <p className="mt-3 text-sm text-muted-foreground font-graphik max-w-3xl mx-auto">
-              Programmes nurture curiosity, experimentation and analytical
-              rigour, preparing graduates for research, healthcare, product
-              development and analytics roles.
+              Programmes nurture curiosity, experimentation and analytical rigour, preparing graduates for research, healthcare, product development and analytics roles.
             </p>
           </div>
           <div className="grid gap-6 lg:grid-cols-2">
@@ -370,6 +344,30 @@ export default function AppliedSciences() {
                   ))}
                 </CardContent>
               </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="usp"
+        className="bg-gradient-to-r from-brand-magenta/5 via-brand-orange/5 to-brand-blue/5 px-6 py-16"
+      >
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-12 text-center">
+            <Badge
+              className="bg-white/20 text-brand-magenta backdrop-blur"
+              variant="secondary"
+            >
+              Unique Strengths
+            </Badge>
+            <h2 className="mt-5 font-gilroy text-3xl md:text-4xl">
+              Why Innovators Choose SBAS
+            </h2>
+          </div>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            {USP_HIGHLIGHTS.map((highlight) => (
+              <HighlightCard key={highlight.title} highlight={highlight} />
             ))}
           </div>
         </div>
