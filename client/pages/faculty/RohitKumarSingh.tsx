@@ -26,8 +26,8 @@ export default function FacultyRohitKumarSingh() {
                   <img src={portrait} alt="Rohit Kumar Singh" className="w-full h-full object-cover object-center" />
                 </div>
                 <div className="flex-1">
-                  <div className="text-brand-blue text-xs font-graphik">Computer Science & Engineering</div>
-                  <h1 className="text-2xl md:text-3xl font-bold font-gilroy">Dr. Rohit Kumar Singh</h1>
+                  <div className="text-brand-blue text-xs font-body">Computer Science & Engineering</div>
+                  <h1 className="text-2xl md:text-3xl font-bold font-display">Dr. Rohit Kumar Singh</h1>
                   <div className="text-muted-foreground text-sm">Associate Professor</div>
                   <div className="mt-2 flex flex-wrap gap-2">
                     {topics.map((t) => (
@@ -50,27 +50,27 @@ export default function FacultyRohitKumarSingh() {
           <div className="lg:col-span-2 space-y-8">
             <Card className="border border-border/50 bg-card/50">
               <CardHeader>
-                <CardTitle className="font-gilroy">Biography</CardTitle>
+                <CardTitle className="font-display">Biography</CardTitle>
               </CardHeader>
-              <CardContent className="text-sm text-muted-foreground font-graphik">
+              <CardContent className="text-sm text-muted-foreground font-body">
                 Builds robust autonomy stacks for field robots. Works at the intersection of sensing, planning and control for real‑world deployment.
               </CardContent>
             </Card>
 
             <Card className="border border-border/50 bg-card/50">
               <CardHeader>
-                <CardTitle className="font-gilroy">Awards & Honors</CardTitle>
+                <CardTitle className="font-display">Awards & Honors</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-2 text-sm font-graphik">
+              <CardContent className="space-y-2 text-sm font-body">
                 <div>SERB Early Career Award (2022)</div>
               </CardContent>
             </Card>
 
             <Card className="border border-border/50 bg-card/50">
               <CardHeader>
-                <CardTitle className="font-gilroy">Selected Publications</CardTitle>
+                <CardTitle className="font-display">Selected Publications</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-3 text-sm font-graphik">
+              <CardContent className="space-y-3 text-sm font-body">
                 <div className="leading-relaxed">Learning‑based MPC for Off‑road Navigation. ICRA (2023)</div>
                 <div className="leading-relaxed">Robust SLAM under Perception Degradation. RSS (2022)</div>
               </CardContent>
@@ -78,9 +78,9 @@ export default function FacultyRohitKumarSingh() {
 
             <Card className="border border-border/50 bg-card/50">
               <CardHeader>
-                <CardTitle className="font-gilroy">Teaching</CardTitle>
+                <CardTitle className="font-display">Teaching</CardTitle>
               </CardHeader>
-              <CardContent className="grid sm:grid-cols-2 gap-4 text-sm font-graphik">
+              <CardContent className="grid sm:grid-cols-2 gap-4 text-sm font-body">
                 <div>
                   <div className="text-muted-foreground">CSE 635 · Spring 2025</div>
                   <div className="font-medium">Robot Perception & Control</div>
@@ -94,7 +94,7 @@ export default function FacultyRohitKumarSingh() {
 
             <Card className="border border-border/50 bg-card/50">
               <CardHeader>
-                <CardTitle className="font-gilroy">Active Projects</CardTitle>
+                <CardTitle className="font-display">Active Projects</CardTitle>
               </CardHeader>
               <CardContent className="flex flex-wrap gap-2">
                 {[
@@ -111,9 +111,9 @@ export default function FacultyRohitKumarSingh() {
           <div className="space-y-8">
             <Card className="border border-border/50 bg-card/50">
               <CardHeader>
-                <CardTitle className="font-gilroy">Contact</CardTitle>
+                <CardTitle className="font-display">Contact</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-3 text-sm font-graphik">
+              <CardContent className="space-y-3 text-sm font-body">
                 <div className="flex items-center gap-2 text-muted-foreground"><MapPin className="w-4 h-4"/> Robotics Lab, Tech Park — 2nd Floor</div>
                 <div className="flex items-center gap-2 text-muted-foreground"><Clock className="w-4 h-4"/> Office Hours: Mon, 3:00–5:00 PM</div>
               </CardContent>
@@ -127,8 +127,8 @@ export default function FacultyRohitKumarSingh() {
               ].map((s) => (
                 <Card key={s.label} className="text-center border border-border/50 bg-card/50">
                   <CardHeader className="py-4">
-                    <div className="text-2xl font-bold font-gilroy">{s.value}</div>
-                    <CardDescription className="font-graphik">{s.label}</CardDescription>
+                    <div className="text-2xl font-bold font-display">{s.value}</div>
+                    <CardDescription className="font-body">{s.label}</CardDescription>
                   </CardHeader>
                 </Card>
               ))}
@@ -136,9 +136,9 @@ export default function FacultyRohitKumarSingh() {
 
             <Card className="border border-border/50 bg-card/50">
               <CardHeader>
-                <CardTitle className="font-gilroy">Education</CardTitle>
+                <CardTitle className="font-display">Education</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-2 text-sm font-graphik">
+              <CardContent className="space-y-2 text-sm font-body">
                 <div>Ph.D., Robotics — Carnegie Mellon University</div>
                 <div>M.S., Electrical Engineering — ETH Zürich</div>
                 <div>B.Tech, Electronics — NIT Trichy</div>
