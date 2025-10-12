@@ -284,16 +284,16 @@ function StatCard({ stat }: { stat: Stat }) {
           <Icon className="h-5 w-5" />
         </span>
         <div>
-          <CardTitle className="text-2xl font-semibold font-gilroy">
+          <CardTitle className="text-2xl font-semibold font-display">
             {stat.value}
           </CardTitle>
-          <p className="text-sm text-muted-foreground font-graphik">
+          <p className="text-sm text-muted-foreground font-body">
             {stat.label}
           </p>
         </div>
       </CardHeader>
       <CardContent className="pt-0">
-        <CardDescription className="text-sm leading-relaxed text-muted-foreground font-graphik">
+        <CardDescription className="text-sm leading-relaxed text-muted-foreground font-body">
           {stat.description}
         </CardDescription>
       </CardContent>
@@ -310,16 +310,16 @@ function CareServiceCard({ service }: { service: CareService }) {
           <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-blue/10 text-brand-blue">
             <Icon className="h-5 w-5" />
           </span>
-          <CardTitle className="text-xl font-semibold font-gilroy leading-tight">
+          <CardTitle className="text-xl font-semibold font-display leading-tight">
             {service.title}
           </CardTitle>
         </div>
-        <CardDescription className="mt-4 text-sm leading-relaxed text-muted-foreground font-graphik">
+        <CardDescription className="mt-4 text-sm leading-relaxed text-muted-foreground font-body">
           {service.description}
         </CardDescription>
       </CardHeader>
       <CardContent className="pt-0">
-        <ul className="space-y-3 text-sm text-muted-foreground font-graphik">
+        <ul className="space-y-3 text-sm text-muted-foreground font-body">
           {service.points.map((point) => (
             <li key={point} className="flex items-start gap-2">
               <ChevronRight className="mt-1 h-4 w-4 text-brand-magenta" />
@@ -341,16 +341,16 @@ function SpecialtyServiceCard({ service }: { service: SpecialtyService }) {
           <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-orange/10 text-brand-orange">
             <Icon className="h-5 w-5" />
           </span>
-          <CardTitle className="text-lg font-semibold font-gilroy leading-tight">
+          <CardTitle className="text-lg font-semibold font-display leading-tight">
             {service.title}
           </CardTitle>
         </div>
-        <CardDescription className="mt-4 text-sm leading-relaxed text-muted-foreground font-graphik">
+        <CardDescription className="mt-4 text-sm leading-relaxed text-muted-foreground font-body">
           {service.description}
         </CardDescription>
       </CardHeader>
       <CardContent className="pt-0">
-        <ul className="space-y-2 text-sm text-muted-foreground font-graphik">
+        <ul className="space-y-2 text-sm text-muted-foreground font-body">
           {service.highlights.map((item) => (
             <li key={item} className="flex items-start gap-2">
               <ChevronRight className="mt-1 h-4 w-4 text-brand-magenta" />
@@ -372,10 +372,10 @@ function LearningFeatureCard({ feature }: { feature: LearningFeature }) {
           <Icon className="h-5 w-5" />
         </span>
         <div>
-          <CardTitle className="text-lg font-semibold font-gilroy leading-tight">
+          <CardTitle className="text-lg font-semibold font-display leading-tight">
             {feature.title}
           </CardTitle>
-          <CardDescription className="mt-3 text-sm leading-relaxed text-muted-foreground font-graphik">
+          <CardDescription className="mt-3 text-sm leading-relaxed text-muted-foreground font-body">
             {feature.description}
           </CardDescription>
         </div>
@@ -391,12 +391,12 @@ function ResourceCard({ resource }: { resource: ResourceLink }) {
         <Badge className="bg-brand-magenta/15 text-brand-magenta">
           {resource.badge}
         </Badge>
-        <CardTitle className="mt-4 text-lg font-semibold font-gilroy leading-tight">
+        <CardTitle className="mt-4 text-lg font-semibold font-display leading-tight">
           {resource.title}
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4 pt-0">
-        <CardDescription className="text-sm leading-relaxed text-muted-foreground font-graphik">
+        <CardDescription className="text-sm leading-relaxed text-muted-foreground font-body">
           {resource.description}
         </CardDescription>
         <a
@@ -430,14 +430,14 @@ export default function CDSIMERHospital() {
           <div className="mx-auto max-w-7xl px-6">
             <div className="mb-4 inline-flex items-center rounded-full border border-white/20 bg-white/10 px-4 py-2 backdrop-blur">
               <Hospital className="mr-2 h-4 w-4 text-white" />
-              <span className="text-sm font-medium text-white/90 font-gilroy">
+              <span className="text-sm font-medium text-white/90 font-display">
                 CDSIMER Teaching Hospital
               </span>
             </div>
-            <h1 className="max-w-3xl text-4xl font-gilroy leading-tight text-white md:text-6xl">
+            <h1 className="max-w-3xl text-4xl font-display leading-tight text-white md:text-6xl">
               Compassionate Care, Advanced Infrastructure & Integrated Learning
             </h1>
-            <p className="mt-5 max-w-2xl text-white/90 font-graphik text-lg">
+            <p className="mt-5 max-w-2xl text-white/90 font-body text-lg">
               A NABH and NABL accredited tertiary-care destination serving
               Bengaluru South and surrounding communities with 24×7 emergency,
               speciality and critical care supported by DSU's medical education
@@ -481,10 +481,10 @@ export default function CDSIMERHospital() {
             >
               Hospital at a Glance
             </Badge>
-            <h2 className="mt-6 text-3xl font-gilroy text-foreground md:text-4xl">
+            <h2 className="mt-6 text-3xl font-display text-foreground md:text-4xl">
               Holistic Healthcare for Patients, Learners and Communities
             </h2>
-            <p className="mt-4 text-sm text-muted-foreground font-graphik max-w-3xl mx-auto">
+            <p className="mt-4 text-sm text-muted-foreground font-body max-w-3xl mx-auto">
               CDSIMER Hospital complements the medical college with
               comprehensive services, digitally connected departments and
               compassionate teams who place patient safety and outcomes first.
@@ -504,10 +504,10 @@ export default function CDSIMERHospital() {
             <Badge className="bg-brand-magenta/15 text-brand-magenta">
               Continuum of Care
             </Badge>
-            <h2 className="mt-5 text-3xl font-gilroy md:text-4xl">
+            <h2 className="mt-5 text-3xl font-display md:text-4xl">
               Patient Journeys Designed for Every Need
             </h2>
-            <p className="mt-4 text-sm text-muted-foreground font-graphik max-w-3xl mx-auto">
+            <p className="mt-4 text-sm text-muted-foreground font-body max-w-3xl mx-auto">
               From first touch in the OPD to advanced intensive care, every
               service line is integrated with diagnostics, information systems
               and specialist teams.
@@ -528,10 +528,10 @@ export default function CDSIMERHospital() {
               <Badge className="bg-brand-orange/15 text-brand-orange">
                 Specialty Excellence
               </Badge>
-              <h2 className="mt-4 text-3xl font-gilroy md:text-4xl">
+              <h2 className="mt-4 text-3xl font-display md:text-4xl">
                 Advanced Services Powering Clinical Outcomes
               </h2>
-              <p className="mt-3 text-sm text-muted-foreground font-graphik max-w-2xl">
+              <p className="mt-3 text-sm text-muted-foreground font-body max-w-2xl">
                 Operating theatres, diagnostics, laboratory sciences and
                 transfusion medicine collaborate seamlessly to support
                 high-acuity care and surgical specialities.
@@ -562,10 +562,10 @@ export default function CDSIMERHospital() {
               <Badge className="bg-brand-blue/15 text-brand-blue">
                 Learning in Action
               </Badge>
-              <h2 className="mt-5 text-3xl font-gilroy md:text-4xl">
+              <h2 className="mt-5 text-3xl font-display md:text-4xl">
                 Hospital-based Education & Community Impact
               </h2>
-              <p className="mt-4 text-sm text-muted-foreground font-graphik">
+              <p className="mt-4 text-sm text-muted-foreground font-body">
                 Clinical postings, interdisciplinary simulations and community
                 outreach connect learners with real-world health challenges
                 while strengthening public health outcomes.
@@ -582,10 +582,10 @@ export default function CDSIMERHospital() {
                   <Badge className="bg-brand-magenta/15 text-brand-magenta">
                     Watch
                   </Badge>
-                  <CardTitle className="mt-4 text-lg font-gilroy">
+                  <CardTitle className="mt-4 text-lg font-display">
                     Inside CDSIMER Hospital
                   </CardTitle>
-                  <CardDescription className="mt-2 text-sm text-muted-foreground font-graphik">
+                  <CardDescription className="mt-2 text-sm text-muted-foreground font-body">
                     Take a quick look at the campus, clinical environments and
                     simulation-backed learning in action.
                   </CardDescription>
@@ -607,12 +607,12 @@ export default function CDSIMERHospital() {
                   <Badge className="bg-brand-orange/15 text-brand-orange">
                     Quick Access
                   </Badge>
-                  <CardTitle className="mt-4 text-lg font-gilroy">
+                  <CardTitle className="mt-4 text-lg font-display">
                     Plan Your Visit
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  <div className="flex items-start gap-3 text-sm text-muted-foreground font-graphik">
+                  <div className="flex items-start gap-3 text-sm text-muted-foreground font-body">
                     <MapPin className="mt-1 h-5 w-5 text-brand-magenta" />
                     <span>{CAMPUS_ADDRESS}</span>
                   </div>
@@ -624,10 +624,10 @@ export default function CDSIMERHospital() {
                         className="inline-flex items-center gap-2 rounded-full border border-brand-magenta/30 px-4 py-2 text-sm text-brand-magenta transition hover:bg-brand-magenta/10"
                       >
                         <item.icon className="h-4 w-4" />
-                        <span className="font-medium font-gilroy">
+                        <span className="font-medium font-display">
                           {item.label}:
                         </span>
-                        <span className="font-graphik">{item.value}</span>
+                        <span className="font-body">{item.value}</span>
                       </a>
                     ))}
                   </div>
@@ -647,10 +647,10 @@ export default function CDSIMERHospital() {
             <Badge className="bg-brand-magenta/15 text-brand-magenta">
               Key Resources
             </Badge>
-            <h2 className="mt-5 text-3xl font-gilroy md:text-4xl">
+            <h2 className="mt-5 text-3xl font-display md:text-4xl">
               Stay Informed & Connected
             </h2>
-            <p className="mt-4 text-sm text-muted-foreground font-graphik max-w-3xl mx-auto">
+            <p className="mt-4 text-sm text-muted-foreground font-body max-w-3xl mx-auto">
               Download admissions guidance, statutory information and laboratory
               resources to plan your journey with CDSIMER.
             </p>
@@ -668,10 +668,10 @@ export default function CDSIMERHospital() {
           <Card className="border border-border/40 bg-card/60 backdrop-blur">
             <CardContent className="flex flex-col gap-6 p-8 md:flex-row md:items-center md:justify-between">
               <div>
-                <h3 className="text-2xl font-gilroy">
+                <h3 className="text-2xl font-display">
                   Ready to collaborate with CDSIMER Hospital?
                 </h3>
-                <p className="mt-2 max-w-2xl text-sm text-muted-foreground font-graphik">
+                <p className="mt-2 max-w-2xl text-sm text-muted-foreground font-body">
                   Reach out for partnerships, clinical rotations, research
                   collaborations or patient services. We are here to support
                   every step of your journey.
