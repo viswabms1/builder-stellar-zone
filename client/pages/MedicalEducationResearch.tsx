@@ -175,14 +175,14 @@ function HighlightCard({ highlight }: { highlight: Highlight }) {
         <Icon className="h-4 w-4" /> Highlight
       </div>
       <div className="absolute inset-x-0 bottom-0 p-5 text-white">
-        <h3 className="mb-2 text-lg font-semibold font-gilroy">
+        <h3 className="mb-2 text-lg font-semibold font-display">
           {highlight.title}
         </h3>
-        <p className="text-sm text-white/80 font-graphik">
+        <p className="text-sm text-white/80 font-body">
           {highlight.description}
         </p>
         {highlight.stat ? (
-          <div className="mt-3 text-xs uppercase tracking-wide text-white/70 font-graphik">
+          <div className="mt-3 text-xs uppercase tracking-wide text-white/70 font-body">
             {highlight.stat}
           </div>
         ) : null}
@@ -199,10 +199,10 @@ function PillarCard({ pillar }: { pillar: Pillar }) {
         <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-magenta/10 text-brand-magenta">
           <Icon className="h-5 w-5" />
         </span>
-        <CardTitle className="text-base font-gilroy">{pillar.title}</CardTitle>
+        <CardTitle className="text-base font-display">{pillar.title}</CardTitle>
       </CardHeader>
       <CardContent className="pt-0">
-        <CardDescription className="text-sm leading-relaxed text-muted-foreground font-graphik">
+        <CardDescription className="text-sm leading-relaxed text-muted-foreground font-body">
           {pillar.description}
         </CardDescription>
       </CardContent>
@@ -243,11 +243,11 @@ function ResourceCard({ resource }: { resource: Resource }) {
         <Badge className="bg-brand-magenta/15 text-brand-magenta">
           {resource.badge}
         </Badge>
-        <CardTitle className="mt-4 text-lg font-gilroy">
+        <CardTitle className="mt-4 text-lg font-display">
           {resource.title}
         </CardTitle>
       </CardHeader>
-      <CardContent className="space-y-5 text-sm text-muted-foreground font-graphik">
+      <CardContent className="space-y-5 text-sm text-muted-foreground font-body">
         <p>{resource.description}</p>
         <a
           href={resource.href}
@@ -280,14 +280,14 @@ export default function MedicalEducationResearch() {
           <div className="mx-auto max-w-7xl px-6">
             <div className="mb-6 inline-flex items-center rounded-full border border-brand-magenta/20 bg-brand-magenta/10 px-4 py-2">
               <Microscope className="mr-2 h-4 w-4 text-brand-magenta" />
-              <span className="text-sm font-medium text-brand-magenta font-gilroy">
+              <span className="text-sm font-medium text-brand-magenta font-display">
                 Medical Education & Research
               </span>
             </div>
-            <h1 className="mb-4 font-gilroy text-4xl leading-tight text-white md:text-6xl">
+            <h1 className="mb-4 font-display text-4xl leading-tight text-white md:text-6xl">
               Empowering Physicians Through Knowledge, Discovery & Healing
             </h1>
-            <p className="max-w-3xl text-white/90 font-graphik text-lg">
+            <p className="max-w-3xl text-white/90 font-body text-lg">
               DSU's medical education and research ecosystem unites CDSIMER's
               smart campus, tertiary care hospital and translational research to
               elevate patient care and community wellbeing.
@@ -327,7 +327,7 @@ export default function MedicalEducationResearch() {
             >
               Highlights
             </Badge>
-            <h2 className="mt-5 font-gilroy text-3xl md:text-4xl">
+            <h2 className="mt-5 font-display text-3xl md:text-4xl">
               Smart Campus. Integrated Care. Translational Research.
             </h2>
           </div>
@@ -345,10 +345,10 @@ export default function MedicalEducationResearch() {
             <Badge className="bg-brand-magenta/15 text-brand-magenta">
               Academic & Care Pillars
             </Badge>
-            <h2 className="mt-4 font-gilroy text-3xl md:text-4xl">
+            <h2 className="mt-4 font-display text-3xl md:text-4xl">
               One Ecosystem. Many Possibilities.
             </h2>
-            <p className="mt-3 text-sm text-muted-foreground font-graphik max-w-3xl mx-auto">
+            <p className="mt-3 text-sm text-muted-foreground font-body max-w-3xl mx-auto">
               From classroom to clinic, DSU Medical Education & Research unifies
               learning, care delivery and innovation for future-ready
               physicians.
@@ -372,10 +372,10 @@ export default function MedicalEducationResearch() {
               <Badge className="bg-brand-magenta/15 text-brand-magenta">
                 Resources
               </Badge>
-              <h2 className="mt-4 font-gilroy text-3xl md:text-4xl">
+              <h2 className="mt-4 font-display text-3xl md:text-4xl">
                 Plan Your Journey
               </h2>
-              <p className="mt-3 text-sm text-muted-foreground font-graphik">
+              <p className="mt-3 text-sm text-muted-foreground font-body">
                 Access enquiry support, campus events, library resources and
                 immersive tours to experience DSU's medical ecosystem.
               </p>
@@ -401,10 +401,10 @@ export default function MedicalEducationResearch() {
       <section className="px-6 pb-20">
         <div className="mx-auto max-w-4xl text-center">
           <div className="rounded-3xl border border-brand-magenta/20 bg-brand-magenta/5 p-10">
-            <h3 className="mb-3 font-gilroy text-3xl">
+            <h3 className="mb-3 font-display text-3xl">
               Shape the Future of Healthcare with DSU
             </h3>
-            <p className="mb-6 text-muted-foreground font-graphik">
+            <p className="mb-6 text-muted-foreground font-body">
               Join a medical community that blends compassionate care, research
               innovation and community service on one vibrant campus.
             </p>
