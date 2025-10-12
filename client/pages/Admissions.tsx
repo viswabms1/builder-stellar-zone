@@ -97,8 +97,9 @@ const quickLinks: QuickLink[] = [
     title: "Programs, Eligibility & Fee Structure",
     description:
       "Review intake, qualifying exams, and detailed fee statements for every course.",
-    href: "https://www.dsu.edu.in/eligibility",
+    href: "/eligibility",
     icon: BookOpen,
+    external: false,
   },
   {
     title: "Hostel Fee",
