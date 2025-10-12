@@ -882,7 +882,7 @@ export default function Engineering() {
 
       <section
         id="supporting-departments"
-        className="bg-gradient-to-r from-brand-blue/5 to-brand-orange/5 px-6 py-16"
+        className="bg-gradient-to-r from-brand-blue/3 via-brand-magenta/3 to-brand-orange/3 px-6 py-16"
       >
         <div className="mx-auto max-w-7xl">
           <div className="mb-12 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
