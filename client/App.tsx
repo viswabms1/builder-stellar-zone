@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navigation from "./components/Navigation";
+import Footer from "./components/Footer";
 import Index from "./pages/Index";
 import Academics from "./pages/Academics";
 import Admissions from "./pages/Admissions";
@@ -35,11 +36,11 @@ function App() {
         <div className="min-h-screen bg-background text-foreground">
           <Navigation />
           <main>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/academics" element={<Academics />} />
-            <Route path="/academics/engineering" element={<Engineering />} />
-            <Route
+              <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/academics" element={<Academics />} />
+              <Route path="/academics/engineering" element={<Engineering />} />
+              <Route
               path="/academics/computer-applications"
               element={<ComputerApplications />}
             />
@@ -104,10 +105,11 @@ function App() {
             <Route path="/research" element={<Research />} />
             <Route path="/about" element={<About />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </main>
-      </div>
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
       </BrowserRouter>
     </ThemeProvider>
   );
