@@ -227,8 +227,8 @@ function QuickLinkCard({ link }: { link: QuickLink }) {
         </span>
         <ChevronRight className="h-4 w-4 text-transparent transition-colors duration-500 group-hover:text-brand-magenta" />
       </div>
-      <h3 className="mt-5 text-lg font-semibold font-gilroy">{link.title}</h3>
-      <p className="mt-3 text-sm text-muted-foreground font-graphik">
+      <h3 className="mt-5 text-lg font-semibold font-display">{link.title}</h3>
+      <p className="mt-3 text-sm text-muted-foreground font-body">
         {link.description}
       </p>
       <div className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-brand-magenta">
@@ -286,14 +286,14 @@ function HighlightCard({ highlight }: { highlight: Highlight }) {
         <Icon className="h-4 w-4" /> Highlight
       </div>
       <div className="absolute inset-x-0 bottom-0 p-5 text-white">
-        <h3 className="mb-2 text-lg font-semibold font-gilroy">
+        <h3 className="mb-2 text-lg font-semibold font-display">
           {highlight.title}
         </h3>
-        <p className="text-sm text-white/80 font-graphik">
+        <p className="text-sm text-white/80 font-body">
           {highlight.description}
         </p>
         {highlight.stat ? (
-          <div className="mt-3 text-xs uppercase tracking-wide text-white/70 font-graphik">
+          <div className="mt-3 text-xs uppercase tracking-wide text-white/70 font-body">
             {highlight.stat}
           </div>
         ) : null}
@@ -310,10 +310,10 @@ function SectionCardComponent({ section }: { section: SectionCard }) {
         <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-magenta/10 text-brand-magenta">
           <Icon className="h-5 w-5" />
         </span>
-        <CardTitle className="text-base font-gilroy">{section.title}</CardTitle>
+        <CardTitle className="text-base font-display">{section.title}</CardTitle>
       </CardHeader>
       <CardContent className="pt-0">
-        <CardDescription className="text-sm leading-relaxed text-muted-foreground font-graphik">
+        <CardDescription className="text-sm leading-relaxed text-muted-foreground font-body">
           {section.description}
         </CardDescription>
       </CardContent>
@@ -354,11 +354,11 @@ function ResourceCard({ resource }: { resource: Resource }) {
         <Badge className="bg-brand-magenta/15 text-brand-magenta">
           {resource.badge}
         </Badge>
-        <CardTitle className="mt-4 text-lg font-gilroy">
+        <CardTitle className="mt-4 text-lg font-display">
           {resource.title}
         </CardTitle>
       </CardHeader>
-      <CardContent className="space-y-5 text-sm text-muted-foreground font-graphik">
+      <CardContent className="space-y-5 text-sm text-muted-foreground font-body">
         <p>{resource.description}</p>
         <a
           href={resource.href}
@@ -391,14 +391,14 @@ export default function CDSIMER() {
           <div className="mx-auto max-w-7xl px-6">
             <div className="mb-6 inline-flex items-center rounded-full border border-brand-magenta/20 bg-brand-magenta/10 px-4 py-2">
               <Hospital className="mr-2 h-4 w-4 text-brand-magenta" />
-              <span className="text-sm font-medium text-brand-magenta font-gilroy">
+              <span className="text-sm font-medium text-brand-magenta font-display">
                 CDSIMER · DSU Medical Campus
               </span>
             </div>
-            <h1 className="mb-4 font-gilroy text-4xl leading-tight text-white md:text-6xl">
+            <h1 className="mb-4 font-display text-4xl leading-tight text-white md:text-6xl">
               Empowering Healthcare with Knowledge, Discovery & Healing
             </h1>
-            <p className="max-w-3xl text-white/90 font-graphik text-lg">
+            <p className="max-w-3xl text-white/90 font-body text-lg">
               CDSIMER blends a smart medical campus, tertiary care hospital and
               research innovation hub to drive excellence in patient care,
               education and community wellbeing.
@@ -440,8 +440,8 @@ export default function CDSIMER() {
               <Badge className="bg-brand-magenta/15 text-brand-magenta">
                 Key Shortcuts
               </Badge>
-              <h2 className="mt-4 font-gilroy text-3xl">Navigate CDSIMER</h2>
-              <p className="mt-3 max-w-2xl text-sm text-muted-foreground font-graphik">
+              <h2 className="mt-4 font-display text-3xl">Navigate CDSIMER</h2>
+              <p className="mt-3 max-w-2xl text-sm text-muted-foreground font-body">
                 Jump to programme pillars, admissions, research and campus life
                 resources shaping the CDSIMER experience.
               </p>
@@ -476,7 +476,7 @@ export default function CDSIMER() {
             >
               Campus Highlights
             </Badge>
-            <h2 className="mt-5 font-gilroy text-3xl md:text-4xl">
+            <h2 className="mt-5 font-display text-3xl md:text-4xl">
               Smart Campus. Tertiary Care. Translational Research.
             </h2>
           </div>
@@ -494,10 +494,10 @@ export default function CDSIMER() {
             <Badge className="bg-brand-magenta/15 text-brand-magenta">
               Academic & Care Pillars
             </Badge>
-            <h2 className="mt-4 font-gilroy text-3xl md:text-4xl">
+            <h2 className="mt-4 font-display text-3xl md:text-4xl">
               Holistic Medical Ecosystem
             </h2>
-            <p className="mt-3 text-sm text-muted-foreground font-graphik max-w-3xl mx-auto">
+            <p className="mt-3 text-sm text-muted-foreground font-body max-w-3xl mx-auto">
               CDSIMER unifies medical education, hospital services, research
               innovation and vibrant student life on a single connected campus.
             </p>
@@ -520,10 +520,10 @@ export default function CDSIMER() {
               <Badge className="bg-brand-magenta/15 text-brand-magenta">
                 Resources
               </Badge>
-              <h2 className="mt-4 font-gilroy text-3xl md:text-4xl">
+              <h2 className="mt-4 font-display text-3xl md:text-4xl">
                 Plan Your CDSIMER Journey
               </h2>
-              <p className="mt-3 text-sm text-muted-foreground font-graphik">
+              <p className="mt-3 text-sm text-muted-foreground font-body">
                 Access enquiry support, campus events, library resources and
                 video tours to experience CDSIMER before you arrive.
               </p>
@@ -549,10 +549,10 @@ export default function CDSIMER() {
       <section className="px-6 pb-20">
         <div className="mx-auto max-w-4xl text-center">
           <div className="rounded-3xl border border-brand-magenta/20 bg-brand-magenta/5 p-10">
-            <h3 className="mb-3 font-gilroy text-3xl">
+            <h3 className="mb-3 font-display text-3xl">
               Join a Purpose-Driven Medical Community
             </h3>
-            <p className="mb-6 text-muted-foreground font-graphik">
+            <p className="mb-6 text-muted-foreground font-body">
               Learn, heal and innovate on a campus where compassionate care
               meets cutting-edge technology and global vision.
             </p>
