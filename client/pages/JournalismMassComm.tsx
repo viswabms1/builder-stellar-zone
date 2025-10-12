@@ -197,14 +197,14 @@ function HighlightCard({ highlight }: { highlight: Highlight }) {
         <Icon className="h-4 w-4" /> CJMC USP
       </div>
       <div className="absolute inset-x-0 bottom-0 p-5 text-white">
-        <h3 className="mb-2 text-lg font-semibold font-gilroy">
+        <h3 className="mb-2 text-lg font-semibold font-display">
           {highlight.title}
         </h3>
-        <p className="text-sm text-white/80 font-graphik">
+        <p className="text-sm text-white/80 font-body">
           {highlight.description}
         </p>
         {highlight.stat ? (
-          <div className="mt-3 text-xs uppercase tracking-wide text-white/70 font-graphik">
+          <div className="mt-3 text-xs uppercase tracking-wide text-white/70 font-body">
             {highlight.stat}
           </div>
         ) : null}
@@ -220,11 +220,11 @@ function ProgrammeCard({ programme }: { programme: Programme }) {
         <Badge className="bg-brand-magenta/15 text-brand-magenta">
           {programme.level}
         </Badge>
-        <CardTitle className="mt-4 text-xl font-gilroy">
+        <CardTitle className="mt-4 text-xl font-display">
           {programme.name}
         </CardTitle>
       </CardHeader>
-      <CardContent className="text-sm text-muted-foreground font-graphik">
+      <CardContent className="text-sm text-muted-foreground font-body">
         {programme.description}
       </CardContent>
     </Card>
@@ -239,12 +239,12 @@ function ExperienceCard({ experience }: { experience: Experience }) {
         <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-magenta/10 text-brand-magenta">
           <Icon className="h-5 w-5" />
         </span>
-        <CardTitle className="text-base font-gilroy">
+        <CardTitle className="text-base font-display">
           {experience.title}
         </CardTitle>
       </CardHeader>
       <CardContent className="pt-0">
-        <CardDescription className="text-sm leading-relaxed text-muted-foreground font-graphik">
+        <CardDescription className="text-sm leading-relaxed text-muted-foreground font-body">
           {experience.description}
         </CardDescription>
       </CardContent>
@@ -259,11 +259,11 @@ function ResourceCard({ resource }: { resource: Resource }) {
         <Badge className="bg-brand-magenta/15 text-brand-magenta">
           {resource.badge}
         </Badge>
-        <CardTitle className="mt-4 text-lg font-gilroy">
+        <CardTitle className="mt-4 text-lg font-display">
           {resource.title}
         </CardTitle>
       </CardHeader>
-      <CardContent className="space-y-5 text-sm text-muted-foreground font-graphik">
+      <CardContent className="space-y-5 text-sm text-muted-foreground font-body">
         <p>{resource.description}</p>
         <a
           href={resource.href}
@@ -296,14 +296,14 @@ export default function JournalismMassComm() {
           <div className="mx-auto max-w-7xl px-6">
             <div className="mb-6 inline-flex items-center rounded-full border border-brand-magenta/20 bg-brand-magenta/10 px-4 py-2">
               <Film className="mr-2 h-4 w-4 text-brand-magenta" />
-              <span className="text-sm font-medium text-brand-magenta font-gilroy">
+              <span className="text-sm font-medium text-brand-magenta font-display">
                 School of Arts & Humanities · CJMC
               </span>
             </div>
-            <h1 className="mb-4 font-gilroy text-4xl leading-tight text-white md:text-6xl">
+            <h1 className="mb-4 font-display text-4xl leading-tight text-white md:text-6xl">
               Storytellers for the Now & Next
             </h1>
-            <p className="max-w-2xl text-white/90 font-graphik text-lg">
+            <p className="max-w-2xl text-white/90 font-body text-lg">
               Craft narratives across platforms with convergence labs, industry mentors and global collaborations at DSU's College of Journalism & Mass Communication.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
@@ -336,10 +336,10 @@ export default function JournalismMassComm() {
               <Badge className="bg-brand-magenta/15 text-brand-magenta">
                 Academic Pathways
               </Badge>
-              <h2 className="font-gilroy text-3xl md:text-4xl">
+              <h2 className="font-display text-3xl md:text-4xl">
                 Programmes shaping multimedia storytellers
               </h2>
-              <p className="text-sm text-muted-foreground font-graphik">
+              <p className="text-sm text-muted-foreground font-body">
                 Build expertise across reporting, filmmaking, podcasting and strategic communication through immersive studios, global collaborations and industry internships.
               </p>
               <div className="grid gap-4 sm:grid-cols-1">
@@ -349,10 +349,10 @@ export default function JournalismMassComm() {
               </div>
             </div>
             <div className="rounded-3xl border border-brand-magenta/25 bg-brand-magenta/10 p-8 shadow-[0_30px_120px_-50px_rgba(233,97,255,0.6)]">
-              <h3 className="font-gilroy text-2xl text-brand-magenta">
+              <h3 className="font-display text-2xl text-brand-magenta">
                 Programme Highlights
               </h3>
-              <ul className="mt-4 space-y-3 text-sm text-brand-magenta/90 font-graphik">
+              <ul className="mt-4 space-y-3 text-sm text-brand-magenta/90 font-body">
                 {PROGRAM_FEATURES.map((feature) => {
                   const Icon = feature.icon;
                   return (
@@ -387,7 +387,7 @@ export default function JournalismMassComm() {
             >
               Unique Strengths
             </Badge>
-            <h2 className="mt-5 font-gilroy text-3xl md:text-4xl">
+            <h2 className="mt-5 font-display text-3xl md:text-4xl">
               Why Creators Choose CJMC
             </h2>
           </div>
@@ -409,10 +409,10 @@ export default function JournalismMassComm() {
               <Badge className="bg-brand-magenta/15 text-brand-magenta">
                 Learning Experiences
               </Badge>
-              <h2 className="mt-4 font-gilroy text-3xl md:text-4xl">
+              <h2 className="mt-4 font-display text-3xl md:text-4xl">
                 Studios, Labs & Creative Pods
               </h2>
-              <p className="mt-3 text-sm text-muted-foreground font-graphik">
+              <p className="mt-3 text-sm text-muted-foreground font-body">
                 Immerse in production labs, podcast studios and storytelling residencies that bring journalistic narratives to life.
               </p>
             </div>
@@ -441,10 +441,10 @@ export default function JournalismMassComm() {
               <Badge className="bg-brand-magenta/15 text-brand-magenta">
                 Calendar & Resources
               </Badge>
-              <h2 className="mt-4 font-gilroy text-3xl md:text-4xl">
+              <h2 className="mt-4 font-display text-3xl md:text-4xl">
                 Stay in Sync with CJMC
               </h2>
-              <p className="mt-3 text-sm text-muted-foreground font-graphik">
+              <p className="mt-3 text-sm text-muted-foreground font-body">
                 Access calendars, industry overviews, career guides and galleries to plan your creative journey.
               </p>
             </div>
@@ -469,10 +469,10 @@ export default function JournalismMassComm() {
       <section className="px-6 pb-20">
         <div className="mx-auto max-w-4xl text-center">
           <div className="rounded-3xl border border-brand-magenta/20 bg-brand-magenta/5 p-10">
-            <h3 className="mb-3 font-gilroy text-3xl">
+            <h3 className="mb-3 font-display text-3xl">
               Tell Stories that Matter
             </h3>
-            <p className="mb-6 text-muted-foreground font-graphik">
+            <p className="mb-6 text-muted-foreground font-body">
               Join CJMC to amplify narratives, collaborate with creatives worldwide and graduate with a portfolio that resonates with industry.
             </p>
             <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
