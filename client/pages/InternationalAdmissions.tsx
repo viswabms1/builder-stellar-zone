@@ -565,7 +565,7 @@ function ApplySection() {
           >
             <a href="mailto:admissions@dsu.edu.in?subject=International%20Admissions%20Enquiry">
               Email Admissions
-              <MailIcon />
+              <Mail className="ml-2 h-5 w-5" />
             </a>
           </Button>
         </div>
