@@ -344,16 +344,16 @@ function StatCard({ stat }: { stat: Stat }) {
           <Icon className="h-5 w-5" />
         </span>
         <div>
-          <CardTitle className="text-2xl font-semibold font-gilroy">
+          <CardTitle className="text-2xl font-semibold font-display">
             {stat.value}
           </CardTitle>
-          <p className="text-sm text-muted-foreground font-graphik">
+          <p className="text-sm text-muted-foreground font-body">
             {stat.label}
           </p>
         </div>
       </CardHeader>
       <CardContent className="pt-0">
-        <CardDescription className="text-sm leading-relaxed text-muted-foreground font-graphik">
+        <CardDescription className="text-sm leading-relaxed text-muted-foreground font-body">
           {stat.description}
         </CardDescription>
       </CardContent>
@@ -370,16 +370,16 @@ function LifestyleFeatureCard({ feature }: { feature: LifestyleFeature }) {
           <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-blue/10 text-brand-blue">
             <Icon className="h-5 w-5" />
           </span>
-          <CardTitle className="text-xl font-semibold font-gilroy leading-tight">
+          <CardTitle className="text-xl font-semibold font-display leading-tight">
             {feature.title}
           </CardTitle>
         </div>
-        <CardDescription className="mt-4 text-sm leading-relaxed text-muted-foreground font-graphik">
+        <CardDescription className="mt-4 text-sm leading-relaxed text-muted-foreground font-body">
           {feature.description}
         </CardDescription>
       </CardHeader>
       <CardContent className="pt-0 space-y-4">
-        <ul className="space-y-3 text-sm text-muted-foreground font-graphik">
+        <ul className="space-y-3 text-sm text-muted-foreground font-body">
           {feature.points.map((point) => (
             <li key={point} className="flex items-start gap-2">
               <ChevronRight className="mt-1 h-4 w-4 text-brand-magenta" />
@@ -412,16 +412,16 @@ function ProgrammeCard({ programme }: { programme: Programme }) {
           <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-orange/15 text-brand-orange">
             <Icon className="h-5 w-5" />
           </span>
-          <CardTitle className="text-lg font-semibold font-gilroy leading-tight">
+          <CardTitle className="text-lg font-semibold font-display leading-tight">
             {programme.title}
           </CardTitle>
         </div>
-        <CardDescription className="mt-4 text-sm leading-relaxed text-muted-foreground font-graphik">
+        <CardDescription className="mt-4 text-sm leading-relaxed text-muted-foreground font-body">
           {programme.description}
         </CardDescription>
       </CardHeader>
       <CardContent className="pt-0">
-        <ul className="space-y-2 text-sm text-muted-foreground font-graphik">
+        <ul className="space-y-2 text-sm text-muted-foreground font-body">
           {programme.highlights.map((item) => (
             <li key={item} className="flex items-start gap-2">
               <ChevronRight className="mt-1 h-4 w-4 text-brand-magenta" />
@@ -443,10 +443,10 @@ function ClubCard({ club }: { club: Club }) {
           <Icon className="h-5 w-5" />
         </span>
         <div>
-          <CardTitle className="text-lg font-semibold font-gilroy leading-tight">
+          <CardTitle className="text-lg font-semibold font-display leading-tight">
             {club.title}
           </CardTitle>
-          <CardDescription className="mt-3 text-sm leading-relaxed text-muted-foreground font-graphik">
+          <CardDescription className="mt-3 text-sm leading-relaxed text-muted-foreground font-body">
             {club.description}
           </CardDescription>
         </div>
@@ -465,8 +465,8 @@ function GalleryCard({ image }: { image: GalleryImage }) {
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-transparent" />
       <div className="absolute inset-x-0 bottom-0 p-5 text-white">
-        <h3 className="text-lg font-semibold font-gilroy">{image.title}</h3>
-        <p className="mt-2 text-sm text-white/80 font-graphik">
+        <h3 className="text-lg font-semibold font-display">{image.title}</h3>
+        <p className="mt-2 text-sm text-white/80 font-body">
           {image.description}
         </p>
       </div>
@@ -481,12 +481,12 @@ function ResourceCard({ resource }: { resource: ResourceLink }) {
         <Badge className="bg-brand-magenta/15 text-brand-magenta">
           {resource.badge}
         </Badge>
-        <CardTitle className="mt-4 text-lg font-gilroy leading-tight">
+        <CardTitle className="mt-4 text-lg font-display leading-tight">
           {resource.title}
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4 pt-0">
-        <CardDescription className="text-sm leading-relaxed text-muted-foreground font-graphik">
+        <CardDescription className="text-sm leading-relaxed text-muted-foreground font-body">
           {resource.description}
         </CardDescription>
         <a
@@ -520,15 +520,15 @@ export default function CDSIMERLife() {
           <div className="mx-auto max-w-7xl px-6">
             <div className="mb-4 inline-flex items-center rounded-full border border-white/20 bg-white/10 px-4 py-2 backdrop-blur">
               <Sparkle className="mr-2 h-4 w-4 text-white" />
-              <span className="text-sm font-medium text-white/90 font-gilroy">
+              <span className="text-sm font-medium text-white/90 font-display">
                 Life at CDSIMER
               </span>
             </div>
-            <h1 className="max-w-3xl text-4xl font-gilroy leading-tight text-white md:text-6xl">
+            <h1 className="max-w-3xl text-4xl font-display leading-tight text-white md:text-6xl">
               Discover Community, Culture & Wellbeing on a Vibrant Medical
               Campus
             </h1>
-            <p className="mt-5 max-w-2xl text-white/90 font-graphik text-lg">
+            <p className="mt-5 max-w-2xl text-white/90 font-body text-lg">
               From dynamic hostels and multi-cuisine dining to festivals, sports
               and outreach, CDSIMER curates experiences that nurture
               compassionate physicians and lifelong learners.
@@ -579,10 +579,10 @@ export default function CDSIMERLife() {
             >
               Campus Highlights
             </Badge>
-            <h2 className="mt-6 text-3xl font-gilroy text-foreground md:text-4xl">
+            <h2 className="mt-6 text-3xl font-display text-foreground md:text-4xl">
               A Holistic Residential Experience Built Around You
             </h2>
-            <p className="mt-4 text-sm text-muted-foreground font-graphik max-w-3xl mx-auto">
+            <p className="mt-4 text-sm text-muted-foreground font-body max-w-3xl mx-auto">
               Purposeful spaces, supportive communities and wellness ecosystems
               empower students to balance rigorous academics with meaningful
               life experiences.
@@ -602,10 +602,10 @@ export default function CDSIMERLife() {
             <Badge className="bg-brand-magenta/15 text-brand-magenta">
               Residential Life
             </Badge>
-            <h2 className="mt-5 text-3xl font-gilroy md:text-4xl">
+            <h2 className="mt-5 text-3xl font-display md:text-4xl">
               Live, Learn and Thrive Together
             </h2>
-            <p className="mt-4 text-sm text-muted-foreground font-graphik max-w-3xl mx-auto">
+            <p className="mt-4 text-sm text-muted-foreground font-body max-w-3xl mx-auto">
               Connected residences, dining experiences and support services
               create a nurturing home away from home for future healthcare
               leaders.
@@ -626,10 +626,10 @@ export default function CDSIMERLife() {
               <Badge className="bg-brand-orange/15 text-brand-orange">
                 Programmes & Engagement
               </Badge>
-              <h2 className="mt-4 text-3xl font-gilroy md:text-4xl">
+              <h2 className="mt-4 text-3xl font-display md:text-4xl">
                 Wellness, Creativity & Social Impact
               </h2>
-              <p className="mt-3 text-sm text-muted-foreground font-graphik max-w-2xl">
+              <p className="mt-3 text-sm text-muted-foreground font-body max-w-2xl">
                 Sports academies, cultural showcases and community outreach
                 immerse every CDSIMER student in holistic growth and responsible
                 citizenship.
@@ -659,10 +659,10 @@ export default function CDSIMERLife() {
             <Badge className="bg-brand-blue/15 text-brand-blue">
               Clubs & Societies
             </Badge>
-            <h2 className="mt-5 text-3xl font-gilroy md:text-4xl">
+            <h2 className="mt-5 text-3xl font-display md:text-4xl">
               Lead, Perform, Serve and Innovate
             </h2>
-            <p className="mt-4 text-sm text-muted-foreground font-graphik max-w-3xl mx-auto">
+            <p className="mt-4 text-sm text-muted-foreground font-body max-w-3xl mx-auto">
               Join multidisciplinary communities that celebrate curiosity,
               service and collaboration across the CDSIMER campus.
             </p>
@@ -681,10 +681,10 @@ export default function CDSIMERLife() {
             <Badge className="bg-brand-magenta/15 text-brand-magenta">
               Campus Moments
             </Badge>
-            <h2 className="mt-5 text-3xl font-gilroy md:text-4xl">
+            <h2 className="mt-5 text-3xl font-display md:text-4xl">
               Snapshots from a Dynamic Campus
             </h2>
-            <p className="mt-4 text-sm text-muted-foreground font-graphik max-w-3xl mx-auto">
+            <p className="mt-4 text-sm text-muted-foreground font-body max-w-3xl mx-auto">
               Explore everyday scenes that reflect camaraderie, creativity and
               the pursuit of excellence across CDSIMER.
             </p>
@@ -704,10 +704,10 @@ export default function CDSIMERLife() {
               <Badge className="bg-brand-magenta/15 text-brand-magenta">
                 Key Resources
               </Badge>
-              <h2 className="mt-4 text-3xl font-gilroy md:text-4xl">
+              <h2 className="mt-4 text-3xl font-display md:text-4xl">
                 Plan Your Life at CDSIMER
               </h2>
-              <p className="mt-3 text-sm text-muted-foreground font-graphik">
+              <p className="mt-3 text-sm text-muted-foreground font-body">
                 Download handbooks, calendars and support resources to prepare
                 for a transformative residential journey.
               </p>
@@ -735,10 +735,10 @@ export default function CDSIMERLife() {
           <Card className="border border-border/40 bg-card/60 backdrop-blur">
             <CardContent className="flex flex-col gap-6 p-8 md:flex-row md:items-center md:justify-between">
               <div>
-                <h3 className="text-2xl font-gilroy">
+                <h3 className="text-2xl font-display">
                   Ready to immerse yourself in life at CDSIMER?
                 </h3>
-                <p className="mt-2 max-w-2xl text-sm text-muted-foreground font-graphik">
+                <p className="mt-2 max-w-2xl text-sm text-muted-foreground font-body">
                   Connect with the Student Affairs team for accommodation,
                   clubs, cultural festivals and wellbeing initiatives tailored
                   to your goals.
@@ -751,10 +751,10 @@ export default function CDSIMERLife() {
                       className="inline-flex items-center gap-2 rounded-full border border-brand-magenta/30 px-4 py-2 text-sm text-brand-magenta transition hover:bg-brand-magenta/10"
                     >
                       <item.icon className="h-4 w-4" />
-                      <span className="font-medium font-gilroy">
+                      <span className="font-medium font-display">
                         {item.label}:
                       </span>
-                      <span className="font-graphik">{item.value}</span>
+                      <span className="font-body">{item.value}</span>
                     </a>
                   ))}
                 </div>
