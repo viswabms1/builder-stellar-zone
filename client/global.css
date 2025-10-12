@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -111,16 +113,16 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Gilroy', 'Inter', 'Graphik', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Inter', 'Poppins', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
   }
 
-  /* Gilroy Font Fallback - Using Inter as web-safe alternative */
-  .font-gilroy {
-    font-family: 'Gilroy', 'Inter', sans-serif;
+  /* Typography utility classes */
+  .font-display {
+    font-family: 'Poppins', 'Inter', sans-serif;
   }
 
-  .font-graphik {
-    font-family: 'Graphik', 'Inter', sans-serif;
+  .font-body {
+    font-family: 'Inter', 'Poppins', sans-serif;
   }
 
   /* Brand Typography Styles */
@@ -128,40 +130,40 @@
     font-size: 3.5rem; /* 56px */
     line-height: 4rem; /* 64px */
     letter-spacing: -0.04em; /* -4% tracking */
-    font-weight: 400; /* Gilroy Regular */
-    font-family: 'Gilroy', 'Inter', sans-serif;
+    font-weight: 500; /* Poppins Medium */
+    font-family: 'Poppins', 'Inter', sans-serif;
   }
 
   .headline-2 {
     font-size: 2.5rem; /* 40px */
     line-height: 3rem; /* 48px */
     letter-spacing: -0.04em; /* -4% tracking */
-    font-weight: 400; /* Gilroy Regular */
-    font-family: 'Gilroy', 'Inter', sans-serif;
+    font-weight: 500; /* Poppins Medium */
+    font-family: 'Poppins', 'Inter', sans-serif;
   }
 
   .headline-3 {
     font-size: 2.25rem; /* 36px */
     line-height: 2.625rem; /* 42px */
     letter-spacing: -0.04em; /* -4% tracking */
-    font-weight: 500; /* Gilroy Medium */
-    font-family: 'Gilroy', 'Inter', sans-serif;
+    font-weight: 600; /* Poppins SemiBold */
+    font-family: 'Poppins', 'Inter', sans-serif;
   }
 
   .headline-4 {
     font-size: 1.75rem; /* 28px */
     line-height: 2.25rem; /* 36px */
     letter-spacing: -0.02em; /* -2% tracking */
-    font-weight: 700; /* Gilroy Bold */
-    font-family: 'Gilroy', 'Inter', sans-serif;
+    font-weight: 700; /* Poppins Bold */
+    font-family: 'Poppins', 'Inter', sans-serif;
   }
 
   .subheadline {
     font-size: 1.5rem; /* 24px */
     line-height: 2rem; /* 32px */
     letter-spacing: -0.04em; /* -4% tracking */
-    font-weight: 400; /* Gilroy Regular */
-    font-family: 'Gilroy', 'Inter', sans-serif;
+    font-weight: 400; /* Poppins Regular */
+    font-family: 'Poppins', 'Inter', sans-serif;
   }
 
   /* Responsive typography */
