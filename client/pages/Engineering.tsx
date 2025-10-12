@@ -366,43 +366,59 @@ function DepartmentCard({
   const wrapperClasses = `group block h-full rounded-3xl ${
     department.featured ? "lg:col-span-6" : "lg:col-span-3"
   } focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-magenta focus-visible:ring-offset-2 focus-visible:ring-offset-background`;
+  const overlayClasses = department.overlay ??
+    "bg-gradient-to-t from-black/85 via-black/50 to-transparent";
+  const badgeClasses = `inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs uppercase tracking-wide ${
+    department.badgeClass ?? "bg-white/15 text-white/80 backdrop-blur"
+  }`;
+  const panelClasses = `rounded-3xl border border-white/15 p-6 shadow-[0_25px_80px_-35px_rgba(255,255,255,0.45)] transition-colors duration-500 ${
+    department.panelClass ?? "bg-black/60 backdrop-blur-lg"
+  }`;
 
   const content = (
     <div
-      className={`relative flex h-full flex-col justify-end overflow-hidden rounded-3xl border border-border/40 bg-card/40 backdrop-blur-sm transition-all duration-700 hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-magenta/10 ${
-        department.featured ? "min-h-[340px]" : "min-h-[280px]"
+      className={`relative flex h-full flex-col justify-end overflow-hidden rounded-3xl border border-white/10 bg-black/10 backdrop-blur-sm transition-all duration-700 hover:-translate-y-1 hover:shadow-2xl hover:shadow-brand-magenta/20 ${
+        department.featured ? "min-h-[360px]" : "min-h-[300px]"
       }`}
     >
       <img
         src={department.image}
         alt={department.name}
+        loading="lazy"
         className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-transparent" />
-      <div className="absolute left-6 top-6 inline-flex items-center rounded-full bg-white/10 px-3 py-1 text-xs uppercase tracking-wide text-white/80 backdrop-blur">
+      <div className={`absolute inset-0 ${overlayClasses}`} />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
+      <div className={`absolute left-6 top-6 ${badgeClasses}`}>
         {department.area}
       </div>
-      <div className="relative z-10 space-y-5 p-6 text-white">
-        <div>
-          <h3 className="font-gilroy text-2xl leading-tight">{department.name}</h3>
-          <p className="mt-3 text-sm text-white/80 font-graphik">
-            {department.description}
-          </p>
-        </div>
-        <div className="flex flex-wrap gap-2">
-          {department.highlights.map((item) => (
-            <span
-              key={item}
-              className="rounded-full border border-white/30 bg-white/10 px-3 py-1 text-xs uppercase tracking-wide text-white/80"
-            >
-              {item}
+      <div className="relative z-10 flex h-full flex-col justify-end p-6 text-white">
+        <div className={panelClasses}>
+          <div className="space-y-4">
+            <div>
+              <h3 className="font-gilroy text-2xl leading-tight text-white">
+                {department.name}
+              </h3>
+              <p className="mt-3 text-sm text-white/85 font-graphik">
+                {department.description}
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {department.highlights.map((item) => (
+                <span
+                  key={item}
+                  className="rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs uppercase tracking-wide text-white/85"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+            <span className="inline-flex items-center gap-2 text-sm font-medium text-white/90 transition-colors group-hover:text-brand-magenta">
+              Explore department
+              <ChevronRight className="h-4 w-4 transition-colors group-hover:text-brand-magenta" />
             </span>
-          ))}
+          </div>
         </div>
-        <span className="inline-flex items-center gap-2 text-sm font-medium text-white transition-colors group-hover:text-brand-magenta">
-          Explore department
-          <ChevronRight className="h-4 w-4 transition-colors group-hover:text-brand-magenta" />
-        </span>
       </div>
     </div>
   );
