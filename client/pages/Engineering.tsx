@@ -4,6 +4,7 @@ import {
   Award,
   Beaker,
   ChevronRight,
+  Cpu,
   FlaskConical,
   GraduationCap,
   Microscope,
@@ -895,7 +896,7 @@ export default function Engineering() {
               <div>
                 <div className="text-muted-foreground">Office Hours</div>
                 <div className="font-medium text-foreground">
-                  Mon–Fri · 9:00 AM – 5:30 PM
+                  Mon–Fri �� 9:00 AM – 5:30 PM
                 </div>
               </div>
             </CardContent>
