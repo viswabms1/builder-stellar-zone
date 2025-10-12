@@ -4,6 +4,7 @@ import Footer from "./components/Footer";
 import Index from "./pages/Index";
 import Academics from "./pages/Academics";
 import Admissions from "./pages/Admissions";
+import Eligibility from "./pages/Eligibility";
 import CampusLife from "./pages/CampusLife";
 import Examinations from "./pages/Examinations";
 import Research from "./pages/Research";
@@ -105,6 +106,7 @@ function App() {
               />
               <Route path="/faculty-directory" element={<FacultyDirectory />} />
               <Route path="/admissions" element={<Admissions />} />
+              <Route path="/eligibility" element={<Eligibility />} />
               <Route path="/campus-life" element={<CampusLife />} />
               <Route path="/examinations" element={<Examinations />} />
               <Route path="/research" element={<Research />} />
