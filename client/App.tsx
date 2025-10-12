@@ -100,6 +100,7 @@ function App() {
               path="/academics/engineering/computer-science/faculty/:slug"
               element={<FacultyProfile />}
             />
+            <Route path="/faculty-directory" element={<FacultyDirectory />} />
             <Route path="/admissions" element={<Admissions />} />
             <Route path="/campus-life" element={<CampusLife />} />
             <Route path="/examinations" element={<Examinations />} />
