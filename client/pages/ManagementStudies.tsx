@@ -209,39 +209,6 @@ function HighlightCard({ highlight }: { highlight: Highlight }) {
   );
 }
 
-function ProgrammeCard({ programme }: { programme: Programme }) {
-  const content = (
-    <Card className="h-full rounded-3xl border border-border/50 bg-card/50 backdrop-blur-sm">
-      <CardHeader>
-        <Badge className="bg-brand-magenta/15 text-brand-magenta">
-          {programme.level}
-        </Badge>
-        <CardTitle className="mt-4 text-xl font-gilroy">
-          {programme.name}
-        </CardTitle>
-      </CardHeader>
-      <CardContent className="space-y-4 text-sm text-muted-foreground font-graphik">
-        <p>{programme.focus}</p>
-      </CardContent>
-    </Card>
-  );
-
-  if (!programme.link) {
-    return content;
-  }
-
-  return (
-    <a
-      href={programme.link}
-      target="_blank"
-      rel="noreferrer"
-      className="block h-full transform transition-all duration-500 hover:-translate-y-1"
-    >
-      {content}
-    </a>
-  );
-}
-
 function AdvantageCard({ advantage }: { advantage: Advantage }) {
   const Icon = advantage.icon;
   return (
