@@ -87,49 +87,57 @@ const admissionCodes = [
 const quickLinks: QuickLink[] = [
   {
     title: "Direct Admissions – 2025",
-    description: "Secure your seat through the non-DSAT window and confirm early.",
+    description:
+      "Secure your seat through the non-DSAT window and confirm early.",
     href: "https://admissions.dsu.edu.in/?utm_source=Admissions%20Tab&utm_medium=Website&utm_campaign=WS-Admissions%202024",
     icon: Sparkles,
   },
   {
     title: "Programs, Eligibility & Fee Structure",
-    description: "Review intake, qualifying exams, and detailed fee statements for every course.",
+    description:
+      "Review intake, qualifying exams, and detailed fee statements for every course.",
     href: "https://www.dsu.edu.in/eligibility",
     icon: BookOpen,
   },
   {
     title: "Hostel Fee",
-    description: "Plan residential life with the latest accommodation and dining charges.",
+    description:
+      "Plan residential life with the latest accommodation and dining charges.",
     href: "https://www.dsu.edu.in/images/PDF/Hostel_Fee_2025_1.pdf",
     icon: Building,
   },
   {
     title: "International Admissions",
-    description: "Dedicated guidance for foreign nationals, NRIs, and PIO applicants.",
+    description:
+      "Dedicated guidance for foreign nationals, NRIs, and PIO applicants.",
     href: "https://www.dsu.edu.in/international/",
     icon: Globe,
   },
   {
     title: "Online Degree",
-    description: "Explore flexible DSU Online programs with industry-aligned curricula.",
+    description:
+      "Explore flexible DSU Online programs with industry-aligned curricula.",
     href: "https://apply.dsuonline.com/",
     icon: Laptop,
   },
   {
     title: "Admission Helpline",
-    description: "Reach experienced counselors for personalized admission assistance.",
+    description:
+      "Reach experienced counselors for personalized admission assistance.",
     href: "https://www.dsu.edu.in/admission/helpline",
     icon: PhoneCall,
   },
   {
     title: "FAQs",
-    description: "Find detailed answers to DSAT, eligibility, document, and process queries.",
+    description:
+      "Find detailed answers to DSAT, eligibility, document, and process queries.",
     href: "https://www.dsu.edu.in/images/Admission/FAQs-DSAT-DSU-2020.pdf",
     icon: Info,
   },
   {
     title: "Admission Closing Dates",
-    description: "Track key deadlines for applications, counseling, and confirmation.",
+    description:
+      "Track key deadlines for applications, counseling, and confirmation.",
     href: "https://www.dsu.edu.in/admission-lastdates",
     icon: CalendarCheck,
   },
@@ -353,7 +361,9 @@ function HeroSection() {
           Forge Your Future with Dayananda Sagar University
         </h1>
         <p className="mt-6 text-lg text-muted-foreground md:text-xl">
-          Choose from industry-aligned undergraduate, postgraduate, doctoral, and online programs with expert mentoring, modern labs, and global exposure.
+          Choose from industry-aligned undergraduate, postgraduate, doctoral,
+          and online programs with expert mentoring, modern labs, and global
+          exposure.
         </p>
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Button
@@ -407,9 +417,12 @@ function QuickLinksSection() {
     <section className="px-6 py-16">
       <div className="mx-auto max-w-6xl">
         <div className="mb-10 text-center">
-          <h2 className="text-3xl font-bold md:text-4xl">Start with the Essentials</h2>
+          <h2 className="text-3xl font-bold md:text-4xl">
+            Start with the Essentials
+          </h2>
           <p className="mt-3 text-lg text-muted-foreground">
-            Access the most requested admission resources, deadlines, and application pathways in one place.
+            Access the most requested admission resources, deadlines, and
+            application pathways in one place.
           </p>
         </div>
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
@@ -457,9 +470,13 @@ function AdmissionRoutesSection() {
     <section className="bg-gradient-to-br from-orange-500/5 via-red-500/5 to-background px-6 py-16">
       <div className="mx-auto max-w-6xl">
         <div className="mb-10 text-center">
-          <h2 className="text-3xl font-bold md:text-4xl">Choose Your Admission Pathway</h2>
+          <h2 className="text-3xl font-bold md:text-4xl">
+            Choose Your Admission Pathway
+          </h2>
           <p className="mt-3 text-lg text-muted-foreground">
-            Whether you are an incoming undergraduate, postgraduate, lateral entrant, or international learner, DSU has a dedicated channel for you.
+            Whether you are an incoming undergraduate, postgraduate, lateral
+            entrant, or international learner, DSU has a dedicated channel for
+            you.
           </p>
         </div>
         <div className="grid gap-7 md:grid-cols-2 xl:grid-cols-3">
@@ -482,7 +499,10 @@ function AdmissionRoutesSection() {
               <CardContent className="mt-auto space-y-4">
                 <div className="space-y-3">
                   {track.highlights.map((point) => (
-                    <div key={point} className="flex items-start gap-3 text-sm text-muted-foreground">
+                    <div
+                      key={point}
+                      className="flex items-start gap-3 text-sm text-muted-foreground"
+                    >
                       <ListChecks className="mt-0.5 h-4 w-4 text-orange-500" />
                       <span>{point}</span>
                     </div>
@@ -511,9 +531,12 @@ function BrochureSection() {
     <section className="px-6 py-16">
       <div className="mx-auto max-w-6xl">
         <div className="mb-10 text-center">
-          <h2 className="text-3xl font-bold md:text-4xl">Program Guides &amp; Brochures</h2>
+          <h2 className="text-3xl font-bold md:text-4xl">
+            Program Guides &amp; Brochures
+          </h2>
           <p className="mt-3 text-lg text-muted-foreground">
-            Download detailed brochures to understand curricula, laboratories, internships, and placement pathways for every DSU school.
+            Download detailed brochures to understand curricula, laboratories,
+            internships, and placement pathways for every DSU school.
           </p>
         </div>
         <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
@@ -542,7 +565,9 @@ function BrochureSection() {
                   </a>
                 </Button>
                 <p className="text-xs text-muted-foreground">
-                  Each brochure lists eligibility, semester-wise credits, laboratory infrastructure, internship partners, and placement support milestones.
+                  Each brochure lists eligibility, semester-wise credits,
+                  laboratory infrastructure, internship partners, and placement
+                  support milestones.
                 </p>
               </CardContent>
             </Card>
@@ -554,10 +579,12 @@ function BrochureSection() {
 }
 
 function AIEngagementSection() {
-  const [chatMessages, setChatMessages] = useState<ChatMessage[]>([{
-    sender: "DSU AI Advisor",
-    text: "Hello! I can guide you through DSU admissions, deadlines, scholarships, and campus services. Ask me anything to get started.",
-  }]);
+  const [chatMessages, setChatMessages] = useState<ChatMessage[]>([
+    {
+      sender: "DSU AI Advisor",
+      text: "Hello! I can guide you through DSU admissions, deadlines, scholarships, and campus services. Ask me anything to get started.",
+    },
+  ]);
   const [chatInput, setChatInput] = useState("");
   const [voiceStatus, setVoiceStatus] = useState<string | null>(null);
   const [voiceActive, setVoiceActive] = useState(false);
@@ -691,14 +718,17 @@ function AIEngagementSection() {
             AI Chat &amp; Voice Assistance Hub
           </h2>
           <p className="mt-3 text-lg text-muted-foreground">
-            Engage with DSU&apos;s AI-powered chat bot for quick answers or launch the guided voice assistant for a hands-free overview.
+            Engage with DSU&apos;s AI-powered chat bot for quick answers or
+            launch the guided voice assistant for a hands-free overview.
           </p>
         </div>
         <div className="grid gap-8 lg:grid-cols-2">
           <Card className="border border-orange-500/20 bg-card/70 backdrop-blur-sm">
             <CardHeader className="flex flex-row items-center justify-between">
               <div>
-                <CardTitle className="text-2xl font-semibold">AI Chat Assistant</CardTitle>
+                <CardTitle className="text-2xl font-semibold">
+                  AI Chat Assistant
+                </CardTitle>
                 <CardDescription className="text-sm text-muted-foreground">
                   Conversational guidance tailored to DSU admissions pathways.
                 </CardDescription>
@@ -756,9 +786,12 @@ function AIEngagementSection() {
           <Card className="border border-orange-500/20 bg-card/70 backdrop-blur-sm">
             <CardHeader className="flex flex-row items-center justify-between">
               <div>
-                <CardTitle className="text-2xl font-semibold">Voice Assistant</CardTitle>
+                <CardTitle className="text-2xl font-semibold">
+                  Voice Assistant
+                </CardTitle>
                 <CardDescription className="text-sm text-muted-foreground">
-                  Receive a narrated briefing covering codes, timelines, and support channels.
+                  Receive a narrated briefing covering codes, timelines, and
+                  support channels.
                 </CardDescription>
               </div>
               <Headphones className="h-8 w-8 text-orange-500" />
@@ -766,10 +799,13 @@ function AIEngagementSection() {
             <CardContent className="space-y-6">
               <div className="rounded-2xl border border-orange-500/20 bg-background/80 p-4 text-sm leading-relaxed text-muted-foreground">
                 <p>
-                  Activate the voice guide to hear a curated summary of DSU admissions. Use it in counseling kiosks or during open houses for quick orientation.
+                  Activate the voice guide to hear a curated summary of DSU
+                  admissions. Use it in counseling kiosks or during open houses
+                  for quick orientation.
                 </p>
                 <div className="mt-4 rounded-xl bg-orange-500/10 p-3 text-xs text-orange-500">
-                  Try saying: “Play the DSU admissions briefing” or “Tell me the admission codes”.
+                  Try saying: “Play the DSU admissions briefing” or “Tell me the
+                  admission codes”.
                 </div>
               </div>
               <div className="flex flex-wrap items-center gap-3">
@@ -779,7 +815,9 @@ function AIEngagementSection() {
                   onClick={handleVoiceStart}
                   disabled={voiceActive}
                 >
-                  {voiceActive ? "Voice Assistant Running" : "Start Voice Assistant"}
+                  {voiceActive
+                    ? "Voice Assistant Running"
+                    : "Start Voice Assistant"}
                   <Mic className="h-4 w-4" />
                 </Button>
                 <Button
@@ -798,7 +836,9 @@ function AIEngagementSection() {
                 </div>
               )}
               <div>
-                <p className="text-sm font-semibold text-foreground">Request a call-back</p>
+                <p className="text-sm font-semibold text-foreground">
+                  Request a call-back
+                </p>
                 <Textarea
                   placeholder="Share your preferred time and query. Our team will respond within one business day."
                   className="mt-2 rounded-xl border-orange-500/30"
@@ -830,9 +870,12 @@ function ContactSection() {
     <section className="px-6 py-16">
       <div className="mx-auto max-w-6xl space-y-10">
         <div className="text-center">
-          <h2 className="text-3xl font-bold md:text-4xl">Connect with Our Admissions Team</h2>
+          <h2 className="text-3xl font-bold md:text-4xl">
+            Connect with Our Admissions Team
+          </h2>
           <p className="mt-3 text-lg text-muted-foreground">
-            Visit a DSU campus, schedule virtual counseling, or call the helpline numbers below for real-time assistance.
+            Visit a DSU campus, schedule virtual counseling, or call the
+            helpline numbers below for real-time assistance.
           </p>
         </div>
         <div className="grid gap-6 lg:grid-cols-3">
@@ -885,13 +928,19 @@ function ContactSection() {
                 </CardTitle>
               </div>
               <CardDescription className="mt-2 text-sm text-muted-foreground">
-                Reach specialized teams to clarify program requisites, counseling logistics, and post-admission onboarding.
+                Reach specialized teams to clarify program requisites,
+                counseling logistics, and post-admission onboarding.
               </CardDescription>
             </CardHeader>
             <CardContent className="grid gap-4 sm:grid-cols-2">
               {helplineGroups.map((group) => (
-                <div key={group.label} className="rounded-2xl border border-orange-500/20 bg-background/70 p-4">
-                  <p className="text-sm font-semibold text-foreground">{group.label}</p>
+                <div
+                  key={group.label}
+                  className="rounded-2xl border border-orange-500/20 bg-background/70 p-4"
+                >
+                  <p className="text-sm font-semibold text-foreground">
+                    {group.label}
+                  </p>
                   <div className="mt-2 space-y-1 text-xs text-muted-foreground">
                     {group.entries.map((entry) => (
                       <p key={`${group.label}-${entry}`}>{entry}</p>
@@ -910,18 +959,23 @@ function ContactSection() {
                 </CardTitle>
               </div>
               <CardDescription className="mt-2 text-sm text-muted-foreground">
-                Connect with zonal coordinators and global offices for localized support.
+                Connect with zonal coordinators and global offices for localized
+                support.
               </CardDescription>
             </CardHeader>
             <CardContent className="grid gap-3 sm:grid-cols-2">
               {regionalContacts.map((item) => (
-                <div key={item.region} className="rounded-2xl border border-orange-500/20 bg-background/70 p-4 text-sm">
+                <div
+                  key={item.region}
+                  className="rounded-2xl border border-orange-500/20 bg-background/70 p-4 text-sm"
+                >
                   <p className="font-semibold text-foreground">{item.region}</p>
                   <p className="mt-1 text-muted-foreground">{item.contact}</p>
                 </div>
               ))}
               <div className="sm:col-span-2 rounded-2xl border border-orange-500/20 bg-orange-500/10 p-4 text-sm text-orange-500">
-                For scholarship or sponsorship collaborations, email admissions@dsu.edu.in with program and applicant details.
+                For scholarship or sponsorship collaborations, email
+                admissions@dsu.edu.in with program and applicant details.
               </div>
             </CardContent>
           </Card>
@@ -943,11 +997,16 @@ function SupportCallout() {
           Ready to Personalize Your Admission Journey?
         </h2>
         <p className="mt-4 text-lg text-muted-foreground">
-          Our counselors are available across campuses, over phone, chat, and voice assistance. Book a session to design your academic roadmap with DSU.
+          Our counselors are available across campuses, over phone, chat, and
+          voice assistance. Book a session to design your academic roadmap with
+          DSU.
         </p>
         <div className="mt-6 space-y-3">
           {supportHighlights.map((highlight) => (
-            <div key={highlight} className="flex items-center justify-center gap-2 text-sm text-orange-500">
+            <div
+              key={highlight}
+              className="flex items-center justify-center gap-2 text-sm text-orange-500"
+            >
               <ListChecks className="h-4 w-4" />
               <span>{highlight}</span>
             </div>
@@ -970,7 +1029,11 @@ function SupportCallout() {
             className="rounded-2xl border-2 border-orange-500 px-8 py-6 text-lg font-semibold text-orange-500"
             asChild
           >
-            <a href="https://www.dsu.edu.in/admission/helpline" target="_blank" rel="noreferrer">
+            <a
+              href="https://www.dsu.edu.in/admission/helpline"
+              target="_blank"
+              rel="noreferrer"
+            >
               View Helpline Details
               <ExternalLink className="h-5 w-5" />
             </a>

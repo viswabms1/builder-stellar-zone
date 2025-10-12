@@ -98,7 +98,8 @@ type RegionalContact = {
 const schools: School[] = [
   {
     name: "School of Engineering",
-    tagline: "Yearly fee structure 2025-26 with DSAT, Comed-K, Uni-GAUGE, CET, and direct admission pathways.",
+    tagline:
+      "Yearly fee structure 2025-26 with DSAT, Comed-K, Uni-GAUGE, CET, and direct admission pathways.",
     icon: Layers,
     categories: [
       {
@@ -163,7 +164,9 @@ const schools: School[] = [
             level: "PG",
             eligibility:
               "B.Tech in ECE, CSE, ISE, Biomedical, Medical Electronics, Electronics & Instrumentation, EEE, Telecommunications, Mechatronics, or related circuit branches with minimum 50% marks (45% for SC/ST & OBC).",
-            fees: [{ label: "Total (Incl. Library Deposit)", amount: "₹1,62,000" }],
+            fees: [
+              { label: "Total (Incl. Library Deposit)", amount: "₹1,62,000" },
+            ],
             notes: [
               "PGCET Code: T970. Scholarships considered for GATE-qualified and high-scoring DSAT graduates.",
             ],
@@ -173,7 +176,9 @@ const schools: School[] = [
             level: "PG",
             eligibility:
               "B.Tech in electronics, computer science, instrumentation, telecommunications, electrical, or allied circuit branches with 50% aggregate (45% for SC/ST & OBC).",
-            fees: [{ label: "Total (Incl. Library Deposit)", amount: "₹1,62,000" }],
+            fees: [
+              { label: "Total (Incl. Library Deposit)", amount: "₹1,62,000" },
+            ],
             notes: [
               "Includes advanced labs for FPGA, IoT, and real-time system design.",
             ],
@@ -183,7 +188,9 @@ const schools: School[] = [
             level: "PG",
             eligibility:
               "B.Tech in Mechanical, Industrial Engineering & Management, Aerospace, Aeronautical, Automobile, or related disciplines with minimum 50% marks (45% for SC/ST & OBC).",
-            fees: [{ label: "Total (Incl. Library Deposit)", amount: "₹1,62,000" }],
+            fees: [
+              { label: "Total (Incl. Library Deposit)", amount: "₹1,62,000" },
+            ],
             notes: [
               "Focus areas include CAD/CAE, design thinking, and advanced manufacturing.",
             ],
@@ -200,7 +207,8 @@ const schools: School[] = [
   },
   {
     name: "School of Computer Applications",
-    tagline: "Undergraduate and postgraduate programs in computing, analytics, and data science.",
+    tagline:
+      "Undergraduate and postgraduate programs in computing, analytics, and data science.",
     icon: ClipboardList,
     categories: [
       {
@@ -248,7 +256,9 @@ const schools: School[] = [
             level: "PG",
             eligibility:
               "Bachelor’s degree in BCA / B.Sc (CS or IT) or any degree with Mathematics at 10+2 or graduation level. Non-CS graduates complete mandatory bridge courses. Minimum 50% aggregate (45% for SC/ST & OBC).",
-            fees: [{ label: "Total (Incl. Library Deposit)", amount: "₹3,32,000" }],
+            fees: [
+              { label: "Total (Incl. Library Deposit)", amount: "₹3,32,000" },
+            ],
             notes: [
               "Curriculum includes advanced software engineering, cloud deployment, and capstone with industry partners.",
             ],
@@ -258,7 +268,9 @@ const schools: School[] = [
             level: "PG",
             eligibility:
               "B.Sc in Life Science or related fields such as Biotechnology, Microbiology, Genetics, Zoology, Botany, Biochemistry, Bioinformatics, Statistics, or Computer Science with minimum 50% aggregate.",
-            fees: [{ label: "Total (Incl. Library Deposit)", amount: "₹1,32,000" }],
+            fees: [
+              { label: "Total (Incl. Library Deposit)", amount: "₹1,32,000" },
+            ],
             notes: [
               "Focus on AI-driven analytics, big data pipelines, and research-led problem solving.",
             ],
@@ -269,7 +281,8 @@ const schools: School[] = [
   },
   {
     name: "School of Law",
-    tagline: "Integrated legal programs with DSAT and CLAT pathways, curated clinics, and moot court training.",
+    tagline:
+      "Integrated legal programs with DSAT and CLAT pathways, curated clinics, and moot court training.",
     icon: FileText,
     categories: [
       {
@@ -306,7 +319,9 @@ const schools: School[] = [
             level: "UG",
             eligibility:
               "Graduation or equivalent degree in any discipline with minimum 50% aggregate (45% for SC/ST & OBC).",
-            fees: [{ label: "Total (Incl. Library Deposit)", amount: "₹1,67,000" }],
+            fees: [
+              { label: "Total (Incl. Library Deposit)", amount: "₹1,67,000" },
+            ],
           },
         ],
       },
@@ -318,7 +333,9 @@ const schools: School[] = [
             level: "PG",
             eligibility:
               "Bachelor’s degree in Law (LL.B or equivalent) with at least 50% marks (40% for SC/ST). Valid scores from CLAT, AILET, or DSU entrance exams.",
-            fees: [{ label: "Total (Incl. Library Deposit)", amount: "₹1,35,000" }],
+            fees: [
+              { label: "Total (Incl. Library Deposit)", amount: "₹1,35,000" },
+            ],
             notes: [
               "Tracks include Corporate & Commercial Law, Intellectual Property Rights, and Human Rights Law.",
             ],
@@ -329,7 +346,8 @@ const schools: School[] = [
   },
   {
     name: "School of Basic & Applied Sciences",
-    tagline: "Life science programs blending lab research, internships, and interdisciplinary electives.",
+    tagline:
+      "Life science programs blending lab research, internships, and interdisciplinary electives.",
     icon: Stethoscope,
     categories: [
       {
@@ -364,28 +382,36 @@ const schools: School[] = [
             level: "PG",
             eligibility:
               "B.Sc in Biochemistry or allied life science disciplines (MBBS, BDS, Nursing, Pharmaceutical Sciences, etc.) with minimum 50% aggregate.",
-            fees: [{ label: "Total (Incl. Library Deposit)", amount: "₹1,82,000" }],
+            fees: [
+              { label: "Total (Incl. Library Deposit)", amount: "₹1,82,000" },
+            ],
           },
           {
             name: "M.Sc Biotechnology",
             level: "PG",
             eligibility:
               "B.Sc with life science subjects such as Biotechnology, Microbiology, Genetics, Biochemistry, or related programs with minimum 50% aggregate.",
-            fees: [{ label: "Total (Incl. Library Deposit)", amount: "₹1,82,000" }],
+            fees: [
+              { label: "Total (Incl. Library Deposit)", amount: "₹1,82,000" },
+            ],
           },
           {
             name: "M.Sc Microbiology",
             level: "PG",
             eligibility:
               "B.Sc in science with life science subjects covering Microbiology, Biotechnology, Biochemistry, Zoology, or related specializations.",
-            fees: [{ label: "Total (Incl. Library Deposit)", amount: "₹1,82,000" }],
+            fees: [
+              { label: "Total (Incl. Library Deposit)", amount: "₹1,82,000" },
+            ],
           },
           {
             name: "M.Sc Human Genetics",
             level: "PG",
             eligibility:
               "B.Sc with relevant life science background, including Genetics, Biotechnology, Biochemistry, Microbiology, or allied programs.",
-            fees: [{ label: "Total (Incl. Library Deposit)", amount: "₹1,82,000" }],
+            fees: [
+              { label: "Total (Incl. Library Deposit)", amount: "₹1,82,000" },
+            ],
           },
         ],
         footnotes: [
@@ -396,7 +422,8 @@ const schools: School[] = [
   },
   {
     name: "School of Commerce & Management",
-    tagline: "Industry-driven commerce, business, and management programs with professional certifications.",
+    tagline:
+      "Industry-driven commerce, business, and management programs with professional certifications.",
     icon: Users,
     categories: [
       {
@@ -405,7 +432,11 @@ const schools: School[] = [
           {
             name: "BBA",
             level: "UG",
-            specializations: ["Regular", "Banking, Financial Services & Insurance (BFSI)", "Aviation Electives"],
+            specializations: [
+              "Regular",
+              "Banking, Financial Services & Insurance (BFSI)",
+              "Aviation Electives",
+            ],
             eligibility:
               "10+2 or equivalent examination with minimum 50% aggregate (45% for SC/ST & OBC).",
             fees: [{ label: "Program Total (Annual)", amount: "₹2,02,000" }],
@@ -426,7 +457,10 @@ const schools: School[] = [
               "Pre-University course with Business Studies and Accountancy; minimum 50% aggregate (45% for SC/ST & OBC).",
             fees: [
               { label: "B.Com Regular (Annual Total)", amount: "₹1,47,000" },
-              { label: "B.Com ACCA / CMA / CA Coaching (Annual Total)", amount: "₹1,77,000" },
+              {
+                label: "B.Com ACCA / CMA / CA Coaching (Annual Total)",
+                amount: "₹1,77,000",
+              },
             ],
             notes: [
               "Professional coaching for ACCA, CMA, and CA integrated within the timetable.",
@@ -458,7 +492,8 @@ const schools: School[] = [
   },
   {
     name: "School of Health Sciences",
-    tagline: "Allied health, pharmaceutical, nursing, public health, and physiotherapy programs with clinical immersion.",
+    tagline:
+      "Allied health, pharmaceutical, nursing, public health, and physiotherapy programs with clinical immersion.",
     icon: Stethoscope,
     categories: [
       {
@@ -576,7 +611,8 @@ const schools: School[] = [
   },
   {
     name: "School of Arts, Design & Humanities",
-    tagline: "Creative programs combining storytelling, digital media, and field journalism.",
+    tagline:
+      "Creative programs combining storytelling, digital media, and field journalism.",
     icon: BookOpen,
     categories: [
       {
@@ -602,7 +638,8 @@ const schools: School[] = [
   },
   {
     name: "School of Design & Digital Trans-Media",
-    tagline: "Studio-based design program with immersive projects in product, UX, and trans-media storytelling.",
+    tagline:
+      "Studio-based design program with immersive projects in product, UX, and trans-media storytelling.",
     icon: PenTool,
     categories: [
       {
@@ -838,7 +875,9 @@ function HeroSection() {
           Plan Your Dayananda Sagar University Journey
         </h1>
         <p className="mt-6 text-lg text-muted-foreground md:text-xl">
-          Explore program-wise eligibility criteria, entrance codes, and comprehensive fee structures across every DSU school. Choose the path that aligns with your academic goals and career ambitions.
+          Explore program-wise eligibility criteria, entrance codes, and
+          comprehensive fee structures across every DSU school. Choose the path
+          that aligns with your academic goals and career ambitions.
         </p>
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Button
@@ -846,7 +885,11 @@ function HeroSection() {
             className="rounded-2xl bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 px-8 py-6 text-lg font-semibold text-white shadow-lg shadow-orange-500/30 transition hover:shadow-xl"
             asChild
           >
-            <a href="https://admissions.dsu.edu.in/" target="_blank" rel="noreferrer">
+            <a
+              href="https://admissions.dsu.edu.in/"
+              target="_blank"
+              rel="noreferrer"
+            >
               Apply Now
               <ArrowRight className="h-5 w-5" />
             </a>
@@ -900,7 +943,9 @@ function HeroHighlight({ icon: Icon, title, description }: HeroHighlightProps) {
         </div>
         <h3 className="text-lg font-semibold">{title}</h3>
       </div>
-      <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{description}</p>
+      <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+        {description}
+      </p>
     </div>
   );
 }
@@ -910,9 +955,13 @@ function SchoolsSection() {
     <section className="px-6 py-16">
       <div className="mx-auto max-w-6xl">
         <div className="mb-10 text-center">
-          <h2 className="text-3xl font-bold md:text-4xl">Program Directory by School</h2>
+          <h2 className="text-3xl font-bold md:text-4xl">
+            Program Directory by School
+          </h2>
           <p className="mt-3 text-lg text-muted-foreground">
-            Expand each school to review eligibility checkpoints, specializations, yearly fees, and counseling codes. All values include the latest library deposit and ancillary components.
+            Expand each school to review eligibility checkpoints,
+            specializations, yearly fees, and counseling codes. All values
+            include the latest library deposit and ancillary components.
           </p>
         </div>
         <Accordion type="multiple" className="space-y-6">
@@ -930,7 +979,9 @@ function SchoolsSection() {
                   <div className="flex-1 text-left">
                     <div className="flex flex-wrap items-center gap-3">
                       <span>{school.name}</span>
-                      <Badge className="bg-orange-500/15 text-orange-500">2025-26</Badge>
+                      <Badge className="bg-orange-500/15 text-orange-500">
+                        2025-26
+                      </Badge>
                     </div>
                     <p className="mt-1 text-sm font-normal text-muted-foreground">
                       {school.tagline}
@@ -941,7 +992,10 @@ function SchoolsSection() {
               <AccordionContent className="px-6 pb-6">
                 <div className="space-y-10">
                   {school.categories.map((category) => (
-                    <div key={`${school.name}-${category.title}`} className="space-y-4">
+                    <div
+                      key={`${school.name}-${category.title}`}
+                      className="space-y-4"
+                    >
                       <div className="flex flex-wrap items-center justify-between gap-3">
                         <div className="flex items-center gap-3">
                           <Badge className="rounded-full bg-orange-500/15 px-4 py-2 text-orange-500">
@@ -965,7 +1019,9 @@ function SchoolsSection() {
                       {category.footnotes && (
                         <ul className="list-disc space-y-2 pl-5 text-xs text-muted-foreground">
                           {category.footnotes.map((note) => (
-                            <li key={`${category.title}-note-${note}`}>{note}</li>
+                            <li key={`${category.title}-note-${note}`}>
+                              {note}
+                            </li>
                           ))}
                         </ul>
                       )}
@@ -974,7 +1030,10 @@ function SchoolsSection() {
                   {school.disclaimers && (
                     <div className="rounded-2xl border border-orange-500/20 bg-orange-500/10 p-4 text-sm text-orange-500">
                       {school.disclaimers.map((disclaimer) => (
-                        <p key={`${school.name}-disclaimer-${disclaimer}`} className="leading-relaxed">
+                        <p
+                          key={`${school.name}-disclaimer-${disclaimer}`}
+                          className="leading-relaxed"
+                        >
                           {disclaimer}
                         </p>
                       ))}
@@ -1004,7 +1063,12 @@ function ProgramCard({ program }: ProgramCardProps) {
               {program.name}
             </CardTitle>
             <CardDescription className="mt-2 text-sm text-muted-foreground">
-              Level: {program.level === "UG" ? "Undergraduate" : program.level === "PG" ? "Postgraduate" : "Professional"}
+              Level:{" "}
+              {program.level === "UG"
+                ? "Undergraduate"
+                : program.level === "PG"
+                  ? "Postgraduate"
+                  : "Professional"}
             </CardDescription>
           </div>
           <Badge className="bg-orange-500/15 text-orange-500">
@@ -1013,7 +1077,10 @@ function ProgramCard({ program }: ProgramCardProps) {
           </Badge>
         </div>
         <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-          <strong className="font-semibold text-foreground">Eligibility:</strong> {program.eligibility}
+          <strong className="font-semibold text-foreground">
+            Eligibility:
+          </strong>{" "}
+          {program.eligibility}
         </p>
         {program.specializations && (
           <div className="mt-3">
@@ -1043,7 +1110,9 @@ function ProgramCard({ program }: ProgramCardProps) {
                   <TableCell className="font-medium text-foreground">
                     {fee.label}
                   </TableCell>
-                  <TableCell className="text-orange-500">{fee.amount}</TableCell>
+                  <TableCell className="text-orange-500">
+                    {fee.amount}
+                  </TableCell>
                 </TableRow>
               ))}
             </TableBody>
@@ -1072,9 +1141,13 @@ function BrochureSection() {
     <section className="bg-gradient-to-br from-orange-500/5 via-red-500/5 to-background px-6 py-16">
       <div className="mx-auto max-w-6xl">
         <div className="mb-10 text-center">
-          <h2 className="text-3xl font-bold md:text-4xl">Download Program Brochures</h2>
+          <h2 className="text-3xl font-bold md:text-4xl">
+            Download Program Brochures
+          </h2>
           <p className="mt-3 text-lg text-muted-foreground">
-            Access school-specific brochures detailing curriculum, laboratories, internship opportunities, and placement tracks across UG, PG, and professional programs.
+            Access school-specific brochures detailing curriculum, laboratories,
+            internship opportunities, and placement tracks across UG, PG, and
+            professional programs.
           </p>
         </div>
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
@@ -1116,9 +1189,12 @@ function ContactSection() {
     <section className="px-6 py-16">
       <div className="mx-auto max-w-6xl space-y-10">
         <div className="text-center">
-          <h2 className="text-3xl font-bold md:text-4xl">Need Help Choosing?</h2>
+          <h2 className="text-3xl font-bold md:text-4xl">
+            Need Help Choosing?
+          </h2>
           <p className="mt-3 text-lg text-muted-foreground">
-            Connect with DSU counselors for personalized guidance on eligibility verification, fee planning, and scholarship opportunities.
+            Connect with DSU counselors for personalized guidance on eligibility
+            verification, fee planning, and scholarship opportunities.
           </p>
         </div>
         <div className="grid gap-6 lg:grid-cols-3">
@@ -1171,12 +1247,16 @@ function ContactSection() {
                 </CardTitle>
               </div>
               <CardDescription className="mt-2 text-sm text-muted-foreground">
-                Reach specialized teams for program guidance, counseling schedules, and document verification support.
+                Reach specialized teams for program guidance, counseling
+                schedules, and document verification support.
               </CardDescription>
             </CardHeader>
             <CardContent className="grid gap-4 sm:grid-cols-2">
               {helplineGroups.map((group) => (
-                <div key={group.title} className="rounded-2xl border border-orange-500/20 bg-background/70 p-4 text-sm">
+                <div
+                  key={group.title}
+                  className="rounded-2xl border border-orange-500/20 bg-background/70 p-4 text-sm"
+                >
                   <p className="font-semibold text-foreground">{group.title}</p>
                   <ul className="mt-2 space-y-1 text-xs text-muted-foreground">
                     {group.entries.map((entry) => (
@@ -1196,18 +1276,25 @@ function ContactSection() {
                 </CardTitle>
               </div>
               <CardDescription className="mt-2 text-sm text-muted-foreground">
-                Dedicated counselors are available across regions and for NRI / foreign applicants.
+                Dedicated counselors are available across regions and for NRI /
+                foreign applicants.
               </CardDescription>
             </CardHeader>
             <CardContent className="grid gap-3 sm:grid-cols-2">
               {regionalContacts.map((contact) => (
-                <div key={contact.label} className="rounded-2xl border border-orange-500/20 bg-background/70 p-4 text-sm">
-                  <p className="font-semibold text-foreground">{contact.label}</p>
+                <div
+                  key={contact.label}
+                  className="rounded-2xl border border-orange-500/20 bg-background/70 p-4 text-sm"
+                >
+                  <p className="font-semibold text-foreground">
+                    {contact.label}
+                  </p>
                   <p className="mt-1 text-muted-foreground">{contact.phone}</p>
                 </div>
               ))}
               <div className="sm:col-span-2 rounded-2xl border border-orange-500/20 bg-orange-500/10 p-4 text-sm text-orange-500">
-                For scholarship or sponsorship collaborations, email admissions@dsu.edu.in with program and applicant details.
+                For scholarship or sponsorship collaborations, email
+                admissions@dsu.edu.in with program and applicant details.
               </div>
             </CardContent>
           </Card>
@@ -1229,11 +1316,15 @@ function NotesSection() {
           Prepare Your Application Checklist
         </h2>
         <p className="mt-4 text-lg text-muted-foreground">
-          Review the following guidelines before submitting your application and fee payments to ensure a smooth admission experience.
+          Review the following guidelines before submitting your application and
+          fee payments to ensure a smooth admission experience.
         </p>
         <div className="mt-6 space-y-3 text-left">
           {importantNotes.map((note) => (
-            <div key={note} className="flex items-start gap-3 text-sm text-muted-foreground">
+            <div
+              key={note}
+              className="flex items-start gap-3 text-sm text-muted-foreground"
+            >
               <CheckCircle2 className="mt-0.5 h-4 w-4 text-orange-500" />
               <span>{note}</span>
             </div>
@@ -1256,7 +1347,11 @@ function NotesSection() {
             className="rounded-2xl border-2 border-orange-500 px-8 py-6 text-lg font-semibold text-orange-500"
             asChild
           >
-            <a href="https://www.dsu.edu.in/admission-lastdates" target="_blank" rel="noreferrer">
+            <a
+              href="https://www.dsu.edu.in/admission-lastdates"
+              target="_blank"
+              rel="noreferrer"
+            >
               View Admission Deadlines
               <ArrowRight className="ml-2 h-5 w-5" />
             </a>
