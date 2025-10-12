@@ -2,8 +2,6 @@ import { Link } from "react-router-dom";
 import type { LucideIcon } from "lucide-react";
 import {
   Award,
-  BadgeCheck,
-  CalendarDays,
   ChevronRight,
   Compass,
   GraduationCap,
@@ -24,14 +22,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-
-type QuickLink = {
-  title: string;
-  description: string;
-  href: string;
-  icon: LucideIcon;
-  external?: boolean;
-};
 
 type Highlight = {
   title: string;
@@ -56,51 +46,6 @@ type Resource = {
 
 const HERO_IMAGE =
   "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?q=80&w=2000&auto=format&fit=crop";
-
-const QUICK_LINKS: QuickLink[] = [
-  {
-    title: "Programme Overview",
-    description: "Understand the four-track B.Design structure and philosophy.",
-    href: "#overview",
-    icon: Palette,
-  },
-  {
-    title: "Specializations",
-    description: "Dive into Product, UX, Animation & Game Design pathways.",
-    href: "https://www.dsu.edu.in/about-bdesign/specializations-bdesign",
-    icon: Shapes,
-    external: true,
-  },
-  {
-    title: "Eligibility & Admissions",
-    description:
-      "Review eligibility criteria, assessment process and key dates.",
-    href: "https://www.dsu.edu.in/about-bdesign/eligibility-bdesign",
-    icon: BadgeCheck,
-    external: true,
-  },
-  {
-    title: "Salient Features",
-    description:
-      "Explore design culture, industry collaborations and studio life.",
-    href: "https://www.dsu.edu.in/about-bdesign/salient-features-bdesign",
-    icon: Sparkle,
-    external: true,
-  },
-  {
-    title: "Career Prospects",
-    description: "Discover roles, recruiters and global pathways for alumni.",
-    href: "https://www.dsu.edu.in/about-bdesign/career-prospects-bdesign",
-    icon: Rocket,
-    external: true,
-  },
-  {
-    title: "Calendar & Handbook",
-    description: "Download academic calendar, handbook and NAAC documents.",
-    href: "#resources",
-    icon: CalendarDays,
-  },
-];
 
 const USP_HIGHLIGHTS: Highlight[] = [
   {
@@ -195,50 +140,6 @@ const RESOURCES: Resource[] = [
     badge: "Quality",
   },
 ];
-
-function QuickLinkCard({ link }: { link: QuickLink }) {
-  const Icon = link.icon;
-  const content = (
-    <div className="group h-full rounded-3xl border border-border/40 bg-card/60 p-6 transition-all duration-500 hover:-translate-y-1 hover:border-brand-magenta/60 hover:shadow-xl hover:shadow-brand-magenta/10">
-      <div className="flex items-center justify-between">
-        <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-magenta/10 text-brand-magenta">
-          <Icon className="h-5 w-5" />
-        </span>
-        <ChevronRight className="h-4 w-4 text-transparent transition-colors duration-500 group-hover:text-brand-magenta" />
-      </div>
-      <h3 className="mt-5 text-lg font-semibold font-gilroy">{link.title}</h3>
-      <p className="mt-3 text-sm text-muted-foreground font-graphik">
-        {link.description}
-      </p>
-      <div className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-brand-magenta">
-        {link.external ? "Open resource" : "Jump to section"}
-        <ChevronRight className="h-4 w-4" />
-      </div>
-    </div>
-  );
-
-  if (link.external) {
-    return (
-      <a
-        href={link.href}
-        target="_blank"
-        rel="noreferrer"
-        className="rounded-3xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-magenta focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-      >
-        {content}
-      </a>
-    );
-  }
-
-  return (
-    <a
-      href={link.href}
-      className="rounded-3xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-magenta focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-    >
-      {content}
-    </a>
-  );
-}
 
 function HighlightCard({ highlight }: { highlight: Highlight }) {
   const Icon = highlight.icon;
