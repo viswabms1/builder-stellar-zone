@@ -6,8 +6,6 @@ import {
   Building2,
   CalendarDays,
   FileText,
-  GraduationCap,
-  Lightbulb,
   MapPin,
   ShieldCheck,
   Sparkles,
