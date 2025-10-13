@@ -250,245 +250,174 @@ interface CurriculumProgram {
   id: string;
   label: string;
   description: string;
+  batches: CurriculumBatch[];
 }
 
-interface UploadRecord {
-  name: string;
-  uploadedAt: string;
+interface CurriculumBatch {
+  year: string;
+  summary: string;
+  documentUrl?: string;
 }
 
-function CurriculumUploadSection() {
+function CurriculumLibrary() {
+  const [openProgram, setOpenProgram] = useState<string | null>(null);
+
   const programs: CurriculumProgram[] = [
     {
       id: "btech",
       label: "B.Tech Curriculum",
       description:
-        "Upload eight-semester syllabi, elective lists, and assessment plans for undergraduate cohorts.",
+        "Four-year undergraduate pathway with specializations in AI, Data Science, Cyber Security, Robotics, and Networks.",
+      batches: [
+        {
+          year: "2025-26",
+          summary:
+            "Updated NEP-aligned structure with industry electives and design thinking studio from Semester V.",
+          documentUrl:
+            "https://www.dsu.edu.in/images/Engineering/CSE-dept/curriculum/BTech-CSE-Curriculum-2025-26.pdf",
+        },
+        {
+          year: "2026-27",
+          summary:
+            "Revised analytics labs, full-stack engineering projects, and extended internship immersion in Semester VII.",
+        },
+        {
+          year: "2027-28",
+          summary:
+            "Incorporates autonomous systems track and research dissertation option with global partner universities.",
+        },
+        {
+          year: "2028-29",
+          summary:
+            "Futuristic curriculum with XR applications, blockchain engineering, and capstone studio showcase.",
+        },
+      ],
     },
     {
       id: "mtech",
       label: "M.Tech Curriculum",
       description:
-        "Maintain postgraduate curriculum documents covering advanced core courses, labs, and research credits.",
+        "Two-year postgraduate program focused on advanced computing research, domain electives, and thesis work.",
+      batches: [
+        {
+          year: "2025-26",
+          summary:
+            "Core modules in distributed systems, deep learning accelerators, and secure computing research methods.",
+          documentUrl:
+            "https://www.dsu.edu.in/images/Engineering/CSE-dept/curriculum/MTech-CSE-Curriculum-2025-26.pdf",
+        },
+        {
+          year: "2026-27",
+          summary:
+            "Includes applied AI clinics, cloud-native automation, and interdisciplinary innovation lab immersion.",
+        },
+        {
+          year: "2027-28",
+          summary:
+            "Adds quantum-safe cryptography, edge intelligence, and industry co-guided research dissertations.",
+        },
+        {
+          year: "2028-29",
+          summary:
+            "Emphasizes sustainable computing, human-centric AI, and publication-oriented thesis pipeline.",
+        },
+      ],
     },
   ];
-  const batches = ["2025-26", "2026-27", "2027-28", "2028-29"];
-  const { toast } = useToast();
-  const [selectedFiles, setSelectedFiles] = useState<Record<string, File | null>>(() => {
-    const initial: Record<string, File | null> = {};
-    programs.forEach((program) => {
-      batches.forEach((batch) => {
-        initial[`${program.id}-${batch}`] = null;
-      });
-    });
-    return initial;
-  });
-  const [uploadedRecords, setUploadedRecords] = useState<Record<string, UploadRecord>>({});
-
-  const getProgramLabel = (id: string) =>
-    programs.find((program) => program.id === id)?.label ?? id;
-
-  const setFile = (programId: string, batch: string, file: File | null) => {
-    const key = `${programId}-${batch}`;
-    setSelectedFiles((prev) => ({
-      ...prev,
-      [key]: file,
-    }));
-  };
-
-  const handleUpload = (programId: string, batch: string) => {
-    const key = `${programId}-${batch}`;
-    const file = selectedFiles[key];
-
-    if (!file) {
-      toast({
-        title: "Select a curriculum file",
-        description: `Choose a document for ${getProgramLabel(programId)} ${batch} before uploading.`,
-      });
-      return;
-    }
-
-    const timestamp = new Date().toISOString();
-
-    setUploadedRecords((prev) => ({
-      ...prev,
-      [key]: {
-        name: file.name,
-        uploadedAt: timestamp,
-      },
-    }));
-
-    setSelectedFiles((prev) => ({
-      ...prev,
-      [key]: null,
-    }));
-
-    toast({
-      title: "Curriculum recorded",
-      description: `${getProgramLabel(programId)} ${batch} curriculum "${file.name}" saved on ${new Date(timestamp).toLocaleString()}.`,
-    });
-  };
 
   return (
     <section className="px-6 py-16 bg-muted/15">
-      <div className="mx-auto max-w-6xl space-y-8">
+      <div className="mx-auto max-w-6xl space-y-6">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <h2 className="headline-3 font-display">Curriculum Upload Hub</h2>
+            <h2 className="headline-3 font-display">Curriculum Library</h2>
             <p className="max-w-2xl text-sm text-muted-foreground sm:text-base">
-              Upload the latest B.Tech and M.Tech curriculum documents for the next four academic cycles.
+              Explore curated curriculum packs for B.Tech and M.Tech cohorts. Click “View curriculum” to reveal batch-wise outlines.
             </p>
           </div>
           <Badge className="w-fit rounded-full bg-brand-magenta/15 px-4 py-2 text-xs font-semibold text-brand-magenta">
-            Batches 2025-2029
+            Academic Years 2025 – 2029
           </Badge>
         </div>
         <Card className="border border-border/50 bg-card/60 backdrop-blur-sm">
-          <CardHeader className="gap-4 sm:flex sm:items-center sm:justify-between">
+          <CardHeader className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <div className="flex items-center gap-3">
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-magenta/10 text-brand-magenta">
                 <FileText className="h-6 w-6" />
               </div>
               <div>
-                <CardTitle className="font-display text-lg sm:text-xl">
-                  Upload Programme Curriculum
-                </CardTitle>
+                <CardTitle className="font-display text-lg sm:text-xl">Programme Curriculum Archive</CardTitle>
                 <CardDescription className="font-body text-sm">
-                  Accepted formats: PDF, DOC, DOCX. Keep file names descriptive (e.g., BTech-CSE-2025-26.pdf).
+                  Downloadable syllabi are published by the department office. For earlier batches, write to chairman-cse@dsu.edu.in.
                 </CardDescription>
               </div>
             </div>
           </CardHeader>
-          <CardContent className="space-y-6">
-            <Tabs defaultValue={programs[0].id} className="space-y-6">
-              <TabsList className="w-full sm:w-auto">
-                {programs.map((program) => (
-                  <TabsTrigger key={program.id} value={program.id} className="flex-1 sm:flex-none">
-                    {program.label}
-                  </TabsTrigger>
-                ))}
-              </TabsList>
-              {programs.map((program) => (
-                <TabsContent key={program.id} value={program.id} className="space-y-4">
-                  <p className="text-sm text-muted-foreground">{program.description}</p>
-                  <div className="grid gap-4 lg:grid-cols-2">
-                    {batches.map((batch) => {
-                      const key = `${program.id}-${batch}`;
-                      return (
-                        <UploadRow
-                          key={key}
-                          programId={program.id}
-                          programLabel={program.label}
-                          batch={batch}
-                          selectedFile={selectedFiles[key] ?? null}
-                          uploadedInfo={uploadedRecords[key]}
-                          onFileChange={(file) => setFile(program.id, batch, file)}
-                          onUpload={() => handleUpload(program.id, batch)}
-                          onClear={() => setFile(program.id, batch, null)}
-                        />
-                      );
-                    })}
+          <CardContent className="space-y-4">
+            {programs.map((program) => {
+              const isOpen = openProgram === program.id;
+              return (
+                <div
+                  key={program.id}
+                  className="rounded-2xl border border-border/40 bg-background/80 p-4 shadow-sm"
+                >
+                  <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+                    <div>
+                      <h3 className="font-display text-base sm:text-lg">{program.label}</h3>
+                      <p className="text-sm text-muted-foreground">{program.description}</p>
+                    </div>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="mt-2 w-full sm:mt-0 sm:w-auto"
+                      onClick={() => setOpenProgram(isOpen ? null : program.id)}
+                    >
+                      {isOpen ? "Hide curriculum" : "View curriculum"}
+                      <ChevronDown
+                        className={`ml-2 h-4 w-4 transition-transform ${isOpen ? "rotate-180" : ""}`}
+                      />
+                    </Button>
                   </div>
-                </TabsContent>
-              ))}
-            </Tabs>
+                  {isOpen ? (
+                    <div className="mt-4 space-y-3">
+                      {program.batches.map((batch) => (
+                        <div
+                          key={`${program.id}-${batch.year}`}
+                          className="flex flex-col gap-3 rounded-xl border border-border/30 bg-card/70 p-3 sm:flex-row sm:items-center sm:justify-between"
+                        >
+                          <div className="space-y-1">
+                            <Badge className="w-fit rounded-full bg-brand-magenta/15 px-3 py-1 text-xs font-semibold text-brand-magenta">
+                              {batch.year}
+                            </Badge>
+                            <p className="text-sm text-muted-foreground">{batch.summary}</p>
+                          </div>
+                          {batch.documentUrl ? (
+                            <Button
+                              variant="ghost"
+                              size="sm"
+                              className="justify-start text-brand-magenta hover:text-brand-magenta"
+                              asChild
+                            >
+                              <a href={batch.documentUrl} target="_blank" rel="noreferrer">
+                                Download PDF
+                                <Download className="ml-2 h-4 w-4" />
+                              </a>
+                            </Button>
+                          ) : (
+                            <p className="text-xs text-muted-foreground">
+                              Release scheduled in coordination with the curriculum committee.
+                            </p>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  ) : null}
+                </div>
+              );
+            })}
           </CardContent>
         </Card>
       </div>
     </section>
-  );
-}
-
-interface UploadRowProps {
-  programId: string;
-  programLabel: string;
-  batch: string;
-  selectedFile: File | null;
-  uploadedInfo?: UploadRecord;
-  onFileChange: (file: File | null) => void;
-  onUpload: () => void;
-  onClear: () => void;
-}
-
-function UploadRow({
-  programId,
-  programLabel,
-  batch,
-  selectedFile,
-  uploadedInfo,
-  onFileChange,
-  onUpload,
-  onClear,
-}: UploadRowProps) {
-  const inputId = `${programId}-${batch}-file-input`;
-  const formattedUpload = uploadedInfo
-    ? new Date(uploadedInfo.uploadedAt).toLocaleString()
-    : null;
-
-  return (
-    <div className="space-y-3 rounded-2xl border border-border/40 bg-background/80 p-4 shadow-sm">
-      <div className="flex items-center justify-between gap-3">
-        <div className="flex items-center gap-2">
-          <Badge className="rounded-full bg-brand-magenta/15 px-3 py-1 text-xs font-semibold text-brand-magenta">
-            {batch}
-          </Badge>
-          <span className="text-xs uppercase tracking-wide text-muted-foreground">
-            {programLabel}
-          </span>
-        </div>
-        {selectedFile ? (
-          <Button
-            variant="ghost"
-            size="sm"
-            className="h-8 px-2 text-muted-foreground hover:text-destructive"
-            onClick={onClear}
-          >
-            <X className="mr-1 h-4 w-4" />
-            Clear
-          </Button>
-        ) : null}
-      </div>
-      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <div className="flex-1 text-sm text-muted-foreground">
-          {selectedFile ? (
-            <span className="font-medium text-foreground">{selectedFile.name}</span>
-          ) : uploadedInfo ? (
-            <span>
-              Last uploaded <span className="font-medium text-foreground">{uploadedInfo.name}</span> on {formattedUpload}
-            </span>
-          ) : (
-            "No file selected yet."
-          )}
-        </div>
-        <div className="flex flex-wrap gap-2">
-          <input
-            id={inputId}
-            type="file"
-            accept=".pdf,.doc,.docx"
-            className="sr-only"
-            onChange={(event) => onFileChange(event.target.files?.[0] ?? null)}
-          />
-          <label htmlFor={inputId}>
-            <Button variant="outline" size="sm" className="cursor-pointer">
-              Choose File
-            </Button>
-          </label>
-          <Button
-            size="sm"
-            onClick={onUpload}
-            disabled={!selectedFile}
-            className="bg-brand-gradient text-white hover:opacity-90"
-          >
-            Upload
-            <UploadCloud className="ml-2 h-4 w-4" />
-          </Button>
-        </div>
-      </div>
-      {uploadedInfo && !selectedFile ? (
-        <p className="text-xs text-muted-foreground">
-          Updated {formattedUpload}. Select a new file and upload again to replace the existing curriculum.
-        </p>
-      ) : null}
-    </div>
   );
 }
