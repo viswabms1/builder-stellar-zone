@@ -49,6 +49,10 @@ const FOOTER_LINK_GROUPS = [
         external: true,
       },
       {
+        label: "IQAC",
+        href: "/iqac",
+      },
+      {
         label: "Contact",
         href: "/about",
       },
