@@ -267,8 +267,10 @@ function StatTile({ icon: Icon, value, label }: StatTileProps) {
   );
 }
 
+type FacultyEntry = (typeof cseFaculty)[number];
+
 type LeadershipSectionProps = {
-  leadership: typeof cseFaculty;
+  leadership: FacultyEntry[];
 };
 
 function LeadershipSection({ leadership }: LeadershipSectionProps) {
