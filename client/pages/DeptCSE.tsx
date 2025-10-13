@@ -134,6 +134,8 @@ export default function DeptCSE() {
 
       <CurriculumLibrary />
 
+      <NoticeBoard />
+
       {/* Labs & Facilities */}
       <section className="px-6 py-16 bg-gradient-to-r from-brand-blue/5 to-brand-orange/5">
         <div className="max-w-7xl mx-auto">
