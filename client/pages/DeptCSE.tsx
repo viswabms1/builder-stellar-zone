@@ -264,6 +264,151 @@ interface CurriculumBatch {
   documentUrl?: string;
 }
 
+interface NoticeItem {
+  id: string;
+  title: string;
+  category: "Event" | "Announcement" | "Circular";
+  date: string;
+  description: string;
+  link?: string;
+}
+
+function NoticeBoard() {
+  const notices: NoticeItem[] = [
+    {
+      id: "notice-1",
+      title: "HackDSU 2025: 36-hour Product Build Sprint",
+      category: "Event",
+      date: "Feb 12, 2025",
+      description:
+        "Interdisciplinary hackathon hosted by CSE with tracks in AI for Health, Sustainable Tech, and FinTech innovation.",
+      link: "https://www.dsu.edu.in/images/Engineering/CSE-dept/notices/HackDSU-2025.pdf",
+    },
+    {
+      id: "notice-2",
+      title: "Semester VI Elective Registration Window",
+      category: "Announcement",
+      date: "Jan 29, 2025",
+      description:
+        "Students can choose from Advanced Cloud Platforms, Secure Coding, XR Applications, and Data Storytelling electives till Feb 05.",
+    },
+    {
+      id: "notice-3",
+      title: "Industry Lecture: Responsible GenAI Systems",
+      category: "Event",
+      date: "Jan 24, 2025",
+      description:
+        "Guest session by Dr. Leela Narayanan, Principal Scientist at Novus Labs. Venue: Innovation Theatre, 10:30 AM.",
+      link: "https://www.dsu.edu.in/images/Engineering/CSE-dept/notices/Responsible-GenAI-Guest-Lecture.pdf",
+    },
+    {
+      id: "notice-4",
+      title: "Circular: Updated Internship Compliance Process",
+      category: "Circular",
+      date: "Jan 18, 2025",
+      description:
+        "Revised documentation requirements for summer internship submissions. Submit signed MoUs to internship@dsu.edu.in.",
+    },
+  ];
+
+  const getCategoryStyle = (category: NoticeItem["category"]) => {
+    switch (category) {
+      case "Event":
+        return {
+          icon: CalendarDays,
+          label: "Event",
+          className: "bg-brand-magenta/15 text-brand-magenta",
+        };
+      case "Announcement":
+        return {
+          icon: ClipboardList,
+          label: "Announcement",
+          className: "bg-brand-blue/15 text-brand-blue",
+        };
+      case "Circular":
+        return {
+          icon: Landmark,
+          label: "Circular",
+          className: "bg-amber-500/15 text-amber-600",
+        };
+      default:
+        return {
+          icon: ClipboardList,
+          label: category,
+          className: "bg-brand-blue/15 text-brand-blue",
+        };
+    }
+  };
+
+  return (
+    <section className="px-6 py-16">
+      <div className="mx-auto max-w-6xl space-y-6">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <h2 className="headline-3 font-display">Department Notice Board</h2>
+            <p className="max-w-2xl text-sm text-muted-foreground sm:text-base">
+              Track upcoming events, academic announcements, and official circulars released by the Computer Science & Engineering department.
+            </p>
+          </div>
+          <Badge className="w-fit rounded-full bg-brand-magenta/15 px-4 py-2 text-xs font-semibold text-brand-magenta">
+            Updated weekly by the CSE office
+          </Badge>
+        </div>
+        <div className="grid gap-4 lg:grid-cols-2">
+          {notices.map((notice) => {
+            const categoryStyle = getCategoryStyle(notice.category);
+            const Icon = categoryStyle.icon;
+            return (
+              <Card
+                key={notice.id}
+                className="group border border-border/40 bg-card/70 shadow-sm transition hover:-translate-y-1 hover:border-brand-magenta/40 hover:shadow-brand-magenta/10"
+              >
+                <CardHeader className="flex flex-row items-start justify-between gap-3">
+                  <div className="space-y-1">
+                    <div className="flex items-center gap-2">
+                      <div
+                        className={`inline-flex items-center gap-1 rounded-full px-3 py-1 text-xs font-semibold ${categoryStyle.className}`}
+                      >
+                        <Icon className="h-3.5 w-3.5" />
+                        {categoryStyle.label}
+                      </div>
+                      <span className="text-xs text-muted-foreground">{notice.date}</span>
+                    </div>
+                    <CardTitle className="text-base font-display text-foreground sm:text-lg">
+                      {notice.title}
+                    </CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent className="space-y-3 text-sm text-muted-foreground">
+                  <p>{notice.description}</p>
+                  <div className="flex items-center justify-between text-xs text-muted-foreground">
+                    <span>Ref: CSE/{new Date(notice.date).getFullYear()}/{notice.id.split("-")[1]}</span>
+                    {notice.link ? (
+                      <Button
+                        variant="secondary"
+                        size="sm"
+                        className="h-8 rounded-full bg-brand-magenta/15 text-brand-magenta hover:bg-brand-magenta/20"
+                        asChild
+                      >
+                        <a href={notice.link} target="_blank" rel="noreferrer">
+                          View PDF
+                          <Download className="ml-2 h-3.5 w-3.5" />
+                        </a>
+                      </Button>
+                    ) : (
+                      <span className="text-[11px] italic">Internal memo – available on request</span>
+                    )}
+                  </div>
+                </CardContent>
+              </Card>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function CurriculumLibrary() {
   const [openProgram, setOpenProgram] = useState<string | null>(null);
 
