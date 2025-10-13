@@ -347,7 +347,7 @@ type DirectorySectionProps = {
   onFilterChange: (value: FilterKey) => void;
   onSearchChange: (value: string) => void;
   search: string;
-  filteredFaculty: typeof cseFaculty;
+  filteredFaculty: FacultyEntry[];
 };
 
 function DirectorySection({
