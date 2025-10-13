@@ -8,6 +8,7 @@ import {
   FileText,
   GraduationCap,
   Lightbulb,
+  Mail,
   Megaphone,
   ShieldCheck,
   Sparkles,
@@ -678,7 +679,7 @@ function FeedbackSection() {
 }
 
 function MailIcon() {
-  return <FileText className="h-4 w-4 text-white" aria-hidden="true" />;
+  return <Mail className="h-4 w-4 text-white" aria-hidden="true" />;
 }
 
 export default function IQAC() {
