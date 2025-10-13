@@ -167,7 +167,9 @@ export default function DeptCSE() {
           <div className="flex items-center justify-between mb-8">
             <h2 className="headline-3 font-display">Meet the Faculty</h2>
             <Link to="/academics/engineering/computer-science/faculty">
-              <Button variant="outline" className="border-brand-magenta/40 hover:bg-brand-magenta/10">View all</Button>
+              <Button variant="outline" className="border-brand-magenta/40 hover:bg-brand-magenta/10">
+                Explore full faculty roster
+              </Button>
             </Link>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
