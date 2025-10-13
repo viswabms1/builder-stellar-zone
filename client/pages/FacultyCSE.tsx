@@ -252,7 +252,7 @@ function HeroSection({ stats, interests }: HeroSectionProps) {
 }
 
 type StatTileProps = {
-  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  icon: ComponentType<SVGProps<SVGSVGElement>>;
   value: string;
   label: string;
 };
