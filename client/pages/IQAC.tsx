@@ -640,19 +640,17 @@ function FeedbackSection() {
                 <Megaphone className="mt-1 h-5 w-5 text-brand-magenta" aria-hidden="true" />
                 <div>
                   <p className="font-semibold text-white">Submit feedback</p>
-                  <p className="mt-1">Share ideas, commendations, or concerns through our digital form for swift action planning.</p>
+                  <p className="mt-1">Share ideas, commendations, or concerns with the IQAC coordination team for swift action planning.</p>
                   <Button
                     asChild
                     variant="secondary"
                     className="mt-4 bg-white/10 text-white hover:bg-white/20"
                   >
                     <a
-                      href="https://forms.gle/JuXvdWugLwQzDsuQA"
-                      target="_blank"
-                      rel="noreferrer"
+                      href="mailto:iqac@dsu.edu.in?subject=Feedback%20for%20IQAC"
                       className="gap-2"
                     >
-                      Launch feedback form
+                      Email feedback
                       <ArrowRight className="h-4 w-4" aria-hidden="true" />
                     </a>
                   </Button>
