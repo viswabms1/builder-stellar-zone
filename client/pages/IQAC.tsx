@@ -2,14 +2,13 @@ import { Link } from "react-router-dom";
 import {
   ArrowRight,
   Award,
+  BookMarked,
   Building2,
-  CheckCircle2,
-  ClipboardList,
+  CalendarDays,
   FileText,
   GraduationCap,
   Lightbulb,
-  Mail,
-  Megaphone,
+  MapPin,
   ShieldCheck,
   Sparkles,
   Users2,
@@ -17,180 +16,202 @@ import {
 
 import { Button } from "@/components/ui/button";
 
-const STAT_CARDS = [
+const HERO_BACKGROUND =
+  "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1620&q=80";
+
+const STATS = [
   {
-    label: "Academic & Administrative Units Engaged",
     value: "18",
-    description: "Faculties, schools, and support divisions aligned with IQAC benchmarks.",
+    label: "Academic & support units engaged",
+    description: "Faculties, schools, and strategic divisions aligned with IQAC benchmarks.",
     icon: Building2,
   },
   {
-    label: "Quality Enhancement Projects",
     value: "42",
-    description: "Process improvements delivered through annual quality assurance cycles.",
+    label: "Quality enhancement initiatives",
+    description: "Process improvements completed through annual assurance cycles.",
     icon: Sparkles,
   },
   {
-    label: "Capacity Building Sessions",
     value: "120+",
-    description: "Workshops and orientations enabling outcome-based teaching and assessment.",
+    label: "Capacity-building touchpoints",
+    description: "Workshops, clinics, and orientations strengthening teaching excellence.",
     icon: Users2,
   },
   {
-    label: "Policy & Compliance Reviews",
     value: "30+",
-    description: "Structured audits covering academics, research, governance, and student services.",
+    label: "Policy & compliance audits",
+    description: "Structured reviews spanning academics, research, and governance.",
     icon: ShieldCheck,
   },
 ];
 
-const FOCUS_PILLARS = [
-  {
-    title: "Academic Excellence",
-    description:
-      "Curriculum review, outcome-based education adoption, blended learning models, and regular programme impact analysis.",
-    icon: GraduationCap,
-  },
-  {
-    title: "Research & Innovation",
-    description:
-      "Grant facilitation, interdisciplinary research clusters, intellectual property sensitisation, and innovation ecosystem support.",
-    icon: Lightbulb,
-  },
-  {
-    title: "Stakeholder Engagement",
-    description:
-      "Multisource feedback, industry advisory participation, community outreach initiatives, and alumni partnerships.",
-    icon: Users2,
-  },
-  {
-    title: "Governance & Compliance",
-    description:
-      "Policy stewardship, NAAC preparedness, statutory documentation, and transparent decision-making frameworks.",
-    icon: ClipboardList,
-  },
-];
-
-const INITIATIVES = [
-  {
-    year: "2024-25",
-    title: "Integrated Quality Data Hub",
-    details:
-      "Launched a centralised repository for programme outcomes, student achievements, and accreditation evidence aligned to NAAC criteria.",
-    impact:
-      "Enabled timely compliance reporting and real-time dashboards for leadership review.",
-  },
-  {
-    year: "2023-24",
-    title: "Digital Feedback Loop",
-    details:
-      "Streamlined feedback capture from students, alumni, employers, and faculty with automated action tracking and closure reports.",
-    impact:
-      "Improved response rates by 63% and ensured documented follow-through on stakeholder suggestions.",
-  },
-  {
-    year: "2022-23",
-    title: "Quality Culture Immersion",
-    details:
-      "Conducted institution-wide training on outcome-based education, course file curation, and academic audit preparedness.",
-    impact:
-      "Nurtured departmental quality champions and fostered a shared vocabulary for continuous improvement.",
-  },
-];
-
-const RESOURCE_GROUPS = [
-  {
-    title: "Policies & Frameworks",
-    subtitle: "Guiding documents that anchor institutional quality systems.",
-    items: [
-      "Quality Assurance Policy",
-      "Academic Governance Manual",
-      "Outcome Based Education Implementation Framework",
-      "Research Integrity & Ethics Policy",
-    ],
-  },
-  {
-    title: "Reports & Submissions",
-    subtitle: "Evidence-based documentation for accreditation and statutory compliances.",
-    items: [
-      "Annual Quality Assurance Reports (AQAR)",
-      "Departmental Academic Audit Summaries",
-      "Best Practices & Institutional Distinctiveness Compendium",
-      "Gender & Green Audit Reports",
-    ],
-  },
-  {
-    title: "Stakeholder Feedback",
-    subtitle: "Insights captured to strengthen learner and community experiences.",
-    items: [
-      "Student Satisfaction Survey Consolidation",
-      "Alumni & Employer Engagement Outcomes",
-      "Parent Interaction Dashboards",
-      "Community Outreach Impact Statements",
-    ],
-  },
-];
-
-const ANNOUNCEMENTS = [
-  {
-    title: "IQAC Colloquium on Emerging Pedagogies",
-    date: "07 April 2025",
-    description: "Interactive masterclass on AI-enabled curriculum delivery and experiential assessment design.",
-  },
-  {
-    title: "DSU Quality Conclave 2025",
-    date: "19 April 2025",
-    description: "Annual showcase of departmental best practices, impact caselets, and faculty innovation pitches.",
-  },
-  {
-    title: "NAAC Evidence Readiness Drive",
-    date: "06 May 2025",
-    description: "Documentation sprint ensuring criteria repositories and course files remain audit-ready.",
-  },
-];
-
-const QUALITY_WORKFLOW = [
-  {
-    step: "Plan",
-    overview: "Define benchmarks, outcome measures, and review schedules in consultation with departments and leadership.",
-  },
-  {
-    step: "Deploy",
-    overview: "Roll out interventions, capacity-building, and process enhancements with cross-functional task forces.",
-  },
-  {
-    step: "Evaluate",
-    overview: "Measure performance indicators, conduct academic and administrative audits, and capture stakeholder feedback.",
-  },
-  {
-    step: "Elevate",
-    overview: "Present data-backed recommendations, publish improvement reports, and embed refinements into institutional policy.",
-  },
+const ABOUT_POINTS = [
+  "Institutionalise outcome-based education and learner-centric pedagogy across programmes.",
+  "Embed data-informed decision making through real-time dashboards and quality indicators.",
+  "Synchronise statutory compliances and accreditation preparedness with proactive reviews.",
+  "Foster a collaborative quality culture through inclusive stakeholder dialogues.",
 ];
 
 const DIRECTOR_PROFILE = {
   name: "Prof. (Dr.) Meera Narayanan",
   designation: "Director, Internal Quality Assurance Cell",
-  message:
-    "The IQAC at DSU is envisioned as a catalyst for future-ready education. We champion evidence-informed decision making, nurture purposeful innovation, and ensure that every learner experience reflects our commitment to excellence.",
+  quote:
+    "At Dayananda Sagar University, IQAC is the catalyst that transforms insights into impact. We encourage purposeful experimentation, cultivate reflective practice, and ensure every learner experience reflects our commitment to excellence.",
+  image:
+    "https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?auto=format&fit=crop&w=720&q=80",
   email: "iqac@dsu.edu.in",
 };
 
+const EVENT_TICKER = [
+  {
+    title: "IQAC Colloquium on Emerging Pedagogies",
+    date: "April 07, 2025",
+  },
+  {
+    title: "DSU Quality Conclave",
+    date: "April 19, 2025",
+  },
+  {
+    title: "NAAC Evidence Readiness Drive",
+    date: "May 06, 2025",
+  },
+  {
+    title: "Outcome Mapping Workshop",
+    date: "May 24, 2025",
+  },
+];
+
+const GALLERY_CATEGORIES = [
+  "All",
+  "Events",
+  "Healthcare",
+  "Outreach",
+  "Sports",
+  "Best Practices",
+  "Distinctiveness",
+];
+
+const GALLERY_ITEMS = [
+  {
+    category: "Events",
+    title: "Innovation Day Showcase",
+    description: "Student-led prototypes and research pitches evaluated by industry mentors.",
+    image:
+      "https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=720&q=80",
+  },
+  {
+    category: "Healthcare",
+    title: "Interdisciplinary Health Camp",
+    description: "Collaborative outreach integrating medical, dental, and allied health sciences.",
+    image:
+      "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=720&q=80",
+  },
+  {
+    category: "Outreach",
+    title: "Community Sustainability Drive",
+    description: "Village adoption programme focusing on water stewardship and agri-tech awareness.",
+    image:
+      "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=720&q=80",
+  },
+  {
+    category: "Sports",
+    title: "Invitational Athletics Meet",
+    description: "Track and field championship celebrating student discipline and teamwork.",
+    image:
+      "https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&w=720&q=80",
+  },
+  {
+    category: "Best Practices",
+    title: "Outcome-Based Curriculum Design Lab",
+    description: "Cross-functional sprint to align graduate attributes with assessment matrices.",
+    image:
+      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=720&q=80",
+  },
+  {
+    category: "Distinctiveness",
+    title: "Smart Campus Living Lab",
+    description: "IoT-enabled environmental sensing to support experiential learning and research.",
+    image:
+      "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=720&q=80",
+  },
+];
+
+const POLICY_GROUPS = [
+  {
+    title: "Policies & Frameworks",
+    description: "Guiding documents that anchor DSU’s quality management and governance systems.",
+    items: [
+      "Quality Assurance Policy",
+      "Academic Governance Manual",
+      "Outcome-Based Education Implementation Framework",
+      "Research Integrity & Ethics Policy",
+    ],
+  },
+  {
+    title: "Reports & Submissions",
+    description: "Evidence-based documentation mapped to NAAC criteria and statutory compliances.",
+    items: [
+      "Annual Quality Assurance Reports (AQAR)",
+      "Internal Academic Audit Compendium",
+      "Institutional Distinctiveness Portfolio",
+      "Gender & Green Audit Reports",
+    ],
+  },
+  {
+    title: "Stakeholder Feedback",
+    description: "Structured inputs from learners, alumni, employers, and community partners.",
+    items: [
+      "Student Satisfaction Survey (SSS) Consolidation",
+      "Alumni & Employer Feedback Dashboards",
+      "Parent Advisory Insights",
+      "Community Outreach Impact Digest",
+    ],
+  },
+];
+
+const QUICK_LINKS = [
+  {
+    label: "NAAC IQAC Guidelines",
+    href: "https://www.naac.gov.in/images/docs/iqac/saac_iqac_guideline_1.pdf",
+  },
+  {
+    label: "DSU Accreditation & Rankings",
+    href: "https://www.dsu.edu.in/approvals-and-recognitions",
+  },
+  {
+    label: "Internal Audit Calendar",
+    href: "https://www.dsu.edu.in/images/downloads/IQAC-Audit-Calendar.pdf",
+  },
+  {
+    label: "IQAC Feedback Form",
+    href: "mailto:iqac@dsu.edu.in?subject=Feedback%20for%20IQAC",
+  },
+];
+
 function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-slate-950">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(114,87,255,0.24),_transparent_55%)]" />
-      <div className="absolute -left-32 top-1/2 h-72 w-72 -translate-y-1/2 rounded-full bg-brand-gradient blur-3xl opacity-40" />
-      <div className="relative mx-auto flex max-w-6xl flex-col gap-10 px-6 py-24 lg:flex-row lg:items-center lg:py-32">
+    <section className="relative overflow-hidden">
+      <div
+        className="absolute inset-0"
+        aria-hidden="true"
+        style={{
+          backgroundImage: `url(${HERO_BACKGROUND})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      />
+      <div className="absolute inset-0 bg-slate-950/80" aria-hidden="true" />
+      <div className="relative mx-auto flex max-w-6xl flex-col gap-14 px-6 py-28 text-white lg:flex-row lg:items-center">
         <div className="flex-1 space-y-6">
-          <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.32em] text-white/70">
-            IQAC @ DSU
-          </span>
-          <h1 className="text-4xl font-display leading-tight text-white sm:text-5xl lg:text-6xl">
+          <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.32em] text-white/80">
             Internal Quality Assurance Cell
+          </span>
+          <h1 className="text-4xl font-display leading-tight sm:text-5xl lg:text-6xl">
+            We thrive for Quality, Excellence, Integrity, Innovation
           </h1>
-          <p className="max-w-2xl text-lg text-white/70 font-body">
-            Driving a culture of continuous improvement, academic excellence, and stakeholder delight through structured assurance systems aligned with NAAC benchmarks and beyond.
+          <p className="max-w-2xl text-lg text-white/80 font-body">
+            The IQAC at Dayananda Sagar University orchestrates continuous improvement through evidence-based planning, collaborative reviews, and future-ready assurance systems aligned with NAAC benchmarks.
           </p>
           <div className="flex flex-wrap items-center gap-4">
             <Button
@@ -206,173 +227,28 @@ function HeroSection() {
               href="https://www.naac.gov.in/images/docs/iqac/saac_iqac_guideline_1.pdf"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-white/70 transition hover:text-white"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-white/80 transition hover:text-white"
             >
-              View NAAC IQAC guidelines
+              Explore NAAC framework
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </a>
           </div>
         </div>
         <div className="flex-1">
-          <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-8 shadow-[0_25px_100px_-60px_rgba(255,255,255,0.8)]">
-            <div className="absolute -right-16 top-1/2 h-48 w-48 -translate-y-1/2 rounded-full bg-brand-blue/20 blur-2xl" />
-            <div className="relative space-y-5 text-white">
-              <p className="text-sm uppercase tracking-[0.3em] text-white/60">
-                Quality Priorities 2025
-              </p>
-              <ul className="space-y-4 text-sm text-white/80 font-body">
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="mt-0.5 h-5 w-5 text-brand-magenta" aria-hidden="true" />
-                  <span>
-                    Embed evidence-backed programme reviews with learner progression analytics and graduate attribute mapping.
-                  </span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="mt-0.5 h-5 w-5 text-brand-magenta" aria-hidden="true" />
-                  <span>
-                    Amplify faculty development for AI-integrated pedagogy, inclusive classrooms, and design thinking in assessment.
-                  </span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="mt-0.5 h-5 w-5 text-brand-magenta" aria-hidden="true" />
-                  <span>
-                    Strengthen stakeholder feedback convergence with transparent action tracking and measurable outcomes.
-                  </span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function StatsShowcase() {
-  return (
-    <section className="bg-slate-950 py-16">
-      <div className="mx-auto max-w-6xl px-6">
-        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-          {STAT_CARDS.map((stat) => (
-            <div
-              key={stat.label}
-              className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-7 transition hover:-translate-y-1 hover:border-white/30 hover:bg-white/10"
-            >
-              <div className="absolute inset-0 opacity-0 transition group-hover:opacity-100">
-                <div className="absolute -top-10 right-0 h-32 w-32 rounded-full bg-brand-gradient blur-3xl" />
-              </div>
-              <div className="relative flex flex-col gap-4">
-                <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-white/10 text-white/80">
-                  <stat.icon className="h-5 w-5" aria-hidden="true" />
-                </span>
-                <p className="text-3xl font-semibold text-white">{stat.value}</p>
-                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-white/60">
-                  {stat.label}
-                </p>
-                <p className="text-sm text-white/70 font-body">{stat.description}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function MandateSection() {
-  return (
-    <section className="relative bg-slate-950 py-20">
-      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-      <div className="mx-auto grid max-w-6xl gap-16 px-6 lg:grid-cols-[1.1fr_minmax(0,1fr)]">
-        <div className="space-y-6">
-          <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.28em] text-white/60">
-            Mandate
-          </span>
-          <h2 className="text-3xl font-display text-white sm:text-4xl">
-            Quality stewardship aligned with NAAC and global benchmarks
-          </h2>
-          <p className="text-base text-white/70 font-body">
-            The IQAC at Dayananda Sagar University is a strategic driver of quality consciousness across academic, research, and administrative domains. It orchestrates institution-wide systems that foster transparency, accountability, innovation, and measurable learning outcomes.
-          </p>
-          <div className="grid gap-6 sm:grid-cols-2">
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-6">
-              <p className="text-sm uppercase tracking-[0.22em] text-white/60">
-                Core Objectives
-              </p>
-              <ul className="mt-4 space-y-3 text-sm text-white/75 font-body">
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="mt-0.5 h-4 w-4 text-brand-magenta" aria-hidden="true" />
-                  Institutionalise best practices that sustain academic rigor and learner-centric pedagogy.
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="mt-0.5 h-4 w-4 text-brand-magenta" aria-hidden="true" />
-                  Facilitate data-informed governance, ensuring compliance with national and international standards.
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="mt-0.5 h-4 w-4 text-brand-magenta" aria-hidden="true" />
-                  Promote participatory decision-making through stakeholder dialogues and collaborative review.
-                </li>
-              </ul>
-            </div>
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-6">
-              <p className="text-sm uppercase tracking-[0.22em] text-white/60">
-                Post-accreditation Focus
-              </p>
-              <ul className="mt-4 space-y-3 text-sm text-white/75 font-body">
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="mt-0.5 h-4 w-4 text-brand-magenta" aria-hidden="true" />
-                  Translate peer team recommendations into strategic roadmaps and implementation dashboards.
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="mt-0.5 h-4 w-4 text-brand-magenta" aria-hidden="true" />
-                  Accelerate quality assurance digitisation for seamless documentation and audit readiness.
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="mt-0.5 h-4 w-4 text-brand-magenta" aria-hidden="true" />
-                  Nurture excellence narratives that highlight the university’s societal impact and graduate success stories.
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div className="space-y-8">
-          <div className="rounded-3xl border border-white/10 bg-white/5 p-8">
-            <h3 className="text-xl font-semibold text-white">Constitution</h3>
-            <p className="mt-3 text-sm text-white/70 font-body">
-              The IQAC is constituted with senior academic leaders, administrative heads, industry experts, alumni, and student representatives to bring holistic perspectives to quality planning.
-            </p>
-            <ul className="mt-4 space-y-3 text-sm text-white/75 font-body">
-              <li className="flex items-start gap-2">
-                <Award className="mt-0.5 h-4 w-4 text-brand-yellow" aria-hidden="true" />
-                Chairperson – Vice Chancellor
+          <div className="rounded-3xl border border-white/10 bg-white/5 p-8 shadow-[0_30px_120px_-60px_rgba(255,255,255,0.8)]">
+            <p className="text-sm uppercase tracking-[0.28em] text-white/60">Our Mandate</p>
+            <ul className="mt-6 space-y-4 text-sm text-white/80 font-body">
+              <li className="flex items-start gap-3">
+                <Award className="mt-1 h-5 w-5 text-brand-yellow" aria-hidden="true" />
+                Sustain a culture of quality by embedding reflective practice into every academic and administrative process.
               </li>
-              <li className="flex items-start gap-2">
-                <Award className="mt-0.5 h-4 w-4 text-brand-yellow" aria-hidden="true" />
-                External Experts from academia and industry
+              <li className="flex items-start gap-3">
+                <Award className="mt-1 h-5 w-5 text-brand-yellow" aria-hidden="true" />
+                Translate peer review recommendations into measurable action plans with periodic impact tracking.
               </li>
-              <li className="flex items-start gap-2">
-                <Award className="mt-0.5 h-4 w-4 text-brand-yellow" aria-hidden="true" />
-                Coordinators for academics, research, student support, and community engagement
-              </li>
-            </ul>
-          </div>
-          <div className="rounded-3xl border border-white/10 bg-white/5 p-8">
-            <h3 className="text-xl font-semibold text-white">Working Committees</h3>
-            <p className="mt-3 text-sm text-white/70 font-body">
-              The IQAC convenes thematic committees to drive institutional priorities and monitor progress through quarterly reviews.
-            </p>
-            <ul className="mt-4 space-y-3 text-sm text-white/75 font-body">
-              <li className="flex items-start gap-2">
-                <ClipboardList className="mt-0.5 h-4 w-4 text-brand-magenta" aria-hidden="true" />
-                Curriculum Innovation & Outcome Evaluation Committee
-              </li>
-              <li className="flex items-start gap-2">
-                <ClipboardList className="mt-0.5 h-4 w-4 text-brand-magenta" aria-hidden="true" />
-                Research, Consultancy & IPR Facilitation Committee
-              </li>
-              <li className="flex items-start gap-2">
-                <ClipboardList className="mt-0.5 h-4 w-4 text-brand-magenta" aria-hidden="true" />
-                Student Support, Inclusivity & Wellbeing Committee
+              <li className="flex items-start gap-3">
+                <Award className="mt-1 h-5 w-5 text-brand-yellow" aria-hidden="true" />
+                Showcase institutional distinctiveness through evidence-led narratives and stakeholder stories.
               </li>
             </ul>
           </div>
@@ -382,112 +258,197 @@ function MandateSection() {
   );
 }
 
-function FocusAreasSection() {
+function StatsSection() {
   return (
-    <section className="bg-slate-950 py-20">
-      <div className="mx-auto max-w-6xl px-6">
-        <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-          <div>
-            <h2 className="text-3xl font-display text-white sm:text-4xl">
-              Strategic focus pillars
-            </h2>
-            <p className="mt-3 max-w-2xl text-base text-white/70 font-body">
-              Each pillar has clearly defined metrics, owners, and review cadences to ensure sustained progress across the university.
-            </p>
-          </div>
-          <Link
-            to="/research"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-white/70 transition hover:text-white"
+    <section className="bg-slate-950 py-16 text-white">
+      <div className="mx-auto grid max-w-6xl gap-6 px-6 md:grid-cols-2 xl:grid-cols-4">
+        {STATS.map((item) => (
+          <div
+            key={item.label}
+            className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-7 transition hover:-translate-y-1 hover:border-white/30 hover:bg-white/10"
           >
-            Explore DSU research ecosystem
-            <ArrowRight className="h-4 w-4" aria-hidden="true" />
-          </Link>
-        </div>
-        <div className="mt-10 grid gap-6 md:grid-cols-2">
-          {FOCUS_PILLARS.map((pillar) => (
-            <div
-              key={pillar.title}
-              className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-8 transition hover:-translate-y-1 hover:border-white/30 hover:bg-white/10"
-            >
-              <div className="absolute inset-0 opacity-0 transition group-hover:opacity-100">
-                <div className="absolute bottom-0 right-0 h-32 w-32 rounded-full bg-brand-blue/20 blur-3xl" />
-              </div>
-              <div className="relative">
-                <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-white/80">
-                  <pillar.icon className="h-6 w-6" aria-hidden="true" />
-                </span>
-                <h3 className="mt-6 text-xl font-semibold text-white">{pillar.title}</h3>
-                <p className="mt-3 text-sm text-white/75 font-body">{pillar.description}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function AnnouncementStrip() {
-  return (
-    <section className="bg-white/5 py-10 backdrop-blur-sm">
-      <div className="mx-auto max-w-6xl px-6">
-        <div className="flex items-center gap-3">
-          <span className="inline-flex items-center gap-2 rounded-full bg-brand-gradient px-3 py-1 text-xs font-semibold uppercase tracking-[0.28em] text-white">
-            Updates
-          </span>
-          <p className="text-sm text-white/70 font-body">
-            Upcoming initiatives and engagements hosted by the Internal Quality Assurance Cell.
-          </p>
-        </div>
-        <div className="mt-6 grid gap-6 md:grid-cols-3">
-          {ANNOUNCEMENTS.map((item) => (
-            <div
-              key={item.title}
-              className="rounded-3xl border border-white/10 bg-white/10 p-6 text-white transition hover:border-white/30"
-            >
-              <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.25em] text-white/60">
-                <Megaphone className="h-4 w-4" aria-hidden="true" />
-                {item.date}
-              </div>
-              <h3 className="mt-4 text-lg font-semibold text-white">{item.title}</h3>
-              <p className="mt-3 text-sm text-white/75 font-body">{item.description}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function InitiativesTimeline() {
-  return (
-    <section className="bg-slate-950 py-20">
-      <div className="mx-auto max-w-6xl px-6">
-        <div className="max-w-3xl">
-          <h2 className="text-3xl font-display text-white sm:text-4xl">
-            Recent initiatives and impact stories
-          </h2>
-          <p className="mt-3 text-base text-white/70 font-body">
-            IQAC programmes strengthen academic quality through measurable outcomes, digital tools, and collaborative engagement across the university.
-          </p>
-        </div>
-        <div className="mt-12 space-y-8 border-l border-white/10 pl-6 sm:pl-10">
-          {INITIATIVES.map((item) => (
-            <div key={`${item.year}-${item.title}`} className="relative pl-6">
-              <span className="absolute -left-3 top-1.5 flex h-6 w-6 items-center justify-center rounded-full border border-white/30 bg-slate-950 text-xs font-semibold text-white/70">
-                ●
+            <div className="absolute -top-10 right-0 h-32 w-32 rounded-full bg-brand-gradient blur-3xl opacity-0 transition group-hover:opacity-60" />
+            <div className="relative space-y-4">
+              <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-white/10 text-white/80">
+                <item.icon className="h-5 w-5" aria-hidden="true" />
               </span>
-              <div className="rounded-3xl border border-white/10 bg-white/5 p-6">
-                <div className="flex flex-wrap items-center justify-between gap-3 text-xs font-semibold uppercase tracking-[0.25em] text-white/60">
-                  <span>{item.year}</span>
-                  <span>IQAC Initiative</span>
-                </div>
-                <h3 className="mt-4 text-xl font-semibold text-white">{item.title}</h3>
-                <p className="mt-3 text-sm text-white/75 font-body">{item.details}</p>
-                <p className="mt-4 inline-flex items-start gap-2 text-sm text-white font-body">
-                  <CheckCircle2 className="mt-0.5 h-4 w-4 text-brand-magenta" aria-hidden="true" />
-                  {item.impact}
-                </p>
+              <p className="text-3xl font-semibold text-white">{item.value}</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-white/60">
+                {item.label}
+              </p>
+              <p className="text-sm text-white/75 font-body">{item.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function AboutSection() {
+  return (
+    <section className="bg-slate-900/90 py-20 text-white">
+      <div className="mx-auto grid max-w-6xl gap-12 px-6 lg:grid-cols-[1.1fr_minmax(0,0.9fr)] lg:items-center">
+        <div className="space-y-6">
+          <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.28em] text-white/70">
+            About IQAC
+          </span>
+          <h2 className="text-3xl font-display sm:text-4xl">Quality stewardship aligned to national and global benchmarks</h2>
+          <p className="text-base text-white/80 font-body">
+            The IQAC at Dayananda Sagar University is mandated to architect continuous enhancement across academics, research, governance, and community impact. It ensures that quality initiatives remain structured, inclusive, and measurable, enabling us to deliver future-ready education.
+          </p>
+          <ul className="grid gap-4 sm:grid-cols-2">
+            {ABOUT_POINTS.map((point) => (
+              <li key={point} className="flex items-start gap-3 rounded-3xl border border-white/10 bg-white/5 p-5 text-sm text-white/80 font-body">
+                <FileText className="mt-1 h-4 w-4 text-brand-magenta" aria-hidden="true" />
+                <span>{point}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="flex flex-wrap gap-4">
+            <Button
+              asChild
+              variant="secondary"
+              className="bg-white/10 text-white hover:bg-white/20"
+            >
+              <a href="mailto:iqac@dsu.edu.in?subject=IQAC%20Collaboration%20Request" className="gap-2">
+                Request departmental review
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </a>
+            </Button>
+            <Link
+              to="/research"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-white/80 transition hover:text-white"
+            >
+              Explore DSU research ecosystem
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </Link>
+          </div>
+        </div>
+        <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 shadow-[0_30px_120px_-80px_rgba(255,255,255,0.9)]">
+          <img
+            src="https://images.unsplash.com/photo-1545239351-ef35f43d514b?auto=format&fit=crop&w=880&q=80"
+            alt="Dayananda Sagar University students collaborating"
+            className="h-full w-full object-cover"
+          />
+          <div className="absolute bottom-0 left-0 right-0 bg-slate-950/70 p-6 text-sm text-white/80 font-body">
+            IQAC collaborates with schools and centres through structured academic and administrative audits.
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function DirectorSection() {
+  return (
+    <section className="bg-slate-950 py-20 text-white">
+      <div className="mx-auto grid max-w-6xl gap-10 px-6 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:items-center">
+        <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 shadow-[0_40px_140px_-80px_rgba(255,255,255,0.8)]">
+          <img
+            src={DIRECTOR_PROFILE.image}
+            alt={DIRECTOR_PROFILE.name}
+            className="h-full w-full object-cover"
+          />
+        </div>
+        <div className="space-y-6">
+          <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.28em] text-white/70">
+            Leadership message
+          </span>
+          <h3 className="text-3xl font-display sm:text-4xl">{DIRECTOR_PROFILE.name}</h3>
+          <p className="text-sm uppercase tracking-[0.28em] text-white/60">
+            {DIRECTOR_PROFILE.designation}
+          </p>
+          <p className="text-lg text-white/80 font-body">{DIRECTOR_PROFILE.quote}</p>
+          <div className="flex flex-wrap items-center gap-4 text-sm text-white/75 font-body">
+            <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1">
+              <FileText className="h-4 w-4 text-white" aria-hidden="true" />
+              <a
+                href={`mailto:${DIRECTOR_PROFILE.email}`}
+                className="font-medium text-white transition hover:text-brand-magenta"
+              >
+                {DIRECTOR_PROFILE.email}
+              </a>
+            </span>
+            <span className="inline-flex items-center gap-2 text-white/60">
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              Engage IQAC facilitators for audits, curriculum reviews, and quality clinics.
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function EventTicker() {
+  return (
+    <section className="border-y border-white/10 bg-white/5 py-6 text-white">
+      <div className="mx-auto flex max-w-6xl items-center gap-4 px-6">
+        <span className="inline-flex items-center gap-2 rounded-full bg-brand-gradient px-3 py-1 text-xs font-semibold uppercase tracking-[0.28em] text-white">
+          Updates
+        </span>
+        <div className="relative flex-1 overflow-hidden">
+          <div className="flex animate-[ticker_28s_linear_infinite] gap-12 text-sm text-white/80 font-body">
+            {[...EVENT_TICKER, ...EVENT_TICKER].map((item, index) => (
+              <div key={`${item.title}-${index}`} className="inline-flex items-center gap-3 whitespace-nowrap">
+                <CalendarDays className="h-4 w-4 text-brand-yellow" aria-hidden="true" />
+                <span className="font-semibold text-white">{item.title}</span>
+                <span className="text-white/60">{item.date}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+      <style>{`
+        @keyframes ticker {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+      `}</style>
+    </section>
+  );
+}
+
+function GallerySection() {
+  return (
+    <section className="bg-slate-950 py-20 text-white">
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+          <div>
+            <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.28em] text-white/70">
+              Life at DSU
+            </span>
+            <h2 className="mt-4 text-3xl font-display sm:text-4xl">Experiences curated by IQAC</h2>
+            <p className="mt-3 max-w-2xl text-base text-white/75 font-body">
+              A gallery of academic, co-curricular, and outreach initiatives that showcase DSU’s vibrant learning ecosystem and quality-led impact.
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {GALLERY_CATEGORIES.map((category) => (
+              <span
+                key={category}
+                className={`inline-flex items-center rounded-full border border-white/15 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.22em] text-white/70 ${category === "All" ? "bg-brand-gradient text-white" : "bg-white/5"}`}
+              >
+                {category}
+              </span>
+            ))}
+          </div>
+        </div>
+        <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          {GALLERY_ITEMS.map((item) => (
+            <div key={item.title} className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5">
+              <img
+                src={item.image}
+                alt={item.title}
+                className="h-56 w-full object-cover transition duration-500 group-hover:scale-105"
+              />
+              <div className="space-y-3 p-6">
+                <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-white/70">
+                  {item.category}
+                </span>
+                <h3 className="text-lg font-semibold text-white">{item.title}</h3>
+                <p className="text-sm text-white/75 font-body">{item.description}</p>
               </div>
             </div>
           ))}
@@ -497,38 +458,39 @@ function InitiativesTimeline() {
   );
 }
 
-function ResourcesSection() {
+function PoliciesSection() {
   return (
-    <section className="bg-slate-950 py-20">
+    <section className="bg-slate-900/95 py-20 text-white">
       <div className="mx-auto max-w-6xl px-6">
-        <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+        <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <div>
-            <h2 className="text-3xl font-display text-white sm:text-4xl">
-              Resource library
-            </h2>
-            <p className="mt-3 max-w-2xl text-base text-white/70 font-body">
-              Access curated documentation that underpins DSU’s quality initiatives. Write to IQAC for authenticated copies or collaborative reviews.
+            <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.28em] text-white/70">
+              Policies & Manuals
+            </span>
+            <h2 className="mt-4 text-3xl font-display sm:text-4xl">Structured documentation for assurance</h2>
+            <p className="mt-3 max-w-2xl text-base text-white/75 font-body">
+              IQAC curates policies, frameworks, and reports that guide institutional excellence. Access curated sets for collaborative reviews and statutory submissions.
             </p>
           </div>
-          <a
-            href="mailto:iqac@dsu.edu.in?subject=IQAC%20Document%20Request"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-white/70 transition hover:text-white"
+          <Button
+            asChild
+            variant="secondary"
+            className="bg-white/10 text-white hover:bg-white/20"
           >
-            Request documents
-            <ArrowRight className="h-4 w-4" aria-hidden="true" />
-          </a>
+            <a href="mailto:iqac@dsu.edu.in?subject=Request%20for%20IQAC%20Documents" className="gap-2">
+              Request authenticated copy
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </a>
+          </Button>
         </div>
         <div className="mt-10 grid gap-6 lg:grid-cols-3">
-          {RESOURCE_GROUPS.map((group) => (
-            <div
-              key={group.title}
-              className="rounded-3xl border border-white/10 bg-white/5 p-8 text-white transition hover:border-white/30"
-            >
-              <div className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.25em] text-white/60">
-                <FileText className="h-4 w-4" aria-hidden="true" />
+          {POLICY_GROUPS.map((group) => (
+            <div key={group.title} className="rounded-3xl border border-white/10 bg-white/5 p-8">
+              <div className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.22em] text-white/60">
+                <BookMarked className="h-4 w-4" aria-hidden="true" />
                 {group.title}
               </div>
-              <p className="mt-4 text-sm text-white/75 font-body">{group.subtitle}</p>
+              <p className="mt-4 text-sm text-white/75 font-body">{group.description}</p>
               <ul className="mt-6 space-y-3 text-sm text-white/80 font-body">
                 {group.items.map((item) => (
                   <li key={item} className="flex items-start gap-2">
@@ -545,154 +507,64 @@ function ResourcesSection() {
   );
 }
 
-function WorkflowSection() {
+function QuickLinksSection() {
   return (
-    <section className="bg-white/5 py-20">
-      <div className="mx-auto max-w-6xl px-6">
-        <div className="max-w-3xl">
-          <h2 className="text-3xl font-display text-white sm:text-4xl">
-            Continuous quality enhancement workflow
-          </h2>
-          <p className="mt-3 text-base text-white/70 font-body">
-            Every academic year is structured around iterative quality cycles that translate strategy into measurable outcomes and responsive improvements.
+    <section className="bg-slate-950 py-20 text-white">
+      <div className="mx-auto grid max-w-6xl gap-12 px-6 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)]">
+        <div className="space-y-6">
+          <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.28em] text-white/70">
+            Contact & Support
+          </span>
+          <h2 className="text-3xl font-display sm:text-4xl">Collaborate with the IQAC office</h2>
+          <p className="text-base text-white/75 font-body">
+            Reach out for curriculum reviews, statutory documentation support, or to feature your best practices. The IQAC coordination team responds within two working days.
           </p>
-        </div>
-        <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-          {QUALITY_WORKFLOW.map((phase, index) => (
-            <div
-              key={phase.step}
-              className="relative overflow-hidden rounded-3xl border border-white/10 bg-slate-950/80 p-7 text-white"
-            >
-              <div className="absolute -right-10 top-0 h-24 w-24 rounded-full bg-brand-gradient-alt blur-3xl opacity-40" />
-              <div className="relative space-y-4">
-                <span className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/30 text-sm font-semibold text-white/70">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <h3 className="text-xl font-semibold text-white">{phase.step}</h3>
-                <p className="text-sm text-white/75 font-body">{phase.overview}</p>
+          <div className="rounded-3xl border border-white/10 bg-white/5 p-6 text-sm text-white/80 font-body">
+            <div className="flex items-start gap-3">
+              <MapPin className="mt-1 h-5 w-5 text-brand-magenta" aria-hidden="true" />
+              <div>
+                <p className="font-semibold text-white">IQAC Office, Dayananda Sagar University</p>
+                <p className="mt-1">Innovation Campus, Kudlu Gate, Hosur Road, Bengaluru - 560 114</p>
+                <p className="mt-3">
+                  Email: <a href="mailto:iqac@dsu.edu.in" className="font-medium text-white transition hover:text-brand-magenta">iqac@dsu.edu.in</a>
+                </p>
               </div>
             </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function LeadershipSection() {
-  return (
-    <section className="bg-slate-950 py-20">
-      <div className="mx-auto max-w-5xl rounded-3xl border border-white/10 bg-white/5 px-6 py-16 text-white shadow-[0_30px_120px_-80px_rgba(255,255,255,0.9)]">
-        <div className="grid gap-10 lg:grid-cols-[1fr_minmax(0,1.4fr)]">
-          <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-brand-gradient-alt p-8">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.25),_transparent_65%)]" />
-            <div className="relative space-y-4">
-              <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-white/15 text-2xl font-semibold">
-                MN
-              </span>
-              <p className="text-sm uppercase tracking-[0.28em] text-white/80">
-                Leadership Message
-              </p>
-              <h3 className="text-2xl font-semibold text-white">{DIRECTOR_PROFILE.name}</h3>
-              <p className="text-sm text-white/80 font-body">{DIRECTOR_PROFILE.designation}</p>
-            </div>
           </div>
-          <div className="space-y-6">
-            <p className="text-lg text-white/80 font-body">{DIRECTOR_PROFILE.message}</p>
-            <div className="flex flex-wrap items-center gap-4 text-sm text-white/70 font-body">
-              <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1">
-                <MailIcon />
-                <a href={`mailto:${DIRECTOR_PROFILE.email}`} className="font-medium text-white transition hover:text-brand-magenta">
-                  {DIRECTOR_PROFILE.email}
-                </a>
-              </span>
-              <span className="inline-flex items-center gap-2 text-white/60">
+        </div>
+        <div className="space-y-4">
+          <h3 className="text-lg font-semibold text-white">Resource quick links</h3>
+          <div className="grid gap-3 sm:grid-cols-2">
+            {QUICK_LINKS.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                target={link.href.startsWith("http") ? "_blank" : undefined}
+                rel={link.href.startsWith("http") ? "noreferrer" : undefined}
+                className="flex items-center justify-between gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/75 font-body transition hover:border-white/30 hover:text-white"
+              >
+                <span>{link.label}</span>
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                Collaborate with IQAC working groups for academic audits and accreditation readiness.
-              </span>
-            </div>
+              </a>
+            ))}
           </div>
         </div>
       </div>
     </section>
   );
-}
-
-function FeedbackSection() {
-  return (
-    <section className="bg-slate-950 pb-24">
-      <div className="mx-auto max-w-6xl px-6">
-        <div className="rounded-3xl border border-white/10 bg-white/5 p-10 text-white">
-          <div className="grid gap-8 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)]">
-            <div className="space-y-4">
-              <span className="inline-flex items-center gap-2 rounded-full bg-brand-gradient px-3 py-1 text-xs font-semibold uppercase tracking-[0.28em] text-white">
-                Feedback & Support
-              </span>
-              <h2 className="text-3xl font-display text-white sm:text-4xl">
-                Partner with IQAC for continuous enhancement
-              </h2>
-              <p className="text-base text-white/75 font-body">
-                Departments, students, alumni, and industry collaborators are invited to share inputs that elevate DSU’s academic and societal impact. IQAC ensures transparent acknowledgement, analysis, and action documentation for every submission.
-              </p>
-            </div>
-            <div className="space-y-4 text-sm text-white/75 font-body">
-              <div className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-4">
-                <Megaphone className="mt-1 h-5 w-5 text-brand-magenta" aria-hidden="true" />
-                <div>
-                  <p className="font-semibold text-white">Submit feedback</p>
-                  <p className="mt-1">Share ideas, commendations, or concerns with the IQAC coordination team for swift action planning.</p>
-                  <Button
-                    asChild
-                    variant="secondary"
-                    className="mt-4 bg-white/10 text-white hover:bg-white/20"
-                  >
-                    <a
-                      href="mailto:iqac@dsu.edu.in?subject=Feedback%20for%20IQAC"
-                      className="gap-2"
-                    >
-                      Email feedback
-                      <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                    </a>
-                  </Button>
-                </div>
-              </div>
-              <div className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-4">
-                <Users2 className="mt-1 h-5 w-5 text-brand-magenta" aria-hidden="true" />
-                <div>
-                  <p className="font-semibold text-white">Request facilitation</p>
-                  <p className="mt-1">
-                    Invite IQAC facilitators for departmental reviews, NAAC preparedness workshops, or policy clarifications.
-                  </p>
-                  <p className="mt-3 text-sm text-white/70">
-                    Email <a href="mailto:iqac@dsu.edu.in" className="font-medium text-white transition hover:text-brand-magenta">iqac@dsu.edu.in</a> with proposed agenda and timelines.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function MailIcon() {
-  return <Mail className="h-4 w-4 text-white" aria-hidden="true" />;
 }
 
 export default function IQAC() {
   return (
     <main className="bg-slate-950 text-white">
       <HeroSection />
-      <StatsShowcase />
-      <MandateSection />
-      <FocusAreasSection />
-      <AnnouncementStrip />
-      <InitiativesTimeline />
-      <ResourcesSection />
-      <WorkflowSection />
-      <LeadershipSection />
-      <FeedbackSection />
+      <StatsSection />
+      <AboutSection />
+      <DirectorSection />
+      <EventTicker />
+      <GallerySection />
+      <PoliciesSection />
+      <QuickLinksSection />
     </main>
   );
 }
