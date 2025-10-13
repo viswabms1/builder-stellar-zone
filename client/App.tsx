@@ -25,6 +25,7 @@ import CDSIMERHospital from "./pages/CDSIMERHospital";
 import CDSIMERLife from "./pages/CDSIMERLife";
 import DeptAIML from "./pages/DeptAIML";
 import DeptCSE from "./pages/DeptCSE";
+import IQAC from "./pages/IQAC";
 import FacultyCSE from "./pages/FacultyCSE";
 import { ThemeProvider } from "./providers/theme-provider";
 import FacultyProfile from "./pages/FacultyProfile";
@@ -113,6 +114,7 @@ function App() {
               <Route path="/examinations" element={<Examinations />} />
               <Route path="/research" element={<Research />} />
               <Route path="/about" element={<About />} />
+              <Route path="/iqac" element={<IQAC />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
