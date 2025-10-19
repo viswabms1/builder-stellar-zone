@@ -307,7 +307,7 @@ function ResourceCard({ resource }: { resource: ResourceLink }) {
           {resource.title}
         </CardTitle>
       </CardHeader>
-      <CardContent className="space-y-5 text-sm text-slate-900 dark:text-slate-200 font-body">
+      <CardContent className="space-y-5 text-sm text-foreground font-body">
         <p>{resource.description}</p>
         <a
           href={resource.href}
@@ -358,7 +358,7 @@ function AchievementCard({ achievement }: { achievement: Achievement }) {
         </div>
       </CardHeader>
       <CardContent>
-        <p className="text-sm text-slate-900 dark:text-slate-200 font-body">
+        <p className="text-sm text-foreground font-body">
           {achievement.description}
         </p>
       </CardContent>
@@ -383,7 +383,7 @@ function FacultyCard({ faculty }: { faculty: FacultyMember }) {
         </Badge>
       </CardHeader>
       <CardContent>
-        <p className="text-sm text-slate-900 dark:text-slate-200 font-body">
+        <p className="text-sm text-foreground font-body">
           {faculty.specialization}
         </p>
       </CardContent>
@@ -406,7 +406,7 @@ function LifeCard({ life }: { life: LifeAtDSU }) {
         </h3>
       </div>
       <CardContent className="p-4">
-        <p className="text-sm text-slate-900 dark:text-slate-200 font-body">
+        <p className="text-sm text-foreground font-body">
           {life.description}
         </p>
       </CardContent>
@@ -472,7 +472,7 @@ export default function ComputerApplications() {
             <div className="space-y-6">
               <Badge className="bg-brand-magenta/15 text-brand-magenta">About School</Badge>
               <h2 className="font-display text-3xl md:text-4xl">Nurturing India's Next-Gen Tech Creators</h2>
-              <div className="space-y-4 text-slate-900 dark:text-slate-200">
+              <div className="space-y-4 text-foreground">
                 <p className="font-body">
                   Established in 2016, the School of Computer Applications at Dayananda Sagar University is India's premier destination for aspiring software engineers, data scientists, and tech entrepreneurs. With a mission to merge academic excellence with industry relevance, we've shaped over 2,000+ graduates who lead innovation across global tech companies and startups.
                 </p>
@@ -515,7 +515,7 @@ export default function ComputerApplications() {
                 <Eye className="h-8 w-8 text-brand-blue flex-shrink-0 mt-1" />
                 <div>
                   <CardTitle className="text-xl mb-3">Vision</CardTitle>
-                  <p className="text-slate-900 dark:text-slate-200 font-body">
+                  <p className="text-foreground font-body">
                     To be a globally recognized centre of excellence producing technology leaders, innovators, and entrepreneurs who create transformative solutions for societal challenges through ethical, inclusive, and sustainable development.
                   </p>
                 </div>
@@ -526,7 +526,7 @@ export default function ComputerApplications() {
                 <Target className="h-8 w-8 text-brand-magenta flex-shrink-0 mt-1" />
                 <div>
                   <CardTitle className="text-xl mb-3">Mission</CardTitle>
-                  <p className="text-slate-900 dark:text-slate-200 font-body">
+                  <p className="text-foreground font-body">
                     Empower learners with industry-aligned skills, research exposure, and entrepreneurial mindset through experiential pedagogy, global partnerships, and mentorship that prepares them for leadership roles in the digital economy.
                   </p>
                 </div>
@@ -577,7 +577,7 @@ export default function ComputerApplications() {
                 <p className="text-sm text-brand-magenta">Program Chair & Dean, School of Computer Applications</p>
               </div>
             </div>
-            <div className="space-y-4 text-slate-900 dark:text-slate-200 font-body">
+            <div className="space-y-4 text-foreground font-body">
               <p>
                 Welcome to the School of Computer Applications at DSU. In an era where technology redefines every sector, our mission is clear: to cultivate not just skilled programmers, but thoughtful technologists who understand the responsibility that comes with innovation.
               </p>
@@ -600,7 +600,7 @@ export default function ComputerApplications() {
           <div className="mb-12">
             <Badge className="bg-brand-magenta/15 text-brand-magenta">Faculty Leadership</Badge>
             <h2 className="mt-4 font-display text-3xl md:text-4xl">Meet Our Distinguished Faculty</h2>
-            <p className="mt-3 text-slate-900 dark:text-slate-200 max-w-3xl font-body">
+            <p className="mt-3 text-foreground max-w-3xl font-body">
               Our faculty comprises PhD holders, published researchers, and industry veterans committed to mentoring the next generation of technology leaders.
             </p>
           </div>
@@ -628,7 +628,7 @@ export default function ComputerApplications() {
           <div className="mb-12">
             <Badge className="bg-brand-magenta/15 text-brand-magenta">Student Success</Badge>
             <h2 className="mt-4 font-display text-3xl md:text-4xl">Student Achievements & Milestones</h2>
-            <p className="mt-3 text-slate-900 dark:text-slate-200 max-w-3xl font-body">
+            <p className="mt-3 text-foreground max-w-3xl font-body">
               Our students consistently excel in competitive programming, research, startups, and industry roles, showcasing the quality of education and mentorship at DSU.
             </p>
           </div>
@@ -645,7 +645,7 @@ export default function ComputerApplications() {
           <div className="mb-12">
             <Badge className="bg-brand-magenta/15 text-brand-magenta">Faculty Excellence</Badge>
             <h2 className="mt-4 font-display text-3xl md:text-4xl">Faculty Achievements & Research</h2>
-            <p className="mt-3 text-slate-900 dark:text-slate-200 max-w-3xl font-body">
+            <p className="mt-3 text-foreground max-w-3xl font-body">
               Our faculty actively contributes to advancing technology through patents, publications, grants, and industry collaborations that influence global tech innovation.
             </p>
           </div>
@@ -662,7 +662,7 @@ export default function ComputerApplications() {
           <div className="mb-12 text-center">
             <Badge className="bg-brand-magenta/15 text-brand-magenta">Campus Life</Badge>
             <h2 className="mt-4 font-display text-3xl md:text-4xl">Life @ DSU – Global Standards</h2>
-            <p className="mt-3 text-slate-900 dark:text-slate-200 max-w-3xl font-body mx-auto">
+            <p className="mt-3 text-foreground max-w-3xl font-body mx-auto">
               Beyond classrooms, DSU offers a holistic ecosystem where learning, growth, creativity, and community thrive through diverse experiences and global exposure.
             </p>
           </div>
@@ -684,7 +684,7 @@ export default function ComputerApplications() {
               <h2 className="font-display text-3xl md:text-4xl">
                 Programs that transform tech aspirations into careers
               </h2>
-              <p className="text-sm text-slate-900 dark:text-slate-200 font-body">
+              <p className="text-sm text-foreground font-body">
                 Choose focused routes into software development, analytics, data science and emerging tech with curriculum co-designed by industry mentors and research leaders.
               </p>
               <div className="grid gap-4 sm:grid-cols-2">
@@ -701,7 +701,7 @@ export default function ComputerApplications() {
                         {group.label} Programmes
                       </CardTitle>
                     </CardHeader>
-                    <CardContent className="grid gap-2 text-sm text-slate-900 dark:text-slate-200 font-body">
+                    <CardContent className="grid gap-2 text-sm text-foreground font-body">
                       {group.programs.map((program) => (
                         <div key={program} className="flex items-center">
                           <ChevronRight className="mr-2 h-3 w-3 text-brand-magenta" />
@@ -773,7 +773,7 @@ export default function ComputerApplications() {
               <h2 className="mt-4 font-display text-3xl md:text-4xl">
                 Innovation Labs & Career Readiness
               </h2>
-              <p className="mt-3 text-sm text-slate-900 dark:text-slate-200 font-body">
+              <p className="mt-3 text-sm text-foreground font-body">
                 Access cross-disciplinary labs and mentorship programmes that
                 spark product engineering, AI, automation and cloud-native
                 careers.
@@ -807,7 +807,7 @@ export default function ComputerApplications() {
               <h2 className="mt-4 font-display text-3xl md:text-4xl">
                 Stay Ahead of Every Milestone
               </h2>
-              <p className="mt-3 text-sm text-slate-900 dark:text-slate-200 font-body">
+              <p className="mt-3 text-sm text-foreground font-body">
                 Download academic schedules, explore event recaps and tap into
                 ongoing research that keeps learners future focused.
               </p>
@@ -836,7 +836,7 @@ export default function ComputerApplications() {
             <h3 className="mb-3 font-display text-3xl">
               Launch Your Tech Career with DSU
             </h3>
-            <p className="mb-6 text-slate-900 dark:text-slate-200 font-body">
+            <p className="mb-6 text-foreground font-body">
               Collaborate with mentors, build real products, showcase your
               portfolio and secure roles with the ecosystem of recruiters
               partnering with the School of Computer Applications.
