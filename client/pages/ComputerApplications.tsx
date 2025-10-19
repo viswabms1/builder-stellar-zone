@@ -334,7 +334,7 @@ function LabCard({ lab }: { lab: LabExperience }) {
         <CardTitle className="text-base font-display">{lab.title}</CardTitle>
       </CardHeader>
       <CardContent className="pt-0">
-        <CardDescription className="text-sm leading-relaxed text-slate-600 dark:text-slate-400 font-body">
+        <CardDescription className="text-sm leading-relaxed text-slate-600 dark:text-slate-300 font-body">
           {lab.description}
         </CardDescription>
       </CardContent>
@@ -540,21 +540,21 @@ export default function ComputerApplications() {
                 <Heart className="h-5 w-5 text-brand-magenta flex-shrink-0 mt-1" />
                 <div>
                   <h4 className="font-semibold mb-1">Excellence</h4>
-                  <p className="text-sm text-slate-600 dark:text-slate-400">Pursuing highest standards in education, research, and student outcomes</p>
+                  <p className="text-sm text-slate-600 dark:text-slate-300">Pursuing highest standards in education, research, and student outcomes</p>
                 </div>
               </div>
               <div className="flex gap-3">
                 <Users className="h-5 w-5 text-brand-blue flex-shrink-0 mt-1" />
                 <div>
                   <h4 className="font-semibold mb-1">Collaboration</h4>
-                  <p className="text-sm text-slate-600 dark:text-slate-400">Building strong partnerships with industry, academia, and communities</p>
+                  <p className="text-sm text-slate-600 dark:text-slate-300">Building strong partnerships with industry, academia, and communities</p>
                 </div>
               </div>
               <div className="flex gap-3">
                 <Sparkles className="h-5 w-5 text-brand-orange flex-shrink-0 mt-1" />
                 <div>
                   <h4 className="font-semibold mb-1">Innovation</h4>
-                  <p className="text-sm text-slate-600 dark:text-slate-400">Fostering creativity, experimentation, and disruptive thinking</p>
+                  <p className="text-sm text-slate-600 dark:text-slate-300">Fostering creativity, experimentation, and disruptive thinking</p>
                 </div>
               </div>
             </div>
