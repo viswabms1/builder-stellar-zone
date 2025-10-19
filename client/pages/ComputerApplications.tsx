@@ -684,7 +684,7 @@ export default function ComputerApplications() {
               <h2 className="font-display text-3xl md:text-4xl">
                 Programs that transform tech aspirations into careers
               </h2>
-              <p className="text-sm text-muted-foreground font-body">
+              <p className="text-sm text-slate-700 dark:text-slate-300 font-body">
                 Choose focused routes into software development, analytics, data science and emerging tech with curriculum co-designed by industry mentors and research leaders.
               </p>
               <div className="grid gap-4 sm:grid-cols-2">
