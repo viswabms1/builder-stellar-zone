@@ -307,7 +307,7 @@ function ResourceCard({ resource }: { resource: ResourceLink }) {
           {resource.title}
         </CardTitle>
       </CardHeader>
-      <CardContent className="space-y-5 text-sm text-muted-foreground font-body">
+      <CardContent className="space-y-5 text-sm text-slate-700 dark:text-slate-300 font-body">
         <p>{resource.description}</p>
         <a
           href={resource.href}
