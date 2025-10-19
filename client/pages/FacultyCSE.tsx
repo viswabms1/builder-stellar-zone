@@ -593,7 +593,7 @@ function DepartmentSidebar({ mobileOpen, onMobileClose }: DepartmentSidebarProps
                   </Badge>
                   <div>
                     <p className="font-medium text-foreground">B.Tech CSE</p>
-                    <p className="text-xs text-muted-foreground">4-year program with specializations</p>
+                    <p className="text-xs text-foreground/75">4-year program with specializations</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-2">
@@ -602,7 +602,7 @@ function DepartmentSidebar({ mobileOpen, onMobileClose }: DepartmentSidebarProps
                   </Badge>
                   <div>
                     <p className="font-medium text-foreground">M.Tech CSE</p>
-                    <p className="text-xs text-muted-foreground">2-year research-focused program</p>
+                    <p className="text-xs text-foreground/75">2-year research-focused program</p>
                   </div>
                 </div>
               </div>
