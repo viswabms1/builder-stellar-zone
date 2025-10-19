@@ -773,7 +773,7 @@ export default function ComputerApplications() {
               <h2 className="mt-4 font-display text-3xl md:text-4xl">
                 Innovation Labs & Career Readiness
               </h2>
-              <p className="mt-3 text-sm text-muted-foreground font-body">
+              <p className="mt-3 text-sm text-slate-700 dark:text-slate-300 font-body">
                 Access cross-disciplinary labs and mentorship programmes that
                 spark product engineering, AI, automation and cloud-native
                 careers.
