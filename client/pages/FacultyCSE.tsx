@@ -68,6 +68,7 @@ const filterOptions: Array<{
 export default function FacultyCSE() {
   const [search, setSearch] = useState("");
   const [activeFilter, setActiveFilter] = useState<FilterKey>("all");
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const stats = useMemo(() => {
     const total = cseFaculty.length;
