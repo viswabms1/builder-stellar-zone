@@ -280,7 +280,7 @@ function StatTile({ icon: Icon, value, label }: StatTileProps) {
     <div className="rounded-2xl border border-brand-magenta/20 bg-white/70 p-4 shadow-sm">
       <Icon className="h-5 w-5 text-brand-magenta" />
       <p className="mt-3 text-2xl font-semibold text-foreground">{value}</p>
-      <p className="text-xs text-slate-600 dark:text-slate-300">{label}</p>
+      <p className="text-xs text-slate-800 dark:text-slate-300">{label}</p>
     </div>
   );
 }
@@ -569,13 +569,13 @@ function DepartmentSidebar({ mobileOpen, onMobileClose }: DepartmentSidebarProps
               <h4 className="font-display font-semibold text-foreground">Department Contact</h4>
               <div className="space-y-2 text-sm">
                 <div>
-                  <p className="text-xs text-slate-600 dark:text-slate-300 uppercase tracking-wide">Chairman, CSE</p>
+                  <p className="text-xs text-slate-800 dark:text-slate-300 uppercase tracking-wide">Chairman, CSE</p>
                   <a href="mailto:chairman-cse@dsu.edu.in" className="font-medium text-brand-magenta hover:underline">
                     chairman-cse@dsu.edu.in
                   </a>
                 </div>
                 <div>
-                  <p className="text-xs text-slate-600 dark:text-slate-300 uppercase tracking-wide">Phone</p>
+                  <p className="text-xs text-slate-800 dark:text-slate-300 uppercase tracking-wide">Phone</p>
                   <a href="tel:+918049092935" className="font-medium text-foreground hover:text-brand-magenta">
                     +91 80 4909 2935
                   </a>
@@ -593,7 +593,7 @@ function DepartmentSidebar({ mobileOpen, onMobileClose }: DepartmentSidebarProps
                   </Badge>
                   <div>
                     <p className="font-medium text-foreground">B.Tech CSE</p>
-                    <p className="text-xs text-slate-600 dark:text-slate-300">4-year program with specializations</p>
+                    <p className="text-xs text-slate-800 dark:text-slate-300">4-year program with specializations</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-2">
@@ -602,7 +602,7 @@ function DepartmentSidebar({ mobileOpen, onMobileClose }: DepartmentSidebarProps
                   </Badge>
                   <div>
                     <p className="font-medium text-foreground">M.Tech CSE</p>
-                    <p className="text-xs text-slate-600 dark:text-slate-300">2-year research-focused program</p>
+                    <p className="text-xs text-slate-800 dark:text-slate-300">2-year research-focused program</p>
                   </div>
                 </div>
               </div>
