@@ -334,9 +334,81 @@ function LabCard({ lab }: { lab: LabExperience }) {
         <CardTitle className="text-base font-display">{lab.title}</CardTitle>
       </CardHeader>
       <CardContent className="pt-0">
-        <CardDescription className="text-sm leading-relaxed text-muted-foreground font-body">
+        <CardDescription className="text-sm leading-relaxed text-slate-600 dark:text-slate-400 font-body">
           {lab.description}
         </CardDescription>
+      </CardContent>
+    </Card>
+  );
+}
+
+function AchievementCard({ achievement }: { achievement: Achievement }) {
+  const Icon = achievement.icon;
+  return (
+    <Card className="h-full rounded-3xl border border-border/40 bg-card/60 backdrop-blur">
+      <CardHeader className="flex flex-row items-start gap-3">
+        <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand-magenta/15 text-brand-magenta flex-shrink-0">
+          <Icon className="h-5 w-5" />
+        </span>
+        <div className="flex-1">
+          <Badge className="mb-2 bg-brand-magenta/15 text-brand-magenta text-xs">
+            {achievement.category}
+          </Badge>
+          <CardTitle className="text-lg font-display">{achievement.title}</CardTitle>
+        </div>
+      </CardHeader>
+      <CardContent>
+        <p className="text-sm text-slate-700 dark:text-slate-300 font-body">
+          {achievement.description}
+        </p>
+      </CardContent>
+    </Card>
+  );
+}
+
+function FacultyCard({ faculty }: { faculty: FacultyMember }) {
+  return (
+    <Card className="h-full overflow-hidden rounded-3xl border border-border/40 bg-card/60 backdrop-blur">
+      <div className="relative h-48 overflow-hidden">
+        <img
+          src={faculty.image}
+          alt={faculty.name}
+          className="h-full w-full object-cover"
+        />
+      </div>
+      <CardHeader className="pb-2">
+        <CardTitle className="font-display">{faculty.name}</CardTitle>
+        <Badge className="w-fit bg-brand-magenta/15 text-brand-magenta text-xs mt-2">
+          {faculty.title}
+        </Badge>
+      </CardHeader>
+      <CardContent>
+        <p className="text-sm text-slate-700 dark:text-slate-300 font-body">
+          {faculty.specialization}
+        </p>
+      </CardContent>
+    </Card>
+  );
+}
+
+function LifeCard({ life }: { life: LifeAtDSU }) {
+  return (
+    <Card className="group overflow-hidden rounded-3xl border border-border/40 bg-card/30 backdrop-blur hover:shadow-xl transition-shadow">
+      <div className="relative h-48 overflow-hidden">
+        <img
+          src={life.image}
+          alt={life.title}
+          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+        <h3 className="absolute bottom-4 left-4 font-display text-lg font-semibold text-white">
+          {life.title}
+        </h3>
+      </div>
+      <CardContent className="p-4">
+        <p className="text-sm text-slate-700 dark:text-slate-300 font-body">
+          {life.description}
+        </p>
       </CardContent>
     </Card>
   );
