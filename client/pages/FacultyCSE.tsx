@@ -437,7 +437,7 @@ function DirectorySection({
                   </p>
                 </div>
               </div>
-              <CardContent className="flex flex-1 flex-col gap-4 p-5 text-sm text-muted-foreground">
+              <CardContent className="flex flex-1 flex-col gap-4 p-5 text-sm text-foreground/80">
                 {faculty.qualifications ? (
                   <p>
                     <span className="font-semibold text-foreground">Qualifications:</span> {faculty.qualifications}
