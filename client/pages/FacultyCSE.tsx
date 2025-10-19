@@ -302,7 +302,7 @@ function LeadershipSection({ leadership }: LeadershipSectionProps) {
         <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
           <div>
             <h2 className="headline-3 font-display">Leadership Spotlight</h2>
-            <p className="text-sm text-muted-foreground sm:text-base">
+            <p className="text-sm text-foreground/80 sm:text-base">
               Visionaries steering curriculum transformation, research innovation, and industry partnerships.
             </p>
           </div>
