@@ -158,14 +158,25 @@ export default function FacultyCSE() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <HeroSection stats={stats} interests={facultyInterests} />
-      <LeadershipSection leadership={leadership} />
-      <DirectorySection
-        activeFilter={activeFilter}
-        onFilterChange={setActiveFilter}
-        onSearchChange={setSearch}
-        search={search}
-        filteredFaculty={filteredFaculty}
-      />
+      <div className="relative px-6 py-8 md:py-12">
+        <div className="mx-auto max-w-7xl grid gap-8 lg:grid-cols-3">
+          {/* Main Content */}
+          <div className="lg:col-span-2 space-y-12">
+            <LeadershipSection leadership={leadership} />
+            <DirectorySection
+              activeFilter={activeFilter}
+              onFilterChange={setActiveFilter}
+              onSearchChange={setSearch}
+              search={search}
+              filteredFaculty={filteredFaculty}
+            />
+          </div>
+          {/* Sidebar Navigation */}
+          <div className="lg:col-span-1">
+            <DepartmentSidebar mobileOpen={mobileMenuOpen} onMobileClose={() => setMobileMenuOpen(false)} />
+          </div>
+        </div>
+      </div>
       <ClosingSection />
     </div>
   );
