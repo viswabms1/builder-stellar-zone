@@ -16,13 +16,19 @@ import { Input } from "@/components/ui/input";
 import { cseFaculty } from "@/data/cse-faculty";
 import {
   Award,
+  BookOpen,
+  ChevronDown,
   ChevronRight,
+  ClipboardList,
+  FileText,
   FlaskConical,
   GraduationCap,
   Layers,
+  Menu,
   Search,
   Sparkles,
   Users,
+  X,
 } from "lucide-react";
 
 type FilterKey = "all" | "leadership" | "professor" | "associate" | "assistant";
