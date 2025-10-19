@@ -488,6 +488,139 @@ function DirectorySection({
   );
 }
 
+type DepartmentSidebarProps = {
+  mobileOpen: boolean;
+  onMobileClose: () => void;
+};
+
+function DepartmentSidebar({ mobileOpen, onMobileClose }: DepartmentSidebarProps) {
+  const [expandedMenu, setExpandedMenu] = useState<string | null>(null);
+
+  const sidebarMenuItems = [
+    { id: "about", label: "About the Department", icon: ClipboardList, href: "/academics/engineering/computer-science" },
+    { id: "overview", label: "Overview", icon: BookOpen, href: "/academics/engineering/computer-science#overview" },
+    { id: "faculty", label: "Faculty List", icon: Users, href: "/academics/engineering/computer-science/faculty", active: true },
+    { id: "programs", label: "Programs Offered", icon: GraduationCap, href: "/academics/engineering/computer-science#programs" },
+    { id: "curriculum", label: "Curriculum Library", icon: FileText, href: "/academics/engineering/computer-science#curriculum" },
+    { id: "notices", label: "Department Notices", icon: ClipboardList, href: "/academics/engineering/computer-science#notices" },
+    { id: "research", label: "Research & Innovation", icon: FlaskConical, href: "/research" },
+    { id: "admissions", label: "Admissions", icon: GraduationCap, href: "/admissions" },
+  ];
+
+  return (
+    <>
+      {/* Mobile Menu Button */}
+      <div className="lg:hidden mb-6 flex items-center justify-between rounded-2xl border border-brand-magenta/20 bg-card/60 p-4">
+        <h3 className="font-display text-lg font-semibold text-foreground">CSE Department Menu</h3>
+        <Button
+          variant="ghost"
+          size="sm"
+          onClick={() => setMobileMenuOpen(!mobileOpen)}
+          className="text-brand-magenta"
+        >
+          {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+        </Button>
+      </div>
+
+      {/* Sidebar Container */}
+      <div className={`fixed inset-0 z-40 lg:static lg:z-auto lg:block ${mobileOpen ? 'block' : 'hidden'}`}>
+        {/* Mobile Backdrop */}
+        <div
+          className="fixed inset-0 bg-black/50 lg:hidden"
+          onClick={onMobileClose}
+          aria-hidden="true"
+        />
+
+        {/* Sidebar Content */}
+        <div className="fixed right-0 top-0 bottom-0 w-80 z-50 lg:static lg:z-auto overflow-y-auto bg-background lg:w-full p-6 lg:p-0">
+          <div className="space-y-4">
+            <div className="hidden lg:block mb-6">
+              <Badge className="w-fit rounded-full bg-brand-magenta/15 px-4 py-2 text-xs font-semibold text-brand-magenta">
+                CSE Department
+              </Badge>
+              <h3 className="mt-3 font-display text-xl font-semibold text-foreground">Quick Links</h3>
+              <p className="text-sm text-muted-foreground">Navigate department resources and information</p>
+            </div>
+
+            <nav className="space-y-1">
+              {sidebarMenuItems.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <Link
+                    key={item.id}
+                    to={item.href}
+                    onClick={onMobileClose}
+                    className={`flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium transition-all ${
+                      item.active
+                        ? "bg-brand-magenta/15 text-brand-magenta border border-brand-magenta/30"
+                        : "text-muted-foreground hover:bg-card/80 hover:text-foreground border border-transparent"
+                    }`}
+                  >
+                    <Icon className="h-4 w-4 flex-shrink-0" />
+                    <span className="flex-1">{item.label}</span>
+                    {item.active && <ChevronRight className="h-4 w-4 text-brand-magenta" />}
+                  </Link>
+                );
+              })}
+            </nav>
+
+            {/* Contact Card */}
+            <div className="mt-8 rounded-2xl border border-brand-magenta/20 bg-gradient-to-br from-brand-magenta/10 to-brand-blue/10 p-5 space-y-3">
+              <h4 className="font-display font-semibold text-foreground">Department Contact</h4>
+              <div className="space-y-2 text-sm">
+                <div>
+                  <p className="text-xs text-muted-foreground uppercase tracking-wide">Chairman, CSE</p>
+                  <a href="mailto:chairman-cse@dsu.edu.in" className="font-medium text-brand-magenta hover:underline">
+                    chairman-cse@dsu.edu.in
+                  </a>
+                </div>
+                <div>
+                  <p className="text-xs text-muted-foreground uppercase tracking-wide">Phone</p>
+                  <a href="tel:+918049092935" className="font-medium text-foreground hover:text-brand-magenta">
+                    +91 80 4909 2935
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Department Stats */}
+            <div className="rounded-2xl border border-border/40 bg-card/60 p-5 space-y-3">
+              <h4 className="font-display font-semibold text-foreground">Department Highlights</h4>
+              <div className="space-y-3 text-sm">
+                <div className="flex items-start gap-2">
+                  <Badge variant="secondary" className="mt-0.5 flex-shrink-0 bg-brand-magenta/15 text-brand-magenta text-[10px]">
+                    UG
+                  </Badge>
+                  <div>
+                    <p className="font-medium text-foreground">B.Tech CSE</p>
+                    <p className="text-xs text-muted-foreground">4-year program with specializations</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-2">
+                  <Badge variant="secondary" className="mt-0.5 flex-shrink-0 bg-brand-blue/15 text-brand-blue text-[10px]">
+                    PG
+                  </Badge>
+                  <div>
+                    <p className="font-medium text-foreground">M.Tech CSE</p>
+                    <p className="text-xs text-muted-foreground">2-year research-focused program</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Call to Action */}
+            <Button className="w-full bg-brand-gradient text-white mt-4" size="sm" asChild>
+              <a href="https://www.dsu.edu.in/engineering/computer-science" target="_blank" rel="noreferrer">
+                Visit Department Site
+              </a>
+            </Button>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
+
 function ClosingSection() {
   return (
     <section className="px-6 pb-20">
