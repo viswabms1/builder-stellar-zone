@@ -569,13 +569,13 @@ function DepartmentSidebar({ mobileOpen, onMobileClose }: DepartmentSidebarProps
               <h4 className="font-display font-semibold text-foreground">Department Contact</h4>
               <div className="space-y-2 text-sm">
                 <div>
-                  <p className="text-xs text-muted-foreground uppercase tracking-wide">Chairman, CSE</p>
+                  <p className="text-xs text-foreground/70 uppercase tracking-wide">Chairman, CSE</p>
                   <a href="mailto:chairman-cse@dsu.edu.in" className="font-medium text-brand-magenta hover:underline">
                     chairman-cse@dsu.edu.in
                   </a>
                 </div>
                 <div>
-                  <p className="text-xs text-muted-foreground uppercase tracking-wide">Phone</p>
+                  <p className="text-xs text-foreground/70 uppercase tracking-wide">Phone</p>
                   <a href="tel:+918049092935" className="font-medium text-foreground hover:text-brand-magenta">
                     +91 80 4909 2935
                   </a>
