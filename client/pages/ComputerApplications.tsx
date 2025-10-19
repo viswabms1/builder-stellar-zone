@@ -53,6 +53,26 @@ type LabExperience = {
   icon: LucideIcon;
 };
 
+type Achievement = {
+  title: string;
+  description: string;
+  icon: LucideIcon;
+  category: string;
+};
+
+type LifeAtDSU = {
+  title: string;
+  description: string;
+  image: string;
+};
+
+type FacultyMember = {
+  name: string;
+  title: string;
+  specialization: string;
+  image: string;
+};
+
 const HERO_IMAGE =
   "https://images.unsplash.com/photo-1523475472560-d2df97ec485c?q=80&w=2000&auto=format&fit=crop";
 
