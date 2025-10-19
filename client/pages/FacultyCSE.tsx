@@ -210,7 +210,7 @@ function HeroSection({ stats, interests }: HeroSectionProps) {
             <h1 className="text-4xl font-bold leading-tight text-foreground md:text-5xl">
               Meet the Minds Powering Computer Science &amp; Engineering
             </h1>
-            <p className="max-w-2xl text-base text-foreground/90 md:text-lg">
+            <p className="max-w-2xl text-base text-slate-700 dark:text-slate-300 md:text-lg">
               Our faculty are seasoned researchers, innovators, and mentors guiding the next generation of technologists through cutting-edge labs, industry collaborations, and personalized mentorship.
             </p>
             <div className="flex flex-col items-center gap-3 sm:flex-row lg:items-start">
@@ -280,7 +280,7 @@ function StatTile({ icon: Icon, value, label }: StatTileProps) {
     <div className="rounded-2xl border border-brand-magenta/20 bg-white/70 p-4 shadow-sm">
       <Icon className="h-5 w-5 text-brand-magenta" />
       <p className="mt-3 text-2xl font-semibold text-foreground">{value}</p>
-      <p className="text-xs text-foreground/75">{label}</p>
+      <p className="text-xs text-slate-600 dark:text-slate-400">{label}</p>
     </div>
   );
 }
@@ -302,7 +302,7 @@ function LeadershipSection({ leadership }: LeadershipSectionProps) {
         <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
           <div>
             <h2 className="headline-3 font-display">Leadership Spotlight</h2>
-            <p className="text-sm text-foreground/80 sm:text-base">
+            <p className="text-sm text-slate-700 dark:text-slate-300 sm:text-base">
               Visionaries steering curriculum transformation, research innovation, and industry partnerships.
             </p>
           </div>
@@ -382,12 +382,12 @@ function DirectorySection({
           <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <h2 className="headline-3 font-display">Faculty Directory</h2>
-              <p className="text-sm text-foreground/80 sm:text-base">
+              <p className="text-sm text-slate-700 dark:text-slate-300 sm:text-base">
                 Use the search and filters to connect with mentors by expertise, role, or leadership responsibility.
               </p>
             </div>
             <div className="relative w-full sm:w-80">
-              <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-foreground/60" />
+              <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-500 dark:text-slate-500" />
               <Input
                 value={search}
                 onChange={(event) => onSearchChange(event.target.value)}
@@ -437,7 +437,7 @@ function DirectorySection({
                   </p>
                 </div>
               </div>
-              <CardContent className="flex flex-1 flex-col gap-4 p-5 text-sm text-foreground/80">
+              <CardContent className="flex flex-1 flex-col gap-4 p-5 text-sm text-slate-700 dark:text-slate-300">
                 {faculty.qualifications ? (
                   <p>
                     <span className="font-semibold text-foreground">Qualifications:</span> {faculty.qualifications}
@@ -479,7 +479,7 @@ function DirectorySection({
           ))}
         </div>
         {filteredFaculty.length === 0 ? (
-          <div className="rounded-3xl border border-dashed border-brand-magenta/30 bg-white/60 p-10 text-center text-sm text-foreground/80">
+          <div className="rounded-3xl border border-dashed border-brand-magenta/30 bg-white/60 p-10 text-center text-sm text-slate-700 dark:text-slate-300">
             No faculty records match your search. Try adjusting the name, role filter, or keywords.
           </div>
         ) : null}
@@ -539,7 +539,7 @@ function DepartmentSidebar({ mobileOpen, onMobileClose }: DepartmentSidebarProps
                 CSE Department
               </Badge>
               <h3 className="mt-3 font-display text-xl font-semibold text-foreground">Quick Links</h3>
-              <p className="text-sm text-foreground/75">Navigate department resources and information</p>
+              <p className="text-sm text-slate-700 dark:text-slate-300">Navigate department resources and information</p>
             </div>
 
             <nav className="space-y-1">
@@ -553,7 +553,7 @@ function DepartmentSidebar({ mobileOpen, onMobileClose }: DepartmentSidebarProps
                     className={`flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium transition-all ${
                       item.active
                         ? "bg-brand-magenta/15 text-brand-magenta border border-brand-magenta/30"
-                        : "text-foreground/70 hover:bg-card/80 hover:text-foreground border border-transparent"
+                        : "text-slate-700 dark:text-slate-400 hover:bg-card/80 hover:text-foreground border border-transparent"
                     }`}
                   >
                     <Icon className="h-4 w-4 flex-shrink-0" />
@@ -569,13 +569,13 @@ function DepartmentSidebar({ mobileOpen, onMobileClose }: DepartmentSidebarProps
               <h4 className="font-display font-semibold text-foreground">Department Contact</h4>
               <div className="space-y-2 text-sm">
                 <div>
-                  <p className="text-xs text-foreground/70 uppercase tracking-wide">Chairman, CSE</p>
+                  <p className="text-xs text-slate-600 dark:text-slate-400 uppercase tracking-wide">Chairman, CSE</p>
                   <a href="mailto:chairman-cse@dsu.edu.in" className="font-medium text-brand-magenta hover:underline">
                     chairman-cse@dsu.edu.in
                   </a>
                 </div>
                 <div>
-                  <p className="text-xs text-foreground/70 uppercase tracking-wide">Phone</p>
+                  <p className="text-xs text-slate-600 dark:text-slate-400 uppercase tracking-wide">Phone</p>
                   <a href="tel:+918049092935" className="font-medium text-foreground hover:text-brand-magenta">
                     +91 80 4909 2935
                   </a>
@@ -593,7 +593,7 @@ function DepartmentSidebar({ mobileOpen, onMobileClose }: DepartmentSidebarProps
                   </Badge>
                   <div>
                     <p className="font-medium text-foreground">B.Tech CSE</p>
-                    <p className="text-xs text-foreground/75">4-year program with specializations</p>
+                    <p className="text-xs text-slate-600 dark:text-slate-400">4-year program with specializations</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-2">
@@ -602,7 +602,7 @@ function DepartmentSidebar({ mobileOpen, onMobileClose }: DepartmentSidebarProps
                   </Badge>
                   <div>
                     <p className="font-medium text-foreground">M.Tech CSE</p>
-                    <p className="text-xs text-foreground/75">2-year research-focused program</p>
+                    <p className="text-xs text-slate-600 dark:text-slate-400">2-year research-focused program</p>
                   </div>
                 </div>
               </div>
@@ -632,7 +632,7 @@ function ClosingSection() {
         <h2 className="mt-6 text-3xl font-bold text-foreground md:text-4xl">
           Inspiring Excellence Through Research, Mentorship &amp; Innovation
         </h2>
-        <p className="mt-4 text-lg text-foreground/85">
+        <p className="mt-4 text-lg text-slate-700 dark:text-slate-300">
           Collaborate with DSU CSE faculty on applied research, grants, and industry-ready projects. For partnerships and visiting appointments, write to <a className="font-semibold text-brand-magenta" href="mailto:research.cse@dsu.edu.in">research.cse@dsu.edu.in</a>.
         </p>
         <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
