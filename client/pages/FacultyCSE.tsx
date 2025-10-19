@@ -553,7 +553,7 @@ function DepartmentSidebar({ mobileOpen, onMobileClose }: DepartmentSidebarProps
                     className={`flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium transition-all ${
                       item.active
                         ? "bg-brand-magenta/15 text-brand-magenta border border-brand-magenta/30"
-                        : "text-muted-foreground hover:bg-card/80 hover:text-foreground border border-transparent"
+                        : "text-foreground/70 hover:bg-card/80 hover:text-foreground border border-transparent"
                     }`}
                   >
                     <Icon className="h-4 w-4 flex-shrink-0" />
