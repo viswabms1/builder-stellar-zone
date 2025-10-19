@@ -632,7 +632,7 @@ function ClosingSection() {
         <h2 className="mt-6 text-3xl font-bold text-foreground md:text-4xl">
           Inspiring Excellence Through Research, Mentorship &amp; Innovation
         </h2>
-        <p className="mt-4 text-lg text-muted-foreground">
+        <p className="mt-4 text-lg text-foreground/85">
           Collaborate with DSU CSE faculty on applied research, grants, and industry-ready projects. For partnerships and visiting appointments, write to <a className="font-semibold text-brand-magenta" href="mailto:research.cse@dsu.edu.in">research.cse@dsu.edu.in</a>.
         </p>
         <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
