@@ -171,25 +171,29 @@ const RESOURCE_LINKS: ResourceLink[] = [
 const STUDENT_ACHIEVEMENTS: Achievement[] = [
   {
     title: "hackathon Winners",
-    description: "20+ students placed in national hackathons and coding competitions in 2024",
+    description:
+      "20+ students placed in national hackathons and coding competitions in 2024",
     icon: Award,
     category: "Competition",
   },
   {
     title: "Startup Founders",
-    description: "8 student-led startups incubated with mentorship and seed funding",
+    description:
+      "8 student-led startups incubated with mentorship and seed funding",
     icon: Target,
     category: "Entrepreneurship",
   },
   {
     title: "Research Publications",
-    description: "15+ peer-reviewed papers published by students in international conferences",
+    description:
+      "15+ peer-reviewed papers published by students in international conferences",
     icon: BookOpen,
     category: "Research",
   },
   {
     title: "Global Certifications",
-    description: "95% students earn AWS, Google Cloud, or Azure certifications before graduation",
+    description:
+      "95% students earn AWS, Google Cloud, or Azure certifications before graduation",
     icon: BadgeCheck,
     category: "Certification",
   },
@@ -198,25 +202,29 @@ const STUDENT_ACHIEVEMENTS: Achievement[] = [
 const FACULTY_ACHIEVEMENTS: Achievement[] = [
   {
     title: "Patent Holders",
-    description: "12 faculty members with active patents in AI, cloud computing and data science",
+    description:
+      "12 faculty members with active patents in AI, cloud computing and data science",
     icon: Award,
     category: "Patents",
   },
   {
     title: "Research Grants",
-    description: "₹2.5 Cr+ in funded research projects from government and industry bodies",
+    description:
+      "₹2.5 Cr+ in funded research projects from government and industry bodies",
     icon: Sparkles,
     category: "Funding",
   },
   {
     title: "Publications",
-    description: "50+ journal publications and 100+ conference papers in top-tier venues",
+    description:
+      "50+ journal publications and 100+ conference papers in top-tier venues",
     icon: BookOpen,
     category: "Publishing",
   },
   {
     title: "Industry Collaborations",
-    description: "Active partnerships with IBM, NVIDIA, Google, and Amazon for research projects",
+    description:
+      "Active partnerships with IBM, NVIDIA, Google, and Amazon for research projects",
     icon: Users,
     category: "Collaboration",
   },
@@ -225,23 +233,31 @@ const FACULTY_ACHIEVEMENTS: Achievement[] = [
 const LIFE_AT_DSU: LifeAtDSU[] = [
   {
     title: "Collaborative Learning Spaces",
-    description: "Modern classrooms, AI-powered labs, and collaborative studios designed for peer learning and project-based education.",
-    image: "https://images.unsplash.com/photo-1522202176988-15695038929c?q=80&w=1600&auto=format&fit=crop",
+    description:
+      "Modern classrooms, AI-powered labs, and collaborative studios designed for peer learning and project-based education.",
+    image:
+      "https://images.unsplash.com/photo-1522202176988-15695038929c?q=80&w=1600&auto=format&fit=crop",
   },
   {
     title: "Student Clubs & Communities",
-    description: "20+ student-led technical clubs, coding communities, and innovation forums fostering peer mentorship and skill-sharing.",
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1600&auto=format&fit=crop",
+    description:
+      "20+ student-led technical clubs, coding communities, and innovation forums fostering peer mentorship and skill-sharing.",
+    image:
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1600&auto=format&fit=crop",
   },
   {
     title: "Campus Wellness & Culture",
-    description: "Holistic development through sports, arts, wellness programs and cultural events celebrating diverse backgrounds.",
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1600&auto=format&fit=crop",
+    description:
+      "Holistic development through sports, arts, wellness programs and cultural events celebrating diverse backgrounds.",
+    image:
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1600&auto=format&fit=crop",
   },
   {
     title: "Global Exposure",
-    description: "International collaborations, student exchanges, and global hackathons connecting learners with worldwide tech communities.",
-    image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1600&auto=format&fit=crop",
+    description:
+      "International collaborations, student exchanges, and global hackathons connecting learners with worldwide tech communities.",
+    image:
+      "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1600&auto=format&fit=crop",
   },
 ];
 
@@ -250,19 +266,22 @@ const FEATURED_FACULTY: FacultyMember[] = [
     name: "Dr. Amit Sharma",
     title: "Program Chair & Professor",
     specialization: "Cloud Computing & Distributed Systems",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop",
   },
   {
     name: "Dr. Priya Patel",
     title: "Associate Professor",
     specialization: "AI & Machine Learning",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
   },
   {
     name: "Dr. Rajesh Kumar",
     title: "Associate Professor",
     specialization: "Data Science & Analytics",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400&auto=format&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400&auto=format&fit=crop",
   },
 ];
 
@@ -354,7 +373,9 @@ function AchievementCard({ achievement }: { achievement: Achievement }) {
           <Badge className="mb-2 bg-brand-magenta/15 text-brand-magenta text-xs">
             {achievement.category}
           </Badge>
-          <CardTitle className="text-lg font-display">{achievement.title}</CardTitle>
+          <CardTitle className="text-lg font-display">
+            {achievement.title}
+          </CardTitle>
         </div>
       </CardHeader>
       <CardContent>
@@ -406,9 +427,7 @@ function LifeCard({ life }: { life: LifeAtDSU }) {
         </h3>
       </div>
       <CardContent className="p-4">
-        <p className="text-sm text-foreground font-body">
-          {life.description}
-        </p>
+        <p className="text-sm text-foreground font-body">{life.description}</p>
       </CardContent>
     </Card>
   );
@@ -466,28 +485,51 @@ export default function ComputerApplications() {
         </div>
       </section>
 
-      <section id="about" className="px-6 py-16 bg-gradient-to-r from-brand-magenta/5 via-transparent to-brand-blue/5">
+      <section
+        id="about"
+        className="px-6 py-16 bg-gradient-to-r from-brand-magenta/5 via-transparent to-brand-blue/5"
+      >
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
             <div className="space-y-6">
-              <Badge className="bg-brand-magenta/15 text-brand-magenta">About School</Badge>
-              <h2 className="font-display text-3xl md:text-4xl">Nurturing India's Next-Gen Tech Creators</h2>
+              <Badge className="bg-brand-magenta/15 text-brand-magenta">
+                About School
+              </Badge>
+              <h2 className="font-display text-3xl md:text-4xl">
+                Nurturing India's Next-Gen Tech Creators
+              </h2>
               <div className="space-y-4 text-foreground">
                 <p className="font-body">
-                  Established in 2016, the School of Computer Applications at Dayananda Sagar University is India's premier destination for aspiring software engineers, data scientists, and tech entrepreneurs. With a mission to merge academic excellence with industry relevance, we've shaped over 2,000+ graduates who lead innovation across global tech companies and startups.
+                  Established in 2016, the School of Computer Applications at
+                  Dayananda Sagar University is India's premier destination for
+                  aspiring software engineers, data scientists, and tech
+                  entrepreneurs. With a mission to merge academic excellence
+                  with industry relevance, we've shaped over 2,000+ graduates
+                  who lead innovation across global tech companies and startups.
                 </p>
                 <p className="font-body">
-                  Our curriculum bridges the gap between classroom learning and real-world challenges through project studios, industry mentorship, and hands-on innovation labs powered by global partners like IBM, NVIDIA, and VMware.
+                  Our curriculum bridges the gap between classroom learning and
+                  real-world challenges through project studios, industry
+                  mentorship, and hands-on innovation labs powered by global
+                  partners like IBM, NVIDIA, and VMware.
                 </p>
               </div>
               <div className="grid gap-4 sm:grid-cols-2 pt-4">
                 <div className="rounded-2xl border border-brand-magenta/20 bg-brand-magenta/10 p-4">
-                  <div className="text-2xl font-display font-bold text-brand-magenta">2,000+</div>
-                  <p className="text-xs uppercase tracking-wide text-brand-magenta/80 font-body mt-1">Successful Graduates</p>
+                  <div className="text-2xl font-display font-bold text-brand-magenta">
+                    2,000+
+                  </div>
+                  <p className="text-xs uppercase tracking-wide text-brand-magenta/80 font-body mt-1">
+                    Successful Graduates
+                  </p>
                 </div>
                 <div className="rounded-2xl border border-brand-blue/20 bg-brand-blue/10 p-4">
-                  <div className="text-2xl font-display font-bold text-brand-blue">95%</div>
-                  <p className="text-xs uppercase tracking-wide text-brand-blue/80 font-body mt-1">Placement Rate</p>
+                  <div className="text-2xl font-display font-bold text-brand-blue">
+                    95%
+                  </div>
+                  <p className="text-xs uppercase tracking-wide text-brand-blue/80 font-body mt-1">
+                    Placement Rate
+                  </p>
                 </div>
               </div>
             </div>
@@ -506,8 +548,12 @@ export default function ComputerApplications() {
       <section id="vision-mission" className="px-6 py-16">
         <div className="mx-auto max-w-7xl">
           <div className="text-center mb-12">
-            <Badge className="bg-brand-magenta/15 text-brand-magenta">Vision & Mission</Badge>
-            <h2 className="mt-4 font-display text-3xl md:text-4xl">Our Purpose & Direction</h2>
+            <Badge className="bg-brand-magenta/15 text-brand-magenta">
+              Vision & Mission
+            </Badge>
+            <h2 className="mt-4 font-display text-3xl md:text-4xl">
+              Our Purpose & Direction
+            </h2>
           </div>
           <div className="grid gap-8 md:grid-cols-2">
             <Card className="rounded-3xl border border-border/40 bg-gradient-to-br from-brand-blue/10 to-brand-magenta/10 backdrop-blur p-8">
@@ -516,7 +562,10 @@ export default function ComputerApplications() {
                 <div>
                   <CardTitle className="text-xl mb-3">Vision</CardTitle>
                   <p className="text-foreground font-body">
-                    To be a globally recognized centre of excellence producing technology leaders, innovators, and entrepreneurs who create transformative solutions for societal challenges through ethical, inclusive, and sustainable development.
+                    To be a globally recognized centre of excellence producing
+                    technology leaders, innovators, and entrepreneurs who create
+                    transformative solutions for societal challenges through
+                    ethical, inclusive, and sustainable development.
                   </p>
                 </div>
               </div>
@@ -527,7 +576,10 @@ export default function ComputerApplications() {
                 <div>
                   <CardTitle className="text-xl mb-3">Mission</CardTitle>
                   <p className="text-foreground font-body">
-                    Empower learners with industry-aligned skills, research exposure, and entrepreneurial mindset through experiential pedagogy, global partnerships, and mentorship that prepares them for leadership roles in the digital economy.
+                    Empower learners with industry-aligned skills, research
+                    exposure, and entrepreneurial mindset through experiential
+                    pedagogy, global partnerships, and mentorship that prepares
+                    them for leadership roles in the digital economy.
                   </p>
                 </div>
               </div>
@@ -540,21 +592,30 @@ export default function ComputerApplications() {
                 <Heart className="h-5 w-5 text-brand-magenta flex-shrink-0 mt-1" />
                 <div>
                   <h4 className="font-semibold mb-1">Excellence</h4>
-                  <p className="text-sm text-foreground/90">Pursuing highest standards in education, research, and student outcomes</p>
+                  <p className="text-sm text-foreground/90">
+                    Pursuing highest standards in education, research, and
+                    student outcomes
+                  </p>
                 </div>
               </div>
               <div className="flex gap-3">
                 <Users className="h-5 w-5 text-brand-blue flex-shrink-0 mt-1" />
                 <div>
                   <h4 className="font-semibold mb-1">Collaboration</h4>
-                  <p className="text-sm text-foreground/90">Building strong partnerships with industry, academia, and communities</p>
+                  <p className="text-sm text-foreground/90">
+                    Building strong partnerships with industry, academia, and
+                    communities
+                  </p>
                 </div>
               </div>
               <div className="flex gap-3">
                 <Sparkles className="h-5 w-5 text-brand-orange flex-shrink-0 mt-1" />
                 <div>
                   <h4 className="font-semibold mb-1">Innovation</h4>
-                  <p className="text-sm text-foreground/90">Fostering creativity, experimentation, and disruptive thinking</p>
+                  <p className="text-sm text-foreground/90">
+                    Fostering creativity, experimentation, and disruptive
+                    thinking
+                  </p>
                 </div>
               </div>
             </div>
@@ -562,9 +623,14 @@ export default function ComputerApplications() {
         </div>
       </section>
 
-      <section id="dean-message" className="px-6 py-16 bg-gradient-to-r from-brand-magenta/5 via-brand-orange/5 to-brand-blue/5">
+      <section
+        id="dean-message"
+        className="px-6 py-16 bg-gradient-to-r from-brand-magenta/5 via-brand-orange/5 to-brand-blue/5"
+      >
         <div className="mx-auto max-w-4xl">
-          <Badge className="bg-brand-magenta/15 text-brand-magenta mb-6">Dean's Message</Badge>
+          <Badge className="bg-brand-magenta/15 text-brand-magenta mb-6">
+            Dean's Message
+          </Badge>
           <div className="rounded-3xl border border-border/40 bg-card/60 backdrop-blur p-10">
             <div className="flex gap-6 mb-8">
               <img
@@ -573,22 +639,41 @@ export default function ComputerApplications() {
                 className="h-24 w-24 rounded-full object-cover"
               />
               <div>
-                <h3 className="font-display text-xl font-semibold">Dr. Amit Sharma</h3>
-                <p className="text-sm text-brand-magenta">Program Chair & Dean, School of Computer Applications</p>
+                <h3 className="font-display text-xl font-semibold">
+                  Dr. Amit Sharma
+                </h3>
+                <p className="text-sm text-brand-magenta">
+                  Program Chair & Dean, School of Computer Applications
+                </p>
               </div>
             </div>
             <div className="space-y-4 text-foreground font-body">
               <p>
-                Welcome to the School of Computer Applications at DSU. In an era where technology redefines every sector, our mission is clear: to cultivate not just skilled programmers, but thoughtful technologists who understand the responsibility that comes with innovation.
+                Welcome to the School of Computer Applications at DSU. In an era
+                where technology redefines every sector, our mission is clear:
+                to cultivate not just skilled programmers, but thoughtful
+                technologists who understand the responsibility that comes with
+                innovation.
               </p>
               <p>
-                Over the past 8 years, we've witnessed remarkable growth in our learners—from their first lines of code to leading products used by millions. What sets us apart is our unwavering commitment to the complete development of each student: technical mastery, research acumen, entrepreneurial spirit, and human values.
+                Over the past 8 years, we've witnessed remarkable growth in our
+                learners—from their first lines of code to leading products used
+                by millions. What sets us apart is our unwavering commitment to
+                the complete development of each student: technical mastery,
+                research acumen, entrepreneurial spirit, and human values.
               </p>
               <p>
-                Our partnerships with global technology leaders ensure that classroom theories translate into practical applications. Our faculty, active researchers and industry veterans, mentor students not just academically but in navigating the dynamic tech landscape.
+                Our partnerships with global technology leaders ensure that
+                classroom theories translate into practical applications. Our
+                faculty, active researchers and industry veterans, mentor
+                students not just academically but in navigating the dynamic
+                tech landscape.
               </p>
               <p>
-                As you explore this page, I invite you to see DSU Computer Applications not just as a degree program, but as a launchpad for your career in technology. Join us in building a future where technology serves humanity.
+                As you explore this page, I invite you to see DSU Computer
+                Applications not just as a degree program, but as a launchpad
+                for your career in technology. Join us in building a future
+                where technology serves humanity.
               </p>
             </div>
           </div>
@@ -598,10 +683,16 @@ export default function ComputerApplications() {
       <section id="featured-faculty" className="px-6 py-16">
         <div className="mx-auto max-w-7xl">
           <div className="mb-12">
-            <Badge className="bg-brand-magenta/15 text-brand-magenta">Faculty Leadership</Badge>
-            <h2 className="mt-4 font-display text-3xl md:text-4xl">Meet Our Distinguished Faculty</h2>
+            <Badge className="bg-brand-magenta/15 text-brand-magenta">
+              Faculty Leadership
+            </Badge>
+            <h2 className="mt-4 font-display text-3xl md:text-4xl">
+              Meet Our Distinguished Faculty
+            </h2>
             <p className="mt-3 text-foreground max-w-3xl font-body">
-              Our faculty comprises PhD holders, published researchers, and industry veterans committed to mentoring the next generation of technology leaders.
+              Our faculty comprises PhD holders, published researchers, and
+              industry veterans committed to mentoring the next generation of
+              technology leaders.
             </p>
           </div>
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -623,18 +714,30 @@ export default function ComputerApplications() {
         </div>
       </section>
 
-      <section id="student-achievements" className="px-6 py-16 bg-gradient-to-r from-brand-blue/5 to-brand-magenta/5">
+      <section
+        id="student-achievements"
+        className="px-6 py-16 bg-gradient-to-r from-brand-blue/5 to-brand-magenta/5"
+      >
         <div className="mx-auto max-w-7xl">
           <div className="mb-12">
-            <Badge className="bg-brand-magenta/15 text-brand-magenta">Student Success</Badge>
-            <h2 className="mt-4 font-display text-3xl md:text-4xl">Student Achievements & Milestones</h2>
+            <Badge className="bg-brand-magenta/15 text-brand-magenta">
+              Student Success
+            </Badge>
+            <h2 className="mt-4 font-display text-3xl md:text-4xl">
+              Student Achievements & Milestones
+            </h2>
             <p className="mt-3 text-foreground max-w-3xl font-body">
-              Our students consistently excel in competitive programming, research, startups, and industry roles, showcasing the quality of education and mentorship at DSU.
+              Our students consistently excel in competitive programming,
+              research, startups, and industry roles, showcasing the quality of
+              education and mentorship at DSU.
             </p>
           </div>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {STUDENT_ACHIEVEMENTS.map((achievement) => (
-              <AchievementCard key={achievement.title} achievement={achievement} />
+              <AchievementCard
+                key={achievement.title}
+                achievement={achievement}
+              />
             ))}
           </div>
         </div>
@@ -643,27 +746,45 @@ export default function ComputerApplications() {
       <section id="faculty-achievements" className="px-6 py-16">
         <div className="mx-auto max-w-7xl">
           <div className="mb-12">
-            <Badge className="bg-brand-magenta/15 text-brand-magenta">Faculty Excellence</Badge>
-            <h2 className="mt-4 font-display text-3xl md:text-4xl">Faculty Achievements & Research</h2>
+            <Badge className="bg-brand-magenta/15 text-brand-magenta">
+              Faculty Excellence
+            </Badge>
+            <h2 className="mt-4 font-display text-3xl md:text-4xl">
+              Faculty Achievements & Research
+            </h2>
             <p className="mt-3 text-foreground max-w-3xl font-body">
-              Our faculty actively contributes to advancing technology through patents, publications, grants, and industry collaborations that influence global tech innovation.
+              Our faculty actively contributes to advancing technology through
+              patents, publications, grants, and industry collaborations that
+              influence global tech innovation.
             </p>
           </div>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {FACULTY_ACHIEVEMENTS.map((achievement) => (
-              <AchievementCard key={achievement.title} achievement={achievement} />
+              <AchievementCard
+                key={achievement.title}
+                achievement={achievement}
+              />
             ))}
           </div>
         </div>
       </section>
 
-      <section id="life-at-dsu" className="px-6 py-16 bg-gradient-to-r from-brand-orange/5 via-brand-magenta/5 to-brand-blue/5">
+      <section
+        id="life-at-dsu"
+        className="px-6 py-16 bg-gradient-to-r from-brand-orange/5 via-brand-magenta/5 to-brand-blue/5"
+      >
         <div className="mx-auto max-w-7xl">
           <div className="mb-12 text-center">
-            <Badge className="bg-brand-magenta/15 text-brand-magenta">Campus Life</Badge>
-            <h2 className="mt-4 font-display text-3xl md:text-4xl">Life @ DSU – Global Standards</h2>
+            <Badge className="bg-brand-magenta/15 text-brand-magenta">
+              Campus Life
+            </Badge>
+            <h2 className="mt-4 font-display text-3xl md:text-4xl">
+              Life @ DSU – Global Standards
+            </h2>
             <p className="mt-3 text-foreground max-w-3xl font-body mx-auto">
-              Beyond classrooms, DSU offers a holistic ecosystem where learning, growth, creativity, and community thrive through diverse experiences and global exposure.
+              Beyond classrooms, DSU offers a holistic ecosystem where learning,
+              growth, creativity, and community thrive through diverse
+              experiences and global exposure.
             </p>
           </div>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
@@ -685,7 +806,9 @@ export default function ComputerApplications() {
                 Programs that transform tech aspirations into careers
               </h2>
               <p className="text-sm text-foreground font-body">
-                Choose focused routes into software development, analytics, data science and emerging tech with curriculum co-designed by industry mentors and research leaders.
+                Choose focused routes into software development, analytics, data
+                science and emerging tech with curriculum co-designed by
+                industry mentors and research leaders.
               </p>
               <div className="grid gap-4 sm:grid-cols-2">
                 {PROGRAM_GROUPS.map((group) => (
@@ -720,15 +843,18 @@ export default function ComputerApplications() {
               <ul className="mt-4 space-y-3 text-sm text-brand-magenta/90 font-body">
                 <li className="flex items-start gap-2">
                   <Sparkles className="mt-0.5 h-4 w-4" />
-                  Industry-aligned curriculum with Capstone Studios from year one
+                  Industry-aligned curriculum with Capstone Studios from year
+                  one
                 </li>
                 <li className="flex items-start gap-2">
                   <Laptop className="mt-0.5 h-4 w-4" />
-                  Dedicated labs for full-stack, data science, cybersecurity and cloud-native engineering
+                  Dedicated labs for full-stack, data science, cybersecurity and
+                  cloud-native engineering
                 </li>
                 <li className="flex items-start gap-2">
                   <Award className="mt-0.5 h-4 w-4" />
-                  Global certifications and internship immersion with partner companies
+                  Global certifications and internship immersion with partner
+                  companies
                 </li>
               </ul>
             </div>

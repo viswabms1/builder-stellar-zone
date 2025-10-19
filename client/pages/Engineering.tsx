@@ -266,7 +266,11 @@ const ENGINEERING_DEPARTMENTS: EngineeringDepartment[] = [
     image:
       "https://images.unsplash.com/photo-1523475472560-d2df97ec485c?q=80&w=1600&auto=format&fit=crop",
     link: "https://www.dsu.edu.in/engineering/computer-science-technology",
-    highlights: ["Platform Engineering", "Systems Design", "Enterprise Projects"],
+    highlights: [
+      "Platform Engineering",
+      "Systems Design",
+      "Enterprise Projects",
+    ],
     overlay:
       "bg-gradient-to-br from-brand-orange/70 via-black/70 to-black/55 mix-blend-multiply",
     badgeClass:
@@ -357,16 +361,13 @@ const INNOVATION_LABS = [
   "IBM Centre of Excellence",
 ];
 
-function DepartmentCard({
-  department,
-}: {
-  department: EngineeringDepartment;
-}) {
+function DepartmentCard({ department }: { department: EngineeringDepartment }) {
   const isInternal = department.link.startsWith("/");
   const wrapperClasses = `group block h-full rounded-3xl ${
     department.featured ? "lg:col-span-6" : "lg:col-span-3"
   } focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-magenta focus-visible:ring-offset-2 focus-visible:ring-offset-background`;
-  const overlayClasses = department.overlay ??
+  const overlayClasses =
+    department.overlay ??
     "bg-gradient-to-t from-black/85 via-black/50 to-transparent";
   const badgeClasses = `inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs uppercase tracking-wide ${
     department.badgeClass ?? "bg-white/15 text-white/80 backdrop-blur"
@@ -626,10 +627,7 @@ export default function Engineering() {
         </div>
       </section>
 
-      <section
-        id="departments"
-        className="relative overflow-hidden px-6 py-16"
-      >
+      <section id="departments" className="relative overflow-hidden px-6 py-16">
         <div
           className="pointer-events-none absolute inset-x-0 -top-32 h-64 bg-gradient-to-b from-brand-magenta/20 via-transparent to-transparent blur-3xl"
           aria-hidden="true"
@@ -644,7 +642,9 @@ export default function Engineering() {
                 Future-ready engineering disciplines
               </h2>
               <p className="mt-3 text-sm text-muted-foreground font-body">
-                Discover flagship majors and emerging specialisations built with experiential learning, industry mentorship and research-driven pathways.
+                Discover flagship majors and emerging specialisations built with
+                experiential learning, industry mentorship and research-driven
+                pathways.
               </p>
             </div>
             <RouterLink
@@ -663,10 +663,7 @@ export default function Engineering() {
         </div>
       </section>
 
-      <section
-        id="programs"
-        className="relative overflow-hidden px-6 py-16"
-      >
+      <section id="programs" className="relative overflow-hidden px-6 py-16">
         <div
           className="pointer-events-none absolute -right-32 top-0 hidden h-64 w-64 rounded-full bg-brand-blue/20 blur-3xl lg:block"
           aria-hidden="true"
@@ -685,7 +682,9 @@ export default function Engineering() {
                 Programs crafted with industry-aligned outcomes
               </h2>
               <p className="text-sm text-muted-foreground font-body">
-                Our undergraduate and postgraduate offerings integrate project studios, global certifications and interdisciplinary minors so every learner can customise their journey.
+                Our undergraduate and postgraduate offerings integrate project
+                studios, global certifications and interdisciplinary minors so
+                every learner can customise their journey.
               </p>
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="rounded-3xl border border-brand-magenta/20 bg-brand-magenta/10 p-5 text-brand-magenta">
@@ -694,7 +693,8 @@ export default function Engineering() {
                     Undergraduate majors
                   </p>
                   <p className="mt-2 text-xs text-brand-magenta/80 font-body">
-                    Specialise with honours, minors and industry electives from semester one.
+                    Specialise with honours, minors and industry electives from
+                    semester one.
                   </p>
                 </div>
                 <div className="rounded-3xl border border-brand-blue/20 bg-brand-blue/10 p-5 text-brand-blue">
@@ -703,7 +703,8 @@ export default function Engineering() {
                     Postgraduate specialisations
                   </p>
                   <p className="mt-2 text-xs text-brand-blue/80 font-body">
-                    Deep-dive into advanced systems, research and leadership roles.
+                    Deep-dive into advanced systems, research and leadership
+                    roles.
                   </p>
                 </div>
                 <div className="rounded-3xl border border-border/40 bg-card/70 p-5">
@@ -711,7 +712,8 @@ export default function Engineering() {
                     Project studio pedagogy
                   </div>
                   <p className="mt-2 text-sm text-muted-foreground font-body">
-                    Hands-on product build sprints with mentors from startups and global tech companies.
+                    Hands-on product build sprints with mentors from startups
+                    and global tech companies.
                   </p>
                 </div>
                 <div className="rounded-3xl border border-border/40 bg-card/70 p-5">
@@ -719,7 +721,8 @@ export default function Engineering() {
                     Global certifications
                   </div>
                   <p className="mt-2 text-sm text-muted-foreground font-body">
-                    Earn credentials with IBM, NVIDIA, AWS, VMware and GE while you study.
+                    Earn credentials with IBM, NVIDIA, AWS, VMware and GE while
+                    you study.
                   </p>
                 </div>
               </div>
@@ -731,9 +734,12 @@ export default function Engineering() {
               />
               <CardContent className="relative space-y-8 p-6">
                 <div>
-                  <h3 className="font-display text-2xl">Undergraduate Majors</h3>
+                  <h3 className="font-display text-2xl">
+                    Undergraduate Majors
+                  </h3>
                   <p className="mt-2 text-sm text-muted-foreground font-body">
-                    Choose from future-proof majors and emerging specialisations.
+                    Choose from future-proof majors and emerging
+                    specialisations.
                   </p>
                   <div className="mt-4 grid gap-3 sm:grid-cols-2">
                     {UG_PROGRAMS.map((program) => {
@@ -770,7 +776,8 @@ export default function Engineering() {
                     Postgraduate Specialisations
                   </h3>
                   <p className="mt-2 text-sm text-muted-foreground font-body">
-                    Advance into research, product leadership and domain expertise.
+                    Advance into research, product leadership and domain
+                    expertise.
                   </p>
                   <div className="mt-4 grid gap-3 sm:grid-cols-2">
                     {PG_PROGRAMS.map((program) => (
@@ -922,7 +929,9 @@ export default function Engineering() {
                   </div>
                 </CardHeader>
                 <CardContent className="pt-0">
-                  <CardTitle className="text-base font-display">{lab}</CardTitle>
+                  <CardTitle className="text-base font-display">
+                    {lab}
+                  </CardTitle>
                 </CardContent>
               </Card>
             ))}

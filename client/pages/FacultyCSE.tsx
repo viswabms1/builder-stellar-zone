@@ -77,10 +77,13 @@ export default function FacultyCSE() {
     ).length;
     const professors = cseFaculty.filter(
       (f) =>
-        /Professor/i.test(f.title) && !/Associate/i.test(f.title) && !/Assistant/i.test(f.title),
+        /Professor/i.test(f.title) &&
+        !/Associate/i.test(f.title) &&
+        !/Assistant/i.test(f.title),
     ).length;
-    const researchMentors = cseFaculty.filter((f) => /Ph\.D/i.test(f.qualifications ?? ""))
-      .length;
+    const researchMentors = cseFaculty.filter((f) =>
+      /Ph\.D/i.test(f.qualifications ?? ""),
+    ).length;
     return {
       total,
       leadership: leadershipCount,
@@ -91,9 +94,7 @@ export default function FacultyCSE() {
 
   const leadership = useMemo(
     () =>
-      cseFaculty
-        .filter((f) => /Dean|Chair|Head/i.test(f.title))
-        .slice(0, 3),
+      cseFaculty.filter((f) => /Dean|Chair|Head/i.test(f.title)).slice(0, 3),
     [],
   );
 
@@ -109,7 +110,8 @@ export default function FacultyCSE() {
     const query = search.trim().toLowerCase();
     const rank = (title: string) => {
       if (/Dean|Chair|Head/i.test(title)) return 0;
-      if (/Professor/i.test(title) && !/Associate|Assistant/i.test(title)) return 1;
+      if (/Professor/i.test(title) && !/Associate|Assistant/i.test(title))
+        return 1;
       if (/Associate Professor/i.test(title)) return 2;
       if (/Assistant Professor/i.test(title)) return 3;
       return 4;
@@ -173,7 +175,10 @@ export default function FacultyCSE() {
           </div>
           {/* Sidebar Navigation */}
           <div className="lg:col-span-1">
-            <DepartmentSidebar mobileOpen={mobileMenuOpen} onMobileClose={() => setMobileMenuOpen(false)} />
+            <DepartmentSidebar
+              mobileOpen={mobileMenuOpen}
+              onMobileClose={() => setMobileMenuOpen(false)}
+            />
           </div>
         </div>
       </div>
@@ -211,16 +216,29 @@ function HeroSection({ stats, interests }: HeroSectionProps) {
               Meet the Minds Powering Computer Science &amp; Engineering
             </h1>
             <p className="max-w-2xl text-base text-foreground md:text-lg">
-              Our faculty are seasoned researchers, innovators, and mentors guiding the next generation of technologists through cutting-edge labs, industry collaborations, and personalized mentorship.
+              Our faculty are seasoned researchers, innovators, and mentors
+              guiding the next generation of technologists through cutting-edge
+              labs, industry collaborations, and personalized mentorship.
             </p>
             <div className="flex flex-col items-center gap-3 sm:flex-row lg:items-start">
-              <Button className="bg-brand-gradient text-white" size="lg" asChild>
+              <Button
+                className="bg-brand-gradient text-white"
+                size="lg"
+                asChild
+              >
                 <Link to="/academics/engineering/computer-science">
                   <GraduationCap className="mr-2 h-5 w-5" /> Back to Department
                 </Link>
               </Button>
-              <Button variant="outline" size="lg" className="border-brand-magenta/40 hover:bg-brand-magenta/10" asChild>
-                <a href="mailto:chairman-cse@dsu.edu.in">Connect with Faculty Affairs</a>
+              <Button
+                variant="outline"
+                size="lg"
+                className="border-brand-magenta/40 hover:bg-brand-magenta/10"
+                asChild
+              >
+                <a href="mailto:chairman-cse@dsu.edu.in">
+                  Connect with Faculty Affairs
+                </a>
               </Button>
             </div>
           </div>
@@ -303,7 +321,8 @@ function LeadershipSection({ leadership }: LeadershipSectionProps) {
           <div>
             <h2 className="headline-3 font-display">Leadership Spotlight</h2>
             <p className="text-sm text-foreground sm:text-base">
-              Visionaries steering curriculum transformation, research innovation, and industry partnerships.
+              Visionaries steering curriculum transformation, research
+              innovation, and industry partnerships.
             </p>
           </div>
           <Badge className="w-fit rounded-full bg-brand-magenta/15 px-4 py-2 text-xs font-semibold text-brand-magenta">
@@ -333,19 +352,37 @@ function LeadershipSection({ leadership }: LeadershipSectionProps) {
               <CardContent className="space-y-4 p-5 text-sm text-muted-foreground">
                 {faculty.qualifications ? (
                   <p>
-                    <span className="font-semibold text-foreground">Qualifications:</span> {faculty.qualifications}
+                    <span className="font-semibold text-foreground">
+                      Qualifications:
+                    </span>{" "}
+                    {faculty.qualifications}
                   </p>
                 ) : null}
                 <div className="flex flex-wrap gap-2">
-                  <Button size="sm" className="bg-brand-gradient text-white" asChild>
-                    <Link to={`/academics/engineering/computer-science/faculty/${faculty.slug}`}>
+                  <Button
+                    size="sm"
+                    className="bg-brand-gradient text-white"
+                    asChild
+                  >
+                    <Link
+                      to={`/academics/engineering/computer-science/faculty/${faculty.slug}`}
+                    >
                       View profile
                       <ChevronRight className="ml-1 h-3.5 w-3.5" />
                     </Link>
                   </Button>
                   {faculty.profileUrl ? (
-                    <Button variant="outline" size="sm" className="border-brand-magenta/30 hover:bg-brand-magenta/10" asChild>
-                      <a href={faculty.profileUrl} target="_blank" rel="noreferrer">
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="border-brand-magenta/30 hover:bg-brand-magenta/10"
+                      asChild
+                    >
+                      <a
+                        href={faculty.profileUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
                         Download CV
                       </a>
                     </Button>
@@ -383,7 +420,8 @@ function DirectorySection({
             <div>
               <h2 className="headline-3 font-display">Faculty Directory</h2>
               <p className="text-sm text-foreground sm:text-base">
-                Use the search and filters to connect with mentors by expertise, role, or leadership responsibility.
+                Use the search and filters to connect with mentors by expertise,
+                role, or leadership responsibility.
               </p>
             </div>
             <div className="relative w-full sm:w-80">
@@ -430,7 +468,9 @@ function DirectorySection({
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-transparent" />
                 </AspectRatio>
                 <div className="absolute bottom-0 w-full p-4 text-white">
-                  <p className="text-xs uppercase tracking-wide opacity-80">{faculty.title}</p>
+                  <p className="text-xs uppercase tracking-wide opacity-80">
+                    {faculty.title}
+                  </p>
                   <p className="text-lg font-semibold flex items-center gap-1">
                     {faculty.name}
                     <ChevronRight className="h-4 w-4 opacity-70" />
@@ -440,7 +480,10 @@ function DirectorySection({
               <CardContent className="flex flex-1 flex-col gap-4 p-5 text-sm text-foreground">
                 {faculty.qualifications ? (
                   <p>
-                    <span className="font-semibold text-foreground">Qualifications:</span> {faculty.qualifications}
+                    <span className="font-semibold text-foreground">
+                      Qualifications:
+                    </span>{" "}
+                    {faculty.qualifications}
                   </p>
                 ) : null}
                 {faculty.interests && faculty.interests.length > 0 ? (
@@ -456,8 +499,14 @@ function DirectorySection({
                   </div>
                 ) : null}
                 <div className="mt-auto flex flex-wrap gap-2">
-                  <Button size="sm" className="bg-brand-gradient text-white" asChild>
-                    <Link to={`/academics/engineering/computer-science/faculty/${faculty.slug}`}>
+                  <Button
+                    size="sm"
+                    className="bg-brand-gradient text-white"
+                    asChild
+                  >
+                    <Link
+                      to={`/academics/engineering/computer-science/faculty/${faculty.slug}`}
+                    >
                       View details
                     </Link>
                   </Button>
@@ -468,7 +517,11 @@ function DirectorySection({
                       className="border-brand-magenta/30 hover:bg-brand-magenta/10"
                       asChild
                     >
-                      <a href={faculty.profileUrl} target="_blank" rel="noreferrer">
+                      <a
+                        href={faculty.profileUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
                         Download CV
                       </a>
                     </Button>
@@ -480,7 +533,8 @@ function DirectorySection({
         </div>
         {filteredFaculty.length === 0 ? (
           <div className="rounded-3xl border border-dashed border-brand-magenta/30 bg-white/60 p-10 text-center text-sm text-foreground">
-            No faculty records match your search. Try adjusting the name, role filter, or keywords.
+            No faculty records match your search. Try adjusting the name, role
+            filter, or keywords.
           </div>
         ) : null}
       </div>
@@ -493,37 +547,89 @@ type DepartmentSidebarProps = {
   onMobileClose: () => void;
 };
 
-function DepartmentSidebar({ mobileOpen, onMobileClose }: DepartmentSidebarProps) {
+function DepartmentSidebar({
+  mobileOpen,
+  onMobileClose,
+}: DepartmentSidebarProps) {
   const [expandedMenu, setExpandedMenu] = useState<string | null>(null);
 
   const sidebarMenuItems = [
-    { id: "about", label: "About the Department", icon: ClipboardList, href: "/academics/engineering/computer-science" },
-    { id: "overview", label: "Overview", icon: BookOpen, href: "/academics/engineering/computer-science#overview" },
-    { id: "faculty", label: "Faculty List", icon: Users, href: "/academics/engineering/computer-science/faculty", active: true },
-    { id: "programs", label: "Programs Offered", icon: GraduationCap, href: "/academics/engineering/computer-science#programs" },
-    { id: "curriculum", label: "Curriculum Library", icon: FileText, href: "/academics/engineering/computer-science#curriculum" },
-    { id: "notices", label: "Department Notices", icon: ClipboardList, href: "/academics/engineering/computer-science#notices" },
-    { id: "research", label: "Research & Innovation", icon: FlaskConical, href: "/research" },
-    { id: "admissions", label: "Admissions", icon: GraduationCap, href: "/admissions" },
+    {
+      id: "about",
+      label: "About the Department",
+      icon: ClipboardList,
+      href: "/academics/engineering/computer-science",
+    },
+    {
+      id: "overview",
+      label: "Overview",
+      icon: BookOpen,
+      href: "/academics/engineering/computer-science#overview",
+    },
+    {
+      id: "faculty",
+      label: "Faculty List",
+      icon: Users,
+      href: "/academics/engineering/computer-science/faculty",
+      active: true,
+    },
+    {
+      id: "programs",
+      label: "Programs Offered",
+      icon: GraduationCap,
+      href: "/academics/engineering/computer-science#programs",
+    },
+    {
+      id: "curriculum",
+      label: "Curriculum Library",
+      icon: FileText,
+      href: "/academics/engineering/computer-science#curriculum",
+    },
+    {
+      id: "notices",
+      label: "Department Notices",
+      icon: ClipboardList,
+      href: "/academics/engineering/computer-science#notices",
+    },
+    {
+      id: "research",
+      label: "Research & Innovation",
+      icon: FlaskConical,
+      href: "/research",
+    },
+    {
+      id: "admissions",
+      label: "Admissions",
+      icon: GraduationCap,
+      href: "/admissions",
+    },
   ];
 
   return (
     <>
       {/* Mobile Menu Button */}
       <div className="lg:hidden mb-6 flex items-center justify-between rounded-2xl border border-brand-magenta/20 bg-card/60 p-4">
-        <h3 className="font-display text-lg font-semibold text-foreground">CSE Department Menu</h3>
+        <h3 className="font-display text-lg font-semibold text-foreground">
+          CSE Department Menu
+        </h3>
         <Button
           variant="ghost"
           size="sm"
           onClick={() => setMobileMenuOpen(!mobileOpen)}
           className="text-brand-magenta"
         >
-          {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          {mobileOpen ? (
+            <X className="h-5 w-5" />
+          ) : (
+            <Menu className="h-5 w-5" />
+          )}
         </Button>
       </div>
 
       {/* Sidebar Container */}
-      <div className={`fixed inset-0 z-40 lg:static lg:z-auto lg:block ${mobileOpen ? 'block' : 'hidden'}`}>
+      <div
+        className={`fixed inset-0 z-40 lg:static lg:z-auto lg:block ${mobileOpen ? "block" : "hidden"}`}
+      >
         {/* Mobile Backdrop */}
         <div
           className="fixed inset-0 bg-black/50 lg:hidden"
@@ -538,8 +644,12 @@ function DepartmentSidebar({ mobileOpen, onMobileClose }: DepartmentSidebarProps
               <Badge className="w-fit rounded-full bg-brand-magenta/15 px-4 py-2 text-xs font-semibold text-brand-magenta">
                 CSE Department
               </Badge>
-              <h3 className="mt-3 font-display text-xl font-semibold text-foreground">Quick Links</h3>
-              <p className="text-sm text-foreground">Navigate department resources and information</p>
+              <h3 className="mt-3 font-display text-xl font-semibold text-foreground">
+                Quick Links
+              </h3>
+              <p className="text-sm text-foreground">
+                Navigate department resources and information
+              </p>
             </div>
 
             <nav className="space-y-1">
@@ -558,7 +668,9 @@ function DepartmentSidebar({ mobileOpen, onMobileClose }: DepartmentSidebarProps
                   >
                     <Icon className="h-4 w-4 flex-shrink-0" />
                     <span className="flex-1">{item.label}</span>
-                    {item.active && <ChevronRight className="h-4 w-4 text-brand-magenta" />}
+                    {item.active && (
+                      <ChevronRight className="h-4 w-4 text-brand-magenta" />
+                    )}
                   </Link>
                 );
               })}
@@ -566,17 +678,29 @@ function DepartmentSidebar({ mobileOpen, onMobileClose }: DepartmentSidebarProps
 
             {/* Contact Card */}
             <div className="mt-8 rounded-2xl border border-brand-magenta/20 bg-gradient-to-br from-brand-magenta/10 to-brand-blue/10 p-5 space-y-3">
-              <h4 className="font-display font-semibold text-foreground">Department Contact</h4>
+              <h4 className="font-display font-semibold text-foreground">
+                Department Contact
+              </h4>
               <div className="space-y-2 text-sm">
                 <div>
-                  <p className="text-xs text-foreground/90 uppercase tracking-wide">Chairman, CSE</p>
-                  <a href="mailto:chairman-cse@dsu.edu.in" className="font-medium text-brand-magenta hover:underline">
+                  <p className="text-xs text-foreground/90 uppercase tracking-wide">
+                    Chairman, CSE
+                  </p>
+                  <a
+                    href="mailto:chairman-cse@dsu.edu.in"
+                    className="font-medium text-brand-magenta hover:underline"
+                  >
                     chairman-cse@dsu.edu.in
                   </a>
                 </div>
                 <div>
-                  <p className="text-xs text-foreground/90 uppercase tracking-wide">Phone</p>
-                  <a href="tel:+918049092935" className="font-medium text-foreground hover:text-brand-magenta">
+                  <p className="text-xs text-foreground/90 uppercase tracking-wide">
+                    Phone
+                  </p>
+                  <a
+                    href="tel:+918049092935"
+                    className="font-medium text-foreground hover:text-brand-magenta"
+                  >
                     +91 80 4909 2935
                   </a>
                 </div>
@@ -585,32 +709,52 @@ function DepartmentSidebar({ mobileOpen, onMobileClose }: DepartmentSidebarProps
 
             {/* Department Stats */}
             <div className="rounded-2xl border border-border/40 bg-card/60 p-5 space-y-3">
-              <h4 className="font-display font-semibold text-foreground">Department Highlights</h4>
+              <h4 className="font-display font-semibold text-foreground">
+                Department Highlights
+              </h4>
               <div className="space-y-3 text-sm">
                 <div className="flex items-start gap-2">
-                  <Badge variant="secondary" className="mt-0.5 flex-shrink-0 bg-brand-magenta/15 text-brand-magenta text-[10px]">
+                  <Badge
+                    variant="secondary"
+                    className="mt-0.5 flex-shrink-0 bg-brand-magenta/15 text-brand-magenta text-[10px]"
+                  >
                     UG
                   </Badge>
                   <div>
                     <p className="font-medium text-foreground">B.Tech CSE</p>
-                    <p className="text-xs text-foreground/90">4-year program with specializations</p>
+                    <p className="text-xs text-foreground/90">
+                      4-year program with specializations
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-2">
-                  <Badge variant="secondary" className="mt-0.5 flex-shrink-0 bg-brand-blue/15 text-brand-blue text-[10px]">
+                  <Badge
+                    variant="secondary"
+                    className="mt-0.5 flex-shrink-0 bg-brand-blue/15 text-brand-blue text-[10px]"
+                  >
                     PG
                   </Badge>
                   <div>
                     <p className="font-medium text-foreground">M.Tech CSE</p>
-                    <p className="text-xs text-foreground/90">2-year research-focused program</p>
+                    <p className="text-xs text-foreground/90">
+                      2-year research-focused program
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Call to Action */}
-            <Button className="w-full bg-brand-gradient text-white mt-4" size="sm" asChild>
-              <a href="https://www.dsu.edu.in/engineering/computer-science" target="_blank" rel="noreferrer">
+            <Button
+              className="w-full bg-brand-gradient text-white mt-4"
+              size="sm"
+              asChild
+            >
+              <a
+                href="https://www.dsu.edu.in/engineering/computer-science"
+                target="_blank"
+                rel="noreferrer"
+              >
                 Visit Department Site
               </a>
             </Button>
@@ -633,13 +777,29 @@ function ClosingSection() {
           Inspiring Excellence Through Research, Mentorship &amp; Innovation
         </h2>
         <p className="mt-4 text-lg text-foreground">
-          Collaborate with DSU CSE faculty on applied research, grants, and industry-ready projects. For partnerships and visiting appointments, write to <a className="font-semibold text-brand-magenta" href="mailto:research.cse@dsu.edu.in">research.cse@dsu.edu.in</a>.
+          Collaborate with DSU CSE faculty on applied research, grants, and
+          industry-ready projects. For partnerships and visiting appointments,
+          write to{" "}
+          <a
+            className="font-semibold text-brand-magenta"
+            href="mailto:research.cse@dsu.edu.in"
+          >
+            research.cse@dsu.edu.in
+          </a>
+          .
         </p>
         <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <Button className="bg-brand-gradient text-white" size="lg" asChild>
-            <a href="mailto:placements.cse@dsu.edu.in">Connect for collaborations</a>
+            <a href="mailto:placements.cse@dsu.edu.in">
+              Connect for collaborations
+            </a>
           </Button>
-          <Button variant="outline" size="lg" className="border-brand-magenta/40 hover:bg-brand-magenta/10" asChild>
+          <Button
+            variant="outline"
+            size="lg"
+            className="border-brand-magenta/40 hover:bg-brand-magenta/10"
+            asChild
+          >
             <Link to="/research">Explore CSE research</Link>
           </Button>
         </div>
