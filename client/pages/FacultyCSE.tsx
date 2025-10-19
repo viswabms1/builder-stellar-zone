@@ -539,7 +539,7 @@ function DepartmentSidebar({ mobileOpen, onMobileClose }: DepartmentSidebarProps
                 CSE Department
               </Badge>
               <h3 className="mt-3 font-display text-xl font-semibold text-foreground">Quick Links</h3>
-              <p className="text-sm text-muted-foreground">Navigate department resources and information</p>
+              <p className="text-sm text-foreground/75">Navigate department resources and information</p>
             </div>
 
             <nav className="space-y-1">
