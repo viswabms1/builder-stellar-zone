@@ -836,7 +836,7 @@ export default function ComputerApplications() {
             <h3 className="mb-3 font-display text-3xl">
               Launch Your Tech Career with DSU
             </h3>
-            <p className="mb-6 text-muted-foreground font-body">
+            <p className="mb-6 text-slate-700 dark:text-slate-300 font-body">
               Collaborate with mentors, build real products, showcase your
               portfolio and secure roles with the ecosystem of recruiters
               partnering with the School of Computer Applications.
