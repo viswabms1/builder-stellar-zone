@@ -807,7 +807,7 @@ export default function ComputerApplications() {
               <h2 className="mt-4 font-display text-3xl md:text-4xl">
                 Stay Ahead of Every Milestone
               </h2>
-              <p className="mt-3 text-sm text-muted-foreground font-body">
+              <p className="mt-3 text-sm text-slate-700 dark:text-slate-300 font-body">
                 Download academic schedules, explore event recaps and tap into
                 ongoing research that keeps learners future focused.
               </p>
