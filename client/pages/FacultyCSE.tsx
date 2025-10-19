@@ -210,7 +210,7 @@ function HeroSection({ stats, interests }: HeroSectionProps) {
             <h1 className="text-4xl font-bold leading-tight text-foreground md:text-5xl">
               Meet the Minds Powering Computer Science &amp; Engineering
             </h1>
-            <p className="max-w-2xl text-base text-muted-foreground md:text-lg">
+            <p className="max-w-2xl text-base text-foreground/90 md:text-lg">
               Our faculty are seasoned researchers, innovators, and mentors guiding the next generation of technologists through cutting-edge labs, industry collaborations, and personalized mentorship.
             </p>
             <div className="flex flex-col items-center gap-3 sm:flex-row lg:items-start">
@@ -280,7 +280,7 @@ function StatTile({ icon: Icon, value, label }: StatTileProps) {
     <div className="rounded-2xl border border-brand-magenta/20 bg-white/70 p-4 shadow-sm">
       <Icon className="h-5 w-5 text-brand-magenta" />
       <p className="mt-3 text-2xl font-semibold text-foreground">{value}</p>
-      <p className="text-xs text-muted-foreground">{label}</p>
+      <p className="text-xs text-foreground/75">{label}</p>
     </div>
   );
 }
