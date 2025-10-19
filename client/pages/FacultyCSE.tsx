@@ -479,7 +479,7 @@ function DirectorySection({
           ))}
         </div>
         {filteredFaculty.length === 0 ? (
-          <div className="rounded-3xl border border-dashed border-brand-magenta/30 bg-white/60 p-10 text-center text-sm text-muted-foreground">
+          <div className="rounded-3xl border border-dashed border-brand-magenta/30 bg-white/60 p-10 text-center text-sm text-foreground/80">
             No faculty records match your search. Try adjusting the name, role filter, or keywords.
           </div>
         ) : null}
