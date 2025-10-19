@@ -168,6 +168,104 @@ const RESOURCE_LINKS: ResourceLink[] = [
   },
 ];
 
+const STUDENT_ACHIEVEMENTS: Achievement[] = [
+  {
+    title: "hackathon Winners",
+    description: "20+ students placed in national hackathons and coding competitions in 2024",
+    icon: Award,
+    category: "Competition",
+  },
+  {
+    title: "Startup Founders",
+    description: "8 student-led startups incubated with mentorship and seed funding",
+    icon: Target,
+    category: "Entrepreneurship",
+  },
+  {
+    title: "Research Publications",
+    description: "15+ peer-reviewed papers published by students in international conferences",
+    icon: BookOpen,
+    category: "Research",
+  },
+  {
+    title: "Global Certifications",
+    description: "95% students earn AWS, Google Cloud, or Azure certifications before graduation",
+    icon: BadgeCheck,
+    category: "Certification",
+  },
+];
+
+const FACULTY_ACHIEVEMENTS: Achievement[] = [
+  {
+    title: "Patent Holders",
+    description: "12 faculty members with active patents in AI, cloud computing and data science",
+    icon: Award,
+    category: "Patents",
+  },
+  {
+    title: "Research Grants",
+    description: "₹2.5 Cr+ in funded research projects from government and industry bodies",
+    icon: Sparkles,
+    category: "Funding",
+  },
+  {
+    title: "Publications",
+    description: "50+ journal publications and 100+ conference papers in top-tier venues",
+    icon: BookOpen,
+    category: "Publishing",
+  },
+  {
+    title: "Industry Collaborations",
+    description: "Active partnerships with IBM, NVIDIA, Google, and Amazon for research projects",
+    icon: Users,
+    category: "Collaboration",
+  },
+];
+
+const LIFE_AT_DSU: LifeAtDSU[] = [
+  {
+    title: "Collaborative Learning Spaces",
+    description: "Modern classrooms, AI-powered labs, and collaborative studios designed for peer learning and project-based education.",
+    image: "https://images.unsplash.com/photo-1522202176988-15695038929c?q=80&w=1600&auto=format&fit=crop",
+  },
+  {
+    title: "Student Clubs & Communities",
+    description: "20+ student-led technical clubs, coding communities, and innovation forums fostering peer mentorship and skill-sharing.",
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1600&auto=format&fit=crop",
+  },
+  {
+    title: "Campus Wellness & Culture",
+    description: "Holistic development through sports, arts, wellness programs and cultural events celebrating diverse backgrounds.",
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1600&auto=format&fit=crop",
+  },
+  {
+    title: "Global Exposure",
+    description: "International collaborations, student exchanges, and global hackathons connecting learners with worldwide tech communities.",
+    image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1600&auto=format&fit=crop",
+  },
+];
+
+const FEATURED_FACULTY: FacultyMember[] = [
+  {
+    name: "Dr. Amit Sharma",
+    title: "Program Chair & Professor",
+    specialization: "Cloud Computing & Distributed Systems",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop",
+  },
+  {
+    name: "Dr. Priya Patel",
+    title: "Associate Professor",
+    specialization: "AI & Machine Learning",
+    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
+  },
+  {
+    name: "Dr. Rajesh Kumar",
+    title: "Associate Professor",
+    specialization: "Data Science & Analytics",
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400&auto=format&fit=crop",
+  },
+];
+
 function HighlightCard({ highlight }: { highlight: Highlight }) {
   const Icon = highlight.icon;
   return (
