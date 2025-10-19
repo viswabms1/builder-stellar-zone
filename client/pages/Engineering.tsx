@@ -296,14 +296,6 @@ const ENGINEERING_DEPARTMENTS: EngineeringDepartment[] = [
 
 const SUPPORTING_DEPARTMENTS: SupportingDepartment[] = [
   {
-    name: "Basic Engineering",
-    focus:
-      "Hands-on foundation courses that integrate physics, chemistry and mechanics for first-year engineers.",
-    image:
-      "https://images.unsplash.com/photo-1581090700227-1e37b190418e?q=80&w=1600&auto=format&fit=crop",
-    link: "https://www.dsu.edu.in/engineering/basic-engineering",
-  },
-  {
     name: "Physics Department",
     focus:
       "Advanced instrumentation and applied physics modules covering photonics, energy and smart materials.",
