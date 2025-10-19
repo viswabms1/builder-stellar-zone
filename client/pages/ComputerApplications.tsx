@@ -701,7 +701,7 @@ export default function ComputerApplications() {
                         {group.label} Programmes
                       </CardTitle>
                     </CardHeader>
-                    <CardContent className="grid gap-2 text-sm text-muted-foreground font-body">
+                    <CardContent className="grid gap-2 text-sm text-slate-700 dark:text-slate-300 font-body">
                       {group.programs.map((program) => (
                         <div key={program} className="flex items-center">
                           <ChevronRight className="mr-2 h-3 w-3 text-brand-magenta" />
