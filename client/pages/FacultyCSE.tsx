@@ -382,7 +382,7 @@ function DirectorySection({
           <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <h2 className="headline-3 font-display">Faculty Directory</h2>
-              <p className="text-sm text-muted-foreground sm:text-base">
+              <p className="text-sm text-foreground/80 sm:text-base">
                 Use the search and filters to connect with mentors by expertise, role, or leadership responsibility.
               </p>
             </div>
