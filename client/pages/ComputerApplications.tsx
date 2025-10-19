@@ -4,11 +4,17 @@ import {
   Award,
   BadgeCheck,
   Beaker,
+  BookOpen,
   ChevronRight,
   Cpu,
+  Eye,
   GraduationCap,
+  Heart,
   Laptop,
+  MessageSquare,
   Sparkles,
+  Target,
+  Users,
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
