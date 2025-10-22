@@ -247,7 +247,7 @@ export default function Academics() {
                 icon: Globe,
                 title: "Online Degree Programs",
                 image:
-                  "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1600&auto=format&fit=crop",
+                  "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fedd2e018f6c34d60a22bc6202d6d86c4?format=webp&width=800",
                 description:
                   "Flexible, career-aligned online degrees with live sessions, projects, and placement assistance.",
                 programs: ["BBA", "BCA", "B.Com"],
