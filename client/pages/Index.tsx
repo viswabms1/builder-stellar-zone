@@ -237,7 +237,7 @@ export default function Index() {
                 programs: ["BBA", "BCA", "B.Com"],
                 color: "brand-orange",
                 delay: "0.9s",
-                href: "https://www.dsu.edu.in/online-degree-programs",
+                href: "https://dsuonline.com",
               },
             ].map((school, index) => (
               <Card
