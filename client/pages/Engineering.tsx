@@ -688,6 +688,14 @@ export default function Engineering() {
                       <p className="text-sm font-semibold text-brand-magenta uppercase tracking-wide">
                         BEST WISHES!
                       </p>
+                      <div className="mt-4 space-y-1">
+                        <p className="text-sm font-semibold text-foreground font-display">
+                          Dr. Udaya Kumar Reddy K R
+                        </p>
+                        <p className="text-sm text-muted-foreground font-body">
+                          Dean, School of Engineering
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
