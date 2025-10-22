@@ -395,7 +395,7 @@ export default function Academics() {
                 description:
                   "Learn from industry leaders and renowned academicians",
                 image:
-                  "https://images.unsplash.com/photo-1558021212-51b6ecfa0db9?q=80&w=1600&auto=format&fit=crop",
+                  "https://images.pexels.com/photos/17364073/pexels-photo-17364073.jpeg",
                 badgeClass: "bg-brand-orange/20 text-brand-orange",
               },
               {
