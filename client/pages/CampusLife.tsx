@@ -11,8 +11,6 @@ import { Badge } from "@/components/ui/badge";
 import {
   ArrowRight,
   Building,
-  Users,
-  Star,
   Heart,
   Music,
   Trophy,
@@ -21,7 +19,6 @@ import {
   Utensils,
   Wifi,
   Car,
-  Shield,
   Gamepad2,
   Dumbbell,
   Palette,
