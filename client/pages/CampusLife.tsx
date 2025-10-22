@@ -87,33 +87,6 @@ export default function CampusLife() {
         </div>
       </section>
 
-      {/* Campus Stats */}
-      <section className="px-6 py-16 bg-gradient-to-r from-orange-500/10 to-red-600/10">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-            {[
-              { number: "600+", label: "Acres Campus", icon: MapPin },
-              { number: "100+", label: "Student Clubs", icon: Users },
-              { number: "50+", label: "Cultural Events", icon: Star },
-              { number: "24/7", label: "Campus Security", icon: Shield },
-            ].map((stat, index) => (
-              <Card
-                key={index}
-                className="text-center p-4 md:p-6 bg-card/50 backdrop-blur-sm border border-border/50"
-              >
-                <stat.icon className="w-8 h-8 text-orange-500 mx-auto mb-3" />
-                <div className="text-2xl md:text-3xl font-bold text-foreground mb-1">
-                  {stat.number}
-                </div>
-                <div className="text-sm text-muted-foreground">
-                  {stat.label}
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Campus Highlights - Image Gallery Section */}
       <section className="px-6 py-20">
         <div className="max-w-7xl mx-auto">
