@@ -467,10 +467,22 @@ export default function Academics() {
                       {feature.title}
                     </span>
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-2 font-display">
+                  <h3
+                    className={`text-xl font-bold mb-2 font-display ${
+                      feature.objectFit === "contain"
+                        ? "text-foreground"
+                        : "text-white"
+                    }`}
+                  >
                     {feature.title}
                   </h3>
-                  <p className="text-white/80 text-sm font-body">
+                  <p
+                    className={`text-sm font-body ${
+                      feature.objectFit === "contain"
+                        ? "text-muted-foreground"
+                        : "text-white/80"
+                    }`}
+                  >
                     {feature.description}
                   </p>
                 </div>
