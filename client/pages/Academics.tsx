@@ -450,11 +450,6 @@ export default function Academics() {
                 <div className="absolute -top-6 -right-6 w-40 h-40 bg-brand-magenta/10 rounded-full blur-2xl" />
                 <div className="absolute -bottom-8 -left-8 w-48 h-48 bg-brand-orange/10 rounded-full blur-2xl" />
 
-                {feature.objectFit !== "contain" && (
-                  <div className="absolute top-4 left-4 inline-flex items-center gap-2 rounded-full bg-black/40 backdrop-blur px-3 py-1 text-white text-xs">
-                    <feature.icon className="w-4 h-4" />
-                  </div>
-                )}
 
                 <div className={`${
                   feature.objectFit === "contain" ? "p-6" : "absolute bottom-0 inset-x-0 p-6"
