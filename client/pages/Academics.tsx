@@ -419,15 +419,27 @@ export default function Academics() {
             ].map((feature, index) => (
               <Card
                 key={index}
-                className="group relative overflow-hidden h-80 rounded-3xl border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-xl hover:shadow-brand-magenta/10 transition-all duration-500 hover:-translate-y-1"
+                className={`group relative overflow-hidden ${
+                  feature.customHeight || "h-80"
+                } rounded-3xl border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-xl hover:shadow-brand-magenta/10 transition-all duration-500 hover:-translate-y-1 flex flex-col`}
               >
-                <img
-                  src={feature.image}
-                  alt={feature.title}
-                  className={`absolute inset-0 w-full h-full ${
-                    feature.objectFit === "contain" ? "object-contain" : "object-cover"
-                  } group-hover:scale-105 transition-transform duration-700`}
-                />
+                <div
+                  className={`flex-1 overflow-hidden ${
+                    feature.objectFit === "contain"
+                      ? "flex items-center justify-center bg-black/20"
+                      : ""
+                  }`}
+                >
+                  <img
+                    src={feature.image}
+                    alt={feature.title}
+                    className={`w-full h-full ${
+                      feature.objectFit === "contain"
+                        ? "object-contain p-4"
+                        : "object-cover"
+                    } group-hover:scale-105 transition-transform duration-700`}
+                  />
+                </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent" />
 
                 {/* Decorative blobs */}
