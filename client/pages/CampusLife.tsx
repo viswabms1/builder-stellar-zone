@@ -429,7 +429,7 @@ export default function CampusLife() {
               {
                 icon: Trophy,
                 title: "Sports Meet",
-                image: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=400&h=300&fit=crop",
+                image: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F4965c58a577f42679515554a2c799501?format=webp&width=800",
                 duration: "1 Week",
                 attendance: "15,000+",
               },
