@@ -67,45 +67,6 @@ export default function Academics() {
             across every discipline.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-            <Button
-              size="lg"
-              className="bg-brand-gradient hover:opacity-90 text-white px-8 py-6 text-lg font-semibold font-display rounded-2xl"
-            >
-              Explore Programs
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="border-2 border-brand-orange text-brand-orange hover:bg-brand-orange hover:text-white px-8 py-6 text-lg font-semibold font-display rounded-2xl"
-            >
-              Download Brochure
-            </Button>
-          </div>
-
-          {/* Quick Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-            {[
-              { number: "15", label: "Schools & Colleges", icon: Building },
-              { number: "100+", label: "Programs", icon: BookOpen },
-              { number: "500+", label: "Expert Faculty", icon: Users },
-              { number: "95%", label: "Placement Rate", icon: TrendingUp },
-            ].map((stat, index) => (
-              <Card
-                key={index}
-                className="text-center p-6 bg-card/30 backdrop-blur-sm border border-border/30 hover:border-orange-500/30 transition-all duration-300"
-              >
-                <stat.icon className="w-8 h-8 text-brand-magenta mx-auto mb-3" />
-                <div className="text-3xl font-bold text-foreground mb-1">
-                  {stat.number}
-                </div>
-                <div className="text-sm text-muted-foreground">
-                  {stat.label}
-                </div>
-              </Card>
-            ))}
-          </div>
         </div>
       </section>
 
