@@ -167,7 +167,7 @@ export default function Academics() {
                 icon: Stethoscope,
                 title: "Health Sciences",
                 image:
-                  "https://images.unsplash.com/photo-1584985251444-7acbadda4b61?q=80&w=1600&auto=format&fit=crop",
+                  "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fbc944f36dda948aa94827a23ad35369b?format=webp&width=800",
                 description:
                   "Health professions education with clinical immersion, simulation labs, and strong patient-care focus.",
                 programs: [
