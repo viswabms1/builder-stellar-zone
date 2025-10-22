@@ -231,7 +231,7 @@ export default function Academics() {
                 icon: Presentation,
                 title: "Center for Executive Education",
                 image:
-                  "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F2268aa6cc4194d269aa4b481a293621b?format=webp&width=800",
+                  "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fa0a53cf62f55495e94ddc5c0e3b890d8?format=webp&width=800",
                 description:
                   "Executive MBA and leadership programmes tailored for working professionals with CXO mentorship.",
                 programs: [
