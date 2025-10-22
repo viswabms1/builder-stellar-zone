@@ -225,7 +225,7 @@ export default function Academics() {
                   "Public Health",
                 ],
                 color: "brand-blue",
-                href: "/academics/medical-education-research",
+                href: "https://cdsimer.edu.in",
               },
               {
                 icon: Presentation,
