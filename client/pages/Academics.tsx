@@ -75,9 +75,9 @@ export default function Academics() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="text-foreground">Schools & </span>
+              <span className="text-foreground">Schools </span>
               <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
-                Colleges
+                under Dayananda Sagar University
               </span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
