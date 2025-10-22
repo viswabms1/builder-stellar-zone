@@ -227,7 +227,7 @@ export default function Index() {
                 ],
                 color: "brand-blue",
                 delay: "0.8s",
-                href: "/academics/medical-education-research",
+                href: "https://cdsimer.edu.in",
               },
               {
                 icon: Globe,
