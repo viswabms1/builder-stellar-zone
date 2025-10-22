@@ -182,7 +182,7 @@ export default function CampusLife() {
               {
                 title: "Cultural Fest",
                 category: "Events",
-                image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=300&h=300&fit=crop"
+                image: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fa4d4c925921740bdaac1f9d434a276f1?format=webp&width=800"
               },
               { 
                 title: "Sports Day", 
