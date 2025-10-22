@@ -151,7 +151,7 @@ export default function Academics() {
                 icon: FlaskConical,
                 title: "Basic & Applied Sciences",
                 image:
-                  "https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?q=80&w=1600&auto=format&fit=crop",
+                  "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Ff5cde141ec88434abe5b7909f2bf9710?format=webp&width=800",
                 description:
                   "Foundational and interdisciplinary sciences with strong lab exposure and research-driven learning.",
                 programs: [
