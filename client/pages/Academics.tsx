@@ -215,7 +215,7 @@ export default function Academics() {
                 icon: Microscope,
                 title: "Medical Education & Research",
                 image:
-                  "https://images.unsplash.com/photo-1581093588401-16f8c4387b65?q=80&w=1600&auto=format&fit=crop",
+                  "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F14e1fd7abfe94ba3a86faff2e81bd88f?format=webp&width=800",
                 description:
                   "Advanced medical education and translational research with a focus on innovation and community impact.",
                 programs: [
