@@ -387,6 +387,7 @@ export default function Academics() {
                   "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F047841ee5d304f10a49f022a1c5c511b?format=webp&width=800",
                 badgeClass: "bg-brand-magenta/20 text-brand-magenta",
                 objectFit: "contain",
+                customHeight: "h-96",
               },
               {
                 icon: Users,
