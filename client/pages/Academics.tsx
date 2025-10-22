@@ -252,6 +252,7 @@ export default function Academics() {
                   "Flexible, career-aligned online degrees with live sessions, projects, and placement assistance.",
                 programs: ["BBA", "BCA", "B.Com"],
                 color: "brand-orange",
+                href: "https://dsuonline.com",
               },
             ].map((school, index) => (
               <Card
