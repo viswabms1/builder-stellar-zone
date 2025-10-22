@@ -262,7 +262,9 @@ export default function Academics() {
                   <img
                     src={school.image}
                     alt={school.title}
-                    className="h-full w-full object-cover object-top group-hover:scale-[1.03] transition-transform duration-700"
+                    className={`h-full w-full object-cover ${
+                      school.title === "Computer Applications" ? "object-top" : ""
+                    } group-hover:scale-[1.03] transition-transform duration-700`}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                   <div className="absolute top-3 left-3 inline-flex items-center gap-2 rounded-full bg-black/40 backdrop-blur px-3 py-1 text-white text-xs">
