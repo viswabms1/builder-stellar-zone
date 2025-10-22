@@ -61,7 +61,7 @@ export default function Academics() {
             <span className="text-foreground">Through Learning</span>
           </h1>
 
-          <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-muted-foreground mb-6 max-w-4xl mx-auto leading-relaxed">
             Discover world-class academic programs designed to prepare you for
             the challenges of tomorrow. At DSU, innovation meets excellence
             across every discipline.
