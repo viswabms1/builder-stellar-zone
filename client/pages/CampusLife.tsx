@@ -204,10 +204,10 @@ export default function CampusLife() {
                 category: "Culture", 
                 image: "https://images.unsplash.com/photo-1555939594-58d7cb561a1b?w=300&h=300&fit=crop"
               },
-              { 
-                title: "Study Groups", 
-                category: "Academic", 
-                image: "https://images.unsplash.com/photo-1522202176988-66f3dd11370e?w=300&h=300&fit=crop",
+              {
+                title: "Study Groups",
+                category: "Academic",
+                image: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F216fee584984419caf29c0341644b072?format=webp&width=800",
                 size: "col-span-1 row-span-2"
               },
               { 
