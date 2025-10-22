@@ -440,18 +440,26 @@ export default function Academics() {
                     } group-hover:scale-105 transition-transform duration-700`}
                   />
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent" />
+
+                {/* Content Section - Only for non-contain images */}
+                {feature.objectFit !== "contain" && (
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent" />
+                )}
 
                 {/* Decorative blobs */}
                 <div className="absolute -top-6 -right-6 w-40 h-40 bg-brand-magenta/10 rounded-full blur-2xl" />
                 <div className="absolute -bottom-8 -left-8 w-48 h-48 bg-brand-orange/10 rounded-full blur-2xl" />
 
-                <div className="absolute top-4 left-4 inline-flex items-center gap-2 rounded-full bg-black/40 backdrop-blur px-3 py-1 text-white text-xs">
-                  <feature.icon className="w-4 h-4" />
-                  Feature
-                </div>
+                {feature.objectFit !== "contain" && (
+                  <div className="absolute top-4 left-4 inline-flex items-center gap-2 rounded-full bg-black/40 backdrop-blur px-3 py-1 text-white text-xs">
+                    <feature.icon className="w-4 h-4" />
+                    Feature
+                  </div>
+                )}
 
-                <div className="absolute bottom-0 inset-x-0 p-6">
+                <div className={`${
+                  feature.objectFit === "contain" ? "p-6" : "absolute bottom-0 inset-x-0 p-6"
+                }`}>
                   <div className="inline-flex mb-3">
                     <span
                       className={`px-3 py-1 rounded-full text-xs font-medium ${feature.badgeClass}`}
