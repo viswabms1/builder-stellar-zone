@@ -406,6 +406,7 @@ export default function Academics() {
                 image:
                   "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F1e657736504149818bf89d58c6b3d031?format=webp&width=800",
                 badgeClass: "bg-brand-blue/20 text-brand-blue",
+                objectFit: "contain",
               },
               {
                 icon: TrendingUp,
