@@ -119,7 +119,7 @@ export default function CampusLife() {
               },
               {
                 title: "Central Library",
-                image: "https://images.unsplash.com/photo-150784272343-583f20270319?w=500&h=400&fit=crop",
+                image: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F303af6a81dfe4b5bb9ea6952ee39c3b7?format=webp&width=800",
                 description: "2M+ books and digital resources"
               },
               {
