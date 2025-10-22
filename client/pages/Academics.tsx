@@ -140,7 +140,7 @@ export default function Academics() {
                 icon: Briefcase,
                 title: "Commerce & Management Studies",
                 image:
-                  "https://images.unsplash.com/photo-1551836022-4c4c79ecde51?q=80&w=1600&auto=format&fit=crop",
+                  "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F7827db3aa95d45a389a5d0bdeb29d463?format=webp&width=800",
                 description:
                   "Business education that merges core management with analytics, entrepreneurship, and industry projects.",
                 programs: ["B.Com", "BBA", "MBA", "Doctoral Programmes"],
