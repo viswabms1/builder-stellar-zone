@@ -41,9 +41,9 @@ export default function CampusLife() {
       {/* Hero Section with Background Image */}
       <section className="relative h-[600px] overflow-hidden">
         <div className="absolute inset-0">
-          <img 
-            src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=1600&h=600&fit=crop"
-            alt="Campus Life"
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F34c979438f024245a025e54a75e65599?format=webp&width=800"
+            alt="DSU Campus Courtyard"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black/50"></div>
