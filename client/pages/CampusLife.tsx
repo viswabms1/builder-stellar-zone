@@ -46,12 +46,10 @@ export default function CampusLife() {
             alt="DSU Campus Courtyard"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/40"></div>
-          <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/30"></div>
         </div>
 
         <div className="relative h-full flex items-center justify-center text-center max-w-7xl mx-auto px-6">
-          <div>
+          <div className="bg-black/40 backdrop-blur-sm rounded-3xl px-8 md:px-12 py-12 max-w-3xl">
             <div className="inline-flex items-center px-4 py-2 bg-orange-500/20 rounded-full border border-orange-500/40 mb-8">
               <Heart className="w-4 h-4 text-orange-300 mr-2" />
               <span className="text-sm font-medium text-orange-200">
