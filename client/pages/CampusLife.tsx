@@ -102,9 +102,9 @@ export default function CampusLife() {
 
           {/* Featured Large Image */}
           <div className="mb-8 rounded-2xl overflow-hidden h-[400px] border border-border hover:border-orange-500/50 transition-colors">
-            <img 
-              src="https://images.unsplash.com/photo-1519452575417-564c1401ecc0?w=1200&h=400&fit=crop"
-              alt="Main Campus Building"
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F602a48ccc50449ef8b044f6528cfa842?format=webp&width=800"
+              alt="Movie Screening Room"
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
             />
           </div>
