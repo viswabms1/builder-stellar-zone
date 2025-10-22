@@ -278,14 +278,27 @@ export default function Academics() {
                 </div>
                 <CardHeader>
                   {school.href ? (
-                    <Link
-                      to={school.href}
-                      className="block rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-magenta/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-                    >
-                      <CardTitle className="text-xl font-bold group-hover:text-brand-magenta transition-colors leading-tight">
-                        {school.title}
-                      </CardTitle>
-                    </Link>
+                    school.href.startsWith("http") ? (
+                      <a
+                        href={school.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="block rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-magenta/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                      >
+                        <CardTitle className="text-xl font-bold group-hover:text-brand-magenta transition-colors leading-tight">
+                          {school.title}
+                        </CardTitle>
+                      </a>
+                    ) : (
+                      <Link
+                        to={school.href}
+                        className="block rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-magenta/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                      >
+                        <CardTitle className="text-xl font-bold group-hover:text-brand-magenta transition-colors leading-tight">
+                          {school.title}
+                        </CardTitle>
+                      </Link>
+                    )
                   ) : (
                     <CardTitle className="text-xl font-bold group-hover:text-brand-magenta transition-colors leading-tight">
                       {school.title}
