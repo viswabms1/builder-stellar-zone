@@ -124,7 +124,7 @@ export default function Academics() {
                 icon: Gavel,
                 title: "School of Law",
                 image:
-                  "https://images.unsplash.com/photo-1575378839152-38d99f1fbfde?q=80&w=1600&auto=format&fit=crop",
+                  "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Faa5e530144f148c29a6935c9777759b3?format=webp&width=800",
                 description:
                   "Comprehensive legal education blending theory, practice, moot courts, internships, and research opportunities.",
                 programs: [
