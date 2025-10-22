@@ -453,7 +453,6 @@ export default function Academics() {
                 {feature.objectFit !== "contain" && (
                   <div className="absolute top-4 left-4 inline-flex items-center gap-2 rounded-full bg-black/40 backdrop-blur px-3 py-1 text-white text-xs">
                     <feature.icon className="w-4 h-4" />
-                    Feature
                   </div>
                 )}
 
