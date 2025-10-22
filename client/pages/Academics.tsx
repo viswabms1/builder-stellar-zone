@@ -183,7 +183,7 @@ export default function Academics() {
                 icon: PenSquare,
                 title: "Journalism & Mass Communication",
                 image:
-                  "https://images.unsplash.com/photo-1525182008055-f88b95ff7980?q=80&w=1600&auto=format&fit=crop",
+                  "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F0f5e9825dc2342c38fb53f7c1c9ce3a6?format=webp&width=800",
                 description:
                   "Future-ready storytellers trained across multimedia newsrooms, podcasts, films and global communication projects.",
                 programs: [
