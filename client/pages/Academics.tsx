@@ -423,7 +423,9 @@ export default function Academics() {
                 <img
                   src={feature.image}
                   alt={feature.title}
-                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  className={`absolute inset-0 w-full h-full ${
+                    feature.objectFit === "contain" ? "object-contain" : "object-cover"
+                  } group-hover:scale-105 transition-transform duration-700`}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent" />
 
