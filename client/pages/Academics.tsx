@@ -414,7 +414,7 @@ export default function Academics() {
                 description:
                   "Strong partnerships with leading companies and organizations",
                 image:
-                  "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1600&auto=format&fit=crop",
+                  "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F29a06e5c2ef44ca8a7d2ebacbffe0f9f?format=webp&width=800",
                 badgeClass: "bg-brand-magenta/20 text-brand-magenta",
               },
             ].map((feature, index) => (
