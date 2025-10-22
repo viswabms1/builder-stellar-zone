@@ -11,6 +11,7 @@ import { Badge } from "@/components/ui/badge";
 import {
   ArrowRight,
   Building,
+  Users,
   Heart,
   Music,
   Trophy,
