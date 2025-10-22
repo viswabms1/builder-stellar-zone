@@ -628,7 +628,7 @@ export default function Engineering() {
               <div className="relative overflow-hidden bg-gradient-to-br from-brand-magenta/10 to-brand-blue/10 flex items-center justify-center p-8 md:p-12">
                 <div className="relative w-full max-w-xs">
                   <img
-                    src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fcdaa10df66944ed28b18115bd49292c9?format=webp&width=800"
+                    src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fb0960f67ec5541b7bc257c9ecfe8e30b?format=webp&width=800"
                     alt="Dr. Udaya Kumar Reddy K R"
                     className="w-full h-auto object-cover rounded-2xl border-4 border-white/20"
                   />
