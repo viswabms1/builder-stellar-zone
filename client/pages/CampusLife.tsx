@@ -359,7 +359,7 @@ export default function CampusLife() {
             },
             {
               title: "Sports Complex",
-              image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&h=500&fit=crop",
+              image: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fbc9e4b114ef0435c809830c5bca27d60?format=webp&width=800",
               description: "State-of-the-art facilities for all sports and fitness",
               features: ["Swimming Pool", "Gymnasium", "Indoor Sports", "Outdoor Courts"],
             },
