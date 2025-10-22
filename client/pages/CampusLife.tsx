@@ -371,7 +371,7 @@ export default function CampusLife() {
             },
             {
               title: "Food Courts",
-              image: "https://images.unsplash.com/photo-1555939594-58d7cb561a1b?w=800&h=500&fit=crop",
+              image: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Feaa91fe5c0b44c02b3ead40543f73fff?format=webp&width=800",
               description: "Multiple dining options with diverse cuisines",
               features: ["Multi-cuisine", "Healthy Options", "24/7 Cafes", "Food Courts"],
             },
