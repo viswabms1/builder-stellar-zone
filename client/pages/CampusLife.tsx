@@ -353,7 +353,7 @@ export default function CampusLife() {
           {[
             {
               title: "Modern Hostels",
-              image: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&h=500&fit=crop",
+              image: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F0357dfeb9259438fbb59b6cd31a06e5a?format=webp&width=800",
               description: "Comfortable accommodation with all modern amenities",
               features: ["AC Rooms", "WiFi", "Study Areas", "Recreation Rooms"],
             },
