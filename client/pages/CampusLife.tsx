@@ -38,79 +38,60 @@ import {
 export default function CampusLife() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 bg-gradient-to-br from-orange-500/10 via-red-600/5 to-background">
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-orange-500/10 rounded-full filter blur-3xl animate-float"></div>
-          <div
-            className="absolute bottom-20 right-10 w-96 h-96 bg-red-600/10 rounded-full filter blur-3xl animate-float"
-            style={{ animationDelay: "2s" }}
-          ></div>
+      {/* Hero Section with Background Image */}
+      <section className="relative h-[600px] overflow-hidden">
+        <div className="absolute inset-0">
+          <img 
+            src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=1600&h=600&fit=crop"
+            alt="Campus Life"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/50"></div>
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-6 text-center">
-          <div className="inline-flex items-center px-4 py-2 bg-orange-500/10 rounded-full border border-orange-500/20 mb-8">
-            <Heart className="w-4 h-4 text-orange-500 mr-2" />
-            <span className="text-sm font-medium text-orange-500">
-              Life @ DSU
-            </span>
-          </div>
+        <div className="relative h-full flex items-center justify-center text-center max-w-7xl mx-auto px-6">
+          <div>
+            <div className="inline-flex items-center px-4 py-2 bg-orange-500/20 rounded-full border border-orange-500/40 mb-8">
+              <Heart className="w-4 h-4 text-orange-300 mr-2" />
+              <span className="text-sm font-medium text-orange-200">
+                Life @ DSU
+              </span>
+            </div>
 
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight">
-            <span className="text-foreground">More Than Just</span>
-            <br />
-            <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
-              Education
-            </span>
-            <br />
-            <span className="text-foreground">It's Home</span>
-          </h1>
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight text-white">
+              <span>More Than Just</span>
+              <br />
+              <span className="text-orange-300">Education</span>
+              <br />
+              <span>It's Home</span>
+            </h1>
 
-          <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-4xl mx-auto leading-relaxed">
-            Experience a vibrant campus community where
-            <span className="text-orange-400 font-semibold">
-              {" "}
-              lifelong friendships
-            </span>{" "}
-            are made,
-            <span className="text-red-400 font-semibold">
-              {" "}
-              talents are discovered
-            </span>
-            , and
-            <span className="text-pink-400 font-semibold">
-              {" "}
-              memories are created
-            </span>
-            .
-          </p>
+            <p className="text-xl md:text-2xl text-orange-50 mb-12 max-w-4xl mx-auto leading-relaxed">
+              Experience a vibrant campus community where friendships are made, talents are discovered, and memories are created.
+            </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
             <a
               href="https://dsu.edu.in/virtual-tour/"
               target="_blank"
               rel="noreferrer"
-              className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-red-600 hover:to-orange-500 text-white px-8 py-6 text-lg font-semibold rounded-2xl"
+                className="bg-orange-500 hover:bg-orange-600 text-white px-10 py-6 text-lg font-semibold rounded-full inline-flex items-center"
               >
                 Virtual Campus Tour
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
             </a>
-            <Button
-              variant="outline"
-              size="lg"
-              className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white px-8 py-6 text-lg font-semibold rounded-2xl"
-            >
-              Download Campus Guide
-            </Button>
           </div>
+        </div>
+      </section>
 
-          {/* Campus Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+      {/* Campus Stats */}
+      <section className="px-6 py-16 bg-gradient-to-r from-orange-500/10 to-red-600/10">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
             {[
               { number: "600+", label: "Acres Campus", icon: MapPin },
               { number: "100+", label: "Student Clubs", icon: Users },
@@ -119,10 +100,10 @@ export default function CampusLife() {
             ].map((stat, index) => (
               <Card
                 key={index}
-                className="text-center p-6 bg-card/30 backdrop-blur-sm border border-border/30 hover:border-orange-500/30 transition-all duration-300"
+                className="text-center p-4 md:p-6 bg-card/50 backdrop-blur-sm border border-border/50"
               >
                 <stat.icon className="w-8 h-8 text-orange-500 mx-auto mb-3" />
-                <div className="text-3xl font-bold text-foreground mb-1">
+                <div className="text-2xl md:text-3xl font-bold text-foreground mb-1">
                   {stat.number}
                 </div>
                 <div className="text-sm text-muted-foreground">
@@ -134,7 +115,156 @@ export default function CampusLife() {
         </div>
       </section>
 
-      {/* Student Organizations */}
+      {/* Campus Highlights - Image Gallery Section */}
+      <section className="px-6 py-20">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
+                Campus Highlights
+              </span>
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Explore the diverse spaces and vibrant areas across our sprawling campus
+            </p>
+          </div>
+
+          {/* Featured Large Image */}
+          <div className="mb-8 rounded-2xl overflow-hidden h-[400px] border border-border hover:border-orange-500/50 transition-colors">
+            <img 
+              src="https://images.unsplash.com/photo-1519452575417-564c1401ecc0?w=1200&h=400&fit=crop"
+              alt="Main Campus Building"
+              className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+
+          {/* Masonry Grid - Campus Areas */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              {
+                title: "Engineering Complex",
+                image: "https://images.unsplash.com/photo-1512941691920-25bda36dc643?w=500&h=400&fit=crop",
+                description: "State-of-the-art labs and modern classrooms"
+              },
+              {
+                title: "Central Library",
+                image: "https://images.unsplash.com/photo-150784272343-583f20270319?w=500&h=400&fit=crop",
+                description: "2M+ books and digital resources"
+              },
+              {
+                title: "Student Center",
+                image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=500&h=400&fit=crop",
+                description: "Hub for student activities and events"
+              },
+            ].map((area, index) => (
+              <div key={index} className="group cursor-pointer">
+                <div className="relative overflow-hidden rounded-xl h-64 mb-4 border border-border hover:border-orange-500/50 transition-colors">
+                  <img 
+                    src={area.image}
+                    alt={area.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors"></div>
+                </div>
+                <h3 className="text-xl font-bold text-foreground group-hover:text-orange-500 transition-colors mb-2">
+                  {area.title}
+                </h3>
+                <p className="text-muted-foreground text-sm">
+                  {area.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Campus Life Gallery - Masonry Layout */}
+      <section className="px-6 py-20 bg-gradient-to-r from-orange-500/5 to-red-600/5">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              <span className="text-foreground">Life in </span>
+              <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
+                Pictures
+              </span>
+            </h2>
+            <p className="text-xl text-muted-foreground">
+              Glimpses of the vibrant campus life at DSU
+            </p>
+          </div>
+
+          {/* Masonry Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 auto-rows-max gap-4">
+            {[
+              {
+                title: "Campus Tour",
+                category: "Orientation",
+                image: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=400&h=300&fit=crop",
+                size: "col-span-1 row-span-2"
+              },
+              { 
+                title: "Cultural Fest", 
+                category: "Events", 
+                image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=300&h=300&fit=crop"
+              },
+              { 
+                title: "Sports Day", 
+                category: "Athletics", 
+                image: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=300&h=300&fit=crop"
+              },
+              { 
+                title: "Graduation", 
+                category: "Ceremony", 
+                image: "https://images.unsplash.com/photo-1549692520-ace2c9604117?w=300&h=300&fit=crop"
+              },
+              { 
+                title: "Tech Fair", 
+                category: "Innovation", 
+                image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=300&h=300&fit=crop"
+              },
+              { 
+                title: "Food Festival", 
+                category: "Culture", 
+                image: "https://images.unsplash.com/photo-1555939594-58d7cb561a1b?w=300&h=300&fit=crop"
+              },
+              { 
+                title: "Study Groups", 
+                category: "Academic", 
+                image: "https://images.unsplash.com/photo-1522202176988-66f3dd11370e?w=300&h=300&fit=crop",
+                size: "col-span-1 row-span-2"
+              },
+              { 
+                title: "Night Life", 
+                category: "Social", 
+                image: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=300&h=300&fit=crop"
+              },
+            ].map((item, index) => (
+              <div
+                key={index}
+                className={`${item.size || ''} relative group overflow-hidden rounded-xl border border-border hover:border-orange-500/50 transition-all duration-300 cursor-pointer`}
+              >
+                <img 
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                  <div>
+                    <h3 className="font-bold text-white text-lg">
+                      {item.title}
+                    </h3>
+                    <Badge variant="secondary" className="mt-2 text-xs">
+                      {item.category}
+                    </Badge>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Student Organizations with Images */}
       <section className="px-6 py-20">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -145,168 +275,84 @@ export default function CampusLife() {
               <span className="text-foreground"> Organizations</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Discover your passion and develop your skills through our diverse
-              range of student clubs and societies
+              Discover your passion through our diverse range of student clubs and societies
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
                 icon: Palette,
                 title: "Arts & Culture",
-                description:
-                  "Express your creativity through various artistic mediums and cultural activities",
-                clubs: [
-                  "Drama Society",
-                  "Music Club",
-                  "Dance Troupe",
-                  "Fine Arts Club",
-                  "Photography Club",
-                  "Literature Society",
-                ],
+                description: "Express your creativity through artistic mediums",
+                image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=300&fit=crop",
                 members: "2,500+",
-                events: "Monthly showcases",
               },
               {
                 icon: Trophy,
                 title: "Sports & Recreation",
-                description:
-                  "Stay active and competitive with our comprehensive sports programs",
-                clubs: [
-                  "Cricket Team",
-                  "Football Club",
-                  "Basketball",
-                  "Badminton",
-                  "Tennis",
-                  "Swimming",
-                ],
+                description: "Stay active with comprehensive sports programs",
+                image: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=400&h=300&fit=crop",
                 members: "3,000+",
-                events: "Inter-college tournaments",
               },
               {
                 icon: Gamepad2,
                 title: "Technology & Innovation",
-                description:
-                  "Dive into the latest tech trends and build innovative solutions",
-                clubs: [
-                  "Coding Club",
-                  "Robotics Society",
-                  "AI/ML Club",
-                  "Cybersecurity",
-                  "Web Development",
-                  "Mobile App Dev",
-                ],
+                description: "Build innovative solutions with latest tech",
+                image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop",
                 members: "4,500+",
-                events: "Hackathons & Tech talks",
               },
               {
                 icon: Users,
                 title: "Social Service",
-                description:
-                  "Make a positive impact in the community through various service initiatives",
-                clubs: [
-                  "NSS",
-                  "NCC",
-                  "Rotaract Club",
-                  "Environment Club",
-                  "Blood Donation",
-                  "Community Service",
-                ],
+                description: "Make a positive impact in the community",
+                image: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=400&h=300&fit=crop",
                 members: "2,000+",
-                events: "Weekly community drives",
               },
               {
                 icon: BookOpen,
                 title: "Academic & Professional",
-                description:
-                  "Enhance your academic journey and professional development",
-                clubs: [
-                  "Debate Society",
-                  "Model UN",
-                  "Entrepreneurship",
-                  "Finance Club",
-                  "Marketing Club",
-                  "HR Forum",
-                ],
+                description: "Enhance your career development journey",
+                image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop",
                 members: "3,500+",
-                events: "Seminars & Competitions",
               },
               {
                 icon: Heart,
                 title: "Special Interest",
-                description:
-                  "Explore unique hobbies and special interests with like-minded peers",
-                clubs: [
-                  "Astronomy Club",
-                  "Culinary Arts",
-                  "Travel Club",
-                  "Gaming Society",
-                  "Gardening",
-                  "Yoga & Wellness",
-                ],
+                description: "Explore unique hobbies with like-minded peers",
+                image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=400&h=300&fit=crop",
                 members: "1,800+",
-                events: "Monthly meetups",
               },
             ].map((category, index) => (
               <Card
                 key={index}
-                className="group hover:shadow-xl hover:shadow-orange-500/10 transition-all duration-500 hover:-translate-y-2 bg-card/50 backdrop-blur-sm border border-border/50 hover:border-orange-500/30"
+                className="group overflow-hidden hover:shadow-xl hover:shadow-orange-500/10 transition-all duration-500 hover:-translate-y-2 bg-card/50 backdrop-blur-sm border border-border/50 hover:border-orange-500/30"
               >
+                <div className="relative overflow-hidden h-48">
+                  <img 
+                    src={category.image}
+                    alt={category.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors"></div>
+                </div>
                 <CardHeader>
                   <div className="flex items-center justify-between mb-4">
-                    <div className="w-14 h-14 rounded-2xl bg-orange-500/10 flex items-center justify-center group-hover:bg-orange-500/20 transition-colors">
-                      <category.icon className="w-7 h-7 text-orange-500 group-hover:scale-110 transition-transform" />
+                    <div className="w-12 h-12 rounded-2xl bg-orange-500/10 flex items-center justify-center group-hover:bg-orange-500/20 transition-colors">
+                      <category.icon className="w-6 h-6 text-orange-500 group-hover:scale-110 transition-transform" />
                     </div>
                     <Badge variant="secondary" className="text-xs">
-                      {category.members} Members
+                      {category.members}
                     </Badge>
                   </div>
-                  <CardTitle className="text-xl font-bold group-hover:text-orange-500 transition-colors">
+                  <CardTitle className="text-lg font-bold group-hover:text-orange-500 transition-colors">
                     {category.title}
                   </CardTitle>
-                  <Badge
-                    variant="outline"
-                    className="w-fit text-xs border-orange-500/30 text-orange-500"
-                  >
-                    {category.events}
-                  </Badge>
                 </CardHeader>
-                <CardContent className="space-y-4">
-                  <CardDescription className="text-muted-foreground leading-relaxed">
+                <CardContent>
+                  <CardDescription className="text-muted-foreground">
                     {category.description}
                   </CardDescription>
-
-                  <div className="space-y-3">
-                    <p className="text-sm font-semibold text-foreground">
-                      Popular Clubs:
-                    </p>
-                    <div className="grid grid-cols-1 gap-1">
-                      {category.clubs.slice(0, 4).map((club, idx) => (
-                        <div
-                          key={idx}
-                          className="flex items-center text-sm text-muted-foreground"
-                        >
-                          <ChevronRight className="w-3 h-3 text-orange-500 mr-2 flex-shrink-0" />
-                          {club}
-                        </div>
-                      ))}
-                      {category.clubs.length > 4 && (
-                        <div className="text-sm text-orange-500 font-medium">
-                          +{category.clubs.length - 4} more clubs
-                        </div>
-                      )}
-                    </div>
-                  </div>
-
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    className="w-full justify-between group-hover:text-orange-500 group-hover:bg-orange-500/5"
-                  >
-                    Join Clubs
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </Button>
                 </CardContent>
               </Card>
             ))}
@@ -314,166 +360,75 @@ export default function CampusLife() {
         </div>
       </section>
 
-      {/* Campus Facilities */}
+      {/* Featured Facilities with Large Images */}
       <section className="px-6 py-20 bg-gradient-to-r from-orange-500/5 to-red-600/5">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               <span className="text-foreground">World-Class </span>
-              <span className="bg-gradient-to-r from-red-500 to-pink-500 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
                 Facilities
               </span>
             </h2>
-            <p className="text-xl text-muted-foreground">
-              Everything you need for a comfortable and enriching campus
-              experience
-            </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                icon: Building,
-                title: "Modern Hostels",
-                description: "Comfortable accommodation with all amenities",
-                features: [
-                  "AC Rooms",
-                  "WiFi",
-                  "Study Areas",
-                  "Recreation Rooms",
-                ],
-                href: "https://myposhtell.com",
-              },
-              {
-                icon: Utensils,
-                title: "Food Courts",
-                description: "Multiple dining options with diverse cuisines",
-                features: [
-                  "Multi-cuisine",
-                  "Healthy Options",
-                  "24/7 Cafes",
-                  "Food Courts",
-                ],
-              },
-              {
-                icon: BookOpen,
-                title: "Central Library",
-                description: "Extensive collection with digital resources",
-                features: [
-                  "2M+ Books",
-                  "Digital Library",
-                  "Study Halls",
-                  "Research Centers",
-                ],
-              },
-              {
-                icon: Dumbbell,
-                title: "Sports Complex",
-                description: "State-of-the-art sports and fitness facilities",
-                features: [
-                  "Swimming Pool",
-                  "Gymnasium",
-                  "Indoor Sports",
-                  "Outdoor Courts",
-                ],
-              },
-              {
-                icon: Shield,
-                title: "Health Center",
-                description: "Comprehensive healthcare services on campus",
-                features: [
-                  "Medical Center",
-                  "Ambulance",
-                  "Mental Health",
-                  "Pharmacy",
-                ],
-              },
-              {
-                icon: Car,
-                title: "Transportation",
-                description: "Convenient transport services across the city",
-                features: [
-                  "Bus Services",
-                  "Parking",
-                  "Bike Sharing",
-                  "Shuttle Service",
-                ],
-              },
-              {
-                icon: Wifi,
-                title: "IT Infrastructure",
-                description: "High-speed internet and tech support",
-                features: [
-                  "Campus WiFi",
-                  "Computer Labs",
-                  "Tech Support",
-                  "Smart Classrooms",
-                ],
-              },
-              {
-                icon: Coffee,
-                title: "Recreation",
-                description: "Spaces for relaxation and social interaction",
-                features: [
-                  "Student Lounges",
-                  "Game Rooms",
-                  "Entertainment",
-                  "Social Spaces",
-                ],
-              },
-            ].map((facility) => {
-              const body = (
-                <>
-                  <facility.icon className="w-12 h-12 text-orange-500 mx-auto mb-4 group-hover:scale-110 transition-transform" />
-                  <h3 className="text-lg font-bold mb-3 group-hover:text-orange-500 transition-colors">
-                    {facility.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
-                    {facility.description}
-                  </p>
-                  <div className="space-y-1">
-                    {facility.features.map((feature) => (
-                      <div
-                        key={feature}
-                        className="text-xs text-muted-foreground"
-                      >
-                        • {feature}
-                      </div>
-                    ))}
-                  </div>
-                </>
-              );
-
-              if (facility.href) {
-                return (
-                  <a
-                    key={facility.title}
-                    href={facility.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-                  >
-                    <Card className="text-center p-6 bg-card/30 backdrop-blur-sm border border-border/30 hover:border-orange-500/30 transition-all duration-300 group">
-                      {body}
-                    </Card>
-                  </a>
-                );
-              }
-
-              return (
-                <Card
-                  key={facility.title}
-                  className="text-center p-6 bg-card/30 backdrop-blur-sm border border-border/30 hover:border-orange-500/30 transition-all duration-300 group"
-                >
-                  {body}
-                </Card>
-              );
-            })}
-          </div>
+          {/* Two Column Featured Facility Layout */}
+          {[
+            {
+              title: "Modern Hostels",
+              image: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&h=500&fit=crop",
+              description: "Comfortable accommodation with all modern amenities",
+              features: ["AC Rooms", "WiFi", "Study Areas", "Recreation Rooms"],
+            },
+            {
+              title: "Sports Complex",
+              image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&h=500&fit=crop",
+              description: "State-of-the-art facilities for all sports and fitness",
+              features: ["Swimming Pool", "Gymnasium", "Indoor Sports", "Outdoor Courts"],
+            },
+            {
+              title: "Central Library",
+              image: "https://images.unsplash.com/photo-1507842872343-583f20270319?w=800&h=500&fit=crop",
+              description: "Extensive collection with digital resources and study spaces",
+              features: ["2M+ Books", "Digital Library", "Study Halls", "Research Centers"],
+            },
+            {
+              title: "Food Courts",
+              image: "https://images.unsplash.com/photo-1555939594-58d7cb561a1b?w=800&h=500&fit=crop",
+              description: "Multiple dining options with diverse cuisines",
+              features: ["Multi-cuisine", "Healthy Options", "24/7 Cafes", "Food Courts"],
+            },
+          ].map((facility, index) => (
+            <div key={index} className={`mb-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-center ${index % 2 === 1 ? 'md:grid-cols-2 md:[&>:first-child]:order-2' : ''}`}>
+              <div className="relative overflow-hidden rounded-2xl h-80 border border-border hover:border-orange-500/50 transition-colors group">
+                <img 
+                  src={facility.image}
+                  alt={facility.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div>
+                <h3 className="text-3xl font-bold text-foreground mb-4">
+                  {facility.title}
+                </h3>
+                <p className="text-lg text-muted-foreground mb-6">
+                  {facility.description}
+                </p>
+                <div className="space-y-2 mb-6">
+                  {facility.features.map((feature) => (
+                    <div key={feature} className="flex items-center text-muted-foreground">
+                      <span className="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>
+                      {feature}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
-      {/* Events & Activities */}
+      {/* Events Timeline with Images */}
       <section className="px-6 py-20">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -483,199 +438,142 @@ export default function CampusLife() {
               </span>
               <span className="text-foreground"> & Activities</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Year-round excitement with festivals, competitions, and cultural
-              celebrations
-            </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
                 icon: Star,
                 title: "Annual Fest - DSUFEST",
-                description:
-                  "The biggest cultural extravaganza with celebrities, competitions, and entertainment",
-                highlights: [
-                  "Celebrity Performances",
-                  "Inter-college Competitions",
-                  "Food Festival",
-                  "Fashion Show",
-                ],
+                image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=400&h=300&fit=crop",
                 duration: "5 Days",
                 attendance: "50,000+",
               },
               {
                 icon: Trophy,
                 title: "Sports Meet",
-                description:
-                  "Comprehensive sports championship with inter-college competitions",
-                highlights: [
-                  "Multiple Sports",
-                  "State Teams",
-                  "Professional Coaching",
-                  "Awards Ceremony",
-                ],
+                image: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=400&h=300&fit=crop",
                 duration: "1 Week",
                 attendance: "15,000+",
               },
               {
                 icon: Mic,
                 title: "Tech Symposium",
-                description:
-                  "Technology festival featuring innovation, coding competitions, and tech talks",
-                highlights: [
-                  "Hackathons",
-                  "Tech Talks",
-                  "Innovation Expo",
-                  "Industry Meetups",
-                ],
+                image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop",
                 duration: "3 Days",
                 attendance: "20,000+",
               },
               {
                 icon: Palette,
                 title: "Cultural Nights",
-                description:
-                  "Regular cultural events celebrating diversity and artistic talents",
-                highlights: [
-                  "Dance Performances",
-                  "Music Concerts",
-                  "Drama Shows",
-                  "Art Exhibitions",
-                ],
+                image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=300&fit=crop",
                 duration: "Monthly",
                 attendance: "5,000+",
               },
               {
                 icon: BookOpen,
                 title: "Academic Conferences",
-                description:
-                  "Scholarly events with research presentations and industry interactions",
-                highlights: [
-                  "Research Papers",
-                  "Industry Experts",
-                  "Networking",
-                  "Workshops",
-                ],
+                image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop",
                 duration: "Quarterly",
                 attendance: "3,000+",
               },
               {
                 icon: Heart,
                 title: "Social Initiatives",
-                description:
-                  "Community service events and social awareness campaigns",
-                highlights: [
-                  "Blood Donation",
-                  "Environmental Drives",
-                  "Community Service",
-                  "Awareness Campaigns",
-                ],
+                image: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=400&h=300&fit=crop",
                 duration: "Ongoing",
                 attendance: "2,000+",
               },
             ].map((event, index) => (
               <Card
                 key={index}
-                className="group hover:shadow-xl hover:shadow-orange-500/10 transition-all duration-500 hover:-translate-y-2 bg-card/50 backdrop-blur-sm border border-border/50 hover:border-orange-500/30"
+                className="group overflow-hidden hover:shadow-xl hover:shadow-orange-500/10 transition-all duration-500 hover:-translate-y-2 bg-card/50 backdrop-blur-sm border border-border/50 hover:border-orange-500/30"
               >
+                <div className="relative overflow-hidden h-48">
+                  <img 
+                    src={event.image}
+                    alt={event.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors"></div>
+                </div>
                 <CardHeader>
                   <div className="flex items-center justify-between mb-4">
-                    <div className="w-12 h-12 rounded-2xl bg-orange-500/10 flex items-center justify-center group-hover:bg-orange-500/20 transition-colors">
-                      <event.icon className="w-6 h-6 text-orange-500 group-hover:scale-110 transition-transform" />
-                    </div>
-                    <div className="text-right">
-                      <div className="text-xs text-muted-foreground">
-                        Duration
-                      </div>
-                      <div className="text-sm font-semibold text-orange-500">
-                        {event.duration}
-                      </div>
-                    </div>
+                    <event.icon className="w-6 h-6 text-orange-500 group-hover:scale-110 transition-transform" />
+                    <Badge variant="secondary" className="text-xs">
+                      {event.duration}
+                    </Badge>
                   </div>
-                  <CardTitle className="text-xl font-bold group-hover:text-orange-500 transition-colors">
+                  <CardTitle className="text-lg font-bold group-hover:text-orange-500 transition-colors">
                     {event.title}
                   </CardTitle>
-                  <Badge variant="secondary" className="w-fit text-xs">
+                  <Badge variant="outline" className="w-fit text-xs border-orange-500/30 text-orange-500">
                     {event.attendance} Attendees
                   </Badge>
                 </CardHeader>
-                <CardContent className="space-y-4">
-                  <CardDescription className="text-muted-foreground leading-relaxed">
-                    {event.description}
-                  </CardDescription>
-
-                  <div className="space-y-2">
-                    <p className="text-sm font-semibold text-foreground">
-                      Highlights:
-                    </p>
-                    <div className="grid grid-cols-1 gap-1">
-                      {event.highlights.map((highlight, idx) => (
-                        <div
-                          key={idx}
-                          className="flex items-center text-sm text-muted-foreground"
-                        >
-                          <Star className="w-3 h-3 text-orange-500 mr-2 flex-shrink-0" />
-                          {highlight}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </CardContent>
               </Card>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Student Life Gallery */}
+      {/* Photo Stories Section */}
       <section className="px-6 py-20 bg-gradient-to-r from-orange-500/5 to-red-600/5">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="text-foreground">Life in </span>
-              <span className="bg-gradient-to-r from-red-500 to-pink-500 bg-clip-text text-transparent">
-                Pictures
+              <span className="text-foreground">Student </span>
+              <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
+                Stories
               </span>
             </h2>
             <p className="text-xl text-muted-foreground">
-              Glimpses of the vibrant campus life at DSU
+              Real stories and experiences from our student community
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+          {/* Featured Story */}
+          <div className="relative overflow-hidden rounded-2xl h-96 mb-12 border border-border hover:border-orange-500/50 transition-colors group">
+            <img 
+              src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=1200&h=400&fit=crop"
+              alt="Featured Story"
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex items-end p-8">
+              <div className="text-white">
+                <Badge className="mb-4 bg-orange-500">Featured</Badge>
+                <h3 className="text-3xl font-bold mb-2">My Journey at DSU</h3>
+                <p className="text-orange-100">A student's journey of growth, learning, and unforgettable memories</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Story Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
-                title: "Campus Tour",
-                category: "Orientation",
-                color: "orange",
+                title: "Friendship & Bonding",
+                image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=400&h=300&fit=crop",
               },
-              { title: "Cultural Fest", category: "Events", color: "red" },
-              { title: "Sports Day", category: "Athletics", color: "blue" },
-              { title: "Graduation", category: "Ceremony", color: "green" },
-              { title: "Tech Fair", category: "Innovation", color: "purple" },
-              { title: "Food Festival", category: "Culture", color: "pink" },
-              { title: "Study Groups", category: "Academic", color: "yellow" },
-              { title: "Night Life", category: "Social", color: "indigo" },
-            ].map((item, index) => (
-              <Card
-                key={index}
-                className="aspect-square bg-gradient-to-br from-orange-500/20 to-red-600/20 border border-orange-500/30 flex items-center justify-center text-center group hover:shadow-lg hover:shadow-orange-500/20 transition-all duration-300 cursor-pointer"
-              >
-                <div>
-                  <Camera className="w-12 h-12 text-orange-500 mx-auto mb-3 group-hover:scale-110 transition-transform" />
-                  <h3 className="font-bold text-foreground group-hover:text-orange-500 transition-colors">
-                    {item.title}
-                  </h3>
-                  <Badge
-                    variant="outline"
-                    className="mt-2 text-xs border-orange-500/30 text-orange-500"
-                  >
-                    {item.category}
-                  </Badge>
+              {
+                title: "Academic Excellence",
+                image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop",
+              },
+              {
+                title: "Campus Adventures",
+                image: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400&h=300&fit=crop",
+              },
+            ].map((story, index) => (
+              <div key={index} className="group relative overflow-hidden rounded-xl h-64 border border-border hover:border-orange-500/50 transition-colors cursor-pointer">
+                <img 
+                  src={story.image}
+                  alt={story.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <h3 className="text-white font-bold text-lg">{story.title}</h3>
                 </div>
-              </Card>
+              </div>
             ))}
           </div>
         </div>
@@ -694,14 +592,13 @@ export default function CampusLife() {
               ?
             </h2>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Join our vibrant community and create memories that will last a
-              lifetime.
+              Join our vibrant community and create memories that will last a lifetime.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-orange-500 via-red-600 to-pink-500 text-white px-12 py-6 text-lg font-semibold rounded-2xl"
+                className="bg-gradient-to-r from-orange-500 via-red-600 to-pink-500 text-white px-12 py-6 text-lg font-semibold rounded-full"
               >
                 Visit Campus
                 <MapPin className="w-5 h-5 ml-2" />
@@ -709,27 +606,10 @@ export default function CampusLife() {
               <Button
                 variant="outline"
                 size="lg"
-                className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white px-12 py-6 text-lg font-semibold rounded-2xl"
+                className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white px-12 py-6 text-lg font-semibold rounded-full"
               >
                 Apply Now
               </Button>
-            </div>
-
-            <div className="flex flex-wrap justify-center gap-2">
-              {[
-                "100+ Clubs",
-                "24/7 Campus",
-                "World-Class Facilities",
-                "Vibrant Community",
-              ].map((badge, index) => (
-                <Badge
-                  key={index}
-                  variant="secondary"
-                  className="px-3 py-1 text-xs font-medium"
-                >
-                  {badge}
-                </Badge>
-              ))}
             </div>
           </div>
         </div>
