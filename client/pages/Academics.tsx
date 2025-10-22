@@ -404,7 +404,7 @@ export default function Academics() {
                 description:
                   "State-of-the-art labs, libraries, and learning spaces",
                 image:
-                  "https://images.unsplash.com/photo-1581093588401-16f8c4387b65?q=80&w=1600&auto=format&fit=crop",
+                  "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F1e657736504149818bf89d58c6b3d031?format=webp&width=800",
                 badgeClass: "bg-brand-blue/20 text-brand-blue",
               },
               {
