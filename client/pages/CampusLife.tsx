@@ -12,6 +12,7 @@ import {
   ArrowRight,
   Building,
   Users,
+  Star,
   Heart,
   Music,
   Trophy,
