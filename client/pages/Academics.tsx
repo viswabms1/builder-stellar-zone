@@ -199,7 +199,7 @@ export default function Academics() {
                 icon: Film,
                 title: "Design & Digital Trans Media",
                 image:
-                  "https://images.unsplash.com/photo-1529101091764-c3526daf38fe?q=80&w=1600&auto=format&fit=crop",
+                  "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fa2063ac0bf034cbaa9d21546069eeb18?format=webp&width=800",
                 description:
                   "Design and digital media programs spanning UX/UI, graphics, animation, and storytelling for modern platforms.",
                 programs: [
