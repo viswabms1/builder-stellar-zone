@@ -92,7 +92,7 @@ export default function Academics() {
                 icon: Cog,
                 title: "Engineering",
                 image:
-                  "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fc113bc51d2034a08bc02e3179516d7e0?format=webp&width=800",
+                  "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Ff68b38f444334f6a9d6f31196dc787af?format=webp&width=800",
                 description:
                   "Cutting-edge engineering education with practical immersion, industry mentorship, and future-ready specializations.",
                 programs: [
