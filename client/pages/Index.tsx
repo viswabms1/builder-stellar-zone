@@ -85,20 +85,6 @@ export default function Index() {
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
               <a
-                href="https://ums.mydsi.org/Login.aspx/DSU"
-                target="_blank"
-                rel="noreferrer"
-                className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-              >
-                <Button
-                  variant="secondary"
-                  size="lg"
-                  className="bg-white/90 text-brand-magenta hover:bg-white text-lg font-semibold font-display rounded-2xl transition-all duration-300 backdrop-blur-sm"
-                >
-                  Student Portal
-                </Button>
-              </a>
-              <a
                 href="https://dsu.edu.in/virtual-tour/"
                 target="_blank"
                 rel="noreferrer"
