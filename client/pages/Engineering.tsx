@@ -619,6 +619,84 @@ export default function Engineering() {
         </div>
       </section>
 
+      {/* Dean's Message Section */}
+      <section className="relative overflow-hidden px-6 py-16">
+        <div className="mx-auto max-w-7xl">
+          <div className="rounded-3xl border border-border/50 bg-card/60 overflow-hidden backdrop-blur">
+            <div className="grid md:grid-cols-[300px_1fr] gap-0">
+              {/* Dean's Photo */}
+              <div className="relative overflow-hidden bg-gradient-to-br from-brand-magenta/10 to-brand-blue/10 flex items-center justify-center p-8 md:p-12">
+                <div className="relative w-full max-w-xs">
+                  <img
+                    src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fcdaa10df66944ed28b18115bd49292c9?format=webp&width=800"
+                    alt="Dr. Udaya Kumar Reddy K R"
+                    className="w-full h-auto object-cover rounded-2xl border-4 border-white/20"
+                  />
+                  <div
+                    className="absolute -left-2 top-0 bottom-0 w-1 bg-gradient-to-b from-brand-orange via-brand-magenta to-brand-blue"
+                    aria-hidden="true"
+                  />
+                </div>
+              </div>
+
+              {/* Dean's Message */}
+              <div className="p-8 md:p-12 flex flex-col justify-center">
+                <div className="space-y-6">
+                  {/* Header with Name and Title */}
+                  <div className="border-l-4 border-brand-magenta pl-4">
+                    <h3 className="text-2xl font-semibold text-foreground font-display">
+                      Dr. Udaya Kumar Reddy K R
+                    </h3>
+                    <p className="text-sm text-muted-foreground mt-1 font-body">
+                      Ph.D
+                    </p>
+                    <p className="text-sm font-medium text-brand-magenta mt-2 font-display">
+                      Dean, School of Engineering
+                    </p>
+                  </div>
+
+                  {/* Message Title */}
+                  <div className="pt-2">
+                    <h4 className="text-lg font-bold text-foreground uppercase tracking-wide font-display">
+                      BE YOU
+                    </h4>
+                    <h4 className="text-lg font-bold text-brand-magenta uppercase tracking-wide font-display">
+                      BE THE DIFFERENCE!!!
+                    </h4>
+                  </div>
+
+                  {/* Message Content */}
+                  <div className="space-y-4 text-sm text-muted-foreground font-body leading-relaxed">
+                    <p>
+                      Welcome to the new way of learning at School of Engineering (SoE) of Dayananda Sagar University (DSU). At SoE, we are committed to helping you to make a positive difference in the world.
+                    </p>
+                    <p>
+                      We at SoE are immensely proud to provide all of our students with an outstanding education that equips them with the skills, experience, and confidence required to stand out from the crowd. The School promotes Culture of Excellence including the culture of Interdisciplinary, Research, Creativity, Innovations, and Entrepreneurship on various Cutting-Edge Technologies.
+                    </p>
+                    <p>
+                      We at SoE, provide the World-Class Education that is Student-centric, Research-centric, and Educational space where all of our students will have a transformative education, learn to be independent critical thinkers, be societally and ethically responsible, and have a broad understanding of the will the world.
+                    </p>
+                    <p>
+                      We value ability, not background, and we support all of our students to achieve their potential. We want you to enjoy your time here, confident that, upon completion of Engineering degree program under SoE, you will have the knowledge, expertise, and empathy skills to set you on your chosen career path.
+                    </p>
+                    <p>
+                      The decision you make about where to study is an extremely important one. I am pleased you are considering the School of Engineering at DSU, and hope that you choose to continue your education with us.
+                    </p>
+
+                    {/* Closing */}
+                    <div className="pt-4 border-t border-border/50">
+                      <p className="text-sm font-semibold text-brand-magenta uppercase tracking-wide">
+                        BEST WISHES!
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="departments" className="relative overflow-hidden px-6 py-16">
         <div
           className="pointer-events-none absolute inset-x-0 -top-32 h-64 bg-gradient-to-b from-brand-magenta/20 via-transparent to-transparent blur-3xl"
