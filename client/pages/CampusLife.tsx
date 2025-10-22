@@ -48,8 +48,8 @@ export default function CampusLife() {
           />
         </div>
 
-        <div className="relative h-full flex items-center justify-center text-center max-w-7xl mx-auto px-6">
-          <div className="bg-black/40 backdrop-blur-sm rounded-3xl px-8 md:px-12 py-12 max-w-3xl">
+        <div className="relative h-full flex items-center justify-start text-left max-w-7xl mx-auto px-6">
+          <div className="bg-black/40 backdrop-blur-sm rounded-3xl px-8 md:px-12 py-12 max-w-2xl">
             <div className="inline-flex items-center px-4 py-2 bg-orange-500/20 rounded-full border border-orange-500/40 mb-8">
               <Heart className="w-4 h-4 text-orange-300 mr-2" />
               <span className="text-sm font-medium text-orange-200">
@@ -57,7 +57,7 @@ export default function CampusLife() {
               </span>
             </div>
 
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight text-white">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight text-white">
               <span>More Than Just</span>
               <br />
               <span className="text-orange-300">Education</span>
@@ -65,7 +65,7 @@ export default function CampusLife() {
               <span>It's Home</span>
             </h1>
 
-            <p className="text-xl md:text-2xl text-orange-50 mb-12 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-orange-50 mb-8 leading-relaxed">
               Experience a vibrant campus community where friendships are made, talents are discovered, and memories are created.
             </p>
 
