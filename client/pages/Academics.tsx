@@ -108,7 +108,7 @@ export default function Academics() {
                 icon: Cpu,
                 title: "Computer Applications",
                 image:
-                  "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1600&auto=format&fit=crop",
+                  "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F81d450f810104dc8926ff033cbb8ec87?format=webp&width=800",
                 description:
                   "Build software careers with strong foundations in programming, data, cloud, and modern application development.",
                 programs: [
