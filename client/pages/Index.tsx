@@ -95,7 +95,6 @@ export default function Index() {
                   size="lg"
                   className="bg-white/90 text-brand-magenta hover:bg-white text-lg font-semibold font-display rounded-2xl transition-all duration-300 backdrop-blur-sm"
                 >
-                  <Laptop className="w-5 h-5 mr-2" />
                   Student Portal
                 </Button>
               </a>
@@ -116,29 +115,6 @@ export default function Index() {
                   Virtual Tour
                 </Button>
               </a>
-            </div>
-
-            {/* Quick Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl">
-              {[
-                { number: "25K+", label: "Students", icon: Users },
-                { number: "500+", label: "Faculty", icon: GraduationCap },
-                { number: "100+", label: "Programs", icon: BookOpen },
-                { number: "95%", label: "Placement", icon: TrendingUp },
-              ].map((stat, index) => (
-                <div
-                  key={index}
-                  className="text-center group backdrop-blur-sm bg-white/10 rounded-xl p-4 border border-white/20"
-                >
-                  <stat.icon className="w-6 h-6 text-brand-orange mx-auto mb-2 group-hover:text-brand-magenta transition-colors" />
-                  <div className="text-2xl font-bold text-white mb-1 font-display">
-                    {stat.number}
-                  </div>
-                  <div className="text-sm text-gray-300 font-body">
-                    {stat.label}
-                  </div>
-                </div>
-              ))}
             </div>
           </div>
         </div>
