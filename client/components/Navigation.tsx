@@ -23,7 +23,6 @@ export default function Navigation() {
     { name: "Academics", href: "/academics", icon: BookOpen },
     { name: "Admissions", href: "/admissions", icon: GraduationCap },
     { name: "Campus Life", href: "/campus-life", icon: Building },
-    { name: "Research", href: "/research", icon: FlaskConical },
     { name: "About", href: "/about", icon: Users },
     {
       name: "Public Self Disclosure",
