@@ -23,7 +23,6 @@ export default function Navigation() {
     { name: "Home", href: "/", icon: Home },
     { name: "Academics", href: "/academics", icon: BookOpen },
     { name: "Admissions", href: "/admissions", icon: GraduationCap },
-    { name: "Examinations", href: "/examinations", icon: CalendarClock },
     { name: "Campus Life", href: "/campus-life", icon: Building },
     { name: "Research", href: "/research", icon: FlaskConical },
     { name: "About", href: "/about", icon: Users },
@@ -93,20 +92,6 @@ export default function Navigation() {
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center space-x-4">
             <ThemeToggle className="text-white/80 hover:text-white hover:bg-white/10" />
-            <Button
-              asChild
-              variant="ghost"
-              size="sm"
-              className="text-white/80 hover:text-white hover:bg-white/10 font-display"
-            >
-              <a
-                href="https://ums.mydsi.org/Login.aspx/DSU"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Student Portal
-              </a>
-            </Button>
             <Button
               size="sm"
               className="bg-white text-orange-600 hover:bg-white/90 px-6 rounded-xl shadow-lg hover:shadow-white/25 transition-all duration-300 font-display font-semibold"
@@ -178,21 +163,6 @@ export default function Navigation() {
                 className="self-start text-white/80 hover:text-white hover:bg-white/10"
                 onToggle={() => setIsOpen(false)}
               />
-              <Button
-                asChild
-                variant="ghost"
-                size="sm"
-                className="w-full justify-start text-white/80 hover:text-white hover:bg-white/10 font-display"
-              >
-                <a
-                  href="https://ums.mydsi.org/Login.aspx/DSU"
-                  target="_blank"
-                  rel="noreferrer"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Student Portal
-                </a>
-              </Button>
               <Button
                 size="sm"
                 className="w-full bg-white text-orange-600 hover:bg-white/90 rounded-xl shadow-lg hover:shadow-white/25 transition-all duration-300 font-display font-semibold"
