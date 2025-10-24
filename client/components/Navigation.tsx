@@ -9,7 +9,6 @@ import {
   BookOpen,
   Users,
   Building,
-  FlaskConical,
   Calendar,
 } from "lucide-react";
 import { useState } from "react";
