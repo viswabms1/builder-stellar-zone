@@ -456,63 +456,6 @@ export default function Leadership() {
         </div>
       </section>
 
-      {/* School Deans */}
-      <section className="px-6 py-20 bg-gradient-to-br from-orange-500/5 via-red-600/5 to-background">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <Badge
-              variant="outline"
-              className="border-orange-500/20 bg-orange-500/10 text-orange-500 mb-4"
-            >
-              Deans of Schools
-            </Badge>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="text-foreground">Academic </span>
-              <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
-                Leadership
-              </span>
-            </h2>
-            <p className="text-lg text-foreground max-w-3xl mx-auto">
-              Experienced academics leading our schools and academic programs
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {deans.map((dean, index) => (
-              <Card
-                key={index}
-                className="bg-card/50 backdrop-blur-sm border border-border/50 hover:border-orange-500/30 transition-all duration-300"
-              >
-                <CardHeader>
-                  <CardTitle className="text-lg">{dean.area}</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <p className="text-foreground text-sm">
-                    {dean.description}
-                  </p>
-                  <div>
-                    <p className="text-sm font-semibold text-foreground mb-2">
-                      Key Focus:
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      {dean.focus.map((focus, idx) => (
-                        <Badge
-                          key={idx}
-                          variant="secondary"
-                          className="text-xs"
-                        >
-                          {focus}
-                        </Badge>
-                      ))}
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Governance Committees */}
       <section id="administrative-committees" className="px-6 py-20">
         <div className="max-w-7xl mx-auto">
