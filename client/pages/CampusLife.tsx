@@ -344,8 +344,8 @@ export default function CampusLife() {
             {/* Image */}
             <div className="relative overflow-hidden rounded-2xl h-96 border border-orange-500/20 group">
               <img
-                src="https://images.unsplash.com/photo-1460090174820-dbdc5dac07fd?w=600&h=500&fit=crop"
-                alt="Centre for Performing Arts"
+                src="https://static.wixstatic.com/media/a57b29_7432beeeab194cf19d467960322ed7b7~mv2.jpg/v1/fit/w_960,h_960,q_90,enc_avif,quality_auto/a57b29_7432beeeab194cf19d467960322ed7b7~mv2.jpg"
+                alt="Centre for Performing Arts - Vibrations"
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
