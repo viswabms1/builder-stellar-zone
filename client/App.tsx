@@ -31,6 +31,7 @@ import CentreOfExcellence from "./pages/CentreOfExcellence";
 import VisionMission from "./pages/VisionMission";
 import History from "./pages/History";
 import Leadership from "./pages/Leadership";
+import BoardOfGovernors from "./pages/BoardOfGovernors";
 import Accreditations from "./pages/Accreditations";
 import Facilities from "./pages/Facilities";
 import { ThemeProvider } from "./providers/theme-provider";
