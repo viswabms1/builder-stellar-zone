@@ -152,6 +152,18 @@ export default function Leadership() {
         "Continuous improvement",
       ],
     },
+    {
+      name: "Board of Studies",
+      icon: BookOpen,
+      description: "Academic curriculum and study program oversight",
+      functions: [
+        "Curriculum development",
+        "Academic standards",
+        "Study program approval",
+      ],
+      link: "https://www.dsu.edu.in/images/University/BOS.pdf",
+      external: true,
+    },
   ];
 
   return (
