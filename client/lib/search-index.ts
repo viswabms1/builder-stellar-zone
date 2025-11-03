@@ -46,6 +46,20 @@ export const searchIndex: SearchResult[] = [
     category: "About",
   },
   {
+    id: "board-of-governors",
+    title: "Board of Governors",
+    description: "Information about our Board of Governors",
+    path: "/about/board-of-governors",
+    category: "About",
+  },
+  {
+    id: "board-of-management",
+    title: "Board of Management",
+    description: "Information about our Board of Management",
+    path: "/about/board-of-management",
+    category: "About",
+  },
+  {
     id: "accreditations",
     title: "Accreditations",
     description: "Our accreditations and certifications",
