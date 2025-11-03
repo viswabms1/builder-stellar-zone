@@ -67,13 +67,13 @@ export default function DeptCSE() {
               <Sparkles className="w-4 h-4 text-brand-magenta" />
               <span className="text-sm font-medium text-brand-magenta font-display">Department of Computer Science & Engineering</span>
             </div>
-            <h1 className="headline-1 text-foreground leading-tight font-display">Build the Future of Computing</h1>
-            <p className="subheadline text-foreground/90 max-w-2xl mt-3 font-body">
+            <h1 className="headline-1 text-white leading-tight font-display">Build the Future of Computing</h1>
+            <p className="subheadline text-white/90 max-w-2xl mt-3 font-body">
               A dynamic ecosystem to become industry-ready engineers, researchers, and entrepreneurs at DSU.
             </p>
             <div className="mt-6 flex flex-wrap gap-2">
               {specializations.map((s, i) => (
-                <span key={i} className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-foreground text-xs backdrop-blur">
+                <span key={i} className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-white text-xs backdrop-blur">
                   <s.icon className="w-3.5 h-3.5" /> {s.label}
                 </span>
               ))}
@@ -153,7 +153,7 @@ export default function DeptCSE() {
                 <img src={lab.image} alt={lab.title} className="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-700" />
                 <div className="relative p-5 h-40 flex items-end">
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent" />
-                  <CardTitle className="relative text-foreground font-display">{lab.title}</CardTitle>
+                  <CardTitle className="relative text-white font-display">{lab.title}</CardTitle>
                 </div>
               </Card>
             ))}
@@ -187,8 +187,8 @@ export default function DeptCSE() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
                   </div>
                   <div className="absolute bottom-0 p-4">
-                    <div className="text-foreground text-sm opacity-80">{f.title}</div>
-                    <div className="text-foreground font-semibold text-lg font-display">{f.name}</div>
+                    <div className="text-white text-sm opacity-80">{f.title}</div>
+                    <div className="text-white font-semibold text-lg font-display">{f.name}</div>
                   </div>
                 </div>
               </Link>
