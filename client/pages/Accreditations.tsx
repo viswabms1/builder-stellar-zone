@@ -212,7 +212,7 @@ export default function Accreditations() {
                 Major Accreditations
               </span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-lg text-white max-w-3xl mx-auto">
               Nationally and internationally recognized accreditations validating our educational standards
             </p>
           </div>
@@ -337,7 +337,7 @@ export default function Accreditations() {
                 Certifications
               </span>
             </h2>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-lg text-white">
               Additional certifications and compliance standards
             </p>
           </div>
@@ -424,7 +424,7 @@ export default function Accreditations() {
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Learn More About Our Programs
           </h2>
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+          <p className="text-lg text-white mb-8 max-w-2xl mx-auto">
             Explore our accredited programs and start your journey with a university recognized for excellence.
           </p>
 
