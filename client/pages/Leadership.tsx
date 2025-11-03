@@ -66,6 +66,29 @@ export default function Leadership() {
     },
   ];
 
+  const registrarAndViceChancellor = [
+    {
+      role: "Registrar",
+      name: "Dr. Puttamadappa C",
+      description:
+        "I heartily welcome you to Dayananda Sagar University, Bangalore, established under Mahatma Gandhi Vidya Peetha, a splendid temple of learning under the leadership of Dr. D Hemachandra Sagar, Chancellor and Dr. D Premachandra Sagar, Pro-Chancellor.",
+      bio: "Dr. Puttamadappa C, Registrar of DSU, oversees the administrative and academic operations of the university. At DSU, commitment to opening vast avenues of learning, especially in cutting edge technologies with thrust on creation and innovation, is paramount. The Registrar ensures that DSU consistently strives to provide education that leads to degrees relevant to today's workplace in a global setting, while maintaining excellence, effectiveness, academic rigor and personalized services.",
+      contact: "registrar@dsu.edu.in | 9845716228",
+      image: "https://www.dsu.edu.in/images/demo/Dr_Puttamadappa.jpg",
+      icon: BookOpen,
+    },
+    {
+      role: "Vice Chancellor",
+      name: "Prof B. S. Satyanarayana",
+      description:
+        "We are in a rapidly changing world where knowledge life cycles have reduced drastically, and product and process life cycles are getting even shorter.",
+      bio: "Prof B. S. Satyanarayana, Vice Chancellor of DSU (Ph.D from University of Cambridge), leads the university with a vision to enable learners to excel in education, research, innovation & entrepreneurship for a sustainable tomorrow. DSU aims to create a state-of-the-art campus with a unique, serene, and conducive ambience for multidisciplinary immersive experiential learning.",
+      contact: "vicechancellor@dsu.edu.in | 9900084234",
+      image: "https://www.dsu.edu.in/images/Prof_Satyanarayana.jpeg",
+      icon: Briefcase,
+    },
+  ];
+
   const deans = [
     {
       area: "School of Engineering",
