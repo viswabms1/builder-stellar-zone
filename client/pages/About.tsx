@@ -133,6 +133,74 @@ export default function About() {
         </div>
       </section>
 
+      {/* Explore About DSU Navigation */}
+      <section className="px-6 py-20 bg-gradient-to-br from-orange-500/5 via-red-600/5 to-background">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
+                Explore About DSU
+              </span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Learn more about our university through dedicated sections
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-4">
+            {[
+              {
+                icon: Compass,
+                title: "Vision & Mission",
+                description: "Our guiding principles and strategic goals",
+                href: "/about/vision-mission",
+              },
+              {
+                icon: History,
+                title: "History",
+                description: "Journey through our 16+ years of excellence",
+                href: "/about/history",
+              },
+              {
+                icon: Users,
+                title: "Leadership",
+                description: "Meet our visionary leadership team",
+                href: "/about/leadership",
+              },
+              {
+                icon: Award,
+                title: "Accreditations",
+                description: "National and international recognitions",
+                href: "/about/accreditations",
+              },
+              {
+                icon: Building,
+                title: "Facilities",
+                description: "World-class infrastructure and amenities",
+                href: "/about/facilities",
+              },
+            ].map((section, index) => {
+              const Icon = section.icon;
+              return (
+                <Link key={index} to={section.href}>
+                  <Card className="h-full group hover:shadow-lg hover:shadow-orange-500/10 transition-all duration-300 hover:border-orange-500/30 bg-card/50 backdrop-blur-sm border border-border/50 cursor-pointer hover:-translate-y-1">
+                    <CardContent className="p-6 text-center">
+                      <Icon className="w-10 h-10 text-orange-500 mx-auto mb-4 group-hover:scale-110 transition-transform" />
+                      <h3 className="font-bold text-lg mb-2 group-hover:text-orange-500 transition-colors">
+                        {section.title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground">
+                        {section.description}
+                      </p>
+                    </CardContent>
+                  </Card>
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       {/* Mission, Vision, Values */}
       <section className="px-6 py-20">
         <div className="max-w-7xl mx-auto">
