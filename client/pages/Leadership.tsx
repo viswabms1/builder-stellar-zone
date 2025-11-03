@@ -219,11 +219,11 @@ export default function Leadership() {
                 >
                   {/* Leader Image */}
                   {leader.image && (
-                    <div className="relative h-64 overflow-hidden bg-gradient-to-br from-orange-500/10 to-red-600/10">
+                    <div className="relative h-96 overflow-hidden bg-gradient-to-br from-orange-500/10 to-red-600/10">
                       <img
                         src={leader.image}
                         alt={leader.name}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                         onError={(e) => {
                           e.currentTarget.style.display = 'none';
                         }}
