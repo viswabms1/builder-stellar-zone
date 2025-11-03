@@ -35,6 +35,7 @@ import BoardOfGovernors from "./pages/BoardOfGovernors";
 import BoardOfManagement from "./pages/BoardOfManagement";
 import FinanceCommittee from "./pages/FinanceCommittee";
 import AcademicCouncil from "./pages/AcademicCouncil";
+import ResearchInnovationCouncil from "./pages/ResearchInnovationCouncil";
 import Accreditations from "./pages/Accreditations";
 import Facilities from "./pages/Facilities";
 import Placements from "./pages/Placements";
@@ -133,6 +134,7 @@ function App() {
               <Route path="/about/board-of-management" element={<BoardOfManagement />} />
               <Route path="/about/finance-committee" element={<FinanceCommittee />} />
               <Route path="/about/academic-council" element={<AcademicCouncil />} />
+              <Route path="/about/research-innovation-council" element={<ResearchInnovationCouncil />} />
               <Route path="/about/accreditations" element={<Accreditations />} />
               <Route path="/about/facilities" element={<Facilities />} />
               <Route path="/centre-of-excellence" element={<CentreOfExcellence />} />
