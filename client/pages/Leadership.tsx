@@ -236,12 +236,6 @@ export default function Leadership() {
                         <p className="text-sm text-muted-foreground mt-1">
                           {leader.name}
                         </p>
-                        <Badge
-                          variant="outline"
-                          className="mt-2 border-orange-500/20 bg-orange-500/10 text-orange-500"
-                        >
-                          {leader.experience}
-                        </Badge>
                       </div>
                       <div className="w-12 h-12 rounded-2xl bg-orange-500/10 flex items-center justify-center group-hover:bg-orange-500/20 transition-colors flex-shrink-0">
                         <Icon className="w-6 h-6 text-orange-500" />
