@@ -257,20 +257,60 @@ export default function Navigation() {
 
                     {/* Mobile About Submenu */}
                     {aboutMenuOpen && (
-                      <div className="bg-white/20 rounded-lg py-2 ml-4 border-l-2 border-white/40">
-                        {aboutSubmenus.map((submenu) => (
-                          <Link
-                            key={submenu.name}
-                            to={submenu.href}
-                            onClick={() => {
-                              setIsOpen(false);
-                              setAboutMenuOpen(false);
-                            }}
-                            className="block px-4 py-2 text-sm text-white hover:bg-white/20 rounded transition-colors"
-                          >
-                            {submenu.name}
-                          </Link>
-                        ))}
+                      <div className="bg-white/20 rounded-lg py-2 ml-4 border-l-2 border-white/40 space-y-1">
+                        {aboutSubmenus.map((submenu) => {
+                          const isSubmenuWithChildren = "children" in submenu;
+                          if (isSubmenuWithChildren) {
+                            return (
+                              <div key={submenu.name}>
+                                <button
+                                  onClick={() =>
+                                    setAdminCommitteesOpen(!adminCommitteesOpen)
+                                  }
+                                  className="w-full text-left px-4 py-2 text-sm text-white hover:bg-white/20 rounded transition-colors flex justify-between items-center"
+                                >
+                                  {submenu.name}
+                                  <ChevronDown
+                                    className={`w-4 h-4 transition-transform ${
+                                      adminCommitteesOpen ? "rotate-180" : ""
+                                    }`}
+                                  />
+                                </button>
+                                {adminCommitteesOpen && (
+                                  <div className="bg-white/10 rounded ml-2 border-l-2 border-white/30">
+                                    {submenu.children?.map((child) => (
+                                      <Link
+                                        key={child.name}
+                                        to={child.href}
+                                        onClick={() => {
+                                          setIsOpen(false);
+                                          setAboutMenuOpen(false);
+                                          setAdminCommitteesOpen(false);
+                                        }}
+                                        className="block px-4 py-2 text-sm text-white hover:bg-white/20 rounded transition-colors"
+                                      >
+                                        {child.name}
+                                      </Link>
+                                    ))}
+                                  </div>
+                                )}
+                              </div>
+                            );
+                          }
+                          return (
+                            <Link
+                              key={submenu.name}
+                              to={submenu.href}
+                              onClick={() => {
+                                setIsOpen(false);
+                                setAboutMenuOpen(false);
+                              }}
+                              className="block px-4 py-2 text-sm text-white hover:bg-white/20 rounded transition-colors"
+                            >
+                              {submenu.name}
+                            </Link>
+                          );
+                        })}
                       </div>
                     )}
                   </div>
