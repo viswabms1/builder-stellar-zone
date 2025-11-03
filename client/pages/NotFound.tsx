@@ -31,7 +31,7 @@ const NotFound = () => {
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-6">
-          <CardDescription className="text-white leading-relaxed">
+          <CardDescription className="text-muted-foreground leading-relaxed">
             Oops! The page you're looking for seems to have vanished into the digital void. 
             Don't worry, we'll help you get back on track.
           </CardDescription>
@@ -39,7 +39,7 @@ const NotFound = () => {
           <div className="space-y-3">
             <Button 
               asChild
-              className="w-full bg-gradient-to-r from-neon-purple to-neon-pink hover:from-neon-pink hover:to-neon-purple text-white rounded-xl transition-all duration-300"
+              className="w-full bg-gradient-to-r from-neon-purple to-neon-pink hover:from-neon-pink hover:to-neon-purple text-muted-foreground rounded-xl transition-all duration-300"
             >
               <Link to="/">
                 <Home className="w-4 h-4 mr-2" />

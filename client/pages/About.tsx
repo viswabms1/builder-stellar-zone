@@ -65,7 +65,7 @@ export default function About() {
             <span className="text-foreground">University</span>
           </h1>
 
-          <p className="text-xl md:text-2xl text-white mb-12 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-4xl mx-auto leading-relaxed">
             A legacy of
             <span className="text-orange-400 font-semibold">
               {" "}
@@ -87,7 +87,7 @@ export default function About() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
             <Button
               size="lg"
-              className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-red-600 hover:to-orange-500 text-white px-8 py-6 text-lg font-semibold rounded-2xl"
+              className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-red-600 hover:to-orange-500 text-muted-foreground px-8 py-6 text-lg font-semibold rounded-2xl"
             >
               Our Story
               <ArrowRight className="w-5 h-5 ml-2" />
@@ -101,7 +101,7 @@ export default function About() {
               <Button
                 variant="outline"
                 size="lg"
-                className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white px-8 py-6 text-lg font-semibold rounded-2xl"
+                className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-muted-foreground px-8 py-6 text-lg font-semibold rounded-2xl"
               >
                 Campus Tour
               </Button>
@@ -124,7 +124,7 @@ export default function About() {
                 <div className="text-3xl font-bold text-foreground mb-1">
                   {stat.number}
                 </div>
-                <div className="text-sm text-white">
+                <div className="text-sm text-muted-foreground">
                   {stat.label}
                 </div>
               </Card>
@@ -142,7 +142,7 @@ export default function About() {
                 Explore About DSU
               </span>
             </h2>
-            <p className="text-lg text-white max-w-3xl mx-auto">
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               Learn more about our university through dedicated sections
             </p>
           </div>
@@ -189,7 +189,7 @@ export default function About() {
                       <h3 className="font-bold text-lg mb-2 group-hover:text-orange-500 transition-colors">
                         {section.title}
                       </h3>
-                      <p className="text-sm text-white">
+                      <p className="text-sm text-muted-foreground">
                         {section.description}
                       </p>
                     </CardContent>
@@ -214,10 +214,10 @@ export default function About() {
 
           <div className="prose prose-invert max-w-4xl mx-auto mb-16">
             <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-8 md:p-12">
-              <p className="text-lg text-white leading-relaxed mb-6">
+              <p className="text-lg text-muted-foreground leading-relaxed mb-6">
                 Dayananda Sagar Institutions founded in the 60s by one such visionary, late Sri Dayananda Sagar committed to take knowledge to the people, transforms today's students into responsible citizens and professional leaders of tomorrow.
               </p>
-              <p className="text-lg text-white leading-relaxed">
+              <p className="text-lg text-muted-foreground leading-relaxed">
                 Dayananda Sagar University created by an Act of the Karnataka State in 2014, built on this adorable legacy and inspired by its own milestones, meeting the needs of quality higher education in this part of the world.
               </p>
             </div>
@@ -278,7 +278,7 @@ export default function About() {
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-white leading-relaxed">
+                    <p className="text-muted-foreground leading-relaxed">
                       {section.description}
                     </p>
                   </CardContent>
@@ -299,7 +299,7 @@ export default function About() {
                 Journey
               </span>
             </h2>
-            <p className="text-xl text-white">
+            <p className="text-xl text-muted-foreground">
               Key milestones in our path to becoming a leading university
             </p>
           </div>
@@ -379,7 +379,7 @@ export default function About() {
                 >
                   {milestone.milestone}
                 </Badge>
-                <p className="text-sm text-white leading-relaxed">
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   {milestone.description}
                 </p>
               </Card>
@@ -398,7 +398,7 @@ export default function About() {
               </span>
               <span className="text-foreground"> Team</span>
             </h2>
-            <p className="text-xl text-white max-w-3xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Visionary leaders driving academic excellence and institutional
               growth
             </p>
@@ -503,7 +503,7 @@ export default function About() {
                     >
                       {leader.role}
                     </Badge>
-                    <p className="text-sm text-white">
+                    <p className="text-sm text-muted-foreground">
                       {leader.experience} Experience
                     </p>
                   </div>
@@ -513,7 +513,7 @@ export default function About() {
                     <p className="text-sm font-semibold text-foreground mb-2">
                       Expertise:
                     </p>
-                    <p className="text-sm text-white">
+                    <p className="text-sm text-muted-foreground">
                       {leader.expertise}
                     </p>
                   </div>
@@ -526,7 +526,7 @@ export default function About() {
                       {leader.achievements.map((achievement, idx) => (
                         <div
                           key={idx}
-                          className="flex items-center text-sm text-white"
+                          className="flex items-center text-sm text-muted-foreground"
                         >
                           <Star className="w-3 h-3 text-orange-500 mr-2 flex-shrink-0" />
                           {achievement}
@@ -536,7 +536,7 @@ export default function About() {
                   </div>
 
                   <div className="bg-orange-500/5 rounded-lg p-3 border-l-4 border-orange-500">
-                    <p className="text-sm italic text-white">
+                    <p className="text-sm italic text-muted-foreground">
                       "{leader.quote}"
                     </p>
                   </div>
@@ -557,7 +557,7 @@ export default function About() {
                 Rankings
               </span>
             </h2>
-            <p className="text-xl text-white">
+            <p className="text-xl text-muted-foreground">
               Recognition of our commitment to quality and excellence
             </p>
           </div>
@@ -632,7 +632,7 @@ export default function About() {
                 <Badge variant="secondary" className="mb-3 text-xs">
                   {recognition.year}
                 </Badge>
-                <p className="text-sm text-white leading-relaxed">
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   {recognition.description}
                 </p>
               </Card>
@@ -651,7 +651,7 @@ export default function About() {
               </span>
               <span className="text-foreground"> With Us</span>
             </h2>
-            <p className="text-xl text-white">
+            <p className="text-xl text-muted-foreground">
               Get in touch with Dayananda Sagar University
             </p>
           </div>
@@ -691,7 +691,7 @@ export default function About() {
                 <h3 className="text-lg font-bold mb-3 group-hover:text-orange-500 transition-colors">
                   {contact.title}
                 </h3>
-                <p className="text-sm text-white mb-4 leading-relaxed whitespace-pre-line">
+                <p className="text-sm text-muted-foreground mb-4 leading-relaxed whitespace-pre-line">
                   {contact.info}
                 </p>
                 <Button
@@ -720,7 +720,7 @@ export default function About() {
               </span>
               ?
             </h2>
-            <p className="text-xl text-white mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
               Join our community of learners, innovators, and leaders shaping
               the future.
             </p>
@@ -728,7 +728,7 @@ export default function About() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-orange-500 via-red-600 to-pink-500 text-white px-12 py-6 text-lg font-semibold rounded-2xl"
+                className="bg-gradient-to-r from-orange-500 via-red-600 to-pink-500 text-muted-foreground px-12 py-6 text-lg font-semibold rounded-2xl"
               >
                 Apply Now
                 <GraduationCap className="w-5 h-5 ml-2" />
@@ -736,7 +736,7 @@ export default function About() {
               <Button
                 variant="outline"
                 size="lg"
-                className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white px-12 py-6 text-lg font-semibold rounded-2xl"
+                className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-muted-foreground px-12 py-6 text-lg font-semibold rounded-2xl"
               >
                 Schedule Visit
               </Button>

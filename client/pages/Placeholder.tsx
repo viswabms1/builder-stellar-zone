@@ -32,7 +32,7 @@ export default function Placeholder({
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-6">
-          <CardDescription className="text-white leading-relaxed">
+          <CardDescription className="text-muted-foreground leading-relaxed">
             {description}
           </CardDescription>
           
@@ -47,7 +47,7 @@ export default function Placeholder({
           <div className="space-y-3">
             <Button 
               asChild
-              className="w-full bg-gradient-to-r from-neon-purple to-neon-pink hover:from-neon-pink hover:to-neon-purple text-white rounded-xl transition-all duration-300"
+              className="w-full bg-gradient-to-r from-neon-purple to-neon-pink hover:from-neon-pink hover:to-neon-purple text-muted-foreground rounded-xl transition-all duration-300"
             >
               <Link to="/">
                 <ArrowLeft className="w-4 h-4 mr-2" />
@@ -55,7 +55,7 @@ export default function Placeholder({
               </Link>
             </Button>
             
-            <p className="text-xs text-white">
+            <p className="text-xs text-muted-foreground">
               Want this page prioritized? Let us know what you'd like to see here!
             </p>
           </div>

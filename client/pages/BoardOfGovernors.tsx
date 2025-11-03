@@ -30,7 +30,7 @@ export default function BoardOfGovernors() {
             </span>
           </h1>
 
-          <p className="text-lg md:text-xl text-white mb-8 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed max-w-3xl mx-auto">
             Strategic leadership driving the university's vision, mission, and institutional excellence.
           </p>
         </div>
@@ -57,7 +57,7 @@ export default function BoardOfGovernors() {
                   <h3 className="font-semibold text-foreground mb-1">
                     Strategic Governance
                   </h3>
-                  <p className="text-sm text-white">
+                  <p className="text-sm text-muted-foreground">
                     Providing strategic direction and institutional oversight
                   </p>
                 </div>
@@ -72,7 +72,7 @@ export default function BoardOfGovernors() {
                   <h3 className="font-semibold text-foreground mb-1">
                     Policy Development
                   </h3>
-                  <p className="text-sm text-white">
+                  <p className="text-sm text-muted-foreground">
                     Development and approval of university policies and programs
                   </p>
                 </div>
@@ -87,7 +87,7 @@ export default function BoardOfGovernors() {
                   <h3 className="font-semibold text-foreground mb-1">
                     Financial Oversight
                   </h3>
-                  <p className="text-sm text-white">
+                  <p className="text-sm text-muted-foreground">
                     Financial oversight and resource allocation management
                   </p>
                 </div>
@@ -106,7 +106,7 @@ export default function BoardOfGovernors() {
                 Members
               </span>
             </h2>
-            <p className="text-lg text-white max-w-3xl mx-auto">
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               A distinguished group of educational leaders, administrators, and government representatives
             </p>
           </div>
@@ -124,70 +124,70 @@ export default function BoardOfGovernors() {
                 </thead>
                 <tbody>
                   <tr className="border-b border-border/30 hover:bg-orange-500/5 transition-colors">
-                    <td className="px-6 py-4 text-sm text-white">1</td>
+                    <td className="px-6 py-4 text-sm text-muted-foreground">1</td>
                     <td className="px-6 py-4 text-sm font-medium text-foreground">Dr. D. Hemachandra Sagar</td>
-                    <td className="px-6 py-4 text-sm text-white">Chancellor, DSU</td>
-                    <td className="px-6 py-4 text-sm text-white">Chairperson</td>
+                    <td className="px-6 py-4 text-sm text-muted-foreground">Chancellor, DSU</td>
+                    <td className="px-6 py-4 text-sm text-muted-foreground">Chairperson</td>
                   </tr>
                   <tr className="border-b border-border/30 hover:bg-orange-500/5 transition-colors">
-                    <td className="px-6 py-4 text-sm text-white">2</td>
+                    <td className="px-6 py-4 text-sm text-muted-foreground">2</td>
                     <td className="px-6 py-4 text-sm font-medium text-foreground">Dr. D. Premachandra Sagar</td>
-                    <td className="px-6 py-4 text-sm text-white">Pro Chancellor, DSU</td>
-                    <td className="px-6 py-4 text-sm text-white">Member</td>
+                    <td className="px-6 py-4 text-sm text-muted-foreground">Pro Chancellor, DSU</td>
+                    <td className="px-6 py-4 text-sm text-muted-foreground">Member</td>
                   </tr>
                   <tr className="border-b border-border/30 hover:bg-orange-500/5 transition-colors">
-                    <td className="px-6 py-4 text-sm text-white">3</td>
+                    <td className="px-6 py-4 text-sm text-muted-foreground">3</td>
                     <td className="px-6 py-4 text-sm font-medium text-foreground">Prof. B. S. Satyanarayana</td>
-                    <td className="px-6 py-4 text-sm text-white">Vice Chancellor, DSU</td>
-                    <td className="px-6 py-4 text-sm text-white">Member</td>
+                    <td className="px-6 py-4 text-sm text-muted-foreground">Vice Chancellor, DSU</td>
+                    <td className="px-6 py-4 text-sm text-muted-foreground">Member</td>
                   </tr>
                   <tr className="border-b border-border/30 hover:bg-orange-500/5 transition-colors">
-                    <td className="px-6 py-4 text-sm text-white">4</td>
+                    <td className="px-6 py-4 text-sm text-muted-foreground">4</td>
                     <td className="px-6 py-4 text-sm font-medium text-foreground">Principal Secretary / Secretary to the State Government in Higher Education</td>
-                    <td className="px-6 py-4 text-sm text-white">Government Nominee</td>
-                    <td className="px-6 py-4 text-sm text-white">Member</td>
+                    <td className="px-6 py-4 text-sm text-muted-foreground">Government Nominee</td>
+                    <td className="px-6 py-4 text-sm text-muted-foreground">Member</td>
                   </tr>
                   <tr className="border-b border-border/30 hover:bg-orange-500/5 transition-colors">
-                    <td className="px-6 py-4 text-sm text-white">5</td>
+                    <td className="px-6 py-4 text-sm text-muted-foreground">5</td>
                     <td className="px-6 py-4 text-sm font-medium text-foreground">Principal Secretary / Secretary to the State Government in Medical Education</td>
-                    <td className="px-6 py-4 text-sm text-white">Government Nominee</td>
-                    <td className="px-6 py-4 text-sm text-white">Member</td>
+                    <td className="px-6 py-4 text-sm text-muted-foreground">Government Nominee</td>
+                    <td className="px-6 py-4 text-sm text-muted-foreground">Member</td>
                   </tr>
                   <tr className="border-b border-border/30 hover:bg-orange-500/5 transition-colors">
-                    <td className="px-6 py-4 text-sm text-white">6</td>
+                    <td className="px-6 py-4 text-sm text-muted-foreground">6</td>
                     <td className="px-6 py-4 text-sm font-medium text-foreground">Sri K. Jairaj, IAS (Retd.)</td>
-                    <td className="px-6 py-4 text-sm text-white">Retired Additional Chief Secretary to Government</td>
-                    <td className="px-6 py-4 text-sm text-white">GOK Nominee</td>
+                    <td className="px-6 py-4 text-sm text-muted-foreground">Retired Additional Chief Secretary to Government</td>
+                    <td className="px-6 py-4 text-sm text-muted-foreground">GOK Nominee</td>
                   </tr>
                   <tr className="border-b border-border/30 hover:bg-orange-500/5 transition-colors">
-                    <td className="px-6 py-4 text-sm text-white">7</td>
+                    <td className="px-6 py-4 text-sm text-muted-foreground">7</td>
                     <td className="px-6 py-4 text-sm font-medium text-foreground">Ms. Tintisha Sagar</td>
-                    <td className="px-6 py-4 text-sm text-white">Dayananda Sagar Institutions</td>
-                    <td className="px-6 py-4 text-sm text-white">Sponsoring Body Nominee</td>
+                    <td className="px-6 py-4 text-sm text-muted-foreground">Dayananda Sagar Institutions</td>
+                    <td className="px-6 py-4 text-sm text-muted-foreground">Sponsoring Body Nominee</td>
                   </tr>
                   <tr className="border-b border-border/30 hover:bg-orange-500/5 transition-colors">
-                    <td className="px-6 py-4 text-sm text-white">8</td>
+                    <td className="px-6 py-4 text-sm text-muted-foreground">8</td>
                     <td className="px-6 py-4 text-sm font-medium text-foreground">Sri Rohan Prem Sagar</td>
-                    <td className="px-6 py-4 text-sm text-white">Dayananda Sagar Institutions</td>
-                    <td className="px-6 py-4 text-sm text-white">Sponsoring Body Nominee</td>
+                    <td className="px-6 py-4 text-sm text-muted-foreground">Dayananda Sagar Institutions</td>
+                    <td className="px-6 py-4 text-sm text-muted-foreground">Sponsoring Body Nominee</td>
                   </tr>
                   <tr className="border-b border-border/30 hover:bg-orange-500/5 transition-colors">
-                    <td className="px-6 py-4 text-sm text-white">9</td>
+                    <td className="px-6 py-4 text-sm text-muted-foreground">9</td>
                     <td className="px-6 py-4 text-sm font-medium text-foreground">Prof. R Janardhan</td>
-                    <td className="px-6 py-4 text-sm text-white">Pro Vice Chancellor, DSU</td>
-                    <td className="px-6 py-4 text-sm text-white">Member</td>
+                    <td className="px-6 py-4 text-sm text-muted-foreground">Pro Vice Chancellor, DSU</td>
+                    <td className="px-6 py-4 text-sm text-muted-foreground">Member</td>
                   </tr>
                   <tr className="border-b border-border/30 hover:bg-orange-500/5 transition-colors">
-                    <td className="px-6 py-4 text-sm text-white">10</td>
+                    <td className="px-6 py-4 text-sm text-muted-foreground">10</td>
                     <td className="px-6 py-4 text-sm font-medium text-foreground">Vacant</td>
-                    <td className="px-6 py-4 text-sm text-white">UGC Nominee</td>
-                    <td className="px-6 py-4 text-sm text-white">Member</td>
+                    <td className="px-6 py-4 text-sm text-muted-foreground">UGC Nominee</td>
+                    <td className="px-6 py-4 text-sm text-muted-foreground">Member</td>
                   </tr>
                   <tr className="hover:bg-orange-500/5 transition-colors">
-                    <td className="px-6 py-4 text-sm text-white">11</td>
+                    <td className="px-6 py-4 text-sm text-muted-foreground">11</td>
                     <td className="px-6 py-4 text-sm font-medium text-foreground">Dr. Puttamadappa C</td>
-                    <td className="px-6 py-4 text-sm text-white">Registrar, DSU</td>
-                    <td className="px-6 py-4 text-sm text-white">Secretary</td>
+                    <td className="px-6 py-4 text-sm text-muted-foreground">Registrar, DSU</td>
+                    <td className="px-6 py-4 text-sm text-muted-foreground">Secretary</td>
                   </tr>
                 </tbody>
               </table>
@@ -202,7 +202,7 @@ export default function BoardOfGovernors() {
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Learn More About Leadership
           </h2>
-          <p className="text-lg text-white mb-8 max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
             Explore the complete leadership structure of Dayananda Sagar University.
           </p>
 
@@ -210,7 +210,7 @@ export default function BoardOfGovernors() {
             <Link to="/about/leadership">
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-red-600 hover:to-orange-500 text-white px-8 py-6 font-semibold rounded-2xl"
+                className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-red-600 hover:to-orange-500 text-muted-foreground px-8 py-6 font-semibold rounded-2xl"
               >
                 Back to Leadership
                 <ArrowRight className="w-5 h-5 ml-2" />

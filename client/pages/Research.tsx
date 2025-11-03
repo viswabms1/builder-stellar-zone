@@ -61,7 +61,7 @@ export default function Research() {
             <span className="text-foreground">for Tomorrow</span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-white mb-12 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-4xl mx-auto leading-relaxed">
             At DSU, we push the boundaries of knowledge through 
             <span className="text-orange-400 font-semibold"> cutting-edge research</span>, 
             <span className="text-red-400 font-semibold"> innovative solutions</span>, and 
@@ -69,11 +69,11 @@ export default function Research() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-            <Button size="lg" className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-red-600 hover:to-orange-500 text-white px-8 py-6 text-lg font-semibold rounded-2xl">
+            <Button size="lg" className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-red-600 hover:to-orange-500 text-muted-foreground px-8 py-6 text-lg font-semibold rounded-2xl">
               Explore Research
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
-            <Button variant="outline" size="lg" className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white px-8 py-6 text-lg font-semibold rounded-2xl">
+            <Button variant="outline" size="lg" className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-muted-foreground px-8 py-6 text-lg font-semibold rounded-2xl">
               Research Publications
             </Button>
           </div>
@@ -89,7 +89,7 @@ export default function Research() {
               <Card key={index} className="text-center p-6 bg-card/30 backdrop-blur-sm border border-border/30 hover:border-orange-500/30 transition-all duration-300">
                 <stat.icon className="w-8 h-8 text-orange-500 mx-auto mb-3" />
                 <div className="text-3xl font-bold text-foreground mb-1">{stat.number}</div>
-                <div className="text-sm text-white">{stat.label}</div>
+                <div className="text-sm text-muted-foreground">{stat.label}</div>
               </Card>
             ))}
           </div>
@@ -101,7 +101,7 @@ export default function Research() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-10">
             <h2 className="headline-3">Research Hub</h2>
-            <p className="text-white font-body">Quick access to Ph.D admissions, regulations, supervisors, and more</p>
+            <p className="text-muted-foreground font-body">Quick access to Ph.D admissions, regulations, supervisors, and more</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
@@ -120,8 +120,8 @@ export default function Research() {
                   <img src={`https://images.unsplash.com/photo-15${80+idx}5066931-4365d14bab8c?q=80&w=1200&auto=format&fit=crop`} alt={item.title} className="absolute inset-0 h-full w-full object-cover opacity-70 group-hover:opacity-80" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                   <div className="absolute bottom-0 p-4 flex items-center gap-3">
-                    <item.icon className="w-5 h-5 text-white" />
-                    <div className="text-white font-medium font-display">{item.title}</div>
+                    <item.icon className="w-5 h-5 text-muted-foreground" />
+                    <div className="text-muted-foreground font-medium font-display">{item.title}</div>
                   </div>
                 </div>
               </a>
@@ -138,7 +138,7 @@ export default function Research() {
               <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">Research</span>
               <span className="text-foreground"> Centers</span>
             </h2>
-            <p className="text-xl text-white max-w-3xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Specialized research centers driving innovation across multiple disciplines
             </p>
           </div>
@@ -223,7 +223,7 @@ export default function Research() {
                   </div>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  <CardDescription className="text-white leading-relaxed">
+                  <CardDescription className="text-muted-foreground leading-relaxed">
                     {center.description}
                   </CardDescription>
                   
@@ -231,7 +231,7 @@ export default function Research() {
                     <p className="text-sm font-semibold text-foreground">Research Focus:</p>
                     <div className="grid grid-cols-1 gap-1">
                       {center.focus.slice(0, 4).map((area, idx) => (
-                        <div key={idx} className="flex items-center text-sm text-white">
+                        <div key={idx} className="flex items-center text-sm text-muted-foreground">
                           <ChevronRight className="w-3 h-3 text-orange-500 mr-2 flex-shrink-0" />
                           {area}
                         </div>
@@ -263,7 +263,7 @@ export default function Research() {
               <span className="text-foreground">Research </span>
               <span className="bg-gradient-to-r from-red-500 to-pink-500 bg-clip-text text-transparent">Achievements</span>
             </h2>
-            <p className="text-xl text-white">
+            <p className="text-xl text-muted-foreground">
               Recognition and impact of our research contributions
             </p>
           </div>
@@ -323,7 +323,7 @@ export default function Research() {
                 <achievement.icon className="w-12 h-12 text-orange-500 mx-auto mb-4 group-hover:scale-110 transition-transform" />
                 <h3 className="text-lg font-bold mb-2 group-hover:text-orange-500 transition-colors">{achievement.title}</h3>
                 <div className="text-3xl font-bold text-orange-500 mb-3">{achievement.number}</div>
-                <p className="text-sm text-white leading-relaxed">{achievement.description}</p>
+                <p className="text-sm text-muted-foreground leading-relaxed">{achievement.description}</p>
               </Card>
             ))}
           </div>
@@ -335,7 +335,7 @@ export default function Research() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="headline-3">Research Spotlights</h2>
-            <p className="text-white font-body">Stories to inspire students and faculty to pursue impactful research</p>
+            <p className="text-muted-foreground font-body">Stories to inspire students and faculty to pursue impactful research</p>
           </div>
           <div className="grid lg:grid-cols-3 gap-8 items-stretch">
             {[
@@ -362,8 +362,8 @@ export default function Research() {
                 <img src={s.image} alt={s.title} className="h-64 w-full object-cover group-hover:scale-[1.02] transition-transform duration-500" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
                 <div className="absolute bottom-0 p-6">
-                  <Badge className="bg-white/10 text-white mb-3">{s.tag}</Badge>
-                  <h3 className="text-white font-semibold text-xl font-display">{s.title}</h3>
+                  <Badge className="bg-white/10 text-muted-foreground mb-3">{s.tag}</Badge>
+                  <h3 className="text-muted-foreground font-semibold text-xl font-display">{s.title}</h3>
                 </div>
               </a>
             ))}
@@ -379,7 +379,7 @@ export default function Research() {
               <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">Research</span>
               <span className="text-foreground"> Opportunities</span>
             </h2>
-            <p className="text-xl text-white max-w-3xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Join our research community and contribute to groundbreaking discoveries
             </p>
           </div>
@@ -442,7 +442,7 @@ export default function Research() {
                       <opportunity.icon className="w-6 h-6 text-orange-500 group-hover:scale-110 transition-transform" />
                     </div>
                     <div className="text-right">
-                      <div className="text-xs text-white">Duration</div>
+                      <div className="text-xs text-muted-foreground">Duration</div>
                       <div className="text-sm font-semibold text-orange-500">{opportunity.duration}</div>
                     </div>
                   </div>
@@ -454,7 +454,7 @@ export default function Research() {
                   </Badge>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  <CardDescription className="text-white leading-relaxed">
+                  <CardDescription className="text-muted-foreground leading-relaxed">
                     {opportunity.description}
                   </CardDescription>
                   
@@ -462,7 +462,7 @@ export default function Research() {
                     <p className="text-sm font-semibold text-foreground">Benefits:</p>
                     <div className="grid grid-cols-1 gap-1">
                       {opportunity.benefits.map((benefit, idx) => (
-                        <div key={idx} className="flex items-center text-sm text-white">
+                        <div key={idx} className="flex items-center text-sm text-muted-foreground">
                           <Star className="w-3 h-3 text-orange-500 mr-2 flex-shrink-0" />
                           {benefit}
                         </div>
@@ -489,7 +489,7 @@ export default function Research() {
               <span className="text-foreground">Research </span>
               <span className="bg-gradient-to-r from-red-500 to-pink-500 bg-clip-text text-transparent">Support</span>
             </h2>
-            <p className="text-xl text-white">
+            <p className="text-xl text-muted-foreground">
               Comprehensive support ecosystem for researchers at all levels
             </p>
           </div>
@@ -540,7 +540,7 @@ export default function Research() {
               <Card key={index} className="text-center p-6 bg-card/30 backdrop-blur-sm border border-border/30 hover:border-orange-500/30 transition-all duration-300 group">
                 <support.icon className="w-12 h-12 text-orange-500 mx-auto mb-4 group-hover:scale-110 transition-transform" />
                 <h3 className="text-lg font-bold mb-3 group-hover:text-orange-500 transition-colors">{support.title}</h3>
-                <p className="text-sm text-white leading-relaxed">{support.description}</p>
+                <p className="text-sm text-muted-foreground leading-relaxed">{support.description}</p>
               </Card>
             ))}
           </div>
@@ -555,16 +555,16 @@ export default function Research() {
               Ready to 
               <span className="bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent"> Lead Innovation</span>?
             </h2>
-            <p className="text-xl text-white mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
               Join our research community and be part of discoveries that shape the future.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-              <Button size="lg" className="bg-gradient-to-r from-orange-500 via-red-600 to-pink-500 text-white px-12 py-6 text-lg font-semibold rounded-2xl">
+              <Button size="lg" className="bg-gradient-to-r from-orange-500 via-red-600 to-pink-500 text-muted-foreground px-12 py-6 text-lg font-semibold rounded-2xl">
                 Apply for Research
                 <FlaskConical className="w-5 h-5 ml-2" />
               </Button>
-              <Button variant="outline" size="lg" className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white px-12 py-6 text-lg font-semibold rounded-2xl">
+              <Button variant="outline" size="lg" className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-muted-foreground px-12 py-6 text-lg font-semibold rounded-2xl">
                 Explore Publications
               </Button>
             </div>

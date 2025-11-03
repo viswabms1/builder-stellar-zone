@@ -152,18 +152,18 @@ function HighlightCard({ highlight }: { highlight: Highlight }) {
         className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-      <div className="absolute top-4 left-4 inline-flex items-center gap-2 rounded-full bg-black/40 px-3 py-1 text-xs text-white">
+      <div className="absolute top-4 left-4 inline-flex items-center gap-2 rounded-full bg-black/40 px-3 py-1 text-xs text-muted-foreground">
         <Icon className="h-4 w-4" /> Executive USP
       </div>
-      <div className="absolute inset-x-0 bottom-0 p-5 text-white">
+      <div className="absolute inset-x-0 bottom-0 p-5 text-muted-foreground">
         <h3 className="mb-2 text-lg font-semibold font-display">
           {highlight.title}
         </h3>
-        <p className="text-sm text-white/80 font-body">
+        <p className="text-sm text-muted-foreground/80 font-body">
           {highlight.description}
         </p>
         {highlight.stat ? (
-          <div className="mt-3 text-xs uppercase tracking-wide text-white/70 font-body">
+          <div className="mt-3 text-xs uppercase tracking-wide text-muted-foreground/70 font-body">
             {highlight.stat}
           </div>
         ) : null}
@@ -185,7 +185,7 @@ function OfferingCard({ offering }: { offering: Offering }) {
         </CardTitle>
       </CardHeader>
       <CardContent className="pt-0">
-        <CardDescription className="text-sm leading-relaxed text-white font-body">
+        <CardDescription className="text-sm leading-relaxed text-muted-foreground font-body">
           {offering.description}
         </CardDescription>
       </CardContent>
@@ -204,7 +204,7 @@ function ResourceCard({ resource }: { resource: Resource }) {
           {resource.title}
         </CardTitle>
       </CardHeader>
-      <CardContent className="space-y-5 text-sm text-white font-body">
+      <CardContent className="space-y-5 text-sm text-muted-foreground font-body">
         <p>{resource.description}</p>
         <a
           href={resource.href}
@@ -241,10 +241,10 @@ export default function CEE() {
                 Center for Executive Education
               </span>
             </div>
-            <h1 className="mb-4 font-display text-4xl leading-tight text-white md:text-6xl">
+            <h1 className="mb-4 font-display text-4xl leading-tight text-muted-foreground md:text-6xl">
               Executive MBA & Leadership Ecosystem
             </h1>
-            <p className="max-w-2xl text-white/90 font-body text-lg">
+            <p className="max-w-2xl text-muted-foreground/90 font-body text-lg">
               Propel your career with weekend executive programmes, CXO
               mentorship and innovation labs tailored for working professionals.
             </p>
@@ -254,7 +254,7 @@ export default function CEE() {
                 target="_blank"
                 rel="noreferrer"
               >
-                <Button className="bg-brand-gradient text-white">
+                <Button className="bg-brand-gradient text-muted-foreground">
                   Apply for Executive MBA
                 </Button>
               </a>
@@ -284,7 +284,7 @@ export default function CEE() {
             <h2 className="mt-4 font-display text-3xl md:text-4xl">
               Pathways for working professionals
             </h2>
-            <p className="mt-3 text-sm text-white font-body max-w-3xl mx-auto">
+            <p className="mt-3 text-sm text-muted-foreground font-body max-w-3xl mx-auto">
               Modular journeys blend weekend residencies, leadership labs, industry immersions and personalised mentoring to elevate executive careers.
             </p>
           </div>
@@ -333,7 +333,7 @@ export default function CEE() {
               <h2 className="mt-4 font-display text-3xl md:text-4xl">
                 Plan Your Executive Journey
               </h2>
-              <p className="mt-3 text-sm text-white font-body">
+              <p className="mt-3 text-sm text-muted-foreground font-body">
                 Access calendars, brochures and speaker archives to stay ahead
                 of application timelines and learning engagements.
               </p>
@@ -362,7 +362,7 @@ export default function CEE() {
             <h3 className="mb-3 font-display text-3xl">
               Accelerate Your Leadership Impact
             </h3>
-            <p className="mb-6 text-white font-body">
+            <p className="mb-6 text-muted-foreground font-body">
               Join an executive cohort that blends innovation labs, global
               mentors and actionable playbooks to elevate your organisation.
             </p>
@@ -372,7 +372,7 @@ export default function CEE() {
                 target="_blank"
                 rel="noreferrer"
               >
-                <Button className="bg-brand-gradient text-white">
+                <Button className="bg-brand-gradient text-muted-foreground">
                   Apply Today
                   <GraduationCap className="ml-2 h-4 w-4" />
                 </Button>

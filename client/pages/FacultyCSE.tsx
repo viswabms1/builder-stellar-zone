@@ -222,7 +222,7 @@ function HeroSection({ stats, interests }: HeroSectionProps) {
             </p>
             <div className="flex flex-col items-center gap-3 sm:flex-row lg:items-start">
               <Button
-                className="bg-brand-gradient text-white"
+                className="bg-brand-gradient text-muted-foreground"
                 size="lg"
                 asChild
               >
@@ -344,12 +344,12 @@ function LeadershipSection({ leadership }: LeadershipSectionProps) {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                 </AspectRatio>
-                <div className="absolute bottom-0 w-full p-4 text-white">
+                <div className="absolute bottom-0 w-full p-4 text-muted-foreground">
                   <p className="text-sm opacity-80">{faculty.title}</p>
                   <p className="text-lg font-semibold">{faculty.name}</p>
                 </div>
               </div>
-              <CardContent className="space-y-4 p-5 text-sm text-white">
+              <CardContent className="space-y-4 p-5 text-sm text-muted-foreground">
                 {faculty.qualifications ? (
                   <p>
                     <span className="font-semibold text-foreground">
@@ -361,7 +361,7 @@ function LeadershipSection({ leadership }: LeadershipSectionProps) {
                 <div className="flex flex-wrap gap-2">
                   <Button
                     size="sm"
-                    className="bg-brand-gradient text-white"
+                    className="bg-brand-gradient text-muted-foreground"
                     asChild
                   >
                     <Link
@@ -442,7 +442,7 @@ function DirectorySection({
                 size="sm"
                 className={`rounded-full border-brand-magenta/30 ${
                   activeFilter === option.key
-                    ? "bg-brand-gradient text-white"
+                    ? "bg-brand-gradient text-muted-foreground"
                     : "bg-white/60 text-brand-magenta hover:bg-brand-magenta/10"
                 }`}
                 onClick={() => onFilterChange(option.key)}
@@ -467,7 +467,7 @@ function DirectorySection({
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-transparent" />
                 </AspectRatio>
-                <div className="absolute bottom-0 w-full p-4 text-white">
+                <div className="absolute bottom-0 w-full p-4 text-muted-foreground">
                   <p className="text-xs uppercase tracking-wide opacity-80">
                     {faculty.title}
                   </p>
@@ -501,7 +501,7 @@ function DirectorySection({
                 <div className="mt-auto flex flex-wrap gap-2">
                   <Button
                     size="sm"
-                    className="bg-brand-gradient text-white"
+                    className="bg-brand-gradient text-muted-foreground"
                     asChild
                   >
                     <Link
@@ -746,7 +746,7 @@ function DepartmentSidebar({
 
             {/* Call to Action */}
             <Button
-              className="w-full bg-brand-gradient text-white mt-4"
+              className="w-full bg-brand-gradient text-muted-foreground mt-4"
               size="sm"
               asChild
             >
@@ -789,7 +789,7 @@ function ClosingSection() {
           .
         </p>
         <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-          <Button className="bg-brand-gradient text-white" size="lg" asChild>
+          <Button className="bg-brand-gradient text-muted-foreground" size="lg" asChild>
             <a href="mailto:placements.cse@dsu.edu.in">
               Connect for collaborations
             </a>

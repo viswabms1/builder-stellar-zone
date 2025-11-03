@@ -295,18 +295,18 @@ function HighlightCard({ highlight }: { highlight: Highlight }) {
         className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-      <div className="absolute top-4 left-4 inline-flex items-center gap-2 rounded-full bg-black/40 px-3 py-1 text-xs text-white">
+      <div className="absolute top-4 left-4 inline-flex items-center gap-2 rounded-full bg-black/40 px-3 py-1 text-xs text-muted-foreground">
         <Icon className="h-4 w-4" /> USP
       </div>
-      <div className="absolute inset-x-0 bottom-0 p-5 text-white">
+      <div className="absolute inset-x-0 bottom-0 p-5 text-muted-foreground">
         <h3 className="mb-2 text-lg font-semibold font-display">
           {highlight.title}
         </h3>
-        <p className="text-sm text-white/80 font-body">
+        <p className="text-sm text-muted-foreground/80 font-body">
           {highlight.description}
         </p>
         {highlight.stat ? (
-          <div className="mt-3 text-xs uppercase tracking-wide text-white/70 font-body">
+          <div className="mt-3 text-xs uppercase tracking-wide text-muted-foreground/70 font-body">
             {highlight.stat}
           </div>
         ) : null}
@@ -422,7 +422,7 @@ function LifeCard({ life }: { life: LifeAtDSU }) {
           className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-        <h3 className="absolute bottom-4 left-4 font-display text-lg font-semibold text-white">
+        <h3 className="absolute bottom-4 left-4 font-display text-lg font-semibold text-muted-foreground">
           {life.title}
         </h3>
       </div>
@@ -454,17 +454,17 @@ export default function ComputerApplications() {
                 School of Computer Applications
               </span>
             </div>
-            <h1 className="mb-4 font-display text-4xl leading-tight text-white md:text-6xl">
+            <h1 className="mb-4 font-display text-4xl leading-tight text-muted-foreground md:text-6xl">
               Build Tomorrow's Digital Experiences
             </h1>
-            <p className="max-w-2xl text-white/90 font-body text-lg">
+            <p className="max-w-2xl text-muted-foreground/90 font-body text-lg">
               From full-stack development to data science and cloud-native
               innovation, DSU prepares tech creators with experiential labs,
               industry mentorship and product-focused learning.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link to="/admissions">
-                <Button className="bg-brand-gradient text-white">
+                <Button className="bg-brand-gradient text-muted-foreground">
                   Apply Now
                 </Button>
               </Link>
@@ -969,7 +969,7 @@ export default function ComputerApplications() {
             </p>
             <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
               <Link to="/admissions">
-                <Button className="bg-brand-gradient text-white">
+                <Button className="bg-brand-gradient text-muted-foreground">
                   Start Application
                   <GraduationCap className="ml-2 h-4 w-4" />
                 </Button>

@@ -590,7 +590,7 @@ function SideNavigation() {
   return (
     <aside className="sticky top-28 hidden h-[calc(100vh-8rem)] w-72 shrink-0 lg:block">
       <div className="flex h-full flex-col overflow-hidden rounded-3xl border border-white/10 bg-slate-900/80 p-6 backdrop-blur">
-        <nav className="space-y-4 overflow-y-auto pr-2 text-sm text-white/70">
+        <nav className="space-y-4 overflow-y-auto pr-2 text-sm text-muted-foreground/70">
           {SIDE_NAV.map((item) => {
             const isExpanded = item.children ? expanded[item.label] : false;
             const ContentTag = item.href ? "a" : "button";
@@ -604,9 +604,9 @@ function SideNavigation() {
                           href: item.href,
                         }
                       : { type: "button" })}
-                    className="flex flex-1 items-center gap-3 rounded-2xl border border-transparent px-3 py-2 text-left text-white/75 transition hover:border-white/10 hover:bg-white/5 hover:text-white"
+                    className="flex flex-1 items-center gap-3 rounded-2xl border border-transparent px-3 py-2 text-left text-muted-foreground/75 transition hover:border-white/10 hover:bg-white/5 hover:text-muted-foreground"
                   >
-                    <item.icon className="h-4 w-4 text-white/60" aria-hidden="true" />
+                    <item.icon className="h-4 w-4 text-muted-foreground/60" aria-hidden="true" />
                     <span>{item.label}</span>
                   </ContentTag>
                   {item.children && (
@@ -619,7 +619,7 @@ function SideNavigation() {
                           [item.label]: !prev[item.label],
                         }))
                       }
-                      className="flex h-8 w-8 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/60 transition hover:text-white"
+                      className="flex h-8 w-8 items-center justify-center rounded-full border border-white/10 bg-white/5 text-muted-foreground/60 transition hover:text-muted-foreground"
                     >
                       <ChevronDown
                         className={`h-4 w-4 transition ${isExpanded ? "rotate-180" : ""}`}
@@ -629,12 +629,12 @@ function SideNavigation() {
                   )}
                 </div>
                 {item.children && isExpanded && (
-                  <ul className="space-y-2 pl-9 text-xs text-white/60">
+                  <ul className="space-y-2 pl-9 text-xs text-muted-foreground/60">
                     {item.children.map((child) => (
                       <li key={child.href}>
                         <a
                           href={child.href}
-                          className="inline-flex items-center gap-2 rounded-full border border-transparent px-3 py-1 transition hover:border-white/10 hover:bg-white/5 hover:text-white"
+                          className="inline-flex items-center gap-2 rounded-full border border-transparent px-3 py-1 transition hover:border-white/10 hover:bg-white/5 hover:text-muted-foreground"
                         >
                           <span className="h-1 w-1 rounded-full bg-white/50" aria-hidden="true" />
                           {child.label}
@@ -656,7 +656,7 @@ function HeroSection() {
   return (
     <section
       id="home"
-      className="scroll-mt-32 rounded-3xl border border-white/10 bg-slate-950/80 text-white shadow-[0_40px_140px_-80px_rgba(255,255,255,0.7)]"
+      className="scroll-mt-32 rounded-3xl border border-white/10 bg-slate-950/80 text-muted-foreground shadow-[0_40px_140px_-80px_rgba(255,255,255,0.7)]"
     >
       <div className="relative overflow-hidden rounded-3xl">
         <div
@@ -671,19 +671,19 @@ function HeroSection() {
         <div className="absolute inset-0 bg-slate-950/75" aria-hidden="true" />
         <div className="relative flex flex-col gap-12 px-8 py-20 lg:flex-row lg:items-center lg:px-12">
           <div className="flex-1 space-y-6">
-            <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.32em] text-white/70">
+            <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.32em] text-muted-foreground/70">
               Internal Quality Assurance Cell
             </span>
             <h1 className="text-4xl font-display leading-tight sm:text-5xl lg:text-6xl">
               We thrive for Quality, Excellence, Integrity, Innovation
             </h1>
-            <p className="max-w-2xl text-lg text-white/80 font-body">
+            <p className="max-w-2xl text-lg text-muted-foreground/80 font-body">
               The IQAC at Dayananda Sagar University orchestrates continuous improvement through evidence-based planning, collaborative reviews, and future-ready assurance systems aligned with NAAC, NIRF, and global benchmarks.
             </p>
             <div className="flex flex-wrap items-center gap-4">
               <Button
                 asChild
-                className="bg-brand-gradient text-white shadow-lg shadow-brand-magenta/20 hover:opacity-90"
+                className="bg-brand-gradient text-muted-foreground shadow-lg shadow-brand-magenta/20 hover:opacity-90"
               >
                 <a href="mailto:iqac@dsu.edu.in" className="gap-2">
                   Connect with IQAC
@@ -694,7 +694,7 @@ function HeroSection() {
                 href="https://www.naac.gov.in/images/docs/iqac/saac_iqac_guideline_1.pdf"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 text-sm font-semibold text-white/80 transition hover:text-white"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-muted-foreground/80 transition hover:text-muted-foreground"
               >
                 Explore NAAC framework
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -703,8 +703,8 @@ function HeroSection() {
           </div>
           <div className="flex-1">
             <div className="rounded-3xl border border-white/10 bg-white/5 p-8">
-              <p className="text-sm uppercase tracking-[0.28em] text-white/60">Mandate in Action</p>
-              <ul className="mt-6 space-y-4 text-sm text-white/80 font-body">
+              <p className="text-sm uppercase tracking-[0.28em] text-muted-foreground/60">Mandate in Action</p>
+              <ul className="mt-6 space-y-4 text-sm text-muted-foreground/80 font-body">
                 <li className="flex items-start gap-3">
                   <Award className="mt-1 h-5 w-5 text-brand-yellow" aria-hidden="true" />
                   Sustain a culture of quality by integrating reflective practice across academic and administrative processes.
@@ -733,18 +733,18 @@ function StatsSection() {
         {STAT_CARDS.map((card) => (
           <div
             key={card.label}
-            className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-7 text-white transition hover:-translate-y-1 hover:border-white/30 hover:bg-white/10"
+            className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-7 text-muted-foreground transition hover:-translate-y-1 hover:border-white/30 hover:bg-white/10"
           >
             <div className="absolute -top-12 right-0 h-32 w-32 rounded-full bg-brand-gradient blur-3xl opacity-0 transition group-hover:opacity-60" />
             <div className="relative space-y-4">
-              <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-white/10 text-white/80">
+              <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-white/10 text-muted-foreground/80">
                 <card.icon className="h-5 w-5" aria-hidden="true" />
               </span>
-              <p className="text-3xl font-semibold text-white">{card.value}</p>
-              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-white/60">
+              <p className="text-3xl font-semibold text-muted-foreground">{card.value}</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-muted-foreground/60">
                 {card.label}
               </p>
-              <p className="text-sm text-white/75 font-body">{card.description}</p>
+              <p className="text-sm text-muted-foreground/75 font-body">{card.description}</p>
             </div>
           </div>
         ))}
@@ -756,12 +756,12 @@ function StatsSection() {
 function AboutSection() {
   return (
     <section id="about" className="scroll-mt-32 space-y-10">
-      <header className="space-y-4 text-white">
-        <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.28em] text-white/70">
+      <header className="space-y-4 text-muted-foreground">
+        <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.28em] text-muted-foreground/70">
           About IQAC
         </span>
         <h2 className="text-3xl font-display sm:text-4xl">Foundation for quality assurance at DSU</h2>
-        <p className="max-w-3xl text-base text-white/75 font-body">
+        <p className="max-w-3xl text-base text-muted-foreground/75 font-body">
           IQAC provides the governance structure, data ecosystem, and collaborative energy required to sustain excellence across academics, research, innovation, and community engagement.
         </p>
       </header>
@@ -770,11 +770,11 @@ function AboutSection() {
           <article
             key={section.id}
             id={section.id}
-            className="scroll-mt-32 rounded-3xl border border-white/10 bg-white/5 p-8 text-white"
+            className="scroll-mt-32 rounded-3xl border border-white/10 bg-white/5 p-8 text-muted-foreground"
           >
-            <h3 className="text-xl font-semibold text-white">{section.title}</h3>
-            <p className="mt-4 text-sm text-white/75 font-body">{section.summary}</p>
-            <ul className="mt-4 space-y-3 text-sm text-white/80 font-body">
+            <h3 className="text-xl font-semibold text-muted-foreground">{section.title}</h3>
+            <p className="mt-4 text-sm text-muted-foreground/75 font-body">{section.summary}</p>
+            <ul className="mt-4 space-y-3 text-sm text-muted-foreground/80 font-body">
               {section.points.map((point) => (
                 <li key={point} className="flex items-start gap-2">
                   <CheckCircle2 className="mt-0.5 h-4 w-4 text-brand-magenta" aria-hidden="true" />
@@ -792,12 +792,12 @@ function AboutSection() {
 function AlignmentSection() {
   return (
     <section className="scroll-mt-32 space-y-10">
-      <header className="space-y-4 text-white">
-        <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.28em] text-white/70">
+      <header className="space-y-4 text-muted-foreground">
+        <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.28em] text-muted-foreground/70">
           Quality Alignment
         </span>
         <h2 className="text-3xl font-display sm:text-4xl">National and global ranking preparedness</h2>
-        <p className="max-w-3xl text-base text-white/75 font-body">
+        <p className="max-w-3xl text-base text-muted-foreground/75 font-body">
           IQAC coordinates submissions to national frameworks and international rankings through validated data, impact narratives, and stakeholder collaboration.
         </p>
       </header>
@@ -806,11 +806,11 @@ function AlignmentSection() {
           <article
             key={item.id}
             id={item.id}
-            className="scroll-mt-32 rounded-3xl border border-white/10 bg-white/5 p-8 text-white"
+            className="scroll-mt-32 rounded-3xl border border-white/10 bg-white/5 p-8 text-muted-foreground"
           >
-            <h3 className="text-xl font-semibold text-white">{item.title}</h3>
-            <p className="mt-4 text-sm text-white/75 font-body">{item.description}</p>
-            <ul className="mt-4 space-y-3 text-sm text-white/80 font-body">
+            <h3 className="text-xl font-semibold text-muted-foreground">{item.title}</h3>
+            <p className="mt-4 text-sm text-muted-foreground/75 font-body">{item.description}</p>
+            <ul className="mt-4 space-y-3 text-sm text-muted-foreground/80 font-body">
               {item.highlights.map((highlight) => (
                 <li key={highlight} className="flex items-start gap-2">
                   <CheckCircle2 className="mt-0.5 h-4 w-4 text-brand-magenta" aria-hidden="true" />
@@ -827,21 +827,21 @@ function AlignmentSection() {
 
 function IDPSection() {
   return (
-    <section id="idp" className="scroll-mt-32 space-y-6 rounded-3xl border border-white/10 bg-white/5 p-8 text-white">
+    <section id="idp" className="scroll-mt-32 space-y-6 rounded-3xl border border-white/10 bg-white/5 p-8 text-muted-foreground">
       <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
         <div className="max-w-3xl space-y-3">
-          <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.28em] text-white/70">
+          <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.28em] text-muted-foreground/70">
             Institutional Development Plan (IDP)
           </span>
-          <h2 className="text-2xl font-semibold text-white">Roadmap for future-ready academic excellence</h2>
-          <p className="text-sm text-white/75 font-body">
+          <h2 className="text-2xl font-semibold text-muted-foreground">Roadmap for future-ready academic excellence</h2>
+          <p className="text-sm text-muted-foreground/75 font-body">
             The IDP charts DSU’s five-year trajectory across curriculum innovation, research intensity, learner success, infrastructure, and societal engagement. IQAC anchors plan execution through measurable indicators, quarterly reviews, and stakeholder showcases.
           </p>
         </div>
         <Button
           asChild
           variant="secondary"
-          className="bg-white/10 text-white hover:bg-white/20"
+          className="bg-white/10 text-muted-foreground hover:bg-white/20"
         >
           <a href="mailto:iqac@dsu.edu.in?subject=Request%20for%20Institutional%20Development%20Plan" className="gap-2">
             Request IDP summary
@@ -849,7 +849,7 @@ function IDPSection() {
           </a>
         </Button>
       </div>
-      <ul className="grid gap-4 text-sm text-white/80 font-body lg:grid-cols-2">
+      <ul className="grid gap-4 text-sm text-muted-foreground/80 font-body lg:grid-cols-2">
         <li className="flex items-start gap-2 rounded-3xl border border-white/10 bg-white/5 p-5">
           <CheckCircle2 className="mt-0.5 h-4 w-4 text-brand-magenta" aria-hidden="true" />
           <span>Digital twins of classrooms and labs enable simulation-based learning and research prototyping.</span>
@@ -873,18 +873,18 @@ function IDPSection() {
 
 function InstitutionalExcellenceSection() {
   return (
-    <section id="institutional-excellence" className="scroll-mt-32 space-y-12 text-white">
+    <section id="institutional-excellence" className="scroll-mt-32 space-y-12 text-muted-foreground">
       <header className="space-y-4">
-        <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.28em] text-white/70">
+        <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.28em] text-muted-foreground/70">
           Institutional Excellence
         </span>
         <h2 className="text-3xl font-display sm:text-4xl">Distinctive initiatives shaping DSU’s identity</h2>
-        <p className="max-w-3xl text-base text-white/75 font-body">
+        <p className="max-w-3xl text-base text-muted-foreground/75 font-body">
           IQAC documents the hallmarks that define DSU’s learning ecosystem – from campus distinctiveness and best practices to collaborative agreements and outreach programmes.
         </p>
       </header>
       <div id="institutional-distinctiveness" className="scroll-mt-32 space-y-6">
-        <h3 className="text-2xl font-semibold text-white">Institutional Distinctiveness</h3>
+        <h3 className="text-2xl font-semibold text-muted-foreground">Institutional Distinctiveness</h3>
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {DISTINCTIVENESS_STORIES.map((story) => (
             <article
@@ -897,24 +897,24 @@ function InstitutionalExcellenceSection() {
                 className="h-48 w-full object-cover"
               />
               <div className="space-y-3 p-6">
-                <h4 className="text-lg font-semibold text-white">{story.title}</h4>
-                <p className="text-sm text-white/75 font-body">{story.description}</p>
+                <h4 className="text-lg font-semibold text-muted-foreground">{story.title}</h4>
+                <p className="text-sm text-muted-foreground/75 font-body">{story.description}</p>
               </div>
             </article>
           ))}
         </div>
       </div>
       <div id="best-practices" className="scroll-mt-32 space-y-6">
-        <h3 className="text-2xl font-semibold text-white">Best Practices</h3>
+        <h3 className="text-2xl font-semibold text-muted-foreground">Best Practices</h3>
         <div className="grid gap-6 lg:grid-cols-2">
           {BEST_PRACTICES.map((practice) => (
             <article
               key={practice.title}
               className="rounded-3xl border border-white/10 bg-white/5 p-8"
             >
-              <h4 className="text-lg font-semibold text-white">{practice.title}</h4>
-              <p className="mt-3 text-sm text-white/75 font-body">{practice.narrative}</p>
-              <ul className="mt-4 space-y-3 text-sm text-white/80 font-body">
+              <h4 className="text-lg font-semibold text-muted-foreground">{practice.title}</h4>
+              <p className="mt-3 text-sm text-muted-foreground/75 font-body">{practice.narrative}</p>
+              <ul className="mt-4 space-y-3 text-sm text-muted-foreground/80 font-body">
                 {practice.outcomes.map((outcome) => (
                   <li key={outcome} className="flex items-start gap-2">
                     <CheckCircle2 className="mt-0.5 h-4 w-4 text-brand-magenta" aria-hidden="true" />
@@ -927,33 +927,33 @@ function InstitutionalExcellenceSection() {
         </div>
       </div>
       <div id="mous" className="scroll-mt-32 space-y-6">
-        <h3 className="text-2xl font-semibold text-white">Memoranda of Understanding</h3>
-        <div className="grid gap-4 text-sm text-white/80 font-body lg:grid-cols-3">
+        <h3 className="text-2xl font-semibold text-muted-foreground">Memoranda of Understanding</h3>
+        <div className="grid gap-4 text-sm text-muted-foreground/80 font-body lg:grid-cols-3">
           {MOU_LIST.map((mou) => (
             <article
               key={mou.partner}
               className="rounded-3xl border border-white/10 bg-white/5 p-6"
             >
-              <div className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.22em] text-white/60">
+              <div className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground/60">
                 <Handshake className="h-4 w-4" aria-hidden="true" />
                 {mou.year}
               </div>
-              <h4 className="mt-3 text-lg font-semibold text-white">{mou.partner}</h4>
+              <h4 className="mt-3 text-lg font-semibold text-muted-foreground">{mou.partner}</h4>
               <p className="mt-2">{mou.focus}</p>
             </article>
           ))}
         </div>
       </div>
       <div id="outreach" className="scroll-mt-32 space-y-6">
-        <h3 className="text-2xl font-semibold text-white">Outreach Programs</h3>
+        <h3 className="text-2xl font-semibold text-muted-foreground">Outreach Programs</h3>
         <div className="grid gap-6 lg:grid-cols-3">
           {OUTREACH_PROGRAMS.map((program) => (
             <article
               key={program.title}
-              className="rounded-3xl border border-white/10 bg-white/5 p-6 text-sm text-white/80 font-body"
+              className="rounded-3xl border border-white/10 bg-white/5 p-6 text-sm text-muted-foreground/80 font-body"
             >
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/60">{program.location}</p>
-              <h4 className="mt-3 text-lg font-semibold text-white">{program.title}</h4>
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground/60">{program.location}</p>
+              <h4 className="mt-3 text-lg font-semibold text-muted-foreground">{program.title}</h4>
               <p className="mt-3">{program.impact}</p>
             </article>
           ))}
@@ -965,29 +965,29 @@ function InstitutionalExcellenceSection() {
 
 function ReportsSection() {
   return (
-    <section id="reports" className="scroll-mt-32 space-y-10 text-white">
+    <section id="reports" className="scroll-mt-32 space-y-10 text-muted-foreground">
       <header className="space-y-4">
-        <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.28em] text-white/70">
+        <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.28em] text-muted-foreground/70">
           Reports & Documentation
         </span>
         <h2 className="text-3xl font-display sm:text-4xl">Transparent reporting for accountability</h2>
-        <p className="max-w-3xl text-base text-white/75 font-body">
+        <p className="max-w-3xl text-base text-muted-foreground/75 font-body">
           IQAC curates annual reports, audits, and quality submissions that demonstrate compliance, celebrate achievements, and illuminate improvement plans.
         </p>
       </header>
       <div className="space-y-8">
         {REPORT_GROUPS.map((group) => (
           <article key={group.id} id={group.id} className="scroll-mt-32 space-y-4 rounded-3xl border border-white/10 bg-white/5 p-8">
-            <h3 className="text-2xl font-semibold text-white">{group.title}</h3>
-            <p className="text-sm text-white/75 font-body">{group.description}</p>
+            <h3 className="text-2xl font-semibold text-muted-foreground">{group.title}</h3>
+            <p className="text-sm text-muted-foreground/75 font-body">{group.description}</p>
             <div className="grid gap-4 lg:grid-cols-2">
               {group.entries.map((entry) => (
                 <div
                   key={entry.title}
-                  className="rounded-3xl border border-white/10 bg-slate-950/60 p-6 text-sm text-white/80 font-body"
+                  className="rounded-3xl border border-white/10 bg-slate-950/60 p-6 text-sm text-muted-foreground/80 font-body"
                 >
-                  <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/60">{entry.period}</p>
-                  <h4 className="mt-3 text-lg font-semibold text-white">{entry.title}</h4>
+                  <p className="text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground/60">{entry.period}</p>
+                  <h4 className="mt-3 text-lg font-semibold text-muted-foreground">{entry.title}</h4>
                   <p className="mt-3">{entry.summary}</p>
                 </div>
               ))}
@@ -1001,20 +1001,20 @@ function ReportsSection() {
 
 function PoliciesSection() {
   return (
-    <section id="policies" className="scroll-mt-32 space-y-8 rounded-3xl border border-white/10 bg-white/5 p-8 text-white">
+    <section id="policies" className="scroll-mt-32 space-y-8 rounded-3xl border border-white/10 bg-white/5 p-8 text-muted-foreground">
       <header className="space-y-3">
-        <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.28em] text-white/70">
+        <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.28em] text-muted-foreground/70">
           Policies & Manuals
         </span>
-        <h2 className="text-2xl font-semibold text-white">Frameworks that anchor quality systems</h2>
-        <p className="text-sm text-white/75 font-body">
+        <h2 className="text-2xl font-semibold text-muted-foreground">Frameworks that anchor quality systems</h2>
+        <p className="text-sm text-muted-foreground/75 font-body">
           Policy stewardship ensures consistency, accountability, and continuous alignment with statutory requirements and institutional ambitions.
         </p>
       </header>
       <div className="grid gap-6 lg:grid-cols-2">
         {POLICY_SETS.map((set) => (
-          <article key={set.id} id={set.id} className="scroll-mt-32 rounded-3xl border border-white/10 bg-slate-950/60 p-6 text-sm text-white/80 font-body">
-            <div className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.22em] text-white/60">
+          <article key={set.id} id={set.id} className="scroll-mt-32 rounded-3xl border border-white/10 bg-slate-950/60 p-6 text-sm text-muted-foreground/80 font-body">
+            <div className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground/60">
               <BookOpen className="h-4 w-4" aria-hidden="true" />
               {set.title}
             </div>
@@ -1036,13 +1036,13 @@ function PoliciesSection() {
 
 function CommitteesSection() {
   return (
-    <section id="committees" className="scroll-mt-32 space-y-6 text-white">
+    <section id="committees" className="scroll-mt-32 space-y-6 text-muted-foreground">
       <header className="space-y-3">
-        <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.28em] text-white/70">
+        <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.28em] text-muted-foreground/70">
           University Committees
         </span>
-        <h2 className="text-2xl font-semibold text-white">Quality governance through specialised committees</h2>
-        <p className="text-sm text-white/75 font-body">
+        <h2 className="text-2xl font-semibold text-muted-foreground">Quality governance through specialised committees</h2>
+        <p className="text-sm text-muted-foreground/75 font-body">
           Cross-functional committees translate policy into practice, nurture innovation, and provide focused support to academic and administrative units.
         </p>
       </header>
@@ -1050,15 +1050,15 @@ function CommitteesSection() {
         {COMMITTEES.map((committee) => (
           <article
             key={committee.name}
-            className="rounded-3xl border border-white/10 bg-white/5 p-6 text-sm text-white/80 font-body"
+            className="rounded-3xl border border-white/10 bg-white/5 p-6 text-sm text-muted-foreground/80 font-body"
           >
-            <h3 className="text-lg font-semibold text-white">{committee.name}</h3>
+            <h3 className="text-lg font-semibold text-muted-foreground">{committee.name}</h3>
             <p className="mt-3">{committee.focus}</p>
-            <p className="mt-4 text-white/60">
+            <p className="mt-4 text-muted-foreground/60">
               Contact: {" "}
               <a
                 href={`mailto:${committee.contact}`}
-                className="font-medium text-white transition hover:text-brand-magenta"
+                className="font-medium text-muted-foreground transition hover:text-brand-magenta"
               >
                 {committee.contact}
               </a>
@@ -1072,13 +1072,13 @@ function CommitteesSection() {
 
 function FormsSection() {
   return (
-    <section id="forms" className="scroll-mt-32 space-y-6 rounded-3xl border border-white/10 bg-white/5 p-8 text-white">
+    <section id="forms" className="scroll-mt-32 space-y-6 rounded-3xl border border-white/10 bg-white/5 p-8 text-muted-foreground">
       <header className="space-y-3">
-        <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.28em] text-white/70">
+        <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.28em] text-muted-foreground/70">
           Forms & Formats
         </span>
-        <h2 className="text-2xl font-semibold text-white">Templates for consistent documentation</h2>
-        <p className="text-sm text-white/75 font-body">
+        <h2 className="text-2xl font-semibold text-muted-foreground">Templates for consistent documentation</h2>
+        <p className="text-sm text-muted-foreground/75 font-body">
           Access structured templates that simplify reporting, enable comparable analytics, and ensure accreditation-ready records.
         </p>
       </header>
@@ -1086,13 +1086,13 @@ function FormsSection() {
         {FORM_TEMPLATES.map((form) => (
           <article
             key={form.title}
-            className="rounded-3xl border border-white/10 bg-slate-950/60 p-6 text-sm text-white/80 font-body"
+            className="rounded-3xl border border-white/10 bg-slate-950/60 p-6 text-sm text-muted-foreground/80 font-body"
           >
-            <h3 className="text-lg font-semibold text-white">{form.title}</h3>
+            <h3 className="text-lg font-semibold text-muted-foreground">{form.title}</h3>
             <p className="mt-2">{form.usage}</p>
             <a
               href={form.access}
-              className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-white/80 transition hover:text-white"
+              className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-muted-foreground/80 transition hover:text-muted-foreground"
             >
               Request editable copy
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -1106,13 +1106,13 @@ function FormsSection() {
 
 function ValueAddedSection() {
   return (
-    <section id="value-added" className="scroll-mt-32 space-y-6 text-white">
+    <section id="value-added" className="scroll-mt-32 space-y-6 text-muted-foreground">
       <header className="space-y-3">
-        <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.28em] text-white/70">
+        <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.28em] text-muted-foreground/70">
           Value Added Courses
         </span>
-        <h2 className="text-2xl font-semibold text-white">Future-oriented certifications curated by IQAC</h2>
-        <p className="text-sm text-white/75 font-body">
+        <h2 className="text-2xl font-semibold text-muted-foreground">Future-oriented certifications curated by IQAC</h2>
+        <p className="text-sm text-muted-foreground/75 font-body">
           Interdisciplinary modules expand learner competencies and complement core curricula with industry-aligned skills.
         </p>
       </header>
@@ -1120,11 +1120,11 @@ function ValueAddedSection() {
         {VALUE_ADDED_OFFERINGS.map((course) => (
           <article
             key={course.name}
-            className="rounded-3xl border border-white/10 bg-white/5 p-6 text-sm text-white/80 font-body"
+            className="rounded-3xl border border-white/10 bg-white/5 p-6 text-sm text-muted-foreground/80 font-body"
           >
-            <h3 className="text-lg font-semibold text-white">{course.name}</h3>
+            <h3 className="text-lg font-semibold text-muted-foreground">{course.name}</h3>
             <p className="mt-3">{course.summary}</p>
-            <p className="mt-3 text-white/60">{course.duration}</p>
+            <p className="mt-3 text-muted-foreground/60">{course.duration}</p>
             <p className="mt-3">Outcome: {course.outcome}</p>
           </article>
         ))}
@@ -1135,13 +1135,13 @@ function ValueAddedSection() {
 
 function EventCalendarSection() {
   return (
-    <section id="event-calendar" className="scroll-mt-32 space-y-6 rounded-3xl border border-white/10 bg-white/5 p-8 text-white">
+    <section id="event-calendar" className="scroll-mt-32 space-y-6 rounded-3xl border border-white/10 bg-white/5 p-8 text-muted-foreground">
       <header className="space-y-3">
-        <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.28em] text-white/70">
+        <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.28em] text-muted-foreground/70">
           SGT Event Calendar
         </span>
-        <h2 className="text-2xl font-semibold text-white">Upcoming IQAC-led programmes</h2>
-        <p className="text-sm text-white/75 font-body">
+        <h2 className="text-2xl font-semibold text-muted-foreground">Upcoming IQAC-led programmes</h2>
+        <p className="text-sm text-muted-foreground/75 font-body">
           Stay updated on conclaves, workshops, and documentation drives facilitated by IQAC throughout the academic year.
         </p>
       </header>
@@ -1149,14 +1149,14 @@ function EventCalendarSection() {
         {EVENT_SCHEDULE.map((event) => (
           <article
             key={event.title}
-            className="rounded-3xl border border-white/10 bg-slate-950/60 p-6 text-sm text-white/80 font-body"
+            className="rounded-3xl border border-white/10 bg-slate-950/60 p-6 text-sm text-muted-foreground/80 font-body"
           >
-            <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-white/60">
+            <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground/60">
               <CalendarDays className="h-4 w-4" aria-hidden="true" />
               {event.date}
             </div>
-            <h3 className="mt-3 text-lg font-semibold text-white">{event.title}</h3>
-            <p className="mt-2 text-white/60">{event.category}</p>
+            <h3 className="mt-3 text-lg font-semibold text-muted-foreground">{event.title}</h3>
+            <p className="mt-2 text-muted-foreground/60">{event.category}</p>
             <p className="mt-3">{event.description}</p>
           </article>
         ))}
@@ -1167,41 +1167,41 @@ function EventCalendarSection() {
 
 function FeedbackSection() {
   return (
-    <section id="feedback" className="scroll-mt-32 space-y-6 rounded-3xl border border-white/10 bg-white/5 p-8 text-white">
+    <section id="feedback" className="scroll-mt-32 space-y-6 rounded-3xl border border-white/10 bg-white/5 p-8 text-muted-foreground">
       <header className="space-y-3">
-        <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.28em] text-white/70">
+        <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.28em] text-muted-foreground/70">
           Feedback & Support
         </span>
-        <h2 className="text-2xl font-semibold text-white">Partner with the IQAC office</h2>
-        <p className="text-sm text-white/75 font-body">
+        <h2 className="text-2xl font-semibold text-muted-foreground">Partner with the IQAC office</h2>
+        <p className="text-sm text-muted-foreground/75 font-body">
           Departments, students, alumni, and industry collaborators are encouraged to share insights that further strengthen DSU’s quality journey.
         </p>
       </header>
       <div className="grid gap-6 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
-        <div className="space-y-4 text-sm text-white/80 font-body">
+        <div className="space-y-4 text-sm text-muted-foreground/80 font-body">
           <p>
-            Email <a href="mailto:iqac@dsu.edu.in" className="font-medium text-white transition hover:text-brand-magenta">iqac@dsu.edu.in</a> with improvement ideas, collaboration requests, or documentation needs. Every submission receives acknowledgement within two working days.
+            Email <a href="mailto:iqac@dsu.edu.in" className="font-medium text-muted-foreground transition hover:text-brand-magenta">iqac@dsu.edu.in</a> with improvement ideas, collaboration requests, or documentation needs. Every submission receives acknowledgement within two working days.
           </p>
           <p>
             For in-person discussions, visit the IQAC Office at the Innovation Campus, Kudlu Gate, Hosur Road, Bengaluru – 560 114.
           </p>
           <div className="flex items-center gap-3 rounded-3xl border border-white/10 bg-slate-950/60 p-4">
             <MapPin className="h-5 w-5 text-brand-magenta" aria-hidden="true" />
-            <p className="text-sm text-white/70 font-body">
+            <p className="text-sm text-muted-foreground/70 font-body">
               Monday to Friday, 9:00 AM – 5:30 PM (appointments via email recommended).
             </p>
           </div>
         </div>
-        <div className="space-y-4 rounded-3xl border border-white/10 bg-slate-950/60 p-6 text-sm text-white/80 font-body">
+        <div className="space-y-4 rounded-3xl border border-white/10 bg-slate-950/60 p-6 text-sm text-muted-foreground/80 font-body">
           <div className="flex items-start gap-3">
             <MessageCircle className="mt-1 h-5 w-5 text-brand-magenta" aria-hidden="true" />
             <div>
-              <p className="font-semibold text-white">Submit feedback</p>
+              <p className="font-semibold text-muted-foreground">Submit feedback</p>
               <p className="mt-1">Share commendations, suggestions, or concerns to inform IQAC action plans.</p>
               <Button
                 asChild
                 variant="secondary"
-                className="mt-4 bg-white/10 text-white hover:bg-white/20"
+                className="mt-4 bg-white/10 text-muted-foreground hover:bg-white/20"
               >
                 <a href="mailto:iqac@dsu.edu.in?subject=Feedback%20for%20IQAC" className="gap-2">
                   Email feedback
@@ -1213,21 +1213,21 @@ function FeedbackSection() {
           <div className="flex items-start gap-3">
             <Users2 className="mt-1 h-5 w-5 text-brand-magenta" aria-hidden="true" />
             <div>
-              <p className="font-semibold text-white">Request facilitation</p>
+              <p className="font-semibold text-muted-foreground">Request facilitation</p>
               <p className="mt-1">Invite IQAC facilitators for quality audits, NAAC preparedness workshops, or policy clarifications.</p>
-              <p className="mt-3 text-white/70">
-                Email <a href="mailto:iqac@dsu.edu.in?subject=IQAC%20Facilitation%20Request" className="font-medium text-white transition hover:text-brand-magenta">iqac@dsu.edu.in</a> with the proposed agenda and timelines.
+              <p className="mt-3 text-muted-foreground/70">
+                Email <a href="mailto:iqac@dsu.edu.in?subject=IQAC%20Facilitation%20Request" className="font-medium text-muted-foreground transition hover:text-brand-magenta">iqac@dsu.edu.in</a> with the proposed agenda and timelines.
               </p>
             </div>
           </div>
           <div className="flex items-start gap-3">
             <Mail className="mt-1 h-5 w-5 text-brand-magenta" aria-hidden="true" />
             <div>
-              <p className="font-semibold text-white">Document access</p>
+              <p className="font-semibold text-muted-foreground">Document access</p>
               <p className="mt-1">Request authenticated copies of policies, audits, or reports for departmental dissemination.</p>
               <Link
                 to="/research"
-                className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-white/80 transition hover:text-white"
+                className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-muted-foreground/80 transition hover:text-muted-foreground"
               >
                 Explore research ecosystem
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -1242,7 +1242,7 @@ function FeedbackSection() {
 
 export default function IQAC() {
   return (
-    <main className="bg-slate-950 text-white">
+    <main className="bg-slate-950 text-muted-foreground">
       <div className="mx-auto flex max-w-7xl gap-8 px-4 pb-24 pt-12 lg:px-6">
         <SideNavigation />
         <div className="flex-1 space-y-24">

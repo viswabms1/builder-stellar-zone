@@ -175,18 +175,18 @@ function HighlightCard({ highlight }: { highlight: Highlight }) {
         className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-      <div className="absolute top-4 left-4 inline-flex items-center gap-2 rounded-full bg-black/40 px-3 py-1 text-xs text-white">
+      <div className="absolute top-4 left-4 inline-flex items-center gap-2 rounded-full bg-black/40 px-3 py-1 text-xs text-muted-foreground">
         <Icon className="h-4 w-4" /> USP
       </div>
-      <div className="absolute inset-x-0 bottom-0 p-5 text-white">
+      <div className="absolute inset-x-0 bottom-0 p-5 text-muted-foreground">
         <h3 className="mb-2 text-lg font-semibold font-display">
           {highlight.title}
         </h3>
-        <p className="text-sm text-white/80 font-body">
+        <p className="text-sm text-muted-foreground/80 font-body">
           {highlight.description}
         </p>
         {highlight.stat ? (
-          <div className="mt-3 text-xs uppercase tracking-wide text-white/70 font-body">
+          <div className="mt-3 text-xs uppercase tracking-wide text-muted-foreground/70 font-body">
             {highlight.stat}
           </div>
         ) : null}
@@ -206,7 +206,7 @@ function ProgrammeCard({ programme }: { programme: Programme }) {
           {programme.name}
         </CardTitle>
       </CardHeader>
-      <CardContent className="text-sm text-white font-body">
+      <CardContent className="text-sm text-muted-foreground font-body">
         <div className="flex items-center gap-2">
           <FileText className="h-4 w-4 text-brand-magenta" />
           Duration: {programme.duration}
@@ -227,7 +227,7 @@ function CentreCard({ centre }: { centre: Centre }) {
         <CardTitle className="text-base font-display">{centre.title}</CardTitle>
       </CardHeader>
       <CardContent className="pt-0">
-        <CardDescription className="text-sm leading-relaxed text-white font-body">
+        <CardDescription className="text-sm leading-relaxed text-muted-foreground font-body">
           {centre.description}
         </CardDescription>
       </CardContent>
@@ -261,7 +261,7 @@ function ResourceCard({ resource }: { resource: ResourceLink }) {
           {resource.title}
         </CardTitle>
       </CardHeader>
-      <CardContent className="space-y-5 text-sm text-white font-body">
+      <CardContent className="space-y-5 text-sm text-muted-foreground font-body">
         <p>{resource.description}</p>
         <a
           href={resource.href}
@@ -298,17 +298,17 @@ export default function Law() {
                 School of Law
               </span>
             </div>
-            <h1 className="mb-4 font-display text-4xl leading-tight text-white md:text-6xl">
+            <h1 className="mb-4 font-display text-4xl leading-tight text-muted-foreground md:text-6xl">
               Your Gateway to New Age Lawyering
             </h1>
-            <p className="max-w-2xl text-white/90 font-body text-lg">
+            <p className="max-w-2xl text-muted-foreground/90 font-body text-lg">
               Engage with contemporary legal challenges through immersive
               learning, interdisciplinary research and mentorship from leading
               practitioners.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link to="/admissions">
-                <Button className="bg-brand-gradient text-white">
+                <Button className="bg-brand-gradient text-muted-foreground">
                   Apply Now
                 </Button>
               </Link>
@@ -339,7 +339,7 @@ export default function Law() {
               <h2 className="font-display text-3xl md:text-4xl">
                 Programmes shaping practice-ready advocates
               </h2>
-              <p className="text-sm text-white font-body">
+              <p className="text-sm text-muted-foreground font-body">
                 Integrated and postgraduate programmes combine rigorous legal scholarship with drafting studios, internships, clinics and research to prepare you for new age lawyering.
               </p>
               <div className="grid gap-4 sm:grid-cols-2">
@@ -408,7 +408,7 @@ export default function Law() {
               <h2 className="mt-4 font-display text-3xl md:text-4xl">
                 Clinics, Centres & Knowledge Spaces
               </h2>
-              <p className="mt-3 text-sm text-white font-body">
+              <p className="mt-3 text-sm text-muted-foreground font-body">
                 Transform classroom insights into societal impact through moot
                 courts, legal aid clinics, research collaborations and
                 resource-rich libraries.
@@ -442,7 +442,7 @@ export default function Law() {
               <h2 className="mt-4 font-display text-3xl md:text-4xl">
                 Stay Engaged with Law Events
               </h2>
-              <p className="mt-3 text-sm text-white font-body">
+              <p className="mt-3 text-sm text-muted-foreground font-body">
                 From newsletters and conferences to faculty development
                 programmes, keep up with the vibrant legal discourse at DSU.
               </p>
@@ -471,13 +471,13 @@ export default function Law() {
             <h3 className="mb-3 font-display text-3xl">
               Shape the Future of Justice with DSU
             </h3>
-            <p className="mb-6 text-white font-body">
+            <p className="mb-6 text-muted-foreground font-body">
               Gain courtroom confidence, global exposure and thought leadership
               by immersing yourself in DSU's vibrant legal ecosystem.
             </p>
             <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
               <Link to="/admissions">
-                <Button className="bg-brand-gradient text-white">
+                <Button className="bg-brand-gradient text-muted-foreground">
                   Begin Application
                   <GraduationCap className="ml-2 h-4 w-4" />
                 </Button>

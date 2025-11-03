@@ -197,7 +197,7 @@ export default function Accreditations() {
             </span>
           </h1>
 
-          <p className="text-lg md:text-xl text-white mb-8 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed max-w-3xl mx-auto">
             National and international recognition of our commitment to academic excellence, research innovation, and institutional quality.
           </p>
         </div>
@@ -212,7 +212,7 @@ export default function Accreditations() {
                 Major Accreditations
               </span>
             </h2>
-            <p className="text-lg text-white max-w-3xl mx-auto">
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               Nationally and internationally recognized accreditations validating our educational standards
             </p>
           </div>
@@ -230,7 +230,7 @@ export default function Accreditations() {
                       <div
                         className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${acc.color} flex items-center justify-center group-hover:scale-110 transition-transform`}
                       >
-                        <Icon className="w-7 h-7 text-white" />
+                        <Icon className="w-7 h-7 text-muted-foreground" />
                       </div>
                       <Badge variant="outline" className="border-orange-500/20 bg-orange-500/10 text-orange-500">
                         {acc.year}
@@ -244,11 +244,11 @@ export default function Accreditations() {
                     </CardDescription>
                   </CardHeader>
                   <CardContent className="space-y-4">
-                    <p className="text-white leading-relaxed">
+                    <p className="text-muted-foreground leading-relaxed">
                       {acc.description}
                     </p>
                     <div className="bg-orange-500/5 border-l-4 border-orange-500 p-3 rounded">
-                      <p className="text-sm text-white">
+                      <p className="text-sm text-muted-foreground">
                         <span className="font-semibold text-foreground">
                           Significance:
                         </span>{" "}
@@ -300,7 +300,7 @@ export default function Accreditations() {
                     <CardDescription>{rec.subtitle}</CardDescription>
                   </CardHeader>
                   <CardContent className="space-y-4">
-                    <p className="text-white text-sm">
+                    <p className="text-muted-foreground text-sm">
                       {rec.description}
                     </p>
                     <div>
@@ -311,7 +311,7 @@ export default function Accreditations() {
                         {rec.highlights.map((highlight, idx) => (
                           <div
                             key={idx}
-                            className="flex items-center gap-2 text-sm text-white"
+                            className="flex items-center gap-2 text-sm text-muted-foreground"
                           >
                             <CheckCircle className="w-4 h-4 text-orange-500 flex-shrink-0" />
                             {highlight}
@@ -337,7 +337,7 @@ export default function Accreditations() {
                 Certifications
               </span>
             </h2>
-            <p className="text-lg text-white">
+            <p className="text-lg text-muted-foreground">
               Additional certifications and compliance standards
             </p>
           </div>
@@ -354,7 +354,7 @@ export default function Accreditations() {
                   <Badge variant="secondary" className="mb-2 text-xs">
                     {cert.category}
                   </Badge>
-                  <p className="text-sm text-white">
+                  <p className="text-sm text-muted-foreground">
                     {cert.description}
                   </p>
                 </CardContent>
@@ -407,7 +407,7 @@ export default function Accreditations() {
                     <h3 className="font-semibold text-foreground mb-1">
                       {benefit.title}
                     </h3>
-                    <p className="text-white text-sm">
+                    <p className="text-muted-foreground text-sm">
                       {benefit.description}
                     </p>
                   </div>
@@ -424,7 +424,7 @@ export default function Accreditations() {
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Learn More About Our Programs
           </h2>
-          <p className="text-lg text-white mb-8 max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
             Explore our accredited programs and start your journey with a university recognized for excellence.
           </p>
 
@@ -432,7 +432,7 @@ export default function Accreditations() {
             <Link to="/academics">
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-red-600 hover:to-orange-500 text-white px-8 py-6 font-semibold rounded-2xl"
+                className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-red-600 hover:to-orange-500 text-muted-foreground px-8 py-6 font-semibold rounded-2xl"
               >
                 Explore Programs
                 <ArrowRight className="w-5 h-5 ml-2" />
@@ -442,7 +442,7 @@ export default function Accreditations() {
               <Button
                 variant="outline"
                 size="lg"
-                className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white px-8 py-6 font-semibold rounded-2xl"
+                className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-muted-foreground px-8 py-6 font-semibold rounded-2xl"
               >
                 Back to About
               </Button>

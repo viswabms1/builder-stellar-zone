@@ -363,7 +363,7 @@ function HeroSection() {
         <h1 className="mt-8 text-4xl font-bold leading-tight text-foreground md:text-6xl">
           Forge Your Future with Dayananda Sagar University
         </h1>
-        <p className="mt-6 text-lg text-white md:text-xl">
+        <p className="mt-6 text-lg text-muted-foreground md:text-xl">
           Choose from industry-aligned undergraduate, postgraduate, doctoral,
           and online programs with expert mentoring, modern labs, and global
           exposure.
@@ -371,7 +371,7 @@ function HeroSection() {
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Button
             size="lg"
-            className="rounded-2xl bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 px-8 py-6 text-lg font-semibold text-white shadow-lg shadow-orange-500/30 transition hover:shadow-xl"
+            className="rounded-2xl bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 px-8 py-6 text-lg font-semibold text-muted-foreground shadow-lg shadow-orange-500/30 transition hover:shadow-xl"
             asChild
           >
             <a
@@ -423,7 +423,7 @@ function QuickLinksSection() {
           <h2 className="text-3xl font-bold md:text-4xl">
             Start with the Essentials
           </h2>
-          <p className="mt-3 text-lg text-white">
+          <p className="mt-3 text-lg text-muted-foreground">
             Access the most requested admission resources, deadlines, and
             application pathways in one place.
           </p>
@@ -436,22 +436,22 @@ function QuickLinksSection() {
             >
               <CardHeader>
                 <div className="flex items-center justify-between">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-orange-500/15 text-orange-500 transition group-hover:bg-orange-500 group-hover:text-white">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-orange-500/15 text-orange-500 transition group-hover:bg-orange-500 group-hover:text-muted-foreground">
                     <item.icon className="h-6 w-6" />
                   </div>
-                  <ExternalLink className="h-5 w-5 text-white group-hover:text-orange-500" />
+                  <ExternalLink className="h-5 w-5 text-muted-foreground group-hover:text-orange-500" />
                 </div>
                 <CardTitle className="mt-4 text-xl font-semibold group-hover:text-orange-500">
                   {item.title}
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <CardDescription className="leading-relaxed text-white">
+                <CardDescription className="leading-relaxed text-muted-foreground">
                   {item.description}
                 </CardDescription>
                 <Button
                   variant="secondary"
-                  className="w-full justify-center rounded-xl bg-orange-500/10 text-orange-500 hover:bg-orange-500 hover:text-white"
+                  className="w-full justify-center rounded-xl bg-orange-500/10 text-orange-500 hover:bg-orange-500 hover:text-muted-foreground"
                   asChild
                 >
                   <a
@@ -480,7 +480,7 @@ function AdmissionRoutesSection() {
           <h2 className="text-3xl font-bold md:text-4xl">
             Choose Your Admission Pathway
           </h2>
-          <p className="mt-3 text-lg text-white">
+          <p className="mt-3 text-lg text-muted-foreground">
             Whether you are an incoming undergraduate, postgraduate, lateral
             entrant, or international learner, DSU has a dedicated channel for
             you.
@@ -499,7 +499,7 @@ function AdmissionRoutesSection() {
                 <CardTitle className="mt-4 text-2xl font-semibold text-foreground">
                   {track.title}
                 </CardTitle>
-                <CardDescription className="mt-2 text-base leading-relaxed text-white">
+                <CardDescription className="mt-2 text-base leading-relaxed text-muted-foreground">
                   {track.description}
                 </CardDescription>
               </CardHeader>
@@ -508,7 +508,7 @@ function AdmissionRoutesSection() {
                   {track.highlights.map((point) => (
                     <div
                       key={point}
-                      className="flex items-start gap-3 text-sm text-white"
+                      className="flex items-start gap-3 text-sm text-muted-foreground"
                     >
                       <ListChecks className="mt-0.5 h-4 w-4 text-orange-500" />
                       <span>{point}</span>
@@ -516,7 +516,7 @@ function AdmissionRoutesSection() {
                   ))}
                 </div>
                 <Button
-                  className="w-full justify-center rounded-xl bg-gradient-to-r from-orange-500 to-red-500 text-white hover:from-red-500 hover:to-orange-500"
+                  className="w-full justify-center rounded-xl bg-gradient-to-r from-orange-500 to-red-500 text-muted-foreground hover:from-red-500 hover:to-orange-500"
                   asChild
                 >
                   <a href={track.href} target="_blank" rel="noreferrer">
@@ -541,7 +541,7 @@ function BrochureSection() {
           <h2 className="text-3xl font-bold md:text-4xl">
             Program Guides &amp; Brochures
           </h2>
-          <p className="mt-3 text-lg text-white">
+          <p className="mt-3 text-lg text-muted-foreground">
             Download detailed brochures to understand curricula, laboratories,
             internships, and placement pathways for every DSU school.
           </p>
@@ -556,14 +556,14 @@ function BrochureSection() {
                 <CardTitle className="text-xl font-semibold text-foreground">
                   {resource.title}
                 </CardTitle>
-                <CardDescription className="text-sm text-white">
+                <CardDescription className="text-sm text-muted-foreground">
                   {resource.subtitle}
                 </CardDescription>
               </CardHeader>
               <CardContent className="flex flex-col gap-4">
                 <Button
                   variant="secondary"
-                  className="justify-center rounded-xl bg-orange-500/10 text-orange-500 hover:bg-orange-500 hover:text-white"
+                  className="justify-center rounded-xl bg-orange-500/10 text-orange-500 hover:bg-orange-500 hover:text-muted-foreground"
                   asChild
                 >
                   <a href={resource.href} target="_blank" rel="noreferrer">
@@ -571,7 +571,7 @@ function BrochureSection() {
                     <Download className="h-4 w-4" />
                   </a>
                 </Button>
-                <p className="text-xs text-white">
+                <p className="text-xs text-muted-foreground">
                   Each brochure lists eligibility, semester-wise credits,
                   laboratory infrastructure, internship partners, and placement
                   support milestones.
@@ -724,7 +724,7 @@ function AIEngagementSection() {
           <h2 className="mt-4 text-3xl font-bold md:text-4xl">
             AI Chat &amp; Voice Assistance Hub
           </h2>
-          <p className="mt-3 text-lg text-white">
+          <p className="mt-3 text-lg text-muted-foreground">
             Engage with DSU&apos;s AI-powered chat bot for quick answers or
             launch the guided voice assistant for a hands-free overview.
           </p>
@@ -736,7 +736,7 @@ function AIEngagementSection() {
                 <CardTitle className="text-2xl font-semibold">
                   AI Chat Assistant
                 </CardTitle>
-                <CardDescription className="text-sm text-white">
+                <CardDescription className="text-sm text-muted-foreground">
                   Conversational guidance tailored to DSU admissions pathways.
                 </CardDescription>
               </div>
@@ -764,7 +764,7 @@ function AIEngagementSection() {
                     key={prompt}
                     type="button"
                     variant="secondary"
-                    className="rounded-full border border-orange-500/20 bg-orange-500/10 text-xs text-orange-500 hover:bg-orange-500 hover:text-white"
+                    className="rounded-full border border-orange-500/20 bg-orange-500/10 text-xs text-orange-500 hover:bg-orange-500 hover:text-muted-foreground"
                     onClick={() => handleSamplePrompt(prompt)}
                   >
                     {prompt}
@@ -781,7 +781,7 @@ function AIEngagementSection() {
                 <div className="flex justify-end">
                   <Button
                     type="submit"
-                    className="rounded-xl bg-gradient-to-r from-orange-500 to-red-500 text-white hover:from-red-500 hover:to-orange-500"
+                    className="rounded-xl bg-gradient-to-r from-orange-500 to-red-500 text-muted-foreground hover:from-red-500 hover:to-orange-500"
                   >
                     Send Message
                     <ArrowRight className="h-4 w-4" />
@@ -796,7 +796,7 @@ function AIEngagementSection() {
                 <CardTitle className="text-2xl font-semibold">
                   Voice Assistant
                 </CardTitle>
-                <CardDescription className="text-sm text-white">
+                <CardDescription className="text-sm text-muted-foreground">
                   Receive a narrated briefing covering codes, timelines, and
                   support channels.
                 </CardDescription>
@@ -804,7 +804,7 @@ function AIEngagementSection() {
               <Headphones className="h-8 w-8 text-orange-500" />
             </CardHeader>
             <CardContent className="space-y-6">
-              <div className="rounded-2xl border border-orange-500/20 bg-background/80 p-4 text-sm leading-relaxed text-white">
+              <div className="rounded-2xl border border-orange-500/20 bg-background/80 p-4 text-sm leading-relaxed text-muted-foreground">
                 <p>
                   Activate the voice guide to hear a curated summary of DSU
                   admissions. Use it in counseling kiosks or during open houses
@@ -818,7 +818,7 @@ function AIEngagementSection() {
               <div className="flex flex-wrap items-center gap-3">
                 <Button
                   type="button"
-                  className="rounded-xl bg-gradient-to-r from-orange-500 to-red-500 text-white hover:from-red-500 hover:to-orange-500"
+                  className="rounded-xl bg-gradient-to-r from-orange-500 to-red-500 text-muted-foreground hover:from-red-500 hover:to-orange-500"
                   onClick={handleVoiceStart}
                   disabled={voiceActive}
                 >
@@ -830,7 +830,7 @@ function AIEngagementSection() {
                 <Button
                   type="button"
                   variant="outline"
-                  className="rounded-xl border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white"
+                  className="rounded-xl border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-muted-foreground"
                   onClick={handleVoiceStop}
                   disabled={!voiceActive}
                 >
@@ -854,7 +854,7 @@ function AIEngagementSection() {
                   <Button
                     type="button"
                     variant="secondary"
-                    className="rounded-xl bg-orange-500/10 text-orange-500 hover:bg-orange-500 hover:text-white"
+                    className="rounded-xl bg-orange-500/10 text-orange-500 hover:bg-orange-500 hover:text-muted-foreground"
                     asChild
                   >
                     <a href="mailto:admissions@dsu.edu.in?subject=DSU%20Voice%20Assistant%20Call%20Back">
@@ -880,7 +880,7 @@ function ContactSection() {
           <h2 className="text-3xl font-bold md:text-4xl">
             Connect with Our Admissions Team
           </h2>
-          <p className="mt-3 text-lg text-white">
+          <p className="mt-3 text-lg text-muted-foreground">
             Visit a DSU campus, schedule virtual counseling, or call the
             helpline numbers below for real-time assistance.
           </p>
@@ -898,11 +898,11 @@ function ContactSection() {
                     {campus.title}
                   </CardTitle>
                 </div>
-                <CardDescription className="mt-4 text-sm leading-relaxed text-white">
+                <CardDescription className="mt-4 text-sm leading-relaxed text-muted-foreground">
                   {campus.address}
                 </CardDescription>
               </CardHeader>
-              <CardContent className="space-y-4 text-sm text-white">
+              <CardContent className="space-y-4 text-sm text-muted-foreground">
                 <div>
                   <p className="font-semibold text-foreground">Helpline</p>
                   <div className="mt-2 space-y-1">
@@ -934,7 +934,7 @@ function ContactSection() {
                   Hotline Directory
                 </CardTitle>
               </div>
-              <CardDescription className="mt-2 text-sm text-white">
+              <CardDescription className="mt-2 text-sm text-muted-foreground">
                 Reach specialized teams to clarify program requisites,
                 counseling logistics, and post-admission onboarding.
               </CardDescription>
@@ -948,7 +948,7 @@ function ContactSection() {
                   <p className="text-sm font-semibold text-foreground">
                     {group.label}
                   </p>
-                  <div className="mt-2 space-y-1 text-xs text-white">
+                  <div className="mt-2 space-y-1 text-xs text-muted-foreground">
                     {group.entries.map((entry) => (
                       <p key={`${group.label}-${entry}`}>{entry}</p>
                     ))}
@@ -965,7 +965,7 @@ function ContactSection() {
                   Regional &amp; International Outreach
                 </CardTitle>
               </div>
-              <CardDescription className="mt-2 text-sm text-white">
+              <CardDescription className="mt-2 text-sm text-muted-foreground">
                 Connect with zonal coordinators and global offices for localized
                 support.
               </CardDescription>
@@ -977,7 +977,7 @@ function ContactSection() {
                   className="rounded-2xl border border-orange-500/20 bg-background/70 p-4 text-sm"
                 >
                   <p className="font-semibold text-foreground">{item.region}</p>
-                  <p className="mt-1 text-white">{item.contact}</p>
+                  <p className="mt-1 text-muted-foreground">{item.contact}</p>
                 </div>
               ))}
               <div className="sm:col-span-2 rounded-2xl border border-orange-500/20 bg-orange-500/10 p-4 text-sm text-orange-500">
@@ -1003,7 +1003,7 @@ function SupportCallout() {
         <h2 className="mt-6 text-3xl font-bold text-foreground md:text-4xl">
           Ready to Personalize Your Admission Journey?
         </h2>
-        <p className="mt-4 text-lg text-white">
+        <p className="mt-4 text-lg text-muted-foreground">
           Our counselors are available across campuses, over phone, chat, and
           voice assistance. Book a session to design your academic roadmap with
           DSU.
@@ -1022,7 +1022,7 @@ function SupportCallout() {
         <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <Button
             size="lg"
-            className="rounded-2xl bg-gradient-to-r from-orange-500 to-red-500 px-8 py-6 text-lg font-semibold text-white hover:from-red-500 hover:to-orange-500"
+            className="rounded-2xl bg-gradient-to-r from-orange-500 to-red-500 px-8 py-6 text-lg font-semibold text-muted-foreground hover:from-red-500 hover:to-orange-500"
             asChild
           >
             <a href="mailto:admissions@dsu.edu.in?subject=Schedule%20a%20Counseling%20Session">

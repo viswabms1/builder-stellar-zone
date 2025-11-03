@@ -171,18 +171,18 @@ function HighlightCard({ highlight }: { highlight: Highlight }) {
         className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-      <div className="absolute top-4 left-4 inline-flex items-center gap-2 rounded-full bg-black/40 px-3 py-1 text-xs text-white">
+      <div className="absolute top-4 left-4 inline-flex items-center gap-2 rounded-full bg-black/40 px-3 py-1 text-xs text-muted-foreground">
         <Icon className="h-4 w-4" /> Highlight
       </div>
-      <div className="absolute inset-x-0 bottom-0 p-5 text-white">
+      <div className="absolute inset-x-0 bottom-0 p-5 text-muted-foreground">
         <h3 className="mb-2 text-lg font-semibold font-display">
           {highlight.title}
         </h3>
-        <p className="text-sm text-white/80 font-body">
+        <p className="text-sm text-muted-foreground/80 font-body">
           {highlight.description}
         </p>
         {highlight.stat ? (
-          <div className="mt-3 text-xs uppercase tracking-wide text-white/70 font-body">
+          <div className="mt-3 text-xs uppercase tracking-wide text-muted-foreground/70 font-body">
             {highlight.stat}
           </div>
         ) : null}
@@ -202,7 +202,7 @@ function PillarCard({ pillar }: { pillar: Pillar }) {
         <CardTitle className="text-base font-display">{pillar.title}</CardTitle>
       </CardHeader>
       <CardContent className="pt-0">
-        <CardDescription className="text-sm leading-relaxed text-white font-body">
+        <CardDescription className="text-sm leading-relaxed text-muted-foreground font-body">
           {pillar.description}
         </CardDescription>
       </CardContent>
@@ -247,7 +247,7 @@ function ResourceCard({ resource }: { resource: Resource }) {
           {resource.title}
         </CardTitle>
       </CardHeader>
-      <CardContent className="space-y-5 text-sm text-white font-body">
+      <CardContent className="space-y-5 text-sm text-muted-foreground font-body">
         <p>{resource.description}</p>
         <a
           href={resource.href}
@@ -284,10 +284,10 @@ export default function MedicalEducationResearch() {
                 Medical Education & Research
               </span>
             </div>
-            <h1 className="mb-4 font-display text-4xl leading-tight text-white md:text-6xl">
+            <h1 className="mb-4 font-display text-4xl leading-tight text-muted-foreground md:text-6xl">
               Empowering Physicians Through Knowledge, Discovery & Healing
             </h1>
-            <p className="max-w-3xl text-white/90 font-body text-lg">
+            <p className="max-w-3xl text-muted-foreground/90 font-body text-lg">
               DSU's medical education and research ecosystem unites CDSIMER's
               smart campus, tertiary care hospital and translational research to
               elevate patient care and community wellbeing.
@@ -298,7 +298,7 @@ export default function MedicalEducationResearch() {
                 target="_blank"
                 rel="noreferrer"
               >
-                <Button className="bg-brand-gradient text-white">
+                <Button className="bg-brand-gradient text-muted-foreground">
                   Enquire Now
                 </Button>
               </a>
@@ -348,7 +348,7 @@ export default function MedicalEducationResearch() {
             <h2 className="mt-4 font-display text-3xl md:text-4xl">
               One Ecosystem. Many Possibilities.
             </h2>
-            <p className="mt-3 text-sm text-white font-body max-w-3xl mx-auto">
+            <p className="mt-3 text-sm text-muted-foreground font-body max-w-3xl mx-auto">
               From classroom to clinic, DSU Medical Education & Research unifies
               learning, care delivery and innovation for future-ready
               physicians.
@@ -375,7 +375,7 @@ export default function MedicalEducationResearch() {
               <h2 className="mt-4 font-display text-3xl md:text-4xl">
                 Plan Your Journey
               </h2>
-              <p className="mt-3 text-sm text-white font-body">
+              <p className="mt-3 text-sm text-muted-foreground font-body">
                 Access enquiry support, campus events, library resources and
                 immersive tours to experience DSU's medical ecosystem.
               </p>
@@ -404,7 +404,7 @@ export default function MedicalEducationResearch() {
             <h3 className="mb-3 font-display text-3xl">
               Shape the Future of Healthcare with DSU
             </h3>
-            <p className="mb-6 text-white font-body">
+            <p className="mb-6 text-muted-foreground font-body">
               Join a medical community that blends compassionate care, research
               innovation and community service on one vibrant campus.
             </p>
@@ -414,7 +414,7 @@ export default function MedicalEducationResearch() {
                 target="_blank"
                 rel="noreferrer"
               >
-                <Button className="bg-brand-gradient text-white">
+                <Button className="bg-brand-gradient text-muted-foreground">
                   Enquire Now
                   <GraduationCap className="ml-2 h-4 w-4" />
                 </Button>

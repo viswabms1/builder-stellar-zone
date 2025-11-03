@@ -224,18 +224,18 @@ function HighlightCard({ highlight }: { highlight: Highlight }) {
         className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-      <div className="absolute top-4 left-4 inline-flex items-center gap-2 rounded-full bg-black/40 px-3 py-1 text-xs text-white">
+      <div className="absolute top-4 left-4 inline-flex items-center gap-2 rounded-full bg-black/40 px-3 py-1 text-xs text-muted-foreground">
         <Icon className="h-4 w-4" /> USP
       </div>
-      <div className="absolute inset-x-0 bottom-0 p-5 text-white">
+      <div className="absolute inset-x-0 bottom-0 p-5 text-muted-foreground">
         <h3 className="mb-2 text-lg font-semibold font-display">
           {highlight.title}
         </h3>
-        <p className="text-sm text-white/80 font-body">
+        <p className="text-sm text-muted-foreground/80 font-body">
           {highlight.description}
         </p>
         {highlight.stat ? (
-          <div className="mt-3 text-xs uppercase tracking-wide text-white/70 font-body">
+          <div className="mt-3 text-xs uppercase tracking-wide text-muted-foreground/70 font-body">
             {highlight.stat}
           </div>
         ) : null}
@@ -255,7 +255,7 @@ function ProgrammeCard({ programme }: { programme: Programme }) {
           {programme.name}
         </CardTitle>
       </CardHeader>
-      <CardContent className="space-y-4 text-sm text-white font-body">
+      <CardContent className="space-y-4 text-sm text-muted-foreground font-body">
         <p>{programme.focus}</p>
       </CardContent>
     </Card>
@@ -288,7 +288,7 @@ function SupportUnitCard({ unit }: { unit: SupportUnit }) {
         <CardTitle className="text-base font-display">{unit.title}</CardTitle>
       </CardHeader>
       <CardContent className="pt-0">
-        <CardDescription className="text-sm leading-relaxed text-white font-body">
+        <CardDescription className="text-sm leading-relaxed text-muted-foreground font-body">
           {unit.description}
         </CardDescription>
       </CardContent>
@@ -322,7 +322,7 @@ function ResourceCard({ resource }: { resource: Resource }) {
           {resource.title}
         </CardTitle>
       </CardHeader>
-      <CardContent className="space-y-5 text-sm text-white font-body">
+      <CardContent className="space-y-5 text-sm text-muted-foreground font-body">
         <p>{resource.description}</p>
         {resource.href.startsWith("/") ? (
           <Link
@@ -369,17 +369,17 @@ export default function HealthSciences() {
                 School of Health Sciences
               </span>
             </div>
-            <h1 className="mb-4 font-display text-4xl leading-tight text-white md:text-6xl">
+            <h1 className="mb-4 font-display text-4xl leading-tight text-muted-foreground md:text-6xl">
               Advancing Care. Inspiring Wellness.
             </h1>
-            <p className="max-w-2xl text-white/90 font-body text-lg">
+            <p className="max-w-2xl text-muted-foreground/90 font-body text-lg">
               Build a career in nursing, pharmacy, physiotherapy and allied
               health with simulation-rich learning and patient-centric hospital
               immersion.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link to="/admissions">
-                <Button className="bg-brand-gradient text-white">
+                <Button className="bg-brand-gradient text-muted-foreground">
                   Apply Now
                 </Button>
               </Link>
@@ -410,7 +410,7 @@ export default function HealthSciences() {
               <h2 className="font-display text-3xl md:text-4xl">
                 Programmes that transform healthcare delivery
               </h2>
-              <p className="text-sm text-white font-body">
+              <p className="text-sm text-muted-foreground font-body">
                 Nursing, pharmaceutical sciences, physiotherapy and allied health programmes integrate clinical rotations, research immersion and simulation-based training to graduate compassionate health professionals.
               </p>
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -479,7 +479,7 @@ export default function HealthSciences() {
               <h2 className="mt-4 font-display text-3xl md:text-4xl">
                 Collaborative Health Sciences Ecosystem
               </h2>
-              <p className="mt-3 text-sm text-white font-body">
+              <p className="mt-3 text-sm text-muted-foreground font-body">
                 Four specialised colleges work together on shared curriculum,
                 simulation labs and clinical postings to deliver comprehensive
                 healthcare education.
@@ -513,7 +513,7 @@ export default function HealthSciences() {
               <h2 className="mt-4 font-display text-3xl md:text-4xl">
                 Stay Prepared for Every Milestone
               </h2>
-              <p className="mt-3 text-sm text-white font-body">
+              <p className="mt-3 text-sm text-muted-foreground font-body">
                 Access calendars, compliance handbooks, admissions updates and
                 hospital partners to plan your journey at the School of Health
                 Sciences.
@@ -543,14 +543,14 @@ export default function HealthSciences() {
             <h3 className="mb-3 font-display text-3xl">
               Champion Health & Wellbeing with DSU
             </h3>
-            <p className="mb-6 text-white font-body">
+            <p className="mb-6 text-muted-foreground font-body">
               Engage with expert mentors, cutting-edge labs and community
               outreach that empower you to deliver compassionate, evidence-based
               care.
             </p>
             <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
               <Link to="/admissions">
-                <Button className="bg-brand-gradient text-white">
+                <Button className="bg-brand-gradient text-muted-foreground">
                   Start Application
                   <GraduationCap className="ml-2 h-4 w-4" />
                 </Button>
