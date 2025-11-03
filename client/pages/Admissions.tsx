@@ -363,7 +363,7 @@ function HeroSection() {
         <h1 className="mt-8 text-4xl font-bold leading-tight text-foreground md:text-6xl">
           Forge Your Future with Dayananda Sagar University
         </h1>
-        <p className="mt-6 text-lg text-muted-foreground md:text-xl">
+        <p className="mt-6 text-lg text-white md:text-xl">
           Choose from industry-aligned undergraduate, postgraduate, doctoral,
           and online programs with expert mentoring, modern labs, and global
           exposure.
