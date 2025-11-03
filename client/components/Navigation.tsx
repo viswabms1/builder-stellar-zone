@@ -23,7 +23,7 @@ export default function Navigation() {
     { name: "Academics", href: "/academics", icon: BookOpen },
     { name: "Admissions", href: "/admissions", icon: GraduationCap },
     { name: "Campus Life", href: "/campus-life", icon: Building },
-    { name: "Centre of Excellence & Innovation", href: "#", icon: Lightbulb },
+    { name: "Centre of Excellence & Innovation", href: "/centre-of-excellence", icon: Lightbulb },
     { name: "About", href: "/about", icon: Users },
     {
       name: "Public Self Disclosure",
