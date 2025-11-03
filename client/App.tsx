@@ -126,6 +126,7 @@ function App() {
               <Route path="/about/history" element={<History />} />
               <Route path="/about/leadership" element={<Leadership />} />
               <Route path="/about/board-of-governors" element={<BoardOfGovernors />} />
+              <Route path="/about/board-of-management" element={<BoardOfManagement />} />
               <Route path="/about/accreditations" element={<Accreditations />} />
               <Route path="/about/facilities" element={<Facilities />} />
               <Route path="/centre-of-excellence" element={<CentreOfExcellence />} />
