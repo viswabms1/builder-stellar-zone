@@ -278,7 +278,7 @@ export default function Index() {
                   )}
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  <CardDescription className="text-muted-foreground leading-relaxed font-body">
+                  <CardDescription className="text-foreground leading-relaxed font-body">
                     {school.description}
                   </CardDescription>
                   <div className="space-y-2">
