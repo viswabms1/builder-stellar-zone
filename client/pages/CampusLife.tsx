@@ -517,10 +517,10 @@ export default function CampusLife() {
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex items-end p-8">
-              <div className="text-foreground">
+              <div className="text-white">
                 <Badge className="mb-4 bg-orange-500">Featured</Badge>
                 <h3 className="text-3xl font-bold mb-2">My Journey at DSU</h3>
-                <p className="text-orange-100">A student's journey of growth, learning, and unforgettable memories</p>
+                <p className="text-white">A student's journey of growth, learning, and unforgettable memories</p>
               </div>
             </div>
           </div>
