@@ -56,7 +56,7 @@ export default function CampusLife() {
               </span>
             </div>
 
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 leading-tight text-foreground">
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 leading-tight text-white">
               <span>More Than Just</span>
               <br />
               <span className="text-orange-300">Education</span>
