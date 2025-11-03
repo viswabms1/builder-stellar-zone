@@ -207,7 +207,7 @@ export default function Navigation() {
 
                     {/* Mobile About Submenu */}
                     {aboutMenuOpen && (
-                      <div className="bg-white/10 rounded-lg py-2 ml-4 border-l-2 border-white/30">
+                      <div className="bg-white/20 rounded-lg py-2 ml-4 border-l-2 border-white/40">
                         {aboutSubmenus.map((submenu) => (
                           <Link
                             key={submenu.name}
@@ -216,7 +216,7 @@ export default function Navigation() {
                               setIsOpen(false);
                               setAboutMenuOpen(false);
                             }}
-                            className="block px-4 py-2 text-sm text-white/80 hover:text-white hover:bg-white/10 rounded transition-colors"
+                            className="block px-4 py-2 text-sm text-white hover:bg-white/20 rounded transition-colors"
                           >
                             {submenu.name}
                           </Link>
