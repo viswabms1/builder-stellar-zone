@@ -33,6 +33,7 @@ import History from "./pages/History";
 import Leadership from "./pages/Leadership";
 import BoardOfGovernors from "./pages/BoardOfGovernors";
 import BoardOfManagement from "./pages/BoardOfManagement";
+import FinanceCommittee from "./pages/FinanceCommittee";
 import Accreditations from "./pages/Accreditations";
 import Facilities from "./pages/Facilities";
 import Placements from "./pages/Placements";
@@ -129,6 +130,7 @@ function App() {
               <Route path="/about/leadership" element={<Leadership />} />
               <Route path="/about/board-of-governors" element={<BoardOfGovernors />} />
               <Route path="/about/board-of-management" element={<BoardOfManagement />} />
+              <Route path="/about/finance-committee" element={<FinanceCommittee />} />
               <Route path="/about/accreditations" element={<Accreditations />} />
               <Route path="/about/facilities" element={<Facilities />} />
               <Route path="/centre-of-excellence" element={<CentreOfExcellence />} />
