@@ -131,15 +131,36 @@ export default function Navigation() {
 
                     {/* Mega Menu Dropdown */}
                     <div className="absolute left-0 top-full mt-0 w-64 bg-gradient-to-b from-orange-600 to-red-700 text-white rounded-lg shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 py-4">
-                      {aboutSubmenus.map((submenu) => (
-                        <Link
-                          key={submenu.name}
-                          to={submenu.href}
-                          className="block px-6 py-3 hover:bg-white/20 transition-colors text-sm border-b border-white/20 last:border-b-0"
-                        >
-                          {submenu.name}
-                        </Link>
-                      ))}
+                      {aboutSubmenus.map((submenu, idx) => {
+                        const isSubmenuWithChildren = "children" in submenu;
+                        if (isSubmenuWithChildren) {
+                          return (
+                            <div key={submenu.name}>
+                              <div className="px-6 py-3 text-sm font-medium border-b border-white/20">
+                                {submenu.name}
+                              </div>
+                              {submenu.children?.map((child) => (
+                                <Link
+                                  key={child.name}
+                                  to={child.href}
+                                  className="block px-9 py-2 hover:bg-white/20 transition-colors text-sm border-b border-white/20 last:border-b-0"
+                                >
+                                  {child.name}
+                                </Link>
+                              ))}
+                            </div>
+                          );
+                        }
+                        return (
+                          <Link
+                            key={submenu.name}
+                            to={submenu.href}
+                            className="block px-6 py-3 hover:bg-white/20 transition-colors text-sm border-b border-white/20 last:border-b-0"
+                          >
+                            {submenu.name}
+                          </Link>
+                        );
+                      })}
                     </div>
                   </div>
                 );
