@@ -27,6 +27,7 @@ import DeptAIML from "./pages/DeptAIML";
 import DeptCSE from "./pages/DeptCSE";
 import IQAC from "./pages/IQAC";
 import FacultyCSE from "./pages/FacultyCSE";
+import CentreOfExcellence from "./pages/CentreOfExcellence";
 import { ThemeProvider } from "./providers/theme-provider";
 import FacultyProfile from "./pages/FacultyProfile";
 import FacultyRohitKumarSingh from "./pages/faculty/RohitKumarSingh";
