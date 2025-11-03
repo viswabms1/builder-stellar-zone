@@ -490,18 +490,30 @@ export default function Leadership() {
                 </Card>
               );
 
-              if (committee.link && (committee.external || committee.link.startsWith("http"))) {
-                return (
-                  <a
-                    key={index}
-                    href={committee.link}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-lg"
-                  >
-                    {cardElement}
-                  </a>
-                );
+              if (committee.link) {
+                if (committee.external || committee.link.startsWith("http")) {
+                  return (
+                    <a
+                      key={index}
+                      href={committee.link}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-lg"
+                    >
+                      {cardElement}
+                    </a>
+                  );
+                } else {
+                  return (
+                    <Link
+                      key={index}
+                      to={committee.link}
+                      className="block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-lg"
+                    >
+                      {cardElement}
+                    </Link>
+                  );
+                }
               }
               return cardElement;
             })}
