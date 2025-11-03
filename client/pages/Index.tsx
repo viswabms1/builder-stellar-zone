@@ -116,7 +116,7 @@ export default function Index() {
               </span>
               <span className="text-foreground"> That Inspires</span>
             </h2>
-            <p className="subheadline text-muted-foreground max-w-3xl mx-auto font-display">
+            <p className="subheadline text-white max-w-3xl mx-auto font-display">
               Discover cutting-edge programs designed to prepare you for
               tomorrow's challenges
             </p>
