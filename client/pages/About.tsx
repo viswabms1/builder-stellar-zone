@@ -65,7 +65,7 @@ export default function About() {
             <span className="text-foreground">University</span>
           </h1>
 
-          <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-white mb-12 max-w-4xl mx-auto leading-relaxed">
             A legacy of
             <span className="text-orange-400 font-semibold">
               {" "}
@@ -124,7 +124,7 @@ export default function About() {
                 <div className="text-3xl font-bold text-foreground mb-1">
                   {stat.number}
                 </div>
-                <div className="text-sm text-muted-foreground">
+                <div className="text-sm text-white">
                   {stat.label}
                 </div>
               </Card>
@@ -189,7 +189,7 @@ export default function About() {
                       <h3 className="font-bold text-lg mb-2 group-hover:text-orange-500 transition-colors">
                         {section.title}
                       </h3>
-                      <p className="text-sm text-muted-foreground">
+                      <p className="text-sm text-white">
                         {section.description}
                       </p>
                     </CardContent>
@@ -278,7 +278,7 @@ export default function About() {
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-muted-foreground leading-relaxed">
+                    <p className="text-white leading-relaxed">
                       {section.description}
                     </p>
                   </CardContent>
@@ -379,7 +379,7 @@ export default function About() {
                 >
                   {milestone.milestone}
                 </Badge>
-                <p className="text-sm text-muted-foreground leading-relaxed">
+                <p className="text-sm text-white leading-relaxed">
                   {milestone.description}
                 </p>
               </Card>
@@ -503,7 +503,7 @@ export default function About() {
                     >
                       {leader.role}
                     </Badge>
-                    <p className="text-sm text-muted-foreground">
+                    <p className="text-sm text-white">
                       {leader.experience} Experience
                     </p>
                   </div>
@@ -513,7 +513,7 @@ export default function About() {
                     <p className="text-sm font-semibold text-foreground mb-2">
                       Expertise:
                     </p>
-                    <p className="text-sm text-muted-foreground">
+                    <p className="text-sm text-white">
                       {leader.expertise}
                     </p>
                   </div>
@@ -526,7 +526,7 @@ export default function About() {
                       {leader.achievements.map((achievement, idx) => (
                         <div
                           key={idx}
-                          className="flex items-center text-sm text-muted-foreground"
+                          className="flex items-center text-sm text-white"
                         >
                           <Star className="w-3 h-3 text-orange-500 mr-2 flex-shrink-0" />
                           {achievement}
@@ -536,7 +536,7 @@ export default function About() {
                   </div>
 
                   <div className="bg-orange-500/5 rounded-lg p-3 border-l-4 border-orange-500">
-                    <p className="text-sm italic text-muted-foreground">
+                    <p className="text-sm italic text-white">
                       "{leader.quote}"
                     </p>
                   </div>
@@ -632,7 +632,7 @@ export default function About() {
                 <Badge variant="secondary" className="mb-3 text-xs">
                   {recognition.year}
                 </Badge>
-                <p className="text-sm text-muted-foreground leading-relaxed">
+                <p className="text-sm text-white leading-relaxed">
                   {recognition.description}
                 </p>
               </Card>
@@ -691,7 +691,7 @@ export default function About() {
                 <h3 className="text-lg font-bold mb-3 group-hover:text-orange-500 transition-colors">
                   {contact.title}
                 </h3>
-                <p className="text-sm text-muted-foreground mb-4 leading-relaxed whitespace-pre-line">
+                <p className="text-sm text-white mb-4 leading-relaxed whitespace-pre-line">
                   {contact.info}
                 </p>
                 <Button
