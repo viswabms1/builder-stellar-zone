@@ -117,7 +117,7 @@ export default function VisionMission() {
             </span>
           </h1>
 
-          <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-white mb-8 leading-relaxed max-w-3xl mx-auto">
             Guiding principles that define our commitment to academic excellence, innovation, and societal impact.
           </p>
         </div>
@@ -233,7 +233,7 @@ export default function VisionMission() {
                 Core Values
               </span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-lg text-white max-w-3xl mx-auto">
               The principles that guide our decisions, actions, and interactions
             </p>
           </div>
@@ -276,7 +276,7 @@ export default function VisionMission() {
                 Goals
               </span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-lg text-white max-w-3xl mx-auto">
               Our roadmap to achieving excellence and creating lasting impact
             </p>
           </div>
@@ -311,7 +311,7 @@ export default function VisionMission() {
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Join Us in Our Mission
           </h2>
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+          <p className="text-lg text-white mb-8 max-w-2xl mx-auto">
             Be part of a community dedicated to excellence, innovation, and making a positive impact on the world.
           </p>
 
