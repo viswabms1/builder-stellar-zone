@@ -80,7 +80,7 @@ export default function Academics() {
                 under Dayananda Sagar University
               </span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xl text-white max-w-3xl mx-auto">
               Choose from our diverse range of academic schools, each offering
               cutting-edge programs and world-class faculty.
             </p>
@@ -498,7 +498,7 @@ export default function Academics() {
               </span>
               ?
             </h2>
-            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-white mb-8 max-w-2xl mx-auto">
               Explore our academic programs and find the perfect fit for your
               career aspirations.
             </p>
