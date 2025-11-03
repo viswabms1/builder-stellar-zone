@@ -514,7 +514,7 @@ export default function Leadership() {
       </section>
 
       {/* Governance Committees */}
-      <section className="px-6 py-20">
+      <section id="administrative-committees" className="px-6 py-20">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <Badge
