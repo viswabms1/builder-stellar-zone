@@ -185,7 +185,7 @@ function OfferingCard({ offering }: { offering: Offering }) {
         </CardTitle>
       </CardHeader>
       <CardContent className="pt-0">
-        <CardDescription className="text-sm leading-relaxed text-muted-foreground font-body">
+        <CardDescription className="text-sm leading-relaxed text-white font-body">
           {offering.description}
         </CardDescription>
       </CardContent>
@@ -204,7 +204,7 @@ function ResourceCard({ resource }: { resource: Resource }) {
           {resource.title}
         </CardTitle>
       </CardHeader>
-      <CardContent className="space-y-5 text-sm text-muted-foreground font-body">
+      <CardContent className="space-y-5 text-sm text-white font-body">
         <p>{resource.description}</p>
         <a
           href={resource.href}
@@ -284,7 +284,7 @@ export default function CEE() {
             <h2 className="mt-4 font-display text-3xl md:text-4xl">
               Pathways for working professionals
             </h2>
-            <p className="mt-3 text-sm text-muted-foreground font-body max-w-3xl mx-auto">
+            <p className="mt-3 text-sm text-white font-body max-w-3xl mx-auto">
               Modular journeys blend weekend residencies, leadership labs, industry immersions and personalised mentoring to elevate executive careers.
             </p>
           </div>
@@ -333,7 +333,7 @@ export default function CEE() {
               <h2 className="mt-4 font-display text-3xl md:text-4xl">
                 Plan Your Executive Journey
               </h2>
-              <p className="mt-3 text-sm text-muted-foreground font-body">
+              <p className="mt-3 text-sm text-white font-body">
                 Access calendars, brochures and speaker archives to stay ahead
                 of application timelines and learning engagements.
               </p>
@@ -362,7 +362,7 @@ export default function CEE() {
             <h3 className="mb-3 font-display text-3xl">
               Accelerate Your Leadership Impact
             </h3>
-            <p className="mb-6 text-muted-foreground font-body">
+            <p className="mb-6 text-white font-body">
               Join an executive cohort that blends innovation labs, global
               mentors and actionable playbooks to elevate your organisation.
             </p>

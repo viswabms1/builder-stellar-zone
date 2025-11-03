@@ -96,7 +96,7 @@ export default function CentreOfExcellence() {
             <span className="text-foreground">& Innovation</span>
           </h1>
 
-          <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-white mb-8 leading-relaxed max-w-3xl mx-auto">
             Dayananda Sagar University is establishing world-class centres of
             excellence in emerging technologies, aligned with its AI-First
             approach to education, research, and innovation. These centres
@@ -104,7 +104,7 @@ export default function CentreOfExcellence() {
             collaboration.
           </p>
 
-          <div className="flex items-center justify-center space-x-4 text-sm text-muted-foreground">
+          <div className="flex items-center justify-center space-x-4 text-sm text-white">
             <TrendingUp className="w-5 h-5 text-orange-500" />
             <span>Building world-class research infrastructure</span>
           </div>
@@ -127,7 +127,7 @@ export default function CentreOfExcellence() {
                 Centres of Excellence
               </span>
             </h2>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-lg md:text-xl text-white max-w-3xl mx-auto">
               DSU is inviting consultants and industry partners to establish
               these cutting-edge centres, fostering research, innovation, and
               industry collaboration.
@@ -150,7 +150,7 @@ export default function CentreOfExcellence() {
                     </div>
 
                     <h3 className="text-xl font-bold mb-3">{centre.title}</h3>
-                    <p className="text-muted-foreground leading-relaxed">
+                    <p className="text-white leading-relaxed">
                       {centre.description}
                     </p>
                   </CardContent>

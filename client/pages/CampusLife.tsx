@@ -140,7 +140,7 @@ export default function CampusLife() {
                 <h3 className="text-xl font-bold text-foreground group-hover:text-orange-500 transition-colors mb-2">
                   {area.title}
                 </h3>
-                <p className="text-muted-foreground text-sm">
+                <p className="text-white text-sm">
                   {area.description}
                 </p>
               </div>
@@ -327,7 +327,7 @@ export default function CampusLife() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-muted-foreground">
+                  <CardDescription className="text-white">
                     {category.description}
                   </CardDescription>
                 </CardContent>
@@ -388,12 +388,12 @@ export default function CampusLife() {
                 <h3 className="text-3xl font-bold text-foreground mb-4">
                   {facility.title}
                 </h3>
-                <p className="text-lg text-muted-foreground mb-6">
+                <p className="text-lg text-white mb-6">
                   {facility.description}
                 </p>
                 <div className="space-y-2 mb-6">
                   {facility.features.map((feature) => (
-                    <div key={feature} className="flex items-center text-muted-foreground">
+                    <div key={feature} className="flex items-center text-white">
                       <span className="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>
                       {feature}
                     </div>

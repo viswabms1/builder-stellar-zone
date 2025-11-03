@@ -347,13 +347,13 @@ function StatCard({ stat }: { stat: Stat }) {
           <CardTitle className="text-2xl font-semibold font-display">
             {stat.value}
           </CardTitle>
-          <p className="text-sm text-muted-foreground font-body">
+          <p className="text-sm text-white font-body">
             {stat.label}
           </p>
         </div>
       </CardHeader>
       <CardContent className="pt-0">
-        <CardDescription className="text-sm leading-relaxed text-muted-foreground font-body">
+        <CardDescription className="text-sm leading-relaxed text-white font-body">
           {stat.description}
         </CardDescription>
       </CardContent>
@@ -374,12 +374,12 @@ function LifestyleFeatureCard({ feature }: { feature: LifestyleFeature }) {
             {feature.title}
           </CardTitle>
         </div>
-        <CardDescription className="mt-4 text-sm leading-relaxed text-muted-foreground font-body">
+        <CardDescription className="mt-4 text-sm leading-relaxed text-white font-body">
           {feature.description}
         </CardDescription>
       </CardHeader>
       <CardContent className="pt-0 space-y-4">
-        <ul className="space-y-3 text-sm text-muted-foreground font-body">
+        <ul className="space-y-3 text-sm text-white font-body">
           {feature.points.map((point) => (
             <li key={point} className="flex items-start gap-2">
               <ChevronRight className="mt-1 h-4 w-4 text-brand-magenta" />
@@ -416,12 +416,12 @@ function ProgrammeCard({ programme }: { programme: Programme }) {
             {programme.title}
           </CardTitle>
         </div>
-        <CardDescription className="mt-4 text-sm leading-relaxed text-muted-foreground font-body">
+        <CardDescription className="mt-4 text-sm leading-relaxed text-white font-body">
           {programme.description}
         </CardDescription>
       </CardHeader>
       <CardContent className="pt-0">
-        <ul className="space-y-2 text-sm text-muted-foreground font-body">
+        <ul className="space-y-2 text-sm text-white font-body">
           {programme.highlights.map((item) => (
             <li key={item} className="flex items-start gap-2">
               <ChevronRight className="mt-1 h-4 w-4 text-brand-magenta" />
@@ -446,7 +446,7 @@ function ClubCard({ club }: { club: Club }) {
           <CardTitle className="text-lg font-semibold font-display leading-tight">
             {club.title}
           </CardTitle>
-          <CardDescription className="mt-3 text-sm leading-relaxed text-muted-foreground font-body">
+          <CardDescription className="mt-3 text-sm leading-relaxed text-white font-body">
             {club.description}
           </CardDescription>
         </div>
@@ -486,7 +486,7 @@ function ResourceCard({ resource }: { resource: ResourceLink }) {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4 pt-0">
-        <CardDescription className="text-sm leading-relaxed text-muted-foreground font-body">
+        <CardDescription className="text-sm leading-relaxed text-white font-body">
           {resource.description}
         </CardDescription>
         <a
@@ -582,7 +582,7 @@ export default function CDSIMERLife() {
             <h2 className="mt-6 text-3xl font-display text-foreground md:text-4xl">
               A Holistic Residential Experience Built Around You
             </h2>
-            <p className="mt-4 text-sm text-muted-foreground font-body max-w-3xl mx-auto">
+            <p className="mt-4 text-sm text-white font-body max-w-3xl mx-auto">
               Purposeful spaces, supportive communities and wellness ecosystems
               empower students to balance rigorous academics with meaningful
               life experiences.
@@ -605,7 +605,7 @@ export default function CDSIMERLife() {
             <h2 className="mt-5 text-3xl font-display md:text-4xl">
               Live, Learn and Thrive Together
             </h2>
-            <p className="mt-4 text-sm text-muted-foreground font-body max-w-3xl mx-auto">
+            <p className="mt-4 text-sm text-white font-body max-w-3xl mx-auto">
               Connected residences, dining experiences and support services
               create a nurturing home away from home for future healthcare
               leaders.
@@ -629,7 +629,7 @@ export default function CDSIMERLife() {
               <h2 className="mt-4 text-3xl font-display md:text-4xl">
                 Wellness, Creativity & Social Impact
               </h2>
-              <p className="mt-3 text-sm text-muted-foreground font-body max-w-2xl">
+              <p className="mt-3 text-sm text-white font-body max-w-2xl">
                 Sports academies, cultural showcases and community outreach
                 immerse every CDSIMER student in holistic growth and responsible
                 citizenship.
@@ -662,7 +662,7 @@ export default function CDSIMERLife() {
             <h2 className="mt-5 text-3xl font-display md:text-4xl">
               Lead, Perform, Serve and Innovate
             </h2>
-            <p className="mt-4 text-sm text-muted-foreground font-body max-w-3xl mx-auto">
+            <p className="mt-4 text-sm text-white font-body max-w-3xl mx-auto">
               Join multidisciplinary communities that celebrate curiosity,
               service and collaboration across the CDSIMER campus.
             </p>
@@ -684,7 +684,7 @@ export default function CDSIMERLife() {
             <h2 className="mt-5 text-3xl font-display md:text-4xl">
               Snapshots from a Dynamic Campus
             </h2>
-            <p className="mt-4 text-sm text-muted-foreground font-body max-w-3xl mx-auto">
+            <p className="mt-4 text-sm text-white font-body max-w-3xl mx-auto">
               Explore everyday scenes that reflect camaraderie, creativity and
               the pursuit of excellence across CDSIMER.
             </p>
@@ -707,7 +707,7 @@ export default function CDSIMERLife() {
               <h2 className="mt-4 text-3xl font-display md:text-4xl">
                 Plan Your Life at CDSIMER
               </h2>
-              <p className="mt-3 text-sm text-muted-foreground font-body">
+              <p className="mt-3 text-sm text-white font-body">
                 Download handbooks, calendars and support resources to prepare
                 for a transformative residential journey.
               </p>
@@ -738,7 +738,7 @@ export default function CDSIMERLife() {
                 <h3 className="text-2xl font-display">
                   Ready to immerse yourself in life at CDSIMER?
                 </h3>
-                <p className="mt-2 max-w-2xl text-sm text-muted-foreground font-body">
+                <p className="mt-2 max-w-2xl text-sm text-white font-body">
                   Connect with the Student Affairs team for accommodation,
                   clubs, cultural festivals and wellbeing initiatives tailored
                   to your goals.
