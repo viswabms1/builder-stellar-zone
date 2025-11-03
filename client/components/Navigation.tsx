@@ -151,6 +151,17 @@ export default function Navigation() {
 
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center space-x-4">
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => setSearchOpen(true)}
+              className="text-white/80 hover:text-white hover:bg-white/10 gap-2"
+            >
+              <Search className="w-4 h-4" />
+              <span className="hidden lg:inline text-xs text-white/60">
+                Cmd+K
+              </span>
+            </Button>
             <ThemeToggle className="text-white/80 hover:text-white hover:bg-white/10" />
           </div>
 
