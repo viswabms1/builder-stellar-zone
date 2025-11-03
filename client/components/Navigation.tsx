@@ -33,11 +33,12 @@ export default function Navigation() {
 
   const navigation = [
     { name: "Home", href: "/", icon: Home },
+    { name: "About", href: "/about", icon: Users },
     { name: "Academics", href: "/academics", icon: BookOpen },
     { name: "Admissions", href: "/admissions", icon: GraduationCap },
     { name: "Campus Life", href: "/campus-life", icon: Building },
     { name: "Centre of Excellence & Innovation", href: "/centre-of-excellence", icon: Lightbulb },
-    { name: "About", href: "/about", icon: Users },
+    { name: "Placements", href: "/placements", icon: GraduationCap },
     {
       name: "Public Self Disclosure",
       href: "https://www.dsu.edu.in/images/University/Public_Self_Disclosure_DSU.pdf",
@@ -136,12 +137,6 @@ export default function Navigation() {
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center space-x-4">
             <ThemeToggle className="text-white/80 hover:text-white hover:bg-white/10" />
-            <Button
-              size="sm"
-              className="bg-white text-orange-600 hover:bg-white/90 px-6 rounded-xl shadow-lg hover:shadow-white/25 transition-all duration-300 font-display font-semibold"
-            >
-              Apply Now
-            </Button>
           </div>
 
           {/* Mobile menu button */}
@@ -246,12 +241,6 @@ export default function Navigation() {
                 className="self-start text-white/80 hover:text-white hover:bg-white/10"
                 onToggle={() => setIsOpen(false)}
               />
-              <Button
-                size="sm"
-                className="w-full bg-white text-orange-600 hover:bg-white/90 rounded-xl shadow-lg hover:shadow-white/25 transition-all duration-300 font-display font-semibold"
-              >
-                Apply Now
-              </Button>
             </div>
           </div>
         </div>
