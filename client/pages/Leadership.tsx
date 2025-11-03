@@ -38,7 +38,6 @@ export default function Leadership() {
         "Success belongs to the hardworking and creative, but it requires institutional leadership, supportive ambience, responsive culture, and access to intellectual, infrastructural, and other critical needs.",
       bio: "Dr. D. Premachandra Sagar, Pro Chancellor of DSU, emphasizes that DSU provides a unique ecosystem and platform for young minds to become innovators, scholars, and entrepreneurs. The university focuses on academics, incubation, and entrepreneurship—enabling students to walk in with ideas and emerge market-ready.",
       contact: "premachandra.sagar@yahoo.com | 080-24496999",
-      experience: "25+ Years",
       image: "https://www.dsu.edu.in/images/demo/prochancellor1.jpg",
       icon: Building,
     },
