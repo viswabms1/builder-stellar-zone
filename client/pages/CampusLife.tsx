@@ -64,7 +64,7 @@ export default function CampusLife() {
               <span>It's Home</span>
             </h1>
 
-            <p className="text-base md:text-lg text-orange-50 mb-6 leading-relaxed">
+            <p className="text-base md:text-lg text-white mb-6 leading-relaxed">
               Experience a vibrant campus community where friendships are made, talents are discovered, and memories are created.
             </p>
 
