@@ -132,6 +132,7 @@ export default function Leadership() {
         "Innovation support",
         "Collaboration facilitation",
       ],
+      link: "/about/research-innovation-council",
     },
     {
       name: "Finance Committee",
