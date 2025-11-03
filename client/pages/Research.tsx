@@ -120,8 +120,8 @@ export default function Research() {
                   <img src={`https://images.unsplash.com/photo-15${80+idx}5066931-4365d14bab8c?q=80&w=1200&auto=format&fit=crop`} alt={item.title} className="absolute inset-0 h-full w-full object-cover opacity-70 group-hover:opacity-80" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                   <div className="absolute bottom-0 p-4 flex items-center gap-3">
-                    <item.icon className="w-5 h-5 text-foreground" />
-                    <div className="text-foreground font-medium font-display">{item.title}</div>
+                    <item.icon className="w-5 h-5 text-white" />
+                    <div className="text-white font-medium font-display">{item.title}</div>
                   </div>
                 </div>
               </a>
