@@ -482,14 +482,14 @@ export default function Index() {
                     <h4 className="text-lg font-semibold font-display group-hover:text-brand-magenta transition-colors">
                       {item.title}
                     </h4>
-                    <p className="text-sm text-muted-foreground font-body">
+                    <p className="text-sm text-white font-body">
                       {item.excerpt}
                     </p>
                     <div className="flex items-center justify-between pt-1">
-                      <span className="text-xs text-muted-foreground font-body flex items-center">
+                      <span className="text-xs text-white font-body flex items-center">
                         <CalendarDays className="w-4 h-4 mr-1" /> {item.date}
                       </span>
-                      <ChevronRight className="w-4 h-4 text-muted-foreground group-hover:text-brand-magenta" />
+                      <ChevronRight className="w-4 h-4 text-white group-hover:text-brand-magenta" />
                     </div>
                   </div>
                 </Link>
@@ -521,7 +521,7 @@ export default function Index() {
                 Campus Life
               </span>
             </h2>
-            <p className="subheadline text-muted-foreground max-w-2xl mx-auto font-display">
+            <p className="subheadline text-white max-w-2xl mx-auto font-display">
               More than education - it's about building lifelong connections and
               memories
             </p>
@@ -562,7 +562,7 @@ export default function Index() {
                 <h3 className="headline-4 mb-2 group-hover:text-brand-magenta transition-colors">
                   {feature.title}
                 </h3>
-                <p className="text-sm text-muted-foreground mb-3 font-body">
+                <p className="text-sm text-white mb-3 font-body">
                   {feature.description}
                 </p>
                 <Badge
@@ -588,7 +588,7 @@ export default function Index() {
               <h2 className="headline-3 font-display">
                 Explore scholars, mentors, and industry experts across DSU
               </h2>
-              <p className="text-muted-foreground font-body max-w-3xl">
+              <p className="text-white font-body max-w-3xl">
                 Connect with faculty by school, discipline, or research focus in
                 our new directory. Filter by the programmes you care about and
                 reach out for collaborations, mentorship, and academic guidance.
@@ -622,7 +622,7 @@ export default function Index() {
                 ].map((item) => (
                   <div key={item} className="flex items-start gap-3">
                     <div className="mt-1 h-2.5 w-2.5 rounded-full bg-brand-magenta" />
-                    <p className="text-sm text-muted-foreground font-body">
+                    <p className="text-sm text-white font-body">
                       {item}
                     </p>
                   </div>
@@ -645,7 +645,7 @@ export default function Index() {
               </span>
               ?
             </h2>
-            <p className="subheadline text-muted-foreground mb-8 max-w-2xl mx-auto font-display">
+            <p className="subheadline text-white mb-8 max-w-2xl mx-auto font-display">
               Join thousands of students who've chosen DSU for their academic
               and personal growth.
             </p>
