@@ -46,17 +46,10 @@ export const searchIndex: SearchResult[] = [
     category: "About",
   },
   {
-    id: "board-of-governors",
-    title: "Board of Governors",
-    description: "Information about our Board of Governors",
-    path: "/about/board-of-governors",
-    category: "About",
-  },
-  {
-    id: "board-of-management",
-    title: "Board of Management",
-    description: "Information about our Board of Management",
-    path: "/about/board-of-management",
+    id: "administrative-committees",
+    title: "Administrative Committees",
+    description: "Information about administrative committees",
+    path: "/about/administrative-committees",
     category: "About",
   },
   {
