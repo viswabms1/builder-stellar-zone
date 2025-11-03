@@ -254,7 +254,7 @@ export default function Facilities() {
                 Campus Facilities
               </span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-lg text-white max-w-3xl mx-auto">
               Comprehensive facilities supporting academic, recreational, and residential needs
             </p>
           </div>
