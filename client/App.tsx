@@ -128,6 +128,10 @@ function App() {
               <Route path="/about/vision-mission" element={<VisionMission />} />
               <Route path="/about/history" element={<History />} />
               <Route path="/about/leadership" element={<Leadership />} />
+              <Route
+                path="/about/administrative-committees"
+                element={<AdministrativeCommittees />}
+              />
               <Route path="/about/board-of-governors" element={<BoardOfGovernors />} />
               <Route path="/about/board-of-management" element={<BoardOfManagement />} />
               <Route path="/about/accreditations" element={<Accreditations />} />
