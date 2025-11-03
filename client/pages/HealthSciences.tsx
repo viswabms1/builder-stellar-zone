@@ -255,7 +255,7 @@ function ProgrammeCard({ programme }: { programme: Programme }) {
           {programme.name}
         </CardTitle>
       </CardHeader>
-      <CardContent className="space-y-4 text-sm text-muted-foreground font-body">
+      <CardContent className="space-y-4 text-sm text-white font-body">
         <p>{programme.focus}</p>
       </CardContent>
     </Card>
@@ -288,7 +288,7 @@ function SupportUnitCard({ unit }: { unit: SupportUnit }) {
         <CardTitle className="text-base font-display">{unit.title}</CardTitle>
       </CardHeader>
       <CardContent className="pt-0">
-        <CardDescription className="text-sm leading-relaxed text-muted-foreground font-body">
+        <CardDescription className="text-sm leading-relaxed text-white font-body">
           {unit.description}
         </CardDescription>
       </CardContent>
@@ -322,7 +322,7 @@ function ResourceCard({ resource }: { resource: Resource }) {
           {resource.title}
         </CardTitle>
       </CardHeader>
-      <CardContent className="space-y-5 text-sm text-muted-foreground font-body">
+      <CardContent className="space-y-5 text-sm text-white font-body">
         <p>{resource.description}</p>
         {resource.href.startsWith("/") ? (
           <Link
@@ -410,7 +410,7 @@ export default function HealthSciences() {
               <h2 className="font-display text-3xl md:text-4xl">
                 Programmes that transform healthcare delivery
               </h2>
-              <p className="text-sm text-muted-foreground font-body">
+              <p className="text-sm text-white font-body">
                 Nursing, pharmaceutical sciences, physiotherapy and allied health programmes integrate clinical rotations, research immersion and simulation-based training to graduate compassionate health professionals.
               </p>
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -479,7 +479,7 @@ export default function HealthSciences() {
               <h2 className="mt-4 font-display text-3xl md:text-4xl">
                 Collaborative Health Sciences Ecosystem
               </h2>
-              <p className="mt-3 text-sm text-muted-foreground font-body">
+              <p className="mt-3 text-sm text-white font-body">
                 Four specialised colleges work together on shared curriculum,
                 simulation labs and clinical postings to deliver comprehensive
                 healthcare education.
@@ -513,7 +513,7 @@ export default function HealthSciences() {
               <h2 className="mt-4 font-display text-3xl md:text-4xl">
                 Stay Prepared for Every Milestone
               </h2>
-              <p className="mt-3 text-sm text-muted-foreground font-body">
+              <p className="mt-3 text-sm text-white font-body">
                 Access calendars, compliance handbooks, admissions updates and
                 hospital partners to plan your journey at the School of Health
                 Sciences.
@@ -543,7 +543,7 @@ export default function HealthSciences() {
             <h3 className="mb-3 font-display text-3xl">
               Champion Health & Wellbeing with DSU
             </h3>
-            <p className="mb-6 text-muted-foreground font-body">
+            <p className="mb-6 text-white font-body">
               Engage with expert mentors, cutting-edge labs and community
               outreach that empower you to deliver compassionate, evidence-based
               care.

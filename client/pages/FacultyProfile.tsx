@@ -45,7 +45,7 @@ export default function FacultyProfile() {
           <div className="md:col-span-2">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-magenta/10 text-brand-magenta text-xs mb-3">CSE Faculty</div>
             <h1 className="text-3xl md:text-5xl font-bold font-display">{f.name}</h1>
-            <p className="text-muted-foreground mt-1 font-body">{f.title}{f.qualifications ? ` • ${f.qualifications}` : ''}</p>
+            <p className="text-white mt-1 font-body">{f.title}{f.qualifications ? ` • ${f.qualifications}` : ''}</p>
             {f.email && (
               <div className="mt-5">
                 <a href={`mailto:${f.email}`}>
@@ -65,7 +65,7 @@ export default function FacultyProfile() {
                 <CardTitle className="font-display">About</CardTitle>
                 <CardDescription className="font-body">Professional interests and focus areas</CardDescription>
               </CardHeader>
-              <CardContent className="space-y-3 text-sm text-muted-foreground font-body">
+              <CardContent className="space-y-3 text-sm text-white font-body">
                 <p>
                   {`Professor ${f.name} is part of the Computer Science & Engineering department at DSU. Areas of interest include modern computing domains across AI/ML, Data Science, Systems, and Applications.`}
                 </p>
@@ -89,7 +89,7 @@ export default function FacultyProfile() {
                         <img src={imgFor(kw)} alt={kw} className="absolute inset-0 h-full w-full object-cover" />
                       </AspectRatio>
                       <CardContent className="pt-3">
-                        <div className="text-sm text-muted-foreground font-body">{kw}</div>
+                        <div className="text-sm text-white font-body">{kw}</div>
                       </CardContent>
                     </Card>
                   ))}
@@ -114,7 +114,7 @@ export default function FacultyProfile() {
         <div className="max-w-4xl mx-auto text-center">
           <div className="rounded-3xl p-8 border border-brand-magenta/20 bg-brand-magenta/5">
             <h3 className="headline-4 mb-2 font-display">Interested in studying under {f.name.split(' ')[0]}?</h3>
-            <p className="text-muted-foreground mb-4 font-body">Explore CSE programs and start your application today.</p>
+            <p className="text-white mb-4 font-body">Explore CSE programs and start your application today.</p>
             <Link to="/admissions">
               <Button className="bg-brand-gradient text-white">Apply Now<GraduationCap className="w-4 h-4 ml-2"/></Button>
             </Link>

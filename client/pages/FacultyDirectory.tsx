@@ -119,7 +119,7 @@ export default function FacultyDirectory() {
             <h1 className="font-display text-4xl leading-tight md:text-5xl">
               Discover Experts Across Every DSU School
             </h1>
-            <p className="text-sm text-muted-foreground font-body md:text-base">
+            <p className="text-sm text-white font-body md:text-base">
               Search and filter the complete faculty ecosystem by school,
               department, research interest or keyword. Find the right mentors
               to collaborate with or contact as you explore DSU&apos;s
@@ -144,12 +144,12 @@ export default function FacultyDirectory() {
             </div>
           </div>
           <div className="w-full max-w-xl rounded-3xl border border-border/40 bg-background/80 p-6 backdrop-blur">
-            <div className="mb-4 text-sm font-medium uppercase tracking-wide text-muted-foreground">
+            <div className="mb-4 text-sm font-medium uppercase tracking-wide text-white">
               Refine your search
             </div>
             <div className="space-y-4">
               <div className="relative">
-                <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+                <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-white" />
                 <Input
                   value={searchTerm}
                   onChange={(event) => setSearchTerm(event.target.value)}
@@ -191,7 +191,7 @@ export default function FacultyDirectory() {
               <h2 className="font-display text-3xl">
                 {filteredFaculty.length} faculty matched
               </h2>
-              <p className="text-sm text-muted-foreground font-body">
+              <p className="text-sm text-white font-body">
                 Showing results filtered by {activeSchoolLabel.toLowerCase()}{" "}
                 and {activeFocusLabel}.
               </p>
@@ -250,7 +250,7 @@ function FilterPills({
 }: FilterPillsProps) {
   return (
     <div>
-      <div className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+      <div className="mb-2 text-xs font-semibold uppercase tracking-wide text-white">
         {label}
       </div>
       <div className="flex flex-wrap gap-2">
@@ -286,7 +286,7 @@ function StatisticsCard({ label, value, icon: Icon }: StatisticsCardProps) {
         </div>
         <div>
           <div className="text-2xl font-semibold font-display">{value}</div>
-          <div className="text-xs uppercase tracking-wide text-muted-foreground font-body">
+          <div className="text-xs uppercase tracking-wide text-white font-body">
             {label}
           </div>
         </div>
@@ -320,19 +320,19 @@ function SchoolOverviewGrid({ counts }: SchoolOverviewGridProps) {
                   <CardTitle className="text-lg font-display">
                     {school.name}
                   </CardTitle>
-                  <p className="text-xs uppercase tracking-wide text-muted-foreground font-body">
+                  <p className="text-xs uppercase tracking-wide text-white font-body">
                     {profileCount} {profileCount === 1 ? "profile" : "profiles"}
                   </p>
                 </div>
               </div>
               {meta?.highlight ? (
-                <p className="text-sm text-muted-foreground font-body">
+                <p className="text-sm text-white font-body">
                   {meta.highlight}
                 </p>
               ) : null}
             </CardHeader>
             <CardContent className="flex-1">
-              <p className="text-sm text-muted-foreground font-body">
+              <p className="text-sm text-white font-body">
                 {school.description}
               </p>
             </CardContent>
@@ -358,7 +358,7 @@ function SchoolOverviewGrid({ counts }: SchoolOverviewGridProps) {
                   </Link>
                 )
               ) : (
-                <span className="text-sm font-medium text-muted-foreground">
+                <span className="text-sm font-medium text-white">
                   Info coming soon
                 </span>
               )}
@@ -410,7 +410,7 @@ function FacultyCard({ member }: FacultyCardProps) {
         </div>
       </CardHeader>
       <CardContent className="space-y-4">
-        <div className="space-y-2 text-sm text-muted-foreground font-body">
+        <div className="space-y-2 text-sm text-white font-body">
           <div className="flex items-center gap-2">
             <GraduationCap className="h-4 w-4 text-brand-magenta" />
             <span>{schoolName}</span>
@@ -434,7 +434,7 @@ function FacultyCard({ member }: FacultyCardProps) {
           ) : null}
         </div>
         <div className="space-y-1">
-          <div className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+          <div className="text-xs font-semibold uppercase tracking-wide text-white">
             Focus Areas
           </div>
           <div className="flex flex-wrap gap-2">
@@ -450,7 +450,7 @@ function FacultyCard({ member }: FacultyCardProps) {
           </div>
         </div>
         <div>
-          <div className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+          <div className="text-xs font-semibold uppercase tracking-wide text-white">
             Research Interests
           </div>
           <p className="mt-1 text-sm text-foreground font-body">

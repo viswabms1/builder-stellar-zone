@@ -180,7 +180,7 @@ export default function History() {
             </span>
           </h1>
 
-          <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-white mb-8 leading-relaxed max-w-3xl mx-auto">
             From a vision of quality education to a globally recognized university, discover the milestones that shaped DSU.
           </p>
         </div>
@@ -214,14 +214,14 @@ export default function History() {
                   <CardTitle className="text-2xl">{era.title}</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-white leading-relaxed">
                     {era.description}
                   </p>
                   <div className="space-y-2">
                     {era.highlights.map((highlight, idx) => (
                       <div key={idx} className="flex items-center gap-2">
                         <CheckCircle className="w-4 h-4 text-orange-500 flex-shrink-0" />
-                        <span className="text-sm text-muted-foreground">
+                        <span className="text-sm text-white">
                           {highlight}
                         </span>
                       </div>
@@ -289,7 +289,7 @@ export default function History() {
                           </div>
                         </CardHeader>
                         <CardContent className="space-y-4">
-                          <p className="text-muted-foreground leading-relaxed">
+                          <p className="text-white leading-relaxed">
                             {milestone.description}
                           </p>
                           <div className="space-y-2">
@@ -299,7 +299,7 @@ export default function History() {
                                 className="flex items-center gap-2 text-sm"
                               >
                                 <div className="w-2 h-2 rounded-full bg-orange-500"></div>
-                                <span className="text-muted-foreground">
+                                <span className="text-white">
                                   {achievement}
                                 </span>
                               </div>
@@ -342,7 +342,7 @@ export default function History() {
                 <div className="text-3xl font-bold text-foreground mb-1">
                   {stat.number}
                 </div>
-                <div className="text-sm text-muted-foreground">{stat.label}</div>
+                <div className="text-sm text-white">{stat.label}</div>
               </Card>
             ))}
           </div>

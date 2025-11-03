@@ -224,7 +224,7 @@ function ProgrammeCard({ programme }: { programme: Programme }) {
           {programme.name}
         </CardTitle>
       </CardHeader>
-      <CardContent className="text-sm text-muted-foreground font-body">
+      <CardContent className="text-sm text-white font-body">
         {programme.description}
       </CardContent>
     </Card>
@@ -244,7 +244,7 @@ function ExperienceCard({ experience }: { experience: Experience }) {
         </CardTitle>
       </CardHeader>
       <CardContent className="pt-0">
-        <CardDescription className="text-sm leading-relaxed text-muted-foreground font-body">
+        <CardDescription className="text-sm leading-relaxed text-white font-body">
           {experience.description}
         </CardDescription>
       </CardContent>
@@ -263,7 +263,7 @@ function ResourceCard({ resource }: { resource: Resource }) {
           {resource.title}
         </CardTitle>
       </CardHeader>
-      <CardContent className="space-y-5 text-sm text-muted-foreground font-body">
+      <CardContent className="space-y-5 text-sm text-white font-body">
         <p>{resource.description}</p>
         <a
           href={resource.href}
@@ -339,7 +339,7 @@ export default function JournalismMassComm() {
               <h2 className="font-display text-3xl md:text-4xl">
                 Programmes shaping multimedia storytellers
               </h2>
-              <p className="text-sm text-muted-foreground font-body">
+              <p className="text-sm text-white font-body">
                 Build expertise across reporting, filmmaking, podcasting and strategic communication through immersive studios, global collaborations and industry internships.
               </p>
               <div className="grid gap-4 sm:grid-cols-1">
@@ -412,7 +412,7 @@ export default function JournalismMassComm() {
               <h2 className="mt-4 font-display text-3xl md:text-4xl">
                 Studios, Labs & Creative Pods
               </h2>
-              <p className="mt-3 text-sm text-muted-foreground font-body">
+              <p className="mt-3 text-sm text-white font-body">
                 Immerse in production labs, podcast studios and storytelling residencies that bring journalistic narratives to life.
               </p>
             </div>
@@ -444,7 +444,7 @@ export default function JournalismMassComm() {
               <h2 className="mt-4 font-display text-3xl md:text-4xl">
                 Stay in Sync with CJMC
               </h2>
-              <p className="mt-3 text-sm text-muted-foreground font-body">
+              <p className="mt-3 text-sm text-white font-body">
                 Access calendars, industry overviews, career guides and galleries to plan your creative journey.
               </p>
             </div>
@@ -472,7 +472,7 @@ export default function JournalismMassComm() {
             <h3 className="mb-3 font-display text-3xl">
               Tell Stories that Matter
             </h3>
-            <p className="mb-6 text-muted-foreground font-body">
+            <p className="mb-6 text-white font-body">
               Join CJMC to amplify narratives, collaborate with creatives worldwide and graduate with a portfolio that resonates with industry.
             </p>
             <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
