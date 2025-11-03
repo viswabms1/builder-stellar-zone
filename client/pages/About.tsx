@@ -30,6 +30,8 @@ import {
   BookOpen,
   Shield,
   ChevronRight,
+  Compass,
+  History,
 } from "lucide-react";
 
 export default function About() {
