@@ -651,7 +651,7 @@ export default function About() {
               </span>
               <span className="text-foreground"> With Us</span>
             </h2>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-xl text-white">
               Get in touch with Dayananda Sagar University
             </p>
           </div>
