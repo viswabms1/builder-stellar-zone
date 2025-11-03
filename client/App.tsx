@@ -115,6 +115,7 @@ function App() {
               <Route path="/examinations" element={<Examinations />} />
               <Route path="/research" element={<Research />} />
               <Route path="/about" element={<About />} />
+              <Route path="/centre-of-excellence" element={<CentreOfExcellence />} />
               <Route path="/iqac" element={<IQAC />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
