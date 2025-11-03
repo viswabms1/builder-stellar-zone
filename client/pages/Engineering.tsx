@@ -385,14 +385,14 @@ function DepartmentCard({ department }: { department: EngineeringDepartment }) {
       <div className={`absolute left-6 top-6 ${badgeClasses}`}>
         {department.area}
       </div>
-      <div className="relative z-10 flex h-full flex-col justify-end p-6 text-foreground">
+      <div className="relative z-10 flex h-full flex-col justify-end p-6 text-white">
         <div className={panelClasses}>
           <div className="space-y-4">
             <div>
-              <h3 className="font-display text-2xl leading-tight text-foreground">
+              <h3 className="font-display text-2xl leading-tight text-white">
                 {department.name}
               </h3>
-              <p className="mt-3 text-sm text-foreground/85 font-body">
+              <p className="mt-3 text-sm text-white/85 font-body">
                 {department.description}
               </p>
             </div>
@@ -458,12 +458,12 @@ function SupportingDepartmentCard({
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
           <div className="absolute bottom-4 left-4">
             <Badge
-              className="bg-white/20 text-foreground backdrop-blur"
+              className="bg-white/20 text-white backdrop-blur"
               variant="secondary"
             >
               Supporting Department
             </Badge>
-            <h3 className="mt-3 text-xl font-semibold text-foreground font-display">
+            <h3 className="mt-3 text-xl font-semibold text-white font-display">
               {department.name}
             </h3>
           </div>
@@ -535,10 +535,10 @@ export default function Engineering() {
                 School of Engineering
               </span>
             </div>
-            <h1 className="mb-4 font-display text-4xl leading-tight text-foreground md:text-6xl">
+            <h1 className="mb-4 font-display text-4xl leading-tight text-white md:text-6xl">
               Innovate. Create. Develop.
             </h1>
-            <p className="max-w-2xl text-foreground/90 font-body text-lg">
+            <p className="max-w-2xl text-white/90 font-body text-lg">
               Science & Technology based education that develops high-caliber
               engineers for industry, startups and scientific organisations.
             </p>
