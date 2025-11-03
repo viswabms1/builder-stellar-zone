@@ -114,7 +114,7 @@ export default function About() {
               { number: "25,000+", label: "Students", icon: Users },
               { number: "15+", label: "Years Legacy", icon: Calendar },
               { number: "100+", label: "Programs", icon: BookOpen },
-              { number: "���1000Cr+", label: "Infrastructure", icon: Building },
+              { number: "₹1000Cr+", label: "Infrastructure", icon: Building },
             ].map((stat, index) => (
               <Card
                 key={index}
@@ -557,7 +557,7 @@ export default function About() {
                 Rankings
               </span>
             </h2>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-xl text-white">
               Recognition of our commitment to quality and excellence
             </p>
           </div>
