@@ -58,7 +58,6 @@ export default function Leadership() {
         "We heartily welcome you to Dayananda Sagar University—a distinguished institution of higher learning established under the visionary aegis of Mahatma Gandhi Vidya Peetha.",
       bio: "Dr. Prakash S, Pro-Vice Chancellor, leads DSU's AI-centric transformation. The university aims to create a personalized, multidisciplinary, paperless ecosystem that enables each learner to realize their unique 'Talent DNA'. DSU is embedding intelligence into ERP, LMS, and operations to become an agile, insight-driven institution with an AI-First approach.",
       contact: "pvc-prakash@dsu.edu.in | 9535797327",
-      experience: "18+ Years",
       image: "https://www.dsu.edu.in/images/Dr_Prakash_S.jpg",
       icon: BookOpen,
     },
