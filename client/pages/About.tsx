@@ -299,7 +299,7 @@ export default function About() {
                 Journey
               </span>
             </h2>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-xl text-white">
               Key milestones in our path to becoming a leading university
             </p>
           </div>
