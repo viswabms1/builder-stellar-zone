@@ -68,8 +68,9 @@ export default function Navigation() {
           <div className="hidden md:flex items-center space-x-1">
             {navigation.map((item) => {
               const active = !item.external && isActive(item.href);
+              const isAbout = item.name === "About";
               const sharedClasses = `flex items-center space-x-2 px-4 py-2 rounded-xl text-sm font-medium font-display transition-all duration-200 group ${
-                active
+                active || (isAbout && aboutMenuOpen)
                   ? "bg-white/20 text-white font-semibold"
                   : "text-white/80 hover:text-white hover:bg-white/10"
               }`;
@@ -86,6 +87,37 @@ export default function Navigation() {
                     <item.icon className="w-4 h-4" />
                     <span>{item.name}</span>
                   </a>
+                );
+              }
+
+              if (isAbout) {
+                return (
+                  <div
+                    key={item.name}
+                    className="relative group"
+                    onMouseEnter={() => setAboutMenuOpen(true)}
+                    onMouseLeave={() => setAboutMenuOpen(false)}
+                  >
+                    <button className={sharedClasses}>
+                      <item.icon className="w-4 h-4" />
+                      <span>{item.name}</span>
+                      <ChevronDown className="w-4 h-4 group-hover:rotate-180 transition-transform" />
+                      {active && <div className="w-1 h-1 bg-white rounded-full" />}
+                    </button>
+
+                    {/* Mega Menu Dropdown */}
+                    <div className="absolute left-0 top-full mt-0 w-64 bg-gradient-to-b from-blue-600 to-blue-700 text-white rounded-lg shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 py-4">
+                      {aboutSubmenus.map((submenu) => (
+                        <Link
+                          key={submenu.name}
+                          to={submenu.href}
+                          className="block px-6 py-3 hover:bg-white/10 transition-colors text-sm border-b border-white/10 last:border-b-0"
+                        >
+                          {submenu.name}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
                 );
               }
 
