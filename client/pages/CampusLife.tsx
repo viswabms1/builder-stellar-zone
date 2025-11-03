@@ -95,7 +95,7 @@ export default function CampusLife() {
                 Campus Highlights
               </span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xl text-white max-w-3xl mx-auto">
               Explore the diverse spaces and vibrant areas across our sprawling campus
             </p>
           </div>
@@ -159,7 +159,7 @@ export default function CampusLife() {
                 Pictures
               </span>
             </h2>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-xl text-white">
               Glimpses of the vibrant campus life at DSU
             </p>
           </div>
@@ -251,7 +251,7 @@ export default function CampusLife() {
               </span>
               <span className="text-foreground"> Organizations</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xl text-white max-w-3xl mx-auto">
               Discover your passion through our diverse range of student clubs and societies
             </p>
           </div>
@@ -504,7 +504,7 @@ export default function CampusLife() {
                 Stories
               </span>
             </h2>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-xl text-white">
               Real stories and experiences from our student community
             </p>
           </div>
@@ -568,7 +568,7 @@ export default function CampusLife() {
               </span>
               ?
             </h2>
-            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-white mb-8 max-w-2xl mx-auto">
               Join our vibrant community and create memories that will last a lifetime.
             </p>
 
