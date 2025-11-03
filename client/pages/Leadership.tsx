@@ -212,7 +212,7 @@ export default function Leadership() {
             </span>
           </h1>
 
-          <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-white mb-8 leading-relaxed max-w-3xl mx-auto">
             Visionary leaders and dedicated administrators driving academic excellence and institutional growth.
           </p>
         </div>
@@ -227,7 +227,7 @@ export default function Leadership() {
                 Key Leadership
               </span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-lg text-white max-w-3xl mx-auto">
               Executive team guiding the university's mission and vision
             </p>
           </div>
@@ -306,7 +306,7 @@ export default function Leadership() {
                 Administrative Leadership
               </span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-lg text-white max-w-3xl mx-auto">
               Key officers managing university operations and academic affairs
             </p>
           </div>
@@ -385,7 +385,7 @@ export default function Leadership() {
                 Pro Vice Chancellors
               </span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-lg text-white max-w-3xl mx-auto">
               Academic visionaries shaping the university's future
             </p>
           </div>
@@ -471,7 +471,7 @@ export default function Leadership() {
                 Leadership
               </span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-lg text-white max-w-3xl mx-auto">
               Experienced academics leading our schools and academic programs
             </p>
           </div>
@@ -527,7 +527,7 @@ export default function Leadership() {
                 Administrative Committees
               </span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-lg text-white max-w-3xl mx-auto">
               Committees ensuring transparent governance and institutional excellence
             </p>
           </div>
@@ -653,7 +653,7 @@ export default function Leadership() {
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Connect With Our Team
           </h2>
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+          <p className="text-lg text-white mb-8 max-w-2xl mx-auto">
             Have questions? Reach out to our administration for more information.
           </p>
 
