@@ -166,6 +166,7 @@ export default function Navigation() {
           <div className="px-6 py-4 space-y-3">
             {navigation.map((item) => {
               const active = !item.external && isActive(item.href);
+              const isAbout = item.name === "About";
               const sharedClasses = `flex items-center space-x-3 px-4 py-3 rounded-xl text-sm font-medium font-display transition-all duration-200 ${
                 active
                   ? "bg-white/20 text-white font-semibold"
@@ -185,6 +186,44 @@ export default function Navigation() {
                     <item.icon className="w-4 h-4" />
                     <span>{item.name}</span>
                   </a>
+                );
+              }
+
+              if (isAbout) {
+                return (
+                  <div key={item.name} className="space-y-2">
+                    <button
+                      onClick={() => setAboutMenuOpen(!aboutMenuOpen)}
+                      className={`w-full text-left ${sharedClasses}`}
+                    >
+                      <item.icon className="w-4 h-4" />
+                      <span className="flex-1">{item.name}</span>
+                      <ChevronDown
+                        className={`w-4 h-4 transition-transform ${
+                          aboutMenuOpen ? "rotate-180" : ""
+                        }`}
+                      />
+                    </button>
+
+                    {/* Mobile About Submenu */}
+                    {aboutMenuOpen && (
+                      <div className="bg-white/10 rounded-lg py-2 ml-4 border-l-2 border-white/30">
+                        {aboutSubmenus.map((submenu) => (
+                          <Link
+                            key={submenu.name}
+                            to={submenu.href}
+                            onClick={() => {
+                              setIsOpen(false);
+                              setAboutMenuOpen(false);
+                            }}
+                            className="block px-4 py-2 text-sm text-white/80 hover:text-white hover:bg-white/10 rounded transition-colors"
+                          >
+                            {submenu.name}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 );
               }
 
