@@ -355,7 +355,7 @@ export default function History() {
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Be Part of Our Future
           </h2>
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+          <p className="text-lg text-white mb-8 max-w-2xl mx-auto">
             Join an institution with a proven track record of excellence and innovation. Shape your future with us.
           </p>
 
