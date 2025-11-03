@@ -31,7 +31,7 @@ const NotFound = () => {
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-6">
-          <CardDescription className="text-muted-foreground leading-relaxed">
+          <CardDescription className="text-white leading-relaxed">
             Oops! The page you're looking for seems to have vanished into the digital void. 
             Don't worry, we'll help you get back on track.
           </CardDescription>

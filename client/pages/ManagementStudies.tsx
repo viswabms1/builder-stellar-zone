@@ -222,7 +222,7 @@ function AdvantageCard({ advantage }: { advantage: Advantage }) {
         </CardTitle>
       </CardHeader>
       <CardContent className="pt-0">
-        <CardDescription className="text-sm leading-relaxed text-muted-foreground font-body">
+        <CardDescription className="text-sm leading-relaxed text-white font-body">
           {advantage.description}
         </CardDescription>
       </CardContent>
@@ -241,7 +241,7 @@ function ResourceCard({ resource }: { resource: Resource }) {
           {resource.title}
         </CardTitle>
       </CardHeader>
-      <CardContent className="space-y-5 text-sm text-muted-foreground font-body">
+      <CardContent className="space-y-5 text-sm text-white font-body">
         <p>{resource.description}</p>
         <a
           href={resource.href}
@@ -315,7 +315,7 @@ export default function ManagementStudies() {
               <h2 className="font-display text-3xl md:text-4xl">
                 Programmes that create agile business leaders
               </h2>
-              <p className="text-sm text-muted-foreground font-body">
+              <p className="text-sm text-white font-body">
                 Build a career-ready portfolio across B.Com, BBA, MBA and doctoral tracks with immersive labs, consulting clinics and global immersion opportunities.
               </p>
               <div className="grid gap-4 sm:grid-cols-2">
@@ -332,7 +332,7 @@ export default function ManagementStudies() {
                         {programme.name}
                       </CardTitle>
                     </CardHeader>
-                    <CardContent className="space-y-4 text-sm text-muted-foreground font-body">
+                    <CardContent className="space-y-4 text-sm text-white font-body">
                       <p>{programme.focus}</p>
                       {programme.link ? (
                         <a
@@ -410,7 +410,7 @@ export default function ManagementStudies() {
               <h2 className="mt-4 font-display text-3xl md:text-4xl">
                 Beyond the Classroom
               </h2>
-              <p className="mt-3 text-sm text-muted-foreground font-body">
+              <p className="mt-3 text-sm text-white font-body">
                 Leverage innovation hubs, corporate mentorship, global
                 immersions and placement readiness platforms that make DSU
                 graduates highly sought after.
@@ -444,7 +444,7 @@ export default function ManagementStudies() {
               <h2 className="mt-4 font-display text-3xl md:text-4xl">
                 Stay Synced with SCMS
               </h2>
-              <p className="mt-3 text-sm text-muted-foreground font-body">
+              <p className="mt-3 text-sm text-white font-body">
                 Download official documents, explore co-curricular platforms and
                 plan your journey with key schedules, activities and galleries.
               </p>
@@ -473,7 +473,7 @@ export default function ManagementStudies() {
             <h3 className="mb-3 font-display text-3xl">
               Drive Business Impact with DSU
             </h3>
-            <p className="mb-6 text-muted-foreground font-body">
+            <p className="mb-6 text-white font-body">
               Join a vibrant management community that transforms purpose-driven
               ideas into scalable ventures through mentorship, labs and global
               networks.

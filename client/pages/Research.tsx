@@ -61,7 +61,7 @@ export default function Research() {
             <span className="text-foreground">for Tomorrow</span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-white mb-12 max-w-4xl mx-auto leading-relaxed">
             At DSU, we push the boundaries of knowledge through 
             <span className="text-orange-400 font-semibold"> cutting-edge research</span>, 
             <span className="text-red-400 font-semibold"> innovative solutions</span>, and 
@@ -89,7 +89,7 @@ export default function Research() {
               <Card key={index} className="text-center p-6 bg-card/30 backdrop-blur-sm border border-border/30 hover:border-orange-500/30 transition-all duration-300">
                 <stat.icon className="w-8 h-8 text-orange-500 mx-auto mb-3" />
                 <div className="text-3xl font-bold text-foreground mb-1">{stat.number}</div>
-                <div className="text-sm text-muted-foreground">{stat.label}</div>
+                <div className="text-sm text-white">{stat.label}</div>
               </Card>
             ))}
           </div>
@@ -101,7 +101,7 @@ export default function Research() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-10">
             <h2 className="headline-3">Research Hub</h2>
-            <p className="text-muted-foreground font-body">Quick access to Ph.D admissions, regulations, supervisors, and more</p>
+            <p className="text-white font-body">Quick access to Ph.D admissions, regulations, supervisors, and more</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
@@ -223,7 +223,7 @@ export default function Research() {
                   </div>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  <CardDescription className="text-muted-foreground leading-relaxed">
+                  <CardDescription className="text-white leading-relaxed">
                     {center.description}
                   </CardDescription>
                   
@@ -231,7 +231,7 @@ export default function Research() {
                     <p className="text-sm font-semibold text-foreground">Research Focus:</p>
                     <div className="grid grid-cols-1 gap-1">
                       {center.focus.slice(0, 4).map((area, idx) => (
-                        <div key={idx} className="flex items-center text-sm text-muted-foreground">
+                        <div key={idx} className="flex items-center text-sm text-white">
                           <ChevronRight className="w-3 h-3 text-orange-500 mr-2 flex-shrink-0" />
                           {area}
                         </div>
@@ -323,7 +323,7 @@ export default function Research() {
                 <achievement.icon className="w-12 h-12 text-orange-500 mx-auto mb-4 group-hover:scale-110 transition-transform" />
                 <h3 className="text-lg font-bold mb-2 group-hover:text-orange-500 transition-colors">{achievement.title}</h3>
                 <div className="text-3xl font-bold text-orange-500 mb-3">{achievement.number}</div>
-                <p className="text-sm text-muted-foreground leading-relaxed">{achievement.description}</p>
+                <p className="text-sm text-white leading-relaxed">{achievement.description}</p>
               </Card>
             ))}
           </div>
@@ -335,7 +335,7 @@ export default function Research() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="headline-3">Research Spotlights</h2>
-            <p className="text-muted-foreground font-body">Stories to inspire students and faculty to pursue impactful research</p>
+            <p className="text-white font-body">Stories to inspire students and faculty to pursue impactful research</p>
           </div>
           <div className="grid lg:grid-cols-3 gap-8 items-stretch">
             {[
@@ -442,7 +442,7 @@ export default function Research() {
                       <opportunity.icon className="w-6 h-6 text-orange-500 group-hover:scale-110 transition-transform" />
                     </div>
                     <div className="text-right">
-                      <div className="text-xs text-muted-foreground">Duration</div>
+                      <div className="text-xs text-white">Duration</div>
                       <div className="text-sm font-semibold text-orange-500">{opportunity.duration}</div>
                     </div>
                   </div>
@@ -454,7 +454,7 @@ export default function Research() {
                   </Badge>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  <CardDescription className="text-muted-foreground leading-relaxed">
+                  <CardDescription className="text-white leading-relaxed">
                     {opportunity.description}
                   </CardDescription>
                   
@@ -462,7 +462,7 @@ export default function Research() {
                     <p className="text-sm font-semibold text-foreground">Benefits:</p>
                     <div className="grid grid-cols-1 gap-1">
                       {opportunity.benefits.map((benefit, idx) => (
-                        <div key={idx} className="flex items-center text-sm text-muted-foreground">
+                        <div key={idx} className="flex items-center text-sm text-white">
                           <Star className="w-3 h-3 text-orange-500 mr-2 flex-shrink-0" />
                           {benefit}
                         </div>
@@ -540,7 +540,7 @@ export default function Research() {
               <Card key={index} className="text-center p-6 bg-card/30 backdrop-blur-sm border border-border/30 hover:border-orange-500/30 transition-all duration-300 group">
                 <support.icon className="w-12 h-12 text-orange-500 mx-auto mb-4 group-hover:scale-110 transition-transform" />
                 <h3 className="text-lg font-bold mb-3 group-hover:text-orange-500 transition-colors">{support.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{support.description}</p>
+                <p className="text-sm text-white leading-relaxed">{support.description}</p>
               </Card>
             ))}
           </div>

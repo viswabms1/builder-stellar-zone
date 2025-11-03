@@ -173,7 +173,7 @@ export default function VisionMission() {
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-muted-foreground leading-relaxed">
+                    <p className="text-white leading-relaxed">
                       {pillar.description}
                     </p>
                   </CardContent>
@@ -196,7 +196,7 @@ export default function VisionMission() {
                   <div className="w-8 h-8 rounded-full bg-orange-500/20 flex items-center justify-center flex-shrink-0 mt-1">
                     <CheckCircle className="w-5 h-5 text-orange-500" />
                   </div>
-                  <p className="text-muted-foreground leading-relaxed">{point}</p>
+                  <p className="text-white leading-relaxed">{point}</p>
                 </div>
               ))}
             </div>
@@ -216,7 +216,7 @@ export default function VisionMission() {
                   <div className="w-8 h-8 rounded-full bg-red-500/20 flex items-center justify-center flex-shrink-0 mt-1">
                     <Eye className="w-5 h-5 text-red-500" />
                   </div>
-                  <p className="text-muted-foreground leading-relaxed">{point}</p>
+                  <p className="text-white leading-relaxed">{point}</p>
                 </div>
               ))}
             </div>
@@ -249,7 +249,7 @@ export default function VisionMission() {
                   <CardContent className="p-6">
                     <Icon className="w-10 h-10 text-orange-500 mb-4" />
                     <h3 className="text-lg font-bold mb-2">{value.title}</h3>
-                    <p className="text-sm text-muted-foreground">
+                    <p className="text-sm text-white">
                       {value.description}
                     </p>
                   </CardContent>
@@ -296,7 +296,7 @@ export default function VisionMission() {
                     <CardTitle className="text-xl">{goal.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-muted-foreground">{goal.description}</p>
+                    <p className="text-white">{goal.description}</p>
                   </CardContent>
                 </Card>
               );

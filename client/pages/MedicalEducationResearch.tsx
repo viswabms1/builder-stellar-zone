@@ -202,7 +202,7 @@ function PillarCard({ pillar }: { pillar: Pillar }) {
         <CardTitle className="text-base font-display">{pillar.title}</CardTitle>
       </CardHeader>
       <CardContent className="pt-0">
-        <CardDescription className="text-sm leading-relaxed text-muted-foreground font-body">
+        <CardDescription className="text-sm leading-relaxed text-white font-body">
           {pillar.description}
         </CardDescription>
       </CardContent>
@@ -247,7 +247,7 @@ function ResourceCard({ resource }: { resource: Resource }) {
           {resource.title}
         </CardTitle>
       </CardHeader>
-      <CardContent className="space-y-5 text-sm text-muted-foreground font-body">
+      <CardContent className="space-y-5 text-sm text-white font-body">
         <p>{resource.description}</p>
         <a
           href={resource.href}
@@ -348,7 +348,7 @@ export default function MedicalEducationResearch() {
             <h2 className="mt-4 font-display text-3xl md:text-4xl">
               One Ecosystem. Many Possibilities.
             </h2>
-            <p className="mt-3 text-sm text-muted-foreground font-body max-w-3xl mx-auto">
+            <p className="mt-3 text-sm text-white font-body max-w-3xl mx-auto">
               From classroom to clinic, DSU Medical Education & Research unifies
               learning, care delivery and innovation for future-ready
               physicians.
@@ -375,7 +375,7 @@ export default function MedicalEducationResearch() {
               <h2 className="mt-4 font-display text-3xl md:text-4xl">
                 Plan Your Journey
               </h2>
-              <p className="mt-3 text-sm text-muted-foreground font-body">
+              <p className="mt-3 text-sm text-white font-body">
                 Access enquiry support, campus events, library resources and
                 immersive tours to experience DSU's medical ecosystem.
               </p>
@@ -404,7 +404,7 @@ export default function MedicalEducationResearch() {
             <h3 className="mb-3 font-display text-3xl">
               Shape the Future of Healthcare with DSU
             </h3>
-            <p className="mb-6 text-muted-foreground font-body">
+            <p className="mb-6 text-white font-body">
               Join a medical community that blends compassionate care, research
               innovation and community service on one vibrant campus.
             </p>

@@ -32,7 +32,7 @@ export default function Placeholder({
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-6">
-          <CardDescription className="text-muted-foreground leading-relaxed">
+          <CardDescription className="text-white leading-relaxed">
             {description}
           </CardDescription>
           
@@ -55,7 +55,7 @@ export default function Placeholder({
               </Link>
             </Button>
             
-            <p className="text-xs text-muted-foreground">
+            <p className="text-xs text-white">
               Want this page prioritized? Let us know what you'd like to see here!
             </p>
           </div>

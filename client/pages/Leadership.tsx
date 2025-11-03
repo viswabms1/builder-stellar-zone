@@ -260,7 +260,7 @@ export default function Leadership() {
                         <CardTitle className="text-2xl font-bold group-hover:text-orange-500 transition-colors">
                           {leader.role}
                         </CardTitle>
-                        <p className="text-sm text-muted-foreground mt-1">
+                        <p className="text-sm text-white mt-1">
                           {leader.name}
                         </p>
                       </div>
@@ -274,18 +274,18 @@ export default function Leadership() {
                       <p className="text-sm font-semibold text-foreground mb-2">
                         Leadership Vision:
                       </p>
-                      <p className="text-sm text-muted-foreground italic border-l-2 border-orange-500/30 pl-3">
+                      <p className="text-sm text-white italic border-l-2 border-orange-500/30 pl-3">
                         "{leader.description}"
                       </p>
                     </div>
-                    <p className="text-muted-foreground text-sm leading-relaxed">
+                    <p className="text-white text-sm leading-relaxed">
                       {leader.bio}
                     </p>
                     <div className="pt-4 border-t border-border/50">
                       <p className="text-xs font-semibold text-foreground mb-2">
                         Contact:
                       </p>
-                      <p className="text-xs text-muted-foreground">
+                      <p className="text-xs text-white">
                         {leader.contact}
                       </p>
                     </div>
@@ -339,7 +339,7 @@ export default function Leadership() {
                         <CardTitle className="text-2xl font-bold group-hover:text-orange-500 transition-colors">
                           {leader.role}
                         </CardTitle>
-                        <p className="text-sm text-muted-foreground mt-1">
+                        <p className="text-sm text-white mt-1">
                           {leader.name}
                         </p>
                       </div>
@@ -353,18 +353,18 @@ export default function Leadership() {
                       <p className="text-sm font-semibold text-foreground mb-2">
                         Leadership Vision:
                       </p>
-                      <p className="text-sm text-muted-foreground italic border-l-2 border-orange-500/30 pl-3">
+                      <p className="text-sm text-white italic border-l-2 border-orange-500/30 pl-3">
                         "{leader.description}"
                       </p>
                     </div>
-                    <p className="text-muted-foreground text-sm leading-relaxed">
+                    <p className="text-white text-sm leading-relaxed">
                       {leader.bio}
                     </p>
                     <div className="pt-4 border-t border-border/50">
                       <p className="text-xs font-semibold text-foreground mb-2">
                         Contact:
                       </p>
-                      <p className="text-xs text-muted-foreground">
+                      <p className="text-xs text-white">
                         {leader.contact}
                       </p>
                     </div>
@@ -418,7 +418,7 @@ export default function Leadership() {
                         <CardTitle className="text-2xl font-bold group-hover:text-orange-500 transition-colors">
                           {pvc.role}
                         </CardTitle>
-                        <p className="text-sm text-muted-foreground mt-1">
+                        <p className="text-sm text-white mt-1">
                           {pvc.name}
                         </p>
                       </div>
@@ -432,18 +432,18 @@ export default function Leadership() {
                       <p className="text-sm font-semibold text-foreground mb-2">
                         Leadership Vision:
                       </p>
-                      <p className="text-sm text-muted-foreground italic border-l-2 border-orange-500/30 pl-3">
+                      <p className="text-sm text-white italic border-l-2 border-orange-500/30 pl-3">
                         "{pvc.description}"
                       </p>
                     </div>
-                    <p className="text-muted-foreground text-sm leading-relaxed">
+                    <p className="text-white text-sm leading-relaxed">
                       {pvc.bio}
                     </p>
                     <div className="pt-4 border-t border-border/50">
                       <p className="text-xs font-semibold text-foreground mb-2">
                         Contact:
                       </p>
-                      <p className="text-xs text-muted-foreground">
+                      <p className="text-xs text-white">
                         {pvc.contact}
                       </p>
                     </div>
@@ -486,7 +486,7 @@ export default function Leadership() {
                   <CardTitle className="text-lg">{dean.area}</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  <p className="text-muted-foreground text-sm">
+                  <p className="text-white text-sm">
                     {dean.description}
                   </p>
                   <div>
@@ -556,7 +556,7 @@ export default function Leadership() {
                       {committee.functions.map((func, idx) => (
                         <div
                           key={idx}
-                          className="flex items-center gap-2 text-sm text-muted-foreground"
+                          className="flex items-center gap-2 text-sm text-white"
                         >
                           <Star className="w-3 h-3 text-orange-500 flex-shrink-0" />
                           {func}
@@ -636,7 +636,7 @@ export default function Leadership() {
                     <h3 className="font-semibold text-foreground mb-1">
                       {principle.title}
                     </h3>
-                    <p className="text-sm text-muted-foreground">
+                    <p className="text-sm text-white">
                       {principle.description}
                     </p>
                   </div>
