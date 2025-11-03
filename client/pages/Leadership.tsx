@@ -53,12 +53,12 @@ export default function Leadership() {
     },
     {
       role: "Pro Vice Chancellor",
-      name: "Dr. Prakash Sheelvanthmath",
+      name: "Prof. R Janardhan",
       description:
-        "We heartily welcome you to Dayananda Sagar University—a distinguished institution of higher learning established under the visionary aegis of Mahatma Gandhi Vidya Peetha.",
-      bio: "Dr. Prakash S, Pro-Vice Chancellor, leads DSU's AI-centric transformation. The university aims to create a personalized, multidisciplinary, paperless ecosystem that enables each learner to realize their unique 'Talent DNA'. DSU is embedding intelligence into ERP, LMS, and operations to become an agile, insight-driven institution with an AI-First approach.",
-      contact: "pvc-prakash@dsu.edu.in | 9535797327",
-      image: "https://www.dsu.edu.in/images/Dr_Prakash_S.jpg",
+        "Bengaluru is now known as the city of innovation and enterprise, globally. Dayananda Sagar University located in Bengaluru reflects that culture.",
+      bio: "Prof. R Janardhan, Pro-Vice Chancellor of DSU, emphasizes the university's role in fostering innovation and entrepreneurship. The campus at Kudlu Gate on Hosur Road exemplifies industry and academia partnerships. DSU provides a unique ecosystem with industry-sponsored labs, the AIC-DSU Foundation supported by a Rs 10.00 Crore grant, and a BTech in CS & Entrepreneurship. DSU is pioneering entrepreneurship education from Class 9 onwards, and continues to provide comprehensive support across academics, research, fitness, sports, arts, culture, innovation, entrepreneurship, and community service.",
+      contact: "janardhan.dsi@gmail.com | 9845074091",
+      image: "https://www.dsu.edu.in/images/Prof_R_Janardhan.jpg",
       icon: BookOpen,
     },
   ];
