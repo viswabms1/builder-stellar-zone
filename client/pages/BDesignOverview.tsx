@@ -181,7 +181,7 @@ function StructureCard({ point }: { point: StructurePoint }) {
         <CardTitle className="text-base font-display">{point.title}</CardTitle>
       </CardHeader>
       <CardContent className="pt-0">
-        <CardDescription className="text-sm leading-relaxed text-muted-foreground font-body">
+        <CardDescription className="text-sm leading-relaxed text-white font-body">
           {point.description}
         </CardDescription>
       </CardContent>
@@ -200,7 +200,7 @@ function ResourceCard({ resource }: { resource: Resource }) {
           {resource.title}
         </CardTitle>
       </CardHeader>
-      <CardContent className="space-y-5 text-sm text-muted-foreground font-body">
+      <CardContent className="space-y-5 text-sm text-white font-body">
         <p>{resource.description}</p>
         <a
           href={resource.href}
@@ -305,7 +305,7 @@ export default function BDesignOverview() {
             <h2 className="mt-4 font-display text-3xl md:text-4xl">
               Studio Journey Across Eight Semesters
             </h2>
-            <p className="mt-3 text-sm text-muted-foreground font-body max-w-3xl mx-auto">
+            <p className="mt-3 text-sm text-white font-body max-w-3xl mx-auto">
               Move from foundational studios to advanced specialisation projects
               with liberal studies, research engagements and internships
               interwoven throughout the programme.
@@ -332,7 +332,7 @@ export default function BDesignOverview() {
               <h2 className="mt-4 font-display text-3xl md:text-4xl">
                 Plan Your Design Journey
               </h2>
-              <p className="mt-3 text-sm text-muted-foreground font-body">
+              <p className="mt-3 text-sm text-white font-body">
                 Access calendars, handbooks, brochures and quality documents to
                 stay prepared from foundation studios to final juries.
               </p>
@@ -361,7 +361,7 @@ export default function BDesignOverview() {
             <h3 className="mb-3 font-display text-3xl">
               Design Tomorrow's Experiences
             </h3>
-            <p className="mb-6 text-muted-foreground font-body">
+            <p className="mb-6 text-white font-body">
               Collaborate with mentors, industry leaders and global studios to
               graduate with a portfolio that shapes inclusive, sustainable
               futures.

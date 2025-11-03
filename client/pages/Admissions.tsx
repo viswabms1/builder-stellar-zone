@@ -439,14 +439,14 @@ function QuickLinksSection() {
                   <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-orange-500/15 text-orange-500 transition group-hover:bg-orange-500 group-hover:text-white">
                     <item.icon className="h-6 w-6" />
                   </div>
-                  <ExternalLink className="h-5 w-5 text-muted-foreground group-hover:text-orange-500" />
+                  <ExternalLink className="h-5 w-5 text-white group-hover:text-orange-500" />
                 </div>
                 <CardTitle className="mt-4 text-xl font-semibold group-hover:text-orange-500">
                   {item.title}
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <CardDescription className="leading-relaxed text-muted-foreground">
+                <CardDescription className="leading-relaxed text-white">
                   {item.description}
                 </CardDescription>
                 <Button
@@ -499,7 +499,7 @@ function AdmissionRoutesSection() {
                 <CardTitle className="mt-4 text-2xl font-semibold text-foreground">
                   {track.title}
                 </CardTitle>
-                <CardDescription className="mt-2 text-base leading-relaxed text-muted-foreground">
+                <CardDescription className="mt-2 text-base leading-relaxed text-white">
                   {track.description}
                 </CardDescription>
               </CardHeader>
@@ -508,7 +508,7 @@ function AdmissionRoutesSection() {
                   {track.highlights.map((point) => (
                     <div
                       key={point}
-                      className="flex items-start gap-3 text-sm text-muted-foreground"
+                      className="flex items-start gap-3 text-sm text-white"
                     >
                       <ListChecks className="mt-0.5 h-4 w-4 text-orange-500" />
                       <span>{point}</span>
@@ -556,7 +556,7 @@ function BrochureSection() {
                 <CardTitle className="text-xl font-semibold text-foreground">
                   {resource.title}
                 </CardTitle>
-                <CardDescription className="text-sm text-muted-foreground">
+                <CardDescription className="text-sm text-white">
                   {resource.subtitle}
                 </CardDescription>
               </CardHeader>
@@ -571,7 +571,7 @@ function BrochureSection() {
                     <Download className="h-4 w-4" />
                   </a>
                 </Button>
-                <p className="text-xs text-muted-foreground">
+                <p className="text-xs text-white">
                   Each brochure lists eligibility, semester-wise credits,
                   laboratory infrastructure, internship partners, and placement
                   support milestones.
@@ -736,7 +736,7 @@ function AIEngagementSection() {
                 <CardTitle className="text-2xl font-semibold">
                   AI Chat Assistant
                 </CardTitle>
-                <CardDescription className="text-sm text-muted-foreground">
+                <CardDescription className="text-sm text-white">
                   Conversational guidance tailored to DSU admissions pathways.
                 </CardDescription>
               </div>
@@ -796,7 +796,7 @@ function AIEngagementSection() {
                 <CardTitle className="text-2xl font-semibold">
                   Voice Assistant
                 </CardTitle>
-                <CardDescription className="text-sm text-muted-foreground">
+                <CardDescription className="text-sm text-white">
                   Receive a narrated briefing covering codes, timelines, and
                   support channels.
                 </CardDescription>
@@ -804,7 +804,7 @@ function AIEngagementSection() {
               <Headphones className="h-8 w-8 text-orange-500" />
             </CardHeader>
             <CardContent className="space-y-6">
-              <div className="rounded-2xl border border-orange-500/20 bg-background/80 p-4 text-sm leading-relaxed text-muted-foreground">
+              <div className="rounded-2xl border border-orange-500/20 bg-background/80 p-4 text-sm leading-relaxed text-white">
                 <p>
                   Activate the voice guide to hear a curated summary of DSU
                   admissions. Use it in counseling kiosks or during open houses
@@ -898,11 +898,11 @@ function ContactSection() {
                     {campus.title}
                   </CardTitle>
                 </div>
-                <CardDescription className="mt-4 text-sm leading-relaxed text-muted-foreground">
+                <CardDescription className="mt-4 text-sm leading-relaxed text-white">
                   {campus.address}
                 </CardDescription>
               </CardHeader>
-              <CardContent className="space-y-4 text-sm text-muted-foreground">
+              <CardContent className="space-y-4 text-sm text-white">
                 <div>
                   <p className="font-semibold text-foreground">Helpline</p>
                   <div className="mt-2 space-y-1">
@@ -934,7 +934,7 @@ function ContactSection() {
                   Hotline Directory
                 </CardTitle>
               </div>
-              <CardDescription className="mt-2 text-sm text-muted-foreground">
+              <CardDescription className="mt-2 text-sm text-white">
                 Reach specialized teams to clarify program requisites,
                 counseling logistics, and post-admission onboarding.
               </CardDescription>
@@ -948,7 +948,7 @@ function ContactSection() {
                   <p className="text-sm font-semibold text-foreground">
                     {group.label}
                   </p>
-                  <div className="mt-2 space-y-1 text-xs text-muted-foreground">
+                  <div className="mt-2 space-y-1 text-xs text-white">
                     {group.entries.map((entry) => (
                       <p key={`${group.label}-${entry}`}>{entry}</p>
                     ))}
@@ -965,7 +965,7 @@ function ContactSection() {
                   Regional &amp; International Outreach
                 </CardTitle>
               </div>
-              <CardDescription className="mt-2 text-sm text-muted-foreground">
+              <CardDescription className="mt-2 text-sm text-white">
                 Connect with zonal coordinators and global offices for localized
                 support.
               </CardDescription>
@@ -977,7 +977,7 @@ function ContactSection() {
                   className="rounded-2xl border border-orange-500/20 bg-background/70 p-4 text-sm"
                 >
                   <p className="font-semibold text-foreground">{item.region}</p>
-                  <p className="mt-1 text-muted-foreground">{item.contact}</p>
+                  <p className="mt-1 text-white">{item.contact}</p>
                 </div>
               ))}
               <div className="sm:col-span-2 rounded-2xl border border-orange-500/20 bg-orange-500/10 p-4 text-sm text-orange-500">

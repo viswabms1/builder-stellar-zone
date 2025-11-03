@@ -206,7 +206,7 @@ function DepartmentInfoCard({ department }: { department: DepartmentCard }) {
         </CardTitle>
       </CardHeader>
       <CardContent className="pt-0">
-        <CardDescription className="text-sm leading-relaxed text-muted-foreground font-body">
+        <CardDescription className="text-sm leading-relaxed text-white font-body">
           {department.description}
         </CardDescription>
       </CardContent>
@@ -240,7 +240,7 @@ function ResourceCard({ resource }: { resource: ResourceLink }) {
           {resource.title}
         </CardTitle>
       </CardHeader>
-      <CardContent className="space-y-5 text-sm text-muted-foreground font-body">
+      <CardContent className="space-y-5 text-sm text-white font-body">
         <p>{resource.description}</p>
         <a
           href={resource.href}
@@ -317,7 +317,7 @@ export default function AppliedSciences() {
             <h2 className="mt-4 font-display text-3xl md:text-4xl">
               Programmes bridging science & society
             </h2>
-            <p className="mt-3 text-sm text-muted-foreground font-body max-w-3xl mx-auto">
+            <p className="mt-3 text-sm text-white font-body max-w-3xl mx-auto">
               Programmes nurture curiosity, experimentation and analytical rigour, preparing graduates for research, healthcare, product development and analytics roles.
             </p>
           </div>
@@ -335,7 +335,7 @@ export default function AppliedSciences() {
                     {group.label} Programmes
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="grid gap-3 text-sm text-muted-foreground font-body">
+                <CardContent className="grid gap-3 text-sm text-white font-body">
                   {group.programmes.map((programme) => (
                     <div key={programme} className="flex items-center">
                       <ChevronRight className="mr-2 h-3 w-3 text-brand-magenta" />
@@ -386,7 +386,7 @@ export default function AppliedSciences() {
               <h2 className="mt-4 font-display text-3xl md:text-4xl">
                 Interdisciplinary Science Ecosystem
               </h2>
-              <p className="mt-3 text-sm text-muted-foreground font-body">
+              <p className="mt-3 text-sm text-white font-body">
                 Collaborate across life sciences, physical sciences, health
                 sciences and computational domains through integrated
                 coursework, labs and research projects.
@@ -423,7 +423,7 @@ export default function AppliedSciences() {
               <h2 className="mt-4 font-display text-3xl md:text-4xl">
                 Plan, Engage & Excel
               </h2>
-              <p className="mt-3 text-sm text-muted-foreground font-body">
+              <p className="mt-3 text-sm text-white font-body">
                 Download calendars, revisit event highlights and access the
                 official SBAS handbook to navigate every term with clarity.
               </p>
@@ -452,7 +452,7 @@ export default function AppliedSciences() {
             <h3 className="mb-3 font-display text-3xl">
               Join the Science & Innovation Movement
             </h3>
-            <p className="mb-6 text-muted-foreground font-body">
+            <p className="mb-6 text-white font-body">
               Engage with cross-disciplinary mentors, modern labs and industry
               collaborations that position SBAS graduates for global research
               and innovation careers.
