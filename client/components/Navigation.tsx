@@ -26,6 +26,7 @@ export default function Navigation() {
     { name: "History", href: "/about/history" },
     { name: "Leadership", href: "/about/leadership" },
     { name: "Board of Governors", href: "/about/board-of-governors" },
+    { name: "Board of Management", href: "/about/board-of-management" },
     { name: "Accreditations", href: "/about/accreditations" },
     { name: "Facilities", href: "/about/facilities" },
   ];
