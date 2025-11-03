@@ -1,0 +1,489 @@
+import { Link } from "react-router-dom";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import {
+  Users,
+  Award,
+  Briefcase,
+  Building,
+  BookOpen,
+  Target,
+  Star,
+  ArrowRight,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+
+export default function Leadership() {
+  const leadershipTeam = [
+    {
+      role: "Chancellor",
+      description:
+        "Provides strategic vision and oversees the university's academic and administrative affairs.",
+      responsibilities: [
+        "University governance and direction",
+        "Policy formulation and implementation",
+        "Stakeholder relations",
+        "Academic excellence standards",
+      ],
+      experience: "25+ Years",
+      icon: Target,
+    },
+    {
+      role: "Vice Chancellor",
+      description:
+        "Executive head responsible for day-to-day administration and academic operations.",
+      responsibilities: [
+        "Academic administration",
+        "Research promotion",
+        "Faculty and student affairs",
+        "Budget and financial management",
+      ],
+      experience: "20+ Years",
+      icon: Briefcase,
+    },
+    {
+      role: "Pro Vice Chancellor",
+      description:
+        "Assists the Vice Chancellor in academic and administrative matters.",
+      responsibilities: [
+        "Academic program development",
+        "International collaborations",
+        "Curriculum development",
+        "Student development programs",
+      ],
+      experience: "18+ Years",
+      icon: BookOpen,
+    },
+    {
+      role: "Registrar",
+      description:
+        "Manages academic records, admissions, and student affairs.",
+      responsibilities: [
+        "Academic records management",
+        "Admissions process",
+        "Student grievance redressal",
+        "Administrative coordination",
+      ],
+      experience: "15+ Years",
+      icon: Building,
+    },
+  ];
+
+  const deans = [
+    {
+      area: "School of Engineering",
+      description: "Oversees engineering programs and technical innovation",
+      focus: ["B.Tech Programs", "Research", "Industry Partnerships"],
+    },
+    {
+      area: "School of Computer Applications",
+      description: "Leads IT and computer science education",
+      focus: ["CS Programs", "AI & ML", "Software Innovation"],
+    },
+    {
+      area: "School of Applied Sciences",
+      description: "Manages basic and applied science programs",
+      focus: ["Science Education", "Research", "Laboratory Management"],
+    },
+    {
+      area: "School of Management",
+      description: "Directs management and business education",
+      focus: ["MBA Programs", "Executive Education", "Industry Connect"],
+    },
+    {
+      area: "School of Law",
+      description: "Oversees law education and legal research",
+      focus: ["Law Programs", "Legal Research", "Clinical Programs"],
+    },
+    {
+      area: "School of Health Sciences",
+      description: "Manages healthcare and medical education",
+      focus: ["Health Programs", "Clinical Training", "Research"],
+    },
+  ];
+
+  const committees = [
+    {
+      name: "Board of Governors",
+      icon: Users,
+      description: "Strategic governance and institutional oversight",
+      functions: [
+        "University policy development",
+        "Financial oversight",
+        "Institutional accountability",
+      ],
+    },
+    {
+      name: "Academic Council",
+      icon: BookOpen,
+      description: "Academic matters and curriculum development",
+      functions: [
+        "Curriculum approval",
+        "Academic standards",
+        "Research promotion",
+      ],
+    },
+    {
+      name: "Board of Management",
+      icon: Building,
+      description: "Day-to-day operational management",
+      functions: [
+        "Administrative decisions",
+        "Resource management",
+        "Campus operations",
+      ],
+    },
+    {
+      name: "Research & Innovation Council",
+      icon: Award,
+      description: "Research strategy and innovation initiatives",
+      functions: [
+        "Research promotion",
+        "Innovation support",
+        "Collaboration facilitation",
+      ],
+    },
+    {
+      name: "Finance Committee",
+      icon: Briefcase,
+      description: "Financial planning and resource allocation",
+      functions: [
+        "Budget planning",
+        "Financial oversight",
+        "Resource optimization",
+      ],
+    },
+    {
+      name: "IQAC (Quality)",
+      icon: Target,
+      description: "Quality assurance and institutional effectiveness",
+      functions: [
+        "Quality monitoring",
+        "Accreditation preparation",
+        "Continuous improvement",
+      ],
+    },
+  ];
+
+  return (
+    <div className="min-h-screen bg-background text-foreground">
+      {/* Hero Section */}
+      <section className="relative py-20 lg:py-32 bg-gradient-to-br from-orange-500/10 via-red-600/5 to-background">
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-orange-500/10 rounded-full filter blur-3xl animate-float"></div>
+          <div
+            className="absolute bottom-20 right-10 w-96 h-96 bg-red-600/10 rounded-full filter blur-3xl animate-float"
+            style={{ animationDelay: "2s" }}
+          ></div>
+        </div>
+
+        <div className="relative max-w-7xl mx-auto px-6 text-center">
+          <div className="inline-flex items-center px-4 py-2 bg-orange-500/10 rounded-full border border-orange-500/20 mb-8">
+            <Users className="w-4 h-4 text-orange-500 mr-2" />
+            <span className="text-sm font-medium text-orange-500">
+              Our Team
+            </span>
+          </div>
+
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+            <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
+              Leadership & Administration
+            </span>
+          </h1>
+
+          <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed max-w-3xl mx-auto">
+            Visionary leaders and dedicated administrators driving academic excellence and institutional growth.
+          </p>
+        </div>
+      </section>
+
+      {/* Key Leadership Positions */}
+      <section className="px-6 py-20">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
+                Key Leadership
+              </span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Executive team guiding the university's mission and vision
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {leadershipTeam.map((leader, index) => {
+              const Icon = leader.icon;
+              return (
+                <Card
+                  key={index}
+                  className="group hover:shadow-lg hover:shadow-orange-500/10 transition-all duration-300 hover:border-orange-500/30 bg-card/50 backdrop-blur-sm border border-border/50"
+                >
+                  <CardHeader>
+                    <div className="w-12 h-12 rounded-2xl bg-orange-500/10 flex items-center justify-center mb-4 group-hover:bg-orange-500/20 transition-colors">
+                      <Icon className="w-6 h-6 text-orange-500" />
+                    </div>
+                    <div>
+                      <CardTitle className="text-2xl font-bold group-hover:text-orange-500 transition-colors">
+                        {leader.role}
+                      </CardTitle>
+                      <Badge
+                        variant="outline"
+                        className="mt-2 border-orange-500/20 bg-orange-500/10 text-orange-500"
+                      >
+                        {leader.experience}
+                      </Badge>
+                    </div>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <p className="text-muted-foreground leading-relaxed">
+                      {leader.description}
+                    </p>
+                    <div>
+                      <p className="text-sm font-semibold text-foreground mb-2">
+                        Key Responsibilities:
+                      </p>
+                      <ul className="space-y-1">
+                        {leader.responsibilities.map((resp, idx) => (
+                          <li
+                            key={idx}
+                            className="text-sm text-muted-foreground flex items-center gap-2"
+                          >
+                            <span className="w-2 h-2 rounded-full bg-orange-500"></span>
+                            {resp}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* School Deans */}
+      <section className="px-6 py-20 bg-gradient-to-br from-orange-500/5 via-red-600/5 to-background">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <Badge
+              variant="outline"
+              className="border-orange-500/20 bg-orange-500/10 text-orange-500 mb-4"
+            >
+              Deans of Schools
+            </Badge>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              <span className="text-foreground">Academic </span>
+              <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
+                Leadership
+              </span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Experienced academics leading our schools and academic programs
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {deans.map((dean, index) => (
+              <Card
+                key={index}
+                className="bg-card/50 backdrop-blur-sm border border-border/50 hover:border-orange-500/30 transition-all duration-300"
+              >
+                <CardHeader>
+                  <CardTitle className="text-lg">{dean.area}</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <p className="text-muted-foreground text-sm">
+                    {dean.description}
+                  </p>
+                  <div>
+                    <p className="text-sm font-semibold text-foreground mb-2">
+                      Key Focus:
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {dean.focus.map((focus, idx) => (
+                        <Badge
+                          key={idx}
+                          variant="secondary"
+                          className="text-xs"
+                        >
+                          {focus}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Governance Committees */}
+      <section className="px-6 py-20">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <Badge
+              variant="outline"
+              className="border-orange-500/20 bg-orange-500/10 text-orange-500 mb-4"
+            >
+              Governance Structure
+            </Badge>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
+                Administrative Committees
+              </span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Committees ensuring transparent governance and institutional excellence
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {committees.map((committee, index) => {
+              const Icon = committee.icon;
+              return (
+                <Card
+                  key={index}
+                  className="group hover:shadow-lg hover:shadow-orange-500/10 transition-all duration-300 hover:border-orange-500/30 bg-card/50 backdrop-blur-sm border border-border/50"
+                >
+                  <CardHeader>
+                    <div className="w-12 h-12 rounded-2xl bg-orange-500/10 flex items-center justify-center mb-4 group-hover:bg-orange-500/20 transition-colors">
+                      <Icon className="w-6 h-6 text-orange-500" />
+                    </div>
+                    <CardTitle className="text-lg group-hover:text-orange-500 transition-colors">
+                      {committee.name}
+                    </CardTitle>
+                    <CardDescription className="text-sm">
+                      {committee.description}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-2">
+                      {committee.functions.map((func, idx) => (
+                        <div
+                          key={idx}
+                          className="flex items-center gap-2 text-sm text-muted-foreground"
+                        >
+                          <Star className="w-3 h-3 text-orange-500 flex-shrink-0" />
+                          {func}
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Organizational Values */}
+      <section className="px-6 py-20 bg-gradient-to-r from-orange-500/5 to-red-600/5">
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-8 md:p-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
+                Leadership Principles
+              </span>
+            </h2>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              {[
+                {
+                  title: "Academic Excellence",
+                  description:
+                    "Maintaining highest standards in teaching, research, and student development",
+                },
+                {
+                  title: "Transparency",
+                  description:
+                    "Open communication and transparent decision-making in all matters",
+                },
+                {
+                  title: "Innovation",
+                  description:
+                    "Encouraging creative thinking and continuous improvement",
+                },
+                {
+                  title: "Inclusivity",
+                  description:
+                    "Fostering diverse perspectives and inclusive environment",
+                },
+                {
+                  title: "Accountability",
+                  description:
+                    "Taking responsibility for decisions and institutional outcomes",
+                },
+                {
+                  title: "Collaboration",
+                  description:
+                    "Working together with faculty, staff, and stakeholders",
+                },
+              ].map((principle, index) => (
+                <div
+                  key={index}
+                  className="flex gap-4"
+                >
+                  <div className="flex-shrink-0">
+                    <div className="w-10 h-10 rounded-full bg-orange-500/20 flex items-center justify-center">
+                      <Star className="w-5 h-5 text-orange-500" />
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-foreground mb-1">
+                      {principle.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground">
+                      {principle.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="px-6 py-20">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            Connect With Our Team
+          </h2>
+          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+            Have questions? Reach out to our administration for more information.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="mailto:info@dsu.edu.in">
+              <Button
+                size="lg"
+                className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-red-600 hover:to-orange-500 text-white px-8 py-6 font-semibold rounded-2xl"
+              >
+                Contact Us
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+            </a>
+            <Link to="/about">
+              <Button
+                variant="outline"
+                size="lg"
+                className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white px-8 py-6 font-semibold rounded-2xl"
+              >
+                Back to About
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
