@@ -28,7 +28,6 @@ export default function Leadership() {
         "Join me in taking the first steps as we set up the Dayananda Sagar University (DSU) that is backed by the legacy of Dayananda Sagar Institutions.",
       bio: "Dr. D. Hemachandra Sagar, Chancellor of DSU, leads the university with a vision rooted in the five-decade legacy of Dayananda Sagar Institutions. The Year 2015 marked a major milestone in the pursuit of excellence in higher education. DSU is committed to designing academic programs that reflect present societal needs and future demands, enabling young graduates to be seen as proficient masters in their chosen domains.",
       contact: "Sagar333@hotmail.com | 080-2449-6999",
-      experience: "25+ Years",
       image: "https://www.dsu.edu.in/images/demo/chancellor.jpg",
       icon: Target,
     },
