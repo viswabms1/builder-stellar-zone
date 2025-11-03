@@ -48,8 +48,8 @@ export const searchIndex: SearchResult[] = [
   {
     id: "administrative-committees",
     title: "Administrative Committees",
-    description: "Information about administrative committees",
-    path: "/about/administrative-committees",
+    description: "Governance structure and administrative committees",
+    path: "/about/leadership",
     category: "About",
   },
   {
