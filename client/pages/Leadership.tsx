@@ -22,56 +22,34 @@ import { Button } from "@/components/ui/button";
 export default function Leadership() {
   const leadershipTeam = [
     {
-      role: "Chancellor",
+      role: "Pro Chancellor",
+      name: "Dr. D. Premachandra Sagar",
       description:
-        "Provides strategic vision and oversees the university's academic and administrative affairs.",
-      responsibilities: [
-        "University governance and direction",
-        "Policy formulation and implementation",
-        "Stakeholder relations",
-        "Academic excellence standards",
-      ],
+        "Success belongs to the hardworking and creative, but it requires institutional leadership, supportive ambience, responsive culture, and access to intellectual, infrastructural, and other critical needs.",
+      bio: "Dr. D. Premachandra Sagar, Pro Chancellor of DSU, emphasizes that DSU provides a unique ecosystem and platform for young minds to become innovators, scholars, and entrepreneurs. The university focuses on academics, incubation, and entrepreneurship—enabling students to walk in with ideas and emerge market-ready.",
+      contact: "premachandra.sagar@yahoo.com | 080-24496999",
       experience: "25+ Years",
       icon: Target,
     },
     {
       role: "Vice Chancellor",
+      name: "Prof B. S. Satyanarayana",
       description:
-        "Executive head responsible for day-to-day administration and academic operations.",
-      responsibilities: [
-        "Academic administration",
-        "Research promotion",
-        "Faculty and student affairs",
-        "Budget and financial management",
-      ],
+        "We are in a rapidly changing world where knowledge life cycles have reduced drastically, and product and process life cycles are getting even shorter.",
+      bio: "Prof B. S. Satyanarayana, Vice Chancellor of DSU (Ph.D from University of Cambridge), leads the university with a vision to enable learners to excel in education, research, innovation & entrepreneurship for a sustainable tomorrow. DSU aims to create a state-of-the-art campus with a unique, serene, and conducive ambience for multidisciplinary immersive experiential learning.",
+      contact: "vicechancellor@dsu.edu.in | 9900084234",
       experience: "20+ Years",
       icon: Briefcase,
     },
     {
       role: "Pro Vice Chancellor",
+      name: "Dr. Prakash Sheelvanthmath",
       description:
-        "Assists the Vice Chancellor in academic and administrative matters.",
-      responsibilities: [
-        "Academic program development",
-        "International collaborations",
-        "Curriculum development",
-        "Student development programs",
-      ],
+        "We heartily welcome you to Dayananda Sagar University—a distinguished institution of higher learning established under the visionary aegis of Mahatma Gandhi Vidya Peetha.",
+      bio: "Dr. Prakash S, Pro-Vice Chancellor, leads DSU's AI-centric transformation. The university aims to create a personalized, multidisciplinary, paperless ecosystem that enables each learner to realize their unique 'Talent DNA'. DSU is embedding intelligence into ERP, LMS, and operations to become an agile, insight-driven institution with an AI-First approach.",
+      contact: "pvc-prakash@dsu.edu.in | 9535797327",
       experience: "18+ Years",
       icon: BookOpen,
-    },
-    {
-      role: "Registrar",
-      description:
-        "Manages academic records, admissions, and student affairs.",
-      responsibilities: [
-        "Academic records management",
-        "Admissions process",
-        "Student grievance redressal",
-        "Administrative coordination",
-      ],
-      experience: "15+ Years",
-      icon: Building,
     },
   ];
 
