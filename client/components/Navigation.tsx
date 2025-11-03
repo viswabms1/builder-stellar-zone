@@ -21,6 +21,7 @@ export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [aboutMenuOpen, setAboutMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
+  const [adminCommitteesOpen, setAdminCommitteesOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
