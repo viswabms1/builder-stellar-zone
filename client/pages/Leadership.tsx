@@ -41,16 +41,6 @@ export default function Leadership() {
       image: "https://www.dsu.edu.in/images/demo/prochancellor1.jpg",
       icon: Building,
     },
-    {
-      role: "Vice Chancellor",
-      name: "Prof B. S. Satyanarayana",
-      description:
-        "We are in a rapidly changing world where knowledge life cycles have reduced drastically, and product and process life cycles are getting even shorter.",
-      bio: "Prof B. S. Satyanarayana, Vice Chancellor of DSU (Ph.D from University of Cambridge), leads the university with a vision to enable learners to excel in education, research, innovation & entrepreneurship for a sustainable tomorrow. DSU aims to create a state-of-the-art campus with a unique, serene, and conducive ambience for multidisciplinary immersive experiential learning.",
-      contact: "vicechancellor@dsu.edu.in | 9900084234",
-      image: "https://www.dsu.edu.in/images/Prof_Satyanarayana.jpeg",
-      icon: Briefcase,
-    },
   ];
 
   const proViceChancellors = [
