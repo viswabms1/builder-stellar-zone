@@ -110,6 +110,7 @@ export default function Leadership() {
         "Academic standards",
         "Research promotion",
       ],
+      link: "/about/academic-council",
     },
     {
       name: "Board of Management",
