@@ -253,10 +253,10 @@ function HeroSection() {
               Department of Computer Science & Engineering (AI & ML)
             </span>
           </div>
-          <h1 className="headline-1 text-foreground leading-tight font-display">
+          <h1 className="headline-1 text-white leading-tight font-display">
             Design Intelligent Futures
           </h1>
-          <p className="subheadline mt-3 max-w-2xl text-foreground/90 font-body">
+          <p className="subheadline mt-3 max-w-2xl text-white/90 font-body">
             Blend foundational computer science with advanced artificial
             intelligence and machine learning to build trustworthy,
             human-centred intelligent systems.
@@ -265,7 +265,7 @@ function HeroSection() {
             {specializations.map((spec) => (
               <span
                 key={spec.label}
-                className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs text-foreground backdrop-blur"
+                className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs text-white backdrop-blur"
               >
                 <spec.icon className="h-3.5 w-3.5" /> {spec.label}
               </span>
