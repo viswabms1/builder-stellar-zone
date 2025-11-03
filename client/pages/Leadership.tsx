@@ -29,6 +29,7 @@ export default function Leadership() {
       bio: "Dr. D. Hemachandra Sagar, Chancellor of DSU, leads the university with a vision rooted in the five-decade legacy of Dayananda Sagar Institutions. The Year 2015 marked a major milestone in the pursuit of excellence in higher education. DSU is committed to designing academic programs that reflect present societal needs and future demands, enabling young graduates to be seen as proficient masters in their chosen domains.",
       contact: "Sagar333@hotmail.com | 080-2449-6999",
       experience: "25+ Years",
+      image: "https://www.dsu.edu.in/images/demo/chancellor.jpg",
       icon: Target,
     },
     {
@@ -39,6 +40,7 @@ export default function Leadership() {
       bio: "Dr. D. Premachandra Sagar, Pro Chancellor of DSU, emphasizes that DSU provides a unique ecosystem and platform for young minds to become innovators, scholars, and entrepreneurs. The university focuses on academics, incubation, and entrepreneurship—enabling students to walk in with ideas and emerge market-ready.",
       contact: "premachandra.sagar@yahoo.com | 080-24496999",
       experience: "25+ Years",
+      image: "https://www.dsu.edu.in/images/demo/prochancellor1.jpg",
       icon: Building,
     },
     {
@@ -49,6 +51,7 @@ export default function Leadership() {
       bio: "Prof B. S. Satyanarayana, Vice Chancellor of DSU (Ph.D from University of Cambridge), leads the university with a vision to enable learners to excel in education, research, innovation & entrepreneurship for a sustainable tomorrow. DSU aims to create a state-of-the-art campus with a unique, serene, and conducive ambience for multidisciplinary immersive experiential learning.",
       contact: "vicechancellor@dsu.edu.in | 9900084234",
       experience: "20+ Years",
+      image: "https://www.dsu.edu.in/images/Prof_Satyanarayana.jpeg",
       icon: Briefcase,
     },
     {
@@ -59,6 +62,7 @@ export default function Leadership() {
       bio: "Dr. Prakash S, Pro-Vice Chancellor, leads DSU's AI-centric transformation. The university aims to create a personalized, multidisciplinary, paperless ecosystem that enables each learner to realize their unique 'Talent DNA'. DSU is embedding intelligence into ERP, LMS, and operations to become an agile, insight-driven institution with an AI-First approach.",
       contact: "pvc-prakash@dsu.edu.in | 9535797327",
       experience: "18+ Years",
+      image: "https://www.dsu.edu.in/images/Dr_Prakash_S.jpg",
       icon: BookOpen,
     },
   ];
