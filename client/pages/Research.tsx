@@ -362,8 +362,8 @@ export default function Research() {
                 <img src={s.image} alt={s.title} className="h-64 w-full object-cover group-hover:scale-[1.02] transition-transform duration-500" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
                 <div className="absolute bottom-0 p-6">
-                  <Badge className="bg-white/10 text-foreground mb-3">{s.tag}</Badge>
-                  <h3 className="text-foreground font-semibold text-xl font-display">{s.title}</h3>
+                  <Badge className="bg-white/10 text-white mb-3">{s.tag}</Badge>
+                  <h3 className="text-white font-semibold text-xl font-display">{s.title}</h3>
                 </div>
               </a>
             ))}
