@@ -142,7 +142,7 @@ export default function About() {
                 Explore About DSU
               </span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-lg text-white max-w-3xl mx-auto">
               Learn more about our university through dedicated sections
             </p>
           </div>
@@ -214,10 +214,10 @@ export default function About() {
 
           <div className="prose prose-invert max-w-4xl mx-auto mb-16">
             <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-8 md:p-12">
-              <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+              <p className="text-lg text-white leading-relaxed mb-6">
                 Dayananda Sagar Institutions founded in the 60s by one such visionary, late Sri Dayananda Sagar committed to take knowledge to the people, transforms today's students into responsible citizens and professional leaders of tomorrow.
               </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
+              <p className="text-lg text-white leading-relaxed">
                 Dayananda Sagar University created by an Act of the Karnataka State in 2014, built on this adorable legacy and inspired by its own milestones, meeting the needs of quality higher education in this part of the world.
               </p>
             </div>
