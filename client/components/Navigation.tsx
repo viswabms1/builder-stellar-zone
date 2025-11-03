@@ -106,12 +106,12 @@ export default function Navigation() {
                     </button>
 
                     {/* Mega Menu Dropdown */}
-                    <div className="absolute left-0 top-full mt-0 w-64 bg-gradient-to-b from-blue-600 to-blue-700 text-white rounded-lg shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 py-4">
+                    <div className="absolute left-0 top-full mt-0 w-64 bg-gradient-to-b from-orange-600 to-red-700 text-white rounded-lg shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 py-4">
                       {aboutSubmenus.map((submenu) => (
                         <Link
                           key={submenu.name}
                           to={submenu.href}
-                          className="block px-6 py-3 hover:bg-white/10 transition-colors text-sm border-b border-white/10 last:border-b-0"
+                          className="block px-6 py-3 hover:bg-white/20 transition-colors text-sm border-b border-white/20 last:border-b-0"
                         >
                           {submenu.name}
                         </Link>
