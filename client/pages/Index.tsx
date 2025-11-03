@@ -363,7 +363,7 @@ export default function Index() {
                 News
               </span>
             </h2>
-            <p className="subheadline text-muted-foreground max-w-2xl mx-auto font-display">
+            <p className="subheadline text-white max-w-2xl mx-auto font-display">
               Stories from research, campus life, and our community
             </p>
           </div>
