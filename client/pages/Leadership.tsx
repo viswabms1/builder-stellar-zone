@@ -580,37 +580,6 @@ export default function Leadership() {
         </div>
       </section>
 
-      {/* Board of Governors Link Section */}
-      <section className="px-6 py-20 bg-gradient-to-br from-orange-500/5 via-red-600/5 to-background">
-        <div className="max-w-4xl mx-auto">
-          <Link to="/about/board-of-governors">
-            <div className="group relative bg-gradient-to-br from-orange-500/10 to-red-600/10 border border-orange-500/20 hover:border-orange-500/50 rounded-2xl p-8 md:p-12 transition-all duration-300 hover:shadow-lg hover:shadow-orange-500/20 cursor-pointer">
-              <div className="absolute inset-0 bg-gradient-to-r from-orange-500/0 to-red-600/0 group-hover:from-orange-500/5 group-hover:to-red-600/5 rounded-2xl transition-all duration-300"></div>
-              <div className="relative">
-                <Badge
-                  variant="outline"
-                  className="border-orange-500/20 bg-orange-500/10 text-orange-500 mb-4"
-                >
-                  Governance Structure
-                </Badge>
-                <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                  <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
-                    Board of Governors
-                  </span>
-                </h2>
-                <p className="text-lg text-muted-foreground mb-6 max-w-2xl">
-                  Strategic governance and institutional oversight
-                </p>
-                <div className="flex items-center text-orange-500 font-semibold group-hover:gap-3 gap-2 transition-all duration-300">
-                  <span>View Full Board</span>
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </div>
-              </div>
-            </div>
-          </Link>
-        </div>
-      </section>
-
       {/* Organizational Values */}
       <section className="px-6 py-20 bg-gradient-to-r from-orange-500/5 to-red-600/5">
         <div className="max-w-4xl mx-auto">
