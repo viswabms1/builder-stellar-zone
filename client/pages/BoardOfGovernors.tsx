@@ -106,7 +106,7 @@ export default function BoardOfGovernors() {
                 Members
               </span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-lg text-white max-w-3xl mx-auto">
               A distinguished group of educational leaders, administrators, and government representatives
             </p>
           </div>
@@ -202,7 +202,7 @@ export default function BoardOfGovernors() {
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Learn More About Leadership
           </h2>
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+          <p className="text-lg text-white mb-8 max-w-2xl mx-auto">
             Explore the complete leadership structure of Dayananda Sagar University.
           </p>
 
