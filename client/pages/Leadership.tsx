@@ -228,11 +228,11 @@ export default function Leadership() {
                 >
                   {/* Leader Image */}
                   {leader.image && (
-                    <div className="relative w-full bg-gradient-to-br from-orange-500/10 to-red-600/10 flex items-center justify-center p-4">
+                    <div className="relative w-full bg-gradient-to-br from-orange-500/10 to-red-600/10 flex items-center justify-center h-96">
                       <img
                         src={leader.image}
                         alt={leader.name}
-                        className="h-auto max-h-96 w-auto object-contain group-hover:scale-105 transition-transform duration-500"
+                        className="h-full w-full object-contain group-hover:scale-105 transition-transform duration-500"
                         onError={(e) => {
                           e.currentTarget.style.display = 'none';
                         }}
@@ -307,11 +307,11 @@ export default function Leadership() {
                 >
                   {/* Leader Image */}
                   {pvc.image && (
-                    <div className="relative w-full bg-gradient-to-br from-orange-500/10 to-red-600/10 flex items-center justify-center p-4 h-96">
+                    <div className="relative w-full bg-gradient-to-br from-orange-500/10 to-red-600/10 flex items-center justify-center h-96">
                       <img
                         src={pvc.image}
                         alt={pvc.name}
-                        className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        className="h-full w-full object-contain group-hover:scale-105 transition-transform duration-500"
                         onError={(e) => {
                           e.currentTarget.style.display = 'none';
                         }}
