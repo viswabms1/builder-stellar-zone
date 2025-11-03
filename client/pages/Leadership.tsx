@@ -51,6 +51,9 @@ export default function Leadership() {
       image: "https://www.dsu.edu.in/images/Prof_Satyanarayana.jpeg",
       icon: Briefcase,
     },
+  ];
+
+  const proViceChancellors = [
     {
       role: "Pro Vice Chancellor",
       name: "Prof. R Janardhan",
