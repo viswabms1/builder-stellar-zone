@@ -215,25 +215,42 @@ export default function Leadership() {
               return (
                 <Card
                   key={index}
-                  className="group hover:shadow-lg hover:shadow-orange-500/10 transition-all duration-300 hover:border-orange-500/30 bg-card/50 backdrop-blur-sm border border-border/50"
+                  className="group hover:shadow-lg hover:shadow-orange-500/10 transition-all duration-300 hover:border-orange-500/30 bg-card/50 backdrop-blur-sm border border-border/50 overflow-hidden"
                 >
-                  <CardHeader>
-                    <div className="w-12 h-12 rounded-2xl bg-orange-500/10 flex items-center justify-center mb-4 group-hover:bg-orange-500/20 transition-colors">
-                      <Icon className="w-6 h-6 text-orange-500" />
+                  {/* Leader Image */}
+                  {leader.image && (
+                    <div className="relative h-64 overflow-hidden bg-gradient-to-br from-orange-500/10 to-red-600/10">
+                      <img
+                        src={leader.image}
+                        alt={leader.name}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        onError={(e) => {
+                          e.currentTarget.style.display = 'none';
+                        }}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
                     </div>
-                    <div>
-                      <CardTitle className="text-2xl font-bold group-hover:text-orange-500 transition-colors">
-                        {leader.role}
-                      </CardTitle>
-                      <p className="text-sm text-muted-foreground mt-1">
-                        {leader.name}
-                      </p>
-                      <Badge
-                        variant="outline"
-                        className="mt-2 border-orange-500/20 bg-orange-500/10 text-orange-500"
-                      >
-                        {leader.experience}
-                      </Badge>
+                  )}
+
+                  <CardHeader>
+                    <div className="flex items-start justify-between">
+                      <div>
+                        <CardTitle className="text-2xl font-bold group-hover:text-orange-500 transition-colors">
+                          {leader.role}
+                        </CardTitle>
+                        <p className="text-sm text-muted-foreground mt-1">
+                          {leader.name}
+                        </p>
+                        <Badge
+                          variant="outline"
+                          className="mt-2 border-orange-500/20 bg-orange-500/10 text-orange-500"
+                        >
+                          {leader.experience}
+                        </Badge>
+                      </div>
+                      <div className="w-12 h-12 rounded-2xl bg-orange-500/10 flex items-center justify-center group-hover:bg-orange-500/20 transition-colors flex-shrink-0">
+                        <Icon className="w-6 h-6 text-orange-500" />
+                      </div>
                     </div>
                   </CardHeader>
                   <CardContent className="space-y-4">
