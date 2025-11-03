@@ -89,39 +89,6 @@ export default function Leadership() {
     },
   ];
 
-  const deans = [
-    {
-      area: "School of Engineering",
-      description: "Oversees engineering programs and technical innovation",
-      focus: ["B.Tech Programs", "Research", "Industry Partnerships"],
-    },
-    {
-      area: "School of Computer Applications",
-      description: "Leads IT and computer science education",
-      focus: ["CS Programs", "AI & ML", "Software Innovation"],
-    },
-    {
-      area: "School of Applied Sciences",
-      description: "Manages basic and applied science programs",
-      focus: ["Science Education", "Research", "Laboratory Management"],
-    },
-    {
-      area: "School of Management",
-      description: "Directs management and business education",
-      focus: ["MBA Programs", "Executive Education", "Industry Connect"],
-    },
-    {
-      area: "School of Law",
-      description: "Oversees law education and legal research",
-      focus: ["Law Programs", "Legal Research", "Clinical Programs"],
-    },
-    {
-      area: "School of Health Sciences",
-      description: "Manages healthcare and medical education",
-      focus: ["Health Programs", "Clinical Training", "Research"],
-    },
-  ];
-
   const committees = [
     {
       name: "Board of Governors",
