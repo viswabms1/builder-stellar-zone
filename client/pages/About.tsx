@@ -201,99 +201,90 @@ export default function About() {
         </div>
       </section>
 
-      {/* Mission, Vision, Values */}
+      {/* Welcome to DSU Section */}
       <section className="px-6 py-20">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
-                Our
+                Welcome to Dayananda Sagar University
               </span>
-              <span className="text-foreground"> Foundation</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              The principles and values that guide our educational mission
-            </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="prose prose-invert max-w-4xl mx-auto mb-16">
+            <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-8 md:p-12">
+              <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                Dayananda Sagar Institutions founded in the 60s by one such visionary, late Sri Dayananda Sagar committed to take knowledge to the people, transforms today's students into responsible citizens and professional leaders of tomorrow.
+              </p>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Dayananda Sagar University created by an Act of the Karnataka State in 2014, built on this adorable legacy and inspired by its own milestones, meeting the needs of quality higher education in this part of the world.
+              </p>
+            </div>
+          </div>
+
+          {/* Heritage Sections */}
+          <div className="grid md:grid-cols-2 gap-8">
             {[
               {
-                icon: Target,
-                title: "Mission",
+                icon: Star,
+                title: "Unveiling a Legacy",
                 description:
-                  "To provide world-class education that empowers students to become leaders, innovators, and responsible global citizens through excellence in teaching, research, and service.",
-                points: [
-                  "Excellence in Education",
-                  "Research & Innovation",
-                  "Global Citizenship",
-                  "Industry Readiness",
-                  "Ethical Leadership",
-                ],
+                  "Universities of great legacy across the world are the invaluable contribution of certain visionaries to the world. Universities don't manufacture products with specific use and determined life cycle. They share & impart multitudes of streams of knowledge and create wonderful human beings – learned practitioners & Disseminators of knowledge to make the world a better place to be. These Universities of great significance have lived through the centuries building centers of knowledge and great alumni of such Universities.",
               },
               {
-                icon: Eye,
-                title: "Vision",
+                icon: Building,
+                title: "Proud to be part of DSU",
                 description:
-                  "To be a globally recognized university that transforms lives through cutting-edge education, pioneering research, and meaningful community engagement.",
-                points: [
-                  "Global Recognition",
-                  "Transformative Education",
-                  "Pioneering Research",
-                  "Community Impact",
-                  "Sustainable Future",
-                ],
+                  "DSU is a proud member of the Dayananda Sagar Institutions family. Founded by Late Sri Dayananda Sagar in the early sixties (with just four students), DSI has morphed into global education power house, spread over five campuses, catering to the education needs of over 17,000 students. Operating under the aegis of the Mahatma Gandhi Vidya Peetha Trust in Bengaluru, DSI has enabled the transformation of tens of thousands of young Indian and international citizens into professionals in diverse specializations.",
               },
               {
-                icon: Heart,
-                title: "Values",
+                icon: Users,
+                title: "Best-in-class Facilities",
                 description:
-                  "Our core values shape every aspect of university life and guide our commitment to academic excellence and social responsibility.",
-                points: [
-                  "Integrity & Honesty",
-                  "Excellence & Innovation",
-                  "Diversity & Inclusion",
-                  "Collaboration & Respect",
-                  "Social Responsibility",
-                ],
+                  "Besides our high-calibre teaching staff, the students are given a challenging academic environment with well-equipped lecture theatres, laboratories, excellent libraries and computer networking facilities. DSU also has exceptional infrastructure for students who possess a passion for sports and games. The hostel facilities, encompassing cultural and recreational needs, cater to both local and international students.",
               },
-            ].map((pillar, index) => (
-              <Card
-                key={index}
-                className="group hover:shadow-xl hover:shadow-orange-500/10 transition-all duration-500 hover:-translate-y-2 bg-card/50 backdrop-blur-sm border border-border/50 hover:border-orange-500/30"
-              >
-                <CardHeader>
-                  <div className="w-16 h-16 rounded-2xl bg-orange-500/10 flex items-center justify-center mb-6 group-hover:bg-orange-500/20 transition-colors">
-                    <pillar.icon className="w-8 h-8 text-orange-500 group-hover:scale-110 transition-transform" />
-                  </div>
-                  <CardTitle className="text-2xl font-bold group-hover:text-orange-500 transition-colors">
-                    {pillar.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-6">
-                  <CardDescription className="text-muted-foreground leading-relaxed text-base">
-                    {pillar.description}
-                  </CardDescription>
-
-                  <div className="space-y-3">
-                    <p className="text-sm font-semibold text-foreground">
-                      Key Aspects:
-                    </p>
-                    <div className="space-y-2">
-                      {pillar.points.map((point, idx) => (
-                        <div
-                          key={idx}
-                          className="flex items-center text-sm text-muted-foreground"
-                        >
-                          <CheckCircle className="w-4 h-4 text-orange-500 mr-3 flex-shrink-0" />
-                          {point}
-                        </div>
-                      ))}
+              {
+                icon: Lightbulb,
+                title: "Inspired by Innovators",
+                description:
+                  "Research, Innovation and Incubation (spread over 25,000 sft of industry quality labs) form the core of DSU. So it isn't surprising that DSU has taken the next logical step: Laying the foundation to transform the entrepreneurial dream of every young Indian and global citizen into a reality. Enabling this transformation is the active support of industry leaders, industry bodies and a dedicated 4 lakh square feet modern ready-to-move-in infrastructure!",
+              },
+              {
+                icon: Award,
+                title: "Stellar Performance – Time and Again",
+                description:
+                  "Dayananda Sagar Institutions (DSI) have consistent topped the academic charts in every area of knowledge standing out from the midst of a sea of institutions of repute. Its accomplishments are unparalleled. In the recent past, DSI secured 58 ranks from Visvesvaraya Technological University among 220 engineering colleges in Karnataka (in 2014).",
+              },
+              {
+                icon: Globe,
+                title: "Different Courses for Different Passions",
+                description:
+                  "Beginning Academic Year 2015–16, Dayananda Sagar University would offer courses in Engineering, Computer Applications, Sciences, Arts and Management in the Bachelors, Masters and Ph.D levels. Supporting the academic activities are the Centers of Excellence in ICT, Health Care, Energy and Life Science, among other fast evolving fields of study.",
+              },
+            ].map((section, index) => {
+              const Icon = section.icon;
+              return (
+                <Card
+                  key={index}
+                  className="group hover:shadow-lg hover:shadow-orange-500/10 transition-all duration-300 hover:border-orange-500/30 bg-card/50 backdrop-blur-sm border border-border/50"
+                >
+                  <CardHeader>
+                    <div className="w-12 h-12 rounded-2xl bg-orange-500/10 flex items-center justify-center mb-4 group-hover:bg-orange-500/20 transition-colors">
+                      <Icon className="w-6 h-6 text-orange-500" />
                     </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+                    <CardTitle className="text-xl group-hover:text-orange-500 transition-colors">
+                      {section.title}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {section.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>
