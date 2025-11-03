@@ -20,7 +20,20 @@ import { useState, useEffect } from "react";
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [aboutMenuOpen, setAboutMenuOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
   const location = useLocation();
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === "k") {
+        e.preventDefault();
+        setSearchOpen(true);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
 
   const aboutSubmenus = [
     { name: "About DSU", href: "/about" },
