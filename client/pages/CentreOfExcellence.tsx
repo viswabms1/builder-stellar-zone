@@ -80,45 +80,33 @@ export default function CentreOfExcellence() {
           ></div>
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div>
-              <div className="inline-flex items-center px-4 py-2 bg-orange-500/10 rounded-full border border-orange-500/20 mb-8">
-                <Lightbulb className="w-4 h-4 text-orange-500 mr-2" />
-                <span className="text-sm font-medium text-orange-500">
-                  Innovation Hub
-                </span>
-              </div>
+        <div className="relative max-w-7xl mx-auto px-6 text-center">
+          <div className="inline-flex items-center px-4 py-2 bg-orange-500/10 rounded-full border border-orange-500/20 mb-8">
+            <Lightbulb className="w-4 h-4 text-orange-500 mr-2" />
+            <span className="text-sm font-medium text-orange-500">
+              Innovation Hub
+            </span>
+          </div>
 
-              <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-                <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
-                  Centre of Excellence
-                </span>
-                <br />
-                <span className="text-foreground">& Innovation</span>
-              </h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+            <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
+              Centre of Excellence
+            </span>
+            <br />
+            <span className="text-foreground">& Innovation</span>
+          </h1>
 
-              <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
-                Dayananda Sagar University is establishing world-class centres of
-                excellence in emerging technologies, aligned with its AI-First
-                approach to education, research, and innovation. These centres
-                are designed to foster cutting-edge research and industry
-                collaboration.
-              </p>
+          <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed max-w-3xl mx-auto">
+            Dayananda Sagar University is establishing world-class centres of
+            excellence in emerging technologies, aligned with its AI-First
+            approach to education, research, and innovation. These centres
+            are designed to foster cutting-edge research and industry
+            collaboration.
+          </p>
 
-              <div className="flex items-center space-x-4 text-sm text-muted-foreground">
-                <TrendingUp className="w-5 h-5 text-orange-500" />
-                <span>Building world-class research infrastructure</span>
-              </div>
-            </div>
-
-            <div className="relative">
-              <img
-                src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fe2eb00eb05cd4afbaf2b388959ca3615?format=webp&width=800"
-                alt="Centre of Excellence and Innovation"
-                className="w-full rounded-2xl shadow-2xl object-cover"
-              />
-            </div>
+          <div className="flex items-center justify-center space-x-4 text-sm text-muted-foreground">
+            <TrendingUp className="w-5 h-5 text-orange-500" />
+            <span>Building world-class research infrastructure</span>
           </div>
         </div>
       </section>
