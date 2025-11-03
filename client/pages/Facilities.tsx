@@ -513,7 +513,7 @@ export default function Facilities() {
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Explore Our Campus
           </h2>
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+          <p className="text-lg text-white mb-8 max-w-2xl mx-auto">
             Experience our world-class facilities firsthand. Take a virtual or physical tour of our campuses.
           </p>
 
