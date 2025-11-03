@@ -22,6 +22,16 @@ import { Button } from "@/components/ui/button";
 export default function Leadership() {
   const leadershipTeam = [
     {
+      role: "Chancellor",
+      name: "Dr. D. Hemachandra Sagar",
+      description:
+        "Join me in taking the first steps as we set up the Dayananda Sagar University (DSU) that is backed by the legacy of Dayananda Sagar Institutions.",
+      bio: "Dr. D. Hemachandra Sagar, Chancellor of DSU, leads the university with a vision rooted in the five-decade legacy of Dayananda Sagar Institutions. The Year 2015 marked a major milestone in the pursuit of excellence in higher education. DSU is committed to designing academic programs that reflect present societal needs and future demands, enabling young graduates to be seen as proficient masters in their chosen domains.",
+      contact: "Sagar333@hotmail.com | 080-2449-6999",
+      experience: "25+ Years",
+      icon: Target,
+    },
+    {
       role: "Pro Chancellor",
       name: "Dr. D. Premachandra Sagar",
       description:
@@ -29,7 +39,7 @@ export default function Leadership() {
       bio: "Dr. D. Premachandra Sagar, Pro Chancellor of DSU, emphasizes that DSU provides a unique ecosystem and platform for young minds to become innovators, scholars, and entrepreneurs. The university focuses on academics, incubation, and entrepreneurship—enabling students to walk in with ideas and emerge market-ready.",
       contact: "premachandra.sagar@yahoo.com | 080-24496999",
       experience: "25+ Years",
-      icon: Target,
+      icon: Building,
     },
     {
       role: "Vice Chancellor",
