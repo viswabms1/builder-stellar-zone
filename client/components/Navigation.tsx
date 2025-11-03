@@ -11,12 +11,23 @@ import {
   Building,
   Calendar,
   Lightbulb,
+  ChevronDown,
 } from "lucide-react";
 import { useState } from "react";
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
+  const [aboutMenuOpen, setAboutMenuOpen] = useState(false);
   const location = useLocation();
+
+  const aboutSubmenus = [
+    { name: "About DSU", href: "/about" },
+    { name: "Vision & Mission", href: "/about/vision-mission" },
+    { name: "History", href: "/about/history" },
+    { name: "Leadership", href: "/about/leadership" },
+    { name: "Accreditations", href: "/about/accreditations" },
+    { name: "Facilities", href: "/about/facilities" },
+  ];
 
   const navigation = [
     { name: "Home", href: "/", icon: Home },
