@@ -570,108 +570,34 @@ export default function Leadership() {
         </div>
       </section>
 
-      {/* Board of Governors */}
+      {/* Board of Governors Link Section */}
       <section className="px-6 py-20 bg-gradient-to-br from-orange-500/5 via-red-600/5 to-background">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <Badge
-              variant="outline"
-              className="border-orange-500/20 bg-orange-500/10 text-orange-500 mb-4"
-            >
-              Governance
-            </Badge>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
-                Board of Governors
-              </span>
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Strategic leadership driving the university's vision and mission
-            </p>
-          </div>
-
-          <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl overflow-hidden">
-            <div className="overflow-x-auto">
-              <table className="w-full">
-                <thead>
-                  <tr className="border-b border-border/50 bg-orange-500/5">
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-foreground">Sl. No</th>
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-foreground">Name</th>
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-foreground">Position</th>
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-foreground">Role</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr className="border-b border-border/30 hover:bg-orange-500/5 transition-colors">
-                    <td className="px-6 py-4 text-sm text-muted-foreground">1</td>
-                    <td className="px-6 py-4 text-sm font-medium text-foreground">Dr. D. Hemachandra Sagar</td>
-                    <td className="px-6 py-4 text-sm text-muted-foreground">Chancellor, DSU</td>
-                    <td className="px-6 py-4 text-sm text-muted-foreground">Chairperson</td>
-                  </tr>
-                  <tr className="border-b border-border/30 hover:bg-orange-500/5 transition-colors">
-                    <td className="px-6 py-4 text-sm text-muted-foreground">2</td>
-                    <td className="px-6 py-4 text-sm font-medium text-foreground">Dr. D. Premachandra Sagar</td>
-                    <td className="px-6 py-4 text-sm text-muted-foreground">Pro Chancellor, DSU</td>
-                    <td className="px-6 py-4 text-sm text-muted-foreground">Member</td>
-                  </tr>
-                  <tr className="border-b border-border/30 hover:bg-orange-500/5 transition-colors">
-                    <td className="px-6 py-4 text-sm text-muted-foreground">3</td>
-                    <td className="px-6 py-4 text-sm font-medium text-foreground">Prof. B. S. Satyanarayana</td>
-                    <td className="px-6 py-4 text-sm text-muted-foreground">Vice Chancellor, DSU</td>
-                    <td className="px-6 py-4 text-sm text-muted-foreground">Member</td>
-                  </tr>
-                  <tr className="border-b border-border/30 hover:bg-orange-500/5 transition-colors">
-                    <td className="px-6 py-4 text-sm text-muted-foreground">4</td>
-                    <td className="px-6 py-4 text-sm font-medium text-foreground">Principal Secretary / Secretary to the State Government in Higher Education</td>
-                    <td className="px-6 py-4 text-sm text-muted-foreground">Government Nominee</td>
-                    <td className="px-6 py-4 text-sm text-muted-foreground">Member</td>
-                  </tr>
-                  <tr className="border-b border-border/30 hover:bg-orange-500/5 transition-colors">
-                    <td className="px-6 py-4 text-sm text-muted-foreground">5</td>
-                    <td className="px-6 py-4 text-sm font-medium text-foreground">Principal Secretary / Secretary to the State Government in Medical Education</td>
-                    <td className="px-6 py-4 text-sm text-muted-foreground">Government Nominee</td>
-                    <td className="px-6 py-4 text-sm text-muted-foreground">Member</td>
-                  </tr>
-                  <tr className="border-b border-border/30 hover:bg-orange-500/5 transition-colors">
-                    <td className="px-6 py-4 text-sm text-muted-foreground">6</td>
-                    <td className="px-6 py-4 text-sm font-medium text-foreground">Sri K. Jairaj, IAS (Retd.)</td>
-                    <td className="px-6 py-4 text-sm text-muted-foreground">Retired Additional Chief Secretary to Government</td>
-                    <td className="px-6 py-4 text-sm text-muted-foreground">GOK Nominee</td>
-                  </tr>
-                  <tr className="border-b border-border/30 hover:bg-orange-500/5 transition-colors">
-                    <td className="px-6 py-4 text-sm text-muted-foreground">7</td>
-                    <td className="px-6 py-4 text-sm font-medium text-foreground">Ms. Tintisha Sagar</td>
-                    <td className="px-6 py-4 text-sm text-muted-foreground">Dayananda Sagar Institutions</td>
-                    <td className="px-6 py-4 text-sm text-muted-foreground">Sponsoring Body Nominee</td>
-                  </tr>
-                  <tr className="border-b border-border/30 hover:bg-orange-500/5 transition-colors">
-                    <td className="px-6 py-4 text-sm text-muted-foreground">8</td>
-                    <td className="px-6 py-4 text-sm font-medium text-foreground">Sri Rohan Prem Sagar</td>
-                    <td className="px-6 py-4 text-sm text-muted-foreground">Dayananda Sagar Institutions</td>
-                    <td className="px-6 py-4 text-sm text-muted-foreground">Sponsoring Body Nominee</td>
-                  </tr>
-                  <tr className="border-b border-border/30 hover:bg-orange-500/5 transition-colors">
-                    <td className="px-6 py-4 text-sm text-muted-foreground">9</td>
-                    <td className="px-6 py-4 text-sm font-medium text-foreground">Prof. R Janardhan</td>
-                    <td className="px-6 py-4 text-sm text-muted-foreground">Pro Vice Chancellor, DSU</td>
-                    <td className="px-6 py-4 text-sm text-muted-foreground">Member</td>
-                  </tr>
-                  <tr className="border-b border-border/30 hover:bg-orange-500/5 transition-colors">
-                    <td className="px-6 py-4 text-sm text-muted-foreground">10</td>
-                    <td className="px-6 py-4 text-sm font-medium text-foreground">Vacant</td>
-                    <td className="px-6 py-4 text-sm text-muted-foreground">UGC Nominee</td>
-                    <td className="px-6 py-4 text-sm text-muted-foreground">Member</td>
-                  </tr>
-                  <tr className="hover:bg-orange-500/5 transition-colors">
-                    <td className="px-6 py-4 text-sm text-muted-foreground">11</td>
-                    <td className="px-6 py-4 text-sm font-medium text-foreground">Dr. Puttamadappa C</td>
-                    <td className="px-6 py-4 text-sm text-muted-foreground">Registrar, DSU</td>
-                    <td className="px-6 py-4 text-sm text-muted-foreground">Secretary</td>
-                  </tr>
-                </tbody>
-              </table>
+        <div className="max-w-4xl mx-auto">
+          <Link to="/about/board-of-governors">
+            <div className="group relative bg-gradient-to-br from-orange-500/10 to-red-600/10 border border-orange-500/20 hover:border-orange-500/50 rounded-2xl p-8 md:p-12 transition-all duration-300 hover:shadow-lg hover:shadow-orange-500/20 cursor-pointer">
+              <div className="absolute inset-0 bg-gradient-to-r from-orange-500/0 to-red-600/0 group-hover:from-orange-500/5 group-hover:to-red-600/5 rounded-2xl transition-all duration-300"></div>
+              <div className="relative">
+                <Badge
+                  variant="outline"
+                  className="border-orange-500/20 bg-orange-500/10 text-orange-500 mb-4"
+                >
+                  Governance Structure
+                </Badge>
+                <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                  <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
+                    Board of Governors
+                  </span>
+                </h2>
+                <p className="text-lg text-muted-foreground mb-6 max-w-2xl">
+                  Strategic governance and institutional oversight with 11 distinguished members providing direction and financial oversight
+                </p>
+                <div className="flex items-center text-orange-500 font-semibold group-hover:gap-3 gap-2 transition-all duration-300">
+                  <span>View Full Board</span>
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </div>
+              </div>
             </div>
-          </div>
+          </Link>
         </div>
       </section>
 
