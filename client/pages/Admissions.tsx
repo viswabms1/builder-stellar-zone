@@ -423,7 +423,7 @@ function QuickLinksSection() {
           <h2 className="text-3xl font-bold md:text-4xl">
             Start with the Essentials
           </h2>
-          <p className="mt-3 text-lg text-muted-foreground">
+          <p className="mt-3 text-lg text-white">
             Access the most requested admission resources, deadlines, and
             application pathways in one place.
           </p>
@@ -480,7 +480,7 @@ function AdmissionRoutesSection() {
           <h2 className="text-3xl font-bold md:text-4xl">
             Choose Your Admission Pathway
           </h2>
-          <p className="mt-3 text-lg text-muted-foreground">
+          <p className="mt-3 text-lg text-white">
             Whether you are an incoming undergraduate, postgraduate, lateral
             entrant, or international learner, DSU has a dedicated channel for
             you.
