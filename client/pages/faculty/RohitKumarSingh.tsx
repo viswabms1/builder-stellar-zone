@@ -28,7 +28,7 @@ export default function FacultyRohitKumarSingh() {
                 <div className="flex-1">
                   <div className="text-brand-blue text-xs font-body">Computer Science & Engineering</div>
                   <h1 className="text-2xl md:text-3xl font-bold font-display">Dr. Rohit Kumar Singh</h1>
-                  <div className="text-muted-foreground text-sm">Associate Professor</div>
+                  <div className="text-white text-sm">Associate Professor</div>
                   <div className="mt-2 flex flex-wrap gap-2">
                     {topics.map((t) => (
                       <Badge key={t} className="bg-brand-magenta/10 text-brand-magenta">{t}</Badge>
@@ -52,7 +52,7 @@ export default function FacultyRohitKumarSingh() {
               <CardHeader>
                 <CardTitle className="font-display">Biography</CardTitle>
               </CardHeader>
-              <CardContent className="text-sm text-muted-foreground font-body">
+              <CardContent className="text-sm text-white font-body">
                 Builds robust autonomy stacks for field robots. Works at the intersection of sensing, planning and control for real‑world deployment.
               </CardContent>
             </Card>
@@ -82,11 +82,11 @@ export default function FacultyRohitKumarSingh() {
               </CardHeader>
               <CardContent className="grid sm:grid-cols-2 gap-4 text-sm font-body">
                 <div>
-                  <div className="text-muted-foreground">CSE 635 · Spring 2025</div>
+                  <div className="text-white">CSE 635 · Spring 2025</div>
                   <div className="font-medium">Robot Perception & Control</div>
                 </div>
                 <div>
-                  <div className="text-muted-foreground">CSE 420 · Fall 2024</div>
+                  <div className="text-white">CSE 420 · Fall 2024</div>
                   <div className="font-medium">Embedded Systems</div>
                 </div>
               </CardContent>
@@ -114,8 +114,8 @@ export default function FacultyRohitKumarSingh() {
                 <CardTitle className="font-display">Contact</CardTitle>
               </CardHeader>
               <CardContent className="space-y-3 text-sm font-body">
-                <div className="flex items-center gap-2 text-muted-foreground"><MapPin className="w-4 h-4"/> Robotics Lab, Tech Park — 2nd Floor</div>
-                <div className="flex items-center gap-2 text-muted-foreground"><Clock className="w-4 h-4"/> Office Hours: Mon, 3:00–5:00 PM</div>
+                <div className="flex items-center gap-2 text-white"><MapPin className="w-4 h-4"/> Robotics Lab, Tech Park — 2nd Floor</div>
+                <div className="flex items-center gap-2 text-white"><Clock className="w-4 h-4"/> Office Hours: Mon, 3:00–5:00 PM</div>
               </CardContent>
             </Card>
 
