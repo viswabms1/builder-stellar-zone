@@ -120,6 +120,11 @@ function App() {
               <Route path="/examinations" element={<Examinations />} />
               <Route path="/research" element={<Research />} />
               <Route path="/about" element={<About />} />
+              <Route path="/about/vision-mission" element={<VisionMission />} />
+              <Route path="/about/history" element={<History />} />
+              <Route path="/about/leadership" element={<Leadership />} />
+              <Route path="/about/accreditations" element={<Accreditations />} />
+              <Route path="/about/facilities" element={<Facilities />} />
               <Route path="/centre-of-excellence" element={<CentreOfExcellence />} />
               <Route path="/iqac" element={<IQAC />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
