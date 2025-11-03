@@ -196,7 +196,7 @@ export default function History() {
                 Heritage
               </span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-lg text-white max-w-3xl mx-auto">
               Building on decades of educational excellence
             </p>
           </div>
