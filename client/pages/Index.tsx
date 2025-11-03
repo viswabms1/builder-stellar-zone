@@ -385,14 +385,14 @@ export default function Index() {
                   <Badge className="bg-brand-magenta/20 text-brand-magenta">
                     Research
                   </Badge>
-                  <div className="flex items-center text-foreground/80 text-xs font-body">
+                  <div className="flex items-center text-white/80 text-xs font-body">
                     <CalendarDays className="w-4 h-4 mr-1" /> Sep 12, 2025
                   </div>
                 </div>
-                <h3 className="text-3xl font-semibold text-foreground mb-3 font-display">
+                <h3 className="text-3xl font-semibold text-white mb-3 font-display">
                   DSU launches Center for AI & Robotics
                 </h3>
-                <p className="text-foreground/80 max-w-3xl mb-6 hidden sm:block font-body">
+                <p className="text-white/80 max-w-3xl mb-6 hidden sm:block font-body">
                   A state-of-the-art hub advancing intelligent systems,
                   human-robot interaction, and applied AI with strong industry
                   partnerships.
