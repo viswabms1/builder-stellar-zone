@@ -40,13 +40,7 @@ export default function Navigation() {
     { name: "Vision & Mission", href: "/about/vision-mission" },
     { name: "History", href: "/about/history" },
     { name: "Leadership", href: "/about/leadership" },
-    {
-      name: "Administrative Committees",
-      children: [
-        { name: "Board of Governors", href: "/about/board-of-governors" },
-        { name: "Board of Management", href: "/about/board-of-management" },
-      ],
-    },
+    { name: "Administrative Committees", href: "/about/administrative-committees" },
     { name: "Accreditations", href: "/about/accreditations" },
     { name: "Facilities", href: "/about/facilities" },
   ];
