@@ -541,7 +541,7 @@ function BrochureSection() {
           <h2 className="text-3xl font-bold md:text-4xl">
             Program Guides &amp; Brochures
           </h2>
-          <p className="mt-3 text-lg text-muted-foreground">
+          <p className="mt-3 text-lg text-white">
             Download detailed brochures to understand curricula, laboratories,
             internships, and placement pathways for every DSU school.
           </p>
@@ -724,7 +724,7 @@ function AIEngagementSection() {
           <h2 className="mt-4 text-3xl font-bold md:text-4xl">
             AI Chat &amp; Voice Assistance Hub
           </h2>
-          <p className="mt-3 text-lg text-muted-foreground">
+          <p className="mt-3 text-lg text-white">
             Engage with DSU&apos;s AI-powered chat bot for quick answers or
             launch the guided voice assistant for a hands-free overview.
           </p>
@@ -880,7 +880,7 @@ function ContactSection() {
           <h2 className="text-3xl font-bold md:text-4xl">
             Connect with Our Admissions Team
           </h2>
-          <p className="mt-3 text-lg text-muted-foreground">
+          <p className="mt-3 text-lg text-white">
             Visit a DSU campus, schedule virtual counseling, or call the
             helpline numbers below for real-time assistance.
           </p>
@@ -1003,7 +1003,7 @@ function SupportCallout() {
         <h2 className="mt-6 text-3xl font-bold text-foreground md:text-4xl">
           Ready to Personalize Your Admission Journey?
         </h2>
-        <p className="mt-4 text-lg text-muted-foreground">
+        <p className="mt-4 text-lg text-white">
           Our counselors are available across campuses, over phone, chat, and
           voice assistance. Book a session to design your academic roadmap with
           DSU.
