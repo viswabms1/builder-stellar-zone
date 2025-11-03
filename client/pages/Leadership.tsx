@@ -141,6 +141,7 @@ export default function Leadership() {
         "Financial oversight",
         "Resource optimization",
       ],
+      link: "/about/finance-committee",
     },
     {
       name: "IQAC (Quality)",
