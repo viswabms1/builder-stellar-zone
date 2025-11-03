@@ -117,7 +117,7 @@ export default function VisionMission() {
             </span>
           </h1>
 
-          <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-foreground mb-8 leading-relaxed max-w-3xl mx-auto">
             Guiding principles that define our commitment to academic excellence, innovation, and societal impact.
           </p>
         </div>
@@ -166,14 +166,14 @@ export default function VisionMission() {
                     <div
                       className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${pillar.color} flex items-center justify-center mb-4`}
                     >
-                      <Icon className="w-8 h-8 text-muted-foreground" />
+                      <Icon className="w-8 h-8 text-foreground" />
                     </div>
                     <CardTitle className="text-2xl font-bold">
                       {pillar.title}
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-muted-foreground leading-relaxed">
+                    <p className="text-foreground leading-relaxed">
                       {pillar.description}
                     </p>
                   </CardContent>
@@ -196,7 +196,7 @@ export default function VisionMission() {
                   <div className="w-8 h-8 rounded-full bg-orange-500/20 flex items-center justify-center flex-shrink-0 mt-1">
                     <CheckCircle className="w-5 h-5 text-orange-500" />
                   </div>
-                  <p className="text-muted-foreground leading-relaxed">{point}</p>
+                  <p className="text-foreground leading-relaxed">{point}</p>
                 </div>
               ))}
             </div>
@@ -216,7 +216,7 @@ export default function VisionMission() {
                   <div className="w-8 h-8 rounded-full bg-red-500/20 flex items-center justify-center flex-shrink-0 mt-1">
                     <Eye className="w-5 h-5 text-red-500" />
                   </div>
-                  <p className="text-muted-foreground leading-relaxed">{point}</p>
+                  <p className="text-foreground leading-relaxed">{point}</p>
                 </div>
               ))}
             </div>
@@ -233,7 +233,7 @@ export default function VisionMission() {
                 Core Values
               </span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-lg text-foreground max-w-3xl mx-auto">
               The principles that guide our decisions, actions, and interactions
             </p>
           </div>
@@ -249,7 +249,7 @@ export default function VisionMission() {
                   <CardContent className="p-6">
                     <Icon className="w-10 h-10 text-orange-500 mb-4" />
                     <h3 className="text-lg font-bold mb-2">{value.title}</h3>
-                    <p className="text-sm text-muted-foreground">
+                    <p className="text-sm text-foreground">
                       {value.description}
                     </p>
                   </CardContent>
@@ -276,7 +276,7 @@ export default function VisionMission() {
                 Goals
               </span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-lg text-foreground max-w-3xl mx-auto">
               Our roadmap to achieving excellence and creating lasting impact
             </p>
           </div>
@@ -296,7 +296,7 @@ export default function VisionMission() {
                     <CardTitle className="text-xl">{goal.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-muted-foreground">{goal.description}</p>
+                    <p className="text-foreground">{goal.description}</p>
                   </CardContent>
                 </Card>
               );
@@ -311,7 +311,7 @@ export default function VisionMission() {
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Join Us in Our Mission
           </h2>
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+          <p className="text-lg text-foreground mb-8 max-w-2xl mx-auto">
             Be part of a community dedicated to excellence, innovation, and making a positive impact on the world.
           </p>
 
@@ -319,7 +319,7 @@ export default function VisionMission() {
             <Link to="/admissions">
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-red-600 hover:to-orange-500 text-muted-foreground px-8 py-6 font-semibold rounded-2xl"
+                className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-red-600 hover:to-orange-500 text-foreground px-8 py-6 font-semibold rounded-2xl"
               >
                 Apply Now
                 <ArrowRight className="w-5 h-5 ml-2" />
@@ -329,7 +329,7 @@ export default function VisionMission() {
               <Button
                 variant="outline"
                 size="lg"
-                className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-muted-foreground px-8 py-6 font-semibold rounded-2xl"
+                className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-foreground px-8 py-6 font-semibold rounded-2xl"
               >
                 Back to About
               </Button>

@@ -228,7 +228,7 @@ function QuickLinkCard({ link }: { link: QuickLink }) {
         <ChevronRight className="h-4 w-4 text-transparent transition-colors duration-500 group-hover:text-brand-magenta" />
       </div>
       <h3 className="mt-5 text-lg font-semibold font-display">{link.title}</h3>
-      <p className="mt-3 text-sm text-muted-foreground font-body">
+      <p className="mt-3 text-sm text-foreground font-body">
         {link.description}
       </p>
       <div className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-brand-magenta">
@@ -282,18 +282,18 @@ function HighlightCard({ highlight }: { highlight: Highlight }) {
         className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-      <div className="absolute top-4 left-4 inline-flex items-center gap-2 rounded-full bg-black/40 px-3 py-1 text-xs text-muted-foreground">
+      <div className="absolute top-4 left-4 inline-flex items-center gap-2 rounded-full bg-black/40 px-3 py-1 text-xs text-foreground">
         <Icon className="h-4 w-4" /> Highlight
       </div>
-      <div className="absolute inset-x-0 bottom-0 p-5 text-muted-foreground">
+      <div className="absolute inset-x-0 bottom-0 p-5 text-foreground">
         <h3 className="mb-2 text-lg font-semibold font-display">
           {highlight.title}
         </h3>
-        <p className="text-sm text-muted-foreground/80 font-body">
+        <p className="text-sm text-foreground/80 font-body">
           {highlight.description}
         </p>
         {highlight.stat ? (
-          <div className="mt-3 text-xs uppercase tracking-wide text-muted-foreground/70 font-body">
+          <div className="mt-3 text-xs uppercase tracking-wide text-foreground/70 font-body">
             {highlight.stat}
           </div>
         ) : null}
@@ -313,7 +313,7 @@ function SectionCardComponent({ section }: { section: SectionCard }) {
         <CardTitle className="text-base font-display">{section.title}</CardTitle>
       </CardHeader>
       <CardContent className="pt-0">
-        <CardDescription className="text-sm leading-relaxed text-muted-foreground font-body">
+        <CardDescription className="text-sm leading-relaxed text-foreground font-body">
           {section.description}
         </CardDescription>
       </CardContent>
@@ -358,7 +358,7 @@ function ResourceCard({ resource }: { resource: Resource }) {
           {resource.title}
         </CardTitle>
       </CardHeader>
-      <CardContent className="space-y-5 text-sm text-muted-foreground font-body">
+      <CardContent className="space-y-5 text-sm text-foreground font-body">
         <p>{resource.description}</p>
         <a
           href={resource.href}
@@ -395,10 +395,10 @@ export default function CDSIMER() {
                 CDSIMER · DSU Medical Campus
               </span>
             </div>
-            <h1 className="mb-4 font-display text-4xl leading-tight text-muted-foreground md:text-6xl">
+            <h1 className="mb-4 font-display text-4xl leading-tight text-foreground md:text-6xl">
               Empowering Healthcare with Knowledge, Discovery & Healing
             </h1>
-            <p className="max-w-3xl text-muted-foreground/90 font-body text-lg">
+            <p className="max-w-3xl text-foreground/90 font-body text-lg">
               CDSIMER blends a smart medical campus, tertiary care hospital and
               research innovation hub to drive excellence in patient care,
               education and community wellbeing.
@@ -409,7 +409,7 @@ export default function CDSIMER() {
                 target="_blank"
                 rel="noreferrer"
               >
-                <Button className="bg-brand-gradient text-muted-foreground">
+                <Button className="bg-brand-gradient text-foreground">
                   Enquire Now
                 </Button>
               </a>
@@ -441,7 +441,7 @@ export default function CDSIMER() {
                 Key Shortcuts
               </Badge>
               <h2 className="mt-4 font-display text-3xl">Navigate CDSIMER</h2>
-              <p className="mt-3 max-w-2xl text-sm text-muted-foreground font-body">
+              <p className="mt-3 max-w-2xl text-sm text-foreground font-body">
                 Jump to programme pillars, admissions, research and campus life
                 resources shaping the CDSIMER experience.
               </p>
@@ -497,7 +497,7 @@ export default function CDSIMER() {
             <h2 className="mt-4 font-display text-3xl md:text-4xl">
               Holistic Medical Ecosystem
             </h2>
-            <p className="mt-3 text-sm text-muted-foreground font-body max-w-3xl mx-auto">
+            <p className="mt-3 text-sm text-foreground font-body max-w-3xl mx-auto">
               CDSIMER unifies medical education, hospital services, research
               innovation and vibrant student life on a single connected campus.
             </p>
@@ -523,7 +523,7 @@ export default function CDSIMER() {
               <h2 className="mt-4 font-display text-3xl md:text-4xl">
                 Plan Your CDSIMER Journey
               </h2>
-              <p className="mt-3 text-sm text-muted-foreground font-body">
+              <p className="mt-3 text-sm text-foreground font-body">
                 Access enquiry support, campus events, library resources and
                 video tours to experience CDSIMER before you arrive.
               </p>
@@ -552,7 +552,7 @@ export default function CDSIMER() {
             <h3 className="mb-3 font-display text-3xl">
               Join a Purpose-Driven Medical Community
             </h3>
-            <p className="mb-6 text-muted-foreground font-body">
+            <p className="mb-6 text-foreground font-body">
               Learn, heal and innovate on a campus where compassionate care
               meets cutting-edge technology and global vision.
             </p>
@@ -562,7 +562,7 @@ export default function CDSIMER() {
                 target="_blank"
                 rel="noreferrer"
               >
-                <Button className="bg-brand-gradient text-muted-foreground">
+                <Button className="bg-brand-gradient text-foreground">
                   Enquire Now
                   <GraduationCap className="ml-2 h-4 w-4" />
                 </Button>

@@ -56,7 +56,7 @@ export default function CampusLife() {
               </span>
             </div>
 
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 leading-tight text-muted-foreground">
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 leading-tight text-foreground">
               <span>More Than Just</span>
               <br />
               <span className="text-orange-300">Education</span>
@@ -76,7 +76,7 @@ export default function CampusLife() {
             >
               <Button
                 size="lg"
-                className="bg-orange-500 hover:bg-orange-600 text-muted-foreground px-10 py-6 text-lg font-semibold rounded-full inline-flex items-center"
+                className="bg-orange-500 hover:bg-orange-600 text-foreground px-10 py-6 text-lg font-semibold rounded-full inline-flex items-center"
               >
                 Virtual Campus Tour
                 <ArrowRight className="w-5 h-5 ml-2" />
@@ -95,7 +95,7 @@ export default function CampusLife() {
                 Campus Highlights
               </span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xl text-foreground max-w-3xl mx-auto">
               Explore the diverse spaces and vibrant areas across our sprawling campus
             </p>
           </div>
@@ -140,7 +140,7 @@ export default function CampusLife() {
                 <h3 className="text-xl font-bold text-foreground group-hover:text-orange-500 transition-colors mb-2">
                   {area.title}
                 </h3>
-                <p className="text-muted-foreground text-sm">
+                <p className="text-foreground text-sm">
                   {area.description}
                 </p>
               </div>
@@ -159,7 +159,7 @@ export default function CampusLife() {
                 Pictures
               </span>
             </h2>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-xl text-foreground">
               Glimpses of the vibrant campus life at DSU
             </p>
           </div>
@@ -227,7 +227,7 @@ export default function CampusLife() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
                   <div>
-                    <h3 className="font-bold text-muted-foreground text-lg">
+                    <h3 className="font-bold text-foreground text-lg">
                       {item.title}
                     </h3>
                     <Badge variant="secondary" className="mt-2 text-xs">
@@ -251,7 +251,7 @@ export default function CampusLife() {
               </span>
               <span className="text-foreground"> Organizations</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xl text-foreground max-w-3xl mx-auto">
               Discover your passion through our diverse range of student clubs and societies
             </p>
           </div>
@@ -327,7 +327,7 @@ export default function CampusLife() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-muted-foreground">
+                  <CardDescription className="text-foreground">
                     {category.description}
                   </CardDescription>
                 </CardContent>
@@ -388,12 +388,12 @@ export default function CampusLife() {
                 <h3 className="text-3xl font-bold text-foreground mb-4">
                   {facility.title}
                 </h3>
-                <p className="text-lg text-muted-foreground mb-6">
+                <p className="text-lg text-foreground mb-6">
                   {facility.description}
                 </p>
                 <div className="space-y-2 mb-6">
                   {facility.features.map((feature) => (
-                    <div key={feature} className="flex items-center text-muted-foreground">
+                    <div key={feature} className="flex items-center text-foreground">
                       <span className="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>
                       {feature}
                     </div>
@@ -504,7 +504,7 @@ export default function CampusLife() {
                 Stories
               </span>
             </h2>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-xl text-foreground">
               Real stories and experiences from our student community
             </p>
           </div>
@@ -517,7 +517,7 @@ export default function CampusLife() {
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex items-end p-8">
-              <div className="text-muted-foreground">
+              <div className="text-foreground">
                 <Badge className="mb-4 bg-orange-500">Featured</Badge>
                 <h3 className="text-3xl font-bold mb-2">My Journey at DSU</h3>
                 <p className="text-orange-100">A student's journey of growth, learning, and unforgettable memories</p>
@@ -548,7 +548,7 @@ export default function CampusLife() {
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <h3 className="text-muted-foreground font-bold text-lg">{story.title}</h3>
+                  <h3 className="text-foreground font-bold text-lg">{story.title}</h3>
                 </div>
               </div>
             ))}
@@ -568,14 +568,14 @@ export default function CampusLife() {
               </span>
               ?
             </h2>
-            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-foreground mb-8 max-w-2xl mx-auto">
               Join our vibrant community and create memories that will last a lifetime.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-orange-500 via-red-600 to-pink-500 text-muted-foreground px-12 py-6 text-lg font-semibold rounded-full"
+                className="bg-gradient-to-r from-orange-500 via-red-600 to-pink-500 text-foreground px-12 py-6 text-lg font-semibold rounded-full"
               >
                 Visit Campus
                 <MapPin className="w-5 h-5 ml-2" />
@@ -583,7 +583,7 @@ export default function CampusLife() {
               <Button
                 variant="outline"
                 size="lg"
-                className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-muted-foreground px-12 py-6 text-lg font-semibold rounded-full"
+                className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-foreground px-12 py-6 text-lg font-semibold rounded-full"
               >
                 Apply Now
               </Button>

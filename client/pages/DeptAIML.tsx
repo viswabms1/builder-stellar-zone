@@ -253,10 +253,10 @@ function HeroSection() {
               Department of Computer Science & Engineering (AI & ML)
             </span>
           </div>
-          <h1 className="headline-1 text-muted-foreground leading-tight font-display">
+          <h1 className="headline-1 text-foreground leading-tight font-display">
             Design Intelligent Futures
           </h1>
-          <p className="subheadline mt-3 max-w-2xl text-muted-foreground/90 font-body">
+          <p className="subheadline mt-3 max-w-2xl text-foreground/90 font-body">
             Blend foundational computer science with advanced artificial
             intelligence and machine learning to build trustworthy,
             human-centred intelligent systems.
@@ -265,7 +265,7 @@ function HeroSection() {
             {specializations.map((spec) => (
               <span
                 key={spec.label}
-                className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs text-muted-foreground backdrop-blur"
+                className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs text-foreground backdrop-blur"
               >
                 <spec.icon className="h-3.5 w-3.5" /> {spec.label}
               </span>
@@ -273,7 +273,7 @@ function HeroSection() {
           </div>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link to="/admissions">
-              <Button className="bg-brand-gradient text-muted-foreground">
+              <Button className="bg-brand-gradient text-foreground">
                 Apply Now
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
@@ -303,7 +303,7 @@ function OverviewSection() {
       <div className="mx-auto grid max-w-6xl items-start gap-10 lg:grid-cols-3">
         <div className="lg:col-span-2 space-y-6">
           <h2 className="headline-3 font-display">Overview</h2>
-          <p className="text-muted-foreground leading-relaxed font-body">
+          <p className="text-foreground leading-relaxed font-body">
             The B.Tech in Computer Science & Engineering (AI & ML) combines core
             computing foundations with AI-focused coursework spanning natural
             language processing, robotics, reasoning, and intelligent
@@ -312,7 +312,7 @@ function OverviewSection() {
             foundations, machine learning, and artificial intelligence alongside
             liberal education components that shape holistic technologists.
           </p>
-          <p className="text-muted-foreground leading-relaxed font-body">
+          <p className="text-foreground leading-relaxed font-body">
             From the first year, learners engage with design thinking,
             communication, collaboration, and creativity while working on
             mentored projects, internships, and UG research opportunities.
@@ -333,7 +333,7 @@ function OverviewSection() {
               {highlights.map((item) => (
                 <div
                   key={item}
-                  className="flex items-start gap-2 text-sm text-muted-foreground"
+                  className="flex items-start gap-2 text-sm text-foreground"
                 >
                   <CheckCircle2 className="mt-0.5 h-4 w-4 text-brand-magenta" />
                   <span>{item}</span>
@@ -396,7 +396,7 @@ function HighlightsSection() {
           <h2 className="mt-4 font-display text-3xl md:text-4xl">
             AI & ML is Shaping Global Transformation
           </h2>
-          <p className="mt-3 text-sm text-muted-foreground font-body md:text-base">
+          <p className="mt-3 text-sm text-foreground font-body md:text-base">
             Graduates are poised to lead innovations across healthcare, finance,
             aviation, manufacturing, and smart mobility. Explore where your
             skills can make the greatest impact.
@@ -463,7 +463,7 @@ function LabsSection() {
             <h2 className="headline-3 font-display">
               Innovation Labs & Studios
             </h2>
-            <p className="mt-3 max-w-2xl text-sm text-muted-foreground font-body">
+            <p className="mt-3 max-w-2xl text-sm text-foreground font-body">
               Access DSU&apos;s industry-partnered labs and interdisciplinary
               studios that accelerate experimentation, prototyping, and research
               in artificial intelligence and autonomous systems.
@@ -491,11 +491,11 @@ function LabsSection() {
                 className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-              <div className="absolute inset-x-0 bottom-0 p-5 text-muted-foreground">
+              <div className="absolute inset-x-0 bottom-0 p-5 text-foreground">
                 <h3 className="text-lg font-semibold font-display">
                   {lab.title}
                 </h3>
-                <p className="mt-2 text-sm text-muted-foreground/80 font-body">
+                <p className="mt-2 text-sm text-foreground/80 font-body">
                   {lab.description}
                 </p>
               </div>
@@ -521,7 +521,7 @@ function CourseMatrixSection() {
           <h2 className="mt-4 font-display text-3xl md:text-4xl">
             Build Depth Across AI & ML Disciplines
           </h2>
-          <p className="mt-3 text-sm text-muted-foreground font-body md:text-base">
+          <p className="mt-3 text-sm text-foreground font-body md:text-base">
             A balanced matrix covering liberal learning, foundational sciences,
             engineering sciences, and advanced AI stacks ensures graduates can
             analyse, optimise, and innovate responsibly.
@@ -539,7 +539,7 @@ function CourseMatrixSection() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <ul className="space-y-2 text-sm text-muted-foreground font-body">
+                <ul className="space-y-2 text-sm text-foreground font-body">
                   {category.items.map((item) => (
                     <li key={item} className="flex items-start gap-2">
                       <BadgeCheck className="mt-1 h-4 w-4 text-brand-magenta" />
@@ -581,7 +581,7 @@ function CareersSection() {
       <div className="mx-auto max-w-7xl grid gap-10 lg:grid-cols-2">
         <div>
           <h2 className="headline-3 font-display">Career Pathways</h2>
-          <p className="mt-3 text-sm text-muted-foreground font-body">
+          <p className="mt-3 text-sm text-foreground font-body">
             Harness DSU&apos;s partnerships, internships, and research
             collaborations to launch careers that span intelligent products,
             data-driven enterprises, and research-intensive organisations.
@@ -591,7 +591,7 @@ function CareersSection() {
               {careerPaths.map((role) => (
                 <div
                   key={role}
-                  className="flex items-start gap-2 text-sm text-muted-foreground font-body"
+                  className="flex items-start gap-2 text-sm text-foreground font-body"
                 >
                   <ChevronRight className="mt-1 h-3 w-3 text-brand-magenta" />
                   <span>{role}</span>
@@ -603,7 +603,7 @@ function CareersSection() {
         <div>
           <h2 className="headline-3 font-display">Internships & Projects</h2>
           <Card className="mt-4 border border-border/50 bg-card/50">
-            <CardContent className="space-y-4 p-6 text-sm text-muted-foreground font-body">
+            <CardContent className="space-y-4 p-6 text-sm text-foreground font-body">
               <p>
                 Structured summer internships with top technology firms,
                 research institutes, and innovation labs expose students to
@@ -635,7 +635,7 @@ function FacultySection() {
         <div className="mb-10 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
             <h2 className="headline-3 font-display">Faculty Leadership</h2>
-            <p className="mt-3 max-w-2xl text-sm text-muted-foreground font-body">
+            <p className="mt-3 max-w-2xl text-sm text-foreground font-body">
               A multidisciplinary team with deep research expertise guides
               learners across machine learning theory, intelligent systems
               engineering, and responsible AI design.
@@ -667,10 +667,10 @@ function FacultySection() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-transparent" />
               </div>
               <div className="absolute bottom-0 p-4">
-                <div className="text-muted-foreground text-sm opacity-80 font-body">
+                <div className="text-foreground text-sm opacity-80 font-body">
                   {member.title}
                 </div>
-                <div className="text-muted-foreground text-lg font-semibold font-display">
+                <div className="text-foreground text-lg font-semibold font-display">
                   {member.name}
                 </div>
               </div>
@@ -692,7 +692,7 @@ function ContactSection() {
               <h3 className="text-2xl font-display">
                 Connect with the Department
               </h3>
-              <p className="mt-3 text-sm text-muted-foreground font-body">
+              <p className="mt-3 text-sm text-foreground font-body">
                 Reach out for programme counselling, collaborative research, or
                 industry partnership enquiries.
               </p>
@@ -700,7 +700,7 @@ function ContactSection() {
             <div className="space-y-3 text-sm font-body">
               {contactDetails.map((detail) => (
                 <div key={detail.label} className="flex flex-col">
-                  <span className="text-xs uppercase tracking-wide text-muted-foreground">
+                  <span className="text-xs uppercase tracking-wide text-foreground">
                     {detail.label}
                   </span>
                   {detail.href ? (
@@ -732,14 +732,14 @@ function FinalCTA() {
             <h3 className="headline-3 mb-4 font-display">
               Join DSU&apos;s AI & ML Community
             </h3>
-            <p className="mx-auto mb-6 max-w-2xl text-muted-foreground font-body">
+            <p className="mx-auto mb-6 max-w-2xl text-foreground font-body">
               Co-create responsible intelligent systems with peers, researchers,
               and industry mentors while advancing the future of artificial
               intelligence.
             </p>
             <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
               <Link to="/admissions">
-                <Button className="bg-brand-gradient text-muted-foreground">
+                <Button className="bg-brand-gradient text-foreground">
                   Start Application
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
@@ -767,7 +767,7 @@ function FinalCTA() {
 function FactRow({ label, value }: { label: string; value: string }) {
   return (
     <div className="flex items-center justify-between">
-      <span className="text-muted-foreground">{label}</span>
+      <span className="text-foreground">{label}</span>
       <span className="font-medium text-foreground">{value}</span>
     </div>
   );

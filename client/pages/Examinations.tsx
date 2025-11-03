@@ -378,7 +378,7 @@ function HeroSection() {
             Examination Resources
           </span>
         </h1>
-        <p className="mt-6 max-w-3xl text-lg text-muted-foreground md:text-xl">
+        <p className="mt-6 max-w-3xl text-lg text-foreground md:text-xl">
           Download forms, view circulars, and preview examination documents
           instantly. Each PDF opens in an on-page viewer so you can skim the
           content before downloading.
@@ -386,7 +386,7 @@ function HeroSection() {
         <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row">
           <Button
             size="lg"
-            className="bg-gradient-to-r from-orange-500 via-red-600 to-pink-500 text-muted-foreground"
+            className="bg-gradient-to-r from-orange-500 via-red-600 to-pink-500 text-foreground"
           >
             Explore Resources
             <ArrowRight className="h-5 w-5" />
@@ -417,7 +417,7 @@ function QuickLinksSection() {
       <div className="mx-auto max-w-6xl">
         <div className="mb-10 flex flex-col gap-4 text-center">
           <h2 className="text-3xl font-bold md:text-4xl">Quick Access</h2>
-          <p className="text-muted-foreground md:text-lg">
+          <p className="text-foreground md:text-lg">
             Jump directly to the section you need or launch the ERP portal for
             hall tickets and personalised updates.
           </p>
@@ -479,7 +479,7 @@ function ExamResourceSection({ section }: { section: ExamSection }) {
       <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
         <div>
           <h3 className="text-3xl font-bold md:text-4xl">{section.title}</h3>
-          <p className="mt-2 max-w-2xl text-base text-muted-foreground md:text-lg">
+          <p className="mt-2 max-w-2xl text-base text-foreground md:text-lg">
             {section.summary}
           </p>
         </div>
@@ -524,7 +524,7 @@ function ExamDocumentCard({ document }: { document: ExamDocument }) {
         </div>
       </CardHeader>
       <CardContent className="space-y-4">
-        <CardDescription className="text-sm leading-relaxed text-muted-foreground">
+        <CardDescription className="text-sm leading-relaxed text-foreground">
           {document.description}
         </CardDescription>
         <div className="flex flex-wrap gap-3">
@@ -532,7 +532,7 @@ function ExamDocumentCard({ document }: { document: ExamDocument }) {
             <DialogTrigger asChild>
               <Button
                 size="sm"
-                className="bg-gradient-to-r from-orange-500 to-red-600 text-muted-foreground"
+                className="bg-gradient-to-r from-orange-500 to-red-600 text-foreground"
               >
                 View PDF
               </Button>
@@ -584,7 +584,7 @@ function GuidelinesSection() {
           <h2 className="text-3xl font-bold md:text-4xl">
             How to Use These Resources
           </h2>
-          <p className="mt-3 text-muted-foreground md:text-lg">
+          <p className="mt-3 text-foreground md:text-lg">
             Follow these best practices to stay organised during the examination
             process.
           </p>
@@ -600,7 +600,7 @@ function GuidelinesSection() {
                 {item.title}
               </AccordionTrigger>
               <AccordionContent>
-                <ul className="ml-4 list-disc space-y-2 text-sm text-muted-foreground md:text-base">
+                <ul className="ml-4 list-disc space-y-2 text-sm text-foreground md:text-base">
                   {item.points.map((point) => (
                     <li key={point}>{point}</li>
                   ))}
@@ -620,7 +620,7 @@ function ContactSection() {
       <div className="mx-auto max-w-6xl space-y-12">
         <div className="text-center">
           <h2 className="text-3xl font-bold md:text-4xl">Need Assistance?</h2>
-          <p className="mt-3 text-muted-foreground md:text-lg">
+          <p className="mt-3 text-foreground md:text-lg">
             Connect with the examination department between 9:00 AM and 4:00 PM
             for support on applications, schedules, and results.
           </p>
@@ -639,7 +639,7 @@ function ContactSection() {
                   {contact.title}
                 </CardTitle>
               </CardHeader>
-              <CardContent className="space-y-3 text-sm text-muted-foreground">
+              <CardContent className="space-y-3 text-sm text-foreground">
                 <div className="space-y-1">
                   {contact.lines.map((line) => (
                     <div key={line}>{line}</div>
@@ -678,7 +678,7 @@ function ContactSection() {
           ))}
         </div>
         <Card className="border border-orange-500/30 bg-card/70 backdrop-blur-sm">
-          <CardContent className="flex flex-col gap-4 rounded-3xl p-6 text-sm text-muted-foreground md:flex-row md:items-center md:justify-between md:text-base">
+          <CardContent className="flex flex-col gap-4 rounded-3xl p-6 text-sm text-foreground md:flex-row md:items-center md:justify-between md:text-base">
             <div>
               <span className="font-semibold text-foreground">
                 Submission Window:

@@ -150,18 +150,18 @@ function HighlightCard({ highlight }: { highlight: Highlight }) {
         className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-      <div className="absolute top-4 left-4 inline-flex items-center gap-2 rounded-full bg-black/40 px-3 py-1 text-xs text-muted-foreground">
+      <div className="absolute top-4 left-4 inline-flex items-center gap-2 rounded-full bg-black/40 px-3 py-1 text-xs text-foreground">
         <Icon className="h-4 w-4" /> B.Design USP
       </div>
-      <div className="absolute inset-x-0 bottom-0 p-5 text-muted-foreground">
+      <div className="absolute inset-x-0 bottom-0 p-5 text-foreground">
         <h3 className="mb-2 text-lg font-semibold font-display">
           {highlight.title}
         </h3>
-        <p className="text-sm text-muted-foreground/80 font-body">
+        <p className="text-sm text-foreground/80 font-body">
           {highlight.description}
         </p>
         {highlight.stat ? (
-          <div className="mt-3 text-xs uppercase tracking-wide text-muted-foreground/70 font-body">
+          <div className="mt-3 text-xs uppercase tracking-wide text-foreground/70 font-body">
             {highlight.stat}
           </div>
         ) : null}
@@ -181,7 +181,7 @@ function StructureCard({ point }: { point: StructurePoint }) {
         <CardTitle className="text-base font-display">{point.title}</CardTitle>
       </CardHeader>
       <CardContent className="pt-0">
-        <CardDescription className="text-sm leading-relaxed text-muted-foreground font-body">
+        <CardDescription className="text-sm leading-relaxed text-foreground font-body">
           {point.description}
         </CardDescription>
       </CardContent>
@@ -200,7 +200,7 @@ function ResourceCard({ resource }: { resource: Resource }) {
           {resource.title}
         </CardTitle>
       </CardHeader>
-      <CardContent className="space-y-5 text-sm text-muted-foreground font-body">
+      <CardContent className="space-y-5 text-sm text-foreground font-body">
         <p>{resource.description}</p>
         <a
           href={resource.href}
@@ -237,10 +237,10 @@ export default function BDesignOverview() {
                 B.Design · School of Design & Digital Trans Media
               </span>
             </div>
-            <h1 className="mb-4 font-display text-4xl leading-tight text-muted-foreground md:text-6xl">
+            <h1 className="mb-4 font-display text-4xl leading-tight text-foreground md:text-6xl">
               Design Experiences that Inspire
             </h1>
-            <p className="max-w-2xl text-muted-foreground/90 font-body text-lg">
+            <p className="max-w-2xl text-foreground/90 font-body text-lg">
               A four-track Bachelor of Design programme combining foundation
               studios, interdisciplinary electives and industry immersions to
               craft designers of the future.
@@ -251,7 +251,7 @@ export default function BDesignOverview() {
                 target="_blank"
                 rel="noreferrer"
               >
-                <Button className="bg-brand-gradient text-muted-foreground">
+                <Button className="bg-brand-gradient text-foreground">
                   Apply for B.Design
                 </Button>
               </a>
@@ -305,7 +305,7 @@ export default function BDesignOverview() {
             <h2 className="mt-4 font-display text-3xl md:text-4xl">
               Studio Journey Across Eight Semesters
             </h2>
-            <p className="mt-3 text-sm text-muted-foreground font-body max-w-3xl mx-auto">
+            <p className="mt-3 text-sm text-foreground font-body max-w-3xl mx-auto">
               Move from foundational studios to advanced specialisation projects
               with liberal studies, research engagements and internships
               interwoven throughout the programme.
@@ -332,7 +332,7 @@ export default function BDesignOverview() {
               <h2 className="mt-4 font-display text-3xl md:text-4xl">
                 Plan Your Design Journey
               </h2>
-              <p className="mt-3 text-sm text-muted-foreground font-body">
+              <p className="mt-3 text-sm text-foreground font-body">
                 Access calendars, handbooks, brochures and quality documents to
                 stay prepared from foundation studios to final juries.
               </p>
@@ -361,7 +361,7 @@ export default function BDesignOverview() {
             <h3 className="mb-3 font-display text-3xl">
               Design Tomorrow's Experiences
             </h3>
-            <p className="mb-6 text-muted-foreground font-body">
+            <p className="mb-6 text-foreground font-body">
               Collaborate with mentors, industry leaders and global studios to
               graduate with a portfolio that shapes inclusive, sustainable
               futures.
@@ -372,7 +372,7 @@ export default function BDesignOverview() {
                 target="_blank"
                 rel="noreferrer"
               >
-                <Button className="bg-brand-gradient text-muted-foreground">
+                <Button className="bg-brand-gradient text-foreground">
                   Start Application
                   <GraduationCap className="ml-2 h-4 w-4" />
                 </Button>

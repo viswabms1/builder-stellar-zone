@@ -61,7 +61,7 @@ export default function Academics() {
             <span className="text-foreground">Through Learning</span>
           </h1>
 
-          <p className="text-xl md:text-2xl text-muted-foreground mb-6 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-foreground mb-6 max-w-4xl mx-auto leading-relaxed">
             Discover world-class academic programs designed to prepare you for
             the challenges of tomorrow. At DSU, innovation meets excellence
             across every discipline.
@@ -80,7 +80,7 @@ export default function Academics() {
                 under Dayananda Sagar University
               </span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xl text-foreground max-w-3xl mx-auto">
               Choose from our diverse range of academic schools, each offering
               cutting-edge programs and world-class faculty.
             </p>
@@ -272,7 +272,7 @@ export default function Academics() {
                     } group-hover:scale-[1.03] transition-transform duration-700`}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
-                  <div className="absolute top-3 left-3 inline-flex items-center gap-2 rounded-full bg-black/40 backdrop-blur px-3 py-1 text-muted-foreground text-xs">
+                  <div className="absolute top-3 left-3 inline-flex items-center gap-2 rounded-full bg-black/40 backdrop-blur px-3 py-1 text-foreground text-xs">
                     <school.icon className="w-4 h-4" /> School
                   </div>
                 </div>
@@ -327,7 +327,7 @@ export default function Academics() {
                         ) : (
                           <div
                             key={idx}
-                            className="flex items-center text-sm text-muted-foreground"
+                            className="flex items-center text-sm text-foreground"
                           >
                             <ChevronRight className="w-3 h-3 text-brand-magenta mr-2 flex-shrink-0" />
                             {program}
@@ -465,7 +465,7 @@ export default function Academics() {
                     className={`text-xl font-bold mb-2 font-display ${
                       feature.objectFit === "contain"
                         ? "text-foreground"
-                        : "text-muted-foreground"
+                        : "text-foreground"
                     }`}
                   >
                     {feature.title}
@@ -473,8 +473,8 @@ export default function Academics() {
                   <p
                     className={`text-sm font-body ${
                       feature.objectFit === "contain"
-                        ? "text-muted-foreground"
-                        : "text-muted-foreground/80"
+                        ? "text-foreground"
+                        : "text-foreground/80"
                     }`}
                   >
                     {feature.description}
@@ -498,7 +498,7 @@ export default function Academics() {
               </span>
               ?
             </h2>
-            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-foreground mb-8 max-w-2xl mx-auto">
               Explore our academic programs and find the perfect fit for your
               career aspirations.
             </p>
@@ -506,7 +506,7 @@ export default function Academics() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-orange-500 via-red-600 to-pink-500 text-muted-foreground px-12 py-6 text-lg font-semibold rounded-2xl"
+                className="bg-gradient-to-r from-orange-500 via-red-600 to-pink-500 text-foreground px-12 py-6 text-lg font-semibold rounded-2xl"
               >
                 Apply Now
                 <GraduationCap className="w-5 h-5 ml-2" />
@@ -514,7 +514,7 @@ export default function Academics() {
               <Button
                 variant="outline"
                 size="lg"
-                className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-muted-foreground px-12 py-6 text-lg font-semibold rounded-2xl"
+                className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-foreground px-12 py-6 text-lg font-semibold rounded-2xl"
               >
                 Schedule Campus Visit
               </Button>

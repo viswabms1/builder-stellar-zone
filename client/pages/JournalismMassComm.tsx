@@ -193,18 +193,18 @@ function HighlightCard({ highlight }: { highlight: Highlight }) {
         className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-      <div className="absolute top-4 left-4 inline-flex items-center gap-2 rounded-full bg-black/40 px-3 py-1 text-xs text-muted-foreground">
+      <div className="absolute top-4 left-4 inline-flex items-center gap-2 rounded-full bg-black/40 px-3 py-1 text-xs text-foreground">
         <Icon className="h-4 w-4" /> CJMC USP
       </div>
-      <div className="absolute inset-x-0 bottom-0 p-5 text-muted-foreground">
+      <div className="absolute inset-x-0 bottom-0 p-5 text-foreground">
         <h3 className="mb-2 text-lg font-semibold font-display">
           {highlight.title}
         </h3>
-        <p className="text-sm text-muted-foreground/80 font-body">
+        <p className="text-sm text-foreground/80 font-body">
           {highlight.description}
         </p>
         {highlight.stat ? (
-          <div className="mt-3 text-xs uppercase tracking-wide text-muted-foreground/70 font-body">
+          <div className="mt-3 text-xs uppercase tracking-wide text-foreground/70 font-body">
             {highlight.stat}
           </div>
         ) : null}
@@ -224,7 +224,7 @@ function ProgrammeCard({ programme }: { programme: Programme }) {
           {programme.name}
         </CardTitle>
       </CardHeader>
-      <CardContent className="text-sm text-muted-foreground font-body">
+      <CardContent className="text-sm text-foreground font-body">
         {programme.description}
       </CardContent>
     </Card>
@@ -244,7 +244,7 @@ function ExperienceCard({ experience }: { experience: Experience }) {
         </CardTitle>
       </CardHeader>
       <CardContent className="pt-0">
-        <CardDescription className="text-sm leading-relaxed text-muted-foreground font-body">
+        <CardDescription className="text-sm leading-relaxed text-foreground font-body">
           {experience.description}
         </CardDescription>
       </CardContent>
@@ -263,7 +263,7 @@ function ResourceCard({ resource }: { resource: Resource }) {
           {resource.title}
         </CardTitle>
       </CardHeader>
-      <CardContent className="space-y-5 text-sm text-muted-foreground font-body">
+      <CardContent className="space-y-5 text-sm text-foreground font-body">
         <p>{resource.description}</p>
         <a
           href={resource.href}
@@ -300,15 +300,15 @@ export default function JournalismMassComm() {
                 School of Arts & Humanities · CJMC
               </span>
             </div>
-            <h1 className="mb-4 font-display text-4xl leading-tight text-muted-foreground md:text-6xl">
+            <h1 className="mb-4 font-display text-4xl leading-tight text-foreground md:text-6xl">
               Storytellers for the Now & Next
             </h1>
-            <p className="max-w-2xl text-muted-foreground/90 font-body text-lg">
+            <p className="max-w-2xl text-foreground/90 font-body text-lg">
               Craft narratives across platforms with convergence labs, industry mentors and global collaborations at DSU's College of Journalism & Mass Communication.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link to="/admissions">
-                <Button className="bg-brand-gradient text-muted-foreground">
+                <Button className="bg-brand-gradient text-foreground">
                   Apply Now
                 </Button>
               </Link>
@@ -339,7 +339,7 @@ export default function JournalismMassComm() {
               <h2 className="font-display text-3xl md:text-4xl">
                 Programmes shaping multimedia storytellers
               </h2>
-              <p className="text-sm text-muted-foreground font-body">
+              <p className="text-sm text-foreground font-body">
                 Build expertise across reporting, filmmaking, podcasting and strategic communication through immersive studios, global collaborations and industry internships.
               </p>
               <div className="grid gap-4 sm:grid-cols-1">
@@ -412,7 +412,7 @@ export default function JournalismMassComm() {
               <h2 className="mt-4 font-display text-3xl md:text-4xl">
                 Studios, Labs & Creative Pods
               </h2>
-              <p className="mt-3 text-sm text-muted-foreground font-body">
+              <p className="mt-3 text-sm text-foreground font-body">
                 Immerse in production labs, podcast studios and storytelling residencies that bring journalistic narratives to life.
               </p>
             </div>
@@ -444,7 +444,7 @@ export default function JournalismMassComm() {
               <h2 className="mt-4 font-display text-3xl md:text-4xl">
                 Stay in Sync with CJMC
               </h2>
-              <p className="mt-3 text-sm text-muted-foreground font-body">
+              <p className="mt-3 text-sm text-foreground font-body">
                 Access calendars, industry overviews, career guides and galleries to plan your creative journey.
               </p>
             </div>
@@ -472,12 +472,12 @@ export default function JournalismMassComm() {
             <h3 className="mb-3 font-display text-3xl">
               Tell Stories that Matter
             </h3>
-            <p className="mb-6 text-muted-foreground font-body">
+            <p className="mb-6 text-foreground font-body">
               Join CJMC to amplify narratives, collaborate with creatives worldwide and graduate with a portfolio that resonates with industry.
             </p>
             <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
               <Link to="/admissions">
-                <Button className="bg-brand-gradient text-muted-foreground">
+                <Button className="bg-brand-gradient text-foreground">
                   Start Application
                   <GraduationCap className="ml-2 h-4 w-4" />
                 </Button>

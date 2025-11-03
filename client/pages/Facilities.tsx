@@ -239,7 +239,7 @@ export default function Facilities() {
             </span>
           </h1>
 
-          <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-foreground mb-8 leading-relaxed max-w-3xl mx-auto">
             World-class facilities and infrastructure designed to provide an excellent learning and living environment for our students.
           </p>
         </div>
@@ -254,7 +254,7 @@ export default function Facilities() {
                 Campus Facilities
               </span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-lg text-foreground max-w-3xl mx-auto">
               Comprehensive facilities supporting academic, recreational, and residential needs
             </p>
           </div>
@@ -271,21 +271,21 @@ export default function Facilities() {
                     <div
                       className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${facility.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}
                     >
-                      <Icon className="w-6 h-6 text-muted-foreground" />
+                      <Icon className="w-6 h-6 text-foreground" />
                     </div>
                     <CardTitle className="text-lg group-hover:text-orange-500 transition-colors">
                       {facility.title}
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-4">
-                    <p className="text-sm text-muted-foreground">
+                    <p className="text-sm text-foreground">
                       {facility.description}
                     </p>
                     <div className="space-y-2">
                       {facility.features.map((feature, idx) => (
                         <div
                           key={idx}
-                          className="flex items-start gap-2 text-sm text-muted-foreground"
+                          className="flex items-start gap-2 text-sm text-foreground"
                         >
                           <CheckCircle className="w-4 h-4 text-orange-500 mt-0.5 flex-shrink-0" />
                           {feature}
@@ -345,7 +345,7 @@ export default function Facilities() {
                       {campus.features.map((feature, idx) => (
                         <div
                           key={idx}
-                          className="flex items-center gap-2 text-sm text-muted-foreground"
+                          className="flex items-center gap-2 text-sm text-foreground"
                         >
                           <span className="w-2 h-2 rounded-full bg-orange-500"></span>
                           {feature}
@@ -362,7 +362,7 @@ export default function Facilities() {
                       {campus.facilities.map((facility, idx) => (
                         <div
                           key={idx}
-                          className="flex items-center gap-2 text-sm text-muted-foreground"
+                          className="flex items-center gap-2 text-sm text-foreground"
                         >
                           <span className="w-2 h-2 rounded-full bg-orange-500"></span>
                           {facility}
@@ -403,7 +403,7 @@ export default function Facilities() {
                     {infra.items.map((item, idx) => (
                       <div
                         key={idx}
-                        className="flex items-start gap-2 text-sm text-muted-foreground"
+                        className="flex items-start gap-2 text-sm text-foreground"
                       >
                         <Monitor className="w-4 h-4 text-orange-500 mt-0.5 flex-shrink-0" />
                         {item}
@@ -443,7 +443,7 @@ export default function Facilities() {
                 <div className="text-3xl font-bold text-foreground mb-1">
                   {stat.number}
                 </div>
-                <div className="text-sm text-muted-foreground">{stat.label}</div>
+                <div className="text-sm text-foreground">{stat.label}</div>
               </Card>
             ))}
           </div>
@@ -495,7 +495,7 @@ export default function Facilities() {
                       <h3 className="font-semibold text-foreground mb-1">
                         {item.title}
                       </h3>
-                      <p className="text-sm text-muted-foreground">
+                      <p className="text-sm text-foreground">
                         {item.description}
                       </p>
                     </div>
@@ -513,7 +513,7 @@ export default function Facilities() {
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Explore Our Campus
           </h2>
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+          <p className="text-lg text-foreground mb-8 max-w-2xl mx-auto">
             Experience our world-class facilities firsthand. Take a virtual or physical tour of our campuses.
           </p>
 
@@ -521,7 +521,7 @@ export default function Facilities() {
             <a href="https://dsu.edu.in/virtual-tour/" target="_blank" rel="noreferrer">
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-red-600 hover:to-orange-500 text-muted-foreground px-8 py-6 font-semibold rounded-2xl"
+                className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-red-600 hover:to-orange-500 text-foreground px-8 py-6 font-semibold rounded-2xl"
               >
                 Virtual Tour
                 <ArrowRight className="w-5 h-5 ml-2" />
@@ -531,7 +531,7 @@ export default function Facilities() {
               <Button
                 variant="outline"
                 size="lg"
-                className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-muted-foreground px-8 py-6 font-semibold rounded-2xl"
+                className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-foreground px-8 py-6 font-semibold rounded-2xl"
               >
                 Back to About
               </Button>

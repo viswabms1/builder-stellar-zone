@@ -133,7 +133,7 @@ const ENGINEERING_DEPARTMENTS: EngineeringDepartment[] = [
     overlay:
       "bg-gradient-to-br from-brand-magenta/80 via-black/75 to-black/60 mix-blend-multiply",
     badgeClass:
-      "bg-brand-magenta/25 text-muted-foreground/90 border border-white/30 backdrop-blur",
+      "bg-brand-magenta/25 text-foreground/90 border border-white/30 backdrop-blur",
     panelClass: "bg-black/55 backdrop-blur-xl",
     featured: true,
   },
@@ -149,7 +149,7 @@ const ENGINEERING_DEPARTMENTS: EngineeringDepartment[] = [
     overlay:
       "bg-gradient-to-br from-brand-blue/80 via-black/75 to-black/60 mix-blend-multiply",
     badgeClass:
-      "bg-brand-blue/30 text-muted-foreground/90 border border-white/25 backdrop-blur",
+      "bg-brand-blue/30 text-foreground/90 border border-white/25 backdrop-blur",
     panelClass: "bg-black/60 backdrop-blur-xl",
     featured: true,
   },
@@ -165,7 +165,7 @@ const ENGINEERING_DEPARTMENTS: EngineeringDepartment[] = [
     overlay:
       "bg-gradient-to-br from-brand-orange/80 via-black/75 to-black/60 mix-blend-multiply",
     badgeClass:
-      "bg-brand-orange/35 text-muted-foreground/90 border border-white/25 backdrop-blur",
+      "bg-brand-orange/35 text-foreground/90 border border-white/25 backdrop-blur",
     panelClass: "bg-black/65 backdrop-blur-xl",
   },
   {
@@ -180,7 +180,7 @@ const ENGINEERING_DEPARTMENTS: EngineeringDepartment[] = [
     overlay:
       "bg-gradient-to-tr from-brand-blue/70 via-black/70 to-black/55 mix-blend-multiply",
     badgeClass:
-      "bg-brand-blue/35 text-muted-foreground/90 border border-white/25 backdrop-blur",
+      "bg-brand-blue/35 text-foreground/90 border border-white/25 backdrop-blur",
     panelClass: "bg-black/55 backdrop-blur-xl",
   },
   {
@@ -195,7 +195,7 @@ const ENGINEERING_DEPARTMENTS: EngineeringDepartment[] = [
     overlay:
       "bg-gradient-to-br from-brand-magenta/70 via-black/70 to-black/55 mix-blend-multiply",
     badgeClass:
-      "bg-brand-magenta/30 text-muted-foreground/90 border border-white/25 backdrop-blur",
+      "bg-brand-magenta/30 text-foreground/90 border border-white/25 backdrop-blur",
     panelClass: "bg-black/55 backdrop-blur-xl",
   },
   {
@@ -210,7 +210,7 @@ const ENGINEERING_DEPARTMENTS: EngineeringDepartment[] = [
     overlay:
       "bg-gradient-to-br from-brand-magenta/70 via-brand-blue/60 to-black/60 mix-blend-multiply",
     badgeClass:
-      "bg-brand-magenta/30 text-muted-foreground/90 border border-white/25 backdrop-blur",
+      "bg-brand-magenta/30 text-foreground/90 border border-white/25 backdrop-blur",
     panelClass: "bg-black/55 backdrop-blur-xl",
   },
   {
@@ -225,7 +225,7 @@ const ENGINEERING_DEPARTMENTS: EngineeringDepartment[] = [
     overlay:
       "bg-gradient-to-br from-brand-blue/75 via-black/70 to-black/55 mix-blend-multiply",
     badgeClass:
-      "bg-brand-blue/30 text-muted-foreground/90 border border-white/25 backdrop-blur",
+      "bg-brand-blue/30 text-foreground/90 border border-white/25 backdrop-blur",
     panelClass: "bg-black/55 backdrop-blur-xl",
   },
   {
@@ -240,7 +240,7 @@ const ENGINEERING_DEPARTMENTS: EngineeringDepartment[] = [
     overlay:
       "bg-gradient-to-br from-brand-blue/70 via-brand-magenta/60 to-black/55 mix-blend-multiply",
     badgeClass:
-      "bg-brand-blue/30 text-muted-foreground/90 border border-white/25 backdrop-blur",
+      "bg-brand-blue/30 text-foreground/90 border border-white/25 backdrop-blur",
     panelClass: "bg-black/55 backdrop-blur-xl",
   },
   {
@@ -255,7 +255,7 @@ const ENGINEERING_DEPARTMENTS: EngineeringDepartment[] = [
     overlay:
       "bg-gradient-to-br from-black/80 via-brand-magenta/60 to-brand-blue/60 mix-blend-multiply",
     badgeClass:
-      "bg-black/50 text-muted-foreground/90 border border-white/30 backdrop-blur",
+      "bg-black/50 text-foreground/90 border border-white/30 backdrop-blur",
     panelClass: "bg-black/60 backdrop-blur-xl",
   },
   {
@@ -274,7 +274,7 @@ const ENGINEERING_DEPARTMENTS: EngineeringDepartment[] = [
     overlay:
       "bg-gradient-to-br from-brand-orange/70 via-black/70 to-black/55 mix-blend-multiply",
     badgeClass:
-      "bg-brand-orange/35 text-muted-foreground/90 border border-white/25 backdrop-blur",
+      "bg-brand-orange/35 text-foreground/90 border border-white/25 backdrop-blur",
     panelClass: "bg-black/55 backdrop-blur-xl",
   },
   {
@@ -289,7 +289,7 @@ const ENGINEERING_DEPARTMENTS: EngineeringDepartment[] = [
     overlay:
       "bg-gradient-to-br from-brand-magenta/65 via-brand-blue/55 to-black/55 mix-blend-multiply",
     badgeClass:
-      "bg-brand-magenta/30 text-muted-foreground/90 border border-white/25 backdrop-blur",
+      "bg-brand-magenta/30 text-foreground/90 border border-white/25 backdrop-blur",
     panelClass: "bg-black/55 backdrop-blur-xl",
   },
 ];
@@ -362,7 +362,7 @@ function DepartmentCard({ department }: { department: EngineeringDepartment }) {
     department.overlay ??
     "bg-gradient-to-t from-black/85 via-black/50 to-transparent";
   const badgeClasses = `inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs uppercase tracking-wide ${
-    department.badgeClass ?? "bg-white/15 text-muted-foreground/80 backdrop-blur"
+    department.badgeClass ?? "bg-white/15 text-foreground/80 backdrop-blur"
   }`;
   const panelClasses = `rounded-3xl border border-white/15 p-6 shadow-[0_25px_80px_-35px_rgba(255,255,255,0.45)] transition-colors duration-500 ${
     department.panelClass ?? "bg-black/60 backdrop-blur-lg"
@@ -385,14 +385,14 @@ function DepartmentCard({ department }: { department: EngineeringDepartment }) {
       <div className={`absolute left-6 top-6 ${badgeClasses}`}>
         {department.area}
       </div>
-      <div className="relative z-10 flex h-full flex-col justify-end p-6 text-muted-foreground">
+      <div className="relative z-10 flex h-full flex-col justify-end p-6 text-foreground">
         <div className={panelClasses}>
           <div className="space-y-4">
             <div>
-              <h3 className="font-display text-2xl leading-tight text-muted-foreground">
+              <h3 className="font-display text-2xl leading-tight text-foreground">
                 {department.name}
               </h3>
-              <p className="mt-3 text-sm text-muted-foreground/85 font-body">
+              <p className="mt-3 text-sm text-foreground/85 font-body">
                 {department.description}
               </p>
             </div>
@@ -400,13 +400,13 @@ function DepartmentCard({ department }: { department: EngineeringDepartment }) {
               {department.highlights.map((item) => (
                 <span
                   key={item}
-                  className="rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs uppercase tracking-wide text-muted-foreground/85"
+                  className="rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs uppercase tracking-wide text-foreground/85"
                 >
                   {item}
                 </span>
               ))}
             </div>
-            <span className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground/90 transition-colors group-hover:text-brand-magenta">
+            <span className="inline-flex items-center gap-2 text-sm font-medium text-foreground/90 transition-colors group-hover:text-brand-magenta">
               Explore department
               <ChevronRight className="h-4 w-4 transition-colors group-hover:text-brand-magenta" />
             </span>
@@ -458,18 +458,18 @@ function SupportingDepartmentCard({
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
           <div className="absolute bottom-4 left-4">
             <Badge
-              className="bg-white/20 text-muted-foreground backdrop-blur"
+              className="bg-white/20 text-foreground backdrop-blur"
               variant="secondary"
             >
               Supporting Department
             </Badge>
-            <h3 className="mt-3 text-xl font-semibold text-muted-foreground font-display">
+            <h3 className="mt-3 text-xl font-semibold text-foreground font-display">
               {department.name}
             </h3>
           </div>
         </div>
         <CardContent className="space-y-4 p-6">
-          <p className="text-sm leading-relaxed text-muted-foreground font-body">
+          <p className="text-sm leading-relaxed text-foreground font-body">
             {department.focus}
           </p>
           <span className="inline-flex items-center gap-2 text-sm font-medium text-brand-magenta">
@@ -490,7 +490,7 @@ function CalendarResourceCard({ entry }: { entry: CalendarEntry }) {
           <Badge className="bg-brand-magenta/15 text-brand-magenta">
             {entry.tag}
           </Badge>
-          <span className="text-xs text-muted-foreground font-body">
+          <span className="text-xs text-foreground font-body">
             {entry.academicYear}
           </span>
         </div>
@@ -498,7 +498,7 @@ function CalendarResourceCard({ entry }: { entry: CalendarEntry }) {
           {entry.title}
         </CardTitle>
       </CardHeader>
-      <CardContent className="space-y-5 text-sm text-muted-foreground font-body">
+      <CardContent className="space-y-5 text-sm text-foreground font-body">
         <p>{entry.description}</p>
         <a
           href={entry.documentUrl}
@@ -535,10 +535,10 @@ export default function Engineering() {
                 School of Engineering
               </span>
             </div>
-            <h1 className="mb-4 font-display text-4xl leading-tight text-muted-foreground md:text-6xl">
+            <h1 className="mb-4 font-display text-4xl leading-tight text-foreground md:text-6xl">
               Innovate. Create. Develop.
             </h1>
-            <p className="max-w-2xl text-muted-foreground/90 font-body text-lg">
+            <p className="max-w-2xl text-foreground/90 font-body text-lg">
               Science & Technology based education that develops high-caliber
               engineers for industry, startups and scientific organisations.
             </p>
@@ -548,7 +548,7 @@ export default function Engineering() {
                 target="_blank"
                 rel="noreferrer"
               >
-                <Button className="bg-brand-gradient text-muted-foreground">
+                <Button className="bg-brand-gradient text-foreground">
                   Virtual Tour
                 </Button>
               </a>
@@ -597,18 +597,18 @@ export default function Engineering() {
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-                <div className="absolute top-4 left-4 inline-flex items-center gap-2 rounded-full bg-black/40 px-3 py-1 text-xs text-muted-foreground">
+                <div className="absolute top-4 left-4 inline-flex items-center gap-2 rounded-full bg-black/40 px-3 py-1 text-xs text-foreground">
                   <highlight.icon className="h-4 w-4" /> USP
                 </div>
-                <div className="absolute inset-x-0 bottom-0 p-5 text-muted-foreground">
+                <div className="absolute inset-x-0 bottom-0 p-5 text-foreground">
                   <h3 className="mb-2 text-lg font-semibold font-display">
                     {highlight.title}
                   </h3>
-                  <p className="text-sm text-muted-foreground/80 font-body">
+                  <p className="text-sm text-foreground/80 font-body">
                     {highlight.description}
                   </p>
                   {highlight.stat ? (
-                    <div className="mt-3 text-xs uppercase tracking-wide text-muted-foreground/70 font-body">
+                    <div className="mt-3 text-xs uppercase tracking-wide text-foreground/70 font-body">
                       {highlight.stat}
                     </div>
                   ) : null}
@@ -647,7 +647,7 @@ export default function Engineering() {
                     <h3 className="text-2xl font-semibold text-foreground font-display">
                       Dr. Udaya Kumar Reddy K R
                     </h3>
-                    <p className="text-sm text-muted-foreground mt-1 font-body">
+                    <p className="text-sm text-foreground mt-1 font-body">
                       Ph.D
                     </p>
                     <p className="text-sm font-medium text-brand-magenta mt-2 font-display">
@@ -666,7 +666,7 @@ export default function Engineering() {
                   </div>
 
                   {/* Message Content */}
-                  <div className="space-y-4 text-sm text-muted-foreground font-body leading-relaxed">
+                  <div className="space-y-4 text-sm text-foreground font-body leading-relaxed">
                     <p>
                       Welcome to the new way of learning at School of Engineering (SoE) of Dayananda Sagar University (DSU). At SoE, we are committed to helping you to make a positive difference in the world.
                     </p>
@@ -692,7 +692,7 @@ export default function Engineering() {
                         <p className="text-sm font-semibold text-foreground font-display">
                           Dr. Udaya Kumar Reddy K R
                         </p>
-                        <p className="text-sm text-muted-foreground font-body">
+                        <p className="text-sm text-foreground font-body">
                           Dean, School of Engineering
                         </p>
                       </div>
@@ -719,7 +719,7 @@ export default function Engineering() {
               <h2 className="mt-4 font-display text-3xl md:text-4xl">
                 Future-ready engineering disciplines
               </h2>
-              <p className="mt-3 text-sm text-muted-foreground font-body">
+              <p className="mt-3 text-sm text-foreground font-body">
                 Discover flagship majors and emerging specialisations built with
                 experiential learning, industry mentorship and research-driven
                 pathways.
@@ -759,7 +759,7 @@ export default function Engineering() {
               <h2 className="font-display text-3xl md:text-4xl">
                 Programs crafted with industry-aligned outcomes
               </h2>
-              <p className="text-sm text-muted-foreground font-body">
+              <p className="text-sm text-foreground font-body">
                 Our undergraduate and postgraduate offerings integrate project
                 studios, global certifications and interdisciplinary minors so
                 every learner can customise their journey.
@@ -789,7 +789,7 @@ export default function Engineering() {
                   <div className="text-lg font-display text-foreground">
                     Project studio pedagogy
                   </div>
-                  <p className="mt-2 text-sm text-muted-foreground font-body">
+                  <p className="mt-2 text-sm text-foreground font-body">
                     Hands-on product build sprints with mentors from startups
                     and global tech companies.
                   </p>
@@ -798,7 +798,7 @@ export default function Engineering() {
                   <div className="text-lg font-display text-foreground">
                     Global certifications
                   </div>
-                  <p className="mt-2 text-sm text-muted-foreground font-body">
+                  <p className="mt-2 text-sm text-foreground font-body">
                     Earn credentials with IBM, NVIDIA, AWS, VMware and GE while
                     you study.
                   </p>
@@ -815,7 +815,7 @@ export default function Engineering() {
                   <h3 className="font-display text-2xl">
                     Undergraduate Majors
                   </h3>
-                  <p className="mt-2 text-sm text-muted-foreground font-body">
+                  <p className="mt-2 text-sm text-foreground font-body">
                     Choose from future-proof majors and emerging
                     specialisations.
                   </p>
@@ -839,7 +839,7 @@ export default function Engineering() {
                       return (
                         <div
                           key={program}
-                          className="flex items-center text-sm text-muted-foreground"
+                          className="flex items-center text-sm text-foreground"
                         >
                           <ChevronRight className="mr-2 h-3 w-3 text-brand-magenta" />
                           {program}
@@ -853,7 +853,7 @@ export default function Engineering() {
                   <h3 className="font-display text-2xl">
                     Postgraduate Specialisations
                   </h3>
-                  <p className="mt-2 text-sm text-muted-foreground font-body">
+                  <p className="mt-2 text-sm text-foreground font-body">
                     Advance into research, product leadership and domain
                     expertise.
                   </p>
@@ -861,7 +861,7 @@ export default function Engineering() {
                     {PG_PROGRAMS.map((program) => (
                       <div
                         key={program}
-                        className="flex items-center text-sm text-muted-foreground"
+                        className="flex items-center text-sm text-foreground"
                       >
                         <ChevronRight className="mr-2 h-3 w-3 text-brand-magenta" />
                         {program}
@@ -905,7 +905,7 @@ export default function Engineering() {
               <h2 className="mt-4 font-display text-3xl md:text-4xl">
                 Holistic foundations that amplify every major
               </h2>
-              <p className="mt-3 text-sm text-muted-foreground font-body">
+              <p className="mt-3 text-sm text-foreground font-body">
                 Specialist faculty from sciences and humanities co-create
                 immersive modules with core departments to sharpen research
                 depth, analytical rigour and human-centred design thinking.
@@ -951,7 +951,7 @@ export default function Engineering() {
                 <h2 className="font-display text-3xl md:text-4xl">
                   School of Engineering Notice Board
                 </h2>
-                <p className="text-sm text-muted-foreground font-body">
+                <p className="text-sm text-foreground font-body">
                   Curated updates for the ongoing academic year 2025-26. Stay
                   aligned with assessment windows, immersion weeks and
                   University-hosted experiences.
@@ -1035,27 +1035,27 @@ export default function Engineering() {
                 research and student success.
               </CardDescription>
             </CardHeader>
-            <CardContent className="grid gap-4 pt-0 text-sm font-body text-muted-foreground sm:grid-cols-2">
+            <CardContent className="grid gap-4 pt-0 text-sm font-body text-foreground sm:grid-cols-2">
               <div>
-                <div className="text-muted-foreground">Dean (Engineering)</div>
+                <div className="text-foreground">Dean (Engineering)</div>
                 <div className="font-medium text-foreground">
                   dean-engg@dsu.edu.in
                 </div>
               </div>
               <div>
-                <div className="text-muted-foreground">Phone</div>
+                <div className="text-foreground">Phone</div>
                 <div className="font-medium text-foreground">
                   +91-80-49092933
                 </div>
               </div>
               <div>
-                <div className="text-muted-foreground">Campus Address</div>
+                <div className="text-foreground">Campus Address</div>
                 <div className="font-medium text-foreground">
                   Innovation Campus, Kanakapura Road, Bengaluru
                 </div>
               </div>
               <div>
-                <div className="text-muted-foreground">Office Hours</div>
+                <div className="text-foreground">Office Hours</div>
                 <div className="font-medium text-foreground">
                   Mon–Fri �� 9:00 AM – 5:30 PM
                 </div>
@@ -1128,13 +1128,13 @@ export default function Engineering() {
             <h3 className="mb-3 font-display text-3xl">
               Ready to shape the future?
             </h3>
-            <p className="mb-6 text-muted-foreground font-body">
+            <p className="mb-6 text-foreground font-body">
               Explore programmes, take a virtual tour and begin your journey at
               the DSU School of Engineering.
             </p>
             <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
               <RouterLink to="/admissions">
-                <Button className="bg-brand-gradient text-muted-foreground">
+                <Button className="bg-brand-gradient text-foreground">
                   Apply Now
                   <GraduationCap className="ml-2 h-4 w-4" />
                 </Button>

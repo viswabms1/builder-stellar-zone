@@ -874,7 +874,7 @@ function HeroSection() {
         <h1 className="mt-8 text-4xl font-bold leading-tight md:text-6xl">
           Plan Your Dayananda Sagar University Journey
         </h1>
-        <p className="mt-6 text-lg text-muted-foreground md:text-xl">
+        <p className="mt-6 text-lg text-foreground md:text-xl">
           Explore program-wise eligibility criteria, entrance codes, and
           comprehensive fee structures across every DSU school. Choose the path
           that aligns with your academic goals and career ambitions.
@@ -882,7 +882,7 @@ function HeroSection() {
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Button
             size="lg"
-            className="rounded-2xl bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 px-8 py-6 text-lg font-semibold text-muted-foreground shadow-lg shadow-orange-500/30 transition hover:shadow-xl"
+            className="rounded-2xl bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 px-8 py-6 text-lg font-semibold text-foreground shadow-lg shadow-orange-500/30 transition hover:shadow-xl"
             asChild
           >
             <a
@@ -943,7 +943,7 @@ function HeroHighlight({ icon: Icon, title, description }: HeroHighlightProps) {
         </div>
         <h3 className="text-lg font-semibold">{title}</h3>
       </div>
-      <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+      <p className="mt-3 text-sm text-foreground leading-relaxed">
         {description}
       </p>
     </div>
@@ -958,7 +958,7 @@ function SchoolsSection() {
           <h2 className="text-3xl font-bold md:text-4xl">
             Program Directory by School
           </h2>
-          <p className="mt-3 text-lg text-muted-foreground">
+          <p className="mt-3 text-lg text-foreground">
             Expand each school to review eligibility checkpoints,
             specializations, yearly fees, and counseling codes. All values
             include the latest library deposit and ancillary components.
@@ -983,7 +983,7 @@ function SchoolsSection() {
                         2025-26
                       </Badge>
                     </div>
-                    <p className="mt-1 text-sm font-normal text-muted-foreground">
+                    <p className="mt-1 text-sm font-normal text-foreground">
                       {school.tagline}
                     </p>
                   </div>
@@ -1002,7 +1002,7 @@ function SchoolsSection() {
                             {category.title}
                           </Badge>
                           {category.description && (
-                            <p className="text-sm text-muted-foreground">
+                            <p className="text-sm text-foreground">
                               {category.description}
                             </p>
                           )}
@@ -1017,7 +1017,7 @@ function SchoolsSection() {
                         ))}
                       </div>
                       {category.footnotes && (
-                        <ul className="list-disc space-y-2 pl-5 text-xs text-muted-foreground">
+                        <ul className="list-disc space-y-2 pl-5 text-xs text-foreground">
                           {category.footnotes.map((note) => (
                             <li key={`${category.title}-note-${note}`}>
                               {note}
@@ -1062,7 +1062,7 @@ function ProgramCard({ program }: ProgramCardProps) {
             <CardTitle className="text-xl font-semibold text-foreground">
               {program.name}
             </CardTitle>
-            <CardDescription className="mt-2 text-sm text-muted-foreground">
+            <CardDescription className="mt-2 text-sm text-foreground">
               Level:{" "}
               {program.level === "UG"
                 ? "Undergraduate"
@@ -1076,7 +1076,7 @@ function ProgramCard({ program }: ProgramCardProps) {
             {program.level}
           </Badge>
         </div>
-        <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+        <p className="mt-4 text-sm leading-relaxed text-foreground">
           <strong className="font-semibold text-foreground">
             Eligibility:
           </strong>{" "}
@@ -1087,7 +1087,7 @@ function ProgramCard({ program }: ProgramCardProps) {
             <p className="text-xs uppercase tracking-wide text-orange-500">
               Includes Specializations
             </p>
-            <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-muted-foreground">
+            <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-foreground">
               {program.specializations.map((item) => (
                 <li key={`${program.name}-${item}`}>{item}</li>
               ))}
@@ -1125,7 +1125,7 @@ function ProgramCard({ program }: ProgramCardProps) {
           </div>
         )}
         {program.notes && (
-          <ul className="list-disc space-y-2 pl-5 text-sm text-muted-foreground">
+          <ul className="list-disc space-y-2 pl-5 text-sm text-foreground">
             {program.notes.map((note) => (
               <li key={`${program.name}-note-${note}`}>{note}</li>
             ))}
@@ -1144,7 +1144,7 @@ function BrochureSection() {
           <h2 className="text-3xl font-bold md:text-4xl">
             Download Program Brochures
           </h2>
-          <p className="mt-3 text-lg text-muted-foreground">
+          <p className="mt-3 text-lg text-foreground">
             Access school-specific brochures detailing curriculum, laboratories,
             internship opportunities, and placement tracks across UG, PG, and
             professional programs.
@@ -1160,14 +1160,14 @@ function BrochureSection() {
                 <CardTitle className="text-lg font-semibold text-foreground">
                   {resource.title}
                 </CardTitle>
-                <CardDescription className="text-sm text-muted-foreground">
+                <CardDescription className="text-sm text-foreground">
                   PDF download • Updated for academic year 2025-26
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <Button
                   variant="secondary"
-                  className="w-full justify-center rounded-xl bg-orange-500/10 text-orange-500 hover:bg-orange-500 hover:text-muted-foreground"
+                  className="w-full justify-center rounded-xl bg-orange-500/10 text-orange-500 hover:bg-orange-500 hover:text-foreground"
                   asChild
                 >
                   <a href={resource.href} target="_blank" rel="noreferrer">
@@ -1192,7 +1192,7 @@ function ContactSection() {
           <h2 className="text-3xl font-bold md:text-4xl">
             Need Help Choosing?
           </h2>
-          <p className="mt-3 text-lg text-muted-foreground">
+          <p className="mt-3 text-lg text-foreground">
             Connect with DSU counselors for personalized guidance on eligibility
             verification, fee planning, and scholarship opportunities.
           </p>
@@ -1210,11 +1210,11 @@ function ContactSection() {
                     {location.name}
                   </CardTitle>
                 </div>
-                <CardDescription className="mt-4 text-sm leading-relaxed text-muted-foreground">
+                <CardDescription className="mt-4 text-sm leading-relaxed text-foreground">
                   {location.address}
                 </CardDescription>
               </CardHeader>
-              <CardContent className="space-y-4 text-sm text-muted-foreground">
+              <CardContent className="space-y-4 text-sm text-foreground">
                 <div>
                   <p className="font-semibold text-foreground">Helpline</p>
                   <ul className="mt-2 space-y-1">
@@ -1246,7 +1246,7 @@ function ContactSection() {
                   Helpline Directory
                 </CardTitle>
               </div>
-              <CardDescription className="mt-2 text-sm text-muted-foreground">
+              <CardDescription className="mt-2 text-sm text-foreground">
                 Reach specialized teams for program guidance, counseling
                 schedules, and document verification support.
               </CardDescription>
@@ -1258,7 +1258,7 @@ function ContactSection() {
                   className="rounded-2xl border border-orange-500/20 bg-background/70 p-4 text-sm"
                 >
                   <p className="font-semibold text-foreground">{group.title}</p>
-                  <ul className="mt-2 space-y-1 text-xs text-muted-foreground">
+                  <ul className="mt-2 space-y-1 text-xs text-foreground">
                     {group.entries.map((entry) => (
                       <li key={`${group.title}-${entry}`}>{entry}</li>
                     ))}
@@ -1275,7 +1275,7 @@ function ContactSection() {
                   Regional &amp; International Outreach
                 </CardTitle>
               </div>
-              <CardDescription className="mt-2 text-sm text-muted-foreground">
+              <CardDescription className="mt-2 text-sm text-foreground">
                 Dedicated counselors are available across regions and for NRI /
                 foreign applicants.
               </CardDescription>
@@ -1289,7 +1289,7 @@ function ContactSection() {
                   <p className="font-semibold text-foreground">
                     {contact.label}
                   </p>
-                  <p className="mt-1 text-muted-foreground">{contact.phone}</p>
+                  <p className="mt-1 text-foreground">{contact.phone}</p>
                 </div>
               ))}
               <div className="sm:col-span-2 rounded-2xl border border-orange-500/20 bg-orange-500/10 p-4 text-sm text-orange-500">
@@ -1315,7 +1315,7 @@ function NotesSection() {
         <h2 className="mt-6 text-3xl font-bold text-foreground md:text-4xl">
           Prepare Your Application Checklist
         </h2>
-        <p className="mt-4 text-lg text-muted-foreground">
+        <p className="mt-4 text-lg text-foreground">
           Review the following guidelines before submitting your application and
           fee payments to ensure a smooth admission experience.
         </p>
@@ -1323,7 +1323,7 @@ function NotesSection() {
           {importantNotes.map((note) => (
             <div
               key={note}
-              className="flex items-start gap-3 text-sm text-muted-foreground"
+              className="flex items-start gap-3 text-sm text-foreground"
             >
               <CheckCircle2 className="mt-0.5 h-4 w-4 text-orange-500" />
               <span>{note}</span>
@@ -1333,7 +1333,7 @@ function NotesSection() {
         <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <Button
             size="lg"
-            className="rounded-2xl bg-gradient-to-r from-orange-500 to-red-500 px-8 py-6 text-lg font-semibold text-muted-foreground hover:from-red-500 hover:to-orange-500"
+            className="rounded-2xl bg-gradient-to-r from-orange-500 to-red-500 px-8 py-6 text-lg font-semibold text-foreground hover:from-red-500 hover:to-orange-500"
             asChild
           >
             <a href="mailto:admissions@dsu.edu.in?subject=Eligibility%20and%20Fee%20Clarification">

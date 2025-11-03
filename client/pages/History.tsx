@@ -180,7 +180,7 @@ export default function History() {
             </span>
           </h1>
 
-          <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-foreground mb-8 leading-relaxed max-w-3xl mx-auto">
             From a vision of quality education to a globally recognized university, discover the milestones that shaped DSU.
           </p>
         </div>
@@ -196,7 +196,7 @@ export default function History() {
                 Heritage
               </span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-lg text-foreground max-w-3xl mx-auto">
               Building on decades of educational excellence
             </p>
           </div>
@@ -214,14 +214,14 @@ export default function History() {
                   <CardTitle className="text-2xl">{era.title}</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-foreground leading-relaxed">
                     {era.description}
                   </p>
                   <div className="space-y-2">
                     {era.highlights.map((highlight, idx) => (
                       <div key={idx} className="flex items-center gap-2">
                         <CheckCircle className="w-4 h-4 text-orange-500 flex-shrink-0" />
-                        <span className="text-sm text-muted-foreground">
+                        <span className="text-sm text-foreground">
                           {highlight}
                         </span>
                       </div>
@@ -263,7 +263,7 @@ export default function History() {
                       <div
                         className={`w-16 h-16 rounded-full bg-gradient-to-br ${milestone.color} flex items-center justify-center mb-4 shadow-lg`}
                       >
-                        <Icon className="w-8 h-8 text-muted-foreground" />
+                        <Icon className="w-8 h-8 text-foreground" />
                       </div>
                       {index < milestones.length - 1 && (
                         <div className="w-1 h-24 bg-gradient-to-b from-orange-500/50 to-transparent"></div>
@@ -289,7 +289,7 @@ export default function History() {
                           </div>
                         </CardHeader>
                         <CardContent className="space-y-4">
-                          <p className="text-muted-foreground leading-relaxed">
+                          <p className="text-foreground leading-relaxed">
                             {milestone.description}
                           </p>
                           <div className="space-y-2">
@@ -299,7 +299,7 @@ export default function History() {
                                 className="flex items-center gap-2 text-sm"
                               >
                                 <div className="w-2 h-2 rounded-full bg-orange-500"></div>
-                                <span className="text-muted-foreground">
+                                <span className="text-foreground">
                                   {achievement}
                                 </span>
                               </div>
@@ -342,7 +342,7 @@ export default function History() {
                 <div className="text-3xl font-bold text-foreground mb-1">
                   {stat.number}
                 </div>
-                <div className="text-sm text-muted-foreground">{stat.label}</div>
+                <div className="text-sm text-foreground">{stat.label}</div>
               </Card>
             ))}
           </div>
@@ -355,7 +355,7 @@ export default function History() {
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Be Part of Our Future
           </h2>
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+          <p className="text-lg text-foreground mb-8 max-w-2xl mx-auto">
             Join an institution with a proven track record of excellence and innovation. Shape your future with us.
           </p>
 
@@ -363,7 +363,7 @@ export default function History() {
             <Link to="/admissions">
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-red-600 hover:to-orange-500 text-muted-foreground px-8 py-6 font-semibold rounded-2xl"
+                className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-red-600 hover:to-orange-500 text-foreground px-8 py-6 font-semibold rounded-2xl"
               >
                 Start Your Journey
                 <ArrowRight className="w-5 h-5 ml-2" />
@@ -373,7 +373,7 @@ export default function History() {
               <Button
                 variant="outline"
                 size="lg"
-                className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-muted-foreground px-8 py-6 font-semibold rounded-2xl"
+                className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-foreground px-8 py-6 font-semibold rounded-2xl"
               >
                 Back to About
               </Button>

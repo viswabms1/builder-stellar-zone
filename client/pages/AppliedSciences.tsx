@@ -173,18 +173,18 @@ function HighlightCard({ highlight }: { highlight: Highlight }) {
         className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-      <div className="absolute top-4 left-4 inline-flex items-center gap-2 rounded-full bg-black/40 px-3 py-1 text-xs text-muted-foreground">
+      <div className="absolute top-4 left-4 inline-flex items-center gap-2 rounded-full bg-black/40 px-3 py-1 text-xs text-foreground">
         <Icon className="h-4 w-4" /> USP
       </div>
-      <div className="absolute inset-x-0 bottom-0 p-5 text-muted-foreground">
+      <div className="absolute inset-x-0 bottom-0 p-5 text-foreground">
         <h3 className="mb-2 text-lg font-semibold font-display">
           {highlight.title}
         </h3>
-        <p className="text-sm text-muted-foreground/80 font-body">
+        <p className="text-sm text-foreground/80 font-body">
           {highlight.description}
         </p>
         {highlight.stat ? (
-          <div className="mt-3 text-xs uppercase tracking-wide text-muted-foreground/70 font-body">
+          <div className="mt-3 text-xs uppercase tracking-wide text-foreground/70 font-body">
             {highlight.stat}
           </div>
         ) : null}
@@ -206,7 +206,7 @@ function DepartmentInfoCard({ department }: { department: DepartmentCard }) {
         </CardTitle>
       </CardHeader>
       <CardContent className="pt-0">
-        <CardDescription className="text-sm leading-relaxed text-muted-foreground font-body">
+        <CardDescription className="text-sm leading-relaxed text-foreground font-body">
           {department.description}
         </CardDescription>
       </CardContent>
@@ -240,7 +240,7 @@ function ResourceCard({ resource }: { resource: ResourceLink }) {
           {resource.title}
         </CardTitle>
       </CardHeader>
-      <CardContent className="space-y-5 text-sm text-muted-foreground font-body">
+      <CardContent className="space-y-5 text-sm text-foreground font-body">
         <p>{resource.description}</p>
         <a
           href={resource.href}
@@ -277,17 +277,17 @@ export default function AppliedSciences() {
                 School of Basic & Applied Sciences
               </span>
             </div>
-            <h1 className="mb-4 font-display text-4xl leading-tight text-muted-foreground md:text-6xl">
+            <h1 className="mb-4 font-display text-4xl leading-tight text-foreground md:text-6xl">
               Deciphering the Codes of Life
             </h1>
-            <p className="max-w-2xl text-muted-foreground/90 font-body text-lg">
+            <p className="max-w-2xl text-foreground/90 font-body text-lg">
               Build scientific acumen across life sciences, physical sciences
               and data-driven experimentation with research-intensive mentorship
               at DSU.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link to="/admissions">
-                <Button className="bg-brand-gradient text-muted-foreground">
+                <Button className="bg-brand-gradient text-foreground">
                   Apply Now
                 </Button>
               </Link>
@@ -317,7 +317,7 @@ export default function AppliedSciences() {
             <h2 className="mt-4 font-display text-3xl md:text-4xl">
               Programmes bridging science & society
             </h2>
-            <p className="mt-3 text-sm text-muted-foreground font-body max-w-3xl mx-auto">
+            <p className="mt-3 text-sm text-foreground font-body max-w-3xl mx-auto">
               Programmes nurture curiosity, experimentation and analytical rigour, preparing graduates for research, healthcare, product development and analytics roles.
             </p>
           </div>
@@ -335,7 +335,7 @@ export default function AppliedSciences() {
                     {group.label} Programmes
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="grid gap-3 text-sm text-muted-foreground font-body">
+                <CardContent className="grid gap-3 text-sm text-foreground font-body">
                   {group.programmes.map((programme) => (
                     <div key={programme} className="flex items-center">
                       <ChevronRight className="mr-2 h-3 w-3 text-brand-magenta" />
@@ -386,7 +386,7 @@ export default function AppliedSciences() {
               <h2 className="mt-4 font-display text-3xl md:text-4xl">
                 Interdisciplinary Science Ecosystem
               </h2>
-              <p className="mt-3 text-sm text-muted-foreground font-body">
+              <p className="mt-3 text-sm text-foreground font-body">
                 Collaborate across life sciences, physical sciences, health
                 sciences and computational domains through integrated
                 coursework, labs and research projects.
@@ -423,7 +423,7 @@ export default function AppliedSciences() {
               <h2 className="mt-4 font-display text-3xl md:text-4xl">
                 Plan, Engage & Excel
               </h2>
-              <p className="mt-3 text-sm text-muted-foreground font-body">
+              <p className="mt-3 text-sm text-foreground font-body">
                 Download calendars, revisit event highlights and access the
                 official SBAS handbook to navigate every term with clarity.
               </p>
@@ -452,14 +452,14 @@ export default function AppliedSciences() {
             <h3 className="mb-3 font-display text-3xl">
               Join the Science & Innovation Movement
             </h3>
-            <p className="mb-6 text-muted-foreground font-body">
+            <p className="mb-6 text-foreground font-body">
               Engage with cross-disciplinary mentors, modern labs and industry
               collaborations that position SBAS graduates for global research
               and innovation careers.
             </p>
             <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
               <Link to="/admissions">
-                <Button className="bg-brand-gradient text-muted-foreground">
+                <Button className="bg-brand-gradient text-foreground">
                   Start Application
                   <GraduationCap className="ml-2 h-4 w-4" />
                 </Button>
