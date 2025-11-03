@@ -35,6 +35,7 @@ import BoardOfGovernors from "./pages/BoardOfGovernors";
 import BoardOfManagement from "./pages/BoardOfManagement";
 import Accreditations from "./pages/Accreditations";
 import Facilities from "./pages/Facilities";
+import Placements from "./pages/Placements";
 import { ThemeProvider } from "./providers/theme-provider";
 import FacultyProfile from "./pages/FacultyProfile";
 import FacultyRohitKumarSingh from "./pages/faculty/RohitKumarSingh";
