@@ -138,7 +138,7 @@ export default function Research() {
               <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">Research</span>
               <span className="text-foreground"> Centers</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xl text-white max-w-3xl mx-auto">
               Specialized research centers driving innovation across multiple disciplines
             </p>
           </div>
@@ -263,7 +263,7 @@ export default function Research() {
               <span className="text-foreground">Research </span>
               <span className="bg-gradient-to-r from-red-500 to-pink-500 bg-clip-text text-transparent">Achievements</span>
             </h2>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-xl text-white">
               Recognition and impact of our research contributions
             </p>
           </div>
@@ -379,7 +379,7 @@ export default function Research() {
               <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">Research</span>
               <span className="text-foreground"> Opportunities</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xl text-white max-w-3xl mx-auto">
               Join our research community and contribute to groundbreaking discoveries
             </p>
           </div>
@@ -489,7 +489,7 @@ export default function Research() {
               <span className="text-foreground">Research </span>
               <span className="bg-gradient-to-r from-red-500 to-pink-500 bg-clip-text text-transparent">Support</span>
             </h2>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-xl text-white">
               Comprehensive support ecosystem for researchers at all levels
             </p>
           </div>
@@ -555,7 +555,7 @@ export default function Research() {
               Ready to 
               <span className="bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent"> Lead Innovation</span>?
             </h2>
-            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-white mb-8 max-w-2xl mx-auto">
               Join our research community and be part of discoveries that shape the future.
             </p>
             
