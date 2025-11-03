@@ -535,7 +535,7 @@ export default function Leadership() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {committees.map((committee, index) => {
               const Icon = committee.icon;
-              return (
+              const cardElement = (
                 <Card
                   key={index}
                   className="group hover:shadow-lg hover:shadow-orange-500/10 transition-all duration-300 hover:border-orange-500/30 bg-card/50 backdrop-blur-sm border border-border/50"
@@ -566,6 +566,15 @@ export default function Leadership() {
                   </CardContent>
                 </Card>
               );
+
+              if (committee.link) {
+                return (
+                  <Link key={index} to={committee.link}>
+                    {cardElement}
+                  </Link>
+                );
+              }
+              return cardElement;
             })}
           </div>
         </div>
