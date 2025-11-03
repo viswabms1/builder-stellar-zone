@@ -124,16 +124,6 @@ export default function Leadership() {
 
   const committees = [
     {
-      name: "Board of Governors",
-      icon: Users,
-      description: "Strategic governance and institutional oversight",
-      functions: [
-        "University policy development",
-        "Financial oversight",
-        "Institutional accountability",
-      ],
-    },
-    {
       name: "Academic Council",
       icon: BookOpen,
       description: "Academic matters and curriculum development",
@@ -589,7 +579,7 @@ export default function Leadership() {
                   </span>
                 </h2>
                 <p className="text-lg text-muted-foreground mb-6 max-w-2xl">
-                  Strategic governance and institutional oversight with 11 distinguished members providing direction and financial oversight
+                  Strategic governance and institutional oversight
                 </p>
                 <div className="flex items-center text-orange-500 font-semibold group-hover:gap-3 gap-2 transition-all duration-300">
                   <span>View Full Board</span>
