@@ -548,7 +548,7 @@ export default function CampusLife() {
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <h3 className="text-foreground font-bold text-lg">{story.title}</h3>
+                  <h3 className="text-white font-bold text-lg">{story.title}</h3>
                 </div>
               </div>
             ))}
