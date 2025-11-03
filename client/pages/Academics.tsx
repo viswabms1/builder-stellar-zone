@@ -61,7 +61,7 @@ export default function Academics() {
             <span className="text-foreground">Through Learning</span>
           </h1>
 
-          <p className="text-xl md:text-2xl text-muted-foreground mb-6 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-white mb-6 max-w-4xl mx-auto leading-relaxed">
             Discover world-class academic programs designed to prepare you for
             the challenges of tomorrow. At DSU, innovation meets excellence
             across every discipline.
@@ -327,7 +327,7 @@ export default function Academics() {
                         ) : (
                           <div
                             key={idx}
-                            className="flex items-center text-sm text-muted-foreground"
+                            className="flex items-center text-sm text-white"
                           >
                             <ChevronRight className="w-3 h-3 text-brand-magenta mr-2 flex-shrink-0" />
                             {program}
@@ -473,7 +473,7 @@ export default function Academics() {
                   <p
                     className={`text-sm font-body ${
                       feature.objectFit === "contain"
-                        ? "text-muted-foreground"
+                        ? "text-white"
                         : "text-white/80"
                     }`}
                   >
