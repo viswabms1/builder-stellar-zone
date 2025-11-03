@@ -720,7 +720,7 @@ export default function About() {
               </span>
               ?
             </h2>
-            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-white mb-8 max-w-2xl mx-auto">
               Join our community of learners, innovators, and leaders shaping
               the future.
             </p>
