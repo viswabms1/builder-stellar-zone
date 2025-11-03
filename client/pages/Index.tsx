@@ -62,13 +62,13 @@ export default function Index() {
         <div className="relative max-w-7xl mx-auto px-6 text-center lg:text-left lg:flex lg:items-center lg:space-x-12">
           <div className="lg:w-2/3">
             <h1 className="headline-1 mb-8 leading-tight">
-              <span className="text-foreground">Shape Your</span>
+              <span className="text-white">Shape Your</span>
               <br />
               <span className="bg-brand-gradient bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient-shift">
                 Future
               </span>
               <br />
-              <span className="text-foreground">at Dayananda Sagar University</span>
+              <span className="text-white">at Dayananda Sagar University</span>
             </h1>
 
             <p className="subheadline text-gray-200 mb-12 max-w-3xl mx-auto leading-relaxed">
