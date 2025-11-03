@@ -400,13 +400,13 @@ function DepartmentCard({ department }: { department: EngineeringDepartment }) {
               {department.highlights.map((item) => (
                 <span
                   key={item}
-                  className="rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs uppercase tracking-wide text-foreground/85"
+                  className="rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs uppercase tracking-wide text-white/85"
                 >
                   {item}
                 </span>
               ))}
             </div>
-            <span className="inline-flex items-center gap-2 text-sm font-medium text-foreground/90 transition-colors group-hover:text-brand-magenta">
+            <span className="inline-flex items-center gap-2 text-sm font-medium text-white/90 transition-colors group-hover:text-brand-magenta">
               Explore department
               <ChevronRight className="h-4 w-4 transition-colors group-hover:text-brand-magenta" />
             </span>
