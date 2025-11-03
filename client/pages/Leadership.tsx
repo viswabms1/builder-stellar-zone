@@ -153,6 +153,7 @@ export default function Leadership() {
         "Resource management",
         "Campus operations",
       ],
+      link: "/about/board-of-management",
     },
     {
       name: "Research & Innovation Council",
