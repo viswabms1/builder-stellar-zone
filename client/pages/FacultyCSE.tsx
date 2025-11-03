@@ -349,7 +349,7 @@ function LeadershipSection({ leadership }: LeadershipSectionProps) {
                   <p className="text-lg font-semibold">{faculty.name}</p>
                 </div>
               </div>
-              <CardContent className="space-y-4 p-5 text-sm text-muted-foreground">
+              <CardContent className="space-y-4 p-5 text-sm text-white">
                 {faculty.qualifications ? (
                   <p>
                     <span className="font-semibold text-foreground">

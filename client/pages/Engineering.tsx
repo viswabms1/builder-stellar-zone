@@ -469,7 +469,7 @@ function SupportingDepartmentCard({
           </div>
         </div>
         <CardContent className="space-y-4 p-6">
-          <p className="text-sm leading-relaxed text-muted-foreground font-body">
+          <p className="text-sm leading-relaxed text-white font-body">
             {department.focus}
           </p>
           <span className="inline-flex items-center gap-2 text-sm font-medium text-brand-magenta">
@@ -490,7 +490,7 @@ function CalendarResourceCard({ entry }: { entry: CalendarEntry }) {
           <Badge className="bg-brand-magenta/15 text-brand-magenta">
             {entry.tag}
           </Badge>
-          <span className="text-xs text-muted-foreground font-body">
+          <span className="text-xs text-white font-body">
             {entry.academicYear}
           </span>
         </div>
@@ -498,7 +498,7 @@ function CalendarResourceCard({ entry }: { entry: CalendarEntry }) {
           {entry.title}
         </CardTitle>
       </CardHeader>
-      <CardContent className="space-y-5 text-sm text-muted-foreground font-body">
+      <CardContent className="space-y-5 text-sm text-white font-body">
         <p>{entry.description}</p>
         <a
           href={entry.documentUrl}
@@ -647,7 +647,7 @@ export default function Engineering() {
                     <h3 className="text-2xl font-semibold text-foreground font-display">
                       Dr. Udaya Kumar Reddy K R
                     </h3>
-                    <p className="text-sm text-muted-foreground mt-1 font-body">
+                    <p className="text-sm text-white mt-1 font-body">
                       Ph.D
                     </p>
                     <p className="text-sm font-medium text-brand-magenta mt-2 font-display">
@@ -666,7 +666,7 @@ export default function Engineering() {
                   </div>
 
                   {/* Message Content */}
-                  <div className="space-y-4 text-sm text-muted-foreground font-body leading-relaxed">
+                  <div className="space-y-4 text-sm text-white font-body leading-relaxed">
                     <p>
                       Welcome to the new way of learning at School of Engineering (SoE) of Dayananda Sagar University (DSU). At SoE, we are committed to helping you to make a positive difference in the world.
                     </p>
@@ -692,7 +692,7 @@ export default function Engineering() {
                         <p className="text-sm font-semibold text-foreground font-display">
                           Dr. Udaya Kumar Reddy K R
                         </p>
-                        <p className="text-sm text-muted-foreground font-body">
+                        <p className="text-sm text-white font-body">
                           Dean, School of Engineering
                         </p>
                       </div>
@@ -719,7 +719,7 @@ export default function Engineering() {
               <h2 className="mt-4 font-display text-3xl md:text-4xl">
                 Future-ready engineering disciplines
               </h2>
-              <p className="mt-3 text-sm text-muted-foreground font-body">
+              <p className="mt-3 text-sm text-white font-body">
                 Discover flagship majors and emerging specialisations built with
                 experiential learning, industry mentorship and research-driven
                 pathways.
@@ -759,7 +759,7 @@ export default function Engineering() {
               <h2 className="font-display text-3xl md:text-4xl">
                 Programs crafted with industry-aligned outcomes
               </h2>
-              <p className="text-sm text-muted-foreground font-body">
+              <p className="text-sm text-white font-body">
                 Our undergraduate and postgraduate offerings integrate project
                 studios, global certifications and interdisciplinary minors so
                 every learner can customise their journey.
@@ -789,7 +789,7 @@ export default function Engineering() {
                   <div className="text-lg font-display text-foreground">
                     Project studio pedagogy
                   </div>
-                  <p className="mt-2 text-sm text-muted-foreground font-body">
+                  <p className="mt-2 text-sm text-white font-body">
                     Hands-on product build sprints with mentors from startups
                     and global tech companies.
                   </p>
@@ -798,7 +798,7 @@ export default function Engineering() {
                   <div className="text-lg font-display text-foreground">
                     Global certifications
                   </div>
-                  <p className="mt-2 text-sm text-muted-foreground font-body">
+                  <p className="mt-2 text-sm text-white font-body">
                     Earn credentials with IBM, NVIDIA, AWS, VMware and GE while
                     you study.
                   </p>
@@ -815,7 +815,7 @@ export default function Engineering() {
                   <h3 className="font-display text-2xl">
                     Undergraduate Majors
                   </h3>
-                  <p className="mt-2 text-sm text-muted-foreground font-body">
+                  <p className="mt-2 text-sm text-white font-body">
                     Choose from future-proof majors and emerging
                     specialisations.
                   </p>
@@ -839,7 +839,7 @@ export default function Engineering() {
                       return (
                         <div
                           key={program}
-                          className="flex items-center text-sm text-muted-foreground"
+                          className="flex items-center text-sm text-white"
                         >
                           <ChevronRight className="mr-2 h-3 w-3 text-brand-magenta" />
                           {program}
@@ -853,7 +853,7 @@ export default function Engineering() {
                   <h3 className="font-display text-2xl">
                     Postgraduate Specialisations
                   </h3>
-                  <p className="mt-2 text-sm text-muted-foreground font-body">
+                  <p className="mt-2 text-sm text-white font-body">
                     Advance into research, product leadership and domain
                     expertise.
                   </p>
@@ -861,7 +861,7 @@ export default function Engineering() {
                     {PG_PROGRAMS.map((program) => (
                       <div
                         key={program}
-                        className="flex items-center text-sm text-muted-foreground"
+                        className="flex items-center text-sm text-white"
                       >
                         <ChevronRight className="mr-2 h-3 w-3 text-brand-magenta" />
                         {program}
@@ -905,7 +905,7 @@ export default function Engineering() {
               <h2 className="mt-4 font-display text-3xl md:text-4xl">
                 Holistic foundations that amplify every major
               </h2>
-              <p className="mt-3 text-sm text-muted-foreground font-body">
+              <p className="mt-3 text-sm text-white font-body">
                 Specialist faculty from sciences and humanities co-create
                 immersive modules with core departments to sharpen research
                 depth, analytical rigour and human-centred design thinking.
@@ -951,7 +951,7 @@ export default function Engineering() {
                 <h2 className="font-display text-3xl md:text-4xl">
                   School of Engineering Notice Board
                 </h2>
-                <p className="text-sm text-muted-foreground font-body">
+                <p className="text-sm text-white font-body">
                   Curated updates for the ongoing academic year 2025-26. Stay
                   aligned with assessment windows, immersion weeks and
                   University-hosted experiences.
@@ -1035,27 +1035,27 @@ export default function Engineering() {
                 research and student success.
               </CardDescription>
             </CardHeader>
-            <CardContent className="grid gap-4 pt-0 text-sm font-body text-muted-foreground sm:grid-cols-2">
+            <CardContent className="grid gap-4 pt-0 text-sm font-body text-white sm:grid-cols-2">
               <div>
-                <div className="text-muted-foreground">Dean (Engineering)</div>
+                <div className="text-white">Dean (Engineering)</div>
                 <div className="font-medium text-foreground">
                   dean-engg@dsu.edu.in
                 </div>
               </div>
               <div>
-                <div className="text-muted-foreground">Phone</div>
+                <div className="text-white">Phone</div>
                 <div className="font-medium text-foreground">
                   +91-80-49092933
                 </div>
               </div>
               <div>
-                <div className="text-muted-foreground">Campus Address</div>
+                <div className="text-white">Campus Address</div>
                 <div className="font-medium text-foreground">
                   Innovation Campus, Kanakapura Road, Bengaluru
                 </div>
               </div>
               <div>
-                <div className="text-muted-foreground">Office Hours</div>
+                <div className="text-white">Office Hours</div>
                 <div className="font-medium text-foreground">
                   Mon–Fri �� 9:00 AM – 5:30 PM
                 </div>
@@ -1128,7 +1128,7 @@ export default function Engineering() {
             <h3 className="mb-3 font-display text-3xl">
               Ready to shape the future?
             </h3>
-            <p className="mb-6 text-muted-foreground font-body">
+            <p className="mb-6 text-white font-body">
               Explore programmes, take a virtual tour and begin your journey at
               the DSU School of Engineering.
             </p>

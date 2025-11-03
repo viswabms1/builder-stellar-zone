@@ -239,7 +239,7 @@ export default function Facilities() {
             </span>
           </h1>
 
-          <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-white mb-8 leading-relaxed max-w-3xl mx-auto">
             World-class facilities and infrastructure designed to provide an excellent learning and living environment for our students.
           </p>
         </div>
@@ -278,14 +278,14 @@ export default function Facilities() {
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-4">
-                    <p className="text-sm text-muted-foreground">
+                    <p className="text-sm text-white">
                       {facility.description}
                     </p>
                     <div className="space-y-2">
                       {facility.features.map((feature, idx) => (
                         <div
                           key={idx}
-                          className="flex items-start gap-2 text-sm text-muted-foreground"
+                          className="flex items-start gap-2 text-sm text-white"
                         >
                           <CheckCircle className="w-4 h-4 text-orange-500 mt-0.5 flex-shrink-0" />
                           {feature}
@@ -345,7 +345,7 @@ export default function Facilities() {
                       {campus.features.map((feature, idx) => (
                         <div
                           key={idx}
-                          className="flex items-center gap-2 text-sm text-muted-foreground"
+                          className="flex items-center gap-2 text-sm text-white"
                         >
                           <span className="w-2 h-2 rounded-full bg-orange-500"></span>
                           {feature}
@@ -362,7 +362,7 @@ export default function Facilities() {
                       {campus.facilities.map((facility, idx) => (
                         <div
                           key={idx}
-                          className="flex items-center gap-2 text-sm text-muted-foreground"
+                          className="flex items-center gap-2 text-sm text-white"
                         >
                           <span className="w-2 h-2 rounded-full bg-orange-500"></span>
                           {facility}
@@ -403,7 +403,7 @@ export default function Facilities() {
                     {infra.items.map((item, idx) => (
                       <div
                         key={idx}
-                        className="flex items-start gap-2 text-sm text-muted-foreground"
+                        className="flex items-start gap-2 text-sm text-white"
                       >
                         <Monitor className="w-4 h-4 text-orange-500 mt-0.5 flex-shrink-0" />
                         {item}
@@ -443,7 +443,7 @@ export default function Facilities() {
                 <div className="text-3xl font-bold text-foreground mb-1">
                   {stat.number}
                 </div>
-                <div className="text-sm text-muted-foreground">{stat.label}</div>
+                <div className="text-sm text-white">{stat.label}</div>
               </Card>
             ))}
           </div>
@@ -495,7 +495,7 @@ export default function Facilities() {
                       <h3 className="font-semibold text-foreground mb-1">
                         {item.title}
                       </h3>
-                      <p className="text-sm text-muted-foreground">
+                      <p className="text-sm text-white">
                         {item.description}
                       </p>
                     </div>

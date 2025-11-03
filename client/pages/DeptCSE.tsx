@@ -95,7 +95,7 @@ export default function DeptCSE() {
         <div className="max-w-6xl mx-auto grid lg:grid-cols-3 gap-10 items-start">
           <div className="lg:col-span-2 space-y-6">
             <h2 className="headline-3 font-display">Overview</h2>
-            <p className="text-muted-foreground leading-relaxed font-body">
+            <p className="text-white leading-relaxed font-body">
               The Department of Computer Science & Engineering offers a dynamic ecosystem for study, research, and professional growth. The B.Tech CSE program provides a solid foundation and new-age skills with an innovative curriculum and pedagogy aligned to NEP and industry partnerships. Students gain breadth across core computing and depth through elective streams, while developing leadership and personal effectiveness for holistic growth.
             </p>
             <Card className="border border-border/50 bg-card/50 backdrop-blur-sm">
@@ -105,7 +105,7 @@ export default function DeptCSE() {
               </CardHeader>
               <CardContent className="grid sm:grid-cols-2 gap-3 pt-0">
                 {highlights.map((h, idx) => (
-                  <div key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
+                  <div key={idx} className="flex items-start gap-2 text-sm text-white">
                     <CheckCircle2 className="w-4 h-4 text-brand-magenta mt-0.5" />
                     <span>{h}</span>
                   </div>
@@ -205,7 +205,7 @@ export default function DeptCSE() {
             <Card className="border border-border/50 bg-card/50">
               <CardContent className="p-6 grid gap-3">
                 {careers.map((c, i) => (
-                  <div key={i} className="flex items-start gap-2 text-sm text-muted-foreground font-body">
+                  <div key={i} className="flex items-start gap-2 text-sm text-white font-body">
                     <ChevronRight className="w-3 h-3 text-brand-magenta mt-1" />
                     <span>{c}</span>
                   </div>
@@ -237,7 +237,7 @@ export default function DeptCSE() {
         <div className="max-w-4xl mx-auto text-center">
           <div className="rounded-3xl p-10 border border-brand-magenta/20 bg-brand-magenta/5">
             <h3 className="headline-3 mb-3 font-display">Join DSU CSE</h3>
-            <p className="text-muted-foreground mb-6 font-body">Explore programs, discover research, and launch your career in Computer Science & Engineering.</p>
+            <p className="text-white mb-6 font-body">Explore programs, discover research, and launch your career in Computer Science & Engineering.</p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Link to="/admissions">
                 <Button className="bg-brand-gradient text-white">Apply Now<GraduationCap className="w-4 h-4 ml-2" /></Button>
@@ -348,7 +348,7 @@ function NoticeBoard() {
         <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <h2 className="headline-3 font-display">Department Notice Board</h2>
-            <p className="max-w-2xl text-sm text-muted-foreground sm:text-base">
+            <p className="max-w-2xl text-sm text-white sm:text-base">
               Track upcoming events, academic announcements, and official circulars released by the Computer Science & Engineering department.
             </p>
           </div>
@@ -374,16 +374,16 @@ function NoticeBoard() {
                         <Icon className="h-3.5 w-3.5" />
                         {categoryStyle.label}
                       </div>
-                      <span className="text-xs text-muted-foreground">{notice.date}</span>
+                      <span className="text-xs text-white">{notice.date}</span>
                     </div>
                     <CardTitle className="text-base font-display text-foreground sm:text-lg">
                       {notice.title}
                     </CardTitle>
                   </div>
                 </CardHeader>
-                <CardContent className="space-y-3 text-sm text-muted-foreground">
+                <CardContent className="space-y-3 text-sm text-white">
                   <p>{notice.description}</p>
-                  <div className="flex items-center justify-between text-xs text-muted-foreground">
+                  <div className="flex items-center justify-between text-xs text-white">
                     <span>Ref: CSE/{new Date(notice.date).getFullYear()}/{notice.id.split("-")[1]}</span>
                     {notice.link ? (
                       <Button
@@ -483,7 +483,7 @@ function CurriculumLibrary() {
         <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <h2 className="headline-3 font-display">Curriculum Library</h2>
-            <p className="max-w-2xl text-sm text-muted-foreground sm:text-base">
+            <p className="max-w-2xl text-sm text-white sm:text-base">
               Explore curated curriculum packs for B.Tech and M.Tech cohorts. Click “View curriculum” to reveal batch-wise outlines.
             </p>
           </div>
@@ -516,7 +516,7 @@ function CurriculumLibrary() {
                   <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
                     <div>
                       <h3 className="font-display text-base sm:text-lg">{program.label}</h3>
-                      <p className="text-sm text-muted-foreground">{program.description}</p>
+                      <p className="text-sm text-white">{program.description}</p>
                     </div>
                     <Button
                       variant="outline"
@@ -541,7 +541,7 @@ function CurriculumLibrary() {
                             <Badge className="w-fit rounded-full bg-brand-magenta/15 px-3 py-1 text-xs font-semibold text-brand-magenta">
                               {batch.year}
                             </Badge>
-                            <p className="text-sm text-muted-foreground">{batch.summary}</p>
+                            <p className="text-sm text-white">{batch.summary}</p>
                           </div>
                           {batch.documentUrl ? (
                             <Button
@@ -556,7 +556,7 @@ function CurriculumLibrary() {
                               </a>
                             </Button>
                           ) : (
-                            <p className="text-xs text-muted-foreground">
+                            <p className="text-xs text-white">
                               Release scheduled in coordination with the curriculum committee.
                             </p>
                           )}
