@@ -124,6 +124,17 @@ export default function Leadership() {
 
   const committees = [
     {
+      name: "Board of Governors",
+      icon: Users,
+      description: "Strategic governance and institutional oversight",
+      functions: [
+        "University policy development",
+        "Financial oversight",
+        "Institutional accountability",
+      ],
+      link: "/about/board-of-governors",
+    },
+    {
       name: "Academic Council",
       icon: BookOpen,
       description: "Academic matters and curriculum development",
