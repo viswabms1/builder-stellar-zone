@@ -337,6 +337,75 @@ export default function CampusLife() {
         </div>
       </section>
 
+      {/* Centre for Performing Arts - Featured Highlight */}
+      <section className="px-6 py-20 bg-gradient-to-r from-orange-500/10 to-red-600/10">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Image */}
+            <div className="relative overflow-hidden rounded-2xl h-96 border border-orange-500/20 group">
+              <img
+                src="https://images.unsplash.com/photo-1460090174820-dbdc5dac07fd?w=600&h=500&fit=crop"
+                alt="Centre for Performing Arts"
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+            </div>
+
+            {/* Content */}
+            <div className="space-y-6">
+              <div>
+                <Badge className="bg-orange-500/20 text-orange-600 mb-4">
+                  Arts & Culture
+                </Badge>
+                <h2 className="text-4xl md:text-5xl font-bold mb-4">
+                  <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
+                    Centre for Performing Arts
+                  </span>
+                </h2>
+              </div>
+
+              <p className="text-xl text-foreground leading-relaxed">
+                Express your creativity through artistic mediums
+              </p>
+
+              <p className="text-lg text-foreground/80 leading-relaxed">
+                A dedicated space for students to explore dance, music, theater, and other performing arts. Our Centre for Performing Arts nurtures talent and provides a platform for artistic expression and cultural celebration.
+              </p>
+
+              <div className="space-y-3">
+                <div className="flex items-center gap-3 text-foreground">
+                  <Star className="w-5 h-5 text-orange-500 flex-shrink-0" />
+                  <span>Professional training and mentorship</span>
+                </div>
+                <div className="flex items-center gap-3 text-foreground">
+                  <Star className="w-5 h-5 text-orange-500 flex-shrink-0" />
+                  <span>State-of-the-art auditorium and rehearsal spaces</span>
+                </div>
+                <div className="flex items-center gap-3 text-foreground">
+                  <Star className="w-5 h-5 text-orange-500 flex-shrink-0" />
+                  <span>Regular performances and cultural events</span>
+                </div>
+              </div>
+
+              <a
+                href="https://www.centreforperformingarts.in"
+                target="_blank"
+                rel="noreferrer"
+                className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2 focus-visible:ring-offset-background inline-block"
+              >
+                <Button
+                  size="lg"
+                  className="bg-orange-500 hover:bg-orange-600 text-foreground px-8 py-6 text-lg font-semibold rounded-xl inline-flex items-center gap-2"
+                >
+                  Visit Centre for Performing Arts
+                  <ArrowRight className="w-5 h-5" />
+                </Button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Featured Facilities with Large Images */}
       <section className="px-6 py-20 bg-gradient-to-r from-orange-500/5 to-red-600/5">
         <div className="max-w-7xl mx-auto">
