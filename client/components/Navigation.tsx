@@ -1,6 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "./ThemeToggle";
+import SearchDialog from "./SearchDialog";
 import {
   Menu,
   X,
@@ -12,8 +13,9 @@ import {
   Calendar,
   Lightbulb,
   ChevronDown,
+  Search,
 } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
