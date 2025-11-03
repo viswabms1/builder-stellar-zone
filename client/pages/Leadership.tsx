@@ -211,6 +211,9 @@ export default function Leadership() {
                       <CardTitle className="text-2xl font-bold group-hover:text-orange-500 transition-colors">
                         {leader.role}
                       </CardTitle>
+                      <p className="text-sm text-muted-foreground mt-1">
+                        {leader.name}
+                      </p>
                       <Badge
                         variant="outline"
                         className="mt-2 border-orange-500/20 bg-orange-500/10 text-orange-500"
@@ -220,24 +223,24 @@ export default function Leadership() {
                     </div>
                   </CardHeader>
                   <CardContent className="space-y-4">
-                    <p className="text-muted-foreground leading-relaxed">
-                      {leader.description}
-                    </p>
                     <div>
                       <p className="text-sm font-semibold text-foreground mb-2">
-                        Key Responsibilities:
+                        Leadership Vision:
                       </p>
-                      <ul className="space-y-1">
-                        {leader.responsibilities.map((resp, idx) => (
-                          <li
-                            key={idx}
-                            className="text-sm text-muted-foreground flex items-center gap-2"
-                          >
-                            <span className="w-2 h-2 rounded-full bg-orange-500"></span>
-                            {resp}
-                          </li>
-                        ))}
-                      </ul>
+                      <p className="text-sm text-muted-foreground italic border-l-2 border-orange-500/30 pl-3">
+                        "{leader.description}"
+                      </p>
+                    </div>
+                    <p className="text-muted-foreground text-sm leading-relaxed">
+                      {leader.bio}
+                    </p>
+                    <div className="pt-4 border-t border-border/50">
+                      <p className="text-xs font-semibold text-foreground mb-2">
+                        Contact:
+                      </p>
+                      <p className="text-xs text-muted-foreground">
+                        {leader.contact}
+                      </p>
                     </div>
                   </CardContent>
                 </Card>
