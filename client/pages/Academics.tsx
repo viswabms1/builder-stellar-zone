@@ -306,7 +306,7 @@ export default function Academics() {
                   )}
                 </CardHeader>
                 <CardContent className="space-y-6">
-                  <CardDescription className="text-muted-foreground leading-relaxed">
+                  <CardDescription className="text-foreground leading-relaxed">
                     {school.description}
                   </CardDescription>
                   <div className="space-y-3">
