@@ -177,25 +177,6 @@ export default function Placements() {
   ];
 
 
-  const facilities = [
-    "Boardroom",
-    "Boys Common Room",
-    "Computer Lab 1",
-    "Computer Lab 2",
-    "Computer Lab 3",
-    "Digital Library",
-    "GD Room",
-    "Girls Common Room",
-    "Interview Cabin",
-    "Interview Cabin 2",
-    "Interview Panel Rooms",
-    "Lecture Hall",
-    "Library",
-    "Lobby",
-    "Theatre Gallery",
-    "Theatre Screen",
-  ];
-
   const contactInfo = [
     {
       category: "Fresher's Hiring",
