@@ -235,41 +235,34 @@ function LeadershipSection({ leadership }: LeadershipSectionProps) {
 
 function ClosingSection() {
   return (
-    <section className="px-6 pb-20">
-      <div className="mx-auto max-w-5xl rounded-3xl border border-brand-magenta/20 bg-gradient-to-r from-brand-magenta/15 via-brand-orange/15 to-brand-blue/15 p-10 text-center shadow-lg">
-        <div className="inline-flex items-center gap-2 rounded-full bg-white/40 dark:bg-slate-800/40 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-brand-magenta">
-          <Layers className="h-4 w-4" />
-          Faculty &amp; Student Synergy
-        </div>
-        <h2 className="mt-6 text-3xl font-bold text-foreground md:text-4xl">
-          Inspiring Excellence Through Research, Mentorship &amp; Innovation
-        </h2>
-        <p className="mt-4 text-lg text-foreground">
-          Collaborate with DSU CSE faculty on applied research, grants, and
-          industry-ready projects. For partnerships and visiting appointments,
-          write to{" "}
-          <a
-            className="font-semibold text-brand-magenta"
-            href="mailto:research.cse@dsu.edu.in"
-          >
-            research.cse@dsu.edu.in
-          </a>
-          .
-        </p>
-        <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-          <Button className="bg-brand-gradient text-foreground" size="lg" asChild>
-            <a href="mailto:placements.cse@dsu.edu.in">
-              Connect for collaborations
-            </a>
-          </Button>
-          <Button
-            variant="outline"
-            size="lg"
-            className="border-brand-magenta/40 hover:bg-brand-magenta/10"
-            asChild
-          >
-            <Link to="/research">Explore CSE research</Link>
-          </Button>
+    <section className="px-6 py-24 md:py-32">
+      <div className="mx-auto max-w-4xl">
+        <div className="rounded-3xl border border-brand-magenta/30 dark:border-brand-magenta/20 bg-gradient-to-br from-brand-magenta/20 via-brand-orange/10 to-brand-blue/15 dark:from-brand-magenta/15 dark:via-brand-orange/5 dark:to-brand-blue/10 p-10 md:p-16 text-center shadow-2xl backdrop-blur-sm">
+          <div className="inline-flex items-center gap-2 rounded-full bg-white/50 dark:bg-slate-800/50 px-5 py-2.5 text-xs font-semibold uppercase tracking-wider text-brand-magenta border border-white/30 dark:border-slate-700/30 backdrop-blur-sm">
+            <Layers className="h-4 w-4" />
+            Faculty &amp; Industry Partnerships
+          </div>
+          <h2 className="mt-8 text-4xl md:text-5xl font-bold text-foreground">
+            Inspiring Excellence Through<br className="hidden sm:block" /> Research &amp; Innovation
+          </h2>
+          <p className="mt-6 text-lg md:text-xl text-foreground/80 leading-relaxed max-w-2xl mx-auto">
+            Ready to collaborate? Engage with our faculty on cutting-edge research, industry partnerships, and innovation projects.
+          </p>
+          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <Button className="bg-brand-gradient text-foreground font-semibold px-8 py-3 text-base hover:shadow-lg transition-all" size="lg" asChild>
+              <a href="mailto:research.cse@dsu.edu.in">
+                Start a Collaboration
+              </a>
+            </Button>
+            <Button
+              variant="outline"
+              size="lg"
+              className="border-2 border-brand-magenta/40 hover:bg-brand-magenta/10 font-semibold px-8 py-3 text-base transition-all"
+              asChild
+            >
+              <Link to="/research">Explore Our Research</Link>
+            </Button>
+          </div>
         </div>
       </div>
     </section>
