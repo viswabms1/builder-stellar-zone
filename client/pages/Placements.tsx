@@ -656,10 +656,19 @@ export default function Placements() {
                               {subCategory.recruiters.map((recruiter, recruiterIdx) => (
                                 <div
                                   key={recruiterIdx}
-                                  className="border-2 border-slate-400 dark:border-slate-600 rounded-lg p-6 flex items-center justify-center min-h-32 hover:border-orange-500 hover:shadow-md transition-all duration-300 bg-white/50 dark:bg-card/50"
+                                  className="border-2 border-slate-400 dark:border-slate-600 rounded-lg p-4 flex items-center justify-center min-h-32 hover:border-orange-500 hover:shadow-md transition-all duration-300 bg-white dark:bg-card/50"
                                 >
-                                  <span className="text-center font-semibold text-foreground text-sm">
-                                    {recruiter}
+                                  <img
+                                    src={recruiter.logo}
+                                    alt={recruiter.name}
+                                    className="max-w-full max-h-20 object-contain"
+                                    onError={(e) => {
+                                      e.currentTarget.style.display = "none";
+                                      e.currentTarget.nextElementSibling?.classList.remove("hidden");
+                                    }}
+                                  />
+                                  <span className="hidden text-center font-semibold text-foreground text-xs">
+                                    {recruiter.name}
                                   </span>
                                 </div>
                               ))}
@@ -672,10 +681,19 @@ export default function Placements() {
                         {school.recruiters.map((recruiter, recruiterIdx) => (
                           <div
                             key={recruiterIdx}
-                            className="border-2 border-slate-400 dark:border-slate-600 rounded-lg p-6 flex items-center justify-center min-h-32 hover:border-orange-500 hover:shadow-md transition-all duration-300 bg-white/50 dark:bg-card/50"
+                            className="border-2 border-slate-400 dark:border-slate-600 rounded-lg p-4 flex items-center justify-center min-h-32 hover:border-orange-500 hover:shadow-md transition-all duration-300 bg-white dark:bg-card/50"
                           >
-                            <span className="text-center font-semibold text-foreground text-sm">
-                              {recruiter}
+                            <img
+                              src={recruiter.logo}
+                              alt={recruiter.name}
+                              className="max-w-full max-h-20 object-contain"
+                              onError={(e) => {
+                                e.currentTarget.style.display = "none";
+                                e.currentTarget.nextElementSibling?.classList.remove("hidden");
+                              }}
+                            />
+                            <span className="hidden text-center font-semibold text-foreground text-xs">
+                              {recruiter.name}
                             </span>
                           </div>
                         ))}
