@@ -34,6 +34,7 @@ export default function History() {
         "Pioneered forward-looking educational institutions in Bangalore",
       ],
       icon: Users,
+      image: "https://www.dsu.edu.in/images/founder.png",
     },
     {
       name: "Late Smt Chandramma Sagar",
@@ -46,6 +47,7 @@ export default function History() {
         "Advocated for quality healthcare education",
       ],
       icon: Award,
+      image: "https://www.dsu.edu.in/images/founder2.png",
     },
   ];
 
@@ -160,23 +162,39 @@ export default function History() {
           ></div>
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-6 text-center">
-          <div className="inline-flex items-center px-4 py-2 bg-orange-500/10 rounded-full border border-orange-500/20 mb-8">
-            <Calendar className="w-4 h-4 text-orange-500 mr-2" />
-            <span className="text-sm font-medium text-orange-500">
-              Founding Pillars
-            </span>
+        <div className="relative max-w-7xl mx-auto px-6">
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div className="text-center md:text-left">
+              <div className="inline-flex items-center px-4 py-2 bg-orange-500/10 rounded-full border border-orange-500/20 mb-8">
+                <Calendar className="w-4 h-4 text-orange-500 mr-2" />
+                <span className="text-sm font-medium text-orange-500">
+                  Founding Pillars
+                </span>
+              </div>
+
+              <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+                <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
+                  Inspiring the Shape of Things to Come
+                </span>
+              </h1>
+
+              <p className="text-lg md:text-xl text-foreground mb-8 leading-relaxed">
+                A legacy built on vision, excellence, and commitment to transforming lives through quality education. From the Mahatma Gandhi Vidya Peetha Education Trust to Dayananda Sagar University.
+              </p>
+            </div>
+            <div className="hidden md:flex items-center justify-center">
+              <div className="relative w-full h-96 rounded-2xl overflow-hidden border border-orange-500/20 shadow-2xl">
+                <img
+                  src="https://www.dsu.edu.in/images/Home/history.jpg"
+                  alt="DSU History"
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    (e.currentTarget as HTMLImageElement).style.display = 'none';
+                  }}
+                />
+              </div>
+            </div>
           </div>
-
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-            <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
-              Inspiring the Shape of Things to Come
-            </span>
-          </h1>
-
-          <p className="text-lg md:text-xl text-foreground mb-8 leading-relaxed max-w-3xl mx-auto">
-            A legacy built on vision, excellence, and commitment to transforming lives through quality education. From the Mahatma Gandhi Vidya Peetha Education Trust to Dayananda Sagar University.
-          </p>
         </div>
       </section>
 
@@ -201,10 +219,22 @@ export default function History() {
               return (
                 <Card
                   key={index}
-                  className="bg-card/50 backdrop-blur-sm border border-border/50 hover:border-orange-500/30 transition-all duration-300"
+                  className="bg-card/50 backdrop-blur-sm border border-border/50 hover:border-orange-500/30 transition-all duration-300 overflow-hidden"
                 >
+                  {founder.image && (
+                    <div className="w-full h-64 bg-gradient-to-br from-orange-500/10 to-red-600/10 flex items-center justify-center overflow-hidden">
+                      <img
+                        src={founder.image}
+                        alt={founder.name}
+                        className="h-full w-full object-contain"
+                        onError={(e) => {
+                          (e.currentTarget as HTMLImageElement).style.display = 'none';
+                        }}
+                      />
+                    </div>
+                  )}
                   <CardHeader>
-                    <div className="flex items-start gap-4 mb-4">
+                    <div className="flex items-start gap-4 mb-2">
                       <div className="w-12 h-12 rounded-2xl bg-orange-500/20 flex items-center justify-center flex-shrink-0">
                         <Icon className="w-6 h-6 text-orange-500" />
                       </div>
