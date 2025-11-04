@@ -84,10 +84,9 @@ type Stats = {
 
 type HeroSectionProps = {
   stats: Stats;
-  interests: string[];
 };
 
-function HeroSection({ stats, interests }: HeroSectionProps) {
+function HeroSection({ stats }: HeroSectionProps) {
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-brand-magenta/15 via-brand-orange/10 to-brand-blue/10 py-16">
       <div className="absolute inset-0">
