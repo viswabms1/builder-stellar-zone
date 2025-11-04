@@ -617,32 +617,27 @@ export default function Placements() {
       </section>
 
       {/* Esteemed Recruiters Section */}
-      <section className="px-6 py-20 bg-gradient-to-br from-orange-500/5 via-red-600/5 to-background">
+      <section className="px-6 py-20">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
-                Our Esteemed Recruiters
+                Esteemed Recruiters
               </span>
             </h2>
             <p className="text-lg text-foreground max-w-3xl mx-auto">
-              Partner organizations across industries that actively recruit our talented graduates
+              Leading organizations across industries actively recruiting our talented graduates
             </p>
           </div>
 
-          <div className="space-y-4">
+          <div className="space-y-6">
             {recruiterData.map((school) => (
-              <div key={school.key} className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl overflow-hidden hover:border-orange-500/30 transition-all duration-300">
+              <div key={school.key} className="border border-border/50 rounded-2xl overflow-hidden bg-card/30">
                 <button
                   onClick={() => toggleRecruiter(school.key)}
-                  className="w-full px-6 py-6 flex items-center justify-between hover:bg-orange-500/5 transition-colors"
+                  className="w-full px-6 py-4 flex items-center justify-between hover:bg-orange-500/5 transition-colors text-left"
                 >
-                  <div className="flex items-center gap-4 text-left">
-                    <div className="w-10 h-10 rounded-full bg-orange-500/10 flex items-center justify-center flex-shrink-0">
-                      <Building2 className="w-5 h-5 text-orange-500" />
-                    </div>
-                    <h3 className="text-lg font-bold text-foreground">{school.name}</h3>
-                  </div>
+                  <h3 className="text-base font-bold text-foreground uppercase tracking-wide">{school.name}</h3>
                   <ChevronDown
                     className={`w-5 h-5 text-orange-500 flex-shrink-0 transition-transform duration-300 ${
                       expandedRecruiters[school.key] ? "rotate-180" : ""
@@ -656,18 +651,16 @@ export default function Placements() {
                       <div className="space-y-8">
                         {school.subCategories.map((subCategory, subIdx) => (
                           <div key={subIdx}>
-                            <h4 className="text-base font-semibold text-foreground mb-6">{subCategory.name}</h4>
-                            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                              {subCategory.logos.map((logo, logoIdx) => (
+                            <h4 className="text-sm font-semibold text-foreground mb-4">{subCategory.name}</h4>
+                            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-4">
+                              {subCategory.recruiters.map((recruiter, recruiterIdx) => (
                                 <div
-                                  key={logoIdx}
-                                  className="bg-white/50 dark:bg-card/50 backdrop-blur-sm border border-border/30 rounded-xl p-4 flex items-center justify-center min-h-28 hover:border-orange-500/50 hover:shadow-lg transition-all duration-300 group"
+                                  key={recruiterIdx}
+                                  className="border-2 border-slate-400 dark:border-slate-600 rounded-lg p-6 flex items-center justify-center min-h-32 hover:border-orange-500 hover:shadow-md transition-all duration-300 bg-white/50 dark:bg-card/50"
                                 >
-                                  <img
-                                    src={logo.url}
-                                    alt={logo.alt}
-                                    className="max-w-full max-h-24 object-contain group-hover:scale-110 transition-transform duration-300"
-                                  />
+                                  <span className="text-center font-semibold text-foreground text-sm">
+                                    {recruiter}
+                                  </span>
                                 </div>
                               ))}
                             </div>
@@ -675,17 +668,15 @@ export default function Placements() {
                         ))}
                       </div>
                     ) : (
-                      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                        {school.logos.map((logo, logoIdx) => (
+                      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-4">
+                        {school.recruiters.map((recruiter, recruiterIdx) => (
                           <div
-                            key={logoIdx}
-                            className="bg-white/50 dark:bg-card/50 backdrop-blur-sm border border-border/30 rounded-xl p-4 flex items-center justify-center min-h-28 hover:border-orange-500/50 hover:shadow-lg transition-all duration-300 group"
+                            key={recruiterIdx}
+                            className="border-2 border-slate-400 dark:border-slate-600 rounded-lg p-6 flex items-center justify-center min-h-32 hover:border-orange-500 hover:shadow-md transition-all duration-300 bg-white/50 dark:bg-card/50"
                           >
-                            <img
-                              src={logo.url}
-                              alt={logo.alt}
-                              className="max-w-full max-h-24 object-contain group-hover:scale-110 transition-transform duration-300"
-                            />
+                            <span className="text-center font-semibold text-foreground text-sm">
+                              {recruiter}
+                            </span>
                           </div>
                         ))}
                       </div>
