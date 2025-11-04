@@ -1,5 +1,5 @@
 import type { ComponentType, SVGProps } from "react";
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import { Link } from "react-router-dom";
 
 import { AspectRatio } from "@/components/ui/aspect-ratio";
@@ -8,62 +8,17 @@ import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
-  CardDescription,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
 import { cseFaculty } from "@/data/cse-faculty";
 import {
   Award,
-  BookOpen,
-  ChevronDown,
   ChevronRight,
-  ClipboardList,
-  FileText,
-  FlaskConical,
   GraduationCap,
   Layers,
-  Menu,
-  Search,
   Sparkles,
-  Users,
-  X,
 } from "lucide-react";
-
-type FilterKey = "all" | "leadership" | "professor" | "associate" | "assistant";
-
-const filterOptions: Array<{
-  key: FilterKey;
-  label: string;
-  description: string;
-}> = [
-  {
-    key: "all",
-    label: "All Faculty",
-    description: "Complete faculty directory",
-  },
-  {
-    key: "leadership",
-    label: "Leadership",
-    description: "Dean & academic leaders",
-  },
-  {
-    key: "professor",
-    label: "Professors",
-    description: "Core research mentors",
-  },
-  {
-    key: "associate",
-    label: "Associate Professors",
-    description: "Program anchors",
-  },
-  {
-    key: "assistant",
-    label: "Assistant Professors",
-    description: "Emerging scholars",
-  },
-];
 
 export default function FacultyCSE() {
   const stats = useMemo(() => {
