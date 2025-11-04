@@ -502,28 +502,29 @@ export default function Placements() {
       {/* Facilities Section */}
       <section className="px-6 py-20">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
                 World-Class Facilities
               </span>
             </h2>
-            <p className="text-lg text-foreground max-w-3xl mx-auto">
-              State-of-the-art infrastructure supporting placements and training
+            <p className="text-lg text-foreground max-w-3xl mx-auto mb-12">
+              Explore our state-of-the-art infrastructure supporting placements and training
             </p>
-          </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
-            {facilities.map((facility, index) => (
-              <div
-                key={index}
-                className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-xl p-4 flex items-center justify-center hover:border-orange-500/30 transition-all duration-300 text-center min-h-24"
+            <a
+              href="https://dsu.edu.in/virtual-tour/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button
+                size="lg"
+                className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-red-600 hover:to-orange-500 text-foreground px-8 py-6 font-semibold rounded-2xl transition-all duration-300"
               >
-                <span className="text-sm font-semibold text-foreground">
-                  {facility}
-                </span>
-              </div>
-            ))}
+                Take a Virtual Tour
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+            </a>
           </div>
         </div>
       </section>
