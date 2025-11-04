@@ -188,20 +188,20 @@ function FacultyGridCard({ faculty }: { faculty: FacultyEntry }) {
   return (
     <Link
       to={`/academics/engineering/computer-science/faculty/${faculty.slug}`}
-      className="group overflow-hidden rounded-lg border border-border/40 bg-card/60 shadow-sm transition hover:-translate-y-0.5 hover:shadow-brand-magenta/15"
+      className="group overflow-hidden rounded-xl border border-border/50 bg-card/70 shadow-md transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg hover:shadow-brand-magenta/20 active:scale-95"
     >
-      <div className="relative overflow-hidden">
+      <div className="relative overflow-hidden bg-slate-200 dark:bg-slate-800">
         <AspectRatio ratio={3 / 4}>
           <img
             src={faculty.image}
             alt={faculty.name}
-            className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-[1.05] transition-transform duration-300"
+            className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-110 transition-transform duration-500 ease-out"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 via-40% to-transparent group-hover:from-black/80 transition-all duration-300" />
         </AspectRatio>
-        <div className="absolute bottom-0 w-full p-2.5 text-white">
-          <p className="text-xs font-semibold line-clamp-2">{faculty.name}</p>
-          <p className="text-xs opacity-75 line-clamp-1">{faculty.title}</p>
+        <div className="absolute bottom-0 w-full p-3 text-white">
+          <p className="text-xs font-bold line-clamp-2 group-hover:text-brand-magenta transition-colors">{faculty.name}</p>
+          <p className="text-xs opacity-80 line-clamp-1 group-hover:opacity-100 transition-opacity">{faculty.title}</p>
         </div>
       </div>
     </Link>
