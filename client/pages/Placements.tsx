@@ -176,32 +176,6 @@ export default function Placements() {
     },
   ];
 
-  const schools = [
-    {
-      name: "School of Engineering",
-      programs: "BE/B.Tech, M.Tech",
-    },
-    {
-      name: "School of Commerce & Management Studies",
-      programs: "BBA, MBA, B.Com, M.Com",
-    },
-    {
-      name: "School of Basic & Applied Sciences",
-      programs: "B.Sc, M.Sc",
-    },
-    {
-      name: "School of Health Sciences",
-      programs: "Nursing, Pharmacy, Physiotherapy",
-    },
-    {
-      name: "School of Arts, Design & Humanities",
-      programs: "BA (JMC), B.Design",
-    },
-    {
-      name: "School of Computer Applications",
-      programs: "BCA, MCA",
-    },
-  ];
 
   const facilities = [
     "Boardroom",
