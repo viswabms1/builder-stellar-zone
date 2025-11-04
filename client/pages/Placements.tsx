@@ -11,115 +11,144 @@ import {
   Building2,
   Target,
   CheckCircle,
+  Phone,
+  Mail,
+  MapPin,
+  BookOpen,
+  Zap,
+  Lightbulb,
 } from "lucide-react";
 
 export default function Placements() {
-  const placementStats = [
+  const highlights = [
     {
-      label: "Students Placed",
-      value: "92%",
-      icon: TrendingUp,
-      description: "Of eligible graduates",
-    },
-    {
-      label: "Average Package",
-      value: "₹8.5 LPA",
-      icon: Award,
-      description: "Across all programs",
-    },
-    {
-      label: "Recruiting Companies",
-      value: "150+",
+      label: "Recruiting Organizations",
+      value: "500+",
       icon: Building2,
-      description: "From diverse sectors",
+      description: "Reputed organizations across sectors",
     },
     {
-      label: "Internship Offers",
-      value: "85%",
+      label: "Career Programs",
+      value: "8+",
+      icon: Award,
+      description: "BE/B.Tech, M.Tech, B.Sc, M.Sc, MBA, BCA, MCA, BAJMC",
+    },
+    {
+      label: "Comprehensive Support",
+      value: "100%",
       icon: Users,
-      description: "During academic tenure",
+      description: "Technical & soft skills training",
     },
   ];
 
-  const topRecruiters = [
-    "TCS",
-    "Infosys",
-    "Wipro",
-    "Capgemini",
-    "Accenture",
-    "Google",
-    "Amazon",
-    "Microsoft",
-    "IBM",
-    "Cisco",
-    "Oracle",
-    "SAP",
-    "Deloitte",
-    "EY",
-    "PwC",
-    "Goldman Sachs",
-  ];
-
-  const placementProcess = [
+  const supportAreas = [
     {
-      title: "Pre-Placement Training",
-      description: "Comprehensive preparation including aptitude, technical, and soft skills training",
+      title: "Technical Training",
+      description: "Industry-relevant technical skill development",
+      icon: Zap,
+    },
+    {
+      title: "Soft Skills",
+      description: "Communication, leadership, and professional development",
       icon: Target,
     },
     {
-      title: "Company Interactions",
-      description: "Direct engagement with recruiters through campus drives and networking events",
-      icon: Users,
+      title: "Industry Bridge",
+      description: "Direct connections with leading organizations",
+      icon: Lightbulb,
+    },
+  ];
+
+  const schools = [
+    {
+      name: "School of Engineering",
+      programs: "BE/B.Tech, M.Tech",
     },
     {
-      title: "Selection & Placement",
-      description: "Streamlined recruitment process with individual guidance and support",
-      icon: CheckCircle,
+      name: "School of Commerce & Management Studies",
+      programs: "BBA, MBA, B.Com, M.Com",
     },
     {
-      title: "Career Development",
-      description: "Continuous support and mentorship for career growth and progression",
-      icon: TrendingUp,
+      name: "School of Basic & Applied Sciences",
+      programs: "B.Sc, M.Sc",
+    },
+    {
+      name: "School of Health Sciences",
+      programs: "Nursing, Pharmacy, Physiotherapy",
+    },
+    {
+      name: "School of Arts, Design & Humanities",
+      programs: "BA (JMC), B.Design",
+    },
+    {
+      name: "School of Computer Applications",
+      programs: "BCA, MCA",
+    },
+  ];
+
+  const facilities = [
+    "Boardroom",
+    "Boys Common Room",
+    "Computer Lab 1",
+    "Computer Lab 2",
+    "Computer Lab 3",
+    "Digital Library",
+    "GD Room",
+    "Girls Common Room",
+    "Interview Cabin",
+    "Interview Cabin 2",
+    "Interview Panel Rooms",
+    "Lecture Hall",
+    "Library",
+    "Lobby",
+    "Theatre Gallery",
+    "Theatre Screen",
+  ];
+
+  const contactInfo = [
+    {
+      category: "Fresher's Hiring",
+      contacts: [
+        {
+          name: "M N Guruvenkatesh",
+          title: "Senior Vice President - Placements & Skill Development",
+          phone: "+91 98441 65956",
+          email: "gm-cr@dayanandasagar.edu",
+        },
+        {
+          name: "Vijay Kumar S",
+          title: "Director - Training & Corporate Relations",
+          phone: "+91 98863 94532",
+          email: "placements@dsu.edu.in",
+        },
+      ],
+    },
+    {
+      category: "MBA Hiring",
+      contacts: [
+        {
+          name: "Prof. Sanjay K",
+          title: "Director (Corporate Relations & Placement) Management Schools",
+          phone: "+91 98802 83123",
+          email: "sanjay.k@dsu.edu.in",
+        },
+        {
+          name: "Prof. Darpana Singh",
+          title: "Manager - Placement",
+          phone: "+91 98451 08664",
+          email: "darpana@dsu.edu.in",
+        },
+      ],
     },
   ];
 
   const programs = [
-    {
-      school: "Engineering",
-      placement: "94%",
-      avgPackage: "₹9.5 LPA",
-      highestPackage: "₹35 LPA",
-    },
-    {
-      school: "Computer Applications",
-      placement: "95%",
-      avgPackage: "₹10.2 LPA",
-      highestPackage: "₹42 LPA",
-    },
-    {
-      school: "Management Studies",
-      placement: "88%",
-      avgPackage: "₹7.8 LPA",
-      highestPackage: "₹20 LPA",
-    },
-    {
-      school: "Law",
-      placement: "85%",
-      avgPackage: "₹6.5 LPA",
-      highestPackage: "₹18 LPA",
-    },
-    {
-      school: "Health Sciences",
-      placement: "90%",
-      avgPackage: "₹5.8 LPA",
-      highestPackage: "₹15 LPA",
-    },
-    {
-      school: "Applied Sciences",
-      placement: "89%",
-      avgPackage: "₹6.2 LPA",
-      highestPackage: "₹16 LPA",
-    },
+    { name: "Campus Placements", description: "On-campus recruitment and job placements" },
+    { name: "CIL Training", description: "Corporate Industry Institute Linked training programs" },
+    { name: "Soft Skills Development", description: "Communication and professional development" },
+    { name: "Technical Training", description: "Industry-relevant technical skill enhancement" },
+    { name: "Mentorship Programs", description: "Career guidance and alumni mentorship" },
+    { name: "Placement Announcements", description: "Regular updates on opportunities" },
   ];
 
   return (
@@ -138,28 +167,57 @@ export default function Placements() {
           <div className="inline-flex items-center px-4 py-2 bg-orange-500/10 rounded-full border border-orange-500/20 mb-8">
             <Briefcase className="w-4 h-4 text-orange-500 mr-2" />
             <span className="text-sm font-medium text-orange-500">
-              Career Opportunities
+              Career Development
             </span>
           </div>
 
           <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
             <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
-              Placements & Career Services
+              Launch Your Dream Career
             </span>
           </h1>
 
           <p className="text-lg md:text-xl text-foreground mb-8 leading-relaxed max-w-3xl mx-auto">
-            Launching careers with industry-leading companies and comprehensive placement support for our graduates.
+            The Training and Placement Cell acts as a bridge between academia and industry, empowering every student to acquire the necessary skills, knowledge, and industry exposure to secure meaningful and successful careers.
           </p>
         </div>
       </section>
 
-      {/* Placement Statistics */}
+      {/* Mission & Vision */}
+      <section className="px-6 py-20 bg-gradient-to-br from-orange-500/5 via-red-600/5 to-background">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-8">
+              <h3 className="text-2xl font-bold mb-4 text-orange-500">Our Mission</h3>
+              <p className="text-foreground text-lg leading-relaxed">
+                To enable and empower every student to acquire the necessary skills, knowledge, and industry exposure to secure meaningful and successful careers. We focus on academic excellence combined with holistic development to prepare students for dynamic professional demands.
+              </p>
+            </div>
+
+            <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-8">
+              <h3 className="text-2xl font-bold mb-4 text-red-500">Our Vision</h3>
+              <p className="text-foreground text-lg leading-relaxed">
+                To foster a culture of excellence and integrity, empowering students with the skills and opportunities to create a significant impact in the professional world and become industry leaders across global organizations.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Key Highlights */}
       <section className="px-6 py-20">
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {placementStats.map((stat, index) => {
-              const Icon = stat.icon;
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
+                Why Choose DSU for Your Career
+              </span>
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {highlights.map((highlight, index) => {
+              const Icon = highlight.icon;
               return (
                 <Card
                   key={index}
@@ -170,14 +228,14 @@ export default function Placements() {
                       <Icon className="w-6 h-6 text-orange-500" />
                     </div>
                     <div className="text-3xl font-bold text-orange-500 mb-1">
-                      {stat.value}
+                      {highlight.value}
                     </div>
                     <CardTitle className="text-foreground text-sm font-semibold">
-                      {stat.label}
+                      {highlight.label}
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-sm text-foreground">{stat.description}</p>
+                    <p className="text-sm text-foreground">{highlight.description}</p>
                   </CardContent>
                 </Card>
               );
@@ -186,23 +244,23 @@ export default function Placements() {
         </div>
       </section>
 
-      {/* Placement Process */}
+      {/* Support Areas */}
       <section className="px-6 py-20 bg-gradient-to-br from-orange-500/5 via-red-600/5 to-background">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
-                Our Placement Process
+                Areas of Focus
               </span>
             </h2>
             <p className="text-lg text-foreground max-w-3xl mx-auto">
-              Comprehensive support system ensuring successful placements for all students
+              Comprehensive development across technical and professional dimensions
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {placementProcess.map((process, index) => {
-              const Icon = process.icon;
+          <div className="grid md:grid-cols-3 gap-6">
+            {supportAreas.map((area, index) => {
+              const Icon = area.icon;
               return (
                 <Card
                   key={index}
@@ -213,11 +271,11 @@ export default function Placements() {
                       <Icon className="w-6 h-6 text-orange-500" />
                     </div>
                     <CardTitle className="text-foreground group-hover:text-orange-500 transition-colors">
-                      {process.title}
+                      {area.title}
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-sm text-foreground">{process.description}</p>
+                    <p className="text-sm text-foreground">{area.description}</p>
                   </CardContent>
                 </Card>
               );
@@ -226,91 +284,159 @@ export default function Placements() {
         </div>
       </section>
 
-      {/* Program-wise Statistics */}
+      {/* Programs by School */}
       <section className="px-6 py-20">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
-                Program-wise Placements
+                Placements Across All Schools
               </span>
             </h2>
             <p className="text-lg text-foreground max-w-3xl mx-auto">
-              Placement statistics across our academic schools and programs
+              Excellence in placements across diverse academic disciplines
             </p>
           </div>
 
-          <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl overflow-hidden">
-            <div className="overflow-x-auto">
-              <table className="w-full">
-                <thead>
-                  <tr className="border-b border-border/50 bg-orange-500/5">
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-foreground">
-                      School/Program
-                    </th>
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-foreground">
-                      Placement Rate
-                    </th>
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-foreground">
-                      Average Package
-                    </th>
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-foreground">
-                      Highest Package
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {programs.map((program, index) => (
-                    <tr
-                      key={index}
-                      className="border-b border-border/30 hover:bg-orange-500/5 transition-colors"
-                    >
-                      <td className="px-6 py-4 text-sm font-medium text-foreground">
-                        {program.school}
-                      </td>
-                      <td className="px-6 py-4 text-sm text-foreground">
-                        <Badge className="bg-green-500/20 text-green-500 border-0">
-                          {program.placement}
-                        </Badge>
-                      </td>
-                      <td className="px-6 py-4 text-sm font-medium text-orange-500">
-                        {program.avgPackage}
-                      </td>
-                      <td className="px-6 py-4 text-sm text-foreground">
-                        {program.highestPackage}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {schools.map((school, index) => (
+              <Card
+                key={index}
+                className="bg-card/50 backdrop-blur-sm border border-border/50 hover:border-orange-500/30 transition-all duration-300"
+              >
+                <CardHeader>
+                  <div className="w-10 h-10 rounded-full bg-orange-500/10 flex items-center justify-center mb-3">
+                    <BookOpen className="w-5 h-5 text-orange-500" />
+                  </div>
+                  <CardTitle className="text-foreground">{school.name}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-foreground">{school.programs}</p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Top Recruiters */}
+      {/* Placement Services & Programs */}
       <section className="px-6 py-20 bg-gradient-to-br from-orange-500/5 via-red-600/5 to-background">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
-                Top Recruiting Partners
+                Placement Services
               </span>
             </h2>
             <p className="text-lg text-foreground max-w-3xl mx-auto">
-              Leading organizations across sectors recruiting our graduates
+              Comprehensive programs and services for career success
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-            {topRecruiters.map((company, index) => (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {programs.map((program, index) => (
+              <Card
+                key={index}
+                className="bg-card/50 backdrop-blur-sm border border-border/50 hover:border-orange-500/30 transition-all duration-300"
+              >
+                <CardHeader>
+                  <div className="w-10 h-10 rounded-full bg-orange-500/10 flex items-center justify-center mb-3">
+                    <CheckCircle className="w-5 h-5 text-orange-500" />
+                  </div>
+                  <CardTitle className="text-foreground">{program.name}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-foreground">{program.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Facilities Section */}
+      <section className="px-6 py-20">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
+                World-Class Facilities
+              </span>
+            </h2>
+            <p className="text-lg text-foreground max-w-3xl mx-auto">
+              State-of-the-art infrastructure supporting placements and training
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
+            {facilities.map((facility, index) => (
               <div
                 key={index}
-                className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-xl p-6 flex items-center justify-center hover:border-orange-500/30 transition-all duration-300 group"
+                className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-xl p-4 flex items-center justify-center hover:border-orange-500/30 transition-all duration-300 text-center min-h-24"
               >
-                <span className="text-sm font-semibold text-foreground group-hover:text-orange-500 transition-colors text-center">
-                  {company}
+                <span className="text-sm font-semibold text-foreground">
+                  {facility}
                 </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Information */}
+      <section className="px-6 py-20 bg-gradient-to-br from-orange-500/5 via-red-600/5 to-background">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
+                Get in Touch
+              </span>
+            </h2>
+            <p className="text-lg text-foreground max-w-3xl mx-auto">
+              Contact our placement team for any queries and support
+            </p>
+          </div>
+
+          <div className="space-y-12">
+            {contactInfo.map((section, idx) => (
+              <div key={idx}>
+                <h3 className="text-2xl font-bold mb-6 text-orange-500">
+                  {section.category}
+                </h3>
+                <div className="grid md:grid-cols-2 gap-6">
+                  {section.contacts.map((contact, contactIdx) => (
+                    <div
+                      key={contactIdx}
+                      className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 hover:border-orange-500/30 transition-all duration-300"
+                    >
+                      <h4 className="text-lg font-bold text-foreground mb-1">
+                        {contact.name}
+                      </h4>
+                      <p className="text-sm text-foreground mb-4">{contact.title}</p>
+
+                      <div className="space-y-3">
+                        <div className="flex items-center gap-3">
+                          <Phone className="w-5 h-5 text-orange-500 flex-shrink-0" />
+                          <a
+                            href={`tel:${contact.phone}`}
+                            className="text-sm text-foreground hover:text-orange-500 transition-colors"
+                          >
+                            {contact.phone}
+                          </a>
+                        </div>
+                        <div className="flex items-center gap-3">
+                          <Mail className="w-5 h-5 text-orange-500 flex-shrink-0" />
+                          <a
+                            href={`mailto:${contact.email}`}
+                            className="text-sm text-foreground hover:text-orange-500 transition-colors break-all"
+                          >
+                            {contact.email}
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             ))}
           </div>
@@ -322,17 +448,17 @@ export default function Placements() {
         <div className="max-w-4xl mx-auto text-center">
           <div className="bg-gradient-to-r from-orange-500/10 via-red-600/10 to-pink-500/10 rounded-3xl p-12 border border-orange-500/20">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Ready to Launch Your Career?
+              Start Your Journey to Success
             </h2>
             <p className="text-lg text-foreground mb-8 max-w-2xl mx-auto">
-              Join DSU and become part of our thriving alumni network succeeding in leading organizations worldwide.
+              Join Dayananda Sagar University and become part of our thriving alumni network achieving remarkable success in leading global organizations.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/admissions">
                 <Button
                   size="lg"
-                  className="bg-brand-gradient hover:opacity-90 text-foreground px-8 py-6 text-lg font-semibold rounded-2xl transition-all duration-300"
+                  className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-red-600 hover:to-orange-500 text-foreground px-8 py-6 text-lg font-semibold rounded-2xl transition-all duration-300"
                 >
                   Apply Now
                   <ArrowRight className="w-5 h-5 ml-2" />
