@@ -98,17 +98,6 @@ export default function FacultyPageTemplate({ faculty }: FacultyPageTemplateProp
               </Card>
             )}
 
-            <Card className="border border-border/50 bg-card/50">
-              <CardHeader>
-                <CardTitle className="font-display">Department</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-2 text-sm font-body">
-                <div>
-                  <div className="text-foreground">School of Engineering</div>
-                  <div className="font-medium">Computer Science & Engineering</div>
-                </div>
-              </CardContent>
-            </Card>
           </div>
 
           {/* Right column: Contact, Metrics, Education */}
@@ -135,20 +124,6 @@ export default function FacultyPageTemplate({ faculty }: FacultyPageTemplateProp
               </CardContent>
             </Card>
 
-            <div className="grid grid-cols-3 gap-3">
-              {[
-                { label: "Teaching", value: "−" },
-                { label: "Research", value: "−" },
-                { label: "Mentoring", value: "−" },
-              ].map((s) => (
-                <Card key={s.label} className="text-center border border-border/50 bg-card/50">
-                  <CardHeader className="py-4">
-                    <div className="text-2xl font-bold font-display">{s.value}</div>
-                    <CardDescription className="font-body text-xs">{s.label}</CardDescription>
-                  </CardHeader>
-                </Card>
-              ))}
-            </div>
 
             <Card className="border border-border/50 bg-card/50">
               <CardHeader>
