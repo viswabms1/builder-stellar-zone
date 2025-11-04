@@ -23,7 +23,7 @@
     --popover: 0 0% 4%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 295 100% 69%;  /* Magenta #E961FF */
+    --primary: 32 100% 45%;  /* Dark Orange #E58A00 */
     --primary-foreground: 0 0% 2%;
 
     --secondary: 32 100% 45%;  /* Dark Orange #E58A00 */
@@ -32,7 +32,7 @@
     --muted: 220 9% 29%;  /* #4B5563 */
     --muted-foreground: 0 0% 65%;
 
-    --accent: 295 100% 69%;  /* Magenta */
+    --accent: 32 100% 45%;  /* Orange */
     --accent-foreground: 0 0% 2%;
 
     --destructive: 0 100% 65%;
@@ -40,7 +40,7 @@
 
     --border: 220 9% 29%;
     --input: 220 9% 29%;
-    --ring: 295 100% 69%;
+    --ring: 32 100% 45%;
 
     --radius: 0.75rem;
 
