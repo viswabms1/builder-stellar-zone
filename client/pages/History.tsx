@@ -22,134 +22,128 @@ import {
 import { Button } from "@/components/ui/button";
 
 export default function History() {
+  const founders = [
+    {
+      name: "Late Shri R Dayananda Sagar",
+      title: "Founder & Visionary Educationist",
+      background: "Graduate in Arts & Commerce from India; Barrister-at-law from England",
+      achievements: [
+        "Established Mahatma Gandhi Vidya Peetha Education Trust in the 1960s",
+        "Founded Dayananda Sagar Schools and Colleges of Science, Arts, and Commerce",
+        "Built an alumni network of 100,000+ worldwide including professionals, lawmakers, athletes, and celebrities",
+        "Pioneered forward-looking educational institutions in Bangalore",
+      ],
+      icon: Users,
+    },
+    {
+      name: "Late Smt Chandramma Sagar",
+      title: "Co-Founder & Healthcare Pioneer",
+      background: "Doctor by training with triple fellowship from Royal Colleges of Surgeons",
+      achievements: [
+        "First Indian woman to acquire triple fellowship (FRCS) from Royal Colleges of Surgeons (London, Edinburgh, Glasgow)",
+        "Member of the panel of doctors to the President of India",
+        "Supported the establishment of healthcare and wellness programs",
+        "Advocated for quality healthcare education",
+      ],
+      icon: Award,
+    },
+  ];
+
   const milestones = [
     {
-      year: "2008",
-      title: "Foundation Year",
+      year: "1960s",
+      title: "Foundation of Dayananda Sagar Institutions",
       description:
-        "Dayananda Sagar University established with a vision to provide world-class education, continuing the legacy of Dayananda Sagar Institutions since 1984.",
+        "Late Shri R Dayananda Sagar established the Mahatma Gandhi Vidya Peetha Education Trust, laying the foundation for a legacy of educational excellence that would span over 60 years.",
       achievements: [
-        "University recognition by Government of Karnataka",
-        "First batch of students enrolled",
-        "Academic programs across multiple disciplines launched",
+        "Establishment of schools and colleges in Science, Arts, and Commerce",
+        "Focus on pioneering and forward-looking educational approaches",
+        "Building of modern academic infrastructure and facilities",
       ],
       icon: Building,
       color: "from-blue-500 to-blue-600",
     },
     {
-      year: "2010",
-      title: "Expansion Phase",
+      year: "1984 - 2008",
+      title: "Growth & Expansion of DSI",
       description:
-        "Rapid expansion of academic offerings and infrastructure development across the campus.",
+        "Dayananda Sagar Institutions expanded significantly, building a comprehensive network of educational programs and establishing itself as a trusted name in Indian higher education.",
       achievements: [
-        "Introduction of postgraduate programs",
-        "Establishment of research centers",
-        "Campus modernization initiatives",
+        "Expansion into diverse disciplines: Engineering, Dental Sciences, Biological Sciences, Pharmacy, Nursing, and more",
+        "Development of modern laboratories, lecture theatres, and libraries",
+        "Establishment of computer networks and sports facilities",
+        "Creation of hostel accommodations for local and international students",
       ],
       icon: TrendingUp,
       color: "from-green-500 to-green-600",
     },
     {
-      year: "2012",
-      title: "NAAC Accreditation",
+      year: "2008",
+      title: "Transition to University Status",
       description:
-        "Achieved prestigious NAAC A-Grade accreditation, recognizing institutional excellence and quality assurance.",
+        "Dayananda Sagar Institutions transitioned to Dayananda Sagar University (DSU), marking a new phase of comprehensive higher education with undergraduate, postgraduate, and doctoral programs.",
       achievements: [
-        "NAAC A Grade awarded",
-        "Recognition for academic and administrative excellence",
-        "Enhanced institutional credibility",
+        "Government of Karnataka recognition as a State Private University",
+        "Launch of diverse academic programs across multiple disciplines",
+        "Establishment of research centers and innovation labs",
+        "Introduction of international collaboration frameworks",
       ],
-      icon: Award,
-      color: "from-yellow-500 to-yellow-600",
-    },
-    {
-      year: "2015",
-      title: "Research Excellence",
-      description:
-        "Established state-of-the-art research centers and fostered innovation across multiple disciplines.",
-      achievements: [
-        "Multiple research centers inaugurated",
-        "Industry collaboration agreements signed",
-        "Publication of peer-reviewed research",
-      ],
-      icon: Lightbulb,
+      icon: Building,
       color: "from-purple-500 to-purple-600",
     },
     {
-      year: "2018",
-      title: "International Recognition",
+      year: "2010s",
+      title: "Expansion & Innovation",
       description:
-        "Expanded global partnerships and established international student exchange programs.",
+        "Rapid expansion of academic offerings, research capabilities, and infrastructure to support modern education and global partnerships.",
       achievements: [
-        "MOU with leading international universities",
-        "Student exchange programs initiated",
-        "Participation in global academic forums",
+        "Introduction of postgraduate and doctoral programs",
+        "Establishment of state-of-the-art research centers",
+        "Signing of MOUs with leading international universities",
+        "Campus modernization and facility upgrades",
+      ],
+      icon: Lightbulb,
+      color: "from-yellow-500 to-yellow-600",
+    },
+    {
+      year: "2015 - Present",
+      title: "Excellence & Global Recognition",
+      description:
+        "DSU has emerged as a globally recognized institution, fostering innovation, entrepreneurship, and research excellence while maintaining its core commitment to quality education.",
+      achievements: [
+        "NAAC accreditation and NIRF rankings",
+        "Establishment of Innovation Centers and Centers of Excellence",
+        "International student exchange programs and collaborations",
+        "Recognition as an AI-centric and research-focused university",
       ],
       icon: Globe,
       color: "from-red-500 to-red-600",
-    },
-    {
-      year: "2020",
-      title: "Digital Transformation",
-      description:
-        "Successfully transitioned to online education and digital infrastructure during the global pandemic.",
-      achievements: [
-        "Seamless online learning implementation",
-        "Digital campus infrastructure",
-        "Continued academic excellence",
-      ],
-      icon: Users,
-      color: "from-indigo-500 to-indigo-600",
-    },
-    {
-      year: "2022",
-      title: "NIRF Ranking",
-      description:
-        "Recognized among India's top universities in the National Institutional Ranking Framework.",
-      achievements: [
-        "Featured in NIRF Overall Rankings",
-        "Ranked among top 100 universities in India",
-        "Global recognition for quality",
-      ],
-      icon: Star,
-      color: "from-orange-500 to-orange-600",
-    },
-    {
-      year: "2024",
-      title: "Innovation & Sustainability",
-      description:
-        "Launched initiatives for sustainability, AI integration, and next-generation research.",
-      achievements: [
-        "Carbon neutral campus certification",
-        "AI-powered learning platforms",
-        "Centres of Excellence establishment",
-      ],
-      icon: Lightbulb,
-      color: "from-pink-500 to-pink-600",
     },
   ];
 
   const heritage = [
     {
-      period: "1984 - 2008",
+      period: "1960s - 2008",
       title: "Dayananda Sagar Institutions Legacy",
       description:
-        "Foundation of Dayananda Sagar Institutions with focus on quality education and community development.",
+        "A visionary foundation built by Late Shri R Dayananda Sagar and Late Smt Chandramma Sagar, establishing a network of schools and colleges dedicated to quality education and community development.",
       highlights: [
-        "Established schools and colleges",
-        "Pioneered educational innovation",
-        "Built trust and credibility",
+        "Over 60 years of educational excellence and trust",
+        "Alumni network of 100,000+ professionals worldwide",
+        "Pioneering approach to modern education",
+        "High-caliber teaching staff and modern infrastructure",
       ],
     },
     {
       period: "2008 - Present",
-      title: "University Era",
+      title: "Dayananda Sagar University Era",
       description:
-        "Evolution into a comprehensive university offering diverse undergraduate, postgraduate, and research programs.",
+        "Evolution into a comprehensive university creating a canvas for young global citizens to transform creative abilities into world-facing achievements through innovation, entrepreneurship, and leadership.",
       highlights: [
-        "Academic expansion",
-        "Research and innovation focus",
-        "Global partnerships",
+        "Diverse academic programs from UG to PhD",
+        "World-class research and innovation initiatives",
+        "Global partnerships and collaborations",
+        "Campus supporting academics, arts, culture, and entrepreneurship",
       ],
     },
   ];
