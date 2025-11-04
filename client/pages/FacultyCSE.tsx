@@ -210,15 +210,20 @@ function LeadershipSection({ leadership }: LeadershipSectionProps) {
   }
 
   return (
-    <section className="space-y-6">
-      <div className="text-center space-y-3">
-        <h2 className="headline-2 font-display">CSE Faculty Directory</h2>
-        <p className="max-w-3xl mx-auto text-lg text-foreground">
-          Meet our dedicated faculty members steering curriculum transformation, research innovation, and industry partnerships.
+    <section className="py-20 md:py-28">
+      <div className="text-center space-y-4 mb-16">
+        <div>
+          <h2 className="text-4xl md:text-5xl font-bold font-display text-foreground mb-3">
+            CSE Faculty Directory
+          </h2>
+          <div className="w-20 h-1.5 bg-gradient-to-r from-brand-magenta to-brand-orange rounded-full mx-auto" />
+        </div>
+        <p className="max-w-2xl mx-auto text-lg md:text-xl text-foreground/75 leading-relaxed">
+          Meet our brilliant faculty members—researchers, innovators, and mentors steering curriculum transformation and industry partnerships.
         </p>
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6">
+      <div className="grid gap-5 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 auto-rows-max">
         {leadership.map((faculty) => (
           <FacultyGridCard key={faculty.slug} faculty={faculty} />
         ))}
