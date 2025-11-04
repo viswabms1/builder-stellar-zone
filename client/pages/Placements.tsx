@@ -17,7 +17,10 @@ import {
   BookOpen,
   Zap,
   Lightbulb,
+  ChevronDown,
+  FileText,
 } from "lucide-react";
+import { useState } from "react";
 
 export default function Placements() {
   const highlights = [
