@@ -11,6 +11,7 @@ const base = "https://www.dsu.edu.in";
 const BASE_URL = "https://www.dsu.edu.in";
 
 export const cseFaculty: Faculty[] = [
+  { name: "Dr. Girisha G S", title: "Professor & Chairperson CSE", image: `${BASE_URL}/images/Engineering/CSE-dept/faculty/Girisha_GS.jpg`, qualifications: "M.Tech, Ph.D", profileUrl: "/dr-girisha" },
   { name: "Dr. Udaya Kumar Reddy K R", title: "Professor & Dean SoE", image: `${BASE_URL}/images/Engineering/CSE-dept/faculty/Udaya.jpg`, qualifications: "M.E, Ph.D.", profileUrl: "/images/Engineering/CSE-dept/faculty/DrUday.pdf" },
   { name: "Dr. Bipin Kumar Rai", title: "Professor & Associate Chair", image: `${BASE_URL}/images/Engineering/CSE-dept/faculty/DrBipin_1.jpg`, qualifications: "M.Tech, Ph.D", profileUrl: "/dr-bipin" },
   { name: "Dr. Revathi V", title: "Associate Professor & Associate Chair", image: `${BASE_URL}/images/Engineering/CSE-dept/faculty/Revathi_V.jpg`, qualifications: "M.E., Ph.D", profileUrl: "/dr-revathi-v" },
