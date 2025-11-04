@@ -443,7 +443,7 @@ function DirectorySection({
                 className={`rounded-full border-brand-magenta/30 ${
                   activeFilter === option.key
                     ? "bg-brand-gradient text-foreground"
-                    : "bg-white/60 text-brand-magenta hover:bg-brand-magenta/10"
+                    : "bg-white/60 dark:bg-slate-800/60 text-brand-magenta hover:bg-brand-magenta/10"
                 }`}
                 onClick={() => onFilterChange(option.key)}
               >
