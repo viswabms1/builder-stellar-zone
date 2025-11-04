@@ -166,10 +166,10 @@ type StatTileProps = {
 
 function StatTile({ icon: Icon, value, label }: StatTileProps) {
   return (
-    <div className="rounded-2xl border border-brand-magenta/20 dark:border-brand-magenta/30 bg-white/70 dark:bg-slate-800 p-4 shadow-sm">
-      <Icon className="h-5 w-5 text-brand-magenta" />
-      <p className="mt-3 text-2xl font-semibold text-slate-900 dark:text-white">{value}</p>
-      <p className="text-xs text-slate-700 dark:text-slate-300">{label}</p>
+    <div className="rounded-2xl border border-brand-magenta/30 dark:border-brand-magenta/30 bg-white/80 dark:bg-slate-800/80 p-5 shadow-lg hover:shadow-xl transition-all duration-300 group">
+      <Icon className="h-6 w-6 text-brand-magenta group-hover:scale-110 transition-transform" />
+      <p className="mt-4 text-3xl font-bold text-slate-900 dark:text-white">{value}</p>
+      <p className="text-sm text-slate-600 dark:text-slate-400 mt-2 font-medium">{label}</p>
     </div>
   );
 }
