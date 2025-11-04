@@ -255,7 +255,7 @@ export default function Leadership() {
                   <CardContent className="space-y-4">
                     <div>
                       <p className="text-sm font-semibold text-foreground mb-2">
-                        Leadership Vision:
+                        Message from Our {leader.role}:
                       </p>
                       <p className="text-sm text-foreground italic border-l-2 border-orange-500/30 pl-3">
                         "{leader.description}"
