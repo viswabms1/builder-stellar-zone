@@ -1,4 +1,5 @@
 import type { ComponentType, SVGProps } from "react";
+import type { ComponentType, SVGProps } from "react";
 import { useMemo } from "react";
 import { Link } from "react-router-dom";
 
@@ -15,9 +16,11 @@ import { cseFaculty } from "@/data/cse-faculty";
 import {
   Award,
   ChevronRight,
+  FlaskConical,
   GraduationCap,
   Layers,
   Sparkles,
+  Users,
 } from "lucide-react";
 
 export default function FacultyCSE() {
