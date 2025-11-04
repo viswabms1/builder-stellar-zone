@@ -24,8 +24,8 @@ export default function FacultyPageTemplate({ faculty }: FacultyPageTemplateProp
         <div className="absolute inset-x-0 -bottom-16 z-10">
           <div className="max-w-6xl mx-auto px-6">
             <Card className="rounded-2xl border border-border/50 bg-card/95 backdrop-blur">
-              <CardContent className="p-5 md:p-6 flex gap-4 md:gap-6 items-center">
-                <div className="w-20 h-20 md:w-24 md:h-24 rounded-xl overflow-hidden border border-border/50 shadow-sm">
+              <CardContent className="p-5 md:p-6 flex gap-6 md:gap-8 items-center">
+                <div className="w-32 h-32 md:w-40 md:h-40 rounded-xl overflow-hidden border border-border/50 shadow-sm flex-shrink-0">
                   <img src={faculty.image} alt={faculty.name} className="w-full h-full object-cover object-center" />
                 </div>
                 <div className="flex-1">
