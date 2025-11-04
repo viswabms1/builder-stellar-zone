@@ -405,30 +405,56 @@ export default function Placements() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 bg-gradient-to-br from-orange-500/10 via-red-600/5 to-background">
+      <section className="relative py-20 lg:py-32 bg-gradient-to-br from-slate-900 via-orange-900 to-slate-900 overflow-hidden">
+        {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-orange-500/10 rounded-full filter blur-3xl animate-float"></div>
-          <div
-            className="absolute bottom-20 right-10 w-96 h-96 bg-red-600/10 rounded-full filter blur-3xl animate-float"
-            style={{ animationDelay: "2s" }}
-          ></div>
+          {/* Large gradient orbs */}
+          <div className="absolute top-0 left-0 w-96 h-96 bg-orange-500/20 rounded-full filter blur-3xl animate-float"></div>
+          <div className="absolute top-1/3 right-0 w-80 h-80 bg-red-600/15 rounded-full filter blur-3xl animate-float" style={{ animationDelay: "1s" }}></div>
+          <div className="absolute bottom-0 left-1/3 w-72 h-72 bg-orange-400/10 rounded-full filter blur-3xl animate-float" style={{ animationDelay: "2s" }}></div>
+
+          {/* Grid pattern overlay */}
+          <div className="absolute inset-0 opacity-10">
+            <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                  <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" strokeWidth="1" />
+                </pattern>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#grid)" />
+            </svg>
+          </div>
+
+          {/* Geometric shapes */}
+          <div className="absolute top-10 right-20 w-40 h-40 border-2 border-orange-500/20 rounded-3xl transform rotate-45 animate-pulse"></div>
+          <div className="absolute bottom-20 left-10 w-32 h-32 border-2 border-red-500/20 rounded-full animate-pulse" style={{ animationDelay: "1s" }}></div>
         </div>
 
+        {/* Content */}
         <div className="relative max-w-7xl mx-auto px-6 text-center">
-          <div className="inline-flex items-center px-4 py-2 bg-orange-500/10 rounded-full border border-orange-500/20 mb-8">
-            <Briefcase className="w-4 h-4 text-orange-500 mr-2" />
-            <span className="text-sm font-medium text-orange-500">
+          {/* Badge Background */}
+          <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-orange-500/20 to-red-600/20 backdrop-blur-sm rounded-full border border-orange-500/40 mb-8 shadow-xl hover:shadow-2xl transition-all duration-300">
+            <Briefcase className="w-5 h-5 text-orange-400 mr-2" />
+            <span className="text-sm font-semibold text-orange-300">
               Career Development
             </span>
           </div>
 
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-            <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
-              Launch Your Dream Career
-            </span>
-          </h1>
+          {/* Main Heading with Background */}
+          <div className="mb-6">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-4">
+              <span className="bg-gradient-to-r from-orange-300 via-orange-400 to-red-400 bg-clip-text text-transparent inline-block px-2">
+                Launch Your
+              </span>
+              <br />
+              <span className="bg-gradient-to-r from-red-400 via-orange-400 to-yellow-300 bg-clip-text text-transparent inline-block px-2">
+                Dream Career
+              </span>
+            </h1>
+          </div>
 
-          <p className="text-lg md:text-xl text-foreground mb-8 leading-relaxed max-w-3xl mx-auto">
+          {/* Subtitle */}
+          <p className="text-lg md:text-xl text-gray-200 mb-8 leading-relaxed max-w-3xl mx-auto">
             The Training and Placement Cell acts as a bridge between academia and industry, empowering every student to acquire the necessary skills, knowledge, and industry exposure to secure meaningful and successful careers.
           </p>
         </div>
