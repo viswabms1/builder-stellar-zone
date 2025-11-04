@@ -265,13 +265,13 @@ function LeadershipSection({ leadership }: LeadershipSectionProps) {
         </p>
       </div>
 
-      <div className="grid gap-8 md:grid-cols-2">
+      <div className="grid gap-6 md:grid-cols-3 lg:grid-cols-4">
         {dean && <LeadershipCard faculty={dean} />}
         {chairperson && <LeadershipCard faculty={chairperson} />}
       </div>
 
       {associateChairs.length > 0 && (
-        <div className="grid gap-8 md:grid-cols-2">
+        <div className="grid gap-6 md:grid-cols-3 lg:grid-cols-4">
           {associateChairs.map((faculty) => (
             <LeadershipCard key={faculty.slug} faculty={faculty} />
           ))}
@@ -281,7 +281,7 @@ function LeadershipSection({ leadership }: LeadershipSectionProps) {
       {remainingLeadership.length > 0 && (
         <div>
           <h3 className="text-center text-lg font-semibold text-foreground mb-6">Senior Faculty</h3>
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-6 md:grid-cols-3 lg:grid-cols-4">
             {remainingLeadership.map((faculty) => (
               <LeadershipCard key={faculty.slug} faculty={faculty} />
             ))}
