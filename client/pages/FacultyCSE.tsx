@@ -88,24 +88,25 @@ type HeroSectionProps = {
 
 function HeroSection({ stats }: HeroSectionProps) {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-brand-magenta/15 via-brand-orange/10 to-brand-blue/10 py-16">
+    <section className="relative overflow-hidden bg-gradient-to-br from-brand-magenta/20 via-brand-orange/15 to-brand-blue/15 py-24 md:py-32">
       <div className="absolute inset-0">
-        <div className="absolute -top-16 right-10 h-64 w-64 rounded-full bg-brand-magenta/20 blur-3xl" />
-        <div className="absolute bottom-0 left-0 h-72 w-72 rounded-full bg-brand-blue/20 blur-3xl" />
+        <div className="absolute -top-32 right-10 h-96 w-96 rounded-full bg-brand-magenta/25 blur-3xl" />
+        <div className="absolute bottom-0 left-0 h-80 w-80 rounded-full bg-brand-blue/25 blur-3xl" />
+        <div className="absolute top-1/2 right-1/4 h-72 w-72 rounded-full bg-brand-orange/15 blur-3xl" />
       </div>
       <div className="relative mx-auto max-w-7xl px-6">
-        <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
-          <div className="space-y-4 text-center lg:text-left">
-            <Badge className="mx-auto w-fit rounded-full bg-white/30 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-brand-magenta lg:mx-0">
+        <div className="flex flex-col gap-12 lg:gap-16 lg:flex-row lg:items-center lg:justify-between">
+          <div className="space-y-6 text-center lg:text-left flex-1">
+            <Badge className="mx-auto w-fit rounded-full bg-white/40 dark:bg-slate-800/40 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-brand-magenta lg:mx-0 backdrop-blur-sm border border-white/20 dark:border-slate-700/20">
               School of Engineering · CSE Faculty
             </Badge>
-            <h1 className="text-4xl font-bold leading-tight text-foreground md:text-5xl">
-              Meet the Minds Powering Computer Science &amp; Engineering
-            </h1>
-            <p className="max-w-2xl text-base text-foreground md:text-lg">
-              Our faculty are seasoned researchers, innovators, and mentors
-              guiding the next generation of technologists through cutting-edge
-              labs, industry collaborations, and personalized mentorship.
+            <div>
+              <h1 className="text-5xl md:text-6xl font-bold leading-tight text-foreground mb-4 tracking-tight">
+                Meet the Minds<br className="hidden sm:block" /> Powering CS &amp; Engineering
+              </h1>
+            </div>
+            <p className="max-w-2xl text-lg md:text-xl text-foreground/85 leading-relaxed">
+              Our faculty are seasoned researchers, innovators, and mentors guiding the next generation of technologists through cutting-edge labs, industry collaborations, and personalized mentorship.
             </p>
             <div className="flex flex-col items-center gap-3 sm:flex-row lg:items-start">
               <Button
