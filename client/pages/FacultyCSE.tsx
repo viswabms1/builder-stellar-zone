@@ -161,23 +161,6 @@ function HeroSection({ stats, interests }: HeroSectionProps) {
             />
           </div>
         </div>
-        {interests.length > 0 ? (
-          <div className="mt-10 rounded-3xl border border-white/30 dark:border-slate-700/30 bg-white/40 dark:bg-slate-900/40 p-4 shadow-lg backdrop-blur">
-            <p className="text-xs font-semibold uppercase tracking-wide text-brand-magenta">
-              Research &amp; Interest Clusters
-            </p>
-            <div className="mt-3 flex flex-wrap gap-2">
-              {interests.map((interest) => (
-                <Badge
-                  key={interest}
-                  className="rounded-full bg-brand-magenta/15 px-3 py-1 text-xs font-medium text-brand-magenta"
-                >
-                  {interest}
-                </Badge>
-              ))}
-            </div>
-          </div>
-        ) : null}
       </div>
     </section>
   );
