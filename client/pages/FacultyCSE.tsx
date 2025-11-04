@@ -242,7 +242,7 @@ function HeroSection({ stats, interests }: HeroSectionProps) {
               </Button>
             </div>
           </div>
-          <div className="grid w-full max-w-xl grid-cols-2 gap-4 rounded-3xl border border-white/20 bg-white/60 p-6 shadow-xl backdrop-blur lg:max-w-md">
+          <div className="grid w-full max-w-xl grid-cols-2 gap-4 rounded-3xl border border-white/20 dark:border-slate-700/40 bg-white/60 dark:bg-slate-900/60 p-6 shadow-xl backdrop-blur lg:max-w-md">
             <StatTile
               icon={Users}
               value={`${stats.total}`}
@@ -266,7 +266,7 @@ function HeroSection({ stats, interests }: HeroSectionProps) {
           </div>
         </div>
         {interests.length > 0 ? (
-          <div className="mt-10 rounded-3xl border border-white/30 bg-white/40 p-4 shadow-lg backdrop-blur">
+          <div className="mt-10 rounded-3xl border border-white/30 dark:border-slate-700/30 bg-white/40 dark:bg-slate-900/40 p-4 shadow-lg backdrop-blur">
             <p className="text-xs font-semibold uppercase tracking-wide text-brand-magenta">
               Research &amp; Interest Clusters
             </p>
@@ -295,7 +295,7 @@ type StatTileProps = {
 
 function StatTile({ icon: Icon, value, label }: StatTileProps) {
   return (
-    <div className="rounded-2xl border border-brand-magenta/20 bg-white/70 p-4 shadow-sm">
+    <div className="rounded-2xl border border-brand-magenta/20 dark:border-brand-magenta/30 bg-white/70 dark:bg-slate-800/70 p-4 shadow-sm">
       <Icon className="h-5 w-5 text-brand-magenta" />
       <p className="mt-3 text-2xl font-semibold text-foreground">{value}</p>
       <p className="text-xs text-foreground/90">{label}</p>
