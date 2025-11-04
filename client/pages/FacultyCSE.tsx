@@ -532,7 +532,7 @@ function DirectorySection({
           ))}
         </div>
         {filteredFaculty.length === 0 ? (
-          <div className="rounded-3xl border border-dashed border-brand-magenta/30 bg-white/60 p-10 text-center text-sm text-foreground">
+          <div className="rounded-3xl border border-dashed border-brand-magenta/30 bg-white/60 dark:bg-slate-900/60 p-10 text-center text-sm text-foreground">
             No faculty records match your search. Try adjusting the name, role
             filter, or keywords.
           </div>
@@ -769,7 +769,7 @@ function ClosingSection() {
   return (
     <section className="px-6 pb-20">
       <div className="mx-auto max-w-5xl rounded-3xl border border-brand-magenta/20 bg-gradient-to-r from-brand-magenta/15 via-brand-orange/15 to-brand-blue/15 p-10 text-center shadow-lg">
-        <div className="inline-flex items-center gap-2 rounded-full bg-white/40 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-brand-magenta">
+        <div className="inline-flex items-center gap-2 rounded-full bg-white/40 dark:bg-slate-800/40 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-brand-magenta">
           <Layers className="h-4 w-4" />
           Faculty &amp; Student Synergy
         </div>
