@@ -201,46 +201,27 @@ type LeadershipSectionProps = {
   leadership: FacultyEntry[];
 };
 
-function LeadershipCard({ faculty }: { faculty: FacultyEntry }) {
+function FacultyGridCard({ faculty }: { faculty: FacultyEntry }) {
   return (
-    <Card className="group overflow-hidden border border-border/40 bg-card/80 shadow-lg transition hover:-translate-y-1 hover:shadow-brand-magenta/20 max-w-xs">
-      <div className="relative">
+    <Link
+      to={`/academics/engineering/computer-science/faculty/${faculty.slug}`}
+      className="group overflow-hidden rounded-lg border border-border/40 bg-card/60 shadow-sm transition hover:-translate-y-0.5 hover:shadow-brand-magenta/15"
+    >
+      <div className="relative overflow-hidden">
         <AspectRatio ratio={3 / 4}>
           <img
             src={faculty.image}
             alt={faculty.name}
-            className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-500"
+            className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-[1.05] transition-transform duration-300"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
         </AspectRatio>
-        <div className="absolute bottom-0 w-full p-4 text-white">
-          <p className="text-sm opacity-80">{faculty.title}</p>
-          <p className="text-lg font-semibold">{faculty.name}</p>
+        <div className="absolute bottom-0 w-full p-2.5 text-white">
+          <p className="text-xs font-semibold line-clamp-2">{faculty.name}</p>
+          <p className="text-xs opacity-75 line-clamp-1">{faculty.title}</p>
         </div>
       </div>
-      <CardContent className="space-y-4 p-5 text-sm text-foreground">
-        {faculty.qualifications ? (
-          <p>
-            <span className="font-semibold text-foreground">
-              Qualifications:
-            </span>{" "}
-            {faculty.qualifications}
-          </p>
-        ) : null}
-        <Button
-          size="sm"
-          className="w-full bg-brand-gradient text-foreground"
-          asChild
-        >
-          <Link
-            to={`/academics/engineering/computer-science/faculty/${faculty.slug}`}
-          >
-            View profile
-            <ChevronRight className="ml-1 h-3.5 w-3.5" />
-          </Link>
-        </Button>
-      </CardContent>
-    </Card>
+    </Link>
   );
 }
 
