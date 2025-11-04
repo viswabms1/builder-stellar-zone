@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { ChevronLeft } from "lucide-react";
 import type { Faculty } from "@/data/cse-faculty";
 
@@ -16,6 +15,7 @@ export default function FacultyPageTemplate({ faculty }: FacultyPageTemplateProp
 
   return (
     <div className="min-h-screen bg-background text-foreground">
+      {/* Hero with research background and profile card */}
       <section className="relative">
         <div className="h-[36vh] md:h-[42vh] w-full overflow-hidden">
           <img src={bg} alt="Research background" className="w-full h-full object-cover" />
@@ -32,12 +32,9 @@ export default function FacultyPageTemplate({ faculty }: FacultyPageTemplateProp
                   <div className="text-brand-blue text-xs font-body">Computer Science & Engineering</div>
                   <h1 className="text-2xl md:text-3xl font-bold font-display">{faculty.name}</h1>
                   <div className="text-foreground text-sm">{faculty.title}</div>
-                  {faculty.qualifications && (
-                    <div className="text-xs text-foreground/70 mt-1">{faculty.qualifications}</div>
-                  )}
                   <div className="mt-2 flex flex-wrap gap-2">
                     {topics.map((t) => (
-                      <Badge key={t} className="bg-brand-magenta/10 text-brand-magenta text-xs">{t}</Badge>
+                      <Badge key={t} className="bg-brand-magenta/10 text-brand-magenta">{t}</Badge>
                     ))}
                   </div>
                 </div>
@@ -52,10 +49,11 @@ export default function FacultyPageTemplate({ faculty }: FacultyPageTemplateProp
 
       <section className="px-6 pt-24 pb-12">
         <div className="max-w-6xl mx-auto grid lg:grid-cols-3 gap-8 items-start">
+          {/* Left column: Bio & sections */}
           <div className="lg:col-span-2 space-y-8">
             <Card className="border border-border/50 bg-card/50">
               <CardHeader>
-                <CardTitle className="font-display">About</CardTitle>
+                <CardTitle className="font-display">Biography</CardTitle>
               </CardHeader>
               <CardContent className="text-sm text-foreground font-body">
                 <p>
@@ -66,6 +64,17 @@ export default function FacultyPageTemplate({ faculty }: FacultyPageTemplateProp
                     <strong>Qualifications:</strong> {faculty.qualifications}
                   </div>
                 )}
+              </CardContent>
+            </Card>
+
+            <Card className="border border-border/50 bg-card/50">
+              <CardHeader>
+                <CardTitle className="font-display">Professional Focus</CardTitle>
+              </CardHeader>
+              <CardContent className="text-sm text-foreground font-body">
+                <p>
+                  Dedicated to advancing computer science education and research. Engaged in curriculum development, student mentorship, and collaborative projects with industry and academic institutions.
+                </p>
               </CardContent>
             </Card>
 
@@ -90,13 +99,14 @@ export default function FacultyPageTemplate({ faculty }: FacultyPageTemplateProp
               </CardHeader>
               <CardContent className="space-y-2 text-sm font-body">
                 <div>
-                  <div className="font-medium">School of Engineering</div>
-                  <div className="text-foreground/70">Computer Science & Engineering</div>
+                  <div className="text-foreground">School of Engineering</div>
+                  <div className="font-medium">Computer Science & Engineering</div>
                 </div>
               </CardContent>
             </Card>
           </div>
 
+          {/* Right column: Contact, Metrics, Education */}
           <div className="space-y-8">
             <Card className="border border-border/50 bg-card/50">
               <CardHeader>
@@ -113,6 +123,36 @@ export default function FacultyPageTemplate({ faculty }: FacultyPageTemplateProp
                     <div className="font-medium">{faculty.qualifications}</div>
                   </div>
                 )}
+                <div>
+                  <div className="text-foreground/70">Department</div>
+                  <div className="font-medium">Computer Science & Engineering</div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <div className="grid grid-cols-3 gap-3">
+              {[
+                { label: "Teaching", value: "−" },
+                { label: "Research", value: "−" },
+                { label: "Mentoring", value: "−" },
+              ].map((s) => (
+                <Card key={s.label} className="text-center border border-border/50 bg-card/50">
+                  <CardHeader className="py-4">
+                    <div className="text-2xl font-bold font-display">{s.value}</div>
+                    <CardDescription className="font-body text-xs">{s.label}</CardDescription>
+                  </CardHeader>
+                </Card>
+              ))}
+            </div>
+
+            <Card className="border border-border/50 bg-card/50">
+              <CardHeader>
+                <CardTitle className="font-display">Contact</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-2 text-sm font-body">
+                <div className="text-foreground">School of Engineering</div>
+                <div className="text-foreground/70">Computer Science & Engineering</div>
+                <div className="text-foreground/70 text-xs">Dayananda Sagar University</div>
               </CardContent>
             </Card>
 
