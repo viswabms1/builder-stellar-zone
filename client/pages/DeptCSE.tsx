@@ -161,38 +161,89 @@ export default function DeptCSE() {
         </div>
       </section>
 
-      {/* Faculty Preview */}
+      {/* Leadership Section */}
       <section className="px-6 py-16">
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center justify-between mb-8">
-            <h2 className="headline-3 font-display">Meet the Faculty</h2>
+            <h2 className="headline-3 font-display">Department Leadership</h2>
             <Link to="/academics/engineering/computer-science/faculty">
               <Button variant="outline" className="border-brand-magenta/40 hover:bg-brand-magenta/10">
                 Explore full faculty roster
               </Button>
             </Link>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { name: "Dr. Udaya Kumar Reddy K R", title: "Professor & Dean SoE", image: "https://www.dsu.edu.in/images/Engineering/CSE-dept/faculty/Udaya.jpg" },
-              { name: "Dr. Bipin Kumar Rai", title: "Professor & Associate Chair", image: "https://www.dsu.edu.in/images/Engineering/CSE-dept/faculty/DrBipin_1.jpg" },
-              { name: "Dr. Meenakshi Malhotra", title: "Associate Professor", image: "https://www.dsu.edu.in/images/Engineering/CSE-dept/faculty/Meenakshi.jpg" },
-              { name: "Dr. Sridhar S K", title: "Associate Professor", image: "https://www.dsu.edu.in/images/Engineering/CSE-dept/faculty/DrSridhar.jpg" },
-            ].map((f, i) => (
-              <Link key={i} to={`/academics/engineering/computer-science/faculty/${f.name.toLowerCase().replace(/\./g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'')}`}>
-                <div className="group relative overflow-hidden rounded-2xl border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-magenta/10 transition-all">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Dean */}
+            <div>
+              <p className="text-xs font-semibold text-brand-magenta uppercase tracking-wider mb-3">Dean of School of Engineering</p>
+              <Link to="/academics/engineering/computer-science/faculty/dr-udaya-kumar-reddy-k-r">
+                <div className="group relative overflow-hidden rounded-2xl border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-magenta/10 transition-all cursor-pointer">
                   <div className="relative">
                     <div className="aspect-[3/4] w-full"></div>
-                    <img src={f.image} alt={f.name} className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-500" />
+                    <img src="https://www.dsu.edu.in/images/Engineering/CSE-dept/faculty/Udaya.jpg" alt="Dr. Udaya Kumar Reddy K R" className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-500" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
                   </div>
-                  <div className="absolute bottom-0 p-4">
-                    <div className="text-white text-sm opacity-80">{f.title}</div>
-                    <div className="text-white font-semibold text-lg font-display">{f.name}</div>
+                  <div className="absolute bottom-0 p-4 w-full">
+                    <div className="text-white text-sm opacity-80">Professor</div>
+                    <div className="text-white font-semibold text-lg font-display">Dr. Udaya Kumar Reddy K R</div>
                   </div>
                 </div>
               </Link>
-            ))}
+            </div>
+
+            {/* Chairperson */}
+            <div>
+              <p className="text-xs font-semibold text-brand-magenta uppercase tracking-wider mb-3">Chairperson, Computer Science & Engineering</p>
+              <Link to="/academics/engineering/computer-science/faculty/dr-girisha-g-s">
+                <div className="group relative overflow-hidden rounded-2xl border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-magenta/10 transition-all cursor-pointer">
+                  <div className="relative">
+                    <div className="aspect-[3/4] w-full"></div>
+                    <img src="https://www.dsu.edu.in/images/Engineering/CSE-dept/faculty/Girisha_GS.jpg" alt="Dr. Girisha G S" className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-500" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+                  </div>
+                  <div className="absolute bottom-0 p-4 w-full">
+                    <div className="text-white text-sm opacity-80">Professor</div>
+                    <div className="text-white font-semibold text-lg font-display">Dr. Girisha G S</div>
+                  </div>
+                </div>
+              </Link>
+            </div>
+
+            {/* Associate Chair 1 */}
+            <div>
+              <p className="text-xs font-semibold text-brand-magenta uppercase tracking-wider mb-3">Associate Chair</p>
+              <Link to="/academics/engineering/computer-science/faculty/dr-bipin-kumar-rai">
+                <div className="group relative overflow-hidden rounded-2xl border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-magenta/10 transition-all cursor-pointer">
+                  <div className="relative">
+                    <div className="aspect-[3/4] w-full"></div>
+                    <img src="https://www.dsu.edu.in/images/Engineering/CSE-dept/faculty/DrBipin_1.jpg" alt="Dr. Bipin Kumar Rai" className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-500" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+                  </div>
+                  <div className="absolute bottom-0 p-4 w-full">
+                    <div className="text-white text-sm opacity-80">Professor</div>
+                    <div className="text-white font-semibold text-lg font-display">Dr. Bipin Kumar Rai</div>
+                  </div>
+                </div>
+              </Link>
+            </div>
+
+            {/* Associate Chair 2 */}
+            <div>
+              <p className="text-xs font-semibold text-brand-magenta uppercase tracking-wider mb-3">Associate Chair</p>
+              <Link to="/academics/engineering/computer-science/faculty/dr-revathi-v">
+                <div className="group relative overflow-hidden rounded-2xl border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-magenta/10 transition-all cursor-pointer">
+                  <div className="relative">
+                    <div className="aspect-[3/4] w-full"></div>
+                    <img src="https://www.dsu.edu.in/images/Engineering/CSE-dept/faculty/Revathi_V.jpg" alt="Dr. Revathi V" className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-500" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+                  </div>
+                  <div className="absolute bottom-0 p-4 w-full">
+                    <div className="text-white text-sm opacity-80">Associate Professor</div>
+                    <div className="text-white font-semibold text-lg font-display">Dr. Revathi V</div>
+                  </div>
+                </div>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
