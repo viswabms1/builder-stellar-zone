@@ -13,14 +13,14 @@
    * A different format will require also updating the theme in tailwind.config.ts.
   */
   :root {
-    /* Brand Colors - Magenta, Dark Orange, Off-White */
-    --background: 0 0% 2%;
+    /* Brand Colors - Dark Orange, Off-White with better dark mode shades */
+    --background: 220 13% 8%;
     --foreground: 0 0% 98%;
 
-    --card: 0 0% 4%;
+    --card: 220 13% 13%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 0 0% 4%;
+    --popover: 220 13% 13%;
     --popover-foreground: 0 0% 98%;
 
     --primary: 32 100% 45%;  /* Dark Orange #E58A00 */
