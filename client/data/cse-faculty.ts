@@ -20,7 +20,9 @@ const make = (n: string) =>
 
 export const cseFaculty: Faculty[] = [
   { name: "Dr. Udaya Kumar Reddy K R", title: "Professor & Dean SoE", image: "/images/Engineering/CSE-dept/faculty/Udaya.jpg", qualifications: "M.E, Ph.D.", profileUrl: "/images/Engineering/CSE-dept/faculty/DrUday.pdf" },
+  { name: "Dr. Girisha G S", title: "Professor & Chairperson CSE", image: "/images/Engineering/CSE-dept/faculty/DrGirisha.jpg", qualifications: "M.Tech, Ph.D", profileUrl: "/dr-girisha" },
   { name: "Dr. Bipin Kumar Rai", title: "Professor & Associate Chair", image: "/images/Engineering/CSE-dept/faculty/DrBipin_1.jpg", qualifications: "M.Tech, Ph.D", profileUrl: "/dr-bipin" },
+  { name: "Dr. Revathi V", title: "Associate Professor & Associate Chair", image: "/images/Engineering/CSE-dept/faculty/DrRevathiV.jpg", qualifications: "M.E., Ph.D", profileUrl: "/dr-revathi-v" },
   { name: "Dr. Basavaraj N Hiremath", title: "Professor", image: "/images/Engineering/CSE-dept/faculty/Basavaraj_N.jpg", qualifications: "PhD", profileUrl: "/dr-basavaraj-nh" },
   { name: "Dr. Bondu Venkateswarlu", title: "Professor", image: "/images/Engineering/CSE-dept/faculty/BonduVenkateswarlu.jpg", qualifications: "M.Tech, Ph.D" },
   { name: "Dr. George Fernandez I", title: "Associate Professor", image: "/images/Engineering/CSE-dept/faculty/DrGeorgeFernandez.jpg", qualifications: "Ph.D" },
