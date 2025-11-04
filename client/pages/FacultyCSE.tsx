@@ -205,7 +205,7 @@ function LeadershipCard({ faculty }: { faculty: FacultyEntry }) {
   return (
     <Card className="group overflow-hidden border border-border/40 bg-card/80 shadow-lg transition hover:-translate-y-1 hover:shadow-brand-magenta/20">
       <div className="relative">
-        <AspectRatio ratio={2 / 2.8}>
+        <AspectRatio ratio={3 / 4}>
           <img
             src={faculty.image}
             alt={faculty.name}
