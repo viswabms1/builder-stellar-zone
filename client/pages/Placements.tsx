@@ -145,6 +145,82 @@ export default function Placements() {
     },
   ];
 
+  const recruiterData = [
+    {
+      key: "engineering",
+      name: "School of Engineering",
+      logos: [
+        { url: "https://www.dsu.edu.in/images/placements/logos/soe1.jpg", alt: "Recruiter 1" },
+        { url: "https://www.dsu.edu.in/images/placements/logos/soe2.jpg", alt: "Recruiter 2" },
+        { url: "https://www.dsu.edu.in/images/placements/logos/soe3.jpg", alt: "Recruiter 3" },
+        { url: "https://www.dsu.edu.in/images/placements/logos/soe4.jpg", alt: "Recruiter 4" },
+      ],
+    },
+    {
+      key: "commerce",
+      name: "School of Commerce & Management Studies",
+      logos: [
+        { url: "https://www.dsu.edu.in/images/placements/logos/scms1.jpg", alt: "Recruiter 1" },
+        { url: "https://www.dsu.edu.in/images/placements/logos/scms2.jpg", alt: "Recruiter 2" },
+        { url: "https://www.dsu.edu.in/images/placements/logos/scms3.jpg", alt: "Recruiter 3" },
+      ],
+    },
+    {
+      key: "sciences",
+      name: "School of Basic & Applied Sciences",
+      logos: [
+        { url: "https://www.dsu.edu.in/images/placements/logos/sbas1.jpg", alt: "Recruiter 1" },
+        { url: "https://www.dsu.edu.in/images/placements/logos/sbas2.jpg", alt: "Recruiter 2" },
+        { url: "https://www.dsu.edu.in/images/placements/logos/sbas3.jpg", alt: "Recruiter 3" },
+      ],
+    },
+    {
+      key: "health",
+      name: "School of Health Sciences",
+      subCategories: [
+        {
+          name: "Pharmacy",
+          logos: [
+            { url: "https://www.dsu.edu.in/images/placements/logos/Pharmacy.jpg", alt: "Pharmacy Partners" },
+          ],
+        },
+        {
+          name: "Nursing",
+          logos: [
+            { url: "https://www.dsu.edu.in/images/placements/logos/Nursing.jpg", alt: "Nursing Partners" },
+          ],
+        },
+        {
+          name: "Physiotherapy",
+          logos: [
+            { url: "https://www.dsu.edu.in/images/placements/logos/Physiotherapy.jpg", alt: "Physiotherapy Partners" },
+          ],
+        },
+      ],
+    },
+    {
+      key: "arts",
+      name: "School of Arts, Design & Humanities",
+      logos: [
+        { url: "https://www.dsu.edu.in/images/placements/logos/cjmc.jpg", alt: "Partners" },
+      ],
+    },
+    {
+      key: "international",
+      name: "International Placements",
+      logos: [
+        { url: "https://www.dsu.edu.in/images/placements/logos/int_placements.jpg", alt: "International Partners" },
+      ],
+    },
+    {
+      key: "mou",
+      name: "MoU Partners",
+      logos: [
+        { url: "https://www.dsu.edu.in/images/placements/logos/mou.jpg", alt: "MoU Partners" },
+      ],
+    },
+  ];
+
   const highlights = [
     {
       label: "Recruiting Organizations",
