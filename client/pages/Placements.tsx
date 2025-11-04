@@ -23,6 +23,120 @@ import {
 import { useState } from "react";
 
 export default function Placements() {
+  const [expandedSchools, setExpandedSchools] = useState<Record<string, boolean>>({});
+
+  const toggleSchool = (schoolKey: string) => {
+    setExpandedSchools((prev) => ({
+      ...prev,
+      [schoolKey]: !prev[schoolKey],
+    }));
+  };
+
+  const placementData = [
+    {
+      key: "soe",
+      name: "School of Engineering",
+      programs: "BE/B.Tech, M.Tech",
+      batches: [
+        { year: "2025", link: "https://www.dsu.edu.in/images/placements/Hiring/SOE/soe_2025_RP.pdf" },
+        { year: "2024", link: "https://www.dsu.edu.in/images/placements/Hiring/SOE/soe_2024.pdf" },
+        { year: "2023", link: "https://www.dsu.edu.in/images/placements/Hiring/SOE/soe_2023_1.pdf" },
+        { year: "2022", link: "https://www.dsu.edu.in/images/placements/Hiring/SOE/soe_2022.pdf" },
+        { year: "2021", link: "https://www.dsu.edu.in/images/placements/Hiring/SOE/soe_2021.pdf" },
+        { year: "2020", link: "https://www.dsu.edu.in/images/placements/Hiring/SOE/soe_2020.pdf" },
+        { year: "2019", link: "https://www.dsu.edu.in/images/placements/Hiring/SOE/soe_2019.pdf" },
+      ],
+    },
+    {
+      key: "cms",
+      name: "School of Commerce & Management Studies",
+      programs: "BBA, MBA, B.Com, M.Com",
+      batches: [
+        { year: "2025", link: "https://www.dsu.edu.in/images/placements/Hiring/CMS/Campus_placement_website_2025_School_of_Commerce__Mgt.pdf" },
+        { year: "2024", link: "https://www.dsu.edu.in/images/placements/Hiring/CMS/Campus_placement_website_2024_School_of_Commerce__Mgt.pdf" },
+        { year: "2023", link: "https://www.dsu.edu.in/images/placements/Hiring/CMS/cms_2023.pdf" },
+        { year: "2022", link: "https://www.dsu.edu.in/images/placements/Hiring/CMS/cms_2022.pdf" },
+        { year: "2021", link: "https://www.dsu.edu.in/images/placements/Hiring/CMS/cms_2021.pdf" },
+        { year: "2020", link: "https://www.dsu.edu.in/images/placements/Hiring/CMS/cms_2020.pdf" },
+        { year: "2019", link: "https://www.dsu.edu.in/images/placements/Hiring/CMS/cms_2019.pdf" },
+      ],
+    },
+    {
+      key: "sbas",
+      name: "School of Basic & Applied Sciences",
+      programs: "B.Sc, M.Sc",
+      batches: [
+        { year: "2024", link: "https://www.dsu.edu.in/images/placements/Hiring/SBAS/sbas_2024.pdf" },
+        { year: "2023", link: "https://www.dsu.edu.in/images/placements/Hiring/SBAS/sbas_2023.pdf" },
+        { year: "2022", link: "https://www.dsu.edu.in/images/placements/Hiring/SBAS/sbas_2022.pdf" },
+        { year: "2021", link: "https://www.dsu.edu.in/images/placements/Hiring/SBAS/sbas_2021.pdf" },
+        { year: "2020", link: "https://www.dsu.edu.in/images/placements/Hiring/SBAS/sbas_2020.pdf" },
+        { year: "2019", link: "https://www.dsu.edu.in/images/placements/Hiring/SBAS/sbas_2019.pdf" },
+      ],
+    },
+    {
+      key: "sohs",
+      name: "School of Health Sciences",
+      programs: "Nursing, Pharmacy, Physiotherapy",
+      subCategories: [
+        {
+          name: "Nursing",
+          batches: [
+            { year: "2024", link: "https://www.dsu.edu.in/images/placements/Hiring/SOHS/Campus_placement_website_2024_CONS.pdf" },
+            { year: "2023", link: "https://www.dsu.edu.in/images/placements/Hiring/SOHS/Campus_placement_website_2023_CONS.pdf" },
+            { year: "2022", link: "https://www.dsu.edu.in/images/placements/Hiring/SOHS/Campus_placement_website_2022_CONS.pdf" },
+            { year: "2021", link: "https://www.dsu.edu.in/images/placements/Hiring/SOHS/nursing_2021.pdf" },
+            { year: "2020", link: "https://www.dsu.edu.in/images/placements/Hiring/SOHS/nursing_2020.pdf" },
+            { year: "2019", link: "https://www.dsu.edu.in/images/placements/Hiring/SOHS/nursing_2019.pdf" },
+          ],
+        },
+        {
+          name: "Pharmacy",
+          batches: [
+            { year: "2024", link: "https://www.dsu.edu.in/images/placements/Hiring/SOHS/Campus_placement_website__COPS_2024.pdf" },
+            { year: "2023", link: "https://www.dsu.edu.in/images/placements/Hiring/SOHS/pharmacy_2023.pdf" },
+            { year: "2022", link: "https://www.dsu.edu.in/images/placements/Hiring/SOHS/pharmacy_2022.pdf" },
+            { year: "2021", link: "https://www.dsu.edu.in/images/placements/Hiring/SOHS/pharmacy_2021.pdf" },
+            { year: "2020", link: "https://www.dsu.edu.in/images/placements/Hiring/SOHS/pharmacy_2020.pdf" },
+            { year: "2019", link: "https://www.dsu.edu.in/images/placements/Hiring/SOHS/pharmacy_2019.pdf" },
+          ],
+        },
+        {
+          name: "Physiotherapy",
+          batches: [
+            { year: "2024", link: "https://www.dsu.edu.in/images/placements/Hiring/SOHS/Campus_placement_website_2024__PHYSIOTHERAPY.pdf" },
+            { year: "2023", link: "https://www.dsu.edu.in/images/placements/Hiring/SOHS/physio_2023.pdf" },
+            { year: "2022", link: "https://www.dsu.edu.in/images/placements/Hiring/SOHS/physio_2022.pdf" },
+            { year: "2021", link: "https://www.dsu.edu.in/images/placements/Hiring/SOHS/physio_2021.pdf" },
+            { year: "2020", link: "https://www.dsu.edu.in/images/placements/Hiring/SOHS/physio_2020.pdf" },
+            { year: "2019", link: "https://www.dsu.edu.in/images/placements/Hiring/SOHS/physio_2019.pdf" },
+          ],
+        },
+      ],
+    },
+    {
+      key: "soadh",
+      name: "School of Arts, Design & Humanities",
+      programs: "BA (JMC), B.Design",
+      batches: [
+        { year: "2024", link: "https://www.dsu.edu.in/images/placements/Hiring/SOADH/soadh_2024.pdf" },
+        { year: "2023", link: "https://www.dsu.edu.in/images/placements/Hiring/SOADH/soadh_2023.pdf" },
+        { year: "2022", link: "https://www.dsu.edu.in/images/placements/Hiring/SOADH/soadh_2022.pdf" },
+        { year: "2021", link: "https://www.dsu.edu.in/images/placements/Hiring/SOADH/soadh_2021.pdf" },
+        { year: "2020", link: "https://www.dsu.edu.in/images/placements/Hiring/SOADH/soadh_2020.pdf" },
+      ],
+    },
+    {
+      key: "soca",
+      name: "School of Computer Application",
+      programs: "BCA, MCA",
+      batches: [
+        { year: "2025", link: "https://www.dsu.edu.in/images/placements/Hiring/SOCA/soca_2025.pdf" },
+        { year: "2024", link: "https://www.dsu.edu.in/images/placements/Hiring/SOCA/soca_2024.pdf" },
+      ],
+    },
+  ];
+
   const highlights = [
     {
       label: "Recruiting Organizations",
