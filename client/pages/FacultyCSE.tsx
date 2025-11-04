@@ -62,17 +62,9 @@ export default function FacultyCSE() {
     [],
   );
 
-  const facultyInterests = useMemo(() => {
-    const interests = new Set<string>();
-    cseFaculty.forEach((f) => {
-      f.interests?.forEach((interest) => interests.add(interest));
-    });
-    return Array.from(interests).slice(0, 8);
-  }, []);
-
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <HeroSection stats={stats} interests={facultyInterests} />
+      <HeroSection stats={stats} />
       <div className="relative px-6 py-16">
         <div className="mx-auto max-w-7xl">
           <LeadershipSection leadership={leadership} />
