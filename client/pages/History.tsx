@@ -367,7 +367,7 @@ export default function History() {
       </section>
 
       {/* Key Statistics */}
-      <section className="px-6 py-20">
+      <section className="px-6 py-20 bg-gradient-to-br from-orange-500/5 via-red-600/5 to-background">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -375,24 +375,101 @@ export default function History() {
                 By the Numbers
               </span>
             </h2>
+            <p className="text-lg text-foreground max-w-3xl mx-auto">
+              The legacy and impact of educational excellence
+            </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { number: "16+", label: "Years of Excellence", icon: Calendar },
-              { number: "25,000+", label: "Students", icon: Users },
-              { number: "100+", label: "Programs Offered", icon: Award },
-              { number: "50+", label: "Research Centers", icon: Lightbulb },
+              { number: "60+", label: "Years of Trust & Excellence", icon: Calendar },
+              { number: "100,000+", label: "Alumni Worldwide", icon: Users },
+              { number: "10+", label: "Academic Disciplines", icon: Award },
+              { number: "6", label: "Schools & Colleges", icon: Building },
             ].map((stat, index) => (
               <Card
                 key={index}
-                className="text-center p-6 bg-card/30 backdrop-blur-sm border border-border/30 hover:border-orange-500/30 transition-all duration-300"
+                className="text-center p-6 bg-card/50 backdrop-blur-sm border border-border/30 hover:border-orange-500/30 transition-all duration-300"
               >
                 <stat.icon className="w-8 h-8 text-orange-500 mx-auto mb-3" />
                 <div className="text-3xl font-bold text-foreground mb-1">
                   {stat.number}
                 </div>
                 <div className="text-sm text-foreground">{stat.label}</div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Academic Breadth Section */}
+      <section className="px-6 py-20">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              <span className="text-foreground">Academic </span>
+              <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
+                Excellence
+              </span>
+            </h2>
+            <p className="text-lg text-foreground max-w-3xl mx-auto">
+              Comprehensive programs across multiple disciplines with modern infrastructure
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              "Engineering",
+              "Dental Sciences",
+              "Biological Sciences",
+              "Pharmacy & Healthcare",
+              "Nursing & Allied Health",
+              "Arts & Sciences",
+              "Commerce & Management",
+              "Information Technology",
+              "Business Applications",
+            ].map((discipline, index) => (
+              <Card
+                key={index}
+                className="p-6 bg-card/50 backdrop-blur-sm border border-border/30 hover:border-orange-500/30 transition-all duration-300 flex items-center gap-3"
+              >
+                <CheckCircle className="w-5 h-5 text-orange-500 flex-shrink-0" />
+                <span className="text-foreground font-medium">{discipline}</span>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Campus Infrastructure Section */}
+      <section className="px-6 py-20 bg-gradient-to-br from-orange-500/5 via-red-600/5 to-background">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
+                World-Class Infrastructure
+              </span>
+            </h2>
+            <p className="text-lg text-foreground max-w-3xl mx-auto">
+              Modern facilities supporting academic excellence and holistic development
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { title: "Lecture Theatres", description: "State-of-the-art classrooms with modern AV systems" },
+              { title: "Laboratories", description: "Well-equipped labs for hands-on learning and research" },
+              { title: "Libraries", description: "Comprehensive collections and digital resources" },
+              { title: "Computer Networks", description: "High-speed connectivity and IT infrastructure" },
+              { title: "Sports Facilities", description: "Complete sports and recreation amenities" },
+              { title: "Hostel Accommodation", description: "Comfortable facilities for local and international students" },
+            ].map((facility, index) => (
+              <Card
+                key={index}
+                className="p-6 bg-card/50 backdrop-blur-sm border border-border/30 hover:border-orange-500/30 transition-all duration-300"
+              >
+                <h3 className="text-lg font-semibold text-foreground mb-2">{facility.title}</h3>
+                <p className="text-sm text-foreground">{facility.description}</p>
               </Card>
             ))}
           </div>
