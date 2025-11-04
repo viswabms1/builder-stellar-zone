@@ -101,7 +101,7 @@ function HeroSection({ stats }: HeroSectionProps) {
       <div className="relative mx-auto max-w-7xl px-6">
         <div className="flex flex-col gap-12 lg:gap-16 lg:flex-row lg:items-center lg:justify-between">
           <div className="space-y-6 text-center lg:text-left flex-1">
-            <Badge className="mx-auto w-fit rounded-full bg-white/40 dark:bg-slate-800/40 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-brand-magenta lg:mx-0 backdrop-blur-sm border border-white/20 dark:border-slate-700/20">
+            <Badge className="mx-auto w-fit rounded-full bg-white/80 dark:bg-slate-800/70 px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-brand-magenta lg:mx-0 backdrop-blur-md border-2 border-brand-magenta/40 dark:border-brand-magenta/50 shadow-md">
               School of Engineering · CSE Faculty
             </Badge>
             <div>
