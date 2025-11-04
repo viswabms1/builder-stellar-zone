@@ -48,12 +48,16 @@ export default function FacultyCSE() {
 
   const leadership = useMemo(
     () => {
-      const leaders = cseFaculty.filter((f) => /Dean|Chair|Chairperson|Head/i.test(f.title));
-      return leaders.sort((a, b) => {
-        if (/Chairperson/i.test(a.title)) return -1;
-        if (/Chairperson/i.test(b.title)) return 1;
-        return 0;
-      }).slice(0, 6);
+      const rank = (title: string) => {
+        if (/Chairperson/i.test(title)) return 0;
+        if (/Dean/i.test(title)) return 1;
+        if (/Associate Chair/i.test(title)) return 2;
+        if (/Professor/i.test(title) && !/Associate/i.test(title) && !/Assistant/i.test(title)) return 3;
+        if (/Associate Professor/i.test(title)) return 4;
+        if (/Assistant Professor/i.test(title)) return 5;
+        return 6;
+      };
+      return cseFaculty.sort((a, b) => rank(a.title) - rank(b.title));
     },
     [],
   );
