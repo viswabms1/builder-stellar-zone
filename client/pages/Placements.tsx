@@ -375,7 +375,7 @@ export default function Placements() {
         </div>
       </section>
 
-      {/* Programs by School */}
+      {/* Programs by School - Expandable */}
       <section className="px-6 py-20">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -385,26 +385,80 @@ export default function Placements() {
               </span>
             </h2>
             <p className="text-lg text-foreground max-w-3xl mx-auto">
-              Excellence in placements across diverse academic disciplines
+              Click on any school to view batch-wise placement data and statistics
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {schools.map((school, index) => (
-              <Card
-                key={index}
-                className="bg-card/50 backdrop-blur-sm border border-border/50 hover:border-orange-500/30 transition-all duration-300"
-              >
-                <CardHeader>
-                  <div className="w-10 h-10 rounded-full bg-orange-500/10 flex items-center justify-center mb-3">
-                    <BookOpen className="w-5 h-5 text-orange-500" />
+          <div className="space-y-4">
+            {placementData.map((school) => (
+              <div key={school.key} className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl overflow-hidden hover:border-orange-500/30 transition-all duration-300">
+                <button
+                  onClick={() => toggleSchool(school.key)}
+                  className="w-full px-6 py-6 flex items-center justify-between hover:bg-orange-500/5 transition-colors"
+                >
+                  <div className="flex items-start gap-4 text-left">
+                    <div className="w-10 h-10 rounded-full bg-orange-500/10 flex items-center justify-center flex-shrink-0">
+                      <BookOpen className="w-5 h-5 text-orange-500" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold text-foreground mb-1">{school.name}</h3>
+                      <p className="text-sm text-foreground">{school.programs}</p>
+                    </div>
                   </div>
-                  <CardTitle className="text-foreground">{school.name}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-foreground">{school.programs}</p>
-                </CardContent>
-              </Card>
+                  <ChevronDown
+                    className={`w-5 h-5 text-orange-500 flex-shrink-0 transition-transform duration-300 ${
+                      expandedSchools[school.key] ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
+
+                {expandedSchools[school.key] && (
+                  <div className="border-t border-border/30 px-6 py-6 bg-gradient-to-b from-orange-500/5 to-transparent">
+                    {school.subCategories ? (
+                      <div className="space-y-6">
+                        {school.subCategories.map((subCategory, subIdx) => (
+                          <div key={subIdx}>
+                            <h4 className="text-base font-semibold text-foreground mb-3">{subCategory.name}</h4>
+                            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
+                              {subCategory.batches.map((batch, batchIdx) => (
+                                <a
+                                  key={batchIdx}
+                                  href={batch.link}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="flex items-center gap-3 px-4 py-3 bg-card/50 border border-border/30 rounded-xl hover:border-orange-500/50 hover:bg-orange-500/5 transition-all duration-300 group"
+                                >
+                                  <FileText className="w-4 h-4 text-orange-500 flex-shrink-0" />
+                                  <span className="text-sm font-medium text-foreground group-hover:text-orange-500 transition-colors">
+                                    {batch.year} Batch
+                                  </span>
+                                </a>
+                              ))}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    ) : (
+                      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-3">
+                        {school.batches.map((batch, batchIdx) => (
+                          <a
+                            key={batchIdx}
+                            href={batch.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-3 px-4 py-3 bg-card/50 border border-border/30 rounded-xl hover:border-orange-500/50 hover:bg-orange-500/5 transition-all duration-300 group"
+                          >
+                            <FileText className="w-4 h-4 text-orange-500 flex-shrink-0" />
+                            <span className="text-sm font-medium text-foreground group-hover:text-orange-500 transition-colors">
+                              {batch.year} Batch
+                            </span>
+                          </a>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                )}
+              </div>
             ))}
           </div>
         </div>
