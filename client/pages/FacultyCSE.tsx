@@ -230,45 +230,20 @@ function LeadershipSection({ leadership }: LeadershipSectionProps) {
     return null;
   }
 
-  const dean = leadership.find((f) => /Dean/i.test(f.title));
-  const chairperson = leadership.find((f) => /Chairperson/i.test(f.title));
-  const associateChairs = leadership.filter((f) => /Associate Chair/i.test(f.title)).slice(0, 2);
-  const remainingLeadership = leadership.filter(
-    (f) => f.slug !== dean?.slug && f.slug !== chairperson?.slug && !associateChairs.find(ac => ac.slug === f.slug)
-  );
-
   return (
-    <section className="space-y-8">
+    <section className="space-y-6">
       <div className="text-center space-y-3">
-        <h2 className="headline-2 font-display">Department Leadership & Faculty</h2>
+        <h2 className="headline-2 font-display">CSE Faculty Directory</h2>
         <p className="max-w-3xl mx-auto text-lg text-foreground">
-          Meet the visionary leaders and dedicated faculty steering curriculum transformation, research innovation, and industry partnerships at DSU CSE.
+          Meet our dedicated faculty members steering curriculum transformation, research innovation, and industry partnerships.
         </p>
       </div>
 
-      <div className="grid gap-6 md:grid-cols-3 lg:grid-cols-4">
-        {dean && <LeadershipCard faculty={dean} />}
-        {chairperson && <LeadershipCard faculty={chairperson} />}
+      <div className="grid gap-4 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6">
+        {leadership.map((faculty) => (
+          <FacultyGridCard key={faculty.slug} faculty={faculty} />
+        ))}
       </div>
-
-      {associateChairs.length > 0 && (
-        <div className="grid gap-6 md:grid-cols-3 lg:grid-cols-4">
-          {associateChairs.map((faculty) => (
-            <LeadershipCard key={faculty.slug} faculty={faculty} />
-          ))}
-        </div>
-      )}
-
-      {remainingLeadership.length > 0 && (
-        <div>
-          <h3 className="text-center text-lg font-semibold text-foreground mb-6">Senior Faculty</h3>
-          <div className="grid gap-6 md:grid-cols-3 lg:grid-cols-4">
-            {remainingLeadership.map((faculty) => (
-              <LeadershipCard key={faculty.slug} faculty={faculty} />
-            ))}
-          </div>
-        </div>
-      )}
     </section>
   );
 }
