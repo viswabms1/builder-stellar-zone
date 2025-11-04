@@ -200,6 +200,9 @@ function LeadershipSection({ leadership }: LeadershipSectionProps) {
     return null;
   }
 
+  const chairperson = leadership.find((f) => /Chairperson/i.test(f.title));
+  const otherLeadership = leadership.filter((f) => !/Chairperson/i.test(f.title));
+
   return (
     <section className="space-y-8">
       <div className="text-center space-y-3">
@@ -208,12 +211,85 @@ function LeadershipSection({ leadership }: LeadershipSectionProps) {
           Meet the visionary leaders and dedicated faculty steering curriculum transformation, research innovation, and industry partnerships at DSU CSE.
         </p>
       </div>
-      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-        {leadership.map((faculty) => (
-          <Card
-            key={faculty.slug}
-            className="group overflow-hidden border border-border/40 bg-card/80 shadow-lg transition hover:-translate-y-1 hover:shadow-brand-magenta/20"
-          >
+      {chairperson && (
+        <div className="mb-8">
+          <div className="text-center mb-4">
+            <Badge className="bg-brand-magenta/20 text-brand-magenta border border-brand-magenta/40 px-4 py-2 text-xs font-semibold">
+              Department Chairperson
+            </Badge>
+          </div>
+          <div className="max-w-sm mx-auto">
+            <Card
+              key={chairperson.slug}
+              className="group overflow-hidden border-2 border-brand-magenta/60 bg-gradient-to-br from-brand-magenta/10 to-card/80 shadow-lg hover:shadow-brand-magenta/30 transition hover:-translate-y-1"
+            >
+              <div className="relative">
+                <AspectRatio ratio={3 / 4}>
+                  <img
+                    src={chairperson.image}
+                    alt={chairperson.name}
+                    className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                </AspectRatio>
+                <div className="absolute bottom-0 w-full p-4 text-white">
+                  <p className="text-sm opacity-80">{chairperson.title}</p>
+                  <p className="text-lg font-semibold">{chairperson.name}</p>
+                </div>
+              </div>
+              <CardContent className="space-y-4 p-5 text-sm text-foreground">
+                {chairperson.qualifications ? (
+                  <p>
+                    <span className="font-semibold text-foreground">
+                      Qualifications:
+                    </span>{" "}
+                    {chairperson.qualifications}
+                  </p>
+                ) : null}
+                <div className="flex flex-wrap gap-2">
+                  <Button
+                    size="sm"
+                    className="bg-brand-gradient text-foreground"
+                    asChild
+                  >
+                    <Link
+                      to={`/academics/engineering/computer-science/faculty/${chairperson.slug}`}
+                    >
+                      View profile
+                      <ChevronRight className="ml-1 h-3.5 w-3.5" />
+                    </Link>
+                  </Button>
+                  {chairperson.profileUrl ? (
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="border-brand-magenta/30 hover:bg-brand-magenta/10"
+                      asChild
+                    >
+                      <a
+                        href={chairperson.profileUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        Download CV
+                      </a>
+                    </Button>
+                  ) : null}
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      )}
+      {otherLeadership.length > 0 && (
+        <div>
+          <h3 className="text-center text-lg font-semibold text-foreground mb-6">Other Leadership</h3>
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {otherLeadership.map((faculty) => (
+              <Card
+                key={faculty.slug}
+                className="group overflow-hidden border border-border/40 bg-card/80 shadow-lg transition hover:-translate-y-1 hover:shadow-brand-magenta/20"
+              >
             <div className="relative">
               <AspectRatio ratio={3 / 4}>
                 <img
@@ -269,8 +345,10 @@ function LeadershipSection({ leadership }: LeadershipSectionProps) {
               </div>
             </CardContent>
           </Card>
-        ))}
-      </div>
+            ))}
+          </div>
+        </div>
+      )}
     </section>
   );
 }
