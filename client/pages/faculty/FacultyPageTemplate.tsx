@@ -74,7 +74,7 @@ export default function FacultyPageTemplate({ faculty }: FacultyPageTemplateProp
 
             <Card className="border border-border/50 bg-card/50">
               <CardHeader>
-                <CardTitle className="font-display">Professional Focus</CardTitle>
+                <CardTitle className="font-display">Area of Research</CardTitle>
               </CardHeader>
               <CardContent className="text-sm text-foreground font-body">
                 <p>
