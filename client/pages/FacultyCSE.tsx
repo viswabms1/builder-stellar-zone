@@ -205,7 +205,7 @@ function LeadershipCard({ faculty }: { faculty: FacultyEntry }) {
   return (
     <Card className="group overflow-hidden border border-border/40 bg-card/80 shadow-lg transition hover:-translate-y-1 hover:shadow-brand-magenta/20">
       <div className="relative">
-        <AspectRatio ratio={3 / 4}>
+        <AspectRatio ratio={2 / 3}>
           <img
             src={faculty.image}
             alt={faculty.name}
@@ -227,36 +227,18 @@ function LeadershipCard({ faculty }: { faculty: FacultyEntry }) {
             {faculty.qualifications}
           </p>
         ) : null}
-        <div className="flex flex-wrap gap-2">
-          <Button
-            size="sm"
-            className="bg-brand-gradient text-foreground"
-            asChild
+        <Button
+          size="sm"
+          className="w-full bg-brand-gradient text-foreground"
+          asChild
+        >
+          <Link
+            to={`/academics/engineering/computer-science/faculty/${faculty.slug}`}
           >
-            <Link
-              to={`/academics/engineering/computer-science/faculty/${faculty.slug}`}
-            >
-              View profile
-              <ChevronRight className="ml-1 h-3.5 w-3.5" />
-            </Link>
-          </Button>
-          {faculty.profileUrl ? (
-            <Button
-              variant="outline"
-              size="sm"
-              className="border-brand-magenta/30 hover:bg-brand-magenta/10"
-              asChild
-            >
-              <a
-                href={faculty.profileUrl}
-                target="_blank"
-                rel="noreferrer"
-              >
-                Download CV
-              </a>
-            </Button>
-          ) : null}
-        </div>
+            View profile
+            <ChevronRight className="ml-1 h-3.5 w-3.5" />
+          </Link>
+        </Button>
       </CardContent>
     </Card>
   );
