@@ -47,8 +47,14 @@ export default function FacultyCSE() {
   }, []);
 
   const leadership = useMemo(
-    () =>
-      cseFaculty.filter((f) => /Dean|Chair|Head/i.test(f.title)).slice(0, 6),
+    () => {
+      const leaders = cseFaculty.filter((f) => /Dean|Chair|Chairperson|Head/i.test(f.title));
+      return leaders.sort((a, b) => {
+        if (/Chairperson/i.test(a.title)) return -1;
+        if (/Chairperson/i.test(b.title)) return 1;
+        return 0;
+      }).slice(0, 6);
+    },
     [],
   );
 
