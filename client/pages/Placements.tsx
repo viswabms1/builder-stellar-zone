@@ -33,6 +33,13 @@ export default function Placements() {
     }));
   };
 
+  const toggleRecruiter = (recruiterKey: string) => {
+    setExpandedRecruiters((prev) => ({
+      ...prev,
+      [recruiterKey]: !prev[recruiterKey],
+    }));
+  };
+
   const placementData = [
     {
       key: "soe",
