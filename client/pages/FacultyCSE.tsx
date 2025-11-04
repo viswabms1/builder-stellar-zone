@@ -66,10 +66,6 @@ const filterOptions: Array<{
 ];
 
 export default function FacultyCSE() {
-  const [search, setSearch] = useState("");
-  const [activeFilter, setActiveFilter] = useState<FilterKey>("all");
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
   const stats = useMemo(() => {
     const total = cseFaculty.length;
     const leadershipCount = cseFaculty.filter((f) =>
@@ -94,7 +90,7 @@ export default function FacultyCSE() {
 
   const leadership = useMemo(
     () =>
-      cseFaculty.filter((f) => /Dean|Chair|Head/i.test(f.title)).slice(0, 3),
+      cseFaculty.filter((f) => /Dean|Chair|Head/i.test(f.title)).slice(0, 6),
     [],
   );
 
@@ -106,80 +102,12 @@ export default function FacultyCSE() {
     return Array.from(interests).slice(0, 8);
   }, []);
 
-  const filteredFaculty = useMemo(() => {
-    const query = search.trim().toLowerCase();
-    const rank = (title: string) => {
-      if (/Dean|Chair|Head/i.test(title)) return 0;
-      if (/Professor/i.test(title) && !/Associate|Assistant/i.test(title))
-        return 1;
-      if (/Associate Professor/i.test(title)) return 2;
-      if (/Assistant Professor/i.test(title)) return 3;
-      return 4;
-    };
-
-    return cseFaculty
-      .filter((faculty) => {
-        const matchesSearch =
-          !query ||
-          faculty.name.toLowerCase().includes(query) ||
-          (faculty.title ?? "").toLowerCase().includes(query) ||
-          (faculty.interests ?? []).some((interest) =>
-            interest.toLowerCase().includes(query),
-          );
-
-        if (!matchesSearch) {
-          return false;
-        }
-
-        switch (activeFilter) {
-          case "leadership":
-            return /Dean|Chair|Head/i.test(faculty.title);
-          case "professor":
-            return (
-              /Professor/i.test(faculty.title) &&
-              !/Associate/i.test(faculty.title) &&
-              !/Assistant/i.test(faculty.title)
-            );
-          case "associate":
-            return /Associate Professor/i.test(faculty.title);
-          case "assistant":
-            return /Assistant Professor/i.test(faculty.title);
-          default:
-            return true;
-        }
-      })
-      .sort((a, b) => {
-        const rankDiff = rank(a.title) - rank(b.title);
-        if (rankDiff !== 0) {
-          return rankDiff;
-        }
-        return a.name.localeCompare(b.name);
-      });
-  }, [activeFilter, search]);
-
   return (
     <div className="min-h-screen bg-background text-foreground">
       <HeroSection stats={stats} interests={facultyInterests} />
-      <div className="relative px-6 py-8 md:py-12">
-        <div className="mx-auto max-w-7xl grid gap-8 lg:grid-cols-3">
-          {/* Main Content */}
-          <div className="lg:col-span-2 space-y-12">
-            <LeadershipSection leadership={leadership} />
-            <DirectorySection
-              activeFilter={activeFilter}
-              onFilterChange={setActiveFilter}
-              onSearchChange={setSearch}
-              search={search}
-              filteredFaculty={filteredFaculty}
-            />
-          </div>
-          {/* Sidebar Navigation */}
-          <div className="lg:col-span-1">
-            <DepartmentSidebar
-              mobileOpen={mobileMenuOpen}
-              onMobileClose={() => setMobileMenuOpen(false)}
-            />
-          </div>
+      <div className="relative px-6 py-16">
+        <div className="mx-auto max-w-7xl">
+          <LeadershipSection leadership={leadership} />
         </div>
       </div>
       <ClosingSection />
