@@ -243,83 +243,75 @@ function LeadershipSection({ leadership }: LeadershipSectionProps) {
   }
 
   return (
-    <section className="px-6 py-16">
-      <div className="mx-auto max-w-7xl space-y-6">
-        <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
-          <div>
-            <h2 className="headline-3 font-display">Leadership Spotlight</h2>
-            <p className="text-sm text-foreground sm:text-base">
-              Visionaries steering curriculum transformation, research
-              innovation, and industry partnerships.
-            </p>
-          </div>
-          <Badge className="w-fit rounded-full bg-brand-magenta/15 px-4 py-2 text-xs font-semibold text-brand-magenta">
-            Faculty Senate &amp; Program Chairs
-          </Badge>
-        </div>
-        <div className="grid gap-6 lg:grid-cols-3">
-          {leadership.map((faculty) => (
-            <Card
-              key={faculty.slug}
-              className="group overflow-hidden border border-border/40 bg-card/80 shadow-lg transition hover:-translate-y-1 hover:shadow-brand-magenta/20"
-            >
-              <div className="relative">
-                <AspectRatio ratio={3 / 4}>
-                  <img
-                    src={faculty.image}
-                    alt={faculty.name}
-                    className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-                </AspectRatio>
-                <div className="absolute bottom-0 w-full p-4 text-foreground">
-                  <p className="text-sm opacity-80">{faculty.title}</p>
-                  <p className="text-lg font-semibold">{faculty.name}</p>
-                </div>
+    <section className="space-y-8">
+      <div className="text-center space-y-3">
+        <h2 className="headline-2 font-display">Department Leadership & Faculty</h2>
+        <p className="max-w-3xl mx-auto text-lg text-foreground">
+          Meet the visionary leaders and dedicated faculty steering curriculum transformation, research innovation, and industry partnerships at DSU CSE.
+        </p>
+      </div>
+      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        {leadership.map((faculty) => (
+          <Card
+            key={faculty.slug}
+            className="group overflow-hidden border border-border/40 bg-card/80 shadow-lg transition hover:-translate-y-1 hover:shadow-brand-magenta/20"
+          >
+            <div className="relative">
+              <AspectRatio ratio={3 / 4}>
+                <img
+                  src={faculty.image}
+                  alt={faculty.name}
+                  className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+              </AspectRatio>
+              <div className="absolute bottom-0 w-full p-4 text-white">
+                <p className="text-sm opacity-80">{faculty.title}</p>
+                <p className="text-lg font-semibold">{faculty.name}</p>
               </div>
-              <CardContent className="space-y-4 p-5 text-sm text-foreground">
-                {faculty.qualifications ? (
-                  <p>
-                    <span className="font-semibold text-foreground">
-                      Qualifications:
-                    </span>{" "}
-                    {faculty.qualifications}
-                  </p>
-                ) : null}
-                <div className="flex flex-wrap gap-2">
+            </div>
+            <CardContent className="space-y-4 p-5 text-sm text-foreground">
+              {faculty.qualifications ? (
+                <p>
+                  <span className="font-semibold text-foreground">
+                    Qualifications:
+                  </span>{" "}
+                  {faculty.qualifications}
+                </p>
+              ) : null}
+              <div className="flex flex-wrap gap-2">
+                <Button
+                  size="sm"
+                  className="bg-brand-gradient text-foreground"
+                  asChild
+                >
+                  <Link
+                    to={`/academics/engineering/computer-science/faculty/${faculty.slug}`}
+                  >
+                    View profile
+                    <ChevronRight className="ml-1 h-3.5 w-3.5" />
+                  </Link>
+                </Button>
+                {faculty.profileUrl ? (
                   <Button
+                    variant="outline"
                     size="sm"
-                    className="bg-brand-gradient text-foreground"
+                    className="border-brand-magenta/30 hover:bg-brand-magenta/10"
                     asChild
                   >
-                    <Link
-                      to={`/academics/engineering/computer-science/faculty/${faculty.slug}`}
+                    <a
+                      href={faculty.profileUrl}
+                      target="_blank"
+                      rel="noreferrer"
                     >
-                      View profile
-                      <ChevronRight className="ml-1 h-3.5 w-3.5" />
-                    </Link>
+                      Download CV
+                    </a>
                   </Button>
-                  {faculty.profileUrl ? (
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      className="border-brand-magenta/30 hover:bg-brand-magenta/10"
-                      asChild
-                    >
-                      <a
-                        href={faculty.profileUrl}
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        Download CV
-                      </a>
-                    </Button>
-                  ) : null}
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+                ) : null}
+              </div>
+            </CardContent>
+          </Card>
+        ))}
       </div>
     </section>
   );
