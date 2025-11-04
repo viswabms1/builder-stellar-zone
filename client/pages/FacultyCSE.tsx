@@ -108,9 +108,9 @@ function HeroSection({ stats }: HeroSectionProps) {
             <p className="max-w-2xl text-lg md:text-xl text-foreground/85 leading-relaxed">
               Our faculty are seasoned researchers, innovators, and mentors guiding the next generation of technologists through cutting-edge labs, industry collaborations, and personalized mentorship.
             </p>
-            <div className="flex flex-col items-center gap-3 sm:flex-row lg:items-start">
+            <div className="flex flex-col items-center gap-4 sm:flex-row lg:items-start pt-4">
               <Button
-                className="bg-brand-gradient text-foreground"
+                className="bg-brand-gradient text-foreground font-semibold hover:shadow-lg transition-all duration-300"
                 size="lg"
                 asChild
               >
@@ -121,7 +121,7 @@ function HeroSection({ stats }: HeroSectionProps) {
               <Button
                 variant="outline"
                 size="lg"
-                className="border-brand-magenta/40 hover:bg-brand-magenta/10"
+                className="border-2 border-brand-magenta/40 hover:bg-brand-magenta/10 font-semibold transition-all duration-300"
                 asChild
               >
                 <a href="mailto:chairman-cse@dsu.edu.in">
@@ -130,7 +130,7 @@ function HeroSection({ stats }: HeroSectionProps) {
               </Button>
             </div>
           </div>
-          <div className="grid w-full max-w-xl grid-cols-2 gap-4 rounded-3xl border border-white/20 dark:border-slate-700/40 bg-white/60 dark:bg-slate-900/60 p-6 shadow-xl backdrop-blur lg:max-w-md">
+          <div className="grid w-full max-w-lg grid-cols-2 gap-5 rounded-3xl border border-white/30 dark:border-slate-700/40 bg-white/70 dark:bg-slate-900/70 p-8 shadow-2xl backdrop-blur-lg lg:max-w-md flex-1">
             <StatTile
               icon={Users}
               value={`${stats.total}`}
