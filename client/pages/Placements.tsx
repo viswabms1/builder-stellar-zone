@@ -24,6 +24,7 @@ import { useState } from "react";
 
 export default function Placements() {
   const [expandedSchools, setExpandedSchools] = useState<Record<string, boolean>>({});
+  const [expandedRecruiters, setExpandedRecruiters] = useState<Record<string, boolean>>({});
 
   const toggleSchool = (schoolKey: string) => {
     setExpandedSchools((prev) => ({
