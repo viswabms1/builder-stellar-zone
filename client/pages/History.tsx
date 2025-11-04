@@ -164,19 +164,75 @@ export default function History() {
           <div className="inline-flex items-center px-4 py-2 bg-orange-500/10 rounded-full border border-orange-500/20 mb-8">
             <Calendar className="w-4 h-4 text-orange-500 mr-2" />
             <span className="text-sm font-medium text-orange-500">
-              Our Journey
+              Founding Pillars
             </span>
           </div>
 
           <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
             <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
-              A Legacy of Excellence
+              Inspiring the Shape of Things to Come
             </span>
           </h1>
 
           <p className="text-lg md:text-xl text-foreground mb-8 leading-relaxed max-w-3xl mx-auto">
-            From a vision of quality education to a globally recognized university, discover the milestones that shaped DSU.
+            A legacy built on vision, excellence, and commitment to transforming lives through quality education. From the Mahatma Gandhi Vidya Peetha Education Trust to Dayananda Sagar University.
           </p>
+        </div>
+      </section>
+
+      {/* Founders Section */}
+      <section className="px-6 py-20">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              <span className="text-foreground">Our </span>
+              <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
+                Founders
+              </span>
+            </h2>
+            <p className="text-lg text-foreground max-w-3xl mx-auto">
+              Visionary leaders who established the foundation of educational excellence
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {founders.map((founder, index) => {
+              const Icon = founder.icon;
+              return (
+                <Card
+                  key={index}
+                  className="bg-card/50 backdrop-blur-sm border border-border/50 hover:border-orange-500/30 transition-all duration-300"
+                >
+                  <CardHeader>
+                    <div className="flex items-start gap-4 mb-4">
+                      <div className="w-12 h-12 rounded-2xl bg-orange-500/20 flex items-center justify-center flex-shrink-0">
+                        <Icon className="w-6 h-6 text-orange-500" />
+                      </div>
+                      <div>
+                        <CardTitle className="text-2xl">{founder.name}</CardTitle>
+                        <p className="text-sm text-orange-500 font-semibold mt-1">{founder.title}</p>
+                      </div>
+                    </div>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <p className="text-sm text-foreground italic border-l-2 border-orange-500/30 pl-3">
+                      {founder.background}
+                    </p>
+                    <div className="space-y-2">
+                      {founder.achievements.map((achievement, idx) => (
+                        <div key={idx} className="flex items-start gap-2">
+                          <CheckCircle className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5" />
+                          <span className="text-sm text-foreground">
+                            {achievement}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
         </div>
       </section>
 
