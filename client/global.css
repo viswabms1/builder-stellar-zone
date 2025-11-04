@@ -194,4 +194,21 @@
   .text-glow {
     text-shadow: 0 0 10px currentColor;
   }
+
+  /* Dark mode shade utilities */
+  .dark-shade-1 {
+    @apply bg-slate-950 dark:bg-slate-950;
+  }
+
+  .dark-shade-2 {
+    @apply bg-slate-900 dark:bg-slate-900;
+  }
+
+  .dark-shade-3 {
+    @apply bg-slate-800 dark:bg-slate-800;
+  }
+
+  .dark-shade-4 {
+    @apply bg-slate-700 dark:bg-slate-700;
+  }
 }
