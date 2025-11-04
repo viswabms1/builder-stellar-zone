@@ -153,7 +153,7 @@ export default function History() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 bg-gradient-to-br from-orange-500/10 via-red-600/5 to-background">
+      <section className="relative bg-gradient-to-br from-orange-500/10 via-red-600/5 to-background overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-20 left-10 w-72 h-72 bg-orange-500/10 rounded-full filter blur-3xl animate-float"></div>
           <div
@@ -162,38 +162,35 @@ export default function History() {
           ></div>
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div className="text-center md:text-left">
-              <div className="inline-flex items-center px-4 py-2 bg-orange-500/10 rounded-full border border-orange-500/20 mb-8">
-                <Calendar className="w-4 h-4 text-orange-500 mr-2" />
-                <span className="text-sm font-medium text-orange-500">
-                  Founding Pillars
-                </span>
-              </div>
+        <div className="relative w-full">
+          <img
+            src="https://www.dsu.edu.in/images/Home/history.jpg"
+            alt="DSU History"
+            className="w-full h-auto max-h-[600px] object-contain"
+            onError={(e) => {
+              (e.currentTarget as HTMLImageElement).style.display = 'none';
+            }}
+          />
+        </div>
 
-              <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-                <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
-                  Inspiring the Shape of Things to Come
-                </span>
-              </h1>
+        <div className="relative max-w-7xl mx-auto px-6 py-20 lg:py-32">
+          <div className="text-center">
+            <div className="inline-flex items-center px-4 py-2 bg-orange-500/10 rounded-full border border-orange-500/20 mb-8">
+              <Calendar className="w-4 h-4 text-orange-500 mr-2" />
+              <span className="text-sm font-medium text-orange-500">
+                Founding Pillars
+              </span>
+            </div>
 
-              <p className="text-lg md:text-xl text-foreground mb-8 leading-relaxed">
-                A legacy built on vision, excellence, and commitment to transforming lives through quality education. From the Mahatma Gandhi Vidya Peetha Education Trust to Dayananda Sagar University.
-              </p>
-            </div>
-            <div className="hidden md:flex items-center justify-center">
-              <div className="relative w-full h-96 rounded-2xl overflow-hidden border border-orange-500/20 shadow-2xl">
-                <img
-                  src="https://www.dsu.edu.in/images/Home/history.jpg"
-                  alt="DSU History"
-                  className="w-full h-full object-cover"
-                  onError={(e) => {
-                    (e.currentTarget as HTMLImageElement).style.display = 'none';
-                  }}
-                />
-              </div>
-            </div>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+              <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
+                Inspiring the Shape of Things to Come
+              </span>
+            </h1>
+
+            <p className="text-lg md:text-xl text-foreground mb-8 leading-relaxed max-w-3xl mx-auto">
+              A legacy built on vision, excellence, and commitment to transforming lives through quality education. From the Mahatma Gandhi Vidya Peetha Education Trust to Dayananda Sagar University.
+            </p>
           </div>
         </div>
       </section>
