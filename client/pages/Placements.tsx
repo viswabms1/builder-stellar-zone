@@ -683,51 +683,65 @@ export default function Placements() {
 
           {/* Testimonial Carousel */}
           <div className="relative">
-            <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-3xl p-8 md:p-12 min-h-96 flex flex-col justify-between hover:border-orange-500/30 transition-all duration-300">
-              {/* Quote Icon */}
-              <div className="absolute top-6 right-6 md:top-8 md:right-8 opacity-10">
-                <Quote className="w-16 h-16 md:w-24 md:h-24 text-orange-500" />
+            <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-3xl p-8 md:p-12 flex flex-col md:flex-row gap-8 items-start hover:border-orange-500/30 transition-all duration-300">
+              {/* Student Avatar */}
+              <div className="flex-shrink-0">
+                <div className={`w-24 h-24 md:w-32 md:h-32 rounded-2xl bg-gradient-to-br ${testimonials[testimonialIndex].color} flex items-center justify-center shadow-lg`}>
+                  <span className="text-3xl md:text-4xl font-bold text-white">
+                    {testimonials[testimonialIndex].initials}
+                  </span>
+                </div>
               </div>
 
               {/* Testimonial Content */}
-              <div className="relative z-10">
-                <p className="text-lg md:text-xl leading-relaxed text-foreground italic mb-8">
+              <div className="flex-1 relative min-h-64 md:min-h-56 flex flex-col justify-between">
+                {/* Quote Icon */}
+                <div className="absolute -top-4 right-0 opacity-10">
+                  <Quote className="w-16 h-16 text-orange-500" />
+                </div>
+
+                {/* Quote Text */}
+                <p className="text-lg md:text-xl leading-relaxed text-foreground italic mb-8 relative z-10">
                   "{testimonials[testimonialIndex].quote}"
                 </p>
-              </div>
 
-              {/* Author Info */}
-              <div className="relative z-10 border-t border-border/30 pt-6">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <h4 className="text-lg font-bold text-foreground mb-1">
-                      {testimonials[testimonialIndex].name}
-                    </h4>
-                    <p className="text-sm text-foreground/70 mb-2">
-                      {testimonials[testimonialIndex].branch}
-                    </p>
-                    <div className="inline-flex items-center gap-2 px-3 py-1 bg-orange-500/10 rounded-full">
-                      <Briefcase className="w-4 h-4 text-orange-500" />
-                      <span className="text-sm font-semibold text-orange-500">
-                        {testimonials[testimonialIndex].company}
-                      </span>
+                {/* Author Info */}
+                <div className="border-t border-border/30 pt-6 relative z-10">
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                    <div>
+                      <h4 className="text-lg font-bold text-foreground mb-1">
+                        {testimonials[testimonialIndex].name}
+                      </h4>
+                      <p className="text-sm text-foreground/70 mb-2">
+                        {testimonials[testimonialIndex].branch}
+                      </p>
+                      <div className="inline-flex items-center gap-2 px-3 py-1 bg-orange-500/10 rounded-full">
+                        <Briefcase className="w-4 h-4 text-orange-500" />
+                        <span className="text-sm font-semibold text-orange-500">
+                          {testimonials[testimonialIndex].company}
+                        </span>
+                      </div>
                     </div>
-                  </div>
 
-                  {/* Navigation Arrows */}
-                  <div className="flex gap-2">
-                    <button
-                      onClick={prevTestimonial}
-                      className="w-10 h-10 rounded-full bg-orange-500/10 hover:bg-orange-500/20 flex items-center justify-center text-orange-500 transition-all duration-300"
-                    >
-                      <ChevronLeft className="w-5 h-5" />
-                    </button>
-                    <button
-                      onClick={nextTestimonial}
-                      className="w-10 h-10 rounded-full bg-orange-500/10 hover:bg-orange-500/20 flex items-center justify-center text-orange-500 transition-all duration-300"
-                    >
-                      <ChevronRight className="w-5 h-5" />
-                    </button>
+                    {/* Navigation Arrows */}
+                    <div className="flex gap-2">
+                      <button
+                        onClick={prevTestimonial}
+                        onMouseEnter={() => setAutoScroll(false)}
+                        onMouseLeave={() => setAutoScroll(true)}
+                        className="w-10 h-10 rounded-full bg-orange-500/10 hover:bg-orange-500/20 flex items-center justify-center text-orange-500 transition-all duration-300"
+                      >
+                        <ChevronLeft className="w-5 h-5" />
+                      </button>
+                      <button
+                        onClick={nextTestimonial}
+                        onMouseEnter={() => setAutoScroll(false)}
+                        onMouseLeave={() => setAutoScroll(true)}
+                        className="w-10 h-10 rounded-full bg-orange-500/10 hover:bg-orange-500/20 flex items-center justify-center text-orange-500 transition-all duration-300"
+                      >
+                        <ChevronRight className="w-5 h-5" />
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
