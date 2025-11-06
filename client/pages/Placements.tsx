@@ -21,8 +21,81 @@ import {
   FileText,
 } from "lucide-react";
 import { useState } from "react";
+import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 
 export default function Placements() {
+  const [testimonialIndex, setTestimonialIndex] = useState(0);
+
+  const testimonials = [
+    {
+      name: "Janamruth U",
+      branch: "Mechanical Engineering",
+      company: "Continental AG",
+      quote: "I can positively say that Dayananda Sagar University has been the best part of my life and I have made some of the best friends a person could have. The most I admire is the support that I received from DSU especially from the Department of Mechanical Engineering. I'm also grateful to the Training and Placement Department.",
+    },
+    {
+      name: "Aishwarya K S",
+      branch: "Computer Science & Engineering",
+      company: "Accenture and Infosys",
+      quote: "DSU has helped me in moulding and establishing my career. DSU offers unique combination of learning and self development. University has provided us a very enhanced and efficient platform for the exposure by training and placement department. I am very grateful to the university for providing us the best of placement opportunities.",
+    },
+    {
+      name: "Aashna Bhaskaran",
+      branch: "Electronics & Communication Engineering",
+      company: "Cognizant and Accenture",
+      quote: "The placement department was extremely helpful in training us both on the interpersonal and technical fronts with career oriented workshops and seminars starting from the third year itself. The sheer amount of efforts put in by the placement cell at DSU remains unparalleled and unchallenged.",
+    },
+    {
+      name: "Jayanth T M",
+      branch: "Mechanical Engineering",
+      company: "Quest Global",
+      quote: "DSU has been a wonderful platform for learning and experimenting new ideas. The faculties here have helped me in shaping my life starting from a student to a professional.",
+    },
+    {
+      name: "Pavithra S R",
+      branch: "Electronics & Communication Engineering",
+      company: "Accenture and Infosys",
+      quote: "It has been a great experience to be part of 'Dayananda Sagar University'. I am thankful to all my faculties and placement department for guiding and leading my path towards excellence.",
+    },
+    {
+      name: "Ashritha R Reddy",
+      branch: "Computer Science & Engineering",
+      company: "Accenture and Infosys",
+      quote: "DSU has given me a joyous and fun-filled experience, where I have learnt to nurture my dreams and fulfill my ambitions. It has provided me a lot of exposure to various MNC's of which I have succeeded in being placed in Accenture and Infosys.",
+    },
+    {
+      name: "Divya M Kannur",
+      branch: "Electronics & Communication Engineering",
+      company: "Ernst Young",
+      quote: "Dayananda Sagar University has helped us to get quality education and prepared us for industrial culture by exposing us to various projects, hackathons and other competitions. Faculty were always supportive and helped us to publish papers.",
+    },
+    {
+      name: "Teena Varghese",
+      branch: "Computer Science & Engineering",
+      company: "Accenture and Infosys",
+      quote: "My life at Dayananda Sagar University made me stronger and took me a step ahead of being an independent woman. The infrastructure at Dayananda Sagar University is excellent.",
+    },
+    {
+      name: "Lavanya S",
+      branch: "Computer Science & Engineering",
+      company: "Infosys and Accenture",
+      quote: "My experience at DSU has been best journey, full of learning opportunities that were filled with fun and frolic. The management and staff are always available to help us and their suggestions helped me in my overall development.",
+    },
+    {
+      name: "Nithin S",
+      branch: "Computer Science & Engineering",
+      company: "Infosys",
+      quote: "Dayananda Sagar University has given me an amazing platform for my overall growth and development. I had countless opportunities to develop analytical and problem solving skills as well as leadership qualities.",
+    },
+  ];
+
+  const nextTestimonial = () => {
+    setTestimonialIndex((prev) => (prev + 1) % testimonials.length);
+  };
+
+  const prevTestimonial = () => {
+    setTestimonialIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  };
   const [expandedSchools, setExpandedSchools] = useState<Record<string, boolean>>({});
   const [expandedRecruiters, setExpandedRecruiters] = useState<Record<string, boolean>>({
     engineering: true,
@@ -557,6 +630,90 @@ export default function Placements() {
                 </Card>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* Student Testimonials Section */}
+      <section className="px-6 py-20 bg-gradient-to-br from-red-500/5 via-orange-500/5 to-background">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
+                Student Success Stories
+              </span>
+            </h2>
+            <p className="text-lg text-foreground max-w-3xl mx-auto">
+              Hear directly from our graduates about their DSU experience and career journey
+            </p>
+          </div>
+
+          {/* Testimonial Carousel */}
+          <div className="relative">
+            <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-3xl p-8 md:p-12 min-h-96 flex flex-col justify-between hover:border-orange-500/30 transition-all duration-300">
+              {/* Quote Icon */}
+              <div className="absolute top-6 right-6 md:top-8 md:right-8 opacity-10">
+                <Quote className="w-16 h-16 md:w-24 md:h-24 text-orange-500" />
+              </div>
+
+              {/* Testimonial Content */}
+              <div className="relative z-10">
+                <p className="text-lg md:text-xl leading-relaxed text-foreground italic mb-8">
+                  "{testimonials[testimonialIndex].quote}"
+                </p>
+              </div>
+
+              {/* Author Info */}
+              <div className="relative z-10 border-t border-border/30 pt-6">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <h4 className="text-lg font-bold text-foreground mb-1">
+                      {testimonials[testimonialIndex].name}
+                    </h4>
+                    <p className="text-sm text-foreground/70 mb-2">
+                      {testimonials[testimonialIndex].branch}
+                    </p>
+                    <div className="inline-flex items-center gap-2 px-3 py-1 bg-orange-500/10 rounded-full">
+                      <Briefcase className="w-4 h-4 text-orange-500" />
+                      <span className="text-sm font-semibold text-orange-500">
+                        {testimonials[testimonialIndex].company}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Navigation Arrows */}
+                  <div className="flex gap-2">
+                    <button
+                      onClick={prevTestimonial}
+                      className="w-10 h-10 rounded-full bg-orange-500/10 hover:bg-orange-500/20 flex items-center justify-center text-orange-500 transition-all duration-300"
+                    >
+                      <ChevronLeft className="w-5 h-5" />
+                    </button>
+                    <button
+                      onClick={nextTestimonial}
+                      className="w-10 h-10 rounded-full bg-orange-500/10 hover:bg-orange-500/20 flex items-center justify-center text-orange-500 transition-all duration-300"
+                    >
+                      <ChevronRight className="w-5 h-5" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Progress Indicator */}
+            <div className="flex justify-center gap-2 mt-8">
+              {testimonials.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setTestimonialIndex(index)}
+                  className={`h-2 rounded-full transition-all duration-300 ${
+                    index === testimonialIndex
+                      ? "w-8 bg-orange-500"
+                      : "w-2 bg-border hover:bg-orange-500/50"
+                  }`}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </section>
