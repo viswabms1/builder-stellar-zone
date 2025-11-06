@@ -676,10 +676,12 @@ export default function Placements() {
             <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-3xl p-8 md:p-12 flex flex-col md:flex-row gap-8 items-start hover:border-orange-500/30 transition-all duration-300">
               {/* Student Avatar */}
               <div className="flex-shrink-0">
-                <div className={`w-24 h-24 md:w-32 md:h-32 rounded-2xl bg-gradient-to-br ${testimonials[testimonialIndex].color} flex items-center justify-center shadow-lg`}>
-                  <span className="text-3xl md:text-4xl font-bold text-white">
-                    {testimonials[testimonialIndex].initials}
-                  </span>
+                <div className="w-24 h-24 md:w-32 md:h-32 rounded-2xl overflow-hidden shadow-lg border-4 border-orange-500/20">
+                  <img
+                    src={testimonials[testimonialIndex].image}
+                    alt={testimonials[testimonialIndex].name}
+                    className="w-full h-full object-cover object-center"
+                  />
                 </div>
               </div>
 
