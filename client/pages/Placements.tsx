@@ -20,80 +20,113 @@ import {
   ChevronDown,
   FileText,
 } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 
 export default function Placements() {
   const [testimonialIndex, setTestimonialIndex] = useState(0);
+  const [autoScroll, setAutoScroll] = useState(true);
 
   const testimonials = [
     {
       name: "Janamruth U",
+      initials: "JU",
       branch: "Mechanical Engineering",
       company: "Continental AG",
       quote: "I can positively say that Dayananda Sagar University has been the best part of my life and I have made some of the best friends a person could have. The most I admire is the support that I received from DSU especially from the Department of Mechanical Engineering. I'm also grateful to the Training and Placement Department.",
+      color: "from-blue-500 to-cyan-500",
     },
     {
       name: "Aishwarya K S",
+      initials: "AKS",
       branch: "Computer Science & Engineering",
       company: "Accenture and Infosys",
       quote: "DSU has helped me in moulding and establishing my career. DSU offers unique combination of learning and self development. University has provided us a very enhanced and efficient platform for the exposure by training and placement department. I am very grateful to the university for providing us the best of placement opportunities.",
+      color: "from-purple-500 to-pink-500",
     },
     {
       name: "Aashna Bhaskaran",
+      initials: "AB",
       branch: "Electronics & Communication Engineering",
       company: "Cognizant and Accenture",
       quote: "The placement department was extremely helpful in training us both on the interpersonal and technical fronts with career oriented workshops and seminars starting from the third year itself. The sheer amount of efforts put in by the placement cell at DSU remains unparalleled and unchallenged.",
+      color: "from-orange-500 to-red-500",
     },
     {
       name: "Jayanth T M",
+      initials: "JTM",
       branch: "Mechanical Engineering",
       company: "Quest Global",
       quote: "DSU has been a wonderful platform for learning and experimenting new ideas. The faculties here have helped me in shaping my life starting from a student to a professional.",
+      color: "from-green-500 to-emerald-500",
     },
     {
       name: "Pavithra S R",
+      initials: "PSR",
       branch: "Electronics & Communication Engineering",
       company: "Accenture and Infosys",
       quote: "It has been a great experience to be part of 'Dayananda Sagar University'. I am thankful to all my faculties and placement department for guiding and leading my path towards excellence.",
+      color: "from-indigo-500 to-blue-500",
     },
     {
       name: "Ashritha R Reddy",
+      initials: "ARR",
       branch: "Computer Science & Engineering",
       company: "Accenture and Infosys",
       quote: "DSU has given me a joyous and fun-filled experience, where I have learnt to nurture my dreams and fulfill my ambitions. It has provided me a lot of exposure to various MNC's of which I have succeeded in being placed in Accenture and Infosys.",
+      color: "from-pink-500 to-rose-500",
     },
     {
       name: "Divya M Kannur",
+      initials: "DMK",
       branch: "Electronics & Communication Engineering",
       company: "Ernst Young",
       quote: "Dayananda Sagar University has helped us to get quality education and prepared us for industrial culture by exposing us to various projects, hackathons and other competitions. Faculty were always supportive and helped us to publish papers.",
+      color: "from-yellow-500 to-amber-500",
     },
     {
       name: "Teena Varghese",
+      initials: "TV",
       branch: "Computer Science & Engineering",
       company: "Accenture and Infosys",
       quote: "My life at Dayananda Sagar University made me stronger and took me a step ahead of being an independent woman. The infrastructure at Dayananda Sagar University is excellent.",
+      color: "from-red-500 to-pink-500",
     },
     {
       name: "Lavanya S",
+      initials: "LS",
       branch: "Computer Science & Engineering",
       company: "Infosys and Accenture",
       quote: "My experience at DSU has been best journey, full of learning opportunities that were filled with fun and frolic. The management and staff are always available to help us and their suggestions helped me in my overall development.",
+      color: "from-teal-500 to-cyan-500",
     },
     {
       name: "Nithin S",
+      initials: "NS",
       branch: "Computer Science & Engineering",
       company: "Infosys",
       quote: "Dayananda Sagar University has given me an amazing platform for my overall growth and development. I had countless opportunities to develop analytical and problem solving skills as well as leadership qualities.",
+      color: "from-violet-500 to-purple-500",
     },
   ];
 
+  useEffect(() => {
+    if (!autoScroll) return;
+
+    const interval = setInterval(() => {
+      setTestimonialIndex((prev) => (prev + 1) % testimonials.length);
+    }, 5000); // Auto-scroll every 5 seconds
+
+    return () => clearInterval(interval);
+  }, [autoScroll, testimonials.length]);
+
   const nextTestimonial = () => {
+    setAutoScroll(false);
     setTestimonialIndex((prev) => (prev + 1) % testimonials.length);
   };
 
   const prevTestimonial = () => {
+    setAutoScroll(false);
     setTestimonialIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   };
   const [expandedSchools, setExpandedSchools] = useState<Record<string, boolean>>({});
