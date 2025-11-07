@@ -41,7 +41,11 @@ function VideoWithFrameCapture({ src }: { src: string }) {
     const video = videoRef.current;
     if (!video) return;
 
-    const captureFirstFrame = () => {
+    const captureFrameAtTime = () => {
+      video.currentTime = 0.33;
+    };
+
+    const captureFrame = () => {
       const canvas = document.createElement("canvas");
       canvas.width = video.videoWidth;
       canvas.height = video.videoHeight;
@@ -51,13 +55,19 @@ function VideoWithFrameCapture({ src }: { src: string }) {
         const posterUrl = canvas.toDataURL("image/jpeg", 0.9);
         video.poster = posterUrl;
       }
-      video.removeEventListener("loadedmetadata", captureFirstFrame);
+      video.removeEventListener("seeked", captureFrame);
     };
 
-    video.addEventListener("loadedmetadata", captureFirstFrame);
+    const onLoadedMetadata = () => {
+      video.addEventListener("seeked", captureFrame);
+      captureFrameAtTime();
+    };
+
+    video.addEventListener("loadedmetadata", onLoadedMetadata);
 
     return () => {
-      video.removeEventListener("loadedmetadata", captureFirstFrame);
+      video.removeEventListener("loadedmetadata", onLoadedMetadata);
+      video.removeEventListener("seeked", captureFrame);
     };
   }, [src]);
 
