@@ -466,11 +466,21 @@ export default function Index() {
                   className="group rounded-2xl overflow-hidden border border-border/50 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-magenta/10 transition-all"
                 >
                   <div className="relative">
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="h-44 w-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
-                    />
+                    {item.isVideo ? (
+                      <video
+                        src={item.image}
+                        className="h-44 w-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                        controls
+                        controlsList="nodownload"
+                        poster={item.image}
+                      />
+                    ) : (
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="h-44 w-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                      />
+                    )}
                     <div className="absolute top-3 left-3">
                       <Badge
                         className={`${item.color === "brand-orange" ? "bg-brand-orange/20 text-brand-orange" : item.color === "brand-magenta" ? "bg-brand-magenta/20 text-brand-magenta" : "bg-brand-blue/20 text-brand-blue"}`}
