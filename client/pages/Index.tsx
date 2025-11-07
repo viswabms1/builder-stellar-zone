@@ -79,6 +79,7 @@ function VideoWithFrameCapture({ src }: { src: string }) {
       controls
       controlsList="nodownload"
       preload="metadata"
+      crossOrigin="anonymous"
     />
   );
 }
