@@ -418,6 +418,7 @@ export default function Index() {
                   image:
                     "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2Fee8dd0baa1344765ab26d165e6fc0acc?alt=media&token=37176f13-60ee-4bee-a61c-eff7b954b9a4&apiKey=4aa279a8430d441dba9c55f659831878",
                   isVideo: true,
+                  poster: "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?q=80&w=1200&auto=format&fit=crop",
                   category: "Research",
                   title: "Centre for Space Science & Technology",
                   excerpt:
