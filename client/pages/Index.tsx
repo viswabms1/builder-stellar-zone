@@ -472,7 +472,7 @@ export default function Index() {
                         className="h-44 w-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
                         controls
                         controlsList="nodownload"
-                        poster={item.image}
+                        poster={item.image} // Ensure poster is set to the video URL
                       />
                     ) : (
                       <img
