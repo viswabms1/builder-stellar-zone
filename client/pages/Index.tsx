@@ -426,27 +426,25 @@ export default function Index() {
               className="group relative overflow-hidden rounded-3xl border border-border/50 lg:col-span-2"
             >
               <img
-                src="https://images.unsplash.com/photo-1554475901-4538ddfbccc2?q=80&w=1600&auto=format&fit=crop"
-                alt="DSU launches Center for AI & Robotics"
+                src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fbf6a54aff7814535b71eda78a3d5f95e?format=webp&width=800"
+                alt="DSU-MAK III Soars High at IN-SPACe Model Rocketry Finale"
                 className="h-96 w-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
               <div className="absolute inset-x-0 bottom-0 p-8">
                 <div className="flex items-center gap-3 mb-4">
                   <Badge className="bg-brand-magenta/20 text-brand-magenta">
-                    Research
+                    Aerospace
                   </Badge>
                   <div className="flex items-center text-white/80 text-xs font-body">
-                    <CalendarDays className="w-4 h-4 mr-1" /> Sep 12, 2025
+                    <CalendarDays className="w-4 h-4 mr-1" /> Oct 29, 2025
                   </div>
                 </div>
                 <h3 className="text-3xl font-semibold text-white mb-3 font-display">
-                  DSU launches Center for AI & Robotics
+                  DSU-MAK III Soars High at IN-SPACe Model Rocketry Finale
                 </h3>
                 <p className="text-white/80 max-w-3xl mb-6 hidden sm:block font-body">
-                  A state-of-the-art hub advancing intelligent systems,
-                  human-robot interaction, and applied AI with strong industry
-                  partnerships.
+                  Our student-built rocket successfully achieves 1200.77m apogee and safe recovery, marking a triumph of innovation and technical mastery in aerospace engineering.
                 </p>
                 <Button
                   variant="secondary"
