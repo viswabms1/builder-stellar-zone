@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -32,6 +33,45 @@ import {
   Newspaper,
   Laptop,
 } from "lucide-react";
+
+function VideoWithFrameCapture({ src }: { src: string }) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const captureFirstFrame = () => {
+      const canvas = document.createElement("canvas");
+      canvas.width = video.videoWidth;
+      canvas.height = video.videoHeight;
+      const ctx = canvas.getContext("2d");
+      if (ctx) {
+        ctx.drawImage(video, 0, 0);
+        const posterUrl = canvas.toDataURL("image/jpeg", 0.9);
+        video.poster = posterUrl;
+      }
+      video.removeEventListener("loadedmetadata", captureFirstFrame);
+    };
+
+    video.addEventListener("loadedmetadata", captureFirstFrame);
+
+    return () => {
+      video.removeEventListener("loadedmetadata", captureFirstFrame);
+    };
+  }, [src]);
+
+  return (
+    <video
+      ref={videoRef}
+      src={src}
+      className="h-44 w-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
+      controls
+      controlsList="nodownload"
+      preload="metadata"
+    />
+  );
+}
 
 export default function Index() {
   return (
