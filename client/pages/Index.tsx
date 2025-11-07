@@ -508,14 +508,7 @@ export default function Index() {
                 >
                   <div className="relative">
                     {item.isVideo ? (
-                      <video
-                        src={item.image}
-                        className="h-44 w-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
-                        controls
-                        controlsList="nodownload"
-                        poster={item.poster}
-                        preload="metadata"
-                      />
+                      <VideoWithFrameCapture src={item.image} />
                     ) : (
                       <img
                         src={item.image}
