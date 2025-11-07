@@ -428,7 +428,7 @@ export default function Index() {
               <img
                 src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fbf6a54aff7814535b71eda78a3d5f95e?format=webp&width=800"
                 alt="DSU-MAK III Soars High at IN-SPACe Model Rocketry Finale"
-                className="h-[500px] w-full object-cover group-hover:scale-105 transition-transform duration-500"
+                className="h-auto w-full object-contain group-hover:scale-105 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
               <div className="absolute inset-x-0 bottom-0 p-8">
