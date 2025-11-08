@@ -587,10 +587,10 @@ export default function Index() {
                   color: "brand-orange",
                 },
               ].map((item, idx) => (
-                <Link
+                <button
                   key={idx}
-                  to={item.href}
-                  className="group rounded-2xl overflow-hidden border border-border/50 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-magenta/10 transition-all"
+                  onClick={() => setSelectedNews(item)}
+                  className="group rounded-2xl overflow-hidden border border-border/50 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-magenta/10 transition-all text-left bg-transparent cursor-pointer"
                 >
                   <div className="relative">
                     {item.isVideo ? (
@@ -624,7 +624,7 @@ export default function Index() {
                       <ChevronRight className="w-4 h-4 text-foreground group-hover:text-brand-magenta" />
                     </div>
                   </div>
-                </Link>
+                </button>
               ))}
             </div>
           </div>
