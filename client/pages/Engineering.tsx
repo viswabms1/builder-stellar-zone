@@ -640,7 +640,7 @@ export default function Engineering() {
               </div>
 
               {/* Dean's Message */}
-              <div className="p-8 md:p-12 flex flex-col justify-center">
+              <div className="p-8 md:p-12 flex flex-col justify-start">
                 <div className="space-y-6">
                   {/* Header with Name and Title */}
                   <div className="border-l-4 border-brand-magenta pl-4">
