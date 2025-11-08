@@ -87,7 +87,59 @@ function VideoWithFrameCapture({ src, rotate = false }: { src: string; rotate?: 
   );
 }
 
+function NewsModal({ newsItem, onClose }: { newsItem: any; onClose: () => void }) {
+  if (!newsItem) return null;
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur p-4">
+      <div className="relative bg-card rounded-3xl border border-border/50 max-w-3xl w-full max-h-[90vh] overflow-y-auto">
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 z-10 p-2 rounded-full bg-black/40 hover:bg-black/60 text-white transition-colors"
+        >
+          <X className="w-6 h-6" />
+        </button>
+
+        {newsItem.isVideo ? (
+          <VideoWithFrameCapture src={newsItem.image} rotate={newsItem.rotate} />
+        ) : (
+          <img
+            src={newsItem.image}
+            alt={newsItem.title}
+            className="w-full h-auto max-h-96 object-cover rounded-t-3xl"
+          />
+        )}
+
+        <div className="p-8">
+          <div className="flex items-center gap-3 mb-4">
+            <Badge
+              className={`${
+                newsItem.color === "brand-orange"
+                  ? "bg-brand-orange/20 text-brand-orange"
+                  : newsItem.color === "brand-magenta"
+                    ? "bg-brand-magenta/20 text-brand-magenta"
+                    : "bg-brand-blue/20 text-brand-blue"
+              }`}
+            >
+              {newsItem.category}
+            </Badge>
+            <div className="flex items-center text-foreground/60 text-xs font-body">
+              <CalendarDays className="w-4 h-4 mr-1" /> {newsItem.date}
+            </div>
+          </div>
+          <h2 className="text-3xl font-semibold text-foreground mb-4 font-display">
+            {newsItem.title}
+          </h2>
+          <p className="text-foreground/80 text-lg font-body">{newsItem.excerpt}</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function Index() {
+  const [selectedNews, setSelectedNews] = useState<any>(null);
+
   return (
     <div className="min-h-screen bg-background text-foreground overflow-hidden">
       {/* Hero Section with University Building */}
