@@ -620,17 +620,6 @@ export default function Index() {
             </div>
           </div>
 
-          <div className="mt-12 text-center">
-            <Link to="/Research">
-              <Button
-                variant="outline"
-                className="border-brand-magenta/30 hover:bg-brand-magenta/10 font-display"
-              >
-                View all news
-                <ChevronRight className="w-4 h-4 ml-2" />
-              </Button>
-            </Link>
-          </div>
         </div>
       </section>
 
