@@ -476,9 +476,20 @@ export default function Index() {
 
           <div className="grid lg:grid-cols-3 gap-8 items-stretch">
             {/* Featured story */}
-            <Link
-              to="/Research"
-              className="group relative overflow-hidden rounded-3xl border border-border/50 lg:col-span-2"
+            <button
+              onClick={() =>
+                setSelectedNews({
+                  image:
+                    "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fbf6a54aff7814535b71eda78a3d5f95e?format=webp&width=800",
+                  category: "Aerospace",
+                  title: "DSU-MAK III Soars High at IN-SPACe Model Rocketry Finale",
+                  excerpt:
+                    "Our student-built rocket successfully achieves 1200.77m apogee and safe recovery, marking a triumph of innovation and technical mastery in aerospace engineering.",
+                  date: "Oct 29, 2025",
+                  color: "brand-magenta",
+                })
+              }
+              className="group relative overflow-hidden rounded-3xl border border-border/50 lg:col-span-2 cursor-pointer text-left bg-transparent hover:shadow-lg transition-shadow"
             >
               <img
                 src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fbf6a54aff7814535b71eda78a3d5f95e?format=webp&width=800"
@@ -512,7 +523,7 @@ export default function Index() {
               <div className="absolute top-4 left-4 inline-flex items-center gap-2 rounded-full bg-black/40 backdrop-blur px-3 py-1 text-white text-xs">
                 <Newspaper className="w-4 h-4" /> Featured
               </div>
-            </Link>
+            </button>
 
             {/* Secondary stories */}
             <div className="grid gap-8 content-start">
