@@ -112,7 +112,7 @@ function NewsModal({ newsItem, onClose }: { newsItem: any; onClose: () => void }
         </button>
 
         {newsItem.isVideo ? (
-          <VideoWithFrameCapture src={newsItem.image} rotate={newsItem.rotate} />
+          <VideoWithFrameCapture src={newsItem.image} rotate={newsItem.rotate} poster={newsItem.poster} />
         ) : (
           <img
             src={newsItem.image}
