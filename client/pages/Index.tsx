@@ -479,9 +479,8 @@ export default function Index() {
                 {
                   href: "/CampusLife",
                   image:
-                    "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F47ad3f73dad14deabab383f24fc86476?alt=media&token=e92ddd63-abbe-47aa-8771-f6a0b68a4b71&apiKey=4aa279a8430d441dba9c55f659831878",
+                    "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F8ee07440d90c4bd685e8ec8da486df8d?alt=media&token=38c290b6-91a4-4825-a4c8-068661623f55&apiKey=4aa279a8430d441dba9c55f659831878",
                   isVideo: true,
-                  rotate: true,
                   category: "Campus Life",
                   title: "9th Convocation at DSU: A Day of Reflection, Gratitude, and Pride",
                   excerpt:
