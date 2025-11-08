@@ -496,7 +496,6 @@ export default function Index() {
                 alt="DSU-MAK III Soars High at IN-SPACe Model Rocketry Finale"
                 className="h-auto w-full object-contain group-hover:scale-105 transition-transform duration-500"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
               <div className="absolute inset-x-0 bottom-0 p-8">
                 <div className="flex items-center gap-3 mb-4">
                   <Badge className="bg-brand-magenta/20 text-brand-magenta">
