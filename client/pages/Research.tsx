@@ -143,7 +143,7 @@ export default function Research() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="space-y-8">
             {[
               {
                 icon: Cpu,
@@ -152,7 +152,11 @@ export default function Research() {
                 focus: ["Deep Learning", "Computer Vision", "Natural Language Processing", "Robotics", "Big Data Analytics"],
                 projects: "25+ Active Projects",
                 funding: "₹15 Cr",
-                publications: "150+ Papers"
+                publications: "150+ Papers",
+                images: [
+                  "https://images.unsplash.com/photo-1677442d019cecf8d30e93c9ba13b3b4d5e8c5b0?q=80&w=1200&auto=format&fit=crop",
+                  "https://images.unsplash.com/photo-1485827404703-d12cf3f3dfb5?q=80&w=1200&auto=format&fit=crop"
+                ]
               },
               {
                 icon: Dna,
@@ -161,7 +165,11 @@ export default function Research() {
                 focus: ["Genetic Engineering", "Drug Discovery", "Bioinformatics", "Tissue Engineering", "Bioprocessing"],
                 projects: "20+ Active Projects",
                 funding: "₹12 Cr",
-                publications: "120+ Papers"
+                publications: "120+ Papers",
+                images: [
+                  "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1200&auto=format&fit=crop",
+                  "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=1200&auto=format&fit=crop"
+                ]
               },
               {
                 icon: Leaf,
@@ -170,7 +178,11 @@ export default function Research() {
                 focus: ["Solar Energy", "Wind Power", "Energy Storage", "Smart Grids", "Green Materials"],
                 projects: "18+ Active Projects",
                 funding: "₹10 Cr",
-                publications: "100+ Papers"
+                publications: "100+ Papers",
+                images: [
+                  "https://images.unsplash.com/photo-1509391366360-2e938d440424?q=80&w=1200&auto=format&fit=crop",
+                  "https://images.unsplash.com/photo-1559027615-cd2628902d4a?q=80&w=1200&auto=format&fit=crop"
+                ]
               },
               {
                 icon: Brain,
@@ -179,7 +191,11 @@ export default function Research() {
                 focus: ["Neuroscience", "Psychology", "Human-Computer Interaction", "Behavioral Studies", "Brain Imaging"],
                 projects: "15+ Active Projects",
                 funding: "₹8 Cr",
-                publications: "90+ Papers"
+                publications: "90+ Papers",
+                images: [
+                  "https://images.unsplash.com/photo-1559027615-cd2628902d4a?q=80&w=1200&auto=format&fit=crop",
+                  "https://images.unsplash.com/photo-1579154204601-01d3f2d3d7a6?q=80&w=1200&auto=format&fit=crop"
+                ]
               },
               {
                 icon: Telescope,
@@ -188,7 +204,11 @@ export default function Research() {
                 focus: ["Satellite Technology", "Remote Sensing", "Space Communication", "Astronomy", "Space Materials"],
                 projects: "12+ Active Projects",
                 funding: "₹20 Cr",
-                publications: "80+ Papers"
+                publications: "80+ Papers",
+                images: [
+                  "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?q=80&w=1200&auto=format&fit=crop",
+                  "https://images.unsplash.com/photo-1458066918949-eea6b1c85dfe?q=80&w=1200&auto=format&fit=crop"
+                ]
               },
               {
                 icon: Heart,
@@ -197,58 +217,138 @@ export default function Research() {
                 focus: ["Biomedical Engineering", "Medical Imaging", "Prosthetics", "Diagnostics", "Telemedicine"],
                 projects: "22+ Active Projects",
                 funding: "₹18 Cr",
-                publications: "110+ Papers"
+                publications: "110+ Papers",
+                images: [
+                  "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1200&auto=format&fit=crop",
+                  "https://images.unsplash.com/photo-1631217314831-c6227db76b6e?q=80&w=1200&auto=format&fit=crop"
+                ]
+              },
+              {
+                icon: FlaskConical,
+                title: "SynTech Bio Solutions Lab",
+                description: "Pioneering research on upcycling agricultural waste into sustainable protein sources. Our students are reimagining agricultural byproducts as nutritional resources to address food waste management and malnutrition.",
+                focus: ["Protein Engineering", "Waste Upcycling", "Sustainable Food", "Bioprocessing", "Nutritional Science"],
+                projects: "3+ Active Projects",
+                funding: "ANRF Funded",
+                publications: "Research in Progress",
+                researchers: ["Dr. B. M. Ashwin Desai", "Dr. Pronama Biswas"],
+                students: ["Bhoomika Sridhar", "Challa Mokshith Chowdhary", "Khushi Agrawal"],
+                videoUrl: "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F9943902d95dc447ea4c98bfa5489a2eb?alt=media&token=ad667b6e-dc94-41de-a3dc-040b69d9577a&apiKey=4aa279a8430d441dba9c55f659831878",
+                images: [
+                  "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1200&auto=format&fit=crop",
+                  "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=1200&auto=format&fit=crop"
+                ]
               },
             ].map((center, index) => (
-              <Card key={index} className="group hover:shadow-xl hover:shadow-orange-500/10 transition-all duration-500 hover:-translate-y-2 bg-card/50 backdrop-blur-sm border border-border/50 hover:border-orange-500/30">
-                <CardHeader>
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="w-14 h-14 rounded-2xl bg-orange-500/10 flex items-center justify-center group-hover:bg-orange-500/20 transition-colors">
-                      <center.icon className="w-7 h-7 text-orange-500 group-hover:scale-110 transition-transform" />
-                    </div>
-                    <Badge variant="secondary" className="text-xs">
-                      {center.projects}
-                    </Badge>
-                  </div>
-                  <CardTitle className="text-xl font-bold group-hover:text-orange-500 transition-colors leading-tight">
-                    {center.title}
-                  </CardTitle>
-                  <div className="flex gap-2">
-                    <Badge variant="outline" className="text-xs border-orange-500/30 text-orange-500">
-                      ₹{center.funding.split(' ')[1]} Funding
-                    </Badge>
-                    <Badge variant="outline" className="text-xs border-green-500/30 text-green-500">
-                      {center.publications}
-                    </Badge>
-                  </div>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <CardDescription className="text-foreground leading-relaxed">
-                    {center.description}
-                  </CardDescription>
-                  
-                  <div className="space-y-3">
-                    <p className="text-sm font-semibold text-foreground">Research Focus:</p>
-                    <div className="grid grid-cols-1 gap-1">
-                      {center.focus.slice(0, 4).map((area, idx) => (
-                        <div key={idx} className="flex items-center text-sm text-foreground">
-                          <ChevronRight className="w-3 h-3 text-orange-500 mr-2 flex-shrink-0" />
-                          {area}
+              <Card key={index} className="group hover:shadow-xl hover:shadow-orange-500/10 transition-all duration-500 bg-card/50 backdrop-blur-sm border border-border/50 hover:border-orange-500/30 overflow-hidden">
+                <div className="grid md:grid-cols-3 gap-6 p-6">
+                  {/* Media Gallery */}
+                  <div className="md:col-span-1 space-y-4">
+                    {center.videoUrl ? (
+                      <div className="space-y-4">
+                        <div className="rounded-xl overflow-hidden bg-slate-900 aspect-video">
+                          <video
+                            src={center.videoUrl}
+                            controls
+                            className="w-full h-full object-cover"
+                            poster="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=600&auto=format&fit=crop"
+                          />
                         </div>
-                      ))}
-                      {center.focus.length > 4 && (
-                        <div className="text-sm text-orange-500 font-medium">
-                          +{center.focus.length - 4} more areas
+                        <div className="grid grid-cols-2 gap-3">
+                          {center.images.map((img, idx) => (
+                            <img
+                              key={idx}
+                              src={img}
+                              alt={`${center.title} gallery ${idx + 1}`}
+                              className="rounded-lg aspect-square object-cover hover:scale-105 transition-transform"
+                            />
+                          ))}
                         </div>
-                      )}
-                    </div>
+                      </div>
+                    ) : (
+                      <div className="grid grid-cols-2 gap-3">
+                        {center.images.map((img, idx) => (
+                          <img
+                            key={idx}
+                            src={img}
+                            alt={`${center.title} gallery ${idx + 1}`}
+                            className="rounded-lg aspect-square object-cover hover:scale-105 transition-transform"
+                          />
+                        ))}
+                      </div>
+                    )}
                   </div>
-                  
-                  <Button variant="ghost" size="sm" className="w-full justify-between group-hover:text-orange-500 group-hover:bg-orange-500/5">
-                    View Projects
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </Button>
-                </CardContent>
+
+                  {/* Content */}
+                  <div className="md:col-span-2">
+                    <div className="flex items-start justify-between mb-4">
+                      <div className="w-14 h-14 rounded-2xl bg-orange-500/10 flex items-center justify-center group-hover:bg-orange-500/20 transition-colors flex-shrink-0">
+                        <center.icon className="w-7 h-7 text-orange-500 group-hover:scale-110 transition-transform" />
+                      </div>
+                      <div className="flex gap-2 flex-wrap justify-end">
+                        <Badge variant="secondary" className="text-xs">
+                          {center.projects}
+                        </Badge>
+                        {center.funding && (
+                          <Badge variant="outline" className="text-xs border-orange-500/30 text-orange-500">
+                            {center.funding}
+                          </Badge>
+                        )}
+                        {center.publications && (
+                          <Badge variant="outline" className="text-xs border-green-500/30 text-green-500">
+                            {center.publications}
+                          </Badge>
+                        )}
+                      </div>
+                    </div>
+
+                    <CardTitle className="text-2xl font-bold group-hover:text-orange-500 transition-colors leading-tight mb-3">
+                      {center.title}
+                    </CardTitle>
+
+                    <CardDescription className="text-foreground leading-relaxed mb-4 text-base">
+                      {center.description}
+                    </CardDescription>
+
+                    {center.researchers && (
+                      <div className="mb-4">
+                        <p className="text-sm font-semibold text-foreground mb-2">Principal Investigators:</p>
+                        <p className="text-sm text-foreground/80">{center.researchers.join(", ")}</p>
+                      </div>
+                    )}
+
+                    {center.students && (
+                      <div className="mb-4">
+                        <p className="text-sm font-semibold text-foreground mb-2">Research Team:</p>
+                        <p className="text-sm text-foreground/80">{center.students.join(", ")}</p>
+                      </div>
+                    )}
+
+                    <div className="grid md:grid-cols-2 gap-6 mb-4">
+                      <div className="space-y-3">
+                        <p className="text-sm font-semibold text-foreground">Research Focus:</p>
+                        <div className="grid grid-cols-1 gap-1">
+                          {center.focus.slice(0, 3).map((area, idx) => (
+                            <div key={idx} className="flex items-center text-sm text-foreground">
+                              <ChevronRight className="w-3 h-3 text-orange-500 mr-2 flex-shrink-0" />
+                              {area}
+                            </div>
+                          ))}
+                          {center.focus.length > 3 && (
+                            <div className="text-sm text-orange-500 font-medium">
+                              +{center.focus.length - 3} more areas
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+
+                    <Button variant="ghost" size="sm" className="group-hover:text-orange-500 group-hover:bg-orange-500/5">
+                      View Projects
+                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform ml-2" />
+                    </Button>
+                  </div>
+                </div>
               </Card>
             ))}
           </div>
