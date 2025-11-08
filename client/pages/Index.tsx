@@ -529,7 +529,6 @@ export default function Index() {
             <div className="grid gap-8 content-start">
               {[
                 {
-                  href: "/Research",
                   image:
                     "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Ff67a08f95a24431783dc54fc189e605b?format=webp&width=800",
                   category: "Leadership",
@@ -540,7 +539,6 @@ export default function Index() {
                   color: "brand-blue",
                 },
                 {
-                  href: "/Research",
                   image:
                     "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2Fee8dd0baa1344765ab26d165e6fc0acc?alt=media&token=37176f13-60ee-4bee-a61c-eff7b954b9a4&apiKey=4aa279a8430d441dba9c55f659831878",
                   isVideo: true,
@@ -552,7 +550,6 @@ export default function Index() {
                   color: "brand-blue",
                 },
                 {
-                  href: "/CampusLife",
                   image:
                     "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F8ee07440d90c4bd685e8ec8da486df8d?alt=media&token=38c290b6-91a4-4825-a4c8-068661623f55&apiKey=4aa279a8430d441dba9c55f659831878",
                   isVideo: true,
@@ -564,7 +561,6 @@ export default function Index() {
                   color: "brand-magenta",
                 },
                 {
-                  href: "/Research",
                   image:
                     "https://images.unsplash.com/photo-1580281657527-47c455c8d7bf?q=80&w=1200&auto=format&fit=crop",
                   category: "Health Sciences",
@@ -575,7 +571,6 @@ export default function Index() {
                   color: "brand-blue",
                 },
                 {
-                  href: "/CampusLife",
                   image:
                     "https://images.unsplash.com/photo-1522158637959-30385a09e0da?q=80&w=1200&auto=format&fit=crop",
                   category: "Design & Media",
