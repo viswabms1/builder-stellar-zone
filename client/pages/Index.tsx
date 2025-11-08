@@ -34,7 +34,7 @@ import {
   Laptop,
 } from "lucide-react";
 
-function VideoWithFrameCapture({ src }: { src: string }) {
+function VideoWithFrameCapture({ src, rotate = false }: { src: string; rotate?: boolean }) {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
@@ -72,15 +72,17 @@ function VideoWithFrameCapture({ src }: { src: string }) {
   }, [src]);
 
   return (
-    <video
-      ref={videoRef}
-      src={src}
-      className="h-44 w-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
-      controls
-      controlsList="nodownload"
-      preload="metadata"
-      crossOrigin="anonymous"
-    />
+    <div className={rotate ? "flex items-center justify-center overflow-hidden" : ""}>
+      <video
+        ref={videoRef}
+        src={src}
+        className={`h-44 w-full object-cover group-hover:scale-[1.02] transition-transform duration-500 ${rotate ? "rotate-90" : ""}`}
+        controls
+        controlsList="nodownload"
+        preload="metadata"
+        crossOrigin="anonymous"
+      />
+    </div>
   );
 }
 
