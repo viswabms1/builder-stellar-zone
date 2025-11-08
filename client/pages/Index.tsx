@@ -549,6 +549,7 @@ export default function Index() {
                   image:
                     "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2Fd56a1c898842468187e8ff3260f0cdda?alt=media&token=6cb58cdf-a202-461d-b774-09ce61d439c3&apiKey=4aa279a8430d441dba9c55f659831878",
                   isVideo: true,
+                  poster: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F85cbfdbb2c9047f0b769200939941be9?format=webp&width=800",
                   category: "Events",
                   title: "TEDxDSU Returns for Second Edition 2025",
                   excerpt:
