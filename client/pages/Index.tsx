@@ -467,6 +467,17 @@ export default function Index() {
                 {
                   href: "/Research",
                   image:
+                    "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Ff67a08f95a24431783dc54fc189e605b?format=webp&width=800",
+                  category: "Leadership",
+                  title: "DSU at 34th Elets World Education Summit 2025",
+                  excerpt:
+                    "Dr. Prakash Sheelvanthmath discusses Digital Transformation in Higher Education: Smart Campuses and Online Learning with national education leaders.",
+                  date: "Nov 5, 2025",
+                  color: "brand-blue",
+                },
+                {
+                  href: "/Research",
+                  image:
                     "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2Fee8dd0baa1344765ab26d165e6fc0acc?alt=media&token=37176f13-60ee-4bee-a61c-eff7b954b9a4&apiKey=4aa279a8430d441dba9c55f659831878",
                   isVideo: true,
                   category: "Research",
