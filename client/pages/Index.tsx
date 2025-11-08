@@ -810,6 +810,8 @@ export default function Index() {
           </div>
         </div>
       </section>
+
+      <NewsModal newsItem={selectedNews} onClose={() => setSelectedNews(null)} />
     </div>
   );
 }
