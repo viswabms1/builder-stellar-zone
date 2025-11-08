@@ -538,8 +538,8 @@ export default function Index() {
               ))}
             </div>
 
-            {/* Right side - Secondary stories */}
-            <div className="grid gap-8 content-start">
+            {/* Right side - Secondary stories (40%) */}
+            <div className="lg:col-span-2 grid gap-8 content-start">
               {[
                 {
                   image:
