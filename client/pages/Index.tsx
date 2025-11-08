@@ -489,38 +489,35 @@ export default function Index() {
                   color: "brand-magenta",
                 })
               }
-              className="group relative overflow-hidden rounded-3xl border border-border/50 lg:col-span-2 cursor-pointer text-left bg-transparent hover:shadow-lg transition-shadow"
+              className="group flex flex-col rounded-3xl border border-border/50 lg:col-span-2 cursor-pointer text-left bg-transparent hover:shadow-lg transition-shadow overflow-hidden"
             >
               <img
                 src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fbf6a54aff7814535b71eda78a3d5f95e?format=webp&width=800"
                 alt="DSU-MAK III Soars High at IN-SPACe Model Rocketry Finale"
                 className="h-auto w-full object-contain group-hover:scale-105 transition-transform duration-500"
               />
-              <div className="absolute inset-x-0 bottom-0 p-8">
+              <div className="p-8 flex-1 flex flex-col">
                 <div className="flex items-center gap-3 mb-4">
                   <Badge className="bg-brand-magenta/20 text-brand-magenta">
                     Aerospace
                   </Badge>
-                  <div className="flex items-center text-white/80 text-xs font-body">
+                  <div className="flex items-center text-foreground/60 text-xs font-body">
                     <CalendarDays className="w-4 h-4 mr-1" /> Oct 29, 2025
                   </div>
                 </div>
-                <h3 className="text-3xl font-semibold text-white mb-3 font-display">
+                <h3 className="text-3xl font-semibold text-foreground mb-3 font-display">
                   DSU-MAK III Soars High at IN-SPACe Model Rocketry Finale
                 </h3>
-                <p className="text-white/80 max-w-3xl mb-6 hidden sm:block font-body">
+                <p className="text-foreground/80 max-w-3xl mb-6 hidden sm:block font-body">
                   Our student-built rocket successfully achieves 1200.77m apogee and safe recovery, marking a triumph of innovation and technical mastery in aerospace engineering.
                 </p>
                 <Button
                   variant="secondary"
-                  className="group bg-white text-black hover:opacity-90"
+                  className="w-fit group"
                 >
                   Read Story
                   <ChevronRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
-              </div>
-              <div className="absolute top-4 left-4 inline-flex items-center gap-2 rounded-full bg-black/40 backdrop-blur px-3 py-1 text-white text-xs">
-                <Newspaper className="w-4 h-4" /> Featured
               </div>
             </button>
 
