@@ -481,6 +481,7 @@ export default function Index() {
                   image:
                     "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F47ad3f73dad14deabab383f24fc86476?alt=media&token=e92ddd63-abbe-47aa-8771-f6a0b68a4b71&apiKey=4aa279a8430d441dba9c55f659831878",
                   isVideo: true,
+                  rotate: true,
                   category: "Campus Life",
                   title: "9th Convocation at DSU: A Day of Reflection, Gratitude, and Pride",
                   excerpt:
