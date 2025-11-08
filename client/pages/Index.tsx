@@ -42,31 +42,36 @@ function VideoWithFrameCapture({ src, rotate = false }: { src: string; rotate?: 
     const video = videoRef.current;
     if (!video) return;
 
-    const captureFrameAtTime = () => {
-      video.currentTime = 0.66;
-    };
+    let timeoutId: NodeJS.Timeout;
 
     const captureFrame = () => {
-      const canvas = document.createElement("canvas");
-      canvas.width = video.videoWidth;
-      canvas.height = video.videoHeight;
-      const ctx = canvas.getContext("2d");
-      if (ctx) {
-        ctx.drawImage(video, 0, 0);
-        const posterUrl = canvas.toDataURL("image/jpeg", 0.9);
-        video.poster = posterUrl;
+      try {
+        const canvas = document.createElement("canvas");
+        canvas.width = video.videoWidth || 640;
+        canvas.height = video.videoHeight || 360;
+        const ctx = canvas.getContext("2d");
+        if (ctx && video.videoWidth && video.videoHeight) {
+          ctx.drawImage(video, 0, 0);
+          const posterUrl = canvas.toDataURL("image/jpeg", 0.9);
+          video.poster = posterUrl;
+        }
+      } catch (error) {
+        console.error("Failed to capture video frame:", error);
       }
       video.removeEventListener("seeked", captureFrame);
     };
 
     const onLoadedMetadata = () => {
       video.addEventListener("seeked", captureFrame);
-      captureFrameAtTime();
+      // Try to capture at 1 second if available, otherwise use 0.66
+      const captureTime = Math.min(1, video.duration * 0.3);
+      video.currentTime = captureTime;
     };
 
     video.addEventListener("loadedmetadata", onLoadedMetadata);
 
     return () => {
+      if (timeoutId) clearTimeout(timeoutId);
       video.removeEventListener("loadedmetadata", onLoadedMetadata);
       video.removeEventListener("seeked", captureFrame);
     };
