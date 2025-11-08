@@ -547,7 +547,7 @@ export default function Index() {
             </div>
 
             {/* Right side - Secondary stories (40%) */}
-            <div className="lg:col-span-2 grid gap-8 content-start">
+            <div className="lg:col-span-2 grid gap-8 auto-rows-max">
               {[
                 {
                   image:
