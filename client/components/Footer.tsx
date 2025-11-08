@@ -142,7 +142,7 @@ export default function Footer() {
         className="pointer-events-none absolute bottom-10 left-0 h-72 w-72 rounded-full bg-brand-blue/15 blur-3xl"
       />
       <div className="relative mx-auto max-w-7xl px-6 py-16">
-        <div className="grid gap-16 lg:grid-cols-[1.3fr_minmax(0,1fr)]">
+        <div className="grid gap-16 lg:grid-cols-2">
           <div className="space-y-8">
             <RouterLink
               to="/"
