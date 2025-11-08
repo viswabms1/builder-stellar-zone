@@ -474,11 +474,11 @@ export default function Index() {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-8 items-stretch">
-            {/* Featured story */}
-            <button
-              onClick={() =>
-                setSelectedNews({
+          <div className="grid lg:grid-cols-2 gap-8 items-stretch">
+            {/* Left side - Featured stories split horizontally */}
+            <div className="grid gap-8 content-start">
+              {[
+                {
                   image:
                     "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fbf6a54aff7814535b71eda78a3d5f95e?format=webp&width=800",
                   category: "Aerospace",
@@ -487,41 +487,58 @@ export default function Index() {
                     "Our student-built rocket successfully achieves 1200.77m apogee and safe recovery, marking a triumph of innovation and technical mastery in aerospace engineering.",
                   date: "Oct 29, 2025",
                   color: "brand-magenta",
-                })
-              }
-              className="group flex flex-col rounded-3xl border border-border/50 lg:col-span-2 cursor-pointer text-left bg-transparent hover:shadow-lg transition-shadow overflow-hidden"
-            >
-              <img
-                src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fbf6a54aff7814535b71eda78a3d5f95e?format=webp&width=800"
-                alt="DSU-MAK III Soars High at IN-SPACe Model Rocketry Finale"
-                className="h-auto w-full object-contain group-hover:scale-105 transition-transform duration-500"
-              />
-              <div className="p-8 flex-1 flex flex-col">
-                <div className="flex items-center gap-3 mb-4">
-                  <Badge className="bg-brand-magenta/20 text-brand-magenta">
-                    Aerospace
-                  </Badge>
-                  <div className="flex items-center text-foreground/60 text-xs font-body">
-                    <CalendarDays className="w-4 h-4 mr-1" /> Oct 29, 2025
-                  </div>
-                </div>
-                <h3 className="text-3xl font-semibold text-foreground mb-3 font-display">
-                  DSU-MAK III Soars High at IN-SPACe Model Rocketry Finale
-                </h3>
-                <p className="text-foreground/80 max-w-3xl mb-6 hidden sm:block font-body">
-                  Our student-built rocket successfully achieves 1200.77m apogee and safe recovery, marking a triumph of innovation and technical mastery in aerospace engineering.
-                </p>
-                <Button
-                  variant="secondary"
-                  className="w-fit group"
+                },
+                {
+                  image:
+                    "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Ff67a08f95a24431783dc54fc189e605b?format=webp&width=800",
+                  category: "Leadership",
+                  title: "DSU at 34th Elets World Education Summit 2025",
+                  excerpt:
+                    "Dr. Prakash Sheelvanthmath discusses Digital Transformation in Higher Education: Smart Campuses and Online Learning with national education leaders.",
+                  date: "Nov 5, 2025",
+                  color: "brand-blue",
+                },
+              ].map((item, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setSelectedNews(item)}
+                  className="group flex flex-col rounded-3xl border border-border/50 cursor-pointer text-left bg-transparent hover:shadow-lg transition-shadow overflow-hidden"
                 >
-                  Read Story
-                  <ChevronRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                </Button>
-              </div>
-            </button>
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="h-auto w-full object-contain group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="p-8 flex-1 flex flex-col">
+                    <div className="flex items-center gap-3 mb-4">
+                      <Badge
+                        className={`${item.color === "brand-orange" ? "bg-brand-orange/20 text-brand-orange" : item.color === "brand-magenta" ? "bg-brand-magenta/20 text-brand-magenta" : "bg-brand-blue/20 text-brand-blue"}`}
+                      >
+                        {item.category}
+                      </Badge>
+                      <div className="flex items-center text-foreground/60 text-xs font-body">
+                        <CalendarDays className="w-4 h-4 mr-1" /> {item.date}
+                      </div>
+                    </div>
+                    <h3 className="text-2xl font-semibold text-foreground mb-3 font-display">
+                      {item.title}
+                    </h3>
+                    <p className="text-foreground/80 mb-6 hidden sm:block font-body">
+                      {item.excerpt}
+                    </p>
+                    <Button
+                      variant="secondary"
+                      className="w-fit group"
+                    >
+                      Read Story
+                      <ChevronRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                    </Button>
+                  </div>
+                </button>
+              ))}
+            </div>
 
-            {/* Secondary stories */}
+            {/* Right side - Secondary stories */}
             <div className="grid gap-8 content-start">
               {[
                 {
