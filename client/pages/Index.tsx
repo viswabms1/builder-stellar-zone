@@ -523,16 +523,9 @@ export default function Index() {
                     <h3 className="text-2xl font-semibold text-foreground mb-3 font-display">
                       {item.title}
                     </h3>
-                    <p className="text-foreground/80 mb-6 hidden sm:block font-body">
+                    <p className="text-foreground/80 font-body">
                       {item.excerpt}
                     </p>
-                    <Button
-                      variant="secondary"
-                      className="w-fit group"
-                    >
-                      Read Story
-                      <ChevronRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                    </Button>
                   </div>
                 </button>
               ))}
