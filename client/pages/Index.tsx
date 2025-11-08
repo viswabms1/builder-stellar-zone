@@ -558,12 +558,12 @@ export default function Index() {
                 },
                 {
                   image:
-                    "https://images.unsplash.com/photo-1580281657527-47c455c8d7bf?q=80&w=1200&auto=format&fit=crop",
-                  category: "Health Sciences",
-                  title: "MoU with leading hospital for collaborative research",
+                    "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fca407f1fd5994b25a3cdb4b5e18e66b6?format=webp&width=800",
+                  category: "International Relations",
+                  title: "A Calm November Morning Welcomes the Gentle Charm of Tibet",
                   excerpt:
-                    "Strengthening clinical research, translational medicine, and student training pathways.",
-                  date: "Jul 30, 2025",
+                    "DSU hosts distinguished guests from Tibet, fostering cultural exchange and international academic collaboration.",
+                  date: "Nov 8, 2025",
                   color: "brand-blue",
                 },
                 {
