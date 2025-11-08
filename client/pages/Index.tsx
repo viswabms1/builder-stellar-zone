@@ -515,11 +515,15 @@ export default function Index() {
                   onClick={() => setSelectedNews(item)}
                   className="group flex flex-col rounded-3xl border border-border/50 cursor-pointer text-left bg-transparent hover:shadow-lg transition-shadow overflow-hidden"
                 >
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="h-auto w-full object-contain group-hover:scale-105 transition-transform duration-500"
-                  />
+                  {item.isVideo ? (
+                    <VideoWithFrameCapture src={item.image} poster={item.poster} />
+                  ) : (
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="h-auto w-full object-contain group-hover:scale-105 transition-transform duration-500"
+                    />
+                  )}
                   <div className="p-8 flex-1 flex flex-col">
                     <div className="flex items-center gap-3 mb-4">
                       <Badge
