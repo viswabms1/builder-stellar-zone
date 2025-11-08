@@ -85,7 +85,7 @@ function VideoWithFrameCapture({ src, rotate = false }: { src: string; rotate?: 
         className={`h-44 w-full object-cover group-hover:scale-[1.02] transition-transform duration-500 ${rotate ? "rotate-[-90deg]" : ""}`}
         controls
         controlsList="nodownload"
-        preload="metadata"
+        preload="auto"
         crossOrigin="anonymous"
       />
     </div>
