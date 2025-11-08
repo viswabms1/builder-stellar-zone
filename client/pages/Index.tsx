@@ -536,6 +536,17 @@ export default function Index() {
               {[
                 {
                   image:
+                    "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2Fd56a1c898842468187e8ff3260f0cdda?alt=media&token=6cb58cdf-a202-461d-b774-09ce61d439c3&apiKey=4aa279a8430d441dba9c55f659831878",
+                  isVideo: true,
+                  category: "Events",
+                  title: "TEDxDSU Returns for Second Edition 2025",
+                  excerpt:
+                    "Join us on November 7th for inspiring talks and transformative ideas at TEDxDSU 2025.",
+                  date: "Nov 7, 2025",
+                  color: "brand-magenta",
+                },
+                {
+                  image:
                     "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2Fee8dd0baa1344765ab26d165e6fc0acc?alt=media&token=37176f13-60ee-4bee-a61c-eff7b954b9a4&apiKey=4aa279a8430d441dba9c55f659831878",
                   isVideo: true,
                   category: "Research",
