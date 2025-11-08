@@ -32,6 +32,7 @@ import {
   Calendar,
   Clock,
   ChevronRight,
+  Rocket,
 } from "lucide-react";
 
 export default function CampusLife() {
