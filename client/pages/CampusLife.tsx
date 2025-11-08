@@ -544,12 +544,12 @@ export default function CampusLife() {
                 key={index}
                 className="group overflow-hidden hover:shadow-xl hover:shadow-orange-500/10 transition-all duration-500 hover:-translate-y-2 bg-card/50 backdrop-blur-sm border border-border/50 hover:border-orange-500/30"
               >
-                <div className="relative overflow-hidden h-48">
+                <div className="relative overflow-hidden bg-black aspect-video">
                   {event.isVideo ? (
                     <video
                       src={event.video}
                       controls
-                      className="w-full h-full object-cover"
+                      className="w-full h-full"
                     />
                   ) : (
                     <>
