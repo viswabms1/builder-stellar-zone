@@ -531,18 +531,36 @@ export default function CampusLife() {
                 duration: "Ongoing",
                 attendance: "2,000+",
               },
+              {
+                icon: Rocket,
+                title: "NASA Space Apps Challenge 2025",
+                video: "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F9b4ce4c4527c4bcf85d247f9239568af?alt=media&token=fcd9b1d7-1f72-430d-8789-96c4226f5db9&apiKey=4aa279a8430d441dba9c55f659831878",
+                isVideo: true,
+                duration: "Online",
+                attendance: "International",
+              },
             ].map((event, index) => (
               <Card
                 key={index}
                 className="group overflow-hidden hover:shadow-xl hover:shadow-orange-500/10 transition-all duration-500 hover:-translate-y-2 bg-card/50 backdrop-blur-sm border border-border/50 hover:border-orange-500/30"
               >
                 <div className="relative overflow-hidden h-48">
-                  <img 
-                    src={event.image}
-                    alt={event.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors"></div>
+                  {event.isVideo ? (
+                    <video
+                      src={event.video}
+                      controls
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <>
+                      <img
+                        src={event.image}
+                        alt={event.title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors"></div>
+                    </>
+                  )}
                 </div>
                 <CardHeader>
                   <div className="flex items-center justify-between mb-4">
@@ -555,7 +573,7 @@ export default function CampusLife() {
                     {event.title}
                   </CardTitle>
                   <Badge variant="outline" className="w-fit text-xs border-orange-500/30 text-orange-500">
-                    {event.attendance} Attendees
+                    {event.attendance}
                   </Badge>
                 </CardHeader>
               </Card>
