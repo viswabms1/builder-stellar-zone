@@ -606,19 +606,35 @@ export default function CampusLife() {
                 image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop",
               },
               {
-                title: "Campus Adventures",
-                image: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400&h=300&fit=crop",
+                title: "Alumni Journey - Class of 2019",
+                video: "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F1f4b2fb88e2644fe9e6f6151ab7bdb80?alt=media&token=cf02de6b-7a3e-4453-8caa-2cd7b03ff170&apiKey=4aa279a8430d441dba9c55f659831878",
+                isVideo: true,
               },
             ].map((story, index) => (
               <div key={index} className="group relative overflow-hidden rounded-xl h-64 border border-border hover:border-orange-500/50 transition-colors cursor-pointer">
-                <img 
-                  src={story.image}
-                  alt={story.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <h3 className="text-white font-bold text-lg">{story.title}</h3>
-                </div>
+                {story.isVideo ? (
+                  <video
+                    src={story.video}
+                    controls
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <>
+                    <img
+                      src={story.image}
+                      alt={story.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                      <h3 className="text-white font-bold text-lg">{story.title}</h3>
+                    </div>
+                  </>
+                )}
+                {story.isVideo && (
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4 pointer-events-none">
+                    <h3 className="text-white font-bold text-lg">{story.title}</h3>
+                  </div>
+                )}
               </div>
             ))}
           </div>
