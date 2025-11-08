@@ -474,7 +474,7 @@ export default function Index() {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-8 items-stretch">
+          <div className="grid lg:grid-cols-5 gap-8 items-stretch">
             {/* Left side - Featured stories split horizontally */}
             <div className="grid gap-8 content-start">
               {[
