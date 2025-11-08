@@ -475,8 +475,8 @@ export default function Index() {
           </div>
 
           <div className="grid lg:grid-cols-5 gap-8 items-stretch">
-            {/* Left side - Featured stories split horizontally */}
-            <div className="grid gap-8 content-start">
+            {/* Left side - Featured stories split horizontally (60%) */}
+            <div className="lg:col-span-3 grid gap-8 content-start">
               {[
                 {
                   image:
