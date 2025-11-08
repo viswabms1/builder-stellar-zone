@@ -32,6 +32,7 @@ import {
   CalendarDays,
   Newspaper,
   Laptop,
+  X,
 } from "lucide-react";
 
 function VideoWithFrameCapture({ src, rotate = false }: { src: string; rotate?: boolean }) {
