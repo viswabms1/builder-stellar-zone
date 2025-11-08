@@ -426,7 +426,7 @@ export default function Academics() {
                 <div
                   className={`flex-1 overflow-hidden ${
                     feature.objectFit === "contain"
-                      ? "flex items-center justify-center bg-black/20"
+                      ? "flex items-center justify-center bg-transparent"
                       : ""
                   }`}
                 >
