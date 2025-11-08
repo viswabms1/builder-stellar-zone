@@ -442,9 +442,6 @@ export default function Academics() {
                 </div>
 
                 {/* Content Section - Only for non-contain images */}
-                {feature.objectFit !== "contain" && (
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent" />
-                )}
 
                 {/* Decorative blobs */}
                 <div className="absolute -top-6 -right-6 w-40 h-40 bg-brand-magenta/10 rounded-full blur-2xl" />
