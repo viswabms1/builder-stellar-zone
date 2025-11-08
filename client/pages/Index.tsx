@@ -601,7 +601,7 @@ export default function Index() {
                 >
                   <div className="relative">
                     {item.isVideo ? (
-                      <VideoWithFrameCapture src={item.image} rotate={item.rotate} />
+                      <VideoWithFrameCapture src={item.image} rotate={item.rotate} poster={item.poster} />
                     ) : (
                       <img
                         src={item.image}
