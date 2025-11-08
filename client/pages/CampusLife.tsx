@@ -611,18 +611,13 @@ export default function CampusLife() {
                 isVideo: true,
               },
             ].map((story, index) => (
-              <div key={index} className="group relative overflow-hidden rounded-xl h-64 border border-border hover:border-orange-500/50 transition-colors cursor-pointer flex flex-col">
+              <div key={index} className="group relative overflow-hidden rounded-xl h-64 border border-border hover:border-orange-500/50 transition-colors cursor-pointer">
                 {story.isVideo ? (
-                  <>
-                    <video
-                      src={story.video}
-                      controls
-                      className="w-full h-full object-cover flex-1"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4 pointer-events-none">
-                      <h3 className="text-white font-bold text-lg">{story.title}</h3>
-                    </div>
-                  </>
+                  <video
+                    src={story.video}
+                    controls
+                    className="w-full h-full"
+                  />
                 ) : (
                   <>
                     <img
@@ -634,6 +629,11 @@ export default function CampusLife() {
                       <h3 className="text-white font-bold text-lg">{story.title}</h3>
                     </div>
                   </>
+                )}
+                {story.isVideo && (
+                  <div className="absolute top-0 left-0 right-0 bg-gradient-to-b from-black/40 to-transparent p-2">
+                    <h3 className="text-white font-bold text-sm">{story.title}</h3>
+                  </div>
                 )}
               </div>
             ))}
