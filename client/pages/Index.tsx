@@ -477,12 +477,13 @@ export default function Index() {
                 {
                   href: "/CampusLife",
                   image:
-                    "https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=1200&auto=format&fit=crop",
+                    "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F47ad3f73dad14deabab383f24fc86476?alt=media&token=e92ddd63-abbe-47aa-8771-f6a0b68a4b71&apiKey=4aa279a8430d441dba9c55f659831878",
+                  isVideo: true,
                   category: "Campus Life",
-                  title: "Students win national hackathon",
+                  title: "9th Convocation at DSU: A Day of Reflection, Gratitude, and Pride",
                   excerpt:
-                    "Interdisciplinary team develops assistive tech using edge AI and IoT, winning top honors.",
-                  date: "Aug 12, 2025",
+                    "Celebrating the achievements and milestones of our graduating students and faculty.",
+                  date: "Oct 15, 2025",
                   color: "brand-magenta",
                 },
                 {
