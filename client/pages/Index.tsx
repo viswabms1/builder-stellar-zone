@@ -185,7 +185,7 @@ export default function Index() {
                 Future
               </span>
               <br />
-              <span className="text-white">at Dayananda Sagar University</span>
+              <span className="text-white">at Dayananda&nbsp;Sagar University</span>
             </h1>
 
             <p className="subheadline text-gray-200 mb-12 max-w-3xl mx-auto leading-relaxed">
