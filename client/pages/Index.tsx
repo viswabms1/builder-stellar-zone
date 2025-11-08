@@ -42,7 +42,7 @@ function VideoWithFrameCapture({ src, rotate = false }: { src: string; rotate?: 
     if (!video) return;
 
     const captureFrameAtTime = () => {
-      video.currentTime = 0.33;
+      video.currentTime = 0.66;
     };
 
     const captureFrame = () => {
