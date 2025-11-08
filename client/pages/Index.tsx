@@ -42,6 +42,12 @@ function VideoWithFrameCapture({ src, rotate = false, poster }: { src: string; r
     const video = videoRef.current;
     if (!video) return;
 
+    // If a poster is provided, use it directly
+    if (poster) {
+      video.poster = poster;
+      return;
+    }
+
     let timeoutId: NodeJS.Timeout;
 
     const captureFrame = () => {
@@ -75,7 +81,7 @@ function VideoWithFrameCapture({ src, rotate = false, poster }: { src: string; r
       video.removeEventListener("loadedmetadata", onLoadedMetadata);
       video.removeEventListener("seeked", captureFrame);
     };
-  }, [src]);
+  }, [src, poster]);
 
   return (
     <div className={rotate ? "flex items-center justify-center overflow-hidden" : ""}>
