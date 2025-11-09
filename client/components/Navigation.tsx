@@ -86,9 +86,9 @@ export default function Navigation() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-1">
-            {navigation.map((item) => {
+            {navigation.map((item, idx) => {
               const active = !item.external && isActive(item.href);
-              const isAbout = item.name === "About";
+              const isAbout = item.href === "/about";
               const sharedClasses = `flex items-center space-x-2 px-4 py-2 rounded-xl text-sm font-medium font-display transition-all duration-200 group ${
                 active || (isAbout && aboutMenuOpen)
                   ? "bg-white/20 text-white font-semibold"
