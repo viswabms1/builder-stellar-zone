@@ -429,7 +429,7 @@ export default function Index() {
                           size="sm"
                           className="w-full justify-between text-foreground group-hover:text-foreground group-hover:bg-brand-magenta/90 font-display transition-colors"
                         >
-                          Learn More
+                          {t('buttons.learnMore')}
                           <ChevronRight className="w-4 h-4" />
                         </Button>
                       </a>
@@ -440,7 +440,7 @@ export default function Index() {
                           size="sm"
                           className="w-full justify-between text-foreground group-hover:text-foreground group-hover:bg-brand-magenta/90 font-display transition-colors"
                         >
-                          Learn More
+                          {t('buttons.learnMore')}
                           <ChevronRight className="w-4 h-4" />
                         </Button>
                       </Link>
