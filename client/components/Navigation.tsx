@@ -98,7 +98,7 @@ export default function Navigation() {
               if (item.external) {
                 return (
                   <a
-                    key={item.name}
+                    key={idx}
                     href={item.href}
                     target="_blank"
                     rel="noreferrer"
@@ -113,7 +113,7 @@ export default function Navigation() {
               if (isAbout) {
                 return (
                   <div
-                    key={item.name}
+                    key={idx}
                     className="relative group"
                     onMouseEnter={() => setAboutMenuOpen(true)}
                     onMouseLeave={() => setAboutMenuOpen(false)}
