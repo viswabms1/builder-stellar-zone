@@ -40,12 +40,12 @@ export default function Navigation() {
 
   const aboutSubmenus = [
     { name: "About DSU", href: "/about" },
-    { name: "Vision & Mission", href: "/about/vision-mission" },
-    { name: "History", href: "/about/history" },
-    { name: "Leadership", href: "/about/leadership" },
+    { name: t("nav.vision"), href: "/about/vision-mission" },
+    { name: t("nav.history"), href: "/about/history" },
+    { name: t("nav.leadership"), href: "/about/leadership" },
     { name: "Administrative Committees", href: "/about/leadership#administrative-committees" },
-    { name: "Accreditations", href: "/about/accreditations" },
-    { name: "Facilities", href: "/about/facilities" },
+    { name: t("about.accreditations"), href: "/about/accreditations" },
+    { name: t("nav.facilities"), href: "/about/facilities" },
   ];
 
   const navigation = [
