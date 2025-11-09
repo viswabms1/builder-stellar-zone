@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState, type FormEvent } from "react";
+import { useLanguage } from "@/providers/language-provider";
 
 import AdmissionCarousel from "@/components/AdmissionCarousel";
 import { Button } from "@/components/ui/button";
@@ -162,7 +163,7 @@ const admissionTracks: AdmissionTrack[] = [
     ctaLabel: "Register for DSAT",
   },
   {
-    title: "Direct Admissions – 2025",
+    title: "Direct Admissions ��� 2025",
     description:
       "Utilize the direct admissions channel with spot counseling support for eligible candidates.",
     highlights: [
