@@ -178,7 +178,7 @@ export default function Footer() {
                 className="bg-brand-gradient text-white shadow-lg shadow-brand-magenta/20 hover:shadow-xl hover:shadow-brand-magenta/30"
               >
                 <RouterLink to="/admissions" className="gap-2">
-                  Apply Now
+                  {footerTrans.sections.contact === 'Contact' ? 'Apply Now' : footerTrans.links.admissions}
                   <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
                 </RouterLink>
               </Button>
