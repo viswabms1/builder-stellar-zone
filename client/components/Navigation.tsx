@@ -142,7 +142,7 @@ export default function Navigation() {
               }
 
               return (
-                <Link key={item.name} to={item.href} className={sharedClasses}>
+                <Link key={idx} to={item.href} className={sharedClasses}>
                   <item.icon className="w-4 h-4" />
                   <span>{item.name}</span>
                   {active && <div className="w-1 h-1 bg-white rounded-full" />}
