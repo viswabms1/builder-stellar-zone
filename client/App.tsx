@@ -112,8 +112,9 @@ import NotFound from "./pages/NotFound";
 
 function App() {
   return (
-    <ThemeProvider>
-      <BrowserRouter>
+    <LanguageProvider>
+      <ThemeProvider>
+        <BrowserRouter>
         <div className="min-h-screen bg-background text-foreground">
           <Navigation />
           <main>
@@ -270,8 +271,9 @@ function App() {
           </main>
           <Footer />
         </div>
-      </BrowserRouter>
-    </ThemeProvider>
+        </BrowserRouter>
+      </ThemeProvider>
+    </LanguageProvider>
   );
 }
 
