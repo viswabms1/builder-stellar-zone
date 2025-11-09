@@ -81,6 +81,10 @@ export const translations = {
       facilities: 'Facilities',
       accreditations: 'Accreditations',
       description: 'Dayananda Sagar University is a premier institution dedicated to excellence in education, research, and innovation.',
+      aboutTitle: 'About Dayananda Sagar University',
+      aboutHero: 'A centre of excellence in education, research & training, innovation & entrepreneurship producing citizens with exceptional leadership qualities',
+      legacy: 'Our Legacy',
+      established: 'Established 1989 | Legacy since 1960s',
     },
     admissions: {
       title: 'Admissions',
@@ -173,7 +177,7 @@ export const translations = {
       history: 'ಇತಿಹಾಸ',
       leadership: 'ನೇತೃತ್ವ',
       facilities: 'ಸೌಲಭ್ಯ',
-      research: 'ಸಂಶೋಧ��ೆ',
+      research: 'ಸಂಶೋಧನೆ',
     },
     hero: {
       headline: 'ದಯಾನಂದ ಸಾಗರ ವಿಶ್ವವಿದ್ಯಾಲಯದಲ್ಲಿ ನಿಮ್ಮ ಭವಿಷ್ಯತ್ತನ್ನು ರೂಪಿಸಿ',
@@ -183,10 +187,10 @@ export const translations = {
     },
     academics: {
       title: 'ಶೈಕ್ಷಣಿಕ ಉತ್ಕರ್ಷತೆ ಯಾವುದು ಅನುಪ್ರೇರಿತ ಮಾಡುತ್ತದೆ',
-      subtitle: 'ನಾಳೆಯ ನೇತೃಸಿದ್ಧರನ್ನು ಸಾಕಾರ ಮಾಡಲು ಪ್ರಣಯನೀಯವಾದ ಬೌದ್ಧಿಕ ಮತ್ತು ಸ್ನಾತಕೋತ್ತರ ಕಾರ್ಯಸೂಚಿಗಳ ನೀವಿದ್ಧಾನವನ್ನು ಆವಿಷ್ಕಾರ ಮಾಡಿ.',
+      subtitle: 'ನಾಳೆಯ ನೇತೃಸಿದ್ಧರನ್ನು ಸಾಕಾರ ಮಾಡಲು ಪ್ರಣಯ��ೀಯವಾದ ಬೌದ್ಧಿಕ ಮತ್ತು ಸ್ನಾತಕೋತ್ತರ ಕಾರ್ಯಸೂಚಿಗಳ ನೀವಿದ್ಧಾನವನ್ನು ಆವಿಷ್ಕಾರ ಮಾಡಿ.',
       learnMore: 'ಇನ್ನೂ ಕಲಿಯಿರಿ',
       engineering: {
-        title: 'ಎಂಜಿನ��ಯರಿಂಗ್',
+        title: 'ಎಂಜಿನಿಯರಿಂಗ್',
         description: 'ಪ್ರಾಯೋಗಿಕ ನಿಮಜ್ಜನ, ಶಿಲ್ಪ ಮಾರ್ಗದರ್ಶನ ಮತ್ತು ಭವಿಷ್ಯತ್ತಿನ ತಜ್ಞತೆಯೊಂದಿಗೆ ಅತ್ಯಾಧುನಿಕ ಎಂಜಿನಿಯರಿಂಗ್ ಶಿಕ್ಷೆ.',
         programs: ['B.Tech CSE', 'B.Tech ಮೆಕ್ಯಾನಿಕಲ್', 'B.Tech ECE', 'B.Tech ನಿರ್ಮಾಣ'],
       },
@@ -207,7 +211,7 @@ export const translations = {
       },
       sciences: {
         title: 'ಮೂಲಭೂತ ಮತ್ತು ಪ್ರಯುಕ್ತ ವಿಜ್ಞಾನ',
-        description: 'ಪ್ರಾಬಲ್ಯ ಪ್ರಯೋಗಾಲೋ ಅನ್ವೇಷಣೆ ಮತ್ತು ಸಂಶೋಧನಾ-ಚಾಲಿತ ಕಲಿಕೆಯೊಂದಿಗೆ ಮೂಲಭೂತ ಮತ್ತು ಅಂತರ್ವಿಷಯೀಯ ವಿಜ್ಞಾನ.',
+        description: 'ಪ್ರಾಬಲ್ಯ ಪ್ರಯೋಗಾಲೋ ಅನ್ವೇಷಣೆ ಮತ್ತು ಸಂಶೋಧನಾ-ಚಾಲಿತ ಕಲಿಕೆಯೊಂದಿಗೆ ಮೂಲಭೂತ ಮತ್ತು ಅಂತರ್ವಿಷಯೀಯ ವಿಜ���ಞಾನ.',
         programs: ['ಭೌತಶಾಸ್ತ್ರ', 'ರಸಾಯನಶಾಸ್ತ್ರ', 'ಗಣಿತ', 'ಜೀವಪ್ರಯುಕ್ತಿ'],
       },
       health: {
@@ -222,7 +226,7 @@ export const translations = {
       },
       medical: {
         title: 'ವೈದ್ಯಕೀಯ ಶಿಕ್ಷೆ ಮತ್ತು ಸಂಶೋಧನೆ',
-        description: 'ನವೀನತೆ ಮತ್ತು ಸಮುದಾಯ ಪ್ರಭಾವಕ್ಕೆ ಕೇಂದ್ರೀಭೂತವಾದ ಅತ್ಯಾಧುನಿಕ ವೈದ್ಯಕೀಯ ಶಿಕ್��ೆ ಮತ್ತು ರೂಪಾಂತರಾತ್ಮಕ ಸಂಶೋಧನೆ.',
+        description: 'ನವೀನತೆ ಮತ್ತು ಸಮುದಾಯ ಪ್ರಭಾವಕ್ಕೆ ಕೇಂದ್ರೀಭೂತವಾದ ಅತ್ಯಾಧುನಿಕ ವೈದ್ಯಕೀಯ ಶಿಕ್ಷೆ ಮತ್ತು ರೂಪಾಂತರಾತ್ಮಕ ಸಂಶೋಧನೆ.',
         programs: ['MBBS', 'MD', 'DM', 'ಫೆಲೋಶಿಪ್'],
       },
     },
@@ -241,10 +245,10 @@ export const translations = {
     },
     admissions: {
       title: 'ಪ್ರವೇಶ',
-      description: 'ಕಲಿಕೆ ಮತ್ತು ನವೀಕರ್ಮಕಗಳ ನಮ್ಮ ಚೈತನ್ಯಮಂಡಿಗೆ ಸೇರಿಸಿಕೊಳ್ಳಿ',
+      description: 'ಕಲಿಕೆ ಮತ್ತು ನವ��ಕರ್ಮಕಗಳ ನಮ್ಮ ಚೈತನ್ಯಮಂಡಿಗೆ ಸೇರಿಸಿಕೊಳ್ಳಿ',
       applyNow: 'ಈಗ ಅರ್ಜಿ ಹಾಕಿ',
       viewEligibility: 'ಅರ್ಹತೆಯ ಮಾನದಂಡವನ್ನು ವೀಕ್ಷಣ ಮಾಡಿ',
-      internationalStudents: 'ಅಂ��ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾರ್ಥಿಗಳು',
+      internationalStudents: 'ಅಂತರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾರ್ಥಿಗಳು',
     },
     campusLife: {
       title: 'ಕ್ಯಾಂಪಸ್ ಜೀವನ',
@@ -260,7 +264,7 @@ export const translations = {
       description: 'ಕ್ಯಾರಿಯರ್ ಸೇವೆಗಳು ಮತ್ತು ನೇಮಕಾತಿ ಬೆಂಬಲ',
       placementRate: 'ನೇಮಕಾತಿ ದರ',
       averagePackage: 'ಸರಾಸರಿ ಪ್ಯಾಕೇಜ್',
-      topRecruiters: 'ಅಗ್ರ ನೇಮಕಾತ��ದಾರ',
+      topRecruiters: 'ಅಗ್ರ ನೇಮಕಾತಿದಾರ',
     },
     research: {
       title: 'ಸಂಶೋಧನೆ ಮತ್ತು ನವೀನತೆ',
@@ -282,12 +286,12 @@ export const translations = {
       address: 'ವಿಳಾಸ',
       phone: 'ಫೋನ್',
       email: 'ಇಮೇಲ್',
-      followUs: 'ನಮ್ಮನ್ನು ಸರಿಸುಮಾರಿ ಮಾಡಿ',
+      followUs: 'ನಮ್ಮನ್ನು ಸರಿಸುಮಾರಿ ��ಾಡಿ',
       copyright: '© 2025 ದಯಾನಂದ ಸಾಗರ ವಿಶ್ವವಿದ್ಯಾಲಯ. ಎಲ್ಲಾ ಅಧಿಕಾರಗಳು ಸಂರಕ್ಷಿತ.',
     },
     news: {
       title: 'ವಿಶೇಷ ಸುದ್ದಿ',
-      subtitle: 'ಸಂಶೋಧನೆ, ಕ್ಯಾಂಪಸ�� ಜೀವನ ಮತ್ತು ನಮ್ಮ ಸಮುದಾಯದಿಂದ ಕಥೆಗಳು',
+      subtitle: 'ಸಂಶೋಧನೆ, ಕ್ಯಾಂಪಸ್ ಜೀವನ ಮತ್ತು ನಮ್ಮ ಸಮುದಾಯದಿಂದ ಕಥೆಗಳು',
       category: 'ವಿಭಾಗ',
       readMore: 'ಇನ್ನೂ ಓದಿ',
     },
@@ -374,11 +378,11 @@ export const translations = {
       },
       design: {
         title: 'डिजाइन और डिजिटल ट्रांस मीडिया',
-        description: 'UX/UI, ग्राफिक्स, एनिमेशन और आधुनिक प्लेटफार्मों के लिए कहानी कहने में डिजाइन और डि��िटल मीडिया प्रोग्राम।',
+        description: 'UX/UI, ग्राफिक्स, एनिमेशन और आधुनिक प्लेटफार्मों के लिए कहानी कहने में डि��ाइन और डि��िटल मीडिया प्रोग्राम।',
         programs: ['एनिमेशन', 'UX/UI', 'ग्राफिक डिजाइन', 'डिजिटल मीडिया'],
       },
       medical: {
-        title: 'चिकित्सा शिक्षा ���र अनुसंधान',
+        title: 'चिकित्सा शिक्षा और अनुसंधान',
         description: 'नवीनता और सामुदायिक प्रभाव पर ध्यान केंद्रित करके उन्नत चिकित्सा शिक्षा और अनुवादकारी अनुसंधान।',
         programs: ['MBBS', 'MD', 'DM', 'फेलोशिप'],
       },
@@ -434,7 +438,7 @@ export const translations = {
       admissions: 'प्रवेश',
       placements: 'प्लेसमेंट',
       research: 'अनुसंधान',
-      campusLife: 'कैंपस जीवन',
+      campusLife: 'कैं���स जीवन',
       contact: 'संपर्क करें',
       address: 'पता',
       phone: 'फोन',
