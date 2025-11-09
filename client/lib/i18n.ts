@@ -161,6 +161,57 @@ export const translations = {
       less: 'Less',
       noResults: 'No results found',
     },
+    // Additional Pages
+    aboutPage: {
+      title: 'About Dayananda Sagar University',
+      hero: 'A centre of excellence in education, research & training, innovation & entrepreneurship producing citizens with exceptional leadership qualities',
+      welcome: 'Welcome to DSU',
+      legacy: 'Our Legacy',
+      established: 'Established 1989 | Legacy since 1960s',
+      campusTour: 'Campus Tour',
+    },
+    leadershipPage: {
+      title: 'Leadership & Administration',
+      chancellor: 'Chancellor',
+      proChancellor: 'Pro Chancellor',
+      registrar: 'Registrar',
+      viceChancellor: 'Vice Chancellor',
+    },
+    visionMissionPage: {
+      title: 'Vision, Mission and Values',
+      subtitle: 'Throwing light on the way forward',
+      vision: 'Vision',
+      mission: 'Mission',
+      values: 'Values',
+    },
+    historyPage: {
+      title: 'Inspiring the Shape of Things to Come',
+      subtitle: 'A legacy built on vision, excellence, and commitment to transforming lives',
+      founders: 'Our Founders',
+      legacy: 'Dayananda Sagar Institutions Legacy',
+    },
+    placementsPage: {
+      title: 'Placements',
+      subtitle: 'Career Services and Placement Support',
+      statistics: 'Placement Statistics',
+      topRecruiters: 'Top Recruiters',
+      testimonials: 'Student Testimonials',
+    },
+    facilitiesPage: {
+      title: 'Campus Facilities',
+      subtitle: 'State-of-the-art infrastructure for learning',
+      academicBuildings: 'Academic Buildings',
+      researchLabs: 'Research & Innovation Labs',
+      libraries: 'Libraries',
+      sportsRecreation: 'Sports & Recreation',
+      hostels: 'Hostels & Accommodation',
+    },
+    engineeringPage: {
+      title: 'School of Engineering',
+      innovate: 'INNOVATE. CREATE. DEVELOP.',
+      skillIntegrated: 'Skill-Integrated Curriculum',
+      centresExcellence: 'Centers of Excellence',
+    },
   },
   kn: {
     nav: {
@@ -180,7 +231,7 @@ export const translations = {
       research: 'ಸಂಶೋಧನೆ',
     },
     hero: {
-      headline: 'ದಯಾನಂದ ಸಾಗರ ವಿಶ್ವವಿದ್ಯಾಲಯದಲ್ಲಿ ನಿಮ್ಮ ಭವಿಷ್ಯತ್ತನ್ನು ರೂಪಿಸಿ',
+      headline: 'ದಯಾನಂದ ಸಾಗರ ವಿಶ್ವವಿದ್ಯಾಲಯದಲ್ಲಿ ನಿಮ್ಮ ಭವಿ��್ಯತ್ತನ್ನು ರೂಪಿಸಿ',
       subheadline: 'ದಯಾನಂದ ಸಾಗರ ವಿಶ್ವವಿದ್ಯಾಲಯದಲ್ಲಿ ವಿಶ್ವ-ಮಾನದ ಶಿಕ್ಷೆಯನ್ನು ಅನುಭವ ಮಾಡಿ. ನಮ್ಮ ಅತಿಆಧುನಿಕ ಸಸ್ಯಾವಳಿಯಲ್ಲಿ ನವೀನತೆ ಪರಂಪರೆಯೊಂದಿಗೆ ಸಾಕ್ಷಿ ನಿಲುವುತ್ತದೆ.',
       applyNow: 'ಈಗ ಅರ್ಜಿ ಹಾಕಿ',
       virtualTour: 'ವರ್ಚುವಲ್ ಟೂರ್',
@@ -191,7 +242,7 @@ export const translations = {
       learnMore: 'ಇನ್ನೂ ಕಲಿಯಿರಿ',
       engineering: {
         title: 'ಎಂಜಿನಿಯರಿಂಗ್',
-        description: 'ಪ್ರಾಯೋಗಿಕ ನಿಮಜ್ಜನ, ಶಿಲ್ಪ ಮಾರ್ಗದರ್ಶನ ಮತ್ತು ಭವಿಷ್ಯತ್ತಿನ ತಜ್ಞತೆಯೊಂದಿಗೆ ಅತ್ಯಾಧುನಿಕ ಎಂಜಿನಿಯರಿಂಗ್ ಶಿಕ್ಷೆ.',
+        description: 'ಪ್ರಾಯೋಗಿಕ ನಿಮಜ್ಜನ, ಶಿಲ್ಪ ಮಾರ್ಗದರ್ಶನ ಮತ್ತ�� ಭವಿಷ್ಯತ್ತಿನ ತಜ್ಞತೆಯೊಂದಿಗೆ ಅತ್ಯಾಧುನಿಕ ಎಂಜಿನಿಯರಿಂಗ್ ಶಿಕ್ಷೆ.',
         programs: ['B.Tech CSE', 'B.Tech ಮೆಕ್ಯಾನಿಕಲ್', 'B.Tech ECE', 'B.Tech ನಿರ್ಮಾಣ'],
       },
       computerApplications: {
@@ -206,7 +257,7 @@ export const translations = {
       },
       management: {
         title: 'ವಿಷಯಾಧಿಕಾರ ಮತ್ತು ನಿರ್ವಹಣೆ ಅಧ್ಯಯನ',
-        description: 'ಭಿನ್ನಾಭಿಪ್ರಾಯ ನಿರ್ವಹಣೆ, ವಿಶ್ಲೇಷಣ, ಉದ್ಯೋಗಿತೆ ಮತ್ತು ಶಿಲ್ಪ ಯೋಜನೆಗಳೊಂದಿಗೆ ಮಿಶ್ರ ವ್ಯವಸಾಯ ಶಿಕ್ಷೆ.',
+        description: 'ಭಿನ್ನಾಭಿಪ್ರಾಯ ನಿರ್ವಹಣೆ, ವಿಶ್ಲೇಷಣ, ಉದ್ಯೋ���ಿತೆ ಮತ್ತು ಶಿಲ್ಪ ಯೋಜನೆಗಳೊಂದಿಗೆ ಮಿಶ್ರ ವ್ಯವಸಾಯ ಶಿಕ್ಷೆ.',
         programs: ['B.Com', 'BBA', 'MBA', 'ವಿತ್ತ ಮತ್ತು ಮಾರ್ಕೆಟಿಂಗ್'],
       },
       sciences: {
@@ -217,7 +268,7 @@ export const translations = {
       health: {
         title: 'ಆರೋಗ್ಯ ವಿಜ್ಞಾನ',
         description: 'ಕ್ಲಿನಿಕಲ್ ನಿಮಜ್ಜನ, ಸಿಮುಲೇಶನ್ ಲ್ಯಾಬ್‌ಗಳು ಮತ್ತು ಬಲವಾದ ರೋಗಿ-ಕಾಳಜಿ ಫೋಕಸ್‌ನೊಂದಿಗೆ ಆರೋಗ್ಯ ಪೇಶೆ ಶಿಕ್ಷೆ.',
-        programs: ['ಫಾರ್ಮಸಿ', 'ಜೈವಿಕ ಚಿಕಿತ್ಸೆ', 'ನರ್ಸಿಂಗ್', 'ಬೆಂಬಲಿತ ಆರೋಗ್ಯ'],
+        programs: ['ಫಾರ್ಮಸಿ', 'ಜೈವಿಕ ಚಿಕಿತ್ಸೆ', 'ನರ್ಸಿಂಗ್', 'ಬೆಂಬಲ��ತ ಆರೋಗ್ಯ'],
       },
       design: {
         title: 'ಡಿজಾಇನ್ ಮತ್ತು ಡಿಜಿಟಲ್ ಟ್ರಾನ್ಸ್ ಮಿಡಿಯಾ',
@@ -251,7 +302,7 @@ export const translations = {
       internationalStudents: 'ಅಂತರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾರ್ಥಿಗಳು',
     },
     campusLife: {
-      title: 'ಕ್ಯಾಂಪಸ್ ಜೀವನ',
+      title: 'ಕ್ಯಾಂಪಸ್ ಜ���ವನ',
       description: 'ಕೇವಲ ಶಿಕ್ಷೆ ಹೆಚ್ಚಿನದು ಆಗಿದೆ - ಇದು ಮನೆ',
       subheadline: 'ಸ್ನೇಹಮಯ ಬೆಳೆದ ತಜ್ಞತೆ ಶೋಧಿಸಲಾಗುತ್ತದೆ ಮತ್ತು ಸ್ಮೃತಿಗಳ ನಿರ್ಮಾಣ ಮಾಡಲಾಗುತ್ತದೆ ಏಕ ಕ್ಯಾಂಪಸ್ ಸಮುದಾಯದ ಅನುಭವವನ್ನು ನಿರ್ಮಾಣ ಮಾಡಿ.',
       studentStories: 'ವಿದ್ಯಾರ್ಥಿ ಕಥೆಗಳು',
@@ -325,7 +376,7 @@ export const translations = {
       about: 'परिचय',
       academics: 'शिक्षा',
       admissions: 'प्रवेश',
-      campusLife: 'कैंपस जीवन',
+      campusLife: 'कैंपस ���ीवन',
       centreOfExcellence: 'उत्कृष्टता और नवीनता केंद्र',
       placements: 'प्लेसमेंट',
       publicSelfDisclosure: 'सार्वजनिक स्व-प्रकटीकरण',
@@ -344,7 +395,7 @@ export const translations = {
     },
     academics: {
       title: 'शैक्षणिक उत्कृष्टता जो प्रेरणा देती है',
-      subtitle: 'कल के नेताओं को तैयार करने के लिए डिजाइन किए गए विविध स्नातक और स्नातकोत्तर कार्यक्रमों की खोज करें।',
+      subtitle: 'कल के न���ताओं को तैयार करने के लिए डिजाइन किए गए विविध स्नातक और स्नातकोत्तर कार्यक्रमों की खोज करें।',
       learnMore: 'और जानें',
       engineering: {
         title: 'इंजीनियरिंग',
@@ -369,7 +420,7 @@ export const translations = {
       sciences: {
         title: 'बुनियादी और लागू विज्ञान',
         description: 'मजबूत लैब एक्सपोजर और अनुसंधान-चालित सीखने के साथ बुनियादी और अंतःविषय विज्ञान।',
-        programs: ['भौतिकी', 'रसायन विज्ञान', 'गणित', 'जैव प्रौद्योगिकी'],
+        programs: ['भौतिकी', 'रसायन विज्ञान', 'गणित', 'जैव प्रौद्��ोगिकी'],
       },
       health: {
         title: 'स्वास्थ्य विज्ञान',
@@ -402,7 +453,7 @@ export const translations = {
     },
     admissions: {
       title: 'प्रवेश',
-      description: 'शिक्षार्थियों और नवाचारों की हमारी जीवंत समुदाय में शामिल हों',
+      description: 'शिक्षार्थियों और नवाचारों ��ी हमारी जीवंत समुदाय में शामिल हों',
       applyNow: 'अभी आवेदन करें',
       viewEligibility: 'पात्रता मानदंड देखें',
       internationalStudents: 'अंतर्राष्ट्रीय छात्र',
