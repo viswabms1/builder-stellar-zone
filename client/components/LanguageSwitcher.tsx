@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { getLanguageLabel } from '@/lib/i18n';
 import type { Language } from '@/lib/i18n';
 import { ChevronDown } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 const LANGUAGES: Language[] = ['en', 'kn', 'hi'];
 
