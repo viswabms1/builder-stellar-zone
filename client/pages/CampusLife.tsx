@@ -61,15 +61,11 @@ export default function CampusLife() {
             </div>
 
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 leading-tight text-white">
-              <span>More Than Just</span>
-              <br />
-              <span className="text-orange-300">Education</span>
-              <br />
-              <span>It's Home</span>
+              {t('campusLife.title')}
             </h1>
 
             <p className="text-base md:text-lg text-white mb-6 leading-relaxed">
-              Experience a vibrant campus community where friendships are made, talents are discovered, and memories are created.
+              {t('campusLife.subheadline')}
             </p>
 
             <a
