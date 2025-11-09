@@ -194,7 +194,7 @@ export default function Index() {
                 size="lg"
                 className="bg-brand-gradient hover:opacity-90 text-foreground px-8 py-6 text-lg font-semibold font-display rounded-2xl shadow-lg hover:shadow-brand-magenta/25 transition-all duration-300 group"
               >
-                Apply Now
+                {t('hero.applyNow')}
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
               <a
