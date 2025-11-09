@@ -2,6 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "./ThemeToggle";
 import SearchDialog from "./SearchDialog";
+import LanguageSwitcher from "./LanguageSwitcher";
 import {
   Menu,
   X,
