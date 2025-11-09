@@ -163,7 +163,7 @@ const admissionTracks: AdmissionTrack[] = [
     ctaLabel: "Register for DSAT",
   },
   {
-    title: "Direct Admissions ��� 2025",
+    title: "Direct Admissions – 2025",
     description:
       "Utilize the direct admissions channel with spot counseling support for eligible candidates.",
     highlights: [
@@ -352,6 +352,8 @@ export default function Admissions() {
 }
 
 function HeroSection() {
+  const { t } = useLanguage();
+
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-orange-500/10 via-red-500/10 to-background py-20 lg:py-28">
       <div className="absolute inset-0">
@@ -361,15 +363,13 @@ function HeroSection() {
       <div className="relative mx-auto max-w-6xl px-6 text-center">
         <div className="inline-flex items-center gap-2 rounded-full border border-orange-500/30 bg-orange-500/10 px-4 py-2 text-sm font-semibold text-orange-500">
           <GraduationCap className="h-4 w-4" />
-          Admissions 2025 at DSU
+          {t('admissions.title')} 2025
         </div>
         <h1 className="mt-8 text-4xl font-bold leading-tight text-foreground md:text-6xl">
-          Forge Your Future with Dayananda Sagar University
+          {t('admissions.description')}
         </h1>
         <p className="mt-6 text-lg text-foreground md:text-xl">
-          Choose from industry-aligned undergraduate, postgraduate, doctoral,
-          and online programs with expert mentoring, modern labs, and global
-          exposure.
+          {t('academics.subtitle')}
         </p>
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Button
