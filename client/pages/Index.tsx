@@ -224,14 +224,10 @@ export default function Index() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="headline-2 mb-6">
-              <span className="bg-brand-gradient bg-clip-text text-transparent">
-                Academic Excellence
-              </span>
-              <span className="text-foreground"> That Inspires</span>
+              {t('academics.title')}
             </h2>
             <p className="subheadline text-foreground max-w-3xl mx-auto font-display">
-              Discover cutting-edge programs designed to prepare you for
-              tomorrow's challenges
+              {t('academics.subtitle')}
             </p>
           </div>
 
