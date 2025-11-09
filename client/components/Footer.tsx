@@ -133,6 +133,9 @@ const SOCIAL_LINKS = [
 ];
 
 export default function Footer() {
+  const { language } = useLanguage();
+  const footerTrans = footerTranslations[language as keyof typeof footerTranslations] || footerTranslations.en;
+
   return (
     <footer className="relative mt-24 border-t border-white/10 bg-[#070311] text-white">
       <div
