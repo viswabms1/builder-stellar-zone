@@ -150,7 +150,7 @@ export default function Navigation() {
           </div>
 
           {/* Desktop Actions */}
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden md:flex items-center space-x-2">
             <Button
               variant="ghost"
               size="sm"
@@ -162,6 +162,7 @@ export default function Navigation() {
                 Cmd+K
               </span>
             </Button>
+            <LanguageSwitcher />
             <ThemeToggle className="text-white/80 hover:text-white hover:bg-white/10" />
           </div>
 
