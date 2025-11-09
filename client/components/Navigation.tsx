@@ -202,7 +202,7 @@ export default function Navigation() {
               if (item.external) {
                 return (
                   <a
-                    key={item.name}
+                    key={idx}
                     href={item.href}
                     target="_blank"
                     rel="noreferrer"
@@ -217,7 +217,7 @@ export default function Navigation() {
 
               if (isAbout) {
                 return (
-                  <div key={item.name} className="space-y-2">
+                  <div key={idx} className="space-y-2">
                     <button
                       onClick={() => setAboutMenuOpen(!aboutMenuOpen)}
                       className={`w-full text-left ${sharedClasses}`}
