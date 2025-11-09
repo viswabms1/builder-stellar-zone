@@ -152,6 +152,7 @@ function NewsModal({ newsItem, onClose }: { newsItem: any; onClose: () => void }
 
 export default function Index() {
   const [selectedNews, setSelectedNews] = useState<any>(null);
+  const { t, language } = useLanguage();
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-hidden">
