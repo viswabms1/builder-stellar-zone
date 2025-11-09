@@ -323,7 +323,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-16 grid gap-6 border-t border-white/10 pt-6 text-sm text-white/60 font-body sm:flex sm:flex-wrap sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} Dayananda Sagar University. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Dayananda Sagar University. {language === 'en' ? 'All rights reserved.' : language === 'kn' ? 'ಎಲ್ಲಾ ಅಧಿಕಾರಗಳು ಸಂರಕ್ಷಿತ.' : 'सर्वाधिकार सुरक्षित.'}</p>
           <div className="flex flex-wrap gap-4">
             <a
               href="https://www.dsu.edu.in/privacy-policy"
