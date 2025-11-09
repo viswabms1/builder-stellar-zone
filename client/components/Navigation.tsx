@@ -44,7 +44,7 @@ export default function Navigation() {
     { name: t("nav.history"), href: "/about/history" },
     { name: t("nav.leadership"), href: "/about/leadership" },
     { name: "Administrative Committees", href: "/about/leadership#administrative-committees" },
-    { name: t("about.accreditations"), href: "/about/accreditations" },
+    { name: "Accreditations", href: "/about/accreditations" },
     { name: t("nav.facilities"), href: "/about/facilities" },
   ];
 
