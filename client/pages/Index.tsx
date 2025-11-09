@@ -154,6 +154,32 @@ export default function Index() {
   const [selectedNews, setSelectedNews] = useState<any>(null);
   const { t, language } = useLanguage();
 
+  // Get schools data based on current language
+  const getSchoolsData = () => {
+    const baseSchools = [
+      { key: 'engineering', icon: Cog, color: 'brand-orange', delay: '0s', href: '/academics/engineering' },
+      { key: 'computerApplications', icon: Cpu, color: 'brand-magenta', delay: '0.1s', href: '/academics/computer-applications' },
+      { key: 'law', icon: Gavel, color: 'brand-blue', delay: '0.2s', href: '/academics/law' },
+      { key: 'management', icon: Briefcase, color: 'brand-orange', delay: '0.3s', href: '/academics/management-studies' },
+      { key: 'sciences', icon: FlaskConical, color: 'brand-magenta', delay: '0.4s', href: '/academics/basic-applied-sciences' },
+      { key: 'health', icon: Stethoscope, color: 'brand-blue', delay: '0.5s', href: '/academics/health-sciences' },
+      { key: 'design', icon: Film, color: 'brand-magenta', delay: '0.7s', href: '/academics/design/bdesign' },
+      { key: 'medical', icon: Microscope, color: 'brand-blue', delay: '0.8s', href: 'https://cdsimer.edu.in' },
+    ];
+
+    return baseSchools.map((school) => ({
+      ...school,
+      title: t(`academics.${school.key}.title`),
+      description: t(`academics.${school.key}.description`),
+      programs: [
+        t(`academics.${school.key}.programs.0`) || 'Program 1',
+        t(`academics.${school.key}.programs.1`) || 'Program 2',
+        t(`academics.${school.key}.programs.2`) || 'Program 3',
+        t(`academics.${school.key}.programs.3`) || 'Program 4',
+      ],
+    }));
+  };
+
   return (
     <div className="min-h-screen bg-background text-foreground overflow-hidden">
       {/* Hero Section with University Building */}
