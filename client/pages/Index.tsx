@@ -182,18 +182,17 @@ export default function Index() {
         <div className="relative max-w-7xl mx-auto px-6 text-center lg:text-left lg:flex lg:items-center lg:space-x-12">
           <div className="lg:w-2/3">
             <h1 className="headline-1 mb-8 leading-tight">
-              <span className="text-white">Shape Your</span>
+              <span className="text-white">{t('hero.headline').split(' at ')[0].split('\n')[0]}</span>
               <br />
               <span className="bg-brand-gradient bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient-shift">
-                Future
+                {t('hero.headline').includes('Future') ? 'Future' : 'ভবিষ্যত'}
               </span>
               <br />
-              <span className="text-white whitespace-nowrap">at Dayananda Sagar University</span>
+              <span className="text-white whitespace-nowrap">{`at ${t('hero.headline').split('at ')[1] || 'Dayananda Sagar University'}`}</span>
             </h1>
 
             <p className="subheadline text-gray-200 mb-12 max-w-3xl mx-auto leading-relaxed">
-              Experience world-class education at Dayananda Sagar University.
-              Innovation meets tradition on our state-of-the-art campus.
+              {t('hero.subheadline')}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-16">
