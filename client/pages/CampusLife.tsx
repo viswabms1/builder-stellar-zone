@@ -37,6 +37,8 @@ import {
 } from "lucide-react";
 
 export default function CampusLife() {
+  const { t } = useLanguage();
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero Section with Background Image */}
