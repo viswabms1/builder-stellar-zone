@@ -190,9 +190,9 @@ export default function Navigation() {
       {isOpen && (
         <div className="md:hidden border-t border-orange-600/20 bg-gradient-to-r from-orange-500 to-red-600">
           <div className="px-6 py-4 space-y-3">
-            {navigation.map((item) => {
+            {navigation.map((item, idx) => {
               const active = !item.external && isActive(item.href);
-              const isAbout = item.name === "About";
+              const isAbout = item.href === "/about";
               const sharedClasses = `flex items-center space-x-3 px-4 py-3 rounded-xl text-sm font-medium font-display transition-all duration-200 ${
                 active
                   ? "bg-white/20 text-white font-semibold"
