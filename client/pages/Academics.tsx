@@ -58,16 +58,14 @@ export default function Academics() {
 
           <h1 className="headline-1 mb-8 leading-tight">
             <span className="bg-brand-gradient bg-clip-text text-transparent">
-              Shape Tomorrow
+              {t('academics.title').split(' ')[0]} {t('academics.title').split(' ')[1]}
             </span>
             <br />
-            <span className="text-foreground">Through Learning</span>
+            <span className="text-foreground">That Inspires</span>
           </h1>
 
           <p className="text-xl md:text-2xl text-foreground mb-6 max-w-4xl mx-auto leading-relaxed">
-            Discover world-class academic programs designed to prepare you for
-            the challenges of tomorrow. At DSU, innovation meets excellence
-            across every discipline.
+            {t('academics.subtitle')}
           </p>
 
         </div>
