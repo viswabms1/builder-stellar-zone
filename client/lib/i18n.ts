@@ -173,7 +173,7 @@ export const translations = {
       history: 'ಇತಿಹಾಸ',
       leadership: 'ನೇತೃತ್ವ',
       facilities: 'ಸೌಲಭ್ಯ',
-      research: 'ಸಂಶೋಧನೆ',
+      research: 'ಸಂಶೋಧ��ೆ',
     },
     hero: {
       headline: 'ದಯಾನಂದ ಸಾಗರ ವಿಶ್ವವಿದ್ಯಾಲಯದಲ್ಲಿ ನಿಮ್ಮ ಭವಿಷ್ಯತ್ತನ್ನು ರೂಪಿಸಿ',
@@ -186,7 +186,7 @@ export const translations = {
       subtitle: 'ನಾಳೆಯ ನೇತೃಸಿದ್ಧರನ್ನು ಸಾಕಾರ ಮಾಡಲು ಪ್ರಣಯನೀಯವಾದ ಬೌದ್ಧಿಕ ಮತ್ತು ಸ್ನಾತಕೋತ್ತರ ಕಾರ್ಯಸೂಚಿಗಳ ನೀವಿದ್ಧಾನವನ್ನು ಆವಿಷ್ಕಾರ ಮಾಡಿ.',
       learnMore: 'ಇನ್ನೂ ಕಲಿಯಿರಿ',
       engineering: {
-        title: 'ಎಂಜಿನಿಯರಿಂಗ್',
+        title: 'ಎಂಜಿನ��ಯರಿಂಗ್',
         description: 'ಪ್ರಾಯೋಗಿಕ ನಿಮಜ್ಜನ, ಶಿಲ್ಪ ಮಾರ್ಗದರ್ಶನ ಮತ್ತು ಭವಿಷ್ಯತ್ತಿನ ತಜ್ಞತೆಯೊಂದಿಗೆ ಅತ್ಯಾಧುನಿಕ ಎಂಜಿನಿಯರಿಂಗ್ ಶಿಕ್ಷೆ.',
         programs: ['B.Tech CSE', 'B.Tech ಮೆಕ್ಯಾನಿಕಲ್', 'B.Tech ECE', 'B.Tech ನಿರ್ಮಾಣ'],
       },
@@ -222,7 +222,7 @@ export const translations = {
       },
       medical: {
         title: 'ವೈದ್ಯಕೀಯ ಶಿಕ್ಷೆ ಮತ್ತು ಸಂಶೋಧನೆ',
-        description: 'ನವೀನತೆ ಮತ್ತು ಸಮುದಾಯ ಪ್ರಭಾವಕ್ಕೆ ಕೇಂದ್ರೀಭೂತವಾದ ಅತ್ಯಾಧುನಿಕ ವೈದ್ಯಕೀಯ ಶಿಕ್ಷೆ ಮತ್ತು ರೂಪಾಂತರಾತ್ಮಕ ಸಂಶೋಧನೆ.',
+        description: 'ನವೀನತೆ ಮತ್ತು ಸಮುದಾಯ ಪ್ರಭಾವಕ್ಕೆ ಕೇಂದ್ರೀಭೂತವಾದ ಅತ್ಯಾಧುನಿಕ ವೈದ್ಯಕೀಯ ಶಿಕ್��ೆ ಮತ್ತು ರೂಪಾಂತರಾತ್ಮಕ ಸಂಶೋಧನೆ.',
         programs: ['MBBS', 'MD', 'DM', 'ಫೆಲೋಶಿಪ್'],
       },
     },
@@ -244,7 +244,7 @@ export const translations = {
       description: 'ಕಲಿಕೆ ಮತ್ತು ನವೀಕರ್ಮಕಗಳ ನಮ್ಮ ಚೈತನ್ಯಮಂಡಿಗೆ ಸೇರಿಸಿಕೊಳ್ಳಿ',
       applyNow: 'ಈಗ ಅರ್ಜಿ ಹಾಕಿ',
       viewEligibility: 'ಅರ್ಹತೆಯ ಮಾನದಂಡವನ್ನು ವೀಕ್ಷಣ ಮಾಡಿ',
-      internationalStudents: 'ಅಂತರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾರ್ಥಿಗಳು',
+      internationalStudents: 'ಅಂ��ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾರ್ಥಿಗಳು',
     },
     campusLife: {
       title: 'ಕ್ಯಾಂಪಸ್ ಜೀವನ',
@@ -260,7 +260,7 @@ export const translations = {
       description: 'ಕ್ಯಾರಿಯರ್ ಸೇವೆಗಳು ಮತ್ತು ನೇಮಕಾತಿ ಬೆಂಬಲ',
       placementRate: 'ನೇಮಕಾತಿ ದರ',
       averagePackage: 'ಸರಾಸರಿ ಪ್ಯಾಕೇಜ್',
-      topRecruiters: 'ಅಗ್ರ ನೇಮಕಾತಿದಾರ',
+      topRecruiters: 'ಅಗ್ರ ನೇಮಕಾತ��ದಾರ',
     },
     research: {
       title: 'ಸಂಶೋಧನೆ ಮತ್ತು ನವೀನತೆ',
@@ -287,7 +287,7 @@ export const translations = {
     },
     news: {
       title: 'ವಿಶೇಷ ಸುದ್ದಿ',
-      subtitle: 'ಸಂಶೋಧನೆ, ಕ್ಯಾಂಪಸ್ ಜೀವನ ಮತ್ತು ನಮ್ಮ ಸಮುದಾಯದಿಂದ ಕಥೆಗಳು',
+      subtitle: 'ಸಂಶೋಧನೆ, ಕ್ಯಾಂಪಸ�� ಜೀವನ ಮತ್ತು ನಮ್ಮ ಸಮುದಾಯದಿಂದ ಕಥೆಗಳು',
       category: 'ವಿಭಾಗ',
       readMore: 'ಇನ್ನೂ ಓದಿ',
     },
@@ -378,7 +378,7 @@ export const translations = {
         programs: ['एनिमेशन', 'UX/UI', 'ग्राफिक डिजाइन', 'डिजिटल मीडिया'],
       },
       medical: {
-        title: 'चिकित्सा शिक्षा और अनुसंधान',
+        title: 'चिकित्सा शिक्षा ���र अनुसंधान',
         description: 'नवीनता और सामुदायिक प्रभाव पर ध्यान केंद्रित करके उन्नत चिकित्सा शिक्षा और अनुवादकारी अनुसंधान।',
         programs: ['MBBS', 'MD', 'DM', 'फेलोशिप'],
       },
@@ -505,4 +505,18 @@ export function getTranslation(lang: Language, key: string): string {
   }
 
   return value || key;
+}
+
+// Extended translation function supporting nested keys
+export function t(lang: Language, key: string): string {
+  return getTranslation(lang, key);
+}
+
+// Batch translation function for multiple keys
+export function batchTranslate(lang: Language, keys: string[]): Record<string, string> {
+  const result: Record<string, string> = {};
+  keys.forEach((key) => {
+    result[key] = getTranslation(lang, key);
+  });
+  return result;
 }
