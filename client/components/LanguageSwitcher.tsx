@@ -12,7 +12,7 @@ export default function LanguageSwitcher() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="relative group">
+    <div className="relative">
       <Button
         variant="ghost"
         size="sm"
