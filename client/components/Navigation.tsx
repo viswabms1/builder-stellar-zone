@@ -255,7 +255,7 @@ export default function Navigation() {
 
               return (
                 <Link
-                  key={item.name}
+                  key={idx}
                   to={item.href}
                   onClick={() => setIsOpen(false)}
                   className={sharedClasses}
