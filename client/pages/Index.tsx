@@ -206,12 +206,12 @@ export default function Index() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-2 border-white/30 bg-black/40 text-foreground 
-             hover:bg-white hover:text-orange-600 
-             px-8 py-6 text-lg font-semibold font-display 
+                  className="border-2 border-white/30 bg-black/40 text-foreground
+             hover:bg-white hover:text-orange-600
+             px-8 py-6 text-lg font-semibold font-display
              rounded-2xl transition-all duration-300 backdrop-blur-sm"
                 >
-                  Virtual Tour
+                  {t('hero.virtualTour')}
                 </Button>
               </a>
             </div>
