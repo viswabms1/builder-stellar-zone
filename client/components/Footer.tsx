@@ -1,4 +1,6 @@
 import { Link as RouterLink } from "react-router-dom";
+import { useLanguage } from "@/providers/language-provider";
+import { footerTranslations } from "@/lib/i18n-extended";
 import {
   ArrowUpRight,
   Facebook,
