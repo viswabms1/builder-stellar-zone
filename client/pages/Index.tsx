@@ -526,22 +526,22 @@ export default function Index() {
                       <img
                         src={item.image}
                         alt={item.title}
-                        className="h-44 w-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                        className="h-32 w-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
                       />
                     )}
-                    <div className="absolute top-3 left-3">
+                    <div className="absolute top-2 left-2">
                       <Badge
-                        className={`${item.color === "brand-orange" ? "bg-brand-orange/20 text-brand-orange" : item.color === "brand-magenta" ? "bg-brand-magenta/20 text-brand-magenta" : "bg-brand-blue/20 text-brand-blue"}`}
+                        className={`text-xs ${item.color === "brand-orange" ? "bg-brand-orange/20 text-brand-orange" : item.color === "brand-magenta" ? "bg-brand-magenta/20 text-brand-magenta" : "bg-brand-blue/20 text-brand-blue"}`}
                       >
                         {item.category}
                       </Badge>
                     </div>
                   </div>
-                  <div className="p-5 space-y-2">
-                    <h4 className="text-lg font-semibold font-display group-hover:text-brand-magenta transition-colors">
+                  <div className="p-4 space-y-1">
+                    <h4 className="text-sm font-semibold font-display group-hover:text-brand-magenta transition-colors line-clamp-2">
                       {item.title}
                     </h4>
-                    <p className="text-sm text-foreground font-body">
+                    <p className="text-xs text-foreground/80 font-body line-clamp-2">
                       {item.excerpt}
                     </p>
                     <div className="flex items-center justify-between pt-1">
