@@ -471,9 +471,9 @@ export default function Index() {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-5 gap-8 items-start">
-            {/* Left side - Featured story (60%) - Auto-rotating */}
-            <div className="lg:col-span-3">
+          <div className="grid lg:grid-cols-3 gap-8 items-start">
+            {/* Left side - Featured story (50%) - Auto-rotating */}
+            <div className="lg:col-span-2">
               <button
                 onClick={() => setSelectedNews(currentFeatured)}
                 className="group w-full flex flex-col rounded-3xl border border-border/50 cursor-pointer text-left bg-transparent hover:shadow-lg transition-all duration-500 overflow-hidden"
