@@ -479,9 +479,7 @@ export default function Index() {
                 className="group w-full flex flex-col rounded-3xl border border-border/50 cursor-pointer text-left bg-transparent hover:shadow-lg transition-all duration-500 overflow-hidden"
               >
                 {currentFeatured.isVideo ? (
-                  <div className="w-full min-h-96">
-                    <VideoWithFrameCapture src={currentFeatured.image} poster={currentFeatured.poster} />
-                  </div>
+                  <VideoWithFrameCapture src={currentFeatured.image} poster={currentFeatured.poster} />
                 ) : (
                   <img
                     src={currentFeatured.image}
@@ -489,7 +487,7 @@ export default function Index() {
                     className="w-full h-auto object-contain group-hover:scale-105 transition-transform duration-500"
                   />
                 )}
-                <div className="p-6 flex-1 flex flex-col">
+                <div className="p-5 flex-1 flex flex-col">
                   <div className="flex items-center gap-3 mb-3">
                     <Badge
                       className={`${currentFeatured.color === "brand-orange" ? "bg-brand-orange/20 text-brand-orange" : currentFeatured.color === "brand-magenta" ? "bg-brand-magenta/20 text-brand-magenta" : "bg-brand-blue/20 text-brand-blue"}`}
