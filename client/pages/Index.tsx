@@ -472,114 +472,48 @@ export default function Index() {
           </div>
 
           <div className="grid lg:grid-cols-5 gap-8 items-start">
-            {/* Left side - Featured stories split horizontally (60%) */}
-            <div className="lg:col-span-3 grid gap-8 auto-rows-max">
-              {[
-                {
-                  image:
-                    "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fbf6a54aff7814535b71eda78a3d5f95e?format=webp&width=800",
-                  category: "Aerospace",
-                  title: "DSU-MAK III Soars High at IN-SPACe Model Rocketry Finale",
-                  excerpt:
-                    "Our student-built rocket successfully achieves 1200.77m apogee and safe recovery, marking a triumph of innovation and technical mastery in aerospace engineering.",
-                  date: "Oct 29, 2025",
-                  color: "brand-magenta",
-                },
-                {
-                  image:
-                    "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Ff67a08f95a24431783dc54fc189e605b?format=webp&width=800",
-                  category: "Leadership",
-                  title: "DSU at 34th Elets World Education Summit 2025",
-                  excerpt:
-                    "Dr. Prakash Sheelvanthmath discusses Digital Transformation in Higher Education: Smart Campuses and Online Learning with national education leaders.",
-                  date: "Nov 5, 2025",
-                  color: "brand-blue",
-                },
-              ].map((item, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => setSelectedNews(item)}
-                  className="group flex flex-col rounded-3xl border border-border/50 cursor-pointer text-left bg-transparent hover:shadow-lg transition-shadow overflow-hidden"
-                >
-                  {item.isVideo ? (
-                    <VideoWithFrameCapture src={item.image} poster={item.poster} />
-                  ) : (
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="h-auto w-full object-contain group-hover:scale-105 transition-transform duration-500"
-                    />
-                  )}
-                  <div className="p-8 flex-1 flex flex-col">
-                    <div className="flex items-center gap-3 mb-4">
-                      <Badge
-                        className={`${item.color === "brand-orange" ? "bg-brand-orange/20 text-brand-orange" : item.color === "brand-magenta" ? "bg-brand-magenta/20 text-brand-magenta" : "bg-brand-blue/20 text-brand-blue"}`}
-                      >
-                        {item.category}
-                      </Badge>
-                      <div className="flex items-center text-foreground/60 text-xs font-body">
-                        <CalendarDays className="w-4 h-4 mr-1" /> {item.date}
-                      </div>
+            {/* Left side - Featured story (60%) - Auto-rotating */}
+            <div className="lg:col-span-3">
+              <button
+                onClick={() => setSelectedNews(currentFeatured)}
+                className="group w-full flex flex-col rounded-3xl border border-border/50 cursor-pointer text-left bg-transparent hover:shadow-lg transition-all duration-500 overflow-hidden"
+              >
+                {currentFeatured.isVideo ? (
+                  <VideoWithFrameCapture src={currentFeatured.image} poster={currentFeatured.poster} />
+                ) : (
+                  <img
+                    src={currentFeatured.image}
+                    alt={currentFeatured.title}
+                    className="h-auto w-full object-contain group-hover:scale-105 transition-transform duration-500"
+                  />
+                )}
+                <div className="p-8 flex-1 flex flex-col">
+                  <div className="flex items-center gap-3 mb-4">
+                    <Badge
+                      className={`${currentFeatured.color === "brand-orange" ? "bg-brand-orange/20 text-brand-orange" : currentFeatured.color === "brand-magenta" ? "bg-brand-magenta/20 text-brand-magenta" : "bg-brand-blue/20 text-brand-blue"}`}
+                    >
+                      {currentFeatured.category}
+                    </Badge>
+                    <div className="flex items-center text-foreground/60 text-xs font-body">
+                      <CalendarDays className="w-4 h-4 mr-1" /> {currentFeatured.date}
                     </div>
-                    <h3 className="text-2xl font-semibold text-foreground mb-3 font-display">
-                      {item.title}
-                    </h3>
-                    <p className="text-foreground/80 font-body">
-                      {item.excerpt}
-                    </p>
                   </div>
-                </button>
-              ))}
+                  <h3 className="text-2xl font-semibold text-foreground mb-3 font-display line-clamp-3">
+                    {currentFeatured.title}
+                  </h3>
+                  <p className="text-foreground/80 font-body line-clamp-3">
+                    {currentFeatured.excerpt}
+                  </p>
+                  <div className="mt-4 text-xs text-foreground/60 font-body">
+                    Auto-rotating • {featuredNewsIndex + 1} of {allFeaturedNews.length}
+                  </div>
+                </div>
+              </button>
             </div>
 
-            {/* Right side - Secondary stories (40%) */}
-            <div className="lg:col-span-2 grid gap-12 auto-rows-max">
-              {[
-                {
-                  image:
-                    "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2Fd56a1c898842468187e8ff3260f0cdda?alt=media&token=6cb58cdf-a202-461d-b774-09ce61d439c3&apiKey=4aa279a8430d441dba9c55f659831878",
-                  isVideo: true,
-                  poster: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F85cbfdbb2c9047f0b769200939941be9?format=webp&width=800",
-                  category: "Events",
-                  title: "TEDxDSU Returns for Second Edition 2025",
-                  excerpt:
-                    "Join us on November 7th for inspiring talks and transformative ideas at TEDxDSU 2025.",
-                  date: "Nov 7, 2025",
-                  color: "brand-magenta",
-                },
-                {
-                  image:
-                    "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2Fee8dd0baa1344765ab26d165e6fc0acc?alt=media&token=37176f13-60ee-4bee-a61c-eff7b954b9a4&apiKey=4aa279a8430d441dba9c55f659831878",
-                  isVideo: true,
-                  category: "Research",
-                  title: "Centre for Space Science & Technology",
-                  excerpt:
-                    "State-of-the-art satellite programme with ISO-08 cleanroom, mechanical lab, and ground station. Where ideas take shape and reach for the sky.",
-                  date: "Oct 26, 2023",
-                  color: "brand-blue",
-                },
-                {
-                  image:
-                    "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F8ee07440d90c4bd685e8ec8da486df8d?alt=media&token=38c290b6-91a4-4825-a4c8-068661623f55&apiKey=4aa279a8430d441dba9c55f659831878",
-                  isVideo: true,
-                  category: "Campus Life",
-                  title: "9th Convocation at DSU: A Day of Reflection, Gratitude, and Pride",
-                  excerpt:
-                    "Celebrating the achievements and milestones of our graduating students and faculty.",
-                  date: "Oct 15, 2025",
-                  color: "brand-magenta",
-                },
-                {
-                  image:
-                    "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fca407f1fd5994b25a3cdb4b5e18e66b6?format=webp&width=800",
-                  category: "International Relations",
-                  title: "A Calm November Morning Welcomes the Gentle Charm of Tibet",
-                  excerpt:
-                    "DSU hosts distinguished guests from Tibet, fostering cultural exchange and international academic collaboration.",
-                  date: "Nov 8, 2025",
-                  color: "brand-blue",
-                },
-              ].map((item, idx) => (
+            {/* Right side - Remaining stories (40%) */}
+            <div className="lg:col-span-2 grid gap-6 auto-rows-max">
+              {remainingNews.map((item, idx) => (
                 <button
                   key={idx}
                   onClick={() => setSelectedNews(item)}
