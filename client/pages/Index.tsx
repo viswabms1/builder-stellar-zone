@@ -250,14 +250,18 @@ export default function Index() {
     },
   ];
 
-  // Auto-rotate featured news every 5 seconds
+  // Auto-rotate featured news every 5 seconds (pauses when video is playing)
   useEffect(() => {
+    if (isVideoPlaying) {
+      return;
+    }
+
     const interval = setInterval(() => {
       setFeaturedNewsIndex((prev) => (prev + 1) % allFeaturedNews.length);
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [allFeaturedNews.length]);
+  }, [allFeaturedNews.length, isVideoPlaying]);
 
   // Get current featured item and remaining items
   const currentFeatured = allFeaturedNews[featuredNewsIndex];
