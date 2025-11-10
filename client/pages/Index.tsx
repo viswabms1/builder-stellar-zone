@@ -37,7 +37,21 @@ import {
   X,
 } from "lucide-react";
 
-function VideoWithFrameCapture({ src, rotate = false, poster }: { src: string; rotate?: boolean; poster?: string }) {
+function VideoWithFrameCapture({
+  src,
+  rotate = false,
+  poster,
+  onPlay,
+  onPause,
+  onEnded
+}: {
+  src: string;
+  rotate?: boolean;
+  poster?: string;
+  onPlay?: () => void;
+  onPause?: () => void;
+  onEnded?: () => void;
+}) {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
