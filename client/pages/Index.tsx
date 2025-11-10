@@ -512,27 +512,27 @@ export default function Index() {
                   <img
                     src={currentFeatured.image}
                     alt={currentFeatured.title}
-                    className="w-full h-auto object-contain group-hover:scale-105 transition-transform duration-500"
+                    className="w-full max-h-96 object-contain group-hover:scale-105 transition-transform duration-500"
                   />
                 )}
-                <div className="p-5 flex-1 flex flex-col">
-                  <div className="flex items-center gap-3 mb-3">
+                <div className="p-4 flex-1 flex flex-col space-y-2">
+                  <div className="flex items-center gap-2">
                     <Badge
-                      className={`${currentFeatured.color === "brand-orange" ? "bg-brand-orange/20 text-brand-orange" : currentFeatured.color === "brand-magenta" ? "bg-brand-magenta/20 text-brand-magenta" : "bg-brand-blue/20 text-brand-blue"}`}
+                      className={`text-xs ${currentFeatured.color === "brand-orange" ? "bg-brand-orange/20 text-brand-orange" : currentFeatured.color === "brand-magenta" ? "bg-brand-magenta/20 text-brand-magenta" : "bg-brand-blue/20 text-brand-blue"}`}
                     >
                       {currentFeatured.category}
                     </Badge>
                     <div className="flex items-center text-foreground/60 text-xs font-body">
-                      <CalendarDays className="w-4 h-4 mr-1" /> {currentFeatured.date}
+                      <CalendarDays className="w-3 h-3 mr-1" /> {currentFeatured.date}
                     </div>
                   </div>
-                  <h3 className="text-lg font-semibold text-foreground mb-2 font-display line-clamp-2">
+                  <h3 className="text-base font-semibold text-foreground font-display line-clamp-2">
                     {currentFeatured.title}
                   </h3>
-                  <p className="text-sm text-foreground/80 font-body line-clamp-2">
+                  <p className="text-xs text-foreground/80 font-body line-clamp-2">
                     {currentFeatured.excerpt}
                   </p>
-                  <div className="mt-3 text-xs text-foreground/60 font-body">
+                  <div className="text-xs text-foreground/60 font-body">
                     Auto-rotating • {featuredNewsIndex + 1} of {allFeaturedNews.length}
                   </div>
                 </div>
