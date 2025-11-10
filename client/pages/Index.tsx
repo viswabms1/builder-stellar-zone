@@ -152,6 +152,7 @@ function NewsModal({ newsItem, onClose }: { newsItem: any; onClose: () => void }
 
 export default function Index() {
   const [selectedNews, setSelectedNews] = useState<any>(null);
+  const [featuredNewsIndex, setFeaturedNewsIndex] = useState(0);
   const { t, language } = useLanguage();
 
   // Get schools data based on current language
