@@ -479,7 +479,9 @@ export default function Index() {
                 className="group w-full flex flex-col rounded-3xl border border-border/50 cursor-pointer text-left bg-transparent hover:shadow-lg transition-all duration-500 overflow-hidden"
               >
                 {currentFeatured.isVideo ? (
-                  <VideoWithFrameCapture src={currentFeatured.image} poster={currentFeatured.poster} />
+                  <div className="w-full min-h-96">
+                    <VideoWithFrameCapture src={currentFeatured.image} poster={currentFeatured.poster} />
+                  </div>
                 ) : (
                   <img
                     src={currentFeatured.image}
