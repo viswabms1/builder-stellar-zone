@@ -104,7 +104,7 @@ function VideoWithFrameCapture({
       <video
         ref={videoRef}
         src={src}
-        className={`h-44 w-full object-cover group-hover:scale-[1.02] transition-transform duration-500 ${rotate ? "rotate-[-90deg]" : ""}`}
+        className={`w-full h-auto object-contain group-hover:scale-[1.02] transition-transform duration-500 ${rotate ? "rotate-[-90deg]" : ""}`}
         controls
         controlsList="nodownload"
         preload="auto"
