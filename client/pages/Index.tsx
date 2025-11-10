@@ -479,14 +479,12 @@ export default function Index() {
                 className="group w-full flex flex-col rounded-3xl border border-border/50 cursor-pointer text-left bg-transparent hover:shadow-lg transition-all duration-500 overflow-hidden"
               >
                 {currentFeatured.isVideo ? (
-                  <div className="max-h-80">
-                    <VideoWithFrameCapture src={currentFeatured.image} poster={currentFeatured.poster} />
-                  </div>
+                  <VideoWithFrameCapture src={currentFeatured.image} poster={currentFeatured.poster} />
                 ) : (
                   <img
                     src={currentFeatured.image}
                     alt={currentFeatured.title}
-                    className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-auto object-contain group-hover:scale-105 transition-transform duration-500"
                   />
                 )}
                 <div className="p-6 flex-1 flex flex-col">
