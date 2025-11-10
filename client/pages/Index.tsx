@@ -511,9 +511,9 @@ export default function Index() {
               </button>
             </div>
 
-            {/* Right side - Remaining stories (40%) */}
-            <div className="lg:col-span-2 grid gap-6 auto-rows-max">
-              {remainingNews.map((item, idx) => (
+            {/* Right side - Remaining stories (50%) - 2 column grid */}
+            <div className="lg:col-span-1 grid grid-cols-1 sm:grid-cols-2 gap-4 auto-rows-max">
+              {remainingNews.slice(0, 4).map((item, idx) => (
                 <button
                   key={idx}
                   onClick={() => setSelectedNews(item)}
