@@ -109,6 +109,9 @@ function VideoWithFrameCapture({
         controlsList="nodownload"
         preload="auto"
         crossOrigin="anonymous"
+        onPlay={onPlay}
+        onPause={onPause}
+        onEnded={onEnded}
       />
     </div>
   );
