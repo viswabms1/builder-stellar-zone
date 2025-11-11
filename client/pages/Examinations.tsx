@@ -440,7 +440,7 @@ function QuickLinksSection() {
                 <CardDescription>{item.description}</CardDescription>
                 <Button
                   variant="ghost"
-                  className="w-full justify-between text-orange-500 hover:bg-orange-500/10"
+                  className="w-full justify-between text-orange-500"
                   asChild
                 >
                   <a
@@ -562,7 +562,7 @@ function ExamDocumentCard({ document }: { document: ExamDocument }) {
           <Button
             variant="ghost"
             size="sm"
-            className="text-orange-500 hover:bg-orange-500/10"
+            className="text-orange-500"
             asChild
           >
             <a href={document.href} target="_blank" rel="noreferrer">
@@ -688,7 +688,7 @@ function ContactSection() {
             </div>
             <Button
               variant="ghost"
-              className="text-orange-500 hover:bg-orange-500/10"
+              className="text-orange-500"
               asChild
             >
               <a href="mailto:coe@dsu.edu.in">
