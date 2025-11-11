@@ -272,12 +272,16 @@ function HeroSection() {
             ))}
           </div>
           <div className="mt-8 flex flex-wrap gap-3">
-            <Link to="/admissions">
+            <a
+              href="https://admissions.dsu.edu.in/"
+              target="_blank"
+              rel="noreferrer"
+            >
               <Button className="bg-brand-gradient text-foreground">
                 Apply Now
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
-            </Link>
+            </a>
             <a
               href="https://www.dsu.edu.in/engineering/cse-aiml"
               target="_blank"

@@ -1074,7 +1074,11 @@ export default function Placements() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/admissions">
+              <a
+                href="https://admissions.dsu.edu.in/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <Button
                   size="lg"
                   className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-red-600 hover:to-orange-500 text-foreground px-8 py-6 text-lg font-semibold rounded-2xl transition-all duration-300"
@@ -1082,7 +1086,7 @@ export default function Placements() {
                   Apply Now
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
-              </Link>
+              </a>
               <Link to="/academics">
                 <Button
                   variant="outline"
