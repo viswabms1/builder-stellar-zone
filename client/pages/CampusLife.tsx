@@ -194,10 +194,10 @@ export default function CampusLife() {
                 category: "Athletics", 
                 image: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=300&h=300&fit=crop"
               },
-              { 
-                title: "Graduation", 
-                category: "Ceremony", 
-                image: "https://images.unsplash.com/photo-1549692520-ace2c9604117?w=300&h=300&fit=crop"
+              {
+                title: "Graduation",
+                category: "Ceremony",
+                image: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F692a9321c1bd4ab09f4bbb0f31d62fa2?format=webp&width=800"
               },
               { 
                 title: "Tech Fair", 
