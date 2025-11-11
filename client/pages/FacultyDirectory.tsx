@@ -74,6 +74,23 @@ export default function FacultyDirectory() {
     }, {});
   }, []);
 
+  const availableFocusAreas = useMemo(() => {
+    if (schoolFilter === ALL_SCHOOLS_VALUE) {
+      return facultyFocusAreas;
+    }
+
+    const schoolFocusAreas = new Set<string>();
+    facultyDirectory
+      .filter((member) => member.schoolId === schoolFilter)
+      .forEach((member) => {
+        member.focusAreas.forEach((area) => {
+          schoolFocusAreas.add(area);
+        });
+      });
+
+    return Array.from(schoolFocusAreas).sort();
+  }, [schoolFilter]);
+
   const filteredFaculty = useMemo(() => {
     const query = searchTerm.trim().toLowerCase();
 
