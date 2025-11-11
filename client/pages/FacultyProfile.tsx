@@ -115,9 +115,13 @@ export default function FacultyProfile() {
           <div className="rounded-3xl p-8 border border-brand-magenta/20 bg-brand-magenta/5">
             <h3 className="headline-4 mb-2 font-display">Interested in studying under {f.name.split(' ')[0]}?</h3>
             <p className="text-foreground mb-4 font-body">Explore CSE programs and start your application today.</p>
-            <Link to="/admissions">
+            <a
+              href="https://admissions.dsu.edu.in/"
+              target="_blank"
+              rel="noreferrer"
+            >
               <Button className="bg-brand-gradient text-foreground">Apply Now<GraduationCap className="w-4 h-4 ml-2"/></Button>
-            </Link>
+            </a>
           </div>
         </div>
       </section>

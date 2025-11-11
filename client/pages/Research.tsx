@@ -564,10 +564,17 @@ export default function Research() {
                     </div>
                   </div>
                   
-                  <Button variant="ghost" size="sm" className="w-full justify-between group-hover:text-orange-500 group-hover:bg-orange-500/5">
-                    Apply Now
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </Button>
+                  <a
+                    href="https://admissions.dsu.edu.in/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="w-full"
+                  >
+                    <Button variant="ghost" size="sm" className="w-full justify-between group-hover:text-orange-500 group-hover:bg-orange-500/5">
+                      Apply Now
+                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </Button>
+                  </a>
                 </CardContent>
               </Card>
             ))}
