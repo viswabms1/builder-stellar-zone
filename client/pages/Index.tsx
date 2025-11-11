@@ -171,6 +171,7 @@ export default function Index() {
   const [selectedNews, setSelectedNews] = useState<any>(null);
   const [featuredNewsIndex, setFeaturedNewsIndex] = useState(0);
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
+  const [selectedEventIndex, setSelectedEventIndex] = useState(0);
   const { t, language } = useLanguage();
 
   // Get schools data based on current language
