@@ -268,11 +268,11 @@ function App() {
               <Route path="/centre-of-excellence" element={<CentreOfExcellence />} />
               <Route path="/iqac" element={<IQAC />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </main>
-          <Footer />
-        </div>
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </main>
+            <Footer />
+          </div>
         </BrowserRouter>
       </ThemeProvider>
     </LanguageProvider>
