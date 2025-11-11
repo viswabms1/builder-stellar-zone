@@ -220,11 +220,13 @@ export default function Leadership() {
             <div className="group text-center">
               <div className="mb-6 relative inline-block">
                 <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-red-600/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-500" />
-                <img
-                  src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Ffc8304264a444fa196e95ad74903200c?format=webp&width=800"
-                  alt="Late Shri R Dayananda Sagar"
-                  className="relative w-48 h-48 md:w-56 md:h-56 rounded-full object-cover border-4 border-orange-500/30 group-hover:border-orange-500/60 transition-all duration-500 shadow-xl"
-                />
+                <div className="relative w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-orange-500/30 group-hover:border-orange-500/60 transition-all duration-500 shadow-xl">
+                  <img
+                    src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Ffc8304264a444fa196e95ad74903200c?format=webp&width=800"
+                    alt="Late Shri R Dayananda Sagar"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
               <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
                 Late Shri R Dayananda Sagar
@@ -241,11 +243,13 @@ export default function Leadership() {
             <div className="group text-center">
               <div className="mb-6 relative inline-block">
                 <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-red-600/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-500" />
-                <img
-                  src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F028b835328ef468fbf5400faad79454f?format=webp&width=800"
-                  alt="Late Smt Chandramma Sagar"
-                  className="relative w-48 h-48 md:w-56 md:h-56 rounded-full object-cover border-4 border-orange-500/30 group-hover:border-orange-500/60 transition-all duration-500 shadow-xl"
-                />
+                <div className="relative w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-orange-500/30 group-hover:border-orange-500/60 transition-all duration-500 shadow-xl">
+                  <img
+                    src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F028b835328ef468fbf5400faad79454f?format=webp&width=800"
+                    alt="Late Smt Chandramma Sagar"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
               <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
                 Late Smt Chandramma Sagar
