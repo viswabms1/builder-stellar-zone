@@ -358,6 +358,47 @@ export default function Index() {
         </div>
       </section>
 
+      {/* Performance Indicators Section */}
+      <section className="px-6 py-16 relative bg-gradient-to-r from-brand-magenta/5 via-brand-orange/5 to-brand-blue/5 border-y border-border/30">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="headline-2 mb-4">
+              Recognized Excellence
+            </h2>
+            <p className="subheadline text-foreground max-w-3xl mx-auto font-display text-lg">
+              Accredited by leading national and international bodies
+            </p>
+          </div>
+
+          <div className="bg-white dark:bg-slate-800 rounded-3xl p-8 md:p-12 shadow-lg border border-border/20">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fffc582af946b444b924524e96904cc59?format=webp&width=1200"
+              alt="Performance Indicators and Accreditations"
+              className="w-full h-auto object-contain"
+            />
+          </div>
+
+          <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="text-center p-4">
+              <div className="text-3xl font-bold text-brand-magenta mb-2">NAAC</div>
+              <p className="text-sm text-foreground font-body">Accredited Institution</p>
+            </div>
+            <div className="text-center p-4">
+              <div className="text-3xl font-bold text-brand-orange mb-2">A++</div>
+              <p className="text-sm text-foreground font-body">Business School Rating</p>
+            </div>
+            <div className="text-center p-4">
+              <div className="text-3xl font-bold text-brand-blue mb-2">IIRF</div>
+              <p className="text-sm text-foreground font-body">2023 Ranked</p>
+            </div>
+            <div className="text-center p-4">
+              <div className="text-3xl font-bold text-brand-magenta mb-2">5 Star</div>
+              <p className="text-sm text-foreground font-body">University Rating</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Academics Section */}
       <section className="px-6 py-20 relative">
         <div className="max-w-7xl mx-auto">
