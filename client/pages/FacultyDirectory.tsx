@@ -10,6 +10,7 @@ import {
   MapPin,
   Search,
   Users,
+  X,
 } from "lucide-react";
 
 import {
@@ -53,6 +54,7 @@ export default function FacultyDirectory() {
     useState<SelectedSchool>(ALL_SCHOOLS_VALUE);
   const [focusFilter, setFocusFilter] = useState<string>(ALL_AREAS);
   const [searchTerm, setSearchTerm] = useState("");
+  const [showFilters, setShowFilters] = useState(false);
 
   const stats = useMemo(() => {
     const total = facultyDirectory.length;
@@ -110,104 +112,125 @@ export default function FacultyDirectory() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <section className="bg-gradient-to-r from-brand-magenta/5 via-brand-blue/5 to-brand-orange/5 px-6 py-16">
-        <div className="mx-auto flex max-w-7xl flex-col gap-10 lg:flex-row lg:items-center lg:justify-between">
-          <div className="max-w-3xl space-y-5">
+      {/* Hero Section */}
+      <section className="border-b border-border/40 bg-gradient-to-r from-brand-magenta/5 via-brand-blue/5 to-brand-orange/5 px-6 py-12">
+        <div className="mx-auto max-w-7xl space-y-6">
+          <div className="space-y-3">
             <Badge className="bg-brand-magenta/15 text-brand-magenta">
               Faculty Directory
             </Badge>
             <h1 className="font-display text-4xl leading-tight md:text-5xl">
               Discover Experts Across Every DSU School
             </h1>
-            <p className="text-sm text-foreground font-body md:text-base">
+            <p className="max-w-3xl text-sm text-foreground font-body md:text-base">
               Search and filter the complete faculty ecosystem by school,
               department, research interest or keyword. Find the right mentors
               to collaborate with or contact as you explore DSU&apos;s
               programmes.
             </p>
-            <div className="grid gap-4 sm:grid-cols-3">
-              <StatisticsCard
-                label="Faculty Profiles"
-                value={stats.total.toString()}
-                icon={Users}
-              />
-              <StatisticsCard
-                label="Schools Covered"
-                value={stats.schoolsRepresented.toString()}
-                icon={GraduationCap}
-              />
-              <StatisticsCard
-                label="Focus Areas"
-                value={stats.focus.toString()}
-                icon={Filter}
-              />
-            </div>
           </div>
-          <div className="w-full max-w-xl rounded-3xl border border-border/40 bg-background/80 p-6 backdrop-blur">
-            <div className="mb-4 text-sm font-medium uppercase tracking-wide text-foreground">
-              Refine your search
+
+          {/* Statistics Bar */}
+          <div className="flex flex-col gap-3 sm:flex-row sm:gap-4">
+            <StatisticsCard
+              label="Faculty Profiles"
+              value={stats.total.toString()}
+              icon={Users}
+            />
+            <StatisticsCard
+              label="Schools Covered"
+              value={stats.schoolsRepresented.toString()}
+              icon={GraduationCap}
+            />
+            <StatisticsCard
+              label="Focus Areas"
+              value={stats.focus.toString()}
+              icon={Filter}
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Search and Filter Bar */}
+      <section className="sticky top-0 z-40 border-b border-border/40 bg-background/95 px-6 py-4 backdrop-blur-sm">
+        <div className="mx-auto max-w-7xl space-y-4">
+          <div className="flex items-center gap-3">
+            <div className="relative flex-1">
+              <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-foreground" />
+              <Input
+                value={searchTerm}
+                onChange={(event) => setSearchTerm(event.target.value)}
+                placeholder="Search by name, department, research focus"
+                className="pl-10"
+                aria-label="Search faculty directory"
+              />
             </div>
-            <div className="space-y-4">
-              <div className="relative">
-                <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-foreground" />
-                <Input
-                  value={searchTerm}
-                  onChange={(event) => setSearchTerm(event.target.value)}
-                  placeholder="Search by name, department, research focus"
-                  className="pl-10"
-                  aria-label="Search faculty directory"
-                />
-              </div>
-              <FilterPills
-                label="Schools"
-                options={schoolOptions}
-                activeValue={schoolFilter}
-                onSelect={(value) => setSchoolFilter(value as SelectedSchool)}
-              />
-              <FilterPills
-                label="Focus Areas"
-                options={focusOptions.map((option) => ({
-                  label: option,
-                  value: option,
-                }))}
-                activeValue={focusFilter}
-                onSelect={(value) => setFocusFilter(value)}
-              />
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => setShowFilters(!showFilters)}
+              className="gap-2"
+            >
+              <Filter className="h-4 w-4" />
+              <span className="hidden sm:inline">Filters</span>
+            </Button>
+          </div>
+
+          {/* Filters - Collapsible on mobile, always visible on desktop */}
+          <div
+            className={`space-y-3 overflow-hidden transition-all duration-300 ${
+              showFilters ? "max-h-96" : "max-h-0 lg:max-h-96"
+            }`}
+          >
+            <FilterPills
+              label="Schools"
+              options={schoolOptions}
+              activeValue={schoolFilter}
+              onSelect={(value) => setSchoolFilter(value as SelectedSchool)}
+            />
+            <FilterPills
+              label="Focus Areas"
+              options={focusOptions.map((option) => ({
+                label: option,
+                value: option,
+              }))}
+              activeValue={focusFilter}
+              onSelect={(value) => setFocusFilter(value)}
+            />
+            <div className="flex items-center justify-between pt-2">
+              <span className="text-xs font-medium text-foreground">
+                {filteredFaculty.length} faculty matched
+              </span>
+              {(searchTerm || schoolFilter !== ALL_SCHOOLS_VALUE || focusFilter !== ALL_AREAS) && (
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => {
+                    setSchoolFilter(ALL_SCHOOLS_VALUE);
+                    setFocusFilter(ALL_AREAS);
+                    setSearchTerm("");
+                  }}
+                  className="h-6 text-xs"
+                >
+                  Clear all
+                </Button>
+              )}
             </div>
           </div>
         </div>
       </section>
 
-      <section className="px-6 pb-4">
+      {/* School Overview Section */}
+      <section className="border-b border-border/40 px-6 py-8">
         <div className="mx-auto max-w-7xl">
+          <h2 className="mb-4 font-display text-2xl">Browse by School</h2>
           <SchoolOverviewGrid counts={schoolCountMap} />
         </div>
       </section>
 
-      <section className="px-6 py-16">
+      {/* Faculty Results Section */}
+      <section className="px-6 py-12">
         <div className="mx-auto max-w-7xl">
-          <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <div>
-              <h2 className="font-display text-3xl">
-                {filteredFaculty.length} faculty matched
-              </h2>
-              <p className="text-sm text-foreground font-body">
-                Showing results filtered by {activeSchoolLabel.toLowerCase()}{" "}
-                and {activeFocusLabel}.
-              </p>
-            </div>
-            <Button
-              variant="outline"
-              onClick={() => {
-                setSchoolFilter(ALL_SCHOOLS_VALUE);
-                setFocusFilter(ALL_AREAS);
-                setSearchTerm("");
-              }}
-            >
-              Reset filters
-            </Button>
-          </div>
-
           {filteredFaculty.length === 0 ? (
             <Card className="border-dashed border-border/60 bg-muted/40 p-10 text-center">
               <CardHeader>
@@ -221,7 +244,7 @@ export default function FacultyDirectory() {
               </CardHeader>
             </Card>
           ) : (
-            <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
               {filteredFaculty.map((member) => (
                 <FacultyCard key={member.id} member={member} />
               ))}
@@ -279,16 +302,14 @@ type StatisticsCardProps = {
 
 function StatisticsCard({ label, value, icon: Icon }: StatisticsCardProps) {
   return (
-    <div className="rounded-2xl border border-border/40 bg-background/80 p-4 backdrop-blur">
-      <div className="flex items-center gap-3">
-        <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-magenta/10 text-brand-magenta">
-          <Icon className="h-5 w-5" />
-        </div>
-        <div>
-          <div className="text-2xl font-semibold font-display">{value}</div>
-          <div className="text-xs uppercase tracking-wide text-foreground font-body">
-            {label}
-          </div>
+    <div className="flex items-center gap-3 rounded-2xl border border-border/40 bg-background/80 px-4 py-3 backdrop-blur">
+      <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-brand-magenta/10 text-brand-magenta">
+        <Icon className="h-4 w-4" />
+      </div>
+      <div className="min-w-0">
+        <div className="text-lg font-semibold font-display">{value}</div>
+        <div className="text-xs uppercase tracking-wide text-foreground font-body">
+          {label}
         </div>
       </div>
     </div>
@@ -301,7 +322,7 @@ type SchoolOverviewGridProps = {
 
 function SchoolOverviewGrid({ counts }: SchoolOverviewGridProps) {
   return (
-    <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+    <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-4">
       {facultySchoolsMeta.map((school) => {
         const profileCount = counts[school.id] ?? 0;
         const meta = getFacultySchoolMeta(school.id);
@@ -309,15 +330,15 @@ function SchoolOverviewGrid({ counts }: SchoolOverviewGridProps) {
         return (
           <Card
             key={school.id}
-            className="group flex h-full flex-col justify-between rounded-3xl border border-border/40 bg-card/60 backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-brand-magenta/40 hover:shadow-xl hover:shadow-brand-magenta/10"
+            className="group flex flex-col justify-between overflow-hidden rounded-2xl border border-border/40 bg-card/60 backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-brand-magenta/40 hover:shadow-lg hover:shadow-brand-magenta/10"
           >
-            <CardHeader className="space-y-2">
-              <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-magenta/10 text-brand-magenta">
-                  <Library className="h-5 w-5" />
+            <CardHeader className="pb-3">
+              <div className="flex items-start gap-3">
+                <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg bg-brand-magenta/10 text-brand-magenta">
+                  <Library className="h-4 w-4" />
                 </div>
-                <div>
-                  <CardTitle className="text-lg font-display">
+                <div className="min-w-0">
+                  <CardTitle className="text-base font-display">
                     {school.name}
                   </CardTitle>
                   <p className="text-xs uppercase tracking-wide text-foreground font-body">
@@ -326,43 +347,39 @@ function SchoolOverviewGrid({ counts }: SchoolOverviewGridProps) {
                 </div>
               </div>
               {meta?.highlight ? (
-                <p className="text-sm text-foreground font-body">
+                <p className="text-xs text-foreground font-body line-clamp-2">
                   {meta.highlight}
                 </p>
               ) : null}
             </CardHeader>
-            <CardContent className="flex-1">
-              <p className="text-sm text-foreground font-body">
+            <CardContent className="pb-3">
+              <p className="text-xs text-foreground font-body line-clamp-3">
                 {school.description}
               </p>
             </CardContent>
-            <CardFooter className="flex items-center justify-between">
-              {school.href ? (
-                school.href.startsWith("http") ? (
+            {school.href && (
+              <CardFooter className="pt-0">
+                {school.href.startsWith("http") ? (
                   <a
                     href={school.href}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-2 text-sm font-medium text-brand-magenta"
+                    className="inline-flex items-center gap-1 text-xs font-medium text-brand-magenta hover:underline"
                   >
-                    Visit school page
-                    <ArrowUpRight className="h-4 w-4" />
+                    Visit
+                    <ArrowUpRight className="h-3 w-3" />
                   </a>
                 ) : (
                   <Link
                     to={school.href}
-                    className="inline-flex items-center gap-2 text-sm font-medium text-brand-magenta"
+                    className="inline-flex items-center gap-1 text-xs font-medium text-brand-magenta hover:underline"
                   >
-                    Visit school page
-                    <ArrowRight className="h-4 w-4" />
+                    Visit
+                    <ArrowRight className="h-3 w-3" />
                   </Link>
-                )
-              ) : (
-                <span className="text-sm font-medium text-foreground">
-                  Info coming soon
-                </span>
-              )}
-            </CardFooter>
+                )}
+              </CardFooter>
+            )}
           </Card>
         );
       })}
@@ -385,102 +402,106 @@ function FacultyCard({ member }: FacultyCardProps) {
     .join("");
 
   return (
-    <Card className="group h-full overflow-hidden rounded-3xl border border-border/50 bg-card/60 backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-brand-magenta/40 hover:shadow-xl hover:shadow-brand-magenta/10">
-      <CardHeader className="flex flex-row items-center gap-4">
-        <Avatar className="h-16 w-16">
+    <Card className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border/50 bg-card/60 backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-brand-magenta/40 hover:shadow-lg hover:shadow-brand-magenta/10">
+      <CardHeader className="flex flex-col items-center gap-3 pb-3 text-center">
+        <Avatar className="h-14 w-14">
           {member.image ? (
             <AvatarImage src={member.image} alt={member.name} />
           ) : null}
-          <AvatarFallback className="font-display text-base">
+          <AvatarFallback className="font-display text-sm">
             {initials}
           </AvatarFallback>
         </Avatar>
-        <div className="space-y-1">
-          <CardTitle className="text-lg font-display leading-tight">
+        <div className="min-w-0">
+          <CardTitle className="text-sm font-display leading-tight">
             {member.name}
           </CardTitle>
-          <CardDescription className="font-body text-sm">
+          <CardDescription className="font-body text-xs">
             {member.title}
           </CardDescription>
-          <div className="flex flex-wrap items-center gap-2 text-xs font-medium text-brand-magenta font-body">
-            <Badge className="bg-brand-magenta/15 text-brand-magenta">
-              {member.department}
-            </Badge>
-          </div>
         </div>
+        <Badge className="bg-brand-magenta/15 text-brand-magenta text-xs">
+          {member.department}
+        </Badge>
       </CardHeader>
-      <CardContent className="space-y-4">
-        <div className="space-y-2 text-sm text-foreground font-body">
-          <div className="flex items-center gap-2">
-            <GraduationCap className="h-4 w-4 text-brand-magenta" />
-            <span>{schoolName}</span>
+
+      <CardContent className="flex-1 space-y-3 pb-3">
+        <div className="space-y-2 text-xs text-foreground font-body">
+          <div className="flex items-center justify-center gap-1">
+            <GraduationCap className="h-3 w-3 flex-shrink-0 text-brand-magenta" />
+            <span className="line-clamp-1">{schoolName}</span>
           </div>
           {member.office ? (
-            <div className="flex items-center gap-2">
-              <MapPin className="h-4 w-4 text-brand-magenta" />
-              <span>{member.office}</span>
+            <div className="flex items-center justify-center gap-1">
+              <MapPin className="h-3 w-3 flex-shrink-0 text-brand-magenta" />
+              <span className="line-clamp-1">{member.office}</span>
             </div>
           ) : null}
           {member.email ? (
-            <div className="flex items-center gap-2">
-              <Mail className="h-4 w-4 text-brand-magenta" />
+            <div className="flex items-center justify-center gap-1">
+              <Mail className="h-3 w-3 flex-shrink-0 text-brand-magenta" />
               <a
                 href={`mailto:${member.email}`}
-                className="text-brand-magenta hover:underline"
+                className="line-clamp-1 text-brand-magenta hover:underline"
+                title={member.email}
               >
-                {member.email}
+                {member.email.split("@")[0]}
               </a>
             </div>
           ) : null}
         </div>
-        <div className="space-y-1">
-          <div className="text-xs font-semibold uppercase tracking-wide text-foreground">
-            Focus Areas
+
+        {member.focusAreas.length > 0 && (
+          <div className="space-y-1">
+            <div className="text-xs font-semibold uppercase tracking-wide text-foreground">
+              Focus
+            </div>
+            <div className="flex flex-wrap justify-center gap-1">
+              {member.focusAreas.slice(0, 2).map((area) => (
+                <Badge
+                  key={area}
+                  variant="secondary"
+                  className="rounded-full bg-brand-magenta/10 text-xs text-brand-magenta"
+                >
+                  {area.length > 15 ? area.slice(0, 12) + "..." : area}
+                </Badge>
+              ))}
+              {member.focusAreas.length > 2 && (
+                <Badge
+                  variant="secondary"
+                  className="rounded-full bg-brand-magenta/10 text-xs text-brand-magenta"
+                >
+                  +{member.focusAreas.length - 2}
+                </Badge>
+              )}
+            </div>
           </div>
-          <div className="flex flex-wrap gap-2">
-            {member.focusAreas.map((area) => (
-              <Badge
-                key={area}
-                variant="secondary"
-                className="rounded-full bg-brand-magenta/10 text-xs text-brand-magenta"
-              >
-                {area}
-              </Badge>
-            ))}
-          </div>
-        </div>
-        <div>
-          <div className="text-xs font-semibold uppercase tracking-wide text-foreground">
-            Research Interests
-          </div>
-          <p className="mt-1 text-sm text-foreground font-body">
-            {member.interests.join(", ")}
-          </p>
-        </div>
+        )}
       </CardContent>
-      {member.profileUrl ? (
-        <CardFooter>
+
+      {member.profileUrl && (
+        <CardFooter className="pt-0">
           {member.profileUrl.startsWith("http") ? (
             <a
               href={member.profileUrl}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex w-full items-center justify-between rounded-2xl border border-brand-magenta/40 px-4 py-2 text-sm font-medium text-brand-magenta transition-colors hover:bg-brand-magenta/10"
+              className="inline-flex w-full items-center justify-center gap-1 rounded-lg border border-brand-magenta/40 px-3 py-2 text-xs font-medium text-brand-magenta transition-colors hover:bg-brand-magenta/10"
             >
-              View profile
-              <ArrowUpRight className="h-4 w-4" />
+              Profile
+              <ArrowUpRight className="h-3 w-3" />
             </a>
           ) : (
             <Link
               to={member.profileUrl}
-              className="inline-flex w-full items-center justify-between rounded-2xl border border-brand-magenta/40 px-4 py-2 text-sm font-medium text-brand-magenta transition-colors hover:bg-brand-magenta/10"
+              className="inline-flex w-full items-center justify-center gap-1 rounded-lg border border-brand-magenta/40 px-3 py-2 text-xs font-medium text-brand-magenta transition-colors hover:bg-brand-magenta/10"
             >
-              View profile
-              <ArrowRight className="h-4 w-4" />
+              Profile
+              <ArrowRight className="h-3 w-3" />
             </Link>
           )}
         </CardFooter>
-      ) : null}
+      )}
     </Card>
   );
 }
