@@ -342,7 +342,6 @@ export default function Admissions() {
       <QuickLinksSection />
       <AdmissionRoutesSection />
       <BrochureSection />
-      <AIEngagementSection />
       <ContactSection />
       <SupportCallout />
     </div>
