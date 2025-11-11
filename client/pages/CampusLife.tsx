@@ -683,13 +683,19 @@ export default function CampusLife() {
                 Visit Campus
                 <MapPin className="w-5 h-5 ml-2" />
               </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-foreground px-12 py-6 text-lg font-semibold rounded-full"
+              <a
+                href="https://admissions.dsu.edu.in/"
+                target="_blank"
+                rel="noreferrer"
               >
-                Apply Now
-              </Button>
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-foreground px-12 py-6 text-lg font-semibold rounded-full"
+                >
+                  Apply Now
+                </Button>
+              </a>
             </div>
           </div>
         </div>
