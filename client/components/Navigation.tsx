@@ -73,8 +73,8 @@ export default function Navigation() {
           {/* Official DSU Logo */}
           <Link
             to="/"
-            className="flex items-center group"
-            style={{ minWidth: "180px", minHeight: "60px" }}
+            className="flex items-center group flex-shrink-0"
+            style={{ minHeight: "60px" }}
           >
             <img
               src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fc9f5a55fa7004ae596d21cc4fa4aed1f?format=webp&width=1200"
