@@ -773,7 +773,6 @@ export default function Index() {
 
             <div className="flex flex-wrap justify-center gap-2">
               {[
-                "No Application Fee",
                 "Merit Scholarships Available",
                 "Industry Partnerships",
               ].map((badge, index) => (
