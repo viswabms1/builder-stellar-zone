@@ -342,7 +342,7 @@ export default function Academics() {
                       <Button
                         variant="ghost"
                         size="sm"
-                        className="w-full justify-between group-hover:text-brand-magenta"
+                        className="w-full justify-between group-hover:text-brand-magenta hover:bg-transparent"
                       >
                         Explore School
                         <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -352,7 +352,7 @@ export default function Academics() {
                     <Button
                       variant="ghost"
                       size="sm"
-                      className="w-full justify-between group-hover:text-brand-magenta"
+                      className="w-full justify-between group-hover:text-brand-magenta hover:bg-transparent"
                     >
                       Explore School
                       <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
