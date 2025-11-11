@@ -92,7 +92,7 @@ type HeroSectionProps = {
 
 function HeroSection({ stats }: HeroSectionProps) {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-brand-magenta/20 via-brand-orange/15 to-brand-blue/15 dark:from-brand-magenta/10 dark:via-brand-orange/5 dark:to-brand-blue/10 dark:bg-slate-950 py-24 md:py-32">
+    <section className="relative overflow-hidden bg-gradient-to-br from-brand-magenta/20 via-brand-orange/15 to-brand-blue/15 dark:bg-slate-900 py-24 md:py-32">
       <div className="absolute inset-0">
         <div className="absolute -top-32 right-10 h-96 w-96 rounded-full bg-brand-magenta/25 blur-3xl" />
         <div className="absolute bottom-0 left-0 h-80 w-80 rounded-full bg-brand-blue/25 blur-3xl" />
