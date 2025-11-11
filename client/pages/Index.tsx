@@ -639,7 +639,7 @@ export default function Index() {
                 title: "Annual Research & Innovation Summit",
                 category: "Academic Seminar",
                 description: "Join leading researchers and innovators to explore cutting-edge developments in AI, Biotechnology, and Sustainable Energy. Network with industry leaders and discover research opportunities.",
-                image: "https://images.unsplash.com/photo-1540575467063-178f50002c4b?w=800&h=400&fit=crop",
+                image: "https://images.pexels.com/photos/6476783/pexels-photo-6476783.jpeg",
               },
               {
                 date: "Nov 22, 2024",
