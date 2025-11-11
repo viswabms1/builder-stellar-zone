@@ -494,7 +494,7 @@ export default function Index() {
                     <Button
                       variant="ghost"
                       size="sm"
-                      className="w-full justify-between text-foreground group-hover:text-foreground group-hover:bg-brand-magenta/90 font-display transition-colors"
+                      className="w-full justify-between text-foreground group-hover:text-brand-magenta font-display transition-colors"
                     >
                       Learn More
                       <ChevronRight className="w-4 h-4" />
