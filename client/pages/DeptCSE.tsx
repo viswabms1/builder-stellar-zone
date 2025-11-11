@@ -291,9 +291,13 @@ export default function DeptCSE() {
             <h3 className="headline-3 mb-3 font-display">Join DSU CSE</h3>
             <p className="text-foreground mb-6 font-body">Explore programs, discover research, and launch your career in Computer Science & Engineering.</p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <Link to="/admissions">
+              <a
+                href="https://admissions.dsu.edu.in/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <Button className="bg-brand-gradient text-foreground">Apply Now<GraduationCap className="w-4 h-4 ml-2" /></Button>
-              </Link>
+              </a>
               <a href="https://www.dsu.edu.in/engineering/computer-science" target="_blank" rel="noreferrer">
                 <Button variant="outline" className="border-brand-magenta/40 hover:bg-brand-magenta/10">Department Site</Button>
               </a>
