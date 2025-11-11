@@ -616,6 +616,134 @@ export default function Index() {
         </div>
       </section>
 
+      {/* Events Section */}
+      <section className="px-6 py-20 bg-gradient-to-r from-brand-orange/5 via-brand-magenta/5 to-brand-blue/5">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="headline-2 mb-6">
+              <span className="text-foreground">Upcoming </span>
+              <span className="bg-brand-gradient bg-clip-text text-transparent">
+                Events
+              </span>
+            </h2>
+            <p className="subheadline text-foreground max-w-2xl mx-auto font-display">
+              Connect with our community through seminars, workshops, and celebrations
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-3 gap-8 items-start">
+            {/* Featured Event - Left side */}
+            <div className="lg:col-span-2">
+              <div className="group rounded-3xl overflow-hidden border border-border/50 bg-card/60 backdrop-blur-sm hover:shadow-xl hover:shadow-brand-magenta/10 transition-all cursor-pointer">
+                <div className="relative h-96 overflow-hidden">
+                  <img
+                    src="https://images.unsplash.com/photo-1540575467063-178f50002c4b?w=800&h=400&fit=crop"
+                    alt="Featured Event"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                </div>
+                <div className="p-8">
+                  <div className="flex items-center gap-3 mb-4">
+                    <Badge className="bg-brand-orange/20 text-brand-orange text-xs">
+                      <CalendarDays className="w-3 h-3 mr-1" />
+                      Nov 28, 2024
+                    </Badge>
+                    <Badge variant="secondary" className="text-xs">
+                      Academic Seminar
+                    </Badge>
+                  </div>
+                  <h3 className="text-2xl font-bold text-foreground mb-3 font-display">
+                    Annual Research & Innovation Summit
+                  </h3>
+                  <p className="text-foreground/80 mb-6 font-body">
+                    Join leading researchers and innovators to explore cutting-edge developments in AI, Biotechnology, and Sustainable Energy. Network with industry leaders and discover research opportunities.
+                  </p>
+                  <Button className="bg-brand-gradient hover:opacity-90 text-foreground">
+                    Learn More
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </Button>
+                </div>
+              </div>
+            </div>
+
+            {/* Upcoming Events List - Right side */}
+            <div className="lg:col-span-1 space-y-4">
+              <h3 className="text-lg font-bold text-foreground mb-6 font-display">
+                More Events
+              </h3>
+              <div className="space-y-4">
+                {[
+                  {
+                    date: "Nov 22",
+                    title: "Faculty Mentorship Program Launch",
+                    category: "Mentoring",
+                  },
+                  {
+                    date: "Nov 25",
+                    title: "Inter-School Debate Championship",
+                    category: "Competition",
+                  },
+                  {
+                    date: "Nov 29",
+                    title: "Industry-Academia Collaboration Meet",
+                    category: "Networking",
+                  },
+                  {
+                    date: "Dec 2",
+                    title: "Winter Cultural Festival",
+                    category: "Celebration",
+                  },
+                  {
+                    date: "Dec 5",
+                    title: "Career Development Workshop",
+                    category: "Professional",
+                  },
+                ].map((event, idx) => (
+                  <div
+                    key={idx}
+                    className="group rounded-xl border border-border/40 bg-card/40 backdrop-blur-sm p-4 hover:border-brand-magenta/50 transition-all cursor-pointer hover:shadow-lg hover:shadow-brand-magenta/5"
+                  >
+                    <div className="flex gap-4">
+                      <div className="flex-shrink-0">
+                        <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-brand-orange/10 text-brand-orange font-bold text-sm font-display">
+                          <CalendarDays className="w-5 h-5" />
+                        </div>
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <p className="text-xs text-foreground/60 font-body font-semibold">
+                          {event.date}
+                        </p>
+                        <h4 className="text-sm font-semibold text-foreground font-display group-hover:text-brand-magenta transition-colors line-clamp-2 mt-1">
+                          {event.title}
+                        </h4>
+                        <Badge
+                          variant="secondary"
+                          className="text-xs mt-2 inline-block"
+                        >
+                          {event.category}
+                        </Badge>
+                      </div>
+                      <div className="flex-shrink-0">
+                        <ChevronRight className="w-4 h-4 text-foreground/40 group-hover:text-brand-magenta transition-colors" />
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <Button
+                variant="outline"
+                className="w-full border-brand-orange/30 text-brand-orange hover:bg-brand-orange/5 mt-6"
+              >
+                View All Events
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Campus Life Section */}
       <section className="px-6 py-20 bg-gradient-to-r from-brand-magenta/5 to-brand-orange/5">
         <div className="max-w-7xl mx-auto">
