@@ -92,11 +92,17 @@ type HeroSectionProps = {
 
 function HeroSection({ stats }: HeroSectionProps) {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-brand-magenta/20 via-brand-orange/15 to-brand-blue/15 dark:bg-slate-900 py-24 md:py-32">
-      <div className="absolute inset-0">
+    <section className="relative overflow-hidden py-24 md:py-32" style={{background: "linear-gradient(to bottom right, rgb(233, 97, 255, 0.2), rgb(229, 138, 0, 0.15), rgb(0, 141, 205, 0.15))"}}>
+      <div className="absolute inset-0 dark:hidden">
         <div className="absolute -top-32 right-10 h-96 w-96 rounded-full bg-brand-magenta/25 blur-3xl" />
         <div className="absolute bottom-0 left-0 h-80 w-80 rounded-full bg-brand-blue/25 blur-3xl" />
         <div className="absolute top-1/2 right-1/4 h-72 w-72 rounded-full bg-brand-orange/15 blur-3xl" />
+      </div>
+      <div className="hidden dark:block absolute inset-0 bg-slate-900"></div>
+      <div className="hidden dark:block absolute inset-0">
+        <div className="absolute -top-32 right-10 h-96 w-96 rounded-full bg-brand-magenta/5 blur-3xl" />
+        <div className="absolute bottom-0 left-0 h-80 w-80 rounded-full bg-brand-blue/5 blur-3xl" />
+        <div className="absolute top-1/2 right-1/4 h-72 w-72 rounded-full bg-brand-orange/5 blur-3xl" />
       </div>
       <div className="relative mx-auto max-w-7xl px-6">
         <div className="flex flex-col gap-12 lg:gap-16 lg:flex-row lg:items-center lg:justify-between">
