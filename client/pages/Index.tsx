@@ -313,18 +313,18 @@ export default function Index() {
         {/* Hero Content */}
         <div className="relative max-w-7xl mx-auto px-6 text-center lg:text-left lg:flex lg:items-center lg:space-x-12">
           <div className="lg:w-2/3">
-            <h1 className="headline-1 mb-8 leading-tight">
+            <h1 className="headline-1 mb-8 leading-tight text-white">
               {t('hero.headline')}
             </h1>
 
-            <p className="subheadline text-gray-200 mb-12 max-w-3xl mx-auto leading-relaxed">
+            <p className="subheadline text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed">
               {t('hero.subheadline')}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-16">
               <Button
                 size="lg"
-                className="bg-brand-gradient hover:opacity-90 text-foreground px-8 py-6 text-lg font-semibold font-display rounded-2xl shadow-lg hover:shadow-brand-magenta/25 transition-all duration-300 group"
+                className="bg-brand-gradient hover:opacity-90 text-white px-8 py-6 text-lg font-semibold font-display rounded-2xl shadow-lg hover:shadow-brand-magenta/25 transition-all duration-300 group"
               >
                 {t('hero.applyNow')}
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -338,7 +338,7 @@ export default function Index() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-2 border-white/30 bg-black/40 text-foreground
+                  className="border-2 border-white/30 bg-black/40 text-white
              hover:bg-white hover:text-orange-600
              px-8 py-6 text-lg font-semibold font-display
              rounded-2xl transition-all duration-300 backdrop-blur-sm"
