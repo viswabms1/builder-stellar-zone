@@ -1133,12 +1133,16 @@ export default function Engineering() {
               the DSU School of Engineering.
             </p>
             <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <RouterLink to="/admissions">
+              <a
+                href="https://admissions.dsu.edu.in/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <Button className="bg-brand-gradient text-foreground">
                   Apply Now
                   <GraduationCap className="ml-2 h-4 w-4" />
                 </Button>
-              </RouterLink>
+              </a>
               <a
                 href="https://dsu.edu.in/virtual-tour/"
                 target="_blank"

@@ -463,11 +463,15 @@ export default function ComputerApplications() {
               industry mentorship and product-focused learning.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link to="/admissions">
+              <a
+                href="https://admissions.dsu.edu.in/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <Button className="bg-brand-gradient text-foreground">
                   Apply Now
                 </Button>
-              </Link>
+              </a>
               <a
                 href="https://www.dsu.edu.in/computer-applications/usp-sca"
                 target="_blank"
