@@ -74,13 +74,13 @@ export default function Navigation() {
           <Link
             to="/"
             className="flex items-center group"
-            style={{ minWidth: "128px", minHeight: "35px" }}
+            style={{ minWidth: "160px", minHeight: "50px" }}
           >
             <img
-              src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fc9f5a55fa7004ae596d21cc4fa4aed1f?format=webp&width=800"
+              src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fc9f5a55fa7004ae596d21cc4fa4aed1f?format=webp&width=1200"
               alt="Dayananda Sagar University Logo"
-              className="h-16 w-auto object-contain group-hover:scale-105 transition-all duration-300"
-              style={{ minHeight: "35px" }}
+              className="h-20 w-auto object-contain group-hover:scale-105 transition-all duration-300"
+              style={{ minHeight: "50px" }}
             />
           </Link>
 
