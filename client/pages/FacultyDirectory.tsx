@@ -203,14 +203,21 @@ export default function FacultyDirectory() {
               label="Schools"
               options={schoolOptions}
               activeValue={schoolFilter}
-              onSelect={(value) => setSchoolFilter(value as SelectedSchool)}
+              onSelect={(value) => {
+                setSchoolFilter(value as SelectedSchool);
+                // Reset focus filter when school changes
+                setFocusFilter(ALL_AREAS);
+              }}
             />
             <FilterPills
               label="Focus Areas"
-              options={focusOptions.map((option) => ({
-                label: option,
-                value: option,
-              }))}
+              options={[
+                { label: ALL_AREAS, value: ALL_AREAS },
+                ...availableFocusAreas.map((option) => ({
+                  label: option,
+                  value: option,
+                })),
+              ]}
               activeValue={focusFilter}
               onSelect={(value) => setFocusFilter(value)}
             />
