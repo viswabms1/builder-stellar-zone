@@ -337,7 +337,7 @@ export default function Research() {
                       </div>
                     </div>
 
-                    <Button variant="ghost" size="sm" className="group-hover:text-orange-500 group-hover:bg-orange-500/5">
+                    <Button variant="ghost" size="sm" className="group-hover:text-orange-500">
                       View Projects
                       <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform ml-2" />
                     </Button>
@@ -570,7 +570,7 @@ export default function Research() {
                     rel="noreferrer"
                     className="w-full"
                   >
-                    <Button variant="ghost" size="sm" className="w-full justify-between group-hover:text-orange-500 group-hover:bg-orange-500/5">
+                    <Button variant="ghost" size="sm" className="w-full justify-between group-hover:text-orange-500">
                       Apply Now
                       <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </Button>
