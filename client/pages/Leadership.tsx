@@ -201,6 +201,66 @@ export default function Leadership() {
         </div>
       </section>
 
+      {/* Founders Section */}
+      <section className="px-6 py-20 bg-gradient-to-r from-orange-500/5 via-red-600/5 to-background">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
+                Our Founders
+              </span>
+            </h2>
+            <p className="text-lg text-foreground max-w-3xl mx-auto">
+              Visionary leaders whose legacy continues to inspire excellence and innovation
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+            {/* Founder 1 */}
+            <div className="group text-center">
+              <div className="mb-6 relative inline-block">
+                <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-red-600/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-500" />
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Ffc8304264a444fa196e95ad74903200c?format=webp&width=800"
+                  alt="Late Shri R Dayananda Sagar"
+                  className="relative w-48 h-48 md:w-56 md:h-56 rounded-full object-cover border-4 border-orange-500/30 group-hover:border-orange-500/60 transition-all duration-500 shadow-xl"
+                />
+              </div>
+              <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
+                Late Shri R Dayananda Sagar
+              </h3>
+              <p className="text-lg font-semibold text-orange-500 mb-4">
+                Founding Father
+              </p>
+              <p className="text-foreground/80 text-center">
+                Our founding father, late Sri R Dayananda Sagar, was a graduate in Arts & Commerce from India & a barrister-at-law from England. His visionary leadership laid the foundation for the institution's commitment to excellence and innovation.
+              </p>
+            </div>
+
+            {/* Founder 2 */}
+            <div className="group text-center">
+              <div className="mb-6 relative inline-block">
+                <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-red-600/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-500" />
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F028b835328ef468fbf5400faad79454f?format=webp&width=800"
+                  alt="Late Smt Chandramma Sagar"
+                  className="relative w-48 h-48 md:w-56 md:h-56 rounded-full object-cover border-4 border-orange-500/30 group-hover:border-orange-500/60 transition-all duration-500 shadow-xl"
+                />
+              </div>
+              <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
+                Late Smt Chandramma Sagar
+              </h3>
+              <p className="text-lg font-semibold text-orange-500 mb-4">
+                Wife of the Founder
+              </p>
+              <p className="text-foreground/80 text-center">
+                Late Smt Chandramma Sagar was a doctor by profession, the first Indian woman to have acquired a triple fellowship from the Royal College of Surgeons (FRCS) from London, Edinburgh, and Dublin. Her dedication to service and excellence continues to inspire our mission.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Key Leadership Positions */}
       <section className="px-6 py-20">
         <div className="max-w-7xl mx-auto">
