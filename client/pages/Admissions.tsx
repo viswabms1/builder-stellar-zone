@@ -1,7 +1,6 @@
 import { useEffect, useMemo, useRef, useState, type FormEvent } from "react";
 import { useLanguage } from "@/providers/language-provider";
 
-import AdmissionCarousel from "@/components/AdmissionCarousel";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -340,7 +339,6 @@ export default function Admissions() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <HeroSection />
-      <AdmissionCarousel />
       <QuickLinksSection />
       <AdmissionRoutesSection />
       <BrochureSection />
