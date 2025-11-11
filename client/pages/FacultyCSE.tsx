@@ -105,11 +105,11 @@ function HeroSection({ stats }: HeroSectionProps) {
               School of Engineering · CSE Faculty
             </Badge>
             <div>
-              <h1 className="text-5xl md:text-6xl font-bold leading-tight text-slate-900 dark:text-white mb-4 tracking-tight">
+              <h1 className="text-5xl md:text-6xl font-bold leading-tight text-slate-900 dark:text-slate-50 mb-4 tracking-tight">
                 Meet the Minds<br className="hidden sm:block" /> Powering CS &amp; Engineering
               </h1>
             </div>
-            <p className="max-w-2xl text-lg md:text-xl text-slate-700 dark:text-white/85 leading-relaxed">
+            <p className="max-w-2xl text-lg md:text-xl text-slate-700 dark:text-slate-200 leading-relaxed">
               Our faculty are seasoned researchers, innovators, and mentors guiding the next generation of technologists through cutting-edge labs, industry collaborations, and personalized mentorship.
             </p>
             <div className="flex flex-col items-center gap-4 sm:flex-row lg:items-start pt-4">
