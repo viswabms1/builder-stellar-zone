@@ -585,7 +585,7 @@ function BrochureSection() {
   );
 }
 
-function AIEngagementSection() {
+function ContactSection() {
   const [chatMessages, setChatMessages] = useState<ChatMessage[]>([
     {
       sender: "DSU AI Advisor",
