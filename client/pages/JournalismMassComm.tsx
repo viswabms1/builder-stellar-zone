@@ -307,11 +307,15 @@ export default function JournalismMassComm() {
               Craft narratives across platforms with convergence labs, industry mentors and global collaborations at DSU's College of Journalism & Mass Communication.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link to="/admissions">
+              <a
+                href="https://admissions.dsu.edu.in/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <Button className="bg-brand-gradient text-foreground">
                   Apply Now
                 </Button>
-              </Link>
+              </a>
               <a
                 href="https://www.dsu.edu.in/about-journalism-mass-comm/cjmc-schemes-syllabus"
                 target="_blank"

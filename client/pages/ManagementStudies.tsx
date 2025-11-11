@@ -287,11 +287,15 @@ export default function ManagementStudies() {
               economy.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link to="/admissions">
+              <a
+                href="https://admissions.dsu.edu.in/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <Button className="bg-brand-gradient text-foreground">
                   Apply Now
                 </Button>
-              </Link>
+              </a>
               <a href="mailto:dean-scms@dsu.edu.in">
                 <Button
                   variant="outline"
