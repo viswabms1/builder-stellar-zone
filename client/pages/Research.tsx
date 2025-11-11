@@ -247,36 +247,6 @@ export default function Research() {
                   "https://images.unsplash.com/photo-1631217314831-c6227db76b6e?q=80&w=1200&auto=format&fit=crop"
                 ]
               },
-              {
-                icon: FlaskConical,
-                title: "SynTech Bio Solutions Lab",
-                description: "Pioneering research on upcycling agricultural waste into sustainable protein sources. Our students are reimagining agricultural byproducts as nutritional resources to address food waste management and malnutrition.",
-                focus: ["Protein Engineering", "Waste Upcycling", "Sustainable Food", "Bioprocessing", "Nutritional Science"],
-                projects: "3+ Active Projects",
-                funding: "ANRF Funded",
-                publications: "Research in Progress",
-                researchers: ["Dr. B. M. Ashwin Desai", "Dr. Pronama Biswas"],
-                students: ["Bhoomika Sridhar", "Challa Mokshith Chowdhary", "Khushi Agrawal"],
-                videoUrl: "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F9943902d95dc447ea4c98bfa5489a2eb?alt=media&token=ad667b6e-dc94-41de-a3dc-040b69d9577a&apiKey=4aa279a8430d441dba9c55f659831878",
-                images: [
-                  "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1200&auto=format&fit=crop",
-                  "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=1200&auto=format&fit=crop"
-                ]
-              },
-              {
-                icon: Cpu,
-                title: "Digital Twin Lab",
-                description: "Advanced research on digital twin technologies for aerospace engineering, manufacturing systems, and complex industrial applications. Creating virtual replicas of physical systems to optimize design, predict performance, and enhance operational efficiency.",
-                focus: ["Digital Twin Modeling", "Aerospace Systems", "Manufacturing Simulation", "Real-time Data Integration", "Predictive Analytics", "System Optimization"],
-                projects: "5+ Active Projects",
-                funding: "Research in Progress",
-                publications: "Research in Progress",
-                researchers: ["Dr. Prashantha Kumar H G (NPDF- IITM, Asst. Professor, Dept. of Aerospace Engineering)"],
-                images: [
-                  "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fcdc3731512be458fbcb6a4bbfd9dc81e?format=webp&width=800",
-                  "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F873b3f093e894babbc6e55899c8fa0c7?format=webp&width=800"
-                ]
-              },
             ].map((center, index) => (
               <Card key={index} className="group hover:shadow-xl hover:shadow-orange-500/10 transition-all duration-500 bg-card/50 backdrop-blur-sm border border-border/50 hover:border-orange-500/30 overflow-hidden">
                 <div className="grid md:grid-cols-3 gap-6 p-6">
