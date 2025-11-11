@@ -365,10 +365,10 @@ function HeroSection() {
           <GraduationCap className="h-4 w-4" />
           {t('admissions.title')} 2025
         </div>
-        <h1 className="mt-8 text-4xl font-bold leading-tight text-foreground md:text-6xl">
+        <h1 className="mt-8 text-4xl font-bold leading-tight text-white md:text-6xl">
           {t('admissions.description')}
         </h1>
-        <p className="mt-6 text-lg text-foreground md:text-xl">
+        <p className="mt-6 text-lg text-white md:text-xl">
           {t('academics.subtitle')}
         </p>
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">

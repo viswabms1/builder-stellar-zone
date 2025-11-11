@@ -434,10 +434,10 @@ export default function CDSIMERHospital() {
                 CDSIMER Teaching Hospital
               </span>
             </div>
-            <h1 className="max-w-3xl text-4xl font-display leading-tight text-foreground md:text-6xl">
+            <h1 className="max-w-3xl text-4xl font-display leading-tight text-white md:text-6xl">
               Compassionate Care, Advanced Infrastructure & Integrated Learning
             </h1>
-            <p className="mt-5 max-w-2xl text-foreground/90 font-body text-lg">
+            <p className="mt-5 max-w-2xl text-white/90 font-body text-lg">
               A NABH and NABL accredited tertiary-care destination serving
               Bengaluru South and surrounding communities with 24×7 emergency,
               speciality and critical care supported by DSU's medical education

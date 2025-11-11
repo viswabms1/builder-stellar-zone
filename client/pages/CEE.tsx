@@ -241,10 +241,10 @@ export default function CEE() {
                 Center for Executive Education
               </span>
             </div>
-            <h1 className="mb-4 font-display text-4xl leading-tight text-foreground md:text-6xl">
+            <h1 className="mb-4 font-display text-4xl leading-tight text-white md:text-6xl">
               Executive MBA & Leadership Ecosystem
             </h1>
-            <p className="max-w-2xl text-foreground/90 font-body text-lg">
+            <p className="max-w-2xl text-white/90 font-body text-lg">
               Propel your career with weekend executive programmes, CXO
               mentorship and innovation labs tailored for working professionals.
             </p>

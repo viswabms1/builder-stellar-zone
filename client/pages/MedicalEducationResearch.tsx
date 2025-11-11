@@ -284,10 +284,10 @@ export default function MedicalEducationResearch() {
                 Medical Education & Research
               </span>
             </div>
-            <h1 className="mb-4 font-display text-4xl leading-tight text-foreground md:text-6xl">
+            <h1 className="mb-4 font-display text-4xl leading-tight text-white md:text-6xl">
               Empowering Physicians Through Knowledge, Discovery & Healing
             </h1>
-            <p className="max-w-3xl text-foreground/90 font-body text-lg">
+            <p className="max-w-3xl text-white/90 font-body text-lg">
               DSU's medical education and research ecosystem unites CDSIMER's
               smart campus, tertiary care hospital and translational research to
               elevate patient care and community wellbeing.
