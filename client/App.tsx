@@ -121,26 +121,26 @@ function App() {
             <Navigation />
             <main>
               <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/academics" element={<Academics />} />
-              <Route path="/academics/engineering" element={<Engineering />} />
-              <Route
-                path="/academics/computer-applications"
-                element={<ComputerApplications />}
-              />
-              <Route path="/academics/law" element={<Law />} />
-              <Route
-                path="/academics/management-studies"
-                element={<ManagementStudies />}
-              />
-              <Route
-                path="/academics/health-sciences"
-                element={<HealthSciences />}
-              />
-              <Route
-                path="/academics/medical-education-research"
-                element={<MedicalEducationResearch />}
-              />
+                <Route path="/" element={<Index />} />
+                <Route path="/academics" element={<Academics />} />
+                <Route path="/academics/engineering" element={<Engineering />} />
+                <Route
+                  path="/academics/computer-applications"
+                  element={<ComputerApplications />}
+                />
+                <Route path="/academics/law" element={<Law />} />
+                <Route
+                  path="/academics/management-studies"
+                  element={<ManagementStudies />}
+                />
+                <Route
+                  path="/academics/health-sciences"
+                  element={<HealthSciences />}
+                />
+                <Route
+                  path="/academics/medical-education-research"
+                  element={<MedicalEducationResearch />}
+                />
               <Route
                 path="/academics/health-sciences/cdsimer"
                 element={<CDSIMER />}
