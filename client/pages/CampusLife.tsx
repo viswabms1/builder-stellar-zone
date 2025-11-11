@@ -86,68 +86,6 @@ export default function CampusLife() {
         </div>
       </section>
 
-      {/* Campus Highlights - Image Gallery Section */}
-      <section className="px-6 py-20">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
-                Campus Highlights
-              </span>
-            </h2>
-            <p className="text-xl text-foreground max-w-3xl mx-auto">
-              Explore the diverse spaces and vibrant areas across our sprawling campus
-            </p>
-          </div>
-
-          {/* Featured Large Image */}
-          <div className="mb-8 rounded-2xl overflow-hidden h-[400px] border border-border hover:border-orange-500/50 transition-colors">
-            <img
-              src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F602a48ccc50449ef8b044f6528cfa842?format=webp&width=800"
-              alt="Movie Screening Room"
-              className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-            />
-          </div>
-
-          {/* Masonry Grid - Campus Areas */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              {
-                title: "Engineering Complex",
-                image: "https://images.unsplash.com/photo-1512941691920-25bda36dc643?w=500&h=400&fit=crop",
-                description: "State-of-the-art labs and modern classrooms"
-              },
-              {
-                title: "Central Library",
-                image: "https://images.unsplash.com/photo-1507842872343-583f20270319?w=500&h=400&fit=crop",
-                description: "2M+ books and digital resources"
-              },
-              {
-                title: "Student Center",
-                image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=500&h=400&fit=crop",
-                description: "Hub for student activities and events"
-              },
-            ].map((area, index) => (
-              <div key={index} className="group cursor-pointer">
-                <div className="relative overflow-hidden rounded-xl h-64 mb-4 border border-border hover:border-orange-500/50 transition-colors">
-                  <img 
-                    src={area.image}
-                    alt={area.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors"></div>
-                </div>
-                <h3 className="text-xl font-bold text-foreground group-hover:text-orange-500 transition-colors mb-2">
-                  {area.title}
-                </h3>
-                <p className="text-foreground text-sm">
-                  {area.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Campus Life Gallery - Masonry Layout */}
       <section className="px-6 py-20 bg-gradient-to-r from-orange-500/5 to-red-600/5">
