@@ -233,6 +233,20 @@ export default function Research() {
                   "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=1200&auto=format&fit=crop"
                 ]
               },
+              {
+                icon: Cpu,
+                title: "Digital Twin Lab",
+                description: "Advanced research on digital twin technologies for aerospace engineering, manufacturing systems, and complex industrial applications. Creating virtual replicas of physical systems to optimize design, predict performance, and enhance operational efficiency.",
+                focus: ["Digital Twin Modeling", "Aerospace Systems", "Manufacturing Simulation", "Real-time Data Integration", "Predictive Analytics", "System Optimization"],
+                projects: "5+ Active Projects",
+                funding: "Research in Progress",
+                publications: "Research in Progress",
+                researchers: ["Dr. Prashantha Kumar H G (NPDF- IITM, Asst. Professor, Dept. of Aerospace Engineering)"],
+                images: [
+                  "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fcdc3731512be458fbcb6a4bbfd9dc81e?format=webp&width=800",
+                  "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F873b3f093e894babbc6e55899c8fa0c7?format=webp&width=800"
+                ]
+              },
             ].map((center, index) => (
               <Card key={index} className="group hover:shadow-xl hover:shadow-orange-500/10 transition-all duration-500 bg-card/50 backdrop-blur-sm border border-border/50 hover:border-orange-500/30 overflow-hidden">
                 <div className="grid md:grid-cols-3 gap-6 p-6">
