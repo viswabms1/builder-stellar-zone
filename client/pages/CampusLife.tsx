@@ -204,10 +204,10 @@ export default function CampusLife() {
                 category: "Innovation", 
                 image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=300&h=300&fit=crop"
               },
-              { 
-                title: "Food Festival", 
-                category: "Culture", 
-                image: "https://images.unsplash.com/photo-1555939594-58d7cb561a1b?w=300&h=300&fit=crop"
+              {
+                title: "Food Festival",
+                category: "Culture",
+                image: "https://images.pexels.com/photos/18698231/pexels-photo-18698231.jpeg"
               },
               {
                 title: "Study Groups",
