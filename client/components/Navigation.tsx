@@ -77,7 +77,7 @@ export default function Navigation() {
             style={{ minWidth: "128px", minHeight: "35px" }}
           >
             <img
-              src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F7780ec15004a435f8de3f5f98762eed4?format=webp&width=800"
+              src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fc9f5a55fa7004ae596d21cc4fa4aed1f?format=webp&width=800"
               alt="Dayananda Sagar University Logo"
               className="h-16 w-auto object-contain group-hover:scale-105 transition-all duration-300"
               style={{ minHeight: "35px" }}
