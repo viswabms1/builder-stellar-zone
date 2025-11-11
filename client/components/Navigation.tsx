@@ -73,7 +73,7 @@ export default function Navigation() {
           {/* Official DSU Logo */}
           <Link
             to="/"
-            className="flex items-center group flex-shrink-0 -ml-12"
+            className="flex items-center group flex-shrink-0 -ml-24"
             style={{ minHeight: "60px" }}
           >
             <img
