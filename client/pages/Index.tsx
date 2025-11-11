@@ -472,7 +472,7 @@ export default function Index() {
                         <Button
                           variant="ghost"
                           size="sm"
-                          className="w-full justify-between text-foreground group-hover:text-brand-magenta font-display transition-colors"
+                          className="w-full justify-between text-foreground group-hover:text-brand-magenta font-display transition-colors hover:bg-transparent"
                         >
                           {t('buttons.learnMore')}
                           <ChevronRight className="w-4 h-4" />
@@ -483,7 +483,7 @@ export default function Index() {
                         <Button
                           variant="ghost"
                           size="sm"
-                          className="w-full justify-between text-foreground group-hover:text-brand-magenta font-display transition-colors"
+                          className="w-full justify-between text-foreground group-hover:text-brand-magenta font-display transition-colors hover:bg-transparent"
                         >
                           {t('buttons.learnMore')}
                           <ChevronRight className="w-4 h-4" />
@@ -494,7 +494,7 @@ export default function Index() {
                     <Button
                       variant="ghost"
                       size="sm"
-                      className="w-full justify-between text-foreground group-hover:text-brand-magenta font-display transition-colors"
+                      className="w-full justify-between text-foreground group-hover:text-brand-magenta font-display transition-colors hover:bg-transparent"
                     >
                       Learn More
                       <ChevronRight className="w-4 h-4" />
