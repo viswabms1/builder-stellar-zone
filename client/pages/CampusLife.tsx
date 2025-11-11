@@ -455,11 +455,12 @@ export default function CampusLife() {
                 attendance: "5,000+",
               },
               {
-                icon: BookOpen,
-                title: "Academic Conferences",
-                image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop",
-                duration: "Quarterly",
-                attendance: "3,000+",
+                icon: Rocket,
+                title: "NASA Space Apps Challenge 2025",
+                video: "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F9b4ce4c4527c4bcf85d247f9239568af?alt=media&token=fcd9b1d7-1f72-430d-8789-96c4226f5db9&apiKey=4aa279a8430d441dba9c55f659831878",
+                isVideo: true,
+                duration: "Online",
+                attendance: "International",
               },
               {
                 icon: Heart,
@@ -467,14 +468,6 @@ export default function CampusLife() {
                 image: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=400&h=300&fit=crop",
                 duration: "Ongoing",
                 attendance: "2,000+",
-              },
-              {
-                icon: Rocket,
-                title: "NASA Space Apps Challenge 2025",
-                video: "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F9b4ce4c4527c4bcf85d247f9239568af?alt=media&token=fcd9b1d7-1f72-430d-8789-96c4226f5db9&apiKey=4aa279a8430d441dba9c55f659831878",
-                isVideo: true,
-                duration: "Online",
-                attendance: "International",
               },
             ].map((event, index) => (
               <Card
