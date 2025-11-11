@@ -705,17 +705,6 @@ export default function Index() {
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>
-                <Link
-                  to="/academics/engineering/computer-science/faculty"
-                  className="flex-1"
-                >
-                  <Button
-                    variant="outline"
-                    className="h-full w-full border-brand-magenta/40 hover:bg-brand-magenta/10"
-                  >
-                    CSE Faculty Hub
-                  </Button>
-                </Link>
               </div>
             </div>
             <div className="rounded-2xl border border-border/50 bg-card/60 p-6 backdrop-blur-sm">
