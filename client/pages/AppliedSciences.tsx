@@ -286,11 +286,15 @@ export default function AppliedSciences() {
               at DSU.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link to="/admissions">
+              <a
+                href="https://admissions.dsu.edu.in/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <Button className="bg-brand-gradient text-foreground">
                   Apply Now
                 </Button>
-              </Link>
+              </a>
               <a
                 href="https://www.dsu.edu.in/basic-applied-sciences/usp-sbas"
                 target="_blank"
