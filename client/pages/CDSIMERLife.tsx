@@ -524,11 +524,11 @@ export default function CDSIMERLife() {
                 Life at CDSIMER
               </span>
             </div>
-            <h1 className="max-w-3xl text-4xl font-display leading-tight text-foreground md:text-6xl">
+            <h1 className="max-w-3xl text-4xl font-display leading-tight text-white md:text-6xl">
               Discover Community, Culture & Wellbeing on a Vibrant Medical
               Campus
             </h1>
-            <p className="mt-5 max-w-2xl text-foreground/90 font-body text-lg">
+            <p className="mt-5 max-w-2xl text-white/90 font-body text-lg">
               From dynamic hostels and multi-cuisine dining to festivals, sports
               and outreach, CDSIMER curates experiences that nurture
               compassionate physicians and lifelong learners.

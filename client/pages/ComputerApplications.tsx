@@ -454,10 +454,10 @@ export default function ComputerApplications() {
                 School of Computer Applications
               </span>
             </div>
-            <h1 className="mb-4 font-display text-4xl leading-tight text-foreground md:text-6xl">
+            <h1 className="mb-4 font-display text-4xl leading-tight text-white md:text-6xl">
               Build Tomorrow's Digital Experiences
             </h1>
-            <p className="max-w-2xl text-foreground/90 font-body text-lg">
+            <p className="max-w-2xl text-white/90 font-body text-lg">
               From full-stack development to data science and cloud-native
               innovation, DSU prepares tech creators with experiential labs,
               industry mentorship and product-focused learning.

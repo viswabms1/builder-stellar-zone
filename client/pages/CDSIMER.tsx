@@ -395,10 +395,10 @@ export default function CDSIMER() {
                 CDSIMER · DSU Medical Campus
               </span>
             </div>
-            <h1 className="mb-4 font-display text-4xl leading-tight text-foreground md:text-6xl">
+            <h1 className="mb-4 font-display text-4xl leading-tight text-white md:text-6xl">
               Empowering Healthcare with Knowledge, Discovery & Healing
             </h1>
-            <p className="max-w-3xl text-foreground/90 font-body text-lg">
+            <p className="max-w-3xl text-white/90 font-body text-lg">
               CDSIMER blends a smart medical campus, tertiary care hospital and
               research innovation hub to drive excellence in patient care,
               education and community wellbeing.

@@ -300,10 +300,10 @@ export default function JournalismMassComm() {
                 School of Arts & Humanities · CJMC
               </span>
             </div>
-            <h1 className="mb-4 font-display text-4xl leading-tight text-foreground md:text-6xl">
+            <h1 className="mb-4 font-display text-4xl leading-tight text-white md:text-6xl">
               Storytellers for the Now & Next
             </h1>
-            <p className="max-w-2xl text-foreground/90 font-body text-lg">
+            <p className="max-w-2xl text-white/90 font-body text-lg">
               Craft narratives across platforms with convergence labs, industry mentors and global collaborations at DSU's College of Journalism & Mass Communication.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">

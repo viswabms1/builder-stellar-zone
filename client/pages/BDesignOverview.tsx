@@ -237,10 +237,10 @@ export default function BDesignOverview() {
                 B.Design · School of Design & Digital Trans Media
               </span>
             </div>
-            <h1 className="mb-4 font-display text-4xl leading-tight text-foreground md:text-6xl">
+            <h1 className="mb-4 font-display text-4xl leading-tight text-white md:text-6xl">
               Design Experiences that Inspire
             </h1>
-            <p className="max-w-2xl text-foreground/90 font-body text-lg">
+            <p className="max-w-2xl text-white/90 font-body text-lg">
               A four-track Bachelor of Design programme combining foundation
               studios, interdisciplinary electives and industry immersions to
               craft designers of the future.
