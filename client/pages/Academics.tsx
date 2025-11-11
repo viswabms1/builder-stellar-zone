@@ -502,13 +502,19 @@ export default function Academics() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-orange-500 via-red-600 to-pink-500 text-foreground px-12 py-6 text-lg font-semibold rounded-2xl"
+              <a
+                href="https://admissions.dsu.edu.in/"
+                target="_blank"
+                rel="noreferrer"
               >
-                Apply Now
-                <GraduationCap className="w-5 h-5 ml-2" />
-              </Button>
+                <Button
+                  size="lg"
+                  className="bg-gradient-to-r from-orange-500 via-red-600 to-pink-500 text-foreground px-12 py-6 text-lg font-semibold rounded-2xl"
+                >
+                  Apply Now
+                  <GraduationCap className="w-5 h-5 ml-2" />
+                </Button>
+              </a>
               <Button
                 variant="outline"
                 size="lg"
