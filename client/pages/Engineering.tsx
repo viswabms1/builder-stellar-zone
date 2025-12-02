@@ -752,16 +752,7 @@ export default function Engineering() {
     <div className="min-h-screen bg-background text-foreground">
       <section className="relative flex items-center justify-center px-6 pt-4 pb-16 -mt-10 md:min-h-screen" id="top">
         <div className="w-full max-w-5xl">
-          <div className="relative aspect-video overflow-hidden rounded-3xl border-4 border-brand-magenta/40 shadow-2xl shadow-brand-magenta/20 p-4 bg-black/10">
-            <iframe
-              src="https://www.youtube.com/embed/26wVOtoBE-Q?autoplay=1&mute=1&loop=1&playlist=26wVOtoBE-Q&controls=0&rel=0&fs=0"
-              title="Engineering School Video"
-              allow="autoplay; encrypted-media"
-              allowFullScreen
-              className="h-full w-full object-cover rounded-2xl"
-              style={{ border: "none" }}
-            />
-          </div>
+          <HeroVideo />
           <div className="mt-6 text-center">
             <h2 className="text-2xl md:text-3xl font-bold text-foreground font-display">
               School of Engineering
