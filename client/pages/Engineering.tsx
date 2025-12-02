@@ -913,34 +913,6 @@ export default function Engineering() {
         </div>
       </section>
 
-      <section id="departments" className="relative overflow-hidden px-6 py-16">
-        <div
-          className="pointer-events-none absolute inset-x-0 -top-32 h-64 bg-gradient-to-b from-brand-blue/20 via-transparent to-transparent blur-3xl"
-          aria-hidden="true"
-        />
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-12">
-            <div className="max-w-3xl">
-              <Badge className="bg-brand-blue/15 text-brand-blue">
-                Engineering Specialisations
-              </Badge>
-              <h2 className="mt-4 font-display text-3xl md:text-4xl">
-                Specialised tracks and advanced labs
-              </h2>
-              <p className="mt-3 text-sm text-foreground font-body">
-                Dive deep into specialized engineering disciplines with
-                dedicated labs, industry collaboration and cutting-edge research.
-              </p>
-            </div>
-          </div>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-12">
-            {ENGINEERING_DEPARTMENTS.map((department) => (
-              <DepartmentCard key={department.name} department={department} />
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section
         id="supporting-departments"
         className="bg-gradient-to-r from-brand-blue/10 via-brand-magenta/10 to-brand-orange/10 px-6 py-16"
