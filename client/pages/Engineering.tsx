@@ -1,6 +1,13 @@
 import { Link as RouterLink } from "react-router-dom";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import type { LucideIcon } from "lucide-react";
+
+declare global {
+  interface Window {
+    YT: any;
+    onYouTubeIframeAPIReady: () => void;
+  }
+}
 import {
   Award,
   Beaker,
