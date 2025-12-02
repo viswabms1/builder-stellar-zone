@@ -641,20 +641,73 @@ function ProgramCardComponent({ program }: { program: ProgramCard }) {
 
 function HeroVideo() {
   const [isMuted, setIsMuted] = useState(true);
-  const videoRef = useRef<HTMLDivElement>(null);
+  const playerRef = useRef<any>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    // Load YouTube IFrame API
+    if (!window.YT) {
+      const tag = document.createElement('script');
+      tag.src = 'https://www.youtube.com/iframe_api';
+      const firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag?.parentNode?.insertBefore(tag, firstScriptTag);
+    }
+
+    const initPlayer = () => {
+      if (window.YT && window.YT.Player && containerRef.current) {
+        playerRef.current = new window.YT.Player('hero-video-player', {
+          videoId: '26wVOtoBE-Q',
+          width: '100%',
+          height: '100%',
+          playerVars: {
+            autoplay: 1,
+            controls: 0,
+            rel: 0,
+            fs: 0,
+            loop: 1,
+            playlist: '26wVOtoBE-Q',
+          },
+          events: {
+            onReady: (event: any) => {
+              event.target.mute();
+              event.target.setVolume(0);
+            },
+          },
+        });
+      }
+    };
+
+    if (window.YT) {
+      initPlayer();
+    } else {
+      window.onYouTubeIframeAPIReady = initPlayer;
+    }
+
+    return () => {
+      if (playerRef.current && playerRef.current.destroy) {
+        playerRef.current.destroy();
+      }
+    };
+  }, []);
 
   const toggleMute = () => {
-    setIsMuted(!isMuted);
+    if (playerRef.current) {
+      if (isMuted) {
+        playerRef.current.unMute();
+        playerRef.current.setVolume(100);
+      } else {
+        playerRef.current.mute();
+        playerRef.current.setVolume(0);
+      }
+      setIsMuted(!isMuted);
+    }
   };
 
   return (
-    <div className="relative aspect-video overflow-hidden rounded-3xl border-4 border-brand-magenta/40 shadow-2xl shadow-brand-magenta/20 p-4 bg-black/10" ref={videoRef}>
-      <iframe
-        src={`https://www.youtube.com/embed/26wVOtoBE-Q?autoplay=1&${isMuted ? 'mute=1' : 'mute=0'}&loop=1&playlist=26wVOtoBE-Q&controls=0&rel=0&fs=0`}
-        title="Engineering School Video"
-        allow="autoplay; encrypted-media"
-        allowFullScreen
-        className="h-full w-full object-cover rounded-2xl"
+    <div className="relative aspect-video overflow-hidden rounded-3xl border-4 border-brand-magenta/40 shadow-2xl shadow-brand-magenta/20 p-4 bg-black/10" ref={containerRef}>
+      <div
+        id="hero-video-player"
+        className="h-full w-full rounded-2xl"
         style={{ border: "none" }}
       />
       <button
