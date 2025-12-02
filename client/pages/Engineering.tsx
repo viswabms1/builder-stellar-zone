@@ -572,6 +572,73 @@ function SupportingDepartmentCard({
   );
 }
 
+function ProgramCardComponent({ program }: { program: ProgramCard }) {
+  const isInternal = program.link.startsWith("/");
+
+  const content = (
+    <div className="group relative h-full rounded-3xl overflow-hidden border border-white/10 bg-black/10 backdrop-blur-sm transition-all duration-700 hover:-translate-y-1 hover:shadow-2xl hover:shadow-brand-magenta/20 min-h-[280px] flex flex-col justify-end">
+      <img
+        src={program.image}
+        alt={program.name}
+        loading="lazy"
+        className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
+      <div className="absolute left-6 top-6 inline-flex items-center gap-2 rounded-full bg-white/20 px-3 py-1 text-xs font-medium text-white backdrop-blur">
+        {program.major}
+      </div>
+      <div className="relative z-10 flex h-full flex-col justify-end p-6 text-white">
+        <div className="rounded-3xl border border-white/15 bg-black/60 backdrop-blur-lg p-6">
+          <div className="space-y-4">
+            <div>
+              <h3 className="font-display text-xl leading-tight text-white">
+                {program.name}
+              </h3>
+              <p className="mt-3 text-sm text-white/85 font-body">
+                {program.description}
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {program.highlights.map((item) => (
+                <span
+                  key={item}
+                  className="rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs uppercase tracking-wide text-white/85"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+            <span className="inline-flex items-center gap-2 text-sm font-medium text-white/90 transition-colors group-hover:text-brand-magenta">
+              Explore program
+              <ChevronRight className="h-4 w-4" />
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+
+  if (isInternal) {
+    return (
+      <RouterLink to={program.link} className="h-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-magenta focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-3xl">
+        {content}
+      </RouterLink>
+    );
+  }
+
+  return (
+    <a
+      href={program.link}
+      target="_blank"
+      rel="noreferrer"
+      className="h-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-magenta focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-3xl"
+    >
+      {content}
+    </a>
+  );
+}
+
 function CalendarResourceCard({ entry }: { entry: CalendarEntry }) {
   return (
     <Card className="h-full rounded-3xl border border-border/40 bg-card/60 backdrop-blur">
