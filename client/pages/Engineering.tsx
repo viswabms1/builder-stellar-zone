@@ -740,7 +740,7 @@ function CalendarResourceCard({ entry }: { entry: CalendarEntry }) {
 export default function Engineering() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <section className="relative flex items-center justify-center px-6 pt-4 pb-16 -mt-10 md:min-h-screen" id="top">
+      <section className="relative flex items-center justify-center px-6 pt-4 pb-16 md:min-h-screen" id="top">
         <div className="w-full max-w-5xl">
           <HeroVideo />
           <div className="mt-6 text-center">
