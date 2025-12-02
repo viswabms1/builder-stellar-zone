@@ -518,7 +518,7 @@ export default function Engineering() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <section className="relative" id="top">
-        <div className="h-[60vh] w-full overflow-hidden md:h-[70vh]">
+        <div className="h-[60vh] w-full overflow-hidden md:h-[70vh] rounded-3xl border-2 border-brand-magenta/40 shadow-2xl shadow-brand-magenta/20">
           <video
             src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F0b20f5ea03294f4d824e69fd8489b78c?alt=media&token=0c4092c4-4afd-4237-b850-81046ecf52f7&apiKey=4aa279a8430d441dba9c55f659831878"
             autoPlay
