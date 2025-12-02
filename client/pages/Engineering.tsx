@@ -526,8 +526,6 @@ export default function Engineering() {
             playsInline
             className="h-full w-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
         </div>
         <div className="absolute inset-0 flex items-center">
           <div className="mx-auto max-w-7xl px-6"></div>
