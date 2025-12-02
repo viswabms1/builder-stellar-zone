@@ -786,9 +786,9 @@ export default function Engineering() {
                 </div>
               </div>
 
-              {/* Dean's Message */}
-              <div className="p-8 md:p-12 flex flex-col justify-start">
-                <div className="space-y-6">
+              {/* Dean's Message Video */}
+              <div className="p-8 md:p-12 flex flex-col justify-center">
+                <div className="space-y-4">
                   {/* Header with Name and Title */}
                   <div className="border-l-4 border-brand-magenta pl-4">
                     <h3 className="text-2xl font-semibold text-foreground font-display">
@@ -802,48 +802,16 @@ export default function Engineering() {
                     </p>
                   </div>
 
-                  {/* Message Title */}
-                  <div className="pt-2">
-                    <h4 className="text-lg font-bold text-foreground uppercase tracking-wide font-display">
-                      BE YOU
-                    </h4>
-                    <h4 className="text-lg font-bold text-brand-magenta uppercase tracking-wide font-display">
-                      BE THE DIFFERENCE!!!
-                    </h4>
-                  </div>
-
-                  {/* Message Content */}
-                  <div className="space-y-4 text-sm text-foreground font-body leading-relaxed">
-                    <p>
-                      Welcome to the new way of learning at School of Engineering (SoE) of Dayananda Sagar University (DSU). At SoE, we are committed to helping you to make a positive difference in the world.
-                    </p>
-                    <p>
-                      We at SoE are immensely proud to provide all of our students with an outstanding education that equips them with the skills, experience, and confidence required to stand out from the crowd. The School promotes Culture of Excellence including the culture of Interdisciplinary, Research, Creativity, Innovations, and Entrepreneurship on various Cutting-Edge Technologies.
-                    </p>
-                    <p>
-                      We at SoE, provide the World-Class Education that is Student-centric, Research-centric, and Educational space where all of our students will have a transformative education, learn to be independent critical thinkers, be societally and ethically responsible, and have a broad understanding of the will the world.
-                    </p>
-                    <p>
-                      We value ability, not background, and we support all of our students to achieve their potential. We want you to enjoy your time here, confident that, upon completion of Engineering degree program under SoE, you will have the knowledge, expertise, and empathy skills to set you on your chosen career path.
-                    </p>
-                    <p>
-                      The decision you make about where to study is an extremely important one. I am pleased you are considering the School of Engineering at DSU, and hope that you choose to continue your education with us.
-                    </p>
-
-                    {/* Closing */}
-                    <div className="pt-4 border-t border-border/50">
-                      <p className="text-sm font-semibold text-brand-magenta uppercase tracking-wide">
-                        BEST WISHES!
-                      </p>
-                      <div className="mt-4 space-y-1">
-                        <p className="text-sm font-semibold text-foreground font-display">
-                          Dr. Udaya Kumar Reddy K R
-                        </p>
-                        <p className="text-sm text-foreground font-body">
-                          Dean, School of Engineering
-                        </p>
-                      </div>
-                    </div>
+                  {/* Video Container */}
+                  <div className="w-full aspect-video rounded-2xl overflow-hidden bg-black/20 border border-border/30">
+                    <iframe
+                      src="https://www.youtube.com/embed/sAj2Vi3E-KM?autoplay=1&mute=1&loop=1&playlist=sAj2Vi3E-KM&controls=0"
+                      title="Dean Message Video"
+                      allow="autoplay; encrypted-media"
+                      allowFullScreen
+                      className="w-full h-full"
+                      style={{ border: "none" }}
+                    />
                   </div>
                 </div>
               </div>
