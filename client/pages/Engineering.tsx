@@ -884,9 +884,9 @@ export default function Engineering() {
                 Choose from future-proof majors and emerging specialisations
               </p>
             </div>
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {UG_PROGRAM_CARDS.map((program) => (
-                <ProgramCardComponent key={program.name} program={program} />
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-12">
+              {ENGINEERING_DEPARTMENTS.map((department) => (
+                <DepartmentCard key={department.name} department={department} />
               ))}
             </div>
           </div>
