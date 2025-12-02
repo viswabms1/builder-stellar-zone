@@ -297,6 +297,93 @@ const ENGINEERING_DEPARTMENTS: EngineeringDepartment[] = [
   },
 ];
 
+type ProgramCard = {
+  name: string;
+  major: string;
+  description: string;
+  image: string;
+  link: string;
+  highlights: string[];
+};
+
+const UG_PROGRAM_CARDS: ProgramCard[] = [
+  {
+    name: "Computer Science & Engineering",
+    major: "Flagship UG Major",
+    description: "AI-ready curriculum spanning full stack engineering, cyber defence, cloud-native architectures and product innovation studios.",
+    image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=1600&auto=format&fit=crop",
+    link: "/academics/engineering/computer-science",
+    highlights: ["AI & ML Studio", "Product Labs", "Industry Hackathons"],
+  },
+  {
+    name: "Electronics & Communication Engineering",
+    major: "Intelligent Systems",
+    description: "Design advanced electronics, VLSI, embedded and communication systems empowered by 5G, IoT and semiconductor labs.",
+    image: "https://images.unsplash.com/photo-1580894908361-967195033215?q=80&w=1600&auto=format&fit=crop",
+    link: "https://www.dsu.edu.in/engineering/electronics-communication",
+    highlights: ["VLSI Lab", "5G Research", "IoT Systems"],
+  },
+  {
+    name: "Mechanical Engineering",
+    major: "Core Engineering",
+    description: "Master sustainable manufacturing, automotive systems, robotics and design thinking with hands-on prototyping studios.",
+    image: "https://images.unsplash.com/photo-1517677129300-07b130802f46?q=80&w=1600&auto=format&fit=crop",
+    link: "https://www.dsu.edu.in/engineering/mechanical-engineering",
+    highlights: ["Advanced Manufacturing", "Robotics Studio", "CAE Tools"],
+  },
+  {
+    name: "Aerospace Engineering",
+    major: "High Altitude Futures",
+    description: "Explore flight mechanics, propulsion, avionics and composite materials in specialised aerospace laboratories.",
+    image: "https://images.unsplash.com/photo-1489515217757-5fd1be406fef?q=80&w=1600&auto=format&fit=crop",
+    link: "https://www.dsu.edu.in/engineering/aerospace-engineering",
+    highlights: ["Wind Tunnel", "Avionics Lab", "UAV Projects"],
+  },
+  {
+    name: "AI & Robotics",
+    major: "Interdisciplinary Edge",
+    description: "Build human-centric intelligent systems blending robotics, machine vision, automation and IoT.",
+    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1600&auto=format&fit=crop",
+    link: "https://www.dsu.edu.in/engineering/artificial-intelligence-robotics",
+    highlights: ["Robotics Arena", "Machine Vision", "Automation"],
+  },
+  {
+    name: "Computer Science & Engineering (AI & ML)",
+    major: "Specialised UG Major",
+    description: "Deep-dives into responsible AI, data engineering, ML pipelines and NLP with industry-certified projects.",
+    image: "https://images.unsplash.com/photo-1534759846116-5799c33ce22a?q=80&w=1600&auto=format&fit=crop",
+    link: "/academics/engineering/ai-ml",
+    highlights: ["Capstone Studios", "AI Research", "Dual Certifications"],
+  },
+];
+
+const PG_PROGRAM_CARDS: ProgramCard[] = [
+  {
+    name: "M.Tech - Computer Science & Engineering",
+    major: "Advanced Computing",
+    description: "Specialise in AI, cloud systems, cyber-physical systems and enterprise software through research-driven coursework and industry collaboration.",
+    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1600&auto=format&fit=crop",
+    link: "https://www.dsu.edu.in/engineering/mtech-cse",
+    highlights: ["AI Systems", "Research Thesis", "Industry Mentorship"],
+  },
+  {
+    name: "M.Tech - Embedded Systems",
+    major: "Systems Engineering",
+    description: "Master real-time systems, IoT architectures, edge computing and VLSI design for critical infrastructure and embedded applications.",
+    image: "https://images.unsplash.com/photo-1580894908361-967195033215?q=80&w=1600&auto=format&fit=crop",
+    link: "https://www.dsu.edu.in/engineering/mtech-embedded",
+    highlights: ["RTOS Design", "Hardware Integration", "Edge Computing"],
+  },
+  {
+    name: "M.Tech - Design Engineering",
+    major: "Product Innovation",
+    description: "Apply advanced design methodologies, computational tools and human-centred design thinking to create scalable product solutions.",
+    image: "https://images.unsplash.com/photo-1523475472560-d2df97ec485c?q=80&w=1600&auto=format&fit=crop",
+    link: "https://www.dsu.edu.in/engineering/mtech-design",
+    highlights: ["CAD & Simulation", "Design Thinking", "Product Studio"],
+  },
+];
+
 const SUPPORTING_DEPARTMENTS: SupportingDepartment[] = [
   {
     name: "Physics Department",
