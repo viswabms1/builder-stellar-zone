@@ -531,8 +531,8 @@ export default function Engineering() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <section className="relative min-h-screen flex items-center justify-center px-6 pt-4 pb-16 -mt-10" id="top">
-        <div className="w-full max-w-5xl">
-          <div className="relative h-[45vh] md:h-[55vh] overflow-hidden rounded-3xl border-4 border-brand-magenta/40 shadow-2xl shadow-brand-magenta/20 p-4 bg-black/10">
+        <div className="w-full max-w-6xl">
+          <div className="relative aspect-video overflow-hidden rounded-3xl border-4 border-brand-magenta/40 shadow-2xl shadow-brand-magenta/20 p-4 bg-black/10">
             <video
               ref={videoRef}
               src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F0b20f5ea03294f4d824e69fd8489b78c?alt=media&token=0c4092c4-4afd-4237-b850-81046ecf52f7&apiKey=4aa279a8430d441dba9c55f659831878"
