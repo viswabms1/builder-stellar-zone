@@ -531,15 +531,26 @@ export default function Engineering() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <section className="relative" id="top">
-        <div className="h-[60vh] w-full overflow-hidden md:h-[70vh] rounded-3xl border-2 border-brand-magenta/40 shadow-2xl shadow-brand-magenta/20">
+        <div className="relative h-[60vh] w-full overflow-hidden md:h-[70vh] rounded-3xl border-2 border-brand-magenta/40 shadow-2xl shadow-brand-magenta/20">
           <video
+            ref={videoRef}
             src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F0b20f5ea03294f4d824e69fd8489b78c?alt=media&token=0c4092c4-4afd-4237-b850-81046ecf52f7&apiKey=4aa279a8430d441dba9c55f659831878"
             autoPlay
             loop
             playsInline
-            controls
             className="h-full w-full object-cover"
           />
+          <button
+            onClick={handleMuteToggle}
+            className="absolute top-4 right-4 z-10 p-3 rounded-full bg-black/50 hover:bg-black/70 transition-colors text-white"
+            aria-label={isMuted ? "Unmute" : "Mute"}
+          >
+            {isMuted ? (
+              <VolumeX className="h-5 w-5" />
+            ) : (
+              <Volume2 className="h-5 w-5" />
+            )}
+          </button>
         </div>
         <div className="absolute inset-0 flex items-center">
           <div className="mx-auto max-w-7xl px-6"></div>
