@@ -1122,27 +1122,27 @@ export default function Engineering() {
             </CardHeader>
             <CardContent className="grid gap-4 text-sm font-body text-foreground">
               <div>
-                <div className="text-foreground">Dean (Engineering)</div>
+                <div className="text-foreground/70 text-xs uppercase tracking-wide">Email</div>
                 <div className="font-medium text-foreground">
                   dean-engg@dsu.edu.in
                 </div>
               </div>
               <div>
-                <div className="text-foreground">Phone</div>
+                <div className="text-foreground/70 text-xs uppercase tracking-wide">Phone</div>
                 <div className="font-medium text-foreground">
                   +91-80-49092933
                 </div>
               </div>
               <div>
-                <div className="text-foreground">Campus Address</div>
+                <div className="text-foreground/70 text-xs uppercase tracking-wide">Campus Address</div>
                 <div className="font-medium text-foreground">
                   Innovation Campus, Kanakapura Road, Bengaluru
                 </div>
               </div>
               <div>
-                <div className="text-foreground">Office Hours</div>
+                <div className="text-foreground/70 text-xs uppercase tracking-wide">Office Hours</div>
                 <div className="font-medium text-foreground">
-                  Mon–Fri �� 9:00 AM – 5:30 PM
+                  Mon–Fri, 9:00 AM – 5:30 PM
                 </div>
               </div>
             </CardContent>
