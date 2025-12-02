@@ -639,6 +639,39 @@ function ProgramCardComponent({ program }: { program: ProgramCard }) {
   );
 }
 
+function DeanMessageVideo() {
+  const [isMuted, setIsMuted] = useState(true);
+  const videoRef = useRef<HTMLDivElement>(null);
+
+  const toggleMute = () => {
+    setIsMuted(!isMuted);
+  };
+
+  return (
+    <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-black/20 border border-border/30" ref={videoRef}>
+      <iframe
+        src={`https://www.youtube.com/embed/sAj2Vi3E-KM?autoplay=1&${isMuted ? 'mute=1' : 'mute=0'}&loop=1&playlist=sAj2Vi3E-KM&controls=0&rel=0&fs=0`}
+        title="Dean Message Video"
+        allow="autoplay; encrypted-media"
+        allowFullScreen
+        className="w-full h-full"
+        style={{ border: "none" }}
+      />
+      <button
+        onClick={toggleMute}
+        className="absolute top-4 right-4 z-10 p-2 rounded-full bg-black/50 hover:bg-black/70 transition-colors text-white"
+        aria-label={isMuted ? "Unmute" : "Mute"}
+      >
+        {isMuted ? (
+          <VolumeX className="h-5 w-5" />
+        ) : (
+          <Volume2 className="h-5 w-5" />
+        )}
+      </button>
+    </div>
+  );
+}
+
 function CalendarResourceCard({ entry }: { entry: CalendarEntry }) {
   return (
     <Card className="h-full rounded-3xl border border-border/40 bg-card/60 backdrop-blur">
