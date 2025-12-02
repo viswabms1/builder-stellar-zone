@@ -530,7 +530,7 @@ export default function Engineering() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <section className="relative min-h-screen flex items-center justify-center px-6 py-16" id="top">
+      <section className="relative min-h-screen flex items-center justify-center px-6 pt-8 pb-16" id="top">
         <div className="w-full max-w-5xl">
           <div className="relative h-[45vh] md:h-[55vh] overflow-hidden rounded-3xl border-4 border-brand-magenta/40 shadow-2xl shadow-brand-magenta/20 p-4 bg-black/10">
             <video
