@@ -530,44 +530,7 @@ export default function Engineering() {
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
         </div>
         <div className="absolute inset-0 flex items-center">
-          <div className="mx-auto max-w-7xl px-6">
-            <div className="mb-6 inline-flex items-center rounded-full border border-brand-magenta/20 bg-brand-magenta/10 px-4 py-2">
-              <FlaskConical className="mr-2 h-4 w-4 text-brand-magenta" />
-              <span className="text-sm font-medium text-brand-magenta font-display">
-                School of Engineering
-              </span>
-            </div>
-            <h1 className="mb-4 font-display text-4xl leading-tight text-white md:text-6xl">
-              Innovate. Create. Develop.
-            </h1>
-            <p className="max-w-2xl text-white/90 font-body text-lg">
-              Science & Technology based education that develops high-caliber
-              engineers for industry, startups and scientific organisations.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <a
-                href="https://dsu.edu.in/virtual-tour/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <Button className="bg-brand-gradient text-foreground">
-                  Virtual Tour
-                </Button>
-              </a>
-              <a
-                href="https://www.dsu.edu.in/engineering/programs-engineering"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <Button
-                  variant="outline"
-                  className="border-brand-magenta/40 hover:bg-brand-magenta/10"
-                >
-                  Programs @ DSU
-                </Button>
-              </a>
-            </div>
-          </div>
+          <div className="mx-auto max-w-7xl px-6"></div>
         </div>
       </section>
 
