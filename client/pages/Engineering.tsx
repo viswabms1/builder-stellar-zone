@@ -727,19 +727,72 @@ function HeroVideo() {
 
 function DeanMessageVideo() {
   const [isMuted, setIsMuted] = useState(true);
-  const videoRef = useRef<HTMLDivElement>(null);
+  const playerRef = useRef<any>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    // Load YouTube IFrame API
+    if (!window.YT) {
+      const tag = document.createElement('script');
+      tag.src = 'https://www.youtube.com/iframe_api';
+      const firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag?.parentNode?.insertBefore(tag, firstScriptTag);
+    }
+
+    const initPlayer = () => {
+      if (window.YT && window.YT.Player && containerRef.current) {
+        playerRef.current = new window.YT.Player('dean-video-player', {
+          videoId: 'sAj2Vi3E-KM',
+          width: '100%',
+          height: '100%',
+          playerVars: {
+            autoplay: 1,
+            controls: 0,
+            rel: 0,
+            fs: 0,
+            loop: 1,
+            playlist: 'sAj2Vi3E-KM',
+          },
+          events: {
+            onReady: (event: any) => {
+              event.target.mute();
+              event.target.setVolume(0);
+            },
+          },
+        });
+      }
+    };
+
+    if (window.YT) {
+      initPlayer();
+    } else {
+      window.onYouTubeIframeAPIReady = initPlayer;
+    }
+
+    return () => {
+      if (playerRef.current && playerRef.current.destroy) {
+        playerRef.current.destroy();
+      }
+    };
+  }, []);
 
   const toggleMute = () => {
-    setIsMuted(!isMuted);
+    if (playerRef.current) {
+      if (isMuted) {
+        playerRef.current.unMute();
+        playerRef.current.setVolume(100);
+      } else {
+        playerRef.current.mute();
+        playerRef.current.setVolume(0);
+      }
+      setIsMuted(!isMuted);
+    }
   };
 
   return (
-    <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-black/20 border border-border/30" ref={videoRef}>
-      <iframe
-        src={`https://www.youtube.com/embed/sAj2Vi3E-KM?autoplay=1&${isMuted ? 'mute=1' : 'mute=0'}&loop=1&playlist=sAj2Vi3E-KM&controls=0&rel=0&fs=0`}
-        title="Dean Message Video"
-        allow="autoplay; encrypted-media"
-        allowFullScreen
+    <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-black/20 border border-border/30" ref={containerRef}>
+      <div
+        id="dean-video-player"
         className="w-full h-full"
         style={{ border: "none" }}
       />
