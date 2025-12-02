@@ -738,16 +738,6 @@ function CalendarResourceCard({ entry }: { entry: CalendarEntry }) {
 }
 
 export default function Engineering() {
-  const [isMuted, setIsMuted] = useState(true);
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  const handleMuteToggle = () => {
-    if (videoRef.current) {
-      videoRef.current.muted = !videoRef.current.muted;
-      setIsMuted(!isMuted);
-    }
-  };
-
   return (
     <div className="min-h-screen bg-background text-foreground">
       <section className="relative flex items-center justify-center px-6 pt-4 pb-16 -mt-10 md:min-h-screen" id="top">
