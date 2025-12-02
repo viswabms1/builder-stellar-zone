@@ -1115,8 +1115,8 @@ export default function Engineering() {
       </section>
 
       <section className="px-6 py-16">
-        <div className="mx-auto grid max-w-5xl items-start gap-8 lg:grid-cols-3">
-          <Card className="lg:col-span-2 overflow-hidden rounded-3xl border border-border/50 bg-card/50">
+        <div className="mx-auto grid max-w-5xl items-start gap-8 lg:grid-cols-2">
+          <Card className="rounded-3xl border border-border/50 bg-card/50">
             <div className="relative h-56">
               <img
                 src="https://images.unsplash.com/photo-1591453089816-0fbb971b454c?q=80&w=1600&auto=format&fit=crop"
