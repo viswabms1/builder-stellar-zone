@@ -728,17 +728,6 @@ export default function Engineering() {
               className="h-full w-full object-cover rounded-2xl"
               style={{ border: "none" }}
             />
-            <button
-              onClick={handleMuteToggle}
-              className="absolute top-8 right-8 z-10 p-3 rounded-full bg-black/50 hover:bg-black/70 transition-colors text-white"
-              aria-label={isMuted ? "Unmute" : "Mute"}
-            >
-              {isMuted ? (
-                <VolumeX className="h-5 w-5" />
-              ) : (
-                <Volume2 className="h-5 w-5" />
-              )}
-            </button>
           </div>
           <div className="mt-6 text-center">
             <h2 className="text-2xl md:text-3xl font-bold text-foreground font-display">
