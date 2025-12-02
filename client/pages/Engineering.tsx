@@ -518,7 +518,7 @@ function CalendarResourceCard({ entry }: { entry: CalendarEntry }) {
 }
 
 export default function Engineering() {
-  const [isMuted, setIsMuted] = useState(false);
+  const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   const handleMuteToggle = () => {
