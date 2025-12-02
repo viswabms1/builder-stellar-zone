@@ -1001,39 +1001,115 @@ export default function Engineering() {
       </section>
 
       <section
-        id="labs"
-        className="bg-gradient-to-r from-brand-blue/5 to-brand-orange/5 px-6 py-16"
+        id="related-resources"
+        className="bg-gradient-to-r from-brand-magenta/5 via-brand-blue/5 to-brand-orange/5 px-6 py-16"
       >
         <div className="mx-auto max-w-7xl">
-          <div className="mb-8 flex items-center justify-between">
-            <h3 className="font-display text-3xl">Innovation & Labs</h3>
-            <a
-              href="https://www.dsu.edu.in/innovation"
-              target="_blank"
-              rel="noreferrer"
-              className="text-sm font-medium text-brand-magenta hover:underline font-body"
-            >
-              See all
-            </a>
+          <div className="mb-12 text-center">
+            <h2 className="font-display text-3xl md:text-4xl">
+              Explore More at DSU Engineering
+            </h2>
+            <p className="mt-3 text-sm text-foreground font-body">
+              Discover our research initiatives, innovation labs, placements and admission pathways
+            </p>
           </div>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {INNOVATION_LABS.map((lab) => (
-              <Card
-                key={lab}
-                className="border border-border/40 bg-card/40 backdrop-blur-sm"
-              >
-                <CardHeader className="pb-2">
-                  <div className="inline-flex items-center gap-2 rounded-full bg-brand-magenta/10 px-2 py-1 text-xs text-brand-magenta">
-                    <Beaker className="h-3.5 w-3.5" /> Lab
-                  </div>
-                </CardHeader>
-                <CardContent className="pt-0">
-                  <CardTitle className="text-base font-display">
-                    {lab}
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            {/* Centre of Excellence */}
+            <RouterLink
+              to="/centre-of-excellence"
+              className="group rounded-3xl border border-border/40 bg-card/60 backdrop-blur-sm overflow-hidden hover:shadow-lg hover:shadow-brand-magenta/20 transition-all duration-500 hover:-translate-y-1"
+            >
+              <Card className="h-full border-0 bg-transparent">
+                <div className="relative h-32 bg-gradient-to-br from-brand-magenta/20 to-brand-magenta/10 flex items-center justify-center">
+                  <Award className="h-12 w-12 text-brand-magenta/70 group-hover:text-brand-magenta transition-colors" />
+                </div>
+                <CardHeader>
+                  <CardTitle className="font-display group-hover:text-brand-magenta transition-colors">
+                    Centre of Excellence
                   </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-foreground/80 font-body">
+                    Immersive innovation labs powered by industry leaders like IBM, NVIDIA and GE
+                  </p>
                 </CardContent>
               </Card>
-            ))}
+            </RouterLink>
+
+            {/* Research */}
+            <RouterLink
+              to="/research"
+              className="group rounded-3xl border border-border/40 bg-card/60 backdrop-blur-sm overflow-hidden hover:shadow-lg hover:shadow-brand-blue/20 transition-all duration-500 hover:-translate-y-1"
+            >
+              <Card className="h-full border-0 bg-transparent">
+                <div className="relative h-32 bg-gradient-to-br from-brand-blue/20 to-brand-blue/10 flex items-center justify-center">
+                  <Microscope className="h-12 w-12 text-brand-blue/70 group-hover:text-brand-blue transition-colors" />
+                </div>
+                <CardHeader>
+                  <CardTitle className="font-display group-hover:text-brand-blue transition-colors">
+                    Research & Innovation
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-foreground/80 font-body">
+                    Cutting-edge research initiatives and innovation labs driving the future
+                  </p>
+                </CardContent>
+              </Card>
+            </RouterLink>
+
+            {/* Placements */}
+            <RouterLink
+              to="/placements"
+              className="group rounded-3xl border border-border/40 bg-card/60 backdrop-blur-sm overflow-hidden hover:shadow-lg hover:shadow-brand-orange/20 transition-all duration-500 hover:-translate-y-1"
+            >
+              <Card className="h-full border-0 bg-transparent">
+                <div className="relative h-32 bg-gradient-to-br from-brand-orange/20 to-brand-orange/10 flex items-center justify-center">
+                  <GraduationCap className="h-12 w-12 text-brand-orange/70 group-hover:text-brand-orange transition-colors" />
+                </div>
+                <CardHeader>
+                  <CardTitle className="font-display group-hover:text-brand-orange transition-colors">
+                    Placements
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-foreground/80 font-body">
+                    Career pathways with leading companies and startup opportunities
+                  </p>
+                </CardContent>
+              </Card>
+            </RouterLink>
+
+            {/* Admissions */}
+            <RouterLink
+              to="/admissions"
+              className="group rounded-3xl border border-border/40 bg-card/60 backdrop-blur-sm overflow-hidden hover:shadow-lg hover:shadow-brand-magenta/20 transition-all duration-500 hover:-translate-y-1"
+            >
+              <Card className="h-full border-0 bg-transparent">
+                <div className="relative h-32 bg-gradient-to-br from-brand-magenta/20 to-brand-magenta/10 flex items-center justify-center">
+                  <Cpu className="h-12 w-12 text-brand-magenta/70 group-hover:text-brand-magenta transition-colors" />
+                </div>
+                <CardHeader>
+                  <CardTitle className="font-display group-hover:text-brand-magenta transition-colors">
+                    Admissions
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="flex flex-col gap-3">
+                  <p className="text-sm text-foreground/80 font-body">
+                    Join DSU Engineering and shape your future
+                  </p>
+                  <a
+                    href="https://admissions.dsu.edu.in/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 text-xs font-medium text-brand-magenta hover:text-brand-magenta/80 transition-colors"
+                  >
+                    Apply Now
+                    <ChevronRight className="h-3 w-3" />
+                  </a>
+                </CardContent>
+              </Card>
+            </RouterLink>
           </div>
         </div>
       </section>
