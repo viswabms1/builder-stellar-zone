@@ -685,74 +685,25 @@ function HeroVideo() {
 
 function DeanMessageVideo() {
   const [isMuted, setIsMuted] = useState(true);
-  const playerRef = useRef<any>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    // Load YouTube IFrame API
-    if (!window.YT) {
-      const tag = document.createElement('script');
-      tag.src = 'https://www.youtube.com/iframe_api';
-      const firstScriptTag = document.getElementsByTagName('script')[0];
-      firstScriptTag?.parentNode?.insertBefore(tag, firstScriptTag);
-    }
-
-    const initPlayer = () => {
-      if (window.YT && window.YT.Player && containerRef.current) {
-        playerRef.current = new window.YT.Player('dean-video-player', {
-          videoId: 'sAj2Vi3E-KM',
-          width: '100%',
-          height: '100%',
-          playerVars: {
-            autoplay: 1,
-            controls: 0,
-            rel: 0,
-            fs: 0,
-            loop: 1,
-            playlist: 'sAj2Vi3E-KM',
-          },
-          events: {
-            onReady: (event: any) => {
-              event.target.mute();
-              event.target.setVolume(0);
-            },
-          },
-        });
-      }
-    };
-
-    if (window.YT) {
-      initPlayer();
-    } else {
-      window.onYouTubeIframeAPIReady = initPlayer;
-    }
-
-    return () => {
-      if (playerRef.current && playerRef.current.destroy) {
-        playerRef.current.destroy();
-      }
-    };
-  }, []);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   const toggleMute = () => {
-    if (playerRef.current) {
-      if (isMuted) {
-        playerRef.current.unMute();
-        playerRef.current.setVolume(100);
-      } else {
-        playerRef.current.mute();
-        playerRef.current.setVolume(0);
-      }
+    if (videoRef.current) {
+      videoRef.current.muted = !videoRef.current.muted;
       setIsMuted(!isMuted);
     }
   };
 
   return (
-    <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-black/20 border border-border/30" ref={containerRef}>
-      <div
-        id="dean-video-player"
-        className="w-full h-full"
-        style={{ border: "none" }}
+    <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-black/20 border border-border/30">
+      <video
+        ref={videoRef}
+        src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F0c95c62aa88741fca8ebdc32aade53d5?alt=media&token=c57ff4a9-aea8-4ff3-843b-23ce820ba630&apiKey=4aa279a8430d441dba9c55f659831878"
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="w-full h-full object-cover"
       />
       <button
         onClick={toggleMute}
