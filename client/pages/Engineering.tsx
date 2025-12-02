@@ -1127,12 +1127,8 @@ export default function Engineering() {
             </div>
             <CardHeader>
               <CardTitle className="font-display">Leadership</CardTitle>
-              <CardDescription className="font-body">
-                Guidance that drives excellence in engineering education,
-                research and student success.
-              </CardDescription>
             </CardHeader>
-            <CardContent className="grid gap-4 pt-0 text-sm font-body text-foreground sm:grid-cols-2">
+            <CardContent className="grid gap-4 text-sm font-body text-foreground">
               <div>
                 <div className="text-foreground">Dean (Engineering)</div>
                 <div className="font-medium text-foreground">
