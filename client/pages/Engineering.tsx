@@ -524,6 +524,7 @@ export default function Engineering() {
             autoPlay
             loop
             playsInline
+            controls
             className="h-full w-full object-cover"
           />
         </div>
