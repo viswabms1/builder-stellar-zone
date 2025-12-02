@@ -639,6 +639,39 @@ function ProgramCardComponent({ program }: { program: ProgramCard }) {
   );
 }
 
+function HeroVideo() {
+  const [isMuted, setIsMuted] = useState(true);
+  const videoRef = useRef<HTMLDivElement>(null);
+
+  const toggleMute = () => {
+    setIsMuted(!isMuted);
+  };
+
+  return (
+    <div className="relative aspect-video overflow-hidden rounded-3xl border-4 border-brand-magenta/40 shadow-2xl shadow-brand-magenta/20 p-4 bg-black/10" ref={videoRef}>
+      <iframe
+        src={`https://www.youtube.com/embed/26wVOtoBE-Q?autoplay=1&${isMuted ? 'mute=1' : 'mute=0'}&loop=1&playlist=26wVOtoBE-Q&controls=0&rel=0&fs=0`}
+        title="Engineering School Video"
+        allow="autoplay; encrypted-media"
+        allowFullScreen
+        className="h-full w-full object-cover rounded-2xl"
+        style={{ border: "none" }}
+      />
+      <button
+        onClick={toggleMute}
+        className="absolute top-8 right-8 z-10 p-3 rounded-full bg-black/50 hover:bg-black/70 transition-colors text-white"
+        aria-label={isMuted ? "Unmute" : "Mute"}
+      >
+        {isMuted ? (
+          <VolumeX className="h-5 w-5" />
+        ) : (
+          <Volume2 className="h-5 w-5" />
+        )}
+      </button>
+    </div>
+  );
+}
+
 function DeanMessageVideo() {
   const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef<HTMLDivElement>(null);
