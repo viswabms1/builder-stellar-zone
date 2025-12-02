@@ -553,6 +553,11 @@ export default function Engineering() {
               )}
             </button>
           </div>
+          <div className="mt-6 text-center">
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground font-display">
+              School of Engineering
+            </h2>
+          </div>
         </div>
       </section>
 
