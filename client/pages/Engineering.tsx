@@ -805,7 +805,7 @@ export default function Engineering() {
                   {/* Video Container */}
                   <div className="w-full aspect-video rounded-2xl overflow-hidden bg-black/20 border border-border/30">
                     <iframe
-                      src="https://www.youtube.com/embed/sAj2Vi3E-KM?autoplay=1&loop=1&playlist=sAj2Vi3E-KM&controls=0"
+                      src="https://www.youtube.com/embed/sAj2Vi3E-KM?autoplay=1&loop=1&playlist=sAj2Vi3E-KM&controls=0&rel=0"
                       title="Dean Message Video"
                       allow="autoplay; encrypted-media"
                       allowFullScreen
