@@ -720,14 +720,13 @@ export default function Engineering() {
       <section className="relative flex items-center justify-center px-6 pt-4 pb-16 -mt-10 md:min-h-screen" id="top">
         <div className="w-full max-w-5xl">
           <div className="relative aspect-video overflow-hidden rounded-3xl border-4 border-brand-magenta/40 shadow-2xl shadow-brand-magenta/20 p-4 bg-black/10">
-            <video
-              ref={videoRef}
-              src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F0b20f5ea03294f4d824e69fd8489b78c?alt=media&token=0c4092c4-4afd-4237-b850-81046ecf52f7&apiKey=4aa279a8430d441dba9c55f659831878"
-              autoPlay
-              muted
-              loop
-              playsInline
+            <iframe
+              src="https://www.youtube.com/embed/26wVOtoBE-Q?autoplay=1&mute=1&loop=1&playlist=26wVOtoBE-Q&controls=0&rel=0&fs=0"
+              title="Engineering School Video"
+              allow="autoplay; encrypted-media"
+              allowFullScreen
               className="h-full w-full object-cover rounded-2xl"
+              style={{ border: "none" }}
             />
             <button
               onClick={handleMuteToggle}
