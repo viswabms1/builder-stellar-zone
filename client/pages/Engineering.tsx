@@ -803,15 +803,31 @@ export default function Engineering() {
                   </div>
 
                   {/* Video Container */}
-                  <div className="w-full aspect-video rounded-2xl overflow-hidden bg-black/20 border border-border/30">
+                  <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-black/20 border border-border/30">
                     <iframe
-                      src="https://www.youtube.com/embed/sAj2Vi3E-KM?autoplay=1&loop=1&playlist=sAj2Vi3E-KM&controls=0&rel=0"
+                      src="https://www.youtube.com/embed/sAj2Vi3E-KM?autoplay=1&mute=1&loop=1&playlist=sAj2Vi3E-KM&controls=0&rel=0&fs=0"
                       title="Dean Message Video"
                       allow="autoplay; encrypted-media"
                       allowFullScreen
                       className="w-full h-full"
                       style={{ border: "none" }}
                     />
+                    <button
+                      onClick={(e) => {
+                        const iframe = (e.currentTarget.parentElement as HTMLElement)?.querySelector('iframe') as HTMLIFrameElement;
+                        if (iframe) {
+                          const isMuted = iframe.src.includes('mute=1');
+                          iframe.src = iframe.src.replace(
+                            isMuted ? 'mute=1' : 'mute=0',
+                            isMuted ? 'mute=0' : 'mute=1'
+                          );
+                        }
+                      }}
+                      className="absolute top-4 right-4 z-10 p-2 rounded-full bg-black/50 hover:bg-black/70 transition-colors text-white"
+                      aria-label="Toggle mute"
+                    >
+                      <Volume2 className="h-5 w-5" />
+                    </button>
                   </div>
                 </div>
               </div>
