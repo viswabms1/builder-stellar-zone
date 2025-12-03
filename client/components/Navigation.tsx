@@ -51,11 +51,6 @@ export default function Navigation() {
     { name: t("nav.campusLife"), href: "/campus-life" },
     { name: t("nav.centreOfExcellence"), href: "/centre-of-excellence" },
     { name: t("nav.placements"), href: "/placements" },
-    {
-      name: t("nav.publicSelfDisclosure"),
-      href: "https://www.dsu.edu.in/images/University/Public_Self_Disclosure_DSU.pdf",
-      external: true,
-    },
   ];
 
   const isActive = (href: string) => location.pathname === href;
