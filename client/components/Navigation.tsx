@@ -206,7 +206,11 @@ export default function Navigation() {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="md:hidden border-t border-orange-600/20 bg-gradient-to-r from-orange-500 to-red-600">
+        <div className={`md:hidden border-t ${
+          theme === 'light'
+            ? 'border-orange-200/30 bg-gradient-to-r from-orange-50 to-orange-100'
+            : 'border-orange-600/20 bg-gradient-to-r from-orange-500 to-red-600'
+        }`}>
           <div className="px-6 py-4 space-y-3">
             {navigation.map((item, idx) => {
               const active = !item.external && isActive(item.href);
