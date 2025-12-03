@@ -74,25 +74,6 @@ export default function Navigation() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-1">
             {navigation.map((item, idx) => {
-              {/* Render logo after Admissions (index 3) */}
-              if (idx === 4) {
-                return (
-                  <div key="logo" className="flex items-center space-x-1">
-                    <Link
-                      to="/"
-                      className="flex items-center group flex-shrink-0 px-2"
-                      style={{ minHeight: "60px" }}
-                    >
-                      <img
-                        src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fc9f5a55fa7004ae596d21cc4fa4aed1f?format=webp&width=1200"
-                        alt="Dayananda Sagar University Logo"
-                        className="h-16 w-auto object-contain group-hover:scale-105 transition-all duration-300"
-                        style={{ minHeight: "60px" }}
-                      />
-                    </Link>
-                  </div>
-                );
-              }
               const active = !item.external && isActive(item.href);
               const isAbout = item.href === "/about";
               const sharedClasses = `flex items-center space-x-2 px-4 py-2 rounded-xl text-sm font-medium font-display transition-all duration-200 group ${
