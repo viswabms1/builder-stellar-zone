@@ -39,6 +39,43 @@ import {
   VolumeX,
 } from "lucide-react";
 
+function HeroVideo() {
+  const [isMuted, setIsMuted] = useState(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const toggleMute = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = !videoRef.current.muted;
+      setIsMuted(!isMuted);
+    }
+  };
+
+  return (
+    <div className="relative w-full h-full">
+      <video
+        ref={videoRef}
+        src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2Fb2a2d6a649384d9a8877da557407b50d?alt=media&token=2f05bb7f-44da-43da-bec8-fc878d01453b&apiKey=4aa279a8430d441dba9c55f659831878"
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="w-full h-full object-cover"
+      />
+      <button
+        onClick={toggleMute}
+        className="absolute top-8 right-8 z-10 p-3 rounded-full bg-black/50 hover:bg-black/70 transition-colors text-white"
+        aria-label={isMuted ? "Unmute" : "Mute"}
+      >
+        {isMuted ? (
+          <VolumeX className="h-5 w-5" />
+        ) : (
+          <Volume2 className="h-5 w-5" />
+        )}
+      </button>
+    </div>
+  );
+}
+
 function VideoWithFrameCapture({
   src,
   rotate = false,
