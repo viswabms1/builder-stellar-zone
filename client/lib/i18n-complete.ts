@@ -78,7 +78,7 @@ export const completeTranslations = {
       grants: 'Research Grants',
     },
     centreOfExcellence: {
-      title: 'Centre of Excellence & Innovation',
+      title: 'Centre of Excellence',
       description: 'Hub for innovation and entrepreneurship',
       startup: 'Startup Incubation',
       mentorship: 'Mentorship Programs',
