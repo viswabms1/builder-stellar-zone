@@ -4,6 +4,7 @@ import { ThemeToggle } from "./ThemeToggle";
 import SearchDialog from "./SearchDialog";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useLanguage } from "@/providers/language-provider";
+import { useTheme } from "@/providers/theme-provider";
 import {
   Menu,
   X,
