@@ -86,82 +86,92 @@ export default function Navigation() {
                   : "text-white/80 hover:text-white hover:bg-white/10"
               }`;
 
-              if (item.external) {
-                return (
-                  <a
-                    key={idx}
-                    href={item.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    className={sharedClasses}
-                  >
-                    <span>{item.name}</span>
-                  </a>
-                );
-              }
-
-              if (isAbout) {
-                return (
-                  <div
-                    key={idx}
-                    className="relative group"
-                    onMouseEnter={() => setAboutMenuOpen(true)}
-                    onMouseLeave={() => setAboutMenuOpen(false)}
-                  >
-                    <button className={sharedClasses}>
+              const itemElement = (() => {
+                if (item.external) {
+                  return (
+                    <a
+                      key={idx}
+                      href={item.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className={sharedClasses}
+                    >
                       <span>{item.name}</span>
-                      <ChevronDown className="w-4 h-4 group-hover:rotate-180 transition-transform" />
-                      {active && <div className={`w-1 h-1 rounded-full ${
-                        theme === 'light' ? 'bg-orange-600' : 'bg-white'
-                      }`} />}
-                    </button>
+                    </a>
+                  );
+                }
 
-                    {/* Mega Menu Dropdown */}
-                    <div className={`absolute left-0 top-full mt-0 w-64 rounded-lg shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 py-4 ${
-                      theme === 'light'
-                        ? 'bg-gradient-to-b from-orange-50 to-orange-100 text-gray-900 border border-orange-200'
-                        : 'bg-gradient-to-b from-orange-600 to-red-700 text-white'
-                    }`}>
-                      {aboutSubmenus.map((submenu) => (
-                        <Link
-                          key={submenu.name}
-                          to={submenu.href}
-                          className={`block px-6 py-3 transition-colors text-sm ${
-                            theme === 'light'
-                              ? 'hover:bg-orange-200 border-b border-orange-200 last:border-b-0'
-                              : 'hover:bg-white/20 border-b border-white/20 last:border-b-0'
-                          }`}
-                        >
-                          {submenu.name}
-                        </Link>
-                      ))}
+                if (isAbout) {
+                  return (
+                    <div
+                      key={idx}
+                      className="relative group"
+                      onMouseEnter={() => setAboutMenuOpen(true)}
+                      onMouseLeave={() => setAboutMenuOpen(false)}
+                    >
+                      <button className={sharedClasses}>
+                        <span>{item.name}</span>
+                        <ChevronDown className="w-4 h-4 group-hover:rotate-180 transition-transform" />
+                        {active && <div className={`w-1 h-1 rounded-full ${
+                          theme === 'light' ? 'bg-orange-600' : 'bg-white'
+                        }`} />}
+                      </button>
+
+                      {/* Mega Menu Dropdown */}
+                      <div className={`absolute left-0 top-full mt-0 w-64 rounded-lg shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 py-4 ${
+                        theme === 'light'
+                          ? 'bg-gradient-to-b from-orange-50 to-orange-100 text-gray-900 border border-orange-200'
+                          : 'bg-gradient-to-b from-orange-600 to-red-700 text-white'
+                      }`}>
+                        {aboutSubmenus.map((submenu) => (
+                          <Link
+                            key={submenu.name}
+                            to={submenu.href}
+                            className={`block px-6 py-3 transition-colors text-sm ${
+                              theme === 'light'
+                                ? 'hover:bg-orange-200 border-b border-orange-200 last:border-b-0'
+                                : 'hover:bg-white/20 border-b border-white/20 last:border-b-0'
+                            }`}
+                          >
+                            {submenu.name}
+                          </Link>
+                        ))}
+                      </div>
                     </div>
-                  </div>
+                  );
+                }
+
+                return (
+                  <Link key={idx} to={item.href} className={sharedClasses}>
+                    <span>{item.name}</span>
+                    {active && <div className={`w-1 h-1 rounded-full ${
+                      theme === 'light' ? 'bg-orange-600' : 'bg-white'
+                    }`} />}
+                  </Link>
                 );
+              })();
+
+              if (idx === 3) {
+                return [
+                  itemElement,
+                  <Link
+                    key="logo"
+                    to="/"
+                    className="flex items-center group flex-shrink-0 px-2"
+                    style={{ minHeight: "60px" }}
+                  >
+                    <img
+                      src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fc9f5a55fa7004ae596d21cc4fa4aed1f?format=webp&width=1200"
+                      alt="Dayananda Sagar University Logo"
+                      className="h-16 w-auto object-contain group-hover:scale-105 transition-all duration-300"
+                      style={{ minHeight: "60px" }}
+                    />
+                  </Link>
+                ];
               }
 
-              return (
-                <Link key={idx} to={item.href} className={sharedClasses}>
-                  <span>{item.name}</span>
-                  {active && <div className={`w-1 h-1 rounded-full ${
-                    theme === 'light' ? 'bg-orange-600' : 'bg-white'
-                  }`} />}
-                </Link>
-              );
+              return itemElement;
             })}
-            {/* Logo after Admissions */}
-            <Link
-              to="/"
-              className="flex items-center group flex-shrink-0 px-2"
-              style={{ minHeight: "60px" }}
-            >
-              <img
-                src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fc9f5a55fa7004ae596d21cc4fa4aed1f?format=webp&width=1200"
-                alt="Dayananda Sagar University Logo"
-                className="h-16 w-auto object-contain group-hover:scale-105 transition-all duration-300"
-                style={{ minHeight: "60px" }}
-              />
-            </Link>
           </div>
 
           {/* Desktop Actions */}
