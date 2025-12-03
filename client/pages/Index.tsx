@@ -344,8 +344,44 @@ export default function Index() {
           ></div>
         </div>
 
-        {/* Hero Content - Empty */}
-        <div className="relative max-w-7xl mx-auto px-6"></div>
+        {/* Hero Content */}
+        <div className="relative max-w-7xl mx-auto px-6 w-full">
+          <div className="flex items-center justify-start h-full">
+            <div className="flex flex-col sm:flex-row gap-4 items-center">
+              <a
+                href="https://admissions.dsu.edu.in/"
+                target="_blank"
+                rel="noreferrer"
+                className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              >
+                <Button
+                  size="lg"
+                  className="bg-brand-gradient hover:opacity-90 text-white px-8 py-6 text-lg font-semibold font-display rounded-2xl shadow-lg hover:shadow-brand-magenta/25 transition-all duration-300 group"
+                >
+                  {t('hero.applyNow')}
+                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </a>
+              <a
+                href="https://dsu.edu.in/virtual-tour/"
+                target="_blank"
+                rel="noreferrer"
+                className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              >
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="border-2 border-white/30 bg-black/40 text-white
+             hover:bg-white hover:text-orange-600
+             px-8 py-6 text-lg font-semibold font-display
+             rounded-2xl transition-all duration-300 backdrop-blur-sm"
+                >
+                  {t('hero.virtualTour')}
+                </Button>
+              </a>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* Performance Indicators Section */}
