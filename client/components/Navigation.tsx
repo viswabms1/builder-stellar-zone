@@ -224,7 +224,7 @@ export default function Navigation() {
             {navigation.map((item, idx) => {
               const active = !item.external && isActive(item.href);
               const isAbout = item.href === "/about";
-              const sharedClasses = `flex items-center space-x-3 px-4 py-3 rounded-xl text-sm font-medium font-display transition-all duration-200 ${
+              const sharedClasses = `flex items-center space-x-2 px-4 py-3 rounded-xl text-base font-medium font-display transition-all duration-200 ${
                 theme === 'light'
                   ? active
                     ? "bg-orange-200 text-orange-900 font-semibold"
