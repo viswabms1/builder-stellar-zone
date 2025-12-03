@@ -72,7 +72,7 @@ export default function Navigation() {
           <div className="md:hidden w-12" />
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-1">
+          <div className="hidden md:flex items-center flex-1 justify-around">
             {navigation.map((item, idx) => {
               const active = !item.external && isActive(item.href);
               const isAbout = item.href === "/about";
