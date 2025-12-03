@@ -137,7 +137,12 @@ export default function Footer() {
   const footerTrans = footerTranslations[language as keyof typeof footerTranslations] || footerTranslations.en;
 
   return (
-    <footer className="relative mt-24 border-t border-white/10 bg-[#070311] text-white">
+    <footer className="relative mt-24 border-t border-white/10 text-white" style={{
+      backgroundImage: `linear-gradient(rgba(7, 3, 17, 0.85), rgba(7, 3, 17, 0.85)), url('https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F40e8f7f8ccf540fb960c50ffe8659ca5?format=webp&width=1200')`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundAttachment: 'fixed'
+    }}>
       <div
         aria-hidden="true"
         className="pointer-events-none absolute -top-32 right-10 h-64 w-64 rounded-full bg-brand-magenta/20 blur-3xl"
