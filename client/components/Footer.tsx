@@ -166,6 +166,12 @@ export default function Footer() {
               </div>
             </RouterLink>
 
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F3169a90c29e74a919e9f400c555b8259?format=webp&width=800"
+              alt="Dayananda Sagar University Campus"
+              className="w-full rounded-2xl border border-white/10 shadow-lg"
+            />
+
             <p className="max-w-xl text-sm leading-relaxed text-white/70 font-body">
               A multidisciplinary university in Bengaluru nurturing innovators,
               leaders and change makers through a blend of academics, research
