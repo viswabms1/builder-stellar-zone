@@ -69,7 +69,11 @@ export default function Navigation() {
   const isActive = (href: string) => location.pathname === href;
 
   return (
-    <nav className="sticky top-0 z-50 bg-transparent backdrop-blur-md bg-white/5 border-b border-white/10">
+    <nav className={`sticky top-0 z-50 backdrop-blur-md transition-all duration-300 ${
+      theme === 'light'
+        ? 'bg-white/80 border-b border-gray-200/30'
+        : 'bg-transparent bg-white/5 border-b border-white/10'
+    }`}>
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-20">
           {/* Official DSU Logo */}
