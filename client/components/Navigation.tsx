@@ -132,7 +132,9 @@ export default function Navigation() {
                       <item.icon className="w-4 h-4" />
                       <span>{item.name}</span>
                       <ChevronDown className="w-4 h-4 group-hover:rotate-180 transition-transform" />
-                      {active && <div className="w-1 h-1 bg-white rounded-full" />}
+                      {active && <div className={`w-1 h-1 rounded-full ${
+                        theme === 'light' ? 'bg-orange-600' : 'bg-white'
+                      }`} />}
                     </button>
 
                     {/* Mega Menu Dropdown */}
