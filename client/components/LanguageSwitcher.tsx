@@ -10,6 +10,7 @@ const LANGUAGES: Language[] = ['en', 'kn', 'hi'];
 
 export default function LanguageSwitcher() {
   const { language, setLanguage } = useLanguage();
+  const { theme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
