@@ -198,9 +198,9 @@ export default function Footer() {
               </a>
             </div>
 
-            <div className="flex justify-between gap-8 w-full">
-              {CONTACT_LOCATIONS.map((location) => (
-                <div key={location.title} className="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-[0_20px_80px_-50px_rgba(255,255,255,0.6)] flex-1">
+            <div className="flex justify-between gap-8 w-full items-start">
+              {CONTACT_LOCATIONS.map((location, index) => (
+                <div key={location.title} className={`rounded-3xl border border-white/10 bg-white/5 p-6 shadow-[0_20px_80px_-50px_rgba(255,255,255,0.6)] ${index === 1 ? 'flex-1 max-w-sm' : 'flex-1'}`}>
                   <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.28em] text-white/60">
                     <MapPin className="h-4 w-4" aria-hidden="true" />
                     {location.title}
