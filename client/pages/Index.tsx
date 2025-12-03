@@ -293,13 +293,9 @@ export default function Index() {
     <div className="min-h-screen bg-background text-foreground overflow-hidden">
       {/* Hero Section with University Building */}
       <section className="relative min-h-screen flex items-center justify-center">
-        {/* Background Image with Overlay */}
+        {/* Background Video with Overlay */}
         <div className="absolute inset-0">
-          <img
-            src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F970d4569ee2e428f997dce2503ce79d8?format=webp&width=800"
-            alt="Dayananda Sagar University Campus"
-            className="w-full h-full object-cover"
-          />
+          <HeroVideo />
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent"></div>
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
         </div>
