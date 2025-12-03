@@ -373,8 +373,8 @@ export default function Index() {
                   size="lg"
                   className="border-2 border-white/30 bg-black/40 text-white
              hover:bg-white hover:text-orange-600
-             px-8 py-6 text-lg font-semibold font-display
-             rounded-2xl transition-all duration-300 backdrop-blur-sm"
+             px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg font-semibold font-display
+             rounded-xl sm:rounded-2xl transition-all duration-300 backdrop-blur-sm"
                 >
                   {t('hero.virtualTour')}
                 </Button>
