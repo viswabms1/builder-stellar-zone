@@ -8,13 +8,6 @@ import { useTheme } from "@/providers/theme-provider";
 import {
   Menu,
   X,
-  GraduationCap,
-  Home,
-  BookOpen,
-  Users,
-  Building,
-  Calendar,
-  Lightbulb,
   ChevronDown,
   Search,
 } from "lucide-react";
