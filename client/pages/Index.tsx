@@ -329,7 +329,7 @@ export default function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-hidden">
       {/* Hero Section with University Building */}
-      <section className="relative min-h-screen flex items-center justify-center">
+      <section className="relative w-full min-h-screen md:min-h-screen flex items-center justify-center">
         {/* Background Video with Overlay */}
         <div className="absolute inset-0">
           <HeroVideo />
