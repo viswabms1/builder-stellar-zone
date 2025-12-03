@@ -26,6 +26,7 @@ export default function Navigation() {
   const [searchOpen, setSearchOpen] = useState(false);
   const location = useLocation();
   const { t } = useLanguage();
+  const { theme } = useTheme();
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
