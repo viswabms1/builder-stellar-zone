@@ -333,8 +333,6 @@ export default function Index() {
         {/* Background Video with Overlay */}
         <div className="absolute inset-0">
           <HeroVideo />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
         </div>
 
         {/* Animated Background Elements */}
