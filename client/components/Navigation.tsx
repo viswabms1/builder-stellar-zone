@@ -96,7 +96,11 @@ export default function Navigation() {
               const active = !item.external && isActive(item.href);
               const isAbout = item.href === "/about";
               const sharedClasses = `flex items-center space-x-2 px-4 py-2 rounded-xl text-sm font-medium font-display transition-all duration-200 group ${
-                active || (isAbout && aboutMenuOpen)
+                theme === 'light'
+                  ? active || (isAbout && aboutMenuOpen)
+                    ? "bg-orange-100 text-orange-900 font-semibold"
+                    : "text-gray-700 hover:text-orange-600 hover:bg-gray-100"
+                  : active || (isAbout && aboutMenuOpen)
                   ? "bg-white/20 text-white font-semibold"
                   : "text-white/80 hover:text-white hover:bg-white/10"
               }`;
