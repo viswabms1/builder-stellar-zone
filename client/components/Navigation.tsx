@@ -152,10 +152,10 @@ export default function Navigation() {
                   <Link
                     key="logo"
                     to="/"
-                    className={`flex items-center group flex-shrink-0 px-4 py-3 border-2 rounded-xl transition-all duration-300 ${
+                    className={`flex items-center group flex-shrink-0 px-4 py-3 rounded-xl transition-all duration-300 ${
                       theme === 'light'
-                        ? 'border-orange-600 hover:border-orange-700 hover:bg-orange-50'
-                        : 'border-white/30 hover:border-white/50 hover:bg-white/10'
+                        ? 'hover:bg-orange-50'
+                        : 'hover:bg-white/10'
                     }`}
                   >
                     <img
