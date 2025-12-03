@@ -198,9 +198,9 @@ export default function Footer() {
               </a>
             </div>
 
-            <div className="grid grid-cols-3 gap-8 w-full auto-cols-fr">
+            <div className="grid gap-8 w-full" style={{ gridTemplateColumns: 'repeat(3, 1fr)' }}>
               {CONTACT_LOCATIONS.map((location, index) => (
-                <div key={location.title} className="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-[0_20px_80px_-50px_rgba(255,255,255,0.6)] w-full">
+                <div key={location.title} className="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-[0_20px_80px_-50px_rgba(255,255,255,0.6)]">
                   <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.28em] text-white/60">
                     <MapPin className="h-4 w-4" aria-hidden="true" />
                     {location.title}
