@@ -272,7 +272,11 @@ export default function Navigation() {
                               setIsOpen(false);
                               setAboutMenuOpen(false);
                             }}
-                            className="block px-4 py-2 text-sm text-white hover:bg-white/20 rounded transition-colors"
+                            className={`block px-4 py-2 text-sm rounded transition-colors ${
+                              theme === 'light'
+                                ? 'text-gray-700 hover:bg-orange-200'
+                                : 'text-white hover:bg-white/20'
+                            }`}
                           >
                             {submenu.name}
                           </Link>
