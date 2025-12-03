@@ -259,7 +259,11 @@ export default function Navigation() {
 
                     {/* Mobile About Submenu */}
                     {aboutMenuOpen && (
-                      <div className="bg-white/20 rounded-lg py-2 ml-4 border-l-2 border-white/40">
+                      <div className={`rounded-lg py-2 ml-4 border-l-2 ${
+                        theme === 'light'
+                          ? 'bg-orange-100 border-l-orange-300'
+                          : 'bg-white/20 border-l-white/40'
+                      }`}>
                         {aboutSubmenus.map((submenu, subIdx) => (
                           <Link
                             key={subIdx}
