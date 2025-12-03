@@ -165,7 +165,9 @@ export default function Navigation() {
                 <Link key={idx} to={item.href} className={sharedClasses}>
                   <item.icon className="w-4 h-4" />
                   <span>{item.name}</span>
-                  {active && <div className="w-1 h-1 bg-white rounded-full" />}
+                  {active && <div className={`w-1 h-1 rounded-full ${
+                    theme === 'light' ? 'bg-orange-600' : 'bg-white'
+                  }`} />}
                 </Link>
               );
             })}
