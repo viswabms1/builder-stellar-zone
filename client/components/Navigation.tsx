@@ -44,17 +44,16 @@ export default function Navigation() {
   ];
 
   const navigation = [
-    { name: t("nav.home"), href: "/", icon: Home },
-    { name: t("nav.about"), href: "/about", icon: Users },
-    { name: t("nav.academics"), href: "/academics", icon: BookOpen },
-    { name: t("nav.admissions"), href: "/admissions", icon: GraduationCap },
-    { name: t("nav.campusLife"), href: "/campus-life", icon: Building },
-    { name: t("nav.centreOfExcellence"), href: "/centre-of-excellence", icon: Lightbulb },
-    { name: t("nav.placements"), href: "/placements", icon: GraduationCap },
+    { name: t("nav.home"), href: "/" },
+    { name: t("nav.about"), href: "/about" },
+    { name: t("nav.academics"), href: "/academics" },
+    { name: t("nav.admissions"), href: "/admissions" },
+    { name: t("nav.campusLife"), href: "/campus-life" },
+    { name: t("nav.centreOfExcellence"), href: "/centre-of-excellence" },
+    { name: t("nav.placements"), href: "/placements" },
     {
       name: t("nav.publicSelfDisclosure"),
       href: "https://www.dsu.edu.in/images/University/Public_Self_Disclosure_DSU.pdf",
-      icon: Calendar,
       external: true,
     },
   ];
