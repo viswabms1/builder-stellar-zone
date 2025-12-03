@@ -128,7 +128,6 @@ export default function Navigation() {
                     onMouseLeave={() => setAboutMenuOpen(false)}
                   >
                     <button className={sharedClasses}>
-                      <item.icon className="w-4 h-4" />
                       <span>{item.name}</span>
                       <ChevronDown className="w-4 h-4 group-hover:rotate-180 transition-transform" />
                       {active && <div className={`w-1 h-1 rounded-full ${
