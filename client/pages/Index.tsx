@@ -35,6 +35,8 @@ import {
   Newspaper,
   Laptop,
   X,
+  Volume2,
+  VolumeX,
 } from "lucide-react";
 
 function VideoWithFrameCapture({
