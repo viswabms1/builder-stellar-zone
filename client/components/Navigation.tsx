@@ -175,20 +175,13 @@ export default function Navigation() {
               variant="ghost"
               size="sm"
               onClick={() => setSearchOpen(true)}
-              className={`gap-2 ${
+              className={`gap-2 border ${
                 theme === 'light'
-                  ? 'text-gray-700 hover:text-orange-600 hover:bg-orange-100'
-                  : 'text-white/80 hover:text-white hover:bg-white/10'
+                  ? 'text-gray-700 hover:text-orange-600 hover:bg-orange-100 border-gray-300'
+                  : 'text-white/80 hover:text-white hover:bg-white/10 border-white/20'
               }`}
             >
               <Search className="w-4 h-4" />
-              <span className={`hidden lg:inline text-xs ${
-                theme === 'light'
-                  ? 'text-gray-500'
-                  : 'text-white/60'
-              }`}>
-                Cmd+K
-              </span>
             </Button>
             <LanguageSwitcher />
             <ThemeToggle className={theme === 'light'
