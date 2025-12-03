@@ -262,7 +262,6 @@ export default function Navigation() {
                       onClick={() => setAboutMenuOpen(!aboutMenuOpen)}
                       className={`w-full text-left ${sharedClasses}`}
                     >
-                      <item.icon className="w-4 h-4" />
                       <span className="flex-1">{item.name}</span>
                       <ChevronDown
                         className={`w-4 h-4 transition-transform ${
