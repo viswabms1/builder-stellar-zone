@@ -138,7 +138,7 @@ export default function Navigation() {
 
                 return (
                   <Link key={idx} to={item.href} className={sharedClasses}>
-                    <span>{item.name}</span>
+                    <span className={item.href === '/centre-of-excellence' ? 'max-w-[80px] text-center' : ''}>{item.name}</span>
                     {active && <div className={`w-1 h-1 rounded-full ${
                       theme === 'light' ? 'bg-orange-600' : 'bg-white'
                     }`} />}
