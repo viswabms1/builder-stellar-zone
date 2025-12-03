@@ -299,7 +299,7 @@ export default function Navigation() {
                   onClick={() => setIsOpen(false)}
                   className={sharedClasses}
                 >
-                  <span>{item.name}</span>
+                  <span className={item.href === '/centre-of-excellence' ? 'max-w-[100px]' : ''}>{item.name}</span>
                 </Link>
               );
             })}
