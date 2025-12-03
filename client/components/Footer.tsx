@@ -198,46 +198,6 @@ export default function Footer() {
               </a>
             </div>
 
-            <div className="grid gap-8 w-full" style={{ gridTemplateColumns: 'repeat(3, 1fr)' }}>
-              {CONTACT_LOCATIONS.map((location, index) => (
-                <div key={location.title} className="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-[0_20px_80px_-50px_rgba(255,255,255,0.6)]">
-                  <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.28em] text-white/60">
-                    <MapPin className="h-4 w-4" aria-hidden="true" />
-                    {location.title}
-                  </div>
-                  <div className="mt-3 space-y-1 text-sm text-white/80 font-body">
-                    {location.address.map((line) => (
-                      <p key={line}>{line}</p>
-                    ))}
-                  </div>
-                  <div className="mt-4 space-y-2 text-sm text-white/75 font-body">
-                    {location.phones.map((phone) => {
-                      const sanitised = phone.value.replace(/[^+0-9]/g, "");
-                      const isSingleNumber = !/[\/|]/.test(phone.value) && sanitised.length > 6;
-                      return (
-                        <p
-                          key={`${location.title}-${phone.label}-${phone.value}`}
-                          className="flex flex-wrap items-center gap-2"
-                        >
-                          <span className="text-white/50">{phone.label}:</span>
-                          {isSingleNumber ? (
-                            <a
-                              href={`tel:${sanitised}`}
-                              className="text-white/80 transition hover:text-white"
-                            >
-                              {phone.value}
-                            </a>
-                          ) : (
-                            <span className="text-white/80">{phone.value}</span>
-                          )}
-                        </p>
-                      );
-                    })}
-                  </div>
-                </div>
-              ))}
-            </div>
-
             <div className="mt-10 grid gap-4 rounded-3xl border border-white/10 bg-white/5 p-6 text-sm text-white/80 font-body sm:flex sm:flex-wrap sm:items-center sm:justify-between">
               <div className="flex flex-wrap items-center gap-3 text-white">
                 <Phone className="h-4 w-4" aria-hidden="true" />
