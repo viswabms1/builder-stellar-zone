@@ -30,7 +30,11 @@ export default function LanguageSwitcher() {
       <Button
         variant="ghost"
         size="sm"
-        className="text-white/80 hover:text-white hover:bg-white/10 px-3 py-2 rounded-xl text-sm font-medium font-display transition-all duration-200 flex items-center gap-2"
+        className={`px-3 py-2 rounded-xl text-sm font-medium font-display transition-all duration-200 flex items-center gap-2 ${
+          theme === 'light'
+            ? 'text-gray-700 hover:text-orange-600 hover:bg-orange-100'
+            : 'text-white/80 hover:text-white hover:bg-white/10'
+        }`}
         onClick={() => setIsOpen(!isOpen)}
       >
         <span>{getLanguageLabel(language)}</span>
@@ -38,7 +42,11 @@ export default function LanguageSwitcher() {
       </Button>
 
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-48 bg-white dark:bg-slate-900 rounded-xl shadow-lg border border-slate-200 dark:border-slate-700 z-50">
+        <div className={`absolute right-0 mt-2 w-48 rounded-xl shadow-lg border z-50 ${
+          theme === 'light'
+            ? 'bg-white border-orange-200'
+            : 'bg-slate-900 border-slate-700'
+        }`}>
           {LANGUAGES.map((lang) => (
             <button
               key={lang}
@@ -49,7 +57,9 @@ export default function LanguageSwitcher() {
               className={`w-full text-left px-4 py-3 text-sm font-medium transition-colors ${
                 language === lang
                   ? 'bg-orange-500 text-white'
-                  : 'text-foreground hover:bg-slate-100 dark:hover:bg-slate-800'
+                  : theme === 'light'
+                  ? 'text-gray-700 hover:bg-orange-100'
+                  : 'text-slate-200 hover:bg-slate-800'
               } ${lang === LANGUAGES[0] ? 'rounded-t-lg' : ''} ${
                 lang === LANGUAGES[LANGUAGES.length - 1] ? 'rounded-b-lg' : ''
               }`}
