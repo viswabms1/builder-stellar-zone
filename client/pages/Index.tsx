@@ -345,9 +345,9 @@ export default function Index() {
         </div>
 
         {/* Hero Content */}
-        <div className="relative max-w-7xl mx-auto px-6 w-full">
-          <div className="flex items-center justify-start h-full -translate-y-12">
-            <div className="flex flex-col sm:flex-row gap-4 items-center">
+        <div className="relative max-w-7xl mx-auto px-6 w-full z-10">
+          <div className="flex items-center justify-start w-full">
+            <div className="flex flex-col sm:flex-row gap-4 items-center sm:items-center">
               <a
                 href="https://admissions.dsu.edu.in/"
                 target="_blank"
