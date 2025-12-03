@@ -299,7 +299,11 @@ export default function Navigation() {
                 </Link>
               );
             })}
-            <div className="pt-4 space-y-3 border-t border-white/20">
+            <div className={`pt-4 space-y-3 border-t ${
+              theme === 'light'
+                ? 'border-orange-200'
+                : 'border-white/20'
+            }`}>
               <Button
                 variant="ghost"
                 size="sm"
@@ -307,13 +311,21 @@ export default function Navigation() {
                   setSearchOpen(true);
                   setIsOpen(false);
                 }}
-                className="w-full text-left text-white/80 hover:text-white hover:bg-white/10 justify-start gap-3"
+                className={`w-full text-left justify-start gap-3 ${
+                  theme === 'light'
+                    ? 'text-gray-700 hover:text-orange-600 hover:bg-orange-100'
+                    : 'text-white/80 hover:text-white hover:bg-white/10'
+                }`}
               >
                 <Search className="w-4 h-4" />
                 <span>Search</span>
               </Button>
               <ThemeToggle
-                className="self-start text-white/80 hover:text-white hover:bg-white/10"
+                className={`self-start ${
+                  theme === 'light'
+                    ? 'text-gray-700 hover:text-orange-600 hover:bg-orange-100'
+                    : 'text-white/80 hover:text-white hover:bg-white/10'
+                }`}
                 onToggle={() => setIsOpen(false)}
               />
             </div>
