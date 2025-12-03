@@ -154,7 +154,7 @@ export const searchIndex: SearchResult[] = [
   },
   {
     id: "cee",
-    title: "Centre of Excellence & Innovation",
+    title: "Centre of Excellence",
     description: "Research and innovation center",
     path: "/academics/cee",
     category: "Academics",
