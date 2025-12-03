@@ -145,7 +145,11 @@ export default function Navigation() {
                         <Link
                           key={submenu.name}
                           to={submenu.href}
-                          className="block px-6 py-3 hover:bg-white/20 transition-colors text-sm border-b border-white/20 last:border-b-0"
+                          className={`block px-6 py-3 transition-colors text-sm ${
+                            theme === 'light'
+                              ? 'hover:bg-orange-200 border-b border-orange-200 last:border-b-0'
+                              : 'hover:bg-white/20 border-b border-white/20 last:border-b-0'
+                          }`}
                         >
                           {submenu.name}
                         </Link>
