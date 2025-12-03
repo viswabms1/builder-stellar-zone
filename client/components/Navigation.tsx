@@ -114,7 +114,6 @@ export default function Navigation() {
                     rel="noreferrer"
                     className={sharedClasses}
                   >
-                    <item.icon className="w-4 h-4" />
                     <span>{item.name}</span>
                   </a>
                 );
