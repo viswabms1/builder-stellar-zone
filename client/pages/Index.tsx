@@ -339,9 +339,14 @@ export default function Index() {
           ></div>
         </div>
 
+        {/* Background Video with Overlay */}
+        <div className="relative w-full max-w-4xl mx-auto px-6 z-0">
+          <HeroVideo />
+        </div>
+
         {/* Hero Content */}
-        <div className="relative max-w-5xl mx-auto px-6 w-full z-10 flex flex-col gap-6 items-center">
-          <div className="flex items-center justify-start w-full">
+        <div className="absolute inset-0 z-10 flex items-center justify-center">
+          <div className="flex items-center justify-start w-full max-w-5xl mx-auto px-6">
             <div className="flex flex-col sm:flex-row gap-4 items-center sm:items-center">
               <a
                 href="https://admissions.dsu.edu.in/"
