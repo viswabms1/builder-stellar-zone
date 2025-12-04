@@ -11,6 +11,7 @@ import CampusLife from "./pages/CampusLife";
 import Examinations from "./pages/Examinations";
 import Research from "./pages/Research";
 import Engineering from "./pages/Engineering";
+import ElectronicsCommunication from "./pages/ElectronicsCommunication";
 import ComputerApplications from "./pages/ComputerApplications";
 import Law from "./pages/Law";
 import AppliedSciences from "./pages/AppliedSciences";
