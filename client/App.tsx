@@ -252,6 +252,7 @@ function App() {
                 <Route path="/academics/engineering/computer-science/faculty/sasikala-n" element={<SasikalaNPage />} />
                 <Route path="/academics/engineering/computer-science/faculty/radhika-k" element={<RadhikaKPage />} />
                 <Route path="/academics/engineering/computer-science/faculty/benaka-santhosha-s" element={<BenakaSanthoshaPage />} />
+                <Route path="/faculty/rajesh-kumar" element={<RajeshKumarProfile />} />
                 <Route path="/faculty-directory" element={<FacultyDirectory />} />
                 <Route path="/admissions" element={<Admissions />} />
                 <Route path="/admissions/international" element={<InternationalAdmissions />} />
