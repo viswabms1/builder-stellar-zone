@@ -327,7 +327,7 @@ const UG_PROGRAM_CARDS: ProgramCard[] = [
     major: "Intelligent Systems",
     description: "Design advanced electronics, VLSI, embedded and communication systems empowered by 5G, IoT and semiconductor labs.",
     image: "https://images.unsplash.com/photo-1580894908361-967195033215?q=80&w=1600&auto=format&fit=crop",
-    link: "https://www.dsu.edu.in/engineering/electronics-communication",
+    link: "/academics/engineering/electronics-communication",
     highlights: ["VLSI Lab", "5G Research", "IoT Systems"],
   },
   {
