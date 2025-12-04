@@ -1090,8 +1090,10 @@ export default function Engineering() {
             </RouterLink>
 
             {/* Admissions */}
-            <RouterLink
-              to="/admissions"
+            <a
+              href="https://admissions.dsu.edu.in/"
+              target="_blank"
+              rel="noreferrer"
               className="group rounded-3xl border border-border/40 bg-card/60 backdrop-blur-sm overflow-hidden hover:shadow-lg hover:shadow-brand-magenta/20 transition-all duration-500 hover:-translate-y-1"
             >
               <Card className="h-full border-0 bg-transparent">
@@ -1107,18 +1109,13 @@ export default function Engineering() {
                   <p className="text-sm text-foreground/80 font-body">
                     Join DSU Engineering and shape your future
                   </p>
-                  <a
-                    href="https://admissions.dsu.edu.in/"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-2 text-xs font-medium text-brand-magenta hover:text-brand-magenta/80 transition-colors"
-                  >
+                  <span className="inline-flex items-center gap-2 text-xs font-medium text-brand-magenta group-hover:text-brand-magenta/80 transition-colors">
                     Apply Now
                     <ChevronRight className="h-3 w-3" />
-                  </a>
+                  </span>
                 </CardContent>
               </Card>
-            </RouterLink>
+            </a>
           </div>
         </div>
       </section>
