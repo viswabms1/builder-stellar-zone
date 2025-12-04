@@ -330,6 +330,11 @@ export default function Index() {
     <div className="min-h-screen bg-background text-foreground overflow-hidden">
       {/* Hero Section with University Building */}
       <section className="relative w-full min-h-screen py-8 sm:py-12 md:py-16 flex items-center justify-center">
+        {/* Background Video with Overlay */}
+        <div className="absolute inset-0 w-full max-h-[70vh]">
+          <HeroVideo />
+        </div>
+
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-20 right-10 w-72 h-72 bg-brand-magenta/10 rounded-full filter blur-3xl animate-float"></div>
@@ -339,14 +344,9 @@ export default function Index() {
           ></div>
         </div>
 
-        {/* Background Video with Overlay */}
-        <div className="relative w-full max-w-4xl mx-auto px-6 z-0">
-          <HeroVideo />
-        </div>
-
         {/* Hero Content */}
-        <div className="absolute inset-0 z-10 flex items-center justify-center">
-          <div className="flex items-center justify-start w-full max-w-5xl mx-auto px-6">
+        <div className="relative max-w-7xl mx-auto px-6 w-full z-10">
+          <div className="flex items-center justify-start w-full">
             <div className="flex flex-col sm:flex-row gap-4 items-center sm:items-center">
               <a
                 href="https://admissions.dsu.edu.in/"
