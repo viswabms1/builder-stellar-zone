@@ -331,7 +331,7 @@ export default function Index() {
       {/* Hero Section with University Building */}
       <section className="relative w-full min-h-screen py-8 sm:py-12 md:py-16 flex items-center justify-center">
         {/* Background Video with Overlay */}
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 w-full" style={{ aspectRatio: '4/3' }}>
           <HeroVideo />
         </div>
 
