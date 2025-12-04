@@ -1,497 +1,348 @@
-import { Link as RouterLink } from "react-router-dom";
-import { useState, useRef } from "react";
-import type { LucideIcon } from "lucide-react";
-
-import {
-  Award,
-  ChevronRight,
-  Cpu,
-  GraduationCap,
-  Microscope,
-  Network,
-  Volume2,
-  VolumeX,
-} from "lucide-react";
-
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+  CheckCircle2,
+  ChevronRight,
+  Download,
+  GraduationCap,
+  Sparkles,
+  Network,
+  Cpu,
+  Zap,
+  Radio,
+  Microchip,
+  Wifi,
+} from "lucide-react";
 
-type USPHighlight = {
-  title: string;
-  description: string;
-  image: string;
-  icon: LucideIcon;
-  stat?: string;
-};
+export default function ElectronicsCommunication() {
+  const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
 
-type ProgramCard = {
-  name: string;
-  major: string;
-  description: string;
-  image: string;
-  link: string;
-  highlights: string[];
-};
+  const specializations = [
+    { icon: Microchip, label: "VLSI Design" },
+    { icon: Radio, label: "Communication" },
+    { icon: Wifi, label: "5G & IoT" },
+    { icon: Cpu, label: "Embedded Systems" },
+    { icon: Network, label: "Signal Processing" },
+    { icon: Zap, label: "Power Electronics" },
+  ];
 
-const ECE_USP: USPHighlight[] = [
-  {
-    title: "Signal Processing & Communication Systems",
-    description:
-      "Master advanced signal processing, wireless communication, and 5G technologies with state-of-the-art labs.",
-    image:
-      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1600&auto=format&fit=crop",
-    icon: Network,
-    stat: "5G & IoT Labs",
-  },
-  {
-    title: "VLSI & Embedded Systems",
-    description:
-      "Design cutting-edge semiconductor solutions and embedded systems with hands-on experience in chip design.",
-    image:
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=1600&auto=format&fit=crop",
-    icon: Cpu,
-    stat: "Industry-Sponsored",
-  },
-  {
-    title: "IoT & Automation",
-    description:
-      "Build intelligent IoT systems and automation solutions that power the connected world.",
-    image:
-      "https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=1600&auto=format&fit=crop",
-    icon: Award,
-  },
-  {
-    title: "Research & Innovation",
-    description:
-      "Engage in cutting-edge research with faculty holding Ph.D. degrees from prestigious institutions worldwide.",
-    image:
-      "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=1600&auto=format&fit=crop",
-    icon: Microscope,
-  },
-];
+  const highlights = [
+    "Advanced curriculum in signal processing, VLSI, and communication systems",
+    "Industry-sponsored labs: Bosch ETAS Lab, Analog Devices Lab",
+    "Hands-on experience with 5G, IoT, and embedded systems",
+    "Strong faculty with Ph.D. from prestigious institutions",
+    "Research-driven learning with practical projects",
+    "Specializations in Embedded Systems and Mechatronics",
+  ];
 
-const ECE_UG_PROGRAMS: ProgramCard[] = [
-  {
-    name: "B.Tech - Electronics & Communication Engineering",
-    major: "Core Program",
-    description:
-      "Comprehensive curriculum emphasizing fundamental concepts with hands-on lab work, projects, and practical experience in signal processing, VLSI design, embedded systems, and communication systems.",
-    image:
-      "https://images.unsplash.com/photo-1580894908361-967195033215?q=80&w=1600&auto=format&fit=crop",
-    link: "https://www.dsu.edu.in/engineering/electronics-communication",
-    highlights: ["Signal Processing", "VLSI Design", "Embedded Systems", "5G Research"],
-  },
-];
+  const careers = [
+    "Electronics Design Engineer → Senior Design Engineer → Technical Lead",
+    "VLSI Design Specialist → Chip Architect",
+    "Embedded Systems Developer → IoT Solutions Architect",
+    "Research pathways: Masters/PhD in India & Abroad",
+  ];
 
-const ECE_PG_PROGRAMS: ProgramCard[] = [
-  {
-    name: "M.Tech - Embedded Systems",
-    major: "Specialization",
-    description:
-      "Master real-time systems, IoT architectures, edge computing and VLSI design with industry collaboration through Bosch ETAS Lab integration.",
-    image:
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=1600&auto=format&fit=crop",
-    link: "https://www.dsu.edu.in/engineering/mtech-embedded",
-    highlights: ["RTOS Design", "Bosch ETAS Lab", "Hardware Integration"],
-  },
-  {
-    name: "BVoc - Mechatronics",
-    major: "Vocational Program",
-    description:
-      "Develop industry-ready skills in mechatronics through collaboration with NTTF (National Training and Technical Foundation).",
-    image:
-      "https://images.unsplash.com/photo-1517677129300-07b130802f46?q=80&w=1600&auto=format&fit=crop",
-    link: "https://www.dsu.edu.in/engineering/bvoc-mechatronics",
-    highlights: ["Industry Partnership", "Practical Skills", "Career-Ready"],
-  },
-];
+  const facilities = [
+    { title: "VLSI Design Lab", image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=1200&auto=format&fit=crop" },
+    { title: "Bosch ETAS Lab", image: "https://images.unsplash.com/photo-1517677129300-07b130802f46?q=80&w=1200&auto=format&fit=crop" },
+    { title: "Communication Systems Lab", image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1200&auto=format&fit=crop" },
+    { title: "IoT & Robotics Lab", image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=1200&auto=format&fit=crop" },
+    { title: "Microcontroller Lab", image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=1200&auto=format&fit=crop" },
+    { title: "Analog Devices Lab", image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop" },
+  ];
 
-const ECE_FACILITIES = [
-  {
-    title: "Bosch ETAS Lab",
-    description: "Industry-integrated lab for embedded systems and real-time software development",
-  },
-  {
-    title: "Analog Devices Lab",
-    description: "Industry-sponsored facility supporting advanced communication research",
-  },
-  {
-    title: "VLSI Design Lab",
-    description: "State-of-the-art semiconductor design and simulation tools",
-  },
-  {
-    title: "Communication Systems Lab",
-    description: "Advanced equipment for 5G and wireless communication research",
-  },
-  {
-    title: "IoT & Robotics Lab",
-    description: "Hands-on laboratory for IoT systems and robotic applications",
-  },
-  {
-    title: "Microcontroller & Embedded Lab",
-    description: "Complete embedded system design and testing environment",
-  },
-];
-
-function HeroVideo() {
-  const [isMuted, setIsMuted] = useState(true);
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  const toggleMute = () => {
-    if (videoRef.current) {
-      videoRef.current.muted = !videoRef.current.muted;
-      setIsMuted(!isMuted);
-    }
-  };
+  const calendarItems = [
+    {
+      title: "B.Tech ECE Odd Semester Calendar",
+      year: "2025-26",
+      description: "Academic timeline for B.Tech ECE with assessment windows and internships",
+      url: "https://www.dsu.edu.in/engineering/ece-calendar",
+    },
+  ];
 
   return (
-    <div className="relative aspect-video overflow-hidden rounded-3xl border-4 border-brand-blue/40 shadow-2xl shadow-brand-blue/20 p-4 bg-black/10">
-      <video
-        ref={videoRef}
-        src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F0b20f5ea03294f4d824e69fd8489b78c?alt=media&token=0c4092c4-4afd-4237-b850-81046ecf52f7&apiKey=4aa279a8430d441dba9c55f659831878"
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="h-full w-full object-cover rounded-2xl"
-      />
-      <button
-        onClick={toggleMute}
-        className="absolute top-8 right-8 z-10 p-3 rounded-full bg-black/50 hover:bg-black/70 transition-colors text-white"
-        aria-label={isMuted ? "Unmute" : "Mute"}
-      >
-        {isMuted ? (
-          <VolumeX className="h-5 w-5" />
-        ) : (
-          <Volume2 className="h-5 w-5" />
-        )}
-      </button>
-    </div>
-  );
-}
-
-function ProgramCardComponent({ program }: { program: ProgramCard }) {
-  const isInternal = program.link.startsWith("/");
-
-  const content = (
-    <div className="group relative h-full rounded-3xl overflow-hidden border border-white/10 bg-black/10 backdrop-blur-sm transition-all duration-700 hover:-translate-y-1 hover:shadow-2xl hover:shadow-brand-blue/20 min-h-[280px] flex flex-col justify-end">
-      <img
-        src={program.image}
-        alt={program.name}
-        loading="lazy"
-        className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
-      <div className="absolute left-6 top-6 inline-flex items-center gap-2 rounded-full bg-white/20 px-3 py-1 text-xs font-medium text-white backdrop-blur">
-        {program.major}
-      </div>
-      <div className="relative z-10 flex h-full flex-col justify-end p-6 text-white">
-        <div className="rounded-3xl border border-white/15 bg-black/60 backdrop-blur-lg p-6">
-          <div className="space-y-4">
-            <div>
-              <h3 className="font-display text-xl leading-tight text-white">
-                {program.name}
-              </h3>
-              <p className="mt-3 text-sm text-white/85 font-body">
-                {program.description}
-              </p>
+    <div className="min-h-screen bg-background text-foreground">
+      {/* Hero */}
+      <section className="relative">
+        <div className="h-[50vh] md:h-[65vh] w-full overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1580894908361-967195033215?q=80&w=1600&auto=format&fit=crop"
+            alt="Department of Electronics & Communication Engineering"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+        </div>
+        <div className="absolute inset-0 flex items-center">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-brand-blue/10 rounded-full border border-brand-blue/20 mb-4">
+              <Sparkles className="w-4 h-4 text-brand-blue" />
+              <span className="text-sm font-medium text-brand-blue font-display">Department of Electronics & Communication Engineering</span>
             </div>
-            <div className="flex flex-wrap gap-2">
-              {program.highlights.map((item) => (
-                <span
-                  key={item}
-                  className="rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs uppercase tracking-wide text-white/85"
-                >
-                  {item}
+            <h1 className="headline-1 text-white leading-tight font-display">Design the Electronics of Tomorrow</h1>
+            <p className="subheadline text-white/90 max-w-2xl mt-3 font-body">
+              Master signal processing, VLSI design, and communication systems at a leading ECE department with industry partnerships.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-2">
+              {specializations.map((s, i) => (
+                <span key={i} className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-white text-xs backdrop-blur">
+                  <s.icon className="w-3.5 h-3.5" /> {s.label}
                 </span>
               ))}
             </div>
-            <span className="inline-flex items-center gap-2 text-sm font-medium text-white/90 transition-colors group-hover:text-brand-blue">
-              Explore program
-              <ChevronRight className="h-4 w-4" />
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-
-  if (isInternal) {
-    return (
-      <RouterLink to={program.link} className="h-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-3xl">
-        {content}
-      </RouterLink>
-    );
-  }
-
-  return (
-    <a
-      href={program.link}
-      target="_blank"
-      rel="noreferrer"
-      className="h-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-3xl"
-    >
-      {content}
-    </a>
-  );
-}
-
-export default function ElectronicsCommunication() {
-  return (
-    <div className="min-h-screen bg-background text-foreground">
-      <section className="relative flex items-center justify-center px-6 pt-4 pb-16 md:min-h-screen" id="top">
-        <div className="w-full max-w-5xl">
-          <HeroVideo />
-          <div className="mt-6 text-center">
-            <h2 className="text-2xl md:text-3xl font-bold text-foreground font-display">
-              B.Tech - Electronics & Communication Engineering
-            </h2>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-gradient-to-r from-brand-blue/5 via-brand-orange/5 to-brand-magenta/5 px-6 py-16">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-12 text-center">
-            <Badge
-              className="bg-white/20 text-brand-blue backdrop-blur"
-              variant="secondary"
-            >
-              Unique Strengths (USP)
-            </Badge>
-            <h2 className="mt-5 font-display text-3xl md:text-4xl">
-              Why Choose ECE at DSU
-            </h2>
-          </div>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {ECE_USP.map((highlight) => (
-              <Card
-                key={highlight.title}
-                className="group relative h-80 overflow-hidden rounded-3xl border border-border/40 bg-card/40 backdrop-blur-sm transition-all duration-700 hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-blue/10"
-              >
-                <img
-                  src={highlight.image}
-                  alt={highlight.title}
-                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-                <div className="absolute top-4 left-4 inline-flex items-center gap-2 rounded-full bg-black/40 px-3 py-1 text-xs text-foreground">
-                  <highlight.icon className="h-4 w-4" /> USP
-                </div>
-                <div className="absolute inset-x-0 bottom-0 p-5 text-foreground">
-                  <h3 className="mb-2 text-lg font-semibold font-display">
-                    {highlight.title}
-                  </h3>
-                  <p className="text-sm text-foreground/80 font-body">
-                    {highlight.description}
-                  </p>
-                  {highlight.stat ? (
-                    <div className="mt-3 text-xs uppercase tracking-wide text-foreground/70 font-body">
-                      {highlight.stat}
-                    </div>
-                  ) : null}
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="programs" className="relative overflow-hidden px-6 py-16">
-        <div
-          className="pointer-events-none absolute inset-x-0 -top-32 h-64 bg-gradient-to-b from-brand-blue/20 via-transparent to-transparent blur-3xl"
-          aria-hidden="true"
-        />
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-12">
-            <div className="max-w-3xl">
-              <h2 className="font-display text-3xl md:text-4xl">
-                Academic Programs
-              </h2>
-              <p className="mt-3 text-sm text-foreground font-body">
-                Comprehensive undergraduate and postgraduate programs designed to shape industry-ready engineers and researchers.
-              </p>
-            </div>
-          </div>
-
-          <div className="mb-16">
-            <div className="mb-8">
-              <Badge className="bg-brand-blue/15 text-brand-blue">
-                Undergraduate Program
-              </Badge>
-              <h3 className="mt-4 font-display text-2xl md:text-3xl">
-                B.Tech - ECE
-              </h3>
-              <p className="mt-2 text-sm text-foreground font-body">
-                Four-year comprehensive program emphasizing experiential learning and industry alignment
-              </p>
-            </div>
-            <div className="grid gap-6 md:grid-cols-1 lg:grid-cols-2">
-              {ECE_UG_PROGRAMS.map((program) => (
-                <ProgramCardComponent key={program.name} program={program} />
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <div className="mb-8">
-              <Badge className="bg-brand-orange/15 text-brand-orange">
-                Postgraduate Programs
-              </Badge>
-              <h3 className="mt-4 font-display text-2xl md:text-3xl">
-                Specialized Programs
-              </h3>
-              <p className="mt-2 text-sm text-foreground font-body">
-                Advanced research and specialization opportunities
-              </p>
-            </div>
-            <div className="grid gap-6 md:grid-cols-1 lg:grid-cols-2">
-              {ECE_PG_PROGRAMS.map((program) => (
-                <ProgramCardComponent key={program.name} program={program} />
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-gradient-to-r from-brand-blue/10 via-brand-orange/10 to-brand-magenta/10 px-6 py-16">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-12">
-            <Badge className="bg-brand-blue/15 text-brand-blue">
-              Laboratory Facilities
-            </Badge>
-            <h2 className="mt-4 font-display text-3xl md:text-4xl">
-              State-of-the-art ECE Labs
-            </h2>
-            <p className="mt-3 text-sm text-foreground font-body">
-              World-class laboratories and equipment supporting hands-on learning and cutting-edge research
-            </p>
-          </div>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {ECE_FACILITIES.map((facility) => (
-              <Card key={facility.title} className="rounded-2xl border border-border/40 bg-card/60 backdrop-blur">
-                <CardHeader>
-                  <CardTitle className="font-display text-lg">
-                    {facility.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-foreground/80 font-body">
-                    {facility.description}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="px-6 py-16">
-        <div className="mx-auto grid max-w-5xl items-start gap-8 lg:grid-cols-2">
-          <Card className="rounded-3xl border border-border/50 bg-card/50">
-            <CardHeader>
-              <CardTitle className="font-display">Department Leadership</CardTitle>
-            </CardHeader>
-            <CardContent className="grid gap-4 text-sm font-body text-foreground">
-              <div>
-                <div className="text-foreground/70 text-xs uppercase tracking-wide">Chairman</div>
-                <div className="font-medium text-foreground">ECE Department</div>
-              </div>
-              <div>
-                <div className="text-foreground/70 text-xs uppercase tracking-wide">Email</div>
-                <div className="font-medium text-foreground">
-                  chairman-ece@dsu.edu.in
-                </div>
-              </div>
-              <div>
-                <div className="text-foreground/70 text-xs uppercase tracking-wide">Phone</div>
-                <div className="font-medium text-foreground">
-                  +91-080-49092937
-                </div>
-              </div>
-              <div>
-                <div className="text-foreground/70 text-xs uppercase tracking-wide">Campus Address</div>
-                <div className="font-medium text-foreground">
-                  Innovation Campus, Kanakapura Road, Bengaluru
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-          <Card className="rounded-3xl border border-border/50 bg-card/50">
-            <CardHeader>
-              <CardTitle className="font-display">
-                Program Highlights
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="grid gap-3 text-sm font-body">
-              <div className="flex items-start gap-2">
-                <span className="text-brand-blue mt-1">•</span>
-                <span>Ph.D. faculty with strong R&D background</span>
-              </div>
-              <div className="flex items-start gap-2">
-                <span className="text-brand-blue mt-1">•</span>
-                <span>Industry-sponsored labs (Bosch ETAS, Analog Devices)</span>
-              </div>
-              <div className="flex items-start gap-2">
-                <span className="text-brand-blue mt-1">•</span>
-                <span>Focus on Signal Processing, VLSI & Embedded Systems</span>
-              </div>
-              <div className="flex items-start gap-2">
-                <span className="text-brand-blue mt-1">•</span>
-                <span>5G, IoT and Communication Systems research</span>
-              </div>
-              <div className="flex items-start gap-2">
-                <span className="text-brand-blue mt-1">•</span>
-                <span>M.Tech specialization in Embedded Systems</span>
-              </div>
-              <div className="flex items-start gap-2">
-                <span className="text-brand-blue mt-1">•</span>
-                <span>BVoc in Mechatronics partnership with NTTF</span>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-
-      <section className="px-6 pb-20">
-        <div className="mx-auto max-w-4xl text-center">
-          <div className="rounded-3xl border border-brand-blue/20 bg-brand-blue/5 p-10">
-            <h3 className="mb-3 font-display text-3xl">
-              Ready to pursue Electronics & Communication Engineering?
-            </h3>
-            <p className="mb-6 text-foreground font-body">
-              Explore programs, take a virtual tour and begin your journey at ECE DSU.
-            </p>
-            <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <div className="mt-8 flex flex-wrap gap-3">
               <a
                 href="https://admissions.dsu.edu.in/"
                 target="_blank"
                 rel="noreferrer"
               >
-                <Button className="bg-brand-gradient text-foreground">
-                  Apply Now
-                  <GraduationCap className="ml-2 h-4 w-4" />
-                </Button>
+                <Button className="bg-brand-gradient text-foreground">Apply Now <GraduationCap className="w-4 h-4 ml-2" /></Button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Overview */}
+      <section className="px-6 py-16">
+        <div className="max-w-6xl mx-auto grid lg:grid-cols-3 gap-10 items-start">
+          <div className="lg:col-span-2 space-y-6">
+            <h2 className="headline-3 font-display">Overview</h2>
+            <p className="text-foreground leading-relaxed font-body">
+              The Department of Electronics & Communication Engineering offers a comprehensive program combining theoretical foundations with practical laboratory work. The B.Tech ECE curriculum emphasizes signal processing, VLSI design, embedded systems, and communication technologies. Students engage in hands-on projects through industry-sponsored labs including Bosch ETAS and Analog Devices, preparing them for careers in semiconductor design, IoT, 5G technologies, and telecommunications.
+            </p>
+            <Card className="border border-border/50 bg-card/50 backdrop-blur-sm">
+              <CardHeader className="pb-2">
+                <CardTitle className="text-lg font-display">Program Highlights</CardTitle>
+                <CardDescription className="font-body">Building electronics leaders</CardDescription>
+              </CardHeader>
+              <CardContent className="grid sm:grid-cols-2 gap-3 pt-0">
+                {highlights.map((h, idx) => (
+                  <div key={idx} className="flex items-start gap-2 text-sm text-foreground">
+                    <CheckCircle2 className="w-4 h-4 text-brand-blue mt-0.5" />
+                    <span>{h}</span>
+                  </div>
+                ))}
+              </CardContent>
+            </Card>
+          </div>
+          <div>
+            <Card className="overflow-hidden border border-border/50 bg-card/50">
+              <div className="relative h-40">
+                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=1200&auto=format&fit=crop" alt="ECE Labs" className="w-full h-full object-cover" />
+              </div>
+              <CardHeader>
+                <CardTitle className="font-display">Fast Facts</CardTitle>
+                <CardDescription className="font-body">What sets ECE at DSU apart</CardDescription>
+              </CardHeader>
+              <CardContent className="grid gap-2 text-sm font-body">
+                <div className="flex items-center justify-between"><span>Industry Labs</span><span className="font-medium">2+ Sponsored</span></div>
+                <div className="flex items-center justify-between"><span>Specializations</span><span className="font-medium">Embedded & VLSI</span></div>
+                <div className="flex items-center justify-between"><span>Research Focus</span><span className="font-medium">5G & IoT</span></div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Notice Board */}
+      <section className="px-6 py-16 bg-gradient-to-r from-brand-blue/5 to-brand-orange/5">
+        <div className="max-w-7xl mx-auto">
+          <div className="rounded-3xl border border-brand-blue/20 bg-brand-blue/5 p-8">
+            <div className="flex items-start justify-between mb-6">
+              <div>
+                <h2 className="headline-3 mb-2 font-display">Notice Board</h2>
+                <p className="text-sm text-foreground/80 font-body">Important academic calendars and announcements for ECE students</p>
+              </div>
+            </div>
+            <div className="grid gap-4">
+              {calendarItems.map((item, idx) => (
+                <div key={idx} className="flex items-start justify-between p-4 rounded-xl bg-white/5 border border-border/30 hover:border-brand-blue/30 transition-colors">
+                  <div className="flex-1">
+                    <h3 className="font-semibold text-foreground font-display">{item.title}</h3>
+                    <p className="text-sm text-foreground/70 mt-1 font-body">{item.description}</p>
+                    <p className="text-xs text-brand-blue mt-2">{item.year}</p>
+                  </div>
+                  <a
+                    href={item.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="ml-4 p-2 rounded-lg hover:bg-white/10 transition-colors"
+                  >
+                    <Download className="w-5 h-5 text-brand-blue" />
+                  </a>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Labs & Facilities */}
+      <section className="px-6 py-16">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="headline-3 mb-6 font-display">Labs & Facilities</h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {facilities.map((lab, idx) => (
+              <Card key={idx} className="group relative overflow-hidden rounded-2xl border border-border/40 bg-card/40 backdrop-blur-sm">
+                <img src={lab.image} alt={lab.title} className="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-700" />
+                <div className="relative p-5 h-40 flex items-end">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent" />
+                  <CardTitle className="relative text-white font-display">{lab.title}</CardTitle>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Programs Offered */}
+      <section className="px-6 py-16 bg-gradient-to-r from-brand-blue/5 to-brand-magenta/5">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="headline-3 mb-8 font-display">Programs Offered</h2>
+          <div className="grid lg:grid-cols-3 gap-6">
+            <Card className="border border-border/50 bg-card/50">
+              <CardHeader>
+                <div className="inline-block mb-3">
+                  <Badge className="bg-brand-blue/15 text-brand-blue">Undergraduate</Badge>
+                </div>
+                <CardTitle className="font-display">B.Tech ECE</CardTitle>
+                <CardDescription className="font-body">4-Year Degree Program</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-3 text-sm font-body">
+                <p>Comprehensive engineering education in electronics, communication systems, and signal processing with industry immersion.</p>
+                <ul className="space-y-2 text-foreground/80">
+                  <li className="flex items-start gap-2">
+                    <ChevronRight className="w-3 h-3 mt-1" />
+                    <span>Signal Processing & Communication</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <ChevronRight className="w-3 h-3 mt-1" />
+                    <span>VLSI Design & Semiconductor</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <ChevronRight className="w-3 h-3 mt-1" />
+                    <span>Embedded Systems & IoT</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="border border-border/50 bg-card/50">
+              <CardHeader>
+                <div className="inline-block mb-3">
+                  <Badge className="bg-brand-orange/15 text-brand-orange">Postgraduate</Badge>
+                </div>
+                <CardTitle className="font-display">M.Tech Embedded</CardTitle>
+                <CardDescription className="font-body">2-Year Advanced Program</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-3 text-sm font-body">
+                <p>Specialized program in embedded systems with industry collaboration through Bosch ETAS Lab for RTOS design and edge computing.</p>
+                <ul className="space-y-2 text-foreground/80">
+                  <li className="flex items-start gap-2">
+                    <ChevronRight className="w-3 h-3 mt-1" />
+                    <span>Real-Time Operating Systems</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <ChevronRight className="w-3 h-3 mt-1" />
+                    <span>Edge Computing & IoT</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <ChevronRight className="w-3 h-3 mt-1" />
+                    <span>Hardware Integration</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="border border-border/50 bg-card/50">
+              <CardHeader>
+                <div className="inline-block mb-3">
+                  <Badge className="bg-brand-magenta/15 text-brand-magenta">Vocational</Badge>
+                </div>
+                <CardTitle className="font-display">BVoc Mechatronics</CardTitle>
+                <CardDescription className="font-body">Industry Partnership Program</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-3 text-sm font-body">
+                <p>Vocational program in collaboration with NTTF (National Training and Technical Foundation) for career-ready skills.</p>
+                <ul className="space-y-2 text-foreground/80">
+                  <li className="flex items-start gap-2">
+                    <ChevronRight className="w-3 h-3 mt-1" />
+                    <span>Practical Industrial Skills</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <ChevronRight className="w-3 h-3 mt-1" />
+                    <span>NTTF Certification</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <ChevronRight className="w-3 h-3 mt-1" />
+                    <span>Industry-Ready Training</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Careers */}
+      <section className="px-6 py-16">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-10 items-start">
+          <div>
+            <h2 className="headline-3 mb-4 font-display">Career Prospects</h2>
+            <Card className="border border-border/50 bg-card/50">
+              <CardContent className="p-6 grid gap-3">
+                {careers.map((c, i) => (
+                  <div key={i} className="flex items-start gap-2 text-sm text-foreground font-body">
+                    <ChevronRight className="w-3 h-3 text-brand-blue mt-1" />
+                    <span>{c}</span>
+                  </div>
+                ))}
+              </CardContent>
+            </Card>
+          </div>
+          <div>
+            <h2 className="headline-3 mb-4 font-display">Get in Touch</h2>
+            <Card className="overflow-hidden border border-border/50 bg-card/50">
+              <div className="relative h-40">
+                <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1200&auto=format&fit=crop" alt="Contact ECE" className="w-full h-full object-cover" />
+              </div>
+              <CardHeader>
+                <CardTitle className="font-display">Department Contact</CardTitle>
+                <CardDescription className="font-body">Chairman, Electronics & Communication Engineering</CardDescription>
+              </CardHeader>
+              <CardContent className="grid gap-2 text-sm font-body">
+                <div className="flex items-center justify-between"><span>Email</span><a className="font-medium hover:underline" href="mailto:chairman-ece@dsu.edu.in">chairman-ece@dsu.edu.in</a></div>
+                <div className="flex items-center justify-between"><span>Phone</span><span className="font-medium">+91-080-49092937</span></div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="px-6 py-16">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="rounded-3xl p-10 border border-brand-blue/20 bg-brand-blue/5">
+            <h3 className="headline-3 mb-3 font-display">Join DSU ECE</h3>
+            <p className="text-foreground mb-6 font-body">Explore our programs, discover cutting-edge research, and launch your career in Electronics & Communication Engineering.</p>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <a
+                href="https://admissions.dsu.edu.in/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Button className="bg-brand-gradient text-foreground">Apply Now<GraduationCap className="w-4 h-4 ml-2" /></Button>
               </a>
               <a
                 href="https://dsu.edu.in/virtual-tour/"
                 target="_blank"
                 rel="noreferrer"
               >
-                <Button
-                  variant="outline"
-                  className="border-brand-blue/40 hover:bg-brand-blue/10"
-                >
-                  Virtual Tour
-                </Button>
+                <Button variant="outline" className="border-brand-blue/40 hover:bg-brand-blue/10">Virtual Tour</Button>
               </a>
             </div>
           </div>
