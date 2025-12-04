@@ -330,11 +330,6 @@ export default function Index() {
     <div className="min-h-screen bg-background text-foreground overflow-hidden">
       {/* Hero Section with University Building */}
       <section className="relative w-full min-h-screen py-8 sm:py-12 md:py-16 flex items-center justify-center">
-        {/* Background Video with Overlay */}
-        <div className="absolute inset-0">
-          <HeroVideo />
-        </div>
-
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-20 right-10 w-72 h-72 bg-brand-magenta/10 rounded-full filter blur-3xl animate-float"></div>
@@ -345,7 +340,7 @@ export default function Index() {
         </div>
 
         {/* Hero Content */}
-        <div className="relative max-w-7xl mx-auto px-6 w-full z-10">
+        <div className="relative max-w-5xl mx-auto px-6 w-full z-10 flex flex-col gap-6 items-center">
           <div className="flex items-center justify-start w-full">
             <div className="flex flex-col sm:flex-row gap-4 items-center sm:items-center">
               <a
