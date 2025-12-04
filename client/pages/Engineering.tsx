@@ -154,7 +154,7 @@ const ENGINEERING_DEPARTMENTS: EngineeringDepartment[] = [
       "Design advanced electronics, VLSI, embedded and communication systems empowered by 5G, IoT and semiconductor labs.",
     image:
       "https://images.unsplash.com/photo-1580894908361-967195033215?q=80&w=1600&auto=format&fit=crop",
-    link: "https://www.dsu.edu.in/engineering/electronics-communication",
+    link: "/academics/engineering/electronics-communication",
     highlights: ["VLSI Lab", "5G Research", "IoT Systems"],
     overlay:
       "bg-gradient-to-br from-brand-blue/80 via-black/75 to-black/60 mix-blend-multiply",
