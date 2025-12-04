@@ -126,6 +126,10 @@ function App() {
                 <Route path="/academics" element={<Academics />} />
                 <Route path="/academics/engineering" element={<Engineering />} />
                 <Route
+                  path="/academics/engineering/electronics-communication"
+                  element={<ElectronicsCommunication />}
+                />
+                <Route
                   path="/academics/computer-applications"
                   element={<ComputerApplications />}
                 />
