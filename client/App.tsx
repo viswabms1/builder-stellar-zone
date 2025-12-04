@@ -109,6 +109,7 @@ import NaitikSTPage from "./pages/faculty/NaitikST";
 import SasikalaNPage from "./pages/faculty/SasikalaN";
 import RadhikaKPage from "./pages/faculty/RadhikaK";
 import BenakaSanthoshaPage from "./pages/faculty/BenakaSanthosha";
+import RajeshKumarProfile from "./pages/faculty/RajeshKumar";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 
