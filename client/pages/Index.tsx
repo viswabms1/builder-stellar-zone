@@ -480,6 +480,19 @@ export default function Index() {
                               {program}
                             </Badge>
                           </Link>
+                        ) : school.title === "Engineering" &&
+                        program === "B.Tech ECE" ? (
+                          <Link
+                            key={idx}
+                            to="/academics/engineering/electronics-communication"
+                          >
+                            <Badge
+                              variant="secondary"
+                              className="text-xs font-body hover:bg-brand-blue/20 hover:text-brand-blue cursor-pointer"
+                            >
+                              {program}
+                            </Badge>
+                          </Link>
                         ) : (
                           <Badge
                             key={idx}
