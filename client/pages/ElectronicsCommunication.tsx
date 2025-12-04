@@ -210,43 +210,45 @@ export default function ElectronicsCommunication() {
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {eceFaculty.map((faculty) => (
-              <Card
+              <Link
                 key={faculty.slug}
-                className="group overflow-hidden rounded-2xl border border-border/40 bg-card/50 backdrop-blur-sm hover:border-brand-blue/40 transition-all duration-300 hover:shadow-lg hover:shadow-brand-blue/10"
+                to={faculty.profileUrl || "#"}
+                className="group block h-full"
               >
-                <div className="relative h-48 overflow-hidden bg-gradient-to-br from-brand-blue/10 to-brand-orange/10">
-                  <img
-                    src={faculty.image}
-                    alt={faculty.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    onError={(e) => {
-                      (e.target as HTMLImageElement).src = `https://api.dicebear.com/7.x/avataaars/svg?seed=${faculty.name}`;
-                    }}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                </div>
-                <CardHeader className="pb-3">
-                  <CardTitle className="text-base font-display leading-tight">{faculty.name}</CardTitle>
-                  <CardDescription className="text-xs font-body text-brand-blue">{faculty.title}</CardDescription>
-                </CardHeader>
-                <CardContent className="pb-4 space-y-3">
-                  <div className="flex items-center gap-2 text-xs bg-white/5 px-3 py-2 rounded-lg">
-                    <Sparkles className="w-3 h-3 text-brand-blue" />
-                    <span className="text-foreground/80">{faculty.qualifications}</span>
+                <Card className="h-full overflow-hidden rounded-2xl border border-border/40 bg-card/50 backdrop-blur-sm hover:border-brand-blue/40 transition-all duration-300 hover:shadow-lg hover:shadow-brand-blue/10 hover:-translate-y-1">
+                  <div className="relative h-48 overflow-hidden bg-gradient-to-br from-brand-blue/10 to-brand-orange/10">
+                    <img
+                      src={faculty.image}
+                      alt={faculty.name}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      onError={(e) => {
+                        (e.target as HTMLImageElement).src = `https://api.dicebear.com/7.x/avataaars/svg?seed=${faculty.name}`;
+                      }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                   </div>
-                  {faculty.profileUrl && (
-                    <a
-                      href={faculty.profileUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="flex items-center justify-center gap-2 w-full px-3 py-2 text-xs font-medium text-brand-blue hover:bg-brand-blue/10 rounded-lg transition-colors"
-                    >
+                  <CardHeader className="pb-3">
+                    <CardTitle className="text-base font-display leading-tight group-hover:text-brand-blue transition-colors">{faculty.name}</CardTitle>
+                    <CardDescription className="text-xs font-body text-brand-blue">{faculty.title}</CardDescription>
+                  </CardHeader>
+                  <CardContent className="pb-4 space-y-3">
+                    <div className="flex items-center gap-2 text-xs bg-white/5 px-3 py-2 rounded-lg">
+                      <Sparkles className="w-3 h-3 text-brand-blue" />
+                      <span className="text-foreground/80">{faculty.qualifications}</span>
+                    </div>
+                    {faculty.publications !== undefined && (
+                      <div className="flex items-center justify-between text-xs bg-brand-blue/5 px-3 py-2 rounded-lg">
+                        <span className="text-foreground/70">Publications:</span>
+                        <span className="font-semibold text-brand-blue">{faculty.publications}</span>
+                      </div>
+                    )}
+                    <div className="flex items-center justify-center gap-2 w-full px-3 py-2 text-xs font-medium text-brand-blue group-hover:bg-brand-blue/10 rounded-lg transition-colors border border-transparent group-hover:border-brand-blue/30">
                       <Mail className="w-3 h-3" />
                       View Profile
-                    </a>
-                  )}
-                </CardContent>
-              </Card>
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
             ))}
           </div>
         </div>
