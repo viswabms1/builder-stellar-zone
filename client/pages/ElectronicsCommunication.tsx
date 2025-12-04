@@ -15,7 +15,9 @@ import {
   Radio,
   Microchip,
   Wifi,
+  Mail,
 } from "lucide-react";
+import { eceFaculty } from "@/data/ece-faculty";
 
 export default function ElectronicsCommunication() {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
