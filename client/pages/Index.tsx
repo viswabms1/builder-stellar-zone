@@ -561,7 +561,7 @@ export default function Index() {
             <div className="lg:col-span-2">
               <button
                 onClick={() => setSelectedNews(currentFeatured)}
-                className="group w-full flex flex-col rounded-none border border-orange-500/20 bg-orange-500/10 cursor-pointer text-left bg-transparent hover:shadow-lg transition-all duration-500 overflow-hidden backdrop-blur-sm"
+                className="group w-full flex flex-col rounded-none border border-orange-500/20 bg-orange-500/10 cursor-pointer text-left hover:shadow-lg transition-all duration-500 overflow-hidden backdrop-blur-sm"
               >
                 {currentFeatured.isVideo ? (
                   <VideoWithFrameCapture
