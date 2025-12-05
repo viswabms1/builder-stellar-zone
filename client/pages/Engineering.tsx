@@ -661,9 +661,8 @@ function HeroVideo() {
     const video = videoRef.current;
     if (!video) return;
 
-    video.volume = 0;
-    video.muted = true;
-  }, []);
+    video.muted = isMuted;
+  }, [isMuted]);
 
   return (
     <div className="w-full h-screen relative overflow-hidden flex items-end md:items-center justify-start">
