@@ -435,7 +435,7 @@ export default function Index() {
               return (
                 <div
                   key={index}
-                  className={`${gradient} rounded-3xl min-h-64 p-8 flex flex-col justify-between transition-all duration-300 group hover:shadow-2xl hover:shadow-brand-magenta/20 hover:-translate-y-2 cursor-pointer`}
+                  className={`${gradient} rounded-3xl min-h-64 p-8 flex flex-col justify-between transition-all duration-300 group hover:shadow-2xl hover:shadow-brand-magenta/20 hover:-translate-y-2 cursor-pointer !border-0 !outline-none`}
                   style={{ animationDelay: school.delay }}
                 >
                   <div>
