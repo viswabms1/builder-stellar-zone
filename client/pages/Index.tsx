@@ -1008,7 +1008,7 @@ export default function Index() {
                   "Connect via email",
                 ].map((item) => (
                   <div key={item} className="flex items-start gap-3">
-                    <div className="mt-1 h-2.5 w-2.5 rounded-full bg-brand-magenta" />
+                    <div className="mt-1 h-2.5 w-2.5 rounded-none bg-brand-magenta" />
                     <p className="text-sm text-foreground font-body">
                       {item}
                     </p>
