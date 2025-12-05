@@ -539,7 +539,7 @@ export default function CampusLife() {
           </div>
 
           {/* Featured Story */}
-          <div className="relative overflow-hidden rounded-2xl h-96 mb-12 border border-border hover:border-orange-500/50 transition-colors group">
+          <div className="relative overflow-hidden rounded-none h-96 mb-12 border border-border hover:border-orange-500/50 transition-colors group">
             <img 
               src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=1200&h=400&fit=crop"
               alt="Featured Story"
