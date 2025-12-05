@@ -229,7 +229,7 @@ export default function Index() {
     return baseSchools.map((school) => ({
       ...school,
       title: t(`academics.${school.key}.title`),
-      description: t(`academics.${school.key}.description`),
+      description: "",
       programs: [
         t(`academics.${school.key}.programs.0`) || 'Program 1',
         t(`academics.${school.key}.programs.1`) || 'Program 2',
