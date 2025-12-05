@@ -467,7 +467,7 @@ function DepartmentCard({ department }: { department: EngineeringDepartment }) {
 
   const content = (
     <div
-      className={`relative flex h-full flex-col justify-end overflow-hidden rounded-3xl border border-white/10 bg-black/10 backdrop-blur-sm transition-all duration-700 hover:-translate-y-1 hover:shadow-2xl hover:shadow-brand-magenta/20 ${
+      className={`relative flex h-full flex-col justify-end overflow-hidden rounded-none border border-white/10 bg-black/10 backdrop-blur-sm transition-all duration-700 hover:-translate-y-1 hover:shadow-2xl hover:shadow-brand-magenta/20 ${
         department.featured ? "min-h-[360px]" : "min-h-[300px]"
       }`}
     >
