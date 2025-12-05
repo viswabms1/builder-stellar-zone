@@ -328,26 +328,30 @@ export default function Index() {
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-hidden">
-      {/* Hero Section with University Building */}
-      <section className="relative w-full min-h-screen py-8 sm:py-12 md:py-16 flex items-center justify-center">
-        {/* Background Video with Overlay */}
-        <div className="absolute inset-0 w-full max-h-[70vh]">
+      {/* Hero Section with Full-Screen Video Background */}
+      <section className="relative w-full h-screen flex items-end md:items-center justify-start overflow-hidden">
+        {/* Full-screen Background Video */}
+        <div className="absolute inset-0 w-full h-full">
           <HeroVideo />
         </div>
 
-        {/* Animated Background Elements */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 right-10 w-72 h-72 bg-brand-magenta/10 rounded-full filter blur-3xl animate-float"></div>
-          <div
-            className="absolute bottom-20 left-10 w-96 h-96 bg-brand-orange/10 rounded-full filter blur-3xl animate-float"
-            style={{ animationDelay: "2s" }}
-          ></div>
-        </div>
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-black/40"></div>
 
         {/* Hero Content */}
-        <div className="relative max-w-7xl mx-auto px-6 w-full z-10">
-          <div className="flex items-center justify-end w-full -mt-20 pr-8">
-            <div className="flex flex-col sm:flex-row gap-4 items-center sm:items-center">
+        <div className="relative max-w-7xl mx-auto px-6 w-full z-10 pb-20 md:pb-0">
+          <div className="max-w-2xl">
+            <p className="text-sm md:text-base text-white/80 mb-4 uppercase tracking-widest font-display">
+              {t('hero.tagline') || "Transform Your Future"}
+            </p>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight font-display">
+              {t('hero.mainHeading') || "Make DSU Yours"}
+            </h1>
+            <p className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed max-w-xl font-display">
+              {t('hero.subheading') || "Beat the admissions deadline and begin your transformative journey with us"}
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4">
               <a
                 href="https://admissions.dsu.edu.in/"
                 target="_blank"
@@ -356,9 +360,9 @@ export default function Index() {
               >
                 <Button
                   size="lg"
-                  className="bg-brand-gradient hover:opacity-90 text-white px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg font-semibold font-display rounded-xl sm:rounded-2xl shadow-lg hover:shadow-brand-magenta/25 transition-all duration-300 group"
+                  className="bg-white hover:bg-white/90 text-orange-600 hover:text-orange-700 px-8 py-6 text-base font-semibold font-display transition-all duration-300 group border-2 border-white"
                 >
-                  {t('hero.applyNow')}
+                  {t('hero.applyNow') || "Apply Today"}
                   <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </a>
@@ -371,12 +375,9 @@ export default function Index() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-2 border-white/30 bg-black/40 text-white
-             hover:bg-white hover:text-orange-600
-             px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg font-semibold font-display
-             rounded-xl sm:rounded-2xl transition-all duration-300 backdrop-blur-sm"
+                  className="border-2 border-white text-white hover:bg-white hover:text-orange-600 px-8 py-6 text-base font-semibold font-display transition-all duration-300"
                 >
-                  {t('hero.virtualTour')}
+                  {t('hero.virtualTour') || "Virtual Tour"}
                 </Button>
               </a>
             </div>
