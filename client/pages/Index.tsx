@@ -418,130 +418,125 @@ export default function Index() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {getSchoolsData().map((school, index) => (
-              <Card
-                key={index}
-                className="!border-0 bg-card/30 backdrop-blur-sm transition-all duration-300 group hover:shadow-2xl hover:shadow-brand-magenta/15 hover:-translate-y-2"
-                style={{ animationDelay: school.delay }}
-              >
-                <CardHeader>
-                  <div className="w-12 h-12 rounded-2xl bg-brand-magenta/10 flex items-center justify-center mb-4 group-hover:bg-brand-magenta/20 transition-colors">
-                    <school.icon className="w-6 h-6 text-brand-magenta group-hover:scale-110 transition-transform" />
-                  </div>
-                  {school.href ? (
-                    school.href.startsWith("http") ? (
-                      <a
-                        href={school.href}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="block rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-magenta/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-                      >
-                        <CardTitle className="headline-4 group-hover:text-brand-magenta transition-colors">
-                          {school.title}
-                        </CardTitle>
-                      </a>
-                    ) : (
-                      <Link
-                        to={school.href}
-                        className="block rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-magenta/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-                      >
-                        <CardTitle className="headline-4 group-hover:text-brand-magenta transition-colors">
-                          {school.title}
-                        </CardTitle>
-                      </Link>
-                    )
-                  ) : (
-                    <CardTitle className="headline-4 group-hover:text-brand-magenta transition-colors">
-                      {school.title}
-                    </CardTitle>
-                  )}
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <CardDescription className="text-foreground leading-relaxed font-body">
-                    {school.description}
-                  </CardDescription>
-                  <div className="space-y-2">
-                    <p className="text-sm font-medium text-foreground font-display">
-                      Popular Programs:
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      {school.programs.map((program, idx) =>
-                        school.title === "Engineering" &&
-                        program === "B.Tech CSE" ? (
-                          <Link
-                            key={idx}
-                            to="/academics/engineering/computer-science"
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {getSchoolsData().map((school, index) => {
+              const gradients = [
+                'bg-gradient-to-br from-brand-orange/80 to-brand-orange/40',
+                'bg-gradient-to-br from-brand-magenta/80 to-brand-magenta/40',
+                'bg-gradient-to-br from-brand-blue/80 to-brand-blue/40',
+                'bg-gradient-to-br from-brand-orange/70 to-brand-orange/30',
+                'bg-gradient-to-br from-brand-magenta/70 to-brand-magenta/30',
+                'bg-gradient-to-br from-brand-blue/70 to-brand-blue/30',
+                'bg-gradient-to-br from-brand-orange/75 to-brand-magenta/40',
+                'bg-gradient-to-br from-brand-blue/75 to-brand-magenta/40',
+              ];
+              const gradient = gradients[index % gradients.length];
+
+              return (
+                <div
+                  key={index}
+                  className={`${gradient} rounded-3xl min-h-64 p-8 flex flex-col justify-between transition-all duration-300 group hover:shadow-2xl hover:shadow-brand-magenta/20 hover:-translate-y-2 cursor-pointer`}
+                  style={{ animationDelay: school.delay }}
+                >
+                  <div>
+                    <div className="mb-6">
+                      {school.href ? (
+                        school.href.startsWith("http") ? (
+                          <a
+                            href={school.href}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="block"
                           >
-                            <Badge
-                              variant="secondary"
-                              className="text-xs font-body hover:bg-brand-magenta/20 hover:text-brand-magenta cursor-pointer"
-                            >
-                              {program}
-                            </Badge>
-                          </Link>
-                        ) : school.title === "Engineering" &&
-                        program === "B.Tech ECE" ? (
-                          <Link
-                            key={idx}
-                            to="/academics/engineering/electronics-communication"
-                          >
-                            <Badge
-                              variant="secondary"
-                              className="text-xs font-body hover:bg-brand-blue/20 hover:text-brand-blue cursor-pointer"
-                            >
-                              {program}
-                            </Badge>
-                          </Link>
+                            <h3 className="text-3xl font-bold text-white font-display hover:text-white/80 transition-colors">
+                              {school.title}
+                            </h3>
+                          </a>
                         ) : (
-                          <Badge
-                            key={idx}
-                            variant="secondary"
-                            className="text-xs font-body"
-                          >
-                            {program}
-                          </Badge>
-                        ),
+                          <Link to={school.href} className="block">
+                            <h3 className="text-3xl font-bold text-white font-display hover:text-white/80 transition-colors">
+                              {school.title}
+                            </h3>
+                          </Link>
+                        )
+                      ) : (
+                        <h3 className="text-3xl font-bold text-white font-display">
+                          {school.title}
+                        </h3>
                       )}
                     </div>
+
+                    <div className="space-y-3">
+                      <p className="text-xs font-semibold text-white/80 uppercase tracking-wider">
+                        Popular Programs:
+                      </p>
+                      <div className="flex flex-wrap gap-2">
+                        {school.programs.slice(0, 3).map((program, idx) =>
+                          school.title === "Engineering" &&
+                          program === "B.Tech CSE" ? (
+                            <Link
+                              key={idx}
+                              to="/academics/engineering/computer-science"
+                            >
+                              <Badge
+                                variant="secondary"
+                                className="text-xs font-body bg-white/30 text-white hover:bg-white/50 cursor-pointer"
+                              >
+                                {program}
+                              </Badge>
+                            </Link>
+                          ) : school.title === "Engineering" &&
+                          program === "B.Tech ECE" ? (
+                            <Link
+                              key={idx}
+                              to="/academics/engineering/electronics-communication"
+                            >
+                              <Badge
+                                variant="secondary"
+                                className="text-xs font-body bg-white/30 text-white hover:bg-white/50 cursor-pointer"
+                              >
+                                {program}
+                              </Badge>
+                            </Link>
+                          ) : (
+                            <Badge
+                              key={idx}
+                              variant="secondary"
+                              className="text-xs font-body bg-white/30 text-white"
+                            >
+                              {program}
+                            </Badge>
+                          ),
+                        )}
+                      </div>
+                    </div>
                   </div>
+
                   {school.href ? (
                     school.href.startsWith("http") ? (
                       <a href={school.href} target="_blank" rel="noreferrer">
-                        <Button
-                          variant="ghost"
-                          size="sm"
-                          className="w-full justify-between text-foreground group-hover:text-brand-magenta font-display transition-colors hover:bg-transparent"
-                        >
+                        <div className="text-white font-semibold text-sm flex items-center gap-2 mt-6 hover:gap-3 transition-all">
                           {t('buttons.learnMore')}
                           <ChevronRight className="w-4 h-4" />
-                        </Button>
+                        </div>
                       </a>
                     ) : (
                       <Link to={school.href}>
-                        <Button
-                          variant="ghost"
-                          size="sm"
-                          className="w-full justify-between text-foreground group-hover:text-brand-magenta font-display transition-colors hover:bg-transparent"
-                        >
+                        <div className="text-white font-semibold text-sm flex items-center gap-2 mt-6 hover:gap-3 transition-all">
                           {t('buttons.learnMore')}
                           <ChevronRight className="w-4 h-4" />
-                        </Button>
+                        </div>
                       </Link>
                     )
                   ) : (
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      className="w-full justify-between text-foreground group-hover:text-brand-magenta font-display transition-colors hover:bg-transparent"
-                    >
+                    <div className="text-white font-semibold text-sm flex items-center gap-2 mt-6">
                       Learn More
                       <ChevronRight className="w-4 h-4" />
-                    </Button>
+                    </div>
                   )}
-                </CardContent>
-              </Card>
-            ))}
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
