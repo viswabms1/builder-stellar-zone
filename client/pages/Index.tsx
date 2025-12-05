@@ -51,7 +51,8 @@ function HeroVideo() {
   };
 
   return (
-    <div className="w-full h-full">
+    <div className="w-full h-full relative overflow-hidden">
+      {/* Video with AI-enhanced effects */}
       <video
         ref={videoRef}
         src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F039b67f729094553afc521bcbf44f524?alt=media&token=f3f572a0-3afd-4a0a-9570-de176cc33653&apiKey=4aa279a8430d441dba9c55f659831878"
@@ -60,10 +61,35 @@ function HeroVideo() {
         loop
         playsInline
         className="w-full h-full object-cover"
+        style={{
+          filter: "brightness(1.1) contrast(1.15) saturate(1.2)"
+        }}
       />
+
+      {/* Animated Gradient Overlay - AI Effect */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/30 pointer-events-none"></div>
+
+      {/* Animated Corner Glow Effects */}
+      <div className="absolute top-0 left-0 w-96 h-96 bg-brand-magenta/5 rounded-full filter blur-3xl opacity-60 animate-float pointer-events-none"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-brand-orange/5 rounded-full filter blur-3xl opacity-60 animate-float pointer-events-none" style={{ animationDelay: "2s" }}></div>
+
+      {/* Subtle Scan Line Effect */}
+      <div className="absolute inset-0 opacity-5 pointer-events-none" style={{
+        backgroundImage: "repeating-linear-gradient(0deg, rgba(255,255,255,.03) 0px, rgba(255,255,255,.03) 1px, transparent 1px, transparent 2px)",
+        animation: "scanlines 8s linear infinite"
+      }}></div>
+
+      <style>{`
+        @keyframes scanlines {
+          0% { transform: translateY(0); }
+          100% { transform: translateY(10px); }
+        }
+      `}</style>
+
+      {/* Mute/Unmute Button */}
       <button
         onClick={toggleMute}
-        className="absolute top-8 right-8 z-10 p-3 rounded-full bg-black/50 hover:bg-black/70 transition-colors text-white"
+        className="absolute top-8 right-8 z-10 p-3 rounded-full bg-black/50 hover:bg-black/70 transition-colors text-white backdrop-blur-sm border border-white/20"
         aria-label={isMuted ? "Unmute" : "Mute"}
       >
         {isMuted ? (
