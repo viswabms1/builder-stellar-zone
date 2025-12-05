@@ -50,6 +50,33 @@ function HeroVideo() {
     }
   };
 
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const handleTimeUpdate = () => {
+      const currentTime = video.currentTime;
+
+      // First 10 seconds: normal speed (1x)
+      if (currentTime < 10) {
+        video.playbackRate = 1;
+      }
+      // 10-30 seconds: rapid speed (2x)
+      else if (currentTime >= 10 && currentTime < 30) {
+        video.playbackRate = 2;
+      }
+      // After 30 seconds: normal speed (1x)
+      else {
+        video.playbackRate = 1;
+      }
+    };
+
+    video.addEventListener("timeupdate", handleTimeUpdate);
+    return () => {
+      video.removeEventListener("timeupdate", handleTimeUpdate);
+    };
+  }, []);
+
   return (
     <div className="w-full h-full relative overflow-hidden">
       {/* Video with AI-enhanced effects */}
