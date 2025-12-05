@@ -824,15 +824,8 @@ function CalendarResourceCard({ entry }: { entry: CalendarEntry }) {
 export default function Engineering() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <section className="relative flex items-center justify-center px-6 pt-4 pb-16 md:min-h-screen" id="top">
-        <div className="w-full max-w-5xl">
-          <HeroVideo />
-          <div className="mt-6 text-center">
-            <h2 className="text-2xl md:text-3xl font-bold text-foreground font-display">
-              School of Engineering
-            </h2>
-          </div>
-        </div>
+      <section className="relative w-full" id="top">
+        <HeroVideo />
       </section>
 
       <section
