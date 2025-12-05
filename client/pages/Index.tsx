@@ -54,7 +54,7 @@ function HeroVideo() {
     <div className="w-full h-full">
       <video
         ref={videoRef}
-        src="https://videos.pexels.com/video-files/35040917/14843966_640_360_25fps.mp4"
+        src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F039b67f729094553afc521bcbf44f524?alt=media&token=f3f572a0-3afd-4a0a-9570-de176cc33653&apiKey=4aa279a8430d441dba9c55f659831878"
         autoPlay
         muted
         loop
