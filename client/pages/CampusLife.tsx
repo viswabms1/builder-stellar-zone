@@ -571,7 +571,7 @@ export default function CampusLife() {
                 isVideo: true,
               },
             ].map((story, index) => (
-              <div key={index} className="group relative overflow-hidden rounded-xl h-64 border border-border hover:border-orange-500/50 transition-colors cursor-pointer">
+              <div key={index} className="group relative overflow-hidden rounded-none h-64 border border-border hover:border-orange-500/50 transition-colors cursor-pointer">
                 {story.isVideo ? (
                   <video
                     src={story.video}
