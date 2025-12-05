@@ -57,17 +57,23 @@ function HeroVideo() {
     const handleTimeUpdate = () => {
       const currentTime = video.currentTime;
 
-      // First 10 seconds: normal speed (1x)
-      if (currentTime < 10) {
-        video.playbackRate = 1;
-      }
-      // 10-30 seconds: rapid speed (2x)
-      else if (currentTime >= 10 && currentTime < 30) {
-        video.playbackRate = 2;
-      }
-      // After 30 seconds: normal speed (1x)
-      else {
-        video.playbackRate = 1;
+      // Create dynamic speed variations for better visual engagement
+      if (currentTime < 8) {
+        video.playbackRate = 1; // Normal intro
+      } else if (currentTime < 12) {
+        video.playbackRate = 0.75; // Slow - highlight moment
+      } else if (currentTime < 15) {
+        video.playbackRate = 1.8; // Fast transition
+      } else if (currentTime < 20) {
+        video.playbackRate = 1; // Normal building view
+      } else if (currentTime < 28) {
+        video.playbackRate = 2.5; // Very rapid - showcase tour
+      } else if (currentTime < 35) {
+        video.playbackRate = 1.3; // Moderate speed - focus moment
+      } else if (currentTime < 42) {
+        video.playbackRate = 2; // Rapid - architectural details
+      } else {
+        video.playbackRate = 1; // Return to normal
       }
     };
 
