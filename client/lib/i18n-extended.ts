@@ -4,42 +4,42 @@ export const indexTranslations = {
     programs: {
       engineering: {
         title: "Engineering",
-        description: "Cutting-edge engineering education with practical immersion, industry mentorship, and future-ready specializations.",
+        description: "",
         programs: ["B.Tech CSE", "B.Tech Mechanical", "B.Tech ECE", "B.Tech Civil"],
       },
       computerApplications: {
         title: "Computer Applications",
-        description: "Build software careers with strong foundations in programming, data, cloud, and modern application development.",
+        description: "",
         programs: ["BCA", "MCA", "Data Science", "Cloud Computing"],
       },
       law: {
         title: "School of Law",
-        description: "Comprehensive legal education blending theory, practice, moot courts, internships, and research opportunities.",
+        description: "",
         programs: ["BA LLB", "BBA LLB", "LLB", "LLM"],
       },
       management: {
         title: "Commerce & Management Studies",
-        description: "Business education that merges core management with analytics, entrepreneurship, and industry projects.",
+        description: "",
         programs: ["B.Com", "BBA", "MBA", "Finance & Marketing"],
       },
       sciences: {
         title: "Basic & Applied Sciences",
-        description: "Foundational and interdisciplinary sciences with strong lab exposure and research-driven learning.",
+        description: "",
         programs: ["Physics", "Chemistry", "Mathematics", "Biotechnology"],
       },
       health: {
         title: "Health Sciences",
-        description: "Health professions education with clinical immersion, simulation labs, and strong patient-care focus.",
+        description: "",
         programs: ["Pharmacy", "Physiotherapy", "Nursing", "Allied Health"],
       },
       design: {
         title: "Design & Digital Trans Media",
-        description: "Design and digital media programs spanning UX/UI, graphics, animation, and storytelling for modern platforms.",
+        description: "",
         programs: ["Animation", "UX/UI", "Graphic Design", "Digital Media"],
       },
       medical: {
         title: "Medical Education & Research",
-        description: "Advanced medical education and translational research with a focus on innovation and community impact.",
+        description: "",
         programs: ["MBBS", "MD/MS", "Biomedical Research", "Public Health"],
       },
     },
