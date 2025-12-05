@@ -223,7 +223,7 @@ export default function CampusLife() {
             ].map((item, index) => (
               <div
                 key={index}
-                className={`${item.size || ''} relative group overflow-hidden rounded-xl border border-border hover:border-orange-500/50 transition-all duration-300 cursor-pointer`}
+                className={`${item.size || ''} relative group overflow-hidden rounded-none border border-border hover:border-orange-500/50 transition-all duration-300 cursor-pointer`}
               >
                 <img 
                   src={item.image}
