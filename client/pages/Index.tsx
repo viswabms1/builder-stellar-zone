@@ -515,21 +515,21 @@ export default function Index() {
                   {school.href ? (
                     school.href.startsWith("http") ? (
                       <a href={school.href} target="_blank" rel="noreferrer">
-                        <div className="text-white font-semibold text-sm flex items-center gap-2 mt-6 hover:gap-3 transition-all">
+                        <div className="text-foreground font-semibold text-sm flex items-center gap-2 mt-6 hover:gap-3 transition-all hover:text-brand-magenta">
                           {t('buttons.learnMore')}
                           <ChevronRight className="w-4 h-4" />
                         </div>
                       </a>
                     ) : (
                       <Link to={school.href}>
-                        <div className="text-white font-semibold text-sm flex items-center gap-2 mt-6 hover:gap-3 transition-all">
+                        <div className="text-foreground font-semibold text-sm flex items-center gap-2 mt-6 hover:gap-3 transition-all hover:text-brand-magenta">
                           {t('buttons.learnMore')}
                           <ChevronRight className="w-4 h-4" />
                         </div>
                       </Link>
                     )
                   ) : (
-                    <div className="text-white font-semibold text-sm flex items-center gap-2 mt-6">
+                    <div className="text-foreground font-semibold text-sm flex items-center gap-2 mt-6">
                       Learn More
                       <ChevronRight className="w-4 h-4" />
                     </div>
