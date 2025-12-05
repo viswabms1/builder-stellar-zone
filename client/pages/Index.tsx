@@ -93,6 +93,7 @@ function HeroVideo() {
         muted
         loop
         playsInline
+        volume={0}
         className="w-full h-full object-cover"
         style={{
           filter: "brightness(1.1) contrast(1.15) saturate(1.2)"
