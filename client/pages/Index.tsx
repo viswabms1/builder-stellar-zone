@@ -420,22 +420,22 @@ export default function Index() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-0">
             {getSchoolsData().map((school, index) => {
-              const gradients = [
-                'bg-gradient-to-br from-orange-600 to-orange-500',
-                'bg-gradient-to-br from-pink-600 to-pink-500',
-                'bg-gradient-to-br from-blue-600 to-blue-500',
-                'bg-gradient-to-br from-emerald-600 to-emerald-500',
-                'bg-gradient-to-br from-purple-600 to-purple-500',
-                'bg-gradient-to-br from-cyan-600 to-cyan-500',
-                'bg-gradient-to-br from-amber-600 to-amber-500',
-                'bg-gradient-to-br from-rose-600 to-rose-500',
+              const styles = [
+                { bg: 'bg-orange-500/10', border: 'border-orange-500/20' },
+                { bg: 'bg-pink-500/10', border: 'border-pink-500/20' },
+                { bg: 'bg-blue-500/10', border: 'border-blue-500/20' },
+                { bg: 'bg-emerald-500/10', border: 'border-emerald-500/20' },
+                { bg: 'bg-purple-500/10', border: 'border-purple-500/20' },
+                { bg: 'bg-cyan-500/10', border: 'border-cyan-500/20' },
+                { bg: 'bg-amber-500/10', border: 'border-amber-500/20' },
+                { bg: 'bg-rose-500/10', border: 'border-rose-500/20' },
               ];
-              const gradient = gradients[index % gradients.length];
+              const style = styles[index % styles.length];
 
               return (
                 <div
                   key={index}
-                  className={`${gradient} rounded-none min-h-64 p-8 flex flex-col justify-between transition-all duration-300 group hover:shadow-2xl hover:shadow-brand-magenta/20 hover:-translate-y-2 cursor-pointer`}
+                  className={`${style.bg} ${style.border} border rounded-none min-h-64 p-8 flex flex-col justify-between transition-all duration-300 group hover:shadow-lg hover:shadow-brand-magenta/10 hover:-translate-y-2 cursor-pointer backdrop-blur-sm`}
                   style={{ animationDelay: school.delay }}
                 >
                   <div>
@@ -448,26 +448,26 @@ export default function Index() {
                             rel="noreferrer"
                             className="block"
                           >
-                            <h3 className="text-3xl font-bold text-white font-display hover:text-white/80 transition-colors">
+                            <h3 className="text-3xl font-bold text-foreground font-display hover:text-brand-magenta transition-colors">
                               {school.title}
                             </h3>
                           </a>
                         ) : (
                           <Link to={school.href} className="block">
-                            <h3 className="text-3xl font-bold text-white font-display hover:text-white/80 transition-colors">
+                            <h3 className="text-3xl font-bold text-foreground font-display hover:text-brand-magenta transition-colors">
                               {school.title}
                             </h3>
                           </Link>
                         )
                       ) : (
-                        <h3 className="text-3xl font-bold text-white font-display">
+                        <h3 className="text-3xl font-bold text-foreground font-display">
                           {school.title}
                         </h3>
                       )}
                     </div>
 
                     <div className="space-y-3">
-                      <p className="text-xs font-semibold text-white/80 uppercase tracking-wider">
+                      <p className="text-xs font-semibold text-foreground/60 uppercase tracking-wider">
                         Popular Programs:
                       </p>
                       <div className="flex flex-wrap gap-2">
