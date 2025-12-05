@@ -502,7 +502,7 @@ export default function Index() {
                             <Badge
                               key={idx}
                               variant="secondary"
-                              className="text-xs font-body bg-white/30 text-white"
+                              className="text-xs font-body bg-white/30 text-white !border-0"
                             >
                               {program}
                             </Badge>
