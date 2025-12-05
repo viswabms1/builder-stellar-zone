@@ -887,7 +887,7 @@ export default function Engineering() {
                   <img
                     src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fb0960f67ec5541b7bc257c9ecfe8e30b?format=webp&width=800"
                     alt="Dr. Udaya Kumar Reddy K R"
-                    className="w-full h-auto object-cover rounded-2xl border-4 border-white/20"
+                    className="w-full h-auto object-cover rounded-none border-4 border-white/20"
                   />
                   <div
                     className="absolute -left-2 top-0 bottom-0 w-1 bg-gradient-to-b from-brand-orange via-brand-magenta to-brand-blue"
