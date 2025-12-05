@@ -1000,7 +1000,7 @@ export default function Index() {
                 </Link>
               </div>
             </div>
-            <div className="rounded-2xl border border-border/50 bg-card/60 p-6 backdrop-blur-sm">
+            <div className="rounded-none border border-border/50 bg-card/60 p-6 backdrop-blur-sm">
               <div className="grid gap-4">
                 {[
                   "Search across schools",
