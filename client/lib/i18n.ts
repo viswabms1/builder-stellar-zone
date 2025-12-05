@@ -30,7 +30,6 @@ export const translations = {
       learnMore: 'Learn More',
       engineering: {
         title: 'Engineering',
-        description: 'Cutting-edge engineering education with practical immersion, industry mentorship, and future-ready specializations.',
         programs: ['B.Tech CSE', 'B.Tech Mechanical', 'B.Tech ECE', 'B.Tech Civil'],
       },
       computerApplications: {
@@ -71,7 +70,6 @@ export const translations = {
     },
     popularPrograms: {
       title: 'Popular Programs',
-      description: 'Explore our most sought-after programs',
     },
     about: {
       title: 'About Dayananda Sagar University',
@@ -242,7 +240,6 @@ export const translations = {
       learnMore: 'ಇನ್ನೂ ಕಲಿಯಿರಿ',
       engineering: {
         title: 'ಎಂಜಿನಿಯರಿಂಗ್',
-        description: 'ಪ್ರಾಯೋಗಿಕ ನಿಮಜ್ಜನ, ಶಿಲ್ಪ ಮಾರ್ಗದರ್ಶನ ಮತ್ತು ಭವಿಷ್ಯತ್ತಿನ ತಜ್ಞತೆಯೊಂದಿಗೆ ಅತ್ಯಾಧುನಿಕ ಎಂಜಿನಿಯರಿಂಗ್ ಶಿಕ್ಷೆ.',
         programs: ['B.Tech CSE', 'B.Tech ಮೆಕ್ಯಾನಿಕಲ್', 'B.Tech ECE', 'B.Tech ನಿರ್ಮಾಣ'],
       },
       computerApplications: {
@@ -283,7 +280,6 @@ export const translations = {
     },
     popularPrograms: {
       title: 'ಜನಪ್ರಿಯ ಕಾರ್ಯಸೂಚಿ',
-      description: 'ನಮ್ಮ ಅತ್ಯಂತ ಹುಡುಕಿದ ಕಾರ್ಯಸೂಚಿಗಳನ್ನು ಅನ್ವೇಷಣ ಮಾಡಿ',
     },
     about: {
       title: 'ದಯಾನಂದ ಸಾಗರ ವಿಶ್ವವಿದ್ಯಾಲಯದ ಬಗ್ಗೆ',
@@ -449,7 +445,6 @@ export const translations = {
       learnMore: 'और जानें',
       engineering: {
         title: 'इंजीनियरिंग',
-        description: 'व्यावहारिक विसर्जन, उद्योग मार्गदर्शन और भविष्य-तैयार विशेषज्ञता के साथ अत्याधुनिक इंजीनियरिंग शिक्षा।',
         programs: ['B.Tech CSE', 'B.Tech यांत्रिक', 'B.Tech ECE', 'B.Tech सिविल'],
       },
       computerApplications: {
@@ -490,7 +485,6 @@ export const translations = {
     },
     popularPrograms: {
       title: 'लोकप्रिय कार्यक्रम',
-      description: 'हमारे सबसे मांग वाले प्रोग्राम की खोज करें',
     },
     about: {
       title: 'दयानंद सागर विश्वविद्यालय के बारे में',
