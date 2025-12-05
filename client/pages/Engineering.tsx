@@ -452,7 +452,7 @@ const INNOVATION_LABS = [
 
 function DepartmentCard({ department }: { department: EngineeringDepartment }) {
   const isInternal = department.link.startsWith("/");
-  const wrapperClasses = `group block h-full rounded-3xl ${
+  const wrapperClasses = `group block h-full rounded-none ${
     department.featured ? "lg:col-span-6" : "lg:col-span-3"
   } focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-magenta focus-visible:ring-offset-2 focus-visible:ring-offset-background`;
   const overlayClasses =
@@ -789,7 +789,7 @@ function DeanMessageVideo() {
 
 function CalendarResourceCard({ entry }: { entry: CalendarEntry }) {
   return (
-    <Card className="h-full rounded-3xl border border-border/40 bg-card/60 backdrop-blur">
+    <Card className="h-full rounded-none border border-purple-500/20 bg-purple-500/10 backdrop-blur">
       <CardHeader className="pb-2">
         <div className="flex items-center justify-between gap-4">
           <Badge className="bg-brand-magenta/15 text-brand-magenta">
@@ -842,11 +842,11 @@ export default function Engineering() {
               Why Students and Industry Choose DSU Engineering
             </h2>
           </div>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-4">
             {USP_HIGHLIGHTS.map((highlight) => (
               <Card
                 key={highlight.title}
-                className="group relative h-80 overflow-hidden rounded-3xl border border-border/40 bg-card/40 backdrop-blur-sm transition-all duration-700 hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-magenta/10"
+                className="group relative h-80 overflow-hidden rounded-none border border-blue-500/20 bg-blue-500/10 backdrop-blur-sm transition-all duration-700 hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-magenta/10"
               >
                 <img
                   src={highlight.image}
@@ -879,7 +879,7 @@ export default function Engineering() {
       {/* Dean's Message Section */}
       <section className="relative overflow-hidden px-6 py-16">
         <div className="mx-auto max-w-7xl">
-          <div className="rounded-3xl border border-border/50 bg-card/60 overflow-hidden backdrop-blur">
+          <div className="rounded-none border border-orange-500/20 bg-orange-500/10 overflow-hidden backdrop-blur">
             <div className="grid md:grid-cols-[300px_1fr] gap-0">
               {/* Dean's Photo */}
               <div className="relative overflow-hidden bg-gradient-to-br from-brand-magenta/10 to-brand-blue/10 flex items-start justify-center p-8 md:p-12 pt-8 md:pt-12">
@@ -953,7 +953,7 @@ export default function Engineering() {
                 Choose from future-proof majors and emerging specialisations
               </p>
             </div>
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-12">
+            <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-12">
               {ENGINEERING_DEPARTMENTS.map((department) => (
                 <DepartmentCard key={department.name} department={department} />
               ))}
@@ -973,7 +973,7 @@ export default function Engineering() {
                 Advance into research, product leadership and domain expertise
               </p>
             </div>
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-3">
               {PG_PROGRAM_CARDS.map((program) => (
                 <ProgramCardComponent key={program.name} program={program} />
               ))}
@@ -1011,7 +1011,7 @@ export default function Engineering() {
               <ChevronRight className="h-4 w-4" />
             </a>
           </div>
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          <div className="grid gap-0 md:grid-cols-2 xl:grid-cols-3">
             {SUPPORTING_DEPARTMENTS.map((department) => (
               <SupportingDepartmentCard
                 key={department.name}
