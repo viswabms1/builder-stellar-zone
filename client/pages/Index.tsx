@@ -753,19 +753,23 @@ export default function Index() {
                 </div>
 
                 {/* Upcoming Events List - Right side */}
-                <div className="lg:col-span-1 space-y-4">
+                <div className="lg:col-span-1 space-y-0">
                   <h3 className="text-lg font-bold text-foreground mb-6 font-display">
                     More Events
                   </h3>
-                  <div className="space-y-4">
+                  <div className="space-y-0">
                     {events.map((event, idx) => (
                       <button
                         key={idx}
                         onClick={() => setSelectedEventIndex(idx)}
-                        className={`group rounded-xl border transition-all cursor-pointer w-full text-left p-4 ${
+                        className={`group rounded-none border transition-all cursor-pointer w-full text-left p-4 backdrop-blur-sm ${
                           selectedEventIndex === idx
                             ? "border-brand-magenta bg-brand-magenta/10 shadow-lg shadow-brand-magenta/10"
-                            : "border-border/40 bg-card/40 backdrop-blur-sm hover:border-brand-magenta/50 hover:shadow-lg hover:shadow-brand-magenta/5"
+                            : idx % 3 === 0
+                            ? "border-blue-500/20 bg-blue-500/10 hover:border-brand-magenta/50 hover:shadow-lg hover:shadow-brand-magenta/5"
+                            : idx % 3 === 1
+                            ? "border-purple-500/20 bg-purple-500/10 hover:border-brand-magenta/50 hover:shadow-lg hover:shadow-brand-magenta/5"
+                            : "border-orange-500/20 bg-orange-500/10 hover:border-brand-magenta/50 hover:shadow-lg hover:shadow-brand-magenta/5"
                         }`}
                       >
                         <div className="flex gap-4">
