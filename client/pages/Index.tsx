@@ -54,12 +54,12 @@ function HeroVideo() {
     <div className="w-full h-full">
       <video
         ref={videoRef}
-        src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2Fb2a2d6a649384d9a8877da557407b50d?alt=media&token=2f05bb7f-44da-43da-bec8-fc878d01453b&apiKey=4aa279a8430d441dba9c55f659831878"
+        src="https://videos.pexels.com/video-files/20132260/20132260-sd_960_540_30fps.mp4"
         autoPlay
         muted
         loop
         playsInline
-        className="w-full h-full object-contain"
+        className="w-full h-full object-cover"
       />
       <button
         onClick={toggleMute}
