@@ -353,7 +353,7 @@ export default function CampusLife() {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Image */}
-            <div className="relative overflow-hidden rounded-2xl h-96 border border-orange-500/20 group">
+            <div className="relative overflow-hidden rounded-none h-96 border border-orange-500/20 group">
               <img
                 src="https://static.wixstatic.com/media/a57b29_7432beeeab194cf19d467960322ed7b7~mv2.jpg/v1/fit/w_960,h_960,q_90,enc_avif,quality_auto/a57b29_7432beeeab194cf19d467960322ed7b7~mv2.jpg"
                 alt="Centre for Performing Arts - Vibrations"
