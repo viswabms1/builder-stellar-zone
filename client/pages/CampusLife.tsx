@@ -126,7 +126,7 @@ export default function CampusLife() {
             },
           ].map((facility, index) => (
             <div key={index} className={`mb-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-center ${index % 2 === 1 ? 'md:grid-cols-2 md:[&>:first-child]:order-2' : ''}`}>
-              <div className="relative overflow-hidden rounded-2xl h-80 border border-border hover:border-orange-500/50 transition-colors group">
+              <div className="relative overflow-hidden rounded-none h-80 border border-border hover:border-orange-500/50 transition-colors group">
                 <img
                   src={facility.image}
                   alt={facility.title}
