@@ -545,7 +545,7 @@ function SupportingDepartmentCard({
       rel="noreferrer"
       className="group block h-full transform transition-all duration-500 hover:-translate-y-1"
     >
-      <Card className="h-full overflow-hidden rounded-3xl border border-border/50 bg-card/60 backdrop-blur">
+      <Card className="h-full overflow-hidden rounded-none border border-purple-500/20 bg-purple-500/10 backdrop-blur">
         <div className="relative h-48 overflow-hidden">
           <img
             src={department.image}
