@@ -458,10 +458,10 @@ function DepartmentCard({ department }: { department: EngineeringDepartment }) {
   const overlayClasses =
     department.overlay ??
     "bg-gradient-to-t from-black/85 via-black/50 to-transparent";
-  const badgeClasses = `inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs uppercase tracking-wide ${
+  const badgeClasses = `inline-flex items-center gap-2 rounded-none px-3 py-1 text-xs uppercase tracking-wide ${
     department.badgeClass ?? "bg-white/15 text-foreground/80 backdrop-blur"
   }`;
-  const panelClasses = `rounded-3xl border border-white/15 p-6 shadow-[0_25px_80px_-35px_rgba(255,255,255,0.45)] transition-colors duration-500 ${
+  const panelClasses = `rounded-none border border-white/15 p-6 shadow-[0_25px_80px_-35px_rgba(255,255,255,0.45)] transition-colors duration-500 ${
     department.panelClass ?? "bg-black/60 backdrop-blur-lg"
   }`;
 
