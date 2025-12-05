@@ -403,7 +403,15 @@ export default function Academics() {
                 key={index}
                 className={`group relative overflow-hidden ${
                   feature.customHeight || "h-80"
-                } rounded-none border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-xl hover:shadow-brand-magenta/10 transition-all duration-500 hover:-translate-y-1 flex flex-col`}
+                } rounded-none border backdrop-blur-sm hover:shadow-lg hover:shadow-brand-magenta/10 transition-all duration-500 hover:-translate-y-1 flex flex-col ${
+                  index % 4 === 0
+                    ? "bg-blue-500/10 border-blue-500/20"
+                    : index % 4 === 1
+                    ? "bg-orange-500/10 border-orange-500/20"
+                    : index % 4 === 2
+                    ? "bg-cyan-500/10 border-cyan-500/20"
+                    : "bg-rose-500/10 border-rose-500/20"
+                }`}
               >
                 <div
                   className={`flex-1 overflow-hidden ${
