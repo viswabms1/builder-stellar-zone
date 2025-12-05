@@ -422,7 +422,7 @@ export default function Index() {
             {getSchoolsData().map((school, index) => (
               <Card
                 key={index}
-                className="bg-card/30 backdrop-blur-sm transition-all duration-300 group hover:shadow-2xl hover:shadow-brand-magenta/15 hover:-translate-y-2"
+                className="!border-0 bg-card/30 backdrop-blur-sm transition-all duration-300 group hover:shadow-2xl hover:shadow-brand-magenta/15 hover:-translate-y-2"
                 style={{ animationDelay: school.delay }}
               >
                 <CardHeader>
