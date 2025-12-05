@@ -52,7 +52,7 @@ export default function CampusLife() {
         </div>
 
         <div className="relative h-full flex items-center justify-start text-left max-w-7xl mx-auto px-6">
-          <div className="bg-black/40 backdrop-blur-sm rounded-3xl px-6 md:px-8 py-8 max-w-xl">
+          <div className="bg-black/40 backdrop-blur-sm rounded-none px-6 md:px-8 py-8 max-w-xl">
             <div className="inline-flex items-center px-4 py-2 bg-orange-500/20 rounded-full border border-orange-500/40 mb-4">
               <Heart className="w-4 h-4 text-orange-300 mr-2" />
               <span className="text-sm font-medium text-orange-200">
@@ -143,7 +143,7 @@ export default function CampusLife() {
                 <div className="space-y-2 mb-6">
                   {facility.features.map((feature) => (
                     <div key={feature} className="flex items-center text-foreground">
-                      <span className="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>
+                      <span className="w-2 h-2 bg-orange-500 rounded-none mr-3"></span>
                       {feature}
                     </div>
                   ))}
