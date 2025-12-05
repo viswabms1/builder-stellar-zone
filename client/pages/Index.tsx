@@ -480,7 +480,7 @@ export default function Index() {
                             >
                               <Badge
                                 variant="secondary"
-                                className="text-xs font-body bg-white/30 text-white hover:bg-white/50 cursor-pointer !border-0"
+                                className="text-xs font-body bg-foreground/10 text-foreground hover:bg-foreground/20 cursor-pointer !border-0"
                               >
                                 {program}
                               </Badge>
@@ -493,7 +493,7 @@ export default function Index() {
                             >
                               <Badge
                                 variant="secondary"
-                                className="text-xs font-body bg-white/30 text-white hover:bg-white/50 cursor-pointer !border-0"
+                                className="text-xs font-body bg-foreground/10 text-foreground hover:bg-foreground/20 cursor-pointer !border-0"
                               >
                                 {program}
                               </Badge>
@@ -502,7 +502,7 @@ export default function Index() {
                             <Badge
                               key={idx}
                               variant="secondary"
-                              className="text-xs font-body bg-white/30 text-white !border-0"
+                              className="text-xs font-body bg-foreground/10 text-foreground !border-0"
                             >
                               {program}
                             </Badge>
