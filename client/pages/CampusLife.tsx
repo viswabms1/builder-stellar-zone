@@ -555,7 +555,7 @@ export default function CampusLife() {
           </div>
 
           {/* Story Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
             {[
               {
                 title: "Friendship & Bonding",
