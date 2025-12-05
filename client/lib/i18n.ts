@@ -34,37 +34,30 @@ export const translations = {
       },
       computerApplications: {
         title: 'Computer Applications',
-        description: 'Build software careers with strong foundations in programming, data, cloud, and modern application development.',
         programs: ['BCA', 'MCA', 'Data Science', 'Cloud Computing'],
       },
       law: {
         title: 'School of Law',
-        description: 'Comprehensive legal education blending theory, practice, moot courts, internships, and research opportunities.',
         programs: ['BA LLB', 'BBA LLB', 'LLB', 'LLM'],
       },
       management: {
         title: 'Commerce & Management Studies',
-        description: 'Business education that merges core management with analytics, entrepreneurship, and industry projects.',
         programs: ['B.Com', 'BBA', 'MBA', 'Finance & Marketing'],
       },
       sciences: {
         title: 'Basic & Applied Sciences',
-        description: 'Foundational and interdisciplinary sciences with strong lab exposure and research-driven learning.',
         programs: ['Physics', 'Chemistry', 'Mathematics', 'Biotechnology'],
       },
       health: {
         title: 'Health Sciences',
-        description: 'Health professions education with clinical immersion, simulation labs, and strong patient-care focus.',
         programs: ['Pharmacy', 'Physiotherapy', 'Nursing', 'Allied Health'],
       },
       design: {
         title: 'Design & Digital Trans Media',
-        description: 'Design and digital media programs spanning UX/UI, graphics, animation, and storytelling for modern platforms.',
         programs: ['Animation', 'UX/UI', 'Graphic Design', 'Digital Media'],
       },
       medical: {
         title: 'Medical Education & Research',
-        description: 'Advanced medical education and translational research with a focus on innovation and community impact.',
         programs: ['MBBS', 'MD', 'DM', 'Fellowship'],
       },
     },
@@ -78,7 +71,6 @@ export const translations = {
       leadership: 'Leadership',
       facilities: 'Facilities',
       accreditations: 'Accreditations',
-      description: 'Dayananda Sagar University is a premier institution dedicated to excellence in education, research, and innovation.',
       aboutTitle: 'About Dayananda Sagar University',
       aboutHero: 'A centre of excellence in education, research & training, innovation & entrepreneurship producing citizens with exceptional leadership qualities',
       legacy: 'Our Legacy',
@@ -86,7 +78,6 @@ export const translations = {
     },
     admissions: {
       title: 'Admissions',
-      description: 'Join our vibrant community of learners and innovators',
       applyNow: 'Apply Now',
       viewEligibility: 'View Eligibility Criteria',
       internationalStudents: 'International Students',
@@ -102,14 +93,12 @@ export const translations = {
     },
     placements: {
       title: 'Placements',
-      description: 'Career Services and Placement Support',
       placementRate: 'Placement Rate',
       averagePackage: 'Average Package',
       topRecruiters: 'Top Recruiters',
     },
     research: {
       title: 'Research & Innovation',
-      description: 'Pioneering Innovation for Tomorrow',
       researchCenters: 'Research Centers',
       publications: 'Publications',
       patents: 'Patents',
@@ -244,37 +233,30 @@ export const translations = {
       },
       computerApplications: {
         title: 'ಕಂಪ್ಯೂಟರ್ ಅನ್ವಯಗಳು',
-        description: 'ಪ್ರೋಗ್ರಾಮಿಂಗ್, ಡೇಟಾ, ಕ್ಲೌಡ್ ಮತ್ತು ಆಧುನಿಕ ಅನ್ವಯ ಅಭಿವೃದ್ಧಿಯಲ್ಲಿ ಬಲವಾದ ಆಧಾರಗಳ���ಂದಿಗೆ ತಂತ್ರಜ್ಞ ಕ್ಷೇತ್ರ ನಿರ್ಮಾಣ.',
         programs: ['BCA', 'MCA', 'ಡೇಟಾ ಸೈನ್ಸ್', 'ಕ್ಲೌಡ್ ಕಂಪ್ಯೂಟಿಂಗ್'],
       },
       law: {
         title: 'ಕಾನೂನು ಶಾಲೆ',
-        description: 'ಆದರ್ಶ ನ್ಯಾಯ, ಅಭ್ಯಾಸ, ಮಾಕ್ ಕೋರ್ಟ್‌ಗಳು, ಶಿಕ್ಷಾನ್ವೇಷಣೆ ಮತ್ತು ಸಂಶೋಧನಾ ಅವಕಾಶಗಳನ್ನು ಮಿಶ್ರ ಮಿಶ್ರ ಕಾನೂನು ಶಿಕ್ಷೆ.',
         programs: ['BA LLB', 'BBA LLB', 'LLB', 'LLM'],
       },
       management: {
         title: 'ವಿಷಯಾಧಿಕಾರ ಮತ್ತು ನಿರ್ವಹಣೆ ಅಧ್ಯಯನ',
-        description: 'ಭಿನ್ನಾಭಿಪ್ರಾಯ ನಿರ್ವಹಣೆ, ವಿಶ್ಲೇಷಣ, ಉದ್ಯೋಗಿತೆ ಮತ್ತು ಶಿಲ್ಪ ಯೋಜನೆಗಳೊಂದಿಗೆ ಮಿಶ್ರ ವ್ಯವಸಾಯ ಶಿಕ್ಷೆ.',
         programs: ['B.Com', 'BBA', 'MBA', 'ವಿತ್ತ ಮತ್ತು ಮಾರ್ಕೆಟಿಂಗ್'],
       },
       sciences: {
         title: 'ಮೂಲಭೂತ ಮತ್ತು ಪ್ರಯುಕ್ತ ವಿಜ್ಞಾನ',
-        description: 'ಪ��ರಾಬಲ್ಯ ಪ್ರಯೋಗಾಲೋ ಅನ್ವೇಷಣೆ ಮತ್ತು ಸಂಶೋಧನಾ-ಚಾಲಿತ ಕಲಿಕೆಯೊಂದಿಗೆ ಮೂಲಭೂತ ಮತ್ತು ಅಂತರ್ವಿಷಯೀಯ ವಿಜ���ಞಾನ.',
         programs: ['ಭೌತಶಾಸ್ತ್ರ', 'ರಸಾಯನಶಾಸ್ತ್ರ', 'ಗಣಿತ', 'ಜೀವಪ್ರಯುಕ್ತಿ'],
       },
       health: {
         title: 'ಆರೋಗ್ಯ ವಿಜ್ಞಾನ',
-        description: 'ಕ್ಲಿನಿಕಲ್ ನಿಮಜ್ಜನ, ಸಿಮುಲೇಶನ್ ಲ್ಯಾಬ್‌ಗಳು ಮತ್ತು ಬಲವಾದ ರೋಗಿ-ಕಾಳಜಿ ಫೋಕಸ್‌ನೊಂದಿಗೆ ಆರೋಗ್ಯ ಪೇಶೆ ಶಿಕ್ಷೆ.',
         programs: ['ಫಾರ್ಮಸಿ', 'ಜೈವಿಕ ಚಿಕಿತ್ಸೆ', 'ನರ್ಸಿಂಗ್', 'ಬೆಂಬಲಿತ ಆರೋಗ್ಯ'],
       },
       design: {
         title: 'ಡಿজಾಇನ್ ಮತ್ತು ಡಿಜಿಟಲ್ ಟ್ರಾನ್ಸ್ ಮಿಡಿಯಾ',
-        description: 'UX/UI, ಗ್ರಾಫಿಕ್ಸ್, ಆನಿಮೇಷನ್ ಮತ್ತು ಆಧುನಿಕ ಪ್ಲಾಟ್‌ಫಾರ್ಮ್‌ಗಳಿಗೆ ಕಥೆ ಹೇಳುವ ಡಿಜಾಇನ್ ಮತ್ತು ಡಿಜಿಟಲ್ ಮಾಧ್ಯಮ ಕಾರ್ಯಸೂಚಿ.',
         programs: ['ಆನಿಮೇಷನ್', 'UX/UI', 'ಗ್ರಾಫಿಕ್ ಡಿಜಾಇನ್', 'ಡಿಜಿಟಲ್ ಮಾಧ್ಯಮ'],
       },
       medical: {
         title: 'ವೈದ್ಯಕೀಯ ಶಿಕ್ಷೆ ಮತ್ತು ಸಂಶೋಧನೆ',
-        description: 'ನವೀನತೆ ಮತ್ತು ಸಮುದಾಯ ಪ್ರಭಾವಕ್ಕೆ ಕೇಂದ್ರೀಭೂತವಾದ ಅತ್ಯಾಧುನಿಕ ವೈದ್ಯಕೀಯ ಶಿಕ್ಷೆ ಮತ್ತು ರೂಪಾಂತರಾತ್ಮಕ ಸಂಶೋಧನೆ.',
         programs: ['MBBS', 'MD', 'DM', 'ಫೆಲೋಶಿಪ್'],
       },
     },
@@ -288,18 +270,15 @@ export const translations = {
       leadership: 'ನೇತೃತ್ವ',
       facilities: 'ಸೌಲಭ್ಯ',
       accreditations: 'ಮಾನ್ಯತೆ',
-      description: 'ದಯಾನಂದ ಸಾಗರ ವಿಶ್ವವಿದ್ಯಾಲಯವು ಶಿಕ್ಷೆ, ಸಂಶೋಧನೆ ಮತ್ತು ನವೀನತೆಯಲ್ಲಿ ಉತ್ಕರ್ಷತೆಗೆ ಪ್ರತಿಶ್ರ��ತ ಒಂದು ಪ್ರಧಾನ ಸಂಸ್ಥೆ.',
     },
     admissions: {
       title: 'ಪ್ರವೇಶ',
-      description: 'ಕಲಿಕೆ ಮತ್ತು ನವ��ಕರ್ಮಕಗಳ ನಮ್ಮ ಚೈತನ್ಯಮಂಡಿಗೆ ಸೇರಿಸಿಕೊಳ್ಳಿ',
       applyNow: 'ಈಗ ಅರ್ಜಿ ಹಾಕಿ',
       viewEligibility: 'ಅರ್ಹತೆಯ ಮಾನದಂಡವನ್ನು ವೀಕ್ಷಣ ಮಾಡಿ',
       internationalStudents: 'ಅಂತರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾರ್ಥಿಗಳು',
     },
     campusLife: {
       title: 'ಕ್ಯಾಂಪಸ್ ಜೀವನ',
-      description: 'ಕೇವಲ ಶಿಕ್ಷೆ ಹೆಚ್ಚಿನದು ಆಗಿದೆ - ಇದು ಮನೆ',
       subheadline: 'ಸ್ನೇಹಮಯ ಬೆಳೆದ ತಜ್ಞತೆ ಶೋಧಿಸಲಾಗುತ್ತದೆ ಮತ್ತು ಸ್ಮೃತಿಗಳ ನಿರ್ಮಾಣ ಮಾಡಲಾಗುತ್ತದೆ ಏಕ ಕ್ಯಾಂಪಸ್ ಸಮುದಾಯದ ಅನುಭ��ವನ್ನು ನಿರ್ಮಾಣ ಮಾಡಿ.',
       studentStories: 'ವಿದ್ಯಾರ್ಥಿ ಕಥೆಗಳು',
       events: 'ಈವೆಂಟ್‌ಗಳು ಮತ್ತು ಕ್ರಿಯೆಕಲಾಪಗಳು',
@@ -308,14 +287,12 @@ export const translations = {
     },
     placements: {
       title: 'ನೇಮಕಾತಿ',
-      description: 'ಕ್ಯಾರಿಯರ್ ಸೇವೆಗಳು ಮತ್ತು ನೇಮಕಾತಿ ಬೆಂಬಲ',
       placementRate: 'ನೇಮಕಾತಿ ದರ',
       averagePackage: 'ಸರಾಸರಿ ಪ್ಯಾಕೇಜ್',
       topRecruiters: 'ಅಗ್ರ ನೇಮಕಾತಿದಾರ',
     },
     research: {
       title: 'ಸಂಶೋಧನೆ ಮತ್ತು ನವೀನತೆ',
-      description: 'ನಾಳೆಗೆ ಪಥಪ್ರದರ್ಶಕ ನವೀನತೆ',
       researchCenters: 'ಸಂಶೋಧನೆ ಕೇಂದ್ರಗಳು',
       publications: 'ಪ್ರಕಾಶನಗಳು',
       patents: 'ಪೇಟೆಂಟ್‌ಗಳು',
@@ -449,37 +426,30 @@ export const translations = {
       },
       computerApplications: {
         title: 'कंप्यूटर अनुप्रयोग',
-        description: 'प्रोग्रामिंग, डेटा, क्लाउड और आधुनिक एप्लिकेशन विकास में मजबूत नींव के साथ सॉफ्टवेयर कैरियर बनाएं।',
         programs: ['BCA', 'MCA', 'डेटा विज्ञान', 'क्लाउड कंप्यूटिंग'],
       },
       law: {
         title: 'कानून स्कूल',
-        description: 'सिद्धांत, अभ्यास, नकली न्यायालयों, इंटर्नशिप और अनुसंधान के अवसरों के साथ व्यापक कानूनी शिक्षा।',
         programs: ['BA LLB', 'BBA LLB', 'LLB', 'LLM'],
       },
       management: {
         title: 'वाणिज्य और प्रबंधन अध्ययन',
-        description: 'व्यावसायिक शिक्षा जो मुख्य प्रबंधन को विश्लेषण, उद्यमिता और उद्योग परियोजनाओं के साथ जोड़ती है।',
         programs: ['B.Com', 'BBA', 'MBA', 'वित्त और विपणन'],
       },
       sciences: {
         title: 'बुनियादी और लागू विज्ञान',
-        description: 'मजबूत लैब एक्सपोजर और अनुसंधान-चालित सीखने के साथ बुनियादी और अंतःविषय विज्ञान।',
         programs: ['भौतिकी', 'रसायन विज्ञान', 'गणित', 'जैव ���्रौद्योगिकी'],
       },
       health: {
         title: 'स्वास्थ्य विज्ञान',
-        description: 'नैदानिक विसर्जन, सिमुलेशन लैब और मजबूत रोगी-देखभाल फोकस के साथ स्वास्थ्य व्यवसाय शिक्षा।',
         programs: ['फार्मेसी', 'फिजियोथेरेपी', 'नर्सिंग', 'संबद्ध स्वास्थ्य'],
       },
       design: {
         title: 'डिजाइन और डिजिटल ट्रांस मीडिया',
-        description: 'UX/UI, ग्राफिक्स, एनिमेशन और आधुनिक प्लेटफार्मों के लिए कहानी कहने में डि��ाइन और डि��िटल मीडिया प्रोग्राम।',
         programs: ['एनिमेशन', 'UX/UI', 'ग्राफिक डिजाइन', 'डिजिटल मीडिया'],
       },
       medical: {
         title: 'चिकित्सा शिक्षा और अनुसंधान',
-        description: 'नवीनता और सामुदायिक प्रभाव पर ध्यान केंद्रित करके उन्नत चिकित्सा शिक्षा और अनुवादकारी अनुसंधान।',
         programs: ['MBBS', 'MD', 'DM', 'फेलोशिप'],
       },
     },
@@ -493,18 +463,15 @@ export const translations = {
       leadership: 'नेतृत्व',
       facilities: 'सुविधाएं',
       accreditations: 'मान्यताएं',
-      description: 'दयानंद सागर विश्वविद्यालय शिक्षा, अनुसंधान और नवीनता में उत्कृष्टता के लिए प्रतिबद्ध एक प्रमुख संस्थान है।',
     },
     admissions: {
       title: 'प्रवेश',
-      description: 'शिक्षार्थियों और नवाचारों की हमारी जीवंत समुदाय में शामिल हों',
       applyNow: 'अभी आवेदन करें',
       viewEligibility: 'पात्रता मानदंड देखें',
       internationalStudents: 'अंतर्राष्ट्रीय छात्र',
     },
     campusLife: {
       title: 'कैंपस जीवन',
-      description: 'सिर्फ शिक्षा से अधिक - यह घर है',
       subheadline: 'एक जीवंत परिसर समुदाय का अनुभव करें जहां दोस्ती बनाई जाती है, प्रतिभा की खोज की जाती है और यादें बनाई जाती हैं।',
       studentStories: 'छात्र कहानियां',
       events: 'कार्��क्रम और गतिविधियां',
@@ -513,14 +480,12 @@ export const translations = {
     },
     placements: {
       title: 'प्लेसमेंट',
-      description: 'कैरियर सेवाएं और प्लेसमेंट सहायता',
       placementRate: 'प्लेसमेंट दर',
       averagePackage: 'औसत पैकेज',
       topRecruiters: 'शीर्ष भर्तिकर्ता',
     },
     research: {
       title: 'अनुसंधान और नवीनता',
-      description: 'कल के लिए अग्रणी नवीनता',
       researchCenters: 'अनुसंधान केंद्र',
       publications: 'प्रकाशन',
       patents: 'पेटेंट',
