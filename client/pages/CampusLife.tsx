@@ -429,7 +429,7 @@ export default function CampusLife() {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-0">
             {[
               {
                 icon: Star,
@@ -477,7 +477,13 @@ export default function CampusLife() {
             ].map((event, index) => (
               <Card
                 key={index}
-                className="group overflow-hidden hover:shadow-xl hover:shadow-orange-500/10 transition-all duration-500 hover:-translate-y-2 bg-card/50 backdrop-blur-sm border border-border/50 hover:border-orange-500/30"
+                className={`group overflow-hidden hover:shadow-lg hover:shadow-brand-magenta/10 transition-all duration-500 hover:-translate-y-2 backdrop-blur-sm border rounded-none ${
+                  index % 3 === 0
+                    ? "bg-orange-500/10 border-orange-500/20"
+                    : index % 3 === 1
+                    ? "bg-blue-500/10 border-blue-500/20"
+                    : "bg-purple-500/10 border-purple-500/20"
+                }`}
               >
                 <div className="relative overflow-hidden bg-black aspect-video">
                   {event.isVideo ? (
