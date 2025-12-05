@@ -305,9 +305,9 @@ function HighlightCard({ highlight }: { highlight: Highlight }) {
 function SectionCardComponent({ section }: { section: SectionCard }) {
   const Icon = section.icon;
   const card = (
-    <Card className="h-full rounded-3xl border border-border/50 bg-card/50 backdrop-blur-sm">
+    <Card className="h-full rounded-none border border-border/50 bg-card/50 backdrop-blur-sm">
       <CardHeader className="flex flex-row items-center gap-3 pb-2">
-        <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-magenta/10 text-brand-magenta">
+        <span className="inline-flex h-12 w-12 items-center justify-center rounded-none bg-brand-magenta/10 text-brand-magenta">
           <Icon className="h-5 w-5" />
         </span>
         <CardTitle className="text-base font-display">{section.title}</CardTitle>
@@ -349,7 +349,7 @@ function SectionCardComponent({ section }: { section: SectionCard }) {
 
 function ResourceCard({ resource }: { resource: Resource }) {
   return (
-    <Card className="h-full rounded-3xl border border-border/40 bg-card/60 backdrop-blur">
+    <Card className="h-full rounded-none border border-border/40 bg-card/60 backdrop-blur">
       <CardHeader className="pb-2">
         <Badge className="bg-brand-magenta/15 text-brand-magenta">
           {resource.badge}
@@ -548,7 +548,7 @@ export default function CDSIMER() {
 
       <section className="px-6 pb-20">
         <div className="mx-auto max-w-4xl text-center">
-          <div className="rounded-3xl border border-brand-magenta/20 bg-brand-magenta/5 p-10">
+          <div className="rounded-none border border-brand-magenta/20 bg-brand-magenta/5 p-10">
             <h3 className="mb-3 font-display text-3xl">
               Join a Purpose-Driven Medical Community
             </h3>
