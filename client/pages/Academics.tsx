@@ -285,9 +285,6 @@ export default function Academics() {
                   )}
                 </CardHeader>
                 <CardContent className="space-y-6">
-                  <CardDescription className="text-foreground leading-relaxed">
-                    {school.description}
-                  </CardDescription>
                   <div className="space-y-3">
                     <p className="text-sm font-semibold text-foreground">
                       Key Programs:
