@@ -54,26 +54,46 @@ function HeroVideo() {
     const video = videoRef.current;
     if (!video) return;
 
+    // Ensure volume is always 0 for no sound
+    video.volume = 0;
+    video.muted = true;
+
     const handleTimeUpdate = () => {
       const currentTime = video.currentTime;
 
-      // Create dynamic speed variations for better visual engagement
-      if (currentTime < 8) {
-        video.playbackRate = 1; // Normal intro
-      } else if (currentTime < 12) {
-        video.playbackRate = 0.75; // Slow - highlight moment
-      } else if (currentTime < 15) {
-        video.playbackRate = 1.8; // Fast transition
+      // Highly dynamic speed variations for cinematic effect
+      if (currentTime < 3) {
+        video.playbackRate = 0.6; // Very slow intro
+      } else if (currentTime < 6) {
+        video.playbackRate = 1; // Normal pace
+      } else if (currentTime < 8) {
+        video.playbackRate = 0.5; // Ultra slow - key moment
+      } else if (currentTime < 11) {
+        video.playbackRate = 2.8; // Very fast transition
+      } else if (currentTime < 14) {
+        video.playbackRate = 0.8; // Slow - architectural focus
+      } else if (currentTime < 17) {
+        video.playbackRate = 2.2; // Fast - dynamic movement
       } else if (currentTime < 20) {
-        video.playbackRate = 1; // Normal building view
-      } else if (currentTime < 28) {
-        video.playbackRate = 2.5; // Very rapid - showcase tour
+        video.playbackRate = 1.2; // Moderate
+      } else if (currentTime < 23) {
+        video.playbackRate = 3; // Very rapid - tour highlight
+      } else if (currentTime < 26) {
+        video.playbackRate = 0.7; // Slow - elegant pace
+      } else if (currentTime < 29) {
+        video.playbackRate = 2.5; // Fast - showcase
+      } else if (currentTime < 32) {
+        video.playbackRate = 1.5; // Moderate-fast
       } else if (currentTime < 35) {
-        video.playbackRate = 1.3; // Moderate speed - focus moment
-      } else if (currentTime < 42) {
-        video.playbackRate = 2; // Rapid - architectural details
+        video.playbackRate = 0.9; // Nearly normal
+      } else if (currentTime < 38) {
+        video.playbackRate = 2.3; // Rapid details
+      } else if (currentTime < 41) {
+        video.playbackRate = 1.1; // Normal close-up
+      } else if (currentTime < 44) {
+        video.playbackRate = 2.8; // Very fast finale
       } else {
-        video.playbackRate = 1; // Return to normal
+        video.playbackRate = 1; // Return to normal for loop
       }
     };
 
