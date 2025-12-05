@@ -603,12 +603,14 @@ export default function Index() {
             </div>
 
             {/* Right side - Remaining stories (50%) - 2 column grid */}
-            <div className="lg:col-span-1 grid grid-cols-1 sm:grid-cols-2 gap-4 auto-rows-max">
+            <div className="lg:col-span-1 grid grid-cols-1 sm:grid-cols-2 gap-0 auto-rows-max">
               {remainingNews.slice(0, 4).map((item, idx) => (
                 <button
                   key={idx}
                   onClick={() => setSelectedNews(item)}
-                  className="group rounded-2xl overflow-hidden border border-border/50 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-magenta/10 transition-all text-left bg-transparent cursor-pointer"
+                  className={`group rounded-none overflow-hidden border backdrop-blur-sm hover:shadow-lg hover:shadow-brand-magenta/10 transition-all text-left cursor-pointer ${
+                    idx % 2 === 0 ? "bg-blue-500/10 border-blue-500/20" : "bg-purple-500/10 border-purple-500/20"
+                  }`}
                 >
                   <div className="relative">
                     {item.isVideo ? (
