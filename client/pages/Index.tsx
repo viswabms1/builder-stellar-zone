@@ -716,10 +716,10 @@ export default function Index() {
             const currentEvent = events[selectedEventIndex];
 
             return (
-              <div className="grid lg:grid-cols-3 gap-8 items-start">
+              <div className="grid lg:grid-cols-3 gap-0 items-start">
                 {/* Featured Event - Left side */}
                 <div className="lg:col-span-2">
-                  <div className="group rounded-3xl overflow-hidden border border-border/50 bg-card/60 backdrop-blur-sm hover:shadow-xl hover:shadow-brand-magenta/10 transition-all">
+                  <div className="group rounded-none overflow-hidden border border-orange-500/20 bg-orange-500/10 backdrop-blur-sm hover:shadow-xl hover:shadow-brand-magenta/10 transition-all">
                     <div className="relative h-96 overflow-hidden">
                       <img
                         src={currentEvent.image}
