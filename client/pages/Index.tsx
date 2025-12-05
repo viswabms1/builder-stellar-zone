@@ -418,7 +418,7 @@ export default function Index() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-0">
             {getSchoolsData().map((school, index) => {
               const gradients = [
                 'bg-gradient-to-br from-orange-600 to-orange-500',
