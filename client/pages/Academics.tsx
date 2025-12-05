@@ -87,15 +87,13 @@ export default function Academics() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-0">
             {[
               {
                 icon: Cog,
                 title: "Engineering",
                 image:
                   "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Ff68b38f444334f6a9d6f31196dc787af?format=webp&width=800",
-                description:
-                  "Cutting-edge engineering education with practical immersion, industry mentorship, and future-ready specializations.",
                 programs: [
                   "B.Tech CSE",
                   "B.Tech Mechanical",
@@ -110,8 +108,6 @@ export default function Academics() {
                 title: "Computer Applications",
                 image:
                   "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F81d450f810104dc8926ff033cbb8ec87?format=webp&width=800",
-                description:
-                  "Build software careers with strong foundations in programming, data, cloud, and modern application development.",
                 programs: [
                   "BCA",
                   "B.Sc Data Science",
@@ -126,8 +122,6 @@ export default function Academics() {
                 title: "School of Law",
                 image:
                   "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Faa5e530144f148c29a6935c9777759b3?format=webp&width=800",
-                description:
-                  "Comprehensive legal education blending theory, practice, moot courts, internships, and research opportunities.",
                 programs: [
                   "B.B.A., LL.B.",
                   "B.A., LL.B.",
@@ -142,8 +136,6 @@ export default function Academics() {
                 title: "Commerce & Management Studies",
                 image:
                   "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F7827db3aa95d45a389a5d0bdeb29d463?format=webp&width=800",
-                description:
-                  "Business education that merges core management with analytics, entrepreneurship, and industry projects.",
                 programs: ["B.Com", "BBA", "MBA", "Doctoral Programmes"],
                 color: "brand-orange",
                 href: "/academics/management-studies",
@@ -153,8 +145,6 @@ export default function Academics() {
                 title: "Basic & Applied Sciences",
                 image:
                   "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Ff5cde141ec88434abe5b7909f2bf9710?format=webp&width=800",
-                description:
-                  "Foundational and interdisciplinary sciences with strong lab exposure and research-driven learning.",
                 programs: [
                   "B.Sc Biological Sciences",
                   "B.Sc Data Science",
@@ -169,8 +159,6 @@ export default function Academics() {
                 title: "Health Sciences",
                 image:
                   "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fbc944f36dda948aa94827a23ad35369b?format=webp&width=800",
-                description:
-                  "Health professions education with clinical immersion, simulation labs, and strong patient-care focus.",
                 programs: [
                   "Pharmacy",
                   "Physiotherapy",
@@ -185,8 +173,6 @@ export default function Academics() {
                 title: "Journalism & Mass Communication",
                 image:
                   "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F0f5e9825dc2342c38fb53f7c1c9ce3a6?format=webp&width=800",
-                description:
-                  "Future-ready storytellers trained across multimedia newsrooms, podcasts, films and global communication projects.",
                 programs: [
                   "BA (JMC)",
                   "Podcast Lab",
@@ -201,8 +187,6 @@ export default function Academics() {
                 title: "Design & Digital Trans Media",
                 image:
                   "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fa2063ac0bf034cbaa9d21546069eeb18?format=webp&width=800",
-                description:
-                  "Design and digital media programs spanning UX/UI, graphics, animation, and storytelling for modern platforms.",
                 programs: [
                   "B.Design",
                   "UX/UI",
@@ -217,8 +201,6 @@ export default function Academics() {
                 title: "Medical Education & Research",
                 image:
                   "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F14e1fd7abfe94ba3a86faff2e81bd88f?format=webp&width=800",
-                description:
-                  "Advanced medical education and translational research with a focus on innovation and community impact.",
                 programs: [
                   "MBBS",
                   "MD/MS",
@@ -233,8 +215,6 @@ export default function Academics() {
                 title: "Center for Executive Education",
                 image:
                   "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fa0a53cf62f55495e94ddc5c0e3b890d8?format=webp&width=800",
-                description:
-                  "Executive MBA and leadership programmes tailored for working professionals with CXO mentorship.",
                 programs: [
                   "Executive MBA",
                   "Speaker Series",
@@ -249,8 +229,6 @@ export default function Academics() {
                 title: "Online Degree Programs",
                 image:
                   "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fedd2e018f6c34d60a22bc6202d6d86c4?format=webp&width=800",
-                description:
-                  "Flexible, career-aligned online degrees with live sessions, projects, and placement assistance.",
                 programs: ["BBA", "BCA", "B.Com"],
                 color: "brand-orange",
                 href: "https://dsuonline.com",
@@ -258,7 +236,7 @@ export default function Academics() {
             ].map((school, index) => (
               <Card
                 key={index}
-                className="group hover:shadow-xl hover:shadow-brand-magenta/10 transition-all duration-500 hover:-translate-y-2 bg-card/50 backdrop-blur-sm border border-border/50 hover:border-brand-magenta/30 overflow-hidden"
+                className="group hover:shadow-xl hover:shadow-brand-magenta/10 transition-all duration-500 hover:-translate-y-2 bg-card/50 backdrop-blur-sm border border-border/50 hover:border-brand-magenta/30 overflow-hidden rounded-none"
               >
                 <div className="relative h-44 w-full overflow-hidden">
                   <img
