@@ -397,7 +397,7 @@ export default function Academics() {
                 key={index}
                 className={`group relative overflow-hidden ${
                   feature.customHeight || "h-80"
-                } rounded-3xl border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-xl hover:shadow-brand-magenta/10 transition-all duration-500 hover:-translate-y-1 flex flex-col`}
+                } rounded-none border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-xl hover:shadow-brand-magenta/10 transition-all duration-500 hover:-translate-y-1 flex flex-col`}
               >
                 <div
                   className={`flex-1 overflow-hidden ${
