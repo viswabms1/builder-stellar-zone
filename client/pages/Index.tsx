@@ -421,14 +421,14 @@ export default function Index() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {getSchoolsData().map((school, index) => {
               const gradients = [
-                'bg-gradient-to-br from-brand-orange/80 to-brand-orange/40',
-                'bg-gradient-to-br from-brand-magenta/80 to-brand-magenta/40',
-                'bg-gradient-to-br from-brand-blue/80 to-brand-blue/40',
-                'bg-gradient-to-br from-brand-orange/70 to-brand-orange/30',
-                'bg-gradient-to-br from-brand-magenta/70 to-brand-magenta/30',
-                'bg-gradient-to-br from-brand-blue/70 to-brand-blue/30',
-                'bg-gradient-to-br from-brand-orange/75 to-brand-magenta/40',
-                'bg-gradient-to-br from-brand-blue/75 to-brand-magenta/40',
+                'bg-gradient-to-br from-orange-600 to-orange-500',
+                'bg-gradient-to-br from-pink-600 to-pink-500',
+                'bg-gradient-to-br from-blue-600 to-blue-500',
+                'bg-gradient-to-br from-emerald-600 to-emerald-500',
+                'bg-gradient-to-br from-purple-600 to-purple-500',
+                'bg-gradient-to-br from-cyan-600 to-cyan-500',
+                'bg-gradient-to-br from-amber-600 to-amber-500',
+                'bg-gradient-to-br from-rose-600 to-rose-500',
               ];
               const gradient = gradients[index % gradients.length];
 
