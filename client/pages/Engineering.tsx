@@ -596,7 +596,7 @@ function ProgramCardComponent({ program }: { program: ProgramCard }) {
         {program.major}
       </div>
       <div className="relative z-10 flex h-full flex-col justify-end p-6 text-white">
-        <div className="rounded-3xl border border-white/15 bg-black/60 backdrop-blur-lg p-6">
+        <div className="rounded-none border border-white/15 bg-black/60 backdrop-blur-lg p-6">
           <div className="space-y-4">
             <div>
               <h3 className="font-display text-xl leading-tight text-white">
@@ -1182,7 +1182,7 @@ export default function Engineering() {
 
       <section className="px-6 py-16">
         <div className="mx-auto grid max-w-5xl items-start gap-8 lg:grid-cols-2">
-          <Card className="rounded-3xl border border-border/50 bg-card/50">
+          <Card className="rounded-none border border-orange-500/20 bg-orange-500/10">
             <CardHeader>
               <CardTitle className="font-display">Leadership</CardTitle>
             </CardHeader>
@@ -1213,7 +1213,7 @@ export default function Engineering() {
               </div>
             </CardContent>
           </Card>
-          <Card className="rounded-3xl border border-border/50 bg-card/50">
+          <Card className="rounded-none border border-blue-500/20 bg-blue-500/10">
             <CardHeader>
               <CardTitle className="font-display">
                 More Engineering Resources
