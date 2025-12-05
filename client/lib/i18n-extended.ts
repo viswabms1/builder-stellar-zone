@@ -52,7 +52,7 @@ export const indexTranslations = {
     programs: {
       engineering: {
         title: "ಎಂಜಿನಿಯರಿಂಗ್",
-        description: "ಪ್ರಾಯೋಗಿಕ ನಿಮಜ್ಜನ, ಶಿಲ್ಪ ಮಾರ್ಗದರ್ಶನ ಮತ್ತು ಭವಿಷ್ಯತ್ತಿನ ತಜ್ಞತೆಯೊಂದಿಗೆ ಅತ್ಯಾಧುನಿಕ ಎಂಜಿನಿಯರಿಂಗ್ ಶಿಕ್ಷೆ.",
+        description: "",
         programs: ["B.Tech CSE", "B.Tech ಮೆಕ್ಯಾನಿಕಲ್", "B.Tech ECE", "B.Tech ನಿರ್ಮಾಣ"],
       },
       computerApplications: {
