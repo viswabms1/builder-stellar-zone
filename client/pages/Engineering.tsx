@@ -1033,7 +1033,7 @@ export default function Engineering() {
               className="pointer-events-none absolute -right-12 bottom-0 h-36 w-36 rounded-full bg-brand-blue/15 blur-3xl"
               aria-hidden="true"
             />
-            <div className="relative grid gap-10 lg:grid-cols-[1.1fr_minmax(0,1fr)]">
+            <div className="relative grid gap-0 lg:grid-cols-[1.1fr_minmax(0,1fr)]">
               <div className="space-y-5">
                 <Badge className="bg-brand-magenta/15 text-brand-magenta">
                   Notice Board
@@ -1056,7 +1056,7 @@ export default function Engineering() {
                   <ChevronRight className="h-4 w-4" />
                 </a>
               </div>
-              <div className="grid gap-6">
+              <div className="grid gap-0">
                 {ENGINEERING_CALENDAR.map((entry) => (
                   <CalendarResourceCard
                     key={`${entry.title}-${entry.academicYear}`}
@@ -1082,7 +1082,7 @@ export default function Engineering() {
               Discover our research initiatives, innovation labs, placements and admission pathways
             </p>
           </div>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-4">
             {/* Centre of Excellence */}
             <RouterLink
               to="/centre-of-excellence"
