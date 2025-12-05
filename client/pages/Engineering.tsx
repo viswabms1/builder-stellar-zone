@@ -657,20 +657,89 @@ function HeroVideo() {
     }
   };
 
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    video.volume = 0;
+    video.muted = true;
+  }, []);
+
   return (
-    <div className="relative aspect-video overflow-hidden rounded-3xl border-4 border-brand-magenta/40 shadow-2xl shadow-brand-magenta/20 p-4 bg-black/10">
+    <div className="w-full h-screen relative overflow-hidden flex items-end md:items-center justify-start">
       <video
         ref={videoRef}
-        src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F0b20f5ea03294f4d824e69fd8489b78c?alt=media&token=0c4092c4-4afd-4237-b850-81046ecf52f7&apiKey=4aa279a8430d441dba9c55f659831878"
+        src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F039b67f729094553afc521bcbf44f524?alt=media&token=f3f572a0-3afd-4a0a-9570-de176cc33653&apiKey=4aa279a8430d441dba9c55f659831878"
         autoPlay
         muted
         loop
         playsInline
-        className="h-full w-full object-cover rounded-2xl"
+        volume={0}
+        className="absolute inset-0 w-full h-full object-cover"
+        style={{
+          filter: "brightness(1.1) contrast(1.15) saturate(1.2)"
+        }}
       />
+
+      <div className="absolute inset-0 bg-black/40"></div>
+
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/30 pointer-events-none"></div>
+
+      <div className="absolute top-0 left-0 w-96 h-96 bg-brand-magenta/5 rounded-full filter blur-3xl opacity-60 animate-float pointer-events-none"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-brand-orange/5 rounded-full filter blur-3xl opacity-60 animate-float pointer-events-none" style={{ animationDelay: "2s" }}></div>
+
+      <div className="absolute inset-0 opacity-5 pointer-events-none" style={{
+        backgroundImage: "repeating-linear-gradient(0deg, rgba(255,255,255,.03) 0px, rgba(255,255,255,.03) 1px, transparent 1px, transparent 2px)"
+      }}></div>
+
+      <div className="relative max-w-7xl mx-auto px-6 w-full z-10 pb-20 md:pb-0">
+        <div className="max-w-2xl">
+          <p className="text-sm md:text-base text-white/80 mb-4 uppercase tracking-widest font-display">
+            School of Engineering
+          </p>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight font-display">
+            Shape the Future of Technology
+          </h1>
+          <p className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed max-w-xl font-display">
+            Become an industry-ready engineer with cutting-edge curriculum, world-class labs, and innovation-focused mentorship
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4">
+            <a
+              href="https://admissions.dsu.edu.in/"
+              target="_blank"
+              rel="noreferrer"
+              className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            >
+              <Button
+                size="lg"
+                className="bg-white hover:bg-white/90 text-orange-600 hover:text-orange-700 px-8 py-6 text-base font-semibold font-display transition-all duration-300 group border-2 border-white"
+              >
+                Apply Now
+                <ChevronRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </a>
+            <a
+              href="https://dsu.edu.in/virtual-tour/"
+              target="_blank"
+              rel="noreferrer"
+              className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            >
+              <Button
+                variant="outline"
+                size="lg"
+                className="border-2 border-white text-white hover:bg-white hover:text-orange-600 px-8 py-6 text-base font-semibold font-display transition-all duration-300"
+              >
+                Virtual Tour
+              </Button>
+            </a>
+          </div>
+        </div>
+      </div>
+
       <button
         onClick={toggleMute}
-        className="absolute top-8 right-8 z-10 p-3 rounded-full bg-black/50 hover:bg-black/70 transition-colors text-white"
+        className="absolute top-8 right-8 z-10 p-3 rounded-full bg-black/50 hover:bg-black/70 transition-colors text-white backdrop-blur-sm border border-white/20"
         aria-label={isMuted ? "Unmute" : "Mute"}
       >
         {isMuted ? (
