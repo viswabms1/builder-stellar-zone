@@ -883,8 +883,10 @@ function CurriculumLibrary() {
         <div className="grid gap-6">
           {programs.map((program) => {
             const isOpen = openProgram === program.id;
+            const isUG = program.id === "btech";
             const borderClass = "border-brand-orange/30";
-            const badgeClass = "bg-brand-orange/15 text-brand-orange border-brand-orange/20";
+            const badgeClass = `rounded-full border ${isUG ? "bg-brand-orange/15 text-brand-orange border-brand-orange/20" : "bg-brand-orange/15 text-brand-orange border-brand-orange/20"}`;
+            const buttonClass = "w-full border-brand-orange/30 hover:bg-brand-orange/10 text-brand-orange hover:text-brand-orange";
 
             return (
               <div
@@ -901,8 +903,8 @@ function CurriculumLibrary() {
 
                 <div className="p-6 bg-background/50 backdrop-blur-sm space-y-3">
                   <div className="flex items-start gap-3">
-                    <Badge className={`rounded-full border ${badgeClass}`}>
-                      Undergraduate
+                    <Badge className={badgeClass}>
+                      {isUG ? "Undergraduate" : "Postgraduate"}
                     </Badge>
                   </div>
                   <div>
@@ -911,7 +913,7 @@ function CurriculumLibrary() {
                   </div>
                   <Button
                     variant="outline"
-                    className="w-full border-brand-orange/30 hover:bg-brand-orange/10 text-brand-orange hover:text-brand-orange"
+                    className={buttonClass}
                     onClick={() => setOpenProgram(isOpen ? null : program.id)}
                   >
                     <span className="flex items-center justify-center gap-2">
