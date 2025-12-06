@@ -39,6 +39,36 @@ type Highlight = {
   stat?: string;
 };
 
+type ProgramCard = {
+  name: string;
+  area: string;
+  description: string;
+  image: string;
+  link: string;
+  highlights: string[];
+  overlay: string;
+  badgeClass: string;
+  panelClass: string;
+  featured?: boolean;
+};
+
+type CalendarEntry = {
+  title: string;
+  academicYear: string;
+  description: string;
+  documentUrl: string;
+  tag: string;
+};
+
+type NewsItem = {
+  image: string;
+  category: string;
+  title: string;
+  excerpt: string;
+  date: string;
+  color: "brand-magenta" | "brand-blue" | "brand-orange";
+};
+
 type Offering = {
   title: string;
   description: string;
