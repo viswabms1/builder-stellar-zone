@@ -551,14 +551,6 @@ export default function Academics() {
                   <p className="text-sm font-body text-foreground/80 leading-relaxed">
                     {feature.description}
                   </p>
-
-                  {/* Learn More Link */}
-                  <div className="mt-6 pt-6 border-t border-border/30">
-                    <button className="text-foreground font-semibold text-sm flex items-center gap-2 group-hover:text-brand-magenta transition-colors">
-                      Learn More
-                      <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </button>
-                  </div>
                 </div>
               </div>
             ))}
