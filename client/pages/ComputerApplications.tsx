@@ -1020,7 +1020,7 @@ export default function ComputerApplications() {
 
       <section className="px-6 pb-20">
         <div className="mx-auto max-w-4xl text-center">
-          <div className="rounded-3xl border border-brand-magenta/20 bg-brand-magenta/5 p-10">
+          <div className="rounded-none border border-brand-magenta/20 bg-brand-magenta/5 p-10">
             <h3 className="mb-3 font-display text-3xl">
               Launch Your Tech Career with DSU
             </h3>
