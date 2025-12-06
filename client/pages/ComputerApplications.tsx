@@ -570,7 +570,7 @@ export default function ComputerApplications() {
                 Build strong foundations in software development and data science
               </p>
             </div>
-            <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-2">
+            <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-12">
               {UG_PROGRAM_CARDS.map((program) => (
                 <ProgramCardComponent key={program.name} program={program} />
               ))}
@@ -590,7 +590,7 @@ export default function ComputerApplications() {
                 Advance into research, specialisation and domain expertise
               </p>
             </div>
-            <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-2">
+            <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-12">
               {PG_PROGRAM_CARDS.map((program) => (
                 <ProgramCardComponent key={program.name} program={program} />
               ))}
