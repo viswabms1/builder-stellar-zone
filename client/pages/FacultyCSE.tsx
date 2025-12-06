@@ -19,28 +19,6 @@ import {
 } from "lucide-react";
 
 export default function FacultyCSE() {
-  const stats = useMemo(() => {
-    const total = cseFaculty.length;
-    const leadershipCount = cseFaculty.filter((f) =>
-      /Dean|Chair|Head/i.test(f.title),
-    ).length;
-    const professors = cseFaculty.filter(
-      (f) =>
-        /Professor/i.test(f.title) &&
-        !/Associate/i.test(f.title) &&
-        !/Assistant/i.test(f.title),
-    ).length;
-    const researchMentors = cseFaculty.filter((f) =>
-      /Ph\.D/i.test(f.qualifications ?? ""),
-    ).length;
-    return {
-      total,
-      leadership: leadershipCount,
-      professors,
-      researchMentors,
-    };
-  }, []);
-
   const leadership = useMemo(
     () => {
       const rank = (title: string) => {
