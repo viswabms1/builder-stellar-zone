@@ -45,29 +45,6 @@ export default function FacultyCSE() {
   );
 }
 
-type Stats = {
-  total: number;
-  leadership: number;
-  professors: number;
-  researchMentors: number;
-};
-
-type StatTileProps = {
-  icon: ComponentType<SVGProps<SVGSVGElement>>;
-  value: string;
-  label: string;
-};
-
-function StatTile({ icon: Icon, value, label }: StatTileProps) {
-  return (
-    <div className="rounded-2xl border border-brand-magenta/30 dark:border-brand-magenta/30 bg-white/80 dark:bg-slate-800/80 p-5 shadow-lg hover:shadow-xl transition-all duration-300 group">
-      <Icon className="h-6 w-6 text-brand-magenta group-hover:scale-110 transition-transform" />
-      <p className="mt-4 text-3xl font-bold text-slate-900 dark:text-white">{value}</p>
-      <p className="text-sm text-slate-600 dark:text-slate-400 mt-2 font-medium">{label}</p>
-    </div>
-  );
-}
-
 type FacultyEntry = (typeof cseFaculty)[number];
 
 type LeadershipSectionProps = {
