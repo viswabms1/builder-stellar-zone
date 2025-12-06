@@ -217,25 +217,41 @@ const INNOVATION_LABS = [
 
 function ProgramCardComponent({ program }: { program: ProgramCard }) {
   const isInternal = program.link.startsWith("/");
+  const wrapperClasses = `group block h-full rounded-none ${
+    program.featured ? "lg:col-span-6" : "lg:col-span-3"
+  } focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-magenta focus-visible:ring-offset-2 focus-visible:ring-offset-background`;
+  const overlayClasses =
+    program.overlay ??
+    "bg-gradient-to-t from-black/85 via-black/50 to-transparent";
+  const badgeClasses = `inline-flex items-center gap-2 rounded-none px-3 py-1 text-xs uppercase tracking-wide ${
+    program.badgeClass ?? "bg-white/15 text-foreground/80 backdrop-blur"
+  }`;
+  const panelClasses = `rounded-none border border-white/15 p-6 shadow-[0_25px_80px_-35px_rgba(255,255,255,0.45)] transition-colors duration-500 ${
+    program.panelClass ?? "bg-black/60 backdrop-blur-lg"
+  }`;
 
   const content = (
-    <div className="group relative h-full rounded-none overflow-hidden border border-white/10 bg-black/10 backdrop-blur-sm transition-all duration-700 hover:-translate-y-1 hover:shadow-2xl hover:shadow-brand-magenta/20 min-h-[280px] flex flex-col justify-end">
+    <div
+      className={`relative flex h-full flex-col justify-end overflow-hidden rounded-none border border-white/10 bg-black/10 backdrop-blur-sm transition-all duration-700 hover:-translate-y-1 hover:shadow-2xl hover:shadow-brand-magenta/20 ${
+        program.featured ? "min-h-[360px]" : "min-h-[300px]"
+      }`}
+    >
       <img
         src={program.image}
         alt={program.name}
         loading="lazy"
         className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+      <div className={`absolute inset-0 ${overlayClasses}`} />
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
-      <div className="absolute left-6 top-6 inline-flex items-center gap-2 rounded-full bg-white/20 px-3 py-1 text-xs font-medium text-white backdrop-blur">
-        {program.major}
+      <div className={`absolute left-6 top-6 ${badgeClasses}`}>
+        {program.area}
       </div>
       <div className="relative z-10 flex h-full flex-col justify-end p-6 text-white">
-        <div className="rounded-none border border-white/15 bg-black/60 backdrop-blur-lg p-6">
+        <div className={panelClasses}>
           <div className="space-y-4">
             <div>
-              <h3 className="font-display text-xl leading-tight text-white">
+              <h3 className="font-display text-2xl leading-tight text-white">
                 {program.name}
               </h3>
               <p className="mt-3 text-sm text-white/85 font-body">
@@ -253,8 +269,8 @@ function ProgramCardComponent({ program }: { program: ProgramCard }) {
               ))}
             </div>
             <span className="inline-flex items-center gap-2 text-sm font-medium text-white/90 transition-colors group-hover:text-brand-magenta">
-              Explore program
-              <ChevronRight className="h-4 w-4" />
+              Explore programme
+              <ChevronRight className="h-4 w-4 transition-colors group-hover:text-brand-magenta" />
             </span>
           </div>
         </div>
@@ -264,7 +280,7 @@ function ProgramCardComponent({ program }: { program: ProgramCard }) {
 
   if (isInternal) {
     return (
-      <RouterLink to={program.link} className="h-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-magenta focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-none">
+      <RouterLink to={program.link} className={wrapperClasses}>
         {content}
       </RouterLink>
     );
@@ -275,7 +291,7 @@ function ProgramCardComponent({ program }: { program: ProgramCard }) {
       href={program.link}
       target="_blank"
       rel="noreferrer"
-      className="h-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-magenta focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-none"
+      className={wrapperClasses}
     >
       {content}
     </a>
