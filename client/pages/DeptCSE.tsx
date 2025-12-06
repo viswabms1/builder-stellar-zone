@@ -406,6 +406,63 @@ function LabsFacilitiesCarousel() {
   );
 }
 
+function AccreditationDocuments() {
+  const documents = [
+    {
+      title: "Board of Studies (BOS)",
+      abbr: "BOS",
+      url: "https://www.dsu.edu.in/images/Engineering/CSE-dept/accreditation/BOS.pdf",
+    },
+    {
+      title: "Program Educational Objectives",
+      abbr: "PEO",
+      url: "https://www.dsu.edu.in/images/Engineering/CSE-dept/accreditation/PEO.pdf",
+    },
+    {
+      title: "Program Outcomes",
+      abbr: "PO",
+      url: "https://www.dsu.edu.in/images/Engineering/CSE-dept/accreditation/PO.pdf",
+    },
+    {
+      title: "Program Specific Outcomes",
+      abbr: "PSO",
+      url: "https://www.dsu.edu.in/images/Engineering/CSE-dept/accreditation/PSO.pdf",
+    },
+  ];
+
+  return (
+    <section className="px-6 py-12 bg-background/50">
+      <div className="mx-auto max-w-6xl">
+        <div className="mb-8">
+          <h3 className="text-sm font-semibold text-foreground/60 uppercase tracking-wider mb-2">Accreditation Documents</h3>
+          <p className="text-xs text-foreground/50 font-body">Program documentation and learning outcomes</p>
+        </div>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+          {documents.map((doc, idx) => (
+            <a
+              key={idx}
+              href={doc.url}
+              target="_blank"
+              rel="noreferrer"
+              className="group relative rounded-lg border border-border/30 bg-card/30 p-4 transition-all hover:border-brand-magenta/40 hover:bg-card/50 hover:shadow-md hover:shadow-brand-magenta/5"
+            >
+              <div className="flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-md bg-brand-magenta/10 text-brand-magenta group-hover:bg-brand-magenta/20 transition-colors">
+                  <FileText className="h-5 w-5" />
+                </div>
+                <div className="min-w-0 flex-1">
+                  <div className="text-xs font-semibold text-brand-magenta">{doc.abbr}</div>
+                  <p className="text-xs text-foreground/70 line-clamp-2">{doc.title}</p>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function NoticeBoard() {
   const notices: NoticeItem[] = [
     {
