@@ -11,6 +11,7 @@ declare global {
 import {
   Award,
   Beaker,
+  CalendarDays,
   ChevronRight,
   Cpu,
   FlaskConical,
