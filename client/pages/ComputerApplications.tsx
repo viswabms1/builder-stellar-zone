@@ -107,46 +107,62 @@ const USP_HIGHLIGHTS: USPHighlight[] = [
 const UG_PROGRAM_CARDS: ProgramCard[] = [
   {
     name: "Bachelor of Computer Applications (BCA)",
-    major: "Core Software Development",
+    area: "Core Software Development",
     description:
       "Comprehensive undergraduate program spanning full-stack development, database management, web technologies and software engineering principles with industry mentorship.",
     image:
       "https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=1600&auto=format&fit=crop",
     link: "/academics/computer-applications/bca",
     highlights: ["Full-Stack Development", "Web Technologies", "Product Labs"],
+    overlay: "bg-gradient-to-br from-brand-magenta/80 via-black/75 to-black/60 mix-blend-multiply",
+    badgeClass: "bg-brand-magenta/25 text-foreground/90 border border-white/30 backdrop-blur",
+    panelClass: "bg-black/55 backdrop-blur-xl",
+    featured: true,
   },
   {
     name: "Bachelor of Science in Data Science",
-    major: "Analytics & Intelligence",
+    area: "Analytics & Intelligence",
     description:
       "Launch advanced careers in data engineering, analytics, visualization and machine learning with applied projects and real-world datasets.",
     image:
       "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?q=80&w=1600&auto=format&fit=crop",
     link: "/academics/computer-applications/bsc-data-science",
     highlights: ["Data Analytics", "ML Pipelines", "Visualization"],
+    overlay: "bg-gradient-to-br from-brand-blue/75 via-black/70 to-black/55 mix-blend-multiply",
+    badgeClass: "bg-brand-blue/30 text-foreground/90 border border-white/25 backdrop-blur",
+    panelClass: "bg-black/55 backdrop-blur-xl",
+    featured: true,
   },
 ];
 
 const PG_PROGRAM_CARDS: ProgramCard[] = [
   {
     name: "Master of Computer Applications (MCA)",
-    major: "Advanced Systems Engineering",
+    area: "Advanced Systems Engineering",
     description:
       "Specialise in enterprise software development, cloud architecture, cybersecurity and emerging technologies through research-driven coursework and industry collaboration.",
     image:
       "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1600&auto=format&fit=crop",
     link: "/academics/computer-applications/mca",
     highlights: ["Enterprise Systems", "Cloud Architecture", "Research Thesis"],
+    overlay: "bg-gradient-to-br from-brand-magenta/70 via-black/70 to-black/55 mix-blend-multiply",
+    badgeClass: "bg-brand-magenta/30 text-foreground/90 border border-white/25 backdrop-blur",
+    panelClass: "bg-black/55 backdrop-blur-xl",
+    featured: true,
   },
   {
     name: "Master of Science in Data Science",
-    major: "Advanced Analytics",
+    area: "Advanced Analytics",
     description:
       "Master statistical computing, advanced machine learning, big data processing and AI applications with industry-certified capstone projects.",
     image:
       "https://images.unsplash.com/photo-1527219525129-dfc4e4c5fbf8?q=80&w=1600&auto=format&fit=crop",
     link: "/academics/computer-applications/msc-data-science",
     highlights: ["Advanced ML", "Big Data", "AI Systems"],
+    overlay: "bg-gradient-to-br from-brand-blue/70 via-brand-magenta/60 to-black/55 mix-blend-multiply",
+    badgeClass: "bg-brand-blue/30 text-foreground/90 border border-white/25 backdrop-blur",
+    panelClass: "bg-black/55 backdrop-blur-xl",
+    featured: true,
   },
 ];
 
