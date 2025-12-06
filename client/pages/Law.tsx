@@ -433,51 +433,77 @@ export default function Law() {
 
       <section
         id="usp"
-        className="bg-gradient-to-r from-brand-magenta/5 via-brand-orange/5 to-brand-blue/5 px-6 py-16"
+        className="bg-background px-6 py-20"
       >
         <div className="mx-auto max-w-7xl">
-          <div className="mb-12 text-center">
+          <div className="mb-16 text-center">
             <Badge
-              className="bg-white/20 text-brand-magenta backdrop-blur"
+              className="bg-brand-magenta/15 text-brand-magenta"
               variant="secondary"
             >
               Unique Strengths (USP)
             </Badge>
-            <h2 className="mt-5 font-display text-3xl md:text-4xl">
+            <h2 className="mt-6 font-display text-4xl md:text-5xl">
               Why Future Advocates Choose DSU Law
             </h2>
+            <p className="mt-4 text-lg text-foreground/80 max-w-2xl mx-auto font-display">
+              Excellence through legal scholarship, practical training, and professional growth
+            </p>
           </div>
-          <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-4">
-            {USP_HIGHLIGHTS.map((highlight) => {
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+            {USP_HIGHLIGHTS.map((highlight, index) => {
               const Icon = highlight.icon;
               return (
-                <Card
-                  key={highlight.title}
-                  className="group relative h-80 overflow-hidden rounded-none border border-blue-500/20 bg-blue-500/10 backdrop-blur-sm transition-all duration-700 hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-magenta/10"
-                >
-                  <img
-                    src={highlight.image}
-                    alt={highlight.title}
-                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-                  <div className="absolute top-4 left-4 inline-flex items-center gap-2 rounded-full bg-black/40 px-3 py-1 text-xs text-foreground">
-                    <Icon className="h-4 w-4" /> USP
+                <div key={highlight.title} className="group flex flex-col h-full">
+                  {/* Image Container */}
+                  <div className="relative w-full h-64 overflow-hidden rounded-lg mb-6">
+                    <img
+                      src={highlight.image}
+                      alt={highlight.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+
+                    {/* Overlaid Category Badge */}
+                    <div className="absolute top-4 left-4">
+                      <span className={`px-4 py-2 rounded-full text-xs font-bold tracking-wider text-white inline-flex items-center gap-2 ${
+                        index === 0
+                          ? "bg-brand-magenta"
+                          : index === 1
+                          ? "bg-brand-orange"
+                          : index === 2
+                          ? "bg-blue-600"
+                          : "bg-pink-600"
+                      }`}>
+                        <Icon className="h-4 w-4" />
+                        USP
+                      </span>
+                    </div>
                   </div>
-                  <div className="absolute inset-x-0 bottom-0 p-5 text-foreground">
-                    <h3 className="mb-2 text-lg font-semibold font-display">
+
+                  {/* Text Content Below Image */}
+                  <div className="flex-1 flex flex-col">
+                    <h3 className="text-xl font-bold mb-3 font-display text-foreground group-hover:text-brand-magenta transition-colors">
                       {highlight.title}
                     </h3>
-                    <p className="text-sm text-foreground/80 font-body">
+                    <p className="text-sm font-body text-foreground/80 leading-relaxed mb-4">
                       {highlight.description}
                     </p>
                     {highlight.stat ? (
-                      <div className="mt-3 text-xs uppercase tracking-wide text-foreground/70 font-body">
+                      <div className="text-xs uppercase tracking-wide font-semibold text-foreground/60 font-body mb-4">
                         {highlight.stat}
                       </div>
                     ) : null}
+
+                    {/* Learn More Link */}
+                    <div className="mt-auto pt-6 border-t border-border/30">
+                      <button className="text-foreground font-semibold text-sm flex items-center gap-2 group-hover:text-brand-magenta transition-colors">
+                        Learn More
+                        <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      </button>
+                    </div>
                   </div>
-                </Card>
+                </div>
               );
             })}
           </div>
