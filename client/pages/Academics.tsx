@@ -98,7 +98,7 @@ export default function Academics() {
                   "B.Tech CSE",
                   "B.Tech Mechanical",
                   "B.Tech ECE",
-                  "B.Tech Civil",
+                  "B.Tech Aerospace",
                 ],
                 color: "brand-orange",
                 href: "/academics/engineering",
