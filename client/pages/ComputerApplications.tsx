@@ -160,32 +160,6 @@ const PG_PROGRAM_CARDS: ProgramCard[] = [
   },
 ];
 
-const SUPPORTING_DEPARTMENTS: SupportingDepartment[] = [
-  {
-    name: "Mathematics Department",
-    focus:
-      "Applied mathematics, statistics and computational techniques powering algorithmic thinking and data science foundations.",
-    image:
-      "https://images.unsplash.com/photo-1551836022-4c4c79ecde51?q=80&w=1600&auto=format&fit=crop",
-    link: "https://www.dsu.edu.in/academics/schools/computer-application/mathematics",
-  },
-  {
-    name: "Physics Department",
-    focus:
-      "Applied physics and scientific computing enabling simulation, systems modeling and emerging technology integration.",
-    image:
-      "https://images.unsplash.com/photo-1581092795360-6b4ea08a1f5c?q=80&w=1600&auto=format&fit=crop",
-    link: "https://www.dsu.edu.in/academics/schools/computer-application/physics",
-  },
-  {
-    name: "Humanities & Social Sciences",
-    focus:
-      "Communication, design thinking and ethics courses shaping socially responsible technology professionals and innovators.",
-    image:
-      "https://images.unsplash.com/photo-1529070538774-1843cb3265df?q=80&w=1600&auto=format&fit=crop",
-    link: "https://www.dsu.edu.in/academics/schools/computer-application/humanities",
-  },
-];
 
 const CALENDAR_ENTRIES: CalendarEntry[] = [
   {
