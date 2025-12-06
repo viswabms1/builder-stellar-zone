@@ -553,46 +553,45 @@ function CurriculumLibrary() {
           {programs.map((program, programIdx) => {
             const isOpen = openProgram === program.id;
             const isProgramBtech = program.id === "btech";
-            const gradientClass = isProgramBtech 
-              ? "from-brand-orange/15 via-brand-magenta/10 to-brand-blue/15" 
-              : "from-brand-blue/15 via-brand-magenta/10 to-brand-purple/15";
-            const borderClass = isProgramBtech 
-              ? "border-brand-orange/30" 
+            const borderClass = isProgramBtech
+              ? "border-brand-orange/30"
               : "border-brand-blue/30";
-            const badgeClass = isProgramBtech 
-              ? "bg-brand-orange/15 text-brand-orange border-brand-orange/20" 
+            const badgeClass = isProgramBtech
+              ? "bg-brand-orange/15 text-brand-orange border-brand-orange/20"
               : "bg-brand-blue/15 text-brand-blue border-brand-blue/20";
-            const iconClass = isProgramBtech ? "text-brand-orange" : "text-brand-blue";
             const Icon = isProgramBtech ? Code : BookOpen;
 
             return (
               <div
                 key={program.id}
-                className={`rounded-3xl border-2 ${borderClass} bg-gradient-to-br ${gradientClass} backdrop-blur-sm overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-brand-magenta/10 hover:-translate-y-1`}
+                className={`rounded-3xl border-2 ${borderClass} overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-brand-magenta/10 hover:-translate-y-1`}
               >
-                <div className="p-6 sm:p-8">
-                  <div className="flex items-start gap-4 mb-6">
-                    <div className={`flex h-16 w-16 items-center justify-center rounded-2xl bg-background/40 border border-border/40 ${iconClass}`}>
-                      <Icon className="h-8 w-8" />
+                <div className="relative h-48 overflow-hidden">
+                  <img
+                    src={program.image}
+                    alt={program.label}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                  <div className="absolute inset-0 flex flex-col justify-end p-6">
+                    <div className="flex items-start gap-3 mb-3">
+                      <Badge className={`rounded-full border ${badgeClass}`}>
+                        {isProgramBtech ? "Undergraduate" : "Postgraduate"}
+                      </Badge>
                     </div>
-                    <div className="flex-1">
-                      <div className="flex items-start gap-3 mb-2">
-                        <Badge className={`rounded-full border ${badgeClass}`}>
-                          {isProgramBtech ? "Undergraduate" : "Postgraduate"}
-                        </Badge>
-                      </div>
-                      <h3 className="headline-4 font-display mb-2">{program.label}</h3>
-                      <p className="text-sm text-foreground/80 font-body">{program.description}</p>
-                    </div>
+                    <h3 className="headline-3 font-display text-white mb-1">{program.label}</h3>
+                    <p className="text-sm text-white/90 font-body">{program.description}</p>
                   </div>
+                </div>
 
+                <div className="p-6 bg-background/50 backdrop-blur-sm">
                   <Button
                     variant="outline"
-                    className={`w-full mb-4 ${isProgramBtech ? "border-brand-orange/30 hover:bg-brand-orange/10 text-brand-orange hover:text-brand-orange" : "border-brand-blue/30 hover:bg-brand-blue/10 text-brand-blue hover:text-brand-blue"}`}
+                    className={`w-full ${isProgramBtech ? "border-brand-orange/30 hover:bg-brand-orange/10 text-brand-orange hover:text-brand-orange" : "border-brand-blue/30 hover:bg-brand-blue/10 text-brand-blue hover:text-brand-blue"}`}
                     onClick={() => setOpenProgram(isOpen ? null : program.id)}
                   >
                     <span className="flex items-center justify-center gap-2">
-                      {isOpen ? "Hide Curriculum Details" : "View Curriculum Details"}
+                      {isOpen ? "Hide" : "View"} Batches
                       <ChevronDown
                         className={`h-4 w-4 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
                       />
@@ -600,56 +599,46 @@ function CurriculumLibrary() {
                   </Button>
 
                   {isOpen && (
-                    <div className="mt-6 space-y-4 border-t border-border/20 pt-6 animate-in fade-in slide-in-from-top-2 duration-300">
+                    <div className="mt-4 space-y-3 border-t border-border/20 pt-4 animate-in fade-in slide-in-from-top-2 duration-300">
                       {program.batches.map((batch, batchIdx) => (
                         <div
                           key={`${program.id}-${batch.year}`}
-                          className={`rounded-2xl border border-border/40 bg-background/60 p-4 transition-all hover:border-brand-magenta/40 hover:shadow-md hover:shadow-brand-magenta/5 ${
+                          className={`rounded-xl border border-border/40 bg-card/70 p-3 transition-all hover:border-brand-magenta/40 ${
                             batchIdx === 0 ? "ring-2 ring-brand-magenta/20" : ""
                           }`}
                         >
-                          <div className="flex flex-col gap-4">
-                            <div className="flex items-start justify-between gap-3">
-                              <div className="flex-1">
-                                <div className="flex items-center gap-2 mb-2">
-                                  <Badge className={`rounded-full border ${isProgramBtech ? "bg-brand-orange/20 text-brand-orange border-brand-orange/30" : "bg-brand-blue/20 text-brand-blue border-brand-blue/30"}`}>
-                                    <CalendarDays className="h-3 w-3 mr-1" />
-                                    {batch.year}
-                                  </Badge>
-                                  {batchIdx === 0 && (
-                                    <Badge className="rounded-full bg-brand-magenta/20 text-brand-magenta border-brand-magenta/30 border">
-                                      <Zap className="h-3 w-3 mr-1" />
-                                      Current
-                                    </Badge>
-                                  )}
-                                </div>
-                                <p className="text-sm text-foreground font-body leading-relaxed">{batch.summary}</p>
-                              </div>
+                          <div className="flex items-start justify-between gap-2 mb-2">
+                            <div className="flex items-center gap-2">
+                              <Badge className={`rounded-full border text-xs ${isProgramBtech ? "bg-brand-orange/20 text-brand-orange border-brand-orange/30" : "bg-brand-blue/20 text-brand-blue border-brand-blue/30"}`}>
+                                <CalendarDays className="h-3 w-3 mr-1" />
+                                {batch.year}
+                              </Badge>
+                              {batchIdx === 0 && (
+                                <Badge className="rounded-full bg-brand-magenta/20 text-brand-magenta border-brand-magenta/30 border text-xs">
+                                  <Zap className="h-3 w-3 mr-1" />
+                                  Current
+                                </Badge>
+                              )}
                             </div>
-                            {batch.documentUrl ? (
-                              <div className="pt-2 border-t border-border/20">
-                                <Button
-                                  variant="ghost"
-                                  size="sm"
-                                  className={`w-full justify-center gap-2 rounded-lg font-semibold transition-all ${
-                                    isProgramBtech 
-                                      ? "bg-brand-orange/10 text-brand-orange hover:bg-brand-orange/20" 
-                                      : "bg-brand-blue/10 text-brand-blue hover:bg-brand-blue/20"
-                                  }`}
-                                  asChild
-                                >
-                                  <a href={batch.documentUrl} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2">
-                                    <Download className="h-4 w-4" />
-                                    Download Curriculum PDF
-                                  </a>
-                                </Button>
-                              </div>
-                            ) : (
-                              <div className="pt-2 border-t border-border/20">
-                                <p className="text-xs text-foreground/60 italic text-center">Release scheduled in coordination with the curriculum committee.</p>
-                              </div>
-                            )}
                           </div>
+                          <p className="text-xs text-foreground/80 font-body mb-3 leading-relaxed">{batch.summary}</p>
+                          {batch.documentUrl && (
+                            <Button
+                              variant="ghost"
+                              size="sm"
+                              className={`w-full justify-center gap-1 rounded text-xs font-semibold ${
+                                isProgramBtech
+                                  ? "bg-brand-orange/10 text-brand-orange hover:bg-brand-orange/20"
+                                  : "bg-brand-blue/10 text-brand-blue hover:bg-brand-blue/20"
+                              }`}
+                              asChild
+                            >
+                              <a href={batch.documentUrl} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-1">
+                                <Download className="h-3 w-3" />
+                                PDF
+                              </a>
+                            </Button>
+                          )}
                         </div>
                       ))}
                     </div>
