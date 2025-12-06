@@ -305,7 +305,54 @@ export default function Index() {
   const [featuredNewsIndex, setFeaturedNewsIndex] = useState(0);
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   const [selectedEventIndex, setSelectedEventIndex] = useState(0);
+  const [isEventInteracting, setIsEventInteracting] = useState(false);
   const { t, language } = useLanguage();
+
+  // All events for rotation
+  const allEvents = [
+    {
+      date: "Nov 28, 2024",
+      title: "Annual Research & Innovation Summit",
+      category: "Academic Seminar",
+      description: "Join leading researchers and innovators to explore cutting-edge developments in AI, Biotechnology, and Sustainable Energy. Network with industry leaders and discover research opportunities.",
+      image: "https://images.pexels.com/photos/6476783/pexels-photo-6476783.jpeg",
+    },
+    {
+      date: "Nov 22, 2024",
+      title: "Faculty Mentorship Program Launch",
+      category: "Mentoring",
+      description: "Connect with experienced faculty mentors who will guide your academic journey and professional development. Register to find your mentor today.",
+      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=400&fit=crop",
+    },
+    {
+      date: "Nov 25, 2024",
+      title: "Inter-School Debate Championship",
+      category: "Competition",
+      description: "Watch brilliant minds compete in our annual inter-school debate championship. Topics include contemporary global issues and societal challenges.",
+      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=400&fit=crop",
+    },
+    {
+      date: "Nov 29, 2024",
+      title: "Industry-Academia Collaboration Meet",
+      category: "Networking",
+      description: "An exclusive meeting bringing together industry professionals and academic experts to discuss innovation, partnerships, and career opportunities.",
+      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=400&fit=crop",
+    },
+    {
+      date: "Dec 2, 2024",
+      title: "Winter Cultural Festival",
+      category: "Celebration",
+      description: "Celebrate diverse cultures through performances, food, art, and music. A vibrant showcase of our campus community's talent and traditions.",
+      image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&h=400&fit=crop",
+    },
+    {
+      date: "Dec 5, 2024",
+      title: "Career Development Workshop",
+      category: "Professional",
+      description: "Develop essential skills for your career success. Expert sessions on resume building, interview techniques, and professional networking.",
+      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=400&fit=crop",
+    },
+  ];
 
   // Get schools data based on current language
   const getSchoolsData = () => {
