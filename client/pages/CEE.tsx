@@ -578,56 +578,8 @@ function ResourceCard({ resource }: { resource: Resource }) {
 export default function CEE() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <section className="relative" id="top">
-        <div className="h-[60vh] w-full overflow-hidden md:h-[70vh]">
-          <img
-            src={HERO_IMAGE}
-            alt="Center for Executive Education"
-            className="h-full w-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-        </div>
-        <div className="absolute inset-0 flex items-center">
-          <div className="mx-auto max-w-7xl px-6">
-            <div className="mb-6 inline-flex items-center rounded-full border border-brand-magenta/20 bg-brand-magenta/10 px-4 py-2">
-              <Presentation className="mr-2 h-4 w-4 text-brand-magenta" />
-              <span className="text-sm font-medium text-brand-magenta font-display">
-                Center for Executive Education
-              </span>
-            </div>
-            <h1 className="mb-4 font-display text-4xl leading-tight text-white md:text-6xl">
-              Executive MBA & Leadership Ecosystem
-            </h1>
-            <p className="max-w-2xl text-white/90 font-body text-lg">
-              Propel your career with weekend executive programmes, CXO
-              mentorship and innovation labs tailored for working professionals.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <a
-                href="https://bit.ly/DSUEMBAApp"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <Button className="bg-brand-gradient text-foreground">
-                  Apply for Executive MBA
-                </Button>
-              </a>
-              <a
-                href="https://www.dsu.edu.in/academics/cee/brochure"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <Button
-                  variant="outline"
-                  className="border-brand-magenta/40 hover:bg-brand-magenta/10"
-                >
-                  Download Brochure
-                </Button>
-              </a>
-            </div>
-          </div>
-        </div>
+      <section className="relative w-full" id="top">
+        <HeroVideo />
       </section>
 
       <section id="offerings" className="px-6 py-16">
