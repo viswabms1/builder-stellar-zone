@@ -353,16 +353,17 @@ function LabsFacilitiesCarousel() {
           </div>
         </div>
 
-        <Card className="group relative overflow-hidden rounded-3xl border-2 border-border/40 bg-card/40 backdrop-blur-sm h-96">
-          <img
-            src={currentLab.image}
-            alt={currentLab.title}
-            className="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-          <div className="absolute bottom-0 left-0 right-0 p-8">
-            <CardTitle className="text-white font-display text-3xl">{currentLab.title}</CardTitle>
+        <Card className="group overflow-hidden rounded-3xl border-2 border-border/40 bg-card/40 backdrop-blur-sm">
+          <div className="relative h-80 overflow-hidden">
+            <img
+              src={currentLab.image}
+              alt={currentLab.title}
+              className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700"
+            />
           </div>
+          <CardContent className="p-6">
+            <CardTitle className="font-display text-2xl text-foreground">{currentLab.title}</CardTitle>
+          </CardContent>
         </Card>
 
         <div className="flex items-center justify-between gap-4">
