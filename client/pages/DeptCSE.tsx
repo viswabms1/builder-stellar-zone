@@ -522,14 +522,20 @@ function CurriculumLibrary() {
         {
           year: "2026-27",
           summary: "AI clinics, cloud-native automation, and innovation lab immersion",
+          documentUrl:
+            "https://www.dsu.edu.in/images/Engineering/CSE-dept/curriculum/MTech-CSE-Curriculum-2026-27.pdf",
         },
         {
           year: "2027-28",
           summary: "Quantum-safe cryptography, edge intelligence, and research dissertations",
+          documentUrl:
+            "https://www.dsu.edu.in/images/Engineering/CSE-dept/curriculum/MTech-CSE-Curriculum-2027-28.pdf",
         },
         {
           year: "2028-29",
           summary: "Sustainable computing, human-centric AI, and thesis publishing",
+          documentUrl:
+            "https://www.dsu.edu.in/images/Engineering/CSE-dept/curriculum/MTech-CSE-Curriculum-2028-29.pdf",
         },
       ],
     },
