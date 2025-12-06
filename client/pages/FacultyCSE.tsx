@@ -15,7 +15,6 @@ import {
 import { cseFaculty } from "@/data/cse-faculty";
 import {
   ChevronRight,
-  Layers,
 } from "lucide-react";
 
 export default function FacultyCSE() {
