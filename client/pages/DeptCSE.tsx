@@ -514,69 +514,91 @@ function NoticeBoard() {
   const news = notices.filter((n) => n.category === "News");
   const announcements = notices.filter((n) => n.category === "Announcement");
 
-  return (
-    <section className="px-6 py-16">
-      <div className="mx-auto max-w-6xl space-y-6">
-        <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <h2 className="headline-3 font-display">Department Notice Board</h2>
-            <p className="max-w-2xl text-sm text-foreground sm:text-base">
-              Track upcoming events, academic announcements, and official circulars released by the Computer Science & Engineering department.
-            </p>
-          </div>
-          <Badge className="w-fit rounded-full bg-brand-magenta/15 px-4 py-2 text-xs font-semibold text-brand-magenta">
-            Updated weekly by the CSE office
-          </Badge>
-        </div>
-        <div className="grid gap-4 lg:grid-cols-2">
-          {notices.map((notice) => {
+  const renderSection = (title: string, items: NoticeItem[], color: string) => (
+    <div className="space-y-4">
+      <div className={`flex items-center gap-2 px-4 py-3 rounded-xl border-l-4 ${
+        color === "magenta"
+          ? "border-brand-magenta bg-brand-magenta/10"
+          : color === "orange"
+          ? "border-brand-orange bg-brand-orange/10"
+          : "border-brand-blue bg-brand-blue/10"
+      }`}>
+        <h3 className={`headline-4 font-display ${
+          color === "magenta"
+            ? "text-brand-magenta"
+            : color === "orange"
+            ? "text-brand-orange"
+            : "text-brand-blue"
+        }`}>{title}</h3>
+        <Badge className="ml-auto text-xs">{items.length}</Badge>
+      </div>
+      <div className="space-y-3">
+        {items.length > 0 ? (
+          items.map((notice) => {
             const categoryStyle = getCategoryStyle(notice.category);
             const Icon = categoryStyle.icon;
             return (
               <Card
                 key={notice.id}
-                className="group border border-border/40 bg-card/70 shadow-sm transition hover:-translate-y-1 hover:border-brand-magenta/40 hover:shadow-brand-magenta/10"
+                className="group border border-border/40 bg-card/50 shadow-sm transition hover:-translate-y-1 hover:border-brand-magenta/40 hover:shadow-brand-magenta/5"
               >
-                <CardHeader className="flex flex-row items-start justify-between gap-3">
-                  <div className="space-y-1">
-                    <div className="flex items-center gap-2">
-                      <div
-                        className={`inline-flex items-center gap-1 rounded-full px-3 py-1 text-xs font-semibold ${categoryStyle.className}`}
-                      >
-                        <Icon className="h-3.5 w-3.5" />
-                        {categoryStyle.label}
-                      </div>
-                      <span className="text-xs text-foreground">{notice.date}</span>
-                    </div>
-                    <CardTitle className="text-base font-display text-foreground sm:text-lg">
-                      {notice.title}
-                    </CardTitle>
-                  </div>
-                </CardHeader>
-                <CardContent className="space-y-3 text-sm text-foreground">
-                  <p>{notice.description}</p>
-                  <div className="flex items-center justify-between text-xs text-foreground">
-                    <span>Ref: CSE/{new Date(notice.date).getFullYear()}/{notice.id.split("-")[1]}</span>
-                    {notice.link ? (
+                <CardHeader className="pb-3">
+                  <div className="flex items-start justify-between gap-2 mb-2">
+                    <span className="text-xs font-semibold text-foreground/60">{notice.date}</span>
+                    {notice.link && (
                       <Button
-                        variant="secondary"
+                        variant="ghost"
                         size="sm"
-                        className="h-8 rounded-full bg-brand-magenta/15 text-brand-magenta hover:bg-brand-magenta/20"
+                        className="h-6 px-2 text-xs"
                         asChild
                       >
                         <a href={notice.link} target="_blank" rel="noreferrer">
-                          View PDF
-                          <Download className="ml-2 h-3.5 w-3.5" />
+                          <Download className="h-3 w-3" />
                         </a>
                       </Button>
-                    ) : (
-                      <span className="text-[11px] italic">Internal memo – available on request</span>
                     )}
                   </div>
+                  <CardTitle className="text-sm font-display text-foreground">
+                    {notice.title}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="pt-0">
+                  <p className="text-xs text-foreground/70 line-clamp-2">{notice.description}</p>
                 </CardContent>
               </Card>
             );
-          })}
+          })
+        ) : (
+          <p className="text-xs text-foreground/60 italic p-4 text-center">No items to display</p>
+        )}
+      </div>
+    </div>
+  );
+
+  return (
+    <section className="px-6 py-16">
+      <div className="mx-auto max-w-7xl space-y-8">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <h2 className="headline-2 mb-3 font-display">
+              <span className="text-foreground">Department </span>
+              <span className="bg-brand-gradient bg-clip-text text-transparent">
+                Notice Board
+              </span>
+            </h2>
+            <p className="max-w-2xl text-sm text-foreground sm:text-base font-body">
+              Stay updated with upcoming events, news, and important announcements from the CSE department.
+            </p>
+          </div>
+          <Badge className="w-fit rounded-full bg-brand-magenta/15 px-4 py-2 text-xs font-semibold text-brand-magenta border border-brand-magenta/20">
+            Updated weekly
+          </Badge>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {renderSection("Events", events, "magenta")}
+          {renderSection("News", news, "orange")}
+          {renderSection("Announcements", announcements, "blue")}
         </div>
       </div>
     </section>
