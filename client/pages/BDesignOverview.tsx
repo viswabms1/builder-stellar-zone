@@ -21,6 +21,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { DeanSection, type DeanInfo } from "@/components/DeanSection";
 
 type Highlight = {
   title: string;
