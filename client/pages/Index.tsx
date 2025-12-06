@@ -483,7 +483,7 @@ export default function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-hidden">
       {/* Hero Section with Full-Screen Video Background */}
-      <section className="relative w-full h-[90vh] flex items-end md:items-center justify-start overflow-hidden">
+      <section className="relative w-full h-[75vh] flex items-end md:items-center justify-start overflow-hidden">
         {/* Full-screen Background Video */}
         <div className="absolute inset-0 w-full h-full">
           <HeroVideo />
