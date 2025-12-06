@@ -501,7 +501,7 @@ export default function Index() {
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight font-display">
               {t('hero.mainHeading') || "Make DSU Yours"}
             </h1>
-            <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-12 leading-tight font-display tracking-tight max-w-4xl">
+            <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-12 leading-tight font-display tracking-tight max-w-4xl whitespace-pre-line">
               {t('hero.subheading') || "Beat the admissions deadline and begin your transformative journey with us"}
             </p>
 
