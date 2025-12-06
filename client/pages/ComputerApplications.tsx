@@ -172,6 +172,48 @@ const CALENDAR_ENTRIES: CalendarEntry[] = [
   },
 ];
 
+type NewsItem = {
+  image: string;
+  category: string;
+  title: string;
+  excerpt: string;
+  date: string;
+  color: "brand-magenta" | "brand-blue" | "brand-orange";
+};
+
+const FEATURED_NEWS: NewsItem[] = [
+  {
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fbf6a54aff7814535b71eda78a3d5f95e?format=webp&width=800",
+    category: "Excellence",
+    title: "Computer Applications Students Win National Hackathon 2025",
+    excerpt:
+      "Our BCA cohort takes first place at the National Software Development Championship with an AI-powered health monitoring system.",
+    date: "Nov 10, 2025",
+    color: "brand-magenta",
+  },
+  {
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Ff67a08f95a24431783dc54fc189e605b?format=webp&width=800",
+    category: "Research",
+    title: "Faculty Published Research in Top-Tier Data Science Journal",
+    excerpt:
+      "Dr. Priya Patel's research on machine learning optimization published in IEEE Transactions on Data Science.",
+    date: "Nov 5, 2025",
+    color: "brand-blue",
+  },
+  {
+    image:
+      "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2Fd56a1c898842468187e8ff3260f0cdda?alt=media&token=6cb58cdf-a202-461d-b774-09ce61d439c3&apiKey=4aa279a8430d441dba9c55f659831878",
+    category: "Placement",
+    title: "Record 98% Placement Rate for 2024-25 Batch",
+    excerpt:
+      "Computer Applications graduates placed at leading tech companies including Google, Microsoft, and Amazon with average package of ₹15 LPA.",
+    date: "Oct 28, 2025",
+    color: "brand-orange",
+  },
+];
+
 
 function ProgramCardComponent({ program }: { program: ProgramCard }) {
   const isInternal = program.link.startsWith("/");
