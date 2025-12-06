@@ -1,8 +1,9 @@
-import { Link } from "react-router-dom";
+import { Link as RouterLink } from "react-router-dom";
 import type { LucideIcon } from "lucide-react";
 import {
   Award,
   Building,
+  CalendarDays,
   ChevronRight,
   DollarSign,
   GraduationCap,
@@ -32,28 +33,34 @@ type Highlight = {
   stat?: string;
 };
 
-type Programme = {
+type ProgramCard = {
   name: string;
   level: string;
-  focus: string;
+  description: string;
+  image: string;
   link?: string;
+  highlights: string[];
 };
 
-type Advantage = {
+type CalendarEntry = {
   title: string;
+  academicYear: string;
   description: string;
-  icon: LucideIcon;
+  documentUrl: string;
+  tag: string;
 };
 
-type Resource = {
+type NewsItem = {
+  image: string;
+  category: string;
   title: string;
-  description: string;
-  href: string;
-  badge: string;
+  excerpt: string;
+  date: string;
+  color: "brand-magenta" | "brand-blue" | "brand-orange";
 };
 
 const HERO_IMAGE =
-  "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=2000&auto=format&fit=crop";
+  "https://images.unsplash.com/photo-1559027615-cd2628902d4a?q=80&w=2000&auto=format&fit=crop";
 
 const USP_HIGHLIGHTS: Highlight[] = [
   {
@@ -91,92 +98,90 @@ const USP_HIGHLIGHTS: Highlight[] = [
   },
 ];
 
-const PROGRAMMES: Programme[] = [
+const UG_PROGRAM_CARDS: ProgramCard[] = [
   {
     name: "Bachelor of Commerce",
     level: "Undergraduate",
-    focus:
-      "Build strong accounting, finance and analytics fundamentals with industry certifications.",
-    link: "https://www.dsu.edu.in/commerce-management/bachelor-of-commerce-management",
+    description:
+      "Build strong accounting, finance and analytics fundamentals with industry certifications and practical experience.",
+    image:
+      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1600&auto=format&fit=crop",
+    highlights: ["Accounting", "Finance", "Analytics"],
   },
   {
     name: "Bachelor of Business Administration",
     level: "Undergraduate",
-    focus:
-      "Develop leadership and entrepreneurial skills through labs, internships and mentoring.",
-    link: "https://www.dsu.edu.in/commerce-management/bba",
+    description:
+      "Develop leadership and entrepreneurial skills through labs, internships and mentoring from industry leaders.",
+    image:
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1600&auto=format&fit=crop",
+    highlights: ["Leadership", "Entrepreneurship", "Mentoring"],
   },
+];
+
+const PG_PROGRAM_CARDS: ProgramCard[] = [
   {
     name: "Master of Business Administration",
     level: "Postgraduate",
-    focus:
-      "Specialise in marketing, finance, HR, analytics and operations with global immersion.",
-    link: "https://www.dsu.edu.in/commerce-management/mba",
+    description:
+      "Specialise in marketing, finance, HR, analytics and operations with global immersion and industry projects.",
+    image:
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1600&auto=format&fit=crop",
+    highlights: ["Marketing", "Finance", "Global Exposure"],
   },
   {
     name: "Doctoral Programmes",
     level: "Doctoral",
-    focus:
-      "Research-driven doctoral tracks across commerce, management and entrepreneurship.",
-    link: "https://www.dsu.edu.in/dsu-research",
+    description:
+      "Research-driven doctoral tracks across commerce, management and entrepreneurship for advanced scholars.",
+    image:
+      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1600&auto=format&fit=crop",
+    highlights: ["Research", "Specialisation", "Industry Focus"],
   },
 ];
 
-const ADVANTAGES: Advantage[] = [
+const CALENDAR_ENTRIES: CalendarEntry[] = [
   {
-    title: "Innovation & Analytics Labs",
+    title: "School of Management Studies Academic Calendar",
+    academicYear: "2025-26",
     description:
-      "Access DSU's IBM, NVIDIA, Automation and Design Innovation labs for business analytics and product incubation.",
-    icon: Layers,
-  },
-  {
-    title: "Corporate Mentorship",
-    description:
-      "Industry partnerships deliver mentorship circles, live consulting briefs and leadership dialogues each term.",
-    icon: Users,
-  },
-  {
-    title: "Global Immersion",
-    description:
-      "International study tours, guest lectures and exchange programmes broaden global business perspectives.",
-    icon: Building,
-  },
-  {
-    title: "Career Lift Platform",
-    description:
-      "Dedicated placement coaching, alumni networking and start-up accelerators fuel career trajectories.",
-    icon: DollarSign,
+      "Detailed timeline for commerce and management programmes including internships, projects and assessments.",
+    documentUrl:
+      "https://www.dsu.edu.in/images/ManagementStudies/calendar_2025_26.pdf",
+    tag: "SCMS",
   },
 ];
 
-const RESOURCES: Resource[] = [
+const FEATURED_NEWS: NewsItem[] = [
   {
-    title: "Academic Calendar 2025-26",
-    description:
-      "Plan your semesters with the official DSU academic calendar including internships and assessments.",
-    href: "https://www.dsu.edu.in/images/University/DSU_AC.pdf",
-    badge: "Calendar",
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fbf6a54aff7814535b71eda78a3d5f95e?format=webp&width=800",
+    category: "Excellence",
+    title: "Management Students Win National Business Case Competition",
+    excerpt:
+      "DSU MBA team wins first prize at National Management Case Study Championship with innovative business solutions.",
+    date: "Nov 14, 2025",
+    color: "brand-magenta",
   },
   {
-    title: "NSS & NCC Activities",
-    description:
-      "Engage in community leadership programmes that build civic responsibility and social impact.",
-    href: "https://www.dsu.edu.in/images/University/NSS_Actvities.pdf",
-    badge: "Engage",
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Ff67a08f95a24431783dc54fc189e605b?format=webp&width=800",
+    category: "Research",
+    title: "Faculty Research on Business Strategy Published in Top Journal",
+    excerpt:
+      "DSU management faculty publish research on emerging business trends and digital transformation.",
+    date: "Nov 9, 2025",
+    color: "brand-blue",
   },
   {
-    title: "Sports Facilities",
-    description:
-      "Explore the world-class sports infrastructure that sustains wellbeing during rigorous academic schedules.",
-    href: "https://www.dsu.edu.in/images/University/Sports_Facilities.pdf",
-    badge: "Campus",
-  },
-  {
-    title: "Photo Gallery",
-    description:
-      "Relive flagship conclaves, pitch fests and leadership summits hosted by SCMS.",
-    href: "https://www.dsu.edu.in/photo-gallery",
-    badge: "Culture",
+    image:
+      "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2Fd56a1c898842468187e8ff3260f0cdda?alt=media&token=6cb58cdf-a202-461d-b774-09ce61d439c3&apiKey=4aa279a8430d441dba9c55f659831878",
+    category: "Placement",
+    title: "97% Placement Rate for 2024-25 Management Batch",
+    excerpt:
+      "Management graduates placed at leading companies in consulting, finance, tech and entrepreneurship sectors.",
+    date: "Oct 30, 2025",
+    color: "brand-orange",
   },
 ];
 
@@ -190,77 +195,74 @@ const DEAN_INFO: DeanInfo = {
   bgColor: "bg-amber-500/10",
 };
 
-function HighlightCard({ highlight }: { highlight: Highlight }) {
-  const Icon = highlight.icon;
-  return (
-    <Card className="group relative h-80 overflow-hidden rounded-3xl border border-border/40 bg-card/40 backdrop-blur-sm transition-all duration-700 hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-magenta/10">
-      <img
-        src={highlight.image}
-        alt={highlight.title}
-        className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-      <div className="absolute top-4 left-4 inline-flex items-center gap-2 rounded-full bg-black/40 px-3 py-1 text-xs text-white">
-        <Icon className="h-4 w-4" /> USP
-      </div>
-      <div className="absolute inset-x-0 bottom-0 p-5 text-white">
-        <h3 className="mb-2 text-lg font-semibold font-display">
-          {highlight.title}
-        </h3>
-        <p className="text-sm text-white/80 font-body">
-          {highlight.description}
-        </p>
-        {highlight.stat ? (
-          <div className="mt-3 text-xs uppercase tracking-wide text-white/70 font-body">
-            {highlight.stat}
-          </div>
-        ) : null}
-      </div>
-    </Card>
-  );
-}
-
-function AdvantageCard({ advantage }: { advantage: Advantage }) {
-  const Icon = advantage.icon;
-  return (
-    <Card className="h-full rounded-3xl border border-border/50 bg-card/50 backdrop-blur-sm">
-      <CardHeader className="flex flex-row items-center gap-3 pb-2">
-        <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-magenta/10 text-brand-magenta">
-          <Icon className="h-5 w-5" />
-        </span>
-        <CardTitle className="text-base font-display">
-          {advantage.title}
+function ProgramCardComponent({ program }: { program: ProgramCard }) {
+  const content = (
+    <Card className="h-full rounded-none border border-border/50 bg-card/50 backdrop-blur-sm">
+      <CardHeader>
+        <Badge className="bg-brand-magenta/15 text-brand-magenta">
+          {program.level}
+        </Badge>
+        <CardTitle className="mt-4 text-xl font-display">
+          {program.name}
         </CardTitle>
       </CardHeader>
-      <CardContent className="pt-0">
-        <CardDescription className="text-sm leading-relaxed text-foreground font-body">
-          {advantage.description}
-        </CardDescription>
+      <CardContent className="space-y-4 text-sm text-foreground font-body">
+        <p>{program.description}</p>
+        <div className="flex flex-wrap gap-2">
+          {program.highlights.map((item) => (
+            <span
+              key={item}
+              className="rounded-full border border-brand-magenta/25 bg-brand-magenta/10 px-3 py-1 text-xs uppercase tracking-wide text-brand-magenta/90"
+            >
+              {item}
+            </span>
+          ))}
+        </div>
       </CardContent>
     </Card>
   );
+
+  if (!program.link) {
+    return content;
+  }
+
+  return (
+    <a
+      href={program.link}
+      target="_blank"
+      rel="noreferrer"
+      className="block h-full transform transition-all duration-500 hover:-translate-y-1"
+    >
+      {content}
+    </a>
+  );
 }
 
-function ResourceCard({ resource }: { resource: Resource }) {
+function CalendarResourceCard({ entry }: { entry: CalendarEntry }) {
   return (
-    <Card className="h-full rounded-3xl border border-border/40 bg-card/60 backdrop-blur">
+    <Card className="h-full rounded-none border border-purple-500/20 bg-purple-500/10 backdrop-blur">
       <CardHeader className="pb-2">
-        <Badge className="bg-brand-magenta/15 text-brand-magenta">
-          {resource.badge}
-        </Badge>
+        <div className="flex items-center justify-between gap-4">
+          <Badge className="bg-brand-magenta/15 text-brand-magenta">
+            {entry.tag}
+          </Badge>
+          <span className="text-xs text-foreground font-body">
+            {entry.academicYear}
+          </span>
+        </div>
         <CardTitle className="mt-4 text-lg font-display">
-          {resource.title}
+          {entry.title}
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-5 text-sm text-foreground font-body">
-        <p>{resource.description}</p>
+        <p>{entry.description}</p>
         <a
-          href={resource.href}
+          href={entry.documentUrl}
           target="_blank"
           rel="noreferrer"
           className="inline-flex items-center gap-2 text-sm font-medium text-brand-magenta"
         >
-          View resource
+          Download PDF
           <ChevronRight className="h-4 w-4" />
         </a>
       </CardContent>
@@ -271,118 +273,56 @@ function ResourceCard({ resource }: { resource: Resource }) {
 export default function ManagementStudies() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <section className="relative" id="top">
-        <div className="h-[60vh] w-full overflow-hidden md:h-[70vh]">
+      <section className="relative w-full" id="top">
+        <div className="h-screen w-full flex items-center justify-center overflow-hidden">
           <img
             src={HERO_IMAGE}
-            alt="School of Commerce and Management Studies"
-            className="h-full w-full object-cover"
+            alt="School of Management Studies"
+            className="absolute inset-0 h-full w-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-        </div>
-        <div className="absolute inset-0 flex items-center">
-          <div className="mx-auto max-w-7xl px-6">
-            <div className="mb-6 inline-flex items-center rounded-full border border-brand-magenta/20 bg-brand-magenta/10 px-4 py-2">
-              <TrendingUp className="mr-2 h-4 w-4 text-brand-magenta" />
-              <span className="text-sm font-medium text-brand-magenta font-display">
-                School of Commerce & Management Studies
-              </span>
-            </div>
-            <h1 className="mb-4 font-display text-4xl leading-tight text-white md:text-6xl">
-              Recalibrate. Collaborate. Elevate.
-            </h1>
-            <p className="max-w-2xl text-white/90 font-body text-lg">
-              Shape business leaders with immersive management education,
-              innovation labs and global exposure tailored for the trust
-              economy.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <a
-                href="https://admissions.dsu.edu.in/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <Button className="bg-brand-gradient text-foreground">
-                  Apply Now
-                </Button>
-              </a>
-              <a href="mailto:dean-scms@dsu.edu.in">
-                <Button
-                  variant="outline"
-                  className="border-brand-magenta/40 hover:bg-brand-magenta/10"
-                >
-                  Contact Dean SCMS
-                </Button>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      <section id="programs" className="px-6 py-16">
-        <div className="mx-auto max-w-7xl">
-          <div className="grid gap-12 lg:grid-cols-[1.1fr_minmax(0,1fr)] lg:items-center">
-            <div className="space-y-6">
-              <Badge className="bg-brand-magenta/15 text-brand-magenta">
-                Academic Pathways
-              </Badge>
-              <h2 className="font-display text-3xl md:text-4xl">
-                Programmes that create agile business leaders
-              </h2>
-              <p className="text-sm text-foreground font-body">
-                Build a career-ready portfolio across B.Com, BBA, MBA and doctoral tracks with immersive labs, consulting clinics and global immersion opportunities.
+          <div className="relative max-w-7xl mx-auto px-6 w-full z-10">
+            <div className="max-w-2xl">
+              <p className="text-sm md:text-base text-white/80 mb-4 uppercase tracking-widest font-display">
+                School of Management Studies
               </p>
-              <div className="grid gap-4 sm:grid-cols-2">
-                {PROGRAMMES.map((programme) => (
-                  <Card
-                    key={programme.name}
-                    className="h-full rounded-3xl border border-border/40 bg-card/60 backdrop-blur-sm"
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight font-display">
+                Recalibrate. Collaborate. Elevate.
+              </h1>
+              <p className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed max-w-xl font-display">
+                Shape business leaders with immersive management education, innovation labs and global exposure tailored for the trust economy.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a
+                  href="https://admissions.dsu.edu.in/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Button
+                    size="lg"
+                    className="bg-white hover:bg-white/90 text-orange-600 hover:text-orange-700 px-8 py-6 text-base font-semibold font-display transition-all duration-300 group border-2 border-white"
                   >
-                    <CardHeader className="pb-3">
-                      <Badge className="bg-brand-magenta/15 text-brand-magenta">
-                        {programme.level}
-                      </Badge>
-                      <CardTitle className="mt-4 text-xl font-display">
-                        {programme.name}
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent className="space-y-4 text-sm text-foreground font-body">
-                      <p>{programme.focus}</p>
-                      {programme.link ? (
-                        <a
-                          href={programme.link}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="inline-flex items-center gap-2 text-sm font-medium text-brand-magenta"
-                        >
-                          Know more
-                          <ChevronRight className="h-4 w-4" />
-                        </a>
-                      ) : null}
-                    </CardContent>
-                  </Card>
-                ))}
+                    Apply Now
+                    <ChevronRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </a>
+                <a
+                  href="https://dsu.edu.in/virtual-tour/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    className="border-2 border-white text-white hover:bg-white hover:text-orange-600 px-8 py-6 text-base font-semibold font-display transition-all duration-300"
+                  >
+                    Virtual Tour
+                  </Button>
+                </a>
               </div>
-            </div>
-            <div className="rounded-3xl border border-brand-magenta/25 bg-brand-magenta/10 p-8 shadow-[0_30px_120px_-50px_rgba(233,97,255,0.6)]">
-              <h3 className="font-display text-2xl text-brand-magenta">
-                What you gain at SCMS
-              </h3>
-              <ul className="mt-4 space-y-3 text-sm text-brand-magenta/90 font-body">
-                <li className="flex items-start gap-2">
-                  <TrendingUp className="mt-0.5 h-4 w-4" />
-                  Strategic specialisations in finance, analytics, marketing and entrepreneurship
-                </li>
-                <li className="flex items-start gap-2">
-                  <Layers className="mt-0.5 h-4 w-4" />
-                  Live business labs, hackathons and consulting clinics with corporate partners
-                </li>
-                <li className="flex items-start gap-2">
-                  <DollarSign className="mt-0.5 h-4 w-4" />
-                  Placement readiness, venture acceleration and alumni mentorship to fast-track careers
-                </li>
-              </ul>
             </div>
           </div>
         </div>
@@ -398,16 +338,45 @@ export default function ManagementStudies() {
               className="bg-white/20 text-brand-magenta backdrop-blur"
               variant="secondary"
             >
-              Unique Strengths
+              Unique Strengths (USP)
             </Badge>
             <h2 className="mt-5 font-display text-3xl md:text-4xl">
               Why Future Leaders Choose SCMS
             </h2>
           </div>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {USP_HIGHLIGHTS.map((highlight) => (
-              <HighlightCard key={highlight.title} highlight={highlight} />
-            ))}
+          <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-4">
+            {USP_HIGHLIGHTS.map((highlight) => {
+              const Icon = highlight.icon;
+              return (
+                <Card
+                  key={highlight.title}
+                  className="group relative h-80 overflow-hidden rounded-none border border-blue-500/20 bg-blue-500/10 backdrop-blur-sm transition-all duration-700 hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-magenta/10"
+                >
+                  <img
+                    src={highlight.image}
+                    alt={highlight.title}
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                  <div className="absolute top-4 left-4 inline-flex items-center gap-2 rounded-full bg-black/40 px-3 py-1 text-xs text-foreground">
+                    <Icon className="h-4 w-4" /> USP
+                  </div>
+                  <div className="absolute inset-x-0 bottom-0 p-5 text-foreground">
+                    <h3 className="mb-2 text-lg font-semibold font-display">
+                      {highlight.title}
+                    </h3>
+                    <p className="text-sm text-foreground/80 font-body">
+                      {highlight.description}
+                    </p>
+                    {highlight.stat ? (
+                      <div className="mt-3 text-xs uppercase tracking-wide text-foreground/70 font-body">
+                        {highlight.stat}
+                      </div>
+                    ) : null}
+                  </div>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -415,107 +384,355 @@ export default function ManagementStudies() {
       {/* Dean's Message Section */}
       <DeanSection dean={DEAN_INFO} />
 
+      <section id="programs" className="relative overflow-hidden px-6 py-16">
+        <div
+          className="pointer-events-none absolute inset-x-0 -top-32 h-64 bg-gradient-to-b from-brand-magenta/20 via-transparent to-transparent blur-3xl"
+          aria-hidden="true"
+        />
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-12">
+            <div className="max-w-3xl">
+              <h2 className="font-display text-3xl md:text-4xl">
+                Academic Pathways for Business Leaders
+              </h2>
+              <p className="mt-3 text-sm text-foreground font-body">
+                Comprehensive undergraduate and postgraduate programmes combining rigorous academics with experiential projects, industry mentorship and global immersion to prepare agile business leaders.
+              </p>
+            </div>
+          </div>
+
+          {/* Undergraduate Programs */}
+          <div className="mb-16">
+            <div className="mb-8">
+              <Badge className="bg-brand-magenta/15 text-brand-magenta">
+                Undergraduate Programs
+              </Badge>
+              <h3 className="mt-4 font-display text-2xl md:text-3xl">
+                Bachelor Degree Programs
+              </h3>
+              <p className="mt-2 text-sm text-foreground font-body">
+                Build strong foundations in commerce and business administration
+              </p>
+            </div>
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {UG_PROGRAM_CARDS.map((program) => (
+                <ProgramCardComponent key={program.name} program={program} />
+              ))}
+            </div>
+          </div>
+
+          {/* Postgraduate Programs */}
+          <div>
+            <div className="mb-8">
+              <Badge className="bg-brand-blue/15 text-brand-blue">
+                Postgraduate Programs
+              </Badge>
+              <h3 className="mt-4 font-display text-2xl md:text-3xl">
+                Master & Doctoral Programs
+              </h3>
+              <p className="mt-2 text-sm text-foreground font-body">
+                Advance into research, specialisation and business leadership
+              </p>
+            </div>
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {PG_PROGRAM_CARDS.map((program) => (
+                <ProgramCardComponent key={program.name} program={program} />
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="calendar" className="px-6 py-16">
+        <div className="mx-auto max-w-6xl">
+          <div className="relative overflow-hidden rounded-none border-[3px] border-dashed border-brand-magenta/30 bg-card/70 p-10 shadow-[0_35px_120px_-45px_rgba(175,80,255,0.65)] backdrop-blur">
+            <div
+              className="pointer-events-none absolute -left-16 top-10 h-32 w-32 rounded-full bg-brand-magenta/15 blur-3xl"
+              aria-hidden="true"
+            />
+            <div
+              className="pointer-events-none absolute -right-12 bottom-0 h-36 w-36 rounded-full bg-brand-blue/15 blur-3xl"
+              aria-hidden="true"
+            />
+            <div className="relative grid gap-0 lg:grid-cols-[1.1fr_minmax(0,1fr)]">
+              <div className="space-y-5">
+                <Badge className="bg-brand-magenta/15 text-brand-magenta">
+                  Notice Board
+                </Badge>
+                <h2 className="font-display text-3xl md:text-4xl">
+                  SCMS Notice Board
+                </h2>
+                <p className="text-sm text-foreground font-body">
+                  Curated updates for the ongoing academic year 2025-26. Stay aligned with assessment windows, projects and internship timelines.
+                </p>
+                <a
+                  href="https://www.dsu.edu.in/management-studies/notices"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 text-sm font-medium text-brand-magenta hover:underline"
+                >
+                  Browse previous circulars
+                  <ChevronRight className="h-4 w-4" />
+                </a>
+              </div>
+              <div className="grid gap-0">
+                {CALENDAR_ENTRIES.map((entry) => (
+                  <CalendarResourceCard
+                    key={`${entry.title}-${entry.academicYear}`}
+                    entry={entry}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section
-        id="advantages"
-        className="bg-gradient-to-r from-brand-blue/5 to-brand-orange/5 px-6 py-16"
+        id="related-resources"
+        className="bg-gradient-to-r from-brand-magenta/5 via-brand-blue/5 to-brand-orange/5 px-6 py-16"
       >
         <div className="mx-auto max-w-7xl">
-          <div className="mb-12 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-            <div className="max-w-3xl">
-              <Badge className="bg-brand-magenta/15 text-brand-magenta">
-                Career Advantages
-              </Badge>
-              <h2 className="mt-4 font-display text-3xl md:text-4xl">
-                Beyond the Classroom
-              </h2>
-              <p className="mt-3 text-sm text-foreground font-body">
-                Leverage innovation hubs, corporate mentorship, global
-                immersions and placement readiness platforms that make DSU
-                graduates highly sought after.
-              </p>
-            </div>
-            <a
-              href="https://www.dsu.edu.in/commerce-management/bba"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 text-sm font-medium text-brand-magenta"
-            >
-              Explore BBA experience
-              <ChevronRight className="h-4 w-4" />
-            </a>
-          </div>
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-            {ADVANTAGES.map((advantage) => (
-              <AdvantageCard key={advantage.title} advantage={advantage} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="resources" className="px-6 py-16">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-10 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-            <div className="max-w-3xl">
-              <Badge className="bg-brand-magenta/15 text-brand-magenta">
-                Calendar & Resources
-              </Badge>
-              <h2 className="mt-4 font-display text-3xl md:text-4xl">
-                Stay Synced with SCMS
-              </h2>
-              <p className="mt-3 text-sm text-foreground font-body">
-                Download official documents, explore co-curricular platforms and
-                plan your journey with key schedules, activities and galleries.
-              </p>
-            </div>
-            <a
-              href="https://www.dsu.edu.in/academics/schools/management-studies#programs"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 text-sm font-medium text-brand-magenta"
-            >
-              View more resources
-              <ChevronRight className="h-4 w-4" />
-            </a>
-          </div>
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-            {RESOURCES.map((resource) => (
-              <ResourceCard key={resource.title} resource={resource} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="px-6 pb-20">
-        <div className="mx-auto max-w-4xl text-center">
-          <div className="rounded-3xl border border-brand-magenta/20 bg-brand-magenta/5 p-10">
-            <h3 className="mb-3 font-display text-3xl">
-              Drive Business Impact with DSU
-            </h3>
-            <p className="mb-6 text-foreground font-body">
-              Join a vibrant management community that transforms purpose-driven
-              ideas into scalable ventures through mentorship, labs and global
-              networks.
+          <div className="mb-12 text-center">
+            <h2 className="font-display text-3xl md:text-4xl">
+              Explore More at DSU SCMS
+            </h2>
+            <p className="mt-3 text-sm text-foreground font-body">
+              Discover our innovation labs, corporate partnerships, placements and admission pathways
             </p>
-            <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <Link to="/admissions">
-                <Button className="bg-brand-gradient text-foreground">
-                  Start Application
-                  <GraduationCap className="ml-2 h-4 w-4" />
-                </Button>
-              </Link>
+          </div>
+          <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-4">
+            <RouterLink
+              to="/centre-of-excellence"
+              className="group rounded-none border border-border/40 bg-card/60 backdrop-blur-sm overflow-hidden hover:shadow-lg hover:shadow-brand-magenta/20 transition-all duration-500 hover:-translate-y-1"
+            >
+              <Card className="h-full border-0 bg-transparent">
+                <div className="relative h-32 bg-gradient-to-br from-brand-magenta/20 to-brand-magenta/10 flex items-center justify-center">
+                  <Award className="h-12 w-12 text-brand-magenta/70 group-hover:text-brand-magenta transition-colors" />
+                </div>
+                <CardHeader>
+                  <CardTitle className="font-display group-hover:text-brand-magenta transition-colors">
+                    Centre of Excellence
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-foreground/80 font-body">
+                    Innovation labs and industry-powered learning hubs
+                  </p>
+                </CardContent>
+              </Card>
+            </RouterLink>
+
+            <RouterLink
+              to="/research"
+              className="group rounded-none border border-border/40 bg-card/60 backdrop-blur-sm overflow-hidden hover:shadow-lg hover:shadow-brand-blue/20 transition-all duration-500 hover:-translate-y-1"
+            >
+              <Card className="h-full border-0 bg-transparent">
+                <div className="relative h-32 bg-gradient-to-br from-brand-blue/20 to-brand-blue/10 flex items-center justify-center">
+                  <TrendingUp className="h-12 w-12 text-brand-blue/70 group-hover:text-brand-blue transition-colors" />
+                </div>
+                <CardHeader>
+                  <CardTitle className="font-display group-hover:text-brand-blue transition-colors">
+                    Research & Innovation
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-foreground/80 font-body">
+                    Faculty-led research projects and business case studies
+                  </p>
+                </CardContent>
+              </Card>
+            </RouterLink>
+
+            <RouterLink
+              to="/placements"
+              className="group rounded-none border border-border/40 bg-card/60 backdrop-blur-sm overflow-hidden hover:shadow-lg hover:shadow-brand-orange/20 transition-all duration-500 hover:-translate-y-1"
+            >
+              <Card className="h-full border-0 bg-transparent">
+                <div className="relative h-32 bg-gradient-to-br from-brand-orange/20 to-brand-orange/10 flex items-center justify-center">
+                  <GraduationCap className="h-12 w-12 text-brand-orange/70 group-hover:text-brand-orange transition-colors" />
+                </div>
+                <CardHeader>
+                  <CardTitle className="font-display group-hover:text-brand-orange transition-colors">
+                    Placements
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-foreground/80 font-body">
+                    Career pathways with leading companies and startups
+                  </p>
+                </CardContent>
+              </Card>
+            </RouterLink>
+
+            <a
+              href="https://admissions.dsu.edu.in/"
+              target="_blank"
+              rel="noreferrer"
+              className="group rounded-none border border-border/40 bg-card/60 backdrop-blur-sm overflow-hidden hover:shadow-lg hover:shadow-brand-magenta/20 transition-all duration-500 hover:-translate-y-1"
+            >
+              <Card className="h-full border-0 bg-transparent">
+                <div className="relative h-32 bg-gradient-to-br from-brand-magenta/20 to-brand-magenta/10 flex items-center justify-center">
+                  <Building className="h-12 w-12 text-brand-magenta/70 group-hover:text-brand-magenta transition-colors" />
+                </div>
+                <CardHeader>
+                  <CardTitle className="font-display group-hover:text-brand-magenta transition-colors">
+                    Admissions
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="flex flex-col gap-3">
+                  <p className="text-sm text-foreground/80 font-body">
+                    Join DSU SCMS and drive business impact
+                  </p>
+                  <span className="inline-flex items-center gap-2 text-xs font-medium text-brand-magenta group-hover:text-brand-magenta/80 transition-colors">
+                    Apply Now
+                    <ChevronRight className="h-3 w-3" />
+                  </span>
+                </CardContent>
+              </Card>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section className="px-6 py-16">
+        <div className="mx-auto grid max-w-5xl items-start gap-8 lg:grid-cols-2">
+          <Card className="rounded-none border border-orange-500/20 bg-orange-500/10">
+            <CardHeader>
+              <CardTitle className="font-display">Leadership</CardTitle>
+            </CardHeader>
+            <CardContent className="grid gap-4 text-sm font-body text-foreground">
+              <div>
+                <div className="text-foreground/70 text-xs uppercase tracking-wide">Email</div>
+                <div className="font-medium text-foreground">
+                  scms@dsu.edu.in
+                </div>
+              </div>
+              <div>
+                <div className="text-foreground/70 text-xs uppercase tracking-wide">Phone</div>
+                <div className="font-medium text-foreground">
+                  +91-80-49092933
+                </div>
+              </div>
+              <div>
+                <div className="text-foreground/70 text-xs uppercase tracking-wide">Campus Address</div>
+                <div className="font-medium text-foreground">
+                  Kanakapura Road, Bengaluru, Karnataka
+                </div>
+              </div>
+              <div>
+                <div className="text-foreground/70 text-xs uppercase tracking-wide">Office Hours</div>
+                <div className="font-medium text-foreground">
+                  Mon–Fri, 9:00 AM – 5:30 PM
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+          <Card className="rounded-none border border-blue-500/20 bg-blue-500/10">
+            <CardHeader>
+              <CardTitle className="font-display">
+                More Resources
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="grid gap-3 text-sm font-body">
               <a
-                href="https://www.dsu.edu.in/commerce-management/mba"
+                href="https://www.dsu.edu.in/management-studies/programs"
                 target="_blank"
                 rel="noreferrer"
+                className="hover:text-brand-magenta"
               >
-                <Button
-                  variant="outline"
-                  className="border-brand-magenta/40 hover:bg-brand-magenta/10"
-                >
-                  MBA Brochure
-                </Button>
+                Programs Overview
               </a>
-            </div>
+              <a
+                href="https://www.dsu.edu.in/management-studies/highlights"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-brand-magenta"
+              >
+                Highlights & USP
+              </a>
+              <a
+                href="https://www.dsu.edu.in/management-studies/newsletter"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-brand-magenta"
+              >
+                Monthly Newsletter
+              </a>
+              <a
+                href="https://www.dsu.edu.in/management-studies/library"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-brand-magenta"
+              >
+                Digital Library
+              </a>
+              <a
+                href="https://www.dsu.edu.in/management-studies/student-hub"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-brand-magenta"
+              >
+                Student Hub
+              </a>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      <section id="featured-news" className="px-6 py-16 bg-gradient-to-r from-brand-blue/5 via-brand-magenta/5 to-brand-orange/5">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-12 text-center">
+            <h2 className="font-display text-3xl md:text-4xl mb-3">
+              Latest from SCMS
+            </h2>
+            <p className="text-sm text-foreground font-body">
+              Stories of business excellence, research breakthroughs, and student success
+            </p>
+          </div>
+          <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-3">
+            {FEATURED_NEWS.map((item) => (
+              <a
+                key={item.title}
+                href="#"
+                className="group rounded-none overflow-hidden border backdrop-blur-sm hover:shadow-lg transition-all text-left cursor-pointer bg-card/40"
+              >
+                <div className="relative h-48 overflow-hidden border-b border-border/40">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute top-3 left-3">
+                    <Badge
+                      className={`text-xs ${
+                        item.color === "brand-orange"
+                          ? "bg-brand-orange/20 text-brand-orange"
+                          : item.color === "brand-magenta"
+                            ? "bg-brand-magenta/20 text-brand-magenta"
+                            : "bg-brand-blue/20 text-brand-blue"
+                      }`}
+                    >
+                      {item.category}
+                    </Badge>
+                  </div>
+                </div>
+                <div className="p-5 space-y-3">
+                  <h3 className="text-base font-semibold text-foreground font-display line-clamp-2 group-hover:text-brand-magenta transition-colors">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-foreground/80 font-body line-clamp-2">
+                    {item.excerpt}
+                  </p>
+                  <div className="flex items-center justify-between pt-2">
+                    <span className="text-xs text-foreground/60 font-body flex items-center">
+                      <CalendarDays className="w-3 h-3 mr-1" /> {item.date}
+                    </span>
+                    <ChevronRight className="w-4 h-4 text-foreground/60 group-hover:text-brand-magenta transition-colors" />
+                  </div>
+                </div>
+              </a>
+            ))}
           </div>
         </div>
       </section>
