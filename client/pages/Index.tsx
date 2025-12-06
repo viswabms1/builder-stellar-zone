@@ -822,150 +822,109 @@ export default function Index() {
             </p>
           </div>
 
-          {(() => {
-            const events = [
-              {
-                date: "Nov 28, 2024",
-                title: "Annual Research & Innovation Summit",
-                category: "Academic Seminar",
-                description: "Join leading researchers and innovators to explore cutting-edge developments in AI, Biotechnology, and Sustainable Energy. Network with industry leaders and discover research opportunities.",
-                image: "https://images.pexels.com/photos/6476783/pexels-photo-6476783.jpeg",
-              },
-              {
-                date: "Nov 22, 2024",
-                title: "Faculty Mentorship Program Launch",
-                category: "Mentoring",
-                description: "Connect with experienced faculty mentors who will guide your academic journey and professional development. Register to find your mentor today.",
-                image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=400&fit=crop",
-              },
-              {
-                date: "Nov 25, 2024",
-                title: "Inter-School Debate Championship",
-                category: "Competition",
-                description: "Watch brilliant minds compete in our annual inter-school debate championship. Topics include contemporary global issues and societal challenges.",
-                image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=400&fit=crop",
-              },
-              {
-                date: "Nov 29, 2024",
-                title: "Industry-Academia Collaboration Meet",
-                category: "Networking",
-                description: "An exclusive meeting bringing together industry professionals and academic experts to discuss innovation, partnerships, and career opportunities.",
-                image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=400&fit=crop",
-              },
-              {
-                date: "Dec 2, 2024",
-                title: "Winter Cultural Festival",
-                category: "Celebration",
-                description: "Celebrate diverse cultures through performances, food, art, and music. A vibrant showcase of our campus community's talent and traditions.",
-                image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&h=400&fit=crop",
-              },
-              {
-                date: "Dec 5, 2024",
-                title: "Career Development Workshop",
-                category: "Professional",
-                description: "Develop essential skills for your career success. Expert sessions on resume building, interview techniques, and professional networking.",
-                image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=400&fit=crop",
-              },
-            ];
-
-            const currentEvent = events[selectedEventIndex];
-
-            return (
-              <div className="grid lg:grid-cols-3 gap-0 items-start">
-                {/* Featured Event - Left side */}
-                <div className="lg:col-span-2">
-                  <div className="group rounded-none overflow-hidden border border-orange-500/20 bg-orange-500/10 backdrop-blur-sm hover:shadow-xl hover:shadow-brand-magenta/10 transition-all">
-                    <div className="relative h-96 overflow-hidden">
-                      <img
-                        src={currentEvent.image}
-                        alt={currentEvent.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
-                    </div>
-                    <div className="p-8">
-                      <div className="flex items-center gap-3 mb-4">
-                        <Badge className="bg-brand-orange/20 text-brand-orange text-xs">
-                          <CalendarDays className="w-3 h-3 mr-1" />
-                          {currentEvent.date}
-                        </Badge>
-                        <Badge variant="secondary" className="text-xs">
-                          {currentEvent.category}
-                        </Badge>
-                      </div>
-                      <h3 className="text-2xl font-bold text-foreground mb-3 font-display">
-                        {currentEvent.title}
-                      </h3>
-                      <p className="text-foreground/80 mb-6 font-body">
-                        {currentEvent.description}
-                      </p>
-                      <Button className="bg-brand-gradient hover:opacity-90 text-foreground">
-                        Learn More
-                        <ArrowRight className="w-4 h-4 ml-2" />
-                      </Button>
-                    </div>
-                  </div>
+          <div className="grid lg:grid-cols-3 gap-0 items-start">
+            {/* Featured Event - Left side */}
+            <div className="lg:col-span-2">
+              <div className="group rounded-none overflow-hidden border border-orange-500/20 bg-orange-500/10 backdrop-blur-sm hover:shadow-xl hover:shadow-brand-magenta/10 transition-all">
+                <div className="relative h-96 overflow-hidden">
+                  <img
+                    src={allEvents[selectedEventIndex].image}
+                    alt={allEvents[selectedEventIndex].title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                 </div>
-
-                {/* Upcoming Events List - Right side */}
-                <div className="lg:col-span-1 space-y-0">
-                  <h3 className="text-lg font-bold text-foreground mb-6 font-display">
-                    More Events
-                  </h3>
-                  <div className="space-y-0">
-                    {events.map((event, idx) => (
-                      <button
-                        key={idx}
-                        onClick={() => setSelectedEventIndex(idx)}
-                        className={`group rounded-none border transition-all cursor-pointer w-full text-left p-4 backdrop-blur-sm ${
-                          selectedEventIndex === idx
-                            ? "border-brand-magenta bg-brand-magenta/10 shadow-lg shadow-brand-magenta/10"
-                            : idx % 3 === 0
-                            ? "border-blue-500/20 bg-blue-500/10 hover:border-brand-magenta/50 hover:shadow-lg hover:shadow-brand-magenta/5"
-                            : idx % 3 === 1
-                            ? "border-purple-500/20 bg-purple-500/10 hover:border-brand-magenta/50 hover:shadow-lg hover:shadow-brand-magenta/5"
-                            : "border-orange-500/20 bg-orange-500/10 hover:border-brand-magenta/50 hover:shadow-lg hover:shadow-brand-magenta/5"
-                        }`}
-                      >
-                        <div className="flex gap-4">
-                          <div className="flex-shrink-0">
-                            <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-brand-orange/10 text-brand-orange font-bold text-sm font-display">
-                              <CalendarDays className="w-5 h-5" />
-                            </div>
-                          </div>
-                          <div className="flex-1 min-w-0">
-                            <p className="text-xs text-foreground/60 font-body font-semibold">
-                              {event.date.split(",")[0]}
-                            </p>
-                            <h4 className="text-sm font-semibold text-foreground font-display group-hover:text-brand-magenta transition-colors line-clamp-2 mt-1">
-                              {event.title}
-                            </h4>
-                            <Badge
-                              variant="secondary"
-                              className="text-xs mt-2 inline-block"
-                            >
-                              {event.category}
-                            </Badge>
-                          </div>
-                          <div className="flex-shrink-0">
-                            <ChevronRight className="w-4 h-4 text-foreground/40 group-hover:text-brand-magenta transition-colors" />
-                          </div>
-                        </div>
-                      </button>
-                    ))}
+                <div className="p-8">
+                  <div className="flex items-center gap-3 mb-4">
+                    <Badge className="bg-brand-orange/20 text-brand-orange text-xs">
+                      <CalendarDays className="w-3 h-3 mr-1" />
+                      {allEvents[selectedEventIndex].date}
+                    </Badge>
+                    <Badge variant="secondary" className="text-xs">
+                      {allEvents[selectedEventIndex].category}
+                    </Badge>
                   </div>
-
-                  <Button
-                    variant="outline"
-                    className="w-full border-brand-orange/30 text-brand-orange hover:bg-brand-orange/5 mt-6"
-                  >
-                    View All Events
-                    <ArrowRight className="w-4 h-4 ml-2" />
-                  </Button>
+                  <h3 className="text-2xl font-bold text-foreground mb-3 font-display">
+                    {allEvents[selectedEventIndex].title}
+                  </h3>
+                  <p className="text-foreground/80 mb-6 font-body">
+                    {allEvents[selectedEventIndex].description}
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <Button className="bg-brand-gradient hover:opacity-90 text-foreground">
+                      Learn More
+                      <ArrowRight className="w-4 h-4 ml-2" />
+                    </Button>
+                    <div className="text-xs text-foreground/60 font-body">
+                      Auto-rotating • {selectedEventIndex + 1} of {allEvents.length}
+                    </div>
+                  </div>
                 </div>
               </div>
-            );
-          })()}
+            </div>
+
+            {/* Upcoming Events List - Right side */}
+            <div className="lg:col-span-1 space-y-0">
+              <h3 className="text-lg font-bold text-foreground mb-6 font-display">
+                More Events
+              </h3>
+              <div className="space-y-0">
+                {allEvents.map((event, idx) => (
+                  <button
+                    key={idx}
+                    onMouseEnter={() => setIsEventInteracting(true)}
+                    onMouseLeave={() => setIsEventInteracting(false)}
+                    onClick={() => {
+                      setSelectedEventIndex(idx);
+                      setIsEventInteracting(true);
+                    }}
+                    className={`group rounded-none border transition-all cursor-pointer w-full text-left p-4 backdrop-blur-sm ${
+                      selectedEventIndex === idx
+                        ? "border-brand-magenta bg-brand-magenta/10 shadow-lg shadow-brand-magenta/10"
+                        : idx % 3 === 0
+                        ? "border-blue-500/20 bg-blue-500/10 hover:border-brand-magenta/50 hover:shadow-lg hover:shadow-brand-magenta/5"
+                        : idx % 3 === 1
+                        ? "border-purple-500/20 bg-purple-500/10 hover:border-brand-magenta/50 hover:shadow-lg hover:shadow-brand-magenta/5"
+                        : "border-orange-500/20 bg-orange-500/10 hover:border-brand-magenta/50 hover:shadow-lg hover:shadow-brand-magenta/5"
+                    }`}
+                  >
+                    <div className="flex gap-4">
+                      <div className="flex-shrink-0">
+                        <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-brand-orange/10 text-brand-orange font-bold text-sm font-display">
+                          <CalendarDays className="w-5 h-5" />
+                        </div>
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <p className="text-xs text-foreground/60 font-body font-semibold">
+                          {event.date.split(",")[0]}
+                        </p>
+                        <h4 className="text-sm font-semibold text-foreground font-display group-hover:text-brand-magenta transition-colors line-clamp-2 mt-1">
+                          {event.title}
+                        </h4>
+                        <Badge
+                          variant="secondary"
+                          className="text-xs mt-2 inline-block"
+                        >
+                          {event.category}
+                        </Badge>
+                      </div>
+                      <div className="flex-shrink-0">
+                        <ChevronRight className="w-4 h-4 text-foreground/40 group-hover:text-brand-magenta transition-colors" />
+                      </div>
+                    </div>
+                  </button>
+                ))}
+              </div>
+
+              <Button
+                variant="outline"
+                className="w-full border-brand-orange/30 text-brand-orange hover:bg-brand-orange/5 mt-6"
+              >
+                View All Events
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </Button>
+            </div>
+          </div>
         </div>
       </section>
 
