@@ -876,7 +876,7 @@ export default function ComputerApplications() {
                 {PROGRAM_GROUPS.map((group) => (
                   <Card
                     key={group.label}
-                    className="rounded-3xl border border-border/40 bg-card/60 backdrop-blur-sm"
+                    className="rounded-none border border-border/40 bg-card/60 backdrop-blur-sm"
                   >
                     <CardHeader className="pb-3">
                       <Badge className="bg-brand-magenta/15 text-brand-magenta">
