@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useRef, useEffect, useState } from "react";
 import { useLanguage } from "@/providers/language-provider";
 import { Button } from "@/components/ui/button";
 import {
@@ -31,379 +32,500 @@ import {
   Laptop,
   PenSquare,
   Presentation,
+  Volume2,
+  VolumeX,
 } from "lucide-react";
+
+function HeroVideo() {
+  const [isMuted, setIsMuted] = useState(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const toggleMute = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = !videoRef.current.muted;
+      setIsMuted(!isMuted);
+    }
+  };
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    video.volume = 0;
+    video.muted = true;
+
+    const handleTimeUpdate = () => {
+      const currentTime = video.currentTime;
+
+      if (currentTime < 2) {
+        video.playbackRate = 0.5;
+      } else if (currentTime < 4) {
+        video.playbackRate = 1;
+      } else if (currentTime < 6) {
+        video.playbackRate = 0.6;
+      } else if (currentTime < 8) {
+        video.playbackRate = 5;
+      } else if (currentTime < 10) {
+        video.playbackRate = 0.8;
+      } else if (currentTime < 12) {
+        video.playbackRate = 8;
+      } else if (currentTime < 14) {
+        video.playbackRate = 1.2;
+      } else if (currentTime < 16) {
+        video.playbackRate = 7;
+      } else if (currentTime < 18) {
+        video.playbackRate = 0.7;
+      } else if (currentTime < 20) {
+        video.playbackRate = 9;
+      } else if (currentTime < 22) {
+        video.playbackRate = 1.5;
+      } else if (currentTime < 24) {
+        video.playbackRate = 6;
+      } else if (currentTime < 26) {
+        video.playbackRate = 0.9;
+      } else if (currentTime < 28) {
+        video.playbackRate = 10;
+      } else if (currentTime < 30) {
+        video.playbackRate = 2;
+      } else if (currentTime < 32) {
+        video.playbackRate = 5.5;
+      } else if (currentTime < 34) {
+        video.playbackRate = 1.1;
+      } else if (currentTime < 36) {
+        video.playbackRate = 7.5;
+      } else if (currentTime < 38) {
+        video.playbackRate = 0.8;
+      } else if (currentTime < 40) {
+        video.playbackRate = 8.5;
+      } else if (currentTime < 42) {
+        video.playbackRate = 1.3;
+      } else if (currentTime < 44) {
+        video.playbackRate = 6.5;
+      } else {
+        video.playbackRate = 1;
+      }
+    };
+
+    video.addEventListener("timeupdate", handleTimeUpdate);
+    return () => {
+      video.removeEventListener("timeupdate", handleTimeUpdate);
+    };
+  }, []);
+
+  return (
+    <div className="w-full h-full relative overflow-hidden">
+      <video
+        ref={videoRef}
+        src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F039b67f729094553afc521bcbf44f524?alt=media&token=f3f572a0-3afd-4a0a-9570-de176cc33653&apiKey=4aa279a8430d441dba9c55f659831878"
+        autoPlay
+        muted
+        loop
+        playsInline
+        volume={0}
+        className="w-full h-full object-cover"
+        style={{
+          filter: "brightness(1.1) contrast(1.15) saturate(1.2)"
+        }}
+      />
+
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/30 pointer-events-none"></div>
+
+      <div className="absolute top-0 left-0 w-96 h-96 bg-brand-magenta/5 rounded-full filter blur-3xl opacity-60 animate-float pointer-events-none"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-brand-orange/5 rounded-full filter blur-3xl opacity-60 animate-float pointer-events-none" style={{ animationDelay: "2s" }}></div>
+
+      <div className="absolute inset-0 opacity-5 pointer-events-none" style={{
+        backgroundImage: "repeating-linear-gradient(0deg, rgba(255,255,255,.03) 0px, rgba(255,255,255,.03) 1px, transparent 1px, transparent 2px)",
+        animation: "scanlines 8s linear infinite"
+      }}></div>
+
+      <style>{`
+        @keyframes scanlines {
+          0% { transform: translateY(0); }
+          100% { transform: translateY(10px); }
+        }
+      `}</style>
+
+      <button
+        onClick={toggleMute}
+        className="absolute top-8 right-8 z-10 p-3 rounded-full bg-black/50 hover:bg-black/70 transition-colors text-white backdrop-blur-sm border border-white/20"
+        aria-label={isMuted ? "Unmute" : "Mute"}
+      >
+        {isMuted ? (
+          <VolumeX className="h-5 w-5" />
+        ) : (
+          <Volume2 className="h-5 w-5" />
+        )}
+      </button>
+    </div>
+  );
+}
 
 export default function Academics() {
   const { t } = useLanguage();
 
+  const schoolsData = [
+    {
+      icon: Cog,
+      title: "Engineering",
+      image: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Ff68b38f444334f6a9d6f31196dc787af?format=webp&width=800",
+      programs: [
+        "B.Tech CSE",
+        "B.Tech Mechanical",
+        "B.Tech ECE",
+        "B.Tech Aerospace",
+      ],
+      color: "orange",
+      href: "/academics/engineering",
+    },
+    {
+      icon: Cpu,
+      title: "Computer Applications",
+      image: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F81d450f810104dc8926ff033cbb8ec87?format=webp&width=800",
+      programs: [
+        "BCA",
+        "B.Sc Data Science",
+        "MCA",
+        "M.Sc Data Science",
+      ],
+      color: "magenta",
+      href: "/academics/computer-applications",
+    },
+    {
+      icon: Gavel,
+      title: "School of Law",
+      image: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Faa5e530144f148c29a6935c9777759b3?format=webp&width=800",
+      programs: [
+        "B.B.A., LL.B.",
+        "B.A., LL.B.",
+        "LL.B.",
+        "Research Centres",
+      ],
+      color: "blue",
+      href: "/academics/law",
+    },
+    {
+      icon: Briefcase,
+      title: "Commerce & Management Studies",
+      image: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F7827db3aa95d45a389a5d0bdeb29d463?format=webp&width=800",
+      programs: ["B.Com", "BBA", "MBA", "Doctoral Programmes"],
+      color: "orange",
+      href: "/academics/management-studies",
+    },
+    {
+      icon: FlaskConical,
+      title: "Basic & Applied Sciences",
+      image: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Ff5cde141ec88434abe5b7909f2bf9710?format=webp&width=800",
+      programs: [
+        "B.Sc Biological Sciences",
+        "B.Sc Data Science",
+        "M.Sc Biological Sciences",
+        "M.Sc Data Science",
+      ],
+      color: "magenta",
+      href: "/academics/basic-applied-sciences",
+    },
+    {
+      icon: Stethoscope,
+      title: "Health Sciences",
+      image: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fbc944f36dda948aa94827a23ad35369b?format=webp&width=800",
+      programs: [
+        "Pharmacy",
+        "Physiotherapy",
+        "Nursing",
+        "Allied Health",
+      ],
+      color: "blue",
+      href: "/academics/health-sciences",
+    },
+    {
+      icon: PenSquare,
+      title: "Journalism & Mass Communication",
+      image: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F0f5e9825dc2342c38fb53f7c1c9ce3a6?format=webp&width=800",
+      programs: [
+        "BA (JMC)",
+        "Podcast Lab",
+        "Global Comm Project",
+        "Industry Internships",
+      ],
+      color: "blue",
+      href: "/academics/journalism-mass-communication",
+    },
+    {
+      icon: Film,
+      title: "Design & Digital Trans Media",
+      image: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fa2063ac0bf034cbaa9d21546069eeb18?format=webp&width=800",
+      programs: [
+        "B.Design",
+        "UX/UI",
+        "Animation & VFX",
+        "Game Design",
+      ],
+      color: "magenta",
+      href: "/academics/design/bdesign",
+    },
+    {
+      icon: Microscope,
+      title: "Medical Education & Research",
+      image: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F14e1fd7abfe94ba3a86faff2e81bd88f?format=webp&width=800",
+      programs: [
+        "MBBS",
+        "MD/MS",
+        "Biomedical Research",
+        "Public Health",
+      ],
+      color: "blue",
+      href: "https://cdsimer.edu.in",
+    },
+    {
+      icon: Presentation,
+      title: "Center for Executive Education",
+      image: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fa0a53cf62f55495e94ddc5c0e3b890d8?format=webp&width=800",
+      programs: [
+        "Executive MBA",
+        "Speaker Series",
+        "Leadership Clinics",
+        "Industry Associations",
+      ],
+      color: "blue",
+      href: "/academics/cee",
+    },
+    {
+      icon: Globe,
+      title: "Online Degree Programs",
+      image: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fedd2e018f6c34d60a22bc6202d6d86c4?format=webp&width=800",
+      programs: ["BBA", "BCA", "B.Com"],
+      color: "orange",
+      href: "https://dsuonline.com",
+    },
+  ];
+
+  const colorClasses = {
+    orange: { bg: 'bg-gradient-to-br from-orange-500/10 to-orange-600/5', border: 'border-orange-500/30', text: 'text-orange-500', badge: 'bg-orange-500/15 border-orange-500/40' },
+    magenta: { bg: 'bg-gradient-to-br from-brand-magenta/10 to-pink-600/5', border: 'border-brand-magenta/30', text: 'text-brand-magenta', badge: 'bg-brand-magenta/15 border-brand-magenta/40' },
+    blue: { bg: 'bg-gradient-to-br from-blue-500/10 to-cyan-600/5', border: 'border-blue-500/30', text: 'text-blue-500', badge: 'bg-blue-500/15 border-blue-500/40' },
+  };
+
   return (
     <div className="min-h-screen bg-background text-foreground">
-      {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 bg-gradient-to-br from-orange-500/10 via-red-600/5 to-background">
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-orange-500/10 rounded-full filter blur-3xl animate-float"></div>
-          <div
-            className="absolute bottom-20 right-10 w-96 h-96 bg-red-600/10 rounded-full filter blur-3xl animate-float"
-            style={{ animationDelay: "2s" }}
-          ></div>
+      {/* Hero Section with Video Background */}
+      <section className="relative w-full h-screen flex items-end md:items-center justify-start overflow-hidden">
+        <div className="absolute inset-0 w-full h-full">
+          <HeroVideo />
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-6 text-center">
-          <div className="inline-flex items-center px-4 py-2 bg-orange-500/10 rounded-full border border-orange-500/20 mb-8">
-            <BookOpen className="w-4 h-4 text-orange-500 mr-2" />
-            <span className="text-sm font-medium text-orange-500">
-              Academic Excellence
-            </span>
+        <div className="absolute inset-0 bg-black/40"></div>
+
+        <div className="relative max-w-7xl mx-auto px-6 w-full z-10 pb-20 md:pb-0">
+          <div className="max-w-2xl">
+            <p className="text-sm md:text-base text-white/80 mb-4 uppercase tracking-widest font-display">
+              Explore Excellence
+            </p>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight font-display">
+              Academic Programs <span className="bg-gradient-to-r from-orange-400 via-pink-400 to-red-400 bg-clip-text text-transparent">That Transform</span>
+            </h1>
+            <p className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed max-w-xl font-display">
+              Discover world-class education across our diverse schools and specialized programs
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a
+                href="https://admissions.dsu.edu.in/"
+                target="_blank"
+                rel="noreferrer"
+                className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              >
+                <Button
+                  size="lg"
+                  className="bg-white hover:bg-white/90 text-orange-600 hover:text-orange-700 px-8 py-6 text-base font-semibold font-display transition-all duration-300 group border-2 border-white"
+                >
+                  Start Exploring
+                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </a>
+            </div>
           </div>
-
-          <h1 className="headline-1 mb-8 leading-tight">
-            <span className="bg-brand-gradient bg-clip-text text-transparent">
-              {t('academics.title').split(' ')[0]} {t('academics.title').split(' ')[1]}
-            </span>
-            <br />
-            <span className="text-foreground">That Inspires</span>
-          </h1>
-
-          <p className="text-xl md:text-2xl text-foreground mb-6 max-w-4xl mx-auto leading-relaxed">
-            {t('academics.subtitle')}
-          </p>
-
         </div>
       </section>
 
-      {/* Schools & Colleges */}
-      <section className="px-6 py-20">
+      {/* Schools & Colleges - Modernized Section */}
+      <section className="px-6 py-20 relative bg-gradient-to-b from-background via-brand-orange/2 to-background">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
+            <div className="inline-flex items-center px-4 py-2 bg-orange-500/10 rounded-full border border-orange-500/20 mb-8">
+              <BookOpen className="w-4 h-4 text-orange-500 mr-2" />
+              <span className="text-sm font-medium text-orange-500">Our Schools</span>
+            </div>
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               <span className="text-foreground">Schools </span>
-              <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-orange-500 via-pink-500 to-red-600 bg-clip-text text-transparent">
                 under Dayananda Sagar University
               </span>
             </h2>
-            <p className="text-xl text-foreground max-w-3xl mx-auto">
-              Choose from our diverse range of academic schools, each offering
-              cutting-edge programs and world-class faculty.
+            <p className="text-xl text-foreground/80 max-w-3xl mx-auto font-display">
+              Choose from our diverse range of academic schools, each offering cutting-edge programs and world-class faculty
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-0">
-            {[
-              {
-                icon: Cog,
-                title: "Engineering",
-                image:
-                  "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Ff68b38f444334f6a9d6f31196dc787af?format=webp&width=800",
-                programs: [
-                  "B.Tech CSE",
-                  "B.Tech Mechanical",
-                  "B.Tech ECE",
-                  "B.Tech Aerospace",
-                ],
-                color: "brand-orange",
-                href: "/academics/engineering",
-              },
-              {
-                icon: Cpu,
-                title: "Computer Applications",
-                image:
-                  "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F81d450f810104dc8926ff033cbb8ec87?format=webp&width=800",
-                programs: [
-                  "BCA",
-                  "B.Sc Data Science",
-                  "MCA",
-                  "M.Sc Data Science",
-                ],
-                color: "brand-magenta",
-                href: "/academics/computer-applications",
-              },
-              {
-                icon: Gavel,
-                title: "School of Law",
-                image:
-                  "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Faa5e530144f148c29a6935c9777759b3?format=webp&width=800",
-                programs: [
-                  "B.B.A., LL.B.",
-                  "B.A., LL.B.",
-                  "LL.B.",
-                  "Research Centres",
-                ],
-                color: "brand-blue",
-                href: "/academics/law",
-              },
-              {
-                icon: Briefcase,
-                title: "Commerce & Management Studies",
-                image:
-                  "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F7827db3aa95d45a389a5d0bdeb29d463?format=webp&width=800",
-                programs: ["B.Com", "BBA", "MBA", "Doctoral Programmes"],
-                color: "brand-orange",
-                href: "/academics/management-studies",
-              },
-              {
-                icon: FlaskConical,
-                title: "Basic & Applied Sciences",
-                image:
-                  "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Ff5cde141ec88434abe5b7909f2bf9710?format=webp&width=800",
-                programs: [
-                  "B.Sc Biological Sciences",
-                  "B.Sc Data Science",
-                  "M.Sc Biological Sciences",
-                  "M.Sc Data Science",
-                ],
-                color: "brand-magenta",
-                href: "/academics/basic-applied-sciences",
-              },
-              {
-                icon: Stethoscope,
-                title: "Health Sciences",
-                image:
-                  "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fbc944f36dda948aa94827a23ad35369b?format=webp&width=800",
-                programs: [
-                  "Pharmacy",
-                  "Physiotherapy",
-                  "Nursing",
-                  "Allied Health",
-                ],
-                color: "brand-blue",
-                href: "/academics/health-sciences",
-              },
-              {
-                icon: PenSquare,
-                title: "Journalism & Mass Communication",
-                image:
-                  "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F0f5e9825dc2342c38fb53f7c1c9ce3a6?format=webp&width=800",
-                programs: [
-                  "BA (JMC)",
-                  "Podcast Lab",
-                  "Global Comm Project",
-                  "Industry Internships",
-                ],
-                color: "brand-blue",
-                href: "/academics/journalism-mass-communication",
-              },
-              {
-                icon: Film,
-                title: "Design & Digital Trans Media",
-                image:
-                  "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fa2063ac0bf034cbaa9d21546069eeb18?format=webp&width=800",
-                programs: [
-                  "B.Design",
-                  "UX/UI",
-                  "Animation & VFX",
-                  "Game Design",
-                ],
-                color: "brand-magenta",
-                href: "/academics/design/bdesign",
-              },
-              {
-                icon: Microscope,
-                title: "Medical Education & Research",
-                image:
-                  "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F14e1fd7abfe94ba3a86faff2e81bd88f?format=webp&width=800",
-                programs: [
-                  "MBBS",
-                  "MD/MS",
-                  "Biomedical Research",
-                  "Public Health",
-                ],
-                color: "brand-blue",
-                href: "https://cdsimer.edu.in",
-              },
-              {
-                icon: Presentation,
-                title: "Center for Executive Education",
-                image:
-                  "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fa0a53cf62f55495e94ddc5c0e3b890d8?format=webp&width=800",
-                programs: [
-                  "Executive MBA",
-                  "Speaker Series",
-                  "Leadership Clinics",
-                  "Industry Associations",
-                ],
-                color: "brand-blue",
-                href: "/academics/cee",
-              },
-              {
-                icon: Globe,
-                title: "Online Degree Programs",
-                image:
-                  "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fedd2e018f6c34d60a22bc6202d6d86c4?format=webp&width=800",
-                programs: ["BBA", "BCA", "B.Com"],
-                color: "brand-orange",
-                href: "https://dsuonline.com",
-              },
-            ].map((school, index) => (
-              <Card
-                key={index}
-                className={`group hover:shadow-lg hover:shadow-brand-magenta/10 transition-all duration-500 hover:-translate-y-2 bg-card/30 backdrop-blur-sm border overflow-hidden rounded-none ${
-                  index % 3 === 0
-                    ? "bg-orange-500/10 border-orange-500/20"
-                    : index % 3 === 1
-                    ? "bg-blue-500/10 border-blue-500/20"
-                    : "bg-purple-500/10 border-purple-500/20"
-                }`}
-              >
-                <div className="relative h-44 w-full overflow-hidden">
-                  <img
-                    src={school.image}
-                    alt={school.title}
-                    className={`h-full w-full ${
-                      school.title === "Online Degree Programs"
-                        ? "object-contain bg-white/5"
-                        : school.title === "Computer Applications"
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {schoolsData.map((school, index) => {
+              const colors = colorClasses[school.color as keyof typeof colorClasses];
+              
+              return (
+                <div
+                  key={index}
+                  className={`group h-full rounded-xl border ${colors.border} ${colors.bg} overflow-hidden backdrop-blur-sm hover:shadow-xl hover:shadow-brand-magenta/20 transition-all duration-500 hover:-translate-y-2 flex flex-col`}
+                >
+                  {/* Image Section */}
+                  <div className="relative h-48 w-full overflow-hidden bg-gradient-to-br from-foreground/5 to-foreground/10">
+                    <img
+                      src={school.image}
+                      alt={school.title}
+                      className={`h-full w-full object-cover group-hover:scale-110 transition-transform duration-700 ${
+                        school.title === "Online Degree Programs"
+                          ? "object-contain bg-white/5"
+                          : school.title === "Computer Applications"
                           ? "object-cover object-top"
                           : "object-cover"
-                    } group-hover:scale-[1.03] transition-transform duration-700`}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
-                  <div className="absolute top-3 left-3 inline-flex items-center gap-2 rounded-full bg-black/40 backdrop-blur px-3 py-1 text-foreground text-xs">
-                    <school.icon className="w-4 h-4" /> School
+                      }`}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                    <div className="absolute top-3 left-3 inline-flex items-center gap-2 rounded-full bg-black/40 backdrop-blur px-3 py-1.5 text-foreground text-xs font-medium">
+                      <school.icon className="w-4 h-4" /> School
+                    </div>
                   </div>
-                </div>
-                <CardHeader>
-                  {school.href ? (
-                    school.href.startsWith("http") ? (
-                      <a
-                        href={school.href}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="block rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-magenta/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-                      >
-                        <CardTitle className="text-xl font-bold group-hover:text-brand-magenta transition-colors leading-tight">
-                          {school.title}
-                        </CardTitle>
-                      </a>
-                    ) : (
-                      <Link
-                        to={school.href}
-                        className="block rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-magenta/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-                      >
-                        <CardTitle className="text-xl font-bold group-hover:text-brand-magenta transition-colors leading-tight">
-                          {school.title}
-                        </CardTitle>
-                      </Link>
-                    )
-                  ) : (
-                    <CardTitle className="text-xl font-bold group-hover:text-brand-magenta transition-colors leading-tight">
-                      {school.title}
-                    </CardTitle>
-                  )}
-                </CardHeader>
-                <CardContent className="space-y-6">
-                  <div className="space-y-3">
-                    <p className="text-sm font-semibold text-foreground">
-                      Key Programs:
-                    </p>
-                    <div className="grid grid-cols-1 gap-2">
-                      {school.programs.slice(0, 4).map((program, idx) =>
-                        program === "B.Tech CSE" ? (
-                          <Link
-                            key={idx}
-                            to="/academics/engineering/computer-science"
-                            className="flex items-center text-sm text-brand-magenta hover:underline"
-                          >
-                            <ChevronRight className="w-3 h-3 text-brand-magenta mr-2 flex-shrink-0" />
-                            {program}
-                          </Link>
+
+                  {/* Content Section */}
+                  <div className="flex-1 p-6 flex flex-col justify-between">
+                    <div>
+                      <div className="mb-4">
+                        {school.href ? (
+                          school.href.startsWith("http") ? (
+                            <a
+                              href={school.href}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="block rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-magenta/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                            >
+                              <h3 className="text-xl font-bold text-foreground group-hover:text-brand-magenta transition-colors leading-tight font-display">
+                                {school.title}
+                              </h3>
+                            </a>
+                          ) : (
+                            <Link
+                              to={school.href}
+                              className="block rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-magenta/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                            >
+                              <h3 className="text-xl font-bold text-foreground group-hover:text-brand-magenta transition-colors leading-tight font-display">
+                                {school.title}
+                              </h3>
+                            </Link>
+                          )
                         ) : (
-                          <div
-                            key={idx}
-                            className="flex items-center text-sm text-foreground"
-                          >
-                            <ChevronRight className="w-3 h-3 text-brand-magenta mr-2 flex-shrink-0" />
-                            {program}
-                          </div>
-                        ),
+                          <h3 className="text-xl font-bold text-foreground font-display">
+                            {school.title}
+                          </h3>
+                        )}
+                      </div>
+
+                      <div className="space-y-3">
+                        <p className="text-xs font-semibold text-foreground/60 uppercase tracking-wider">
+                          Key Programs:
+                        </p>
+                        <div className="flex flex-wrap gap-2">
+                          {school.programs.slice(0, 4).map((program, idx) => (
+                            <Badge
+                              key={idx}
+                              className={`text-xs font-medium ${colors.badge} border cursor-default hover:bg-opacity-75 transition-all`}
+                            >
+                              {program}
+                            </Badge>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* CTA Button */}
+                    <div className="mt-6">
+                      {school.href ? (
+                        school.href.startsWith("http") ? (
+                          <a href={school.href} target="_blank" rel="noreferrer" className="block">
+                            <button className="w-full text-foreground font-semibold text-sm flex items-center justify-between gap-2 py-2 px-3 rounded-lg hover:bg-foreground/5 group-hover:text-brand-magenta transition-all group/btn">
+                              Explore School
+                              <ChevronRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                            </button>
+                          </a>
+                        ) : (
+                          <Link to={school.href} className="block">
+                            <button className="w-full text-foreground font-semibold text-sm flex items-center justify-between gap-2 py-2 px-3 rounded-lg hover:bg-foreground/5 group-hover:text-brand-magenta transition-all group/btn">
+                              Explore School
+                              <ChevronRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                            </button>
+                          </Link>
+                        )
+                      ) : (
+                        <button className="w-full text-foreground font-semibold text-sm flex items-center justify-between gap-2 py-2 px-3 rounded-lg hover:bg-foreground/5">
+                          Explore School
+                          <ChevronRight className="w-4 h-4" />
+                        </button>
                       )}
                     </div>
                   </div>
-                  {school.href ? (
-                    <Link to={school.href}>
-                      <Button
-                        variant="ghost"
-                        size="sm"
-                        className="w-full justify-between group-hover:text-brand-magenta hover:bg-transparent"
-                      >
-                        Explore School
-                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                      </Button>
-                    </Link>
-                  ) : (
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      className="w-full justify-between group-hover:text-brand-magenta hover:bg-transparent"
-                    >
-                      Explore School
-                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </Button>
-                  )}
-                </CardContent>
-              </Card>
-            ))}
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* Academic Features */}
-      <section className="px-6 py-20 bg-gradient-to-r from-orange-500/5 to-red-600/5">
+      {/* Academic Features - Modernized */}
+      <section className="px-6 py-20 bg-gradient-to-r from-orange-500/5 to-red-600/5 border-y border-border/30">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-red-500 to-pink-500 bg-clip-text text-transparent">
-                Why Choose
-              </span>
+              <span className="bg-gradient-to-r from-red-500 to-pink-500 bg-clip-text text-transparent">Why Choose</span>
               <span className="text-foreground"> DSU Academics?</span>
             </h2>
+            <p className="text-lg text-foreground/80 max-w-2xl mx-auto font-display">
+              Discover the distinctive advantages that set our programs apart
+            </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-0">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
                 icon: Award,
                 title: "Excellence Recognition",
-                description:
-                  "NAAC A+ grade and top rankings across multiple disciplines",
-                image:
-                  "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F047841ee5d304f10a49f022a1c5c511b?format=webp&width=800",
+                description: "NAAC A+ grade and top rankings across multiple disciplines",
+                image: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F047841ee5d304f10a49f022a1c5c511b?format=webp&width=800",
                 badgeClass: "bg-brand-magenta/20 text-brand-magenta",
                 objectFit: "contain",
               },
               {
                 icon: Users,
                 title: "Expert Faculty",
-                description:
-                  "Learn from industry leaders and renowned academicians",
-                image:
-                  "https://images.pexels.com/photos/17364073/pexels-photo-17364073.jpeg",
+                description: "Learn from industry leaders and renowned academicians",
+                image: "https://images.pexels.com/photos/17364073/pexels-photo-17364073.jpeg",
                 badgeClass: "bg-brand-orange/20 text-brand-orange",
               },
               {
                 icon: Laptop,
                 title: "Modern Infrastructure",
-                description:
-                  "State-of-the-art labs, libraries, and learning spaces",
-                image:
-                  "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F1e657736504149818bf89d58c6b3d031?format=webp&width=800",
+                description: "State-of-the-art labs, libraries, and learning spaces",
+                image: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F1e657736504149818bf89d58c6b3d031?format=webp&width=800",
                 badgeClass: "bg-brand-blue/20 text-brand-blue",
                 objectFit: "contain",
               },
               {
                 icon: TrendingUp,
                 title: "Industry Connect",
-                description:
-                  "Strong partnerships with leading companies and organizations",
-                image:
-                  "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F29a06e5c2ef44ca8a7d2ebacbffe0f9f?format=webp&width=800",
+                description: "Strong partnerships with leading companies and organizations",
+                image: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F29a06e5c2ef44ca8a7d2ebacbffe0f9f?format=webp&width=800",
                 badgeClass: "bg-brand-magenta/20 text-brand-magenta",
               },
             ].map((feature, index) => (
-              <Card
+              <div
                 key={index}
-                className={`group relative overflow-hidden ${
-                  feature.customHeight || "h-80"
-                } rounded-none border backdrop-blur-sm hover:shadow-lg hover:shadow-brand-magenta/10 transition-all duration-500 hover:-translate-y-1 flex flex-col ${
+                className={`group relative overflow-hidden h-80 rounded-xl border backdrop-blur-sm hover:shadow-xl hover:shadow-brand-magenta/10 transition-all duration-500 hover:-translate-y-2 flex flex-col ${
                   index % 4 === 0
                     ? "bg-blue-500/10 border-blue-500/20"
                     : index % 4 === 1
@@ -416,7 +538,7 @@ export default function Academics() {
                 <div
                   className={`flex-1 overflow-hidden ${
                     feature.objectFit === "contain"
-                      ? "flex items-center justify-center bg-transparent"
+                      ? "flex items-center justify-center bg-gradient-to-br from-foreground/2 to-foreground/5"
                       : ""
                   }`}
                 >
@@ -427,107 +549,99 @@ export default function Academics() {
                       feature.objectFit === "contain"
                         ? "object-contain p-4"
                         : "object-cover"
-                    } group-hover:scale-105 transition-transform duration-700`}
+                    } group-hover:scale-110 transition-transform duration-700`}
                   />
                 </div>
 
-                {/* Content Section - Only for non-contain images */}
-
-                {/* Decorative blobs */}
                 <div className="absolute -top-6 -right-6 w-40 h-40 bg-brand-magenta/10 rounded-full blur-2xl" />
                 <div className="absolute -bottom-8 -left-8 w-48 h-48 bg-brand-orange/10 rounded-full blur-2xl" />
 
-
                 <div className={`${
                   feature.objectFit === "contain" ? "p-6" : "absolute bottom-0 inset-x-0 p-6"
-                }`}>
+                } relative z-10`}>
                   <div className="inline-flex mb-3">
-                    <span
-                      className={`px-3 py-1 rounded-full text-xs font-medium ${feature.badgeClass}`}
-                    >
+                    <span className={`px-3 py-1 rounded-full text-xs font-medium ${feature.badgeClass}`}>
                       {feature.title}
                     </span>
                   </div>
-                  <h3
-                    className={`text-xl font-bold mb-2 font-display ${
-                      feature.objectFit === "contain"
-                        ? "text-foreground"
-                        : "text-foreground"
-                    }`}
-                  >
+                  <h3 className="text-lg font-bold mb-2 font-display text-foreground">
                     {feature.title}
                   </h3>
-                  <p
-                    className={`text-sm font-body ${
-                      feature.objectFit === "contain"
-                        ? "text-foreground"
-                        : "text-foreground/80"
-                    }`}
-                  >
+                  <p className="text-sm font-body text-foreground/80">
                     {feature.description}
                   </p>
                 </div>
-              </Card>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* CTA Section - Modernized */}
       <section className="px-6 py-20">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="bg-gradient-to-r from-orange-500/10 via-red-600/10 to-pink-500/10 rounded-3xl p-12 border border-orange-500/20">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Ready to
-              <span className="bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
-                {" "}
-                Start Your Journey
-              </span>
-              ?
-            </h2>
-            <p className="text-xl text-foreground mb-8 max-w-2xl mx-auto">
-              Explore our academic programs and find the perfect fit for your
-              career aspirations.
-            </p>
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-gradient-to-br from-orange-500/10 via-red-600/10 to-pink-500/10 rounded-3xl p-12 border border-orange-500/20 relative overflow-hidden">
+            <div className="absolute -top-20 -right-20 w-96 h-96 bg-brand-magenta/5 rounded-full blur-3xl" />
+            <div className="absolute -bottom-20 -left-20 w-96 h-96 bg-brand-orange/5 rounded-full blur-3xl" />
+            
+            <div className="relative z-10">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 font-display">
+                Ready to
+                <span className="bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
+                  {" "}
+                  Begin Your Journey
+                </span>
+                ?
+              </h2>
+              <p className="text-xl text-foreground/80 mb-8 max-w-2xl font-display">
+                Explore our academic programs and find the perfect fit for your career aspirations. Join thousands of students who have transformed their futures at DSU.
+              </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-              <a
-                href="https://admissions.dsu.edu.in/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <Button
-                  size="lg"
-                  className="bg-gradient-to-r from-orange-500 via-red-600 to-pink-500 text-foreground px-12 py-6 text-lg font-semibold rounded-2xl"
+              <div className="flex flex-col sm:flex-row gap-4 mb-8">
+                <a
+                  href="https://admissions.dsu.edu.in/"
+                  target="_blank"
+                  rel="noreferrer"
                 >
-                  Apply Now
-                  <GraduationCap className="w-5 h-5 ml-2" />
-                </Button>
-              </a>
-              <Button
-                variant="outline"
-                size="lg"
-                className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-foreground px-12 py-6 text-lg font-semibold rounded-2xl"
-              >
-                Schedule Campus Visit
-              </Button>
-            </div>
+                  <Button
+                    size="lg"
+                    className="bg-gradient-to-r from-orange-500 via-red-600 to-pink-500 text-foreground px-12 py-6 text-lg font-semibold rounded-xl hover:opacity-90 transition-all duration-300"
+                  >
+                    Apply Now
+                    <GraduationCap className="w-5 h-5 ml-2" />
+                  </Button>
+                </a>
+                <a
+                  href="https://dsu.edu.in/virtual-tour/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-foreground px-12 py-6 text-lg font-semibold rounded-xl transition-all duration-300"
+                  >
+                    Virtual Tour
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </Button>
+                </a>
+              </div>
 
-            <div className="flex flex-wrap justify-center gap-2">
-              {[
-                "Merit Scholarships",
-                "Industry Internships",
-                "Global Exposure",
-                "Career Support",
-              ].map((badge, index) => (
-                <Badge
-                  key={index}
-                  variant="secondary"
-                  className="px-3 py-1 text-xs font-medium"
-                >
-                  {badge}
-                </Badge>
-              ))}
+              <div className="flex flex-wrap gap-2">
+                {[
+                  "Merit Scholarships",
+                  "Industry Internships",
+                  "Global Exposure",
+                  "Career Support",
+                ].map((badge, index) => (
+                  <Badge
+                    key={index}
+                    className="px-4 py-2 text-xs font-medium bg-foreground/10 border border-foreground/20 hover:bg-foreground/20 transition-all"
+                  >
+                    {badge}
+                  </Badge>
+                ))}
+              </div>
             </div>
           </div>
         </div>
