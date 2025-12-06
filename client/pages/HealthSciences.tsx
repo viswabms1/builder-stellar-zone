@@ -481,6 +481,9 @@ export default function HealthSciences() {
         </div>
       </section>
 
+      {/* Dean's Message Section */}
+      <DeanSection dean={DEAN_INFO} />
+
       <section
         id="supporting"
         className="bg-gradient-to-r from-brand-blue/5 to-brand-orange/5 px-6 py-16"
