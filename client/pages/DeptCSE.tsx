@@ -140,30 +140,7 @@ export default function DeptCSE() {
 
       <NoticeBoard />
 
-      {/* Labs & Facilities */}
-      <section className="px-6 py-16 bg-gradient-to-r from-brand-blue/5 to-brand-orange/5">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="headline-3 mb-6 font-display">Labs & Facilities</h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              { title: "Programming & Systems Labs", image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop" },
-              { title: "AI & Data Science Lab", image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop" },
-              { title: "Networks & IoT Lab", image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop" },
-              { title: "Cyber Security Lab", image: "https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1200&auto=format&fit=crop" },
-              { title: "Cloud & Web Tech Studio", image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop" },
-              { title: "Innovation & Projects Space", image: "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1200&auto=format&fit=crop" },
-            ].map((lab, idx) => (
-              <Card key={idx} className="group relative overflow-hidden rounded-2xl border border-border/40 bg-card/40 backdrop-blur-sm">
-                <img src={lab.image} alt={lab.title} className="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-700" />
-                <div className="relative p-5 h-40 flex items-end">
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent" />
-                  <CardTitle className="relative text-white font-display">{lab.title}</CardTitle>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+      <LabsFacilitiesCarousel />
 
       {/* Leadership Section */}
       <section className="px-6 py-16">
