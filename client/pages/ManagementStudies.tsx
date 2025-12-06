@@ -478,7 +478,7 @@ export default function ManagementStudies() {
                 Build strong foundations in commerce and business administration
               </p>
             </div>
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-12">
               {UG_PROGRAM_CARDS.map((program) => (
                 <ProgramCardComponent key={program.name} program={program} />
               ))}
@@ -498,7 +498,7 @@ export default function ManagementStudies() {
                 Advance into research, specialisation and business leadership
               </p>
             </div>
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-12">
               {PG_PROGRAM_CARDS.map((program) => (
                 <ProgramCardComponent key={program.name} program={program} />
               ))}
