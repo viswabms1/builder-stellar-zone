@@ -477,60 +477,52 @@ function CurriculumLibrary() {
     {
       id: "btech",
       label: "B.Tech Curriculum",
-      description:
-        "Four-year undergraduate pathway with specializations in AI, Data Science, Cyber Security, Robotics, and Networks.",
+      description: "4-year undergraduate pathway with industry-aligned specializations",
+      image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=400&fit=crop",
       batches: [
         {
           year: "2025-26",
-          summary:
-            "Updated NEP-aligned structure with industry electives and design thinking studio from Semester V.",
+          summary: "NEP-aligned with industry electives and design thinking studio",
           documentUrl:
             "https://www.dsu.edu.in/images/Engineering/CSE-dept/curriculum/BTech-CSE-Curriculum-2025-26.pdf",
         },
         {
           year: "2026-27",
-          summary:
-            "Revised analytics labs, full-stack engineering projects, and extended internship immersion in Semester VII.",
+          summary: "Analytics labs, full-stack projects, and internship immersion",
         },
         {
           year: "2027-28",
-          summary:
-            "Incorporates autonomous systems track and research dissertation option with global partner universities.",
+          summary: "Autonomous systems track with global university partnerships",
         },
         {
           year: "2028-29",
-          summary:
-            "Futuristic curriculum with XR applications, blockchain engineering, and capstone studio showcase.",
+          summary: "XR applications, blockchain engineering, and capstone showcase",
         },
       ],
     },
     {
       id: "mtech",
       label: "M.Tech Curriculum",
-      description:
-        "Two-year postgraduate program focused on advanced computing research, domain electives, and thesis work.",
+      description: "2-year postgraduate program focused on advanced research",
+      image: "https://images.unsplash.com/photo-1516321318423-f06f70a504f9?w=600&h=400&fit=crop",
       batches: [
         {
           year: "2025-26",
-          summary:
-            "Core modules in distributed systems, deep learning accelerators, and secure computing research methods.",
+          summary: "Distributed systems, deep learning, and secure computing research",
           documentUrl:
             "https://www.dsu.edu.in/images/Engineering/CSE-dept/curriculum/MTech-CSE-Curriculum-2025-26.pdf",
         },
         {
           year: "2026-27",
-          summary:
-            "Includes applied AI clinics, cloud-native automation, and interdisciplinary innovation lab immersion.",
+          summary: "AI clinics, cloud-native automation, and innovation lab immersion",
         },
         {
           year: "2027-28",
-          summary:
-            "Adds quantum-safe cryptography, edge intelligence, and industry co-guided research dissertations.",
+          summary: "Quantum-safe cryptography, edge intelligence, and research dissertations",
         },
         {
           year: "2028-29",
-          summary:
-            "Emphasizes sustainable computing, human-centric AI, and publication-oriented thesis pipeline.",
+          summary: "Sustainable computing, human-centric AI, and thesis publishing",
         },
       ],
     },
