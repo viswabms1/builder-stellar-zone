@@ -29,6 +29,7 @@ import DeptAIML from "./pages/DeptAIML";
 import DeptCSE from "./pages/DeptCSE";
 import IQAC from "./pages/IQAC";
 import FacultyCSE from "./pages/FacultyCSE";
+import FacultyAIML from "./pages/FacultyAIML";
 import CentreOfExcellence from "./pages/CentreOfExcellence";
 import VisionMission from "./pages/VisionMission";
 import History from "./pages/History";
