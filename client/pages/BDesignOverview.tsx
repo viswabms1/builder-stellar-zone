@@ -568,31 +568,18 @@ export default function BDesignOverview() {
               </p>
             </div>
 
-            <div className="rounded-3xl border border-brand-magenta/25 bg-brand-magenta/10 p-8 shadow-[0_30px_120px_-50px_rgba(233,97,255,0.6)]">
-              <h3 className="font-display text-2xl text-brand-magenta">
+            <div className="mt-12">
+              <h3 className="font-display text-2xl md:text-3xl mb-8 text-foreground">
                 Design Specialization Tracks
               </h3>
-              <p className="mt-2 text-sm text-brand-magenta/80 font-body">
+              <p className="text-sm text-foreground font-body mb-8">
                 From Year II onwards, students specialize in one of the following tracks based on interest and aptitude:
               </p>
-              <ul className="mt-4 space-y-2 text-sm text-brand-magenta/90 font-body grid md:grid-cols-2 gap-4">
-                <li className="flex items-center gap-2">
-                  <span className="h-2 w-2 rounded-full bg-brand-magenta" />
-                  Product & Furniture Design
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="h-2 w-2 rounded-full bg-brand-magenta" />
-                  Interaction & User Experience Design
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="h-2 w-2 rounded-full bg-brand-magenta" />
-                  Graphic & Visual Communication
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="h-2 w-2 rounded-full bg-brand-magenta" />
-                  Fashion & Textile Design
-                </li>
-              </ul>
+              <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-12">
+                {PROGRAM_CARDS.map((program) => (
+                  <ProgramCardComponent key={program.name} program={program} />
+                ))}
+              </div>
             </div>
           </div>
         </div>
