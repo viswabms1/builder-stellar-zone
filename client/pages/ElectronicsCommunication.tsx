@@ -201,15 +201,19 @@ export default function ElectronicsCommunication() {
         </div>
       </section>
 
-      {/* Faculty */}
+      {/* Leadership Section */}
       <section className="px-6 py-16 bg-gradient-to-r from-brand-orange/5 to-brand-blue/5">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-12">
-            <h2 className="headline-3 mb-3 font-display">Faculty Members</h2>
-            <p className="text-foreground/80 max-w-2xl font-body">Meet our distinguished team of educators and researchers dedicated to advancing Electronics & Communication Engineering education.</p>
+          <div className="flex items-center justify-between mb-8">
+            <h2 className="headline-3 font-display">Department Leadership</h2>
+            <Link to="/academics/engineering/electronics-communication/faculty">
+              <Button variant="outline" className="border-brand-blue/40 hover:bg-brand-blue/10">
+                Explore full faculty list
+              </Button>
+            </Link>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {eceFaculty.map((faculty) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {eceFaculty.filter(f => /Chairman|Chairperson/i.test(f.title)).map((faculty) => (
               <Link
                 key={faculty.slug}
                 to={faculty.profileUrl || "#"}
