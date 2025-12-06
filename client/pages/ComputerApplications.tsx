@@ -452,7 +452,7 @@ function ResourceCard({ resource }: { resource: ResourceLink }) {
 function LabCard({ lab }: { lab: LabExperience }) {
   const Icon = lab.icon;
   return (
-    <Card className="h-full rounded-3xl border border-border/50 bg-card/50 backdrop-blur-sm">
+    <Card className="h-full rounded-none border border-border/50 bg-card/50 backdrop-blur-sm">
       <CardHeader className="flex flex-row items-center gap-3 pb-2">
         <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-magenta/10 text-brand-magenta">
           <Icon className="h-5 w-5" />
