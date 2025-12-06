@@ -173,15 +173,6 @@ const CALENDAR_ENTRIES: CalendarEntry[] = [
   },
 ];
 
-const INNOVATION_LABS = [
-  "IBM Software Lab for Emerging Technologies",
-  "NVIDIA – Boston Innovation Lab",
-  "VMware IT Academy",
-  "Data Science & Analytics Center",
-  "Full-Stack Development Studio",
-  "Cloud Computing Lab",
-  "Cybersecurity Research Lab",
-];
 
 function ProgramCardComponent({ program }: { program: ProgramCard }) {
   const isInternal = program.link.startsWith("/");
