@@ -632,7 +632,7 @@ export default function ComputerApplications() {
                 </div>
               </div>
             </Card>
-            <Card className="rounded-3xl border border-border/40 bg-gradient-to-br from-brand-magenta/10 to-brand-orange/10 backdrop-blur p-8">
+            <Card className="rounded-none border border-border/40 bg-gradient-to-br from-brand-magenta/10 to-brand-orange/10 backdrop-blur p-8">
               <div className="flex items-start gap-4">
                 <Target className="h-8 w-8 text-brand-magenta flex-shrink-0 mt-1" />
                 <div>
