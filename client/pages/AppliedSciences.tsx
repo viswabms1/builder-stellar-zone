@@ -234,34 +234,74 @@ const DEAN_INFO: DeanInfo = {
 };
 
 function ProgramCardComponent({ program }: { program: ProgramCard }) {
+  const isInternal = program.link.startsWith("/");
+  const wrapperClasses = `group block h-full rounded-none ${
+    program.featured ? "lg:col-span-6" : "lg:col-span-3"
+  } focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-magenta focus-visible:ring-offset-2 focus-visible:ring-offset-background`;
+  const overlayClasses =
+    program.overlay ??
+    "bg-gradient-to-t from-black/85 via-black/50 to-transparent";
+  const badgeClasses = `inline-flex items-center gap-2 rounded-none px-3 py-1 text-xs uppercase tracking-wide ${
+    program.badgeClass ?? "bg-white/15 text-foreground/80 backdrop-blur"
+  }`;
+  const panelClasses = `rounded-none border border-white/15 p-6 shadow-[0_25px_80px_-35px_rgba(255,255,255,0.45)] transition-colors duration-500 ${
+    program.panelClass ?? "bg-black/60 backdrop-blur-lg"
+  }`;
+
   const content = (
-    <Card className="h-full rounded-none border border-border/50 bg-card/50 backdrop-blur-sm">
-      <CardHeader>
-        <Badge className="bg-brand-magenta/15 text-brand-magenta">
-          {program.category}
-        </Badge>
-        <CardTitle className="mt-4 text-xl font-display">
-          {program.name}
-        </CardTitle>
-      </CardHeader>
-      <CardContent className="space-y-4 text-sm text-foreground font-body">
-        <p>{program.description}</p>
-        <div className="flex flex-wrap gap-2">
-          {program.highlights.map((item) => (
-            <span
-              key={item}
-              className="rounded-full border border-brand-magenta/25 bg-brand-magenta/10 px-3 py-1 text-xs uppercase tracking-wide text-brand-magenta/90"
-            >
-              {item}
+    <div
+      className={`relative flex h-full flex-col justify-end overflow-hidden rounded-none border border-white/10 bg-black/10 backdrop-blur-sm transition-all duration-700 hover:-translate-y-1 hover:shadow-2xl hover:shadow-brand-magenta/20 ${
+        program.featured ? "min-h-[360px]" : "min-h-[300px]"
+      }`}
+    >
+      <img
+        src={program.image}
+        alt={program.name}
+        loading="lazy"
+        className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+      />
+      <div className={`absolute inset-0 ${overlayClasses}`} />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
+      <div className={`absolute left-6 top-6 ${badgeClasses}`}>
+        {program.area}
+      </div>
+      <div className="relative z-10 flex h-full flex-col justify-end p-6 text-white">
+        <div className={panelClasses}>
+          <div className="space-y-4">
+            <div>
+              <h3 className="font-display text-2xl leading-tight text-white">
+                {program.name}
+              </h3>
+              <p className="mt-3 text-sm text-white/85 font-body">
+                {program.description}
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {program.highlights.map((item) => (
+                <span
+                  key={item}
+                  className="rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs uppercase tracking-wide text-white/85"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+            <span className="inline-flex items-center gap-2 text-sm font-medium text-white/90 transition-colors group-hover:text-brand-magenta">
+              Explore programme
+              <ChevronRight className="h-4 w-4 transition-colors group-hover:text-brand-magenta" />
             </span>
-          ))}
+          </div>
         </div>
-      </CardContent>
-    </Card>
+      </div>
+    </div>
   );
 
-  if (!program.link) {
-    return content;
+  if (isInternal) {
+    return (
+      <RouterLink to={program.link} className={wrapperClasses}>
+        {content}
+      </RouterLink>
+    );
   }
 
   return (
@@ -269,7 +309,7 @@ function ProgramCardComponent({ program }: { program: ProgramCard }) {
       href={program.link}
       target="_blank"
       rel="noreferrer"
-      className="block h-full transform transition-all duration-500 hover:-translate-y-1"
+      className={wrapperClasses}
     >
       {content}
     </a>
