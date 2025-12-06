@@ -1,7 +1,8 @@
-import { Link } from "react-router-dom";
+import { Link as RouterLink } from "react-router-dom";
 import type { LucideIcon } from "lucide-react";
 import {
   Atom,
+  Award,
   Beaker,
   BookOpen,
   CalendarDays,
@@ -33,23 +34,30 @@ type Highlight = {
   stat?: string;
 };
 
-type ProgrammeGroup = {
-  label: string;
-  programmes: string[];
+type ProgramCard = {
+  name: string;
+  category: string;
+  description: string;
+  image: string;
+  link?: string;
+  highlights: string[];
 };
 
-type DepartmentCard = {
+type CalendarEntry = {
   title: string;
+  academicYear: string;
   description: string;
-  icon: LucideIcon;
-  href?: string;
+  documentUrl: string;
+  tag: string;
 };
 
-type ResourceLink = {
+type NewsItem = {
+  image: string;
+  category: string;
   title: string;
-  description: string;
-  href: string;
-  badge: string;
+  excerpt: string;
+  date: string;
+  color: "brand-magenta" | "brand-blue" | "brand-orange";
 };
 
 const HERO_IMAGE =
@@ -91,76 +99,99 @@ const USP_HIGHLIGHTS: Highlight[] = [
   },
 ];
 
-const PROGRAMME_GROUPS: ProgrammeGroup[] = [
+const UG_PROGRAM_CARDS: ProgramCard[] = [
   {
-    label: "Undergraduate",
-    programmes: [
-      "B.Sc Biological Sciences",
-      "B.Sc Data Science",
-      "B.Sc Allied Health Sciences",
-    ],
+    name: "B.Sc Biological Sciences",
+    category: "Life Sciences Focus",
+    description:
+      "Comprehensive programme spanning molecular biology, genetics, biotechnology and environmental sciences with research internships.",
+    image:
+      "https://images.unsplash.com/photo-1581091870622-5f1e9b8d2f70?q=80&w=1600&auto=format&fit=crop",
+    highlights: ["Molecular Biology", "Biotechnology", "Research"],
   },
   {
-    label: "Postgraduate",
-    programmes: ["M.Sc Biological Sciences", "M.Sc Data Science"],
+    name: "B.Sc Data Science",
+    category: "Analytics & Computing",
+    description:
+      "Master statistical computing, data analysis, machine learning and AI applications through hands-on projects and real datasets.",
+    image:
+      "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1600&auto=format&fit=crop",
+    highlights: ["Data Analytics", "Machine Learning", "AI"],
+  },
+  {
+    name: "B.Sc Allied Health Sciences",
+    category: "Applied Health",
+    description:
+      "Training in medical laboratory technology, diagnostic imaging, anaesthesia and emergency care with clinical placements.",
+    image:
+      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1600&auto=format&fit=crop",
+    highlights: ["Diagnostics", "Medical Lab", "Clinical Practice"],
   },
 ];
 
-const DEPARTMENTS: DepartmentCard[] = [
+const PG_PROGRAM_CARDS: ProgramCard[] = [
   {
-    title: "Life Sciences",
+    name: "M.Sc Biological Sciences",
+    category: "Advanced Life Sciences",
     description:
-      "Study molecular biology, biotechnology, genetics and environmental sciences with interdisciplinary research exposure.",
-    icon: Microscope,
+      "Research-intensive postgraduate programme with specialisations in biotechnology, microbiology, genetics and environmental biology.",
+    image:
+      "https://images.unsplash.com/photo-1581091870622-5f1e9b8d2f70?q=80&w=1600&auto=format&fit=crop",
+    highlights: ["Research Thesis", "Specialisation", "Industry Internship"],
   },
   {
-    title: "Physical Sciences",
+    name: "M.Sc Data Science",
+    category: "Advanced Analytics",
     description:
-      "Dive into physics and chemistry laboratories exploring materials, energy systems and applied spectroscopy.",
-    icon: FlaskConical,
-  },
-  {
-    title: "Mathematical & Computational Sciences",
-    description:
-      "Develop modelling, statistics and algorithmic foundations that underpin data analytics and scientific computing.",
-    icon: Network,
-  },
-  {
-    title: "Health & Diagnostic Sciences",
-    description:
-      "Train in diagnostics, allied health practices and translational research supporting healthcare innovation.",
-    icon: Beaker,
+      "Master advanced machine learning, big data processing, AI systems and statistical modelling with capstone projects.",
+    image:
+      "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1600&auto=format&fit=crop",
+    highlights: ["Advanced ML", "Big Data", "AI Systems"],
   },
 ];
 
-const RESOURCE_LINKS: ResourceLink[] = [
+const CALENDAR_ENTRIES: CalendarEntry[] = [
   {
-    title: "Academic Calendar 2025-26",
+    title: "School of Basic & Applied Sciences Academic Calendar",
+    academicYear: "2025-26",
     description:
-      "Download the latest SBAS academic calendar to plan coursework, labs and assessments.",
-    href: "https://www.dsu.edu.in/images/AC_11082025.pdf",
-    badge: "Calendar",
+      "Detailed timeline for all science programmes including lab cycles, internships and research presentations.",
+    documentUrl:
+      "https://www.dsu.edu.in/images/AppliedSciences/calendar_2025_26.pdf",
+    tag: "SBAS",
+  },
+];
+
+const FEATURED_NEWS: NewsItem[] = [
+  {
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fbf6a54aff7814535b71eda78a3d5f95e?format=webp&width=800",
+    category: "Excellence",
+    title: "SBAS Students Win National Science Research Competition",
+    excerpt:
+      "DSU science students awarded first prize at National Research Summit for innovative biotechnology project.",
+    date: "Nov 12, 2025",
+    color: "brand-magenta",
   },
   {
-    title: "Calendar of Events",
-    description:
-      "Timeline of seminars, outreach drives and interdisciplinary showcases from SBAS.",
-    href: "https://www.dsu.edu.in/basic-applied-sciences/coe-sbas",
-    badge: "Events",
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Ff67a08f95a24431783dc54fc189e605b?format=webp&width=800",
+    category: "Research",
+    title: "Faculty Research on Biotechnology Published in Nature Science",
+    excerpt:
+      "DSU SBAS faculty publish groundbreaking research on sustainable biotechnology solutions.",
+    date: "Nov 8, 2025",
+    color: "brand-blue",
   },
   {
-    title: "SBAS Events Archive",
-    description:
-      "Explore coverage of past symposiums, workshops and student-led initiatives.",
-    href: "https://www.dsu.edu.in/news-events/basic-and-applied-sciences",
-    badge: "Stories",
-  },
-  {
-    title: "SBAS Handbook",
-    description:
-      "Comprehensive handbook outlining policies, programme structure and student support.",
-    href: "https://www.dsu.edu.in/images/SBAS/pdf/Handbook_2023.pdf",
-    badge: "Handbook",
+    image:
+      "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2Fd56a1c898842468187e8ff3260f0cdda?alt=media&token=6cb58cdf-a202-461d-b774-09ce61d439c3&apiKey=4aa279a8430d441dba9c55f659831878",
+    category: "Placement",
+    title: "92% Placement Rate for 2024-25 Science Graduates",
+    excerpt:
+      "Science graduates placed at leading research institutions, biotech companies and analytics firms.",
+    date: "Oct 28, 2025",
+    color: "brand-orange",
   },
 ];
 
@@ -174,63 +205,40 @@ const DEAN_INFO: DeanInfo = {
   bgColor: "bg-violet-500/10",
 };
 
-function HighlightCard({ highlight }: { highlight: Highlight }) {
-  const Icon = highlight.icon;
-  return (
-    <Card className="group relative h-80 overflow-hidden rounded-3xl border border-border/40 bg-card/40 backdrop-blur-sm transition-all duration-700 hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-magenta/10">
-      <img
-        src={highlight.image}
-        alt={highlight.title}
-        className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-      <div className="absolute top-4 left-4 inline-flex items-center gap-2 rounded-full bg-black/40 px-3 py-1 text-xs text-white">
-        <Icon className="h-4 w-4" /> USP
-      </div>
-      <div className="absolute inset-x-0 bottom-0 p-5 text-white">
-        <h3 className="mb-2 text-lg font-semibold font-display">
-          {highlight.title}
-        </h3>
-        <p className="text-sm text-white/80 font-body">
-          {highlight.description}
-        </p>
-        {highlight.stat ? (
-          <div className="mt-3 text-xs uppercase tracking-wide text-white/70 font-body">
-            {highlight.stat}
-          </div>
-        ) : null}
-      </div>
-    </Card>
-  );
-}
-
-function DepartmentInfoCard({ department }: { department: DepartmentCard }) {
-  const Icon = department.icon;
+function ProgramCardComponent({ program }: { program: ProgramCard }) {
   const content = (
-    <Card className="h-full rounded-3xl border border-border/50 bg-card/50 backdrop-blur-sm">
-      <CardHeader className="flex flex-row items-center gap-3 pb-2">
-        <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-magenta/10 text-brand-magenta">
-          <Icon className="h-5 w-5" />
-        </span>
-        <CardTitle className="text-base font-display">
-          {department.title}
+    <Card className="h-full rounded-none border border-border/50 bg-card/50 backdrop-blur-sm">
+      <CardHeader>
+        <Badge className="bg-brand-magenta/15 text-brand-magenta">
+          {program.category}
+        </Badge>
+        <CardTitle className="mt-4 text-xl font-display">
+          {program.name}
         </CardTitle>
       </CardHeader>
-      <CardContent className="pt-0">
-        <CardDescription className="text-sm leading-relaxed text-foreground font-body">
-          {department.description}
-        </CardDescription>
+      <CardContent className="space-y-4 text-sm text-foreground font-body">
+        <p>{program.description}</p>
+        <div className="flex flex-wrap gap-2">
+          {program.highlights.map((item) => (
+            <span
+              key={item}
+              className="rounded-full border border-brand-magenta/25 bg-brand-magenta/10 px-3 py-1 text-xs uppercase tracking-wide text-brand-magenta/90"
+            >
+              {item}
+            </span>
+          ))}
+        </div>
       </CardContent>
     </Card>
   );
 
-  if (!department.href) {
+  if (!program.link) {
     return content;
   }
 
   return (
     <a
-      href={department.href}
+      href={program.link}
       target="_blank"
       rel="noreferrer"
       className="block h-full transform transition-all duration-500 hover:-translate-y-1"
@@ -240,26 +248,31 @@ function DepartmentInfoCard({ department }: { department: DepartmentCard }) {
   );
 }
 
-function ResourceCard({ resource }: { resource: ResourceLink }) {
+function CalendarResourceCard({ entry }: { entry: CalendarEntry }) {
   return (
-    <Card className="h-full rounded-3xl border border-border/40 bg-card/60 backdrop-blur">
+    <Card className="h-full rounded-none border border-purple-500/20 bg-purple-500/10 backdrop-blur">
       <CardHeader className="pb-2">
-        <Badge className="bg-brand-magenta/15 text-brand-magenta">
-          {resource.badge}
-        </Badge>
+        <div className="flex items-center justify-between gap-4">
+          <Badge className="bg-brand-magenta/15 text-brand-magenta">
+            {entry.tag}
+          </Badge>
+          <span className="text-xs text-foreground font-body">
+            {entry.academicYear}
+          </span>
+        </div>
         <CardTitle className="mt-4 text-lg font-display">
-          {resource.title}
+          {entry.title}
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-5 text-sm text-foreground font-body">
-        <p>{resource.description}</p>
+        <p>{entry.description}</p>
         <a
-          href={resource.href}
+          href={entry.documentUrl}
           target="_blank"
           rel="noreferrer"
           className="inline-flex items-center gap-2 text-sm font-medium text-brand-magenta"
         >
-          View resource
+          Download PDF
           <ChevronRight className="h-4 w-4" />
         </a>
       </CardContent>
@@ -270,96 +283,57 @@ function ResourceCard({ resource }: { resource: ResourceLink }) {
 export default function AppliedSciences() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <section className="relative" id="top">
-        <div className="h-[60vh] w-full overflow-hidden md:h-[70vh]">
+      <section className="relative w-full" id="top">
+        <div className="h-screen w-full flex items-center justify-center overflow-hidden">
           <img
             src={HERO_IMAGE}
-            alt="School of Basic & Applied Sciences"
-            className="h-full w-full object-cover"
+            alt="School of Applied Sciences"
+            className="absolute inset-0 h-full w-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-        </div>
-        <div className="absolute inset-0 flex items-center">
-          <div className="mx-auto max-w-7xl px-6">
-            <div className="mb-6 inline-flex items-center rounded-full border border-brand-magenta/20 bg-brand-magenta/10 px-4 py-2">
-              <Atom className="mr-2 h-4 w-4 text-brand-magenta" />
-              <span className="text-sm font-medium text-brand-magenta font-display">
-                School of Basic & Applied Sciences
-              </span>
-            </div>
-            <h1 className="mb-4 font-display text-4xl leading-tight text-white md:text-6xl">
-              Deciphering the Codes of Life
-            </h1>
-            <p className="max-w-2xl text-white/90 font-body text-lg">
-              Build scientific acumen across life sciences, physical sciences
-              and data-driven experimentation with research-intensive mentorship
-              at DSU.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <a
-                href="https://admissions.dsu.edu.in/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <Button className="bg-brand-gradient text-foreground">
-                  Apply Now
-                </Button>
-              </a>
-              <a
-                href="https://www.dsu.edu.in/basic-applied-sciences/usp-sbas"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <Button
-                  variant="outline"
-                  className="border-brand-magenta/40 hover:bg-brand-magenta/10"
-                >
-                  Explore USP
-                </Button>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      <section id="programs" className="px-6 py-16">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-10 text-center">
-            <Badge className="bg-brand-magenta/15 text-brand-magenta">
-              Academic Pathways
-            </Badge>
-            <h2 className="mt-4 font-display text-3xl md:text-4xl">
-              Programmes bridging science & society
-            </h2>
-            <p className="mt-3 text-sm text-foreground font-body max-w-3xl mx-auto">
-              Programmes nurture curiosity, experimentation and analytical rigour, preparing graduates for research, healthcare, product development and analytics roles.
-            </p>
-          </div>
-          <div className="grid gap-6 lg:grid-cols-2">
-            {PROGRAMME_GROUPS.map((group) => (
-              <Card
-                key={group.label}
-                className="rounded-3xl border border-border/50 bg-card/50 backdrop-blur-sm"
-              >
-                <CardHeader>
-                  <Badge className="bg-brand-magenta/15 text-brand-magenta">
-                    {group.label}
-                  </Badge>
-                  <CardTitle className="mt-4 text-xl font-display">
-                    {group.label} Programmes
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="grid gap-3 text-sm text-foreground font-body">
-                  {group.programmes.map((programme) => (
-                    <div key={programme} className="flex items-center">
-                      <ChevronRight className="mr-2 h-3 w-3 text-brand-magenta" />
-                      {programme}
-                    </div>
-                  ))}
-                </CardContent>
-              </Card>
-            ))}
+          <div className="relative max-w-7xl mx-auto px-6 w-full z-10">
+            <div className="max-w-2xl">
+              <p className="text-sm md:text-base text-white/80 mb-4 uppercase tracking-widest font-display">
+                School of Basic & Applied Sciences
+              </p>
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight font-display">
+                Deciphering the Codes of Life
+              </h1>
+              <p className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed max-w-xl font-display">
+                Build scientific acumen across life sciences, physical sciences and data-driven experimentation with research-intensive mentorship at DSU.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a
+                  href="https://admissions.dsu.edu.in/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Button
+                    size="lg"
+                    className="bg-white hover:bg-white/90 text-orange-600 hover:text-orange-700 px-8 py-6 text-base font-semibold font-display transition-all duration-300 group border-2 border-white"
+                  >
+                    Apply Now
+                    <ChevronRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </a>
+                <a
+                  href="https://dsu.edu.in/virtual-tour/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    className="border-2 border-white text-white hover:bg-white hover:text-orange-600 px-8 py-6 text-base font-semibold font-display transition-all duration-300"
+                  >
+                    Virtual Tour
+                  </Button>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -374,16 +348,45 @@ export default function AppliedSciences() {
               className="bg-white/20 text-brand-magenta backdrop-blur"
               variant="secondary"
             >
-              Unique Strengths
+              Unique Strengths (USP)
             </Badge>
             <h2 className="mt-5 font-display text-3xl md:text-4xl">
               Why Innovators Choose SBAS
             </h2>
           </div>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {USP_HIGHLIGHTS.map((highlight) => (
-              <HighlightCard key={highlight.title} highlight={highlight} />
-            ))}
+          <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-4">
+            {USP_HIGHLIGHTS.map((highlight) => {
+              const Icon = highlight.icon;
+              return (
+                <Card
+                  key={highlight.title}
+                  className="group relative h-80 overflow-hidden rounded-none border border-blue-500/20 bg-blue-500/10 backdrop-blur-sm transition-all duration-700 hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-magenta/10"
+                >
+                  <img
+                    src={highlight.image}
+                    alt={highlight.title}
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                  <div className="absolute top-4 left-4 inline-flex items-center gap-2 rounded-full bg-black/40 px-3 py-1 text-xs text-foreground">
+                    <Icon className="h-4 w-4" /> USP
+                  </div>
+                  <div className="absolute inset-x-0 bottom-0 p-5 text-foreground">
+                    <h3 className="mb-2 text-lg font-semibold font-display">
+                      {highlight.title}
+                    </h3>
+                    <p className="text-sm text-foreground/80 font-body">
+                      {highlight.description}
+                    </p>
+                    {highlight.stat ? (
+                      <div className="mt-3 text-xs uppercase tracking-wide text-foreground/70 font-body">
+                        {highlight.stat}
+                      </div>
+                    ) : null}
+                  </div>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -391,110 +394,355 @@ export default function AppliedSciences() {
       {/* Dean's Message Section */}
       <DeanSection dean={DEAN_INFO} />
 
+      <section id="programs" className="relative overflow-hidden px-6 py-16">
+        <div
+          className="pointer-events-none absolute inset-x-0 -top-32 h-64 bg-gradient-to-b from-brand-magenta/20 via-transparent to-transparent blur-3xl"
+          aria-hidden="true"
+        />
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-12">
+            <div className="max-w-3xl">
+              <h2 className="font-display text-3xl md:text-4xl">
+                Academic Pathways in Sciences
+              </h2>
+              <p className="mt-3 text-sm text-foreground font-body">
+                Comprehensive undergraduate and postgraduate programmes combining rigorous academics with research immersion, capstone projects and industry internships to prepare problem-solvers and innovators.
+              </p>
+            </div>
+          </div>
+
+          {/* Undergraduate Programs */}
+          <div className="mb-16">
+            <div className="mb-8">
+              <Badge className="bg-brand-magenta/15 text-brand-magenta">
+                Undergraduate Programs
+              </Badge>
+              <h3 className="mt-4 font-display text-2xl md:text-3xl">
+                Bachelor Degree Programs
+              </h3>
+              <p className="mt-2 text-sm text-foreground font-body">
+                Build foundation across biological, physical and data sciences
+              </p>
+            </div>
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {UG_PROGRAM_CARDS.map((program) => (
+                <ProgramCardComponent key={program.name} program={program} />
+              ))}
+            </div>
+          </div>
+
+          {/* Postgraduate Programs */}
+          <div>
+            <div className="mb-8">
+              <Badge className="bg-brand-blue/15 text-brand-blue">
+                Postgraduate Programs
+              </Badge>
+              <h3 className="mt-4 font-display text-2xl md:text-3xl">
+                Master Degree Programs
+              </h3>
+              <p className="mt-2 text-sm text-foreground font-body">
+                Advance into research, specialisation and scientific leadership
+              </p>
+            </div>
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {PG_PROGRAM_CARDS.map((program) => (
+                <ProgramCardComponent key={program.name} program={program} />
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="calendar" className="px-6 py-16">
+        <div className="mx-auto max-w-6xl">
+          <div className="relative overflow-hidden rounded-none border-[3px] border-dashed border-brand-magenta/30 bg-card/70 p-10 shadow-[0_35px_120px_-45px_rgba(175,80,255,0.65)] backdrop-blur">
+            <div
+              className="pointer-events-none absolute -left-16 top-10 h-32 w-32 rounded-full bg-brand-magenta/15 blur-3xl"
+              aria-hidden="true"
+            />
+            <div
+              className="pointer-events-none absolute -right-12 bottom-0 h-36 w-36 rounded-full bg-brand-blue/15 blur-3xl"
+              aria-hidden="true"
+            />
+            <div className="relative grid gap-0 lg:grid-cols-[1.1fr_minmax(0,1fr)]">
+              <div className="space-y-5">
+                <Badge className="bg-brand-magenta/15 text-brand-magenta">
+                  Notice Board
+                </Badge>
+                <h2 className="font-display text-3xl md:text-4xl">
+                  SBAS Notice Board
+                </h2>
+                <p className="text-sm text-foreground font-body">
+                  Curated updates for the ongoing academic year 2025-26. Stay aligned with assessment windows, research projects and university-hosted experiences.
+                </p>
+                <a
+                  href="https://www.dsu.edu.in/basic-applied-sciences/notices"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 text-sm font-medium text-brand-magenta hover:underline"
+                >
+                  Browse previous circulars
+                  <ChevronRight className="h-4 w-4" />
+                </a>
+              </div>
+              <div className="grid gap-0">
+                {CALENDAR_ENTRIES.map((entry) => (
+                  <CalendarResourceCard
+                    key={`${entry.title}-${entry.academicYear}`}
+                    entry={entry}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section
-        id="departments"
-        className="bg-gradient-to-r from-brand-blue/5 to-brand-orange/5 px-6 py-16"
+        id="related-resources"
+        className="bg-gradient-to-r from-brand-magenta/5 via-brand-blue/5 to-brand-orange/5 px-6 py-16"
       >
         <div className="mx-auto max-w-7xl">
-          <div className="mb-12 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-            <div className="max-w-3xl">
-              <Badge className="bg-brand-magenta/15 text-brand-magenta">
-                Departments & Labs
-              </Badge>
-              <h2 className="mt-4 font-display text-3xl md:text-4xl">
-                Interdisciplinary Science Ecosystem
-              </h2>
-              <p className="mt-3 text-sm text-foreground font-body">
-                Collaborate across life sciences, physical sciences, health
-                sciences and computational domains through integrated
-                coursework, labs and research projects.
-              </p>
-            </div>
-            <a
-              href="https://www.dsu.edu.in/basic-applied-sciences/sbas-library"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 text-sm font-medium text-brand-magenta"
-            >
-              Library & resources
-              <ChevronRight className="h-4 w-4" />
-            </a>
-          </div>
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-            {DEPARTMENTS.map((department) => (
-              <DepartmentInfoCard
-                key={department.title}
-                department={department}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="resources" className="px-6 py-16">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-10 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-            <div className="max-w-3xl">
-              <Badge className="bg-brand-magenta/15 text-brand-magenta">
-                Calendar & Resources
-              </Badge>
-              <h2 className="mt-4 font-display text-3xl md:text-4xl">
-                Plan, Engage & Excel
-              </h2>
-              <p className="mt-3 text-sm text-foreground font-body">
-                Download calendars, revisit event highlights and access the
-                official SBAS handbook to navigate every term with clarity.
-              </p>
-            </div>
-            <a
-              href="https://www.dsu.edu.in/basic-applied-sciences/sbas-testimonials"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 text-sm font-medium text-brand-magenta"
-            >
-              Student stories
-              <ChevronRight className="h-4 w-4" />
-            </a>
-          </div>
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-            {RESOURCE_LINKS.map((resource) => (
-              <ResourceCard key={resource.title} resource={resource} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="px-6 pb-20">
-        <div className="mx-auto max-w-4xl text-center">
-          <div className="rounded-3xl border border-brand-magenta/20 bg-brand-magenta/5 p-10">
-            <h3 className="mb-3 font-display text-3xl">
-              Join the Science & Innovation Movement
-            </h3>
-            <p className="mb-6 text-foreground font-body">
-              Engage with cross-disciplinary mentors, modern labs and industry
-              collaborations that position SBAS graduates for global research
-              and innovation careers.
+          <div className="mb-12 text-center">
+            <h2 className="font-display text-3xl md:text-4xl">
+              Explore More at DSU SBAS
+            </h2>
+            <p className="mt-3 text-sm text-foreground font-body">
+              Discover our research initiatives, innovation labs, placements and admission pathways
             </p>
-            <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <Link to="/admissions">
-                <Button className="bg-brand-gradient text-foreground">
-                  Start Application
-                  <GraduationCap className="ml-2 h-4 w-4" />
-                </Button>
-              </Link>
+          </div>
+          <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-4">
+            <RouterLink
+              to="/centre-of-excellence"
+              className="group rounded-none border border-border/40 bg-card/60 backdrop-blur-sm overflow-hidden hover:shadow-lg hover:shadow-brand-magenta/20 transition-all duration-500 hover:-translate-y-1"
+            >
+              <Card className="h-full border-0 bg-transparent">
+                <div className="relative h-32 bg-gradient-to-br from-brand-magenta/20 to-brand-magenta/10 flex items-center justify-center">
+                  <Award className="h-12 w-12 text-brand-magenta/70 group-hover:text-brand-magenta transition-colors" />
+                </div>
+                <CardHeader>
+                  <CardTitle className="font-display group-hover:text-brand-magenta transition-colors">
+                    Centre of Excellence
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-foreground/80 font-body">
+                    Advanced research labs and innovation initiatives
+                  </p>
+                </CardContent>
+              </Card>
+            </RouterLink>
+
+            <RouterLink
+              to="/research"
+              className="group rounded-none border border-border/40 bg-card/60 backdrop-blur-sm overflow-hidden hover:shadow-lg hover:shadow-brand-blue/20 transition-all duration-500 hover:-translate-y-1"
+            >
+              <Card className="h-full border-0 bg-transparent">
+                <div className="relative h-32 bg-gradient-to-br from-brand-blue/20 to-brand-blue/10 flex items-center justify-center">
+                  <Microscope className="h-12 w-12 text-brand-blue/70 group-hover:text-brand-blue transition-colors" />
+                </div>
+                <CardHeader>
+                  <CardTitle className="font-display group-hover:text-brand-blue transition-colors">
+                    Research & Innovation
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-foreground/80 font-body">
+                    Faculty-led research projects and student research opportunities
+                  </p>
+                </CardContent>
+              </Card>
+            </RouterLink>
+
+            <RouterLink
+              to="/placements"
+              className="group rounded-none border border-border/40 bg-card/60 backdrop-blur-sm overflow-hidden hover:shadow-lg hover:shadow-brand-orange/20 transition-all duration-500 hover:-translate-y-1"
+            >
+              <Card className="h-full border-0 bg-transparent">
+                <div className="relative h-32 bg-gradient-to-br from-brand-orange/20 to-brand-orange/10 flex items-center justify-center">
+                  <GraduationCap className="h-12 w-12 text-brand-orange/70 group-hover:text-brand-orange transition-colors" />
+                </div>
+                <CardHeader>
+                  <CardTitle className="font-display group-hover:text-brand-orange transition-colors">
+                    Placements
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-foreground/80 font-body">
+                    Career pathways with research institutions and tech companies
+                  </p>
+                </CardContent>
+              </Card>
+            </RouterLink>
+
+            <a
+              href="https://admissions.dsu.edu.in/"
+              target="_blank"
+              rel="noreferrer"
+              className="group rounded-none border border-border/40 bg-card/60 backdrop-blur-sm overflow-hidden hover:shadow-lg hover:shadow-brand-magenta/20 transition-all duration-500 hover:-translate-y-1"
+            >
+              <Card className="h-full border-0 bg-transparent">
+                <div className="relative h-32 bg-gradient-to-br from-brand-magenta/20 to-brand-magenta/10 flex items-center justify-center">
+                  <FlaskConical className="h-12 w-12 text-brand-magenta/70 group-hover:text-brand-magenta transition-colors" />
+                </div>
+                <CardHeader>
+                  <CardTitle className="font-display group-hover:text-brand-magenta transition-colors">
+                    Admissions
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="flex flex-col gap-3">
+                  <p className="text-sm text-foreground/80 font-body">
+                    Join DSU SBAS and shape your scientific career
+                  </p>
+                  <span className="inline-flex items-center gap-2 text-xs font-medium text-brand-magenta group-hover:text-brand-magenta/80 transition-colors">
+                    Apply Now
+                    <ChevronRight className="h-3 w-3" />
+                  </span>
+                </CardContent>
+              </Card>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section className="px-6 py-16">
+        <div className="mx-auto grid max-w-5xl items-start gap-8 lg:grid-cols-2">
+          <Card className="rounded-none border border-orange-500/20 bg-orange-500/10">
+            <CardHeader>
+              <CardTitle className="font-display">Leadership</CardTitle>
+            </CardHeader>
+            <CardContent className="grid gap-4 text-sm font-body text-foreground">
+              <div>
+                <div className="text-foreground/70 text-xs uppercase tracking-wide">Email</div>
+                <div className="font-medium text-foreground">
+                  sbas@dsu.edu.in
+                </div>
+              </div>
+              <div>
+                <div className="text-foreground/70 text-xs uppercase tracking-wide">Phone</div>
+                <div className="font-medium text-foreground">
+                  +91-80-49092933
+                </div>
+              </div>
+              <div>
+                <div className="text-foreground/70 text-xs uppercase tracking-wide">Campus Address</div>
+                <div className="font-medium text-foreground">
+                  Kanakapura Road, Bengaluru, Karnataka
+                </div>
+              </div>
+              <div>
+                <div className="text-foreground/70 text-xs uppercase tracking-wide">Office Hours</div>
+                <div className="font-medium text-foreground">
+                  Mon–Fri, 9:00 AM – 5:30 PM
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+          <Card className="rounded-none border border-blue-500/20 bg-blue-500/10">
+            <CardHeader>
+              <CardTitle className="font-display">
+                More Resources
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="grid gap-3 text-sm font-body">
               <a
-                href="https://www.dsu.edu.in/basic-applied-sciences/sbas-placements"
+                href="https://www.dsu.edu.in/basic-applied-sciences/programs"
                 target="_blank"
                 rel="noreferrer"
+                className="hover:text-brand-magenta"
               >
-                <Button
-                  variant="outline"
-                  className="border-brand-magenta/40 hover:bg-brand-magenta/10"
-                >
-                  Placement Insights
-                </Button>
+                Programs Overview
               </a>
-            </div>
+              <a
+                href="https://www.dsu.edu.in/basic-applied-sciences/highlights"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-brand-magenta"
+              >
+                Highlights & USP
+              </a>
+              <a
+                href="https://www.dsu.edu.in/basic-applied-sciences/newsletter"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-brand-magenta"
+              >
+                Monthly Newsletter
+              </a>
+              <a
+                href="https://www.dsu.edu.in/basic-applied-sciences/library"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-brand-magenta"
+              >
+                Digital Library
+              </a>
+              <a
+                href="https://www.dsu.edu.in/basic-applied-sciences/student-hub"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-brand-magenta"
+              >
+                Student Hub
+              </a>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      <section id="featured-news" className="px-6 py-16 bg-gradient-to-r from-brand-blue/5 via-brand-magenta/5 to-brand-orange/5">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-12 text-center">
+            <h2 className="font-display text-3xl md:text-4xl mb-3">
+              Latest from SBAS
+            </h2>
+            <p className="text-sm text-foreground font-body">
+              Stories of scientific excellence, research breakthroughs, and student success
+            </p>
+          </div>
+          <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-3">
+            {FEATURED_NEWS.map((item) => (
+              <a
+                key={item.title}
+                href="#"
+                className="group rounded-none overflow-hidden border backdrop-blur-sm hover:shadow-lg transition-all text-left cursor-pointer bg-card/40"
+              >
+                <div className="relative h-48 overflow-hidden border-b border-border/40">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute top-3 left-3">
+                    <Badge
+                      className={`text-xs ${
+                        item.color === "brand-orange"
+                          ? "bg-brand-orange/20 text-brand-orange"
+                          : item.color === "brand-magenta"
+                            ? "bg-brand-magenta/20 text-brand-magenta"
+                            : "bg-brand-blue/20 text-brand-blue"
+                      }`}
+                    >
+                      {item.category}
+                    </Badge>
+                  </div>
+                </div>
+                <div className="p-5 space-y-3">
+                  <h3 className="text-base font-semibold text-foreground font-display line-clamp-2 group-hover:text-brand-magenta transition-colors">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-foreground/80 font-body line-clamp-2">
+                    {item.excerpt}
+                  </p>
+                  <div className="flex items-center justify-between pt-2">
+                    <span className="text-xs text-foreground/60 font-body flex items-center">
+                      <CalendarDays className="w-3 h-3 mr-1" /> {item.date}
+                    </span>
+                    <ChevronRight className="w-4 h-4 text-foreground/60 group-hover:text-brand-magenta transition-colors" />
+                  </div>
+                </div>
+              </a>
+            ))}
           </div>
         </div>
       </section>
