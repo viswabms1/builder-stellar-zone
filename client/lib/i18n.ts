@@ -19,6 +19,9 @@ export const translations = {
       research: 'Research',
     },
     hero: {
+      tagline: 'AI-Powered Education',
+      mainHeading: 'Shape the Future',
+      subheading: 'Dayananda Sagar University | AI University Powered by NVIDIA',
       headline: 'Shape Your Future at Dayananda Sagar University',
       subheadline: 'Experience world-class education at Dayananda Sagar University. Innovation meets tradition on our state-of-the-art campus.',
       applyNow: 'Apply Now',
@@ -411,6 +414,9 @@ export const translations = {
       research: 'अनुसंधान',
     },
     hero: {
+      tagline: 'एआई-संचालित शिक्षा',
+      mainHeading: 'भविष्य को आकार दें',
+      subheading: 'दयानंद सागर विश्वविद्यालय | NVIDIA द्वारा संचालित AI विश्वविद्यालय',
       headline: 'दयानंद सागर विश्वविद्यालय में अपना भविष्य आकार दें',
       subheadline: 'दयानंद सागर विश्वविद्यालय में विश्वस्तरीय शिक्षा का अनुभव करें। हमारे अत्याधुनिक परिसर पर नवाचार परंपरा से मिलता है।',
       applyNow: 'अभी आवेदन करें',
