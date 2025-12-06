@@ -40,6 +40,19 @@ type StructurePoint = {
   icon: LucideIcon;
 };
 
+type ProgramCard = {
+  name: string;
+  area: string;
+  description: string;
+  image: string;
+  link: string;
+  highlights: string[];
+  overlay: string;
+  badgeClass: string;
+  panelClass: string;
+  featured?: boolean;
+};
+
 type CalendarEntry = {
   title: string;
   academicYear: string;
