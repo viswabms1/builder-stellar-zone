@@ -492,7 +492,7 @@ export default function AppliedSciences() {
                 Build foundation across biological, physical and data sciences
               </p>
             </div>
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-12">
               {UG_PROGRAM_CARDS.map((program) => (
                 <ProgramCardComponent key={program.name} program={program} />
               ))}
@@ -512,7 +512,7 @@ export default function AppliedSciences() {
                 Advance into research, specialisation and scientific leadership
               </p>
             </div>
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-12">
               {PG_PROGRAM_CARDS.map((program) => (
                 <ProgramCardComponent key={program.name} program={program} />
               ))}
