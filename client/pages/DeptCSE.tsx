@@ -23,6 +23,9 @@ import {
   BookOpen,
   Code,
   Zap,
+  Building,
+  ArrowRight,
+  Cog,
 } from "lucide-react";
 
 export default function DeptCSE() {
