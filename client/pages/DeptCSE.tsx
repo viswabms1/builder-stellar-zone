@@ -432,11 +432,52 @@ function NoticeBoard() {
     },
     {
       id: "notice-4",
-      title: "Circular: Updated Internship Compliance Process",
-      category: "Circular",
+      title: "DSU CSE Annual Report 2024-25 Published",
+      category: "News",
       date: "Jan 18, 2025",
       description:
-        "Revised documentation requirements for summer internship submissions. Submit signed MoUs to internship@dsu.edu.in.",
+        "The department's comprehensive annual report showcasing research, placements, and student achievements has been published.",
+      link: "https://www.dsu.edu.in/images/Engineering/CSE-dept/notices/Annual-Report-2024-25.pdf",
+    },
+    {
+      id: "notice-5",
+      title: "Research Seminar: Quantum Computing Trends",
+      category: "Event",
+      date: "Feb 5, 2025",
+      description:
+        "Join Prof. Rajesh Kumar from IISc Bangalore for an in-depth discussion on quantum computing advances.",
+    },
+    {
+      id: "notice-6",
+      title: "Faculty Publications in Top-Tier Venues",
+      category: "News",
+      date: "Jan 25, 2025",
+      description:
+        "Three research papers from CSE faculty have been accepted at IEEE and ACM international conferences.",
+    },
+    {
+      id: "notice-7",
+      title: "Internship Policy Update 2025",
+      category: "Announcement",
+      date: "Jan 20, 2025",
+      description:
+        "New guidelines for mandatory summer internships including minimum duration, approval process, and assessment criteria.",
+    },
+    {
+      id: "notice-8",
+      title: "Industry Workshop: Cloud Architecture Patterns",
+      category: "Event",
+      date: "Feb 8, 2025",
+      description:
+        "Hands-on workshop by AWS certified architects covering microservices and containerization strategies.",
+    },
+    {
+      id: "notice-9",
+      title: "DSU CSE Receives NAAC Accreditation",
+      category: "News",
+      date: "Jan 15, 2025",
+      description:
+        "The department has secured 'A' grade in the latest NAAC assessment, reflecting excellence in academic and research standards.",
     },
   ];
 
