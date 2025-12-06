@@ -575,40 +575,10 @@ export default function HealthSciences() {
                 Build foundation in nursing, pharmacy, physiotherapy and allied health sciences
               </p>
             </div>
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {PROGRAMMES.filter(p => p.level === "UG").map((programme) => {
-                const content = (
-                  <Card className="h-full rounded-none border border-border/50 bg-card/50 backdrop-blur-sm">
-                    <CardHeader>
-                      <Badge className="bg-brand-magenta/15 text-brand-magenta">
-                        {programme.level} Programme
-                      </Badge>
-                      <CardTitle className="mt-4 text-xl font-display">
-                        {programme.name}
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent className="space-y-4 text-sm text-foreground font-body">
-                      <p>{programme.focus}</p>
-                    </CardContent>
-                  </Card>
-                );
-
-                if (!programme.href) {
-                  return content;
-                }
-
-                return (
-                  <a
-                    key={programme.name}
-                    href={programme.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="block h-full transform transition-all duration-500 hover:-translate-y-1"
-                  >
-                    {content}
-                  </a>
-                );
-              })}
+            <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-12">
+              {UG_PROGRAM_CARDS.map((program) => (
+                <ProgramCardComponent key={program.name} program={program} />
+              ))}
             </div>
           </div>
 
@@ -625,40 +595,10 @@ export default function HealthSciences() {
                 Advance into research, specialisation and clinical leadership
               </p>
             </div>
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {PROGRAMMES.filter(p => p.level === "PG").map((programme) => {
-                const content = (
-                  <Card className="h-full rounded-none border border-border/50 bg-card/50 backdrop-blur-sm">
-                    <CardHeader>
-                      <Badge className="bg-brand-blue/15 text-brand-blue">
-                        {programme.level} Programme
-                      </Badge>
-                      <CardTitle className="mt-4 text-xl font-display">
-                        {programme.name}
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent className="space-y-4 text-sm text-foreground font-body">
-                      <p>{programme.focus}</p>
-                    </CardContent>
-                  </Card>
-                );
-
-                if (!programme.href) {
-                  return content;
-                }
-
-                return (
-                  <a
-                    key={programme.name}
-                    href={programme.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="block h-full transform transition-all duration-500 hover:-translate-y-1"
-                  >
-                    {content}
-                  </a>
-                );
-              })}
+            <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-12">
+              {PG_PROGRAM_CARDS.map((program) => (
+                <ProgramCardComponent key={program.name} program={program} />
+              ))}
             </div>
           </div>
         </div>
