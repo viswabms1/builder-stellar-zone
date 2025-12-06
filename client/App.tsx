@@ -172,6 +172,7 @@ import ViswanathanRMechPage from "./pages/faculty/ViswanathanRMech";
 import VinayakBHemadriPage from "./pages/faculty/VinayakBHemadri";
 import RahulKumarMechPage from "./pages/faculty/RahulKumarMech";
 import ShashidharaLCPage from "./pages/faculty/ShashidharaLC";
+import AbhijithNPage from "./pages/faculty/AbhijithN";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 
@@ -312,6 +313,7 @@ function App() {
                 <Route path="/academics/engineering/mechanical/faculty/dr-vinayak-b-hemadri" element={<VinayakBHemadriPage />} />
                 <Route path="/academics/engineering/mechanical/faculty/dr-rahul-kumar" element={<RahulKumarMechPage />} />
                 <Route path="/academics/engineering/mechanical/faculty/dr-shashidhara-l-c" element={<ShashidharaLCPage />} />
+                <Route path="/academics/engineering/mechanical/faculty/abhijith-n" element={<AbhijithNPage />} />
                 <Route
                   path="/academics/engineering/electronics-communication/faculty"
                   element={<FacultyECE />}
