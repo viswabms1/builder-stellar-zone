@@ -537,11 +537,16 @@ function CurriculumLibrary() {
   ];
 
   return (
-    <section className="px-6 py-16 bg-muted/15">
-      <div className="mx-auto max-w-6xl space-y-6">
+    <section className="px-6 py-16 bg-gradient-to-r from-brand-magenta/5 via-brand-blue/5 to-brand-orange/5">
+      <div className="mx-auto max-w-6xl space-y-8">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <h2 className="headline-3 font-display">Curriculum Library</h2>
+            <h2 className="headline-2 mb-3 font-display">
+              <span className="text-foreground">Curriculum </span>
+              <span className="bg-brand-gradient bg-clip-text text-transparent">
+                Library
+              </span>
+            </h2>
             <p className="max-w-2xl text-sm text-foreground sm:text-base">
               Explore curated curriculum packs for B.Tech and M.Tech cohorts. Click “View curriculum” to reveal batch-wise outlines.
             </p>
