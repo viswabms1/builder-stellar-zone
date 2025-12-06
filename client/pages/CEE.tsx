@@ -148,6 +148,105 @@ const OFFERINGS: Offering[] = [
   },
 ];
 
+const PROGRAM_CARDS: ProgramCard[] = [
+  {
+    name: "Executive MBA",
+    area: "Weekend Format",
+    description:
+      "Modular Executive MBA for senior managers with flexible weekend schedules, strategic modules and global immersion.",
+    image:
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1600&auto=format&fit=crop",
+    link: "https://bit.ly/DSUEMBAApp",
+    highlights: ["Weekend Classes", "Global Immersion", "CXO Mentorship"],
+    overlay: "bg-gradient-to-br from-brand-magenta/80 via-black/75 to-black/60 mix-blend-multiply",
+    badgeClass: "bg-brand-magenta/25 text-foreground/90 border border-white/30 backdrop-blur",
+    panelClass: "bg-black/55 backdrop-blur-xl",
+    featured: true,
+  },
+  {
+    name: "Leadership Development Programs",
+    area: "Executive Education",
+    description:
+      "Tailored leadership bootcamps, boardroom simulations and strategic training for organizational leaders.",
+    image:
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1600&auto=format&fit=crop",
+    link: "https://www.dsu.edu.in/academics/cee/programs",
+    highlights: ["Boardroom Simulations", "Strategic Training", "Executive Coaching"],
+    overlay: "bg-gradient-to-br from-brand-blue/75 via-black/70 to-black/55 mix-blend-multiply",
+    badgeClass: "bg-brand-blue/30 text-foreground/90 border border-white/25 backdrop-blur",
+    panelClass: "bg-black/55 backdrop-blur-xl",
+    featured: true,
+  },
+  {
+    name: "Innovation & Entrepreneurship Labs",
+    area: "Executive Growth",
+    description:
+      "Experiential labs combining live projects, innovation workshops and startup incubation for business leaders.",
+    image:
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1600&auto=format&fit=crop",
+    link: "https://www.dsu.edu.in/academics/cee/innovation-labs",
+    highlights: ["Live Projects", "Innovation Workshops", "Incubation Support"],
+    overlay: "bg-gradient-to-br from-brand-orange/70 via-black/70 to-black/55 mix-blend-multiply",
+    badgeClass: "bg-brand-orange/35 text-foreground/90 border border-white/25 backdrop-blur",
+    panelClass: "bg-black/55 backdrop-blur-xl",
+  },
+];
+
+const CALENDAR_ENTRIES: CalendarEntry[] = [
+  {
+    title: "Executive MBA Calendar 2025-26",
+    academicYear: "2025-26",
+    description:
+      "Comprehensive schedule for Executive MBA cohorts including residencies, masterclasses, evaluations and industry immersions.",
+    documentUrl:
+      "https://www.dsu.edu.in/academics/cee/calendar-events",
+    tag: "Executive MBA",
+  },
+];
+
+const FEATURED_NEWS: NewsItem[] = [
+  {
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fbf6a54aff7814535b71eda78a3d5f95e?format=webp&width=800",
+    category: "Excellence",
+    title: "Executive MBA Cohort Launches Digital Transformation Initiative",
+    excerpt:
+      "New cohort begins with focus on AI-driven business models and organizational innovation in digital era.",
+    date: "Nov 14, 2025",
+    color: "brand-magenta",
+  },
+  {
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Ff67a08f95a24431783dc54fc189e605b?format=webp&width=800",
+    category: "Speakers",
+    title: "Global CEO Series Features Fortune 500 Leaders",
+    excerpt:
+      "Monthly speaker series brings together C-suite executives sharing insights on business strategy and market innovation.",
+    date: "Nov 9, 2025",
+    color: "brand-blue",
+  },
+  {
+    image:
+      "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2Fd56a1c898842468187e8ff3260f0cdda?alt=media&token=6cb58cdf-a202-461d-b774-09ce61d439c3&apiKey=4aa279a8430d441dba9c55f659831878",
+    category: "Placements",
+    title: "Executive MBA Alumni Network Expands Globally",
+    excerpt:
+      "Alumni from CEE programmes secure C-suite and board positions at leading organizations across sectors.",
+    date: "Oct 30, 2025",
+    color: "brand-orange",
+  },
+];
+
+const DEAN_INFO: DeanInfo = {
+  name: "Dr. Ashok Kumar",
+  title: "MBA, Ph.D",
+  position: "Director, Center for Executive Education",
+  photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop",
+  videoUrl: "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F0c95c62aa88741fca8ebdc32aade53d5?alt=media&token=c57ff4a9-aea8-4ff3-843b-23ce820ba630&apiKey=4aa279a8430d441dba9c55f659831878",
+  borderColor: "border-purple-500/20",
+  bgColor: "bg-purple-500/10",
+};
+
 const RESOURCES: Resource[] = [
   {
     title: "Calendar of Events",
