@@ -53,12 +53,6 @@ type ProgramCard = {
   featured?: boolean;
 };
 
-type SupportingDepartment = {
-  name: string;
-  focus: string;
-  image: string;
-  link: string;
-};
 
 type CalendarEntry = {
   title: string;
