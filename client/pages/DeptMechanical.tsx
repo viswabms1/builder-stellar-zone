@@ -838,6 +838,26 @@ function CurriculumLibrary() {
         },
       ],
     },
+    {
+      id: "mtech",
+      label: "M.Tech Design Engineering",
+      description: "2-year postgraduate program applying advanced design methodologies and computational tools for product innovation",
+      image: "https://images.unsplash.com/photo-1523475472560-d2df97ec485c?q=80&w=600&h=400&fit=crop",
+      batches: [
+        {
+          year: "2025-26",
+          summary: "Advanced design methodologies, human-centred design thinking, and CAD/CAM fundamentals",
+          documentUrl:
+            "https://www.dsu.edu.in/images/Engineering/ME-dept/curriculum/MTech-Design-Curriculum-2025-26.pdf",
+        },
+        {
+          year: "2026-27",
+          summary: "Computational design tools, simulation, product studio projects, and industry collaborations",
+          documentUrl:
+            "https://www.dsu.edu.in/images/Engineering/ME-dept/curriculum/MTech-Design-Curriculum-2026-27.pdf",
+        },
+      ],
+    },
   ];
 
   return (
