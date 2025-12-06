@@ -105,42 +105,62 @@ const USP_HIGHLIGHTS: Highlight[] = [
 const UG_PROGRAM_CARDS: ProgramCard[] = [
   {
     name: "Bachelor of Commerce",
-    level: "Undergraduate",
+    area: "Undergraduate",
     description:
       "Build strong accounting, finance and analytics fundamentals with industry certifications and practical experience.",
     image:
       "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1600&auto=format&fit=crop",
+    link: "https://www.dsu.edu.in/management-studies/bcom",
     highlights: ["Accounting", "Finance", "Analytics"],
+    overlay: "bg-gradient-to-br from-brand-magenta/80 via-black/75 to-black/60 mix-blend-multiply",
+    badgeClass: "bg-brand-magenta/25 text-foreground/90 border border-white/30 backdrop-blur",
+    panelClass: "bg-black/55 backdrop-blur-xl",
+    featured: true,
   },
   {
     name: "Bachelor of Business Administration",
-    level: "Undergraduate",
+    area: "Undergraduate",
     description:
       "Develop leadership and entrepreneurial skills through labs, internships and mentoring from industry leaders.",
     image:
       "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1600&auto=format&fit=crop",
+    link: "https://www.dsu.edu.in/management-studies/bba",
     highlights: ["Leadership", "Entrepreneurship", "Mentoring"],
+    overlay: "bg-gradient-to-br from-brand-blue/75 via-black/70 to-black/55 mix-blend-multiply",
+    badgeClass: "bg-brand-blue/30 text-foreground/90 border border-white/25 backdrop-blur",
+    panelClass: "bg-black/55 backdrop-blur-xl",
+    featured: true,
   },
 ];
 
 const PG_PROGRAM_CARDS: ProgramCard[] = [
   {
     name: "Master of Business Administration",
-    level: "Postgraduate",
+    area: "Postgraduate",
     description:
       "Specialise in marketing, finance, HR, analytics and operations with global immersion and industry projects.",
     image:
       "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1600&auto=format&fit=crop",
+    link: "https://www.dsu.edu.in/management-studies/mba",
     highlights: ["Marketing", "Finance", "Global Exposure"],
+    overlay: "bg-gradient-to-br from-brand-magenta/70 via-black/70 to-black/55 mix-blend-multiply",
+    badgeClass: "bg-brand-magenta/30 text-foreground/90 border border-white/25 backdrop-blur",
+    panelClass: "bg-black/55 backdrop-blur-xl",
+    featured: true,
   },
   {
     name: "Doctoral Programmes",
-    level: "Doctoral",
+    area: "Doctoral",
     description:
       "Research-driven doctoral tracks across commerce, management and entrepreneurship for advanced scholars.",
     image:
       "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1600&auto=format&fit=crop",
+    link: "https://www.dsu.edu.in/management-studies/phd",
     highlights: ["Research", "Specialisation", "Industry Focus"],
+    overlay: "bg-gradient-to-br from-brand-blue/70 via-brand-magenta/60 to-black/55 mix-blend-multiply",
+    badgeClass: "bg-brand-blue/30 text-foreground/90 border border-white/25 backdrop-blur",
+    panelClass: "bg-black/55 backdrop-blur-xl",
+    featured: true,
   },
 ];
 
