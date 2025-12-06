@@ -109,6 +109,63 @@ const USP_HIGHLIGHTS: Highlight[] = [
   },
 ];
 
+const PROGRAM_CARDS: ProgramCard[] = [
+  {
+    name: "Product Design",
+    area: "Design Specialization",
+    description:
+      "Master user-centered design, prototyping and manufacturing processes to create innovative consumer and industrial products.",
+    image:
+      "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=1600&auto=format&fit=crop",
+    link: "https://www.dsu.edu.in/design/product-design",
+    highlights: ["User Research", "Prototyping", "Manufacturing"],
+    overlay: "bg-gradient-to-br from-brand-magenta/80 via-black/75 to-black/60 mix-blend-multiply",
+    badgeClass: "bg-brand-magenta/25 text-foreground/90 border border-white/30 backdrop-blur",
+    panelClass: "bg-black/55 backdrop-blur-xl",
+    featured: true,
+  },
+  {
+    name: "Communication Design",
+    area: "Design Specialization",
+    description:
+      "Develop expertise in visual communication, branding, typography and digital design for diverse media and audiences.",
+    image:
+      "https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=1600&auto=format&fit=crop",
+    link: "https://www.dsu.edu.in/design/communication-design",
+    highlights: ["Visual Identity", "Typography", "Digital Design"],
+    overlay: "bg-gradient-to-br from-brand-blue/75 via-black/70 to-black/55 mix-blend-multiply",
+    badgeClass: "bg-brand-blue/30 text-foreground/90 border border-white/25 backdrop-blur",
+    panelClass: "bg-black/55 backdrop-blur-xl",
+    featured: true,
+  },
+  {
+    name: "Environmental Design",
+    area: "Design Specialization",
+    description:
+      "Create sustainable spaces and experiences through interior design, architecture integration and environmental consciousness.",
+    image:
+      "https://images.unsplash.com/photo-1565182999555-022adf3cf3f0?q=80&w=1600&auto=format&fit=crop",
+    link: "https://www.dsu.edu.in/design/environmental-design",
+    highlights: ["Spatial Design", "Sustainability", "User Experience"],
+    overlay: "bg-gradient-to-br from-brand-orange/70 via-black/70 to-black/55 mix-blend-multiply",
+    badgeClass: "bg-brand-orange/35 text-foreground/90 border border-white/25 backdrop-blur",
+    panelClass: "bg-black/55 backdrop-blur-xl",
+  },
+  {
+    name: "Experience Design",
+    area: "Design Specialization",
+    description:
+      "Design engaging human-computer interactions, service experiences and immersive digital ecosystems.",
+    image:
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1600&auto=format&fit=crop",
+    link: "https://www.dsu.edu.in/design/experience-design",
+    highlights: ["UX/UI Design", "Service Design", "Interaction"],
+    overlay: "bg-gradient-to-br from-brand-magenta/70 via-black/70 to-black/55 mix-blend-multiply",
+    badgeClass: "bg-brand-magenta/30 text-foreground/90 border border-white/25 backdrop-blur",
+    panelClass: "bg-black/55 backdrop-blur-xl",
+  },
+];
+
 const STRUCTURE_POINTS: StructurePoint[] = [
   {
     title: "Year I: Foundation",
