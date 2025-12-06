@@ -398,9 +398,6 @@ export default function DeptCSE() {
               >
                 <Button className="bg-brand-gradient text-foreground">Apply Now<GraduationCap className="w-4 h-4 ml-2" /></Button>
               </a>
-              <a href="https://www.dsu.edu.in/engineering/computer-science" target="_blank" rel="noreferrer">
-                <Button variant="outline" className="border-brand-magenta/40 hover:bg-brand-magenta/10">Department Site</Button>
-              </a>
             </div>
           </div>
         </div>
