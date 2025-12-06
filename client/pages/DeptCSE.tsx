@@ -316,6 +316,7 @@ interface CurriculumProgram {
   id: string;
   label: string;
   description: string;
+  image: string;
   batches: CurriculumBatch[];
 }
 
