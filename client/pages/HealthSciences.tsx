@@ -107,55 +107,104 @@ const USP_HIGHLIGHTS: Highlight[] = [
   },
 ];
 
-const PROGRAMMES: Programme[] = [
+const UG_PROGRAM_CARDS: ProgramCard[] = [
   {
     name: "B.Sc Nursing",
-    level: "UG",
-    focus:
-      "Holistic four-year programme with simulation labs, clinical postings and global certifications.",
-    href: "https://www.dsu.edu.in/health-sciences/nursing",
+    area: "Nursing & Care",
+    description:
+      "Holistic four-year programme with simulation labs, clinical postings and global certifications to develop compassionate healthcare leaders.",
+    image:
+      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1600&auto=format&fit=crop",
+    link: "https://www.dsu.edu.in/health-sciences/nursing",
+    highlights: ["Clinical Rotations", "Simulation Labs", "Global Certifications"],
+    overlay: "bg-gradient-to-br from-brand-magenta/80 via-black/75 to-black/60 mix-blend-multiply",
+    badgeClass: "bg-brand-magenta/25 text-foreground/90 border border-white/30 backdrop-blur",
+    panelClass: "bg-black/55 backdrop-blur-xl",
+    featured: true,
   },
   {
-    name: "B.Pharm",
-    level: "UG",
-    focus:
-      "Professional degree covering pharmaceutics, pharmacology and regulatory sciences.",
-    href: "https://www.dsu.edu.in/health-sciences/pharmacy",
+    name: "B.Pharm (Pharmacy)",
+    area: "Pharmaceutical Sciences",
+    description:
+      "Professional degree covering pharmaceutics, pharmacology, regulatory sciences and clinical pharmacy with research immersion.",
+    image:
+      "https://images.unsplash.com/photo-1585523740023-dea1b3ffe518?q=80&w=1600&auto=format&fit=crop",
+    link: "https://www.dsu.edu.in/health-sciences/pharmacy",
+    highlights: ["Pharmaceutics", "Pharmacology", "Research"],
+    overlay: "bg-gradient-to-br from-brand-blue/75 via-black/70 to-black/55 mix-blend-multiply",
+    badgeClass: "bg-brand-blue/30 text-foreground/90 border border-white/25 backdrop-blur",
+    panelClass: "bg-black/55 backdrop-blur-xl",
+    featured: true,
   },
   {
     name: "Bachelor of Physiotherapy (BPT)",
-    level: "UG",
-    focus:
-      "Comprehensive physiotherapy education with sports, neuro and cardiorespiratory specialisations.",
-    href: "https://www.dsu.edu.in/health-sciences/physiotherapy",
+    area: "Rehabilitation Sciences",
+    description:
+      "Comprehensive physiotherapy education with sports, neuro and cardiorespiratory specialisations through hands-on clinical practice.",
+    image:
+      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1600&auto=format&fit=crop",
+    link: "https://www.dsu.edu.in/health-sciences/physiotherapy",
+    highlights: ["Sports Therapy", "Neuro Rehab", "Cardio Rehab"],
+    overlay: "bg-gradient-to-br from-brand-orange/70 via-black/70 to-black/55 mix-blend-multiply",
+    badgeClass: "bg-brand-orange/35 text-foreground/90 border border-white/25 backdrop-blur",
+    panelClass: "bg-black/55 backdrop-blur-xl",
   },
   {
     name: "Allied Health Sciences (B.Sc)",
-    level: "UG",
-    focus:
-      "Programmes across medical laboratory technology, imaging, anaesthesia and emergency care.",
-    href: "https://www.dsu.edu.in/health-sciences/allied-health-sciences",
+    area: "Diagnostic & Support Services",
+    description:
+      "Programmes across medical laboratory technology, imaging, anaesthesia and emergency care with state-of-the-art facilities.",
+    image:
+      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1600&auto=format&fit=crop",
+    link: "https://www.dsu.edu.in/health-sciences/allied-health-sciences",
+    highlights: ["Lab Technology", "Imaging", "Emergency Care"],
+    overlay: "bg-gradient-to-br from-brand-magenta/70 via-black/70 to-black/55 mix-blend-multiply",
+    badgeClass: "bg-brand-magenta/30 text-foreground/90 border border-white/25 backdrop-blur",
+    panelClass: "bg-black/55 backdrop-blur-xl",
+  },
+];
+
+const PG_PROGRAM_CARDS: ProgramCard[] = [
+  {
+    name: "M.Pharm (Master of Pharmacy)",
+    area: "Advanced Pharmaceutical Sciences",
+    description:
+      "Research-intensive postgraduate degree with specialisations in pharmaceutics, analysis and pharmacology for industry and academia.",
+    image:
+      "https://images.unsplash.com/photo-1585523740023-dea1b3ffe518?q=80&w=1600&auto=format&fit=crop",
+    link: "https://www.dsu.edu.in/health-sciences/pharmacy",
+    highlights: ["Research Thesis", "Specializations", "Industry Internship"],
+    overlay: "bg-gradient-to-br from-brand-magenta/70 via-black/70 to-black/55 mix-blend-multiply",
+    badgeClass: "bg-brand-magenta/30 text-foreground/90 border border-white/25 backdrop-blur",
+    panelClass: "bg-black/55 backdrop-blur-xl",
+    featured: true,
   },
   {
-    name: "M.Pharm",
-    level: "PG",
-    focus:
-      "Research-intensive postgraduate degree with specialisations in pharmaceutics, analysis and pharmacology.",
-    href: "https://www.dsu.edu.in/health-sciences/pharmacy",
-  },
-  {
-    name: "MPT",
-    level: "PG",
-    focus:
-      "Advanced physiotherapy programme emphasising musculoskeletal, neuro and cardiorespiratory expertise.",
-    href: "https://www.dsu.edu.in/health-sciences/physiotherapy",
+    name: "MPT (Master of Physiotherapy)",
+    area: "Advanced Rehabilitation",
+    description:
+      "Advanced physiotherapy programme emphasising musculoskeletal, neuro and cardiorespiratory expertise with research focus.",
+    image:
+      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1600&auto=format&fit=crop",
+    link: "https://www.dsu.edu.in/health-sciences/physiotherapy",
+    highlights: ["Specializations", "Research", "Clinical Excellence"],
+    overlay: "bg-gradient-to-br from-brand-blue/70 via-black/70 to-black/55 mix-blend-multiply",
+    badgeClass: "bg-brand-blue/30 text-foreground/90 border border-white/25 backdrop-blur",
+    panelClass: "bg-black/55 backdrop-blur-xl",
+    featured: true,
   },
   {
     name: "M.Sc Nursing",
-    level: "PG",
-    focus:
-      "Leadership-oriented specialisations with focus on clinical excellence, pedagogy and research.",
-    href: "https://www.dsu.edu.in/health-sciences/nursing",
+    area: "Advanced Nursing Sciences",
+    description:
+      "Leadership-oriented specialisations with focus on clinical excellence, pedagogy and research for nursing professionals.",
+    image:
+      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1600&auto=format&fit=crop",
+    link: "https://www.dsu.edu.in/health-sciences/nursing",
+    highlights: ["Leadership", "Pedagogy", "Research"],
+    overlay: "bg-gradient-to-br from-brand-orange/70 via-black/70 to-black/55 mix-blend-multiply",
+    badgeClass: "bg-brand-orange/35 text-foreground/90 border border-white/25 backdrop-blur",
+    panelClass: "bg-black/55 backdrop-blur-xl",
   },
 ];
 
