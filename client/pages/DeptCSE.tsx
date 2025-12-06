@@ -660,29 +660,6 @@ function CurriculumLibrary() {
             );
           })}
         </div>
-
-        <Card className="border-2 border-brand-magenta/20 bg-gradient-to-r from-brand-magenta/10 via-brand-blue/10 to-brand-orange/10 backdrop-blur-sm">
-          <CardHeader>
-            <CardTitle className="font-display">Curriculum Support</CardTitle>
-            <CardDescription className="font-body">Need more details or earlier curriculum versions?</CardDescription>
-          </CardHeader>
-          <CardContent className="grid sm:grid-cols-2 gap-4">
-            <div className="rounded-xl border border-border/30 bg-background/40 p-4">
-              <p className="text-xs font-semibold text-foreground/60 uppercase tracking-wider mb-2">Curriculum Queries</p>
-              <a href="mailto:chairman-cse@dsu.edu.in" className="text-sm font-semibold text-brand-magenta hover:underline inline-flex items-center gap-1">
-                chairman-cse@dsu.edu.in
-                <ChevronRight className="h-3 w-3" />
-              </a>
-            </div>
-            <div className="rounded-xl border border-border/30 bg-background/40 p-4">
-              <p className="text-xs font-semibold text-foreground/60 uppercase tracking-wider mb-2">Academic Policies</p>
-              <a href="https://www.dsu.edu.in/engineering/computer-science" target="_blank" rel="noreferrer" className="text-sm font-semibold text-brand-magenta hover:underline inline-flex items-center gap-1">
-                Visit Department Site
-                <ChevronRight className="h-3 w-3" />
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </section>
   );
