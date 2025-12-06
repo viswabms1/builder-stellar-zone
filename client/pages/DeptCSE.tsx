@@ -574,7 +574,7 @@ function NoticeBoard() {
           <Badge className="ml-auto text-xs">{currentIndex + 1} / {items.length}</Badge>
         </div>
 
-        <Card className="group relative overflow-hidden rounded-2xl border-2 border-border/30 bg-card/40 backdrop-blur-sm">
+        <Card className="group overflow-hidden rounded-2xl border-2 border-border/30 bg-card/40 backdrop-blur-sm">
           {currentItem.image && (
             <div className="relative h-48 overflow-hidden">
               <img
@@ -582,20 +582,22 @@ function NoticeBoard() {
                 alt={currentItem.title}
                 className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-4">
-                <h4 className="text-white font-display font-semibold text-sm line-clamp-2">{currentItem.title}</h4>
-              </div>
             </div>
           )}
           <CardContent className="p-4 space-y-3">
-            <div className="flex items-center justify-between">
+            <div className="flex items-start justify-between gap-2">
+              <div className="flex-1">
+                <h4 className="font-display font-semibold text-sm text-foreground mb-2 line-clamp-2">{currentItem.title}</h4>
+                <p className="text-xs text-foreground/70 line-clamp-2">{currentItem.description}</p>
+              </div>
+            </div>
+            <div className="flex items-center justify-between pt-2 border-t border-border/20">
               <span className="text-xs font-semibold text-foreground/60">{currentItem.date}</span>
               {currentItem.link && (
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="h-6 px-2 text-xs"
+                  className="h-6 px-2 text-xs bg-brand-blue/10 text-brand-blue hover:bg-brand-blue/20"
                   asChild
                 >
                   <a href={currentItem.link} target="_blank" rel="noreferrer">
@@ -605,7 +607,6 @@ function NoticeBoard() {
                 </Button>
               )}
             </div>
-            <p className="text-xs text-foreground/70">{currentItem.description}</p>
           </CardContent>
         </Card>
 
