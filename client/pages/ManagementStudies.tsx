@@ -35,11 +35,15 @@ type Highlight = {
 
 type ProgramCard = {
   name: string;
-  level: string;
+  area: string;
   description: string;
   image: string;
-  link?: string;
+  link: string;
   highlights: string[];
+  overlay: string;
+  badgeClass: string;
+  panelClass: string;
+  featured?: boolean;
 };
 
 type CalendarEntry = {
