@@ -950,22 +950,6 @@ export default function Engineering() {
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-
-                  {/* Overlaid Category Badge */}
-                  <div className="absolute top-4 left-4">
-                    <span className={`px-4 py-2 rounded-full text-xs font-bold tracking-wider text-white inline-flex items-center gap-2 ${
-                      index === 0
-                        ? "bg-brand-magenta"
-                        : index === 1
-                        ? "bg-brand-orange"
-                        : index === 2
-                        ? "bg-blue-600"
-                        : "bg-pink-600"
-                    }`}>
-                      <highlight.icon className="h-4 w-4" />
-                      USP
-                    </span>
-                  </div>
                 </div>
 
                 {/* Text Content Below Image */}
