@@ -595,7 +595,7 @@ export default function ComputerApplications() {
                 </div>
               </div>
             </div>
-            <div className="relative h-96 rounded-3xl overflow-hidden border border-border/40">
+            <div className="relative h-96 rounded-none overflow-hidden border border-border/40">
               <img
                 src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800&auto=format&fit=crop"
                 alt="School of Computer Applications"
