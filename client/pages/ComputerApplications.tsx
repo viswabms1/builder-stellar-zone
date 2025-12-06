@@ -42,11 +42,15 @@ type USPHighlight = {
 
 type ProgramCard = {
   name: string;
-  major: string;
+  area: string;
   description: string;
   image: string;
   link: string;
   highlights: string[];
+  overlay: string;
+  badgeClass: string;
+  panelClass: string;
+  featured?: boolean;
 };
 
 type SupportingDepartment = {
