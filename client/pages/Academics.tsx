@@ -534,13 +534,6 @@ export default function Academics() {
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-
-                  {/* Overlaid Category Badge */}
-                  <div className="absolute top-4 left-4">
-                    <span className={`px-4 py-2 rounded-full text-xs font-bold tracking-wider ${feature.badgeClass}`}>
-                      {feature.category}
-                    </span>
-                  </div>
                 </div>
 
                 {/* Text Content Below Image */}
