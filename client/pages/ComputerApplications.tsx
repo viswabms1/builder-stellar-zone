@@ -6,6 +6,7 @@ import {
   Award,
   BadgeCheck,
   BookOpen,
+  CalendarDays,
   ChevronRight,
   Cpu,
   Eye,
