@@ -630,23 +630,26 @@ export default function CEE() {
 
       <section
         id="usp"
-        className="bg-gradient-to-r from-brand-magenta/5 via-brand-orange/5 to-brand-blue/5 px-6 py-16"
+        className="bg-background px-6 py-20"
       >
         <div className="mx-auto max-w-7xl">
-          <div className="mb-12 text-center">
+          <div className="mb-16 text-center">
             <Badge
-              className="bg-white/20 text-brand-magenta backdrop-blur"
+              className="bg-brand-magenta/15 text-brand-magenta"
               variant="secondary"
             >
               Executive Differentiators
             </Badge>
-            <h2 className="mt-5 font-display text-3xl md:text-4xl">
+            <h2 className="mt-6 font-display text-4xl md:text-5xl">
               Why Leaders Choose DSU CEE
             </h2>
+            <p className="mt-4 text-lg text-foreground/80 max-w-2xl mx-auto font-display">
+              Excellence through executive education, global perspective, and industry leadership
+            </p>
           </div>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {USP_HIGHLIGHTS.map((highlight) => (
-              <HighlightCard key={highlight.title} highlight={highlight} />
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+            {USP_HIGHLIGHTS.map((highlight, index) => (
+              <HighlightCard key={highlight.title} highlight={highlight} index={index} />
             ))}
           </div>
         </div>
