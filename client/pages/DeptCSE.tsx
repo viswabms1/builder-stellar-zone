@@ -837,21 +837,20 @@ function CurriculumLibrary() {
                   <img
                     src={program.image}
                     alt={program.label}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
-                  <div className="absolute inset-0 flex flex-col justify-end p-6">
-                    <div className="flex items-start gap-3 mb-3">
-                      <Badge className={`rounded-full border ${badgeClass}`}>
-                        {isProgramBtech ? "Undergraduate" : "Postgraduate"}
-                      </Badge>
-                    </div>
-                    <h3 className="headline-3 font-display text-white mb-1">{program.label}</h3>
-                    <p className="text-sm text-white/90 font-body">{program.description}</p>
-                  </div>
                 </div>
 
-                <div className="p-6 bg-background/50 backdrop-blur-sm">
+                <div className="p-6 bg-background/50 backdrop-blur-sm space-y-3">
+                  <div className="flex items-start gap-3">
+                    <Badge className={`rounded-full border ${badgeClass}`}>
+                      {isProgramBtech ? "Undergraduate" : "Postgraduate"}
+                    </Badge>
+                  </div>
+                  <div>
+                    <h3 className="headline-3 font-display text-foreground mb-2">{program.label}</h3>
+                    <p className="text-sm text-foreground/80 font-body">{program.description}</p>
+                  </div>
                   <Button
                     variant="outline"
                     className={`w-full ${isProgramBtech ? "border-brand-orange/30 hover:bg-brand-orange/10 text-brand-orange hover:text-brand-orange" : "border-brand-blue/30 hover:bg-brand-blue/10 text-brand-blue hover:text-brand-blue"}`}
