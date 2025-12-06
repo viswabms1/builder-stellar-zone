@@ -314,6 +314,7 @@ interface NoticeItem {
   category: "Event" | "News" | "Announcement";
   date: string;
   description: string;
+  image?: string;
   link?: string;
 }
 
