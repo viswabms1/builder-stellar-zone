@@ -521,7 +521,7 @@ function FacultyCard({ faculty }: { faculty: FacultyMember }) {
 
 function LifeCard({ life }: { life: LifeAtDSU }) {
   return (
-    <Card className="group overflow-hidden rounded-3xl border border-border/40 bg-card/30 backdrop-blur hover:shadow-xl transition-shadow">
+    <Card className="group overflow-hidden rounded-none border border-border/40 bg-card/30 backdrop-blur hover:shadow-xl transition-shadow">
       <div className="relative h-48 overflow-hidden">
         <img
           src={life.image}
