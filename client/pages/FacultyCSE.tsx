@@ -42,11 +42,6 @@ export default function FacultyCSE() {
           <LeadershipSection leadership={leadership} />
         </div>
       </div>
-      <div className="relative px-6">
-        <div className="mx-auto max-w-7xl">
-          <ClosingSection />
-        </div>
-      </div>
     </div>
   );
 }
