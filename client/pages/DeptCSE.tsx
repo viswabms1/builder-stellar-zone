@@ -156,7 +156,7 @@ export default function DeptCSE() {
             <h2 className="headline-3 font-display">Department Leadership</h2>
             <Link to="/academics/engineering/computer-science/faculty">
               <Button variant="outline" className="border-brand-magenta/40 hover:bg-brand-magenta/10">
-                Explore full faculty roster
+                Explore full faculty list
               </Button>
             </Link>
           </div>
