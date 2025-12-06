@@ -794,6 +794,63 @@ export default function ComputerApplications() {
         </div>
       </section>
 
+      <section id="featured-news" className="px-6 py-16 bg-gradient-to-r from-brand-blue/5 via-brand-magenta/5 to-brand-orange/5">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-12 text-center">
+            <h2 className="font-display text-3xl md:text-4xl mb-3">
+              Latest from Computer Applications
+            </h2>
+            <p className="text-sm text-foreground font-body">
+              Stories of excellence, research breakthroughs, and student success
+            </p>
+          </div>
+          <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-3">
+            {FEATURED_NEWS.map((item) => (
+              <a
+                key={item.title}
+                href="#"
+                className="group rounded-none overflow-hidden border backdrop-blur-sm hover:shadow-lg transition-all text-left cursor-pointer bg-card/40"
+              >
+                <div className="relative h-48 overflow-hidden border-b border-border/40">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute top-3 left-3">
+                    <Badge
+                      className={`text-xs ${
+                        item.color === "brand-orange"
+                          ? "bg-brand-orange/20 text-brand-orange"
+                          : item.color === "brand-magenta"
+                            ? "bg-brand-magenta/20 text-brand-magenta"
+                            : "bg-brand-blue/20 text-brand-blue"
+                      }`}
+                    >
+                      {item.category}
+                    </Badge>
+                  </div>
+                </div>
+                <div className="p-5 space-y-3">
+                  <h3 className="text-base font-semibold text-foreground font-display line-clamp-2 group-hover:text-brand-magenta transition-colors">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-foreground/80 font-body line-clamp-2">
+                    {item.excerpt}
+                  </p>
+                  <div className="flex items-center justify-between pt-2">
+                    <span className="text-xs text-foreground/60 font-body flex items-center">
+                      <CalendarDays className="w-3 h-3 mr-1" /> {item.date}
+                    </span>
+                    <ChevronRight className="w-4 h-4 text-foreground/60 group-hover:text-brand-magenta transition-colors" />
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="px-6 pb-20">
         <div className="mx-auto max-w-4xl text-center">
           <div className="rounded-none border border-brand-magenta/20 bg-brand-magenta/5 p-10">
