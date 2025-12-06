@@ -514,49 +514,6 @@ export default function ComputerApplications() {
       </section>
 
 
-      <section id="innovation-labs" className="px-6 py-16">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-12 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-            <div className="max-w-3xl">
-              <Badge className="bg-brand-magenta/15 text-brand-magenta">
-                Experiential Learning
-              </Badge>
-              <h2 className="mt-4 font-display text-3xl md:text-4xl">
-                Innovation Labs & Learning Hubs
-              </h2>
-              <p className="mt-3 text-sm text-foreground font-body">
-                Access industry-powered labs and mentorship programmes that spark careers in full-stack development, data science, cloud computing and AI.
-              </p>
-            </div>
-            <a
-              href="https://www.dsu.edu.in/computer-applications/facilities"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 text-sm font-medium text-brand-magenta"
-            >
-              View facilities gallery
-              <ChevronRight className="h-4 w-4" />
-            </a>
-          </div>
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {INNOVATION_LABS.map((lab) => (
-              <Card
-                key={lab}
-                className="rounded-none border border-border/50 bg-card/50 backdrop-blur-sm p-6"
-              >
-                <div className="flex items-start gap-4">
-                  <Beaker className="h-5 w-5 text-brand-magenta flex-shrink-0 mt-1" />
-                  <div>
-                    <h3 className="font-display font-semibold text-foreground">
-                      {lab}
-                    </h3>
-                  </div>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
 
       <section id="calendar" className="px-6 py-16">
         <div className="mx-auto max-w-6xl">
