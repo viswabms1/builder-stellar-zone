@@ -647,7 +647,7 @@ export default function ComputerApplications() {
               </div>
             </Card>
           </div>
-          <div className="mt-12 rounded-3xl border border-border/40 bg-card/60 backdrop-blur p-8">
+          <div className="mt-12 rounded-none border border-border/40 bg-card/60 backdrop-blur p-8">
             <h3 className="font-display text-xl mb-6">Core Values</h3>
             <div className="grid gap-6 md:grid-cols-3">
               <div className="flex gap-3">
