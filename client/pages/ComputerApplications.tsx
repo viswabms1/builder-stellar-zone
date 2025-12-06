@@ -5,7 +5,6 @@ import type { LucideIcon } from "lucide-react";
 import {
   Award,
   BadgeCheck,
-  Beaker,
   BookOpen,
   ChevronRight,
   Cpu,
