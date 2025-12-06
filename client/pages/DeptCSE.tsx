@@ -303,6 +303,11 @@ interface CurriculumBatch {
   documentUrl?: string;
 }
 
+interface LabItem {
+  title: string;
+  image: string;
+}
+
 interface NoticeItem {
   id: string;
   title: string;
@@ -310,6 +315,91 @@ interface NoticeItem {
   date: string;
   description: string;
   link?: string;
+}
+
+function LabsFacilitiesCarousel() {
+  const [currentLabIndex, setCurrentLabIndex] = useState(0);
+
+  const labs: LabItem[] = [
+    { title: "Programming & Systems Labs", image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop" },
+    { title: "AI & Data Science Lab", image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop" },
+    { title: "Networks & IoT Lab", image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop" },
+    { title: "Cyber Security Lab", image: "https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1200&auto=format&fit=crop" },
+    { title: "Cloud & Web Tech Studio", image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop" },
+    { title: "Innovation & Projects Space", image: "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1200&auto=format&fit=crop" },
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentLabIndex((prev) => (prev + 1) % labs.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [labs.length]);
+
+  const currentLab = labs[currentLabIndex];
+
+  return (
+    <section className="px-6 py-16 bg-gradient-to-r from-brand-blue/5 to-brand-orange/5">
+      <div className="max-w-7xl mx-auto space-y-6">
+        <div className="flex items-center justify-between">
+          <div>
+            <h2 className="headline-3 mb-2 font-display">Labs & Facilities</h2>
+            <p className="text-sm text-foreground/80 font-body">State-of-the-art infrastructure for hands-on learning</p>
+          </div>
+          <div className="text-xs text-foreground/60 font-body">
+            {currentLabIndex + 1} of {labs.length}
+          </div>
+        </div>
+
+        <Card className="group relative overflow-hidden rounded-3xl border-2 border-border/40 bg-card/40 backdrop-blur-sm h-96">
+          <img
+            src={currentLab.image}
+            alt={currentLab.title}
+            className="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+          <div className="absolute bottom-0 left-0 right-0 p-8">
+            <CardTitle className="text-white font-display text-3xl">{currentLab.title}</CardTitle>
+          </div>
+        </Card>
+
+        <div className="flex items-center justify-between gap-4">
+          <div className="flex gap-2">
+            {labs.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setCurrentLabIndex(idx)}
+                className={`h-2 rounded-full transition-all ${
+                  idx === currentLabIndex
+                    ? "bg-brand-magenta w-8"
+                    : "bg-border/40 w-2 hover:bg-border/60"
+                }`}
+              />
+            ))}
+          </div>
+          <div className="flex gap-2">
+            <Button
+              variant="outline"
+              size="sm"
+              className="border-border/40"
+              onClick={() => setCurrentLabIndex((prev) => (prev - 1 + labs.length) % labs.length)}
+            >
+              ← Previous
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              className="border-border/40"
+              onClick={() => setCurrentLabIndex((prev) => (prev + 1) % labs.length)}
+            >
+              Next →
+            </Button>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }
 
 function NoticeBoard() {
