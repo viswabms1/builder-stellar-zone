@@ -1067,7 +1067,7 @@ export default function Engineering() {
                 Advance into research, product leadership and domain expertise
               </p>
             </div>
-            <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-12">
               {PG_PROGRAM_CARDS.map((program) => (
                 <ProgramCardComponent key={program.name} program={program} />
               ))}
