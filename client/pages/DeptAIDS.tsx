@@ -150,7 +150,7 @@ export default function DeptAIDS() {
               </Button>
             </Link>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="max-w-sm">
             {/* Chairperson */}
             <div>
               <p className="text-xs font-semibold text-brand-blue uppercase tracking-wider mb-2">Chairperson</p>
@@ -164,42 +164,6 @@ export default function DeptAIDS() {
                   <div className="absolute bottom-0 p-3 w-full">
                     <div className="text-white text-xs opacity-80">Professor</div>
                     <div className="text-white font-semibold text-sm font-display line-clamp-2">Dr. Poongodi T</div>
-                  </div>
-                </div>
-              </Link>
-            </div>
-
-            {/* Associate Professor */}
-            <div>
-              <p className="text-xs font-semibold text-brand-blue uppercase tracking-wider mb-2">Associate Professor</p>
-              <Link to="/academics/engineering/ai-ds/faculty/dr-ramesh-wadawadagi">
-                <div className="group relative overflow-hidden rounded-xl border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-blue/10 transition-all cursor-pointer">
-                  <div className="relative">
-                    <div className="aspect-square w-full"></div>
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=500&auto=format&fit=crop" alt="Dr. Ramesh Wadawadagi" className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-500" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
-                  </div>
-                  <div className="absolute bottom-0 p-3 w-full">
-                    <div className="text-white text-xs opacity-80">Associate Professor</div>
-                    <div className="text-white font-semibold text-sm font-display line-clamp-2">Dr. Ramesh Wadawadagi</div>
-                  </div>
-                </div>
-              </Link>
-            </div>
-
-            {/* Assistant Professor */}
-            <div>
-              <p className="text-xs font-semibold text-brand-blue uppercase tracking-wider mb-2">Assistant Professor</p>
-              <Link to="/academics/engineering/ai-ds/faculty/prof-nadavadi-harshith-gowd">
-                <div className="group relative overflow-hidden rounded-xl border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-blue/10 transition-all cursor-pointer">
-                  <div className="relative">
-                    <div className="aspect-square w-full"></div>
-                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=500&auto=format&fit=crop" alt="Prof. Nadavadi Harshith Gowd" className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-500" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
-                  </div>
-                  <div className="absolute bottom-0 p-3 w-full">
-                    <div className="text-white text-xs opacity-80">Assistant Professor</div>
-                    <div className="text-white font-semibold text-sm font-display line-clamp-2">Prof. Nadavadi Harshith Gowd</div>
                   </div>
                 </div>
               </Link>
