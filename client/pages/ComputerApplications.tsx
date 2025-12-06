@@ -693,7 +693,7 @@ export default function ComputerApplications() {
           <Badge className="bg-brand-magenta/15 text-brand-magenta mb-6">
             Dean's Message
           </Badge>
-          <div className="rounded-3xl border border-border/40 bg-card/60 backdrop-blur p-10">
+          <div className="rounded-none border border-border/40 bg-card/60 backdrop-blur p-10">
             <div className="flex gap-6 mb-8">
               <img
                 src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop"
