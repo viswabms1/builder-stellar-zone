@@ -281,7 +281,7 @@ const RESOURCES: Resource[] = [
 function HighlightCard({ highlight }: { highlight: Highlight }) {
   const Icon = highlight.icon;
   return (
-    <Card className="group relative h-80 overflow-hidden rounded-3xl border border-border/40 bg-card/40 backdrop-blur-sm transition-all duration-700 hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-magenta/10">
+    <Card className="group relative h-80 overflow-hidden rounded-none border border-blue-500/20 bg-blue-500/10 backdrop-blur-sm transition-all duration-700 hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-magenta/10">
       <img
         src={highlight.image}
         alt={highlight.title}
@@ -305,6 +305,225 @@ function HighlightCard({ highlight }: { highlight: Highlight }) {
         ) : null}
       </div>
     </Card>
+  );
+}
+
+function ProgramCardComponent({ program }: { program: ProgramCard }) {
+  const isInternal = program.link.startsWith("/");
+  const wrapperClasses = `group block h-full rounded-none ${
+    program.featured ? "lg:col-span-6" : "lg:col-span-3"
+  } focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-magenta focus-visible:ring-offset-2 focus-visible:ring-offset-background`;
+  const overlayClasses =
+    program.overlay ??
+    "bg-gradient-to-t from-black/85 via-black/50 to-transparent";
+  const badgeClasses = `inline-flex items-center gap-2 rounded-none px-3 py-1 text-xs uppercase tracking-wide ${
+    program.badgeClass ?? "bg-white/15 text-foreground/80 backdrop-blur"
+  }`;
+  const panelClasses = `rounded-none border border-white/15 p-6 shadow-[0_25px_80px_-35px_rgba(255,255,255,0.45)] transition-colors duration-500 ${
+    program.panelClass ?? "bg-black/60 backdrop-blur-lg"
+  }`;
+
+  const content = (
+    <div
+      className={`relative flex h-full flex-col justify-end overflow-hidden rounded-none border border-white/10 bg-black/10 backdrop-blur-sm transition-all duration-700 hover:-translate-y-1 hover:shadow-2xl hover:shadow-brand-magenta/20 ${
+        program.featured ? "min-h-[360px]" : "min-h-[300px]"
+      }`}
+    >
+      <img
+        src={program.image}
+        alt={program.name}
+        loading="lazy"
+        className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+      />
+      <div className={`absolute inset-0 ${overlayClasses}`} />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
+      <div className={`absolute left-6 top-6 ${badgeClasses}`}>
+        {program.area}
+      </div>
+      <div className="relative z-10 flex h-full flex-col justify-end p-6 text-white">
+        <div className={panelClasses}>
+          <div className="space-y-4">
+            <div>
+              <h3 className="font-display text-2xl leading-tight text-white">
+                {program.name}
+              </h3>
+              <p className="mt-3 text-sm text-white/85 font-body">
+                {program.description}
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {program.highlights.map((item) => (
+                <span
+                  key={item}
+                  className="rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs uppercase tracking-wide text-white/85"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+            <span className="inline-flex items-center gap-2 text-sm font-medium text-white/90 transition-colors group-hover:text-brand-magenta">
+              Learn more
+              <ChevronRight className="h-4 w-4 transition-colors group-hover:text-brand-magenta" />
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+
+  if (isInternal) {
+    return (
+      <RouterLink to={program.link} className={wrapperClasses}>
+        {content}
+      </RouterLink>
+    );
+  }
+
+  return (
+    <a
+      href={program.link}
+      target="_blank"
+      rel="noreferrer"
+      className={wrapperClasses}
+    >
+      {content}
+    </a>
+  );
+}
+
+function CalendarResourceCard({ entry }: { entry: CalendarEntry }) {
+  return (
+    <Card className="h-full rounded-none border border-purple-500/20 bg-purple-500/10 backdrop-blur">
+      <CardHeader className="pb-2">
+        <div className="flex items-center justify-between gap-4">
+          <Badge className="bg-brand-magenta/15 text-brand-magenta">
+            {entry.tag}
+          </Badge>
+          <span className="text-xs text-foreground font-body">
+            {entry.academicYear}
+          </span>
+        </div>
+        <CardTitle className="mt-4 text-lg font-display">
+          {entry.title}
+        </CardTitle>
+      </CardHeader>
+      <CardContent className="space-y-5 text-sm text-foreground font-body">
+        <p>{entry.description}</p>
+        <a
+          href={entry.documentUrl}
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex items-center gap-2 text-sm font-medium text-brand-magenta"
+        >
+          Download Calendar
+          <ChevronRight className="h-4 w-4" />
+        </a>
+      </CardContent>
+    </Card>
+  );
+}
+
+function HeroVideo() {
+  const [isMuted, setIsMuted] = useState(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const toggleMute = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = !videoRef.current.muted;
+      setIsMuted(!isMuted);
+    }
+  };
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    video.muted = isMuted;
+  }, [isMuted]);
+
+  return (
+    <div className="w-full h-screen relative overflow-hidden flex items-end md:items-center justify-start">
+      <video
+        ref={videoRef}
+        src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F0b20f5ea03294f4d824e69fd8489b78c?alt=media&token=0c4092c4-4afd-4237-b850-81046ecf52f7&apiKey=4aa279a8430d441dba9c55f659831878"
+        autoPlay
+        muted={isMuted}
+        loop
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
+        style={{
+          filter: "brightness(1.1) contrast(1.15) saturate(1.2)"
+        }}
+      />
+
+      <div className="absolute inset-0 bg-black/40"></div>
+
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/30 pointer-events-none"></div>
+
+      <div className="absolute top-0 left-0 w-96 h-96 bg-brand-magenta/5 rounded-full filter blur-3xl opacity-60 animate-float pointer-events-none"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-brand-orange/5 rounded-full filter blur-3xl opacity-60 animate-float pointer-events-none" style={{ animationDelay: "2s" }}></div>
+
+      <div className="absolute inset-0 opacity-5 pointer-events-none" style={{
+        backgroundImage: "repeating-linear-gradient(0deg, rgba(255,255,255,.03) 0px, rgba(255,255,255,.03) 1px, transparent 1px, transparent 2px)"
+      }}></div>
+
+      <div className="relative max-w-7xl mx-auto px-6 w-full z-10 pb-20 md:pb-0">
+        <div className="max-w-2xl">
+          <p className="text-sm md:text-base text-white/80 mb-4 uppercase tracking-widest font-display">
+            Center for Executive Education
+          </p>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight font-display">
+            Executive MBA & Leadership Ecosystem
+          </h1>
+          <p className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed max-w-xl font-display">
+            Propel your career with weekend executive programmes, CXO mentorship and innovation labs tailored for working professionals.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4">
+            <a
+              href="https://bit.ly/DSUEMBAApp"
+              target="_blank"
+              rel="noreferrer"
+              className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            >
+              <Button
+                size="lg"
+                className="bg-white hover:bg-white/90 text-orange-600 hover:text-orange-700 px-8 py-6 text-base font-semibold font-display transition-all duration-300 group border-2 border-white"
+              >
+                Apply Now
+                <ChevronRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </a>
+            <a
+              href="https://dsu.edu.in/virtual-tour/"
+              target="_blank"
+              rel="noreferrer"
+              className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            >
+              <Button
+                variant="outline"
+                size="lg"
+                className="border-2 border-white text-white hover:bg-white hover:text-orange-600 px-8 py-6 text-base font-semibold font-display transition-all duration-300"
+              >
+                Virtual Tour
+              </Button>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <button
+        onClick={toggleMute}
+        className="absolute top-8 right-8 z-10 p-3 rounded-full bg-black/50 hover:bg-black/70 transition-colors text-white backdrop-blur-sm border border-white/20"
+        aria-label={isMuted ? "Unmute" : "Mute"}
+      >
+        {isMuted ? (
+          <VolumeX className="h-5 w-5" />
+        ) : (
+          <Volume2 className="h-5 w-5" />
+        )}
+      </button>
+    </div>
   );
 }
 
