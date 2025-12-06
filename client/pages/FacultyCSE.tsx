@@ -64,8 +64,7 @@ export default function FacultyCSE() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <HeroSection stats={stats} />
-      <div className="relative px-6">
+      <div className="relative px-6 py-16">
         <div className="mx-auto max-w-7xl">
           <LeadershipSection leadership={leadership} />
         </div>
