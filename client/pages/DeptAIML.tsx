@@ -167,44 +167,12 @@ export default function DeptAIML() {
               <div className="group relative overflow-hidden rounded-xl border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-magenta/10 transition-all cursor-pointer">
                 <div className="relative">
                   <div className="aspect-square w-full"></div>
-                  <img src="https://www.dsu.edu.in/images/Engineering/CSE-AIML/faculty/jayavrinda.jpg" alt="Dr. Jayavrinda Vrindavanam" className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-500" />
+                  <img src="https://www.dsu.edu.in/images/Engineering/CSE-AIML/faculty/Jayavrinda.jpg" alt="Dr. Jayavrinda Vrindavanam V" className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-500" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
                 </div>
                 <div className="absolute bottom-0 p-3 w-full">
                   <div className="text-white text-xs opacity-80">Professor</div>
-                  <div className="text-white font-semibold text-sm font-display line-clamp-2">Dr. Jayavrinda Vrindavanam</div>
-                </div>
-              </div>
-            </div>
-
-            {/* Associate Faculty 1 */}
-            <div>
-              <p className="text-xs font-semibold text-brand-magenta uppercase tracking-wider mb-2">Associate Professor</p>
-              <div className="group relative overflow-hidden rounded-xl border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-magenta/10 transition-all cursor-pointer">
-                <div className="relative">
-                  <div className="aspect-square w-full"></div>
-                  <img src="https://www.dsu.edu.in/images/Engineering/CSE-AIML/faculty/vinutha.jpg" alt="Dr. Vinutha N" className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-500" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
-                </div>
-                <div className="absolute bottom-0 p-3 w-full">
-                  <div className="text-white text-xs opacity-80">Associate Professor</div>
-                  <div className="text-white font-semibold text-sm font-display line-clamp-2">Dr. Vinutha N</div>
-                </div>
-              </div>
-            </div>
-
-            {/* Assistant Professor */}
-            <div>
-              <p className="text-xs font-semibold text-brand-magenta uppercase tracking-wider mb-2">BOS Coordinator</p>
-              <div className="group relative overflow-hidden rounded-xl border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-magenta/10 transition-all cursor-pointer">
-                <div className="relative">
-                  <div className="aspect-square w-full"></div>
-                  <img src="https://www.dsu.edu.in/images/Engineering/CSE-AIML/faculty/pradeep-kumar.jpg" alt="Prof. Pradeep Kumar K" className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-500" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
-                </div>
-                <div className="absolute bottom-0 p-3 w-full">
-                  <div className="text-white text-xs opacity-80">Assistant Professor</div>
-                  <div className="text-white font-semibold text-sm font-display line-clamp-2">Prof. Pradeep Kumar K</div>
+                  <div className="text-white font-semibold text-sm font-display line-clamp-2">Dr. Jayavrinda Vrindavanam V</div>
                 </div>
               </div>
             </div>
