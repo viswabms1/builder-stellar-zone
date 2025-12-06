@@ -412,6 +412,7 @@ function NoticeBoard() {
       date: "Feb 12, 2025",
       description:
         "Interdisciplinary hackathon hosted by CSE with tracks in AI for Health, Sustainable Tech, and FinTech innovation.",
+      image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=300&fit=crop",
       link: "https://www.dsu.edu.in/images/Engineering/CSE-dept/notices/HackDSU-2025.pdf",
     },
     {
@@ -421,6 +422,7 @@ function NoticeBoard() {
       date: "Jan 29, 2025",
       description:
         "Students can choose from Advanced Cloud Platforms, Secure Coding, XR Applications, and Data Storytelling electives till Feb 05.",
+      link: "https://www.dsu.edu.in/images/Engineering/CSE-dept/notices/Elective-Registration-2025.pdf",
     },
     {
       id: "notice-3",
@@ -429,6 +431,7 @@ function NoticeBoard() {
       date: "Jan 24, 2025",
       description:
         "Guest session by Dr. Leela Narayanan, Principal Scientist at Novus Labs. Venue: Innovation Theatre, 10:30 AM.",
+      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=300&fit=crop",
       link: "https://www.dsu.edu.in/images/Engineering/CSE-dept/notices/Responsible-GenAI-Guest-Lecture.pdf",
     },
     {
@@ -438,6 +441,7 @@ function NoticeBoard() {
       date: "Jan 18, 2025",
       description:
         "The department's comprehensive annual report showcasing research, placements, and student achievements has been published.",
+      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=300&fit=crop",
       link: "https://www.dsu.edu.in/images/Engineering/CSE-dept/notices/Annual-Report-2024-25.pdf",
     },
     {
@@ -447,6 +451,7 @@ function NoticeBoard() {
       date: "Feb 5, 2025",
       description:
         "Join Prof. Rajesh Kumar from IISc Bangalore for an in-depth discussion on quantum computing advances.",
+      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&h=300&fit=crop",
     },
     {
       id: "notice-6",
@@ -455,6 +460,8 @@ function NoticeBoard() {
       date: "Jan 25, 2025",
       description:
         "Three research papers from CSE faculty have been accepted at IEEE and ACM international conferences.",
+      image: "https://images.unsplash.com/photo-1516321318423-f06f70a504f9?w=600&h=300&fit=crop",
+      link: "https://www.dsu.edu.in/images/Engineering/CSE-dept/notices/Faculty-Publications-2025.pdf",
     },
     {
       id: "notice-7",
@@ -463,6 +470,7 @@ function NoticeBoard() {
       date: "Jan 20, 2025",
       description:
         "New guidelines for mandatory summer internships including minimum duration, approval process, and assessment criteria.",
+      link: "https://www.dsu.edu.in/images/Engineering/CSE-dept/notices/Internship-Policy-2025.pdf",
     },
     {
       id: "notice-8",
@@ -471,6 +479,7 @@ function NoticeBoard() {
       date: "Feb 8, 2025",
       description:
         "Hands-on workshop by AWS certified architects covering microservices and containerization strategies.",
+      image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=300&fit=crop",
     },
     {
       id: "notice-9",
@@ -479,6 +488,8 @@ function NoticeBoard() {
       date: "Jan 15, 2025",
       description:
         "The department has secured 'A' grade in the latest NAAC assessment, reflecting excellence in academic and research standards.",
+      image: "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=600&h=300&fit=crop",
+      link: "https://www.dsu.edu.in/images/Engineering/CSE-dept/notices/NAAC-Accreditation-2025.pdf",
     },
   ];
 
