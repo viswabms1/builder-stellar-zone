@@ -277,6 +277,16 @@ function App() {
                 <Route path="/academics/engineering/ai-ml/faculty/ms-hairunesa-beevi" element={<HairunesaBeeviPage />} />
                 <Route path="/academics/engineering/ai-ml/faculty/prof-kuna-srinidhi" element={<SrinidhiAIMLPage />} />
                 <Route
+                  path="/academics/engineering/electronics-communication/faculty"
+                  element={<FacultyECE />}
+                />
+                <Route path="/academics/engineering/electronics-communication/faculty/dr-puttamadappa-c" element={<PuttamadappaECEPage />} />
+                <Route path="/academics/engineering/electronics-communication/faculty/dr-arun-balodi" element={<ArunBalodiPage />} />
+                <Route path="/academics/engineering/electronics-communication/faculty/dr-s-n-prasad" element={<SNPrasadECEPage />} />
+                <Route path="/academics/engineering/electronics-communication/faculty/dr-s-arungalai-vendan" element={<ArungalaiVendanPage />} />
+                <Route path="/academics/engineering/electronics-communication/faculty/dr-s-k-srivastava" element={<SKSrivastavaECEPage />} />
+                <Route path="/academics/engineering/electronics-communication/faculty/dr-theodore-chandra-s" element={<TheodoreChandraPage />} />
+                <Route
                   path="/academics/engineering/computer-science/faculty"
                   element={<FacultyCSE />}
                 />
