@@ -432,31 +432,9 @@ export default function JournalismMassComm() {
                 Master multimedia storytelling across print, television, digital media and film
               </p>
             </div>
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-12">
               {PROGRAM_CARDS.map((program) => (
-                <Card key={program.name} className="h-full rounded-none border border-border/50 bg-card/50 backdrop-blur-sm">
-                  <CardHeader>
-                    <Badge className="bg-brand-magenta/15 text-brand-magenta">
-                      {program.level}
-                    </Badge>
-                    <CardTitle className="mt-4 text-xl font-display">
-                      {program.name}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-4 text-sm text-foreground font-body">
-                    <p>{program.description}</p>
-                    <div className="flex flex-wrap gap-2">
-                      {program.highlights.map((item) => (
-                        <span
-                          key={item}
-                          className="rounded-full border border-brand-magenta/25 bg-brand-magenta/10 px-3 py-1 text-xs uppercase tracking-wide text-brand-magenta/90"
-                        >
-                          {item}
-                        </span>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
+                <ProgramCardComponent key={program.name} program={program} />
               ))}
             </div>
           </div>
