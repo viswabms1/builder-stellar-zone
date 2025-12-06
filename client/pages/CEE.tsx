@@ -627,6 +627,79 @@ export default function CEE() {
         </div>
       </section>
 
+      {/* Dean's Message Section */}
+      <DeanSection dean={DEAN_INFO} />
+
+      <section id="programs" className="relative overflow-hidden px-6 py-16">
+        <div
+          className="pointer-events-none absolute inset-x-0 -top-32 h-64 bg-gradient-to-b from-brand-magenta/20 via-transparent to-transparent blur-3xl"
+          aria-hidden="true"
+        />
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-12">
+            <div className="max-w-3xl">
+              <h2 className="font-display text-3xl md:text-4xl">
+                Executive Programmes
+              </h2>
+              <p className="mt-3 text-sm text-foreground font-body">
+                Modular executive pathways combining weekend residencies, strategic modules, CXO mentorship and global immersion for working professionals.
+              </p>
+            </div>
+          </div>
+
+          <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-12">
+            {PROGRAM_CARDS.map((program) => (
+              <ProgramCardComponent key={program.name} program={program} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="calendar" className="px-6 py-16">
+        <div className="mx-auto max-w-6xl">
+          <div className="relative overflow-hidden rounded-none border-[3px] border-dashed border-brand-magenta/30 bg-card/70 p-10 shadow-[0_35px_120px_-45px_rgba(175,80,255,0.65)] backdrop-blur">
+            <div
+              className="pointer-events-none absolute -left-16 top-10 h-32 w-32 rounded-full bg-brand-magenta/15 blur-3xl"
+              aria-hidden="true"
+            />
+            <div
+              className="pointer-events-none absolute -right-12 bottom-0 h-36 w-36 rounded-full bg-brand-blue/15 blur-3xl"
+              aria-hidden="true"
+            />
+            <div className="relative grid gap-0 lg:grid-cols-[1.1fr_minmax(0,1fr)]">
+              <div className="space-y-5">
+                <Badge className="bg-brand-magenta/15 text-brand-magenta">
+                  Notice Board
+                </Badge>
+                <h2 className="font-display text-3xl md:text-4xl">
+                  Executive Education Calendar
+                </h2>
+                <p className="text-sm text-foreground font-body">
+                  Curated updates for ongoing programmes including residencies, masterclasses, speaker series and evaluations.
+                </p>
+                <a
+                  href="https://www.dsu.edu.in/academics/cee/news-events"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 text-sm font-medium text-brand-magenta hover:underline"
+                >
+                  Browse all events
+                  <ChevronRight className="h-4 w-4" />
+                </a>
+              </div>
+              <div className="grid gap-0">
+                {CALENDAR_ENTRIES.map((entry) => (
+                  <CalendarResourceCard
+                    key={`${entry.title}-${entry.academicYear}`}
+                    entry={entry}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section
         id="resources"
         className="bg-gradient-to-r from-brand-blue/5 to-brand-orange/5 px-6 py-16"
