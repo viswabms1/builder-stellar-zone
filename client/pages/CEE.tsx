@@ -1,17 +1,23 @@
 import { Link } from "react-router-dom";
+import { Link as RouterLink } from "react-router-dom";
+import { useState, useRef, useEffect } from "react";
 import type { LucideIcon } from "lucide-react";
 import {
   Award,
   BadgeCheck,
+  CalendarDays,
   ChevronRight,
   ClipboardList,
   Compass,
   GraduationCap,
   Layers,
+  Microscope,
   Network,
   Presentation,
   Sparkle,
   Users,
+  Volume2,
+  VolumeX,
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -23,6 +29,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { DeanSection, type DeanInfo } from "@/components/DeanSection";
 
 type Highlight = {
   title: string;
