@@ -1,4 +1,5 @@
 import { Link as RouterLink } from "react-router-dom";
+import { useState, useRef, useEffect } from "react";
 import type { LucideIcon } from "lucide-react";
 import {
   Atom,
@@ -13,6 +14,8 @@ import {
   Microscope,
   Network,
   ShieldCheck,
+  Volume2,
+  VolumeX,
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
