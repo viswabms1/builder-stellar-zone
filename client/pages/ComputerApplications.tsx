@@ -424,7 +424,7 @@ function HighlightCard({ highlight }: { highlight: Highlight }) {
 
 function ResourceCard({ resource }: { resource: ResourceLink }) {
   return (
-    <Card className="h-full rounded-3xl border border-border/40 bg-card/60 backdrop-blur">
+    <Card className="h-full rounded-none border border-border/40 bg-card/60 backdrop-blur">
       <CardHeader className="pb-2">
         <Badge className="bg-brand-magenta/15 text-brand-magenta">
           {resource.badge}
