@@ -526,66 +526,127 @@ function NoticeBoard() {
   const news = notices.filter((n) => n.category === "News");
   const announcements = notices.filter((n) => n.category === "Announcement");
 
-  const renderSection = (title: string, items: NoticeItem[], color: string) => (
-    <div className="space-y-4">
-      <div className={`flex items-center gap-2 px-4 py-3 rounded-xl border-l-4 ${
-        color === "magenta"
-          ? "border-brand-magenta bg-brand-magenta/10"
-          : color === "orange"
-          ? "border-brand-orange bg-brand-orange/10"
-          : "border-brand-blue bg-brand-blue/10"
-      }`}>
-        <h3 className={`headline-4 font-display ${
-          color === "magenta"
-            ? "text-brand-magenta"
-            : color === "orange"
-            ? "text-brand-orange"
-            : "text-brand-blue"
-        }`}>{title}</h3>
-        <Badge className="ml-auto text-xs">{items.length}</Badge>
-      </div>
-      <div className="space-y-3">
-        {items.length > 0 ? (
-          items.map((notice) => {
-            const categoryStyle = getCategoryStyle(notice.category);
-            const Icon = categoryStyle.icon;
-            return (
-              <Card
-                key={notice.id}
-                className="group border border-border/40 bg-card/50 shadow-sm transition hover:-translate-y-1 hover:border-brand-magenta/40 hover:shadow-brand-magenta/5"
-              >
-                <CardHeader className="pb-3">
-                  <div className="flex items-start justify-between gap-2 mb-2">
-                    <span className="text-xs font-semibold text-foreground/60">{notice.date}</span>
-                    {notice.link && (
-                      <Button
-                        variant="ghost"
-                        size="sm"
-                        className="h-6 px-2 text-xs"
-                        asChild
-                      >
-                        <a href={notice.link} target="_blank" rel="noreferrer">
-                          <Download className="h-3 w-3" />
-                        </a>
-                      </Button>
-                    )}
-                  </div>
-                  <CardTitle className="text-sm font-display text-foreground">
-                    {notice.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="pt-0">
-                  <p className="text-xs text-foreground/70 line-clamp-2">{notice.description}</p>
-                </CardContent>
-              </Card>
-            );
-          })
-        ) : (
+  const [currentEventIndex, setCurrentEventIndex] = useState(0);
+  const [currentNewsIndex, setCurrentNewsIndex] = useState(0);
+
+  useEffect(() => {
+    if (events.length === 0) return;
+    const interval = setInterval(() => {
+      setCurrentEventIndex((prev) => (prev + 1) % events.length);
+    }, 6000);
+    return () => clearInterval(interval);
+  }, [events.length]);
+
+  useEffect(() => {
+    if (news.length === 0) return;
+    const interval = setInterval(() => {
+      setCurrentNewsIndex((prev) => (prev + 1) % news.length);
+    }, 6000);
+    return () => clearInterval(interval);
+  }, [news.length]);
+
+  const renderCarousel = (title: string, items: NoticeItem[], color: string, currentIndex: number, setCurrentIndex: (idx: number) => void) => {
+    if (items.length === 0) {
+      return (
+        <div className="space-y-4">
+          <div className={`flex items-center gap-2 px-4 py-3 rounded-xl border-l-4 ${
+            color === "magenta"
+              ? "border-brand-magenta bg-brand-magenta/10"
+              : "border-brand-orange bg-brand-orange/10"
+          }`}>
+            <h3 className={`headline-4 font-display ${color === "magenta" ? "text-brand-magenta" : "text-brand-orange"}`}>{title}</h3>
+          </div>
           <p className="text-xs text-foreground/60 italic p-4 text-center">No items to display</p>
-        )}
+        </div>
+      );
+    }
+
+    const currentItem = items[currentIndex];
+
+    return (
+      <div className="space-y-4">
+        <div className={`flex items-center gap-2 px-4 py-3 rounded-xl border-l-4 ${
+          color === "magenta"
+            ? "border-brand-magenta bg-brand-magenta/10"
+            : "border-brand-orange bg-brand-orange/10"
+        }`}>
+          <h3 className={`headline-4 font-display ${color === "magenta" ? "text-brand-magenta" : "text-brand-orange"}`}>{title}</h3>
+          <Badge className="ml-auto text-xs">{currentIndex + 1} / {items.length}</Badge>
+        </div>
+
+        <Card className="group relative overflow-hidden rounded-2xl border-2 border-border/30 bg-card/40 backdrop-blur-sm">
+          {currentItem.image && (
+            <div className="relative h-48 overflow-hidden">
+              <img
+                src={currentItem.image}
+                alt={currentItem.title}
+                className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-4">
+                <h4 className="text-white font-display font-semibold text-sm line-clamp-2">{currentItem.title}</h4>
+              </div>
+            </div>
+          )}
+          <CardContent className="p-4 space-y-3">
+            <div className="flex items-center justify-between">
+              <span className="text-xs font-semibold text-foreground/60">{currentItem.date}</span>
+              {currentItem.link && (
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="h-6 px-2 text-xs"
+                  asChild
+                >
+                  <a href={currentItem.link} target="_blank" rel="noreferrer">
+                    <Download className="h-3 w-3 mr-1" />
+                    PDF
+                  </a>
+                </Button>
+              )}
+            </div>
+            <p className="text-xs text-foreground/70">{currentItem.description}</p>
+          </CardContent>
+        </Card>
+
+        <div className="flex items-center justify-between gap-2">
+          <div className="flex gap-1">
+            {items.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setCurrentIndex(idx)}
+                className={`h-1.5 rounded-full transition-all ${
+                  idx === currentIndex
+                    ? color === "magenta"
+                      ? "bg-brand-magenta w-6"
+                      : "bg-brand-orange w-6"
+                    : "bg-border/40 w-1.5 hover:bg-border/60"
+                }`}
+              />
+            ))}
+          </div>
+          <div className="flex gap-1">
+            <Button
+              variant="outline"
+              size="sm"
+              className="h-7 px-2 text-xs"
+              onClick={() => setCurrentIndex((prev) => (prev - 1 + items.length) % items.length)}
+            >
+              ←
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              className="h-7 px-2 text-xs"
+              onClick={() => setCurrentIndex((prev) => (prev + 1) % items.length)}
+            >
+              →
+            </Button>
+          </div>
+        </div>
       </div>
-    </div>
-  );
+    );
+  };
 
   return (
     <section className="px-6 py-16">
@@ -607,10 +668,56 @@ function NoticeBoard() {
           </Badge>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {renderSection("Events", events, "magenta")}
-          {renderSection("News", news, "orange")}
-          {renderSection("Announcements", announcements, "blue")}
+        <div className="grid lg:grid-cols-2 gap-8">
+          <div>
+            {renderCarousel("Events", events, "magenta", currentEventIndex, setCurrentEventIndex)}
+          </div>
+          <div>
+            {renderCarousel("News", news, "orange", currentNewsIndex, setCurrentNewsIndex)}
+          </div>
+        </div>
+
+        <div className="space-y-4">
+          <div className="flex items-center gap-2 px-4 py-3 rounded-xl border-l-4 border-brand-blue bg-brand-blue/10">
+            <h3 className="headline-4 font-display text-brand-blue">Announcements</h3>
+            <Badge className="ml-auto text-xs">{announcements.length}</Badge>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            {announcements.length > 0 ? (
+              announcements.map((notice) => (
+                <Card
+                  key={notice.id}
+                  className="group border border-border/40 bg-card/50 shadow-sm transition hover:-translate-y-1 hover:border-brand-magenta/40 hover:shadow-brand-magenta/5"
+                >
+                  <CardHeader className="pb-2">
+                    <div className="flex items-start justify-between gap-2 mb-2">
+                      <span className="text-xs font-semibold text-foreground/60">{notice.date}</span>
+                      {notice.link && (
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          className="h-6 px-2 text-xs bg-brand-blue/10 text-brand-blue hover:bg-brand-blue/20"
+                          asChild
+                        >
+                          <a href={notice.link} target="_blank" rel="noreferrer">
+                            <Download className="h-3 w-3" />
+                          </a>
+                        </Button>
+                      )}
+                    </div>
+                    <CardTitle className="text-sm font-display text-foreground line-clamp-2">
+                      {notice.title}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="pt-0">
+                    <p className="text-xs text-foreground/70 line-clamp-2">{notice.description}</p>
+                  </CardContent>
+                </Card>
+              ))
+            ) : (
+              <p className="text-xs text-foreground/60 italic col-span-full p-4 text-center">No announcements to display</p>
+            )}
+          </div>
         </div>
       </div>
     </section>
