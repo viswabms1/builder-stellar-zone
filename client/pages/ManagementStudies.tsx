@@ -412,6 +412,9 @@ export default function ManagementStudies() {
         </div>
       </section>
 
+      {/* Dean's Message Section */}
+      <DeanSection dean={DEAN_INFO} />
+
       <section
         id="advantages"
         className="bg-gradient-to-r from-brand-blue/5 to-brand-orange/5 px-6 py-16"
