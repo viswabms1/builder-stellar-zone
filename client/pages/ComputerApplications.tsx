@@ -522,43 +522,6 @@ export default function ComputerApplications() {
         </div>
       </section>
 
-      <section
-        id="supporting-departments"
-        className="bg-gradient-to-r from-brand-blue/10 via-brand-magenta/10 to-brand-orange/10 px-6 py-16"
-      >
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-12 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-            <div className="max-w-3xl">
-              <Badge className="bg-brand-magenta/15 text-brand-magenta">
-                Supporting Departments
-              </Badge>
-              <h2 className="mt-4 font-display text-3xl md:text-4xl">
-                Holistic foundations that amplify every programme
-              </h2>
-              <p className="mt-3 text-sm text-foreground font-body">
-                Specialist faculty from sciences and humanities co-create immersive modules with core departments to sharpen analytical thinking and communication skills.
-              </p>
-            </div>
-            <a
-              href="https://www.dsu.edu.in/academics/schools/computer-application#supporting"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 text-sm font-medium text-brand-magenta"
-            >
-              Explore supporting departments
-              <ChevronRight className="h-4 w-4" />
-            </a>
-          </div>
-          <div className="grid gap-0 md:grid-cols-2 xl:grid-cols-3">
-            {SUPPORTING_DEPARTMENTS.map((department) => (
-              <SupportingDepartmentCard
-                key={department.name}
-                department={department}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
 
       <section id="innovation-labs" className="px-6 py-16">
         <div className="mx-auto max-w-7xl">
