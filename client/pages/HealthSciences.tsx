@@ -348,58 +348,7 @@ export default function HealthSciences() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <section className="relative w-full" id="top">
-        <div className="h-screen w-full flex items-center justify-center overflow-hidden">
-          <img
-            src={HERO_IMAGE}
-            alt="School of Health Sciences"
-            className="absolute inset-0 h-full w-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-          
-          <div className="relative max-w-7xl mx-auto px-6 w-full z-10">
-            <div className="max-w-2xl">
-              <p className="text-sm md:text-base text-white/80 mb-4 uppercase tracking-widest font-display">
-                School of Health Sciences
-              </p>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight font-display">
-                Advancing Care. Inspiring Wellness.
-              </h1>
-              <p className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed max-w-xl font-display">
-                Build a career in nursing, pharmacy, physiotherapy and allied health with simulation-rich learning and patient-centric hospital immersion.
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a
-                  href="https://admissions.dsu.edu.in/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <Button
-                    size="lg"
-                    className="bg-white hover:bg-white/90 text-orange-600 hover:text-orange-700 px-8 py-6 text-base font-semibold font-display transition-all duration-300 group border-2 border-white"
-                  >
-                    Apply Now
-                    <ChevronRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-                  </Button>
-                </a>
-                <a
-                  href="https://dsu.edu.in/virtual-tour/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <Button
-                    variant="outline"
-                    size="lg"
-                    className="border-2 border-white text-white hover:bg-white hover:text-orange-600 px-8 py-6 text-base font-semibold font-display transition-all duration-300"
-                  >
-                    Virtual Tour
-                  </Button>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
+        <HeroVideo />
       </section>
 
       <section
