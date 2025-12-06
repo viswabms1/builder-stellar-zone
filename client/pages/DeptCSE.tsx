@@ -138,6 +138,8 @@ export default function DeptCSE() {
 
       <CurriculumLibrary />
 
+      <AccreditationDocuments />
+
       <NoticeBoard />
 
       <LabsFacilitiesCarousel />
