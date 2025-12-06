@@ -1,4 +1,6 @@
 import { Link as RouterLink } from "react-router-dom";
+import { Link as RouterLink } from "react-router-dom";
+import { useState, useRef, useEffect } from "react";
 import type { LucideIcon } from "lucide-react";
 import {
   Award,
@@ -11,6 +13,8 @@ import {
   Presentation,
   Rocket,
   Shapes,
+  Volume2,
+  VolumeX,
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
