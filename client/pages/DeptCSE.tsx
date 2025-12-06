@@ -311,7 +311,7 @@ interface LabItem {
 interface NoticeItem {
   id: string;
   title: string;
-  category: "Event" | "Announcement" | "Circular";
+  category: "Event" | "News" | "Announcement";
   date: string;
   description: string;
   link?: string;
