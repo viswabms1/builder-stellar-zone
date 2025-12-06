@@ -543,57 +543,8 @@ function LifeCard({ life }: { life: LifeAtDSU }) {
 export default function ComputerApplications() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <section className="relative" id="top">
-        <div className="h-[60vh] w-full overflow-hidden md:h-[70vh]">
-          <img
-            src={HERO_IMAGE}
-            alt="School of Computer Applications"
-            className="h-full w-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-        </div>
-        <div className="absolute inset-0 flex items-center">
-          <div className="mx-auto max-w-7xl px-6">
-            <div className="mb-6 inline-flex items-center rounded-full border border-brand-magenta/20 bg-brand-magenta/10 px-4 py-2">
-              <Cpu className="mr-2 h-4 w-4 text-brand-magenta" />
-              <span className="text-sm font-medium text-brand-magenta font-display">
-                School of Computer Applications
-              </span>
-            </div>
-            <h1 className="mb-4 font-display text-4xl leading-tight text-white md:text-6xl">
-              Build Tomorrow's Digital Experiences
-            </h1>
-            <p className="max-w-2xl text-white/90 font-body text-lg">
-              From full-stack development to data science and cloud-native
-              innovation, DSU prepares tech creators with experiential labs,
-              industry mentorship and product-focused learning.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <a
-                href="https://admissions.dsu.edu.in/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <Button className="bg-brand-gradient text-foreground">
-                  Apply Now
-                </Button>
-              </a>
-              <a
-                href="https://www.dsu.edu.in/computer-applications/usp-sca"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <Button
-                  variant="outline"
-                  className="border-brand-magenta/40 hover:bg-brand-magenta/10"
-                >
-                  Explore USP
-                </Button>
-              </a>
-            </div>
-          </div>
-        </div>
+      <section className="relative w-full" id="top">
+        <HeroVideo />
       </section>
 
       <section
