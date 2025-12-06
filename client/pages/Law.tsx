@@ -12,6 +12,7 @@ import {
   Globe,
   GraduationCap,
   Landmark,
+  Microscope,
   Scale,
   ShieldCheck,
   Users,
@@ -49,6 +50,14 @@ type ProgramCard = {
   badgeClass: string;
   panelClass: string;
   featured?: boolean;
+};
+
+type CalendarEntry = {
+  title: string;
+  academicYear: string;
+  description: string;
+  documentUrl: string;
+  tag: string;
 };
 
 type NewsItem = {
@@ -141,6 +150,18 @@ const PROGRAM_CARDS: ProgramCard[] = [
   },
 ];
 
+const CALENDAR_ENTRIES: CalendarEntry[] = [
+  {
+    title: "B.B.A., LL.B. & B.A., LL.B. Academic Calendar",
+    academicYear: "2025-26",
+    description:
+      "Detailed timeline for integrated law programmes including assessments, moot courts and internship periods.",
+    documentUrl:
+      "https://www.dsu.edu.in/images/Law/calendar_2025_26.pdf",
+    tag: "LL.B",
+  },
+];
+
 const FEATURED_NEWS: NewsItem[] = [
   {
     image:
@@ -187,7 +208,7 @@ const DEAN_INFO: DeanInfo = {
 function ProgramCardComponent({ program }: { program: ProgramCard }) {
   const isInternal = program.link.startsWith("/");
   const wrapperClasses = `group block h-full rounded-none ${
-    program.featured ? "lg:col-span-4" : "lg:col-span-3"
+    program.featured ? "lg:col-span-6" : "lg:col-span-3"
   } focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-magenta focus-visible:ring-offset-2 focus-visible:ring-offset-background`;
   const overlayClasses =
     program.overlay ??
@@ -264,6 +285,38 @@ function ProgramCardComponent({ program }: { program: ProgramCard }) {
     >
       {content}
     </a>
+  );
+}
+
+function CalendarResourceCard({ entry }: { entry: CalendarEntry }) {
+  return (
+    <Card className="h-full rounded-none border border-purple-500/20 bg-purple-500/10 backdrop-blur">
+      <CardHeader className="pb-2">
+        <div className="flex items-center justify-between gap-4">
+          <Badge className="bg-brand-magenta/15 text-brand-magenta">
+            {entry.tag}
+          </Badge>
+          <span className="text-xs text-foreground font-body">
+            {entry.academicYear}
+          </span>
+        </div>
+        <CardTitle className="mt-4 text-lg font-display">
+          {entry.title}
+        </CardTitle>
+      </CardHeader>
+      <CardContent className="space-y-5 text-sm text-foreground font-body">
+        <p>{entry.description}</p>
+        <a
+          href={entry.documentUrl}
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex items-center gap-2 text-sm font-medium text-brand-magenta"
+        >
+          Download PDF
+          <ChevronRight className="h-4 w-4" />
+        </a>
+      </CardContent>
+    </Card>
   );
 }
 
@@ -459,6 +512,243 @@ export default function Law() {
         </div>
       </section>
 
+      <section id="calendar" className="px-6 py-16">
+        <div className="mx-auto max-w-6xl">
+          <div className="relative overflow-hidden rounded-none border-[3px] border-dashed border-brand-magenta/30 bg-card/70 p-10 shadow-[0_35px_120px_-45px_rgba(175,80,255,0.65)] backdrop-blur">
+            <div
+              className="pointer-events-none absolute -left-16 top-10 h-32 w-32 rounded-full bg-brand-magenta/15 blur-3xl"
+              aria-hidden="true"
+            />
+            <div
+              className="pointer-events-none absolute -right-12 bottom-0 h-36 w-36 rounded-full bg-brand-blue/15 blur-3xl"
+              aria-hidden="true"
+            />
+            <div className="relative grid gap-0 lg:grid-cols-[1.1fr_minmax(0,1fr)]">
+              <div className="space-y-5">
+                <Badge className="bg-brand-magenta/15 text-brand-magenta">
+                  Notice Board
+                </Badge>
+                <h2 className="font-display text-3xl md:text-4xl">
+                  School of Law Notice Board
+                </h2>
+                <p className="text-sm text-foreground font-body">
+                  Curated updates for the ongoing academic year 2025-26. Stay aligned with assessment windows, internships and university-hosted experiences.
+                </p>
+                <a
+                  href="https://www.dsu.edu.in/law/notices"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 text-sm font-medium text-brand-magenta hover:underline"
+                >
+                  Browse previous circulars
+                  <ChevronRight className="h-4 w-4" />
+                </a>
+              </div>
+              <div className="grid gap-0">
+                {CALENDAR_ENTRIES.map((entry) => (
+                  <CalendarResourceCard
+                    key={`${entry.title}-${entry.academicYear}`}
+                    entry={entry}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="related-resources"
+        className="bg-gradient-to-r from-brand-magenta/5 via-brand-blue/5 to-brand-orange/5 px-6 py-16"
+      >
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-12 text-center">
+            <h2 className="font-display text-3xl md:text-4xl">
+              Explore More at DSU School of Law
+            </h2>
+            <p className="mt-3 text-sm text-foreground font-body">
+              Discover our legal excellence, research initiatives, placements and admission pathways
+            </p>
+          </div>
+          <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-4">
+            <RouterLink
+              to="/centre-of-excellence"
+              className="group rounded-none border border-border/40 bg-card/60 backdrop-blur-sm overflow-hidden hover:shadow-lg hover:shadow-brand-magenta/20 transition-all duration-500 hover:-translate-y-1"
+            >
+              <Card className="h-full border-0 bg-transparent">
+                <div className="relative h-32 bg-gradient-to-br from-brand-magenta/20 to-brand-magenta/10 flex items-center justify-center">
+                  <Award className="h-12 w-12 text-brand-magenta/70 group-hover:text-brand-magenta transition-colors" />
+                </div>
+                <CardHeader>
+                  <CardTitle className="font-display group-hover:text-brand-magenta transition-colors">
+                    Centre of Excellence
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-foreground/80 font-body">
+                    Legal research initiatives and industry-powered learning labs
+                  </p>
+                </CardContent>
+              </Card>
+            </RouterLink>
+
+            <RouterLink
+              to="/research"
+              className="group rounded-none border border-border/40 bg-card/60 backdrop-blur-sm overflow-hidden hover:shadow-lg hover:shadow-brand-blue/20 transition-all duration-500 hover:-translate-y-1"
+            >
+              <Card className="h-full border-0 bg-transparent">
+                <div className="relative h-32 bg-gradient-to-br from-brand-blue/20 to-brand-blue/10 flex items-center justify-center">
+                  <Microscope className="h-12 w-12 text-brand-blue/70 group-hover:text-brand-blue transition-colors" />
+                </div>
+                <CardHeader>
+                  <CardTitle className="font-display group-hover:text-brand-blue transition-colors">
+                    Research & Innovation
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-foreground/80 font-body">
+                    Faculty-led research projects and policy impact initiatives
+                  </p>
+                </CardContent>
+              </Card>
+            </RouterLink>
+
+            <RouterLink
+              to="/placements"
+              className="group rounded-none border border-border/40 bg-card/60 backdrop-blur-sm overflow-hidden hover:shadow-lg hover:shadow-brand-orange/20 transition-all duration-500 hover:-translate-y-1"
+            >
+              <Card className="h-full border-0 bg-transparent">
+                <div className="relative h-32 bg-gradient-to-br from-brand-orange/20 to-brand-orange/10 flex items-center justify-center">
+                  <GraduationCap className="h-12 w-12 text-brand-orange/70 group-hover:text-brand-orange transition-colors" />
+                </div>
+                <CardHeader>
+                  <CardTitle className="font-display group-hover:text-brand-orange transition-colors">
+                    Placements
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-foreground/80 font-body">
+                    Career pathways with leading law firms and corporations
+                  </p>
+                </CardContent>
+              </Card>
+            </RouterLink>
+
+            <a
+              href="https://admissions.dsu.edu.in/"
+              target="_blank"
+              rel="noreferrer"
+              className="group rounded-none border border-border/40 bg-card/60 backdrop-blur-sm overflow-hidden hover:shadow-lg hover:shadow-brand-magenta/20 transition-all duration-500 hover:-translate-y-1"
+            >
+              <Card className="h-full border-0 bg-transparent">
+                <div className="relative h-32 bg-gradient-to-br from-brand-magenta/20 to-brand-magenta/10 flex items-center justify-center">
+                  <Landmark className="h-12 w-12 text-brand-magenta/70 group-hover:text-brand-magenta transition-colors" />
+                </div>
+                <CardHeader>
+                  <CardTitle className="font-display group-hover:text-brand-magenta transition-colors">
+                    Admissions
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="flex flex-col gap-3">
+                  <p className="text-sm text-foreground/80 font-body">
+                    Join DSU Law and shape a career in legal excellence
+                  </p>
+                  <span className="inline-flex items-center gap-2 text-xs font-medium text-brand-magenta group-hover:text-brand-magenta/80 transition-colors">
+                    Apply Now
+                    <ChevronRight className="h-3 w-3" />
+                  </span>
+                </CardContent>
+              </Card>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section className="px-6 py-16">
+        <div className="mx-auto grid max-w-5xl items-start gap-8 lg:grid-cols-2">
+          <Card className="rounded-none border border-orange-500/20 bg-orange-500/10">
+            <CardHeader>
+              <CardTitle className="font-display">Leadership</CardTitle>
+            </CardHeader>
+            <CardContent className="grid gap-4 text-sm font-body text-foreground">
+              <div>
+                <div className="text-foreground/70 text-xs uppercase tracking-wide">Email</div>
+                <div className="font-medium text-foreground">
+                  law@dsu.edu.in
+                </div>
+              </div>
+              <div>
+                <div className="text-foreground/70 text-xs uppercase tracking-wide">Phone</div>
+                <div className="font-medium text-foreground">
+                  +91-80-49092933
+                </div>
+              </div>
+              <div>
+                <div className="text-foreground/70 text-xs uppercase tracking-wide">Campus Address</div>
+                <div className="font-medium text-foreground">
+                  Kanakapura Road, Bengaluru, Karnataka
+                </div>
+              </div>
+              <div>
+                <div className="text-foreground/70 text-xs uppercase tracking-wide">Office Hours</div>
+                <div className="font-medium text-foreground">
+                  Mon–Fri, 9:00 AM – 5:30 PM
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+          <Card className="rounded-none border border-blue-500/20 bg-blue-500/10">
+            <CardHeader>
+              <CardTitle className="font-display">
+                More Resources
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="grid gap-3 text-sm font-body">
+              <a
+                href="https://www.dsu.edu.in/law/programs"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-brand-magenta"
+              >
+                Programs Overview
+              </a>
+              <a
+                href="https://www.dsu.edu.in/law/highlights"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-brand-magenta"
+              >
+                Highlights & USP
+              </a>
+              <a
+                href="https://www.dsu.edu.in/law/newsletter"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-brand-magenta"
+              >
+                Monthly Newsletter
+              </a>
+              <a
+                href="https://www.dsu.edu.in/law/library"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-brand-magenta"
+              >
+                Law Library
+              </a>
+              <a
+                href="https://www.dsu.edu.in/law/student-hub"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-brand-magenta"
+              >
+                Student Hub
+              </a>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
       <section id="featured-news" className="px-6 py-16 bg-gradient-to-r from-brand-blue/5 via-brand-magenta/5 to-brand-orange/5">
         <div className="mx-auto max-w-7xl">
           <div className="mb-12 text-center">
@@ -512,127 +802,6 @@ export default function Law() {
                 </div>
               </a>
             ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="px-6 py-16">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-12 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-            <div className="max-w-3xl">
-              <Badge className="bg-brand-magenta/15 text-brand-magenta">
-                Experiential Hubs
-              </Badge>
-              <h2 className="mt-4 font-display text-3xl md:text-4xl">
-                Clinics, Centres & Knowledge Spaces
-              </h2>
-              <p className="mt-3 text-sm text-foreground font-body">
-                Transform classroom insights into societal impact through moot courts, legal aid clinics, research collaborations and specialized libraries.
-              </p>
-            </div>
-            <a
-              href="https://www.dsu.edu.in/law/law-student"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 text-sm font-medium text-brand-magenta"
-            >
-              Student hub
-              <ChevronRight className="h-4 w-4" />
-            </a>
-          </div>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            <Card className="rounded-none border border-border/50 bg-card/50 backdrop-blur-sm">
-              <CardHeader className="flex flex-row items-center gap-3 pb-2">
-                <span className="inline-flex h-12 w-12 items-center justify-center rounded-none bg-brand-magenta/10 text-brand-magenta">
-                  <Gavel className="h-5 w-5" />
-                </span>
-                <CardTitle className="text-base font-display">Moot Court Arena</CardTitle>
-              </CardHeader>
-              <CardContent className="pt-0">
-                <CardDescription className="text-sm leading-relaxed text-foreground font-body">
-                  Practice oral advocacy, client counselling and arbitration in purpose-built spaces.
-                </CardDescription>
-              </CardContent>
-            </Card>
-
-            <Card className="rounded-none border border-border/50 bg-card/50 backdrop-blur-sm">
-              <CardHeader className="flex flex-row items-center gap-3 pb-2">
-                <span className="inline-flex h-12 w-12 items-center justify-center rounded-none bg-brand-magenta/10 text-brand-magenta">
-                  <Scale className="h-5 w-5" />
-                </span>
-                <CardTitle className="text-base font-display">Legal Aid Clinic</CardTitle>
-              </CardHeader>
-              <CardContent className="pt-0">
-                <CardDescription className="text-sm leading-relaxed text-foreground font-body">
-                  Serve communities, run legal literacy drives and collaborate with NGOs.
-                </CardDescription>
-              </CardContent>
-            </Card>
-
-            <Card className="rounded-none border border-border/50 bg-card/50 backdrop-blur-sm">
-              <CardHeader className="flex flex-row items-center gap-3 pb-2">
-                <span className="inline-flex h-12 w-12 items-center justify-center rounded-none bg-brand-magenta/10 text-brand-magenta">
-                  <Globe className="h-5 w-5" />
-                </span>
-                <CardTitle className="text-base font-display">Research Centres</CardTitle>
-              </CardHeader>
-              <CardContent className="pt-0">
-                <CardDescription className="text-sm leading-relaxed text-foreground font-body">
-                  Interdisciplinary centres focused on public policy, technology law and human rights.
-                </CardDescription>
-              </CardContent>
-            </Card>
-
-            <Card className="rounded-none border border-border/50 bg-card/50 backdrop-blur-sm">
-              <CardHeader className="flex flex-row items-center gap-3 pb-2">
-                <span className="inline-flex h-12 w-12 items-center justify-center rounded-none bg-brand-magenta/10 text-brand-magenta">
-                  <BookOpen className="h-5 w-5" />
-                </span>
-                <CardTitle className="text-base font-display">Law Library</CardTitle>
-              </CardHeader>
-              <CardContent className="pt-0">
-                <CardDescription className="text-sm leading-relaxed text-foreground font-body">
-                  Access curated repository of journals, databases and international case law.
-                </CardDescription>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      <section className="px-6 pb-20">
-        <div className="mx-auto max-w-4xl text-center">
-          <div className="rounded-none border border-brand-magenta/20 bg-brand-magenta/5 p-10">
-            <h3 className="mb-3 font-display text-3xl">
-              Shape the Future of Justice with DSU
-            </h3>
-            <p className="mb-6 text-foreground font-body">
-              Gain courtroom confidence, global exposure and thought leadership by immersing yourself in DSU's vibrant legal ecosystem.
-            </p>
-            <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <a
-                href="https://admissions.dsu.edu.in/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <Button className="bg-brand-gradient text-foreground">
-                  Begin Application
-                  <GraduationCap className="ml-2 h-4 w-4" />
-                </Button>
-              </a>
-              <a
-                href="https://www.dsu.edu.in/law/conference-law"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <Button
-                  variant="outline"
-                  className="border-brand-magenta/40 hover:bg-brand-magenta/10"
-                >
-                  Upcoming Conferences
-                </Button>
-              </a>
-            </div>
           </div>
         </div>
       </section>
