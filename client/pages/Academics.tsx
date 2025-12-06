@@ -477,8 +477,8 @@ export default function Academics() {
         </div>
       </section>
 
-      {/* Academic Features - Modernized */}
-      <section className="px-6 py-20 bg-gradient-to-r from-orange-500/5 to-red-600/5 border-y border-border/30">
+      {/* Academic Features - USP Section with Image Cards */}
+      <section className="px-6 py-20 bg-background">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -490,86 +490,75 @@ export default function Academics() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
                 icon: Award,
                 title: "Excellence Recognition",
+                category: "ACCREDITATIONS",
                 description: "NAAC A+ grade and top rankings across multiple disciplines",
                 image: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F047841ee5d304f10a49f022a1c5c511b?format=webp&width=800",
-                badgeClass: "bg-brand-magenta/20 text-brand-magenta",
-                objectFit: "contain",
+                badgeClass: "bg-brand-magenta text-white",
               },
               {
                 icon: Users,
                 title: "Expert Faculty",
+                category: "FACULTY",
                 description: "Learn from industry leaders and renowned academicians",
                 image: "https://images.pexels.com/photos/17364073/pexels-photo-17364073.jpeg",
-                badgeClass: "bg-brand-orange/20 text-brand-orange",
+                badgeClass: "bg-brand-orange text-white",
               },
               {
                 icon: Laptop,
                 title: "Modern Infrastructure",
+                category: "FACILITIES",
                 description: "State-of-the-art labs, libraries, and learning spaces",
                 image: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F1e657736504149818bf89d58c6b3d031?format=webp&width=800",
-                badgeClass: "bg-brand-blue/20 text-brand-blue",
-                objectFit: "contain",
+                badgeClass: "bg-blue-600 text-white",
               },
               {
                 icon: TrendingUp,
                 title: "Industry Connect",
+                category: "PARTNERSHIPS",
                 description: "Strong partnerships with leading companies and organizations",
                 image: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F29a06e5c2ef44ca8a7d2ebacbffe0f9f?format=webp&width=800",
-                badgeClass: "bg-brand-magenta/20 text-brand-magenta",
+                badgeClass: "bg-pink-600 text-white",
               },
             ].map((feature, index) => (
-              <div
-                key={index}
-                className={`group relative overflow-hidden h-80 rounded-xl border backdrop-blur-sm hover:shadow-xl hover:shadow-brand-magenta/10 transition-all duration-500 hover:-translate-y-2 flex flex-col ${
-                  index % 4 === 0
-                    ? "bg-blue-500/10 border-blue-500/20"
-                    : index % 4 === 1
-                    ? "bg-orange-500/10 border-orange-500/20"
-                    : index % 4 === 2
-                    ? "bg-cyan-500/10 border-cyan-500/20"
-                    : "bg-rose-500/10 border-rose-500/20"
-                }`}
-              >
-                <div
-                  className={`flex-1 overflow-hidden ${
-                    feature.objectFit === "contain"
-                      ? "flex items-center justify-center bg-gradient-to-br from-foreground/2 to-foreground/5"
-                      : ""
-                  }`}
-                >
+              <div key={index} className="group flex flex-col h-full">
+                {/* Image Container */}
+                <div className="relative w-full h-64 overflow-hidden rounded-lg mb-6">
                   <img
                     src={feature.image}
                     alt={feature.title}
-                    className={`w-full h-full ${
-                      feature.objectFit === "contain"
-                        ? "object-contain p-4"
-                        : "object-cover"
-                    } group-hover:scale-110 transition-transform duration-700`}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
-                </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 
-                <div className="absolute -top-6 -right-6 w-40 h-40 bg-brand-magenta/10 rounded-full blur-2xl" />
-                <div className="absolute -bottom-8 -left-8 w-48 h-48 bg-brand-orange/10 rounded-full blur-2xl" />
-
-                <div className={`${
-                  feature.objectFit === "contain" ? "p-6" : "absolute bottom-0 inset-x-0 p-6"
-                } relative z-10`}>
-                  <div className="inline-flex mb-3">
-                    <span className={`px-3 py-1 rounded-full text-xs font-medium ${feature.badgeClass}`}>
-                      {feature.title}
+                  {/* Overlaid Category Badge */}
+                  <div className="absolute top-4 left-4">
+                    <span className={`px-4 py-2 rounded-full text-xs font-bold tracking-wider ${feature.badgeClass}`}>
+                      {feature.category}
                     </span>
                   </div>
-                  <h3 className="text-lg font-bold mb-2 font-display text-foreground">
+                </div>
+
+                {/* Text Content Below Image */}
+                <div className="flex-1 flex flex-col">
+                  <h3 className="text-xl font-bold mb-3 font-display text-foreground group-hover:text-brand-magenta transition-colors">
                     {feature.title}
                   </h3>
-                  <p className="text-sm font-body text-foreground/80">
+                  <p className="text-sm font-body text-foreground/80 leading-relaxed">
                     {feature.description}
                   </p>
+
+                  {/* Learn More Link */}
+                  <div className="mt-6 pt-6 border-t border-border/30">
+                    <button className="text-foreground font-semibold text-sm flex items-center gap-2 group-hover:text-brand-magenta transition-colors">
+                      Learn More
+                      <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </button>
+                  </div>
                 </div>
               </div>
             ))}
