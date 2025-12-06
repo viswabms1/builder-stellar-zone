@@ -618,7 +618,7 @@ export default function ComputerApplications() {
             </h2>
           </div>
           <div className="grid gap-8 md:grid-cols-2">
-            <Card className="rounded-3xl border border-border/40 bg-gradient-to-br from-brand-blue/10 to-brand-magenta/10 backdrop-blur p-8">
+            <Card className="rounded-none border border-border/40 bg-gradient-to-br from-brand-blue/10 to-brand-magenta/10 backdrop-blur p-8">
               <div className="flex items-start gap-4">
                 <Eye className="h-8 w-8 text-brand-blue flex-shrink-0 mt-1" />
                 <div>
