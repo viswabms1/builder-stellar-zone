@@ -160,6 +160,11 @@ import ArungalaiVendanPage from "./pages/faculty/ArungalaiVendan";
 import SKSrivastavaECEPage from "./pages/faculty/SKSrivastavaECE";
 import TheodoreChandraPage from "./pages/faculty/TheodoreChandra";
 import RajeshKumarProfile from "./pages/faculty/RajeshKumar";
+import DeptAIDS from "./pages/DeptAIDS";
+import FacultyAIDS from "./pages/FacultyAIDS";
+import PoongodiFacultyPage from "./pages/faculty/Poongodi";
+import RameshWadawadagiFacultyPage from "./pages/faculty/RameshWadawadagi";
+import HarshithGowdFacultyPage from "./pages/faculty/HarshithGowd";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 
