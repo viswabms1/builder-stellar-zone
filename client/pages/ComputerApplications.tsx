@@ -496,7 +496,7 @@ function AchievementCard({ achievement }: { achievement: Achievement }) {
 
 function FacultyCard({ faculty }: { faculty: FacultyMember }) {
   return (
-    <Card className="h-full overflow-hidden rounded-3xl border border-border/40 bg-card/60 backdrop-blur">
+    <Card className="h-full overflow-hidden rounded-none border border-border/40 bg-card/60 backdrop-blur">
       <div className="relative h-48 overflow-hidden">
         <img
           src={faculty.image}
