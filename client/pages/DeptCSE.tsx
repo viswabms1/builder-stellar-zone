@@ -20,6 +20,9 @@ import {
   Network,
   Shield,
   Sparkles,
+  BookOpen,
+  Code,
+  Zap,
 } from "lucide-react";
 
 export default function DeptCSE() {
