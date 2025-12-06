@@ -165,6 +165,13 @@ import FacultyAIDS from "./pages/FacultyAIDS";
 import PoongodiFacultyPage from "./pages/faculty/Poongodi";
 import RameshWadawadagiFacultyPage from "./pages/faculty/RameshWadawadagi";
 import HarshithGowdFacultyPage from "./pages/faculty/HarshithGowd";
+import DeptMechanical from "./pages/DeptMechanical";
+import FacultyMechanical from "./pages/FacultyMechanical";
+import SaravanaBavanDPage from "./pages/faculty/SaravanaBavanD";
+import ViswanathanRMechPage from "./pages/faculty/ViswanathanRMech";
+import VinayakBHemadriPage from "./pages/faculty/VinayakBHemadri";
+import RahulKumarMechPage from "./pages/faculty/RahulKumarMech";
+import ShashidharaLCPage from "./pages/faculty/ShashidharaLC";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 
@@ -292,6 +299,19 @@ function App() {
                 <Route path="/academics/engineering/ai-ds/faculty/dr-poongodi-t" element={<PoongodiFacultyPage />} />
                 <Route path="/academics/engineering/ai-ds/faculty/dr-ramesh-wadawadagi" element={<RameshWadawadagiFacultyPage />} />
                 <Route path="/academics/engineering/ai-ds/faculty/prof-nadavadi-harshith-gowd" element={<HarshithGowdFacultyPage />} />
+                <Route
+                  path="/academics/engineering/mechanical"
+                  element={<DeptMechanical />}
+                />
+                <Route
+                  path="/academics/engineering/mechanical/faculty"
+                  element={<FacultyMechanical />}
+                />
+                <Route path="/academics/engineering/mechanical/faculty/dr-saravana-bavan-d" element={<SaravanaBavanDPage />} />
+                <Route path="/academics/engineering/mechanical/faculty/dr-viswanathan-r" element={<ViswanathanRMechPage />} />
+                <Route path="/academics/engineering/mechanical/faculty/dr-vinayak-b-hemadri" element={<VinayakBHemadriPage />} />
+                <Route path="/academics/engineering/mechanical/faculty/dr-rahul-kumar" element={<RahulKumarMechPage />} />
+                <Route path="/academics/engineering/mechanical/faculty/dr-shashidhara-l-c" element={<ShashidharaLCPage />} />
                 <Route
                   path="/academics/engineering/electronics-communication/faculty"
                   element={<FacultyECE />}
