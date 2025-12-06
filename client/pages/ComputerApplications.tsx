@@ -395,7 +395,7 @@ function HeroVideo() {
 function HighlightCard({ highlight }: { highlight: Highlight }) {
   const Icon = highlight.icon;
   return (
-    <Card className="group relative h-80 overflow-hidden rounded-3xl border border-border/40 bg-card/40 backdrop-blur-sm transition-all duration-700 hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-magenta/10">
+    <Card className="group relative h-80 overflow-hidden rounded-none border border-border/40 bg-card/40 backdrop-blur-sm transition-all duration-700 hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-magenta/10">
       <img
         src={highlight.image}
         alt={highlight.title}
