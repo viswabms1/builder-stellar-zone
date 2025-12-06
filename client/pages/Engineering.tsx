@@ -450,6 +450,48 @@ const INNOVATION_LABS = [
   "IBM Centre of Excellence",
 ];
 
+type NewsItem = {
+  image: string;
+  category: string;
+  title: string;
+  excerpt: string;
+  date: string;
+  color: "brand-magenta" | "brand-blue" | "brand-orange";
+};
+
+const FEATURED_NEWS: NewsItem[] = [
+  {
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fbf6a54aff7814535b71eda78a3d5f95e?format=webp&width=800",
+    category: "Excellence",
+    title: "Engineering Students Win International Robotics Competition",
+    excerpt:
+      "DSU Engineering team advances to global finals in the International Robotics Olympiad with autonomous system design and innovation.",
+    date: "Nov 12, 2025",
+    color: "brand-magenta",
+  },
+  {
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Ff67a08f95a24431783dc54fc189e605b?format=webp&width=800",
+    category: "Research",
+    title: "Faculty Patent Granted for Advanced Semiconductor Technology",
+    excerpt:
+      "DSU Engineering researchers receive patent for innovation in VLSI design and semiconductor manufacturing processes.",
+    date: "Nov 8, 2025",
+    color: "brand-blue",
+  },
+  {
+    image:
+      "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2Fd56a1c898842468187e8ff3260f0cdda?alt=media&token=6cb58cdf-a202-461d-b774-09ce61d439c3&apiKey=4aa279a8430d441dba9c55f659831878",
+    category: "Placement",
+    title: "96% Placement Rate for Engineering 2024-25 Batch",
+    excerpt:
+      "Engineering graduates placed at world-leading tech and manufacturing companies with average package exceeding ₹18 LPA.",
+    date: "Nov 1, 2025",
+    color: "brand-orange",
+  },
+];
+
 function DepartmentCard({ department }: { department: EngineeringDepartment }) {
   const isInternal = department.link.startsWith("/");
   const wrapperClasses = `group block h-full rounded-none ${
