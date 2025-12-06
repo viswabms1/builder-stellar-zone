@@ -300,9 +300,9 @@ export default function Academics() {
   ];
 
   const colorClasses = {
-    orange: { bg: 'bg-gradient-to-br from-orange-500/10 to-orange-600/5', border: 'border-orange-500/30', text: 'text-orange-500', badge: 'bg-orange-500/15 border-orange-500/40' },
-    magenta: { bg: 'bg-gradient-to-br from-brand-magenta/10 to-pink-600/5', border: 'border-brand-magenta/30', text: 'text-brand-magenta', badge: 'bg-brand-magenta/15 border-brand-magenta/40' },
-    blue: { bg: 'bg-gradient-to-br from-blue-500/10 to-cyan-600/5', border: 'border-blue-500/30', text: 'text-blue-500', badge: 'bg-blue-500/15 border-blue-500/40' },
+    orange: { bg: 'bg-gradient-to-br from-orange-500/10 to-orange-600/5', border: 'border-orange-500/30', text: 'text-orange-500', badge: 'bg-orange-500/30 text-foreground border-orange-500/50' },
+    magenta: { bg: 'bg-gradient-to-br from-brand-magenta/10 to-pink-600/5', border: 'border-brand-magenta/30', text: 'text-brand-magenta', badge: 'bg-brand-magenta/30 text-foreground border-brand-magenta/50' },
+    blue: { bg: 'bg-gradient-to-br from-blue-500/10 to-cyan-600/5', border: 'border-blue-500/30', text: 'text-blue-500', badge: 'bg-blue-500/30 text-foreground border-blue-500/50' },
   };
 
   return (
