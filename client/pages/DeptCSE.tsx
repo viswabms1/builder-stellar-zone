@@ -489,17 +489,17 @@ function NoticeBoard() {
           label: "Event",
           className: "bg-brand-magenta/15 text-brand-magenta",
         };
+      case "News":
+        return {
+          icon: FileText,
+          label: "News",
+          className: "bg-brand-orange/15 text-brand-orange",
+        };
       case "Announcement":
         return {
           icon: ClipboardList,
           label: "Announcement",
           className: "bg-brand-blue/15 text-brand-blue",
-        };
-      case "Circular":
-        return {
-          icon: Landmark,
-          label: "Circular",
-          className: "bg-amber-500/15 text-amber-600",
         };
       default:
         return {
@@ -509,6 +509,10 @@ function NoticeBoard() {
         };
     }
   };
+
+  const events = notices.filter((n) => n.category === "Event");
+  const news = notices.filter((n) => n.category === "News");
+  const announcements = notices.filter((n) => n.category === "Announcement");
 
   return (
     <section className="px-6 py-16">
