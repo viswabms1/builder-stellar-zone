@@ -266,6 +266,55 @@ export default function DeptCSE() {
         </div>
       </section>
 
+      {/* Explore More at DSU Engineering */}
+      <section className="px-6 py-16 bg-gradient-to-r from-brand-blue/5 via-brand-magenta/5 to-brand-orange/5">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="headline-3 mb-3 font-display">Explore More at DSU Engineering</h2>
+            <p className="text-foreground/80 font-body max-w-2xl mx-auto">
+              Discover other engineering disciplines and schools within DSU
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              { name: "School of Engineering", link: "/academics/engineering", icon: Building },
+              { name: "ECE Department", link: "/academics/engineering/electronics-communication", icon: Cpu },
+              { name: "Mechanical Eng.", link: "/academics/engineering", icon: Cog },
+              { name: "Civil Engineering", link: "/academics/engineering", icon: Building },
+            ].map((school, idx) => {
+              const Icon = school.icon;
+              return (
+                <Link key={idx} to={school.link}>
+                  <div className="group rounded-xl border border-border/30 bg-card/50 p-4 transition-all hover:border-brand-magenta/40 hover:shadow-md hover:shadow-brand-magenta/5 hover:-translate-y-1 cursor-pointer">
+                    <div className="flex items-start gap-3">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-magenta/10 text-brand-magenta group-hover:bg-brand-magenta/20 transition-colors">
+                        <Icon className="h-5 w-5" />
+                      </div>
+                      <div className="flex-1">
+                        <p className="text-sm font-semibold text-foreground group-hover:text-brand-magenta transition-colors">{school.name}</p>
+                        <p className="text-xs text-foreground/60 flex items-center gap-1 mt-1">
+                          Explore <ChevronRight className="w-3 h-3" />
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+
+          <div className="mt-8 text-center">
+            <Link to="/academics/engineering">
+              <Button variant="outline" className="border-brand-magenta/40 hover:bg-brand-magenta/10">
+                View All Engineering Programs
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="px-6 py-16">
         <div className="max-w-4xl mx-auto text-center">
