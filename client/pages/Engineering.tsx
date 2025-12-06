@@ -348,7 +348,7 @@ const UG_PROGRAM_CARDS: ProgramCard[] = [
     area: "Core Engineering",
     description: "Master sustainable manufacturing, automotive systems, robotics and design thinking with hands-on prototyping studios.",
     image: "https://images.unsplash.com/photo-1517677129300-07b130802f46?q=80&w=1600&auto=format&fit=crop",
-    link: "https://www.dsu.edu.in/engineering/mechanical-engineering",
+    link: "/academics/engineering/mechanical",
     highlights: ["Advanced Manufacturing", "Robotics Studio", "CAE Tools"],
     overlay: "bg-gradient-to-br from-brand-orange/70 via-black/70 to-black/55 mix-blend-multiply",
     badgeClass: "bg-brand-orange/35 text-foreground/90 border border-white/25 backdrop-blur",
