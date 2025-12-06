@@ -106,51 +106,75 @@ const USP_HIGHLIGHTS: Highlight[] = [
 const UG_PROGRAM_CARDS: ProgramCard[] = [
   {
     name: "B.Sc Biological Sciences",
-    category: "Life Sciences Focus",
+    area: "Life Sciences Focus",
     description:
       "Comprehensive programme spanning molecular biology, genetics, biotechnology and environmental sciences with research internships.",
     image:
       "https://images.unsplash.com/photo-1581091870622-5f1e9b8d2f70?q=80&w=1600&auto=format&fit=crop",
+    link: "https://www.dsu.edu.in/basic-applied-sciences/biological-sciences",
     highlights: ["Molecular Biology", "Biotechnology", "Research"],
+    overlay: "bg-gradient-to-br from-brand-magenta/80 via-black/75 to-black/60 mix-blend-multiply",
+    badgeClass: "bg-brand-magenta/25 text-foreground/90 border border-white/30 backdrop-blur",
+    panelClass: "bg-black/55 backdrop-blur-xl",
+    featured: true,
   },
   {
     name: "B.Sc Data Science",
-    category: "Analytics & Computing",
+    area: "Analytics & Computing",
     description:
       "Master statistical computing, data analysis, machine learning and AI applications through hands-on projects and real datasets.",
     image:
       "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1600&auto=format&fit=crop",
+    link: "https://www.dsu.edu.in/basic-applied-sciences/data-science",
     highlights: ["Data Analytics", "Machine Learning", "AI"],
+    overlay: "bg-gradient-to-br from-brand-blue/75 via-black/70 to-black/55 mix-blend-multiply",
+    badgeClass: "bg-brand-blue/30 text-foreground/90 border border-white/25 backdrop-blur",
+    panelClass: "bg-black/55 backdrop-blur-xl",
+    featured: true,
   },
   {
     name: "B.Sc Allied Health Sciences",
-    category: "Applied Health",
+    area: "Applied Health",
     description:
       "Training in medical laboratory technology, diagnostic imaging, anaesthesia and emergency care with clinical placements.",
     image:
       "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1600&auto=format&fit=crop",
+    link: "https://www.dsu.edu.in/basic-applied-sciences/allied-health",
     highlights: ["Diagnostics", "Medical Lab", "Clinical Practice"],
+    overlay: "bg-gradient-to-br from-brand-orange/70 via-black/70 to-black/55 mix-blend-multiply",
+    badgeClass: "bg-brand-orange/35 text-foreground/90 border border-white/25 backdrop-blur",
+    panelClass: "bg-black/55 backdrop-blur-xl",
   },
 ];
 
 const PG_PROGRAM_CARDS: ProgramCard[] = [
   {
     name: "M.Sc Biological Sciences",
-    category: "Advanced Life Sciences",
+    area: "Advanced Life Sciences",
     description:
       "Research-intensive postgraduate programme with specialisations in biotechnology, microbiology, genetics and environmental biology.",
     image:
       "https://images.unsplash.com/photo-1581091870622-5f1e9b8d2f70?q=80&w=1600&auto=format&fit=crop",
+    link: "https://www.dsu.edu.in/basic-applied-sciences/msc-biological-sciences",
     highlights: ["Research Thesis", "Specialisation", "Industry Internship"],
+    overlay: "bg-gradient-to-br from-brand-magenta/70 via-black/70 to-black/55 mix-blend-multiply",
+    badgeClass: "bg-brand-magenta/30 text-foreground/90 border border-white/25 backdrop-blur",
+    panelClass: "bg-black/55 backdrop-blur-xl",
+    featured: true,
   },
   {
     name: "M.Sc Data Science",
-    category: "Advanced Analytics",
+    area: "Advanced Analytics",
     description:
       "Master advanced machine learning, big data processing, AI systems and statistical modelling with capstone projects.",
     image:
       "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1600&auto=format&fit=crop",
+    link: "https://www.dsu.edu.in/basic-applied-sciences/msc-data-science",
     highlights: ["Advanced ML", "Big Data", "AI Systems"],
+    overlay: "bg-gradient-to-br from-brand-blue/70 via-brand-magenta/60 to-black/55 mix-blend-multiply",
+    badgeClass: "bg-brand-blue/30 text-foreground/90 border border-white/25 backdrop-blur",
+    panelClass: "bg-black/55 backdrop-blur-xl",
+    featured: true,
   },
 ];
 
