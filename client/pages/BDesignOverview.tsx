@@ -307,6 +307,9 @@ export default function BDesignOverview() {
         </div>
       </section>
 
+      {/* Dean's Message Section */}
+      <DeanSection dean={DEAN_INFO} />
+
       <section id="structure" className="px-6 py-16">
         <div className="mx-auto max-w-7xl">
           <div className="mb-10 text-center">
