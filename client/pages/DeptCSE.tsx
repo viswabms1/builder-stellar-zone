@@ -269,51 +269,115 @@ export default function DeptCSE() {
         </div>
       </section>
 
-      {/* Explore More at DSU Engineering */}
-      <section className="px-6 py-16 bg-gradient-to-r from-brand-blue/5 via-brand-magenta/5 to-brand-orange/5">
+      {/* Quick Links Section */}
+      <section className="px-6 py-20">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="headline-3 mb-3 font-display">Explore More at DSU Engineering</h2>
+          <div className="text-center mb-16">
+            <h2 className="headline-2 mb-3 font-display">
+              <span className="text-foreground">Explore </span>
+              <span className="bg-brand-gradient bg-clip-text text-transparent">
+                More Opportunities
+              </span>
+            </h2>
             <p className="text-foreground/80 font-body max-w-2xl mx-auto">
-              Discover other engineering disciplines and schools within DSU
+              Discover research, placements, admission pathways, and Centers of Excellence at DSU
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {[
-              { name: "School of Engineering", link: "/academics/engineering", icon: Building },
-              { name: "ECE Department", link: "/academics/engineering/electronics-communication", icon: Cpu },
-              { name: "Mechanical Eng.", link: "/academics/engineering", icon: Cog },
-              { name: "Civil Engineering", link: "/academics/engineering", icon: Building },
-            ].map((school, idx) => {
-              const Icon = school.icon;
-              return (
-                <Link key={idx} to={school.link}>
-                  <div className="group rounded-xl border border-border/30 bg-card/50 p-4 transition-all hover:border-brand-magenta/40 hover:shadow-md hover:shadow-brand-magenta/5 hover:-translate-y-1 cursor-pointer">
-                    <div className="flex items-start gap-3">
-                      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-magenta/10 text-brand-magenta group-hover:bg-brand-magenta/20 transition-colors">
-                        <Icon className="h-5 w-5" />
-                      </div>
-                      <div className="flex-1">
-                        <p className="text-sm font-semibold text-foreground group-hover:text-brand-magenta transition-colors">{school.name}</p>
-                        <p className="text-xs text-foreground/60 flex items-center gap-1 mt-1">
-                          Explore <ChevronRight className="w-3 h-3" />
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </Link>
-              );
-            })}
-          </div>
-
-          <div className="mt-8 text-center">
-            <Link to="/academics/engineering">
-              <Button variant="outline" className="border-brand-magenta/40 hover:bg-brand-magenta/10">
-                View All Engineering Programs
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </Button>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            {/* Centre of Excellence */}
+            <Link
+              to="/centre-of-excellence"
+              className="group rounded-3xl border border-border/40 bg-card/60 backdrop-blur-sm overflow-hidden hover:shadow-lg hover:shadow-brand-magenta/20 transition-all duration-500 hover:-translate-y-1"
+            >
+              <Card className="h-full border-0 bg-transparent">
+                <div className="relative h-32 bg-gradient-to-br from-brand-magenta/20 to-brand-magenta/10 flex items-center justify-center">
+                  <Award className="h-12 w-12 text-brand-magenta/70 group-hover:text-brand-magenta transition-colors" />
+                </div>
+                <CardHeader>
+                  <CardTitle className="font-display group-hover:text-brand-magenta transition-colors">
+                    Centre of Excellence
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-foreground/80 font-body">
+                    Immersive innovation labs powered by industry leaders like IBM, NVIDIA and GE
+                  </p>
+                </CardContent>
+              </Card>
             </Link>
+
+            {/* Research */}
+            <Link
+              to="/research"
+              className="group rounded-3xl border border-border/40 bg-card/60 backdrop-blur-sm overflow-hidden hover:shadow-lg hover:shadow-brand-blue/20 transition-all duration-500 hover:-translate-y-1"
+            >
+              <Card className="h-full border-0 bg-transparent">
+                <div className="relative h-32 bg-gradient-to-br from-brand-blue/20 to-brand-blue/10 flex items-center justify-center">
+                  <Microscope className="h-12 w-12 text-brand-blue/70 group-hover:text-brand-blue transition-colors" />
+                </div>
+                <CardHeader>
+                  <CardTitle className="font-display group-hover:text-brand-blue transition-colors">
+                    Research & Innovation
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-foreground/80 font-body">
+                    Cutting-edge research initiatives and innovation labs driving the future
+                  </p>
+                </CardContent>
+              </Card>
+            </Link>
+
+            {/* Placements */}
+            <Link
+              to="/placements"
+              className="group rounded-3xl border border-border/40 bg-card/60 backdrop-blur-sm overflow-hidden hover:shadow-lg hover:shadow-brand-orange/20 transition-all duration-500 hover:-translate-y-1"
+            >
+              <Card className="h-full border-0 bg-transparent">
+                <div className="relative h-32 bg-gradient-to-br from-brand-orange/20 to-brand-orange/10 flex items-center justify-center">
+                  <GraduationCap className="h-12 w-12 text-brand-orange/70 group-hover:text-brand-orange transition-colors" />
+                </div>
+                <CardHeader>
+                  <CardTitle className="font-display group-hover:text-brand-orange transition-colors">
+                    Placements
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-foreground/80 font-body">
+                    Career pathways with leading companies and startup opportunities
+                  </p>
+                </CardContent>
+              </Card>
+            </Link>
+
+            {/* Admissions */}
+            <a
+              href="https://admissions.dsu.edu.in/"
+              target="_blank"
+              rel="noreferrer"
+              className="group rounded-3xl border border-border/40 bg-card/60 backdrop-blur-sm overflow-hidden hover:shadow-lg hover:shadow-brand-magenta/20 transition-all duration-500 hover:-translate-y-1"
+            >
+              <Card className="h-full border-0 bg-transparent">
+                <div className="relative h-32 bg-gradient-to-br from-brand-magenta/20 to-brand-magenta/10 flex items-center justify-center">
+                  <Cpu className="h-12 w-12 text-brand-magenta/70 group-hover:text-brand-magenta transition-colors" />
+                </div>
+                <CardHeader>
+                  <CardTitle className="font-display group-hover:text-brand-magenta transition-colors">
+                    Admissions
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="flex flex-col gap-3">
+                  <p className="text-sm text-foreground/80 font-body">
+                    Join DSU CSE and shape your future
+                  </p>
+                  <span className="inline-flex items-center gap-2 text-xs font-medium text-brand-magenta group-hover:text-brand-magenta/80 transition-colors">
+                    Apply Now
+                    <ChevronRight className="h-3 w-3" />
+                  </span>
+                </CardContent>
+              </Card>
+            </a>
           </div>
         </div>
       </section>
