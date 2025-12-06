@@ -877,41 +877,49 @@ export default function HealthSciences() {
               Stories of clinical excellence, research breakthroughs, and student success
             </p>
           </div>
-          <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-3">
-            {FEATURED_NEWS.map((item) => (
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {FEATURED_NEWS.map((item, index) => (
               <a
                 key={item.title}
                 href="#"
-                className="group rounded-none overflow-hidden border backdrop-blur-sm hover:shadow-lg transition-all text-left cursor-pointer bg-card/40"
+                className="group flex flex-col h-full"
               >
-                <div className="relative h-48 overflow-hidden border-b border-border/40">
+                {/* Image Container */}
+                <div className="relative w-full h-64 overflow-hidden rounded-lg mb-6">
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
-                  <div className="absolute top-3 left-3">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+
+                  {/* Overlaid Category Badge */}
+                  <div className="absolute top-4 left-4">
                     <Badge
-                      className={`text-xs ${
+                      className={`text-xs font-bold tracking-wider text-white ${
                         item.color === "brand-orange"
-                          ? "bg-brand-orange/20 text-brand-orange"
+                          ? "bg-brand-orange"
                           : item.color === "brand-magenta"
-                            ? "bg-brand-magenta/20 text-brand-magenta"
-                            : "bg-brand-blue/20 text-brand-blue"
+                            ? "bg-brand-magenta"
+                            : "bg-blue-600"
                       }`}
                     >
                       {item.category}
                     </Badge>
                   </div>
                 </div>
-                <div className="p-5 space-y-3">
-                  <h3 className="text-base font-semibold text-foreground font-display line-clamp-2 group-hover:text-brand-magenta transition-colors">
+
+                {/* Text Content Below Image */}
+                <div className="flex-1 flex flex-col">
+                  <h3 className="text-lg font-semibold text-foreground font-display line-clamp-2 group-hover:text-brand-magenta transition-colors mb-3">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-foreground/80 font-body line-clamp-2">
+                  <p className="text-sm text-foreground/80 font-body line-clamp-3 mb-4">
                     {item.excerpt}
                   </p>
-                  <div className="flex items-center justify-between pt-2">
+
+                  {/* Date and Link */}
+                  <div className="mt-auto pt-4 border-t border-border/30 flex items-center justify-between">
                     <span className="text-xs text-foreground/60 font-body flex items-center">
                       <CalendarDays className="w-3 h-3 mr-1" /> {item.date}
                     </span>
