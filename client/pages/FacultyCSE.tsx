@@ -14,13 +14,8 @@ import {
 } from "@/components/ui/card";
 import { cseFaculty } from "@/data/cse-faculty";
 import {
-  Award,
   ChevronRight,
-  FlaskConical,
-  GraduationCap,
   Layers,
-  Sparkles,
-  Users,
 } from "lucide-react";
 
 export default function FacultyCSE() {
