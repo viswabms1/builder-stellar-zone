@@ -1,6 +1,7 @@
-import { Link } from "react-router-dom";
+import { Link as RouterLink } from "react-router-dom";
 import { useState, useRef, useEffect } from "react";
 import type { LucideIcon } from "lucide-react";
+
 import {
   Award,
   BadgeCheck,
@@ -12,7 +13,8 @@ import {
   GraduationCap,
   Heart,
   Laptop,
-  MessageSquare,
+  Microscope,
+  Network,
   Sparkles,
   Target,
   Users,
@@ -30,7 +32,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-type Highlight = {
+type USPHighlight = {
   title: string;
   description: string;
   image: string;
@@ -38,48 +40,31 @@ type Highlight = {
   stat?: string;
 };
 
-type ProgramGroup = {
-  label: string;
-  programs: string[];
-};
-
-type ResourceLink = {
-  title: string;
-  description: string;
-  href: string;
-  badge: string;
-};
-
-type LabExperience = {
-  title: string;
-  description: string;
-  icon: LucideIcon;
-};
-
-type Achievement = {
-  title: string;
-  description: string;
-  icon: LucideIcon;
-  category: string;
-};
-
-type LifeAtDSU = {
-  title: string;
-  description: string;
-  image: string;
-};
-
-type FacultyMember = {
+type ProgramCard = {
   name: string;
-  title: string;
-  specialization: string;
+  major: string;
+  description: string;
   image: string;
+  link: string;
+  highlights: string[];
 };
 
-const HERO_IMAGE =
-  "https://images.unsplash.com/photo-1523475472560-d2df97ec485c?q=80&w=2000&auto=format&fit=crop";
+type SupportingDepartment = {
+  name: string;
+  focus: string;
+  image: string;
+  link: string;
+};
 
-const USP_HIGHLIGHTS: Highlight[] = [
+type CalendarEntry = {
+  title: string;
+  academicYear: string;
+  description: string;
+  documentUrl: string;
+  tag: string;
+};
+
+const USP_HIGHLIGHTS: USPHighlight[] = [
   {
     title: "Nurturing Fresh IT Talent",
     description:
@@ -92,201 +77,268 @@ const USP_HIGHLIGHTS: Highlight[] = [
   {
     title: "Skill-First Curriculum",
     description:
-      "Specialise early in app development, cloud, AI or analytics with project studios and hackathons embedded in each semester.",
+      "Specialise early in full-stack development, data science, cloud computing or analytics with project studios and hands-on learning embedded in each semester.",
     image:
       "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=1600&auto=format&fit=crop",
     icon: Sparkles,
   },
   {
-    title: "Industry Immersion Labs",
+    title: "Industry-Powered Innovation Labs",
     description:
-      "Gain hands-on time in IBM, NVIDIA, VMware and Automation Technology labs for real-world problem solving.",
+      "Gain hands-on experience in IBM, NVIDIA, VMware and automation technology labs for real-world problem solving and product engineering.",
     image:
       "https://images.unsplash.com/photo-1526498460520-4c246339dccb?q=80&w=1600&auto=format&fit=crop",
     icon: Cpu,
   },
   {
-    title: "Expanding Data Science Futures",
+    title: "Data Science & Advanced Analytics",
     description:
-      "Launching B.Sc and M.Sc in Data Science from 2025-26 to elevate advanced analytics talent.",
+      "New B.Sc and M.Sc programs in Data Science from 2025-26 elevating advanced analytics and AI engineering talent pipelines.",
     image:
       "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?q=80&w=1600&auto=format&fit=crop",
     icon: BadgeCheck,
   },
 ];
 
-const PROGRAM_GROUPS: ProgramGroup[] = [
+const UG_PROGRAM_CARDS: ProgramCard[] = [
   {
-    label: "Undergraduate",
-    programs: ["Bachelor of Computer Applications", "B.Sc in Data Science"],
+    name: "Bachelor of Computer Applications (BCA)",
+    major: "Core Software Development",
+    description:
+      "Comprehensive undergraduate program spanning full-stack development, database management, web technologies and software engineering principles with industry mentorship.",
+    image:
+      "https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=1600&auto=format&fit=crop",
+    link: "/academics/computer-applications/bca",
+    highlights: ["Full-Stack Development", "Web Technologies", "Product Labs"],
   },
   {
-    label: "Postgraduate",
-    programs: ["Master of Computer Applications", "M.Sc in Data Science"],
+    name: "Bachelor of Science in Data Science",
+    major: "Analytics & Intelligence",
+    description:
+      "Launch advanced careers in data engineering, analytics, visualization and machine learning with applied projects and real-world datasets.",
+    image:
+      "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?q=80&w=1600&auto=format&fit=crop",
+    link: "/academics/computer-applications/bsc-data-science",
+    highlights: ["Data Analytics", "ML Pipelines", "Visualization"],
   },
 ];
 
-const LAB_EXPERIENCES: LabExperience[] = [
+const PG_PROGRAM_CARDS: ProgramCard[] = [
   {
-    title: "IBM Software Lab for Emerging Technologies",
+    name: "Master of Computer Applications (MCA)",
+    major: "Advanced Systems Engineering",
     description:
-      "Co-innovate on enterprise stack modernisation and full-stack development challenges.",
-    icon: Laptop,
+      "Specialise in enterprise software development, cloud architecture, cybersecurity and emerging technologies through research-driven coursework and industry collaboration.",
+    image:
+      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1600&auto=format&fit=crop",
+    link: "/academics/computer-applications/mca",
+    highlights: ["Enterprise Systems", "Cloud Architecture", "Research Thesis"],
   },
   {
-    title: "NVIDIA – Boston Innovation Lab",
+    name: "Master of Science in Data Science",
+    major: "Advanced Analytics",
     description:
-      "Prototype AI, XR and accelerated computing solutions with industry-grade toolchains.",
-    icon: Cpu,
-  },
-  {
-    title: "VMware IT Academy",
-    description:
-      "Master cloud infrastructure, virtualisation and automation workflows with certifications.",
-    icon: Beaker,
+      "Master statistical computing, advanced machine learning, big data processing and AI applications with industry-certified capstone projects.",
+    image:
+      "https://images.unsplash.com/photo-1527219525129-dfc4e4c5fbf8?q=80&w=1600&auto=format&fit=crop",
+    link: "/academics/computer-applications/msc-data-science",
+    highlights: ["Advanced ML", "Big Data", "AI Systems"],
   },
 ];
 
-const RESOURCE_LINKS: ResourceLink[] = [
+const SUPPORTING_DEPARTMENTS: SupportingDepartment[] = [
   {
-    title: "Academic Calendar 2025-26",
-    description:
-      "Download the latest academic roadmap for Computer Applications cohorts.",
-    href: "https://www.dsu.edu.in/images/AC_11082025.pdf",
-    badge: "Calendar",
+    name: "Mathematics Department",
+    focus:
+      "Applied mathematics, statistics and computational techniques powering algorithmic thinking and data science foundations.",
+    image:
+      "https://images.unsplash.com/photo-1551836022-4c4c79ecde51?q=80&w=1600&auto=format&fit=crop",
+    link: "https://www.dsu.edu.in/academics/schools/computer-application/mathematics",
   },
   {
-    title: "Events Conducted",
-    description:
-      "Catch up on ideathons, tech talks and community meetups hosted by the school.",
-    href: "https://www.dsu.edu.in/news-events/events-computer-applications",
-    badge: "Events",
+    name: "Physics Department",
+    focus:
+      "Applied physics and scientific computing enabling simulation, systems modeling and emerging technology integration.",
+    image:
+      "https://images.unsplash.com/photo-1581092795360-6b4ea08a1f5c?q=80&w=1600&auto=format&fit=crop",
+    link: "https://www.dsu.edu.in/academics/schools/computer-application/physics",
   },
   {
-    title: "Research Updates",
-    description:
-      "Explore publications and projects undertaken by faculty and students.",
-    href: "https://www.dsu.edu.in/computer-applications/research-sca",
-    badge: "Research",
+    name: "Humanities & Social Sciences",
+    focus:
+      "Communication, design thinking and ethics courses shaping socially responsible technology professionals and innovators.",
+    image:
+      "https://images.unsplash.com/photo-1529070538774-1843cb3265df?q=80&w=1600&auto=format&fit=crop",
+    link: "https://www.dsu.edu.in/academics/schools/computer-application/humanities",
   },
 ];
 
-const STUDENT_ACHIEVEMENTS: Achievement[] = [
+const CALENDAR_ENTRIES: CalendarEntry[] = [
   {
-    title: "hackathon Winners",
+    title: "BCA & MCA Odd Semester Academic Calendar",
+    academicYear: "2025-26",
     description:
-      "20+ students placed in national hackathons and coding competitions in 2024",
-    icon: Award,
-    category: "Competition",
-  },
-  {
-    title: "Startup Founders",
-    description:
-      "8 student-led startups incubated with mentorship and seed funding",
-    icon: Target,
-    category: "Entrepreneurship",
-  },
-  {
-    title: "Research Publications",
-    description:
-      "15+ peer-reviewed papers published by students in international conferences",
-    icon: BookOpen,
-    category: "Research",
-  },
-  {
-    title: "Global Certifications",
-    description:
-      "95% students earn AWS, Google Cloud, or Azure certifications before graduation",
-    icon: BadgeCheck,
-    category: "Certification",
+      "Detailed timeline for undergraduate and postgraduate odd semesters including assessments, projects and industry immersion weeks.",
+    documentUrl:
+      "https://www.dsu.edu.in/images/ComputerApplications/calendar_2025_26.pdf",
+    tag: "BCA / MCA",
   },
 ];
 
-const FACULTY_ACHIEVEMENTS: Achievement[] = [
-  {
-    title: "Patent Holders",
-    description:
-      "12 faculty members with active patents in AI, cloud computing and data science",
-    icon: Award,
-    category: "Patents",
-  },
-  {
-    title: "Research Grants",
-    description:
-      "₹2.5 Cr+ in funded research projects from government and industry bodies",
-    icon: Sparkles,
-    category: "Funding",
-  },
-  {
-    title: "Publications",
-    description:
-      "50+ journal publications and 100+ conference papers in top-tier venues",
-    icon: BookOpen,
-    category: "Publishing",
-  },
-  {
-    title: "Industry Collaborations",
-    description:
-      "Active partnerships with IBM, NVIDIA, Google, and Amazon for research projects",
-    icon: Users,
-    category: "Collaboration",
-  },
+const INNOVATION_LABS = [
+  "IBM Software Lab for Emerging Technologies",
+  "NVIDIA – Boston Innovation Lab",
+  "VMware IT Academy",
+  "Data Science & Analytics Center",
+  "Full-Stack Development Studio",
+  "Cloud Computing Lab",
+  "Cybersecurity Research Lab",
 ];
 
-const LIFE_AT_DSU: LifeAtDSU[] = [
-  {
-    title: "Collaborative Learning Spaces",
-    description:
-      "Modern classrooms, AI-powered labs, and collaborative studios designed for peer learning and project-based education.",
-    image:
-      "https://images.unsplash.com/photo-1522202176988-15695038929c?q=80&w=1600&auto=format&fit=crop",
-  },
-  {
-    title: "Student Clubs & Communities",
-    description:
-      "20+ student-led technical clubs, coding communities, and innovation forums fostering peer mentorship and skill-sharing.",
-    image:
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1600&auto=format&fit=crop",
-  },
-  {
-    title: "Campus Wellness & Culture",
-    description:
-      "Holistic development through sports, arts, wellness programs and cultural events celebrating diverse backgrounds.",
-    image:
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1600&auto=format&fit=crop",
-  },
-  {
-    title: "Global Exposure",
-    description:
-      "International collaborations, student exchanges, and global hackathons connecting learners with worldwide tech communities.",
-    image:
-      "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1600&auto=format&fit=crop",
-  },
-];
+function ProgramCardComponent({ program }: { program: ProgramCard }) {
+  const isInternal = program.link.startsWith("/");
 
-const FEATURED_FACULTY: FacultyMember[] = [
-  {
-    name: "Dr. Amit Sharma",
-    title: "Program Chair & Professor",
-    specialization: "Cloud Computing & Distributed Systems",
-    image:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop",
-  },
-  {
-    name: "Dr. Priya Patel",
-    title: "Associate Professor",
-    specialization: "AI & Machine Learning",
-    image:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
-  },
-  {
-    name: "Dr. Rajesh Kumar",
-    title: "Associate Professor",
-    specialization: "Data Science & Analytics",
-    image:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400&auto=format&fit=crop",
-  },
-];
+  const content = (
+    <div className="group relative h-full rounded-none overflow-hidden border border-white/10 bg-black/10 backdrop-blur-sm transition-all duration-700 hover:-translate-y-1 hover:shadow-2xl hover:shadow-brand-magenta/20 min-h-[280px] flex flex-col justify-end">
+      <img
+        src={program.image}
+        alt={program.name}
+        loading="lazy"
+        className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
+      <div className="absolute left-6 top-6 inline-flex items-center gap-2 rounded-full bg-white/20 px-3 py-1 text-xs font-medium text-white backdrop-blur">
+        {program.major}
+      </div>
+      <div className="relative z-10 flex h-full flex-col justify-end p-6 text-white">
+        <div className="rounded-none border border-white/15 bg-black/60 backdrop-blur-lg p-6">
+          <div className="space-y-4">
+            <div>
+              <h3 className="font-display text-xl leading-tight text-white">
+                {program.name}
+              </h3>
+              <p className="mt-3 text-sm text-white/85 font-body">
+                {program.description}
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {program.highlights.map((item) => (
+                <span
+                  key={item}
+                  className="rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs uppercase tracking-wide text-white/85"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+            <span className="inline-flex items-center gap-2 text-sm font-medium text-white/90 transition-colors group-hover:text-brand-magenta">
+              Explore program
+              <ChevronRight className="h-4 w-4" />
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+
+  if (isInternal) {
+    return (
+      <RouterLink to={program.link} className="h-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-magenta focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-none">
+        {content}
+      </RouterLink>
+    );
+  }
+
+  return (
+    <a
+      href={program.link}
+      target="_blank"
+      rel="noreferrer"
+      className="h-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-magenta focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-none"
+    >
+      {content}
+    </a>
+  );
+}
+
+function SupportingDepartmentCard({
+  department,
+}: {
+  department: SupportingDepartment;
+}) {
+  return (
+    <a
+      href={department.link}
+      target="_blank"
+      rel="noreferrer"
+      className="group block h-full transform transition-all duration-500 hover:-translate-y-1"
+    >
+      <Card className="h-full overflow-hidden rounded-none border border-purple-500/20 bg-purple-500/10 backdrop-blur">
+        <div className="relative h-48 overflow-hidden">
+          <img
+            src={department.image}
+            alt={department.name}
+            className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+          <div className="absolute bottom-4 left-4">
+            <Badge
+              className="bg-white/20 text-white backdrop-blur"
+              variant="secondary"
+            >
+              Supporting Department
+            </Badge>
+            <h3 className="mt-3 text-xl font-semibold text-white font-display">
+              {department.name}
+            </h3>
+          </div>
+        </div>
+        <CardContent className="space-y-4 p-6">
+          <p className="text-sm leading-relaxed text-foreground font-body">
+            {department.focus}
+          </p>
+          <span className="inline-flex items-center gap-2 text-sm font-medium text-brand-magenta">
+            Visit department
+            <ChevronRight className="h-4 w-4" />
+          </span>
+        </CardContent>
+      </Card>
+    </a>
+  );
+}
+
+function CalendarResourceCard({ entry }: { entry: CalendarEntry }) {
+  return (
+    <Card className="h-full rounded-none border border-purple-500/20 bg-purple-500/10 backdrop-blur">
+      <CardHeader className="pb-2">
+        <div className="flex items-center justify-between gap-4">
+          <Badge className="bg-brand-magenta/15 text-brand-magenta">
+            {entry.tag}
+          </Badge>
+          <span className="text-xs text-foreground font-body">
+            {entry.academicYear}
+          </span>
+        </div>
+        <CardTitle className="mt-4 text-lg font-display">
+          {entry.title}
+        </CardTitle>
+      </CardHeader>
+      <CardContent className="space-y-5 text-sm text-foreground font-body">
+        <p>{entry.description}</p>
+        <a
+          href={entry.documentUrl}
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex items-center gap-2 text-sm font-medium text-brand-magenta"
+        >
+          Download PDF
+          <ChevronRight className="h-4 w-4" />
+        </a>
+      </CardContent>
+    </Card>
+  );
+}
 
 function HeroVideo() {
   const [isMuted, setIsMuted] = useState(true);
@@ -392,536 +444,11 @@ function HeroVideo() {
   );
 }
 
-function HighlightCard({ highlight }: { highlight: Highlight }) {
-  const Icon = highlight.icon;
-  return (
-    <Card className="group relative h-80 overflow-hidden rounded-none border border-border/40 bg-card/40 backdrop-blur-sm transition-all duration-700 hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-magenta/10">
-      <img
-        src={highlight.image}
-        alt={highlight.title}
-        className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-      <div className="absolute top-4 left-4 inline-flex items-center gap-2 rounded-full bg-black/40 px-3 py-1 text-xs text-foreground">
-        <Icon className="h-4 w-4" /> USP
-      </div>
-      <div className="absolute inset-x-0 bottom-0 p-5 text-foreground">
-        <h3 className="mb-2 text-lg font-semibold font-display">
-          {highlight.title}
-        </h3>
-        <p className="text-sm text-foreground/80 font-body">
-          {highlight.description}
-        </p>
-        {highlight.stat ? (
-          <div className="mt-3 text-xs uppercase tracking-wide text-foreground/70 font-body">
-            {highlight.stat}
-          </div>
-        ) : null}
-      </div>
-    </Card>
-  );
-}
-
-function ResourceCard({ resource }: { resource: ResourceLink }) {
-  return (
-    <Card className="h-full rounded-none border border-border/40 bg-card/60 backdrop-blur">
-      <CardHeader className="pb-2">
-        <Badge className="bg-brand-magenta/15 text-brand-magenta">
-          {resource.badge}
-        </Badge>
-        <CardTitle className="mt-4 text-lg font-display">
-          {resource.title}
-        </CardTitle>
-      </CardHeader>
-      <CardContent className="space-y-5 text-sm text-foreground font-body">
-        <p>{resource.description}</p>
-        <a
-          href={resource.href}
-          target="_blank"
-          rel="noreferrer"
-          className="inline-flex items-center gap-2 text-sm font-medium text-brand-magenta"
-        >
-          View resource
-          <ChevronRight className="h-4 w-4" />
-        </a>
-      </CardContent>
-    </Card>
-  );
-}
-
-function LabCard({ lab }: { lab: LabExperience }) {
-  const Icon = lab.icon;
-  return (
-    <Card className="h-full rounded-none border border-border/50 bg-card/50 backdrop-blur-sm">
-      <CardHeader className="flex flex-row items-center gap-3 pb-2">
-        <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-magenta/10 text-brand-magenta">
-          <Icon className="h-5 w-5" />
-        </span>
-        <CardTitle className="text-base font-display">{lab.title}</CardTitle>
-      </CardHeader>
-      <CardContent className="pt-0">
-        <CardDescription className="text-sm leading-relaxed text-foreground/90 font-body">
-          {lab.description}
-        </CardDescription>
-      </CardContent>
-    </Card>
-  );
-}
-
-function AchievementCard({ achievement }: { achievement: Achievement }) {
-  const Icon = achievement.icon;
-  return (
-    <Card className="h-full rounded-none border border-border/40 bg-card/60 backdrop-blur">
-      <CardHeader className="flex flex-row items-start gap-3">
-        <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand-magenta/15 text-brand-magenta flex-shrink-0">
-          <Icon className="h-5 w-5" />
-        </span>
-        <div className="flex-1">
-          <Badge className="mb-2 bg-brand-magenta/15 text-brand-magenta text-xs">
-            {achievement.category}
-          </Badge>
-          <CardTitle className="text-lg font-display">
-            {achievement.title}
-          </CardTitle>
-        </div>
-      </CardHeader>
-      <CardContent>
-        <p className="text-sm text-foreground font-body">
-          {achievement.description}
-        </p>
-      </CardContent>
-    </Card>
-  );
-}
-
-function FacultyCard({ faculty }: { faculty: FacultyMember }) {
-  return (
-    <Card className="h-full overflow-hidden rounded-none border border-border/40 bg-card/60 backdrop-blur">
-      <div className="relative h-48 overflow-hidden">
-        <img
-          src={faculty.image}
-          alt={faculty.name}
-          className="h-full w-full object-cover"
-        />
-      </div>
-      <CardHeader className="pb-2">
-        <CardTitle className="font-display">{faculty.name}</CardTitle>
-        <Badge className="w-fit bg-brand-magenta/15 text-brand-magenta text-xs mt-2">
-          {faculty.title}
-        </Badge>
-      </CardHeader>
-      <CardContent>
-        <p className="text-sm text-foreground font-body">
-          {faculty.specialization}
-        </p>
-      </CardContent>
-    </Card>
-  );
-}
-
-function LifeCard({ life }: { life: LifeAtDSU }) {
-  return (
-    <Card className="group overflow-hidden rounded-none border border-border/40 bg-card/30 backdrop-blur hover:shadow-xl transition-shadow">
-      <div className="relative h-48 overflow-hidden">
-        <img
-          src={life.image}
-          alt={life.title}
-          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-        <h3 className="absolute bottom-4 left-4 font-display text-lg font-semibold text-foreground">
-          {life.title}
-        </h3>
-      </div>
-      <CardContent className="p-4">
-        <p className="text-sm text-foreground font-body">{life.description}</p>
-      </CardContent>
-    </Card>
-  );
-}
-
 export default function ComputerApplications() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <section className="relative w-full" id="top">
         <HeroVideo />
-      </section>
-
-      <section
-        id="about"
-        className="px-6 py-16 bg-gradient-to-r from-brand-magenta/5 via-transparent to-brand-blue/5"
-      >
-        <div className="mx-auto max-w-7xl">
-          <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
-            <div className="space-y-6">
-              <Badge className="bg-brand-magenta/15 text-brand-magenta">
-                About School
-              </Badge>
-              <h2 className="font-display text-3xl md:text-4xl">
-                Nurturing India's Next-Gen Tech Creators
-              </h2>
-              <div className="space-y-4 text-foreground">
-                <p className="font-body">
-                  Established in 2016, the School of Computer Applications at
-                  Dayananda Sagar University is India's premier destination for
-                  aspiring software engineers, data scientists, and tech
-                  entrepreneurs. With a mission to merge academic excellence
-                  with industry relevance, we've shaped over 2,000+ graduates
-                  who lead innovation across global tech companies and startups.
-                </p>
-                <p className="font-body">
-                  Our curriculum bridges the gap between classroom learning and
-                  real-world challenges through project studios, industry
-                  mentorship, and hands-on innovation labs powered by global
-                  partners like IBM, NVIDIA, and VMware.
-                </p>
-              </div>
-              <div className="grid gap-4 sm:grid-cols-2 pt-4">
-                <div className="rounded-2xl border border-brand-magenta/20 bg-brand-magenta/10 p-4">
-                  <div className="text-2xl font-display font-bold text-brand-magenta">
-                    2,000+
-                  </div>
-                  <p className="text-xs uppercase tracking-wide text-brand-magenta/80 font-body mt-1">
-                    Successful Graduates
-                  </p>
-                </div>
-                <div className="rounded-2xl border border-brand-blue/20 bg-brand-blue/10 p-4">
-                  <div className="text-2xl font-display font-bold text-brand-blue">
-                    95%
-                  </div>
-                  <p className="text-xs uppercase tracking-wide text-brand-blue/80 font-body mt-1">
-                    Placement Rate
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="relative h-96 rounded-none overflow-hidden border border-border/40">
-              <img
-                src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800&auto=format&fit=crop"
-                alt="School of Computer Applications"
-                className="h-full w-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="vision-mission" className="px-6 py-16">
-        <div className="mx-auto max-w-7xl">
-          <div className="text-center mb-12">
-            <Badge className="bg-brand-magenta/15 text-brand-magenta">
-              Vision & Mission
-            </Badge>
-            <h2 className="mt-4 font-display text-3xl md:text-4xl">
-              Our Purpose & Direction
-            </h2>
-          </div>
-          <div className="grid gap-8 md:grid-cols-2">
-            <Card className="rounded-none border border-border/40 bg-gradient-to-br from-brand-blue/10 to-brand-magenta/10 backdrop-blur p-8">
-              <div className="flex items-start gap-4">
-                <Eye className="h-8 w-8 text-brand-blue flex-shrink-0 mt-1" />
-                <div>
-                  <CardTitle className="text-xl mb-3">Vision</CardTitle>
-                  <p className="text-foreground font-body">
-                    To be a globally recognized centre of excellence producing
-                    technology leaders, innovators, and entrepreneurs who create
-                    transformative solutions for societal challenges through
-                    ethical, inclusive, and sustainable development.
-                  </p>
-                </div>
-              </div>
-            </Card>
-            <Card className="rounded-none border border-border/40 bg-gradient-to-br from-brand-magenta/10 to-brand-orange/10 backdrop-blur p-8">
-              <div className="flex items-start gap-4">
-                <Target className="h-8 w-8 text-brand-magenta flex-shrink-0 mt-1" />
-                <div>
-                  <CardTitle className="text-xl mb-3">Mission</CardTitle>
-                  <p className="text-foreground font-body">
-                    Empower learners with industry-aligned skills, research
-                    exposure, and entrepreneurial mindset through experiential
-                    pedagogy, global partnerships, and mentorship that prepares
-                    them for leadership roles in the digital economy.
-                  </p>
-                </div>
-              </div>
-            </Card>
-          </div>
-          <div className="mt-12 rounded-none border border-border/40 bg-card/60 backdrop-blur p-8">
-            <h3 className="font-display text-xl mb-6">Core Values</h3>
-            <div className="grid gap-6 md:grid-cols-3">
-              <div className="flex gap-3">
-                <Heart className="h-5 w-5 text-brand-magenta flex-shrink-0 mt-1" />
-                <div>
-                  <h4 className="font-semibold mb-1">Excellence</h4>
-                  <p className="text-sm text-foreground/90">
-                    Pursuing highest standards in education, research, and
-                    student outcomes
-                  </p>
-                </div>
-              </div>
-              <div className="flex gap-3">
-                <Users className="h-5 w-5 text-brand-blue flex-shrink-0 mt-1" />
-                <div>
-                  <h4 className="font-semibold mb-1">Collaboration</h4>
-                  <p className="text-sm text-foreground/90">
-                    Building strong partnerships with industry, academia, and
-                    communities
-                  </p>
-                </div>
-              </div>
-              <div className="flex gap-3">
-                <Sparkles className="h-5 w-5 text-brand-orange flex-shrink-0 mt-1" />
-                <div>
-                  <h4 className="font-semibold mb-1">Innovation</h4>
-                  <p className="text-sm text-foreground/90">
-                    Fostering creativity, experimentation, and disruptive
-                    thinking
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section
-        id="dean-message"
-        className="px-6 py-16 bg-gradient-to-r from-brand-magenta/5 via-brand-orange/5 to-brand-blue/5"
-      >
-        <div className="mx-auto max-w-4xl">
-          <Badge className="bg-brand-magenta/15 text-brand-magenta mb-6">
-            Dean's Message
-          </Badge>
-          <div className="rounded-none border border-border/40 bg-card/60 backdrop-blur p-10">
-            <div className="flex gap-6 mb-8">
-              <img
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop"
-                alt="Dean"
-                className="h-24 w-24 rounded-none object-cover"
-              />
-              <div>
-                <h3 className="font-display text-xl font-semibold">
-                  Dr. Amit Sharma
-                </h3>
-                <p className="text-sm text-brand-magenta">
-                  Program Chair & Dean, School of Computer Applications
-                </p>
-              </div>
-            </div>
-            <div className="space-y-4 text-foreground font-body">
-              <p>
-                Welcome to the School of Computer Applications at DSU. In an era
-                where technology redefines every sector, our mission is clear:
-                to cultivate not just skilled programmers, but thoughtful
-                technologists who understand the responsibility that comes with
-                innovation.
-              </p>
-              <p>
-                Over the past 8 years, we've witnessed remarkable growth in our
-                learners—from their first lines of code to leading products used
-                by millions. What sets us apart is our unwavering commitment to
-                the complete development of each student: technical mastery,
-                research acumen, entrepreneurial spirit, and human values.
-              </p>
-              <p>
-                Our partnerships with global technology leaders ensure that
-                classroom theories translate into practical applications. Our
-                faculty, active researchers and industry veterans, mentor
-                students not just academically but in navigating the dynamic
-                tech landscape.
-              </p>
-              <p>
-                As you explore this page, I invite you to see DSU Computer
-                Applications not just as a degree program, but as a launchpad
-                for your career in technology. Join us in building a future
-                where technology serves humanity.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="featured-faculty" className="px-6 py-16">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-12">
-            <Badge className="bg-brand-magenta/15 text-brand-magenta">
-              Faculty Leadership
-            </Badge>
-            <h2 className="mt-4 font-display text-3xl md:text-4xl">
-              Meet Our Distinguished Faculty
-            </h2>
-            <p className="mt-3 text-foreground max-w-3xl font-body">
-              Our faculty comprises PhD holders, published researchers, and
-              industry veterans committed to mentoring the next generation of
-              technology leaders.
-            </p>
-          </div>
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {FEATURED_FACULTY.map((faculty) => (
-              <FacultyCard key={faculty.name} faculty={faculty} />
-            ))}
-          </div>
-          <div className="mt-10 text-center">
-            <a
-              href="https://www.dsu.edu.in/computer-applications/faculty-sca"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 text-sm font-medium text-brand-magenta hover:underline"
-            >
-              Explore full faculty directory
-              <ChevronRight className="h-4 w-4" />
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <section
-        id="student-achievements"
-        className="px-6 py-16 bg-gradient-to-r from-brand-blue/5 to-brand-magenta/5"
-      >
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-12">
-            <Badge className="bg-brand-magenta/15 text-brand-magenta">
-              Student Success
-            </Badge>
-            <h2 className="mt-4 font-display text-3xl md:text-4xl">
-              Student Achievements & Milestones
-            </h2>
-            <p className="mt-3 text-foreground max-w-3xl font-body">
-              Our students consistently excel in competitive programming,
-              research, startups, and industry roles, showcasing the quality of
-              education and mentorship at DSU.
-            </p>
-          </div>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {STUDENT_ACHIEVEMENTS.map((achievement) => (
-              <AchievementCard
-                key={achievement.title}
-                achievement={achievement}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="faculty-achievements" className="px-6 py-16">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-12">
-            <Badge className="bg-brand-magenta/15 text-brand-magenta">
-              Faculty Excellence
-            </Badge>
-            <h2 className="mt-4 font-display text-3xl md:text-4xl">
-              Faculty Achievements & Research
-            </h2>
-            <p className="mt-3 text-foreground max-w-3xl font-body">
-              Our faculty actively contributes to advancing technology through
-              patents, publications, grants, and industry collaborations that
-              influence global tech innovation.
-            </p>
-          </div>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {FACULTY_ACHIEVEMENTS.map((achievement) => (
-              <AchievementCard
-                key={achievement.title}
-                achievement={achievement}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section
-        id="life-at-dsu"
-        className="px-6 py-16 bg-gradient-to-r from-brand-orange/5 via-brand-magenta/5 to-brand-blue/5"
-      >
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-12 text-center">
-            <Badge className="bg-brand-magenta/15 text-brand-magenta">
-              Campus Life
-            </Badge>
-            <h2 className="mt-4 font-display text-3xl md:text-4xl">
-              Life @ DSU – Global Standards
-            </h2>
-            <p className="mt-3 text-foreground max-w-3xl font-body mx-auto">
-              Beyond classrooms, DSU offers a holistic ecosystem where learning,
-              growth, creativity, and community thrive through diverse
-              experiences and global exposure.
-            </p>
-          </div>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {LIFE_AT_DSU.map((life) => (
-              <LifeCard key={life.title} life={life} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="programs" className="px-6 py-16">
-        <div className="mx-auto max-w-7xl">
-          <div className="grid gap-10 lg:grid-cols-[1.15fr_minmax(0,1fr)] lg:items-center">
-            <div className="space-y-6">
-              <Badge className="bg-brand-magenta/15 text-brand-magenta">
-                Academic Pathways
-              </Badge>
-              <h2 className="font-display text-3xl md:text-4xl">
-                Programs that transform tech aspirations into careers
-              </h2>
-              <p className="text-sm text-foreground font-body">
-                Choose focused routes into software development, analytics, data
-                science and emerging tech with curriculum co-designed by
-                industry mentors and research leaders.
-              </p>
-              <div className="grid gap-4 sm:grid-cols-2">
-                {PROGRAM_GROUPS.map((group) => (
-                  <Card
-                    key={group.label}
-                    className="rounded-none border border-border/40 bg-card/60 backdrop-blur-sm"
-                  >
-                    <CardHeader className="pb-3">
-                      <Badge className="bg-brand-magenta/15 text-brand-magenta">
-                        {group.label}
-                      </Badge>
-                      <CardTitle className="mt-4 text-xl font-display">
-                        {group.label} Programmes
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent className="grid gap-2 text-sm text-foreground font-body">
-                      {group.programs.map((program) => (
-                        <div key={program} className="flex items-center">
-                          <ChevronRight className="mr-2 h-3 w-3 text-brand-magenta" />
-                          {program}
-                        </div>
-                      ))}
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </div>
-            <div className="rounded-3xl border border-brand-magenta/25 bg-brand-magenta/10 p-8 shadow-[0_30px_120px_-50px_rgba(233,97,255,0.6)]">
-              <h3 className="font-display text-2xl text-brand-magenta">
-                Programme Highlights
-              </h3>
-              <ul className="mt-4 space-y-3 text-sm text-brand-magenta/90 font-body">
-                <li className="flex items-start gap-2">
-                  <Sparkles className="mt-0.5 h-4 w-4" />
-                  Industry-aligned curriculum with Capstone Studios from year
-                  one
-                </li>
-                <li className="flex items-start gap-2">
-                  <Laptop className="mt-0.5 h-4 w-4" />
-                  Dedicated labs for full-stack, data science, cybersecurity and
-                  cloud-native engineering
-                </li>
-                <li className="flex items-start gap-2">
-                  <Award className="mt-0.5 h-4 w-4" />
-                  Global certifications and internship immersion with partner
-                  companies
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
       </section>
 
       <section
@@ -934,24 +461,147 @@ export default function ComputerApplications() {
               className="bg-white/20 text-brand-magenta backdrop-blur"
               variant="secondary"
             >
-              Unique Strengths
+              Unique Strengths (USP)
             </Badge>
             <h2 className="mt-5 font-display text-3xl md:text-4xl">
-              Why Learners Choose DSU Computer Applications
+              Why Students and Industry Choose DSU Computer Applications
             </h2>
           </div>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {USP_HIGHLIGHTS.map((highlight) => (
-              <HighlightCard key={highlight.title} highlight={highlight} />
-            ))}
+          <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-4">
+            {USP_HIGHLIGHTS.map((highlight) => {
+              const Icon = highlight.icon;
+              return (
+                <Card
+                  key={highlight.title}
+                  className="group relative h-80 overflow-hidden rounded-none border border-blue-500/20 bg-blue-500/10 backdrop-blur-sm transition-all duration-700 hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-magenta/10"
+                >
+                  <img
+                    src={highlight.image}
+                    alt={highlight.title}
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                  <div className="absolute top-4 left-4 inline-flex items-center gap-2 rounded-full bg-black/40 px-3 py-1 text-xs text-foreground">
+                    <Icon className="h-4 w-4" /> USP
+                  </div>
+                  <div className="absolute inset-x-0 bottom-0 p-5 text-foreground">
+                    <h3 className="mb-2 text-lg font-semibold font-display">
+                      {highlight.title}
+                    </h3>
+                    <p className="text-sm text-foreground/80 font-body">
+                      {highlight.description}
+                    </p>
+                    {highlight.stat ? (
+                      <div className="mt-3 text-xs uppercase tracking-wide text-foreground/70 font-body">
+                        {highlight.stat}
+                      </div>
+                    ) : null}
+                  </div>
+                </Card>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section id="programs" className="relative overflow-hidden px-6 py-16">
+        <div
+          className="pointer-events-none absolute inset-x-0 -top-32 h-64 bg-gradient-to-b from-brand-magenta/20 via-transparent to-transparent blur-3xl"
+          aria-hidden="true"
+        />
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-12">
+            <div className="max-w-3xl">
+              <h2 className="font-display text-3xl md:text-4xl">
+                Future-ready academic programmes
+              </h2>
+              <p className="mt-3 text-sm text-foreground font-body">
+                Discover comprehensive undergraduate and postgraduate pathways designed with industry expertise, experiential learning, and career-focused skill development.
+              </p>
+            </div>
+          </div>
+
+          {/* Undergraduate Programs */}
+          <div className="mb-16">
+            <div className="mb-8">
+              <Badge className="bg-brand-magenta/15 text-brand-magenta">
+                Undergraduate Programs
+              </Badge>
+              <h3 className="mt-4 font-display text-2xl md:text-3xl">
+                Bachelor Degree Programs
+              </h3>
+              <p className="mt-2 text-sm text-foreground font-body">
+                Build strong foundations in software development and data science
+              </p>
+            </div>
+            <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-2">
+              {UG_PROGRAM_CARDS.map((program) => (
+                <ProgramCardComponent key={program.name} program={program} />
+              ))}
+            </div>
+          </div>
+
+          {/* Postgraduate Programs */}
+          <div>
+            <div className="mb-8">
+              <Badge className="bg-brand-blue/15 text-brand-blue">
+                Postgraduate Programs
+              </Badge>
+              <h3 className="mt-4 font-display text-2xl md:text-3xl">
+                Master Degree Programs
+              </h3>
+              <p className="mt-2 text-sm text-foreground font-body">
+                Advance into research, specialisation and domain expertise
+              </p>
+            </div>
+            <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-2">
+              {PG_PROGRAM_CARDS.map((program) => (
+                <ProgramCardComponent key={program.name} program={program} />
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       <section
-        id="labs"
-        className="bg-gradient-to-r from-brand-blue/5 to-brand-orange/5 px-6 py-16"
+        id="supporting-departments"
+        className="bg-gradient-to-r from-brand-blue/10 via-brand-magenta/10 to-brand-orange/10 px-6 py-16"
       >
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-12 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+            <div className="max-w-3xl">
+              <Badge className="bg-brand-magenta/15 text-brand-magenta">
+                Supporting Departments
+              </Badge>
+              <h2 className="mt-4 font-display text-3xl md:text-4xl">
+                Holistic foundations that amplify every programme
+              </h2>
+              <p className="mt-3 text-sm text-foreground font-body">
+                Specialist faculty from sciences and humanities co-create immersive modules with core departments to sharpen analytical thinking and communication skills.
+              </p>
+            </div>
+            <a
+              href="https://www.dsu.edu.in/academics/schools/computer-application#supporting"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 text-sm font-medium text-brand-magenta"
+            >
+              Explore supporting departments
+              <ChevronRight className="h-4 w-4" />
+            </a>
+          </div>
+          <div className="grid gap-0 md:grid-cols-2 xl:grid-cols-3">
+            {SUPPORTING_DEPARTMENTS.map((department) => (
+              <SupportingDepartmentCard
+                key={department.name}
+                department={department}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="innovation-labs" className="px-6 py-16">
         <div className="mx-auto max-w-7xl">
           <div className="mb-12 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div className="max-w-3xl">
@@ -959,16 +609,14 @@ export default function ComputerApplications() {
                 Experiential Learning
               </Badge>
               <h2 className="mt-4 font-display text-3xl md:text-4xl">
-                Innovation Labs & Career Readiness
+                Innovation Labs & Learning Hubs
               </h2>
               <p className="mt-3 text-sm text-foreground font-body">
-                Access cross-disciplinary labs and mentorship programmes that
-                spark product engineering, AI, automation and cloud-native
-                careers.
+                Access industry-powered labs and mentorship programmes that spark careers in full-stack development, data science, cloud computing and AI.
               </p>
             </div>
             <a
-              href="https://www.dsu.edu.in/computer-applications/facilities-sca"
+              href="https://www.dsu.edu.in/computer-applications/facilities"
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-2 text-sm font-medium text-brand-magenta"
@@ -977,44 +625,260 @@ export default function ComputerApplications() {
               <ChevronRight className="h-4 w-4" />
             </a>
           </div>
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {LAB_EXPERIENCES.map((lab) => (
-              <LabCard key={lab.title} lab={lab} />
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {INNOVATION_LABS.map((lab) => (
+              <Card
+                key={lab}
+                className="rounded-none border border-border/50 bg-card/50 backdrop-blur-sm p-6"
+              >
+                <div className="flex items-start gap-4">
+                  <Beaker className="h-5 w-5 text-brand-magenta flex-shrink-0 mt-1" />
+                  <div>
+                    <h3 className="font-display font-semibold text-foreground">
+                      {lab}
+                    </h3>
+                  </div>
+                </div>
+              </Card>
             ))}
           </div>
         </div>
       </section>
 
       <section id="calendar" className="px-6 py-16">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-10 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-            <div className="max-w-3xl">
-              <Badge className="bg-brand-magenta/15 text-brand-magenta">
-                Calendar & Updates
-              </Badge>
-              <h2 className="mt-4 font-display text-3xl md:text-4xl">
-                Stay Ahead of Every Milestone
-              </h2>
-              <p className="mt-3 text-sm text-foreground font-body">
-                Download academic schedules, explore event recaps and tap into
-                ongoing research that keeps learners future focused.
-              </p>
+        <div className="mx-auto max-w-6xl">
+          <div className="relative overflow-hidden rounded-none border-[3px] border-dashed border-brand-magenta/30 bg-card/70 p-10 shadow-[0_35px_120px_-45px_rgba(175,80,255,0.65)] backdrop-blur">
+            <div
+              className="pointer-events-none absolute -left-16 top-10 h-32 w-32 rounded-full bg-brand-magenta/15 blur-3xl"
+              aria-hidden="true"
+            />
+            <div
+              className="pointer-events-none absolute -right-12 bottom-0 h-36 w-36 rounded-full bg-brand-blue/15 blur-3xl"
+              aria-hidden="true"
+            />
+            <div className="relative grid gap-0 lg:grid-cols-[1.1fr_minmax(0,1fr)]">
+              <div className="space-y-5">
+                <Badge className="bg-brand-magenta/15 text-brand-magenta">
+                  Notice Board
+                </Badge>
+                <h2 className="font-display text-3xl md:text-4xl">
+                  Computer Applications Notice Board
+                </h2>
+                <p className="text-sm text-foreground font-body">
+                  Curated updates for the ongoing academic year 2025-26. Stay aligned with assessment windows, projects and university-hosted experiences.
+                </p>
+                <a
+                  href="https://www.dsu.edu.in/computer-applications/notices"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 text-sm font-medium text-brand-magenta hover:underline"
+                >
+                  Browse previous circulars
+                  <ChevronRight className="h-4 w-4" />
+                </a>
+              </div>
+              <div className="grid gap-0">
+                {CALENDAR_ENTRIES.map((entry) => (
+                  <CalendarResourceCard
+                    key={`${entry.title}-${entry.academicYear}`}
+                    entry={entry}
+                  />
+                ))}
+              </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="related-resources"
+        className="bg-gradient-to-r from-brand-magenta/5 via-brand-blue/5 to-brand-orange/5 px-6 py-16"
+      >
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-12 text-center">
+            <h2 className="font-display text-3xl md:text-4xl">
+              Explore More at DSU Computer Applications
+            </h2>
+            <p className="mt-3 text-sm text-foreground font-body">
+              Discover our innovation initiatives, placements, career pathways and student opportunities
+            </p>
+          </div>
+          <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-4">
+            <RouterLink
+              to="/centre-of-excellence"
+              className="group rounded-none border border-border/40 bg-card/60 backdrop-blur-sm overflow-hidden hover:shadow-lg hover:shadow-brand-magenta/20 transition-all duration-500 hover:-translate-y-1"
+            >
+              <Card className="h-full border-0 bg-transparent">
+                <div className="relative h-32 bg-gradient-to-br from-brand-magenta/20 to-brand-magenta/10 flex items-center justify-center">
+                  <Award className="h-12 w-12 text-brand-magenta/70 group-hover:text-brand-magenta transition-colors" />
+                </div>
+                <CardHeader>
+                  <CardTitle className="font-display group-hover:text-brand-magenta transition-colors">
+                    Centre of Excellence
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-foreground/80 font-body">
+                    Industry-powered innovation labs with IBM, NVIDIA and VMware
+                  </p>
+                </CardContent>
+              </Card>
+            </RouterLink>
+
+            <RouterLink
+              to="/research"
+              className="group rounded-none border border-border/40 bg-card/60 backdrop-blur-sm overflow-hidden hover:shadow-lg hover:shadow-brand-blue/20 transition-all duration-500 hover:-translate-y-1"
+            >
+              <Card className="h-full border-0 bg-transparent">
+                <div className="relative h-32 bg-gradient-to-br from-brand-blue/20 to-brand-blue/10 flex items-center justify-center">
+                  <Microscope className="h-12 w-12 text-brand-blue/70 group-hover:text-brand-blue transition-colors" />
+                </div>
+                <CardHeader>
+                  <CardTitle className="font-display group-hover:text-brand-blue transition-colors">
+                    Research & Innovation
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-foreground/80 font-body">
+                    Faculty-led research projects and student research opportunities
+                  </p>
+                </CardContent>
+              </Card>
+            </RouterLink>
+
+            <RouterLink
+              to="/placements"
+              className="group rounded-none border border-border/40 bg-card/60 backdrop-blur-sm overflow-hidden hover:shadow-lg hover:shadow-brand-orange/20 transition-all duration-500 hover:-translate-y-1"
+            >
+              <Card className="h-full border-0 bg-transparent">
+                <div className="relative h-32 bg-gradient-to-br from-brand-orange/20 to-brand-orange/10 flex items-center justify-center">
+                  <GraduationCap className="h-12 w-12 text-brand-orange/70 group-hover:text-brand-orange transition-colors" />
+                </div>
+                <CardHeader>
+                  <CardTitle className="font-display group-hover:text-brand-orange transition-colors">
+                    Placements
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-foreground/80 font-body">
+                    Career pathways with leading tech companies and startups
+                  </p>
+                </CardContent>
+              </Card>
+            </RouterLink>
+
             <a
-              href="https://www.dsu.edu.in/computer-applications/happening-sca"
+              href="https://admissions.dsu.edu.in/"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 text-sm font-medium text-brand-magenta"
+              className="group rounded-none border border-border/40 bg-card/60 backdrop-blur-sm overflow-hidden hover:shadow-lg hover:shadow-brand-magenta/20 transition-all duration-500 hover:-translate-y-1"
             >
-              School happenings hub
-              <ChevronRight className="h-4 w-4" />
+              <Card className="h-full border-0 bg-transparent">
+                <div className="relative h-32 bg-gradient-to-br from-brand-magenta/20 to-brand-magenta/10 flex items-center justify-center">
+                  <Cpu className="h-12 w-12 text-brand-magenta/70 group-hover:text-brand-magenta transition-colors" />
+                </div>
+                <CardHeader>
+                  <CardTitle className="font-display group-hover:text-brand-magenta transition-colors">
+                    Admissions
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="flex flex-col gap-3">
+                  <p className="text-sm text-foreground/80 font-body">
+                    Join DSU Computer Applications and build your tech career
+                  </p>
+                  <span className="inline-flex items-center gap-2 text-xs font-medium text-brand-magenta group-hover:text-brand-magenta/80 transition-colors">
+                    Apply Now
+                    <ChevronRight className="h-3 w-3" />
+                  </span>
+                </CardContent>
+              </Card>
             </a>
           </div>
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {RESOURCE_LINKS.map((resource) => (
-              <ResourceCard key={resource.title} resource={resource} />
-            ))}
-          </div>
+        </div>
+      </section>
+
+      <section className="px-6 py-16">
+        <div className="mx-auto grid max-w-5xl items-start gap-8 lg:grid-cols-2">
+          <Card className="rounded-none border border-orange-500/20 bg-orange-500/10">
+            <CardHeader>
+              <CardTitle className="font-display">Leadership</CardTitle>
+            </CardHeader>
+            <CardContent className="grid gap-4 text-sm font-body text-foreground">
+              <div>
+                <div className="text-foreground/70 text-xs uppercase tracking-wide">Email</div>
+                <div className="font-medium text-foreground">
+                  sca@dsu.edu.in
+                </div>
+              </div>
+              <div>
+                <div className="text-foreground/70 text-xs uppercase tracking-wide">Phone</div>
+                <div className="font-medium text-foreground">
+                  +91-80-49092933
+                </div>
+              </div>
+              <div>
+                <div className="text-foreground/70 text-xs uppercase tracking-wide">Campus Address</div>
+                <div className="font-medium text-foreground">
+                  Kanakapura Road, Bengaluru, Karnataka
+                </div>
+              </div>
+              <div>
+                <div className="text-foreground/70 text-xs uppercase tracking-wide">Office Hours</div>
+                <div className="font-medium text-foreground">
+                  Mon–Fri, 9:00 AM – 5:30 PM
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+          <Card className="rounded-none border border-blue-500/20 bg-blue-500/10">
+            <CardHeader>
+              <CardTitle className="font-display">
+                More Resources
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="grid gap-3 text-sm font-body">
+              <a
+                href="https://www.dsu.edu.in/computer-applications/programs"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-brand-magenta"
+              >
+                Programs Overview
+              </a>
+              <a
+                href="https://www.dsu.edu.in/computer-applications/highlights"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-brand-magenta"
+              >
+                Highlights & USP
+              </a>
+              <a
+                href="https://www.dsu.edu.in/computer-applications/newsletter"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-brand-magenta"
+              >
+                Monthly Newsletter
+              </a>
+              <a
+                href="https://www.dsu.edu.in/computer-applications/library"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-brand-magenta"
+              >
+                Digital Library
+              </a>
+              <a
+                href="https://www.dsu.edu.in/computer-applications/clubs"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-brand-magenta"
+              >
+                Student Clubs & Communities
+              </a>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
@@ -1022,22 +886,24 @@ export default function ComputerApplications() {
         <div className="mx-auto max-w-4xl text-center">
           <div className="rounded-none border border-brand-magenta/20 bg-brand-magenta/5 p-10">
             <h3 className="mb-3 font-display text-3xl">
-              Launch Your Tech Career with DSU
+              Ready to launch your tech career?
             </h3>
             <p className="mb-6 text-foreground font-body">
-              Collaborate with mentors, build real products, showcase your
-              portfolio and secure roles with the ecosystem of recruiters
-              partnering with the School of Computer Applications.
+              Explore programmes, take a virtual tour and begin your journey at the DSU School of Computer Applications.
             </p>
             <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <Link to="/admissions">
+              <a
+                href="https://admissions.dsu.edu.in/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <Button className="bg-brand-gradient text-foreground">
-                  Start Application
+                  Apply Now
                   <GraduationCap className="ml-2 h-4 w-4" />
                 </Button>
-              </Link>
+              </a>
               <a
-                href="https://www.dsu.edu.in/computer-applications/placement-sca"
+                href="https://dsu.edu.in/virtual-tour/"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -1045,7 +911,7 @@ export default function ComputerApplications() {
                   variant="outline"
                   className="border-brand-magenta/40 hover:bg-brand-magenta/10"
                 >
-                  Placement Snapshot
+                  Virtual Tour
                 </Button>
               </a>
             </div>
