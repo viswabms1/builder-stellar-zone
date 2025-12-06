@@ -547,90 +547,146 @@ function CurriculumLibrary() {
                 Library
               </span>
             </h2>
-            <p className="max-w-2xl text-sm text-foreground sm:text-base">
-              Explore curated curriculum packs for B.Tech and M.Tech cohorts. Click “View curriculum” to reveal batch-wise outlines.
+            <p className="max-w-2xl text-sm text-foreground sm:text-base font-body">
+              Explore comprehensive curriculum packs for B.Tech and M.Tech programs. Access detailed course structures, learning outcomes, and downloadable syllabi.
             </p>
           </div>
-          <Badge className="w-fit rounded-full bg-brand-magenta/15 px-4 py-2 text-xs font-semibold text-brand-magenta">
-            Academic Years 2025 – 2029
+          <Badge className="w-fit rounded-full bg-brand-magenta/15 px-4 py-2 text-xs font-semibold text-brand-magenta border border-brand-magenta/20">
+            2025 – 2029
           </Badge>
         </div>
-        <Card className="border border-border/50 bg-card/60 backdrop-blur-sm">
-          <CardHeader className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-            <div className="flex items-center gap-3">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-magenta/10 text-brand-magenta">
-                <FileText className="h-6 w-6" />
-              </div>
-              <div>
-                <CardTitle className="font-display text-lg sm:text-xl">Programme Curriculum Archive</CardTitle>
-                <CardDescription className="font-body text-sm">
-                  Downloadable syllabi are published by the department office. For earlier batches, write to chairman-cse@dsu.edu.in.
-                </CardDescription>
-              </div>
-            </div>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            {programs.map((program) => {
-              const isOpen = openProgram === program.id;
-              return (
-                <div
-                  key={program.id}
-                  className="rounded-2xl border border-border/40 bg-background/80 p-4 shadow-sm"
-                >
-                  <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
-                    <div>
-                      <h3 className="font-display text-base sm:text-lg">{program.label}</h3>
-                      <p className="text-sm text-foreground">{program.description}</p>
+
+        <div className="grid gap-6 lg:grid-cols-2">
+          {programs.map((program, programIdx) => {
+            const isOpen = openProgram === program.id;
+            const isProgramBtech = program.id === "btech";
+            const gradientClass = isProgramBtech 
+              ? "from-brand-orange/15 via-brand-magenta/10 to-brand-blue/15" 
+              : "from-brand-blue/15 via-brand-magenta/10 to-brand-purple/15";
+            const borderClass = isProgramBtech 
+              ? "border-brand-orange/30" 
+              : "border-brand-blue/30";
+            const badgeClass = isProgramBtech 
+              ? "bg-brand-orange/15 text-brand-orange border-brand-orange/20" 
+              : "bg-brand-blue/15 text-brand-blue border-brand-blue/20";
+            const iconClass = isProgramBtech ? "text-brand-orange" : "text-brand-blue";
+            const Icon = isProgramBtech ? Code : BookOpen;
+
+            return (
+              <div
+                key={program.id}
+                className={`rounded-3xl border-2 ${borderClass} bg-gradient-to-br ${gradientClass} backdrop-blur-sm overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-brand-magenta/10 hover:-translate-y-1`}
+              >
+                <div className="p-6 sm:p-8">
+                  <div className="flex items-start gap-4 mb-6">
+                    <div className={`flex h-16 w-16 items-center justify-center rounded-2xl bg-background/40 border border-border/40 ${iconClass}`}>
+                      <Icon className="h-8 w-8" />
                     </div>
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      className="mt-2 w-full sm:mt-0 sm:w-auto"
-                      onClick={() => setOpenProgram(isOpen ? null : program.id)}
-                    >
-                      {isOpen ? "Hide curriculum" : "View curriculum"}
-                      <ChevronDown
-                        className={`ml-2 h-4 w-4 transition-transform ${isOpen ? "rotate-180" : ""}`}
-                      />
-                    </Button>
+                    <div className="flex-1">
+                      <div className="flex items-start gap-3 mb-2">
+                        <Badge className={`rounded-full border ${badgeClass}`}>
+                          {isProgramBtech ? "Undergraduate" : "Postgraduate"}
+                        </Badge>
+                      </div>
+                      <h3 className="headline-4 font-display mb-2">{program.label}</h3>
+                      <p className="text-sm text-foreground/80 font-body">{program.description}</p>
+                    </div>
                   </div>
-                  {isOpen ? (
-                    <div className="mt-4 space-y-3">
-                      {program.batches.map((batch) => (
+
+                  <Button
+                    variant="outline"
+                    className={`w-full mb-4 ${isProgramBtech ? "border-brand-orange/30 hover:bg-brand-orange/10 text-brand-orange hover:text-brand-orange" : "border-brand-blue/30 hover:bg-brand-blue/10 text-brand-blue hover:text-brand-blue"}`}
+                    onClick={() => setOpenProgram(isOpen ? null : program.id)}
+                  >
+                    <span className="flex items-center justify-center gap-2">
+                      {isOpen ? "Hide Curriculum Details" : "View Curriculum Details"}
+                      <ChevronDown
+                        className={`h-4 w-4 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
+                      />
+                    </span>
+                  </Button>
+
+                  {isOpen && (
+                    <div className="mt-6 space-y-4 border-t border-border/20 pt-6 animate-in fade-in slide-in-from-top-2 duration-300">
+                      {program.batches.map((batch, batchIdx) => (
                         <div
                           key={`${program.id}-${batch.year}`}
-                          className="flex flex-col gap-3 rounded-xl border border-border/30 bg-card/70 p-3 sm:flex-row sm:items-center sm:justify-between"
+                          className={`rounded-2xl border border-border/40 bg-background/60 p-4 transition-all hover:border-brand-magenta/40 hover:shadow-md hover:shadow-brand-magenta/5 ${
+                            batchIdx === 0 ? "ring-2 ring-brand-magenta/20" : ""
+                          }`}
                         >
-                          <div className="space-y-1">
-                            <Badge className="w-fit rounded-full bg-brand-magenta/15 px-3 py-1 text-xs font-semibold text-brand-magenta">
-                              {batch.year}
-                            </Badge>
-                            <p className="text-sm text-foreground">{batch.summary}</p>
+                          <div className="flex flex-col gap-4">
+                            <div className="flex items-start justify-between gap-3">
+                              <div className="flex-1">
+                                <div className="flex items-center gap-2 mb-2">
+                                  <Badge className={`rounded-full border ${isProgramBtech ? "bg-brand-orange/20 text-brand-orange border-brand-orange/30" : "bg-brand-blue/20 text-brand-blue border-brand-blue/30"}`}>
+                                    <CalendarDays className="h-3 w-3 mr-1" />
+                                    {batch.year}
+                                  </Badge>
+                                  {batchIdx === 0 && (
+                                    <Badge className="rounded-full bg-brand-magenta/20 text-brand-magenta border-brand-magenta/30 border">
+                                      <Zap className="h-3 w-3 mr-1" />
+                                      Current
+                                    </Badge>
+                                  )}
+                                </div>
+                                <p className="text-sm text-foreground font-body leading-relaxed">{batch.summary}</p>
+                              </div>
+                            </div>
+                            {batch.documentUrl ? (
+                              <div className="pt-2 border-t border-border/20">
+                                <Button
+                                  variant="ghost"
+                                  size="sm"
+                                  className={`w-full justify-center gap-2 rounded-lg font-semibold transition-all ${
+                                    isProgramBtech 
+                                      ? "bg-brand-orange/10 text-brand-orange hover:bg-brand-orange/20" 
+                                      : "bg-brand-blue/10 text-brand-blue hover:bg-brand-blue/20"
+                                  }`}
+                                  asChild
+                                >
+                                  <a href={batch.documentUrl} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2">
+                                    <Download className="h-4 w-4" />
+                                    Download Curriculum PDF
+                                  </a>
+                                </Button>
+                              </div>
+                            ) : (
+                              <div className="pt-2 border-t border-border/20">
+                                <p className="text-xs text-foreground/60 italic text-center">Release scheduled in coordination with the curriculum committee.</p>
+                              </div>
+                            )}
                           </div>
-                          {batch.documentUrl ? (
-                            <Button
-                              variant="ghost"
-                              size="sm"
-                              className="justify-start text-brand-magenta hover:text-brand-magenta"
-                              asChild
-                            >
-                              <a href={batch.documentUrl} target="_blank" rel="noreferrer">
-                                Download PDF
-                                <Download className="ml-2 h-4 w-4" />
-                              </a>
-                            </Button>
-                          ) : (
-                            <p className="text-xs text-foreground">
-                              Release scheduled in coordination with the curriculum committee.
-                            </p>
-                          )}
                         </div>
                       ))}
                     </div>
-                  ) : null}
+                  )}
                 </div>
-              );
-            })}
+              </div>
+            );
+          })}
+        </div>
+
+        <Card className="border-2 border-brand-magenta/20 bg-gradient-to-r from-brand-magenta/10 via-brand-blue/10 to-brand-orange/10 backdrop-blur-sm">
+          <CardHeader>
+            <CardTitle className="font-display">Curriculum Support</CardTitle>
+            <CardDescription className="font-body">Need more details or earlier curriculum versions?</CardDescription>
+          </CardHeader>
+          <CardContent className="grid sm:grid-cols-2 gap-4">
+            <div className="rounded-xl border border-border/30 bg-background/40 p-4">
+              <p className="text-xs font-semibold text-foreground/60 uppercase tracking-wider mb-2">Curriculum Queries</p>
+              <a href="mailto:chairman-cse@dsu.edu.in" className="text-sm font-semibold text-brand-magenta hover:underline inline-flex items-center gap-1">
+                chairman-cse@dsu.edu.in
+                <ChevronRight className="h-3 w-3" />
+              </a>
+            </div>
+            <div className="rounded-xl border border-border/30 bg-background/40 p-4">
+              <p className="text-xs font-semibold text-foreground/60 uppercase tracking-wider mb-2">Academic Policies</p>
+              <a href="https://www.dsu.edu.in/engineering/computer-science" target="_blank" rel="noreferrer" className="text-sm font-semibold text-brand-magenta hover:underline inline-flex items-center gap-1">
+                Visit Department Site
+                <ChevronRight className="h-3 w-3" />
+              </a>
+            </div>
           </CardContent>
         </Card>
       </div>
