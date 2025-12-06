@@ -506,6 +506,9 @@ export default function ComputerApplications() {
         </div>
       </section>
 
+      {/* Dean's Message Section */}
+      <DeanSection dean={DEAN_INFO} />
+
       <section id="programs" className="relative overflow-hidden px-6 py-16">
         <div
           className="pointer-events-none absolute inset-x-0 -top-32 h-64 bg-gradient-to-b from-brand-magenta/20 via-transparent to-transparent blur-3xl"
