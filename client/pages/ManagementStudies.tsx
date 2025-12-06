@@ -180,6 +180,16 @@ const RESOURCES: Resource[] = [
   },
 ];
 
+const DEAN_INFO: DeanInfo = {
+  name: "Dr. Vikram Iyer",
+  title: "M.B.A., Ph.D",
+  position: "Dean, School of Management Studies",
+  photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop",
+  videoUrl: "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F0c95c62aa88741fca8ebdc32aade53d5?alt=media&token=c57ff4a9-aea8-4ff3-843b-23ce820ba630&apiKey=4aa279a8430d441dba9c55f659831878",
+  borderColor: "border-amber-500/20",
+  bgColor: "bg-amber-500/10",
+};
+
 function HighlightCard({ highlight }: { highlight: Highlight }) {
   const Icon = highlight.icon;
   return (
