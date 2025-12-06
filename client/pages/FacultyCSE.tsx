@@ -1,5 +1,3 @@
-import type { ComponentType, SVGProps } from "react";
-import type { ComponentType, SVGProps } from "react";
 import { useMemo } from "react";
 import { Link } from "react-router-dom";
 
