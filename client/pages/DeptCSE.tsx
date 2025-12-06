@@ -26,6 +26,8 @@ import {
   Building,
   ArrowRight,
   Cog,
+  Award,
+  Microscope,
 } from "lucide-react";
 
 export default function DeptCSE() {
