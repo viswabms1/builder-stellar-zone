@@ -511,7 +511,7 @@ function CurriculumLibrary() {
       id: "mtech",
       label: "M.Tech Curriculum",
       description: "2-year postgraduate program focused on advanced research",
-      image: "https://images.unsplash.com/photo-1516321318423-f06f70a504f9?w=600&h=400&fit=crop",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
       batches: [
         {
           year: "2025-26",
