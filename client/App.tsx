@@ -182,6 +182,10 @@ function App() {
                   element={<DeptAIML />}
                 />
                 <Route
+                  path="/academics/engineering/ai-ml/faculty"
+                  element={<FacultyAIML />}
+                />
+                <Route
                   path="/academics/engineering/computer-science/faculty"
                   element={<FacultyCSE />}
                 />
