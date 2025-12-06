@@ -471,7 +471,7 @@ function LabCard({ lab }: { lab: LabExperience }) {
 function AchievementCard({ achievement }: { achievement: Achievement }) {
   const Icon = achievement.icon;
   return (
-    <Card className="h-full rounded-3xl border border-border/40 bg-card/60 backdrop-blur">
+    <Card className="h-full rounded-none border border-border/40 bg-card/60 backdrop-blur">
       <CardHeader className="flex flex-row items-start gap-3">
         <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand-magenta/15 text-brand-magenta flex-shrink-0">
           <Icon className="h-5 w-5" />
