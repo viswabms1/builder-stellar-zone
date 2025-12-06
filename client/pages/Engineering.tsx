@@ -231,7 +231,7 @@ const ENGINEERING_DEPARTMENTS: EngineeringDepartment[] = [
       "Engineer data products with applied analytics, data governance, cloud-native pipelines and real-time dashboards.",
     image:
       "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?q=80&w=1600&auto=format&fit=crop",
-    link: "https://www.dsu.edu.in/engineering/artificial-intelligence-data-science",
+    link: "/academics/engineering/ai-ds",
     highlights: ["Data Engineering", "Analytics Studio", "Cloud Pipelines"],
     overlay:
       "bg-gradient-to-br from-brand-blue/75 via-black/70 to-black/55 mix-blend-multiply",
@@ -246,7 +246,7 @@ const ENGINEERING_DEPARTMENTS: EngineeringDepartment[] = [
       "Dive into statistical computing, big data processing, intelligent automation and visual analytics.",
     image:
       "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1600&auto=format&fit=crop",
-    link: "https://www.dsu.edu.in/engineering/computer-science-data-science",
+    link: "/academics/engineering/ai-ds",
     highlights: ["Big Data Lab", "Predictive Models", "Visualization"],
     overlay:
       "bg-gradient-to-br from-brand-blue/70 via-brand-magenta/60 to-black/55 mix-blend-multiply",
