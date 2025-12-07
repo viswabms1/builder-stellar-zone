@@ -173,6 +173,9 @@ import VinayakBHemadriPage from "./pages/faculty/VinayakBHemadri";
 import RahulKumarMechPage from "./pages/faculty/RahulKumarMech";
 import ShashidharaLCPage from "./pages/faculty/ShashidharaLC";
 import AbhijithNPage from "./pages/faculty/AbhijithN";
+import DeptAerospace from "./pages/DeptAerospace";
+import FacultyAerospace from "./pages/FacultyAerospace";
+import DrNagarajaSRPage from "./pages/faculty/DrNagarajaSR";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 
