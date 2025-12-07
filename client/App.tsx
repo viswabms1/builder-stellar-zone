@@ -400,6 +400,24 @@ function App() {
                   element={<FacultyDataScience />}
                 />
                 <Route path="/academics/engineering/data-science/faculty/dr-shaila-s-g" element={<DrShailaSGPage />} />
+                <Route path="/academics/engineering/data-science/faculty/dr-santhosh-kumar-g" element={<DrSanthoshKumarGPage />} />
+                <Route path="/academics/engineering/data-science/faculty/dr-suresh-arumugam" element={<DrSureshArumugamPage />} />
+                <Route path="/academics/engineering/data-science/faculty/dr-u-pavan-kumar" element={<DrUPavanKumarPage />} />
+                <Route path="/academics/engineering/data-science/faculty/shivamma-d" element={<ShivammaDPage />} />
+                <Route path="/academics/engineering/data-science/faculty/monish-l" element={<MonishLPage />} />
+                <Route path="/academics/engineering/data-science/faculty/manjula-m" element={<ManjulaPage />} />
+                <Route path="/academics/engineering/data-science/faculty/sindhu-a" element={<SindhuAPage />} />
+                <Route path="/academics/engineering/data-science/faculty/mr-godhandaraman-t" element={<MrGodhandaramanTPage />} />
+                <Route path="/academics/engineering/data-science/faculty/prof-chandrakala-l" element={<ProfChandrakalaLPage />} />
+                <Route path="/academics/engineering/data-science/faculty/prof-prapti-bhattacharjee" element={<ProfPraptiBhattachareePage />} />
+                <Route path="/academics/engineering/data-science/faculty/mr-mithun-kumar" element={<MrMithunKumarPage />} />
+                <Route path="/academics/engineering/data-science/faculty/mr-megha-chandel" element={<MrMeghaChandelPage />} />
+                <Route path="/academics/engineering/data-science/faculty/mr-kishor-malakar" element={<MrKishorMalakarPage />} />
+                <Route path="/academics/engineering/data-science/faculty/mr-shashank-shekhar" element={<MrShashankShekharPage />} />
+                <Route path="/academics/engineering/data-science/faculty/ms-souramita-bhowmik" element={<MsSouramitaBhowmikPage />} />
+                <Route path="/academics/engineering/data-science/faculty/mr-mriganka-das" element={<MrMrigankaDasPage />} />
+                <Route path="/academics/engineering/data-science/faculty/ms-snigdha-sikha-kashyap" element={<MsSnigdhaSikhakashyapPage />} />
+                <Route path="/academics/engineering/data-science/faculty/dr-jobin-thomas" element={<DrJobinThomasPage />} />
                 <Route
                   path="/academics/engineering/electronics-communication/faculty"
                   element={<FacultyECE />}
