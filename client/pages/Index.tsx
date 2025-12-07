@@ -54,63 +54,8 @@ function HeroVideo() {
     const video = videoRef.current;
     if (!video) return;
 
-    const handleTimeUpdate = () => {
-      const currentTime = video.currentTime;
-
-      // Extreme dynamic speed variations with 5x-10x ultra-fast sections
-      if (currentTime < 2) {
-        video.playbackRate = 0.5; // Ultra slow intro
-      } else if (currentTime < 4) {
-        video.playbackRate = 1; // Normal
-      } else if (currentTime < 6) {
-        video.playbackRate = 0.6; // Slow
-      } else if (currentTime < 8) {
-        video.playbackRate = 5; // Ultra fast extreme
-      } else if (currentTime < 10) {
-        video.playbackRate = 0.8; // Slow - focus moment
-      } else if (currentTime < 12) {
-        video.playbackRate = 8; // VERY fast - extreme speed
-      } else if (currentTime < 14) {
-        video.playbackRate = 1.2; // Moderate
-      } else if (currentTime < 16) {
-        video.playbackRate = 7; // Ultra rapid showcase
-      } else if (currentTime < 18) {
-        video.playbackRate = 0.7; // Slow - elegant
-      } else if (currentTime < 20) {
-        video.playbackRate = 9; // EXTREME fast
-      } else if (currentTime < 22) {
-        video.playbackRate = 1.5; // Moderate-fast
-      } else if (currentTime < 24) {
-        video.playbackRate = 6; // Very fast
-      } else if (currentTime < 26) {
-        video.playbackRate = 0.9; // Nearly normal
-      } else if (currentTime < 28) {
-        video.playbackRate = 10; // MAX ultra-fast
-      } else if (currentTime < 30) {
-        video.playbackRate = 2; // Fast transition
-      } else if (currentTime < 32) {
-        video.playbackRate = 5.5; // Ultra fast details
-      } else if (currentTime < 34) {
-        video.playbackRate = 1.1; // Normal focus
-      } else if (currentTime < 36) {
-        video.playbackRate = 7.5; // Very rapid finale prep
-      } else if (currentTime < 38) {
-        video.playbackRate = 0.8; // Slow - dramatic moment
-      } else if (currentTime < 40) {
-        video.playbackRate = 8.5; // Extreme fast finale
-      } else if (currentTime < 42) {
-        video.playbackRate = 1.3; // Moderate close
-      } else if (currentTime < 44) {
-        video.playbackRate = 6.5; // Fast ending
-      } else {
-        video.playbackRate = 1; // Return to normal for loop
-      }
-    };
-
-    video.addEventListener("timeupdate", handleTimeUpdate);
-    return () => {
-      video.removeEventListener("timeupdate", handleTimeUpdate);
-    };
+    // Play video at normal speed
+    video.playbackRate = 1;
   }, []);
 
   useEffect(() => {
