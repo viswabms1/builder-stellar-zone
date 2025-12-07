@@ -835,7 +835,7 @@ function NoticeBoard() {
 }
 
 function CurriculumLibrary() {
-  const [openProgram, setOpenProgram] = useState<string | null>("btech");
+  const [openProgram, setOpenProgram] = useState<string | null>(null);
 
   const programs: CurriculumProgram[] = [
     {
