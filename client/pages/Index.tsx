@@ -54,10 +54,6 @@ function HeroVideo() {
     const video = videoRef.current;
     if (!video) return;
 
-    // Set volume based on mute state
-    video.volume = isMuted ? 0 : 1;
-    video.muted = isMuted;
-
     const handleTimeUpdate = () => {
       const currentTime = video.currentTime;
 
@@ -116,6 +112,14 @@ function HeroVideo() {
       video.removeEventListener("timeupdate", handleTimeUpdate);
     };
   }, []);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    video.volume = isMuted ? 0 : 1;
+    video.muted = isMuted;
+  }, [isMuted]);
 
   return (
     <div className="w-full h-full relative overflow-hidden">
