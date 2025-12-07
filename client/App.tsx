@@ -216,6 +216,9 @@ import MsSouramitaBhowmikPage from "./pages/faculty/MsSouramitaBhowmik";
 import MrMrigankaDasPage from "./pages/faculty/MrMrigankaDas";
 import MsSnigdhaSikhakashyapPage from "./pages/faculty/MsSnigdhaSikhakashyap";
 import DrJobinThomasPage from "./pages/faculty/DrJobinThomas";
+import DeptCybersecurity from "./pages/DeptCybersecurity";
+import FacultyCybersecurity from "./pages/FacultyCybersecurity";
+import DrDilipKumarJangBahadurSainiPage from "./pages/faculty/DrDilipKumarJangBahadurSaini";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 
