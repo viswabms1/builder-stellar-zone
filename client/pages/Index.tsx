@@ -54,9 +54,9 @@ function HeroVideo() {
     const video = videoRef.current;
     if (!video) return;
 
-    // Ensure volume is always 0 for no sound
-    video.volume = 0;
-    video.muted = true;
+    // Set volume based on mute state
+    video.volume = isMuted ? 0 : 1;
+    video.muted = isMuted;
 
     const handleTimeUpdate = () => {
       const currentTime = video.currentTime;
