@@ -444,9 +444,6 @@ export default function Index() {
         {/* Hero Content */}
         <div className="relative max-w-7xl mx-auto px-6 w-full z-10 pb-20 md:pb-0">
           <div className="max-w-2xl">
-            <p className="text-sm md:text-base text-white/80 mb-4 uppercase tracking-widest font-display">
-              {t('hero.tagline') || "Transform Your Future"}
-            </p>
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight font-display">
               {t('hero.mainHeading') || "Make DSU Yours"}
             </h1>
