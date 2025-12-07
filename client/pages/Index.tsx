@@ -444,7 +444,7 @@ export default function Index() {
         {/* Hero Content */}
         <div className="relative max-w-7xl mx-auto px-6 w-full z-10 pb-20 md:pb-0">
           <div className="max-w-4xl">
-            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-4 leading-tight font-display">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 leading-tight font-display">
               Dayananda Sagar University
             </h1>
             <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold text-white mb-6 leading-tight font-display">
