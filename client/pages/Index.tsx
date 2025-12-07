@@ -443,12 +443,15 @@ export default function Index() {
 
         {/* Hero Content */}
         <div className="relative max-w-7xl mx-auto px-6 w-full z-10 pb-20 md:pb-0">
-          <div className="max-w-2xl">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight font-display">
-              {t('hero.mainHeading') || "Make DSU Yours"}
+          <div className="max-w-4xl">
+            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-4 leading-tight font-display">
+              Dayananda Sagar University
             </h1>
-            <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-12 leading-tight font-display tracking-tight max-w-4xl whitespace-pre-line">
-              {t('hero.subheading') || "Beat the admissions deadline and begin your transformative journey with us"}
+            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold text-white mb-6 leading-tight font-display">
+              {t('hero.mainHeading') || "India's AI First University"}
+            </p>
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-white/90 mb-12 font-display">
+              {t('hero.subheading') || "Powered by NVIDIA"}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
