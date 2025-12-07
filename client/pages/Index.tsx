@@ -122,12 +122,11 @@ function HeroVideo() {
       {/* Video with AI-enhanced effects */}
       <video
         ref={videoRef}
-        src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F43df9b729966478d81eb1a12fea0a3e7?alt=media&token=2a3008e8-0060-439a-8841-55be45a87537&apiKey=4aa279a8430d441dba9c55f659831878"
+        src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F389ede098f8743368a37b080b1969b8a?alt=media&token=101276cc-1be0-485d-a4a8-86f1e71c260f&apiKey=4aa279a8430d441dba9c55f659831878"
         autoPlay
         muted
         loop
         playsInline
-        volume={0}
         className="w-full h-full object-cover"
         style={{
           filter: "brightness(1.1) contrast(1.15) saturate(1.2)"
