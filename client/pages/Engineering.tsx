@@ -261,7 +261,7 @@ const ENGINEERING_DEPARTMENTS: EngineeringDepartment[] = [
       "Protect digital infrastructure through secure coding, ethical hacking, digital forensics and governance frameworks.",
     image:
       "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1600&auto=format&fit=crop",
-    link: "https://www.dsu.edu.in/engineering/computer-science-cyber-security",
+    link: "/academics/engineering/cybersecurity",
     highlights: ["Cyber Range", "Ethical Hacking", "Forensics"],
     overlay:
       "bg-gradient-to-br from-black/80 via-brand-magenta/60 to-brand-blue/60 mix-blend-multiply",
