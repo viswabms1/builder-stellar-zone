@@ -186,7 +186,7 @@ const ENGINEERING_DEPARTMENTS: EngineeringDepartment[] = [
       "Explore flight mechanics, propulsion, avionics and composite materials in specialised aerospace laboratories.",
     image:
       "https://images.unsplash.com/photo-1489515217757-5fd1be406fef?q=80&w=1600&auto=format&fit=crop",
-    link: "https://www.dsu.edu.in/engineering/aerospace-engineering",
+    link: "/academics/engineering/aerospace",
     highlights: ["Wind Tunnel", "Avionics Lab", "UAV Projects"],
     overlay:
       "bg-gradient-to-tr from-brand-blue/70 via-black/70 to-black/55 mix-blend-multiply",
