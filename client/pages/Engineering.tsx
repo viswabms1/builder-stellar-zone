@@ -246,7 +246,7 @@ const ENGINEERING_DEPARTMENTS: EngineeringDepartment[] = [
       "Dive into statistical computing, big data processing, intelligent automation and visual analytics.",
     image:
       "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1600&auto=format&fit=crop",
-    link: "/academics/engineering/ai-ds",
+    link: "/academics/engineering/data-science",
     highlights: ["Big Data Lab", "Predictive Models", "Visualization"],
     overlay:
       "bg-gradient-to-br from-brand-blue/70 via-brand-magenta/60 to-black/55 mix-blend-multiply",
