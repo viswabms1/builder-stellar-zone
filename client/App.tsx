@@ -447,6 +447,23 @@ function App() {
                   element={<FacultyCybersecurity />}
                 />
                 <Route path="/academics/engineering/cybersecurity/faculty/dr-dilip-kumar-jang-bahadur-saini" element={<DrDilipKumarJangBahadurSainiPage />} />
+                <Route path="/academics/engineering/cybersecurity/faculty/dr-durbadal-chattaraj" element={<DrDurbadalChattarajPage />} />
+                <Route path="/academics/engineering/cybersecurity/faculty/dr-prajwalasimha-s-n" element={<DrPrajwalasimhaSNPage />} />
+                <Route path="/academics/engineering/cybersecurity/faculty/dr-mubeen-ahmed-khan" element={<DrMubeenAhmedKhanPage />} />
+                <Route path="/academics/engineering/cybersecurity/faculty/naveen-kulkarni" element={<NaveenKulkarniPage />} />
+                <Route path="/academics/engineering/cybersecurity/faculty/sharanabasappa-tadkal" element={<SharanabasappaTadkalPage />} />
+                <Route path="/academics/engineering/cybersecurity/faculty/deepthika-karuppusamy" element={<DeepthikaKaruppusamyPage />} />
+                <Route path="/academics/engineering/cybersecurity/faculty/mr-biswajit-debnath" element={<MrBiswajitDebnathPage />} />
+                <Route path="/academics/engineering/cybersecurity/faculty/mr-joshe-raj" element={<MrJosheRajPage />} />
+                <Route path="/academics/engineering/cybersecurity/faculty/dr-dsumathi" element={<DrDSumathiPage />} />
+                <Route path="/academics/engineering/cybersecurity/faculty/dr-g-hemanth-kumar" element={<DrGHemanthKumarPage />} />
+                <Route path="/academics/engineering/cybersecurity/faculty/dr-devipriya-v-s" element={<DrDevipriyaVSPage />} />
+                <Route path="/academics/engineering/cybersecurity/faculty/dr-indushree-m" element={<DrIndushreeMPage />} />
+                <Route path="/academics/engineering/cybersecurity/faculty/vinitha-v" element={<ViníthaVPage />} />
+                <Route path="/academics/engineering/cybersecurity/faculty/ranjima-p" element={<RanjimaPPage />} />
+                <Route path="/academics/engineering/cybersecurity/faculty/ms-sayeli-dey" element={<MsSayeliDeyPage />} />
+                <Route path="/academics/engineering/cybersecurity/faculty/ms-archita-bhattacharyya" element={<MsArchitaBhattacharyyaPage />} />
+                <Route path="/academics/engineering/cybersecurity/faculty/prof-g-n-v-prasad" element={<ProfGNVPrasadPage />} />
                 <Route
                   path="/academics/engineering/electronics-communication/faculty"
                   element={<FacultyECE />}
