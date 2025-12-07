@@ -345,6 +345,7 @@ interface LabItem {
 interface NoticeItem {
   id: string;
   title: string;
+  category: "Event" | "News" | "Announcement";
   date: string;
   description: string;
   image?: string;
@@ -497,87 +498,290 @@ function NoticeBoard() {
   const notices: NoticeItem[] = [
     {
       id: "notice-1",
-      title: "B.Tech Aerospace Engineering Program Launch 2025",
-      date: "Jan 15, 2025",
-      description: "Welcome to the inaugural batch of B.Tech Aerospace Engineering at DSU with cutting-edge curriculum and industry partnerships.",
+      title: "Aerospace Innovation Summit 2025",
+      category: "Event",
+      date: "Feb 28, 2025",
+      description:
+        "International conference featuring experts from ISRO, HAL, and Boeing on the latest advancements in aerospace technology and research.",
       image: "https://images.unsplash.com/photo-1446776877081-d282a0f896e2?w=600&h=300&fit=crop",
-      link: "https://www.dsu.edu.in/images/Engineering/AE-dept/notices/Program-Launch.pdf",
+      link: "https://www.dsu.edu.in/images/Engineering/AE-dept/notices/Aerospace-Summit-2025.pdf",
     },
     {
       id: "notice-2",
-      title: "Industry Guest Lectures by Aerospace Experts",
-      date: "Feb 2025",
-      description: "Weekly sessions featuring experts from leading aerospace and defense organizations.",
+      title: "Flight Dynamics Workshop by Senior Aerospace Engineers",
+      category: "Event",
+      date: "Feb 15, 2025",
+      description:
+        "Hands-on workshop covering aircraft control systems, flight stability analysis, and real-world case studies from commercial aviation.",
       image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=300&fit=crop",
     },
     {
       id: "notice-3",
-      title: "Internship Opportunities in Aerospace Companies",
-      date: "Year-round",
-      description: "Paid internships with organizations in aviation, defense, and space technology sectors.",
+      title: "B.Tech Aerospace Program Achieves 95% Placements",
+      category: "News",
+      date: "Jan 22, 2025",
+      description:
+        "The inaugural batch of B.Tech Aerospace Engineering secures positions with leading aerospace, defense, and aviation organizations.",
       image: "https://images.unsplash.com/photo-1489515217757-5fd1be406fef?w=600&h=300&fit=crop",
-      link: "https://www.dsu.edu.in/images/Engineering/AE-dept/notices/Internships.pdf",
+      link: "https://www.dsu.edu.in/images/Engineering/AE-dept/notices/Placements-2025.pdf",
+    },
+    {
+      id: "notice-4",
+      title: "Faculty Research Published in Aerospace Journal",
+      category: "News",
+      date: "Jan 18, 2025",
+      description:
+        "Research papers on aerodynamic optimization and propulsion systems accepted at IEEE Aerospace and Electronic Systems Magazine.",
+      image: "https://images.unsplash.com/photo-1517642745138-65ad85b4953c?w=600&h=300&fit=crop",
+      link: "https://www.dsu.edu.in/images/Engineering/AE-dept/notices/Research-Publications.pdf",
+    },
+    {
+      id: "notice-5",
+      title: "Internship Registration Window Open",
+      category: "Announcement",
+      date: "Feb 10, 2025",
+      description:
+        "Students can now register for summer internships at major aerospace companies. Deadline: February 20, 2025.",
+    },
+    {
+      id: "notice-6",
+      title: "B.Tech Aerospace Curriculum Updates",
+      category: "Announcement",
+      date: "Feb 1, 2025",
+      description:
+        "New electives in UAV Design and Space Systems Engineering added to the curriculum effective from next semester.",
+      link: "https://www.dsu.edu.in/images/Engineering/AE-dept/notices/Curriculum-Updates.pdf",
     },
   ];
 
+  const getCategoryStyle = (category: NoticeItem["category"]) => {
+    switch (category) {
+      case "Event":
+        return {
+          icon: CalendarDays,
+          label: "Event",
+          className: "bg-brand-magenta/15 text-brand-magenta",
+        };
+      case "News":
+        return {
+          icon: FileText,
+          label: "News",
+          className: "bg-brand-orange/15 text-brand-orange",
+        };
+      case "Announcement":
+        return {
+          icon: ClipboardList,
+          label: "Announcement",
+          className: "bg-brand-blue/15 text-brand-blue",
+        };
+      default:
+        return {
+          icon: ClipboardList,
+          label: category,
+          className: "bg-brand-blue/15 text-brand-blue",
+        };
+    }
+  };
+
+  const events = notices.filter((n) => n.category === "Event");
+  const news = notices.filter((n) => n.category === "News");
+  const announcements = notices.filter((n) => n.category === "Announcement");
+
+  const [currentEventIndex, setCurrentEventIndex] = useState(0);
+  const [currentNewsIndex, setCurrentNewsIndex] = useState(0);
+
+  useEffect(() => {
+    if (events.length === 0) return;
+    const interval = setInterval(() => {
+      setCurrentEventIndex((prev) => (prev + 1) % events.length);
+    }, 6000);
+    return () => clearInterval(interval);
+  }, [events.length]);
+
+  useEffect(() => {
+    if (news.length === 0) return;
+    const interval = setInterval(() => {
+      setCurrentNewsIndex((prev) => (prev + 1) % news.length);
+    }, 6000);
+    return () => clearInterval(interval);
+  }, [news.length]);
+
+  const renderCarousel = (title: string, items: NoticeItem[], color: string, currentIndex: number, setCurrentIndex: (idx: number) => void) => {
+    if (items.length === 0) {
+      return (
+        <div className="space-y-4">
+          <div className={`flex items-center gap-2 px-4 py-3 rounded-xl border-l-4 ${
+            color === "magenta"
+              ? "border-brand-magenta bg-brand-magenta/10"
+              : "border-brand-orange bg-brand-orange/10"
+          }`}>
+            <h3 className={`headline-4 font-display ${color === "magenta" ? "text-brand-magenta" : "text-brand-orange"}`}>{title}</h3>
+          </div>
+          <p className="text-xs text-foreground/60 italic p-4 text-center">No items to display</p>
+        </div>
+      );
+    }
+
+    const currentItem = items[currentIndex];
+
+    return (
+      <div className="space-y-4">
+        <div className={`flex items-center gap-2 px-4 py-3 rounded-xl border-l-4 ${
+          color === "magenta"
+            ? "border-brand-magenta bg-brand-magenta/10"
+            : "border-brand-orange bg-brand-orange/10"
+        }`}>
+          <h3 className={`headline-4 font-display ${color === "magenta" ? "text-brand-magenta" : "text-brand-orange"}`}>{title}</h3>
+          <Badge className="ml-auto text-xs">{currentIndex + 1} / {items.length}</Badge>
+        </div>
+
+        <Card className="group overflow-hidden rounded-2xl border-2 border-border/30 bg-card/40 backdrop-blur-sm">
+          {currentItem.image && (
+            <div className="relative h-48 overflow-hidden">
+              <img
+                src={currentItem.image}
+                alt={currentItem.title}
+                className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
+              />
+            </div>
+          )}
+          <CardContent className="p-4 space-y-3">
+            <div className="flex items-start justify-between gap-2">
+              <div className="flex-1">
+                <h4 className="font-display font-semibold text-sm text-foreground mb-2 line-clamp-2">{currentItem.title}</h4>
+                <p className="text-xs text-foreground/70 line-clamp-2">{currentItem.description}</p>
+              </div>
+            </div>
+            <div className="flex items-center justify-between pt-2 border-t border-border/20">
+              <span className="text-xs font-semibold text-foreground/60">{currentItem.date}</span>
+              {currentItem.link && (
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="h-6 px-2 text-xs bg-brand-blue/10 text-brand-blue hover:bg-brand-blue/20"
+                  asChild
+                >
+                  <a href={currentItem.link} target="_blank" rel="noreferrer">
+                    <Download className="h-3 w-3 mr-1" />
+                    PDF
+                  </a>
+                </Button>
+              )}
+            </div>
+          </CardContent>
+        </Card>
+
+        <div className="flex items-center justify-between gap-2">
+          <div className="flex gap-1">
+            {items.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setCurrentIndex(idx)}
+                className={`h-1.5 rounded-full transition-all ${
+                  idx === currentIndex
+                    ? color === "magenta"
+                      ? "bg-brand-magenta w-6"
+                      : "bg-brand-orange w-6"
+                    : "bg-border/40 w-1.5 hover:bg-border/60"
+                }`}
+              />
+            ))}
+          </div>
+          <div className="flex gap-1">
+            <Button
+              variant="outline"
+              size="sm"
+              className="h-7 px-2 text-xs"
+              onClick={() => setCurrentIndex((prev) => (prev - 1 + items.length) % items.length)}
+            >
+              ←
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              className="h-7 px-2 text-xs"
+              onClick={() => setCurrentIndex((prev) => (prev + 1) % items.length)}
+            >
+              →
+            </Button>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   return (
-    <section className="px-6 py-16 bg-gradient-to-r from-brand-blue/5 via-brand-blue/5 to-brand-blue/5">
-      <div className="max-w-7xl mx-auto space-y-8">
-        <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+    <section className="px-6 py-16">
+      <div className="mx-auto max-w-7xl space-y-8">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <h2 className="headline-3 font-display">Notice Board</h2>
-            <p className="text-sm text-foreground/60 font-body">Latest updates from Aerospace Engineering</p>
+            <h2 className="headline-2 mb-3 font-display">
+              <span className="text-foreground">Department </span>
+              <span className="bg-brand-gradient bg-clip-text text-transparent">
+                Notice Board
+              </span>
+            </h2>
+            <p className="max-w-2xl text-sm text-foreground sm:text-base font-body">
+              Stay updated with upcoming events, news, and important announcements from the Aerospace Engineering department.
+            </p>
           </div>
           <Badge className="w-fit rounded-full bg-brand-blue/15 px-4 py-2 text-xs font-semibold text-brand-blue border border-brand-blue/20">
-            {notices.length} updates
+            Updated weekly
           </Badge>
         </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {notices.length > 0 ? (
-            notices.map((notice) => (
-              <Card
-                key={notice.id}
-                className="group border border-border/40 bg-card/50 shadow-sm transition hover:-translate-y-1 hover:border-brand-blue/40 hover:shadow-brand-blue/5"
-              >
-                {notice.image && (
-                  <div className="relative h-32 overflow-hidden rounded-t-lg">
-                    <img
-                      src={notice.image}
-                      alt={notice.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-                )}
-                <CardHeader className="pb-2">
-                  <div className="flex items-start justify-between gap-2 mb-2">
-                    <span className="text-xs font-semibold text-foreground/60">{notice.date}</span>
-                    {notice.link && (
-                      <Button
-                        variant="ghost"
-                        size="sm"
-                        className="h-6 px-2 text-xs bg-brand-blue/10 text-brand-blue hover:bg-brand-blue/20"
-                        asChild
-                      >
-                        <a href={notice.link} target="_blank" rel="noreferrer">
-                          <Download className="h-3 w-3" />
-                        </a>
-                      </Button>
+
+        <div className="grid lg:grid-cols-2 gap-8">
+          <div>
+            {renderCarousel("Events", events, "magenta", currentEventIndex, setCurrentEventIndex)}
+          </div>
+          <div>
+            {renderCarousel("News", news, "orange", currentNewsIndex, setCurrentNewsIndex)}
+          </div>
+        </div>
+
+        <div className="space-y-4">
+          <div className="flex items-center gap-2 px-4 py-3 rounded-xl border-l-4 border-brand-blue bg-brand-blue/10">
+            <h3 className="headline-4 font-display text-brand-blue">Announcements</h3>
+            <Badge className="ml-auto text-xs">{announcements.length}</Badge>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            {announcements.length > 0 ? (
+              announcements.map((notice) => (
+                <Card
+                  key={notice.id}
+                  className="group border border-border/40 bg-card/50 shadow-sm transition hover:-translate-y-1 hover:border-brand-magenta/40 hover:shadow-brand-magenta/5"
+                >
+                  <CardHeader className="pb-2">
+                    <div className="flex items-start justify-between gap-2 mb-2">
+                      <span className="text-xs font-semibold text-foreground/60">{notice.date}</span>
+                      {notice.link && (
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          className="h-6 px-2 text-xs bg-brand-blue/10 text-brand-blue hover:bg-brand-blue/20"
+                          asChild
+                        >
+                          <a href={notice.link} target="_blank" rel="noreferrer">
+                            <Download className="h-3 w-3" />
+                          </a>
+                        </Button>
+                      )}
+                    </div>
+                    <CardTitle className="text-sm font-display text-foreground line-clamp-2">
+                      {notice.title}
+                    </CardTitle>
+                    {notice.description && (
+                      <CardDescription className="text-xs line-clamp-2 mt-1">
+                        {notice.description}
+                      </CardDescription>
                     )}
-                  </div>
-                  <CardTitle className="text-sm font-display text-foreground line-clamp-2">
-                    {notice.title}
-                  </CardTitle>
-                  {notice.description && (
-                    <CardDescription className="text-xs line-clamp-2 mt-1">
-                      {notice.description}
-                    </CardDescription>
-                  )}
-                </CardHeader>
-              </Card>
-            ))
-          ) : (
-            <p className="col-span-full text-center text-sm text-foreground/60 py-8">No announcements yet</p>
-          )}
+                  </CardHeader>
+                </Card>
+              ))
+            ) : (
+              <p className="col-span-full text-center text-sm text-foreground/60 py-8">No announcements yet</p>
+            )}
+          </div>
         </div>
       </div>
     </section>
