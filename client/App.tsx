@@ -187,6 +187,9 @@ import DrKartikSTandelPage from "./pages/faculty/DrKartikSTandel";
 import DrSrinathRamakrishnanPage from "./pages/faculty/DrSrinathRamakrishnan";
 import MsSwagatikaPage from "./pages/faculty/MsSwagatika";
 import DrVivekAnandPage from "./pages/faculty/DrVivekAnand";
+import DeptAIRobotics from "./pages/DeptAIRobotics";
+import FacultyAIRobotics from "./pages/FacultyAIRobotics";
+import DrPramodKumarNaikPage from "./pages/faculty/DrPramodKumarNaik";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 
