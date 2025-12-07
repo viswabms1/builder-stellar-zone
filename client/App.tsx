@@ -195,6 +195,9 @@ import DrGangadharTGPage from "./pages/faculty/DrGangadharTG";
 import DrBharathKumarSPage from "./pages/faculty/DrBharathKumarS";
 import MrVikasVishwakarmaPage from "./pages/faculty/MrVikasVishwakarma";
 import MrLalitAshutoshPage from "./pages/faculty/MrLalitAshutosh";
+import DeptDataScience from "./pages/DeptDataScience";
+import FacultyDataScience from "./pages/FacultyDataScience";
+import DrShailaSGPage from "./pages/faculty/DrShailaSG";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 
