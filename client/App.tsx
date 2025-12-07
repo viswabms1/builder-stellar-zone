@@ -190,6 +190,11 @@ import DrVivekAnandPage from "./pages/faculty/DrVivekAnand";
 import DeptAIRobotics from "./pages/DeptAIRobotics";
 import FacultyAIRobotics from "./pages/FacultyAIRobotics";
 import DrPramodKumarNaikPage from "./pages/faculty/DrPramodKumarNaik";
+import DrRupamBhaduriPage from "./pages/faculty/DrRupamBhaduri";
+import DrGangadharTGPage from "./pages/faculty/DrGangadharTG";
+import DrBharathKumarSPage from "./pages/faculty/DrBharathKumarS";
+import MrVikasVishwakarmaPage from "./pages/faculty/MrVikasVishwakarma";
+import MrLalitAshutoshPage from "./pages/faculty/MrLalitAshutosh";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 
