@@ -19,7 +19,6 @@ export const translations = {
       research: 'Research',
     },
     hero: {
-      tagline: 'AI-Powered Education',
       mainHeading: "India's AI First University",
       subheading: "Dayananda Sagar University\nPowered by NVIDIA",
       headline: 'Shape Your Future at Dayananda Sagar University',
@@ -417,7 +416,6 @@ export const translations = {
       research: 'अनुसंधान',
     },
     hero: {
-      tagline: 'एआई-संचालित शिक्षा',
       mainHeading: 'भारत का AI प्रथम विश्वविद्यालय',
       subheading: 'दयानंद सागर विश्वविद्यालय\nNVIDIA द्वारा संचालित',
       headline: 'दयानंद सागर विश्वविद्यालय में अपना भविष्य आकार दें',
