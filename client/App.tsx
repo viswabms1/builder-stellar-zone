@@ -176,6 +176,17 @@ import AbhijithNPage from "./pages/faculty/AbhijithN";
 import DeptAerospace from "./pages/DeptAerospace";
 import FacultyAerospace from "./pages/FacultyAerospace";
 import DrNagarajaSRPage from "./pages/faculty/DrNagarajaSR";
+import DrBVNRamakumarPage from "./pages/faculty/DrBVNRamakumar";
+import DrPrashantheKumarPage from "./pages/faculty/DrPrashantheKumar";
+import DrAvinashKumarSauravPage from "./pages/faculty/DrAvinashKumarSaurav";
+import ProfSripadKulkarniPage from "./pages/faculty/ProfSripadKulkarni";
+import DrAjeySinghPage from "./pages/faculty/DrAjeySingh";
+import DrGKSuryanarayanaPage from "./pages/faculty/DrGKSuryanarayana";
+import DrMathewChackoPage from "./pages/faculty/DrMathewChacko";
+import DrKartikSTandelPage from "./pages/faculty/DrKartikSTandel";
+import DrSrinathRamakrishnanPage from "./pages/faculty/DrSrinathRamakrishnan";
+import MsSwagatikaPage from "./pages/faculty/MsSwagatika";
+import DrVivekAnandPage from "./pages/faculty/DrVivekAnand";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 
