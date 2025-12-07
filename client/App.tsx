@@ -365,6 +365,11 @@ function App() {
                   element={<FacultyAIRobotics />}
                 />
                 <Route path="/academics/engineering/ai-robotics/faculty/dr-pramod-kumar-naik" element={<DrPramodKumarNaikPage />} />
+                <Route path="/academics/engineering/ai-robotics/faculty/dr-rupam-bhaduri" element={<DrRupamBhaduriPage />} />
+                <Route path="/academics/engineering/ai-robotics/faculty/dr-gangadhar-t-g" element={<DrGangadharTGPage />} />
+                <Route path="/academics/engineering/ai-robotics/faculty/dr-bharath-kumar-s" element={<DrBharathKumarSPage />} />
+                <Route path="/academics/engineering/ai-robotics/faculty/mr-vikas-vishwakarma" element={<MrVikasVishwakarmaPage />} />
+                <Route path="/academics/engineering/ai-robotics/faculty/mr-lalit-ashutosh" element={<MrLalitAshutoshPage />} />
                 <Route
                   path="/academics/engineering/electronics-communication/faculty"
                   element={<FacultyECE />}
