@@ -932,7 +932,6 @@ function HeroVideo() {
       <video
         ref={videoRef}
         src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2Fca43c77a955c4e4b86175d41c68120cf?alt=media&token=45cdb70a-71df-43de-8859-de7bc907f167&apiKey=4aa279a8430d441dba9c55f659831878"
-        defaultMuted
         muted={isMuted}
         playsInline
         className="absolute inset-0 w-full h-full object-cover"
