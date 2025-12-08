@@ -344,7 +344,7 @@ export default function Index() {
         color: 'brand-magenta',
         delay: '0.4s',
         href: '/academics/basic-applied-sciences',
-        image: 'https://images.pexels.com/photos/2280571/pexels-photo-2280571.jpeg?auto=compress&cs=tinysrgb&w=800'
+        image: 'https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fa85d16e44f15476a898d19f52b59f404?format=webp&width=800'
       },
       {
         key: 'health',
