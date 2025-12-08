@@ -34,6 +34,12 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import {
+  getDepartmentEvents,
+  getSchoolNews,
+  getSchoolAnnouncements,
+  type NoticeItem as ImportedNoticeItem,
+} from "@/data/engineering-events";
 
 const HERO_IMAGE = "https://www.dsu.edu.in/images/Engineering/engg-landing.jpg";
 
