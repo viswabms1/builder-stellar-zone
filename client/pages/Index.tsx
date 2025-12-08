@@ -581,7 +581,7 @@ export default function Index() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-0">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-0 auto-rows-max">
             {getSchoolsData().map((school, index) => {
               const styles = [
                 { bg: 'bg-orange-500/10', border: 'border-orange-500/20' },
@@ -598,7 +598,7 @@ export default function Index() {
               return (
                 <div
                   key={index}
-                  className={`rounded-none overflow-hidden transition-all duration-300 group hover:shadow-lg hover:shadow-brand-magenta/10 hover:-translate-y-2 cursor-pointer`}
+                  className={`rounded-none overflow-hidden transition-all duration-300 group hover:shadow-lg hover:shadow-brand-magenta/10 hover:-translate-y-2 cursor-pointer h-full`}
                   style={{ animationDelay: school.delay }}
                 >
                   {/* Image Container */}
