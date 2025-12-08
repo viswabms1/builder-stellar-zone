@@ -66,23 +66,23 @@ export default function CampusLife() {
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 leading-tight text-white">
               {t('campusLife.title')}
             </h1>
-
-            <a
-              href="https://dsu.edu.in/virtual-tour/"
-              target="_blank"
-              rel="noreferrer"
-              className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-            >
-              <Button
-                size="lg"
-                className="bg-orange-500 hover:bg-orange-600 text-foreground px-10 py-6 text-lg font-semibold rounded-full inline-flex items-center"
-              >
-                Virtual Campus Tour
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
-            </a>
           </div>
         </div>
+
+        <a
+          href="https://dsu.edu.in/virtual-tour/"
+          target="_blank"
+          rel="noreferrer"
+          className="absolute bottom-8 left-6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2 focus-visible:ring-offset-background z-10"
+        >
+          <Button
+            size="lg"
+            className="bg-orange-500 hover:bg-orange-600 text-foreground px-10 py-6 text-lg font-semibold rounded-full inline-flex items-center"
+          >
+            Virtual Campus Tour
+            <ArrowRight className="w-5 h-5 ml-2" />
+          </Button>
+        </a>
       </section>
 
       {/* Featured Facilities with Large Images */}
