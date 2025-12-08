@@ -360,7 +360,7 @@ export default function Index() {
         color: 'brand-magenta',
         delay: '0.7s',
         href: '/academics/design/bdesign',
-        image: 'https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F3cc564d539a1455b8b3b08a8fce320b7?format=webp&width=800'
+        image: 'https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F2633bc781ba34a32841a6e9929b3e6d5?format=webp&width=800'
       },
       {
         key: 'medical',
