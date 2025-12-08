@@ -960,9 +960,6 @@ function HeroVideo() {
           <h1 className="text-sm md:text-base text-white/80 mb-6 leading-tight font-display">
             Shape the Future of Technology
           </h1>
-          <p className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed max-w-xl font-display">
-            Become an industry-ready engineer with cutting-edge curriculum, world-class labs, and innovation-focused mentorship
-          </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
             <a
