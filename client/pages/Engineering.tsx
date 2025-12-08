@@ -447,45 +447,94 @@ const INNOVATION_LABS = [
   "IBM Centre of Excellence",
 ];
 
-type NewsItem = {
-  image: string;
-  category: string;
+type NoticeItem = {
   title: string;
-  excerpt: string;
+  description: string;
+  category: "Event" | "News" | "Announcement";
   date: string;
-  color: "brand-magenta" | "brand-blue" | "brand-orange";
+  image?: string;
+  link?: string;
+  department?: string;
 };
 
-const FEATURED_NEWS: NewsItem[] = [
+const ENGINEERING_NOTICES: NoticeItem[] = [
   {
+    title: "DSU Engineering Students Win International Robotics Competition",
+    description:
+      "CSE department team advances to global finals in the International Robotics Olympiad with autonomous system design and innovation.",
+    category: "Event",
+    date: "Nov 12, 2025",
     image:
       "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fbf6a54aff7814535b71eda78a3d5f95e?format=webp&width=800",
-    category: "Excellence",
-    title: "Engineering Students Win International Robotics Competition",
-    excerpt:
-      "DSU Engineering team advances to global finals in the International Robotics Olympiad with autonomous system design and innovation.",
-    date: "Nov 12, 2025",
-    color: "brand-magenta",
+    department: "CSE",
   },
   {
+    title: "Aerospace Engineering Hackathon 2025",
+    description:
+      "Two-day innovation challenge for aerospace students featuring real-world problem statements from leading aerospace companies.",
+    category: "Event",
+    date: "Jan 10, 2025",
+    image:
+      "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1600&auto=format&fit=crop",
+    department: "Aerospace",
+  },
+  {
+    title: "Mechanical Engineering Workshop: Advanced Robotics",
+    description:
+      "Hands-on workshop on industrial robotics and automation technologies with industry experts from leading robotics companies.",
+    category: "Event",
+    date: "Jan 5, 2025",
+    image:
+      "https://images.unsplash.com/photo-1581092162562-40038f51df21?q=80&w=1600&auto=format&fit=crop",
+    department: "Mechanical",
+  },
+  {
+    title: "Faculty Patent Granted for Advanced Semiconductor Technology",
+    description:
+      "ECE department researchers receive patent for innovation in VLSI design and semiconductor manufacturing processes.",
+    category: "News",
+    date: "Nov 8, 2025",
     image:
       "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Ff67a08f95a24431783dc54fc189e605b?format=webp&width=800",
-    category: "Research",
-    title: "Faculty Patent Granted for Advanced Semiconductor Technology",
-    excerpt:
-      "DSU Engineering researchers receive patent for innovation in VLSI design and semiconductor manufacturing processes.",
-    date: "Nov 8, 2025",
-    color: "brand-blue",
+    department: "ECE",
   },
   {
+    title: "School of Engineering Receives NAAC Accreditation",
+    description:
+      "School of Engineering achieves excellent accreditation status highlighting commitment to academic excellence and innovation.",
+    category: "News",
+    date: "Jan 15, 2025",
+    image:
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1600&auto=format&fit=crop",
+    department: "Engineering",
+  },
+  {
+    title: "96% Placement Rate for Engineering 2024-25 Batch",
+    description:
+      "Engineering graduates placed at world-leading tech and manufacturing companies with average package exceeding ₹18 LPA.",
+    category: "News",
+    date: "Nov 1, 2025",
     image:
       "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2Fd56a1c898842468187e8ff3260f0cdda?alt=media&token=6cb58cdf-a202-461d-b774-09ce61d439c3&apiKey=4aa279a8430d441dba9c55f659831878",
-    category: "Placement",
-    title: "96% Placement Rate for Engineering 2024-25 Batch",
-    excerpt:
-      "Engineering graduates placed at world-leading tech and manufacturing companies with average package exceeding ₹18 LPA.",
-    date: "Nov 1, 2025",
-    color: "brand-orange",
+    department: "Engineering",
+  },
+  {
+    title: "B.Tech Spring Semester Registration Extended",
+    description:
+      "Registration deadline has been extended to January 20, 2025. All students must complete registration by this date.",
+    category: "Announcement",
+    date: "Dec 28, 2024",
+    department: "Engineering",
+  },
+  {
+    title: "Research Symposium: Innovation in Manufacturing",
+    description:
+      "Annual research symposium featuring student and faculty research papers in advanced manufacturing and Industry 4.0 technologies.",
+    category: "Event",
+    date: "Feb 15, 2025",
+    image:
+      "https://images.unsplash.com/photo-1559027615-cd4628902d4a?q=80&w=1600&auto=format&fit=crop",
+    department: "Mechanical",
   },
 ];
 
