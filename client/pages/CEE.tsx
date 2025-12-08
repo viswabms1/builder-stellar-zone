@@ -30,13 +30,6 @@ import {
 } from "@/components/ui/card";
 import { DeanSection, type DeanInfo } from "@/components/DeanSection";
 
-type Highlight = {
-  title: string;
-  description: string;
-  image: string;
-  icon: LucideIcon;
-  stat?: string;
-};
 
 type ProgramCard = {
   name: string;
@@ -84,41 +77,6 @@ type Resource = {
 const HERO_IMAGE =
   "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2000&auto=format&fit=crop";
 
-const USP_HIGHLIGHTS: Highlight[] = [
-  {
-    title: "Executive-First Curriculum",
-    description:
-      "Programs tailored for working professionals balancing strategic leadership, innovation and digital business transformation.",
-    image:
-      "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1600&auto=format&fit=crop",
-    icon: Sparkle,
-    stat: "Weekend Format",
-  },
-  {
-    title: "Integrated Ecosystem",
-    description:
-      "Innovation labs, incubation centres and industry partnerships create end-to-end upskilling experiences.",
-    image:
-      "https://images.unsplash.com/photo-1551836022-4c4c79ecde51?q=80&w=1600&auto=format&fit=crop",
-    icon: Layers,
-  },
-  {
-    title: "CXO Mentorship",
-    description:
-      "Global leaders engage through speaker series, board of studies and bespoke coaching clinics.",
-    image:
-      "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?q=80&w=1600&auto=format&fit=crop",
-    icon: Users,
-  },
-  {
-    title: "Career Acceleration",
-    description:
-      "Dedicated leadership assessments, executive coaching and international immersions unlock growth opportunities.",
-    image:
-      "https://images.unsplash.com/photo-1532619187608-e5375cab36aa?q=80&w=1600&auto=format&fit=crop",
-    icon: Compass,
-  },
-];
 
 const OFFERINGS: Offering[] = [
   {
@@ -604,32 +562,6 @@ export default function CEE() {
         </div>
       </section>
 
-      <section
-        id="usp"
-        className="bg-background px-6 py-20"
-      >
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-16 text-center">
-            <Badge
-              className="bg-brand-magenta/15 text-brand-magenta"
-              variant="secondary"
-            >
-              Executive Differentiators
-            </Badge>
-            <h2 className="mt-6 font-display text-4xl md:text-5xl">
-              Why Leaders Choose DSU CEE
-            </h2>
-            <p className="mt-4 text-lg text-foreground/80 max-w-2xl mx-auto font-display">
-              Excellence through executive education, global perspective, and industry leadership
-            </p>
-          </div>
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-            {USP_HIGHLIGHTS.map((highlight, index) => (
-              <HighlightCard key={highlight.title} highlight={highlight} index={index} />
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Dean's Message Section */}
       <DeanSection dean={DEAN_INFO} />
