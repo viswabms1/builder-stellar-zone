@@ -741,7 +741,7 @@ function ProgramCardComponent({ program }: { program: ProgramCard }) {
 }
 
 function HeroVideo() {
-  const [isMuted, setIsMuted] = useState(false);
+  const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   const toggleMute = () => {
