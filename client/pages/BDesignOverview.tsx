@@ -26,13 +26,6 @@ import {
 } from "@/components/ui/card";
 import { DeanSection, type DeanInfo } from "@/components/DeanSection";
 
-type Highlight = {
-  title: string;
-  description: string;
-  image: string;
-  icon: LucideIcon;
-  stat?: string;
-};
 
 type StructurePoint = {
   title: string;
@@ -73,41 +66,6 @@ type NewsItem = {
 const HERO_IMAGE =
   "https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=2000&auto=format&fit=crop";
 
-const USP_HIGHLIGHTS: Highlight[] = [
-  {
-    title: "Project-Based Learning",
-    description:
-      "Every semester features micro, mini and major projects to transform ideas into launch-ready prototypes.",
-    image:
-      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1600&auto=format&fit=crop",
-    icon: PenTool,
-    stat: "160 Credits",
-  },
-  {
-    title: "Global Immersions & Internships",
-    description:
-      "Mandatory three-month industry or overseas research internship plus monthly workshops with design icons.",
-    image:
-      "https://images.unsplash.com/photo-1523475472560-d2df97ec485c?q=80&w=1600&auto=format&fit=crop",
-    icon: Compass,
-  },
-  {
-    title: "Interdisciplinary Foundation",
-    description:
-      "Common foundation and liberal studies build a broad, human-centred design perspective across specialisations.",
-    image:
-      "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?q=80&w=1600&auto=format&fit=crop",
-    icon: Award,
-  },
-  {
-    title: "Industry Studios",
-    description:
-      "Design & Innovation Centre, IBM CoE, automotive and healthcare labs support experimentation with emerging tech.",
-    image:
-      "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1600&auto=format&fit=crop",
-    icon: Presentation,
-  },
-];
 
 const PROGRAM_CARDS: ProgramCard[] = [
   {
@@ -493,60 +451,6 @@ export default function BDesignOverview() {
         <HeroVideo />
       </section>
 
-      <section
-        id="usp"
-        className="bg-background px-6 py-20"
-      >
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-16 text-center">
-            <Badge
-              className="bg-brand-magenta/15 text-brand-magenta"
-              variant="secondary"
-            >
-              Unique Strengths (USP)
-            </Badge>
-            <h2 className="mt-6 font-display text-4xl md:text-5xl">
-              Why Designers Choose DSU
-            </h2>
-            <p className="mt-4 text-lg text-foreground/80 max-w-2xl mx-auto font-display">
-              Excellence through creative excellence, industry collaboration, and innovation
-            </p>
-          </div>
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-            {USP_HIGHLIGHTS.map((highlight, index) => {
-              const Icon = highlight.icon;
-              return (
-                <div key={highlight.title} className="group flex flex-col h-full">
-                  {/* Image Container */}
-                  <div className="relative w-full h-64 overflow-hidden rounded-lg mb-6">
-                    <img
-                      src={highlight.image}
-                      alt={highlight.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                  </div>
-
-                  {/* Text Content Below Image */}
-                  <div className="flex-1 flex flex-col">
-                    <h3 className="text-xl font-bold mb-3 font-display text-foreground group-hover:text-brand-magenta transition-colors">
-                      {highlight.title}
-                    </h3>
-                    <p className="text-sm font-body text-foreground/80 leading-relaxed mb-4">
-                      {highlight.description}
-                    </p>
-                    {highlight.stat ? (
-                      <div className="text-xs uppercase tracking-wide font-semibold text-foreground/60 font-body mb-4">
-                        {highlight.stat}
-                      </div>
-                    ) : null}
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
 
       {/* Dean's Message Section */}
       <DeanSection dean={DEAN_INFO} />
@@ -807,14 +711,6 @@ export default function BDesignOverview() {
                 className="hover:text-brand-magenta"
               >
                 Programs Overview
-              </a>
-              <a
-                href="https://www.dsu.edu.in/bdesign/highlights"
-                target="_blank"
-                rel="noreferrer"
-                className="hover:text-brand-magenta"
-              >
-                Highlights & USP
               </a>
               <a
                 href="https://www.dsu.edu.in/bdesign/newsletter"
