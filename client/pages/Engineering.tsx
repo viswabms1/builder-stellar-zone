@@ -489,6 +489,66 @@ const ENGINEERING_NOTICES: NoticeItem[] = [
     department: "Mechanical",
   },
   {
+    title: "Data Science Bootcamp: Machine Learning in Production",
+    description:
+      "Intensive bootcamp covering practical ML implementation, model deployment, and real-world data engineering challenges.",
+    category: "Event",
+    date: "Jan 22, 2025",
+    image:
+      "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1600&auto=format&fit=crop",
+    department: "Data Science",
+  },
+  {
+    title: "Cybersecurity Workshop: Ethical Hacking & Penetration Testing",
+    description:
+      "Hands-on workshop on security vulnerabilities, penetration testing methodologies, and ethical hacking frameworks.",
+    category: "Event",
+    date: "Jan 28, 2025",
+    image:
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=1600&auto=format&fit=crop",
+    department: "Cybersecurity",
+  },
+  {
+    title: "AI & ML Symposium: Deep Learning Applications",
+    description:
+      "Conference featuring keynotes from AI researchers, panel discussions, and student research presentations on neural networks and deep learning.",
+    category: "Event",
+    date: "Feb 3, 2025",
+    image:
+      "https://images.unsplash.com/photo-1535990379754-5a13b3a0de4a?q=80&w=1600&auto=format&fit=crop",
+    department: "AI & ML",
+  },
+  {
+    title: "AI Robotics Demo Day: Student Projects Showcase",
+    description:
+      "Live demonstration of student robotics projects including autonomous vehicles, drone applications, and industrial automation systems.",
+    category: "Event",
+    date: "Feb 10, 2025",
+    image:
+      "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=1600&auto=format&fit=crop",
+    department: "AI Robotics",
+  },
+  {
+    title: "Research Symposium: Innovation in Manufacturing",
+    description:
+      "Annual research symposium featuring student and faculty research papers in advanced manufacturing and Industry 4.0 technologies.",
+    category: "Event",
+    date: "Feb 15, 2025",
+    image:
+      "https://images.unsplash.com/photo-1559027615-cd4628902d4a?q=80&w=1600&auto=format&fit=crop",
+    department: "Mechanical",
+  },
+  {
+    title: "ECE Innovation Lab: Embedded Systems & IoT Workshop",
+    description:
+      "Practical workshop on designing embedded systems, IoT devices, and wireless communication protocols using latest microcontrollers.",
+    category: "Event",
+    date: "Jan 18, 2025",
+    image:
+      "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1600&auto=format&fit=crop",
+    department: "ECE",
+  },
+  {
     title: "Faculty Patent Granted for Advanced Semiconductor Technology",
     description:
       "ECE department researchers receive patent for innovation in VLSI design and semiconductor manufacturing processes.",
@@ -519,6 +579,56 @@ const ENGINEERING_NOTICES: NoticeItem[] = [
     department: "Engineering",
   },
   {
+    title: "CSE Faculty Publishes Research in Top-Tier IEEE Journal",
+    description:
+      "Department faculty member's research on distributed systems and cloud computing accepted in IEEE Transactions on Software Engineering.",
+    category: "News",
+    date: "Dec 15, 2024",
+    image:
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1600&auto=format&fit=crop",
+    department: "CSE",
+  },
+  {
+    title: "Aerospace Students Develop Lightweight Composite Materials",
+    description:
+      "Student research team successfully develops and tests advanced composite materials for aerospace applications with 30% weight reduction.",
+    category: "News",
+    date: "Dec 10, 2024",
+    image:
+      "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1600&auto=format&fit=crop",
+    department: "Aerospace",
+  },
+  {
+    title: "Data Science Graduates Achieve 100% Placement in Tech Industry",
+    description:
+      "First batch of Data Science program graduates successfully placed at Google, Amazon, and other leading tech companies.",
+    category: "News",
+    date: "Nov 25, 2024",
+    image:
+      "https://images.unsplash.com/photo-1516937941344-00b4b0ba8c00?q=80&w=1600&auto=format&fit=crop",
+    department: "Data Science",
+  },
+  {
+    title: "Cybersecurity Team Wins National Capture The Flag Competition",
+    description:
+      "DSU Cybersecurity team wins national CTF competition demonstrating exceptional skills in vulnerability assessment and exploitation.",
+    category: "News",
+    date: "Nov 18, 2024",
+    image:
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=1600&auto=format&fit=crop",
+    department: "Cybersecurity",
+  },
+  {
+    title: "AI & Robotics Initiative Receives Industry Funding",
+    description:
+      "School of Engineering secures ₹2 crore funding from leading tech companies for AI and robotics research and infrastructure development.",
+    category: "News",
+    date: "Nov 5, 2024",
+    image:
+      "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=1600&auto=format&fit=crop",
+    department: "AI Robotics",
+  },
+  {
     title: "B.Tech Spring Semester Registration Extended",
     description:
       "Registration deadline has been extended to January 20, 2025. All students must complete registration by this date.",
@@ -527,14 +637,44 @@ const ENGINEERING_NOTICES: NoticeItem[] = [
     department: "Engineering",
   },
   {
-    title: "Research Symposium: Innovation in Manufacturing",
+    title: "Mid-Semester Exam Schedule Released",
     description:
-      "Annual research symposium featuring student and faculty research papers in advanced manufacturing and Industry 4.0 technologies.",
-    category: "Event",
-    date: "Feb 15, 2025",
-    image:
-      "https://images.unsplash.com/photo-1559027615-cd4628902d4a?q=80&w=1600&auto=format&fit=crop",
+      "Mid-semester examinations will commence from February 3, 2025. Complete timetable available on the student portal.",
+    category: "Announcement",
+    date: "Dec 20, 2024",
+    department: "Engineering",
+  },
+  {
+    title: "Campus Maintenance Notice: Library Renovation",
+    description:
+      "Central library will be temporarily closed from January 5-15 for infrastructure upgrades. Alternative reading rooms available.",
+    category: "Announcement",
+    date: "Dec 18, 2024",
+    department: "Engineering",
+  },
+  {
+    title: "Industrial Visit: Manufacturing Excellence in Automotive Sector",
+    description:
+      "All Mechanical Engineering students are invited to visit leading automotive manufacturing plant on January 25, 2025.",
+    category: "Announcement",
+    date: "Dec 16, 2024",
     department: "Mechanical",
+  },
+  {
+    title: "Project Submission Deadline Extension",
+    description:
+      "Final year project submission deadline extended to January 31, 2025. No further extensions will be granted.",
+    category: "Announcement",
+    date: "Dec 14, 2024",
+    department: "Engineering",
+  },
+  {
+    title: "Guest Lecture: Industry Trends in Cloud Computing",
+    description:
+      "Industry expert from AWS will deliver guest lecture on cloud architecture and emerging technologies on January 12, 2025.",
+    category: "Announcement",
+    date: "Dec 12, 2024",
+    department: "CSE",
   },
 ];
 
