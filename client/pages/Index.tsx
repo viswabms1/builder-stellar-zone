@@ -637,51 +637,6 @@ export default function Index() {
                           </h3>
                         )}
                       </div>
-
-                      <div className="space-y-3">
-                        <p className="text-xs font-semibold text-foreground/60 uppercase tracking-wider">
-                          Popular Programs:
-                        </p>
-                        <div className="flex flex-wrap gap-2">
-                          {school.programs.slice(0, 3).map((program, idx) =>
-                            school.title === "Engineering" &&
-                            program === "B.Tech CSE" ? (
-                              <Link
-                                key={idx}
-                                to="/academics/engineering/computer-science"
-                              >
-                                <Badge
-                                  variant="secondary"
-                                  className="text-xs font-body bg-foreground/10 text-foreground hover:bg-foreground/20 cursor-pointer !border-0"
-                                >
-                                  {program}
-                                </Badge>
-                              </Link>
-                            ) : school.title === "Engineering" &&
-                            program === "B.Tech ECE" ? (
-                              <Link
-                                key={idx}
-                                to="/academics/engineering/electronics-communication"
-                              >
-                                <Badge
-                                  variant="secondary"
-                                  className="text-xs font-body bg-foreground/10 text-foreground hover:bg-foreground/20 cursor-pointer !border-0"
-                                >
-                                  {program}
-                                </Badge>
-                              </Link>
-                            ) : (
-                              <Badge
-                                key={idx}
-                                variant="secondary"
-                                className="text-xs font-body bg-foreground/10 text-foreground !border-0"
-                              >
-                                {program}
-                              </Badge>
-                            ),
-                          )}
-                        </div>
-                      </div>
                     </div>
 
                     {school.href ? (
