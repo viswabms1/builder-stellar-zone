@@ -595,105 +595,118 @@ export default function Index() {
               return (
                 <div
                   key={index}
-                  className={`${style.bg} ${style.border} border rounded-none min-h-64 p-8 flex flex-col justify-between transition-all duration-300 group hover:shadow-lg hover:shadow-brand-magenta/10 hover:-translate-y-2 cursor-pointer backdrop-blur-sm`}
+                  className={`rounded-none overflow-hidden transition-all duration-300 group hover:shadow-lg hover:shadow-brand-magenta/10 hover:-translate-y-2 cursor-pointer`}
                   style={{ animationDelay: school.delay }}
                 >
-                  <div>
-                    <div className="mb-6">
-                      {school.href ? (
-                        school.href.startsWith("http") ? (
-                          <a
-                            href={school.href}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="block"
-                          >
-                            <h3 className="text-3xl font-bold text-foreground font-display hover:text-brand-magenta transition-colors">
-                              {school.title}
-                            </h3>
-                          </a>
-                        ) : (
-                          <Link to={school.href} className="block">
-                            <h3 className="text-3xl font-bold text-foreground font-display hover:text-brand-magenta transition-colors">
-                              {school.title}
-                            </h3>
-                          </Link>
-                        )
-                      ) : (
-                        <h3 className="text-3xl font-bold text-foreground font-display">
-                          {school.title}
-                        </h3>
-                      )}
-                    </div>
-
-                    <div className="space-y-3">
-                      <p className="text-xs font-semibold text-foreground/60 uppercase tracking-wider">
-                        Popular Programs:
-                      </p>
-                      <div className="flex flex-wrap gap-2">
-                        {school.programs.slice(0, 3).map((program, idx) =>
-                          school.title === "Engineering" &&
-                          program === "B.Tech CSE" ? (
-                            <Link
-                              key={idx}
-                              to="/academics/engineering/computer-science"
-                            >
-                              <Badge
-                                variant="secondary"
-                                className="text-xs font-body bg-foreground/10 text-foreground hover:bg-foreground/20 cursor-pointer !border-0"
-                              >
-                                {program}
-                              </Badge>
-                            </Link>
-                          ) : school.title === "Engineering" &&
-                          program === "B.Tech ECE" ? (
-                            <Link
-                              key={idx}
-                              to="/academics/engineering/electronics-communication"
-                            >
-                              <Badge
-                                variant="secondary"
-                                className="text-xs font-body bg-foreground/10 text-foreground hover:bg-foreground/20 cursor-pointer !border-0"
-                              >
-                                {program}
-                              </Badge>
-                            </Link>
-                          ) : (
-                            <Badge
-                              key={idx}
-                              variant="secondary"
-                              className="text-xs font-body bg-foreground/10 text-foreground !border-0"
-                            >
-                              {program}
-                            </Badge>
-                          ),
-                        )}
-                      </div>
-                    </div>
+                  {/* Image Container */}
+                  <div className="relative h-48 overflow-hidden bg-foreground/5">
+                    <img
+                      src={school.image}
+                      alt={school.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                   </div>
 
-                  {school.href ? (
-                    school.href.startsWith("http") ? (
-                      <a href={school.href} target="_blank" rel="noreferrer">
-                        <div className="text-foreground font-semibold text-sm flex items-center gap-2 mt-6 hover:gap-3 transition-all hover:text-brand-magenta">
-                          {t('buttons.learnMore')}
-                          <ChevronRight className="w-4 h-4" />
+                  {/* Content Container */}
+                  <div className={`${style.bg} ${style.border} border border-t-0 rounded-none p-6 flex flex-col justify-between min-h-64 backdrop-blur-sm`}>
+                    <div>
+                      <div className="mb-6">
+                        {school.href ? (
+                          school.href.startsWith("http") ? (
+                            <a
+                              href={school.href}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="block"
+                            >
+                              <h3 className="text-2xl font-bold text-foreground font-display hover:text-brand-magenta transition-colors">
+                                {school.title}
+                              </h3>
+                            </a>
+                          ) : (
+                            <Link to={school.href} className="block">
+                              <h3 className="text-2xl font-bold text-foreground font-display hover:text-brand-magenta transition-colors">
+                                {school.title}
+                              </h3>
+                            </Link>
+                          )
+                        ) : (
+                          <h3 className="text-2xl font-bold text-foreground font-display">
+                            {school.title}
+                          </h3>
+                        )}
+                      </div>
+
+                      <div className="space-y-3">
+                        <p className="text-xs font-semibold text-foreground/60 uppercase tracking-wider">
+                          Popular Programs:
+                        </p>
+                        <div className="flex flex-wrap gap-2">
+                          {school.programs.slice(0, 3).map((program, idx) =>
+                            school.title === "Engineering" &&
+                            program === "B.Tech CSE" ? (
+                              <Link
+                                key={idx}
+                                to="/academics/engineering/computer-science"
+                              >
+                                <Badge
+                                  variant="secondary"
+                                  className="text-xs font-body bg-foreground/10 text-foreground hover:bg-foreground/20 cursor-pointer !border-0"
+                                >
+                                  {program}
+                                </Badge>
+                              </Link>
+                            ) : school.title === "Engineering" &&
+                            program === "B.Tech ECE" ? (
+                              <Link
+                                key={idx}
+                                to="/academics/engineering/electronics-communication"
+                              >
+                                <Badge
+                                  variant="secondary"
+                                  className="text-xs font-body bg-foreground/10 text-foreground hover:bg-foreground/20 cursor-pointer !border-0"
+                                >
+                                  {program}
+                                </Badge>
+                              </Link>
+                            ) : (
+                              <Badge
+                                key={idx}
+                                variant="secondary"
+                                className="text-xs font-body bg-foreground/10 text-foreground !border-0"
+                              >
+                                {program}
+                              </Badge>
+                            ),
+                          )}
                         </div>
-                      </a>
-                    ) : (
-                      <Link to={school.href}>
-                        <div className="text-foreground font-semibold text-sm flex items-center gap-2 mt-6 hover:gap-3 transition-all hover:text-brand-magenta">
-                          {t('buttons.learnMore')}
-                          <ChevronRight className="w-4 h-4" />
-                        </div>
-                      </Link>
-                    )
-                  ) : (
-                    <div className="text-foreground font-semibold text-sm flex items-center gap-2 mt-6">
-                      Learn More
-                      <ChevronRight className="w-4 h-4" />
+                      </div>
                     </div>
-                  )}
+
+                    {school.href ? (
+                      school.href.startsWith("http") ? (
+                        <a href={school.href} target="_blank" rel="noreferrer">
+                          <div className="text-foreground font-semibold text-sm flex items-center gap-2 mt-6 hover:gap-3 transition-all hover:text-brand-magenta">
+                            {t('buttons.learnMore')}
+                            <ChevronRight className="w-4 h-4" />
+                          </div>
+                        </a>
+                      ) : (
+                        <Link to={school.href}>
+                          <div className="text-foreground font-semibold text-sm flex items-center gap-2 mt-6 hover:gap-3 transition-all hover:text-brand-magenta">
+                            {t('buttons.learnMore')}
+                            <ChevronRight className="w-4 h-4" />
+                          </div>
+                        </Link>
+                      )
+                    ) : (
+                      <div className="text-foreground font-semibold text-sm flex items-center gap-2 mt-6">
+                        Learn More
+                        <ChevronRight className="w-4 h-4" />
+                      </div>
+                    )}
+                  </div>
                 </div>
               );
             })}
