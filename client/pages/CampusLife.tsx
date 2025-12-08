@@ -185,13 +185,13 @@ export default function CampusLife() {
                 size: "col-span-1 row-span-2"
               },
               {
-                title: "Cultural Fest",
-                category: "Events",
-                image: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fa4d4c925921740bdaac1f9d434a276f1?format=webp&width=800"
+                title: "Performing Arts",
+                category: "Culture",
+                image: "https://static.wixstatic.com/media/a57b29_7432beeeab194cf19d467960322ed7b7~mv2.jpg/v1/fit/w_960,h_960,q_90,enc_avif,quality_auto/a57b29_7432beeeab194cf19d467960322ed7b7~mv2.jpg"
               },
-              { 
-                title: "Sports Day", 
-                category: "Athletics", 
+              {
+                title: "Sports Day",
+                category: "Athletics",
                 image: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=300&h=300&fit=crop"
               },
               {
@@ -199,9 +199,9 @@ export default function CampusLife() {
                 category: "Ceremony",
                 image: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F692a9321c1bd4ab09f4bbb0f31d62fa2?format=webp&width=800"
               },
-              { 
-                title: "Tech Fair", 
-                category: "Innovation", 
+              {
+                title: "Tech Fair",
+                category: "Innovation",
                 image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=300&h=300&fit=crop"
               },
               {
@@ -215,9 +215,9 @@ export default function CampusLife() {
                 image: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F216fee584984419caf29c0341644b072?format=webp&width=800",
                 size: "col-span-1 row-span-2"
               },
-              { 
-                title: "Night Life", 
-                category: "Social", 
+              {
+                title: "Night Life",
+                category: "Social",
                 image: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=300&h=300&fit=crop"
               },
             ].map((item, index) => (
