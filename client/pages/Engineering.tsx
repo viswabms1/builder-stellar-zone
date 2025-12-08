@@ -579,56 +579,6 @@ const ENGINEERING_NOTICES: NoticeItem[] = [
     department: "Engineering",
   },
   {
-    title: "CSE Faculty Publishes Research in Top-Tier IEEE Journal",
-    description:
-      "Department faculty member's research on distributed systems and cloud computing accepted in IEEE Transactions on Software Engineering.",
-    category: "News",
-    date: "Dec 15, 2024",
-    image:
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1600&auto=format&fit=crop",
-    department: "CSE",
-  },
-  {
-    title: "Aerospace Students Develop Lightweight Composite Materials",
-    description:
-      "Student research team successfully develops and tests advanced composite materials for aerospace applications with 30% weight reduction.",
-    category: "News",
-    date: "Dec 10, 2024",
-    image:
-      "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1600&auto=format&fit=crop",
-    department: "Aerospace",
-  },
-  {
-    title: "Data Science Graduates Achieve 100% Placement in Tech Industry",
-    description:
-      "First batch of Data Science program graduates successfully placed at Google, Amazon, and other leading tech companies.",
-    category: "News",
-    date: "Nov 25, 2024",
-    image:
-      "https://images.unsplash.com/photo-1516937941344-00b4b0ba8c00?q=80&w=1600&auto=format&fit=crop",
-    department: "Data Science",
-  },
-  {
-    title: "Cybersecurity Team Wins National Capture The Flag Competition",
-    description:
-      "DSU Cybersecurity team wins national CTF competition demonstrating exceptional skills in vulnerability assessment and exploitation.",
-    category: "News",
-    date: "Nov 18, 2024",
-    image:
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=1600&auto=format&fit=crop",
-    department: "Cybersecurity",
-  },
-  {
-    title: "AI & Robotics Initiative Receives Industry Funding",
-    description:
-      "School of Engineering secures ₹2 crore funding from leading tech companies for AI and robotics research and infrastructure development.",
-    category: "News",
-    date: "Nov 5, 2024",
-    image:
-      "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=1600&auto=format&fit=crop",
-    department: "AI Robotics",
-  },
-  {
     title: "B.Tech Spring Semester Registration Extended",
     description:
       "Registration deadline has been extended to January 20, 2025. All students must complete registration by this date.",
