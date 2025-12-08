@@ -323,9 +323,6 @@ export default function Academics() {
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight font-display">
               Academic Programs <span className="bg-gradient-to-r from-orange-400 via-pink-400 to-red-400 bg-clip-text text-transparent">That Transform</span>
             </h1>
-            <p className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed max-w-xl font-display">
-              Discover world-class education across our diverse schools and specialized programs
-            </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
               <a
