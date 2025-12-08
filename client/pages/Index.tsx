@@ -374,7 +374,7 @@ export default function Index() {
 
     return baseSchools.map((school) => ({
       ...school,
-      title: t(`academics.${school.key}.title`),
+      title: `School of ${t(`academics.${school.key}.title`)}`,
       description: "",
       programs: [
         t(`academics.${school.key}.programs.0`) || 'Program 1',
