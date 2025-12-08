@@ -67,10 +67,6 @@ export default function CampusLife() {
               {t('campusLife.title')}
             </h1>
 
-            <p className="text-base md:text-lg text-white mb-6 leading-relaxed">
-              {t('campusLife.subheadline')}
-            </p>
-
             <a
               href="https://dsu.edu.in/virtual-tour/"
               target="_blank"
