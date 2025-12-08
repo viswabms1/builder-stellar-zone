@@ -55,7 +55,7 @@ export default function CampusLife() {
         </div>
 
         <div className="relative h-full flex items-start justify-start text-left max-w-7xl mx-auto px-6 pt-8">
-          <div className="rounded-none px-6 md:px-8 py-8 max-w-xl">
+          <div className="rounded-none px-6 md:px-8 py-8 max-w-xl -ml-6 md:-ml-8">
             <div className="inline-flex items-center px-4 py-2 bg-orange-500/20 rounded-full border border-orange-500/40 mb-4">
               <Heart className="w-4 h-4 text-orange-300 mr-2" />
               <span className="text-sm font-medium text-orange-200">
