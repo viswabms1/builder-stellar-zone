@@ -465,9 +465,9 @@ function NoticeBoardCarousel() {
   const [currentNewsIndex, setCurrentNewsIndex] = useState(0);
   const [currentAnnouncementIndex, setCurrentAnnouncementIndex] = useState(0);
 
-  const events = ENGINEERING_NOTICES.filter((n) => n.category === "Event");
-  const news = ENGINEERING_NOTICES.filter((n) => n.category === "News");
-  const announcements = ENGINEERING_NOTICES.filter((n) => n.category === "Announcement");
+  const events = getAllEvents();
+  const news = getSchoolNewsData();
+  const announcements = getSchoolAnnouncementsData();
 
   useEffect(() => {
     if (events.length === 0) return;
