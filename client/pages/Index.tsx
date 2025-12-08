@@ -320,7 +320,7 @@ export default function Index() {
         color: 'brand-magenta',
         delay: '0.1s',
         href: '/academics/computer-applications',
-        image: 'https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F13494b0acd074775857b9c4e0e6c12b3?format=webp&width=800'
+        image: 'https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F56e10ce7c8bf4da88d7366add7229375?format=webp&width=800'
       },
       {
         key: 'law',
