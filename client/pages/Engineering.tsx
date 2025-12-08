@@ -1142,11 +1142,6 @@ export default function Engineering() {
               <h2 className="font-display text-3xl md:text-4xl">
                 Future-ready engineering disciplines
               </h2>
-              <p className="mt-3 text-sm text-foreground font-body">
-                Discover flagship majors and emerging specialisations built with
-                experiential learning, industry mentorship and research-driven
-                pathways.
-              </p>
             </div>
           </div>
 
