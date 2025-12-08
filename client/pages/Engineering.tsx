@@ -873,7 +873,7 @@ function HeroVideo() {
   const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const wasPlayingRef = useRef(false);
+  const isVisibleRef = useRef(true);
 
   const toggleMute = () => {
     if (videoRef.current) {
@@ -897,11 +897,10 @@ function HeroVideo() {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
+          isVisibleRef.current = entry.isIntersecting;
           if (entry.isIntersecting) {
-            wasPlayingRef.current = true;
             video.play().catch(() => {});
           } else {
-            wasPlayingRef.current = false;
             video.pause();
             video.muted = true;
             setIsMuted(true);
@@ -922,16 +921,16 @@ function HeroVideo() {
     const video = videoRef.current;
     if (!video) return;
 
-    const handlePlay = (e: Event) => {
-      if (!wasPlayingRef.current) {
-        e.preventDefault();
-        video.pause();
+    const handleEnded = () => {
+      if (isVisibleRef.current) {
+        video.currentTime = 0;
+        video.play().catch(() => {});
       }
     };
 
-    video.addEventListener('play', handlePlay);
+    video.addEventListener('ended', handleEnded);
     return () => {
-      video.removeEventListener('play', handlePlay);
+      video.removeEventListener('ended', handleEnded);
     };
   }, []);
 
@@ -942,7 +941,6 @@ function HeroVideo() {
         src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2Fca43c77a955c4e4b86175d41c68120cf?alt=media&token=45cdb70a-71df-43de-8859-de7bc907f167&apiKey=4aa279a8430d441dba9c55f659831878"
         defaultMuted
         muted={isMuted}
-        loop
         playsInline
         className="absolute inset-0 w-full h-full object-cover"
         style={{
