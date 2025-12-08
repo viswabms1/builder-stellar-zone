@@ -320,7 +320,7 @@ export default function Index() {
         color: 'brand-magenta',
         delay: '0.1s',
         href: '/academics/computer-applications',
-        image: 'https://images.pexels.com/photos/8875502/pexels-photo-8875502.jpeg?auto=compress&cs=tinysrgb&w=800'
+        image: 'https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=800'
       },
       {
         key: 'law',
