@@ -1197,11 +1197,6 @@ export default function Engineering() {
               <h2 className="mt-4 font-display text-3xl md:text-4xl">
                 Holistic foundations that amplify every major
               </h2>
-              <p className="mt-3 text-sm text-foreground font-body">
-                Specialist faculty from sciences and humanities co-create
-                immersive modules with core departments to sharpen research
-                depth, analytical rigour and human-centred design thinking.
-              </p>
             </div>
             <a
               href="https://www.dsu.edu.in/academics/schools/engineering#supporting-departments"
