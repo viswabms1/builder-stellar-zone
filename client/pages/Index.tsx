@@ -374,7 +374,10 @@ export default function Index() {
 
     return baseSchools.map((school) => ({
       ...school,
-      title: `School of ${t(`academics.${school.key}.title`)}`,
+      title: (() => {
+        const translatedTitle = t(`academics.${school.key}.title`);
+        return translatedTitle.startsWith('School of') ? translatedTitle : `School of ${translatedTitle}`;
+      })(),
       description: "",
       programs: [
         t(`academics.${school.key}.programs.0`) || 'Program 1',
