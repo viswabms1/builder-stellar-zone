@@ -352,14 +352,14 @@ export default function CampusLife() {
       <section className="px-6 py-20 bg-gradient-to-r from-orange-500/10 to-red-600/10">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            {/* Image */}
-            <div className="relative overflow-hidden rounded-none h-96 border border-orange-500/20 group">
-              <img
-                src="https://static.wixstatic.com/media/a57b29_7432beeeab194cf19d467960322ed7b7~mv2.jpg/v1/fit/w_960,h_960,q_90,enc_avif,quality_auto/a57b29_7432beeeab194cf19d467960322ed7b7~mv2.jpg"
-                alt="Centre for Performing Arts - Vibrations"
+            {/* Video */}
+            <div className="relative overflow-hidden rounded-none h-96 border border-orange-500/20 group bg-black">
+              <video
+                src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F6b0c30504ae64c6aba12aa275eeac2e0?alt=media&token=038cd5f6-c13b-43c6-8760-c92abdbbc4dd&apiKey=4aa279a8430d441dba9c55f659831878"
+                controls
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none"></div>
             </div>
 
             {/* Content */}
