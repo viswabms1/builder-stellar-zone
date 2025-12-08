@@ -352,7 +352,7 @@ export default function Index() {
         color: 'brand-blue',
         delay: '0.5s',
         href: '/academics/health-sciences',
-        image: 'https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F96d75a92c8774e0bbeb3a2b3918d3137?format=webp&width=800'
+        image: 'https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F74d341a4bb974c0b8c0b8eb23cc2f13a?format=webp&width=800'
       },
       {
         key: 'design',
