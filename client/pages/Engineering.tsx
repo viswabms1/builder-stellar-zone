@@ -918,6 +918,23 @@ function HeroVideo() {
     };
   }, []);
 
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const handlePlay = (e: Event) => {
+      if (!wasPlayingRef.current) {
+        e.preventDefault();
+        video.pause();
+      }
+    };
+
+    video.addEventListener('play', handlePlay);
+    return () => {
+      video.removeEventListener('play', handlePlay);
+    };
+  }, []);
+
   return (
     <div ref={containerRef} className="w-full h-[75vh] relative overflow-hidden flex items-end md:items-center justify-start">
       <video
