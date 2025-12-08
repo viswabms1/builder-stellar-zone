@@ -602,7 +602,7 @@ export default function Index() {
                   style={{ animationDelay: school.delay }}
                 >
                   {/* Image Container */}
-                  <div className="relative h-56 overflow-hidden bg-foreground/5 flex items-center justify-center">
+                  <div className="relative w-full aspect-square overflow-hidden bg-foreground/5 flex items-center justify-center">
                     <img
                       src={school.image}
                       alt={school.title}
