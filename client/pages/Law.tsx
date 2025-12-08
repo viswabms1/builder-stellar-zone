@@ -31,13 +31,6 @@ import {
 } from "@/components/ui/card";
 import { DeanSection, type DeanInfo } from "@/components/DeanSection";
 
-type USPHighlight = {
-  title: string;
-  description: string;
-  image: string;
-  icon: LucideIcon;
-  stat?: string;
-};
 
 type ProgramCard = {
   name: string;
@@ -69,41 +62,6 @@ type NewsItem = {
   color: "brand-magenta" | "brand-blue" | "brand-orange";
 };
 
-const USP_HIGHLIGHTS: USPHighlight[] = [
-  {
-    title: "New Age Lawyering",
-    description:
-      "Curriculum anchored in emerging domains like technology law, ADR, fintech regulation and human rights advocacy.",
-    image:
-      "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1600&auto=format&fit=crop",
-    icon: ShieldCheck,
-    stat: "Outcome-Focused",
-  },
-  {
-    title: "Experiential Pedagogy",
-    description:
-      "Moot courts, legal aid clinics and simulation labs embed practice-ready skills into every semester.",
-    image:
-      "https://images.unsplash.com/photo-1528740579684-5809094cdaa1?q=80&w=1600&auto=format&fit=crop",
-    icon: Gavel,
-  },
-  {
-    title: "Research & Policy Impact",
-    description:
-      "Faculty-led centres address contemporary legal issues with publications, policy briefs and community engagement.",
-    image:
-      "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=1600&auto=format&fit=crop",
-    icon: Globe,
-  },
-  {
-    title: "Mentor Network",
-    description:
-      "Learn from advocates, judges, general counsels and public policy experts through masterclasses and internships.",
-    image:
-      "https://images.unsplash.com/photo-1450101215322-bf5cd27642fc?q=80&w=1600&auto=format&fit=crop",
-    icon: Users,
-  },
-];
 
 const PROGRAM_CARDS: ProgramCard[] = [
   {
@@ -431,60 +389,6 @@ export default function Law() {
         <HeroVideo />
       </section>
 
-      <section
-        id="usp"
-        className="bg-background px-6 py-20"
-      >
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-16 text-center">
-            <Badge
-              className="bg-brand-magenta/15 text-brand-magenta"
-              variant="secondary"
-            >
-              Unique Strengths (USP)
-            </Badge>
-            <h2 className="mt-6 font-display text-4xl md:text-5xl">
-              Why Future Advocates Choose DSU Law
-            </h2>
-            <p className="mt-4 text-lg text-foreground/80 max-w-2xl mx-auto font-display">
-              Excellence through legal scholarship, practical training, and professional growth
-            </p>
-          </div>
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-            {USP_HIGHLIGHTS.map((highlight, index) => {
-              const Icon = highlight.icon;
-              return (
-                <div key={highlight.title} className="group flex flex-col h-full">
-                  {/* Image Container */}
-                  <div className="relative w-full h-64 overflow-hidden rounded-lg mb-6">
-                    <img
-                      src={highlight.image}
-                      alt={highlight.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                  </div>
-
-                  {/* Text Content Below Image */}
-                  <div className="flex-1 flex flex-col">
-                    <h3 className="text-xl font-bold mb-3 font-display text-foreground group-hover:text-brand-magenta transition-colors">
-                      {highlight.title}
-                    </h3>
-                    <p className="text-sm font-body text-foreground/80 leading-relaxed mb-4">
-                      {highlight.description}
-                    </p>
-                    {highlight.stat ? (
-                      <div className="text-xs uppercase tracking-wide font-semibold text-foreground/60 font-body mb-4">
-                        {highlight.stat}
-                      </div>
-                    ) : null}
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
 
       {/* Dean's Message Section */}
       <DeanSection dean={DEAN_INFO} />
@@ -713,14 +617,6 @@ export default function Law() {
                 className="hover:text-brand-magenta"
               >
                 Programs Overview
-              </a>
-              <a
-                href="https://www.dsu.edu.in/law/highlights"
-                target="_blank"
-                rel="noreferrer"
-                className="hover:text-brand-magenta"
-              >
-                Highlights & USP
               </a>
               <a
                 href="https://www.dsu.edu.in/law/newsletter"
