@@ -368,7 +368,7 @@ export default function Index() {
         color: 'brand-blue',
         delay: '0.8s',
         href: 'https://cdsimer.edu.in',
-        image: 'https://images.pexels.com/photos/2280547/pexels-photo-2280547.jpeg?auto=compress&cs=tinysrgb&w=800'
+        image: 'https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fc960049561f54aee996a7aefe7dd8b37?format=webp&width=800'
       },
     ];
 
