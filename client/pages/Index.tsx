@@ -306,14 +306,70 @@ export default function Index() {
   // Get schools data based on current language
   const getSchoolsData = () => {
     const baseSchools = [
-      { key: 'engineering', icon: Cog, color: 'brand-orange', delay: '0s', href: '/academics/engineering' },
-      { key: 'computerApplications', icon: Cpu, color: 'brand-magenta', delay: '0.1s', href: '/academics/computer-applications' },
-      { key: 'law', icon: Gavel, color: 'brand-blue', delay: '0.2s', href: '/academics/law' },
-      { key: 'management', icon: Briefcase, color: 'brand-orange', delay: '0.3s', href: '/academics/management-studies' },
-      { key: 'sciences', icon: FlaskConical, color: 'brand-magenta', delay: '0.4s', href: '/academics/basic-applied-sciences' },
-      { key: 'health', icon: Stethoscope, color: 'brand-blue', delay: '0.5s', href: '/academics/health-sciences' },
-      { key: 'design', icon: Film, color: 'brand-magenta', delay: '0.7s', href: '/academics/design/bdesign' },
-      { key: 'medical', icon: Microscope, color: 'brand-blue', delay: '0.8s', href: 'https://cdsimer.edu.in' },
+      {
+        key: 'engineering',
+        icon: Cog,
+        color: 'brand-orange',
+        delay: '0s',
+        href: '/academics/engineering',
+        image: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=800&auto=format&fit=crop'
+      },
+      {
+        key: 'computerApplications',
+        icon: Cpu,
+        color: 'brand-magenta',
+        delay: '0.1s',
+        href: '/academics/computer-applications',
+        image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=800&auto=format&fit=crop'
+      },
+      {
+        key: 'law',
+        icon: Gavel,
+        color: 'brand-blue',
+        delay: '0.2s',
+        href: '/academics/law',
+        image: 'https://images.unsplash.com/photo-1589520987903-b8ef5b4e4de3?q=80&w=800&auto=format&fit=crop'
+      },
+      {
+        key: 'management',
+        icon: Briefcase,
+        color: 'brand-orange',
+        delay: '0.3s',
+        href: '/academics/management-studies',
+        image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800&auto=format&fit=crop'
+      },
+      {
+        key: 'sciences',
+        icon: FlaskConical,
+        color: 'brand-magenta',
+        delay: '0.4s',
+        href: '/academics/basic-applied-sciences',
+        image: 'https://images.unsplash.com/photo-1530124566582-a618bc2615dc?q=80&w=800&auto=format&fit=crop'
+      },
+      {
+        key: 'health',
+        icon: Stethoscope,
+        color: 'brand-blue',
+        delay: '0.5s',
+        href: '/academics/health-sciences',
+        image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=800&auto=format&fit=crop'
+      },
+      {
+        key: 'design',
+        icon: Film,
+        color: 'brand-magenta',
+        delay: '0.7s',
+        href: '/academics/design/bdesign',
+        image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=800&auto=format&fit=crop'
+      },
+      {
+        key: 'medical',
+        icon: Microscope,
+        color: 'brand-blue',
+        delay: '0.8s',
+        href: 'https://cdsimer.edu.in',
+        image: 'https://images.unsplash.com/photo-1579154204601-01d5d6ecaa65?q=80&w=800&auto=format&fit=crop'
+      },
     ];
 
     return baseSchools.map((school) => ({
