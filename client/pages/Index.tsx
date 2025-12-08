@@ -312,7 +312,7 @@ export default function Index() {
         color: 'brand-orange',
         delay: '0s',
         href: '/academics/engineering',
-        image: 'https://images.pexels.com/photos/18471525/pexels-photo-18471525.jpeg?auto=compress&cs=tinysrgb&w=800'
+        image: 'https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F788322fc619f4797b1c53ca114b0f8f7?format=webp&width=800'
       },
       {
         key: 'computerApplications',
