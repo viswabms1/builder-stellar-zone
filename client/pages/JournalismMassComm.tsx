@@ -28,13 +28,6 @@ import {
 } from "@/components/ui/card";
 import { DeanSection, type DeanInfo } from "@/components/DeanSection";
 
-type Highlight = {
-  title: string;
-  description: string;
-  image: string;
-  icon: LucideIcon;
-  stat?: string;
-};
 
 type ProgramCard = {
   name: string;
@@ -69,41 +62,6 @@ type NewsItem = {
 const HERO_IMAGE =
   "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=2000&auto=format&fit=crop";
 
-const USP_HIGHLIGHTS: Highlight[] = [
-  {
-    title: "Convergence-Ready Learning",
-    description:
-      "Unified newsroom and studio workflows preparing students for multi-platform journalism and content creation.",
-    image:
-      "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1600&auto=format&fit=crop",
-    icon: Layers,
-    stat: "360° Media",
-  },
-  {
-    title: "Ethics & Emerging Media",
-    description:
-      "Curriculum blends ethical storytelling with new media literacy across podcasts, digital and social formats.",
-    image:
-      "https://images.unsplash.com/photo-1525182008055-f88b95ff7980?q=80&w=1600&auto=format&fit=crop",
-    icon: Star,
-  },
-  {
-    title: "Industry Immersion",
-    description:
-      "Live newsroom simulations, masterclasses and two-month internships embed real-world reporting experiences.",
-    image:
-      "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=1600&auto=format&fit=crop",
-    icon: Mic,
-  },
-  {
-    title: "Global Perspectives",
-    description:
-      "International collaborations like the Global Communication Project nurture cross-cultural storytelling skills.",
-    image:
-      "https://images.unsplash.com/photo-1523816512204-7c21eb1b4813?q=80&w=1600&auto=format&fit=crop",
-    icon: Globe,
-  },
-];
 
 const PROGRAM_CARDS: ProgramCard[] = [
   {
@@ -403,60 +361,6 @@ export default function JournalismMassComm() {
         <HeroVideo />
       </section>
 
-      <section
-        id="usp"
-        className="bg-background px-6 py-20"
-      >
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-16 text-center">
-            <Badge
-              className="bg-brand-magenta/15 text-brand-magenta"
-              variant="secondary"
-            >
-              Unique Strengths (USP)
-            </Badge>
-            <h2 className="mt-6 font-display text-4xl md:text-5xl">
-              Why Creators Choose CJMC
-            </h2>
-            <p className="mt-4 text-lg text-foreground/80 max-w-2xl mx-auto font-display">
-              Excellence through storytelling, innovation, and industry expertise
-            </p>
-          </div>
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-            {USP_HIGHLIGHTS.map((highlight, index) => {
-              const Icon = highlight.icon;
-              return (
-                <div key={highlight.title} className="group flex flex-col h-full">
-                  {/* Image Container */}
-                  <div className="relative w-full h-64 overflow-hidden rounded-lg mb-6">
-                    <img
-                      src={highlight.image}
-                      alt={highlight.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                  </div>
-
-                  {/* Text Content Below Image */}
-                  <div className="flex-1 flex flex-col">
-                    <h3 className="text-xl font-bold mb-3 font-display text-foreground group-hover:text-brand-magenta transition-colors">
-                      {highlight.title}
-                    </h3>
-                    <p className="text-sm font-body text-foreground/80 leading-relaxed mb-4">
-                      {highlight.description}
-                    </p>
-                    {highlight.stat ? (
-                      <div className="text-xs uppercase tracking-wide font-semibold text-foreground/60 font-body mb-4">
-                        {highlight.stat}
-                      </div>
-                    ) : null}
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
 
       {/* Dean's Message Section */}
       <DeanSection dean={DEAN_INFO} />
@@ -734,14 +638,6 @@ export default function JournalismMassComm() {
                 className="hover:text-brand-magenta"
               >
                 Programs Overview
-              </a>
-              <a
-                href="https://www.dsu.edu.in/journalism-mass-comm/highlights"
-                target="_blank"
-                rel="noreferrer"
-                className="hover:text-brand-magenta"
-              >
-                Highlights & USP
               </a>
               <a
                 href="https://www.dsu.edu.in/journalism-mass-comm/newsletter"
