@@ -34,13 +34,6 @@ import {
 
 const HERO_IMAGE = "https://www.dsu.edu.in/images/Engineering/engg-landing.jpg";
 
-type USPHighlight = {
-  title: string;
-  description: string;
-  image: string;
-  icon: LucideIcon;
-  stat?: string;
-};
 
 type EngineeringDepartment = {
   name: string;
@@ -70,41 +63,6 @@ type CalendarEntry = {
   tag: string;
 };
 
-const USP_HIGHLIGHTS: USPHighlight[] = [
-  {
-    title: "INNOVATE. CREATE. DEVELOP.",
-    description:
-      "Signature School of Engineering ethos that shapes industry-ready engineers and impactful researchers.",
-    image:
-      "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1600&auto=format&fit=crop",
-    icon: Award,
-    stat: "12 Academic Programs",
-  },
-  {
-    title: "Skill-Integrated Curriculum",
-    description:
-      "Knowledge-based coursework blended with project studios and competency-building labs from the first year.",
-    image:
-      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1600&auto=format&fit=crop",
-    icon: Cpu,
-  },
-  {
-    title: "Centers of Excellence",
-    description:
-      "Immersive learning through IBM, NVIDIA, GE and other industry-powered labs for real-time problem solving.",
-    image:
-      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1600&auto=format&fit=crop",
-    icon: Network,
-  },
-  {
-    title: "Research & Lifelong Learning",
-    description:
-      "Emphasis on research, innovation and cultivating the scientific temper necessary for lifelong learning.",
-    image:
-      "https://images.unsplash.com/photo-1559757175-5700dde67598?q=80&w=1600&auto=format&fit=crop",
-    icon: Microscope,
-  },
-];
 
 const UG_PROGRAMS = [
   "Computer Science & Engineering",
@@ -922,57 +880,6 @@ export default function Engineering() {
         <HeroVideo />
       </section>
 
-      <section
-        id="usp"
-        className="bg-background px-6 py-20"
-      >
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-16 text-center">
-            <Badge
-              className="bg-brand-magenta/15 text-brand-magenta"
-              variant="secondary"
-            >
-              Unique Strengths (USP)
-            </Badge>
-            <h2 className="mt-6 font-display text-4xl md:text-5xl">
-              Why Students and Industry Choose DSU Engineering
-            </h2>
-            <p className="mt-4 text-lg text-foreground/80 max-w-2xl mx-auto font-display">
-              Excellence through innovation, rigorous curricula, and industry partnerships
-            </p>
-          </div>
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-            {USP_HIGHLIGHTS.map((highlight, index) => (
-              <div key={highlight.title} className="group flex flex-col h-full">
-                {/* Image Container */}
-                <div className="relative w-full h-64 overflow-hidden rounded-lg mb-6">
-                  <img
-                    src={highlight.image}
-                    alt={highlight.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                </div>
-
-                {/* Text Content Below Image */}
-                <div className="flex-1 flex flex-col">
-                  <h3 className="text-xl font-bold mb-3 font-display text-foreground group-hover:text-brand-magenta transition-colors">
-                    {highlight.title}
-                  </h3>
-                  <p className="text-sm font-body text-foreground/80 leading-relaxed mb-4">
-                    {highlight.description}
-                  </p>
-                  {highlight.stat ? (
-                    <div className="text-xs uppercase tracking-wide font-semibold text-foreground/60 font-body mb-4">
-                      {highlight.stat}
-                    </div>
-                  ) : null}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Dean's Message Section */}
       <section className="relative overflow-hidden px-6 py-16">
@@ -1325,14 +1232,6 @@ export default function Engineering() {
                 className="hover:text-brand-magenta"
               >
                 Programs Overview
-              </a>
-              <a
-                href="https://www.dsu.edu.in/engineering/usp-engineering"
-                target="_blank"
-                rel="noreferrer"
-                className="hover:text-brand-magenta"
-              >
-                USP Highlights
               </a>
               <a
                 href="https://www.dsu.edu.in/engineering/newsletter-soe"
