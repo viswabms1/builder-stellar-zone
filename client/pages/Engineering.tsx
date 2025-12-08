@@ -1238,11 +1238,6 @@ export default function Engineering() {
                 <h2 className="font-display text-3xl md:text-4xl">
                   School of Engineering Notice Board
                 </h2>
-                <p className="text-sm text-foreground font-body">
-                  Curated updates for the ongoing academic year 2025-26. Stay
-                  aligned with assessment windows, immersion weeks and
-                  University-hosted experiences.
-                </p>
                 <a
                   href="https://www.dsu.edu.in/engineering/coe-engineering"
                   target="_blank"
