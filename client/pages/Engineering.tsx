@@ -788,10 +788,10 @@ function HeroVideo() {
 
       <div className="relative max-w-7xl mx-auto px-6 w-full z-10 pb-20 md:pb-0">
         <div className="max-w-2xl">
-          <p className="text-sm md:text-base text-white/80 mb-4 uppercase tracking-widest font-display">
+          <p className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 uppercase tracking-widest font-display">
             School of Engineering
           </p>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight font-display">
+          <h1 className="text-sm md:text-base text-white/80 mb-6 leading-tight font-display">
             Shape the Future of Technology
           </h1>
           <p className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed max-w-xl font-display">
