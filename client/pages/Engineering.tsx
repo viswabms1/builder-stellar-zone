@@ -367,7 +367,6 @@ const PG_PROGRAM_CARDS: ProgramCard[] = [
     overlay: "bg-gradient-to-br from-brand-magenta/70 via-black/70 to-black/55 mix-blend-multiply",
     badgeClass: "bg-brand-magenta/30 text-foreground/90 border border-white/25 backdrop-blur",
     panelClass: "bg-black/55 backdrop-blur-xl",
-    featured: true,
   },
   {
     name: "M.Tech - Embedded Systems",
@@ -379,7 +378,6 @@ const PG_PROGRAM_CARDS: ProgramCard[] = [
     overlay: "bg-gradient-to-br from-brand-blue/70 via-black/70 to-black/55 mix-blend-multiply",
     badgeClass: "bg-brand-blue/30 text-foreground/90 border border-white/25 backdrop-blur",
     panelClass: "bg-black/55 backdrop-blur-xl",
-    featured: true,
   },
   {
     name: "M.Tech - Design Engineering",
