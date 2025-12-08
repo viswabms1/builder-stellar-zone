@@ -1154,9 +1154,6 @@ export default function Engineering() {
               <h3 className="mt-4 font-display text-2xl md:text-3xl">
                 B.Tech Programs
               </h3>
-              <p className="mt-2 text-sm text-foreground font-body">
-                Choose from future-proof majors and emerging specialisations
-              </p>
             </div>
             <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-12">
               {ENGINEERING_DEPARTMENTS.map((department) => (
