@@ -873,7 +873,6 @@ function HeroVideo() {
   const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const isVisibleRef = useRef(true);
 
   const toggleMute = () => {
     if (videoRef.current) {
@@ -894,26 +893,22 @@ function HeroVideo() {
     const video = videoRef.current;
     if (!container || !video) return;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          isVisibleRef.current = entry.isIntersecting;
-          if (entry.isIntersecting) {
-            video.play().catch(() => {});
-          } else {
-            video.pause();
-            video.muted = true;
-            setIsMuted(true);
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
+    const handleScroll = () => {
+      const rect = container.getBoundingClientRect();
+      const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
 
-    observer.observe(container);
+      if (isVisible) {
+        video.play().catch(() => {});
+      } else {
+        video.pause();
+        video.muted = true;
+        setIsMuted(true);
+      }
+    };
 
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => {
-      observer.disconnect();
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
@@ -922,7 +917,9 @@ function HeroVideo() {
     if (!video) return;
 
     const handleEnded = () => {
-      if (isVisibleRef.current) {
+      const rect = containerRef.current?.getBoundingClientRect();
+      const isVisible = rect && rect.top < window.innerHeight && rect.bottom > 0;
+      if (isVisible) {
         video.currentTime = 0;
         video.play().catch(() => {});
       }
