@@ -872,6 +872,8 @@ function ProgramCardComponent({ program }: { program: ProgramCard }) {
 function HeroVideo() {
   const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const wasPlayingRef = useRef(false);
 
   const toggleMute = () => {
     if (videoRef.current) {
@@ -887,8 +889,37 @@ function HeroVideo() {
     video.muted = isMuted;
   }, [isMuted]);
 
+  useEffect(() => {
+    const container = containerRef.current;
+    const video = videoRef.current;
+    if (!container || !video) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            wasPlayingRef.current = true;
+            video.play().catch(() => {});
+          } else {
+            wasPlayingRef.current = false;
+            video.pause();
+            video.muted = true;
+            setIsMuted(true);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(container);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   return (
-    <div className="w-full h-[75vh] relative overflow-hidden flex items-end md:items-center justify-start">
+    <div ref={containerRef} className="w-full h-[75vh] relative overflow-hidden flex items-end md:items-center justify-start">
       <video
         ref={videoRef}
         src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2Fca43c77a955c4e4b86175d41c68120cf?alt=media&token=45cdb70a-71df-43de-8859-de7bc907f167&apiKey=4aa279a8430d441dba9c55f659831878"
