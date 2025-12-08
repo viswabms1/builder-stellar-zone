@@ -41,12 +41,15 @@ export default function CampusLife() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      {/* Hero Section with Background Image */}
+      {/* Hero Section with Video Background */}
       <section className="relative h-[600px] overflow-hidden">
         <div className="absolute inset-0">
-          <img
-            src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F34c979438f024245a025e54a75e65599?format=webp&width=800"
-            alt="DSU Campus Courtyard"
+          <video
+            src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F6b0c30504ae64c6aba12aa275eeac2e0?alt=media&token=038cd5f6-c13b-43c6-8760-c92abdbbc4dd&apiKey=4aa279a8430d441dba9c55f659831878"
+            autoPlay
+            muted
+            loop
+            playsInline
             className="w-full h-full object-cover"
           />
         </div>
