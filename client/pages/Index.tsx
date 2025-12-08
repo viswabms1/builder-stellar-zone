@@ -328,7 +328,7 @@ export default function Index() {
         color: 'brand-blue',
         delay: '0.2s',
         href: '/academics/law',
-        image: 'https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F445520435dd04e20ba9f398ca4e0ae4f?format=webp&width=800'
+        image: 'https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Feee05981b8814e11925a317a1f192e84?format=webp&width=800'
       },
       {
         key: 'management',
