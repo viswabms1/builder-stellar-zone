@@ -30,13 +30,6 @@ import {
 } from "@/components/ui/card";
 import { DeanSection, type DeanInfo } from "@/components/DeanSection";
 
-type Highlight = {
-  title: string;
-  description: string;
-  image: string;
-  icon: LucideIcon;
-  stat?: string;
-};
 
 type ProgramCard = {
   name: string;
@@ -71,41 +64,6 @@ type NewsItem = {
 const HERO_IMAGE =
   "https://images.unsplash.com/photo-1580281657521-8a19aa08c8c8?q=80&w=2000&auto=format&fit=crop";
 
-const USP_HIGHLIGHTS: Highlight[] = [
-  {
-    title: "Integrated Health Ecosystem",
-    description:
-      "Colleges of Nursing, Pharmaceutical Sciences, Physiotherapy and Allied Health share a collaborative campus with clinical partners.",
-    image:
-      "https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?q=80&w=1600&auto=format&fit=crop",
-    icon: ClipboardCheck,
-    stat: "4 Constituent Colleges",
-  },
-  {
-    title: "Patient-Centric Learning",
-    description:
-      "Clinical rotations at multi-speciality hospitals cultivate empathy, evidence-based care and inter-professional teamwork.",
-    image:
-      "https://images.unsplash.com/photo-1519494080410-f9aa76cb4283?q=80&w=1600&auto=format&fit=crop",
-    icon: Stethoscope,
-  },
-  {
-    title: "Research & Simulation Labs",
-    description:
-      "Advanced simulation centres, diagnostics labs and pharmaceutics facilities accelerate skill immersion.",
-    image:
-      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1600&auto=format&fit=crop",
-    icon: Microscope,
-  },
-  {
-    title: "Community Impact",
-    description:
-      "Health camps, outreach and NSS drives foster preventive healthcare and public health leadership.",
-    image:
-      "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?q=80&w=1600&auto=format&fit=crop",
-    icon: Activity,
-  },
-];
 
 const UG_PROGRAM_CARDS: ProgramCard[] = [
   {
@@ -489,60 +447,6 @@ export default function HealthSciences() {
         <HeroVideo />
       </section>
 
-      <section
-        id="usp"
-        className="bg-background px-6 py-20"
-      >
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-16 text-center">
-            <Badge
-              className="bg-brand-magenta/15 text-brand-magenta"
-              variant="secondary"
-            >
-              Unique Strengths (USP)
-            </Badge>
-            <h2 className="mt-6 font-display text-4xl md:text-5xl">
-              Why Future Health Professionals Choose DSU
-            </h2>
-            <p className="mt-4 text-lg text-foreground/80 max-w-2xl mx-auto font-display">
-              Excellence through compassionate care, modern training, and professional growth
-            </p>
-          </div>
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-            {USP_HIGHLIGHTS.map((highlight, index) => {
-              const Icon = highlight.icon;
-              return (
-                <div key={highlight.title} className="group flex flex-col h-full">
-                  {/* Image Container */}
-                  <div className="relative w-full h-64 overflow-hidden rounded-lg mb-6">
-                    <img
-                      src={highlight.image}
-                      alt={highlight.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                  </div>
-
-                  {/* Text Content Below Image */}
-                  <div className="flex-1 flex flex-col">
-                    <h3 className="text-xl font-bold mb-3 font-display text-foreground group-hover:text-brand-magenta transition-colors">
-                      {highlight.title}
-                    </h3>
-                    <p className="text-sm font-body text-foreground/80 leading-relaxed mb-4">
-                      {highlight.description}
-                    </p>
-                    {highlight.stat ? (
-                      <div className="text-xs uppercase tracking-wide font-semibold text-foreground/60 font-body mb-4">
-                        {highlight.stat}
-                      </div>
-                    ) : null}
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
 
       {/* Dean's Message Section */}
       <DeanSection dean={DEAN_INFO} />
@@ -805,14 +709,6 @@ export default function HealthSciences() {
                 className="hover:text-brand-magenta"
               >
                 Programs Overview
-              </a>
-              <a
-                href="https://www.dsu.edu.in/health-sciences/highlights"
-                target="_blank"
-                rel="noreferrer"
-                className="hover:text-brand-magenta"
-              >
-                Highlights & USP
               </a>
               <a
                 href="https://www.dsu.edu.in/health-sciences/newsletter"
