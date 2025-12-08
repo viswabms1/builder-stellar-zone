@@ -603,14 +603,6 @@ const ENGINEERING_NOTICES: NoticeItem[] = [
     department: "Engineering",
   },
   {
-    title: "Industrial Visit: Manufacturing Excellence in Automotive Sector",
-    description:
-      "All Mechanical Engineering students are invited to visit leading automotive manufacturing plant on January 25, 2025.",
-    category: "Announcement",
-    date: "Dec 16, 2024",
-    department: "Mechanical",
-  },
-  {
     title: "Project Submission Deadline Extension",
     description:
       "Final year project submission deadline extended to January 31, 2025. No further extensions will be granted.",
@@ -624,7 +616,7 @@ const ENGINEERING_NOTICES: NoticeItem[] = [
       "Industry expert from AWS will deliver guest lecture on cloud architecture and emerging technologies on January 12, 2025.",
     category: "Announcement",
     date: "Dec 12, 2024",
-    department: "CSE",
+    department: "Engineering",
   },
 ];
 
