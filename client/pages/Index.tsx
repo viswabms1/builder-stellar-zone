@@ -602,11 +602,11 @@ export default function Index() {
                   style={{ animationDelay: school.delay }}
                 >
                   {/* Image Container */}
-                  <div className="relative h-56 overflow-hidden bg-foreground/5">
+                  <div className="relative h-56 overflow-hidden bg-foreground/5 flex items-center justify-center">
                     <img
                       src={school.image}
                       alt={school.title}
-                      className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500"
+                      className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                   </div>
