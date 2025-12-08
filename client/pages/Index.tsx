@@ -336,7 +336,7 @@ export default function Index() {
         color: 'brand-orange',
         delay: '0.3s',
         href: '/academics/management-studies',
-        image: 'https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fba5a0f96605e48d49aa10207bab38a90?format=webp&width=800'
+        image: 'https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fa4cef07ee55d42f08b7ee15a52adf2c7?format=webp&width=800'
       },
       {
         key: 'sciences',
