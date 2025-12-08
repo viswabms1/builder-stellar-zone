@@ -453,15 +453,7 @@ const INNOVATION_LABS = [
   "IBM Centre of Excellence",
 ];
 
-type NoticeItem = {
-  title: string;
-  description: string;
-  category: "Event" | "News" | "Announcement";
-  date: string;
-  image?: string;
-  link?: string;
-  department?: string;
-};
+type NoticeItem = ImportedNoticeItem;
 
 const ENGINEERING_NOTICES: NoticeItem[] = [
   {
