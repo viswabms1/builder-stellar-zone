@@ -147,7 +147,7 @@ export default function Navigation() {
                 );
               })();
 
-              if (idx === 3) {
+              if (idx === 4) {
                 return [
                   itemElement,
                   <Link
