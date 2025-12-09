@@ -98,7 +98,7 @@ function HeroVideo() {
       {/* Mute/Unmute Button */}
       <button
         onClick={toggleMute}
-        className="absolute top-8 right-8 z-10 p-3 rounded-full bg-black/50 hover:bg-black/70 transition-colors text-white backdrop-blur-sm border border-white/20"
+        className="absolute top-4 right-8 z-10 p-3 rounded-full bg-black/50 hover:bg-black/70 transition-colors text-white backdrop-blur-sm border border-white/20"
         aria-label={isMuted ? "Unmute" : "Mute"}
       >
         {isMuted ? (
@@ -222,7 +222,7 @@ function NewsModal({ newsItem, onClose }: { newsItem: any; onClose: () => void }
           />
         )}
 
-        <div className="p-8">
+        <div className="p-4">
           <div className="flex items-center gap-3 mb-4">
             <Badge
               className={`${
@@ -501,7 +501,7 @@ export default function Index() {
         <div className="absolute inset-0 bg-black/40"></div>
 
         {/* Hero Content */}
-        <div className="relative max-w-7xl mx-auto px-6 w-full z-10 pb-20 md:pb-0">
+        <div className="relative max-w-7xl mx-auto px-3 w-full z-10 pb-20 md:pb-0">
           <div className="max-w-4xl">
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 leading-tight font-display">
               Dayananda Sagar University
@@ -548,7 +548,7 @@ export default function Index() {
       </section>
 
       {/* Performance Indicators Section */}
-      <section className="px-6 py-16 relative bg-gradient-to-r from-brand-magenta/5 via-brand-orange/5 to-brand-blue/5 border-y border-border/30">
+      <section className="px-3 py-8 relative bg-gradient-to-r from-brand-magenta/5 via-brand-orange/5 to-brand-blue/5 border-y border-border/30">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="headline-2 mb-4">
@@ -570,7 +570,7 @@ export default function Index() {
       </section>
 
       {/* Academics Section */}
-      <section className="px-6 py-20 relative">
+      <section className="px-3 py-10 relative">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="headline-2 mb-6">
@@ -612,7 +612,7 @@ export default function Index() {
                   </div>
 
                   {/* Content Container */}
-                  <div className={`${style.bg} ${style.border} border border-t-0 rounded-none p-6 flex flex-col justify-between h-48 w-full backdrop-blur-sm`}>
+                  <div className={`${style.bg} ${style.border} border border-t-0 rounded-none p-3 flex flex-col justify-between h-48 w-full backdrop-blur-sm`}>
                     <div>
                       <div className="mb-6">
                         {school.href ? (
@@ -651,7 +651,7 @@ export default function Index() {
       </section>
 
       {/* Featured News Section */}
-      <section className="px-6 py-20 bg-gradient-to-r from-brand-blue/5 via-brand-magenta/5 to-brand-orange/5">
+      <section className="px-3 py-10 bg-gradient-to-r from-brand-blue/5 via-brand-magenta/5 to-brand-orange/5">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="headline-2 mb-6">
@@ -762,7 +762,7 @@ export default function Index() {
       </section>
 
       {/* Events Section */}
-      <section className="px-6 py-20 bg-gradient-to-r from-brand-orange/5 via-brand-magenta/5 to-brand-blue/5">
+      <section className="px-3 py-10 bg-gradient-to-r from-brand-orange/5 via-brand-magenta/5 to-brand-blue/5">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="headline-2 mb-6">
@@ -788,7 +788,7 @@ export default function Index() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                 </div>
-                <div className="p-8">
+                <div className="p-4">
                   <div className="flex items-center gap-3 mb-4">
                     <Badge className="bg-brand-orange/20 text-brand-orange text-xs">
                       <CalendarDays className="w-3 h-3 mr-1" />
@@ -884,7 +884,7 @@ export default function Index() {
 
 
       {/* CTA Section */}
-      <section className="px-6 py-20 relative">
+      <section className="px-3 py-10 relative">
         <div className="max-w-4xl mx-auto text-center">
           <div className="bg-gradient-to-r from-brand-magenta/10 via-brand-orange/10 to-brand-blue/10 rounded-3xl p-12 border border-brand-magenta/20">
             <h2 className="headline-2 mb-6">
