@@ -594,6 +594,19 @@ export default function Index() {
     return () => clearInterval(interval);
   }, [allEvents.length, isEventInteracting]);
 
+  // Auto-rotate publications every 5 seconds (pauses when user interacts)
+  useEffect(() => {
+    if (isPublicationInteracting) {
+      return;
+    }
+
+    const interval = setInterval(() => {
+      setSelectedPublicationIndex((prev) => (prev + 1) % allPublications.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [allPublications.length, isPublicationInteracting]);
+
   // Get current featured item and remaining items
   const currentFeatured = allFeaturedNews[featuredNewsIndex];
   const remainingNews = allFeaturedNews.filter(
