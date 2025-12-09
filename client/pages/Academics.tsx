@@ -147,7 +147,7 @@ function HeroVideo() {
 
       <button
         onClick={toggleMute}
-        className="absolute top-8 right-8 z-10 p-3 rounded-full bg-black/50 hover:bg-black/70 transition-colors text-white backdrop-blur-sm border border-white/20"
+        className="absolute top-4 right-8 z-10 p-3 rounded-full bg-black/50 hover:bg-black/70 transition-colors text-white backdrop-blur-sm border border-white/20"
         aria-label={isMuted ? "Unmute" : "Mute"}
       >
         {isMuted ? (
@@ -315,7 +315,7 @@ export default function Academics() {
 
         <div className="absolute inset-0 bg-black/40"></div>
 
-        <div className="relative max-w-7xl mx-auto px-6 w-full z-10 pb-20 md:pb-0">
+        <div className="relative max-w-7xl mx-auto px-3 w-full z-10 pb-20 md:pb-0">
           <div className="max-w-2xl">
             <p className="text-sm md:text-base text-white/80 mb-4 uppercase tracking-widest font-display">
               Explore Excellence
@@ -345,9 +345,9 @@ export default function Academics() {
       </section>
 
       {/* Schools & Colleges - Modernized Section */}
-      <section className="px-6 py-20 relative bg-gradient-to-b from-background via-brand-orange/2 to-background">
+      <section className="px-3 py-10 relative bg-gradient-to-b from-background via-brand-orange/2 to-background">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8">
             <div className="inline-flex items-center px-4 py-2 bg-orange-500/10 rounded-full border border-orange-500/20 mb-8">
               <BookOpen className="w-4 h-4 text-orange-500 mr-2" />
               <span className="text-sm font-medium text-orange-500">Our Schools</span>
@@ -363,7 +363,7 @@ export default function Academics() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
             {schoolsData.map((school, index) => {
               const colors = colorClasses[school.color as keyof typeof colorClasses];
               
@@ -392,7 +392,7 @@ export default function Academics() {
                   </div>
 
                   {/* Content Section */}
-                  <div className="flex-1 p-6 flex flex-col justify-between">
+                  <div className="flex-1 p-3 flex flex-col justify-between">
                     <div>
                       <div className="mb-4">
                         {school.href ? (
@@ -476,7 +476,7 @@ export default function Academics() {
 
 
       {/* CTA Section - Modernized */}
-      <section className="px-6 py-20">
+      <section className="px-3 py-10">
         <div className="max-w-4xl mx-auto">
           <div className="bg-gradient-to-br from-orange-500/10 via-red-600/10 to-pink-500/10 rounded-3xl p-12 border border-orange-500/20 relative overflow-hidden">
             <div className="absolute -top-20 -right-20 w-96 h-96 bg-brand-magenta/5 rounded-full blur-3xl" />

@@ -352,12 +352,12 @@ function HeroSection() {
   const { t } = useLanguage();
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-orange-500/10 via-red-500/10 to-background py-20 lg:py-28">
+    <section className="relative overflow-hidden bg-gradient-to-br from-orange-500/10 via-red-500/10 to-background py-10 lg:py-28">
       <div className="absolute inset-0">
         <div className="absolute -top-10 -left-10 h-64 w-64 rounded-full bg-orange-500/20 blur-3xl" />
         <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-red-600/20 blur-3xl" />
       </div>
-      <div className="relative mx-auto max-w-6xl px-6 text-center">
+      <div className="relative mx-auto max-w-6xl px-3 text-center">
         <div className="inline-flex items-center gap-2 rounded-full border border-orange-500/30 bg-orange-500/10 px-4 py-2 text-sm font-semibold text-orange-500">
           <GraduationCap className="h-4 w-4" />
           {t('admissions.title')} 2025
@@ -417,7 +417,7 @@ function HeroSection() {
 
 function QuickLinksSection() {
   return (
-    <section className="px-6 py-16">
+    <section className="px-3 py-8">
       <div className="mx-auto max-w-6xl">
         <div className="mb-10 text-center">
           <h2 className="text-3xl font-bold md:text-4xl">
@@ -428,7 +428,7 @@ function QuickLinksSection() {
             application pathways in one place.
           </p>
         </div>
-        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+        <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
           {quickLinks.map((item) => (
             <Card
               key={item.title}
@@ -474,7 +474,7 @@ function QuickLinksSection() {
 
 function AdmissionRoutesSection() {
   return (
-    <section className="bg-gradient-to-br from-orange-500/5 via-red-500/5 to-background px-6 py-16">
+    <section className="bg-gradient-to-br from-orange-500/5 via-red-500/5 to-background px-3 py-8">
       <div className="mx-auto max-w-6xl">
         <div className="mb-10 text-center">
           <h2 className="text-3xl font-bold md:text-4xl">
@@ -535,7 +535,7 @@ function AdmissionRoutesSection() {
 
 function BrochureSection() {
   return (
-    <section className="px-6 py-16">
+    <section className="px-3 py-8">
       <div className="mx-auto max-w-6xl">
         <div className="mb-10 text-center">
           <h2 className="text-3xl font-bold md:text-4xl">
@@ -546,7 +546,7 @@ function BrochureSection() {
             internships, and placement pathways for every DSU school.
           </p>
         </div>
-        <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+        <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
           {brochureResources.map((resource) => (
             <Card
               key={resource.title}
@@ -588,7 +588,7 @@ function BrochureSection() {
 
 function ContactSection() {
   return (
-    <section className="px-6 py-16">
+    <section className="px-3 py-8">
       <div className="mx-auto max-w-6xl space-y-10">
         <div className="text-center">
           <h2 className="text-3xl font-bold md:text-4xl">
@@ -599,7 +599,7 @@ function ContactSection() {
             helpline numbers below for real-time assistance.
           </p>
         </div>
-        <div className="grid gap-6 lg:grid-cols-3">
+        <div className="grid gap-3 lg:grid-cols-3">
           {campusContacts.map((campus) => (
             <Card
               key={campus.title}
@@ -639,7 +639,7 @@ function ContactSection() {
             </Card>
           ))}
         </div>
-        <div className="grid gap-6 lg:grid-cols-2">
+        <div className="grid gap-3 lg:grid-cols-2">
           <Card className="border border-orange-500/20 bg-card/70 backdrop-blur-sm">
             <CardHeader>
               <div className="flex items-center gap-3">
@@ -708,7 +708,7 @@ function ContactSection() {
 
 function SupportCallout() {
   return (
-    <section className="px-6 pb-20">
+    <section className="px-3 pb-20">
       <div className="mx-auto max-w-4xl rounded-3xl border border-orange-500/20 bg-gradient-to-r from-orange-500/15 via-red-500/15 to-orange-500/15 p-10 text-center shadow-lg shadow-orange-500/10">
         <div className="inline-flex items-center justify-center gap-2 rounded-full bg-orange-500/20 px-4 py-2 text-sm font-semibold text-orange-500">
           <Sparkles className="h-4 w-4" />

@@ -40,7 +40,7 @@ export default function About() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero Section with Background Image */}
-      <section className="relative py-20 lg:py-32 bg-gradient-to-br from-orange-500/10 via-red-600/5 to-background overflow-hidden">
+      <section className="relative py-10 lg:py-32 bg-gradient-to-br from-orange-500/10 via-red-600/5 to-background overflow-hidden">
         <div className="absolute inset-0">
           <img
             src={heroBgImage}
@@ -60,7 +60,7 @@ export default function About() {
           ></div>
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-6 text-center">
+        <div className="relative max-w-7xl mx-auto px-3 text-center">
           <div className="inline-flex items-center px-4 py-2 bg-orange-500/10 rounded-full border border-orange-500/20 mb-8">
             <Building className="w-4 h-4 text-orange-500 mr-2" />
             <span className="text-sm font-medium text-orange-500">
@@ -78,11 +78,11 @@ export default function About() {
             <span className="text-foreground">University</span>
           </h1>
 
-          <p className="text-xl md:text-2xl text-foreground mb-12 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-foreground mb-6 max-w-4xl mx-auto leading-relaxed">
             A centre of excellence in education, research & training, innovation & entrepreneurship producing citizens with exceptional leadership qualities
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
             <Link to="/about/history">
               <Button
                 size="lg"
@@ -109,7 +109,7 @@ export default function About() {
           </div>
 
           {/* Key Numbers */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-4xl mx-auto">
             {[
               { number: "17,000+", label: "Students", icon: Users },
               { number: "60+", label: "Years Heritage", icon: Calendar },
@@ -118,7 +118,7 @@ export default function About() {
             ].map((stat, index) => (
               <Card
                 key={index}
-                className="text-center p-6 bg-card/30 backdrop-blur-sm border border-border/30 hover:border-orange-500/30 transition-all duration-300"
+                className="text-center p-3 bg-card/30 backdrop-blur-sm border border-border/30 hover:border-orange-500/30 transition-all duration-300"
               >
                 <stat.icon className="w-8 h-8 text-orange-500 mx-auto mb-3" />
                 <div className="text-3xl font-bold text-foreground mb-1">
@@ -134,9 +134,9 @@ export default function About() {
       </section>
 
       {/* Welcome Section */}
-      <section className="px-6 py-20">
+      <section className="px-3 py-10">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
+          <div className="text-center mb-6">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
                 Welcome to DSU
@@ -144,7 +144,7 @@ export default function About() {
             </h2>
           </div>
 
-          <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-8 md:p-12 space-y-6">
+          <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-4 md:p-12 space-y-3">
             <p className="text-lg text-foreground leading-relaxed">
               Dayananda Sagar Institutions founded in the 60s by one such visionary, late Sri Dayananda Sagar committed to take knowledge to the people, transforms today's students into responsible citizens and professional leaders of tomorrow.
             </p>
@@ -156,9 +156,9 @@ export default function About() {
       </section>
 
       {/* Core Sections */}
-      <section className="px-6 py-20 bg-gradient-to-br from-orange-500/5 via-red-600/5 to-background">
+      <section className="px-3 py-10 bg-gradient-to-br from-orange-500/5 via-red-600/5 to-background">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
                 What Makes DSU Special
@@ -166,7 +166,7 @@ export default function About() {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-4">
             {[
               {
                 icon: Star,
@@ -232,9 +232,9 @@ export default function About() {
       </section>
 
       {/* Explore About DSU Navigation */}
-      <section className="px-6 py-20">
+      <section className="px-3 py-10">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
                 Explore About DSU
@@ -282,7 +282,7 @@ export default function About() {
               return (
                 <Link key={index} to={section.href}>
                   <Card className="h-full group hover:shadow-lg hover:shadow-orange-500/10 transition-all duration-300 hover:border-orange-500/30 bg-card/50 backdrop-blur-sm border border-border/50 cursor-pointer hover:-translate-y-1">
-                    <CardContent className="p-6 text-center">
+                    <CardContent className="p-3 text-center">
                       <Icon className="w-10 h-10 text-orange-500 mx-auto mb-4 group-hover:scale-110 transition-transform" />
                       <h3 className="font-bold text-lg mb-2 group-hover:text-orange-500 transition-colors">
                         {section.title}
@@ -300,7 +300,7 @@ export default function About() {
       </section>
 
       {/* CTA Section */}
-      <section className="px-6 py-20 bg-gradient-to-r from-orange-500/5 to-red-600/5">
+      <section className="px-3 py-10 bg-gradient-to-r from-orange-500/5 to-red-600/5">
         <div className="max-w-4xl mx-auto text-center">
           <div className="bg-gradient-to-r from-orange-500/10 via-red-600/10 to-pink-500/10 rounded-3xl p-12 border border-orange-500/20">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">

@@ -236,7 +236,7 @@ function ProgramCardComponent({ program }: { program: ProgramCard }) {
   const badgeClasses = `inline-flex items-center gap-2 rounded-none px-3 py-1 text-xs uppercase tracking-wide ${
     program.badgeClass ?? "bg-white/15 text-foreground/80 backdrop-blur"
   }`;
-  const panelClasses = `rounded-none border border-white/15 p-6 shadow-[0_25px_80px_-35px_rgba(255,255,255,0.45)] transition-colors duration-500 ${
+  const panelClasses = `rounded-none border border-white/15 p-3 shadow-[0_25px_80px_-35px_rgba(255,255,255,0.45)] transition-colors duration-500 ${
     program.panelClass ?? "bg-black/60 backdrop-blur-lg"
   }`;
 
@@ -254,10 +254,10 @@ function ProgramCardComponent({ program }: { program: ProgramCard }) {
       />
       <div className={`absolute inset-0 ${overlayClasses}`} />
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
-      <div className={`absolute left-6 top-6 ${badgeClasses}`}>
+      <div className={`absolute left-6 top-3 ${badgeClasses}`}>
         {program.area}
       </div>
-      <div className="relative z-10 flex h-full flex-col justify-end p-6 text-white">
+      <div className="relative z-10 flex h-full flex-col justify-end p-3 text-white">
         <div className={panelClasses}>
           <div className="space-y-4">
             <div>
@@ -384,7 +384,7 @@ function HeroVideo() {
         backgroundImage: "repeating-linear-gradient(0deg, rgba(255,255,255,.03) 0px, rgba(255,255,255,.03) 1px, transparent 1px, transparent 2px)"
       }}></div>
 
-      <div className="relative max-w-7xl mx-auto px-6 w-full z-10 pb-20 md:pb-0">
+      <div className="relative max-w-7xl mx-auto px-3 w-full z-10 pb-20 md:pb-0">
         <div className="max-w-2xl">
           <p className="text-sm md:text-base text-white/80 mb-4 uppercase tracking-widest font-display">
             School of Design
@@ -431,7 +431,7 @@ function HeroVideo() {
 
       <button
         onClick={toggleMute}
-        className="absolute top-8 right-8 z-10 p-3 rounded-full bg-black/50 hover:bg-black/70 transition-colors text-white backdrop-blur-sm border border-white/20"
+        className="absolute top-4 right-8 z-10 p-3 rounded-full bg-black/50 hover:bg-black/70 transition-colors text-white backdrop-blur-sm border border-white/20"
         aria-label={isMuted ? "Unmute" : "Mute"}
       >
         {isMuted ? (
@@ -455,13 +455,13 @@ export default function BDesignOverview() {
       {/* Dean's Message Section */}
       <DeanSection dean={DEAN_INFO} />
 
-      <section id="programs" className="relative overflow-hidden px-6 py-16">
+      <section id="programs" className="relative overflow-hidden px-3 py-8">
         <div
           className="pointer-events-none absolute inset-x-0 -top-32 h-64 bg-gradient-to-b from-brand-magenta/20 via-transparent to-transparent blur-3xl"
           aria-hidden="true"
         />
         <div className="mx-auto max-w-7xl">
-          <div className="mb-16">
+          <div className="mb-8">
             <div className="mb-8">
               <Badge className="bg-brand-magenta/15 text-brand-magenta">
                 Design Programme
@@ -491,9 +491,9 @@ export default function BDesignOverview() {
         </div>
       </section>
 
-      <section id="structure" className="px-6 py-16 bg-gradient-to-r from-brand-blue/5 via-brand-magenta/5 to-brand-orange/5">
+      <section id="structure" className="px-3 py-8 bg-gradient-to-r from-brand-blue/5 via-brand-magenta/5 to-brand-orange/5">
         <div className="mx-auto max-w-7xl">
-          <div className="mb-12 text-center">
+          <div className="mb-6 text-center">
             <Badge className="bg-brand-magenta/15 text-brand-magenta">
               Curriculum Architecture
             </Badge>
@@ -504,7 +504,7 @@ export default function BDesignOverview() {
               Move from foundational studios to advanced specialisation projects with liberal studies, research engagements and internships interwoven throughout the programme.
             </p>
           </div>
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+          <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
             {STRUCTURE_POINTS.map((point) => (
               <StructureCard key={point.title} point={point} />
             ))}
@@ -512,7 +512,7 @@ export default function BDesignOverview() {
         </div>
       </section>
 
-      <section id="calendar" className="px-6 py-16">
+      <section id="calendar" className="px-3 py-8">
         <div className="mx-auto max-w-6xl">
           <div className="relative overflow-hidden rounded-none border-[3px] border-dashed border-brand-magenta/30 bg-card/70 p-10 shadow-[0_35px_120px_-45px_rgba(175,80,255,0.65)] backdrop-blur">
             <div
@@ -559,10 +559,10 @@ export default function BDesignOverview() {
 
       <section
         id="related-resources"
-        className="bg-gradient-to-r from-brand-magenta/5 via-brand-blue/5 to-brand-orange/5 px-6 py-16"
+        className="bg-gradient-to-r from-brand-magenta/5 via-brand-blue/5 to-brand-orange/5 px-3 py-8"
       >
         <div className="mx-auto max-w-7xl">
-          <div className="mb-12 text-center">
+          <div className="mb-6 text-center">
             <h2 className="font-display text-3xl md:text-4xl">
               Explore More at DSU B.Design
             </h2>
@@ -664,8 +664,8 @@ export default function BDesignOverview() {
         </div>
       </section>
 
-      <section className="px-6 py-16">
-        <div className="mx-auto grid max-w-5xl items-start gap-8 lg:grid-cols-2">
+      <section className="px-3 py-8">
+        <div className="mx-auto grid max-w-5xl items-start gap-4 lg:grid-cols-2">
           <Card className="rounded-none border border-orange-500/20 bg-orange-500/10">
             <CardHeader>
               <CardTitle className="font-display">Leadership</CardTitle>
@@ -741,9 +741,9 @@ export default function BDesignOverview() {
         </div>
       </section>
 
-      <section id="featured-news" className="px-6 py-16 bg-gradient-to-r from-brand-blue/5 via-brand-magenta/5 to-brand-orange/5">
+      <section id="featured-news" className="px-3 py-8 bg-gradient-to-r from-brand-blue/5 via-brand-magenta/5 to-brand-orange/5">
         <div className="mx-auto max-w-7xl">
-          <div className="mb-12 text-center">
+          <div className="mb-6 text-center">
             <h2 className="font-display text-3xl md:text-4xl mb-3">
               Latest from B.Design
             </h2>
@@ -751,7 +751,7 @@ export default function BDesignOverview() {
               Stories of design excellence, innovation, and student success
             </p>
           </div>
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {FEATURED_NEWS.map((item, index) => (
               <a
                 key={item.title}
