@@ -101,7 +101,7 @@ export default function History() {
           />
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-6 py-20 lg:py-32">
+        <div className="relative max-w-7xl mx-auto px-3 py-10 lg:py-32">
           <div className="text-center">
             <div className="inline-flex items-center px-4 py-2 bg-orange-500/10 rounded-full border border-orange-500/20 mb-8">
               <Calendar className="w-4 h-4 text-orange-500 mr-2" />
@@ -124,9 +124,9 @@ export default function History() {
       </section>
 
       {/* Founders Section */}
-      <section className="px-6 py-20">
+      <section className="px-3 py-10">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               <span className="text-foreground">Our </span>
               <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
@@ -192,9 +192,9 @@ export default function History() {
       </section>
 
       {/* Heritage Section */}
-      <section className="px-6 py-20">
+      <section className="px-3 py-10">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               <span className="text-foreground">Our </span>
               <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
@@ -240,9 +240,9 @@ export default function History() {
       </section>
 
       {/* Academic Breadth Section */}
-      <section className="px-6 py-20">
+      <section className="px-3 py-10">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               <span className="text-foreground">Academic </span>
               <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
@@ -279,9 +279,9 @@ export default function History() {
       </section>
 
       {/* Campus Infrastructure Section */}
-      <section className="px-6 py-20 bg-gradient-to-br from-orange-500/5 via-red-600/5 to-background">
+      <section className="px-3 py-10 bg-gradient-to-br from-orange-500/5 via-red-600/5 to-background">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
                 World-Class Infrastructure
@@ -314,7 +314,7 @@ export default function History() {
       </section>
 
       {/* CTA Section */}
-      <section className="px-6 py-20 bg-gradient-to-r from-orange-500/5 to-red-600/5">
+      <section className="px-3 py-10 bg-gradient-to-r from-orange-500/5 to-red-600/5">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Be Part of Our Future

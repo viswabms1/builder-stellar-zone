@@ -151,9 +151,9 @@ export default function Footer() {
         aria-hidden="true"
         className="pointer-events-none absolute bottom-10 left-0 h-72 w-72 rounded-full bg-brand-blue/15 blur-3xl"
       />
-      <div className="relative mx-auto max-w-7xl px-6 py-16">
-        <div className="grid gap-16 lg:grid-cols-2">
-          <div className="space-y-8">
+      <div className="relative mx-auto max-w-7xl px-3 py-8">
+        <div className="grid gap-4 lg:grid-cols-2">
+          <div className="space-y-4">
             <RouterLink
               to="/"
               className="inline-flex items-center gap-3 text-left text-white"
@@ -246,7 +246,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {FOOTER_LINK_GROUPS.map((group) => (
               <nav key={group.title} className="space-y-5">
                 <h3 className="text-sm font-semibold uppercase tracking-widest text-white/70">
@@ -287,7 +287,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 grid gap-8 w-full" style={{ gridTemplateColumns: 'repeat(3, 1fr)' }}>
+        <div className="mt-16 grid gap-4 w-full" style={{ gridTemplateColumns: 'repeat(3, 1fr)' }}>
           {CONTACT_LOCATIONS.map((location, index) => (
             <div key={location.title} className="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-[0_20px_80px_-50px_rgba(255,255,255,0.6)]">
               <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.28em] text-white/60">
