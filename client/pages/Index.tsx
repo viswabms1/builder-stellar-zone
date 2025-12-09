@@ -339,6 +339,70 @@ export default function Index() {
     },
   ];
 
+  // All publications for rotation
+  const allPublications = [
+    {
+      date: "Nov 2024",
+      title: "AI & Machine Learning in Healthcare: A DSU Research Perspective",
+      category: "Research Paper",
+      description:
+        "Explore groundbreaking research on how AI and machine learning are revolutionizing healthcare diagnostics and patient outcomes. Published in collaboration with leading medical institutions.",
+      image:
+        "https://images.pexels.com/photos/5726794/pexels-photo-5726794.jpeg",
+      authors: "Dr. Prakash Sheelvanthmath & Team",
+    },
+    {
+      date: "Oct 2024",
+      title: "Sustainable Engineering Solutions for Smart Cities",
+      category: "Technical Journal",
+      description:
+        "A comprehensive study on innovative engineering approaches to build sustainable, intelligent urban infrastructure. Featuring case studies from DSU's engineering initiatives.",
+      image:
+        "https://images.pexels.com/photos/3862638/pexels-photo-3862638.jpeg",
+      authors: "School of Engineering",
+    },
+    {
+      date: "Sep 2024",
+      title: "Digital Transformation in Higher Education: Best Practices",
+      category: "White Paper",
+      description:
+        "An in-depth analysis of digital transformation strategies in academic institutions, with insights from DSU's successful implementation of smart campus initiatives.",
+      image:
+        "https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg",
+      authors: "DSU Innovation Lab",
+    },
+    {
+      date: "Aug 2024",
+      title: "Cybersecurity in Emerging Technologies: Challenges & Solutions",
+      category: "Research Article",
+      description:
+        "Addressing security concerns in AI, blockchain, and IoT applications. Features research from DSU's Cybersecurity Center of Excellence.",
+      image:
+        "https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg",
+      authors: "Cybersecurity Research Team",
+    },
+    {
+      date: "Jul 2024",
+      title: "Legal Frameworks for AI Governance in India",
+      category: "Policy Brief",
+      description:
+        "Comprehensive analysis of regulatory frameworks and legal considerations for AI implementation in India, prepared by DSU's School of Law.",
+      image:
+        "https://images.pexels.com/photos/8112201/pexels-photo-8112201.jpeg",
+      authors: "School of Law",
+    },
+    {
+      date: "Jun 2024",
+      title: "Innovation Metrics: Measuring Research Impact",
+      category: "Journal Article",
+      description:
+        "Framework for evaluating research impact and innovation metrics in academic institutions. A study by DSU's Research & Development Office.",
+      image:
+        "https://images.pexels.com/photos/6476783/pexels-photo-6476783.jpeg",
+      authors: "DSU Research Office",
+    },
+  ];
+
   // Get schools data based on current language
   const getSchoolsData = () => {
     const baseSchools = [
