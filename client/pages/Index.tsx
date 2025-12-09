@@ -918,7 +918,7 @@ export default function Index() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                 </div>
-                <div className="p-4">
+                <div className="px-4 pt-4 pb-[70px]">
                   <div className="flex items-center gap-3 mb-4">
                     <Badge className="bg-brand-orange/20 text-brand-orange text-xs">
                       <CalendarDays className="w-3 h-3 mr-1" />
