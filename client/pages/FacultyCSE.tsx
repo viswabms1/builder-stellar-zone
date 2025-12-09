@@ -34,7 +34,7 @@ export default function FacultyCSE() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <div className="relative px-6 py-16">
+      <div className="relative px-3 py-8">
         <div className="mx-auto max-w-7xl">
           <LeadershipSection leadership={leadership} />
         </div>
@@ -79,7 +79,7 @@ function LeadershipSection({ leadership }: LeadershipSectionProps) {
   }
 
   return (
-    <section className="py-20 md:py-28">
+    <section className="py-10 md:py-28">
       <div className="text-center space-y-4 mb-16">
         <div>
           <h2 className="text-4xl md:text-5xl font-bold font-display text-foreground mb-3">
@@ -92,7 +92,7 @@ function LeadershipSection({ leadership }: LeadershipSectionProps) {
         </p>
       </div>
 
-      <div className="grid gap-8 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 auto-rows-max">
+      <div className="grid gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 auto-rows-max">
         {leadership.map((faculty) => (
           <FacultyGridCard key={faculty.slug} faculty={faculty} />
         ))}

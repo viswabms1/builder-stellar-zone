@@ -19,7 +19,7 @@ export default function FacultyAerospace() {
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
         </div>
         <div className="absolute inset-0 flex items-center">
-          <div className="max-w-7xl mx-auto px-6">
+          <div className="max-w-7xl mx-auto px-3">
             <Link to="/academics/engineering/aerospace">
               <Button variant="outline" className="mb-6 border-white/20 text-white hover:bg-white/10">
                 <ChevronLeft className="w-4 h-4 mr-2" />
@@ -35,9 +35,9 @@ export default function FacultyAerospace() {
       </section>
 
       {/* Faculty Grid */}
-      <section className="px-6 py-16">
+      <section className="px-3 py-8">
         <div className="max-w-7xl mx-auto">
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {aerospaceFaculty.map((member) => (
               <Link key={member.slug} to={`/academics/engineering/aerospace/faculty/${member.slug}`}>
                 <Card className="group overflow-hidden border border-border/40 bg-card/50 hover:shadow-lg hover:shadow-brand-blue/20 hover:border-brand-blue/40 transition-all duration-300 cursor-pointer h-full">
