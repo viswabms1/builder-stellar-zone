@@ -224,12 +224,12 @@ export default function InternationalAdmissions() {
 
 function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-blue-500/10 via-indigo-500/10 to-background py-20 lg:py-28">
+    <section className="relative overflow-hidden bg-gradient-to-br from-blue-500/10 via-indigo-500/10 to-background py-10 lg:py-28">
       <div className="absolute inset-0">
         <div className="absolute -top-10 -left-14 h-64 w-64 rounded-full bg-blue-500/25 blur-3xl" />
         <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-indigo-500/25 blur-3xl" />
       </div>
-      <div className="relative mx-auto flex max-w-6xl flex-col gap-12 px-6 lg:flex-row lg:items-center">
+      <div className="relative mx-auto flex max-w-6xl flex-col gap-12 px-3 lg:flex-row lg:items-center">
         <div className="flex-1 text-center lg:text-left">
           <div className="inline-flex items-center gap-2 rounded-full border border-blue-500/30 bg-blue-500/10 px-4 py-2 text-sm font-semibold text-blue-500">
             <Globe2 className="h-4 w-4" />
@@ -302,7 +302,7 @@ function HeroSection() {
 
 function AboutSection() {
   return (
-    <section className="px-6 py-16">
+    <section className="px-3 py-8">
       <div className="mx-auto max-w-6xl">
         <div className="rounded-3xl border border-blue-500/20 bg-blue-500/5 p-10 text-center shadow-lg shadow-blue-500/10">
           <Badge className="mx-auto mb-4 w-fit rounded-full bg-blue-500/15 px-4 py-2 text-blue-500">
@@ -319,7 +319,7 @@ function AboutSection() {
 
 function ProgramsSection() {
   return (
-    <section className="bg-gradient-to-br from-blue-500/5 via-indigo-500/5 to-background px-6 py-16">
+    <section className="bg-gradient-to-br from-blue-500/5 via-indigo-500/5 to-background px-3 py-8">
       <div className="mx-auto max-w-6xl">
         <div className="mb-10 text-center">
           <h2 className="text-3xl font-bold md:text-4xl">Applications Open — 2025 Intake</h2>
@@ -327,7 +327,7 @@ function ProgramsSection() {
             Programmes available at the Harohalli Main Campus with immersive labs, international faculty, and industry-aligned curricula.
           </p>
         </div>
-        <div className="grid gap-6 lg:grid-cols-3">
+        <div className="grid gap-3 lg:grid-cols-3">
           {programs.map((program) => (
             <Card
               key={program.name}
@@ -362,7 +362,7 @@ function ProgramsSection() {
 
 function ProcessSection() {
   return (
-    <section className="px-6 py-16">
+    <section className="px-3 py-8">
       <div className="mx-auto max-w-6xl">
         <div className="mb-10 text-center">
           <Badge className="mx-auto w-fit rounded-full bg-blue-500/15 px-4 py-2 text-blue-500">
@@ -375,7 +375,7 @@ function ProcessSection() {
             Follow these steps to complete your enrolment. Our admissions counsellors support you at every stage.
           </p>
         </div>
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="grid gap-3 md:grid-cols-2">
           {processSteps.map((step) => (
             <Card
               key={step.title}
@@ -413,7 +413,7 @@ function InnovationSection() {
   }, []);
 
   return (
-    <section className="bg-gradient-to-br from-blue-500/5 via-indigo-500/5 to-background px-6 py-16">
+    <section className="bg-gradient-to-br from-blue-500/5 via-indigo-500/5 to-background px-3 py-8">
       <div className="mx-auto max-w-6xl">
         <div className="mb-10 text-center">
           <Badge className="mx-auto w-fit rounded-full bg-blue-500/15 px-4 py-2 text-blue-500">
@@ -426,7 +426,7 @@ function InnovationSection() {
         </div>
         <div className="space-y-6">
           {logosChunks.map((chunk, index) => (
-            <div key={`logos-${index}`} className="grid gap-6 sm:grid-cols-2 md:grid-cols-4">
+            <div key={`logos-${index}`} className="grid gap-3 sm:grid-cols-2 md:grid-cols-4">
               {chunk.map((logo) => (
                 <div
                   key={logo.src}
@@ -450,7 +450,7 @@ function InnovationSection() {
 
 function InstructionsSection() {
   return (
-    <section className="px-6 py-16" id="instructions">
+    <section className="px-3 py-8" id="instructions">
       <div className="mx-auto max-w-6xl">
         <div className="mb-10 text-center">
           <Badge className="mx-auto w-fit rounded-full bg-blue-500/15 px-4 py-2 text-blue-500">
@@ -470,10 +470,10 @@ function InstructionsSection() {
               value={instruction.title}
               className="overflow-hidden rounded-2xl border border-blue-500/20 bg-card/80 backdrop-blur"
             >
-              <AccordionTrigger className="px-6 py-4 text-left text-lg font-semibold text-foreground">
+              <AccordionTrigger className="px-3 py-4 text-left text-lg font-semibold text-foreground">
                 {instruction.title}
               </AccordionTrigger>
-              <AccordionContent className="px-6 pb-6 text-sm text-foreground">
+              <AccordionContent className="px-3 pb-6 text-sm text-foreground">
                 {Array.isArray(instruction.content) ? (
                   <ul className="list-disc space-y-2 pl-5">
                     {instruction.content.map((item) => (
@@ -494,7 +494,7 @@ function InstructionsSection() {
 
 function GallerySection() {
   return (
-    <section className="bg-gradient-to-br from-blue-500/5 via-indigo-500/5 to-background px-6 py-16">
+    <section className="bg-gradient-to-br from-blue-500/5 via-indigo-500/5 to-background px-3 py-8">
       <div className="mx-auto max-w-6xl">
         <div className="mb-10 text-center">
           <Badge className="mx-auto w-fit rounded-full bg-blue-500/15 px-4 py-2 text-blue-500">
@@ -507,7 +507,7 @@ function GallerySection() {
             Glimpse into DSU's laboratories, collaborative spaces, and vibrant student life.
           </p>
         </div>
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
           {galleryImages.map((image) => (
             <Card
               key={image.src}
@@ -534,7 +534,7 @@ function GallerySection() {
 
 function ApplySection() {
   return (
-    <section className="px-6 pb-20">
+    <section className="px-3 pb-20">
       <div className="mx-auto max-w-5xl rounded-3xl border border-blue-500/20 bg-gradient-to-r from-blue-500/15 via-indigo-500/15 to-blue-500/15 p-10 text-center shadow-lg shadow-blue-500/10">
         <div className="inline-flex items-center justify-center gap-2 rounded-full bg-blue-500/20 px-4 py-2 text-sm font-semibold text-blue-500">
           <MessageCircle className="h-4 w-4" />

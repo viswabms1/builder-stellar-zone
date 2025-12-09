@@ -15,7 +15,7 @@ const NotFound = () => {
   }, [location.pathname]);
 
   return (
-    <div className="min-h-[calc(100vh-4rem)] flex items-center justify-center px-6 py-12">
+    <div className="min-h-[calc(100vh-4rem)] flex items-center justify-center px-3 py-12">
       <Card className="max-w-md w-full text-center bg-card/50 backdrop-blur-sm border border-border/50">
         <CardHeader>
           <div className="w-16 h-16 bg-destructive/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
@@ -30,7 +30,7 @@ const NotFound = () => {
             Page Not Found
           </CardTitle>
         </CardHeader>
-        <CardContent className="space-y-6">
+        <CardContent className="space-y-3">
           <CardDescription className="text-foreground leading-relaxed">
             Oops! The page you're looking for seems to have vanished into the digital void. 
             Don't worry, we'll help you get back on track.

@@ -277,8 +277,8 @@ export default function MedicalEducationResearch() {
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
         </div>
         <div className="absolute inset-0 flex items-center">
-          <div className="mx-auto max-w-7xl px-6">
-            <div className="mb-6 inline-flex items-center rounded-full border border-brand-magenta/20 bg-brand-magenta/10 px-4 py-2">
+          <div className="mx-auto max-w-7xl px-3">
+            <div className="mb-3 inline-flex items-center rounded-full border border-brand-magenta/20 bg-brand-magenta/10 px-4 py-2">
               <Microscope className="mr-2 h-4 w-4 text-brand-magenta" />
               <span className="text-sm font-medium text-brand-magenta font-display">
                 Medical Education & Research
@@ -317,7 +317,7 @@ export default function MedicalEducationResearch() {
 
       <section
         id="highlights"
-        className="bg-gradient-to-r from-brand-magenta/5 via-brand-orange/5 to-brand-blue/5 px-6 py-16"
+        className="bg-gradient-to-r from-brand-magenta/5 via-brand-orange/5 to-brand-blue/5 px-3 py-8"
       >
         <div className="mx-auto max-w-7xl">
           <div className="mb-12 text-center">
@@ -331,7 +331,7 @@ export default function MedicalEducationResearch() {
               Smart Campus. Integrated Care. Translational Research.
             </h2>
           </div>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-4">
             {HIGHLIGHTS.map((highlight) => (
               <HighlightCard key={highlight.title} highlight={highlight} />
             ))}
@@ -339,7 +339,7 @@ export default function MedicalEducationResearch() {
         </div>
       </section>
 
-      <section id="pillars" className="px-6 py-16">
+      <section id="pillars" className="px-3 py-8">
         <div className="mx-auto max-w-7xl">
           <div className="mb-10 text-center">
             <Badge className="bg-brand-magenta/15 text-brand-magenta">
@@ -354,7 +354,7 @@ export default function MedicalEducationResearch() {
               physicians.
             </p>
           </div>
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
             {PILLARS.map((pillar) => (
               <PillarCard key={pillar.title} pillar={pillar} />
             ))}
@@ -364,10 +364,10 @@ export default function MedicalEducationResearch() {
 
       <section
         id="resources"
-        className="bg-gradient-to-r from-brand-blue/5 to-brand-orange/5 px-6 py-16"
+        className="bg-gradient-to-r from-brand-blue/5 to-brand-orange/5 px-3 py-8"
       >
         <div className="mx-auto max-w-7xl">
-          <div className="mb-12 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+          <div className="mb-12 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
             <div className="max-w-3xl">
               <Badge className="bg-brand-magenta/15 text-brand-magenta">
                 Resources
@@ -390,7 +390,7 @@ export default function MedicalEducationResearch() {
               <ChevronRight className="h-4 w-4" />
             </a>
           </div>
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+          <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
             {RESOURCES.map((resource) => (
               <ResourceCard key={resource.title} resource={resource} />
             ))}
@@ -398,13 +398,13 @@ export default function MedicalEducationResearch() {
         </div>
       </section>
 
-      <section className="px-6 pb-20">
+      <section className="px-3 pb-20">
         <div className="mx-auto max-w-4xl text-center">
-          <div className="rounded-3xl border border-brand-magenta/20 bg-brand-magenta/5 p-10">
+          <div className="rounded-3xl border border-brand-magenta/20 bg-brand-magenta/5 p-5">
             <h3 className="mb-3 font-display text-3xl">
               Shape the Future of Healthcare with DSU
             </h3>
-            <p className="mb-6 text-foreground font-body">
+            <p className="mb-3 text-foreground font-body">
               Join a medical community that blends compassionate care, research
               innovation and community service on one vibrant campus.
             </p>

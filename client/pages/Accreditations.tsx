@@ -183,8 +183,8 @@ export default function Accreditations() {
           ></div>
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-6 text-center">
-          <div className="inline-flex items-center px-4 py-2 bg-orange-500/10 rounded-full border border-orange-500/20 mb-8">
+        <div className="relative max-w-7xl mx-auto px-3 text-center">
+          <div className="inline-flex items-center px-4 py-2 bg-orange-500/10 rounded-full border border-orange-500/20 mb-4">
             <Award className="w-4 h-4 text-orange-500 mr-2" />
             <span className="text-sm font-medium text-orange-500">
               Recognitions
@@ -197,14 +197,14 @@ export default function Accreditations() {
             </span>
           </h1>
 
-          <p className="text-lg md:text-xl text-foreground mb-8 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-foreground mb-4 leading-relaxed max-w-3xl mx-auto">
             National and international recognition of our commitment to academic excellence, research innovation, and institutional quality.
           </p>
         </div>
       </section>
 
       {/* Major Accreditations */}
-      <section className="px-6 py-20">
+      <section className="px-3 py-20">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -217,7 +217,7 @@ export default function Accreditations() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-4">
             {accreditations.map((acc, index) => {
               const Icon = acc.icon;
               return (
@@ -264,7 +264,7 @@ export default function Accreditations() {
       </section>
 
       {/* Special Recognitions */}
-      <section className="px-6 py-20 bg-gradient-to-br from-orange-500/5 via-red-600/5 to-background">
+      <section className="px-3 py-20 bg-gradient-to-br from-orange-500/5 via-red-600/5 to-background">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <Badge
@@ -281,7 +281,7 @@ export default function Accreditations() {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-4">
             {specialRecognitions.map((rec, index) => {
               const Icon = rec.icon;
               return (
@@ -328,7 +328,7 @@ export default function Accreditations() {
       </section>
 
       {/* Other Certifications */}
-      <section className="px-6 py-20">
+      <section className="px-3 py-20">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -342,13 +342,13 @@ export default function Accreditations() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-3">
             {certifications.map((cert, index) => (
               <Card
                 key={index}
                 className="bg-card/30 backdrop-blur-sm border border-border/30 hover:border-orange-500/30 transition-all duration-300 text-center"
               >
-                <CardContent className="p-6">
+                <CardContent className="p-3">
                   <CheckCircle className="w-10 h-10 text-orange-500 mx-auto mb-4" />
                   <h3 className="font-bold text-lg mb-2">{cert.name}</h3>
                   <Badge variant="secondary" className="mb-2 text-xs">
@@ -365,10 +365,10 @@ export default function Accreditations() {
       </section>
 
       {/* Impact Section */}
-      <section className="px-6 py-20 bg-gradient-to-r from-orange-500/5 to-red-600/5">
+      <section className="px-3 py-20 bg-gradient-to-r from-orange-500/5 to-red-600/5">
         <div className="max-w-4xl mx-auto">
-          <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-8 md:p-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-8">
+          <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-4 md:p-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
               <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
                 What These Accreditations Mean
               </span>
@@ -419,12 +419,12 @@ export default function Accreditations() {
       </section>
 
       {/* CTA Section */}
-      <section className="px-6 py-20">
+      <section className="px-3 py-20">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Learn More About Our Programs
           </h2>
-          <p className="text-lg text-foreground mb-8 max-w-2xl mx-auto">
+          <p className="text-lg text-foreground mb-4 max-w-2xl mx-auto">
             Explore our accredited programs and start your journey with a university recognized for excellence.
           </p>
 

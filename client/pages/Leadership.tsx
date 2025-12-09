@@ -181,7 +181,7 @@ export default function Leadership() {
           ></div>
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-6 text-center">
+        <div className="relative max-w-7xl mx-auto px-3 text-center">
           <div className="inline-flex items-center px-4 py-2 bg-orange-500/10 rounded-full border border-orange-500/20 mb-8">
             <Users className="w-4 h-4 text-orange-500 mr-2" />
             <span className="text-sm font-medium text-orange-500">
@@ -189,7 +189,7 @@ export default function Leadership() {
             </span>
           </div>
 
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+          <h1 className="text-4xl md:text-5xl font-bold mb-3 leading-tight">
             <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
               Leadership & Administration
             </span>
@@ -202,10 +202,10 @@ export default function Leadership() {
       </section>
 
       {/* Founders Section */}
-      <section className="px-6 py-20 bg-gradient-to-r from-orange-500/5 via-red-600/5 to-background">
+      <section className="px-3 py-20 bg-gradient-to-r from-orange-500/5 via-red-600/5 to-background">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold mb-3">
               <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
                 Our Founders
               </span>
@@ -218,7 +218,7 @@ export default function Leadership() {
           <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
             {/* Founder 1 */}
             <div className="group text-center">
-              <div className="mb-6 relative inline-block">
+              <div className="mb-3 relative inline-block">
                 <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-red-600/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-500" />
                 <div className="relative w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-orange-500/30 group-hover:border-orange-500/60 transition-all duration-500 shadow-xl">
                   <img
@@ -241,7 +241,7 @@ export default function Leadership() {
 
             {/* Founder 2 */}
             <div className="group text-center">
-              <div className="mb-6 relative inline-block">
+              <div className="mb-3 relative inline-block">
                 <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-red-600/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-500" />
                 <div className="relative w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-orange-500/30 group-hover:border-orange-500/60 transition-all duration-500 shadow-xl">
                   <img
@@ -266,10 +266,10 @@ export default function Leadership() {
       </section>
 
       {/* Key Leadership Positions */}
-      <section className="px-6 py-20">
+      <section className="px-3 py-20">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold mb-3">
               <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
                 Key Leadership
               </span>
@@ -345,10 +345,10 @@ export default function Leadership() {
       </section>
 
       {/* Registrar and Vice Chancellor */}
-      <section className="px-6 py-20">
+      <section className="px-3 py-20">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold mb-3">
               <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
                 Administrative Leadership
               </span>
@@ -424,10 +424,10 @@ export default function Leadership() {
       </section>
 
       {/* Pro Vice Chancellors */}
-      <section className="px-6 py-20 bg-gradient-to-br from-orange-500/5 via-red-600/5 to-background">
+      <section className="px-3 py-20 bg-gradient-to-br from-orange-500/5 via-red-600/5 to-background">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold mb-3">
               <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
                 Pro Vice Chancellors
               </span>
@@ -503,7 +503,7 @@ export default function Leadership() {
       </section>
 
       {/* Governance Committees */}
-      <section id="administrative-committees" className="px-6 py-20">
+      <section id="administrative-committees" className="px-3 py-20">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <Badge
@@ -512,7 +512,7 @@ export default function Leadership() {
             >
               Governance Structure
             </Badge>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold mb-3">
               <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
                 Administrative Committees
               </span>
@@ -589,10 +589,10 @@ export default function Leadership() {
       </section>
 
       {/* Organizational Values */}
-      <section className="px-6 py-20 bg-gradient-to-r from-orange-500/5 to-red-600/5">
+      <section className="px-3 py-20 bg-gradient-to-r from-orange-500/5 to-red-600/5">
         <div className="max-w-4xl mx-auto">
           <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-8 md:p-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold mb-3">
               <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
                 Leadership Principles
               </span>
@@ -656,9 +656,9 @@ export default function Leadership() {
       </section>
 
       {/* CTA Section */}
-      <section className="px-6 py-20">
+      <section className="px-3 py-20">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold mb-3">
             Connect With Our Team
           </h2>
           <p className="text-lg text-foreground mb-8 max-w-2xl mx-auto">

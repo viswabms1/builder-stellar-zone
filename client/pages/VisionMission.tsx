@@ -70,7 +70,7 @@ export default function VisionMission() {
           />
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-6 py-20 lg:py-32 text-center">
+        <div className="relative max-w-7xl mx-auto px-3 py-10 lg:py-32 text-center">
           <div className="inline-flex items-center px-4 py-2 bg-orange-500/10 rounded-full border border-orange-500/20 mb-8">
             <Compass className="w-4 h-4 text-orange-500 mr-2" />
             <span className="text-sm font-medium text-orange-500">
@@ -91,9 +91,9 @@ export default function VisionMission() {
       </section>
 
       {/* Vision & Mission - Two Pillars */}
-      <section className="px-6 py-20">
+      <section className="px-3 py-10">
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-4">
             {/* Vision Card */}
             <Card className="bg-card/50 backdrop-blur-sm border border-blue-500/30 hover:shadow-lg transition-all duration-300">
               <CardHeader>
@@ -132,7 +132,7 @@ export default function VisionMission() {
       </section>
 
       {/* Core Values Section */}
-      <section className="px-6 py-20 bg-gradient-to-br from-orange-500/5 via-red-600/5 to-background">
+      <section className="px-3 py-10 bg-gradient-to-br from-orange-500/5 via-red-600/5 to-background">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -145,7 +145,7 @@ export default function VisionMission() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-3">
             {coreValues.map((value, index) => {
               const Icon = value.icon;
               return (
@@ -153,7 +153,7 @@ export default function VisionMission() {
                   key={index}
                   className="bg-card/50 backdrop-blur-sm border border-border/50 hover:border-orange-500/30 transition-all duration-300"
                 >
-                  <CardContent className="p-6">
+                  <CardContent className="p-3">
                     <Icon className="w-10 h-10 text-orange-500 mb-4" />
                     <h3 className="text-lg font-bold mb-3 text-foreground">
                       {value.title}
@@ -170,7 +170,7 @@ export default function VisionMission() {
       </section>
 
       {/* CTA Section */}
-      <section className="px-6 py-20 bg-gradient-to-r from-orange-500/5 to-red-600/5">
+      <section className="px-3 py-10 bg-gradient-to-r from-orange-500/5 to-red-600/5">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Join Our Community

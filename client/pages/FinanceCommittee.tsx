@@ -16,7 +16,7 @@ export default function FinanceCommittee() {
           ></div>
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-6 text-center">
+        <div className="relative max-w-7xl mx-auto px-3 text-center">
           <div className="inline-flex items-center px-4 py-2 bg-orange-500/10 rounded-full border border-orange-500/20 mb-8">
             <Briefcase className="w-4 h-4 text-orange-500 mr-2" />
             <span className="text-sm font-medium text-orange-500">
@@ -24,7 +24,7 @@ export default function FinanceCommittee() {
             </span>
           </div>
 
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+          <h1 className="text-4xl md:text-5xl font-bold mb-3 leading-tight">
             <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
               Finance Committee
             </span>
@@ -37,10 +37,10 @@ export default function FinanceCommittee() {
       </section>
 
       {/* Committee Functions Section */}
-      <section className="px-6 py-20">
+      <section className="px-3 py-20">
         <div className="max-w-4xl mx-auto">
           <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-8 md:p-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold mb-3">
               <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
                 Committee Functions & Responsibilities
               </span>
@@ -98,10 +98,10 @@ export default function FinanceCommittee() {
       </section>
 
       {/* Committee Members Section */}
-      <section className="px-6 py-20 bg-gradient-to-br from-orange-500/5 via-red-600/5 to-background">
+      <section className="px-3 py-20 bg-gradient-to-br from-orange-500/5 via-red-600/5 to-background">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold mb-3">
               <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
                 Members
               </span>
@@ -116,42 +116,42 @@ export default function FinanceCommittee() {
               <table className="w-full">
                 <thead>
                   <tr className="border-b border-border/50 bg-orange-500/5">
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-foreground">Sl. No</th>
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-foreground">Name</th>
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-foreground">Position</th>
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-foreground">Role</th>
+                    <th className="px-3 py-4 text-left text-sm font-semibold text-foreground">Sl. No</th>
+                    <th className="px-3 py-4 text-left text-sm font-semibold text-foreground">Name</th>
+                    <th className="px-3 py-4 text-left text-sm font-semibold text-foreground">Position</th>
+                    <th className="px-3 py-4 text-left text-sm font-semibold text-foreground">Role</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr className="border-b border-border/30 hover:bg-orange-500/5 transition-colors">
-                    <td className="px-6 py-4 text-sm text-foreground">1</td>
-                    <td className="px-6 py-4 text-sm font-medium text-foreground">Dr. D. Hemachandra Sagar</td>
-                    <td className="px-6 py-4 text-sm text-foreground">Chancellor, DSU</td>
-                    <td className="px-6 py-4 text-sm text-foreground">Chairperson (or his nominee)</td>
+                    <td className="px-3 py-4 text-sm text-foreground">1</td>
+                    <td className="px-3 py-4 text-sm font-medium text-foreground">Dr. D. Hemachandra Sagar</td>
+                    <td className="px-3 py-4 text-sm text-foreground">Chancellor, DSU</td>
+                    <td className="px-3 py-4 text-sm text-foreground">Chairperson (or his nominee)</td>
                   </tr>
                   <tr className="border-b border-border/30 hover:bg-orange-500/5 transition-colors">
-                    <td className="px-6 py-4 text-sm text-foreground">2</td>
-                    <td className="px-6 py-4 text-sm font-medium text-foreground">Dr. D. Premachandra Sagar</td>
-                    <td className="px-6 py-4 text-sm text-foreground">Pro Chancellor, DSU</td>
-                    <td className="px-6 py-4 text-sm text-foreground">Nominee of Sponsoring Body</td>
+                    <td className="px-3 py-4 text-sm text-foreground">2</td>
+                    <td className="px-3 py-4 text-sm font-medium text-foreground">Dr. D. Premachandra Sagar</td>
+                    <td className="px-3 py-4 text-sm text-foreground">Pro Chancellor, DSU</td>
+                    <td className="px-3 py-4 text-sm text-foreground">Nominee of Sponsoring Body</td>
                   </tr>
                   <tr className="border-b border-border/30 hover:bg-orange-500/5 transition-colors">
-                    <td className="px-6 py-4 text-sm text-foreground">3</td>
-                    <td className="px-6 py-4 text-sm font-medium text-foreground">Prof. B. S. Satyanarayana</td>
-                    <td className="px-6 py-4 text-sm text-foreground">Vice Chancellor, DSU</td>
-                    <td className="px-6 py-4 text-sm text-foreground">Member</td>
+                    <td className="px-3 py-4 text-sm text-foreground">3</td>
+                    <td className="px-3 py-4 text-sm font-medium text-foreground">Prof. B. S. Satyanarayana</td>
+                    <td className="px-3 py-4 text-sm text-foreground">Vice Chancellor, DSU</td>
+                    <td className="px-3 py-4 text-sm text-foreground">Member</td>
                   </tr>
                   <tr className="border-b border-border/30 hover:bg-orange-500/5 transition-colors">
-                    <td className="px-6 py-4 text-sm text-foreground">4</td>
-                    <td className="px-6 py-4 text-sm font-medium text-foreground">Dr. Puttamadappa C</td>
-                    <td className="px-6 py-4 text-sm text-foreground">Registrar, DSU</td>
-                    <td className="px-6 py-4 text-sm text-foreground">Member</td>
+                    <td className="px-3 py-4 text-sm text-foreground">4</td>
+                    <td className="px-3 py-4 text-sm font-medium text-foreground">Dr. Puttamadappa C</td>
+                    <td className="px-3 py-4 text-sm text-foreground">Registrar, DSU</td>
+                    <td className="px-3 py-4 text-sm text-foreground">Member</td>
                   </tr>
                   <tr className="hover:bg-orange-500/5 transition-colors">
-                    <td className="px-6 py-4 text-sm text-foreground">5</td>
-                    <td className="px-6 py-4 text-sm font-medium text-foreground">Mr. D. Ramanathan</td>
-                    <td className="px-6 py-4 text-sm text-foreground">Chief Finance Officer, DSU</td>
-                    <td className="px-6 py-4 text-sm text-foreground">Member</td>
+                    <td className="px-3 py-4 text-sm text-foreground">5</td>
+                    <td className="px-3 py-4 text-sm font-medium text-foreground">Mr. D. Ramanathan</td>
+                    <td className="px-3 py-4 text-sm text-foreground">Chief Finance Officer, DSU</td>
+                    <td className="px-3 py-4 text-sm text-foreground">Member</td>
                   </tr>
                 </tbody>
               </table>
@@ -161,9 +161,9 @@ export default function FinanceCommittee() {
       </section>
 
       {/* CTA Section */}
-      <section className="px-6 py-20">
+      <section className="px-3 py-20">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold mb-3">
             Learn More About Leadership
           </h2>
           <p className="text-lg text-foreground mb-8 max-w-2xl mx-auto">
