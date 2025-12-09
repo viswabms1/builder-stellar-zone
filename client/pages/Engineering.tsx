@@ -623,8 +623,8 @@ function NoticeBoardCarousel() {
   };
 
   return (
-    <section className="px-6 py-16">
-      <div className="mx-auto max-w-7xl space-y-8">
+    <section className="px-3 py-8">
+      <div className="mx-auto max-w-7xl space-y-4">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <h2 className="headline-2 mb-3 font-display">
@@ -639,7 +639,7 @@ function NoticeBoardCarousel() {
           </div>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           <div>
             {renderCarousel("Events", events, currentEventIndex, setCurrentEventIndex, "Event")}
           </div>
@@ -666,7 +666,7 @@ function DepartmentCard({ department }: { department: EngineeringDepartment }) {
   const badgeClasses = `inline-flex items-center gap-2 rounded-none px-3 py-1 text-xs uppercase tracking-wide ${
     department.badgeClass ?? "bg-white/15 text-foreground/80 backdrop-blur"
   }`;
-  const panelClasses = `rounded-none border border-white/15 p-6 shadow-[0_25px_80px_-35px_rgba(255,255,255,0.45)] transition-colors duration-500 ${
+  const panelClasses = `rounded-none border border-white/15 p-3 shadow-[0_25px_80px_-35px_rgba(255,255,255,0.45)] transition-colors duration-500 ${
     department.panelClass ?? "bg-black/60 backdrop-blur-lg"
   }`;
 
@@ -684,10 +684,10 @@ function DepartmentCard({ department }: { department: EngineeringDepartment }) {
       />
       <div className={`absolute inset-0 ${overlayClasses}`} />
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
-      <div className={`absolute left-6 top-6 ${badgeClasses}`}>
+      <div className={`absolute left-6 top-3 ${badgeClasses}`}>
         {department.area}
       </div>
-      <div className="relative z-10 flex h-full flex-col justify-end p-6 text-white">
+      <div className="relative z-10 flex h-full flex-col justify-end p-3 text-white">
         <div className={panelClasses}>
           <div className="space-y-4">
             <div>
@@ -770,7 +770,7 @@ function SupportingDepartmentCard({
             </h3>
           </div>
         </div>
-        <CardContent className="space-y-4 p-6">
+        <CardContent className="space-y-4 p-3">
           <p className="text-sm leading-relaxed text-foreground font-body">
             {department.focus}
           </p>
@@ -793,7 +793,7 @@ function ProgramCardComponent({ program }: { program: ProgramCard }) {
   const badgeClasses = `inline-flex items-center gap-2 rounded-none px-3 py-1 text-xs uppercase tracking-wide ${
     program.badgeClass ?? "bg-white/15 text-foreground/80 backdrop-blur"
   }`;
-  const panelClasses = `rounded-none border border-white/15 p-6 shadow-[0_25px_80px_-35px_rgba(255,255,255,0.45)] transition-colors duration-500 ${
+  const panelClasses = `rounded-none border border-white/15 p-3 shadow-[0_25px_80px_-35px_rgba(255,255,255,0.45)] transition-colors duration-500 ${
     program.panelClass ?? "bg-black/60 backdrop-blur-lg"
   }`;
 
@@ -811,10 +811,10 @@ function ProgramCardComponent({ program }: { program: ProgramCard }) {
       />
       <div className={`absolute inset-0 ${overlayClasses}`} />
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
-      <div className={`absolute left-6 top-6 ${badgeClasses}`}>
+      <div className={`absolute left-6 top-3 ${badgeClasses}`}>
         {program.area}
       </div>
-      <div className="relative z-10 flex h-full flex-col justify-end p-6 text-white">
+      <div className="relative z-10 flex h-full flex-col justify-end p-3 text-white">
         <div className={panelClasses}>
           <div className="space-y-4">
             <div>
@@ -952,7 +952,7 @@ function HeroVideo() {
         backgroundImage: "repeating-linear-gradient(0deg, rgba(255,255,255,.03) 0px, rgba(255,255,255,.03) 1px, transparent 1px, transparent 2px)"
       }}></div>
 
-      <div className="relative max-w-7xl mx-auto px-6 w-full z-10 pb-20 md:pb-0">
+      <div className="relative max-w-7xl mx-auto px-3 w-full z-10 pb-20 md:pb-0">
         <div className="max-w-2xl">
           <p className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 uppercase tracking-widest font-display">
             School of Engineering
@@ -996,7 +996,7 @@ function HeroVideo() {
 
       <button
         onClick={toggleMute}
-        className="absolute top-8 right-8 z-10 p-3 rounded-full bg-black/50 hover:bg-black/70 transition-colors text-white backdrop-blur-sm border border-white/20"
+        className="absolute top-4 right-8 z-10 p-3 rounded-full bg-black/50 hover:bg-black/70 transition-colors text-white backdrop-blur-sm border border-white/20"
         aria-label={isMuted ? "Unmute" : "Mute"}
       >
         {isMuted ? (
@@ -1087,12 +1087,12 @@ export default function Engineering() {
 
 
       {/* Dean's Message Section */}
-      <section className="relative overflow-hidden px-6 py-16">
+      <section className="relative overflow-hidden px-3 py-8">
         <div className="mx-auto max-w-7xl">
           <div className="rounded-none border border-orange-500/20 bg-orange-500/10 overflow-hidden backdrop-blur">
             <div className="grid md:grid-cols-[300px_1fr] gap-0">
               {/* Dean's Photo */}
-              <div className="relative overflow-hidden bg-gradient-to-br from-brand-magenta/10 to-brand-blue/10 flex items-start justify-center p-8 md:p-12 pt-8 md:pt-12">
+              <div className="relative overflow-hidden bg-gradient-to-br from-brand-magenta/10 to-brand-blue/10 flex items-start justify-center p-4 md:p-12 pt-8 md:pt-12">
                 <div className="relative w-full max-w-xs">
                   <img
                     src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fb0960f67ec5541b7bc257c9ecfe8e30b?format=webp&width=800"
@@ -1107,7 +1107,7 @@ export default function Engineering() {
               </div>
 
               {/* Dean's Message Video */}
-              <div className="p-8 md:p-12 flex flex-col justify-center">
+              <div className="p-4 md:p-12 flex flex-col justify-center">
                 <div className="space-y-4">
                   {/* Header with Name and Title */}
                   <div className="border-l-4 border-brand-magenta pl-4">
@@ -1131,7 +1131,7 @@ export default function Engineering() {
         </div>
       </section>
 
-      <section id="programs" className="relative overflow-hidden px-6 py-16">
+      <section id="programs" className="relative overflow-hidden px-3 py-8">
         <div
           className="pointer-events-none absolute inset-x-0 -top-32 h-64 bg-gradient-to-b from-brand-magenta/20 via-transparent to-transparent blur-3xl"
           aria-hidden="true"
@@ -1186,10 +1186,10 @@ export default function Engineering() {
 
       <section
         id="supporting-departments"
-        className="bg-gradient-to-r from-brand-blue/10 via-brand-magenta/10 to-brand-orange/10 px-6 py-16"
+        className="bg-gradient-to-r from-brand-blue/10 via-brand-magenta/10 to-brand-orange/10 px-3 py-8"
       >
         <div className="mx-auto max-w-7xl">
-          <div className="mb-12 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+          <div className="mb-12 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
             <div className="max-w-3xl">
               <Badge className="bg-brand-magenta/15 text-brand-magenta">
                 Supporting Departments
@@ -1219,7 +1219,7 @@ export default function Engineering() {
         </div>
       </section>
 
-      <section id="notice-board" className="px-6 py-16">
+      <section id="notice-board" className="px-3 py-8">
         <div className="mx-auto max-w-6xl">
           <div className="relative overflow-hidden rounded-[36px] border-[3px] border-dashed border-brand-magenta/30 bg-card/70 p-10 shadow-[0_35px_120px_-45px_rgba(175,80,255,0.65)] backdrop-blur">
             <div
@@ -1263,7 +1263,7 @@ export default function Engineering() {
 
       <section
         id="related-resources"
-        className="bg-gradient-to-r from-brand-magenta/5 via-brand-blue/5 to-brand-orange/5 px-6 py-16"
+        className="bg-gradient-to-r from-brand-magenta/5 via-brand-blue/5 to-brand-orange/5 px-3 py-8"
       >
         <div className="mx-auto max-w-7xl">
           <div className="mb-12 text-center">
@@ -1372,8 +1372,8 @@ export default function Engineering() {
         </div>
       </section>
 
-      <section className="px-6 py-16">
-        <div className="mx-auto grid max-w-5xl items-start gap-8 lg:grid-cols-2">
+      <section className="px-3 py-8">
+        <div className="mx-auto grid max-w-5xl items-start gap-4 lg:grid-cols-2">
           <Card className="rounded-none border border-orange-500/20 bg-orange-500/10">
             <CardHeader>
               <CardTitle className="font-display">Leadership</CardTitle>
@@ -1459,7 +1459,7 @@ export default function Engineering() {
 
       <NoticeBoardCarousel />
 
-      <section className="px-6 pb-20">
+      <section className="px-3 pb-20">
         <div className="mx-auto max-w-4xl text-center">
           <div className="rounded-3xl border border-brand-magenta/20 bg-brand-magenta/5 p-10">
             <h3 className="mb-3 font-display text-3xl">

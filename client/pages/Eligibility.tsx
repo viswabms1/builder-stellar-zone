@@ -866,7 +866,7 @@ function HeroSection() {
         <div className="absolute -top-12 -left-16 h-64 w-64 rounded-full bg-orange-500/20 blur-3xl" />
         <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-red-600/20 blur-3xl" />
       </div>
-      <div className="relative mx-auto max-w-6xl px-6 text-center">
+      <div className="relative mx-auto max-w-6xl px-3 text-center">
         <div className="inline-flex items-center gap-2 rounded-full border border-orange-500/30 bg-orange-500/10 px-4 py-2 text-sm font-semibold text-orange-500">
           <BadgeCheck className="h-4 w-4" />
           Programs, Eligibility &amp; Fees 2025-26
@@ -936,7 +936,7 @@ type HeroHighlightProps = {
 
 function HeroHighlight({ icon: Icon, title, description }: HeroHighlightProps) {
   return (
-    <div className="rounded-2xl border border-orange-500/20 bg-background/80 p-6 text-left shadow-sm backdrop-blur">
+    <div className="rounded-2xl border border-orange-500/20 bg-background/80 p-3 text-left shadow-sm backdrop-blur">
       <div className="flex items-center gap-3">
         <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-orange-500/15 text-orange-500">
           <Icon className="h-6 w-6" />
@@ -952,7 +952,7 @@ function HeroHighlight({ icon: Icon, title, description }: HeroHighlightProps) {
 
 function SchoolsSection() {
   return (
-    <section className="px-6 py-16">
+    <section className="px-3 py-8">
       <div className="mx-auto max-w-6xl">
         <div className="mb-10 text-center">
           <h2 className="text-3xl font-bold md:text-4xl">
@@ -964,14 +964,14 @@ function SchoolsSection() {
             include the latest library deposit and ancillary components.
           </p>
         </div>
-        <Accordion type="multiple" className="space-y-6">
+        <Accordion type="multiple" className="space-y-3">
           {schools.map((school) => (
             <AccordionItem
               key={school.name}
               value={school.name}
               className="overflow-hidden rounded-3xl border border-orange-500/20 bg-card/70 backdrop-blur-sm"
             >
-              <AccordionTrigger className="px-6 py-4 text-left text-xl font-semibold text-foreground">
+              <AccordionTrigger className="px-3 py-4 text-left text-xl font-semibold text-foreground">
                 <div className="flex w-full items-center gap-3 text-left">
                   <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-orange-500/15 text-orange-500">
                     <school.icon className="h-6 w-6" />
@@ -989,7 +989,7 @@ function SchoolsSection() {
                   </div>
                 </div>
               </AccordionTrigger>
-              <AccordionContent className="px-6 pb-6">
+              <AccordionContent className="px-3 pb-6">
                 <div className="space-y-10">
                   {school.categories.map((category) => (
                     <div
@@ -1008,7 +1008,7 @@ function SchoolsSection() {
                           )}
                         </div>
                       </div>
-                      <div className="grid gap-6 lg:grid-cols-2">
+                      <div className="grid gap-3 lg:grid-cols-2">
                         {category.programs.map((program) => (
                           <ProgramCard
                             key={`${category.title}-${program.name}`}
@@ -1138,7 +1138,7 @@ function ProgramCard({ program }: ProgramCardProps) {
 
 function BrochureSection() {
   return (
-    <section className="bg-gradient-to-br from-orange-500/5 via-red-500/5 to-background px-6 py-16">
+    <section className="bg-gradient-to-br from-orange-500/5 via-red-500/5 to-background px-3 py-8">
       <div className="mx-auto max-w-6xl">
         <div className="mb-10 text-center">
           <h2 className="text-3xl font-bold md:text-4xl">
@@ -1150,7 +1150,7 @@ function BrochureSection() {
             professional programs.
           </p>
         </div>
-        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
           {brochureResources.map((resource) => (
             <Card
               key={resource.title}
@@ -1186,7 +1186,7 @@ function BrochureSection() {
 
 function ContactSection() {
   return (
-    <section className="px-6 py-16">
+    <section className="px-3 py-8">
       <div className="mx-auto max-w-6xl space-y-10">
         <div className="text-center">
           <h2 className="text-3xl font-bold md:text-4xl">
@@ -1197,7 +1197,7 @@ function ContactSection() {
             verification, fee planning, and scholarship opportunities.
           </p>
         </div>
-        <div className="grid gap-6 lg:grid-cols-3">
+        <div className="grid gap-3 lg:grid-cols-3">
           {contactLocations.map((location) => (
             <Card
               key={location.name}
@@ -1237,7 +1237,7 @@ function ContactSection() {
             </Card>
           ))}
         </div>
-        <div className="grid gap-6 lg:grid-cols-2">
+        <div className="grid gap-3 lg:grid-cols-2">
           <Card className="border border-orange-500/20 bg-card/70 backdrop-blur-sm">
             <CardHeader>
               <div className="flex items-center gap-3">
@@ -1306,7 +1306,7 @@ function ContactSection() {
 
 function NotesSection() {
   return (
-    <section className="px-6 pb-20">
+    <section className="px-3 pb-20">
       <div className="mx-auto max-w-4xl rounded-3xl border border-orange-500/20 bg-gradient-to-r from-orange-500/15 via-red-500/15 to-orange-500/15 p-10 text-center shadow-lg shadow-orange-500/10">
         <div className="inline-flex items-center justify-center gap-2 rounded-full bg-orange-500/20 px-4 py-2 text-sm font-semibold text-orange-500">
           <ScrollText className="h-4 w-4" />

@@ -501,7 +501,7 @@ export default function Placements() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 bg-gradient-to-br from-slate-900 via-orange-900 to-slate-900 overflow-hidden">
+      <section className="relative py-10 lg:py-32 bg-gradient-to-br from-slate-900 via-orange-900 to-slate-900 overflow-hidden">
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
           {/* Large gradient orbs */}
@@ -527,9 +527,9 @@ export default function Placements() {
         </div>
 
         {/* Content */}
-        <div className="relative max-w-7xl mx-auto px-6 text-center">
+        <div className="relative max-w-7xl mx-auto px-3 text-center">
           {/* Badge Background */}
-          <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-orange-500/20 to-red-600/20 backdrop-blur-sm rounded-full border border-orange-500/40 mb-8 shadow-xl hover:shadow-2xl transition-all duration-300">
+          <div className="inline-flex items-center px-3 py-3 bg-gradient-to-r from-orange-500/20 to-red-600/20 backdrop-blur-sm rounded-full border border-orange-500/40 mb-8 shadow-xl hover:shadow-2xl transition-all duration-300">
             <Briefcase className="w-5 h-5 text-orange-400 mr-2" />
             <span className="text-sm font-semibold text-orange-300">
               Career Development
@@ -557,17 +557,17 @@ export default function Placements() {
       </section>
 
       {/* Mission & Vision */}
-      <section className="px-6 py-20 bg-gradient-to-br from-orange-500/5 via-red-600/5 to-background">
+      <section className="px-3 py-10 bg-gradient-to-br from-orange-500/5 via-red-600/5 to-background">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-8">
+            <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-4">
               <h3 className="text-2xl font-bold mb-4 text-orange-500">Our Mission</h3>
               <p className="text-foreground text-lg leading-relaxed">
                 To enable and empower every student to acquire the necessary skills, knowledge, and industry exposure to secure meaningful and successful careers. We focus on academic excellence combined with holistic development to prepare students for dynamic professional demands.
               </p>
             </div>
 
-            <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-8">
+            <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-4">
               <h3 className="text-2xl font-bold mb-4 text-red-500">Our Vision</h3>
               <p className="text-foreground text-lg leading-relaxed">
                 To foster a culture of excellence and integrity, empowering students with the skills and opportunities to create a significant impact in the professional world and become industry leaders across global organizations.
@@ -578,7 +578,7 @@ export default function Placements() {
       </section>
 
       {/* Key Highlights */}
-      <section className="px-6 py-20">
+      <section className="px-3 py-10">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -588,7 +588,7 @@ export default function Placements() {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-3">
             {highlights.map((highlight, index) => {
               const Icon = highlight.icon;
               return (
@@ -618,7 +618,7 @@ export default function Placements() {
       </section>
 
       {/* Support Areas */}
-      <section className="px-6 py-20 bg-gradient-to-br from-orange-500/5 via-red-600/5 to-background">
+      <section className="px-3 py-10 bg-gradient-to-br from-orange-500/5 via-red-600/5 to-background">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -631,7 +631,7 @@ export default function Placements() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-3">
             {supportAreas.map((area, index) => {
               const Icon = area.icon;
               return (
@@ -658,7 +658,7 @@ export default function Placements() {
       </section>
 
       {/* Student Testimonials Section */}
-      <section className="px-6 py-20 bg-gradient-to-br from-red-500/5 via-orange-500/5 to-background">
+      <section className="px-3 py-10 bg-gradient-to-br from-red-500/5 via-orange-500/5 to-background">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -673,7 +673,7 @@ export default function Placements() {
 
           {/* Testimonial Carousel */}
           <div className="relative">
-            <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-3xl p-8 md:p-12 flex flex-col md:flex-row gap-8 items-start hover:border-orange-500/30 transition-all duration-300">
+            <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-3xl p-4 md:p-12 flex flex-col md:flex-row gap-4 items-start hover:border-orange-500/30 transition-all duration-300">
               {/* Student Avatar */}
               <div className="flex-shrink-0">
                 <div className="w-24 h-24 md:w-32 md:h-32 rounded-2xl overflow-hidden shadow-lg border-4 border-orange-500/20">
@@ -758,7 +758,7 @@ export default function Placements() {
       </section>
 
       {/* Esteemed Recruiters Section */}
-      <section className="px-6 py-20">
+      <section className="px-3 py-10">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -771,12 +771,12 @@ export default function Placements() {
             </p>
           </div>
 
-          <div className="space-y-6">
+          <div className="space-y-3">
             {recruiterData.map((school) => (
               <div key={school.key} className="border border-border/50 rounded-2xl overflow-hidden bg-card/30">
                 <button
                   onClick={() => toggleRecruiter(school.key)}
-                  className="w-full px-6 py-4 flex items-center justify-between hover:bg-orange-500/5 transition-colors text-left"
+                  className="w-full px-3 py-4 flex items-center justify-between hover:bg-orange-500/5 transition-colors text-left"
                 >
                   <h3 className="text-base font-bold text-foreground uppercase tracking-wide">{school.name}</h3>
                   <ChevronDown
@@ -787,9 +787,9 @@ export default function Placements() {
                 </button>
 
                 {expandedRecruiters[school.key] && (
-                  <div className="border-t border-border/30 px-6 py-8 bg-gradient-to-b from-orange-500/5 to-transparent">
+                  <div className="border-t border-border/30 px-3 py-8 bg-gradient-to-b from-orange-500/5 to-transparent">
                     {school.subCategories ? (
-                      <div className="space-y-8">
+                      <div className="space-y-4">
                         {school.subCategories.map((subCategory, subIdx) => (
                           <div key={subIdx}>
                             <h4 className="text-sm font-semibold text-foreground mb-4">{subCategory.name}</h4>
@@ -849,7 +849,7 @@ export default function Placements() {
       </section>
 
       {/* Programs by School - Expandable */}
-      <section className="px-6 py-20">
+      <section className="px-3 py-10">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -867,7 +867,7 @@ export default function Placements() {
               <div key={school.key} className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl overflow-hidden hover:border-orange-500/30 transition-all duration-300">
                 <button
                   onClick={() => toggleSchool(school.key)}
-                  className="w-full px-6 py-6 flex items-center justify-between hover:bg-orange-500/5 transition-colors"
+                  className="w-full px-3 py-6 flex items-center justify-between hover:bg-orange-500/5 transition-colors"
                 >
                   <div className="flex items-start gap-4 text-left">
                     <div className="w-10 h-10 rounded-full bg-orange-500/10 flex items-center justify-center flex-shrink-0">
@@ -886,9 +886,9 @@ export default function Placements() {
                 </button>
 
                 {expandedSchools[school.key] && (
-                  <div className="border-t border-border/30 px-6 py-6 bg-gradient-to-b from-orange-500/5 to-transparent">
+                  <div className="border-t border-border/30 px-3 py-6 bg-gradient-to-b from-orange-500/5 to-transparent">
                     {school.subCategories ? (
-                      <div className="space-y-6">
+                      <div className="space-y-3">
                         {school.subCategories.map((subCategory, subIdx) => (
                           <div key={subIdx}>
                             <h4 className="text-base font-semibold text-foreground mb-3">{subCategory.name}</h4>
@@ -938,7 +938,7 @@ export default function Placements() {
       </section>
 
       {/* Placement Services & Programs */}
-      <section className="px-6 py-20 bg-gradient-to-br from-orange-500/5 via-red-600/5 to-background">
+      <section className="px-3 py-10 bg-gradient-to-br from-orange-500/5 via-red-600/5 to-background">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -951,7 +951,7 @@ export default function Placements() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
             {programs.map((program, index) => (
               <Card
                 key={index}
@@ -973,7 +973,7 @@ export default function Placements() {
       </section>
 
       {/* Facilities Section */}
-      <section className="px-6 py-20">
+      <section className="px-3 py-10">
         <div className="max-w-7xl mx-auto">
           <div className="text-center">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -1003,7 +1003,7 @@ export default function Placements() {
       </section>
 
       {/* Contact Information */}
-      <section className="px-6 py-20 bg-gradient-to-br from-orange-500/5 via-red-600/5 to-background">
+      <section className="px-3 py-10 bg-gradient-to-br from-orange-500/5 via-red-600/5 to-background">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -1022,11 +1022,11 @@ export default function Placements() {
                 <h3 className="text-2xl font-bold mb-6 text-orange-500">
                   {section.category}
                 </h3>
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="grid md:grid-cols-2 gap-3">
                   {section.contacts.map((contact, contactIdx) => (
                     <div
                       key={contactIdx}
-                      className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 hover:border-orange-500/30 transition-all duration-300"
+                      className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-3 hover:border-orange-500/30 transition-all duration-300"
                     >
                       <h4 className="text-lg font-bold text-foreground mb-1">
                         {contact.name}
@@ -1063,7 +1063,7 @@ export default function Placements() {
       </section>
 
       {/* CTA Section */}
-      <section className="px-6 py-20">
+      <section className="px-3 py-10">
         <div className="max-w-4xl mx-auto text-center">
           <div className="bg-gradient-to-r from-orange-500/10 via-red-600/10 to-pink-500/10 rounded-3xl p-12 border border-orange-500/20">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">

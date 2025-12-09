@@ -23,7 +23,7 @@ export default function FacultyProfile() {
   if (!f) {
     return (
       <div className="min-h-screen bg-background text-foreground">
-        <section className="px-6 py-16 text-center">
+        <section className="px-3 py-8 text-center">
           <h1 className="headline-3 mb-3">Faculty not found</h1>
           <Link to="/academics/engineering/computer-science/faculty">
             <Button variant="outline"><ChevronLeft className="w-4 h-4 mr-2"/>Back to Faculty</Button>
@@ -35,8 +35,8 @@ export default function FacultyProfile() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <section className="px-6 pt-10">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 items-start">
+      <section className="px-3 pt-10">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-4 items-start">
           <Card className="overflow-hidden border border-border/50 bg-card/50">
             <AspectRatio ratio={3/4}>
               <img src={f.image} alt={f.name} className="absolute inset-0 h-full w-full object-cover object-center" />
@@ -57,8 +57,8 @@ export default function FacultyProfile() {
         </div>
       </section>
 
-      <section className="px-6 py-10">
-        <div className="max-w-6xl mx-auto grid lg:grid-cols-3 gap-8 items-start">
+      <section className="px-3 py-10">
+        <div className="max-w-6xl mx-auto grid lg:grid-cols-3 gap-4 items-start">
           <div className="lg:col-span-2 space-y-6">
             <Card className="border border-border/50 bg-card/50">
               <CardHeader>
@@ -110,9 +110,9 @@ export default function FacultyProfile() {
         </div>
       </section>
 
-      <section className="px-6 pb-16">
+      <section className="px-3 pb-16">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="rounded-3xl p-8 border border-brand-magenta/20 bg-brand-magenta/5">
+          <div className="rounded-3xl p-4 border border-brand-magenta/20 bg-brand-magenta/5">
             <h3 className="headline-4 mb-2 font-display">Interested in studying under {f.name.split(' ')[0]}?</h3>
             <p className="text-foreground mb-4 font-body">Explore CSE programs and start your application today.</p>
             <a

@@ -363,12 +363,12 @@ export default function Examinations() {
 
 function HeroSection() {
   return (
-    <section className="relative overflow-hidden py-20 lg:py-28 bg-gradient-to-br from-orange-500/10 via-red-600/5 to-background">
+    <section className="relative overflow-hidden py-10 lg:py-28 bg-gradient-to-br from-orange-500/10 via-red-600/5 to-background">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute -top-24 left-10 h-72 w-72 rounded-full bg-orange-500/15 blur-3xl" />
         <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-red-600/10 blur-3xl" />
       </div>
-      <div className="relative mx-auto flex max-w-6xl flex-col items-center px-6 text-center">
+      <div className="relative mx-auto flex max-w-6xl flex-col items-center px-3 text-center">
         <span className="inline-flex items-center gap-2 rounded-full border border-orange-500/30 bg-orange-500/10 px-4 py-2 text-sm font-semibold text-orange-500">
           Examination Services Portal
         </span>
@@ -413,7 +413,7 @@ function HeroSection() {
 
 function QuickLinksSection() {
   return (
-    <section className="px-6 py-16">
+    <section className="px-3 py-8">
       <div className="mx-auto max-w-6xl">
         <div className="mb-10 flex flex-col gap-4 text-center">
           <h2 className="text-3xl font-bold md:text-4xl">Quick Access</h2>
@@ -422,7 +422,7 @@ function QuickLinksSection() {
             hall tickets and personalised updates.
           </p>
         </div>
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-4">
           {QUICK_LINKS.map((item) => (
             <Card
               key={item.title}
@@ -463,7 +463,7 @@ function QuickLinksSection() {
 
 function ResourceSections() {
   return (
-    <section className="bg-gradient-to-b from-orange-500/5 to-transparent px-6 py-20">
+    <section className="bg-gradient-to-b from-orange-500/5 to-transparent px-3 py-10">
       <div className="mx-auto flex max-w-7xl flex-col gap-20">
         {EXAM_SECTIONS.map((section) => (
           <ExamResourceSection key={section.id} section={section} />
@@ -475,7 +475,7 @@ function ResourceSections() {
 
 function ExamResourceSection({ section }: { section: ExamSection }) {
   return (
-    <div id={section.id} className="space-y-8">
+    <div id={section.id} className="space-y-4">
       <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
         <div>
           <h3 className="text-3xl font-bold md:text-4xl">{section.title}</h3>
@@ -491,7 +491,7 @@ function ExamResourceSection({ section }: { section: ExamSection }) {
           {section.documents.length > 1 ? "s" : ""}
         </Badge>
       </div>
-      <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+      <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
         {section.documents.map((doc) => (
           <ExamDocumentCard key={doc.href} document={doc} />
         ))}
@@ -578,8 +578,8 @@ function ExamDocumentCard({ document }: { document: ExamDocument }) {
 
 function GuidelinesSection() {
   return (
-    <section className="px-6 py-16">
-      <div className="mx-auto flex max-w-5xl flex-col gap-6">
+    <section className="px-3 py-8">
+      <div className="mx-auto flex max-w-5xl flex-col gap-3">
         <div className="text-center">
           <h2 className="text-3xl font-bold md:text-4xl">
             How to Use These Resources
@@ -616,7 +616,7 @@ function GuidelinesSection() {
 
 function ContactSection() {
   return (
-    <section className="bg-gradient-to-r from-orange-500/5 via-red-600/5 to-pink-500/5 px-6 py-20">
+    <section className="bg-gradient-to-r from-orange-500/5 via-red-600/5 to-pink-500/5 px-3 py-10">
       <div className="mx-auto max-w-6xl space-y-12">
         <div className="text-center">
           <h2 className="text-3xl font-bold md:text-4xl">Need Assistance?</h2>
@@ -625,7 +625,7 @@ function ContactSection() {
             for support on applications, schedules, and results.
           </p>
         </div>
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
           {CONTACT_CARDS.map((contact) => (
             <Card
               key={contact.title}

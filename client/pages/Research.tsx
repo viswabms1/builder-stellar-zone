@@ -41,14 +41,14 @@ export default function Research() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 bg-gradient-to-br from-orange-500/10 via-red-600/5 to-background">
+      <section className="relative py-10 lg:py-32 bg-gradient-to-br from-orange-500/10 via-red-600/5 to-background">
         <div className="absolute inset-0 overflow-hidden">
           <img src="https://images.unsplash.com/photo-1581092335397-9583eb92d232?q=80&w=2000&auto=format&fit=crop" alt="Research at DSU" className="absolute inset-0 w-full h-full object-cover opacity-20" />
           <div className="absolute top-20 left-10 w-72 h-72 bg-orange-500/10 rounded-full filter blur-3xl animate-float"></div>
           <div className="absolute bottom-20 right-10 w-96 h-96 bg-red-600/10 rounded-full filter blur-3xl animate-float" style={{ animationDelay: "2s" }}></div>
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-6 text-center">
+        <div className="relative max-w-7xl mx-auto px-3 text-center">
           <div className="inline-flex items-center px-4 py-2 bg-orange-500/10 rounded-full border border-orange-500/20 mb-8">
             <FlaskConical className="w-4 h-4 text-orange-500 mr-2" />
             <span className="text-sm font-medium text-orange-500">{t('research.title')}</span>
@@ -73,14 +73,14 @@ export default function Research() {
           </div>
           
           {/* Research Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-4xl mx-auto">
             {[
               { number: "50+", label: "Research Centers", icon: Building },
               { number: "₹100Cr+", label: "Research Funding", icon: DollarSign },
               { number: "2000+", label: "Publications", icon: FileText },
               { number: "150+", label: "Patents", icon: Award },
             ].map((stat, index) => (
-              <Card key={index} className="text-center p-6 bg-card/30 backdrop-blur-sm border border-border/30 hover:border-orange-500/30 transition-all duration-300">
+              <Card key={index} className="text-center p-3 bg-card/30 backdrop-blur-sm border border-border/30 hover:border-orange-500/30 transition-all duration-300">
                 <stat.icon className="w-8 h-8 text-orange-500 mx-auto mb-3" />
                 <div className="text-3xl font-bold text-foreground mb-1">{stat.number}</div>
                 <div className="text-sm text-foreground">{stat.label}</div>
@@ -91,13 +91,13 @@ export default function Research() {
       </section>
 
       {/* Research Hub Quick Links (DSU-style menu) */}
-      <section className="px-6 py-14 bg-gradient-to-r from-brand-blue/5 via-brand-magenta/5 to-brand-orange/5">
+      <section className="px-3 py-14 bg-gradient-to-r from-brand-blue/5 via-brand-magenta/5 to-brand-orange/5">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-10">
             <h2 className="headline-3">Research Hub</h2>
             <p className="text-foreground font-body">Quick access to Ph.D admissions, regulations, supervisors, and more</p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
             {[
               { icon: Calendar, title: "Ph.D Calendar of Events", href: "https://www.dsu.edu.in/research/phd-calendar-of-events" },
               { icon: ClipboardList, title: "Ph.D Admission - July '25", href: "https://www.dsu.edu.in/research/phd-admission" },
@@ -125,10 +125,10 @@ export default function Research() {
       </section>
 
       {/* Research Centers */}
-      <section className="px-6 py-20">
+      <section className="px-3 py-10">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold mb-3">
               <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">Research</span>
               <span className="text-foreground"> Centers</span>
             </h2>
@@ -249,7 +249,7 @@ export default function Research() {
               },
             ].map((center, index) => (
               <Card key={index} className="group hover:shadow-xl hover:shadow-orange-500/10 transition-all duration-500 bg-card/50 backdrop-blur-sm border border-border/50 hover:border-orange-500/30 overflow-hidden">
-                <div className="grid md:grid-cols-3 gap-6 p-6">
+                <div className="grid md:grid-cols-3 gap-3 p-3">
                   {/* Media Gallery */}
                   <div className="md:col-span-1 space-y-4">
                     {center.videoUrl ? (
@@ -332,7 +332,7 @@ export default function Research() {
                       </div>
                     )}
 
-                    <div className="grid md:grid-cols-2 gap-6 mb-4">
+                    <div className="grid md:grid-cols-2 gap-3 mb-4">
                       <div className="space-y-3">
                         <p className="text-sm font-semibold text-foreground">Research Focus:</p>
                         <div className="grid grid-cols-1 gap-1">
@@ -364,10 +364,10 @@ export default function Research() {
       </section>
 
       {/* Research Achievements & Inspiration */}
-      <section className="px-6 py-20 bg-gradient-to-r from-orange-500/5 to-red-600/5">
+      <section className="px-3 py-10 bg-gradient-to-r from-orange-500/5 to-red-600/5">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold mb-3">
               <span className="text-foreground">Research </span>
               <span className="bg-gradient-to-r from-red-500 to-pink-500 bg-clip-text text-transparent">Achievements</span>
             </h2>
@@ -427,7 +427,7 @@ export default function Research() {
                 description: "Highest research excellence rating from UGC"
               },
             ].map((achievement, index) => (
-              <Card key={index} className="text-center p-6 bg-card/30 backdrop-blur-sm border border-border/30 hover:border-orange-500/30 transition-all duration-300 group">
+              <Card key={index} className="text-center p-3 bg-card/30 backdrop-blur-sm border border-border/30 hover:border-orange-500/30 transition-all duration-300 group">
                 <achievement.icon className="w-12 h-12 text-orange-500 mx-auto mb-4 group-hover:scale-110 transition-transform" />
                 <h3 className="text-lg font-bold mb-2 group-hover:text-orange-500 transition-colors">{achievement.title}</h3>
                 <div className="text-3xl font-bold text-orange-500 mb-3">{achievement.number}</div>
@@ -439,7 +439,7 @@ export default function Research() {
       </section>
 
       {/* Spotlight Stories */}
-      <section className="px-6 py-16">
+      <section className="px-3 py-16">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="headline-3">Research Spotlights</h2>
@@ -469,7 +469,7 @@ export default function Research() {
               <a key={i} href={s.href} className="group relative overflow-hidden rounded-3xl border border-border/50">
                 <img src={s.image} alt={s.title} className="h-64 w-full object-cover group-hover:scale-[1.02] transition-transform duration-500" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-                <div className="absolute bottom-0 p-6">
+                <div className="absolute bottom-0 p-3">
                   <Badge className="bg-white/10 text-white mb-3">{s.tag}</Badge>
                   <h3 className="text-white font-semibold text-xl font-display">{s.title}</h3>
                 </div>
@@ -480,10 +480,10 @@ export default function Research() {
       </section>
 
       {/* Research Opportunities */}
-      <section className="px-6 py-20">
+      <section className="px-3 py-10">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold mb-3">
               <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">Research</span>
               <span className="text-foreground"> Opportunities</span>
             </h2>
@@ -597,10 +597,10 @@ export default function Research() {
       </section>
 
       {/* Research Support */}
-      <section className="px-6 py-20 bg-gradient-to-r from-orange-500/5 to-red-600/5">
+      <section className="px-3 py-10 bg-gradient-to-r from-orange-500/5 to-red-600/5">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold mb-3">
               <span className="text-foreground">Research </span>
               <span className="bg-gradient-to-r from-red-500 to-pink-500 bg-clip-text text-transparent">Support</span>
             </h2>
@@ -652,7 +652,7 @@ export default function Research() {
                 description: "Commercialization of research innovations"
               },
             ].map((support, index) => (
-              <Card key={index} className="text-center p-6 bg-card/30 backdrop-blur-sm border border-border/30 hover:border-orange-500/30 transition-all duration-300 group">
+              <Card key={index} className="text-center p-3 bg-card/30 backdrop-blur-sm border border-border/30 hover:border-orange-500/30 transition-all duration-300 group">
                 <support.icon className="w-12 h-12 text-orange-500 mx-auto mb-4 group-hover:scale-110 transition-transform" />
                 <h3 className="text-lg font-bold mb-3 group-hover:text-orange-500 transition-colors">{support.title}</h3>
                 <p className="text-sm text-foreground leading-relaxed">{support.description}</p>
@@ -663,10 +663,10 @@ export default function Research() {
       </section>
 
       {/* CTA Section */}
-      <section className="px-6 py-20">
+      <section className="px-3 py-10">
         <div className="max-w-4xl mx-auto text-center">
           <div className="bg-gradient-to-r from-orange-500/10 via-red-600/10 to-pink-500/10 rounded-3xl p-12 border border-orange-500/20">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold mb-3">
               Ready to 
               <span className="bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent"> Lead Innovation</span>?
             </h2>
