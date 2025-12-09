@@ -613,8 +613,8 @@ export default function Index() {
 
                   {/* Content Container */}
                   <div className={`${style.bg} ${style.border} border border-t-0 rounded-none p-3 flex flex-col justify-center items-center h-20 w-full backdrop-blur-sm`}>
-                    <div>
-                      <div className="mb-6">
+                    <div className="text-center">
+                      <div className="mb-0">
                         {school.href ? (
                           school.href.startsWith("http") ? (
                             <a
