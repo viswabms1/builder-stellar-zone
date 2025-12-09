@@ -57,6 +57,7 @@ export default function CampusLife() {
       <section className="relative h-[600px] overflow-hidden">
         <div className="absolute inset-0">
           <video
+            ref={videoRef}
             src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F6b0c30504ae64c6aba12aa275eeac2e0?alt=media&token=038cd5f6-c13b-43c6-8760-c92abdbbc4dd&apiKey=4aa279a8430d441dba9c55f659831878"
             autoPlay
             muted
@@ -65,6 +66,19 @@ export default function CampusLife() {
             className="w-full h-full object-cover"
           />
         </div>
+
+        {/* Mute/Unmute Button */}
+        <button
+          onClick={toggleMute}
+          className="absolute top-8 right-8 z-10 p-3 rounded-full bg-black/50 hover:bg-black/70 transition-colors text-white backdrop-blur-sm border border-white/20"
+          aria-label={isMuted ? "Unmute" : "Mute"}
+        >
+          {isMuted ? (
+            <VolumeX className="h-5 w-5" />
+          ) : (
+            <Volume2 className="h-5 w-5" />
+          )}
+        </button>
 
         <div className="relative h-full flex items-start justify-start text-left max-w-7xl mx-auto px-6 pt-8">
           <div className="rounded-none px-6 md:px-8 py-8 max-w-xl -ml-6 md:-ml-8">
