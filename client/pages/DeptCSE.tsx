@@ -70,7 +70,7 @@ export default function DeptCSE() {
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
         </div>
         <div className="absolute inset-0 flex items-center">
-          <div className="max-w-7xl mx-auto px-6">
+          <div className="max-w-7xl mx-auto px-3">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-brand-magenta/10 rounded-full border border-brand-magenta/20 mb-4">
               <Sparkles className="w-4 h-4 text-brand-magenta" />
               <span className="text-sm font-medium text-brand-magenta font-display">Department of Computer Science & Engineering</span>
@@ -100,9 +100,9 @@ export default function DeptCSE() {
       </section>
 
       {/* Overview */}
-      <section className="px-6 py-16">
-        <div className="max-w-6xl mx-auto grid lg:grid-cols-3 gap-10 items-start">
-          <div className="lg:col-span-2 space-y-6">
+      <section className="px-3 py-8">
+        <div className="max-w-6xl mx-auto grid lg:grid-cols-3 gap-5 items-start">
+          <div className="lg:col-span-2 space-y-3">
             <h2 className="headline-3 font-display">Overview</h2>
             <p className="text-foreground leading-relaxed font-body">
               The Department of Computer Science & Engineering offers a dynamic ecosystem for study, research, and professional growth. The B.Tech CSE program provides a solid foundation and new-age skills with an innovative curriculum and pedagogy aligned to NEP and industry partnerships. Students gain breadth across core computing and depth through elective streams, while developing leadership and personal effectiveness for holistic growth.
@@ -150,7 +150,7 @@ export default function DeptCSE() {
       <LabsFacilitiesCarousel />
 
       {/* Leadership Section */}
-      <section className="px-6 py-16">
+      <section className="px-3 py-8">
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center justify-between mb-8">
             <h2 className="headline-3 font-display">Department Leadership</h2>
@@ -237,12 +237,12 @@ export default function DeptCSE() {
       </section>
 
       {/* Careers */}
-      <section className="px-6 py-16">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-10 items-start">
+      <section className="px-3 py-8">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-5 items-start">
           <div>
             <h2 className="headline-3 mb-4 font-display">Career Prospects</h2>
             <Card className="border border-border/50 bg-card/50">
-              <CardContent className="p-6 grid gap-3">
+              <CardContent className="p-3 grid gap-3">
                 {careers.map((c, i) => (
                   <div key={i} className="flex items-start gap-2 text-sm text-foreground font-body">
                     <ChevronRight className="w-3 h-3 text-brand-magenta mt-1" />
@@ -272,9 +272,9 @@ export default function DeptCSE() {
       </section>
 
       {/* Quick Links Section */}
-      <section className="px-6 py-20">
+      <section className="px-3 py-20">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8">
             <h2 className="headline-2 mb-3 font-display">
               <span className="text-foreground">Explore </span>
               <span className="bg-brand-gradient bg-clip-text text-transparent">
@@ -286,7 +286,7 @@ export default function DeptCSE() {
             </p>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-4">
             {/* Centre of Excellence */}
             <Link
               to="/centre-of-excellence"
@@ -385,9 +385,9 @@ export default function DeptCSE() {
       </section>
 
       {/* CTA */}
-      <section className="px-6 py-16">
+      <section className="px-3 py-8">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="rounded-3xl p-10 border border-brand-magenta/20 bg-brand-magenta/5">
+          <div className="rounded-3xl p-5 border border-brand-magenta/20 bg-brand-magenta/5">
             <h3 className="headline-3 mb-3 font-display">Join DSU CSE</h3>
             <p className="text-foreground mb-6 font-body">Explore programs, discover research, and launch your career in Computer Science & Engineering.</p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
@@ -458,8 +458,8 @@ function LabsFacilitiesCarousel() {
   const currentLab = labs[currentLabIndex];
 
   return (
-    <section className="px-6 py-16 bg-gradient-to-r from-brand-blue/5 to-brand-orange/5">
-      <div className="max-w-7xl mx-auto space-y-6">
+    <section className="px-3 py-8 bg-gradient-to-r from-brand-blue/5 to-brand-orange/5">
+      <div className="max-w-7xl mx-auto space-y-3">
         <div className="flex items-center justify-between">
           <div>
             <h2 className="headline-3 mb-2 font-display">Labs & Facilities</h2>
@@ -478,7 +478,7 @@ function LabsFacilitiesCarousel() {
               className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700"
             />
           </div>
-          <CardContent className="p-6">
+          <CardContent className="p-3">
             <CardTitle className="font-display text-2xl text-foreground">{currentLab.title}</CardTitle>
           </CardContent>
         </Card>
@@ -546,7 +546,7 @@ function AccreditationDocuments() {
   ];
 
   return (
-    <section className="px-6 py-12 bg-background/50">
+    <section className="px-3 py-12 bg-background/50">
       <div className="mx-auto max-w-6xl">
         <div className="mb-8">
           <h3 className="text-sm font-semibold text-foreground/60 uppercase tracking-wider mb-2">Accreditation Documents</h3>
@@ -825,8 +825,8 @@ function NoticeBoard() {
   };
 
   return (
-    <section className="px-6 py-16">
-      <div className="mx-auto max-w-7xl space-y-8">
+    <section className="px-3 py-8">
+      <div className="mx-auto max-w-7xl space-y-4">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <h2 className="headline-2 mb-3 font-display">
@@ -844,7 +844,7 @@ function NoticeBoard() {
           </Badge>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8">
+        <div className="grid lg:grid-cols-2 gap-4">
           <div>
             {renderCarousel("Events", events, "magenta", currentEventIndex, setCurrentEventIndex)}
           </div>
@@ -971,8 +971,8 @@ function CurriculumLibrary() {
   ];
 
   return (
-    <section className="px-6 py-16 bg-gradient-to-r from-brand-magenta/5 via-brand-blue/5 to-brand-orange/5">
-      <div className="mx-auto max-w-6xl space-y-8">
+    <section className="px-3 py-8 bg-gradient-to-r from-brand-magenta/5 via-brand-blue/5 to-brand-orange/5">
+      <div className="mx-auto max-w-6xl space-y-4">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <h2 className="headline-2 mb-3 font-display">
@@ -990,7 +990,7 @@ function CurriculumLibrary() {
           </Badge>
         </div>
 
-        <div className="grid gap-6 lg:grid-cols-2">
+        <div className="grid gap-3 lg:grid-cols-2">
           {programs.map((program, programIdx) => {
             const isOpen = openProgram === program.id;
             const isProgramBtech = program.id === "btech";
@@ -1015,7 +1015,7 @@ function CurriculumLibrary() {
                   />
                 </div>
 
-                <div className="p-6 bg-background/50 backdrop-blur-sm space-y-3">
+                <div className="p-3 bg-background/50 backdrop-blur-sm space-y-3">
                   <div className="flex items-start gap-3">
                     <Badge className={`rounded-full border ${badgeClass}`}>
                       {isProgramBtech ? "Undergraduate" : "Postgraduate"}

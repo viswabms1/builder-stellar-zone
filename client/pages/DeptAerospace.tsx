@@ -61,7 +61,7 @@ export default function DeptAerospace() {
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
         </div>
         <div className="absolute inset-0 flex items-center">
-          <div className="max-w-7xl mx-auto px-6">
+          <div className="max-w-7xl mx-auto px-3">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-brand-blue/10 rounded-full border border-brand-blue/20 mb-4">
               <Sparkles className="w-4 h-4 text-brand-blue" />
               <span className="text-sm font-medium text-brand-blue font-display">Department of Aerospace Engineering</span>
@@ -91,9 +91,9 @@ export default function DeptAerospace() {
       </section>
 
       {/* Overview */}
-      <section className="px-6 py-16">
-        <div className="max-w-6xl mx-auto grid lg:grid-cols-3 gap-10 items-start">
-          <div className="lg:col-span-2 space-y-6">
+      <section className="px-3 py-8">
+        <div className="max-w-6xl mx-auto grid lg:grid-cols-3 gap-5 items-start">
+          <div className="lg:col-span-2 space-y-3">
             <h2 className="headline-3 font-display">Overview</h2>
             <p className="text-foreground leading-relaxed font-body">
               Aerospace Engineering is an upcoming field that deals with the development of aircraft and spacecraft. It consists of two major branches: Aeronautical engineering (aircraft) and Astronautical engineering (spacecraft). The B.Tech Aerospace Engineering program at DSU combines foundational knowledge with cutting-edge tools and hands-on experience in aerodynamics, propulsion systems, flight control, and structural design.
@@ -139,7 +139,7 @@ export default function DeptAerospace() {
       <LabsFacilitiesCarousel />
 
       {/* Leadership Section */}
-      <section className="px-6 py-16">
+      <section className="px-3 py-8">
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center justify-between mb-8">
             <h2 className="headline-3 font-display">Department Leadership</h2>
@@ -172,12 +172,12 @@ export default function DeptAerospace() {
       </section>
 
       {/* Careers */}
-      <section className="px-6 py-16">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-10 items-start">
+      <section className="px-3 py-8">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-5 items-start">
           <div>
             <h2 className="headline-3 mb-4 font-display">Career Prospects</h2>
             <Card className="border border-border/50 bg-card/50">
-              <CardContent className="p-6 grid gap-3">
+              <CardContent className="p-3 grid gap-3">
                 {careers.map((c, i) => (
                   <div key={i} className="flex items-start gap-2 text-sm text-foreground font-body">
                     <ChevronRight className="w-3 h-3 text-brand-blue mt-1" />
@@ -207,9 +207,9 @@ export default function DeptAerospace() {
       </section>
 
       {/* Quick Links Section */}
-      <section className="px-6 py-20">
+      <section className="px-3 py-20">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8">
             <h2 className="headline-2 mb-3 font-display">
               <span className="text-foreground">Explore </span>
               <span className="bg-brand-gradient bg-clip-text text-transparent">
@@ -221,7 +221,7 @@ export default function DeptAerospace() {
             </p>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-4">
             <Link
               to="/centre-of-excellence"
               className="group rounded-3xl border border-border/40 bg-card/60 backdrop-blur-sm overflow-hidden hover:shadow-lg hover:shadow-brand-blue/20 transition-all duration-500 hover:-translate-y-1"
@@ -316,9 +316,9 @@ export default function DeptAerospace() {
       </section>
 
       {/* CTA */}
-      <section className="px-6 py-16">
+      <section className="px-3 py-8">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="rounded-3xl p-10 border border-brand-blue/20 bg-brand-blue/5">
+          <div className="rounded-3xl p-5 border border-brand-blue/20 bg-brand-blue/5">
             <h3 className="headline-3 mb-3 font-display">Join DSU Aerospace Engineering</h3>
             <p className="text-foreground mb-6 font-body">Explore programs, discover cutting-edge research, and launch your career in aerospace engineering.</p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
@@ -374,8 +374,8 @@ function LabsFacilitiesCarousel() {
   const currentLab = labs[currentLabIndex];
 
   return (
-    <section className="px-6 py-16 bg-gradient-to-r from-brand-blue/5 to-brand-orange/5">
-      <div className="max-w-7xl mx-auto space-y-6">
+    <section className="px-3 py-8 bg-gradient-to-r from-brand-blue/5 to-brand-orange/5">
+      <div className="max-w-7xl mx-auto space-y-3">
         <div className="flex items-center justify-between">
           <div>
             <h2 className="headline-3 mb-2 font-display">Labs & Facilities</h2>
@@ -394,7 +394,7 @@ function LabsFacilitiesCarousel() {
               className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700"
             />
           </div>
-          <CardContent className="p-6">
+          <CardContent className="p-3">
             <CardTitle className="font-display text-2xl text-foreground">{currentLab.title}</CardTitle>
           </CardContent>
         </Card>
@@ -462,7 +462,7 @@ function AccreditationDocuments() {
   ];
 
   return (
-    <section className="px-6 py-12 bg-background/50">
+    <section className="px-3 py-12 bg-background/50">
       <div className="mx-auto max-w-6xl">
         <div className="mb-8">
           <h3 className="text-sm font-semibold text-foreground/60 uppercase tracking-wider mb-2">Accreditation Documents</h3>
@@ -711,8 +711,8 @@ function NoticeBoard() {
   };
 
   return (
-    <section className="px-6 py-16">
-      <div className="mx-auto max-w-7xl space-y-8">
+    <section className="px-3 py-8">
+      <div className="mx-auto max-w-7xl space-y-4">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <h2 className="headline-2 mb-3 font-display">
@@ -730,7 +730,7 @@ function NoticeBoard() {
           </Badge>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8">
+        <div className="grid lg:grid-cols-2 gap-4">
           <div>
             {renderCarousel("Events", events, "magenta", currentEventIndex, setCurrentEventIndex)}
           </div>
