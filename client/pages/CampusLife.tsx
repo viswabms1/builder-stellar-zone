@@ -70,7 +70,7 @@ export default function CampusLife() {
         {/* Mute/Unmute Button */}
         <button
           onClick={toggleMute}
-          className="absolute top-8 right-8 z-10 p-3 rounded-full bg-black/50 hover:bg-black/70 transition-colors text-white backdrop-blur-sm border border-white/20"
+          className="absolute top-4 right-8 z-10 p-3 rounded-full bg-black/50 hover:bg-black/70 transition-colors text-white backdrop-blur-sm border border-white/20"
           aria-label={isMuted ? "Unmute" : "Mute"}
         >
           {isMuted ? (
@@ -80,8 +80,8 @@ export default function CampusLife() {
           )}
         </button>
 
-        <div className="relative h-full flex items-start justify-start text-left max-w-7xl mx-auto px-6 pt-8">
-          <div className="rounded-none px-6 md:px-8 py-8 max-w-xl -ml-6 md:-ml-8">
+        <div className="relative h-full flex items-start justify-start text-left max-w-7xl mx-auto px-3 pt-8">
+          <div className="rounded-none px-3 md:px-8 py-8 max-w-xl -ml-6 md:-ml-8">
             <div className="inline-flex items-center px-4 py-2 bg-orange-500/20 rounded-full border border-orange-500/40 mb-4">
               <Heart className="w-4 h-4 text-orange-300 mr-2" />
               <span className="text-sm font-medium text-orange-200">
@@ -112,7 +112,7 @@ export default function CampusLife() {
       </section>
 
       {/* Featured Facilities with Large Images */}
-      <section className="px-6 py-20 bg-gradient-to-r from-orange-500/5 to-red-600/5">
+      <section className="px-3 py-10 bg-gradient-to-r from-orange-500/5 to-red-600/5">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -151,7 +151,7 @@ export default function CampusLife() {
               features: ["Multi-cuisine", "Healthy Options", "24/7 Cafes", "Food Courts"],
             },
           ].map((facility, index) => (
-            <div key={index} className={`mb-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-center ${index % 2 === 1 ? 'md:grid-cols-2 md:[&>:first-child]:order-2' : ''}`}>
+            <div key={index} className={`mb-12 grid grid-cols-1 md:grid-cols-2 gap-4 items-center ${index % 2 === 1 ? 'md:grid-cols-2 md:[&>:first-child]:order-2' : ''}`}>
               {facility.link ? (
                 <a
                   href={facility.link}
@@ -207,7 +207,7 @@ export default function CampusLife() {
       </section>
 
       {/* Campus Life Gallery - Masonry Layout */}
-      <section className="px-6 py-20 bg-gradient-to-r from-orange-500/5 to-red-600/5">
+      <section className="px-3 py-10 bg-gradient-to-r from-orange-500/5 to-red-600/5">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -299,7 +299,7 @@ export default function CampusLife() {
       </section>
 
       {/* Student Organizations with Images */}
-      <section className="px-6 py-20">
+      <section className="px-3 py-10">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -401,7 +401,7 @@ export default function CampusLife() {
       </section>
 
       {/* Centre for Performing Arts - Featured Highlight */}
-      <section className="px-6 py-20 bg-gradient-to-r from-orange-500/10 to-red-600/10">
+      <section className="px-3 py-10 bg-gradient-to-r from-orange-500/10 to-red-600/10">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Video */}
@@ -415,7 +415,7 @@ export default function CampusLife() {
             </div>
 
             {/* Content */}
-            <div className="space-y-6">
+            <div className="space-y-3">
               <div>
                 <Badge className="bg-orange-500/20 text-orange-600 mb-4">
                   Arts & Culture
@@ -470,7 +470,7 @@ export default function CampusLife() {
       </section>
 
       {/* Events Timeline with Images */}
-      <section className="px-6 py-20">
+      <section className="px-3 py-10">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -576,7 +576,7 @@ export default function CampusLife() {
       </section>
 
       {/* Photo Stories Section */}
-      <section className="px-6 py-20 bg-gradient-to-r from-orange-500/5 to-red-600/5">
+      <section className="px-3 py-10 bg-gradient-to-r from-orange-500/5 to-red-600/5">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -597,7 +597,7 @@ export default function CampusLife() {
               alt="Featured Story"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex items-end p-8">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex items-end p-4">
               <div className="text-white">
                 <Badge className="mb-4 bg-orange-500">Featured</Badge>
                 <h3 className="text-3xl font-bold mb-2">My Journey at DSU</h3>
@@ -654,7 +654,7 @@ export default function CampusLife() {
       </section>
 
       {/* CTA Section */}
-      <section className="px-6 py-20">
+      <section className="px-3 py-10">
         <div className="max-w-4xl mx-auto text-center">
           <div className="bg-gradient-to-r from-orange-500/10 via-red-600/10 to-pink-500/10 rounded-3xl p-12 border border-orange-500/20">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">

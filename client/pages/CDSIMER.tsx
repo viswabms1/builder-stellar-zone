@@ -220,7 +220,7 @@ const RESOURCES: Resource[] = [
 function QuickLinkCard({ link }: { link: QuickLink }) {
   const Icon = link.icon;
   const content = (
-    <div className="group h-full rounded-3xl border border-border/40 bg-card/60 p-6 transition-all duration-500 hover:-translate-y-1 hover:border-brand-magenta/60 hover:shadow-xl hover:shadow-brand-magenta/10">
+    <div className="group h-full rounded-3xl border border-border/40 bg-card/60 p-3 transition-all duration-500 hover:-translate-y-1 hover:border-brand-magenta/60 hover:shadow-xl hover:shadow-brand-magenta/10">
       <div className="flex items-center justify-between">
         <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-magenta/10 text-brand-magenta">
           <Icon className="h-5 w-5" />
@@ -388,7 +388,7 @@ export default function CDSIMER() {
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
         </div>
         <div className="absolute inset-0 flex items-center">
-          <div className="mx-auto max-w-7xl px-6">
+          <div className="mx-auto max-w-7xl px-3">
             <div className="mb-6 inline-flex items-center rounded-full border border-brand-magenta/20 bg-brand-magenta/10 px-4 py-2">
               <Hospital className="mr-2 h-4 w-4 text-brand-magenta" />
               <span className="text-sm font-medium text-brand-magenta font-display">
@@ -432,10 +432,10 @@ export default function CDSIMER() {
 
       <section
         id="quick-links"
-        className="bg-gradient-to-r from-brand-blue/5 via-brand-magenta/5 to-brand-orange/5 px-6 py-12"
+        className="bg-gradient-to-r from-brand-blue/5 via-brand-magenta/5 to-brand-orange/5 px-3 py-12"
       >
         <div className="mx-auto max-w-7xl">
-          <div className="mb-10 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+          <div className="mb-10 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
             <div>
               <Badge className="bg-brand-magenta/15 text-brand-magenta">
                 Key Shortcuts
@@ -466,10 +466,10 @@ export default function CDSIMER() {
 
       <section
         id="highlights"
-        className="bg-gradient-to-r from-brand-magenta/5 via-brand-orange/5 to-brand-blue/5 px-6 py-16"
+        className="bg-gradient-to-r from-brand-magenta/5 via-brand-orange/5 to-brand-blue/5 px-3 py-8"
       >
         <div className="mx-auto max-w-7xl">
-          <div className="mb-12 text-center">
+          <div className="mb-6 text-center">
             <Badge
               className="bg-white/20 text-brand-magenta backdrop-blur"
               variant="secondary"
@@ -480,7 +480,7 @@ export default function CDSIMER() {
               Smart Campus. Tertiary Care. Translational Research.
             </h2>
           </div>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-4">
             {HERO_HIGHLIGHTS.map((highlight) => (
               <HighlightCard key={highlight.title} highlight={highlight} />
             ))}
@@ -488,7 +488,7 @@ export default function CDSIMER() {
         </div>
       </section>
 
-      <section id="pillars" className="px-6 py-16">
+      <section id="pillars" className="px-3 py-8">
         <div className="mx-auto max-w-7xl">
           <div className="mb-10 text-center">
             <Badge className="bg-brand-magenta/15 text-brand-magenta">
@@ -502,7 +502,7 @@ export default function CDSIMER() {
               innovation and vibrant student life on a single connected campus.
             </p>
           </div>
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
             {PILLARS.map((section) => (
               <SectionCardComponent key={section.title} section={section} />
             ))}
@@ -512,10 +512,10 @@ export default function CDSIMER() {
 
       <section
         id="resources"
-        className="bg-gradient-to-r from-brand-blue/5 to-brand-orange/5 px-6 py-16"
+        className="bg-gradient-to-r from-brand-blue/5 to-brand-orange/5 px-3 py-8"
       >
         <div className="mx-auto max-w-7xl">
-          <div className="mb-12 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+          <div className="mb-6 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
             <div className="max-w-3xl">
               <Badge className="bg-brand-magenta/15 text-brand-magenta">
                 Resources
@@ -538,7 +538,7 @@ export default function CDSIMER() {
               <ChevronRight className="h-4 w-4" />
             </a>
           </div>
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+          <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
             {RESOURCES.map((resource) => (
               <ResourceCard key={resource.title} resource={resource} />
             ))}
@@ -546,9 +546,9 @@ export default function CDSIMER() {
         </div>
       </section>
 
-      <section className="px-6 pb-20">
+      <section className="px-3 pb-20">
         <div className="mx-auto max-w-4xl text-center">
-          <div className="rounded-none border border-brand-magenta/20 bg-brand-magenta/5 p-10">
+          <div className="rounded-none border border-brand-magenta/20 bg-brand-magenta/5 p-5">
             <h3 className="mb-3 font-display text-3xl">
               Join a Purpose-Driven Medical Community
             </h3>

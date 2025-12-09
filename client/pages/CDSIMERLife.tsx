@@ -517,7 +517,7 @@ export default function CDSIMERLife() {
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
         </div>
         <div className="absolute inset-0 flex items-center">
-          <div className="mx-auto max-w-7xl px-6">
+          <div className="mx-auto max-w-7xl px-3">
             <div className="mb-4 inline-flex items-center rounded-full border border-white/20 bg-white/10 px-4 py-2 backdrop-blur">
               <Sparkle className="mr-2 h-4 w-4 text-foreground" />
               <span className="text-sm font-medium text-foreground/90 font-display">
@@ -570,9 +570,9 @@ export default function CDSIMERLife() {
         </div>
       </section>
 
-      <section className="bg-gradient-to-r from-brand-blue/5 via-brand-magenta/5 to-brand-orange/5 px-6 py-16">
+      <section className="bg-gradient-to-r from-brand-blue/5 via-brand-magenta/5 to-brand-orange/5 px-3 py-8">
         <div className="mx-auto max-w-7xl">
-          <div className="mb-12 text-center">
+          <div className="mb-6 text-center">
             <Badge
               className="bg-white/20 text-foreground backdrop-blur"
               variant="secondary"
@@ -588,7 +588,7 @@ export default function CDSIMERLife() {
               life experiences.
             </p>
           </div>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-4">
             {HERO_STATS.map((stat) => (
               <StatCard key={stat.label} stat={stat} />
             ))}
@@ -596,9 +596,9 @@ export default function CDSIMERLife() {
         </div>
       </section>
 
-      <section className="px-6 py-16">
+      <section className="px-3 py-8">
         <div className="mx-auto max-w-7xl">
-          <div className="mb-12 text-center">
+          <div className="mb-6 text-center">
             <Badge className="bg-brand-magenta/15 text-brand-magenta">
               Residential Life
             </Badge>
@@ -611,7 +611,7 @@ export default function CDSIMERLife() {
               leaders.
             </p>
           </div>
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
             {LIFESTYLE_FEATURES.map((feature) => (
               <LifestyleFeatureCard key={feature.title} feature={feature} />
             ))}
@@ -619,9 +619,9 @@ export default function CDSIMERLife() {
         </div>
       </section>
 
-      <section className="bg-gradient-to-r from-brand-magenta/5 via-brand-orange/5 to-brand-blue/5 px-6 py-16">
+      <section className="bg-gradient-to-r from-brand-magenta/5 via-brand-orange/5 to-brand-blue/5 px-3 py-8">
         <div className="mx-auto max-w-7xl">
-          <div className="mb-12 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+          <div className="mb-6 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
               <Badge className="bg-brand-orange/15 text-brand-orange">
                 Programmes & Engagement
@@ -645,7 +645,7 @@ export default function CDSIMERLife() {
               <ChevronRight className="h-4 w-4" />
             </a>
           </div>
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
             {WELLNESS_PROGRAMMES.map((programme) => (
               <ProgrammeCard key={programme.title} programme={programme} />
             ))}
@@ -653,9 +653,9 @@ export default function CDSIMERLife() {
         </div>
       </section>
 
-      <section className="px-6 py-16">
+      <section className="px-3 py-8">
         <div className="mx-auto max-w-7xl">
-          <div className="mb-12 text-center">
+          <div className="mb-6 text-center">
             <Badge className="bg-brand-blue/15 text-brand-blue">
               Clubs & Societies
             </Badge>
@@ -667,7 +667,7 @@ export default function CDSIMERLife() {
               service and collaboration across the CDSIMER campus.
             </p>
           </div>
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
             {CAMPUS_CLUBS.map((club) => (
               <ClubCard key={club.title} club={club} />
             ))}
@@ -675,9 +675,9 @@ export default function CDSIMERLife() {
         </div>
       </section>
 
-      <section className="bg-gradient-to-r from-brand-magenta/5 via-brand-orange/5 to-brand-blue/5 px-6 py-16">
+      <section className="bg-gradient-to-r from-brand-magenta/5 via-brand-orange/5 to-brand-blue/5 px-3 py-8">
         <div className="mx-auto max-w-7xl">
-          <div className="mb-12 text-center">
+          <div className="mb-6 text-center">
             <Badge className="bg-brand-magenta/15 text-brand-magenta">
               Campus Moments
             </Badge>
@@ -689,7 +689,7 @@ export default function CDSIMERLife() {
               the pursuit of excellence across CDSIMER.
             </p>
           </div>
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
             {GALLERY_IMAGES.map((image) => (
               <GalleryCard key={image.title} image={image} />
             ))}
@@ -697,9 +697,9 @@ export default function CDSIMERLife() {
         </div>
       </section>
 
-      <section className="px-6 py-16" id="resources">
+      <section className="px-3 py-8" id="resources">
         <div className="mx-auto max-w-7xl">
-          <div className="mb-12 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+          <div className="mb-6 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
             <div className="max-w-3xl">
               <Badge className="bg-brand-magenta/15 text-brand-magenta">
                 Key Resources
@@ -722,7 +722,7 @@ export default function CDSIMERLife() {
               <ChevronRight className="h-4 w-4" />
             </a>
           </div>
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
             {RESOURCE_LINKS.map((resource) => (
               <ResourceCard key={resource.title} resource={resource} />
             ))}
@@ -730,10 +730,10 @@ export default function CDSIMERLife() {
         </div>
       </section>
 
-      <footer className="px-6 pb-20">
+      <footer className="px-3 pb-20">
         <div className="mx-auto max-w-7xl">
           <Card className="border border-border/40 bg-card/60 backdrop-blur">
-            <CardContent className="flex flex-col gap-6 p-8 md:flex-row md:items-center md:justify-between">
+            <CardContent className="flex flex-col gap-3 p-4 md:flex-row md:items-center md:justify-between">
               <div>
                 <h3 className="text-2xl font-display">
                   Ready to immerse yourself in life at CDSIMER?

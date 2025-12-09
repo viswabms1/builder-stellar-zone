@@ -71,7 +71,7 @@ export default function CentreOfExcellence() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero Section with Image */}
-      <section className="relative py-20 lg:py-32 bg-gradient-to-br from-orange-500/10 via-red-600/5 to-background overflow-hidden">
+      <section className="relative py-10 lg:py-32 bg-gradient-to-br from-orange-500/10 via-red-600/5 to-background overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-20 left-10 w-72 h-72 bg-orange-500/10 rounded-full filter blur-3xl animate-float"></div>
           <div
@@ -80,7 +80,7 @@ export default function CentreOfExcellence() {
           ></div>
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-6 text-center">
+        <div className="relative max-w-7xl mx-auto px-3 text-center">
           <div className="inline-flex items-center px-4 py-2 bg-orange-500/10 rounded-full border border-orange-500/20 mb-8">
             <Lightbulb className="w-4 h-4 text-orange-500 mr-2" />
             <span className="text-sm font-medium text-orange-500">
@@ -112,7 +112,7 @@ export default function CentreOfExcellence() {
       </section>
 
       {/* Proposed Centres Section */}
-      <section className="px-6 py-20">
+      <section className="px-3 py-10">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <Badge
@@ -134,7 +134,7 @@ export default function CentreOfExcellence() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
             {centres.map((centre, index) => {
               const Icon = centre.icon;
               return (
@@ -142,7 +142,7 @@ export default function CentreOfExcellence() {
                   key={index}
                   className={`${centre.borderColor} bg-gradient-to-br ${centre.bgColor} to-transparent backdrop-blur-sm hover:shadow-lg transition-all duration-300 hover:border-opacity-100`}
                 >
-                  <CardContent className="p-6">
+                  <CardContent className="p-3">
                     <div
                       className={`inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-gradient-to-br ${centre.color} mb-4`}
                     >
