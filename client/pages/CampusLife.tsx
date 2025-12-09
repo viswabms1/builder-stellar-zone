@@ -130,6 +130,7 @@ export default function CampusLife() {
               image: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F0357dfeb9259438fbb59b6cd31a06e5a?format=webp&width=800",
               description: "Comfortable accommodation with all modern amenities",
               features: ["AC Rooms", "WiFi", "Study Areas", "Recreation Rooms"],
+              link: "https://myposhtell.com/",
             },
             {
               title: "Sports Complex",
