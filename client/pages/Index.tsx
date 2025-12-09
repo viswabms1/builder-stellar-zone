@@ -892,7 +892,7 @@ export default function Index() {
 
       {/* Events Section */}
       <section className="px-3 py-10 bg-gradient-to-r from-brand-orange/5 via-brand-magenta/5 to-brand-blue/5">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="headline-2 mb-6">
               <span className="text-foreground">Upcoming </span>
@@ -1015,7 +1015,7 @@ export default function Index() {
 
       {/* DSU Publications Section */}
       <section className="px-3 py-10 bg-gradient-to-b from-brand-magenta/5 to-transparent">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="headline-2 mb-6">
               <span className="text-foreground">DSU </span>
