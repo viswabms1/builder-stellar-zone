@@ -123,7 +123,7 @@ export default function Navigation() {
                           <Link
                             key={submenu.name}
                             to={submenu.href}
-                            className={`block px-3 py-3 transition-colors text-base ${
+                            className={`block px-3 py-2.5 transition-colors text-sm ${
                               theme === 'light'
                                 ? 'hover:bg-orange-200 border-b border-orange-200 last:border-b-0'
                                 : 'hover:bg-white/20 border-b border-white/20 last:border-b-0'
