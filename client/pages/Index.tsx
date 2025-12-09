@@ -612,7 +612,7 @@ export default function Index() {
                   </div>
 
                   {/* Content Container */}
-                  <div className={`${style.bg} ${style.border} border border-t-0 rounded-none p-3 flex flex-col justify-center items-center h-20 w-full backdrop-blur-sm`}>
+                  <div className={`${style.bg} ${style.border} border border-t-0 rounded-none p-3 flex flex-col justify-center items-center h-28 w-full backdrop-blur-sm`}>
                     <div className="text-center">
                       <div className="mb-0">
                         {school.href ? (
