@@ -200,17 +200,6 @@ export default function CampusLife() {
                     </div>
                   ))}
                 </div>
-                {facility.title === "Modern Hostels" && (
-                  <a
-                    href="https://myposhtell.com/"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center text-orange-500 hover:text-orange-600 font-semibold transition-colors"
-                  >
-                    Visit Poshtell
-                    <ArrowRight className="w-4 h-4 ml-2" />
-                  </a>
-                )}
               </div>
             </div>
           ))}
