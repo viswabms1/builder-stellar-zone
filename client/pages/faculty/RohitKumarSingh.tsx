@@ -19,9 +19,9 @@ export default function FacultyRohitKumarSingh() {
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
         </div>
         <div className="absolute inset-x-0 -bottom-16 z-10">
-          <div className="max-w-6xl mx-auto px-6">
+          <div className="max-w-6xl mx-auto px-3">
             <Card className="rounded-2xl border border-border/50 bg-card/95 backdrop-blur">
-              <CardContent className="p-5 md:p-6 flex gap-4 md:gap-6 items-center">
+              <CardContent className="p-5 md:p-3 flex gap-4 md:gap-3 items-center">
                 <div className="w-20 h-20 md:w-24 md:h-24 rounded-xl overflow-hidden border border-border/50 shadow-sm">
                   <img src={portrait} alt="Rohit Kumar Singh" className="w-full h-full object-cover object-center" />
                 </div>
@@ -44,10 +44,10 @@ export default function FacultyRohitKumarSingh() {
         </div>
       </section>
 
-      <section className="px-6 pt-24 pb-12">
-        <div className="max-w-6xl mx-auto grid lg:grid-cols-3 gap-8 items-start">
+      <section className="px-3 pt-24 pb-12">
+        <div className="max-w-6xl mx-auto grid lg:grid-cols-3 gap-4 items-start">
           {/* Left column: Bio & sections */}
-          <div className="lg:col-span-2 space-y-8">
+          <div className="lg:col-span-2 space-y-4">
             <Card className="border border-border/50 bg-card/50">
               <CardHeader>
                 <CardTitle className="font-display">Biography</CardTitle>
@@ -108,7 +108,7 @@ export default function FacultyRohitKumarSingh() {
           </div>
 
           {/* Right column: Contact, Metrics, Education */}
-          <div className="space-y-8">
+          <div className="space-y-4">
             <Card className="border border-border/50 bg-card/50">
               <CardHeader>
                 <CardTitle className="font-display">Contact</CardTitle>
