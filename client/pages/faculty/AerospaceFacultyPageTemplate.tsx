@@ -22,9 +22,9 @@ export default function AerospaceFacultyPageTemplate({ faculty }: AerospaceFacul
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
         </div>
         <div className="absolute inset-x-0 -bottom-16 z-10">
-          <div className="max-w-6xl mx-auto px-6">
+          <div className="max-w-6xl mx-auto px-3">
             <Card className="rounded-2xl border border-border/50 bg-card/95 backdrop-blur">
-              <CardContent className="p-5 md:p-6 flex gap-6 md:gap-8 items-center">
+              <CardContent className="p-5 md:p-3 flex gap-3 md:gap-4 items-center">
                 <div className="w-32 h-32 md:w-40 md:h-40 rounded-xl overflow-hidden border border-border/50 shadow-sm flex-shrink-0">
                   <img src={faculty.image} alt={faculty.name} className="w-full h-full object-cover object-center" />
                 </div>
@@ -47,10 +47,10 @@ export default function AerospaceFacultyPageTemplate({ faculty }: AerospaceFacul
         </div>
       </section>
 
-      <section className="px-6 pt-24 pb-12">
-        <div className="max-w-6xl mx-auto grid lg:grid-cols-3 gap-8 items-start">
+      <section className="px-3 pt-24 pb-12">
+        <div className="max-w-6xl mx-auto grid lg:grid-cols-3 gap-4 items-start">
           {/* Left column: Bio & sections */}
-          <div className="lg:col-span-2 space-y-8">
+          <div className="lg:col-span-2 space-y-4">
             <Card className="border border-border/50 bg-card/50">
               <CardHeader>
                 <CardTitle className="font-display text-lg">Biography</CardTitle>
@@ -100,7 +100,7 @@ export default function AerospaceFacultyPageTemplate({ faculty }: AerospaceFacul
           </div>
 
           {/* Right column: Contact & Details */}
-          <div className="space-y-6">
+          <div className="space-y-3">
             <Card className="border border-border/50 bg-card/50">
               <CardHeader>
                 <CardTitle className="font-display text-lg">Contact Information</CardTitle>
