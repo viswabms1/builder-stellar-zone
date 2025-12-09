@@ -312,7 +312,7 @@ export default function Index() {
         color: 'brand-orange',
         delay: '0s',
         href: '/academics/engineering',
-        image: 'https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F17666ebfcd8c4186925b49b8970558ea?format=webp&width=800'
+        image: 'https://images.pexels.com/photos/3862638/pexels-photo-3862638.jpeg'
       },
       {
         key: 'computerApplications',
@@ -320,7 +320,7 @@ export default function Index() {
         color: 'brand-magenta',
         delay: '0.1s',
         href: '/academics/computer-applications',
-        image: 'https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F56e10ce7c8bf4da88d7366add7229375?format=webp&width=800'
+        image: 'https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg'
       },
       {
         key: 'law',
@@ -328,7 +328,7 @@ export default function Index() {
         color: 'brand-blue',
         delay: '0.2s',
         href: '/academics/law',
-        image: 'https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Feee05981b8814e11925a317a1f192e84?format=webp&width=800'
+        image: 'https://images.pexels.com/photos/8112201/pexels-photo-8112201.jpeg'
       },
       {
         key: 'management',
@@ -336,7 +336,7 @@ export default function Index() {
         color: 'brand-orange',
         delay: '0.3s',
         href: '/academics/management-studies',
-        image: 'https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fa4cef07ee55d42f08b7ee15a52adf2c7?format=webp&width=800'
+        image: 'https://images.pexels.com/photos/6694543/pexels-photo-6694543.jpeg'
       },
       {
         key: 'sciences',
@@ -344,7 +344,7 @@ export default function Index() {
         color: 'brand-magenta',
         delay: '0.4s',
         href: '/academics/basic-applied-sciences',
-        image: 'https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F5c3772983eda4a57afef1b2482475104?format=webp&width=800'
+        image: 'https://images.pexels.com/photos/7722645/pexels-photo-7722645.jpeg'
       },
       {
         key: 'health',
@@ -352,7 +352,7 @@ export default function Index() {
         color: 'brand-blue',
         delay: '0.5s',
         href: '/academics/health-sciences',
-        image: 'https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F74d341a4bb974c0b8c0b8eb23cc2f13a?format=webp&width=800'
+        image: 'https://images.pexels.com/photos/40568/pexels-photo-40568.jpeg'
       },
       {
         key: 'design',
@@ -360,7 +360,7 @@ export default function Index() {
         color: 'brand-magenta',
         delay: '0.7s',
         href: '/academics/design/bdesign',
-        image: 'https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F2633bc781ba34a32841a6e9929b3e6d5?format=webp&width=800'
+        image: 'https://images.pexels.com/photos/9436715/pexels-photo-9436715.jpeg'
       },
       {
         key: 'medical',
@@ -368,7 +368,7 @@ export default function Index() {
         color: 'brand-blue',
         delay: '0.8s',
         href: 'https://cdsimer.edu.in',
-        image: 'https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F51baaa8de8d44ac2971a620063293fb0?format=webp&width=800'
+        image: 'https://images.pexels.com/photos/5726794/pexels-photo-5726794.jpeg'
       },
     ];
 
