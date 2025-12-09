@@ -344,7 +344,7 @@ export default function Index() {
         color: 'brand-magenta',
         delay: '0.4s',
         href: '/academics/basic-applied-sciences',
-        image: 'https://images.pexels.com/photos/7722645/pexels-photo-7722645.jpeg'
+        image: 'https://images.pexels.com/photos/9628799/pexels-photo-9628799.jpeg'
       },
       {
         key: 'health',
@@ -352,7 +352,7 @@ export default function Index() {
         color: 'brand-blue',
         delay: '0.5s',
         href: '/academics/health-sciences',
-        image: 'https://images.pexels.com/photos/40568/pexels-photo-40568.jpeg'
+        image: 'https://images.pexels.com/photos/1279365/pexels-photo-1279365.jpeg'
       },
       {
         key: 'design',
@@ -360,7 +360,7 @@ export default function Index() {
         color: 'brand-magenta',
         delay: '0.7s',
         href: '/academics/design/bdesign',
-        image: 'https://images.pexels.com/photos/9436715/pexels-photo-9436715.jpeg'
+        image: 'https://images.pexels.com/photos/7147711/pexels-photo-7147711.jpeg'
       },
       {
         key: 'medical',
