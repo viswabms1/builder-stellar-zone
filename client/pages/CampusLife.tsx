@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/providers/language-provider";
 import { Button } from "@/components/ui/button";
+import { useRef, useState } from "react";
 import {
   Card,
   CardContent,
@@ -34,10 +35,21 @@ import {
   Clock,
   ChevronRight,
   Rocket,
+  Volume2,
+  VolumeX,
 } from "lucide-react";
 
 export default function CampusLife() {
   const { t } = useLanguage();
+  const [isMuted, setIsMuted] = useState(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const toggleMute = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = !videoRef.current.muted;
+      setIsMuted(!isMuted);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-background text-foreground">
