@@ -78,7 +78,7 @@ function HeroVideo() {
         playsInline
         className="w-full h-full object-cover"
         style={{
-          filter: "brightness(1.1) contrast(1.15) saturate(1.2)"
+          filter: "brightness(1.1) contrast(1.15) saturate(1.2)",
         }}
       />
 
@@ -87,13 +87,20 @@ function HeroVideo() {
 
       {/* Animated Corner Glow Effects */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-brand-magenta/5 rounded-full filter blur-3xl opacity-60 animate-float pointer-events-none"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-brand-orange/5 rounded-full filter blur-3xl opacity-60 animate-float pointer-events-none" style={{ animationDelay: "2s" }}></div>
+      <div
+        className="absolute bottom-0 right-0 w-96 h-96 bg-brand-orange/5 rounded-full filter blur-3xl opacity-60 animate-float pointer-events-none"
+        style={{ animationDelay: "2s" }}
+      ></div>
 
       {/* Subtle Scan Line Effect */}
-      <div className="absolute inset-0 opacity-5 pointer-events-none" style={{
-        backgroundImage: "repeating-linear-gradient(0deg, rgba(255,255,255,.03) 0px, rgba(255,255,255,.03) 1px, transparent 1px, transparent 2px)",
-        animation: "scanlines 8s linear infinite"
-      }}></div>
+      <div
+        className="absolute inset-0 opacity-5 pointer-events-none"
+        style={{
+          backgroundImage:
+            "repeating-linear-gradient(0deg, rgba(255,255,255,.03) 0px, rgba(255,255,255,.03) 1px, transparent 1px, transparent 2px)",
+          animation: "scanlines 8s linear infinite",
+        }}
+      ></div>
 
       {/* Mute/Unmute Button */}
       <button
@@ -114,7 +121,6 @@ function HeroVideo() {
           100% { transform: translateY(10px); }
         }
       `}</style>
-
     </div>
   );
 }
@@ -125,7 +131,7 @@ function VideoWithFrameCapture({
   poster,
   onPlay,
   onPause,
-  onEnded
+  onEnded,
 }: {
   src: string;
   rotate?: boolean;
@@ -182,7 +188,11 @@ function VideoWithFrameCapture({
   }, [src, poster]);
 
   return (
-    <div className={rotate ? "flex items-center justify-center overflow-hidden" : ""}>
+    <div
+      className={
+        rotate ? "flex items-center justify-center overflow-hidden" : ""
+      }
+    >
       <video
         ref={videoRef}
         src={src}
@@ -199,7 +209,13 @@ function VideoWithFrameCapture({
   );
 }
 
-function NewsModal({ newsItem, onClose }: { newsItem: any; onClose: () => void }) {
+function NewsModal({
+  newsItem,
+  onClose,
+}: {
+  newsItem: any;
+  onClose: () => void;
+}) {
   if (!newsItem) return null;
 
   return (
@@ -213,7 +229,11 @@ function NewsModal({ newsItem, onClose }: { newsItem: any; onClose: () => void }
         </button>
 
         {newsItem.isVideo ? (
-          <VideoWithFrameCapture src={newsItem.image} rotate={newsItem.rotate} poster={newsItem.poster} />
+          <VideoWithFrameCapture
+            src={newsItem.image}
+            rotate={newsItem.rotate}
+            poster={newsItem.poster}
+          />
         ) : (
           <img
             src={newsItem.image}
@@ -242,7 +262,9 @@ function NewsModal({ newsItem, onClose }: { newsItem: any; onClose: () => void }
           <h2 className="text-3xl font-semibold text-foreground mb-4 font-display">
             {newsItem.title}
           </h2>
-          <p className="text-foreground/80 text-lg font-body">{newsItem.excerpt}</p>
+          <p className="text-foreground/80 text-lg font-body">
+            {newsItem.excerpt}
+          </p>
         </div>
       </div>
     </div>
@@ -263,43 +285,55 @@ export default function Index() {
       date: "Nov 28, 2024",
       title: "Annual Research & Innovation Summit",
       category: "Academic Seminar",
-      description: "Join leading researchers and innovators to explore cutting-edge developments in AI, Biotechnology, and Sustainable Energy. Network with industry leaders and discover research opportunities.",
-      image: "https://images.pexels.com/photos/6476783/pexels-photo-6476783.jpeg",
+      description:
+        "Join leading researchers and innovators to explore cutting-edge developments in AI, Biotechnology, and Sustainable Energy. Network with industry leaders and discover research opportunities.",
+      image:
+        "https://images.pexels.com/photos/6476783/pexels-photo-6476783.jpeg",
     },
     {
       date: "Nov 22, 2024",
       title: "Faculty Mentorship Program Launch",
       category: "Mentoring",
-      description: "Connect with experienced faculty mentors who will guide your academic journey and professional development. Register to find your mentor today.",
-      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=400&fit=crop",
+      description:
+        "Connect with experienced faculty mentors who will guide your academic journey and professional development. Register to find your mentor today.",
+      image:
+        "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=400&fit=crop",
     },
     {
       date: "Nov 25, 2024",
       title: "Inter-School Debate Championship",
       category: "Competition",
-      description: "Watch brilliant minds compete in our annual inter-school debate championship. Topics include contemporary global issues and societal challenges.",
-      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=400&fit=crop",
+      description:
+        "Watch brilliant minds compete in our annual inter-school debate championship. Topics include contemporary global issues and societal challenges.",
+      image:
+        "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=400&fit=crop",
     },
     {
       date: "Nov 29, 2024",
       title: "Industry-Academia Collaboration Meet",
       category: "Networking",
-      description: "An exclusive meeting bringing together industry professionals and academic experts to discuss innovation, partnerships, and career opportunities.",
-      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=400&fit=crop",
+      description:
+        "An exclusive meeting bringing together industry professionals and academic experts to discuss innovation, partnerships, and career opportunities.",
+      image:
+        "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=400&fit=crop",
     },
     {
       date: "Dec 2, 2024",
       title: "Winter Cultural Festival",
       category: "Celebration",
-      description: "Celebrate diverse cultures through performances, food, art, and music. A vibrant showcase of our campus community's talent and traditions.",
-      image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&h=400&fit=crop",
+      description:
+        "Celebrate diverse cultures through performances, food, art, and music. A vibrant showcase of our campus community's talent and traditions.",
+      image:
+        "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&h=400&fit=crop",
     },
     {
       date: "Dec 5, 2024",
       title: "Career Development Workshop",
       category: "Professional",
-      description: "Develop essential skills for your career success. Expert sessions on resume building, interview techniques, and professional networking.",
-      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=400&fit=crop",
+      description:
+        "Develop essential skills for your career success. Expert sessions on resume building, interview techniques, and professional networking.",
+      image:
+        "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=400&fit=crop",
     },
   ];
 
@@ -307,68 +341,76 @@ export default function Index() {
   const getSchoolsData = () => {
     const baseSchools = [
       {
-        key: 'engineering',
+        key: "engineering",
         icon: Cog,
-        color: 'brand-orange',
-        delay: '0s',
-        href: '/academics/engineering',
-        image: 'https://images.pexels.com/photos/3862638/pexels-photo-3862638.jpeg'
+        color: "brand-orange",
+        delay: "0s",
+        href: "/academics/engineering",
+        image:
+          "https://images.pexels.com/photos/3862638/pexels-photo-3862638.jpeg",
       },
       {
-        key: 'computerApplications',
+        key: "computerApplications",
         icon: Cpu,
-        color: 'brand-magenta',
-        delay: '0.1s',
-        href: '/academics/computer-applications',
-        image: 'https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg'
+        color: "brand-magenta",
+        delay: "0.1s",
+        href: "/academics/computer-applications",
+        image:
+          "https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg",
       },
       {
-        key: 'law',
+        key: "law",
         icon: Gavel,
-        color: 'brand-blue',
-        delay: '0.2s',
-        href: '/academics/law',
-        image: 'https://images.pexels.com/photos/8112201/pexels-photo-8112201.jpeg'
+        color: "brand-blue",
+        delay: "0.2s",
+        href: "/academics/law",
+        image:
+          "https://images.pexels.com/photos/8112201/pexels-photo-8112201.jpeg",
       },
       {
-        key: 'management',
+        key: "management",
         icon: Briefcase,
-        color: 'brand-orange',
-        delay: '0.3s',
-        href: '/academics/management-studies',
-        image: 'https://images.pexels.com/photos/6694543/pexels-photo-6694543.jpeg'
+        color: "brand-orange",
+        delay: "0.3s",
+        href: "/academics/management-studies",
+        image:
+          "https://images.pexels.com/photos/6694543/pexels-photo-6694543.jpeg",
       },
       {
-        key: 'sciences',
+        key: "sciences",
         icon: FlaskConical,
-        color: 'brand-magenta',
-        delay: '0.4s',
-        href: '/academics/basic-applied-sciences',
-        image: 'https://images.pexels.com/photos/9628799/pexels-photo-9628799.jpeg'
+        color: "brand-magenta",
+        delay: "0.4s",
+        href: "/academics/basic-applied-sciences",
+        image:
+          "https://images.pexels.com/photos/9628799/pexels-photo-9628799.jpeg",
       },
       {
-        key: 'health',
+        key: "health",
         icon: Stethoscope,
-        color: 'brand-blue',
-        delay: '0.5s',
-        href: '/academics/health-sciences',
-        image: 'https://images.pexels.com/photos/1279365/pexels-photo-1279365.jpeg'
+        color: "brand-blue",
+        delay: "0.5s",
+        href: "/academics/health-sciences",
+        image:
+          "https://images.pexels.com/photos/1279365/pexels-photo-1279365.jpeg",
       },
       {
-        key: 'design',
+        key: "design",
         icon: Film,
-        color: 'brand-magenta',
-        delay: '0.7s',
-        href: '/academics/design/bdesign',
-        image: 'https://images.pexels.com/photos/7147711/pexels-photo-7147711.jpeg'
+        color: "brand-magenta",
+        delay: "0.7s",
+        href: "/academics/design/bdesign",
+        image:
+          "https://images.pexels.com/photos/7147711/pexels-photo-7147711.jpeg",
       },
       {
-        key: 'medical',
+        key: "medical",
         icon: Microscope,
-        color: 'brand-blue',
-        delay: '0.8s',
-        href: 'https://cdsimer.edu.in',
-        image: 'https://images.pexels.com/photos/5726794/pexels-photo-5726794.jpeg'
+        color: "brand-blue",
+        delay: "0.8s",
+        href: "https://cdsimer.edu.in",
+        image:
+          "https://images.pexels.com/photos/5726794/pexels-photo-5726794.jpeg",
       },
     ];
 
@@ -376,14 +418,16 @@ export default function Index() {
       ...school,
       title: (() => {
         const translatedTitle = t(`academics.${school.key}.title`);
-        return translatedTitle.startsWith('School of') ? translatedTitle : `School of ${translatedTitle}`;
+        return translatedTitle.startsWith("School of")
+          ? translatedTitle
+          : `School of ${translatedTitle}`;
       })(),
       description: "",
       programs: [
-        t(`academics.${school.key}.programs.0`) || 'Program 1',
-        t(`academics.${school.key}.programs.1`) || 'Program 2',
-        t(`academics.${school.key}.programs.2`) || 'Program 3',
-        t(`academics.${school.key}.programs.3`) || 'Program 4',
+        t(`academics.${school.key}.programs.0`) || "Program 1",
+        t(`academics.${school.key}.programs.1`) || "Program 2",
+        t(`academics.${school.key}.programs.2`) || "Program 3",
+        t(`academics.${school.key}.programs.3`) || "Program 4",
       ],
     }));
   };
@@ -414,7 +458,8 @@ export default function Index() {
       image:
         "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2Fd56a1c898842468187e8ff3260f0cdda?alt=media&token=6cb58cdf-a202-461d-b774-09ce61d439c3&apiKey=4aa279a8430d441dba9c55f659831878",
       isVideo: true,
-      poster: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F85cbfdbb2c9047f0b769200939941be9?format=webp&width=800",
+      poster:
+        "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F85cbfdbb2c9047f0b769200939941be9?format=webp&width=800",
       category: "Events",
       title: "TEDxDSU Returns for Second Edition 2025",
       excerpt:
@@ -438,7 +483,8 @@ export default function Index() {
         "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F8ee07440d90c4bd685e8ec8da486df8d?alt=media&token=38c290b6-91a4-4825-a4c8-068661623f55&apiKey=4aa279a8430d441dba9c55f659831878",
       isVideo: true,
       category: "Campus Life",
-      title: "9th Convocation at DSU: A Day of Reflection, Gratitude, and Pride",
+      title:
+        "9th Convocation at DSU: A Day of Reflection, Gratitude, and Pride",
       excerpt:
         "Celebrating the achievements and milestones of our graduating students and faculty.",
       date: "Oct 15, 2025",
@@ -485,7 +531,7 @@ export default function Index() {
   // Get current featured item and remaining items
   const currentFeatured = allFeaturedNews[featuredNewsIndex];
   const remainingNews = allFeaturedNews.filter(
-    (_, idx) => idx !== featuredNewsIndex
+    (_, idx) => idx !== featuredNewsIndex,
   );
 
   return (
@@ -507,10 +553,10 @@ export default function Index() {
               Dayananda Sagar University
             </h1>
             <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold text-white mb-6 leading-tight font-display">
-              {t('hero.mainHeading') || "India's AI First University"}
+              {t("hero.mainHeading") || "India's AI First University"}
             </p>
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-white/90 mb-12 font-display">
-              {t('hero.subheading') || "Powered by NVIDIA"}
+              {t("hero.subheading") || "Powered by NVIDIA"}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -524,7 +570,7 @@ export default function Index() {
                   size="lg"
                   className="bg-white hover:bg-white/90 text-orange-600 hover:text-orange-700 px-8 py-6 text-base font-semibold font-display transition-all duration-300 group border-2 border-white"
                 >
-                  {t('hero.applyNow') || "Apply Today"}
+                  {t("hero.applyNow") || "Apply Today"}
                   <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </a>
@@ -539,7 +585,7 @@ export default function Index() {
                   size="lg"
                   className="border-2 border-white text-white hover:bg-white hover:text-orange-600 px-8 py-6 text-base font-semibold font-display transition-all duration-300"
                 >
-                  {t('hero.virtualTour') || "Virtual Tour"}
+                  {t("hero.virtualTour") || "Virtual Tour"}
                 </Button>
               </a>
             </div>
@@ -551,9 +597,7 @@ export default function Index() {
       <section className="px-3 py-8 relative bg-gradient-to-r from-brand-magenta/5 via-brand-orange/5 to-brand-blue/5 border-y border-border/30">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="headline-2 mb-4">
-              Recognized Excellence
-            </h2>
+            <h2 className="headline-2 mb-4">Recognized Excellence</h2>
             <p className="subheadline text-foreground max-w-3xl mx-auto font-display text-lg">
               Accredited by leading national and international bodies
             </p>
@@ -573,25 +617,23 @@ export default function Index() {
       <section className="px-3 py-10 relative">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="headline-2 mb-6">
-              {t('academics.title')}
-            </h2>
+            <h2 className="headline-2 mb-6">{t("academics.title")}</h2>
             <p className="subheadline text-foreground max-w-3xl mx-auto font-display">
-              {t('academics.subtitle')}
+              {t("academics.subtitle")}
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-0 auto-rows-max">
             {getSchoolsData().map((school, index) => {
               const styles = [
-                { bg: 'bg-orange-500/10', border: 'border-orange-500/20' },
-                { bg: 'bg-pink-500/10', border: 'border-pink-500/20' },
-                { bg: 'bg-blue-500/10', border: 'border-blue-500/20' },
-                { bg: 'bg-emerald-500/10', border: 'border-emerald-500/20' },
-                { bg: 'bg-purple-500/10', border: 'border-purple-500/20' },
-                { bg: 'bg-cyan-500/10', border: 'border-cyan-500/20' },
-                { bg: 'bg-amber-500/10', border: 'border-amber-500/20' },
-                { bg: 'bg-rose-500/10', border: 'border-rose-500/20' },
+                { bg: "bg-orange-500/10", border: "border-orange-500/20" },
+                { bg: "bg-pink-500/10", border: "border-pink-500/20" },
+                { bg: "bg-blue-500/10", border: "border-blue-500/20" },
+                { bg: "bg-emerald-500/10", border: "border-emerald-500/20" },
+                { bg: "bg-purple-500/10", border: "border-purple-500/20" },
+                { bg: "bg-cyan-500/10", border: "border-cyan-500/20" },
+                { bg: "bg-amber-500/10", border: "border-amber-500/20" },
+                { bg: "bg-rose-500/10", border: "border-rose-500/20" },
               ];
               const style = styles[index % styles.length];
 
@@ -612,7 +654,9 @@ export default function Index() {
                   </div>
 
                   {/* Content Container */}
-                  <div className={`${style.bg} ${style.border} border border-t-0 rounded-none p-3 flex flex-col justify-center items-center h-24 w-full backdrop-blur-sm`}>
+                  <div
+                    className={`${style.bg} ${style.border} border border-t-0 rounded-none p-3 flex flex-col justify-center items-center h-24 w-full backdrop-blur-sm`}
+                  >
                     <div className="text-center">
                       <div className="mb-0">
                         {school.href ? (
@@ -694,7 +738,8 @@ export default function Index() {
                       {currentFeatured.category}
                     </Badge>
                     <div className="flex items-center text-foreground/60 text-xs font-body">
-                      <CalendarDays className="w-3 h-3 mr-1" /> {currentFeatured.date}
+                      <CalendarDays className="w-3 h-3 mr-1" />{" "}
+                      {currentFeatured.date}
                     </div>
                   </div>
                   <h3 className="text-base font-semibold text-foreground font-display line-clamp-2">
@@ -704,7 +749,8 @@ export default function Index() {
                     {currentFeatured.excerpt}
                   </p>
                   <div className="text-xs text-foreground/60 font-body">
-                    Auto-rotating • {featuredNewsIndex + 1} of {allFeaturedNews.length}
+                    Auto-rotating • {featuredNewsIndex + 1} of{" "}
+                    {allFeaturedNews.length}
                   </div>
                 </div>
               </button>
@@ -717,12 +763,18 @@ export default function Index() {
                   key={idx}
                   onClick={() => setSelectedNews(item)}
                   className={`group rounded-none overflow-hidden border backdrop-blur-sm hover:shadow-lg hover:shadow-brand-magenta/10 transition-all text-left cursor-pointer ${
-                    idx % 2 === 0 ? "bg-blue-500/10 border-blue-500/20" : "bg-purple-500/10 border-purple-500/20"
+                    idx % 2 === 0
+                      ? "bg-blue-500/10 border-blue-500/20"
+                      : "bg-purple-500/10 border-purple-500/20"
                   }`}
                 >
                   <div className="relative">
                     {item.isVideo ? (
-                      <VideoWithFrameCapture src={item.image} rotate={item.rotate} poster={item.poster} />
+                      <VideoWithFrameCapture
+                        src={item.image}
+                        rotate={item.rotate}
+                        poster={item.poster}
+                      />
                     ) : (
                       <img
                         src={item.image}
@@ -756,7 +808,6 @@ export default function Index() {
               ))}
             </div>
           </div>
-
         </div>
       </section>
 
@@ -771,7 +822,8 @@ export default function Index() {
               </span>
             </h2>
             <p className="subheadline text-foreground max-w-2xl mx-auto font-display">
-              Connect with our community through seminars, workshops, and celebrations
+              Connect with our community through seminars, workshops, and
+              celebrations
             </p>
           </div>
 
@@ -809,7 +861,8 @@ export default function Index() {
                       <ArrowRight className="w-4 h-4 ml-2" />
                     </Button>
                     <div className="text-xs text-foreground/60 font-body">
-                      Auto-rotating • {selectedEventIndex + 1} of {allEvents.length}
+                      Auto-rotating • {selectedEventIndex + 1} of{" "}
+                      {allEvents.length}
                     </div>
                   </div>
                 </div>
@@ -835,10 +888,10 @@ export default function Index() {
                       selectedEventIndex === idx
                         ? "border-brand-magenta bg-brand-magenta/10 shadow-lg shadow-brand-magenta/10"
                         : idx % 3 === 0
-                        ? "border-blue-500/20 bg-blue-500/10 hover:border-brand-magenta/50 hover:shadow-lg hover:shadow-brand-magenta/5"
-                        : idx % 3 === 1
-                        ? "border-purple-500/20 bg-purple-500/10 hover:border-brand-magenta/50 hover:shadow-lg hover:shadow-brand-magenta/5"
-                        : "border-orange-500/20 bg-orange-500/10 hover:border-brand-magenta/50 hover:shadow-lg hover:shadow-brand-magenta/5"
+                          ? "border-blue-500/20 bg-blue-500/10 hover:border-brand-magenta/50 hover:shadow-lg hover:shadow-brand-magenta/5"
+                          : idx % 3 === 1
+                            ? "border-purple-500/20 bg-purple-500/10 hover:border-brand-magenta/50 hover:shadow-lg hover:shadow-brand-magenta/5"
+                            : "border-orange-500/20 bg-orange-500/10 hover:border-brand-magenta/50 hover:shadow-lg hover:shadow-brand-magenta/5"
                     }`}
                   >
                     <div className="flex gap-4">
@@ -881,7 +934,6 @@ export default function Index() {
         </div>
       </section>
 
-
       {/* CTA Section */}
       <section className="px-3 py-10 relative">
         <div className="max-w-4xl mx-auto text-center">
@@ -916,24 +968,26 @@ export default function Index() {
             </div>
 
             <div className="flex flex-wrap justify-center gap-2">
-              {[
-                "Merit Scholarships Available",
-                "Industry Partnerships",
-              ].map((badge, index) => (
-                <Badge
-                  key={index}
-                  variant="secondary"
-                  className="px-3 py-1 text-xs font-medium font-body"
-                >
-                  {badge}
-                </Badge>
-              ))}
+              {["Merit Scholarships Available", "Industry Partnerships"].map(
+                (badge, index) => (
+                  <Badge
+                    key={index}
+                    variant="secondary"
+                    className="px-3 py-1 text-xs font-medium font-body"
+                  >
+                    {badge}
+                  </Badge>
+                ),
+              )}
             </div>
           </div>
         </div>
       </section>
 
-      <NewsModal newsItem={selectedNews} onClose={() => setSelectedNews(null)} />
+      <NewsModal
+        newsItem={selectedNews}
+        onClose={() => setSelectedNews(null)}
+      />
     </div>
   );
 }

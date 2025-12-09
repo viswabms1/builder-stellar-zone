@@ -43,7 +43,6 @@ import {
 
 const HERO_IMAGE = "https://www.dsu.edu.in/images/Engineering/engg-landing.jpg";
 
-
 type EngineeringDepartment = {
   name: string;
   area: string;
@@ -71,7 +70,6 @@ type CalendarEntry = {
   documentUrl: string;
   tag: string;
 };
-
 
 const UG_PROGRAMS = [
   "Computer Science & Engineering",
@@ -289,69 +287,93 @@ const UG_PROGRAM_CARDS: ProgramCard[] = [
   {
     name: "Computer Science & Engineering",
     area: "Flagship UG Major",
-    description: "AI-ready curriculum spanning full stack engineering, cyber defence, cloud-native architectures and product innovation studios.",
-    image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=1600&auto=format&fit=crop",
+    description:
+      "AI-ready curriculum spanning full stack engineering, cyber defence, cloud-native architectures and product innovation studios.",
+    image:
+      "https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=1600&auto=format&fit=crop",
     link: "/academics/engineering/computer-science",
     highlights: ["AI & ML Studio", "Product Labs", "Industry Hackathons"],
-    overlay: "bg-gradient-to-br from-brand-magenta/80 via-black/75 to-black/60 mix-blend-multiply",
-    badgeClass: "bg-brand-magenta/25 text-foreground/90 border border-white/30 backdrop-blur",
+    overlay:
+      "bg-gradient-to-br from-brand-magenta/80 via-black/75 to-black/60 mix-blend-multiply",
+    badgeClass:
+      "bg-brand-magenta/25 text-foreground/90 border border-white/30 backdrop-blur",
     panelClass: "bg-black/55 backdrop-blur-xl",
     featured: true,
   },
   {
     name: "Electronics & Communication Engineering",
     area: "Intelligent Systems",
-    description: "Design advanced electronics, VLSI, embedded and communication systems empowered by 5G, IoT and semiconductor labs.",
-    image: "https://images.unsplash.com/photo-1580894908361-967195033215?q=80&w=1600&auto=format&fit=crop",
+    description:
+      "Design advanced electronics, VLSI, embedded and communication systems empowered by 5G, IoT and semiconductor labs.",
+    image:
+      "https://images.unsplash.com/photo-1580894908361-967195033215?q=80&w=1600&auto=format&fit=crop",
     link: "/academics/engineering/electronics-communication",
     highlights: ["VLSI Lab", "5G Research", "IoT Systems"],
-    overlay: "bg-gradient-to-br from-brand-blue/75 via-black/70 to-black/55 mix-blend-multiply",
-    badgeClass: "bg-brand-blue/30 text-foreground/90 border border-white/25 backdrop-blur",
+    overlay:
+      "bg-gradient-to-br from-brand-blue/75 via-black/70 to-black/55 mix-blend-multiply",
+    badgeClass:
+      "bg-brand-blue/30 text-foreground/90 border border-white/25 backdrop-blur",
     panelClass: "bg-black/55 backdrop-blur-xl",
     featured: true,
   },
   {
     name: "Mechanical Engineering",
     area: "Core Engineering",
-    description: "Master sustainable manufacturing, automotive systems, robotics and design thinking with hands-on prototyping studios.",
-    image: "https://images.unsplash.com/photo-1517677129300-07b130802f46?q=80&w=1600&auto=format&fit=crop",
+    description:
+      "Master sustainable manufacturing, automotive systems, robotics and design thinking with hands-on prototyping studios.",
+    image:
+      "https://images.unsplash.com/photo-1517677129300-07b130802f46?q=80&w=1600&auto=format&fit=crop",
     link: "/academics/engineering/mechanical",
     highlights: ["Advanced Manufacturing", "Robotics Studio", "CAE Tools"],
-    overlay: "bg-gradient-to-br from-brand-orange/70 via-black/70 to-black/55 mix-blend-multiply",
-    badgeClass: "bg-brand-orange/35 text-foreground/90 border border-white/25 backdrop-blur",
+    overlay:
+      "bg-gradient-to-br from-brand-orange/70 via-black/70 to-black/55 mix-blend-multiply",
+    badgeClass:
+      "bg-brand-orange/35 text-foreground/90 border border-white/25 backdrop-blur",
     panelClass: "bg-black/55 backdrop-blur-xl",
   },
   {
     name: "Aerospace Engineering",
     area: "High Altitude Futures",
-    description: "Explore flight mechanics, propulsion, avionics and composite materials in specialised aerospace laboratories.",
-    image: "https://images.unsplash.com/photo-1489515217757-5fd1be406fef?q=80&w=1600&auto=format&fit=crop",
+    description:
+      "Explore flight mechanics, propulsion, avionics and composite materials in specialised aerospace laboratories.",
+    image:
+      "https://images.unsplash.com/photo-1489515217757-5fd1be406fef?q=80&w=1600&auto=format&fit=crop",
     link: "https://www.dsu.edu.in/engineering/aerospace-engineering",
     highlights: ["Wind Tunnel", "Avionics Lab", "UAV Projects"],
-    overlay: "bg-gradient-to-br from-brand-blue/70 via-black/70 to-black/55 mix-blend-multiply",
-    badgeClass: "bg-brand-blue/30 text-foreground/90 border border-white/25 backdrop-blur",
+    overlay:
+      "bg-gradient-to-br from-brand-blue/70 via-black/70 to-black/55 mix-blend-multiply",
+    badgeClass:
+      "bg-brand-blue/30 text-foreground/90 border border-white/25 backdrop-blur",
     panelClass: "bg-black/55 backdrop-blur-xl",
   },
   {
     name: "AI & Robotics",
     area: "Interdisciplinary Edge",
-    description: "Build human-centric intelligent systems blending robotics, machine vision, automation and IoT.",
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1600&auto=format&fit=crop",
+    description:
+      "Build human-centric intelligent systems blending robotics, machine vision, automation and IoT.",
+    image:
+      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1600&auto=format&fit=crop",
     link: "https://www.dsu.edu.in/engineering/artificial-intelligence-robotics",
     highlights: ["Robotics Arena", "Machine Vision", "Automation"],
-    overlay: "bg-gradient-to-br from-brand-magenta/70 via-black/70 to-black/55 mix-blend-multiply",
-    badgeClass: "bg-brand-magenta/30 text-foreground/90 border border-white/25 backdrop-blur",
+    overlay:
+      "bg-gradient-to-br from-brand-magenta/70 via-black/70 to-black/55 mix-blend-multiply",
+    badgeClass:
+      "bg-brand-magenta/30 text-foreground/90 border border-white/25 backdrop-blur",
     panelClass: "bg-black/55 backdrop-blur-xl",
   },
   {
     name: "Computer Science & Engineering (AI & ML)",
     area: "Specialised UG Major",
-    description: "Deep-dives into responsible AI, data engineering, ML pipelines and NLP with industry-certified projects.",
-    image: "https://images.unsplash.com/photo-1534759846116-5799c33ce22a?q=80&w=1600&auto=format&fit=crop",
+    description:
+      "Deep-dives into responsible AI, data engineering, ML pipelines and NLP with industry-certified projects.",
+    image:
+      "https://images.unsplash.com/photo-1534759846116-5799c33ce22a?q=80&w=1600&auto=format&fit=crop",
     link: "/academics/engineering/ai-ml",
     highlights: ["Capstone Studios", "AI Research", "Dual Certifications"],
-    overlay: "bg-gradient-to-br from-brand-magenta/70 via-brand-blue/60 to-black/60 mix-blend-multiply",
-    badgeClass: "bg-brand-magenta/30 text-foreground/90 border border-white/25 backdrop-blur",
+    overlay:
+      "bg-gradient-to-br from-brand-magenta/70 via-brand-blue/60 to-black/60 mix-blend-multiply",
+    badgeClass:
+      "bg-brand-magenta/30 text-foreground/90 border border-white/25 backdrop-blur",
     panelClass: "bg-black/55 backdrop-blur-xl",
   },
 ];
@@ -360,34 +382,46 @@ const PG_PROGRAM_CARDS: ProgramCard[] = [
   {
     name: "M.Tech - Computer Science & Engineering",
     area: "Advanced Computing",
-    description: "Specialise in AI, cloud systems, cyber-physical systems and enterprise software through research-driven coursework and industry collaboration.",
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1600&auto=format&fit=crop",
+    description:
+      "Specialise in AI, cloud systems, cyber-physical systems and enterprise software through research-driven coursework and industry collaboration.",
+    image:
+      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1600&auto=format&fit=crop",
     link: "https://www.dsu.edu.in/engineering/mtech-cse",
     highlights: ["AI Systems", "Research Thesis", "Industry Mentorship"],
-    overlay: "bg-gradient-to-br from-brand-magenta/70 via-black/70 to-black/55 mix-blend-multiply",
-    badgeClass: "bg-brand-magenta/30 text-foreground/90 border border-white/25 backdrop-blur",
+    overlay:
+      "bg-gradient-to-br from-brand-magenta/70 via-black/70 to-black/55 mix-blend-multiply",
+    badgeClass:
+      "bg-brand-magenta/30 text-foreground/90 border border-white/25 backdrop-blur",
     panelClass: "bg-black/55 backdrop-blur-xl",
   },
   {
     name: "M.Tech - Embedded Systems",
     area: "Systems Engineering",
-    description: "Master real-time systems, IoT architectures, edge computing and VLSI design for critical infrastructure and embedded applications.",
-    image: "https://images.unsplash.com/photo-1580894908361-967195033215?q=80&w=1600&auto=format&fit=crop",
+    description:
+      "Master real-time systems, IoT architectures, edge computing and VLSI design for critical infrastructure and embedded applications.",
+    image:
+      "https://images.unsplash.com/photo-1580894908361-967195033215?q=80&w=1600&auto=format&fit=crop",
     link: "https://www.dsu.edu.in/engineering/mtech-embedded",
     highlights: ["RTOS Design", "Hardware Integration", "Edge Computing"],
-    overlay: "bg-gradient-to-br from-brand-blue/70 via-black/70 to-black/55 mix-blend-multiply",
-    badgeClass: "bg-brand-blue/30 text-foreground/90 border border-white/25 backdrop-blur",
+    overlay:
+      "bg-gradient-to-br from-brand-blue/70 via-black/70 to-black/55 mix-blend-multiply",
+    badgeClass:
+      "bg-brand-blue/30 text-foreground/90 border border-white/25 backdrop-blur",
     panelClass: "bg-black/55 backdrop-blur-xl",
   },
   {
     name: "M.Tech - Design Engineering",
     area: "Product Innovation",
-    description: "Apply advanced design methodologies, computational tools and human-centred design thinking to create scalable product solutions.",
-    image: "https://images.unsplash.com/photo-1523475472560-d2df97ec485c?q=80&w=1600&auto=format&fit=crop",
+    description:
+      "Apply advanced design methodologies, computational tools and human-centred design thinking to create scalable product solutions.",
+    image:
+      "https://images.unsplash.com/photo-1523475472560-d2df97ec485c?q=80&w=1600&auto=format&fit=crop",
     link: "https://www.dsu.edu.in/engineering/mtech-design",
     highlights: ["CAD & Simulation", "Design Thinking", "Product Studio"],
-    overlay: "bg-gradient-to-br from-brand-orange/70 via-black/70 to-black/55 mix-blend-multiply",
-    badgeClass: "bg-brand-orange/35 text-foreground/90 border border-white/25 backdrop-blur",
+    overlay:
+      "bg-gradient-to-br from-brand-orange/70 via-black/70 to-black/55 mix-blend-multiply",
+    badgeClass:
+      "bg-brand-orange/35 text-foreground/90 border border-white/25 backdrop-blur",
     panelClass: "bg-black/55 backdrop-blur-xl",
   },
 ];
@@ -522,17 +556,23 @@ function NoticeBoardCarousel() {
     items: NoticeItem[],
     currentIndex: number,
     setCurrentIndex: (idx: number) => void,
-    category: "Event" | "News" | "Announcement"
+    category: "Event" | "News" | "Announcement",
   ) => {
     const styles = getCategoryStyles(category);
 
     if (items.length === 0) {
       return (
         <div className="space-y-4">
-          <div className={`flex items-center gap-2 px-4 py-3 rounded-xl border-l-4 ${styles.borderColor} ${styles.bgColor}`}>
-            <h3 className={`headline-4 font-display ${styles.textColor}`}>{title}</h3>
+          <div
+            className={`flex items-center gap-2 px-4 py-3 rounded-xl border-l-4 ${styles.borderColor} ${styles.bgColor}`}
+          >
+            <h3 className={`headline-4 font-display ${styles.textColor}`}>
+              {title}
+            </h3>
           </div>
-          <p className="text-xs text-foreground/60 italic p-4 text-center">No items to display</p>
+          <p className="text-xs text-foreground/60 italic p-4 text-center">
+            No items to display
+          </p>
         </div>
       );
     }
@@ -541,9 +581,15 @@ function NoticeBoardCarousel() {
 
     return (
       <div className="space-y-4">
-        <div className={`flex items-center gap-2 px-4 py-3 rounded-xl border-l-4 ${styles.borderColor} ${styles.bgColor}`}>
-          <h3 className={`headline-4 font-display ${styles.textColor}`}>{title}</h3>
-          <Badge className="ml-auto text-xs">{currentIndex + 1} / {items.length}</Badge>
+        <div
+          className={`flex items-center gap-2 px-4 py-3 rounded-xl border-l-4 ${styles.borderColor} ${styles.bgColor}`}
+        >
+          <h3 className={`headline-4 font-display ${styles.textColor}`}>
+            {title}
+          </h3>
+          <Badge className="ml-auto text-xs">
+            {currentIndex + 1} / {items.length}
+          </Badge>
         </div>
 
         <Card className="group overflow-hidden rounded-2xl border-2 border-border/30 bg-card/40 backdrop-blur-sm">
@@ -559,15 +605,23 @@ function NoticeBoardCarousel() {
           <CardContent className="p-4 space-y-3">
             <div className="flex items-start justify-between gap-2">
               <div className="flex-1">
-                <h4 className="font-display font-semibold text-sm text-foreground mb-2 line-clamp-2">{currentItem.title}</h4>
-                <p className="text-xs text-foreground/70 line-clamp-2">{currentItem.description}</p>
+                <h4 className="font-display font-semibold text-sm text-foreground mb-2 line-clamp-2">
+                  {currentItem.title}
+                </h4>
+                <p className="text-xs text-foreground/70 line-clamp-2">
+                  {currentItem.description}
+                </p>
                 {currentItem.department && (
-                  <p className="text-xs text-foreground/50 mt-2">Department: {currentItem.department}</p>
+                  <p className="text-xs text-foreground/50 mt-2">
+                    Department: {currentItem.department}
+                  </p>
                 )}
               </div>
             </div>
             <div className="flex items-center justify-between pt-2 border-t border-border/20">
-              <span className="text-xs font-semibold text-foreground/60">{currentItem.date}</span>
+              <span className="text-xs font-semibold text-foreground/60">
+                {currentItem.date}
+              </span>
               {currentItem.link && (
                 <Button
                   variant="ghost"
@@ -604,7 +658,11 @@ function NoticeBoardCarousel() {
               variant="outline"
               size="sm"
               className="h-7 px-2 text-xs"
-              onClick={() => setCurrentIndex((prev) => (prev - 1 + items.length) % items.length)}
+              onClick={() =>
+                setCurrentIndex(
+                  (prev) => (prev - 1 + items.length) % items.length,
+                )
+              }
             >
               ←
             </Button>
@@ -612,7 +670,9 @@ function NoticeBoardCarousel() {
               variant="outline"
               size="sm"
               className="h-7 px-2 text-xs"
-              onClick={() => setCurrentIndex((prev) => (prev + 1) % items.length)}
+              onClick={() =>
+                setCurrentIndex((prev) => (prev + 1) % items.length)
+              }
             >
               →
             </Button>
@@ -634,20 +694,39 @@ function NoticeBoardCarousel() {
               </span>
             </h2>
             <p className="max-w-2xl text-sm text-foreground sm:text-base font-body">
-              Stay updated with upcoming events, news, and important announcements from all departments.
+              Stay updated with upcoming events, news, and important
+              announcements from all departments.
             </p>
           </div>
         </div>
 
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           <div>
-            {renderCarousel("Events", events, currentEventIndex, setCurrentEventIndex, "Event")}
+            {renderCarousel(
+              "Events",
+              events,
+              currentEventIndex,
+              setCurrentEventIndex,
+              "Event",
+            )}
           </div>
           <div>
-            {renderCarousel("News", news, currentNewsIndex, setCurrentNewsIndex, "News")}
+            {renderCarousel(
+              "News",
+              news,
+              currentNewsIndex,
+              setCurrentNewsIndex,
+              "News",
+            )}
           </div>
           <div>
-            {renderCarousel("Announcements", announcements, currentAnnouncementIndex, setCurrentAnnouncementIndex, "Announcement")}
+            {renderCarousel(
+              "Announcements",
+              announcements,
+              currentAnnouncementIndex,
+              setCurrentAnnouncementIndex,
+              "Announcement",
+            )}
           </div>
         </div>
       </div>
@@ -902,9 +981,9 @@ function HeroVideo() {
       }
     };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -914,21 +993,25 @@ function HeroVideo() {
 
     const handleEnded = () => {
       const rect = containerRef.current?.getBoundingClientRect();
-      const isVisible = rect && rect.top < window.innerHeight && rect.bottom > 0;
+      const isVisible =
+        rect && rect.top < window.innerHeight && rect.bottom > 0;
       if (isVisible) {
         video.currentTime = 0;
         video.play().catch(() => {});
       }
     };
 
-    video.addEventListener('ended', handleEnded);
+    video.addEventListener("ended", handleEnded);
     return () => {
-      video.removeEventListener('ended', handleEnded);
+      video.removeEventListener("ended", handleEnded);
     };
   }, []);
 
   return (
-    <div ref={containerRef} className="w-full h-[75vh] relative overflow-hidden flex items-end md:items-center justify-start">
+    <div
+      ref={containerRef}
+      className="w-full h-[75vh] relative overflow-hidden flex items-end md:items-center justify-start"
+    >
       <video
         ref={videoRef}
         src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2Fca43c77a955c4e4b86175d41c68120cf?alt=media&token=45cdb70a-71df-43de-8859-de7bc907f167&apiKey=4aa279a8430d441dba9c55f659831878"
@@ -937,7 +1020,7 @@ function HeroVideo() {
         className="absolute inset-0 w-full h-full object-cover"
         style={{
           filter: "brightness(1.1) contrast(1.15) saturate(1.2)",
-          objectPosition: "center top"
+          objectPosition: "center top",
         }}
       />
 
@@ -946,11 +1029,18 @@ function HeroVideo() {
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/30 pointer-events-none"></div>
 
       <div className="absolute top-0 left-0 w-96 h-96 bg-brand-magenta/5 rounded-full filter blur-3xl opacity-60 animate-float pointer-events-none"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-brand-orange/5 rounded-full filter blur-3xl opacity-60 animate-float pointer-events-none" style={{ animationDelay: "2s" }}></div>
+      <div
+        className="absolute bottom-0 right-0 w-96 h-96 bg-brand-orange/5 rounded-full filter blur-3xl opacity-60 animate-float pointer-events-none"
+        style={{ animationDelay: "2s" }}
+      ></div>
 
-      <div className="absolute inset-0 opacity-5 pointer-events-none" style={{
-        backgroundImage: "repeating-linear-gradient(0deg, rgba(255,255,255,.03) 0px, rgba(255,255,255,.03) 1px, transparent 1px, transparent 2px)"
-      }}></div>
+      <div
+        className="absolute inset-0 opacity-5 pointer-events-none"
+        style={{
+          backgroundImage:
+            "repeating-linear-gradient(0deg, rgba(255,255,255,.03) 0px, rgba(255,255,255,.03) 1px, transparent 1px, transparent 2px)",
+        }}
+      ></div>
 
       <div className="relative max-w-7xl mx-auto px-3 w-full z-10 pb-20 md:pb-0">
         <div className="max-w-2xl">
@@ -1084,7 +1174,6 @@ export default function Engineering() {
       <section className="relative w-full" id="top">
         <HeroVideo />
       </section>
-
 
       {/* Dean's Message Section */}
       <section className="relative overflow-hidden px-3 py-8">
@@ -1233,7 +1322,8 @@ export default function Engineering() {
               Explore More at DSU Engineering
             </h2>
             <p className="mt-3 text-sm text-foreground font-body">
-              Discover our research initiatives, innovation labs, placements and admission pathways
+              Discover our research initiatives, innovation labs, placements and
+              admission pathways
             </p>
           </div>
           <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-4">
@@ -1253,7 +1343,8 @@ export default function Engineering() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-foreground/80 font-body">
-                    Immersive innovation labs powered by industry leaders like IBM, NVIDIA and GE
+                    Immersive innovation labs powered by industry leaders like
+                    IBM, NVIDIA and GE
                   </p>
                 </CardContent>
               </Card>
@@ -1275,7 +1366,8 @@ export default function Engineering() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-foreground/80 font-body">
-                    Cutting-edge research initiatives and innovation labs driving the future
+                    Cutting-edge research initiatives and innovation labs
+                    driving the future
                   </p>
                 </CardContent>
               </Card>
@@ -1297,7 +1389,8 @@ export default function Engineering() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-foreground/80 font-body">
-                    Career pathways with leading companies and startup opportunities
+                    Career pathways with leading companies and startup
+                    opportunities
                   </p>
                 </CardContent>
               </Card>
@@ -1342,25 +1435,33 @@ export default function Engineering() {
             </CardHeader>
             <CardContent className="grid gap-4 text-sm font-body text-foreground">
               <div>
-                <div className="text-foreground/70 text-xs uppercase tracking-wide">Email</div>
+                <div className="text-foreground/70 text-xs uppercase tracking-wide">
+                  Email
+                </div>
                 <div className="font-medium text-foreground">
                   dean-engg@dsu.edu.in
                 </div>
               </div>
               <div>
-                <div className="text-foreground/70 text-xs uppercase tracking-wide">Phone</div>
+                <div className="text-foreground/70 text-xs uppercase tracking-wide">
+                  Phone
+                </div>
                 <div className="font-medium text-foreground">
                   +91-80-49092933
                 </div>
               </div>
               <div>
-                <div className="text-foreground/70 text-xs uppercase tracking-wide">Campus Address</div>
+                <div className="text-foreground/70 text-xs uppercase tracking-wide">
+                  Campus Address
+                </div>
                 <div className="font-medium text-foreground">
                   Innovation Campus, Kanakapura Road, Bengaluru
                 </div>
               </div>
               <div>
-                <div className="text-foreground/70 text-xs uppercase tracking-wide">Office Hours</div>
+                <div className="text-foreground/70 text-xs uppercase tracking-wide">
+                  Office Hours
+                </div>
                 <div className="font-medium text-foreground">
                   Mon–Fri, 9:00 AM – 5:30 PM
                 </div>

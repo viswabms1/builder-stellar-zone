@@ -5,12 +5,7 @@ import SearchDialog from "./SearchDialog";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useLanguage } from "@/providers/language-provider";
 import { useTheme } from "@/providers/theme-provider";
-import {
-  Menu,
-  X,
-  ChevronDown,
-  Search,
-} from "lucide-react";
+import { Menu, X, ChevronDown, Search } from "lucide-react";
 import { useState, useEffect } from "react";
 
 export default function Navigation() {
@@ -38,7 +33,10 @@ export default function Navigation() {
     { name: t("nav.vision"), href: "/about/vision-mission" },
     { name: t("nav.history"), href: "/about/history" },
     { name: t("nav.leadership"), href: "/about/leadership" },
-    { name: "Administrative Committees", href: "/about/leadership#administrative-committees" },
+    {
+      name: "Administrative Committees",
+      href: "/about/leadership#administrative-committees",
+    },
     { name: "Accreditations", href: "/about/accreditations" },
     { name: t("nav.facilities"), href: "/about/facilities" },
   ];
@@ -57,11 +55,13 @@ export default function Navigation() {
   const isActive = (href: string) => location.pathname === href;
 
   return (
-    <nav className={`sticky top-0 z-50 backdrop-blur-md transition-all duration-300 ${
-      theme === 'light'
-        ? 'bg-white/80 border-b border-gray-200/30'
-        : 'bg-transparent bg-white/5 border-b border-white/10'
-    }`}>
+    <nav
+      className={`sticky top-0 z-50 backdrop-blur-md transition-all duration-300 ${
+        theme === "light"
+          ? "bg-white/80 border-b border-gray-200/30"
+          : "bg-transparent bg-white/5 border-b border-white/10"
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-3">
         <div className="flex items-center justify-between h-20">
           {/* Mobile menu button placeholder for spacing */}
@@ -73,13 +73,13 @@ export default function Navigation() {
               const active = !item.external && isActive(item.href);
               const isAbout = item.href === "/about";
               const sharedClasses = `flex items-center space-x-1 px-3 py-1.5 rounded-xl text-sm font-medium font-display transition-all duration-200 group ${
-                theme === 'light'
+                theme === "light"
                   ? active || (isAbout && aboutMenuOpen)
                     ? "bg-orange-100 text-orange-900 font-semibold"
                     : "text-gray-700 hover:text-orange-600 hover:bg-gray-100"
                   : active || (isAbout && aboutMenuOpen)
-                  ? "bg-white/20 text-white font-semibold"
-                  : "text-white/80 hover:text-white hover:bg-white/10"
+                    ? "bg-white/20 text-white font-semibold"
+                    : "text-white/80 hover:text-white hover:bg-white/10"
               }`;
 
               const itemElement = (() => {
@@ -108,25 +108,31 @@ export default function Navigation() {
                       <button className={sharedClasses}>
                         <span>{item.name}</span>
                         <ChevronDown className="w-4 h-4 group-hover:rotate-180 transition-transform" />
-                        {active && <div className={`w-1 h-1 rounded-full ${
-                          theme === 'light' ? 'bg-orange-600' : 'bg-white'
-                        }`} />}
+                        {active && (
+                          <div
+                            className={`w-1 h-1 rounded-full ${
+                              theme === "light" ? "bg-orange-600" : "bg-white"
+                            }`}
+                          />
+                        )}
                       </button>
 
                       {/* Mega Menu Dropdown */}
-                      <div className={`absolute left-0 top-full mt-0 w-64 rounded-lg shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 py-4 ${
-                        theme === 'light'
-                          ? 'bg-gradient-to-b from-orange-50 to-orange-100 text-gray-900 border border-orange-200'
-                          : 'bg-gradient-to-b from-orange-600 to-red-700 text-white'
-                      }`}>
+                      <div
+                        className={`absolute left-0 top-full mt-0 w-64 rounded-lg shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 py-4 ${
+                          theme === "light"
+                            ? "bg-gradient-to-b from-orange-50 to-orange-100 text-gray-900 border border-orange-200"
+                            : "bg-gradient-to-b from-orange-600 to-red-700 text-white"
+                        }`}
+                      >
                         {aboutSubmenus.map((submenu) => (
                           <Link
                             key={submenu.name}
                             to={submenu.href}
                             className={`block px-3 py-2.5 transition-colors text-sm ${
-                              theme === 'light'
-                                ? 'hover:bg-orange-200 border-b border-orange-200 last:border-b-0'
-                                : 'hover:bg-white/20 border-b border-white/20 last:border-b-0'
+                              theme === "light"
+                                ? "hover:bg-orange-200 border-b border-orange-200 last:border-b-0"
+                                : "hover:bg-white/20 border-b border-white/20 last:border-b-0"
                             }`}
                           >
                             {submenu.name}
@@ -139,10 +145,22 @@ export default function Navigation() {
 
                 return (
                   <Link key={idx} to={item.href} className={sharedClasses}>
-                    <span className={item.href === '/centre-of-excellence' ? 'max-w-[80px] text-center' : ''}>{item.name}</span>
-                    {active && <div className={`w-1 h-1 rounded-full ${
-                      theme === 'light' ? 'bg-orange-600' : 'bg-white'
-                    }`} />}
+                    <span
+                      className={
+                        item.href === "/centre-of-excellence"
+                          ? "max-w-[80px] text-center"
+                          : ""
+                      }
+                    >
+                      {item.name}
+                    </span>
+                    {active && (
+                      <div
+                        className={`w-1 h-1 rounded-full ${
+                          theme === "light" ? "bg-orange-600" : "bg-white"
+                        }`}
+                      />
+                    )}
                   </Link>
                 );
               })();
@@ -154,9 +172,9 @@ export default function Navigation() {
                     key="logo"
                     to="/"
                     className={`flex items-center group flex-shrink-0 px-4 py-3 rounded-xl transition-all duration-300 ${
-                      theme === 'light'
-                        ? 'hover:bg-orange-50'
-                        : 'hover:bg-white/10'
+                      theme === "light"
+                        ? "hover:bg-orange-50"
+                        : "hover:bg-white/10"
                     }`}
                   >
                     <img
@@ -164,7 +182,7 @@ export default function Navigation() {
                       alt="Dayananda Sagar University Logo"
                       className="h-20 w-auto object-contain group-hover:scale-110 transition-all duration-300"
                     />
-                  </Link>
+                  </Link>,
                 ];
               }
 
@@ -179,18 +197,21 @@ export default function Navigation() {
               size="sm"
               onClick={() => setSearchOpen(true)}
               className={`gap-2 border ${
-                theme === 'light'
-                  ? 'text-gray-700 hover:text-orange-600 hover:bg-orange-100 border-gray-300'
-                  : 'text-white/80 hover:text-white hover:bg-white/10 border-white/20'
+                theme === "light"
+                  ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100 border-gray-300"
+                  : "text-white/80 hover:text-white hover:bg-white/10 border-white/20"
               }`}
             >
               <Search className="w-4 h-4" />
             </Button>
             <LanguageSwitcher />
-            <ThemeToggle className={theme === 'light'
-              ? 'text-gray-700 hover:text-orange-600 hover:bg-orange-100'
-              : 'text-white/80 hover:text-white hover:bg-white/10'
-            } />
+            <ThemeToggle
+              className={
+                theme === "light"
+                  ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
+                  : "text-white/80 hover:text-white hover:bg-white/10"
+              }
+            />
           </div>
 
           {/* Mobile menu button */}
@@ -199,9 +220,10 @@ export default function Navigation() {
               variant="ghost"
               size="sm"
               onClick={() => setIsOpen(!isOpen)}
-              className={theme === 'light'
-                ? 'text-gray-700 hover:text-orange-600'
-                : 'text-white/80 hover:text-white'
+              className={
+                theme === "light"
+                  ? "text-gray-700 hover:text-orange-600"
+                  : "text-white/80 hover:text-white"
               }
             >
               {isOpen ? (
@@ -216,23 +238,25 @@ export default function Navigation() {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className={`md:hidden border-t ${
-          theme === 'light'
-            ? 'border-orange-200/30 bg-gradient-to-r from-orange-50 to-orange-100'
-            : 'border-orange-600/20 bg-gradient-to-r from-orange-500 to-red-600'
-        }`}>
+        <div
+          className={`md:hidden border-t ${
+            theme === "light"
+              ? "border-orange-200/30 bg-gradient-to-r from-orange-50 to-orange-100"
+              : "border-orange-600/20 bg-gradient-to-r from-orange-500 to-red-600"
+          }`}
+        >
           <div className="px-3 py-4 space-y-3">
             {navigation.map((item, idx) => {
               const active = !item.external && isActive(item.href);
               const isAbout = item.href === "/about";
               const sharedClasses = `flex items-center space-x-2 px-3 py-2.5 rounded-xl text-sm font-medium font-display transition-all duration-200 ${
-                theme === 'light'
+                theme === "light"
                   ? active
                     ? "bg-orange-200 text-orange-900 font-semibold"
                     : "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
                   : active
-                  ? "bg-white/20 text-white font-semibold"
-                  : "text-white/80 hover:text-white hover:bg-white/10"
+                    ? "bg-white/20 text-white font-semibold"
+                    : "text-white/80 hover:text-white hover:bg-white/10"
               }`;
 
               if (item.external) {
@@ -267,11 +291,13 @@ export default function Navigation() {
 
                     {/* Mobile About Submenu */}
                     {aboutMenuOpen && (
-                      <div className={`rounded-lg py-2 ml-4 border-l-2 ${
-                        theme === 'light'
-                          ? 'bg-orange-100 border-l-orange-300'
-                          : 'bg-white/20 border-l-white/40'
-                      }`}>
+                      <div
+                        className={`rounded-lg py-2 ml-4 border-l-2 ${
+                          theme === "light"
+                            ? "bg-orange-100 border-l-orange-300"
+                            : "bg-white/20 border-l-white/40"
+                        }`}
+                      >
                         {aboutSubmenus.map((submenu, subIdx) => (
                           <Link
                             key={subIdx}
@@ -281,9 +307,9 @@ export default function Navigation() {
                               setAboutMenuOpen(false);
                             }}
                             className={`block px-4 py-1.5 text-sm rounded transition-colors ${
-                              theme === 'light'
-                                ? 'text-gray-700 hover:bg-orange-200'
-                                : 'text-white hover:bg-white/20'
+                              theme === "light"
+                                ? "text-gray-700 hover:bg-orange-200"
+                                : "text-white hover:bg-white/20"
                             }`}
                           >
                             {submenu.name}
@@ -302,15 +328,23 @@ export default function Navigation() {
                   onClick={() => setIsOpen(false)}
                   className={sharedClasses}
                 >
-                  <span className={item.href === '/centre-of-excellence' ? 'max-w-[100px]' : ''}>{item.name}</span>
+                  <span
+                    className={
+                      item.href === "/centre-of-excellence"
+                        ? "max-w-[100px]"
+                        : ""
+                    }
+                  >
+                    {item.name}
+                  </span>
                 </Link>
               );
             })}
-            <div className={`pt-4 space-y-3 border-t ${
-              theme === 'light'
-                ? 'border-orange-200'
-                : 'border-white/20'
-            }`}>
+            <div
+              className={`pt-4 space-y-3 border-t ${
+                theme === "light" ? "border-orange-200" : "border-white/20"
+              }`}
+            >
               <Button
                 variant="ghost"
                 size="sm"
@@ -319,9 +353,9 @@ export default function Navigation() {
                   setIsOpen(false);
                 }}
                 className={`w-full text-left justify-start gap-3 ${
-                  theme === 'light'
-                    ? 'text-gray-700 hover:text-orange-600 hover:bg-orange-100'
-                    : 'text-white/80 hover:text-white hover:bg-white/10'
+                  theme === "light"
+                    ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
+                    : "text-white/80 hover:text-white hover:bg-white/10"
                 }`}
               >
                 <Search className="w-4 h-4" />
@@ -329,9 +363,9 @@ export default function Navigation() {
               </Button>
               <ThemeToggle
                 className={`self-start ${
-                  theme === 'light'
-                    ? 'text-gray-700 hover:text-orange-600 hover:bg-orange-100'
-                    : 'text-white/80 hover:text-white hover:bg-white/10'
+                  theme === "light"
+                    ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
+                    : "text-white/80 hover:text-white hover:bg-white/10"
                 }`}
                 onToggle={() => setIsOpen(false)}
               />

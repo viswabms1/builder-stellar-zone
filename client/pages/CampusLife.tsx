@@ -90,7 +90,7 @@ export default function CampusLife() {
             </div>
 
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 leading-tight text-white">
-              {t('campusLife.title')}
+              {t("campusLife.title")}
             </h1>
           </div>
         </div>
@@ -127,31 +127,56 @@ export default function CampusLife() {
           {[
             {
               title: "Modern Hostels",
-              image: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F0357dfeb9259438fbb59b6cd31a06e5a?format=webp&width=800",
-              description: "Comfortable accommodation with all modern amenities",
+              image:
+                "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F0357dfeb9259438fbb59b6cd31a06e5a?format=webp&width=800",
+              description:
+                "Comfortable accommodation with all modern amenities",
               features: ["AC Rooms", "WiFi", "Study Areas", "Recreation Rooms"],
               link: "https://myposhtell.com/",
             },
             {
               title: "Sports Complex",
-              image: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fbc9e4b114ef0435c809830c5bca27d60?format=webp&width=800",
-              description: "State-of-the-art facilities for all sports and fitness",
-              features: ["Swimming Pool", "Gymnasium", "Indoor Sports", "Outdoor Courts"],
+              image:
+                "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fbc9e4b114ef0435c809830c5bca27d60?format=webp&width=800",
+              description:
+                "State-of-the-art facilities for all sports and fitness",
+              features: [
+                "Swimming Pool",
+                "Gymnasium",
+                "Indoor Sports",
+                "Outdoor Courts",
+              ],
             },
             {
               title: "Central Library",
-              image: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F303af6a81dfe4b5bb9ea6952ee39c3b7?format=webp&width=800",
-              description: "Extensive collection with digital resources and study spaces",
-              features: ["2M+ Books", "Digital Library", "Study Halls", "Research Centers"],
+              image:
+                "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F303af6a81dfe4b5bb9ea6952ee39c3b7?format=webp&width=800",
+              description:
+                "Extensive collection with digital resources and study spaces",
+              features: [
+                "2M+ Books",
+                "Digital Library",
+                "Study Halls",
+                "Research Centers",
+              ],
             },
             {
               title: "Food Courts",
-              image: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Feaa91fe5c0b44c02b3ead40543f73fff?format=webp&width=800",
+              image:
+                "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Feaa91fe5c0b44c02b3ead40543f73fff?format=webp&width=800",
               description: "Multiple dining options with diverse cuisines",
-              features: ["Multi-cuisine", "Healthy Options", "24/7 Cafes", "Food Courts"],
+              features: [
+                "Multi-cuisine",
+                "Healthy Options",
+                "24/7 Cafes",
+                "Food Courts",
+              ],
             },
           ].map((facility, index) => (
-            <div key={index} className={`mb-12 grid grid-cols-1 md:grid-cols-2 gap-4 items-center ${index % 2 === 1 ? 'md:grid-cols-2 md:[&>:first-child]:order-2' : ''}`}>
+            <div
+              key={index}
+              className={`mb-12 grid grid-cols-1 md:grid-cols-2 gap-4 items-center ${index % 2 === 1 ? "md:grid-cols-2 md:[&>:first-child]:order-2" : ""}`}
+            >
               {facility.link ? (
                 <a
                   href={facility.link}
@@ -194,7 +219,10 @@ export default function CampusLife() {
                 </p>
                 <div className="space-y-2 mb-6">
                   {facility.features.map((feature) => (
-                    <div key={feature} className="flex items-center text-foreground">
+                    <div
+                      key={feature}
+                      className="flex items-center text-foreground"
+                    >
                       <span className="w-2 h-2 bg-orange-500 rounded-none mr-3"></span>
                       {feature}
                     </div>
@@ -227,57 +255,66 @@ export default function CampusLife() {
               {
                 title: "Campus Tour",
                 category: "Orientation",
-                image: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=400&h=300&fit=crop",
-                size: "col-span-1 row-span-2"
+                image:
+                  "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=400&h=300&fit=crop",
+                size: "col-span-1 row-span-2",
               },
               {
                 title: "Campus Entrance",
                 category: "Architecture",
-                image: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fa16295c3fda14368b934b709019e0e30?format=webp&width=800",
-                size: "col-span-1 row-span-2"
+                image:
+                  "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fa16295c3fda14368b934b709019e0e30?format=webp&width=800",
+                size: "col-span-1 row-span-2",
               },
               {
                 title: "Performing Arts",
                 category: "Culture",
-                image: "https://static.wixstatic.com/media/a57b29_7432beeeab194cf19d467960322ed7b7~mv2.jpg/v1/fit/w_960,h_960,q_90,enc_avif,quality_auto/a57b29_7432beeeab194cf19d467960322ed7b7~mv2.jpg"
+                image:
+                  "https://static.wixstatic.com/media/a57b29_7432beeeab194cf19d467960322ed7b7~mv2.jpg/v1/fit/w_960,h_960,q_90,enc_avif,quality_auto/a57b29_7432beeeab194cf19d467960322ed7b7~mv2.jpg",
               },
               {
                 title: "Sports Day",
                 category: "Athletics",
-                image: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=300&h=300&fit=crop"
+                image:
+                  "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=300&h=300&fit=crop",
               },
               {
                 title: "Graduation",
                 category: "Ceremony",
-                image: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F692a9321c1bd4ab09f4bbb0f31d62fa2?format=webp&width=800"
+                image:
+                  "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F692a9321c1bd4ab09f4bbb0f31d62fa2?format=webp&width=800",
               },
               {
                 title: "Tech Fair",
                 category: "Innovation",
-                image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=300&h=300&fit=crop"
+                image:
+                  "https://images.unsplash.com/photo-1552664730-d307ca884978?w=300&h=300&fit=crop",
               },
               {
                 title: "Food Festival",
                 category: "Culture",
-                image: "https://images.pexels.com/photos/18698231/pexels-photo-18698231.jpeg"
+                image:
+                  "https://images.pexels.com/photos/18698231/pexels-photo-18698231.jpeg",
               },
               {
                 title: "Study Groups",
                 category: "Academic",
-                image: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F216fee584984419caf29c0341644b072?format=webp&width=800",
-                size: "col-span-1 row-span-2"
+                image:
+                  "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F216fee584984419caf29c0341644b072?format=webp&width=800",
+                size: "col-span-1 row-span-2",
               },
               {
                 title: "Night Life",
                 category: "Social",
-                image: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=300&h=300&fit=crop"
+                image:
+                  "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=300&h=300&fit=crop",
               },
             ].map((item, index) => (
               <div
                 key={index}
-                className={`${item.size || ''} relative group overflow-hidden rounded-none border border-border hover:border-orange-500/50 transition-all duration-300 cursor-pointer`}
+                className={`${item.size || ""} relative group overflow-hidden rounded-none border border-border hover:border-orange-500/50 transition-all duration-300 cursor-pointer`}
               >
-                <img 
+                <img
                   src={item.image}
                   alt={item.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
@@ -309,7 +346,8 @@ export default function CampusLife() {
               <span className="text-foreground"> Organizations</span>
             </h2>
             <p className="text-xl text-foreground max-w-3xl mx-auto">
-              Discover your passion through our diverse range of student clubs and societies
+              Discover your passion through our diverse range of student clubs
+              and societies
             </p>
           </div>
 
@@ -319,42 +357,48 @@ export default function CampusLife() {
                 icon: Palette,
                 title: "Arts & Culture",
                 description: "Express your creativity through artistic mediums",
-                image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=300&fit=crop",
+                image:
+                  "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=300&fit=crop",
                 members: "2,500+",
               },
               {
                 icon: Trophy,
                 title: "Sports & Recreation",
                 description: "Stay active with comprehensive sports programs",
-                image: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Febfd634b00b44333a5bb858290a814d7?format=webp&width=800",
+                image:
+                  "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Febfd634b00b44333a5bb858290a814d7?format=webp&width=800",
                 members: "3,000+",
               },
               {
                 icon: Gamepad2,
                 title: "Technology & Innovation",
                 description: "Build innovative solutions with latest tech",
-                image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop",
+                image:
+                  "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop",
                 members: "4,500+",
               },
               {
                 icon: Users,
                 title: "Social Service",
                 description: "Make a positive impact in the community",
-                image: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=400&h=300&fit=crop",
+                image:
+                  "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=400&h=300&fit=crop",
                 members: "2,000+",
               },
               {
                 icon: BookOpen,
                 title: "Academic & Professional",
                 description: "Enhance your career development journey",
-                image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop",
+                image:
+                  "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop",
                 members: "3,500+",
               },
               {
                 icon: Heart,
                 title: "Special Interest",
                 description: "Explore unique hobbies with like-minded peers",
-                image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=400&h=300&fit=crop",
+                image:
+                  "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=400&h=300&fit=crop",
                 members: "1,800+",
               },
             ].map((category, index) => (
@@ -364,12 +408,12 @@ export default function CampusLife() {
                   index % 3 === 0
                     ? "bg-orange-500/10 border-orange-500/20"
                     : index % 3 === 1
-                    ? "bg-blue-500/10 border-blue-500/20"
-                    : "bg-purple-500/10 border-purple-500/20"
+                      ? "bg-blue-500/10 border-blue-500/20"
+                      : "bg-purple-500/10 border-purple-500/20"
                 }`}
               >
                 <div className="relative overflow-hidden h-48">
-                  <img 
+                  <img
                     src={category.image}
                     alt={category.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
@@ -432,7 +476,10 @@ export default function CampusLife() {
               </p>
 
               <p className="text-lg text-foreground/80 leading-relaxed">
-                A dedicated space for students to explore dance, music, theater, and other performing arts. Our Centre for Performing Arts nurtures talent and provides a platform for artistic expression and cultural celebration.
+                A dedicated space for students to explore dance, music, theater,
+                and other performing arts. Our Centre for Performing Arts
+                nurtures talent and provides a platform for artistic expression
+                and cultural celebration.
               </p>
 
               <div className="space-y-3">
@@ -486,35 +533,40 @@ export default function CampusLife() {
               {
                 icon: Star,
                 title: "Annual Fest - DSUFEST",
-                image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=400&h=300&fit=crop",
+                image:
+                  "https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=400&h=300&fit=crop",
                 duration: "5 Days",
                 attendance: "50,000+",
               },
               {
                 icon: Trophy,
                 title: "Sports Meet",
-                image: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F4965c58a577f42679515554a2c799501?format=webp&width=800",
+                image:
+                  "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F4965c58a577f42679515554a2c799501?format=webp&width=800",
                 duration: "1 Week",
                 attendance: "15,000+",
               },
               {
                 icon: Mic,
                 title: "Tech Symposium",
-                image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop",
+                image:
+                  "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop",
                 duration: "3 Days",
                 attendance: "20,000+",
               },
               {
                 icon: Palette,
                 title: "Cultural Nights",
-                image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=300&fit=crop",
+                image:
+                  "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=300&fit=crop",
                 duration: "Monthly",
                 attendance: "5,000+",
               },
               {
                 icon: Rocket,
                 title: "NASA Space Apps Challenge 2025",
-                video: "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F9b4ce4c4527c4bcf85d247f9239568af?alt=media&token=fcd9b1d7-1f72-430d-8789-96c4226f5db9&apiKey=4aa279a8430d441dba9c55f659831878",
+                video:
+                  "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F9b4ce4c4527c4bcf85d247f9239568af?alt=media&token=fcd9b1d7-1f72-430d-8789-96c4226f5db9&apiKey=4aa279a8430d441dba9c55f659831878",
                 isVideo: true,
                 duration: "Online",
                 attendance: "International",
@@ -522,7 +574,8 @@ export default function CampusLife() {
               {
                 icon: Heart,
                 title: "Social Initiatives",
-                image: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=400&h=300&fit=crop",
+                image:
+                  "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=400&h=300&fit=crop",
                 duration: "Ongoing",
                 attendance: "2,000+",
               },
@@ -533,8 +586,8 @@ export default function CampusLife() {
                   index % 3 === 0
                     ? "bg-orange-500/10 border-orange-500/20"
                     : index % 3 === 1
-                    ? "bg-blue-500/10 border-blue-500/20"
-                    : "bg-purple-500/10 border-purple-500/20"
+                      ? "bg-blue-500/10 border-blue-500/20"
+                      : "bg-purple-500/10 border-purple-500/20"
                 }`}
               >
                 <div className="relative overflow-hidden bg-black aspect-video">
@@ -565,7 +618,10 @@ export default function CampusLife() {
                   <CardTitle className="text-lg font-bold group-hover:text-orange-500 transition-colors">
                     {event.title}
                   </CardTitle>
-                  <Badge variant="outline" className="w-fit text-xs border-orange-500/30 text-orange-500">
+                  <Badge
+                    variant="outline"
+                    className="w-fit text-xs border-orange-500/30 text-orange-500"
+                  >
                     {event.attendance}
                   </Badge>
                 </CardHeader>
@@ -592,7 +648,7 @@ export default function CampusLife() {
 
           {/* Featured Story */}
           <div className="relative overflow-hidden rounded-none h-96 mb-12 border border-border hover:border-orange-500/50 transition-colors group">
-            <img 
+            <img
               src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=1200&h=400&fit=crop"
               alt="Featured Story"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
@@ -601,7 +657,10 @@ export default function CampusLife() {
               <div className="text-white">
                 <Badge className="mb-4 bg-orange-500">Featured</Badge>
                 <h3 className="text-3xl font-bold mb-2">My Journey at DSU</h3>
-                <p className="text-white">A student's journey of growth, learning, and unforgettable memories</p>
+                <p className="text-white">
+                  A student's journey of growth, learning, and unforgettable
+                  memories
+                </p>
               </div>
             </div>
           </div>
@@ -611,25 +670,27 @@ export default function CampusLife() {
             {[
               {
                 title: "Friendship & Bonding",
-                image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=400&h=300&fit=crop",
+                image:
+                  "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=400&h=300&fit=crop",
               },
               {
                 title: "Academic Excellence",
-                image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop",
+                image:
+                  "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop",
               },
               {
                 title: "Alumni Journey - Class of 2019",
-                video: "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F1f4b2fb88e2644fe9e6f6151ab7bdb80?alt=media&token=cf02de6b-7a3e-4453-8caa-2cd7b03ff170&apiKey=4aa279a8430d441dba9c55f659831878",
+                video:
+                  "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F1f4b2fb88e2644fe9e6f6151ab7bdb80?alt=media&token=cf02de6b-7a3e-4453-8caa-2cd7b03ff170&apiKey=4aa279a8430d441dba9c55f659831878",
                 isVideo: true,
               },
             ].map((story, index) => (
-              <div key={index} className="group relative overflow-hidden rounded-none h-64 border border-border hover:border-orange-500/50 transition-colors cursor-pointer">
+              <div
+                key={index}
+                className="group relative overflow-hidden rounded-none h-64 border border-border hover:border-orange-500/50 transition-colors cursor-pointer"
+              >
                 {story.isVideo ? (
-                  <video
-                    src={story.video}
-                    controls
-                    className="w-full h-full"
-                  />
+                  <video src={story.video} controls className="w-full h-full" />
                 ) : (
                   <>
                     <img
@@ -638,13 +699,17 @@ export default function CampusLife() {
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                      <h3 className="text-white font-bold text-lg">{story.title}</h3>
+                      <h3 className="text-white font-bold text-lg">
+                        {story.title}
+                      </h3>
                     </div>
                   </>
                 )}
                 {story.isVideo && (
                   <div className="absolute top-0 left-0 right-0 bg-gradient-to-b from-black/40 to-transparent p-2">
-                    <h3 className="text-white font-bold text-sm">{story.title}</h3>
+                    <h3 className="text-white font-bold text-sm">
+                      {story.title}
+                    </h3>
                   </div>
                 )}
               </div>
@@ -666,7 +731,8 @@ export default function CampusLife() {
               ?
             </h2>
             <p className="text-xl text-foreground mb-8 max-w-2xl mx-auto">
-              Join our vibrant community and create memories that will last a lifetime.
+              Join our vibrant community and create memories that will last a
+              lifetime.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
