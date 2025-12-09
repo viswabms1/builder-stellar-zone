@@ -277,6 +277,8 @@ export default function Index() {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   const [selectedEventIndex, setSelectedEventIndex] = useState(0);
   const [isEventInteracting, setIsEventInteracting] = useState(false);
+  const [selectedPublicationIndex, setSelectedPublicationIndex] = useState(0);
+  const [isPublicationInteracting, setIsPublicationInteracting] = useState(false);
   const { t, language } = useLanguage();
 
   // All events for rotation
