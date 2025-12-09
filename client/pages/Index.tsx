@@ -623,19 +623,19 @@ export default function Index() {
                               rel="noreferrer"
                               className="block"
                             >
-                              <h3 className="text-2xl font-bold text-foreground font-display hover:text-brand-magenta transition-colors">
+                              <h3 className="text-lg font-bold text-foreground font-display hover:text-brand-magenta transition-colors text-center">
                                 {school.title}
                               </h3>
                             </a>
                           ) : (
                             <Link to={school.href} className="block">
-                              <h3 className="text-2xl font-bold text-foreground font-display hover:text-brand-magenta transition-colors">
+                              <h3 className="text-lg font-bold text-foreground font-display hover:text-brand-magenta transition-colors text-center">
                                 {school.title}
                               </h3>
                             </Link>
                           )
                         ) : (
-                          <h3 className="text-2xl font-bold text-foreground font-display">
+                          <h3 className="text-lg font-bold text-foreground font-display text-center">
                             {school.title}
                           </h3>
                         )}
