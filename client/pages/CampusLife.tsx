@@ -152,17 +152,43 @@ export default function CampusLife() {
             },
           ].map((facility, index) => (
             <div key={index} className={`mb-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-center ${index % 2 === 1 ? 'md:grid-cols-2 md:[&>:first-child]:order-2' : ''}`}>
-              <div className="relative overflow-hidden rounded-none h-80 border border-border hover:border-orange-500/50 transition-colors group">
-                <img
-                  src={facility.image}
-                  alt={facility.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-              </div>
+              {facility.link ? (
+                <a
+                  href={facility.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="relative overflow-hidden rounded-none h-80 border border-border hover:border-orange-500/50 transition-colors group block"
+                >
+                  <img
+                    src={facility.image}
+                    alt={facility.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </a>
+              ) : (
+                <div className="relative overflow-hidden rounded-none h-80 border border-border hover:border-orange-500/50 transition-colors group">
+                  <img
+                    src={facility.image}
+                    alt={facility.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+              )}
               <div>
-                <h3 className="text-3xl font-bold text-foreground mb-4">
-                  {facility.title}
-                </h3>
+                {facility.link ? (
+                  <a
+                    href={facility.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-block text-3xl font-bold text-foreground hover:text-orange-500 transition-colors mb-4"
+                  >
+                    {facility.title}
+                  </a>
+                ) : (
+                  <h3 className="text-3xl font-bold text-foreground mb-4">
+                    {facility.title}
+                  </h3>
+                )}
                 <p className="text-lg text-foreground mb-6">
                   {facility.description}
                 </p>
