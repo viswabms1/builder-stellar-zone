@@ -48,6 +48,7 @@ export default function Navigation() {
     { name: t("nav.about"), href: "/about" },
     { name: t("nav.academics"), href: "/academics" },
     { name: t("nav.admissions"), href: "/admissions" },
+    { name: t("nav.research"), href: "/research" },
     { name: t("nav.campusLife"), href: "/campus-life" },
     { name: t("nav.centreOfExcellence"), href: "/centre-of-excellence" },
     { name: t("nav.placements"), href: "/placements" },
