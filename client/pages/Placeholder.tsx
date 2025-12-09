@@ -15,7 +15,7 @@ export default function Placeholder({
   comingSoon = true 
 }: PlaceholderProps) {
   return (
-    <div className="min-h-[calc(100vh-4rem)] flex items-center justify-center px-6 py-12">
+    <div className="min-h-[calc(100vh-4rem)] flex items-center justify-center px-3 py-12">
       <Card className="max-w-md w-full text-center bg-card/50 backdrop-blur-sm border border-border/50">
         <CardHeader>
           <div className="w-16 h-16 bg-neon-purple/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
@@ -31,7 +31,7 @@ export default function Placeholder({
             </span>
           </CardTitle>
         </CardHeader>
-        <CardContent className="space-y-6">
+        <CardContent className="space-y-3">
           <CardDescription className="text-foreground leading-relaxed">
             {description}
           </CardDescription>

@@ -61,7 +61,7 @@ export default function Navigation() {
         ? 'bg-white/80 border-b border-gray-200/30'
         : 'bg-transparent bg-white/5 border-b border-white/10'
     }`}>
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-3">
         <div className="flex items-center justify-between h-20">
           {/* Mobile menu button placeholder for spacing */}
           <div className="md:hidden w-12" />
@@ -122,7 +122,7 @@ export default function Navigation() {
                           <Link
                             key={submenu.name}
                             to={submenu.href}
-                            className={`block px-6 py-3 transition-colors text-base ${
+                            className={`block px-3 py-3 transition-colors text-base ${
                               theme === 'light'
                                 ? 'hover:bg-orange-200 border-b border-orange-200 last:border-b-0'
                                 : 'hover:bg-white/20 border-b border-white/20 last:border-b-0'
@@ -220,7 +220,7 @@ export default function Navigation() {
             ? 'border-orange-200/30 bg-gradient-to-r from-orange-50 to-orange-100'
             : 'border-orange-600/20 bg-gradient-to-r from-orange-500 to-red-600'
         }`}>
-          <div className="px-6 py-4 space-y-3">
+          <div className="px-3 py-4 space-y-3">
             {navigation.map((item, idx) => {
               const active = !item.external && isActive(item.href);
               const isAbout = item.href === "/about";

@@ -45,9 +45,9 @@ export default function FacultyProfileCard({ faculty }: { faculty: FacultyProfil
 
   return (
     <div className="min-h-screen bg-background text-foreground py-8">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-3">
         {/* Header Section */}
-        <div className="mb-8">
+        <div className="mb-4">
           <h1 className="text-4xl font-bold font-display text-foreground mb-1">
             {faculty.name}
           </h1>
@@ -55,11 +55,11 @@ export default function FacultyProfileCard({ faculty }: { faculty: FacultyProfil
           <p className="text-sm text-foreground/70">{faculty.department}</p>
         </div>
 
-        <div className="grid lg:grid-cols-4 gap-8">
+        <div className="grid lg:grid-cols-4 gap-4">
           {/* Left Sidebar */}
           <div className="lg:col-span-1">
             {/* Profile Photo */}
-            <Card className="mb-6 overflow-hidden border border-border/50 bg-card/50">
+            <Card className="mb-3 overflow-hidden border border-border/50 bg-card/50">
               <div className="aspect-square overflow-hidden bg-gradient-to-br from-brand-blue/10 to-brand-orange/10">
                 <img
                   src={faculty.image}
@@ -197,7 +197,7 @@ export default function FacultyProfileCard({ faculty }: { faculty: FacultyProfil
                   >
                     <button
                       onClick={() => toggleSection(section.title)}
-                      className="w-full px-6 py-4 flex items-center justify-between hover:bg-white/5 transition-colors"
+                      className="w-full px-3 py-4 flex items-center justify-between hover:bg-white/5 transition-colors"
                     >
                       <CardTitle className="text-base font-display text-foreground">
                         {section.title}
@@ -210,7 +210,7 @@ export default function FacultyProfileCard({ faculty }: { faculty: FacultyProfil
                     </button>
 
                     {expandedSections[section.title] && (
-                      <CardContent className="px-6 pb-4 border-t border-border/30 pt-4">
+                      <CardContent className="px-3 pb-4 border-t border-border/30 pt-4">
                         {Array.isArray(section.content) ? (
                           <ul className="space-y-2">
                             {section.content.map((item, itemIdx) => (

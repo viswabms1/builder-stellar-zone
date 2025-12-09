@@ -71,7 +71,7 @@ export default function AdmissionCarousel() {
   };
 
   return (
-    <section className="relative w-full overflow-hidden bg-gradient-to-b from-background to-orange-500/5 px-6 py-12">
+    <section className="relative w-full overflow-hidden bg-gradient-to-b from-background to-orange-500/5 px-3 py-12">
       <div className="mx-auto max-w-6xl">
         <div className="relative h-96 overflow-hidden rounded-2xl border border-orange-500/20 bg-background shadow-2xl">
           {/* Carousel Container */}
@@ -94,15 +94,15 @@ export default function AdmissionCarousel() {
                 />
                 {/* Overlay with Content */}
                 <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent flex items-center">
-                  <div className="max-w-xl px-8 py-6">
+                  <div className="max-w-xl px-4 py-6">
                     <h3 className="text-3xl md:text-4xl font-bold text-white mb-3">
                       {item.title}
                     </h3>
-                    <p className="text-lg text-gray-100 mb-6 line-clamp-3">
+                    <p className="text-lg text-gray-100 mb-3 line-clamp-3">
                       {item.description}
                     </p>
                     <Button
-                      className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-red-600 hover:to-orange-500 text-foreground px-6 py-2 rounded-xl font-semibold"
+                      className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-red-600 hover:to-orange-500 text-foreground px-3 py-2 rounded-xl font-semibold"
                       asChild
                     >
                       <a href="https://admissions.dsu.edu.in/" target="_blank" rel="noreferrer">
