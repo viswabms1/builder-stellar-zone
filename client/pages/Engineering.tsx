@@ -1419,8 +1419,6 @@ export default function Engineering() {
         </div>
       </section>
 
-      <NoticeBoardCarousel />
-
       <section className="px-3 pb-20">
         <div className="mx-auto max-w-4xl text-center">
           <div className="rounded-3xl border border-brand-magenta/20 bg-brand-magenta/5 p-10">
