@@ -1013,6 +1013,130 @@ export default function Index() {
         </div>
       </section>
 
+      {/* DSU Publications Section */}
+      <section className="px-3 py-10 bg-gradient-to-b from-brand-magenta/5 to-transparent">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="headline-2 mb-6">
+              <span className="text-foreground">DSU </span>
+              <span className="bg-brand-gradient bg-clip-text text-transparent">
+                Publications
+              </span>
+            </h2>
+            <p className="subheadline text-foreground max-w-2xl mx-auto font-display">
+              Cutting-edge research and insights from our academic community
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-3 gap-0 items-start">
+            {/* Left side - Featured publication (50%) - Auto-rotating */}
+            <div className="lg:col-span-2">
+              <div className="group w-full flex flex-col rounded-none border border-orange-500/20 bg-orange-500/10 cursor-pointer text-left hover:shadow-lg transition-all duration-500 overflow-hidden backdrop-blur-sm">
+                <div className="relative w-full aspect-video overflow-hidden bg-foreground/5">
+                  <img
+                    src={allPublications[selectedPublicationIndex].image}
+                    alt={allPublications[selectedPublicationIndex].title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+
+                <div className="p-8 space-y-4">
+                  <div className="flex items-center justify-between">
+                    <Badge className="bg-brand-orange/20 text-brand-orange">
+                      {allPublications[selectedPublicationIndex].category}
+                    </Badge>
+                    <span className="text-xs text-foreground/60 font-body">
+                      {allPublications[selectedPublicationIndex].date}
+                    </span>
+                  </div>
+                  <h3 className="text-2xl font-bold text-foreground font-display">
+                    {allPublications[selectedPublicationIndex].title}
+                  </h3>
+                  <p className="text-foreground/80 font-body">
+                    {allPublications[selectedPublicationIndex].description}
+                  </p>
+                  <p className="text-sm text-foreground/60 font-body">
+                    By {allPublications[selectedPublicationIndex].authors}
+                  </p>
+                  <div className="flex items-center justify-between pt-4">
+                    <Button className="bg-brand-gradient hover:opacity-90 text-foreground">
+                      Read Publication
+                      <ArrowRight className="w-4 h-4 ml-2" />
+                    </Button>
+                    <div className="text-xs text-foreground/60 font-body">
+                      Auto-rotating • {selectedPublicationIndex + 1} of{" "}
+                      {allPublications.length}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Publications List - Right side */}
+            <div className="lg:col-span-1 space-y-0">
+              <h3 className="text-lg font-bold text-foreground mb-6 font-display">
+                More Publications
+              </h3>
+              <div className="space-y-0">
+                {allPublications.map((publication, idx) => (
+                  <button
+                    key={idx}
+                    onMouseEnter={() => setIsPublicationInteracting(true)}
+                    onMouseLeave={() => setIsPublicationInteracting(false)}
+                    onClick={() => {
+                      setSelectedPublicationIndex(idx);
+                      setIsPublicationInteracting(true);
+                    }}
+                    className={`group rounded-none border transition-all cursor-pointer w-full text-left p-4 backdrop-blur-sm ${
+                      selectedPublicationIndex === idx
+                        ? "border-brand-magenta bg-brand-magenta/10 shadow-lg shadow-brand-magenta/10"
+                        : idx % 3 === 0
+                          ? "border-blue-500/20 bg-blue-500/10 hover:border-brand-magenta/50 hover:shadow-lg hover:shadow-brand-magenta/5"
+                          : idx % 3 === 1
+                            ? "border-purple-500/20 bg-purple-500/10 hover:border-brand-magenta/50 hover:shadow-lg hover:shadow-brand-magenta/5"
+                            : "border-orange-500/20 bg-orange-500/10 hover:border-brand-magenta/50 hover:shadow-lg hover:shadow-brand-magenta/5"
+                    }`}
+                  >
+                    <div className="flex gap-4">
+                      <div className="flex-shrink-0">
+                        <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-brand-orange/10 text-brand-orange font-bold text-sm font-display">
+                          <BookOpen className="w-5 h-5" />
+                        </div>
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <p className="text-xs text-foreground/60 font-body font-semibold">
+                          {publication.date}
+                        </p>
+                        <h4 className="text-sm font-semibold text-foreground font-display group-hover:text-brand-magenta transition-colors line-clamp-2 mt-1">
+                          {publication.title}
+                        </h4>
+                        <Badge
+                          variant="secondary"
+                          className="text-xs mt-2 inline-block"
+                        >
+                          {publication.category}
+                        </Badge>
+                      </div>
+                      <div className="flex-shrink-0">
+                        <ChevronRight className="w-4 h-4 text-foreground/40 group-hover:text-brand-magenta transition-colors" />
+                      </div>
+                    </div>
+                  </button>
+                ))}
+              </div>
+
+              <Button
+                variant="outline"
+                className="w-full border-brand-orange/30 text-brand-orange hover:bg-brand-orange/5 mt-6"
+              >
+                View All Publications
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="px-3 py-10 relative">
         <div className="max-w-4xl mx-auto text-center">
