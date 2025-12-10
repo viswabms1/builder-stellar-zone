@@ -659,12 +659,19 @@ export default function Index() {
                 href="https://dsu.edu.in/virtual-tour/"
                 target="_blank"
                 rel="noreferrer"
-                className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                style={{
+                  outlineColor: theme === 'light' ? '#e67e22' : 'white',
+                }}
               >
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-2 border-white text-white hover:bg-white hover:text-orange-600 px-8 py-6 text-base font-semibold font-display transition-all duration-300"
+                  className={`border-2 px-8 py-6 text-base font-semibold font-display transition-all duration-300 ${
+                    theme === 'light'
+                      ? 'border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white'
+                      : 'border-white text-white hover:bg-white hover:text-orange-600'
+                  }`}
                 >
                   {t("hero.virtualTour") || "Virtual Tour"}
                 </Button>
