@@ -669,7 +669,7 @@ export default function Index() {
                   size="lg"
                   className={`border-2 px-8 py-6 text-base font-semibold font-display transition-all duration-300 ${
                     theme === 'light'
-                      ? 'border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white'
+                      ? 'border-orange-600/40 text-orange-600/70 hover:border-orange-600 hover:text-orange-600 hover:bg-white/10'
                       : 'border-white text-white hover:bg-white hover:text-orange-600'
                   }`}
                 >
