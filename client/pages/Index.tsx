@@ -670,7 +670,7 @@ export default function Index() {
                   className={`border-2 px-8 py-6 text-base font-semibold font-display transition-all duration-300 ${
                     theme === 'light'
                       ? 'border-orange-600/40 text-orange-600/70 hover:border-orange-600 hover:text-orange-600 hover:bg-white/10'
-                      : 'border-white text-white hover:bg-white hover:text-orange-600'
+                      : 'border-white/60 text-white/80 hover:border-white hover:text-white hover:bg-white/10'
                   }`}
                 >
                   {t("hero.virtualTour") || "Virtual Tour"}
