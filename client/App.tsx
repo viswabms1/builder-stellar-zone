@@ -373,12 +373,12 @@ function App() {
                   path="/academics/engineering/mechanical-engineering/faculty"
                   element={<FacultyMechanical />}
                 />
-                <Route path="/academics/engineering/mechanical/faculty/dr-saravana-bavan-d" element={<SaravanaBavanDPage />} />
-                <Route path="/academics/engineering/mechanical/faculty/dr-viswanathan-r" element={<ViswanathanRMechPage />} />
-                <Route path="/academics/engineering/mechanical/faculty/dr-vinayak-b-hemadri" element={<VinayakBHemadriPage />} />
-                <Route path="/academics/engineering/mechanical/faculty/dr-rahul-kumar" element={<RahulKumarMechPage />} />
-                <Route path="/academics/engineering/mechanical/faculty/dr-shashidhara-l-c" element={<ShashidharaLCPage />} />
-                <Route path="/academics/engineering/mechanical/faculty/abhijith-n" element={<AbhijithNPage />} />
+                <Route path="/academics/engineering/mechanical-engineering/faculty/dr-saravana-bavan-d" element={<SaravanaBavanDPage />} />
+                <Route path="/academics/engineering/mechanical-engineering/faculty/dr-viswanathan-r" element={<ViswanathanRMechPage />} />
+                <Route path="/academics/engineering/mechanical-engineering/faculty/dr-vinayak-b-hemadri" element={<VinayakBHemadriPage />} />
+                <Route path="/academics/engineering/mechanical-engineering/faculty/dr-rahul-kumar" element={<RahulKumarMechPage />} />
+                <Route path="/academics/engineering/mechanical-engineering/faculty/dr-shashidhara-l-c" element={<ShashidharaLCPage />} />
+                <Route path="/academics/engineering/mechanical-engineering/faculty/abhijith-n" element={<AbhijithNPage />} />
                 <Route
                   path="/academics/engineering/aerospace-engineering"
                   element={<DeptAerospace />}
