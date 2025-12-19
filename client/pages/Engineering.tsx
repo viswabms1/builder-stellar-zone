@@ -181,7 +181,7 @@ const ENGINEERING_DEPARTMENTS: EngineeringDepartment[] = [
       "Deep-dives into responsible AI, data engineering, ML pipelines and NLP with industry-certified projects.",
     image:
       "https://images.unsplash.com/photo-1534759846116-5799c33ce22a?q=80&w=1600&auto=format&fit=crop",
-    link: "/academics/engineering/ai-ml",
+    link: "/academics/engineering/cse-aiml",
     highlights: ["Capstone Studios", "AI Research", "Dual Certifications"],
     overlay:
       "bg-gradient-to-br from-brand-magenta/70 via-brand-blue/60 to-black/60 mix-blend-multiply",
@@ -368,7 +368,7 @@ const UG_PROGRAM_CARDS: ProgramCard[] = [
       "Deep-dives into responsible AI, data engineering, ML pipelines and NLP with industry-certified projects.",
     image:
       "https://images.unsplash.com/photo-1534759846116-5799c33ce22a?q=80&w=1600&auto=format&fit=crop",
-    link: "/academics/engineering/ai-ml",
+    link: "/academics/engineering/cse-aiml",
     highlights: ["Capstone Studios", "AI Research", "Dual Certifications"],
     overlay:
       "bg-gradient-to-br from-brand-magenta/70 via-brand-blue/60 to-black/60 mix-blend-multiply",
