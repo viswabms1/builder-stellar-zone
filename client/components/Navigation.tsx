@@ -74,14 +74,31 @@ export default function Navigation() {
         className={`sticky top-0 z-50 backdrop-blur-md transition-all duration-300 ${
           theme === "light"
             ? "bg-white/80 border-b border-gray-200/30"
-            : "bg-transparent bg-white/5 border-b border-white/10"
+            : "bg-slate-900/95 border-b border-white/10"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-3 py-1.5 flex items-center justify-end">
+        <div className="max-w-7xl mx-auto px-3 py-1.5 flex items-center justify-between">
+          {/* Left/Center - Top Menu Items */}
+          <div className="hidden sm:flex items-center gap-3">
+            {topMenuItems.map((item, idx) => (
+              <Link
+                key={idx}
+                to={item.href}
+                className={`text-xs font-medium transition-colors whitespace-nowrap ${
+                  theme === "light"
+                    ? "text-gray-600 hover:text-orange-600"
+                    : "text-white/80 hover:text-white"
+                }`}
+              >
+                {item.name}
+              </Link>
+            ))}
+          </div>
+
           {/* Right side - Login */}
           <Link
             to="/login"
-            className={`px-3 py-1.5 rounded text-sm font-medium transition-all duration-200 ${
+            className={`px-3 py-1.5 rounded text-xs font-medium transition-all duration-200 ${
               theme === "light"
                 ? "text-gray-700 hover:text-orange-600"
                 : "text-white/80 hover:text-white"
