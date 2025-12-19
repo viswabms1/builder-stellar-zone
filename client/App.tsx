@@ -42,6 +42,7 @@ import ResearchInnovationCouncil from "./pages/ResearchInnovationCouncil";
 import Accreditations from "./pages/Accreditations";
 import Facilities from "./pages/Facilities";
 import Placements from "./pages/Placements";
+import Careers from "./pages/Careers";
 import { ThemeProvider } from "./providers/theme-provider";
 import { LanguageProvider } from "./providers/language-provider";
 import FacultyProfile from "./pages/FacultyProfile";
