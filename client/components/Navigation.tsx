@@ -77,8 +77,8 @@ export default function Navigation() {
             : "bg-slate-900/95 border-b border-white/10"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-3 py-1.5 flex items-center justify-between">
-          {/* Left/Center - Top Menu Items */}
+        <div className="max-w-7xl mx-auto px-3 py-1.5 flex items-center justify-end gap-4">
+          {/* Top Menu Items - pushed to right starting from half screen */}
           <div className="hidden sm:flex items-center gap-3">
             {topMenuItems.map((item, idx) => (
               <Link
