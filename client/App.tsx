@@ -362,9 +362,9 @@ function App() {
                   path="/academics/engineering/cse-ai-ds/faculty"
                   element={<FacultyAIDS />}
                 />
-                <Route path="/academics/engineering/ai-ds/faculty/dr-poongodi-t" element={<PoongodiFacultyPage />} />
-                <Route path="/academics/engineering/ai-ds/faculty/dr-ramesh-wadawadagi" element={<RameshWadawadagiFacultyPage />} />
-                <Route path="/academics/engineering/ai-ds/faculty/prof-nadavadi-harshith-gowd" element={<HarshithGowdFacultyPage />} />
+                <Route path="/academics/engineering/cse-ai-ds/faculty/dr-poongodi-t" element={<PoongodiFacultyPage />} />
+                <Route path="/academics/engineering/cse-ai-ds/faculty/dr-ramesh-wadawadagi" element={<RameshWadawadagiFacultyPage />} />
+                <Route path="/academics/engineering/cse-ai-ds/faculty/prof-nadavadi-harshith-gowd" element={<HarshithGowdFacultyPage />} />
                 <Route
                   path="/academics/engineering/mechanical-engineering"
                   element={<DeptMechanical />}
