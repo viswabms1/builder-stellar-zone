@@ -304,11 +304,11 @@ function App() {
                   element={<DeptCSE />}
                 />
                 <Route
-                  path="/academics/engineering/ai-ml"
+                  path="/academics/engineering/cse-aiml"
                   element={<DeptAIML />}
                 />
                 <Route
-                  path="/academics/engineering/ai-ml/faculty"
+                  path="/academics/engineering/cse-aiml/faculty"
                   element={<FacultyAIML />}
                 />
                 <Route path="/academics/engineering/ai-ml/faculty/dr-jayavrinda-vrindavanam-v" element={<JayavrindasVrindavnamPage />} />
@@ -354,22 +354,22 @@ function App() {
                 <Route path="/academics/engineering/ai-ml/faculty/ms-hairunesa-beevi" element={<HairunesaBeeviPage />} />
                 <Route path="/academics/engineering/ai-ml/faculty/prof-kuna-srinidhi" element={<SrinidhiAIMLPage />} />
                 <Route
-                  path="/academics/engineering/ai-ds"
+                  path="/academics/engineering/cse-ai-ds"
                   element={<DeptAIDS />}
                 />
                 <Route
-                  path="/academics/engineering/ai-ds/faculty"
+                  path="/academics/engineering/cse-ai-ds/faculty"
                   element={<FacultyAIDS />}
                 />
                 <Route path="/academics/engineering/ai-ds/faculty/dr-poongodi-t" element={<PoongodiFacultyPage />} />
                 <Route path="/academics/engineering/ai-ds/faculty/dr-ramesh-wadawadagi" element={<RameshWadawadagiFacultyPage />} />
                 <Route path="/academics/engineering/ai-ds/faculty/prof-nadavadi-harshith-gowd" element={<HarshithGowdFacultyPage />} />
                 <Route
-                  path="/academics/engineering/mechanical"
+                  path="/academics/engineering/mechanical-engineering"
                   element={<DeptMechanical />}
                 />
                 <Route
-                  path="/academics/engineering/mechanical/faculty"
+                  path="/academics/engineering/mechanical-engineering/faculty"
                   element={<FacultyMechanical />}
                 />
                 <Route path="/academics/engineering/mechanical/faculty/dr-saravana-bavan-d" element={<SaravanaBavanDPage />} />
@@ -379,11 +379,11 @@ function App() {
                 <Route path="/academics/engineering/mechanical/faculty/dr-shashidhara-l-c" element={<ShashidharaLCPage />} />
                 <Route path="/academics/engineering/mechanical/faculty/abhijith-n" element={<AbhijithNPage />} />
                 <Route
-                  path="/academics/engineering/aerospace"
+                  path="/academics/engineering/aerospace-engineering"
                   element={<DeptAerospace />}
                 />
                 <Route
-                  path="/academics/engineering/aerospace/faculty"
+                  path="/academics/engineering/aerospace-engineering/faculty"
                   element={<FacultyAerospace />}
                 />
                 <Route path="/academics/engineering/aerospace/faculty/dr-nagaraja-s-r" element={<DrNagarajaSRPage />} />
@@ -413,11 +413,11 @@ function App() {
                 <Route path="/academics/engineering/ai-robotics/faculty/mr-vikas-vishwakarma" element={<MrVikasVishwakarmaPage />} />
                 <Route path="/academics/engineering/ai-robotics/faculty/mr-lalit-ashutosh" element={<MrLalitAshutoshPage />} />
                 <Route
-                  path="/academics/engineering/data-science"
+                  path="/academics/engineering/cse-data-science"
                   element={<DeptDataScience />}
                 />
                 <Route
-                  path="/academics/engineering/data-science/faculty"
+                  path="/academics/engineering/cse-data-science/faculty"
                   element={<FacultyDataScience />}
                 />
                 <Route path="/academics/engineering/data-science/faculty/dr-shaila-s-g" element={<DrShailaSGPage />} />
@@ -440,11 +440,11 @@ function App() {
                 <Route path="/academics/engineering/data-science/faculty/ms-snigdha-sikha-kashyap" element={<MsSnigdhaSikhakashyapPage />} />
                 <Route path="/academics/engineering/data-science/faculty/dr-jobin-thomas" element={<DrJobinThomasPage />} />
                 <Route
-                  path="/academics/engineering/cybersecurity"
+                  path="/academics/engineering/cse-cyber-security"
                   element={<DeptCybersecurity />}
                 />
                 <Route
-                  path="/academics/engineering/cybersecurity/faculty"
+                  path="/academics/engineering/cse-cyber-security/faculty"
                   element={<FacultyCybersecurity />}
                 />
                 <Route path="/academics/engineering/cybersecurity/faculty/dr-dilip-kumar-jang-bahadur-saini" element={<DrDilipKumarJangBahadurSainiPage />} />
