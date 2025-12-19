@@ -241,7 +241,7 @@ const ENGINEERING_DEPARTMENTS: EngineeringDepartment[] = [
       "Blend software engineering, systems integration and platform engineering oriented towards digital enterprises.",
     image:
       "https://images.unsplash.com/photo-1523475472560-d2df97ec485c?q=80&w=1600&auto=format&fit=crop",
-    link: "https://www.dsu.edu.in/engineering/computer-science-technology",
+    link: "/academics/engineering/computer-technology",
     highlights: [
       "Platform Engineering",
       "Systems Design",
