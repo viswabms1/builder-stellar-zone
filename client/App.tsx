@@ -387,18 +387,18 @@ function App() {
                   path="/academics/engineering/aerospace-engineering/faculty"
                   element={<FacultyAerospace />}
                 />
-                <Route path="/academics/engineering/aerospace/faculty/dr-nagaraja-s-r" element={<DrNagarajaSRPage />} />
-                <Route path="/academics/engineering/aerospace/faculty/dr-b-v-n-ramakumar" element={<DrBVNRamakumarPage />} />
-                <Route path="/academics/engineering/aerospace/faculty/dr-prashantha-kumar" element={<DrPrashantheKumarPage />} />
-                <Route path="/academics/engineering/aerospace/faculty/dr-avinash-kumar-saurav" element={<DrAvinashKumarSauravPage />} />
-                <Route path="/academics/engineering/aerospace/faculty/prof-sripad-kulkarni" element={<ProfSripadKulkarniPage />} />
-                <Route path="/academics/engineering/aerospace/faculty/dr-ajey-singh" element={<DrAjeySinghPage />} />
-                <Route path="/academics/engineering/aerospace/faculty/dr-g-k-suryanarayana" element={<DrGKSuryanarayanaPage />} />
-                <Route path="/academics/engineering/aerospace/faculty/dr-mathew-chacko" element={<DrMathewChackoPage />} />
-                <Route path="/academics/engineering/aerospace/faculty/dr-kartik-s-tandel" element={<DrKartikSTandelPage />} />
-                <Route path="/academics/engineering/aerospace/faculty/dr-srinath-ramakrishnan" element={<DrSrinathRamakrishnanPage />} />
-                <Route path="/academics/engineering/aerospace/faculty/ms-swagatika" element={<MsSwagatikaPage />} />
-                <Route path="/academics/engineering/aerospace/faculty/dr-vivek-anand" element={<DrVivekAnandPage />} />
+                <Route path="/academics/engineering/aerospace-engineering/faculty/dr-nagaraja-s-r" element={<DrNagarajaSRPage />} />
+                <Route path="/academics/engineering/aerospace-engineering/faculty/dr-b-v-n-ramakumar" element={<DrBVNRamakumarPage />} />
+                <Route path="/academics/engineering/aerospace-engineering/faculty/dr-prashantha-kumar" element={<DrPrashantheKumarPage />} />
+                <Route path="/academics/engineering/aerospace-engineering/faculty/dr-avinash-kumar-saurav" element={<DrAvinashKumarSauravPage />} />
+                <Route path="/academics/engineering/aerospace-engineering/faculty/prof-sripad-kulkarni" element={<ProfSripadKulkarniPage />} />
+                <Route path="/academics/engineering/aerospace-engineering/faculty/dr-ajey-singh" element={<DrAjeySinghPage />} />
+                <Route path="/academics/engineering/aerospace-engineering/faculty/dr-g-k-suryanarayana" element={<DrGKSuryanarayanaPage />} />
+                <Route path="/academics/engineering/aerospace-engineering/faculty/dr-mathew-chacko" element={<DrMathewChackoPage />} />
+                <Route path="/academics/engineering/aerospace-engineering/faculty/dr-kartik-s-tandel" element={<DrKartikSTandelPage />} />
+                <Route path="/academics/engineering/aerospace-engineering/faculty/dr-srinath-ramakrishnan" element={<DrSrinathRamakrishnanPage />} />
+                <Route path="/academics/engineering/aerospace-engineering/faculty/ms-swagatika" element={<MsSwagatikaPage />} />
+                <Route path="/academics/engineering/aerospace-engineering/faculty/dr-vivek-anand" element={<DrVivekAnandPage />} />
                 <Route
                   path="/academics/engineering/ai-robotics"
                   element={<DeptAIRobotics />}
