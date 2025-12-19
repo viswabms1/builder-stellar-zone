@@ -80,7 +80,7 @@ export default function Careers() {
               ))}
             </div>
             <div className="mt-8 flex flex-wrap gap-3">
-              <a href="https://careers.dsu.edu.in/" target="_blank" rel="noreferrer">
+              <a href="https://dsu.edu.in/apply-now/" target="_blank" rel="noreferrer">
                 <Button className="bg-orange-600 text-white hover:bg-orange-700">
                   Apply Now <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>
