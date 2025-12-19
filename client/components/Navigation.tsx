@@ -51,7 +51,7 @@ export default function Navigation() {
     { name: "News & Events", href: "/news-events" },
     { name: "Blog", href: "/blog" },
     { name: "Careers", href: "/careers" },
-    { name: "Mandatory Disclosure", href: "/mandatory-disclosure" },
+    { name: "Public Self Disclosure", href: "/mandatory-disclosure" },
   ];
 
   const navigation = [
