@@ -568,6 +568,8 @@ function App() {
                 <Route path="/about/facilities" element={<Facilities />} />
                 <Route path="/centre-of-excellence" element={<CentreOfExcellence />} />
                 <Route path="/iqac" element={<IQAC />} />
+                {/* Redirect /engineering/* paths to /academics/engineering/* */}
+                <Route path="/engineering/*" element={<Navigate to={`/academics${window.location.pathname}`} replace />} />
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                 <Route path="*" element={<NotFound />} />
               </Routes>
