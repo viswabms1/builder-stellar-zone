@@ -260,7 +260,7 @@ const ENGINEERING_DEPARTMENTS: EngineeringDepartment[] = [
       "Create clinical-grade software, biomedical instrumentation and AI-assisted diagnostics for next-gen healthcare.",
     image:
       "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1600&auto=format&fit=crop",
-    link: "https://www.dsu.edu.in/engineering/computer-science-medical-engineering",
+    link: "/academics/engineering/cs-medical-engineering",
     highlights: ["Digital Health", "Medical Imaging", "Bio-Informatics"],
     overlay:
       "bg-gradient-to-br from-brand-magenta/65 via-brand-blue/55 to-black/55 mix-blend-multiply",
