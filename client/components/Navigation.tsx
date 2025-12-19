@@ -237,24 +237,7 @@ export default function Navigation() {
               })();
 
               if (idx === 4) {
-                return [
-                  itemElement,
-                  <Link
-                    key="logo"
-                    to="/"
-                    className={`flex items-center group flex-shrink-0 px-4 py-3 rounded-xl transition-all duration-300 ${
-                      theme === "light"
-                        ? "hover:bg-orange-50"
-                        : "hover:bg-white/10"
-                    }`}
-                  >
-                    <img
-                      src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fc9f5a55fa7004ae596d21cc4fa4aed1f?format=webp&width=1200"
-                      alt="Dayananda Sagar University Logo"
-                      className="h-20 w-auto object-contain group-hover:scale-110 transition-all duration-300"
-                    />
-                  </Link>,
-                ];
+                return itemElement;
               }
 
               return itemElement;
