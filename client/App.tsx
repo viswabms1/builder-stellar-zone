@@ -313,7 +313,7 @@ function App() {
                   element={<FacultyAIML />}
                 />
                 <Route path="/academics/engineering/ai-ml/faculty/dr-jayavrinda-vrindavanam-v" element={<JayavrindasVrindavnamPage />} />
-                <Route path="/academics/engineering/ai-ml/faculty/dr-hanumanth-sastry-sistla" element={<HanumannthSastryPage />} />
+                <Route path="/academics/engineering/cse-aiml/faculty/dr-hanumanth-sastry-sistla" element={<HanumannthSastryPage />} />
                 <Route path="/academics/engineering/ai-ml/faculty/dr-bahubali-shiragapur" element={<BahubalSiragapurPage />} />
                 <Route path="/academics/engineering/ai-ml/faculty/dr-joshuva-arockia-dhanraj" element={<JoshuvaArockiaPage />} />
                 <Route path="/academics/engineering/ai-ml/faculty/prof-suresh-kandasamy" element={<SureshKandasamyPage />} />
