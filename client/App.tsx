@@ -252,6 +252,7 @@ function App() {
                 <Route path="/" element={<Index />} />
                 <Route path="/academics" element={<Academics />} />
                 <Route path="/academics/engineering" element={<Engineering />} />
+                <Route path="/engineering" element={<Engineering />} />
                 <Route
                   path="/academics/engineering/electronics-communication"
                   element={<ElectronicsCommunication />}
