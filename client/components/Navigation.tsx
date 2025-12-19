@@ -95,17 +95,19 @@ export default function Navigation() {
             ))}
           </div>
 
-          {/* Right side - Login */}
-          <Link
-            to="/login"
+          {/* Right side - ERP Login */}
+          <a
+            href="https://ums.mydsi.org/Login.aspx/DSU"
+            target="_blank"
+            rel="noopener noreferrer"
             className={`px-3 py-1.5 rounded text-xs font-medium transition-all duration-200 ${
               theme === "light"
                 ? "text-gray-700 hover:text-orange-600"
                 : "text-white/80 hover:text-white"
             }`}
           >
-            Login
-          </Link>
+            ERP Login
+          </a>
         </div>
       </div>
 
