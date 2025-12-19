@@ -218,7 +218,7 @@ export default function Careers() {
                   Explore open positions and submit your application. We look forward to meeting talented professionals who share our vision.
                 </p>
                 <div className="flex flex-wrap gap-3 justify-center">
-                  <a href="https://careers.dsu.edu.in/" target="_blank" rel="noreferrer">
+                  <a href="https://dsu.edu.in/careers" target="_blank" rel="noreferrer">
                     <Button className="bg-orange-600 text-white hover:bg-orange-700">
                       Explore Careers Portal <ArrowRight className="w-4 h-4 ml-2" />
                     </Button>
