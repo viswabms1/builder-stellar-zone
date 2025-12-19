@@ -553,6 +553,7 @@ function App() {
                 <Route path="/admissions/international" element={<InternationalAdmissions />} />
                 <Route path="/eligibility" element={<Eligibility />} />
                 <Route path="/placements" element={<Placements />} />
+                <Route path="/careers" element={<Careers />} />
                 <Route path="/campus-life" element={<CampusLife />} />
                 <Route path="/examinations" element={<Examinations />} />
                 <Route path="/research" element={<Research />} />
