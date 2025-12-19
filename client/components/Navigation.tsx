@@ -228,7 +228,7 @@ export default function Navigation() {
                     to="/"
                     className={`flex items-center group flex-shrink-0 px-4 py-3 rounded-xl transition-all duration-300 ${
                       theme === "light"
-                        ? "hover:bg-orange-50"
+                        ? "bg-white hover:bg-white"
                         : "hover:bg-white/10"
                     }`}
                   >
