@@ -73,7 +73,7 @@ export default function Navigation() {
       <div
         className={`sticky top-0 z-50 backdrop-blur-md transition-all duration-300 ${
           theme === "light"
-            ? "bg-white/80 border-b border-gray-200/30"
+            ? "bg-transparent border-b border-gray-200/30"
             : "bg-slate-900/95 border-b border-white/10"
         }`}
       >
