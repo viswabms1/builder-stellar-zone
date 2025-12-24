@@ -751,7 +751,7 @@ export default function Index() {
             <div className="lg:col-span-2">
               <button
                 onClick={() => setSelectedNews(currentFeatured)}
-                className="group w-full flex flex-col rounded-none border border-orange-500/20 bg-orange-500/10 cursor-pointer text-left hover:shadow-lg transition-all duration-500 overflow-hidden backdrop-blur-sm"
+                className="w-full flex flex-col rounded-none border border-orange-500/20 bg-orange-500/10 cursor-pointer text-left overflow-hidden"
               >
                 {currentFeatured.isVideo ? (
                   <VideoWithFrameCapture
@@ -765,7 +765,7 @@ export default function Index() {
                   <img
                     src={currentFeatured.image}
                     alt={currentFeatured.title}
-                    className="w-full max-h-96 object-contain group-hover:scale-105 transition-transform duration-500"
+                    className="w-full max-h-96 object-contain"
                   />
                 )}
                 <div className="p-4 flex-1 flex flex-col space-y-2">
