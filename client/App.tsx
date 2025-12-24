@@ -33,7 +33,6 @@ import FacultyAIML from "./pages/FacultyAIML";
 import FacultyMedicalEngineering from "./pages/FacultyMedicalEngineering";
 import RajeshTMPage from "./pages/faculty/RajeshTM";
 import PruthviPatelPage from "./pages/faculty/PruthviPatel";
-import ShahinaParveenPage from "./pages/faculty/MShahina Parveen";
 import ComputerTechnologyFacultyProfile from "./pages/ComputerTechnologyFacultyProfile";
 import CentreOfExcellence from "./pages/CentreOfExcellence";
 import VisionMission from "./pages/VisionMission";
