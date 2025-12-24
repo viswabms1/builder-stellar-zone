@@ -922,14 +922,14 @@ export default function Index() {
                       setSelectedEventIndex(idx);
                       setIsEventInteracting(true);
                     }}
-                    className={`group rounded-none border transition-all cursor-pointer w-full text-left p-4 backdrop-blur-sm ${
+                    className={`group rounded-none border cursor-pointer w-full text-left p-4 ${
                       selectedEventIndex === idx
-                        ? "border-brand-magenta bg-brand-magenta/10 shadow-lg shadow-brand-magenta/10"
+                        ? "border-brand-magenta bg-brand-magenta/10"
                         : idx % 3 === 0
-                          ? "border-blue-500/20 bg-blue-500/10 hover:border-brand-magenta/50 hover:shadow-lg hover:shadow-brand-magenta/5"
+                          ? "border-blue-500/20 bg-blue-500/10"
                           : idx % 3 === 1
-                            ? "border-purple-500/20 bg-purple-500/10 hover:border-brand-magenta/50 hover:shadow-lg hover:shadow-brand-magenta/5"
-                            : "border-orange-500/20 bg-orange-500/10 hover:border-brand-magenta/50 hover:shadow-lg hover:shadow-brand-magenta/5"
+                            ? "border-purple-500/20 bg-purple-500/10"
+                            : "border-orange-500/20 bg-orange-500/10"
                     }`}
                   >
                     <div className="flex gap-4">
