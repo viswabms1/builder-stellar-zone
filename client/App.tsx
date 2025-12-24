@@ -221,6 +221,7 @@ import DrJobinThomasPage from "./pages/faculty/DrJobinThomas";
 import DeptCybersecurity from "./pages/DeptCybersecurity";
 import FacultyCybersecurity from "./pages/FacultyCybersecurity";
 import DeptComputerTechnology from "./pages/DeptComputerTechnology";
+import FacultyComputerTechnology from "./pages/FacultyComputerTechnology";
 import DrDilipKumarJangBahadurSainiPage from "./pages/faculty/DrDilipKumarJangBahadurSaini";
 import DrDurbadalChattarajPage from "./pages/faculty/DrDurbadalChattaraj";
 import DrPrajwalasimhaSNPage from "./pages/faculty/DrPrajwalasimhaSN";
