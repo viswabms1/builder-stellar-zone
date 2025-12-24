@@ -742,12 +742,8 @@ export default function Index() {
               ];
               const style = styles[index % styles.length];
 
-              return (
-                <div
-                  key={index}
-                  className={`rounded-none overflow-hidden transition-all duration-300 group hover:shadow-lg hover:shadow-brand-magenta/10 hover:-translate-y-2 cursor-pointer h-full`}
-                  style={{ animationDelay: school.delay }}
-                >
+              const cardContent = (
+                <>
                   {/* Image Container */}
                   <div className="relative w-full aspect-square overflow-hidden bg-foreground/5 flex items-center justify-center">
                     <img
@@ -763,34 +759,39 @@ export default function Index() {
                     className={`${style.bg} ${style.border} border border-t-0 rounded-none p-3 flex flex-col justify-center items-center h-24 w-full backdrop-blur-sm`}
                   >
                     <div className="text-center">
-                      <div className="mb-0">
-                        {school.href ? (
-                          school.href.startsWith("http") ? (
-                            <a
-                              href={school.href}
-                              target="_blank"
-                              rel="noreferrer"
-                              className="block"
-                            >
-                              <h3 className="text-lg font-bold text-foreground font-display hover:text-brand-magenta transition-colors text-center">
-                                {school.title}
-                              </h3>
-                            </a>
-                          ) : (
-                            <Link to={school.href} className="block">
-                              <h3 className="text-lg font-bold text-foreground font-display hover:text-brand-magenta transition-colors text-center">
-                                {school.title}
-                              </h3>
-                            </Link>
-                          )
-                        ) : (
-                          <h3 className="text-lg font-bold text-foreground font-display text-center">
-                            {school.title}
-                          </h3>
-                        )}
-                      </div>
+                      <h3 className="text-lg font-bold text-foreground font-display hover:text-brand-magenta transition-colors text-center">
+                        {school.title}
+                      </h3>
                     </div>
                   </div>
+                </>
+              );
+
+              return (
+                <div key={index} style={{ animationDelay: school.delay }}>
+                  {school.href ? (
+                    school.href.startsWith("http") ? (
+                      <a
+                        href={school.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className={`rounded-none overflow-hidden transition-all duration-300 group hover:shadow-lg hover:shadow-brand-magenta/10 hover:-translate-y-2 cursor-pointer h-full block`}
+                      >
+                        {cardContent}
+                      </a>
+                    ) : (
+                      <Link
+                        to={school.href}
+                        className={`rounded-none overflow-hidden transition-all duration-300 group hover:shadow-lg hover:shadow-brand-magenta/10 hover:-translate-y-2 cursor-pointer h-full block`}
+                      >
+                        {cardContent}
+                      </Link>
+                    )
+                  ) : (
+                    <div className={`rounded-none overflow-hidden transition-all duration-300 group hover:shadow-lg hover:shadow-brand-magenta/10 hover:-translate-y-2 cursor-pointer h-full`}>
+                      {cardContent}
+                    </div>
+                  )}
                 </div>
               );
             })}
