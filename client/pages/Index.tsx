@@ -767,6 +767,12 @@ export default function Index() {
                 </>
               );
 
+              const cardWrapper = (
+                <div className={`rounded-none overflow-hidden transition-all duration-300 group hover:shadow-lg hover:shadow-brand-magenta/10 hover:-translate-y-2 cursor-pointer h-full`}>
+                  {cardContent}
+                </div>
+              );
+
               return (
                 <div key={index} style={{ animationDelay: school.delay }}>
                   {school.href ? (
@@ -775,22 +781,20 @@ export default function Index() {
                         href={school.href}
                         target="_blank"
                         rel="noreferrer"
-                        className={`rounded-none overflow-hidden transition-all duration-300 group hover:shadow-lg hover:shadow-brand-magenta/10 hover:-translate-y-2 cursor-pointer h-full block`}
+                        className="block"
                       >
-                        {cardContent}
+                        {cardWrapper}
                       </a>
                     ) : (
                       <Link
                         to={school.href}
-                        className={`rounded-none overflow-hidden transition-all duration-300 group hover:shadow-lg hover:shadow-brand-magenta/10 hover:-translate-y-2 cursor-pointer h-full block`}
+                        className="block"
                       >
-                        {cardContent}
+                        {cardWrapper}
                       </Link>
                     )
                   ) : (
-                    <div className={`rounded-none overflow-hidden transition-all duration-300 group hover:shadow-lg hover:shadow-brand-magenta/10 hover:-translate-y-2 cursor-pointer h-full`}>
-                      {cardContent}
-                    </div>
+                    cardWrapper
                   )}
                 </div>
               );
