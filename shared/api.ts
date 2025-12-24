@@ -10,3 +10,13 @@
 export interface DemoResponse {
   message: string;
 }
+
+/**
+ * Faculty entry base type
+ */
+export interface FacultyEntry {}
+
+/**
+ * Faculty directory type
+ */
+export interface FacultyDirectory {}
