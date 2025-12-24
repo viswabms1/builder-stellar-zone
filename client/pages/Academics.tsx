@@ -438,6 +438,12 @@ export default function Academics() {
                 </>
               );
 
+              const cardWrapper = (
+                <div className={`group h-full rounded-xl border ${colors.border} ${colors.bg} overflow-hidden backdrop-blur-sm hover:shadow-xl hover:shadow-brand-magenta/20 transition-all duration-500 hover:-translate-y-2 flex flex-col`}>
+                  {cardContent}
+                </div>
+              );
+
               return (
                 <div key={index}>
                   {school.href ? (
@@ -446,22 +452,20 @@ export default function Academics() {
                         href={school.href}
                         target="_blank"
                         rel="noreferrer"
-                        className={`group h-full rounded-xl border ${colors.border} ${colors.bg} overflow-hidden backdrop-blur-sm hover:shadow-xl hover:shadow-brand-magenta/20 transition-all duration-500 hover:-translate-y-2 flex flex-col block`}
+                        className="block"
                       >
-                        {cardContent}
+                        {cardWrapper}
                       </a>
                     ) : (
                       <Link
                         to={school.href}
-                        className={`group h-full rounded-xl border ${colors.border} ${colors.bg} overflow-hidden backdrop-blur-sm hover:shadow-xl hover:shadow-brand-magenta/20 transition-all duration-500 hover:-translate-y-2 flex flex-col block`}
+                        className="block"
                       >
-                        {cardContent}
+                        {cardWrapper}
                       </Link>
                     )
                   ) : (
-                    <div className={`group h-full rounded-xl border ${colors.border} ${colors.bg} overflow-hidden backdrop-blur-sm hover:shadow-xl hover:shadow-brand-magenta/20 transition-all duration-500 hover:-translate-y-2 flex flex-col`}>
-                      {cardContent}
-                    </div>
+                    cardWrapper
                   )}
                 </div>
               );
