@@ -800,7 +800,7 @@ export default function Index() {
                 <button
                   key={idx}
                   onClick={() => setSelectedNews(item)}
-                  className={`group rounded-none overflow-hidden border backdrop-blur-sm hover:shadow-lg hover:shadow-brand-magenta/10 transition-all text-left cursor-pointer ${
+                  className={`group rounded-none overflow-hidden border text-left cursor-pointer ${
                     idx % 2 === 0
                       ? "bg-blue-500/10 border-blue-500/20"
                       : "bg-purple-500/10 border-purple-500/20"
@@ -817,7 +817,7 @@ export default function Index() {
                       <img
                         src={item.image}
                         alt={item.title}
-                        className="h-32 w-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                        className="h-32 w-full object-cover"
                       />
                     )}
                     <div className="absolute top-2 left-2">
