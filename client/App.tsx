@@ -487,6 +487,10 @@ function App() {
                   element={<DeptComputerTechnology />}
                 />
                 <Route
+                  path="/academics/engineering/computer-technology/faculty"
+                  element={<FacultyComputerTechnology />}
+                />
+                <Route
                   path="/academics/engineering/computer-science/faculty"
                   element={<FacultyCSE />}
                 />
