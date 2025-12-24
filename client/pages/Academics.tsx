@@ -380,8 +380,8 @@ export default function Academics() {
             {schoolsData.map((school, index) => {
               const colors = colorClasses[school.color as keyof typeof colorClasses];
               
-              const cardContent = (
-                <>
+              const cardElement = (
+                <div className={`group h-full rounded-xl border ${colors.border} ${colors.bg} overflow-hidden backdrop-blur-sm hover:shadow-xl hover:shadow-brand-magenta/20 transition-all duration-500 hover:-translate-y-2 flex flex-col`}>
                   {/* Image Section */}
                   <div className="relative h-48 w-full overflow-hidden bg-gradient-to-br from-foreground/5 to-foreground/10">
                     <img
@@ -395,8 +395,8 @@ export default function Academics() {
                           : "object-cover"
                       }`}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-                    <div className="absolute top-3 left-3 inline-flex items-center gap-2 rounded-full bg-black/40 backdrop-blur px-3 py-1.5 text-foreground text-xs font-medium">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent pointer-events-none" />
+                    <div className="absolute top-3 left-3 inline-flex items-center gap-2 rounded-full bg-black/40 backdrop-blur px-3 py-1.5 text-foreground text-xs font-medium pointer-events-none">
                       <school.icon className="w-4 h-4" /> School
                     </div>
                   </div>
@@ -435,12 +435,6 @@ export default function Academics() {
                       </button>
                     </div>
                   </div>
-                </>
-              );
-
-              const cardWrapper = (
-                <div className={`group h-full rounded-xl border ${colors.border} ${colors.bg} overflow-hidden backdrop-blur-sm hover:shadow-xl hover:shadow-brand-magenta/20 transition-all duration-500 hover:-translate-y-2 flex flex-col`}>
-                  {cardContent}
                 </div>
               );
 
@@ -454,18 +448,18 @@ export default function Academics() {
                         rel="noreferrer"
                         className="block"
                       >
-                        {cardWrapper}
+                        {cardElement}
                       </a>
                     ) : (
                       <Link
                         to={school.href}
                         className="block"
                       >
-                        {cardWrapper}
+                        {cardElement}
                       </Link>
                     )
                   ) : (
-                    cardWrapper
+                    cardElement
                   )}
                 </div>
               );
