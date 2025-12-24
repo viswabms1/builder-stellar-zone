@@ -377,7 +377,7 @@ export default function Academics() {
                       className={`h-full w-full object-cover group-hover:scale-110 transition-transform duration-700 ${
                         school.title === "Online Degree Programs"
                           ? "object-contain bg-white/5"
-                          : school.title === "Computer Applications" || school.title === "AI & Data Science"
+                          : school.title === "Computer Applications"
                           ? "object-cover object-top"
                           : "object-cover"
                       }`}
