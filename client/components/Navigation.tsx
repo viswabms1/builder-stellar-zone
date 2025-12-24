@@ -547,6 +547,95 @@ export default function Navigation() {
                 );
               }
 
+              if (isAcademics) {
+                return (
+                  <div key={idx} className="space-y-2">
+                    <button
+                      onClick={() => setAcademicsMenuOpen(!academicsMenuOpen)}
+                      className={`w-full text-left ${sharedClasses}`}
+                    >
+                      <span className="flex-1">{item.name}</span>
+                      <ChevronDown
+                        className={`w-4 h-4 transition-transform ${
+                          academicsMenuOpen ? "rotate-180" : ""
+                        }`}
+                      />
+                    </button>
+
+                    {/* Mobile Academics Submenu */}
+                    {academicsMenuOpen && (
+                      <div
+                        className={`rounded-lg py-2 ml-4 border-l-2 ${
+                          theme === "light"
+                            ? "bg-orange-100 border-l-orange-300"
+                            : "bg-white/20 border-l-white/40"
+                        }`}
+                      >
+                        {academicsSubmenus.schools.map((school, schoolIdx) => (
+                          <div key={schoolIdx} className="mb-2">
+                            {school.external ? (
+                              <a
+                                href={school.href}
+                                target="_blank"
+                                rel="noreferrer"
+                                onClick={() => {
+                                  setIsOpen(false);
+                                  setAcademicsMenuOpen(false);
+                                }}
+                                className={`block px-4 py-2 text-sm font-semibold rounded transition-colors ${
+                                  theme === "light"
+                                    ? "text-orange-900 hover:bg-orange-200"
+                                    : "text-white hover:bg-white/20"
+                                }`}
+                              >
+                                {school.name}
+                              </a>
+                            ) : (
+                              <Link
+                                to={school.href}
+                                onClick={() => {
+                                  setIsOpen(false);
+                                  setAcademicsMenuOpen(false);
+                                }}
+                                className={`block px-4 py-2 text-sm font-semibold rounded transition-colors ${
+                                  theme === "light"
+                                    ? "text-orange-900 hover:bg-orange-200"
+                                    : "text-white hover:bg-white/20"
+                                }`}
+                              >
+                                {school.name}
+                              </Link>
+                            )}
+
+                            {school.departments.length > 0 && (
+                              <div className="ml-4 space-y-1">
+                                {school.departments.map((dept, deptIdx) => (
+                                  <Link
+                                    key={deptIdx}
+                                    to={dept.href}
+                                    onClick={() => {
+                                      setIsOpen(false);
+                                      setAcademicsMenuOpen(false);
+                                    }}
+                                    className={`block px-4 py-1 text-xs rounded transition-colors ${
+                                      theme === "light"
+                                        ? "text-gray-700 hover:bg-orange-200"
+                                        : "text-white/80 hover:bg-white/20"
+                                    }`}
+                                  >
+                                    {dept.name}
+                                  </Link>
+                                ))}
+                              </div>
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                );
+              }
+
               return (
                 <Link
                   key={idx}
