@@ -474,6 +474,7 @@ export default function Navigation() {
             {navigation.map((item, idx) => {
               const active = !item.external && isActive(item.href);
               const isAbout = item.href === "/about";
+              const isAcademics = item.href === "/academics";
               const sharedClasses = `flex items-center space-x-2 px-3 py-2.5 rounded-xl text-sm font-medium font-display transition-all duration-200 ${
                 theme === "light"
                   ? active
