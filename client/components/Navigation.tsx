@@ -310,7 +310,7 @@ export default function Navigation() {
 
                       {/* Academics Mega Menu - Multi-column Layout */}
                       <div
-                        className={`absolute left-0 top-full mt-0 w-auto min-w-max max-w-5xl rounded-lg shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 py-4 px-6 max-h-96 overflow-y-auto ${
+                        className={`absolute left-0 top-full mt-0 w-auto min-w-max max-w-7xl rounded-lg shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 py-4 px-6 max-h-96 overflow-y-auto ${
                           theme === "light"
                             ? "bg-gradient-to-b from-orange-50 to-orange-100 text-gray-900 border border-orange-200"
                             : "bg-gradient-to-b from-orange-600 to-red-700 text-white"
@@ -320,7 +320,7 @@ export default function Navigation() {
                           scrollbarColor: theme === "light" ? 'rgba(249, 115, 22, 0.5) rgba(249, 115, 22, 0.1)' : 'rgba(255, 255, 255, 0.3) rgba(255, 255, 255, 0.1)'
                         }}
                       >
-                        <div className="grid grid-cols-3 gap-6">
+                        <div className="grid grid-cols-4 gap-5">
                           {academicsSubmenus.schools.map((school) => (
                             <div key={school.name}>
                               {school.external ? (
