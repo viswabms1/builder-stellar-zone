@@ -71,6 +71,37 @@ type FacultyCardProps = {
 };
 
 function FacultyCard({ member }: FacultyCardProps) {
+  if (member.profileUrl) {
+    return (
+      <Link to={member.profileUrl} className="group">
+        <Card className="overflow-hidden border border-border/40 bg-card/40 transition-all hover:shadow-lg hover:-translate-y-1 cursor-pointer h-full">
+          {member.image && (
+            <AspectRatio ratio={1 / 1}>
+              <img
+                src={member.image}
+                alt={member.name}
+                className="h-full w-full object-cover group-hover:scale-105 transition-transform"
+              />
+            </AspectRatio>
+          )}
+          <CardHeader>
+            <CardTitle className="text-lg font-display">{member.name}</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-3">
+            <div>
+              <p className="text-sm text-foreground/80">{member.title}</p>
+              <p className="text-xs text-foreground/60">Qualification: {member.qualifications}</p>
+            </div>
+            <div className="flex items-center text-brand-magenta text-sm font-medium">
+              View Profile
+              <ChevronRight className="ml-2 h-4 w-4" />
+            </div>
+          </CardContent>
+        </Card>
+      </Link>
+    );
+  }
+
   return (
     <Card className="overflow-hidden border border-border/40 bg-card/40 transition-all hover:shadow-lg">
       {member.image && (
@@ -90,14 +121,6 @@ function FacultyCard({ member }: FacultyCardProps) {
           <p className="text-sm text-foreground/80">{member.title}</p>
           <p className="text-xs text-foreground/60">Qualification: {member.qualifications}</p>
         </div>
-        {member.profileUrl && (
-          <Link to={member.profileUrl} asChild>
-            <Button variant="outline" size="sm" className="w-full">
-              View Profile
-              <ChevronRight className="ml-2 h-4 w-4" />
-            </Button>
-          </Link>
-        )}
       </CardContent>
     </Card>
   );
