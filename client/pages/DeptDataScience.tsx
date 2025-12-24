@@ -374,7 +374,7 @@ function CurriculumLibrary() {
   const programs: CurriculumProgram[] = [
     {
       id: "btech",
-      label: "B.Tech Data Science",
+      label: "B.Tech CSE (Data Science)",
       description: "4-year undergraduate program with specialized tracks in machine learning, big data analytics, and business intelligence",
       image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=600&h=400&fit=crop",
       batches: [

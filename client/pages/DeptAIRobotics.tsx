@@ -374,7 +374,7 @@ function CurriculumLibrary() {
   const programs: CurriculumProgram[] = [
     {
       id: "btech",
-      label: "B.Tech AI and Robotics",
+      label: "B.Tech CSE (AI & Robotics)",
       description: "4-year undergraduate program integrating AI/ML, computer vision, and robotics for autonomous intelligent systems",
       image: "https://images.unsplash.com/photo-1488229297570-58c12e4cef56?q=80&w=600&h=400&fit=crop",
       batches: [

@@ -375,7 +375,7 @@ function CurriculumLibrary() {
   const programs: CurriculumProgram[] = [
     {
       id: "btech",
-      label: "B.Tech Cybersecurity",
+      label: "B.Tech CSE (Cybersecurity)",
       description: "4-year undergraduate program with specialized tracks in network security, cryptography, and secure systems",
       image: "https://images.unsplash.com/photo-1563986768609-7f64142852dc?q=80&w=600&h=400&fit=crop",
       batches: [

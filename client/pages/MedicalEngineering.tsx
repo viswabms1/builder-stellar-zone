@@ -259,7 +259,7 @@ function CurriculumLibrary() {
   const programs: CurriculumProgram[] = [
     {
       id: "btech",
-      label: "B.Tech Medical Engineering",
+      label: "B.Tech Computer Science and Medical Engineering",
       description: "4-year undergraduate program with specializations in biomedical devices, medical imaging, and healthcare technology",
       image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=600&h=400&fit=crop",
       batches: [

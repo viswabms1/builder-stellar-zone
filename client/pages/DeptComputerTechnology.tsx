@@ -811,7 +811,7 @@ function CurriculumLibrary() {
   const programs: CurriculumProgram[] = [
     {
       id: "btech",
-      label: "B.Tech Curriculum",
+      label: "B.Tech Computer Science & Technology",
       description: "4-year undergraduate pathway with industry-aligned specializations",
       image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=400&fit=crop",
       batches: [
