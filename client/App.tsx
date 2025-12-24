@@ -483,7 +483,7 @@ function App() {
                 />
                 <Route
                   path="/academics/engineering/computer-technology"
-                  element={<Engineering />}
+                  element={<DeptComputerTechnology />}
                 />
                 <Route
                   path="/academics/engineering/computer-science/faculty"
