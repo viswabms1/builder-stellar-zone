@@ -380,11 +380,8 @@ export default function Academics() {
             {schoolsData.map((school, index) => {
               const colors = colorClasses[school.color as keyof typeof colorClasses];
               
-              return (
-                <div
-                  key={index}
-                  className={`group h-full rounded-xl border ${colors.border} ${colors.bg} overflow-hidden backdrop-blur-sm hover:shadow-xl hover:shadow-brand-magenta/20 transition-all duration-500 hover:-translate-y-2 flex flex-col`}
-                >
+              const cardContent = (
+                <>
                   {/* Image Section */}
                   <div className="relative h-48 w-full overflow-hidden bg-gradient-to-br from-foreground/5 to-foreground/10">
                     <img
@@ -393,7 +390,7 @@ export default function Academics() {
                       className={`h-full w-full object-cover group-hover:scale-110 transition-transform duration-700 ${
                         school.title === "Online Degree Programs"
                           ? "object-contain bg-white/5"
-                          : school.title === "Computer Applications"
+                          : school.title === "Computer Applications" || school.title === "AI & Data Science"
                           ? "object-cover object-top"
                           : "object-cover"
                       }`}
@@ -408,33 +405,9 @@ export default function Academics() {
                   <div className="flex-1 p-3 flex flex-col justify-between">
                     <div>
                       <div className="mb-4">
-                        {school.href ? (
-                          school.href.startsWith("http") ? (
-                            <a
-                              href={school.href}
-                              target="_blank"
-                              rel="noreferrer"
-                              className="block rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-magenta/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-                            >
-                              <h3 className="text-xl font-bold text-foreground group-hover:text-brand-magenta transition-colors leading-tight font-display">
-                                {school.title}
-                              </h3>
-                            </a>
-                          ) : (
-                            <Link
-                              to={school.href}
-                              className="block rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-magenta/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-                            >
-                              <h3 className="text-xl font-bold text-foreground group-hover:text-brand-magenta transition-colors leading-tight font-display">
-                                {school.title}
-                              </h3>
-                            </Link>
-                          )
-                        ) : (
-                          <h3 className="text-xl font-bold text-foreground font-display">
-                            {school.title}
-                          </h3>
-                        )}
+                        <h3 className="text-xl font-bold text-foreground group-hover:text-brand-magenta transition-colors leading-tight font-display">
+                          {school.title}
+                        </h3>
                       </div>
 
                       <div className="space-y-3">
@@ -456,30 +429,40 @@ export default function Academics() {
 
                     {/* CTA Button */}
                     <div className="mt-6">
-                      {school.href ? (
-                        school.href.startsWith("http") ? (
-                          <a href={school.href} target="_blank" rel="noreferrer" className="block">
-                            <button className="w-full text-foreground font-semibold text-sm flex items-center justify-between gap-2 py-2 px-3 rounded-lg hover:bg-foreground/5 group-hover:text-brand-magenta transition-all group/btn">
-                              Explore School
-                              <ChevronRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                            </button>
-                          </a>
-                        ) : (
-                          <Link to={school.href} className="block">
-                            <button className="w-full text-foreground font-semibold text-sm flex items-center justify-between gap-2 py-2 px-3 rounded-lg hover:bg-foreground/5 group-hover:text-brand-magenta transition-all group/btn">
-                              Explore School
-                              <ChevronRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                            </button>
-                          </Link>
-                        )
-                      ) : (
-                        <button className="w-full text-foreground font-semibold text-sm flex items-center justify-between gap-2 py-2 px-3 rounded-lg hover:bg-foreground/5">
-                          Explore School
-                          <ChevronRight className="w-4 h-4" />
-                        </button>
-                      )}
+                      <button className="w-full text-foreground font-semibold text-sm flex items-center justify-between gap-2 py-2 px-3 rounded-lg hover:bg-foreground/5 group-hover:text-brand-magenta transition-all group/btn">
+                        Explore School
+                        <ChevronRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                      </button>
                     </div>
                   </div>
+                </>
+              );
+
+              return (
+                <div key={index}>
+                  {school.href ? (
+                    school.href.startsWith("http") ? (
+                      <a
+                        href={school.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className={`group h-full rounded-xl border ${colors.border} ${colors.bg} overflow-hidden backdrop-blur-sm hover:shadow-xl hover:shadow-brand-magenta/20 transition-all duration-500 hover:-translate-y-2 flex flex-col block`}
+                      >
+                        {cardContent}
+                      </a>
+                    ) : (
+                      <Link
+                        to={school.href}
+                        className={`group h-full rounded-xl border ${colors.border} ${colors.bg} overflow-hidden backdrop-blur-sm hover:shadow-xl hover:shadow-brand-magenta/20 transition-all duration-500 hover:-translate-y-2 flex flex-col block`}
+                      >
+                        {cardContent}
+                      </Link>
+                    )
+                  ) : (
+                    <div className={`group h-full rounded-xl border ${colors.border} ${colors.bg} overflow-hidden backdrop-blur-sm hover:shadow-xl hover:shadow-brand-magenta/20 transition-all duration-500 hover:-translate-y-2 flex flex-col`}>
+                      {cardContent}
+                    </div>
+                  )}
                 </div>
               );
             })}
