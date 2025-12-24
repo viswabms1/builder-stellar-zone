@@ -21,6 +21,7 @@ import {
   ClipboardList,
   Cpu,
   ArrowRight,
+  Zap,
 } from "lucide-react";
 
 export default function DeptCybersecurity() {
