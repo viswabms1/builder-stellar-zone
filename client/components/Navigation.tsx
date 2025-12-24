@@ -288,6 +288,86 @@ export default function Navigation() {
                   );
                 }
 
+                if (isAcademics) {
+                  return (
+                    <div
+                      key={idx}
+                      className="relative group"
+                      onMouseEnter={() => setAcademicsMenuOpen(true)}
+                      onMouseLeave={() => setAcademicsMenuOpen(false)}
+                    >
+                      <button className={sharedClasses}>
+                        <span>{item.name}</span>
+                        <ChevronDown className="w-4 h-4 group-hover:rotate-180 transition-transform" />
+                        {active && (
+                          <div
+                            className={`w-1 h-1 rounded-full ${
+                              theme === "light" ? "bg-orange-600" : "bg-white"
+                            }`}
+                          />
+                        )}
+                      </button>
+
+                      {/* Academics Mega Menu - Multi-column Layout */}
+                      <div
+                        className={`absolute left-0 top-full mt-0 w-auto min-w-max max-w-5xl rounded-lg shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 py-4 px-6 ${
+                          theme === "light"
+                            ? "bg-gradient-to-b from-orange-50 to-orange-100 text-gray-900 border border-orange-200"
+                            : "bg-gradient-to-b from-orange-600 to-red-700 text-white"
+                        }`}
+                      >
+                        <div className="grid grid-cols-3 gap-6">
+                          {academicsSubmenus.schools.map((school) => (
+                            <div key={school.name}>
+                              {school.external ? (
+                                <a
+                                  href={school.href}
+                                  target="_blank"
+                                  rel="noreferrer"
+                                  className={`block font-semibold text-sm mb-3 transition-colors hover:text-orange-400 ${
+                                    theme === "light" ? "text-orange-900" : "text-white"
+                                  }`}
+                                >
+                                  {school.name}
+                                </a>
+                              ) : (
+                                <Link
+                                  to={school.href}
+                                  className={`block font-semibold text-sm mb-3 transition-colors hover:text-orange-400 ${
+                                    theme === "light" ? "text-orange-900" : "text-white"
+                                  }`}
+                                >
+                                  {school.name}
+                                </Link>
+                              )}
+
+                              {school.departments.length > 0 && (
+                                <div className="space-y-2 ml-2 border-l-2 pl-3" style={{
+                                  borderColor: theme === "light" ? "rgba(249, 115, 22, 0.3)" : "rgba(255, 255, 255, 0.2)"
+                                }}>
+                                  {school.departments.map((dept) => (
+                                    <Link
+                                      key={dept.name}
+                                      to={dept.href}
+                                      className={`block text-xs py-1 transition-colors ${
+                                        theme === "light"
+                                          ? "text-gray-700 hover:text-orange-700"
+                                          : "text-white/80 hover:text-white"
+                                      }`}
+                                    >
+                                      {dept.name}
+                                    </Link>
+                                  ))}
+                                </div>
+                              )}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  );
+                }
+
                 return (
                   <Link key={idx} to={item.href} className={sharedClasses}>
                     <span
