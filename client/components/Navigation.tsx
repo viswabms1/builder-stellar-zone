@@ -676,34 +676,45 @@ export default function Navigation() {
 
                             {(school as any).hasSubGroups ? (
                               <div className="ml-4 space-y-2">
-                                {(school as any).subGroups.map((group: any, groupIdx: number) => (
-                                  <div key={groupIdx}>
-                                    <div className={`px-4 py-1 text-xs font-semibold ${
-                                      theme === "light" ? "text-orange-900" : "text-white/90"
-                                    }`}>
-                                      {group.name}
+                                {(school as any).subGroups.map((group: any, groupIdx: number) => {
+                                  const isExpanded = expandedSubGroups.has(`${school.name}-${group.name}`);
+                                  return (
+                                    <div key={groupIdx}>
+                                      <button
+                                        onClick={() => toggleSubGroup(school.name, group.name)}
+                                        className={`w-full text-left px-4 py-1 text-xs font-semibold flex items-center gap-1 rounded transition-colors ${
+                                          theme === "light" ? "text-orange-900 hover:bg-orange-200" : "text-white/90 hover:bg-white/20"
+                                        }`}
+                                      >
+                                        <ChevronDown
+                                          className={`w-3 h-3 transition-transform ${isExpanded ? 'rotate-0' : '-rotate-90'}`}
+                                        />
+                                        {group.name}
+                                      </button>
+                                      {isExpanded && (
+                                        <div className="space-y-1">
+                                          {group.departments.map((dept: any, deptIdx: number) => (
+                                            <Link
+                                              key={deptIdx}
+                                              to={dept.href}
+                                              onClick={() => {
+                                                setIsOpen(false);
+                                                setAcademicsMenuOpen(false);
+                                              }}
+                                              className={`block px-6 py-1 text-xs rounded transition-colors ${
+                                                theme === "light"
+                                                  ? "text-gray-700 hover:bg-orange-200"
+                                                  : "text-white/80 hover:bg-white/20"
+                                              }`}
+                                            >
+                                              {dept.name}
+                                            </Link>
+                                          ))}
+                                        </div>
+                                      )}
                                     </div>
-                                    <div className="space-y-1">
-                                      {group.departments.map((dept: any, deptIdx: number) => (
-                                        <Link
-                                          key={deptIdx}
-                                          to={dept.href}
-                                          onClick={() => {
-                                            setIsOpen(false);
-                                            setAcademicsMenuOpen(false);
-                                          }}
-                                          className={`block px-6 py-1 text-xs rounded transition-colors ${
-                                            theme === "light"
-                                              ? "text-gray-700 hover:bg-orange-200"
-                                              : "text-white/80 hover:bg-white/20"
-                                          }`}
-                                        >
-                                          {dept.name}
-                                        </Link>
-                                      ))}
-                                    </div>
-                                  </div>
-                                ))}
+                                  );
+                                })}
                               </div>
                             ) : school.departments.length > 0 && (
                               <div className="ml-4 space-y-1">
