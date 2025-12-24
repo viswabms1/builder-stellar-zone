@@ -677,13 +677,13 @@ export default function Index() {
               const style = styles[index % styles.length];
 
               const cardElement = (
-                <div className={`rounded-none overflow-hidden transition-all duration-300 group hover:shadow-lg hover:shadow-brand-magenta/10 hover:-translate-y-2 cursor-pointer h-full`}>
+                <div className={`rounded-none overflow-hidden cursor-pointer h-full`}>
                   {/* Image Container */}
                   <div className="relative w-full aspect-square overflow-hidden bg-foreground/5 flex items-center justify-center">
                     <img
                       src={school.image}
                       alt={school.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="w-full h-full object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent pointer-events-none" />
                   </div>
