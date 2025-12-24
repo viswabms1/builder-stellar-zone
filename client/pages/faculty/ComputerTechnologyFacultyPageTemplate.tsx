@@ -97,21 +97,18 @@ export default function ComputerTechnologyFacultyPageTemplate({ faculty }: Facul
             </Card>
 
             {topics.length > 0 && (
-              <div className="space-y-3">
-                <h3 className="font-semibold font-display">Research Gallery</h3>
-                <div className="grid sm:grid-cols-2 gap-4">
+              <Card className="border border-border/50 bg-card/50">
+                <CardHeader>
+                  <CardTitle className="font-display">Areas of Interest</CardTitle>
+                </CardHeader>
+                <CardContent className="flex flex-wrap gap-2">
                   {topics.map((topic) => (
-                    <Card key={topic} className="overflow-hidden border border-border/40 bg-card/40">
-                      <div className="relative aspect-video overflow-hidden">
-                        <img src={imgFor(topic)} alt={topic} className="w-full h-full object-cover" />
-                      </div>
-                      <CardContent className="pt-3">
-                        <div className="text-sm text-foreground font-body">{topic}</div>
-                      </CardContent>
-                    </Card>
+                    <Badge key={topic} className="bg-brand-orange/10 text-brand-orange">
+                      {topic}
+                    </Badge>
                   ))}
-                </div>
-              </div>
+                </CardContent>
+              </Card>
             )}
           </div>
 
