@@ -868,12 +868,12 @@ export default function Index() {
           <div className="grid lg:grid-cols-3 gap-0 items-start">
             {/* Featured Event - Left side */}
             <div className="lg:col-span-2">
-              <div className="group rounded-none overflow-hidden border border-orange-500/20 bg-orange-500/10 backdrop-blur-sm hover:shadow-xl hover:shadow-brand-magenta/10 transition-all">
+              <div className="rounded-none overflow-hidden border border-orange-500/20 bg-orange-500/10">
                 <div className="relative h-96 overflow-hidden">
                   <img
                     src={allEvents[selectedEventIndex].image}
                     alt={allEvents[selectedEventIndex].title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                 </div>
