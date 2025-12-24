@@ -441,11 +441,11 @@ function App() {
                 <Route path="/academics/engineering/data-science/faculty/ms-snigdha-sikha-kashyap" element={<MsSnigdhaSikhakashyapPage />} />
                 <Route path="/academics/engineering/data-science/faculty/dr-jobin-thomas" element={<DrJobinThomasPage />} />
                 <Route
-                  path="/academics/engineering/cse-cyber-security"
+                  path="/academics/engineering/cybersecurity"
                   element={<DeptCybersecurity />}
                 />
                 <Route
-                  path="/academics/engineering/cse-cyber-security/faculty"
+                  path="/academics/engineering/cybersecurity/faculty"
                   element={<FacultyCybersecurity />}
                 />
                 <Route path="/academics/engineering/cybersecurity/faculty/dr-dilip-kumar-jang-bahadur-saini" element={<DrDilipKumarJangBahadurSainiPage />} />
