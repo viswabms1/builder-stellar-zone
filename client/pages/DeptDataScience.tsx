@@ -132,6 +132,8 @@ export default function DeptDataScience() {
         </div>
       </section>
 
+      <CurriculumLibrary />
+
       <AccreditationDocuments />
 
       <NoticeBoard />
@@ -335,6 +337,20 @@ export default function DeptDataScience() {
       </section>
     </div>
   );
+}
+
+interface CurriculumProgram {
+  id: string;
+  label: string;
+  description: string;
+  image: string;
+  batches: CurriculumBatch[];
+}
+
+interface CurriculumBatch {
+  year: string;
+  summary: string;
+  documentUrl?: string;
 }
 
 interface LabItem {
