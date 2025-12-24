@@ -179,6 +179,19 @@ export default function Academics() {
     },
     {
       icon: Cpu,
+      title: "AI & Data Science",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop",
+      programs: [
+        "Machine Learning",
+        "Big Data Analytics",
+        "Data Science",
+        "Deep Learning",
+      ],
+      color: "magenta",
+      href: "/academics/engineering/cse-ai-ds",
+    },
+    {
+      icon: Cpu,
       title: "Computer Applications",
       image: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F81d450f810104dc8926ff033cbb8ec87?format=webp&width=800",
       programs: [
