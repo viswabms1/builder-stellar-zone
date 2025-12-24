@@ -356,7 +356,36 @@ export default function Navigation() {
                                 </Link>
                               )}
 
-                              {school.departments.length > 0 && (
+                              {(school as any).hasSubGroups ? (
+                                <div className="space-y-4 ml-2">
+                                  {(school as any).subGroups.map((group: any) => (
+                                    <div key={group.name} className="border-l-2 pl-3" style={{
+                                      borderColor: theme === "light" ? "rgba(249, 115, 22, 0.3)" : "rgba(255, 255, 255, 0.2)"
+                                    }}>
+                                      <div className={`text-xs font-semibold mb-2 ${
+                                        theme === "light" ? "text-orange-900" : "text-white/90"
+                                      }`}>
+                                        {group.name}
+                                      </div>
+                                      <div className="space-y-1">
+                                        {group.departments.map((dept: any) => (
+                                          <Link
+                                            key={dept.name}
+                                            to={dept.href}
+                                            className={`block text-xs py-1 transition-colors ${
+                                              theme === "light"
+                                                ? "text-gray-700 hover:text-orange-700"
+                                                : "text-white/80 hover:text-white"
+                                            }`}
+                                          >
+                                            {dept.name}
+                                          </Link>
+                                        ))}
+                                      </div>
+                                    </div>
+                                  ))}
+                                </div>
+                              ) : school.departments.length > 0 && (
                                 <div className="space-y-2 ml-2 border-l-2 pl-3" style={{
                                   borderColor: theme === "light" ? "rgba(249, 115, 22, 0.3)" : "rgba(255, 255, 255, 0.2)"
                                 }}>
