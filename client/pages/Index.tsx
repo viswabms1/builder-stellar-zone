@@ -69,7 +69,7 @@ function HeroVideo() {
 
   return (
     <div className="w-full h-full relative overflow-hidden">
-      {/* Video with AI-enhanced effects */}
+      {/* Video */}
       <video
         ref={videoRef}
         src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F389ede098f8743368a37b080b1969b8a?alt=media&token=101276cc-1be0-485d-a4a8-86f1e71c260f&apiKey=4aa279a8430d441dba9c55f659831878"
@@ -78,30 +78,10 @@ function HeroVideo() {
         loop
         playsInline
         className="w-full h-full object-cover"
-        style={{
-          filter: "brightness(1.1) contrast(1.15) saturate(1.2)",
-        }}
       />
 
-      {/* Animated Gradient Overlay - AI Effect */}
+      {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/30 pointer-events-none"></div>
-
-      {/* Animated Corner Glow Effects */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-brand-magenta/5 rounded-full filter blur-3xl opacity-60 animate-float pointer-events-none"></div>
-      <div
-        className="absolute bottom-0 right-0 w-96 h-96 bg-brand-orange/5 rounded-full filter blur-3xl opacity-60 animate-float pointer-events-none"
-        style={{ animationDelay: "2s" }}
-      ></div>
-
-      {/* Subtle Scan Line Effect */}
-      <div
-        className="absolute inset-0 opacity-5 pointer-events-none"
-        style={{
-          backgroundImage:
-            "repeating-linear-gradient(0deg, rgba(255,255,255,.03) 0px, rgba(255,255,255,.03) 1px, transparent 1px, transparent 2px)",
-          animation: "scanlines 8s linear infinite",
-        }}
-      ></div>
 
       {/* Mute/Unmute Button */}
       <button
@@ -115,13 +95,6 @@ function HeroVideo() {
           <Volume2 className="h-5 w-5" />
         )}
       </button>
-
-      <style>{`
-        @keyframes scanlines {
-          0% { transform: translateY(0); }
-          100% { transform: translateY(10px); }
-        }
-      `}</style>
     </div>
   );
 }
