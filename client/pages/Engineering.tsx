@@ -196,7 +196,7 @@ const ENGINEERING_DEPARTMENTS: EngineeringDepartment[] = [
       "Engineer data products with applied analytics, data governance, cloud-native pipelines and real-time dashboards.",
     image:
       "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?q=80&w=1600&auto=format&fit=crop",
-    link: "/academics/engineering/ai-ds",
+    link: "/academics/engineering/cse-ai-ds",
     highlights: ["Data Engineering", "Analytics Studio", "Cloud Pipelines"],
     overlay:
       "bg-gradient-to-br from-brand-blue/75 via-black/70 to-black/55 mix-blend-multiply",
