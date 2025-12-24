@@ -34,6 +34,7 @@ import FacultyMedicalEngineering from "./pages/FacultyMedicalEngineering";
 import RajeshTMPage from "./pages/faculty/RajeshTM";
 import PruthviPatelPage from "./pages/faculty/PruthviPatel";
 import ShahinaParveenPage from "./pages/faculty/MShahina Parveen";
+import ComputerTechnologyFacultyProfile from "./pages/ComputerTechnologyFacultyProfile";
 import CentreOfExcellence from "./pages/CentreOfExcellence";
 import VisionMission from "./pages/VisionMission";
 import History from "./pages/History";
@@ -499,8 +500,8 @@ function App() {
                   element={<PruthviPatelPage />}
                 />
                 <Route
-                  path="/academics/engineering/computer-technology/faculty/m-shahina-parveen"
-                  element={<ShahinaParveenPage />}
+                  path="/academics/engineering/computer-technology/faculty/:slug"
+                  element={<ComputerTechnologyFacultyProfile />}
                 />
                 <Route
                   path="/academics/engineering/computer-technology"
