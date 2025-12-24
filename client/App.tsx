@@ -31,6 +31,8 @@ import IQAC from "./pages/IQAC";
 import FacultyCSE from "./pages/FacultyCSE";
 import FacultyAIML from "./pages/FacultyAIML";
 import FacultyMedicalEngineering from "./pages/FacultyMedicalEngineering";
+import RajeshTMPage from "./pages/faculty/RajeshTM";
+import PruthviPatelPage from "./pages/faculty/PruthviPatel";
 import CentreOfExcellence from "./pages/CentreOfExcellence";
 import VisionMission from "./pages/VisionMission";
 import History from "./pages/History";
@@ -486,6 +488,14 @@ function App() {
                 <Route
                   path="/academics/engineering/cs-medical-engineering/faculty"
                   element={<FacultyMedicalEngineering />}
+                />
+                <Route
+                  path="/academics/engineering/cs-medical-engineering/faculty/dr-rajesh-tm"
+                  element={<RajeshTMPage />}
+                />
+                <Route
+                  path="/academics/engineering/cs-medical-engineering/faculty/prof-pruthvi-patel"
+                  element={<PruthviPatelPage />}
                 />
                 <Route
                   path="/academics/engineering/computer-technology"
