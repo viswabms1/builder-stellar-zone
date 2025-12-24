@@ -118,46 +118,23 @@ function VideoWithFrameCapture({
 
   useEffect(() => {
     const video = videoRef.current;
-    if (!video) return;
-
-    // If a poster is provided, use it directly
-    if (poster) {
-      video.poster = poster;
-      return;
-    }
-
-    let timeoutId: NodeJS.Timeout;
-
-    const captureFrame = () => {
-      try {
-        const canvas = document.createElement("canvas");
-        canvas.width = video.videoWidth || 640;
-        canvas.height = video.videoHeight || 360;
-        const ctx = canvas.getContext("2d");
-        if (ctx && video.videoWidth && video.videoHeight) {
-          ctx.drawImage(video, 0, 0);
-          const posterUrl = canvas.toDataURL("image/jpeg", 0.9);
-          video.poster = posterUrl;
-        }
-      } catch (error) {
-        console.error("Failed to capture video frame:", error);
-      }
-      video.removeEventListener("seeked", captureFrame);
-    };
+    if (!video || poster) return;
 
     const onLoadedMetadata = () => {
-      video.addEventListener("seeked", captureFrame);
-      // Try to capture at 1 second if available, otherwise use 0.66
-      const captureTime = Math.min(1, video.duration * 0.3);
-      video.currentTime = captureTime;
+      if (typeof video.duration === 'number') {
+        // Set poster via requestIdleCallback to avoid blocking scroll
+        if ('requestIdleCallback' in window) {
+          requestIdleCallback(() => {
+            const captureTime = Math.min(1, video.duration * 0.3);
+            video.currentTime = captureTime;
+          });
+        }
+      }
     };
 
     video.addEventListener("loadedmetadata", onLoadedMetadata);
-
     return () => {
-      if (timeoutId) clearTimeout(timeoutId);
       video.removeEventListener("loadedmetadata", onLoadedMetadata);
-      video.removeEventListener("seeked", captureFrame);
     };
   }, [src, poster]);
 
@@ -170,10 +147,11 @@ function VideoWithFrameCapture({
       <video
         ref={videoRef}
         src={src}
-        className={`w-full h-auto object-contain group-hover:scale-[1.02] transition-transform duration-500 ${rotate ? "rotate-[-90deg]" : ""}`}
+        poster={poster}
+        className={`w-full h-auto object-contain transition-transform duration-500 ${rotate ? "rotate-[-90deg]" : ""}`}
         controls
         controlsList="nodownload"
-        preload="auto"
+        preload="metadata"
         crossOrigin="anonymous"
         onPlay={onPlay}
         onPause={onPause}
