@@ -35,4 +35,6 @@ export type Faculty = FacultyEntry & {
   image: string;
   qualifications: string;
   slug: string;
+  interests?: string[];
+  email?: string;
 };
