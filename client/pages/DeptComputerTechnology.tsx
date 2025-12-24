@@ -131,6 +131,23 @@ export default function DeptComputerTechnology() {
         </div>
       </section>
 
+      {/* Leadership Section */}
+      <section className="px-3 py-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex items-center justify-between mb-8">
+            <h2 className="headline-3 font-display">Department Leadership</h2>
+            <Link to="/academics/engineering/computer-technology/faculty">
+              <Button variant="outline" className="border-brand-orange/40 hover:bg-brand-orange/10">
+                Explore full faculty list
+              </Button>
+            </Link>
+          </div>
+          <p className="text-foreground/80 max-w-3xl mb-6 font-body">
+            Our department is led by a team of well-qualified professionals with extensive experience and specialization across diverse subject areas, bringing substantial achievement in professional practice and research.
+          </p>
+        </div>
+      </section>
+
       {/* Philosophy & Approach */}
       <section className="px-3 py-8">
         <div className="max-w-7xl mx-auto">
