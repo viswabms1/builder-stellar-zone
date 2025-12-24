@@ -11,6 +11,7 @@ import { useState, useEffect } from "react";
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [aboutMenuOpen, setAboutMenuOpen] = useState(false);
+  const [academicsMenuOpen, setAcademicsMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const location = useLocation();
   const { t } = useLanguage();
