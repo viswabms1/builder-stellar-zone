@@ -161,7 +161,14 @@ export default function MedicalEngineering() {
       {/* Department Leadership */}
       <section className="px-3 py-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="headline-3 font-display mb-8">Department Leadership</h2>
+          <div className="flex items-center justify-between mb-8">
+            <h2 className="headline-3 font-display">Department Leadership</h2>
+            <Link to="/academics/engineering/cs-medical-engineering/faculty">
+              <Button variant="outline" className="border-brand-magenta/40 hover:bg-brand-magenta/10">
+                Explore full faculty list
+              </Button>
+            </Link>
+          </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {/* Chairperson */}
             <div>
