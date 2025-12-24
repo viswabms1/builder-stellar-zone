@@ -74,7 +74,7 @@ export default function Navigation() {
               { name: "B.Tech Aerospace Engineering", href: "/academics/engineering/aerospace-engineering" },
               { name: "B.Tech Electronics & Communication", href: "/academics/engineering/electronics-communication" },
               { name: "B.Tech Computer Science & Technology", href: "/academics/engineering/computer-technology" },
-              { name: "B.Tech Medical Engineering", href: "/academics/engineering/cs-medical-engineering" },
+              { name: "B.Tech Computer Science and Medical Engineering", href: "/academics/engineering/cs-medical-engineering" },
             ],
           },
           {
