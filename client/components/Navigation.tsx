@@ -62,6 +62,15 @@ export default function Navigation() {
         ],
       },
       {
+        name: "School of Health Sciences",
+        href: "/academics/health-sciences",
+        departments: [
+          { name: "Pharmacy", href: "/academics/health-sciences" },
+          { name: "Nursing", href: "/academics/health-sciences" },
+          { name: "CDSIMER", href: "/academics/health-sciences/cdsimer" },
+        ],
+      },
+      {
         name: "School of Law",
         href: "/academics/law",
         departments: [
@@ -73,15 +82,6 @@ export default function Navigation() {
         href: "/academics/management-studies",
         departments: [
           { name: "Explore Programs", href: "/academics/management-studies" },
-        ],
-      },
-      {
-        name: "School of Health Sciences",
-        href: "/academics/health-sciences",
-        departments: [
-          { name: "Pharmacy", href: "/academics/health-sciences" },
-          { name: "Nursing", href: "/academics/health-sciences" },
-          { name: "CDSIMER", href: "/academics/health-sciences/cdsimer" },
         ],
       },
       {
