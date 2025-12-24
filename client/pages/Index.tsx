@@ -418,19 +418,10 @@ export default function Index() {
           "https://images.pexels.com/photos/3862638/pexels-photo-3862638.jpeg",
       },
       {
-        key: "aiDataScience",
-        icon: Cpu,
-        color: "brand-magenta",
-        delay: "0.1s",
-        href: "/academics/engineering/cse-ai-ds",
-        image:
-          "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop",
-      },
-      {
         key: "computerApplications",
         icon: Cpu,
         color: "brand-magenta",
-        delay: "0.15s",
+        delay: "0.1s",
         href: "/academics/computer-applications",
         image:
           "https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg",
