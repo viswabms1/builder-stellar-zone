@@ -9,19 +9,6 @@ interface FacultyPageTemplateProps {
   faculty: Faculty;
 }
 
-const imgFor = (kw: string) => {
-  const k = kw.toLowerCase();
-  if (k.includes("ai") || k.includes("ml") || k.includes("machine") || k.includes("learning")) return "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1200&auto=format&fit=crop";
-  if (k.includes("data")) return "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop";
-  if (k.includes("cyber") || k.includes("security")) return "https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1200&auto=format&fit=crop";
-  if (k.includes("network") || k.includes("iot") || k.includes("embedded")) return "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop";
-  if (k.includes("cloud") || k.includes("devops") || k.includes("microservices")) return "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop";
-  if (k.includes("web") || k.includes("mobile") || k.includes("ui") || k.includes("ux") || k.includes("frontend")) return "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop";
-  if (k.includes("software") || k.includes("design") || k.includes("pattern") || k.includes("architecture")) return "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1200&auto=format&fit=crop";
-  if (k.includes("database") || k.includes("algorithm") || k.includes("structure")) return "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1200&auto=format&fit=crop";
-  return "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1200&auto=format&fit=crop";
-};
-
 export default function ComputerTechnologyFacultyPageTemplate({ faculty }: FacultyPageTemplateProps) {
   const bg = "https://images.unsplash.com/photo-1534723328310-e82dad3ee43f?q=80&w=1600&auto=format&fit=crop";
   const topics = faculty.interests || [];
