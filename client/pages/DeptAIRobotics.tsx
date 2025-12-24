@@ -20,6 +20,7 @@ import {
   CalendarDays,
   ClipboardList,
   ArrowRight,
+  Zap,
 } from "lucide-react";
 
 export default function DeptAIRobotics() {
