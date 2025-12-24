@@ -41,6 +41,92 @@ export default function Navigation() {
     { name: t("nav.facilities"), href: "/about/facilities" },
   ];
 
+  const academicsSubmenus = {
+    schools: [
+      {
+        name: "School of Engineering",
+        href: "/academics/engineering",
+        departments: [
+          { name: "Computer Science", href: "/academics/engineering/computer-science" },
+          { name: "CSE - AI & ML", href: "/academics/engineering/cse-aiml" },
+          { name: "CSE - AI & Data Science", href: "/academics/engineering/cse-ai-ds" },
+          { name: "Cybersecurity", href: "/academics/engineering/cybersecurity" },
+          { name: "Data Science", href: "/academics/engineering/data-science" },
+          { name: "AI & Robotics", href: "/academics/engineering/ai-robotics" },
+          { name: "Mechanical Engineering", href: "/academics/engineering/mechanical-engineering" },
+          { name: "Aerospace Engineering", href: "/academics/engineering/aerospace-engineering" },
+          { name: "Electronics & Communication", href: "/academics/engineering/electronics-communication" },
+          { name: "Computer Technology", href: "/academics/engineering/computer-technology" },
+          { name: "Medical Engineering", href: "/academics/engineering/cs-medical-engineering" },
+        ],
+      },
+      {
+        name: "School of Law",
+        href: "/academics/law",
+        departments: [
+          { name: "Explore Programs", href: "/academics/law" },
+        ],
+      },
+      {
+        name: "School of Commerce & Management",
+        href: "/academics/management-studies",
+        departments: [
+          { name: "Explore Programs", href: "/academics/management-studies" },
+        ],
+      },
+      {
+        name: "School of Health Sciences",
+        href: "/academics/health-sciences",
+        departments: [
+          { name: "Pharmacy", href: "/academics/health-sciences" },
+          { name: "Nursing", href: "/academics/health-sciences" },
+          { name: "CDSIMER", href: "/academics/health-sciences/cdsimer" },
+        ],
+      },
+      {
+        name: "School of Applied Sciences",
+        href: "/academics/basic-applied-sciences",
+        departments: [
+          { name: "Explore Programs", href: "/academics/basic-applied-sciences" },
+        ],
+      },
+      {
+        name: "School of Design & Digital Media",
+        href: "/academics/design/bdesign",
+        departments: [
+          { name: "B.Design", href: "/academics/design/bdesign" },
+        ],
+      },
+      {
+        name: "School of Media & Communication",
+        href: "/academics/journalism-mass-communication",
+        departments: [
+          { name: "Journalism & Mass Communication", href: "/academics/journalism-mass-communication" },
+        ],
+      },
+      {
+        name: "Computer Applications",
+        href: "/academics/computer-applications",
+        departments: [
+          { name: "Explore Programs", href: "/academics/computer-applications" },
+        ],
+      },
+      {
+        name: "Medical Education & Research (CDSIMER)",
+        href: "https://cdsimer.edu.in",
+        departments: [],
+        external: true,
+      },
+      {
+        name: "Center for Executive Education",
+        href: "/academics/cee",
+        departments: [
+          { name: "Explore Programs", href: "/academics/cee" },
+        ],
+      },
+    ],
+  };
+
   const topMenuItems = [
     { name: "Alumni", href: "/alumni" },
     { name: "Library", href: "/library" },
