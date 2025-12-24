@@ -12,10 +12,22 @@ export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [aboutMenuOpen, setAboutMenuOpen] = useState(false);
   const [academicsMenuOpen, setAcademicsMenuOpen] = useState(false);
+  const [expandedSubGroups, setExpandedSubGroups] = useState<Set<string>>(new Set());
   const [searchOpen, setSearchOpen] = useState(false);
   const location = useLocation();
   const { t } = useLanguage();
   const { theme } = useTheme();
+
+  const toggleSubGroup = (schoolName: string, groupName: string) => {
+    const key = `${schoolName}-${groupName}`;
+    const newSet = new Set(expandedSubGroups);
+    if (newSet.has(key)) {
+      newSet.delete(key);
+    } else {
+      newSet.add(key);
+    }
+    setExpandedSubGroups(newSet);
+  };
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
