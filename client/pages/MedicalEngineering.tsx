@@ -173,35 +173,39 @@ export default function MedicalEngineering() {
             {/* Chairperson */}
             <div>
               <p className="text-xs font-semibold text-brand-magenta uppercase tracking-wider mb-2">Chairperson</p>
-              <div className="group relative overflow-hidden rounded-xl border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-magenta/10 transition-all">
-                <div className="aspect-square w-full bg-gradient-to-br from-brand-magenta/20 to-brand-magenta/5 flex items-center justify-center">
-                  <div className="text-center">
-                    <Microscope className="w-12 h-12 text-brand-magenta/60 mx-auto mb-2" />
+              <Link to="/academics/engineering/cs-medical-engineering/faculty/dr-rajesh-tm" className="group block">
+                <div className="relative overflow-hidden rounded-xl border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-magenta/10 hover:-translate-y-1 transition-all cursor-pointer">
+                  <div className="aspect-square w-full bg-gradient-to-br from-brand-magenta/20 to-brand-magenta/5 flex items-center justify-center group-hover:scale-105 transition-transform">
+                    <div className="text-center">
+                      <Microscope className="w-12 h-12 text-brand-magenta/60 mx-auto mb-2" />
+                    </div>
+                  </div>
+                  <div className="p-3">
+                    <div className="text-foreground/80 text-xs font-medium mb-1">Associate Professor</div>
+                    <div className="text-foreground font-semibold text-sm font-display mb-2">Dr. Rajesh T M</div>
+                    <div className="text-foreground/60 text-xs">Qualification: Ph.D</div>
                   </div>
                 </div>
-                <div className="p-3">
-                  <div className="text-foreground/80 text-xs font-medium mb-1">Associate Professor</div>
-                  <div className="text-foreground font-semibold text-sm font-display mb-2">Dr. Rajesh T M</div>
-                  <div className="text-foreground/60 text-xs">Qualification: Ph.D</div>
-                </div>
-              </div>
+              </Link>
             </div>
 
             {/* Faculty Member */}
             <div>
               <p className="text-xs font-semibold text-brand-magenta uppercase tracking-wider mb-2">Faculty</p>
-              <div className="group relative overflow-hidden rounded-xl border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-magenta/10 transition-all">
-                <div className="aspect-square w-full bg-gradient-to-br from-brand-magenta/20 to-brand-magenta/5 flex items-center justify-center">
-                  <div className="text-center">
-                    <Microscope className="w-12 h-12 text-brand-magenta/60 mx-auto mb-2" />
+              <Link to="/academics/engineering/cs-medical-engineering/faculty/prof-pruthvi-patel" className="group block">
+                <div className="relative overflow-hidden rounded-xl border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-magenta/10 hover:-translate-y-1 transition-all cursor-pointer">
+                  <div className="aspect-square w-full bg-gradient-to-br from-brand-magenta/20 to-brand-magenta/5 flex items-center justify-center group-hover:scale-105 transition-transform">
+                    <div className="text-center">
+                      <Microscope className="w-12 h-12 text-brand-magenta/60 mx-auto mb-2" />
+                    </div>
+                  </div>
+                  <div className="p-3">
+                    <div className="text-foreground/80 text-xs font-medium mb-1">Assistant Professor</div>
+                    <div className="text-foreground font-semibold text-sm font-display mb-2">Prof. Pruthvi Patel</div>
+                    <div className="text-foreground/60 text-xs">Qualification: M.Tech</div>
                   </div>
                 </div>
-                <div className="p-3">
-                  <div className="text-foreground/80 text-xs font-medium mb-1">Assistant Professor</div>
-                  <div className="text-foreground font-semibold text-sm font-display mb-2">Prof. Pruthvi Patel</div>
-                  <div className="text-foreground/60 text-xs">Qualification: M.Tech</div>
-                </div>
-              </div>
+              </Link>
             </div>
           </div>
         </div>
