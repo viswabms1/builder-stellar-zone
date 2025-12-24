@@ -131,6 +131,8 @@ export default function DeptAIRobotics() {
         </div>
       </section>
 
+      <CurriculumLibrary />
+
       <AccreditationDocuments />
 
       <NoticeBoard />
@@ -336,6 +338,20 @@ export default function DeptAIRobotics() {
   );
 }
 
+interface CurriculumProgram {
+  id: string;
+  label: string;
+  description: string;
+  image: string;
+  batches: CurriculumBatch[];
+}
+
+interface CurriculumBatch {
+  year: string;
+  summary: string;
+  documentUrl?: string;
+}
+
 interface LabItem {
   title: string;
   image: string;
@@ -349,6 +365,155 @@ interface NoticeItem {
   description: string;
   image?: string;
   link?: string;
+}
+
+function CurriculumLibrary() {
+  const [openProgram, setOpenProgram] = useState<string | null>(null);
+
+  const programs: CurriculumProgram[] = [
+    {
+      id: "btech",
+      label: "B.Tech AI and Robotics",
+      description: "4-year undergraduate program integrating AI/ML, computer vision, and robotics for autonomous intelligent systems",
+      image: "https://images.unsplash.com/photo-1488229297570-58c12e4cef56?q=80&w=600&h=400&fit=crop",
+      batches: [
+        {
+          year: "2025-26",
+          summary: "Fundamentals of AI, robotics basics, and computer vision introduction",
+          documentUrl:
+            "https://www.dsu.edu.in/images/Engineering/AIR-dept/curriculum/BTech-AIR-Curriculum-2025-26.pdf",
+        },
+        {
+          year: "2026-27",
+          summary: "Machine learning, robotic kinematics, and advanced computer vision techniques",
+          documentUrl:
+            "https://www.dsu.edu.in/images/Engineering/AIR-dept/curriculum/BTech-AIR-Curriculum-2026-27.pdf",
+        },
+        {
+          year: "2027-28",
+          summary: "Deep learning, autonomous systems, motion planning, and human-robot interaction",
+          documentUrl:
+            "https://www.dsu.edu.in/images/Engineering/AIR-dept/curriculum/BTech-AIR-Curriculum-2027-28.pdf",
+        },
+        {
+          year: "2028-29",
+          summary: "Capstone projects, AI/robotics applications, and industry partnerships",
+          documentUrl:
+            "https://www.dsu.edu.in/images/Engineering/AIR-dept/curriculum/BTech-AIR-Curriculum-2028-29.pdf",
+        },
+      ],
+    },
+  ];
+
+  return (
+    <section className="px-6 py-16 bg-gradient-to-r from-brand-magenta/5 via-brand-magenta/5 to-brand-magenta/5">
+      <div className="mx-auto max-w-6xl space-y-8">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <h2 className="headline-2 mb-3 font-display">
+              <span className="text-foreground">Curriculum </span>
+              <span className="bg-brand-gradient bg-clip-text text-transparent">
+                Library
+              </span>
+            </h2>
+            <p className="max-w-2xl text-sm text-foreground sm:text-base font-body">
+              Explore comprehensive curriculum for the B.Tech AI and Robotics program. Access detailed course structures, learning outcomes, and downloadable syllabi.
+            </p>
+          </div>
+          <Badge className="w-fit rounded-full bg-brand-magenta/15 px-4 py-2 text-xs font-semibold text-brand-magenta border border-brand-magenta/20">
+            2025 – 2029
+          </Badge>
+        </div>
+
+        <div className="grid gap-6">
+          {programs.map((program) => {
+            const isOpen = openProgram === program.id;
+
+            return (
+              <div
+                key={program.id}
+                className="rounded-3xl border-2 border-brand-magenta/30 overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-brand-magenta/10 hover:-translate-y-1"
+              >
+                <div className="relative h-48 overflow-hidden">
+                  <img
+                    src={program.image}
+                    alt={program.label}
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+
+                <div className="p-6 bg-background/50 backdrop-blur-sm space-y-3">
+                  <div className="flex items-start gap-3">
+                    <Badge className="rounded-full border bg-brand-magenta/15 text-brand-magenta border-brand-magenta/20">
+                      Undergraduate
+                    </Badge>
+                  </div>
+                  <div>
+                    <h3 className="headline-3 font-display text-foreground mb-2">{program.label}</h3>
+                    <p className="text-sm text-foreground/80 font-body">{program.description}</p>
+                  </div>
+                  <Button
+                    variant="outline"
+                    className="w-full border-brand-magenta/30 hover:bg-brand-magenta/10 text-brand-magenta hover:text-brand-magenta"
+                    onClick={() => setOpenProgram(isOpen ? null : program.id)}
+                  >
+                    <span className="flex items-center justify-center gap-2">
+                      {isOpen ? "Hide" : "View"} Batches
+                      <ChevronDown
+                        className={`h-4 w-4 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
+                      />
+                    </span>
+                  </Button>
+
+                  {isOpen && (
+                    <div className="mt-4 space-y-3 border-t border-border/20 pt-4 animate-in fade-in slide-in-from-top-2 duration-300">
+                      {program.batches.map((batch, batchIdx) => (
+                        <div
+                          key={`${program.id}-${batch.year}`}
+                          className={`rounded-xl border border-border/40 bg-card/70 p-3 transition-all hover:border-brand-magenta/40 ${
+                            batchIdx === 0 ? "ring-2 ring-brand-magenta/20" : ""
+                          }`}
+                        >
+                          <div className="flex items-start justify-between gap-2 mb-2">
+                            <div className="flex items-center gap-2">
+                              <Badge className="rounded-full border text-xs bg-brand-magenta/20 text-brand-magenta border-brand-magenta/30">
+                                <CalendarDays className="h-3 w-3 mr-1" />
+                                {batch.year}
+                              </Badge>
+                              {batchIdx === 0 && (
+                                <Badge className="rounded-full bg-brand-magenta/20 text-brand-magenta border-brand-magenta/30 border text-xs">
+                                  <Zap className="h-3 w-3 mr-1" />
+                                  Current
+                                </Badge>
+                              )}
+                            </div>
+                          </div>
+                          <p className="text-xs text-foreground/80 font-body mb-3 leading-relaxed">{batch.summary}</p>
+                          {batch.documentUrl && (
+                            <Button
+                              variant="ghost"
+                              size="sm"
+                              className="w-full justify-center gap-1 rounded text-xs font-semibold bg-brand-magenta/10 text-brand-magenta hover:bg-brand-magenta/20"
+                              asChild
+                            >
+                              <a href={batch.documentUrl} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-1">
+                                <Download className="h-3 w-3" />
+                                PDF
+                              </a>
+                            </Button>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
 }
 
 function LabsFacilitiesCarousel() {
