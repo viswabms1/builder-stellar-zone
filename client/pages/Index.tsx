@@ -494,18 +494,26 @@ export default function Index() {
     return baseSchools.map((school) => ({
       ...school,
       title: (() => {
+        if (school.key === "aiDataScience") {
+          return "AI & Data Science";
+        }
         const translatedTitle = t(`academics.${school.key}.title`);
         return translatedTitle.startsWith("School of")
           ? translatedTitle
           : `School of ${translatedTitle}`;
       })(),
       description: "",
-      programs: [
-        t(`academics.${school.key}.programs.0`) || "Program 1",
-        t(`academics.${school.key}.programs.1`) || "Program 2",
-        t(`academics.${school.key}.programs.2`) || "Program 3",
-        t(`academics.${school.key}.programs.3`) || "Program 4",
-      ],
+      programs: (() => {
+        if (school.key === "aiDataScience") {
+          return ["Machine Learning", "Big Data Analytics", "Data Science", "Deep Learning"];
+        }
+        return [
+          t(`academics.${school.key}.programs.0`) || "Program 1",
+          t(`academics.${school.key}.programs.1`) || "Program 2",
+          t(`academics.${school.key}.programs.2`) || "Program 3",
+          t(`academics.${school.key}.programs.3`) || "Program 4",
+        ];
+      })(),
     }));
   };
 
