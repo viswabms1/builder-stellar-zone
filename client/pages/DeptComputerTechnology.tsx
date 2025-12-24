@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -12,13 +11,8 @@ import {
   GraduationCap,
   CheckCircle2,
   ChevronRight,
-  Download,
-  FileText,
   Award,
   Microscope,
-  ChevronDown,
-  CalendarDays,
-  ClipboardList,
   Lightbulb,
   ArrowRight,
 } from "lucide-react";
@@ -36,12 +30,12 @@ export default function DeptComputerTechnology() {
     "Project-based learning with practical experimentation in small groups",
     "Comprehensive coverage of hardware, software, networks, and databases",
     "Focus on critical thinking, problem exploration, and problem-solving",
-    "Hands-on practical work and industry-oriented projects",
+    "Strong industry and academia partnerships",
     "Entrepreneurship and startup ecosystem integration",
   ];
 
   const careers = [
-    "Software Engineer → Senior Software Engineer → Tech Lead",
+    "Software Engineer → Senior Engineer → Tech Lead → Architect",
     "Systems Architect → Enterprise Architect → CTO",
     "Product Manager → Senior Product Manager → Director",
     "Startup Founder → Scale-up CEO → Innovation Leader",
@@ -96,7 +90,7 @@ export default function DeptComputerTechnology() {
           <div className="lg:col-span-2 space-y-3">
             <h2 className="headline-3 font-display">Overview</h2>
             <p className="text-foreground leading-relaxed font-body">
-              The Department of Computer Science & Technology has a unique structure designed to respond to the vibrant progress in Information to Intelligence Technology. We focus on theoretical and application development to equip students with skills and competencies to envision products and make them a reality. Our curriculum integrates computer science applications framework with entrepreneurship, blending business and computing skills to create driving forces for innovative technology applications. Students engage in experimentation and practical work in small groups, acquiring a deeper understanding of hardware, software, networks, databases, and other elements through hands-on learning.
+              The Department of Computer Science & Technology has a unique structure designed to respond to the vibrant progress in Information to Intelligence Technology. We focus on theoretical and application development to equip students with skills and competencies to envision products and make them a reality. Our curriculum integrates computer science applications framework with entrepreneurship, blending business and computing skills to create driving forces for innovative technology applications.
             </p>
             <Card className="border border-border/50 bg-card/50 backdrop-blur-sm">
               <CardHeader className="pb-2">
@@ -120,12 +114,12 @@ export default function DeptComputerTechnology() {
               </div>
               <CardHeader>
                 <CardTitle className="font-display">Fast Facts</CardTitle>
-                <CardDescription className="font-body">What sets Computer Science & Technology at DSU apart</CardDescription>
+                <CardDescription className="font-body">What sets CST at DSU apart</CardDescription>
               </CardHeader>
               <CardContent className="grid gap-2 text-sm font-body">
                 <div className="flex items-center justify-between"><span>Program Type</span><span className="font-medium">B.Tech</span></div>
                 <div className="flex items-center justify-between"><span>Duration</span><span className="font-medium">4 Years</span></div>
-                <div className="flex items-center justify-between"><span>Industry Focus</span><span className="font-medium">Enterprise & Startups</span></div>
+                <div className="flex items-center justify-between"><span>Focus</span><span className="font-medium">Enterprise & Innovation</span></div>
               </CardContent>
             </Card>
           </div>
@@ -143,66 +137,22 @@ export default function DeptComputerTechnology() {
               </Button>
             </Link>
           </div>
-          <p className="text-foreground/80 max-w-3xl mb-6 font-body">
-            Our department is led by a team of well-qualified professionals with extensive experience and specialization across diverse subject areas, bringing substantial achievement in professional practice and research.
-          </p>
-        </div>
-      </section>
-
-      {/* Philosophy & Approach */}
-      <section className="px-3 py-8">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="headline-3 font-display mb-6">Teaching Philosophy</h2>
-          <div className="grid lg:grid-cols-2 gap-5">
-            <Card className="border border-border/50 bg-card/50 backdrop-blur-sm">
-              <CardHeader>
-                <CardTitle className="font-display">Learning Approach</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-3">
-                <p className="text-foreground text-sm font-body">
-                  We emphasize project-based learning where students work in small groups to explore real-world problems. Our focus on critical thinking and problem exploration enables students to develop comprehensive solutions using modern technologies.
-                </p>
-                <ul className="space-y-2">
-                  <li className="flex items-start gap-2 text-sm">
-                    <ChevronRight className="w-4 h-4 text-brand-orange mt-0.5 flex-shrink-0" />
-                    <span>Experimentation with hardware and software components</span>
-                  </li>
-                  <li className="flex items-start gap-2 text-sm">
-                    <ChevronRight className="w-4 h-4 text-brand-orange mt-0.5 flex-shrink-0" />
-                    <span>Practical work with networks and database systems</span>
-                  </li>
-                  <li className="flex items-start gap-2 text-sm">
-                    <ChevronRight className="w-4 h-4 text-brand-orange mt-0.5 flex-shrink-0" />
-                    <span>Industry partnerships and collaborative projects</span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card className="border border-border/50 bg-card/50 backdrop-blur-sm">
-              <CardHeader>
-                <CardTitle className="font-display">Faculty Excellence</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-3">
-                <p className="text-foreground text-sm font-body">
-                  Our department comprises well-qualified professionals with extensive experience and specialization across diverse subject areas. They bring industry expertise and research excellence to guide student learning.
-                </p>
-                <ul className="space-y-2">
-                  <li className="flex items-start gap-2 text-sm">
-                    <ChevronRight className="w-4 h-4 text-brand-orange mt-0.5 flex-shrink-0" />
-                    <span>Expert faculty with industry experience</span>
-                  </li>
-                  <li className="flex items-start gap-2 text-sm">
-                    <ChevronRight className="w-4 h-4 text-brand-orange mt-0.5 flex-shrink-0" />
-                    <span>Research-driven curriculum development</span>
-                  </li>
-                  <li className="flex items-start gap-2 text-sm">
-                    <ChevronRight className="w-4 h-4 text-brand-orange mt-0.5 flex-shrink-0" />
-                    <span>Mentorship and professional guidance</span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {/* Chairperson */}
+            <div>
+              <p className="text-xs font-semibold text-brand-orange uppercase tracking-wider mb-2">Chairperson</p>
+              <div className="group relative overflow-hidden rounded-xl border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-orange/10 transition-all cursor-pointer">
+                <div className="relative">
+                  <div className="aspect-square w-full"></div>
+                  <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=500&auto=format&fit=crop" alt="Dr M Shahina Parveen" className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+                </div>
+                <div className="absolute bottom-0 p-3 w-full">
+                  <div className="text-white text-xs opacity-80">Professor</div>
+                  <div className="text-white font-semibold text-sm font-display line-clamp-2">Dr M Shahina Parveen</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -227,42 +177,104 @@ export default function DeptComputerTechnology() {
             <h2 className="headline-3 mb-4 font-display">Get in Touch</h2>
             <Card className="overflow-hidden border border-border/50 bg-card/50">
               <div className="relative h-40">
-                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop" alt="Contact Department" className="w-full h-full object-cover" />
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop" alt="Contact CST" className="w-full h-full object-cover" />
               </div>
               <CardHeader>
                 <CardTitle className="font-display">Department Contact</CardTitle>
                 <CardDescription className="font-body">Chairperson, Computer Science & Technology</CardDescription>
               </CardHeader>
               <CardContent className="grid gap-2 text-sm font-body">
-                <p>For more information about the department, programs, and admissions:</p>
-                <p className="text-brand-orange font-medium">
-                  <a href="mailto:cst@dsu.edu.in">cst@dsu.edu.in</a>
-                </p>
+                <div className="flex items-center justify-between"><span>Email</span><a className="font-medium hover:underline" href="mailto:cst@dsu.edu.in">cst@dsu.edu.in</a></div>
               </CardContent>
             </Card>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="px-3 py-8">
-        <div className="max-w-4xl mx-auto">
-          <Card className="border border-brand-orange/20 bg-gradient-to-br from-brand-orange/10 to-transparent backdrop-blur-sm">
-            <CardHeader className="text-center">
-              <CardTitle className="headline-2 font-display">Ready to Begin Your Journey?</CardTitle>
-              <CardDescription className="text-lg mt-2 font-body">
-                Join the Department of Computer Science & Technology and transform your ideas into reality.
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="flex justify-center">
-              <a href="https://admissions.dsu.edu.in/" target="_blank" rel="noreferrer">
-                <Button size="lg" className="bg-brand-gradient text-foreground">
-                  Apply Now
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Button>
-              </a>
-            </CardContent>
-          </Card>
+      {/* Quick Links Section */}
+      <section className="px-3 py-20">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-8">
+            <h2 className="headline-2 mb-3 font-display">
+              <span className="text-foreground">Explore </span>
+              <span className="bg-brand-gradient bg-clip-text text-transparent">
+                More Opportunities
+              </span>
+            </h2>
+            <p className="text-foreground/80 font-body max-w-2xl mx-auto">
+              Discover placements, admission pathways, and career opportunities at DSU
+            </p>
+          </div>
+
+          <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-4">
+            {/* Placements */}
+            <Link
+              to="/placements"
+              className="group rounded-3xl border border-border/40 bg-card/60 backdrop-blur-sm overflow-hidden hover:shadow-lg hover:shadow-brand-orange/20 transition-all duration-500 hover:-translate-y-1"
+            >
+              <Card className="h-full border-0 bg-transparent">
+                <div className="relative h-32 bg-gradient-to-br from-brand-orange/20 to-brand-orange/10 flex items-center justify-center">
+                  <GraduationCap className="h-12 w-12 text-brand-orange/70 group-hover:text-brand-orange transition-colors" />
+                </div>
+                <CardHeader>
+                  <CardTitle className="font-display group-hover:text-brand-orange transition-colors">
+                    Placements
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-foreground/80 font-body">
+                    Career pathways with leading companies and startup opportunities
+                  </p>
+                </CardContent>
+              </Card>
+            </Link>
+
+            {/* Research */}
+            <Link
+              to="/research"
+              className="group rounded-3xl border border-border/40 bg-card/60 backdrop-blur-sm overflow-hidden hover:shadow-lg hover:shadow-brand-orange/20 transition-all duration-500 hover:-translate-y-1"
+            >
+              <Card className="h-full border-0 bg-transparent">
+                <div className="relative h-32 bg-gradient-to-br from-brand-orange/20 to-brand-orange/10 flex items-center justify-center">
+                  <Microscope className="h-12 w-12 text-brand-orange/70 group-hover:text-brand-orange transition-colors" />
+                </div>
+                <CardHeader>
+                  <CardTitle className="font-display group-hover:text-brand-orange transition-colors">
+                    Research & Innovation
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-foreground/80 font-body">
+                    Cutting-edge research initiatives driving the future of technology
+                  </p>
+                </CardContent>
+              </Card>
+            </Link>
+
+            {/* Admissions */}
+            <a
+              href="https://admissions.dsu.edu.in/"
+              target="_blank"
+              rel="noreferrer"
+              className="group rounded-3xl border border-border/40 bg-card/60 backdrop-blur-sm overflow-hidden hover:shadow-lg hover:shadow-brand-orange/20 transition-all duration-500 hover:-translate-y-1"
+            >
+              <Card className="h-full border-0 bg-transparent">
+                <div className="relative h-32 bg-gradient-to-br from-brand-orange/20 to-brand-orange/10 flex items-center justify-center">
+                  <Award className="h-12 w-12 text-brand-orange/70 group-hover:text-brand-orange transition-colors" />
+                </div>
+                <CardHeader>
+                  <CardTitle className="font-display group-hover:text-brand-orange transition-colors">
+                    Admissions
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-foreground/80 font-body">
+                    Join our dynamic community and start your journey with us
+                  </p>
+                </CardContent>
+              </Card>
+            </a>
+          </div>
         </div>
       </section>
     </div>
