@@ -158,6 +158,48 @@ export default function MedicalEngineering() {
         </div>
       </section>
 
+      {/* Department Leadership */}
+      <section className="px-3 py-8">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="headline-3 font-display mb-8">Department Leadership</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {/* Chairperson */}
+            <div>
+              <p className="text-xs font-semibold text-brand-magenta uppercase tracking-wider mb-2">Chairperson</p>
+              <div className="group relative overflow-hidden rounded-xl border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-magenta/10 transition-all">
+                <div className="aspect-square w-full bg-gradient-to-br from-brand-magenta/20 to-brand-magenta/5 flex items-center justify-center">
+                  <div className="text-center">
+                    <Microscope className="w-12 h-12 text-brand-magenta/60 mx-auto mb-2" />
+                  </div>
+                </div>
+                <div className="p-3">
+                  <div className="text-foreground/80 text-xs font-medium mb-1">Associate Professor</div>
+                  <div className="text-foreground font-semibold text-sm font-display mb-2">Dr. Rajesh T M</div>
+                  <div className="text-foreground/60 text-xs">Qualification: Ph.D</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Faculty Member */}
+            <div>
+              <p className="text-xs font-semibold text-brand-magenta uppercase tracking-wider mb-2">Faculty</p>
+              <div className="group relative overflow-hidden rounded-xl border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-magenta/10 transition-all">
+                <div className="aspect-square w-full bg-gradient-to-br from-brand-magenta/20 to-brand-magenta/5 flex items-center justify-center">
+                  <div className="text-center">
+                    <Microscope className="w-12 h-12 text-brand-magenta/60 mx-auto mb-2" />
+                  </div>
+                </div>
+                <div className="p-3">
+                  <div className="text-foreground/80 text-xs font-medium mb-1">Assistant Professor</div>
+                  <div className="text-foreground font-semibold text-sm font-display mb-2">Prof. Pruthvi Patel</div>
+                  <div className="text-foreground/60 text-xs">Qualification: M.Tech</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="px-3 py-8">
         <div className="max-w-4xl mx-auto">
