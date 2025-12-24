@@ -47,19 +47,30 @@ export default function Navigation() {
       {
         name: "School of Engineering",
         href: "/academics/engineering",
-        departments: [
-          { name: "B.Tech CSE", href: "/academics/engineering/computer-science" },
-          { name: "B.Tech CSE (AI & ML)", href: "/academics/engineering/cse-aiml" },
-          { name: "B.Tech CSE (AI & Data Science)", href: "/academics/engineering/cse-ai-ds" },
-          { name: "B.Tech CSE (Cybersecurity)", href: "/academics/engineering/cybersecurity" },
-          { name: "B.Tech CSE (Data Science)", href: "/academics/engineering/data-science" },
-          { name: "B.Tech CSE (AI & Robotics)", href: "/academics/engineering/ai-robotics" },
-          { name: "Department of Mechanical Engineering", href: "/academics/engineering/mechanical-engineering" },
-          { name: "Department of Aerospace Engineering", href: "/academics/engineering/aerospace-engineering" },
-          { name: "Electronics & Communication", href: "/academics/engineering/electronics-communication" },
-          { name: "Department of Computer Science & Technology", href: "/academics/engineering/computer-technology" },
-          { name: "Medical Engineering", href: "/academics/engineering/cs-medical-engineering" },
+        hasSubGroups: true,
+        subGroups: [
+          {
+            name: "B.Tech",
+            departments: [
+              { name: "B.Tech CSE", href: "/academics/engineering/computer-science" },
+              { name: "B.Tech CSE (AI & ML)", href: "/academics/engineering/cse-aiml" },
+              { name: "B.Tech CSE (AI & Data Science)", href: "/academics/engineering/cse-ai-ds" },
+              { name: "B.Tech CSE (Cybersecurity)", href: "/academics/engineering/cybersecurity" },
+              { name: "B.Tech CSE (Data Science)", href: "/academics/engineering/data-science" },
+              { name: "B.Tech CSE (AI & Robotics)", href: "/academics/engineering/ai-robotics" },
+              { name: "Department of Mechanical Engineering", href: "/academics/engineering/mechanical-engineering" },
+              { name: "Department of Aerospace Engineering", href: "/academics/engineering/aerospace-engineering" },
+              { name: "Electronics & Communication", href: "/academics/engineering/electronics-communication" },
+              { name: "Department of Computer Science & Technology", href: "/academics/engineering/computer-technology" },
+              { name: "Medical Engineering", href: "/academics/engineering/cs-medical-engineering" },
+            ],
+          },
+          {
+            name: "M.Tech",
+            departments: [],
+          },
         ],
+        departments: [],
       },
       {
         name: "School of Health Sciences",
