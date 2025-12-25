@@ -554,8 +554,27 @@ function CalendarResourceCard({ entry }: { entry: CalendarEntry }) {
   );
 }
 
+const HERO_VIDEOS = [
+  {
+    src: "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F7d6b23f7eb6c4846bf20f521c5ff3ab5?alt=media&token=895616b3-0f62-4da5-b72b-7839082d2f5d&apiKey=4aa279a8430d441dba9c55f659831878",
+    title: "Exceptional BCA Program",
+    subtitle: "Igniting Innovation in the Digital Age"
+  },
+  {
+    src: "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F5414ec6f48734ab9baccd606b4e3593e?alt=media&token=56076a75-30f6-4358-980e-b66e87a0086d&apiKey=4aa279a8430d441dba9c55f659831878",
+    title: "Next-Gen MCA Program",
+    subtitle: "Master the Digital Frontier"
+  },
+  {
+    src: "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F965cdc3a67d144a6943c338de9b248bc?alt=media&token=cf72f67b-3858-40ff-b82c-ccab09590f70&apiKey=4aa279a8430d441dba9c55f659831878",
+    title: "Industry-Ready Data Science",
+    subtitle: "Offers Cutting-Edge Programs"
+  }
+];
+
 function HeroVideo() {
   const [isMuted, setIsMuted] = useState(true);
+  const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   const toggleMute = () => {
@@ -568,18 +587,26 @@ function HeroVideo() {
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
-
     video.muted = isMuted;
   }, [isMuted]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentVideoIndex((prev) => (prev + 1) % HERO_VIDEOS.length);
+    }, 8000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const currentVideo = HERO_VIDEOS[currentVideoIndex];
 
   return (
     <div className="w-full h-screen relative overflow-hidden flex items-end md:items-center justify-start">
       <video
+        key={currentVideoIndex}
         ref={videoRef}
-        src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F039b67f729094553afc521bcbf44f524?alt=media&token=f3f572a0-3afd-4a0a-9570-de176cc33653&apiKey=4aa279a8430d441dba9c55f659831878"
+        src={currentVideo.src}
         autoPlay
         muted={isMuted}
-        loop
         playsInline
         className="absolute inset-0 w-full h-full object-cover"
         style={{
@@ -603,11 +630,11 @@ function HeroVideo() {
           <p className="text-sm md:text-base text-white/80 mb-4 uppercase tracking-widest font-display">
             School of Computer Applications
           </p>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight font-display">
-            Build Tomorrow's Digital Experiences
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-2 leading-tight font-display">
+            {currentVideo.title}
           </h1>
           <p className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed max-w-xl font-display">
-            Master full-stack development, data science, and cloud-native innovation with industry mentorship, experiential labs, and career-focused learning
+            {currentVideo.subtitle}
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
@@ -641,6 +668,21 @@ function HeroVideo() {
             </a>
           </div>
         </div>
+      </div>
+
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex gap-2">
+        {HERO_VIDEOS.map((_, idx) => (
+          <button
+            key={idx}
+            onClick={() => setCurrentVideoIndex(idx)}
+            className={`h-1.5 rounded-full transition-all ${
+              idx === currentVideoIndex
+                ? "bg-white w-6"
+                : "bg-white/40 w-1.5 hover:bg-white/60"
+            }`}
+            aria-label={`Go to video ${idx + 1}`}
+          />
+        ))}
       </div>
 
       <button
