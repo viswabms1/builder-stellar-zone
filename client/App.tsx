@@ -51,6 +51,7 @@ import MedicalEngineering from "./pages/MedicalEngineering";
 import Physics from "./pages/Physics";
 import Chemistry from "./pages/Chemistry";
 import Mathematics from "./pages/Mathematics";
+import HumanitiesSocialSciences from "./pages/HumanitiesSocialSciences";
 import { ThemeProvider } from "./providers/theme-provider";
 import { LanguageProvider } from "./providers/language-provider";
 import FacultyProfile from "./pages/FacultyProfile";
