@@ -118,7 +118,7 @@ export default function FacultyPageTemplate({
                 </CardHeader>
                 <CardContent className="flex flex-wrap gap-2">
                   {topics.map((topic) => (
-                    <Badge key={topic} className={`bg-${colorClass}/10 text-${colorClass}`}>
+                    <Badge key={topic} className={`${config.colorBg} ${config.colorText}`}>
                       {topic}
                     </Badge>
                   ))}
