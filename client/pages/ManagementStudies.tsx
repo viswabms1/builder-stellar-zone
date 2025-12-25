@@ -431,7 +431,7 @@ const DEAN_INFO: DeanInfo = {
   title: "Professor | Dean (UG)",
   position: "Dean, School of Commerce and Management Studies",
   photo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fd39f4e0a74a64273b3cce774eb4a8f38?format=webp&width=800",
-  videoUrl: "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F0c95c62aa88741fca8ebdc32aade53d5?alt=media&token=c57ff4a9-aea8-4ff3-843b-23ce820ba630&apiKey=4aa279a8430d441dba9c55f659831878",
+  videoUrl: "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F5189dc50d1bc4bf294c7cc04b8c457a2?alt=media&token=0e287e76-019b-43c0-90d4-8dc5035c0670&apiKey=4aa279a8430d441dba9c55f659831878",
   borderColor: "border-amber-500/20",
   bgColor: "bg-amber-500/10",
 };
