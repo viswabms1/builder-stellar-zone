@@ -176,15 +176,14 @@ export default function Physics() {
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center justify-between mb-8">
             <h2 className="headline-3 font-display">Department Leadership</h2>
-            <a href="https://www.dsu.edu.in/academics/physics/faculty">
+            <Link to="/academics/physics/faculty">
               <Button variant="outline" className="border-brand-blue/40 hover:bg-brand-blue/10">
                 Explore full faculty list
               </Button>
-            </a>
+            </Link>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            <div>
-              <p className="text-xs font-semibold text-brand-blue uppercase tracking-wider mb-2">Chairman & Professor</p>
+            <Link to="/academics/physics/faculty/dr-yogesh-kalegowda">
               <div className="group relative overflow-hidden rounded-xl border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-blue/10 transition-all cursor-pointer">
                 <div className="relative">
                   <div className="aspect-square w-full"></div>
@@ -194,13 +193,12 @@ export default function Physics() {
                 <div className="absolute bottom-0 p-3 w-full">
                   <div className="text-white text-xs opacity-80">Chairman & Professor</div>
                   <div className="text-white font-semibold text-sm font-display line-clamp-2">Dr. Yogesh Kalegowda</div>
-                  <div className="text-white/70 text-xs mt-1">Ph.D.</div>
+                  <div className="text-white/70 text-xs mt-1">Ph.D., FIAAM</div>
                 </div>
               </div>
-            </div>
+            </Link>
 
-            <div>
-              <p className="text-xs font-semibold text-brand-blue uppercase tracking-wider mb-2">Research Professor</p>
+            <Link to="/academics/physics/faculty/dr-m-v-hanumantha-rao">
               <div className="group relative overflow-hidden rounded-xl border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-blue/10 transition-all cursor-pointer">
                 <div className="relative">
                   <div className="aspect-square w-full"></div>
@@ -213,10 +211,9 @@ export default function Physics() {
                   <div className="text-white/70 text-xs mt-1">Ph.D.</div>
                 </div>
               </div>
-            </div>
+            </Link>
 
-            <div>
-              <p className="text-xs font-semibold text-brand-blue uppercase tracking-wider mb-2">Professor</p>
+            <Link to="/academics/physics/faculty/dr-k-vijaya-kumar">
               <div className="group relative overflow-hidden rounded-xl border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-blue/10 transition-all cursor-pointer">
                 <div className="relative">
                   <div className="aspect-square w-full"></div>
@@ -229,7 +226,7 @@ export default function Physics() {
                   <div className="text-white/70 text-xs mt-1">Ph.D., FIAAM, IASA</div>
                 </div>
               </div>
-            </div>
+            </Link>
           </div>
         </div>
       </section>
