@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import { useLanguage } from "@/providers/language-provider";
 import { useTheme } from "@/providers/theme-provider";
+import { useAutoMuteOnScroll } from "@/hooks/useAutoMuteOnScroll";
 import { indexTranslations } from "@/lib/i18n-extended";
 import { Button } from "@/components/ui/button";
 import {
