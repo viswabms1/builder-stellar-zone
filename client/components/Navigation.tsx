@@ -79,7 +79,11 @@ export default function Navigation() {
           },
           {
             name: "M.Tech",
-            departments: [],
+            departments: [
+              { name: "M.Tech Computer Science", href: "/academics/engineering/computer-science" },
+              { name: "M.Tech Embedded Systems", href: "/academics/engineering/electronics-communication" },
+              { name: "M.Tech Design Engineering", href: "/academics/engineering/mechanical-engineering" },
+            ],
           },
         ],
         departments: [],
