@@ -9,6 +9,7 @@ import {
   CalendarDays,
   ChevronRight,
   Cpu,
+  Download,
   Eye,
   GraduationCap,
   Heart,
@@ -32,6 +33,12 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { DeanSection, type DeanInfo } from "@/components/DeanSection";
+import {
+  getComputerApplicationsEvents,
+  getComputerApplicationsNews,
+  getComputerApplicationsAnnouncements,
+  type NoticeItem as ImportedNoticeItem,
+} from "@/data/computer-applications-events";
 
 
 type ProgramCard = {
