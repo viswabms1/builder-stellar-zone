@@ -160,6 +160,69 @@ export default function Physics() {
         </div>
       </section>
 
+      {/* Department Leadership Section */}
+      <section className="px-3 py-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex items-center justify-between mb-8">
+            <h2 className="headline-3 font-display">Department Leadership</h2>
+            <a href="https://www.dsu.edu.in/academics/physics/faculty">
+              <Button variant="outline" className="border-brand-blue/40 hover:bg-brand-blue/10">
+                Explore full faculty list
+              </Button>
+            </a>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div>
+              <p className="text-xs font-semibold text-brand-blue uppercase tracking-wider mb-2">Chairman & Professor</p>
+              <div className="group relative overflow-hidden rounded-xl border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-blue/10 transition-all cursor-pointer">
+                <div className="relative">
+                  <div className="aspect-square w-full"></div>
+                  <img src="https://images.unsplash.com/photo-1507842072343-583f20270319?q=80&w=500&auto=format&fit=crop" alt="Dr. Yogesh Kalegowda" className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+                </div>
+                <div className="absolute bottom-0 p-3 w-full">
+                  <div className="text-white text-xs opacity-80">Chairman & Professor</div>
+                  <div className="text-white font-semibold text-sm font-display line-clamp-2">Dr. Yogesh Kalegowda</div>
+                  <div className="text-white/70 text-xs mt-1">Ph.D.</div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <p className="text-xs font-semibold text-brand-blue uppercase tracking-wider mb-2">Research Professor</p>
+              <div className="group relative overflow-hidden rounded-xl border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-blue/10 transition-all cursor-pointer">
+                <div className="relative">
+                  <div className="aspect-square w-full"></div>
+                  <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=500&auto=format&fit=crop" alt="Dr. M V Hanumantha Rao" className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+                </div>
+                <div className="absolute bottom-0 p-3 w-full">
+                  <div className="text-white text-xs opacity-80">Research Professor</div>
+                  <div className="text-white font-semibold text-sm font-display line-clamp-2">Dr. M V Hanumantha Rao</div>
+                  <div className="text-white/70 text-xs mt-1">Ph.D.</div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <p className="text-xs font-semibold text-brand-blue uppercase tracking-wider mb-2">Professor</p>
+              <div className="group relative overflow-hidden rounded-xl border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-blue/10 transition-all cursor-pointer">
+                <div className="relative">
+                  <div className="aspect-square w-full"></div>
+                  <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=500&auto=format&fit=crop" alt="Dr. K Vijaya Kumar" className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+                </div>
+                <div className="absolute bottom-0 p-3 w-full">
+                  <div className="text-white text-xs opacity-80">Professor</div>
+                  <div className="text-white font-semibold text-sm font-display line-clamp-2">Dr. K Vijaya Kumar</div>
+                  <div className="text-white/70 text-xs mt-1">Ph.D., FIAAM, IASA</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Department Contact */}
       <section className="px-3 py-8">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-5 items-start">
