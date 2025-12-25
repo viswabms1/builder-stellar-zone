@@ -358,7 +358,7 @@ const PG_PROGRAM_CARDS: ProgramCard[] = [
       "Specialise in marketing, finance, HR, analytics and operations with global immersion and industry projects.",
     image:
       "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1600&auto=format&fit=crop",
-    link: "https://www.dsu.edu.in/management-studies/mba",
+    link: "/academics/commerce-and-management/mba",
     highlights: ["Marketing", "Finance", "Global Exposure"],
     overlay: "bg-gradient-to-br from-brand-magenta/70 via-black/70 to-black/55 mix-blend-multiply",
     badgeClass: "bg-brand-magenta/30 text-foreground/90 border border-white/25 backdrop-blur",
