@@ -602,7 +602,7 @@ function HeroVideo() {
       <div className="relative max-w-7xl mx-auto px-3 w-full z-10 pb-20 md:pb-0">
         <div className="max-w-2xl">
           <p className="text-sm md:text-base text-white/80 mb-4 uppercase tracking-widest font-display">
-            School of Management Studies
+            School of Commerce and Management Studies
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
