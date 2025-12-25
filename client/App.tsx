@@ -418,6 +418,10 @@ function App() {
                   path="/academics/computer-applications"
                   element={<ComputerApplications />}
                 />
+                <Route
+                  path="/academics/computer-applications/bca"
+                  element={<BCA />}
+                />
                 <Route path="/academics/law" element={<Law />} />
                 <Route
                   path="/academics/management-studies"
