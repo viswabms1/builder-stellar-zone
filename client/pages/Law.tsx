@@ -586,9 +586,6 @@ function HeroVideo() {
           <p className="text-sm md:text-base text-white/80 mb-4 uppercase tracking-widest font-display">
             School of Law
           </p>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight font-display">
-            Gateway to New Age Lawyering
-          </h1>
 
           <div className="flex flex-col sm:flex-row gap-4">
             <a
