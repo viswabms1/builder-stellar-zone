@@ -276,6 +276,18 @@ function App() {
                 <Route path="/academics/engineering" element={<Engineering />} />
                 <Route path="/academics/physics" element={<Physics />} />
                 <Route path="/academics/chemistry" element={<Chemistry />} />
+                <Route path="/academics/chemistry/faculty" element={<ChemistryFacultyList />} />
+                <Route path="/academics/chemistry/faculty/venkataramanan-ns" element={<VenkataramanaNSProfile />} />
+                <Route path="/academics/chemistry/faculty/bhavana-rikhari" element={<BhavanaRikhariProfile />} />
+                <Route path="/academics/chemistry/faculty/sai-prasad-nayak" element={<SaiPrasadNayakProfile />} />
+                <Route path="/academics/chemistry/faculty/pradeep-kumar-badiya" element={<PradeepKumarBadiyaProfile />} />
+                <Route path="/academics/chemistry/faculty/shreeganesh-hegde" element={<ShreeganeshHegdeProfile />} />
+                <Route path="/academics/chemistry/faculty/sk-habibullah" element={<SKHabibullahProfile />} />
+                <Route path="/academics/chemistry/faculty/av-raghu" element={<AVRaghuProfile />} />
+                <Route path="/academics/chemistry/faculty/srinivasa-murthy" element={<SrinivasaMurthyProfile />} />
+                <Route path="/academics/chemistry/faculty/manas-barai" element={<ManasBaraiProfile />} />
+                <Route path="/academics/chemistry/faculty/dipen-biswakarma" element={<DipenBiswarkarmaProfile />} />
+                <Route path="/academics/chemistry/faculty/manjodth-kaur" element={<ManjodthKaurProfile />} />
                 <Route
                   path="/academics/engineering/electronics-communication"
                   element={<ElectronicsCommunication />}
