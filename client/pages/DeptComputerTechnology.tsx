@@ -91,6 +91,63 @@ export default function DeptComputerTechnology() {
         </div>
       </section>
 
+      {/* Programs Offered */}
+      <section className="px-3 py-8 bg-gradient-to-r from-brand-orange/5 via-brand-blue/5 to-brand-magenta/5 border-y border-border/30">
+        <div className="max-w-6xl mx-auto">
+          <div className="mb-8">
+            <h2 className="headline-2 font-display mb-2">Programs Offered</h2>
+            <p className="text-foreground/80 font-body">Choose your pathway to excellence</p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {/* B.Tech Program */}
+            <Card className="border border-border/50 bg-card/50 backdrop-blur-sm hover:shadow-lg transition-all">
+              <CardHeader>
+                <div className="flex items-center gap-2 mb-2">
+                  <GraduationCap className="w-5 h-5 text-brand-orange" />
+                  <Badge className="bg-brand-orange/20 text-brand-orange border-brand-orange/30">Undergraduate</Badge>
+                </div>
+                <CardTitle className="font-display">B.Tech Computer Science & Technology</CardTitle>
+                <CardDescription className="font-body">4-Year Program</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <p className="text-sm text-foreground font-body">Industry-focused software engineering</p>
+                <div className="flex flex-wrap gap-2">
+                  {["Enterprise Systems", "Cloud Computing", "DevOps", "Platform Engineering"].map((spec, i) => (
+                    <Badge key={i} variant="secondary" className="text-xs">{spec}</Badge>
+                  ))}
+                </div>
+                <a href="/academics/engineering/computer-technology">
+                  <Button variant="ghost" size="sm" className="w-full text-brand-orange hover:bg-brand-orange/10 mt-2">
+                    Explore <ArrowRight className="w-3 h-3 ml-1" />
+                  </Button>
+                </a>
+              </CardContent>
+            </Card>
+
+            {/* Quick Info */}
+            <Card className="border border-border/50 bg-card/50 backdrop-blur-sm md:col-span-2 lg:col-span-2">
+              <CardHeader>
+                <CardTitle className="text-lg font-display">Why Choose CST?</CardTitle>
+              </CardHeader>
+              <CardContent className="grid sm:grid-cols-3 gap-4 text-sm font-body">
+                <div className="flex items-center gap-2">
+                  <Award className="w-4 h-4 text-brand-orange flex-shrink-0" />
+                  <span>Industry-Aligned Curriculum</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Zap className="w-4 h-4 text-brand-orange flex-shrink-0" />
+                  <span>Hands-On Learning</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Building className="w-4 h-4 text-brand-orange flex-shrink-0" />
+                  <span>Enterprise Focus</span>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Overview */}
       <section className="px-3 py-8">
         <div className="max-w-6xl mx-auto grid lg:grid-cols-3 gap-5 items-start">
