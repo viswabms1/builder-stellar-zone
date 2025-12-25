@@ -134,7 +134,7 @@ export default function DeptAIML() {
 
 
             {/* Quick Info */}
-            <Card className="border border-border/50 bg-card/50 backdrop-blur-sm">
+            <Card className="border border-border/50 bg-card/50 backdrop-blur-sm md:col-span-2">
               <CardHeader>
                 <CardTitle className="text-lg font-display">Why Choose AI & ML?</CardTitle>
               </CardHeader>
