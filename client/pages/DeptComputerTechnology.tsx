@@ -841,38 +841,6 @@ function CurriculumLibrary() {
         },
       ],
     },
-    {
-      id: "mtech",
-      label: "M.Tech Curriculum",
-      description: "2-year postgraduate program focused on advanced research",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
-      batches: [
-        {
-          year: "2025-26",
-          summary: "Enterprise systems, platform engineering, and research methodologies",
-          documentUrl:
-            "https://www.dsu.edu.in/images/Engineering/CST-dept/curriculum/MTech-CST-Curriculum-2025-26.pdf",
-        },
-        {
-          year: "2026-27",
-          summary: "Scalable systems, cloud-native architectures, and innovation lab immersion",
-          documentUrl:
-            "https://www.dsu.edu.in/images/Engineering/CST-dept/curriculum/MTech-CST-Curriculum-2026-27.pdf",
-        },
-        {
-          year: "2027-28",
-          summary: "Advanced software design patterns, research dissertations, and publications",
-          documentUrl:
-            "https://www.dsu.edu.in/images/Engineering/CST-dept/curriculum/MTech-CST-Curriculum-2027-28.pdf",
-        },
-        {
-          year: "2028-29",
-          summary: "Emerging technologies, human-centric systems, and thesis publishing",
-          documentUrl:
-            "https://www.dsu.edu.in/images/Engineering/CST-dept/curriculum/MTech-CST-Curriculum-2028-29.pdf",
-        },
-      ],
-    },
   ];
 
   return (
