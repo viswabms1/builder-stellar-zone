@@ -344,9 +344,9 @@ export default function Navigation() {
                       onMouseEnter={() => setAcademicsMenuOpen(true)}
                       onMouseLeave={() => setAcademicsMenuOpen(false)}
                     >
-                      <button className={sharedClasses}>
+                      <button onClick={() => setAcademicsMenuOpen(!academicsMenuOpen)} className={sharedClasses}>
                         <span>{item.name}</span>
-                        <ChevronDown className="w-4 h-4 group-hover:rotate-180 transition-transform" />
+                        <ChevronDown className={`w-4 h-4 transition-transform ${academicsMenuOpen ? "rotate-180" : ""}`} />
                         {active && (
                           <div
                             className={`w-1 h-1 rounded-full ${
