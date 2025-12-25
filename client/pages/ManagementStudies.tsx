@@ -7,6 +7,7 @@ import {
   CalendarDays,
   ChevronRight,
   DollarSign,
+  Download,
   GraduationCap,
   Layers,
   Network,
@@ -27,6 +28,12 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { DeanSection, type DeanInfo } from "@/components/DeanSection";
+import {
+  getManagementEvents,
+  getManagementNews,
+  getManagementAnnouncements,
+  type NoticeItem as ImportedNoticeItem,
+} from "@/data/management-studies-events";
 
 
 type ProgramCard = {
