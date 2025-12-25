@@ -132,30 +132,6 @@ export default function DeptAIML() {
               </CardContent>
             </Card>
 
-            {/* M.Tech Program */}
-            <Card className="border border-border/50 bg-card/50 backdrop-blur-sm hover:shadow-lg transition-all">
-              <CardHeader>
-                <div className="flex items-center gap-2 mb-2">
-                  <BookOpen className="w-5 h-5 text-brand-blue" />
-                  <Badge className="bg-brand-blue/20 text-brand-blue border-brand-blue/30">Postgraduate</Badge>
-                </div>
-                <CardTitle className="font-display">M.Tech AI & Machine Learning</CardTitle>
-                <CardDescription className="font-body">2-Year Program</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-3">
-                <p className="text-sm text-foreground font-body">Advanced research in AI and ML</p>
-                <div className="flex flex-wrap gap-2">
-                  {["Deep Learning", "Research Focus", "Industry Mentorship"].map((spec, i) => (
-                    <Badge key={i} variant="secondary" className="text-xs">{spec}</Badge>
-                  ))}
-                </div>
-                <a href="/academics/engineering/ai-ml">
-                  <Button variant="ghost" size="sm" className="w-full text-brand-blue hover:bg-brand-blue/10 mt-2">
-                    Explore <ArrowRight className="w-3 h-3 ml-1" />
-                  </Button>
-                </a>
-              </CardContent>
-            </Card>
 
             {/* Quick Info */}
             <Card className="border border-border/50 bg-card/50 backdrop-blur-sm">
