@@ -158,13 +158,11 @@ export default function Footer() {
               to="/"
               className="inline-flex items-center gap-3 text-left text-white"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-gradient">
-                <img
-                  src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fc9f5a55fa7004ae596d21cc4fa4aed1f?format=webp&width=1200"
-                  alt="Dayananda Sagar University Logo"
-                  className="h-full w-full object-contain p-1.5"
-                />
-              </div>
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fc9f5a55fa7004ae596d21cc4fa4aed1f?format=webp&width=1200"
+                alt="Dayananda Sagar University Logo"
+                className="h-16 w-auto object-contain"
+              />
               <div>
                 <p className="text-xs uppercase tracking-[0.3em] text-white/60">
                   Dayananda Sagar University
