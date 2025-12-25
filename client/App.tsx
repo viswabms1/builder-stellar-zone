@@ -450,6 +450,7 @@ function App() {
                   element={<ComputerApplicationsFaculty />}
                 />
                 <Route path="/academics/law" element={<Law />} />
+                <Route path="/academics/law/faculty" element={<LawFaculty />} />
                 <Route path="/academics/law/programs" element={<LawPrograms />} />
                 <Route path="/academics/law/ba-llb-honors" element={<BALLBHonors />} />
                 <Route path="/academics/law/bba-llb-honors" element={<BBALLBHonors />} />
