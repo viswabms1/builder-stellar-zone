@@ -1,7 +1,7 @@
-import AIMLFacultyPageTemplate from "./AIMLFacultyPageTemplate";
+import FacultyPageTemplate from "./FacultyPageTemplate";
 import { aimlFaculty } from "@/data/aiml-faculty";
 
 export default function AnkitaThakkarPage() {
   const faculty = aimlFaculty.find(f => f.slug === "prof-ankita-thakkar")!;
-  return <AIMLFacultyPageTemplate faculty={faculty} />;
+  return <FacultyPageTemplate faculty={faculty} department="Computer Science & Engineering (AI & ML)" departmentLink="/academics/engineering/ai-ml/faculty" />;
 }
