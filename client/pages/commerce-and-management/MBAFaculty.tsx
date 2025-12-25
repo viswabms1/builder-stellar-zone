@@ -101,3 +101,31 @@ function LeadershipSection({ leadership }: LeadershipSectionProps) {
     </section>
   );
 }
+
+function VisitingFacultySection({ faculty }: { faculty: FacultyEntry[] }) {
+  if (faculty.length === 0) {
+    return null;
+  }
+
+  return (
+    <section className="py-10 md:py-28 border-t border-border/50">
+      <div className="text-center space-y-4 mb-16">
+        <div>
+          <h2 className="text-4xl md:text-5xl font-bold font-display text-foreground mb-3">
+            International Visiting Faculty
+          </h2>
+          <div className="w-20 h-1.5 bg-gradient-to-r from-brand-magenta to-brand-orange rounded-full mx-auto" />
+        </div>
+        <p className="max-w-2xl mx-auto text-lg md:text-xl text-foreground/75 leading-relaxed">
+          Learn from global experts and renowned scholars from prestigious international institutions who bring world-class perspectives to our MBA program.
+        </p>
+      </div>
+
+      <div className="grid gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 auto-rows-max">
+        {faculty.map((fac) => (
+          <FacultyGridCard key={fac.slug} faculty={fac} />
+        ))}
+      </div>
+    </section>
+  );
+}
