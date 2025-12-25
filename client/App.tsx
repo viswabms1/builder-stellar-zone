@@ -428,6 +428,10 @@ function App() {
                   path="/academics/computer-applications/data-science"
                   element={<DataScience />}
                 />
+                <Route
+                  path="/academics/computer-applications/mca"
+                  element={<MCA />}
+                />
                 <Route path="/academics/law" element={<Law />} />
                 <Route
                   path="/academics/management-studies"
