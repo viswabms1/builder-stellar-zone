@@ -10,13 +10,7 @@ import {
   Award,
   CheckCircle2,
   ChevronRight,
-  Download,
-  FileText,
   GraduationCap,
-  BookOpen,
-  ChevronDown,
-  CalendarDays,
-  ClipboardList,
   Cpu,
 } from "lucide-react";
 
@@ -166,165 +160,8 @@ export default function Physics() {
         </div>
       </section>
 
-      {/* Department Leadership Section */}
+      {/* Department Contact */}
       <section className="px-3 py-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-8">
-            <h2 className="headline-3 font-display">Department Leadership</h2>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {/* Chairman */}
-            <div>
-              <p className="text-xs font-semibold text-brand-blue uppercase tracking-wider mb-2">Chairman & Professor</p>
-              <div className="group relative overflow-hidden rounded-xl border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-blue/10 transition-all cursor-pointer">
-                <div className="relative">
-                  <div className="aspect-square w-full"></div>
-                  <img src="https://images.unsplash.com/photo-1507842072343-583f20270319?q=80&w=500&auto=format&fit=crop" alt="Dr. Yogesh Kalegowda" className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-500" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
-                </div>
-                <div className="absolute bottom-0 p-3 w-full">
-                  <div className="text-white text-xs opacity-80">Chairman & Professor</div>
-                  <div className="text-white font-semibold text-sm font-display line-clamp-2">Dr. Yogesh Kalegowda</div>
-                  <div className="text-white/70 text-xs mt-1">Ph.D.</div>
-                </div>
-              </div>
-            </div>
-
-            {/* Research Professor */}
-            <div>
-              <p className="text-xs font-semibold text-brand-blue uppercase tracking-wider mb-2">Research Professor</p>
-              <div className="group relative overflow-hidden rounded-xl border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-blue/10 transition-all cursor-pointer">
-                <div className="relative">
-                  <div className="aspect-square w-full"></div>
-                  <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=500&auto=format&fit=crop" alt="Dr. M V Hanumantha Rao" className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-500" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
-                </div>
-                <div className="absolute bottom-0 p-3 w-full">
-                  <div className="text-white text-xs opacity-80">Research Professor</div>
-                  <div className="text-white font-semibold text-sm font-display line-clamp-2">Dr. M V Hanumantha Rao</div>
-                  <div className="text-white/70 text-xs mt-1">Ph.D.</div>
-                </div>
-              </div>
-            </div>
-
-            {/* Distinguished Professor */}
-            <div>
-              <p className="text-xs font-semibold text-brand-blue uppercase tracking-wider mb-2">Professor</p>
-              <div className="group relative overflow-hidden rounded-xl border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-blue/10 transition-all cursor-pointer">
-                <div className="relative">
-                  <div className="aspect-square w-full"></div>
-                  <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=500&auto=format&fit=crop" alt="Dr. K Vijaya Kumar" className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-500" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
-                </div>
-                <div className="absolute bottom-0 p-3 w-full">
-                  <div className="text-white text-xs opacity-80">Professor</div>
-                  <div className="text-white font-semibold text-sm font-display line-clamp-2">Dr. K Vijaya Kumar</div>
-                  <div className="text-white/70 text-xs mt-1">Ph.D., FIAAM, IASA</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Faculty Grid */}
-      <section className="px-3 py-8 bg-background/50">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-8">
-            <h2 className="headline-3 font-display">Faculty Members</h2>
-            <p className="text-foreground/80 font-body text-sm mt-2">Experts in physics research and education</p>
-          </div>
-
-          {/* Associate Professors */}
-          <div className="mb-10">
-            <h3 className="text-lg font-display text-brand-blue mb-4">Associate Professors</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-              {[
-                { name: "Dr. Suresh Pittala", qualification: "Ph.D." },
-                { name: "Dr. Sudeep Kumara K", qualification: "Ph.D." },
-                { name: "Dr. Rajesh Cheruku", qualification: "Ph.D." },
-                { name: "Dr. V. Janardhanam", qualification: "Ph.D." },
-                { name: "Dr. Vinay Pratap Singh", qualification: "Ph.D." },
-              ].map((prof, i) => (
-                <Card key={i} className="border border-border/40 bg-card/50 hover:shadow-md transition-all">
-                  <CardHeader className="pb-3">
-                    <div className="text-xs font-semibold text-brand-blue uppercase tracking-wider mb-1">Associate Professor</div>
-                    <CardTitle className="text-sm font-display">{prof.name}</CardTitle>
-                    <CardDescription className="text-xs">{prof.qualification}</CardDescription>
-                  </CardHeader>
-                </Card>
-              ))}
-            </div>
-          </div>
-
-          {/* Assistant Professors */}
-          <div>
-            <h3 className="text-lg font-display text-brand-blue mb-4">Assistant Professors</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-              {[
-                { name: "Dr. B. Sathyamoorthy", qualification: "Ph.D." },
-                { name: "Dr. Amar Srivastava", qualification: "Ph.D." },
-                { name: "Dr. P R Sekhar Reddy", qualification: "Ph.D." },
-                { name: "Dr. Murali Krishnan M", qualification: "Ph.D." },
-                { name: "Dr. Vanitha M K", qualification: "Ph.D." },
-                { name: "Dr. D. Manikandan", qualification: "Ph.D." },
-                { name: "Dr. Alesh Kumar", qualification: "Ph.D." },
-                { name: "Dr. Kapil Saraswat", qualification: "Ph.D." },
-              ].map((prof, i) => (
-                <Card key={i} className="border border-border/40 bg-card/50 hover:shadow-md transition-all">
-                  <CardHeader className="pb-3">
-                    <div className="text-xs font-semibold text-brand-blue uppercase tracking-wider mb-1">Assistant Professor</div>
-                    <CardTitle className="text-sm font-display">{prof.name}</CardTitle>
-                    <CardDescription className="text-xs">{prof.qualification}</CardDescription>
-                  </CardHeader>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Future Programs */}
-      <section className="px-3 py-8">
-        <div className="max-w-6xl mx-auto">
-          <div className="mb-8">
-            <h2 className="headline-3 font-display mb-2">Future Initiatives</h2>
-            <p className="text-foreground/80 font-body">Expanding academic pathways in physics</p>
-          </div>
-          <div className="grid md:grid-cols-2 gap-4">
-            <Card className="border border-border/50 bg-card/50 backdrop-blur-sm hover:shadow-lg transition-all">
-              <CardHeader>
-                <div className="flex items-center gap-2 mb-2">
-                  <BookOpen className="w-5 h-5 text-brand-blue" />
-                  <Badge className="bg-brand-blue/20 text-brand-blue border-brand-blue/30">Planned</Badge>
-                </div>
-                <CardTitle className="font-display">Integrated BS-MS Programs</CardTitle>
-                <CardDescription className="font-body">Advanced degree pathways in physics</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-3">
-                <p className="text-sm text-foreground font-body">Specialized graduate programs combining advanced coursework and research, designed to prepare students for careers in academia and industry.</p>
-              </CardContent>
-            </Card>
-
-            <Card className="border border-border/50 bg-card/50 backdrop-blur-sm hover:shadow-lg transition-all">
-              <CardHeader>
-                <div className="flex items-center gap-2 mb-2">
-                  <Award className="w-5 h-5 text-brand-blue" />
-                  <Badge className="bg-brand-blue/20 text-brand-blue border-brand-blue/30">Active</Badge>
-                </div>
-                <CardTitle className="font-display">Ph.D. Program</CardTitle>
-                <CardDescription className="font-body">Doctoral research in specialized areas</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-3">
-                <p className="text-sm text-foreground font-body">Ongoing Ph.D. programs in computational physics, complex systems, bioinformatics, nanotechnology, materials science, sensors and instrumentation.</p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Careers */}
-      <section className="px-3 py-8 bg-background/50">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-5 items-start">
           <div>
             <h2 className="headline-3 mb-4 font-display">Career Prospects</h2>
@@ -442,25 +279,6 @@ export default function Physics() {
                 </CardContent>
               </Card>
             </a>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="px-3 py-8">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="rounded-3xl p-5 border border-brand-blue/20 bg-brand-blue/5">
-            <h3 className="headline-3 mb-3 font-display">Join DSU Physics</h3>
-            <p className="text-foreground mb-6 font-body">Explore cutting-edge research, advanced coursework, and launch your career in physics and related fields.</p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <a
-                href="https://admissions.dsu.edu.in/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <Button className="bg-brand-gradient text-foreground">Apply Now<GraduationCap className="w-4 h-4 ml-2" /></Button>
-              </a>
-            </div>
           </div>
         </div>
       </section>
