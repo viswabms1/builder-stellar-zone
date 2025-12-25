@@ -536,6 +536,7 @@ function CalendarResourceCard({ entry }: { entry: CalendarEntry }) {
 function HeroVideo() {
   const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const containerRef = useAutoMuteOnScroll(videoRef);
 
   const toggleMute = () => {
     if (videoRef.current) {
@@ -552,7 +553,7 @@ function HeroVideo() {
   }, [isMuted]);
 
   return (
-    <div className="w-full h-screen relative overflow-hidden flex items-end md:items-center justify-start">
+    <div className="w-full h-screen relative overflow-hidden flex items-end md:items-center justify-start" ref={containerRef}>
       <video
         ref={videoRef}
         src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F039b67f729094553afc521bcbf44f524?alt=media&token=f3f572a0-3afd-4a0a-9570-de176cc33653&apiKey=4aa279a8430d441dba9c55f659831878"
