@@ -1013,6 +1013,8 @@ function HeroVideo() {
         muted={isMuted}
         loop
         playsInline
+        preload="auto"
+        crossOrigin="anonymous"
         className="absolute inset-0 w-full h-full object-cover"
         style={{
           filter: "brightness(1.1) contrast(1.15) saturate(1.2)",
