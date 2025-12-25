@@ -59,10 +59,10 @@ export default function FacultyPageTemplate({ faculty, department = "Computer Sc
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-base leading-relaxed text-foreground font-body">
-                  {faculty.name} is a dedicated faculty member in the Computer Science & Engineering department at Dayananda Sagar University. With expertise in modern computing domains, {faculty.name.split(' ')[0]} contributes significantly to academic excellence and research endeavors.
+                  {faculty.name} is a dedicated faculty member in the {department} department at Dayananda Sagar University. With strong expertise and academic credentials, {faculty.name.split(' ')[0]} contributes significantly to academic excellence and research endeavors.
                 </p>
                 <p className="text-base leading-relaxed text-foreground font-body">
-                  Committed to advancing computer science education and fostering innovation, {faculty.name.split(' ')[0]} engages in curriculum development, student mentorship, and collaborative projects with academic institutions and industry partners. The faculty brings a blend of theoretical knowledge and practical expertise to enrich the learning experience of students.
+                  Committed to advancing education and fostering innovation, {faculty.name.split(' ')[0]} engages in curriculum development, student mentorship, and collaborative projects with academic institutions and industry partners. The faculty brings a blend of theoretical knowledge and practical expertise to enrich the learning experience of students.
                 </p>
                 {faculty.qualifications && (
                   <div className="mt-4 pt-4 border-t border-border/30">
