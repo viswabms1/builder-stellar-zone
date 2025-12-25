@@ -212,6 +212,24 @@ export default function BBA() {
         </div>
       </section>
 
+      {/* Faculty Section */}
+      <section className="bg-gradient-to-r from-brand-magenta/5 via-brand-blue/5 to-brand-orange/5 px-6 py-16">
+        <div className="mx-auto max-w-5xl">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold font-display mb-4">Meet Our Faculty</h2>
+            <p className="text-lg text-foreground/80 mb-6">
+              Learn from experienced educators and industry professionals who are committed to your academic success.
+            </p>
+            <Link to="/academics/commerce-and-management/bba/faculty">
+              <Button variant="outline" size="lg" className="border-brand-magenta/30 hover:bg-brand-magenta/10">
+                View Faculty Directory
+                <Users className="h-5 w-5 ml-2" />
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="px-6 py-16">
         <div className="mx-auto max-w-5xl text-center">
