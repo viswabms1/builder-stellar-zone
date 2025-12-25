@@ -355,7 +355,7 @@ const PROGRAM_CARDS: ProgramCard[] = [
     image:
       "https://images.unsplash.com/photo-1489515217757-5fd1be406fef?q=80&w=1600&auto=format&fit=crop",
     link: "/academics/law/programs",
-    highlights: ["Tech & Corporate Law", "3-Year LLB", "Specializations"],
+    highlights: ["Law & Technology", "Corporate Law", "Specializations"],
     overlay: "bg-gradient-to-br from-brand-orange/70 via-black/70 to-black/55 mix-blend-multiply",
     badgeClass: "bg-brand-orange/35 text-foreground/90 border border-white/25 backdrop-blur",
     panelClass: "bg-black/55 backdrop-blur-xl",
