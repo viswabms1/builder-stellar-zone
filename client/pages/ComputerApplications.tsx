@@ -651,8 +651,8 @@ function HeroVideo() {
   }, [activeAudioIndex]);
 
   return (
-    <section className="relative w-full" id="top" ref={sectionRef}>
-      <div className="flex w-full" style={{ height: "55vh" }}>
+    <section className="relative w-screen" id="top" ref={sectionRef}>
+      <div className="flex w-screen" style={{ height: "55vh" }}>
         {HERO_VIDEOS.map((video, idx) => (
           <HeroVideoPanel
             key={idx}
