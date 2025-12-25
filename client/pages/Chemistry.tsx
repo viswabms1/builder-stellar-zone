@@ -184,7 +184,7 @@ export default function Chemistry() {
             </Link>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            <Link to="/academics/chemistry/faculty/venkataramanan-ns">
+            <Link to="/academics/chemistry/faculty/dr-venkataramanan-n-s">
               <div className="group relative overflow-hidden rounded-xl border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-orange/10 transition-all cursor-pointer">
                 <div className="relative">
                   <div className="aspect-square w-full"></div>
@@ -199,7 +199,7 @@ export default function Chemistry() {
               </div>
             </Link>
 
-            <Link to="/academics/chemistry/faculty/av-raghu">
+            <Link to="/academics/chemistry/faculty/dr-a-v-raghu">
               <div className="group relative overflow-hidden rounded-xl border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-orange/10 transition-all cursor-pointer">
                 <div className="relative">
                   <div className="aspect-square w-full"></div>
@@ -214,7 +214,7 @@ export default function Chemistry() {
               </div>
             </Link>
 
-            <Link to="/academics/chemistry/faculty/bhavana-rikhari">
+            <Link to="/academics/chemistry/faculty/dr-bhavana-rikhari">
               <div className="group relative overflow-hidden rounded-xl border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-orange/10 transition-all cursor-pointer">
                 <div className="relative">
                   <div className="aspect-square w-full"></div>
