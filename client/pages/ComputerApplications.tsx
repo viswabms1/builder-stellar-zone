@@ -689,13 +689,16 @@ function HeroSection({ section, index, activeAudioIndex, setActiveAudioIndex }: 
 function HeroVideo() {
   const [activeAudioIndex, setActiveAudioIndex] = useState<number | null>(null);
 
+  const infiniteLoops = 3;
+  const allSections = Array.from({ length: infiniteLoops }, () => HERO_SECTIONS).flat();
+
   return (
     <>
-      {HERO_SECTIONS.map((section, idx) => (
+      {allSections.map((section, idx) => (
         <section key={idx} className="relative w-full" id={idx === 0 ? "top" : undefined}>
           <HeroSection
             section={section}
-            index={idx}
+            index={idx % HERO_SECTIONS.length}
             activeAudioIndex={activeAudioIndex}
             setActiveAudioIndex={setActiveAudioIndex}
           />
