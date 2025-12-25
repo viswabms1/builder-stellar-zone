@@ -304,17 +304,34 @@ function App() {
                 <Route path="/academics/physics" element={<Physics />} />
                 <Route path="/academics/chemistry" element={<Chemistry />} />
                 <Route path="/academics/chemistry/faculty" element={<ChemistryFacultyList />} />
-                <Route path="/academics/chemistry/faculty/venkataramanan-ns" element={<VenkataramanaNSProfile />} />
-                <Route path="/academics/chemistry/faculty/bhavana-rikhari" element={<BhavanaRikhariProfile />} />
-                <Route path="/academics/chemistry/faculty/sai-prasad-nayak" element={<SaiPrasadNayakProfile />} />
-                <Route path="/academics/chemistry/faculty/pradeep-kumar-badiya" element={<PradeepKumarBadiyaProfile />} />
-                <Route path="/academics/chemistry/faculty/shreeganesh-hegde" element={<ShreeganeshHegdeProfile />} />
-                <Route path="/academics/chemistry/faculty/sk-habibullah" element={<SKHabibullahProfile />} />
-                <Route path="/academics/chemistry/faculty/av-raghu" element={<AVRaghuProfile />} />
-                <Route path="/academics/chemistry/faculty/srinivasa-murthy" element={<SrinivasaMurthyProfile />} />
-                <Route path="/academics/chemistry/faculty/manas-barai" element={<ManasBaraiProfile />} />
-                <Route path="/academics/chemistry/faculty/dipen-biswakarma" element={<DipenBiswarkarmaProfile />} />
-                <Route path="/academics/chemistry/faculty/manjodth-kaur" element={<ManjodthKaurProfile />} />
+                <Route path="/academics/chemistry/faculty/dr-venkataramanan-n-s" element={<VenkataramanaNSPage />} />
+                <Route path="/academics/chemistry/faculty/dr-a-v-raghu" element={<AVRaghuPage />} />
+                <Route path="/academics/chemistry/faculty/dr-bhavana-rikhari" element={<BhavanaRikhariPage />} />
+                <Route path="/academics/chemistry/faculty/dr-sai-prasad-nayak" element={<SaiPrasadNayakPage />} />
+                <Route path="/academics/chemistry/faculty/dr-pradeep-kumar-badiya" element={<PradeepKumarBadiyaPage />} />
+                <Route path="/academics/chemistry/faculty/dr-shreeganesh-subraya-hegde" element={<ShreeganeshSubrayaHedgePage />} />
+                <Route path="/academics/chemistry/faculty/dr-sk-habibullah" element={<SKHabibullahPage />} />
+                <Route path="/academics/chemistry/faculty/dr-v-srinivasa-murthy" element={<VSrinivasaMurthyPage />} />
+                <Route path="/academics/chemistry/faculty/dr-manas-barai" element={<ManasBaraiPage />} />
+                <Route path="/academics/chemistry/faculty/dr-dipen-biswakarma" element={<DipenBiswakarmaPage />} />
+                <Route path="/academics/chemistry/faculty/dr-manjodh-kaur" element={<ManjudhKaurPage />} />
+                <Route path="/academics/physics/faculty" element={<ChemistryFacultyList />} />
+                <Route path="/academics/physics/faculty/dr-yogesh-kalegowda" element={<YogeshKalegowdaPage />} />
+                <Route path="/academics/physics/faculty/dr-m-v-hanumantha-rao" element={<MVHanumannthRaoPage />} />
+                <Route path="/academics/physics/faculty/dr-k-vijaya-kumar" element={<KVijayaKumarPage />} />
+                <Route path="/academics/physics/faculty/dr-rajesh-kumar" element={<RajeshKumarPhysicsPage />} />
+                <Route path="/academics/physics/faculty/dr-priya-sharma" element={<PriyaSharmaPhysicsPage />} />
+                <Route path="/academics/physics/faculty/dr-arun-kumar-singh" element={<ArunKumarSinghPage />} />
+                <Route path="/academics/physics/faculty/dr-meera-patel" element={<MeeraPatelPhysicsPage />} />
+                <Route path="/academics/physics/faculty/dr-suresh-reddy" element={<SureshReddyPhysicsPage />} />
+                <Route path="/academics/physics/faculty/dr-neha-gupta" element={<NehaGuptaPhysicsPage />} />
+                <Route path="/academics/physics/faculty/dr-vikram-desai" element={<VikramDesaiPhysicsPage />} />
+                <Route path="/academics/physics/faculty/dr-anita-verma" element={<AnitaVermaPhysicsPage />} />
+                <Route path="/academics/physics/faculty/dr-deepak-nair" element={<DeepakNairPhysicsPage />} />
+                <Route path="/academics/physics/faculty/dr-ravi-kumar-yadav" element={<RaviKumarYadavPage />} />
+                <Route path="/academics/physics/faculty/dr-sweta-chatterjee" element={<SwetaChatterjeePhysicsPage />} />
+                <Route path="/academics/physics/faculty/dr-rajendra-singh" element={<RajendraShallowSinghPage />} />
+                <Route path="/academics/physics/faculty/dr-pooja-malhotra" element={<PoojamalhotPhysicsPage />} />
                 <Route
                   path="/academics/engineering/electronics-communication"
                   element={<ElectronicsCommunication />}
