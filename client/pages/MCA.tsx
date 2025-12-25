@@ -34,7 +34,7 @@ export default function MCA() {
   const specializations = [
     { icon: Code, label: "Enterprise Systems" },
     { icon: Shield, label: "Cybersecurity" },
-    { icon: Cloud: "Cloud Architecture" },
+    { icon: Database, label: "Cloud Architecture" },
     { icon: Database, label: "Advanced Databases" },
     { icon: Network, label: "Distributed Systems" },
     { icon: Zap, label: "Emerging Technologies" },
