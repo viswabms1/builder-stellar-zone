@@ -17,10 +17,26 @@ function DeanMessageVideo({ videoUrl }: { videoUrl: string }) {
   const videoRef = useRef<HTMLVideoElement>(null);
   useAutoMuteOnScroll(videoRef);
 
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    // Sync button state with actual video muted status
+    // This handles when scroll hook or other code changes video.muted
+    const handleVolumeChange = () => {
+      setIsMuted(video.muted);
+    };
+
+    video.addEventListener("volumechange", handleVolumeChange);
+    return () => {
+      video.removeEventListener("volumechange", handleVolumeChange);
+    };
+  }, []);
+
   const toggleMute = () => {
     if (videoRef.current) {
       videoRef.current.muted = !videoRef.current.muted;
-      setIsMuted(!videoRef.current.muted);
+      setIsMuted(videoRef.current.muted);
     }
   };
 
