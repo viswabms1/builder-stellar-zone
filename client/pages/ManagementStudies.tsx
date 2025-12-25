@@ -327,7 +327,7 @@ const UG_PROGRAM_CARDS: ProgramCard[] = [
       "Build strong accounting, finance and analytics fundamentals with industry certifications and practical experience.",
     image:
       "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1600&auto=format&fit=crop",
-    link: "https://www.dsu.edu.in/management-studies/bcom",
+    link: "/academics/commerce-and-management/bcom",
     highlights: ["Accounting", "Finance", "Analytics"],
     overlay: "bg-gradient-to-br from-brand-magenta/80 via-black/75 to-black/60 mix-blend-multiply",
     badgeClass: "bg-brand-magenta/25 text-foreground/90 border border-white/30 backdrop-blur",
@@ -341,7 +341,7 @@ const UG_PROGRAM_CARDS: ProgramCard[] = [
       "Develop leadership and entrepreneurial skills through labs, internships and mentoring from industry leaders.",
     image:
       "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1600&auto=format&fit=crop",
-    link: "https://www.dsu.edu.in/management-studies/bba",
+    link: "/academics/commerce-and-management/bba",
     highlights: ["Leadership", "Entrepreneurship", "Mentoring"],
     overlay: "bg-gradient-to-br from-brand-blue/75 via-black/70 to-black/55 mix-blend-multiply",
     badgeClass: "bg-brand-blue/30 text-foreground/90 border border-white/25 backdrop-blur",
