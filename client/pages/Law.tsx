@@ -7,6 +7,7 @@ import {
   BookOpen,
   CalendarDays,
   ChevronRight,
+  Download,
   FileText,
   Gavel,
   Globe,
@@ -30,6 +31,12 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { DeanSection, type DeanInfo } from "@/components/DeanSection";
+import {
+  getLawEvents,
+  getLawNews,
+  getLawAnnouncements,
+  type NoticeItem as ImportedNoticeItem,
+} from "@/data/law-events";
 
 
 type ProgramCard = {
