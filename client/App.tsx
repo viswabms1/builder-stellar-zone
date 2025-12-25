@@ -16,6 +16,7 @@ import ComputerApplications from "./pages/ComputerApplications";
 import BCA from "./pages/BCA";
 import DataScience from "./pages/DataScience";
 import MCA from "./pages/MCA";
+import MSCDataScience from "./pages/MSCDataScience";
 import Law from "./pages/Law";
 import AppliedSciences from "./pages/AppliedSciences";
 import ManagementStudies from "./pages/ManagementStudies";
