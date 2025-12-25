@@ -400,6 +400,15 @@ function App() {
                 <Route path="/academics/mathematics/faculty/mr-mohammed-salman-m" element={<MohammedSalmanMPage />} />
                 <Route path="/academics/mathematics/faculty/ms-seetha-poojitha" element={<SeethaPoojithaPage />} />
                 <Route path="/academics/mathematics/faculty/mr-sarabindu-dolui" element={<SarabinduDoluiPage />} />
+                <Route path="/academics/humanities-social-sciences/faculty" element={<HumanitiesSocialSciencesFacultyList />} />
+                <Route path="/academics/humanities-social-sciences/faculty/dr-seema-tharannum" element={<SeemaTharannumPage />} />
+                <Route path="/academics/humanities-social-sciences/faculty/dr-rochna-roy" element={<RochnaRoyPage />} />
+                <Route path="/academics/humanities-social-sciences/faculty/dr-v-sreemathy" element={<SreemathyPage />} />
+                <Route path="/academics/humanities-social-sciences/faculty/dr-p-wagdevi" element={<PWagdeviPage />} />
+                <Route path="/academics/humanities-social-sciences/faculty/prof-nagendra-h-g" element={<NagendraHGPage />} />
+                <Route path="/academics/humanities-social-sciences/faculty/dr-vanishree-r" element={<VanishreeRPage />} />
+                <Route path="/academics/humanities-social-sciences/faculty/dr-mythri-r" element={<MythriRPage />} />
+                <Route path="/academics/humanities-social-sciences/faculty/dr-bhagyajyothi-k-s" element={<BhagyajyothiKSPage />} />
                 <Route
                   path="/academics/engineering/electronics-communication"
                   element={<ElectronicsCommunication />}
