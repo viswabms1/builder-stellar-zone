@@ -669,7 +669,7 @@ export default function Index() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-0 auto-rows-max">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-0 auto-rows-max" style={{ contain: "layout style paint" }}>
             {schoolsData.map((school, index) => {
               const styles = [
                 { bg: "bg-orange-500/10", border: "border-orange-500/20" },
@@ -684,7 +684,7 @@ export default function Index() {
               const style = styles[index % styles.length];
 
               const cardElement = (
-                <div className={`rounded-none overflow-hidden cursor-pointer h-full`}>
+                <div className={`rounded-none overflow-hidden cursor-pointer h-full`} style={{ contain: "content" }}>
                   {/* Image Container */}
                   <div className="relative w-full aspect-square overflow-hidden bg-foreground/5 flex items-center justify-center">
                     <img
