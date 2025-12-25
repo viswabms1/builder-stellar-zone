@@ -13,6 +13,7 @@ import Research from "./pages/Research";
 import Engineering from "./pages/Engineering";
 import ElectronicsCommunication from "./pages/ElectronicsCommunication";
 import ComputerApplications from "./pages/ComputerApplications";
+import BCA from "./pages/BCA";
 import Law from "./pages/Law";
 import AppliedSciences from "./pages/AppliedSciences";
 import ManagementStudies from "./pages/ManagementStudies";
