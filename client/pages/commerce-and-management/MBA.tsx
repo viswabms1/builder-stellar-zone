@@ -283,14 +283,38 @@ export default function MBA() {
       <section className="px-6 py-16">
         <div className="mx-auto max-w-5xl">
           <div className="grid md:grid-cols-2 gap-8 mb-16">
-            <div className="space-y-4">
-              <h2 className="text-3xl font-bold font-display">Program Overview</h2>
-              <p className="text-foreground/80">
-                Business, industry, and society have converged like never before. Today's ethos is to do business, generate wealth in an ethical space, and not degrade the environment further. At Dayananda Sagar University, we recognize the significance of this convergence and have designed our programs to equip students with the skills and knowledge to navigate this complex landscape.
-              </p>
-              <p className="text-foreground/80">
-                We pride ourselves on our unique blend of pedagogy that balances traditional lectures, in-depth case analysis, and skill-based learning. Our professors deliver this blend with their outstanding educational credibility and practical industry experience. The program's ethos is to craft superior managers who can problem-solve and make data-driven decisions.
-              </p>
+            <div className="space-y-6">
+              <div>
+                <h2 className="text-3xl font-bold font-display mb-4">Program Overview</h2>
+                <p className="text-foreground/80 mb-4">
+                  Business, industry, and society have converged like never before. Today's ethos is to do business, generate wealth in an ethical space, and not degrade the environment further. At Dayananda Sagar University, we recognize the significance of this convergence and have designed our programs to equip students with the skills and knowledge to navigate this complex landscape.
+                </p>
+                <p className="text-foreground/80">
+                  We pride ourselves on our unique blend of pedagogy that balances traditional lectures, in-depth case analysis, and skill-based learning. Our professors deliver this blend with their outstanding educational credibility and practical industry experience. The program's ethos is to craft superior managers who can problem-solve and make data-driven decisions.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-bold font-display mb-3">T-Shaped Learning Approach</h3>
+                <p className="text-foreground/80 mb-3">
+                  Our classic T-shaped approach gives students both breadth of understanding and depth in specific areas. Year 1 involves core and foundation courses, while Year 2 allows specialization in two chosen disciplines from nine options.
+                </p>
+                <p className="text-foreground/80">
+                  Students must also complete Audit courses in Leadership, Ethics, and Design Thinking. The program emphasizes industry relevance and student learning outcomes at every stage.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-bold font-display mb-3">Program Highlights</h3>
+                <ul className="text-foreground/80 space-y-2 text-sm">
+                  <li>✓ Nine specialization options for Year 2</li>
+                  <li>✓ Self-paced learning opportunities worldwide</li>
+                  <li>✓ 3-month industry internship</li>
+                  <li>✓ Capstone project preparation for career launch</li>
+                  <li>✓ Value-based education through student clubs</li>
+                  <li>✓ Industry connect with placement preparation from Semester 3</li>
+                </ul>
+              </div>
             </div>
             <div className="grid grid-cols-2 gap-4">
               {highlights.map((item) => {
