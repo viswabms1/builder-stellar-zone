@@ -127,11 +127,6 @@ export default function ElectronicsCommunication() {
                     <Badge key={i} variant="secondary" className="text-xs">{spec}</Badge>
                   ))}
                 </div>
-                <a href="/academics/engineering/electronics-communication">
-                  <Button variant="ghost" size="sm" className="w-full text-brand-blue hover:bg-brand-blue/10 mt-2">
-                    Explore <ArrowRight className="w-3 h-3 ml-1" />
-                  </Button>
-                </a>
               </CardContent>
             </Card>
 
@@ -152,11 +147,6 @@ export default function ElectronicsCommunication() {
                     <Badge key={i} variant="secondary" className="text-xs">{spec}</Badge>
                   ))}
                 </div>
-                <a href="/academics/engineering/electronics-communication">
-                  <Button variant="ghost" size="sm" className="w-full text-brand-blue hover:bg-brand-blue/10 mt-2">
-                    Explore <ArrowRight className="w-3 h-3 ml-1" />
-                  </Button>
-                </a>
               </CardContent>
             </Card>
 
