@@ -578,22 +578,23 @@ const HERO_SECTIONS = [
   }
 ];
 
-function HeroSection({ section, index }: { section: typeof HERO_SECTIONS[0]; index: number }) {
-  const [isMuted, setIsMuted] = useState(true);
+function HeroSection({ section, index, activeAudioIndex, setActiveAudioIndex }: { section: typeof HERO_SECTIONS[0]; index: number; activeAudioIndex: number | null; setActiveAudioIndex: (index: number | null) => void }) {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const isAudioActive = activeAudioIndex === index;
 
   const toggleMute = () => {
-    if (videoRef.current) {
-      videoRef.current.muted = !videoRef.current.muted;
-      setIsMuted(!isMuted);
+    if (isAudioActive) {
+      setActiveAudioIndex(null);
+    } else {
+      setActiveAudioIndex(index);
     }
   };
 
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
-    video.muted = isMuted;
-  }, [isMuted]);
+    video.muted = !isAudioActive;
+  }, [isAudioActive]);
 
   return (
     <div className="w-full h-screen relative overflow-hidden flex items-end md:items-center justify-start">
