@@ -132,13 +132,13 @@ export default function FacultyPageTemplate({ faculty, department = "Computer Sc
                 <CardTitle className="font-display">Contact</CardTitle>
               </CardHeader>
               <CardContent className="space-y-2 text-sm font-body">
-                <div className="text-foreground">School of Engineering</div>
-                <div className="text-foreground/70">Computer Science & Engineering</div>
-                <div className="text-foreground/70 text-xs">Dayananda Sagar University</div>
+                <div className="text-foreground">Dayananda Sagar University</div>
+                <div className="text-foreground/70">{department}</div>
+                <div className="text-foreground/70 text-xs">Bangalore, India</div>
               </CardContent>
             </Card>
 
-            <Link to="/academics/engineering/computer-science/faculty" className="block">
+            <Link to={departmentLink} className="block">
               <Button variant="outline" className="w-full"><ChevronLeft className="w-4 h-4 mr-2"/>Back to Faculty</Button>
             </Link>
           </div>
