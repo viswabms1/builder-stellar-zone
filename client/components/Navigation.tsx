@@ -115,7 +115,10 @@ export default function Navigation() {
         name: "School of Law",
         href: "/academics/law",
         departments: [
-          { name: "Explore Programs", href: "/academics/law" },
+          { name: "Explore Programs", href: "/academics/law/programs" },
+          { name: "LLB (3-Year)", href: "/academics/law/llb-3-year" },
+          { name: "LLM in Law & Technology", href: "/academics/law/llm-law-technology" },
+          { name: "LLM in Corporate Law", href: "/academics/law/llm-corporate-commercial" },
         ],
       },
       {
