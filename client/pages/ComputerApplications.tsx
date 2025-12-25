@@ -588,7 +588,7 @@ function HeroVideoPanel({ video, index, activeAudioIndex, setActiveAudioIndex }:
   }, [isAudioActive]);
 
   return (
-    <div className="relative h-96 flex-1 overflow-hidden group">
+    <div className="relative h-full flex-1 overflow-hidden group">
       <video
         ref={videoRef}
         src={video.src}
