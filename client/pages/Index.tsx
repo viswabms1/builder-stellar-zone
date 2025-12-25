@@ -875,9 +875,9 @@ export default function Index() {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-0 items-start">
+          <div className="grid lg:grid-cols-3 gap-0 items-start" style={{ contain: "layout style paint" }}>
             {/* Featured Event - Left side */}
-            <div className="lg:col-span-2">
+            <div className="lg:col-span-2" style={{ contain: "content" }}>
               <div className="rounded-none overflow-hidden border border-orange-500/20 bg-orange-500/10">
                 <div className="relative h-96 overflow-hidden">
                   <img
