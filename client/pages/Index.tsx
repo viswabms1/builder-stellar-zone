@@ -362,8 +362,8 @@ export default function Index() {
     },
   ];
 
-  // Get schools data based on current language
-  const getSchoolsData = () => {
+  // Get schools data based on current language (memoized)
+  const schoolsData = useMemo(() => {
     const baseSchools = [
       {
         key: "engineering",
@@ -455,7 +455,7 @@ export default function Index() {
         t(`academics.${school.key}.programs.3`) || "Program 4",
       ],
     }));
-  };
+  }, [language]);
 
   // All featured news items for rotation
   const allFeaturedNews = [
