@@ -18,7 +18,6 @@ import {
   CalendarDays,
   ClipboardList,
   Cpu,
-  ArrowRight,
 } from "lucide-react";
 
 export default function Physics() {
