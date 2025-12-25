@@ -362,6 +362,33 @@ function App() {
                 <Route path="/academics/physics/faculty/dr-sweta-chatterjee" element={<SwetaChatterjeePhysicsPage />} />
                 <Route path="/academics/physics/faculty/dr-rajendra-singh" element={<RajendraShallowSinghPage />} />
                 <Route path="/academics/physics/faculty/dr-pooja-malhotra" element={<PoojamalhotPhysicsPage />} />
+                <Route path="/academics/mathematics/faculty" element={<MathematicsFacultyList />} />
+                <Route path="/academics/mathematics/faculty/dr-mahalakshmi-p" element={<MahalakshmiPPage />} />
+                <Route path="/academics/mathematics/faculty/dr-rakesh-kumar-singh" element={<RakeshKumarSinghPage />} />
+                <Route path="/academics/mathematics/faculty/dr-srimanta-maji" element={<SrimantaMajiPage />} />
+                <Route path="/academics/mathematics/faculty/dr-priyanka-pandey" element={<PriyankaPandeyPage />} />
+                <Route path="/academics/mathematics/faculty/dr-mayank-singh-bhakuni" element={<MayankSinghBhakuniPage />} />
+                <Route path="/academics/mathematics/faculty/dr-prosanta-sarkar" element={<ProsantaSarkarPage />} />
+                <Route path="/academics/mathematics/faculty/dr-mamatha-r-m" element={<MamathaRMPage />} />
+                <Route path="/academics/mathematics/faculty/mr-manoj-solanki" element={<ManojSolankiPage />} />
+                <Route path="/academics/mathematics/faculty/dr-prasadini-mahapatra" element={<PrasadiniMahapatraPage />} />
+                <Route path="/academics/mathematics/faculty/dr-shital-saha" element={<ShitalSahaPage />} />
+                <Route path="/academics/mathematics/faculty/zaffar-mehdi-dar" element={<ZaffarMehdiDarPage />} />
+                <Route path="/academics/mathematics/faculty/mr-ajay-singh-jangal" element={<AjaySinghJangalPage />} />
+                <Route path="/academics/mathematics/faculty/kruthik-p-s" element={<KruthikPSPage />} />
+                <Route path="/academics/mathematics/faculty/dr-srikumar" element={<SrikumarPage />} />
+                <Route path="/academics/mathematics/faculty/mr-pratik-mehta" element={<PratikMehtaPage />} />
+                <Route path="/academics/mathematics/faculty/dr-sreenanda-raut" element={<SreenandaRautPage />} />
+                <Route path="/academics/mathematics/faculty/dr-om-prakash-keshri" element={<OmPrakashKeshriPage />} />
+                <Route path="/academics/mathematics/faculty/dr-hariharan-s" element={<HariharanSPage />} />
+                <Route path="/academics/mathematics/faculty/dr-naresh-saha" element={<NareshSahaPage />} />
+                <Route path="/academics/mathematics/faculty/dr-shilpi-jain" element={<ShilpiJainPage />} />
+                <Route path="/academics/mathematics/faculty/dr-soham-swadhin-pradhan" element={<SohamSwadhinPradhanPage />} />
+                <Route path="/academics/mathematics/faculty/dr-paresh-kumar-panigrahi" element={<PareshKumarPanigrahiPage />} />
+                <Route path="/academics/mathematics/faculty/mr-junias-j-singh" element={<JuniasJSinghPage />} />
+                <Route path="/academics/mathematics/faculty/mr-mohammed-salman-m" element={<MohammedSalmanMPage />} />
+                <Route path="/academics/mathematics/faculty/ms-seetha-poojitha" element={<SeethaPoojithaPage />} />
+                <Route path="/academics/mathematics/faculty/mr-sarabindu-dolui" element={<SarabinduDoluiPage />} />
                 <Route
                   path="/academics/engineering/electronics-communication"
                   element={<ElectronicsCommunication />}
