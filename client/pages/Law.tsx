@@ -650,7 +650,7 @@ export default function Law() {
 
 
       {/* Dean's Message Section */}
-      <div className="mt-14">
+      <div className="mt-16">
         <DeanSection dean={DEAN_INFO} />
       </div>
 
