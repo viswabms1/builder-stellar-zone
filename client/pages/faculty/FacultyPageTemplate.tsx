@@ -57,12 +57,12 @@ export default function FacultyPageTemplate({
                   <img src={faculty.image} alt={faculty.name} className="w-full h-full object-cover object-center" />
                 </div>
                 <div className="flex-1">
-                  <div className={`text-${colorClass} text-xs font-body`}>{department}</div>
+                  <div className={`${config.colorText} text-xs font-body`}>{department}</div>
                   <h1 className="text-2xl md:text-3xl font-bold font-display">{faculty.name}</h1>
                   <div className="text-foreground text-sm">{faculty.title}</div>
                   <div className="mt-2 flex flex-wrap gap-2">
                     {topics.map((t) => (
-                      <Badge key={t} className={`bg-${colorClass}/10 text-${colorClass}`}>{t}</Badge>
+                      <Badge key={t} className={`${config.colorBg} ${config.colorText}`}>{t}</Badge>
                     ))}
                   </div>
                 </div>
