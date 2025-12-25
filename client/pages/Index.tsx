@@ -754,9 +754,9 @@ export default function Index() {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-0 items-start">
+          <div className="grid lg:grid-cols-3 gap-0 items-start" style={{ contain: "layout style paint" }}>
             {/* Left side - Featured story (50%) - Auto-rotating */}
-            <div className="lg:col-span-2">
+            <div className="lg:col-span-2" style={{ contain: "content" }}>
               <button
                 onClick={() => setSelectedNews(currentFeatured)}
                 className="w-full flex flex-col rounded-none border border-orange-500/20 bg-orange-500/10 cursor-pointer text-left overflow-hidden"
