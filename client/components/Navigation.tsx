@@ -654,7 +654,7 @@ export default function Navigation() {
                     {/* Mobile Academics Submenu */}
                     {academicsMenuOpen && (
                       <div
-                        className={`rounded-lg py-2 ml-4 border-l-2 ${
+                        className={`rounded-lg py-2 ml-4 border-l-2 max-h-96 overflow-y-auto ${
                           theme === "light"
                             ? "bg-orange-100 border-l-orange-300"
                             : "bg-white/20 border-l-white/40"
