@@ -11,7 +11,7 @@ export type DeanInfo = {
   bgColor?: string;
 };
 
-function DeanMessageVideo() {
+function DeanMessageVideo({ videoUrl }: { videoUrl: string }) {
   const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -26,7 +26,7 @@ function DeanMessageVideo() {
     <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-black/20 border border-border/30">
       <video
         ref={videoRef}
-        src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F0c95c62aa88741fca8ebdc32aade53d5?alt=media&token=c57ff4a9-aea8-4ff3-843b-23ce820ba630&apiKey=4aa279a8430d441dba9c55f659831878"
+        src={videoUrl}
         autoPlay
         muted
         loop
