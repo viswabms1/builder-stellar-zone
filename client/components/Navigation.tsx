@@ -126,9 +126,9 @@ export default function Navigation() {
         href: "/academics/management-studies",
         departments: [
           { name: "Explore Programs", href: "/academics/management-studies" },
-          { name: "B.Com", href: "/commerce-management/bcom" },
-          { name: "BBA", href: "/commerce-management/bba" },
-          { name: "MBA", href: "/commerce-management/mba" },
+          { name: "B.Com", href: "/academics/commerce-and-management/bcom" },
+          { name: "BBA", href: "/academics/commerce-and-management/bba" },
+          { name: "MBA", href: "/academics/commerce-and-management/mba" },
         ],
       },
       {
