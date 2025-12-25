@@ -8,17 +8,24 @@ import {
 } from "lucide-react";
 
 export default function MBAFaculty() {
-  const leadership = useMemo(
+  const { regularFaculty, visitingFaculty } = useMemo(
     () => {
       const rank = (title: string) => {
         if (/Dean/i.test(title)) return 1;
         if (/Professor/i.test(title) && !/Associate/i.test(title) && !/Assistant/i.test(title) && !/Visiting/i.test(title)) return 2;
         if (/Associate Professor/i.test(title)) return 3;
         if (/Assistant Professor/i.test(title)) return 4;
-        if (/Visiting/i.test(title)) return 5;
-        return 6;
+        return 5;
       };
-      return mbaFaculty.sort((a, b) => rank(a.title) - rank(b.title));
+
+      const sorted = mbaFaculty.sort((a, b) => rank(a.title) - rank(b.title));
+      const visiting = sorted.filter((f) => /International Visiting/i.test(f.title));
+      const regular = sorted.filter((f) => !/International Visiting/i.test(f.title));
+
+      return {
+        regularFaculty: regular,
+        visitingFaculty: visiting,
+      };
     },
     [],
   );
@@ -27,7 +34,10 @@ export default function MBAFaculty() {
     <div className="min-h-screen bg-background text-foreground">
       <div className="relative px-3 py-8">
         <div className="mx-auto max-w-7xl">
-          <LeadershipSection leadership={leadership} />
+          <LeadershipSection leadership={regularFaculty} />
+          {visitingFaculty.length > 0 && (
+            <VisitingFacultySection faculty={visitingFaculty} />
+          )}
         </div>
       </div>
     </div>
