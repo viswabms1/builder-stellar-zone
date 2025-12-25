@@ -196,6 +196,7 @@ function NewsModal({
           <img
             src={newsItem.image}
             alt={newsItem.title}
+            loading="lazy"
             className="w-full h-auto max-h-96 object-cover rounded-t-3xl"
           />
         )}
