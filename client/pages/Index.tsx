@@ -79,6 +79,8 @@ function HeroVideo() {
         muted
         loop
         playsInline
+        preload="auto"
+        crossOrigin="anonymous"
         className="w-full h-full object-cover"
       />
 
