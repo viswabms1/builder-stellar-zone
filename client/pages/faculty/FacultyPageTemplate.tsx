@@ -13,20 +13,20 @@ interface FacultyPageTemplateProps {
   backgroundImage?: string;
 }
 
-const departmentConfig: Record<string, { color: string; bg: string }> = {
-  "Computer Science & Engineering": { color: "brand-blue", bg: "https://images.unsplash.com/photo-1534723328310-e82dad3ee43f?q=80&w=1600&auto=format&fit=crop" },
-  "Computer Science & Engineering (AI & ML)": { color: "brand-magenta", bg: "https://images.unsplash.com/photo-1534723328310-e82dad3ee43f?q=80&w=1600&auto=format&fit=crop" },
-  "Aerospace Engineering": { color: "brand-blue", bg: "https://images.unsplash.com/photo-1446776877081-d282a0f896e2?q=80&w=1600&auto=format&fit=crop" },
-  "Electronics & Communication Engineering": { color: "brand-blue", bg: "https://images.unsplash.com/photo-1580894908361-967195033215?q=80&w=1600&auto=format&fit=crop" },
-  "Mechanical Engineering": { color: "brand-orange", bg: "https://images.unsplash.com/photo-1517677129300-07b130802f46?q=80&w=1600&auto=format&fit=crop" },
-  "AI and Robotics": { color: "brand-magenta", bg: "https://images.unsplash.com/photo-1581091216562-40c08a5a4183?q=80&w=1600&auto=format&fit=crop" },
-  "Computer Technology": { color: "brand-blue", bg: "https://images.unsplash.com/photo-1534723328310-e82dad3ee43f?q=80&w=1600&auto=format&fit=crop" },
-  "Cybersecurity": { color: "brand-magenta", bg: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1600&auto=format&fit=crop" },
-  "Data Science": { color: "brand-magenta", bg: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1600&auto=format&fit=crop" },
-  "AI & Data Science": { color: "brand-magenta", bg: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1600&auto=format&fit=crop" },
-  "Medical Engineering": { color: "brand-blue", bg: "https://images.unsplash.com/photo-1576091160550-112173f31c74?q=80&w=1600&auto=format&fit=crop" },
-  "Physics": { color: "brand-blue", bg: "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?q=80&w=1600&auto=format&fit=crop" },
-  "Chemistry": { color: "brand-blue", bg: "https://images.unsplash.com/photo-1576091160550-112173f31c74?q=80&w=1600&auto=format&fit=crop" },
+const departmentConfig: Record<string, { colorClass: string; colorText: string; colorBg: string; colorBorder: string; bg: string }> = {
+  "Computer Science & Engineering": { colorClass: "brand-blue", colorText: "text-brand-blue", colorBg: "bg-brand-blue/10", colorBorder: "text-brand-blue", bg: "https://images.unsplash.com/photo-1534723328310-e82dad3ee43f?q=80&w=1600&auto=format&fit=crop" },
+  "Computer Science & Engineering (AI & ML)": { colorClass: "brand-magenta", colorText: "text-brand-magenta", colorBg: "bg-brand-magenta/10", colorBorder: "text-brand-magenta", bg: "https://images.unsplash.com/photo-1534723328310-e82dad3ee43f?q=80&w=1600&auto=format&fit=crop" },
+  "Aerospace Engineering": { colorClass: "brand-blue", colorText: "text-brand-blue", colorBg: "bg-brand-blue/10", colorBorder: "text-brand-blue", bg: "https://images.unsplash.com/photo-1446776877081-d282a0f896e2?q=80&w=1600&auto=format&fit=crop" },
+  "Electronics & Communication Engineering": { colorClass: "brand-blue", colorText: "text-brand-blue", colorBg: "bg-brand-blue/10", colorBorder: "text-brand-blue", bg: "https://images.unsplash.com/photo-1580894908361-967195033215?q=80&w=1600&auto=format&fit=crop" },
+  "Mechanical Engineering": { colorClass: "brand-orange", colorText: "text-brand-orange", colorBg: "bg-brand-orange/10", colorBorder: "text-brand-orange", bg: "https://images.unsplash.com/photo-1517677129300-07b130802f46?q=80&w=1600&auto=format&fit=crop" },
+  "AI and Robotics": { colorClass: "brand-magenta", colorText: "text-brand-magenta", colorBg: "bg-brand-magenta/10", colorBorder: "text-brand-magenta", bg: "https://images.unsplash.com/photo-1581091216562-40c08a5a4183?q=80&w=1600&auto=format&fit=crop" },
+  "Computer Technology": { colorClass: "brand-blue", colorText: "text-brand-blue", colorBg: "bg-brand-blue/10", colorBorder: "text-brand-blue", bg: "https://images.unsplash.com/photo-1534723328310-e82dad3ee43f?q=80&w=1600&auto=format&fit=crop" },
+  "Cybersecurity": { colorClass: "brand-magenta", colorText: "text-brand-magenta", colorBg: "bg-brand-magenta/10", colorBorder: "text-brand-magenta", bg: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1600&auto=format&fit=crop" },
+  "Data Science": { colorClass: "brand-magenta", colorText: "text-brand-magenta", colorBg: "bg-brand-magenta/10", colorBorder: "text-brand-magenta", bg: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1600&auto=format&fit=crop" },
+  "AI & Data Science": { colorClass: "brand-magenta", colorText: "text-brand-magenta", colorBg: "bg-brand-magenta/10", colorBorder: "text-brand-magenta", bg: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1600&auto=format&fit=crop" },
+  "Medical Engineering": { colorClass: "brand-blue", colorText: "text-brand-blue", colorBg: "bg-brand-blue/10", colorBorder: "text-brand-blue", bg: "https://images.unsplash.com/photo-1576091160550-112173f31c74?q=80&w=1600&auto=format&fit=crop" },
+  "Physics": { colorClass: "brand-blue", colorText: "text-brand-blue", colorBg: "bg-brand-blue/10", colorBorder: "text-brand-blue", bg: "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?q=80&w=1600&auto=format&fit=crop" },
+  "Chemistry": { colorClass: "brand-blue", colorText: "text-brand-blue", colorBg: "bg-brand-blue/10", colorBorder: "text-brand-blue", bg: "https://images.unsplash.com/photo-1576091160550-112173f31c74?q=80&w=1600&auto=format&fit=crop" },
 };
 
 export default function FacultyPageTemplate({
