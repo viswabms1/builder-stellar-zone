@@ -129,6 +129,7 @@ export default function Navigation() {
           { name: "B.Com", href: "/academics/commerce-and-management/bcom" },
           { name: "BBA", href: "/academics/commerce-and-management/bba" },
           { name: "MBA", href: "/academics/commerce-and-management/mba" },
+          { name: "MBA Faculty", href: "/academics/commerce-and-management/mba/faculty" },
         ],
       },
       {
