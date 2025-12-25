@@ -121,7 +121,7 @@ export default function FacultyPageTemplate({ faculty, department = "Computer Sc
                 )}
                 <div>
                   <div className="text-foreground/70">Department</div>
-                  <div className="font-medium">Computer Science & Engineering</div>
+                  <div className="font-medium">{department}</div>
                 </div>
               </CardContent>
             </Card>
