@@ -316,6 +316,14 @@ import JuniasJSinghPage from "./pages/mathematics/JuniasJSingh";
 import MohammedSalmanMPage from "./pages/mathematics/MohammedSalmanM";
 import SeethaPoojithaPage from "./pages/mathematics/SeethaPoojitha";
 import SarabinduDoluiPage from "./pages/mathematics/SarabinduDolui";
+import SeemaTharannumPage from "./pages/humanities-social-sciences/SeemaTharannum";
+import RochnaRoyPage from "./pages/humanities-social-sciences/RochnaRoy";
+import SreemathyPage from "./pages/humanities-social-sciences/Sreemathy";
+import PWagdeviPage from "./pages/humanities-social-sciences/PWagdevi";
+import NagendraHGPage from "./pages/humanities-social-sciences/NagendraHG";
+import VanishreeRPage from "./pages/humanities-social-sciences/VanishreeR";
+import MythriRPage from "./pages/humanities-social-sciences/MythriR";
+import BhagyajyothiKSPage from "./pages/humanities-social-sciences/BhagyajyothiKS";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 
