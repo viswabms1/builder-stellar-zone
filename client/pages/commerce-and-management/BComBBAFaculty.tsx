@@ -77,7 +77,7 @@ function LeadershipSection({ leadership, programName }: LeadershipSectionProps) 
       <div className="text-center space-y-4 mb-16">
         <div>
           <h2 className="text-4xl md:text-5xl font-bold font-display text-foreground mb-3">
-            {programName} Faculty Directory
+            School of Commerce and Management Studies (UG) Faculty Directory
           </h2>
           <div className="w-20 h-1.5 bg-gradient-to-r from-brand-orange to-brand-magenta rounded-full mx-auto" />
         </div>
