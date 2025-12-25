@@ -333,7 +333,7 @@ const UG_PROGRAM_CARDS: ProgramCard[] = [
       "Launch advanced careers in data engineering, analytics, visualization and machine learning with applied projects and real-world datasets.",
     image:
       "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?q=80&w=1600&auto=format&fit=crop",
-    link: "/academics/computer-applications/bsc-data-science",
+    link: "/academics/computer-applications/data-science",
     highlights: ["Data Analytics", "ML Pipelines", "Visualization"],
     overlay: "bg-gradient-to-br from-brand-blue/75 via-black/70 to-black/55 mix-blend-multiply",
     badgeClass: "bg-brand-blue/30 text-foreground/90 border border-white/25 backdrop-blur",
