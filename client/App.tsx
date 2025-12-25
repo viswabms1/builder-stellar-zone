@@ -254,9 +254,9 @@ function App() {
       <ThemeProvider>
         <BrowserRouter>
           <ScrollToTop />
-          <div className="min-h-screen bg-background text-foreground">
+          <div className="min-h-screen bg-background text-foreground flex flex-col">
             <Navigation />
-            <main>
+            <main className="w-full">
               <Routes>
                 <Route path="/" element={<Index />} />
                 <Route path="/academics" element={<Academics />} />
