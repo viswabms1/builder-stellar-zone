@@ -433,7 +433,7 @@ const SUPPORTING_DEPARTMENTS: SupportingDepartment[] = [
       "Advanced instrumentation and applied physics modules covering photonics, energy and smart materials.",
     image:
       "https://images.unsplash.com/photo-1581092795360-6b4ea08a1f5c?q=80&w=1600&auto=format&fit=crop",
-    link: "https://www.dsu.edu.in/engineering/physics",
+    link: "/academics/physics",
   },
   {
     name: "Chemistry Department",
