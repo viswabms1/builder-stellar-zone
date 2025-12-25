@@ -36,9 +36,9 @@ export default function FacultyPageTemplate({
   departmentColor,
   backgroundImage
 }: FacultyPageTemplateProps) {
-  const config = departmentConfig[department] || { color: "brand-blue", bg: "https://images.unsplash.com/photo-1534723328310-e82dad3ee43f?q=80&w=1600&auto=format&fit=crop" };
+  const defaultConfig = { colorClass: "brand-blue", colorText: "text-brand-blue", colorBg: "bg-brand-blue/10", colorBorder: "text-brand-blue", bg: "https://images.unsplash.com/photo-1534723328310-e82dad3ee43f?q=80&w=1600&auto=format&fit=crop" };
+  const config = departmentConfig[department] || defaultConfig;
   const bg = backgroundImage || config.bg;
-  const colorClass = departmentColor || config.color;
   const topics = faculty.interests || [];
 
   return (
