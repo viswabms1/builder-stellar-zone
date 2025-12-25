@@ -440,6 +440,7 @@ export default function Navigation() {
                                     <Link
                                       key={dept.name}
                                       to={dept.href}
+                                      onClick={() => setAcademicsMenuOpen(false)}
                                       className={`block text-xs py-1 transition-colors ${
                                         theme === "light"
                                           ? "text-gray-700 hover:text-orange-700"
