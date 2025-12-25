@@ -841,7 +841,7 @@ export default function ComputerApplications() {
         </div>
       </section>
 
-      <section className="px-6 py-16">
+      <section className="px-6 py-12">
         <div className="mx-auto grid max-w-5xl items-start gap-8 lg:grid-cols-2">
           <Card className="rounded-none border border-orange-500/20 bg-orange-500/10">
             <CardHeader>
