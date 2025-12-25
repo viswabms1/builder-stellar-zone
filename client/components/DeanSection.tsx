@@ -20,7 +20,7 @@ function DeanMessageVideo({ videoUrl }: { videoUrl: string }) {
   const toggleMute = () => {
     if (videoRef.current) {
       videoRef.current.muted = !videoRef.current.muted;
-      setIsMuted(!isMuted);
+      setIsMuted(!videoRef.current.muted);
     }
   };
 
@@ -30,7 +30,7 @@ function DeanMessageVideo({ videoUrl }: { videoUrl: string }) {
         ref={videoRef}
         src={videoUrl}
         autoPlay
-        muted
+        muted={isMuted}
         loop
         playsInline
         className="w-full h-full object-cover"
