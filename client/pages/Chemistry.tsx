@@ -177,60 +177,57 @@ export default function Chemistry() {
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center justify-between mb-8">
             <h2 className="headline-3 font-display">Department Leadership</h2>
-            <a href="https://www.dsu.edu.in/academics/chemistry/faculty">
+            <Link to="/academics/chemistry/faculty">
               <Button variant="outline" className="border-brand-orange/40 hover:bg-brand-orange/10">
                 Explore full faculty list
               </Button>
-            </a>
+            </Link>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            <div>
-              <p className="text-xs font-semibold text-brand-orange uppercase tracking-wider mb-2">Chairman & Professor</p>
+            <Link to="/academics/chemistry/faculty/venkataramanan-ns">
               <div className="group relative overflow-hidden rounded-xl border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-orange/10 transition-all cursor-pointer">
                 <div className="relative">
                   <div className="aspect-square w-full"></div>
-                  <img src="https://images.unsplash.com/photo-1507842072343-583f20270319?q=80&w=500&auto=format&fit=crop" alt="Chemistry Chairman" className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-500" />
+                  <img src="https://images.unsplash.com/photo-1507842072343-583f20270319?q=80&w=500&auto=format&fit=crop" alt="Dr. Venkataramanan N S" className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-500" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
                 </div>
                 <div className="absolute bottom-0 p-3 w-full">
-                  <div className="text-white text-xs opacity-80">Chairman & Professor</div>
-                  <div className="text-white font-semibold text-sm font-display line-clamp-2">Dr. Sathish Kumar</div>
-                  <div className="text-white/70 text-xs mt-1">Ph.D., Postdoc (Germany)</div>
+                  <div className="text-white text-xs opacity-80">Professor & Chairperson</div>
+                  <div className="text-white font-semibold text-sm font-display line-clamp-2">Dr. Venkataramanan N S</div>
+                  <div className="text-white/70 text-xs mt-1">Ph.D.</div>
                 </div>
               </div>
-            </div>
+            </Link>
 
-            <div>
-              <p className="text-xs font-semibold text-brand-orange uppercase tracking-wider mb-2">Senior Professor</p>
+            <Link to="/academics/chemistry/faculty/av-raghu">
               <div className="group relative overflow-hidden rounded-xl border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-orange/10 transition-all cursor-pointer">
                 <div className="relative">
                   <div className="aspect-square w-full"></div>
-                  <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=500&auto=format&fit=crop" alt="Chemistry Senior Professor" className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-500" />
+                  <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=500&auto=format&fit=crop" alt="Dr. A V RAGHU" className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-500" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
                 </div>
                 <div className="absolute bottom-0 p-3 w-full">
-                  <div className="text-white text-xs opacity-80">Senior Professor</div>
-                  <div className="text-white font-semibold text-sm font-display line-clamp-2">Dr. Priya Sharma</div>
-                  <div className="text-white/70 text-xs mt-1">Ph.D., Postdoc (USA)</div>
+                  <div className="text-white text-xs opacity-80">Professor</div>
+                  <div className="text-white font-semibold text-sm font-display line-clamp-2">Dr. A V RAGHU</div>
+                  <div className="text-white/70 text-xs mt-1">Ph.D.</div>
                 </div>
               </div>
-            </div>
+            </Link>
 
-            <div>
-              <p className="text-xs font-semibold text-brand-orange uppercase tracking-wider mb-2">Associate Professor</p>
+            <Link to="/academics/chemistry/faculty/bhavana-rikhari">
               <div className="group relative overflow-hidden rounded-xl border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-orange/10 transition-all cursor-pointer">
                 <div className="relative">
                   <div className="aspect-square w-full"></div>
-                  <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=500&auto=format&fit=crop" alt="Chemistry Associate Professor" className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-500" />
+                  <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=500&auto=format&fit=crop" alt="Dr. Bhavana Rikhari" className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-500" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
                 </div>
                 <div className="absolute bottom-0 p-3 w-full">
-                  <div className="text-white text-xs opacity-80">Associate Professor</div>
-                  <div className="text-white font-semibold text-sm font-display line-clamp-2">Dr. Rajesh Patel</div>
-                  <div className="text-white/70 text-xs mt-1">Ph.D., IAPT</div>
+                  <div className="text-white text-xs opacity-80">Assistant Professor</div>
+                  <div className="text-white font-semibold text-sm font-display line-clamp-2">Dr. Bhavana Rikhari</div>
+                  <div className="text-white/70 text-xs mt-1">Ph.D.</div>
                 </div>
               </div>
-            </div>
+            </Link>
           </div>
         </div>
       </section>
