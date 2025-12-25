@@ -44,6 +44,7 @@ import {
 function HeroVideo() {
   const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const containerRef = useAutoMuteOnScroll(videoRef);
 
   const toggleMute = () => {
     if (videoRef.current) {
@@ -69,7 +70,7 @@ function HeroVideo() {
   }, [isMuted]);
 
   return (
-    <div className="w-full h-full relative overflow-hidden">
+    <div className="w-full h-full relative overflow-hidden" ref={containerRef}>
       {/* Video */}
       <video
         ref={videoRef}
