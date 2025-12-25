@@ -41,6 +41,20 @@ export default function Navigation() {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, []);
 
+  // Reset expandedSubGroups when academics menu closes
+  useEffect(() => {
+    if (!academicsMenuOpen) {
+      setExpandedSubGroups(new Set());
+    }
+  }, [academicsMenuOpen]);
+
+  // Reset expandedSubGroups when mobile menu closes
+  useEffect(() => {
+    if (!isOpen) {
+      setExpandedSubGroups(new Set());
+    }
+  }, [isOpen]);
+
   const aboutSubmenus = [
     { name: "About DSU", href: "/about" },
     { name: t("nav.vision"), href: "/about/vision-mission" },
