@@ -918,7 +918,7 @@ export default function ComputerApplications() {
         </div>
       </section>
 
-      <section id="notice-board" className="px-3 py-8">
+      <section id="notice-board" className="px-3 py-6">
         <NoticeBoardCarousel />
       </section>
 
