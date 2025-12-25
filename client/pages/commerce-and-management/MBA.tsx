@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import {
   ChevronRight,
   BookOpen,
@@ -10,8 +11,127 @@ import {
   Globe,
   Target,
   Lightbulb,
+  ChevronDown,
+  Download,
+  CalendarDays,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+
+function CurriculumLibrary() {
+  const [openProgram, setOpenProgram] = useState<string | null>(null);
+
+  const programs = [
+    {
+      id: "mba-general",
+      label: "MBA (General)",
+      description: "2-year comprehensive postgraduate program preparing superior managers with strategic thinking and data-driven decision making",
+      details: "Business, industry, and society have converged like never before. Today's ethos is to do business, generate wealth in an ethical space, and not degrade the environment further. Our programs are designed to equip students with the skills and knowledge to navigate this complex landscape. We pride ourselves on a unique blend of pedagogy balancing traditional lectures, in-depth case analysis, and skill-based learning delivered by professors with outstanding educational credibility and practical industry experience. The program crafts superior managers who can problem-solve and make data-driven decisions. In our increasingly digital world, the program equips managers with skills needed to succeed in the digital age.",
+      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop",
+      batches: [
+        {
+          year: "2025-26",
+          summary: "Latest curriculum covering management fundamentals, strategic thinking, and leadership development across 4 semesters",
+          documentUrl: "https://www.dsu.edu.in/images/Commerce/MBA-General-Curriculum-2025-26.pdf",
+        },
+      ],
+    },
+    {
+      id: "mba-marketing",
+      label: "MBA - Marketing Specialization",
+      description: "Specialized postgraduate program focusing on marketing strategy, consumer behavior, and brand management",
+      details: "Specialization in Marketing management with focus on strategic marketing, brand building, digital marketing, and consumer analytics. Learn from industry experts and develop expertise in market research, product development, and marketing communications. Through case studies, business simulations, and industry projects, develop the skills to make strategic marketing decisions in today's competitive global marketplace.",
+      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop",
+      batches: [
+        {
+          year: "2025-26",
+          summary: "Marketing specialization curriculum covering strategic marketing, digital marketing, brand management, and consumer insights",
+          documentUrl: "https://www.dsu.edu.in/images/Commerce/MBA-Marketing-Curriculum-2025-26.pdf",
+        },
+      ],
+    },
+    {
+      id: "mba-finance",
+      label: "MBA - Finance Specialization",
+      description: "Specialized postgraduate program in financial management, investment analysis, and corporate finance",
+      details: "Specialization in Finance with focus on corporate finance, investment management, financial analytics, and risk management. Study under faculty with extensive banking and finance industry experience. Develop expertise in financial decision-making, portfolio management, and financial strategy through quantitative analysis, case studies, and industry simulations. Prepare for roles in investment banking, corporate finance, and financial consulting.",
+      image: "https://images.unsplash.com/photo-1606531824254-d473aeb44dc5?q=80&w=1200&auto=format&fit=crop",
+      batches: [
+        {
+          year: "2025-26",
+          summary: "Finance specialization curriculum covering corporate finance, investment management, financial analysis, and risk management",
+          documentUrl: "https://www.dsu.edu.in/images/Commerce/MBA-Finance-Curriculum-2025-26.pdf",
+        },
+      ],
+    },
+    {
+      id: "mba-operations",
+      label: "MBA - Operations & HR Specialization",
+      description: "Specialized postgraduate program in operations management and human resource management",
+      details: "Specialization in Operations and Human Resources combining supply chain management, operations strategy, and talent management. Develop skills in process optimization, organizational development, and strategic HR planning. Learn through case studies, collaborative projects, and industry partnerships. Prepare for leadership roles in operations, supply chain management, and human capital management in global organizations.",
+      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200&auto=format&fit=crop",
+      batches: [
+        {
+          year: "2025-26",
+          summary: "Operations & HR specialization curriculum covering supply chain, process management, organizational behavior, and talent development",
+          documentUrl: "https://www.dsu.edu.in/images/Commerce/MBA-OpHR-Curriculum-2025-26.pdf",
+        },
+      ],
+    },
+  ];
+
+  return (
+    <div className="grid gap-4 lg:grid-cols-1">
+      {programs.map((program) => {
+        const isOpen = openProgram === program.id;
+        return (
+          <div key={program.id} className="rounded-3xl border-2 border-brand-magenta/30 overflow-hidden transition-all hover:shadow-xl hover:shadow-brand-magenta/10">
+            <div className="relative h-48 overflow-hidden">
+              <img src={program.image} alt={program.label} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+            </div>
+            <div className="p-6 bg-background/50 backdrop-blur-sm space-y-4">
+              <div className="flex items-start gap-3">
+                <Badge className="rounded-full border bg-brand-magenta/15 text-brand-magenta border-brand-magenta/20">Postgraduate</Badge>
+              </div>
+              <div>
+                <h3 className="text-xl font-bold font-display text-foreground mb-2">{program.label}</h3>
+                <p className="text-sm text-foreground/80">{program.description}</p>
+                {program.details && (
+                  <p className="text-sm text-foreground/70 mt-3 leading-relaxed">{program.details}</p>
+                )}
+              </div>
+              <Button variant="outline" className="w-full border-brand-magenta/30 hover:bg-brand-magenta/10 text-brand-magenta" onClick={() => setOpenProgram(isOpen ? null : program.id)}>
+                <span className="flex items-center justify-center gap-2">
+                  {isOpen ? "Hide" : "View"} Curriculum
+                  <ChevronDown className={`h-4 w-4 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`} />
+                </span>
+              </Button>
+              {isOpen && (
+                <div className="mt-4 space-y-3 border-t border-border/20 pt-4">
+                  {program.batches.map((batch) => (
+                    <div key={batch.year} className="rounded-xl border border-border/40 bg-card/70 p-4 space-y-3">
+                      <div className="flex items-center gap-2">
+                        <Badge className="rounded-full border text-xs bg-brand-magenta/20 text-brand-magenta border-brand-magenta/30">
+                          <CalendarDays className="h-3 w-3 mr-1" />
+                          {batch.year}
+                        </Badge>
+                      </div>
+                      <p className="text-sm text-foreground/80">{batch.summary}</p>
+                      <a href={batch.documentUrl} target="_blank" rel="noreferrer" className="inline-block">
+                        <Button size="sm" variant="outline" className="gap-2 border-brand-magenta/30 hover:bg-brand-magenta/10 text-brand-magenta">
+                          <Download className="w-4 h-4" /> Download Syllabus
+                        </Button>
+                      </a>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
 
 export default function MBA() {
   const highlights = [
@@ -89,29 +209,19 @@ export default function MBA() {
         </div>
       </div>
 
-      {/* Program Philosophy */}
+      {/* Program Overview */}
       <section className="px-6 py-16">
         <div className="mx-auto max-w-5xl">
           <div className="grid md:grid-cols-2 gap-8 mb-16">
-            <div className="space-y-6">
-              <div>
-                <h2 className="text-3xl font-bold font-display mb-4">Our Philosophy</h2>
-                <p className="text-foreground/80 leading-relaxed">
-                  Business, industry, and society have converged like never before. Today's ethos is to do business, generate wealth in an ethical space, and not degrade the environment further. At Dayananda Sagar University, we recognize the significance of this convergence and have designed our programs to equip students with the skills and knowledge to navigate this complex landscape.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="text-2xl font-bold font-display mb-4">Pedagogy & Teaching Excellence</h3>
-                <p className="text-foreground/80 leading-relaxed">
-                  We pride ourselves on our unique blend of pedagogy that balances traditional lectures, in-depth case analysis, and skill-based learning. Our professors deliver this blend with their outstanding educational credibility and practical industry experience. The program's ethos is to craft superior managers who can problem-solve and make data-driven decisions, developing excellent skills in various management areas.
-                </p>
-                <p className="text-foreground/80 leading-relaxed mt-4">
-                  In our increasingly digital world, our program equips young managers with the skills and knowledge needed to succeed in the digital age, preparing them for outstanding careers.
-                </p>
-              </div>
+            <div className="space-y-4">
+              <h2 className="text-3xl font-bold font-display">Program Overview</h2>
+              <p className="text-foreground/80">
+                Business, industry, and society have converged like never before. Today's ethos is to do business, generate wealth in an ethical space, and not degrade the environment further. At Dayananda Sagar University, we recognize the significance of this convergence and have designed our programs to equip students with the skills and knowledge to navigate this complex landscape.
+              </p>
+              <p className="text-foreground/80">
+                We pride ourselves on our unique blend of pedagogy that balances traditional lectures, in-depth case analysis, and skill-based learning. Our professors deliver this blend with their outstanding educational credibility and practical industry experience. The program's ethos is to craft superior managers who can problem-solve and make data-driven decisions.
+              </p>
             </div>
-
             <div className="grid grid-cols-2 gap-4">
               {highlights.map((item) => {
                 const Icon = item.icon;
@@ -125,6 +235,12 @@ export default function MBA() {
                 );
               })}
             </div>
+          </div>
+
+          {/* Curriculum Library */}
+          <div className="space-y-6">
+            <h2 className="text-3xl font-bold font-display">Program Specializations & Curriculum</h2>
+            <CurriculumLibrary />
           </div>
         </div>
       </section>
