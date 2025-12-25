@@ -15,6 +15,7 @@ export type DeanInfo = {
 function DeanMessageVideo({ videoUrl }: { videoUrl: string }) {
   const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
+  useAutoMuteOnScroll(videoRef);
 
   const toggleMute = () => {
     if (videoRef.current) {
