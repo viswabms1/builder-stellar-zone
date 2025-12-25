@@ -309,7 +309,9 @@ export default function Navigation() {
 
                       {/* Mega Menu Dropdown */}
                       <div
-                        className={`absolute left-0 top-full mt-0 w-64 rounded-lg shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 py-4 ${
+                        className={`absolute left-0 top-full mt-0 w-64 rounded-lg shadow-2xl transition-all duration-200 py-4 ${
+                          aboutMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
+                        } ${
                           theme === "light"
                             ? "bg-gradient-to-b from-orange-50 to-orange-100 text-gray-900 border border-orange-200"
                             : "bg-gradient-to-b from-orange-600 to-red-700 text-white"
