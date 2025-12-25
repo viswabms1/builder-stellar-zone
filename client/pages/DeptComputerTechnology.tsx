@@ -116,11 +116,6 @@ export default function DeptComputerTechnology() {
                     <Badge key={i} variant="secondary" className="text-xs">{spec}</Badge>
                   ))}
                 </div>
-                <a href="/academics/engineering/computer-technology">
-                  <Button variant="ghost" size="sm" className="w-full text-brand-orange hover:bg-brand-orange/10 mt-2">
-                    Explore <ArrowRight className="w-3 h-3 ml-1" />
-                  </Button>
-                </a>
               </CardContent>
             </Card>
 
