@@ -1,7 +1,7 @@
-import MechanicalFacultyPageTemplate from "./MechanicalFacultyPageTemplate";
+import FacultyPageTemplate from "./FacultyPageTemplate";
 import { mechFaculty } from "@/data/mech-faculty";
 
-export default function RahulKumarMech() {
+export default function RahulKumarMechPage() {
   const faculty = mechFaculty.find(f => f.slug === "dr-rahul-kumar")!;
-  return <MechanicalFacultyPageTemplate faculty={faculty} />;
+  return <FacultyPageTemplate faculty={faculty} department="Mechanical Engineering" departmentLink="/academics/engineering/mechanical/faculty" />;
 }
