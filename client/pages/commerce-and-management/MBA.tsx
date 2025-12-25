@@ -18,187 +18,188 @@ import {
 import { Button } from "@/components/ui/button";
 
 function CurriculumLibrary() {
-  const [openProgram, setOpenProgram] = useState<string | null>(null);
+  const [openSection, setOpenSection] = useState<string | null>("overview");
 
-  const programs = [
+  const specializations = [
+    "Financial Management",
+    "Human Resource Management",
+    "Supply Chain Management",
+    "Marketing Management",
+    "Information Technology & Systems",
+    "Business Analytics",
+    "Artificial Intelligence (From 2021 onwards)",
+    "Entrepreneurship",
+    "FinTech",
+  ];
+
+  const semesters = [
     {
-      id: "mba-financial",
-      label: "Financial Management",
-      description: "Specialized curriculum in corporate finance, investment analysis, and financial strategy",
-      details: "Master the complexities of financial decision-making, portfolio management, and corporate finance strategy. Develop expertise through quantitative analysis, case studies, and industry simulations with experienced finance professionals.",
-      image: "https://images.unsplash.com/photo-1606531824254-d473aeb44dc5?q=80&w=1200&auto=format&fit=crop",
-      batches: [
-        {
-          year: "2025-26",
-          summary: "Specialization courses in Semesters 3 & 4 covering corporate finance, investments, and financial management",
-          documentUrl: "https://www.dsu.edu.in/images/Commerce/MBA-FinancialMgmt-Curriculum-2025-26.pdf",
-        },
+      id: "sem1",
+      label: "Semester 1",
+      type: "Core Courses",
+      courses: [
+        "Organizational Behavior",
+        "Managerial Economics",
+        "Business Law & Ethics",
+        "Accounting for Managers",
+        "Quantitative Methods",
       ],
+      description: "Foundation courses introducing core management concepts and skills",
     },
     {
-      id: "mba-hr",
-      label: "Human Resource Management",
-      description: "Comprehensive program in talent management, organizational development, and strategic HR planning",
-      details: "Develop expertise in recruitment, employee development, organizational behavior, and strategic human capital management. Learn to lead organizational transformation and create high-performance cultures through industry partnerships and real-world cases.",
-      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop",
-      batches: [
-        {
-          year: "2025-26",
-          summary: "Specialization courses in Semesters 3 & 4 covering talent management, organizational development, and HR strategy",
-          documentUrl: "https://www.dsu.edu.in/images/Commerce/MBA-HRM-Curriculum-2025-26.pdf",
-        },
+      id: "sem2",
+      label: "Semester 2",
+      type: "Core Courses",
+      courses: [
+        "Strategic Management",
+        "Marketing Management",
+        "Financial Management",
+        "Operations Management",
+        "Business Research Methods",
       ],
+      description: "Core management disciplines and foundation for specialization",
     },
     {
-      id: "mba-scm",
-      label: "Supply Chain Management",
-      description: "Expert-level training in logistics, operations strategy, and supply chain optimization",
-      details: "Master end-to-end supply chain processes, logistics optimization, and operations management. Develop skills in demand planning, procurement, inventory management, and supply chain digitalization through simulations and industry projects.",
-      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200&auto=format&fit=crop",
-      batches: [
-        {
-          year: "2025-26",
-          summary: "Specialization courses in Semesters 3 & 4 covering supply chain strategy, logistics, and operations management",
-          documentUrl: "https://www.dsu.edu.in/images/Commerce/MBA-SCM-Curriculum-2025-26.pdf",
-        },
-      ],
+      id: "sem3",
+      label: "Semester 3",
+      type: "Specialization & Internship",
+      courses: ["Specialization Course 1", "Specialization Course 2", "Industry Internship (3 months)"],
+      description: "Begin specialization selection from 9 available options + Industry internship placement begins",
     },
     {
-      id: "mba-marketing",
-      label: "Marketing Management",
-      description: "Strategic focus on brand building, digital marketing, and consumer behavior analysis",
-      details: "Develop expertise in market research, consumer analytics, digital marketing, and brand strategy. Learn to navigate the evolving marketing landscape through case studies, business simulations, and collaborations with industry leaders.",
-      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop",
-      batches: [
-        {
-          year: "2025-26",
-          summary: "Specialization courses in Semesters 3 & 4 covering marketing strategy, digital marketing, and consumer insights",
-          documentUrl: "https://www.dsu.edu.in/images/Commerce/MBA-Marketing-Curriculum-2025-26.pdf",
-        },
-      ],
-    },
-    {
-      id: "mba-it",
-      label: "Information Technology & Systems",
-      description: "Strategic IT management, enterprise systems, and technology-driven business transformation",
-      details: "Master technology strategy, enterprise resource planning, cloud computing, and IT governance. Learn to leverage technology for competitive advantage and digital transformation in modern organizations.",
-      image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1200&auto=format&fit=crop",
-      batches: [
-        {
-          year: "2025-26",
-          summary: "Specialization courses in Semesters 3 & 4 covering IT strategy, enterprise systems, and technology management",
-          documentUrl: "https://www.dsu.edu.in/images/Commerce/MBA-IT-Curriculum-2025-26.pdf",
-        },
-      ],
-    },
-    {
-      id: "mba-analytics",
-      label: "Business Analytics",
-      description: "Data-driven decision making, predictive analytics, and business intelligence",
-      details: "Develop expertise in data analysis, statistical modeling, business intelligence, and analytics tools. Learn to extract actionable insights from data and drive strategic business decisions through hands-on projects and industry case studies.",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop",
-      batches: [
-        {
-          year: "2025-26",
-          summary: "Specialization courses in Semesters 3 & 4 covering data analytics, business intelligence, and predictive modeling",
-          documentUrl: "https://www.dsu.edu.in/images/Commerce/MBA-Analytics-Curriculum-2025-26.pdf",
-        },
-      ],
-    },
-    {
-      id: "mba-ai",
-      label: "Artificial Intelligence",
-      description: "AI-driven business solutions, machine learning applications, and intelligent automation",
-      details: "Explore artificial intelligence and machine learning applications in business. Develop skills in AI strategy, neural networks, natural language processing, and intelligent automation to drive innovation and competitive advantage in the digital economy.",
-      image: "https://images.unsplash.com/photo-1677442d019cecf3d7f94c538221c0e0d0819a0db?q=80&w=1200&auto=format&fit=crop",
-      batches: [
-        {
-          year: "2025-26",
-          summary: "Specialization courses in Semesters 3 & 4 covering AI strategy, machine learning, and intelligent business solutions (Available from 2021 onwards)",
-          documentUrl: "https://www.dsu.edu.in/images/Commerce/MBA-AI-Curriculum-2025-26.pdf",
-        },
-      ],
-    },
-    {
-      id: "mba-entrepreneurship",
-      label: "Entrepreneurship",
-      description: "Startup creation, business model innovation, and venture development",
-      details: "Master the art and science of entrepreneurship including business plan development, fundraising, growth strategies, and startup ecosystems. Learn from successful entrepreneurs and develop your own business venture ideas through mentorship and hands-on projects.",
-      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop",
-      batches: [
-        {
-          year: "2025-26",
-          summary: "Specialization courses in Semesters 3 & 4 covering entrepreneurship, business creation, and venture development",
-          documentUrl: "https://www.dsu.edu.in/images/Commerce/MBA-Entrepreneurship-Curriculum-2025-26.pdf",
-        },
-      ],
-    },
-    {
-      id: "mba-fintech",
-      label: "FinTech",
-      description: "Financial technology innovation, digital payments, and fintech business models",
-      details: "Explore the convergence of finance and technology including blockchain, digital banking, crypto assets, and fintech startups. Develop expertise in fintech business models, regulatory landscape, and innovation in financial services.",
-      image: "https://images.unsplash.com/photo-1564722217921-ab82e64c0800?q=80&w=1200&auto=format&fit=crop",
-      batches: [
-        {
-          year: "2025-26",
-          summary: "Specialization courses in Semesters 3 & 4 covering fintech innovation, digital payments, and blockchain technology",
-          documentUrl: "https://www.dsu.edu.in/images/Commerce/MBA-FinTech-Curriculum-2025-26.pdf",
-        },
-      ],
+      id: "sem4",
+      label: "Semester 4",
+      type: "Specialization & Capstone",
+      courses: ["Specialization Course 3", "Specialization Course 4", "Capstone Project"],
+      description: "Complete specialization with culminating capstone project and career launch",
     },
   ];
 
   return (
-    <div className="grid gap-4 lg:grid-cols-1">
-      {programs.map((program) => {
-        const isOpen = openProgram === program.id;
-        return (
-          <div key={program.id} className="rounded-3xl border-2 border-brand-magenta/30 overflow-hidden transition-all hover:shadow-xl hover:shadow-brand-magenta/10">
-            <div className="relative h-48 overflow-hidden">
-              <img src={program.image} alt={program.label} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+    <div className="space-y-6">
+      {/* Program Overview Card */}
+      <div className="rounded-3xl border-2 border-brand-magenta/30 overflow-hidden transition-all hover:shadow-xl hover:shadow-brand-magenta/10">
+        <div className="relative h-48 overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop"
+            alt="MBA Program"
+            className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+          />
+        </div>
+        <div className="p-6 bg-background/50 backdrop-blur-sm space-y-4">
+          <div className="flex items-start gap-3">
+            <Badge className="rounded-full border bg-brand-magenta/15 text-brand-magenta border-brand-magenta/20">
+              Postgraduate
+            </Badge>
+          </div>
+          <div>
+            <h3 className="text-xl font-bold font-display text-foreground mb-2">Master of Business Administration (MBA)</h3>
+            <p className="text-sm text-foreground/80 mb-3">
+              2-year comprehensive postgraduate program with flexible specialization options
+            </p>
+            <p className="text-sm text-foreground/70 leading-relaxed">
+              The MBA program follows a T-shaped learning approach, providing breadth through core courses in Year 1 and depth through specialization in Year 2. 
+              Students must complete Audit courses in Leadership, Ethics, and Design Thinking. The program includes a 3-month industry internship and culminates in 
+              a capstone project. Industry connect is integrated throughout, with placement preparation commencing in Semester 3.
+            </p>
+          </div>
+          <Button
+            variant="outline"
+            className="w-full border-brand-magenta/30 hover:bg-brand-magenta/10 text-brand-magenta"
+            onClick={() => setOpenSection(openSection === "overview" ? null : "overview")}
+          >
+            <span className="flex items-center justify-center gap-2">
+              {openSection === "overview" ? "Hide" : "View"} Full Details
+              <ChevronDown className={`h-4 w-4 transition-transform duration-300 ${openSection === "overview" ? "rotate-180" : ""}`} />
+            </span>
+          </Button>
+          {openSection === "overview" && (
+            <div className="mt-4 space-y-4 border-t border-border/20 pt-4">
+              <div className="rounded-xl border border-border/40 bg-card/70 p-4 space-y-3">
+                <h4 className="font-semibold text-foreground">Program Duration & Structure</h4>
+                <ul className="text-sm text-foreground/80 space-y-2">
+                  <li>• <strong>Duration:</strong> 2 Years (4 Semesters)</li>
+                  <li>• <strong>Year 1:</strong> Core and Foundation Courses</li>
+                  <li>• <strong>Year 2:</strong> Specialization + Industry Internship + Capstone Project</li>
+                  <li>• <strong>Audit Courses:</strong> Leadership, Ethics, Design Thinking</li>
+                  <li>• <strong>Internship:</strong> 3-month paid internship at leading organizations</li>
+                </ul>
+              </div>
+              <div className="rounded-xl border border-border/40 bg-card/70 p-4 space-y-3">
+                <h4 className="font-semibold text-foreground">Learning Approach</h4>
+                <p className="text-sm text-foreground/80">
+                  Our pedagogy balances traditional lectures, in-depth case analysis, and skill-based learning. Students benefit from self-paced learning 
+                  opportunities, business simulations, collaborative projects, and field experiences. Value-based education is integrated through student clubs 
+                  and experiential learning centers, emphasizing life skills essential for sustainable careers.
+                </p>
+              </div>
+              <a href="https://www.dsu.edu.in/images/Commerce/MBA-Curriculum-2025-26.pdf" target="_blank" rel="noreferrer" className="inline-block">
+                <Button size="sm" variant="outline" className="gap-2 border-brand-magenta/30 hover:bg-brand-magenta/10 text-brand-magenta">
+                  <Download className="w-4 h-4" /> Download Full Syllabus
+                </Button>
+              </a>
             </div>
-            <div className="p-6 bg-background/50 backdrop-blur-sm space-y-4">
-              <div className="flex items-start gap-3">
-                <Badge className="rounded-full border bg-brand-magenta/15 text-brand-magenta border-brand-magenta/20">Postgraduate</Badge>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold font-display text-foreground mb-2">{program.label}</h3>
-                <p className="text-sm text-foreground/80">{program.description}</p>
-                {program.details && (
-                  <p className="text-sm text-foreground/70 mt-3 leading-relaxed">{program.details}</p>
-                )}
-              </div>
-              <Button variant="outline" className="w-full border-brand-magenta/30 hover:bg-brand-magenta/10 text-brand-magenta" onClick={() => setOpenProgram(isOpen ? null : program.id)}>
-                <span className="flex items-center justify-center gap-2">
-                  {isOpen ? "Hide" : "View"} Curriculum
-                  <ChevronDown className={`h-4 w-4 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`} />
-                </span>
-              </Button>
-              {isOpen && (
-                <div className="mt-4 space-y-3 border-t border-border/20 pt-4">
-                  {program.batches.map((batch) => (
-                    <div key={batch.year} className="rounded-xl border border-border/40 bg-card/70 p-4 space-y-3">
-                      <div className="flex items-center gap-2">
-                        <Badge className="rounded-full border text-xs bg-brand-magenta/20 text-brand-magenta border-brand-magenta/30">
-                          <CalendarDays className="h-3 w-3 mr-1" />
-                          {batch.year}
-                        </Badge>
-                      </div>
-                      <p className="text-sm text-foreground/80">{batch.summary}</p>
-                      <a href={batch.documentUrl} target="_blank" rel="noreferrer" className="inline-block">
-                        <Button size="sm" variant="outline" className="gap-2 border-brand-magenta/30 hover:bg-brand-magenta/10 text-brand-magenta">
-                          <Download className="w-4 h-4" /> Download Syllabus
-                        </Button>
-                      </a>
+          )}
+        </div>
+      </div>
+
+      {/* Semester Structure Cards */}
+      <div className="space-y-4">
+        <h3 className="text-2xl font-bold font-display">Program Structure by Semester</h3>
+        <div className="grid gap-4">
+          {semesters.map((semester) => (
+            <div key={semester.id} className="rounded-2xl border border-border/50 bg-card/40 backdrop-blur overflow-hidden hover:shadow-lg transition-all">
+              <div className="p-6">
+                <div className="flex items-start justify-between gap-4 mb-4">
+                  <div className="flex-1">
+                    <div className="flex items-center gap-2 mb-2">
+                      <h4 className="text-lg font-bold font-display text-foreground">{semester.label}</h4>
+                      <Badge className="bg-brand-magenta/20 text-brand-magenta border border-brand-magenta/30">{semester.type}</Badge>
+                    </div>
+                    <p className="text-sm text-foreground/70">{semester.description}</p>
+                  </div>
+                </div>
+                <div className="grid sm:grid-cols-2 gap-3">
+                  {semester.courses.map((course) => (
+                    <div key={course} className="px-3 py-2 rounded-lg bg-foreground/5 border border-border/20">
+                      <p className="text-sm text-foreground/80">{course}</p>
                     </div>
                   ))}
                 </div>
-              )}
+              </div>
             </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Specialization Options */}
+      <div className="rounded-3xl border-2 border-brand-magenta/30 overflow-hidden">
+        <div className="p-6 bg-background/50 backdrop-blur-sm space-y-4">
+          <div>
+            <h3 className="text-xl font-bold font-display text-foreground mb-2">Specialization Options (Semesters 3 & 4)</h3>
+            <p className="text-sm text-foreground/80 mb-4">
+              Choose one specialization to pursue in Semesters 3 & 4. Each specialization offers a unique path aligned with your career aspirations.
+            </p>
           </div>
-        );
-      })}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            {specializations.map((spec) => (
+              <div key={spec} className="p-4 rounded-xl border border-brand-magenta/30 bg-brand-magenta/5 hover:bg-brand-magenta/10 transition-colors">
+                <div className="flex items-start gap-2">
+                  <Target className="h-5 w-5 text-brand-magenta flex-shrink-0 mt-0.5" />
+                  <p className="text-sm font-semibold text-foreground">{spec}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="mt-4 p-4 rounded-lg bg-brand-blue/5 border border-brand-blue/20">
+            <p className="text-xs text-foreground/70">
+              <strong>Nine Specialization Options:</strong> Financial Management, Human Resource Management, Supply Chain Management, Marketing Management, 
+              Information Technology & Systems, Business Analytics, Artificial Intelligence, Entrepreneurship, and FinTech. Students can create their unique choice 
+              rubric and earn credits for self-paced learning from world-class institutions.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
@@ -214,22 +215,22 @@ export default function MBA() {
   const learningMethods = [
     {
       title: "Business Simulations",
-      description: "Simulate real business scenarios, make decisions, and observe outcomes in a risk-free environment to enhance decision-making abilities and strategic thinking.",
+      description: "Simulate real business scenarios, make decisions, and observe outcomes in a risk-free environment to enhance decision-making abilities.",
       icon: Target,
     },
     {
       title: "Collaborative Projects",
-      description: "Work in diverse teams to develop teamwork, communication, and leadership skills while gaining exposure to different viewpoints and approaches.",
+      description: "Work in diverse teams to develop teamwork, communication, and leadership skills while gaining exposure to different viewpoints.",
       icon: Users,
     },
     {
       title: "Field Experiences",
-      description: "Company visits, field trips, and workshops provide experiential learning opportunities outside the classroom, offering insights into various industries and business practices.",
+      description: "Company visits, field trips, and workshops provide experiential learning opportunities outside the classroom.",
       icon: Globe,
     },
     {
       title: "International Immersion",
-      description: "Live briefly in a global environment in a foreign nation, immersing yourself in a different culture and gaining a unique global perspective.",
+      description: "Live briefly in a global environment in a foreign nation, immersing yourself in a different culture and gaining unique perspective.",
       icon: Briefcase,
     },
     {
@@ -239,7 +240,7 @@ export default function MBA() {
     },
     {
       title: "Case Analysis & Lectures",
-      description: "Balanced blend of traditional lectures and in-depth case analysis delivered by professors with outstanding educational credibility and practical industry experience.",
+      description: "Balanced blend of traditional lectures and in-depth case analysis delivered by professors with outstanding industry experience.",
       icon: BookOpen,
     },
   ];
@@ -279,41 +280,19 @@ export default function MBA() {
         </div>
       </div>
 
-      {/* Program Overview */}
+      {/* Program Overview with Curriculum */}
       <section className="px-6 py-16">
         <div className="mx-auto max-w-5xl">
           <div className="grid md:grid-cols-2 gap-8 mb-16">
             <div className="space-y-6">
               <div>
-                <h2 className="text-3xl font-bold font-display mb-4">Program Overview</h2>
+                <h2 className="text-3xl font-bold font-display mb-4">Why Our MBA?</h2>
                 <p className="text-foreground/80 mb-4">
-                  Business, industry, and society have converged like never before. Today's ethos is to do business, generate wealth in an ethical space, and not degrade the environment further. At Dayananda Sagar University, we recognize the significance of this convergence and have designed our programs to equip students with the skills and knowledge to navigate this complex landscape.
+                  Business, industry, and society have converged like never before. Our MBA programs are designed to equip students with the skills and knowledge to navigate this complex landscape while doing business ethically and sustainably.
                 </p>
                 <p className="text-foreground/80">
-                  We pride ourselves on our unique blend of pedagogy that balances traditional lectures, in-depth case analysis, and skill-based learning. Our professors deliver this blend with their outstanding educational credibility and practical industry experience. The program's ethos is to craft superior managers who can problem-solve and make data-driven decisions.
+                  We pride ourselves on a unique blend of pedagogy balancing traditional lectures, in-depth case analysis, and skill-based learning delivered by professors with outstanding educational credibility and practical industry experience.
                 </p>
-              </div>
-
-              <div>
-                <h3 className="text-xl font-bold font-display mb-3">T-Shaped Learning Approach</h3>
-                <p className="text-foreground/80 mb-3">
-                  Our classic T-shaped approach gives students both breadth of understanding and depth in specific areas. Year 1 involves core and foundation courses, while Year 2 allows specialization in two chosen disciplines from nine options.
-                </p>
-                <p className="text-foreground/80">
-                  Students must also complete Audit courses in Leadership, Ethics, and Design Thinking. The program emphasizes industry relevance and student learning outcomes at every stage.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="text-xl font-bold font-display mb-3">Program Highlights</h3>
-                <ul className="text-foreground/80 space-y-2 text-sm">
-                  <li>✓ Nine specialization options for Year 2</li>
-                  <li>✓ Self-paced learning opportunities worldwide</li>
-                  <li>✓ 3-month industry internship</li>
-                  <li>✓ Capstone project preparation for career launch</li>
-                  <li>✓ Value-based education through student clubs</li>
-                  <li>✓ Industry connect with placement preparation from Semester 3</li>
-                </ul>
               </div>
             </div>
             <div className="grid grid-cols-2 gap-4">
@@ -333,7 +312,7 @@ export default function MBA() {
 
           {/* Curriculum Library */}
           <div className="space-y-6">
-            <h2 className="text-3xl font-bold font-display">Program Specializations & Curriculum</h2>
+            <h2 className="text-3xl font-bold font-display">Program Curriculum & Specializations</h2>
             <CurriculumLibrary />
           </div>
         </div>
@@ -345,7 +324,7 @@ export default function MBA() {
           <div className="mb-12">
             <h2 className="text-3xl font-bold font-display mb-4">Learning Experiences</h2>
             <p className="text-foreground/80">
-              Learning at Dayananda Sagar University is about more than just lectures and textbooks. It's about exciting, hands-on experiences that broaden your horizons and develop critical thinking, leadership, and entrepreneurial capabilities.
+              Learning at Dayananda Sagar University is about exciting, hands-on experiences that broaden your horizons and develop critical thinking, leadership, and entrepreneurial capabilities.
             </p>
           </div>
 
@@ -388,10 +367,10 @@ export default function MBA() {
             <Card className="border-border/50 bg-card/60 backdrop-blur">
               <CardHeader>
                 <Globe className="h-8 w-8 text-brand-magenta mb-3" />
-                <CardTitle>Global Competence</CardTitle>
+                <CardTitle>Industry Connect</CardTitle>
               </CardHeader>
               <CardContent className="text-sm text-foreground/80">
-                Equipping students with global perspective, digital skills, and understanding of cross-cultural business practices essential for success in international markets.
+                Strong industry partnerships, paid internships, and placement preparation from Semester 3 ensure students are work-ready for global organizations.
               </CardContent>
             </Card>
 
@@ -401,7 +380,7 @@ export default function MBA() {
                 <CardTitle>Entrepreneurial Focus</CardTitle>
               </CardHeader>
               <CardContent className="text-sm text-foreground/80">
-                Creating a startup ecosystem and fostering entrepreneurial mindsets among students to become job creators and innovative leaders in their industries.
+                Creating a startup ecosystem and fostering entrepreneurial mindsets among students to become job creators and innovative leaders.
               </CardContent>
             </Card>
           </div>
