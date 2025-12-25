@@ -959,6 +959,10 @@ export default function ComputerApplications() {
         </div>
       </section>
 
+      <section id="notice-board" className="px-3 py-8">
+        <NoticeBoardCarousel />
+      </section>
+
       <section id="featured-news" className="px-6 py-16 bg-gradient-to-r from-brand-blue/5 via-brand-magenta/5 to-brand-orange/5">
         <div className="mx-auto max-w-7xl">
           <div className="mb-12 text-center">
