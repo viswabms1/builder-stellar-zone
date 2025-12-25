@@ -652,7 +652,7 @@ function HeroVideo() {
 
   return (
     <section className="relative w-full" id="top" ref={sectionRef}>
-      <div className="flex w-full" style={{ height: "600px" }}>
+      <div className="flex w-full" style={{ height: "500px" }}>
         {HERO_VIDEOS.map((video, idx) => (
           <HeroVideoPanel
             key={idx}
