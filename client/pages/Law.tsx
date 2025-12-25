@@ -323,11 +323,11 @@ const PROGRAM_CARDS: ProgramCard[] = [
     name: "B.B.A., LL.B. (Hons)",
     area: "Integrated UG (Commerce & Law)",
     description:
-      "Comprehensive 5-year programme blending business acumen with rigorous legal training, case studies and moot court practice for corporate law readiness.",
+      "5-year integrated programme tailored for students who wish to study law alongside business administration with dual qualification advantage.",
     image:
       "https://images.unsplash.com/photo-1528740579684-5809094cdaa1?q=80&w=1600&auto=format&fit=crop",
-    link: "/academics/law/bba-llb",
-    highlights: ["Corporate Law", "Contract Drafting", "Moot Court"],
+    link: "/academics/law/bba-llb-honors",
+    highlights: ["Corporate Law", "Business Acumen", "Moot Court"],
     overlay: "bg-gradient-to-br from-brand-magenta/80 via-black/75 to-black/60 mix-blend-multiply",
     badgeClass: "bg-brand-magenta/25 text-foreground/90 border border-white/30 backdrop-blur",
     panelClass: "bg-black/55 backdrop-blur-xl",
@@ -337,25 +337,25 @@ const PROGRAM_CARDS: ProgramCard[] = [
     name: "B.A., LL.B. (Hons)",
     area: "Integrated UG (Arts & Law)",
     description:
-      "5-year integrated programme combining humanities scholarship with legal education, constitutional law emphasis, and public interest law practice.",
+      "5-year integrated programme blending foundational legal theory with specialized subjects to foster critical thinking and practical skills.",
     image:
       "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=1600&auto=format&fit=crop",
-    link: "/academics/law/ba-llb",
-    highlights: ["Constitutional Law", "Public Interest", "Advocacy"],
+    link: "/academics/law/ba-llb-honors",
+    highlights: ["Legal Theory", "Practical Skills", "Advocacy"],
     overlay: "bg-gradient-to-br from-brand-blue/75 via-black/70 to-black/55 mix-blend-multiply",
     badgeClass: "bg-brand-blue/30 text-foreground/90 border border-white/25 backdrop-blur",
     panelClass: "bg-black/55 backdrop-blur-xl",
     featured: true,
   },
   {
-    name: "LL.B. (Master of Laws)",
+    name: "LLM (Master of Laws)",
     area: "Postgraduate Specialisation",
     description:
-      "Advanced 3-year postgraduate programme for law graduates specializing in litigation, corporate law, public law or emerging tech law domains.",
+      "Advanced postgraduate programmes in Law & Technology and Corporate & Commercial Law with focus on emerging domains and specializations.",
     image:
       "https://images.unsplash.com/photo-1489515217757-5fd1be406fef?q=80&w=1600&auto=format&fit=crop",
-    link: "/academics/law/llb",
-    highlights: ["Specializations", "Research Focus", "Industry Internships"],
+    link: "/academics/law/programs",
+    highlights: ["Tech & Corporate Law", "3-Year LLB", "Specializations"],
     overlay: "bg-gradient-to-br from-brand-orange/70 via-black/70 to-black/55 mix-blend-multiply",
     badgeClass: "bg-brand-orange/35 text-foreground/90 border border-white/25 backdrop-blur",
     panelClass: "bg-black/55 backdrop-blur-xl",
