@@ -528,7 +528,7 @@ export default function Index() {
     },
   ];
 
-  // Auto-rotate featured news every 5 seconds (pauses when video is playing)
+  // Auto-rotate featured news every 8 seconds (pauses when video is playing)
   useEffect(() => {
     if (isVideoPlaying) {
       return;
@@ -536,12 +536,12 @@ export default function Index() {
 
     const interval = setInterval(() => {
       setFeaturedNewsIndex((prev) => (prev + 1) % allFeaturedNews.length);
-    }, 5000);
+    }, 8000);
 
     return () => clearInterval(interval);
   }, [allFeaturedNews.length, isVideoPlaying]);
 
-  // Auto-rotate events every 5 seconds (pauses when user interacts)
+  // Auto-rotate events every 8 seconds (pauses when user interacts)
   useEffect(() => {
     if (isEventInteracting) {
       return;
@@ -549,12 +549,12 @@ export default function Index() {
 
     const interval = setInterval(() => {
       setSelectedEventIndex((prev) => (prev + 1) % allEvents.length);
-    }, 5000);
+    }, 8000);
 
     return () => clearInterval(interval);
   }, [allEvents.length, isEventInteracting]);
 
-  // Auto-rotate publications every 5 seconds (pauses when user interacts)
+  // Auto-rotate publications every 8 seconds (pauses when user interacts)
   useEffect(() => {
     if (isPublicationInteracting) {
       return;
@@ -562,7 +562,7 @@ export default function Index() {
 
     const interval = setInterval(() => {
       setSelectedPublicationIndex((prev) => (prev + 1) % allPublications.length);
-    }, 5000);
+    }, 8000);
 
     return () => clearInterval(interval);
   }, [allPublications.length, isPublicationInteracting]);
