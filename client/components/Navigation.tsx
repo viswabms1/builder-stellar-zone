@@ -151,6 +151,7 @@ export default function Navigation() {
         href: "/academics/computer-applications",
         departments: [
           { name: "Explore Programs", href: "/academics/computer-applications" },
+          { name: "B.C.A.", href: "/academics/computer-applications/bca" },
         ],
       },
       {
