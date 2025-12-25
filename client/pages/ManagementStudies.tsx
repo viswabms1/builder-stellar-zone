@@ -676,6 +676,11 @@ export default function ManagementStudies() {
         <DeanSection dean={DEAN_INFO} />
       </div>
 
+      {/* PG Dean Section */}
+      <div className="mt-16">
+        <DeanSection dean={PG_DEAN_INFO} />
+      </div>
+
       <section id="programs" className="relative overflow-hidden px-3 py-8">
         <div
           className="pointer-events-none absolute inset-x-0 -top-32 h-64 bg-gradient-to-b from-brand-magenta/20 via-transparent to-transparent blur-3xl"
