@@ -106,7 +106,7 @@ export default function DeptAIML() {
             <h2 className="headline-2 font-display mb-2">Programs Offered</h2>
             <p className="text-foreground/80 font-body">Choose your pathway to AI excellence</p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid md:grid-cols-2 gap-4">
             {/* B.Tech Program */}
             <Card className="border border-border/50 bg-card/50 backdrop-blur-sm hover:shadow-lg transition-all">
               <CardHeader>
