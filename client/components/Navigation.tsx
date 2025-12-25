@@ -319,6 +319,7 @@ export default function Navigation() {
                           <Link
                             key={submenu.name}
                             to={submenu.href}
+                            onClick={() => setAboutMenuOpen(false)}
                             className={`block px-3 py-2.5 transition-colors text-sm ${
                               theme === "light"
                                 ? "hover:bg-orange-200 border-b border-orange-200 last:border-b-0"
