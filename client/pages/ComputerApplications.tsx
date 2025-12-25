@@ -693,7 +693,7 @@ export default function ComputerApplications() {
           </div>
 
           {/* Undergraduate Programs */}
-          <div className="mb-16">
+          <div className="mb-12">
             <div className="mb-8">
               <Badge className="bg-brand-magenta/15 text-brand-magenta">
                 Undergraduate Programs
