@@ -964,7 +964,7 @@ function ProgramCardComponent({ program }: { program: ProgramCard }) {
 function HeroVideo() {
   const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
+  const containerRef = useAutoMuteOnScroll(videoRef);
 
   const toggleMute = () => {
     if (videoRef.current) {
@@ -980,29 +980,6 @@ function HeroVideo() {
     video.muted = isMuted;
   }, [isMuted]);
 
-  useEffect(() => {
-    const container = containerRef.current;
-    const video = videoRef.current;
-    if (!container || !video) return;
-
-    const handleScroll = () => {
-      const rect = container.getBoundingClientRect();
-      const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
-
-      if (isVisible) {
-        video.play().catch(() => {});
-      } else {
-        video.pause();
-        video.muted = true;
-        setIsMuted(true);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   useEffect(() => {
     const video = videoRef.current;
