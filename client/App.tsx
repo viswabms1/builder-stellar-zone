@@ -31,6 +31,7 @@ import ManagementStudies from "./pages/ManagementStudies";
 import BCom from "./pages/commerce-and-management/BCom";
 import BBA from "./pages/commerce-and-management/BBA";
 import MBA from "./pages/commerce-and-management/MBA";
+import MBAFaculty from "./pages/commerce-and-management/MBAFaculty";
 import HealthSciences from "./pages/HealthSciences";
 import MedicalEducationResearch from "./pages/MedicalEducationResearch";
 import CEE from "./pages/CEE";
