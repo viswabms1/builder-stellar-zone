@@ -24,11 +24,12 @@ function CurriculumLibrary() {
       id: "bcom-standard",
       label: "B.Com (Standard)",
       description: "3-year comprehensive undergraduate program with foundation in accounting, finance, and commerce",
+      details: "Bridge the gap between conceptual learning and practical application to inculcate professional corporate expertise. The curriculum is suitably prepared to meet the challenging needs of Indian corporates with built-in flexibility enabling students to choose from a wide spectrum of courses. Imparts comprehensive business skills and turns out high-calibre, competent, versatile professionals.",
       image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200&auto=format&fit=crop",
       batches: [
         {
           year: "2025-26",
-          summary: "Latest curriculum bridging conceptual learning and practical application with professional corporate expertise across 6 semesters",
+          summary: "Latest curriculum across 6 semesters combining rigorous academics with practical application",
           documentUrl: "https://www.dsu.edu.in/images/Commerce/B-Com-Curriculum-2025-26.pdf",
         },
       ],
@@ -37,11 +38,12 @@ function CurriculumLibrary() {
       id: "bcom-acca",
       label: "B.Com with ACCA Coaching",
       description: "3-year program integrated with ACCA (Association of Chartered Certified Accountants) coaching and examinations",
+      details: "ACCA is the global body for professional accountants from the UK, founded in 1904, with over 188,137 members and 480,813 students in 178 countries. Designed for students aspiring to be strategic business leaders and job creators with financial and entrepreneurial expertise to perform key roles as financial analysts and enterprise venture specialists. DSU has partnered with Globalfti, a Gold Approved learning provider for ACCA in India. Students gain industry-relevant skills and qualifications along with a B.Com degree, with up to 6 ACCA paper exemptions including exemption fee waivers with reduced registration and annual subscription fees.",
       image: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=1200&auto=format&fit=crop",
       batches: [
         {
           year: "2025-26",
-          summary: "Dual certification program combining B.Com degree with up to 6 ACCA paper exemptions and reduced registration fees",
+          summary: "Dual certification program combining B.Com degree with ACCA coaching and up to 6 paper exemptions",
           documentUrl: "https://www.dsu.edu.in/images/Commerce/B-Com-ACCA-Curriculum-2025-26.pdf",
         },
       ],
@@ -50,11 +52,12 @@ function CurriculumLibrary() {
       id: "bcom-cma",
       label: "B.Com with USA-CMA Coaching",
       description: "3-year program with Certified Management Accountant (CMA) certification from the Institute of Management Accountants, USA",
+      details: "US CMA (Certified Management Accountant) is a professional certification in finance and accounting relevant for success, offered by the IMA (Institute of Management Accountants), USA. A globally recognized, advanced-level credential appropriate for accountants and financial professionals in business. The curriculum covers Financial Reporting, Planning, Performance & Control (Part 1) and Financial Decision Making (Part 2). The CMA curriculum is covered over Semesters 1-4 via 5 subjects, and students are encouraged to clear the 2 CMA exams in Semester 4-5 before placements. Candidates who clear CMA exams are eligible for differential placements with top MNCs in India and abroad. Subjects include Financial Planning & Analysis, Financial Management, Internal Controls, Risk Management, Cost Management, Performance Management, Decision Analysis and Professional Ethics.",
       image: "https://images.unsplash.com/photo-1553729784-e91953dec042?q=80&w=1200&auto=format&fit=crop",
       batches: [
         {
           year: "2025-26",
-          summary: "Advanced curriculum covering financial reporting, planning, performance control, and financial decision making across 4 semesters",
+          summary: "Advanced curriculum covering financial reporting, planning, performance control, and financial decision making",
           documentUrl: "https://www.dsu.edu.in/images/Commerce/B-Com-CMA-Curriculum-2025-26.pdf",
         },
       ],
@@ -63,11 +66,12 @@ function CurriculumLibrary() {
       id: "bcom-ca",
       label: "B.Com with CA Foundation Coaching",
       description: "3-year program enabling simultaneous pursuit of B.Com and Chartered Accountant (CA) articleship",
+      details: "Aims to nurture auditing and taxation professionals who become change agents in advising the corporate and thereby bring in higher standards in corporate governance and due diligence for sustainable socio-economic growth. Students have the privilege of pursuing the UG program along with the Articleship required to complete CA due to unique timings and facility to learn on campus. Coaching provided by practicing professionals and academicians enables easier and comprehensive coverage of the curriculum. Students receive in-house training for CPT & IPCE. B.Com classes are held in the morning and CA classes in the afternoon at the DSU campus, seamlessly blending both curricula. Excellent facilities include modern classrooms, Wi-Fi campus, learning centre, seminar halls, and auditorium. The program effectively connects with industry and corporate houses to provide comprehensive placement services.",
       image: "https://images.unsplash.com/photo-1590080876-e50b5ff8f5d9?q=80&w=1200&auto=format&fit=crop",
       batches: [
         {
           year: "2025-26",
-          summary: "Integrated program with B.Com morning classes and CA afternoon classes on campus, including CPT and IPCE training",
+          summary: "Integrated program blending B.Com and CA curricula with morning UG classes and afternoon CA classes on campus",
           documentUrl: "https://www.dsu.edu.in/images/Commerce/B-Com-CA-Curriculum-2025-26.pdf",
         },
       ],
@@ -90,6 +94,9 @@ function CurriculumLibrary() {
               <div>
                 <h3 className="text-xl font-bold font-display text-foreground mb-2">{program.label}</h3>
                 <p className="text-sm text-foreground/80">{program.description}</p>
+                {program.details && (
+                  <p className="text-sm text-foreground/70 mt-3 leading-relaxed">{program.details}</p>
+                )}
               </div>
               <Button variant="outline" className="w-full border-brand-magenta/30 hover:bg-brand-magenta/10 text-brand-magenta" onClick={() => setOpenProgram(isOpen ? null : program.id)}>
                 <span className="flex items-center justify-center gap-2">
