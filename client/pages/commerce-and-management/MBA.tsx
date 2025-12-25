@@ -165,9 +165,6 @@ function CurriculumLibrary() {
         <div className="p-6 bg-background/50 backdrop-blur-sm space-y-4">
           <div>
             <h3 className="text-xl font-bold font-display text-foreground mb-2">Specialization Options (Semesters 3 & 4)</h3>
-            <p className="text-sm text-foreground/80 mb-4">
-              Choose one specialization to pursue in Semesters 3 & 4. Each specialization offers a unique path aligned with your career aspirations.
-            </p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
             {specializations.map((spec) => (
