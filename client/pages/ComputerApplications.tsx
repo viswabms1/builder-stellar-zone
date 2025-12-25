@@ -609,7 +609,7 @@ function HeroVideoPanel({ video, index, activeAudioIndex, setActiveAudioIndex }:
       <button
         onClick={toggleMute}
         className="absolute top-4 right-4 z-20 p-2 rounded-full bg-black/50 hover:bg-black/70 transition-colors text-white backdrop-blur-sm border border-white/20"
-        style={{ transform: "translateY(1.5cm)" }}
+        style={{ transform: "translateY(2cm)" }}
         aria-label={isAudioActive ? "Mute" : "Unmute"}
       >
         {isAudioActive ? (
