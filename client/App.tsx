@@ -464,6 +464,14 @@ function App() {
                   element={<ManagementStudies />}
                 />
                 <Route
+                  path="/academics/commerce-and-management/bcom"
+                  element={<BCom />}
+                />
+                <Route
+                  path="/academics/commerce-and-management/bba"
+                  element={<BBA />}
+                />
+                <Route
                   path="/academics/health-sciences"
                   element={<HealthSciences />}
                 />
