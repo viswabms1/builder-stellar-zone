@@ -644,7 +644,7 @@ function HeroVideo() {
 export default function Law() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <section className="relative w-full" id="top">
+      <section className="relative w-full overflow-hidden" id="top">
         <HeroVideo />
       </section>
 
