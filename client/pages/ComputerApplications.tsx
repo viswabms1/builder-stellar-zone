@@ -736,7 +736,7 @@ export default function ComputerApplications() {
 
       <section
         id="related-resources"
-        className="bg-gradient-to-r from-brand-magenta/5 via-brand-blue/5 to-brand-orange/5 px-6 py-16"
+        className="bg-gradient-to-r from-brand-magenta/5 via-brand-blue/5 to-brand-orange/5 px-6 py-12"
       >
         <div className="mx-auto max-w-7xl">
           <div className="mb-12 text-center">
