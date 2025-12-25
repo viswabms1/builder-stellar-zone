@@ -30,6 +30,7 @@ import AppliedSciences from "./pages/AppliedSciences";
 import ManagementStudies from "./pages/ManagementStudies";
 import BCom from "./pages/commerce-and-management/BCom";
 import BBA from "./pages/commerce-and-management/BBA";
+import MBA from "./pages/commerce-and-management/MBA";
 import HealthSciences from "./pages/HealthSciences";
 import MedicalEducationResearch from "./pages/MedicalEducationResearch";
 import CEE from "./pages/CEE";
@@ -470,6 +471,10 @@ function App() {
                 <Route
                   path="/academics/commerce-and-management/bba"
                   element={<BBA />}
+                />
+                <Route
+                  path="/academics/commerce-and-management/mba"
+                  element={<MBA />}
                 />
                 <Route
                   path="/academics/health-sciences"
