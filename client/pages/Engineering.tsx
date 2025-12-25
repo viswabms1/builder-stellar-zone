@@ -444,14 +444,6 @@ const SUPPORTING_DEPARTMENTS: SupportingDepartment[] = [
     link: "/academics/chemistry",
   },
   {
-    name: "Chemistry Department",
-    focus:
-      "Materials science, polymer chemistry and environmental labs enabling sustainable engineering solutions.",
-    image:
-      "https://images.unsplash.com/photo-1581090909855-1c76e948215d?q=80&w=1600&auto=format&fit=crop",
-    link: "https://www.dsu.edu.in/engineering/chemistry",
-  },
-  {
     name: "Mathematics Department",
     focus:
       "Applied mathematics, statistics and computational techniques powering algorithmic and analytical thinking.",
