@@ -588,7 +588,7 @@ function HeroVideoPanel({ video, index, activeAudioIndex, setActiveAudioIndex }:
   }, [isAudioActive]);
 
   return (
-    <div className="relative h-full flex-1 overflow-hidden group">
+    <div className="relative flex-1 overflow-hidden group" style={{ height: "100%" }}>
       <video
         ref={videoRef}
         src={video.src}
