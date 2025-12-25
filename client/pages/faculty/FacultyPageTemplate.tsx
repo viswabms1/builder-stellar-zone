@@ -40,7 +40,7 @@ export default function FacultyPageTemplate({ faculty, department = "Computer Sc
                     ))}
                   </div>
                 </div>
-                <Link to="/academics/engineering/computer-science/faculty">
+                <Link to={departmentLink}>
                   <Button variant="outline" className="hidden sm:inline-flex"><ChevronLeft className="w-4 h-4 mr-2"/>Back</Button>
                 </Link>
               </CardContent>
