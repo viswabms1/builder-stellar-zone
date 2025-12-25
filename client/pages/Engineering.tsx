@@ -1100,11 +1100,27 @@ function HeroVideo() {
 function DeanMessageVideo() {
   const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
+  useAutoMuteOnScroll(videoRef);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    // Sync button state with actual video muted status
+    const handleVolumeChange = () => {
+      setIsMuted(video.muted);
+    };
+
+    video.addEventListener("volumechange", handleVolumeChange);
+    return () => {
+      video.removeEventListener("volumechange", handleVolumeChange);
+    };
+  }, []);
 
   const toggleMute = () => {
     if (videoRef.current) {
       videoRef.current.muted = !videoRef.current.muted;
-      setIsMuted(!isMuted);
+      setIsMuted(videoRef.current.muted);
     }
   };
 
@@ -1114,7 +1130,7 @@ function DeanMessageVideo() {
         ref={videoRef}
         src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F0c95c62aa88741fca8ebdc32aade53d5?alt=media&token=c57ff4a9-aea8-4ff3-843b-23ce820ba630&apiKey=4aa279a8430d441dba9c55f659831878"
         autoPlay
-        muted
+        muted={isMuted}
         loop
         playsInline
         className="w-full h-full object-cover"
