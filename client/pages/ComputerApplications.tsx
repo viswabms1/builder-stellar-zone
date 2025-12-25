@@ -652,9 +652,7 @@ function HeroVideo() {
 export default function ComputerApplications() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <section className="relative w-full" id="top">
-        <HeroVideo />
-      </section>
+      <HeroVideo />
 
 
       {/* Dean's Message Section */}
