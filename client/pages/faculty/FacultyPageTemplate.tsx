@@ -7,6 +7,8 @@ import type { Faculty } from "@/data/cse-faculty";
 
 interface FacultyPageTemplateProps {
   faculty: Faculty;
+  department?: string;
+  departmentLink?: string;
 }
 
 export default function FacultyPageTemplate({ faculty }: FacultyPageTemplateProps) {
