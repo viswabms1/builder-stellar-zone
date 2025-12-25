@@ -457,7 +457,7 @@ const SUPPORTING_DEPARTMENTS: SupportingDepartment[] = [
       "Communication, design thinking, economics and liberal arts courses that shape socially conscious engineers.",
     image:
       "https://images.unsplash.com/photo-1529070538774-1843cb3265df?q=80&w=1600&auto=format&fit=crop",
-    link: "https://www.dsu.edu.in/engineering/humanities",
+    link: "/academics/humanities-social-sciences",
   },
 ];
 
