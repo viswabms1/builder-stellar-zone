@@ -93,7 +93,7 @@ export function DeanSection({ dean }: DeanSectionProps) {
                 </div>
 
                 {/* Video Container */}
-                <DeanMessageVideo />
+                <DeanMessageVideo videoUrl={dean.videoUrl} />
               </div>
             </div>
           </div>
