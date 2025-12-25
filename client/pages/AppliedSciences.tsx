@@ -8,6 +8,7 @@ import {
   BookOpen,
   CalendarDays,
   ChevronRight,
+  Download,
   FileText,
   FlaskConical,
   GraduationCap,
@@ -28,6 +29,12 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { DeanSection, type DeanInfo } from "@/components/DeanSection";
+import {
+  getAppliedSciencesEvents,
+  getAppliedSciencesNews,
+  getAppliedSciencesAnnouncements,
+  type NoticeItem as ImportedNoticeItem,
+} from "@/data/applied-sciences-events";
 
 
 type ProgramCard = {
