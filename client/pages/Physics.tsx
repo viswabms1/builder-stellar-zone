@@ -12,6 +12,7 @@ import {
   ChevronRight,
   GraduationCap,
   Cpu,
+  Microscope as MicroscopeIcon,
 } from "lucide-react";
 
 export default function Physics() {
