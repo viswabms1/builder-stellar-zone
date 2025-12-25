@@ -20,6 +20,7 @@ import MCA from "./pages/MCA";
 import MSCDataScience from "./pages/MSCDataScience";
 import Law from "./pages/Law";
 import LawPrograms from "./pages/law/Programs";
+import LawFaculty from "./pages/law/Faculty";
 import BALLBHonors from "./pages/law/BALLBHonors";
 import BBALLBHonors from "./pages/law/BBALLBHonors";
 import LLB3Year from "./pages/law/LLB3Year";
