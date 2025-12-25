@@ -449,6 +449,12 @@ function App() {
                   element={<ComputerApplicationsFaculty />}
                 />
                 <Route path="/academics/law" element={<Law />} />
+                <Route path="/academics/law/programs" element={<LawPrograms />} />
+                <Route path="/academics/law/ba-llb-honors" element={<BALLBHonors />} />
+                <Route path="/academics/law/bba-llb-honors" element={<BBALLBHonors />} />
+                <Route path="/academics/law/llb-3-year" element={<LLB3Year />} />
+                <Route path="/academics/law/llm-law-technology" element={<LLMLawTechnology />} />
+                <Route path="/academics/law/llm-corporate-commercial" element={<LLMCorporateCommercial />} />
                 <Route
                   path="/academics/management-studies"
                   element={<ManagementStudies />}
