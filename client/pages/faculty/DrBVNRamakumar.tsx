@@ -1,7 +1,7 @@
-import AerospaceFacultyPageTemplate from "./AerospaceFacultyPageTemplate";
+import FacultyPageTemplate from "./FacultyPageTemplate";
 import { aerospaceFaculty } from "@/data/aerospace-faculty";
 
-export default function DrBVNRamakumar() {
+export default function DrBVNRamakumarPage() {
   const faculty = aerospaceFaculty.find(f => f.slug === "dr-b-v-n-ramakumar")!;
-  return <AerospaceFacultyPageTemplate faculty={faculty} />;
+  return <FacultyPageTemplate faculty={faculty} department="Aerospace Engineering" departmentLink="/academics/engineering/aerospace/faculty" />;
 }
