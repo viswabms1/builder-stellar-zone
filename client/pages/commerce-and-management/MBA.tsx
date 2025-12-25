@@ -22,58 +22,128 @@ function CurriculumLibrary() {
 
   const programs = [
     {
-      id: "mba-general",
-      label: "MBA (General)",
-      description: "2-year comprehensive postgraduate program preparing superior managers with strategic thinking and data-driven decision making",
-      details: "Business, industry, and society have converged like never before. Today's ethos is to do business, generate wealth in an ethical space, and not degrade the environment further. Our programs are designed to equip students with the skills and knowledge to navigate this complex landscape. We pride ourselves on a unique blend of pedagogy balancing traditional lectures, in-depth case analysis, and skill-based learning delivered by professors with outstanding educational credibility and practical industry experience. The program crafts superior managers who can problem-solve and make data-driven decisions. In our increasingly digital world, the program equips managers with skills needed to succeed in the digital age.",
+      id: "mba-financial",
+      label: "Financial Management",
+      description: "Specialized curriculum in corporate finance, investment analysis, and financial strategy",
+      details: "Master the complexities of financial decision-making, portfolio management, and corporate finance strategy. Develop expertise through quantitative analysis, case studies, and industry simulations with experienced finance professionals.",
+      image: "https://images.unsplash.com/photo-1606531824254-d473aeb44dc5?q=80&w=1200&auto=format&fit=crop",
+      batches: [
+        {
+          year: "2025-26",
+          summary: "Specialization courses in Semesters 3 & 4 covering corporate finance, investments, and financial management",
+          documentUrl: "https://www.dsu.edu.in/images/Commerce/MBA-FinancialMgmt-Curriculum-2025-26.pdf",
+        },
+      ],
+    },
+    {
+      id: "mba-hr",
+      label: "Human Resource Management",
+      description: "Comprehensive program in talent management, organizational development, and strategic HR planning",
+      details: "Develop expertise in recruitment, employee development, organizational behavior, and strategic human capital management. Learn to lead organizational transformation and create high-performance cultures through industry partnerships and real-world cases.",
       image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop",
       batches: [
         {
           year: "2025-26",
-          summary: "Latest curriculum covering management fundamentals, strategic thinking, and leadership development across 4 semesters",
-          documentUrl: "https://www.dsu.edu.in/images/Commerce/MBA-General-Curriculum-2025-26.pdf",
+          summary: "Specialization courses in Semesters 3 & 4 covering talent management, organizational development, and HR strategy",
+          documentUrl: "https://www.dsu.edu.in/images/Commerce/MBA-HRM-Curriculum-2025-26.pdf",
+        },
+      ],
+    },
+    {
+      id: "mba-scm",
+      label: "Supply Chain Management",
+      description: "Expert-level training in logistics, operations strategy, and supply chain optimization",
+      details: "Master end-to-end supply chain processes, logistics optimization, and operations management. Develop skills in demand planning, procurement, inventory management, and supply chain digitalization through simulations and industry projects.",
+      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200&auto=format&fit=crop",
+      batches: [
+        {
+          year: "2025-26",
+          summary: "Specialization courses in Semesters 3 & 4 covering supply chain strategy, logistics, and operations management",
+          documentUrl: "https://www.dsu.edu.in/images/Commerce/MBA-SCM-Curriculum-2025-26.pdf",
         },
       ],
     },
     {
       id: "mba-marketing",
-      label: "MBA - Marketing Specialization",
-      description: "Specialized postgraduate program focusing on marketing strategy, consumer behavior, and brand management",
-      details: "Specialization in Marketing management with focus on strategic marketing, brand building, digital marketing, and consumer analytics. Learn from industry experts and develop expertise in market research, product development, and marketing communications. Through case studies, business simulations, and industry projects, develop the skills to make strategic marketing decisions in today's competitive global marketplace.",
+      label: "Marketing Management",
+      description: "Strategic focus on brand building, digital marketing, and consumer behavior analysis",
+      details: "Develop expertise in market research, consumer analytics, digital marketing, and brand strategy. Learn to navigate the evolving marketing landscape through case studies, business simulations, and collaborations with industry leaders.",
       image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop",
       batches: [
         {
           year: "2025-26",
-          summary: "Marketing specialization curriculum covering strategic marketing, digital marketing, brand management, and consumer insights",
+          summary: "Specialization courses in Semesters 3 & 4 covering marketing strategy, digital marketing, and consumer insights",
           documentUrl: "https://www.dsu.edu.in/images/Commerce/MBA-Marketing-Curriculum-2025-26.pdf",
         },
       ],
     },
     {
-      id: "mba-finance",
-      label: "MBA - Finance Specialization",
-      description: "Specialized postgraduate program in financial management, investment analysis, and corporate finance",
-      details: "Specialization in Finance with focus on corporate finance, investment management, financial analytics, and risk management. Study under faculty with extensive banking and finance industry experience. Develop expertise in financial decision-making, portfolio management, and financial strategy through quantitative analysis, case studies, and industry simulations. Prepare for roles in investment banking, corporate finance, and financial consulting.",
-      image: "https://images.unsplash.com/photo-1606531824254-d473aeb44dc5?q=80&w=1200&auto=format&fit=crop",
+      id: "mba-it",
+      label: "Information Technology & Systems",
+      description: "Strategic IT management, enterprise systems, and technology-driven business transformation",
+      details: "Master technology strategy, enterprise resource planning, cloud computing, and IT governance. Learn to leverage technology for competitive advantage and digital transformation in modern organizations.",
+      image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1200&auto=format&fit=crop",
       batches: [
         {
           year: "2025-26",
-          summary: "Finance specialization curriculum covering corporate finance, investment management, financial analysis, and risk management",
-          documentUrl: "https://www.dsu.edu.in/images/Commerce/MBA-Finance-Curriculum-2025-26.pdf",
+          summary: "Specialization courses in Semesters 3 & 4 covering IT strategy, enterprise systems, and technology management",
+          documentUrl: "https://www.dsu.edu.in/images/Commerce/MBA-IT-Curriculum-2025-26.pdf",
         },
       ],
     },
     {
-      id: "mba-operations",
-      label: "MBA - Operations & HR Specialization",
-      description: "Specialized postgraduate program in operations management and human resource management",
-      details: "Specialization in Operations and Human Resources combining supply chain management, operations strategy, and talent management. Develop skills in process optimization, organizational development, and strategic HR planning. Learn through case studies, collaborative projects, and industry partnerships. Prepare for leadership roles in operations, supply chain management, and human capital management in global organizations.",
-      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200&auto=format&fit=crop",
+      id: "mba-analytics",
+      label: "Business Analytics",
+      description: "Data-driven decision making, predictive analytics, and business intelligence",
+      details: "Develop expertise in data analysis, statistical modeling, business intelligence, and analytics tools. Learn to extract actionable insights from data and drive strategic business decisions through hands-on projects and industry case studies.",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop",
       batches: [
         {
           year: "2025-26",
-          summary: "Operations & HR specialization curriculum covering supply chain, process management, organizational behavior, and talent development",
-          documentUrl: "https://www.dsu.edu.in/images/Commerce/MBA-OpHR-Curriculum-2025-26.pdf",
+          summary: "Specialization courses in Semesters 3 & 4 covering data analytics, business intelligence, and predictive modeling",
+          documentUrl: "https://www.dsu.edu.in/images/Commerce/MBA-Analytics-Curriculum-2025-26.pdf",
+        },
+      ],
+    },
+    {
+      id: "mba-ai",
+      label: "Artificial Intelligence",
+      description: "AI-driven business solutions, machine learning applications, and intelligent automation",
+      details: "Explore artificial intelligence and machine learning applications in business. Develop skills in AI strategy, neural networks, natural language processing, and intelligent automation to drive innovation and competitive advantage in the digital economy.",
+      image: "https://images.unsplash.com/photo-1677442d019cecf3d7f94c538221c0e0d0819a0db?q=80&w=1200&auto=format&fit=crop",
+      batches: [
+        {
+          year: "2025-26",
+          summary: "Specialization courses in Semesters 3 & 4 covering AI strategy, machine learning, and intelligent business solutions (Available from 2021 onwards)",
+          documentUrl: "https://www.dsu.edu.in/images/Commerce/MBA-AI-Curriculum-2025-26.pdf",
+        },
+      ],
+    },
+    {
+      id: "mba-entrepreneurship",
+      label: "Entrepreneurship",
+      description: "Startup creation, business model innovation, and venture development",
+      details: "Master the art and science of entrepreneurship including business plan development, fundraising, growth strategies, and startup ecosystems. Learn from successful entrepreneurs and develop your own business venture ideas through mentorship and hands-on projects.",
+      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop",
+      batches: [
+        {
+          year: "2025-26",
+          summary: "Specialization courses in Semesters 3 & 4 covering entrepreneurship, business creation, and venture development",
+          documentUrl: "https://www.dsu.edu.in/images/Commerce/MBA-Entrepreneurship-Curriculum-2025-26.pdf",
+        },
+      ],
+    },
+    {
+      id: "mba-fintech",
+      label: "FinTech",
+      description: "Financial technology innovation, digital payments, and fintech business models",
+      details: "Explore the convergence of finance and technology including blockchain, digital banking, crypto assets, and fintech startups. Develop expertise in fintech business models, regulatory landscape, and innovation in financial services.",
+      image: "https://images.unsplash.com/photo-1564722217921-ab82e64c0800?q=80&w=1200&auto=format&fit=crop",
+      batches: [
+        {
+          year: "2025-26",
+          summary: "Specialization courses in Semesters 3 & 4 covering fintech innovation, digital payments, and blockchain technology",
+          documentUrl: "https://www.dsu.edu.in/images/Commerce/MBA-FinTech-Curriculum-2025-26.pdf",
         },
       ],
     },
