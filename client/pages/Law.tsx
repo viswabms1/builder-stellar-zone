@@ -686,7 +686,28 @@ export default function Law() {
               Discover our legal excellence, research initiatives, placements and admission pathways
             </p>
           </div>
-          <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-5">
+            <RouterLink
+              to="/academics/law/faculty"
+              className="group rounded-none border border-border/40 bg-card/60 backdrop-blur-sm overflow-hidden hover:shadow-lg hover:shadow-brand-magenta/20 transition-all duration-500 hover:-translate-y-1"
+            >
+              <Card className="h-full border-0 bg-transparent">
+                <div className="relative h-32 bg-gradient-to-br from-brand-magenta/20 to-brand-magenta/10 flex items-center justify-center">
+                  <Users className="h-12 w-12 text-brand-magenta/70 group-hover:text-brand-magenta transition-colors" />
+                </div>
+                <CardHeader>
+                  <CardTitle className="font-display group-hover:text-brand-magenta transition-colors">
+                    Faculty Directory
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-foreground/80 font-body">
+                    Meet our distinguished faculty and academic leadership
+                  </p>
+                </CardContent>
+              </Card>
+            </RouterLink>
+
             <RouterLink
               to="/centre-of-excellence"
               className="group rounded-none border border-border/40 bg-card/60 backdrop-blur-sm overflow-hidden hover:shadow-lg hover:shadow-brand-magenta/20 transition-all duration-500 hover:-translate-y-1"
