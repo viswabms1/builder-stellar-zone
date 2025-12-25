@@ -765,51 +765,6 @@ export default function HealthSciences() {
         </div>
       </section>
 
-      <section id="calendar" className="px-3 py-8">
-        <div className="mx-auto max-w-6xl">
-          <div className="relative overflow-hidden rounded-none border-[3px] border-dashed border-brand-magenta/30 bg-card/70 p-10 shadow-[0_35px_120px_-45px_rgba(175,80,255,0.65)] backdrop-blur">
-            <div
-              className="pointer-events-none absolute -left-16 top-10 h-32 w-32 rounded-full bg-brand-magenta/15 blur-3xl"
-              aria-hidden="true"
-            />
-            <div
-              className="pointer-events-none absolute -right-12 bottom-0 h-36 w-36 rounded-full bg-brand-blue/15 blur-3xl"
-              aria-hidden="true"
-            />
-            <div className="relative grid gap-0 lg:grid-cols-[1.1fr_minmax(0,1fr)]">
-              <div className="space-y-5">
-                <Badge className="bg-brand-magenta/15 text-brand-magenta">
-                  Notice Board
-                </Badge>
-                <h2 className="font-display text-3xl md:text-4xl">
-                  Health Sciences Notice Board
-                </h2>
-                <p className="text-sm text-foreground font-body">
-                  Curated updates for the ongoing academic year 2025-26. Stay aligned with assessment windows, clinical rotations and university-hosted experiences.
-                </p>
-                <a
-                  href="https://www.dsu.edu.in/health-sciences/notices"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-2 text-sm font-medium text-brand-magenta hover:underline"
-                >
-                  Browse previous circulars
-                  <ChevronRight className="h-4 w-4" />
-                </a>
-              </div>
-              <div className="grid gap-0">
-                {CALENDAR_ENTRIES.map((entry) => (
-                  <CalendarResourceCard
-                    key={`${entry.title}-${entry.academicYear}`}
-                    entry={entry}
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section
         id="related-resources"
         className="bg-gradient-to-r from-brand-magenta/5 via-brand-blue/5 to-brand-orange/5 px-3 py-8"
