@@ -152,6 +152,7 @@ export default function Navigation() {
         departments: [
           { name: "Explore Programs", href: "/academics/computer-applications" },
           { name: "B.C.A.", href: "/academics/computer-applications/bca" },
+          { name: "B.Sc. Data Science", href: "/academics/computer-applications/data-science" },
         ],
       },
       {
