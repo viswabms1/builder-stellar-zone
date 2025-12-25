@@ -602,7 +602,7 @@ function HeroSection({ section, index, activeAudioIndex, setActiveAudioIndex }: 
         ref={videoRef}
         src={section.src}
         autoPlay
-        muted={isMuted}
+        muted={!isAudioActive}
         playsInline
         className="absolute inset-0 w-full h-full object-cover"
         style={{
