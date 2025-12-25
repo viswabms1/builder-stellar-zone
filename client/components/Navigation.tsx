@@ -153,6 +153,7 @@ export default function Navigation() {
           { name: "Explore Programs", href: "/academics/computer-applications" },
           { name: "B.C.A.", href: "/academics/computer-applications/bca" },
           { name: "B.Sc. Data Science", href: "/academics/computer-applications/data-science" },
+          { name: "M.C.A.", href: "/academics/computer-applications/mca" },
         ],
       },
       {
