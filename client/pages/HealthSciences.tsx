@@ -8,6 +8,7 @@ import {
   CalendarDays,
   ChevronRight,
   ClipboardCheck,
+  Download,
   GraduationCap,
   HeartPulse,
   Microscope,
@@ -29,6 +30,12 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { DeanSection, type DeanInfo } from "@/components/DeanSection";
+import {
+  getHealthSciencesEvents,
+  getHealthSciencesNews,
+  getHealthSciencesAnnouncements,
+  type NoticeItem as ImportedNoticeItem,
+} from "@/data/health-sciences-events";
 
 
 type ProgramCard = {
