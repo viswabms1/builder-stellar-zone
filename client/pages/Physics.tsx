@@ -357,24 +357,6 @@ export default function Physics() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="px-3 py-8">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="rounded-3xl p-5 border border-brand-blue/20 bg-brand-blue/5">
-            <h3 className="headline-3 mb-3 font-display">Join DSU Physics</h3>
-            <p className="text-foreground mb-6 font-body">Explore cutting-edge research, advanced coursework, and launch your career in physics and related fields.</p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <a
-                href="https://admissions.dsu.edu.in/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <Button className="bg-brand-gradient text-foreground">Apply Now<GraduationCap className="w-4 h-4 ml-2" /></Button>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }
