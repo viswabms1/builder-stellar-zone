@@ -433,7 +433,7 @@ const DEAN_INFO: DeanInfo = {
   title: "M.Tech",
   position: "Dean, School of Computer Applications",
   photo: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=800&auto=format&fit=crop",
-  videoUrl: "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F0c95c62aa88741fca8ebdc32aade53d5?alt=media&token=c57ff4a9-aea8-4ff3-843b-23ce820ba630&apiKey=4aa279a8430d441dba9c55f659831878",
+  videoUrl: "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F1083d7950c0b40d9a4695fbec2736931?alt=media&token=9a163dc2-8adc-462a-bd83-84831fad9217&apiKey=4aa279a8430d441dba9c55f659831878",
   borderColor: "border-blue-500/20",
   bgColor: "bg-blue-500/10",
 };
