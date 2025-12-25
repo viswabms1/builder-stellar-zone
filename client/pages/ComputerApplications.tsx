@@ -429,10 +429,10 @@ const FEATURED_NEWS: NewsItem[] = [
 ];
 
 const DEAN_INFO: DeanInfo = {
-  name: "Dr. Anita Sharma",
-  title: "M.Tech",
-  position: "Dean, School of Computer Applications",
-  photo: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=800&auto=format&fit=crop",
+  name: "Dr. S. Senthil",
+  title: "Professor",
+  position: "Professor & Dean, School of Computer Applications",
+  photo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F78123c01ef9a44be8e575afd593b3b05?format=webp&width=800",
   videoUrl: "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F1083d7950c0b40d9a4695fbec2736931?alt=media&token=9a163dc2-8adc-462a-bd83-84831fad9217&apiKey=4aa279a8430d441dba9c55f659831878",
   borderColor: "border-blue-500/20",
   bgColor: "bg-blue-500/10",
