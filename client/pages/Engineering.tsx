@@ -386,7 +386,7 @@ const PG_PROGRAM_CARDS: ProgramCard[] = [
       "Specialise in AI, cloud systems, cyber-physical systems and enterprise software through research-driven coursework and industry collaboration.",
     image:
       "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1600&auto=format&fit=crop",
-    link: "https://www.dsu.edu.in/engineering/mtech-cse",
+    link: "/academics/engineering/computer-science",
     highlights: ["AI Systems", "Research Thesis", "Industry Mentorship"],
     overlay:
       "bg-gradient-to-br from-brand-magenta/70 via-black/70 to-black/55 mix-blend-multiply",
@@ -401,7 +401,7 @@ const PG_PROGRAM_CARDS: ProgramCard[] = [
       "Master real-time systems, IoT architectures, edge computing and VLSI design for critical infrastructure and embedded applications.",
     image:
       "https://images.unsplash.com/photo-1580894908361-967195033215?q=80&w=1600&auto=format&fit=crop",
-    link: "https://www.dsu.edu.in/engineering/mtech-embedded",
+    link: "/academics/engineering/electronics-communication",
     highlights: ["RTOS Design", "Hardware Integration", "Edge Computing"],
     overlay:
       "bg-gradient-to-br from-brand-blue/70 via-black/70 to-black/55 mix-blend-multiply",
@@ -416,7 +416,7 @@ const PG_PROGRAM_CARDS: ProgramCard[] = [
       "Apply advanced design methodologies, computational tools and human-centred design thinking to create scalable product solutions.",
     image:
       "https://images.unsplash.com/photo-1523475472560-d2df97ec485c?q=80&w=1600&auto=format&fit=crop",
-    link: "https://www.dsu.edu.in/engineering/mtech-design",
+    link: "/academics/engineering/mechanical-engineering",
     highlights: ["CAD & Simulation", "Design Thinking", "Product Studio"],
     overlay:
       "bg-gradient-to-br from-brand-orange/70 via-black/70 to-black/55 mix-blend-multiply",
