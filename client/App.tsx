@@ -63,6 +63,7 @@ import NatarajanVenkateswaranPage from "./pages/faculty/NatarajanVenkateswaran";
 import BonduVenkateswarluPage from "./pages/faculty/BonduVenkateswarlu";
 import SKMouleeswaranPage from "./pages/faculty/SKMouleeswaran";
 import ChemistryFacultyList from "./pages/chemistry/FacultyList";
+import PhysicsFacultyList from "./pages/physics/FacultyList";
 import VenkataramanaNSProfile from "./pages/chemistry/VenkataramanaNS";
 import BhavanaRikhariProfile from "./pages/chemistry/BhavanaRikhari";
 import SaiPrasadNayakProfile from "./pages/chemistry/SaiPrasadNayak";
@@ -315,7 +316,7 @@ function App() {
                 <Route path="/academics/chemistry/faculty/dr-manas-barai" element={<ManasBaraiPage />} />
                 <Route path="/academics/chemistry/faculty/dr-dipen-biswakarma" element={<DipenBiswakarmaPage />} />
                 <Route path="/academics/chemistry/faculty/dr-manjodh-kaur" element={<ManjudhKaurPage />} />
-                <Route path="/academics/physics/faculty" element={<ChemistryFacultyList />} />
+                <Route path="/academics/physics/faculty" element={<PhysicsFacultyList />} />
                 <Route path="/academics/physics/faculty/dr-yogesh-kalegowda" element={<YogeshKalegowdaPage />} />
                 <Route path="/academics/physics/faculty/dr-m-v-hanumantha-rao" element={<MVHanumannthRaoPage />} />
                 <Route path="/academics/physics/faculty/dr-k-vijaya-kumar" element={<KVijayaKumarPage />} />
