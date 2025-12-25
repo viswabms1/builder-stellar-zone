@@ -28,6 +28,8 @@ import LLMLawTechnology from "./pages/law/LLMLawTechnology";
 import LLMCorporateCommercial from "./pages/law/LLMCorporateCommercial";
 import AppliedSciences from "./pages/AppliedSciences";
 import ManagementStudies from "./pages/ManagementStudies";
+import BCom from "./pages/commerce-and-management/BCom";
+import BBA from "./pages/commerce-and-management/BBA";
 import HealthSciences from "./pages/HealthSciences";
 import MedicalEducationResearch from "./pages/MedicalEducationResearch";
 import CEE from "./pages/CEE";
