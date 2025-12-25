@@ -90,6 +90,58 @@ export default function DeptAIRobotics() {
         </div>
       </section>
 
+      {/* Programs Offered */}
+      <section className="px-6 py-8 bg-gradient-to-r from-brand-magenta/5 via-brand-magenta/5 to-brand-magenta/5 border-y border-border/30">
+        <div className="max-w-6xl mx-auto">
+          <div className="mb-8">
+            <h2 className="headline-2 font-display mb-2">Programs Offered</h2>
+            <p className="text-foreground/80 font-body">Choose your pathway to AI and robotics excellence</p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-4">
+            {/* B.Tech Program */}
+            <Card className="border border-border/50 bg-card/50 backdrop-blur-sm hover:shadow-lg transition-all">
+              <CardHeader>
+                <div className="flex items-center gap-2 mb-2">
+                  <GraduationCap className="w-5 h-5 text-brand-magenta" />
+                  <Badge className="bg-brand-magenta/20 text-brand-magenta border-brand-magenta/30">Undergraduate</Badge>
+                </div>
+                <CardTitle className="font-display">B.Tech AI and Robotics</CardTitle>
+                <CardDescription className="font-body">4-Year Program</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <p className="text-sm text-foreground font-body">With specializations in:</p>
+                <div className="flex flex-wrap gap-2">
+                  {["AI/ML", "Computer Vision", "Robotics", "Cognitive Tech"].map((spec, i) => (
+                    <Badge key={i} variant="secondary" className="text-xs">{spec}</Badge>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Quick Info */}
+            <Card className="border border-border/50 bg-card/50 backdrop-blur-sm">
+              <CardHeader>
+                <CardTitle className="text-lg font-display">Why Choose AI and Robotics?</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-2 text-sm font-body">
+                <div className="flex items-center gap-2">
+                  <Award className="w-4 h-4 text-brand-magenta flex-shrink-0" />
+                  <span>Industry Lab Partnerships</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Zap className="w-4 h-4 text-brand-magenta flex-shrink-0" />
+                  <span>Hands-On Robotics Projects</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Bot className="w-4 h-4 text-brand-magenta flex-shrink-0" />
+                  <span>Autonomous Systems Focus</span>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Overview */}
       <section className="px-6 py-16">
         <div className="max-w-6xl mx-auto grid lg:grid-cols-3 gap-10 items-start">
