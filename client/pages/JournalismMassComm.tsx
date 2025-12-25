@@ -6,6 +6,7 @@ import {
   Camera,
   CalendarDays,
   ChevronRight,
+  Download,
   Film,
   Globe,
   GraduationCap,
@@ -27,6 +28,12 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { DeanSection, type DeanInfo } from "@/components/DeanSection";
+import {
+  getJournalismEvents,
+  getJournalismNews,
+  getJournalismAnnouncements,
+  type NoticeItem as ImportedNoticeItem,
+} from "@/data/journalism-mass-comm-events";
 
 
 type ProgramCard = {
