@@ -589,9 +589,6 @@ function HeroVideo() {
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight font-display">
             Gateway to New Age Lawyering
           </h1>
-          <p className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed max-w-xl font-display">
-            Master contemporary legal challenges through immersive learning, moot courts, legal aid clinics, and mentorship from leading practitioners
-          </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
             <a
