@@ -773,6 +773,7 @@ export default function Index() {
                   <img
                     src={currentFeatured.image}
                     alt={currentFeatured.title}
+                    loading="lazy"
                     className="w-full max-h-96 object-contain"
                   />
                 )}
