@@ -121,12 +121,14 @@ function VideoWithFrameCapture({
     if (!video || poster) return;
 
     const onLoadedMetadata = () => {
-      if (typeof video.duration === 'number') {
+      if (typeof video.duration === 'number' && isFinite(video.duration) && video.duration > 0) {
         // Set poster via requestIdleCallback to avoid blocking scroll
         if ('requestIdleCallback' in window) {
           requestIdleCallback(() => {
             const captureTime = Math.min(1, video.duration * 0.3);
-            video.currentTime = captureTime;
+            if (isFinite(captureTime)) {
+              video.currentTime = captureTime;
+            }
           });
         }
       }
