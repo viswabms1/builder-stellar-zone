@@ -554,27 +554,32 @@ function CalendarResourceCard({ entry }: { entry: CalendarEntry }) {
   );
 }
 
-const HERO_VIDEOS = [
+const HERO_SECTIONS = [
   {
     src: "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F7d6b23f7eb6c4846bf20f521c5ff3ab5?alt=media&token=895616b3-0f62-4da5-b72b-7839082d2f5d&apiKey=4aa279a8430d441dba9c55f659831878",
-    title: "Exceptional BCA Program",
-    subtitle: "Igniting Innovation in the Digital Age"
+    title: "DSU Exceptional BCA Program",
+    subtitle: "Igniting Innovation in the Digital Age",
+    description: "Master full-stack development with hands-on projects, industry mentorship, and cutting-edge technologies",
+    cta: "Explore BCA Program"
   },
   {
     src: "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F5414ec6f48734ab9baccd606b4e3593e?alt=media&token=56076a75-30f6-4358-980e-b66e87a0086d&apiKey=4aa279a8430d441dba9c55f659831878",
-    title: "Next-Gen MCA Program",
-    subtitle: "Master the Digital Frontier"
+    title: "Master the Digital Frontier",
+    subtitle: "With DSU's Next-Gen MCA Program",
+    description: "Specialise in enterprise systems, cloud architecture, and advanced software engineering through research-driven coursework",
+    cta: "Explore MCA Program"
   },
   {
     src: "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F965cdc3a67d144a6943c338de9b248bc?alt=media&token=cf72f67b-3858-40ff-b82c-ccab09590f70&apiKey=4aa279a8430d441dba9c55f659831878",
     title: "Industry-Ready Data Science",
-    subtitle: "Offers Cutting-Edge Programs"
+    subtitle: "School of Computer Applications Offers Cutting-Edge Programs",
+    description: "Master statistical computing, advanced machine learning, and big data processing with industry-certified capstone projects",
+    cta: "Explore Data Science Programs"
   }
 ];
 
-function HeroVideo() {
+function HeroSection({ section, index }: { section: typeof HERO_SECTIONS[0]; index: number }) {
   const [isMuted, setIsMuted] = useState(true);
-  const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   const toggleMute = () => {
@@ -590,21 +595,11 @@ function HeroVideo() {
     video.muted = isMuted;
   }, [isMuted]);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentVideoIndex((prev) => (prev + 1) % HERO_VIDEOS.length);
-    }, 8000);
-    return () => clearInterval(interval);
-  }, []);
-
-  const currentVideo = HERO_VIDEOS[currentVideoIndex];
-
   return (
     <div className="w-full h-screen relative overflow-hidden flex items-end md:items-center justify-start">
       <video
-        key={currentVideoIndex}
         ref={videoRef}
-        src={currentVideo.src}
+        src={section.src}
         autoPlay
         muted={isMuted}
         playsInline
@@ -631,29 +626,30 @@ function HeroVideo() {
             School of Computer Applications
           </p>
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-2 leading-tight font-display">
-            {currentVideo.title}
+            {section.title}
           </h1>
-          <p className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed max-w-xl font-display">
-            {currentVideo.subtitle}
+          <p className="text-lg md:text-xl text-white/90 mb-2 leading-relaxed font-display">
+            {section.subtitle}
+          </p>
+          <p className="text-base md:text-lg text-white/80 mb-8 leading-relaxed max-w-xl font-body">
+            {section.description}
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
             <a
-              href="https://admissions.dsu.edu.in/"
-              target="_blank"
-              rel="noreferrer"
+              href="#programs"
               className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
               <Button
                 size="lg"
                 className="bg-white hover:bg-white/90 text-orange-600 hover:text-orange-700 px-8 py-6 text-base font-semibold font-display transition-all duration-300 group border-2 border-white"
               >
-                Apply Now
+                {section.cta}
                 <ChevronRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
             </a>
             <a
-              href="https://dsu.edu.in/virtual-tour/"
+              href="https://admissions.dsu.edu.in/"
               target="_blank"
               rel="noreferrer"
               className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background"
@@ -663,26 +659,11 @@ function HeroVideo() {
                 size="lg"
                 className="border-2 border-white text-white hover:bg-white hover:text-orange-600 px-8 py-6 text-base font-semibold font-display transition-all duration-300"
               >
-                Virtual Tour
+                Apply Now
               </Button>
             </a>
           </div>
         </div>
-      </div>
-
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex gap-2">
-        {HERO_VIDEOS.map((_, idx) => (
-          <button
-            key={idx}
-            onClick={() => setCurrentVideoIndex(idx)}
-            className={`h-1.5 rounded-full transition-all ${
-              idx === currentVideoIndex
-                ? "bg-white w-6"
-                : "bg-white/40 w-1.5 hover:bg-white/60"
-            }`}
-            aria-label={`Go to video ${idx + 1}`}
-          />
-        ))}
       </div>
 
       <button
@@ -696,7 +677,23 @@ function HeroVideo() {
           <Volume2 className="h-5 w-5" />
         )}
       </button>
+
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 text-white/70 text-sm font-body">
+        {index + 1} / {HERO_SECTIONS.length}
+      </div>
     </div>
+  );
+}
+
+function HeroVideo() {
+  return (
+    <>
+      {HERO_SECTIONS.map((section, idx) => (
+        <section key={idx} className="relative w-full" id={idx === 0 ? "top" : undefined}>
+          <HeroSection section={section} index={idx} />
+        </section>
+      ))}
+    </>
   );
 }
 
