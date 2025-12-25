@@ -478,6 +478,10 @@ function App() {
                   element={<MBA />}
                 />
                 <Route
+                  path="/academics/commerce-and-management/mba/faculty"
+                  element={<MBAFaculty />}
+                />
+                <Route
                   path="/academics/health-sciences"
                   element={<HealthSciences />}
                 />
