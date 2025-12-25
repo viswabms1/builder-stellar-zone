@@ -9,10 +9,36 @@ interface FacultyPageTemplateProps {
   faculty: Faculty;
   department?: string;
   departmentLink?: string;
+  departmentColor?: string;
+  backgroundImage?: string;
 }
 
-export default function FacultyPageTemplate({ faculty, department = "Computer Science & Engineering", departmentLink = "/academics/engineering/computer-science/faculty" }: FacultyPageTemplateProps) {
-  const bg = "https://images.unsplash.com/photo-1534723328310-e82dad3ee43f?q=80&w=1600&auto=format&fit=crop";
+const departmentConfig: Record<string, { color: string; bg: string }> = {
+  "Computer Science & Engineering": { color: "brand-blue", bg: "https://images.unsplash.com/photo-1534723328310-e82dad3ee43f?q=80&w=1600&auto=format&fit=crop" },
+  "Computer Science & Engineering (AI & ML)": { color: "brand-magenta", bg: "https://images.unsplash.com/photo-1534723328310-e82dad3ee43f?q=80&w=1600&auto=format&fit=crop" },
+  "Aerospace Engineering": { color: "brand-blue", bg: "https://images.unsplash.com/photo-1446776877081-d282a0f896e2?q=80&w=1600&auto=format&fit=crop" },
+  "Electronics & Communication Engineering": { color: "brand-blue", bg: "https://images.unsplash.com/photo-1580894908361-967195033215?q=80&w=1600&auto=format&fit=crop" },
+  "Mechanical Engineering": { color: "brand-orange", bg: "https://images.unsplash.com/photo-1517677129300-07b130802f46?q=80&w=1600&auto=format&fit=crop" },
+  "AI and Robotics": { color: "brand-magenta", bg: "https://images.unsplash.com/photo-1581091216562-40c08a5a4183?q=80&w=1600&auto=format&fit=crop" },
+  "Computer Technology": { color: "brand-blue", bg: "https://images.unsplash.com/photo-1534723328310-e82dad3ee43f?q=80&w=1600&auto=format&fit=crop" },
+  "Cybersecurity": { color: "brand-magenta", bg: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1600&auto=format&fit=crop" },
+  "Data Science": { color: "brand-magenta", bg: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1600&auto=format&fit=crop" },
+  "AI & Data Science": { color: "brand-magenta", bg: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1600&auto=format&fit=crop" },
+  "Medical Engineering": { color: "brand-blue", bg: "https://images.unsplash.com/photo-1576091160550-112173f31c74?q=80&w=1600&auto=format&fit=crop" },
+  "Physics": { color: "brand-blue", bg: "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?q=80&w=1600&auto=format&fit=crop" },
+  "Chemistry": { color: "brand-blue", bg: "https://images.unsplash.com/photo-1576091160550-112173f31c74?q=80&w=1600&auto=format&fit=crop" },
+};
+
+export default function FacultyPageTemplate({
+  faculty,
+  department = "Computer Science & Engineering",
+  departmentLink = "/academics/engineering/computer-science/faculty",
+  departmentColor,
+  backgroundImage
+}: FacultyPageTemplateProps) {
+  const config = departmentConfig[department] || { color: "brand-blue", bg: "https://images.unsplash.com/photo-1534723328310-e82dad3ee43f?q=80&w=1600&auto=format&fit=crop" };
+  const bg = backgroundImage || config.bg;
+  const colorClass = departmentColor || config.color;
   const topics = faculty.interests || [];
 
   return (
@@ -31,12 +57,12 @@ export default function FacultyPageTemplate({ faculty, department = "Computer Sc
                   <img src={faculty.image} alt={faculty.name} className="w-full h-full object-cover object-center" />
                 </div>
                 <div className="flex-1">
-                  <div className="text-brand-blue text-xs font-body">{department}</div>
+                  <div className={`text-${colorClass} text-xs font-body`}>{department}</div>
                   <h1 className="text-2xl md:text-3xl font-bold font-display">{faculty.name}</h1>
                   <div className="text-foreground text-sm">{faculty.title}</div>
                   <div className="mt-2 flex flex-wrap gap-2">
                     {topics.map((t) => (
-                      <Badge key={t} className="bg-brand-magenta/10 text-brand-magenta">{t}</Badge>
+                      <Badge key={t} className={`bg-${colorClass}/10 text-${colorClass}`}>{t}</Badge>
                     ))}
                   </div>
                 </div>
@@ -80,7 +106,7 @@ export default function FacultyPageTemplate({ faculty, department = "Computer Sc
               </CardHeader>
               <CardContent className="text-sm text-foreground font-body">
                 <p>
-                  Dedicated to advancing computer science education and research. Engaged in curriculum development, student mentorship, and collaborative projects with industry and academic institutions.
+                  Dedicated to advancing education and research in the field. Engaged in curriculum development, student mentorship, and collaborative projects with industry and academic institutions.
                 </p>
               </CardContent>
             </Card>
@@ -92,7 +118,7 @@ export default function FacultyPageTemplate({ faculty, department = "Computer Sc
                 </CardHeader>
                 <CardContent className="flex flex-wrap gap-2">
                   {topics.map((topic) => (
-                    <Badge key={topic} className="bg-brand-magenta/10 text-brand-magenta">
+                    <Badge key={topic} className={`bg-${colorClass}/10 text-${colorClass}`}>
                       {topic}
                     </Badge>
                   ))}
