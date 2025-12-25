@@ -871,38 +871,6 @@ function CurriculumLibrary() {
         },
       ],
     },
-    {
-      id: "mtech",
-      label: "M.Tech Curriculum",
-      description: "2-year postgraduate program in AI & ML research",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
-      batches: [
-        {
-          year: "2025-26",
-          summary: "Advanced machine learning, neural networks, and AI ethics research",
-          documentUrl:
-            "https://www.dsu.edu.in/images/Engineering/CSE-AIML/curriculum/MTech-AIML-Curriculum-2025-26.pdf",
-        },
-        {
-          year: "2026-27",
-          summary: "Computer vision research, reinforcement learning, and healthcare AI",
-          documentUrl:
-            "https://www.dsu.edu.in/images/Engineering/CSE-AIML/curriculum/MTech-AIML-Curriculum-2026-27.pdf",
-        },
-        {
-          year: "2027-28",
-          summary: "Edge AI, quantum machine learning, and distributed systems research",
-          documentUrl:
-            "https://www.dsu.edu.in/images/Engineering/CSE-AIML/curriculum/MTech-AIML-Curriculum-2027-28.pdf",
-        },
-        {
-          year: "2028-29",
-          summary: "Autonomous systems, AI governance, and thesis publication support",
-          documentUrl:
-            "https://www.dsu.edu.in/images/Engineering/CSE-AIML/curriculum/MTech-AIML-Curriculum-2028-29.pdf",
-        },
-      ],
-    },
   ];
 
   return (
