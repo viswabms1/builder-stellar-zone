@@ -5,17 +5,17 @@ import { Badge } from "@/components/ui/badge";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const faculty = [
-  { name: "Dr. Venkataramanan N S", title: "Professor & Chairperson", slug: "venkataramanan-ns" },
-  { name: "Dr. A V RAGHU", title: "Professor", slug: "av-raghu" },
-  { name: "Dr. Bhavana Rikhari", title: "Assistant Professor", slug: "bhavana-rikhari" },
-  { name: "Dr. Sai Prasad Nayak", title: "Assistant Professor", slug: "sai-prasad-nayak" },
-  { name: "Dr. Pradeep Kumar Badiya", title: "Assistant Professor", slug: "pradeep-kumar-badiya" },
-  { name: "Dr. Shreeganesh Subraya Hegde", title: "Assistant Professor", slug: "shreeganesh-hegde" },
-  { name: "Dr. SK Habibullah", title: "Assistant Professor", slug: "sk-habibullah" },
-  { name: "Dr. V. Srinivasa Murthy", title: "Assistant Professor", slug: "srinivasa-murthy" },
-  { name: "Dr. Manas Barai", title: "Assistant Professor", slug: "manas-barai" },
-  { name: "Dr. Dipen Biswakarma", title: "Assistant Professor", slug: "dipen-biswakarma" },
-  { name: "Dr. Manjodh Kaur", title: "Assistant Professor", slug: "manjodth-kaur" },
+  { name: "Dr. Venkataramanan N S", title: "Professor & Chairperson", slug: "dr-venkataramanan-n-s" },
+  { name: "Dr. A V RAGHU", title: "Professor", slug: "dr-a-v-raghu" },
+  { name: "Dr. Bhavana Rikhari", title: "Assistant Professor", slug: "dr-bhavana-rikhari" },
+  { name: "Dr. Sai Prasad Nayak", title: "Assistant Professor", slug: "dr-sai-prasad-nayak" },
+  { name: "Dr. Pradeep Kumar Badiya", title: "Assistant Professor", slug: "dr-pradeep-kumar-badiya" },
+  { name: "Dr. Shreeganesh Subraya Hegde", title: "Assistant Professor", slug: "dr-shreeganesh-subraya-hegde" },
+  { name: "Dr. SK Habibullah", title: "Assistant Professor", slug: "dr-sk-habibullah" },
+  { name: "Dr. V. Srinivasa Murthy", title: "Assistant Professor", slug: "dr-v-srinivasa-murthy" },
+  { name: "Dr. Manas Barai", title: "Assistant Professor", slug: "dr-manas-barai" },
+  { name: "Dr. Dipen Biswakarma", title: "Assistant Professor", slug: "dr-dipen-biswakarma" },
+  { name: "Dr. Manjodh Kaur", title: "Assistant Professor", slug: "dr-manjodh-kaur" },
 ];
 
 export default function ChemistryFacultyList() {
