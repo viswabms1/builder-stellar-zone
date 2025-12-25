@@ -554,31 +554,22 @@ function CalendarResourceCard({ entry }: { entry: CalendarEntry }) {
   );
 }
 
-const HERO_SECTIONS = [
+const HERO_VIDEOS = [
   {
     src: "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F7d6b23f7eb6c4846bf20f521c5ff3ab5?alt=media&token=895616b3-0f62-4da5-b72b-7839082d2f5d&apiKey=4aa279a8430d441dba9c55f659831878",
-    title: "DSU Exceptional BCA Program",
-    subtitle: "Igniting Innovation in the Digital Age",
-    description: "Master full-stack development with hands-on projects, industry mentorship, and cutting-edge technologies",
-    cta: "Explore BCA Program"
+    title: "BCA Program",
   },
   {
     src: "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F5414ec6f48734ab9baccd606b4e3593e?alt=media&token=56076a75-30f6-4358-980e-b66e87a0086d&apiKey=4aa279a8430d441dba9c55f659831878",
-    title: "Master the Digital Frontier",
-    subtitle: "With DSU's Next-Gen MCA Program",
-    description: "Specialise in enterprise systems, cloud architecture, and advanced software engineering through research-driven coursework",
-    cta: "Explore MCA Program"
+    title: "MCA Program",
   },
   {
     src: "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F965cdc3a67d144a6943c338de9b248bc?alt=media&token=cf72f67b-3858-40ff-b82c-ccab09590f70&apiKey=4aa279a8430d441dba9c55f659831878",
-    title: "Industry-Ready Data Science",
-    subtitle: "School of Computer Applications Offers Cutting-Edge Programs",
-    description: "Master statistical computing, advanced machine learning, and big data processing with industry-certified capstone projects",
-    cta: "Explore Data Science Programs"
+    title: "Data Science Program",
   }
 ];
 
-function HeroSection({ section, index, activeAudioIndex, setActiveAudioIndex }: { section: typeof HERO_SECTIONS[0]; index: number; activeAudioIndex: number | null; setActiveAudioIndex: (index: number | null) => void }) {
+function HeroVideoPanel({ video, index, activeAudioIndex, setActiveAudioIndex }: { video: typeof HERO_VIDEOS[0]; index: number; activeAudioIndex: number | null; setActiveAudioIndex: (index: number | null) => void }) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const isAudioActive = activeAudioIndex === index;
 
@@ -591,18 +582,19 @@ function HeroSection({ section, index, activeAudioIndex, setActiveAudioIndex }: 
   };
 
   useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-    video.muted = !isAudioActive;
+    const videoEl = videoRef.current;
+    if (!videoEl) return;
+    videoEl.muted = !isAudioActive;
   }, [isAudioActive]);
 
   return (
-    <div className="w-full h-screen relative overflow-hidden flex items-end md:items-center justify-start">
+    <div className="relative h-screen flex-1 overflow-hidden group">
       <video
         ref={videoRef}
-        src={section.src}
+        src={video.src}
         autoPlay
         muted={!isAudioActive}
+        loop
         playsInline
         className="absolute inset-0 w-full h-full object-cover"
         style={{
@@ -614,73 +606,24 @@ function HeroSection({ section, index, activeAudioIndex, setActiveAudioIndex }: 
 
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/30 pointer-events-none"></div>
 
-      <div className="absolute top-0 left-0 w-96 h-96 bg-brand-magenta/5 rounded-full filter blur-3xl opacity-60 animate-float pointer-events-none"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-brand-orange/5 rounded-full filter blur-3xl opacity-60 animate-float pointer-events-none" style={{ animationDelay: "2s" }}></div>
-
-      <div className="absolute inset-0 opacity-5 pointer-events-none" style={{
-        backgroundImage: "repeating-linear-gradient(0deg, rgba(255,255,255,.03) 0px, rgba(255,255,255,.03) 1px, transparent 1px, transparent 2px)"
-      }}></div>
-
-      <div className="relative max-w-7xl mx-auto px-6 w-full z-10 pb-20 md:pb-0">
-        <div className="max-w-2xl">
-          <p className="text-sm md:text-base text-white/80 mb-4 uppercase tracking-widest font-display">
-            School of Computer Applications
-          </p>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-2 leading-tight font-display">
-            {section.title}
-          </h1>
-          <p className="text-lg md:text-xl text-white/90 mb-2 leading-relaxed font-display">
-            {section.subtitle}
-          </p>
-          <p className="text-base md:text-lg text-white/80 mb-8 leading-relaxed max-w-xl font-body">
-            {section.description}
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4">
-            <a
-              href="#programs"
-              className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-            >
-              <Button
-                size="lg"
-                className="bg-white hover:bg-white/90 text-orange-600 hover:text-orange-700 px-8 py-6 text-base font-semibold font-display transition-all duration-300 group border-2 border-white"
-              >
-                {section.cta}
-                <ChevronRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </a>
-            <a
-              href="https://admissions.dsu.edu.in/"
-              target="_blank"
-              rel="noreferrer"
-              className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-            >
-              <Button
-                variant="outline"
-                size="lg"
-                className="border-2 border-white text-white hover:bg-white hover:text-orange-600 px-8 py-6 text-base font-semibold font-display transition-all duration-300"
-              >
-                Apply Now
-              </Button>
-            </a>
-          </div>
-        </div>
-      </div>
-
       <button
         onClick={toggleMute}
-        className="absolute top-8 right-8 z-10 p-3 rounded-full bg-black/50 hover:bg-black/70 transition-colors text-white backdrop-blur-sm border border-white/20"
+        className="absolute top-4 right-4 z-10 p-2 rounded-full bg-black/50 hover:bg-black/70 transition-colors text-white backdrop-blur-sm border border-white/20 opacity-0 group-hover:opacity-100 transition-opacity"
         aria-label={isAudioActive ? "Mute" : "Unmute"}
       >
         {isAudioActive ? (
-          <Volume2 className="h-5 w-5" />
+          <Volume2 className="h-4 w-4" />
         ) : (
-          <VolumeX className="h-5 w-5" />
+          <VolumeX className="h-4 w-4" />
         )}
       </button>
 
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 text-white/70 text-sm font-body">
-        {index + 1} / {HERO_SECTIONS.length}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <div className="text-center">
+          <h3 className="text-2xl md:text-3xl font-bold text-white font-display mb-2">
+            {video.title}
+          </h3>
+        </div>
       </div>
     </div>
   );
@@ -689,22 +632,20 @@ function HeroSection({ section, index, activeAudioIndex, setActiveAudioIndex }: 
 function HeroVideo() {
   const [activeAudioIndex, setActiveAudioIndex] = useState<number | null>(null);
 
-  const infiniteLoops = 3;
-  const allSections = Array.from({ length: infiniteLoops }, () => HERO_SECTIONS).flat();
-
   return (
-    <>
-      {allSections.map((section, idx) => (
-        <section key={idx} className="relative w-full" id={idx === 0 ? "top" : undefined}>
-          <HeroSection
-            section={section}
-            index={idx % HERO_SECTIONS.length}
+    <section className="relative w-full" id="top">
+      <div className="flex w-full h-screen">
+        {HERO_VIDEOS.map((video, idx) => (
+          <HeroVideoPanel
+            key={idx}
+            video={video}
+            index={idx}
             activeAudioIndex={activeAudioIndex}
             setActiveAudioIndex={setActiveAudioIndex}
           />
-        </section>
-      ))}
-    </>
+        ))}
+      </div>
+    </section>
   );
 }
 
