@@ -95,7 +95,7 @@ export function DeanSection({ dean }: DeanSectionProps) {
             </div>
 
             {/* Dean's Message Video */}
-            <div className="p-6 md:p-8 flex flex-col justify-center">
+            <div className="p-4 md:p-6 flex flex-col justify-center">
               <div className="space-y-4">
                 {/* Header with Name and Title */}
                 <div className="border-l-4 border-brand-magenta pl-4">
