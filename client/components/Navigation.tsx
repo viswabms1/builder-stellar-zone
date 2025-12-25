@@ -382,6 +382,7 @@ export default function Navigation() {
                               ) : (
                                 <Link
                                   to={school.href}
+                                  onClick={() => setAcademicsMenuOpen(false)}
                                   className={`block font-semibold text-sm mb-3 transition-colors hover:text-orange-400 ${
                                     theme === "light" ? "text-orange-900" : "text-white"
                                   }`}
