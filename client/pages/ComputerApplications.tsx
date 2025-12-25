@@ -687,11 +687,18 @@ function HeroSection({ section, index, activeAudioIndex, setActiveAudioIndex }: 
 }
 
 function HeroVideo() {
+  const [activeAudioIndex, setActiveAudioIndex] = useState<number | null>(null);
+
   return (
     <>
       {HERO_SECTIONS.map((section, idx) => (
         <section key={idx} className="relative w-full" id={idx === 0 ? "top" : undefined}>
-          <HeroSection section={section} index={idx} />
+          <HeroSection
+            section={section}
+            index={idx}
+            activeAudioIndex={activeAudioIndex}
+            setActiveAudioIndex={setActiveAudioIndex}
+          />
         </section>
       ))}
     </>
