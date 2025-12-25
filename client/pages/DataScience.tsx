@@ -75,7 +75,7 @@ export default function DataScience() {
               <Sparkles className="w-4 h-4 text-brand-magenta" />
               <span className="text-sm font-medium text-brand-magenta font-display">Bachelor of Science in Data Science</span>
             </div>
-            <h1 className="headline-1 text-white leading-tight font-display">Master Data Science</h1>
+            <h1 className="headline-1 text-white leading-tight font-display">Bachelor of Science in Data Science</h1>
             <p className="subheadline text-white/90 max-w-2xl mt-3 font-body">
               A comprehensive three-year program designed to equip you with expertise in data analysis, programming, and statistical modeling for data-driven decision-making.
             </p>
