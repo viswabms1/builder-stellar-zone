@@ -668,7 +668,9 @@ export default function ManagementStudies() {
 
 
       {/* Dean's Message Section */}
-      <DeanSection dean={DEAN_INFO} />
+      <div className="mt-16">
+        <DeanSection dean={DEAN_INFO} />
+      </div>
 
       <section id="programs" className="relative overflow-hidden px-3 py-8">
         <div
