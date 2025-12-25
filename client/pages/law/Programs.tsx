@@ -14,36 +14,6 @@ import {
 
 const programs = [
   {
-    id: "ba-llb",
-    title: "BA.LLB (Honors)",
-    duration: "5 Years",
-    description: "An undergraduate program designed for students pursuing law directly after school.",
-    fullDescription: "A five-year undergraduate program designed for students who wish to pursue a career in law directly after school. The program blends foundational legal theory with specialized subjects to foster critical thinking and practical skills.",
-    slug: "ba-llb-honors",
-    icon: BookOpen,
-    highlights: [
-      "Foundational legal theory and principles",
-      "Specialized subjects aligned with practice",
-      "Critical thinking development",
-      "Practical skill enhancement",
-    ],
-  },
-  {
-    id: "bba-llb",
-    title: "BBA.LLB (Honors)",
-    duration: "5 Years",
-    description: "An integrated program combining law with business administration.",
-    fullDescription: "A five-year program tailored for students who wish to study law alongside business administration. This integrated course prepares students for a variety of careers that require expertise in both law and business.",
-    slug: "bba-llb-honors",
-    icon: Users,
-    highlights: [
-      "Integrated law and business curriculum",
-      "Business expertise combined with legal knowledge",
-      "Dual qualification advantage",
-      "Diverse career opportunities",
-    ],
-  },
-  {
     id: "llb-3year",
     title: "LLB (3-Year)",
     duration: "3 Years",
