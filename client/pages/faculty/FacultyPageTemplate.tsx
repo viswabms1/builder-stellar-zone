@@ -11,7 +11,7 @@ interface FacultyPageTemplateProps {
   departmentLink?: string;
 }
 
-export default function FacultyPageTemplate({ faculty }: FacultyPageTemplateProps) {
+export default function FacultyPageTemplate({ faculty, department = "Computer Science & Engineering", departmentLink = "/academics/engineering/computer-science/faculty" }: FacultyPageTemplateProps) {
   const bg = "https://images.unsplash.com/photo-1534723328310-e82dad3ee43f?q=80&w=1600&auto=format&fit=crop";
   const topics = faculty.interests || [];
 
@@ -31,7 +31,7 @@ export default function FacultyPageTemplate({ faculty }: FacultyPageTemplateProp
                   <img src={faculty.image} alt={faculty.name} className="w-full h-full object-cover object-center" />
                 </div>
                 <div className="flex-1">
-                  <div className="text-brand-blue text-xs font-body">Computer Science & Engineering</div>
+                  <div className="text-brand-blue text-xs font-body">{department}</div>
                   <h1 className="text-2xl md:text-3xl font-bold font-display">{faculty.name}</h1>
                   <div className="text-foreground text-sm">{faculty.title}</div>
                   <div className="mt-2 flex flex-wrap gap-2">
