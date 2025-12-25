@@ -654,7 +654,6 @@ export default function ComputerApplications() {
     <div className="min-h-screen bg-background text-foreground">
       <HeroVideo />
 
-
       {/* Dean's Message Section */}
       <DeanSection dean={DEAN_INFO} />
 
