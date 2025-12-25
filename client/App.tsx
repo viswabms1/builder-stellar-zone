@@ -49,6 +49,7 @@ import Placements from "./pages/Placements";
 import Careers from "./pages/Careers";
 import MedicalEngineering from "./pages/MedicalEngineering";
 import Physics from "./pages/Physics";
+import Chemistry from "./pages/Chemistry";
 import { ThemeProvider } from "./providers/theme-provider";
 import { LanguageProvider } from "./providers/language-provider";
 import FacultyProfile from "./pages/FacultyProfile";
