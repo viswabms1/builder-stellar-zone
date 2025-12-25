@@ -436,6 +436,16 @@ const DEAN_INFO: DeanInfo = {
   bgColor: "bg-amber-500/10",
 };
 
+const PG_DEAN_INFO: DeanInfo = {
+  name: "Capt. Nagaraj Subbarao",
+  title: "Captain",
+  position: "Dean, School of Commerce & Management (PG)",
+  photo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F6139212d26904e0abef15c9a4f98c0e0?format=webp&width=800",
+  videoUrl: "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2Fc6b2ba8e319247d79591d68c58b18dad?alt=media&token=9fcbbdb6-be09-45fc-b159-382031fa77a6&apiKey=4aa279a8430d441dba9c55f659831878",
+  borderColor: "border-orange-500/20",
+  bgColor: "bg-orange-500/10",
+};
+
 function ProgramCardComponent({ program }: { program: ProgramCard }) {
   const isInternal = program.link.startsWith("/");
   const wrapperClasses = `group block h-full rounded-none ${
