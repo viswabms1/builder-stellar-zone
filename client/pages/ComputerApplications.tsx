@@ -596,7 +596,7 @@ function HeroVideoPanel({ video, index, activeAudioIndex, setActiveAudioIndex }:
         muted={!isAudioActive}
         loop
         playsInline
-        className="absolute inset-0 w-full h-full object-fill"
+        className="absolute inset-0 w-full h-full object-cover"
         style={{
           filter: "brightness(1.1) contrast(1.15) saturate(1.2)"
         }}
