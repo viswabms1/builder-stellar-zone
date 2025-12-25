@@ -631,9 +631,27 @@ function HeroVideoPanel({ video, index, activeAudioIndex, setActiveAudioIndex }:
 
 function HeroVideo() {
   const [activeAudioIndex, setActiveAudioIndex] = useState<number | null>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting && activeAudioIndex !== null) {
+          setActiveAudioIndex(null);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, [activeAudioIndex]);
 
   return (
-    <section className="relative w-full" id="top">
+    <section className="relative w-full" id="top" ref={sectionRef}>
       <div className="flex w-full h-screen">
         {HERO_VIDEOS.map((video, idx) => (
           <HeroVideoPanel
