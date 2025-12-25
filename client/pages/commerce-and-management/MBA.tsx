@@ -63,14 +63,14 @@ function CurriculumLibrary() {
       id: "sem3",
       label: "Semester 3",
       type: "Specialization & Internship",
-      courses: ["Specialization Course 1", "Specialization Course 2", "Industry Internship (3 months)"],
+      courses: ["Specialization Courses", "Industry Internship (3 months)", "Placement Preparation"],
       description: "Begin specialization selection from 9 available options + Industry internship placement begins",
     },
     {
       id: "sem4",
       label: "Semester 4",
       type: "Specialization & Capstone",
-      courses: ["Specialization Course 3", "Specialization Course 4", "Capstone Project"],
+      courses: ["Specialization Courses", "Capstone Project", "Career Launch"],
       description: "Complete specialization with culminating capstone project and career launch",
     },
   ];
