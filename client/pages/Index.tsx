@@ -691,6 +691,8 @@ export default function Index() {
                       src={school.image}
                       alt={school.title}
                       loading="lazy"
+                      srcSet={`${school.image.split('?')[0]}?auto=compress&cs=tinysrgb&w=400&q=75 400w, ${school.image.split('?')[0]}?auto=compress&cs=tinysrgb&w=600&q=75 600w, ${school.image.split('?')[0]}?auto=compress&cs=tinysrgb&w=800&q=75 800w`}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                       className="w-full h-full object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent pointer-events-none" />
