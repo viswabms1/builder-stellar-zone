@@ -812,6 +812,27 @@ export default function ComputerApplications() {
               </Card>
             </RouterLink>
 
+            <RouterLink
+              to="/academics/computer-applications/faculty"
+              className="group rounded-none border border-border/40 bg-card/60 backdrop-blur-sm overflow-hidden hover:shadow-lg hover:shadow-brand-blue/20 transition-all duration-500 hover:-translate-y-1"
+            >
+              <Card className="h-full border-0 bg-transparent">
+                <div className="relative h-32 bg-gradient-to-br from-brand-blue/20 to-brand-blue/10 flex items-center justify-center">
+                  <Users className="h-12 w-12 text-brand-blue/70 group-hover:text-brand-blue transition-colors" />
+                </div>
+                <CardHeader>
+                  <CardTitle className="font-display group-hover:text-brand-blue transition-colors">
+                    Faculty & Staff
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-foreground/80 font-body">
+                    Meet our dedicated team of educators and mentors
+                  </p>
+                </CardContent>
+              </Card>
+            </RouterLink>
+
             <a
               href="https://admissions.dsu.edu.in/"
               target="_blank"
