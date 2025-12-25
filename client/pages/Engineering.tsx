@@ -449,7 +449,7 @@ const SUPPORTING_DEPARTMENTS: SupportingDepartment[] = [
       "Applied mathematics, statistics and computational techniques powering algorithmic and analytical thinking.",
     image:
       "https://images.unsplash.com/photo-1551836022-4c4c79ecde51?q=80&w=1600&auto=format&fit=crop",
-    link: "https://www.dsu.edu.in/engineering/mathematics",
+    link: "/academics/mathematics",
   },
   {
     name: "Humanities & Social Sciences",
