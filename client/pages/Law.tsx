@@ -1,6 +1,7 @@
 import { Link as RouterLink } from "react-router-dom";
 import { useState, useRef, useEffect } from "react";
 import type { LucideIcon } from "lucide-react";
+import { useAutoMuteOnScroll } from "@/hooks/useAutoMuteOnScroll";
 import {
   Award,
   BadgeCheck,
