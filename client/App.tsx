@@ -65,6 +65,7 @@ import BonduVenkateswarluPage from "./pages/faculty/BonduVenkateswarlu";
 import SKMouleeswaranPage from "./pages/faculty/SKMouleeswaran";
 import ChemistryFacultyList from "./pages/chemistry/FacultyList";
 import PhysicsFacultyList from "./pages/physics/FacultyList";
+import MathematicsFacultyList from "./pages/mathematics/FacultyList";
 import VenkataramanaNSProfile from "./pages/chemistry/VenkataramanaNS";
 import BhavanaRikhariProfile from "./pages/chemistry/BhavanaRikhari";
 import SaiPrasadNayakProfile from "./pages/chemistry/SaiPrasadNayak";
