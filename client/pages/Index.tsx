@@ -826,6 +826,7 @@ export default function Index() {
                       <img
                         src={item.image}
                         alt={item.title}
+                        loading="lazy"
                         className="h-32 w-full object-cover"
                       />
                     )}
