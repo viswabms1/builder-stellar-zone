@@ -85,12 +85,6 @@ export default function Navigation() {
               { name: "M.Tech Design Engineering", href: "/academics/engineering/mechanical-engineering" },
             ],
           },
-          {
-            name: "Supporting Departments",
-            departments: [
-              { name: "Physics", href: "/academics/physics" },
-            ],
-          },
         ],
         departments: [],
       },
