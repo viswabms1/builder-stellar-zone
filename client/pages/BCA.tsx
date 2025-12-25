@@ -171,6 +171,9 @@ export default function BCA() {
         </div>
       </section>
 
+      {/* Curriculum Library */}
+      <CurriculumLibrary />
+
       {/* Overview */}
       <section className="px-3 py-8">
         <div className="max-w-6xl mx-auto grid lg:grid-cols-3 gap-5 items-start">
