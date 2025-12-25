@@ -29,6 +29,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { DeanSection, type DeanInfo } from "@/components/DeanSection";
+import { useAutoMuteOnScroll } from "@/hooks/useAutoMuteOnScroll";
 
 
 type ProgramCard = {
