@@ -80,7 +80,7 @@ export function DeanSection({ dean }: DeanSectionProps) {
         <div className={`rounded-none border ${borderColorClass} ${bgColorClass} overflow-hidden backdrop-blur`}>
           <div className="grid md:grid-cols-[300px_1fr] gap-0">
             {/* Dean's Photo */}
-            <div className="relative overflow-hidden bg-gradient-to-br from-brand-magenta/10 to-brand-blue/10 flex items-start justify-center p-8 md:p-12 pt-8 md:pt-12">
+            <div className="relative overflow-hidden bg-gradient-to-br from-brand-magenta/10 to-brand-blue/10 flex items-start justify-center p-6 md:p-8">
               <div className="relative w-full max-w-xs">
                 <img
                   src={dean.photo}
