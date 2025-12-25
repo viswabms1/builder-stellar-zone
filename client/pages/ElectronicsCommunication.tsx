@@ -102,6 +102,88 @@ export default function ElectronicsCommunication() {
         </div>
       </section>
 
+      {/* Programs Offered */}
+      <section className="px-6 py-16 bg-gradient-to-r from-brand-blue/5 via-brand-magenta/5 to-brand-orange/5 border-y border-border/30">
+        <div className="max-w-6xl mx-auto">
+          <div className="mb-8">
+            <h2 className="headline-2 font-display mb-2">Programs Offered</h2>
+            <p className="text-foreground/80 font-body">Choose your pathway in electronics and communication</p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {/* B.Tech Program */}
+            <Card className="border border-border/50 bg-card/50 backdrop-blur-sm hover:shadow-lg transition-all">
+              <CardHeader>
+                <div className="flex items-center gap-2 mb-2">
+                  <GraduationCap className="w-5 h-5 text-brand-blue" />
+                  <Badge className="bg-brand-blue/20 text-brand-blue border-brand-blue/30">Undergraduate</Badge>
+                </div>
+                <CardTitle className="font-display">B.Tech Electronics & Communication Engineering</CardTitle>
+                <CardDescription className="font-body">4-Year Program</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <p className="text-sm text-foreground font-body">With specializations in embedded systems and communication</p>
+                <div className="flex flex-wrap gap-2">
+                  {["Embedded Systems", "VLSI Design", "5G & IoT", "Signal Processing"].map((spec, i) => (
+                    <Badge key={i} variant="secondary" className="text-xs">{spec}</Badge>
+                  ))}
+                </div>
+                <a href="/academics/engineering/electronics-communication">
+                  <Button variant="ghost" size="sm" className="w-full text-brand-blue hover:bg-brand-blue/10 mt-2">
+                    Explore <ArrowRight className="w-3 h-3 ml-1" />
+                  </Button>
+                </a>
+              </CardContent>
+            </Card>
+
+            {/* M.Tech Program */}
+            <Card className="border border-border/50 bg-card/50 backdrop-blur-sm hover:shadow-lg transition-all">
+              <CardHeader>
+                <div className="flex items-center gap-2 mb-2">
+                  <BookOpen className="w-5 h-5 text-brand-blue" />
+                  <Badge className="bg-brand-blue/20 text-brand-blue border-brand-blue/30">Postgraduate</Badge>
+                </div>
+                <CardTitle className="font-display">M.Tech Embedded Systems</CardTitle>
+                <CardDescription className="font-body">2-Year Program</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <p className="text-sm text-foreground font-body">Advanced embedded systems and real-time design</p>
+                <div className="flex flex-wrap gap-2">
+                  {["RTOS Design", "Hardware Integration", "Edge Computing"].map((spec, i) => (
+                    <Badge key={i} variant="secondary" className="text-xs">{spec}</Badge>
+                  ))}
+                </div>
+                <a href="/academics/engineering/electronics-communication">
+                  <Button variant="ghost" size="sm" className="w-full text-brand-blue hover:bg-brand-blue/10 mt-2">
+                    Explore <ArrowRight className="w-3 h-3 ml-1" />
+                  </Button>
+                </a>
+              </CardContent>
+            </Card>
+
+            {/* Quick Info */}
+            <Card className="border border-border/50 bg-card/50 backdrop-blur-sm">
+              <CardHeader>
+                <CardTitle className="text-lg font-display">Why Choose ECE?</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-2 text-sm font-body">
+                <div className="flex items-center gap-2">
+                  <Award className="w-4 h-4 text-brand-blue flex-shrink-0" />
+                  <span>Industry Lab Partnerships</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Zap className="w-4 h-4 text-brand-blue flex-shrink-0" />
+                  <span>Research Facilities</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Network className="w-4 h-4 text-brand-blue flex-shrink-0" />
+                  <span>5G & IoT Focus</span>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Overview */}
       <section className="px-6 py-16">
         <div className="max-w-6xl mx-auto grid lg:grid-cols-3 gap-10 items-start">
