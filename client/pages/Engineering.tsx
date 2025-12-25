@@ -40,6 +40,7 @@ import {
   getSchoolAnnouncements,
   type NoticeItem as ImportedNoticeItem,
 } from "@/data/engineering-events";
+import { useAutoMuteOnScroll } from "@/hooks/useAutoMuteOnScroll";
 
 const HERO_IMAGE = "https://www.dsu.edu.in/images/Engineering/engg-landing.jpg";
 
