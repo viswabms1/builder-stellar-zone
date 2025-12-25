@@ -669,7 +669,7 @@ export default function Index() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-0 auto-rows-max">
-            {getSchoolsData().map((school, index) => {
+            {schoolsData.map((school, index) => {
               const styles = [
                 { bg: "bg-orange-500/10", border: "border-orange-500/20" },
                 { bg: "bg-pink-500/10", border: "border-pink-500/20" },
