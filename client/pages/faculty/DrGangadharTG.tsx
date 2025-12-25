@@ -1,7 +1,7 @@
-import AIRoboticsFacultyPageTemplate from "./AIRoboticsFacultyPageTemplate";
+import FacultyPageTemplate from "./FacultyPageTemplate";
 import { airFaculty } from "@/data/air-faculty";
 
-export default function DrGangadharTG() {
+export default function DrGangadharTGPage() {
   const faculty = airFaculty.find(f => f.slug === "dr-gangadhar-t-g")!;
-  return <AIRoboticsFacultyPageTemplate faculty={faculty} />;
+  return <FacultyPageTemplate faculty={faculty} department="AI and Robotics" departmentLink="/academics/engineering/ai-robotics/faculty" />;
 }
