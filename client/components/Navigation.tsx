@@ -238,19 +238,21 @@ export default function Navigation() {
           </div>
 
           {/* Right side - Language Switcher and ERP Login */}
-          <LanguageSwitcher />
-          <a
-            href="https://ums.mydsi.org/Login.aspx/DSU"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`px-3 py-1.5 rounded text-xs font-medium transition-all duration-200 ${
-              theme === "light"
-                ? "text-gray-700 hover:text-orange-600"
-                : "text-white/80 hover:text-white"
-            }`}
-          >
-            ERP Login
-          </a>
+          <div className="flex items-center gap-3">
+            <LanguageSwitcher />
+            <a
+              href="https://ums.mydsi.org/Login.aspx/DSU"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`text-xs font-medium transition-colors whitespace-nowrap ${
+                theme === "light"
+                  ? "text-gray-600 hover:text-orange-600"
+                  : "text-white/80 hover:text-white"
+              }`}
+            >
+              ERP Login
+            </a>
+          </div>
         </div>
       </div>
 
