@@ -504,14 +504,15 @@ export default function Navigation() {
                 return [
                   itemElement,
                   isHomePage && (
-                    <span
+                    <Link
                       key="ai-label"
-                      className={`flex items-center px-4 py-3 text-sm font-semibold font-display ${
-                        theme === "light" ? "text-orange-600" : "text-white/90"
+                      to="/ai-first"
+                      className={`flex items-center px-4 py-3 text-sm font-semibold font-display transition-colors ${
+                        theme === "light" ? "text-orange-600 hover:text-orange-700" : "text-white/90 hover:text-white"
                       }`}
                     >
                       AI-First @ DSU
-                    </span>
+                    </Link>
                   ),
                   <Link
                     key="logo"
