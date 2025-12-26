@@ -5,6 +5,7 @@ import { getLanguageLabel } from '@/lib/i18n';
 import type { Language } from '@/lib/i18n';
 import { ChevronDown } from 'lucide-react';
 import { useState, useEffect, useRef } from 'react';
+import { createPortal } from 'react-dom';
 
 const LANGUAGES: Language[] = ['en', 'kn', 'hi'];
 
