@@ -636,19 +636,11 @@ export default function Index() {
               </a>
               <Link
                 to="/ai-first"
-                className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-                style={{
-                  outlineColor: theme === 'light' ? '#e67e22' : 'white',
-                }}
+                className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background"
               >
                 <Button
-                  variant="outline"
                   size="lg"
-                  className={`border-2 px-8 py-6 text-base font-semibold font-display transition-all duration-300 ${
-                    theme === 'light'
-                      ? 'border-transparent text-orange-600/70 hover:border-transparent hover:text-orange-600 hover:bg-transparent'
-                      : 'border-transparent text-white/80 hover:border-transparent hover:text-white hover:bg-transparent'
-                  }`}
+                  className="bg-white hover:bg-white/90 text-black hover:text-black px-8 py-6 text-base font-semibold font-display transition-all duration-300 group border-2 border-white"
                 >
                   The Future of AI Is Coming to DSU
                   <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
