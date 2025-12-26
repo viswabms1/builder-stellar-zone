@@ -27,19 +27,17 @@ export default function LanguageSwitcher() {
 
   return (
     <div className="relative" ref={dropdownRef}>
-      <Button
-        variant="ghost"
-        size="sm"
-        className={`px-3 py-2 rounded-xl text-sm font-medium font-display transition-all duration-200 flex items-center gap-2 ${
+      <button
+        className={`text-xs font-medium transition-colors whitespace-nowrap flex items-center gap-1 ${
           theme === 'light'
-            ? 'text-gray-700 hover:text-orange-600 hover:bg-orange-100'
-            : 'text-white/80 hover:text-white hover:bg-white/10'
+            ? 'text-gray-600 hover:text-orange-600'
+            : 'text-white/80 hover:text-white'
         }`}
         onClick={() => setIsOpen(!isOpen)}
       >
         <span>{getLanguageLabel(language)}</span>
-        <ChevronDown className="w-4 h-4" />
-      </Button>
+        <ChevronDown className="w-3 h-3" />
+      </button>
 
       {isOpen && (
         <div className={`absolute right-0 mt-2 w-48 rounded-xl shadow-lg border z-50 ${
