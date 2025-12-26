@@ -424,7 +424,7 @@ function HeroVideo() {
               <Button
                 variant="outline"
                 size="lg"
-                className="border-2 border-transparent text-white hover:bg-transparent hover:text-white px-8 py-6 text-base font-semibold font-display transition-all duration-300"
+                className="border-2 border-transparent text-white hover:bg-black/20 bg-black/10 backdrop-blur-sm hover:text-white px-8 py-6 text-base font-semibold font-display transition-all duration-300"
               >
                 Virtual Tour
               </Button>
