@@ -170,6 +170,29 @@ export default function AIFirst() {
         </div>
       </section>
 
+      {/* Featured Video Section */}
+      <section className="px-3 py-16">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">AI-First @ DSU Vision</h2>
+            <p className="text-lg text-foreground max-w-3xl mx-auto">Experience our commitment to AI-driven innovation</p>
+          </div>
+
+          <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl">
+            <video
+              src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F03362b62a37f44ddafe493229d096ee4?alt=media&token=0e85ba67-0518-4bd2-83fb-d7feee4d7438&apiKey=4aa279a8430d441dba9c55f659831878"
+              className="w-full h-auto max-h-[600px] object-cover bg-black"
+              controls
+              autoPlay
+              muted
+              loop
+              loading="lazy"
+              preload="metadata"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* AI Initiatives Section */}
       <section className="px-3 py-16 bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-blue-500/5">
         <div className="max-w-7xl mx-auto">
