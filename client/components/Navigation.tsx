@@ -531,7 +531,7 @@ export default function Navigation() {
                   isHomePage && (
                     <Link
                       key="nvidia-ai"
-                      to="#nvidia-ai-architecture"
+                      to="/ai-first"
                       className={sharedClasses}
                     >
                       <span>NVIDIA's AI Architecture</span>
