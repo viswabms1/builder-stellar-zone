@@ -992,7 +992,7 @@ export default function Placements() {
             >
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-red-600 hover:to-orange-500 text-foreground px-8 py-6 font-semibold rounded-2xl transition-all duration-300"
+                className="bg-transparent border border-transparent hover:bg-transparent text-foreground px-8 py-6 font-semibold rounded-2xl transition-all duration-300"
               >
                 Take a Virtual Tour
                 <ArrowRight className="w-5 h-5 ml-2" />

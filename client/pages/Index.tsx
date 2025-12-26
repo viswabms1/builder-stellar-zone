@@ -627,8 +627,8 @@ export default function Index() {
                   size="lg"
                   className={`border-2 px-8 py-6 text-base font-semibold font-display transition-all duration-300 ${
                     theme === 'light'
-                      ? 'border-orange-600/40 text-orange-600/70 hover:border-orange-600 hover:text-orange-600 hover:bg-white/10'
-                      : 'border-white/60 text-white/80 hover:border-white hover:text-white hover:bg-white/10'
+                      ? 'border-transparent text-orange-600/70 hover:border-transparent hover:text-orange-600 hover:bg-transparent'
+                      : 'border-transparent text-white/80 hover:border-transparent hover:text-white hover:bg-transparent'
                   }`}
                 >
                   {t("hero.virtualTour") || "Virtual Tour"}
