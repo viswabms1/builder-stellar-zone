@@ -181,11 +181,13 @@ export default function Navigation() {
     ],
   };
 
+  const isHomePage = location.pathname === "/";
+
   const topMenuItems = [
     { name: "Alumni", href: "/alumni" },
     { name: "Library", href: "/library" },
     { name: "Insights", href: "/insights" },
-    { name: "Research", href: "/research" },
+    { name: isHomePage ? "AI-First @ DSU" : "Research", href: "/research" },
     { name: "Conferences", href: "/conferences" },
     { name: "Committees", href: "/committees" },
     { name: "News & Events", href: "/news-events" },
@@ -197,7 +199,7 @@ export default function Navigation() {
   const navigation = [
     { name: t("nav.home"), href: "/" },
     { name: t("nav.about"), href: "/about" },
-    { name: t("nav.academics"), href: "/academics" },
+    { name: isHomePage ? "AI-Infused Academics" : t("nav.academics"), href: "/academics" },
     { name: t("nav.admissions"), href: "/admissions" },
     { name: t("nav.research"), href: "/research" },
     { name: t("nav.campusLife"), href: "/campus-life" },
