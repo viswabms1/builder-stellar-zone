@@ -503,17 +503,15 @@ export default function Navigation() {
               if (idx === 3) {
                 return [
                   itemElement,
-                  isHomePage && (
-                    <Link
-                      key="ai-label"
-                      to="/ai-first"
-                      className={`flex items-center px-4 py-3 text-sm font-semibold font-display transition-colors ${
-                        theme === "light" ? "text-orange-600 hover:text-orange-700" : "text-white/90 hover:text-white"
-                      }`}
-                    >
-                      AI-First @ DSU
-                    </Link>
-                  ),
+                  <Link
+                    key="ai-label"
+                    to="/ai-first"
+                    className={`flex items-center px-4 py-3 text-sm font-semibold font-display transition-colors ${
+                      theme === "light" ? "text-orange-600 hover:text-orange-700" : "text-white/90 hover:text-white"
+                    }`}
+                  >
+                    AI-First @ DSU
+                  </Link>,
                   <Link
                     key="logo"
                     to="/"
@@ -529,15 +527,13 @@ export default function Navigation() {
                       className="h-20 w-auto object-contain group-hover:scale-110 transition-all duration-300"
                     />
                   </Link>,
-                  isHomePage && (
-                    <Link
-                      key="nvidia-ai"
-                      to="/ai-first"
-                      className={sharedClasses}
-                    >
-                      <span>NVIDIA's AI Architecture</span>
-                    </Link>
-                  ),
+                  <Link
+                    key="nvidia-ai"
+                    to="/ai-first"
+                    className={sharedClasses}
+                  >
+                    <span>NVIDIA's AI Architecture</span>
+                  </Link>,
                 ];
               }
 
