@@ -237,7 +237,8 @@ export default function Navigation() {
             ))}
           </div>
 
-          {/* Right side - ERP Login */}
+          {/* Right side - Language Switcher and ERP Login */}
+          <LanguageSwitcher />
           <a
             href="https://ums.mydsi.org/Login.aspx/DSU"
             target="_blank"
@@ -546,7 +547,6 @@ export default function Navigation() {
             >
               <Search className="w-4 h-4" />
             </Button>
-            <LanguageSwitcher />
             <ThemeToggle
               className={
                 theme === "light"
