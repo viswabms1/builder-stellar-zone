@@ -134,13 +134,6 @@ export default function AIFirst() {
             <span className="text-sm font-medium text-blue-500">AI-First Initiative</span>
           </div>
 
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight">
-            Shaping the Future with <span className="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">Artificial Intelligence</span>
-          </h1>
-
-          <p className="text-xl md:text-2xl text-foreground mb-12 max-w-4xl mx-auto leading-relaxed">
-            Dayananda Sagar University's commitment to AI-driven education, research, and innovation. Empowering students and faculty to lead the AI revolution with cutting-edge programs and world-class infrastructure.
-          </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
             <Button size="lg" className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 text-foreground px-8 py-6 text-lg font-semibold rounded-2xl">
