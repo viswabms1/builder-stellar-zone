@@ -49,6 +49,8 @@ function DeanMessageVideo({ videoUrl }: { videoUrl: string }) {
         muted={isMuted}
         loop
         playsInline
+        preload="metadata"
+        loading="lazy"
         className="w-full h-full object-cover"
       />
       <button
