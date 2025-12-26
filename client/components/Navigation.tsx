@@ -184,10 +184,10 @@ export default function Navigation() {
   const isHomePage = location.pathname === "/";
 
   const topMenuItems = [
+    { name: "Research", href: "/research" },
     { name: "Alumni", href: "/alumni" },
     { name: "Library", href: "/library" },
     { name: "Insights", href: "/insights" },
-    { name: isHomePage ? "AI-First @ DSU" : "Research", href: "/research" },
     { name: "Conferences", href: "/conferences" },
     { name: "Committees", href: "/committees" },
     { name: "News & Events", href: "/news-events" },
