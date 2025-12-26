@@ -258,6 +258,7 @@ export default function Research() {
                           <video
                             src={center.videoUrl}
                             controls
+                            preload="metadata"
                             className="w-full h-full object-cover"
                             poster="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=600&auto=format&fit=crop"
                           />

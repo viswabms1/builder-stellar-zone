@@ -63,6 +63,7 @@ export default function CampusLife() {
             muted
             loop
             playsInline
+            preload="metadata"
             className="w-full h-full object-cover"
           />
         </div>
