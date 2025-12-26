@@ -40,7 +40,7 @@ export default function LanguageSwitcher() {
       </button>
 
       {isOpen && (
-        <div className={`absolute right-0 mt-2 w-48 rounded-xl shadow-lg border z-50 ${
+        <div className={`absolute right-0 mt-2 w-48 rounded-xl shadow-lg border z-[100] ${
           theme === 'light'
             ? 'bg-white border-orange-200'
             : 'bg-slate-900 border-slate-700'
