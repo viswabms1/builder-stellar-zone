@@ -237,7 +237,7 @@ export default function Navigation() {
           </div>
 
           {/* Right side - Language Switcher and ERP Login */}
-          <div className="flex items-center gap-3 relative z-[101]">
+          <div className="flex items-center gap-3">
             <LanguageSwitcher />
             <a
               href="https://ums.mydsi.org/Login.aspx/DSU"
