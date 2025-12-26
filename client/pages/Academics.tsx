@@ -123,7 +123,7 @@ function HeroVideo() {
         muted
         loop
         playsInline
-        preload="auto"
+        preload="metadata"
         crossOrigin="anonymous"
         volume={0}
         className="w-full h-full object-cover"
