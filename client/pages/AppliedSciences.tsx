@@ -617,12 +617,6 @@ function HeroVideo() {
           <p className="text-sm md:text-base text-white/80 mb-4 uppercase tracking-widest font-display">
             School of Basic & Applied Sciences
           </p>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight font-display">
-            Deciphering the Codes of Life
-          </h1>
-          <p className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed max-w-xl font-display">
-            Build scientific acumen across life sciences, physical sciences and data-driven experimentation with research-intensive mentorship at DSU.
-          </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
             <a
