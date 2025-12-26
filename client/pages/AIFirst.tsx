@@ -128,7 +128,7 @@ export default function AIFirst() {
 
         <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-black/30 to-black/40"></div>
 
-        <div className="relative max-w-7xl mx-auto px-3 text-center z-10 pt-40">
+        <div className="relative max-w-7xl mx-auto px-3 text-center z-10 pt-44">
           <div className="inline-flex items-center px-4 py-2 bg-blue-500/10 rounded-full border border-blue-500/20 mb-8">
             <Cpu className="w-4 h-4 text-blue-500 mr-2" />
             <span className="text-sm font-medium text-blue-500">AI-First Initiative</span>
