@@ -497,7 +497,7 @@ export default function Navigation() {
                 );
               })();
 
-              if (idx === 4) {
+              if (idx === 3) {
                 return [
                   itemElement,
                   isHomePage && (
