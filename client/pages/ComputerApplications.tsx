@@ -972,7 +972,7 @@ export default function ComputerApplications() {
               >
                 <Button
                   variant="outline"
-                  className="border-transparent hover:bg-transparent"
+                  className="border-transparent bg-black/10 hover:bg-black/20 backdrop-blur-sm hover:text-white"
                 >
                   Virtual Tour
                 </Button>
