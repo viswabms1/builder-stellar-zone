@@ -502,7 +502,7 @@ export default function Academics() {
                   <Button
                     variant="outline"
                     size="lg"
-                    className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-foreground px-12 py-6 text-lg font-semibold rounded-xl transition-all duration-300"
+                    className="border-2 border-transparent text-orange-500 hover:bg-transparent hover:text-orange-500 px-12 py-6 text-lg font-semibold rounded-xl transition-all duration-300"
                   >
                     Virtual Tour
                     <ArrowRight className="w-5 h-5 ml-2" />
