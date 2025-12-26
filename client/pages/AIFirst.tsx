@@ -128,7 +128,22 @@ export default function AIFirst() {
 
         <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-black/30 to-black/40"></div>
 
-        <div className="relative max-w-7xl mx-auto px-3 text-center z-10">
+        <div className="relative max-w-7xl mx-auto px-3 text-center z-10 pt-32">
+          <div className="inline-flex items-center px-4 py-2 bg-blue-500/10 rounded-full border border-blue-500/20 mb-8">
+            <Cpu className="w-4 h-4 text-blue-500 mr-2" />
+            <span className="text-sm font-medium text-blue-500">AI-First Initiative</span>
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
+            <Button size="lg" className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 text-foreground px-8 py-6 text-lg font-semibold rounded-2xl">
+              Explore AI Programs
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Button>
+            <Button variant="outline" size="lg" className="border-2 border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-foreground px-8 py-6 text-lg font-semibold rounded-2xl">
+              AI Research Centers
+            </Button>
+          </div>
+
           {/* AI Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-4xl mx-auto">
             {[
