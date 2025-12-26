@@ -54,7 +54,7 @@ export default function LanguageSwitcher() {
         <ChevronDown className="w-3 h-3" />
       </button>
 
-      {isOpen && (
+      {isOpen && createPortal(
         <div
           className={`fixed w-48 rounded-xl shadow-lg border z-[9999] ${
             theme === 'light'
@@ -62,7 +62,7 @@ export default function LanguageSwitcher() {
               : 'bg-slate-900 border-slate-700'
           }`}
           style={{
-            top: `${dropdownPos.top}px`,
+            top: `${dropdownPos.top + 8}px`,
             right: `${dropdownPos.right}px`
           }}
         >
@@ -86,7 +86,8 @@ export default function LanguageSwitcher() {
               {getLanguageLabel(lang)}
             </button>
           ))}
-        </div>
+        </div>,
+        document.body
       )}
     </div>
   );
