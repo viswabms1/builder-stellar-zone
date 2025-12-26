@@ -500,6 +500,16 @@ export default function Navigation() {
               if (idx === 4) {
                 return [
                   itemElement,
+                  isHomePage && (
+                    <span
+                      key="ai-label"
+                      className={`flex items-center px-4 py-3 text-sm font-semibold font-display ${
+                        theme === "light" ? "text-orange-600" : "text-white/90"
+                      }`}
+                    >
+                      AI-First @ DSU
+                    </span>
+                  ),
                   <Link
                     key="logo"
                     to="/"
