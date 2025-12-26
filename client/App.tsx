@@ -10,6 +10,7 @@ import InternationalAdmissions from "./pages/InternationalAdmissions";
 import CampusLife from "./pages/CampusLife";
 import Examinations from "./pages/Examinations";
 import Research from "./pages/Research";
+import AIFirst from "./pages/AIFirst";
 import Engineering from "./pages/Engineering";
 import ElectronicsCommunication from "./pages/ElectronicsCommunication";
 import ComputerApplications from "./pages/ComputerApplications";
