@@ -1562,7 +1562,7 @@ export default function Engineering() {
               >
                 <Button
                   variant="outline"
-                  className="border-brand-magenta/40 hover:bg-brand-magenta/10"
+                  className="border-transparent hover:bg-transparent"
                 >
                   Virtual Tour
                 </Button>
