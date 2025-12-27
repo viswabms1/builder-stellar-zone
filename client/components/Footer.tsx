@@ -117,7 +117,7 @@ const SOCIAL_LINKS = [
   },
   {
     label: "Instagram",
-    href: "https://www.instagram.com/dayanandasagaruniversity",
+    href: "https://www.instagram.com/dayanandasagaruniversityblr",
     icon: Instagram,
   },
   {
