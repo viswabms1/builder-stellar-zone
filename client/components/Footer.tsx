@@ -122,7 +122,7 @@ const SOCIAL_LINKS = [
   },
   {
     label: "LinkedIn",
-    href: "https://www.linkedin.com/school/dayanandasagaruniversity/",
+    href: "https://in.linkedin.com/school/dayananda-sagar-university-bangalore/",
     icon: Linkedin,
   },
   {
