@@ -112,7 +112,7 @@ const CONTACT_EMAILS = [
 const SOCIAL_LINKS = [
   {
     label: "Facebook",
-    href: "https://www.facebook.com/dsuofficial",
+    href: "https://www.facebook.com/Dayanandasagaruniversitybangalore/",
     icon: Facebook,
   },
   {
