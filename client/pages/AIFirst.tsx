@@ -63,22 +63,38 @@ export default function AIFirst() {
             </div>
           </div>
 
-          {/* Vision Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
-            <Card className="text-center p-4 bg-card/30 backdrop-blur-sm border border-border/30">
-              <div className="text-3xl font-bold text-blue-500 mb-2">1:10</div>
-              <div className="text-sm text-foreground">SKILL GAP</div>
-              <p className="text-xs text-foreground/70 mt-2">For every 10 Data Scientists needed, 1 available</p>
-            </Card>
-            <Card className="text-center p-4 bg-card/30 backdrop-blur-sm border border-border/30">
-              <div className="text-3xl font-bold text-purple-500 mb-2">8 of 10</div>
-              <div className="text-sm text-foreground">INNOVATION GAP</div>
-              <p className="text-xs text-foreground/70 mt-2">Unicorns in India come from IITs</p>
-            </Card>
-            <Card className="text-center p-4 bg-card/30 backdrop-blur-sm border border-border/30">
-              <div className="text-3xl font-bold text-pink-500 mb-2">Majority</div>
-              <div className="text-sm text-foreground">RESEARCH GAP</div>
-              <p className="text-xs text-foreground/70 mt-2">AI research funding goes to IITs</p>
+          {/* AI-First Approach Explanation */}
+          <div className="max-w-4xl mx-auto">
+            <Card className="border-border/50 bg-card/30 backdrop-blur-sm border-border/30">
+              <CardContent className="pt-8">
+                <h3 className="text-2xl font-bold text-white mb-6">What is the AI-First Approach?</h3>
+                <p className="text-foreground/80 mb-6 leading-relaxed">
+                  The AI-First approach at DSU represents a fundamental shift in how we design education, conduct research, and foster innovation. Rather than treating AI as a peripheral tool, we place artificial intelligence at the core of every academic and operational aspect of the university.
+                </p>
+                <div className="grid md:grid-cols-3 gap-6">
+                  <div className="space-y-2">
+                    <h4 className="font-semibold text-blue-400 flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-blue-500"></span>
+                      Learning
+                    </h4>
+                    <p className="text-sm text-foreground/70">AI-enhanced curricula and adaptive learning systems that personalize education for every student</p>
+                  </div>
+                  <div className="space-y-2">
+                    <h4 className="font-semibold text-purple-400 flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-purple-500"></span>
+                      Research
+                    </h4>
+                    <p className="text-sm text-foreground/70">Leveraging AI to accelerate breakthrough discoveries and solve complex real-world problems</p>
+                  </div>
+                  <div className="space-y-2">
+                    <h4 className="font-semibold text-pink-400 flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-pink-500"></span>
+                      Innovation
+                    </h4>
+                    <p className="text-sm text-foreground/70">Building an ecosystem where AI drives entrepreneurship and industry partnerships</p>
+                  </div>
+                </div>
+              </CardContent>
             </Card>
           </div>
         </div>
