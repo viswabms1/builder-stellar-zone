@@ -241,7 +241,7 @@ export default function AIFirst() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6 mb-12">
             {[
               {
                 title: "AI Infra",
@@ -282,6 +282,15 @@ export default function AIFirst() {
                 </Card>
               );
             })}
+          </div>
+
+          <div className="rounded-xl overflow-hidden shadow-2xl border border-border/50">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F7386ba632ed842219d7f49b3a25d37b7?format=webp&width=800"
+              alt="NVIDIA AI University Program Framework"
+              className="w-full h-auto rounded-xl"
+              loading="lazy"
+            />
           </div>
         </div>
       </section>
