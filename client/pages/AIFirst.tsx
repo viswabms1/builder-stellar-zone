@@ -106,21 +106,20 @@ export default function AIFirst() {
         </div>
 
         <div className="relative max-w-7xl mx-auto px-3 z-10">
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center px-4 py-2 bg-blue-500/10 rounded-full border border-blue-500/20 mb-8">
-              <Brain className="w-4 h-4 text-blue-500 mr-2" />
-              <span className="text-sm font-medium text-blue-500">AI-First Initiative at DSU</span>
-            </div>
+          {/* Framework Image - Top */}
+          <div className="rounded-xl overflow-hidden shadow-2xl border border-border/30 mb-12">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F7386ba632ed842219d7f49b3a25d37b7?format=webp&width=800"
+              alt="NVIDIA AI University Program Framework"
+              className="w-full h-auto rounded-xl"
+              loading="lazy"
+            />
+          </div>
 
+          <div className="text-center mb-12">
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
               Dayananda Sagar University School of AI
             </h1>
-            <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto mb-4">
-              In Technology Collaboration with NVIDIA
-            </p>
-            <p className="text-lg text-white/60 max-w-3xl mx-auto mb-12">
-              Establishing AI Leadership in India in Skill Development, Research & Entrepreneurship
-            </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
               <Button size="lg" className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 text-white px-8 py-6 text-lg font-semibold rounded-2xl">
@@ -133,16 +132,6 @@ export default function AIFirst() {
                 </Button>
               </Link>
             </div>
-          </div>
-
-          {/* Framework Image */}
-          <div className="rounded-xl overflow-hidden shadow-2xl border border-border/30 mb-12">
-            <img
-              src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F7386ba632ed842219d7f49b3a25d37b7?format=webp&width=800"
-              alt="NVIDIA AI University Program Framework"
-              className="w-full h-auto rounded-xl"
-              loading="lazy"
-            />
           </div>
 
           {/* Vision Stats */}
