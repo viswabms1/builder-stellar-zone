@@ -58,6 +58,15 @@ export default function NVIDIAArchitecture() {
             </p>
           </div>
 
+          <div className="mb-12">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fd38152bae11044b5874577e3cd145700?format=webp&width=1200"
+              alt="NVIDIA Stack for Accelerated Computing"
+              className="w-full rounded-xl shadow-2xl border border-border/30"
+              loading="lazy"
+            />
+          </div>
+
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="border-border/50 hover:border-green-500/50 transition-all bg-card/50 backdrop-blur">
               <CardHeader>
