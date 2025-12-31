@@ -45,23 +45,6 @@ export default function AIFirst() {
             />
           </div>
 
-          <div className="text-center mb-12">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
-              Dayananda Sagar University School of AI
-            </h1>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-              <Button size="lg" className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 text-white px-8 py-6 text-lg font-semibold rounded-2xl">
-                Learn More About School of AI
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
-              <Link to="/nvidia-ai-architecture">
-                <Button variant="outline" size="lg" className="border-2 border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white px-8 py-6 text-lg font-semibold rounded-2xl">
-                  Explore NVIDIA Technology Stack
-                </Button>
-              </Link>
-            </div>
-          </div>
 
           {/* AI-First Approach Explanation */}
           <div className="max-w-4xl mx-auto">
