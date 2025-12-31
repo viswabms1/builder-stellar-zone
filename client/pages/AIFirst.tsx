@@ -390,21 +390,97 @@ export default function AIFirst() {
         </div>
       </section>
 
+      {/* Join the Initiative Section */}
+      <section className="relative py-20 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-3">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="rounded-2xl overflow-hidden shadow-2xl">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fc2f594e327154762bac224d0befab0a1?format=webp&width=800"
+                alt="Join DSU's AI-First Initiative"
+                className="w-full h-auto"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <h2 className="text-4xl md:text-5xl font-bold mb-8">Be Part of the Future</h2>
+              <p className="text-xl text-foreground/80 mb-8 leading-relaxed">
+                Join Dayananda Sagar University's transformative AI-First initiative and shape the future of education, research, and innovation in India.
+              </p>
+
+              <div className="space-y-6 mb-10">
+                <div className="flex items-start gap-4">
+                  <div className="p-3 rounded-full bg-blue-500/20 flex-shrink-0">
+                    <Brain className="w-6 h-6 text-blue-500" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-lg mb-2">World-Class Infrastructure</h3>
+                    <p className="text-foreground/70">Access NVIDIA's cutting-edge GPU labs, DGX B200 systems, and state-of-the-art research facilities designed for AI innovation</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="p-3 rounded-full bg-purple-500/20 flex-shrink-0">
+                    <Users className="w-6 h-6 text-purple-500" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-lg mb-2">Industry Collaboration</h3>
+                    <p className="text-foreground/70">Work directly with leading companies across automotive, healthcare, finance, and manufacturing sectors on real-world problems</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="p-3 rounded-full bg-pink-500/20 flex-shrink-0">
+                    <Rocket className="w-6 h-6 text-pink-500" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-lg mb-2">Career & Entrepreneurship</h3>
+                    <p className="text-foreground/70">Launch your career with AI expertise in high demand, or build your AI-powered startup with our incubation support and mentorship</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="p-3 rounded-full bg-green-500/20 flex-shrink-0">
+                    <Award className="w-6 h-6 text-green-500" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-lg mb-2">Global Recognition</h3>
+                    <p className="text-foreground/70">Publish groundbreaking research, contribute to NVIDIA initiatives, and position yourself as an AI thought leader</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button size="lg" className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 text-white px-8 py-6 text-base font-semibold rounded-2xl">
+                  Get Involved Now
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Button>
+                <Link to="/nvidia-ai-architecture">
+                  <Button variant="outline" size="lg" className="border-2 border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white px-8 py-6 text-base font-semibold rounded-2xl">
+                    Explore Technology
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Final CTA */}
       <section className="px-3 py-20 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-blue-500/20">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Join the AI Revolution</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Shape India's AI Future</h2>
           <p className="text-lg text-foreground/70 mb-8 max-w-2xl mx-auto">
-            Be part of India's most ambitious AI-first initiative. Partner with us, study with us, or research with us.
+            Whether you're a student, researcher, entrepreneur, or industry leader—DSU's AI-First initiative offers unprecedented opportunities for growth, innovation, and impact.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 text-white">
-              Learn More
+              Join Our Community
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
             <Link to="/nvidia-ai-architecture">
               <Button variant="outline" size="lg" className="border-2 border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white">
-                Technology Stack
+                Learn About Programs
               </Button>
             </Link>
           </div>
