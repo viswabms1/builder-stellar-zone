@@ -25,77 +25,6 @@ import {
 export default function AIFirst() {
   const { t } = useLanguage();
 
-  const schoolOfAIBenefits = [
-    {
-      title: "For Students, Researchers, Faculties and Campus Startups",
-      description: "Comprehensive ecosystem for learning, research, and innovation",
-      icon: BookOpen
-    },
-    {
-      title: "Roadmap to Leading Private University",
-      description: "Establish AI leadership in skill development, research & entrepreneurship",
-      icon: Rocket
-    },
-    {
-      title: "Unparallel AI Research Pedigree",
-      description: "World-class research capabilities and recognition",
-      icon: Brain
-    },
-    {
-      title: "Enhanced NIRF Perception Score",
-      description: "Improve ranking within industry and students",
-      icon: Award
-    }
-  ];
-
-  const aiResearchAreas = [
-    {
-      title: "Natural Language Processing",
-      description: "Multilingual systems, sentiment analysis, language understanding",
-      icon: Target,
-      color: "blue"
-    },
-    {
-      title: "Computer Vision",
-      description: "Image processing, object detection, visual recognition systems",
-      icon: Lightbulb,
-      color: "orange"
-    },
-    {
-      title: "Autonomous Systems",
-      description: "Robotics, autonomous vehicles, intelligent automation",
-      icon: Rocket,
-      color: "green"
-    },
-    {
-      title: "AI for Sustainability",
-      description: "Environmental monitoring, resource optimization",
-      icon: Shield,
-      color: "purple"
-    },
-    {
-      title: "Healthcare AI",
-      description: "Medical imaging, diagnostic systems, healthcare solutions",
-      icon: Database,
-      color: "red"
-    },
-    {
-      title: "Enterprise AI",
-      description: "Business intelligence, predictive analytics, automation",
-      icon: Briefcase,
-      color: "indigo"
-    }
-  ];
-
-  const researchDomains = [
-    { name: "Automobile", areas: ["Digital Twin", "AI-Driven Safety", "Predictive Maintenance", "Supply Chain Quality"] },
-    { name: "Defense", areas: ["Warfare Systems", "Strategic Decision Making", "Combat Simulation", "Threat Monitoring"] },
-    { name: "IT/ITES", areas: ["Cybersecurity", "Data Analytics", "Software Development", "Network Optimization"] },
-    { name: "Industrial", areas: ["Connected Factories", "Cobots", "Assembly Line Optimization", "Quality Assurance"] },
-    { name: "Finance", areas: ["Fraud Prevention", "Risk Management", "Customer Service", "Compliance"] },
-    { name: "Logistics", areas: ["Automated Warehousing", "Demand Forecasting", "Supply Chain Optimization"] }
-  ];
-
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero Section */}
@@ -155,163 +84,203 @@ export default function AIFirst() {
         </div>
       </section>
 
-      {/* Vision Overview */}
-      <section className="px-3 py-16 bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-blue-500/5">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-14">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Our Vision</h2>
-            <p className="text-xl text-foreground max-w-3xl mx-auto">
-              Realize the vision of being "a Non-IIT IIT" by building a thriving AI ECOSYSTEM at DSU to bridge INNOVATION, SKILL & RESEARCH GAP making it a "GO-TO CENTER for AI RESEARCH, DEVELOPMENT & PROLIFERATION"
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            <Card className="border-border/50 hover:border-blue-500/50 bg-card/50 backdrop-blur">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-3">
-                  <Brain className="w-6 h-6 text-blue-500" />
-                  School of Artificial Intelligence
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-3">
-                  {schoolOfAIBenefits.map((benefit, idx) => (
-                    <li key={idx} className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-blue-500 flex-shrink-0 mt-1" />
-                      <div>
-                        <p className="font-semibold text-sm">{benefit.title}</p>
-                        <p className="text-xs text-foreground/70">{benefit.description}</p>
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card className="border-border/50 hover:border-purple-500/50 bg-card/50 backdrop-blur">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-3">
-                  <Network className="w-6 h-6 text-purple-500" />
-                  Center for Applied AI and Industry Partnership
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-3">
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-purple-500 flex-shrink-0 mt-1" />
-                    <div>
-                      <p className="font-semibold text-sm">Research Collaboration with Industries</p>
-                      <p className="text-xs text-foreground/70">Partner with leading companies on real-world problems</p>
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-purple-500 flex-shrink-0 mt-1" />
-                    <div>
-                      <p className="font-semibold text-sm">AI CoE as a Service</p>
-                      <p className="text-xs text-foreground/70">Provide AI expertise to industry partners</p>
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-purple-500 flex-shrink-0 mt-1" />
-                    <div>
-                      <p className="font-semibold text-sm">Skilling & Reskilling Partner</p>
-                      <p className="text-xs text-foreground/70">Train workforce for industry needs</p>
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-purple-500 flex-shrink-0 mt-1" />
-                    <div>
-                      <p className="font-semibold text-sm">Innovation Labs</p>
-                      <p className="text-xs text-foreground/70">Robotics, humanoid labs, medical research CoE</p>
-                    </div>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
+      {/* Entering a Smarter Learning World */}
+      <section className="relative py-20 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-3">
+          <div className="rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Ff23ab891b7034cb39a115957640a25b9?format=webp&width=800"
+                alt="Entering a Smarter Learning World"
+                className="w-full h-auto"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+              <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
+                <h2 className="text-3xl md:text-4xl font-bold mb-3">The Gateway to AI Excellence</h2>
+                <p className="text-lg max-w-2xl">Experience the transformation of learning infrastructure designed for the AI era</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* AI Programs & Curriculum */}
-      <section className="px-3 py-16">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-14">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">NVIDIA's AI University Programs</h2>
-            <p className="text-xl text-foreground max-w-3xl mx-auto">
-              Comprehensive framework spanning education, research, and industry collaboration
-            </p>
+      {/* Knowledge Meets Intelligence */}
+      <section className="py-20 bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-blue-500/5">
+        <div className="max-w-7xl mx-auto px-3">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="rounded-2xl overflow-hidden shadow-xl">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F442e50f3c1044522ab5e9e19c3b55712?format=webp&width=800"
+                alt="Where knowledge meets intelligence"
+                className="w-full h-auto"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">Where Knowledge Meets Intelligence</h2>
+              <p className="text-xl text-foreground/80 mb-6">
+                Learning becomes limitless when powered by artificial intelligence. Our state-of-the-art learning commons provides an environment where traditional pedagogy merges with cutting-edge AI tools and resources.
+              </p>
+              <ul className="space-y-4">
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="w-6 h-6 text-blue-500 flex-shrink-0 mt-1" />
+                  <div>
+                    <p className="font-semibold">Personalized Learning Pathways</p>
+                    <p className="text-sm text-foreground/70">AI-driven recommendations tailored to each student's learning style</p>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="w-6 h-6 text-blue-500 flex-shrink-0 mt-1" />
+                  <div>
+                    <p className="font-semibold">24/7 Intelligent Support</p>
+                    <p className="text-sm text-foreground/70">AI tutoring systems available round the clock for student assistance</p>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="w-6 h-6 text-blue-500 flex-shrink-0 mt-1" />
+                  <div>
+                    <p className="font-semibold">Collaborative Innovation Spaces</p>
+                    <p className="text-sm text-foreground/70">Modern facilities for student projects and research initiatives</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </div>
+        </div>
+      </section>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
-            {[
-              {
-                title: "AI Infra",
-                description: "Centralized AI infrastructure, GPU-backed labs, test beds for development, AI CoE as a Service",
-                icon: Cpu
-              },
-              {
-                title: "B.E AI",
-                description: "Full 4-year curriculum, specialized courses, tailored AI electives for core branches",
-                icon: BookOpen
-              },
-              {
-                title: "Elective Programs",
-                description: "AI, ML, DS for non-STEM branches, courses in architecture, design, media & entertainment",
-                icon: Code
-              },
-              {
-                title: "Research & Incubation",
-                description: "Collaborative industry research, startup ecosystem, R&D center for industries",
-                icon: Microscope
-              },
-              {
-                title: "Skilling",
-                description: "Training and certifications, industry skilling partner, upskilling programs",
-                icon: Award
-              }
-            ].map((program, idx) => {
-              const Icon = program.icon;
-              return (
-                <Card key={idx} className="border-border/50 hover:border-blue-500/50 transition-all bg-card/50 backdrop-blur">
+      {/* Lighting the Campus with AI Innovation */}
+      <section className="relative py-20 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-3">
+          <div className="rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F57524a9a7c7f466aa64aef107e87d95b?format=webp&width=800"
+                alt="Lighting the Campus with AI-Powered Innovation"
+                className="w-full h-auto"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
+              <div className="absolute bottom-0 left-0 right-0 p-12 text-white">
+                <h2 className="text-4xl md:text-5xl font-bold mb-4">Campus-Wide AI Integration</h2>
+                <p className="text-lg max-w-3xl">Every corner of DSU is being transformed with intelligent systems that enhance learning, research, and campus life</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* AI-Enhanced Classroom Learning */}
+      <section className="py-20 bg-gradient-to-r from-purple-500/5 via-blue-500/5 to-purple-500/5">
+        <div className="max-w-7xl mx-auto px-3">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">Education Amplified by AI</h2>
+              <p className="text-xl text-foreground/80 mb-8">
+                Knowledge optimized by artificial intelligence ensures every student receives an education tailored to their unique learning needs and aspirations.
+              </p>
+              <div className="space-y-6">
+                <Card className="border-border/50 bg-card/50 backdrop-blur">
                   <CardHeader>
-                    <Icon className="w-8 h-8 text-blue-500 mb-3" />
-                    <CardTitle className="text-lg">{program.title}</CardTitle>
+                    <CardTitle className="flex items-center gap-3 text-lg">
+                      <Cpu className="w-5 h-5 text-blue-500" />
+                      Smart Classrooms
+                    </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-sm text-foreground/70">{program.description}</p>
+                    <p className="text-sm text-foreground/70">AI-powered analytics provide real-time insights into student engagement and learning outcomes</p>
                   </CardContent>
                 </Card>
-              );
-            })}
+                <Card className="border-border/50 bg-card/50 backdrop-blur">
+                  <CardHeader>
+                    <CardTitle className="flex items-center gap-3 text-lg">
+                      <Brain className="w-5 h-5 text-purple-500" />
+                      Adaptive Learning Systems
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-foreground/70">Dynamic content delivery that adjusts difficulty and pace based on individual student progress</p>
+                  </CardContent>
+                </Card>
+                <Card className="border-border/50 bg-card/50 backdrop-blur">
+                  <CardHeader>
+                    <CardTitle className="flex items-center gap-3 text-lg">
+                      <Users className="w-5 h-5 text-pink-500" />
+                      Collaborative Tools
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-foreground/70">AI-enhanced platforms enable seamless student-to-student and student-to-faculty collaboration</p>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+            <div className="rounded-2xl overflow-hidden shadow-xl">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F876844b6a0c840948d75f635cd347049?format=webp&width=800"
+                alt="Knowledge Optimized by AI Education Amplified"
+                className="w-full h-auto"
+                loading="lazy"
+              />
+            </div>
           </div>
         </div>
       </section>
 
-      {/* AI Research Areas */}
-      <section className="px-3 py-16 bg-gradient-to-r from-blue-500/5 via-transparent to-purple-500/5">
-        <div className="max-w-7xl mx-auto">
+      {/* Advancing Research */}
+      <section className="relative py-20 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-3">
+          <div className="rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F3dce43f5dcf84df0a37e7e4c7e8155b6?format=webp&width=800"
+                alt="Advancing Research with AI-Enabled Discovery"
+                className="w-full h-auto"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
+              <div className="absolute bottom-0 left-0 right-0 p-12 text-white">
+                <h2 className="text-4xl md:text-5xl font-bold mb-4">AI-Enabled Discovery at Scale</h2>
+                <p className="text-lg max-w-3xl">Our research labs leverage AI and NVIDIA technology to accelerate breakthrough discoveries across multiple domains</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Research Focus Areas */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-3">
           <div className="text-center mb-14">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">AI Research & Innovation Focus</h2>
-            <p className="text-xl text-foreground max-w-3xl mx-auto">
-              Advancing frontiers of research across multiple domains
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Research & Innovation Domains</h2>
+            <p className="text-xl text-foreground/70 max-w-3xl mx-auto">
+              Driving impact across industries through collaborative AI research
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {aiResearchAreas.map((area, idx) => {
-              const Icon = area.icon;
+            {[
+              { title: "Natural Language Processing", icon: Brain, color: "blue" },
+              { title: "Computer Vision", icon: Target, color: "orange" },
+              { title: "Autonomous Systems", icon: Rocket, color: "green" },
+              { title: "Healthcare AI", icon: Shield, color: "red" },
+              { title: "Industrial Automation", icon: Cpu, color: "purple" },
+              { title: "Enterprise Intelligence", icon: Briefcase, color: "indigo" }
+            ].map((domain, idx) => {
+              const Icon = domain.icon;
               return (
-                <Card key={idx} className="border-border/50 hover:border-blue-500/50 transition-all">
+                <Card key={idx} className="border-border/50 hover:border-blue-500/50 transition-all bg-card/50 backdrop-blur">
                   <CardHeader>
                     <div className="flex items-center gap-3 mb-3">
                       <div className="p-3 rounded-lg bg-blue-500/10">
                         <Icon className="w-6 h-6 text-blue-500" />
                       </div>
                     </div>
-                    <CardTitle className="text-lg">{area.title}</CardTitle>
+                    <CardTitle className="text-lg">{domain.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-sm text-foreground/70">{area.description}</p>
+                    <p className="text-sm text-foreground/70">Pioneering research and practical applications in {domain.title.toLowerCase()}</p>
                   </CardContent>
                 </Card>
               );
@@ -320,26 +289,68 @@ export default function AIFirst() {
         </div>
       </section>
 
-      {/* Research Engagement Areas */}
-      <section className="px-3 py-16">
-        <div className="max-w-7xl mx-auto">
+      {/* Strategic Pillars */}
+      <section className="py-20 bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-blue-500/5">
+        <div className="max-w-7xl mx-auto px-3">
           <div className="text-center mb-14">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Possible Research Engagement Areas</h2>
-            <p className="text-xl text-foreground max-w-3xl mx-auto">
-              Be the technology enabler for industries across key sectors
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Five Pillars of AI Excellence</h2>
+            <p className="text-xl text-foreground/70 max-w-3xl mx-auto">
+              Building a comprehensive AI ecosystem at DSU
             </p>
           </div>
 
-          <div className="space-y-6">
-            {researchDomains.map((domain, idx) => (
+          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
+            {[
+              { title: "AI Infrastructure", icon: Cpu, desc: "GPU-backed labs and advanced computing resources" },
+              { title: "B.E in AI", icon: BookOpen, desc: "Specialized 4-year engineering curriculum" },
+              { title: "Electives", icon: Code, desc: "AI courses for all disciplines" },
+              { title: "Research", icon: Microscope, desc: "Industry-backed research projects" },
+              { title: "Skilling", icon: Award, desc: "Professional certifications and training" }
+            ].map((pillar, idx) => {
+              const Icon = pillar.icon;
+              return (
+                <Card key={idx} className="border-border/50 hover:border-blue-500/50 transition-all bg-card/50 backdrop-blur text-center">
+                  <CardHeader>
+                    <Icon className="w-8 h-8 text-blue-500 mb-3 mx-auto" />
+                    <CardTitle className="text-base">{pillar.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-xs text-foreground/70">{pillar.desc}</p>
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Industry Partnerships */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-3">
+          <div className="text-center mb-14">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Research Engagement Opportunities</h2>
+            <p className="text-xl text-foreground/70 max-w-3xl mx-auto">
+              Partner with us across key industry sectors
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              { name: "Automotive", areas: ["Digital Twin", "Safety Systems", "Predictive Maintenance"] },
+              { name: "Healthcare", areas: ["Medical Imaging", "Diagnostics", "Patient Care"] },
+              { name: "Finance", areas: ["Risk Management", "Fraud Detection", "Analytics"] },
+              { name: "Manufacturing", areas: ["Smart Factories", "Quality Control", "Optimization"] },
+              { name: "Defense", areas: ["Surveillance", "Strategy", "Operations"] },
+              { name: "Logistics", areas: ["Supply Chain", "Forecasting", "Optimization"] }
+            ].map((industry, idx) => (
               <Card key={idx} className="border-border/50 hover:border-blue-500/50 transition-all bg-card/50 backdrop-blur">
                 <CardHeader>
-                  <CardTitle className="text-xl">{domain.name}</CardTitle>
+                  <CardTitle>{industry.name}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-3">
-                    {domain.areas.map((area, aIdx) => (
-                      <Badge key={aIdx} variant="secondary" className="justify-center py-2">
+                  <div className="space-y-2">
+                    {industry.areas.map((area, aIdx) => (
+                      <Badge key={aIdx} variant="secondary" className="block text-center py-1">
                         {area}
                       </Badge>
                     ))}
@@ -348,145 +359,56 @@ export default function AIFirst() {
               </Card>
             ))}
           </div>
-
-          <Card className="mt-8 border-blue-500/30 bg-blue-500/5 backdrop-blur">
-            <CardContent className="pt-6">
-              <p className="text-center text-foreground">
-                All powered by <Badge className="bg-blue-500 text-white ml-2">GenAI</Badge> <Badge className="bg-green-500 text-white ml-1">NVAITC</Badge> <Badge className="bg-green-600 text-white ml-1">NVIDIA Software Stack</Badge> <Badge className="bg-yellow-600 text-white ml-1">NVIDIA DGX B200 & Jetson Edge</Badge>
-              </p>
-            </CardContent>
-          </Card>
         </div>
       </section>
 
-      {/* Shareable Infrastructure */}
-      <section className="px-3 py-16 bg-gradient-to-r from-purple-500/5 via-black/50 to-blue-500/5">
-        <div className="max-w-7xl mx-auto">
+      {/* Impact & Recognition */}
+      <section className="py-20 bg-gradient-to-r from-purple-500/5 via-black/50 to-blue-500/5">
+        <div className="max-w-7xl mx-auto px-3">
           <div className="text-center mb-14">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Shareable Infrastructure for R&D</h2>
-            <p className="text-xl text-foreground max-w-3xl mx-auto">
-              Supporting companies, academic researchers, and startup ecosystems
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8 mb-8">
-            <Card className="border-border/50 bg-card/50 backdrop-blur">
-              <CardHeader>
-                <CardTitle className="text-lg flex items-center gap-2">
-                  <Briefcase className="w-5 h-5 text-blue-500" />
-                  Companies
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-foreground/70 mb-3">Problem Statements & Use Cases</p>
-                <p className="text-xs text-foreground/70">Leverage DSU's innovation center and NVAITC resources for research needs</p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-border/50 bg-card/50 backdrop-blur">
-              <CardHeader>
-                <CardTitle className="text-lg flex items-center gap-2">
-                  <Users className="w-5 h-5 text-purple-500" />
-                  Academic Researchers
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-foreground/70 mb-3">Research Topics & Initiatives</p>
-                <p className="text-xs text-foreground/70">Strategic collaboration with university's research center</p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-border/50 bg-card/50 backdrop-blur">
-              <CardHeader>
-                <CardTitle className="text-lg flex items-center gap-2">
-                  <Rocket className="w-5 h-5 text-green-500" />
-                  Startup Ecosystem
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-foreground/70 mb-3">Initiatives & Incubation</p>
-                <p className="text-xs text-foreground/70">For all - university inception, companies, and external startups</p>
-              </CardContent>
-            </Card>
-          </div>
-
-          <Card className="border-border/50 bg-gradient-to-r from-blue-500/10 to-purple-500/10 backdrop-blur">
-            <CardHeader>
-              <CardTitle className="text-center">Dayananda Sagar University Innovation Center</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-3 text-center">
-                <p className="text-sm font-semibold">AI Infrastructure, Software and Tools</p>
-                <div className="grid md:grid-cols-3 gap-4">
-                  <div className="p-3 bg-card/50 rounded-lg">
-                    <p className="font-bold text-blue-500">GPUs</p>
-                  </div>
-                  <div className="p-3 bg-card/50 rounded-lg">
-                    <p className="font-bold text-blue-500">Network</p>
-                  </div>
-                  <div className="p-3 bg-card/50 rounded-lg">
-                    <p className="font-bold text-blue-500">Models, SDKs, Frameworks, Tools</p>
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-
-      {/* H-Index & NIRF Impact */}
-      <section className="px-3 py-16">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-14">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Impact on H-Index & NIRF Rankings</h2>
-            <p className="text-xl text-foreground max-w-3xl mx-auto">
-              Building reputation through research excellence and innovation
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Building India's AI Leadership</h2>
+            <p className="text-xl text-foreground/70 max-w-3xl mx-auto">
+              Establishing DSU as the premier destination for AI research, innovation, and talent development
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
             <Card className="border-border/50 bg-card/50 backdrop-blur">
               <CardHeader>
-                <CardTitle className="text-2xl text-blue-500">H-Index Improvement</CardTitle>
+                <CardTitle className="text-2xl text-blue-500">Global Recognition</CardTitle>
               </CardHeader>
-              <CardContent>
-                <p className="text-foreground/70 mb-6">Global metric for evaluating scholarly output and impact</p>
-                <div className="space-y-3">
-                  <div className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
-                    <p className="text-sm"><strong>Improved Faculty Access to Resources</strong> - State-of-the-art infrastructure</p>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
-                    <p className="text-sm"><strong>Foster Industry Collaboration</strong> - Joint research initiatives</p>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
-                    <p className="text-sm"><strong>Help Research Dissemination</strong> - Publications and citations</p>
-                  </div>
+              <CardContent className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
+                  <p className="text-sm">Positioning DSU among top AI research institutions in India</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
+                  <p className="text-sm">Publishing groundbreaking research in premier journals</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
+                  <p className="text-sm">Building partnerships with global AI leaders</p>
                 </div>
               </CardContent>
             </Card>
 
             <Card className="border-border/50 bg-card/50 backdrop-blur">
               <CardHeader>
-                <CardTitle className="text-2xl text-purple-500">NIRF Ranking Enhancement</CardTitle>
+                <CardTitle className="text-2xl text-purple-500">Talent Development</CardTitle>
               </CardHeader>
-              <CardContent>
-                <p className="text-foreground/70 mb-6">National Institutional Ranking Framework methodology</p>
-                <div className="space-y-3">
-                  <div className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" />
-                    <p className="text-sm"><strong>Better Lab Resources & Facilities</strong> - World-class infrastructure</p>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" />
-                    <p className="text-sm"><strong>Improving Publications & Citations</strong> - Research excellence</p>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" />
-                    <p className="text-sm"><strong>Startup Incubation (Joint IP)</strong> - Innovation ecosystem</p>
-                  </div>
+              <CardContent className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" />
+                  <p className="text-sm">Developing highly skilled AI professionals for industry</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" />
+                  <p className="text-sm">Creating innovation and entrepreneurship opportunities</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" />
+                  <p className="text-sm">Building India's AI-first generation of leaders</p>
                 </div>
               </CardContent>
             </Card>
@@ -495,16 +417,23 @@ export default function AIFirst() {
       </section>
 
       {/* Final CTA */}
-      <section className="px-3 py-16 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-blue-500/20">
+      <section className="px-3 py-20 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-blue-500/20">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Shape the Future of AI in India</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Join the AI Revolution</h2>
           <p className="text-lg text-foreground/70 mb-8 max-w-2xl mx-auto">
-            Join Dayananda Sagar University's AI-First initiative and be part of India's leading center for AI research, development, and innovation
+            Be part of India's most ambitious AI-first initiative. Partner with us, study with us, or research with us.
           </p>
-          <Button size="lg" className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 text-white">
-            Get Involved
-            <ArrowRight className="w-5 h-5 ml-2" />
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 text-white">
+              Learn More
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Button>
+            <Link to="/nvidia-ai-architecture">
+              <Button variant="outline" size="lg" className="border-2 border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white">
+                Technology Stack
+              </Button>
+            </Link>
+          </div>
         </div>
       </section>
     </div>
