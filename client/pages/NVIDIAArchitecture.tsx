@@ -83,20 +83,20 @@ export default function NVIDIAArchitecture() {
 
             <Card className="border-border/50 hover:border-purple-500/50 transition-all bg-card/50 backdrop-blur">
               <CardHeader>
-                <CardTitle className="text-lg mb-4">Semester 2-3: Acceleration</CardTitle>
+                <CardTitle className="text-2xl mb-4">Semester 2-3: Acceleration</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-3">
+              <CardContent className="space-y-4">
                 <div className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" />
-                  <p className="text-sm">Access Jetson edge devices for real-world projects</p>
+                  <CheckCircle className="w-6 h-6 text-purple-500 flex-shrink-0 mt-0.5" />
+                  <p className="text-base">Access Jetson edge devices for real-world projects</p>
                 </div>
                 <div className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" />
-                  <p className="text-sm">Learn GPU acceleration and CUDA basics</p>
+                  <CheckCircle className="w-6 h-6 text-purple-500 flex-shrink-0 mt-0.5" />
+                  <p className="text-base">Learn GPU acceleration and CUDA basics</p>
                 </div>
                 <div className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" />
-                  <p className="text-sm">Build autonomous systems and vision applications</p>
+                  <CheckCircle className="w-6 h-6 text-purple-500 flex-shrink-0 mt-0.5" />
+                  <p className="text-base">Build autonomous systems and vision applications</p>
                 </div>
               </CardContent>
             </Card>
