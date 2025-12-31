@@ -60,7 +60,7 @@ export default function NVIDIAArchitecture() {
 
           <div className="mb-12">
             <img
-              src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fd38152bae11044b5874577e3cd145700?format=webp&width=1200"
+              src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F935799d5edb9464794f76adfc8ca6552?format=webp&width=1200"
               alt="NVIDIA Stack for Accelerated Computing"
               className="w-full rounded-xl shadow-2xl border border-border/30"
               loading="lazy"
