@@ -103,20 +103,20 @@ export default function NVIDIAArchitecture() {
 
             <Card className="border-border/50 hover:border-pink-500/50 transition-all bg-card/50 backdrop-blur">
               <CardHeader>
-                <CardTitle className="text-lg mb-4">Semester 4+: Mastery</CardTitle>
+                <CardTitle className="text-2xl mb-4">Semester 4+: Mastery</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-3">
+              <CardContent className="space-y-4">
                 <div className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-pink-500 flex-shrink-0 mt-0.5" />
-                  <p className="text-sm">Work on DGX B200 for large-scale model training</p>
+                  <CheckCircle className="w-6 h-6 text-pink-500 flex-shrink-0 mt-0.5" />
+                  <p className="text-base">Work on DGX B200 for large-scale model training</p>
                 </div>
                 <div className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-pink-500 flex-shrink-0 mt-0.5" />
-                  <p className="text-sm">Conduct research with industry partners</p>
+                  <CheckCircle className="w-6 h-6 text-pink-500 flex-shrink-0 mt-0.5" />
+                  <p className="text-base">Conduct research with industry partners</p>
                 </div>
                 <div className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-pink-500 flex-shrink-0 mt-0.5" />
-                  <p className="text-sm">Deploy production AI systems at scale</p>
+                  <CheckCircle className="w-6 h-6 text-pink-500 flex-shrink-0 mt-0.5" />
+                  <p className="text-base">Deploy production AI systems at scale</p>
                 </div>
               </CardContent>
             </Card>
