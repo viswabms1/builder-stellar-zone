@@ -50,8 +50,8 @@ export default function AIFirst() {
           <div className="max-w-4xl mx-auto">
             <Card className="border-border/50 bg-card/30 backdrop-blur-sm border-border/30">
               <CardContent className="pt-8">
-                <h3 className="text-2xl font-bold text-white mb-6">What is the AI-First Approach?</h3>
-                <p className="text-foreground/80 mb-6 leading-relaxed">
+                <h3 className="text-4xl md:text-5xl font-bold text-white mb-6">What is the AI-First Approach?</h3>
+                <p className="text-lg md:text-xl text-foreground/80 mb-6 leading-relaxed">
                   The AI-First approach at DSU represents a fundamental shift in how we design education, conduct research, and foster innovation. Rather than treating AI as a peripheral tool, we place artificial intelligence at the core of every academic and operational aspect of the university.
                 </p>
                 <div className="grid md:grid-cols-3 gap-6">
