@@ -234,19 +234,12 @@ export default function AIFirst() {
       <section className="relative py-20 overflow-hidden">
         <div className="max-w-7xl mx-auto px-3">
           <div className="rounded-2xl overflow-hidden shadow-2xl">
-            <div className="relative">
-              <img
-                src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F3dce43f5dcf84df0a37e7e4c7e8155b6?format=webp&width=800"
-                alt="Advancing Research with AI-Enabled Discovery"
-                className="w-full h-auto"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
-              <div className="absolute bottom-0 left-0 right-0 p-12 text-white">
-                <h2 className="text-4xl md:text-5xl font-bold mb-4">AI-Enabled Discovery at Scale</h2>
-                <p className="text-lg max-w-3xl">Our research labs leverage AI and NVIDIA technology to accelerate breakthrough discoveries across multiple domains</p>
-              </div>
-            </div>
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F3dce43f5dcf84df0a37e7e4c7e8155b6?format=webp&width=800"
+              alt="Advancing Research with AI-Enabled Discovery"
+              className="w-full h-auto"
+              loading="lazy"
+            />
           </div>
         </div>
       </section>
