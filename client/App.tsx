@@ -812,6 +812,7 @@ function App() {
                 <Route path="/examinations" element={<Examinations />} />
                 <Route path="/research" element={<Research />} />
                 <Route path="/ai-first" element={<AIFirst />} />
+                <Route path="/nvidia-ai-architecture" element={<NVIDIAArchitecture />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/about/vision-mission" element={<VisionMission />} />
                 <Route path="/about/history" element={<History />} />
