@@ -14,7 +14,11 @@ import {
   Shield,
   Lightbulb,
   Gauge,
-  HardDrive
+  HardDrive,
+  CheckCircle,
+  Brain,
+  Users,
+  Award
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -23,15 +27,15 @@ export default function NVIDIAArchitecture() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      {/* Hero Section with Stack Image */}
-      <section className="px-3 py-20 pt-32">
-        <div className="max-w-7xl mx-auto">
+      {/* Hero Section */}
+      <section className="relative py-20 pt-32 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-3">
           <div className="text-center mb-12">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-4">
-              NVIDIA AI Architecture
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-6">
+              The Technology Behind Your AI Future
             </h1>
-            <p className="text-lg md:text-xl text-foreground/70 max-w-3xl mx-auto">
-              Full-Stack, Purpose-Built and Optimized for AI with Direct Access to Expertise
+            <p className="text-xl md:text-2xl text-foreground/70 max-w-4xl mx-auto">
+              NVIDIA's complete AI stack—from classroom labs to cutting-edge research. Everything you need to master artificial intelligence.
             </p>
           </div>
 
@@ -42,298 +46,332 @@ export default function NVIDIAArchitecture() {
               className="w-full rounded-xl shadow-2xl border border-border/30"
               loading="lazy"
             />
-            <p className="text-center text-sm text-foreground/60 mt-4">
-              Accelerated computing requires full-stack optimization from chip architecture to applications. The global NVIDIA ecosystem spans 4 million developers, 40,000 companies, and over 3,000 applications.
+          </div>
+        </div>
+      </section>
+
+      {/* What You'll Learn Section */}
+      <section className="px-3 py-20 bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-blue-500/5">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-14">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">From Day One: Your Learning Journey</h2>
+            <p className="text-xl text-foreground/70 max-w-3xl mx-auto">
+              Starting with fundamentals, building to mastery—with the same tools used by AI researchers and companies worldwide
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="border-border/50 hover:border-green-500/50 transition-all bg-card/50 backdrop-blur">
+            <Card className="border-border/50 hover:border-blue-500/50 transition-all bg-card/50 backdrop-blur">
               <CardHeader>
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="p-3 rounded-lg bg-green-500/10">
-                    <Cpu className="w-6 h-6 text-green-500" />
-                  </div>
-                  <CardTitle className="text-lg">Nvidia Software Stack</CardTitle>
-                </div>
+                <CardTitle className="text-lg mb-4">Semester 1: Foundation</CardTitle>
               </CardHeader>
-              <CardContent>
-                <ul className="space-y-2 text-sm text-foreground">
-                  <li>• Application Frameworks</li>
-                  <li>• Platform Solutions</li>
-                  <li>• Acceleration Libraries</li>
-                  <li>• System Software</li>
-                  <li>• CUDA-X AI</li>
-                </ul>
+              <CardContent className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
+                  <p className="text-sm">Learn Python and AI fundamentals on commodity hardware</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
+                  <p className="text-sm">Explore popular frameworks like PyTorch and TensorFlow</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
+                  <p className="text-sm">Work with small AI models and datasets</p>
+                </div>
               </CardContent>
             </Card>
 
-            <Card className="border-border/50 hover:border-green-500/50 transition-all bg-card/50 backdrop-blur">
+            <Card className="border-border/50 hover:border-purple-500/50 transition-all bg-card/50 backdrop-blur">
               <CardHeader>
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="p-3 rounded-lg bg-green-500/10">
-                    <Zap className="w-6 h-6 text-green-500" />
-                  </div>
-                  <CardTitle className="text-lg">Platform & Acceleration</CardTitle>
-                </div>
+                <CardTitle className="text-lg mb-4">Semester 2-3: Acceleration</CardTitle>
               </CardHeader>
-              <CardContent>
-                <ul className="space-y-2 text-sm text-foreground">
-                  <li>• NVIDIA AI</li>
-                  <li>• NVIDIA Omniverse</li>
-                  <li>• RTX Graphics</li>
-                  <li>• CUDA-X Libraries</li>
-                  <li>• DOCA Framework</li>
-                </ul>
+              <CardContent className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" />
+                  <p className="text-sm">Access Jetson edge devices for real-world projects</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" />
+                  <p className="text-sm">Learn GPU acceleration and CUDA basics</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" />
+                  <p className="text-sm">Build autonomous systems and vision applications</p>
+                </div>
               </CardContent>
             </Card>
 
-            <Card className="border-border/50 hover:border-green-500/50 transition-all bg-card/50 backdrop-blur">
+            <Card className="border-border/50 hover:border-pink-500/50 transition-all bg-card/50 backdrop-blur">
               <CardHeader>
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="p-3 rounded-lg bg-green-500/10">
-                    <HardDrive className="w-6 h-6 text-green-500" />
-                  </div>
-                  <CardTitle className="text-lg">Industry-Leading Hardware</CardTitle>
-                </div>
+                <CardTitle className="text-lg mb-4">Semester 4+: Mastery</CardTitle>
               </CardHeader>
-              <CardContent>
-                <ul className="space-y-2 text-sm text-foreground">
-                  <li>• GPU Solutions</li>
-                  <li>• Data Processing Units</li>
-                  <li>• CPUs</li>
-                  <li>• Networking Solutions</li>
-                  <li>• System-on-Chip (SOC)</li>
-                </ul>
+              <CardContent className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="w-5 h-5 text-pink-500 flex-shrink-0 mt-0.5" />
+                  <p className="text-sm">Work on DGX B200 for large-scale model training</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="w-5 h-5 text-pink-500 flex-shrink-0 mt-0.5" />
+                  <p className="text-sm">Conduct research with industry partners</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="w-5 h-5 text-pink-500 flex-shrink-0 mt-0.5" />
+                  <p className="text-sm">Deploy production AI systems at scale</p>
+                </div>
               </CardContent>
             </Card>
           </div>
         </div>
       </section>
 
-      {/* NVIDIA DGX B200 */}
-      <section className="px-3 py-16 bg-gradient-to-r from-green-500/5 via-black/50 to-green-500/5">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">NVIDIA DGX B200</h2>
-              <p className="text-lg text-foreground mb-8 leading-relaxed">
-                The foundation of the modern AI data center, delivering unprecedented performance for training and inference of large generative AI models.
-              </p>
-              <div className="space-y-4">
-                <div className="flex items-start gap-4">
-                  <div className="w-8 h-8 rounded-full bg-green-500/20 flex items-center justify-center flex-shrink-0 mt-1">
-                    <span className="text-green-500 font-bold">✓</span>
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-foreground mb-1">8X NVIDIA Blackwell GPUs</h3>
-                    <p className="text-sm text-foreground/70">Air-cooled system with maximum computational power</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-8 h-8 rounded-full bg-green-500/20 flex items-center justify-center flex-shrink-0 mt-1">
-                    <span className="text-green-500 font-bold">✓</span>
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-foreground mb-1">1.4TB GPU Memory</h3>
-                    <p className="text-sm text-foreground/70">64 TB/s Bandwidth for large model training</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-8 h-8 rounded-full bg-green-500/20 flex items-center justify-center flex-shrink-0 mt-1">
-                    <span className="text-green-500 font-bold">✓</span>
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-foreground mb-1">1.8 TB/s NVLink Bandwidth</h3>
-                    <p className="text-sm text-foreground/70">GPU-to-GPU communication at unprecedented speeds</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-8 h-8 rounded-full bg-green-500/20 flex items-center justify-center flex-shrink-0 mt-1">
-                    <span className="text-green-500 font-bold">✓</span>
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-foreground mb-1">3X Training & 15X Inference</h3>
-                    <p className="text-sm text-foreground/70">Performance gain over DGX H100</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-gradient-to-br from-green-500/10 to-black/50 rounded-2xl p-8 border border-green-500/20">
-              <h3 className="text-2xl font-bold mb-6 text-white">Specifications</h3>
-              <div className="space-y-4">
-                <div className="flex justify-between pb-3 border-b border-white/10">
-                  <span className="text-foreground/70">Chassis</span>
-                  <span className="font-semibold text-white">10U Chassis</span>
-                </div>
-                <div className="flex justify-between pb-3 border-b border-white/10">
-                  <span className="text-foreground/70">Power Consumption</span>
-                  <span className="font-semibold text-white">~14.3 kW</span>
-                </div>
-                <div className="flex justify-between pb-3 border-b border-white/10">
-                  <span className="text-foreground/70">GPUs</span>
-                  <span className="font-semibold text-white">8x Blackwell</span>
-                </div>
-                <div className="flex justify-between pb-3 border-b border-white/10">
-                  <span className="text-foreground/70">GPU Memory</span>
-                  <span className="font-semibold text-white">1.4TB Total</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-foreground/70">Deployment</span>
-                  <span className="font-semibold text-white">Any Data Center</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Jetson Family */}
-      <section className="px-3 py-16">
+      {/* The Hardware: Explained Simply */}
+      <section className="px-3 py-20">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-14">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">The Jetson Family</h2>
-            <p className="text-xl text-foreground max-w-3xl mx-auto">
-              AI at the Edge and Autonomous Machines - From entry-level to performance
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Your AI Training Arsenal</h2>
+            <p className="text-xl text-foreground/70 max-w-3xl mx-auto">
+              Enterprise-grade hardware that makes complex AI tasks possible
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            {[
-              {
-                name: "JETSON Orin Nano",
-                power: "7-10W",
-                performance: "20 TOPs (INT8)",
-                size: "45mm x 70mm",
-                category: "ENTRY"
-              },
-              {
-                name: "JETSON Orin NX",
-                power: "10-25W",
-                performance: "100 TOPs (INT8)",
-                size: "45mm x 70mm",
-                category: "MAINSTREAM"
-              },
-              {
-                name: "JETSON AGX Orin",
-                power: "15-60W",
-                performance: "275 TOPs (INT8)",
-                size: "100mm x 87mm",
-                category: "PERFORMANCE"
-              },
-              {
-                name: "JETSON AGX Xavier",
-                power: "10-30W",
-                performance: "32 TFLOPS (FP16)",
-                size: "100mm x 87mm",
-                category: "PERFORMANCE"
-              }
-            ].map((jetson, idx) => (
-              <Card key={idx} className="border-border/50 hover:border-green-500/50 transition-all bg-card/50 backdrop-blur">
+          {/* DGX B200 */}
+          <div className="mb-16">
+            <Card className="border-border/50 bg-card/50 backdrop-blur overflow-hidden">
+              <div className="grid md:grid-cols-2 gap-0">
+                <div className="p-8 border-r border-border/30">
+                  <h3 className="text-3xl font-bold mb-4">DGX B200</h3>
+                  <p className="text-lg text-foreground/70 mb-8">
+                    A complete supercomputer in a box, designed specifically for training massive AI models
+                  </p>
+
+                  <div className="space-y-6 mb-8">
+                    <div>
+                      <h4 className="font-bold text-foreground mb-2">What's Inside?</h4>
+                      <p className="text-sm text-foreground/70 mb-3">8 extremely powerful processors (GPUs) that work together to solve AI problems incredibly fast. Think of it like having 8 super-brains instead of 1.</p>
+                      <p className="text-xs text-blue-500 font-semibold">🔧 NVIDIA calls this: 8x Blackwell GPUs</p>
+                    </div>
+
+                    <div>
+                      <h4 className="font-bold text-foreground mb-2">Memory Power</h4>
+                      <p className="text-sm text-foreground/70 mb-3">1.4 trillion bytes of memory (TB). For perspective, that's enough to hold an entire library—and access it in milliseconds.</p>
+                      <p className="text-xs text-blue-500 font-semibold">💾 Why it matters: Train models with 100+ billion parameters</p>
+                    </div>
+
+                    <div>
+                      <h4 className="font-bold text-foreground mb-2">Speed Between Processors</h4>
+                      <p className="text-sm text-foreground/70 mb-3">The 8 GPUs communicate at lightning speed (1.8 TB/s), sharing information instantly to coordinate on massive problems.</p>
+                      <p className="text-xs text-blue-500 font-semibold">⚡ NVIDIA calls this: NVLink technology</p>
+                    </div>
+                  </div>
+
+                  <div className="bg-green-500/10 p-4 rounded-lg border border-green-500/20">
+                    <p className="text-sm font-semibold text-foreground mb-2">🎯 What You Can Do:</p>
+                    <ul className="text-sm space-y-1 text-foreground/70">
+                      <li>• Train the latest large language models</li>
+                      <li>• Process massive datasets in hours instead of weeks</li>
+                      <li>• Conduct cutting-edge AI research</li>
+                      <li>• Collaborate on real industry projects</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="p-8 bg-gradient-to-br from-green-500/10 to-transparent">
+                  <div className="space-y-4">
+                    <div className="border-l-4 border-green-500 pl-4">
+                      <p className="text-xs text-foreground/60">Training Speed</p>
+                      <p className="text-2xl font-bold text-green-500">3X faster</p>
+                      <p className="text-xs text-foreground/60">than previous generation</p>
+                    </div>
+                    <div className="border-l-4 border-green-500 pl-4">
+                      <p className="text-xs text-foreground/60">Inference Speed</p>
+                      <p className="text-2xl font-bold text-green-500">15X faster</p>
+                      <p className="text-xs text-foreground/60">running trained models</p>
+                    </div>
+                    <div className="border-l-4 border-green-500 pl-4">
+                      <p className="text-xs text-foreground/60">Power Used</p>
+                      <p className="text-2xl font-bold text-green-500">~14.3 kW</p>
+                      <p className="text-xs text-foreground/60">entire supercomputer</p>
+                    </div>
+                    <div className="border-l-4 border-green-500 pl-4">
+                      <p className="text-xs text-foreground/60">Physical Size</p>
+                      <p className="text-2xl font-bold text-green-500">10U Chassis</p>
+                      <p className="text-xs text-foreground/60">fits in any data center</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Card>
+          </div>
+
+          {/* Jetson Family */}
+          <div>
+            <h3 className="text-3xl font-bold mb-8">Jetson: AI in Your Hands</h3>
+            <p className="text-lg text-foreground/70 mb-10">
+              Small, powerful computers for building AI applications in the real world—robots, drones, smart devices, and autonomous systems.
+            </p>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <Card className="border-border/50 hover:border-blue-500/50 transition-all bg-card/50 backdrop-blur">
                 <CardHeader>
-                  <Badge variant="secondary" className="w-fit mb-3">{jetson.category}</Badge>
-                  <CardTitle className="text-base">{jetson.name}</CardTitle>
+                  <Badge variant="outline" className="w-fit mb-3">Nano</Badge>
+                  <CardTitle className="text-lg">Jetson Orin Nano</CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <div className="space-y-2 text-sm">
-                    <div>
-                      <p className="text-foreground/70">Performance</p>
-                      <p className="font-semibold">{jetson.performance}</p>
-                    </div>
-                    <div>
-                      <p className="text-foreground/70">Power</p>
-                      <p className="font-semibold">{jetson.power}</p>
-                    </div>
-                    <div>
-                      <p className="text-foreground/70">Size</p>
-                      <p className="font-semibold">{jetson.size}</p>
-                    </div>
+                <CardContent className="space-y-3">
+                  <div>
+                    <p className="text-xs text-foreground/70 mb-1">Power Usage</p>
+                    <p className="font-bold">7-10W</p>
+                    <p className="text-xs text-foreground/60">Like a small phone</p>
+                  </div>
+                  <div>
+                    <p className="text-xs text-foreground/70 mb-1">Best For</p>
+                    <p className="text-xs">Learning, hobby projects, edge devices</p>
                   </div>
                 </CardContent>
               </Card>
-            ))}
+
+              <Card className="border-border/50 hover:border-purple-500/50 transition-all bg-card/50 backdrop-blur">
+                <CardHeader>
+                  <Badge variant="outline" className="w-fit mb-3">NX</Badge>
+                  <CardTitle className="text-lg">Jetson Orin NX</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-3">
+                  <div>
+                    <p className="text-xs text-foreground/70 mb-1">Power Usage</p>
+                    <p className="font-bold">10-25W</p>
+                    <p className="text-xs text-foreground/60">Tablet equivalent</p>
+                  </div>
+                  <div>
+                    <p className="text-xs text-foreground/70 mb-1">Best For</p>
+                    <p className="text-xs">Autonomous robots, drones, smart devices</p>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="border-border/50 hover:border-pink-500/50 transition-all bg-card/50 backdrop-blur">
+                <CardHeader>
+                  <Badge variant="outline" className="w-fit mb-3">AGX</Badge>
+                  <CardTitle className="text-lg">Jetson AGX Orin</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-3">
+                  <div>
+                    <p className="text-xs text-foreground/70 mb-1">Power Usage</p>
+                    <p className="font-bold">15-60W</p>
+                    <p className="text-xs text-foreground/60">Desktop computer</p>
+                  </div>
+                  <div>
+                    <p className="text-xs text-foreground/70 mb-1">Best For</p>
+                    <p className="text-xs">Advanced research, complex applications</p>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="border-border/50 hover:border-yellow-500/50 transition-all bg-card/50 backdrop-blur">
+                <CardHeader>
+                  <Badge variant="outline" className="w-fit mb-3">Xavier</Badge>
+                  <CardTitle className="text-lg">Jetson AGX Xavier</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-3">
+                  <div>
+                    <p className="text-xs text-foreground/70 mb-1">Power Usage</p>
+                    <p className="font-bold">10-30W</p>
+                    <p className="text-xs text-foreground/60">Efficient & capable</p>
+                  </div>
+                  <div>
+                    <p className="text-xs text-foreground/70 mb-1">Best For</p>
+                    <p className="text-xs">Industrial deployments, automotive</p>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Software Suite */}
-      <section className="px-3 py-16 bg-gradient-to-r from-green-500/5 via-black/50 to-green-500/5">
+      {/* The Software Tools */}
+      <section className="px-3 py-20 bg-gradient-to-r from-purple-500/5 via-black/50 to-purple-500/5">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-14">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">NVIDIA AI Enterprise Software Suite</h2>
-            <p className="text-xl text-foreground max-w-3xl mx-auto">
-              Essential software for streamlined development and deployment
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">The Tools You'll Master</h2>
+            <p className="text-xl text-foreground/70 max-w-3xl mx-auto">
+              Industry-standard software that accelerates every step of your AI journey
             </p>
           </div>
 
           <div className="space-y-8">
             <Card className="border-border/50 bg-card/50 backdrop-blur">
               <CardHeader>
-                <CardTitle className="flex items-center gap-3">
-                  <Code className="w-6 h-6 text-green-500" />
-                  Data Science & Development
+                <CardTitle className="text-2xl flex items-center gap-3 mb-4">
+                  <Code className="w-8 h-8 text-blue-500" />
+                  CUDA: Supercharging Your Code
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="grid md:grid-cols-3 gap-4">
-                  <div className="bg-green-500/10 p-4 rounded-lg">
+                <div className="grid md:grid-cols-2 gap-8">
+                  <div>
+                    <p className="text-foreground/80 mb-4 leading-relaxed">
+                      CUDA is a technology that lets you write code that runs on NVIDIA GPUs. Instead of using just one processor, your code can use thousands of tiny processors working together in parallel—like having a thousand workers tackling a problem simultaneously.
+                    </p>
+                    <div className="space-y-3">
+                      <div className="flex items-start gap-3">
+                        <span className="text-blue-500 font-bold mt-1">→</span>
+                        <div>
+                          <p className="font-semibold text-sm">Write Once, Run Anywhere</p>
+                          <p className="text-xs text-foreground/70">Your CUDA code works on all NVIDIA GPUs</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <span className="text-blue-500 font-bold mt-1">→</span>
+                        <div>
+                          <p className="font-semibold text-sm">Industry Standard</p>
+                          <p className="text-xs text-foreground/70">Used by researchers and companies worldwide</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <span className="text-blue-500 font-bold mt-1">→</span>
+                        <div>
+                          <p className="font-semibold text-sm">10-100X Speed Boost</p>
+                          <p className="text-xs text-foreground/70">Same code runs much faster on GPUs</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="bg-blue-500/10 p-6 rounded-lg border border-blue-500/20">
+                    <p className="font-bold text-foreground mb-4">Real-World Examples</p>
+                    <ul className="space-y-2 text-sm text-foreground/70">
+                      <li>🤖 Training neural networks 50X faster</li>
+                      <li>📊 Processing billions of data points</li>
+                      <li>🎮 Rendering graphics in video games</li>
+                      <li>🏥 Analyzing medical images instantly</li>
+                      <li>🚗 Training self-driving cars</li>
+                    </ul>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="border-border/50 bg-card/50 backdrop-blur">
+              <CardHeader>
+                <CardTitle className="text-2xl flex items-center gap-3 mb-4">
+                  <Rocket className="w-8 h-8 text-purple-500" />
+                  Key Software You'll Use
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="grid md:grid-cols-3 gap-6">
+                  <div className="bg-purple-500/10 p-4 rounded-lg">
+                    <h4 className="font-bold mb-2">PyTorch & TensorFlow</h4>
+                    <p className="text-sm text-foreground/70 mb-3">Popular AI frameworks that work great on NVIDIA GPUs</p>
+                    <Badge className="bg-purple-500/30 text-purple-400">Framework</Badge>
+                  </div>
+                  <div className="bg-purple-500/10 p-4 rounded-lg">
                     <h4 className="font-bold mb-2">NVIDIA RAPIDS</h4>
-                    <p className="text-sm text-foreground/70">Accelerate data prep and analytics</p>
+                    <p className="text-sm text-foreground/70 mb-3">Process data 50X faster using GPU acceleration</p>
+                    <Badge className="bg-purple-500/30 text-purple-400">Data Tools</Badge>
                   </div>
-                  <div className="bg-green-500/10 p-4 rounded-lg">
-                    <h4 className="font-bold mb-2">NVIDIA TAO Toolkit</h4>
-                    <p className="text-sm text-foreground/70">Train AI models with custom data</p>
-                  </div>
-                  <div className="bg-green-500/10 p-4 rounded-lg">
-                    <h4 className="font-bold mb-2">PyTorch/TensorFlow</h4>
-                    <p className="text-sm text-foreground/70">Popular frameworks optimized for NVIDIA</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border-border/50 bg-card/50 backdrop-blur">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-3">
-                  <Rocket className="w-6 h-6 text-green-500" />
-                  Deployment & Inference
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div className="bg-green-500/10 p-4 rounded-lg">
-                    <h4 className="font-bold mb-2">NVIDIA TensorRT</h4>
-                    <p className="text-sm text-foreground/70">Optimize models for inference performance</p>
-                  </div>
-                  <div className="bg-green-500/10 p-4 rounded-lg">
-                    <h4 className="font-bold mb-2">NVIDIA Triton Server</h4>
-                    <p className="text-sm text-foreground/70">Deploy models at scale with inference optimization</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border-border/50 bg-card/50 backdrop-blur">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-3">
-                  <Network className="w-6 h-6 text-green-500" />
-                  Infrastructure & Orchestration
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="grid md:grid-cols-3 gap-4">
-                  <div className="bg-green-500/10 p-4 rounded-lg">
-                    <h4 className="font-bold mb-2">GPU Operator</h4>
-                    <p className="text-sm text-foreground/70">Automated GPU management</p>
-                  </div>
-                  <div className="bg-green-500/10 p-4 rounded-lg">
-                    <h4 className="font-bold mb-2">Network Operator</h4>
-                    <p className="text-sm text-foreground/70">High-performance networking</p>
-                  </div>
-                  <div className="bg-green-500/10 p-4 rounded-lg">
-                    <h4 className="font-bold mb-2">vGPU & Magnum IO</h4>
-                    <p className="text-sm text-foreground/70">Infrastructure optimization</p>
+                  <div className="bg-purple-500/10 p-4 rounded-lg">
+                    <h4 className="font-bold mb-2">TensorRT</h4>
+                    <p className="text-sm text-foreground/70 mb-3">Make trained models run 10X faster in production</p>
+                    <Badge className="bg-purple-500/30 text-purple-400">Deployment</Badge>
                   </div>
                 </div>
               </CardContent>
@@ -342,30 +380,30 @@ export default function NVIDIAArchitecture() {
         </div>
       </section>
 
-      {/* Industry Impact */}
-      <section className="px-3 py-16">
+      {/* Real Projects & Opportunities */}
+      <section className="px-3 py-20">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-14">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Transforming Industries with AI</h2>
-            <p className="text-xl text-foreground max-w-3xl mx-auto">
-              NVIDIA technology powers innovation across multiple sectors
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">What You'll Build Here</h2>
+            <p className="text-xl text-foreground/70 max-w-3xl mx-auto">
+              Real projects with real impact, using real technology
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { title: "Automotive", stat: "30 of top 30 AV data centers", icon: "🚗" },
-              { title: "AI Factories", stat: "40,000+ companies", icon: "🏭" },
-              { title: "Digital Twins", stat: "300K users & 700 companies", icon: "🌐" },
-              { title: "Healthcare", stat: "1M+ developers (MONAI)", icon: "⚕️" },
-              { title: "Robotics", stat: "1M+ on Jetson platform", icon: "🤖" },
-              { title: "Gaming", stat: "200M gamers & creators", icon: "🎮" }
-            ].map((item, idx) => (
-              <Card key={idx} className="border-border/50 hover:border-green-500/50 transition-all bg-card/50 backdrop-blur text-center">
+              { title: "Autonomous Robots", desc: "Build robots that see, learn, and decide using edge AI", icon: "🤖" },
+              { title: "Medical AI", desc: "Analyze medical images and predict diagnoses", icon: "⚕️" },
+              { title: "Natural Language", desc: "Train and deploy large language models", icon: "💬" },
+              { title: "Computer Vision", desc: "Build systems that understand video and images", icon: "👁️" },
+              { title: "Data Science", desc: "Process and analyze massive datasets instantly", icon: "📊" },
+              { title: "Industry Research", desc: "Partner with companies on real problems", icon: "🏢" }
+            ].map((project, idx) => (
+              <Card key={idx} className="border-border/50 hover:border-blue-500/50 transition-all bg-card/50 backdrop-blur">
                 <CardContent className="pt-8">
-                  <div className="text-5xl mb-4">{item.icon}</div>
-                  <h3 className="font-bold text-lg mb-2">{item.title}</h3>
-                  <p className="text-sm text-foreground/70">{item.stat}</p>
+                  <div className="text-5xl mb-4">{project.icon}</div>
+                  <h3 className="font-bold text-lg mb-2">{project.title}</h3>
+                  <p className="text-sm text-foreground/70">{project.desc}</p>
                 </CardContent>
               </Card>
             ))}
@@ -373,19 +411,64 @@ export default function NVIDIAArchitecture() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* Why This Matters */}
+      <section className="px-3 py-20 bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-blue-500/5">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-14">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Why This Setup Matters</h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            <Card className="border-border/50 bg-card/50 backdrop-blur">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-3">
+                  <Award className="w-6 h-6 text-blue-500" />
+                  For Your Learning
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4 text-sm text-foreground/70">
+                <p>You learn on the exact same tools used by AI researchers at top companies and universities worldwide.</p>
+                <p>When you graduate, you'll have hands-on experience that employers are desperately looking for.</p>
+                <p>No need to "re-learn" new tools—you'll already know what matters.</p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-border/50 bg-card/50 backdrop-blur">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-3">
+                  <Brain className="w-6 h-6 text-purple-500" />
+                  For Your Career
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4 text-sm text-foreground/70">
+                <p>Every major AI company uses NVIDIA technology. You'll be job-ready from day one.</p>
+                <p>Build a portfolio of real AI projects on enterprise hardware.</p>
+                <p>Network with industry professionals and researchers who visit campus.</p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
       <section className="px-3 py-16 bg-gradient-to-r from-green-500/20 to-black">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Explore DSU's AI-First Initiatives</h2>
-          <p className="text-lg text-foreground/70 mb-8 max-w-2xl mx-auto">
-            Discover how Dayananda Sagar University is leveraging NVIDIA's technology stack to build the next generation of AI leaders
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Master AI?</h2>
+          <p className="text-lg text-foreground/70 mb-10 max-w-2xl mx-auto">
+            This is the infrastructure. This is the opportunity. The question is: what will you build?
           </p>
-          <Link to="/ai-first">
-            <Button size="lg" className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white">
-              Explore AI-First @ DSU
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link to="/ai-first">
+              <Button size="lg" className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 text-white">
+                Explore AI-First @ DSU
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+            </Link>
+            <Button variant="outline" size="lg" className="border-2 border-foreground text-foreground hover:bg-foreground hover:text-background">
+              View Programs
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
-          </Link>
+          </div>
         </div>
       </section>
     </div>
