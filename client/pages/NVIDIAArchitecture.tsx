@@ -415,7 +415,7 @@ export default function NVIDIAArchitecture() {
       <section className="px-3 py-20 bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-blue-500/5">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-14">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Why This Setup Matters</h2>
+            <h2 className="text-5xl md:text-6xl font-bold mb-6">Why This Setup Matters</h2>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
