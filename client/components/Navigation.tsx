@@ -526,7 +526,7 @@ export default function Navigation() {
                   </Link>,
                   <Link
                     key="nvidia-ai"
-                    to="/ai-first"
+                    to="/nvidia-ai-architecture"
                     className={sharedClasses}
                   >
                     <span>NVIDIA's AI Architecture</span>
