@@ -263,41 +263,6 @@ export default function AIFirst() {
         </div>
       </section>
 
-      {/* Strategic Pillars */}
-      <section className="py-20 bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-blue-500/5">
-        <div className="max-w-7xl mx-auto px-3">
-          <div className="text-center mb-14">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Five Pillars of AI Excellence</h2>
-            <p className="text-xl text-foreground/70 max-w-3xl mx-auto">
-              Building a comprehensive AI ecosystem at DSU
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
-            {[
-              { title: "AI Infrastructure", icon: Cpu, desc: "GPU-backed labs and advanced computing resources" },
-              { title: "B.E in AI", icon: BookOpen, desc: "Specialized 4-year engineering curriculum" },
-              { title: "Electives", icon: Code, desc: "AI courses for all disciplines" },
-              { title: "Research", icon: Microscope, desc: "Industry-backed research projects" },
-              { title: "Skilling", icon: Award, desc: "Professional certifications and training" }
-            ].map((pillar, idx) => {
-              const Icon = pillar.icon;
-              return (
-                <Card key={idx} className="border-border/50 hover:border-blue-500/50 transition-all bg-card/50 backdrop-blur text-center">
-                  <CardHeader>
-                    <Icon className="w-8 h-8 text-blue-500 mb-3 mx-auto" />
-                    <CardTitle className="text-base">{pillar.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-xs text-foreground/70">{pillar.desc}</p>
-                  </CardContent>
-                </Card>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
       {/* Industry Partnerships */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-3">
