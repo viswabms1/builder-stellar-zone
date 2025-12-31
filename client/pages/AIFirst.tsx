@@ -104,19 +104,12 @@ export default function AIFirst() {
       <section className="relative py-20 overflow-hidden">
         <div className="max-w-7xl mx-auto px-3">
           <div className="rounded-2xl overflow-hidden shadow-2xl">
-            <div className="relative">
-              <img
-                src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Ff23ab891b7034cb39a115957640a25b9?format=webp&width=800"
-                alt="Entering a Smarter Learning World"
-                className="w-full h-auto"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-              <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
-                <h2 className="text-3xl md:text-4xl font-bold mb-3">The Gateway to AI Excellence</h2>
-                <p className="text-lg max-w-2xl">Experience the transformation of learning infrastructure designed for the AI era</p>
-              </div>
-            </div>
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Ff23ab891b7034cb39a115957640a25b9?format=webp&width=800"
+              alt="Entering a Smarter Learning World"
+              className="w-full h-auto"
+              loading="lazy"
+            />
           </div>
         </div>
       </section>
