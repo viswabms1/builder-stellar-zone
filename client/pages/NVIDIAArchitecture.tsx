@@ -72,11 +72,11 @@ export default function NVIDIAArchitecture() {
                 </div>
                 <div className="flex items-start gap-3">
                   <CheckCircle className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
-                  <p className="text-sm">Explore popular frameworks like PyTorch and TensorFlow</p>
+                  <p className="text-base">Explore popular frameworks like PyTorch and TensorFlow</p>
                 </div>
                 <div className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
-                  <p className="text-sm">Work with small AI models and datasets</p>
+                  <CheckCircle className="w-6 h-6 text-blue-500 flex-shrink-0 mt-0.5" />
+                  <p className="text-base">Work with small AI models and datasets</p>
                 </div>
               </CardContent>
             </Card>
