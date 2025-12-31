@@ -23,48 +23,28 @@ export default function NVIDIAArchitecture() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      {/* Hero Section */}
-      <section className="relative min-h-[600px] lg:min-h-[700px] flex items-center justify-center bg-gradient-to-br from-black via-black/95 to-black overflow-hidden pt-24">
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-green-500 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-green-600 rounded-full blur-3xl" />
-        </div>
-
-        <div className="relative max-w-7xl mx-auto px-3 text-center z-10 py-20">
-          <div className="inline-flex items-center px-4 py-2 bg-green-500/10 rounded-full border border-green-500/20 mb-8">
-            <Cpu className="w-4 h-4 text-green-500 mr-2" />
-            <span className="text-sm font-medium text-green-500">NVIDIA Technology Stack</span>
-          </div>
-
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
-            NVIDIA AI Architecture
-          </h1>
-          <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto mb-8">
-            Full-Stack, Purpose-Built and Optimized for AI with Direct Access to Expertise
-          </p>
-          <p className="text-lg text-white/60 max-w-3xl mx-auto">
-            Powering accelerated computing with industry-leading hardware and comprehensive software solutions
-          </p>
-        </div>
-      </section>
-
-      {/* NVIDIA Stack Overview */}
-      <section className="px-3 py-16">
+      {/* Hero Section with Stack Image */}
+      <section className="px-3 py-20 pt-32">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-14">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">NVIDIA Stack for Accelerated Computing</h2>
-            <p className="text-xl text-foreground max-w-3xl mx-auto">
-              Accelerated computing requires full-stack optimization from chip architecture to applications
+          <div className="text-center mb-12">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-4">
+              NVIDIA AI Architecture
+            </h1>
+            <p className="text-lg md:text-xl text-foreground/70 max-w-3xl mx-auto">
+              Full-Stack, Purpose-Built and Optimized for AI with Direct Access to Expertise
             </p>
           </div>
 
-          <div className="mb-12">
+          <div className="mb-16">
             <img
               src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F935799d5edb9464794f76adfc8ca6552?format=webp&width=1200"
               alt="NVIDIA Stack for Accelerated Computing"
               className="w-full rounded-xl shadow-2xl border border-border/30"
               loading="lazy"
             />
+            <p className="text-center text-sm text-foreground/60 mt-4">
+              Accelerated computing requires full-stack optimization from chip architecture to applications. The global NVIDIA ecosystem spans 4 million developers, 40,000 companies, and over 3,000 applications.
+            </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
