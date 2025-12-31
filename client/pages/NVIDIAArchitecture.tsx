@@ -146,21 +146,21 @@ export default function NVIDIAArchitecture() {
 
                   <div className="space-y-6 mb-8">
                     <div>
-                      <h4 className="font-bold text-foreground mb-2">What's Inside?</h4>
-                      <p className="text-sm text-foreground/70 mb-3">8 extremely powerful processors (GPUs) that work together to solve AI problems incredibly fast. Think of it like having 8 super-brains instead of 1.</p>
-                      <p className="text-xs text-blue-500 font-semibold">🔧 NVIDIA calls this: 8x Blackwell GPUs</p>
+                      <h4 className="text-lg font-bold text-foreground mb-3">What's Inside?</h4>
+                      <p className="text-base text-foreground/70 mb-3 leading-relaxed">8 extremely powerful processors (GPUs) that work together to solve AI problems incredibly fast. Think of it like having 8 super-brains instead of 1.</p>
+                      <p className="text-sm text-blue-500 font-semibold">🔧 NVIDIA calls this: 8x Blackwell GPUs</p>
                     </div>
 
                     <div>
-                      <h4 className="font-bold text-foreground mb-2">Memory Power</h4>
-                      <p className="text-sm text-foreground/70 mb-3">1.4 trillion bytes of memory (TB). For perspective, that's enough to hold an entire library—and access it in milliseconds.</p>
-                      <p className="text-xs text-blue-500 font-semibold">💾 Why it matters: Train models with 100+ billion parameters</p>
+                      <h4 className="text-lg font-bold text-foreground mb-3">Memory Power</h4>
+                      <p className="text-base text-foreground/70 mb-3 leading-relaxed">1.4 trillion bytes of memory (TB). For perspective, that's enough to hold an entire library—and access it in milliseconds.</p>
+                      <p className="text-sm text-blue-500 font-semibold">💾 Why it matters: Train models with 100+ billion parameters</p>
                     </div>
 
                     <div>
-                      <h4 className="font-bold text-foreground mb-2">Speed Between Processors</h4>
-                      <p className="text-sm text-foreground/70 mb-3">The 8 GPUs communicate at lightning speed (1.8 TB/s), sharing information instantly to coordinate on massive problems.</p>
-                      <p className="text-xs text-blue-500 font-semibold">⚡ NVIDIA calls this: NVLink technology</p>
+                      <h4 className="text-lg font-bold text-foreground mb-3">Speed Between Processors</h4>
+                      <p className="text-base text-foreground/70 mb-3 leading-relaxed">The 8 GPUs communicate at lightning speed (1.8 TB/s), sharing information instantly to coordinate on massive problems.</p>
+                      <p className="text-sm text-blue-500 font-semibold">⚡ NVIDIA calls this: NVLink technology</p>
                     </div>
                   </div>
 
