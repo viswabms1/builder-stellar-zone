@@ -48,6 +48,14 @@ export default function AIFirst() {
 
           {/* AI-First Approach Explanation with Video */}
           <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="rounded-2xl overflow-hidden shadow-2xl">
+              <video
+                src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2Fc8e62530406a455cbb76f2d7b42b88e6?alt=media&token=5daa1455-02fd-448b-82b9-c013ed23c8be&apiKey=4aa279a8430d441dba9c55f659831878"
+                controls
+                className="w-full h-auto"
+                loading="lazy"
+              />
+            </div>
             <div className="bg-white dark:bg-black/20 rounded-2xl p-12">
               <h3 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">What is the AI-First Approach?</h3>
               <p className="text-lg md:text-xl text-gray-700 dark:text-foreground/80 mb-12 leading-relaxed">
@@ -76,14 +84,6 @@ export default function AIFirst() {
                   <p className="text-base md:text-lg text-gray-700 dark:text-foreground/70">Building an ecosystem where AI drives entrepreneurship and industry partnerships</p>
                 </div>
               </div>
-            </div>
-            <div className="rounded-2xl overflow-hidden shadow-2xl">
-              <video
-                src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2Fc8e62530406a455cbb76f2d7b42b88e6?alt=media&token=5daa1455-02fd-448b-82b9-c013ed23c8be&apiKey=4aa279a8430d441dba9c55f659831878"
-                controls
-                className="w-full h-auto"
-                loading="lazy"
-              />
             </div>
           </div>
         </div>
