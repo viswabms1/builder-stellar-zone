@@ -47,6 +47,17 @@ export default function NVIDIAArchitecture() {
                   DSU's AI infrastructure represents a significant investment in creating a world-class environment where students, faculty, and researchers can work with the same technology used by leading AI companies globally. This isn't a classroom simulation—it's the real deal.
                 </p>
 
+                {/* Exclusivity & Pride */}
+                <div className="relative overflow-hidden rounded-lg border-2 border-gradient-to-r from-gold-400 to-yellow-500/50 bg-gradient-to-r from-amber-50/50 to-yellow-50/50 dark:from-amber-950/30 dark:to-yellow-950/30 p-8">
+                  <div className="absolute top-0 right-0 text-7xl opacity-10">👑</div>
+                  <div className="relative z-10">
+                    <p className="text-lg font-bold text-amber-900 dark:text-amber-200 mb-2">🏆 A Rare Distinction</p>
+                    <p className="text-lg text-foreground/85 leading-relaxed font-semibold">
+                      This complete NVIDIA AI infrastructure stack is available at only a handful of elite institutions across India. DSU is proud to be among them—offering students access to world-class research and learning infrastructure that matches top universities globally.
+                    </p>
+                  </div>
+                </div>
+
                 {/* The Complete NVIDIA Stack */}
                 <div className="space-y-4">
                   <p className="text-lg font-semibold text-foreground mb-6">The Complete NVIDIA AI Stack at DSU</p>
