@@ -274,39 +274,180 @@ export default function AIFirst() {
       </section>
 
       {/* Industry Partnerships */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-3">
-          <div className="text-center mb-14">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Research Engagement Opportunities</h2>
-            <p className="text-xl text-foreground/70 max-w-3xl mx-auto">
-              Partner with us across key industry sectors
+      <section className="relative py-20 overflow-hidden bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-blue-500/10">
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute top-10 right-10 w-72 h-72 bg-blue-400 rounded-full blur-3xl" />
+          <div className="absolute bottom-10 left-10 w-72 h-72 bg-purple-500 rounded-full blur-3xl" />
+        </div>
+
+        <div className="relative max-w-7xl mx-auto px-3 z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl md:text-6xl font-bold mb-6">Research Engagement Opportunities</h2>
+            <p className="text-xl md:text-2xl text-foreground/70 max-w-3xl mx-auto leading-relaxed">
+              Transform real-world challenges into breakthrough innovations. Partner with DSU's world-class researchers and NVIDIA's cutting-edge infrastructure to solve industry problems and advance the frontiers of AI.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-14">
             {[
-              { name: "Automotive", areas: ["Digital Twin", "Safety Systems", "Predictive Maintenance"] },
-              { name: "Healthcare", areas: ["Medical Imaging", "Diagnostics", "Patient Care"] },
-              { name: "Finance", areas: ["Risk Management", "Fraud Detection", "Analytics"] },
-              { name: "Manufacturing", areas: ["Smart Factories", "Quality Control", "Optimization"] },
-              { name: "Defense", areas: ["Surveillance", "Strategy", "Operations"] },
-              { name: "Logistics", areas: ["Supply Chain", "Forecasting", "Optimization"] }
-            ].map((industry, idx) => (
-              <Card key={idx} className="border-border/50 hover:border-blue-500/50 transition-all bg-card/50 backdrop-blur">
-                <CardHeader>
-                  <CardTitle>{industry.name}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-2">
-                    {industry.areas.map((area, aIdx) => (
-                      <Badge key={aIdx} variant="secondary" className="block text-center py-1">
-                        {area}
-                      </Badge>
-                    ))}
+              {
+                name: "Automotive & Mobility",
+                icon: Rocket,
+                color: "from-blue-500 to-cyan-500",
+                areas: ["Digital Twin", "Safety Systems", "Autonomous Vehicles"],
+                description: "Revolutionize vehicle intelligence and safety"
+              },
+              {
+                name: "Healthcare & Life Sciences",
+                icon: Shield,
+                color: "from-pink-500 to-rose-500",
+                areas: ["Medical Imaging", "Drug Discovery", "Diagnostics"],
+                description: "Accelerate medical breakthroughs"
+              },
+              {
+                name: "Financial Services",
+                icon: Briefcase,
+                color: "from-green-500 to-emerald-500",
+                areas: ["Risk Management", "Fraud Detection", "Market Analytics"],
+                description: "Enhance financial intelligence"
+              },
+              {
+                name: "Manufacturing & IoT",
+                icon: Cpu,
+                color: "from-orange-500 to-amber-500",
+                areas: ["Smart Factories", "Quality Control", "Predictive Maintenance"],
+                description: "Optimize production intelligence"
+              },
+              {
+                name: "Cybersecurity & Defense",
+                icon: Network,
+                color: "from-purple-500 to-violet-500",
+                areas: ["Threat Detection", "Defense Systems", "Data Protection"],
+                description: "Strengthen security intelligence"
+              },
+              {
+                name: "Supply Chain & Logistics",
+                icon: Database,
+                color: "from-indigo-500 to-blue-500",
+                areas: ["Forecasting", "Optimization", "Route Planning"],
+                description: "Maximize operational efficiency"
+              }
+            ].map((industry, idx) => {
+              const Icon = industry.icon;
+              return (
+                <div
+                  key={idx}
+                  className="group relative overflow-hidden rounded-2xl border border-border/50 bg-card/30 backdrop-blur hover:border-blue-500/50 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
+                >
+                  {/* Gradient Background */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${industry.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`} />
+
+                  {/* Card Content */}
+                  <div className="relative p-8 h-full flex flex-col">
+                    {/* Icon */}
+                    <div className={`flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-br ${industry.color} mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                      <Icon className="w-8 h-8 text-white" />
+                    </div>
+
+                    {/* Title */}
+                    <h3 className="text-2xl font-bold mb-2 group-hover:text-blue-400 transition-colors">{industry.name}</h3>
+
+                    {/* Description */}
+                    <p className="text-sm text-foreground/60 mb-6">{industry.description}</p>
+
+                    {/* Areas */}
+                    <div className="flex-1 mb-6">
+                      <p className="text-xs font-semibold text-foreground/50 uppercase tracking-wider mb-3">Focus Areas</p>
+                      <div className="space-y-2">
+                        {industry.areas.map((area, aIdx) => (
+                          <div key={aIdx} className="flex items-center gap-2">
+                            <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${industry.color}`} />
+                            <span className="text-sm text-foreground/80">{area}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* CTA */}
+                    <button className={`w-full py-3 px-4 rounded-lg font-semibold text-white bg-gradient-to-r ${industry.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:shadow-lg`}>
+                      Learn More
+                    </button>
                   </div>
-                </CardContent>
-              </Card>
-            ))}
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Partnership Value Proposition */}
+          <div className="mt-20 grid md:grid-cols-3 gap-8">
+            <Card className="border-border/50 bg-gradient-to-br from-blue-500/10 to-blue-500/5 backdrop-blur hover:border-blue-500/50 transition-all">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-3 text-xl">
+                  <Target className="w-6 h-6 text-blue-500" />
+                  For Industry Partners
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <div className="flex items-start gap-2">
+                  <CheckCircle className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
+                  <span className="text-sm">Access top-tier research talent</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <CheckCircle className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
+                  <span className="text-sm">Leverage NVIDIA's advanced infrastructure</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <CheckCircle className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
+                  <span className="text-sm">Co-develop innovative solutions</span>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="border-border/50 bg-gradient-to-br from-purple-500/10 to-purple-500/5 backdrop-blur hover:border-purple-500/50 transition-all">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-3 text-xl">
+                  <Lightbulb className="w-6 h-6 text-purple-500" />
+                  For Researchers
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <div className="flex items-start gap-2">
+                  <CheckCircle className="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" />
+                  <span className="text-sm">Work on real-world problems</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <CheckCircle className="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" />
+                  <span className="text-sm">Publish groundbreaking research</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <CheckCircle className="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" />
+                  <span className="text-sm">Build industry connections</span>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="border-border/50 bg-gradient-to-br from-pink-500/10 to-pink-500/5 backdrop-blur hover:border-pink-500/50 transition-all">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-3 text-xl">
+                  <Code className="w-6 h-6 text-pink-500" />
+                  For Students
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <div className="flex items-start gap-2">
+                  <CheckCircle className="w-5 h-5 text-pink-500 flex-shrink-0 mt-0.5" />
+                  <span className="text-sm">Gain industry-relevant experience</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <CheckCircle className="w-5 h-5 text-pink-500 flex-shrink-0 mt-0.5" />
+                  <span className="text-sm">Mentor with world-class experts</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <CheckCircle className="w-5 h-5 text-pink-500 flex-shrink-0 mt-0.5" />
+                  <span className="text-sm">Build your professional network</span>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
