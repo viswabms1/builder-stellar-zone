@@ -46,34 +46,72 @@ export default function NVIDIAArchitecture() {
                 <p className="text-xl text-foreground/80 leading-relaxed">
                   DSU's AI infrastructure represents a significant investment in creating a world-class environment where students, faculty, and researchers can work with the same technology used by leading AI companies globally. This isn't a classroom simulation—it's the real deal.
                 </p>
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="bg-blue-500/10 p-6 rounded-lg border border-blue-500/20">
-                    <h4 className="text-2xl font-bold text-blue-500 mb-4">GPU Computing Labs</h4>
-                    <p className="text-lg text-foreground/80 leading-relaxed mb-4">
-                      Multiple NVIDIA GPUs and systems available for student projects, research, and learning.
+
+                {/* The Complete NVIDIA Stack */}
+                <div className="space-y-4">
+                  <p className="text-lg font-semibold text-foreground mb-6">The Complete NVIDIA AI Stack at DSU</p>
+
+                  {/* Layer 4: Application Layer */}
+                  <div className="bg-gradient-to-r from-amber-500/10 to-orange-500/10 p-6 rounded-lg border border-orange-500/30">
+                    <h4 className="text-xl font-bold text-orange-500 mb-3">Layer 4: AI Applications</h4>
+                    <p className="text-base text-foreground/80 leading-relaxed mb-3">
+                      Build real-world AI applications and solutions across various domains
                     </p>
-                    <ul className="space-y-3 text-lg text-foreground/70">
-                      <li>✓ Jetson platforms for edge AI</li>
-                      <li>✓ High-performance GPU workstations</li>
-                      <li>✓ Scalable computing infrastructure</li>
+                    <ul className="space-y-2 text-base text-foreground/70">
+                      <li>✓ Natural Language Processing applications</li>
+                      <li>✓ Computer vision and autonomous systems</li>
+                      <li>✓ Healthcare and biomedical AI solutions</li>
+                      <li>✓ Enterprise AI systems and products</li>
                     </ul>
                   </div>
-                  <div className="bg-purple-500/10 p-6 rounded-lg border border-purple-500/20">
-                    <h4 className="text-2xl font-bold text-purple-500 mb-4">Software & Tools</h4>
-                    <p className="text-lg text-foreground/80 leading-relaxed mb-4">
-                      Complete access to NVIDIA's entire software ecosystem for development and deployment.
+
+                  {/* Layer 3: AI Frameworks & Libraries */}
+                  <div className="bg-gradient-to-r from-purple-500/10 to-violet-500/10 p-6 rounded-lg border border-purple-500/30">
+                    <h4 className="text-xl font-bold text-purple-500 mb-3">Layer 3: AI & Deep Learning Frameworks</h4>
+                    <p className="text-base text-foreground/80 leading-relaxed mb-3">
+                      Industry-standard frameworks optimized to run on NVIDIA GPUs
                     </p>
-                    <ul className="space-y-3 text-lg text-foreground/70">
-                      <li>✓ CUDA and deep learning frameworks</li>
-                      <li>✓ RAPIDS for data science</li>
-                      <li>✓ TensorRT for production deployment</li>
+                    <ul className="space-y-2 text-base text-foreground/70">
+                      <li>✓ <span className="font-semibold">PyTorch</span> - Deep learning research and production</li>
+                      <li>✓ <span className="font-semibold">TensorFlow</span> - Scalable machine learning</li>
+                      <li>✓ <span className="font-semibold">RAPIDS</span> - GPU-accelerated data science</li>
+                      <li>✓ <span className="font-semibold">TensorRT</span> - High-performance inference</li>
+                    </ul>
+                  </div>
+
+                  {/* Layer 2: CUDA Layer */}
+                  <div className="bg-gradient-to-r from-blue-500/10 to-cyan-500/10 p-6 rounded-lg border border-blue-500/30">
+                    <h4 className="text-xl font-bold text-blue-500 mb-3">Layer 2: CUDA - The Parallel Computing Platform</h4>
+                    <p className="text-base text-foreground/80 leading-relaxed mb-3">
+                      NVIDIA's core computing platform that enables massive parallel processing
+                    </p>
+                    <ul className="space-y-2 text-base text-foreground/70">
+                      <li>✓ <span className="font-semibold">CUDA Cores</span> - Thousands of processors working in parallel</li>
+                      <li>✓ <span className="font-semibold">cuDNN</span> - Optimized neural network operations</li>
+                      <li>✓ <span className="font-semibold">CUTLASS</span> - Fast matrix operations for deep learning</li>
+                      <li>✓ <span className="font-semibold">cuBLAS</span> - GPU-accelerated linear algebra</li>
+                    </ul>
+                  </div>
+
+                  {/* Layer 1: Hardware Foundation */}
+                  <div className="bg-gradient-to-r from-green-500/10 to-emerald-500/10 p-6 rounded-lg border border-green-500/30">
+                    <h4 className="text-xl font-bold text-green-500 mb-3">Layer 1: Hardware Foundation</h4>
+                    <p className="text-base text-foreground/80 leading-relaxed mb-3">
+                      Enterprise-grade NVIDIA GPU infrastructure designed for AI acceleration
+                    </p>
+                    <ul className="space-y-2 text-base text-foreground/70">
+                      <li>✓ <span className="font-semibold">DGX B200</span> - Supercomputer for training massive models</li>
+                      <li>✓ <span className="font-semibold">Jetson Family</span> - Edge AI devices for real-world deployment</li>
+                      <li>✓ <span className="font-semibold">GPU Workstations</span> - High-performance individual development</li>
+                      <li>✓ <span className="font-semibold">NVLink</span> - Ultra-fast GPU-to-GPU communication</li>
                     </ul>
                   </div>
                 </div>
+
                 <div className="bg-gradient-to-r from-blue-500/20 to-purple-500/20 p-8 rounded-lg border border-blue-500/30">
-                  <h4 className="text-2xl font-bold text-foreground mb-4">Industry-Standard Training</h4>
-                  <p className="text-xl text-foreground/80 leading-relaxed">
-                    Students learn on the exact same tools used by researchers at Google, Meta, OpenAI, and other leading AI labs. This means your education translates directly to real-world relevance and immediate job readiness. When you graduate, you won't need to "learn" new tools—you'll already be proficient with what matters.
+                  <h4 className="text-2xl font-bold text-foreground mb-4">Why This Stack Matters</h4>
+                  <p className="text-lg text-foreground/80 leading-relaxed">
+                    This isn't just hardware. It's a complete, integrated ecosystem where every layer is optimized to work together. CUDA enables PyTorch to run at lightning speed on GPUs. TensorRT takes trained models and makes them 10X faster. Students experience this integration firsthand, understanding how real AI systems are built, deployed, and scaled in production environments. This is how Google, Meta, and OpenAI build their AI systems.
                   </p>
                 </div>
               </CardContent>
