@@ -554,6 +554,156 @@ export default function NVIDIAArchitecture() {
         </div>
       </section>
 
+      {/* Impact on Placements */}
+      <section className="px-3 py-20">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-14">
+            <h2 className="text-5xl md:text-6xl font-bold mb-6">Your Gateway to Top Placements</h2>
+            <p className="text-2xl text-foreground/70 max-w-3xl mx-auto leading-relaxed">
+              This infrastructure isn't just impressive—it directly transforms your career prospects and placement outcomes.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-10">
+            <Card className="border-border/50 bg-gradient-to-br from-blue-500/10 to-blue-500/5 backdrop-blur hover:border-blue-500/50 transition-all">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-3 text-2xl mb-4">
+                  <Award className="w-8 h-8 text-blue-500" />
+                  What Employers Want
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="w-6 h-6 text-blue-500 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <p className="font-semibold text-foreground mb-1">Hands-on NVIDIA Experience</p>
+                    <p className="text-sm text-foreground/70">Every major AI company (Google, Meta, OpenAI, Microsoft) prioritizes hiring engineers with CUDA and NVIDIA GPU experience</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="w-6 h-6 text-blue-500 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <p className="font-semibold text-foreground mb-1">Production-Ready Skills</p>
+                    <p className="text-sm text-foreground/70">Unlike classroom projects, you'll have worked with the exact hardware and tools used in real production AI systems</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="w-6 h-6 text-blue-500 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <p className="font-semibold text-foreground mb-1">Demonstrated Capability</p>
+                    <p className="text-sm text-foreground/70">Your portfolio contains real projects trained on DGX B200 and deployed on enterprise infrastructure—proof you can handle complex AI challenges</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="border-border/50 bg-gradient-to-br from-green-500/10 to-green-500/5 backdrop-blur hover:border-green-500/50 transition-all">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-3 text-2xl mb-4">
+                  <Rocket className="w-8 h-8 text-green-500" />
+                  Your Competitive Advantage
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <p className="font-semibold text-foreground mb-1">Immediate Job Readiness</p>
+                    <p className="text-sm text-foreground/70">While peers are learning tools on the job, you're already proficient—hiring managers value candidates who can contribute on day one</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <p className="font-semibold text-foreground mb-1">Higher Salaries</p>
+                    <p className="text-sm text-foreground/70">NVIDIA-certified and GPU-experienced engineers command 20-40% higher salaries in the AI industry</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <p className="font-semibold text-foreground mb-1">Exclusive Opportunities</p>
+                    <p className="text-sm text-foreground/70">Top-tier AI companies (Google Brain, Meta AI, NVIDIA, Anthropic) actively recruit from universities with advanced GPU infrastructure</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* The Placement Reality */}
+          <div className="bg-gradient-to-r from-purple-500/10 via-blue-500/10 to-purple-500/10 rounded-2xl p-8 border border-border/50 mb-10">
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <h3 className="text-2xl font-bold mb-4 text-foreground">The Recruitment Pipeline</h3>
+                <div className="space-y-4">
+                  <div className="flex items-start gap-3">
+                    <div className="flex items-center justify-center w-8 h-8 rounded-full bg-blue-500 text-white font-bold flex-shrink-0">1</div>
+                    <div>
+                      <p className="font-semibold">Industry Partnerships</p>
+                      <p className="text-sm text-foreground/70 mt-1">DSU's NVIDIA partnership attracts direct recruitment from AI teams at major companies</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="flex items-center justify-center w-8 h-8 rounded-full bg-purple-500 text-white font-bold flex-shrink-0">2</div>
+                    <div>
+                      <p className="font-semibold">Research Opportunities</p>
+                      <p className="text-sm text-foreground/70 mt-1">Collaborate on real industry problems → Paper publications → Fast-track interviews</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="flex items-center justify-center w-8 h-8 rounded-full bg-green-500 text-white font-bold flex-shrink-0">3</div>
+                    <div>
+                      <p className="font-semibold">Portfolio Projects</p>
+                      <p className="text-sm text-foreground/70 mt-1">Train models on DGX B200 → Deploy on Jetson → Showcase on your resume</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="flex items-center justify-center w-8 h-8 rounded-full bg-orange-500 text-white font-bold flex-shrink-0">4</div>
+                    <div>
+                      <p className="font-semibold">Expert Network</p>
+                      <p className="text-sm text-foreground/70 mt-1">Learn from visiting NVIDIA researchers and industry partners → Build professional relationships</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-2xl font-bold mb-4 text-foreground">Why DSU Graduates Stand Out</h3>
+                <div className="space-y-3 text-foreground/80">
+                  <p className="flex items-start gap-3">
+                    <span className="text-2xl">🎯</span>
+                    <span><strong>Targeted Skills:</strong> You learn exactly what industry needs, not what textbooks say</span>
+                  </p>
+                  <p className="flex items-start gap-3">
+                    <span className="text-2xl">⚡</span>
+                    <span><strong>Real Scale:</strong> Experience with infrastructure that handles real AI workloads, not simulations</span>
+                  </p>
+                  <p className="flex items-start gap-3">
+                    <span className="text-2xl">🏆</span>
+                    <span><strong>Proven Track Record:</strong> Your projects are proof of capability—not just theory</span>
+                  </p>
+                  <p className="flex items-start gap-3">
+                    <span className="text-2xl">🚀</span>
+                    <span><strong>First-Mover Advantage:</strong> Few Indian universities have this. You're competing with elite peers globally</span>
+                  </p>
+                  <p className="flex items-start gap-3">
+                    <span className="text-2xl">💼</span>
+                    <span><strong>Industry Trust:</strong> Recruiters know DSU graduates can hit the ground running</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom Line */}
+          <div className="bg-gradient-to-r from-green-500/20 to-blue-500/20 rounded-2xl p-8 border border-green-500/30 text-center">
+            <h3 className="text-3xl font-bold mb-4">The Bottom Line</h3>
+            <p className="text-xl text-foreground/80 leading-relaxed max-w-3xl mx-auto">
+              Top AI companies recruit from universities with world-class infrastructure. Your degree from DSU isn't just a credential—it's proof that you've mastered the tools and infrastructure used by the world's leading AI teams. That transforms placements from uncertain to exceptional.
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* Final CTA */}
       <section className="px-3 py-16 bg-gradient-to-r from-green-500/20 to-black">
