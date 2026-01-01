@@ -634,7 +634,7 @@ export default function Index() {
                   size="lg"
                   className="bg-white hover:bg-white/90 text-black hover:text-black px-8 py-6 text-base font-semibold font-display transition-all duration-300 group border-2 border-white"
                 >
-                  The Future of AI Is Coming to DSU
+                  Build the Future of AI at DSU
                   <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
