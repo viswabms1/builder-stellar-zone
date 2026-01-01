@@ -50,6 +50,61 @@ export default function NVIDIAArchitecture() {
         </div>
       </section>
 
+      {/* DSU's NVIDIA Architecture */}
+      <section className="px-3 py-20 bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-blue-500/5">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-14">
+            <h2 className="text-5xl md:text-6xl font-bold mb-6">DSU's NVIDIA AI Architecture</h2>
+            <p className="text-2xl text-foreground/70 max-w-4xl mx-auto leading-relaxed">
+              Dayananda Sagar University has partnered with NVIDIA to create a complete, enterprise-grade AI infrastructure dedicated to transforming education and research.
+            </p>
+          </div>
+
+          <div className="space-y-8">
+            <Card className="border-border/50 bg-card/50 backdrop-blur">
+              <CardHeader>
+                <CardTitle className="text-3xl mb-4">What DSU Has Built</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <p className="text-xl text-foreground/80 leading-relaxed">
+                  DSU's AI infrastructure represents a significant investment in creating a world-class environment where students, faculty, and researchers can work with the same technology used by leading AI companies globally. This isn't a classroom simulation—it's the real deal.
+                </p>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="bg-blue-500/10 p-6 rounded-lg border border-blue-500/20">
+                    <h4 className="text-2xl font-bold text-blue-500 mb-4">GPU Computing Labs</h4>
+                    <p className="text-lg text-foreground/80 leading-relaxed mb-4">
+                      Multiple NVIDIA GPUs and systems available for student projects, research, and learning.
+                    </p>
+                    <ul className="space-y-3 text-lg text-foreground/70">
+                      <li>✓ Jetson platforms for edge AI</li>
+                      <li>✓ High-performance GPU workstations</li>
+                      <li>✓ Scalable computing infrastructure</li>
+                    </ul>
+                  </div>
+                  <div className="bg-purple-500/10 p-6 rounded-lg border border-purple-500/20">
+                    <h4 className="text-2xl font-bold text-purple-500 mb-4">Software & Tools</h4>
+                    <p className="text-lg text-foreground/80 leading-relaxed mb-4">
+                      Complete access to NVIDIA's entire software ecosystem for development and deployment.
+                    </p>
+                    <ul className="space-y-3 text-lg text-foreground/70">
+                      <li>✓ CUDA and deep learning frameworks</li>
+                      <li>✓ RAPIDS for data science</li>
+                      <li>✓ TensorRT for production deployment</li>
+                    </ul>
+                  </div>
+                </div>
+                <div className="bg-gradient-to-r from-blue-500/20 to-purple-500/20 p-8 rounded-lg border border-blue-500/30">
+                  <h4 className="text-2xl font-bold text-foreground mb-4">Industry-Standard Training</h4>
+                  <p className="text-xl text-foreground/80 leading-relaxed">
+                    Students learn on the exact same tools used by researchers at Google, Meta, OpenAI, and other leading AI labs. This means your education translates directly to real-world relevance and immediate job readiness. When you graduate, you won't need to "learn" new tools—you'll already be proficient with what matters.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* What You'll Learn Section */}
       <section className="px-3 py-20 bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-blue-500/5">
         <div className="max-w-7xl mx-auto">
