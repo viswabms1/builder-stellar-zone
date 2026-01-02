@@ -373,8 +373,8 @@ export default function DeptDataScience() {
       <section className="px-3 py-8">
         <div className="max-w-4xl mx-auto text-center">
           <div className="rounded-3xl p-5 border border-brand-orange/20 bg-brand-orange/5">
-            <h3 className="headline-3 mb-3 font-display">Join DSU Data Science</h3>
-            <p className="text-foreground mb-6 font-body">Explore programs, discover cutting-edge research, and launch your career in Data Science and Analytics.</p>
+            <h3 className="headline-3 mb-3 font-display">Join DSU Data Science—Powered by NVIDIA</h3>
+            <p className="text-foreground mb-6 font-body">Learn on DGX B200 and RAPIDS. Explore programs, conduct GPU-accelerated research, and launch your data science career with infrastructure used by Google, Meta, and Netflix.</p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a
                 href="https://admissions.dsu.edu.in/"
