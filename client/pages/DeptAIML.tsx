@@ -182,12 +182,12 @@ export default function DeptAIML() {
               </div>
               <CardHeader>
                 <CardTitle className="font-display">Fast Facts</CardTitle>
-                <CardDescription className="font-body">What sets AI & ML at DSU apart</CardDescription>
+                <CardDescription className="font-body">NVIDIA-powered advantage at AI & ML DSU</CardDescription>
               </CardHeader>
               <CardContent className="grid gap-2 text-sm font-body">
-                <div className="flex items-center justify-between"><span>Programme Duration</span><span className="font-medium">4 Years</span></div>
-                <div className="flex items-center justify-between"><span>Industry Labs</span><span className="font-medium">IBM, NVIDIA</span></div>
-                <div className="flex items-center justify-between"><span>Specializations</span><span className="font-medium">ML, CV, NLP</span></div>
+                <div className="flex items-center justify-between"><span>Salary Premium</span><span className="font-medium">+20-40% (GPU skills)</span></div>
+                <div className="flex items-center justify-between"><span>Infrastructure</span><span className="font-medium">DGX B200 & Jetson</span></div>
+                <div className="flex items-center justify-between"><span>Global Practice</span><span className="font-medium">CUDA, PyTorch, TensorFlow</span></div>
               </CardContent>
             </Card>
           </div>
