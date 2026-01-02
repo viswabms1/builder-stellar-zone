@@ -590,8 +590,8 @@ export default function DeptAIML() {
       <section className="px-3 py-8">
         <div className="max-w-4xl mx-auto text-center">
           <div className="rounded-3xl p-5 border border-brand-magenta/20 bg-brand-magenta/5">
-            <h3 className="headline-3 mb-3 font-display">Join DSU AI & ML</h3>
-            <p className="text-foreground mb-6 font-body">Explore programs, discover research, and launch your career in Artificial Intelligence & Machine Learning.</p>
+            <h3 className="headline-3 mb-3 font-display">Join DSU AI & ML—Powered by NVIDIA</h3>
+            <p className="text-foreground mb-6 font-body">Learn on DGX B200 supercomputers and Jetson devices. Explore programs, conduct world-class research, and launch your career in AI with infrastructure used by Google, Meta, and OpenAI.</p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a
                 href="https://admissions.dsu.edu.in/"
