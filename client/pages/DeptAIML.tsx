@@ -322,7 +322,7 @@ export default function DeptAIML() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-foreground/80 font-body">
-                    Cutting-edge AI research initiatives and innovation labs
+                    GPU-accelerated AI research on DGX B200 with NVIDIA partnership driving AI breakthroughs
                   </p>
                 </CardContent>
               </Card>
