@@ -19,6 +19,7 @@ import {
   BookOpen,
   Award,
   Microscope,
+  Building,
 } from "lucide-react";
 
 export default function DeptMechanical() {
