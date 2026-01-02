@@ -177,7 +177,7 @@ export default function DeptCSE() {
           <div className="lg:col-span-2 space-y-3">
             <h2 className="headline-3 font-display">Overview</h2>
             <p className="text-foreground leading-relaxed font-body">
-              The Department of Computer Science & Engineering offers a dynamic ecosystem for study, research, and professional growth. The B.Tech CSE program provides a solid foundation and new-age skills with an innovative curriculum and pedagogy aligned to NEP and industry partnerships. Students gain breadth across core computing and depth through elective streams, while developing leadership and personal effectiveness for holistic growth.
+              The Department of Computer Science & Engineering offers a dynamic ecosystem for study, research, and professional growth—powered by DSU's partnership with NVIDIA. The B.Tech CSE program provides a solid foundation and new-age skills with access to enterprise-grade AI infrastructure including DGX B200 supercomputers, Jetson edge devices, and GPU-accelerated labs. Students learn on the exact tools used by Google, Meta, and OpenAI, gaining breadth across core computing and depth through AI/ML, Data Science, and Cybersecurity specializations, while developing leadership and professional readiness for industry.
             </p>
             <Card className="border border-border/50 bg-card/50 backdrop-blur-sm">
               <CardHeader className="pb-2">
