@@ -32,28 +32,28 @@ import {
 
 export default function DeptAIML() {
   const specializations = [
-    { icon: Brain, label: "Machine Learning" },
-    { icon: Database, label: "Deep Learning" },
-    { icon: Shield, label: "Responsible AI" },
-    { icon: Bot, label: "Robotics" },
-    { icon: Network, label: "Computer Vision" },
-    { icon: Cpu, label: "NLP & LLMs" },
+    { icon: Brain, label: "GPU-Accelerated ML" },
+    { icon: Database, label: "Deep Learning on CUDA" },
+    { icon: Shield, label: "Responsible AI Systems" },
+    { icon: Bot, label: "AI Robotics on Jetson" },
+    { icon: Network, label: "AI-Powered Vision" },
+    { icon: Cpu, label: "LLMs & NLP on GPUs" },
   ];
 
   const highlights = [
-    "Integrated AI & ML with foundational computer science",
-    "Innovative curriculum aligned with NEP and industry needs",
-    "Project-based learning and internships integrated across semesters",
-    "Strong foundations in mathematics, statistics, and programming",
-    "Early exposure to deep learning and autonomous systems",
-    "Opportunities for specializations and interdisciplinary study",
+    "Access to NVIDIA DGX B200 supercomputers for advanced AI research and model training",
+    "Learn CUDA, PyTorch, TensorFlow on enterprise-grade GPU infrastructure—same tools as Google, Meta, OpenAI",
+    "GPU-accelerated project-based learning: deep learning, autonomous systems, large-scale model training",
+    "Strong foundations in mathematics, statistics, and GPU programming for AI systems",
+    "Build production-scale AI models and deploy on Jetson edge devices",
+    "Research collaborations with NVIDIA partners and industry leaders in AI",
   ];
 
   const careers = [
-    "Machine Learning Engineer → AI Research Scientist → Innovation Lead",
-    "Data Science pathways: Analytics Engineer → Senior Data Scientist",
-    "Opportunities in Robotics, Healthcare AI & Autonomous Systems",
-    "100% placements for eligible students; Focus on AI-driven roles",
+    "Machine Learning Engineer → AI Research Scientist (₹25-45 LPA with GPU skills)",
+    "Data Science pathways: Analytics Engineer → Senior Data Scientist (GPU acceleration expertise)",
+    "Opportunities in Robotics, Healthcare AI, Autonomous Systems with NVIDIA infrastructure experience",
+    "100% placements; 20-40% salary premium for NVIDIA-certified AI engineers",
   ];
 
   return (
