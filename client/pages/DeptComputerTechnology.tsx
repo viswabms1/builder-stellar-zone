@@ -22,6 +22,7 @@ import {
   Zap,
   Code,
   BookOpen,
+  Building,
 } from "lucide-react";
 
 export default function DeptComputerTechnology() {
