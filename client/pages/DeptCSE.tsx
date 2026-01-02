@@ -624,7 +624,7 @@ export default function DeptCSE() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-foreground/80 font-body">
-                    Career pathways with leading companies and startup opportunities
+                    20-40% higher salaries for NVIDIA-skilled engineers; direct recruitment from Google, Meta, OpenAI
                   </p>
                 </CardContent>
               </Card>
