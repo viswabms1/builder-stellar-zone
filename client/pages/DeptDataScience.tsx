@@ -66,9 +66,9 @@ export default function DeptDataScience() {
               <Sparkles className="w-4 h-4 text-brand-orange" />
               <span className="text-sm font-medium text-brand-orange font-display">B.Tech CSE (Data Science)</span>
             </div>
-            <h1 className="headline-1 text-white leading-tight font-display">Transform Data Into Insights</h1>
+            <h1 className="headline-1 text-white leading-tight font-display">Transform Data Into Insights on NVIDIA GPUs</h1>
             <p className="subheadline text-white/90 max-w-2xl mt-3 font-body">
-              Master machine learning, analytics, and data-driven decision-making at DSU.
+              Learn on DSU's DGX B200 supercomputers with RAPIDS GPU acceleration. Master machine learning, analytics, and large-scale data processing—same tools used by top data scientists at Google, Meta, and Netflix.
             </p>
             <div className="mt-6 flex flex-wrap gap-2">
               {specializations.map((s, i) => (
