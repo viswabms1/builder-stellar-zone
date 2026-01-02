@@ -95,7 +95,7 @@ export default function DeptAerospace() {
         <div className="max-w-6xl mx-auto">
           <div className="mb-8">
             <h2 className="headline-2 font-display mb-2">Programs Offered</h2>
-            <p className="text-foreground/80 font-body">Choose your pathway to aerospace excellence</p>
+            <p className="text-foreground/80 font-body">Choose your pathway with GPU-accelerated CFD, advanced simulations, and aerospace-grade computational tools</p>
           </div>
           <div className="grid md:grid-cols-2 gap-4">
             {/* B.Tech Program */}
