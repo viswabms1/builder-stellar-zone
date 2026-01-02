@@ -209,6 +209,63 @@ export default function BCom() {
         </div>
       </section>
 
+      {/* GPU-Accelerated Financial Analytics & Fintech Section */}
+      <section className="px-6 py-16">
+        <div className="max-w-5xl mx-auto">
+          <div className="mb-10">
+            <h2 className="text-3xl font-bold font-display mb-4">GPU-Accelerated Financial Analytics & Fintech</h2>
+            <p className="text-lg text-foreground/80 max-w-3xl">
+              B.Com students gain competitive advantage through hands-on experience with advanced financial technology infrastructure, preparing them for careers in fintech, data-driven finance, and high-frequency trading sectors.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* Advanced Analytics */}
+            <div className="bg-gradient-to-r from-brand-magenta/10 to-brand-orange/10 p-6 rounded-lg border border-brand-magenta/30">
+              <h4 className="text-xl font-bold text-brand-magenta mb-3">GPU-Accelerated Financial Analytics</h4>
+              <ul className="space-y-2 text-sm text-foreground/80">
+                <li>✓ Real-time portfolio analysis and risk modeling using GPU acceleration</li>
+                <li>✓ Machine learning models for stock prediction and market trend analysis</li>
+                <li>✓ High-performance data processing: Analyze millions of transactions in seconds</li>
+                <li>✓ Advanced visualization of financial data and business intelligence dashboards</li>
+              </ul>
+            </div>
+
+            {/* Fintech & Blockchain */}
+            <div className="bg-gradient-to-r from-brand-blue/10 to-brand-magenta/10 p-6 rounded-lg border border-brand-blue/30">
+              <h4 className="text-xl font-bold text-brand-blue mb-3">Fintech & Blockchain Technologies</h4>
+              <ul className="space-y-2 text-sm text-foreground/80">
+                <li>✓ Cryptocurrency and blockchain fundamentals with practical implementation</li>
+                <li>✓ High-frequency trading algorithms and computational finance</li>
+                <li>✓ AI-driven fraud detection and compliance automation</li>
+                <li>✓ Direct exposure to fintech platforms used by leading financial institutions</li>
+              </ul>
+            </div>
+
+            {/* Career Opportunities */}
+            <div className="bg-gradient-to-r from-brand-orange/10 to-brand-magenta/10 p-6 rounded-lg border border-brand-orange/30">
+              <h4 className="text-xl font-bold text-brand-orange mb-3">Career Opportunities & Salary Premium</h4>
+              <ul className="space-y-2 text-sm text-foreground/80">
+                <li>✓ Financial Data Analyst → Senior Analyst (₹15-30 LPA with GPU/ML skills)</li>
+                <li>✓ Fintech Developer → Quant Engineer (₹18-40 LPA with blockchain expertise)</li>
+                <li>✓ 20-35% salary premium for B.Com graduates with fintech and data science credentials</li>
+                <li>✓ Direct pathways to Goldman Sachs, Morgan Stanley, JP Morgan, and Indian fintech unicorns</li>
+              </ul>
+            </div>
+
+            {/* Why It Matters */}
+            <div className="bg-gradient-to-r from-brand-magenta/10 to-brand-blue/10 p-6 rounded-lg border border-brand-magenta/30">
+              <h4 className="text-xl font-bold text-brand-magenta mb-3">Competitive Distinction</h4>
+              <ul className="space-y-2 text-sm text-foreground/80">
+                <li>✓ Rare GPU-accelerated fintech infrastructure in Indian commerce education</li>
+                <li>✓ Industry-ready skills matching global financial services standards</li>
+                <li>✓ Access to cutting-edge tools used by top investment banks and fintech startups</li>
+                <li>✓ Direct qualification for high-paying roles in data-driven finance and emerging fintech sectors</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Career Opportunities */}
       <section className="bg-gradient-to-r from-brand-magenta/5 via-brand-blue/5 to-brand-orange/5 px-6 py-16">
         <div className="mx-auto max-w-5xl">
