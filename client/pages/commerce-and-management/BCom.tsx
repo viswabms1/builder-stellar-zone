@@ -180,10 +180,10 @@ export default function BCom() {
             <div className="space-y-4">
               <h2 className="text-3xl font-bold font-display">Program Overview</h2>
               <p className="text-foreground/80">
-                The Bachelor of Commerce program at Dayananda Sagar University is designed to bridge the gap between conceptual learning and practical application to inculcate professional corporate expertise.
+                The Bachelor of Commerce program at Dayananda Sagar University bridges the gap between conceptual learning and practical application using GPU-accelerated financial technology infrastructure. Students develop professional corporate expertise through hands-on experience with cutting-edge fintech platforms, data analytics tools, and blockchain systems.
               </p>
               <p className="text-foreground/80">
-                The curriculum has been suitably prepared to meet the challenging needs of Indian corporates, with built-in flexibility enabling students to choose from a wide spectrum of courses. SCMS imparts comprehensive business skills and provides the training ground that turns out high-calibre, competent, versatile professionals.
+                Our industry-aligned curriculum meets the challenging needs of Indian corporates and emerging fintech sectors, with built-in flexibility enabling students to choose from a wide spectrum of courses. SCMS imparts comprehensive business skills powered by supercomputer-scale analytics, and provides the training ground that turns out high-calibre, competent, versatile finance and technology professionals with 20-35% salary premiums in the job market.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-4">
