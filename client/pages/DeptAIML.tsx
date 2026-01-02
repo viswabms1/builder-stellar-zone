@@ -279,7 +279,7 @@ export default function DeptAIML() {
               </span>
             </h2>
             <p className="text-foreground/80 font-body max-w-2xl mx-auto">
-              Discover research, placements, admission pathways, and Centers of Excellence at DSU
+              Explore NVIDIA AI infrastructure, GPU-accelerated research partnerships, placement outcomes with salary premiums, and centers of excellence
             </p>
           </div>
 
