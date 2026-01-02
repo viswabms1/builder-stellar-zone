@@ -155,15 +155,15 @@ export default function DeptCSE() {
               <CardContent className="space-y-2 text-sm font-body">
                 <div className="flex items-center gap-2">
                   <Award className="w-4 h-4 text-brand-magenta flex-shrink-0" />
-                  <span>100% Placements (eligible)</span>
+                  <span>100% Placements (20-40% salary premium)</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Zap className="w-4 h-4 text-brand-magenta flex-shrink-0" />
-                  <span>Highest CTC: ₹28 LPA</span>
+                  <span>NVIDIA DGX B200 & Jetson access</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Network className="w-4 h-4 text-brand-magenta flex-shrink-0" />
-                  <span>Industry Partnerships</span>
+                  <Cpu className="w-4 h-4 text-brand-magenta flex-shrink-0" />
+                  <span>Learn CUDA, PyTorch on GPU labs</span>
                 </div>
               </CardContent>
             </Card>
