@@ -126,15 +126,15 @@ export default function DeptDataScience() {
               <CardContent className="space-y-2 text-sm font-body">
                 <div className="flex items-center gap-2">
                   <Award className="w-4 h-4 text-brand-orange flex-shrink-0" />
-                  <span>Industry-Driven Curriculum</span>
+                  <span>NVIDIA DGX B200 & RAPIDS access</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Cpu className="w-4 h-4 text-brand-orange flex-shrink-0" />
+                  <span>GPU-accelerated data pipelines (50X faster)</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Zap className="w-4 h-4 text-brand-orange flex-shrink-0" />
-                  <span>Real-World Data Projects</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <BarChart3 className="w-4 h-4 text-brand-orange flex-shrink-0" />
-                  <span>Booming Career Opportunities</span>
+                  <span>20-40% higher placements salaries</span>
                 </div>
               </CardContent>
             </Card>
