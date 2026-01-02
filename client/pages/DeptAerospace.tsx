@@ -25,26 +25,26 @@ import {
 
 export default function DeptAerospace() {
   const specializations = [
-    { icon: Rocket, label: "Aerodynamics" },
-    { icon: Wind, label: "Propulsion" },
-    { icon: Zap, label: "Flight Control" },
-    { icon: Microscope, label: "Materials" },
+    { icon: Rocket, label: "GPU-Accelerated CFD" },
+    { icon: Wind, label: "Propulsion Simulation" },
+    { icon: Zap, label: "Flight Optimization" },
+    { icon: Microscope, label: "Materials & AI" },
   ];
 
   const highlights = [
     "Comprehensive curriculum covering aerodynamics, thermodynamics, and propulsion systems",
-    "Core competencies: Fluid mechanics, structural mechanics, materials science, CAE/PLM tools",
-    "Project-based learning integrated with aerospace industry partners",
-    "Advanced simulation and design labs for aircraft and spacecraft systems",
-    "Internship opportunities in aerospace and defense sectors",
-    "Research focus on aeronautical and astronautical engineering",
+    "GPU-accelerated CFD using NVIDIA CUDA: Aerodynamic analysis 50-100X faster than traditional CPU computing",
+    "Advanced CAE tools: FEA, trajectory optimization, and flight control design on supercomputer infrastructure",
+    "AI-driven flight systems: ML models for autonomous navigation, anomaly detection, and performance prediction",
+    "Project-based learning integrated with aerospace and defense industry partners",
+    "Research focus on next-generation aircraft, space missions, and advanced propulsion systems",
   ];
 
   const careers = [
-    "Aerodynamics Engineer → Senior Aerodynamicist → Technical Director",
-    "Propulsion Systems Engineer → Systems Engineer → Program Manager",
-    "Structures & Design Engineer → Design Lead → Chief Engineer",
-    "Career pathways in aerospace, defense, aviation, and space agencies",
+    "CFD Engineer (Aerodynamics) → Senior Aerodynamicist → Technical Director (₹22-40 LPA with GPU skills)",
+    "Propulsion Systems Engineer → Systems Engineer → Program Manager (with computational optimization)",
+    "Flight Systems Engineer → Design Lead → Chief Engineer (ML-driven control systems expertise)",
+    "Career pathways in aerospace, defense, space agencies, and emerging space-tech companies; 20-30% premium for CFD expertise",
   ];
 
   return (
