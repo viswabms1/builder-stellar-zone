@@ -172,12 +172,12 @@ export default function DeptDataScience() {
               </div>
               <CardHeader>
                 <CardTitle className="font-display">Fast Facts</CardTitle>
-                <CardDescription className="font-body">What sets Data Science at DSU apart</CardDescription>
+                <CardDescription className="font-body">NVIDIA-powered advantage at Data Science DSU</CardDescription>
               </CardHeader>
               <CardContent className="grid gap-2 text-sm font-body">
-                <div className="flex items-center justify-between"><span>Program Type</span><span className="font-medium">B.Tech</span></div>
-                <div className="flex items-center justify-between"><span>Duration</span><span className="font-medium">4 Years</span></div>
-                <div className="flex items-center justify-between"><span>Industry Focus</span><span className="font-medium">Data & Analytics</span></div>
+                <div className="flex items-center justify-between"><span>Salary Premium</span><span className="font-medium">+20-40% (GPU skills)</span></div>
+                <div className="flex items-center justify-between"><span>Infrastructure</span><span className="font-medium">DGX B200 & RAPIDS</span></div>
+                <div className="flex items-center justify-between"><span>Global Practice</span><span className="font-medium">CUDA, PyTorch, RAPIDS</span></div>
               </CardContent>
             </Card>
           </div>
