@@ -75,9 +75,9 @@ export default function DeptCSE() {
               <Sparkles className="w-4 h-4 text-brand-magenta" />
               <span className="text-sm font-medium text-brand-magenta font-display">Department of Computer Science & Engineering</span>
             </div>
-            <h1 className="headline-1 text-white leading-tight font-display">Build the Future of Computing</h1>
+            <h1 className="headline-1 text-white leading-tight font-display">Build the Future of AI on World-Class Hardware</h1>
             <p className="subheadline text-white/90 max-w-2xl mt-3 font-body">
-              A dynamic ecosystem to become industry-ready engineers, researchers, and entrepreneurs at DSU.
+              Learn on DSU's NVIDIA AI infrastructure—the same tools used by Google, Meta, and OpenAI. Become a job-ready engineer with competitive advantage in AI.
             </p>
             <div className="mt-6 flex flex-wrap gap-2">
               {specializations.map((s, i) => (
