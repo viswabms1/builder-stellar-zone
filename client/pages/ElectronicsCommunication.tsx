@@ -78,9 +78,9 @@ export default function ElectronicsCommunication() {
               <Sparkles className="w-4 h-4 text-brand-blue" />
               <span className="text-sm font-medium text-brand-blue font-display">Department of Electronics & Communication Engineering</span>
             </div>
-            <h1 className="headline-1 text-white leading-tight font-display">Design the Electronics of Tomorrow</h1>
+            <h1 className="headline-1 text-white leading-tight font-display">Build Chips & AI on GPU Acceleration</h1>
             <p className="subheadline text-white/90 max-w-2xl mt-3 font-body">
-              Master signal processing, VLSI design, and communication systems at a leading ECE department with industry partnerships.
+              Master VLSI, 5G, signal processing, and edge AI using GPU-accelerated design tools, NVIDIA CUDA, and Jetson platforms. Design next-gen electronics at supercomputer speed.
             </p>
             <div className="mt-6 flex flex-wrap gap-2">
               {specializations.map((s, i) => (
