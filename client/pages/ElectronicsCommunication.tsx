@@ -35,28 +35,28 @@ import {
 
 export default function ElectronicsCommunication() {
   const specializations = [
-    { icon: Microchip, label: "VLSI Design" },
-    { icon: Radio, label: "Communication" },
-    { icon: Wifi, label: "5G & IoT" },
-    { icon: Cpu, label: "Embedded Systems" },
-    { icon: Network, label: "Signal Processing" },
-    { icon: Zap, label: "Power Electronics" },
+    { icon: Microchip, label: "GPU-Accelerated VLSI" },
+    { icon: Radio, label: "5G & Wireless" },
+    { icon: Wifi, label: "Edge AI with Jetson" },
+    { icon: Cpu, label: "Embedded AI Systems" },
+    { icon: Network, label: "GPU Signal Processing" },
+    { icon: Zap, label: "High-Performance Computing" },
   ];
 
   const highlights = [
-    "Advanced curriculum in signal processing, VLSI, and communication systems",
-    "Industry-sponsored labs: Bosch ETAS Lab, Analog Devices Lab",
-    "Hands-on experience with 5G, IoT, and embedded systems",
-    "Strong faculty with Ph.D. from prestigious institutions",
-    "Research-driven learning with practical projects",
-    "Specializations in Embedded Systems and Mechatronics",
+    "Advanced curriculum in signal processing, VLSI, communication systems, and GPU computing",
+    "GPU-accelerated design tools: NVIDIA CUDA for circuit simulation and verification (100X faster)",
+    "Industry-sponsored labs: Bosch ETAS Lab, Analog Devices Lab with GPU-accelerated design frameworks",
+    "Hands-on experience with 5G, IoT, edge AI on Jetson, and CUDA-based embedded systems",
+    "High-performance signal processing using GPU-accelerated libraries (cuFFT, cuBLAS, RAPIDS)",
+    "Research-driven learning integrating NVIDIA Jetson, DGX, and AI acceleration for next-gen electronics",
   ];
 
   const careers = [
-    "Electronics Design Engineer → Senior Design Engineer → Technical Lead",
-    "VLSI Design Specialist → Chip Architect",
-    "Embedded Systems Developer → IoT Solutions Architect",
-    "Research pathways: Masters/PhD in India & Abroad",
+    "VLSI Design Engineer (GPU-accelerated) → Senior Design Engineer → Chief Architect (₹20-40 LPA)",
+    "Signal Processing Engineer → ML Systems Engineer (with CUDA/GPU expertise, ₹22-42 LPA)",
+    "Embedded AI Specialist → Edge Computing Architect (Jetson platform expertise)",
+    "Career pathways in semiconductor, 5G, defense electronics, and AI chip design; 20-30% premium for GPU skills",
   ];
 
   return (
