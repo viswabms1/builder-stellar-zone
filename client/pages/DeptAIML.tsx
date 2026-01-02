@@ -104,7 +104,7 @@ export default function DeptAIML() {
         <div className="max-w-6xl mx-auto">
           <div className="mb-8">
             <h2 className="headline-2 font-display mb-2">Programs Offered</h2>
-            <p className="text-foreground/80 font-body">Choose your pathway to AI excellence</p>
+            <p className="text-foreground/80 font-body">Learn on NVIDIA infrastructure: DGX B200 supercomputers, Jetson edge devices, GPU-accelerated labs</p>
           </div>
           <div className="grid md:grid-cols-2 gap-4">
             {/* B.Tech Program */}
