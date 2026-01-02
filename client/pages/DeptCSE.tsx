@@ -536,8 +536,8 @@ export default function DeptCSE() {
                 <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1200&auto=format&fit=crop" alt="Contact CSE" className="w-full h-full object-cover" />
               </div>
               <CardHeader>
-                <CardTitle className="font-display">Department Contact</CardTitle>
-                <CardDescription className="font-body">Chairman, Computer Science & Engineering</CardDescription>
+                <CardTitle className="font-display">Learn About NVIDIA Infrastructure</CardTitle>
+                <CardDescription className="font-body">Chairman, CSE — Questions about GPU labs, DGX access, and research</CardDescription>
               </CardHeader>
               <CardContent className="grid gap-2 text-sm font-body">
                 <div className="flex items-center justify-between"><span>Email</span><a className="font-medium hover:underline" href="mailto:chairman-cse@dsu.edu.in">chairman-cse@dsu.edu.in</a></div>
