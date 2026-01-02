@@ -203,6 +203,61 @@ export default function DeptMechanical() {
         </div>
       </section>
 
+      {/* Computational Engineering Tools */}
+      <section className="px-3 py-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="mb-8">
+            <h2 className="headline-2 font-display mb-2">Advanced Computational Tools Powered by NVIDIA</h2>
+            <p className="text-foreground/80 font-body max-w-2xl">Access GPU-accelerated engineering software for faster, more accurate simulations and analysis</p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* FEA & Structural Analysis */}
+            <div className="bg-gradient-to-r from-blue-500/10 to-cyan-500/10 p-6 rounded-lg border border-blue-500/30">
+              <h4 className="text-xl font-bold text-blue-500 mb-3">Finite Element Analysis (FEA)</h4>
+              <ul className="space-y-2 text-base text-foreground/70">
+                <li>✓ GPU-accelerated structural and thermal analysis for rapid prototyping</li>
+                <li>✓ Simulate complex mechanical systems 10-50X faster than traditional CPU</li>
+                <li>✓ Real-time optimization and design iteration on supercomputer infrastructure</li>
+                <li>✓ Materials science simulations for failure prediction and durability testing</li>
+              </ul>
+            </div>
+
+            {/* CFD & Thermal Simulation */}
+            <div className="bg-gradient-to-r from-orange-500/10 to-red-500/10 p-6 rounded-lg border border-orange-500/30">
+              <h4 className="text-xl font-bold text-orange-500 mb-3">Computational Fluid Dynamics (CFD)</h4>
+              <ul className="space-y-2 text-base text-foreground/70">
+                <li>✓ GPU-powered thermal and flow analysis for turbomachinery and heat transfer</li>
+                <li>✓ CUDA-accelerated solvers for complex combustion and aerodynamic simulations</li>
+                <li>✓ Instant feedback on design modifications for rapid engineering cycles</li>
+                <li>✓ High-fidelity simulations that would take weeks on traditional systems</li>
+              </ul>
+            </div>
+
+            {/* AI for Manufacturing */}
+            <div className="bg-gradient-to-r from-purple-500/10 to-pink-500/10 p-6 rounded-lg border border-purple-500/30">
+              <h4 className="text-xl font-bold text-purple-500 mb-3">AI-Driven Manufacturing Optimization</h4>
+              <ul className="space-y-2 text-base text-foreground/70">
+                <li>✓ Machine learning models for predictive maintenance and fault detection</li>
+                <li>✓ GPU-accelerated neural networks for quality control and defect prediction</li>
+                <li>✓ Process optimization using reinforcement learning on NVIDIA infrastructure</li>
+                <li>✓ Industry-scale applications in automotive and aerospace manufacturing</li>
+              </ul>
+            </div>
+
+            {/* Why It Matters */}
+            <div className="bg-gradient-to-r from-emerald-500/10 to-teal-500/10 p-6 rounded-lg border border-emerald-500/30">
+              <h4 className="text-xl font-bold text-emerald-500 mb-3">Competitive Advantage</h4>
+              <ul className="space-y-2 text-base text-foreground/70">
+                <li>✓ Hands-on experience with tools used by top automotive (BMW, Tesla) and aerospace (Boeing, Airbus) companies</li>
+                <li>✓ 15-25% salary premium for engineers with GPU-accelerated CAE expertise</li>
+                <li>✓ Rare computational infrastructure in Indian engineering education</li>
+                <li>✓ Direct pathway to high-demand roles in semiconductor, automotive, and defense sectors</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <CurriculumLibrary />
 
       <AccreditationDocuments />
