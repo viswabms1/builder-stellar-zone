@@ -333,7 +333,7 @@ export default function DeptDataScience() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-foreground/80 font-body">
-                    Career pathways with leading data-driven companies
+                    20-40% higher salaries for NVIDIA-skilled data scientists; direct recruitment from Google, Meta, Netflix
                   </p>
                 </CardContent>
               </Card>
