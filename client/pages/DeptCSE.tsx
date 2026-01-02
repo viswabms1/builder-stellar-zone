@@ -602,7 +602,7 @@ export default function DeptCSE() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-foreground/80 font-body">
-                    Cutting-edge research initiatives and innovation labs driving the future
+                    GPU-accelerated research on DGX B200 with NVIDIA partnership driving breakthrough innovations
                   </p>
                 </CardContent>
               </Card>
