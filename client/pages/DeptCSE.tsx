@@ -182,7 +182,7 @@ export default function DeptCSE() {
             <Card className="border border-border/50 bg-card/50 backdrop-blur-sm">
               <CardHeader className="pb-2">
                 <CardTitle className="text-lg font-display">Curriculum Highlights</CardTitle>
-                <CardDescription className="font-body">Designed for 21st-century careers</CardDescription>
+                <CardDescription className="font-body">Built on NVIDIA infrastructure and industry partnerships</CardDescription>
               </CardHeader>
               <CardContent className="grid sm:grid-cols-2 gap-3 pt-0">
                 {highlights.map((h, idx) => (
