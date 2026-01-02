@@ -75,9 +75,9 @@ export default function DeptAIML() {
               <Sparkles className="w-4 h-4 text-brand-magenta" />
               <span className="text-sm font-medium text-brand-magenta font-display">Department of Computer Science & Engineering (AI & ML)</span>
             </div>
-            <h1 className="headline-1 text-white leading-tight font-display">Design Intelligent Futures</h1>
+            <h1 className="headline-1 text-white leading-tight font-display">Design AI on World-Class NVIDIA Infrastructure</h1>
             <p className="subheadline text-white/90 max-w-2xl mt-3 font-body">
-              Blend foundational computer science with advanced artificial intelligence and machine learning to build trustworthy, human-centred intelligent systems.
+              Blend foundational CS with advanced AI/ML on DSU's DGX B200 supercomputers. Learn on the same infrastructure used by Google, Meta, and OpenAI. Build next-generation AI with GPU acceleration and production-scale deployment on Jetson.
             </p>
             <div className="mt-6 flex flex-wrap gap-2">
               {specializations.map((s, i) => (
