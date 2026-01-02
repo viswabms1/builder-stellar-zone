@@ -168,10 +168,10 @@ export default function BBA() {
             <div className="space-y-4">
               <h2 className="text-3xl font-bold font-display">Program Overview</h2>
               <p className="text-foreground/80">
-                The Bachelor of Business Administration (BBA) program is offered as a platform to prepare young minds with a positive attitude for excellent performance and committed service, providing the right nurturing ground to enable students to pursue their entrepreneurial ambitions.
+                The Bachelor of Business Administration (BBA) program at Dayananda Sagar University transforms young minds with positive attitude for excellent performance and committed service, powered by GPU-accelerated AI and advanced business analytics infrastructure. Students develop the technical and strategic acumen to lead in the data-driven enterprise economy, providing the right nurturing ground to enable entrepreneurial ambitions.
               </p>
               <p className="text-foreground/80">
-                The three-year program equips students to meet managerial challenges of the 21st century through case studies, presentations, internships, research projects, industrial visits, and guest lectures from industry experts. The focus is on developing independent thinking, decision-making capability, and research aptitude.
+                The three-year program equips students to meet managerial challenges of the 21st century through supercomputer-scale analytics, AI-driven decision support, and hands-on experience with cutting-edge business intelligence tools. Case studies, presentations, internships, research projects, and industry interaction emphasize developing independent thinking, data-driven decision-making capability, and research aptitude. BBA graduates gain 20-30% salary premiums through AI and business analytics expertise.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-4">
