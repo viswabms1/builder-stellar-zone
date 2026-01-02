@@ -201,12 +201,12 @@ export default function DeptCSE() {
               </div>
               <CardHeader>
                 <CardTitle className="font-display">Fast Facts</CardTitle>
-                <CardDescription className="font-body">What sets CSE at DSU apart</CardDescription>
+                <CardDescription className="font-body">NVIDIA-powered advantage at CSE DSU</CardDescription>
               </CardHeader>
               <CardContent className="grid gap-2 text-sm font-body">
-                <div className="flex items-center justify-between"><span>Highest CTC</span><span className="font-medium">₹28 LPA</span></div>
-                <div className="flex items-center justify-between"><span>Placements</span><span className="font-medium">100% (eligible)</span></div>
-                <div className="flex items-center justify-between"><span>Industry Exposure</span><span className="font-medium">Internships & MoUs</span></div>
+                <div className="flex items-center justify-between"><span>Salary Premium</span><span className="font-medium">+20-40% (GPU skills)</span></div>
+                <div className="flex items-center justify-between"><span>Infrastructure</span><span className="font-medium">DGX B200 & Jetson</span></div>
+                <div className="flex items-center justify-between"><span>Global Practice</span><span className="font-medium">CUDA, PyTorch, TensorFlow</span></div>
               </CardContent>
             </Card>
           </div>
