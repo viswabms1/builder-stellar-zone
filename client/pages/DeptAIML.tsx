@@ -118,9 +118,9 @@ export default function DeptAIML() {
                 <CardDescription className="font-body">4-Year Program</CardDescription>
               </CardHeader>
               <CardContent className="space-y-3">
-                <p className="text-sm text-foreground font-body">With specializations in AI, ML, Computer Vision, and NLP</p>
+                <p className="text-sm text-foreground font-body">Powered by NVIDIA DGX B200 & GPU-accelerated learning:</p>
                 <div className="flex flex-wrap gap-2">
-                  {["Machine Learning", "Computer Vision", "NLP", "Robotics"].map((spec, i) => (
+                  {["GPU-Accelerated ML", "Deep Learning on CUDA", "AI Vision Systems", "LLMs & NLP on GPUs"].map((spec, i) => (
                     <Badge key={i} variant="secondary" className="text-xs">{spec}</Badge>
                   ))}
                 </div>
