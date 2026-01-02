@@ -207,9 +207,9 @@ export default function ElectronicsCommunication() {
                 <CardDescription className="font-body">What sets ECE at DSU apart</CardDescription>
               </CardHeader>
               <CardContent className="grid gap-2 text-sm font-body">
-                <div className="flex items-center justify-between"><span>Industry Labs</span><span className="font-medium">2+ Sponsored</span></div>
-                <div className="flex items-center justify-between"><span>Specializations</span><span className="font-medium">Embedded & VLSI</span></div>
-                <div className="flex items-center justify-between"><span>Research Focus</span><span className="font-medium">5G & IoT</span></div>
+                <div className="flex items-center justify-between"><span>GPU Acceleration</span><span className="font-medium">NVIDIA CUDA & Jetson</span></div>
+                <div className="flex items-center justify-between"><span>Simulation Speedup</span><span className="font-medium">100X faster design</span></div>
+                <div className="flex items-center justify-between"><span>Research Focus</span><span className="font-medium">AI Chips & 5G Design</span></div>
               </CardContent>
             </Card>
           </div>
