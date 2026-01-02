@@ -344,7 +344,7 @@ export default function DeptAIML() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-foreground/80 font-body">
-                    AI career pathways with leading technology companies
+                    20-40% higher salaries for NVIDIA-skilled engineers; direct recruitment from Google, Meta, OpenAI
                   </p>
                 </CardContent>
               </Card>
@@ -368,7 +368,7 @@ export default function DeptAIML() {
                 </CardHeader>
                 <CardContent className="flex flex-col gap-3">
                   <p className="text-sm text-foreground/80 font-body">
-                    Join DSU AI & ML and shape the future
+                    Join DSU AI & ML—learn on DGX B200 and become job-ready with premium placement prospects
                   </p>
                   <span className="inline-flex items-center gap-2 text-xs font-medium text-brand-magenta group-hover:text-brand-magenta/80 transition-colors">
                     Apply Now
