@@ -154,7 +154,7 @@ export default function BBA() {
                 Bachelor of Business Administration (BBA)
               </h1>
               <p className="text-lg text-foreground/80 max-w-2xl">
-                Prepare young minds with positive attitude for excellent performance and committed service through innovative management education blending theory with practical experience.
+                Transform into a data-driven business leader using GPU-accelerated AI and advanced analytics. Prepare young minds with positive attitude for excellent performance and committed service through innovative management education powered by cutting-edge supercomputing infrastructure.
               </p>
             </div>
           </div>
