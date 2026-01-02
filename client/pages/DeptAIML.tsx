@@ -194,6 +194,211 @@ export default function DeptAIML() {
         </div>
       </section>
 
+      {/* NVIDIA AI Architecture Section */}
+      <section className="px-3 py-20 bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-blue-500/5">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/10 rounded-full border border-blue-500/20 mb-4">
+              <Cpu className="w-5 h-5 text-blue-500" />
+              <span className="text-sm font-medium text-blue-500 font-display">Enterprise-Grade Infrastructure</span>
+            </div>
+            <h2 className="text-5xl md:text-6xl font-bold mb-6">DSU's NVIDIA AI Architecture</h2>
+            <p className="text-2xl text-foreground/70 max-w-4xl mx-auto leading-relaxed">
+              A rare and prestigious partnership that gives AI & ML students access to the exact same AI infrastructure used by Google, Meta, and OpenAI.
+            </p>
+          </div>
+
+          {/* Pride Callout */}
+          <div className="relative overflow-hidden rounded-lg border-2 border-gradient-to-r from-gold-400 to-yellow-500/50 bg-gradient-to-r from-amber-50/50 to-yellow-50/50 dark:from-amber-950/30 dark:to-yellow-950/30 p-8 mb-14">
+            <div className="absolute top-0 right-0 text-7xl opacity-10">👑</div>
+            <div className="relative z-10">
+              <p className="text-lg font-bold text-amber-900 dark:text-amber-200 mb-2">🏆 A Rare Distinction</p>
+              <p className="text-lg text-foreground/85 leading-relaxed font-semibold">
+                This complete NVIDIA AI infrastructure is available at only a handful of elite institutions across India. AI & ML students at DSU learn on world-class hardware that gives them a competitive advantage in placement and research opportunities.
+              </p>
+            </div>
+          </div>
+
+          {/* The Complete Stack */}
+          <div className="space-y-4 mb-16">
+            <p className="text-lg font-semibold text-foreground mb-6">The Complete NVIDIA AI Stack AI & ML Students Master</p>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              {/* Hardware Layer */}
+              <div className="bg-gradient-to-r from-green-500/10 to-emerald-500/10 p-6 rounded-lg border border-green-500/30">
+                <h4 className="text-xl font-bold text-green-500 mb-3">Layer 1: Hardware Foundation</h4>
+                <p className="text-base text-foreground/80 leading-relaxed mb-3">
+                  Enterprise-grade NVIDIA GPU infrastructure for AI & ML projects at scale
+                </p>
+                <ul className="space-y-2 text-base text-foreground/70">
+                  <li>✓ <span className="font-semibold">DGX B200</span> - Supercomputer for training massive AI models</li>
+                  <li>✓ <span className="font-semibold">Jetson Family</span> - Edge AI devices for deploying models</li>
+                  <li>✓ <span className="font-semibold">GPU Workstations</span> - High-performance development</li>
+                  <li>✓ <span className="font-semibold">NVLink</span> - Ultra-fast GPU-to-GPU communication</li>
+                </ul>
+              </div>
+
+              {/* CUDA Layer */}
+              <div className="bg-gradient-to-r from-blue-500/10 to-cyan-500/10 p-6 rounded-lg border border-blue-500/30">
+                <h4 className="text-xl font-bold text-blue-500 mb-3">Layer 2: CUDA - Parallel Computing</h4>
+                <p className="text-base text-foreground/80 leading-relaxed mb-3">
+                  NVIDIA's core platform that enables massive parallel processing for AI
+                </p>
+                <ul className="space-y-2 text-base text-foreground/70">
+                  <li>✓ <span className="font-semibold">CUDA Cores</span> - Thousands of processors for parallel AI workloads</li>
+                  <li>✓ <span className="font-semibold">cuDNN</span> - Optimized deep learning operations</li>
+                  <li>✓ <span className="font-semibold">CUTLASS</span> - Fast matrix operations for neural networks</li>
+                  <li>✓ <span className="font-semibold">cuBLAS</span> - GPU-accelerated linear algebra for AI</li>
+                </ul>
+              </div>
+
+              {/* Framework Layer */}
+              <div className="bg-gradient-to-r from-purple-500/10 to-violet-500/10 p-6 rounded-lg border border-purple-500/30">
+                <h4 className="text-xl font-bold text-purple-500 mb-3">Layer 3: AI Frameworks</h4>
+                <p className="text-base text-foreground/80 leading-relaxed mb-3">
+                  Industry-standard frameworks optimized for NVIDIA GPUs—what major AI labs use
+                </p>
+                <ul className="space-y-2 text-base text-foreground/70">
+                  <li>✓ <span className="font-semibold">PyTorch</span> - Deep learning research and production AI</li>
+                  <li>✓ <span className="font-semibold">TensorFlow</span> - Scalable machine learning systems</li>
+                  <li>✓ <span className="font-semibold">RAPIDS</span> - GPU-accelerated data science (50X faster)</li>
+                  <li>✓ <span className="font-semibold">TensorRT</span> - High-performance inference (10X faster)</li>
+                </ul>
+              </div>
+
+              {/* Applications Layer */}
+              <div className="bg-gradient-to-r from-amber-500/10 to-orange-500/10 p-6 rounded-lg border border-orange-500/30">
+                <h4 className="text-xl font-bold text-orange-500 mb-3">Layer 4: AI Applications</h4>
+                <p className="text-base text-foreground/80 leading-relaxed mb-3">
+                  Build real-world AI/ML solutions that matter at scale
+                </p>
+                <ul className="space-y-2 text-base text-foreground/70">
+                  <li>✓ Large Language Models (LLMs) and transformers</li>
+                  <li>✓ Computer vision and autonomous systems</li>
+                  <li>✓ Healthcare AI and medical imaging</li>
+                  <li>✓ Robotics and intelligent automation</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* Why This Matters Section */}
+          <div className="grid md:grid-cols-2 gap-8 mb-10">
+            <Card className="border-border/50 bg-gradient-to-br from-blue-500/10 to-blue-500/5 backdrop-blur hover:border-blue-500/50 transition-all">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-3 text-2xl mb-4">
+                  <Award className="w-8 h-8 text-blue-500" />
+                  Placement Impact
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="w-6 h-6 text-blue-500 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <p className="font-semibold text-foreground mb-1">20-40% Higher Salaries</p>
+                    <p className="text-sm text-foreground/70">NVIDIA-experienced ML engineers command premium packages at Google, Meta, NVIDIA, and top AI companies</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="w-6 h-6 text-blue-500 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <p className="font-semibold text-foreground mb-1">Top-Tier Company Access</p>
+                    <p className="text-sm text-foreground/70">Direct recruitment from Google, Meta, OpenAI, Microsoft, Tesla, and NVIDIA's AI research labs</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="w-6 h-6 text-blue-500 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <p className="font-semibold text-foreground mb-1">Immediate Impact</p>
+                    <p className="text-sm text-foreground/70">You're job-ready on day one with hands-on experience companies are looking for</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="border-border/50 bg-gradient-to-br from-purple-500/10 to-purple-500/5 backdrop-blur hover:border-purple-500/50 transition-all">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-3 text-2xl mb-4">
+                  <Brain className="w-8 h-8 text-purple-500" />
+                  Research Advantage
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="w-6 h-6 text-purple-500 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <p className="font-semibold text-foreground mb-1">Breakthrough Research</p>
+                    <p className="text-sm text-foreground/70">Work on cutting-edge AI research with NVIDIA partners, producing publishable results</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="w-6 h-6 text-purple-500 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <p className="font-semibold text-foreground mb-1">Publication Quality</p>
+                    <p className="text-sm text-foreground/70">Publish in top-tier AI venues like NeurIPS, ICML, CVPR with real GPU-enabled research</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="w-6 h-6 text-purple-500 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <p className="font-semibold text-foreground mb-1">AI Entrepreneurship</p>
+                    <p className="text-sm text-foreground/70">Build and launch AI startups with VC-ready infrastructure and investor connections</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Real Capabilities */}
+          <div className="bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-2xl p-8 border border-blue-500/30 mb-10">
+            <h3 className="text-2xl font-bold mb-4 text-foreground">What AI & ML Students Can Actually Do With This Infrastructure</h3>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <span className="text-2xl">🚀</span>
+                  <div>
+                    <p className="font-semibold">Train Production LLMs</p>
+                    <p className="text-sm text-foreground/70">Build GPT-scale language models with billions of parameters</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-2xl">🎯</span>
+                  <div>
+                    <p className="font-semibold">Process Massive Data</p>
+                    <p className="text-sm text-foreground/70">ML pipelines that would take weeks—now run in hours</p>
+                  </div>
+                </div>
+              </div>
+              <div className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <span className="text-2xl">🤖</span>
+                  <div>
+                    <p className="font-semibold">Deploy AI at Scale</p>
+                    <p className="text-sm text-foreground/70">Real AI systems serving millions with inference on Jetson</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-2xl">🔬</span>
+                  <div>
+                    <p className="font-semibold">Push AI Frontiers</p>
+                    <p className="text-sm text-foreground/70">Conduct cutting-edge ML research with NVIDIA partners</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center">
+            <Link to="/nvidia-ai-architecture">
+              <Button size="lg" className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 text-white">
+                Explore Full NVIDIA Architecture
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <CurriculumLibrary />
 
       <AccreditationDocuments />
