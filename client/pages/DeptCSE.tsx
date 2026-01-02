@@ -648,7 +648,7 @@ export default function DeptCSE() {
                 </CardHeader>
                 <CardContent className="flex flex-col gap-3">
                   <p className="text-sm text-foreground/80 font-body">
-                    Join DSU CSE and shape your future
+                    Join DSU CSE—learn on NVIDIA DGX B200 and become job-ready with premium placement prospects
                   </p>
                   <span className="inline-flex items-center gap-2 text-xs font-medium text-brand-magenta group-hover:text-brand-magenta/80 transition-colors">
                     Apply Now
