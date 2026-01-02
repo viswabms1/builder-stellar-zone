@@ -136,15 +136,15 @@ export default function DeptAIML() {
               <CardContent className="space-y-2 text-sm font-body">
                 <div className="flex items-center gap-2">
                   <Award className="w-4 h-4 text-brand-magenta flex-shrink-0" />
-                  <span>Industry Lab Partnerships</span>
+                  <span>NVIDIA DGX B200 & Jetson access</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Cpu className="w-4 h-4 text-brand-magenta flex-shrink-0" />
+                  <span>Learn CUDA, PyTorch, TensorFlow</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Zap className="w-4 h-4 text-brand-magenta flex-shrink-0" />
-                  <span>Research Opportunities</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Brain className="w-4 h-4 text-brand-magenta flex-shrink-0" />
-                  <span>Cutting-Edge Tech</span>
+                  <span>20-40% higher placements salaries</span>
                 </div>
               </CardContent>
             </Card>
