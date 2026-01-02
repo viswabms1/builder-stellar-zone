@@ -25,25 +25,25 @@ import {
 export default function DeptMechanical() {
   const specializations = [
     { icon: Cog, label: "Design & CAD" },
-    { icon: Flame, label: "Thermal Engineering" },
-    { icon: Zap, label: "Manufacturing" },
+    { icon: Flame, label: "GPU-Accelerated CFD" },
+    { icon: Zap, label: "Manufacturing & AI" },
     { icon: Cog, label: "Robotics & Automation" },
   ];
 
   const highlights = [
     "Comprehensive curriculum covering mechanics, kinematics, thermodynamics, and materials science",
-    "Advanced CAE tools and CAD systems for design and analysis",
-    "Project-based learning with real-world manufacturing problems",
-    "Strong emphasis on thermal systems, manufacturing processes, and automation",
-    "Industry partnerships with leading automotive and manufacturing companies",
-    "Opportunities for internships in robotics, CAD/CAM, and product development",
+    "GPU-accelerated CAE tools: NVIDIA CUDA-powered FEA and CFD for thermal & structural analysis (10-100X faster simulations)",
+    "Project-based learning with real-world manufacturing problems using advanced computational engineering",
+    "Strong emphasis on thermal systems, manufacturing processes, automation, and AI-driven predictive maintenance",
+    "Industry partnerships with leading automotive, aerospace, and manufacturing companies",
+    "Access to high-performance computing infrastructure for complex simulations and optimization problems",
   ];
 
   const careers = [
-    "Mechanical Design Engineer → Senior Design Engineer → Chief Engineer",
-    "Manufacturing Engineer → Production Manager → Plant Manager",
-    "Thermal/Systems Engineer → Technical Lead → Project Manager",
-    "Strong placements in automotive, aerospace, and manufacturing sectors",
+    "CAE Engineer (FEA/CFD) → Senior Analyst → Chief Engineer (with GPU simulation expertise, ₹18-35 LPA)",
+    "Manufacturing Engineer → Production Manager → Plant Manager (with AI-driven process optimization)",
+    "Thermal/Systems Engineer → Technical Lead → Project Manager (computational engineering focus)",
+    "Strong placements in automotive, aerospace, manufacturing, and semiconductor sectors; 15-25% premium for CAE expertise",
   ];
 
   return (
