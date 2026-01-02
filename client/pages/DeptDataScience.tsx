@@ -312,7 +312,7 @@ export default function DeptDataScience() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-foreground/80 font-body">
-                    Cutting-edge data science research initiatives
+                    GPU-accelerated data science research on DGX B200 and RAPIDS with NVIDIA partnership
                   </p>
                 </CardContent>
               </Card>
