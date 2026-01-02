@@ -65,9 +65,9 @@ export default function DeptMechanical() {
               <Sparkles className="w-4 h-4 text-brand-orange" />
               <span className="text-sm font-medium text-brand-orange font-display">Department of Mechanical Engineering</span>
             </div>
-            <h1 className="headline-1 text-white leading-tight font-display">Engineer the Future of Innovation</h1>
+            <h1 className="headline-1 text-white leading-tight font-display">Design & Simulate at Supercomputer Scale</h1>
             <p className="subheadline text-white/90 max-w-2xl mt-3 font-body">
-              Master the principles of mechanics, thermodynamics, and design to create transformative solutions at DSU.
+              Master mechanics, thermodynamics, and design using GPU-accelerated FEA, CFD, and AI-driven simulations on NVIDIA infrastructure. Build solutions faster with high-performance computing.
             </p>
             <div className="mt-6 flex flex-wrap gap-2">
               {specializations.map((s, i) => (
