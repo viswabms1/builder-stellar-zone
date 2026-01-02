@@ -148,7 +148,7 @@ export default function DeptDataScience() {
           <div className="lg:col-span-2 space-y-3">
             <h2 className="headline-3 font-display">Overview</h2>
             <p className="text-foreground leading-relaxed font-body">
-              B.Tech CSE (Data Science) is a 4-year undergraduate degree programme that teaches students how to combine machine learning techniques, algorithms, tools, business acumen and mathematics and apply them on raw data to extract insight information. The program blends technology, algorithm development and data inference to solve complex problems analytically.
+              B.Tech CSE (Data Science) is a 4-year undergraduate degree programme powered by DSU's partnership with NVIDIA. Students learn to combine machine learning techniques, algorithms, and GPU-accelerated tools on enterprise infrastructure (DGX B200, RAPIDS) with business acumen and mathematics. The program blends technology, algorithm development, and data inference on the same infrastructure used by data scientists at Google, Meta, and Netflix—giving students competitive advantage in data science careers with 20-40% higher placement salaries.
             </p>
             <Card className="border border-border/50 bg-card/50 backdrop-blur-sm">
               <CardHeader className="pb-2">
