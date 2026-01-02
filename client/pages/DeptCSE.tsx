@@ -41,19 +41,19 @@ export default function DeptCSE() {
   ];
 
   const highlights = [
-    "Dynamic ecosystem for study, research, and professional growth",
-    "Innovative curriculum aligned with NEP and industry needs",
-    "Project-based learning and internships integrated across semesters",
-    "Strong foundations in programming, systems, and applications",
-    "Early exposure to ML and Cyber Security in the curriculum",
-    "Opportunities for minors/specializations and interdisciplinary study",
+    "Access to NVIDIA's DGX B200 supercomputer and Jetson edge devices—same infrastructure used by Google, Meta, OpenAI",
+    "Learn CUDA, PyTorch, TensorFlow on enterprise-grade hardware for real-world projects",
+    "Project-based learning with GPU acceleration: AI models, data science pipelines, autonomous systems",
+    "Research collaboration with industry partners using world-class infrastructure",
+    "Early exposure to production-scale AI systems and GPU programming",
+    "Build portfolio projects that demonstrate mastery on tools used by top tech companies",
   ];
 
   const careers = [
-    "Software Engineer → Tech Lead → Architect → Manager",
-    "Research pathways: Masters/PhD in India & Abroad",
-    "Opportunities in Government & Defense",
-    "100% placements for eligible students; Highest CTC: ₹28 LPA",
+    "AI/ML Engineer → Senior AI Researcher → ML Architect (₹20-40 LPA with NVIDIA skills)",
+    "Data Scientist → Analytics Lead → Chief Data Officer (with GPU-accelerated skills)",
+    "Opportunities in Government, Defense, and NVIDIA's ecosystem companies",
+    "100% placements; Highest CTC: ₹28 LPA—premium salaries for NVIDIA infrastructure experience",
   ];
 
   return (
