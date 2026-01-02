@@ -109,9 +109,9 @@ export default function DeptDataScience() {
                 <CardDescription className="font-body">4-Year Program</CardDescription>
               </CardHeader>
               <CardContent className="space-y-3">
-                <p className="text-sm text-foreground font-body">With specializations in:</p>
+                <p className="text-sm text-foreground font-body">Powered by NVIDIA DGX B200 & RAPIDS:</p>
                 <div className="flex flex-wrap gap-2">
-                  {["Machine Learning", "Data Analytics", "Big Data", "Deep Learning"].map((spec, i) => (
+                  {["GPU-Accelerated ML", "RAPIDS Analytics", "Large-Scale Data Processing", "Deep Learning on CUDA"].map((spec, i) => (
                     <Badge key={i} variant="secondary" className="text-xs">{spec}</Badge>
                   ))}
                 </div>
