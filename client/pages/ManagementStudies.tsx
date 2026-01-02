@@ -355,11 +355,11 @@ const PG_PROGRAM_CARDS: ProgramCard[] = [
     name: "Master of Business Administration",
     area: "Postgraduate",
     description:
-      "Specialise in marketing, finance, HR, analytics and operations with global immersion and industry projects.",
+      "Specialise in marketing, finance, HR, analytics and operations with global immersion. Advanced fintech and AI-driven business analytics with industry projects at scale.",
     image:
       "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1600&auto=format&fit=crop",
     link: "/academics/commerce-and-management/mba",
-    highlights: ["Marketing", "Finance", "Global Exposure"],
+    highlights: ["Marketing", "Fintech & AI Analytics", "Global Business"],
     overlay: "bg-gradient-to-br from-brand-magenta/70 via-black/70 to-black/55 mix-blend-multiply",
     badgeClass: "bg-brand-magenta/30 text-foreground/90 border border-white/25 backdrop-blur",
     panelClass: "bg-black/55 backdrop-blur-xl",
