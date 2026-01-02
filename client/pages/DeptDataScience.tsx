@@ -248,8 +248,8 @@ export default function DeptDataScience() {
                 <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200&auto=format&fit=crop" alt="Contact Data Science" className="w-full h-full object-cover" />
               </div>
               <CardHeader>
-                <CardTitle className="font-display">Department Contact</CardTitle>
-                <CardDescription className="font-body">Chairperson, Data Science</CardDescription>
+                <CardTitle className="font-display">Learn About NVIDIA Infrastructure</CardTitle>
+                <CardDescription className="font-body">Chairperson, Data Science — Questions about GPU labs, RAPIDS access, and research</CardDescription>
               </CardHeader>
               <CardContent className="grid gap-2 text-sm font-body">
                 <div className="flex items-center justify-between"><span>Email</span><a className="font-medium hover:underline" href="mailto:chairman-ds@dsu.edu.in">chairman-ds@dsu.edu.in</a></div>
