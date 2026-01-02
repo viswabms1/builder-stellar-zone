@@ -107,7 +107,7 @@ export default function ElectronicsCommunication() {
         <div className="max-w-6xl mx-auto">
           <div className="mb-8">
             <h2 className="headline-2 font-display mb-2">Programs Offered</h2>
-            <p className="text-foreground/80 font-body">Choose your pathway in electronics and communication</p>
+            <p className="text-foreground/80 font-body">Choose your pathway with GPU-accelerated design tools, edge AI, and supercomputer-scale simulation infrastructure</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {/* B.Tech Program */}
