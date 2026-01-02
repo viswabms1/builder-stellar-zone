@@ -177,7 +177,7 @@ export default function DeptAerospace() {
               <CardContent className="grid gap-2 text-sm font-body">
                 <div className="flex items-center justify-between"><span>Program Type</span><span className="font-medium">B.Tech</span></div>
                 <div className="flex items-center justify-between"><span>Duration</span><span className="font-medium">4 Years</span></div>
-                <div className="flex items-center justify-between"><span>Industry Focus</span><span className="font-medium">Aerospace & Defense</span></div>
+                <div className="flex items-center justify-between"><span>Computational Infrastructure</span><span className="font-medium">GPU-Accelerated CFD</span></div>
               </CardContent>
             </Card>
           </div>
