@@ -158,7 +158,7 @@ export default function DeptAIML() {
           <div className="lg:col-span-2 space-y-3">
             <h2 className="headline-3 font-display">Overview</h2>
             <p className="text-foreground leading-relaxed font-body">
-              The Department of Computer Science & Engineering (AI & ML) offers a dynamic ecosystem for study, research, and professional growth. The B.Tech AI & ML program combines core computing foundations with AI-focused coursework spanning natural language processing, robotics, and intelligent decision-making. Students progress through a carefully sequenced curriculum aligned to NEP and industry partnerships with breadth across core computing and depth through elective specializations.
+              The Department of Computer Science & Engineering (AI & ML) offers a dynamic ecosystem for study, research, and professional growth—powered by DSU's partnership with NVIDIA. The B.Tech AI & ML program combines core computing foundations with AI-focused coursework on enterprise-grade infrastructure including DGX B200 supercomputers, Jetson edge devices, and GPU-accelerated labs. Students master CUDA, PyTorch, TensorFlow on the exact tools used by Google, Meta, and OpenAI, with breadth across core computing and depth through ML, Computer Vision, NLP, and Robotics specializations aligned to NEP and industry partnerships.
             </p>
             <Card className="border border-border/50 bg-card/50 backdrop-blur-sm">
               <CardHeader className="pb-2">
