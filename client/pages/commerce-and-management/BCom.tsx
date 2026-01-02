@@ -166,7 +166,7 @@ export default function BCom() {
                 Bachelor of Commerce (B.Com)
               </h1>
               <p className="text-lg text-foreground/80 max-w-2xl">
-                Bridge the gap between conceptual learning and practical application to develop professional corporate expertise through flexible, industry-aligned curriculum.
+                Bridge the gap between conceptual learning and practical application using GPU-accelerated financial technology. Develop professional corporate expertise through flexible, industry-aligned curriculum powered by cutting-edge fintech infrastructure.
               </p>
             </div>
           </div>
