@@ -356,7 +356,7 @@ export default function DeptDataScience() {
                 </CardHeader>
                 <CardContent className="flex flex-col gap-3">
                   <p className="text-sm text-foreground/80 font-body">
-                    Join DSU Data Science
+                    Join DSU Data Science—learn on DGX B200 and become job-ready with premium placement prospects
                   </p>
                   <span className="inline-flex items-center gap-2 text-xs font-medium text-brand-orange group-hover:text-brand-orange/80 transition-colors">
                     Apply Now
