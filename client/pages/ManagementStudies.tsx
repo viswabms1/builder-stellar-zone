@@ -324,11 +324,11 @@ const UG_PROGRAM_CARDS: ProgramCard[] = [
     name: "Bachelor of Commerce",
     area: "Undergraduate",
     description:
-      "Build strong accounting, finance and analytics fundamentals with industry certifications and practical experience.",
+      "Build strong accounting, finance and analytics fundamentals using GPU-accelerated business analytics tools. Industry certifications and practical experience with cutting-edge fintech infrastructure.",
     image:
       "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1600&auto=format&fit=crop",
     link: "/academics/commerce-and-management/bcom",
-    highlights: ["Accounting", "Finance", "Analytics"],
+    highlights: ["Accounting", "GPU-Accelerated Analytics", "Fintech & Data Science"],
     overlay: "bg-gradient-to-br from-brand-magenta/80 via-black/75 to-black/60 mix-blend-multiply",
     badgeClass: "bg-brand-magenta/25 text-foreground/90 border border-white/30 backdrop-blur",
     panelClass: "bg-black/55 backdrop-blur-xl",
