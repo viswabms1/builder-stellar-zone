@@ -216,6 +216,61 @@ export default function ElectronicsCommunication() {
         </div>
       </section>
 
+      {/* Computational Engineering Tools */}
+      <section className="px-6 py-16">
+        <div className="max-w-6xl mx-auto">
+          <div className="mb-8">
+            <h2 className="headline-2 font-display mb-2">Advanced Computational Tools Powered by NVIDIA</h2>
+            <p className="text-foreground/80 font-body max-w-2xl">Access GPU-accelerated design, simulation, and AI platforms for faster chip design, signal processing, and edge AI development</p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* VLSI & Circuit Simulation */}
+            <div className="bg-gradient-to-r from-blue-500/10 to-cyan-500/10 p-6 rounded-lg border border-blue-500/30">
+              <h4 className="text-xl font-bold text-blue-500 mb-3">GPU-Accelerated VLSI Design & Simulation</h4>
+              <ul className="space-y-2 text-base text-foreground/70">
+                <li>✓ NVIDIA CUDA-powered circuit simulation: 50-100X faster design verification</li>
+                <li>✓ High-performance timing analysis, static/dynamic power estimation using GPUs</li>
+                <li>✓ Rapid prototyping: Simulate complex chip designs in hours instead of weeks</li>
+                <li>✓ Machine learning-assisted design: AI models for placement, routing, and optimization</li>
+              </ul>
+            </div>
+
+            {/* Signal Processing & Communication */}
+            <div className="bg-gradient-to-r from-orange-500/10 to-red-500/10 p-6 rounded-lg border border-orange-500/30">
+              <h4 className="text-xl font-bold text-orange-500 mb-3">GPU-Accelerated Signal Processing & 5G</h4>
+              <ul className="space-y-2 text-base text-foreground/70">
+                <li>✓ cuFFT, cuBLAS, cuDNN for high-speed DSP: real-time signal processing on GPUs</li>
+                <li>✓ 5G/6G communication simulation: Channel modeling, beamforming, MIMO analysis at scale</li>
+                <li>✓ Wireless communication design on NVIDIA infrastructure (PyTorch, TensorFlow)</li>
+                <li>✓ Spectrum analysis and software-defined radio (SDR) using GPU acceleration</li>
+              </ul>
+            </div>
+
+            {/* Edge AI & Jetson */}
+            <div className="bg-gradient-to-r from-purple-500/10 to-pink-500/10 p-6 rounded-lg border border-purple-500/30">
+              <h4 className="text-xl font-bold text-purple-500 mb-3">Edge AI on NVIDIA Jetson Platforms</h4>
+              <ul className="space-y-2 text-base text-foreground/70">
+                <li>✓ Deploy AI models on Jetson Nano/Xavier/AGX: Real-time inference for IoT and embedded systems</li>
+                <li>✓ AI-powered IoT solutions: Object detection, speech recognition, computer vision on edge devices</li>
+                <li>✓ TensorRT optimization for model deployment on energy-efficient Jetson hardware</li>
+                <li>✓ Real-world embedded AI projects: UAVs, robotics, autonomous systems with neural networks</li>
+              </ul>
+            </div>
+
+            {/* Competitive Advantage */}
+            <div className="bg-gradient-to-r from-emerald-500/10 to-teal-500/10 p-6 rounded-lg border border-emerald-500/30">
+              <h4 className="text-xl font-bold text-emerald-500 mb-3">Industry-Ready Competitive Edge</h4>
+              <ul className="space-y-2 text-base text-foreground/70">
+                <li>✓ Experience with tools used by semiconductor leaders: NVIDIA, Qualcomm, ARM, Intel</li>
+                <li>✓ 20-30% salary premium for CUDA and GPU-accelerated electronics engineers</li>
+                <li>✓ Direct pathway to roles in semiconductor design, 5G infrastructure, and AI chip development</li>
+                <li>✓ Rare GPU-accelerated ECE infrastructure in Indian engineering education</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <CurriculumLibraryECE />
 
       <AccreditationDocumentsECE />
