@@ -138,9 +138,9 @@ export default function DeptCSE() {
                 <CardDescription className="font-body">2-Year Program</CardDescription>
               </CardHeader>
               <CardContent className="space-y-3">
-                <p className="text-sm text-foreground font-body">Advanced research-focused specializations</p>
+                <p className="text-sm text-foreground font-body">Advanced research on DGX B200 supercomputers with NVIDIA partnership</p>
                 <div className="flex flex-wrap gap-2">
-                  {["AI Systems", "Research Thesis", "Industry Mentorship"].map((spec, i) => (
+                  {["GPU-Accelerated AI", "Large-Scale Research", "NVIDIA Partnership Projects"].map((spec, i) => (
                     <Badge key={i} variant="secondary" className="text-xs">{spec}</Badge>
                   ))}
                 </div>
