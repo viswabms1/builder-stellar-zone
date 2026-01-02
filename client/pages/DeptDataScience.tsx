@@ -25,26 +25,26 @@ import {
 
 export default function DeptDataScience() {
   const specializations = [
-    { icon: Brain, label: "Machine Learning" },
-    { icon: BarChart3, label: "Data Analytics" },
-    { icon: Database, label: "Big Data" },
-    { icon: Zap, label: "Deep Learning" },
+    { icon: Brain, label: "GPU-Accelerated ML" },
+    { icon: BarChart3, label: "RAPIDS Data Analytics" },
+    { icon: Database, label: "Big Data on GPU" },
+    { icon: Zap, label: "Deep Learning on CUDA" },
   ];
 
   const highlights = [
-    "Comprehensive curriculum covering machine learning techniques, algorithms, and tools",
-    "Strong foundation in mathematics, statistics, and statistical methods",
-    "Artificial Intelligence, Machine Learning, and Deep Learning specializations",
-    "Data Visualization and data inference techniques",
-    "Business acumen and analytics applied to real-world problems",
-    "Industry partnerships and practical internship opportunities",
+    "Access to NVIDIA DGX B200 and RAPIDS for GPU-accelerated data processing (50X faster than CPU)",
+    "Learn CUDA, PyTorch, TensorFlow—same tools used by data scientists at Google, Meta, Netflix",
+    "GPU-accelerated machine learning and deep learning on enterprise infrastructure",
+    "Data pipelines that process massive datasets in hours instead of weeks",
+    "Business analytics applied to real-world problems using world-class infrastructure",
+    "Industry partnerships with data-driven companies and NVIDIA research collaboration",
   ];
 
   const careers = [
-    "Data Scientist → Senior Data Scientist → Data Science Manager",
-    "Data Analyst → Analytics Lead → Chief Analytics Officer",
-    "Machine Learning Engineer → ML Systems Architect → Tech Lead",
-    "Career pathways in finance, healthcare, e-commerce, tech, and consulting",
+    "Data Scientist → Senior Data Scientist → Director of Analytics (₹20-40 LPA with GPU skills)",
+    "Data Engineer → ML Systems Engineer → Principal Engineer (with RAPIDS & CUDA expertise)",
+    "Analytics Engineer → Analytics Architect (GPU-accelerated pipelines)",
+    "Career pathways in finance, healthcare, e-commerce, tech—20-40% salary premium for GPU skills",
   ];
 
   return (
