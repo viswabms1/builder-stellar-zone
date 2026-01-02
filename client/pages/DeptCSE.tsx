@@ -559,7 +559,7 @@ export default function DeptCSE() {
               </span>
             </h2>
             <p className="text-foreground/80 font-body max-w-2xl mx-auto">
-              Discover research, placements, admission pathways, and Centers of Excellence at DSU
+              Explore NVIDIA AI infrastructure, research partnerships, placement outcomes, and centers of excellence powered by GPU computing
             </p>
           </div>
 
