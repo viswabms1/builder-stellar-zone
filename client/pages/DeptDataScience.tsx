@@ -369,6 +369,109 @@ export default function DeptDataScience() {
         </div>
       </section>
 
+      {/* NVIDIA AI Architecture Section */}
+      <section className="px-3 py-20 bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-blue-500/5">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/10 rounded-full border border-blue-500/20 mb-4">
+              <Cpu className="w-5 h-5 text-blue-500" />
+              <span className="text-sm font-medium text-blue-500 font-display">Enterprise-Grade Infrastructure</span>
+            </div>
+            <h2 className="text-5xl md:text-6xl font-bold mb-6">DSU's NVIDIA AI Architecture</h2>
+            <p className="text-2xl text-foreground/70 max-w-4xl mx-auto leading-relaxed">
+              Data science students access the same GPU-accelerated infrastructure used by data scientists at Google, Meta, Netflix, and Amazon.
+            </p>
+          </div>
+
+          {/* Pride Callout */}
+          <div className="relative overflow-hidden rounded-lg border-2 border-gradient-to-r from-gold-400 to-yellow-500/50 bg-gradient-to-r from-amber-50/50 to-yellow-50/50 dark:from-amber-950/30 dark:to-yellow-950/30 p-8 mb-14">
+            <div className="absolute top-0 right-0 text-7xl opacity-10">👑</div>
+            <div className="relative z-10">
+              <p className="text-lg font-bold text-amber-900 dark:text-amber-200 mb-2">🏆 A Rare Distinction</p>
+              <p className="text-lg text-foreground/85 leading-relaxed font-semibold">
+                This complete NVIDIA AI infrastructure is available at only a handful of elite institutions across India. Data Science students at DSU learn on world-class GPU hardware that gives them a competitive advantage in data science careers and research opportunities.
+              </p>
+            </div>
+          </div>
+
+          {/* Key Benefits */}
+          <div className="grid md:grid-cols-2 gap-8 mb-10">
+            <Card className="border-border/50 bg-gradient-to-br from-blue-500/10 to-blue-500/5 backdrop-blur hover:border-blue-500/50 transition-all">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-3 text-2xl mb-4">
+                  <Award className="w-8 h-8 text-blue-500" />
+                  Placement Impact
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="w-6 h-6 text-blue-500 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <p className="font-semibold text-foreground mb-1">20-40% Higher Salaries</p>
+                    <p className="text-sm text-foreground/70">NVIDIA-experienced data scientists command premium packages at Google, Meta, Netflix</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="w-6 h-6 text-blue-500 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <p className="font-semibold text-foreground mb-1">Top-Tier Company Access</p>
+                    <p className="text-sm text-foreground/70">Direct recruitment from Google, Meta, Netflix, Amazon, and leading data-driven companies</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="w-6 h-6 text-blue-500 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <p className="font-semibold text-foreground mb-1">Production-Ready Skills</p>
+                    <p className="text-sm text-foreground/70">Experience with GPU-accelerated pipelines that handle real-world scale</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="border-border/50 bg-gradient-to-br from-purple-500/10 to-purple-500/5 backdrop-blur hover:border-purple-500/50 transition-all">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-3 text-2xl mb-4">
+                  <Brain className="w-8 h-8 text-purple-500" />
+                  Technical Advantage
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="w-6 h-6 text-purple-500 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <p className="font-semibold text-foreground mb-1">GPU-Accelerated Tools</p>
+                    <p className="text-sm text-foreground/70">Learn RAPIDS, CUDA, and PyTorch on DGX B200 supercomputers</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="w-6 h-6 text-purple-500 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <p className="font-semibold text-foreground mb-1">50X Faster Pipelines</p>
+                    <p className="text-sm text-foreground/70">Process massive datasets in hours instead of weeks with GPU acceleration</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="w-6 h-6 text-purple-500 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <p className="font-semibold text-foreground mb-1">Industry-Standard Skills</p>
+                    <p className="text-sm text-foreground/70">Master tools used by data science teams at Google, Meta, Netflix</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="text-center">
+            <Link to="/nvidia-ai-architecture">
+              <Button size="lg" className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 text-white">
+                Explore Full NVIDIA Architecture
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="px-3 py-8">
         <div className="max-w-4xl mx-auto text-center">
