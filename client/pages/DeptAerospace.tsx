@@ -66,9 +66,9 @@ export default function DeptAerospace() {
               <Sparkles className="w-4 h-4 text-brand-blue" />
               <span className="text-sm font-medium text-brand-blue font-display">Department of Aerospace Engineering</span>
             </div>
-            <h1 className="headline-1 text-white leading-tight font-display">Reach New Heights in Engineering</h1>
+            <h1 className="headline-1 text-white leading-tight font-display">Design Flight at Supercomputer Speed</h1>
             <p className="subheadline text-white/90 max-w-2xl mt-3 font-body">
-              Master aerodynamics, propulsion systems, and aerospace design at DSU's innovative engineering hub.
+              Master aerodynamics, propulsion, and flight systems using GPU-accelerated CFD and AI-driven optimization on NVIDIA infrastructure. Design next-generation aircraft and space missions faster.
             </p>
             <div className="mt-6 flex flex-wrap gap-2">
               {specializations.map((s, i) => (
