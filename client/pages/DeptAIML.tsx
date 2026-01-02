@@ -237,7 +237,7 @@ export default function DeptAIML() {
       <section className="px-3 py-8">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-5 items-start">
           <div>
-            <h2 className="headline-3 mb-4 font-display">Career Prospects</h2>
+            <h2 className="headline-3 mb-4 font-display">Career Prospects (with NVIDIA Skills)</h2>
             <Card className="border border-border/50 bg-card/50">
               <CardContent className="p-3 grid gap-3">
                 {careers.map((c, i) => (
