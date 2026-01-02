@@ -197,6 +197,63 @@ export default function BBA() {
         </div>
       </section>
 
+      {/* GPU-Accelerated Business Intelligence & AI-Driven Management Section */}
+      <section className="px-6 py-16">
+        <div className="max-w-5xl mx-auto">
+          <div className="mb-10">
+            <h2 className="text-3xl font-bold font-display mb-4">GPU-Accelerated Business Intelligence & AI-Driven Management</h2>
+            <p className="text-lg text-foreground/80 max-w-3xl">
+              BBA students gain competitive advantage through hands-on experience with advanced business intelligence and AI infrastructure, preparing them for leadership roles in data-driven organizations, supply chain optimization, marketing analytics, and strategic management.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* Supply Chain Optimization */}
+            <div className="bg-gradient-to-r from-brand-magenta/10 to-brand-orange/10 p-6 rounded-lg border border-brand-magenta/30">
+              <h4 className="text-xl font-bold text-brand-magenta mb-3">Supply Chain Optimization & Logistics AI</h4>
+              <ul className="space-y-2 text-sm text-foreground/80">
+                <li>✓ GPU-accelerated demand forecasting and inventory optimization</li>
+                <li>✓ Real-time supply chain visibility and logistics route optimization</li>
+                <li>✓ Machine learning for supplier risk assessment and procurement intelligence</li>
+                <li>✓ Distributed network simulations: model complex supply chains in milliseconds</li>
+              </ul>
+            </div>
+
+            {/* Marketing Analytics */}
+            <div className="bg-gradient-to-r from-brand-blue/10 to-brand-magenta/10 p-6 rounded-lg border border-brand-blue/30">
+              <h4 className="text-xl font-bold text-brand-blue mb-3">Marketing AI & Customer Analytics</h4>
+              <ul className="space-y-2 text-sm text-foreground/80">
+                <li>✓ AI-powered customer segmentation and personalization at scale</li>
+                <li>✓ Predictive customer lifetime value and churn modeling</li>
+                <li>✓ Real-time campaign optimization and A/B testing acceleration</li>
+                <li>✓ Advanced sentiment analysis and brand perception monitoring</li>
+              </ul>
+            </div>
+
+            {/* Business Intelligence */}
+            <div className="bg-gradient-to-r from-brand-orange/10 to-brand-magenta/10 p-6 rounded-lg border border-brand-orange/30">
+              <h4 className="text-xl font-bold text-brand-orange mb-3">Predictive Business Intelligence & Strategy</h4>
+              <ul className="space-y-2 text-sm text-foreground/80">
+                <li>✓ GPU-accelerated financial modeling and scenario analysis</li>
+                <li>✓ AI-driven competitive intelligence and market trend forecasting</li>
+                <li>✓ Real-time business dashboards and executive decision support systems</li>
+                <li>✓ Machine learning for strategic planning and opportunity identification</li>
+              </ul>
+            </div>
+
+            {/* Career Opportunities */}
+            <div className="bg-gradient-to-r from-brand-magenta/10 to-brand-blue/10 p-6 rounded-lg border border-brand-magenta/30">
+              <h4 className="text-xl font-bold text-brand-magenta mb-3">Career Opportunities & Salary Premium</h4>
+              <ul className="space-y-2 text-sm text-foreground/80">
+                <li>✓ Business Analyst → Senior Manager (₹12-25 LPA with AI/BI skills)</li>
+                <li>✓ Supply Chain Manager → Operations Director (₹14-32 LPA with optimization expertise)</li>
+                <li>✓ 20-30% salary premium for BBA graduates with AI and business analytics credentials</li>
+                <li>✓ Direct pathways to McKinsey, Deloitte, Google, Amazon, and leading Indian conglomerates</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Career Opportunities */}
       <section className="bg-gradient-to-r from-brand-magenta/5 via-brand-blue/5 to-brand-orange/5 px-6 py-16">
         <div className="mx-auto max-w-5xl">
