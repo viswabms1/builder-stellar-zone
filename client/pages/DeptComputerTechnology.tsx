@@ -68,9 +68,9 @@ export default function DeptComputerTechnology() {
               <Sparkles className="w-4 h-4 text-white" />
               <span className="text-sm font-medium text-white font-display">Department of Computer Science & Technology</span>
             </div>
-            <h1 className="headline-1 text-white leading-tight font-display">Information to Intelligence Technology</h1>
+            <h1 className="headline-1 text-white leading-tight font-display">Build AI-Powered Startups on GPU Infrastructure</h1>
             <p className="subheadline text-white/90 max-w-2xl mt-3 font-body">
-              Transform theoretical knowledge into practical innovation with integrated business and computing skills.
+              From Information to Intelligence Technology: Master GPU-accelerated platform engineering, cloud systems, and entrepreneurship. Build scalable AI-driven startups with access to NVIDIA DGX supercomputers and industry-grade infrastructure.
             </p>
             <div className="mt-6 flex flex-wrap gap-2">
               {specializations.map((s, i) => (
