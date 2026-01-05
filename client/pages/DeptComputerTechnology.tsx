@@ -127,16 +127,16 @@ export default function DeptComputerTechnology() {
               </CardHeader>
               <CardContent className="grid sm:grid-cols-3 gap-4 text-sm font-body">
                 <div className="flex items-center gap-2">
+                  <Cpu className="w-4 h-4 text-brand-orange flex-shrink-0" />
+                  <span>GPU-Accelerated Computing & NVIDIA CUDA</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Lightbulb className="w-4 h-4 text-brand-orange flex-shrink-0" />
+                  <span>Startup Incubation & Entrepreneurship</span>
+                </div>
+                <div className="flex items-center gap-2">
                   <Award className="w-4 h-4 text-brand-orange flex-shrink-0" />
-                  <span>Industry-Aligned Curriculum</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Zap className="w-4 h-4 text-brand-orange flex-shrink-0" />
-                  <span>Hands-On Learning</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Building className="w-4 h-4 text-brand-orange flex-shrink-0" />
-                  <span>Enterprise Focus</span>
+                  <span>Industry & Investor Connections</span>
                 </div>
               </CardContent>
             </Card>
