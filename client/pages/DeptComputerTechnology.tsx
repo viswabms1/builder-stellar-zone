@@ -34,12 +34,12 @@ export default function DeptComputerTechnology() {
   ];
 
   const highlights = [
-    "Integration of business and computing skills for innovative applications",
-    "Project-based learning with practical experimentation in small groups",
-    "Comprehensive coverage of hardware, software, networks, and databases",
-    "Focus on critical thinking, problem exploration, and problem-solving",
-    "Strong industry and academia partnerships",
-    "Entrepreneurship and startup ecosystem integration",
+    "GPU-accelerated platform engineering: learn NVIDIA CUDA, high-performance computing, and distributed systems on DGX B200",
+    "Startup incubation program with mentorship from successful founders and VC-backed entrepreneurs",
+    "Project-based learning building AI-powered SaaS, fintech, and deeptech startups",
+    "Comprehensive coverage of cloud architecture, microservices, containerization, and AI infrastructure",
+    "Focus on entrepreneurial mindset: problem validation, MVP development, and go-to-market strategy",
+    "Strong industry and investor partnerships with leading tech companies and venture capital firms",
   ];
 
   const careers = [
