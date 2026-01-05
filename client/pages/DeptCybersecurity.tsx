@@ -54,7 +54,7 @@ export default function DeptCybersecurity() {
       <section className="relative">
         <div className="h-[50vh] md:h-[65vh] w-full overflow-hidden">
           <img
-            src="https://images.unsplash.com/photo-1550751827-4bd582f200e7?q=80&w=1600&auto=format&fit=crop"
+            src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fa8fb5b08f627479c819be45e6f114757?format=webp&width=800"
             alt="Department of Cybersecurity"
             className="w-full h-full object-cover"
           />
