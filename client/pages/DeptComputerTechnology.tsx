@@ -190,6 +190,63 @@ export default function DeptComputerTechnology() {
 
       <AccreditationDocuments />
 
+      {/* GPU-Accelerated Platform Engineering & Startup Incubation Section */}
+      <section className="px-3 py-16">
+        <div className="max-w-6xl mx-auto">
+          <div className="mb-10">
+            <h2 className="headline-2 font-display mb-4">GPU-Accelerated Platform Engineering & Startup Incubation</h2>
+            <p className="text-lg text-foreground/80 max-w-3xl">
+              CST students gain competitive advantage through hands-on experience with advanced platform engineering, GPU-accelerated systems, and a dedicated startup incubation program—preparing them for technical founding roles, high-growth AI/SaaS companies, and infrastructure engineering leadership.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* Platform Engineering */}
+            <div className="bg-gradient-to-r from-brand-orange/10 to-brand-magenta/10 p-6 rounded-lg border border-brand-orange/30">
+              <h4 className="text-xl font-bold text-brand-orange mb-3">GPU-Accelerated Platform Engineering</h4>
+              <ul className="space-y-2 text-sm text-foreground/80">
+                <li>✓ NVIDIA CUDA and GPU computing for high-performance systems</li>
+                <li>✓ Distributed systems, cloud architecture, and microservices at scale</li>
+                <li>✓ Real-time data processing and AI inference pipelines</li>
+                <li>✓ Building production infrastructure used by top tech companies</li>
+              </ul>
+            </div>
+
+            {/* Startup Incubation */}
+            <div className="bg-gradient-to-r from-brand-blue/10 to-brand-magenta/10 p-6 rounded-lg border border-brand-blue/30">
+              <h4 className="text-xl font-bold text-brand-blue mb-3">Startup Incubation & Entrepreneurship</h4>
+              <ul className="space-y-2 text-sm text-foreground/80">
+                <li>✓ Dedicated incubator program with mentorship from successful founders</li>
+                <li>✓ Access to venture capital networks and investor pitch events</li>
+                <li>✓ Building AI-powered SaaS, fintech, and deeptech startups from day one</li>
+                <li>✓ Go-to-market strategy, product validation, and Series A preparation</li>
+              </ul>
+            </div>
+
+            {/* Infrastructure & Investment */}
+            <div className="bg-gradient-to-r from-brand-magenta/10 to-brand-orange/10 p-6 rounded-lg border border-brand-magenta/30">
+              <h4 className="text-xl font-bold text-brand-magenta mb-3">World-Class Infrastructure & Funding</h4>
+              <ul className="space-y-2 text-sm text-foreground/80">
+                <li>✓ Exclusive access to NVIDIA DGX B200 supercomputers for research and product development</li>
+                <li>✓ DSU Startup Fund and investor connections for seed/Series A funding</li>
+                <li>✓ Lab facilities with high-performance computing resources</li>
+                <li>✓ Partnership with leading tech companies for technical hiring and acquisitions</li>
+              </ul>
+            </div>
+
+            {/* Career Opportunities */}
+            <div className="bg-gradient-to-r from-brand-blue/10 to-brand-orange/10 p-6 rounded-lg border border-brand-blue/30">
+              <h4 className="text-xl font-bold text-brand-blue mb-3">Career & Founding Opportunities</h4>
+              <ul className="space-y-2 text-sm text-foreground/80">
+                <li>✓ Platform Engineer → Infrastructure Architect → VP Engineering (₹20-45 LPA with GPU skills)</li>
+                <li>✓ Startup Founder → Series A/B CEO (20-40% higher valuations with AI/GPU expertise)</li>
+                <li>✓ Direct opportunities with Google, Meta, Microsoft, Amazon, and unicorn startups</li>
+                <li>✓ 25-40% salary premium for CST graduates with GPU and platform engineering expertise</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <NoticeBoard />
 
       <LabsFacilitiesCarousel />
