@@ -150,7 +150,7 @@ export default function DeptComputerTechnology() {
           <div className="lg:col-span-2 space-y-3">
             <h2 className="headline-3 font-display">Overview</h2>
             <p className="text-foreground leading-relaxed font-body">
-              The Department of Computer Science & Technology has a unique structure designed to respond to the vibrant progress in Information to Intelligence Technology. We focus on theoretical and application development to equip students with skills and competencies to envision products and make them a reality. Our B.Tech CST program provides a dynamic ecosystem for study, research, and professional growth with an innovative curriculum aligned to industry needs.
+              The Department of Computer Science & Technology transforms Information into Intelligence Technology by integrating GPU-accelerated computing, platform engineering, and entrepreneurship. We equip students with the technical depth and entrepreneurial mindset to build scalable AI-driven systems and foundational technology companies. Our B.Tech CST program provides access to NVIDIA's cutting-edge infrastructure (DGX B200 supercomputers), mentorship from successful founders, and a dynamic ecosystem for building, testing, and scaling startup ideas with industry partners and venture investors.
             </p>
             <Card className="border border-border/50 bg-card/50 backdrop-blur-sm">
               <CardHeader className="pb-2">
