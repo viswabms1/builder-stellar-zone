@@ -1021,7 +1021,7 @@ function CurriculumLibrary() {
                 key={program.id}
                 className={`rounded-3xl border-2 ${borderClass} overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-brand-orange/10 hover:-translate-y-1`}
               >
-                <div className="relative h-48 overflow-hidden">
+                <div className="relative h-48 overflow-hidden mt-4">
                   <img
                     src={program.image}
                     alt={program.label}
