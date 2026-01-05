@@ -97,7 +97,7 @@ export default function DeptComputerTechnology() {
         <div className="max-w-6xl mx-auto">
           <div className="mb-8">
             <h2 className="headline-2 font-display mb-2">Programs Offered</h2>
-            <p className="text-foreground/80 font-body">Choose your pathway to excellence</p>
+            <p className="text-foreground/80 font-body">Master GPU-accelerated platform engineering and startup building with NVIDIA infrastructure</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {/* B.Tech Program */}
