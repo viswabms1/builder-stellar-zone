@@ -50,7 +50,7 @@ export default function DeptAIDS() {
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero */}
       <section className="relative">
-        <div className="h-[50vh] md:h-[65vh] w-full overflow-hidden">
+        <div className="h-[60vh] md:h-[65vh] w-full overflow-hidden">
           <img
             src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F0319ed06aa42410cb90c38896ba9d23f?format=webp&width=800"
             alt="Department of AI & Data Science"
