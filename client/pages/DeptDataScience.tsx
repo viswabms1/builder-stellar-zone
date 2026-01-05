@@ -51,7 +51,7 @@ export default function DeptDataScience() {
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero */}
       <section className="relative">
-        <div className="h-[60vh] md:h-[65vh] w-full overflow-hidden">
+        <div className="h-[70vh] md:h-[65vh] w-full overflow-hidden">
           <img
             src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F7cfd94b17b1c4440bc680d69dcdc1a1c?format=webp&width=800"
             alt="Department of Data Science"
