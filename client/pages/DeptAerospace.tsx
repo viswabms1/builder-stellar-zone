@@ -53,7 +53,7 @@ export default function DeptAerospace() {
       <section className="relative">
         <div className="h-[50vh] md:h-[65vh] w-full overflow-hidden">
           <img
-            src="https://images.unsplash.com/photo-1446776877081-d282a0f896e2?q=80&w=1600&auto=format&fit=crop"
+            src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F2c355b2edb974047b0c3ffca832d14a4?format=webp&width=800"
             alt="Department of Aerospace Engineering"
             className="w-full h-full object-cover"
           />
