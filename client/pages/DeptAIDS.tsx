@@ -52,7 +52,7 @@ export default function DeptAIDS() {
       <section className="relative">
         <div className="h-[50vh] md:h-[65vh] w-full overflow-hidden">
           <img
-            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1600&auto=format&fit=crop"
+            src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F0319ed06aa42410cb90c38896ba9d23f?format=webp&width=800"
             alt="Department of AI & Data Science"
             className="w-full h-full object-cover"
           />
