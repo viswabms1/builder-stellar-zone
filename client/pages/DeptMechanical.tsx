@@ -938,7 +938,7 @@ function CurriculumLibrary() {
       id: "btech",
       label: "B.Tech Mechanical Engineering",
       description: "4-year undergraduate program with specializations in design, thermal systems, and manufacturing",
-      image: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F8f76026d5b9a4462a263a8f4be83c78d?format=webp&width=800",
+      image: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Ff4525c4483ff446382a20ff22b915388?format=webp&width=800",
       batches: [
         {
           year: "2025-26",
