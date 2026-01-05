@@ -62,7 +62,7 @@ export default function DeptAIML() {
       <section className="relative">
         <div className="h-[50vh] md:h-[65vh] w-full overflow-hidden">
           <img
-            src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=2000&auto=format&fit=crop"
+            src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F84f4ff57431c47e28aeb3f5aa994d0f1?format=webp&width=800"
             alt="Department of Computer Science & Engineering (AI & ML)"
             className="w-full h-full object-cover"
           />
