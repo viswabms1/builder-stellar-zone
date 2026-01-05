@@ -53,7 +53,7 @@ export default function DeptAIRobotics() {
       <section className="relative">
         <div className="h-[50vh] md:h-[65vh] w-full overflow-hidden">
           <img
-            src="https://images.unsplash.com/photo-1581091216562-40c08a5a4183?q=80&w=1600&auto=format&fit=crop"
+            src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F0aa3f9e7f9e04925a0755e2a560ce118?format=webp&width=800"
             alt="Department of AI and Robotics"
             className="w-full h-full object-cover"
           />
