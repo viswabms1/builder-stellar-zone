@@ -50,7 +50,7 @@ export default function DeptMechanical() {
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero */}
       <section className="relative">
-        <div className="h-[60vh] md:h-[65vh] w-full overflow-hidden">
+        <div className="h-[70vh] md:h-[65vh] w-full overflow-hidden">
           <img
             src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F78d3d64c67dc4e3a96d4b9c09a6b4aec?format=webp&width=800"
             alt="Department of Mechanical Engineering"
