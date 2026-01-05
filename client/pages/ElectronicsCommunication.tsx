@@ -65,7 +65,7 @@ export default function ElectronicsCommunication() {
       <section className="relative">
         <div className="h-[50vh] md:h-[65vh] w-full overflow-hidden">
           <img
-            src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F9d698544e11a42d3afe18ef2d8a0f5d9?format=webp&width=800"
+            src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F2b2b8488d7854513ae645869966728c3?format=webp&width=800"
             alt="Department of Electronics & Communication Engineering"
             className="w-full h-full object-cover"
           />
