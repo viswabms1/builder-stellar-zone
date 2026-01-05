@@ -43,10 +43,10 @@ export default function DeptComputerTechnology() {
   ];
 
   const careers = [
-    "Software Engineer → Senior Engineer → Tech Lead → Architect",
-    "Systems Architect → Enterprise Architect → CTO",
-    "Product Manager → Senior Product Manager → Director",
-    "Startup Founder → Scale-up CEO → Innovation Leader",
+    "Platform Engineer (GPU/CUDA) → Infrastructure Architect → VP Engineering (₹20-45 LPA with GPU skills)",
+    "AI Systems Engineer → ML Systems Lead → Principal Engineer (with NVIDIA stack expertise)",
+    "Startup Founder → Series A/B CEO → Innovation Leader (20-40% elevated valuations with AI/GPU expertise)",
+    "Systems Architect → CTO → CTech → C-level executive (using NVIDIA tech stack)",
   ];
 
   return (
