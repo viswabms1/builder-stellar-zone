@@ -970,7 +970,7 @@ function CurriculumLibrary() {
       id: "mtech",
       label: "M.Tech Design Engineering",
       description: "2-year postgraduate program applying advanced design methodologies and computational tools for product innovation",
-      image: "https://images.unsplash.com/photo-1523475472560-d2df97ec485c?q=80&w=600&h=400&fit=crop",
+      image: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Ff5519221875143728b4d6be589211665?format=webp&width=800",
       batches: [
         {
           year: "2025-26",
