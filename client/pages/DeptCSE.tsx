@@ -71,9 +71,9 @@ export default function DeptCSE() {
         </div>
         <div className="absolute inset-0 flex items-center">
           <div className="max-w-7xl mx-auto px-3">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-brand-magenta/10 rounded-full border border-brand-magenta/20 mb-4">
-              <Sparkles className="w-4 h-4 text-brand-magenta" />
-              <span className="text-sm font-medium text-brand-magenta font-display">Department of Computer Science & Engineering</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-black/40 rounded-full border border-white/20 mb-4 backdrop-blur-sm">
+              <Sparkles className="w-4 h-4 text-white" />
+              <span className="text-sm font-medium text-white font-display">Department of Computer Science & Engineering</span>
             </div>
             <h1 className="headline-1 text-white leading-tight font-display">Build the Future of AI on World-Class Hardware</h1>
             <p className="subheadline text-white/90 max-w-2xl mt-3 font-body">
