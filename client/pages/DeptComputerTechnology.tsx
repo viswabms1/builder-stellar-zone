@@ -111,9 +111,9 @@ export default function DeptComputerTechnology() {
                 <CardDescription className="font-body">4-Year Program</CardDescription>
               </CardHeader>
               <CardContent className="space-y-3">
-                <p className="text-sm text-foreground font-body">Industry-focused software engineering</p>
+                <p className="text-sm text-foreground font-body">GPU-accelerated platform engineering with startup incubation</p>
                 <div className="flex flex-wrap gap-2">
-                  {["Enterprise Systems", "Cloud Computing", "DevOps", "Platform Engineering"].map((spec, i) => (
+                  {["GPU/CUDA Computing", "Startup Incubation", "Cloud Systems", "AI Infrastructure"].map((spec, i) => (
                     <Badge key={i} variant="secondary" className="text-xs">{spec}</Badge>
                   ))}
                 </div>
