@@ -344,7 +344,7 @@ function CalendarResourceCard({ entry }: { entry: CalendarEntry }) {
 function HeroVideo() {
   const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const containerRef = useAutoMuteOnScroll(videoRef);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const toggleMute = () => {
     if (videoRef.current) {
@@ -360,8 +360,31 @@ function HeroVideo() {
     video.muted = isMuted;
   }, [isMuted]);
 
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const handleEnded = () => {
+      const rect = containerRef.current?.getBoundingClientRect();
+      const isVisible =
+        rect && rect.top < window.innerHeight && rect.bottom > 0;
+      if (isVisible) {
+        video.currentTime = 0;
+        video.play().catch(() => {});
+      }
+    };
+
+    video.addEventListener("ended", handleEnded);
+    return () => {
+      video.removeEventListener("ended", handleEnded);
+    };
+  }, []);
+
   return (
-    <div className="h-dvh sm:h-[55vh] md:h-[65vh] lg:h-[75vh] relative overflow-hidden flex items-end md:items-center justify-start hero-video-container" ref={containerRef}>
+    <div
+      ref={containerRef}
+      className="h-dvh sm:h-[55vh] md:h-[65vh] lg:h-[75vh] relative overflow-hidden flex items-end md:items-center justify-start hero-video-container"
+    >
       <video
         ref={videoRef}
         src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F0b20f5ea03294f4d824e69fd8489b78c?alt=media&token=0c4092c4-4afd-4237-b850-81046ecf52f7&apiKey=4aa279a8430d441dba9c55f659831878"
