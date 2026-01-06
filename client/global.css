@@ -231,3 +231,10 @@
     @apply bg-slate-700 dark:bg-slate-700;
   }
 }
+
+@media (orientation: landscape) {
+  .hero-video-container {
+    width: 100vw !important;
+    margin-left: calc(-50vw + 50%) !important;
+  }
+}
