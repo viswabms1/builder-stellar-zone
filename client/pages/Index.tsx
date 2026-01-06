@@ -586,15 +586,15 @@ export default function Index() {
         <div className="absolute inset-0 bg-black/40"></div>
 
         {/* Hero Content */}
-        <div className="relative max-w-7xl mx-auto px-3 w-full z-10 pb-0 md:pb-20">
+        <div className="relative max-w-7xl mx-auto px-3 w-full z-10 pb-0 md:pb-20 pt-4 md:pt-0">
           <div className="max-w-4xl">
-            <h1 className="text-lg sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-0 md:mb-4 leading-snug font-display">
+            <h1 className="text-2xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-3 md:mb-4 leading-tight font-display">
               Dayananda Sagar University
             </h1>
-            <p className="text-sm sm:text-xl md:text-2xl lg:text-3xl font-semibold text-white mb-2 md:mb-6 leading-tight font-display hidden sm:block">
+            <p className="text-base sm:text-xl md:text-2xl lg:text-3xl font-semibold text-white mb-2 md:mb-6 leading-tight font-display hidden sm:block">
               {t("hero.mainHeading") || "India's AI First University"}
             </p>
-            <p className="text-xs sm:text-lg md:text-xl lg:text-2xl font-medium text-white/90 mb-4 md:mb-12 font-display hidden sm:block">
+            <p className="text-sm sm:text-lg md:text-xl lg:text-2xl font-medium text-white/90 mb-4 md:mb-12 font-display hidden sm:block">
               {t("hero.subheading") || "Powered by NVIDIA"}
             </p>
 
