@@ -980,7 +980,6 @@ function HeroVideo() {
     video.muted = isMuted;
   }, [isMuted]);
 
-
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;

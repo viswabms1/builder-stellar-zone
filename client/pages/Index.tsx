@@ -83,7 +83,7 @@ function HeroVideo() {
         crossOrigin="anonymous"
         className="w-full h-full object-cover"
         style={{
-          objectPosition: "center top"
+          objectPosition: "center top",
         }}
       />
 
@@ -128,9 +128,13 @@ function VideoWithFrameCapture({
     if (!video || poster) return;
 
     const onLoadedMetadata = () => {
-      if (typeof video.duration === 'number' && isFinite(video.duration) && video.duration > 0) {
+      if (
+        typeof video.duration === "number" &&
+        isFinite(video.duration) &&
+        video.duration > 0
+      ) {
         // Set poster via requestIdleCallback to avoid blocking scroll
-        if ('requestIdleCallback' in window) {
+        if ("requestIdleCallback" in window) {
           requestIdleCallback(() => {
             const captureTime = Math.min(1, video.duration * 0.3);
             if (isFinite(captureTime)) {
@@ -240,7 +244,8 @@ export default function Index() {
   const [selectedEventIndex, setSelectedEventIndex] = useState(0);
   const [isEventInteracting, setIsEventInteracting] = useState(false);
   const [selectedPublicationIndex, setSelectedPublicationIndex] = useState(0);
-  const [isPublicationInteracting, setIsPublicationInteracting] = useState(false);
+  const [isPublicationInteracting, setIsPublicationInteracting] =
+    useState(false);
   const { t, language } = useLanguage();
   const { theme } = useTheme();
 
@@ -330,8 +335,7 @@ export default function Index() {
       category: "White Paper",
       description:
         "An in-depth analysis of digital transformation strategies in academic institutions, with insights from DSU's successful implementation of smart campus initiatives.",
-      image:
-        "https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg",
+      image: "https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg",
       authors: "DSU Innovation Lab",
     },
     {
@@ -573,7 +577,9 @@ export default function Index() {
     }
 
     const interval = setInterval(() => {
-      setSelectedPublicationIndex((prev) => (prev + 1) % allPublications.length);
+      setSelectedPublicationIndex(
+        (prev) => (prev + 1) % allPublications.length,
+      );
     }, 8000);
 
     return () => clearInterval(interval);
@@ -588,7 +594,10 @@ export default function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       {/* Hero Section with Full-Screen Video Background */}
-      <section className="hero-section relative h-[40vh] md:h-[75vh] flex flex-col justify-between md:overflow-hidden overflow-visible" style={{ width: '100vw', marginLeft: 'calc(-50vw + 50%)' }}>
+      <section
+        className="hero-section relative h-[40vh] md:h-[75vh] flex flex-col justify-between md:overflow-hidden overflow-visible"
+        style={{ width: "100vw", marginLeft: "calc(-50vw + 50%)" }}
+      >
         {/* Full-screen Background Video */}
         <div className="absolute inset-0 w-full h-full">
           <HeroVideo />
@@ -689,7 +698,10 @@ export default function Index() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-0 auto-rows-max" style={{ contain: "layout style paint" }}>
+          <div
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-0 auto-rows-max"
+            style={{ contain: "layout style paint" }}
+          >
             {schoolsData.map((school, index) => {
               const styles = [
                 { bg: "bg-orange-500/10", border: "border-orange-500/20" },
@@ -704,7 +716,10 @@ export default function Index() {
               const style = styles[index % styles.length];
 
               const cardElement = (
-                <div className={`rounded-none overflow-hidden cursor-pointer h-full`} style={{ contain: "content" }}>
+                <div
+                  className={`rounded-none overflow-hidden cursor-pointer h-full`}
+                  style={{ contain: "content" }}
+                >
                   {/* Image Container */}
                   <div className="relative w-full aspect-square overflow-hidden bg-foreground/5 flex items-center justify-center">
                     <img
@@ -742,10 +757,7 @@ export default function Index() {
                         {cardElement}
                       </a>
                     ) : (
-                      <Link
-                        to={school.href}
-                        className="block"
-                      >
+                      <Link to={school.href} className="block">
                         {cardElement}
                       </Link>
                     )
@@ -774,7 +786,10 @@ export default function Index() {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-0 items-start" style={{ contain: "layout style paint" }}>
+          <div
+            className="grid lg:grid-cols-3 gap-0 items-start"
+            style={{ contain: "layout style paint" }}
+          >
             {/* Left side - Featured story (50%) - Auto-rotating */}
             <div className="lg:col-span-2" style={{ contain: "content" }}>
               <button
@@ -895,7 +910,10 @@ export default function Index() {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-0 items-start" style={{ contain: "layout style paint" }}>
+          <div
+            className="grid lg:grid-cols-3 gap-0 items-start"
+            style={{ contain: "layout style paint" }}
+          >
             {/* Featured Event - Left side */}
             <div className="lg:col-span-2" style={{ contain: "content" }}>
               <div className="rounded-none overflow-hidden border border-orange-500/20 bg-orange-500/10">
@@ -1017,7 +1035,10 @@ export default function Index() {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-0 items-start" style={{ contain: "layout style paint" }}>
+          <div
+            className="grid lg:grid-cols-3 gap-0 items-start"
+            style={{ contain: "layout style paint" }}
+          >
             {/* Left side - Featured publication (50%) - Auto-rotating */}
             <div className="lg:col-span-2" style={{ contain: "content" }}>
               <div className="w-full flex flex-col rounded-none border border-orange-500/20 bg-orange-500/10 cursor-pointer text-left overflow-hidden">

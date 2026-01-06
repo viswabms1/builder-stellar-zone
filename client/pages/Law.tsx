@@ -39,7 +39,6 @@ import {
   type NoticeItem as ImportedNoticeItem,
 } from "@/data/law-events";
 
-
 type ProgramCard = {
   name: string;
   area: string;
@@ -328,8 +327,10 @@ const PROGRAM_CARDS: ProgramCard[] = [
       "https://images.unsplash.com/photo-1528740579684-5809094cdaa1?q=80&w=1600&auto=format&fit=crop",
     link: "/academics/law/bba-llb-honors",
     highlights: ["Corporate Law", "Business Acumen", "Moot Court"],
-    overlay: "bg-gradient-to-br from-brand-magenta/80 via-black/75 to-black/60 mix-blend-multiply",
-    badgeClass: "bg-brand-magenta/25 text-foreground/90 border border-white/30 backdrop-blur",
+    overlay:
+      "bg-gradient-to-br from-brand-magenta/80 via-black/75 to-black/60 mix-blend-multiply",
+    badgeClass:
+      "bg-brand-magenta/25 text-foreground/90 border border-white/30 backdrop-blur",
     panelClass: "bg-black/55 backdrop-blur-xl",
     featured: true,
   },
@@ -342,8 +343,10 @@ const PROGRAM_CARDS: ProgramCard[] = [
       "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=1600&auto=format&fit=crop",
     link: "/academics/law/ba-llb-honors",
     highlights: ["Legal Theory", "Practical Skills", "Advocacy"],
-    overlay: "bg-gradient-to-br from-brand-blue/75 via-black/70 to-black/55 mix-blend-multiply",
-    badgeClass: "bg-brand-blue/30 text-foreground/90 border border-white/25 backdrop-blur",
+    overlay:
+      "bg-gradient-to-br from-brand-blue/75 via-black/70 to-black/55 mix-blend-multiply",
+    badgeClass:
+      "bg-brand-blue/30 text-foreground/90 border border-white/25 backdrop-blur",
     panelClass: "bg-black/55 backdrop-blur-xl",
     featured: true,
   },
@@ -356,8 +359,10 @@ const PROGRAM_CARDS: ProgramCard[] = [
       "https://images.unsplash.com/photo-1489515217757-5fd1be406fef?q=80&w=1600&auto=format&fit=crop",
     link: "/academics/law/programs",
     highlights: ["Law & Technology", "Corporate Law", "Specializations"],
-    overlay: "bg-gradient-to-br from-brand-orange/70 via-black/70 to-black/55 mix-blend-multiply",
-    badgeClass: "bg-brand-orange/35 text-foreground/90 border border-white/25 backdrop-blur",
+    overlay:
+      "bg-gradient-to-br from-brand-orange/70 via-black/70 to-black/55 mix-blend-multiply",
+    badgeClass:
+      "bg-brand-orange/35 text-foreground/90 border border-white/25 backdrop-blur",
     panelClass: "bg-black/55 backdrop-blur-xl",
     featured: true,
   },
@@ -369,8 +374,7 @@ const CALENDAR_ENTRIES: CalendarEntry[] = [
     academicYear: "2025-26",
     description:
       "Detailed timeline for integrated law programmes including assessments, moot courts and internship periods.",
-    documentUrl:
-      "https://www.dsu.edu.in/images/Law/calendar_2025_26.pdf",
+    documentUrl: "https://www.dsu.edu.in/images/Law/calendar_2025_26.pdf",
     tag: "LL.B",
   },
 ];
@@ -412,8 +416,10 @@ const DEAN_INFO: DeanInfo = {
   name: "Prof (Dr.) Kiran Gardner",
   title: "Ph.D. in Law",
   position: "Dean, School of Law",
-  photo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F897c8db062a14dfb9c9f3f024fbc856d?format=webp&width=800",
-  videoUrl: "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F0c95c62aa88741fca8ebdc32aade53d5?alt=media&token=c57ff4a9-aea8-4ff3-843b-23ce820ba630&apiKey=4aa279a8430d441dba9c55f659831878",
+  photo:
+    "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F897c8db062a14dfb9c9f3f024fbc856d?format=webp&width=800",
+  videoUrl:
+    "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F0c95c62aa88741fca8ebdc32aade53d5?alt=media&token=c57ff4a9-aea8-4ff3-843b-23ce820ba630&apiKey=4aa279a8430d441dba9c55f659831878",
   borderColor: "border-blue-500/20",
   bgColor: "bg-blue-500/10",
 };
@@ -598,11 +604,18 @@ function HeroVideo() {
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/30 pointer-events-none"></div>
 
       <div className="absolute top-0 left-0 w-96 h-96 bg-brand-magenta/5 rounded-full filter blur-3xl opacity-60 animate-float pointer-events-none"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-brand-orange/5 rounded-full filter blur-3xl opacity-60 animate-float pointer-events-none" style={{ animationDelay: "2s" }}></div>
+      <div
+        className="absolute bottom-0 right-0 w-96 h-96 bg-brand-orange/5 rounded-full filter blur-3xl opacity-60 animate-float pointer-events-none"
+        style={{ animationDelay: "2s" }}
+      ></div>
 
-      <div className="absolute inset-0 opacity-5 pointer-events-none" style={{
-        backgroundImage: "repeating-linear-gradient(0deg, rgba(255,255,255,.03) 0px, rgba(255,255,255,.03) 1px, transparent 1px, transparent 2px)"
-      }}></div>
+      <div
+        className="absolute inset-0 opacity-5 pointer-events-none"
+        style={{
+          backgroundImage:
+            "repeating-linear-gradient(0deg, rgba(255,255,255,.03) 0px, rgba(255,255,255,.03) 1px, transparent 1px, transparent 2px)",
+        }}
+      ></div>
 
       <div className="relative max-w-7xl mx-auto px-3 w-full z-10 pb-20 md:pb-0">
         <div className="max-w-2xl">
@@ -654,7 +667,6 @@ export default function Law() {
         <HeroVideo />
       </section>
 
-
       {/* Dean's Message Section */}
       <div className="mt-16">
         <DeanSection dean={DEAN_INFO} />
@@ -672,7 +684,9 @@ export default function Law() {
                 Academic Pathways for Legal Excellence
               </h2>
               <p className="mt-3 text-sm text-foreground font-body">
-                Integrated and postgraduate programmes combining rigorous legal scholarship with moot courts, legal aid clinics, research and mentorship to prepare practice-ready advocates.
+                Integrated and postgraduate programmes combining rigorous legal
+                scholarship with moot courts, legal aid clinics, research and
+                mentorship to prepare practice-ready advocates.
               </p>
             </div>
           </div>
@@ -695,7 +709,8 @@ export default function Law() {
               Explore More at DSU School of Law
             </h2>
             <p className="mt-3 text-sm text-foreground font-body">
-              Discover our legal excellence, research initiatives, placements and admission pathways
+              Discover our legal excellence, research initiatives, placements
+              and admission pathways
             </p>
           </div>
           <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-5">
@@ -735,7 +750,8 @@ export default function Law() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-foreground/80 font-body">
-                    Legal research initiatives and industry-powered learning labs
+                    Legal research initiatives and industry-powered learning
+                    labs
                   </p>
                 </CardContent>
               </Card>
@@ -821,25 +837,33 @@ export default function Law() {
             </CardHeader>
             <CardContent className="grid gap-4 text-sm font-body text-foreground">
               <div>
-                <div className="text-foreground/70 text-xs uppercase tracking-wide">Email</div>
+                <div className="text-foreground/70 text-xs uppercase tracking-wide">
+                  Email
+                </div>
                 <div className="font-medium text-foreground">
                   law@dsu.edu.in
                 </div>
               </div>
               <div>
-                <div className="text-foreground/70 text-xs uppercase tracking-wide">Phone</div>
+                <div className="text-foreground/70 text-xs uppercase tracking-wide">
+                  Phone
+                </div>
                 <div className="font-medium text-foreground">
                   +91-80-49092933
                 </div>
               </div>
               <div>
-                <div className="text-foreground/70 text-xs uppercase tracking-wide">Campus Address</div>
+                <div className="text-foreground/70 text-xs uppercase tracking-wide">
+                  Campus Address
+                </div>
                 <div className="font-medium text-foreground">
                   Kanakapura Road, Bengaluru, Karnataka
                 </div>
               </div>
               <div>
-                <div className="text-foreground/70 text-xs uppercase tracking-wide">Office Hours</div>
+                <div className="text-foreground/70 text-xs uppercase tracking-wide">
+                  Office Hours
+                </div>
                 <div className="font-medium text-foreground">
                   Mon–Fri, 9:00 AM – 5:30 PM
                 </div>
@@ -848,9 +872,7 @@ export default function Law() {
           </Card>
           <Card className="rounded-none border border-blue-500/20 bg-blue-500/10">
             <CardHeader>
-              <CardTitle className="font-display">
-                More Resources
-              </CardTitle>
+              <CardTitle className="font-display">More Resources</CardTitle>
             </CardHeader>
             <CardContent className="grid gap-3 text-sm font-body">
               <a

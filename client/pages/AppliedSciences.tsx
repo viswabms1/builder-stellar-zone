@@ -37,7 +37,6 @@ import {
   type NoticeItem as ImportedNoticeItem,
 } from "@/data/applied-sciences-events";
 
-
 type ProgramCard = {
   name: string;
   area: string;
@@ -72,7 +71,8 @@ type NoticeItem = ImportedNoticeItem;
 
 const getAllAppliedSciencesEvents = () => getAppliedSciencesEvents();
 const getAppliedSciencesNewsData = () => getAppliedSciencesNews();
-const getAppliedSciencesAnnouncementsData = () => getAppliedSciencesAnnouncements();
+const getAppliedSciencesAnnouncementsData = () =>
+  getAppliedSciencesAnnouncements();
 
 function NoticeBoardCarousel() {
   const [currentEventIndex, setCurrentEventIndex] = useState(0);
@@ -270,7 +270,9 @@ function NoticeBoardCarousel() {
         <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <h2 className="headline-2 mb-3 font-display">
-              <span className="text-foreground">School of Applied Sciences </span>
+              <span className="text-foreground">
+                School of Applied Sciences{" "}
+              </span>
               <span className="bg-brand-gradient bg-clip-text text-transparent">
                 Notice Board
               </span>
@@ -319,7 +321,6 @@ function NoticeBoardCarousel() {
 const HERO_IMAGE =
   "https://images.unsplash.com/photo-1581091870622-5f1e9b8d2f70?q=80&w=2000&auto=format&fit=crop";
 
-
 const UG_PROGRAM_CARDS: ProgramCard[] = [
   {
     name: "B.Sc Biological Sciences",
@@ -330,8 +331,10 @@ const UG_PROGRAM_CARDS: ProgramCard[] = [
       "https://images.unsplash.com/photo-1581091870622-5f1e9b8d2f70?q=80&w=1600&auto=format&fit=crop",
     link: "https://www.dsu.edu.in/basic-applied-sciences/biological-sciences",
     highlights: ["Molecular Biology", "Biotechnology", "Research"],
-    overlay: "bg-gradient-to-br from-brand-magenta/80 via-black/75 to-black/60 mix-blend-multiply",
-    badgeClass: "bg-brand-magenta/25 text-foreground/90 border border-white/30 backdrop-blur",
+    overlay:
+      "bg-gradient-to-br from-brand-magenta/80 via-black/75 to-black/60 mix-blend-multiply",
+    badgeClass:
+      "bg-brand-magenta/25 text-foreground/90 border border-white/30 backdrop-blur",
     panelClass: "bg-black/55 backdrop-blur-xl",
     featured: true,
   },
@@ -344,8 +347,10 @@ const UG_PROGRAM_CARDS: ProgramCard[] = [
       "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1600&auto=format&fit=crop",
     link: "https://www.dsu.edu.in/basic-applied-sciences/data-science",
     highlights: ["Data Analytics", "Machine Learning", "AI"],
-    overlay: "bg-gradient-to-br from-brand-blue/75 via-black/70 to-black/55 mix-blend-multiply",
-    badgeClass: "bg-brand-blue/30 text-foreground/90 border border-white/25 backdrop-blur",
+    overlay:
+      "bg-gradient-to-br from-brand-blue/75 via-black/70 to-black/55 mix-blend-multiply",
+    badgeClass:
+      "bg-brand-blue/30 text-foreground/90 border border-white/25 backdrop-blur",
     panelClass: "bg-black/55 backdrop-blur-xl",
     featured: true,
   },
@@ -358,8 +363,10 @@ const UG_PROGRAM_CARDS: ProgramCard[] = [
       "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1600&auto=format&fit=crop",
     link: "https://www.dsu.edu.in/basic-applied-sciences/allied-health",
     highlights: ["Diagnostics", "Medical Lab", "Clinical Practice"],
-    overlay: "bg-gradient-to-br from-brand-orange/70 via-black/70 to-black/55 mix-blend-multiply",
-    badgeClass: "bg-brand-orange/35 text-foreground/90 border border-white/25 backdrop-blur",
+    overlay:
+      "bg-gradient-to-br from-brand-orange/70 via-black/70 to-black/55 mix-blend-multiply",
+    badgeClass:
+      "bg-brand-orange/35 text-foreground/90 border border-white/25 backdrop-blur",
     panelClass: "bg-black/55 backdrop-blur-xl",
   },
 ];
@@ -374,8 +381,10 @@ const PG_PROGRAM_CARDS: ProgramCard[] = [
       "https://images.unsplash.com/photo-1581091870622-5f1e9b8d2f70?q=80&w=1600&auto=format&fit=crop",
     link: "https://www.dsu.edu.in/basic-applied-sciences/msc-biological-sciences",
     highlights: ["Research Thesis", "Specialisation", "Industry Internship"],
-    overlay: "bg-gradient-to-br from-brand-magenta/70 via-black/70 to-black/55 mix-blend-multiply",
-    badgeClass: "bg-brand-magenta/30 text-foreground/90 border border-white/25 backdrop-blur",
+    overlay:
+      "bg-gradient-to-br from-brand-magenta/70 via-black/70 to-black/55 mix-blend-multiply",
+    badgeClass:
+      "bg-brand-magenta/30 text-foreground/90 border border-white/25 backdrop-blur",
     panelClass: "bg-black/55 backdrop-blur-xl",
     featured: true,
   },
@@ -388,8 +397,10 @@ const PG_PROGRAM_CARDS: ProgramCard[] = [
       "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1600&auto=format&fit=crop",
     link: "https://www.dsu.edu.in/basic-applied-sciences/msc-data-science",
     highlights: ["Advanced ML", "Big Data", "AI Systems"],
-    overlay: "bg-gradient-to-br from-brand-blue/70 via-brand-magenta/60 to-black/55 mix-blend-multiply",
-    badgeClass: "bg-brand-blue/30 text-foreground/90 border border-white/25 backdrop-blur",
+    overlay:
+      "bg-gradient-to-br from-brand-blue/70 via-brand-magenta/60 to-black/55 mix-blend-multiply",
+    badgeClass:
+      "bg-brand-blue/30 text-foreground/90 border border-white/25 backdrop-blur",
     panelClass: "bg-black/55 backdrop-blur-xl",
     featured: true,
   },
@@ -444,8 +455,10 @@ const DEAN_INFO: DeanInfo = {
   name: "Dr. Sunil S. More",
   title: "Ph.D in Biochemistry",
   position: "Professor & Dean, School of Basic & Applied Sciences",
-  photo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fd8f7ea1fbcf24620b4dbc648eadcbd11?format=webp&width=800",
-  videoUrl: "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2Fedc45233389644c79e8791be99fb5d4b?alt=media&token=6308961a-7b0a-488f-9495-e3655aec61f9&apiKey=4aa279a8430d441dba9c55f659831878",
+  photo:
+    "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fd8f7ea1fbcf24620b4dbc648eadcbd11?format=webp&width=800",
+  videoUrl:
+    "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2Fedc45233389644c79e8791be99fb5d4b?alt=media&token=6308961a-7b0a-488f-9495-e3655aec61f9&apiKey=4aa279a8430d441dba9c55f659831878",
   borderColor: "border-violet-500/20",
   bgColor: "bg-violet-500/10",
 };
@@ -621,7 +634,7 @@ function HeroVideo() {
         className="absolute inset-0 object-cover"
         style={{
           filter: "brightness(1.1) contrast(1.15) saturate(1.2)",
-          objectPosition: "center top"
+          objectPosition: "center top",
         }}
       />
 
@@ -630,11 +643,18 @@ function HeroVideo() {
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/30 pointer-events-none"></div>
 
       <div className="absolute top-0 left-0 w-96 h-96 bg-brand-magenta/5 rounded-full filter blur-3xl opacity-60 animate-float pointer-events-none"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-brand-orange/5 rounded-full filter blur-3xl opacity-60 animate-float pointer-events-none" style={{ animationDelay: "2s" }}></div>
+      <div
+        className="absolute bottom-0 right-0 w-96 h-96 bg-brand-orange/5 rounded-full filter blur-3xl opacity-60 animate-float pointer-events-none"
+        style={{ animationDelay: "2s" }}
+      ></div>
 
-      <div className="absolute inset-0 opacity-5 pointer-events-none" style={{
-        backgroundImage: "repeating-linear-gradient(0deg, rgba(255,255,255,.03) 0px, rgba(255,255,255,.03) 1px, transparent 1px, transparent 2px)"
-      }}></div>
+      <div
+        className="absolute inset-0 opacity-5 pointer-events-none"
+        style={{
+          backgroundImage:
+            "repeating-linear-gradient(0deg, rgba(255,255,255,.03) 0px, rgba(255,255,255,.03) 1px, transparent 1px, transparent 2px)",
+        }}
+      ></div>
 
       <div className="relative max-w-7xl mx-auto px-3 w-full z-10 pb-20 md:pb-0">
         <div className="max-w-2xl">
@@ -686,9 +706,8 @@ export default function AppliedSciences() {
         <HeroVideo />
       </section>
 
-
       {/* Dean's Message Section */}
-      <div style={{ marginTop: '2cm' }}>
+      <div style={{ marginTop: "2cm" }}>
         <DeanSection dean={DEAN_INFO} />
       </div>
 
@@ -704,7 +723,10 @@ export default function AppliedSciences() {
                 Academic Pathways in Sciences
               </h2>
               <p className="mt-3 text-sm text-foreground font-body">
-                Comprehensive undergraduate and postgraduate programmes combining rigorous academics with research immersion, capstone projects and industry internships to prepare problem-solvers and innovators.
+                Comprehensive undergraduate and postgraduate programmes
+                combining rigorous academics with research immersion, capstone
+                projects and industry internships to prepare problem-solvers and
+                innovators.
               </p>
             </div>
           </div>
@@ -761,7 +783,8 @@ export default function AppliedSciences() {
               Explore More at DSU SBAS
             </h2>
             <p className="mt-3 text-sm text-foreground font-body">
-              Discover our research initiatives, innovation labs, placements and admission pathways
+              Discover our research initiatives, innovation labs, placements and
+              admission pathways
             </p>
           </div>
           <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-4">
@@ -801,7 +824,8 @@ export default function AppliedSciences() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-foreground/80 font-body">
-                    Faculty-led research projects and student research opportunities
+                    Faculty-led research projects and student research
+                    opportunities
                   </p>
                 </CardContent>
               </Card>
@@ -822,7 +846,8 @@ export default function AppliedSciences() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-foreground/80 font-body">
-                    Career pathways with research institutions and tech companies
+                    Career pathways with research institutions and tech
+                    companies
                   </p>
                 </CardContent>
               </Card>
@@ -866,25 +891,33 @@ export default function AppliedSciences() {
             </CardHeader>
             <CardContent className="grid gap-4 text-sm font-body text-foreground">
               <div>
-                <div className="text-foreground/70 text-xs uppercase tracking-wide">Email</div>
+                <div className="text-foreground/70 text-xs uppercase tracking-wide">
+                  Email
+                </div>
                 <div className="font-medium text-foreground">
                   sbas@dsu.edu.in
                 </div>
               </div>
               <div>
-                <div className="text-foreground/70 text-xs uppercase tracking-wide">Phone</div>
+                <div className="text-foreground/70 text-xs uppercase tracking-wide">
+                  Phone
+                </div>
                 <div className="font-medium text-foreground">
                   +91-80-49092933
                 </div>
               </div>
               <div>
-                <div className="text-foreground/70 text-xs uppercase tracking-wide">Campus Address</div>
+                <div className="text-foreground/70 text-xs uppercase tracking-wide">
+                  Campus Address
+                </div>
                 <div className="font-medium text-foreground">
                   Kanakapura Road, Bengaluru, Karnataka
                 </div>
               </div>
               <div>
-                <div className="text-foreground/70 text-xs uppercase tracking-wide">Office Hours</div>
+                <div className="text-foreground/70 text-xs uppercase tracking-wide">
+                  Office Hours
+                </div>
                 <div className="font-medium text-foreground">
                   Mon–Fri, 9:00 AM – 5:30 PM
                 </div>
@@ -893,9 +926,7 @@ export default function AppliedSciences() {
           </Card>
           <Card className="rounded-none border border-blue-500/20 bg-blue-500/10">
             <CardHeader>
-              <CardTitle className="font-display">
-                More Resources
-              </CardTitle>
+              <CardTitle className="font-display">More Resources</CardTitle>
             </CardHeader>
             <CardContent className="grid gap-3 text-sm font-body">
               <a

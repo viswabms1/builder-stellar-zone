@@ -22,12 +22,7 @@ import {
 
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { DeanSection, type DeanInfo } from "@/components/DeanSection";
 import { useAutoMuteOnScroll } from "@/hooks/useAutoMuteOnScroll";
 import {
@@ -36,7 +31,6 @@ import {
   getJournalismAnnouncements,
   type NoticeItem as ImportedNoticeItem,
 } from "@/data/journalism-mass-comm-events";
-
 
 type ProgramCard = {
   name: string;
@@ -270,7 +264,9 @@ function NoticeBoardCarousel() {
         <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <h2 className="headline-2 mb-3 font-display">
-              <span className="text-foreground">Journalism & Mass Communication </span>
+              <span className="text-foreground">
+                Journalism & Mass Communication{" "}
+              </span>
               <span className="bg-brand-gradient bg-clip-text text-transparent">
                 Notice Board
               </span>
@@ -319,7 +315,6 @@ function NoticeBoardCarousel() {
 const HERO_IMAGE =
   "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=2000&auto=format&fit=crop";
 
-
 const PROGRAM_CARDS: ProgramCard[] = [
   {
     name: "BA (Journalism & Mass Communication)",
@@ -329,9 +324,15 @@ const PROGRAM_CARDS: ProgramCard[] = [
     image:
       "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1600&auto=format&fit=crop",
     link: "/academics/journalism-mass-communication/ba",
-    highlights: ["Multimedia Storytelling", "Broadcast Production", "Digital Media"],
-    overlay: "bg-gradient-to-br from-brand-magenta/80 via-black/75 to-black/60 mix-blend-multiply",
-    badgeClass: "bg-brand-magenta/25 text-foreground/90 border border-white/30 backdrop-blur",
+    highlights: [
+      "Multimedia Storytelling",
+      "Broadcast Production",
+      "Digital Media",
+    ],
+    overlay:
+      "bg-gradient-to-br from-brand-magenta/80 via-black/75 to-black/60 mix-blend-multiply",
+    badgeClass:
+      "bg-brand-magenta/25 text-foreground/90 border border-white/30 backdrop-blur",
     panelClass: "bg-black/55 backdrop-blur-xl",
     featured: true,
   },
@@ -343,8 +344,7 @@ const CALENDAR_ENTRIES: CalendarEntry[] = [
     academicYear: "2025-26",
     description:
       "Detailed timeline for journalism programmes including newsroom labs, production cycles and internship periods.",
-    documentUrl:
-      "https://www.dsu.edu.in/images/CJMC/calendar_2025_26.pdf",
+    documentUrl: "https://www.dsu.edu.in/images/CJMC/calendar_2025_26.pdf",
     tag: "CJMC",
   },
 ];
@@ -364,7 +364,8 @@ const FEATURED_NEWS: NewsItem[] = [
     image:
       "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Ff67a08f95a24431783dc54fc189e605b?format=webp&width=800",
     category: "Research",
-    title: "Faculty Research on Media Ethics Published in International Journal",
+    title:
+      "Faculty Research on Media Ethics Published in International Journal",
     excerpt:
       "DSU CJMC faculty publish research on ethical journalism practices and digital storytelling evolution.",
     date: "Nov 11, 2025",
@@ -386,8 +387,10 @@ const DEAN_INFO: DeanInfo = {
   name: "Dr. K Sai Prasad",
   title: "Professor & Dean",
   position: "Dean, School of Journalism & Mass Communication",
-  photo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F71f29d6bd6b5411ab1eb11bd6367da53?format=webp&width=800",
-  videoUrl: "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F6b6bfa4f3d9e4297af09ef22593ed739?alt=media&token=acbac4ea-e3f5-4f09-992d-fd414eed37c6&apiKey=4aa279a8430d441dba9c55f659831878",
+  photo:
+    "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F71f29d6bd6b5411ab1eb11bd6367da53?format=webp&width=800",
+  videoUrl:
+    "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F6b6bfa4f3d9e4297af09ef22593ed739?alt=media&token=acbac4ea-e3f5-4f09-992d-fd414eed37c6&apiKey=4aa279a8430d441dba9c55f659831878",
   borderColor: "border-rose-500/20",
   bgColor: "bg-rose-500/10",
 };
@@ -563,7 +566,7 @@ function HeroVideo() {
         className="absolute inset-0 object-cover"
         style={{
           filter: "brightness(1.1) contrast(1.15) saturate(1.2)",
-          objectPosition: "center bottom"
+          objectPosition: "center bottom",
         }}
       />
 
@@ -572,11 +575,18 @@ function HeroVideo() {
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/30 pointer-events-none"></div>
 
       <div className="absolute top-0 left-0 w-96 h-96 bg-brand-magenta/5 rounded-full filter blur-3xl opacity-60 animate-float pointer-events-none"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-brand-orange/5 rounded-full filter blur-3xl opacity-60 animate-float pointer-events-none" style={{ animationDelay: "2s" }}></div>
+      <div
+        className="absolute bottom-0 right-0 w-96 h-96 bg-brand-orange/5 rounded-full filter blur-3xl opacity-60 animate-float pointer-events-none"
+        style={{ animationDelay: "2s" }}
+      ></div>
 
-      <div className="absolute inset-0 opacity-5 pointer-events-none" style={{
-        backgroundImage: "repeating-linear-gradient(0deg, rgba(255,255,255,.03) 0px, rgba(255,255,255,.03) 1px, transparent 1px, transparent 2px)"
-      }}></div>
+      <div
+        className="absolute inset-0 opacity-5 pointer-events-none"
+        style={{
+          backgroundImage:
+            "repeating-linear-gradient(0deg, rgba(255,255,255,.03) 0px, rgba(255,255,255,.03) 1px, transparent 1px, transparent 2px)",
+        }}
+      ></div>
 
       <div className="relative max-w-7xl mx-auto px-3 w-full z-10 pb-20 md:pb-0">
         <div className="max-w-2xl">
@@ -628,9 +638,8 @@ export default function JournalismMassComm() {
         <HeroVideo />
       </section>
 
-
       {/* Dean's Message Section */}
-      <div style={{ marginTop: '2cm' }}>
+      <div style={{ marginTop: "2cm" }}>
         <DeanSection dean={DEAN_INFO} />
       </div>
 
@@ -646,7 +655,10 @@ export default function JournalismMassComm() {
                 Academic Pathways in Media & Communication
               </h2>
               <p className="mt-3 text-sm text-foreground font-body">
-                Comprehensive programme combining rigorous academics with multimedia storytelling, broadcast production, global collaborations and real-world reporting experience to prepare industry-ready communicators.
+                Comprehensive programme combining rigorous academics with
+                multimedia storytelling, broadcast production, global
+                collaborations and real-world reporting experience to prepare
+                industry-ready communicators.
               </p>
             </div>
           </div>
@@ -660,7 +672,8 @@ export default function JournalismMassComm() {
                 Bachelor Degree Program
               </h3>
               <p className="mt-2 text-sm text-foreground font-body">
-                Master multimedia storytelling across print, television, digital media and film
+                Master multimedia storytelling across print, television, digital
+                media and film
               </p>
             </div>
             <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-12">
@@ -682,7 +695,8 @@ export default function JournalismMassComm() {
               Explore More at DSU CJMC
             </h2>
             <p className="mt-3 text-sm text-foreground font-body">
-              Discover our creative studios, industry partnerships, placements and admission pathways
+              Discover our creative studios, industry partnerships, placements
+              and admission pathways
             </p>
           </div>
           <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-5">
@@ -764,7 +778,8 @@ export default function JournalismMassComm() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-foreground/80 font-body">
-                    Career pathways with media organizations and production houses
+                    Career pathways with media organizations and production
+                    houses
                   </p>
                 </CardContent>
               </Card>
@@ -808,25 +823,33 @@ export default function JournalismMassComm() {
             </CardHeader>
             <CardContent className="grid gap-4 text-sm font-body text-foreground">
               <div>
-                <div className="text-foreground/70 text-xs uppercase tracking-wide">Email</div>
+                <div className="text-foreground/70 text-xs uppercase tracking-wide">
+                  Email
+                </div>
                 <div className="font-medium text-foreground">
                   cjmc@dsu.edu.in
                 </div>
               </div>
               <div>
-                <div className="text-foreground/70 text-xs uppercase tracking-wide">Phone</div>
+                <div className="text-foreground/70 text-xs uppercase tracking-wide">
+                  Phone
+                </div>
                 <div className="font-medium text-foreground">
                   +91-80-49092933
                 </div>
               </div>
               <div>
-                <div className="text-foreground/70 text-xs uppercase tracking-wide">Campus Address</div>
+                <div className="text-foreground/70 text-xs uppercase tracking-wide">
+                  Campus Address
+                </div>
                 <div className="font-medium text-foreground">
                   Kanakapura Road, Bengaluru, Karnataka
                 </div>
               </div>
               <div>
-                <div className="text-foreground/70 text-xs uppercase tracking-wide">Office Hours</div>
+                <div className="text-foreground/70 text-xs uppercase tracking-wide">
+                  Office Hours
+                </div>
                 <div className="font-medium text-foreground">
                   Mon–Fri, 9:00 AM – 5:30 PM
                 </div>
@@ -835,9 +858,7 @@ export default function JournalismMassComm() {
           </Card>
           <Card className="rounded-none border border-blue-500/20 bg-blue-500/10">
             <CardHeader>
-              <CardTitle className="font-display">
-                More Resources
-              </CardTitle>
+              <CardTitle className="font-display">More Resources</CardTitle>
             </CardHeader>
             <CardContent className="grid gap-3 text-sm font-body">
               <a

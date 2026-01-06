@@ -38,7 +38,6 @@ import {
   type NoticeItem as ImportedNoticeItem,
 } from "@/data/health-sciences-events";
 
-
 type ProgramCard = {
   name: string;
   area: string;
@@ -73,7 +72,8 @@ type NoticeItem = ImportedNoticeItem;
 
 const getAllHealthSciencesEvents = () => getHealthSciencesEvents();
 const getHealthSciencesNewsData = () => getHealthSciencesNews();
-const getHealthSciencesAnnouncementsData = () => getHealthSciencesAnnouncements();
+const getHealthSciencesAnnouncementsData = () =>
+  getHealthSciencesAnnouncements();
 
 function NoticeBoardCarousel() {
   const [currentEventIndex, setCurrentEventIndex] = useState(0);
@@ -271,7 +271,9 @@ function NoticeBoardCarousel() {
         <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <h2 className="headline-2 mb-3 font-display">
-              <span className="text-foreground">School of Health Sciences </span>
+              <span className="text-foreground">
+                School of Health Sciences{" "}
+              </span>
               <span className="bg-brand-gradient bg-clip-text text-transparent">
                 Notice Board
               </span>
@@ -320,7 +322,6 @@ function NoticeBoardCarousel() {
 const HERO_IMAGE =
   "https://images.unsplash.com/photo-1580281657521-8a19aa08c8c8?q=80&w=2000&auto=format&fit=crop";
 
-
 const UG_PROGRAM_CARDS: ProgramCard[] = [
   {
     name: "B.Sc Nursing",
@@ -330,9 +331,15 @@ const UG_PROGRAM_CARDS: ProgramCard[] = [
     image:
       "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1600&auto=format&fit=crop",
     link: "https://www.dsu.edu.in/health-sciences/nursing",
-    highlights: ["Clinical Rotations", "Simulation Labs", "Global Certifications"],
-    overlay: "bg-gradient-to-br from-brand-magenta/80 via-black/75 to-black/60 mix-blend-multiply",
-    badgeClass: "bg-brand-magenta/25 text-foreground/90 border border-white/30 backdrop-blur",
+    highlights: [
+      "Clinical Rotations",
+      "Simulation Labs",
+      "Global Certifications",
+    ],
+    overlay:
+      "bg-gradient-to-br from-brand-magenta/80 via-black/75 to-black/60 mix-blend-multiply",
+    badgeClass:
+      "bg-brand-magenta/25 text-foreground/90 border border-white/30 backdrop-blur",
     panelClass: "bg-black/55 backdrop-blur-xl",
     featured: true,
   },
@@ -345,8 +352,10 @@ const UG_PROGRAM_CARDS: ProgramCard[] = [
       "https://images.unsplash.com/photo-1585523740023-dea1b3ffe518?q=80&w=1600&auto=format&fit=crop",
     link: "https://www.dsu.edu.in/health-sciences/pharmacy",
     highlights: ["Pharmaceutics", "Pharmacology", "Research"],
-    overlay: "bg-gradient-to-br from-brand-blue/75 via-black/70 to-black/55 mix-blend-multiply",
-    badgeClass: "bg-brand-blue/30 text-foreground/90 border border-white/25 backdrop-blur",
+    overlay:
+      "bg-gradient-to-br from-brand-blue/75 via-black/70 to-black/55 mix-blend-multiply",
+    badgeClass:
+      "bg-brand-blue/30 text-foreground/90 border border-white/25 backdrop-blur",
     panelClass: "bg-black/55 backdrop-blur-xl",
     featured: true,
   },
@@ -359,8 +368,10 @@ const UG_PROGRAM_CARDS: ProgramCard[] = [
       "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1600&auto=format&fit=crop",
     link: "https://www.dsu.edu.in/health-sciences/physiotherapy",
     highlights: ["Sports Therapy", "Neuro Rehab", "Cardio Rehab"],
-    overlay: "bg-gradient-to-br from-brand-orange/70 via-black/70 to-black/55 mix-blend-multiply",
-    badgeClass: "bg-brand-orange/35 text-foreground/90 border border-white/25 backdrop-blur",
+    overlay:
+      "bg-gradient-to-br from-brand-orange/70 via-black/70 to-black/55 mix-blend-multiply",
+    badgeClass:
+      "bg-brand-orange/35 text-foreground/90 border border-white/25 backdrop-blur",
     panelClass: "bg-black/55 backdrop-blur-xl",
   },
   {
@@ -372,8 +383,10 @@ const UG_PROGRAM_CARDS: ProgramCard[] = [
       "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1600&auto=format&fit=crop",
     link: "https://www.dsu.edu.in/health-sciences/allied-health-sciences",
     highlights: ["Lab Technology", "Imaging", "Emergency Care"],
-    overlay: "bg-gradient-to-br from-brand-magenta/70 via-black/70 to-black/55 mix-blend-multiply",
-    badgeClass: "bg-brand-magenta/30 text-foreground/90 border border-white/25 backdrop-blur",
+    overlay:
+      "bg-gradient-to-br from-brand-magenta/70 via-black/70 to-black/55 mix-blend-multiply",
+    badgeClass:
+      "bg-brand-magenta/30 text-foreground/90 border border-white/25 backdrop-blur",
     panelClass: "bg-black/55 backdrop-blur-xl",
   },
 ];
@@ -388,8 +401,10 @@ const PG_PROGRAM_CARDS: ProgramCard[] = [
       "https://images.unsplash.com/photo-1585523740023-dea1b3ffe518?q=80&w=1600&auto=format&fit=crop",
     link: "https://www.dsu.edu.in/health-sciences/pharmacy",
     highlights: ["Research Thesis", "Specializations", "Industry Internship"],
-    overlay: "bg-gradient-to-br from-brand-magenta/70 via-black/70 to-black/55 mix-blend-multiply",
-    badgeClass: "bg-brand-magenta/30 text-foreground/90 border border-white/25 backdrop-blur",
+    overlay:
+      "bg-gradient-to-br from-brand-magenta/70 via-black/70 to-black/55 mix-blend-multiply",
+    badgeClass:
+      "bg-brand-magenta/30 text-foreground/90 border border-white/25 backdrop-blur",
     panelClass: "bg-black/55 backdrop-blur-xl",
     featured: true,
   },
@@ -402,8 +417,10 @@ const PG_PROGRAM_CARDS: ProgramCard[] = [
       "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1600&auto=format&fit=crop",
     link: "https://www.dsu.edu.in/health-sciences/physiotherapy",
     highlights: ["Specializations", "Research", "Clinical Excellence"],
-    overlay: "bg-gradient-to-br from-brand-blue/70 via-black/70 to-black/55 mix-blend-multiply",
-    badgeClass: "bg-brand-blue/30 text-foreground/90 border border-white/25 backdrop-blur",
+    overlay:
+      "bg-gradient-to-br from-brand-blue/70 via-black/70 to-black/55 mix-blend-multiply",
+    badgeClass:
+      "bg-brand-blue/30 text-foreground/90 border border-white/25 backdrop-blur",
     panelClass: "bg-black/55 backdrop-blur-xl",
     featured: true,
   },
@@ -416,8 +433,10 @@ const PG_PROGRAM_CARDS: ProgramCard[] = [
       "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1600&auto=format&fit=crop",
     link: "https://www.dsu.edu.in/health-sciences/nursing",
     highlights: ["Leadership", "Pedagogy", "Research"],
-    overlay: "bg-gradient-to-br from-brand-orange/70 via-black/70 to-black/55 mix-blend-multiply",
-    badgeClass: "bg-brand-orange/35 text-foreground/90 border border-white/25 backdrop-blur",
+    overlay:
+      "bg-gradient-to-br from-brand-orange/70 via-black/70 to-black/55 mix-blend-multiply",
+    badgeClass:
+      "bg-brand-orange/35 text-foreground/90 border border-white/25 backdrop-blur",
     panelClass: "bg-black/55 backdrop-blur-xl",
   },
 ];
@@ -439,7 +458,8 @@ const FEATURED_NEWS: NewsItem[] = [
     image:
       "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fbf6a54aff7814535b71eda78a3d5f95e?format=webp&width=800",
     category: "Excellence",
-    title: "Health Sciences Students Awarded Best Research in Clinical Practice",
+    title:
+      "Health Sciences Students Awarded Best Research in Clinical Practice",
     excerpt:
       "DSU nursing students receive national recognition for innovative clinical research and patient care excellence.",
     date: "Nov 12, 2025",
@@ -449,7 +469,8 @@ const FEATURED_NEWS: NewsItem[] = [
     image:
       "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Ff67a08f95a24431783dc54fc189e605b?format=webp&width=800",
     category: "Research",
-    title: "Faculty Research on Healthcare Innovation Published in International Journal",
+    title:
+      "Faculty Research on Healthcare Innovation Published in International Journal",
     excerpt:
       "DSU Health Sciences faculty publish groundbreaking research on patient-centric healthcare delivery systems.",
     date: "Nov 8, 2025",
@@ -471,8 +492,10 @@ const DEAN_INFO: DeanInfo = {
   name: "Dr. Rajesh Patel",
   title: "M.D., Ph.D",
   position: "Dean, School of Health Sciences",
-  photo: "https://images.unsplash.com/photo-1612349317150-e71f1f641930?q=80&w=800&auto=format&fit=crop",
-  videoUrl: "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F0c95c62aa88741fca8ebdc32aade53d5?alt=media&token=c57ff4a9-aea8-4ff3-843b-23ce820ba630&apiKey=4aa279a8430d441dba9c55f659831878",
+  photo:
+    "https://images.unsplash.com/photo-1612349317150-e71f1f641930?q=80&w=800&auto=format&fit=crop",
+  videoUrl:
+    "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F0c95c62aa88741fca8ebdc32aade53d5?alt=media&token=c57ff4a9-aea8-4ff3-843b-23ce820ba630&apiKey=4aa279a8430d441dba9c55f659831878",
   borderColor: "border-emerald-500/20",
   bgColor: "bg-emerald-500/10",
 };
@@ -648,7 +671,7 @@ function HeroVideo() {
         className="absolute inset-0 object-cover"
         style={{
           filter: "brightness(1.1) contrast(1.15) saturate(1.2)",
-          objectPosition: "center top"
+          objectPosition: "center top",
         }}
       />
 
@@ -657,11 +680,18 @@ function HeroVideo() {
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/30 pointer-events-none"></div>
 
       <div className="absolute top-0 left-0 w-96 h-96 bg-brand-magenta/5 rounded-full filter blur-3xl opacity-60 animate-float pointer-events-none"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-brand-orange/5 rounded-full filter blur-3xl opacity-60 animate-float pointer-events-none" style={{ animationDelay: "2s" }}></div>
+      <div
+        className="absolute bottom-0 right-0 w-96 h-96 bg-brand-orange/5 rounded-full filter blur-3xl opacity-60 animate-float pointer-events-none"
+        style={{ animationDelay: "2s" }}
+      ></div>
 
-      <div className="absolute inset-0 opacity-5 pointer-events-none" style={{
-        backgroundImage: "repeating-linear-gradient(0deg, rgba(255,255,255,.03) 0px, rgba(255,255,255,.03) 1px, transparent 1px, transparent 2px)"
-      }}></div>
+      <div
+        className="absolute inset-0 opacity-5 pointer-events-none"
+        style={{
+          backgroundImage:
+            "repeating-linear-gradient(0deg, rgba(255,255,255,.03) 0px, rgba(255,255,255,.03) 1px, transparent 1px, transparent 2px)",
+        }}
+      ></div>
 
       <div className="relative max-w-7xl mx-auto px-3 w-full z-10 pb-20 md:pb-0">
         <div className="max-w-2xl">
@@ -727,7 +757,6 @@ export default function HealthSciences() {
         <HeroVideo />
       </section>
 
-
       {/* Dean's Message Section */}
       <DeanSection dean={DEAN_INFO} />
 
@@ -743,7 +772,10 @@ export default function HealthSciences() {
                 Academic Pathways in Health Sciences
               </h2>
               <p className="mt-3 text-sm text-foreground font-body">
-                Comprehensive undergraduate and postgraduate programmes combining rigorous academics with clinical immersion, research and mentorship to prepare compassionate healthcare professionals.
+                Comprehensive undergraduate and postgraduate programmes
+                combining rigorous academics with clinical immersion, research
+                and mentorship to prepare compassionate healthcare
+                professionals.
               </p>
             </div>
           </div>
@@ -758,7 +790,8 @@ export default function HealthSciences() {
                 Bachelor Degree Programs
               </h3>
               <p className="mt-2 text-sm text-foreground font-body">
-                Build foundation in nursing, pharmacy, physiotherapy and allied health sciences
+                Build foundation in nursing, pharmacy, physiotherapy and allied
+                health sciences
               </p>
             </div>
             <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-12">
@@ -800,7 +833,8 @@ export default function HealthSciences() {
               Explore More at DSU Health Sciences
             </h2>
             <p className="mt-3 text-sm text-foreground font-body">
-              Discover our clinical excellence, research initiatives, placements and admission pathways
+              Discover our clinical excellence, research initiatives, placements
+              and admission pathways
             </p>
           </div>
           <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-4">
@@ -819,7 +853,8 @@ export default function HealthSciences() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-foreground/80 font-body">
-                    Clinical research initiatives and simulation-powered learning labs
+                    Clinical research initiatives and simulation-powered
+                    learning labs
                   </p>
                 </CardContent>
               </Card>
@@ -840,7 +875,8 @@ export default function HealthSciences() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-foreground/80 font-body">
-                    Faculty-led clinical research and translational medicine initiatives
+                    Faculty-led clinical research and translational medicine
+                    initiatives
                   </p>
                 </CardContent>
               </Card>
@@ -861,7 +897,8 @@ export default function HealthSciences() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-foreground/80 font-body">
-                    Career pathways with leading hospitals and healthcare organizations
+                    Career pathways with leading hospitals and healthcare
+                    organizations
                   </p>
                 </CardContent>
               </Card>
@@ -905,25 +942,33 @@ export default function HealthSciences() {
             </CardHeader>
             <CardContent className="grid gap-4 text-sm font-body text-foreground">
               <div>
-                <div className="text-foreground/70 text-xs uppercase tracking-wide">Email</div>
+                <div className="text-foreground/70 text-xs uppercase tracking-wide">
+                  Email
+                </div>
                 <div className="font-medium text-foreground">
                   health-sciences@dsu.edu.in
                 </div>
               </div>
               <div>
-                <div className="text-foreground/70 text-xs uppercase tracking-wide">Phone</div>
+                <div className="text-foreground/70 text-xs uppercase tracking-wide">
+                  Phone
+                </div>
                 <div className="font-medium text-foreground">
                   +91-80-49092933
                 </div>
               </div>
               <div>
-                <div className="text-foreground/70 text-xs uppercase tracking-wide">Campus Address</div>
+                <div className="text-foreground/70 text-xs uppercase tracking-wide">
+                  Campus Address
+                </div>
                 <div className="font-medium text-foreground">
                   Kanakapura Road, Bengaluru, Karnataka
                 </div>
               </div>
               <div>
-                <div className="text-foreground/70 text-xs uppercase tracking-wide">Office Hours</div>
+                <div className="text-foreground/70 text-xs uppercase tracking-wide">
+                  Office Hours
+                </div>
                 <div className="font-medium text-foreground">
                   Mon–Fri, 9:00 AM – 5:30 PM
                 </div>
@@ -932,9 +977,7 @@ export default function HealthSciences() {
           </Card>
           <Card className="rounded-none border border-blue-500/20 bg-blue-500/10">
             <CardHeader>
-              <CardTitle className="font-display">
-                More Resources
-              </CardTitle>
+              <CardTitle className="font-display">More Resources</CardTitle>
             </CardHeader>
             <CardContent className="grid gap-3 text-sm font-body">
               <a

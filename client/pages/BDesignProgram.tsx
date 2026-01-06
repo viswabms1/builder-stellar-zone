@@ -1,7 +1,13 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import {
   CalendarDays,
@@ -49,7 +55,10 @@ export default function BDesignProgram() {
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero */}
       <section className="relative">
-        <div className="h-[30vh] sm:h-[65vh] md:h-[65vh] w-full overflow-hidden" style={{ minHeight: '180px' }}>
+        <div
+          className="h-[30vh] sm:h-[65vh] md:h-[65vh] w-full overflow-hidden"
+          style={{ minHeight: "180px" }}
+        >
           <img
             src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F977d2ec23be54fddb525d7c691a5fa60?format=webp&width=800"
             alt="Bachelor of Design Program"
@@ -58,19 +67,31 @@ export default function BDesignProgram() {
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
         </div>
-        <div className="absolute inset-0 flex items-start sm:items-center sm:pt-0 z-10" style={{ marginTop: '20px' }}>
+        <div
+          className="absolute inset-0 flex items-start sm:items-center sm:pt-0 z-10"
+          style={{ marginTop: "20px" }}
+        >
           <div className="max-w-7xl mx-auto px-3">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-brand-magenta/10 rounded-full border border-brand-magenta/20 mb-2 sm:mb-4">
               <Sparkles className="w-4 h-4 text-brand-magenta" />
-              <span className="text-xs sm:text-sm font-medium text-white font-display">Bachelor of Design</span>
+              <span className="text-xs sm:text-sm font-medium text-white font-display">
+                Bachelor of Design
+              </span>
             </div>
-            <h1 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl text-white leading-tight font-display font-bold">Bachelor of Design</h1>
+            <h1 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl text-white leading-tight font-display font-bold">
+              Bachelor of Design
+            </h1>
             <p className="subheadline text-white/90 max-w-2xl mt-2 sm:mt-3 text-sm sm:text-base font-body">
-              A comprehensive four-year program designed to transform you into an innovative designer across multiple creative disciplines with industry expertise.
+              A comprehensive four-year program designed to transform you into
+              an innovative designer across multiple creative disciplines with
+              industry expertise.
             </p>
             <div className="mt-3 sm:mt-6 hidden sm:flex flex-wrap gap-2">
               {specializations.map((s, i) => (
-                <span key={i} className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-white text-xs backdrop-blur">
+                <span
+                  key={i}
+                  className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-white text-xs backdrop-blur"
+                >
                   <s.icon className="w-3.5 h-3.5" /> {s.label}
                 </span>
               ))}
@@ -81,7 +102,9 @@ export default function BDesignProgram() {
                 target="_blank"
                 rel="noreferrer"
               >
-                <Button className="bg-brand-gradient text-foreground">Apply Now <GraduationCap className="w-4 h-4 ml-2" /></Button>
+                <Button className="bg-brand-gradient text-foreground">
+                  Apply Now <GraduationCap className="w-4 h-4 ml-2" />
+                </Button>
               </a>
             </div>
           </div>
@@ -92,8 +115,12 @@ export default function BDesignProgram() {
       <section className="px-3 py-8 bg-gradient-to-r from-brand-magenta/5 via-brand-blue/5 to-brand-orange/5 border-y border-border/30">
         <div className="max-w-6xl mx-auto">
           <div className="mb-8">
-            <h2 className="headline-2 font-display mb-2">Specialization Areas</h2>
-            <p className="text-foreground/80 font-body">Choose your creative path in design</p>
+            <h2 className="headline-2 font-display mb-2">
+              Specialization Areas
+            </h2>
+            <p className="text-foreground/80 font-body">
+              Choose your creative path in design
+            </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {/* B.Design Program */}
@@ -101,16 +128,31 @@ export default function BDesignProgram() {
               <CardHeader>
                 <div className="flex items-center gap-2 mb-2">
                   <GraduationCap className="w-5 h-5 text-brand-magenta" />
-                  <Badge className="bg-brand-magenta/20 text-brand-magenta border-brand-magenta/30">Undergraduate</Badge>
+                  <Badge className="bg-brand-magenta/20 text-brand-magenta border-brand-magenta/30">
+                    Undergraduate
+                  </Badge>
                 </div>
-                <CardTitle className="font-display">Bachelor of Design</CardTitle>
-                <CardDescription className="font-body">4-Year Program</CardDescription>
+                <CardTitle className="font-display">
+                  Bachelor of Design
+                </CardTitle>
+                <CardDescription className="font-body">
+                  4-Year Program
+                </CardDescription>
               </CardHeader>
               <CardContent className="space-y-3">
-                <p className="text-sm text-foreground font-body">Specializations in:</p>
+                <p className="text-sm text-foreground font-body">
+                  Specializations in:
+                </p>
                 <div className="flex flex-wrap gap-2">
-                  {["Product Design", "User Experience Design", "Animation & VFX", "Game Design"].map((spec, i) => (
-                    <Badge key={i} variant="secondary" className="text-xs">{spec}</Badge>
+                  {[
+                    "Product Design",
+                    "User Experience Design",
+                    "Animation & VFX",
+                    "Game Design",
+                  ].map((spec, i) => (
+                    <Badge key={i} variant="secondary" className="text-xs">
+                      {spec}
+                    </Badge>
                   ))}
                 </div>
               </CardContent>
@@ -121,16 +163,32 @@ export default function BDesignProgram() {
               <CardHeader>
                 <div className="flex items-center gap-2 mb-2">
                   <BookOpen className="w-5 h-5 text-brand-blue" />
-                  <Badge className="bg-brand-blue/20 text-brand-blue border-brand-blue/30">Key Features</Badge>
+                  <Badge className="bg-brand-blue/20 text-brand-blue border-brand-blue/30">
+                    Key Features
+                  </Badge>
                 </div>
-                <CardTitle className="font-display">Program Highlights</CardTitle>
-                <CardDescription className="font-body">What makes B.Design unique</CardDescription>
+                <CardTitle className="font-display">
+                  Program Highlights
+                </CardTitle>
+                <CardDescription className="font-body">
+                  What makes B.Design unique
+                </CardDescription>
               </CardHeader>
               <CardContent className="space-y-3">
-                <p className="text-sm text-foreground font-body">Industry-ready curriculum with:</p>
+                <p className="text-sm text-foreground font-body">
+                  Industry-ready curriculum with:
+                </p>
                 <div className="flex flex-wrap gap-2">
-                  {["Design Studios", "Digital Labs", "Industry Partnerships", "Internships", "Mentorship"].map((feat, i) => (
-                    <Badge key={i} variant="secondary" className="text-xs">{feat}</Badge>
+                  {[
+                    "Design Studios",
+                    "Digital Labs",
+                    "Industry Partnerships",
+                    "Internships",
+                    "Mentorship",
+                  ].map((feat, i) => (
+                    <Badge key={i} variant="secondary" className="text-xs">
+                      {feat}
+                    </Badge>
                   ))}
                 </div>
               </CardContent>
@@ -139,7 +197,9 @@ export default function BDesignProgram() {
             {/* Quick Info */}
             <Card className="border border-border/50 bg-card/50 backdrop-blur-sm">
               <CardHeader>
-                <CardTitle className="text-lg font-display">Why Choose B.Design?</CardTitle>
+                <CardTitle className="text-lg font-display">
+                  Why Choose B.Design?
+                </CardTitle>
               </CardHeader>
               <CardContent className="space-y-2 text-sm font-body">
                 <div className="flex items-center gap-2">
@@ -170,23 +230,46 @@ export default function BDesignProgram() {
             <h2 className="headline-3 font-display">Overview</h2>
             <div className="space-y-4 text-foreground leading-relaxed font-body">
               <p>
-                The Bachelor of Design program is meticulously designed to nurture creative thinkers and innovative designers. Spanning four years, this comprehensive curriculum blends theoretical knowledge with hands-on practical training across multiple design disciplines, preparing students to excel in today's dynamic creative industry.
+                The Bachelor of Design program is meticulously designed to
+                nurture creative thinkers and innovative designers. Spanning
+                four years, this comprehensive curriculum blends theoretical
+                knowledge with hands-on practical training across multiple
+                design disciplines, preparing students to excel in today's
+                dynamic creative industry.
               </p>
               <p>
-                In an age of digital transformation and user-centered design, skilled designers are more essential than ever. This program addresses the evolving needs of the design industry by immersing students in contemporary design practices—from product and interface design to animation, visual effects, and interactive game design—while grounding them in fundamental design principles and human-centered problem solving.
+                In an age of digital transformation and user-centered design,
+                skilled designers are more essential than ever. This program
+                addresses the evolving needs of the design industry by immersing
+                students in contemporary design practices—from product and
+                interface design to animation, visual effects, and interactive
+                game design—while grounding them in fundamental design
+                principles and human-centered problem solving.
               </p>
               <p>
-                Beyond technical proficiency in design tools and software, the program develops creative thinking, visual communication skills, and the ability to solve complex design challenges. Students learn to work collaboratively in dynamic creative environments, understand user behavior and needs, and maintain design excellence and innovation standards.
+                Beyond technical proficiency in design tools and software, the
+                program develops creative thinking, visual communication skills,
+                and the ability to solve complex design challenges. Students
+                learn to work collaboratively in dynamic creative environments,
+                understand user behavior and needs, and maintain design
+                excellence and innovation standards.
               </p>
             </div>
             <Card className="border border-border/50 bg-card/50 backdrop-blur-sm">
               <CardHeader className="pb-2">
-                <CardTitle className="text-lg font-display">Program Highlights</CardTitle>
-                <CardDescription className="font-body">Core curriculum focus areas</CardDescription>
+                <CardTitle className="text-lg font-display">
+                  Program Highlights
+                </CardTitle>
+                <CardDescription className="font-body">
+                  Core curriculum focus areas
+                </CardDescription>
               </CardHeader>
               <CardContent className="grid sm:grid-cols-2 gap-3 pt-0">
                 {highlights.map((h, idx) => (
-                  <div key={idx} className="flex items-start gap-2 text-sm text-foreground">
+                  <div
+                    key={idx}
+                    className="flex items-start gap-2 text-sm text-foreground"
+                  >
                     <CheckCircle2 className="w-4 h-4 text-brand-magenta mt-0.5" />
                     <span>{h}</span>
                   </div>
@@ -197,11 +280,17 @@ export default function BDesignProgram() {
           <div>
             <Card className="overflow-hidden border border-border/50 bg-card/50">
               <div className="relative h-40">
-                <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=400&fit=crop" alt="Design Studio" className="w-full h-full object-cover" />
+                <img
+                  src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=400&fit=crop"
+                  alt="Design Studio"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <CardHeader>
                 <CardTitle className="font-display">Program Details</CardTitle>
-                <CardDescription className="font-body">Key specifications</CardDescription>
+                <CardDescription className="font-body">
+                  Key specifications
+                </CardDescription>
               </CardHeader>
               <CardContent className="grid gap-3 text-sm font-body">
                 <div className="flex items-center justify-between border-b border-border/20 pb-3">
@@ -226,8 +315,12 @@ export default function BDesignProgram() {
       <section className="px-3 py-8 bg-gradient-to-r from-brand-magenta/5 via-brand-blue/5 to-brand-orange/5">
         <div className="max-w-6xl mx-auto">
           <div className="mb-8">
-            <h2 className="headline-2 font-display mb-2">Design Specializations</h2>
-            <p className="text-foreground/80 font-body">Deep dive into each specialization track</p>
+            <h2 className="headline-2 font-display mb-2">
+              Design Specializations
+            </h2>
+            <p className="text-foreground/80 font-body">
+              Deep dive into each specialization track
+            </p>
           </div>
           <div className="grid md:grid-cols-2 gap-4">
             {/* Product Design */}
@@ -235,13 +328,18 @@ export default function BDesignProgram() {
               <CardHeader>
                 <div className="flex items-center gap-2 mb-2">
                   <PenTool className="w-5 h-5 text-brand-magenta" />
-                  <Badge className="bg-brand-magenta/20 text-brand-magenta border-brand-magenta/30">Specialization</Badge>
+                  <Badge className="bg-brand-magenta/20 text-brand-magenta border-brand-magenta/30">
+                    Specialization
+                  </Badge>
                 </div>
                 <CardTitle className="font-display">Product Design</CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
                 <p className="text-sm text-foreground/90 font-body">
-                  Master the art of creating innovative physical and digital products that solve real-world problems. Learn design methodology, materials, manufacturing, and user-centered design principles.
+                  Master the art of creating innovative physical and digital
+                  products that solve real-world problems. Learn design
+                  methodology, materials, manufacturing, and user-centered
+                  design principles.
                 </p>
                 <div className="space-y-2 text-sm font-body">
                   <div className="flex items-start gap-2">
@@ -265,13 +363,19 @@ export default function BDesignProgram() {
               <CardHeader>
                 <div className="flex items-center gap-2 mb-2">
                   <Eye className="w-5 h-5 text-brand-blue" />
-                  <Badge className="bg-brand-blue/20 text-brand-blue border-brand-blue/30">Specialization</Badge>
+                  <Badge className="bg-brand-blue/20 text-brand-blue border-brand-blue/30">
+                    Specialization
+                  </Badge>
                 </div>
-                <CardTitle className="font-display">User Experience Design</CardTitle>
+                <CardTitle className="font-display">
+                  User Experience Design
+                </CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
                 <p className="text-sm text-foreground/90 font-body">
-                  Create intuitive digital experiences that delight users. Develop expertise in user research, interaction design, interface design, and usability testing.
+                  Create intuitive digital experiences that delight users.
+                  Develop expertise in user research, interaction design,
+                  interface design, and usability testing.
                 </p>
                 <div className="space-y-2 text-sm font-body">
                   <div className="flex items-start gap-2">
@@ -295,13 +399,17 @@ export default function BDesignProgram() {
               <CardHeader>
                 <div className="flex items-center gap-2 mb-2">
                   <Wand2 className="w-5 h-5 text-brand-orange" />
-                  <Badge className="bg-brand-orange/20 text-brand-orange border-brand-orange/30">Specialization</Badge>
+                  <Badge className="bg-brand-orange/20 text-brand-orange border-brand-orange/30">
+                    Specialization
+                  </Badge>
                 </div>
                 <CardTitle className="font-display">Animation & VFX</CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
                 <p className="text-sm text-foreground/90 font-body">
-                  Bring stories to life through animation and visual effects. Master 2D/3D animation, motion graphics, video compositing, and effects creation for film and digital media.
+                  Bring stories to life through animation and visual effects.
+                  Master 2D/3D animation, motion graphics, video compositing,
+                  and effects creation for film and digital media.
                 </p>
                 <div className="space-y-2 text-sm font-body">
                   <div className="flex items-start gap-2">
@@ -325,13 +433,17 @@ export default function BDesignProgram() {
               <CardHeader>
                 <div className="flex items-center gap-2 mb-2">
                   <Gamepad2 className="w-5 h-5 text-brand-magenta" />
-                  <Badge className="bg-brand-magenta/20 text-brand-magenta border-brand-magenta/30">Specialization</Badge>
+                  <Badge className="bg-brand-magenta/20 text-brand-magenta border-brand-magenta/30">
+                    Specialization
+                  </Badge>
                 </div>
                 <CardTitle className="font-display">Game Design</CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
                 <p className="text-sm text-foreground/90 font-body">
-                  Design engaging interactive experiences. Learn game mechanics, level design, narrative design, and game development using industry-standard tools.
+                  Design engaging interactive experiences. Learn game mechanics,
+                  level design, narrative design, and game development using
+                  industry-standard tools.
                 </p>
                 <div className="space-y-2 text-sm font-body">
                   <div className="flex items-start gap-2">
@@ -361,7 +473,10 @@ export default function BDesignProgram() {
             <Card className="border border-border/50 bg-card/50">
               <CardContent className="p-3 grid gap-3">
                 {careers.map((c, i) => (
-                  <div key={i} className="flex items-start gap-2 text-sm text-foreground font-body">
+                  <div
+                    key={i}
+                    className="flex items-start gap-2 text-sm text-foreground font-body"
+                  >
                     <ChevronRight className="w-3 h-3 text-brand-magenta mt-1" />
                     <span>{c}</span>
                   </div>
@@ -373,15 +488,32 @@ export default function BDesignProgram() {
             <h2 className="headline-3 mb-4 font-display">Get in Touch</h2>
             <Card className="overflow-hidden border border-border/50 bg-card/50">
               <div className="relative h-40">
-                <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=400&fit=crop" alt="Contact Design" className="w-full h-full object-cover" />
+                <img
+                  src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=400&fit=crop"
+                  alt="Contact Design"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <CardHeader>
                 <CardTitle className="font-display">Program Contact</CardTitle>
-                <CardDescription className="font-body">School of Design</CardDescription>
+                <CardDescription className="font-body">
+                  School of Design
+                </CardDescription>
               </CardHeader>
               <CardContent className="grid gap-2 text-sm font-body">
-                <div className="flex items-center justify-between"><span>Email</span><a className="font-medium hover:underline" href="mailto:design@dsu.edu.in">design@dsu.edu.in</a></div>
-                <div className="flex items-center justify-between"><span>Phone</span><span className="font-medium">+91-80-49092933</span></div>
+                <div className="flex items-center justify-between">
+                  <span>Email</span>
+                  <a
+                    className="font-medium hover:underline"
+                    href="mailto:design@dsu.edu.in"
+                  >
+                    design@dsu.edu.in
+                  </a>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span>Phone</span>
+                  <span className="font-medium">+91-80-49092933</span>
+                </div>
               </CardContent>
             </Card>
           </div>
@@ -399,7 +531,8 @@ export default function BDesignProgram() {
               </span>
             </h2>
             <p className="text-foreground/80 font-body max-w-2xl mx-auto">
-              Discover research, placements, admission pathways, and Centers of Excellence at DSU
+              Discover research, placements, admission pathways, and Centers of
+              Excellence at DSU
             </p>
           </div>
 
@@ -464,7 +597,8 @@ export default function BDesignProgram() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-foreground/80 font-body">
-                    Career pathways with design studios and tech companies worldwide
+                    Career pathways with design studios and tech companies
+                    worldwide
                   </p>
                 </CardContent>
               </Card>
@@ -505,15 +639,23 @@ export default function BDesignProgram() {
       <section className="px-3 py-8">
         <div className="max-w-4xl mx-auto text-center">
           <div className="rounded-3xl p-5 border border-brand-magenta/20 bg-brand-magenta/5">
-            <h3 className="headline-3 mb-3 font-display">Join DSU Bachelor of Design</h3>
-            <p className="text-foreground mb-6 font-body">Explore programs, discover opportunities, and launch your career in design and creative innovation.</p>
+            <h3 className="headline-3 mb-3 font-display">
+              Join DSU Bachelor of Design
+            </h3>
+            <p className="text-foreground mb-6 font-body">
+              Explore programs, discover opportunities, and launch your career
+              in design and creative innovation.
+            </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a
                 href="https://admissions.dsu.edu.in/"
                 target="_blank"
                 rel="noreferrer"
               >
-                <Button className="bg-brand-gradient text-foreground">Apply Now<GraduationCap className="w-4 h-4 ml-2" /></Button>
+                <Button className="bg-brand-gradient text-foreground">
+                  Apply Now
+                  <GraduationCap className="w-4 h-4 ml-2" />
+                </Button>
               </a>
             </div>
           </div>
@@ -544,12 +686,15 @@ function CurriculumLibrary() {
     {
       id: "b-design",
       label: "B.Design Curriculum",
-      description: "4-year comprehensive undergraduate pathway with four specialization tracks",
-      image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=400&fit=crop",
+      description:
+        "4-year comprehensive undergraduate pathway with four specialization tracks",
+      image:
+        "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=400&fit=crop",
       batches: [
         {
           year: "2025-26",
-          summary: "Latest curriculum with comprehensive coverage of Product Design, User Experience Design, Animation & VFX, and Game Design across all 8 semesters with industry partnerships",
+          summary:
+            "Latest curriculum with comprehensive coverage of Product Design, User Experience Design, Animation & VFX, and Game Design across all 8 semesters with industry partnerships",
           documentUrl:
             "https://www.dsu.edu.in/images/BDesign/curriculum-2025-26.pdf",
         },
@@ -569,7 +714,9 @@ function CurriculumLibrary() {
               </span>
             </h2>
             <p className="max-w-2xl text-sm text-foreground sm:text-base font-body">
-              Access comprehensive curriculum documentation, course structures, learning outcomes, and downloadable syllabus for the Bachelor of Design program.
+              Access comprehensive curriculum documentation, course structures,
+              learning outcomes, and downloadable syllabus for the Bachelor of
+              Design program.
             </p>
           </div>
           <Badge className="w-fit rounded-full bg-brand-magenta/15 px-4 py-2 text-xs font-semibold text-brand-magenta border border-brand-magenta/20">
@@ -581,7 +728,8 @@ function CurriculumLibrary() {
           {programs.map((program, programIdx) => {
             const isOpen = openProgram === program.id;
             const borderClass = "border-brand-magenta/30";
-            const badgeClass = "bg-brand-magenta/15 text-brand-magenta border-brand-magenta/20";
+            const badgeClass =
+              "bg-brand-magenta/15 text-brand-magenta border-brand-magenta/20";
 
             return (
               <div
@@ -603,8 +751,12 @@ function CurriculumLibrary() {
                     </Badge>
                   </div>
                   <div>
-                    <h3 className="headline-3 font-display text-foreground mb-2">{program.label}</h3>
-                    <p className="text-sm text-foreground/80 font-body">{program.description}</p>
+                    <h3 className="headline-3 font-display text-foreground mb-2">
+                      {program.label}
+                    </h3>
+                    <p className="text-sm text-foreground/80 font-body">
+                      {program.description}
+                    </p>
                   </div>
                   <Button
                     variant="outline"
@@ -640,7 +792,9 @@ function CurriculumLibrary() {
                               )}
                             </div>
                           </div>
-                          <p className="text-xs text-foreground/80 font-body mb-3 leading-relaxed">{batch.summary}</p>
+                          <p className="text-xs text-foreground/80 font-body mb-3 leading-relaxed">
+                            {batch.summary}
+                          </p>
                           {batch.documentUrl && (
                             <Button
                               variant="ghost"
@@ -648,7 +802,12 @@ function CurriculumLibrary() {
                               className="w-full justify-center gap-1 rounded text-xs font-semibold bg-brand-magenta/10 text-brand-magenta hover:bg-brand-magenta/20"
                               asChild
                             >
-                              <a href={batch.documentUrl} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-1">
+                              <a
+                                href={batch.documentUrl}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="flex items-center justify-center gap-1"
+                              >
                                 <Download className="h-3 w-3" />
                                 Download Curriculum PDF
                               </a>
