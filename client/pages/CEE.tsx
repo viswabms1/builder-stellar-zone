@@ -454,17 +454,14 @@ function HeroVideo() {
         backgroundImage: "repeating-linear-gradient(0deg, rgba(255,255,255,.03) 0px, rgba(255,255,255,.03) 1px, transparent 1px, transparent 2px)"
       }}></div>
 
-      <div className="relative max-w-7xl mx-auto px-6 w-full z-10 pb-20 md:pb-0">
+      <div className="relative max-w-7xl mx-auto px-3 w-full z-10 pb-20 md:pb-0">
         <div className="max-w-2xl">
-          <p className="text-sm md:text-base text-white/80 mb-4 uppercase tracking-widest font-display">
+          <p className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 uppercase tracking-widest font-display">
             Center for Executive Education
           </p>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight font-display">
+          <h1 className="text-sm md:text-base text-white/80 mb-6 leading-tight font-display">
             Executive MBA & Leadership Ecosystem
           </h1>
-          <p className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed max-w-xl font-display">
-            Propel your career with weekend executive programmes, CXO mentorship and innovation labs tailored for working professionals.
-          </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
             <a
