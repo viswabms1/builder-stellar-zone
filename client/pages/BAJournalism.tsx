@@ -55,7 +55,7 @@ export default function BAJournalism() {
       <section className="relative">
         <div className="h-[50vh] sm:h-[65vh] md:h-[65vh] w-full overflow-hidden" style={{ minHeight: '200px' }}>
           <img
-            src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1200&auto=format&fit=crop"
+            src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Ff91ee8e671554e7098ba1bd121f3e43d?format=webp&width=800"
             alt="BA Journalism Program"
             className="w-full h-full object-cover"
           />
