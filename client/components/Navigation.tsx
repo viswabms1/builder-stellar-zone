@@ -848,6 +848,35 @@ export default function Navigation() {
               <span>NVIDIA's AI Architecture</span>
             </Link>
 
+            {/* Top Menu Items (Utility Links) - Moved to bottom */}
+            <div
+              className={`pt-4 space-y-2 border-t ${
+                theme === "light" ? "border-orange-200" : "border-white/20"
+              }`}
+            >
+              <p
+                className={`text-xs font-semibold px-3 ${
+                  theme === "light" ? "text-gray-600" : "text-white/60"
+                }`}
+              >
+                Quick Links
+              </p>
+              {topMenuItems.map((item, idx) => (
+                <Link
+                  key={idx}
+                  to={item.href}
+                  onClick={() => setIsOpen(false)}
+                  className={`flex items-center space-x-2 px-3 py-2 rounded-xl text-sm font-medium font-display transition-all duration-200 ${
+                    theme === "light"
+                      ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
+                      : "text-white/90 hover:text-white hover:bg-white/10"
+                  }`}
+                >
+                  <span>{item.name}</span>
+                </Link>
+              ))}
+            </div>
+
             <div
               className={`pt-4 space-y-3 border-t ${
                 theme === "light" ? "border-orange-200" : "border-white/20"
