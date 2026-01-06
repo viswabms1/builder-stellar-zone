@@ -623,19 +623,6 @@ export default function Index() {
                     <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </a>
-                <a
-                  href="https://dsu.edu.in/virtual-tour/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-                >
-                  <Button
-                    size="lg"
-                    className="bg-white hover:bg-white/90 text-black hover:text-black px-8 py-6 text-base font-semibold font-display transition-all duration-300 group border-2 border-white"
-                  >
-                    {t("hero.virtualTour") || "Virtual Tour"}
-                  </Button>
-                </a>
               </div>
               <Link
                 to="/ai-first"

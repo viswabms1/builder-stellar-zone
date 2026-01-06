@@ -965,18 +965,6 @@ export default function ComputerApplications() {
                   <GraduationCap className="ml-2 h-4 w-4" />
                 </Button>
               </a>
-              <a
-                href="https://dsu.edu.in/virtual-tour/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <Button
-                  variant="outline"
-                  className="border-transparent bg-black/10 hover:bg-black/20 backdrop-blur-sm hover:text-white"
-                >
-                  Virtual Tour
-                </Button>
-              </a>
             </div>
           </div>
         </div>
