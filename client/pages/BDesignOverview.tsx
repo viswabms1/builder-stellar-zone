@@ -198,8 +198,8 @@ const FEATURED_NEWS: NewsItem[] = [
 ];
 
 const DEAN_INFO: DeanInfo = {
-  name: "Dr. Rajeev Kumar",
-  title: "M.Des., Ph.D",
+  name: "Prof. Dinesh Kulkarni",
+  title: "Dean – Digital Transmedia and Design",
   position: "Dean, School of Design",
   photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop",
   videoUrl: "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F8424b7a4848e447e85cd758b83aba08c?alt=media&token=c02519fd-c7bb-4aaf-adba-9897e2e5ca0f&apiKey=4aa279a8430d441dba9c55f659831878",
