@@ -319,30 +319,44 @@ export default function Navigation() {
                         )}
                       </button>
 
-                      {/* Mega Menu Dropdown */}
+                      {/* Mega Menu Dropdown - Modern Card-Based Layout */}
                       <div
-                        className={`absolute left-0 top-full mt-0 w-64 rounded-lg shadow-2xl transition-all duration-200 py-4 ${
+                        className={`absolute left-0 top-full mt-1 w-auto min-w-max max-w-2xl rounded-2xl shadow-2xl transition-all duration-300 py-5 px-5 max-h-[600px] overflow-y-auto backdrop-blur-sm ${
                           aboutMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
                         } ${
                           theme === "light"
-                            ? "bg-gradient-to-b from-orange-50 to-orange-100 text-gray-900 border border-orange-200"
-                            : "bg-gradient-to-b from-orange-600 to-red-700 text-white"
+                            ? "bg-white/95 border border-orange-200/50"
+                            : "bg-slate-800/95 border border-orange-600/30"
                         }`}
+                        style={{
+                          scrollbarWidth: 'thin',
+                          scrollbarColor: theme === "light" ? 'rgba(249, 115, 22, 0.5) rgba(249, 115, 22, 0.1)' : 'rgba(255, 255, 255, 0.3) rgba(255, 255, 255, 0.1)'
+                        }}
                       >
-                        {aboutSubmenus.map((submenu) => (
-                          <Link
-                            key={submenu.name}
-                            to={submenu.href}
-                            onClick={() => setAboutMenuOpen(false)}
-                            className={`block px-3 py-2.5 transition-colors text-sm ${
-                              theme === "light"
-                                ? "hover:bg-orange-200 border-b border-orange-200 last:border-b-0"
-                                : "hover:bg-white/20 border-b border-white/20 last:border-b-0"
-                            }`}
-                          >
-                            {submenu.name}
-                          </Link>
-                        ))}
+                        <div className="grid grid-cols-2 gap-4">
+                          {aboutSubmenus.map((submenu, idx) => {
+                            const cardColors = [
+                              { bg: theme === "light" ? "bg-orange-50" : "bg-orange-900/20", border: "border-orange-200/50 dark:border-orange-600/30", text: "text-orange-900 dark:text-orange-100" },
+                              { bg: theme === "light" ? "bg-pink-50" : "bg-pink-900/20", border: "border-pink-200/50 dark:border-pink-600/30", text: "text-pink-900 dark:text-pink-100" },
+                              { bg: theme === "light" ? "bg-blue-50" : "bg-blue-900/20", border: "border-blue-200/50 dark:border-blue-600/30", text: "text-blue-900 dark:text-blue-100" },
+                              { bg: theme === "light" ? "bg-purple-50" : "bg-purple-900/20", border: "border-purple-200/50 dark:border-purple-600/30", text: "text-purple-900 dark:text-purple-100" },
+                            ];
+                            const colors = cardColors[idx % cardColors.length];
+
+                            return (
+                              <Link
+                                key={submenu.name}
+                                to={submenu.href}
+                                onClick={() => setAboutMenuOpen(false)}
+                                className={`${colors.bg} ${colors.border} border rounded-xl p-4 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 group block text-sm font-semibold group-hover:text-orange-600 ${
+                                  theme === "light" ? "text-gray-900" : "text-white"
+                                }`}
+                              >
+                                {submenu.name}
+                              </Link>
+                            );
+                          })}
+                        </div>
                       </div>
                     </div>
                   );
