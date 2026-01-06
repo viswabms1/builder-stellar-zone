@@ -154,33 +154,41 @@ export default function BCom() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero Section */}
-      <div className="relative bg-gradient-to-br from-brand-magenta/10 via-brand-blue/10 to-brand-orange/10 px-6 py-16">
-        <div className="mx-auto max-w-5xl">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div className="space-y-6">
-              <div>
-                <Link to="/academics/commerce-and-management" className="inline-flex items-center gap-2 text-sm text-brand-magenta hover:text-brand-magenta/80 mb-4">
-                  <ChevronRight className="h-4 w-4 rotate-180" />
-                  Back to Programs
-                </Link>
-                <h1 className="text-4xl md:text-5xl font-bold font-display text-foreground mb-4">
-                  Bachelor of Commerce (B.Com)
-                </h1>
-                <p className="text-lg text-foreground/80 max-w-2xl">
-                  Bridge the gap between conceptual learning and practical application using GPU-accelerated financial technology. Develop professional corporate expertise through flexible, industry-aligned curriculum powered by cutting-edge fintech infrastructure.
-                </p>
+      <section className="relative">
+        <div className="h-[50vh] sm:h-[65vh] md:h-[65vh] w-full overflow-hidden" style={{ minHeight: '200px' }}>
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F1f97f3c57b4245a6a7162caaed3cb43d?format=webp&width=800"
+            alt="B.Com Program - Innovation Campus"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+        </div>
+        <div className="absolute inset-0 flex items-start md:items-center md:pt-0 z-10" style={{ marginTop: '80px' }}>
+          <div className="max-w-7xl mx-auto px-3 w-full">
+            <div className="max-w-3xl">
+              <Link to="/academics/commerce-and-management" className="inline-flex items-center gap-2 text-sm text-white/80 hover:text-white mb-4">
+                <ChevronRight className="h-4 w-4 rotate-180" />
+                Back to Programs
+              </Link>
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white leading-tight font-display font-bold mb-4">
+                Bachelor of Commerce (B.Com)
+              </h1>
+              <p className="text-sm sm:text-base text-white/90 max-w-2xl mb-6">
+                Bridge the gap between conceptual learning and practical application using GPU-accelerated financial technology. Develop professional corporate expertise through flexible, industry-aligned curriculum powered by cutting-edge fintech infrastructure.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <a href="https://admissions.dsu.edu.in/" target="_blank" rel="noreferrer">
+                  <Button className="bg-white hover:bg-white/90 text-brand-magenta hover:text-brand-magenta/80 px-8 py-6 font-semibold font-display">
+                    Apply Now
+                    <ChevronRight className="w-5 h-5 ml-2" />
+                  </Button>
+                </a>
               </div>
-            </div>
-            <div className="hidden md:block rounded-2xl overflow-hidden shadow-lg">
-              <img
-                src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F1f97f3c57b4245a6a7162caaed3cb43d?format=webp&width=800"
-                alt="B.Com Program - Innovation Campus"
-                className="w-full h-auto object-cover"
-              />
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* Program Overview */}
       <section className="px-6 py-16">
