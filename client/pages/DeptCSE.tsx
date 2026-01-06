@@ -59,7 +59,7 @@ export default function DeptCSE() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero */}
-      <section className="dept-hero-section relative pt-16 md:pt-0">
+      <section className="dept-hero-section relative pt-24 md:pt-0">
         <div className="h-[70vh] md:h-[65vh] max-h-[400px] md:max-h-none w-full overflow-hidden">
           <img
             src="https://www.dsu.edu.in/images/Engineering/CSE-dept/abt-cse.JPG"
