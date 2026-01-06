@@ -577,7 +577,7 @@ function HeroVideo() {
         backgroundImage: "repeating-linear-gradient(0deg, rgba(255,255,255,.03) 0px, rgba(255,255,255,.03) 1px, transparent 1px, transparent 2px)"
       }}></div>
 
-      <div className="relative max-w-7xl mx-auto px-3 w-full z-10 pb-20 md:pb-0">
+      <div className="relative max-w-7xl mx-auto px-3 w-full z-10 pb-6 md:pb-0">
         <div className="max-w-2xl">
           <p className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 uppercase tracking-widest font-display">
             School of Journalism & Mass Communication
