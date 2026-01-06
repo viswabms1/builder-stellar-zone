@@ -1,0 +1,986 @@
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import {
+  Brain,
+  Database,
+  BarChart3,
+  Sparkles,
+  CheckCircle2,
+  ChevronDown,
+  ChevronRight,
+  ClipboardList,
+  Download,
+  FileText,
+  GraduationCap,
+  CalendarDays,
+  BookOpen,
+  Zap,
+  Award,
+  Microscope,
+} from "lucide-react";
+
+export default function DeptAIDS() {
+  const specializations = [
+    { icon: Brain, label: "Machine Learning" },
+    { icon: Database, label: "Big Data Analytics" },
+    { icon: BarChart3, label: "Data Science" },
+    { icon: Brain, label: "Deep Learning" },
+  ];
+
+  const highlights = [
+    "Cutting-edge curriculum aligned with industry demands in AI and Data Science",
+    "Project-based learning with real-world datasets and use cases",
+    "Integration of advanced analytics and machine learning frameworks",
+    "Strong emphasis on data-driven decision making and insights",
+    "Collaborations with leading tech companies and research institutions",
+    "Opportunities for research and specialization in emerging AI technologies",
+  ];
+
+  const careers = [
+    "Data Scientist → Senior Data Scientist → Analytics Manager",
+    "Machine Learning Engineer → AI Research Engineer → Technical Lead",
+    "Business Analytics → Insights Engineer → Strategy Consultant",
+    "Strong placement record with leading tech and fintech companies",
+  ];
+
+  return (
+    <div className="min-h-screen bg-background text-foreground">
+      {/* Hero */}
+      <section className="relative">
+        <div className="h-[50vh] md:h-[65vh] w-full overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1600&auto=format&fit=crop"
+            alt="Department of AI & Data Science"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+        </div>
+        <div className="absolute inset-0 flex items-center">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-brand-blue/10 rounded-full border border-brand-blue/20 mb-4">
+              <Sparkles className="w-4 h-4 text-brand-blue" />
+              <span className="text-sm font-medium text-brand-blue font-display">Department of AI & Data Science</span>
+            </div>
+            <h1 className="headline-1 text-white leading-tight font-display">Transform Data into Intelligence</h1>
+            <p className="subheadline text-white/90 max-w-2xl mt-3 font-body">
+              Master the power of artificial intelligence and data science to solve complex business challenges at DSU.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-2">
+              {specializations.map((s, i) => (
+                <span key={i} className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-white text-xs backdrop-blur">
+                  <s.icon className="w-3.5 h-3.5" /> {s.label}
+                </span>
+              ))}
+            </div>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a
+                href="https://admissions.dsu.edu.in/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Button className="bg-brand-gradient text-foreground">Apply Now <GraduationCap className="w-4 h-4 ml-2" /></Button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Overview */}
+      <section className="px-6 py-16">
+        <div className="max-w-6xl mx-auto grid lg:grid-cols-3 gap-10 items-start">
+          <div className="lg:col-span-2 space-y-6">
+            <h2 className="headline-3 font-display">Overview</h2>
+            <p className="text-foreground leading-relaxed font-body">
+              Computer Science & Engineering (Artificial Intelligence & Data Science) is a discipline that concerns scientific methodologies, processes, and techniques drawn from statistics, cognitive science, and computing. The B.Tech AI & DS program transforms businesses around the world by equipping students with the skills to extract knowledge from structured and unstructured data. With the pace of change accelerating, the value of AI and data science provides a first-mover advantage on nascent industry trends, making impactful applications possible.
+            </p>
+            <Card className="border border-border/50 bg-card/50 backdrop-blur-sm">
+              <CardHeader className="pb-2">
+                <CardTitle className="text-lg font-display">Curriculum Highlights</CardTitle>
+                <CardDescription className="font-body">Designed for data-driven careers</CardDescription>
+              </CardHeader>
+              <CardContent className="grid sm:grid-cols-2 gap-3 pt-0">
+                {highlights.map((h, idx) => (
+                  <div key={idx} className="flex items-start gap-2 text-sm text-foreground">
+                    <CheckCircle2 className="w-4 h-4 text-brand-blue mt-0.5" />
+                    <span>{h}</span>
+                  </div>
+                ))}
+              </CardContent>
+            </Card>
+          </div>
+          <div>
+            <Card className="overflow-hidden border border-border/50 bg-card/50">
+              <div className="relative h-40">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop" alt="AI & DS Labs" className="w-full h-full object-cover" />
+              </div>
+              <CardHeader>
+                <CardTitle className="font-display">Fast Facts</CardTitle>
+                <CardDescription className="font-body">What sets AI & DS at DSU apart</CardDescription>
+              </CardHeader>
+              <CardContent className="grid gap-2 text-sm font-body">
+                <div className="flex items-center justify-between"><span>Program Type</span><span className="font-medium">B.Tech</span></div>
+                <div className="flex items-center justify-between"><span>Duration</span><span className="font-medium">4 Years</span></div>
+                <div className="flex items-center justify-between"><span>Industry Focus</span><span className="font-medium">Tech & Analytics</span></div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      <CurriculumLibrary />
+
+      <AccreditationDocuments />
+
+      <NoticeBoard />
+
+      <LabsFacilitiesCarousel />
+
+      {/* Leadership Section */}
+      <section className="px-6 py-16">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex items-center justify-between mb-8">
+            <h2 className="headline-3 font-display">Department Leadership</h2>
+            <Link to="/academics/engineering/ai-ds/faculty">
+              <Button variant="outline" className="border-brand-blue/40 hover:bg-brand-blue/10">
+                Explore full faculty list
+              </Button>
+            </Link>
+          </div>
+          <div className="max-w-sm">
+            {/* Chairperson */}
+            <div>
+              <p className="text-xs font-semibold text-brand-blue uppercase tracking-wider mb-2">Chairperson</p>
+              <Link to="/academics/engineering/ai-ds/faculty/dr-poongodi-t">
+                <div className="group relative overflow-hidden rounded-xl border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-blue/10 transition-all cursor-pointer">
+                  <div className="relative">
+                    <div className="aspect-square w-full"></div>
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=500&auto=format&fit=crop" alt="Dr. Poongodi T" className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-500" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+                  </div>
+                  <div className="absolute bottom-0 p-3 w-full">
+                    <div className="text-white text-xs opacity-80">Professor</div>
+                    <div className="text-white font-semibold text-sm font-display line-clamp-2">Dr. Poongodi T</div>
+                  </div>
+                </div>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Careers */}
+      <section className="px-6 py-16">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-10 items-start">
+          <div>
+            <h2 className="headline-3 mb-4 font-display">Career Prospects</h2>
+            <Card className="border border-border/50 bg-card/50">
+              <CardContent className="p-6 grid gap-3">
+                {careers.map((c, i) => (
+                  <div key={i} className="flex items-start gap-2 text-sm text-foreground font-body">
+                    <ChevronRight className="w-3 h-3 text-brand-blue mt-1" />
+                    <span>{c}</span>
+                  </div>
+                ))}
+              </CardContent>
+            </Card>
+          </div>
+          <div>
+            <h2 className="headline-3 mb-4 font-display">Get in Touch</h2>
+            <Card className="overflow-hidden border border-border/50 bg-card/50">
+              <div className="relative h-40">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop" alt="Contact AIIDS" className="w-full h-full object-cover" />
+              </div>
+              <CardHeader>
+                <CardTitle className="font-display">Department Contact</CardTitle>
+                <CardDescription className="font-body">Chairperson, AI & Data Science</CardDescription>
+              </CardHeader>
+              <CardContent className="grid gap-2 text-sm font-body">
+                <div className="flex items-center justify-between"><span>Email</span><a className="font-medium hover:underline" href="mailto:chairman-aiids@dsu.edu.in">chairman-aiids@dsu.edu.in</a></div>
+                <div className="flex items-center justify-between"><span>Phone</span><span className="font-medium">080-49092935</span></div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Quick Links Section */}
+      <section className="px-6 py-20">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="headline-2 mb-3 font-display">
+              <span className="text-foreground">Explore </span>
+              <span className="bg-brand-gradient bg-clip-text text-transparent">
+                More Opportunities
+              </span>
+            </h2>
+            <p className="text-foreground/80 font-body max-w-2xl mx-auto">
+              Discover research, placements, admission pathways, and Centers of Excellence at DSU
+            </p>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            {/* Centre of Excellence */}
+            <Link
+              to="/centre-of-excellence"
+              className="group rounded-3xl border border-border/40 bg-card/60 backdrop-blur-sm overflow-hidden hover:shadow-lg hover:shadow-brand-blue/20 transition-all duration-500 hover:-translate-y-1"
+            >
+              <Card className="h-full border-0 bg-transparent">
+                <div className="relative h-32 bg-gradient-to-br from-brand-blue/20 to-brand-blue/10 flex items-center justify-center">
+                  <Award className="h-12 w-12 text-brand-blue/70 group-hover:text-brand-blue transition-colors" />
+                </div>
+                <CardHeader>
+                  <CardTitle className="font-display group-hover:text-brand-blue transition-colors">
+                    Centre of Excellence
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-foreground/80 font-body">
+                    Immersive innovation labs powered by industry leaders
+                  </p>
+                </CardContent>
+              </Card>
+            </Link>
+
+            {/* Research */}
+            <Link
+              to="/research"
+              className="group rounded-3xl border border-border/40 bg-card/60 backdrop-blur-sm overflow-hidden hover:shadow-lg hover:shadow-brand-blue/20 transition-all duration-500 hover:-translate-y-1"
+            >
+              <Card className="h-full border-0 bg-transparent">
+                <div className="relative h-32 bg-gradient-to-br from-brand-blue/20 to-brand-blue/10 flex items-center justify-center">
+                  <Microscope className="h-12 w-12 text-brand-blue/70 group-hover:text-brand-blue transition-colors" />
+                </div>
+                <CardHeader>
+                  <CardTitle className="font-display group-hover:text-brand-blue transition-colors">
+                    Research & Innovation
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-foreground/80 font-body">
+                    Cutting-edge research initiatives and innovation labs
+                  </p>
+                </CardContent>
+              </Card>
+            </Link>
+
+            {/* Placements */}
+            <Link
+              to="/placements"
+              className="group rounded-3xl border border-border/40 bg-card/60 backdrop-blur-sm overflow-hidden hover:shadow-lg hover:shadow-brand-blue/20 transition-all duration-500 hover:-translate-y-1"
+            >
+              <Card className="h-full border-0 bg-transparent">
+                <div className="relative h-32 bg-gradient-to-br from-brand-blue/20 to-brand-blue/10 flex items-center justify-center">
+                  <GraduationCap className="h-12 w-12 text-brand-blue/70 group-hover:text-brand-blue transition-colors" />
+                </div>
+                <CardHeader>
+                  <CardTitle className="font-display group-hover:text-brand-blue transition-colors">
+                    Placements
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-foreground/80 font-body">
+                    Career pathways with leading companies
+                  </p>
+                </CardContent>
+              </Card>
+            </Link>
+
+            {/* Admissions */}
+            <a
+              href="https://admissions.dsu.edu.in/"
+              target="_blank"
+              rel="noreferrer"
+              className="group rounded-3xl border border-border/40 bg-card/60 backdrop-blur-sm overflow-hidden hover:shadow-lg hover:shadow-brand-blue/20 transition-all duration-500 hover:-translate-y-1"
+            >
+              <Card className="h-full border-0 bg-transparent">
+                <div className="relative h-32 bg-gradient-to-br from-brand-blue/20 to-brand-blue/10 flex items-center justify-center">
+                  <Brain className="h-12 w-12 text-brand-blue/70 group-hover:text-brand-blue transition-colors" />
+                </div>
+                <CardHeader>
+                  <CardTitle className="font-display group-hover:text-brand-blue transition-colors">
+                    Admissions
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="flex flex-col gap-3">
+                  <p className="text-sm text-foreground/80 font-body">
+                    Join DSU AI & DS and shape your future
+                  </p>
+                  <span className="inline-flex items-center gap-2 text-xs font-medium text-brand-blue group-hover:text-brand-blue/80 transition-colors">
+                    Apply Now
+                    <ChevronRight className="h-3 w-3" />
+                  </span>
+                </CardContent>
+              </Card>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="px-6 py-16">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="rounded-3xl p-10 border border-brand-blue/20 bg-brand-blue/5">
+            <h3 className="headline-3 mb-3 font-display">Join DSU AI & Data Science</h3>
+            <p className="text-foreground mb-6 font-body">Transform data into actionable intelligence and launch your career in AI and Data Science.</p>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <a
+                href="https://admissions.dsu.edu.in/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Button className="bg-brand-gradient text-foreground">Apply Now<GraduationCap className="w-4 h-4 ml-2" /></Button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+interface CurriculumProgram {
+  id: string;
+  label: string;
+  description: string;
+  image: string;
+  batches: CurriculumBatch[];
+}
+
+interface CurriculumBatch {
+  year: string;
+  summary: string;
+  documentUrl?: string;
+}
+
+interface LabItem {
+  title: string;
+  image: string;
+}
+
+interface NoticeItem {
+  id: string;
+  title: string;
+  category: "Event" | "News" | "Announcement";
+  date: string;
+  description: string;
+  image?: string;
+  link?: string;
+}
+
+function LabsFacilitiesCarousel() {
+  const [currentLabIndex, setCurrentLabIndex] = useState(0);
+
+  const labs: LabItem[] = [
+    { title: "Machine Learning Lab", image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop" },
+    { title: "Data Analytics Studio", image: "https://images.unsplash.com/photo-1516321318423-f06f70a504f9?q=80&w=1200&auto=format&fit=crop" },
+    { title: "Big Data Processing Center", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop" },
+    { title: "AI Research Lab", image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1200&auto=format&fit=crop" },
+    { title: "Deep Learning Studio", image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop" },
+    { title: "Data Visualization Lab", image: "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1200&auto=format&fit=crop" },
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentLabIndex((prev) => (prev + 1) % labs.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [labs.length]);
+
+  const currentLab = labs[currentLabIndex];
+
+  return (
+    <section className="px-6 py-16 bg-gradient-to-r from-brand-blue/5 to-brand-blue/5">
+      <div className="max-w-7xl mx-auto space-y-6">
+        <div className="flex items-center justify-between">
+          <div>
+            <h2 className="headline-3 mb-2 font-display">Labs & Facilities</h2>
+            <p className="text-sm text-foreground/80 font-body">State-of-the-art infrastructure for hands-on learning</p>
+          </div>
+          <div className="text-xs text-foreground/60 font-body">
+            {currentLabIndex + 1} of {labs.length}
+          </div>
+        </div>
+
+        <Card className="group overflow-hidden rounded-3xl border-2 border-border/40 bg-card/40 backdrop-blur-sm">
+          <div className="relative h-80 overflow-hidden">
+            <img
+              src={currentLab.image}
+              alt={currentLab.title}
+              className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700"
+            />
+          </div>
+          <CardContent className="p-6">
+            <CardTitle className="font-display text-2xl text-foreground">{currentLab.title}</CardTitle>
+          </CardContent>
+        </Card>
+
+        <div className="flex items-center justify-between gap-4">
+          <div className="flex gap-2">
+            {labs.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setCurrentLabIndex(idx)}
+                className={`h-2 rounded-full transition-all ${
+                  idx === currentLabIndex
+                    ? "bg-brand-blue w-8"
+                    : "bg-border/40 w-2 hover:bg-border/60"
+                }`}
+              />
+            ))}
+          </div>
+          <div className="flex gap-2">
+            <Button
+              variant="outline"
+              size="sm"
+              className="border-border/40"
+              onClick={() => setCurrentLabIndex((prev) => (prev - 1 + labs.length) % labs.length)}
+            >
+              ← Previous
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              className="border-border/40"
+              onClick={() => setCurrentLabIndex((prev) => (prev + 1) % labs.length)}
+            >
+              Next →
+            </Button>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function AccreditationDocuments() {
+  const documents = [
+    {
+      title: "Board of Studies (BOS)",
+      abbr: "BOS",
+      url: "https://www.dsu.edu.in/images/Engineering/AIIDS-dept/accreditation/BOS.pdf",
+    },
+    {
+      title: "Program Educational Objectives",
+      abbr: "PEO",
+      url: "https://www.dsu.edu.in/images/Engineering/AIIDS-dept/accreditation/PEO.pdf",
+    },
+    {
+      title: "Program Outcomes",
+      abbr: "PO",
+      url: "https://www.dsu.edu.in/images/Engineering/AIIDS-dept/accreditation/PO.pdf",
+    },
+    {
+      title: "Program Specific Outcomes",
+      abbr: "PSO",
+      url: "https://www.dsu.edu.in/images/Engineering/AIIDS-dept/accreditation/PSO.pdf",
+    },
+  ];
+
+  return (
+    <section className="px-6 py-12 bg-background/50">
+      <div className="mx-auto max-w-6xl">
+        <div className="mb-8">
+          <h3 className="text-sm font-semibold text-foreground/60 uppercase tracking-wider mb-2">Accreditation Documents</h3>
+          <p className="text-xs text-foreground/50 font-body">Program documentation and learning outcomes</p>
+        </div>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+          {documents.map((doc, idx) => (
+            <a
+              key={idx}
+              href={doc.url}
+              target="_blank"
+              rel="noreferrer"
+              className="group relative rounded-lg border border-border/30 bg-card/30 p-4 transition-all hover:border-brand-blue/40 hover:bg-card/50 hover:shadow-md hover:shadow-brand-blue/5"
+            >
+              <div className="flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-md bg-brand-blue/10 text-brand-blue group-hover:bg-brand-blue/20 transition-colors">
+                  <FileText className="h-5 w-5" />
+                </div>
+                <div className="min-w-0 flex-1">
+                  <div className="text-xs font-semibold text-brand-blue">{doc.abbr}</div>
+                  <p className="text-xs text-foreground/70 line-clamp-2">{doc.title}</p>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function NoticeBoard() {
+  const notices: NoticeItem[] = [
+    {
+      id: "notice-1",
+      title: "AI Summit 2025: Industry Leaders' Perspectives",
+      category: "Event",
+      date: "Feb 15, 2025",
+      description:
+        "Annual AI & Data Science summit featuring keynotes from Google, Microsoft, and IBM on latest trends in ML and data engineering.",
+      image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=300&fit=crop",
+      link: "https://www.dsu.edu.in/images/Engineering/AIIDS-dept/notices/AI-Summit-2025.pdf",
+    },
+    {
+      id: "notice-2",
+      title: "Semester IV Specialization Track Selection",
+      category: "Announcement",
+      date: "Jan 30, 2025",
+      description:
+        "Students can now register for specialization tracks: NLP, Computer Vision, Reinforcement Learning, and Business Analytics.",
+      link: "https://www.dsu.edu.in/images/Engineering/AIIDS-dept/notices/Specialization-Tracks-2025.pdf",
+    },
+    {
+      id: "notice-3",
+      title: "Industry Workshop: Practical Deep Learning",
+      category: "Event",
+      date: "Jan 25, 2025",
+      description:
+        "Hands-on workshop by TensorFlow engineers covering neural networks, computer vision, and production ML systems.",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=300&fit=crop",
+      link: "https://www.dsu.edu.in/images/Engineering/AIIDS-dept/notices/Deep-Learning-Workshop.pdf",
+    },
+    {
+      id: "notice-4",
+      title: "Faculty Research Publications 2024",
+      category: "News",
+      date: "Jan 20, 2025",
+      description:
+        "Department faculty have published research in IEEE Transactions on Machine Learning and ACM Computing Reviews.",
+      image: "https://images.unsplash.com/photo-1516321318423-f06f70a504f9?w=600&h=300&fit=crop",
+      link: "https://www.dsu.edu.in/images/Engineering/AIIDS-dept/notices/Research-Publications-2024.pdf",
+    },
+    {
+      id: "notice-5",
+      title: "Data Science Capstone Project Showcase",
+      category: "Event",
+      date: "Feb 8, 2025",
+      description:
+        "Final year students showcase their capstone projects tackling real-world business problems using advanced analytics.",
+      image: "https://images.unsplash.com/photo-1516321318423-f06f70a504f9?w=600&h=300&fit=crop",
+    },
+    {
+      id: "notice-6",
+      title: "Placements 2024-25 Results",
+      category: "News",
+      date: "Jan 15, 2025",
+      description:
+        "Strong placement season with leading companies including Google, Flipkart, Amazon, and emerging AI startups.",
+      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=300&fit=crop",
+      link: "https://www.dsu.edu.in/images/Engineering/AIIDS-dept/notices/Placements-2024-25.pdf",
+    },
+    {
+      id: "notice-7",
+      title: "Kaggle Competition - DSU AI Challenge",
+      category: "Announcement",
+      date: "Jan 18, 2025",
+      description:
+        "International data science competition for AI & DS students with prizes and internship opportunities with tech companies.",
+      link: "https://www.dsu.edu.in/images/Engineering/AIIDS-dept/notices/Kaggle-Challenge-2025.pdf",
+    },
+    {
+      id: "notice-8",
+      title: "Industry Mentorship Program Launch",
+      category: "Event",
+      date: "Feb 3, 2025",
+      description:
+        "One-on-one mentorship from data scientists and ML engineers at FAANG companies for career guidance and networking.",
+      image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=300&fit=crop",
+    },
+    {
+      id: "notice-9",
+      title: "NAAC Accreditation - A+ Grade",
+      category: "News",
+      date: "Jan 10, 2025",
+      description:
+        "The AI & DS program has achieved A+ grade in NAAC assessment, recognizing excellence in curriculum and industry alignment.",
+      image: "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=600&h=300&fit=crop",
+      link: "https://www.dsu.edu.in/images/Engineering/AIIDS-dept/notices/NAAC-Accreditation-2025.pdf",
+    },
+  ];
+
+  const getCategoryStyle = (category: NoticeItem["category"]) => {
+    switch (category) {
+      case "Event":
+        return {
+          icon: CalendarDays,
+          label: "Event",
+          className: "bg-brand-blue/15 text-brand-blue",
+        };
+      case "News":
+        return {
+          icon: FileText,
+          label: "News",
+          className: "bg-brand-blue/15 text-brand-blue",
+        };
+      case "Announcement":
+        return {
+          icon: ClipboardList,
+          label: "Announcement",
+          className: "bg-brand-blue/15 text-brand-blue",
+        };
+      default:
+        return {
+          icon: ClipboardList,
+          label: category,
+          className: "bg-brand-blue/15 text-brand-blue",
+        };
+    }
+  };
+
+  const events = notices.filter((n) => n.category === "Event");
+  const news = notices.filter((n) => n.category === "News");
+  const announcements = notices.filter((n) => n.category === "Announcement");
+
+  const [currentEventIndex, setCurrentEventIndex] = useState(0);
+  const [currentNewsIndex, setCurrentNewsIndex] = useState(0);
+
+  useEffect(() => {
+    if (events.length === 0) return;
+    const interval = setInterval(() => {
+      setCurrentEventIndex((prev) => (prev + 1) % events.length);
+    }, 6000);
+    return () => clearInterval(interval);
+  }, [events.length]);
+
+  useEffect(() => {
+    if (news.length === 0) return;
+    const interval = setInterval(() => {
+      setCurrentNewsIndex((prev) => (prev + 1) % news.length);
+    }, 6000);
+    return () => clearInterval(interval);
+  }, [news.length]);
+
+  const renderCarousel = (title: string, items: NoticeItem[], color: string, currentIndex: number, setCurrentIndex: (idx: number) => void) => {
+    if (items.length === 0) {
+      return (
+        <div className="space-y-4">
+          <div className={`flex items-center gap-2 px-4 py-3 rounded-xl border-l-4 ${
+            color === "blue"
+              ? "border-brand-blue bg-brand-blue/10"
+              : "border-brand-blue bg-brand-blue/10"
+          }`}>
+            <h3 className={`headline-4 font-display ${color === "blue" ? "text-brand-blue" : "text-brand-blue"}`}>{title}</h3>
+          </div>
+          <p className="text-xs text-foreground/60 italic p-4 text-center">No items to display</p>
+        </div>
+      );
+    }
+
+    const currentItem = items[currentIndex];
+
+    return (
+      <div className="space-y-4">
+        <div className={`flex items-center gap-2 px-4 py-3 rounded-xl border-l-4 ${
+          color === "blue"
+            ? "border-brand-blue bg-brand-blue/10"
+            : "border-brand-blue bg-brand-blue/10"
+        }`}>
+          <h3 className={`headline-4 font-display ${color === "blue" ? "text-brand-blue" : "text-brand-blue"}`}>{title}</h3>
+          <Badge className="ml-auto text-xs">{currentIndex + 1} / {items.length}</Badge>
+        </div>
+
+        <Card className="group overflow-hidden rounded-2xl border-2 border-border/30 bg-card/40 backdrop-blur-sm">
+          {currentItem.image && (
+            <div className="relative h-48 overflow-hidden">
+              <img
+                src={currentItem.image}
+                alt={currentItem.title}
+                className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
+              />
+            </div>
+          )}
+          <CardContent className="p-4 space-y-3">
+            <div className="flex items-start justify-between gap-2">
+              <div className="flex-1">
+                <h4 className="font-display font-semibold text-sm text-foreground mb-2 line-clamp-2">{currentItem.title}</h4>
+                <p className="text-xs text-foreground/70 line-clamp-2">{currentItem.description}</p>
+              </div>
+            </div>
+            <div className="flex items-center justify-between pt-2 border-t border-border/20">
+              <span className="text-xs font-semibold text-foreground/60">{currentItem.date}</span>
+              {currentItem.link && (
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="h-6 px-2 text-xs bg-brand-blue/10 text-brand-blue hover:bg-brand-blue/20"
+                  asChild
+                >
+                  <a href={currentItem.link} target="_blank" rel="noreferrer">
+                    <Download className="h-3 w-3 mr-1" />
+                    PDF
+                  </a>
+                </Button>
+              )}
+            </div>
+          </CardContent>
+        </Card>
+
+        <div className="flex items-center justify-between gap-2">
+          <div className="flex gap-1">
+            {items.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setCurrentIndex(idx)}
+                className={`h-1.5 rounded-full transition-all ${
+                  idx === currentIndex
+                    ? "bg-brand-blue w-6"
+                    : "bg-border/40 w-1.5 hover:bg-border/60"
+                }`}
+              />
+            ))}
+          </div>
+          <div className="flex gap-1">
+            <Button
+              variant="outline"
+              size="sm"
+              className="h-7 px-2 text-xs"
+              onClick={() => setCurrentIndex((prev) => (prev - 1 + items.length) % items.length)}
+            >
+              ←
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              className="h-7 px-2 text-xs"
+              onClick={() => setCurrentIndex((prev) => (prev + 1) % items.length)}
+            >
+              →
+            </Button>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  return (
+    <section className="px-6 py-16">
+      <div className="mx-auto max-w-7xl space-y-8">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <h2 className="headline-2 mb-3 font-display">
+              <span className="text-foreground">Department </span>
+              <span className="bg-brand-gradient bg-clip-text text-transparent">
+                Notice Board
+              </span>
+            </h2>
+            <p className="max-w-2xl text-sm text-foreground sm:text-base font-body">
+              Stay updated with upcoming events, news, and important announcements from the AI & DS department.
+            </p>
+          </div>
+          <Badge className="w-fit rounded-full bg-brand-blue/15 px-4 py-2 text-xs font-semibold text-brand-blue border border-brand-blue/20">
+            Updated weekly
+          </Badge>
+        </div>
+
+        <div className="grid lg:grid-cols-2 gap-8">
+          <div>
+            {renderCarousel("Events", events, "blue", currentEventIndex, setCurrentEventIndex)}
+          </div>
+          <div>
+            {renderCarousel("News", news, "blue", currentNewsIndex, setCurrentNewsIndex)}
+          </div>
+        </div>
+
+        <div className="space-y-4">
+          <div className="flex items-center gap-2 px-4 py-3 rounded-xl border-l-4 border-brand-blue bg-brand-blue/10">
+            <h3 className="headline-4 font-display text-brand-blue">Announcements</h3>
+            <Badge className="ml-auto text-xs">{announcements.length}</Badge>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            {announcements.length > 0 ? (
+              announcements.map((notice) => (
+                <Card
+                  key={notice.id}
+                  className="group border border-border/40 bg-card/50 shadow-sm transition hover:-translate-y-1 hover:border-brand-blue/40 hover:shadow-brand-blue/5"
+                >
+                  <CardHeader className="pb-2">
+                    <div className="flex items-start justify-between gap-2 mb-2">
+                      <span className="text-xs font-semibold text-foreground/60">{notice.date}</span>
+                      {notice.link && (
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          className="h-6 px-2 text-xs bg-brand-blue/10 text-brand-blue hover:bg-brand-blue/20"
+                          asChild
+                        >
+                          <a href={notice.link} target="_blank" rel="noreferrer">
+                            <Download className="h-3 w-3" />
+                          </a>
+                        </Button>
+                      )}
+                    </div>
+                    <CardTitle className="text-sm font-display text-foreground line-clamp-2">
+                      {notice.title}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="pt-0">
+                    <p className="text-xs text-foreground/70 line-clamp-2">{notice.description}</p>
+                  </CardContent>
+                </Card>
+              ))
+            ) : (
+              <p className="text-xs text-foreground/60 italic col-span-full p-4 text-center">No announcements to display</p>
+            )}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function CurriculumLibrary() {
+  const [openProgram, setOpenProgram] = useState<string | null>(null);
+
+  const programs: CurriculumProgram[] = [
+    {
+      id: "btech",
+      label: "B.Tech AI & Data Science",
+      description: "4-year undergraduate pathway with specialized tracks in ML and data analytics",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&h=400&fit=crop",
+      batches: [
+        {
+          year: "2025-26",
+          summary: "Foundations in Python, Statistics, and Data Structures with industry-aligned projects",
+          documentUrl:
+            "https://www.dsu.edu.in/images/Engineering/AIIDS-dept/curriculum/BTech-AIIDS-Curriculum-2025-26.pdf",
+        },
+        {
+          year: "2026-27",
+          summary: "Machine Learning, Data Analytics, and Computer Vision specialization tracks",
+          documentUrl:
+            "https://www.dsu.edu.in/images/Engineering/AIIDS-dept/curriculum/BTech-AIIDS-Curriculum-2026-27.pdf",
+        },
+        {
+          year: "2027-28",
+          summary: "Advanced Deep Learning, NLP, and Big Data Technologies with live projects",
+          documentUrl:
+            "https://www.dsu.edu.in/images/Engineering/AIIDS-dept/curriculum/BTech-AIIDS-Curriculum-2027-28.pdf",
+        },
+        {
+          year: "2028-29",
+          summary: "Capstone project, industry internships, and research publications",
+          documentUrl:
+            "https://www.dsu.edu.in/images/Engineering/AIIDS-dept/curriculum/BTech-AIIDS-Curriculum-2028-29.pdf",
+        },
+      ],
+    },
+  ];
+
+  return (
+    <section className="px-6 py-16 bg-gradient-to-r from-brand-blue/5 via-brand-blue/5 to-brand-blue/5">
+      <div className="mx-auto max-w-6xl space-y-8">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <h2 className="headline-2 mb-3 font-display">
+              <span className="text-foreground">Curriculum </span>
+              <span className="bg-brand-gradient bg-clip-text text-transparent">
+                Library
+              </span>
+            </h2>
+            <p className="max-w-2xl text-sm text-foreground sm:text-base font-body">
+              Explore comprehensive curriculum for the B.Tech AI & Data Science program. Access detailed course structures, learning outcomes, and downloadable syllabi.
+            </p>
+          </div>
+          <Badge className="w-fit rounded-full bg-brand-blue/15 px-4 py-2 text-xs font-semibold text-brand-blue border border-brand-blue/20">
+            2025 – 2029
+          </Badge>
+        </div>
+
+        <div className="grid gap-6">
+          {programs.map((program, programIdx) => {
+            const isOpen = openProgram === program.id;
+            const borderClass = "border-brand-blue/30";
+            const badgeClass = "bg-brand-blue/15 text-brand-blue border-brand-blue/20";
+
+            return (
+              <div
+                key={program.id}
+                className={`rounded-3xl border-2 ${borderClass} overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-brand-blue/10 hover:-translate-y-1`}
+              >
+                <div className="relative h-48 overflow-hidden">
+                  <img
+                    src={program.image}
+                    alt={program.label}
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+
+                <div className="p-6 bg-background/50 backdrop-blur-sm space-y-3">
+                  <div className="flex items-start gap-3">
+                    <Badge className={`rounded-full border ${badgeClass}`}>
+                      Undergraduate
+                    </Badge>
+                  </div>
+                  <div>
+                    <h3 className="headline-3 font-display text-foreground mb-2">{program.label}</h3>
+                    <p className="text-sm text-foreground/80 font-body">{program.description}</p>
+                  </div>
+                  <Button
+                    variant="outline"
+                    className="w-full border-brand-blue/30 hover:bg-brand-blue/10 text-brand-blue hover:text-brand-blue"
+                    onClick={() => setOpenProgram(isOpen ? null : program.id)}
+                  >
+                    <span className="flex items-center justify-center gap-2">
+                      {isOpen ? "Hide" : "View"} Batches
+                      <ChevronDown
+                        className={`h-4 w-4 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
+                      />
+                    </span>
+                  </Button>
+
+                  {isOpen && (
+                    <div className="mt-4 space-y-3 border-t border-border/20 pt-4 animate-in fade-in slide-in-from-top-2 duration-300">
+                      {program.batches.map((batch, batchIdx) => (
+                        <div
+                          key={`${program.id}-${batch.year}`}
+                          className={`rounded-xl border border-border/40 bg-card/70 p-3 transition-all hover:border-brand-blue/40 ${
+                            batchIdx === 0 ? "ring-2 ring-brand-blue/20" : ""
+                          }`}
+                        >
+                          <div className="flex items-start justify-between gap-2 mb-2">
+                            <div className="flex items-center gap-2">
+                              <Badge className="rounded-full border text-xs bg-brand-blue/20 text-brand-blue border-brand-blue/30">
+                                <CalendarDays className="h-3 w-3 mr-1" />
+                                {batch.year}
+                              </Badge>
+                              {batchIdx === 0 && (
+                                <Badge className="rounded-full bg-brand-blue/20 text-brand-blue border-brand-blue/30 border text-xs">
+                                  <Zap className="h-3 w-3 mr-1" />
+                                  Current
+                                </Badge>
+                              )}
+                            </div>
+                          </div>
+                          <p className="text-xs text-foreground/80 font-body mb-3 leading-relaxed">{batch.summary}</p>
+                          {batch.documentUrl && (
+                            <Button
+                              variant="ghost"
+                              size="sm"
+                              className="w-full justify-center gap-1 rounded text-xs font-semibold bg-brand-blue/10 text-brand-blue hover:bg-brand-blue/20"
+                              asChild
+                            >
+                              <a href={batch.documentUrl} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-1">
+                                <Download className="h-3 w-3" />
+                                PDF
+                              </a>
+                            </Button>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}

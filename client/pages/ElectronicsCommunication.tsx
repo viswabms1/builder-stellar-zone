@@ -1,0 +1,1032 @@
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import {
+  Bot,
+  Brain,
+  CalendarDays,
+  CheckCircle2,
+  ChevronDown,
+  ChevronRight,
+  ClipboardList,
+  Cpu,
+  Database,
+  Download,
+  FileText,
+  GraduationCap,
+  Landmark,
+  Network,
+  Shield,
+  Sparkles,
+  BookOpen,
+  Code,
+  Zap,
+  Building,
+  ArrowRight,
+  Cog,
+  Award,
+  Microscope,
+  Radio,
+  Microchip,
+  Wifi,
+} from "lucide-react";
+
+export default function ElectronicsCommunication() {
+  const specializations = [
+    { icon: Microchip, label: "VLSI Design" },
+    { icon: Radio, label: "Communication" },
+    { icon: Wifi, label: "5G & IoT" },
+    { icon: Cpu, label: "Embedded Systems" },
+    { icon: Network, label: "Signal Processing" },
+    { icon: Zap, label: "Power Electronics" },
+  ];
+
+  const highlights = [
+    "Advanced curriculum in signal processing, VLSI, and communication systems",
+    "Industry-sponsored labs: Bosch ETAS Lab, Analog Devices Lab",
+    "Hands-on experience with 5G, IoT, and embedded systems",
+    "Strong faculty with Ph.D. from prestigious institutions",
+    "Research-driven learning with practical projects",
+    "Specializations in Embedded Systems and Mechatronics",
+  ];
+
+  const careers = [
+    "Electronics Design Engineer → Senior Design Engineer → Technical Lead",
+    "VLSI Design Specialist → Chip Architect",
+    "Embedded Systems Developer → IoT Solutions Architect",
+    "Research pathways: Masters/PhD in India & Abroad",
+  ];
+
+  return (
+    <div className="min-h-screen bg-background text-foreground">
+      {/* Hero */}
+      <section className="relative">
+        <div className="h-[50vh] md:h-[65vh] w-full overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1580894908361-967195033215?q=80&w=2000&auto=format&fit=crop"
+            alt="Department of Electronics & Communication Engineering"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+        </div>
+        <div className="absolute inset-0 flex items-center">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-brand-blue/10 rounded-full border border-brand-blue/20 mb-4">
+              <Sparkles className="w-4 h-4 text-brand-blue" />
+              <span className="text-sm font-medium text-brand-blue font-display">Department of Electronics & Communication Engineering</span>
+            </div>
+            <h1 className="headline-1 text-white leading-tight font-display">Design the Electronics of Tomorrow</h1>
+            <p className="subheadline text-white/90 max-w-2xl mt-3 font-body">
+              Master signal processing, VLSI design, and communication systems at a leading ECE department with industry partnerships.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-2">
+              {specializations.map((s, i) => (
+                <span key={i} className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-white text-xs backdrop-blur">
+                  <s.icon className="w-3.5 h-3.5" /> {s.label}
+                </span>
+              ))}
+            </div>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a
+                href="https://admissions.dsu.edu.in/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Button className="bg-brand-gradient text-foreground">Apply Now <GraduationCap className="w-4 h-4 ml-2" /></Button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Overview */}
+      <section className="px-6 py-16">
+        <div className="max-w-6xl mx-auto grid lg:grid-cols-3 gap-10 items-start">
+          <div className="lg:col-span-2 space-y-6">
+            <h2 className="headline-3 font-display">Overview</h2>
+            <p className="text-foreground leading-relaxed font-body">
+              The Department of Electronics & Communication Engineering offers a dynamic ecosystem for study, research, and professional growth. The B.Tech ECE program provides a solid foundation and new-age skills with an innovative curriculum and pedagogy aligned to NEP and industry partnerships. Students gain breadth across core electronics and communication, and depth through elective streams, while developing leadership and personal effectiveness for holistic growth.
+            </p>
+            <Card className="border border-border/50 bg-card/50 backdrop-blur-sm">
+              <CardHeader className="pb-2">
+                <CardTitle className="text-lg font-display">Program Highlights</CardTitle>
+                <CardDescription className="font-body">Designed for electronics innovation</CardDescription>
+              </CardHeader>
+              <CardContent className="grid sm:grid-cols-2 gap-3 pt-0">
+                {highlights.map((h, idx) => (
+                  <div key={idx} className="flex items-start gap-2 text-sm text-foreground">
+                    <CheckCircle2 className="w-4 h-4 text-brand-blue mt-0.5" />
+                    <span>{h}</span>
+                  </div>
+                ))}
+              </CardContent>
+            </Card>
+          </div>
+          <div>
+            <Card className="overflow-hidden border border-border/50 bg-card/50">
+              <div className="relative h-40">
+                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=1200&auto=format&fit=crop" alt="ECE Labs" className="w-full h-full object-cover" />
+              </div>
+              <CardHeader>
+                <CardTitle className="font-display">Fast Facts</CardTitle>
+                <CardDescription className="font-body">What sets ECE at DSU apart</CardDescription>
+              </CardHeader>
+              <CardContent className="grid gap-2 text-sm font-body">
+                <div className="flex items-center justify-between"><span>Industry Labs</span><span className="font-medium">2+ Sponsored</span></div>
+                <div className="flex items-center justify-between"><span>Specializations</span><span className="font-medium">Embedded & VLSI</span></div>
+                <div className="flex items-center justify-between"><span>Research Focus</span><span className="font-medium">5G & IoT</span></div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      <CurriculumLibraryECE />
+
+      <AccreditationDocumentsECE />
+
+      <NoticeBoardECE />
+
+      <LabsFacilitiesCarouselECE />
+
+      {/* Department Leadership */}
+      <section className="px-6 py-16">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex items-center justify-between mb-8">
+            <h2 className="headline-3 font-display">Department Leadership</h2>
+            <Link to="/academics/engineering/electronics-communication/faculty">
+              <Button variant="outline" className="border-brand-blue/40 hover:bg-brand-blue/10">
+                Explore full faculty list
+              </Button>
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {/* Chairperson */}
+            <div>
+              <p className="text-xs font-semibold text-brand-blue uppercase tracking-wider mb-2">Chairperson</p>
+              <div className="group relative overflow-hidden rounded-xl border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-blue/10 transition-all cursor-pointer">
+                <div className="relative">
+                  <div className="aspect-square w-full"></div>
+                  <img src="https://www.dsu.edu.in/images/Engineering/ECE-dept/faculty/ArunBalodi.jpg" alt="Dr Arun Balodi" className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+                </div>
+                <div className="absolute bottom-0 p-3 w-full">
+                  <div className="text-white text-xs opacity-80">Professor</div>
+                  <div className="text-white font-semibold text-sm font-display line-clamp-2">Dr Arun Balodi</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Careers */}
+      <section className="px-6 py-16">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-10 items-start">
+          <div>
+            <h2 className="headline-3 mb-4 font-display">Career Prospects</h2>
+            <Card className="border border-border/50 bg-card/50">
+              <CardContent className="p-6 grid gap-3">
+                {careers.map((c, i) => (
+                  <div key={i} className="flex items-start gap-2 text-sm text-foreground font-body">
+                    <ChevronRight className="w-3 h-3 text-brand-blue mt-1" />
+                    <span>{c}</span>
+                  </div>
+                ))}
+              </CardContent>
+            </Card>
+          </div>
+          <div>
+            <h2 className="headline-3 mb-4 font-display">Get in Touch</h2>
+            <Card className="overflow-hidden border border-border/50 bg-card/50">
+              <div className="relative h-40">
+                <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1200&auto=format&fit=crop" alt="Contact ECE" className="w-full h-full object-cover" />
+              </div>
+              <CardHeader>
+                <CardTitle className="font-display">Department Contact</CardTitle>
+                <CardDescription className="font-body">Chairperson, Electronics & Communication Engineering</CardDescription>
+              </CardHeader>
+              <CardContent className="grid gap-2 text-sm font-body">
+                <div className="flex items-center justify-between"><span>Email</span><a className="font-medium hover:underline" href="mailto:chairman-ece@dsu.edu.in">chairman-ece@dsu.edu.in</a></div>
+                <div className="flex items-center justify-between"><span>Phone</span><span className="font-medium">+91-080-49092937</span></div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Quick Links Section */}
+      <section className="px-6 py-20">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="headline-2 mb-3 font-display">
+              <span className="text-foreground">Explore </span>
+              <span className="bg-brand-gradient bg-clip-text text-transparent">
+                More Opportunities
+              </span>
+            </h2>
+            <p className="text-foreground/80 font-body max-w-2xl mx-auto">
+              Discover research, placements, admission pathways, and Centers of Excellence at DSU
+            </p>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            {/* Centre of Excellence */}
+            <Link
+              to="/centre-of-excellence"
+              className="group rounded-3xl border border-border/40 bg-card/60 backdrop-blur-sm overflow-hidden hover:shadow-lg hover:shadow-brand-blue/20 transition-all duration-500 hover:-translate-y-1"
+            >
+              <Card className="h-full border-0 bg-transparent">
+                <div className="relative h-32 bg-gradient-to-br from-brand-blue/20 to-brand-blue/10 flex items-center justify-center">
+                  <Award className="h-12 w-12 text-brand-blue/70 group-hover:text-brand-blue transition-colors" />
+                </div>
+                <CardHeader>
+                  <CardTitle className="font-display group-hover:text-brand-blue transition-colors">
+                    Centre of Excellence
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-foreground/80 font-body">
+                    Immersive innovation labs powered by industry leaders like Bosch and Analog Devices
+                  </p>
+                </CardContent>
+              </Card>
+            </Link>
+
+            {/* Research */}
+            <Link
+              to="/research"
+              className="group rounded-3xl border border-border/40 bg-card/60 backdrop-blur-sm overflow-hidden hover:shadow-lg hover:shadow-brand-blue/20 transition-all duration-500 hover:-translate-y-1"
+            >
+              <Card className="h-full border-0 bg-transparent">
+                <div className="relative h-32 bg-gradient-to-br from-brand-blue/20 to-brand-blue/10 flex items-center justify-center">
+                  <Microscope className="h-12 w-12 text-brand-blue/70 group-hover:text-brand-blue transition-colors" />
+                </div>
+                <CardHeader>
+                  <CardTitle className="font-display group-hover:text-brand-blue transition-colors">
+                    Research & Innovation
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-foreground/80 font-body">
+                    Cutting-edge electronics research initiatives and innovation labs
+                  </p>
+                </CardContent>
+              </Card>
+            </Link>
+
+            {/* Placements */}
+            <Link
+              to="/placements"
+              className="group rounded-3xl border border-border/40 bg-card/60 backdrop-blur-sm overflow-hidden hover:shadow-lg hover:shadow-brand-orange/20 transition-all duration-500 hover:-translate-y-1"
+            >
+              <Card className="h-full border-0 bg-transparent">
+                <div className="relative h-32 bg-gradient-to-br from-brand-orange/20 to-brand-orange/10 flex items-center justify-center">
+                  <GraduationCap className="h-12 w-12 text-brand-orange/70 group-hover:text-brand-orange transition-colors" />
+                </div>
+                <CardHeader>
+                  <CardTitle className="font-display group-hover:text-brand-orange transition-colors">
+                    Placements
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-foreground/80 font-body">
+                    Career pathways with leading electronics and semiconductor companies
+                  </p>
+                </CardContent>
+              </Card>
+            </Link>
+
+            {/* Admissions */}
+            <a
+              href="https://admissions.dsu.edu.in/"
+              target="_blank"
+              rel="noreferrer"
+              className="group rounded-3xl border border-border/40 bg-card/60 backdrop-blur-sm overflow-hidden hover:shadow-lg hover:shadow-brand-blue/20 transition-all duration-500 hover:-translate-y-1"
+            >
+              <Card className="h-full border-0 bg-transparent">
+                <div className="relative h-32 bg-gradient-to-br from-brand-blue/20 to-brand-blue/10 flex items-center justify-center">
+                  <Cpu className="h-12 w-12 text-brand-blue/70 group-hover:text-brand-blue transition-colors" />
+                </div>
+                <CardHeader>
+                  <CardTitle className="font-display group-hover:text-brand-blue transition-colors">
+                    Admissions
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="flex flex-col gap-3">
+                  <p className="text-sm text-foreground/80 font-body">
+                    Join DSU ECE and shape the future
+                  </p>
+                  <span className="inline-flex items-center gap-2 text-xs font-medium text-brand-blue group-hover:text-brand-blue/80 transition-colors">
+                    Apply Now
+                    <ChevronRight className="h-3 w-3" />
+                  </span>
+                </CardContent>
+              </Card>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="px-6 py-16">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="rounded-3xl p-10 border border-brand-blue/20 bg-brand-blue/5">
+            <h3 className="headline-3 mb-3 font-display">Join DSU ECE</h3>
+            <p className="text-foreground mb-6 font-body">Explore programs, discover research, and launch your career in Electronics & Communication Engineering.</p>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <a
+                href="https://admissions.dsu.edu.in/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Button className="bg-brand-gradient text-foreground">Apply Now<GraduationCap className="w-4 h-4 ml-2" /></Button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+interface CurriculumProgram {
+  id: string;
+  label: string;
+  description: string;
+  image: string;
+  batches: CurriculumBatch[];
+}
+
+interface CurriculumBatch {
+  year: string;
+  summary: string;
+  documentUrl?: string;
+}
+
+interface LabItem {
+  title: string;
+  image: string;
+}
+
+interface NoticeItem {
+  id: string;
+  title: string;
+  category: "Event" | "News" | "Announcement";
+  date: string;
+  description: string;
+  image?: string;
+  link?: string;
+}
+
+function LabsFacilitiesCarouselECE() {
+  const [currentLabIndex, setCurrentLabIndex] = useState(0);
+
+  const labs: LabItem[] = [
+    { title: "VLSI Design Lab", image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=1200&auto=format&fit=crop" },
+    { title: "Bosch ETAS Lab", image: "https://images.unsplash.com/photo-1517677129300-07b130802f46?q=80&w=1200&auto=format&fit=crop" },
+    { title: "Communication Systems Lab", image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1200&auto=format&fit=crop" },
+    { title: "IoT & Robotics Lab", image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=1200&auto=format&fit=crop" },
+    { title: "Microcontroller Lab", image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=1200&auto=format&fit=crop" },
+    { title: "Analog Devices Lab", image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop" },
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentLabIndex((prev) => (prev + 1) % labs.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [labs.length]);
+
+  const currentLab = labs[currentLabIndex];
+
+  return (
+    <section className="px-6 py-16 bg-gradient-to-r from-brand-blue/5 to-brand-orange/5">
+      <div className="max-w-7xl mx-auto space-y-6">
+        <div className="flex items-center justify-between">
+          <div>
+            <h2 className="headline-3 mb-2 font-display">Labs & Facilities</h2>
+            <p className="text-sm text-foreground/80 font-body">State-of-the-art infrastructure for electronics and communication hands-on learning</p>
+          </div>
+          <div className="text-xs text-foreground/60 font-body">
+            {currentLabIndex + 1} of {labs.length}
+          </div>
+        </div>
+
+        <Card className="group overflow-hidden rounded-3xl border-2 border-border/40 bg-card/40 backdrop-blur-sm">
+          <div className="relative h-80 overflow-hidden">
+            <img
+              src={currentLab.image}
+              alt={currentLab.title}
+              className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700"
+            />
+          </div>
+          <CardContent className="p-6">
+            <CardTitle className="font-display text-2xl text-foreground">{currentLab.title}</CardTitle>
+          </CardContent>
+        </Card>
+
+        <div className="flex items-center justify-between gap-4">
+          <div className="flex gap-2">
+            {labs.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setCurrentLabIndex(idx)}
+                className={`h-2 rounded-full transition-all ${
+                  idx === currentLabIndex
+                    ? "bg-brand-blue w-8"
+                    : "bg-border/40 w-2 hover:bg-border/60"
+                }`}
+              />
+            ))}
+          </div>
+          <div className="flex gap-2">
+            <Button
+              variant="outline"
+              size="sm"
+              className="border-border/40"
+              onClick={() => setCurrentLabIndex((prev) => (prev - 1 + labs.length) % labs.length)}
+            >
+              ← Previous
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              className="border-border/40"
+              onClick={() => setCurrentLabIndex((prev) => (prev + 1) % labs.length)}
+            >
+              Next →
+            </Button>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function AccreditationDocumentsECE() {
+  const documents = [
+    {
+      title: "Board of Studies (BOS)",
+      abbr: "BOS",
+      url: "https://www.dsu.edu.in/images/Engineering/ECE-dept/accreditation/BOS.pdf",
+    },
+    {
+      title: "Program Educational Objectives",
+      abbr: "PEO",
+      url: "https://www.dsu.edu.in/images/Engineering/ECE-dept/accreditation/PEO.pdf",
+    },
+    {
+      title: "Program Outcomes",
+      abbr: "PO",
+      url: "https://www.dsu.edu.in/images/Engineering/ECE-dept/accreditation/PO.pdf",
+    },
+    {
+      title: "Program Specific Outcomes",
+      abbr: "PSO",
+      url: "https://www.dsu.edu.in/images/Engineering/ECE-dept/accreditation/PSO.pdf",
+    },
+  ];
+
+  return (
+    <section className="px-6 py-12 bg-background/50">
+      <div className="mx-auto max-w-6xl">
+        <div className="mb-8">
+          <h3 className="text-sm font-semibold text-foreground/60 uppercase tracking-wider mb-2">Accreditation Documents</h3>
+          <p className="text-xs text-foreground/50 font-body">Program documentation and learning outcomes</p>
+        </div>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+          {documents.map((doc, idx) => (
+            <a
+              key={idx}
+              href={doc.url}
+              target="_blank"
+              rel="noreferrer"
+              className="group relative rounded-lg border border-border/30 bg-card/30 p-4 transition-all hover:border-brand-blue/40 hover:bg-card/50 hover:shadow-md hover:shadow-brand-blue/5"
+            >
+              <div className="flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-md bg-brand-blue/10 text-brand-blue group-hover:bg-brand-blue/20 transition-colors">
+                  <FileText className="h-5 w-5" />
+                </div>
+                <div className="min-w-0 flex-1">
+                  <div className="text-xs font-semibold text-brand-blue">{doc.abbr}</div>
+                  <p className="text-xs text-foreground/70 line-clamp-2">{doc.title}</p>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function NoticeBoardECE() {
+  const notices: NoticeItem[] = [
+    {
+      id: "notice-1",
+      title: "ECE Symposium 2025: Electronics & Communication Innovation",
+      category: "Event",
+      date: "Feb 14, 2025",
+      description: "Department-hosted symposium with industry experts on latest VLSI, 5G, and IoT advancements.",
+      image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=300&fit=crop",
+      link: "https://www.dsu.edu.in/images/Engineering/ECE-dept/notices/ECE-Symposium-2025.pdf",
+    },
+    {
+      id: "notice-2",
+      title: "B.Tech ECE Elective Registration",
+      category: "Announcement",
+      date: "Jan 31, 2025",
+      description: "Register for sem VI electives including Advanced Embedded Systems, 5G Networks, and VLSI design.",
+      link: "https://www.dsu.edu.in/images/Engineering/ECE-dept/notices/Elective-Registration-2025.pdf",
+    },
+    {
+      id: "notice-3",
+      title: "Bosch ETAS Lab: Real-Time Systems Workshop",
+      category: "Event",
+      date: "Feb 5, 2025",
+      description: "Industry-led workshop on embedded real-time operating systems for automotive applications.",
+      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=300&fit=crop",
+      link: "https://www.dsu.edu.in/images/Engineering/ECE-dept/notices/ETAS-Workshop-2025.pdf",
+    },
+    {
+      id: "notice-4",
+      title: "ECE Faculty Publications in IEEE Conferences",
+      category: "News",
+      date: "Jan 23, 2025",
+      description: "Two faculty papers accepted at IEEE International Conference on Electronics & Communication.",
+      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=300&fit=crop",
+      link: "https://www.dsu.edu.in/images/Engineering/ECE-dept/notices/Faculty-Publications-2025.pdf",
+    },
+    {
+      id: "notice-5",
+      title: "5G & IoT Research Lab Inauguration",
+      category: "Event",
+      date: "Feb 12, 2025",
+      description: "Official inauguration of the new 5G & IoT research facility with state-of-the-art equipment.",
+      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&h=300&fit=crop",
+    },
+    {
+      id: "notice-6",
+      title: "VLSI Design Competition 2025",
+      category: "News",
+      date: "Jan 24, 2025",
+      description: "Inter-college VLSI chip design competition with participation from engineering colleges across India.",
+      image: "https://images.unsplash.com/photo-1516321318423-f06f70a504f9?w=600&h=300&fit=crop",
+      link: "https://www.dsu.edu.in/images/Engineering/ECE-dept/notices/VLSI-Competition-2025.pdf",
+    },
+    {
+      id: "notice-7",
+      title: "Industrial Internship Policy Update",
+      category: "Announcement",
+      date: "Jan 26, 2025",
+      description: "New guidelines for mandatory summer internships in electronics and semiconductor industries.",
+      link: "https://www.dsu.edu.in/images/Engineering/ECE-dept/notices/Internship-Policy-2025.pdf",
+    },
+    {
+      id: "notice-8",
+      title: "Analog Devices Lab Workshop",
+      category: "Event",
+      date: "Feb 9, 2025",
+      description: "Advanced analog circuit design workshop in collaboration with Analog Devices engineers.",
+      image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=300&fit=crop",
+    },
+    {
+      id: "notice-9",
+      title: "NAAC Accreditation: A Grade Maintained",
+      category: "News",
+      date: "Jan 17, 2025",
+      description: "ECE department successfully maintains 'A' grade in latest NAAC cycle assessment.",
+      image: "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=600&h=300&fit=crop",
+      link: "https://www.dsu.edu.in/images/Engineering/ECE-dept/notices/NAAC-Accreditation-2025.pdf",
+    },
+  ];
+
+  const getCategoryStyle = (category: NoticeItem["category"]) => {
+    switch (category) {
+      case "Event":
+        return {
+          icon: CalendarDays,
+          label: "Event",
+          className: "bg-brand-blue/15 text-brand-blue",
+        };
+      case "News":
+        return {
+          icon: FileText,
+          label: "News",
+          className: "bg-brand-orange/15 text-brand-orange",
+        };
+      case "Announcement":
+        return {
+          icon: ClipboardList,
+          label: "Announcement",
+          className: "bg-brand-blue/15 text-brand-blue",
+        };
+      default:
+        return {
+          icon: ClipboardList,
+          label: category,
+          className: "bg-brand-blue/15 text-brand-blue",
+        };
+    }
+  };
+
+  const events = notices.filter((n) => n.category === "Event");
+  const news = notices.filter((n) => n.category === "News");
+  const announcements = notices.filter((n) => n.category === "Announcement");
+
+  const [currentEventIndex, setCurrentEventIndex] = useState(0);
+  const [currentNewsIndex, setCurrentNewsIndex] = useState(0);
+
+  useEffect(() => {
+    if (events.length === 0) return;
+    const interval = setInterval(() => {
+      setCurrentEventIndex((prev) => (prev + 1) % events.length);
+    }, 6000);
+    return () => clearInterval(interval);
+  }, [events.length]);
+
+  useEffect(() => {
+    if (news.length === 0) return;
+    const interval = setInterval(() => {
+      setCurrentNewsIndex((prev) => (prev + 1) % news.length);
+    }, 6000);
+    return () => clearInterval(interval);
+  }, [news.length]);
+
+  const renderCarousel = (title: string, items: NoticeItem[], color: string, currentIndex: number, setCurrentIndex: (idx: number) => void) => {
+    if (items.length === 0) {
+      return (
+        <div className="space-y-4">
+          <div className={`flex items-center gap-2 px-4 py-3 rounded-xl border-l-4 ${
+            color === "blue"
+              ? "border-brand-blue bg-brand-blue/10"
+              : "border-brand-orange bg-brand-orange/10"
+          }`}>
+            <h3 className={`headline-4 font-display ${color === "blue" ? "text-brand-blue" : "text-brand-orange"}`}>{title}</h3>
+          </div>
+          <p className="text-xs text-foreground/60 italic p-4 text-center">No items to display</p>
+        </div>
+      );
+    }
+
+    const currentItem = items[currentIndex];
+
+    return (
+      <div className="space-y-4">
+        <div className={`flex items-center gap-2 px-4 py-3 rounded-xl border-l-4 ${
+          color === "blue"
+            ? "border-brand-blue bg-brand-blue/10"
+            : "border-brand-orange bg-brand-orange/10"
+        }`}>
+          <h3 className={`headline-4 font-display ${color === "blue" ? "text-brand-blue" : "text-brand-orange"}`}>{title}</h3>
+          <Badge className="ml-auto text-xs">{currentIndex + 1} / {items.length}</Badge>
+        </div>
+
+        <Card className="group overflow-hidden rounded-2xl border-2 border-border/30 bg-card/40 backdrop-blur-sm">
+          {currentItem.image && (
+            <div className="relative h-48 overflow-hidden">
+              <img
+                src={currentItem.image}
+                alt={currentItem.title}
+                className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
+              />
+            </div>
+          )}
+          <CardContent className="p-4 space-y-3">
+            <div className="flex items-start justify-between gap-2">
+              <div className="flex-1">
+                <h4 className="font-display font-semibold text-sm text-foreground mb-2 line-clamp-2">{currentItem.title}</h4>
+                <p className="text-xs text-foreground/70 line-clamp-2">{currentItem.description}</p>
+              </div>
+            </div>
+            <div className="flex items-center justify-between pt-2 border-t border-border/20">
+              <span className="text-xs font-semibold text-foreground/60">{currentItem.date}</span>
+              {currentItem.link && (
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="h-6 px-2 text-xs bg-brand-blue/10 text-brand-blue hover:bg-brand-blue/20"
+                  asChild
+                >
+                  <a href={currentItem.link} target="_blank" rel="noreferrer">
+                    <Download className="h-3 w-3 mr-1" />
+                    PDF
+                  </a>
+                </Button>
+              )}
+            </div>
+          </CardContent>
+        </Card>
+
+        <div className="flex items-center justify-between gap-2">
+          <div className="flex gap-1">
+            {items.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setCurrentIndex(idx)}
+                className={`h-1.5 rounded-full transition-all ${
+                  idx === currentIndex
+                    ? color === "blue"
+                      ? "bg-brand-blue w-6"
+                      : "bg-brand-orange w-6"
+                    : "bg-border/40 w-1.5 hover:bg-border/60"
+                }`}
+              />
+            ))}
+          </div>
+          <div className="flex gap-1">
+            <Button
+              variant="outline"
+              size="sm"
+              className="h-7 px-2 text-xs"
+              onClick={() => setCurrentIndex((prev) => (prev - 1 + items.length) % items.length)}
+            >
+              ←
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              className="h-7 px-2 text-xs"
+              onClick={() => setCurrentIndex((prev) => (prev + 1) % items.length)}
+            >
+              →
+            </Button>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  return (
+    <section className="px-6 py-16">
+      <div className="mx-auto max-w-7xl space-y-8">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <h2 className="headline-2 mb-3 font-display">
+              <span className="text-foreground">Department </span>
+              <span className="bg-brand-gradient bg-clip-text text-transparent">
+                Notice Board
+              </span>
+            </h2>
+            <p className="max-w-2xl text-sm text-foreground sm:text-base font-body">
+              Stay updated with upcoming events, news, and important announcements from the ECE department.
+            </p>
+          </div>
+          <Badge className="w-fit rounded-full bg-brand-blue/15 px-4 py-2 text-xs font-semibold text-brand-blue border border-brand-blue/20">
+            Updated weekly
+          </Badge>
+        </div>
+
+        <div className="grid lg:grid-cols-2 gap-8">
+          <div>
+            {renderCarousel("Events", events, "blue", currentEventIndex, setCurrentEventIndex)}
+          </div>
+          <div>
+            {renderCarousel("News", news, "orange", currentNewsIndex, setCurrentNewsIndex)}
+          </div>
+        </div>
+
+        <div className="space-y-4">
+          <div className="flex items-center gap-2 px-4 py-3 rounded-xl border-l-4 border-brand-blue bg-brand-blue/10">
+            <h3 className="headline-4 font-display text-brand-blue">Announcements</h3>
+            <Badge className="ml-auto text-xs">{announcements.length}</Badge>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            {announcements.length > 0 ? (
+              announcements.map((notice) => (
+                <Card
+                  key={notice.id}
+                  className="group border border-border/40 bg-card/50 shadow-sm transition hover:-translate-y-1 hover:border-brand-blue/40 hover:shadow-brand-blue/5"
+                >
+                  <CardHeader className="pb-2">
+                    <div className="flex items-start justify-between gap-2 mb-2">
+                      <span className="text-xs font-semibold text-foreground/60">{notice.date}</span>
+                      {notice.link && (
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          className="h-6 px-2 text-xs bg-brand-blue/10 text-brand-blue hover:bg-brand-blue/20"
+                          asChild
+                        >
+                          <a href={notice.link} target="_blank" rel="noreferrer">
+                            <Download className="h-3 w-3" />
+                          </a>
+                        </Button>
+                      )}
+                    </div>
+                    <CardTitle className="text-sm font-display text-foreground line-clamp-2">
+                      {notice.title}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="pt-0">
+                    <p className="text-xs text-foreground/70 line-clamp-2">{notice.description}</p>
+                  </CardContent>
+                </Card>
+              ))
+            ) : (
+              <p className="text-xs text-foreground/60 italic col-span-full p-4 text-center">No announcements to display</p>
+            )}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function CurriculumLibraryECE() {
+  const [openProgram, setOpenProgram] = useState<string | null>(null);
+
+  const programs: CurriculumProgram[] = [
+    {
+      id: "btech",
+      label: "B.Tech Curriculum",
+      description: "4-year undergraduate pathway with electronics and communication specializations",
+      image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=400&fit=crop",
+      batches: [
+        {
+          year: "2025-26",
+          summary: "NEP-aligned with VLSI design labs and 5G research focus",
+          documentUrl:
+            "https://www.dsu.edu.in/images/Engineering/ECE-dept/curriculum/BTech-ECE-Curriculum-2025-26.pdf",
+        },
+        {
+          year: "2026-27",
+          summary: "Advanced embedded systems labs and IoT integration",
+          documentUrl:
+            "https://www.dsu.edu.in/images/Engineering/ECE-dept/curriculum/BTech-ECE-Curriculum-2026-27.pdf",
+        },
+        {
+          year: "2027-28",
+          summary: "Signal processing specialization with Bosch ETAS partnership",
+          documentUrl:
+            "https://www.dsu.edu.in/images/Engineering/ECE-dept/curriculum/BTech-ECE-Curriculum-2027-28.pdf",
+        },
+        {
+          year: "2028-29",
+          summary: "5G technologies, wireless communication, and capstone design projects",
+          documentUrl:
+            "https://www.dsu.edu.in/images/Engineering/ECE-dept/curriculum/BTech-ECE-Curriculum-2028-29.pdf",
+        },
+      ],
+    },
+    {
+      id: "mtech",
+      label: "M.Tech Curriculum",
+      description: "2-year postgraduate program in embedded systems and VLSI design",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
+      batches: [
+        {
+          year: "2025-26",
+          summary: "Advanced embedded systems design and real-time OS research",
+          documentUrl:
+            "https://www.dsu.edu.in/images/Engineering/ECE-dept/curriculum/MTech-ECE-Curriculum-2025-26.pdf",
+        },
+        {
+          year: "2026-27",
+          summary: "VLSI design, hardware verification, and industry projects",
+          documentUrl:
+            "https://www.dsu.edu.in/images/Engineering/ECE-dept/curriculum/MTech-ECE-Curriculum-2026-27.pdf",
+        },
+        {
+          year: "2027-28",
+          summary: "5G technologies research and communication systems design",
+          documentUrl:
+            "https://www.dsu.edu.in/images/Engineering/ECE-dept/curriculum/MTech-ECE-Curriculum-2027-28.pdf",
+        },
+        {
+          year: "2028-29",
+          summary: "IoT systems, edge computing, and thesis publication support",
+          documentUrl:
+            "https://www.dsu.edu.in/images/Engineering/ECE-dept/curriculum/MTech-ECE-Curriculum-2028-29.pdf",
+        },
+      ],
+    },
+  ];
+
+  return (
+    <section className="px-6 py-16 bg-gradient-to-r from-brand-blue/5 via-brand-orange/5 to-brand-blue/5">
+      <div className="mx-auto max-w-6xl space-y-8">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <h2 className="headline-2 mb-3 font-display">
+              <span className="text-foreground">Curriculum </span>
+              <span className="bg-brand-gradient bg-clip-text text-transparent">
+                Library
+              </span>
+            </h2>
+            <p className="max-w-2xl text-sm text-foreground sm:text-base font-body">
+              Explore comprehensive curriculum packs for B.Tech and M.Tech programs. Access detailed course structures, learning outcomes, and downloadable syllabi.
+            </p>
+          </div>
+          <Badge className="w-fit rounded-full bg-brand-blue/15 px-4 py-2 text-xs font-semibold text-brand-blue border border-brand-blue/20">
+            2025 – 2029
+          </Badge>
+        </div>
+
+        <div className="grid gap-6 lg:grid-cols-2">
+          {programs.map((program, programIdx) => {
+            const isOpen = openProgram === program.id;
+            const isProgramBtech = program.id === "btech";
+            const borderClass = isProgramBtech
+              ? "border-brand-orange/30"
+              : "border-brand-blue/30";
+            const badgeClass = isProgramBtech
+              ? "bg-brand-orange/15 text-brand-orange border-brand-orange/20"
+              : "bg-brand-blue/15 text-brand-blue border-brand-blue/20";
+            const Icon = isProgramBtech ? Code : BookOpen;
+
+            return (
+              <div
+                key={program.id}
+                className={`rounded-3xl border-2 ${borderClass} overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-brand-blue/10 hover:-translate-y-1`}
+              >
+                <div className="relative h-48 overflow-hidden">
+                  <img
+                    src={program.image}
+                    alt={program.label}
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+
+                <div className="p-6 bg-background/50 backdrop-blur-sm space-y-3">
+                  <div className="flex items-start gap-3">
+                    <Badge className={`rounded-full border ${badgeClass}`}>
+                      {isProgramBtech ? "Undergraduate" : "Postgraduate"}
+                    </Badge>
+                  </div>
+                  <div>
+                    <h3 className="headline-3 font-display text-foreground mb-2">{program.label}</h3>
+                    <p className="text-sm text-foreground/80 font-body">{program.description}</p>
+                  </div>
+                  <Button
+                    variant="outline"
+                    className={`w-full ${isProgramBtech ? "border-brand-orange/30 hover:bg-brand-orange/10 text-brand-orange hover:text-brand-orange" : "border-brand-blue/30 hover:bg-brand-blue/10 text-brand-blue hover:text-brand-blue"}`}
+                    onClick={() => setOpenProgram(isOpen ? null : program.id)}
+                  >
+                    <span className="flex items-center justify-center gap-2">
+                      {isOpen ? "Hide" : "View"} Batches
+                      <ChevronDown
+                        className={`h-4 w-4 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
+                      />
+                    </span>
+                  </Button>
+
+                  {isOpen && (
+                    <div className="mt-4 space-y-3 border-t border-border/20 pt-4 animate-in fade-in slide-in-from-top-2 duration-300">
+                      {program.batches.map((batch, batchIdx) => (
+                        <div
+                          key={`${program.id}-${batch.year}`}
+                          className={`rounded-xl border border-border/40 bg-card/70 p-3 transition-all hover:border-brand-blue/40 ${
+                            batchIdx === 0 ? "ring-2 ring-brand-blue/20" : ""
+                          }`}
+                        >
+                          <div className="flex items-start justify-between gap-2 mb-2">
+                            <div className="flex items-center gap-2">
+                              <Badge className={`rounded-full border text-xs ${isProgramBtech ? "bg-brand-orange/20 text-brand-orange border-brand-orange/30" : "bg-brand-blue/20 text-brand-blue border-brand-blue/30"}`}>
+                                <CalendarDays className="h-3 w-3 mr-1" />
+                                {batch.year}
+                              </Badge>
+                              {batchIdx === 0 && (
+                                <Badge className="rounded-full bg-brand-blue/20 text-brand-blue border-brand-blue/30 border text-xs">
+                                  <Zap className="h-3 w-3 mr-1" />
+                                  Current
+                                </Badge>
+                              )}
+                            </div>
+                          </div>
+                          <p className="text-xs text-foreground/80 font-body mb-3 leading-relaxed">{batch.summary}</p>
+                          {batch.documentUrl && (
+                            <Button
+                              variant="ghost"
+                              size="sm"
+                              className={`w-full justify-center gap-1 rounded text-xs font-semibold ${
+                                isProgramBtech
+                                  ? "bg-brand-orange/10 text-brand-orange hover:bg-brand-orange/20"
+                                  : "bg-brand-blue/10 text-brand-blue hover:bg-brand-blue/20"
+                              }`}
+                              asChild
+                            >
+                              <a href={batch.documentUrl} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-1">
+                                <Download className="h-3 w-3" />
+                                PDF
+                              </a>
+                            </Button>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
