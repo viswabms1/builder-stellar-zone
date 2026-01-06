@@ -430,8 +430,8 @@ export default function Navigation() {
                                     href={school.href}
                                     target="_blank"
                                     rel="noreferrer"
-                                    className={`block font-bold text-sm mb-2 transition-colors group-hover:text-orange-600 ${
-                                      theme === "light" ? "text-gray-900" : "text-white"
+                                    className={`block font-bold text-sm mb-2 transition-colors ${
+                                      theme === "light" ? "text-gray-900 group-hover:text-orange-600" : "text-white group-hover:text-orange-200"
                                     }`}
                                   >
                                     {school.name}
@@ -440,8 +440,8 @@ export default function Navigation() {
                                   <Link
                                     to={school.href}
                                     onClick={() => setAcademicsMenuOpen(false)}
-                                    className={`block font-bold text-sm mb-2 transition-colors group-hover:text-orange-600 ${
-                                      theme === "light" ? "text-gray-900" : "text-white"
+                                    className={`block font-bold text-sm mb-2 transition-colors ${
+                                      theme === "light" ? "text-gray-900 group-hover:text-orange-600" : "text-white group-hover:text-orange-200"
                                     }`}
                                   >
                                     {school.name}
