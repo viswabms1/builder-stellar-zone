@@ -516,13 +516,6 @@ export default function Navigation() {
                 return [
                   itemElement,
                   <Link
-                    key="ai-label"
-                    to="/ai-first"
-                    className={sharedClasses}
-                  >
-                    <span>AI-First @ DSU</span>
-                  </Link>,
-                  <Link
                     key="logo"
                     to="/"
                     className={`flex items-center group flex-shrink-0 px-4 py-3 rounded-xl transition-all duration-300 ${
@@ -540,6 +533,13 @@ export default function Navigation() {
                           : "brightness-110 drop-shadow-lg"
                       }`}
                     />
+                  </Link>,
+                  <Link
+                    key="ai-label"
+                    to="/ai-first"
+                    className={sharedClasses}
+                  >
+                    <span>AI-First @ DSU</span>
                   </Link>,
                 ];
               }
