@@ -613,8 +613,8 @@ export default function Index() {
           </div>
 
           {/* Buttons Section - Bottom on mobile */}
-          <div className="flex flex-col gap-2 md:gap-4">
-            <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
+          <div className="flex flex-col gap-1 sm:gap-2 md:gap-4">
+            <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 md:gap-4">
               <a
                 href="https://admissions.dsu.edu.in/"
                 target="_blank"
@@ -623,10 +623,10 @@ export default function Index() {
               >
                 <Button
                   size="lg"
-                  className="w-full sm:w-auto bg-white hover:bg-white/90 text-orange-600 hover:text-orange-700 px-6 sm:px-8 py-4 sm:py-6 text-sm sm:text-base font-semibold font-display transition-all duration-300 group border-2 border-white"
+                  className="w-full sm:w-auto bg-white hover:bg-white/90 text-orange-600 hover:text-orange-700 px-4 sm:px-8 py-2 sm:py-6 text-xs sm:text-base font-semibold font-display transition-all duration-300 group border-2 border-white"
                 >
                   {t("hero.applyNow") || "Apply Today"}
-                  <ArrowRight className="w-4 sm:w-5 h-4 sm:h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-3 sm:w-5 h-3 sm:h-5 ml-1 sm:ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </a>
               <a
@@ -637,7 +637,7 @@ export default function Index() {
               >
                 <Button
                   size="lg"
-                  className="w-full sm:w-auto bg-white hover:bg-white/90 text-black hover:text-black px-6 sm:px-8 py-4 sm:py-6 text-sm sm:text-base font-semibold font-display transition-all duration-300 group border-2 border-white"
+                  className="w-full sm:w-auto bg-white hover:bg-white/90 text-black hover:text-black px-4 sm:px-8 py-2 sm:py-6 text-xs sm:text-base font-semibold font-display transition-all duration-300 group border-2 border-white"
                 >
                   {t("hero.virtualTour") || "Virtual Tour"}
                 </Button>
@@ -645,14 +645,14 @@ export default function Index() {
             </div>
             <Link
               to="/ai-first"
-              className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background hidden sm:block"
             >
               <Button
                 size="lg"
-                className="w-full sm:w-auto bg-white hover:bg-white/90 text-black hover:text-black px-6 sm:px-8 py-4 sm:py-6 text-sm sm:text-base font-semibold font-display transition-all duration-300 group border-2 border-white"
+                className="w-full sm:w-auto bg-white hover:bg-white/90 text-black hover:text-black px-4 sm:px-8 py-2 sm:py-6 text-xs sm:text-base font-semibold font-display transition-all duration-300 group border-2 border-white"
               >
                 Build the Future of AI at DSU
-                <ArrowRight className="w-4 sm:w-5 h-4 sm:h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-3 sm:w-5 h-3 sm:h-5 ml-1 sm:ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
           </div>
