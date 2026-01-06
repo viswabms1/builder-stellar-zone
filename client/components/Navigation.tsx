@@ -832,17 +832,6 @@ export default function Navigation() {
             })}
             {/* Additional Menu Items for Mobile */}
             <Link
-              to="/ai-first"
-              onClick={() => setIsOpen(false)}
-              className={`flex items-center space-x-2 px-3 py-2.5 rounded-xl text-sm font-medium font-display transition-all duration-200 ${
-                theme === "light"
-                  ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
-                  : "text-white hover:text-white hover:bg-white/10"
-              }`}
-            >
-              <span>AI-First @ DSU</span>
-            </Link>
-            <Link
               to="/nvidia-ai-architecture"
               onClick={() => setIsOpen(false)}
               className={`flex items-center space-x-2 px-3 py-2.5 rounded-xl text-sm font-medium font-display transition-all duration-200 ${
@@ -852,6 +841,17 @@ export default function Navigation() {
               }`}
             >
               <span>NVIDIA's AI Architecture</span>
+            </Link>
+            <Link
+              to="/ai-first"
+              onClick={() => setIsOpen(false)}
+              className={`flex items-center space-x-2 px-3 py-2.5 rounded-xl text-sm font-medium font-display transition-all duration-200 ${
+                theme === "light"
+                  ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
+                  : "text-white hover:text-white hover:bg-white/10"
+              }`}
+            >
+              <span>AI-First @ DSU</span>
             </Link>
 
             {/* Top Menu Items (Utility Links) - Moved to bottom */}
