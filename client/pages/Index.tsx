@@ -430,6 +430,15 @@ export default function Index() {
           "https://images.pexels.com/photos/7147711/pexels-photo-7147711.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
       },
       {
+        key: "journalism",
+        icon: Newspaper,
+        color: "brand-orange",
+        delay: "0.75s",
+        href: "/academics/journalism-mass-communication",
+        image:
+          "https://images.pexels.com/photos/3722622/pexels-photo-3722622.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
+      },
+      {
         key: "medical",
         icon: Microscope,
         color: "brand-blue",
