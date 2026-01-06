@@ -50,7 +50,7 @@ export default function DeptDataScience() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero */}
-      <section className="dept-hero-section relative pt-16 md:pt-0">
+      <section className="dept-hero-section relative pt-24 md:pt-0">
         <div className="h-[70vh] md:h-[65vh] max-h-[400px] md:max-h-none w-full overflow-hidden">
           <img
             src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F7cfd94b17b1c4440bc680d69dcdc1a1c?format=webp&width=800"
