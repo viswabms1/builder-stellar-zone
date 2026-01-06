@@ -630,7 +630,7 @@ function HeroVideo() {
 
       <div className="relative max-w-7xl mx-auto px-3 w-full z-10 pb-20 md:pb-0">
         <div className="max-w-2xl">
-          <p className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 uppercase tracking-widest font-display">
+          <p className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 uppercase tracking-widest font-display">
             School of Design
           </p>
           <h1 className="text-sm md:text-base text-white/80 mb-6 leading-tight font-display">
