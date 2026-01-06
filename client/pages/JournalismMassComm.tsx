@@ -666,42 +666,6 @@ export default function JournalismMassComm() {
               ))}
             </div>
           </div>
-
-          <div className="rounded-3xl border border-brand-magenta/25 bg-brand-magenta/10 p-4 shadow-[0_30px_120px_-50px_rgba(233,97,255,0.6)]">
-            <h3 className="font-display text-2xl text-brand-magenta">
-              Programme Highlights
-            </h3>
-            <ul className="mt-4 space-y-3 text-sm text-brand-magenta/90 font-body grid md:grid-cols-2 gap-4">
-              <li className="flex items-start gap-3">
-                <Mic className="mt-1 h-4 w-4" />
-                <div>
-                  <p className="font-medium text-brand-magenta">Immersive Newsroom Labs</p>
-                  <p className="text-xs text-brand-magenta/80">Weekly reporting drills across TV, digital, print and mobile newsrooms with live editorial feedback.</p>
-                </div>
-              </li>
-              <li className="flex items-start gap-3">
-                <Camera className="mt-1 h-4 w-4" />
-                <div>
-                  <p className="font-medium text-brand-magenta">Audio, Video & Film Projects</p>
-                  <p className="text-xs text-brand-magenta/80">Produce short films, podcasts and documentaries using broadcast studios, sound labs and VFX suites.</p>
-                </div>
-              </li>
-              <li className="flex items-start gap-3">
-                <Globe className="mt-1 h-4 w-4" />
-                <div>
-                  <p className="font-medium text-brand-magenta">Global Collaboration Network</p>
-                  <p className="text-xs text-brand-magenta/80">Work with international partners through the Global Communication Project and industry storytellers.</p>
-                </div>
-              </li>
-              <li className="flex items-start gap-3">
-                <PenSquare className="mt-1 h-4 w-4" />
-                <div>
-                  <p className="font-medium text-brand-magenta">Story Labs & Writing Rooms</p>
-                  <p className="text-xs text-brand-magenta/80">Collaborative spaces for long-form writing, digital publishing and global communication projects.</p>
-                </div>
-              </li>
-            </ul>
-          </div>
         </div>
       </section>
 
