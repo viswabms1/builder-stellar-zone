@@ -66,7 +66,7 @@ export default function BAJournalism() {
           <div className="max-w-7xl mx-auto px-3">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-brand-magenta/10 rounded-full border border-brand-magenta/20 mb-4">
               <Sparkles className="w-4 h-4 text-brand-magenta" />
-              <span className="text-xs sm:text-sm font-medium text-brand-magenta font-display">Bachelor of Arts in Journalism & Mass Communication</span>
+              <span className="text-xs sm:text-sm font-medium text-white font-display">Bachelor of Arts in Journalism & Mass Communication</span>
             </div>
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white leading-tight font-display font-bold">Bachelor of Arts in Journalism & Mass Communication</h1>
             <p className="subheadline text-white/90 max-w-2xl mt-3 font-body">
