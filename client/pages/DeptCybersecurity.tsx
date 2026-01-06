@@ -51,7 +51,7 @@ export default function DeptCybersecurity() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero */}
-      <section className="dept-hero-section relative pt-24 md:pt-0">
+      <section className="dept-hero-section relative pt-40 md:pt-0">
         <div className="h-[70vh] md:h-[65vh] max-h-[400px] md:max-h-none w-full overflow-hidden">
           <img
             src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fa8fb5b08f627479c819be45e6f114757?format=webp&width=800"
