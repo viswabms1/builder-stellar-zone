@@ -1004,7 +1004,7 @@ function HeroVideo() {
   return (
     <div
       ref={containerRef}
-      className="w-full h-dvh md:h-[75vh] relative overflow-hidden flex items-end md:items-center justify-start"
+      className="w-screen md:w-full h-dvh md:h-[75vh] relative overflow-hidden flex items-end md:items-center justify-start"
     >
       <video
         ref={videoRef}

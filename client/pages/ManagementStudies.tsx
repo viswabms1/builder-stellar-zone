@@ -581,7 +581,7 @@ function HeroVideo() {
   }, [isMuted]);
 
   return (
-    <div className="w-full h-dvh md:h-screen relative overflow-hidden flex items-end md:items-center justify-start" ref={containerRef}>
+    <div className="w-screen md:w-full h-dvh md:h-screen relative overflow-hidden flex items-end md:items-center justify-start" ref={containerRef}>
       <video
         ref={videoRef}
         src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2Fb3865b1bf6064214a4b5b2bcfcfeec5a?alt=media&token=6447ef33-1a83-4fce-82b0-92a764af6501&apiKey=4aa279a8430d441dba9c55f659831878"
