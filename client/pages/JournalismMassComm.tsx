@@ -529,7 +529,7 @@ function HeroVideo() {
     <div className="w-full h-screen relative overflow-hidden flex items-end md:items-center justify-start" ref={containerRef}>
       <video
         ref={videoRef}
-        src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2Fa7d526ca06434a529de62a0ef4d5ff70?alt=media&token=3ec4cad3-794e-44b5-a26a-37a4d400aa5a&apiKey=4aa279a8430d441dba9c55f659831878"
+        src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2Fa41e8ed985984f42835c307d7fcb52b7?alt=media&token=50f94c89-34b0-45b0-b363-b6dc8b5dfef1&apiKey=4aa279a8430d441dba9c55f659831878"
         autoPlay
         muted={isMuted}
         loop
