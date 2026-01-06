@@ -592,8 +592,8 @@ export default function Navigation() {
         <div
           className={`md:hidden border-t ${
             theme === "light"
-              ? "border-orange-200/30 bg-gradient-to-r from-orange-50 to-orange-100"
-              : "border-orange-600/20 bg-gradient-to-r from-orange-500 to-red-600"
+              ? "border-orange-200/30 bg-transparent"
+              : "border-orange-600/20 bg-transparent"
           }`}
         >
           <div className="px-3 py-4 space-y-3">
