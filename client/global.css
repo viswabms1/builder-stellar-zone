@@ -185,21 +185,21 @@
     .hero-section {
       height: auto !important;
       min-height: auto !important;
-      padding-top: 5rem !important;
+      padding-top: 6rem !important;
     }
 
     .dept-hero-section {
-      padding-top: 5rem !important; /* Padding for landscape */
+      padding-top: 6rem !important; /* Padding for landscape */
     }
 
     /* Ensure content inside also has padding */
     .dept-hero-section > div {
-      padding-top: 3rem !important;
+      padding-top: 4rem !important;
     }
 
     /* Homepage hero content padding */
     .hero-section > div {
-      padding-top: 2rem !important;
+      padding-top: 3rem !important;
     }
   }
 }
