@@ -856,63 +856,6 @@ export default function BDesignOverview() {
         </div>
       </section>
 
-      <section id="featured-news" className="px-3 py-8 bg-gradient-to-r from-brand-blue/5 via-brand-magenta/5 to-brand-orange/5">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-6 text-center">
-            <h2 className="font-display text-3xl md:text-4xl mb-3">
-              Latest from B.Design
-            </h2>
-            <p className="text-sm text-foreground font-body">
-              Stories of design excellence, innovation, and student success
-            </p>
-          </div>
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {FEATURED_NEWS.map((item) => (
-              <a key={item.title} href="#" className="group flex flex-col h-full">
-                <div className="relative w-full h-64 overflow-hidden rounded-lg mb-6">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-
-                  <div className="absolute top-4 left-4">
-                    <Badge
-                      className={`text-xs font-bold tracking-wider text-white ${
-                        item.color === "brand-orange"
-                          ? "bg-brand-orange"
-                          : item.color === "brand-magenta"
-                            ? "bg-brand-magenta"
-                            : "bg-blue-600"
-                      }`}
-                    >
-                      {item.category}
-                    </Badge>
-                  </div>
-                </div>
-
-                <div className="flex-1 flex flex-col">
-                  <h3 className="text-lg font-semibold text-foreground font-display line-clamp-2 group-hover:text-brand-magenta transition-colors mb-3">
-                    {item.title}
-                  </h3>
-                  <p className="text-sm text-foreground/80 font-body line-clamp-3 mb-4">
-                    {item.excerpt}
-                  </p>
-
-                  <div className="mt-auto pt-4 border-t border-border/30 flex items-center justify-between">
-                    <span className="text-xs text-foreground/60 font-body flex items-center">
-                      <CalendarDays className="w-3 h-3 mr-1" /> {item.date}
-                    </span>
-                    <ChevronRight className="w-4 h-4 text-foreground/60 group-hover:text-brand-magenta transition-colors" />
-                  </div>
-                </div>
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="px-3 py-8">
         <div className="mx-auto grid max-w-5xl items-start gap-4 lg:grid-cols-2">
           <Card className="rounded-none border border-orange-500/20 bg-orange-500/10">
