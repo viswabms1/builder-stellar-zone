@@ -145,6 +145,23 @@ const FEATURED_NEWS: NewsItem[] = [
   },
 ];
 
+const PROGRAM_CARDS: ProgramCard[] = [
+  {
+    name: "Bachelor of Design",
+    area: "Undergraduate",
+    description:
+      "Four-year comprehensive programme combining foundational design theory with studio-based projects, global immersions, and mandatory industry internship to prepare human-centered designers and design innovators.",
+    image:
+      "https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=1600&auto=format&fit=crop",
+    link: "#programs",
+    highlights: ["Product Design", "Communication Design", "Environmental Design"],
+    overlay: "bg-gradient-to-br from-brand-magenta/80 via-black/75 to-black/60 mix-blend-multiply",
+    badgeClass: "bg-brand-magenta/25 text-foreground/90 border border-white/30 backdrop-blur",
+    panelClass: "bg-black/55 backdrop-blur-xl",
+    featured: true,
+  },
+];
+
 const DEAN_INFO: DeanInfo = {
   name: "Prof. Dinesh Kulkarni",
   position: "Dean, School of Design",
