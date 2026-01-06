@@ -49,7 +49,7 @@ export default function BDesignProgram() {
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero */}
       <section className="relative">
-        <div className="h-[35vh] sm:h-[65vh] md:h-[65vh] w-full overflow-hidden" style={{ minHeight: '220px' }}>
+        <div className="h-[30vh] sm:h-[65vh] md:h-[65vh] w-full overflow-hidden" style={{ minHeight: '180px' }}>
           <img
             src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F977d2ec23be54fddb525d7c691a5fa60?format=webp&width=800"
             alt="Bachelor of Design Program"
@@ -58,24 +58,24 @@ export default function BDesignProgram() {
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
         </div>
-        <div className="absolute inset-0 flex items-start sm:items-center sm:pt-0 z-10" style={{ marginTop: '40px' }}>
+        <div className="absolute inset-0 flex items-start sm:items-center sm:pt-0 z-10" style={{ marginTop: '20px' }}>
           <div className="max-w-7xl mx-auto px-3">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-brand-magenta/10 rounded-full border border-brand-magenta/20 mb-4">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-brand-magenta/10 rounded-full border border-brand-magenta/20 mb-2 sm:mb-4">
               <Sparkles className="w-4 h-4 text-brand-magenta" />
               <span className="text-xs sm:text-sm font-medium text-white font-display">Bachelor of Design</span>
             </div>
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white leading-tight font-display font-bold">Bachelor of Design</h1>
-            <p className="subheadline text-white/90 max-w-2xl mt-3 font-body">
+            <h1 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl text-white leading-tight font-display font-bold">Bachelor of Design</h1>
+            <p className="subheadline text-white/90 max-w-2xl mt-2 sm:mt-3 text-sm sm:text-base font-body">
               A comprehensive four-year program designed to transform you into an innovative designer across multiple creative disciplines with industry expertise.
             </p>
-            <div className="mt-6 hidden sm:flex flex-wrap gap-2">
+            <div className="mt-3 sm:mt-6 hidden sm:flex flex-wrap gap-2">
               {specializations.map((s, i) => (
                 <span key={i} className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-white text-xs backdrop-blur">
                   <s.icon className="w-3.5 h-3.5" /> {s.label}
                 </span>
               ))}
             </div>
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-4 sm:mt-8 flex flex-wrap gap-3">
               <a
                 href="https://admissions.dsu.edu.in/"
                 target="_blank"
