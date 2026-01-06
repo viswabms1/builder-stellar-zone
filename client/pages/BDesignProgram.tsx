@@ -49,7 +49,7 @@ export default function BDesignProgram() {
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero */}
       <section className="relative">
-        <div className="h-[50vh] sm:h-[65vh] md:h-[65vh] w-full overflow-hidden" style={{ minHeight: '200px' }}>
+        <div className="h-[40vh] sm:h-[65vh] md:h-[65vh] w-full overflow-hidden" style={{ minHeight: '280px' }}>
           <img
             src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F977d2ec23be54fddb525d7c691a5fa60?format=webp&width=800"
             alt="Bachelor of Design Program"
