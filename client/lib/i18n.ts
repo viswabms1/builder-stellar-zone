@@ -58,6 +58,10 @@ export const translations = {
         title: 'Design',
         programs: ['Animation', 'UX/UI', 'Graphic Design', 'Digital Media'],
       },
+      journalism: {
+        title: 'Journalism & Mass Communication',
+        programs: ['BJMC', 'PG Diploma', 'Documentary Filmmaking', 'Digital Media'],
+      },
       medical: {
         title: 'Medical Education & Research',
         programs: ['MBBS', 'MD', 'DM', 'Fellowship'],

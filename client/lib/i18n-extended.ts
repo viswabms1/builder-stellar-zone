@@ -37,6 +37,11 @@ export const indexTranslations = {
         description: "",
         programs: ["Animation", "UX/UI", "Graphic Design", "Digital Media"],
       },
+      journalism: {
+        title: "Journalism & Mass Communication",
+        description: "",
+        programs: ["BJMC", "PG Diploma", "Documentary Filmmaking", "Digital Media"],
+      },
       medical: {
         title: "Medical Education & Research",
         description: "",
@@ -85,6 +90,11 @@ export const indexTranslations = {
         description: "",
         programs: ["ಆನಿಮೇಷನ್", "UX/UI", "ಗ್ರಾಫಿಕ್ ಡಿಜಾಇನ್", "ಡಿಜಿಟಲ್ ಮಾಧ್ಯಮ"],
       },
+      journalism: {
+        title: "ಪತ್ರಿಕೋದ್ಯಮ ಮತ್ತು ಸಾಮೂಹಿಕ ಸಂವಹನ",
+        description: "",
+        programs: ["BJMC", "PG ಡಿಪ್ಲೋಮಾ", "ಡಾಕ್ಯುಮೆಂಟರಿ ಫಿಲ್ಮ್ಮೇಕಿಂಗ್", "ಡಿಜಿಟಲ್ ಮಾಧ್ಯಮ"],
+      },
       medical: {
         title: "ವೈದ್ಯಕೀಯ ಶಿಕ್ಷೆ ಮತ್ತು ಸಂಶೋಧನೆ",
         description: "",
@@ -132,6 +142,11 @@ export const indexTranslations = {
         title: "डिजाइन",
         description: "",
         programs: ["एनिमेशन", "UX/UI", "ग्राफिक डिजाइन", "डिजिटल मीडिया"],
+      },
+      journalism: {
+        title: "पत्रकारिता और जनसंचार",
+        description: "",
+        programs: ["BJMC", "PG डिप्लोमा", "डॉक्यूमेंटरी फिल्ममेकिंग", "डिजिटल मीडिया"],
       },
       medical: {
         title: "चिकित्सा शिक्षा और अनुसंधान",
