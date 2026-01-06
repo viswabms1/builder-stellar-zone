@@ -561,9 +561,6 @@ function HeroVideo() {
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight font-display">
             Storytellers for the Now & Next
           </h1>
-          <p className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed max-w-xl font-display">
-            Master multimedia storytelling, ethical journalism and digital communication with immersive studio labs, global collaborations and two-month industry internships.
-          </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
             <a
