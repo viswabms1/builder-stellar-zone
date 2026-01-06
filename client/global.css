@@ -188,7 +188,12 @@
     }
 
     .dept-hero-section {
-      padding-top: 1.5rem !important; /* 24px padding in landscape */
+      padding-top: 3rem !important; /* 48px padding to clear nav in landscape */
+    }
+
+    /* Ensure content inside also has padding */
+    .dept-hero-section > div {
+      padding-top: 2rem !important;
     }
   }
 }
