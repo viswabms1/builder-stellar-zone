@@ -384,7 +384,7 @@ const FEATURED_NEWS: NewsItem[] = [
 const DEAN_INFO: DeanInfo = {
   name: "Dr. Arjun Menon",
   title: "M.A., Ph.D",
-  position: "Dean, Centre for Journalism & Mass Communication",
+  position: "Dean, School of Journalism & Mass Communication",
   photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=800&auto=format&fit=crop",
   videoUrl: "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F0c95c62aa88741fca8ebdc32aade53d5?alt=media&token=c57ff4a9-aea8-4ff3-843b-23ce820ba630&apiKey=4aa279a8430d441dba9c55f659831878",
   borderColor: "border-rose-500/20",
