@@ -49,7 +49,7 @@ export default function BDesignProgram() {
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero */}
       <section className="relative">
-        <div className="h-[40vh] sm:h-[65vh] md:h-[65vh] w-full overflow-hidden" style={{ minHeight: '280px' }}>
+        <div className="h-[35vh] sm:h-[65vh] md:h-[65vh] w-full overflow-hidden" style={{ minHeight: '220px' }}>
           <img
             src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F977d2ec23be54fddb525d7c691a5fa60?format=webp&width=800"
             alt="Bachelor of Design Program"
@@ -58,7 +58,7 @@ export default function BDesignProgram() {
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
         </div>
-        <div className="absolute inset-0 flex items-start md:items-center md:pt-0 z-10" style={{ marginTop: '80px' }}>
+        <div className="absolute inset-0 flex items-start sm:items-center sm:pt-0 z-10" style={{ marginTop: '40px' }}>
           <div className="max-w-7xl mx-auto px-3">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-brand-magenta/10 rounded-full border border-brand-magenta/20 mb-4">
               <Sparkles className="w-4 h-4 text-brand-magenta" />
