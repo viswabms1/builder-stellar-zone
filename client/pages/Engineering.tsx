@@ -961,6 +961,15 @@ function ProgramCardComponent({ program }: { program: ProgramCard }) {
   );
 }
 
+const landscapeStyles = `
+  @media (orientation: landscape) {
+    .hero-video-container {
+      width: 100vw !important;
+      margin-left: calc(-50vw + 50%) !important;
+    }
+  }
+`;
+
 function HeroVideo() {
   const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
