@@ -187,9 +187,8 @@
       min-height: auto !important;
     }
 
-    /* Override padding for dept pages in landscape */
-    section[className*="relative pt-16"] {
-      padding-top: 0.25rem !important;
+    .dept-hero-section {
+      padding-top: 0 !important;
     }
   }
 }
