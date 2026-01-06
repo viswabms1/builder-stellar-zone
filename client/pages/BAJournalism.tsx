@@ -72,7 +72,7 @@ export default function BAJournalism() {
             <p className="subheadline text-white/90 max-w-2xl mt-3 font-body">
               A comprehensive three-year program designed to transform you into a skilled storyteller across multimedia platforms with industry expertise.
             </p>
-            <div className="mt-6 flex flex-wrap gap-2">
+            <div className="mt-6 hidden sm:flex flex-wrap gap-2">
               {specializations.map((s, i) => (
                 <span key={i} className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-white text-xs backdrop-blur">
                   <s.icon className="w-3.5 h-3.5" /> {s.label}
