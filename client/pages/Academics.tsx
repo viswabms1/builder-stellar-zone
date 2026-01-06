@@ -256,7 +256,7 @@ export default function Academics() {
     },
     {
       icon: Film,
-      title: "Design & Digital Trans Media",
+      title: "School of Design",
       image: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fa2063ac0bf034cbaa9d21546069eeb18?format=webp&width=800",
       programs: [
         "B.Design",

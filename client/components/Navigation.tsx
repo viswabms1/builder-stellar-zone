@@ -141,7 +141,7 @@ export default function Navigation() {
         ],
       },
       {
-        name: "School of Design & Digital Media",
+        name: "School of Design",
         href: "/academics/design/bdesign",
         departments: [
           { name: "B.Design", href: "/academics/design/bdesign" },

@@ -30,7 +30,7 @@ const FOOTER_LINK_GROUPS = [
       { label: "Engineering", href: "/academics/engineering" },
       { label: "Management Studies", href: "/academics/management-studies" },
       { label: "Health Sciences", href: "/academics/health-sciences" },
-      { label: "Design & Media", href: "/academics/design/bdesign" },
+      { label: "School of Design", href: "/academics/design/bdesign" },
     ],
   },
   {
