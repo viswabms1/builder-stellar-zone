@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useRef, useEffect, useState } from "react";
 import { useLanguage } from "@/providers/language-provider";
+import { useAutoMuteOnScroll } from "@/hooks/useAutoMuteOnScroll";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -39,6 +40,7 @@ import {
 function HeroVideo() {
   const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const containerRef = useAutoMuteOnScroll(videoRef);
 
   const toggleMute = () => {
     if (videoRef.current) {
@@ -113,7 +115,7 @@ function HeroVideo() {
   }, []);
 
   return (
-    <div className="w-full h-full relative overflow-hidden">
+    <div className="h-screen md:h-full relative overflow-hidden" ref={containerRef}>
       <video
         ref={videoRef}
         src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F039b67f729094553afc521bcbf44f524?alt=media&token=f3f572a0-3afd-4a0a-9570-de176cc33653&apiKey=4aa279a8430d441dba9c55f659831878"
@@ -121,10 +123,13 @@ function HeroVideo() {
         muted
         loop
         playsInline
+        preload="metadata"
+        crossOrigin="anonymous"
         volume={0}
         className="w-full h-full object-cover"
         style={{
-          filter: "brightness(1.1) contrast(1.15) saturate(1.2)"
+          filter: "brightness(1.1) contrast(1.15) saturate(1.2)",
+          objectPosition: "center top"
         }}
       />
 
@@ -252,7 +257,7 @@ export default function Academics() {
     },
     {
       icon: Film,
-      title: "Design & Digital Trans Media",
+      title: "School of Design",
       image: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fa2063ac0bf034cbaa9d21546069eeb18?format=webp&width=800",
       programs: [
         "B.Design",
@@ -306,9 +311,9 @@ export default function Academics() {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       {/* Hero Section with Video Background */}
-      <section className="relative w-full h-screen flex items-end md:items-center justify-start overflow-hidden">
+      <section className="relative flex items-end md:items-center justify-start overflow-hidden">
         <div className="absolute inset-0 w-full h-full">
           <HeroVideo />
         </div>
@@ -367,11 +372,8 @@ export default function Academics() {
             {schoolsData.map((school, index) => {
               const colors = colorClasses[school.color as keyof typeof colorClasses];
               
-              return (
-                <div
-                  key={index}
-                  className={`group h-full rounded-xl border ${colors.border} ${colors.bg} overflow-hidden backdrop-blur-sm hover:shadow-xl hover:shadow-brand-magenta/20 transition-all duration-500 hover:-translate-y-2 flex flex-col`}
-                >
+              const cardElement = (
+                <div className={`group h-full rounded-xl border ${colors.border} ${colors.bg} overflow-hidden backdrop-blur-sm hover:shadow-xl hover:shadow-brand-magenta/20 transition-all duration-500 hover:-translate-y-2 flex flex-col`}>
                   {/* Image Section */}
                   <div className="relative h-48 w-full overflow-hidden bg-gradient-to-br from-foreground/5 to-foreground/10">
                     <img
@@ -385,8 +387,8 @@ export default function Academics() {
                           : "object-cover"
                       }`}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-                    <div className="absolute top-3 left-3 inline-flex items-center gap-2 rounded-full bg-black/40 backdrop-blur px-3 py-1.5 text-foreground text-xs font-medium">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent pointer-events-none" />
+                    <div className="absolute top-3 left-3 inline-flex items-center gap-2 rounded-full bg-black/40 backdrop-blur px-3 py-1.5 text-foreground text-xs font-medium pointer-events-none">
                       <school.icon className="w-4 h-4" /> School
                     </div>
                   </div>
@@ -395,33 +397,9 @@ export default function Academics() {
                   <div className="flex-1 p-3 flex flex-col justify-between">
                     <div>
                       <div className="mb-4">
-                        {school.href ? (
-                          school.href.startsWith("http") ? (
-                            <a
-                              href={school.href}
-                              target="_blank"
-                              rel="noreferrer"
-                              className="block rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-magenta/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-                            >
-                              <h3 className="text-xl font-bold text-foreground group-hover:text-brand-magenta transition-colors leading-tight font-display">
-                                {school.title}
-                              </h3>
-                            </a>
-                          ) : (
-                            <Link
-                              to={school.href}
-                              className="block rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-magenta/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-                            >
-                              <h3 className="text-xl font-bold text-foreground group-hover:text-brand-magenta transition-colors leading-tight font-display">
-                                {school.title}
-                              </h3>
-                            </Link>
-                          )
-                        ) : (
-                          <h3 className="text-xl font-bold text-foreground font-display">
-                            {school.title}
-                          </h3>
-                        )}
+                        <h3 className="text-xl font-bold text-foreground group-hover:text-brand-magenta transition-colors leading-tight font-display">
+                          {school.title}
+                        </h3>
                       </div>
 
                       <div className="space-y-3">
@@ -443,30 +421,38 @@ export default function Academics() {
 
                     {/* CTA Button */}
                     <div className="mt-6">
-                      {school.href ? (
-                        school.href.startsWith("http") ? (
-                          <a href={school.href} target="_blank" rel="noreferrer" className="block">
-                            <button className="w-full text-foreground font-semibold text-sm flex items-center justify-between gap-2 py-2 px-3 rounded-lg hover:bg-foreground/5 group-hover:text-brand-magenta transition-all group/btn">
-                              Explore School
-                              <ChevronRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                            </button>
-                          </a>
-                        ) : (
-                          <Link to={school.href} className="block">
-                            <button className="w-full text-foreground font-semibold text-sm flex items-center justify-between gap-2 py-2 px-3 rounded-lg hover:bg-foreground/5 group-hover:text-brand-magenta transition-all group/btn">
-                              Explore School
-                              <ChevronRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                            </button>
-                          </Link>
-                        )
-                      ) : (
-                        <button className="w-full text-foreground font-semibold text-sm flex items-center justify-between gap-2 py-2 px-3 rounded-lg hover:bg-foreground/5">
-                          Explore School
-                          <ChevronRight className="w-4 h-4" />
-                        </button>
-                      )}
+                      <button className="w-full text-foreground font-semibold text-sm flex items-center justify-between gap-2 py-2 px-3 rounded-lg hover:bg-foreground/5 group-hover:text-brand-magenta transition-all group/btn">
+                        Explore School
+                        <ChevronRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                      </button>
                     </div>
                   </div>
+                </div>
+              );
+
+              return (
+                <div key={index}>
+                  {school.href ? (
+                    school.href.startsWith("http") ? (
+                      <a
+                        href={school.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="block"
+                      >
+                        {cardElement}
+                      </a>
+                    ) : (
+                      <Link
+                        to={school.href}
+                        className="block"
+                      >
+                        {cardElement}
+                      </Link>
+                    )
+                  ) : (
+                    cardElement
+                  )}
                 </div>
               );
             })}
@@ -517,7 +503,7 @@ export default function Academics() {
                   <Button
                     variant="outline"
                     size="lg"
-                    className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-foreground px-12 py-6 text-lg font-semibold rounded-xl transition-all duration-300"
+                    className="border-2 border-transparent text-orange-500 hover:bg-black/20 bg-black/10 backdrop-blur-sm hover:text-orange-500 px-12 py-6 text-lg font-semibold rounded-xl transition-all duration-300"
                   >
                     Virtual Tour
                     <ArrowRight className="w-5 h-5 ml-2" />

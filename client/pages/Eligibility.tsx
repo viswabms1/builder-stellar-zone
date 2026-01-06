@@ -637,9 +637,9 @@ const schools: School[] = [
     ],
   },
   {
-    name: "School of Design & Digital Trans-Media",
+    name: "School of Design",
     tagline:
-      "Studio-based design program with immersive projects in product, UX, and trans-media storytelling.",
+      "Studio-based design program with immersive projects in product, UX, and visual storytelling.",
     icon: PenTool,
     categories: [
       {

@@ -7,6 +7,7 @@ import {
   CalendarDays,
   ChevronRight,
   DollarSign,
+  Download,
   GraduationCap,
   Layers,
   Network,
@@ -27,7 +28,13 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { DeanSection, type DeanInfo } from "@/components/DeanSection";
-
+import { useAutoMuteOnScroll } from "@/hooks/useAutoMuteOnScroll";
+import {
+  getManagementEvents,
+  getManagementNews,
+  getManagementAnnouncements,
+  type NoticeItem as ImportedNoticeItem,
+} from "@/data/management-studies-events";
 
 type ProgramCard = {
   name: string;
@@ -59,22 +66,275 @@ type NewsItem = {
   color: "brand-magenta" | "brand-blue" | "brand-orange";
 };
 
+type NoticeItem = ImportedNoticeItem;
+
+const getAllManagementEvents = () => getManagementEvents();
+const getManagementNewsData = () => getManagementNews();
+const getManagementAnnouncementsData = () => getManagementAnnouncements();
+
+function NoticeBoardCarousel() {
+  const [currentEventIndex, setCurrentEventIndex] = useState(0);
+  const [currentNewsIndex, setCurrentNewsIndex] = useState(0);
+  const [currentAnnouncementIndex, setCurrentAnnouncementIndex] = useState(0);
+
+  const events = getAllManagementEvents();
+  const news = getManagementNewsData();
+  const announcements = getManagementAnnouncementsData();
+
+  useEffect(() => {
+    if (events.length === 0) return;
+    const interval = setInterval(() => {
+      setCurrentEventIndex((prev) => (prev + 1) % events.length);
+    }, 6000);
+    return () => clearInterval(interval);
+  }, [events.length]);
+
+  useEffect(() => {
+    if (news.length === 0) return;
+    const interval = setInterval(() => {
+      setCurrentNewsIndex((prev) => (prev + 1) % news.length);
+    }, 6000);
+    return () => clearInterval(interval);
+  }, [news.length]);
+
+  useEffect(() => {
+    if (announcements.length === 0) return;
+    const interval = setInterval(() => {
+      setCurrentAnnouncementIndex((prev) => (prev + 1) % announcements.length);
+    }, 6000);
+    return () => clearInterval(interval);
+  }, [announcements.length]);
+
+  const getCategoryStyles = (category: "Event" | "News" | "Announcement") => {
+    switch (category) {
+      case "Event":
+        return {
+          borderColor: "border-brand-magenta",
+          bgColor: "bg-brand-magenta/10",
+          textColor: "text-brand-magenta",
+          dotColor: "bg-brand-magenta",
+        };
+      case "News":
+        return {
+          borderColor: "border-brand-orange",
+          bgColor: "bg-brand-orange/10",
+          textColor: "text-brand-orange",
+          dotColor: "bg-brand-orange",
+        };
+      default:
+        return {
+          borderColor: "border-brand-blue",
+          bgColor: "bg-brand-blue/10",
+          textColor: "text-brand-blue",
+          dotColor: "bg-brand-blue",
+        };
+    }
+  };
+
+  const renderCarousel = (
+    title: string,
+    items: NoticeItem[],
+    currentIndex: number,
+    setCurrentIndex: (idx: number) => void,
+    category: "Event" | "News" | "Announcement",
+  ) => {
+    const styles = getCategoryStyles(category);
+
+    if (items.length === 0) {
+      return (
+        <div className="space-y-4">
+          <div
+            className={`flex items-center gap-2 px-4 py-3 rounded-xl border-l-4 ${styles.borderColor} ${styles.bgColor}`}
+          >
+            <h3 className={`headline-4 font-display ${styles.textColor}`}>
+              {title}
+            </h3>
+          </div>
+          <p className="text-xs text-foreground/60 italic p-4 text-center">
+            No items to display
+          </p>
+        </div>
+      );
+    }
+
+    const currentItem = items[currentIndex];
+
+    return (
+      <div className="space-y-4">
+        <div
+          className={`flex items-center gap-2 px-4 py-3 rounded-xl border-l-4 ${styles.borderColor} ${styles.bgColor}`}
+        >
+          <h3 className={`headline-4 font-display ${styles.textColor}`}>
+            {title}
+          </h3>
+          <Badge className="ml-auto text-xs">
+            {currentIndex + 1} / {items.length}
+          </Badge>
+        </div>
+
+        <Card className="group overflow-hidden rounded-2xl border-2 border-border/30 bg-card/40 backdrop-blur-sm">
+          {currentItem.image && (
+            <div className="relative h-48 overflow-hidden">
+              <img
+                src={currentItem.image}
+                alt={currentItem.title}
+                className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
+              />
+            </div>
+          )}
+          <CardContent className="p-4 space-y-3">
+            <div className="flex items-start justify-between gap-2">
+              <div className="flex-1">
+                <h4 className="font-display font-semibold text-sm text-foreground mb-2 line-clamp-2">
+                  {currentItem.title}
+                </h4>
+                <p className="text-xs text-foreground/70 line-clamp-2">
+                  {currentItem.description}
+                </p>
+                {currentItem.department && (
+                  <p className="text-xs text-foreground/50 mt-2">
+                    Department: {currentItem.department}
+                  </p>
+                )}
+              </div>
+            </div>
+            <div className="flex items-center justify-between pt-2 border-t border-border/20">
+              <span className="text-xs font-semibold text-foreground/60">
+                {currentItem.date}
+              </span>
+              {currentItem.link && (
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="h-6 px-2 text-xs bg-brand-blue/10 text-brand-blue hover:bg-brand-blue/20"
+                  asChild
+                >
+                  <a href={currentItem.link} target="_blank" rel="noreferrer">
+                    <Download className="h-3 w-3 mr-1" />
+                    PDF
+                  </a>
+                </Button>
+              )}
+            </div>
+          </CardContent>
+        </Card>
+
+        <div className="flex items-center justify-between gap-2">
+          <div className="flex gap-1">
+            {items.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setCurrentIndex(idx)}
+                className={`h-1.5 rounded-full transition-all ${
+                  idx === currentIndex
+                    ? `${styles.dotColor} w-6`
+                    : "bg-border/40 w-1.5 hover:bg-border/60"
+                }`}
+              />
+            ))}
+          </div>
+          <div className="flex gap-1">
+            <Button
+              variant="outline"
+              size="sm"
+              className="h-7 px-2 text-xs"
+              onClick={() =>
+                setCurrentIndex(
+                  (prev) => (prev - 1 + items.length) % items.length,
+                )
+              }
+            >
+              ←
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              className="h-7 px-2 text-xs"
+              onClick={() =>
+                setCurrentIndex((prev) => (prev + 1) % items.length)
+              }
+            >
+              →
+            </Button>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  return (
+    <section className="px-3 py-8">
+      <div className="mx-auto max-w-7xl space-y-4">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <h2 className="headline-2 mb-3 font-display">
+              <span className="text-foreground">School of Management </span>
+              <span className="bg-brand-gradient bg-clip-text text-transparent">
+                Notice Board
+              </span>
+            </h2>
+            <p className="max-w-2xl text-sm text-foreground sm:text-base font-body">
+              Stay updated with upcoming events, news, and important
+              announcements from the school.
+            </p>
+          </div>
+        </div>
+
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          <div>
+            {renderCarousel(
+              "Events",
+              events,
+              currentEventIndex,
+              setCurrentEventIndex,
+              "Event",
+            )}
+          </div>
+          <div>
+            {renderCarousel(
+              "News",
+              news,
+              currentNewsIndex,
+              setCurrentNewsIndex,
+              "News",
+            )}
+          </div>
+          <div>
+            {renderCarousel(
+              "Announcements",
+              announcements,
+              currentAnnouncementIndex,
+              setCurrentAnnouncementIndex,
+              "Announcement",
+            )}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 const HERO_IMAGE =
   "https://images.unsplash.com/photo-1559027615-cd2628902d4a?q=80&w=2000&auto=format&fit=crop";
-
 
 const UG_PROGRAM_CARDS: ProgramCard[] = [
   {
     name: "Bachelor of Commerce",
     area: "Undergraduate",
     description:
-      "Build strong accounting, finance and analytics fundamentals with industry certifications and practical experience.",
+      "Master accounting, finance, and data science using GPU-accelerated analytics and fintech platforms. Learn on the same infrastructure used by investment banks and fintech unicorns. 20-35% salary premium with advanced technical skills.",
     image:
       "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1600&auto=format&fit=crop",
-    link: "https://www.dsu.edu.in/management-studies/bcom",
-    highlights: ["Accounting", "Finance", "Analytics"],
-    overlay: "bg-gradient-to-br from-brand-magenta/80 via-black/75 to-black/60 mix-blend-multiply",
-    badgeClass: "bg-brand-magenta/25 text-foreground/90 border border-white/30 backdrop-blur",
+    link: "/academics/commerce-and-management/bcom",
+    highlights: [
+      "Financial Analytics",
+      "Fintech & Blockchain",
+      "ML in Finance",
+    ],
+    overlay:
+      "bg-gradient-to-br from-brand-magenta/80 via-black/75 to-black/60 mix-blend-multiply",
+    badgeClass:
+      "bg-brand-magenta/25 text-foreground/90 border border-white/30 backdrop-blur",
     panelClass: "bg-black/55 backdrop-blur-xl",
     featured: true,
   },
@@ -85,10 +345,12 @@ const UG_PROGRAM_CARDS: ProgramCard[] = [
       "Develop leadership and entrepreneurial skills through labs, internships and mentoring from industry leaders.",
     image:
       "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1600&auto=format&fit=crop",
-    link: "https://www.dsu.edu.in/management-studies/bba",
+    link: "/academics/commerce-and-management/bba",
     highlights: ["Leadership", "Entrepreneurship", "Mentoring"],
-    overlay: "bg-gradient-to-br from-brand-blue/75 via-black/70 to-black/55 mix-blend-multiply",
-    badgeClass: "bg-brand-blue/30 text-foreground/90 border border-white/25 backdrop-blur",
+    overlay:
+      "bg-gradient-to-br from-brand-blue/75 via-black/70 to-black/55 mix-blend-multiply",
+    badgeClass:
+      "bg-brand-blue/30 text-foreground/90 border border-white/25 backdrop-blur",
     panelClass: "bg-black/55 backdrop-blur-xl",
     featured: true,
   },
@@ -99,13 +361,15 @@ const PG_PROGRAM_CARDS: ProgramCard[] = [
     name: "Master of Business Administration",
     area: "Postgraduate",
     description:
-      "Specialise in marketing, finance, HR, analytics and operations with global immersion and industry projects.",
+      "Specialise in marketing, finance, HR, analytics and operations with global immersion. Advanced fintech and AI-driven business analytics with industry projects at scale.",
     image:
       "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1600&auto=format&fit=crop",
-    link: "https://www.dsu.edu.in/management-studies/mba",
-    highlights: ["Marketing", "Finance", "Global Exposure"],
-    overlay: "bg-gradient-to-br from-brand-magenta/70 via-black/70 to-black/55 mix-blend-multiply",
-    badgeClass: "bg-brand-magenta/30 text-foreground/90 border border-white/25 backdrop-blur",
+    link: "/academics/commerce-and-management/mba",
+    highlights: ["Marketing", "Fintech & AI Analytics", "Global Business"],
+    overlay:
+      "bg-gradient-to-br from-brand-magenta/70 via-black/70 to-black/55 mix-blend-multiply",
+    badgeClass:
+      "bg-brand-magenta/30 text-foreground/90 border border-white/25 backdrop-blur",
     panelClass: "bg-black/55 backdrop-blur-xl",
     featured: true,
   },
@@ -118,8 +382,10 @@ const PG_PROGRAM_CARDS: ProgramCard[] = [
       "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1600&auto=format&fit=crop",
     link: "https://www.dsu.edu.in/management-studies/phd",
     highlights: ["Research", "Specialisation", "Industry Focus"],
-    overlay: "bg-gradient-to-br from-brand-blue/70 via-brand-magenta/60 to-black/55 mix-blend-multiply",
-    badgeClass: "bg-brand-blue/30 text-foreground/90 border border-white/25 backdrop-blur",
+    overlay:
+      "bg-gradient-to-br from-brand-blue/70 via-brand-magenta/60 to-black/55 mix-blend-multiply",
+    badgeClass:
+      "bg-brand-blue/30 text-foreground/90 border border-white/25 backdrop-blur",
     panelClass: "bg-black/55 backdrop-blur-xl",
     featured: true,
   },
@@ -171,13 +437,27 @@ const FEATURED_NEWS: NewsItem[] = [
 ];
 
 const DEAN_INFO: DeanInfo = {
-  name: "Dr. Vikram Iyer",
-  title: "M.B.A., Ph.D",
-  position: "Dean, School of Management Studies",
-  photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop",
-  videoUrl: "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F0c95c62aa88741fca8ebdc32aade53d5?alt=media&token=c57ff4a9-aea8-4ff3-843b-23ce820ba630&apiKey=4aa279a8430d441dba9c55f659831878",
+  name: "Dr. Truptha Shankar",
+  title: "Professor | Dean (UG)",
+  position: "Dean, School of Commerce and Management Studies",
+  photo:
+    "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fd39f4e0a74a64273b3cce774eb4a8f38?format=webp&width=800",
+  videoUrl:
+    "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F5189dc50d1bc4bf294c7cc04b8c457a2?alt=media&token=0e287e76-019b-43c0-90d4-8dc5035c0670&apiKey=4aa279a8430d441dba9c55f659831878",
   borderColor: "border-amber-500/20",
   bgColor: "bg-amber-500/10",
+};
+
+const PG_DEAN_INFO: DeanInfo = {
+  name: "Capt. Nagaraj Subbarao",
+  title: "Captain",
+  position: "Dean, School of Commerce & Management (PG)",
+  photo:
+    "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F6139212d26904e0abef15c9a4f98c0e0?format=webp&width=800",
+  videoUrl:
+    "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2Fc6b2ba8e319247d79591d68c58b18dad?alt=media&token=9fcbbdb6-be09-45fc-b159-382031fa77a6&apiKey=4aa279a8430d441dba9c55f659831878",
+  borderColor: "border-orange-500/20",
+  bgColor: "bg-orange-500/10",
 };
 
 function ProgramCardComponent({ program }: { program: ProgramCard }) {
@@ -298,6 +578,7 @@ function CalendarResourceCard({ entry }: { entry: CalendarEntry }) {
 function HeroVideo() {
   const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const containerRef = useAutoMuteOnScroll(videoRef);
 
   const toggleMute = () => {
     if (videoRef.current) {
@@ -313,18 +594,44 @@ function HeroVideo() {
     video.muted = isMuted;
   }, [isMuted]);
 
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const handleEnded = () => {
+      const rect = containerRef.current?.getBoundingClientRect();
+      const isVisible =
+        rect && rect.top < window.innerHeight && rect.bottom > 0;
+      if (isVisible) {
+        video.currentTime = 0;
+        video.play().catch(() => {});
+      }
+    };
+
+    video.addEventListener("ended", handleEnded);
+    return () => {
+      video.removeEventListener("ended", handleEnded);
+    };
+  }, []);
+
   return (
-    <div className="w-full h-screen relative overflow-hidden flex items-end md:items-center justify-start">
+    <div
+      ref={containerRef}
+      className="h-[40vh] sm:h-[55vh] md:h-[65vh] lg:h-[75vh] relative overflow-hidden flex items-center justify-start hero-video-container"
+    >
       <video
         ref={videoRef}
-        src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F0b20f5ea03294f4d824e69fd8489b78c?alt=media&token=0c4092c4-4afd-4237-b850-81046ecf52f7&apiKey=4aa279a8430d441dba9c55f659831878"
+        src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2Fb3865b1bf6064214a4b5b2bcfcfeec5a?alt=media&token=6447ef33-1a83-4fce-82b0-92a764af6501&apiKey=4aa279a8430d441dba9c55f659831878"
         autoPlay
         muted={isMuted}
         loop
         playsInline
-        className="absolute inset-0 w-full h-full object-cover"
+        preload="metadata"
+        crossOrigin="anonymous"
+        className="absolute inset-0 object-cover"
         style={{
-          filter: "brightness(1.1) contrast(1.15) saturate(1.2)"
+          filter: "brightness(1.1) contrast(1.15) saturate(1.2)",
+          objectPosition: "center top",
         }}
       />
 
@@ -333,23 +640,27 @@ function HeroVideo() {
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/30 pointer-events-none"></div>
 
       <div className="absolute top-0 left-0 w-96 h-96 bg-brand-magenta/5 rounded-full filter blur-3xl opacity-60 animate-float pointer-events-none"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-brand-orange/5 rounded-full filter blur-3xl opacity-60 animate-float pointer-events-none" style={{ animationDelay: "2s" }}></div>
+      <div
+        className="absolute bottom-0 right-0 w-96 h-96 bg-brand-orange/5 rounded-full filter blur-3xl opacity-60 animate-float pointer-events-none"
+        style={{ animationDelay: "2s" }}
+      ></div>
 
-      <div className="absolute inset-0 opacity-5 pointer-events-none" style={{
-        backgroundImage: "repeating-linear-gradient(0deg, rgba(255,255,255,.03) 0px, rgba(255,255,255,.03) 1px, transparent 1px, transparent 2px)"
-      }}></div>
+      <div
+        className="absolute inset-0 opacity-5 pointer-events-none"
+        style={{
+          backgroundImage:
+            "repeating-linear-gradient(0deg, rgba(255,255,255,.03) 0px, rgba(255,255,255,.03) 1px, transparent 1px, transparent 2px)",
+        }}
+      ></div>
 
       <div className="relative max-w-7xl mx-auto px-3 w-full z-10 pb-20 md:pb-0">
         <div className="max-w-2xl">
-          <p className="text-sm md:text-base text-white/80 mb-4 uppercase tracking-widest font-display">
-            School of Management Studies
+          <p className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 uppercase tracking-widest font-display">
+            School of Commerce and Management Studies
           </p>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight font-display">
-            Recalibrate. Collaborate. Elevate.
+          <h1 className="text-sm md:text-base text-white/80 mb-6 leading-tight font-display">
+            Future-Ready Business Leaders
           </h1>
-          <p className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed max-w-xl font-display">
-            Shape business leaders with immersive management education, innovation labs and global exposure tailored for the trust economy.
-          </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
             <a
@@ -364,20 +675,6 @@ function HeroVideo() {
               >
                 Apply Now
                 <ChevronRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </a>
-            <a
-              href="https://dsu.edu.in/virtual-tour/"
-              target="_blank"
-              rel="noreferrer"
-              className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-            >
-              <Button
-                variant="outline"
-                size="lg"
-                className="border-2 border-white text-white hover:bg-white hover:text-orange-600 px-8 py-6 text-base font-semibold font-display transition-all duration-300"
-              >
-                Virtual Tour
               </Button>
             </a>
           </div>
@@ -402,13 +699,19 @@ function HeroVideo() {
 export default function ManagementStudies() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <section className="relative w-full" id="top">
+      <section className="relative" id="top">
         <HeroVideo />
       </section>
 
-
       {/* Dean's Message Section */}
-      <DeanSection dean={DEAN_INFO} />
+      <div className="mt-16">
+        <DeanSection dean={DEAN_INFO} />
+      </div>
+
+      {/* PG Dean Section */}
+      <div className="mt-16">
+        <DeanSection dean={PG_DEAN_INFO} />
+      </div>
 
       <section id="programs" className="relative overflow-hidden px-3 py-8">
         <div
@@ -422,7 +725,10 @@ export default function ManagementStudies() {
                 Academic Pathways for Business Leaders
               </h2>
               <p className="mt-3 text-sm text-foreground font-body">
-                Comprehensive undergraduate and postgraduate programmes combining rigorous academics with experiential projects, industry mentorship and global immersion to prepare agile business leaders.
+                Comprehensive undergraduate and postgraduate programmes
+                combining rigorous academics with experiential projects,
+                industry mentorship and global immersion to prepare agile
+                business leaders.
               </p>
             </div>
           </div>
@@ -469,51 +775,6 @@ export default function ManagementStudies() {
         </div>
       </section>
 
-      <section id="calendar" className="px-3 py-8">
-        <div className="mx-auto max-w-6xl">
-          <div className="relative overflow-hidden rounded-none border-[3px] border-dashed border-brand-magenta/30 bg-card/70 p-10 shadow-[0_35px_120px_-45px_rgba(175,80,255,0.65)] backdrop-blur">
-            <div
-              className="pointer-events-none absolute -left-16 top-10 h-32 w-32 rounded-full bg-brand-magenta/15 blur-3xl"
-              aria-hidden="true"
-            />
-            <div
-              className="pointer-events-none absolute -right-12 bottom-0 h-36 w-36 rounded-full bg-brand-blue/15 blur-3xl"
-              aria-hidden="true"
-            />
-            <div className="relative grid gap-0 lg:grid-cols-[1.1fr_minmax(0,1fr)]">
-              <div className="space-y-5">
-                <Badge className="bg-brand-magenta/15 text-brand-magenta">
-                  Notice Board
-                </Badge>
-                <h2 className="font-display text-3xl md:text-4xl">
-                  SCMS Notice Board
-                </h2>
-                <p className="text-sm text-foreground font-body">
-                  Curated updates for the ongoing academic year 2025-26. Stay aligned with assessment windows, projects and internship timelines.
-                </p>
-                <a
-                  href="https://www.dsu.edu.in/management-studies/notices"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-2 text-sm font-medium text-brand-magenta hover:underline"
-                >
-                  Browse previous circulars
-                  <ChevronRight className="h-4 w-4" />
-                </a>
-              </div>
-              <div className="grid gap-0">
-                {CALENDAR_ENTRIES.map((entry) => (
-                  <CalendarResourceCard
-                    key={`${entry.title}-${entry.academicYear}`}
-                    entry={entry}
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section
         id="related-resources"
         className="bg-gradient-to-r from-brand-magenta/5 via-brand-blue/5 to-brand-orange/5 px-3 py-8"
@@ -524,7 +785,8 @@ export default function ManagementStudies() {
               Explore More at DSU SCMS
             </h2>
             <p className="mt-3 text-sm text-foreground font-body">
-              Discover our innovation labs, corporate partnerships, placements and admission pathways
+              Discover our innovation labs, corporate partnerships, placements
+              and admission pathways
             </p>
           </div>
           <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-4">
@@ -629,25 +891,33 @@ export default function ManagementStudies() {
             </CardHeader>
             <CardContent className="grid gap-4 text-sm font-body text-foreground">
               <div>
-                <div className="text-foreground/70 text-xs uppercase tracking-wide">Email</div>
+                <div className="text-foreground/70 text-xs uppercase tracking-wide">
+                  Email
+                </div>
                 <div className="font-medium text-foreground">
                   scms@dsu.edu.in
                 </div>
               </div>
               <div>
-                <div className="text-foreground/70 text-xs uppercase tracking-wide">Phone</div>
+                <div className="text-foreground/70 text-xs uppercase tracking-wide">
+                  Phone
+                </div>
                 <div className="font-medium text-foreground">
                   +91-80-49092933
                 </div>
               </div>
               <div>
-                <div className="text-foreground/70 text-xs uppercase tracking-wide">Campus Address</div>
+                <div className="text-foreground/70 text-xs uppercase tracking-wide">
+                  Campus Address
+                </div>
                 <div className="font-medium text-foreground">
                   Kanakapura Road, Bengaluru, Karnataka
                 </div>
               </div>
               <div>
-                <div className="text-foreground/70 text-xs uppercase tracking-wide">Office Hours</div>
+                <div className="text-foreground/70 text-xs uppercase tracking-wide">
+                  Office Hours
+                </div>
                 <div className="font-medium text-foreground">
                   Mon–Fri, 9:00 AM – 5:30 PM
                 </div>
@@ -656,9 +926,7 @@ export default function ManagementStudies() {
           </Card>
           <Card className="rounded-none border border-blue-500/20 bg-blue-500/10">
             <CardHeader>
-              <CardTitle className="font-display">
-                More Resources
-              </CardTitle>
+              <CardTitle className="font-display">More Resources</CardTitle>
             </CardHeader>
             <CardContent className="grid gap-3 text-sm font-body">
               <a
@@ -698,69 +966,8 @@ export default function ManagementStudies() {
         </div>
       </section>
 
-      <section id="featured-news" className="px-3 py-8 bg-gradient-to-r from-brand-blue/5 via-brand-magenta/5 to-brand-orange/5">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-12 text-center">
-            <h2 className="font-display text-3xl md:text-4xl mb-3">
-              Latest from SCMS
-            </h2>
-            <p className="text-sm text-foreground font-body">
-              Stories of business excellence, research breakthroughs, and student success
-            </p>
-          </div>
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {FEATURED_NEWS.map((item, index) => (
-              <a
-                key={item.title}
-                href="#"
-                className="group flex flex-col h-full"
-              >
-                {/* Image Container */}
-                <div className="relative w-full h-64 overflow-hidden rounded-lg mb-6">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-
-                  {/* Overlaid Category Badge */}
-                  <div className="absolute top-4 left-4">
-                    <Badge
-                      className={`text-xs font-bold tracking-wider text-white ${
-                        item.color === "brand-orange"
-                          ? "bg-brand-orange"
-                          : item.color === "brand-magenta"
-                            ? "bg-brand-magenta"
-                            : "bg-blue-600"
-                      }`}
-                    >
-                      {item.category}
-                    </Badge>
-                  </div>
-                </div>
-
-                {/* Text Content Below Image */}
-                <div className="flex-1 flex flex-col">
-                  <h3 className="text-lg font-semibold text-foreground font-display line-clamp-2 group-hover:text-brand-magenta transition-colors mb-3">
-                    {item.title}
-                  </h3>
-                  <p className="text-sm text-foreground/80 font-body line-clamp-3 mb-4">
-                    {item.excerpt}
-                  </p>
-
-                  {/* Date and Link */}
-                  <div className="mt-auto pt-4 border-t border-border/30 flex items-center justify-between">
-                    <span className="text-xs text-foreground/60 font-body flex items-center">
-                      <CalendarDays className="w-3 h-3 mr-1" /> {item.date}
-                    </span>
-                    <ChevronRight className="w-4 h-4 text-foreground/60 group-hover:text-brand-magenta transition-colors" />
-                  </div>
-                </div>
-              </a>
-            ))}
-          </div>
-        </div>
+      <section id="notice-board" className="px-3 py-8">
+        <NoticeBoardCarousel />
       </section>
     </div>
   );

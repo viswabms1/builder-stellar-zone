@@ -8,6 +8,7 @@ import {
   BookOpen,
   CalendarDays,
   ChevronRight,
+  Download,
   FileText,
   FlaskConical,
   GraduationCap,
@@ -28,7 +29,13 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { DeanSection, type DeanInfo } from "@/components/DeanSection";
-
+import { useAutoMuteOnScroll } from "@/hooks/useAutoMuteOnScroll";
+import {
+  getAppliedSciencesEvents,
+  getAppliedSciencesNews,
+  getAppliedSciencesAnnouncements,
+  type NoticeItem as ImportedNoticeItem,
+} from "@/data/applied-sciences-events";
 
 type ProgramCard = {
   name: string;
@@ -60,9 +67,259 @@ type NewsItem = {
   color: "brand-magenta" | "brand-blue" | "brand-orange";
 };
 
+type NoticeItem = ImportedNoticeItem;
+
+const getAllAppliedSciencesEvents = () => getAppliedSciencesEvents();
+const getAppliedSciencesNewsData = () => getAppliedSciencesNews();
+const getAppliedSciencesAnnouncementsData = () =>
+  getAppliedSciencesAnnouncements();
+
+function NoticeBoardCarousel() {
+  const [currentEventIndex, setCurrentEventIndex] = useState(0);
+  const [currentNewsIndex, setCurrentNewsIndex] = useState(0);
+  const [currentAnnouncementIndex, setCurrentAnnouncementIndex] = useState(0);
+
+  const events = getAllAppliedSciencesEvents();
+  const news = getAppliedSciencesNewsData();
+  const announcements = getAppliedSciencesAnnouncementsData();
+
+  useEffect(() => {
+    if (events.length === 0) return;
+    const interval = setInterval(() => {
+      setCurrentEventIndex((prev) => (prev + 1) % events.length);
+    }, 6000);
+    return () => clearInterval(interval);
+  }, [events.length]);
+
+  useEffect(() => {
+    if (news.length === 0) return;
+    const interval = setInterval(() => {
+      setCurrentNewsIndex((prev) => (prev + 1) % news.length);
+    }, 6000);
+    return () => clearInterval(interval);
+  }, [news.length]);
+
+  useEffect(() => {
+    if (announcements.length === 0) return;
+    const interval = setInterval(() => {
+      setCurrentAnnouncementIndex((prev) => (prev + 1) % announcements.length);
+    }, 6000);
+    return () => clearInterval(interval);
+  }, [announcements.length]);
+
+  const getCategoryStyles = (category: "Event" | "News" | "Announcement") => {
+    switch (category) {
+      case "Event":
+        return {
+          borderColor: "border-brand-magenta",
+          bgColor: "bg-brand-magenta/10",
+          textColor: "text-brand-magenta",
+          dotColor: "bg-brand-magenta",
+        };
+      case "News":
+        return {
+          borderColor: "border-brand-orange",
+          bgColor: "bg-brand-orange/10",
+          textColor: "text-brand-orange",
+          dotColor: "bg-brand-orange",
+        };
+      default:
+        return {
+          borderColor: "border-brand-blue",
+          bgColor: "bg-brand-blue/10",
+          textColor: "text-brand-blue",
+          dotColor: "bg-brand-blue",
+        };
+    }
+  };
+
+  const renderCarousel = (
+    title: string,
+    items: NoticeItem[],
+    currentIndex: number,
+    setCurrentIndex: (idx: number) => void,
+    category: "Event" | "News" | "Announcement",
+  ) => {
+    const styles = getCategoryStyles(category);
+
+    if (items.length === 0) {
+      return (
+        <div className="space-y-4">
+          <div
+            className={`flex items-center gap-2 px-4 py-3 rounded-xl border-l-4 ${styles.borderColor} ${styles.bgColor}`}
+          >
+            <h3 className={`headline-4 font-display ${styles.textColor}`}>
+              {title}
+            </h3>
+          </div>
+          <p className="text-xs text-foreground/60 italic p-4 text-center">
+            No items to display
+          </p>
+        </div>
+      );
+    }
+
+    const currentItem = items[currentIndex];
+
+    return (
+      <div className="space-y-4">
+        <div
+          className={`flex items-center gap-2 px-4 py-3 rounded-xl border-l-4 ${styles.borderColor} ${styles.bgColor}`}
+        >
+          <h3 className={`headline-4 font-display ${styles.textColor}`}>
+            {title}
+          </h3>
+          <Badge className="ml-auto text-xs">
+            {currentIndex + 1} / {items.length}
+          </Badge>
+        </div>
+
+        <Card className="group overflow-hidden rounded-2xl border-2 border-border/30 bg-card/40 backdrop-blur-sm">
+          {currentItem.image && (
+            <div className="relative h-48 overflow-hidden">
+              <img
+                src={currentItem.image}
+                alt={currentItem.title}
+                className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
+              />
+            </div>
+          )}
+          <CardContent className="p-4 space-y-3">
+            <div className="flex items-start justify-between gap-2">
+              <div className="flex-1">
+                <h4 className="font-display font-semibold text-sm text-foreground mb-2 line-clamp-2">
+                  {currentItem.title}
+                </h4>
+                <p className="text-xs text-foreground/70 line-clamp-2">
+                  {currentItem.description}
+                </p>
+                {currentItem.department && (
+                  <p className="text-xs text-foreground/50 mt-2">
+                    Department: {currentItem.department}
+                  </p>
+                )}
+              </div>
+            </div>
+            <div className="flex items-center justify-between pt-2 border-t border-border/20">
+              <span className="text-xs font-semibold text-foreground/60">
+                {currentItem.date}
+              </span>
+              {currentItem.link && (
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="h-6 px-2 text-xs bg-brand-blue/10 text-brand-blue hover:bg-brand-blue/20"
+                  asChild
+                >
+                  <a href={currentItem.link} target="_blank" rel="noreferrer">
+                    <Download className="h-3 w-3 mr-1" />
+                    PDF
+                  </a>
+                </Button>
+              )}
+            </div>
+          </CardContent>
+        </Card>
+
+        <div className="flex items-center justify-between gap-2">
+          <div className="flex gap-1">
+            {items.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setCurrentIndex(idx)}
+                className={`h-1.5 rounded-full transition-all ${
+                  idx === currentIndex
+                    ? `${styles.dotColor} w-6`
+                    : "bg-border/40 w-1.5 hover:bg-border/60"
+                }`}
+              />
+            ))}
+          </div>
+          <div className="flex gap-1">
+            <Button
+              variant="outline"
+              size="sm"
+              className="h-7 px-2 text-xs"
+              onClick={() =>
+                setCurrentIndex(
+                  (prev) => (prev - 1 + items.length) % items.length,
+                )
+              }
+            >
+              ←
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              className="h-7 px-2 text-xs"
+              onClick={() =>
+                setCurrentIndex((prev) => (prev + 1) % items.length)
+              }
+            >
+              →
+            </Button>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  return (
+    <section className="px-3 py-8">
+      <div className="mx-auto max-w-7xl space-y-4">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <h2 className="headline-2 mb-3 font-display">
+              <span className="text-foreground">
+                School of Applied Sciences{" "}
+              </span>
+              <span className="bg-brand-gradient bg-clip-text text-transparent">
+                Notice Board
+              </span>
+            </h2>
+            <p className="max-w-2xl text-sm text-foreground sm:text-base font-body">
+              Stay updated with upcoming events, news, and important
+              announcements from the school.
+            </p>
+          </div>
+        </div>
+
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          <div>
+            {renderCarousel(
+              "Events",
+              events,
+              currentEventIndex,
+              setCurrentEventIndex,
+              "Event",
+            )}
+          </div>
+          <div>
+            {renderCarousel(
+              "News",
+              news,
+              currentNewsIndex,
+              setCurrentNewsIndex,
+              "News",
+            )}
+          </div>
+          <div>
+            {renderCarousel(
+              "Announcements",
+              announcements,
+              currentAnnouncementIndex,
+              setCurrentAnnouncementIndex,
+              "Announcement",
+            )}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 const HERO_IMAGE =
   "https://images.unsplash.com/photo-1581091870622-5f1e9b8d2f70?q=80&w=2000&auto=format&fit=crop";
-
 
 const UG_PROGRAM_CARDS: ProgramCard[] = [
   {
@@ -74,8 +331,10 @@ const UG_PROGRAM_CARDS: ProgramCard[] = [
       "https://images.unsplash.com/photo-1581091870622-5f1e9b8d2f70?q=80&w=1600&auto=format&fit=crop",
     link: "https://www.dsu.edu.in/basic-applied-sciences/biological-sciences",
     highlights: ["Molecular Biology", "Biotechnology", "Research"],
-    overlay: "bg-gradient-to-br from-brand-magenta/80 via-black/75 to-black/60 mix-blend-multiply",
-    badgeClass: "bg-brand-magenta/25 text-foreground/90 border border-white/30 backdrop-blur",
+    overlay:
+      "bg-gradient-to-br from-brand-magenta/80 via-black/75 to-black/60 mix-blend-multiply",
+    badgeClass:
+      "bg-brand-magenta/25 text-foreground/90 border border-white/30 backdrop-blur",
     panelClass: "bg-black/55 backdrop-blur-xl",
     featured: true,
   },
@@ -88,8 +347,10 @@ const UG_PROGRAM_CARDS: ProgramCard[] = [
       "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1600&auto=format&fit=crop",
     link: "https://www.dsu.edu.in/basic-applied-sciences/data-science",
     highlights: ["Data Analytics", "Machine Learning", "AI"],
-    overlay: "bg-gradient-to-br from-brand-blue/75 via-black/70 to-black/55 mix-blend-multiply",
-    badgeClass: "bg-brand-blue/30 text-foreground/90 border border-white/25 backdrop-blur",
+    overlay:
+      "bg-gradient-to-br from-brand-blue/75 via-black/70 to-black/55 mix-blend-multiply",
+    badgeClass:
+      "bg-brand-blue/30 text-foreground/90 border border-white/25 backdrop-blur",
     panelClass: "bg-black/55 backdrop-blur-xl",
     featured: true,
   },
@@ -102,8 +363,10 @@ const UG_PROGRAM_CARDS: ProgramCard[] = [
       "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1600&auto=format&fit=crop",
     link: "https://www.dsu.edu.in/basic-applied-sciences/allied-health",
     highlights: ["Diagnostics", "Medical Lab", "Clinical Practice"],
-    overlay: "bg-gradient-to-br from-brand-orange/70 via-black/70 to-black/55 mix-blend-multiply",
-    badgeClass: "bg-brand-orange/35 text-foreground/90 border border-white/25 backdrop-blur",
+    overlay:
+      "bg-gradient-to-br from-brand-orange/70 via-black/70 to-black/55 mix-blend-multiply",
+    badgeClass:
+      "bg-brand-orange/35 text-foreground/90 border border-white/25 backdrop-blur",
     panelClass: "bg-black/55 backdrop-blur-xl",
   },
 ];
@@ -118,8 +381,10 @@ const PG_PROGRAM_CARDS: ProgramCard[] = [
       "https://images.unsplash.com/photo-1581091870622-5f1e9b8d2f70?q=80&w=1600&auto=format&fit=crop",
     link: "https://www.dsu.edu.in/basic-applied-sciences/msc-biological-sciences",
     highlights: ["Research Thesis", "Specialisation", "Industry Internship"],
-    overlay: "bg-gradient-to-br from-brand-magenta/70 via-black/70 to-black/55 mix-blend-multiply",
-    badgeClass: "bg-brand-magenta/30 text-foreground/90 border border-white/25 backdrop-blur",
+    overlay:
+      "bg-gradient-to-br from-brand-magenta/70 via-black/70 to-black/55 mix-blend-multiply",
+    badgeClass:
+      "bg-brand-magenta/30 text-foreground/90 border border-white/25 backdrop-blur",
     panelClass: "bg-black/55 backdrop-blur-xl",
     featured: true,
   },
@@ -132,8 +397,10 @@ const PG_PROGRAM_CARDS: ProgramCard[] = [
       "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1600&auto=format&fit=crop",
     link: "https://www.dsu.edu.in/basic-applied-sciences/msc-data-science",
     highlights: ["Advanced ML", "Big Data", "AI Systems"],
-    overlay: "bg-gradient-to-br from-brand-blue/70 via-brand-magenta/60 to-black/55 mix-blend-multiply",
-    badgeClass: "bg-brand-blue/30 text-foreground/90 border border-white/25 backdrop-blur",
+    overlay:
+      "bg-gradient-to-br from-brand-blue/70 via-brand-magenta/60 to-black/55 mix-blend-multiply",
+    badgeClass:
+      "bg-brand-blue/30 text-foreground/90 border border-white/25 backdrop-blur",
     panelClass: "bg-black/55 backdrop-blur-xl",
     featured: true,
   },
@@ -185,11 +452,13 @@ const FEATURED_NEWS: NewsItem[] = [
 ];
 
 const DEAN_INFO: DeanInfo = {
-  name: "Prof. Meera Kumari",
-  title: "M.Sc., Ph.D",
-  position: "Dean, School of Basic & Applied Sciences",
-  photo: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=800&auto=format&fit=crop",
-  videoUrl: "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F0c95c62aa88741fca8ebdc32aade53d5?alt=media&token=c57ff4a9-aea8-4ff3-843b-23ce820ba630&apiKey=4aa279a8430d441dba9c55f659831878",
+  name: "Dr. Sunil S. More",
+  title: "Ph.D in Biochemistry",
+  position: "Professor & Dean, School of Basic & Applied Sciences",
+  photo:
+    "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fd8f7ea1fbcf24620b4dbc648eadcbd11?format=webp&width=800",
+  videoUrl:
+    "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2Fedc45233389644c79e8791be99fb5d4b?alt=media&token=6308961a-7b0a-488f-9495-e3655aec61f9&apiKey=4aa279a8430d441dba9c55f659831878",
   borderColor: "border-violet-500/20",
   bgColor: "bg-violet-500/10",
 };
@@ -312,6 +581,7 @@ function CalendarResourceCard({ entry }: { entry: CalendarEntry }) {
 function HeroVideo() {
   const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const containerRef = useAutoMuteOnScroll(videoRef);
 
   const toggleMute = () => {
     if (videoRef.current) {
@@ -327,18 +597,44 @@ function HeroVideo() {
     video.muted = isMuted;
   }, [isMuted]);
 
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const handleEnded = () => {
+      const rect = containerRef.current?.getBoundingClientRect();
+      const isVisible =
+        rect && rect.top < window.innerHeight && rect.bottom > 0;
+      if (isVisible) {
+        video.currentTime = 0;
+        video.play().catch(() => {});
+      }
+    };
+
+    video.addEventListener("ended", handleEnded);
+    return () => {
+      video.removeEventListener("ended", handleEnded);
+    };
+  }, []);
+
   return (
-    <div className="w-full h-screen relative overflow-hidden flex items-end md:items-center justify-start">
+    <div
+      ref={containerRef}
+      className="h-[40vh] sm:h-[55vh] md:h-[65vh] lg:h-[75vh] relative overflow-hidden flex items-center justify-start hero-video-container"
+    >
       <video
         ref={videoRef}
-        src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F0b20f5ea03294f4d824e69fd8489b78c?alt=media&token=0c4092c4-4afd-4237-b850-81046ecf52f7&apiKey=4aa279a8430d441dba9c55f659831878"
+        src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2Fa185568237c64433ad901c292c3e213b?alt=media&token=6a50e6fe-1aa5-48f9-bbe0-e23311707d27&apiKey=4aa279a8430d441dba9c55f659831878"
         autoPlay
         muted={isMuted}
         loop
         playsInline
-        className="absolute inset-0 w-full h-full object-cover"
+        preload="metadata"
+        crossOrigin="anonymous"
+        className="absolute inset-0 object-cover"
         style={{
-          filter: "brightness(1.1) contrast(1.15) saturate(1.2)"
+          filter: "brightness(1.1) contrast(1.15) saturate(1.2)",
+          objectPosition: "center top",
         }}
       />
 
@@ -347,23 +643,27 @@ function HeroVideo() {
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/30 pointer-events-none"></div>
 
       <div className="absolute top-0 left-0 w-96 h-96 bg-brand-magenta/5 rounded-full filter blur-3xl opacity-60 animate-float pointer-events-none"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-brand-orange/5 rounded-full filter blur-3xl opacity-60 animate-float pointer-events-none" style={{ animationDelay: "2s" }}></div>
+      <div
+        className="absolute bottom-0 right-0 w-96 h-96 bg-brand-orange/5 rounded-full filter blur-3xl opacity-60 animate-float pointer-events-none"
+        style={{ animationDelay: "2s" }}
+      ></div>
 
-      <div className="absolute inset-0 opacity-5 pointer-events-none" style={{
-        backgroundImage: "repeating-linear-gradient(0deg, rgba(255,255,255,.03) 0px, rgba(255,255,255,.03) 1px, transparent 1px, transparent 2px)"
-      }}></div>
+      <div
+        className="absolute inset-0 opacity-5 pointer-events-none"
+        style={{
+          backgroundImage:
+            "repeating-linear-gradient(0deg, rgba(255,255,255,.03) 0px, rgba(255,255,255,.03) 1px, transparent 1px, transparent 2px)",
+        }}
+      ></div>
 
       <div className="relative max-w-7xl mx-auto px-3 w-full z-10 pb-20 md:pb-0">
         <div className="max-w-2xl">
-          <p className="text-sm md:text-base text-white/80 mb-4 uppercase tracking-widest font-display">
+          <p className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 uppercase tracking-widest font-display">
             School of Basic & Applied Sciences
           </p>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight font-display">
-            Deciphering the Codes of Life
+          <h1 className="text-sm md:text-base text-white/80 mb-6 leading-tight font-display">
+            Science for Sustainable Tomorrow
           </h1>
-          <p className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed max-w-xl font-display">
-            Build scientific acumen across life sciences, physical sciences and data-driven experimentation with research-intensive mentorship at DSU.
-          </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
             <a
@@ -378,20 +678,6 @@ function HeroVideo() {
               >
                 Apply Now
                 <ChevronRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </a>
-            <a
-              href="https://dsu.edu.in/virtual-tour/"
-              target="_blank"
-              rel="noreferrer"
-              className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-            >
-              <Button
-                variant="outline"
-                size="lg"
-                className="border-2 border-white text-white hover:bg-white hover:text-orange-600 px-8 py-6 text-base font-semibold font-display transition-all duration-300"
-              >
-                Virtual Tour
               </Button>
             </a>
           </div>
@@ -416,13 +702,14 @@ function HeroVideo() {
 export default function AppliedSciences() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <section className="relative w-full" id="top">
+      <section className="relative" id="top">
         <HeroVideo />
       </section>
 
-
       {/* Dean's Message Section */}
-      <DeanSection dean={DEAN_INFO} />
+      <div style={{ marginTop: "2cm" }}>
+        <DeanSection dean={DEAN_INFO} />
+      </div>
 
       <section id="programs" className="relative overflow-hidden px-3 py-8">
         <div
@@ -436,7 +723,10 @@ export default function AppliedSciences() {
                 Academic Pathways in Sciences
               </h2>
               <p className="mt-3 text-sm text-foreground font-body">
-                Comprehensive undergraduate and postgraduate programmes combining rigorous academics with research immersion, capstone projects and industry internships to prepare problem-solvers and innovators.
+                Comprehensive undergraduate and postgraduate programmes
+                combining rigorous academics with research immersion, capstone
+                projects and industry internships to prepare problem-solvers and
+                innovators.
               </p>
             </div>
           </div>
@@ -483,51 +773,6 @@ export default function AppliedSciences() {
         </div>
       </section>
 
-      <section id="calendar" className="px-3 py-8">
-        <div className="mx-auto max-w-6xl">
-          <div className="relative overflow-hidden rounded-none border-[3px] border-dashed border-brand-magenta/30 bg-card/70 p-5 shadow-[0_35px_120px_-45px_rgba(175,80,255,0.65)] backdrop-blur">
-            <div
-              className="pointer-events-none absolute -left-16 top-5 h-32 w-32 rounded-full bg-brand-magenta/15 blur-3xl"
-              aria-hidden="true"
-            />
-            <div
-              className="pointer-events-none absolute -right-12 bottom-0 h-36 w-36 rounded-full bg-brand-blue/15 blur-3xl"
-              aria-hidden="true"
-            />
-            <div className="relative grid gap-0 lg:grid-cols-[1.1fr_minmax(0,1fr)]">
-              <div className="space-y-5">
-                <Badge className="bg-brand-magenta/15 text-brand-magenta">
-                  Notice Board
-                </Badge>
-                <h2 className="font-display text-3xl md:text-4xl">
-                  SBAS Notice Board
-                </h2>
-                <p className="text-sm text-foreground font-body">
-                  Curated updates for the ongoing academic year 2025-26. Stay aligned with assessment windows, research projects and university-hosted experiences.
-                </p>
-                <a
-                  href="https://www.dsu.edu.in/basic-applied-sciences/notices"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-2 text-sm font-medium text-brand-magenta hover:underline"
-                >
-                  Browse previous circulars
-                  <ChevronRight className="h-4 w-4" />
-                </a>
-              </div>
-              <div className="grid gap-0">
-                {CALENDAR_ENTRIES.map((entry) => (
-                  <CalendarResourceCard
-                    key={`${entry.title}-${entry.academicYear}`}
-                    entry={entry}
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section
         id="related-resources"
         className="bg-gradient-to-r from-brand-magenta/5 via-brand-blue/5 to-brand-orange/5 px-3 py-8"
@@ -538,7 +783,8 @@ export default function AppliedSciences() {
               Explore More at DSU SBAS
             </h2>
             <p className="mt-3 text-sm text-foreground font-body">
-              Discover our research initiatives, innovation labs, placements and admission pathways
+              Discover our research initiatives, innovation labs, placements and
+              admission pathways
             </p>
           </div>
           <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-4">
@@ -578,7 +824,8 @@ export default function AppliedSciences() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-foreground/80 font-body">
-                    Faculty-led research projects and student research opportunities
+                    Faculty-led research projects and student research
+                    opportunities
                   </p>
                 </CardContent>
               </Card>
@@ -599,7 +846,8 @@ export default function AppliedSciences() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-foreground/80 font-body">
-                    Career pathways with research institutions and tech companies
+                    Career pathways with research institutions and tech
+                    companies
                   </p>
                 </CardContent>
               </Card>
@@ -643,25 +891,33 @@ export default function AppliedSciences() {
             </CardHeader>
             <CardContent className="grid gap-4 text-sm font-body text-foreground">
               <div>
-                <div className="text-foreground/70 text-xs uppercase tracking-wide">Email</div>
+                <div className="text-foreground/70 text-xs uppercase tracking-wide">
+                  Email
+                </div>
                 <div className="font-medium text-foreground">
                   sbas@dsu.edu.in
                 </div>
               </div>
               <div>
-                <div className="text-foreground/70 text-xs uppercase tracking-wide">Phone</div>
+                <div className="text-foreground/70 text-xs uppercase tracking-wide">
+                  Phone
+                </div>
                 <div className="font-medium text-foreground">
                   +91-80-49092933
                 </div>
               </div>
               <div>
-                <div className="text-foreground/70 text-xs uppercase tracking-wide">Campus Address</div>
+                <div className="text-foreground/70 text-xs uppercase tracking-wide">
+                  Campus Address
+                </div>
                 <div className="font-medium text-foreground">
                   Kanakapura Road, Bengaluru, Karnataka
                 </div>
               </div>
               <div>
-                <div className="text-foreground/70 text-xs uppercase tracking-wide">Office Hours</div>
+                <div className="text-foreground/70 text-xs uppercase tracking-wide">
+                  Office Hours
+                </div>
                 <div className="font-medium text-foreground">
                   Mon–Fri, 9:00 AM – 5:30 PM
                 </div>
@@ -670,9 +926,7 @@ export default function AppliedSciences() {
           </Card>
           <Card className="rounded-none border border-blue-500/20 bg-blue-500/10">
             <CardHeader>
-              <CardTitle className="font-display">
-                More Resources
-              </CardTitle>
+              <CardTitle className="font-display">More Resources</CardTitle>
             </CardHeader>
             <CardContent className="grid gap-3 text-sm font-body">
               <a
@@ -712,69 +966,8 @@ export default function AppliedSciences() {
         </div>
       </section>
 
-      <section id="featured-news" className="px-3 py-8 bg-gradient-to-r from-brand-blue/5 via-brand-magenta/5 to-brand-orange/5">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-6 text-center">
-            <h2 className="font-display text-3xl md:text-4xl mb-3">
-              Latest from SBAS
-            </h2>
-            <p className="text-sm text-foreground font-body">
-              Stories of scientific excellence, research breakthroughs, and student success
-            </p>
-          </div>
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {FEATURED_NEWS.map((item, index) => (
-              <a
-                key={item.title}
-                href="#"
-                className="group flex flex-col h-full"
-              >
-                {/* Image Container */}
-                <div className="relative w-full h-64 overflow-hidden rounded-lg mb-6">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-
-                  {/* Overlaid Category Badge */}
-                  <div className="absolute top-4 left-4">
-                    <Badge
-                      className={`text-xs font-bold tracking-wider text-white ${
-                        item.color === "brand-orange"
-                          ? "bg-brand-orange"
-                          : item.color === "brand-magenta"
-                            ? "bg-brand-magenta"
-                            : "bg-blue-600"
-                      }`}
-                    >
-                      {item.category}
-                    </Badge>
-                  </div>
-                </div>
-
-                {/* Text Content Below Image */}
-                <div className="flex-1 flex flex-col">
-                  <h3 className="text-lg font-semibold text-foreground font-display line-clamp-2 group-hover:text-brand-magenta transition-colors mb-3">
-                    {item.title}
-                  </h3>
-                  <p className="text-sm text-foreground/80 font-body line-clamp-3 mb-4">
-                    {item.excerpt}
-                  </p>
-
-                  {/* Date and Link */}
-                  <div className="mt-auto pt-4 border-t border-border/30 flex items-center justify-between">
-                    <span className="text-xs text-foreground/60 font-body flex items-center">
-                      <CalendarDays className="w-3 h-3 mr-1" /> {item.date}
-                    </span>
-                    <ChevronRight className="w-4 h-4 text-foreground/60 group-hover:text-brand-magenta transition-colors" />
-                  </div>
-                </div>
-              </a>
-            ))}
-          </div>
-        </div>
+      <section id="notice-board" className="px-3 py-8">
+        <NoticeBoardCarousel />
       </section>
     </div>
   );

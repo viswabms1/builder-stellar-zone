@@ -40,6 +40,7 @@ import {
   getSchoolAnnouncements,
   type NoticeItem as ImportedNoticeItem,
 } from "@/data/engineering-events";
+import { useAutoMuteOnScroll } from "@/hooks/useAutoMuteOnScroll";
 
 const HERO_IMAGE = "https://www.dsu.edu.in/images/Engineering/engg-landing.jpg";
 
@@ -87,7 +88,7 @@ const UG_PROGRAMS = [
 
 const UG_PROGRAM_LINKS: Record<string, string> = {
   "Computer Science & Engineering": "/academics/engineering/computer-science",
-  "Computer Science & Engineering (AI & ML)": "/academics/engineering/ai-ml",
+  "Computer Science & Engineering (AI & ML)": "/academics/engineering/cse-aiml",
 };
 
 const PG_PROGRAMS = [
@@ -136,7 +137,7 @@ const ENGINEERING_DEPARTMENTS: EngineeringDepartment[] = [
       "Master sustainable manufacturing, automotive systems, robotics and design thinking with hands-on prototyping studios.",
     image:
       "https://images.unsplash.com/photo-1517677129300-07b130802f46?q=80&w=1600&auto=format&fit=crop",
-    link: "/academics/engineering/mechanical",
+    link: "/academics/engineering/mechanical-engineering",
     highlights: ["Advanced Manufacturing", "Robotics Studio", "CAE Tools"],
     overlay:
       "bg-gradient-to-br from-brand-orange/80 via-black/75 to-black/60 mix-blend-multiply",
@@ -151,7 +152,7 @@ const ENGINEERING_DEPARTMENTS: EngineeringDepartment[] = [
       "Explore flight mechanics, propulsion, avionics and composite materials in specialised aerospace laboratories.",
     image:
       "https://images.unsplash.com/photo-1489515217757-5fd1be406fef?q=80&w=1600&auto=format&fit=crop",
-    link: "/academics/engineering/aerospace",
+    link: "/academics/engineering/aerospace-engineering",
     highlights: ["Wind Tunnel", "Avionics Lab", "UAV Projects"],
     overlay:
       "bg-gradient-to-tr from-brand-blue/70 via-black/70 to-black/55 mix-blend-multiply",
@@ -181,7 +182,7 @@ const ENGINEERING_DEPARTMENTS: EngineeringDepartment[] = [
       "Deep-dives into responsible AI, data engineering, ML pipelines and NLP with industry-certified projects.",
     image:
       "https://images.unsplash.com/photo-1534759846116-5799c33ce22a?q=80&w=1600&auto=format&fit=crop",
-    link: "/academics/engineering/ai-ml",
+    link: "/academics/engineering/cse-aiml",
     highlights: ["Capstone Studios", "AI Research", "Dual Certifications"],
     overlay:
       "bg-gradient-to-br from-brand-magenta/70 via-brand-blue/60 to-black/60 mix-blend-multiply",
@@ -196,7 +197,7 @@ const ENGINEERING_DEPARTMENTS: EngineeringDepartment[] = [
       "Engineer data products with applied analytics, data governance, cloud-native pipelines and real-time dashboards.",
     image:
       "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?q=80&w=1600&auto=format&fit=crop",
-    link: "/academics/engineering/ai-ds",
+    link: "/academics/engineering/cse-ai-ds",
     highlights: ["Data Engineering", "Analytics Studio", "Cloud Pipelines"],
     overlay:
       "bg-gradient-to-br from-brand-blue/75 via-black/70 to-black/55 mix-blend-multiply",
@@ -241,7 +242,7 @@ const ENGINEERING_DEPARTMENTS: EngineeringDepartment[] = [
       "Blend software engineering, systems integration and platform engineering oriented towards digital enterprises.",
     image:
       "https://images.unsplash.com/photo-1523475472560-d2df97ec485c?q=80&w=1600&auto=format&fit=crop",
-    link: "https://www.dsu.edu.in/engineering/computer-science-technology",
+    link: "/academics/engineering/computer-technology",
     highlights: [
       "Platform Engineering",
       "Systems Design",
@@ -260,7 +261,7 @@ const ENGINEERING_DEPARTMENTS: EngineeringDepartment[] = [
       "Create clinical-grade software, biomedical instrumentation and AI-assisted diagnostics for next-gen healthcare.",
     image:
       "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1600&auto=format&fit=crop",
-    link: "https://www.dsu.edu.in/engineering/computer-science-medical-engineering",
+    link: "/academics/engineering/cs-medical-engineering",
     highlights: ["Digital Health", "Medical Imaging", "Bio-Informatics"],
     overlay:
       "bg-gradient-to-br from-brand-magenta/65 via-brand-blue/55 to-black/55 mix-blend-multiply",
@@ -323,7 +324,7 @@ const UG_PROGRAM_CARDS: ProgramCard[] = [
       "Master sustainable manufacturing, automotive systems, robotics and design thinking with hands-on prototyping studios.",
     image:
       "https://images.unsplash.com/photo-1517677129300-07b130802f46?q=80&w=1600&auto=format&fit=crop",
-    link: "/academics/engineering/mechanical",
+    link: "/academics/engineering/mechanical-engineering",
     highlights: ["Advanced Manufacturing", "Robotics Studio", "CAE Tools"],
     overlay:
       "bg-gradient-to-br from-brand-orange/70 via-black/70 to-black/55 mix-blend-multiply",
@@ -368,7 +369,7 @@ const UG_PROGRAM_CARDS: ProgramCard[] = [
       "Deep-dives into responsible AI, data engineering, ML pipelines and NLP with industry-certified projects.",
     image:
       "https://images.unsplash.com/photo-1534759846116-5799c33ce22a?q=80&w=1600&auto=format&fit=crop",
-    link: "/academics/engineering/ai-ml",
+    link: "/academics/engineering/cse-aiml",
     highlights: ["Capstone Studios", "AI Research", "Dual Certifications"],
     overlay:
       "bg-gradient-to-br from-brand-magenta/70 via-brand-blue/60 to-black/60 mix-blend-multiply",
@@ -386,7 +387,7 @@ const PG_PROGRAM_CARDS: ProgramCard[] = [
       "Specialise in AI, cloud systems, cyber-physical systems and enterprise software through research-driven coursework and industry collaboration.",
     image:
       "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1600&auto=format&fit=crop",
-    link: "https://www.dsu.edu.in/engineering/mtech-cse",
+    link: "/academics/engineering/computer-science",
     highlights: ["AI Systems", "Research Thesis", "Industry Mentorship"],
     overlay:
       "bg-gradient-to-br from-brand-magenta/70 via-black/70 to-black/55 mix-blend-multiply",
@@ -401,7 +402,7 @@ const PG_PROGRAM_CARDS: ProgramCard[] = [
       "Master real-time systems, IoT architectures, edge computing and VLSI design for critical infrastructure and embedded applications.",
     image:
       "https://images.unsplash.com/photo-1580894908361-967195033215?q=80&w=1600&auto=format&fit=crop",
-    link: "https://www.dsu.edu.in/engineering/mtech-embedded",
+    link: "/academics/engineering/electronics-communication",
     highlights: ["RTOS Design", "Hardware Integration", "Edge Computing"],
     overlay:
       "bg-gradient-to-br from-brand-blue/70 via-black/70 to-black/55 mix-blend-multiply",
@@ -416,7 +417,7 @@ const PG_PROGRAM_CARDS: ProgramCard[] = [
       "Apply advanced design methodologies, computational tools and human-centred design thinking to create scalable product solutions.",
     image:
       "https://images.unsplash.com/photo-1523475472560-d2df97ec485c?q=80&w=1600&auto=format&fit=crop",
-    link: "https://www.dsu.edu.in/engineering/mtech-design",
+    link: "/academics/engineering/mechanical-engineering",
     highlights: ["CAD & Simulation", "Design Thinking", "Product Studio"],
     overlay:
       "bg-gradient-to-br from-brand-orange/70 via-black/70 to-black/55 mix-blend-multiply",
@@ -433,15 +434,15 @@ const SUPPORTING_DEPARTMENTS: SupportingDepartment[] = [
       "Advanced instrumentation and applied physics modules covering photonics, energy and smart materials.",
     image:
       "https://images.unsplash.com/photo-1581092795360-6b4ea08a1f5c?q=80&w=1600&auto=format&fit=crop",
-    link: "https://www.dsu.edu.in/engineering/physics",
+    link: "/academics/physics",
   },
   {
     name: "Chemistry Department",
     focus:
       "Materials science, polymer chemistry and environmental labs enabling sustainable engineering solutions.",
     image:
-      "https://images.unsplash.com/photo-1581090909855-1c76e948215d?q=80&w=1600&auto=format&fit=crop",
-    link: "https://www.dsu.edu.in/engineering/chemistry",
+      "https://images.unsplash.com/photo-1581091870622-5f1e9b8d2f70?q=80&w=1600&auto=format&fit=crop",
+    link: "/academics/chemistry",
   },
   {
     name: "Mathematics Department",
@@ -449,7 +450,7 @@ const SUPPORTING_DEPARTMENTS: SupportingDepartment[] = [
       "Applied mathematics, statistics and computational techniques powering algorithmic and analytical thinking.",
     image:
       "https://images.unsplash.com/photo-1551836022-4c4c79ecde51?q=80&w=1600&auto=format&fit=crop",
-    link: "https://www.dsu.edu.in/engineering/mathematics",
+    link: "/academics/mathematics",
   },
   {
     name: "Humanities & Social Sciences",
@@ -457,7 +458,7 @@ const SUPPORTING_DEPARTMENTS: SupportingDepartment[] = [
       "Communication, design thinking, economics and liberal arts courses that shape socially conscious engineers.",
     image:
       "https://images.unsplash.com/photo-1529070538774-1843cb3265df?q=80&w=1600&auto=format&fit=crop",
-    link: "https://www.dsu.edu.in/engineering/humanities",
+    link: "/academics/humanities-social-sciences",
   },
 ];
 
@@ -822,6 +823,51 @@ function SupportingDepartmentCard({
 }: {
   department: SupportingDepartment;
 }) {
+  const isInternal = department.link.startsWith("/");
+  const cardContent = (
+    <Card className="h-full overflow-hidden rounded-none border border-purple-500/20 bg-purple-500/10 backdrop-blur">
+      <div className="relative h-48 overflow-hidden">
+        <img
+          src={department.image}
+          alt={department.name}
+          className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+        <div className="absolute bottom-4 left-4">
+          <Badge
+            className="bg-white/20 text-white backdrop-blur"
+            variant="secondary"
+          >
+            Supporting Department
+          </Badge>
+          <h3 className="mt-3 text-xl font-semibold text-white font-display">
+            {department.name}
+          </h3>
+        </div>
+      </div>
+      <CardContent className="space-y-4 p-3">
+        <p className="text-sm leading-relaxed text-foreground font-body">
+          {department.focus}
+        </p>
+        <span className="inline-flex items-center gap-2 text-sm font-medium text-brand-magenta">
+          Visit department
+          <ChevronRight className="h-4 w-4" />
+        </span>
+      </CardContent>
+    </Card>
+  );
+
+  if (isInternal) {
+    return (
+      <RouterLink
+        to={department.link}
+        className="group block h-full transform transition-all duration-500 hover:-translate-y-1"
+      >
+        {cardContent}
+      </RouterLink>
+    );
+  }
+
   return (
     <a
       href={department.link}
@@ -829,36 +875,7 @@ function SupportingDepartmentCard({
       rel="noreferrer"
       className="group block h-full transform transition-all duration-500 hover:-translate-y-1"
     >
-      <Card className="h-full overflow-hidden rounded-none border border-purple-500/20 bg-purple-500/10 backdrop-blur">
-        <div className="relative h-48 overflow-hidden">
-          <img
-            src={department.image}
-            alt={department.name}
-            className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-          <div className="absolute bottom-4 left-4">
-            <Badge
-              className="bg-white/20 text-white backdrop-blur"
-              variant="secondary"
-            >
-              Supporting Department
-            </Badge>
-            <h3 className="mt-3 text-xl font-semibold text-white font-display">
-              {department.name}
-            </h3>
-          </div>
-        </div>
-        <CardContent className="space-y-4 p-3">
-          <p className="text-sm leading-relaxed text-foreground font-body">
-            {department.focus}
-          </p>
-          <span className="inline-flex items-center gap-2 text-sm font-medium text-brand-magenta">
-            Visit department
-            <ChevronRight className="h-4 w-4" />
-          </span>
-        </CardContent>
-      </Card>
+      {cardContent}
     </a>
   );
 }
@@ -947,7 +964,7 @@ function ProgramCardComponent({ program }: { program: ProgramCard }) {
 function HeroVideo() {
   const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
+  const containerRef = useAutoMuteOnScroll(videoRef);
 
   const toggleMute = () => {
     if (videoRef.current) {
@@ -962,30 +979,6 @@ function HeroVideo() {
 
     video.muted = isMuted;
   }, [isMuted]);
-
-  useEffect(() => {
-    const container = containerRef.current;
-    const video = videoRef.current;
-    if (!container || !video) return;
-
-    const handleScroll = () => {
-      const rect = container.getBoundingClientRect();
-      const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
-
-      if (isVisible) {
-        video.play().catch(() => {});
-      } else {
-        video.pause();
-        video.muted = true;
-        setIsMuted(true);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -1010,14 +1003,18 @@ function HeroVideo() {
   return (
     <div
       ref={containerRef}
-      className="w-full h-[75vh] relative overflow-hidden flex items-end md:items-center justify-start"
+      className="h-[40vh] sm:h-[55vh] md:h-[65vh] lg:h-[75vh] relative overflow-hidden flex items-center justify-start hero-video-container"
     >
       <video
         ref={videoRef}
         src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2Fca43c77a955c4e4b86175d41c68120cf?alt=media&token=45cdb70a-71df-43de-8859-de7bc907f167&apiKey=4aa279a8430d441dba9c55f659831878"
+        autoPlay
         muted={isMuted}
+        loop
         playsInline
-        className="absolute inset-0 w-full h-full object-cover"
+        preload="metadata"
+        crossOrigin="anonymous"
+        className="absolute inset-0 object-cover"
         style={{
           filter: "brightness(1.1) contrast(1.15) saturate(1.2)",
           objectPosition: "center top",
@@ -1042,9 +1039,9 @@ function HeroVideo() {
         }}
       ></div>
 
-      <div className="relative max-w-7xl mx-auto px-3 w-full z-10 pb-20 md:pb-0">
+      <div className="relative max-w-7xl mx-auto px-3 w-full z-10 pb-4 sm:pb-8 md:pb-0">
         <div className="max-w-2xl">
-          <p className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 uppercase tracking-widest font-display">
+          <p className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 uppercase tracking-widest font-display">
             School of Engineering
           </p>
           <h1 className="text-sm md:text-base text-white/80 mb-6 leading-tight font-display">
@@ -1075,7 +1072,7 @@ function HeroVideo() {
               <Button
                 variant="outline"
                 size="lg"
-                className="border-2 border-white text-white hover:bg-white hover:text-orange-600 px-8 py-6 text-base font-semibold font-display transition-all duration-300"
+                className="border-2 border-transparent text-white hover:bg-black/20 bg-black/10 backdrop-blur-sm hover:text-white px-8 py-6 text-base font-semibold font-display transition-all duration-300"
               >
                 Virtual Tour
               </Button>
@@ -1102,11 +1099,27 @@ function HeroVideo() {
 function DeanMessageVideo() {
   const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
+  useAutoMuteOnScroll(videoRef);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    // Sync button state with actual video muted status
+    const handleVolumeChange = () => {
+      setIsMuted(video.muted);
+    };
+
+    video.addEventListener("volumechange", handleVolumeChange);
+    return () => {
+      video.removeEventListener("volumechange", handleVolumeChange);
+    };
+  }, []);
 
   const toggleMute = () => {
     if (videoRef.current) {
       videoRef.current.muted = !videoRef.current.muted;
-      setIsMuted(!isMuted);
+      setIsMuted(videoRef.current.muted);
     }
   };
 
@@ -1116,7 +1129,7 @@ function DeanMessageVideo() {
         ref={videoRef}
         src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F0c95c62aa88741fca8ebdc32aade53d5?alt=media&token=c57ff4a9-aea8-4ff3-843b-23ce820ba630&apiKey=4aa279a8430d441dba9c55f659831878"
         autoPlay
-        muted
+        muted={isMuted}
         loop
         playsInline
         className="w-full h-full object-cover"
@@ -1171,7 +1184,7 @@ function CalendarResourceCard({ entry }: { entry: CalendarEntry }) {
 export default function Engineering() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <section className="relative w-full" id="top">
+      <section className="relative" id="top">
         <HeroVideo />
       </section>
 
@@ -1548,7 +1561,7 @@ export default function Engineering() {
               >
                 <Button
                   variant="outline"
-                  className="border-brand-magenta/40 hover:bg-brand-magenta/10"
+                  className="border-transparent hover:bg-transparent"
                 >
                   Virtual Tour
                 </Button>

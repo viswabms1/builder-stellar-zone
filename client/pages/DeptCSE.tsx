@@ -41,26 +41,26 @@ export default function DeptCSE() {
   ];
 
   const highlights = [
-    "Dynamic ecosystem for study, research, and professional growth",
-    "Innovative curriculum aligned with NEP and industry needs",
-    "Project-based learning and internships integrated across semesters",
-    "Strong foundations in programming, systems, and applications",
-    "Early exposure to ML and Cyber Security in the curriculum",
-    "Opportunities for minors/specializations and interdisciplinary study",
+    "Access to NVIDIA's DGX B200 supercomputer and Jetson edge devices—same infrastructure used by Google, Meta, OpenAI",
+    "Learn CUDA, PyTorch, TensorFlow on enterprise-grade hardware for real-world projects",
+    "Project-based learning with GPU acceleration: AI models, data science pipelines, autonomous systems",
+    "Research collaboration with industry partners using world-class infrastructure",
+    "Early exposure to production-scale AI systems and GPU programming",
+    "Build portfolio projects that demonstrate mastery on tools used by top tech companies",
   ];
 
   const careers = [
-    "Software Engineer → Tech Lead → Architect → Manager",
-    "Research pathways: Masters/PhD in India & Abroad",
-    "Opportunities in Government & Defense",
-    "100% placements for eligible students; Highest CTC: ₹28 LPA",
+    "AI/ML Engineer → Senior AI Researcher → ML Architect (₹20-40 LPA with NVIDIA skills)",
+    "Data Scientist → Analytics Lead → Chief Data Officer (with GPU-accelerated skills)",
+    "Opportunities in Government, Defense, and NVIDIA's ecosystem companies",
+    "100% placements; Highest CTC: ₹28 LPA—premium salaries for NVIDIA infrastructure experience",
   ];
 
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero */}
-      <section className="relative">
-        <div className="h-[50vh] md:h-[65vh] w-full overflow-hidden">
+      <section className="dept-hero-section relative pt-40 md:pt-0">
+        <div className="h-[70vh] md:h-[65vh] max-h-[400px] md:max-h-none w-full overflow-hidden">
           <img
             src="https://www.dsu.edu.in/images/Engineering/CSE-dept/abt-cse.JPG"
             alt="Department of Computer Science & Engineering"
@@ -70,14 +70,14 @@ export default function DeptCSE() {
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
         </div>
         <div className="absolute inset-0 flex items-center">
-          <div className="max-w-7xl mx-auto px-3">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-brand-magenta/10 rounded-full border border-brand-magenta/20 mb-4">
-              <Sparkles className="w-4 h-4 text-brand-magenta" />
-              <span className="text-sm font-medium text-brand-magenta font-display">Department of Computer Science & Engineering</span>
+          <div className="max-w-7xl mx-auto px-3 pb-20 md:pb-0 pt-6 md:pt-0">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-black/40 rounded-full border border-white/20 mb-4 backdrop-blur-sm">
+              <Sparkles className="w-4 h-4 text-white" />
+              <span className="text-sm font-medium text-white font-display">Department of Computer Science & Engineering</span>
             </div>
-            <h1 className="headline-1 text-white leading-tight font-display">Build the Future of Computing</h1>
+            <h1 className="headline-1 text-white leading-tight font-display">Build the Future of AI on World-Class Hardware</h1>
             <p className="subheadline text-white/90 max-w-2xl mt-3 font-body">
-              A dynamic ecosystem to become industry-ready engineers, researchers, and entrepreneurs at DSU.
+              Learn on DSU's NVIDIA AI infrastructure—the same tools used by Google, Meta, and OpenAI. Become a job-ready engineer with competitive advantage in AI.
             </p>
             <div className="mt-6 flex flex-wrap gap-2">
               {specializations.map((s, i) => (
@@ -99,18 +99,90 @@ export default function DeptCSE() {
         </div>
       </section>
 
+      {/* Programs Offered */}
+      <section className="px-3 py-8 bg-gradient-to-r from-brand-magenta/5 via-brand-blue/5 to-brand-orange/5 border-y border-border/30">
+        <div className="max-w-6xl mx-auto">
+          <div className="mb-8">
+            <h2 className="headline-2 font-display mb-2">Programs Offered</h2>
+            <p className="text-foreground/80 font-body">Learn on NVIDIA infrastructure: DGX B200 supercomputers, Jetson edge devices, and GPU workstations</p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {/* B.Tech Programs */}
+            <Card className="border border-border/50 bg-card/50 backdrop-blur-sm hover:shadow-lg transition-all">
+              <CardHeader>
+                <div className="flex items-center gap-2 mb-2">
+                  <GraduationCap className="w-5 h-5 text-brand-magenta" />
+                  <Badge className="bg-brand-magenta/20 text-brand-magenta border-brand-magenta/30">Undergraduate</Badge>
+                </div>
+                <CardTitle className="font-display">B.Tech Computer Science & Engineering</CardTitle>
+                <CardDescription className="font-body">4-Year Program</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <p className="text-sm text-foreground font-body">With specializations in (powered by NVIDIA infrastructure):</p>
+                <div className="flex flex-wrap gap-2">
+                  {["AI & ML on CUDA", "GPU-accelerated Data Science", "Cyber Security AI", "Robotics & Autonomous Systems", "GPU Computing", "Networks & Edge AI"].map((spec, i) => (
+                    <Badge key={i} variant="secondary" className="text-xs">{spec}</Badge>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* M.Tech Program */}
+            <Card className="border border-border/50 bg-card/50 backdrop-blur-sm hover:shadow-lg transition-all">
+              <CardHeader>
+                <div className="flex items-center gap-2 mb-2">
+                  <BookOpen className="w-5 h-5 text-brand-blue" />
+                  <Badge className="bg-brand-blue/20 text-brand-blue border-brand-blue/30">Postgraduate</Badge>
+                </div>
+                <CardTitle className="font-display">M.Tech Computer Science & Engineering</CardTitle>
+                <CardDescription className="font-body">2-Year Program</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <p className="text-sm text-foreground font-body">Advanced research on DGX B200 supercomputers with NVIDIA partnership</p>
+                <div className="flex flex-wrap gap-2">
+                  {["GPU-Accelerated AI", "Large-Scale Research", "NVIDIA Partnership Projects"].map((spec, i) => (
+                    <Badge key={i} variant="secondary" className="text-xs">{spec}</Badge>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Quick Info */}
+            <Card className="border border-border/50 bg-card/50 backdrop-blur-sm">
+              <CardHeader>
+                <CardTitle className="text-lg font-display">Why Choose CSE?</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-2 text-sm font-body">
+                <div className="flex items-center gap-2">
+                  <Award className="w-4 h-4 text-brand-magenta flex-shrink-0" />
+                  <span>100% Placements (20-40% salary premium)</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Zap className="w-4 h-4 text-brand-magenta flex-shrink-0" />
+                  <span>NVIDIA DGX B200 & Jetson access</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Cpu className="w-4 h-4 text-brand-magenta flex-shrink-0" />
+                  <span>Learn CUDA, PyTorch on GPU labs</span>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Overview */}
       <section className="px-3 py-8">
         <div className="max-w-6xl mx-auto grid lg:grid-cols-3 gap-5 items-start">
           <div className="lg:col-span-2 space-y-3">
             <h2 className="headline-3 font-display">Overview</h2>
             <p className="text-foreground leading-relaxed font-body">
-              The Department of Computer Science & Engineering offers a dynamic ecosystem for study, research, and professional growth. The B.Tech CSE program provides a solid foundation and new-age skills with an innovative curriculum and pedagogy aligned to NEP and industry partnerships. Students gain breadth across core computing and depth through elective streams, while developing leadership and personal effectiveness for holistic growth.
+              The Department of Computer Science & Engineering offers a dynamic ecosystem for study, research, and professional growth—powered by DSU's partnership with NVIDIA. The B.Tech CSE program provides a solid foundation and new-age skills with access to enterprise-grade AI infrastructure including DGX B200 supercomputers, Jetson edge devices, and GPU-accelerated labs. Students learn on the exact tools used by Google, Meta, and OpenAI, gaining breadth across core computing and depth through AI/ML, Data Science, and Cybersecurity specializations, while developing leadership and professional readiness for industry.
             </p>
             <Card className="border border-border/50 bg-card/50 backdrop-blur-sm">
               <CardHeader className="pb-2">
                 <CardTitle className="text-lg font-display">Curriculum Highlights</CardTitle>
-                <CardDescription className="font-body">Designed for 21st-century careers</CardDescription>
+                <CardDescription className="font-body">Built on NVIDIA infrastructure and industry partnerships</CardDescription>
               </CardHeader>
               <CardContent className="grid sm:grid-cols-2 gap-3 pt-0">
                 {highlights.map((h, idx) => (
@@ -129,14 +201,219 @@ export default function DeptCSE() {
               </div>
               <CardHeader>
                 <CardTitle className="font-display">Fast Facts</CardTitle>
-                <CardDescription className="font-body">What sets CSE at DSU apart</CardDescription>
+                <CardDescription className="font-body">NVIDIA-powered advantage at CSE DSU</CardDescription>
               </CardHeader>
               <CardContent className="grid gap-2 text-sm font-body">
-                <div className="flex items-center justify-between"><span>Highest CTC</span><span className="font-medium">₹28 LPA</span></div>
-                <div className="flex items-center justify-between"><span>Placements</span><span className="font-medium">100% (eligible)</span></div>
-                <div className="flex items-center justify-between"><span>Industry Exposure</span><span className="font-medium">Internships & MoUs</span></div>
+                <div className="flex items-center justify-between"><span>Salary Premium</span><span className="font-medium">+20-40% (GPU skills)</span></div>
+                <div className="flex items-center justify-between"><span>Infrastructure</span><span className="font-medium">DGX B200 & Jetson</span></div>
+                <div className="flex items-center justify-between"><span>Global Practice</span><span className="font-medium">CUDA, PyTorch, TensorFlow</span></div>
               </CardContent>
             </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* NVIDIA AI Architecture Section */}
+      <section className="px-3 py-20 bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-blue-500/5">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/10 rounded-full border border-blue-500/20 mb-4">
+              <Cpu className="w-5 h-5 text-blue-500" />
+              <span className="text-sm font-medium text-blue-500 font-display">Enterprise-Grade Infrastructure</span>
+            </div>
+            <h2 className="text-5xl md:text-6xl font-bold mb-6">DSU's NVIDIA AI Architecture</h2>
+            <p className="text-2xl text-foreground/70 max-w-4xl mx-auto leading-relaxed">
+              A rare and prestigious partnership that gives CSE students access to the exact same AI infrastructure used by Google, Meta, and OpenAI.
+            </p>
+          </div>
+
+          {/* Pride Callout */}
+          <div className="relative overflow-hidden rounded-lg border-2 border-gradient-to-r from-gold-400 to-yellow-500/50 bg-gradient-to-r from-amber-50/50 to-yellow-50/50 dark:from-amber-950/30 dark:to-yellow-950/30 p-8 mb-14">
+            <div className="absolute top-0 right-0 text-7xl opacity-10">👑</div>
+            <div className="relative z-10">
+              <p className="text-lg font-bold text-amber-900 dark:text-amber-200 mb-2">🏆 A Rare Distinction</p>
+              <p className="text-lg text-foreground/85 leading-relaxed font-semibold">
+                This complete NVIDIA AI infrastructure is available at only a handful of elite institutions across India. CSE students at DSU learn on world-class hardware that gives them a competitive advantage in placement and research.
+              </p>
+            </div>
+          </div>
+
+          {/* The Complete Stack */}
+          <div className="space-y-4 mb-16">
+            <p className="text-lg font-semibold text-foreground mb-6">The Complete NVIDIA AI Stack CSE Students Master</p>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              {/* Hardware Layer */}
+              <div className="bg-gradient-to-r from-green-500/10 to-emerald-500/10 p-6 rounded-lg border border-green-500/30">
+                <h4 className="text-xl font-bold text-green-500 mb-3">Layer 1: Hardware Foundation</h4>
+                <p className="text-base text-foreground/80 leading-relaxed mb-3">
+                  Enterprise-grade NVIDIA GPU infrastructure for real-world AI projects
+                </p>
+                <ul className="space-y-2 text-base text-foreground/70">
+                  <li>✓ <span className="font-semibold">DGX B200</span> - Supercomputer for training massive models</li>
+                  <li>✓ <span className="font-semibold">Jetson Family</span> - Edge AI devices for deployment</li>
+                  <li>✓ <span className="font-semibold">GPU Workstations</span> - High-performance development</li>
+                  <li>✓ <span className="font-semibold">NVLink</span> - Ultra-fast GPU-to-GPU communication</li>
+                </ul>
+              </div>
+
+              {/* CUDA Layer */}
+              <div className="bg-gradient-to-r from-blue-500/10 to-cyan-500/10 p-6 rounded-lg border border-blue-500/30">
+                <h4 className="text-xl font-bold text-blue-500 mb-3">Layer 2: CUDA - Parallel Computing</h4>
+                <p className="text-base text-foreground/80 leading-relaxed mb-3">
+                  NVIDIA's core platform that enables massive parallel processing
+                </p>
+                <ul className="space-y-2 text-base text-foreground/70">
+                  <li>✓ <span className="font-semibold">CUDA Cores</span> - Thousands of processors working in parallel</li>
+                  <li>✓ <span className="font-semibold">cuDNN</span> - Optimized neural network operations</li>
+                  <li>✓ <span className="font-semibold">CUTLASS</span> - Fast matrix operations for deep learning</li>
+                  <li>✓ <span className="font-semibold">cuBLAS</span> - GPU-accelerated linear algebra</li>
+                </ul>
+              </div>
+
+              {/* Framework Layer */}
+              <div className="bg-gradient-to-r from-purple-500/10 to-violet-500/10 p-6 rounded-lg border border-purple-500/30">
+                <h4 className="text-xl font-bold text-purple-500 mb-3">Layer 3: AI Frameworks</h4>
+                <p className="text-base text-foreground/80 leading-relaxed mb-3">
+                  Industry-standard frameworks optimized for NVIDIA GPUs
+                </p>
+                <ul className="space-y-2 text-base text-foreground/70">
+                  <li>✓ <span className="font-semibold">PyTorch</span> - Deep learning research and production</li>
+                  <li>✓ <span className="font-semibold">TensorFlow</span> - Scalable machine learning</li>
+                  <li>✓ <span className="font-semibold">RAPIDS</span> - GPU-accelerated data science (50X faster)</li>
+                  <li>✓ <span className="font-semibold">TensorRT</span> - High-performance inference (10X faster)</li>
+                </ul>
+              </div>
+
+              {/* Applications Layer */}
+              <div className="bg-gradient-to-r from-amber-500/10 to-orange-500/10 p-6 rounded-lg border border-orange-500/30">
+                <h4 className="text-xl font-bold text-orange-500 mb-3">Layer 4: AI Applications</h4>
+                <p className="text-base text-foreground/80 leading-relaxed mb-3">
+                  Build real-world AI solutions that matter
+                </p>
+                <ul className="space-y-2 text-base text-foreground/70">
+                  <li>✓ Natural Language Processing (LLMs, transformers)</li>
+                  <li>✓ Computer vision and autonomous systems</li>
+                  <li>✓ Recommender systems and data analytics</li>
+                  <li>✓ Cybersecurity AI and threat detection</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* Why This Matters Section */}
+          <div className="grid md:grid-cols-2 gap-8 mb-10">
+            <Card className="border-border/50 bg-gradient-to-br from-blue-500/10 to-blue-500/5 backdrop-blur hover:border-blue-500/50 transition-all">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-3 text-2xl mb-4">
+                  <Award className="w-8 h-8 text-blue-500" />
+                  Placement Impact
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="w-6 h-6 text-blue-500 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <p className="font-semibold text-foreground mb-1">20-40% Higher Salaries</p>
+                    <p className="text-sm text-foreground/70">NVIDIA-experienced engineers command premium packages in tech industry</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="w-6 h-6 text-blue-500 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <p className="font-semibold text-foreground mb-1">Top-Tier Company Access</p>
+                    <p className="text-sm text-foreground/70">Direct recruitment from Google, Meta, OpenAI, Microsoft, NVIDIA</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="w-6 h-6 text-blue-500 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <p className="font-semibold text-foreground mb-1">Day-One Readiness</p>
+                    <p className="text-sm text-foreground/70">You're job-ready immediately—no need to learn new tools on the job</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="border-border/50 bg-gradient-to-br from-purple-500/10 to-purple-500/5 backdrop-blur hover:border-purple-500/50 transition-all">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-3 text-2xl mb-4">
+                  <Brain className="w-8 h-8 text-purple-500" />
+                  Research Advantage
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="w-6 h-6 text-purple-500 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <p className="font-semibold text-foreground mb-1">Industry Collaborations</p>
+                    <p className="text-sm text-foreground/70">Work on real problems with leading companies through research partnerships</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="w-6 h-6 text-purple-500 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <p className="font-semibold text-foreground mb-1">Publication Quality</p>
+                    <p className="text-sm text-foreground/70">Publish groundbreaking research in top-tier venues like NeurIPS, ICML</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="w-6 h-6 text-purple-500 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <p className="font-semibold text-foreground mb-1">Venture Capital Ready</p>
+                    <p className="text-sm text-foreground/70">Launch AI startups with proven infrastructure and investor interest</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Real Capabilities */}
+          <div className="bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-2xl p-8 border border-blue-500/30 mb-10">
+            <h3 className="text-2xl font-bold mb-4 text-foreground">What CSE Students Can Do With This Infrastructure</h3>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <span className="text-2xl">🚀</span>
+                  <div>
+                    <p className="font-semibold">Train Large Language Models</p>
+                    <p className="text-sm text-foreground/70">Build GPT-scale models with billions of parameters</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-2xl">🎯</span>
+                  <div>
+                    <p className="font-semibold">Process Massive Datasets</p>
+                    <p className="text-sm text-foreground/70">Hours instead of weeks for data science pipelines</p>
+                  </div>
+                </div>
+              </div>
+              <div className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <span className="text-2xl">🤖</span>
+                  <div>
+                    <p className="font-semibold">Deploy Production Systems</p>
+                    <p className="text-sm text-foreground/70">Real-world AI applications that scale to millions of users</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-2xl">🔬</span>
+                  <div>
+                    <p className="font-semibold">Conduct Cutting-Edge Research</p>
+                    <p className="text-sm text-foreground/70">Push AI boundaries with industry partners</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center">
+            <Link to="/nvidia-ai-architecture">
+              <Button size="lg" className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 text-white">
+                Explore Full NVIDIA Architecture
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -240,7 +517,7 @@ export default function DeptCSE() {
       <section className="px-3 py-8">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-5 items-start">
           <div>
-            <h2 className="headline-3 mb-4 font-display">Career Prospects</h2>
+            <h2 className="headline-3 mb-4 font-display">Career Prospects (with NVIDIA Skills)</h2>
             <Card className="border border-border/50 bg-card/50">
               <CardContent className="p-3 grid gap-3">
                 {careers.map((c, i) => (
@@ -259,8 +536,8 @@ export default function DeptCSE() {
                 <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1200&auto=format&fit=crop" alt="Contact CSE" className="w-full h-full object-cover" />
               </div>
               <CardHeader>
-                <CardTitle className="font-display">Department Contact</CardTitle>
-                <CardDescription className="font-body">Chairman, Computer Science & Engineering</CardDescription>
+                <CardTitle className="font-display">Learn About NVIDIA Infrastructure</CardTitle>
+                <CardDescription className="font-body">Chairman, CSE — Questions about GPU labs, DGX access, and research</CardDescription>
               </CardHeader>
               <CardContent className="grid gap-2 text-sm font-body">
                 <div className="flex items-center justify-between"><span>Email</span><a className="font-medium hover:underline" href="mailto:chairman-cse@dsu.edu.in">chairman-cse@dsu.edu.in</a></div>
@@ -282,7 +559,7 @@ export default function DeptCSE() {
               </span>
             </h2>
             <p className="text-foreground/80 font-body max-w-2xl mx-auto">
-              Discover research, placements, admission pathways, and Centers of Excellence at DSU
+              Explore NVIDIA AI infrastructure, research partnerships, placement outcomes, and centers of excellence powered by GPU computing
             </p>
           </div>
 
@@ -325,7 +602,7 @@ export default function DeptCSE() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-foreground/80 font-body">
-                    Cutting-edge research initiatives and innovation labs driving the future
+                    GPU-accelerated research on DGX B200 with NVIDIA partnership driving breakthrough innovations
                   </p>
                 </CardContent>
               </Card>
@@ -347,7 +624,7 @@ export default function DeptCSE() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-foreground/80 font-body">
-                    Career pathways with leading companies and startup opportunities
+                    20-40% higher salaries for NVIDIA-skilled engineers; direct recruitment from Google, Meta, OpenAI
                   </p>
                 </CardContent>
               </Card>
@@ -371,7 +648,7 @@ export default function DeptCSE() {
                 </CardHeader>
                 <CardContent className="flex flex-col gap-3">
                   <p className="text-sm text-foreground/80 font-body">
-                    Join DSU CSE and shape your future
+                    Join DSU CSE—learn on NVIDIA DGX B200 and become job-ready with premium placement prospects
                   </p>
                   <span className="inline-flex items-center gap-2 text-xs font-medium text-brand-magenta group-hover:text-brand-magenta/80 transition-colors">
                     Apply Now
@@ -906,7 +1183,7 @@ function CurriculumLibrary() {
   const programs: CurriculumProgram[] = [
     {
       id: "btech",
-      label: "B.Tech Curriculum",
+      label: "B.Tech CSE",
       description: "4-year undergraduate pathway with industry-aligned specializations",
       image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=400&fit=crop",
       batches: [

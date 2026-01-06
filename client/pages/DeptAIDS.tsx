@@ -49,10 +49,10 @@ export default function DeptAIDS() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero */}
-      <section className="relative">
-        <div className="h-[50vh] md:h-[65vh] w-full overflow-hidden">
+      <section className="dept-hero-section relative pt-40 md:pt-0">
+        <div className="h-[70vh] md:h-[65vh] max-h-[400px] md:max-h-none w-full overflow-hidden">
           <img
-            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1600&auto=format&fit=crop"
+            src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F0319ed06aa42410cb90c38896ba9d23f?format=webp&width=800"
             alt="Department of AI & Data Science"
             className="w-full h-full object-cover"
           />
@@ -60,10 +60,10 @@ export default function DeptAIDS() {
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
         </div>
         <div className="absolute inset-0 flex items-center">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-brand-blue/10 rounded-full border border-brand-blue/20 mb-4">
-              <Sparkles className="w-4 h-4 text-brand-blue" />
-              <span className="text-sm font-medium text-brand-blue font-display">Department of AI & Data Science</span>
+          <div className="max-w-7xl mx-auto px-6 pb-20 md:pb-0 pt-6 md:pt-0">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-black/40 rounded-full border border-white/20 mb-4 backdrop-blur-sm">
+              <Sparkles className="w-4 h-4 text-white" />
+              <span className="text-sm font-medium text-white font-display">Department of AI & Data Science</span>
             </div>
             <h1 className="headline-1 text-white leading-tight font-display">Transform Data into Intelligence</h1>
             <p className="subheadline text-white/90 max-w-2xl mt-3 font-body">
@@ -85,6 +85,58 @@ export default function DeptAIDS() {
                 <Button className="bg-brand-gradient text-foreground">Apply Now <GraduationCap className="w-4 h-4 ml-2" /></Button>
               </a>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Programs Offered */}
+      <section className="px-6 py-8 bg-gradient-to-r from-brand-blue/5 via-brand-blue/5 to-brand-blue/5 border-y border-border/30">
+        <div className="max-w-6xl mx-auto">
+          <div className="mb-8">
+            <h2 className="headline-2 font-display mb-2">Programs Offered</h2>
+            <p className="text-foreground/80 font-body">Choose your pathway to AI and data science excellence</p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-4">
+            {/* B.Tech Program */}
+            <Card className="border border-border/50 bg-card/50 backdrop-blur-sm hover:shadow-lg transition-all">
+              <CardHeader>
+                <div className="flex items-center gap-2 mb-2">
+                  <GraduationCap className="w-5 h-5 text-brand-blue" />
+                  <Badge className="bg-brand-blue/20 text-brand-blue border-brand-blue/30">Undergraduate</Badge>
+                </div>
+                <CardTitle className="font-display">B.Tech CSE (AI & Data Science)</CardTitle>
+                <CardDescription className="font-body">4-Year Program</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <p className="text-sm text-foreground font-body">With specializations in:</p>
+                <div className="flex flex-wrap gap-2">
+                  {["Machine Learning", "Big Data Analytics", "Data Science", "Deep Learning"].map((spec, i) => (
+                    <Badge key={i} variant="secondary" className="text-xs">{spec}</Badge>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Quick Info */}
+            <Card className="border border-border/50 bg-card/50 backdrop-blur-sm">
+              <CardHeader>
+                <CardTitle className="text-lg font-display">Why Choose AI & Data Science?</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-2 text-sm font-body">
+                <div className="flex items-center gap-2">
+                  <Award className="w-4 h-4 text-brand-blue flex-shrink-0" />
+                  <span>Tech Company Partnerships</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Zap className="w-4 h-4 text-brand-blue flex-shrink-0" />
+                  <span>Cutting-Edge Curriculum</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Brain className="w-4 h-4 text-brand-blue flex-shrink-0" />
+                  <span>AI-Driven Innovation</span>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
@@ -840,7 +892,7 @@ function CurriculumLibrary() {
   const programs: CurriculumProgram[] = [
     {
       id: "btech",
-      label: "B.Tech AI & Data Science",
+      label: "B.Tech CSE (AI & Data Science)",
       description: "4-year undergraduate pathway with specialized tracks in ML and data analytics",
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&h=400&fit=crop",
       batches: [

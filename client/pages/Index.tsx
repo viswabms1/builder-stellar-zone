@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useMemo } from "react";
 import { useLanguage } from "@/providers/language-provider";
 import { useTheme } from "@/providers/theme-provider";
+import { useAutoMuteOnScroll } from "@/hooks/useAutoMuteOnScroll";
 import { indexTranslations } from "@/lib/i18n-extended";
 import { Button } from "@/components/ui/button";
 import {
@@ -43,6 +44,7 @@ import {
 function HeroVideo() {
   const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const containerRef = useAutoMuteOnScroll(videoRef);
 
   const toggleMute = () => {
     if (videoRef.current) {
@@ -68,8 +70,8 @@ function HeroVideo() {
   }, [isMuted]);
 
   return (
-    <div className="w-full h-full relative overflow-hidden">
-      {/* Video with AI-enhanced effects */}
+    <div className="w-full h-full relative overflow-hidden" ref={containerRef}>
+      {/* Video */}
       <video
         ref={videoRef}
         src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F389ede098f8743368a37b080b1969b8a?alt=media&token=101276cc-1be0-485d-a4a8-86f1e71c260f&apiKey=4aa279a8430d441dba9c55f659831878"
@@ -77,31 +79,16 @@ function HeroVideo() {
         muted
         loop
         playsInline
+        preload="metadata"
+        crossOrigin="anonymous"
         className="w-full h-full object-cover"
         style={{
-          filter: "brightness(1.1) contrast(1.15) saturate(1.2)",
+          objectPosition: "center top",
         }}
       />
 
-      {/* Animated Gradient Overlay - AI Effect */}
+      {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/30 pointer-events-none"></div>
-
-      {/* Animated Corner Glow Effects */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-brand-magenta/5 rounded-full filter blur-3xl opacity-60 animate-float pointer-events-none"></div>
-      <div
-        className="absolute bottom-0 right-0 w-96 h-96 bg-brand-orange/5 rounded-full filter blur-3xl opacity-60 animate-float pointer-events-none"
-        style={{ animationDelay: "2s" }}
-      ></div>
-
-      {/* Subtle Scan Line Effect */}
-      <div
-        className="absolute inset-0 opacity-5 pointer-events-none"
-        style={{
-          backgroundImage:
-            "repeating-linear-gradient(0deg, rgba(255,255,255,.03) 0px, rgba(255,255,255,.03) 1px, transparent 1px, transparent 2px)",
-          animation: "scanlines 8s linear infinite",
-        }}
-      ></div>
 
       {/* Mute/Unmute Button */}
       <button
@@ -115,13 +102,6 @@ function HeroVideo() {
           <Volume2 className="h-5 w-5" />
         )}
       </button>
-
-      <style>{`
-        @keyframes scanlines {
-          0% { transform: translateY(0); }
-          100% { transform: translateY(10px); }
-        }
-      `}</style>
     </div>
   );
 }
@@ -145,46 +125,29 @@ function VideoWithFrameCapture({
 
   useEffect(() => {
     const video = videoRef.current;
-    if (!video) return;
-
-    // If a poster is provided, use it directly
-    if (poster) {
-      video.poster = poster;
-      return;
-    }
-
-    let timeoutId: NodeJS.Timeout;
-
-    const captureFrame = () => {
-      try {
-        const canvas = document.createElement("canvas");
-        canvas.width = video.videoWidth || 640;
-        canvas.height = video.videoHeight || 360;
-        const ctx = canvas.getContext("2d");
-        if (ctx && video.videoWidth && video.videoHeight) {
-          ctx.drawImage(video, 0, 0);
-          const posterUrl = canvas.toDataURL("image/jpeg", 0.9);
-          video.poster = posterUrl;
-        }
-      } catch (error) {
-        console.error("Failed to capture video frame:", error);
-      }
-      video.removeEventListener("seeked", captureFrame);
-    };
+    if (!video || poster) return;
 
     const onLoadedMetadata = () => {
-      video.addEventListener("seeked", captureFrame);
-      // Try to capture at 1 second if available, otherwise use 0.66
-      const captureTime = Math.min(1, video.duration * 0.3);
-      video.currentTime = captureTime;
+      if (
+        typeof video.duration === "number" &&
+        isFinite(video.duration) &&
+        video.duration > 0
+      ) {
+        // Set poster via requestIdleCallback to avoid blocking scroll
+        if ("requestIdleCallback" in window) {
+          requestIdleCallback(() => {
+            const captureTime = Math.min(1, video.duration * 0.3);
+            if (isFinite(captureTime)) {
+              video.currentTime = captureTime;
+            }
+          });
+        }
+      }
     };
 
     video.addEventListener("loadedmetadata", onLoadedMetadata);
-
     return () => {
-      if (timeoutId) clearTimeout(timeoutId);
       video.removeEventListener("loadedmetadata", onLoadedMetadata);
-      video.removeEventListener("seeked", captureFrame);
     };
   }, [src, poster]);
 
@@ -197,10 +160,11 @@ function VideoWithFrameCapture({
       <video
         ref={videoRef}
         src={src}
-        className={`w-full h-auto object-contain group-hover:scale-[1.02] transition-transform duration-500 ${rotate ? "rotate-[-90deg]" : ""}`}
+        poster={poster}
+        className={`w-full h-auto object-contain transition-transform duration-500 ${rotate ? "rotate-[-90deg]" : ""}`}
         controls
         controlsList="nodownload"
-        preload="auto"
+        preload="metadata"
         crossOrigin="anonymous"
         onPlay={onPlay}
         onPause={onPause}
@@ -239,6 +203,7 @@ function NewsModal({
           <img
             src={newsItem.image}
             alt={newsItem.title}
+            loading="lazy"
             className="w-full h-auto max-h-96 object-cover rounded-t-3xl"
           />
         )}
@@ -279,7 +244,8 @@ export default function Index() {
   const [selectedEventIndex, setSelectedEventIndex] = useState(0);
   const [isEventInteracting, setIsEventInteracting] = useState(false);
   const [selectedPublicationIndex, setSelectedPublicationIndex] = useState(0);
-  const [isPublicationInteracting, setIsPublicationInteracting] = useState(false);
+  const [isPublicationInteracting, setIsPublicationInteracting] =
+    useState(false);
   const { t, language } = useLanguage();
   const { theme } = useTheme();
 
@@ -369,8 +335,7 @@ export default function Index() {
       category: "White Paper",
       description:
         "An in-depth analysis of digital transformation strategies in academic institutions, with insights from DSU's successful implementation of smart campus initiatives.",
-      image:
-        "https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg",
+      image: "https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg",
       authors: "DSU Innovation Lab",
     },
     {
@@ -405,8 +370,8 @@ export default function Index() {
     },
   ];
 
-  // Get schools data based on current language
-  const getSchoolsData = () => {
+  // Get schools data based on current language (memoized)
+  const schoolsData = useMemo(() => {
     const baseSchools = [
       {
         key: "engineering",
@@ -415,7 +380,7 @@ export default function Index() {
         delay: "0s",
         href: "/academics/engineering",
         image:
-          "https://images.pexels.com/photos/3862638/pexels-photo-3862638.jpeg",
+          "https://images.pexels.com/photos/3862638/pexels-photo-3862638.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
       },
       {
         key: "computerApplications",
@@ -424,7 +389,7 @@ export default function Index() {
         delay: "0.1s",
         href: "/academics/computer-applications",
         image:
-          "https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg",
+          "https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
       },
       {
         key: "law",
@@ -433,7 +398,7 @@ export default function Index() {
         delay: "0.2s",
         href: "/academics/law",
         image:
-          "https://images.pexels.com/photos/8112201/pexels-photo-8112201.jpeg",
+          "https://images.pexels.com/photos/8112201/pexels-photo-8112201.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
       },
       {
         key: "management",
@@ -442,7 +407,7 @@ export default function Index() {
         delay: "0.3s",
         href: "/academics/management-studies",
         image:
-          "https://images.pexels.com/photos/6694543/pexels-photo-6694543.jpeg",
+          "https://images.pexels.com/photos/6694543/pexels-photo-6694543.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
       },
       {
         key: "sciences",
@@ -451,7 +416,7 @@ export default function Index() {
         delay: "0.4s",
         href: "/academics/basic-applied-sciences",
         image:
-          "https://images.pexels.com/photos/9628799/pexels-photo-9628799.jpeg",
+          "https://images.pexels.com/photos/9628799/pexels-photo-9628799.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
       },
       {
         key: "health",
@@ -460,7 +425,7 @@ export default function Index() {
         delay: "0.5s",
         href: "/academics/health-sciences",
         image:
-          "https://images.pexels.com/photos/1279365/pexels-photo-1279365.jpeg",
+          "https://images.pexels.com/photos/1279365/pexels-photo-1279365.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
       },
       {
         key: "design",
@@ -469,7 +434,16 @@ export default function Index() {
         delay: "0.7s",
         href: "/academics/design/bdesign",
         image:
-          "https://images.pexels.com/photos/7147711/pexels-photo-7147711.jpeg",
+          "https://images.pexels.com/photos/7147711/pexels-photo-7147711.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
+      },
+      {
+        key: "journalism",
+        icon: Newspaper,
+        color: "brand-orange",
+        delay: "0.75s",
+        href: "/academics/journalism-mass-communication",
+        image:
+          "https://images.pexels.com/photos/12306438/pexels-photo-12306438.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
       },
       {
         key: "medical",
@@ -478,7 +452,7 @@ export default function Index() {
         delay: "0.8s",
         href: "https://cdsimer.edu.in",
         image:
-          "https://images.pexels.com/photos/5726794/pexels-photo-5726794.jpeg",
+          "https://images.pexels.com/photos/5726794/pexels-photo-5726794.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
       },
     ];
 
@@ -498,7 +472,7 @@ export default function Index() {
         t(`academics.${school.key}.programs.3`) || "Program 4",
       ],
     }));
-  };
+  }, [language]);
 
   // All featured news items for rotation
   const allFeaturedNews = [
@@ -570,7 +544,7 @@ export default function Index() {
     },
   ];
 
-  // Auto-rotate featured news every 5 seconds (pauses when video is playing)
+  // Auto-rotate featured news every 8 seconds (pauses when video is playing)
   useEffect(() => {
     if (isVideoPlaying) {
       return;
@@ -578,12 +552,12 @@ export default function Index() {
 
     const interval = setInterval(() => {
       setFeaturedNewsIndex((prev) => (prev + 1) % allFeaturedNews.length);
-    }, 5000);
+    }, 8000);
 
     return () => clearInterval(interval);
   }, [allFeaturedNews.length, isVideoPlaying]);
 
-  // Auto-rotate events every 5 seconds (pauses when user interacts)
+  // Auto-rotate events every 8 seconds (pauses when user interacts)
   useEffect(() => {
     if (isEventInteracting) {
       return;
@@ -591,20 +565,22 @@ export default function Index() {
 
     const interval = setInterval(() => {
       setSelectedEventIndex((prev) => (prev + 1) % allEvents.length);
-    }, 5000);
+    }, 8000);
 
     return () => clearInterval(interval);
   }, [allEvents.length, isEventInteracting]);
 
-  // Auto-rotate publications every 5 seconds (pauses when user interacts)
+  // Auto-rotate publications every 8 seconds (pauses when user interacts)
   useEffect(() => {
     if (isPublicationInteracting) {
       return;
     }
 
     const interval = setInterval(() => {
-      setSelectedPublicationIndex((prev) => (prev + 1) % allPublications.length);
-    }, 5000);
+      setSelectedPublicationIndex(
+        (prev) => (prev + 1) % allPublications.length,
+      );
+    }, 8000);
 
     return () => clearInterval(interval);
   }, [allPublications.length, isPublicationInteracting]);
@@ -616,9 +592,12 @@ export default function Index() {
   );
 
   return (
-    <div className="min-h-screen bg-background text-foreground overflow-hidden">
+    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       {/* Hero Section with Full-Screen Video Background */}
-      <section className="relative w-full h-[75vh] flex items-end md:items-center justify-start overflow-hidden">
+      <section
+        className="hero-section relative h-[40vh] md:h-[75vh] flex flex-col justify-between md:overflow-hidden overflow-visible"
+        style={{ width: "100vw", marginLeft: "calc(-50vw + 50%)" }}
+      >
         {/* Full-screen Background Video */}
         <div className="absolute inset-0 w-full h-full">
           <HeroVideo />
@@ -628,19 +607,23 @@ export default function Index() {
         <div className="absolute inset-0 bg-black/40"></div>
 
         {/* Hero Content */}
-        <div className="relative max-w-7xl mx-auto px-3 w-full z-10 pb-20 md:pb-0">
-          <div className="max-w-4xl">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 leading-tight font-display">
+        <div className="relative max-w-7xl mx-auto px-3 w-full z-10 flex flex-col justify-between h-full py-4 md:py-0 md:items-start md:justify-center">
+          {/* Title Section - Top on mobile */}
+          <div className="max-w-4xl pt-2 md:pt-0 md:pb-12">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-2 sm:mb-3 md:mb-4 leading-tight font-display">
               Dayananda Sagar University
             </h1>
-            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold text-white mb-6 leading-tight font-display">
+            <p className="text-base sm:text-xl md:text-2xl lg:text-3xl font-semibold text-white mb-1 sm:mb-2 md:mb-6 leading-tight font-display hidden sm:block">
               {t("hero.mainHeading") || "India's AI First University"}
             </p>
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-white/90 mb-12 font-display">
+            <p className="text-sm sm:text-lg md:text-xl lg:text-2xl font-medium text-white/90 hidden sm:block font-display">
               {t("hero.subheading") || "Powered by NVIDIA"}
             </p>
+          </div>
 
-            <div className="flex flex-col sm:flex-row gap-4">
+          {/* Buttons Section - Bottom on mobile */}
+          <div className="flex flex-col gap-1 sm:gap-2 md:gap-4">
+            <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 md:gap-4">
               <a
                 href="https://admissions.dsu.edu.in/"
                 target="_blank"
@@ -649,34 +632,38 @@ export default function Index() {
               >
                 <Button
                   size="lg"
-                  className="bg-white hover:bg-white/90 text-orange-600 hover:text-orange-700 px-8 py-6 text-base font-semibold font-display transition-all duration-300 group border-2 border-white"
+                  className="bg-white hover:bg-white/90 text-orange-600 hover:text-orange-700 px-4 sm:px-8 py-2 sm:py-6 text-xs sm:text-base font-semibold font-display transition-all duration-300 group border-2 border-white"
                 >
                   {t("hero.applyNow") || "Apply Today"}
-                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-3 sm:w-5 h-3 sm:h-5 ml-1 sm:ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </a>
               <a
                 href="https://dsu.edu.in/virtual-tour/"
                 target="_blank"
                 rel="noreferrer"
-                className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-                style={{
-                  outlineColor: theme === 'light' ? '#e67e22' : 'white',
-                }}
+                className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background"
               >
                 <Button
-                  variant="outline"
                   size="lg"
-                  className={`border-2 px-8 py-6 text-base font-semibold font-display transition-all duration-300 ${
-                    theme === 'light'
-                      ? 'border-orange-600/40 text-orange-600/70 hover:border-orange-600 hover:text-orange-600 hover:bg-white/10'
-                      : 'border-white/60 text-white/80 hover:border-white hover:text-white hover:bg-white/10'
-                  }`}
+                  className="bg-white hover:bg-white/90 text-black hover:text-black px-4 sm:px-8 py-2 sm:py-6 text-xs sm:text-base font-semibold font-display transition-all duration-300 group border-2 border-white"
                 >
                   {t("hero.virtualTour") || "Virtual Tour"}
                 </Button>
               </a>
             </div>
+            <Link
+              to="/ai-first"
+              className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background hidden sm:block"
+            >
+              <Button
+                size="lg"
+                className="bg-white hover:bg-white/90 text-black hover:text-black px-4 sm:px-8 py-2 sm:py-6 text-xs sm:text-base font-semibold font-display transition-all duration-300 group border-2 border-white"
+              >
+                Build the Future of AI at DSU
+                <ArrowRight className="w-3 sm:w-5 h-3 sm:h-5 ml-1 sm:ml-2 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -711,8 +698,11 @@ export default function Index() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-0 auto-rows-max">
-            {getSchoolsData().map((school, index) => {
+          <div
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-0 auto-rows-max"
+            style={{ contain: "layout style paint" }}
+          >
+            {schoolsData.map((school, index) => {
               const styles = [
                 { bg: "bg-orange-500/10", border: "border-orange-500/20" },
                 { bg: "bg-pink-500/10", border: "border-pink-500/20" },
@@ -725,20 +715,20 @@ export default function Index() {
               ];
               const style = styles[index % styles.length];
 
-              return (
+              const cardElement = (
                 <div
-                  key={index}
-                  className={`rounded-none overflow-hidden transition-all duration-300 group hover:shadow-lg hover:shadow-brand-magenta/10 hover:-translate-y-2 cursor-pointer h-full`}
-                  style={{ animationDelay: school.delay }}
+                  className={`rounded-none overflow-hidden cursor-pointer h-full`}
+                  style={{ contain: "content" }}
                 >
                   {/* Image Container */}
                   <div className="relative w-full aspect-square overflow-hidden bg-foreground/5 flex items-center justify-center">
                     <img
                       src={school.image}
                       alt={school.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                      className="w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent pointer-events-none" />
                   </div>
 
                   {/* Content Container */}
@@ -746,34 +736,34 @@ export default function Index() {
                     className={`${style.bg} ${style.border} border border-t-0 rounded-none p-3 flex flex-col justify-center items-center h-24 w-full backdrop-blur-sm`}
                   >
                     <div className="text-center">
-                      <div className="mb-0">
-                        {school.href ? (
-                          school.href.startsWith("http") ? (
-                            <a
-                              href={school.href}
-                              target="_blank"
-                              rel="noreferrer"
-                              className="block"
-                            >
-                              <h3 className="text-lg font-bold text-foreground font-display hover:text-brand-magenta transition-colors text-center">
-                                {school.title}
-                              </h3>
-                            </a>
-                          ) : (
-                            <Link to={school.href} className="block">
-                              <h3 className="text-lg font-bold text-foreground font-display hover:text-brand-magenta transition-colors text-center">
-                                {school.title}
-                              </h3>
-                            </Link>
-                          )
-                        ) : (
-                          <h3 className="text-lg font-bold text-foreground font-display text-center">
-                            {school.title}
-                          </h3>
-                        )}
-                      </div>
+                      <h3 className="text-lg font-bold text-foreground font-display hover:text-brand-magenta transition-colors text-center">
+                        {school.title}
+                      </h3>
                     </div>
                   </div>
+                </div>
+              );
+
+              return (
+                <div key={index} style={{ animationDelay: school.delay }}>
+                  {school.href ? (
+                    school.href.startsWith("http") ? (
+                      <a
+                        href={school.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="block"
+                      >
+                        {cardElement}
+                      </a>
+                    ) : (
+                      <Link to={school.href} className="block">
+                        {cardElement}
+                      </Link>
+                    )
+                  ) : (
+                    cardElement
+                  )}
                 </div>
               );
             })}
@@ -796,12 +786,15 @@ export default function Index() {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-0 items-start">
+          <div
+            className="grid lg:grid-cols-3 gap-0 items-start"
+            style={{ contain: "layout style paint" }}
+          >
             {/* Left side - Featured story (50%) - Auto-rotating */}
-            <div className="lg:col-span-2">
+            <div className="lg:col-span-2" style={{ contain: "content" }}>
               <button
                 onClick={() => setSelectedNews(currentFeatured)}
-                className="group w-full flex flex-col rounded-none border border-orange-500/20 bg-orange-500/10 cursor-pointer text-left hover:shadow-lg transition-all duration-500 overflow-hidden backdrop-blur-sm"
+                className="w-full flex flex-col rounded-none border border-orange-500/20 bg-orange-500/10 cursor-pointer text-left overflow-hidden"
               >
                 {currentFeatured.isVideo ? (
                   <VideoWithFrameCapture
@@ -815,7 +808,8 @@ export default function Index() {
                   <img
                     src={currentFeatured.image}
                     alt={currentFeatured.title}
-                    className="w-full max-h-96 object-contain group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                    className="w-full max-h-96 object-contain"
                   />
                 )}
                 <div className="p-4 flex-1 flex flex-col space-y-2">
@@ -850,7 +844,7 @@ export default function Index() {
                 <button
                   key={idx}
                   onClick={() => setSelectedNews(item)}
-                  className={`group rounded-none overflow-hidden border backdrop-blur-sm hover:shadow-lg hover:shadow-brand-magenta/10 transition-all text-left cursor-pointer ${
+                  className={`group rounded-none overflow-hidden border text-left cursor-pointer ${
                     idx % 2 === 0
                       ? "bg-blue-500/10 border-blue-500/20"
                       : "bg-purple-500/10 border-purple-500/20"
@@ -867,7 +861,8 @@ export default function Index() {
                       <img
                         src={item.image}
                         alt={item.title}
-                        className="h-32 w-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                        loading="lazy"
+                        className="h-32 w-full object-cover"
                       />
                     )}
                     <div className="absolute top-2 left-2">
@@ -915,15 +910,18 @@ export default function Index() {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-0 items-start">
+          <div
+            className="grid lg:grid-cols-3 gap-0 items-start"
+            style={{ contain: "layout style paint" }}
+          >
             {/* Featured Event - Left side */}
-            <div className="lg:col-span-2">
-              <div className="group rounded-none overflow-hidden border border-orange-500/20 bg-orange-500/10 backdrop-blur-sm hover:shadow-xl hover:shadow-brand-magenta/10 transition-all">
+            <div className="lg:col-span-2" style={{ contain: "content" }}>
+              <div className="rounded-none overflow-hidden border border-orange-500/20 bg-orange-500/10">
                 <div className="relative h-96 overflow-hidden">
                   <img
                     src={allEvents[selectedEventIndex].image}
                     alt={allEvents[selectedEventIndex].title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                 </div>
@@ -972,14 +970,14 @@ export default function Index() {
                       setSelectedEventIndex(idx);
                       setIsEventInteracting(true);
                     }}
-                    className={`group rounded-none border transition-all cursor-pointer w-full text-left p-4 backdrop-blur-sm ${
+                    className={`group rounded-none border cursor-pointer w-full text-left p-4 ${
                       selectedEventIndex === idx
-                        ? "border-brand-magenta bg-brand-magenta/10 shadow-lg shadow-brand-magenta/10"
+                        ? "border-brand-magenta bg-brand-magenta/10"
                         : idx % 3 === 0
-                          ? "border-blue-500/20 bg-blue-500/10 hover:border-brand-magenta/50 hover:shadow-lg hover:shadow-brand-magenta/5"
+                          ? "border-blue-500/20 bg-blue-500/10"
                           : idx % 3 === 1
-                            ? "border-purple-500/20 bg-purple-500/10 hover:border-brand-magenta/50 hover:shadow-lg hover:shadow-brand-magenta/5"
-                            : "border-orange-500/20 bg-orange-500/10 hover:border-brand-magenta/50 hover:shadow-lg hover:shadow-brand-magenta/5"
+                            ? "border-purple-500/20 bg-purple-500/10"
+                            : "border-orange-500/20 bg-orange-500/10"
                     }`}
                   >
                     <div className="flex gap-4">
@@ -1037,15 +1035,18 @@ export default function Index() {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-0 items-start">
+          <div
+            className="grid lg:grid-cols-3 gap-0 items-start"
+            style={{ contain: "layout style paint" }}
+          >
             {/* Left side - Featured publication (50%) - Auto-rotating */}
-            <div className="lg:col-span-2">
-              <div className="group w-full flex flex-col rounded-none border border-orange-500/20 bg-orange-500/10 cursor-pointer text-left hover:shadow-lg transition-all duration-500 overflow-hidden backdrop-blur-sm">
+            <div className="lg:col-span-2" style={{ contain: "content" }}>
+              <div className="w-full flex flex-col rounded-none border border-orange-500/20 bg-orange-500/10 cursor-pointer text-left overflow-hidden">
                 <div className="relative w-full aspect-video overflow-hidden bg-foreground/5">
                   <img
                     src={allPublications[selectedPublicationIndex].image}
                     alt={allPublications[selectedPublicationIndex].title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover"
                   />
                 </div>
 
@@ -1096,14 +1097,14 @@ export default function Index() {
                       setSelectedPublicationIndex(idx);
                       setIsPublicationInteracting(true);
                     }}
-                    className={`group rounded-none border transition-all cursor-pointer w-full text-left p-4 backdrop-blur-sm ${
+                    className={`group rounded-none border cursor-pointer w-full text-left p-4 ${
                       selectedPublicationIndex === idx
-                        ? "border-brand-magenta bg-brand-magenta/10 shadow-lg shadow-brand-magenta/10"
+                        ? "border-brand-magenta bg-brand-magenta/10"
                         : idx % 3 === 0
-                          ? "border-blue-500/20 bg-blue-500/10 hover:border-brand-magenta/50 hover:shadow-lg hover:shadow-brand-magenta/5"
+                          ? "border-blue-500/20 bg-blue-500/10"
                           : idx % 3 === 1
-                            ? "border-purple-500/20 bg-purple-500/10 hover:border-brand-magenta/50 hover:shadow-lg hover:shadow-brand-magenta/5"
-                            : "border-orange-500/20 bg-orange-500/10 hover:border-brand-magenta/50 hover:shadow-lg hover:shadow-brand-magenta/5"
+                            ? "border-purple-500/20 bg-purple-500/10"
+                            : "border-orange-500/20 bg-orange-500/10"
                     }`}
                   >
                     <div className="flex gap-4">

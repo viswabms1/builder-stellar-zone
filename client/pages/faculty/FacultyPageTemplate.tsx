@@ -7,10 +7,38 @@ import type { Faculty } from "@/data/cse-faculty";
 
 interface FacultyPageTemplateProps {
   faculty: Faculty;
+  department?: string;
+  departmentLink?: string;
+  departmentColor?: string;
+  backgroundImage?: string;
 }
 
-export default function FacultyPageTemplate({ faculty }: FacultyPageTemplateProps) {
-  const bg = "https://images.unsplash.com/photo-1534723328310-e82dad3ee43f?q=80&w=1600&auto=format&fit=crop";
+const departmentConfig: Record<string, { colorClass: string; colorText: string; colorBg: string; colorBorder: string; bg: string }> = {
+  "Computer Science & Engineering": { colorClass: "brand-blue", colorText: "text-brand-blue", colorBg: "bg-brand-blue/10", colorBorder: "text-brand-blue", bg: "https://images.unsplash.com/photo-1534723328310-e82dad3ee43f?q=80&w=1600&auto=format&fit=crop" },
+  "Computer Science & Engineering (AI & ML)": { colorClass: "brand-magenta", colorText: "text-brand-magenta", colorBg: "bg-brand-magenta/10", colorBorder: "text-brand-magenta", bg: "https://images.unsplash.com/photo-1534723328310-e82dad3ee43f?q=80&w=1600&auto=format&fit=crop" },
+  "Aerospace Engineering": { colorClass: "brand-blue", colorText: "text-brand-blue", colorBg: "bg-brand-blue/10", colorBorder: "text-brand-blue", bg: "https://images.unsplash.com/photo-1446776877081-d282a0f896e2?q=80&w=1600&auto=format&fit=crop" },
+  "Electronics & Communication Engineering": { colorClass: "brand-blue", colorText: "text-brand-blue", colorBg: "bg-brand-blue/10", colorBorder: "text-brand-blue", bg: "https://images.unsplash.com/photo-1580894908361-967195033215?q=80&w=1600&auto=format&fit=crop" },
+  "Mechanical Engineering": { colorClass: "brand-orange", colorText: "text-brand-orange", colorBg: "bg-brand-orange/10", colorBorder: "text-brand-orange", bg: "https://images.unsplash.com/photo-1517677129300-07b130802f46?q=80&w=1600&auto=format&fit=crop" },
+  "AI and Robotics": { colorClass: "brand-magenta", colorText: "text-brand-magenta", colorBg: "bg-brand-magenta/10", colorBorder: "text-brand-magenta", bg: "https://images.unsplash.com/photo-1581091216562-40c08a5a4183?q=80&w=1600&auto=format&fit=crop" },
+  "Computer Technology": { colorClass: "brand-blue", colorText: "text-brand-blue", colorBg: "bg-brand-blue/10", colorBorder: "text-brand-blue", bg: "https://images.unsplash.com/photo-1534723328310-e82dad3ee43f?q=80&w=1600&auto=format&fit=crop" },
+  "Cybersecurity": { colorClass: "brand-magenta", colorText: "text-brand-magenta", colorBg: "bg-brand-magenta/10", colorBorder: "text-brand-magenta", bg: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1600&auto=format&fit=crop" },
+  "Data Science": { colorClass: "brand-magenta", colorText: "text-brand-magenta", colorBg: "bg-brand-magenta/10", colorBorder: "text-brand-magenta", bg: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1600&auto=format&fit=crop" },
+  "AI & Data Science": { colorClass: "brand-magenta", colorText: "text-brand-magenta", colorBg: "bg-brand-magenta/10", colorBorder: "text-brand-magenta", bg: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1600&auto=format&fit=crop" },
+  "Medical Engineering": { colorClass: "brand-blue", colorText: "text-brand-blue", colorBg: "bg-brand-blue/10", colorBorder: "text-brand-blue", bg: "https://images.unsplash.com/photo-1576091160550-112173f31c74?q=80&w=1600&auto=format&fit=crop" },
+  "Physics": { colorClass: "brand-blue", colorText: "text-brand-blue", colorBg: "bg-brand-blue/10", colorBorder: "text-brand-blue", bg: "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?q=80&w=1600&auto=format&fit=crop" },
+  "Chemistry": { colorClass: "brand-blue", colorText: "text-brand-blue", colorBg: "bg-brand-blue/10", colorBorder: "text-brand-blue", bg: "https://images.unsplash.com/photo-1576091160550-112173f31c74?q=80&w=1600&auto=format&fit=crop" },
+};
+
+export default function FacultyPageTemplate({
+  faculty,
+  department = "Computer Science & Engineering",
+  departmentLink = "/academics/engineering/computer-science/faculty",
+  departmentColor,
+  backgroundImage
+}: FacultyPageTemplateProps) {
+  const defaultConfig = { colorClass: "brand-blue", colorText: "text-brand-blue", colorBg: "bg-brand-blue/10", colorBorder: "text-brand-blue", bg: "https://images.unsplash.com/photo-1534723328310-e82dad3ee43f?q=80&w=1600&auto=format&fit=crop" };
+  const config = departmentConfig[department] || defaultConfig;
+  const bg = backgroundImage || config.bg;
   const topics = faculty.interests || [];
 
   return (
@@ -29,16 +57,16 @@ export default function FacultyPageTemplate({ faculty }: FacultyPageTemplateProp
                   <img src={faculty.image} alt={faculty.name} className="w-full h-full object-cover object-center" />
                 </div>
                 <div className="flex-1">
-                  <div className="text-brand-blue text-xs font-body">Computer Science & Engineering</div>
+                  <div className={`${config.colorText} text-xs font-body`}>{department}</div>
                   <h1 className="text-2xl md:text-3xl font-bold font-display">{faculty.name}</h1>
                   <div className="text-foreground text-sm">{faculty.title}</div>
                   <div className="mt-2 flex flex-wrap gap-2">
                     {topics.map((t) => (
-                      <Badge key={t} className="bg-brand-magenta/10 text-brand-magenta">{t}</Badge>
+                      <Badge key={t} className={`${config.colorBg} ${config.colorText}`}>{t}</Badge>
                     ))}
                   </div>
                 </div>
-                <Link to="/academics/engineering/computer-science/faculty">
+                <Link to={departmentLink}>
                   <Button variant="outline" className="hidden sm:inline-flex"><ChevronLeft className="w-4 h-4 mr-2"/>Back</Button>
                 </Link>
               </CardContent>
@@ -57,10 +85,10 @@ export default function FacultyPageTemplate({ faculty }: FacultyPageTemplateProp
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-base leading-relaxed text-foreground font-body">
-                  {faculty.name} is a dedicated faculty member in the Computer Science & Engineering department at Dayananda Sagar University. With expertise in modern computing domains, {faculty.name.split(' ')[0]} contributes significantly to academic excellence and research endeavors.
+                  {faculty.name} is a dedicated faculty member in the {department} department at Dayananda Sagar University. With strong expertise and academic credentials, {faculty.name.split(' ')[0]} contributes significantly to academic excellence and research endeavors.
                 </p>
                 <p className="text-base leading-relaxed text-foreground font-body">
-                  Committed to advancing computer science education and fostering innovation, {faculty.name.split(' ')[0]} engages in curriculum development, student mentorship, and collaborative projects with academic institutions and industry partners. The faculty brings a blend of theoretical knowledge and practical expertise to enrich the learning experience of students.
+                  Committed to advancing education and fostering innovation, {faculty.name.split(' ')[0]} engages in curriculum development, student mentorship, and collaborative projects with academic institutions and industry partners. The faculty brings a blend of theoretical knowledge and practical expertise to enrich the learning experience of students.
                 </p>
                 {faculty.qualifications && (
                   <div className="mt-4 pt-4 border-t border-border/30">
@@ -78,7 +106,7 @@ export default function FacultyPageTemplate({ faculty }: FacultyPageTemplateProp
               </CardHeader>
               <CardContent className="text-sm text-foreground font-body">
                 <p>
-                  Dedicated to advancing computer science education and research. Engaged in curriculum development, student mentorship, and collaborative projects with industry and academic institutions.
+                  Dedicated to advancing education and research in the field. Engaged in curriculum development, student mentorship, and collaborative projects with industry and academic institutions.
                 </p>
               </CardContent>
             </Card>
@@ -90,7 +118,7 @@ export default function FacultyPageTemplate({ faculty }: FacultyPageTemplateProp
                 </CardHeader>
                 <CardContent className="flex flex-wrap gap-2">
                   {topics.map((topic) => (
-                    <Badge key={topic} className="bg-brand-magenta/10 text-brand-magenta">
+                    <Badge key={topic} className={`${config.colorBg} ${config.colorText}`}>
                       {topic}
                     </Badge>
                   ))}
@@ -119,7 +147,7 @@ export default function FacultyPageTemplate({ faculty }: FacultyPageTemplateProp
                 )}
                 <div>
                   <div className="text-foreground/70">Department</div>
-                  <div className="font-medium">Computer Science & Engineering</div>
+                  <div className="font-medium">{department}</div>
                 </div>
               </CardContent>
             </Card>
@@ -130,13 +158,13 @@ export default function FacultyPageTemplate({ faculty }: FacultyPageTemplateProp
                 <CardTitle className="font-display">Contact</CardTitle>
               </CardHeader>
               <CardContent className="space-y-2 text-sm font-body">
-                <div className="text-foreground">School of Engineering</div>
-                <div className="text-foreground/70">Computer Science & Engineering</div>
-                <div className="text-foreground/70 text-xs">Dayananda Sagar University</div>
+                <div className="text-foreground">Dayananda Sagar University</div>
+                <div className="text-foreground/70">{department}</div>
+                <div className="text-foreground/70 text-xs">Bangalore, India</div>
               </CardContent>
             </Card>
 
-            <Link to="/academics/engineering/computer-science/faculty" className="block">
+            <Link to={departmentLink} className="block">
               <Button variant="outline" className="w-full"><ChevronLeft className="w-4 h-4 mr-2"/>Back to Faculty</Button>
             </Link>
           </div>

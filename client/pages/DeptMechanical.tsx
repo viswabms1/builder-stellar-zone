@@ -19,39 +19,40 @@ import {
   BookOpen,
   Award,
   Microscope,
+  Building,
 } from "lucide-react";
 
 export default function DeptMechanical() {
   const specializations = [
     { icon: Cog, label: "Design & CAD" },
-    { icon: Flame, label: "Thermal Engineering" },
-    { icon: Zap, label: "Manufacturing" },
+    { icon: Flame, label: "GPU-Accelerated CFD" },
+    { icon: Zap, label: "Manufacturing & AI" },
     { icon: Cog, label: "Robotics & Automation" },
   ];
 
   const highlights = [
     "Comprehensive curriculum covering mechanics, kinematics, thermodynamics, and materials science",
-    "Advanced CAE tools and CAD systems for design and analysis",
-    "Project-based learning with real-world manufacturing problems",
-    "Strong emphasis on thermal systems, manufacturing processes, and automation",
-    "Industry partnerships with leading automotive and manufacturing companies",
-    "Opportunities for internships in robotics, CAD/CAM, and product development",
+    "GPU-accelerated CAE tools: NVIDIA CUDA-powered FEA and CFD for thermal & structural analysis (10-100X faster simulations)",
+    "Project-based learning with real-world manufacturing problems using advanced computational engineering",
+    "Strong emphasis on thermal systems, manufacturing processes, automation, and AI-driven predictive maintenance",
+    "Industry partnerships with leading automotive, aerospace, and manufacturing companies",
+    "Access to high-performance computing infrastructure for complex simulations and optimization problems",
   ];
 
   const careers = [
-    "Mechanical Design Engineer → Senior Design Engineer → Chief Engineer",
-    "Manufacturing Engineer → Production Manager → Plant Manager",
-    "Thermal/Systems Engineer → Technical Lead → Project Manager",
-    "Strong placements in automotive, aerospace, and manufacturing sectors",
+    "CAE Engineer (FEA/CFD) → Senior Analyst → Chief Engineer (with GPU simulation expertise, ₹18-35 LPA)",
+    "Manufacturing Engineer → Production Manager → Plant Manager (with AI-driven process optimization)",
+    "Thermal/Systems Engineer → Technical Lead → Project Manager (computational engineering focus)",
+    "Strong placements in automotive, aerospace, manufacturing, and semiconductor sectors; 15-25% premium for CAE expertise",
   ];
 
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero */}
-      <section className="relative">
-        <div className="h-[50vh] md:h-[65vh] w-full overflow-hidden">
+      <section className="dept-hero-section relative pt-40 md:pt-0">
+        <div className="h-[70vh] md:h-[65vh] max-h-[400px] md:max-h-none w-full overflow-hidden">
           <img
-            src="https://images.unsplash.com/photo-1517677129300-07b130802f46?q=80&w=1600&auto=format&fit=crop"
+            src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F78d3d64c67dc4e3a96d4b9c09a6b4aec?format=webp&width=800"
             alt="Department of Mechanical Engineering"
             className="w-full h-full object-cover"
           />
@@ -59,14 +60,14 @@ export default function DeptMechanical() {
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
         </div>
         <div className="absolute inset-0 flex items-center">
-          <div className="max-w-7xl mx-auto px-3">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-brand-orange/10 rounded-full border border-brand-orange/20 mb-4">
-              <Sparkles className="w-4 h-4 text-brand-orange" />
-              <span className="text-sm font-medium text-brand-orange font-display">Department of Mechanical Engineering</span>
+          <div className="max-w-7xl mx-auto px-3 pb-20 md:pb-0 pt-6 md:pt-0">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-black/40 rounded-full border border-white/20 mb-4 backdrop-blur-sm">
+              <Sparkles className="w-4 h-4 text-white" />
+              <span className="text-sm font-medium text-white font-display">Department of Mechanical Engineering</span>
             </div>
-            <h1 className="headline-1 text-white leading-tight font-display">Engineer the Future of Innovation</h1>
+            <h1 className="headline-1 text-white leading-tight font-display">Design & Simulate at Supercomputer Scale</h1>
             <p className="subheadline text-white/90 max-w-2xl mt-3 font-body">
-              Master the principles of mechanics, thermodynamics, and design to create transformative solutions at DSU.
+              Master mechanics, thermodynamics, and design using GPU-accelerated FEA, CFD, and AI-driven simulations on NVIDIA infrastructure. Build solutions faster with high-performance computing.
             </p>
             <div className="mt-6 flex flex-wrap gap-2">
               {specializations.map((s, i) => (
@@ -84,6 +85,78 @@ export default function DeptMechanical() {
                 <Button className="bg-brand-gradient text-foreground">Apply Now <GraduationCap className="w-4 h-4 ml-2" /></Button>
               </a>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Programs Offered */}
+      <section className="px-3 py-8 bg-gradient-to-r from-brand-orange/5 via-brand-blue/5 to-brand-magenta/5 border-y border-border/30">
+        <div className="max-w-6xl mx-auto">
+          <div className="mb-8">
+            <h2 className="headline-2 font-display mb-2">Programs Offered</h2>
+            <p className="text-foreground/80 font-body">Choose your pathway with access to GPU-accelerated CAE tools and high-performance computing</p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {/* B.Tech Program */}
+            <Card className="border border-border/50 bg-card/50 backdrop-blur-sm hover:shadow-lg transition-all">
+              <CardHeader>
+                <div className="flex items-center gap-2 mb-2">
+                  <GraduationCap className="w-5 h-5 text-brand-orange" />
+                  <Badge className="bg-brand-orange/20 text-brand-orange border-brand-orange/30">Undergraduate</Badge>
+                </div>
+                <CardTitle className="font-display">B.Tech Mechanical Engineering</CardTitle>
+                <CardDescription className="font-body">4-Year Program</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <p className="text-sm text-foreground font-body">Design, manufacturing, and innovation focus</p>
+                <div className="flex flex-wrap gap-2">
+                  {["Thermal Systems", "Manufacturing", "CAD & Design", "Materials Science"].map((spec, i) => (
+                    <Badge key={i} variant="secondary" className="text-xs">{spec}</Badge>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* M.Tech Program */}
+            <Card className="border border-border/50 bg-card/50 backdrop-blur-sm hover:shadow-lg transition-all">
+              <CardHeader>
+                <div className="flex items-center gap-2 mb-2">
+                  <BookOpen className="w-5 h-5 text-brand-blue" />
+                  <Badge className="bg-brand-blue/20 text-brand-blue border-brand-blue/30">Postgraduate</Badge>
+                </div>
+                <CardTitle className="font-display">M.Tech Design Engineering</CardTitle>
+                <CardDescription className="font-body">2-Year Program</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <p className="text-sm text-foreground font-body">Advanced product design and innovation</p>
+                <div className="flex flex-wrap gap-2">
+                  {["CAD & Simulation", "Design Thinking", "Product Studio"].map((spec, i) => (
+                    <Badge key={i} variant="secondary" className="text-xs">{spec}</Badge>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Quick Info */}
+            <Card className="border border-border/50 bg-card/50 backdrop-blur-sm">
+              <CardHeader>
+                <CardTitle className="text-lg font-display">Why Choose ME?</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-2 text-sm font-body">
+                <div className="flex items-center gap-2">
+                  <Award className="w-4 h-4 text-brand-orange flex-shrink-0" />
+                  <span>State-of-the-Art Labs</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Zap className="w-4 h-4 text-brand-orange flex-shrink-0" />
+                  <span>Industry Projects</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Building className="w-4 h-4 text-brand-orange flex-shrink-0" />
+                  <span>Design Innovation</span>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
@@ -123,9 +196,64 @@ export default function DeptMechanical() {
               <CardContent className="grid gap-2 text-sm font-body">
                 <div className="flex items-center justify-between"><span>Program Type</span><span className="font-medium">B.Tech</span></div>
                 <div className="flex items-center justify-between"><span>Duration</span><span className="font-medium">4 Years</span></div>
-                <div className="flex items-center justify-between"><span>Industry Focus</span><span className="font-medium">Manufacturing & Design</span></div>
+                <div className="flex items-center justify-between"><span>Computational Infrastructure</span><span className="font-medium">GPU-Accelerated CAE</span></div>
               </CardContent>
             </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Computational Engineering Tools */}
+      <section className="px-3 py-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="mb-8">
+            <h2 className="headline-2 font-display mb-2">Advanced Computational Tools Powered by NVIDIA</h2>
+            <p className="text-foreground/80 font-body max-w-2xl">Access GPU-accelerated engineering software for faster, more accurate simulations and analysis</p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* FEA & Structural Analysis */}
+            <div className="bg-gradient-to-r from-blue-500/10 to-cyan-500/10 p-6 rounded-lg border border-blue-500/30">
+              <h4 className="text-xl font-bold text-blue-500 mb-3">Finite Element Analysis (FEA)</h4>
+              <ul className="space-y-2 text-base text-foreground/70">
+                <li>✓ GPU-accelerated structural and thermal analysis for rapid prototyping</li>
+                <li>✓ Simulate complex mechanical systems 10-50X faster than traditional CPU</li>
+                <li>✓ Real-time optimization and design iteration on supercomputer infrastructure</li>
+                <li>✓ Materials science simulations for failure prediction and durability testing</li>
+              </ul>
+            </div>
+
+            {/* CFD & Thermal Simulation */}
+            <div className="bg-gradient-to-r from-orange-500/10 to-red-500/10 p-6 rounded-lg border border-orange-500/30">
+              <h4 className="text-xl font-bold text-orange-500 mb-3">Computational Fluid Dynamics (CFD)</h4>
+              <ul className="space-y-2 text-base text-foreground/70">
+                <li>✓ GPU-powered thermal and flow analysis for turbomachinery and heat transfer</li>
+                <li>✓ CUDA-accelerated solvers for complex combustion and aerodynamic simulations</li>
+                <li>✓ Instant feedback on design modifications for rapid engineering cycles</li>
+                <li>✓ High-fidelity simulations that would take weeks on traditional systems</li>
+              </ul>
+            </div>
+
+            {/* AI for Manufacturing */}
+            <div className="bg-gradient-to-r from-purple-500/10 to-pink-500/10 p-6 rounded-lg border border-purple-500/30">
+              <h4 className="text-xl font-bold text-purple-500 mb-3">AI-Driven Manufacturing Optimization</h4>
+              <ul className="space-y-2 text-base text-foreground/70">
+                <li>✓ Machine learning models for predictive maintenance and fault detection</li>
+                <li>✓ GPU-accelerated neural networks for quality control and defect prediction</li>
+                <li>✓ Process optimization using reinforcement learning on NVIDIA infrastructure</li>
+                <li>✓ Industry-scale applications in automotive and aerospace manufacturing</li>
+              </ul>
+            </div>
+
+            {/* Why It Matters */}
+            <div className="bg-gradient-to-r from-emerald-500/10 to-teal-500/10 p-6 rounded-lg border border-emerald-500/30">
+              <h4 className="text-xl font-bold text-emerald-500 mb-3">Competitive Advantage</h4>
+              <ul className="space-y-2 text-base text-foreground/70">
+                <li>✓ Hands-on experience with tools used by top automotive (BMW, Tesla) and aerospace (Boeing, Airbus) companies</li>
+                <li>✓ 15-25% salary premium for engineers with GPU-accelerated CAE expertise</li>
+                <li>✓ Rare computational infrastructure in Indian engineering education</li>
+                <li>✓ Direct pathway to high-demand roles in semiconductor, automotive, and defense sectors</li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
@@ -810,7 +938,7 @@ function CurriculumLibrary() {
       id: "btech",
       label: "B.Tech Mechanical Engineering",
       description: "4-year undergraduate program with specializations in design, thermal systems, and manufacturing",
-      image: "https://images.unsplash.com/photo-1517677129300-07b130802f46?q=80&w=600&h=400&fit=crop",
+      image: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Ff4525c4483ff446382a20ff22b915388?format=webp&width=800",
       batches: [
         {
           year: "2025-26",
@@ -842,7 +970,7 @@ function CurriculumLibrary() {
       id: "mtech",
       label: "M.Tech Design Engineering",
       description: "2-year postgraduate program applying advanced design methodologies and computational tools for product innovation",
-      image: "https://images.unsplash.com/photo-1523475472560-d2df97ec485c?q=80&w=600&h=400&fit=crop",
+      image: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Ff5519221875143728b4d6be589211665?format=webp&width=800",
       batches: [
         {
           year: "2025-26",
@@ -893,7 +1021,7 @@ function CurriculumLibrary() {
                 key={program.id}
                 className={`rounded-3xl border-2 ${borderClass} overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-brand-orange/10 hover:-translate-y-1`}
               >
-                <div className="relative h-48 overflow-hidden">
+                <div className="relative h-48 overflow-hidden mt-4">
                   <img
                     src={program.image}
                     alt={program.label}

@@ -1,7 +1,7 @@
-import CybersecurityFacultyPageTemplate from "./CybersecurityFacultyPageTemplate";
+import FacultyPageTemplate from "./FacultyPageTemplate";
 import { cybersecurityFaculty } from "@/data/cybersecurity-faculty";
 
-export default function SharanabasappaTadkal() {
+export default function SharanabasappaTadkalPage() {
   const faculty = cybersecurityFaculty.find(f => f.slug === "sharanabasappa-tadkal")!;
-  return <CybersecurityFacultyPageTemplate faculty={faculty} />;
+  return <FacultyPageTemplate faculty={faculty} department="Cybersecurity" departmentLink="/academics/engineering/cybersecurity/faculty" />;
 }

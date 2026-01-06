@@ -32,37 +32,37 @@ import {
 
 export default function DeptAIML() {
   const specializations = [
-    { icon: Brain, label: "Machine Learning" },
-    { icon: Database, label: "Deep Learning" },
-    { icon: Shield, label: "Responsible AI" },
-    { icon: Bot, label: "Robotics" },
-    { icon: Network, label: "Computer Vision" },
-    { icon: Cpu, label: "NLP & LLMs" },
+    { icon: Brain, label: "GPU-Accelerated ML" },
+    { icon: Database, label: "Deep Learning on CUDA" },
+    { icon: Shield, label: "Responsible AI Systems" },
+    { icon: Bot, label: "AI Robotics on Jetson" },
+    { icon: Network, label: "AI-Powered Vision" },
+    { icon: Cpu, label: "LLMs & NLP on GPUs" },
   ];
 
   const highlights = [
-    "Integrated AI & ML with foundational computer science",
-    "Innovative curriculum aligned with NEP and industry needs",
-    "Project-based learning and internships integrated across semesters",
-    "Strong foundations in mathematics, statistics, and programming",
-    "Early exposure to deep learning and autonomous systems",
-    "Opportunities for specializations and interdisciplinary study",
+    "Access to NVIDIA DGX B200 supercomputers for advanced AI research and model training",
+    "Learn CUDA, PyTorch, TensorFlow on enterprise-grade GPU infrastructure—same tools as Google, Meta, OpenAI",
+    "GPU-accelerated project-based learning: deep learning, autonomous systems, large-scale model training",
+    "Strong foundations in mathematics, statistics, and GPU programming for AI systems",
+    "Build production-scale AI models and deploy on Jetson edge devices",
+    "Research collaborations with NVIDIA partners and industry leaders in AI",
   ];
 
   const careers = [
-    "Machine Learning Engineer → AI Research Scientist → Innovation Lead",
-    "Data Science pathways: Analytics Engineer → Senior Data Scientist",
-    "Opportunities in Robotics, Healthcare AI & Autonomous Systems",
-    "100% placements for eligible students; Focus on AI-driven roles",
+    "Machine Learning Engineer → AI Research Scientist (₹25-45 LPA with GPU skills)",
+    "Data Science pathways: Analytics Engineer → Senior Data Scientist (GPU acceleration expertise)",
+    "Opportunities in Robotics, Healthcare AI, Autonomous Systems with NVIDIA infrastructure experience",
+    "100% placements; 20-40% salary premium for NVIDIA-certified AI engineers",
   ];
 
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero */}
-      <section className="relative">
-        <div className="h-[50vh] md:h-[65vh] w-full overflow-hidden">
+      <section className="dept-hero-section relative pt-40 md:pt-0">
+        <div className="h-[70vh] md:h-[65vh] max-h-[400px] md:max-h-none w-full overflow-hidden">
           <img
-            src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=2000&auto=format&fit=crop"
+            src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F84f4ff57431c47e28aeb3f5aa994d0f1?format=webp&width=800"
             alt="Department of Computer Science & Engineering (AI & ML)"
             className="w-full h-full object-cover"
           />
@@ -70,14 +70,14 @@ export default function DeptAIML() {
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
         </div>
         <div className="absolute inset-0 flex items-center">
-          <div className="max-w-7xl mx-auto px-3">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-brand-magenta/10 rounded-full border border-brand-magenta/20 mb-4">
-              <Sparkles className="w-4 h-4 text-brand-magenta" />
-              <span className="text-sm font-medium text-brand-magenta font-display">Department of Computer Science & Engineering (AI & ML)</span>
+          <div className="max-w-7xl mx-auto px-3 pb-20 md:pb-0 pt-12 md:pt-0">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-black/40 rounded-full border border-white/20 mb-4 backdrop-blur-sm">
+              <Sparkles className="w-4 h-4 text-white" />
+              <span className="text-sm font-medium text-white font-display">Department of Computer Science & Engineering (AI & ML)</span>
             </div>
-            <h1 className="headline-1 text-white leading-tight font-display">Design Intelligent Futures</h1>
+            <h1 className="headline-1 text-white leading-tight font-display">Design AI on World-Class NVIDIA Infrastructure</h1>
             <p className="subheadline text-white/90 max-w-2xl mt-3 font-body">
-              Blend foundational computer science with advanced artificial intelligence and machine learning to build trustworthy, human-centred intelligent systems.
+              Blend foundational CS with advanced AI/ML on DSU's DGX B200 supercomputers. Learn on the same infrastructure used by Google, Meta, and OpenAI. Build next-generation AI with GPU acceleration and production-scale deployment on Jetson.
             </p>
             <div className="mt-6 flex flex-wrap gap-2">
               {specializations.map((s, i) => (
@@ -99,18 +99,71 @@ export default function DeptAIML() {
         </div>
       </section>
 
+      {/* Programs Offered */}
+      <section className="px-3 py-8 bg-gradient-to-r from-brand-magenta/5 via-brand-blue/5 to-brand-orange/5 border-y border-border/30">
+        <div className="max-w-6xl mx-auto">
+          <div className="mb-8">
+            <h2 className="headline-2 font-display mb-2">Programs Offered</h2>
+            <p className="text-foreground/80 font-body">Learn on NVIDIA infrastructure: DGX B200 supercomputers, Jetson edge devices, GPU-accelerated labs</p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-4">
+            {/* B.Tech Program */}
+            <Card className="border border-border/50 bg-card/50 backdrop-blur-sm hover:shadow-lg transition-all">
+              <CardHeader>
+                <div className="flex items-center gap-2 mb-2">
+                  <GraduationCap className="w-5 h-5 text-brand-magenta" />
+                  <Badge className="bg-brand-magenta/20 text-brand-magenta border-brand-magenta/30">Undergraduate</Badge>
+                </div>
+                <CardTitle className="font-display">B.Tech Computer Science & Engineering (AI & ML)</CardTitle>
+                <CardDescription className="font-body">4-Year Program</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <p className="text-sm text-foreground font-body">Powered by NVIDIA DGX B200 & GPU-accelerated learning:</p>
+                <div className="flex flex-wrap gap-2">
+                  {["GPU-Accelerated ML", "Deep Learning on CUDA", "AI Vision Systems", "LLMs & NLP on GPUs"].map((spec, i) => (
+                    <Badge key={i} variant="secondary" className="text-xs">{spec}</Badge>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+
+
+            {/* Quick Info */}
+            <Card className="border border-border/50 bg-card/50 backdrop-blur-sm">
+              <CardHeader>
+                <CardTitle className="text-lg font-display">Why Choose AI & ML?</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-2 text-sm font-body">
+                <div className="flex items-center gap-2">
+                  <Award className="w-4 h-4 text-brand-magenta flex-shrink-0" />
+                  <span>NVIDIA DGX B200 & Jetson access</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Cpu className="w-4 h-4 text-brand-magenta flex-shrink-0" />
+                  <span>Learn CUDA, PyTorch, TensorFlow</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Zap className="w-4 h-4 text-brand-magenta flex-shrink-0" />
+                  <span>20-40% higher placements salaries</span>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Overview */}
       <section className="px-3 py-8">
         <div className="max-w-6xl mx-auto grid lg:grid-cols-3 gap-5 items-start">
           <div className="lg:col-span-2 space-y-3">
             <h2 className="headline-3 font-display">Overview</h2>
             <p className="text-foreground leading-relaxed font-body">
-              The Department of Computer Science & Engineering (AI & ML) offers a dynamic ecosystem for study, research, and professional growth. The B.Tech AI & ML program combines core computing foundations with AI-focused coursework spanning natural language processing, robotics, and intelligent decision-making. Students progress through a carefully sequenced curriculum aligned to NEP and industry partnerships with breadth across core computing and depth through elective specializations.
+              The Department of Computer Science & Engineering (AI & ML) offers a dynamic ecosystem for study, research, and professional growth—powered by DSU's partnership with NVIDIA. The B.Tech AI & ML program combines core computing foundations with AI-focused coursework on enterprise-grade infrastructure including DGX B200 supercomputers, Jetson edge devices, and GPU-accelerated labs. Students master CUDA, PyTorch, TensorFlow on the exact tools used by Google, Meta, and OpenAI, with breadth across core computing and depth through ML, Computer Vision, NLP, and Robotics specializations aligned to NEP and industry partnerships.
             </p>
             <Card className="border border-border/50 bg-card/50 backdrop-blur-sm">
               <CardHeader className="pb-2">
                 <CardTitle className="text-lg font-display">Curriculum Highlights</CardTitle>
-                <CardDescription className="font-body">Designed for human-centric AI engineers</CardDescription>
+                <CardDescription className="font-body">Built on NVIDIA infrastructure and GPU-accelerated learning</CardDescription>
               </CardHeader>
               <CardContent className="grid sm:grid-cols-2 gap-3 pt-0">
                 {highlights.map((h, idx) => (
@@ -129,14 +182,219 @@ export default function DeptAIML() {
               </div>
               <CardHeader>
                 <CardTitle className="font-display">Fast Facts</CardTitle>
-                <CardDescription className="font-body">What sets AI & ML at DSU apart</CardDescription>
+                <CardDescription className="font-body">NVIDIA-powered advantage at AI & ML DSU</CardDescription>
               </CardHeader>
               <CardContent className="grid gap-2 text-sm font-body">
-                <div className="flex items-center justify-between"><span>Programme Duration</span><span className="font-medium">4 Years</span></div>
-                <div className="flex items-center justify-between"><span>Industry Labs</span><span className="font-medium">IBM, NVIDIA</span></div>
-                <div className="flex items-center justify-between"><span>Specializations</span><span className="font-medium">ML, CV, NLP</span></div>
+                <div className="flex items-center justify-between"><span>Salary Premium</span><span className="font-medium">+20-40% (GPU skills)</span></div>
+                <div className="flex items-center justify-between"><span>Infrastructure</span><span className="font-medium">DGX B200 & Jetson</span></div>
+                <div className="flex items-center justify-between"><span>Global Practice</span><span className="font-medium">CUDA, PyTorch, TensorFlow</span></div>
               </CardContent>
             </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* NVIDIA AI Architecture Section */}
+      <section className="px-3 py-20 bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-blue-500/5">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/10 rounded-full border border-blue-500/20 mb-4">
+              <Cpu className="w-5 h-5 text-blue-500" />
+              <span className="text-sm font-medium text-blue-500 font-display">Enterprise-Grade Infrastructure</span>
+            </div>
+            <h2 className="text-5xl md:text-6xl font-bold mb-6">DSU's NVIDIA AI Architecture</h2>
+            <p className="text-2xl text-foreground/70 max-w-4xl mx-auto leading-relaxed">
+              A rare and prestigious partnership that gives AI & ML students access to the exact same AI infrastructure used by Google, Meta, and OpenAI.
+            </p>
+          </div>
+
+          {/* Pride Callout */}
+          <div className="relative overflow-hidden rounded-lg border-2 border-gradient-to-r from-gold-400 to-yellow-500/50 bg-gradient-to-r from-amber-50/50 to-yellow-50/50 dark:from-amber-950/30 dark:to-yellow-950/30 p-8 mb-14">
+            <div className="absolute top-0 right-0 text-7xl opacity-10">👑</div>
+            <div className="relative z-10">
+              <p className="text-lg font-bold text-amber-900 dark:text-amber-200 mb-2">🏆 A Rare Distinction</p>
+              <p className="text-lg text-foreground/85 leading-relaxed font-semibold">
+                This complete NVIDIA AI infrastructure is available at only a handful of elite institutions across India. AI & ML students at DSU learn on world-class hardware that gives them a competitive advantage in placement and research opportunities.
+              </p>
+            </div>
+          </div>
+
+          {/* The Complete Stack */}
+          <div className="space-y-4 mb-16">
+            <p className="text-lg font-semibold text-foreground mb-6">The Complete NVIDIA AI Stack AI & ML Students Master</p>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              {/* Hardware Layer */}
+              <div className="bg-gradient-to-r from-green-500/10 to-emerald-500/10 p-6 rounded-lg border border-green-500/30">
+                <h4 className="text-xl font-bold text-green-500 mb-3">Layer 1: Hardware Foundation</h4>
+                <p className="text-base text-foreground/80 leading-relaxed mb-3">
+                  Enterprise-grade NVIDIA GPU infrastructure for AI & ML projects at scale
+                </p>
+                <ul className="space-y-2 text-base text-foreground/70">
+                  <li>✓ <span className="font-semibold">DGX B200</span> - Supercomputer for training massive AI models</li>
+                  <li>✓ <span className="font-semibold">Jetson Family</span> - Edge AI devices for deploying models</li>
+                  <li>✓ <span className="font-semibold">GPU Workstations</span> - High-performance development</li>
+                  <li>✓ <span className="font-semibold">NVLink</span> - Ultra-fast GPU-to-GPU communication</li>
+                </ul>
+              </div>
+
+              {/* CUDA Layer */}
+              <div className="bg-gradient-to-r from-blue-500/10 to-cyan-500/10 p-6 rounded-lg border border-blue-500/30">
+                <h4 className="text-xl font-bold text-blue-500 mb-3">Layer 2: CUDA - Parallel Computing</h4>
+                <p className="text-base text-foreground/80 leading-relaxed mb-3">
+                  NVIDIA's core platform that enables massive parallel processing for AI
+                </p>
+                <ul className="space-y-2 text-base text-foreground/70">
+                  <li>✓ <span className="font-semibold">CUDA Cores</span> - Thousands of processors for parallel AI workloads</li>
+                  <li>✓ <span className="font-semibold">cuDNN</span> - Optimized deep learning operations</li>
+                  <li>✓ <span className="font-semibold">CUTLASS</span> - Fast matrix operations for neural networks</li>
+                  <li>✓ <span className="font-semibold">cuBLAS</span> - GPU-accelerated linear algebra for AI</li>
+                </ul>
+              </div>
+
+              {/* Framework Layer */}
+              <div className="bg-gradient-to-r from-purple-500/10 to-violet-500/10 p-6 rounded-lg border border-purple-500/30">
+                <h4 className="text-xl font-bold text-purple-500 mb-3">Layer 3: AI Frameworks</h4>
+                <p className="text-base text-foreground/80 leading-relaxed mb-3">
+                  Industry-standard frameworks optimized for NVIDIA GPUs—what major AI labs use
+                </p>
+                <ul className="space-y-2 text-base text-foreground/70">
+                  <li>✓ <span className="font-semibold">PyTorch</span> - Deep learning research and production AI</li>
+                  <li>✓ <span className="font-semibold">TensorFlow</span> - Scalable machine learning systems</li>
+                  <li>✓ <span className="font-semibold">RAPIDS</span> - GPU-accelerated data science (50X faster)</li>
+                  <li>✓ <span className="font-semibold">TensorRT</span> - High-performance inference (10X faster)</li>
+                </ul>
+              </div>
+
+              {/* Applications Layer */}
+              <div className="bg-gradient-to-r from-amber-500/10 to-orange-500/10 p-6 rounded-lg border border-orange-500/30">
+                <h4 className="text-xl font-bold text-orange-500 mb-3">Layer 4: AI Applications</h4>
+                <p className="text-base text-foreground/80 leading-relaxed mb-3">
+                  Build real-world AI/ML solutions that matter at scale
+                </p>
+                <ul className="space-y-2 text-base text-foreground/70">
+                  <li>✓ Large Language Models (LLMs) and transformers</li>
+                  <li>✓ Computer vision and autonomous systems</li>
+                  <li>✓ Healthcare AI and medical imaging</li>
+                  <li>✓ Robotics and intelligent automation</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* Why This Matters Section */}
+          <div className="grid md:grid-cols-2 gap-8 mb-10">
+            <Card className="border-border/50 bg-gradient-to-br from-blue-500/10 to-blue-500/5 backdrop-blur hover:border-blue-500/50 transition-all">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-3 text-2xl mb-4">
+                  <Award className="w-8 h-8 text-blue-500" />
+                  Placement Impact
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="w-6 h-6 text-blue-500 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <p className="font-semibold text-foreground mb-1">20-40% Higher Salaries</p>
+                    <p className="text-sm text-foreground/70">NVIDIA-experienced ML engineers command premium packages at Google, Meta, NVIDIA, and top AI companies</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="w-6 h-6 text-blue-500 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <p className="font-semibold text-foreground mb-1">Top-Tier Company Access</p>
+                    <p className="text-sm text-foreground/70">Direct recruitment from Google, Meta, OpenAI, Microsoft, Tesla, and NVIDIA's AI research labs</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="w-6 h-6 text-blue-500 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <p className="font-semibold text-foreground mb-1">Immediate Impact</p>
+                    <p className="text-sm text-foreground/70">You're job-ready on day one with hands-on experience companies are looking for</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="border-border/50 bg-gradient-to-br from-purple-500/10 to-purple-500/5 backdrop-blur hover:border-purple-500/50 transition-all">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-3 text-2xl mb-4">
+                  <Brain className="w-8 h-8 text-purple-500" />
+                  Research Advantage
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="w-6 h-6 text-purple-500 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <p className="font-semibold text-foreground mb-1">Breakthrough Research</p>
+                    <p className="text-sm text-foreground/70">Work on cutting-edge AI research with NVIDIA partners, producing publishable results</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="w-6 h-6 text-purple-500 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <p className="font-semibold text-foreground mb-1">Publication Quality</p>
+                    <p className="text-sm text-foreground/70">Publish in top-tier AI venues like NeurIPS, ICML, CVPR with real GPU-enabled research</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="w-6 h-6 text-purple-500 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <p className="font-semibold text-foreground mb-1">AI Entrepreneurship</p>
+                    <p className="text-sm text-foreground/70">Build and launch AI startups with VC-ready infrastructure and investor connections</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Real Capabilities */}
+          <div className="bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-2xl p-8 border border-blue-500/30 mb-10">
+            <h3 className="text-2xl font-bold mb-4 text-foreground">What AI & ML Students Can Actually Do With This Infrastructure</h3>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <span className="text-2xl">🚀</span>
+                  <div>
+                    <p className="font-semibold">Train Production LLMs</p>
+                    <p className="text-sm text-foreground/70">Build GPT-scale language models with billions of parameters</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-2xl">🎯</span>
+                  <div>
+                    <p className="font-semibold">Process Massive Data</p>
+                    <p className="text-sm text-foreground/70">ML pipelines that would take weeks—now run in hours</p>
+                  </div>
+                </div>
+              </div>
+              <div className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <span className="text-2xl">🤖</span>
+                  <div>
+                    <p className="font-semibold">Deploy AI at Scale</p>
+                    <p className="text-sm text-foreground/70">Real AI systems serving millions with inference on Jetson</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-2xl">🔬</span>
+                  <div>
+                    <p className="font-semibold">Push AI Frontiers</p>
+                    <p className="text-sm text-foreground/70">Conduct cutting-edge ML research with NVIDIA partners</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center">
+            <Link to="/nvidia-ai-architecture">
+              <Button size="lg" className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 text-white">
+                Explore Full NVIDIA Architecture
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -184,7 +442,7 @@ export default function DeptAIML() {
       <section className="px-3 py-8">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-5 items-start">
           <div>
-            <h2 className="headline-3 mb-4 font-display">Career Prospects</h2>
+            <h2 className="headline-3 mb-4 font-display">Career Prospects (with NVIDIA Skills)</h2>
             <Card className="border border-border/50 bg-card/50">
               <CardContent className="p-3 grid gap-3">
                 {careers.map((c, i) => (
@@ -203,8 +461,8 @@ export default function DeptAIML() {
                 <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1200&auto=format&fit=crop" alt="Contact AI & ML" className="w-full h-full object-cover" />
               </div>
               <CardHeader>
-                <CardTitle className="font-display">Department Contact</CardTitle>
-                <CardDescription className="font-body">Chairperson, AI & ML Department</CardDescription>
+                <CardTitle className="font-display">Learn About NVIDIA Infrastructure</CardTitle>
+                <CardDescription className="font-body">Chairperson, AI & ML — Questions about GPU labs, DGX access, and research</CardDescription>
               </CardHeader>
               <CardContent className="grid gap-2 text-sm font-body">
                 <div className="flex items-center justify-between"><span>Email</span><a className="font-medium hover:underline" href="mailto:chairman-aiml@dsu.edu.in">chairman-aiml@dsu.edu.in</a></div>
@@ -226,7 +484,7 @@ export default function DeptAIML() {
               </span>
             </h2>
             <p className="text-foreground/80 font-body max-w-2xl mx-auto">
-              Discover research, placements, admission pathways, and Centers of Excellence at DSU
+              Explore NVIDIA AI infrastructure, GPU-accelerated research partnerships, placement outcomes with salary premiums, and centers of excellence
             </p>
           </div>
 
@@ -269,7 +527,7 @@ export default function DeptAIML() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-foreground/80 font-body">
-                    Cutting-edge AI research initiatives and innovation labs
+                    GPU-accelerated AI research on DGX B200 with NVIDIA partnership driving AI breakthroughs
                   </p>
                 </CardContent>
               </Card>
@@ -291,7 +549,7 @@ export default function DeptAIML() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-foreground/80 font-body">
-                    AI career pathways with leading technology companies
+                    20-40% higher salaries for NVIDIA-skilled engineers; direct recruitment from Google, Meta, OpenAI
                   </p>
                 </CardContent>
               </Card>
@@ -315,7 +573,7 @@ export default function DeptAIML() {
                 </CardHeader>
                 <CardContent className="flex flex-col gap-3">
                   <p className="text-sm text-foreground/80 font-body">
-                    Join DSU AI & ML and shape the future
+                    Join DSU AI & ML—learn on DGX B200 and become job-ready with premium placement prospects
                   </p>
                   <span className="inline-flex items-center gap-2 text-xs font-medium text-brand-magenta group-hover:text-brand-magenta/80 transition-colors">
                     Apply Now
@@ -332,8 +590,8 @@ export default function DeptAIML() {
       <section className="px-3 py-8">
         <div className="max-w-4xl mx-auto text-center">
           <div className="rounded-3xl p-5 border border-brand-magenta/20 bg-brand-magenta/5">
-            <h3 className="headline-3 mb-3 font-display">Join DSU AI & ML</h3>
-            <p className="text-foreground mb-6 font-body">Explore programs, discover research, and launch your career in Artificial Intelligence & Machine Learning.</p>
+            <h3 className="headline-3 mb-3 font-display">Join DSU AI & ML—Powered by NVIDIA</h3>
+            <p className="text-foreground mb-6 font-body">Learn on DGX B200 supercomputers and Jetson devices. Explore programs, conduct world-class research, and launch your career in AI with infrastructure used by Google, Meta, and OpenAI.</p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a
                 href="https://admissions.dsu.edu.in/"
@@ -841,7 +1099,7 @@ function CurriculumLibrary() {
   const programs: CurriculumProgram[] = [
     {
       id: "btech",
-      label: "B.Tech Curriculum",
+      label: "B.Tech CSE (AI & ML)",
       description: "4-year undergraduate pathway with AI & ML specializations",
       image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=400&fit=crop",
       batches: [
@@ -871,38 +1129,6 @@ function CurriculumLibrary() {
         },
       ],
     },
-    {
-      id: "mtech",
-      label: "M.Tech Curriculum",
-      description: "2-year postgraduate program in AI & ML research",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
-      batches: [
-        {
-          year: "2025-26",
-          summary: "Advanced machine learning, neural networks, and AI ethics research",
-          documentUrl:
-            "https://www.dsu.edu.in/images/Engineering/CSE-AIML/curriculum/MTech-AIML-Curriculum-2025-26.pdf",
-        },
-        {
-          year: "2026-27",
-          summary: "Computer vision research, reinforcement learning, and healthcare AI",
-          documentUrl:
-            "https://www.dsu.edu.in/images/Engineering/CSE-AIML/curriculum/MTech-AIML-Curriculum-2026-27.pdf",
-        },
-        {
-          year: "2027-28",
-          summary: "Edge AI, quantum machine learning, and distributed systems research",
-          documentUrl:
-            "https://www.dsu.edu.in/images/Engineering/CSE-AIML/curriculum/MTech-AIML-Curriculum-2027-28.pdf",
-        },
-        {
-          year: "2028-29",
-          summary: "Autonomous systems, AI governance, and thesis publication support",
-          documentUrl:
-            "https://www.dsu.edu.in/images/Engineering/CSE-AIML/curriculum/MTech-AIML-Curriculum-2028-29.pdf",
-        },
-      ],
-    },
   ];
 
   return (
@@ -917,7 +1143,7 @@ function CurriculumLibrary() {
               </span>
             </h2>
             <p className="max-w-2xl text-sm text-foreground sm:text-base font-body">
-              Explore comprehensive curriculum packs for B.Tech and M.Tech programs. Access detailed course structures, learning outcomes, and downloadable syllabi.
+              Explore comprehensive curriculum packs for B.Tech programs. Access detailed course structures, learning outcomes, and downloadable syllabi.
             </p>
           </div>
           <Badge className="w-fit rounded-full bg-brand-magenta/15 px-4 py-2 text-xs font-semibold text-brand-magenta border border-brand-magenta/20">

@@ -1,5 +1,6 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Volume2, VolumeX } from "lucide-react";
+import { useAutoMuteOnScroll } from "@/hooks/useAutoMuteOnScroll";
 
 export type DeanInfo = {
   name: string;
@@ -11,14 +12,31 @@ export type DeanInfo = {
   bgColor?: string;
 };
 
-function DeanMessageVideo() {
+function DeanMessageVideo({ videoUrl }: { videoUrl: string }) {
   const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
+  useAutoMuteOnScroll(videoRef);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    // Sync button state with actual video muted status
+    // This handles when scroll hook or other code changes video.muted
+    const handleVolumeChange = () => {
+      setIsMuted(video.muted);
+    };
+
+    video.addEventListener("volumechange", handleVolumeChange);
+    return () => {
+      video.removeEventListener("volumechange", handleVolumeChange);
+    };
+  }, []);
 
   const toggleMute = () => {
     if (videoRef.current) {
       videoRef.current.muted = !videoRef.current.muted;
-      setIsMuted(!isMuted);
+      setIsMuted(videoRef.current.muted);
     }
   };
 
@@ -26,11 +44,13 @@ function DeanMessageVideo() {
     <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-black/20 border border-border/30">
       <video
         ref={videoRef}
-        src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F0c95c62aa88741fca8ebdc32aade53d5?alt=media&token=c57ff4a9-aea8-4ff3-843b-23ce820ba630&apiKey=4aa279a8430d441dba9c55f659831878"
+        src={videoUrl}
         autoPlay
-        muted
+        muted={isMuted}
         loop
         playsInline
+        preload="metadata"
+        loading="lazy"
         className="w-full h-full object-cover"
       />
       <button
@@ -57,12 +77,12 @@ export function DeanSection({ dean }: DeanSectionProps) {
   const bgColorClass = dean.bgColor || "bg-orange-500/10";
 
   return (
-    <section className="relative overflow-hidden px-3 py-8">
+    <section className="relative overflow-hidden px-3 py-4 -mt-20">
       <div className="mx-auto max-w-7xl">
         <div className={`rounded-none border ${borderColorClass} ${bgColorClass} overflow-hidden backdrop-blur`}>
           <div className="grid md:grid-cols-[300px_1fr] gap-0">
             {/* Dean's Photo */}
-            <div className="relative overflow-hidden bg-gradient-to-br from-brand-magenta/10 to-brand-blue/10 flex items-start justify-center p-8 md:p-12 pt-8 md:pt-12">
+            <div className="relative overflow-hidden bg-gradient-to-br from-brand-magenta/10 to-brand-blue/10 flex items-start justify-center p-4 md:p-6">
               <div className="relative w-full max-w-xs">
                 <img
                   src={dean.photo}
@@ -77,7 +97,7 @@ export function DeanSection({ dean }: DeanSectionProps) {
             </div>
 
             {/* Dean's Message Video */}
-            <div className="p-8 md:p-12 flex flex-col justify-center">
+            <div className="p-4 md:p-6 flex flex-col justify-center">
               <div className="space-y-4">
                 {/* Header with Name and Title */}
                 <div className="border-l-4 border-brand-magenta pl-4">
@@ -93,7 +113,7 @@ export function DeanSection({ dean }: DeanSectionProps) {
                 </div>
 
                 {/* Video Container */}
-                <DeanMessageVideo />
+                <DeanMessageVideo videoUrl={dean.videoUrl} />
               </div>
             </div>
           </div>

@@ -29,7 +29,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { DeanSection, type DeanInfo } from "@/components/DeanSection";
-
+import { useAutoMuteOnScroll } from "@/hooks/useAutoMuteOnScroll";
 
 type ProgramCard = {
   name: string;
@@ -77,7 +77,6 @@ type Resource = {
 const HERO_IMAGE =
   "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2000&auto=format&fit=crop";
 
-
 const OFFERINGS: Offering[] = [
   {
     title: "Executive MBA Tracks",
@@ -115,8 +114,10 @@ const PROGRAM_CARDS: ProgramCard[] = [
       "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1600&auto=format&fit=crop",
     link: "https://bit.ly/DSUEMBAApp",
     highlights: ["Weekend Classes", "Global Immersion", "CXO Mentorship"],
-    overlay: "bg-gradient-to-br from-brand-magenta/80 via-black/75 to-black/60 mix-blend-multiply",
-    badgeClass: "bg-brand-magenta/25 text-foreground/90 border border-white/30 backdrop-blur",
+    overlay:
+      "bg-gradient-to-br from-brand-magenta/80 via-black/75 to-black/60 mix-blend-multiply",
+    badgeClass:
+      "bg-brand-magenta/25 text-foreground/90 border border-white/30 backdrop-blur",
     panelClass: "bg-black/55 backdrop-blur-xl",
     featured: true,
   },
@@ -128,9 +129,15 @@ const PROGRAM_CARDS: ProgramCard[] = [
     image:
       "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1600&auto=format&fit=crop",
     link: "https://www.dsu.edu.in/academics/cee/programs",
-    highlights: ["Boardroom Simulations", "Strategic Training", "Executive Coaching"],
-    overlay: "bg-gradient-to-br from-brand-blue/75 via-black/70 to-black/55 mix-blend-multiply",
-    badgeClass: "bg-brand-blue/30 text-foreground/90 border border-white/25 backdrop-blur",
+    highlights: [
+      "Boardroom Simulations",
+      "Strategic Training",
+      "Executive Coaching",
+    ],
+    overlay:
+      "bg-gradient-to-br from-brand-blue/75 via-black/70 to-black/55 mix-blend-multiply",
+    badgeClass:
+      "bg-brand-blue/30 text-foreground/90 border border-white/25 backdrop-blur",
     panelClass: "bg-black/55 backdrop-blur-xl",
     featured: true,
   },
@@ -143,8 +150,10 @@ const PROGRAM_CARDS: ProgramCard[] = [
       "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1600&auto=format&fit=crop",
     link: "https://www.dsu.edu.in/academics/cee/innovation-labs",
     highlights: ["Live Projects", "Innovation Workshops", "Incubation Support"],
-    overlay: "bg-gradient-to-br from-brand-orange/70 via-black/70 to-black/55 mix-blend-multiply",
-    badgeClass: "bg-brand-orange/35 text-foreground/90 border border-white/25 backdrop-blur",
+    overlay:
+      "bg-gradient-to-br from-brand-orange/70 via-black/70 to-black/55 mix-blend-multiply",
+    badgeClass:
+      "bg-brand-orange/35 text-foreground/90 border border-white/25 backdrop-blur",
     panelClass: "bg-black/55 backdrop-blur-xl",
   },
 ];
@@ -155,8 +164,7 @@ const CALENDAR_ENTRIES: CalendarEntry[] = [
     academicYear: "2025-26",
     description:
       "Comprehensive schedule for Executive MBA cohorts including residencies, masterclasses, evaluations and industry immersions.",
-    documentUrl:
-      "https://www.dsu.edu.in/academics/cee/calendar-events",
+    documentUrl: "https://www.dsu.edu.in/academics/cee/calendar-events",
     tag: "Executive MBA",
   },
 ];
@@ -198,8 +206,10 @@ const DEAN_INFO: DeanInfo = {
   name: "Dr. Ashok Kumar",
   title: "MBA, Ph.D",
   position: "Director, Center for Executive Education",
-  photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop",
-  videoUrl: "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F0c95c62aa88741fca8ebdc32aade53d5?alt=media&token=c57ff4a9-aea8-4ff3-843b-23ce820ba630&apiKey=4aa279a8430d441dba9c55f659831878",
+  photo:
+    "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop",
+  videoUrl:
+    "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F0c95c62aa88741fca8ebdc32aade53d5?alt=media&token=c57ff4a9-aea8-4ff3-843b-23ce820ba630&apiKey=4aa279a8430d441dba9c55f659831878",
   borderColor: "border-purple-500/20",
   bgColor: "bg-purple-500/10",
 };
@@ -235,7 +245,13 @@ const RESOURCES: Resource[] = [
   },
 ];
 
-function HighlightCard({ highlight, index }: { highlight: Highlight; index: number }) {
+function HighlightCard({
+  highlight,
+  index,
+}: {
+  highlight: Highlight;
+  index: number;
+}) {
   const Icon = highlight.icon;
   return (
     <div className="group flex flex-col h-full">
@@ -385,6 +401,7 @@ function CalendarResourceCard({ entry }: { entry: CalendarEntry }) {
 function HeroVideo() {
   const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const containerRef = useAutoMuteOnScroll(videoRef);
 
   const toggleMute = () => {
     if (videoRef.current) {
@@ -400,8 +417,31 @@ function HeroVideo() {
     video.muted = isMuted;
   }, [isMuted]);
 
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const handleEnded = () => {
+      const rect = containerRef.current?.getBoundingClientRect();
+      const isVisible =
+        rect && rect.top < window.innerHeight && rect.bottom > 0;
+      if (isVisible) {
+        video.currentTime = 0;
+        video.play().catch(() => {});
+      }
+    };
+
+    video.addEventListener("ended", handleEnded);
+    return () => {
+      video.removeEventListener("ended", handleEnded);
+    };
+  }, []);
+
   return (
-    <div className="w-full h-screen relative overflow-hidden flex items-end md:items-center justify-start">
+    <div
+      ref={containerRef}
+      className="h-[40vh] sm:h-[55vh] md:h-[65vh] lg:h-[75vh] relative overflow-hidden flex items-center justify-start hero-video-container"
+    >
       <video
         ref={videoRef}
         src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F0b20f5ea03294f4d824e69fd8489b78c?alt=media&token=0c4092c4-4afd-4237-b850-81046ecf52f7&apiKey=4aa279a8430d441dba9c55f659831878"
@@ -409,9 +449,12 @@ function HeroVideo() {
         muted={isMuted}
         loop
         playsInline
-        className="absolute inset-0 w-full h-full object-cover"
+        preload="metadata"
+        crossOrigin="anonymous"
+        className="absolute inset-0 object-cover"
         style={{
-          filter: "brightness(1.1) contrast(1.15) saturate(1.2)"
+          filter: "brightness(1.1) contrast(1.15) saturate(1.2)",
+          objectPosition: "center top",
         }}
       />
 
@@ -420,23 +463,27 @@ function HeroVideo() {
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/30 pointer-events-none"></div>
 
       <div className="absolute top-0 left-0 w-96 h-96 bg-brand-magenta/5 rounded-full filter blur-3xl opacity-60 animate-float pointer-events-none"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-brand-orange/5 rounded-full filter blur-3xl opacity-60 animate-float pointer-events-none" style={{ animationDelay: "2s" }}></div>
+      <div
+        className="absolute bottom-0 right-0 w-96 h-96 bg-brand-orange/5 rounded-full filter blur-3xl opacity-60 animate-float pointer-events-none"
+        style={{ animationDelay: "2s" }}
+      ></div>
 
-      <div className="absolute inset-0 opacity-5 pointer-events-none" style={{
-        backgroundImage: "repeating-linear-gradient(0deg, rgba(255,255,255,.03) 0px, rgba(255,255,255,.03) 1px, transparent 1px, transparent 2px)"
-      }}></div>
+      <div
+        className="absolute inset-0 opacity-5 pointer-events-none"
+        style={{
+          backgroundImage:
+            "repeating-linear-gradient(0deg, rgba(255,255,255,.03) 0px, rgba(255,255,255,.03) 1px, transparent 1px, transparent 2px)",
+        }}
+      ></div>
 
-      <div className="relative max-w-7xl mx-auto px-6 w-full z-10 pb-20 md:pb-0">
+      <div className="relative max-w-7xl mx-auto px-3 w-full z-10 pb-20 md:pb-0">
         <div className="max-w-2xl">
-          <p className="text-sm md:text-base text-white/80 mb-4 uppercase tracking-widest font-display">
+          <p className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 uppercase tracking-widest font-display">
             Center for Executive Education
           </p>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight font-display">
+          <h1 className="text-sm md:text-base text-white/80 mb-6 leading-tight font-display">
             Executive MBA & Leadership Ecosystem
           </h1>
-          <p className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed max-w-xl font-display">
-            Propel your career with weekend executive programmes, CXO mentorship and innovation labs tailored for working professionals.
-          </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
             <a
@@ -451,20 +498,6 @@ function HeroVideo() {
               >
                 Apply Now
                 <ChevronRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </a>
-            <a
-              href="https://dsu.edu.in/virtual-tour/"
-              target="_blank"
-              rel="noreferrer"
-              className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-            >
-              <Button
-                variant="outline"
-                size="lg"
-                className="border-2 border-white text-white hover:bg-white hover:text-orange-600 px-8 py-6 text-base font-semibold font-display transition-all duration-300"
-              >
-                Virtual Tour
               </Button>
             </a>
           </div>
@@ -537,7 +570,7 @@ function ResourceCard({ resource }: { resource: Resource }) {
 export default function CEE() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <section className="relative w-full" id="top">
+      <section className="relative" id="top">
         <HeroVideo />
       </section>
 
@@ -551,7 +584,9 @@ export default function CEE() {
               Pathways for working professionals
             </h2>
             <p className="mt-3 text-sm text-foreground font-body max-w-3xl mx-auto">
-              Modular journeys blend weekend residencies, leadership labs, industry immersions and personalised mentoring to elevate executive careers.
+              Modular journeys blend weekend residencies, leadership labs,
+              industry immersions and personalised mentoring to elevate
+              executive careers.
             </p>
           </div>
           <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
@@ -561,7 +596,6 @@ export default function CEE() {
           </div>
         </div>
       </section>
-
 
       {/* Dean's Message Section */}
       <DeanSection dean={DEAN_INFO} />
@@ -578,7 +612,9 @@ export default function CEE() {
                 Executive Programmes
               </h2>
               <p className="mt-3 text-sm text-foreground font-body">
-                Modular executive pathways combining weekend residencies, strategic modules, CXO mentorship and global immersion for working professionals.
+                Modular executive pathways combining weekend residencies,
+                strategic modules, CXO mentorship and global immersion for
+                working professionals.
               </p>
             </div>
           </div>
@@ -611,7 +647,8 @@ export default function CEE() {
                   Executive Education Calendar
                 </h2>
                 <p className="text-sm text-foreground font-body">
-                  Curated updates for ongoing programmes including residencies, masterclasses, speaker series and evaluations.
+                  Curated updates for ongoing programmes including residencies,
+                  masterclasses, speaker series and evaluations.
                 </p>
                 <a
                   href="https://www.dsu.edu.in/academics/cee/news-events"
@@ -672,14 +709,18 @@ export default function CEE() {
         </div>
       </section>
 
-      <section id="featured-news" className="px-6 py-16 bg-gradient-to-r from-brand-blue/5 via-brand-magenta/5 to-brand-orange/5">
+      <section
+        id="featured-news"
+        className="px-6 py-16 bg-gradient-to-r from-brand-blue/5 via-brand-magenta/5 to-brand-orange/5"
+      >
         <div className="mx-auto max-w-7xl">
           <div className="mb-12 text-center">
             <h2 className="font-display text-3xl md:text-4xl mb-3">
               Latest from CEE
             </h2>
             <p className="text-sm text-foreground font-body">
-              Stories of leadership excellence, speaker insights and alumni success
+              Stories of leadership excellence, speaker insights and alumni
+              success
             </p>
           </div>
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">

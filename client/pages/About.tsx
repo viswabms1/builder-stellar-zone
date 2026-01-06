@@ -101,7 +101,7 @@ export default function About() {
               <Button
                 variant="outline"
                 size="lg"
-                className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-foreground px-8 py-6 text-lg font-semibold rounded-2xl"
+                className="border-2 border-transparent text-orange-500 hover:bg-transparent hover:text-orange-500 px-8 py-6 text-lg font-semibold rounded-2xl"
               >
                 Campus Tour
               </Button>
@@ -338,7 +338,7 @@ export default function About() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-foreground px-12 py-6 text-lg font-semibold rounded-2xl"
+                  className="border-2 border-transparent text-orange-500 hover:bg-transparent hover:text-orange-500 px-12 py-6 text-lg font-semibold rounded-2xl"
                 >
                   Schedule Visit
                 </Button>

@@ -179,6 +179,29 @@
       line-height: 2.25rem; /* 36px on mobile */
     }
   }
+
+  /* Landscape orientation styles */
+  @media (max-height: 500px) and (orientation: landscape) {
+    .hero-section {
+      height: auto !important;
+      min-height: auto !important;
+      padding-top: 8rem !important;
+    }
+
+    .dept-hero-section {
+      padding-top: 8rem !important; /* Padding for landscape */
+    }
+
+    /* Ensure content inside also has padding */
+    .dept-hero-section > div {
+      padding-top: 6rem !important;
+    }
+
+    /* Homepage hero content padding */
+    .hero-section > div {
+      padding-top: 5rem !important;
+    }
+  }
 }
 
 @layer utilities {

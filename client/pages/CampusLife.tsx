@@ -63,6 +63,7 @@ export default function CampusLife() {
             muted
             loop
             playsInline
+            preload="metadata"
             className="w-full h-full object-cover"
           />
         </div>
@@ -103,7 +104,7 @@ export default function CampusLife() {
         >
           <Button
             size="lg"
-            className="bg-orange-500 hover:bg-orange-600 text-foreground px-10 py-6 text-lg font-semibold rounded-full inline-flex items-center"
+            className="bg-black/10 border border-transparent hover:bg-black/20 backdrop-blur-sm text-foreground px-10 py-6 text-lg font-semibold rounded-full inline-flex items-center transition-all duration-300"
           >
             Virtual Campus Tour
             <ArrowRight className="w-5 h-5 ml-2" />

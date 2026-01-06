@@ -5,6 +5,7 @@ import { getLanguageLabel } from '@/lib/i18n';
 import type { Language } from '@/lib/i18n';
 import { ChevronDown } from 'lucide-react';
 import { useState, useEffect, useRef } from 'react';
+import { createPortal } from 'react-dom';
 
 const LANGUAGES: Language[] = ['en', 'kn', 'hi'];
 
@@ -25,28 +26,46 @@ export default function LanguageSwitcher() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
+  const [dropdownPos, setDropdownPos] = useState({ top: 0, right: 0 });
+  const buttonRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (buttonRef.current && isOpen) {
+      const rect = buttonRef.current.getBoundingClientRect();
+      setDropdownPos({
+        top: rect.bottom + window.scrollY,
+        right: window.innerWidth - rect.right
+      });
+    }
+  }, [isOpen]);
+
   return (
     <div className="relative" ref={dropdownRef}>
-      <Button
-        variant="ghost"
-        size="sm"
-        className={`px-3 py-2 rounded-xl text-sm font-medium font-display transition-all duration-200 flex items-center gap-2 ${
+      <button
+        ref={buttonRef}
+        className={`text-xs font-medium transition-colors whitespace-nowrap flex items-center gap-1 ${
           theme === 'light'
-            ? 'text-gray-700 hover:text-orange-600 hover:bg-orange-100'
-            : 'text-white/80 hover:text-white hover:bg-white/10'
+            ? 'text-gray-600 hover:text-orange-600'
+            : 'text-white/80 hover:text-white'
         }`}
         onClick={() => setIsOpen(!isOpen)}
       >
         <span>{getLanguageLabel(language)}</span>
-        <ChevronDown className="w-4 h-4" />
-      </Button>
+        <ChevronDown className="w-3 h-3" />
+      </button>
 
-      {isOpen && (
-        <div className={`absolute right-0 mt-2 w-48 rounded-xl shadow-lg border z-50 ${
-          theme === 'light'
-            ? 'bg-white border-orange-200'
-            : 'bg-slate-900 border-slate-700'
-        }`}>
+      {isOpen && createPortal(
+        <div
+          className={`fixed w-48 rounded-xl shadow-lg border z-[9999] ${
+            theme === 'light'
+              ? 'bg-white border-orange-200'
+              : 'bg-slate-900 border-slate-700'
+          }`}
+          style={{
+            top: `${dropdownPos.top + 8}px`,
+            right: `${dropdownPos.right}px`
+          }}
+        >
           {LANGUAGES.map((lang) => (
             <button
               key={lang}
@@ -67,7 +86,8 @@ export default function LanguageSwitcher() {
               {getLanguageLabel(lang)}
             </button>
           ))}
-        </div>
+        </div>,
+        document.body
       )}
     </div>
   );

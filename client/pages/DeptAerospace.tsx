@@ -25,35 +25,35 @@ import {
 
 export default function DeptAerospace() {
   const specializations = [
-    { icon: Rocket, label: "Aerodynamics" },
-    { icon: Wind, label: "Propulsion" },
-    { icon: Zap, label: "Flight Control" },
-    { icon: Microscope, label: "Materials" },
+    { icon: Rocket, label: "GPU-Accelerated CFD" },
+    { icon: Wind, label: "Propulsion Simulation" },
+    { icon: Zap, label: "Flight Optimization" },
+    { icon: Microscope, label: "Materials & AI" },
   ];
 
   const highlights = [
     "Comprehensive curriculum covering aerodynamics, thermodynamics, and propulsion systems",
-    "Core competencies: Fluid mechanics, structural mechanics, materials science, CAE/PLM tools",
-    "Project-based learning integrated with aerospace industry partners",
-    "Advanced simulation and design labs for aircraft and spacecraft systems",
-    "Internship opportunities in aerospace and defense sectors",
-    "Research focus on aeronautical and astronautical engineering",
+    "GPU-accelerated CFD using NVIDIA CUDA: Aerodynamic analysis 50-100X faster than traditional CPU computing",
+    "Advanced CAE tools: FEA, trajectory optimization, and flight control design on supercomputer infrastructure",
+    "AI-driven flight systems: ML models for autonomous navigation, anomaly detection, and performance prediction",
+    "Project-based learning integrated with aerospace and defense industry partners",
+    "Research focus on next-generation aircraft, space missions, and advanced propulsion systems",
   ];
 
   const careers = [
-    "Aerodynamics Engineer → Senior Aerodynamicist → Technical Director",
-    "Propulsion Systems Engineer → Systems Engineer → Program Manager",
-    "Structures & Design Engineer → Design Lead → Chief Engineer",
-    "Career pathways in aerospace, defense, aviation, and space agencies",
+    "CFD Engineer (Aerodynamics) → Senior Aerodynamicist → Technical Director (₹22-40 LPA with GPU skills)",
+    "Propulsion Systems Engineer → Systems Engineer → Program Manager (with computational optimization)",
+    "Flight Systems Engineer → Design Lead → Chief Engineer (ML-driven control systems expertise)",
+    "Career pathways in aerospace, defense, space agencies, and emerging space-tech companies; 20-30% premium for CFD expertise",
   ];
 
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero */}
-      <section className="relative">
-        <div className="h-[50vh] md:h-[65vh] w-full overflow-hidden">
+      <section className="dept-hero-section relative pt-40 md:pt-0">
+        <div className="h-[70vh] md:h-[65vh] max-h-[400px] md:max-h-none w-full overflow-hidden">
           <img
-            src="https://images.unsplash.com/photo-1446776877081-d282a0f896e2?q=80&w=1600&auto=format&fit=crop"
+            src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F2c355b2edb974047b0c3ffca832d14a4?format=webp&width=800"
             alt="Department of Aerospace Engineering"
             className="w-full h-full object-cover"
           />
@@ -61,14 +61,14 @@ export default function DeptAerospace() {
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
         </div>
         <div className="absolute inset-0 flex items-center">
-          <div className="max-w-7xl mx-auto px-3">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-brand-blue/10 rounded-full border border-brand-blue/20 mb-4">
-              <Sparkles className="w-4 h-4 text-brand-blue" />
-              <span className="text-sm font-medium text-brand-blue font-display">Department of Aerospace Engineering</span>
+          <div className="max-w-7xl mx-auto px-3 pb-20 md:pb-0 pt-6 md:pt-0">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-black/40 rounded-full border border-white/20 mb-4 backdrop-blur-sm">
+              <Sparkles className="w-4 h-4 text-white" />
+              <span className="text-sm font-medium text-white font-display">Department of Aerospace Engineering</span>
             </div>
-            <h1 className="headline-1 text-white leading-tight font-display">Reach New Heights in Engineering</h1>
+            <h1 className="headline-1 text-white leading-tight font-display">Design Flight at Supercomputer Speed</h1>
             <p className="subheadline text-white/90 max-w-2xl mt-3 font-body">
-              Master aerodynamics, propulsion systems, and aerospace design at DSU's innovative engineering hub.
+              Master aerodynamics, propulsion, and flight systems using GPU-accelerated CFD and AI-driven optimization on NVIDIA infrastructure. Design next-generation aircraft and space missions faster.
             </p>
             <div className="mt-6 flex flex-wrap gap-2">
               {specializations.map((s, i) => (
@@ -86,6 +86,58 @@ export default function DeptAerospace() {
                 <Button className="bg-brand-gradient text-foreground">Apply Now <GraduationCap className="w-4 h-4 ml-2" /></Button>
               </a>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Programs Offered */}
+      <section className="px-3 py-8 bg-gradient-to-r from-brand-blue/5 via-brand-blue/5 to-brand-blue/5 border-y border-border/30">
+        <div className="max-w-6xl mx-auto">
+          <div className="mb-8">
+            <h2 className="headline-2 font-display mb-2">Programs Offered</h2>
+            <p className="text-foreground/80 font-body">Choose your pathway with GPU-accelerated CFD, advanced simulations, and aerospace-grade computational tools</p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-4">
+            {/* B.Tech Program */}
+            <Card className="border border-border/50 bg-card/50 backdrop-blur-sm hover:shadow-lg transition-all">
+              <CardHeader>
+                <div className="flex items-center gap-2 mb-2">
+                  <GraduationCap className="w-5 h-5 text-brand-blue" />
+                  <Badge className="bg-brand-blue/20 text-brand-blue border-brand-blue/30">Undergraduate</Badge>
+                </div>
+                <CardTitle className="font-display">B.Tech Aerospace Engineering</CardTitle>
+                <CardDescription className="font-body">4-Year Program</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <p className="text-sm text-foreground font-body">With specializations in:</p>
+                <div className="flex flex-wrap gap-2">
+                  {["Aerodynamics", "Propulsion", "Flight Control", "Materials"].map((spec, i) => (
+                    <Badge key={i} variant="secondary" className="text-xs">{spec}</Badge>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Quick Info */}
+            <Card className="border border-border/50 bg-card/50 backdrop-blur-sm">
+              <CardHeader>
+                <CardTitle className="text-lg font-display">Why Choose Aerospace?</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-2 text-sm font-body">
+                <div className="flex items-center gap-2">
+                  <Award className="w-4 h-4 text-brand-blue flex-shrink-0" />
+                  <span>Industry Partnerships</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Zap className="w-4 h-4 text-brand-blue flex-shrink-0" />
+                  <span>Advanced Simulation Labs</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Rocket className="w-4 h-4 text-brand-blue flex-shrink-0" />
+                  <span>Aerospace & Defense Focus</span>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
@@ -125,12 +177,69 @@ export default function DeptAerospace() {
               <CardContent className="grid gap-2 text-sm font-body">
                 <div className="flex items-center justify-between"><span>Program Type</span><span className="font-medium">B.Tech</span></div>
                 <div className="flex items-center justify-between"><span>Duration</span><span className="font-medium">4 Years</span></div>
-                <div className="flex items-center justify-between"><span>Industry Focus</span><span className="font-medium">Aerospace & Defense</span></div>
+                <div className="flex items-center justify-between"><span>Computational Infrastructure</span><span className="font-medium">GPU-Accelerated CFD</span></div>
               </CardContent>
             </Card>
           </div>
         </div>
       </section>
+
+      {/* Computational Engineering Tools */}
+      <section className="px-3 py-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="mb-8">
+            <h2 className="headline-2 font-display mb-2">Advanced Computational Tools Powered by NVIDIA</h2>
+            <p className="text-foreground/80 font-body max-w-2xl">Access GPU-accelerated aerospace software for faster aerodynamic analysis, trajectory design, and mission optimization</p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* CFD & Aerodynamic Analysis */}
+            <div className="bg-gradient-to-r from-blue-500/10 to-cyan-500/10 p-6 rounded-lg border border-blue-500/30">
+              <h4 className="text-xl font-bold text-blue-500 mb-3">GPU-Accelerated Aerodynamic CFD</h4>
+              <ul className="space-y-2 text-base text-foreground/70">
+                <li>✓ NVIDIA CUDA-powered CFD solvers for rapid aerodynamic analysis</li>
+                <li>✓ Turbulent flow simulations 50-100X faster than traditional CPU methods</li>
+                <li>✓ Real-time design iteration and optimization of aircraft wings and fuselage</li>
+                <li>✓ High-fidelity aerodynamic databases for multiphase flow and compressible analysis</li>
+              </ul>
+            </div>
+
+            {/* Flight & Trajectory Optimization */}
+            <div className="bg-gradient-to-r from-orange-500/10 to-red-500/10 p-6 rounded-lg border border-orange-500/30">
+              <h4 className="text-xl font-bold text-orange-500 mb-3">AI-Driven Flight & Trajectory Optimization</h4>
+              <ul className="space-y-2 text-base text-foreground/70">
+                <li>✓ GPU-accelerated ML models for autonomous flight control and navigation</li>
+                <li>✓ Space mission planning: trajectory calculation, fuel optimization using neural networks</li>
+                <li>✓ Reinforcement learning for adaptive control systems in aircraft and spacecraft</li>
+                <li>✓ Real-time anomaly detection and predictive maintenance for flight systems</li>
+              </ul>
+            </div>
+
+            {/* Structural & Propulsion Simulation */}
+            <div className="bg-gradient-to-r from-purple-500/10 to-pink-500/10 p-6 rounded-lg border border-purple-500/30">
+              <h4 className="text-xl font-bold text-purple-500 mb-3">Structural & Propulsion Analysis</h4>
+              <ul className="space-y-2 text-base text-foreground/70">
+                <li>✓ GPU-accelerated FEA for structural analysis of aircraft and spacecraft</li>
+                <li>✓ Turbine and rocket engine design using CUDA-powered thermal simulations</li>
+                <li>✓ Vibration and fatigue analysis for composite materials and advanced structures</li>
+                <li>✓ Multiphysics simulations: aerothermal, structural coupling, and stress analysis</li>
+              </ul>
+            </div>
+
+            {/* Competitive Advantage */}
+            <div className="bg-gradient-to-r from-emerald-500/10 to-teal-500/10 p-6 rounded-lg border border-emerald-500/30">
+              <h4 className="text-xl font-bold text-emerald-500 mb-3">Industry Competitive Edge</h4>
+              <ul className="space-y-2 text-base text-foreground/70">
+                <li>✓ Experience with tools used by aerospace leaders: Boeing, Airbus, SpaceX, ISRO</li>
+                <li>✓ 20-30% salary premium for CFD and aerospace simulation engineers</li>
+                <li>✓ Direct qualification for roles in space agencies and defense aerospace companies</li>
+                <li>✓ Rare GPU-accelerated aerospace infrastructure in Indian engineering education</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <CurriculumLibrary />
 
       <AccreditationDocuments />
 
@@ -337,6 +446,20 @@ export default function DeptAerospace() {
   );
 }
 
+interface CurriculumProgram {
+  id: string;
+  label: string;
+  description: string;
+  image: string;
+  batches: CurriculumBatch[];
+}
+
+interface CurriculumBatch {
+  year: string;
+  summary: string;
+  documentUrl?: string;
+}
+
 interface LabItem {
   title: string;
   image: string;
@@ -350,6 +473,155 @@ interface NoticeItem {
   description: string;
   image?: string;
   link?: string;
+}
+
+function CurriculumLibrary() {
+  const [openProgram, setOpenProgram] = useState<string | null>(null);
+
+  const programs: CurriculumProgram[] = [
+    {
+      id: "btech",
+      label: "B.Tech Aerospace Engineering",
+      description: "4-year undergraduate program with specializations in aerodynamics, propulsion systems, and spacecraft design",
+      image: "https://images.unsplash.com/photo-1446776877081-d282a0f896e2?q=80&w=600&h=400&fit=crop",
+      batches: [
+        {
+          year: "2025-26",
+          summary: "Foundations in fluid mechanics, thermodynamics, and aircraft design principles",
+          documentUrl:
+            "https://www.dsu.edu.in/images/Engineering/AE-dept/curriculum/BTech-AE-Curriculum-2025-26.pdf",
+        },
+        {
+          year: "2026-27",
+          summary: "Aerodynamics, propulsion systems, and flight mechanics",
+          documentUrl:
+            "https://www.dsu.edu.in/images/Engineering/AE-dept/curriculum/BTech-AE-Curriculum-2026-27.pdf",
+        },
+        {
+          year: "2027-28",
+          summary: "Structural design, control systems, and advanced aerospace analysis",
+          documentUrl:
+            "https://www.dsu.edu.in/images/Engineering/AE-dept/curriculum/BTech-AE-Curriculum-2027-28.pdf",
+        },
+        {
+          year: "2028-29",
+          summary: "Capstone aerospace projects and industry internships",
+          documentUrl:
+            "https://www.dsu.edu.in/images/Engineering/AE-dept/curriculum/BTech-AE-Curriculum-2028-29.pdf",
+        },
+      ],
+    },
+  ];
+
+  return (
+    <section className="px-3 py-8 bg-gradient-to-r from-brand-blue/5 via-brand-blue/5 to-brand-blue/5">
+      <div className="mx-auto max-w-6xl space-y-4">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <h2 className="headline-2 mb-3 font-display">
+              <span className="text-foreground">Curriculum </span>
+              <span className="bg-brand-gradient bg-clip-text text-transparent">
+                Library
+              </span>
+            </h2>
+            <p className="max-w-2xl text-sm text-foreground sm:text-base font-body">
+              Explore comprehensive curriculum for the B.Tech Aerospace Engineering program. Access detailed course structures, learning outcomes, and downloadable syllabi.
+            </p>
+          </div>
+          <Badge className="w-fit rounded-full bg-brand-blue/15 px-4 py-2 text-xs font-semibold text-brand-blue border border-brand-blue/20">
+            2025 – 2029
+          </Badge>
+        </div>
+
+        <div className="grid gap-3">
+          {programs.map((program) => {
+            const isOpen = openProgram === program.id;
+
+            return (
+              <div
+                key={program.id}
+                className="rounded-3xl border-2 border-brand-blue/30 overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-brand-blue/10 hover:-translate-y-1"
+              >
+                <div className="relative h-48 overflow-hidden">
+                  <img
+                    src={program.image}
+                    alt={program.label}
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+
+                <div className="p-3 bg-background/50 backdrop-blur-sm space-y-3">
+                  <div className="flex items-start gap-3">
+                    <Badge className="rounded-full border bg-brand-blue/15 text-brand-blue border-brand-blue/20">
+                      Undergraduate
+                    </Badge>
+                  </div>
+                  <div>
+                    <h3 className="headline-3 font-display text-foreground mb-2">{program.label}</h3>
+                    <p className="text-sm text-foreground/80 font-body">{program.description}</p>
+                  </div>
+                  <Button
+                    variant="outline"
+                    className="w-full border-brand-blue/30 hover:bg-brand-blue/10 text-brand-blue hover:text-brand-blue"
+                    onClick={() => setOpenProgram(isOpen ? null : program.id)}
+                  >
+                    <span className="flex items-center justify-center gap-2">
+                      {isOpen ? "Hide" : "View"} Batches
+                      <ChevronDown
+                        className={`h-4 w-4 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
+                      />
+                    </span>
+                  </Button>
+
+                  {isOpen && (
+                    <div className="mt-4 space-y-3 border-t border-border/20 pt-4 animate-in fade-in slide-in-from-top-2 duration-300">
+                      {program.batches.map((batch, batchIdx) => (
+                        <div
+                          key={`${program.id}-${batch.year}`}
+                          className={`rounded-xl border border-border/40 bg-card/70 p-3 transition-all hover:border-brand-blue/40 ${
+                            batchIdx === 0 ? "ring-2 ring-brand-blue/20" : ""
+                          }`}
+                        >
+                          <div className="flex items-start justify-between gap-2 mb-2">
+                            <div className="flex items-center gap-2">
+                              <Badge className="rounded-full border text-xs bg-brand-blue/20 text-brand-blue border-brand-blue/30">
+                                <CalendarDays className="h-3 w-3 mr-1" />
+                                {batch.year}
+                              </Badge>
+                              {batchIdx === 0 && (
+                                <Badge className="rounded-full bg-brand-blue/20 text-brand-blue border-brand-blue/30 border text-xs">
+                                  <Zap className="h-3 w-3 mr-1" />
+                                  Current
+                                </Badge>
+                              )}
+                            </div>
+                          </div>
+                          <p className="text-xs text-foreground/80 font-body mb-3 leading-relaxed">{batch.summary}</p>
+                          {batch.documentUrl && (
+                            <Button
+                              variant="ghost"
+                              size="sm"
+                              className="w-full justify-center gap-1 rounded text-xs font-semibold bg-brand-blue/10 text-brand-blue hover:bg-brand-blue/20"
+                              asChild
+                            >
+                              <a href={batch.documentUrl} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-1">
+                                <Download className="h-3 w-3" />
+                                PDF
+                              </a>
+                            </Button>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
 }
 
 function LabsFacilitiesCarousel() {

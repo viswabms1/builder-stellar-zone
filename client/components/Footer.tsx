@@ -30,7 +30,7 @@ const FOOTER_LINK_GROUPS = [
       { label: "Engineering", href: "/academics/engineering" },
       { label: "Management Studies", href: "/academics/management-studies" },
       { label: "Health Sciences", href: "/academics/health-sciences" },
-      { label: "Design & Media", href: "/academics/design/bdesign" },
+      { label: "School of Design", href: "/academics/design/bdesign" },
     ],
   },
   {
@@ -112,17 +112,17 @@ const CONTACT_EMAILS = [
 const SOCIAL_LINKS = [
   {
     label: "Facebook",
-    href: "https://www.facebook.com/dsuofficial",
+    href: "https://www.facebook.com/Dayanandasagaruniversitybangalore/",
     icon: Facebook,
   },
   {
     label: "Instagram",
-    href: "https://www.instagram.com/dayanandasagaruniversity",
+    href: "https://www.instagram.com/dayanandasagaruniversityblr",
     icon: Instagram,
   },
   {
     label: "LinkedIn",
-    href: "https://www.linkedin.com/school/dayanandasagaruniversity/",
+    href: "https://in.linkedin.com/school/dayananda-sagar-university-bangalore/",
     icon: Linkedin,
   },
   {
@@ -158,9 +158,11 @@ export default function Footer() {
               to="/"
               className="inline-flex items-center gap-3 text-left text-white"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-gradient text-lg font-semibold">
-                DSU
-              </div>
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fc9f5a55fa7004ae596d21cc4fa4aed1f?format=webp&width=1200"
+                alt="Dayananda Sagar University Logo"
+                className="h-16 w-auto object-contain"
+              />
               <div>
                 <p className="text-xs uppercase tracking-[0.3em] text-white/60">
                   Dayananda Sagar University
@@ -328,7 +330,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-16 grid gap-6 border-t border-white/10 pt-6 text-sm text-white/60 font-body sm:flex sm:flex-wrap sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} Dayananda Sagar University. {language === 'en' ? 'All rights reserved.' : language === 'kn' ? 'ಎಲ್ಲಾ ಅಧಿಕಾರಗಳು ಸಂರಕ್ಷಿತ.' : 'सर्वाधिकार सुरक्षित.'}</p>
+          <p>© 2026 Dayananda Sagar University. {language === 'en' ? 'All rights reserved.' : language === 'kn' ? 'ಎಲ್ಲಾ ಅಧಿಕಾರಗಳು ಸಂರಕ್ಷಿತ.' : 'सर्वाधिकार सुरक्षित.'}</p>
           <div className="flex flex-wrap gap-4">
             <a
               href="https://www.dsu.edu.in/privacy-policy"

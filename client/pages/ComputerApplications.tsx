@@ -9,6 +9,7 @@ import {
   CalendarDays,
   ChevronRight,
   Cpu,
+  Download,
   Eye,
   GraduationCap,
   Heart,
@@ -32,6 +33,12 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { DeanSection, type DeanInfo } from "@/components/DeanSection";
+import {
+  getComputerApplicationsEvents,
+  getComputerApplicationsNews,
+  getComputerApplicationsAnnouncements,
+  type NoticeItem as ImportedNoticeItem,
+} from "@/data/computer-applications-events";
 
 
 type ProgramCard = {
@@ -56,6 +63,253 @@ type CalendarEntry = {
   tag: string;
 };
 
+type NoticeItem = ImportedNoticeItem;
+
+const getAllComputerApplicationsEvents = () => getComputerApplicationsEvents();
+const getComputerApplicationsNewsData = () => getComputerApplicationsNews();
+const getComputerApplicationsAnnouncementsData = () => getComputerApplicationsAnnouncements();
+
+function NoticeBoardCarousel() {
+  const [currentEventIndex, setCurrentEventIndex] = useState(0);
+  const [currentNewsIndex, setCurrentNewsIndex] = useState(0);
+  const [currentAnnouncementIndex, setCurrentAnnouncementIndex] = useState(0);
+
+  const events = getAllComputerApplicationsEvents();
+  const news = getComputerApplicationsNewsData();
+  const announcements = getComputerApplicationsAnnouncementsData();
+
+  useEffect(() => {
+    if (events.length === 0) return;
+    const interval = setInterval(() => {
+      setCurrentEventIndex((prev) => (prev + 1) % events.length);
+    }, 6000);
+    return () => clearInterval(interval);
+  }, [events.length]);
+
+  useEffect(() => {
+    if (news.length === 0) return;
+    const interval = setInterval(() => {
+      setCurrentNewsIndex((prev) => (prev + 1) % news.length);
+    }, 6000);
+    return () => clearInterval(interval);
+  }, [news.length]);
+
+  useEffect(() => {
+    if (announcements.length === 0) return;
+    const interval = setInterval(() => {
+      setCurrentAnnouncementIndex((prev) => (prev + 1) % announcements.length);
+    }, 6000);
+    return () => clearInterval(interval);
+  }, [announcements.length]);
+
+  const getCategoryStyles = (category: "Event" | "News" | "Announcement") => {
+    switch (category) {
+      case "Event":
+        return {
+          borderColor: "border-brand-magenta",
+          bgColor: "bg-brand-magenta/10",
+          textColor: "text-brand-magenta",
+          dotColor: "bg-brand-magenta",
+        };
+      case "News":
+        return {
+          borderColor: "border-brand-orange",
+          bgColor: "bg-brand-orange/10",
+          textColor: "text-brand-orange",
+          dotColor: "bg-brand-orange",
+        };
+      default:
+        return {
+          borderColor: "border-brand-blue",
+          bgColor: "bg-brand-blue/10",
+          textColor: "text-brand-blue",
+          dotColor: "bg-brand-blue",
+        };
+    }
+  };
+
+  const renderCarousel = (
+    title: string,
+    items: NoticeItem[],
+    currentIndex: number,
+    setCurrentIndex: (idx: number) => void,
+    category: "Event" | "News" | "Announcement",
+  ) => {
+    const styles = getCategoryStyles(category);
+
+    if (items.length === 0) {
+      return (
+        <div className="space-y-4">
+          <div
+            className={`flex items-center gap-2 px-4 py-3 rounded-xl border-l-4 ${styles.borderColor} ${styles.bgColor}`}
+          >
+            <h3 className={`headline-4 font-display ${styles.textColor}`}>
+              {title}
+            </h3>
+          </div>
+          <p className="text-xs text-foreground/60 italic p-4 text-center">
+            No items to display
+          </p>
+        </div>
+      );
+    }
+
+    const currentItem = items[currentIndex];
+
+    return (
+      <div className="space-y-4">
+        <div
+          className={`flex items-center gap-2 px-4 py-3 rounded-xl border-l-4 ${styles.borderColor} ${styles.bgColor}`}
+        >
+          <h3 className={`headline-4 font-display ${styles.textColor}`}>
+            {title}
+          </h3>
+          <Badge className="ml-auto text-xs">
+            {currentIndex + 1} / {items.length}
+          </Badge>
+        </div>
+
+        <Card className="group overflow-hidden rounded-2xl border-2 border-border/30 bg-card/40 backdrop-blur-sm">
+          {currentItem.image && (
+            <div className="relative h-48 overflow-hidden">
+              <img
+                src={currentItem.image}
+                alt={currentItem.title}
+                className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
+              />
+            </div>
+          )}
+          <CardContent className="p-4 space-y-3">
+            <div className="flex items-start justify-between gap-2">
+              <div className="flex-1">
+                <h4 className="font-display font-semibold text-sm text-foreground mb-2 line-clamp-2">
+                  {currentItem.title}
+                </h4>
+                <p className="text-xs text-foreground/70 line-clamp-2">
+                  {currentItem.description}
+                </p>
+                {currentItem.department && (
+                  <p className="text-xs text-foreground/50 mt-2">
+                    Department: {currentItem.department}
+                  </p>
+                )}
+              </div>
+            </div>
+            <div className="flex items-center justify-between pt-2 border-t border-border/20">
+              <span className="text-xs font-semibold text-foreground/60">
+                {currentItem.date}
+              </span>
+              {currentItem.link && (
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="h-6 px-2 text-xs bg-brand-blue/10 text-brand-blue hover:bg-brand-blue/20"
+                  asChild
+                >
+                  <a href={currentItem.link} target="_blank" rel="noreferrer">
+                    <Download className="h-3 w-3 mr-1" />
+                    PDF
+                  </a>
+                </Button>
+              )}
+            </div>
+          </CardContent>
+        </Card>
+
+        <div className="flex items-center justify-between gap-2">
+          <div className="flex gap-1">
+            {items.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setCurrentIndex(idx)}
+                className={`h-1.5 rounded-full transition-all ${
+                  idx === currentIndex
+                    ? `${styles.dotColor} w-6`
+                    : "bg-border/40 w-1.5 hover:bg-border/60"
+                }`}
+              />
+            ))}
+          </div>
+          <div className="flex gap-1">
+            <Button
+              variant="outline"
+              size="sm"
+              className="h-7 px-2 text-xs"
+              onClick={() =>
+                setCurrentIndex(
+                  (prev) => (prev - 1 + items.length) % items.length,
+                )
+              }
+            >
+              ←
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              className="h-7 px-2 text-xs"
+              onClick={() =>
+                setCurrentIndex((prev) => (prev + 1) % items.length)
+              }
+            >
+              →
+            </Button>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  return (
+    <section className="px-3 py-8">
+      <div className="mx-auto max-w-7xl space-y-4">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <h2 className="headline-2 mb-3 font-display">
+              <span className="text-foreground">Computer Applications </span>
+              <span className="bg-brand-gradient bg-clip-text text-transparent">
+                Notice Board
+              </span>
+            </h2>
+            <p className="max-w-2xl text-sm text-foreground sm:text-base font-body">
+              Stay updated with upcoming events, news, and important
+              announcements from the school.
+            </p>
+          </div>
+        </div>
+
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          <div>
+            {renderCarousel(
+              "Events",
+              events,
+              currentEventIndex,
+              setCurrentEventIndex,
+              "Event",
+            )}
+          </div>
+          <div>
+            {renderCarousel(
+              "News",
+              news,
+              currentNewsIndex,
+              setCurrentNewsIndex,
+              "News",
+            )}
+          </div>
+          <div>
+            {renderCarousel(
+              "Announcements",
+              announcements,
+              currentAnnouncementIndex,
+              setCurrentAnnouncementIndex,
+              "Announcement",
+            )}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
 
 const UG_PROGRAM_CARDS: ProgramCard[] = [
   {
@@ -79,7 +333,7 @@ const UG_PROGRAM_CARDS: ProgramCard[] = [
       "Launch advanced careers in data engineering, analytics, visualization and machine learning with applied projects and real-world datasets.",
     image:
       "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?q=80&w=1600&auto=format&fit=crop",
-    link: "/academics/computer-applications/bsc-data-science",
+    link: "/academics/computer-applications/data-science",
     highlights: ["Data Analytics", "ML Pipelines", "Visualization"],
     overlay: "bg-gradient-to-br from-brand-blue/75 via-black/70 to-black/55 mix-blend-multiply",
     badgeClass: "bg-brand-blue/30 text-foreground/90 border border-white/25 backdrop-blur",
@@ -175,11 +429,11 @@ const FEATURED_NEWS: NewsItem[] = [
 ];
 
 const DEAN_INFO: DeanInfo = {
-  name: "Dr. Anita Sharma",
-  title: "M.Tech",
-  position: "Dean, School of Computer Applications",
-  photo: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=800&auto=format&fit=crop",
-  videoUrl: "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F0c95c62aa88741fca8ebdc32aade53d5?alt=media&token=c57ff4a9-aea8-4ff3-843b-23ce820ba630&apiKey=4aa279a8430d441dba9c55f659831878",
+  name: "Dr. S. Senthil",
+  title: "Professor",
+  position: "Professor & Dean, School of Computer Applications",
+  photo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F78123c01ef9a44be8e575afd593b3b05?format=webp&width=800",
+  videoUrl: "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F1083d7950c0b40d9a4695fbec2736931?alt=media&token=9a163dc2-8adc-462a-bd83-84831fad9217&apiKey=4aa279a8430d441dba9c55f659831878",
   borderColor: "border-blue-500/20",
   bgColor: "bg-blue-500/10",
 };
@@ -300,34 +554,50 @@ function CalendarResourceCard({ entry }: { entry: CalendarEntry }) {
   );
 }
 
-function HeroVideo() {
-  const [isMuted, setIsMuted] = useState(true);
+const HERO_VIDEOS = [
+  {
+    src: "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F7d6b23f7eb6c4846bf20f521c5ff3ab5?alt=media&token=895616b3-0f62-4da5-b72b-7839082d2f5d&apiKey=4aa279a8430d441dba9c55f659831878",
+    title: "BCA Program",
+  },
+  {
+    src: "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F5414ec6f48734ab9baccd606b4e3593e?alt=media&token=56076a75-30f6-4358-980e-b66e87a0086d&apiKey=4aa279a8430d441dba9c55f659831878",
+    title: "MCA Program",
+  },
+  {
+    src: "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F965cdc3a67d144a6943c338de9b248bc?alt=media&token=cf72f67b-3858-40ff-b82c-ccab09590f70&apiKey=4aa279a8430d441dba9c55f659831878",
+    title: "Data Science Program",
+  }
+];
+
+function HeroVideoPanel({ video, index, activeAudioIndex, setActiveAudioIndex }: { video: typeof HERO_VIDEOS[0]; index: number; activeAudioIndex: number | null; setActiveAudioIndex: (index: number | null) => void }) {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const isAudioActive = activeAudioIndex === index;
 
   const toggleMute = () => {
-    if (videoRef.current) {
-      videoRef.current.muted = !videoRef.current.muted;
-      setIsMuted(!isMuted);
+    if (isAudioActive) {
+      setActiveAudioIndex(null);
+    } else {
+      setActiveAudioIndex(index);
     }
   };
 
   useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    video.muted = isMuted;
-  }, [isMuted]);
+    const videoEl = videoRef.current;
+    if (!videoEl) return;
+    videoEl.muted = !isAudioActive;
+  }, [isAudioActive]);
 
   return (
-    <div className="w-full h-screen relative overflow-hidden flex items-end md:items-center justify-start">
+    <div className="relative flex-1 overflow-hidden group" style={{ height: "300px", transform: "translateY(-1cm)" }}>
       <video
         ref={videoRef}
-        src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F039b67f729094553afc521bcbf44f524?alt=media&token=f3f572a0-3afd-4a0a-9570-de176cc33653&apiKey=4aa279a8430d441dba9c55f659831878"
+        src={video.src}
         autoPlay
-        muted={isMuted}
+        muted={!isAudioActive}
         loop
         playsInline
-        className="absolute inset-0 w-full h-full object-cover"
+        preload="metadata"
+        className="absolute inset-0 w-full h-full object-contain bg-black"
         style={{
           filter: "brightness(1.1) contrast(1.15) saturate(1.2)"
         }}
@@ -337,85 +607,77 @@ function HeroVideo() {
 
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/30 pointer-events-none"></div>
 
-      <div className="absolute top-0 left-0 w-96 h-96 bg-brand-magenta/5 rounded-full filter blur-3xl opacity-60 animate-float pointer-events-none"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-brand-orange/5 rounded-full filter blur-3xl opacity-60 animate-float pointer-events-none" style={{ animationDelay: "2s" }}></div>
-
-      <div className="absolute inset-0 opacity-5 pointer-events-none" style={{
-        backgroundImage: "repeating-linear-gradient(0deg, rgba(255,255,255,.03) 0px, rgba(255,255,255,.03) 1px, transparent 1px, transparent 2px)"
-      }}></div>
-
-      <div className="relative max-w-7xl mx-auto px-6 w-full z-10 pb-20 md:pb-0">
-        <div className="max-w-2xl">
-          <p className="text-sm md:text-base text-white/80 mb-4 uppercase tracking-widest font-display">
-            School of Computer Applications
-          </p>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight font-display">
-            Build Tomorrow's Digital Experiences
-          </h1>
-          <p className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed max-w-xl font-display">
-            Master full-stack development, data science, and cloud-native innovation with industry mentorship, experiential labs, and career-focused learning
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4">
-            <a
-              href="https://admissions.dsu.edu.in/"
-              target="_blank"
-              rel="noreferrer"
-              className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-            >
-              <Button
-                size="lg"
-                className="bg-white hover:bg-white/90 text-orange-600 hover:text-orange-700 px-8 py-6 text-base font-semibold font-display transition-all duration-300 group border-2 border-white"
-              >
-                Apply Now
-                <ChevronRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </a>
-            <a
-              href="https://dsu.edu.in/virtual-tour/"
-              target="_blank"
-              rel="noreferrer"
-              className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-            >
-              <Button
-                variant="outline"
-                size="lg"
-                className="border-2 border-white text-white hover:bg-white hover:text-orange-600 px-8 py-6 text-base font-semibold font-display transition-all duration-300"
-              >
-                Virtual Tour
-              </Button>
-            </a>
-          </div>
-        </div>
-      </div>
-
       <button
         onClick={toggleMute}
-        className="absolute top-8 right-8 z-10 p-3 rounded-full bg-black/50 hover:bg-black/70 transition-colors text-white backdrop-blur-sm border border-white/20"
-        aria-label={isMuted ? "Unmute" : "Mute"}
+        className="absolute top-4 right-4 z-20 p-2 rounded-full bg-black/50 hover:bg-black/70 transition-colors text-white backdrop-blur-sm border border-white/20"
+        style={{ transform: "translateY(2cm)" }}
+        aria-label={isAudioActive ? "Mute" : "Unmute"}
       >
-        {isMuted ? (
-          <VolumeX className="h-5 w-5" />
+        {isAudioActive ? (
+          <Volume2 className="h-4 w-4" />
         ) : (
-          <Volume2 className="h-5 w-5" />
+          <VolumeX className="h-4 w-4" />
         )}
       </button>
+
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <div className="text-center">
+          <h3 className="text-2xl md:text-3xl font-bold text-white font-display mb-2">
+            {video.title}
+          </h3>
+        </div>
+      </div>
     </div>
+  );
+}
+
+function HeroVideo() {
+  const [activeAudioIndex, setActiveAudioIndex] = useState<number | null>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting && activeAudioIndex !== null) {
+          setActiveAudioIndex(null);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, [activeAudioIndex]);
+
+  return (
+    <section className="relative w-full overflow-hidden" id="top" ref={sectionRef}>
+      <div className="flex flex-col md:flex-row w-full" style={{ height: "auto", minHeight: "55vh" }}>
+        {HERO_VIDEOS.map((video, idx) => (
+          <HeroVideoPanel
+            key={idx}
+            video={video}
+            index={idx}
+            activeAudioIndex={activeAudioIndex}
+            setActiveAudioIndex={setActiveAudioIndex}
+          />
+        ))}
+      </div>
+    </section>
   );
 }
 
 export default function ComputerApplications() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <section className="relative w-full" id="top">
-        <HeroVideo />
-      </section>
-
+      <HeroVideo />
 
       {/* Dean's Message Section */}
       <DeanSection dean={DEAN_INFO} />
 
-      <section id="programs" className="relative overflow-hidden px-6 py-16">
+      <section id="programs" className="relative overflow-hidden px-6 py-12">
         <div
           className="pointer-events-none absolute inset-x-0 -top-32 h-64 bg-gradient-to-b from-brand-magenta/20 via-transparent to-transparent blur-3xl"
           aria-hidden="true"
@@ -433,7 +695,7 @@ export default function ComputerApplications() {
           </div>
 
           {/* Undergraduate Programs */}
-          <div className="mb-16">
+          <div className="mb-12">
             <div className="mb-8">
               <Badge className="bg-brand-magenta/15 text-brand-magenta">
                 Undergraduate Programs
@@ -474,56 +736,9 @@ export default function ComputerApplications() {
         </div>
       </section>
 
-
-
-      <section id="calendar" className="px-6 py-16">
-        <div className="mx-auto max-w-6xl">
-          <div className="relative overflow-hidden rounded-none border-[3px] border-dashed border-brand-magenta/30 bg-card/70 p-10 shadow-[0_35px_120px_-45px_rgba(175,80,255,0.65)] backdrop-blur">
-            <div
-              className="pointer-events-none absolute -left-16 top-10 h-32 w-32 rounded-full bg-brand-magenta/15 blur-3xl"
-              aria-hidden="true"
-            />
-            <div
-              className="pointer-events-none absolute -right-12 bottom-0 h-36 w-36 rounded-full bg-brand-blue/15 blur-3xl"
-              aria-hidden="true"
-            />
-            <div className="relative grid gap-0 lg:grid-cols-[1.1fr_minmax(0,1fr)]">
-              <div className="space-y-5">
-                <Badge className="bg-brand-magenta/15 text-brand-magenta">
-                  Notice Board
-                </Badge>
-                <h2 className="font-display text-3xl md:text-4xl">
-                  Computer Applications Notice Board
-                </h2>
-                <p className="text-sm text-foreground font-body">
-                  Curated updates for the ongoing academic year 2025-26. Stay aligned with assessment windows, projects and university-hosted experiences.
-                </p>
-                <a
-                  href="https://www.dsu.edu.in/computer-applications/notices"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-2 text-sm font-medium text-brand-magenta hover:underline"
-                >
-                  Browse previous circulars
-                  <ChevronRight className="h-4 w-4" />
-                </a>
-              </div>
-              <div className="grid gap-0">
-                {CALENDAR_ENTRIES.map((entry) => (
-                  <CalendarResourceCard
-                    key={`${entry.title}-${entry.academicYear}`}
-                    entry={entry}
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section
         id="related-resources"
-        className="bg-gradient-to-r from-brand-magenta/5 via-brand-blue/5 to-brand-orange/5 px-6 py-16"
+        className="bg-gradient-to-r from-brand-magenta/5 via-brand-blue/5 to-brand-orange/5 px-6 py-12"
       >
         <div className="mx-auto max-w-7xl">
           <div className="mb-12 text-center">
@@ -598,6 +813,27 @@ export default function ComputerApplications() {
               </Card>
             </RouterLink>
 
+            <RouterLink
+              to="/academics/computer-applications/faculty"
+              className="group rounded-none border border-border/40 bg-card/60 backdrop-blur-sm overflow-hidden hover:shadow-lg hover:shadow-brand-blue/20 transition-all duration-500 hover:-translate-y-1"
+            >
+              <Card className="h-full border-0 bg-transparent">
+                <div className="relative h-32 bg-gradient-to-br from-brand-blue/20 to-brand-blue/10 flex items-center justify-center">
+                  <Users className="h-12 w-12 text-brand-blue/70 group-hover:text-brand-blue transition-colors" />
+                </div>
+                <CardHeader>
+                  <CardTitle className="font-display group-hover:text-brand-blue transition-colors">
+                    Faculty & Staff
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-foreground/80 font-body">
+                    Meet our dedicated team of educators and mentors
+                  </p>
+                </CardContent>
+              </Card>
+            </RouterLink>
+
             <a
               href="https://admissions.dsu.edu.in/"
               target="_blank"
@@ -628,7 +864,7 @@ export default function ComputerApplications() {
         </div>
       </section>
 
-      <section className="px-6 py-16">
+      <section className="px-6 py-12">
         <div className="mx-auto grid max-w-5xl items-start gap-8 lg:grid-cols-2">
           <Card className="rounded-none border border-orange-500/20 bg-orange-500/10">
             <CardHeader>
@@ -705,72 +941,11 @@ export default function ComputerApplications() {
         </div>
       </section>
 
-      <section id="featured-news" className="px-6 py-16 bg-gradient-to-r from-brand-blue/5 via-brand-magenta/5 to-brand-orange/5">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-12 text-center">
-            <h2 className="font-display text-3xl md:text-4xl mb-3">
-              Latest from Computer Applications
-            </h2>
-            <p className="text-sm text-foreground font-body">
-              Stories of excellence, research breakthroughs, and student success
-            </p>
-          </div>
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {FEATURED_NEWS.map((item, index) => (
-              <a
-                key={item.title}
-                href="#"
-                className="group flex flex-col h-full"
-              >
-                {/* Image Container */}
-                <div className="relative w-full h-64 overflow-hidden rounded-lg mb-6">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-
-                  {/* Overlaid Category Badge */}
-                  <div className="absolute top-4 left-4">
-                    <Badge
-                      className={`text-xs font-bold tracking-wider text-white ${
-                        item.color === "brand-orange"
-                          ? "bg-brand-orange"
-                          : item.color === "brand-magenta"
-                            ? "bg-brand-magenta"
-                            : "bg-blue-600"
-                      }`}
-                    >
-                      {item.category}
-                    </Badge>
-                  </div>
-                </div>
-
-                {/* Text Content Below Image */}
-                <div className="flex-1 flex flex-col">
-                  <h3 className="text-lg font-semibold text-foreground font-display line-clamp-2 group-hover:text-brand-magenta transition-colors mb-3">
-                    {item.title}
-                  </h3>
-                  <p className="text-sm text-foreground/80 font-body line-clamp-3 mb-4">
-                    {item.excerpt}
-                  </p>
-
-                  {/* Date and Link */}
-                  <div className="mt-auto pt-4 border-t border-border/30 flex items-center justify-between">
-                    <span className="text-xs text-foreground/60 font-body flex items-center">
-                      <CalendarDays className="w-3 h-3 mr-1" /> {item.date}
-                    </span>
-                    <ChevronRight className="w-4 h-4 text-foreground/60 group-hover:text-brand-magenta transition-colors" />
-                  </div>
-                </div>
-              </a>
-            ))}
-          </div>
-        </div>
+      <section id="notice-board" className="px-3 py-6">
+        <NoticeBoardCarousel />
       </section>
 
-      <section className="px-6 pb-20">
+      <section className="px-6 pb-16">
         <div className="mx-auto max-w-4xl text-center">
           <div className="rounded-none border border-brand-magenta/20 bg-brand-magenta/5 p-10">
             <h3 className="mb-3 font-display text-3xl">
@@ -788,18 +963,6 @@ export default function ComputerApplications() {
                 <Button className="bg-brand-gradient text-foreground">
                   Apply Now
                   <GraduationCap className="ml-2 h-4 w-4" />
-                </Button>
-              </a>
-              <a
-                href="https://dsu.edu.in/virtual-tour/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <Button
-                  variant="outline"
-                  className="border-brand-magenta/40 hover:bg-brand-magenta/10"
-                >
-                  Virtual Tour
                 </Button>
               </a>
             </div>

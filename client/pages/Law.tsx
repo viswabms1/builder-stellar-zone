@@ -1,12 +1,14 @@
 import { Link as RouterLink } from "react-router-dom";
 import { useState, useRef, useEffect } from "react";
 import type { LucideIcon } from "lucide-react";
+import { useAutoMuteOnScroll } from "@/hooks/useAutoMuteOnScroll";
 import {
   Award,
   BadgeCheck,
   BookOpen,
   CalendarDays,
   ChevronRight,
+  Download,
   FileText,
   Gavel,
   Globe,
@@ -30,7 +32,12 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { DeanSection, type DeanInfo } from "@/components/DeanSection";
-
+import {
+  getLawEvents,
+  getLawNews,
+  getLawAnnouncements,
+  type NoticeItem as ImportedNoticeItem,
+} from "@/data/law-events";
 
 type ProgramCard = {
   name: string;
@@ -62,19 +69,268 @@ type NewsItem = {
   color: "brand-magenta" | "brand-blue" | "brand-orange";
 };
 
+type NoticeItem = ImportedNoticeItem;
+
+const getAllLawEvents = () => getLawEvents();
+const getLawNewsData = () => getLawNews();
+const getLawAnnouncementsData = () => getLawAnnouncements();
+
+function NoticeBoardCarousel() {
+  const [currentEventIndex, setCurrentEventIndex] = useState(0);
+  const [currentNewsIndex, setCurrentNewsIndex] = useState(0);
+  const [currentAnnouncementIndex, setCurrentAnnouncementIndex] = useState(0);
+
+  const events = getAllLawEvents();
+  const news = getLawNewsData();
+  const announcements = getLawAnnouncementsData();
+
+  useEffect(() => {
+    if (events.length === 0) return;
+    const interval = setInterval(() => {
+      setCurrentEventIndex((prev) => (prev + 1) % events.length);
+    }, 6000);
+    return () => clearInterval(interval);
+  }, [events.length]);
+
+  useEffect(() => {
+    if (news.length === 0) return;
+    const interval = setInterval(() => {
+      setCurrentNewsIndex((prev) => (prev + 1) % news.length);
+    }, 6000);
+    return () => clearInterval(interval);
+  }, [news.length]);
+
+  useEffect(() => {
+    if (announcements.length === 0) return;
+    const interval = setInterval(() => {
+      setCurrentAnnouncementIndex((prev) => (prev + 1) % announcements.length);
+    }, 6000);
+    return () => clearInterval(interval);
+  }, [announcements.length]);
+
+  const getCategoryStyles = (category: "Event" | "News" | "Announcement") => {
+    switch (category) {
+      case "Event":
+        return {
+          borderColor: "border-brand-magenta",
+          bgColor: "bg-brand-magenta/10",
+          textColor: "text-brand-magenta",
+          dotColor: "bg-brand-magenta",
+        };
+      case "News":
+        return {
+          borderColor: "border-brand-orange",
+          bgColor: "bg-brand-orange/10",
+          textColor: "text-brand-orange",
+          dotColor: "bg-brand-orange",
+        };
+      default:
+        return {
+          borderColor: "border-brand-blue",
+          bgColor: "bg-brand-blue/10",
+          textColor: "text-brand-blue",
+          dotColor: "bg-brand-blue",
+        };
+    }
+  };
+
+  const renderCarousel = (
+    title: string,
+    items: NoticeItem[],
+    currentIndex: number,
+    setCurrentIndex: (idx: number) => void,
+    category: "Event" | "News" | "Announcement",
+  ) => {
+    const styles = getCategoryStyles(category);
+
+    if (items.length === 0) {
+      return (
+        <div className="space-y-4">
+          <div
+            className={`flex items-center gap-2 px-4 py-3 rounded-xl border-l-4 ${styles.borderColor} ${styles.bgColor}`}
+          >
+            <h3 className={`headline-4 font-display ${styles.textColor}`}>
+              {title}
+            </h3>
+          </div>
+          <p className="text-xs text-foreground/60 italic p-4 text-center">
+            No items to display
+          </p>
+        </div>
+      );
+    }
+
+    const currentItem = items[currentIndex];
+
+    return (
+      <div className="space-y-4">
+        <div
+          className={`flex items-center gap-2 px-4 py-3 rounded-xl border-l-4 ${styles.borderColor} ${styles.bgColor}`}
+        >
+          <h3 className={`headline-4 font-display ${styles.textColor}`}>
+            {title}
+          </h3>
+          <Badge className="ml-auto text-xs">
+            {currentIndex + 1} / {items.length}
+          </Badge>
+        </div>
+
+        <Card className="group overflow-hidden rounded-2xl border-2 border-border/30 bg-card/40 backdrop-blur-sm">
+          {currentItem.image && (
+            <div className="relative h-48 overflow-hidden">
+              <img
+                src={currentItem.image}
+                alt={currentItem.title}
+                className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
+              />
+            </div>
+          )}
+          <CardContent className="p-4 space-y-3">
+            <div className="flex items-start justify-between gap-2">
+              <div className="flex-1">
+                <h4 className="font-display font-semibold text-sm text-foreground mb-2 line-clamp-2">
+                  {currentItem.title}
+                </h4>
+                <p className="text-xs text-foreground/70 line-clamp-2">
+                  {currentItem.description}
+                </p>
+                {currentItem.department && (
+                  <p className="text-xs text-foreground/50 mt-2">
+                    Department: {currentItem.department}
+                  </p>
+                )}
+              </div>
+            </div>
+            <div className="flex items-center justify-between pt-2 border-t border-border/20">
+              <span className="text-xs font-semibold text-foreground/60">
+                {currentItem.date}
+              </span>
+              {currentItem.link && (
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="h-6 px-2 text-xs bg-brand-blue/10 text-brand-blue hover:bg-brand-blue/20"
+                  asChild
+                >
+                  <a href={currentItem.link} target="_blank" rel="noreferrer">
+                    <Download className="h-3 w-3 mr-1" />
+                    PDF
+                  </a>
+                </Button>
+              )}
+            </div>
+          </CardContent>
+        </Card>
+
+        <div className="flex items-center justify-between gap-2">
+          <div className="flex gap-1">
+            {items.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setCurrentIndex(idx)}
+                className={`h-1.5 rounded-full transition-all ${
+                  idx === currentIndex
+                    ? `${styles.dotColor} w-6`
+                    : "bg-border/40 w-1.5 hover:bg-border/60"
+                }`}
+              />
+            ))}
+          </div>
+          <div className="flex gap-1">
+            <Button
+              variant="outline"
+              size="sm"
+              className="h-7 px-2 text-xs"
+              onClick={() =>
+                setCurrentIndex(
+                  (prev) => (prev - 1 + items.length) % items.length,
+                )
+              }
+            >
+              ←
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              className="h-7 px-2 text-xs"
+              onClick={() =>
+                setCurrentIndex((prev) => (prev + 1) % items.length)
+              }
+            >
+              →
+            </Button>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  return (
+    <section className="px-3 py-8">
+      <div className="mx-auto max-w-7xl space-y-4">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <h2 className="headline-2 mb-3 font-display">
+              <span className="text-foreground">School of Law </span>
+              <span className="bg-brand-gradient bg-clip-text text-transparent">
+                Notice Board
+              </span>
+            </h2>
+            <p className="max-w-2xl text-sm text-foreground sm:text-base font-body">
+              Stay updated with upcoming events, news, and important
+              announcements from the school.
+            </p>
+          </div>
+        </div>
+
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          <div>
+            {renderCarousel(
+              "Events",
+              events,
+              currentEventIndex,
+              setCurrentEventIndex,
+              "Event",
+            )}
+          </div>
+          <div>
+            {renderCarousel(
+              "News",
+              news,
+              currentNewsIndex,
+              setCurrentNewsIndex,
+              "News",
+            )}
+          </div>
+          <div>
+            {renderCarousel(
+              "Announcements",
+              announcements,
+              currentAnnouncementIndex,
+              setCurrentAnnouncementIndex,
+              "Announcement",
+            )}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
 
 const PROGRAM_CARDS: ProgramCard[] = [
   {
     name: "B.B.A., LL.B. (Hons)",
     area: "Integrated UG (Commerce & Law)",
     description:
-      "Comprehensive 5-year programme blending business acumen with rigorous legal training, case studies and moot court practice for corporate law readiness.",
+      "5-year integrated programme tailored for students who wish to study law alongside business administration with dual qualification advantage.",
     image:
       "https://images.unsplash.com/photo-1528740579684-5809094cdaa1?q=80&w=1600&auto=format&fit=crop",
-    link: "/academics/law/bba-llb",
-    highlights: ["Corporate Law", "Contract Drafting", "Moot Court"],
-    overlay: "bg-gradient-to-br from-brand-magenta/80 via-black/75 to-black/60 mix-blend-multiply",
-    badgeClass: "bg-brand-magenta/25 text-foreground/90 border border-white/30 backdrop-blur",
+    link: "/academics/law/bba-llb-honors",
+    highlights: ["Corporate Law", "Business Acumen", "Moot Court"],
+    overlay:
+      "bg-gradient-to-br from-brand-magenta/80 via-black/75 to-black/60 mix-blend-multiply",
+    badgeClass:
+      "bg-brand-magenta/25 text-foreground/90 border border-white/30 backdrop-blur",
     panelClass: "bg-black/55 backdrop-blur-xl",
     featured: true,
   },
@@ -82,27 +338,31 @@ const PROGRAM_CARDS: ProgramCard[] = [
     name: "B.A., LL.B. (Hons)",
     area: "Integrated UG (Arts & Law)",
     description:
-      "5-year integrated programme combining humanities scholarship with legal education, constitutional law emphasis, and public interest law practice.",
+      "5-year integrated programme blending foundational legal theory with specialized subjects to foster critical thinking and practical skills.",
     image:
       "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=1600&auto=format&fit=crop",
-    link: "/academics/law/ba-llb",
-    highlights: ["Constitutional Law", "Public Interest", "Advocacy"],
-    overlay: "bg-gradient-to-br from-brand-blue/75 via-black/70 to-black/55 mix-blend-multiply",
-    badgeClass: "bg-brand-blue/30 text-foreground/90 border border-white/25 backdrop-blur",
+    link: "/academics/law/ba-llb-honors",
+    highlights: ["Legal Theory", "Practical Skills", "Advocacy"],
+    overlay:
+      "bg-gradient-to-br from-brand-blue/75 via-black/70 to-black/55 mix-blend-multiply",
+    badgeClass:
+      "bg-brand-blue/30 text-foreground/90 border border-white/25 backdrop-blur",
     panelClass: "bg-black/55 backdrop-blur-xl",
     featured: true,
   },
   {
-    name: "LL.B. (Master of Laws)",
+    name: "LLM (Master of Laws)",
     area: "Postgraduate Specialisation",
     description:
-      "Advanced 3-year postgraduate programme for law graduates specializing in litigation, corporate law, public law or emerging tech law domains.",
+      "Advanced postgraduate programmes in Law & Technology and Corporate & Commercial Law with focus on emerging domains and specializations.",
     image:
       "https://images.unsplash.com/photo-1489515217757-5fd1be406fef?q=80&w=1600&auto=format&fit=crop",
-    link: "/academics/law/llb",
-    highlights: ["Specializations", "Research Focus", "Industry Internships"],
-    overlay: "bg-gradient-to-br from-brand-orange/70 via-black/70 to-black/55 mix-blend-multiply",
-    badgeClass: "bg-brand-orange/35 text-foreground/90 border border-white/25 backdrop-blur",
+    link: "/academics/law/programs",
+    highlights: ["Law & Technology", "Corporate Law", "Specializations"],
+    overlay:
+      "bg-gradient-to-br from-brand-orange/70 via-black/70 to-black/55 mix-blend-multiply",
+    badgeClass:
+      "bg-brand-orange/35 text-foreground/90 border border-white/25 backdrop-blur",
     panelClass: "bg-black/55 backdrop-blur-xl",
     featured: true,
   },
@@ -114,8 +374,7 @@ const CALENDAR_ENTRIES: CalendarEntry[] = [
     academicYear: "2025-26",
     description:
       "Detailed timeline for integrated law programmes including assessments, moot courts and internship periods.",
-    documentUrl:
-      "https://www.dsu.edu.in/images/Law/calendar_2025_26.pdf",
+    documentUrl: "https://www.dsu.edu.in/images/Law/calendar_2025_26.pdf",
     tag: "LL.B",
   },
 ];
@@ -154,11 +413,13 @@ const FEATURED_NEWS: NewsItem[] = [
 ];
 
 const DEAN_INFO: DeanInfo = {
-  name: "Prof. Justice Sharma",
-  title: "LL.M",
+  name: "Prof (Dr.) Kiran Gardner",
+  title: "Ph.D. in Law",
   position: "Dean, School of Law",
-  photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop",
-  videoUrl: "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F0c95c62aa88741fca8ebdc32aade53d5?alt=media&token=c57ff4a9-aea8-4ff3-843b-23ce820ba630&apiKey=4aa279a8430d441dba9c55f659831878",
+  photo:
+    "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F897c8db062a14dfb9c9f3f024fbc856d?format=webp&width=800",
+  videoUrl:
+    "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F0c95c62aa88741fca8ebdc32aade53d5?alt=media&token=c57ff4a9-aea8-4ff3-843b-23ce820ba630&apiKey=4aa279a8430d441dba9c55f659831878",
   borderColor: "border-blue-500/20",
   bgColor: "bg-blue-500/10",
 };
@@ -281,6 +542,7 @@ function CalendarResourceCard({ entry }: { entry: CalendarEntry }) {
 function HeroVideo() {
   const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const containerRef = useAutoMuteOnScroll(videoRef);
 
   const toggleMute = () => {
     if (videoRef.current) {
@@ -296,18 +558,44 @@ function HeroVideo() {
     video.muted = isMuted;
   }, [isMuted]);
 
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const handleEnded = () => {
+      const rect = containerRef.current?.getBoundingClientRect();
+      const isVisible =
+        rect && rect.top < window.innerHeight && rect.bottom > 0;
+      if (isVisible) {
+        video.currentTime = 0;
+        video.play().catch(() => {});
+      }
+    };
+
+    video.addEventListener("ended", handleEnded);
+    return () => {
+      video.removeEventListener("ended", handleEnded);
+    };
+  }, []);
+
   return (
-    <div className="w-full h-screen relative overflow-hidden flex items-end md:items-center justify-start">
+    <div
+      ref={containerRef}
+      className="h-[40vh] sm:h-[55vh] md:h-[65vh] lg:h-[75vh] relative overflow-hidden flex items-center justify-start hero-video-container"
+    >
       <video
         ref={videoRef}
-        src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F039b67f729094553afc521bcbf44f524?alt=media&token=f3f572a0-3afd-4a0a-9570-de176cc33653&apiKey=4aa279a8430d441dba9c55f659831878"
+        src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F2a5ae95792164387a198be90ffece5a6?alt=media&token=285bd3aa-cc60-4942-b4c9-3dc69f86a5a1&apiKey=4aa279a8430d441dba9c55f659831878"
         autoPlay
         muted={isMuted}
         loop
         playsInline
-        className="absolute inset-0 w-full h-full object-cover"
+        preload="metadata"
+        crossOrigin="anonymous"
+        className="absolute inset-0 object-cover"
         style={{
-          filter: "brightness(1.1) contrast(1.15) saturate(1.2)"
+          filter: "brightness(1.1) contrast(1.15) saturate(1.2)",
+          objectPosition: "center top",
         }}
       />
 
@@ -316,23 +604,27 @@ function HeroVideo() {
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/30 pointer-events-none"></div>
 
       <div className="absolute top-0 left-0 w-96 h-96 bg-brand-magenta/5 rounded-full filter blur-3xl opacity-60 animate-float pointer-events-none"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-brand-orange/5 rounded-full filter blur-3xl opacity-60 animate-float pointer-events-none" style={{ animationDelay: "2s" }}></div>
+      <div
+        className="absolute bottom-0 right-0 w-96 h-96 bg-brand-orange/5 rounded-full filter blur-3xl opacity-60 animate-float pointer-events-none"
+        style={{ animationDelay: "2s" }}
+      ></div>
 
-      <div className="absolute inset-0 opacity-5 pointer-events-none" style={{
-        backgroundImage: "repeating-linear-gradient(0deg, rgba(255,255,255,.03) 0px, rgba(255,255,255,.03) 1px, transparent 1px, transparent 2px)"
-      }}></div>
+      <div
+        className="absolute inset-0 opacity-5 pointer-events-none"
+        style={{
+          backgroundImage:
+            "repeating-linear-gradient(0deg, rgba(255,255,255,.03) 0px, rgba(255,255,255,.03) 1px, transparent 1px, transparent 2px)",
+        }}
+      ></div>
 
-      <div className="relative max-w-7xl mx-auto px-6 w-full z-10 pb-20 md:pb-0">
+      <div className="relative max-w-7xl mx-auto px-3 w-full z-10 pb-20 md:pb-0">
         <div className="max-w-2xl">
-          <p className="text-sm md:text-base text-white/80 mb-4 uppercase tracking-widest font-display">
+          <p className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 uppercase tracking-widest font-display">
             School of Law
           </p>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight font-display">
-            Gateway to New Age Lawyering
+          <h1 className="text-sm md:text-base text-white/80 mb-6 leading-tight font-display">
+            Excellence in Legal Education
           </h1>
-          <p className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed max-w-xl font-display">
-            Master contemporary legal challenges through immersive learning, moot courts, legal aid clinics, and mentorship from leading practitioners
-          </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
             <a
@@ -347,20 +639,6 @@ function HeroVideo() {
               >
                 Apply Now
                 <ChevronRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </a>
-            <a
-              href="https://dsu.edu.in/virtual-tour/"
-              target="_blank"
-              rel="noreferrer"
-              className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-            >
-              <Button
-                variant="outline"
-                size="lg"
-                className="border-2 border-white text-white hover:bg-white hover:text-orange-600 px-8 py-6 text-base font-semibold font-display transition-all duration-300"
-              >
-                Virtual Tour
               </Button>
             </a>
           </div>
@@ -385,13 +663,14 @@ function HeroVideo() {
 export default function Law() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <section className="relative w-full" id="top">
+      <section className="relative" id="top">
         <HeroVideo />
       </section>
 
-
       {/* Dean's Message Section */}
-      <DeanSection dean={DEAN_INFO} />
+      <div className="mt-16">
+        <DeanSection dean={DEAN_INFO} />
+      </div>
 
       <section id="programs" className="relative overflow-hidden px-6 py-16">
         <div
@@ -405,7 +684,9 @@ export default function Law() {
                 Academic Pathways for Legal Excellence
               </h2>
               <p className="mt-3 text-sm text-foreground font-body">
-                Integrated and postgraduate programmes combining rigorous legal scholarship with moot courts, legal aid clinics, research and mentorship to prepare practice-ready advocates.
+                Integrated and postgraduate programmes combining rigorous legal
+                scholarship with moot courts, legal aid clinics, research and
+                mentorship to prepare practice-ready advocates.
               </p>
             </div>
           </div>
@@ -414,51 +695,6 @@ export default function Law() {
             {PROGRAM_CARDS.map((program) => (
               <ProgramCardComponent key={program.name} program={program} />
             ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="calendar" className="px-6 py-16">
-        <div className="mx-auto max-w-6xl">
-          <div className="relative overflow-hidden rounded-none border-[3px] border-dashed border-brand-magenta/30 bg-card/70 p-10 shadow-[0_35px_120px_-45px_rgba(175,80,255,0.65)] backdrop-blur">
-            <div
-              className="pointer-events-none absolute -left-16 top-10 h-32 w-32 rounded-full bg-brand-magenta/15 blur-3xl"
-              aria-hidden="true"
-            />
-            <div
-              className="pointer-events-none absolute -right-12 bottom-0 h-36 w-36 rounded-full bg-brand-blue/15 blur-3xl"
-              aria-hidden="true"
-            />
-            <div className="relative grid gap-0 lg:grid-cols-[1.1fr_minmax(0,1fr)]">
-              <div className="space-y-5">
-                <Badge className="bg-brand-magenta/15 text-brand-magenta">
-                  Notice Board
-                </Badge>
-                <h2 className="font-display text-3xl md:text-4xl">
-                  School of Law Notice Board
-                </h2>
-                <p className="text-sm text-foreground font-body">
-                  Curated updates for the ongoing academic year 2025-26. Stay aligned with assessment windows, internships and university-hosted experiences.
-                </p>
-                <a
-                  href="https://www.dsu.edu.in/law/notices"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-2 text-sm font-medium text-brand-magenta hover:underline"
-                >
-                  Browse previous circulars
-                  <ChevronRight className="h-4 w-4" />
-                </a>
-              </div>
-              <div className="grid gap-0">
-                {CALENDAR_ENTRIES.map((entry) => (
-                  <CalendarResourceCard
-                    key={`${entry.title}-${entry.academicYear}`}
-                    entry={entry}
-                  />
-                ))}
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -473,10 +709,32 @@ export default function Law() {
               Explore More at DSU School of Law
             </h2>
             <p className="mt-3 text-sm text-foreground font-body">
-              Discover our legal excellence, research initiatives, placements and admission pathways
+              Discover our legal excellence, research initiatives, placements
+              and admission pathways
             </p>
           </div>
-          <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-5">
+            <RouterLink
+              to="/academics/law/faculty"
+              className="group rounded-none border border-border/40 bg-card/60 backdrop-blur-sm overflow-hidden hover:shadow-lg hover:shadow-brand-magenta/20 transition-all duration-500 hover:-translate-y-1"
+            >
+              <Card className="h-full border-0 bg-transparent">
+                <div className="relative h-32 bg-gradient-to-br from-brand-magenta/20 to-brand-magenta/10 flex items-center justify-center">
+                  <Users className="h-12 w-12 text-brand-magenta/70 group-hover:text-brand-magenta transition-colors" />
+                </div>
+                <CardHeader>
+                  <CardTitle className="font-display group-hover:text-brand-magenta transition-colors">
+                    Faculty Directory
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-foreground/80 font-body">
+                    Meet our distinguished faculty and academic leadership
+                  </p>
+                </CardContent>
+              </Card>
+            </RouterLink>
+
             <RouterLink
               to="/centre-of-excellence"
               className="group rounded-none border border-border/40 bg-card/60 backdrop-blur-sm overflow-hidden hover:shadow-lg hover:shadow-brand-magenta/20 transition-all duration-500 hover:-translate-y-1"
@@ -492,7 +750,8 @@ export default function Law() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-foreground/80 font-body">
-                    Legal research initiatives and industry-powered learning labs
+                    Legal research initiatives and industry-powered learning
+                    labs
                   </p>
                 </CardContent>
               </Card>
@@ -578,25 +837,33 @@ export default function Law() {
             </CardHeader>
             <CardContent className="grid gap-4 text-sm font-body text-foreground">
               <div>
-                <div className="text-foreground/70 text-xs uppercase tracking-wide">Email</div>
+                <div className="text-foreground/70 text-xs uppercase tracking-wide">
+                  Email
+                </div>
                 <div className="font-medium text-foreground">
                   law@dsu.edu.in
                 </div>
               </div>
               <div>
-                <div className="text-foreground/70 text-xs uppercase tracking-wide">Phone</div>
+                <div className="text-foreground/70 text-xs uppercase tracking-wide">
+                  Phone
+                </div>
                 <div className="font-medium text-foreground">
                   +91-80-49092933
                 </div>
               </div>
               <div>
-                <div className="text-foreground/70 text-xs uppercase tracking-wide">Campus Address</div>
+                <div className="text-foreground/70 text-xs uppercase tracking-wide">
+                  Campus Address
+                </div>
                 <div className="font-medium text-foreground">
                   Kanakapura Road, Bengaluru, Karnataka
                 </div>
               </div>
               <div>
-                <div className="text-foreground/70 text-xs uppercase tracking-wide">Office Hours</div>
+                <div className="text-foreground/70 text-xs uppercase tracking-wide">
+                  Office Hours
+                </div>
                 <div className="font-medium text-foreground">
                   Mon–Fri, 9:00 AM – 5:30 PM
                 </div>
@@ -605,9 +872,7 @@ export default function Law() {
           </Card>
           <Card className="rounded-none border border-blue-500/20 bg-blue-500/10">
             <CardHeader>
-              <CardTitle className="font-display">
-                More Resources
-              </CardTitle>
+              <CardTitle className="font-display">More Resources</CardTitle>
             </CardHeader>
             <CardContent className="grid gap-3 text-sm font-body">
               <a
@@ -647,69 +912,8 @@ export default function Law() {
         </div>
       </section>
 
-      <section id="featured-news" className="px-6 py-16 bg-gradient-to-r from-brand-blue/5 via-brand-magenta/5 to-brand-orange/5">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-12 text-center">
-            <h2 className="font-display text-3xl md:text-4xl mb-3">
-              Latest from School of Law
-            </h2>
-            <p className="text-sm text-foreground font-body">
-              Stories of excellence, research breakthroughs, and student success
-            </p>
-          </div>
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {FEATURED_NEWS.map((item, index) => (
-              <a
-                key={item.title}
-                href="#"
-                className="group flex flex-col h-full"
-              >
-                {/* Image Container */}
-                <div className="relative w-full h-64 overflow-hidden rounded-lg mb-6">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-
-                  {/* Overlaid Category Badge */}
-                  <div className="absolute top-4 left-4">
-                    <Badge
-                      className={`text-xs font-bold tracking-wider text-white ${
-                        item.color === "brand-orange"
-                          ? "bg-brand-orange"
-                          : item.color === "brand-magenta"
-                            ? "bg-brand-magenta"
-                            : "bg-blue-600"
-                      }`}
-                    >
-                      {item.category}
-                    </Badge>
-                  </div>
-                </div>
-
-                {/* Text Content Below Image */}
-                <div className="flex-1 flex flex-col">
-                  <h3 className="text-lg font-semibold text-foreground font-display line-clamp-2 group-hover:text-brand-magenta transition-colors mb-3">
-                    {item.title}
-                  </h3>
-                  <p className="text-sm text-foreground/80 font-body line-clamp-3 mb-4">
-                    {item.excerpt}
-                  </p>
-
-                  {/* Date and Link */}
-                  <div className="mt-auto pt-4 border-t border-border/30 flex items-center justify-between">
-                    <span className="text-xs text-foreground/60 font-body flex items-center">
-                      <CalendarDays className="w-3 h-3 mr-1" /> {item.date}
-                    </span>
-                    <ChevronRight className="w-4 h-4 text-foreground/60 group-hover:text-brand-magenta transition-colors" />
-                  </div>
-                </div>
-              </a>
-            ))}
-          </div>
-        </div>
+      <section id="notice-board" className="px-3 py-8">
+        <NoticeBoardCarousel />
       </section>
     </div>
   );
