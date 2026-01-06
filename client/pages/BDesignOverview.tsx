@@ -14,6 +14,7 @@ import {
   Shapes,
   Volume2,
   VolumeX,
+  Users,
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -27,24 +28,10 @@ import {
 import { DeanSection, type DeanInfo } from "@/components/DeanSection";
 import { useAutoMuteOnScroll } from "@/hooks/useAutoMuteOnScroll";
 
-
 type StructurePoint = {
   title: string;
   description: string;
   icon: LucideIcon;
-};
-
-type ProgramCard = {
-  name: string;
-  area: string;
-  description: string;
-  image: string;
-  link: string;
-  highlights: string[];
-  overlay: string;
-  badgeClass: string;
-  panelClass: string;
-  featured?: boolean;
 };
 
 type CalendarEntry = {
@@ -63,67 +50,6 @@ type NewsItem = {
   date: string;
   color: "brand-magenta" | "brand-blue" | "brand-orange";
 };
-
-const HERO_IMAGE =
-  "https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=2000&auto=format&fit=crop";
-
-
-const PROGRAM_CARDS: ProgramCard[] = [
-  {
-    name: "Product Design",
-    area: "Design Specialization",
-    description:
-      "Master user-centered design, prototyping and manufacturing processes to create innovative consumer and industrial products.",
-    image:
-      "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=1600&auto=format&fit=crop",
-    link: "https://www.dsu.edu.in/design/product-design",
-    highlights: ["User Research", "Prototyping", "Manufacturing"],
-    overlay: "bg-gradient-to-br from-brand-magenta/80 via-black/75 to-black/60 mix-blend-multiply",
-    badgeClass: "bg-brand-magenta/25 text-foreground/90 border border-white/30 backdrop-blur",
-    panelClass: "bg-black/55 backdrop-blur-xl",
-    featured: true,
-  },
-  {
-    name: "Communication Design",
-    area: "Design Specialization",
-    description:
-      "Develop expertise in visual communication, branding, typography and digital design for diverse media and audiences.",
-    image:
-      "https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=1600&auto=format&fit=crop",
-    link: "https://www.dsu.edu.in/design/communication-design",
-    highlights: ["Visual Identity", "Typography", "Digital Design"],
-    overlay: "bg-gradient-to-br from-brand-blue/75 via-black/70 to-black/55 mix-blend-multiply",
-    badgeClass: "bg-brand-blue/30 text-foreground/90 border border-white/25 backdrop-blur",
-    panelClass: "bg-black/55 backdrop-blur-xl",
-    featured: true,
-  },
-  {
-    name: "Environmental Design",
-    area: "Design Specialization",
-    description:
-      "Create sustainable spaces and experiences through interior design, architecture integration and environmental consciousness.",
-    image:
-      "https://images.unsplash.com/photo-1565182999555-022adf3cf3f0?q=80&w=1600&auto=format&fit=crop",
-    link: "https://www.dsu.edu.in/design/environmental-design",
-    highlights: ["Spatial Design", "Sustainability", "User Experience"],
-    overlay: "bg-gradient-to-br from-brand-orange/70 via-black/70 to-black/55 mix-blend-multiply",
-    badgeClass: "bg-brand-orange/35 text-foreground/90 border border-white/25 backdrop-blur",
-    panelClass: "bg-black/55 backdrop-blur-xl",
-  },
-  {
-    name: "Experience Design",
-    area: "Design Specialization",
-    description:
-      "Design engaging human-computer interactions, service experiences and immersive digital ecosystems.",
-    image:
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1600&auto=format&fit=crop",
-    link: "https://www.dsu.edu.in/design/experience-design",
-    highlights: ["UX/UI Design", "Service Design", "Interaction"],
-    overlay: "bg-gradient-to-br from-brand-magenta/70 via-black/70 to-black/55 mix-blend-multiply",
-    badgeClass: "bg-brand-magenta/30 text-foreground/90 border border-white/25 backdrop-blur",
-    panelClass: "bg-black/55 backdrop-blur-xl",
-  },
-];
 
 const STRUCTURE_POINTS: StructurePoint[] = [
   {
@@ -225,89 +151,6 @@ function StructureCard({ point }: { point: StructurePoint }) {
   );
 }
 
-function ProgramCardComponent({ program }: { program: ProgramCard }) {
-  const isInternal = program.link.startsWith("/");
-  const wrapperClasses = `group block h-full rounded-none ${
-    program.featured ? "lg:col-span-6" : "lg:col-span-3"
-  } focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-magenta focus-visible:ring-offset-2 focus-visible:ring-offset-background`;
-  const overlayClasses =
-    program.overlay ??
-    "bg-gradient-to-t from-black/85 via-black/50 to-transparent";
-  const badgeClasses = `inline-flex items-center gap-2 rounded-none px-3 py-1 text-xs uppercase tracking-wide ${
-    program.badgeClass ?? "bg-white/15 text-foreground/80 backdrop-blur"
-  }`;
-  const panelClasses = `rounded-none border border-white/15 p-3 shadow-[0_25px_80px_-35px_rgba(255,255,255,0.45)] transition-colors duration-500 ${
-    program.panelClass ?? "bg-black/60 backdrop-blur-lg"
-  }`;
-
-  const content = (
-    <div
-      className={`relative flex h-full flex-col justify-end overflow-hidden rounded-none border border-white/10 bg-black/10 backdrop-blur-sm transition-all duration-700 hover:-translate-y-1 hover:shadow-2xl hover:shadow-brand-magenta/20 ${
-        program.featured ? "min-h-[360px]" : "min-h-[300px]"
-      }`}
-    >
-      <img
-        src={program.image}
-        alt={program.name}
-        loading="lazy"
-        className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-      />
-      <div className={`absolute inset-0 ${overlayClasses}`} />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
-      <div className={`absolute left-6 top-3 ${badgeClasses}`}>
-        {program.area}
-      </div>
-      <div className="relative z-10 flex h-full flex-col justify-end p-3 text-white">
-        <div className={panelClasses}>
-          <div className="space-y-4">
-            <div>
-              <h3 className="font-display text-2xl leading-tight text-white">
-                {program.name}
-              </h3>
-              <p className="mt-3 text-sm text-white/85 font-body">
-                {program.description}
-              </p>
-            </div>
-            <div className="flex flex-wrap gap-2">
-              {program.highlights.map((item) => (
-                <span
-                  key={item}
-                  className="rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs uppercase tracking-wide text-white/85"
-                >
-                  {item}
-                </span>
-              ))}
-            </div>
-            <span className="inline-flex items-center gap-2 text-sm font-medium text-white/90 transition-colors group-hover:text-brand-magenta">
-              Explore specialization
-              <ChevronRight className="h-4 w-4 transition-colors group-hover:text-brand-magenta" />
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-
-  if (isInternal) {
-    return (
-      <RouterLink to={program.link} className={wrapperClasses}>
-        {content}
-      </RouterLink>
-    );
-  }
-
-  return (
-    <a
-      href={program.link}
-      target="_blank"
-      rel="noreferrer"
-      className={wrapperClasses}
-    >
-      {content}
-    </a>
-  );
-}
-
 function CalendarResourceCard({ entry }: { entry: CalendarEntry }) {
   return (
     <Card className="h-full rounded-none border border-purple-500/20 bg-purple-500/10 backdrop-blur">
@@ -382,7 +225,7 @@ function HeroVideo() {
   return (
     <div
       ref={containerRef}
-      className="h-dvh sm:h-[55vh] md:h-[65vh] lg:h-[75vh] relative overflow-hidden flex items-end md:items-center justify-start hero-video-container"
+      className="h-dvh sm:h-[55vh] md:h-[65vh] lg:h-[75vh] relative overflow-hidden flex items-center md:items-center justify-start hero-video-container"
     >
       <video
         ref={videoRef}
@@ -396,7 +239,7 @@ function HeroVideo() {
         className="absolute inset-0 object-cover"
         style={{
           filter: "brightness(1.1) contrast(1.15) saturate(1.2)",
-          objectPosition: "center top"
+          objectPosition: "center top",
         }}
       />
 
@@ -405,11 +248,18 @@ function HeroVideo() {
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/30 pointer-events-none"></div>
 
       <div className="absolute top-0 left-0 w-96 h-96 bg-brand-magenta/5 rounded-full filter blur-3xl opacity-60 animate-float pointer-events-none"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-brand-orange/5 rounded-full filter blur-3xl opacity-60 animate-float pointer-events-none" style={{ animationDelay: "2s" }}></div>
+      <div
+        className="absolute bottom-0 right-0 w-96 h-96 bg-brand-orange/5 rounded-full filter blur-3xl opacity-60 animate-float pointer-events-none"
+        style={{ animationDelay: "2s" }}
+      ></div>
 
-      <div className="absolute inset-0 opacity-5 pointer-events-none" style={{
-        backgroundImage: "repeating-linear-gradient(0deg, rgba(255,255,255,.03) 0px, rgba(255,255,255,.03) 1px, transparent 1px, transparent 2px)"
-      }}></div>
+      <div
+        className="absolute inset-0 opacity-5 pointer-events-none"
+        style={{
+          backgroundImage:
+            "repeating-linear-gradient(0deg, rgba(255,255,255,.03) 0px, rgba(255,255,255,.03) 1px, transparent 1px, transparent 2px)",
+        }}
+      ></div>
 
       <div className="relative max-w-7xl mx-auto px-3 w-full z-10 pb-20 md:pb-0">
         <div className="max-w-2xl">
@@ -461,9 +311,8 @@ export default function BDesignOverview() {
         <HeroVideo />
       </section>
 
-
       {/* Dean's Message Section */}
-      <div style={{ marginTop: '57px' }}>
+      <div style={{ marginTop: "57px" }}>
         <DeanSection dean={DEAN_INFO} />
       </div>
 
@@ -473,19 +322,32 @@ export default function BDesignOverview() {
           aria-hidden="true"
         />
         <div className="mx-auto max-w-7xl">
-          <div className="mb-8">
-            <div className="mb-8">
-              <Badge className="bg-brand-magenta/15 text-brand-magenta">
-                Design Programme
-              </Badge>
-              <h2 className="mt-4 font-display text-3xl md:text-4xl">
-                B.Design (Bachelor of Design)
+          <div className="mb-12">
+            <div className="max-w-3xl">
+              <h2 className="font-display text-3xl md:text-4xl">
+                Academic Pathways in Design
               </h2>
               <p className="mt-3 text-sm text-foreground font-body">
-                Four-year undergraduate programme combining foundational design theory with studio-based projects, global immersions, and mandatory industry internship to prepare human-centered designers and design innovators.
+                Comprehensive four-year programme combining foundational design
+                theory with studio-based projects, global immersions, and
+                mandatory industry internship to prepare human-centered designers
+                and design innovators.
               </p>
             </div>
+          </div>
 
+          <div className="mb-8">
+            <Badge className="bg-brand-magenta/15 text-brand-magenta">
+              Undergraduate Program
+            </Badge>
+            <h3 className="mt-4 font-display text-2xl md:text-3xl">
+              Bachelor of Design
+            </h3>
+            <p className="mt-2 text-sm text-foreground font-body">
+              Four-year programme with four specialization tracks: Product
+              Design, Communication Design, Environmental Design, and Experience
+              Design
+            </p>
           </div>
         </div>
       </section>
@@ -500,7 +362,9 @@ export default function BDesignOverview() {
               Studio Journey Across Eight Semesters
             </h2>
             <p className="mt-3 text-sm text-foreground font-body max-w-3xl mx-auto">
-              Move from foundational studios to advanced specialisation projects with liberal studies, research engagements and internships interwoven throughout the programme.
+              Move from foundational studios to advanced specialisation projects
+              with liberal studies, research engagements and internships
+              interwoven throughout the programme.
             </p>
           </div>
           <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
@@ -531,7 +395,9 @@ export default function BDesignOverview() {
                   B.Design Notice Board
                 </h2>
                 <p className="text-sm text-foreground font-body">
-                  Curated updates for the ongoing academic year 2025-26. Stay aligned with studio cycles, critiques, internship timelines and assessments.
+                  Curated updates for the ongoing academic year 2025-26. Stay
+                  aligned with studio cycles, critiques, internship timelines
+                  and assessments.
                 </p>
                 <a
                   href="https://www.dsu.edu.in/bdesign/notices"
@@ -563,10 +429,11 @@ export default function BDesignOverview() {
         <div className="mx-auto max-w-7xl">
           <div className="mb-6 text-center">
             <h2 className="font-display text-3xl md:text-4xl">
-              Explore More at DSU B.Design
+              Explore More at DSU School of Design
             </h2>
             <p className="mt-3 text-sm text-foreground font-body">
-              Discover our design studios, innovation labs, placements and admission pathways
+              Discover our design studios, innovation labs, placements and
+              admission pathways
             </p>
           </div>
           <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-4">
@@ -585,7 +452,7 @@ export default function BDesignOverview() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-foreground/80 font-body">
-                    Design & Innovation labs with emerging tech studios
+                    Innovation labs and design-powered learning hubs
                   </p>
                 </CardContent>
               </Card>
@@ -597,11 +464,11 @@ export default function BDesignOverview() {
             >
               <Card className="h-full border-0 bg-transparent">
                 <div className="relative h-32 bg-gradient-to-br from-brand-blue/20 to-brand-blue/10 flex items-center justify-center">
-                  <Shapes className="h-12 w-12 text-brand-blue/70 group-hover:text-brand-blue transition-colors" />
+                  <Compass className="h-12 w-12 text-brand-blue/70 group-hover:text-brand-blue transition-colors" />
                 </div>
                 <CardHeader>
                   <CardTitle className="font-display group-hover:text-brand-blue transition-colors">
-                    Research & Innovation
+                    Design Research
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
@@ -650,7 +517,7 @@ export default function BDesignOverview() {
                 </CardHeader>
                 <CardContent className="flex flex-col gap-3">
                   <p className="text-sm text-foreground/80 font-body">
-                    Join DSU B.Design and shape human-centered solutions
+                    Join DSU School of Design and shape human-centered solutions
                   </p>
                   <span className="inline-flex items-center gap-2 text-xs font-medium text-brand-magenta group-hover:text-brand-magenta/80 transition-colors">
                     Apply Now
@@ -663,6 +530,63 @@ export default function BDesignOverview() {
         </div>
       </section>
 
+      <section id="featured-news" className="px-3 py-8 bg-gradient-to-r from-brand-blue/5 via-brand-magenta/5 to-brand-orange/5">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-6 text-center">
+            <h2 className="font-display text-3xl md:text-4xl mb-3">
+              Latest from B.Design
+            </h2>
+            <p className="text-sm text-foreground font-body">
+              Stories of design excellence, innovation, and student success
+            </p>
+          </div>
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {FEATURED_NEWS.map((item) => (
+              <a key={item.title} href="#" className="group flex flex-col h-full">
+                <div className="relative w-full h-64 overflow-hidden rounded-lg mb-6">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+
+                  <div className="absolute top-4 left-4">
+                    <Badge
+                      className={`text-xs font-bold tracking-wider text-white ${
+                        item.color === "brand-orange"
+                          ? "bg-brand-orange"
+                          : item.color === "brand-magenta"
+                            ? "bg-brand-magenta"
+                            : "bg-blue-600"
+                      }`}
+                    >
+                      {item.category}
+                    </Badge>
+                  </div>
+                </div>
+
+                <div className="flex-1 flex flex-col">
+                  <h3 className="text-lg font-semibold text-foreground font-display line-clamp-2 group-hover:text-brand-magenta transition-colors mb-3">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-foreground/80 font-body line-clamp-3 mb-4">
+                    {item.excerpt}
+                  </p>
+
+                  <div className="mt-auto pt-4 border-t border-border/30 flex items-center justify-between">
+                    <span className="text-xs text-foreground/60 font-body flex items-center">
+                      <CalendarDays className="w-3 h-3 mr-1" /> {item.date}
+                    </span>
+                    <ChevronRight className="w-4 h-4 text-foreground/60 group-hover:text-brand-magenta transition-colors" />
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="px-3 py-8">
         <div className="mx-auto grid max-w-5xl items-start gap-4 lg:grid-cols-2">
           <Card className="rounded-none border border-orange-500/20 bg-orange-500/10">
@@ -671,25 +595,33 @@ export default function BDesignOverview() {
             </CardHeader>
             <CardContent className="grid gap-4 text-sm font-body text-foreground">
               <div>
-                <div className="text-foreground/70 text-xs uppercase tracking-wide">Email</div>
+                <div className="text-foreground/70 text-xs uppercase tracking-wide">
+                  Email
+                </div>
                 <div className="font-medium text-foreground">
                   design@dsu.edu.in
                 </div>
               </div>
               <div>
-                <div className="text-foreground/70 text-xs uppercase tracking-wide">Phone</div>
+                <div className="text-foreground/70 text-xs uppercase tracking-wide">
+                  Phone
+                </div>
                 <div className="font-medium text-foreground">
                   +91-80-49092933
                 </div>
               </div>
               <div>
-                <div className="text-foreground/70 text-xs uppercase tracking-wide">Campus Address</div>
+                <div className="text-foreground/70 text-xs uppercase tracking-wide">
+                  Campus Address
+                </div>
                 <div className="font-medium text-foreground">
                   Kanakapura Road, Bengaluru, Karnataka
                 </div>
               </div>
               <div>
-                <div className="text-foreground/70 text-xs uppercase tracking-wide">Office Hours</div>
+                <div className="text-foreground/70 text-xs uppercase tracking-wide">
+                  Office Hours
+                </div>
                 <div className="font-medium text-foreground">
                   Mon–Fri, 9:00 AM – 5:30 PM
                 </div>
@@ -698,9 +630,7 @@ export default function BDesignOverview() {
           </Card>
           <Card className="rounded-none border border-blue-500/20 bg-blue-500/10">
             <CardHeader>
-              <CardTitle className="font-display">
-                More Resources
-              </CardTitle>
+              <CardTitle className="font-display">More Resources</CardTitle>
             </CardHeader>
             <CardContent className="grid gap-3 text-sm font-body">
               <a
@@ -737,71 +667,6 @@ export default function BDesignOverview() {
               </a>
             </CardContent>
           </Card>
-        </div>
-      </section>
-
-      <section id="featured-news" className="px-3 py-8 bg-gradient-to-r from-brand-blue/5 via-brand-magenta/5 to-brand-orange/5">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-6 text-center">
-            <h2 className="font-display text-3xl md:text-4xl mb-3">
-              Latest from B.Design
-            </h2>
-            <p className="text-sm text-foreground font-body">
-              Stories of design excellence, innovation, and student success
-            </p>
-          </div>
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {FEATURED_NEWS.map((item, index) => (
-              <a
-                key={item.title}
-                href="#"
-                className="group flex flex-col h-full"
-              >
-                {/* Image Container */}
-                <div className="relative w-full h-64 overflow-hidden rounded-lg mb-6">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-
-                  {/* Overlaid Category Badge */}
-                  <div className="absolute top-4 left-4">
-                    <Badge
-                      className={`text-xs font-bold tracking-wider text-white ${
-                        item.color === "brand-orange"
-                          ? "bg-brand-orange"
-                          : item.color === "brand-magenta"
-                            ? "bg-brand-magenta"
-                            : "bg-blue-600"
-                      }`}
-                    >
-                      {item.category}
-                    </Badge>
-                  </div>
-                </div>
-
-                {/* Text Content Below Image */}
-                <div className="flex-1 flex flex-col">
-                  <h3 className="text-lg font-semibold text-foreground font-display line-clamp-2 group-hover:text-brand-magenta transition-colors mb-3">
-                    {item.title}
-                  </h3>
-                  <p className="text-sm text-foreground/80 font-body line-clamp-3 mb-4">
-                    {item.excerpt}
-                  </p>
-
-                  {/* Date and Link */}
-                  <div className="mt-auto pt-4 border-t border-border/30 flex items-center justify-between">
-                    <span className="text-xs text-foreground/60 font-body flex items-center">
-                      <CalendarDays className="w-3 h-3 mr-1" /> {item.date}
-                    </span>
-                    <ChevronRight className="w-4 h-4 text-foreground/60 group-hover:text-brand-magenta transition-colors" />
-                  </div>
-                </div>
-              </a>
-            ))}
-          </div>
         </div>
       </section>
     </div>
