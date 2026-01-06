@@ -713,6 +713,12 @@ export default function BDesignOverview() {
               Design
             </p>
           </div>
+
+          <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-12">
+            {PROGRAM_CARDS.map((program) => (
+              <ProgramCardComponent key={program.name} program={program} />
+            ))}
+          </div>
         </div>
       </section>
 
