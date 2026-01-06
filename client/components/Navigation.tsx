@@ -259,8 +259,8 @@ export default function Navigation() {
       <nav
       className={`sticky top-0 z-50 backdrop-blur-md transition-all duration-300 ${
         theme === "light"
-          ? "bg-white/80 border-b border-gray-200/30"
-          : "bg-transparent bg-white/5 border-b border-white/10"
+          ? "bg-transparent border-b border-gray-200/30"
+          : "bg-transparent border-b border-white/10"
       }`}
     >
       <div className="max-w-7xl mx-auto px-3">
