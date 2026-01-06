@@ -576,7 +576,7 @@ export default function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-hidden">
       {/* Hero Section with Full-Screen Video Background */}
-      <section className="relative w-full h-auto md:h-[75vh] pt-2 md:pt-0 flex flex-col md:flex-row items-start md:items-center justify-start md:overflow-hidden overflow-visible" style={{minHeight: 'calc(100vh - 100px)'}}>
+      <section className="hero-section relative w-full h-auto md:h-[75vh] pt-2 md:pt-0 flex items-start md:items-center justify-start md:overflow-hidden overflow-visible">
         {/* Full-screen Background Video */}
         <div className="absolute inset-0 w-full h-full">
           <HeroVideo />
