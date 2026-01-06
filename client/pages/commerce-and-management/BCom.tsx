@@ -157,7 +157,7 @@ export default function BCom() {
       <section className="relative">
         <div className="h-[50vh] sm:h-[65vh] md:h-[65vh] w-full overflow-hidden" style={{ minHeight: '200px' }}>
           <img
-            src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F1f97f3c57b4245a6a7162caaed3cb43d?format=webp&width=800"
+            src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F1b283ddb4bb848de8952ec13b10820be?format=webp&width=800"
             alt="B.Com Program - Innovation Campus"
             className="w-full h-full object-cover"
           />
