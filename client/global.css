@@ -185,26 +185,21 @@
     .hero-section {
       height: auto !important;
       min-height: auto !important;
-      padding-top: 8rem !important;
+      padding-top: 4rem !important;
     }
 
     .dept-hero-section {
-      padding-top: 9rem !important; /* 144px padding to clear nav in landscape */
+      padding-top: 4rem !important; /* Reduced padding for landscape */
     }
 
     /* Ensure content inside also has padding */
     .dept-hero-section > div {
-      padding-top: 5rem !important;
+      padding-top: 2rem !important;
     }
 
     /* Homepage hero content padding */
     .hero-section > div {
-      padding-top: 4rem !important;
-    }
-
-    /* Hide buttons in landscape mode */
-    .landscape-hide-button {
-      display: none !important;
+      padding-top: 1rem !important;
     }
   }
 }
