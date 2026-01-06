@@ -396,6 +396,20 @@ export default function Navigation() {
                           scrollbarColor: theme === "light" ? 'rgba(249, 115, 22, 0.5) rgba(249, 115, 22, 0.1)' : 'rgba(255, 255, 255, 0.3) rgba(255, 255, 255, 0.1)'
                         }}
                       >
+                        {/* Academics Overview Link */}
+                        <Link
+                          to="/academics"
+                          onClick={() => setAcademicsMenuOpen(false)}
+                          className={`w-full block rounded-xl p-4 mb-4 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 font-semibold text-sm group-hover:text-orange-600 ${
+                            theme === "light"
+                              ? "bg-gradient-to-r from-orange-100 to-orange-50 border border-orange-200/50 text-orange-900 hover:bg-orange-100"
+                              : "bg-gradient-to-r from-orange-900/30 to-orange-900/10 border border-orange-600/30 text-orange-100 hover:bg-orange-900/40"
+                          }`}
+                        >
+                          Explore All Academics
+                          <ArrowRight className="w-4 h-4 inline ml-2" />
+                        </Link>
+
                         <div className="grid grid-cols-2 gap-4">
                           {academicsSubmenus.schools.map((school, schoolIdx) => {
                             const cardColors = [
