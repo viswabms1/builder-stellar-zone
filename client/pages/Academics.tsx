@@ -311,9 +311,9 @@ export default function Academics() {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       {/* Hero Section with Video Background */}
-      <section className="relative w-full h-screen flex items-end md:items-center justify-start overflow-hidden">
+      <section className="relative flex items-end md:items-center justify-start overflow-hidden">
         <div className="absolute inset-0 w-full h-full">
           <HeroVideo />
         </div>
