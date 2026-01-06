@@ -115,7 +115,7 @@ function HeroVideo() {
   }, []);
 
   return (
-    <div className="w-screen md:w-full h-screen md:h-full relative overflow-hidden" ref={containerRef}>
+    <div className="h-screen md:h-full relative overflow-hidden" style={{ width: '100vw', marginLeft: 'calc(-50vw + 50%)' }} ref={containerRef}>
       <video
         ref={videoRef}
         src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F039b67f729094553afc521bcbf44f524?alt=media&token=f3f572a0-3afd-4a0a-9570-de176cc33653&apiKey=4aa279a8430d441dba9c55f659831878"
@@ -126,7 +126,7 @@ function HeroVideo() {
         preload="metadata"
         crossOrigin="anonymous"
         volume={0}
-        className="w-screen md:w-full h-full object-cover"
+        className="w-full h-full object-cover"
         style={{
           filter: "brightness(1.1) contrast(1.15) saturate(1.2)",
           objectPosition: "center top"

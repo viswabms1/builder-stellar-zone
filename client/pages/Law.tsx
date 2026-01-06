@@ -553,7 +553,7 @@ function HeroVideo() {
   }, [isMuted]);
 
   return (
-    <div className="w-screen md:w-full h-dvh sm:h-[55vh] md:h-[65vh] lg:h-[75vh] relative overflow-hidden flex items-end md:items-center justify-start" ref={containerRef}>
+    <div className="h-dvh sm:h-[55vh] md:h-[65vh] lg:h-[75vh] relative overflow-hidden flex items-end md:items-center justify-start" style={{ width: '100vw', marginLeft: 'calc(-50vw + 50%)' }} ref={containerRef}>
       <video
         ref={videoRef}
         src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F2a5ae95792164387a198be90ffece5a6?alt=media&token=285bd3aa-cc60-4942-b4c9-3dc69f86a5a1&apiKey=4aa279a8430d441dba9c55f659831878"
@@ -563,7 +563,7 @@ function HeroVideo() {
         playsInline
         preload="metadata"
         crossOrigin="anonymous"
-        className="absolute inset-0 w-screen md:w-full h-full object-cover"
+        className="absolute inset-0 object-cover"
         style={{
           filter: "brightness(1.1) contrast(1.15) saturate(1.2)",
           objectPosition: "center top",

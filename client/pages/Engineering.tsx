@@ -1004,7 +1004,7 @@ function HeroVideo() {
   return (
     <div
       ref={containerRef}
-      className="w-screen md:w-full h-dvh md:h-[75vh] relative overflow-hidden flex items-end md:items-center justify-start"
+      className="h-dvh md:h-[75vh] relative overflow-hidden flex items-end md:items-center justify-start" style={{ width: '100vw', marginLeft: 'calc(-50vw + 50%)' }}
     >
       <video
         ref={videoRef}
@@ -1015,7 +1015,7 @@ function HeroVideo() {
         playsInline
         preload="metadata"
         crossOrigin="anonymous"
-        className="absolute inset-0 w-screen md:w-full h-full object-cover"
+        className="absolute inset-0 object-cover"
         style={{
           filter: "brightness(1.1) contrast(1.15) saturate(1.2)",
           objectPosition: "center top",

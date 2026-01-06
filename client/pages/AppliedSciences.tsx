@@ -585,7 +585,7 @@ function HeroVideo() {
   }, [isMuted]);
 
   return (
-    <div className="w-screen md:w-full h-dvh md:h-screen relative overflow-hidden flex items-end md:items-center justify-start" ref={containerRef}>
+    <div className="h-dvh md:h-screen relative overflow-hidden flex items-end md:items-center justify-start" style={{ width: '100vw', marginLeft: 'calc(-50vw + 50%)' }} ref={containerRef}>
       <video
         ref={videoRef}
         src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2Fa185568237c64433ad901c292c3e213b?alt=media&token=6a50e6fe-1aa5-48f9-bbe0-e23311707d27&apiKey=4aa279a8430d441dba9c55f659831878"
@@ -595,7 +595,7 @@ function HeroVideo() {
         playsInline
         preload="metadata"
         crossOrigin="anonymous"
-        className="absolute inset-0 w-screen md:w-full h-full object-cover"
+        className="absolute inset-0 object-cover"
         style={{
           filter: "brightness(1.1) contrast(1.15) saturate(1.2)",
           objectPosition: "center top"
