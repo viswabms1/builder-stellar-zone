@@ -623,7 +623,7 @@ export default function Index() {
               >
                 <Button
                   size="lg"
-                  className="w-full sm:w-auto bg-white hover:bg-white/90 text-orange-600 hover:text-orange-700 px-4 sm:px-8 py-2 sm:py-6 text-xs sm:text-base font-semibold font-display transition-all duration-300 group border-2 border-white"
+                  className="bg-white hover:bg-white/90 text-orange-600 hover:text-orange-700 px-4 sm:px-8 py-2 sm:py-6 text-xs sm:text-base font-semibold font-display transition-all duration-300 group border-2 border-white"
                 >
                   {t("hero.applyNow") || "Apply Today"}
                   <ArrowRight className="w-3 sm:w-5 h-3 sm:h-5 ml-1 sm:ml-2 group-hover:translate-x-1 transition-transform" />
@@ -637,7 +637,7 @@ export default function Index() {
               >
                 <Button
                   size="lg"
-                  className="w-full sm:w-auto bg-white hover:bg-white/90 text-black hover:text-black px-4 sm:px-8 py-2 sm:py-6 text-xs sm:text-base font-semibold font-display transition-all duration-300 group border-2 border-white"
+                  className="bg-white hover:bg-white/90 text-black hover:text-black px-4 sm:px-8 py-2 sm:py-6 text-xs sm:text-base font-semibold font-display transition-all duration-300 group border-2 border-white"
                 >
                   {t("hero.virtualTour") || "Virtual Tour"}
                 </Button>
@@ -649,7 +649,7 @@ export default function Index() {
             >
               <Button
                 size="lg"
-                className="w-full sm:w-auto bg-white hover:bg-white/90 text-black hover:text-black px-4 sm:px-8 py-2 sm:py-6 text-xs sm:text-base font-semibold font-display transition-all duration-300 group border-2 border-white"
+                className="bg-white hover:bg-white/90 text-black hover:text-black px-4 sm:px-8 py-2 sm:py-6 text-xs sm:text-base font-semibold font-display transition-all duration-300 group border-2 border-white"
               >
                 Build the Future of AI at DSU
                 <ArrowRight className="w-3 sm:w-5 h-3 sm:h-5 ml-1 sm:ml-2 group-hover:translate-x-1 transition-transform" />
