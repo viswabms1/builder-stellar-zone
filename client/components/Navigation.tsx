@@ -5,7 +5,7 @@ import SearchDialog from "./SearchDialog";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useLanguage } from "@/providers/language-provider";
 import { useTheme } from "@/providers/theme-provider";
-import { Menu, X, ChevronDown, Search } from "lucide-react";
+import { Menu, X, ChevronDown, Search, ArrowRight } from "lucide-react";
 import { useState, useEffect } from "react";
 
 export default function Navigation() {
