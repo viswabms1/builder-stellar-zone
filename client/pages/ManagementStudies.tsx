@@ -564,7 +564,7 @@ function CalendarResourceCard({ entry }: { entry: CalendarEntry }) {
 function HeroVideo() {
   const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
+  const containerRef = useAutoMuteOnScroll(videoRef);
 
   const toggleMute = () => {
     if (videoRef.current) {
