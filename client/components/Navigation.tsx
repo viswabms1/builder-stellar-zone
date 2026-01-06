@@ -348,8 +348,8 @@ export default function Navigation() {
                                 key={submenu.name}
                                 to={submenu.href}
                                 onClick={() => setAboutMenuOpen(false)}
-                                className={`${colors.bg} ${colors.border} border rounded-xl p-4 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 group block text-sm font-semibold group-hover:text-orange-600 ${
-                                  theme === "light" ? "text-gray-900" : "text-white"
+                                className={`${colors.bg} ${colors.border} border rounded-xl p-4 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 group block text-sm font-semibold ${
+                                  theme === "light" ? "text-gray-900 group-hover:text-orange-600" : "text-white group-hover:text-orange-200"
                                 }`}
                               >
                                 {submenu.name}
