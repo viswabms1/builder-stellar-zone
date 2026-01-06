@@ -82,6 +82,9 @@ function HeroVideo() {
         preload="metadata"
         crossOrigin="anonymous"
         className="w-full h-full object-cover"
+        style={{
+          objectPosition: "center top"
+        }}
       />
 
       {/* Gradient Overlay */}
@@ -585,7 +588,7 @@ export default function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-hidden">
       {/* Hero Section with Full-Screen Video Background */}
-      <section className="hero-section relative w-full h-auto md:h-[75vh] pt-2 md:pt-0 flex items-start md:items-center justify-start md:overflow-hidden overflow-visible">
+      <section className="hero-section relative w-full h-dvh md:h-[75vh] pt-2 md:pt-0 flex items-start md:items-center justify-start md:overflow-hidden overflow-visible">
         {/* Full-screen Background Video */}
         <div className="absolute inset-0 w-full h-full">
           <HeroVideo />
