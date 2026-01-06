@@ -188,7 +188,7 @@
     }
 
     .dept-hero-section {
-      padding-top: 0 !important;
+      padding-top: 1.5rem !important; /* 24px padding in landscape */
     }
   }
 }
