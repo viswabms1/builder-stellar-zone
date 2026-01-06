@@ -368,109 +368,118 @@ export default function Navigation() {
                         )}
                       </button>
 
-                      {/* Academics Mega Menu - Compact Multi-column Layout */}
+                      {/* Academics Mega Menu - Modern Card-Based Layout */}
                       <div
-                        className={`absolute left-0 top-full mt-0 w-auto min-w-max max-w-4xl rounded-lg shadow-2xl transition-all duration-200 py-3 px-4 max-h-[500px] overflow-y-auto ${
+                        className={`absolute left-0 top-full mt-1 w-auto min-w-max max-w-5xl rounded-2xl shadow-2xl transition-all duration-300 py-5 px-5 max-h-[600px] overflow-y-auto backdrop-blur-sm ${
                           academicsMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
                         } ${
                           theme === "light"
-                            ? "bg-gradient-to-b from-orange-50 to-orange-100 text-gray-900 border border-orange-200"
-                            : "bg-gradient-to-b from-orange-600 to-red-700 text-white"
+                            ? "bg-white/95 border border-orange-200/50"
+                            : "bg-slate-800/95 border border-orange-600/30"
                         }`}
                         style={{
                           scrollbarWidth: 'thin',
                           scrollbarColor: theme === "light" ? 'rgba(249, 115, 22, 0.5) rgba(249, 115, 22, 0.1)' : 'rgba(255, 255, 255, 0.3) rgba(255, 255, 255, 0.1)'
                         }}
                       >
-                        <div className="grid grid-cols-3 gap-3">
-                          {academicsSubmenus.schools.map((school) => (
-                            <div key={school.name}>
-                              {school.external ? (
-                                <a
-                                  href={school.href}
-                                  target="_blank"
-                                  rel="noreferrer"
-                                  className={`block font-semibold text-xs mb-2 transition-colors hover:text-orange-400 ${
-                                    theme === "light" ? "text-orange-900" : "text-white"
-                                  }`}
-                                >
-                                  {school.name}
-                                </a>
-                              ) : (
-                                <Link
-                                  to={school.href}
-                                  onClick={() => setAcademicsMenuOpen(false)}
-                                  className={`block font-semibold text-xs mb-2 transition-colors hover:text-orange-400 ${
-                                    theme === "light" ? "text-orange-900" : "text-white"
-                                  }`}
-                                >
-                                  {school.name}
-                                </Link>
-                              )}
+                        <div className="grid grid-cols-2 gap-4">
+                          {academicsSubmenus.schools.map((school, schoolIdx) => {
+                            const cardColors = [
+                              { bg: theme === "light" ? "bg-orange-50" : "bg-orange-900/20", border: "border-orange-200/50 dark:border-orange-600/30", text: "text-orange-900 dark:text-orange-100" },
+                              { bg: theme === "light" ? "bg-pink-50" : "bg-pink-900/20", border: "border-pink-200/50 dark:border-pink-600/30", text: "text-pink-900 dark:text-pink-100" },
+                              { bg: theme === "light" ? "bg-blue-50" : "bg-blue-900/20", border: "border-blue-200/50 dark:border-blue-600/30", text: "text-blue-900 dark:text-blue-100" },
+                              { bg: theme === "light" ? "bg-purple-50" : "bg-purple-900/20", border: "border-purple-200/50 dark:border-purple-600/30", text: "text-purple-900 dark:text-purple-100" },
+                            ];
+                            const colors = cardColors[schoolIdx % cardColors.length];
 
-                              {(school as any).hasSubGroups ? (
-                                <div className="space-y-1 ml-2">
-                                  {(school as any).subGroups.map((group: any) => {
-                                    const isExpanded = expandedSubGroups.has(`${school.name}-${group.name}`);
-                                    return (
-                                      <div key={group.name} className="border-l-2 pl-2" style={{
-                                        borderColor: theme === "light" ? "rgba(249, 115, 22, 0.3)" : "rgba(255, 255, 255, 0.2)"
-                                      }}>
-                                        <button
-                                          onClick={() => toggleSubGroup(school.name, group.name)}
-                                          className={`text-xs font-semibold flex items-center gap-1 transition-colors ${
-                                            theme === "light" ? "text-orange-900 hover:text-orange-700" : "text-white/90 hover:text-white"
-                                          }`}
-                                        >
-                                          <ChevronDown
-                                            className={`w-2.5 h-2.5 transition-transform ${isExpanded ? 'rotate-0' : '-rotate-90'}`}
-                                          />
-                                          {group.name}
-                                        </button>
-                                        {isExpanded && (
-                                          <div className="space-y-0.5 mt-1">
-                                            {group.departments.map((dept: any) => (
-                                              <Link
-                                                key={dept.name}
-                                                to={dept.href}
-                                                onClick={() => setAcademicsMenuOpen(false)}
-                                                className={`block text-xs py-0.5 transition-colors ${
-                                                  theme === "light"
-                                                    ? "text-gray-700 hover:text-orange-700"
-                                                    : "text-white/80 hover:text-white"
-                                                }`}
-                                              >
-                                                {dept.name}
-                                              </Link>
-                                            ))}
-                                          </div>
-                                        )}
-                                      </div>
-                                    );
-                                  })}
-                                </div>
-                              ) : school.departments.length > 0 && (
-                                <div className="space-y-1 ml-2 border-l-2 pl-2" style={{
-                                  borderColor: theme === "light" ? "rgba(249, 115, 22, 0.3)" : "rgba(255, 255, 255, 0.2)"
-                                }}>
-                                  {school.departments.map((dept) => (
-                                    <Link
-                                      key={dept.name}
-                                      to={dept.href}
-                                      onClick={() => setAcademicsMenuOpen(false)}
-                                      className={`block text-xs py-0.5 transition-colors ${
-                                        theme === "light"
-                                          ? "text-gray-700 hover:text-orange-700"
-                                          : "text-white/80 hover:text-white"
-                                      }`}
-                                    >
-                                      {dept.name}
-                                    </Link>
-                                  ))}
-                                </div>
-                              )}
-                            </div>
-                          ))}
+                            return (
+                              <div
+                                key={school.name}
+                                className={`${colors.bg} ${colors.border} border rounded-xl p-3 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 group`}
+                              >
+                                {school.external ? (
+                                  <a
+                                    href={school.href}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className={`block font-bold text-sm mb-2 transition-colors group-hover:text-orange-600 ${
+                                      theme === "light" ? "text-gray-900" : "text-white"
+                                    }`}
+                                  >
+                                    {school.name}
+                                  </a>
+                                ) : (
+                                  <Link
+                                    to={school.href}
+                                    onClick={() => setAcademicsMenuOpen(false)}
+                                    className={`block font-bold text-sm mb-2 transition-colors group-hover:text-orange-600 ${
+                                      theme === "light" ? "text-gray-900" : "text-white"
+                                    }`}
+                                  >
+                                    {school.name}
+                                  </Link>
+                                )}
+
+                                {(school as any).hasSubGroups ? (
+                                  <div className="space-y-2">
+                                    {(school as any).subGroups.map((group: any) => {
+                                      const isExpanded = expandedSubGroups.has(`${school.name}-${group.name}`);
+                                      return (
+                                        <div key={group.name}>
+                                          <button
+                                            onClick={() => toggleSubGroup(school.name, group.name)}
+                                            className={`text-xs font-semibold flex items-center gap-2 transition-all w-full p-2 rounded hover:bg-white/30 dark:hover:bg-white/10 ${
+                                              theme === "light" ? "text-gray-700 hover:text-orange-700" : "text-white/80 hover:text-white"
+                                            }`}
+                                          >
+                                            <ChevronDown
+                                              className={`w-3 h-3 transition-transform ${isExpanded ? 'rotate-0' : '-rotate-90'}`}
+                                            />
+                                            {group.name}
+                                          </button>
+                                          {isExpanded && (
+                                            <div className="space-y-1 ml-2 pl-2 border-l border-white/20">
+                                              {group.departments.map((dept: any) => (
+                                                <Link
+                                                  key={dept.name}
+                                                  to={dept.href}
+                                                  onClick={() => setAcademicsMenuOpen(false)}
+                                                  className={`block text-xs py-1 px-2 rounded transition-all hover:bg-white/20 dark:hover:bg-white/10 ${
+                                                    theme === "light"
+                                                      ? "text-gray-700 hover:text-orange-700"
+                                                      : "text-white/70 hover:text-white"
+                                                  }`}
+                                                >
+                                                  {dept.name}
+                                                </Link>
+                                              ))}
+                                            </div>
+                                          )}
+                                        </div>
+                                      );
+                                    })}
+                                  </div>
+                                ) : school.departments.length > 0 && (
+                                  <div className="space-y-2">
+                                    {school.departments.map((dept) => (
+                                      <Link
+                                        key={dept.name}
+                                        to={dept.href}
+                                        onClick={() => setAcademicsMenuOpen(false)}
+                                        className={`block text-xs py-1 px-2 rounded transition-all hover:bg-white/20 dark:hover:bg-white/10 ${
+                                          theme === "light"
+                                            ? "text-gray-700 hover:text-orange-700"
+                                            : "text-white/70 hover:text-white"
+                                        }`}
+                                      >
+                                        {dept.name}
+                                      </Link>
+                                    ))}
+                                  </div>
+                                )}
+                              </div>
+                            );
+                          })}
                         </div>
                       </div>
                     </div>
