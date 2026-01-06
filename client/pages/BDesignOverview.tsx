@@ -463,7 +463,9 @@ export default function BDesignOverview() {
 
 
       {/* Dean's Message Section */}
-      <DeanSection dean={DEAN_INFO} />
+      <div style={{ marginTop: '57px' }}>
+        <DeanSection dean={DEAN_INFO} />
+      </div>
 
       <section id="programs" className="relative overflow-hidden px-3 py-8">
         <div
