@@ -1193,7 +1193,9 @@ function CalendarResourceCard({ entry }: { entry: CalendarEntry }) {
 
 export default function Engineering() {
   return (
-    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+    <>
+      <style>{landscapeStyles}</style>
+      <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <section className="relative" id="top">
         <HeroVideo />
       </section>
@@ -1581,5 +1583,6 @@ export default function Engineering() {
         </div>
       </section>
     </div>
+    </>
   );
 }
