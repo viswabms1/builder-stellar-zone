@@ -436,7 +436,7 @@ export default function Index() {
         delay: "0.75s",
         href: "/academics/journalism-mass-communication",
         image:
-          "https://images.pexels.com/photos/15139464/pexels-photo-15139464.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
+          "https://images.pexels.com/photos/12306438/pexels-photo-12306438.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
       },
       {
         key: "medical",
