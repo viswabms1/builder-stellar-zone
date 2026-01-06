@@ -145,7 +145,7 @@ export default function BBA() {
       <section className="relative">
         <div className="h-[50vh] sm:h-[65vh] md:h-[65vh] w-full overflow-hidden" style={{ minHeight: '200px' }}>
           <img
-            src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F40974295ee0841c7a65788e235387d01?format=webp&width=800"
+            src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fac094b4290a14ca5a7c366dd53f5e613?format=webp&width=800"
             alt="BBA Program - Innovation Campus"
             className="w-full h-full object-cover"
           />
