@@ -185,6 +185,7 @@
     .hero-section {
       height: auto !important;
       min-height: auto !important;
+      padding-top: 2rem !important;
     }
 
     .dept-hero-section {
@@ -194,6 +195,11 @@
     /* Ensure content inside also has padding */
     .dept-hero-section > div {
       padding-top: 2rem !important;
+    }
+
+    /* Homepage hero content padding */
+    .hero-section > div {
+      padding-top: 1rem !important;
     }
   }
 }
