@@ -562,7 +562,7 @@ function HeroVideo() {
         className="absolute inset-0 object-cover"
         style={{
           filter: "brightness(1.1) contrast(1.15) saturate(1.2)",
-          objectPosition: "center -10%"
+          objectPosition: "center bottom"
         }}
       />
 
