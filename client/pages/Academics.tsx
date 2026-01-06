@@ -126,7 +126,7 @@ function HeroVideo() {
         preload="metadata"
         crossOrigin="anonymous"
         volume={0}
-        className="w-full h-full object-cover"
+        className="w-screen md:w-full h-full object-cover"
         style={{
           filter: "brightness(1.1) contrast(1.15) saturate(1.2)",
           objectPosition: "center top"

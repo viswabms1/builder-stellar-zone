@@ -81,7 +81,7 @@ function HeroVideo() {
         playsInline
         preload="metadata"
         crossOrigin="anonymous"
-        className="w-full h-full object-cover"
+        className="w-screen md:w-full h-full object-cover"
         style={{
           objectPosition: "center top"
         }}
