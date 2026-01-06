@@ -671,7 +671,7 @@ function HeroVideo() {
 
 export default function ComputerApplications() {
   return (
-    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+    <div className="min-h-screen bg-background text-foreground">
       <HeroVideo />
 
       {/* Dean's Message Section */}
