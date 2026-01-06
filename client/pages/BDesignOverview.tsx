@@ -19,12 +19,7 @@ import {
 
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { DeanSection, type DeanInfo } from "@/components/DeanSection";
 import { useAutoMuteOnScroll } from "@/hooks/useAutoMuteOnScroll";
 import { Download } from "lucide-react";
@@ -106,8 +101,7 @@ const CALENDAR_ENTRIES: CalendarEntry[] = [
     academicYear: "2025-26",
     description:
       "Detailed timeline for B.Design programme including studio cycles, critiques, internship periods and assessments.",
-    documentUrl:
-      "https://www.dsu.edu.in/images/BDesign/calendar_2025_26.pdf",
+    documentUrl: "https://www.dsu.edu.in/images/BDesign/calendar_2025_26.pdf",
     tag: "B.Design",
   },
 ];
@@ -154,9 +148,15 @@ const PROGRAM_CARDS: ProgramCard[] = [
     image:
       "https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=1600&auto=format&fit=crop",
     link: "#programs",
-    highlights: ["Product Design", "Communication Design", "Environmental Design"],
-    overlay: "bg-gradient-to-br from-brand-magenta/80 via-black/75 to-black/60 mix-blend-multiply",
-    badgeClass: "bg-brand-magenta/25 text-foreground/90 border border-white/30 backdrop-blur",
+    highlights: [
+      "Product Design",
+      "Communication Design",
+      "Environmental Design",
+    ],
+    overlay:
+      "bg-gradient-to-br from-brand-magenta/80 via-black/75 to-black/60 mix-blend-multiply",
+    badgeClass:
+      "bg-brand-magenta/25 text-foreground/90 border border-white/30 backdrop-blur",
     panelClass: "bg-black/55 backdrop-blur-xl",
     featured: true,
   },
@@ -165,8 +165,10 @@ const PROGRAM_CARDS: ProgramCard[] = [
 const DEAN_INFO: DeanInfo = {
   name: "Prof. Dinesh Kulkarni",
   position: "Dean, School of Design",
-  photo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F4c97444b3cb24a3481336dfe91ee22db?format=webp&width=800",
-  videoUrl: "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F8424b7a4848e447e85cd758b83aba08c?alt=media&token=c02519fd-c7bb-4aaf-adba-9897e2e5ca0f&apiKey=4aa279a8430d441dba9c55f659831878",
+  photo:
+    "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F4c97444b3cb24a3481336dfe91ee22db?format=webp&width=800",
+  videoUrl:
+    "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F8424b7a4848e447e85cd758b83aba08c?alt=media&token=c02519fd-c7bb-4aaf-adba-9897e2e5ca0f&apiKey=4aa279a8430d441dba9c55f659831878",
   borderColor: "border-pink-500/20",
   bgColor: "bg-pink-500/10",
 };
@@ -694,8 +696,8 @@ export default function BDesignOverview() {
               <p className="mt-3 text-sm text-foreground font-body">
                 Comprehensive four-year programme combining foundational design
                 theory with studio-based projects, global immersions, and
-                mandatory industry internship to prepare human-centered designers
-                and design innovators.
+                mandatory industry internship to prepare human-centered
+                designers and design innovators.
               </p>
             </div>
           </div>
@@ -725,7 +727,10 @@ export default function BDesignOverview() {
       {/* Notice Board Carousel */}
       <NoticeBoardCarousel />
 
-      <section id="structure" className="px-3 py-8 bg-gradient-to-r from-brand-blue/5 via-brand-magenta/5 to-brand-orange/5">
+      <section
+        id="structure"
+        className="px-3 py-8 bg-gradient-to-r from-brand-blue/5 via-brand-magenta/5 to-brand-orange/5"
+      >
         <div className="mx-auto max-w-7xl">
           <div className="mb-6 text-center">
             <Badge className="bg-brand-magenta/15 text-brand-magenta">

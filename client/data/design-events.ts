@@ -17,7 +17,8 @@ const DESIGN_EVENTS: NoticeItem[] = [
     date: "Feb 15, 2025",
     description:
       "Hands-on workshop on design thinking methodology, prototyping, and user-centered design principles.",
-    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=300&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=300&fit=crop",
     link: "https://www.dsu.edu.in/images/BDesign/notices/DesignThinking.pdf",
     department: "School of Design",
   },
@@ -28,7 +29,8 @@ const DESIGN_EVENTS: NoticeItem[] = [
     date: "Feb 8, 2025",
     description:
       "Professional training on sustainable design practices, eco-friendly materials, and circular design principles.",
-    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=300&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=300&fit=crop",
     department: "School of Design",
   },
   {
@@ -38,7 +40,8 @@ const DESIGN_EVENTS: NoticeItem[] = [
     date: "Feb 10, 2025",
     description:
       "Industry critique session with design professionals reviewing student portfolios and providing feedback.",
-    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=300&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=300&fit=crop",
     department: "School of Design",
   },
   {
@@ -48,7 +51,8 @@ const DESIGN_EVENTS: NoticeItem[] = [
     date: "Feb 12, 2025",
     description:
       "Annual showcase of student design projects and innovations in product design, communication, and experience design.",
-    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=300&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=300&fit=crop",
     department: "School of Design",
   },
 ];
@@ -61,7 +65,8 @@ const DESIGN_NEWS: NoticeItem[] = [
     date: "Nov 22, 2025",
     description:
       "DSU design students' sustainable product design wins gold at international design competition.",
-    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=300&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=300&fit=crop",
     department: "School of Design",
   },
   {
@@ -71,7 +76,8 @@ const DESIGN_NEWS: NoticeItem[] = [
     date: "Nov 10, 2025",
     description:
       "New collaboration with leading tech companies bringing real-world design projects to students.",
-    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=300&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=300&fit=crop",
     department: "School of Design",
   },
   {
@@ -81,7 +87,8 @@ const DESIGN_NEWS: NoticeItem[] = [
     date: "Oct 20, 2025",
     description:
       "New state-of-the-art design studios with 3D printing, prototyping labs, and digital fabrication equipment now available.",
-    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=300&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=300&fit=crop",
     department: "School of Design",
   },
 ];
