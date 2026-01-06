@@ -664,7 +664,9 @@ function HeroVideo() {
 
 export default function AppliedSciences() {
   return (
-    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+    <>
+      <style>{landscapeStyles}</style>
+      <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <section className="relative" id="top">
         <HeroVideo />
       </section>
@@ -922,5 +924,6 @@ export default function AppliedSciences() {
         <NoticeBoardCarousel />
       </section>
     </div>
+    </>
   );
 }
