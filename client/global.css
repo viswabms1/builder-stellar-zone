@@ -231,20 +231,3 @@
     @apply bg-slate-700 dark:bg-slate-700;
   }
 }
-
-@media (orientation: landscape) {
-  .hero-video-container {
-    width: 100vw !important;
-    margin-left: calc(-50vw + 50%) !important;
-    overflow: visible !important;
-  }
-}
-
-/* Fallback for larger screens that are landscape-like */
-@media (min-aspect-ratio: 4/3) {
-  .hero-video-container {
-    width: 100vw !important;
-    margin-left: calc(-50vw + 50%) !important;
-    overflow: visible !important;
-  }
-}
