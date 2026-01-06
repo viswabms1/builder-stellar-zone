@@ -257,10 +257,10 @@ export default function Navigation() {
 
       {/* Main Navigation Bar */}
       <nav
-      className={`sticky top-0 z-50 backdrop-blur-md transition-all duration-300 ${
+      className={`sticky top-0 z-50 transition-all duration-300 ${
         theme === "light"
-          ? "bg-transparent border-b border-gray-200/30"
-          : "bg-transparent border-b border-white/10"
+          ? "bg-transparent border-b border-transparent"
+          : "bg-transparent border-b border-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-3">
