@@ -27,6 +27,15 @@ import {
 } from "@/components/ui/card";
 import { DeanSection, type DeanInfo } from "@/components/DeanSection";
 import { useAutoMuteOnScroll } from "@/hooks/useAutoMuteOnScroll";
+import { Download } from "lucide-react";
+import {
+  getDesignEvents,
+  getDesignNews,
+  getDesignAnnouncements,
+  type NoticeItem as ImportedNoticeItem,
+} from "@/data/design-events";
+
+type NoticeItem = ImportedNoticeItem;
 
 type StructurePoint = {
   title: string;
