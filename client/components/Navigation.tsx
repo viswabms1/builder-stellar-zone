@@ -214,8 +214,8 @@ export default function Navigation() {
       <div
         className={`sticky top-0 z-50 transition-all duration-300 hidden sm:block ${
           theme === "light"
-            ? "bg-transparent border-b border-transparent"
-            : "bg-transparent border-b border-transparent"
+            ? "bg-white border-b border-orange-200/30"
+            : "bg-slate-950 border-b border-orange-600/20"
         }`}
       >
         <div className="max-w-7xl mx-auto px-3 py-1.5 flex items-center justify-end gap-4">
@@ -259,8 +259,8 @@ export default function Navigation() {
       <nav
       className={`sticky top-0 z-50 transition-all duration-300 ${
         theme === "light"
-          ? "bg-transparent border-b border-transparent"
-          : "bg-transparent border-b border-transparent"
+          ? "bg-white border-b border-orange-200/30"
+          : "bg-slate-950 border-b border-orange-600/20"
       }`}
     >
       <div className="max-w-7xl mx-auto px-3">
