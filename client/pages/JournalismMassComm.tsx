@@ -509,7 +509,7 @@ function CalendarResourceCard({ entry }: { entry: CalendarEntry }) {
 function HeroVideo() {
   const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const containerRef = useAutoMuteOnScroll(videoRef);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const toggleMute = () => {
     if (videoRef.current) {
@@ -525,8 +525,31 @@ function HeroVideo() {
     video.muted = isMuted;
   }, [isMuted]);
 
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const handleEnded = () => {
+      const rect = containerRef.current?.getBoundingClientRect();
+      const isVisible =
+        rect && rect.top < window.innerHeight && rect.bottom > 0;
+      if (isVisible) {
+        video.currentTime = 0;
+        video.play().catch(() => {});
+      }
+    };
+
+    video.addEventListener("ended", handleEnded);
+    return () => {
+      video.removeEventListener("ended", handleEnded);
+    };
+  }, []);
+
   return (
-    <div className="h-dvh sm:h-[55vh] md:h-[65vh] lg:h-[75vh] relative overflow-hidden flex items-end md:items-center justify-start hero-video-container" ref={containerRef}>
+    <div
+      ref={containerRef}
+      className="h-dvh sm:h-[55vh] md:h-[65vh] lg:h-[75vh] relative overflow-hidden flex items-end md:items-center justify-start hero-video-container"
+    >
       <video
         ref={videoRef}
         src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2Fa41e8ed985984f42835c307d7fcb52b7?alt=media&token=50f94c89-34b0-45b0-b363-b6dc8b5dfef1&apiKey=4aa279a8430d441dba9c55f659831878"
@@ -556,10 +579,10 @@ function HeroVideo() {
 
       <div className="relative max-w-7xl mx-auto px-3 w-full z-10 pb-20 md:pb-0">
         <div className="max-w-2xl">
-          <p className="text-sm md:text-base text-white/80 mb-4 uppercase tracking-widest font-display">
+          <p className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 uppercase tracking-widest font-display">
             School of Journalism & Mass Communication
           </p>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight font-display">
+          <h1 className="text-sm md:text-base text-white/80 mb-6 leading-tight font-display">
             Storytellers for the Now & Next
           </h1>
 
@@ -584,7 +607,7 @@ function HeroVideo() {
 
       <button
         onClick={toggleMute}
-        className="absolute top-4 right-8 z-10 p-3 rounded-full bg-black/50 hover:bg-black/70 transition-colors text-white backdrop-blur-sm border border-white/20"
+        className="absolute top-8 right-8 z-10 p-3 rounded-full bg-black/50 hover:bg-black/70 transition-colors text-white backdrop-blur-sm border border-white/20"
         aria-label={isMuted ? "Unmute" : "Mute"}
       >
         {isMuted ? (
