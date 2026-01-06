@@ -42,6 +42,7 @@ import JournalismMassComm from "./pages/JournalismMassComm";
 import BAJournalism from "./pages/BAJournalism";
 import JournalismFaculty from "./pages/journalism/Faculty";
 import BDesignOverview from "./pages/BDesignOverview";
+import BDesignProgram from "./pages/BDesignProgram";
 import FacultyDirectory from "./pages/FacultyDirectory";
 import CDSIMER from "./pages/CDSIMER";
 import CDSIMERHospital from "./pages/CDSIMERHospital";
@@ -530,6 +531,10 @@ function App() {
                 <Route
                   path="/academics/design/bdesign"
                   element={<BDesignOverview />}
+                />
+                <Route
+                  path="/academics/design/bdesign/program"
+                  element={<BDesignProgram />}
                 />
                 <Route
                   path="/academics/basic-applied-sciences"
