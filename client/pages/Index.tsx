@@ -588,7 +588,7 @@ export default function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       {/* Hero Section with Full-Screen Video Background */}
-      <section className="hero-section relative h-dvh md:h-[75vh] pt-2 md:pt-0 flex items-start md:items-center justify-start md:overflow-hidden overflow-visible" style={{ width: '100vw', marginLeft: 'calc(-50vw + 50%)' }}>
+      <section className="hero-section relative h-[40vh] md:h-[75vh] flex flex-col justify-between md:overflow-hidden overflow-visible" style={{ width: '100vw', marginLeft: 'calc(-50vw + 50%)' }}>
         {/* Full-screen Background Video */}
         <div className="absolute inset-0 w-full h-full">
           <HeroVideo />
@@ -598,61 +598,63 @@ export default function Index() {
         <div className="absolute inset-0 bg-black/40"></div>
 
         {/* Hero Content */}
-        <div className="relative max-w-7xl mx-auto px-3 w-full z-10 pb-0 md:pb-20 pt-8 md:pt-0">
-          <div className="max-w-4xl">
-            <h1 className="text-2xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-3 md:mb-4 leading-tight font-display">
+        <div className="relative max-w-7xl mx-auto px-3 w-full z-10 flex flex-col justify-between h-full py-4 md:py-0 md:items-center md:justify-center">
+          {/* Title Section - Top on mobile */}
+          <div className="max-w-4xl pt-2 md:pt-0 md:pb-12">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-2 sm:mb-3 md:mb-4 leading-tight font-display">
               Dayananda Sagar University
             </h1>
-            <p className="text-base sm:text-xl md:text-2xl lg:text-3xl font-semibold text-white mb-2 md:mb-6 leading-tight font-display hidden sm:block">
+            <p className="text-base sm:text-xl md:text-2xl lg:text-3xl font-semibold text-white mb-1 sm:mb-2 md:mb-6 leading-tight font-display hidden sm:block">
               {t("hero.mainHeading") || "India's AI First University"}
             </p>
-            <p className="text-sm sm:text-lg md:text-xl lg:text-2xl font-medium text-white/90 mb-4 md:mb-12 font-display hidden sm:block">
+            <p className="text-sm sm:text-lg md:text-xl lg:text-2xl font-medium text-white/90 hidden sm:block font-display">
               {t("hero.subheading") || "Powered by NVIDIA"}
             </p>
+          </div>
 
-            <div className="flex flex-col gap-2 md:gap-4">
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a
-                  href="https://admissions.dsu.edu.in/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-                >
-                  <Button
-                    size="lg"
-                    className="bg-white hover:bg-white/90 text-orange-600 hover:text-orange-700 px-8 py-6 text-base font-semibold font-display transition-all duration-300 group border-2 border-white"
-                  >
-                    {t("hero.applyNow") || "Apply Today"}
-                    <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-                  </Button>
-                </a>
-                <a
-                  href="https://dsu.edu.in/virtual-tour/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-                >
-                  <Button
-                    size="lg"
-                    className="bg-white hover:bg-white/90 text-black hover:text-black px-8 py-6 text-base font-semibold font-display transition-all duration-300 group border-2 border-white"
-                  >
-                    {t("hero.virtualTour") || "Virtual Tour"}
-                  </Button>
-                </a>
-              </div>
-              <Link
-                to="/ai-first"
+          {/* Buttons Section - Bottom on mobile */}
+          <div className="flex flex-col gap-2 md:gap-4">
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
+              <a
+                href="https://admissions.dsu.edu.in/"
+                target="_blank"
+                rel="noreferrer"
                 className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background"
               >
                 <Button
                   size="lg"
-                  className="bg-white hover:bg-white/90 text-black hover:text-black px-8 py-6 text-base font-semibold font-display transition-all duration-300 group border-2 border-white"
+                  className="w-full sm:w-auto bg-white hover:bg-white/90 text-orange-600 hover:text-orange-700 px-6 sm:px-8 py-4 sm:py-6 text-sm sm:text-base font-semibold font-display transition-all duration-300 group border-2 border-white"
                 >
-                  Build the Future of AI at DSU
-                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                  {t("hero.applyNow") || "Apply Today"}
+                  <ArrowRight className="w-4 sm:w-5 h-4 sm:h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
-              </Link>
+              </a>
+              <a
+                href="https://dsu.edu.in/virtual-tour/"
+                target="_blank"
+                rel="noreferrer"
+                className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              >
+                <Button
+                  size="lg"
+                  className="w-full sm:w-auto bg-white hover:bg-white/90 text-black hover:text-black px-6 sm:px-8 py-4 sm:py-6 text-sm sm:text-base font-semibold font-display transition-all duration-300 group border-2 border-white"
+                >
+                  {t("hero.virtualTour") || "Virtual Tour"}
+                </Button>
+              </a>
             </div>
+            <Link
+              to="/ai-first"
+              className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            >
+              <Button
+                size="lg"
+                className="w-full sm:w-auto bg-white hover:bg-white/90 text-black hover:text-black px-6 sm:px-8 py-4 sm:py-6 text-sm sm:text-base font-semibold font-display transition-all duration-300 group border-2 border-white"
+              >
+                Build the Future of AI at DSU
+                <ArrowRight className="w-4 sm:w-5 h-4 sm:h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
