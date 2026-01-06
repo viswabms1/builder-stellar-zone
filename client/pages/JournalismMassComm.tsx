@@ -15,6 +15,7 @@ import {
   Mic,
   PenSquare,
   Star,
+  Users,
   Volume2,
   VolumeX,
 } from "lucide-react";
