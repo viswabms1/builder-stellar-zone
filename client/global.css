@@ -201,6 +201,11 @@
     .hero-section > div {
       padding-top: 4rem !important;
     }
+
+    /* Hide buttons in landscape mode */
+    .landscape-hide-button {
+      display: none !important;
+    }
   }
 }
 
