@@ -536,7 +536,7 @@ function CalendarResourceCard({ entry }: { entry: CalendarEntry }) {
 function HeroVideo() {
   const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const containerRef = useAutoMuteOnScroll(videoRef);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const toggleMute = () => {
     if (videoRef.current) {
@@ -552,8 +552,31 @@ function HeroVideo() {
     video.muted = isMuted;
   }, [isMuted]);
 
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const handleEnded = () => {
+      const rect = containerRef.current?.getBoundingClientRect();
+      const isVisible =
+        rect && rect.top < window.innerHeight && rect.bottom > 0;
+      if (isVisible) {
+        video.currentTime = 0;
+        video.play().catch(() => {});
+      }
+    };
+
+    video.addEventListener("ended", handleEnded);
+    return () => {
+      video.removeEventListener("ended", handleEnded);
+    };
+  }, []);
+
   return (
-    <div className="h-dvh sm:h-[55vh] md:h-[65vh] lg:h-[75vh] relative overflow-hidden flex items-end md:items-center justify-start hero-video-container" ref={containerRef}>
+    <div
+      ref={containerRef}
+      className="h-dvh sm:h-[55vh] md:h-[65vh] lg:h-[75vh] relative overflow-hidden flex items-end md:items-center justify-start hero-video-container"
+    >
       <video
         ref={videoRef}
         src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F2a5ae95792164387a198be90ffece5a6?alt=media&token=285bd3aa-cc60-4942-b4c9-3dc69f86a5a1&apiKey=4aa279a8430d441dba9c55f659831878"
@@ -581,11 +604,14 @@ function HeroVideo() {
         backgroundImage: "repeating-linear-gradient(0deg, rgba(255,255,255,.03) 0px, rgba(255,255,255,.03) 1px, transparent 1px, transparent 2px)"
       }}></div>
 
-      <div className="relative max-w-7xl mx-auto px-6 w-full z-10 pb-20 md:pb-0">
+      <div className="relative max-w-7xl mx-auto px-3 w-full z-10 pb-20 md:pb-0">
         <div className="max-w-2xl">
-          <p className="text-sm md:text-base text-white/80 mb-4 uppercase tracking-widest font-display">
+          <p className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 uppercase tracking-widest font-display">
             School of Law
           </p>
+          <h1 className="text-sm md:text-base text-white/80 mb-6 leading-tight font-display">
+            Excellence in Legal Education
+          </h1>
 
           <div className="flex flex-col sm:flex-row gap-4">
             <a
