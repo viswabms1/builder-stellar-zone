@@ -494,6 +494,20 @@ export default function Academics() {
                     <GraduationCap className="w-5 h-5 ml-2" />
                   </Button>
                 </a>
+                <a
+                  href="https://dsu.edu.in/virtual-tour/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    className="border-2 border-transparent text-orange-500 hover:bg-black/20 bg-black/10 backdrop-blur-sm hover:text-orange-500 px-12 py-6 text-lg font-semibold rounded-xl transition-all duration-300"
+                  >
+                    Virtual Tour
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </Button>
+                </a>
               </div>
 
               <div className="flex flex-wrap gap-2">

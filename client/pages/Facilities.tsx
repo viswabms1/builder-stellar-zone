@@ -518,6 +518,15 @@ export default function Facilities() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="https://dsu.edu.in/virtual-tour/" target="_blank" rel="noreferrer">
+              <Button
+                size="lg"
+                className="bg-transparent border border-transparent hover:bg-transparent text-foreground px-8 py-6 font-semibold rounded-2xl"
+              >
+                Virtual Tour
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+            </a>
             <Link to="/about">
               <Button
                 variant="outline"

@@ -189,6 +189,15 @@ export default function Footer() {
                   <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
                 </RouterLink>
               </Button>
+              <a
+                href="https://dsu.edu.in/virtual-tour"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 text-sm font-medium text-white/80 transition hover:text-white"
+              >
+                Take a virtual tour
+                <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+              </a>
             </div>
 
             <div className="mt-10 grid gap-4 rounded-3xl border border-white/10 bg-white/5 p-6 text-sm text-white/80 font-body sm:flex sm:flex-wrap sm:items-center sm:justify-between">

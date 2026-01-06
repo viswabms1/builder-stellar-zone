@@ -985,6 +985,19 @@ export default function Placements() {
               Explore our state-of-the-art infrastructure supporting placements and training
             </p>
 
+            <a
+              href="https://dsu.edu.in/virtual-tour/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button
+                size="lg"
+                className="bg-transparent border border-transparent hover:bg-transparent text-foreground px-8 py-6 font-semibold rounded-2xl transition-all duration-300"
+              >
+                Take a Virtual Tour
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+            </a>
           </div>
         </div>
       </section>
