@@ -961,15 +961,6 @@ function ProgramCardComponent({ program }: { program: ProgramCard }) {
   );
 }
 
-const landscapeStyles = `
-  @media (orientation: landscape) {
-    .hero-video-container {
-      width: 100vw !important;
-      margin-left: calc(-50vw + 50%) !important;
-    }
-  }
-`;
-
 function HeroVideo() {
   const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -1193,9 +1184,7 @@ function CalendarResourceCard({ entry }: { entry: CalendarEntry }) {
 
 export default function Engineering() {
   return (
-    <>
-      <style>{landscapeStyles}</style>
-      <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <section className="relative" id="top">
         <HeroVideo />
       </section>
@@ -1583,6 +1572,5 @@ export default function Engineering() {
         </div>
       </section>
     </div>
-    </>
   );
 }
