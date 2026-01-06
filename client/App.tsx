@@ -524,6 +524,10 @@ function App() {
                   element={<BAJournalism />}
                 />
                 <Route
+                  path="/academics/journalism-mass-communication/faculty"
+                  element={<JournalismFaculty />}
+                />
+                <Route
                   path="/academics/design/bdesign"
                   element={<BDesignOverview />}
                 />
