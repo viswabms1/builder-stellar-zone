@@ -581,7 +581,7 @@ function HeroVideo() {
   }, [isMuted]);
 
   return (
-    <div className="h-dvh sm:h-[55vh] md:h-[65vh] lg:h-[75vh] relative overflow-hidden flex items-end md:items-center justify-start hero-video-container" style={{ width: '100vw', marginLeft: 'calc(-50vw + 50%)' }} ref={containerRef}>
+    <div className="h-dvh sm:h-[55vh] md:h-[65vh] lg:h-[75vh] relative overflow-hidden flex items-end md:items-center justify-start hero-video-container" ref={containerRef}>
       <video
         ref={videoRef}
         src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2Fb3865b1bf6064214a4b5b2bcfcfeec5a?alt=media&token=6447ef33-1a83-4fce-82b0-92a764af6501&apiKey=4aa279a8430d441dba9c55f659831878"
