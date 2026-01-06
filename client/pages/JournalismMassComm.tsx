@@ -382,10 +382,10 @@ const FEATURED_NEWS: NewsItem[] = [
 ];
 
 const DEAN_INFO: DeanInfo = {
-  name: "Dr. Arjun Menon",
-  title: "M.A., Ph.D",
+  name: "Dr. K Sai Prasad",
+  title: "Professor & Dean",
   position: "Dean, School of Journalism & Mass Communication",
-  photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=800&auto=format&fit=crop",
+  photo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F71f29d6bd6b5411ab1eb11bd6367da53?format=webp&width=800",
   videoUrl: "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F6b6bfa4f3d9e4297af09ef22593ed739?alt=media&token=acbac4ea-e3f5-4f09-992d-fd414eed37c6&apiKey=4aa279a8430d441dba9c55f659831878",
   borderColor: "border-rose-500/20",
   bgColor: "bg-rose-500/10",
