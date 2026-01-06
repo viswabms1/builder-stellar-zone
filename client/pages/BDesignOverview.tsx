@@ -147,11 +147,12 @@ const PROGRAM_CARDS: ProgramCard[] = [
       "Four-year comprehensive programme combining foundational design theory with studio-based projects, global immersions, and mandatory industry internship to prepare human-centered designers and design innovators.",
     image:
       "https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=1600&auto=format&fit=crop",
-    link: "#programs",
+    link: "/academics/design/bdesign/program",
     highlights: [
       "Product Design",
-      "Communication Design",
-      "Environmental Design",
+      "User Experience Design",
+      "Animation and VFX",
+      "Game Design",
     ],
     overlay:
       "bg-gradient-to-br from-brand-magenta/80 via-black/75 to-black/60 mix-blend-multiply",
