@@ -486,19 +486,6 @@ export default function BDesignOverview() {
               </p>
             </div>
 
-            <div className="mt-12">
-              <h3 className="font-display text-2xl md:text-3xl mb-8 text-foreground">
-                Design Specialization Tracks
-              </h3>
-              <p className="text-sm text-foreground font-body mb-8">
-                From Year II onwards, students specialize in one of the following tracks based on interest and aptitude:
-              </p>
-              <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-12">
-                {PROGRAM_CARDS.map((program) => (
-                  <ProgramCardComponent key={program.name} program={program} />
-                ))}
-              </div>
-            </div>
           </div>
         </div>
       </section>
