@@ -33,7 +33,7 @@ export const indexTranslations = {
         programs: ["Pharmacy", "Physiotherapy", "Nursing", "Allied Health"],
       },
       design: {
-        title: "Design & Digital Trans Media",
+        title: "Design",
         description: "",
         programs: ["Animation", "UX/UI", "Graphic Design", "Digital Media"],
       },
@@ -81,7 +81,7 @@ export const indexTranslations = {
         programs: ["ಫಾರ್ಮಸಿ", "ಜೈವಿಕ ಚಿಕಿತ್ಸೆ", "ನರ್ಸಿಂಗ್", "ಬೆಂಬಲಿತ ಆರೋಗ್ಯ"],
       },
       design: {
-        title: "ಡಿಜಾಇನ್ ಮತ್ತು ಡಿಜಿಟಲ್ ಟ್ರಾನ್ಸ್ ಮಿಡಿಯಾ",
+        title: "ಡಿಜಾಇನ್",
         description: "",
         programs: ["ಆನಿಮೇಷನ್", "UX/UI", "ಗ್ರಾಫಿಕ್ ಡಿಜಾಇನ್", "ಡಿಜಿಟಲ್ ಮಾಧ್ಯಮ"],
       },
@@ -129,7 +129,7 @@ export const indexTranslations = {
         programs: ["फार्मेसी", "फिजियोथेरेपी", "नर्सिंग", "संबद्ध स्वास्थ्य"],
       },
       design: {
-        title: "डिजाइन और डिजिटल ट्रांस मीडिया",
+        title: "डिजाइन",
         description: "",
         programs: ["एनिमेशन", "UX/UI", "ग्राफिक डिजाइन", "डिजिटल मीडिया"],
       },
