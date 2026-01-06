@@ -400,10 +400,10 @@ export default function Navigation() {
                         <Link
                           to="/academics"
                           onClick={() => setAcademicsMenuOpen(false)}
-                          className={`w-full block rounded-xl p-4 mb-4 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 font-semibold text-sm group-hover:text-orange-600 ${
+                          className={`w-full block rounded-xl p-4 mb-4 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 font-semibold text-sm ${
                             theme === "light"
-                              ? "bg-gradient-to-r from-orange-100 to-orange-50 border border-orange-200/50 text-orange-900 hover:bg-orange-100"
-                              : "bg-gradient-to-r from-orange-900/30 to-orange-900/10 border border-orange-600/30 text-orange-100 hover:bg-orange-900/40"
+                              ? "bg-gradient-to-r from-orange-100 to-orange-50 border border-orange-200/50 text-orange-900 hover:bg-orange-100 hover:text-orange-700"
+                              : "bg-gradient-to-r from-orange-900/30 to-orange-900/10 border border-orange-600/30 text-orange-200 hover:bg-orange-900/40 hover:text-orange-100"
                           }`}
                         >
                           Explore All Academics
