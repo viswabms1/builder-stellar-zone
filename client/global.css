@@ -180,28 +180,6 @@
     }
   }
 
-  /* Landscape mode optimizations for mobile */
-  @media (max-height: 500px) and (orientation: landscape) {
-    .headline-1 {
-      font-size: 1.5rem; /* Smaller heading in landscape */
-      line-height: 2rem;
-    }
-
-    .headline-2 {
-      font-size: 1.25rem;
-      line-height: 1.75rem;
-    }
-
-    .headline-3 {
-      font-size: 1.125rem;
-      line-height: 1.5rem;
-    }
-
-    .subheadline {
-      font-size: 0.875rem; /* 14px */
-      line-height: 1.25rem;
-    }
-  }
 }
 
 @layer utilities {
