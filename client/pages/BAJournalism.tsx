@@ -62,7 +62,7 @@ export default function BAJournalism() {
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
         </div>
-        <div className="absolute inset-0 flex items-center pt-16 md:pt-0">
+        <div className="absolute inset-0 flex items-start pt-20 md:items-center md:pt-0">
           <div className="max-w-7xl mx-auto px-3">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-brand-magenta/10 rounded-full border border-brand-magenta/20 mb-4">
               <Sparkles className="w-4 h-4 text-brand-magenta" />
