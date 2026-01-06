@@ -368,9 +368,9 @@ export default function Navigation() {
                         )}
                       </button>
 
-                      {/* Academics Mega Menu - Multi-column Layout */}
+                      {/* Academics Mega Menu - Compact Multi-column Layout */}
                       <div
-                        className={`absolute left-0 top-full mt-0 w-auto min-w-max max-w-5xl rounded-lg shadow-2xl transition-all duration-200 py-4 px-6 max-h-96 overflow-y-auto ${
+                        className={`absolute left-0 top-full mt-0 w-auto min-w-max max-w-4xl rounded-lg shadow-2xl transition-all duration-200 py-3 px-4 max-h-[500px] overflow-y-auto ${
                           academicsMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
                         } ${
                           theme === "light"
@@ -382,7 +382,7 @@ export default function Navigation() {
                           scrollbarColor: theme === "light" ? 'rgba(249, 115, 22, 0.5) rgba(249, 115, 22, 0.1)' : 'rgba(255, 255, 255, 0.3) rgba(255, 255, 255, 0.1)'
                         }}
                       >
-                        <div className="grid grid-cols-4 gap-5">
+                        <div className="grid grid-cols-3 gap-3">
                           {academicsSubmenus.schools.map((school) => (
                             <div key={school.name}>
                               {school.external ? (
@@ -390,7 +390,7 @@ export default function Navigation() {
                                   href={school.href}
                                   target="_blank"
                                   rel="noreferrer"
-                                  className={`block font-semibold text-sm mb-3 transition-colors hover:text-orange-400 ${
+                                  className={`block font-semibold text-xs mb-2 transition-colors hover:text-orange-400 ${
                                     theme === "light" ? "text-orange-900" : "text-white"
                                   }`}
                                 >
@@ -400,7 +400,7 @@ export default function Navigation() {
                                 <Link
                                   to={school.href}
                                   onClick={() => setAcademicsMenuOpen(false)}
-                                  className={`block font-semibold text-sm mb-3 transition-colors hover:text-orange-400 ${
+                                  className={`block font-semibold text-xs mb-2 transition-colors hover:text-orange-400 ${
                                     theme === "light" ? "text-orange-900" : "text-white"
                                   }`}
                                 >
@@ -409,11 +409,11 @@ export default function Navigation() {
                               )}
 
                               {(school as any).hasSubGroups ? (
-                                <div className="space-y-2 ml-2">
+                                <div className="space-y-1 ml-2">
                                   {(school as any).subGroups.map((group: any) => {
                                     const isExpanded = expandedSubGroups.has(`${school.name}-${group.name}`);
                                     return (
-                                      <div key={group.name} className="border-l-2 pl-3" style={{
+                                      <div key={group.name} className="border-l-2 pl-2" style={{
                                         borderColor: theme === "light" ? "rgba(249, 115, 22, 0.3)" : "rgba(255, 255, 255, 0.2)"
                                       }}>
                                         <button
@@ -423,18 +423,18 @@ export default function Navigation() {
                                           }`}
                                         >
                                           <ChevronDown
-                                            className={`w-3 h-3 transition-transform ${isExpanded ? 'rotate-0' : '-rotate-90'}`}
+                                            className={`w-2.5 h-2.5 transition-transform ${isExpanded ? 'rotate-0' : '-rotate-90'}`}
                                           />
                                           {group.name}
                                         </button>
                                         {isExpanded && (
-                                          <div className="space-y-1 mt-2">
+                                          <div className="space-y-0.5 mt-1">
                                             {group.departments.map((dept: any) => (
                                               <Link
                                                 key={dept.name}
                                                 to={dept.href}
                                                 onClick={() => setAcademicsMenuOpen(false)}
-                                                className={`block text-xs py-1 transition-colors ${
+                                                className={`block text-xs py-0.5 transition-colors ${
                                                   theme === "light"
                                                     ? "text-gray-700 hover:text-orange-700"
                                                     : "text-white/80 hover:text-white"
@@ -450,7 +450,7 @@ export default function Navigation() {
                                   })}
                                 </div>
                               ) : school.departments.length > 0 && (
-                                <div className="space-y-2 ml-2 border-l-2 pl-3" style={{
+                                <div className="space-y-1 ml-2 border-l-2 pl-2" style={{
                                   borderColor: theme === "light" ? "rgba(249, 115, 22, 0.3)" : "rgba(255, 255, 255, 0.2)"
                                 }}>
                                   {school.departments.map((dept) => (
@@ -458,7 +458,7 @@ export default function Navigation() {
                                       key={dept.name}
                                       to={dept.href}
                                       onClick={() => setAcademicsMenuOpen(false)}
-                                      className={`block text-xs py-1 transition-colors ${
+                                      className={`block text-xs py-0.5 transition-colors ${
                                         theme === "light"
                                           ? "text-gray-700 hover:text-orange-700"
                                           : "text-white/80 hover:text-white"
