@@ -49,7 +49,7 @@ export default function DeptAIDS() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero */}
-      <section className="relative">
+      <section className="relative pt-16 md:pt-0">
         <div className="h-[70vh] md:h-[65vh] w-full overflow-hidden">
           <img
             src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F0319ed06aa42410cb90c38896ba9d23f?format=webp&width=800"
