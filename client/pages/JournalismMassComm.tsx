@@ -327,7 +327,7 @@ const PROGRAM_CARDS: ProgramCard[] = [
       "Three-year programme covering print, television, digital media, filmmaking, podcasting, advertising, public relations and theatre with compulsory two-month internship.",
     image:
       "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1600&auto=format&fit=crop",
-    link: "https://www.dsu.edu.in/journalism-mass-communication/ba-jmc",
+    link: "/academics/journalism-mass-communication/ba",
     highlights: ["Multimedia Storytelling", "Broadcast Production", "Digital Media"],
     overlay: "bg-gradient-to-br from-brand-magenta/80 via-black/75 to-black/60 mix-blend-multiply",
     badgeClass: "bg-brand-magenta/25 text-foreground/90 border border-white/30 backdrop-blur",
