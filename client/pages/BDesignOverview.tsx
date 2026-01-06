@@ -37,6 +37,19 @@ import {
 
 type NoticeItem = ImportedNoticeItem;
 
+type ProgramCard = {
+  name: string;
+  area: string;
+  description: string;
+  image: string;
+  link: string;
+  highlights: string[];
+  overlay: string;
+  badgeClass: string;
+  panelClass: string;
+  featured?: boolean;
+};
+
 type StructurePoint = {
   title: string;
   description: string;
