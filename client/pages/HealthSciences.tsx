@@ -702,8 +702,8 @@ function HeroVideo() {
 
 export default function HealthSciences() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <section className="relative w-full" id="top">
+    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+      <section className="relative" id="top">
         <HeroVideo />
       </section>
 
