@@ -586,7 +586,7 @@ export default function Index() {
         <div className="absolute inset-0 bg-black/40"></div>
 
         {/* Hero Content */}
-        <div className="relative max-w-7xl mx-auto px-3 w-full z-10 pb-0 md:pb-20 pt-4 md:pt-0">
+        <div className="relative max-w-7xl mx-auto px-3 w-full z-10 pb-0 md:pb-20 pt-8 md:pt-0">
           <div className="max-w-4xl">
             <h1 className="text-2xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-3 md:mb-4 leading-tight font-display">
               Dayananda Sagar University
