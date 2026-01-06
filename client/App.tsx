@@ -39,6 +39,7 @@ import HealthSciences from "./pages/HealthSciences";
 import MedicalEducationResearch from "./pages/MedicalEducationResearch";
 import CEE from "./pages/CEE";
 import JournalismMassComm from "./pages/JournalismMassComm";
+import BAJournalism from "./pages/BAJournalism";
 import BDesignOverview from "./pages/BDesignOverview";
 import FacultyDirectory from "./pages/FacultyDirectory";
 import CDSIMER from "./pages/CDSIMER";
@@ -516,6 +517,10 @@ function App() {
                 <Route
                   path="/academics/journalism-mass-communication"
                   element={<JournalismMassComm />}
+                />
+                <Route
+                  path="/academics/journalism-mass-communication/ba"
+                  element={<BAJournalism />}
                 />
                 <Route
                   path="/academics/design/bdesign"
