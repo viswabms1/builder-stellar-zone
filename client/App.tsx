@@ -40,6 +40,7 @@ import MedicalEducationResearch from "./pages/MedicalEducationResearch";
 import CEE from "./pages/CEE";
 import JournalismMassComm from "./pages/JournalismMassComm";
 import BAJournalism from "./pages/BAJournalism";
+import JournalismFaculty from "./pages/journalism/Faculty";
 import BDesignOverview from "./pages/BDesignOverview";
 import FacultyDirectory from "./pages/FacultyDirectory";
 import CDSIMER from "./pages/CDSIMER";
