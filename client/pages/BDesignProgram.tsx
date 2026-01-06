@@ -51,7 +51,7 @@ export default function BDesignProgram() {
       <section className="relative">
         <div className="h-[50vh] sm:h-[65vh] md:h-[65vh] w-full overflow-hidden" style={{ minHeight: '200px' }}>
           <img
-            src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fbfe1937faeac4a68ba3fcf476025f0d9?format=webp&width=800"
+            src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F977d2ec23be54fddb525d7c691a5fa60?format=webp&width=800"
             alt="Bachelor of Design Program"
             className="w-full h-full object-cover"
           />
