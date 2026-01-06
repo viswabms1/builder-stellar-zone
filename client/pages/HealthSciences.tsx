@@ -595,7 +595,7 @@ function CalendarResourceCard({ entry }: { entry: CalendarEntry }) {
 function HeroVideo() {
   const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const containerRef = useAutoMuteOnScroll(videoRef);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const toggleMute = () => {
     if (videoRef.current) {
@@ -611,8 +611,31 @@ function HeroVideo() {
     video.muted = isMuted;
   }, [isMuted]);
 
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const handleEnded = () => {
+      const rect = containerRef.current?.getBoundingClientRect();
+      const isVisible =
+        rect && rect.top < window.innerHeight && rect.bottom > 0;
+      if (isVisible) {
+        video.currentTime = 0;
+        video.play().catch(() => {});
+      }
+    };
+
+    video.addEventListener("ended", handleEnded);
+    return () => {
+      video.removeEventListener("ended", handleEnded);
+    };
+  }, []);
+
   return (
-    <div className="h-dvh sm:h-[55vh] md:h-[65vh] lg:h-[75vh] relative overflow-hidden flex items-end md:items-center justify-start hero-video-container" ref={containerRef}>
+    <div
+      ref={containerRef}
+      className="h-dvh sm:h-[55vh] md:h-[65vh] lg:h-[75vh] relative overflow-hidden flex items-end md:items-center justify-start hero-video-container"
+    >
       <video
         ref={videoRef}
         src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F0b20f5ea03294f4d824e69fd8489b78c?alt=media&token=0c4092c4-4afd-4237-b850-81046ecf52f7&apiKey=4aa279a8430d441dba9c55f659831878"
@@ -642,15 +665,12 @@ function HeroVideo() {
 
       <div className="relative max-w-7xl mx-auto px-3 w-full z-10 pb-20 md:pb-0">
         <div className="max-w-2xl">
-          <p className="text-sm md:text-base text-white/80 mb-4 uppercase tracking-widest font-display">
+          <p className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 uppercase tracking-widest font-display">
             School of Health Sciences
           </p>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight font-display">
+          <h1 className="text-sm md:text-base text-white/80 mb-6 leading-tight font-display">
             Advancing Care. Inspiring Wellness.
           </h1>
-          <p className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed max-w-xl font-display">
-            Build a career in nursing, pharmacy, physiotherapy and allied health with simulation-rich learning and patient-centric hospital immersion.
-          </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
             <a
@@ -687,7 +707,7 @@ function HeroVideo() {
 
       <button
         onClick={toggleMute}
-        className="absolute top-4 right-8 z-10 p-3 rounded-full bg-black/50 hover:bg-black/70 transition-colors text-white backdrop-blur-sm border border-white/20"
+        className="absolute top-8 right-8 z-10 p-3 rounded-full bg-black/50 hover:bg-black/70 transition-colors text-white backdrop-blur-sm border border-white/20"
         aria-label={isMuted ? "Unmute" : "Mute"}
       >
         {isMuted ? (
