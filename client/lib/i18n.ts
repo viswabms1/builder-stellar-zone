@@ -55,7 +55,7 @@ export const translations = {
         programs: ['Pharmacy', 'Physiotherapy', 'Nursing', 'Allied Health'],
       },
       design: {
-        title: 'Design & Digital Trans Media',
+        title: 'Design',
         programs: ['Animation', 'UX/UI', 'Graphic Design', 'Digital Media'],
       },
       medical: {
@@ -451,7 +451,7 @@ export const translations = {
         programs: ['फार्मेसी', 'फिजियोथेरेपी', 'नर्सिंग', 'संबद्ध स्वास्थ्य'],
       },
       design: {
-        title: 'डिजाइन और डिजिटल ट्रांस मीडिया',
+        title: 'डिजाइन',
         programs: ['एनिमेशन', 'UX/UI', 'ग्राफिक डिजाइन', 'डिजिटल मीडिया'],
       },
       medical: {
