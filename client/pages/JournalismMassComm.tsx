@@ -386,7 +386,7 @@ const DEAN_INFO: DeanInfo = {
   title: "M.A., Ph.D",
   position: "Dean, School of Journalism & Mass Communication",
   photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=800&auto=format&fit=crop",
-  videoUrl: "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F0c95c62aa88741fca8ebdc32aade53d5?alt=media&token=c57ff4a9-aea8-4ff3-843b-23ce820ba630&apiKey=4aa279a8430d441dba9c55f659831878",
+  videoUrl: "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F6b6bfa4f3d9e4297af09ef22593ed739?alt=media&token=acbac4ea-e3f5-4f09-992d-fd414eed37c6&apiKey=4aa279a8430d441dba9c55f659831878",
   borderColor: "border-rose-500/20",
   bgColor: "bg-rose-500/10",
 };
