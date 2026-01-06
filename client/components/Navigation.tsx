@@ -499,6 +499,19 @@ export default function Navigation() {
                 );
               })();
 
+              if (idx === 1) {
+                return [
+                  itemElement,
+                  <Link
+                    key="nvidia-ai"
+                    to="/nvidia-ai-architecture"
+                    className={sharedClasses}
+                  >
+                    <span>NVIDIA's AI Architecture</span>
+                  </Link>,
+                ];
+              }
+
               if (idx === 3) {
                 return [
                   itemElement,
@@ -527,13 +540,6 @@ export default function Navigation() {
                           : "brightness-110 drop-shadow-lg"
                       }`}
                     />
-                  </Link>,
-                  <Link
-                    key="nvidia-ai"
-                    to="/nvidia-ai-architecture"
-                    className={sharedClasses}
-                  >
-                    <span>NVIDIA's AI Architecture</span>
                   </Link>,
                 ];
               }
