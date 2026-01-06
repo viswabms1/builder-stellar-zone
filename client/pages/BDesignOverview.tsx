@@ -201,7 +201,7 @@ const DEAN_INFO: DeanInfo = {
   name: "Prof. Dinesh Kulkarni",
   title: "Dean – Digital Transmedia and Design",
   position: "Dean, School of Design",
-  photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop",
+  photo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F4c97444b3cb24a3481336dfe91ee22db?format=webp&width=800",
   videoUrl: "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F8424b7a4848e447e85cd758b83aba08c?alt=media&token=c02519fd-c7bb-4aaf-adba-9897e2e5ca0f&apiKey=4aa279a8430d441dba9c55f659831878",
   borderColor: "border-pink-500/20",
   bgColor: "bg-pink-500/10",
