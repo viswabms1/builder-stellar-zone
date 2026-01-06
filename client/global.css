@@ -180,6 +180,13 @@
     }
   }
 
+  /* Landscape orientation styles */
+  @media (max-height: 500px) and (orientation: landscape) {
+    .hero-section {
+      height: auto !important;
+      min-height: auto !important;
+    }
+  }
 }
 
 @layer utilities {
