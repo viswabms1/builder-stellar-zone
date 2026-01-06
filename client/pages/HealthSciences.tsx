@@ -635,7 +635,6 @@ function HeroVideo() {
     <div
       ref={containerRef}
       className="h-dvh sm:h-[55vh] md:h-[65vh] lg:h-[75vh] relative overflow-hidden flex items-end md:items-center justify-start hero-video-container"
-      style={{ width: '100vw', marginLeft: 'calc(-50vw + 50%)' }}
     >
       <video
         ref={videoRef}
