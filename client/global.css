@@ -236,6 +236,7 @@
   .hero-video-container {
     width: 100vw !important;
     margin-left: calc(-50vw + 50%) !important;
+    overflow: visible !important;
   }
 }
 
@@ -244,5 +245,6 @@
   .hero-video-container {
     width: 100vw !important;
     margin-left: calc(-50vw + 50%) !important;
+    overflow: visible !important;
   }
 }
