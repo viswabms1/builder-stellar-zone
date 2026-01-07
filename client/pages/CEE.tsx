@@ -209,7 +209,7 @@ const DEAN_INFO: DeanInfo = {
   photo:
     "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop",
   videoUrl:
-    "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F0c95c62aa88741fca8ebdc32aade53d5?alt=media&token=c57ff4a9-aea8-4ff3-843b-23ce820ba630&apiKey=4aa279a8430d441dba9c55f659831878",
+    "/videos/dr-udaya-kumar-reddy-trailer.mp4",
   borderColor: "border-purple-500/20",
   bgColor: "bg-purple-500/10",
 };
@@ -285,24 +285,20 @@ function HighlightCard({
 
 function ProgramCardComponent({ program }: { program: ProgramCard }) {
   const isInternal = program.link.startsWith("/");
-  const wrapperClasses = `group block h-full rounded-none ${
-    program.featured ? "lg:col-span-6" : "lg:col-span-3"
-  } focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-magenta focus-visible:ring-offset-2 focus-visible:ring-offset-background`;
+  const wrapperClasses = `group block h-full rounded-none ${program.featured ? "lg:col-span-6" : "lg:col-span-3"
+    } focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-magenta focus-visible:ring-offset-2 focus-visible:ring-offset-background`;
   const overlayClasses =
     program.overlay ??
     "bg-gradient-to-t from-black/85 via-black/50 to-transparent";
-  const badgeClasses = `inline-flex items-center gap-2 rounded-none px-3 py-1 text-xs uppercase tracking-wide ${
-    program.badgeClass ?? "bg-white/15 text-foreground/80 backdrop-blur"
-  }`;
-  const panelClasses = `rounded-none border border-white/15 p-6 shadow-[0_25px_80px_-35px_rgba(255,255,255,0.45)] transition-colors duration-500 ${
-    program.panelClass ?? "bg-black/60 backdrop-blur-lg"
-  }`;
+  const badgeClasses = `inline-flex items-center gap-2 rounded-none px-3 py-1 text-xs uppercase tracking-wide ${program.badgeClass ?? "bg-white/15 text-foreground/80 backdrop-blur"
+    }`;
+  const panelClasses = `rounded-none border border-white/15 p-6 shadow-[0_25px_80px_-35px_rgba(255,255,255,0.45)] transition-colors duration-500 ${program.panelClass ?? "bg-black/60 backdrop-blur-lg"
+    }`;
 
   const content = (
     <div
-      className={`relative flex h-full flex-col justify-end overflow-hidden rounded-none border border-white/10 bg-black/10 backdrop-blur-sm transition-all duration-700 hover:-translate-y-1 hover:shadow-2xl hover:shadow-brand-magenta/20 ${
-        program.featured ? "min-h-[360px]" : "min-h-[300px]"
-      }`}
+      className={`relative flex h-full flex-col justify-end overflow-hidden rounded-none border border-white/10 bg-black/10 backdrop-blur-sm transition-all duration-700 hover:-translate-y-1 hover:shadow-2xl hover:shadow-brand-magenta/20 ${program.featured ? "min-h-[360px]" : "min-h-[300px]"
+        }`}
     >
       <img
         src={program.image}
@@ -427,7 +423,7 @@ function HeroVideo() {
         rect && rect.top < window.innerHeight && rect.bottom > 0;
       if (isVisible) {
         video.currentTime = 0;
-        video.play().catch(() => {});
+        video.play().catch(() => { });
       }
     };
 
@@ -742,13 +738,12 @@ export default function CEE() {
                   {/* Overlaid Category Badge */}
                   <div className="absolute top-4 left-4">
                     <Badge
-                      className={`text-xs font-bold tracking-wider text-white ${
-                        item.color === "brand-orange"
+                      className={`text-xs font-bold tracking-wider text-white ${item.color === "brand-orange"
                           ? "bg-brand-orange"
                           : item.color === "brand-magenta"
                             ? "bg-brand-magenta"
                             : "bg-blue-600"
-                      }`}
+                        }`}
                     >
                       {item.category}
                     </Badge>

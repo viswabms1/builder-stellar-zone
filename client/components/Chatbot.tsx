@@ -9,7 +9,8 @@ interface Message {
   timestamp: Date;
 }
 
-const OPENAI_API_KEY = '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';
+// API key loaded from environment variable for security
+const OPENAI_API_KEY = import.meta.env.VITE_OPENAI_API_KEY || '';
 
 const DSU_SYSTEM_PROMPT = `You are the official DSU (Dayananda Sagar University) Admission Assistant. You help prospective students with:
 
@@ -211,11 +212,10 @@ export default function Chatbot() {
                   className={`flex gap-3 ${message.role === 'user' ? 'flex-row-reverse' : ''}`}
                 >
                   <div
-                    className={`w-8 h-8 rounded-full shrink-0 flex items-center justify-center ${
-                      message.role === 'user'
+                    className={`w-8 h-8 rounded-full shrink-0 flex items-center justify-center ${message.role === 'user'
                         ? 'bg-gradient-to-br from-blue-500 to-purple-600'
                         : 'bg-gradient-to-br from-green-400 to-cyan-500'
-                    }`}
+                      }`}
                   >
                     {message.role === 'user' ? (
                       <User className="w-4 h-4 text-white" />
@@ -224,11 +224,10 @@ export default function Chatbot() {
                     )}
                   </div>
                   <div
-                    className={`max-w-[75%] px-4 py-3 rounded-2xl ${
-                      message.role === 'user'
+                    className={`max-w-[75%] px-4 py-3 rounded-2xl ${message.role === 'user'
                         ? 'bg-gradient-to-br from-blue-500 to-purple-600 text-white rounded-br-md'
                         : 'bg-white/10 text-white/90 rounded-bl-md'
-                    }`}
+                      }`}
                   >
                     <p className="text-sm leading-relaxed whitespace-pre-wrap">{message.content}</p>
                     <span className="text-[10px] opacity-50 mt-1 block">

@@ -24,4 +24,8 @@ dist-ssr
 *.sw?
 
 .config/
-!.env
+
+# Environment variables (contains API keys - DO NOT COMMIT)
+.env
+.env.local
+.env.*.local

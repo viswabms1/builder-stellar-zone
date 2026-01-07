@@ -7,6 +7,7 @@ import { useLanguage } from "@/providers/language-provider";
 import { useTheme } from "@/providers/theme-provider";
 import { Menu, X, ChevronDown, Search, ArrowRight } from "lucide-react";
 import { useState, useEffect } from "react";
+import { useHeroVideo } from "@/providers/hero-video-provider";
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,6 +18,7 @@ export default function Navigation() {
   const location = useLocation();
   const { t } = useLanguage();
   const { theme } = useTheme();
+  const { isHeroVideoInView } = useHeroVideo();
 
   const toggleSubGroup = (schoolName: string, groupName: string) => {
     const key = `${schoolName}-${groupName}`;
@@ -208,13 +210,15 @@ export default function Navigation() {
 
   return (
     <>
-      {/* Top Menu Bar - Hidden on Mobile */}
+      {/* Top Menu Bar - Hidden on Mobile, also hidden when hero video is in view */}
       <div
-        className={`sticky top-0 z-50 transition-all duration-300 hidden sm:block ${
-          theme === "light"
+        className={`sticky top-0 z-50 transition-all duration-500 hidden sm:block ${isHeroVideoInView
+          ? "opacity-0 -translate-y-full pointer-events-none"
+          : "opacity-100 translate-y-0"
+          } ${theme === "light"
             ? "bg-white border-b border-orange-200/30"
             : "bg-slate-950 border-b border-orange-600/20"
-        }`}
+          }`}
       >
         <div className="max-w-7xl mx-auto px-3 py-1.5 flex items-center justify-end gap-4">
           {/* Top Menu Items - pushed to right starting from half screen */}
@@ -223,11 +227,10 @@ export default function Navigation() {
               <Link
                 key={idx}
                 to={item.href}
-                className={`text-xs font-medium transition-colors whitespace-nowrap ${
-                  theme === "light"
-                    ? "text-gray-600 hover:text-orange-600"
-                    : "text-white/80 hover:text-white"
-                }`}
+                className={`text-xs font-medium transition-colors whitespace-nowrap ${theme === "light"
+                  ? "text-gray-600 hover:text-orange-600"
+                  : "text-white/80 hover:text-white"
+                  }`}
               >
                 {item.name}
               </Link>
@@ -241,11 +244,10 @@ export default function Navigation() {
               href="https://ums.mydsi.org/Login.aspx/DSU"
               target="_blank"
               rel="noopener noreferrer"
-              className={`text-xs font-medium transition-colors whitespace-nowrap ${
-                theme === "light"
-                  ? "text-gray-600 hover:text-orange-600"
-                  : "text-white/80 hover:text-white"
-              }`}
+              className={`text-xs font-medium transition-colors whitespace-nowrap ${theme === "light"
+                ? "text-gray-600 hover:text-orange-600"
+                : "text-white/80 hover:text-white"
+                }`}
             >
               ERP Login
             </a>
@@ -253,36 +255,388 @@ export default function Navigation() {
         </div>
       </div>
 
-      {/* Main Navigation Bar */}
+      {/* Main Navigation Bar - Hidden when hero video is in view */}
       <nav
-      className={`sticky top-0 z-50 transition-all duration-300 ${
-        theme === "light"
-          ? "bg-white border-b border-orange-200/30"
-          : "bg-slate-950 border-b border-orange-600/20"
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-3">
-        <div className="flex items-center justify-between h-20">
-          {/* Mobile menu button placeholder for spacing */}
-          <div className="md:hidden w-12" />
+        className={`sticky top-0 z-50 transition-all duration-500 ${isHeroVideoInView
+            ? "opacity-0 -translate-y-full pointer-events-none"
+            : "opacity-100 translate-y-0"
+          } ${theme === "light"
+            ? "bg-white border-b border-orange-200/30"
+            : "bg-slate-950 border-b border-orange-600/20"
+          }`}
+      >
+        <div className="max-w-7xl mx-auto px-3">
+          <div className="flex items-center justify-between h-20">
+            {/* Mobile menu button placeholder for spacing */}
+            <div className="md:hidden w-12" />
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-0.5">
-            {navigation.map((item, idx) => {
-              const active = !item.external && isActive(item.href);
-              const isAbout = item.href === "/about";
-              const isAcademics = item.href === "/academics";
-              const sharedClasses = `flex items-center space-x-1 px-3 py-1.5 rounded-xl text-sm font-medium font-display transition-all duration-200 group ${
-                theme === "light"
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center gap-0.5">
+              {navigation.map((item, idx) => {
+                const active = !item.external && isActive(item.href);
+                const isAbout = item.href === "/about";
+                const isAcademics = item.href === "/academics";
+                const sharedClasses = `flex items-center space-x-1 px-3 py-1.5 rounded-xl text-sm font-medium font-display transition-all duration-200 group ${theme === "light"
                   ? active || (isAbout && aboutMenuOpen) || (isAcademics && academicsMenuOpen)
                     ? "bg-orange-100 text-orange-900 font-semibold"
                     : "text-gray-700 hover:text-orange-600 hover:bg-gray-100"
                   : active || (isAbout && aboutMenuOpen) || (isAcademics && academicsMenuOpen)
                     ? "bg-white/20 text-white font-semibold"
                     : "text-white hover:text-white hover:bg-white/10"
-              }`;
+                  }`;
 
-              const itemElement = (() => {
+                const itemElement = (() => {
+                  if (item.external) {
+                    return (
+                      <a
+                        key={idx}
+                        href={item.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className={sharedClasses}
+                      >
+                        <span>{item.name}</span>
+                      </a>
+                    );
+                  }
+
+                  if (isAbout) {
+                    return (
+                      <div
+                        key={idx}
+                        className="relative group"
+                        onMouseEnter={() => setAboutMenuOpen(true)}
+                        onMouseLeave={() => setAboutMenuOpen(false)}
+                      >
+                        <button onClick={() => setAboutMenuOpen(!aboutMenuOpen)} className={sharedClasses}>
+                          <span>{item.name}</span>
+                          <ChevronDown className={`w-4 h-4 transition-transform ${aboutMenuOpen ? "rotate-180" : ""}`} />
+                          {active && (
+                            <div
+                              className={`w-1 h-1 rounded-full ${theme === "light" ? "bg-orange-600" : "bg-white"
+                                }`}
+                            />
+                          )}
+                        </button>
+
+                        {/* Mega Menu Dropdown - Modern Card-Based Layout */}
+                        <div
+                          className={`absolute left-0 top-full mt-1 w-auto min-w-max max-w-2xl rounded-2xl shadow-2xl transition-all duration-300 py-5 px-5 max-h-[600px] overflow-y-auto backdrop-blur-sm ${aboutMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
+                            } ${theme === "light"
+                              ? "bg-white/95 border border-orange-200/50"
+                              : "bg-slate-800/95 border border-orange-600/30"
+                            }`}
+                          style={{
+                            scrollbarWidth: 'thin',
+                            scrollbarColor: theme === "light" ? 'rgba(249, 115, 22, 0.5) rgba(249, 115, 22, 0.1)' : 'rgba(255, 255, 255, 0.3) rgba(255, 255, 255, 0.1)'
+                          }}
+                        >
+                          <div className="grid grid-cols-2 gap-4">
+                            {aboutSubmenus.map((submenu, idx) => {
+                              const cardColors = [
+                                { bg: theme === "light" ? "bg-orange-50" : "bg-orange-900/20", border: "border-orange-200/50 dark:border-orange-600/30", text: "text-orange-900 dark:text-orange-100" },
+                                { bg: theme === "light" ? "bg-pink-50" : "bg-pink-900/20", border: "border-pink-200/50 dark:border-pink-600/30", text: "text-pink-900 dark:text-pink-100" },
+                                { bg: theme === "light" ? "bg-blue-50" : "bg-blue-900/20", border: "border-blue-200/50 dark:border-blue-600/30", text: "text-blue-900 dark:text-blue-100" },
+                                { bg: theme === "light" ? "bg-purple-50" : "bg-purple-900/20", border: "border-purple-200/50 dark:border-purple-600/30", text: "text-purple-900 dark:text-purple-100" },
+                              ];
+                              const colors = cardColors[idx % cardColors.length];
+
+                              return (
+                                <Link
+                                  key={submenu.name}
+                                  to={submenu.href}
+                                  onClick={() => setAboutMenuOpen(false)}
+                                  className={`${colors.bg} ${colors.border} border rounded-xl p-4 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 group block text-sm font-semibold ${theme === "light" ? "text-gray-900 group-hover:text-orange-600" : "text-white group-hover:text-orange-200"
+                                    }`}
+                                >
+                                  {submenu.name}
+                                </Link>
+                              );
+                            })}
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  }
+
+                  if (isAcademics) {
+                    return (
+                      <div
+                        key={idx}
+                        className="relative group"
+                        onMouseEnter={() => setAcademicsMenuOpen(true)}
+                        onMouseLeave={() => setAcademicsMenuOpen(false)}
+                      >
+                        <button onClick={() => setAcademicsMenuOpen(!academicsMenuOpen)} className={sharedClasses}>
+                          <span>{item.name}</span>
+                          <ChevronDown className={`w-4 h-4 transition-transform ${academicsMenuOpen ? "rotate-180" : ""}`} />
+                          {active && (
+                            <div
+                              className={`w-1 h-1 rounded-full ${theme === "light" ? "bg-orange-600" : "bg-white"
+                                }`}
+                            />
+                          )}
+                        </button>
+
+                        {/* Academics Mega Menu - Modern Card-Based Layout */}
+                        <div
+                          className={`absolute left-0 top-full mt-1 w-auto min-w-max max-w-5xl rounded-2xl shadow-2xl transition-all duration-300 py-5 px-5 max-h-[600px] overflow-y-auto backdrop-blur-sm ${academicsMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
+                            } ${theme === "light"
+                              ? "bg-white/95 border border-orange-200/50"
+                              : "bg-slate-800/95 border border-orange-600/30"
+                            }`}
+                          style={{
+                            scrollbarWidth: 'thin',
+                            scrollbarColor: theme === "light" ? 'rgba(249, 115, 22, 0.5) rgba(249, 115, 22, 0.1)' : 'rgba(255, 255, 255, 0.3) rgba(255, 255, 255, 0.1)'
+                          }}
+                        >
+                          {/* Academics Overview Link */}
+                          <Link
+                            to="/academics"
+                            onClick={() => setAcademicsMenuOpen(false)}
+                            className={`w-full block rounded-xl p-4 mb-4 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 font-semibold text-sm ${theme === "light"
+                              ? "bg-gradient-to-r from-orange-100 to-orange-50 border border-orange-200/50 text-orange-900 hover:bg-orange-100 hover:text-orange-700"
+                              : "bg-gradient-to-r from-orange-900/30 to-orange-900/10 border border-orange-600/30 text-orange-200 hover:bg-orange-900/40 hover:text-orange-100"
+                              }`}
+                          >
+                            Explore All Academics
+                            <ArrowRight className="w-4 h-4 inline ml-2" />
+                          </Link>
+
+                          <div className="grid grid-cols-2 gap-4">
+                            {academicsSubmenus.schools.map((school, schoolIdx) => {
+                              const cardColors = [
+                                { bg: theme === "light" ? "bg-orange-50" : "bg-orange-900/20", border: "border-orange-200/50 dark:border-orange-600/30", text: "text-orange-900 dark:text-orange-100" },
+                                { bg: theme === "light" ? "bg-pink-50" : "bg-pink-900/20", border: "border-pink-200/50 dark:border-pink-600/30", text: "text-pink-900 dark:text-pink-100" },
+                                { bg: theme === "light" ? "bg-blue-50" : "bg-blue-900/20", border: "border-blue-200/50 dark:border-blue-600/30", text: "text-blue-900 dark:text-blue-100" },
+                                { bg: theme === "light" ? "bg-purple-50" : "bg-purple-900/20", border: "border-purple-200/50 dark:border-purple-600/30", text: "text-purple-900 dark:text-purple-100" },
+                              ];
+                              const colors = cardColors[schoolIdx % cardColors.length];
+
+                              return (
+                                <div
+                                  key={school.name}
+                                  className={`${colors.bg} ${colors.border} border rounded-xl p-3 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 group`}
+                                >
+                                  {school.external ? (
+                                    <a
+                                      href={school.href}
+                                      target="_blank"
+                                      rel="noreferrer"
+                                      className={`block font-bold text-sm mb-2 transition-colors ${theme === "light" ? "text-gray-900 group-hover:text-orange-600" : "text-white group-hover:text-orange-200"
+                                        }`}
+                                    >
+                                      {school.name}
+                                    </a>
+                                  ) : (
+                                    <Link
+                                      to={school.href}
+                                      onClick={() => setAcademicsMenuOpen(false)}
+                                      className={`block font-bold text-sm mb-2 transition-colors ${theme === "light" ? "text-gray-900 group-hover:text-orange-600" : "text-white group-hover:text-orange-200"
+                                        }`}
+                                    >
+                                      {school.name}
+                                    </Link>
+                                  )}
+
+                                  {(school as any).hasSubGroups ? (
+                                    <div className="space-y-2">
+                                      {(school as any).subGroups.map((group: any) => {
+                                        const isExpanded = expandedSubGroups.has(`${school.name}-${group.name}`);
+                                        return (
+                                          <div key={group.name}>
+                                            <button
+                                              onClick={() => toggleSubGroup(school.name, group.name)}
+                                              className={`text-xs font-semibold flex items-center gap-2 transition-all w-full p-2 rounded hover:bg-white/30 dark:hover:bg-white/10 ${theme === "light" ? "text-gray-700 hover:text-orange-700" : "text-white/80 hover:text-white"
+                                                }`}
+                                            >
+                                              <ChevronDown
+                                                className={`w-3 h-3 transition-transform ${isExpanded ? 'rotate-0' : '-rotate-90'}`}
+                                              />
+                                              {group.name}
+                                            </button>
+                                            {isExpanded && (
+                                              <div className="space-y-1 ml-2 pl-2 border-l border-white/20">
+                                                {group.departments.map((dept: any) => (
+                                                  <Link
+                                                    key={dept.name}
+                                                    to={dept.href}
+                                                    onClick={() => setAcademicsMenuOpen(false)}
+                                                    className={`block text-xs py-1 px-2 rounded transition-all hover:bg-white/20 dark:hover:bg-white/10 ${theme === "light"
+                                                      ? "text-gray-700 hover:text-orange-700"
+                                                      : "text-white/70 hover:text-white"
+                                                      }`}
+                                                  >
+                                                    {dept.name}
+                                                  </Link>
+                                                ))}
+                                              </div>
+                                            )}
+                                          </div>
+                                        );
+                                      })}
+                                    </div>
+                                  ) : school.departments.length > 0 && (
+                                    <div className="space-y-2">
+                                      {school.departments.map((dept) => (
+                                        <Link
+                                          key={dept.name}
+                                          to={dept.href}
+                                          onClick={() => setAcademicsMenuOpen(false)}
+                                          className={`block text-xs py-1 px-2 rounded transition-all hover:bg-white/20 dark:hover:bg-white/10 ${theme === "light"
+                                            ? "text-gray-700 hover:text-orange-700"
+                                            : "text-white/70 hover:text-white"
+                                            }`}
+                                        >
+                                          {dept.name}
+                                        </Link>
+                                      ))}
+                                    </div>
+                                  )}
+                                </div>
+                              );
+                            })}
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  }
+
+                  return (
+                    <Link key={idx} to={item.href} className={sharedClasses}>
+                      <span
+                        className={
+                          item.href === "/centre-of-excellence"
+                            ? "max-w-[80px] text-center"
+                            : ""
+                        }
+                      >
+                        {item.name}
+                      </span>
+                      {active && (
+                        <div
+                          className={`w-1 h-1 rounded-full ${theme === "light" ? "bg-orange-600" : "bg-white"
+                            }`}
+                        />
+                      )}
+                    </Link>
+                  );
+                })();
+
+                if (idx === 1) {
+                  return [
+                    itemElement,
+                    <Link
+                      key="nvidia-ai"
+                      to="/nvidia-ai-architecture"
+                      className={sharedClasses}
+                    >
+                      <span>NVIDIA's AI Architecture</span>
+                    </Link>,
+                  ];
+                }
+
+                if (idx === 3) {
+                  return [
+                    itemElement,
+                    <Link
+                      key="logo"
+                      to="/"
+                      className={`flex items-center group flex-shrink-0 px-4 py-3 rounded-xl transition-all duration-300 ${theme === "light"
+                        ? "bg-white hover:bg-white"
+                        : "hover:bg-white/10"
+                        }`}
+                    >
+                      <img
+                        src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fc9f5a55fa7004ae596d21cc4fa4aed1f?format=webp&width=1200"
+                        alt="Dayananda Sagar University Logo"
+                        className={`h-20 w-auto object-contain group-hover:scale-110 transition-all duration-300 ${theme === "light"
+                          ? ""
+                          : "brightness-110 drop-shadow-lg"
+                          }`}
+                      />
+                    </Link>,
+                    <Link
+                      key="ai-label"
+                      to="/ai-first"
+                      className={sharedClasses}
+                    >
+                      <span>AI-First @ DSU</span>
+                    </Link>,
+                  ];
+                }
+
+                return itemElement;
+              })}
+            </div>
+
+            {/* Desktop Actions */}
+            <div className="hidden md:flex items-center space-x-2">
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => setSearchOpen(true)}
+                className={`gap-2 border ${theme === "light"
+                  ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100 border-gray-300"
+                  : "text-white/80 hover:text-white hover:bg-white/10 border-white/20"
+                  }`}
+              >
+                <Search className="w-4 h-4" />
+              </Button>
+              <ThemeToggle
+                className={
+                  theme === "light"
+                    ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
+                    : "text-white/80 hover:text-white hover:bg-white/10"
+                }
+              />
+            </div>
+
+            {/* Mobile menu button */}
+            <div className="md:hidden">
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => setIsOpen(!isOpen)}
+                className={
+                  theme === "light"
+                    ? "text-gray-700 hover:text-orange-600"
+                    : "text-white/80 hover:text-white"
+                }
+              >
+                {isOpen ? (
+                  <X className="w-5 h-5" />
+                ) : (
+                  <Menu className="w-5 h-5" />
+                )}
+              </Button>
+            </div>
+          </div>
+        </div>
+
+        {/* Mobile Navigation */}
+        {isOpen && (
+          <div
+            className={`md:hidden border-t ${theme === "light"
+              ? "border-orange-200/30 bg-white"
+              : "border-orange-600/20 bg-slate-900"
+              }`}
+          >
+            <div className="px-3 py-4 space-y-3 max-h-[calc(100vh-180px)] overflow-y-auto">
+              {/* Main Navigation Items */}
+              {navigation.map((item, idx) => {
+                const active = !item.external && isActive(item.href);
+                const isAbout = item.href === "/about";
+                const isAcademics = item.href === "/academics";
+                const sharedClasses = `flex items-center space-x-2 px-3 py-2.5 rounded-xl text-sm font-medium font-display transition-all duration-200 ${theme === "light"
+                  ? active
+                    ? "bg-orange-200 text-orange-900 font-semibold"
+                    : "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
+                  : active
+                    ? "bg-white/20 text-white font-semibold"
+                    : "text-white hover:text-white hover:bg-white/10"
+                  }`;
+
                 if (item.external) {
                   return (
                     <a
@@ -290,6 +644,7 @@ export default function Navigation() {
                       href={item.href}
                       target="_blank"
                       rel="noreferrer"
+                      onClick={() => setIsOpen(false)}
                       className={sharedClasses}
                     >
                       <span>{item.name}</span>
@@ -299,675 +654,285 @@ export default function Navigation() {
 
                 if (isAbout) {
                   return (
-                    <div
-                      key={idx}
-                      className="relative group"
-                      onMouseEnter={() => setAboutMenuOpen(true)}
-                      onMouseLeave={() => setAboutMenuOpen(false)}
-                    >
-                      <button onClick={() => setAboutMenuOpen(!aboutMenuOpen)} className={sharedClasses}>
-                        <span>{item.name}</span>
-                        <ChevronDown className={`w-4 h-4 transition-transform ${aboutMenuOpen ? "rotate-180" : ""}`} />
-                        {active && (
-                          <div
-                            className={`w-1 h-1 rounded-full ${
-                              theme === "light" ? "bg-orange-600" : "bg-white"
+                    <div key={idx} className="space-y-2">
+                      <button
+                        onClick={() => setAboutMenuOpen(!aboutMenuOpen)}
+                        className={`w-full text-left ${sharedClasses}`}
+                      >
+                        <span className="flex-1">{item.name}</span>
+                        <ChevronDown
+                          className={`w-4 h-4 transition-transform ${aboutMenuOpen ? "rotate-180" : ""
                             }`}
-                          />
-                        )}
+                        />
                       </button>
 
-                      {/* Mega Menu Dropdown - Modern Card-Based Layout */}
-                      <div
-                        className={`absolute left-0 top-full mt-1 w-auto min-w-max max-w-2xl rounded-2xl shadow-2xl transition-all duration-300 py-5 px-5 max-h-[600px] overflow-y-auto backdrop-blur-sm ${
-                          aboutMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
-                        } ${
-                          theme === "light"
-                            ? "bg-white/95 border border-orange-200/50"
-                            : "bg-slate-800/95 border border-orange-600/30"
-                        }`}
-                        style={{
-                          scrollbarWidth: 'thin',
-                          scrollbarColor: theme === "light" ? 'rgba(249, 115, 22, 0.5) rgba(249, 115, 22, 0.1)' : 'rgba(255, 255, 255, 0.3) rgba(255, 255, 255, 0.1)'
-                        }}
-                      >
-                        <div className="grid grid-cols-2 gap-4">
-                          {aboutSubmenus.map((submenu, idx) => {
-                            const cardColors = [
-                              { bg: theme === "light" ? "bg-orange-50" : "bg-orange-900/20", border: "border-orange-200/50 dark:border-orange-600/30", text: "text-orange-900 dark:text-orange-100" },
-                              { bg: theme === "light" ? "bg-pink-50" : "bg-pink-900/20", border: "border-pink-200/50 dark:border-pink-600/30", text: "text-pink-900 dark:text-pink-100" },
-                              { bg: theme === "light" ? "bg-blue-50" : "bg-blue-900/20", border: "border-blue-200/50 dark:border-blue-600/30", text: "text-blue-900 dark:text-blue-100" },
-                              { bg: theme === "light" ? "bg-purple-50" : "bg-purple-900/20", border: "border-purple-200/50 dark:border-purple-600/30", text: "text-purple-900 dark:text-purple-100" },
-                            ];
-                            const colors = cardColors[idx % cardColors.length];
-
-                            return (
-                              <Link
-                                key={submenu.name}
-                                to={submenu.href}
-                                onClick={() => setAboutMenuOpen(false)}
-                                className={`${colors.bg} ${colors.border} border rounded-xl p-4 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 group block text-sm font-semibold ${
-                                  theme === "light" ? "text-gray-900 group-hover:text-orange-600" : "text-white group-hover:text-orange-200"
+                      {/* Mobile About Submenu */}
+                      {aboutMenuOpen && (
+                        <div
+                          className={`rounded-lg py-2 ml-4 border-l-2 ${theme === "light"
+                            ? "bg-orange-100 border-l-orange-300"
+                            : "bg-white/20 border-l-white/40"
+                            }`}
+                        >
+                          {aboutSubmenus.map((submenu, subIdx) => (
+                            <Link
+                              key={subIdx}
+                              to={submenu.href}
+                              onClick={() => {
+                                setIsOpen(false);
+                                setAboutMenuOpen(false);
+                              }}
+                              className={`block px-4 py-1.5 text-sm rounded transition-colors ${theme === "light"
+                                ? "text-gray-700 hover:bg-orange-200"
+                                : "text-white hover:bg-white/20"
                                 }`}
-                              >
-                                {submenu.name}
-                              </Link>
-                            );
-                          })}
+                            >
+                              {submenu.name}
+                            </Link>
+                          ))}
                         </div>
-                      </div>
+                      )}
                     </div>
                   );
                 }
 
                 if (isAcademics) {
                   return (
-                    <div
-                      key={idx}
-                      className="relative group"
-                      onMouseEnter={() => setAcademicsMenuOpen(true)}
-                      onMouseLeave={() => setAcademicsMenuOpen(false)}
-                    >
-                      <button onClick={() => setAcademicsMenuOpen(!academicsMenuOpen)} className={sharedClasses}>
-                        <span>{item.name}</span>
-                        <ChevronDown className={`w-4 h-4 transition-transform ${academicsMenuOpen ? "rotate-180" : ""}`} />
-                        {active && (
-                          <div
-                            className={`w-1 h-1 rounded-full ${
-                              theme === "light" ? "bg-orange-600" : "bg-white"
+                    <div key={idx} className="space-y-2">
+                      <button
+                        onClick={() => setAcademicsMenuOpen(!academicsMenuOpen)}
+                        className={`w-full text-left ${sharedClasses}`}
+                      >
+                        <span className="flex-1">{item.name}</span>
+                        <ChevronDown
+                          className={`w-4 h-4 transition-transform ${academicsMenuOpen ? "rotate-180" : ""
                             }`}
-                          />
-                        )}
+                        />
                       </button>
 
-                      {/* Academics Mega Menu - Modern Card-Based Layout */}
-                      <div
-                        className={`absolute left-0 top-full mt-1 w-auto min-w-max max-w-5xl rounded-2xl shadow-2xl transition-all duration-300 py-5 px-5 max-h-[600px] overflow-y-auto backdrop-blur-sm ${
-                          academicsMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
-                        } ${
-                          theme === "light"
-                            ? "bg-white/95 border border-orange-200/50"
-                            : "bg-slate-800/95 border border-orange-600/30"
-                        }`}
-                        style={{
-                          scrollbarWidth: 'thin',
-                          scrollbarColor: theme === "light" ? 'rgba(249, 115, 22, 0.5) rgba(249, 115, 22, 0.1)' : 'rgba(255, 255, 255, 0.3) rgba(255, 255, 255, 0.1)'
-                        }}
-                      >
-                        {/* Academics Overview Link */}
-                        <Link
-                          to="/academics"
-                          onClick={() => setAcademicsMenuOpen(false)}
-                          className={`w-full block rounded-xl p-4 mb-4 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 font-semibold text-sm ${
-                            theme === "light"
-                              ? "bg-gradient-to-r from-orange-100 to-orange-50 border border-orange-200/50 text-orange-900 hover:bg-orange-100 hover:text-orange-700"
-                              : "bg-gradient-to-r from-orange-900/30 to-orange-900/10 border border-orange-600/30 text-orange-200 hover:bg-orange-900/40 hover:text-orange-100"
-                          }`}
+                      {/* Mobile Academics Submenu */}
+                      {academicsMenuOpen && (
+                        <div
+                          className={`rounded-lg py-2 ml-4 border-l-2 max-h-96 overflow-y-auto ${theme === "light"
+                            ? "bg-orange-100 border-l-orange-300"
+                            : "bg-white/20 border-l-white/40"
+                            }`}
                         >
-                          Explore All Academics
-                          <ArrowRight className="w-4 h-4 inline ml-2" />
-                        </Link>
-
-                        <div className="grid grid-cols-2 gap-4">
-                          {academicsSubmenus.schools.map((school, schoolIdx) => {
-                            const cardColors = [
-                              { bg: theme === "light" ? "bg-orange-50" : "bg-orange-900/20", border: "border-orange-200/50 dark:border-orange-600/30", text: "text-orange-900 dark:text-orange-100" },
-                              { bg: theme === "light" ? "bg-pink-50" : "bg-pink-900/20", border: "border-pink-200/50 dark:border-pink-600/30", text: "text-pink-900 dark:text-pink-100" },
-                              { bg: theme === "light" ? "bg-blue-50" : "bg-blue-900/20", border: "border-blue-200/50 dark:border-blue-600/30", text: "text-blue-900 dark:text-blue-100" },
-                              { bg: theme === "light" ? "bg-purple-50" : "bg-purple-900/20", border: "border-purple-200/50 dark:border-purple-600/30", text: "text-purple-900 dark:text-purple-100" },
-                            ];
-                            const colors = cardColors[schoolIdx % cardColors.length];
-
-                            return (
-                              <div
-                                key={school.name}
-                                className={`${colors.bg} ${colors.border} border rounded-xl p-3 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 group`}
-                              >
-                                {school.external ? (
-                                  <a
-                                    href={school.href}
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    className={`block font-bold text-sm mb-2 transition-colors ${
-                                      theme === "light" ? "text-gray-900 group-hover:text-orange-600" : "text-white group-hover:text-orange-200"
+                          {academicsSubmenus.schools.map((school, schoolIdx) => (
+                            <div key={schoolIdx} className="mb-2">
+                              {school.external ? (
+                                <a
+                                  href={school.href}
+                                  target="_blank"
+                                  rel="noreferrer"
+                                  onClick={() => {
+                                    setIsOpen(false);
+                                    setAcademicsMenuOpen(false);
+                                  }}
+                                  className={`block px-4 py-2 text-sm font-semibold rounded transition-colors ${theme === "light"
+                                    ? "text-orange-900 hover:bg-orange-200"
+                                    : "text-white hover:bg-white/20"
                                     }`}
-                                  >
-                                    {school.name}
-                                  </a>
-                                ) : (
-                                  <Link
-                                    to={school.href}
-                                    onClick={() => setAcademicsMenuOpen(false)}
-                                    className={`block font-bold text-sm mb-2 transition-colors ${
-                                      theme === "light" ? "text-gray-900 group-hover:text-orange-600" : "text-white group-hover:text-orange-200"
+                                >
+                                  {school.name}
+                                </a>
+                              ) : (
+                                <Link
+                                  to={school.href}
+                                  onClick={() => {
+                                    setIsOpen(false);
+                                    setAcademicsMenuOpen(false);
+                                  }}
+                                  className={`block px-4 py-2 text-sm font-semibold rounded transition-colors ${theme === "light"
+                                    ? "text-orange-900 hover:bg-orange-200"
+                                    : "text-white hover:bg-white/20"
                                     }`}
-                                  >
-                                    {school.name}
-                                  </Link>
-                                )}
+                                >
+                                  {school.name}
+                                </Link>
+                              )}
 
-                                {(school as any).hasSubGroups ? (
-                                  <div className="space-y-2">
-                                    {(school as any).subGroups.map((group: any) => {
-                                      const isExpanded = expandedSubGroups.has(`${school.name}-${group.name}`);
-                                      return (
-                                        <div key={group.name}>
-                                          <button
-                                            onClick={() => toggleSubGroup(school.name, group.name)}
-                                            className={`text-xs font-semibold flex items-center gap-2 transition-all w-full p-2 rounded hover:bg-white/30 dark:hover:bg-white/10 ${
-                                              theme === "light" ? "text-gray-700 hover:text-orange-700" : "text-white/80 hover:text-white"
+                              {(school as any).hasSubGroups ? (
+                                <div className="ml-4 space-y-2">
+                                  {(school as any).subGroups.map((group: any, groupIdx: number) => {
+                                    const isExpanded = expandedSubGroups.has(`${school.name}-${group.name}`);
+                                    return (
+                                      <div key={groupIdx}>
+                                        <button
+                                          onClick={() => toggleSubGroup(school.name, group.name)}
+                                          className={`w-full text-left px-4 py-1 text-xs font-semibold flex items-center gap-1 rounded transition-colors ${theme === "light" ? "text-orange-900 hover:bg-orange-200" : "text-white/90 hover:bg-white/20"
                                             }`}
-                                          >
-                                            <ChevronDown
-                                              className={`w-3 h-3 transition-transform ${isExpanded ? 'rotate-0' : '-rotate-90'}`}
-                                            />
-                                            {group.name}
-                                          </button>
-                                          {isExpanded && (
-                                            <div className="space-y-1 ml-2 pl-2 border-l border-white/20">
-                                              {group.departments.map((dept: any) => (
-                                                <Link
-                                                  key={dept.name}
-                                                  to={dept.href}
-                                                  onClick={() => setAcademicsMenuOpen(false)}
-                                                  className={`block text-xs py-1 px-2 rounded transition-all hover:bg-white/20 dark:hover:bg-white/10 ${
-                                                    theme === "light"
-                                                      ? "text-gray-700 hover:text-orange-700"
-                                                      : "text-white/70 hover:text-white"
+                                        >
+                                          <ChevronDown
+                                            className={`w-3 h-3 transition-transform ${isExpanded ? 'rotate-0' : '-rotate-90'}`}
+                                          />
+                                          {group.name}
+                                        </button>
+                                        {isExpanded && (
+                                          <div className="space-y-1">
+                                            {group.departments.map((dept: any, deptIdx: number) => (
+                                              <Link
+                                                key={deptIdx}
+                                                to={dept.href}
+                                                onClick={() => {
+                                                  setIsOpen(false);
+                                                  setAcademicsMenuOpen(false);
+                                                }}
+                                                className={`block px-6 py-1 text-xs rounded transition-colors ${theme === "light"
+                                                  ? "text-gray-700 hover:bg-orange-200"
+                                                  : "text-white/80 hover:bg-white/20"
                                                   }`}
-                                                >
-                                                  {dept.name}
-                                                </Link>
-                                              ))}
-                                            </div>
-                                          )}
-                                        </div>
-                                      );
-                                    })}
-                                  </div>
-                                ) : school.departments.length > 0 && (
-                                  <div className="space-y-2">
-                                    {school.departments.map((dept) => (
-                                      <Link
-                                        key={dept.name}
-                                        to={dept.href}
-                                        onClick={() => setAcademicsMenuOpen(false)}
-                                        className={`block text-xs py-1 px-2 rounded transition-all hover:bg-white/20 dark:hover:bg-white/10 ${
-                                          theme === "light"
-                                            ? "text-gray-700 hover:text-orange-700"
-                                            : "text-white/70 hover:text-white"
+                                              >
+                                                {dept.name}
+                                              </Link>
+                                            ))}
+                                          </div>
+                                        )}
+                                      </div>
+                                    );
+                                  })}
+                                </div>
+                              ) : school.departments.length > 0 && (
+                                <div className="ml-4 space-y-1">
+                                  {school.departments.map((dept, deptIdx) => (
+                                    <Link
+                                      key={deptIdx}
+                                      to={dept.href}
+                                      onClick={() => {
+                                        setIsOpen(false);
+                                        setAcademicsMenuOpen(false);
+                                      }}
+                                      className={`block px-4 py-1 text-xs rounded transition-colors ${theme === "light"
+                                        ? "text-gray-700 hover:bg-orange-200"
+                                        : "text-white/80 hover:bg-white/20"
                                         }`}
-                                      >
-                                        {dept.name}
-                                      </Link>
-                                    ))}
-                                  </div>
-                                )}
-                              </div>
-                            );
-                          })}
+                                    >
+                                      {dept.name}
+                                    </Link>
+                                  ))}
+                                </div>
+                              )}
+                            </div>
+                          ))}
                         </div>
-                      </div>
+                      )}
                     </div>
                   );
                 }
 
                 return (
-                  <Link key={idx} to={item.href} className={sharedClasses}>
+                  <Link
+                    key={idx}
+                    to={item.href}
+                    onClick={() => setIsOpen(false)}
+                    className={sharedClasses}
+                  >
                     <span
                       className={
                         item.href === "/centre-of-excellence"
-                          ? "max-w-[80px] text-center"
+                          ? "max-w-[100px]"
                           : ""
                       }
                     >
                       {item.name}
                     </span>
-                    {active && (
-                      <div
-                        className={`w-1 h-1 rounded-full ${
-                          theme === "light" ? "bg-orange-600" : "bg-white"
-                        }`}
-                      />
-                    )}
                   </Link>
                 );
-              })();
-
-              if (idx === 1) {
-                return [
-                  itemElement,
-                  <Link
-                    key="nvidia-ai"
-                    to="/nvidia-ai-architecture"
-                    className={sharedClasses}
-                  >
-                    <span>NVIDIA's AI Architecture</span>
-                  </Link>,
-                ];
-              }
-
-              if (idx === 3) {
-                return [
-                  itemElement,
-                  <Link
-                    key="logo"
-                    to="/"
-                    className={`flex items-center group flex-shrink-0 px-4 py-3 rounded-xl transition-all duration-300 ${
-                      theme === "light"
-                        ? "bg-white hover:bg-white"
-                        : "hover:bg-white/10"
-                    }`}
-                  >
-                    <img
-                      src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fc9f5a55fa7004ae596d21cc4fa4aed1f?format=webp&width=1200"
-                      alt="Dayananda Sagar University Logo"
-                      className={`h-20 w-auto object-contain group-hover:scale-110 transition-all duration-300 ${
-                        theme === "light"
-                          ? ""
-                          : "brightness-110 drop-shadow-lg"
-                      }`}
-                    />
-                  </Link>,
-                  <Link
-                    key="ai-label"
-                    to="/ai-first"
-                    className={sharedClasses}
-                  >
-                    <span>AI-First @ DSU</span>
-                  </Link>,
-                ];
-              }
-
-              return itemElement;
-            })}
-          </div>
-
-          {/* Desktop Actions */}
-          <div className="hidden md:flex items-center space-x-2">
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={() => setSearchOpen(true)}
-              className={`gap-2 border ${
-                theme === "light"
-                  ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100 border-gray-300"
-                  : "text-white/80 hover:text-white hover:bg-white/10 border-white/20"
-              }`}
-            >
-              <Search className="w-4 h-4" />
-            </Button>
-            <ThemeToggle
-              className={
-                theme === "light"
-                  ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
-                  : "text-white/80 hover:text-white hover:bg-white/10"
-              }
-            />
-          </div>
-
-          {/* Mobile menu button */}
-          <div className="md:hidden">
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={() => setIsOpen(!isOpen)}
-              className={
-                theme === "light"
-                  ? "text-gray-700 hover:text-orange-600"
-                  : "text-white/80 hover:text-white"
-              }
-            >
-              {isOpen ? (
-                <X className="w-5 h-5" />
-              ) : (
-                <Menu className="w-5 h-5" />
-              )}
-            </Button>
-          </div>
-        </div>
-      </div>
-
-      {/* Mobile Navigation */}
-      {isOpen && (
-        <div
-          className={`md:hidden border-t ${
-            theme === "light"
-              ? "border-orange-200/30 bg-white"
-              : "border-orange-600/20 bg-slate-900"
-          }`}
-        >
-          <div className="px-3 py-4 space-y-3 max-h-[calc(100vh-180px)] overflow-y-auto">
-            {/* Main Navigation Items */}
-            {navigation.map((item, idx) => {
-              const active = !item.external && isActive(item.href);
-              const isAbout = item.href === "/about";
-              const isAcademics = item.href === "/academics";
-              const sharedClasses = `flex items-center space-x-2 px-3 py-2.5 rounded-xl text-sm font-medium font-display transition-all duration-200 ${
-                theme === "light"
-                  ? active
-                    ? "bg-orange-200 text-orange-900 font-semibold"
-                    : "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
-                  : active
-                    ? "bg-white/20 text-white font-semibold"
-                    : "text-white hover:text-white hover:bg-white/10"
-              }`;
-
-              if (item.external) {
-                return (
-                  <a
-                    key={idx}
-                    href={item.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    onClick={() => setIsOpen(false)}
-                    className={sharedClasses}
-                  >
-                    <span>{item.name}</span>
-                  </a>
-                );
-              }
-
-              if (isAbout) {
-                return (
-                  <div key={idx} className="space-y-2">
-                    <button
-                      onClick={() => setAboutMenuOpen(!aboutMenuOpen)}
-                      className={`w-full text-left ${sharedClasses}`}
-                    >
-                      <span className="flex-1">{item.name}</span>
-                      <ChevronDown
-                        className={`w-4 h-4 transition-transform ${
-                          aboutMenuOpen ? "rotate-180" : ""
-                        }`}
-                      />
-                    </button>
-
-                    {/* Mobile About Submenu */}
-                    {aboutMenuOpen && (
-                      <div
-                        className={`rounded-lg py-2 ml-4 border-l-2 ${
-                          theme === "light"
-                            ? "bg-orange-100 border-l-orange-300"
-                            : "bg-white/20 border-l-white/40"
-                        }`}
-                      >
-                        {aboutSubmenus.map((submenu, subIdx) => (
-                          <Link
-                            key={subIdx}
-                            to={submenu.href}
-                            onClick={() => {
-                              setIsOpen(false);
-                              setAboutMenuOpen(false);
-                            }}
-                            className={`block px-4 py-1.5 text-sm rounded transition-colors ${
-                              theme === "light"
-                                ? "text-gray-700 hover:bg-orange-200"
-                                : "text-white hover:bg-white/20"
-                            }`}
-                          >
-                            {submenu.name}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                );
-              }
-
-              if (isAcademics) {
-                return (
-                  <div key={idx} className="space-y-2">
-                    <button
-                      onClick={() => setAcademicsMenuOpen(!academicsMenuOpen)}
-                      className={`w-full text-left ${sharedClasses}`}
-                    >
-                      <span className="flex-1">{item.name}</span>
-                      <ChevronDown
-                        className={`w-4 h-4 transition-transform ${
-                          academicsMenuOpen ? "rotate-180" : ""
-                        }`}
-                      />
-                    </button>
-
-                    {/* Mobile Academics Submenu */}
-                    {academicsMenuOpen && (
-                      <div
-                        className={`rounded-lg py-2 ml-4 border-l-2 max-h-96 overflow-y-auto ${
-                          theme === "light"
-                            ? "bg-orange-100 border-l-orange-300"
-                            : "bg-white/20 border-l-white/40"
-                        }`}
-                      >
-                        {academicsSubmenus.schools.map((school, schoolIdx) => (
-                          <div key={schoolIdx} className="mb-2">
-                            {school.external ? (
-                              <a
-                                href={school.href}
-                                target="_blank"
-                                rel="noreferrer"
-                                onClick={() => {
-                                  setIsOpen(false);
-                                  setAcademicsMenuOpen(false);
-                                }}
-                                className={`block px-4 py-2 text-sm font-semibold rounded transition-colors ${
-                                  theme === "light"
-                                    ? "text-orange-900 hover:bg-orange-200"
-                                    : "text-white hover:bg-white/20"
-                                }`}
-                              >
-                                {school.name}
-                              </a>
-                            ) : (
-                              <Link
-                                to={school.href}
-                                onClick={() => {
-                                  setIsOpen(false);
-                                  setAcademicsMenuOpen(false);
-                                }}
-                                className={`block px-4 py-2 text-sm font-semibold rounded transition-colors ${
-                                  theme === "light"
-                                    ? "text-orange-900 hover:bg-orange-200"
-                                    : "text-white hover:bg-white/20"
-                                }`}
-                              >
-                                {school.name}
-                              </Link>
-                            )}
-
-                            {(school as any).hasSubGroups ? (
-                              <div className="ml-4 space-y-2">
-                                {(school as any).subGroups.map((group: any, groupIdx: number) => {
-                                  const isExpanded = expandedSubGroups.has(`${school.name}-${group.name}`);
-                                  return (
-                                    <div key={groupIdx}>
-                                      <button
-                                        onClick={() => toggleSubGroup(school.name, group.name)}
-                                        className={`w-full text-left px-4 py-1 text-xs font-semibold flex items-center gap-1 rounded transition-colors ${
-                                          theme === "light" ? "text-orange-900 hover:bg-orange-200" : "text-white/90 hover:bg-white/20"
-                                        }`}
-                                      >
-                                        <ChevronDown
-                                          className={`w-3 h-3 transition-transform ${isExpanded ? 'rotate-0' : '-rotate-90'}`}
-                                        />
-                                        {group.name}
-                                      </button>
-                                      {isExpanded && (
-                                        <div className="space-y-1">
-                                          {group.departments.map((dept: any, deptIdx: number) => (
-                                            <Link
-                                              key={deptIdx}
-                                              to={dept.href}
-                                              onClick={() => {
-                                                setIsOpen(false);
-                                                setAcademicsMenuOpen(false);
-                                              }}
-                                              className={`block px-6 py-1 text-xs rounded transition-colors ${
-                                                theme === "light"
-                                                  ? "text-gray-700 hover:bg-orange-200"
-                                                  : "text-white/80 hover:bg-white/20"
-                                              }`}
-                                            >
-                                              {dept.name}
-                                            </Link>
-                                          ))}
-                                        </div>
-                                      )}
-                                    </div>
-                                  );
-                                })}
-                              </div>
-                            ) : school.departments.length > 0 && (
-                              <div className="ml-4 space-y-1">
-                                {school.departments.map((dept, deptIdx) => (
-                                  <Link
-                                    key={deptIdx}
-                                    to={dept.href}
-                                    onClick={() => {
-                                      setIsOpen(false);
-                                      setAcademicsMenuOpen(false);
-                                    }}
-                                    className={`block px-4 py-1 text-xs rounded transition-colors ${
-                                      theme === "light"
-                                        ? "text-gray-700 hover:bg-orange-200"
-                                        : "text-white/80 hover:bg-white/20"
-                                    }`}
-                                  >
-                                    {dept.name}
-                                  </Link>
-                                ))}
-                              </div>
-                            )}
-                          </div>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                );
-              }
-
-              return (
-                <Link
-                  key={idx}
-                  to={item.href}
-                  onClick={() => setIsOpen(false)}
-                  className={sharedClasses}
-                >
-                  <span
-                    className={
-                      item.href === "/centre-of-excellence"
-                        ? "max-w-[100px]"
-                        : ""
-                    }
-                  >
-                    {item.name}
-                  </span>
-                </Link>
-              );
-            })}
-            {/* Additional Menu Items for Mobile */}
-            <Link
-              to="/nvidia-ai-architecture"
-              onClick={() => setIsOpen(false)}
-              className={`flex items-center space-x-2 px-3 py-2.5 rounded-xl text-sm font-medium font-display transition-all duration-200 ${
-                theme === "light"
+              })}
+              {/* Additional Menu Items for Mobile */}
+              <Link
+                to="/nvidia-ai-architecture"
+                onClick={() => setIsOpen(false)}
+                className={`flex items-center space-x-2 px-3 py-2.5 rounded-xl text-sm font-medium font-display transition-all duration-200 ${theme === "light"
                   ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
                   : "text-white hover:text-white hover:bg-white/10"
-              }`}
-            >
-              <span>NVIDIA's AI Architecture</span>
-            </Link>
-            <Link
-              to="/ai-first"
-              onClick={() => setIsOpen(false)}
-              className={`flex items-center space-x-2 px-3 py-2.5 rounded-xl text-sm font-medium font-display transition-all duration-200 ${
-                theme === "light"
-                  ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
-                  : "text-white hover:text-white hover:bg-white/10"
-              }`}
-            >
-              <span>AI-First @ DSU</span>
-            </Link>
-
-            {/* Top Menu Items (Utility Links) - Moved to bottom */}
-            <div
-              className={`pt-4 space-y-2 border-t ${
-                theme === "light" ? "border-orange-200" : "border-white/20"
-              }`}
-            >
-              <p
-                className={`text-xs font-semibold px-3 ${
-                  theme === "light" ? "text-gray-600" : "text-white/60"
-                }`}
+                  }`}
               >
-                Quick Links
-              </p>
-              {topMenuItems.map((item, idx) => (
-                <Link
-                  key={idx}
-                  to={item.href}
-                  onClick={() => setIsOpen(false)}
-                  className={`flex items-center space-x-2 px-3 py-2 rounded-xl text-sm font-medium font-display transition-all duration-200 ${
-                    theme === "light"
+                <span>NVIDIA's AI Architecture</span>
+              </Link>
+              <Link
+                to="/ai-first"
+                onClick={() => setIsOpen(false)}
+                className={`flex items-center space-x-2 px-3 py-2.5 rounded-xl text-sm font-medium font-display transition-all duration-200 ${theme === "light"
+                  ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
+                  : "text-white hover:text-white hover:bg-white/10"
+                  }`}
+              >
+                <span>AI-First @ DSU</span>
+              </Link>
+
+              {/* Top Menu Items (Utility Links) - Moved to bottom */}
+              <div
+                className={`pt-4 space-y-2 border-t ${theme === "light" ? "border-orange-200" : "border-white/20"
+                  }`}
+              >
+                <p
+                  className={`text-xs font-semibold px-3 ${theme === "light" ? "text-gray-600" : "text-white/60"
+                    }`}
+                >
+                  Quick Links
+                </p>
+                {topMenuItems.map((item, idx) => (
+                  <Link
+                    key={idx}
+                    to={item.href}
+                    onClick={() => setIsOpen(false)}
+                    className={`flex items-center space-x-2 px-3 py-2 rounded-xl text-sm font-medium font-display transition-all duration-200 ${theme === "light"
                       ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
                       : "text-white/90 hover:text-white hover:bg-white/10"
-                  }`}
-                >
-                  <span>{item.name}</span>
-                </Link>
-              ))}
-            </div>
+                      }`}
+                  >
+                    <span>{item.name}</span>
+                  </Link>
+                ))}
+              </div>
 
-            <div
-              className={`pt-4 space-y-3 border-t ${
-                theme === "light" ? "border-orange-200" : "border-white/20"
-              }`}
-            >
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={() => {
-                  setSearchOpen(true);
-                  setIsOpen(false);
-                }}
-                className={`w-full text-left justify-start gap-3 ${
-                  theme === "light"
-                    ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
-                    : "text-white/80 hover:text-white hover:bg-white/10"
-                }`}
+              <div
+                className={`pt-4 space-y-3 border-t ${theme === "light" ? "border-orange-200" : "border-white/20"
+                  }`}
               >
-                <Search className="w-4 h-4" />
-                <span>Search</span>
-              </Button>
-              <ThemeToggle
-                className={`self-start ${
-                  theme === "light"
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => {
+                    setSearchOpen(true);
+                    setIsOpen(false);
+                  }}
+                  className={`w-full text-left justify-start gap-3 ${theme === "light"
                     ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
                     : "text-white/80 hover:text-white hover:bg-white/10"
-                }`}
-                onToggle={() => setIsOpen(false)}
-              />
-              <LanguageSwitcher />
-              <a
-                href="https://ums.mydsi.org/Login.aspx/DSU"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => setIsOpen(false)}
-                className={`flex items-center space-x-2 px-3 py-2.5 rounded-xl text-sm font-medium font-display transition-all duration-200 ${
-                  theme === "light"
+                    }`}
+                >
+                  <Search className="w-4 h-4" />
+                  <span>Search</span>
+                </Button>
+                <ThemeToggle
+                  className={`self-start ${theme === "light"
+                    ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
+                    : "text-white/80 hover:text-white hover:bg-white/10"
+                    }`}
+                  onToggle={() => setIsOpen(false)}
+                />
+                <LanguageSwitcher />
+                <a
+                  href="https://ums.mydsi.org/Login.aspx/DSU"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setIsOpen(false)}
+                  className={`flex items-center space-x-2 px-3 py-2.5 rounded-xl text-sm font-medium font-display transition-all duration-200 ${theme === "light"
                     ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
                     : "text-white/90 hover:text-white hover:bg-white/10"
-                }`}
-              >
-                <span>ERP Login</span>
-              </a>
+                    }`}
+                >
+                  <span>ERP Login</span>
+                </a>
+              </div>
             </div>
           </div>
-        </div>
-      )}
+        )}
 
-      <SearchDialog open={searchOpen} onOpenChange={setSearchOpen} />
-    </nav>
+        <SearchDialog open={searchOpen} onOpenChange={setSearchOpen} />
+      </nav>
     </>
   );
 }

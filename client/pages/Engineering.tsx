@@ -1,5 +1,6 @@
 import { Link as RouterLink } from "react-router-dom";
 import { useState, useRef, useEffect } from "react";
+import { useHeroVideo } from "@/providers/hero-video-provider";
 import type { LucideIcon } from "lucide-react";
 
 declare global {
@@ -646,11 +647,10 @@ function NoticeBoardCarousel() {
               <button
                 key={idx}
                 onClick={() => setCurrentIndex(idx)}
-                className={`h-1.5 rounded-full transition-all ${
-                  idx === currentIndex
-                    ? `${styles.dotColor} w-6`
-                    : "bg-border/40 w-1.5 hover:bg-border/60"
-                }`}
+                className={`h-1.5 rounded-full transition-all ${idx === currentIndex
+                  ? `${styles.dotColor} w-6`
+                  : "bg-border/40 w-1.5 hover:bg-border/60"
+                  }`}
               />
             ))}
           </div>
@@ -737,24 +737,20 @@ function NoticeBoardCarousel() {
 
 function DepartmentCard({ department }: { department: EngineeringDepartment }) {
   const isInternal = department.link.startsWith("/");
-  const wrapperClasses = `group block h-full rounded-none ${
-    department.featured ? "lg:col-span-6" : "lg:col-span-3"
-  } focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-magenta focus-visible:ring-offset-2 focus-visible:ring-offset-background`;
+  const wrapperClasses = `group block h-full rounded-none ${department.featured ? "lg:col-span-6" : "lg:col-span-3"
+    } focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-magenta focus-visible:ring-offset-2 focus-visible:ring-offset-background`;
   const overlayClasses =
     department.overlay ??
     "bg-gradient-to-t from-black/85 via-black/50 to-transparent";
-  const badgeClasses = `inline-flex items-center gap-2 rounded-none px-3 py-1 text-xs uppercase tracking-wide ${
-    department.badgeClass ?? "bg-white/15 text-foreground/80 backdrop-blur"
-  }`;
-  const panelClasses = `rounded-none border border-white/15 p-3 shadow-[0_25px_80px_-35px_rgba(255,255,255,0.45)] transition-colors duration-500 ${
-    department.panelClass ?? "bg-black/60 backdrop-blur-lg"
-  }`;
+  const badgeClasses = `inline-flex items-center gap-2 rounded-none px-3 py-1 text-xs uppercase tracking-wide ${department.badgeClass ?? "bg-white/15 text-foreground/80 backdrop-blur"
+    }`;
+  const panelClasses = `rounded-none border border-white/15 p-3 shadow-[0_25px_80px_-35px_rgba(255,255,255,0.45)] transition-colors duration-500 ${department.panelClass ?? "bg-black/60 backdrop-blur-lg"
+    }`;
 
   const content = (
     <div
-      className={`relative flex h-full flex-col justify-end overflow-hidden rounded-none border border-white/10 bg-black/10 backdrop-blur-sm transition-all duration-700 hover:-translate-y-1 hover:shadow-2xl hover:shadow-brand-magenta/20 ${
-        department.featured ? "min-h-[360px]" : "min-h-[300px]"
-      }`}
+      className={`relative flex h-full flex-col justify-end overflow-hidden rounded-none border border-white/10 bg-black/10 backdrop-blur-sm transition-all duration-700 hover:-translate-y-1 hover:shadow-2xl hover:shadow-brand-magenta/20 ${department.featured ? "min-h-[360px]" : "min-h-[300px]"
+        }`}
     >
       <img
         src={department.image}
@@ -886,18 +882,15 @@ function ProgramCardComponent({ program }: { program: ProgramCard }) {
   const overlayClasses =
     program.overlay ??
     "bg-gradient-to-t from-black/85 via-black/50 to-transparent";
-  const badgeClasses = `inline-flex items-center gap-2 rounded-none px-3 py-1 text-xs uppercase tracking-wide ${
-    program.badgeClass ?? "bg-white/15 text-foreground/80 backdrop-blur"
-  }`;
-  const panelClasses = `rounded-none border border-white/15 p-3 shadow-[0_25px_80px_-35px_rgba(255,255,255,0.45)] transition-colors duration-500 ${
-    program.panelClass ?? "bg-black/60 backdrop-blur-lg"
-  }`;
+  const badgeClasses = `inline-flex items-center gap-2 rounded-none px-3 py-1 text-xs uppercase tracking-wide ${program.badgeClass ?? "bg-white/15 text-foreground/80 backdrop-blur"
+    }`;
+  const panelClasses = `rounded-none border border-white/15 p-3 shadow-[0_25px_80px_-35px_rgba(255,255,255,0.45)] transition-colors duration-500 ${program.panelClass ?? "bg-black/60 backdrop-blur-lg"
+    }`;
 
   const content = (
     <div
-      className={`relative flex h-full flex-col justify-end overflow-hidden rounded-none border border-white/10 bg-black/10 backdrop-blur-sm transition-all duration-700 hover:-translate-y-1 hover:shadow-2xl hover:shadow-brand-magenta/20 ${
-        program.featured ? "min-h-[360px]" : "min-h-[300px]"
-      }`}
+      className={`relative flex h-full flex-col justify-end overflow-hidden rounded-none border border-white/10 bg-black/10 backdrop-blur-sm transition-all duration-700 hover:-translate-y-1 hover:shadow-2xl hover:shadow-brand-magenta/20 ${program.featured ? "min-h-[360px]" : "min-h-[300px]"
+        }`}
     >
       <img
         src={program.image}
@@ -965,6 +958,7 @@ function HeroVideo() {
   const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useAutoMuteOnScroll(videoRef);
+  const { setIsHeroVideoInView } = useHeroVideo();
 
   const toggleMute = () => {
     if (videoRef.current) {
@@ -972,6 +966,60 @@ function HeroVideo() {
       setIsMuted(!isMuted);
     }
   };
+
+  // Track when hero video is in view AND scroll direction to hide/show headers
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    let lastScrollY = window.scrollY;
+    let hasScrolled = false; // Don't hide headers until user has scrolled
+    const SCROLL_THRESHOLD = 50; // Minimum scroll distance before hiding headers
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      const scrollDelta = Math.abs(currentScrollY - lastScrollY);
+      const scrollingUp = currentScrollY < lastScrollY;
+      const rect = container.getBoundingClientRect();
+
+      // Mark that user has scrolled after minimum threshold
+      if (scrollDelta > SCROLL_THRESHOLD && !hasScrolled) {
+        hasScrolled = true;
+      }
+
+      // Check if video is substantially in view (more than 50% visible)
+      const viewportHeight = window.innerHeight;
+      const videoTop = rect.top;
+      const videoBottom = rect.bottom;
+      const videoVisibleHeight = Math.min(videoBottom, viewportHeight) - Math.max(videoTop, 0);
+      const videoHeight = rect.height;
+      const visibleRatio = videoVisibleHeight / videoHeight;
+
+      const isVideoInView = visibleRatio > 0.5 && videoTop < viewportHeight && videoBottom > 0;
+
+      // Show headers when:
+      // 1. User hasn't scrolled yet (initial load)
+      // 2. Scrolling UP
+      // 3. Video is out of view
+      if (!hasScrolled || scrollingUp || !isVideoInView) {
+        setIsHeroVideoInView(false);
+      } else {
+        // Hide headers only when scrolling down AND video is in view AND user has scrolled
+        setIsHeroVideoInView(true);
+      }
+
+      lastScrollY = currentScrollY;
+    };
+
+    // Don't run initial check - let headers be visible on page load
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      // Reset when leaving the page
+      setIsHeroVideoInView(false);
+    };
+  }, [setIsHeroVideoInView]);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -990,7 +1038,7 @@ function HeroVideo() {
         rect && rect.top < window.innerHeight && rect.bottom > 0;
       if (isVisible) {
         video.currentTime = 0;
-        video.play().catch(() => {});
+        video.play().catch(() => { });
       }
     };
 
@@ -1003,21 +1051,21 @@ function HeroVideo() {
   return (
     <div
       ref={containerRef}
-      className="h-[40vh] sm:h-[55vh] md:h-[65vh] lg:h-[75vh] relative overflow-hidden flex items-center justify-start hero-video-container"
+      className="h-screen relative overflow-hidden flex items-center justify-start hero-video-container"
     >
       <video
         ref={videoRef}
-        src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2Fca43c77a955c4e4b86175d41c68120cf?alt=media&token=45cdb70a-71df-43de-8859-de7bc907f167&apiKey=4aa279a8430d441dba9c55f659831878"
+        src="/videos/dsu-school-of-engineering-hero.mp4"
         autoPlay
         muted={isMuted}
         loop
         playsInline
         preload="metadata"
         crossOrigin="anonymous"
-        className="absolute inset-0 object-cover"
+        className="absolute inset-0 w-full h-full object-cover"
         style={{
           filter: "brightness(1.1) contrast(1.15) saturate(1.2)",
-          objectPosition: "center top",
+          objectPosition: "center center",
         }}
       />
 
@@ -1127,7 +1175,7 @@ function DeanMessageVideo() {
     <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-black/20 border border-border/30">
       <video
         ref={videoRef}
-        src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F0c95c62aa88741fca8ebdc32aade53d5?alt=media&token=c57ff4a9-aea8-4ff3-843b-23ce820ba630&apiKey=4aa279a8430d441dba9c55f659831878"
+        src="/videos/dr-udaya-kumar-reddy-trailer.mp4"
         autoPlay
         muted={isMuted}
         loop
