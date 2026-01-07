@@ -1194,8 +1194,8 @@ export default function Engineering() {
           <div className="rounded-none border border-orange-500/20 bg-orange-500/10 overflow-hidden backdrop-blur">
             <div className="grid md:grid-cols-[300px_1fr] gap-0">
               {/* Dean's Photo */}
-              <div className="relative overflow-hidden bg-gradient-to-br from-brand-magenta/10 to-brand-blue/10 flex items-start justify-center p-4 md:p-12 pt-8 md:pt-12">
-                <div className="relative w-full max-w-xs">
+              <div className="relative overflow-hidden bg-gradient-to-br from-brand-magenta/10 to-brand-blue/10 flex items-start justify-center p-2 sm:p-4 md:p-12 pt-3 sm:pt-6 md:pt-12">
+                <div className="relative w-full max-w-[160px] sm:max-w-xs md:max-w-xs">
                   <img
                     src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fb0960f67ec5541b7bc257c9ecfe8e30b?format=webp&width=800"
                     alt="Dr. Udaya Kumar Reddy K R"
