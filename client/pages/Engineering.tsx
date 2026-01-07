@@ -1188,7 +1188,7 @@ export default function Engineering() {
       </section>
 
       {/* Dean's Message Section */}
-      <section className="relative overflow-hidden px-3 py-2 md:py-1 lg:py-8 -mt-32 md:-mt-48 lg:-mt-0">
+      <section className="relative overflow-hidden px-3 py-0 md:py-0 lg:py-8 -mt-40 md:-mt-64 lg:-mt-0">
         <div className="mx-auto max-w-7xl">
           <div className="rounded-none border border-orange-500/20 bg-orange-500/10 overflow-hidden backdrop-blur">
             <div className="grid md:grid-cols-[300px_1fr] gap-0">
