@@ -869,24 +869,24 @@ export default function Navigation() {
             <Link
               to="/nvidia-ai-architecture"
               onClick={() => setIsOpen(false)}
-              className={`flex items-center space-x-2 px-3 py-2.5 rounded-xl text-sm font-medium font-display transition-all duration-200 ${
+              className={`flex items-center space-x-2 px-3 py-2.5 rounded-xl text-sm font-medium font-display transition-all duration-200 w-full ${
                 theme === "light"
                   ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
                   : "text-white hover:text-white hover:bg-white/10"
               }`}
             >
-              <span>NVIDIA's AI Architecture</span>
+              <span className="truncate">NVIDIA's AI Architecture</span>
             </Link>
             <Link
               to="/ai-first"
               onClick={() => setIsOpen(false)}
-              className={`flex items-center space-x-2 px-3 py-2.5 rounded-xl text-sm font-medium font-display transition-all duration-200 ${
+              className={`flex items-center space-x-2 px-3 py-2.5 rounded-xl text-sm font-medium font-display transition-all duration-200 w-full ${
                 theme === "light"
                   ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
                   : "text-white hover:text-white hover:bg-white/10"
               }`}
             >
-              <span>AI-First @ DSU</span>
+              <span className="truncate">AI-First @ DSU</span>
             </Link>
 
             {/* Top Menu Items (Utility Links) - Moved to bottom */}
