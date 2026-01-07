@@ -1070,9 +1070,8 @@ function HeroVideo() {
               className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
               <Button
-                variant="outline"
                 size="sm"
-                className="sm:size-lg border-2 border-transparent text-white hover:bg-black/20 bg-black/10 backdrop-blur-sm hover:text-white px-4 sm:px-8 py-2 sm:py-6 text-xs sm:text-base font-semibold font-display transition-all duration-300 w-full sm:w-auto"
+                className="sm:size-lg bg-white hover:bg-white/90 text-orange-600 hover:text-orange-700 px-4 sm:px-8 py-2 sm:py-6 text-xs sm:text-base font-semibold font-display transition-all duration-300 group border-2 border-white w-full sm:w-auto"
               >
                 Virtual Tour
               </Button>
