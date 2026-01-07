@@ -581,7 +581,7 @@ function HeroVideo() {
   return (
     <div
       ref={containerRef}
-      className="h-[30vh] sm:h-[55vh] md:h-[65vh] lg:h-[75vh] relative overflow-hidden flex items-center justify-start hero-video-container"
+      className="h-[55vh] sm:h-[55vh] md:h-[65vh] lg:h-[75vh] relative overflow-hidden flex items-center justify-start hero-video-container"
     >
       <video
         ref={videoRef}
@@ -617,16 +617,16 @@ function HeroVideo() {
         }}
       ></div>
 
-      <div className="relative max-w-7xl mx-auto px-3 w-full z-10 pb-20 md:pb-0">
+      <div className="relative max-w-7xl mx-auto px-3 w-full z-10 pb-2 sm:pb-8 md:pb-0">
         <div className="max-w-2xl">
-          <p className="text-xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-2 sm:mb-4 uppercase tracking-widest font-display">
+          <p className="text-lg sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-1 sm:mb-4 uppercase tracking-widest font-display">
             School of Law
           </p>
-          <h1 className="text-xs sm:text-base md:text-base text-white/80 mb-3 sm:mb-6 leading-tight font-display">
+          <h1 className="text-xs sm:text-base md:text-base text-white/80 mb-2 sm:mb-6 leading-tight font-display">
             Excellence in Legal Education
           </h1>
 
-          <div className="flex flex-col gap-2 sm:gap-4 sm:flex-row">
+          <div className="flex flex-row gap-2 sm:gap-4">
             <a
               href="https://admissions.dsu.edu.in/"
               target="_blank"
