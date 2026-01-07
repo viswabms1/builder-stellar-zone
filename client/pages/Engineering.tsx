@@ -1003,7 +1003,7 @@ function HeroVideo() {
   return (
     <div
       ref={containerRef}
-      className="h-[40vh] sm:h-[55vh] md:h-[65vh] lg:h-[75vh] relative overflow-hidden flex items-center justify-start hero-video-container"
+      className="h-[30vh] sm:h-[55vh] md:h-[65vh] lg:h-[75vh] relative overflow-hidden flex items-center justify-start hero-video-container"
     >
       <video
         ref={videoRef}
@@ -1041,14 +1041,14 @@ function HeroVideo() {
 
       <div className="relative max-w-7xl mx-auto px-3 w-full z-10 pb-4 sm:pb-8 md:pb-0">
         <div className="max-w-2xl">
-          <p className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 uppercase tracking-widest font-display">
+          <p className="text-xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-2 sm:mb-4 uppercase tracking-widest font-display">
             School of Engineering
           </p>
-          <h1 className="text-sm md:text-base text-white/80 mb-6 leading-tight font-display">
+          <h1 className="text-xs sm:text-base md:text-base text-white/80 mb-3 sm:mb-6 leading-tight font-display">
             Shape the Future of Technology
           </h1>
 
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col gap-2 sm:gap-4 sm:flex-row">
             <a
               href="https://admissions.dsu.edu.in/"
               target="_blank"
@@ -1056,11 +1056,11 @@ function HeroVideo() {
               className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
               <Button
-                size="lg"
-                className="bg-white hover:bg-white/90 text-orange-600 hover:text-orange-700 px-8 py-6 text-base font-semibold font-display transition-all duration-300 group border-2 border-white"
+                size="sm"
+                className="sm:size-lg bg-white hover:bg-white/90 text-orange-600 hover:text-orange-700 px-4 sm:px-8 py-2 sm:py-6 text-xs sm:text-base font-semibold font-display transition-all duration-300 group border-2 border-white w-full sm:w-auto"
               >
                 Apply Now
-                <ChevronRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                <ChevronRight className="w-4 sm:w-5 h-4 sm:h-5 ml-1 sm:ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
             </a>
             <a
@@ -1071,8 +1071,8 @@ function HeroVideo() {
             >
               <Button
                 variant="outline"
-                size="lg"
-                className="border-2 border-transparent text-white hover:bg-black/20 bg-black/10 backdrop-blur-sm hover:text-white px-8 py-6 text-base font-semibold font-display transition-all duration-300"
+                size="sm"
+                className="sm:size-lg border-2 border-transparent text-white hover:bg-black/20 bg-black/10 backdrop-blur-sm hover:text-white px-4 sm:px-8 py-2 sm:py-6 text-xs sm:text-base font-semibold font-display transition-all duration-300 w-full sm:w-auto"
               >
                 Virtual Tour
               </Button>
