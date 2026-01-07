@@ -657,7 +657,7 @@ function HeroVideo() {
   return (
     <div
       ref={containerRef}
-      className="h-[40vh] sm:h-[55vh] md:h-[65vh] lg:h-[75vh] relative overflow-hidden flex items-center justify-start hero-video-container"
+      className="h-[30vh] sm:h-[55vh] md:h-[65vh] lg:h-[75vh] relative overflow-hidden flex items-center justify-start hero-video-container"
     >
       <video
         ref={videoRef}
