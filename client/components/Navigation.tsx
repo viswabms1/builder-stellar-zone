@@ -907,13 +907,13 @@ export default function Navigation() {
                   key={idx}
                   to={item.href}
                   onClick={() => setIsOpen(false)}
-                  className={`flex items-center space-x-2 px-3 py-2 rounded-xl text-sm font-medium font-display transition-all duration-200 ${
+                  className={`flex items-center space-x-2 px-3 py-2 rounded-xl text-sm font-medium font-display transition-all duration-200 w-full ${
                     theme === "light"
                       ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
                       : "text-white/90 hover:text-white hover:bg-white/10"
                   }`}
                 >
-                  <span>{item.name}</span>
+                  <span className="truncate">{item.name}</span>
                 </Link>
               ))}
             </div>
