@@ -264,10 +264,10 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-3">
         <div className="flex items-center justify-between h-20">
           {/* Mobile menu button placeholder for spacing */}
-          <div className="md:hidden w-12" />
+          <div className="lg:hidden w-12" />
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-0.5">
+          <div className="hidden lg:flex items-center gap-0.5">
             {navigation.map((item, idx) => {
               const active = !item.external && isActive(item.href);
               const isAbout = item.href === "/about";
@@ -584,7 +584,7 @@ export default function Navigation() {
           </div>
 
           {/* Desktop Actions */}
-          <div className="hidden md:flex items-center space-x-2">
+          <div className="hidden lg:flex items-center space-x-2">
             <Button
               variant="ghost"
               size="sm"
@@ -607,7 +607,7 @@ export default function Navigation() {
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <Button
               variant="ghost"
               size="sm"
@@ -631,7 +631,7 @@ export default function Navigation() {
       {/* Mobile Navigation */}
       {isOpen && (
         <div
-          className={`md:hidden border-t w-full ${
+          className={`lg:hidden border-t w-full ${
             theme === "light"
               ? "border-orange-200/30 bg-white"
               : "border-orange-600/20 bg-slate-900"
