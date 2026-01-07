@@ -953,13 +953,13 @@ export default function Navigation() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setIsOpen(false)}
-                className={`flex items-center space-x-2 px-3 py-2.5 rounded-xl text-sm font-medium font-display transition-all duration-200 ${
+                className={`flex items-center space-x-2 px-3 py-2.5 rounded-xl text-sm font-medium font-display transition-all duration-200 w-full ${
                   theme === "light"
                     ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
                     : "text-white/90 hover:text-white hover:bg-white/10"
                 }`}
               >
-                <span>ERP Login</span>
+                <span className="truncate">ERP Login</span>
               </a>
             </div>
           </div>
