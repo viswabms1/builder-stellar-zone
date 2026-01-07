@@ -631,13 +631,13 @@ export default function Navigation() {
       {/* Mobile Navigation */}
       {isOpen && (
         <div
-          className={`md:hidden border-t ${
+          className={`md:hidden border-t overflow-x-hidden ${
             theme === "light"
               ? "border-orange-200/30 bg-white"
               : "border-orange-600/20 bg-slate-900"
           }`}
         >
-          <div className="px-3 py-4 space-y-3 max-h-[calc(100vh-180px)] overflow-y-auto">
+          <div className="px-3 py-4 space-y-3 max-h-[calc(100vh-180px)] overflow-y-auto overflow-x-hidden">
             {/* Main Navigation Items */}
             {navigation.map((item, idx) => {
               const active = !item.external && isActive(item.href);
