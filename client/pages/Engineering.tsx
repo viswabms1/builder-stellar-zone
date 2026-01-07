@@ -1048,7 +1048,7 @@ function HeroVideo() {
             Shape the Future of Technology
           </h1>
 
-          <div className="flex flex-col gap-1 sm:gap-4 sm:flex-row">
+          <div className="flex flex-row gap-2 sm:gap-4">
             <a
               href="https://admissions.dsu.edu.in/"
               target="_blank"
