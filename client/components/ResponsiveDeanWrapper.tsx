@@ -22,19 +22,29 @@ export function ResponsiveDeanWrapper({ children }: ResponsiveDeanWrapperProps) 
     };
   }, []);
 
-  // Mobile landscape: add top margin to prevent overlap
-  // Mobile portrait: reduce gap with negative margin
-  // Tablet and up: use aggressive negative margin
+  // Calculate responsive margins based on orientation and screen size
+  let marginTop = "0";
+
   const isMobileLandscape = isLandscape && window.innerWidth < 768;
-  const marginTop = isMobileLandscape ? "2rem" : "-3rem";
-  const marginTopTablet = window.innerWidth >= 768 ? "-10rem" : marginTop;
-  const marginTopDesktop = window.innerWidth >= 1024 ? "-5rem" : marginTopTablet;
+  const isMobilePortrait = !isLandscape && window.innerWidth < 768;
+  const isTablet = window.innerWidth >= 768 && window.innerWidth < 1024;
+  const isDesktop = window.innerWidth >= 1024;
+
+  if (isMobileLandscape) {
+    marginTop = "3rem"; // Push down in mobile landscape
+  } else if (isMobilePortrait) {
+    marginTop = "-3rem"; // Pull up in mobile portrait
+  } else if (isTablet) {
+    marginTop = "-10rem"; // Pull up in tablet
+  } else if (isDesktop) {
+    marginTop = "-5rem"; // Pull up in desktop
+  }
 
   return (
     <section
       className="relative overflow-hidden px-3 py-2"
       style={{
-        marginTop: marginTopDesktop,
+        marginTop,
       }}
     >
       {children}
