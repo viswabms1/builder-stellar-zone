@@ -99,17 +99,13 @@ function HeroVideo() {
       {/* Mute/Unmute Button */}
       <button
         onClick={toggleMute}
-        onTouchStart={(e) => {
-          e.preventDefault();
-          toggleMute();
-        }}
         style={{
-          position: 'fixed',
-          top: '20px',
-          right: '20px',
+          position: 'absolute',
+          top: '16px',
+          right: '16px',
           zIndex: 99999,
-          width: '50px',
-          height: '50px',
+          width: '48px',
+          height: '48px',
           borderRadius: '50%',
           backgroundColor: 'rgba(0, 0, 0, 0.6)',
           color: 'white',
@@ -120,14 +116,15 @@ function HeroVideo() {
           cursor: 'pointer',
           padding: 0,
           margin: 0,
+          pointerEvents: 'auto',
         }}
         aria-label={isMuted ? "Unmute" : "Mute"}
         type="button"
       >
         {isMuted ? (
-          <VolumeX size={24} />
+          <VolumeX size={20} />
         ) : (
-          <Volume2 size={24} />
+          <Volume2 size={20} />
         )}
       </button>
     </div>
