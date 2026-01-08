@@ -188,12 +188,12 @@
     z-index: 10;
   }
 
-  @media (max-height: 500px) and (orientation: landscape) {
-    /* Show full video in landscape - account for nav height */
+  @media (max-width: 767px) and (orientation: landscape) {
+    /* Show full video in landscape on mobile - account for nav height */
     .hero-video-container {
-      height: calc(100vh - 10rem) !important;
+      height: calc(100vh - 9rem) !important;
       overflow: hidden;
-      margin-top: 3rem;
+      padding-top: 2.5rem !important;
     }
 
     /* Keep video covering the full container */
