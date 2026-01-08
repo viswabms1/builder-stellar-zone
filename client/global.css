@@ -269,7 +269,7 @@
   @media screen and (max-width: 768px) and (orientation: portrait) {
     /* Reduce excessive padding on department hero sections in portrait */
     .dept-hero-section {
-      padding-top: 300px !important;
+      padding-top: 375px !important;
     }
   }
 
