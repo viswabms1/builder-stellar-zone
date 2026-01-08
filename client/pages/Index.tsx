@@ -47,11 +47,13 @@ function HeroVideo() {
   const containerRef = useAutoMuteOnScroll(videoRef);
 
   const toggleMute = () => {
-    if (videoRef.current) {
-      const newMutedState = !isMuted;
-      videoRef.current.muted = newMutedState;
-      videoRef.current.volume = newMutedState ? 0 : 1;
+    const video = videoRef.current;
+    if (video) {
+      const newMutedState = !video.muted;
+      video.muted = newMutedState;
+      video.volume = newMutedState ? 0 : 1;
       setIsMuted(newMutedState);
+      console.log('Mute toggled:', newMutedState);
     }
   };
 
