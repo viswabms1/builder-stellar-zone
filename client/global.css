@@ -187,21 +187,15 @@
   }
 
   @media (max-width: 767px) and (orientation: landscape) {
-    /* Show full video in landscape - let it auto-size without clipping */
+    /* Show full video in landscape without cropping */
     .hero-video-container {
-      height: auto;
-      overflow: visible;
-      display: block;
+      height: 80vh !important;
+      overflow: hidden;
     }
 
-    /* Show full video aspect ratio without cropping */
+    /* Keep video covering the full container */
     .hero-video-container video {
-      position: relative !important;
-      inset: auto !important;
-      object-fit: contain !important;
-      width: 100% !important;
-      height: auto !important;
-      display: block;
+      object-fit: cover;
     }
   }
 
