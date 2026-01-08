@@ -282,7 +282,7 @@
 
   /* In mobile landscape, reduce nav z-index to allow hero content to appear above */
   @media (max-height: 500px) and (orientation: landscape) {
-    nav[class*="sticky"] {
+    nav {
       z-index: 5 !important;
     }
   }
