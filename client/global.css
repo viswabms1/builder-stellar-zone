@@ -273,13 +273,17 @@
     .hero-title-inside {
       display: block !important;
       z-index: 51 !important;
-      bottom: auto !important;
-      top: 0 !important;
-      padding-top: 6rem !important;
     }
 
     .hero-title-outside {
       display: none !important;
+    }
+  }
+
+  /* In mobile landscape, reduce nav z-index to allow hero content to appear above */
+  @media (max-height: 500px) and (orientation: landscape) {
+    nav[class*="sticky"] {
+      z-index: 5 !important;
     }
   }
 }
