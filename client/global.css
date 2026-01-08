@@ -258,21 +258,21 @@
 
   /* Hero title positioning - landscape vs portrait */
   .hero-title-inside {
-    display: none;
+    display: none !important;
   }
 
   .hero-title-outside {
-    display: block;
+    display: block !important;
   }
 
   /* In landscape: show title inside video, hide outside */
   @media (max-height: 500px) and (orientation: landscape) {
     .hero-title-inside {
-      display: block;
+      display: block !important;
     }
 
     .hero-title-outside {
-      display: none;
+      display: none !important;
     }
   }
 }
