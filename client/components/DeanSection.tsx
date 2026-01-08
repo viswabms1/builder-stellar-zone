@@ -80,9 +80,16 @@ export function DeanSection({ dean }: DeanSectionProps) {
     <section
       className="relative overflow-hidden px-3 py-4 md:-mt-40 lg:-mt-20"
       style={{
-        marginTop: window.innerHeight < window.innerWidth ? '0' : undefined
+        marginTop: 0
       }}
     >
+      <style>{`
+        @media (orientation: landscape) and (max-height: 500px) {
+          section[style*="margin-top: 0"] {
+            margin-top: 0 !important;
+          }
+        }
+      `}</style>
       <div className="mx-auto max-w-7xl">
         <div className={`rounded-none border ${borderColorClass} ${bgColorClass} overflow-hidden backdrop-blur`}>
           <div className="grid md:grid-cols-[300px_1fr] gap-0">
