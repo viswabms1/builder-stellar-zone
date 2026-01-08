@@ -72,30 +72,32 @@ function HeroVideo() {
   }, [isMuted]);
 
   return (
-    <div className="w-full h-full relative overflow-hidden" ref={containerRef}>
-      {/* Video */}
-      <video
-        ref={videoRef}
-        src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F389ede098f8743368a37b080b1969b8a?alt=media&token=101276cc-1be0-485d-a4a8-86f1e71c260f&apiKey=4aa279a8430d441dba9c55f659831878"
-        autoPlay
-        muted={isMuted}
-        loop
-        playsInline
-        preload="metadata"
-        crossOrigin="anonymous"
-        className="w-full h-full object-cover"
-        style={{
-          objectPosition: "center top",
-        }}
-      />
+    <div className="w-full h-full relative overflow-hidden">
+      <div ref={containerRef} className="w-full h-full relative">
+        {/* Video */}
+        <video
+          ref={videoRef}
+          src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F389ede098f8743368a37b080b1969b8a?alt=media&token=101276cc-1be0-485d-a4a8-86f1e71c260f&apiKey=4aa279a8430d441dba9c55f659831878"
+          autoPlay
+          muted={isMuted}
+          loop
+          playsInline
+          preload="metadata"
+          crossOrigin="anonymous"
+          className="w-full h-full object-cover"
+          style={{
+            objectPosition: "center top",
+          }}
+        />
 
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/30 pointer-events-none"></div>
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/30 pointer-events-none"></div>
+      </div>
 
-      {/* Mute/Unmute Button */}
+      {/* Mute/Unmute Button - Outside container to ensure clicks work */}
       <button
         onClick={toggleMute}
-        className="absolute top-4 right-8 z-50 p-3 rounded-full bg-black/50 hover:bg-black/70 active:bg-black/80 transition-colors text-white backdrop-blur-sm border border-white/20 cursor-pointer"
+        className="absolute top-4 right-8 z-50 p-3 rounded-full bg-black/50 hover:bg-black/70 active:bg-black/80 transition-colors text-white backdrop-blur-sm border border-white/20"
         style={{
           width: '48px',
           height: '48px',
@@ -103,6 +105,7 @@ function HeroVideo() {
           alignItems: 'center',
           justifyContent: 'center',
           pointerEvents: 'auto',
+          cursor: 'pointer',
           touchAction: 'manipulation',
         }}
         aria-label={isMuted ? "Unmute" : "Mute"}
