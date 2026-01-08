@@ -48,8 +48,10 @@ function HeroVideo() {
 
   const toggleMute = () => {
     if (videoRef.current) {
-      videoRef.current.muted = !videoRef.current.muted;
-      setIsMuted(!isMuted);
+      const newMutedState = !isMuted;
+      videoRef.current.muted = newMutedState;
+      videoRef.current.volume = newMutedState ? 0 : 1;
+      setIsMuted(newMutedState);
     }
   };
 
