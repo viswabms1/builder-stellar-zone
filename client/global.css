@@ -184,6 +184,8 @@
   .hero-video-container {
     height: 35vh;
     overflow: hidden;
+    position: relative;
+    z-index: 10;
   }
 
   @media (max-height: 500px) and (orientation: landscape) {
