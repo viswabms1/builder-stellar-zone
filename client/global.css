@@ -182,7 +182,7 @@
 
   /* Hero video height responsiveness - keep full video visible */
   .hero-video-container {
-    height: 55vh;
+    height: 35vh;
     overflow: hidden;
   }
 
