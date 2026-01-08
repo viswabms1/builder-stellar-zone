@@ -7,7 +7,7 @@ export type DeanInfo = {
   title: string;
   position: string;
   photo: string;
-  videoUrl: string;
+  videoUrl?: string;
   borderColor?: string;
   bgColor?: string;
 };
