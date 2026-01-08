@@ -223,7 +223,7 @@ export default function Navigation() {
               <Link
                 key={idx}
                 to={item.href}
-                className={`text-xs font-medium transition-colors whitespace-nowrap ${
+                className={`text-sm font-medium transition-colors whitespace-nowrap ${
                   theme === "light"
                     ? "text-gray-600 hover:text-orange-600"
                     : "text-white/80 hover:text-white"
@@ -241,7 +241,7 @@ export default function Navigation() {
               href="https://ums.mydsi.org/Login.aspx/DSU"
               target="_blank"
               rel="noopener noreferrer"
-              className={`text-xs font-medium transition-colors whitespace-nowrap ${
+              className={`text-sm font-medium transition-colors whitespace-nowrap ${
                 theme === "light"
                   ? "text-gray-600 hover:text-orange-600"
                   : "text-white/80 hover:text-white"
@@ -643,7 +643,7 @@ export default function Navigation() {
               const active = !item.external && isActive(item.href);
               const isAbout = item.href === "/about";
               const isAcademics = item.href === "/academics";
-              const sharedClasses = `flex items-center space-x-2 px-3 py-2.5 rounded-xl text-sm font-medium font-display transition-all duration-200 w-full ${
+              const sharedClasses = `flex items-center space-x-2 px-3 py-2.5 rounded-xl text-base sm:text-lg font-medium font-display transition-all duration-200 w-full ${
                 theme === "light"
                   ? active
                     ? "bg-orange-200 text-orange-900 font-semibold"
@@ -700,7 +700,7 @@ export default function Navigation() {
                               setIsOpen(false);
                               setAboutMenuOpen(false);
                             }}
-                            className={`block px-4 py-1.5 text-sm rounded transition-colors ${
+                            className={`block px-4 py-1.5 text-base sm:text-lg rounded transition-colors ${
                               theme === "light"
                                 ? "text-gray-700 hover:bg-orange-200"
                                 : "text-white hover:bg-white/20"
@@ -750,7 +750,7 @@ export default function Navigation() {
                                   setIsOpen(false);
                                   setAcademicsMenuOpen(false);
                                 }}
-                                className={`block px-4 py-2 text-sm font-semibold rounded transition-colors ${
+                                className={`block px-4 py-2 text-base sm:text-lg font-semibold rounded transition-colors ${
                                   theme === "light"
                                     ? "text-orange-900 hover:bg-orange-200"
                                     : "text-white hover:bg-white/20"
@@ -765,7 +765,7 @@ export default function Navigation() {
                                   setIsOpen(false);
                                   setAcademicsMenuOpen(false);
                                 }}
-                                className={`block px-4 py-2 text-sm font-semibold rounded transition-colors ${
+                                className={`block px-4 py-2 text-base sm:text-lg font-semibold rounded transition-colors ${
                                   theme === "light"
                                     ? "text-orange-900 hover:bg-orange-200"
                                     : "text-white hover:bg-white/20"
@@ -783,7 +783,7 @@ export default function Navigation() {
                                     <div key={groupIdx}>
                                       <button
                                         onClick={() => toggleSubGroup(school.name, group.name)}
-                                        className={`w-full text-left px-4 py-1 text-xs font-semibold flex items-center gap-1 rounded transition-colors ${
+                                        className={`w-full text-left px-4 py-1 text-sm sm:text-base font-semibold flex items-center gap-1 rounded transition-colors ${
                                           theme === "light" ? "text-orange-900 hover:bg-orange-200" : "text-white/90 hover:bg-white/20"
                                         }`}
                                       >
@@ -802,7 +802,7 @@ export default function Navigation() {
                                                 setIsOpen(false);
                                                 setAcademicsMenuOpen(false);
                                               }}
-                                              className={`block px-6 py-1 text-xs rounded transition-colors ${
+                                              className={`block px-6 py-1 text-sm sm:text-base rounded transition-colors ${
                                                 theme === "light"
                                                   ? "text-gray-700 hover:bg-orange-200"
                                                   : "text-white/80 hover:bg-white/20"
@@ -827,7 +827,7 @@ export default function Navigation() {
                                       setIsOpen(false);
                                       setAcademicsMenuOpen(false);
                                     }}
-                                    className={`block px-4 py-1 text-xs rounded transition-colors ${
+                                    className={`block px-4 py-1 text-sm sm:text-base rounded transition-colors ${
                                       theme === "light"
                                         ? "text-gray-700 hover:bg-orange-200"
                                         : "text-white/80 hover:bg-white/20"
@@ -869,7 +869,7 @@ export default function Navigation() {
             <Link
               to="/nvidia-ai-architecture"
               onClick={() => setIsOpen(false)}
-              className={`flex items-center space-x-2 px-3 py-2.5 rounded-xl text-sm font-medium font-display transition-all duration-200 w-full ${
+              className={`flex items-center space-x-2 px-3 py-2.5 rounded-xl text-base sm:text-lg font-medium font-display transition-all duration-200 w-full ${
                 theme === "light"
                   ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
                   : "text-white hover:text-white hover:bg-white/10"
@@ -880,7 +880,7 @@ export default function Navigation() {
             <Link
               to="/ai-first"
               onClick={() => setIsOpen(false)}
-              className={`flex items-center space-x-2 px-3 py-2.5 rounded-xl text-sm font-medium font-display transition-all duration-200 w-full ${
+              className={`flex items-center space-x-2 px-3 py-2.5 rounded-xl text-base sm:text-lg font-medium font-display transition-all duration-200 w-full ${
                 theme === "light"
                   ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
                   : "text-white hover:text-white hover:bg-white/10"
@@ -896,7 +896,7 @@ export default function Navigation() {
               }`}
             >
               <p
-                className={`text-xs font-semibold px-3 ${
+                className={`text-sm sm:text-base font-semibold px-3 ${
                   theme === "light" ? "text-gray-600" : "text-white/60"
                 }`}
               >
@@ -907,7 +907,7 @@ export default function Navigation() {
                   key={idx}
                   to={item.href}
                   onClick={() => setIsOpen(false)}
-                  className={`flex items-center space-x-2 px-3 py-2 rounded-xl text-sm font-medium font-display transition-all duration-200 w-full ${
+                  className={`flex items-center space-x-2 px-3 py-2 rounded-xl text-base sm:text-lg font-medium font-display transition-all duration-200 w-full ${
                     theme === "light"
                       ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
                       : "text-white/90 hover:text-white hover:bg-white/10"
@@ -930,7 +930,7 @@ export default function Navigation() {
                   setSearchOpen(true);
                   setIsOpen(false);
                 }}
-                className={`w-full text-left justify-start gap-3 ${
+                className={`w-full text-left justify-start gap-3 text-base sm:text-lg ${
                   theme === "light"
                     ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
                     : "text-white/80 hover:text-white hover:bg-white/10"
@@ -940,7 +940,7 @@ export default function Navigation() {
                 <span>Search</span>
               </Button>
               <ThemeToggle
-                className={`self-start ${
+                className={`self-start text-base sm:text-lg ${
                   theme === "light"
                     ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
                     : "text-white/80 hover:text-white hover:bg-white/10"
@@ -953,7 +953,7 @@ export default function Navigation() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setIsOpen(false)}
-                className={`flex items-center space-x-2 px-3 py-2.5 rounded-xl text-sm font-medium font-display transition-all duration-200 w-full ${
+                className={`flex items-center space-x-2 px-3 py-2.5 rounded-xl text-base sm:text-lg font-medium font-display transition-all duration-200 w-full ${
                   theme === "light"
                     ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
                     : "text-white/90 hover:text-white hover:bg-white/10"
