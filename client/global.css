@@ -190,8 +190,7 @@
 
   @media (max-width: 1024px) and (orientation: landscape) {
     .hero-video-container {
-      padding-top: 2.5rem !important;
-      height: calc(100vh - 5.5rem) !important;
+      transform: translateY(2.5rem) !important;
     }
   }
 
