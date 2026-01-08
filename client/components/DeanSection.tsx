@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { Volume2, VolumeX } from "lucide-react";
 import { useAutoMuteOnScroll } from "@/hooks/useAutoMuteOnScroll";
+import { ResponsiveDeanWrapper } from "./ResponsiveDeanWrapper";
 
 export type DeanInfo = {
   name: string;
