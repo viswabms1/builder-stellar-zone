@@ -605,7 +605,7 @@ function HeroVideo() {
     };
   }, []);
 
-  const heroHeight = isLandscape ? "h-[30vh]" : "h-[55vh]";
+  const heroHeight = isLandscape ? "h-[25vh]" : "h-[55vh]";
 
   return (
     <div
