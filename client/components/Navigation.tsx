@@ -263,10 +263,10 @@ export default function Navigation() {
     >
       <div className="max-w-7xl mx-auto px-3">
         <div className="flex items-center justify-between h-20">
-          {/* Mobile Logo - Visible next to hamburger */}
+          {/* Logo - Visible on mobile and tablet, hidden on desktop */}
           <Link
             to="/"
-            className="lg:hidden flex-shrink-0 h-16 flex items-center"
+            className="hidden sm:flex lg:hidden flex-shrink-0 h-16 flex items-center"
           >
             <img
               src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fc9f5a55fa7004ae596d21cc4fa4aed1f?format=webp&width=1200"
