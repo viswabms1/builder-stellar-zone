@@ -183,26 +183,29 @@
   /* Hero video height responsiveness - keep full video visible */
   .hero-video-container {
     height: 55vh;
+    overflow: hidden;
   }
 
   @media (max-width: 767px) and (orientation: landscape) {
-    /* Show full video in landscape - let it auto-size */
+    /* Show full video in landscape - let it auto-size without clipping */
     .hero-video-container {
       height: auto;
       min-height: 40vh;
-      overflow: visible !important;
+      overflow: visible;
     }
   }
 
   @media (min-width: 768px) {
     .hero-video-container {
       height: 65vh;
+      overflow: hidden;
     }
   }
 
   @media (min-width: 1024px) {
     .hero-video-container {
       height: 75vh;
+      overflow: hidden;
     }
   }
 
