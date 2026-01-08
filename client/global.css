@@ -189,8 +189,9 @@
   @media (max-height: 500px) and (orientation: landscape) {
     /* Show full video in landscape - use calc to account for nav */
     .hero-video-container {
-      height: calc(100vh - 4rem) !important;
+      height: calc(100vh - 5.5rem) !important;
       overflow: hidden;
+      padding-top: 1rem;
     }
 
     /* Keep video covering the full container */
