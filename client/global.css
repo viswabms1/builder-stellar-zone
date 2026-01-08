@@ -415,6 +415,16 @@
       font-size: 18px !important;
     }
   }
+
+  /* Ensure mute button works on all devices */
+  button[aria-label*="Mute"],
+  button[aria-label*="Unmute"] {
+    pointer-events: auto !important;
+    z-index: 99999 !important;
+    position: fixed !important;
+    top: 20px !important;
+    right: 20px !important;
+  }
 }
 
 @layer utilities {
