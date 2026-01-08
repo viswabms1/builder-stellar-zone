@@ -765,7 +765,7 @@ function HeroVideo() {
 export default function HealthSciences() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <section className="relative" id="top" style={{ marginTop: 'clamp(0px, 2.5rem, 10vh)' }}>
+      <section className="relative" id="top">
         <HeroVideo />
       </section>
 
