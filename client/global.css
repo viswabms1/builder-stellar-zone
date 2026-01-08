@@ -267,9 +267,34 @@
 
   /* Fix hero text hidden behind navbar on mobile landscape */
   @media screen and (max-width: 950px) and (orientation: landscape) {
+    /* Hide the top menu bar entirely in landscape */
+    .sticky.top-0.z-50.hidden.sm\:block {
+      display: none !important;
+    }
+
+    /* Make main nav more compact */
+    nav.sticky {
+      padding: 4px 8px !important;
+      min-height: auto !important;
+    }
+
+    nav.sticky > div {
+      height: auto !important;
+      gap: 2px !important;
+    }
+
+    nav.sticky a,
+    nav.sticky button {
+      padding: 4px 6px !important;
+      font-size: 11px !important;
+      line-height: 1.2 !important;
+    }
+
+    /* Ensure hero sections use minimal top padding */
     .hero-section,
     section[id="top"] {
-      padding-top: 100px !important; /* Adjust value based on actual navbar height */
+      margin-top: 0 !important;
+      padding-top: 0 !important;
     }
   }
 }
