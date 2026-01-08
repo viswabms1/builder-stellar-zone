@@ -267,65 +267,8 @@
 
   /* Fix hero text hidden behind navbar on mobile landscape */
   @media screen and (max-width: 950px) and (orientation: landscape) {
-    /* Allow navbar to expand naturally to two lines when wrapped */
-    .hidden.sm\:block {
-      display: none !important;
-    }
-
-    /* Make nav flexible to accommodate wrapped items */
-    nav {
-      height: auto !important;
-      min-height: auto !important;
-      padding: 8px 10px !important;
-      flex-wrap: wrap !important;
-      display: flex !important;
-    }
-
-    nav > div {
-      height: auto !important;
-      padding: 0 !important;
-    }
-
-    nav > div:first-child {
-      padding: 0 !important;
-      width: 100% !important;
-    }
-
-    /* Reduce nav item sizes to minimize height */
-    nav a,
-    nav button {
-      padding: 4px 6px !important;
-      font-size: 11px !important;
-      line-height: 1.2 !important;
-      height: auto !important;
-    }
-
-    /* Dynamically push hero below the wrapped navbar */
-    .hero-section,
-    .builder-hero,
-    .department-hero,
-    section[id="top"],
-    .hero-video-container {
-      padding-top: 110px !important;
-      margin-top: 0 !important;
-    }
-
-    /* Ensure hero sections expand to show all content */
     .hero-section {
-      height: auto !important;
-      min-height: 100vh !important;
-      overflow: visible !important;
-    }
-
-    section[id="top"] {
-      margin-top: 0 !important;
-    }
-
-    .hero-video-container {
-      height: auto !important;
-      min-height: calc(100vh - 110px) !important;
-      margin-top: 0 !important;
-      overflow: visible !important;
+      padding-top: 100px !important; /* Adjust value based on actual navbar height */
     }
   }
 }
