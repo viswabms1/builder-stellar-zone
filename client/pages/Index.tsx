@@ -96,46 +96,38 @@ function HeroVideo() {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/30 pointer-events-none"></div>
       </div>
 
-      {/* Mute/Unmute Button - Outside container to ensure clicks work */}
+      {/* Mute/Unmute Button */}
       <button
-        onClick={(e) => {
+        onClick={toggleMute}
+        onTouchStart={(e) => {
           e.preventDefault();
-          e.stopPropagation();
           toggleMute();
         }}
         style={{
-          position: 'absolute',
-          top: '16px',
-          right: '32px',
-          zIndex: 9999,
-          width: '48px',
-          height: '48px',
-          padding: '12px',
+          position: 'fixed',
+          top: '20px',
+          right: '20px',
+          zIndex: 99999,
+          width: '50px',
+          height: '50px',
           borderRadius: '50%',
-          backgroundColor: 'rgba(0, 0, 0, 0.5)',
+          backgroundColor: 'rgba(0, 0, 0, 0.6)',
           color: 'white',
-          border: '1px solid rgba(255, 255, 255, 0.2)',
+          border: '1px solid rgba(255, 255, 255, 0.3)',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          pointerEvents: 'auto',
           cursor: 'pointer',
-          touchAction: 'manipulation',
-          transition: 'background-color 0.3s ease',
-        }}
-        onMouseEnter={(e) => {
-          e.currentTarget.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
-        }}
-        onMouseLeave={(e) => {
-          e.currentTarget.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+          padding: 0,
+          margin: 0,
         }}
         aria-label={isMuted ? "Unmute" : "Mute"}
         type="button"
       >
         {isMuted ? (
-          <VolumeX className="h-5 w-5" style={{ pointerEvents: 'none' }} />
+          <VolumeX size={24} />
         ) : (
-          <Volume2 className="h-5 w-5" style={{ pointerEvents: 'none' }} />
+          <Volume2 size={24} />
         )}
       </button>
     </div>
