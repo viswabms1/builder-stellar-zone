@@ -1008,7 +1008,7 @@ function HeroVideo() {
       >
         <video
           ref={videoRef}
-          src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2Fca43c77a955c4e4b86175d41c68120cf?alt=media&token=45cdb70a-71df-43de-8859-de7bc907f167&apiKey=4aa279a8430d441dba9c55f659831878"
+          src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F6c3245bbc7eb40e8b8f8c3b9b772f3c1?alt=media&token=0ac3b70c-9f2a-48f5-b22e-fc189d18d323&apiKey=4aa279a8430d441dba9c55f659831878"
           autoPlay
           muted={isMuted}
           loop
