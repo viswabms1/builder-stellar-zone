@@ -640,9 +640,20 @@ function HeroVideo() {
             <Volume2 className="h-5 w-5" />
           )}
         </button>
+
+        <div className="hero-title-inside absolute bottom-0 left-0 right-0 z-20 flex items-end justify-start p-3 sm:p-6 max-w-7xl mx-auto w-full">
+          <div className="max-w-2xl">
+            <p className="text-lg sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-1 sm:mb-4 uppercase tracking-widest font-display">
+              School of Design
+            </p>
+            <h1 className="text-sm md:text-base text-white/80 mb-2 sm:mb-6 leading-tight font-display">
+              Design Your Impact
+            </h1>
+          </div>
+        </div>
       </div>
 
-      <div className="bg-background relative max-w-7xl mx-auto px-3 w-full py-6 sm:py-8">
+      <div className="bg-background relative max-w-7xl mx-auto px-3 w-full py-6 sm:py-8 hero-title-outside">
         <div className="max-w-2xl">
           <p className="text-lg sm:text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-1 sm:mb-4 uppercase tracking-widest font-display">
             School of Design
