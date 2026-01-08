@@ -624,11 +624,11 @@ export default function Navigation() {
               variant="ghost"
               size="sm"
               onClick={() => setIsOpen(!isOpen)}
-              className={
+              className={`${
                 theme === "light"
                   ? "text-gray-700 hover:text-orange-600"
                   : "text-white/80 hover:text-white"
-              }
+              } !bg-transparent !hover:bg-transparent active:!bg-transparent`}
             >
               {isOpen ? (
                 <X className="w-5 h-5" />
