@@ -265,10 +265,21 @@
     }
   }
 
-  /* In mobile landscape, reduce nav z-index to allow hero content to appear above */
+  /* In mobile landscape, reduce nav height and z-index to prevent covering hero */
   @media (max-width: 1024px) and (orientation: landscape) {
     nav {
       z-index: 5 !important;
+      height: 2.5rem !important;
+    }
+
+    nav > div {
+      height: 2.5rem !important;
+    }
+
+    nav button,
+    nav a {
+      padding: 0.25rem 0.5rem !important;
+      font-size: 0.75rem !important;
     }
   }
 }
