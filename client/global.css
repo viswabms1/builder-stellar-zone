@@ -308,7 +308,7 @@
     /* Reduce excessive padding on department hero sections in landscape */
     .dept-hero-section {
       margin-top: 0 !important;
-      padding-top: 250px !important;
+      padding-top: 300px !important;
     }
   }
 }
