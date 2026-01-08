@@ -422,6 +422,13 @@
     pointer-events: auto !important;
     z-index: 99999 !important;
   }
+
+  /* Hide top menu bar on tablet portrait mode */
+  @media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+    .sticky.top-0.z-50.hidden.sm\:block {
+      display: none !important;
+    }
+  }
 }
 
 @layer utilities {
