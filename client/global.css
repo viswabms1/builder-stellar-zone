@@ -297,10 +297,10 @@
       padding-top: 100px !important;
     }
 
-    /* Adjust hero section heights to account for navbar when it wraps */
+    /* Adjust hero section heights to account for navbar + padding when it wraps */
     .hero-section {
-      height: calc(100vh - 90px) !important;
-      min-height: unset !important;
+      height: auto !important;
+      min-height: calc(100vh - 100px) !important;
     }
 
     section[id="top"] {
@@ -308,7 +308,8 @@
     }
 
     .hero-video-container {
-      height: calc(100vh - 90px) !important;
+      height: auto !important;
+      min-height: calc(100vh - 100px) !important;
       margin-top: 0 !important;
     }
   }
