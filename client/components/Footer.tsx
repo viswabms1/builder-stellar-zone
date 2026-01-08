@@ -1,5 +1,6 @@
 import { Link as RouterLink } from "react-router-dom";
 import { useLanguage } from "@/providers/language-provider";
+import { useTheme } from "@/providers/theme-provider";
 import { footerTranslations } from "@/lib/i18n-extended";
 import {
   ArrowUpRight,
@@ -134,6 +135,7 @@ const SOCIAL_LINKS = [
 
 export default function Footer() {
   const { language } = useLanguage();
+  const { theme } = useTheme();
   const footerTrans = footerTranslations[language as keyof typeof footerTranslations] || footerTranslations.en;
 
   return (
