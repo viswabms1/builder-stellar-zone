@@ -267,42 +267,25 @@
 
   /* Mobile landscape optimization for header/navigation */
   @media screen and (max-width: 812px) and (orientation: landscape) {
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      padding: 10px !important;
-      font-size: 14px !important;
-    }
-
-    nav > div {
-      display: flex;
-      flex-wrap: wrap;
-      width: 100%;
-      overflow-x: auto;
-    }
-
-    nav a,
-    nav button {
-      flex: 1 0 auto;
-      white-space: nowrap;
-      padding: 6px 8px !important;
-      font-size: 12px !important;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
     /* Hide top menu bar in landscape mobile */
     .hidden.sm\:block {
       display: none !important;
     }
 
-    /* Position hamburger menu icon */
-    nav button[aria-label*="menu"],
-    nav button[aria-label*="Menu"] {
-      position: absolute;
-      right: 10px;
-      top: 10px;
+    nav {
+      height: auto !important;
+      padding: 8px 10px !important;
+    }
+
+    nav > div:first-child {
+      padding: 0 !important;
+    }
+
+    nav a,
+    nav button {
+      padding: 6px 8px !important;
+      font-size: 12px !important;
+      line-height: 1;
     }
   }
 }
