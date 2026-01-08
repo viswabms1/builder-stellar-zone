@@ -1188,7 +1188,7 @@ export default function Engineering() {
       </section>
 
       {/* Dean's Message Section */}
-      <ResponsiveDeanWrapper>
+      <section className="dean-section-wrapper relative overflow-hidden px-3 py-2">
         <div className="mx-auto max-w-7xl">
           <div className="rounded-none border border-orange-500/20 bg-orange-500/10 overflow-hidden backdrop-blur">
             <div className="grid md:grid-cols-[300px_1fr] gap-0">
@@ -1230,7 +1230,7 @@ export default function Engineering() {
             </div>
           </div>
         </div>
-      </ResponsiveDeanWrapper>
+      </section>
 
       <section id="programs" className="relative overflow-hidden px-3 py-8">
         <div
