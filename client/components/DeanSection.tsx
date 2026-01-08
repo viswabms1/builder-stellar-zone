@@ -113,7 +113,16 @@ export function DeanSection({ dean }: DeanSectionProps) {
                 </div>
 
                 {/* Video Container */}
-                <DeanMessageVideo videoUrl={dean.videoUrl} />
+                {dean.videoUrl ? (
+                  <DeanMessageVideo videoUrl={dean.videoUrl} />
+                ) : (
+                  <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-black/20 border border-border/30 flex items-center justify-center">
+                    <div className="text-center space-y-2">
+                      <p className="text-foreground/60 text-sm font-medium">Coming Soon</p>
+                      <p className="text-foreground/40 text-xs">Dean's Message Video</p>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           </div>
