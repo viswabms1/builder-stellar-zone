@@ -180,54 +180,38 @@
     }
   }
 
-  /* Mobile landscape orientation fixes */
+  /* Hero video height responsiveness */
+  .hero-video-container {
+    height: 55vh;
+  }
+
   @media (max-width: 767px) and (orientation: landscape) {
-    /* Reduce hero video height in landscape */
     .hero-video-container {
-      height: 25vh !important;
-    }
-
-    /* Add spacing to dean section in landscape to prevent overlap */
-    .dean-section-wrapper {
-      margin-top: 0 !important;
-      padding-top: 6rem !important;
-    }
-
-    /* Ensure content doesn't overlap with reduced hero */
-    .dean-section-wrapper > div > div {
-      padding-top: 2rem;
+      height: 25vh;
     }
   }
 
-  /* Tablet and desktop portrait fixes */
   @media (min-width: 768px) {
     .hero-video-container {
-      height: auto;
-    }
-
-    .dean-section-wrapper {
-      margin-top: -10rem;
-      padding-top: 0.5rem;
+      height: 65vh;
     }
   }
 
-  /* Desktop landscape fixes */
   @media (min-width: 1024px) {
-    .dean-section-wrapper {
-      margin-top: -5rem;
-      padding-top: 0.5rem;
+    .hero-video-container {
+      height: 75vh;
     }
   }
 
-  /* Mobile portrait fixes */
-  @media (max-width: 767px) and (orientation: portrait) {
-    .hero-video-container {
-      height: 55vh;
-    }
+  /* Dean section spacing - no negative margins, just natural spacing */
+  .dean-section-wrapper {
+    margin-top: 0;
+    padding-top: 1rem;
+  }
 
+  @media (max-width: 767px) and (orientation: landscape) {
     .dean-section-wrapper {
-      margin-top: -3rem;
-      padding-top: 0.5rem;
+      padding-top: 4rem;
     }
   }
 }
