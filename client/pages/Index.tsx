@@ -93,7 +93,16 @@ function HeroVideo() {
       {/* Mute/Unmute Button */}
       <button
         onClick={toggleMute}
-        className="absolute top-4 right-8 z-20 p-3 rounded-full bg-black/50 hover:bg-black/70 transition-colors text-white backdrop-blur-sm border border-white/20 pointer-events-auto cursor-pointer"
+        className="absolute top-4 right-8 z-50 p-3 rounded-full bg-black/50 hover:bg-black/70 active:bg-black/80 transition-colors text-white backdrop-blur-sm border border-white/20 cursor-pointer"
+        style={{
+          width: '48px',
+          height: '48px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          pointerEvents: 'auto',
+          touchAction: 'manipulation',
+        }}
         aria-label={isMuted ? "Unmute" : "Mute"}
         type="button"
       >
