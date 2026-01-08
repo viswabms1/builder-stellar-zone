@@ -327,54 +327,92 @@
   @media screen and (max-width: 1024px) {
     /* Main navigation menu items */
     nav.sticky a,
-    nav.sticky button,
-    nav.sticky .flex.items-center.space-x-2 {
+    nav.sticky button {
+      font-size: 18px !important;
+    }
+
+    /* Mobile menu items */
+    .lg\:hidden .flex.items-center.space-x-2 {
+      font-size: 18px !important;
+    }
+
+    /* Submenu items and links */
+    .rounded-lg.py-2.ml-4 a,
+    .rounded-lg.py-2.ml-4 button {
+      font-size: 18px !important;
+    }
+
+    /* School names in dropdowns */
+    .px-4.py-2.font-semibold {
+      font-size: 18px !important;
+    }
+
+    /* Subgroup headers */
+    .text-sm.sm\:text-base.font-semibold,
+    .text-xs.sm\:text-base.font-semibold {
       font-size: 16px !important;
     }
 
-    /* Submenu items */
-    .absolute.left-0.top-full a,
-    .rounded-lg.py-2.ml-4 a {
+    /* Department links */
+    .text-sm.sm\:text-base,
+    .text-xs.sm\:text-base {
       font-size: 16px !important;
     }
 
-    /* School names and submenu headers */
-    .space-y-2 .font-semibold,
-    .px-4.py-2.font--semibold {
-      font-size: 16px !important;
-    }
-
-    /* Top menu bar items for tablet */
+    /* Top menu bar items */
     .hidden.sm\:flex.items-center.gap-3 a {
-      font-size: 14px !important;
+      font-size: 15px !important;
     }
   }
 
   /* Further increase for mobile landscape specifically */
   @media screen and (max-width: 768px) and (orientation: landscape) {
     nav.sticky a,
-    nav.sticky button,
-    nav.sticky .flex.items-center.space-x-2 {
-      font-size: 15px !important;
+    nav.sticky button {
+      font-size: 16px !important;
     }
 
-    .absolute.left-0.top-full a,
-    .rounded-lg.py-2.ml-4 a {
-      font-size: 14px !important;
+    .lg\:hidden .flex.items-center.space-x-2 {
+      font-size: 16px !important;
+    }
+
+    .rounded-lg.py-2.ml-4 a,
+    .rounded-lg.py-2.ml-4 button {
+      font-size: 15px !important;
     }
   }
 
   /* Increase for mobile portrait */
   @media screen and (max-width: 768px) and (orientation: portrait) {
     nav.sticky a,
-    nav.sticky button,
-    nav.sticky .flex.items-center.space-x-2 {
-      font-size: 16px !important;
+    nav.sticky button {
+      font-size: 18px !important;
     }
 
-    .absolute.left-0.top-full a,
-    .rounded-lg.py-2.ml-4 a {
+    .lg\:hidden .flex.items-center.space-x-2 {
+      font-size: 18px !important;
+    }
+
+    .rounded-lg.py-2.ml-4 a,
+    .rounded-lg.py-2.ml-4 button {
       font-size: 16px !important;
+    }
+  }
+
+  /* Tablet specific (768px to 1024px) */
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    nav.sticky a,
+    nav.sticky button {
+      font-size: 20px !important;
+    }
+
+    .lg\:hidden .flex.items-center.space-x-2 {
+      font-size: 20px !important;
+    }
+
+    .rounded-lg.py-2.ml-4 a,
+    .rounded-lg.py-2.ml-4 button {
+      font-size: 18px !important;
     }
   }
 }
