@@ -218,7 +218,7 @@
   /* Dean section spacing - reduced gap without overlap */
   .dean-section-wrapper {
     margin-top: 0;
-    padding-top: 0.75rem;
+    padding-top: 0;
   }
 
   /* Add more space on mobile landscape to prevent overlap */
@@ -228,17 +228,17 @@
     }
   }
 
-  /* Slightly reduce gap on mobile portrait */
+  /* Minimal gap on mobile portrait */
   @media (max-height: 900px) and (orientation: portrait) {
     .dean-section-wrapper {
-      padding-top: 0.5rem;
+      padding-top: 0;
     }
   }
 
-  /* Compact gap on tablet portrait */
+  /* Minimal gap on tablet portrait */
   @media (min-height: 900px) and (orientation: portrait) {
     .dean-section-wrapper {
-      padding-top: 0.25rem;
+      padding-top: 0;
     }
   }
 }
