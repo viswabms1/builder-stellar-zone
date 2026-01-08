@@ -557,17 +557,22 @@ function HeroVideo() {
       >
         <video
           ref={videoRef}
-          src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F2430f6d80d91491aaf9b4769dfdc0507?alt=media&token=9b8aef75-c64e-4955-95d2-4b90834f5ee1&apiKey=4aa279a8430d441dba9c55f659831878"
+          src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F5282b6e742e9469290ca6669c1ac815d?alt=media&token=f781d5b8-256e-4edb-a4cd-e62d5120bc0a&apiKey=4aa279a8430d441dba9c55f659831878"
           autoPlay
           muted={isMuted}
           loop
           playsInline
           preload="metadata"
           crossOrigin="anonymous"
-          className="absolute inset-0 object-cover"
           style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            objectPosition: "center center",
             filter: "brightness(1.1) contrast(1.15) saturate(1.2)",
-            objectPosition: "center bottom",
           }}
         />
 
