@@ -93,8 +93,9 @@ function HeroVideo() {
       {/* Mute/Unmute Button */}
       <button
         onClick={toggleMute}
-        className="absolute top-4 right-8 z-10 p-3 rounded-full bg-black/50 hover:bg-black/70 transition-colors text-white backdrop-blur-sm border border-white/20"
+        className="absolute top-4 right-8 z-20 p-3 rounded-full bg-black/50 hover:bg-black/70 transition-colors text-white backdrop-blur-sm border border-white/20 pointer-events-auto cursor-pointer"
         aria-label={isMuted ? "Unmute" : "Mute"}
+        type="button"
       >
         {isMuted ? (
           <VolumeX className="h-5 w-5" />
