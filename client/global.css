@@ -294,7 +294,7 @@
     .department-hero,
     section[id="top"],
     .hero-video-container {
-      padding-top: 90px !important;
+      padding-top: 100px !important;
     }
 
     /* Adjust hero section heights to account for navbar when it wraps */
