@@ -1,7 +1,6 @@
 import { Link as RouterLink } from "react-router-dom";
 import { useState, useRef, useEffect } from "react";
 import type { LucideIcon } from "lucide-react";
-import { ResponsiveDeanWrapper } from "@/components/ResponsiveDeanWrapper";
 
 declare global {
   interface Window {
