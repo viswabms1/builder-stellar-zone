@@ -270,6 +270,7 @@
   @media (orientation: landscape) {
     .hero-title-inside {
       display: block !important;
+      z-index: 51 !important;
     }
 
     .hero-title-outside {
