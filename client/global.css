@@ -265,8 +265,8 @@
     }
   }
 
-  /* Mobile landscape optimization for header/navigation */
-  @media screen and (max-width: 812px) and (orientation: landscape) {
+  /* Fix hero text hidden behind navbar on mobile landscape */
+  @media screen and (max-width: 950px) and (orientation: landscape) {
     /* Hide top menu bar in landscape mobile */
     .hidden.sm\:block {
       display: none !important;
@@ -288,9 +288,10 @@
       line-height: 1;
     }
 
-    /* Add top padding to hero sections to account for navigation height in landscape */
-    /* This ensures NO overlap between navbar and hero content on ALL department pages */
+    /* Pushes heading below navbar - targets all hero section variants */
     .hero-section,
+    .builder-hero,
+    .department-hero,
     section[id="top"],
     .hero-video-container {
       padding-top: 90px !important;
