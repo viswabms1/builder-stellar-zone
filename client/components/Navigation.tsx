@@ -573,13 +573,12 @@ export default function Navigation() {
                     }`}
                   >
                     <img
-                      src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F0caf0bf29be6421997005f26cdaae0ed?format=webp&width=800"
+                      src={theme === "light"
+                        ? "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F359db0babe0948ae98ad938f84bc1474?format=webp&width=800"
+                        : "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F0caf0bf29be6421997005f26cdaae0ed?format=webp&width=800"
+                      }
                       alt="Dayananda Sagar University Logo"
-                      className={`h-20 w-auto object-contain group-hover:scale-110 transition-all duration-300 ${
-                        theme === "light"
-                          ? ""
-                          : "brightness-110 drop-shadow-lg"
-                      }`}
+                      className="h-20 w-auto object-contain group-hover:scale-110 transition-all duration-300"
                     />
                   </Link>,
                   <Link
