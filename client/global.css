@@ -186,9 +186,10 @@
   }
 
   @media (max-width: 767px) and (orientation: landscape) {
-    /* Show full video in landscape - don't crop */
+    /* Show full video in landscape - let it auto-size */
     .hero-video-container {
-      height: 50vh;
+      height: auto;
+      min-height: 40vh;
     }
   }
 
