@@ -78,7 +78,7 @@ export function DeanSection({ dean }: DeanSectionProps) {
   const bgColorClass = dean.bgColor || "bg-orange-500/10";
 
   return (
-    <section className="relative overflow-hidden px-3 py-2 -mt-12 md:py-4 md:-mt-40 lg:-mt-20">
+    <ResponsiveDeanWrapper>
       <div className="mx-auto max-w-7xl">
         <div className={`rounded-none border ${borderColorClass} ${bgColorClass} overflow-hidden backdrop-blur`}>
           <div className="grid md:grid-cols-[300px_1fr] gap-0">
@@ -120,6 +120,6 @@ export function DeanSection({ dean }: DeanSectionProps) {
           </div>
         </div>
       </div>
-    </section>
+    </ResponsiveDeanWrapper>
   );
 }
