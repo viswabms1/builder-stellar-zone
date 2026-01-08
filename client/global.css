@@ -180,14 +180,15 @@
     }
   }
 
-  /* Hero video height responsiveness */
+  /* Hero video height responsiveness - keep full video visible */
   .hero-video-container {
     height: 55vh;
   }
 
   @media (max-width: 767px) and (orientation: landscape) {
+    /* Show full video in landscape - don't crop */
     .hero-video-container {
-      height: 25vh;
+      height: 50vh;
     }
   }
 
@@ -212,7 +213,7 @@
   /* Add more space on mobile landscape to prevent overlap */
   @media (max-width: 767px) and (orientation: landscape) {
     .dean-section-wrapper {
-      padding-top: 3rem;
+      padding-top: 2rem;
     }
   }
 
