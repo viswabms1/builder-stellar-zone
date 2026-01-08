@@ -190,15 +190,18 @@
     /* Show full video in landscape - let it auto-size without clipping */
     .hero-video-container {
       height: auto;
-      min-height: 40vh;
       overflow: visible;
+      display: block;
     }
 
     /* Show full video aspect ratio without cropping */
     .hero-video-container video {
+      position: relative !important;
+      inset: auto !important;
       object-fit: contain !important;
       width: 100% !important;
       height: auto !important;
+      display: block;
     }
   }
 
