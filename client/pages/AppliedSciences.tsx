@@ -458,7 +458,7 @@ const DEAN_INFO: DeanInfo = {
   photo:
     "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fd8f7ea1fbcf24620b4dbc648eadcbd11?format=webp&width=800",
   videoUrl:
-    "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2Fedc45233389644c79e8791be99fb5d4b?alt=media&token=6308961a-7b0a-488f-9495-e3655aec61f9&apiKey=4aa279a8430d441dba9c55f659831878",
+    "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F06e31dd773f042938ce9ce8289ec8bc9?alt=media&token=f6da0a27-8ae3-47f4-b420-360c8bc0d8bb&apiKey=4aa279a8430d441dba9c55f659831878",
   borderColor: "border-violet-500/20",
   bgColor: "bg-violet-500/10",
 };
