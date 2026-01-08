@@ -630,12 +630,19 @@ function HeroVideo() {
     };
   }, []);
 
-  const heroHeight = isLandscape ? "h-[25vh]" : "h-[55vh]";
+  const getHeroHeight = () => {
+    if (isLandscape && window.innerWidth < 768) return "25vh";
+    if (window.innerWidth >= 1024) return "75vh";
+    if (window.innerWidth >= 768) return "65vh";
+    if (window.innerWidth >= 640) return "55vh";
+    return "55vh";
+  };
 
   return (
     <div
       ref={containerRef}
-      className={`${heroHeight} sm:h-[55vh] md:h-[65vh] lg:h-[75vh] relative overflow-hidden flex items-center justify-start hero-video-container`}
+      className="relative overflow-hidden flex items-center justify-start hero-video-container"
+      style={{ height: getHeroHeight() }}
     >
       <video
         ref={videoRef}
