@@ -187,9 +187,9 @@
   }
 
   @media (max-width: 767px) and (orientation: landscape) {
-    /* Show full video in landscape without cropping */
+    /* Show full video in landscape - use calc to account for nav */
     .hero-video-container {
-      height: 100vh !important;
+      height: calc(100vh - 4rem) !important;
       overflow: hidden;
     }
 
