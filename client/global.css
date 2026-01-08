@@ -267,7 +267,8 @@
 
   /* Fix hero text hidden behind navbar on mobile landscape */
   @media screen and (max-width: 950px) and (orientation: landscape) {
-    .hero-section {
+    .hero-section,
+    section[id="top"] {
       padding-top: 100px !important; /* Adjust value based on actual navbar height */
     }
   }
