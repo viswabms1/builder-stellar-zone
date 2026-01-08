@@ -418,8 +418,6 @@ const DEAN_INFO: DeanInfo = {
   position: "Dean, School of Law",
   photo:
     "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F897c8db062a14dfb9c9f3f024fbc856d?format=webp&width=800",
-  videoUrl:
-    "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F0c95c62aa88741fca8ebdc32aade53d5?alt=media&token=c57ff4a9-aea8-4ff3-843b-23ce820ba630&apiKey=4aa279a8430d441dba9c55f659831878",
   borderColor: "border-blue-500/20",
   bgColor: "bg-blue-500/10",
 };
