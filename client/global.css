@@ -265,6 +265,14 @@
     }
   }
 
+  /* Fix hero text hidden behind navbar on mobile portrait */
+  @media screen and (max-width: 768px) and (orientation: portrait) {
+    /* Reduce excessive padding on department hero sections in portrait */
+    .dept-hero-section {
+      padding-top: 60px !important;
+    }
+  }
+
   /* Fix hero text hidden behind navbar on mobile landscape */
   @media screen and (max-width: 950px) and (orientation: landscape) {
     /* Hide the top menu bar entirely in landscape */
