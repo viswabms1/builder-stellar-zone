@@ -22,10 +22,11 @@ export function ResponsiveDeanWrapper({ children }: ResponsiveDeanWrapperProps) 
     };
   }, []);
 
-  // Mobile landscape: no negative margin to prevent overlap
+  // Mobile landscape: add top margin to prevent overlap
   // Mobile portrait: reduce gap with negative margin
   // Tablet and up: use aggressive negative margin
-  const marginClass = isLandscape && window.innerWidth < 768 ? "" : "-mt-12";
+  const isMobileLandscape = isLandscape && window.innerWidth < 768;
+  const marginClass = isMobileLandscape ? "mt-8" : "-mt-12";
   const paddingClass = "py-2";
   const tabletMargin = "md:-mt-40";
   const desktopMargin = "lg:-mt-20";
