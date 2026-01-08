@@ -193,6 +193,13 @@
       min-height: 40vh;
       overflow: visible;
     }
+
+    /* Show full video aspect ratio without cropping */
+    .hero-video-container video {
+      object-fit: contain !important;
+      width: 100% !important;
+      height: auto !important;
+    }
   }
 
   @media (min-width: 768px) {
