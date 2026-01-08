@@ -76,7 +76,7 @@ function HeroVideo() {
         ref={videoRef}
         src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F389ede098f8743368a37b080b1969b8a?alt=media&token=101276cc-1be0-485d-a4a8-86f1e71c260f&apiKey=4aa279a8430d441dba9c55f659831878"
         autoPlay
-        muted
+        muted={isMuted}
         loop
         playsInline
         preload="metadata"
