@@ -618,50 +618,64 @@ function HeroVideo() {
   }, []);
 
   return (
-    <div
-      ref={containerRef}
-      className="hero-video-container relative flex items-center justify-start"
-    >
-      <video
-        ref={videoRef}
-        src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2Fa185568237c64433ad901c292c3e213b?alt=media&token=6a50e6fe-1aa5-48f9-bbe0-e23311707d27&apiKey=4aa279a8430d441dba9c55f659831878"
-        autoPlay
-        muted={isMuted}
-        loop
-        playsInline
-        preload="metadata"
-        crossOrigin="anonymous"
-        className="absolute inset-0 object-cover"
-        style={{
-          filter: "brightness(1.1) contrast(1.15) saturate(1.2)",
-          objectPosition: "center top",
-        }}
-      />
-
-      <div className="absolute inset-0 bg-black/40"></div>
-
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/30 pointer-events-none"></div>
-
-      <div className="absolute top-0 left-0 w-96 h-96 bg-brand-magenta/5 rounded-full filter blur-3xl opacity-60 animate-float pointer-events-none"></div>
+    <>
       <div
-        className="absolute bottom-0 right-0 w-96 h-96 bg-brand-orange/5 rounded-full filter blur-3xl opacity-60 animate-float pointer-events-none"
-        style={{ animationDelay: "2s" }}
-      ></div>
+        ref={containerRef}
+        className="hero-video-container relative flex items-center justify-start"
+      >
+        <video
+          ref={videoRef}
+          src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2Fa185568237c64433ad901c292c3e213b?alt=media&token=6a50e6fe-1aa5-48f9-bbe0-e23311707d27&apiKey=4aa279a8430d441dba9c55f659831878"
+          autoPlay
+          muted={isMuted}
+          loop
+          playsInline
+          preload="metadata"
+          crossOrigin="anonymous"
+          className="absolute inset-0 object-cover"
+          style={{
+            filter: "brightness(1.1) contrast(1.15) saturate(1.2)",
+            objectPosition: "center top",
+          }}
+        />
 
-      <div
-        className="absolute inset-0 opacity-5 pointer-events-none"
-        style={{
-          backgroundImage:
-            "repeating-linear-gradient(0deg, rgba(255,255,255,.03) 0px, rgba(255,255,255,.03) 1px, transparent 1px, transparent 2px)",
-        }}
-      ></div>
+        <div className="absolute inset-0 bg-black/40"></div>
 
-      <div className="relative max-w-7xl mx-auto px-3 w-full z-10 pb-2 sm:pb-8 md:pb-0">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/30 pointer-events-none"></div>
+
+        <div className="absolute top-0 left-0 w-96 h-96 bg-brand-magenta/5 rounded-full filter blur-3xl opacity-60 animate-float pointer-events-none"></div>
+        <div
+          className="absolute bottom-0 right-0 w-96 h-96 bg-brand-orange/5 rounded-full filter blur-3xl opacity-60 animate-float pointer-events-none"
+          style={{ animationDelay: "2s" }}
+        ></div>
+
+        <div
+          className="absolute inset-0 opacity-5 pointer-events-none"
+          style={{
+            backgroundImage:
+              "repeating-linear-gradient(0deg, rgba(255,255,255,.03) 0px, rgba(255,255,255,.03) 1px, transparent 1px, transparent 2px)",
+          }}
+        ></div>
+
+        <button
+          onClick={toggleMute}
+          className="absolute top-4 right-8 z-10 p-3 rounded-full bg-black/50 hover:bg-black/70 transition-colors text-white backdrop-blur-sm border border-white/20"
+          aria-label={isMuted ? "Unmute" : "Mute"}
+        >
+          {isMuted ? (
+            <VolumeX className="h-5 w-5" />
+          ) : (
+            <Volume2 className="h-5 w-5" />
+          )}
+        </button>
+      </div>
+
+      <div className="bg-background relative max-w-7xl mx-auto px-3 w-full py-6 sm:py-8">
         <div className="max-w-2xl">
-          <p className="text-lg sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-1 sm:mb-4 uppercase tracking-widest font-display">
+          <p className="text-lg sm:text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-1 sm:mb-4 uppercase tracking-widest font-display">
             School of Basic & Applied Sciences
           </p>
-          <h1 className="text-xs sm:text-base md:text-base text-white/80 mb-2 sm:mb-6 leading-tight font-display">
+          <h1 className="text-xs sm:text-base md:text-base text-foreground/80 mb-2 sm:mb-6 leading-tight font-display">
             Science for Sustainable Tomorrow
           </h1>
 
@@ -683,19 +697,7 @@ function HeroVideo() {
           </div>
         </div>
       </div>
-
-      <button
-        onClick={toggleMute}
-        className="absolute top-4 right-8 z-10 p-3 rounded-full bg-black/50 hover:bg-black/70 transition-colors text-white backdrop-blur-sm border border-white/20"
-        aria-label={isMuted ? "Unmute" : "Mute"}
-      >
-        {isMuted ? (
-          <VolumeX className="h-5 w-5" />
-        ) : (
-          <Volume2 className="h-5 w-5" />
-        )}
-      </button>
-    </div>
+    </>
   );
 }
 
