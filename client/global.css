@@ -265,8 +265,8 @@
     display: block !important;
   }
 
-  /* In landscape: show title inside video, hide outside */
-  @media (max-height: 500px) and (orientation: landscape) {
+  /* In landscape (all sizes): show title inside video, hide outside */
+  @media (orientation: landscape) {
     .hero-title-inside {
       display: block !important;
     }
