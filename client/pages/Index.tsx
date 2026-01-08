@@ -96,25 +96,44 @@ function HeroVideo() {
 
       {/* Mute/Unmute Button - Outside container to ensure clicks work */}
       <button
-        onClick={toggleMute}
-        className="absolute top-4 right-8 z-50 p-3 rounded-full bg-black/50 hover:bg-black/70 active:bg-black/80 transition-colors text-white backdrop-blur-sm border border-white/20"
+        onClick={(e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          toggleMute();
+        }}
         style={{
+          position: 'absolute',
+          top: '16px',
+          right: '32px',
+          zIndex: 9999,
           width: '48px',
           height: '48px',
+          padding: '12px',
+          borderRadius: '50%',
+          backgroundColor: 'rgba(0, 0, 0, 0.5)',
+          color: 'white',
+          border: '1px solid rgba(255, 255, 255, 0.2)',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
           pointerEvents: 'auto',
           cursor: 'pointer',
           touchAction: 'manipulation',
+          transition: 'background-color 0.3s ease',
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
         }}
         aria-label={isMuted ? "Unmute" : "Mute"}
         type="button"
       >
         {isMuted ? (
-          <VolumeX className="h-5 w-5" />
+          <VolumeX className="h-5 w-5" style={{ pointerEvents: 'none' }} />
         ) : (
-          <Volume2 className="h-5 w-5" />
+          <Volume2 className="h-5 w-5" style={{ pointerEvents: 'none' }} />
         )}
       </button>
     </div>
