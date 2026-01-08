@@ -17,26 +17,12 @@ type ThemeContextValue = {
 
 const ThemeContext = createContext<ThemeContextValue | undefined>(undefined);
 
-const STORAGE_KEY = "dsu-theme";
-
 const useIsomorphicLayoutEffect =
   typeof window === "undefined" ? useEffect : useLayoutEffect;
 
+// Always return dark theme as default, ignoring stored preferences
 function getInitialTheme(): Theme {
-  if (typeof window === "undefined") {
-    return "dark";
-  }
-
-  const stored = window.localStorage.getItem(STORAGE_KEY) as Theme | null;
-  if (stored === "dark" || stored === "light") {
-    return stored;
-  }
-
-  const prefersLight = window.matchMedia(
-    "(prefers-color-scheme: light)",
-  ).matches;
-
-  return prefersLight ? "light" : "dark";
+  return "dark";
 }
 
 export function ThemeProvider({
@@ -53,21 +39,10 @@ export function ThemeProvider({
     } else {
       root.classList.remove("light");
     }
-    window.localStorage.setItem(STORAGE_KEY, theme);
+    // Don't persist theme to localStorage - only apply for this session
   }, [theme]);
 
-  useEffect(() => {
-    const mediaQuery = window.matchMedia("(prefers-color-scheme: light)");
-    const handleChange = (event: MediaQueryListEvent) => {
-      const stored = window.localStorage.getItem(STORAGE_KEY) as Theme | null;
-      if (stored === null) {
-        setTheme(event.matches ? "light" : "dark");
-      }
-    };
-
-    mediaQuery.addEventListener("change", handleChange);
-    return () => mediaQuery.removeEventListener("change", handleChange);
-  }, []);
+  // Removed system preference listener - dark theme is always the default
 
   const value = useMemo<ThemeContextValue>(
     () => ({
