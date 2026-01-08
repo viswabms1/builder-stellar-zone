@@ -189,8 +189,8 @@
   }
 
   @media (max-width: 1024px) and (orientation: landscape) {
-    .hero-video-container {
-      transform: translateY(2.5rem) !important;
+    section[id="top"] {
+      margin-top: 2.5rem !important;
     }
   }
 
