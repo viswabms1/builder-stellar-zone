@@ -201,7 +201,14 @@
     }
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 768px) and (orientation: portrait) {
+    .hero-video-container {
+      height: 40vh;
+      overflow: hidden;
+    }
+  }
+
+  @media (min-width: 768px) and (orientation: landscape) {
     .hero-video-container {
       height: 65vh;
       overflow: hidden;
