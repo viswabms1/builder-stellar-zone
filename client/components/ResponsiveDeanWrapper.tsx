@@ -26,14 +26,16 @@ export function ResponsiveDeanWrapper({ children }: ResponsiveDeanWrapperProps) 
   // Mobile portrait: reduce gap with negative margin
   // Tablet and up: use aggressive negative margin
   const isMobileLandscape = isLandscape && window.innerWidth < 768;
-  const marginClass = isMobileLandscape ? "mt-8" : "-mt-12";
-  const paddingClass = "py-2";
-  const tabletMargin = "md:-mt-40";
-  const desktopMargin = "lg:-mt-20";
+  const marginTop = isMobileLandscape ? "2rem" : "-3rem";
+  const marginTopTablet = window.innerWidth >= 768 ? "-10rem" : marginTop;
+  const marginTopDesktop = window.innerWidth >= 1024 ? "-5rem" : marginTopTablet;
 
   return (
     <section
-      className={`relative overflow-hidden px-3 ${paddingClass} ${marginClass} ${tabletMargin} ${desktopMargin}`}
+      className="relative overflow-hidden px-3 py-2"
+      style={{
+        marginTop: marginTopDesktop,
+      }}
     >
       {children}
     </section>
