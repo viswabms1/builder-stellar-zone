@@ -222,21 +222,21 @@
   }
 
   /* Add more space on mobile landscape to prevent overlap */
-  @media (max-width: 767px) and (orientation: landscape) {
+  @media (max-height: 500px) and (orientation: landscape) {
     .dean-section-wrapper {
       padding-top: 2rem;
     }
   }
 
   /* Slightly reduce gap on mobile portrait */
-  @media (max-width: 767px) and (orientation: portrait) {
+  @media (max-height: 900px) and (orientation: portrait) {
     .dean-section-wrapper {
       padding-top: 0.5rem;
     }
   }
 
   /* Compact gap on tablet portrait */
-  @media (min-width: 768px) and (orientation: portrait) {
+  @media (min-height: 900px) and (orientation: portrait) {
     .dean-section-wrapper {
       padding-top: 0.25rem;
     }
