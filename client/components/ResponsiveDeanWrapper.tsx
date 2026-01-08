@@ -34,25 +34,30 @@ export function ResponsiveDeanWrapper({ children }: ResponsiveDeanWrapperProps) 
   const isTablet = dimensions.width >= 768 && dimensions.width < 1024;
   const isDesktop = dimensions.width >= 1024;
 
-  let marginTop = "0";
+  let styles: React.CSSProperties = {
+    position: "relative",
+    overflow: "hidden",
+    paddingLeft: "0.75rem",
+    paddingRight: "0.75rem",
+    paddingBottom: "0.5rem",
+  };
 
   if (isMobileLandscape) {
-    marginTop = "12rem"; // Push down significantly in mobile landscape
+    styles.marginTop = "-6rem"; // Negative to allow overlap
+    styles.paddingTop = "8rem"; // But add internal padding to push content down
   } else if (isMobilePortrait) {
-    marginTop = "-3rem"; // Pull up in mobile portrait
+    styles.marginTop = "-3rem"; // Pull up in mobile portrait
+    styles.paddingTop = "0.5rem";
   } else if (isTablet) {
-    marginTop = "-10rem"; // Pull up in tablet
+    styles.marginTop = "-10rem"; // Pull up in tablet
+    styles.paddingTop = "0.5rem";
   } else if (isDesktop) {
-    marginTop = "-5rem"; // Pull up in desktop
+    styles.marginTop = "-5rem"; // Pull up in desktop
+    styles.paddingTop = "0.5rem";
   }
 
   return (
-    <section
-      className="relative overflow-hidden px-3 py-2"
-      style={{
-        marginTop,
-      }}
-    >
+    <section style={styles}>
       {children}
     </section>
   );
