@@ -289,18 +289,26 @@
     }
 
     /* Add top padding to hero sections to account for navigation height in landscape */
+    /* This ensures NO overlap between navbar and hero content on ALL department pages */
     .hero-section,
-    section[id="top"] {
-      padding-top: 80px !important;
+    section[id="top"],
+    .hero-video-container {
+      padding-top: 90px !important;
     }
 
-    /* Adjust hero container heights in landscape to prevent cutoff */
+    /* Adjust hero section heights to account for navbar when it wraps */
     .hero-section {
-      height: calc(100vh - 80px) !important;
+      height: calc(100vh - 90px) !important;
+      min-height: unset !important;
+    }
+
+    section[id="top"] {
+      margin-top: 0 !important;
     }
 
     .hero-video-container {
-      height: calc(100vh - 80px) !important;
+      height: calc(100vh - 90px) !important;
+      margin-top: 0 !important;
     }
   }
 }
