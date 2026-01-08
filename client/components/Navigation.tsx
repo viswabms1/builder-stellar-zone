@@ -263,8 +263,21 @@ export default function Navigation() {
     >
       <div className="max-w-7xl mx-auto px-3">
         <div className="flex items-center justify-between h-20">
-          {/* Mobile menu button placeholder for spacing */}
-          <div className="lg:hidden w-12" />
+          {/* Mobile Logo - Visible next to hamburger */}
+          <Link
+            to="/"
+            className="lg:hidden flex-shrink-0 h-16 flex items-center"
+          >
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fc9f5a55fa7004ae596d21cc4fa4aed1f?format=webp&width=1200"
+              alt="Dayananda Sagar University Logo"
+              className={`h-12 w-auto object-contain ${
+                theme === "light"
+                  ? ""
+                  : "brightness-110 drop-shadow-lg"
+              }`}
+            />
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-0.5">
@@ -638,18 +651,6 @@ export default function Navigation() {
           }`}
         >
           <div className="px-3 py-4 space-y-3 max-h-[calc(100vh-180px)] overflow-y-auto w-full">
-            {/* Logo for Mobile */}
-            <div className="flex justify-center mb-4 pb-4 border-b border-orange-200/30 dark:border-orange-600/20">
-              <img
-                src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fc9f5a55fa7004ae596d21cc4fa4aed1f?format=webp&width=1200"
-                alt="Dayananda Sagar University Logo"
-                className={`h-16 w-auto object-contain ${
-                  theme === "light"
-                    ? ""
-                    : "brightness-110 drop-shadow-lg"
-                }`}
-              />
-            </div>
             {/* Main Navigation Items */}
             {navigation.map((item, idx) => {
               const active = !item.external && isActive(item.href);
