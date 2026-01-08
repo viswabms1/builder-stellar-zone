@@ -541,7 +541,6 @@ function CalendarResourceCard({ entry }: { entry: CalendarEntry }) {
 
 function HeroVideo() {
   const [isMuted, setIsMuted] = useState(true);
-  const [isLandscape, setIsLandscape] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useAutoMuteOnScroll(videoRef);
 
@@ -551,21 +550,6 @@ function HeroVideo() {
       setIsMuted(!isMuted);
     }
   };
-
-  useEffect(() => {
-    const checkOrientation = () => {
-      setIsLandscape(window.innerHeight < window.innerWidth && window.innerWidth < 768);
-    };
-
-    checkOrientation();
-    window.addEventListener("orientationchange", checkOrientation);
-    window.addEventListener("resize", checkOrientation);
-
-    return () => {
-      window.removeEventListener("orientationchange", checkOrientation);
-      window.removeEventListener("resize", checkOrientation);
-    };
-  }, []);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -594,19 +578,10 @@ function HeroVideo() {
     };
   }, []);
 
-  const getHeroHeight = () => {
-    if (isLandscape && window.innerWidth < 768) return "25vh";
-    if (window.innerWidth >= 1024) return "75vh";
-    if (window.innerWidth >= 768) return "65vh";
-    if (window.innerWidth >= 640) return "55vh";
-    return "55vh";
-  };
-
   return (
     <div
       ref={containerRef}
-      className="relative overflow-hidden flex items-center justify-start hero-video-container"
-      style={{ height: getHeroHeight() }}
+      className="hero-video-container relative overflow-hidden flex items-center justify-start"
     >
       <video
         ref={videoRef}
