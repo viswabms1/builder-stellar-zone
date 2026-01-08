@@ -31,7 +31,7 @@ export function ResponsiveDeanWrapper({ children }: ResponsiveDeanWrapperProps) 
   const isDesktop = window.innerWidth >= 1024;
 
   if (isMobileLandscape) {
-    marginTop = "3rem"; // Push down in mobile landscape
+    marginTop = "10rem"; // Push down significantly in mobile landscape
   } else if (isMobilePortrait) {
     marginTop = "-3rem"; // Pull up in mobile portrait
   } else if (isTablet) {
