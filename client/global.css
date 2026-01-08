@@ -292,14 +292,14 @@
 
     /* Ensure hero sections use minimal top padding */
     .hero-section,
-    section[id="top"],
-    .dept-hero-section {
+    section[id="top"] {
       margin-top: 0 !important;
       padding-top: 0 !important;
     }
 
     /* Reduce excessive padding on department hero sections in landscape */
     .dept-hero-section {
+      margin-top: 0 !important;
       padding-top: 8px !important;
     }
   }
