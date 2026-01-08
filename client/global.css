@@ -203,15 +203,30 @@
     }
   }
 
-  /* Dean section spacing - no negative margins, just natural spacing */
+  /* Dean section spacing - reduced gap without overlap */
   .dean-section-wrapper {
     margin-top: 0;
-    padding-top: 1rem;
+    padding-top: 0.75rem;
   }
 
+  /* Add more space on mobile landscape to prevent overlap */
   @media (max-width: 767px) and (orientation: landscape) {
     .dean-section-wrapper {
-      padding-top: 4rem;
+      padding-top: 3rem;
+    }
+  }
+
+  /* Slightly reduce gap on mobile portrait */
+  @media (max-width: 767px) and (orientation: portrait) {
+    .dean-section-wrapper {
+      padding-top: 0.5rem;
+    }
+  }
+
+  /* Compact gap on tablet portrait */
+  @media (min-width: 768px) and (orientation: portrait) {
+    .dean-section-wrapper {
+      padding-top: 0.25rem;
     }
   }
 }
