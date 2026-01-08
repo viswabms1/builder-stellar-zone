@@ -302,6 +302,8 @@
     .hero-section {
       margin-top: 0 !important;
       padding-top: 300px !important;
+      height: auto !important;
+      min-height: calc(100vh + 300px) !important;
     }
 
     section[id="top"] {
