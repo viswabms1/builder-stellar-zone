@@ -287,6 +287,21 @@
       font-size: 12px !important;
       line-height: 1;
     }
+
+    /* Add top padding to hero sections to account for navigation height in landscape */
+    .hero-section,
+    section[id="top"] {
+      padding-top: 80px !important;
+    }
+
+    /* Adjust hero container heights in landscape to prevent cutoff */
+    .hero-section {
+      height: calc(100vh - 80px) !important;
+    }
+
+    .hero-video-container {
+      height: calc(100vh - 80px) !important;
+    }
   }
 }
 
