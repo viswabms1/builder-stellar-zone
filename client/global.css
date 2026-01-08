@@ -266,7 +266,7 @@
   }
 
   /* In mobile landscape, reduce nav z-index to allow hero content to appear above */
-  @media (max-height: 500px) and (orientation: landscape) {
+  @media (max-width: 1024px) and (orientation: landscape) {
     nav {
       z-index: 5 !important;
     }
