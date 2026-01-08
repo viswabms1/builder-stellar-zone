@@ -5,33 +5,39 @@ interface ResponsiveDeanWrapperProps {
 }
 
 export function ResponsiveDeanWrapper({ children }: ResponsiveDeanWrapperProps) {
-  const [isLandscape, setIsLandscape] = useState(false);
+  const [dimensions, setDimensions] = useState({
+    width: typeof window !== "undefined" ? window.innerWidth : 0,
+    height: typeof window !== "undefined" ? window.innerHeight : 0,
+  });
 
   useEffect(() => {
-    const checkOrientation = () => {
-      setIsLandscape(window.innerHeight < window.innerWidth);
+    const handleResize = () => {
+      setDimensions({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
     };
 
-    checkOrientation();
-    window.addEventListener("orientationchange", checkOrientation);
-    window.addEventListener("resize", checkOrientation);
+    window.addEventListener("resize", handleResize);
+    window.addEventListener("orientationchange", handleResize);
 
     return () => {
-      window.removeEventListener("orientationchange", checkOrientation);
-      window.removeEventListener("resize", checkOrientation);
+      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("orientationchange", handleResize);
     };
   }, []);
 
-  // Calculate responsive margins based on orientation and screen size
+  // Calculate margins based on window dimensions
+  const isLandscape = dimensions.height < dimensions.width;
+  const isMobileLandscape = isLandscape && dimensions.width < 768;
+  const isMobilePortrait = !isLandscape && dimensions.width < 768;
+  const isTablet = dimensions.width >= 768 && dimensions.width < 1024;
+  const isDesktop = dimensions.width >= 1024;
+
   let marginTop = "0";
 
-  const isMobileLandscape = isLandscape && window.innerWidth < 768;
-  const isMobilePortrait = !isLandscape && window.innerWidth < 768;
-  const isTablet = window.innerWidth >= 768 && window.innerWidth < 1024;
-  const isDesktop = window.innerWidth >= 1024;
-
   if (isMobileLandscape) {
-    marginTop = "10rem"; // Push down significantly in mobile landscape
+    marginTop = "12rem"; // Push down significantly in mobile landscape
   } else if (isMobilePortrait) {
     marginTop = "-3rem"; // Pull up in mobile portrait
   } else if (isTablet) {
