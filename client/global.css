@@ -190,6 +190,7 @@
     .hero-video-container {
       height: auto;
       min-height: 40vh;
+      overflow: visible !important;
     }
   }
 
