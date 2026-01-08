@@ -653,31 +653,31 @@ function HeroVideo() {
         </div>
       </div>
 
-      <div className="bg-background relative max-w-7xl mx-auto px-3 w-full py-6 sm:py-8 hero-title-outside">
-        <div className="max-w-2xl">
+      <div className="bg-background relative max-w-7xl mx-auto px-3 w-full py-6 sm:py-8">
+        <div className="hero-title-outside max-w-2xl">
           <p className="text-lg sm:text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-1 sm:mb-4 uppercase tracking-widest font-display">
             School of Design
           </p>
           <h1 className="text-sm md:text-base text-foreground/80 mb-2 sm:mb-6 leading-tight font-display">
             Design Your Impact
           </h1>
+        </div>
 
-          <div className="flex flex-row gap-2 sm:gap-4">
-            <a
-              href="https://admissions.dsu.edu.in/"
-              target="_blank"
-              rel="noreferrer"
-              className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+        <div className="flex flex-row gap-2 sm:gap-4">
+          <a
+            href="https://admissions.dsu.edu.in/"
+            target="_blank"
+            rel="noreferrer"
+            className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          >
+            <Button
+              size="lg"
+              className="bg-white hover:bg-white/90 text-orange-600 hover:text-orange-700 px-8 py-6 text-base font-semibold font-display transition-all duration-300 group border-2 border-white"
             >
-              <Button
-                size="lg"
-                className="bg-white hover:bg-white/90 text-orange-600 hover:text-orange-700 px-8 py-6 text-base font-semibold font-display transition-all duration-300 group border-2 border-white"
-              >
-                Apply Now
-                <ChevronRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </a>
-          </div>
+              Apply Now
+              <ChevronRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+            </Button>
+          </a>
         </div>
       </div>
     </>
