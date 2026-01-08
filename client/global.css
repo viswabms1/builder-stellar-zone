@@ -322,6 +322,61 @@
       margin-top: -80px !important;
     }
   }
+
+  /* Increase menu font sizes for mobile and tablet devices */
+  @media screen and (max-width: 1024px) {
+    /* Main navigation menu items */
+    nav.sticky a,
+    nav.sticky button,
+    nav.sticky .flex.items-center.space-x-2 {
+      font-size: 16px !important;
+    }
+
+    /* Submenu items */
+    .absolute.left-0.top-full a,
+    .rounded-lg.py-2.ml-4 a {
+      font-size: 16px !important;
+    }
+
+    /* School names and submenu headers */
+    .space-y-2 .font-semibold,
+    .px-4.py-2.font--semibold {
+      font-size: 16px !important;
+    }
+
+    /* Top menu bar items for tablet */
+    .hidden.sm\:flex.items-center.gap-3 a {
+      font-size: 14px !important;
+    }
+  }
+
+  /* Further increase for mobile landscape specifically */
+  @media screen and (max-width: 768px) and (orientation: landscape) {
+    nav.sticky a,
+    nav.sticky button,
+    nav.sticky .flex.items-center.space-x-2 {
+      font-size: 15px !important;
+    }
+
+    .absolute.left-0.top-full a,
+    .rounded-lg.py-2.ml-4 a {
+      font-size: 14px !important;
+    }
+  }
+
+  /* Increase for mobile portrait */
+  @media screen and (max-width: 768px) and (orientation: portrait) {
+    nav.sticky a,
+    nav.sticky button,
+    nav.sticky .flex.items-center.space-x-2 {
+      font-size: 16px !important;
+    }
+
+    .absolute.left-0.top-full a,
+    .rounded-lg.py-2.ml-4 a {
+      font-size: 16px !important;
+    }
+  }
 }
 
 @layer utilities {
