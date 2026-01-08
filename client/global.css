@@ -316,6 +316,11 @@
       margin-top: 0 !important;
       padding-top: 300px !important;
     }
+
+    /* Shift university name up in mobile landscape */
+    .hero-section h1 {
+      margin-top: -80px !important;
+    }
   }
 }
 
