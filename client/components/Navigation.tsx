@@ -270,7 +270,7 @@ export default function Navigation() {
             style={{ width: 'auto', minWidth: '80px' }}
           >
             <img
-              src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fc9f5a55fa7004ae596d21cc4fa4aed1f?format=webp&width=1200"
+              src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F0caf0bf29be6421997005f26cdaae0ed?format=webp&width=800"
               alt="Dayananda Sagar University Logo"
               style={{ height: '50px', width: 'auto' }}
               className={theme === "light" ? "" : "brightness-110 drop-shadow-lg"}
@@ -571,7 +571,7 @@ export default function Navigation() {
                     }`}
                   >
                     <img
-                      src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fc9f5a55fa7004ae596d21cc4fa4aed1f?format=webp&width=1200"
+                      src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F0caf0bf29be6421997005f26cdaae0ed?format=webp&width=800"
                       alt="Dayananda Sagar University Logo"
                       className={`h-20 w-auto object-contain group-hover:scale-110 transition-all duration-300 ${
                         theme === "light"
