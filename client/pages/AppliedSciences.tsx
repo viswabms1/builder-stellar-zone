@@ -423,6 +423,21 @@ const PG_PROGRAM_CARDS: ProgramCard[] = [
     panelClass: "bg-black/55 backdrop-blur-xl",
     featured: true,
   },
+  {
+    name: "M.Sc Specializations",
+    area: "Advanced Life Sciences",
+    description:
+      "Specialized Master of Science programmes offering in-depth study and research opportunities with thesis work and industry collaboration.",
+    image:
+      "https://images.unsplash.com/photo-1576091160399-b2883cf36b6e?q=80&w=1600&auto=format&fit=crop",
+    link: "https://www.dsu.edu.in/basic-applied-sciences/msc-specializations",
+    highlights: ["M.Sc. Biochemistry", "M.Sc. Biotechnology", "M.Sc. Microbiology"],
+    overlay:
+      "bg-gradient-to-br from-brand-orange/70 via-black/70 to-black/55 mix-blend-multiply",
+    badgeClass:
+      "bg-brand-orange/30 text-foreground/90 border border-white/25 backdrop-blur",
+    panelClass: "bg-black/55 backdrop-blur-xl",
+  },
 ];
 
 const CALENDAR_ENTRIES: CalendarEntry[] = [
