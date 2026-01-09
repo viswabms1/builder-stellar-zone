@@ -1,5 +1,4 @@
-import { useState, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -16,12 +15,7 @@ import {
   Download,
   CalendarDays,
   Zap,
-  Activity,
-  Syringe,
-  Volume2,
-  VolumeX,
 } from "lucide-react";
-import { useAutoMuteOnScroll } from "@/hooks/useAutoMuteOnScroll";
 
 export default function MScNursing() {
   const specializations = [
@@ -49,101 +43,21 @@ export default function MScNursing() {
     "International opportunities: USA, UK, Canada, Middle East (₹25-40 LPA+)",
   ];
 
-  function HeroVideo() {
-    const [isMuted, setIsMuted] = useState(true);
-    const videoRef = useRef<HTMLVideoElement>(null);
-    const containerRef = useAutoMuteOnScroll(videoRef);
 
-    const toggleMute = () => {
-      if (videoRef.current) {
-        videoRef.current.muted = !videoRef.current.muted;
-        setIsMuted(!isMuted);
-      }
-    };
-
-    useEffect(() => {
-      const video = videoRef.current;
-      if (!video) return;
-
-      video.muted = isMuted;
-    }, [isMuted]);
-
-    useEffect(() => {
-      const video = videoRef.current;
-      if (!video) return;
-
-      const handleEnded = () => {
-        const rect = containerRef.current?.getBoundingClientRect();
-        const isVisible =
-          rect && rect.top < window.innerHeight && rect.bottom > 0;
-        if (isVisible) {
-          video.currentTime = 0;
-          video.play().catch(() => {});
-        }
-      };
-
-      video.addEventListener("ended", handleEnded);
-      return () => {
-        video.removeEventListener("ended", handleEnded);
-      };
-    }, []);
-
-    return (
-      <>
-        <div
-          ref={containerRef}
-          className="hero-video-container relative flex items-center justify-start"
-        >
-          <video
-            ref={videoRef}
-            src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F0e3142955d064bcb9e612579c54c1630?alt=media&token=559d7d84-efa6-4617-8c6f-8e5305f8754b&apiKey=4aa279a8430d441dba9c55f659831878"
-            autoPlay
-            muted={isMuted}
-            loop
-            playsInline
-            preload="metadata"
-            crossOrigin="anonymous"
+  return (
+    <div className="min-h-screen bg-background text-foreground">
+      {/* Hero */}
+      <section className="relative w-full overflow-hidden" id="top">
+        <div className="relative w-full h-[55vh] md:h-[70vh]">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F6d2803c8f3c2422a9807104fc8bbd1cb?format=webp&width=800"
+            alt="M.Sc Nursing"
+            className="w-full h-full object-cover"
             style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              width: "100%",
-              height: "100%",
-              objectFit: "cover",
-              objectPosition: "center center",
               filter: "brightness(1.1) contrast(1.1) saturate(1.15)",
             }}
           />
-
-          <div className="absolute inset-0 bg-black/40"></div>
-
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/30 pointer-events-none"></div>
-
-          <div className="absolute top-0 left-0 w-96 h-96 bg-brand-orange/5 rounded-full filter blur-3xl opacity-60 animate-float pointer-events-none"></div>
-          <div
-            className="absolute bottom-0 right-0 w-96 h-96 bg-brand-magenta/5 rounded-full filter blur-3xl opacity-60 animate-float pointer-events-none"
-            style={{ animationDelay: "2s" }}
-          ></div>
-
-          <div
-            className="absolute inset-0 opacity-5 pointer-events-none"
-            style={{
-              backgroundImage:
-                "repeating-linear-gradient(0deg, rgba(255,255,255,.03) 0px, rgba(255,255,255,.03) 1px, transparent 1px, transparent 2px)",
-            }}
-          ></div>
-
-          <button
-            onClick={toggleMute}
-            className="absolute top-8 right-8 z-10 p-3 rounded-full bg-black/50 hover:bg-black/70 transition-colors text-white backdrop-blur-sm border border-white/20"
-            aria-label={isMuted ? "Unmute" : "Mute"}
-          >
-            {isMuted ? (
-              <VolumeX className="h-5 w-5" />
-            ) : (
-              <Volume2 className="h-5 w-5" />
-            )}
-          </button>
+          <div className="absolute inset-0 bg-black/30"></div>
 
           <div className="hero-title-inside absolute bottom-0 left-0 right-0 z-20 flex items-end justify-start p-3 sm:p-6 max-w-7xl mx-auto w-full">
             <div className="max-w-2xl">
@@ -153,67 +67,51 @@ export default function MScNursing() {
               <h1 className="text-xs sm:text-base md:text-base text-white/80 mb-2 sm:mb-6 leading-tight font-display">
                 Advanced Nursing & Professional Excellence
               </h1>
-              <div className="mt-4 sm:mt-6 flex flex-wrap gap-1 sm:gap-2">
-                {specializations.map((s, i) => (
-                  <span key={i} className="inline-flex items-center gap-1 px-2 py-0.5 sm:gap-2 sm:px-3 sm:py-1 rounded-full bg-white/10 text-white text-xs backdrop-blur">
-                    <s.icon className="w-3 h-3 sm:w-3.5 sm:h-3.5" /> {s.label}
-                  </span>
-                ))}
-              </div>
             </div>
           </div>
         </div>
-
-        <div className="bg-background relative max-w-7xl mx-auto px-3 w-full py-6 sm:py-8">
-          <div className="hero-title-outside max-w-2xl">
-            <p className="text-lg sm:text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-1 sm:mb-4 uppercase tracking-widest font-display">
-              M.Sc Nursing
-            </p>
-            <h1 className="text-xs sm:text-base md:text-base text-foreground/80 mb-2 sm:mb-6 leading-tight font-display">
-              Advanced Nursing & Professional Excellence
-            </h1>
-          </div>
-
-          <div className="flex flex-row gap-2 sm:gap-4">
-            <a
-              href="https://admissions.dsu.edu.in/"
-              target="_blank"
-              rel="noreferrer"
-              className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-            >
-              <Button
-                size="sm"
-                className="sm:size-lg bg-white hover:bg-white/90 text-brand-orange hover:text-brand-orange/80 px-4 sm:px-8 py-2 sm:py-6 text-xs sm:text-base font-semibold font-display transition-all duration-300 group border-2 border-white w-full sm:w-auto"
-              >
-                Apply Now
-                <ChevronRight className="w-4 sm:w-5 h-4 sm:h-5 ml-1 sm:ml-2 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </a>
-            <a
-              href="https://dsu.edu.in/virtual-tour/"
-              target="_blank"
-              rel="noreferrer"
-              className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-            >
-              <Button
-                size="sm"
-                className="sm:size-lg bg-white hover:bg-white/90 text-brand-orange hover:text-brand-orange/80 px-4 sm:px-8 py-2 sm:py-6 text-xs sm:text-base font-semibold font-display transition-all duration-300 group border-2 border-white w-full sm:w-auto"
-              >
-                Virtual Tour
-              </Button>
-            </a>
-          </div>
-        </div>
-      </>
-    );
-  }
-
-  return (
-    <div className="min-h-screen bg-background text-foreground">
-      {/* Hero */}
-      <section className="relative" id="top">
-        <HeroVideo />
       </section>
+
+      <div className="bg-background relative max-w-7xl mx-auto px-3 w-full py-6 sm:py-8">
+        <div className="hero-title-outside max-w-2xl">
+          <p className="text-lg sm:text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-1 sm:mb-4 uppercase tracking-widest font-display">
+            M.Sc Nursing
+          </p>
+          <h1 className="text-xs sm:text-base md:text-base text-foreground/80 mb-2 sm:mb-6 leading-tight font-display">
+            Advanced Nursing & Professional Excellence
+          </h1>
+        </div>
+
+        <div className="flex flex-row gap-2 sm:gap-4">
+          <a
+            href="https://admissions.dsu.edu.in/"
+            target="_blank"
+            rel="noreferrer"
+            className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          >
+            <Button
+              size="sm"
+              className="sm:size-lg bg-white hover:bg-white/90 text-brand-orange hover:text-brand-orange/80 px-4 sm:px-8 py-2 sm:py-6 text-xs sm:text-base font-semibold font-display transition-all duration-300 group border-2 border-white w-full sm:w-auto"
+            >
+              Apply Now
+              <ChevronRight className="w-4 sm:w-5 h-4 sm:h-5 ml-1 sm:ml-2 group-hover:translate-x-1 transition-transform" />
+            </Button>
+          </a>
+          <a
+            href="https://dsu.edu.in/virtual-tour/"
+            target="_blank"
+            rel="noreferrer"
+            className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          >
+            <Button
+              size="sm"
+              className="sm:size-lg bg-white hover:bg-white/90 text-brand-orange hover:text-brand-orange/80 px-4 sm:px-8 py-2 sm:py-6 text-xs sm:text-base font-semibold font-display transition-all duration-300 group border-2 border-white w-full sm:w-auto"
+            >
+              Virtual Tour
+            </Button>
+          </a>
+        </div>
+      </div>
 
       {/* Program Overview */}
       <section id="overview" className="relative overflow-hidden px-3 py-8">
