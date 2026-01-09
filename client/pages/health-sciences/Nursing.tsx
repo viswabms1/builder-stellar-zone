@@ -65,7 +65,7 @@ export default function Nursing() {
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero */}
       <section className="dept-hero-section relative">
-        <div className="h-[65vh] w-full overflow-hidden">
+        <div className="h-[50vh] sm:h-[60vh] md:h-[65vh] w-full overflow-hidden">
           <video
             ref={videoRef}
             src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F0e3142955d064bcb9e612579c54c1630?alt=media&token=559d7d84-efa6-4617-8c6f-8e5305f8754b&apiKey=4aa279a8430d441dba9c55f659831878"
