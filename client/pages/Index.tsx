@@ -393,109 +393,122 @@ export default function Index() {
     },
   ];
 
-  // Get schools data based on current language (memoized)
-  const schoolsData = useMemo(() => {
-    const baseSchools = [
-      {
-        key: "engineering",
-        icon: Cog,
-        color: "brand-orange",
-        delay: "0s",
-        href: "/academics/engineering",
-        image:
-          "https://images.pexels.com/photos/3862638/pexels-photo-3862638.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
-      },
-      {
-        key: "computerApplications",
-        icon: Cpu,
-        color: "brand-magenta",
-        delay: "0.1s",
-        href: "/academics/computer-applications",
-        image:
-          "https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
-      },
-      {
-        key: "law",
-        icon: Gavel,
-        color: "brand-blue",
-        delay: "0.2s",
-        href: "/academics/law",
-        image:
-          "https://images.pexels.com/photos/8112201/pexels-photo-8112201.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
-      },
-      {
-        key: "management",
-        icon: Briefcase,
-        color: "brand-orange",
-        delay: "0.3s",
-        href: "/academics/management-studies",
-        image:
-          "https://images.pexels.com/photos/6694543/pexels-photo-6694543.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
-      },
-      {
-        key: "sciences",
-        icon: FlaskConical,
-        color: "brand-magenta",
-        delay: "0.4s",
-        href: "/academics/basic-applied-sciences",
-        image:
-          "https://images.pexels.com/photos/9628799/pexels-photo-9628799.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
-      },
-      {
-        key: "health",
-        icon: Stethoscope,
-        color: "brand-blue",
-        delay: "0.5s",
-        href: "/academics/health-sciences",
-        image:
-          "https://images.pexels.com/photos/1279365/pexels-photo-1279365.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
-      },
-      {
-        key: "design",
-        icon: Film,
-        color: "brand-magenta",
-        delay: "0.7s",
-        href: "/academics/design/bdesign",
-        image:
-          "https://images.pexels.com/photos/7147711/pexels-photo-7147711.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
-      },
-      {
-        key: "journalism",
-        icon: Newspaper,
-        color: "brand-orange",
-        delay: "0.75s",
-        href: "/academics/journalism-mass-communication",
-        image:
-          "https://images.pexels.com/photos/12306438/pexels-photo-12306438.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
-      },
-      {
-        key: "medical",
-        icon: Microscope,
-        color: "brand-blue",
-        delay: "0.8s",
-        href: "https://cdsimer.edu.in",
-        image:
-          "https://images.pexels.com/photos/5726794/pexels-photo-5726794.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
-      },
-    ];
-
-    return baseSchools.map((school) => ({
-      ...school,
-      title: (() => {
-        const translatedTitle = t(`academics.${school.key}.title`);
-        return translatedTitle.startsWith("School of")
-          ? translatedTitle
-          : `School of ${translatedTitle}`;
-      })(),
+  // Get schools data
+  const schoolsData = [
+    {
+      key: "engineering",
+      icon: Cog,
+      color: "brand-orange",
+      delay: "0s",
+      href: "/academics/engineering",
+      image:
+        "https://images.pexels.com/photos/3862638/pexels-photo-3862638.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
+      title: "School of Engineering",
       description: "",
       programs: [
-        t(`academics.${school.key}.programs.0`) || "Program 1",
-        t(`academics.${school.key}.programs.1`) || "Program 2",
-        t(`academics.${school.key}.programs.2`) || "Program 3",
-        t(`academics.${school.key}.programs.3`) || "Program 4",
+        "B.Tech CSE",
+        "B.Tech Mechanical",
+        "B.Tech ECE",
+        "B.Tech Aerospace",
       ],
-    }));
-  }, [language]);
+    },
+    {
+      key: "computerApplications",
+      icon: Cpu,
+      color: "brand-magenta",
+      delay: "0.1s",
+      href: "/academics/computer-applications",
+      image:
+        "https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
+      title: "School of Computer Applications",
+      description: "",
+      programs: ["BCA", "MCA", "Data Science", "Cloud Computing"],
+    },
+    {
+      key: "law",
+      icon: Gavel,
+      color: "brand-blue",
+      delay: "0.2s",
+      href: "/academics/law",
+      image:
+        "https://images.pexels.com/photos/8112201/pexels-photo-8112201.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
+      title: "School of Law",
+      description: "",
+      programs: ["BA LLB", "BBA LLB", "LLB", "LLM"],
+    },
+    {
+      key: "management",
+      icon: Briefcase,
+      color: "brand-orange",
+      delay: "0.3s",
+      href: "/academics/management-studies",
+      image:
+        "https://images.pexels.com/photos/6694543/pexels-photo-6694543.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
+      title: "School of Commerce & Management",
+      description: "",
+      programs: ["B.Com", "BBA", "MBA", "Finance & Marketing"],
+    },
+    {
+      key: "sciences",
+      icon: FlaskConical,
+      color: "brand-magenta",
+      delay: "0.4s",
+      href: "/academics/basic-applied-sciences",
+      image:
+        "https://images.pexels.com/photos/9628799/pexels-photo-9628799.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
+      title: "School of Applied Sciences",
+      description: "",
+      programs: ["Physics", "Chemistry", "Mathematics", "Biotechnology"],
+    },
+    {
+      key: "health",
+      icon: Stethoscope,
+      color: "brand-blue",
+      delay: "0.5s",
+      href: "/academics/health-sciences",
+      image:
+        "https://images.pexels.com/photos/1279365/pexels-photo-1279365.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
+      title: "School of Health Sciences",
+      description: "",
+      programs: ["Pharmacy", "Nursing", "CDSIMER", "Allied Health"],
+    },
+    {
+      key: "design",
+      icon: Film,
+      color: "brand-magenta",
+      delay: "0.7s",
+      href: "/academics/design/bdesign",
+      image:
+        "https://images.pexels.com/photos/7147711/pexels-photo-7147711.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
+      title: "School of Design",
+      description: "",
+      programs: ["Animation", "UX/UI", "Graphic Design", "Digital Media"],
+    },
+    {
+      key: "journalism",
+      icon: Newspaper,
+      color: "brand-orange",
+      delay: "0.75s",
+      href: "/academics/journalism-mass-communication",
+      image:
+        "https://images.pexels.com/photos/12306438/pexels-photo-12306438.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
+      title: "School of Journalism & Mass Communication",
+      description: "",
+      programs: ["BJMC", "PG Diploma", "Documentary", "Digital Media"],
+    },
+    {
+      key: "medical",
+      icon: Microscope,
+      color: "brand-blue",
+      delay: "0.8s",
+      href: "https://cdsimer.edu.in",
+      image:
+        "https://images.pexels.com/photos/5726794/pexels-photo-5726794.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
+      title: "Medical Education & Research",
+      description: "",
+      programs: ["MBBS", "MD", "DM", "Fellowship"],
+    },
+  ];
 
   // All featured news items for rotation
   const allFeaturedNews = [
