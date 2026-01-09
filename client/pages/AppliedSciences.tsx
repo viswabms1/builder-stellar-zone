@@ -722,7 +722,7 @@ export default function AppliedSciences() {
                 Bachelor Degree Programs
               </h3>
               <p className="mt-2 text-sm text-foreground font-body">
-                Build foundation across biological, physical and data sciences
+                Build foundation across biological and physical sciences
               </p>
             </div>
             <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-12">
