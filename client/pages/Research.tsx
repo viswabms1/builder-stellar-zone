@@ -48,15 +48,15 @@ export default function Research() {
         <div className="relative max-w-7xl mx-auto px-3 text-center">
           <div className="inline-flex items-center px-4 py-2 bg-orange-500/10 rounded-full border border-orange-500/20 mb-8">
             <FlaskConical className="w-4 h-4 text-orange-500 mr-2" />
-            <span className="text-sm font-medium text-orange-500">{t('research.title')}</span>
+            <span className="text-sm font-medium text-orange-500">Research & Innovation</span>
           </div>
 
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight">
-            {t('research.description')}
+            Advancing Knowledge Through Cutting-Edge Research
           </h1>
 
           <p className="text-xl md:text-2xl text-foreground mb-12 max-w-4xl mx-auto leading-relaxed">
-            {t('academics.subtitle')}
+            Discover our diverse range of research programs, centers of excellence, and collaborative initiatives designed to create breakthrough innovations and train the next generation of researchers.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
