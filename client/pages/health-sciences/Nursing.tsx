@@ -100,22 +100,13 @@ export default function Nursing() {
               <Sparkles className="w-4 h-4 text-white" />
               <span className="text-sm font-medium text-white font-display">College of Nursing Sciences</span>
             </div>
-            <h1 className="headline-1 text-white leading-tight font-display">Compassion, Care & Clinical Excellence</h1>
+            <h1 className="text-xs sm:text-base md:text-base text-white/80 mb-2 sm:mb-6 leading-tight font-display">Compassion, Care & Clinical Excellence</h1>
             <div className="mt-6 flex flex-wrap gap-2">
               {specializations.map((s, i) => (
                 <span key={i} className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-white text-xs backdrop-blur">
                   <s.icon className="w-3.5 h-3.5" /> {s.label}
                 </span>
               ))}
-            </div>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <a
-                href="https://admissions.dsu.edu.in/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <Button className="bg-brand-gradient text-foreground">Apply Now <GraduationCap className="w-4 h-4 ml-2" /></Button>
-              </a>
             </div>
           </div>
         </div>
