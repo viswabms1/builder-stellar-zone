@@ -194,13 +194,13 @@ export default function Navigation() {
   ];
 
   const navigation = [
-    { name: t("nav.home"), href: "/" },
-    { name: t("nav.about"), href: "/about" },
+    { name: "Home", href: "/" },
+    { name: "About", href: "/about" },
     { name: "AI-Infused Academics", href: "/academics" },
-    { name: t("nav.admissions"), href: "/admissions" },
-    { name: t("nav.campusLife"), href: "/campus-life" },
-    { name: t("nav.centreOfExcellence"), href: "/centre-of-excellence" },
-    { name: t("nav.placements"), href: "/placements" },
+    { name: "Admissions", href: "/admissions" },
+    { name: "Campus Life", href: "/campus-life" },
+    { name: "Centre of Excellence", href: "/centre-of-excellence" },
+    { name: "Placements", href: "/placements" },
   ];
 
   const isActive = (href: string) => location.pathname === href;
