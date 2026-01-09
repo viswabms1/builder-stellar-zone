@@ -349,7 +349,7 @@ export default function Admissions() {
 }
 
 function HeroSection() {
-  const { t } = useLanguage();
+  
 
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-orange-500/10 via-red-500/10 to-background py-10 lg:py-28">

@@ -166,7 +166,7 @@ function HeroVideo() {
 }
 
 export default function Academics() {
-  const { t } = useLanguage();
+  
 
   const schoolsData = [
     {
