@@ -618,7 +618,11 @@ function HeroVideo() {
     <>
       <div
         ref={containerRef}
-        className="hero-video-container relative w-full h-[55vh] md:h-[70vh] flex items-center justify-start overflow-hidden"
+        className="hero-video-container relative w-full flex items-center justify-start"
+        style={{
+          height: "55vh",
+          minHeight: "400px",
+        }}
       >
         <video
           ref={videoRef}
@@ -629,10 +633,15 @@ function HeroVideo() {
           playsInline
           preload="metadata"
           crossOrigin="anonymous"
-          className="absolute inset-0 object-cover"
           style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            objectPosition: "center center",
             filter: "brightness(1.1) contrast(1.15) saturate(1.2)",
-            objectPosition: "center top",
           }}
         />
 
