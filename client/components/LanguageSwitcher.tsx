@@ -40,14 +40,13 @@ export default function LanguageSwitcher() {
   }, [isOpen]);
 
   const handleLanguageSelect = async (lang: Language) => {
-    setIsTranslating(true);
+    console.log('handleLanguageSelect called with:', lang);
     try {
       await setLanguage(lang);
+      console.log('Language changed successfully');
       setIsOpen(false);
     } catch (error) {
       console.error('Failed to change language:', error);
-    } finally {
-      setIsTranslating(false);
     }
   };
 
