@@ -15,6 +15,7 @@ import {
   Microscope,
   Network,
   ShieldCheck,
+  Users,
   Volume2,
   VolumeX,
 } from "lucide-react";
