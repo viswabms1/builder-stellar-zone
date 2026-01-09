@@ -18,6 +18,10 @@ import {
 } from "lucide-react";
 
 export default function MScNursing() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const specializations = [
     { icon: Microscope, label: "Medical Surgical Nursing" },
     { icon: Heart, label: "Child Health Nursing" },
