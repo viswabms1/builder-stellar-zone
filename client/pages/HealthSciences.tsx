@@ -660,16 +660,10 @@ function HeroVideo() {
         ref={containerRef}
         className="hero-video-container relative flex items-center justify-start"
       >
-        <video
-          ref={videoRef}
-          src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F0b20f5ea03294f4d824e69fd8489b78c?alt=media&token=0c4092c4-4afd-4237-b850-81046ecf52f7&apiKey=4aa279a8430d441dba9c55f659831878"
-          autoPlay
-          muted={isMuted}
-          loop
-          playsInline
-          preload="metadata"
-          crossOrigin="anonymous"
-          className="absolute inset-0 object-cover"
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F32b423e6548c4718ae3c444cc2c25f09?format=webp&width=800"
+          alt="School of Health Sciences"
+          className="absolute inset-0 object-cover w-full h-full"
           style={{
             filter: "brightness(1.1) contrast(1.15) saturate(1.2)",
             objectPosition: "center top",
