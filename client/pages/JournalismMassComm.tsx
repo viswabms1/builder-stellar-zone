@@ -281,7 +281,7 @@ function NoticeBoardCarousel() {
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           <div>
             {renderCarousel(
-              getTranslation(language, 'journalismPage.events'),
+              "Events",
               events,
               currentEventIndex,
               setCurrentEventIndex,
@@ -290,7 +290,7 @@ function NoticeBoardCarousel() {
           </div>
           <div>
             {renderCarousel(
-              getTranslation(language, 'journalismPage.news'),
+              "News",
               news,
               currentNewsIndex,
               setCurrentNewsIndex,
@@ -299,7 +299,7 @@ function NoticeBoardCarousel() {
           </div>
           <div>
             {renderCarousel(
-              getTranslation(language, 'journalismPage.announcements'),
+              "Announcements",
               announcements,
               currentAnnouncementIndex,
               setCurrentAnnouncementIndex,
@@ -613,7 +613,7 @@ function HeroVideo() {
               {"School of Journalism getTranslation(language, 'journalismPage.title') Mass Communication"}
             </p>
             <h1 className="text-xs sm:text-base md:text-base text-white/80 mb-2 sm:mb-6 leading-tight font-display">
-              {getTranslation(language, 'journalismPage.tagline')}
+              {"Storytellers for the Now getTranslation(language, 'journalismPage.tagline') Next"}
             </h1>
           </div>
         </div>
@@ -625,7 +625,7 @@ function HeroVideo() {
             {"School of Journalism getTranslation(language, 'journalismPage.title') Mass Communication"}
           </p>
           <h1 className="text-xs sm:text-base md:text-base text-foreground/80 mb-2 sm:mb-6 leading-tight font-display">
-            {getTranslation(language, 'journalismPage.tagline')}
+            {"Storytellers for the Now getTranslation(language, 'journalismPage.tagline') Next"}
           </h1>
         </div>
 
