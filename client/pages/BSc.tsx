@@ -45,43 +45,6 @@ export default function BSc() {
   ];
 
   function HeroVideo() {
-    const [isMuted, setIsMuted] = useState(true);
-    const videoRef = useRef<HTMLVideoElement>(null);
-    const containerRef = useAutoMuteOnScroll(videoRef);
-
-    const toggleMute = () => {
-      if (videoRef.current) {
-        videoRef.current.muted = !videoRef.current.muted;
-        setIsMuted(!isMuted);
-      }
-    };
-
-    useEffect(() => {
-      const video = videoRef.current;
-      if (!video) return;
-
-      video.muted = isMuted;
-    }, [isMuted]);
-
-    useEffect(() => {
-      const video = videoRef.current;
-      if (!video) return;
-
-      const handleEnded = () => {
-        const rect = containerRef.current?.getBoundingClientRect();
-        const isVisible =
-          rect && rect.top < window.innerHeight && rect.bottom > 0;
-        if (isVisible) {
-          video.currentTime = 0;
-          video.play().catch(() => {});
-        }
-      };
-
-      video.addEventListener("ended", handleEnded);
-      return () => {
-        video.removeEventListener("ended", handleEnded);
-      };
-    }, []);
 
     return (
       <>
