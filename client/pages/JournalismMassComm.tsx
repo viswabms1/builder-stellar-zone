@@ -283,7 +283,7 @@ function NoticeBoardCarousel() {
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           <div>
             {renderCarousel(
-              "Events",
+              getTranslation(language, 'journalismPage.events'),
               events,
               currentEventIndex,
               setCurrentEventIndex,
@@ -292,7 +292,7 @@ function NoticeBoardCarousel() {
           </div>
           <div>
             {renderCarousel(
-              "News",
+              getTranslation(language, 'journalismPage.news'),
               news,
               currentNewsIndex,
               setCurrentNewsIndex,
@@ -301,7 +301,7 @@ function NoticeBoardCarousel() {
           </div>
           <div>
             {renderCarousel(
-              "Announcements",
+              getTranslation(language, 'journalismPage.announcements'),
               announcements,
               currentAnnouncementIndex,
               setCurrentAnnouncementIndex,
