@@ -82,11 +82,11 @@ export default function LanguageSwitcher() {
           {LANGUAGES.map((lang) => (
             <button
               key={lang}
-              onClick={() => {
-                setLanguage(lang);
-                setIsOpen(false);
-              }}
+              onClick={() => handleLanguageSelect(lang)}
+              disabled={isTranslating}
               className={`w-full text-left px-4 py-3 text-sm font-medium transition-colors ${
+                isTranslating ? 'opacity-50 cursor-not-allowed' : ''
+              } ${
                 language === lang
                   ? 'bg-orange-500 text-white'
                   : theme === 'light'
