@@ -489,11 +489,11 @@ const FEATURED_NEWS: NewsItem[] = [
 ];
 
 const DEAN_INFO: DeanInfo = {
-  name: "Dr. Rajesh Patel",
-  title: "M.D., Ph.D",
+  name: "Dr. Pushpa Sarkar",
+  title: "M.B.B.S., M.D. (Biochemistry)",
   position: "Dean, School of Health Sciences",
   photo:
-    "https://images.unsplash.com/photo-1612349317150-e71f1f641930?q=80&w=800&auto=format&fit=crop",
+    "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F7f512c1d58e5453a998bd190aac7ba35?format=webp&width=800",
   videoUrl:
     "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F0c95c62aa88741fca8ebdc32aade53d5?alt=media&token=c57ff4a9-aea8-4ff3-843b-23ce820ba630&apiKey=4aa279a8430d441dba9c55f659831878",
   borderColor: "border-emerald-500/20",
