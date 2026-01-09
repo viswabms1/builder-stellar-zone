@@ -452,5 +452,3 @@ function CurriculumLibrary() {
     </section>
   );
 }
-
-import React from "react";
