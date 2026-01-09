@@ -272,12 +272,9 @@ export default function Nursing() {
                   </div>
 
                   <div className="pt-2">
-                    <p className="text-sm text-foreground font-body mb-2">Foundational nursing education covering:</p>
-                    <div className="flex flex-wrap gap-2">
-                      {["Anatomy & Physiology", "Nursing Foundations", "Community Health", "Midwifery", "Child Health Nursing"].map((spec, i) => (
-                        <Badge key={i} variant="secondary" className="text-xs">{spec}</Badge>
-                      ))}
-                    </div>
+                    <Button variant="link" className="text-brand-magenta p-0 h-auto font-semibold">
+                      View Details <ChevronRight className="w-4 h-4 ml-1" />
+                    </Button>
                   </div>
                 </CardContent>
               </Card>
@@ -305,12 +302,9 @@ export default function Nursing() {
                   </div>
 
                   <div className="pt-2">
-                    <p className="text-sm text-foreground font-body mb-2">Advanced nursing for diploma holders:</p>
-                    <div className="flex flex-wrap gap-2">
-                      {["Advanced Medical-Surgical", "Mental Health Nursing", "Nursing Education", "Research & Statistics"].map((spec, i) => (
-                        <Badge key={i} variant="secondary" className="text-xs">{spec}</Badge>
-                      ))}
-                    </div>
+                    <Button variant="link" className="text-brand-magenta p-0 h-auto font-semibold">
+                      View Details <ChevronRight className="w-4 h-4 ml-1" />
+                    </Button>
                   </div>
                 </CardContent>
               </Card>
