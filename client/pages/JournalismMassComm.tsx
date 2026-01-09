@@ -862,17 +862,17 @@ export default function JournalismMassComm() {
               </div>
               <div>
                 <div className="text-foreground/70 text-xs uppercase tracking-wide">
-                  {getTranslation(language, 'journalismPage.officeHours')}
+                  {"Office Hours"}
                 </div>
                 <div className="font-medium text-foreground">
-                  {getTranslation(language, 'journalismPage.officeHoursTime')}
+                  {"Mon–Fri, 9:00 AM – 5:30 PM"}
                 </div>
               </div>
             </CardContent>
           </Card>
           <Card className="rounded-none border border-blue-500/20 bg-blue-500/10">
             <CardHeader>
-              <CardTitle className="font-display">{getTranslation(language, 'journalismPage.moreResources')}</CardTitle>
+              <CardTitle className="font-display">{"More Resources"}</CardTitle>
             </CardHeader>
             <CardContent className="grid gap-3 text-sm font-body">
               <a
@@ -881,7 +881,7 @@ export default function JournalismMassComm() {
                 rel="noreferrer"
                 className="hover:text-brand-magenta"
               >
-                {getTranslation(language, 'journalismPage.programsOverview')}
+                {"Programs Overview"}
               </a>
               <a
                 href="https://www.dsu.edu.in/journalism-mass-comm/newsletter"
