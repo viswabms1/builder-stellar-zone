@@ -91,15 +91,10 @@ export default function MSc() {
           ref={containerRef}
           className="hero-video-container relative flex items-center justify-start"
         >
-          <video
-            ref={videoRef}
-            src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1920&h=1080&fit=crop"
-            autoPlay
-            muted={isMuted}
-            loop
-            playsInline
-            preload="metadata"
-            crossOrigin="anonymous"
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fda8a5f7e2a3e4c94832449d8c296a88b?format=webp&width=1200"
+            alt="Master of Science Program"
+            loading="lazy"
             style={{
               position: "absolute",
               top: 0,
