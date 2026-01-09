@@ -91,7 +91,7 @@ export default function BSc() {
         >
           <video
             ref={videoRef}
-            src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1920&h=1080&fit=crop"
+            src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fd044958c77f54da59928341e747ad4db?format=webp&width=800"
             autoPlay
             muted={isMuted}
             loop
