@@ -710,11 +710,10 @@ export default function JournalismMassComm() {
         <div className="mx-auto max-w-7xl">
           <div className="mb-6 text-center">
             <h2 className="font-display text-3xl md:text-4xl">
-              Explore More at DSU CJMC
+              {getTranslation(language, 'journalismPage.exploreMoreCJMC')}
             </h2>
             <p className="mt-3 text-sm text-foreground font-body">
-              Discover our creative studios, industry partnerships, placements
-              and admission pathways
+              {getTranslation(language, 'journalismPage.exploreMoreDesc')}
             </p>
           </div>
           <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-5">
