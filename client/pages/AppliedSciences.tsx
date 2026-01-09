@@ -879,6 +879,117 @@ export default function AppliedSciences() {
         </div>
       </section>
 
+      <section className="px-3 py-8 bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-blue-500/5">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-8">
+            <h2 className="font-display text-3xl md:text-4xl mb-3">
+              Research Excellence with NVIDIA AI Infrastructure
+            </h2>
+            <p className="text-sm text-foreground/80 font-body max-w-3xl">
+              SBAS leverages cutting-edge NVIDIA GPU technology to accelerate research across biotechnology, biochemistry, molecular biology and microbiology, enabling breakthrough discoveries in life sciences.
+            </p>
+          </div>
+
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            <Card className="rounded-none border border-blue-500/30 bg-blue-500/10">
+              <CardHeader>
+                <div className="flex items-start justify-between gap-2">
+                  <CardTitle className="font-display text-lg">GPU-Accelerated Molecular Modeling</CardTitle>
+                  <Cpu className="h-5 w-5 text-blue-500/70 flex-shrink-0" />
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-foreground/80 font-body">
+                  NVIDIA DGX and CUDA-accelerated workstations enable researchers to model protein structures, simulate molecular interactions, and predict biochemical reactions at unprecedented speeds.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="rounded-none border border-purple-500/30 bg-purple-500/10">
+              <CardHeader>
+                <div className="flex items-start justify-between gap-2">
+                  <CardTitle className="font-display text-lg">Computational Bioinformatics</CardTitle>
+                  <Brain className="h-5 w-5 text-purple-500/70 flex-shrink-0" />
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-foreground/80 font-body">
+                  Leverage GPU-powered RAPIDS for rapid genomic analysis, sequence alignment, and large-scale bioinformatics pipelines in biotechnology and genetics research.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="rounded-none border border-green-500/30 bg-green-500/10">
+              <CardHeader>
+                <div className="flex items-start justify-between gap-2">
+                  <CardTitle className="font-display text-lg">Machine Learning in Life Sciences</CardTitle>
+                  <Lightbulb className="h-5 w-5 text-green-500/70 flex-shrink-0" />
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-foreground/80 font-body">
+                  Apply PyTorch and TensorFlow on NVIDIA GPUs to develop AI models for drug discovery, disease prediction, and microbiological data analysis.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="rounded-none border border-orange-500/30 bg-orange-500/10">
+              <CardHeader>
+                <div className="flex items-start justify-between gap-2">
+                  <CardTitle className="font-display text-lg">Real-time Data Processing</CardTitle>
+                  <Zap className="h-5 w-5 text-orange-500/70 flex-shrink-0" />
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-foreground/80 font-body">
+                  Process high-volume experimental data from lab instruments and sensors using NVIDIA CUDA cores for instant analysis and visualization.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="rounded-none border border-cyan-500/30 bg-cyan-500/10">
+              <CardHeader>
+                <div className="flex items-start justify-between gap-2">
+                  <CardTitle className="font-display text-lg">Collaborative Research Infrastructure</CardTitle>
+                  <Network className="h-5 w-5 text-cyan-500/70 flex-shrink-0" />
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-foreground/80 font-body">
+                  Multi-GPU research clusters with NVLink technology enable collaborative projects, massive simulations, and enterprise-grade computational workflows.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="rounded-none border border-rose-500/30 bg-rose-500/10">
+              <CardHeader>
+                <div className="flex items-start justify-between gap-2">
+                  <CardTitle className="font-display text-lg">Industry-Ready Skills</CardTitle>
+                  <Award className="h-5 w-5 text-rose-500/70 flex-shrink-0" />
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-foreground/80 font-body">
+                  Students and faculty gain hands-on experience with NVIDIA technology stack, making them highly sought-after in biotech, pharmaceutical, and research-driven industries.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="mt-8 p-6 rounded-lg border border-blue-500/30 bg-blue-500/5">
+            <div className="flex items-start gap-3">
+              <Rocket className="h-6 w-6 text-blue-500/70 flex-shrink-0 mt-0.5" />
+              <div>
+                <h3 className="font-display font-semibold text-foreground mb-2">Next-Generation Research</h3>
+                <p className="text-sm text-foreground/80 font-body">
+                  SBAS researchers are publishing groundbreaking work in peer-reviewed journals, leveraging NVIDIA's parallel computing capabilities to tackle complex problems in sustainable science, precision medicine, and environmental biotechnology. Our partnership with NVIDIA ensures students and faculty have access to the same technology used by leading research institutions worldwide.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="px-3 py-8">
         <div className="mx-auto grid max-w-5xl items-start gap-4 lg:grid-cols-2">
           <Card className="rounded-none border border-orange-500/20 bg-orange-500/10">
