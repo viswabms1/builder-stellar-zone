@@ -40,22 +40,95 @@ export default function LanguageSwitcher() {
   }, [isOpen]);
 
   const handleLanguageSelect = (langCode: string) => {
-    // Find Google Translate select and change it
-    const gtElement = document.getElementById('google_translate_element');
-    if (gtElement) {
-      const select = gtElement.querySelector('select.goog-te-combo') as HTMLSelectElement;
-      if (select) {
-        select.value = langCode;
-        // Trigger the change event that Google Translate listens for
-        const event = new Event('change', { bubbles: true });
-        select.dispatchEvent(event);
+    try {
+      const gtElement = document.getElementById('google_translate_element');
+      if (!gtElement) {
+        console.error('Google Translate element not found');
         setIsOpen(false);
         return;
       }
-    }
 
-    console.warn('Google Translate element not found');
-    setIsOpen(false);
+      // Try to find and use the select dropdown
+      const trySelectMethod = () => {
+        const select = gtElement.querySelector('select.goog-te-combo') as HTMLSelectElement;
+        if (!select) return false;
+
+        // Find the option with our language code
+        const option = Array.from(select.options).find(opt => opt.value === langCode);
+        if (!option) return false;
+
+        // Set the select value
+        select.value = langCode;
+
+        // Create and dispatch multiple event types to ensure Google Translate picks it up
+        const events = [
+          new Event('change', { bubbles: true, cancelable: true }),
+          new Event('input', { bubbles: true, cancelable: true }),
+          new MouseEvent('click', { bubbles: true, cancelable: true }),
+          new Event('click', { bubbles: true, cancelable: true })
+        ];
+
+        events.forEach(event => {
+          select.dispatchEvent(event);
+        });
+
+        // Also trigger on the option itself
+        option.dispatchEvent(new Event('click', { bubbles: true }));
+
+        return true;
+      };
+
+      // Try select method
+      if (trySelectMethod()) {
+        console.log(`Language changed to: ${langCode}`);
+        setIsOpen(false);
+        return;
+      }
+
+      // Fallback: Try to find and click the language button in the Google Translate UI
+      const tryButtonMethod = () => {
+        // Look for the combobox or button that opens language options
+        const buttons = gtElement.querySelectorAll('div[role="button"], button');
+        for (const btn of buttons) {
+          // Click the main translate button to open dropdown
+          if (btn.textContent && btn.textContent.includes('English')) {
+            (btn as HTMLElement).click();
+            
+            // Now look for the language option
+            setTimeout(() => {
+              const options = document.querySelectorAll('[role="option"], div[data-value]');
+              for (const opt of options) {
+                // Try to match by text content
+                const textContent = opt.textContent || '';
+                let shouldClick = false;
+                
+                if (langCode === 'kn' && (textContent.includes('Kannada') || textContent.includes('ಕನ್ನಡ'))) {
+                  shouldClick = true;
+                } else if (langCode === 'hi' && (textContent.includes('Hindi') || textContent.includes('हिंदी'))) {
+                  shouldClick = true;
+                } else if (langCode === 'en' && textContent.includes('English')) {
+                  shouldClick = true;
+                }
+
+                if (shouldClick) {
+                  (opt as HTMLElement).click();
+                  return true;
+                }
+              }
+            }, 300);
+            
+            return true;
+          }
+        }
+        return false;
+      };
+
+      tryButtonMethod();
+      setIsOpen(false);
+    } catch (error) {
+      console.error('Error changing language:', error);
+      setIsOpen(false);
+    }
   };
 
   const languages = [
