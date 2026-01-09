@@ -661,4 +661,50 @@
       opacity: 1;
     }
   }
+
+  /* Event card animations and effects */
+  .featured-event-card {
+    position: relative;
+  }
+
+  .featured-event-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid rgba(229, 138, 0, 0);
+    border-radius: 0;
+    pointer-events: none;
+    z-index: 10;
+    animation: eventBorderGlow 3s ease-in-out infinite;
+  }
+
+  @keyframes eventBorderGlow {
+    0%, 100% {
+      border-color: rgba(229, 138, 0, 0);
+    }
+    50% {
+      border-color: rgba(229, 138, 0, 0.3);
+    }
+  }
+
+  /* Event list item hover effects */
+  .event-list-item {
+    transform: translateX(0);
+  }
+
+  .event-list-item:hover {
+    transform: translateX(4px);
+  }
+
+  .event-list-item:hover .event-calendar-icon {
+    background-color: rgba(229, 138, 0, 0.2);
+    transform: scale(1.1);
+  }
+
+  .event-calendar-icon {
+    transition: all 0.3s ease;
+  }
 }
