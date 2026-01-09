@@ -916,9 +916,23 @@ export default function Index() {
                   <p className="text-xs text-foreground/80 font-body line-clamp-2">
                     {currentFeatured.excerpt}
                   </p>
-                  <div className="text-xs text-foreground/60 font-body">
-                    Auto-rotating • {featuredNewsIndex + 1} of{" "}
-                    {allFeaturedNews.length}
+                  <div className="flex items-center justify-between pt-2">
+                    <div className="text-xs text-foreground/60 font-body">
+                      Auto-rotating • {featuredNewsIndex + 1} of{" "}
+                      {allFeaturedNews.length}
+                    </div>
+                    <div className="flex gap-1">
+                      {allFeaturedNews.map((_, idx) => (
+                        <div
+                          key={idx}
+                          className={`h-1.5 rounded-full transition-all duration-300 ${
+                            idx === featuredNewsIndex
+                              ? "w-4 bg-brand-magenta"
+                              : "w-1.5 bg-foreground/30 hover:bg-foreground/50"
+                          }`}
+                        />
+                      ))}
+                    </div>
                   </div>
                 </div>
               </button>
