@@ -103,8 +103,8 @@ export default function Nursing() {
             <h1 className="text-xs sm:text-sm md:text-base text-white/80 mb-2 sm:mb-4 leading-tight font-display">Compassion, Care & Clinical Excellence</h1>
             <div className="mt-4 sm:mt-6 flex flex-wrap gap-1 sm:gap-2">
               {specializations.map((s, i) => (
-                <span key={i} className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-white text-xs backdrop-blur">
-                  <s.icon className="w-3.5 h-3.5" /> {s.label}
+                <span key={i} className="inline-flex items-center gap-1 px-2 py-0.5 sm:px-3 sm:py-1 rounded-full bg-white/10 text-white text-xs backdrop-blur">
+                  <s.icon className="w-3 h-3 sm:w-3.5 sm:h-3.5" /> <span className="hidden sm:inline">{s.label}</span><span className="sm:hidden">{s.label.split(' ')[0]}</span>
                 </span>
               ))}
             </div>
