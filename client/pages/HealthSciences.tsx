@@ -80,6 +80,7 @@ type CollegeCard = {
   bgColor: string;
   image: string;
   gradient: string;
+  link: string;
 };
 
 const getAllHealthSciencesEvents = () => getHealthSciencesEvents();
