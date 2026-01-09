@@ -524,6 +524,10 @@ function App() {
                   element={<MScNursing />}
                 />
                 <Route
+                  path="/academics/health-sciences/nursing/faculty"
+                  element={<NursingFaculty />}
+                />
+                <Route
                   path="/academics/medical-education-research"
                   element={<MedicalEducationResearch />}
                 />
