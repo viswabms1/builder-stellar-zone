@@ -746,12 +746,12 @@ export default function JournalismMassComm() {
                 </div>
                 <CardHeader>
                   <CardTitle className="font-display group-hover:text-brand-magenta transition-colors">
-                    {getTranslation(language, 'journalismPage.centreOfExcellenceTitle')}
+                    {"Centre of Excellence"}
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-foreground/80 font-body">
-                    {getTranslation(language, 'journalismPage.centreOfExcellenceDesc')}
+                    {"Creative studios and media production labs"}
                   </p>
                 </CardContent>
               </Card>
@@ -772,7 +772,7 @@ export default function JournalismMassComm() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-foreground/80 font-body">
-                    {getTranslation(language, 'journalismPage.researchInnovationDesc')}
+                    {"Faculty-led media research and storytelling projects"}
                   </p>
                 </CardContent>
               </Card>
