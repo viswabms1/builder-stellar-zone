@@ -8,6 +8,7 @@ export type DeanInfo = {
   position: string;
   photo: string;
   videoUrl?: string;
+  message?: string[];
   borderColor?: string;
   bgColor?: string;
 };
@@ -112,9 +113,15 @@ export function DeanSection({ dean }: DeanSectionProps) {
                   </p>
                 </div>
 
-                {/* Video Container */}
+                {/* Content: Video or Message */}
                 {dean.videoUrl ? (
                   <DeanMessageVideo videoUrl={dean.videoUrl} />
+                ) : dean.message ? (
+                  <div className="space-y-4 text-foreground/90 font-body leading-relaxed text-sm md:text-base">
+                    {dean.message.map((paragraph, idx) => (
+                      <p key={idx}>{paragraph}</p>
+                    ))}
+                  </div>
                 ) : (
                   <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-black/20 border border-border/30 flex items-center justify-center">
                     <div className="text-center space-y-2">
