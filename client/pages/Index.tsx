@@ -967,9 +967,9 @@ export default function Index() {
                         className="h-32 w-full object-cover news-card-image"
                       />
                     )}
-                    <div className="absolute top-2 left-2">
+                    <div className="absolute top-2 left-2 transition-all duration-300 group-hover:scale-105">
                       <Badge
-                        className={`text-xs ${item.color === "brand-orange" ? "bg-brand-orange/20 text-brand-orange" : item.color === "brand-magenta" ? "bg-brand-magenta/20 text-brand-magenta" : "bg-brand-blue/20 text-brand-blue"}`}
+                        className={`text-xs transition-all duration-300 ${item.color === "brand-orange" ? "bg-brand-orange/20 text-brand-orange group-hover:bg-brand-orange/40" : item.color === "brand-magenta" ? "bg-brand-magenta/20 text-brand-magenta group-hover:bg-brand-magenta/40" : "bg-brand-blue/20 text-brand-blue group-hover:bg-brand-blue/40"}`}
                       >
                         {item.category}
                       </Badge>
