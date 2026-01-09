@@ -1,4 +1,5 @@
 import { useLanguage } from '@/providers/language-provider';
+import { useLanguage } from '@/providers/language-provider';
 import { useTheme } from '@/providers/theme-provider';
 import { Button } from '@/components/ui/button';
 import { getLanguageLabel } from '@/lib/i18n';
