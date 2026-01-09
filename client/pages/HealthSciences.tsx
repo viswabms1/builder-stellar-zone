@@ -9,6 +9,7 @@ import {
   ChevronRight,
   ClipboardCheck,
   Download,
+  Droplet,
   GraduationCap,
   HeartPulse,
   Microscope,
@@ -16,6 +17,7 @@ import {
   Stethoscope,
   Syringe,
   Users,
+  Zap,
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
