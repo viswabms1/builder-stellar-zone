@@ -266,7 +266,7 @@ function NoticeBoardCarousel() {
           <div>
             <h2 className="headline-2 mb-3 font-display">
               <span className="text-foreground">
-                {"School of Journalism getTranslation(language, 'journalismPage.title') Mass Communication"}{" "}
+                School of Journalism & Mass Communication{" "}
               </span>
               <span className="bg-brand-gradient bg-clip-text text-transparent">
                 {"Notice Board"}
