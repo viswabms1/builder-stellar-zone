@@ -150,7 +150,7 @@ function NoticeBoardCarousel() {
             </h3>
           </div>
           <p className="text-xs text-foreground/60 italic p-4 text-center">
-            No items to display
+            {getTranslation(language, 'journalismPage.noItemsDisplay')}
           </p>
         </div>
       );
