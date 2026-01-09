@@ -1088,7 +1088,10 @@ type ProgramCardProps = {
 
 function ProgramCard({ program }: ProgramCardProps) {
   return (
-    <Card className="h-full border border-border/60 bg-card/80 shadow-sm transition hover:-translate-y-1 hover:border-orange-500/40 hover:shadow-orange-500/10">
+    <Card
+      id={`program-${program.name}`}
+      className="h-full border border-border/60 bg-card/80 shadow-sm transition hover:-translate-y-1 hover:border-orange-500/40 hover:shadow-orange-500/10"
+    >
       <CardHeader>
         <div className="flex items-start justify-between gap-4">
           <div>
