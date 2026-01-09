@@ -813,15 +813,15 @@ export default function JournalismMassComm() {
                 </div>
                 <CardHeader>
                   <CardTitle className="font-display group-hover:text-brand-magenta transition-colors">
-                    Admissions
+                    {getTranslation(language, 'journalismPage.admissionsBtn')}
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="flex flex-col gap-3">
                   <p className="text-sm text-foreground/80 font-body">
-                    Join DSU CJMC and tell stories that matter
+                    {getTranslation(language, 'journalismPage.admissionsDesc')}
                   </p>
                   <span className="inline-flex items-center gap-2 text-xs font-medium text-brand-magenta group-hover:text-brand-magenta/80 transition-colors">
-                    Apply Now
+                    {getTranslation(language, 'buttons.applyNow')}
                     <ChevronRight className="h-3 w-3" />
                   </span>
                 </CardContent>
