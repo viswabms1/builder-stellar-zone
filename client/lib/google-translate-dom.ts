@@ -190,8 +190,3 @@ export async function translateDOMContent(
     throw error;
   }
 }
-
-export function resetDOMContent(): void {
-  // This would require storing original content - for now, page reload is used
-  window.location.reload();
-}
