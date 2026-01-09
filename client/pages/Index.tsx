@@ -803,27 +803,29 @@ export default function Index() {
                 </div>
               );
 
+              const cardContent = school.href ? (
+                school.href.startsWith("http") ? (
+                  <a
+                    href={school.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="block"
+                  >
+                    {cardElement}
+                  </a>
+                ) : (
+                  <Link to={school.href} className="block">
+                    {cardElement}
+                  </Link>
+                )
+              ) : (
+                cardElement
+              );
+
               return (
-                <div key={index} style={{ animationDelay: school.delay }}>
-                  {school.href ? (
-                    school.href.startsWith("http") ? (
-                      <a
-                        href={school.href}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="block"
-                      >
-                        {cardElement}
-                      </a>
-                    ) : (
-                      <Link to={school.href} className="block">
-                        {cardElement}
-                      </Link>
-                    )
-                  ) : (
-                    cardElement
-                  )}
-                </div>
+                <SchoolCardWrapper key={index} index={index} delay={school.delay}>
+                  {cardContent}
+                </SchoolCardWrapper>
               );
             })}
           </div>
