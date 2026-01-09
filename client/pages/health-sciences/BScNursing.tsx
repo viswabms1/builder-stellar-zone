@@ -165,6 +165,29 @@ export default function BScNursing() {
       {/* Curriculum Library */}
       <CurriculumLibrary />
 
+      {/* Eligibility & Fees */}
+      <section className="px-3 py-8 bg-gradient-to-r from-brand-magenta/5 via-brand-blue/5 to-brand-orange/5">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-12 text-center">
+            <h2 className="font-display text-3xl md:text-4xl mb-4">Eligibility & Fee Structure</h2>
+            <p className="text-foreground/80 font-body max-w-3xl mx-auto">
+              Comprehensive information about admission requirements, entrance codes, and detailed fee structure for the B.Sc Nursing program.
+            </p>
+          </div>
+          <div className="flex flex-col items-center justify-center">
+            <a
+              href="/eligibility?school=School%20of%20Health%20Sciences&program=B.Sc%20Nursing"
+              className="inline-block"
+            >
+              <Button className="bg-brand-gradient text-foreground px-8 py-6 text-base font-semibold">
+                View Eligibility & Fees
+                <ChevronRight className="ml-2 h-5 w-5" />
+              </Button>
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Related Resources */}
       <section
         id="related-resources"
