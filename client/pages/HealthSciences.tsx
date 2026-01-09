@@ -68,6 +68,16 @@ type NewsItem = {
 
 type NoticeItem = ImportedNoticeItem;
 
+type CollegeCard = {
+  id: string;
+  name: string;
+  collegeName: string;
+  description: string;
+  icon: LucideIcon;
+  color: string;
+  bgColor: string;
+};
+
 const getAllHealthSciencesEvents = () => getHealthSciencesEvents();
 const getHealthSciencesNewsData = () => getHealthSciencesNews();
 const getHealthSciencesAnnouncementsData = () =>
