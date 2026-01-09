@@ -874,7 +874,7 @@ export default function JournalismMassComm() {
           </Card>
           <Card className="rounded-none border border-blue-500/20 bg-blue-500/10">
             <CardHeader>
-              <CardTitle className="font-display">More Resources</CardTitle>
+              <CardTitle className="font-display">{getTranslation(language, 'journalismPage.moreResources')}</CardTitle>
             </CardHeader>
             <CardContent className="grid gap-3 text-sm font-body">
               <a
@@ -883,7 +883,7 @@ export default function JournalismMassComm() {
                 rel="noreferrer"
                 className="hover:text-brand-magenta"
               >
-                Programs Overview
+                {getTranslation(language, 'journalismPage.programsOverview')}
               </a>
               <a
                 href="https://www.dsu.edu.in/journalism-mass-comm/newsletter"
@@ -891,7 +891,7 @@ export default function JournalismMassComm() {
                 rel="noreferrer"
                 className="hover:text-brand-magenta"
               >
-                Monthly Newsletter
+                {getTranslation(language, 'journalismPage.monthlyNewsletter')}
               </a>
               <a
                 href="https://www.dsu.edu.in/journalism-mass-comm/library"
@@ -899,7 +899,7 @@ export default function JournalismMassComm() {
                 rel="noreferrer"
                 className="hover:text-brand-magenta"
               >
-                Digital Library
+                {getTranslation(language, 'journalismPage.digitalLibrary')}
               </a>
               <a
                 href="https://www.dsu.edu.in/journalism-mass-comm/student-hub"
@@ -907,7 +907,7 @@ export default function JournalismMassComm() {
                 rel="noreferrer"
                 className="hover:text-brand-magenta"
               >
-                Student Hub
+                {getTranslation(language, 'journalismPage.studentHub')}
               </a>
             </CardContent>
           </Card>
