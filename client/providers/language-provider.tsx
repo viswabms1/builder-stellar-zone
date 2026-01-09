@@ -1,4 +1,5 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect, useRef } from 'react';
+import { useLocation } from 'react-router-dom';
 import type { Language } from '@/lib/i18n';
 import { getTranslation } from '@/lib/i18n';
 import { translateDOMContent } from '@/lib/google-translate-dom';
@@ -15,6 +16,8 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [language, setLanguageState] = useState<Language>('en');
   const [isTranslating, setIsTranslating] = useState(false);
+  const translationTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const location = useLocation();
 
   // Load language from localStorage on mount
   useEffect(() => {
@@ -24,6 +27,38 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     }
   }, []);
 
+  // Re-translate when route changes and language is not English
+  useEffect(() => {
+    if (language !== 'en') {
+      console.log('Route changed, re-translating to', language);
+
+      // Clear any pending translation
+      if (translationTimeoutRef.current) {
+        clearTimeout(translationTimeoutRef.current);
+      }
+
+      // Wait for page to render, then translate
+      setIsTranslating(true);
+      translationTimeoutRef.current = setTimeout(() => {
+        translateDOMContent(language, 'en')
+          .then(() => {
+            console.log('Page translation completed for route:', location.pathname);
+            setIsTranslating(false);
+          })
+          .catch((err) => {
+            console.error('Translation failed:', err);
+            setIsTranslating(false);
+          });
+      }, 500);
+    }
+
+    return () => {
+      if (translationTimeoutRef.current) {
+        clearTimeout(translationTimeoutRef.current);
+      }
+    };
+  }, [location.pathname, language]);
+
   const setLanguage = (lang: Language) => {
     console.log('Language changed to:', lang);
     setLanguageState(lang);
@@ -32,7 +67,13 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     // Translate entire page content using Google Translate if not English
     if (lang !== 'en') {
       setIsTranslating(true);
-      setTimeout(() => {
+
+      // Clear any pending translation
+      if (translationTimeoutRef.current) {
+        clearTimeout(translationTimeoutRef.current);
+      }
+
+      translationTimeoutRef.current = setTimeout(() => {
         translateDOMContent(lang, 'en')
           .then(() => {
             console.log('Page translation completed');
