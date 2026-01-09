@@ -432,10 +432,10 @@ function ProgramCardComponent({ program, language }: { program: ProgramCard; lan
           <div className="space-y-4">
             <div>
               <h3 className="font-display text-2xl leading-tight text-white">
-                {getTranslation(language, 'journalismPage.baJmc')}
+                {"BA (Journalism & Mass Communication)"}
               </h3>
               <p className="mt-3 text-sm text-white/85 font-body">
-                {getTranslation(language, 'journalismPage.baJmcDesc')}
+                {"Three-year programme covering print, television, digital media, filmmaking, podcasting, advertising, public relations and theatre with compulsory two-month internship."}
               </p>
             </div>
             <div className="flex flex-wrap gap-2">
