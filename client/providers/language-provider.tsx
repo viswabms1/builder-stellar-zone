@@ -24,23 +24,36 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   const setLanguage = async (lang: Language) => {
-    if (lang === language) return;
+    console.log('setLanguage called with:', lang, 'current language:', language);
 
-    setLanguageState(lang);
-    localStorage.setItem('language', lang);
+    if (lang === language) {
+      console.log('Same language, returning early');
+      return;
+    }
 
-    // Translate page content using LibreTranslate
-    if (lang !== 'en') {
-      setIsTranslating(true);
-      try {
+    try {
+      console.log('Setting language state to:', lang);
+      setLanguageState(lang);
+      localStorage.setItem('language', lang);
+      console.log('Language saved to localStorage');
+
+      // Translate page content using LibreTranslate
+      if (lang !== 'en') {
+        console.log('Starting translation to:', lang);
+        setIsTranslating(true);
+
         // Add a small delay to ensure DOM is fully rendered
         await new Promise(resolve => setTimeout(resolve, 100));
         await translatePageContent(lang, 'en');
-      } catch (error) {
-        console.error('Failed to translate page:', error);
-      } finally {
-        setIsTranslating(false);
+
+        console.log('Translation complete');
+      } else {
+        console.log('English selected, no translation needed');
       }
+    } catch (error) {
+      console.error('Failed to change language:', error);
+    } finally {
+      setIsTranslating(false);
     }
   };
 
