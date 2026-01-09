@@ -13,12 +13,9 @@ import {
   Microscope,
   Beaker,
   FlaskConical,
-  Volume2,
-  VolumeX,
   CalendarDays,
   Zap,
 } from "lucide-react";
-import { useAutoMuteOnScroll } from "@/hooks/useAutoMuteOnScroll";
 
 export default function BSc() {
   const specializations = [
