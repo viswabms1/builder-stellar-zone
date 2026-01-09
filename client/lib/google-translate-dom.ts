@@ -69,16 +69,17 @@ export async function translateDOMContent(
 
   try {
     const textNodes = getTextNodesToTranslate();
-    
+
     if (textNodes.length === 0) {
       console.log('No text nodes found to translate');
       return;
     }
 
-    console.log(`Found ${textNodes.length} text nodes to translate`);
+    console.log(`Found ${textNodes.length} text nodes to translate to ${targetCode}`);
 
     // Batch translate to reduce API calls (Google Translate API supports multiple texts)
-    const batchSize = 50;
+    // Use larger batch size for efficiency
+    const batchSize = 100;
     const batches = [];
 
     for (let i = 0; i < textNodes.length; i += batchSize) {
@@ -86,12 +87,15 @@ export async function translateDOMContent(
       batches.push(batch);
     }
 
-    console.log(`Translating in ${batches.length} batch(es)`);
+    console.log(`Translating in ${batches.length} batch(es) of max ${batchSize} items`);
 
-    for (const batch of batches) {
+    let totalTranslated = 0;
+
+    for (let batchIndex = 0; batchIndex < batches.length; batchIndex++) {
+      const batch = batches[batchIndex];
       try {
         const textsToTranslate = batch.map((item) => item.text);
-        
+
         // Use fetch directly for batch translation
         const response = await fetch(
           'https://translation.googleapis.com/language/translate/v2',
@@ -105,38 +109,82 @@ export async function translateDOMContent(
               target: targetCode,
               source: sourceCode,
               key: import.meta.env.VITE_GOOGLE_TRANSLATE_API_KEY,
+              format: 'html', // Preserve HTML formatting
             }),
           }
         );
 
         if (!response.ok) {
-          console.error('Translation API error:', response.status, response.statusText);
+          console.error(`Translation API error for batch ${batchIndex + 1}:`, response.status, response.statusText);
+
+          // Try individual translations as fallback
+          for (const item of batch) {
+            try {
+              const fallbackResponse = await fetch(
+                'https://translation.googleapis.com/language/translate/v2',
+                {
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/json',
+                  },
+                  body: JSON.stringify({
+                    q: item.text,
+                    target: targetCode,
+                    source: sourceCode,
+                    key: import.meta.env.VITE_GOOGLE_TRANSLATE_API_KEY,
+                  }),
+                }
+              );
+
+              if (fallbackResponse.ok) {
+                const fallbackData = await fallbackResponse.json();
+                const translated = fallbackData.data.translations[0]?.translatedText;
+                if (translated) {
+                  item.node.textContent = translated;
+                  totalTranslated++;
+                }
+              }
+            } catch (e) {
+              console.error('Individual translation error:', e);
+            }
+          }
           continue;
         }
 
         const data = await response.json();
+
+        if (!data.data || !data.data.translations) {
+          console.error('Invalid API response:', data);
+          continue;
+        }
+
         const translatedTexts = data.data.translations.map(
           (t: { translatedText: string }) => t.translatedText
         );
 
         // Update DOM nodes with translated text
+        let batchTranslated = 0;
         batch.forEach((item, index) => {
-          if (translatedTexts[index]) {
+          if (translatedTexts[index] && translatedTexts[index].length > 0) {
             item.node.textContent = translatedTexts[index];
+            batchTranslated++;
+            totalTranslated++;
           }
         });
 
-        console.log(`Translated ${batch.length} text nodes`);
+        console.log(`Batch ${batchIndex + 1}/${batches.length}: Translated ${batchTranslated}/${batch.length} text nodes`);
       } catch (error) {
-        console.error('Batch translation error:', error);
+        console.error(`Batch ${batchIndex + 1} translation error:`, error);
         continue;
       }
 
-      // Add small delay between batches to avoid rate limiting
-      await new Promise((resolve) => setTimeout(resolve, 100));
+      // Add delay between batches to avoid rate limiting
+      if (batchIndex < batches.length - 1) {
+        await new Promise((resolve) => setTimeout(resolve, 200));
+      }
     }
 
-    console.log('DOM translation completed');
+    console.log(`DOM translation completed. Total translated: ${totalTranslated}/${textNodes.length}`);
   } catch (error) {
     console.error('DOM translation failed:', error);
     throw error;
