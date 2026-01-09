@@ -49,8 +49,8 @@ export default function Nursing() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero */}
-      <section className="dept-hero-section relative">
-        <div className="h-[55vh] sm:h-[60vh] md:h-[65vh] w-full overflow-hidden">
+      <section className="dept-hero-section relative w-full">
+        <div className="h-[55vh] sm:h-[60vh] md:h-[65vh] w-full overflow-hidden relative">
           <video
             ref={videoRef}
             src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F0e3142955d064bcb9e612579c54c1630?alt=media&token=559d7d84-efa6-4617-8c6f-8e5305f8754b&apiKey=4aa279a8430d441dba9c55f659831878"
@@ -59,14 +59,20 @@ export default function Nursing() {
             loop
             playsInline
             preload="metadata"
-            className="w-full h-full object-cover"
             style={{
-              filter: "brightness(1.1) contrast(1.1) saturate(1.15)",
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
               objectPosition: "center",
+              filter: "brightness(1.1) contrast(1.1) saturate(1.15)",
+              zIndex: 0,
             }}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent z-10" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
         </div>
         <div className="absolute inset-0 flex items-center">
           <div className="max-w-7xl mx-auto px-3 pb-8 sm:pb-12 md:pb-12">
