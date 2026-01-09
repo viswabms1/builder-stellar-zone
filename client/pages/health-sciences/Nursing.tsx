@@ -19,22 +19,7 @@ import {
 } from "lucide-react";
 
 export default function Nursing() {
-  const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
-
-  const toggleMute = () => {
-    if (videoRef.current) {
-      videoRef.current.muted = !videoRef.current.muted;
-      setIsMuted(!isMuted);
-    }
-  };
-
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    video.muted = isMuted;
-  }, [isMuted]);
 
   const specializations = [
     { icon: Heart, label: "General Nursing" },
