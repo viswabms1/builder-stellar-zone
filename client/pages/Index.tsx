@@ -1035,43 +1035,72 @@ export default function Index() {
           >
             {/* Featured Event - Left side */}
             <div className="lg:col-span-2" style={{ contain: "content" }}>
-              <div className="rounded-none overflow-hidden border border-orange-500/20 bg-orange-500/10">
-                <div className="relative h-96 overflow-hidden">
-                  <img
-                    src={allEvents[selectedEventIndex].image}
-                    alt={allEvents[selectedEventIndex].title}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
-                </div>
-                <div className="px-4 pt-4 pb-[70px]">
-                  <div className="flex items-center gap-3 mb-4">
-                    <Badge className="bg-brand-orange/20 text-brand-orange text-xs">
-                      <CalendarDays className="w-3 h-3 mr-1" />
-                      {allEvents[selectedEventIndex].date}
-                    </Badge>
-                    <Badge variant="secondary" className="text-xs">
-                      {allEvents[selectedEventIndex].category}
-                    </Badge>
+              <div className="relative">
+                <div className={`rounded-none overflow-hidden border border-orange-500/20 bg-orange-500/10 featured-event-card transition-all duration-300 ${
+                  eventTransitioning ? "featured-news-exit" : "featured-news-enter"
+                }`}
+                style={{
+                  animation: eventTransitioning
+                    ? "slideOutLeft 0.3s ease-in forwards"
+                    : "slideInRight 0.3s ease-out forwards",
+                }}
+                >
+                  <div className="relative h-96 overflow-hidden">
+                    <img
+                      src={allEvents[selectedEventIndex].image}
+                      alt={allEvents[selectedEventIndex].title}
+                      className="w-full h-full object-cover news-card-image"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                   </div>
+                  <div className="px-4 pt-4 pb-[70px]">
+                    <div className="flex items-center gap-3 mb-4 flex-wrap">
+                      <div className="relative">
+                        <Badge className="bg-brand-orange/20 text-brand-orange text-xs">
+                          <CalendarDays className="w-3 h-3 mr-1" />
+                          {allEvents[selectedEventIndex].date}
+                        </Badge>
+                        {!eventTransitioning && (
+                          <div className="absolute -top-1 -right-1 w-2 h-2 bg-brand-orange rounded-full featured-news-pulse" />
+                        )}
+                      </div>
+                      <Badge variant="secondary" className="text-xs transition-all duration-300">
+                        {allEvents[selectedEventIndex].category}
+                      </Badge>
+                    </div>
                   <h3 className="text-2xl font-bold text-foreground mb-3 font-display">
                     {allEvents[selectedEventIndex].title}
                   </h3>
                   <p className="text-foreground/80 mb-6 font-body">
                     {allEvents[selectedEventIndex].description}
                   </p>
-                  <div className="flex items-center justify-between">
-                    <Button className="bg-brand-gradient hover:opacity-90 text-foreground">
-                      Learn More
-                      <ArrowRight className="w-4 h-4 ml-2" />
-                    </Button>
-                    <div className="text-xs text-foreground/60 font-body">
-                      Auto-rotating • {selectedEventIndex + 1} of{" "}
-                      {allEvents.length}
+                    <div className="flex items-center justify-between flex-wrap gap-3">
+                      <Button className="bg-brand-gradient hover:opacity-90 text-foreground transition-all duration-300">
+                        Learn More
+                        <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                      </Button>
+                      <div className="flex items-center gap-2">
+                        <div className="text-xs text-foreground/60 font-body">
+                          {selectedEventIndex + 1} / {allEvents.length}
+                        </div>
+                        <div className="flex gap-1">
+                          {allEvents.map((_, idx) => (
+                            <div
+                              key={idx}
+                              className={`h-1.5 rounded-full transition-all duration-300 ${
+                                idx === selectedEventIndex
+                                  ? "w-4 bg-brand-orange"
+                                  : "w-1.5 bg-foreground/30 hover:bg-foreground/50"
+                              }`}
+                            />
+                          ))}
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
+              <div className="rotation-progress-bar" style={{ width: `${eventRotationProgress}%` }} />
             </div>
 
             {/* Upcoming Events List - Right side */}
@@ -1089,14 +1118,14 @@ export default function Index() {
                       setSelectedEventIndex(idx);
                       setIsEventInteracting(true);
                     }}
-                    className={`group rounded-none border cursor-pointer w-full text-left p-4 ${
+                    className={`group rounded-none border cursor-pointer w-full text-left p-4 event-list-item transition-all duration-300 ${
                       selectedEventIndex === idx
-                        ? "border-brand-magenta bg-brand-magenta/10"
+                        ? "border-brand-magenta bg-brand-magenta/10 shadow-md shadow-brand-magenta/20"
                         : idx % 3 === 0
-                          ? "border-blue-500/20 bg-blue-500/10"
+                          ? "border-blue-500/20 bg-blue-500/10 hover:border-blue-500/40 hover:bg-blue-500/15"
                           : idx % 3 === 1
-                            ? "border-purple-500/20 bg-purple-500/10"
-                            : "border-orange-500/20 bg-orange-500/10"
+                            ? "border-purple-500/20 bg-purple-500/10 hover:border-purple-500/40 hover:bg-purple-500/15"
+                            : "border-orange-500/20 bg-orange-500/10 hover:border-orange-500/40 hover:bg-orange-500/15"
                     }`}
                   >
                     <div className="flex gap-4">
