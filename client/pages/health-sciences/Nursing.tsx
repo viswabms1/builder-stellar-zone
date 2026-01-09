@@ -74,8 +74,8 @@ export default function Nursing() {
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent z-10" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
         </div>
-        <div className="absolute inset-0 flex items-center">
-          <div className="max-w-7xl mx-auto px-3 pb-8 sm:pb-12 md:pb-12">
+        <div className="absolute inset-0 flex items-center z-20">
+          <div className="max-w-7xl mx-auto px-3 pb-8 sm:pb-12 md:pb-12 w-full">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-black/40 rounded-full border border-white/20 mb-4 backdrop-blur-sm">
               <Sparkles className="w-4 h-4 text-white" />
               <span className="text-sm font-medium text-white font-display">College of Nursing Sciences</span>
