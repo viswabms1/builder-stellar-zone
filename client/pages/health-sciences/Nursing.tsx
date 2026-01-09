@@ -258,7 +258,7 @@ export default function Nursing() {
               Our graduates are highly sought-after across India and globally. With 100% placement record, they pursue careers in clinical practice, research, education, and healthcare administration.
             </p>
           </div>
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid gap-4 md:grid-cols-2">
             {careers.map((career, i) => (
               <div key={i} className="p-6 rounded-lg border border-border/50 bg-card/50 backdrop-blur-sm">
                 <div className="flex items-start gap-3">
