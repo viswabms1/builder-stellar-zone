@@ -1,12 +1,11 @@
 import React, { createContext, useContext, useState, useEffect, useRef } from 'react';
-import type { Language } from '@/lib/i18n';
-import { getTranslation } from '@/lib/i18n';
 import { translateDOMContent } from '@/lib/google-translate-dom';
+
+type Language = 'en' | 'kn' | 'hi';
 
 interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
-  t: (key: string) => string;
   isTranslating: boolean;
   triggerTranslation: () => void;
 }
