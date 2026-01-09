@@ -554,14 +554,15 @@ function CalendarResourceCard({ entry }: { entry: CalendarEntry }) {
 
 function HeroImage() {
   return (
-    <section className="relative w-full overflow-hidden" id="top">
-      <div className="relative w-full h-[55vh] md:h-[65vh]">
+    <section className="relative w-full overflow-hidden bg-background" id="top">
+      <div className="relative w-full h-[55vh] md:h-[70vh]">
         <img
-          src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F61b3e983a56341238c03d9dc97a80822?format=webp&width=800"
+          src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F61b3e983a56341238c03d9dc97a80822?format=webp&width=1200"
           alt="School of Computer Applications"
           className="w-full h-full object-cover"
+          loading="eager"
         />
-        <div className="absolute inset-0 bg-black/30"></div>
+        <div className="absolute inset-0 bg-black/20"></div>
       </div>
     </section>
   );
