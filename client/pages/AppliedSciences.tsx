@@ -904,6 +904,12 @@ export default function AppliedSciences() {
               <CardTitle className="font-display">More Resources</CardTitle>
             </CardHeader>
             <CardContent className="grid gap-3 text-sm font-body">
+              <RouterLink
+                to="/academics/basic-applied-sciences/faculty"
+                className="hover:text-brand-magenta transition-colors"
+              >
+                Faculty Directory
+              </RouterLink>
               <a
                 href="https://www.dsu.edu.in/basic-applied-sciences/programs"
                 target="_blank"
