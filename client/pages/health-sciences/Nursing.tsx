@@ -232,20 +232,22 @@ export default function Nursing() {
       </section>
 
       {/* Why Choose Nursing */}
-      <section className="px-3 py-12 max-w-7xl mx-auto">
-        <div className="mb-12">
-          <h2 className="font-display text-3xl md:text-4xl mb-4">Why Choose Nursing at DSU?</h2>
-          <p className="text-foreground/80 font-body max-w-3xl mb-8">
-            Our nursing programme prepares you to be a compassionate, competent healthcare professional with global standards and ethical responsibility.
-          </p>
-        </div>
-        <div className="grid gap-4 md:grid-cols-2">
-          {highlights.map((highlight, i) => (
-            <div key={i} className="flex gap-4 p-4 rounded-lg border border-brand-magenta/20 bg-brand-magenta/5">
-              <Stethoscope className="h-6 w-6 text-brand-magenta flex-shrink-0 mt-0.5" />
-              <p className="text-sm text-foreground font-body">{highlight}</p>
-            </div>
-          ))}
+      <section className="px-3 py-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-12">
+            <h2 className="font-display text-3xl md:text-4xl mb-4">Why Choose Nursing at DSU?</h2>
+            <p className="text-foreground/80 font-body max-w-3xl mb-8">
+              Our nursing programme prepares you to be a compassionate, competent healthcare professional with global standards and ethical responsibility.
+            </p>
+          </div>
+          <div className="grid gap-4 md:grid-cols-2">
+            {highlights.map((highlight, i) => (
+              <div key={i} className="flex gap-4 p-4 rounded-lg border border-brand-magenta/20 bg-brand-magenta/5">
+                <Stethoscope className="h-6 w-6 text-brand-magenta flex-shrink-0 mt-0.5" />
+                <p className="text-sm text-foreground font-body">{highlight}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
