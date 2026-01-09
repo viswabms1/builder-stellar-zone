@@ -612,10 +612,25 @@ export default function Index() {
     }
 
     const interval = setInterval(() => {
-      setFeaturedNewsIndex((prev) => (prev + 1) % allFeaturedNews.length);
+      setNewsTransitioning(true);
+      setTimeout(() => {
+        setFeaturedNewsIndex((prev) => (prev + 1) % allFeaturedNews.length);
+        setNewsTransitioning(false);
+      }, 300);
+      setRotationProgress(0);
     }, 8000);
 
-    return () => clearInterval(interval);
+    const progressInterval = setInterval(() => {
+      setRotationProgress((prev) => {
+        if (prev >= 100) return 100;
+        return prev + 100 / 80;
+      });
+    }, 100);
+
+    return () => {
+      clearInterval(interval);
+      clearInterval(progressInterval);
+    };
   }, [allFeaturedNews.length, isVideoPlaying]);
 
   // Auto-rotate events every 8 seconds (pauses when user interacts)
