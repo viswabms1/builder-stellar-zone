@@ -1,29 +1,16 @@
-import { translateText, getLanguageCode } from './google-translate';
+import { getLanguageCode } from './google-translate';
 
 interface TextNode {
   node: Text;
   text: string;
 }
 
-const EXCLUDE_CLASSES = new Set([
-  'no-translate',
-  'notranslate',
-  'code',
-  'pre',
-  'script',
-  'style',
-]);
-
-const EXCLUDE_TAGS = new Set([
+const STRICT_EXCLUDE_TAGS = new Set([
   'SCRIPT',
   'STYLE',
-  'CODE',
-  'PRE',
   'NOSCRIPT',
-  'IMG',
-  'VIDEO',
-  'AUDIO',
-  'BUTTON', // Don't translate button content as it usually has translation keys
+  'SVG',
+  'MATH',
 ]);
 
 function shouldTranslateNode(node: Node): boolean {
@@ -32,13 +19,13 @@ function shouldTranslateNode(node: Node): boolean {
   const text = node.textContent?.trim();
   if (!text || text.length === 0) return false;
 
-  // Check if it's only numbers, punctuation, or special characters
-  if (/^[\d\s\-.,;:!?()\[\]{}«»"'/]*$/.test(text)) return false;
+  // Minimum length check - at least 2 characters
+  if (text.length < 2) return false;
 
-  // Check if parent is in exclude list
+  // Check if parent is in strict exclude list
   let parent = node.parentElement;
   while (parent) {
-    if (EXCLUDE_TAGS.has(parent.tagName)) return false;
+    if (STRICT_EXCLUDE_TAGS.has(parent.tagName)) return false;
     if (parent.classList.contains('no-translate') || parent.classList.contains('notranslate')) {
       return false;
     }
