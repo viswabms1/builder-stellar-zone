@@ -19,12 +19,19 @@ export const translations = {
       research: 'Research',
     },
     hero: {
+      universityName: 'Dayananda Sagar University',
       mainHeading: "India's AI First University",
       subheading: "Powered by NVIDIA",
       headline: 'Shape Your Future at Dayananda Sagar University',
       subheadline: 'Experience world-class education at Dayananda Sagar University. Innovation meets tradition on our state-of-the-art campus.',
       applyNow: 'Apply Now',
+      applyToday: 'Apply Today',
       virtualTour: 'Virtual Tour',
+      aiFirst: 'Build the Future of AI at DSU',
+    },
+    recognition: {
+      title: 'Recognized Excellence',
+      subtitle: 'Accredited by leading national and international bodies',
     },
     academics: {
       title: 'Academic Excellence That Inspires',
