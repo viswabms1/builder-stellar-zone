@@ -39,7 +39,6 @@ import {
 } from "lucide-react";
 
 export default function CampusLife() {
-  const { t } = useLanguage();
   const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
 
