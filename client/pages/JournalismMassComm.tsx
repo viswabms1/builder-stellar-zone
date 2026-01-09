@@ -835,12 +835,12 @@ export default function JournalismMassComm() {
         <div className="mx-auto grid max-w-5xl items-start gap-4 lg:grid-cols-2">
           <Card className="rounded-none border border-orange-500/20 bg-orange-500/10">
             <CardHeader>
-              <CardTitle className="font-display">Leadership</CardTitle>
+              <CardTitle className="font-display">{getTranslation(language, 'journalismPage.leadership')}</CardTitle>
             </CardHeader>
             <CardContent className="grid gap-4 text-sm font-body text-foreground">
               <div>
                 <div className="text-foreground/70 text-xs uppercase tracking-wide">
-                  Email
+                  {getTranslation(language, 'journalismPage.email')}
                 </div>
                 <div className="font-medium text-foreground">
                   cjmc@dsu.edu.in
@@ -848,7 +848,7 @@ export default function JournalismMassComm() {
               </div>
               <div>
                 <div className="text-foreground/70 text-xs uppercase tracking-wide">
-                  Phone
+                  {getTranslation(language, 'journalismPage.phone')}
                 </div>
                 <div className="font-medium text-foreground">
                   +91-80-49092933
@@ -856,7 +856,7 @@ export default function JournalismMassComm() {
               </div>
               <div>
                 <div className="text-foreground/70 text-xs uppercase tracking-wide">
-                  Campus Address
+                  {getTranslation(language, 'journalismPage.campusAddress')}
                 </div>
                 <div className="font-medium text-foreground">
                   Kanakapura Road, Bengaluru, Karnataka
@@ -864,10 +864,10 @@ export default function JournalismMassComm() {
               </div>
               <div>
                 <div className="text-foreground/70 text-xs uppercase tracking-wide">
-                  Office Hours
+                  {getTranslation(language, 'journalismPage.officeHours')}
                 </div>
                 <div className="font-medium text-foreground">
-                  Mon–Fri, 9:00 AM – 5:30 PM
+                  {getTranslation(language, 'journalismPage.officeHoursTime')}
                 </div>
               </div>
             </CardContent>
