@@ -653,6 +653,7 @@ function HeroVideo() {
 }
 
 export default function JournalismMassComm() {
+  const { language } = useContext(LanguageContext);
   return (
     <div className="min-h-screen bg-background text-foreground">
       <section className="relative" id="top">
