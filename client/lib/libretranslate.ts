@@ -121,10 +121,13 @@ export async function translatePageContent(
   sourceLang: string = 'en'
 ): Promise<void> {
   if (sourceLang === targetLang) {
+    console.log('Source and target languages are the same, skipping translation');
     return;
   }
 
   try {
+    console.log(`Starting page translation from ${sourceLang} to ${targetLang}`);
+
     // Get all text nodes in the document
     const walker = document.createTreeWalker(
       document.body,
@@ -149,7 +152,10 @@ export async function translatePageContent(
       }
     }
 
+    console.log(`Found ${textNodesToTranslate.length} text nodes to translate`);
+
     if (textNodesToTranslate.length === 0) {
+      console.log('No text nodes found to translate');
       return;
     }
 
@@ -162,11 +168,15 @@ export async function translatePageContent(
     );
 
     // Update DOM with translated text
+    let updateCount = 0;
     textNodesToTranslate.forEach((item, index) => {
       if (translatedTexts[index] && translatedTexts[index] !== item.text) {
         item.node.textContent = translatedTexts[index];
+        updateCount++;
       }
     });
+
+    console.log(`Translation complete: ${updateCount} text nodes updated`);
   } catch (error) {
     console.error('Page translation error:', error);
   }
