@@ -78,6 +78,8 @@ type CollegeCard = {
   icon: LucideIcon;
   color: string;
   bgColor: string;
+  image: string;
+  gradient: string;
 };
 
 const getAllHealthSciencesEvents = () => getHealthSciencesEvents();
