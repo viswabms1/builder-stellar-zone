@@ -29,6 +29,8 @@ import LLB3Year from "./pages/law/LLB3Year";
 import LLMLawTechnology from "./pages/law/LLMLawTechnology";
 import LLMCorporateCommercial from "./pages/law/LLMCorporateCommercial";
 import AppliedSciences from "./pages/AppliedSciences";
+import BSc from "./pages/BSc";
+import MSc from "./pages/MSc";
 import ManagementStudies from "./pages/ManagementStudies";
 import BCom from "./pages/commerce-and-management/BCom";
 import BBA from "./pages/commerce-and-management/BBA";
