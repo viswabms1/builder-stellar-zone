@@ -129,25 +129,54 @@ export async function translatePageContent(
     console.log(`Starting page translation from ${sourceLang} to ${targetLang}`);
 
     // Get all text nodes in the document
+    const textNodesToTranslate: { node: Text; text: string }[] = [];
+
     const walker = document.createTreeWalker(
       document.body,
       NodeFilter.SHOW_TEXT,
-      null
+      {
+        acceptNode: (node) => {
+          const text = node.textContent?.trim();
+
+          // Skip empty text
+          if (!text || text.length === 0) {
+            return NodeFilter.FILTER_REJECT;
+          }
+
+          // Skip very short text (single characters, numbers)
+          if (text.length < 2) {
+            return NodeFilter.FILTER_REJECT;
+          }
+
+          const parent = node.parentElement;
+          if (!parent) {
+            return NodeFilter.FILTER_REJECT;
+          }
+
+          const tagName = parent.tagName;
+          const id = parent.id;
+          const className = parent.className;
+
+          // Skip these elements
+          if (
+            tagName === 'SCRIPT' ||
+            tagName === 'STYLE' ||
+            tagName === 'NOSCRIPT' ||
+            id === 'google_translate_element' ||
+            className?.includes('goog-te')
+          ) {
+            return NodeFilter.FILTER_REJECT;
+          }
+
+          return NodeFilter.FILTER_ACCEPT;
+        }
+      } as NodeFilter
     );
 
-    const textNodesToTranslate: { node: Text; text: string }[] = [];
     let node: Text | null;
-
     while ((node = walker.nextNode() as Text | null)) {
       const text = node.textContent?.trim();
-      // Skip empty text nodes, script/style tags, and very short text
-      if (
-        text &&
-        text.length > 2 &&
-        node.parentElement?.tagName !== 'SCRIPT' &&
-        node.parentElement?.tagName !== 'STYLE' &&
-        node.parentElement?.id !== 'google_translate_element'
-      ) {
+      if (text && text.length > 1) {
         textNodesToTranslate.push({ node, text });
       }
     }
@@ -170,8 +199,9 @@ export async function translatePageContent(
     // Update DOM with translated text
     let updateCount = 0;
     textNodesToTranslate.forEach((item, index) => {
-      if (translatedTexts[index] && translatedTexts[index] !== item.text) {
-        item.node.textContent = translatedTexts[index];
+      const translated = translatedTexts[index];
+      if (translated && translated.trim().length > 0 && translated !== item.text) {
+        item.node.textContent = translated;
         updateCount++;
       }
     });
