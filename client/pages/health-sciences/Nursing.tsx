@@ -82,17 +82,6 @@ export default function Nursing() {
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-          <button
-            onClick={toggleMute}
-            className="hidden sm:block absolute top-8 right-8 z-10 p-3 rounded-full bg-black/50 hover:bg-black/70 transition-colors text-white backdrop-blur-sm border border-white/20"
-            aria-label={isMuted ? "Unmute" : "Mute"}
-          >
-            {isMuted ? (
-              <VolumeX className="h-4 w-4 sm:h-5 sm:w-5" />
-            ) : (
-              <Volume2 className="h-4 w-4 sm:h-5 sm:w-5" />
-            )}
-          </button>
         </div>
         <div className="absolute inset-0 flex items-center">
           <div className="max-w-7xl mx-auto px-3 pb-8 sm:pb-12 md:pb-12">
