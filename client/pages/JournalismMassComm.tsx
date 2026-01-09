@@ -74,6 +74,7 @@ function NoticeBoardCarousel() {
   const [currentEventIndex, setCurrentEventIndex] = useState(0);
   const [currentNewsIndex, setCurrentNewsIndex] = useState(0);
   const [currentAnnouncementIndex, setCurrentAnnouncementIndex] = useState(0);
+  const { language } = useContext(LanguageContext);
 
   const events = getAllJournalismEvents();
   const news = getJournalismNewsData();
