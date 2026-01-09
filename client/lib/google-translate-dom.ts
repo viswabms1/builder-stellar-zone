@@ -62,20 +62,25 @@ export async function translateDOMContent(
   targetLanguage: string,
   sourceLanguage: string = 'en'
 ): Promise<void> {
-  if (targetLanguage === sourceLanguage) return;
+  if (targetLanguage === sourceLanguage) {
+    console.log('Target language same as source, skipping translation');
+    return;
+  }
 
   const targetCode = getLanguageCode(targetLanguage);
   const sourceCode = getLanguageCode(sourceLanguage);
+
+  console.log(`🌐 Starting translation from ${sourceCode} to ${targetCode}`);
 
   try {
     const textNodes = getTextNodesToTranslate();
 
     if (textNodes.length === 0) {
-      console.log('No text nodes found to translate');
+      console.log('⚠️ No text nodes found to translate');
       return;
     }
 
-    console.log(`Found ${textNodes.length} text nodes to translate to ${targetCode}`);
+    console.log(`✅ Found ${textNodes.length} text nodes to translate to ${targetCode}`);
 
     // Batch translate to reduce API calls (Google Translate API supports multiple texts)
     // Use larger batch size for efficiency
