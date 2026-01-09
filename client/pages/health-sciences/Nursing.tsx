@@ -239,7 +239,7 @@ export default function Nursing() {
             Our nursing programme prepares you to be a compassionate, competent healthcare professional with global standards and ethical responsibility.
           </p>
         </div>
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid gap-4 md:grid-cols-2">
           {highlights.map((highlight, i) => (
             <div key={i} className="flex gap-4 p-4 rounded-lg border border-brand-magenta/20 bg-brand-magenta/5">
               <Stethoscope className="h-6 w-6 text-brand-magenta flex-shrink-0 mt-0.5" />
