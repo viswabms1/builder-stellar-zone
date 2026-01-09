@@ -572,7 +572,7 @@ function HeroImage() {
 export default function ComputerApplications() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <HeroVideo />
+      <HeroImage />
 
       {/* Dean's Message Section */}
       <DeanSection dean={DEAN_INFO} />
