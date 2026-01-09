@@ -270,7 +270,6 @@ export default function Index() {
   const [selectedPublicationIndex, setSelectedPublicationIndex] = useState(0);
   const [isPublicationInteracting, setIsPublicationInteracting] =
     useState(false);
-  const { t, language } = useLanguage();
   const { theme } = useTheme();
 
   // All events for rotation
