@@ -25,7 +25,15 @@ const PRINCIPAL_INFO: DeanInfo = {
   title: "Principal (I/C)",
   position: "College of Nursing Sciences",
   photo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F4a2f8f1c18424e98bc7edb721a95a5f2?format=webp&width=800",
-  // Video will be added when provided
+  message: [
+    "Welcome to College of Nursing Sciences, DSU!",
+    "As the Principal of this esteemed institution, I am proud to lead a community of dedicated educators, enthusiastic learners, and committed healthcare professionals. Our college is renowned for its robust academic programs, cutting-edge research, and comprehensive clinical training, all designed to prepare our students to become compassionate and skilled nursing professionals.",
+    "Our mission is to provide a nurturing and dynamic learning environment that fosters intellectual growth, ethical practice, and a commitment to lifelong learning. We believe that nursing is not just a profession but a calling, and our curriculum reflects this philosophy by integrating scientific knowledge with holistic care practices.",
+    "At College of Nursing Sciences, DSU we offer a range of programs from undergraduate to doctoral levels, each designed to meet the diverse needs of the healthcare sector. Our state-of-the-art facilities, experienced faculty, and strong partnerships with healthcare institutions ensure that our students receive the best possible education and hands-on experience.",
+    "We are committed to promoting an inclusive and supportive atmosphere where every student can thrive. Our faculty and staff are here to support you every step of the way, from your first day of classes to your transition into the professional world.",
+    "I invite you to explore our website and learn more about our programs, faculty, research initiatives, and the many opportunities that await you here. Whether you are a prospective student, a current student, a parent, or a healthcare professional, we are here to assist you and answer any questions you may have.",
+    "BEST WISHES !"
+  ],
   borderColor: "border-brand-magenta/20",
   bgColor: "bg-brand-magenta/5",
 };
