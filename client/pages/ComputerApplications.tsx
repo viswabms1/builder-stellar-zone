@@ -557,7 +557,7 @@ function HeroImage() {
     <section className="relative w-full overflow-hidden bg-background" id="top">
       <div className="relative w-full h-[55vh] md:h-[70vh]">
         <img
-          src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F61b3e983a56341238c03d9dc97a80822?format=webp&width=1200"
+          src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F78b1f75114dd43ebacd3ebec8be7ca18?format=webp&width=1200"
           alt="School of Computer Applications"
           className="w-full h-full object-cover"
           loading="eager"
