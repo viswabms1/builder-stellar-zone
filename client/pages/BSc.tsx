@@ -472,7 +472,7 @@ function CurriculumLibrary() {
               </span>
             </h2>
             <p className="max-w-2xl text-sm text-foreground sm:text-base font-body">
-              Access comprehensive curriculum documentation, course structures, learning outcomes, and downloadable syllabus for the B.Sc Triple Major program.
+              Access comprehensive curriculum documentation for each specialization. Select any specialization below to view its course structure, learning outcomes, and downloadable syllabus.
             </p>
           </div>
           <Badge className="w-fit rounded-full bg-brand-blue/15 px-4 py-2 text-xs font-semibold text-brand-blue border border-brand-blue/20">
