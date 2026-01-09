@@ -103,12 +103,13 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   };
 
   const setLanguage = (lang: Language) => {
-    console.log('Language changed to:', lang);
+    console.log('🔤 Language changed to:', lang);
     setLanguageState(lang);
     localStorage.setItem('language', lang);
 
     // Translate entire page content using Google Translate if not English
     if (lang !== 'en') {
+      console.log('📝 Starting translation process for:', lang);
       setIsTranslating(true);
 
       // Clear any pending translation
@@ -117,13 +118,14 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
       }
 
       translationTimeoutRef.current = setTimeout(() => {
+        console.log('⏱️  Calling translateDOMContent...');
         translateDOMContent(lang, 'en')
           .then(() => {
-            console.log('Page translation completed');
+            console.log('✅ Page translation completed');
             setIsTranslating(false);
           })
           .catch((err) => {
-            console.error('Translation failed:', err);
+            console.error('❌ Translation failed:', err);
             setIsTranslating(false);
           });
 
@@ -133,6 +135,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
         }, 10000);
       }, 100);
     } else {
+      console.log('English selected - skipping translation');
       setIsTranslating(false);
     }
   };
