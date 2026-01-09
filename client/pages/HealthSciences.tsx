@@ -347,6 +347,7 @@ const COLLEGE_CARDS: CollegeCard[] = [
     bgColor: "bg-brand-magenta/10 border-brand-magenta/30",
     image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1600&auto=format&fit=crop",
     gradient: "from-brand-magenta/80 via-black/70 to-black/60",
+    link: "/academics/health-sciences/nursing",
   },
   {
     id: "pharmacy",
@@ -359,6 +360,7 @@ const COLLEGE_CARDS: CollegeCard[] = [
     bgColor: "bg-brand-blue/10 border-brand-blue/30",
     image: "https://images.unsplash.com/photo-1585523740023-dea1b3ffe518?q=80&w=1600&auto=format&fit=crop",
     gradient: "from-brand-blue/80 via-black/70 to-black/60",
+    link: "https://www.dsu.edu.in/health-sciences/pharmacy",
   },
   {
     id: "physiotherapy",
@@ -371,6 +373,7 @@ const COLLEGE_CARDS: CollegeCard[] = [
     bgColor: "bg-brand-orange/10 border-brand-orange/30",
     image: "https://images.unsplash.com/photo-1576091160550-112569c0fce4?q=80&w=1600&auto=format&fit=crop",
     gradient: "from-brand-orange/80 via-black/70 to-black/60",
+    link: "https://www.dsu.edu.in/health-sciences/physiotherapy",
   },
   {
     id: "allied-health",
@@ -383,6 +386,7 @@ const COLLEGE_CARDS: CollegeCard[] = [
     bgColor: "bg-emerald-500/10 border-emerald-500/30",
     image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1600&auto=format&fit=crop",
     gradient: "from-emerald-600/80 via-black/70 to-black/60",
+    link: "https://www.dsu.edu.in/health-sciences/allied-health-sciences",
   },
 ];
 
