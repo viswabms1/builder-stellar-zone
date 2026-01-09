@@ -870,9 +870,12 @@ export default function Index() {
           >
             {/* Left side - Featured story (50%) - Auto-rotating */}
             <div className="lg:col-span-2" style={{ contain: "content" }}>
-              <button
-                onClick={() => setSelectedNews(currentFeatured)}
-                className="w-full flex flex-col rounded-none border border-orange-500/20 bg-orange-500/10 cursor-pointer text-left overflow-hidden"
+              <div className="relative">
+                <button
+                  onClick={() => setSelectedNews(currentFeatured)}
+                  className={`w-full flex flex-col rounded-none border border-orange-500/20 bg-orange-500/10 cursor-pointer text-left overflow-hidden featured-news-card transition-all duration-300 ${
+                    newsTransitioning ? "featured-news-exit" : "featured-news-enter"
+                  }`}
               >
                 {currentFeatured.isVideo ? (
                   <VideoWithFrameCapture
@@ -914,6 +917,8 @@ export default function Index() {
                   </div>
                 </div>
               </button>
+              </div>
+              <div className="rotation-progress-bar" style={{ width: `${rotationProgress}%` }} />
             </div>
 
             {/* Right side - Remaining stories (50%) - 2 column grid */}
@@ -922,10 +927,10 @@ export default function Index() {
                 <button
                   key={idx}
                   onClick={() => setSelectedNews(item)}
-                  className={`group rounded-none overflow-hidden border text-left cursor-pointer ${
+                  className={`group rounded-none overflow-hidden border text-left cursor-pointer news-grid-item transition-all duration-300 ${
                     idx % 2 === 0
-                      ? "bg-blue-500/10 border-blue-500/20"
-                      : "bg-purple-500/10 border-purple-500/20"
+                      ? "bg-blue-500/10 border-blue-500/20 hover:border-blue-500/40"
+                      : "bg-purple-500/10 border-purple-500/20 hover:border-purple-500/40"
                   }`}
                 >
                   <div className="relative">
@@ -940,7 +945,7 @@ export default function Index() {
                         src={item.image}
                         alt={item.title}
                         loading="lazy"
-                        className="h-32 w-full object-cover"
+                        className="h-32 w-full object-cover news-card-image"
                       />
                     )}
                     <div className="absolute top-2 left-2">
