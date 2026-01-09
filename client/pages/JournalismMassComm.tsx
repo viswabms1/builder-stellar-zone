@@ -72,7 +72,7 @@ function NoticeBoardCarousel() {
   const [currentEventIndex, setCurrentEventIndex] = useState(0);
   const [currentNewsIndex, setCurrentNewsIndex] = useState(0);
   const [currentAnnouncementIndex, setCurrentAnnouncementIndex] = useState(0);
-  const { language } = useLanguage();
+  
 
   const events = getAllJournalismEvents();
   const news = getJournalismNewsData();
@@ -514,7 +514,7 @@ function HeroVideo() {
   const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useAutoMuteOnScroll(videoRef);
-  const { language } = useLanguage();
+  
 
   const toggleMute = () => {
     if (videoRef.current) {
@@ -651,7 +651,7 @@ function HeroVideo() {
 }
 
 export default function JournalismMassComm() {
-  const { language } = useLanguage();
+  
   return (
     <div className="min-h-screen bg-background text-foreground">
       <section className="relative" id="top">
