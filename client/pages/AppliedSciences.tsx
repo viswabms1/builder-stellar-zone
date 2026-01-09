@@ -353,7 +353,7 @@ const PG_PROGRAM_CARDS: ProgramCard[] = [
     image:
       "https://images.unsplash.com/photo-1576091160399-b2883cf36b6e?q=80&w=1600&auto=format&fit=crop",
     link: "https://www.dsu.edu.in/basic-applied-sciences/msc-specializations",
-    highlights: ["M.Sc. Biochemistry", "M.Sc. Biotechnology", "M.Sc. Microbiology"],
+    highlights: ["M.Sc. Biochemistry", "M.Sc. Biotechnology", "M.Sc. Microbiology", "M.Sc. Molecular Biology and Genetics"],
     overlay:
       "bg-gradient-to-br from-brand-orange/70 via-black/70 to-black/55 mix-blend-multiply",
     badgeClass:
