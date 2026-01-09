@@ -449,7 +449,7 @@ function ProgramCardComponent({ program, language }: { program: ProgramCard; lan
               ))}
             </div>
             <span className="inline-flex items-center gap-2 text-sm font-medium text-white/90 transition-colors group-hover:text-brand-magenta">
-              {getTranslation(language, 'journalismPage.exploreProgramme')}
+              {"Explore programme"}
               <ChevronRight className="h-4 w-4 transition-colors group-hover:text-brand-magenta" />
             </span>
           </div>
@@ -672,10 +672,10 @@ export default function JournalismMassComm() {
           <div className="mb-6">
             <div className="max-w-3xl">
               <h2 className="font-display text-3xl md:text-4xl">
-                {getTranslation(language, 'journalismPage.academicPathways')}
+                {"Academic Pathways in Media & Communication"}
               </h2>
               <p className="mt-3 text-sm text-foreground font-body">
-                {getTranslation(language, 'journalismPage.academicPathwaysDesc')}
+                {"Comprehensive programme combining rigorous academics with multimedia storytelling, broadcast production, global collaborations and real-world reporting experience to prepare industry-ready communicators."}
               </p>
             </div>
           </div>
