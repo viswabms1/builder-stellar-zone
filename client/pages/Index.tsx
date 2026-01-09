@@ -697,9 +697,9 @@ export default function Index() {
       <section className="px-3 py-8 relative bg-gradient-to-r from-brand-magenta/5 via-brand-orange/5 to-brand-blue/5 border-y border-border/30">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="headline-2 mb-4">Recognized Excellence</h2>
+            <h2 className="headline-2 mb-4">{t("recognition.title") || "Recognized Excellence"}</h2>
             <p className="subheadline text-foreground max-w-3xl mx-auto font-display text-lg">
-              Accredited by leading national and international bodies
+              {t("recognition.subtitle") || "Accredited by leading national and international bodies"}
             </p>
           </div>
 
