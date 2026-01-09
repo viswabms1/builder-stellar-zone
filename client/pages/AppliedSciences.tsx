@@ -369,6 +369,25 @@ const UG_PROGRAM_CARDS: ProgramCard[] = [
       "bg-brand-orange/35 text-foreground/90 border border-white/25 backdrop-blur",
     panelClass: "bg-black/55 backdrop-blur-xl",
   },
+  {
+    name: "B.Sc (3 Year Triple Major)",
+    area: "Interdisciplinary Sciences",
+    description:
+      "Innovative triple major programme combining core science disciplines, allowing students to specialise in multiple areas for enhanced flexibility and career opportunities.",
+    image:
+      "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1600&auto=format&fit=crop",
+    link: "https://www.dsu.edu.in/basic-applied-sciences/triple-major",
+    highlights: [
+      "Biotechnology, Biochemistry & Genetics",
+      "Biotechnology, Chemistry & Microbiology",
+      "Microbiology, Genetics & Biochemistry",
+    ],
+    overlay:
+      "bg-gradient-to-br from-brand-blue/75 via-black/70 to-black/55 mix-blend-multiply",
+    badgeClass:
+      "bg-brand-blue/30 text-foreground/90 border border-white/25 backdrop-blur",
+    panelClass: "bg-black/55 backdrop-blur-xl",
+  },
 ];
 
 const PG_PROGRAM_CARDS: ProgramCard[] = [
