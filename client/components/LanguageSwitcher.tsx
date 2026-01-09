@@ -1,72 +1,115 @@
 import { useTheme } from '@/providers/theme-provider';
-import { useEffect, useRef } from 'react';
+import { ChevronDown } from 'lucide-react';
+import { useState, useRef, useEffect } from 'react';
+import { createPortal } from 'react-dom';
+
+declare global {
+  interface Window {
+    google?: any;
+  }
+}
 
 export default function LanguageSwitcher() {
   const { theme } = useTheme();
-  const containerRef = useRef<HTMLDivElement>(null);
+  const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  const [dropdownPos, setDropdownPos] = useState({ top: 0, right: 0 });
 
   useEffect(() => {
-    // Style the Google Translate widget to match our theme
-    const styleGoogleTranslate = () => {
-      if (!containerRef.current) return;
-
-      const select = containerRef.current.querySelector('select.goog-te-combo') as HTMLSelectElement;
-      if (select) {
-        // Style the select element
-        select.style.padding = '4px 8px';
-        select.style.fontSize = '12px';
-        select.style.fontWeight = '500';
-        select.style.border = 'none';
-        select.style.background = 'transparent';
-        select.style.cursor = 'pointer';
-        select.style.color = theme === 'light' ? '#4b5563' : '#f3f4f6';
-        
-        // Style options
-        const options = select.querySelectorAll('option');
-        options.forEach((option) => {
-          option.style.color = '#000';
-          option.style.backgroundColor = '#fff';
-        });
-      }
-
-      // Style the wrapper
-      const gadget = containerRef.current.querySelector('.goog-te-gadget') as HTMLElement;
-      if (gadget) {
-        gadget.style.fontFamily = 'inherit';
-        gadget.style.padding = '0';
-        gadget.style.margin = '0';
-      }
-
-      // Remove "powered by" text
-      const powerbyDiv = containerRef.current.querySelector('.goog-te-gadget-simple .goog-te-menu-value');
-      if (powerbyDiv) {
-        const spans = powerbyDiv.querySelectorAll('span');
-        if (spans.length > 1) {
-          spans[spans.length - 1].style.display = 'none';
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        if (buttonRef.current && !buttonRef.current.contains(event.target as Node)) {
+          setIsOpen(false);
         }
       }
     };
 
-    // Retry styling in case Google Translate loads after component mounts
-    styleGoogleTranslate();
-    const timers = [
-      setTimeout(styleGoogleTranslate, 300),
-      setTimeout(styleGoogleTranslate, 800),
-      setTimeout(styleGoogleTranslate, 1500)
-    ];
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
-    return () => {
-      timers.forEach(timer => clearTimeout(timer));
-    };
-  }, [theme]);
+  useEffect(() => {
+    if (buttonRef.current && isOpen) {
+      const rect = buttonRef.current.getBoundingClientRect();
+      setDropdownPos({
+        top: rect.bottom + window.scrollY,
+        right: window.innerWidth - rect.right
+      });
+    }
+  }, [isOpen]);
+
+  const handleLanguageSelect = (langCode: string) => {
+    // Find Google Translate select and change it
+    const gtElement = document.getElementById('google_translate_element');
+    if (gtElement) {
+      const select = gtElement.querySelector('select.goog-te-combo') as HTMLSelectElement;
+      if (select) {
+        select.value = langCode;
+        // Trigger the change event that Google Translate listens for
+        const event = new Event('change', { bubbles: true });
+        select.dispatchEvent(event);
+        setIsOpen(false);
+        return;
+      }
+    }
+
+    console.warn('Google Translate element not found');
+    setIsOpen(false);
+  };
+
+  const languages = [
+    { code: 'en', label: 'English' },
+    { code: 'kn', label: 'ಕನ್ನಡ' },
+    { code: 'hi', label: 'हिंदी' }
+  ];
 
   return (
-    <div 
-      ref={containerRef}
-      className="flex items-center gap-1"
-    >
-      {/* Google Translate widget will be injected here */}
-      <div id="google_translate_element" />
+    <div ref={dropdownRef}>
+      <button
+        ref={buttonRef}
+        className={`text-xs font-medium transition-colors whitespace-nowrap flex items-center gap-1 ${
+          theme === 'light'
+            ? 'text-gray-600 hover:text-orange-600'
+            : 'text-white/80 hover:text-white'
+        }`}
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        <span>English</span>
+        <ChevronDown className="w-3 h-3" />
+      </button>
+
+      {isOpen && createPortal(
+        <div
+          className={`fixed rounded-lg shadow-lg border z-[9999] ${
+            theme === 'light'
+              ? 'bg-white border-orange-200'
+              : 'bg-slate-900 border-slate-700'
+          }`}
+          style={{
+            top: `${dropdownPos.top + 8}px`,
+            right: `${dropdownPos.right}px`,
+            minWidth: '160px'
+          }}
+        >
+          {languages.map((lang, idx) => (
+            <button
+              key={lang.code}
+              onClick={() => handleLanguageSelect(lang.code)}
+              className={`w-full text-left px-4 py-3 text-sm font-medium transition-colors ${
+                theme === 'light'
+                  ? 'text-gray-700 hover:bg-orange-100'
+                  : 'text-slate-200 hover:bg-slate-800'
+              } ${idx === 0 ? 'rounded-t-lg' : ''} ${
+                idx === languages.length - 1 ? 'rounded-b-lg' : ''
+              }`}
+            >
+              {lang.label}
+            </button>
+          ))}
+        </div>,
+        document.body
+      )}
     </div>
   );
 }
