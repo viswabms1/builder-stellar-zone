@@ -1,5 +1,11 @@
 import React, { createContext, useContext, useState, useEffect, useRef } from 'react';
 import { translateDOMContent } from '@/lib/google-translate-dom';
+import { initDebugPanel } from '@/lib/debug-translator';
+
+// Initialize debug panel on module load
+if (typeof window !== 'undefined') {
+  initDebugPanel();
+}
 
 type Language = 'en' | 'kn' | 'hi';
 
