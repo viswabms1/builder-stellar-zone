@@ -87,7 +87,7 @@ function HeroVideo() {
           crossOrigin="anonymous"
           className="w-full h-full object-cover"
           style={{
-            objectPosition: "center top",
+            objectPosition: "center center",
           }}
         />
 
