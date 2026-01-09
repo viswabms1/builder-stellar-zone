@@ -89,15 +89,9 @@ export default function BSc() {
           ref={containerRef}
           className="hero-video-container relative flex items-center justify-start"
         >
-          <video
-            ref={videoRef}
-            src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fd044958c77f54da59928341e747ad4db?format=webp&width=800"
-            autoPlay
-            muted={isMuted}
-            loop
-            playsInline
-            preload="metadata"
-            crossOrigin="anonymous"
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fd044958c77f54da59928341e747ad4db?format=webp&width=1920"
+            alt="Bachelor of Science Program"
             style={{
               position: "absolute",
               top: 0,
