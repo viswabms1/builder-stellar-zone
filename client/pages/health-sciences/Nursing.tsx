@@ -17,7 +17,18 @@ import {
   Volume2,
   VolumeX,
 } from "lucide-react";
+import { DeanSection, type DeanInfo } from "@/components/DeanSection";
 import { useAutoMuteOnScroll } from "@/hooks/useAutoMuteOnScroll";
+
+const PRINCIPAL_INFO: DeanInfo = {
+  name: "Dr. Shejila CH",
+  title: "Principal (I/C)",
+  position: "College of Nursing Sciences",
+  photo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F4a2f8f1c18424e98bc7edb721a95a5f2?format=webp&width=800",
+  // Video will be added when provided
+  borderColor: "border-brand-magenta/20",
+  bgColor: "bg-brand-magenta/5",
+};
 
 function HeroVideo() {
   const [isMuted, setIsMuted] = useState(true);
@@ -200,6 +211,9 @@ export default function Nursing() {
       <section className="relative" id="top">
         <HeroVideo />
       </section>
+
+      {/* Principal's Message Section */}
+      <DeanSection dean={PRINCIPAL_INFO} />
 
       {/* Programs Section */}
       <section id="programs" className="relative overflow-hidden px-3 py-8">
