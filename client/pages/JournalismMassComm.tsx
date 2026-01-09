@@ -434,14 +434,14 @@ function ProgramCardComponent({ program, language }: { program: ProgramCard; lan
           <div className="space-y-4">
             <div>
               <h3 className="font-display text-2xl leading-tight text-white">
-                {program.name}
+                {getTranslation(language, 'journalismPage.baJmc')}
               </h3>
               <p className="mt-3 text-sm text-white/85 font-body">
-                {program.description}
+                {getTranslation(language, 'journalismPage.baJmcDesc')}
               </p>
             </div>
             <div className="flex flex-wrap gap-2">
-              {program.highlights.map((item) => (
+              {getTranslation(language, 'journalismPage.highlights').split(', ').map((item) => (
                 <span
                   key={item}
                   className="rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs uppercase tracking-wide text-white/85"
@@ -451,7 +451,7 @@ function ProgramCardComponent({ program, language }: { program: ProgramCard; lan
               ))}
             </div>
             <span className="inline-flex items-center gap-2 text-sm font-medium text-white/90 transition-colors group-hover:text-brand-magenta">
-              Explore programme
+              {getTranslation(language, 'journalismPage.exploreProgramme')}
               <ChevronRight className="h-4 w-4 transition-colors group-hover:text-brand-magenta" />
             </span>
           </div>
