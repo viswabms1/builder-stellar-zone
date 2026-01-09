@@ -55,7 +55,7 @@ export default function Nursing() {
             ref={videoRef}
             src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F0e3142955d064bcb9e612579c54c1630?alt=media&token=559d7d84-efa6-4617-8c6f-8e5305f8754b&apiKey=4aa279a8430d441dba9c55f659831878"
             autoPlay
-            muted={isMuted}
+            muted
             loop
             playsInline
             preload="metadata"
