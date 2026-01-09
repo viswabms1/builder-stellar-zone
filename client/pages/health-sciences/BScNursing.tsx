@@ -48,7 +48,7 @@ export default function BScNursing() {
   function HeroVideo() {
     return (
       <>
-        <div className="hero-image-container relative flex items-center justify-start">
+        <div className="hero-image-container relative flex items-center justify-start w-full h-[55vh] md:h-[70vh]">
           <img
             src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F69bdc065a2ee46dcbd07616adb12f8d0?format=webp&width=800"
             alt="B.Sc Nursing"
