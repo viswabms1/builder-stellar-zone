@@ -696,7 +696,7 @@ export default function JournalismMassComm() {
             </div>
             <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-12">
               {PROGRAM_CARDS.map((program) => (
-                <ProgramCardComponent key={program.name} program={program} />
+                <ProgramCardComponent key={program.name} program={program} language={language} />
               ))}
             </div>
           </div>
