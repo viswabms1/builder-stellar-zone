@@ -6,6 +6,7 @@ import { createPortal } from 'react-dom';
 declare global {
   interface Window {
     google?: any;
+    googleTranslateElement?: any;
   }
 }
 
@@ -41,56 +42,71 @@ export default function LanguageSwitcher() {
 
   const handleLanguageSelect = (langCode: string) => {
     try {
-      // Wait for Google Translate to be fully loaded
-      const waitForGoogleTranslate = () => {
-        // Try multiple selectors for the language dropdown
-        let googleSelect = document.querySelector('select.goog-te-combo') as HTMLSelectElement;
-        
-        // If not found, look for the element inside iframe or other locations
-        if (!googleSelect) {
-          // Try finding it in the google translate element
-          const gtElement = document.getElementById('google_translate_element');
-          if (gtElement) {
-            googleSelect = gtElement.querySelector('select.goog-te-combo') as HTMLSelectElement;
+      // Find and click the Google Translate dropdown button
+      const findAndClickDropdown = () => {
+        // Look for the Google Translate dropdown button
+        const gtElement = document.getElementById('google_translate_element');
+        if (!gtElement) return false;
+
+        // Method 1: Find the select element and change it
+        let select = gtElement.querySelector('select.goog-te-combo') as HTMLSelectElement;
+        if (!select) {
+          // Method 2: Try finding it in the parent element
+          const parent = gtElement.parentElement;
+          if (parent) {
+            select = parent.querySelector('select.goog-te-combo') as HTMLSelectElement;
           }
         }
 
-        if (googleSelect) {
-          googleSelect.value = langCode;
-          // Trigger both change and click events for better compatibility
-          googleSelect.dispatchEvent(new Event('change', { bubbles: true }));
-          
-          // Also try to find and trigger the option element
-          const option = Array.from(googleSelect.options).find(
-            opt => opt.value === langCode
-          );
-          if (option) {
-            option.selected = true;
-            googleSelect.dispatchEvent(new Event('change', { bubbles: true }));
-          }
+        if (select) {
+          select.value = langCode;
+          select.dispatchEvent(new Event('change', { bubbles: true }));
           return true;
         }
+
+        // Method 3: Try to find and click the language option directly
+        const options = gtElement.querySelectorAll('option');
+        for (const option of options) {
+          if (option.value === langCode) {
+            option.selected = true;
+            // Get the select parent and trigger change
+            const selectElement = option.parentElement as HTMLSelectElement;
+            if (selectElement) {
+              selectElement.value = langCode;
+              selectElement.dispatchEvent(new Event('change', { bubbles: true }));
+              return true;
+            }
+          }
+        }
+
         return false;
       };
 
       // Try immediately
-      if (waitForGoogleTranslate()) {
+      if (findAndClickDropdown()) {
         setIsOpen(false);
         return;
       }
 
-      // If not found, wait and retry
+      // If not found, wait for Google Translate to load
       let attempts = 0;
       const retryInterval = setInterval(() => {
         attempts++;
-        if (waitForGoogleTranslate()) {
+        if (findAndClickDropdown()) {
           clearInterval(retryInterval);
           setIsOpen(false);
-        } else if (attempts > 10) {
+        } else if (attempts > 20) {
           clearInterval(retryInterval);
-          console.warn('Google Translate element not found after retries');
+          // Fallback: Try to use Google Translate's internal methods if available
+          if (window.google?.translate) {
+            console.warn('Google Translate dropdown not found, trying alternative method');
+            // Reload page with language parameter if nothing else works
+            const url = new URL(window.location.href);
+            url.searchParams.set('lang', langCode);
+            window.location.href = url.toString();
+          }
         }
-      }, 100);
+      }, 150);
     } catch (error) {
       console.error('Error switching language:', error);
     }
