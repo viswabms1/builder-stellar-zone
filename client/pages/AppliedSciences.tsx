@@ -329,7 +329,7 @@ const UG_PROGRAM_CARDS: ProgramCard[] = [
       "Innovative triple major programme combining core science disciplines, allowing students to specialise in multiple areas for enhanced flexibility and career opportunities.",
     image:
       "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1600&auto=format&fit=crop",
-    link: "https://www.dsu.edu.in/basic-applied-sciences/triple-major",
+    link: "/academics/basic-applied-sciences/bsc-triple-major",
     highlights: [
       "Biotechnology, Biochemistry & Genetics",
       "Biotechnology, Chemistry & Microbiology",
