@@ -13,6 +13,7 @@ export default function LanguageSwitcher() {
   const { language, setLanguage } = useLanguage();
   const { theme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
+  const [isTranslating, setIsTranslating] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -38,6 +39,18 @@ export default function LanguageSwitcher() {
       });
     }
   }, [isOpen]);
+
+  const handleLanguageSelect = async (lang: Language) => {
+    setIsTranslating(true);
+    try {
+      await setLanguage(lang);
+      setIsOpen(false);
+    } catch (error) {
+      console.error('Failed to change language:', error);
+    } finally {
+      setIsTranslating(false);
+    }
+  };
 
   return (
     <div className="relative" ref={dropdownRef}>
