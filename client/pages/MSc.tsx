@@ -51,7 +51,6 @@ export default function MSc() {
     return (
       <>
         <div
-          ref={containerRef}
           className="hero-video-container relative flex items-center justify-start"
         >
           <img
