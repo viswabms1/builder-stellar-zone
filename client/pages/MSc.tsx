@@ -422,15 +422,54 @@ function CurriculumLibrary() {
 
   const programs: CurriculumProgram[] = [
     {
-      id: "msc-specializations",
-      label: "M.Sc Specializations Curriculum",
-      description: "2-year advanced postgraduate pathway with research-intensive specialization options",
-      image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop",
+      id: "msc-biochemistry",
+      label: "M.Sc. Biochemistry",
+      description: "2-year advanced program specializing in biochemical analysis, enzyme kinetics, and metabolic pathways with thesis research",
+      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=600&auto=format&fit=crop",
       batches: [
         {
           year: "2025-26",
-          summary: "Latest curriculum with advanced specializations in Biochemistry, Biotechnology, Microbiology, and Molecular Biology & Genetics with thesis and research components",
-          documentUrl: "https://www.dsu.edu.in/images/BasicAppliedSciences/MSc-Specializations-Curriculum-2025-26.pdf",
+          summary: "Latest curriculum covering advanced biochemistry, protein structure, enzyme mechanisms, and research methodology across 4 semesters with thesis",
+          documentUrl: "https://www.dsu.edu.in/images/BasicAppliedSciences/MSc-Biochemistry-2025-26.pdf",
+        },
+      ],
+    },
+    {
+      id: "msc-biotechnology",
+      label: "M.Sc. Biotechnology",
+      description: "2-year specialized program in modern biotechnology, genetic engineering, and bioprocess development with industry collaboration",
+      image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=600&auto=format&fit=crop",
+      batches: [
+        {
+          year: "2025-26",
+          summary: "Latest curriculum featuring genetic engineering, recombinant DNA technology, bioprocess optimization, and applied research across 4 semesters with thesis",
+          documentUrl: "https://www.dsu.edu.in/images/BasicAppliedSciences/MSc-Biotechnology-2025-26.pdf",
+        },
+      ],
+    },
+    {
+      id: "msc-microbiology",
+      label: "M.Sc. Microbiology",
+      description: "2-year advanced program in microbial diversity, pathogenesis, and industrial microbiology with research emphasis",
+      image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=600&auto=format&fit=crop",
+      batches: [
+        {
+          year: "2025-26",
+          summary: "Latest curriculum covering microbial taxonomy, immunology, fermentation technology, and antimicrobial research across 4 semesters with thesis",
+          documentUrl: "https://www.dsu.edu.in/images/BasicAppliedSciences/MSc-Microbiology-2025-26.pdf",
+        },
+      ],
+    },
+    {
+      id: "msc-mol-bio-genetics",
+      label: "M.Sc. Molecular Biology and Genetics",
+      description: "2-year specialized program in molecular mechanisms, gene expression, and genomics with cutting-edge research techniques",
+      image: "https://images.unsplash.com/photo-1581091870622-5f1e9b8d2f70?q=80&w=600&auto=format&fit=crop",
+      batches: [
+        {
+          year: "2025-26",
+          summary: "Latest curriculum featuring molecular biology techniques, genomics, epigenetics, and bioinformatics across 4 semesters with thesis",
+          documentUrl: "https://www.dsu.edu.in/images/BasicAppliedSciences/MSc-Molecular-Biology-Genetics-2025-26.pdf",
         },
       ],
     },
