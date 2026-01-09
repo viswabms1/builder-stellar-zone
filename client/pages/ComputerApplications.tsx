@@ -554,17 +554,41 @@ function CalendarResourceCard({ entry }: { entry: CalendarEntry }) {
 
 function HeroImage() {
   return (
-    <section className="relative w-full overflow-hidden bg-background" id="top">
-      <div className="relative w-full h-[55vh] md:h-[70vh]">
-        <img
-          src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F78b1f75114dd43ebacd3ebec8be7ca18?format=webp&width=1200"
-          alt="School of Computer Applications"
-          className="w-full h-full object-cover"
-          loading="eager"
-        />
-        <div className="absolute inset-0 bg-black/20"></div>
+    <>
+      <section className="relative w-full overflow-hidden" id="top">
+        <div className="relative w-full h-[55vh] md:h-[70vh]">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F78b1f75114dd43ebacd3ebec8be7ca18?format=webp&width=1200"
+            alt="School of Computer Applications"
+            className="w-full h-full object-cover"
+            loading="eager"
+          />
+          <div className="absolute inset-0 bg-black/30"></div>
+
+          <div className="hero-title-inside absolute bottom-0 left-0 right-0 z-20 flex items-end justify-start p-3 sm:p-6 max-w-7xl mx-auto w-full">
+            <div className="max-w-2xl">
+              <p className="text-lg sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-1 sm:mb-4 uppercase tracking-widest font-display">
+                School of Computer Applications
+              </p>
+              <h1 className="text-xs sm:text-base md:text-base text-white/80 mb-2 sm:mb-6 leading-tight font-display">
+                Technology, Innovation & Excellence
+              </h1>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div className="bg-background relative max-w-7xl mx-auto px-3 w-full py-6 sm:py-8">
+        <div className="hero-title-outside max-w-2xl">
+          <p className="text-lg sm:text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-1 sm:mb-4 uppercase tracking-widest font-display">
+            School of Computer Applications
+          </p>
+          <h1 className="text-xs sm:text-base md:text-base text-foreground/80 mb-2 sm:mb-6 leading-tight font-display">
+            Technology, Innovation & Excellence
+          </h1>
+        </div>
       </div>
-    </section>
+    </>
   );
 }
 
