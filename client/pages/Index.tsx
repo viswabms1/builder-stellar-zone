@@ -262,6 +262,28 @@ function NewsModal({
   );
 }
 
+function SchoolCardWrapper({
+  children,
+  index,
+  delay,
+}: {
+  children: React.ReactNode;
+  index: number;
+  delay: string;
+}) {
+  const { elementRef, isVisible } = useScrollTrigger({ threshold: 0.2 });
+
+  return (
+    <div
+      ref={elementRef}
+      style={{ animationDelay: delay }}
+      className={`${isVisible ? "scroll-fade-in-up" : ""}`}
+    >
+      {children}
+    </div>
+  );
+}
+
 export default function Index() {
   const [selectedNews, setSelectedNews] = useState<any>(null);
   const [featuredNewsIndex, setFeaturedNewsIndex] = useState(0);
