@@ -19,8 +19,6 @@ import {
   Sparkles,
   Target,
   Users,
-  Volume2,
-  VolumeX,
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
