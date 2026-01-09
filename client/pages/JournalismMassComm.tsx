@@ -748,12 +748,12 @@ export default function JournalismMassComm() {
                 </div>
                 <CardHeader>
                   <CardTitle className="font-display group-hover:text-brand-magenta transition-colors">
-                    Centre of Excellence
+                    {getTranslation(language, 'journalismPage.centreOfExcellenceTitle')}
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-foreground/80 font-body">
-                    Creative studios and media production labs
+                    {getTranslation(language, 'journalismPage.centreOfExcellenceDesc')}
                   </p>
                 </CardContent>
               </Card>
