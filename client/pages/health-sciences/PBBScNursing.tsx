@@ -1,37 +1,52 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import {
-  Sparkles,
+  Heart,
+  Stethoscope,
+  Users,
+  Microscope,
   GraduationCap,
   Trophy,
   Award,
+  ChevronDown,
   ChevronRight,
+  Download,
+  CalendarDays,
+  Zap,
+  Activity,
+  Syringe,
   Volume2,
   VolumeX,
-  CheckCircle2,
-  Zap,
 } from "lucide-react";
 import { useAutoMuteOnScroll } from "@/hooks/useAutoMuteOnScroll";
 
 export default function PBBScNursing() {
+  const specializations = [
+    { icon: Heart, label: "Critical Care" },
+    { icon: Microscope, label: "Advanced Practice" },
+    { icon: Users, label: "Leadership" },
+    { icon: Stethoscope, label: "Community Health" },
+    { icon: Trophy, label: "Research" },
+    { icon: Award, label: "Nursing Education" },
+  ];
+
   const highlights = [
-    "Bridge program for GNM diploma holders to degree level",
-    "Advanced training in medical-surgical and community health nursing",
-    "Focus on leadership and nursing education",
-    "Enhanced career prospects in clinical and academic settings",
-    "Hands-on clinical proficiency enhancement",
-    "Research methodology introduction",
+    "Comprehensive 2-year post-basic program for registered nurses upgrading qualifications",
+    "Advanced nursing practice and specialization opportunities",
+    "Bridge program from GNM to degree level nursing education",
+    "Emphasis on leadership, research, and professional development",
+    "Integration of advanced clinical skills with theoretical knowledge",
+    "Preparation for nursing administration, education, and specialized roles",
   ];
 
   const careers = [
-    "Senior Staff Nurse",
-    "Nursing Tutor / Educator",
-    "Nursing Supervisor",
-    "Clinical Instructor",
-    "Public Health Nurse",
-    "Critical Care Nurse",
+    "Registered Nurse → Advanced Nurse Practitioner → Nursing Specialist",
+    "Clinical Supervisor → Nursing Administrator → Director of Nursing",
+    "Nursing Educator → Academic Leadership → Faculty Member",
+    "International opportunities: USA, UK, Canada, Middle East (₹20-35 LPA+)",
   ];
 
   function HeroVideo() {
@@ -52,6 +67,26 @@ export default function PBBScNursing() {
 
       video.muted = isMuted;
     }, [isMuted]);
+
+    useEffect(() => {
+      const video = videoRef.current;
+      if (!video) return;
+
+      const handleEnded = () => {
+        const rect = containerRef.current?.getBoundingClientRect();
+        const isVisible =
+          rect && rect.top < window.innerHeight && rect.bottom > 0;
+        if (isVisible) {
+          video.currentTime = 0;
+          video.play().catch(() => {});
+        }
+      };
+
+      video.addEventListener("ended", handleEnded);
+      return () => {
+        video.removeEventListener("ended", handleEnded);
+      };
+    }, []);
 
     return (
       <>
@@ -77,16 +112,30 @@ export default function PBBScNursing() {
               objectFit: "cover",
               objectPosition: "center center",
               filter: "brightness(1.1) contrast(1.1) saturate(1.15)",
-              zIndex: 0,
             }}
           />
 
-          <div className="absolute inset-0 bg-black/40 z-10"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
+          <div className="absolute inset-0 bg-black/40"></div>
+
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/30 pointer-events-none"></div>
+
+          <div className="absolute top-0 left-0 w-96 h-96 bg-brand-blue/5 rounded-full filter blur-3xl opacity-60 animate-float pointer-events-none"></div>
+          <div
+            className="absolute bottom-0 right-0 w-96 h-96 bg-brand-magenta/5 rounded-full filter blur-3xl opacity-60 animate-float pointer-events-none"
+            style={{ animationDelay: "2s" }}
+          ></div>
+
+          <div
+            className="absolute inset-0 opacity-5 pointer-events-none"
+            style={{
+              backgroundImage:
+                "repeating-linear-gradient(0deg, rgba(255,255,255,.03) 0px, rgba(255,255,255,.03) 1px, transparent 1px, transparent 2px)",
+            }}
+          ></div>
 
           <button
             onClick={toggleMute}
-            className="absolute top-4 right-8 z-50 p-3 rounded-full bg-black/50 hover:bg-black/70 transition-colors text-white backdrop-blur-sm border border-white/20"
+            className="absolute top-8 right-8 z-10 p-3 rounded-full bg-black/50 hover:bg-black/70 transition-colors text-white backdrop-blur-sm border border-white/20"
             aria-label={isMuted ? "Unmute" : "Mute"}
           >
             {isMuted ? (
@@ -98,31 +147,30 @@ export default function PBBScNursing() {
 
           <div className="hero-title-inside absolute bottom-0 left-0 right-0 z-20 flex items-end justify-start p-3 sm:p-6 max-w-7xl mx-auto w-full">
             <div className="max-w-2xl">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-brand-magenta/10 rounded-full border border-brand-magenta/20 mb-4 backdrop-blur-sm">
-                <Sparkles className="w-4 h-4 text-brand-magenta" />
-                <span className="text-sm font-medium text-brand-magenta font-display">Undergraduate Program</span>
-              </div>
               <p className="text-lg sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-1 sm:mb-4 uppercase tracking-widest font-display">
                 Post Basic B.Sc Nursing
               </p>
               <h1 className="text-xs sm:text-base md:text-base text-white/80 mb-2 sm:mb-6 leading-tight font-display">
-                Advancing Nursing Proficiency
+                Advanced Nursing Practice & Professional Growth
               </h1>
+              <div className="mt-4 sm:mt-6 flex flex-wrap gap-1 sm:gap-2">
+                {specializations.map((s, i) => (
+                  <span key={i} className="inline-flex items-center gap-1 px-2 py-0.5 sm:gap-2 sm:px-3 sm:py-1 rounded-full bg-white/10 text-white text-xs backdrop-blur">
+                    <s.icon className="w-3 h-3 sm:w-3.5 sm:h-3.5" /> {s.label}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
         </div>
 
         <div className="bg-background relative max-w-7xl mx-auto px-3 w-full py-6 sm:py-8">
           <div className="hero-title-outside max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-brand-magenta/10 rounded-full border border-brand-magenta/20 mb-4">
-              <Sparkles className="w-4 h-4 text-brand-magenta" />
-              <span className="text-sm font-medium text-brand-magenta font-display">Undergraduate Program</span>
-            </div>
             <p className="text-lg sm:text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-1 sm:mb-4 uppercase tracking-widest font-display">
               Post Basic B.Sc Nursing
             </p>
             <h1 className="text-xs sm:text-base md:text-base text-foreground/80 mb-2 sm:mb-6 leading-tight font-display">
-              Advancing Nursing Proficiency
+              Advanced Nursing Practice & Professional Growth
             </h1>
           </div>
 
@@ -135,10 +183,23 @@ export default function PBBScNursing() {
             >
               <Button
                 size="sm"
-                className="sm:size-lg bg-white hover:bg-white/90 text-brand-magenta hover:text-brand-magenta/90 px-4 sm:px-8 py-2 sm:py-6 text-xs sm:text-base font-semibold font-display transition-all duration-300 group border-2 border-white w-full sm:w-auto"
+                className="sm:size-lg bg-white hover:bg-white/90 text-brand-blue hover:text-brand-blue/80 px-4 sm:px-8 py-2 sm:py-6 text-xs sm:text-base font-semibold font-display transition-all duration-300 group border-2 border-white w-full sm:w-auto"
               >
                 Apply Now
                 <ChevronRight className="w-4 sm:w-5 h-4 sm:h-5 ml-1 sm:ml-2 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </a>
+            <a
+              href="https://dsu.edu.in/virtual-tour/"
+              target="_blank"
+              rel="noreferrer"
+              className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            >
+              <Button
+                size="sm"
+                className="sm:size-lg bg-white hover:bg-white/90 text-brand-blue hover:text-brand-blue/80 px-4 sm:px-8 py-2 sm:py-6 text-xs sm:text-base font-semibold font-display transition-all duration-300 group border-2 border-white w-full sm:w-auto"
+              >
+                Virtual Tour
               </Button>
             </a>
           </div>
@@ -154,109 +215,185 @@ export default function PBBScNursing() {
         <HeroVideo />
       </section>
 
-      {/* Program Details */}
-      <section className="px-3 py-8 border-y border-border/30 bg-card/30">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="md:col-span-2 space-y-6">
-              <div>
-                <h2 className="headline-3 font-display mb-4">Program Overview</h2>
-                <div className="prose text-foreground/80 font-body text-sm leading-relaxed space-y-4">
-                  <p>
-                    The Post Basic B.Sc Nursing is a two-year undergraduate program designed to bridge the gap between diploma-level education and a bachelor's degree in nursing. It is tailored for General Nursing and Midwifery (GNM) diploma holders who wish to upgrade their skills and qualifications to meet the evolving demands of the healthcare sector.
-                  </p>
-                  <p>
-                    This program focuses on advanced medical-surgical nursing, community health, and mental health nursing, along with an introduction to nursing education and administration. It empowers nurses with the scientific knowledge and practical expertise required for specialized clinical roles and leadership positions.
-                  </p>
-                </div>
-              </div>
-
-              <Card className="border border-border/50 bg-card/50 backdrop-blur-sm">
-                <CardHeader className="pb-2">
-                  <CardTitle className="text-lg font-display">Eligibility Criteria</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="flex gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-brand-magenta flex-shrink-0 mt-0.5" />
-                    <p className="text-sm text-foreground/90 font-body leading-relaxed">
-                      Pass in GNM after 10+2 or equivalent examination preferably with Science subjects with 50% marks in aggregate. Candidates should be a registered Nurse and registered Midwife or equivalent with any State Nursing Registration Council. Candidates should have completed their GNM course.
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-
-            <div className="space-y-6">
-              <Card className="border border-border/50 bg-card/50 backdrop-blur-sm">
-                <CardHeader>
-                  <CardTitle className="text-lg font-display">Key Facts</CardTitle>
-                </CardHeader>
-                <CardContent className="grid gap-4 text-sm font-body">
-                  <div className="flex items-center justify-between border-b border-border/20 pb-2">
-                    <span className="text-foreground/60">Duration</span>
-                    <span className="font-semibold text-foreground">2 Years</span>
-                  </div>
-                  <div className="flex items-center justify-between border-b border-border/20 pb-2">
-                    <span className="text-foreground/60">Level</span>
-                    <span className="font-semibold text-foreground">Undergraduate</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-foreground/60">Intake</span>
-                    <span className="font-semibold text-foreground">Annual</span>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="border border-border/50 bg-brand-magenta/5 border-brand-magenta/20">
-                <CardHeader>
-                  <CardTitle className="text-lg font-display">Why This Program?</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-3">
-                  {highlights.slice(0, 4).map((h, i) => (
-                    <div key={i} className="flex gap-2 text-sm text-foreground/80">
-                      <Zap className="w-4 h-4 text-brand-magenta flex-shrink-0 mt-0.5" />
-                      <span>{h}</span>
-                    </div>
-                  ))}
-                </CardContent>
-              </Card>
+      {/* Program Overview */}
+      <section id="overview" className="relative overflow-hidden px-3 py-8">
+        <div
+          className="pointer-events-none absolute inset-x-0 -top-32 h-64 bg-gradient-to-b from-brand-blue/20 via-transparent to-transparent blur-3xl"
+          aria-hidden="true"
+        />
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-12">
+            <div className="max-w-3xl">
+              <h2 className="font-display text-3xl md:text-4xl mb-4">Program Overview</h2>
+              <p className="text-foreground/80 font-body">
+                The Post Basic B.Sc Nursing program is a 2-year comprehensive pathway designed for registered nurses seeking to upgrade their qualifications to degree level. This bridge program prepares nurses for advanced clinical practice, leadership roles, research, and nursing education. The curriculum emphasizes advanced nursing practice, evidence-based care, professional development, and specialization opportunities in diverse healthcare settings.
+              </p>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* Career Prospects */}
-      <section className="px-3 py-8">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="headline-3 font-display mb-6">Career Pathways</h2>
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-            {careers.map((career, i) => (
-              <div key={i} className="flex items-center gap-3 p-4 rounded-xl border border-border/50 bg-card/50 hover:border-brand-magenta/30 transition-colors">
-                <Trophy className="w-5 h-5 text-brand-orange" />
-                <span className="font-medium text-sm">{career}</span>
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {highlights.map((highlight, i) => (
+              <div key={i} className="flex gap-4 p-4 rounded-lg border border-brand-blue/20 bg-brand-blue/5">
+                <Heart className="h-5 w-5 text-brand-blue flex-shrink-0 mt-0.5" />
+                <p className="text-sm text-foreground font-body">{highlight}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="px-3 py-12">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="rounded-3xl p-8 border border-brand-magenta/20 bg-gradient-to-b from-brand-magenta/5 to-transparent">
-            <h3 className="headline-3 mb-4 font-display">Advance Your Nursing Career</h3>
-            <p className="text-foreground/80 mb-8 font-body max-w-xl mx-auto">
-              Upgrade your qualifications with DSU's Post Basic B.Sc Nursing program.
+      {/* Career Pathways */}
+      <section className="px-3 py-8 bg-gradient-to-r from-brand-blue/5 via-brand-magenta/5 to-brand-orange/5">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-12">
+            <h2 className="font-display text-3xl md:text-4xl mb-4">Career Pathways & Placements</h2>
+            <p className="text-foreground/80 font-body max-w-3xl">
+              Graduates of the Post Basic B.Sc Nursing program pursue diverse career paths in clinical practice, nursing administration, education, and research across India and globally.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="https://admissions.dsu.edu.in/" target="_blank" rel="noreferrer">
-                <Button size="lg" className="bg-brand-gradient text-foreground font-semibold px-8">
-                  Apply Now <ChevronRight className="w-4 h-4 ml-2" />
-                </Button>
-              </a>
-              <a href="https://dsu.edu.in/virtual-tour/" target="_blank" rel="noreferrer">
-                <Button size="lg" variant="outline" className="border-brand-magenta/30 hover:bg-brand-magenta/10">
-                  Virtual Tour
+          </div>
+          <div className="grid gap-4 md:grid-cols-2">
+            {careers.map((career, i) => (
+              <div key={i} className="p-6 rounded-lg border border-border/50 bg-card/50 backdrop-blur-sm">
+                <div className="flex items-start gap-3">
+                  <Trophy className="h-5 w-5 text-brand-blue flex-shrink-0 mt-1" />
+                  <p className="text-sm text-foreground font-body">{career}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Curriculum Library */}
+      <CurriculumLibrary />
+
+      {/* Related Resources */}
+      <section
+        id="related-resources"
+        className="bg-gradient-to-r from-brand-blue/5 via-brand-magenta/5 to-brand-orange/5 px-3 py-8"
+      >
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-6 text-center">
+            <h2 className="font-display text-3xl md:text-4xl">
+              Explore More at DSU Nursing
+            </h2>
+            <p className="mt-3 text-sm text-foreground font-body">
+              Discover clinical excellence, research initiatives, placements and admission pathways
+            </p>
+          </div>
+          <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-4">
+            <a
+              href="/centre-of-excellence"
+              className="group rounded-none border border-border/40 bg-card/60 backdrop-blur-sm overflow-hidden hover:shadow-lg hover:shadow-brand-blue/20 transition-all duration-500 hover:-translate-y-1"
+            >
+              <Card className="h-full border-0 bg-transparent">
+                <div className="relative h-32 bg-gradient-to-br from-brand-blue/20 to-brand-blue/10 flex items-center justify-center">
+                  <Award className="h-12 w-12 text-brand-blue/70 group-hover:text-brand-blue transition-colors" />
+                </div>
+                <CardHeader>
+                  <CardTitle className="font-display group-hover:text-brand-blue transition-colors">
+                    Clinical Simulation Labs
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-foreground/80 font-body">
+                    State-of-the-art simulation labs and clinical training centers
+                  </p>
+                </CardContent>
+              </Card>
+            </a>
+
+            <a
+              href="/research"
+              className="group rounded-none border border-border/40 bg-card/60 backdrop-blur-sm overflow-hidden hover:shadow-lg hover:shadow-brand-blue/20 transition-all duration-500 hover:-translate-y-1"
+            >
+              <Card className="h-full border-0 bg-transparent">
+                <div className="relative h-32 bg-gradient-to-br from-brand-blue/20 to-brand-blue/10 flex items-center justify-center">
+                  <Microscope className="h-12 w-12 text-brand-blue/70 group-hover:text-brand-blue transition-colors" />
+                </div>
+                <CardHeader>
+                  <CardTitle className="font-display group-hover:text-brand-blue transition-colors">
+                    Research & Innovation
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-foreground/80 font-body">
+                    Faculty-led nursing research and healthcare innovation
+                  </p>
+                </CardContent>
+              </Card>
+            </a>
+
+            <a
+              href="/placements"
+              className="group rounded-none border border-border/40 bg-card/60 backdrop-blur-sm overflow-hidden hover:shadow-lg hover:shadow-brand-blue/20 transition-all duration-500 hover:-translate-y-1"
+            >
+              <Card className="h-full border-0 bg-transparent">
+                <div className="relative h-32 bg-gradient-to-br from-brand-blue/20 to-brand-blue/10 flex items-center justify-center">
+                  <GraduationCap className="h-12 w-12 text-brand-blue/70 group-hover:text-brand-blue transition-colors" />
+                </div>
+                <CardHeader>
+                  <CardTitle className="font-display group-hover:text-brand-blue transition-colors">
+                    Placements
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-foreground/80 font-body">
+                    Career pathways with leading hospitals and healthcare organizations
+                  </p>
+                </CardContent>
+              </Card>
+            </a>
+
+            <a
+              href="https://admissions.dsu.edu.in/"
+              target="_blank"
+              rel="noreferrer"
+              className="group rounded-none border border-border/40 bg-card/60 backdrop-blur-sm overflow-hidden hover:shadow-lg hover:shadow-brand-blue/20 transition-all duration-500 hover:-translate-y-1"
+            >
+              <Card className="h-full border-0 bg-transparent">
+                <div className="relative h-32 bg-gradient-to-br from-brand-blue/20 to-brand-blue/10 flex items-center justify-center">
+                  <Heart className="h-12 w-12 text-brand-blue/70 group-hover:text-brand-blue transition-colors" />
+                </div>
+                <CardHeader>
+                  <CardTitle className="font-display group-hover:text-brand-blue transition-colors">
+                    Admissions
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="flex flex-col gap-3">
+                  <p className="text-sm text-foreground/80 font-body">
+                    Join DSU Nursing and make a difference in healthcare
+                  </p>
+                  <span className="inline-flex items-center gap-2 text-xs font-medium text-brand-blue group-hover:text-brand-blue/80 transition-colors">
+                    Apply Now
+                    <ChevronRight className="h-3 w-3" />
+                  </span>
+                </CardContent>
+              </Card>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="px-3 pb-16">
+        <div className="mx-auto max-w-4xl text-center">
+          <div className="rounded-none border border-brand-blue/20 bg-brand-blue/5 p-10">
+            <h3 className="mb-3 font-display text-3xl">
+              Ready to advance your nursing career?
+            </h3>
+            <p className="mb-6 text-foreground font-body">
+              Explore the Post Basic B.Sc Nursing program, take a virtual tour and upgrade your qualifications at DSU College of Nursing Sciences.
+            </p>
+            <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
+              <a
+                href="https://admissions.dsu.edu.in/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Button className="bg-brand-gradient text-foreground">
+                  Apply Now
+                  <GraduationCap className="ml-2 h-4 w-4" />
                 </Button>
               </a>
             </div>
@@ -264,5 +401,156 @@ export default function PBBScNursing() {
         </div>
       </section>
     </div>
+  );
+}
+
+interface CurriculumProgram {
+  id: string;
+  label: string;
+  description: string;
+  image: string;
+  batches: CurriculumBatch[];
+}
+
+interface CurriculumBatch {
+  year: string;
+  summary: string;
+  documentUrl?: string;
+}
+
+function CurriculumLibrary() {
+  const [openProgram, setOpenProgram] = useState<string | null>(null);
+
+  const programs: CurriculumProgram[] = [
+    {
+      id: "pb-bsc-nursing",
+      label: "Post Basic B.Sc Nursing Curriculum",
+      description: "2-year comprehensive postgraduate pathway for registered nurses with advanced clinical and academic focus",
+      image: "https://images.unsplash.com/photo-1584515933487-779824d29309?w=600&h=400&fit=crop",
+      batches: [
+        {
+          year: "2025-26",
+          summary: "Latest curriculum with advanced nursing practice, research methods, and nursing specialization across 4 semesters",
+          documentUrl:
+            "https://www.dsu.edu.in/images/HealthSciences/nursing/PB-BSC-Nursing-Curriculum-2025-26.pdf",
+        },
+        {
+          year: "2024-25",
+          summary: "Previous curriculum batch with comprehensive postgraduate nursing theory and advanced clinical practice",
+          documentUrl:
+            "https://www.dsu.edu.in/images/HealthSciences/nursing/PB-BSC-Nursing-Curriculum-2024-25.pdf",
+        },
+      ],
+    },
+  ];
+
+  return (
+    <section className="px-3 py-8 bg-gradient-to-r from-brand-blue/5 via-brand-magenta/5 to-brand-orange/5">
+      <div className="mx-auto max-w-6xl space-y-4">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <h2 className="headline-2 mb-3 font-display">
+              <span className="text-foreground">Curriculum </span>
+              <span className="bg-brand-gradient bg-clip-text text-transparent">
+                Library
+              </span>
+            </h2>
+            <p className="max-w-2xl text-sm text-foreground sm:text-base font-body">
+              Access comprehensive curriculum documentation, course structures, learning outcomes, and downloadable syllabus for the Post Basic B.Sc Nursing program.
+            </p>
+          </div>
+          <Badge className="w-fit rounded-full bg-brand-blue/15 px-4 py-2 text-xs font-semibold text-brand-blue border border-brand-blue/20">
+            2025 – 2026
+          </Badge>
+        </div>
+
+        <div className="grid gap-3 lg:grid-cols-2">
+          {programs.map((program) => {
+            const isOpen = openProgram === program.id;
+            const borderClass = "border-brand-blue/30";
+            const badgeClass = "bg-brand-blue/15 text-brand-blue border-brand-blue/20";
+
+            return (
+              <div
+                key={program.id}
+                className={`rounded-3xl border-2 ${borderClass} overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-brand-blue/10 hover:-translate-y-1`}
+              >
+                <div className="relative h-48 overflow-hidden">
+                  <img
+                    src={program.image}
+                    alt={program.label}
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+
+                <div className="p-3 bg-background/50 backdrop-blur-sm space-y-3">
+                  <div className="flex items-start gap-3">
+                    <Badge className={`rounded-full border ${badgeClass}`}>
+                      Postgraduate
+                    </Badge>
+                  </div>
+                  <div>
+                    <h3 className="headline-3 font-display text-foreground mb-2">{program.label}</h3>
+                    <p className="text-sm text-foreground/80 font-body">{program.description}</p>
+                  </div>
+                  <Button
+                    variant="outline"
+                    className="w-full border-brand-blue/30 hover:bg-brand-blue/10 text-brand-blue hover:text-brand-blue"
+                    onClick={() => setOpenProgram(isOpen ? null : program.id)}
+                  >
+                    <span className="flex items-center justify-center gap-2">
+                      {isOpen ? "Hide" : "View"} Curriculum
+                      <ChevronDown
+                        className={`h-4 w-4 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
+                      />
+                    </span>
+                  </Button>
+
+                  {isOpen && (
+                    <div className="mt-4 space-y-3 border-t border-border/20 pt-4 animate-in fade-in slide-in-from-top-2 duration-300">
+                      {program.batches.map((batch, batchIdx) => (
+                        <div
+                          key={`${program.id}-${batch.year}`}
+                          className="rounded-xl border border-border/40 bg-card/70 p-3 transition-all hover:border-brand-blue/40"
+                        >
+                          <div className="flex items-start justify-between gap-2 mb-2">
+                            <div className="flex items-center gap-2">
+                              <Badge className="rounded-full border text-xs bg-brand-blue/20 text-brand-blue border-brand-blue/30">
+                                <CalendarDays className="h-3 w-3 mr-1" />
+                                {batch.year}
+                              </Badge>
+                              {batchIdx === 0 && (
+                                <Badge className="rounded-full bg-brand-blue/20 text-brand-blue border-brand-blue/30 border text-xs">
+                                  <Zap className="h-3 w-3 mr-1" />
+                                  Current
+                                </Badge>
+                              )}
+                            </div>
+                          </div>
+                          <p className="text-xs text-foreground/80 font-body mb-3 leading-relaxed">{batch.summary}</p>
+                          {batch.documentUrl && (
+                            <Button
+                              variant="ghost"
+                              size="sm"
+                              className="w-full justify-center gap-1 rounded text-xs font-semibold bg-brand-blue/10 text-brand-blue hover:bg-brand-blue/20"
+                              asChild
+                            >
+                              <a href={batch.documentUrl} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-1">
+                                <Download className="h-3 w-3" />
+                                Download Curriculum PDF
+                              </a>
+                            </Button>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
   );
 }
