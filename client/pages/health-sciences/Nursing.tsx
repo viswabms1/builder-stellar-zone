@@ -84,13 +84,13 @@ export default function Nursing() {
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
           <button
             onClick={toggleMute}
-            className="absolute top-8 right-8 z-10 p-3 rounded-full bg-black/50 hover:bg-black/70 transition-colors text-white backdrop-blur-sm border border-white/20"
+            className="absolute top-4 right-4 sm:top-8 sm:right-8 z-10 p-2 sm:p-3 rounded-full bg-black/50 hover:bg-black/70 transition-colors text-white backdrop-blur-sm border border-white/20"
             aria-label={isMuted ? "Unmute" : "Mute"}
           >
             {isMuted ? (
-              <VolumeX className="h-5 w-5" />
+              <VolumeX className="h-4 w-4 sm:h-5 sm:w-5" />
             ) : (
-              <Volume2 className="h-5 w-5" />
+              <Volume2 className="h-4 w-4 sm:h-5 sm:w-5" />
             )}
           </button>
         </div>
