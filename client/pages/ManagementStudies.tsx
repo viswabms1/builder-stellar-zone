@@ -622,7 +622,7 @@ function HeroVideo() {
       >
         <video
           ref={videoRef}
-          src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2Fb3865b1bf6064214a4b5b2bcfcfeec5a?alt=media&token=6447ef33-1a83-4fce-82b0-92a764af6501&apiKey=4aa279a8430d441dba9c55f659831878"
+          src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F0a17123fc97748d6a2560fc12816d757?alt=media&token=d178efac-e461-491d-8fb6-56782e5479a8&apiKey=4aa279a8430d441dba9c55f659831878"
           autoPlay
           muted={isMuted}
           loop
