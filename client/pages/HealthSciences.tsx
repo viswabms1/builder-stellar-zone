@@ -679,28 +679,52 @@ export default function HealthSciences() {
             </div>
           </div>
 
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {COLLEGE_CARDS.map((college) => {
               const IconComponent = college.icon;
               return (
-                <Card key={college.id} className={`rounded-lg border ${college.bgColor} bg-transparent`}>
-                  <CardHeader>
-                    <div className="flex items-start justify-between gap-2 mb-3">
-                      <IconComponent className={`h-8 w-8 ${college.color} flex-shrink-0`} />
+                <div
+                  key={college.id}
+                  className="group relative overflow-hidden rounded-xl border border-white/10 bg-black/10 backdrop-blur-sm transition-all duration-700 hover:-translate-y-2 hover:shadow-2xl hover:shadow-brand-magenta/20 min-h-[400px] flex flex-col"
+                >
+                  <img
+                    src={college.image}
+                    alt={college.collegeName}
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className={`absolute inset-0 bg-gradient-to-br ${college.gradient} mix-blend-multiply`} />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                  <div
+                    className="absolute inset-0 opacity-5 pointer-events-none"
+                    style={{
+                      backgroundImage:
+                        "repeating-linear-gradient(0deg, rgba(255,255,255,.03) 0px, rgba(255,255,255,.03) 1px, transparent 1px, transparent 2px)",
+                    }}
+                  ></div>
+
+                  <div className="relative z-10 flex h-full flex-col justify-between p-6 text-white">
+                    <div>
+                      <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-white/15 backdrop-blur-sm">
+                        <IconComponent className="h-6 w-6 text-white" />
+                      </div>
+                      <h3 className="font-display text-3xl font-bold leading-tight mb-2">
+                        {college.name}
+                      </h3>
+                      <p className="text-sm font-medium text-white/90 mb-4">
+                        {college.collegeName}
+                      </p>
                     </div>
-                    <CardTitle className="font-display text-lg leading-tight">
-                      {college.name}
-                    </CardTitle>
-                    <CardDescription className="text-xs font-semibold text-foreground/70 mt-2">
-                      {college.collegeName}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-foreground/80 font-body">
-                      {college.description}
-                    </p>
-                  </CardContent>
-                </Card>
+                    <div>
+                      <p className="text-sm text-white/80 font-body leading-relaxed mb-4">
+                        {college.description}
+                      </p>
+                      <div className="flex items-center gap-2 text-sm font-semibold text-white/90 group-hover:text-white transition-colors">
+                        Explore Programme
+                        <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
               );
             })}
           </div>
