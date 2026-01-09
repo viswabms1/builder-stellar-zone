@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -21,7 +21,10 @@ import {
   Award,
   Microscope,
   Cpu,
+  Volume2,
+  VolumeX,
 } from "lucide-react";
+import { useAutoMuteOnScroll } from "@/hooks/useAutoMuteOnScroll";
 
 export default function MSCDataScience() {
   const specializations = [
