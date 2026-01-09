@@ -126,6 +126,11 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
             console.error('Translation failed:', err);
             setIsTranslating(false);
           });
+
+        // Fallback: Stop showing spinner after 10 seconds even if translation is still running
+        setTimeout(() => {
+          setIsTranslating(false);
+        }, 10000);
       }, 100);
     } else {
       setIsTranslating(false);
