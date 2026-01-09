@@ -346,38 +346,6 @@ const UG_PROGRAM_CARDS: ProgramCard[] = [
 
 const PG_PROGRAM_CARDS: ProgramCard[] = [
   {
-    name: "M.Sc Biological Sciences",
-    area: "Advanced Life Sciences",
-    description:
-      "Research-intensive postgraduate programme with specialisations in biotechnology, microbiology, genetics and environmental biology.",
-    image:
-      "https://images.unsplash.com/photo-1581091870622-5f1e9b8d2f70?q=80&w=1600&auto=format&fit=crop",
-    link: "https://www.dsu.edu.in/basic-applied-sciences/msc-biological-sciences",
-    highlights: ["Research Thesis", "Specialisation", "Industry Internship"],
-    overlay:
-      "bg-gradient-to-br from-brand-magenta/70 via-black/70 to-black/55 mix-blend-multiply",
-    badgeClass:
-      "bg-brand-magenta/30 text-foreground/90 border border-white/25 backdrop-blur",
-    panelClass: "bg-black/55 backdrop-blur-xl",
-    featured: true,
-  },
-  {
-    name: "M.Sc Data Science",
-    area: "Advanced Analytics",
-    description:
-      "Master advanced machine learning, big data processing, AI systems and statistical modelling with capstone projects.",
-    image:
-      "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1600&auto=format&fit=crop",
-    link: "https://www.dsu.edu.in/basic-applied-sciences/msc-data-science",
-    highlights: ["Advanced ML", "Big Data", "AI Systems"],
-    overlay:
-      "bg-gradient-to-br from-brand-blue/70 via-brand-magenta/60 to-black/55 mix-blend-multiply",
-    badgeClass:
-      "bg-brand-blue/30 text-foreground/90 border border-white/25 backdrop-blur",
-    panelClass: "bg-black/55 backdrop-blur-xl",
-    featured: true,
-  },
-  {
     name: "M.Sc Specializations",
     area: "Advanced Life Sciences",
     description:
@@ -391,6 +359,7 @@ const PG_PROGRAM_CARDS: ProgramCard[] = [
     badgeClass:
       "bg-brand-orange/30 text-foreground/90 border border-white/25 backdrop-blur",
     panelClass: "bg-black/55 backdrop-blur-xl",
+    featured: true,
   },
 ];
 
