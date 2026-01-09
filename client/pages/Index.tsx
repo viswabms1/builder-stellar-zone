@@ -288,6 +288,8 @@ export default function Index() {
   const [selectedNews, setSelectedNews] = useState<any>(null);
   const [featuredNewsIndex, setFeaturedNewsIndex] = useState(0);
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
+  const [newsTransitioning, setNewsTransitioning] = useState(false);
+  const [rotationProgress, setRotationProgress] = useState(100);
   const [selectedEventIndex, setSelectedEventIndex] = useState(0);
   const [isEventInteracting, setIsEventInteracting] = useState(false);
   const [selectedPublicationIndex, setSelectedPublicationIndex] = useState(0);
