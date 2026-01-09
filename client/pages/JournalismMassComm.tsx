@@ -25,8 +25,6 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { DeanSection, type DeanInfo } from "@/components/DeanSection";
 import { useAutoMuteOnScroll } from "@/hooks/useAutoMuteOnScroll";
-import { useLanguage } from "@/providers/language-provider";
-import { getTranslation } from "@/lib/i18n";
 import {
   getJournalismEvents,
   getJournalismNews,
