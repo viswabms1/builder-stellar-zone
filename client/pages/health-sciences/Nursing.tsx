@@ -38,6 +38,142 @@ const PRINCIPAL_INFO: DeanInfo = {
   bgColor: "bg-brand-magenta/5",
 };
 
+type ProgramCard = {
+  name: string;
+  area: string;
+  description: string;
+  image: string;
+  link: string;
+  highlights: string[];
+  overlay: string;
+  badgeClass: string;
+  panelClass: string;
+  featured?: boolean;
+};
+
+const UG_PROGRAM_CARDS: ProgramCard[] = [
+  {
+    name: "Basic B.Sc Nursing",
+    area: "Undergraduate",
+    description: "4-Year Program. Comprehensive nursing education integrated with scientific knowledge and holistic care practices.",
+    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1600&auto=format&fit=crop",
+    link: "/academics/health-sciences/bsc-nursing",
+    highlights: ["4 Years", "Clinical Rotations", "Simulation Labs"],
+    overlay: "bg-gradient-to-br from-brand-magenta/80 via-black/75 to-black/60 mix-blend-multiply",
+    badgeClass: "bg-brand-magenta/25 text-foreground/90 border border-white/30 backdrop-blur",
+    panelClass: "bg-black/55 backdrop-blur-xl",
+  },
+  {
+    name: "Post Basic B.Sc Nursing",
+    area: "Undergraduate",
+    description: "2-Year Program for registered nurses to upgrade their competencies and career prospects.",
+    image: "https://images.unsplash.com/photo-1584515933487-779824d29309?q=80&w=1600&auto=format&fit=crop",
+    link: "/academics/health-sciences/pb-bsc-nursing",
+    highlights: ["2 Years", "Advanced Practice", "Career Growth"],
+    overlay: "bg-gradient-to-br from-brand-blue/75 via-black/70 to-black/55 mix-blend-multiply",
+    badgeClass: "bg-brand-blue/30 text-foreground/90 border border-white/25 backdrop-blur",
+    panelClass: "bg-black/55 backdrop-blur-xl",
+  },
+];
+
+const PG_PROGRAM_CARDS: ProgramCard[] = [
+  {
+    name: "M.Sc Nursing",
+    area: "Postgraduate",
+    description: "2-Year Program specializing in advanced nursing practice, research, and healthcare leadership.",
+    image: "https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=1600&auto=format&fit=crop",
+    link: "/academics/health-sciences/msc-nursing",
+    highlights: ["2 Years", "Specializations", "Research Focus"],
+    overlay: "bg-gradient-to-br from-brand-magenta/70 via-black/70 to-black/55 mix-blend-multiply",
+    badgeClass: "bg-brand-magenta/30 text-foreground/90 border border-white/25 backdrop-blur",
+    panelClass: "bg-black/55 backdrop-blur-xl",
+    featured: true,
+  },
+];
+
+function ProgramCardComponent({ program }: { program: ProgramCard }) {
+  const isInternal = program.link.startsWith("/");
+  const wrapperClasses = `group block h-full rounded-none ${
+    program.featured ? "lg:col-span-6" : "lg:col-span-3"
+  } focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-magenta focus-visible:ring-offset-2 focus-visible:ring-offset-background`;
+  const overlayClasses =
+    program.overlay ??
+    "bg-gradient-to-t from-black/85 via-black/50 to-transparent";
+  const badgeClasses = `inline-flex items-center gap-2 rounded-none px-3 py-1 text-xs uppercase tracking-wide ${
+    program.badgeClass ?? "bg-white/15 text-foreground/80 backdrop-blur"
+  }`;
+  const panelClasses = `rounded-none border border-white/15 p-6 shadow-[0_25px_80px_-35px_rgba(255,255,255,0.45)] transition-colors duration-500 ${
+    program.panelClass ?? "bg-black/60 backdrop-blur-lg"
+  }`;
+
+  const content = (
+    <div
+      className={`relative flex h-full flex-col justify-end overflow-hidden rounded-none border border-white/10 bg-black/10 backdrop-blur-sm transition-all duration-700 hover:-translate-y-1 hover:shadow-2xl hover:shadow-brand-magenta/20 ${
+        program.featured ? "min-h-[360px]" : "min-h-[300px]"
+      }`}
+    >
+      <img
+        src={program.image}
+        alt={program.name}
+        loading="lazy"
+        className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+      />
+      <div className={`absolute inset-0 ${overlayClasses}`} />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
+      <div className={`absolute left-6 top-6 ${badgeClasses}`}>
+        {program.area}
+      </div>
+      <div className="relative z-10 flex h-full flex-col justify-end p-6 text-white">
+        <div className={panelClasses}>
+          <div className="space-y-4">
+            <div>
+              <h3 className="font-display text-2xl leading-tight text-white">
+                {program.name}
+              </h3>
+              <p className="mt-3 text-sm text-white/85 font-body">
+                {program.description}
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {program.highlights.map((item) => (
+                <span
+                  key={item}
+                  className="rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs uppercase tracking-wide text-white/85"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+            <span className="inline-flex items-center gap-2 text-sm font-medium text-white/90 transition-colors group-hover:text-brand-magenta">
+              Explore programme
+              <ChevronRight className="h-4 w-4 transition-colors group-hover:text-brand-magenta" />
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+
+  if (isInternal) {
+    return (
+      <RouterLink to={program.link} className={wrapperClasses}>
+        {content}
+      </RouterLink>
+    );
+  }
+
+  return (
+    <a
+      href={program.link}
+      target="_blank"
+      rel="noreferrer"
+      className={wrapperClasses}
+    >
+      {content}
+    </a>
+  );
+}
+
 function HeroVideo() {
   const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -245,69 +381,13 @@ export default function Nursing() {
               <Badge className="bg-brand-magenta/15 text-brand-magenta mb-2">Undergraduate</Badge>
               <h3 className="font-display text-2xl">B.Sc Nursing Programs</h3>
               <p className="mt-3 text-sm text-foreground/80 font-body max-w-4xl text-justify leading-relaxed">
-                The undergraduate nursing program is meticulously designed to equip students with the knowledge, skills, and competencies necessary to excel as qualified nurses in diverse healthcare settings. The curriculum emphasizes a balanced integration of theoretical foundations and practical clinical exposure to ensure a comprehensive learning experience. To achieve this, the program adopts innovative and modern teaching and learning methodologies that cater to different learning styles and professional requirements. These methodologies include interactive lectures, case-based learning, simulation labs, problem-solving exercises, and evidence-based practices. Students are also exposed to advanced technologies and tools used in the healthcare industry, fostering proficiency in handling real-world challenges. Clinical training is an integral component of the program, offering students hands-on experience in various healthcare environments, such as hospitals, community clinics, and specialty care centers. Under the guidance of experienced faculty and practitioners, students gain practical insights into patient care, medical procedures, and teamwork in high-pressure situations. Additionally, the program emphasizes the development of critical thinking, ethical practices, communication skills, and adaptability, enabling graduates to meet the dynamic demands of the nursing profession. By the end of the program, students are thoroughly prepared to provide safe, effective, and compassionate care, contributing meaningfully to the healthcare sector.
+                The undergraduate nursing program is meticulously designed to equip students with the knowledge, skills, and competencies necessary to excel as qualified nurses in diverse healthcare settings. The curriculum emphasizes a balanced integration of theoretical foundations and practical clinical exposure to ensure a comprehensive learning experience. To achieve this, the program adopts innovative and modern teaching and learning methodologies that cater to different learning styles and professional requirements. These methodologies include interactive lectures, case-based learning, simulation labs, problem-solving exercises, and evidence-based practices. Students are also exposed to advanced technologies and tools used in the healthcare industry, fostering proficiency in handling real-world challenges. Clinical training is an integral component of the program, offering students hands-on experience in various healthcare environments, such as hospitals, community clinics, and specialty care centers. Under the guidance of experienced faculty and practitioners, students gain practical insights into patient care, medical procedures, and teamwork in high-pressure situations. Additionally, the program emphasizes the development of critical thinking, ethical practices, communication skills, and adaptability, enabling graduates to meet the dynamic demands of the nursing profession. By the end of the program, students are thoroughly prepared to provide safe, effective, and c...
               </p>
             </div>
-            <div className="grid gap-6 md:grid-cols-2">
-              {/* Basic B.Sc Nursing */}
-              <Card className="border border-border/50 bg-card/50 backdrop-blur-sm hover:shadow-lg transition-all h-full">
-                <CardHeader>
-                  <div className="flex items-center gap-2 mb-2">
-                    <GraduationCap className="w-5 h-5 text-brand-magenta" />
-                    <Badge className="bg-brand-magenta/20 text-brand-magenta border-brand-magenta/30">Undergraduate</Badge>
-                  </div>
-                  <CardTitle className="font-display">Basic B.Sc Nursing</CardTitle>
-                  <CardDescription className="font-body">4-Year Program</CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div>
-                    <h4 className="text-xs font-semibold uppercase tracking-wider text-brand-magenta mb-1">Eligibility</h4>
-                    <p className="text-sm text-foreground/80 font-body leading-relaxed">
-                      Pass in 10+2, A Level, IB, American 12th grade or equivalent with Physics, Chemistry, Biology and English and a minimum of 45% marks taken together in Physics, Chemistry, Biology and English.
-                    </p>
-                  </div>
-                  <div>
-                    <h4 className="text-xs font-semibold uppercase tracking-wider text-brand-magenta mb-1">Duration</h4>
-                    <p className="text-sm text-foreground/80 font-body">4 Years</p>
-                  </div>
-
-                  <div className="pt-2">
-                    <Button variant="link" className="text-brand-magenta p-0 h-auto font-semibold">
-                      View Details <ChevronRight className="w-4 h-4 ml-1" />
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Post Basic B.Sc Nursing */}
-              <Card className="border border-border/50 bg-card/50 backdrop-blur-sm hover:shadow-lg transition-all h-full">
-                <CardHeader>
-                  <div className="flex items-center gap-2 mb-2">
-                    <GraduationCap className="w-5 h-5 text-brand-magenta" />
-                    <Badge className="bg-brand-magenta/20 text-brand-magenta border-brand-magenta/30">Undergraduate</Badge>
-                  </div>
-                  <CardTitle className="font-display">Post Basic B.Sc Nursing</CardTitle>
-                  <CardDescription className="font-body">2-Year Program</CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div>
-                    <h4 className="text-xs font-semibold uppercase tracking-wider text-brand-magenta mb-1">Eligibility</h4>
-                    <p className="text-sm text-foreground/80 font-body leading-relaxed">
-                      Pass in GNM after 10+2 or equivalent examination preferably with Science subjects with 50% marks in aggregate. Candidates should be a registered Nurse and registered Midwife or equivalent with any State Nursing Registration Council. Candidates should have completed their GNM course.
-                    </p>
-                  </div>
-                  <div>
-                    <h4 className="text-xs font-semibold uppercase tracking-wider text-brand-magenta mb-1">Duration</h4>
-                    <p className="text-sm text-foreground/80 font-body">2 Years</p>
-                  </div>
-
-                  <div className="pt-2">
-                    <Button variant="link" className="text-brand-magenta p-0 h-auto font-semibold">
-                      View Details <ChevronRight className="w-4 h-4 ml-1" />
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
+            <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-12">
+              {UG_PROGRAM_CARDS.map((program) => (
+                <ProgramCardComponent key={program.name} program={program} />
+              ))}
             </div>
           </div>
 
@@ -317,59 +397,10 @@ export default function Nursing() {
               <Badge className="bg-brand-blue/15 text-brand-blue mb-2">Postgraduate</Badge>
               <h3 className="font-display text-2xl">M.Sc Nursing Programs</h3>
             </div>
-            <div className="grid gap-6 md:grid-cols-2">
-              {/* M.Sc Nursing */}
-              <Card className="border border-border/50 bg-card/50 backdrop-blur-sm hover:shadow-lg transition-all h-full">
-                <CardHeader>
-                  <div className="flex items-center gap-2 mb-2">
-                    <BookOpen className="w-5 h-5 text-brand-blue" />
-                    <Badge className="bg-brand-blue/20 text-brand-blue border-brand-blue/30">Postgraduate</Badge>
-                  </div>
-                  <CardTitle className="font-display">M.Sc Nursing</CardTitle>
-                  <CardDescription className="font-body">2-Year Program</CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div>
-                    <h4 className="text-xs font-semibold uppercase tracking-wider text-brand-blue mb-1">Eligibility</h4>
-                    <p className="text-sm text-foreground/80 font-body leading-relaxed">
-                      Candidates should have passed BSc/PC BSc/PB BSc Nursing recognized by the Indian Nursing Council and a minimum of 55% marks in aggregate.
-                    </p>
-                    <p className="text-sm text-foreground/80 font-body leading-relaxed mt-2">
-                      <span className="font-semibold">Experience:</span> Applicants must have 1 year of experience after BSc Nursing in a hospital or in a community health program or in a school or college of nursing. PB BSc Degree holders need to have one year experience either before or after Post Basic BSc Nursing degree.
-                    </p>
-                  </div>
-                  <div>
-                    <h4 className="text-xs font-semibold uppercase tracking-wider text-brand-blue mb-1">Duration</h4>
-                    <p className="text-sm text-foreground/80 font-body">2 Years</p>
-                  </div>
-
-                  <div className="pt-2">
-                    <RouterLink to="/academics/health-sciences/msc-nursing">
-                      <Button variant="link" className="text-brand-blue p-0 h-auto font-semibold">
-                        View Details <ChevronRight className="w-4 h-4 ml-1" />
-                      </Button>
-                    </RouterLink>
-                  </div>
-                </CardContent>
-              </Card>
-
-            {/* Overview Card */}
-            <Card className="border border-border/50 bg-card/50 backdrop-blur-sm h-full">
-              <CardHeader>
-                <div className="flex items-center gap-2 mb-2">
-                  <Award className="w-5 h-5 text-brand-orange" />
-                  <Badge className="bg-brand-orange/20 text-brand-orange border-brand-orange/30">Overview</Badge>
-                </div>
-                <CardTitle className="font-display">Why Choose DSU Nursing?</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-3 text-sm text-foreground font-body">
-                <p>✓ State-of-the-art simulation labs and clinical facilities</p>
-                <p>✓ 100% placement rate at leading hospitals worldwide</p>
-                <p>✓ International exposure and global certifications</p>
-                <p>✓ Experienced faculty and mentorship</p>
-                <p>✓ Research opportunities in healthcare innovation</p>
-              </CardContent>
-            </Card>
+            <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-12">
+              {PG_PROGRAM_CARDS.map((program) => (
+                <ProgramCardComponent key={program.name} program={program} />
+              ))}
             </div>
           </div>
         </div>
