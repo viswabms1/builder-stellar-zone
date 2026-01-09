@@ -552,6 +552,10 @@ function App() {
                   element={<MSc />}
                 />
                 <Route
+                  path="/academics/basic-applied-sciences/faculty"
+                  element={<SBASFaculty />}
+                />
+                <Route
                   path="/academics/engineering/computer-science"
                   element={<DeptCSE />}
                 />
