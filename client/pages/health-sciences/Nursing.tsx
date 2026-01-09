@@ -101,9 +101,6 @@ export default function Nursing() {
               <span className="text-sm font-medium text-white font-display">College of Nursing Sciences</span>
             </div>
             <h1 className="headline-1 text-white leading-tight font-display">Compassion, Care & Clinical Excellence</h1>
-            <p className="subheadline text-white/90 max-w-2xl mt-3 font-body">
-              Develop into a compassionate healthcare professional with rigorous clinical training, simulation labs, and global certifications. Build a career making a difference in patient care.
-            </p>
             <div className="mt-6 flex flex-wrap gap-2">
               {specializations.map((s, i) => (
                 <span key={i} className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-white text-xs backdrop-blur">
