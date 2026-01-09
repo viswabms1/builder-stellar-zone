@@ -7,75 +7,65 @@ export default function LanguageSwitcher() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Ensure Google Translate widget is properly styled when component mounts
+    // Wait for Google Translate to load and style it
     const styleGoogleTranslate = () => {
       const gtElement = document.querySelector('#google_translate_element');
-      if (gtElement) {
-        // Make it visible
-        (gtElement as HTMLElement).style.display = 'block';
-        
-        // Style the dropdown to match our theme
-        const select = gtElement.querySelector('select.goog-te-combo') as HTMLSelectElement;
-        if (select) {
-          select.style.padding = '6px 4px';
-          select.style.fontSize = '12px';
-          select.style.fontWeight = '500';
-          select.style.border = 'none';
-          select.style.background = 'transparent';
-          select.style.cursor = 'pointer';
-          select.style.color = theme === 'light' ? '#374151' : '#f3f4f6';
-        }
-        
-        // Style the framework
-        const framework = gtElement.querySelector('.goog-te-gadget');
-        if (framework) {
-          (framework as HTMLElement).style.fontFamily = 'inherit';
-          (framework as HTMLElement).style.padding = '0';
-        }
+      if (!gtElement) return;
+
+      // Make it visible
+      (gtElement as HTMLElement).style.display = 'inline-block';
+      
+      // Style the select dropdown to match our theme
+      const select = gtElement.querySelector('select.goog-te-combo') as HTMLSelectElement;
+      if (select) {
+        select.style.padding = '4px 8px';
+        select.style.fontSize = '12px';
+        select.style.fontWeight = '500';
+        select.style.border = 'none';
+        select.style.background = 'transparent';
+        select.style.cursor = 'pointer';
+        select.style.color = theme === 'light' ? '#4b5563' : '#f3f4f6';
+      }
+      
+      // Style the wrapper
+      const framework = gtElement.querySelector('.goog-te-gadget') as HTMLElement;
+      if (framework) {
+        framework.style.fontFamily = 'inherit';
+        framework.style.padding = '0';
+        framework.style.margin = '0';
+      }
+
+      // Hide the "powered by" text if present
+      const poweredBy = gtElement.querySelector('.goog-te-gadget-simple .goog-te-menu-value span:last-child');
+      if (poweredBy) {
+        (poweredBy as HTMLElement).style.display = 'none';
       }
     };
 
-    // Style immediately and also after a delay in case Google Translate loads later
-    styleGoogleTranslate();
-    const timer = setTimeout(styleGoogleTranslate, 500);
-    const timer2 = setTimeout(styleGoogleTranslate, 1500);
-
-    return () => {
-      clearTimeout(timer);
-      clearTimeout(timer2);
+    // Try to style immediately and retry if Google Translate hasn't loaded yet
+    let attempts = 0;
+    const tryStyle = () => {
+      styleGoogleTranslate();
+      attempts++;
+      if (attempts < 5) {
+        setTimeout(tryStyle, 300);
+      }
     };
+    
+    tryStyle();
   }, [theme]);
 
   return (
     <div 
       ref={containerRef}
-      className={`text-xs font-medium flex items-center gap-1 ${
+      className={`text-xs font-medium flex items-center gap-2 transition-colors ${
         theme === 'light'
           ? 'text-gray-600'
           : 'text-white/80'
       }`}
     >
-      {/* This div will be populated by Google Translate script from index.html */}
-      <div id="google_translate_element" style={{ display: 'none' }}></div>
-      
-      {/* Custom Language Button - Fallback if Google Translate doesn't load */}
-      <button
-        className={`whitespace-nowrap flex items-center gap-1 transition-colors ${
-          theme === 'light'
-            ? 'hover:text-orange-600'
-            : 'hover:text-white'
-        }`}
-        onClick={() => {
-          const gtElement = document.getElementById('google_translate_element');
-          if (gtElement) {
-            gtElement.style.display = gtElement.style.display === 'none' ? 'block' : 'none';
-          }
-        }}
-        title="Click to open language selector"
-      >
-        <span>English</span>
-        <ChevronDown className="w-3 h-3" />
-      </button>
+      <span className="hidden sm:inline">Language:</span>
+      {/* The google_translate_element div is in index.html - it will be injected here */}
     </div>
   );
 }
