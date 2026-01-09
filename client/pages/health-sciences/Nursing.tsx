@@ -239,29 +239,73 @@ export default function Nursing() {
             </div>
           </div>
 
-          <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-3">
-            {/* B.Sc Nursing */}
-            <Card className="border border-border/50 bg-card/50 backdrop-blur-sm hover:shadow-lg transition-all">
-              <CardHeader>
-                <div className="flex items-center gap-2 mb-2">
-                  <GraduationCap className="w-5 h-5 text-brand-magenta" />
-                  <Badge className="bg-brand-magenta/20 text-brand-magenta border-brand-magenta/30">Undergraduate</Badge>
-                </div>
-                <CardTitle className="font-display">B.Sc Nursing</CardTitle>
-                <CardDescription className="font-body">4-Year Program</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-3">
-                <p className="text-sm text-foreground font-body">Holistic nursing education covering:</p>
-                <div className="flex flex-wrap gap-2">
-                  {["Clinical Rotations", "Simulation Labs", "Global Certifications", "Patient Care", "Community Health", "Research Projects"].map((spec, i) => (
-                    <Badge key={i} variant="secondary" className="text-xs">{spec}</Badge>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
+          {/* Undergraduate Programs */}
+          <div className="mb-12">
+            <div className="mb-6">
+              <Badge className="bg-brand-magenta/15 text-brand-magenta mb-2">Undergraduate</Badge>
+              <h3 className="font-display text-2xl">B.Sc Nursing Programs</h3>
+              <p className="mt-3 text-sm text-foreground/80 font-body max-w-4xl text-justify leading-relaxed">
+                The undergraduate nursing program is meticulously designed to equip students with the knowledge, skills, and competencies necessary to excel as qualified nurses in diverse healthcare settings. The curriculum emphasizes a balanced integration of theoretical foundations and practical clinical exposure to ensure a comprehensive learning experience. To achieve this, the program adopts innovative and modern teaching and learning methodologies that cater to different learning styles and professional requirements. These methodologies include interactive lectures, case-based learning, simulation labs, problem-solving exercises, and evidence-based practices. Students are also exposed to advanced technologies and tools used in the healthcare industry, fostering proficiency in handling real-world challenges. Clinical training is an integral component of the program, offering students hands-on experience in various healthcare environments, such as hospitals, community clinics, and specialty care centers. Under the guidance of experienced faculty and practitioners, students gain practical insights into patient care, medical procedures, and teamwork in high-pressure situations. Additionally, the program emphasizes the development of critical thinking, ethical practices, communication skills, and adaptability, enabling graduates to meet the dynamic demands of the nursing profession. By the end of the program, students are thoroughly prepared to provide safe, effective, and compassionate care, contributing meaningfully to the healthcare sector.
+              </p>
+            </div>
+            <div className="grid gap-6 md:grid-cols-2">
+              {/* Basic B.Sc Nursing */}
+              <Card className="border border-border/50 bg-card/50 backdrop-blur-sm hover:shadow-lg transition-all h-full">
+                <CardHeader>
+                  <div className="flex items-center gap-2 mb-2">
+                    <GraduationCap className="w-5 h-5 text-brand-magenta" />
+                    <Badge className="bg-brand-magenta/20 text-brand-magenta border-brand-magenta/30">Undergraduate</Badge>
+                  </div>
+                  <CardTitle className="font-display">Basic B.Sc Nursing</CardTitle>
+                  <CardDescription className="font-body">4-Year Program</CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-3">
+                  <p className="text-sm text-foreground font-body">Foundational nursing education covering:</p>
+                  <div className="flex flex-wrap gap-2">
+                    {["Anatomy & Physiology", "Nursing Foundations", "Community Health", "Midwifery", "Child Health Nursing"].map((spec, i) => (
+                      <Badge key={i} variant="secondary" className="text-xs">{spec}</Badge>
+                    ))}
+                  </div>
+                  <Button variant="link" className="text-brand-magenta p-0 h-auto font-semibold">
+                    View Details <ChevronRight className="w-4 h-4 ml-1" />
+                  </Button>
+                </CardContent>
+              </Card>
 
+              {/* Post Basic B.Sc Nursing */}
+              <Card className="border border-border/50 bg-card/50 backdrop-blur-sm hover:shadow-lg transition-all h-full">
+                <CardHeader>
+                  <div className="flex items-center gap-2 mb-2">
+                    <GraduationCap className="w-5 h-5 text-brand-magenta" />
+                    <Badge className="bg-brand-magenta/20 text-brand-magenta border-brand-magenta/30">Undergraduate</Badge>
+                  </div>
+                  <CardTitle className="font-display">Post Basic B.Sc Nursing</CardTitle>
+                  <CardDescription className="font-body">2-Year Program</CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-3">
+                  <p className="text-sm text-foreground font-body">Advanced nursing for diploma holders:</p>
+                  <div className="flex flex-wrap gap-2">
+                    {["Advanced Medical-Surgical", "Mental Health Nursing", "Nursing Education", "Research & Statistics"].map((spec, i) => (
+                      <Badge key={i} variant="secondary" className="text-xs">{spec}</Badge>
+                    ))}
+                  </div>
+                  <Button variant="link" className="text-brand-magenta p-0 h-auto font-semibold">
+                    View Details <ChevronRight className="w-4 h-4 ml-1" />
+                  </Button>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+
+          {/* Postgraduate Programs */}
+          <div className="mb-12">
+            <div className="mb-6">
+              <Badge className="bg-brand-blue/15 text-brand-blue mb-2">Postgraduate</Badge>
+              <h3 className="font-display text-2xl">M.Sc Nursing Programs</h3>
+            </div>
+            <div className="grid gap-6 md:grid-cols-2">
             {/* M.Sc Nursing */}
-            <Card className="border border-border/50 bg-card/50 backdrop-blur-sm hover:shadow-lg transition-all">
+            <Card className="border border-border/50 bg-card/50 backdrop-blur-sm hover:shadow-lg transition-all h-full">
               <CardHeader>
                 <div className="flex items-center gap-2 mb-2">
                   <BookOpen className="w-5 h-5 text-brand-blue" />
@@ -281,7 +325,7 @@ export default function Nursing() {
             </Card>
 
             {/* Overview Card */}
-            <Card className="border border-border/50 bg-card/50 backdrop-blur-sm">
+            <Card className="border border-border/50 bg-card/50 backdrop-blur-sm h-full">
               <CardHeader>
                 <div className="flex items-center gap-2 mb-2">
                   <Award className="w-5 h-5 text-brand-orange" />
@@ -297,6 +341,7 @@ export default function Nursing() {
                 <p>✓ Research opportunities in healthcare innovation</p>
               </CardContent>
             </Card>
+            </div>
           </div>
         </div>
       </section>
