@@ -889,7 +889,7 @@ export default function JournalismMassComm() {
                 rel="noreferrer"
                 className="hover:text-brand-magenta"
               >
-                {getTranslation(language, 'journalismPage.monthlyNewsletter')}
+                {"Monthly Newsletter"}
               </a>
               <a
                 href="https://www.dsu.edu.in/journalism-mass-comm/library"
@@ -897,7 +897,7 @@ export default function JournalismMassComm() {
                 rel="noreferrer"
                 className="hover:text-brand-magenta"
               >
-                {getTranslation(language, 'journalismPage.digitalLibrary')}
+                {"Digital Library"}
               </a>
               <a
                 href="https://www.dsu.edu.in/journalism-mass-comm/student-hub"
@@ -905,7 +905,7 @@ export default function JournalismMassComm() {
                 rel="noreferrer"
                 className="hover:text-brand-magenta"
               >
-                {getTranslation(language, 'journalismPage.studentHub')}
+                {"Student Hub"}
               </a>
             </CardContent>
           </Card>
