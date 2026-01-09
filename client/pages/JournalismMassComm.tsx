@@ -790,13 +790,12 @@ export default function JournalismMassComm() {
                 </div>
                 <CardHeader>
                   <CardTitle className="font-display group-hover:text-brand-orange transition-colors">
-                    Placements
+                    {getTranslation(language, 'journalismPage.placements')}
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-foreground/80 font-body">
-                    Career pathways with media organizations and production
-                    houses
+                    {getTranslation(language, 'journalismPage.placementsDesc')}
                   </p>
                 </CardContent>
               </Card>
