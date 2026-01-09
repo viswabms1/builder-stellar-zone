@@ -89,7 +89,7 @@ export default function CampusLife() {
             </div>
 
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 leading-tight text-white">
-              {t("campusLife.title")}
+              Campus Life
             </h1>
           </div>
         </div>
