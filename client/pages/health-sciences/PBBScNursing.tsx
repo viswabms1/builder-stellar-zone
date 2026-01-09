@@ -53,9 +53,71 @@ export default function PBBScNursing() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero */}
-      <section className="relative" id="top">
-        <HeroVideo />
+      <section className="relative w-full overflow-hidden" id="top">
+        <div className="relative w-full h-[55vh] md:h-[70vh]">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F8b05ef1aa31040fda05441d883dcee6e?format=webp&width=800"
+            alt="Post Basic B.Sc Nursing"
+            className="w-full h-full object-cover"
+            style={{
+              filter: "brightness(1.1) contrast(1.1) saturate(1.15)",
+            }}
+          />
+          <div className="absolute inset-0 bg-black/30"></div>
+
+          <div className="hero-title-inside absolute bottom-0 left-0 right-0 z-20 flex items-end justify-start p-3 sm:p-6 max-w-7xl mx-auto w-full">
+            <div className="max-w-2xl">
+              <p className="text-lg sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-1 sm:mb-4 uppercase tracking-widest font-display">
+                Post Basic B.Sc Nursing
+              </p>
+              <h1 className="text-xs sm:text-base md:text-base text-white/80 mb-2 sm:mb-6 leading-tight font-display">
+                Advanced Nursing Practice & Professional Growth
+              </h1>
+            </div>
+          </div>
+        </div>
       </section>
+
+      <div className="bg-background relative max-w-7xl mx-auto px-3 w-full py-6 sm:py-8">
+        <div className="hero-title-outside max-w-2xl">
+          <p className="text-lg sm:text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-1 sm:mb-4 uppercase tracking-widest font-display">
+            Post Basic B.Sc Nursing
+          </p>
+          <h1 className="text-xs sm:text-base md:text-base text-foreground/80 mb-2 sm:mb-6 leading-tight font-display">
+            Advanced Nursing Practice & Professional Growth
+          </h1>
+        </div>
+
+        <div className="flex flex-row gap-2 sm:gap-4">
+          <a
+            href="https://admissions.dsu.edu.in/"
+            target="_blank"
+            rel="noreferrer"
+            className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          >
+            <Button
+              size="sm"
+              className="sm:size-lg bg-white hover:bg-white/90 text-brand-blue hover:text-brand-blue/80 px-4 sm:px-8 py-2 sm:py-6 text-xs sm:text-base font-semibold font-display transition-all duration-300 group border-2 border-white w-full sm:w-auto"
+            >
+              Apply Now
+              <ChevronRight className="w-4 sm:w-5 h-4 sm:h-5 ml-1 sm:ml-2 group-hover:translate-x-1 transition-transform" />
+            </Button>
+          </a>
+          <a
+            href="https://dsu.edu.in/virtual-tour/"
+            target="_blank"
+            rel="noreferrer"
+            className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          >
+            <Button
+              size="sm"
+              className="sm:size-lg bg-white hover:bg-white/90 text-brand-blue hover:text-brand-blue/80 px-4 sm:px-8 py-2 sm:py-6 text-xs sm:text-base font-semibold font-display transition-all duration-300 group border-2 border-white w-full sm:w-auto"
+            >
+              Virtual Tour
+            </Button>
+          </a>
+        </div>
+      </div>
 
       {/* Program Overview */}
       <section id="overview" className="relative overflow-hidden px-3 py-8">
