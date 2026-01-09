@@ -50,65 +50,14 @@ export default function BScNursing() {
   ];
 
   function HeroVideo() {
-    const [isMuted, setIsMuted] = useState(true);
-    const videoRef = useRef<HTMLVideoElement>(null);
-    const containerRef = useAutoMuteOnScroll(videoRef);
-
-    const toggleMute = () => {
-      if (videoRef.current) {
-        videoRef.current.muted = !videoRef.current.muted;
-        setIsMuted(!isMuted);
-      }
-    };
-
-    useEffect(() => {
-      const video = videoRef.current;
-      if (!video) return;
-
-      video.muted = isMuted;
-    }, [isMuted]);
-
-    useEffect(() => {
-      const video = videoRef.current;
-      if (!video) return;
-
-      const handleEnded = () => {
-        const rect = containerRef.current?.getBoundingClientRect();
-        const isVisible =
-          rect && rect.top < window.innerHeight && rect.bottom > 0;
-        if (isVisible) {
-          video.currentTime = 0;
-          video.play().catch(() => {});
-        }
-      };
-
-      video.addEventListener("ended", handleEnded);
-      return () => {
-        video.removeEventListener("ended", handleEnded);
-      };
-    }, []);
-
     return (
       <>
-        <div
-          ref={containerRef}
-          className="hero-video-container relative flex items-center justify-start"
-        >
-          <video
-            ref={videoRef}
-            src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F0e3142955d064bcb9e612579c54c1630?alt=media&token=559d7d84-efa6-4617-8c6f-8e5305f8754b&apiKey=4aa279a8430d441dba9c55f659831878"
-            autoPlay
-            muted={isMuted}
-            loop
-            playsInline
-            preload="metadata"
-            crossOrigin="anonymous"
+        <div className="hero-image-container relative flex items-center justify-start">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F69bdc065a2ee46dcbd07616adb12f8d0?format=webp&width=800"
+            alt="B.Sc Nursing"
+            className="absolute inset-0 w-full h-full object-cover"
             style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              width: "100%",
-              height: "100%",
               objectFit: "cover",
               objectPosition: "center center",
               filter: "brightness(1.1) contrast(1.1) saturate(1.15)",
@@ -132,18 +81,6 @@ export default function BScNursing() {
                 "repeating-linear-gradient(0deg, rgba(255,255,255,.03) 0px, rgba(255,255,255,.03) 1px, transparent 1px, transparent 2px)",
             }}
           ></div>
-
-          <button
-            onClick={toggleMute}
-            className="absolute top-8 right-8 z-10 p-3 rounded-full bg-black/50 hover:bg-black/70 transition-colors text-white backdrop-blur-sm border border-white/20"
-            aria-label={isMuted ? "Unmute" : "Mute"}
-          >
-            {isMuted ? (
-              <VolumeX className="h-5 w-5" />
-            ) : (
-              <Volume2 className="h-5 w-5" />
-            )}
-          </button>
 
           <div className="hero-title-inside absolute bottom-0 left-0 right-0 z-20 flex items-end justify-start p-3 sm:p-6 max-w-7xl mx-auto w-full">
             <div className="max-w-2xl">
