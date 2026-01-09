@@ -18,6 +18,10 @@ import {
 } from "lucide-react";
 
 export default function PBBScNursing() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const specializations = [
     { icon: Heart, label: "Critical Care" },
     { icon: Microscope, label: "Advanced Practice" },
