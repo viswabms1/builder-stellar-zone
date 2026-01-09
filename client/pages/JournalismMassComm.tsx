@@ -516,7 +516,7 @@ function HeroVideo() {
   const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useAutoMuteOnScroll(videoRef);
-  const { language } = useContext(LanguageContext);
+  const { language } = useLanguage();
 
   const toggleMute = () => {
     if (videoRef.current) {
