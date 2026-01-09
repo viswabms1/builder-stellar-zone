@@ -1,16 +1,14 @@
-import { useLanguage } from '@/providers/language-provider';
 import { useTheme } from '@/providers/theme-provider';
-import { Button } from '@/components/ui/button';
-import { getLanguageLabel } from '@/lib/i18n';
-import type { Language } from '@/lib/i18n';
 import { ChevronDown } from 'lucide-react';
-import { useState, useEffect, useRef } from 'react';
-import { createPortal } from 'react-dom';
+import { useState, useRef, useEffect } from 'react';
 
-const LANGUAGES: Language[] = ['en', 'kn', 'hi'];
+declare global {
+  interface Window {
+    google?: any;
+  }
+}
 
 export default function LanguageSwitcher() {
-  const { language, setLanguage } = useLanguage();
   const { theme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -26,23 +24,26 @@ export default function LanguageSwitcher() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  const [dropdownPos, setDropdownPos] = useState({ top: 0, right: 0 });
-  const buttonRef = useRef<HTMLButtonElement>(null);
-
-  useEffect(() => {
-    if (buttonRef.current && isOpen) {
-      const rect = buttonRef.current.getBoundingClientRect();
-      setDropdownPos({
-        top: rect.bottom + window.scrollY,
-        right: window.innerWidth - rect.right
-      });
+  const handleLanguageSelect = (langCode: string) => {
+    // Get the language select element from Google Translate
+    const googleSelect = document.querySelector('select.goog-te-combo') as HTMLSelectElement;
+    if (googleSelect) {
+      googleSelect.value = langCode;
+      // Trigger change event to notify Google Translate
+      googleSelect.dispatchEvent(new Event('change'));
     }
-  }, [isOpen]);
+    setIsOpen(false);
+  };
+
+  const languages = [
+    { code: 'en', label: 'English' },
+    { code: 'kn', label: 'ಕನ್ನಡ' },
+    { code: 'hi', label: 'हिंदी' }
+  ];
 
   return (
     <div className="relative" ref={dropdownRef}>
       <button
-        ref={buttonRef}
         className={`text-xs font-medium transition-colors whitespace-nowrap flex items-center gap-1 ${
           theme === 'light'
             ? 'text-gray-600 hover:text-orange-600'
@@ -50,44 +51,34 @@ export default function LanguageSwitcher() {
         }`}
         onClick={() => setIsOpen(!isOpen)}
       >
-        <span>{getLanguageLabel(language)}</span>
+        <span>English</span>
         <ChevronDown className="w-3 h-3" />
       </button>
 
-      {isOpen && createPortal(
+      {isOpen && (
         <div
-          className={`fixed w-48 rounded-xl shadow-lg border z-[9999] ${
+          className={`absolute top-full right-0 w-48 mt-2 rounded-xl shadow-lg border z-[9999] ${
             theme === 'light'
               ? 'bg-white border-orange-200'
               : 'bg-slate-900 border-slate-700'
           }`}
-          style={{
-            top: `${dropdownPos.top + 8}px`,
-            right: `${dropdownPos.right}px`
-          }}
         >
-          {LANGUAGES.map((lang) => (
+          {languages.map((lang) => (
             <button
-              key={lang}
-              onClick={() => {
-                setLanguage(lang);
-                setIsOpen(false);
-              }}
+              key={lang.code}
+              onClick={() => handleLanguageSelect(lang.code)}
               className={`w-full text-left px-4 py-3 text-sm font-medium transition-colors ${
-                language === lang
-                  ? 'bg-orange-500 text-white'
-                  : theme === 'light'
+                theme === 'light'
                   ? 'text-gray-700 hover:bg-orange-100'
                   : 'text-slate-200 hover:bg-slate-800'
-              } ${lang === LANGUAGES[0] ? 'rounded-t-lg' : ''} ${
-                lang === LANGUAGES[LANGUAGES.length - 1] ? 'rounded-b-lg' : ''
+              } ${lang.code === languages[0].code ? 'rounded-t-lg' : ''} ${
+                lang.code === languages[languages.length - 1].code ? 'rounded-b-lg' : ''
               }`}
             >
-              {getLanguageLabel(lang)}
+              {lang.label}
             </button>
           ))}
-        </div>,
-        document.body
+        </div>
       )}
     </div>
   );
