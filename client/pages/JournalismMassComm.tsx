@@ -640,7 +640,7 @@ function HeroVideo() {
               size="sm"
               className="sm:size-lg bg-white hover:bg-white/90 text-orange-600 hover:text-orange-700 px-4 sm:px-8 py-2 sm:py-6 text-xs sm:text-base font-semibold font-display transition-all duration-300 group border-2 border-white w-full sm:w-auto"
             >
-              {getTranslation(language, 'buttons.applyNow')}
+              {"Apply Now"}
               <ChevronRight className="w-4 sm:w-5 h-4 sm:h-5 ml-1 sm:ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
           </a>
@@ -819,7 +819,7 @@ export default function JournalismMassComm() {
                     {"Join DSU CJMC and tell stories that matter"}
                   </p>
                   <span className="inline-flex items-center gap-2 text-xs font-medium text-brand-magenta group-hover:text-brand-magenta/80 transition-colors">
-                    {getTranslation(language, 'buttons.applyNow')}
+                    {"Apply Now"}
                     <ChevronRight className="h-3 w-3" />
                   </span>
                 </CardContent>
@@ -833,12 +833,12 @@ export default function JournalismMassComm() {
         <div className="mx-auto grid max-w-5xl items-start gap-4 lg:grid-cols-2">
           <Card className="rounded-none border border-orange-500/20 bg-orange-500/10">
             <CardHeader>
-              <CardTitle className="font-display">{getTranslation(language, 'journalismPage.leadership')}</CardTitle>
+              <CardTitle className="font-display">{"Leadership"}</CardTitle>
             </CardHeader>
             <CardContent className="grid gap-4 text-sm font-body text-foreground">
               <div>
                 <div className="text-foreground/70 text-xs uppercase tracking-wide">
-                  {getTranslation(language, 'journalismPage.email')}
+                  {"Email"}
                 </div>
                 <div className="font-medium text-foreground">
                   cjmc@dsu.edu.in
@@ -846,7 +846,7 @@ export default function JournalismMassComm() {
               </div>
               <div>
                 <div className="text-foreground/70 text-xs uppercase tracking-wide">
-                  {getTranslation(language, 'journalismPage.phone')}
+                  {"Phone"}
                 </div>
                 <div className="font-medium text-foreground">
                   +91-80-49092933
@@ -854,7 +854,7 @@ export default function JournalismMassComm() {
               </div>
               <div>
                 <div className="text-foreground/70 text-xs uppercase tracking-wide">
-                  {getTranslation(language, 'journalismPage.campusAddress')}
+                  {"Campus Address"}
                 </div>
                 <div className="font-medium text-foreground">
                   Kanakapura Road, Bengaluru, Karnataka
