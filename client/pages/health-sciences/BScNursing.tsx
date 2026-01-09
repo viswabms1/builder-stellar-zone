@@ -19,6 +19,10 @@ import {
 } from "lucide-react";
 
 export default function BScNursing() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const specializations = [
     { icon: Heart, label: "General Nursing" },
     { icon: Microscope, label: "Critical Care" },
