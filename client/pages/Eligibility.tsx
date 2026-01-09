@@ -953,6 +953,32 @@ function HeroHighlight({ icon: Icon, title, description }: HeroHighlightProps) {
 }
 
 function SchoolsSection() {
+  const [searchParams] = useSearchParams();
+  const [openSchools, setOpenSchools] = useState<string[]>([]);
+  const [scrollTarget, setScrollTarget] = useState<string | null>(null);
+
+  const targetSchool = searchParams.get("school");
+  const targetProgram = searchParams.get("program");
+
+  useEffect(() => {
+    if (targetSchool) {
+      setOpenSchools([targetSchool]);
+    }
+  }, [targetSchool]);
+
+  useEffect(() => {
+    if (targetProgram && scrollTarget === null) {
+      const programElement = document.getElementById(`program-${targetProgram}`);
+      if (programElement) {
+        setTimeout(() => {
+          programElement.scrollIntoView({ behavior: "smooth", block: "center" });
+          programElement.classList.add("ring-2", "ring-orange-500", "rounded-lg");
+        }, 300);
+        setScrollTarget(targetProgram);
+      }
+    }
+  }, [targetProgram, scrollTarget]);
+
   return (
     <section className="px-3 py-8">
       <div className="mx-auto max-w-6xl">
@@ -966,7 +992,12 @@ function SchoolsSection() {
             include the latest library deposit and ancillary components.
           </p>
         </div>
-        <Accordion type="multiple" className="space-y-3">
+        <Accordion
+          type="multiple"
+          value={openSchools}
+          onValueChange={setOpenSchools}
+          className="space-y-3"
+        >
           {schools.map((school) => (
             <AccordionItem
               key={school.name}
