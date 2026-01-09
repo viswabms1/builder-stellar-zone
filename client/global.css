@@ -507,4 +507,114 @@
       transform: scale(1);
     }
   }
+
+  /* Featured news animations */
+  @keyframes slideOutLeft {
+    from {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+  }
+
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes shimmer {
+    0%, 100% {
+      background-position: -1000px 0;
+    }
+    50% {
+      background-position: 1000px 0;
+    }
+  }
+
+  @keyframes pulseGlow {
+    0%, 100% {
+      box-shadow: 0 0 0 0 rgba(233, 97, 255, 0.7);
+    }
+    50% {
+      box-shadow: 0 0 0 10px rgba(233, 97, 255, 0);
+    }
+  }
+
+  @keyframes rotateBadge {
+    from {
+      transform: rotate(0deg) scale(1);
+    }
+    to {
+      transform: rotate(360deg) scale(1);
+    }
+  }
+
+  /* Featured news transition classes */
+  .featured-news-exit {
+    animation: slideOutLeft 0.3s ease-in forwards;
+  }
+
+  .featured-news-enter {
+    animation: slideInRight 0.3s ease-out forwards;
+  }
+
+  .featured-news-card {
+    transition: all 0.3s ease-in-out;
+  }
+
+  .featured-news-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(233, 97, 255, 0.1);
+  }
+
+  .featured-news-pulse {
+    animation: pulseGlow 2s infinite;
+  }
+
+  .news-badge-active {
+    animation: rotateBadge 3s ease-in-out;
+  }
+
+  /* Progress bar animation */
+  @keyframes progressFill {
+    from {
+      width: 0%;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+  .rotation-progress-bar {
+    height: 3px;
+    background: linear-gradient(90deg, #E961FF, #E58A00, #008DCD);
+    animation: progressFill 8s linear forwards;
+    border-radius: 2px;
+  }
+
+  /* Subtle highlight on featured news grid items */
+  .news-grid-item {
+    transition: all 0.3s ease;
+  }
+
+  .news-grid-item:hover {
+    transform: scale(1.02);
+  }
+
+  .news-grid-item:hover .news-card-image {
+    filter: brightness(1.1);
+  }
+
+  .news-card-image {
+    transition: filter 0.3s ease;
+  }
 }
