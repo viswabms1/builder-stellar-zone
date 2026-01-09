@@ -43,6 +43,7 @@ import Nursing from "./pages/health-sciences/Nursing";
 import BScNursing from "./pages/health-sciences/BScNursing";
 import PBBScNursing from "./pages/health-sciences/PBBScNursing";
 import MScNursing from "./pages/health-sciences/MScNursing";
+import NursingFaculty from "./pages/health-sciences/NursingFaculty";
 import MedicalEducationResearch from "./pages/MedicalEducationResearch";
 import CEE from "./pages/CEE";
 import JournalismMassComm from "./pages/JournalismMassComm";
