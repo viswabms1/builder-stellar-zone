@@ -344,6 +344,8 @@ const COLLEGE_CARDS: CollegeCard[] = [
     icon: HeartPulse,
     color: "text-brand-magenta",
     bgColor: "bg-brand-magenta/10 border-brand-magenta/30",
+    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1600&auto=format&fit=crop",
+    gradient: "from-brand-magenta/80 via-black/70 to-black/60",
   },
   {
     id: "pharmacy",
@@ -354,6 +356,8 @@ const COLLEGE_CARDS: CollegeCard[] = [
     icon: Pill,
     color: "text-brand-blue",
     bgColor: "bg-brand-blue/10 border-brand-blue/30",
+    image: "https://images.unsplash.com/photo-1585523740023-dea1b3ffe518?q=80&w=1600&auto=format&fit=crop",
+    gradient: "from-brand-blue/80 via-black/70 to-black/60",
   },
   {
     id: "physiotherapy",
@@ -364,6 +368,8 @@ const COLLEGE_CARDS: CollegeCard[] = [
     icon: Activity,
     color: "text-brand-orange",
     bgColor: "bg-brand-orange/10 border-brand-orange/30",
+    image: "https://images.unsplash.com/photo-1576091160550-112569c0fce4?q=80&w=1600&auto=format&fit=crop",
+    gradient: "from-brand-orange/80 via-black/70 to-black/60",
   },
   {
     id: "allied-health",
@@ -374,6 +380,8 @@ const COLLEGE_CARDS: CollegeCard[] = [
     icon: Zap,
     color: "text-emerald-500",
     bgColor: "bg-emerald-500/10 border-emerald-500/30",
+    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1600&auto=format&fit=crop",
+    gradient: "from-emerald-600/80 via-black/70 to-black/60",
   },
 ];
 
