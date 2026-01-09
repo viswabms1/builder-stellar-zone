@@ -120,7 +120,9 @@ export async function translateDOMContent(
         );
 
         if (!response.ok) {
-          console.error(`Translation API error for batch ${batchIndex + 1}:`, response.status, response.statusText);
+          console.error(`❌ Translation API error for batch ${batchIndex + 1}:`, response.status, response.statusText);
+          const errorText = await response.text();
+          console.error('API Error Details:', errorText);
 
           // Try individual translations as fallback
           for (const item of batch) {
