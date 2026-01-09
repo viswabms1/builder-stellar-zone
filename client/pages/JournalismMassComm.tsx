@@ -395,7 +395,7 @@ const DEAN_INFO: DeanInfo = {
   bgColor: "bg-rose-500/10",
 };
 
-function ProgramCardComponent({ program, language }: { program: ProgramCard; language: string }) {
+function ProgramCardComponent({ program }: { program: ProgramCard }) {
   const isInternal = program.link.startsWith("/");
   const wrapperClasses = `group block h-full rounded-none ${
     program.featured ? "lg:col-span-6" : "lg:col-span-3"
