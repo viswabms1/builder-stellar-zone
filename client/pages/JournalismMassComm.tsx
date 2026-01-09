@@ -788,12 +788,12 @@ export default function JournalismMassComm() {
                 </div>
                 <CardHeader>
                   <CardTitle className="font-display group-hover:text-brand-orange transition-colors">
-                    {getTranslation(language, 'journalismPage.placements')}
+                    {"Placements"}
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-foreground/80 font-body">
-                    {getTranslation(language, 'journalismPage.placementsDesc')}
+                    {"Career pathways with media organizations and production houses"}
                   </p>
                 </CardContent>
               </Card>
@@ -811,12 +811,12 @@ export default function JournalismMassComm() {
                 </div>
                 <CardHeader>
                   <CardTitle className="font-display group-hover:text-brand-magenta transition-colors">
-                    {getTranslation(language, 'journalismPage.admissionsBtn')}
+                    {"Admissions"}
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="flex flex-col gap-3">
                   <p className="text-sm text-foreground/80 font-body">
-                    {getTranslation(language, 'journalismPage.admissionsDesc')}
+                    {"Join DSU CJMC and tell stories that matter"}
                   </p>
                   <span className="inline-flex items-center gap-2 text-xs font-medium text-brand-magenta group-hover:text-brand-magenta/80 transition-colors">
                     {getTranslation(language, 'buttons.applyNow')}
