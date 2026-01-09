@@ -17,9 +17,46 @@ import {
   Volume2,
   VolumeX,
 } from "lucide-react";
+import { useAutoMuteOnScroll } from "@/hooks/useAutoMuteOnScroll";
 
-export default function Nursing() {
+function HeroVideo() {
+  const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const containerRef = useAutoMuteOnScroll(videoRef);
+
+  const toggleMute = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = !videoRef.current.muted;
+      setIsMuted(!isMuted);
+    }
+  };
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    video.muted = isMuted;
+  }, [isMuted]);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const handleEnded = () => {
+      const rect = containerRef.current?.getBoundingClientRect();
+      const isVisible =
+        rect && rect.top < window.innerHeight && rect.bottom > 0;
+      if (isVisible) {
+        video.currentTime = 0;
+        video.play().catch(() => {});
+      }
+    };
+
+    video.addEventListener("ended", handleEnded);
+    return () => {
+      video.removeEventListener("ended", handleEnded);
+    };
+  }, []);
 
   const specializations = [
     { icon: Heart, label: "General Nursing" },
@@ -30,57 +67,61 @@ export default function Nursing() {
     { icon: Award, label: "Mental Health" },
   ];
 
-  const highlights = [
-    "State-of-the-art simulation labs with high-fidelity manikins and advanced equipment",
-    "Clinical rotations at affiliated hospitals and healthcare centers",
-    "International exposure through global certifications and exchange programmes",
-    "Project-based learning focusing on patient care excellence",
-    "Research opportunities in nursing science and healthcare innovation",
-    "Mentorship by experienced nursing educators and clinical practitioners",
-  ];
-
-  const careers = [
-    "Registered Nurse → Nurse Manager → Chief Nurse Officer",
-    "Clinical Specialist → Healthcare Administrator → Director of Nursing Services",
-    "International opportunities: USA, UK, Canada, Middle East (high demand, ₹18-30 LPA+)",
-    "100% placements; Graduates placed at leading hospitals, healthcare organizations worldwide",
-  ];
-
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      {/* Hero */}
-      <section className="dept-hero-section relative w-full">
-        <div className="h-[55vh] sm:h-[60vh] md:h-[65vh] w-full overflow-hidden relative">
-          <video
-            ref={videoRef}
-            src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F0e3142955d064bcb9e612579c54c1630?alt=media&token=559d7d84-efa6-4617-8c6f-8e5305f8754b&apiKey=4aa279a8430d441dba9c55f659831878"
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="metadata"
-            style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              width: "100%",
-              height: "100%",
-              objectFit: "cover",
-              objectPosition: "center",
-              filter: "brightness(1.1) contrast(1.1) saturate(1.15)",
-              zIndex: 0,
-            }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent z-10" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
-        </div>
-        <div className="absolute inset-0 flex items-center z-20">
-          <div className="max-w-7xl mx-auto px-3 pb-8 sm:pb-12 md:pb-12 w-full">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-black/40 rounded-full border border-white/20 mb-4 backdrop-blur-sm">
+    <>
+      <div
+        ref={containerRef}
+        className="hero-video-container relative flex items-center justify-start"
+      >
+        <video
+          ref={videoRef}
+          src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F0e3142955d064bcb9e612579c54c1630?alt=media&token=559d7d84-efa6-4617-8c6f-8e5305f8754b&apiKey=4aa279a8430d441dba9c55f659831878"
+          autoPlay
+          muted={isMuted}
+          loop
+          playsInline
+          preload="metadata"
+          crossOrigin="anonymous"
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            objectPosition: "center center",
+            filter: "brightness(1.1) contrast(1.1) saturate(1.15)",
+            zIndex: 0,
+          }}
+        />
+
+        <div className="absolute inset-0 bg-black/40 z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
+
+        <button
+          onClick={toggleMute}
+          className="absolute top-4 right-8 z-50 p-3 rounded-full bg-black/50 hover:bg-black/70 transition-colors text-white backdrop-blur-sm border border-white/20"
+          aria-label={isMuted ? "Unmute" : "Mute"}
+        >
+          {isMuted ? (
+            <VolumeX className="h-5 w-5" />
+          ) : (
+            <Volume2 className="h-5 w-5" />
+          )}
+        </button>
+
+        <div className="hero-title-inside absolute bottom-0 left-0 right-0 z-20 flex items-end justify-start p-3 sm:p-6 max-w-7xl mx-auto w-full">
+          <div className="max-w-2xl">
+             <div className="inline-flex items-center gap-2 px-4 py-2 bg-black/40 rounded-full border border-white/20 mb-4 backdrop-blur-sm">
               <Sparkles className="w-4 h-4 text-white" />
               <span className="text-sm font-medium text-white font-display">College of Nursing Sciences</span>
             </div>
-            <h1 className="text-xs sm:text-sm md:text-base text-white/80 mb-2 sm:mb-4 leading-tight font-display">Compassion, Care & Clinical Excellence</h1>
+            <p className="text-lg sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-1 sm:mb-4 uppercase tracking-widest font-display">
+              College of Nursing Sciences
+            </p>
+            <h1 className="text-xs sm:text-base md:text-base text-white/80 mb-2 sm:mb-6 leading-tight font-display">
+              Compassion, Care & Clinical Excellence
+            </h1>
             <div className="mt-4 sm:mt-6 flex flex-wrap gap-1 sm:gap-2">
               {specializations.map((s, i) => (
                 <span key={i} className="inline-flex items-center gap-1 px-2 py-0.5 sm:gap-2 sm:px-3 sm:py-1 rounded-full bg-white/10 text-white text-xs backdrop-blur">
@@ -90,7 +131,7 @@ export default function Nursing() {
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
       <div className="bg-background relative max-w-7xl mx-auto px-3 w-full py-6 sm:py-8">
         <div className="hero-title-outside max-w-2xl">
@@ -132,6 +173,33 @@ export default function Nursing() {
           </a>
         </div>
       </div>
+    </>
+  );
+}
+
+export default function Nursing() {
+  const highlights = [
+    "State-of-the-art simulation labs with high-fidelity manikins and advanced equipment",
+    "Clinical rotations at affiliated hospitals and healthcare centers",
+    "International exposure through global certifications and exchange programmes",
+    "Project-based learning focusing on patient care excellence",
+    "Research opportunities in nursing science and healthcare innovation",
+    "Mentorship by experienced nursing educators and clinical practitioners",
+  ];
+
+  const careers = [
+    "Registered Nurse → Nurse Manager → Chief Nurse Officer",
+    "Clinical Specialist → Healthcare Administrator → Director of Nursing Services",
+    "International opportunities: USA, UK, Canada, Middle East (high demand, ₹18-30 LPA+)",
+    "100% placements; Graduates placed at leading hospitals, healthcare organizations worldwide",
+  ];
+
+  return (
+    <div className="min-h-screen bg-background text-foreground">
+      {/* Hero */}
+      <section className="relative" id="top">
+        <HeroVideo />
+      </section>
 
       {/* Programs Section */}
       <section id="programs" className="relative overflow-hidden px-3 py-8">
