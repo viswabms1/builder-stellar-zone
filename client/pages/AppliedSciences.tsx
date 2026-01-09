@@ -6,18 +6,23 @@ import {
   Award,
   Beaker,
   BookOpen,
+  Brain,
   CalendarDays,
   ChevronRight,
+  Cpu,
   Download,
   FileText,
   FlaskConical,
   GraduationCap,
+  Lightbulb,
   Microscope,
   Network,
+  Rocket,
   ShieldCheck,
   Users,
   Volume2,
   VolumeX,
+  Zap,
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
