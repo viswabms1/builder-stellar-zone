@@ -148,7 +148,7 @@ function NoticeBoardCarousel() {
             </h3>
           </div>
           <p className="text-xs text-foreground/60 italic p-4 text-center">
-            {getTranslation(language, 'journalismPage.noItemsDisplay')}
+            {"No items to display"}
           </p>
         </div>
       );
@@ -266,14 +266,14 @@ function NoticeBoardCarousel() {
           <div>
             <h2 className="headline-2 mb-3 font-display">
               <span className="text-foreground">
-                {getTranslation(language, 'journalismPage.title')}{" "}
+                {"School of Journalism getTranslation(language, 'journalismPage.title') Mass Communication"}{" "}
               </span>
               <span className="bg-brand-gradient bg-clip-text text-transparent">
-                {getTranslation(language, 'journalismPage.noticeBoard')}
+                {"Notice Board"}
               </span>
             </h2>
             <p className="max-w-2xl text-sm text-foreground sm:text-base font-body">
-              {getTranslation(language, 'journalismPage.noticeBoardDesc')}
+              {"Stay updated with upcoming events, news, and important announcements from the school."}
             </p>
           </div>
         </div>
@@ -610,7 +610,7 @@ function HeroVideo() {
         <div className="hero-title-inside absolute bottom-0 left-0 right-0 z-20 flex items-end justify-start p-3 sm:p-6 max-w-7xl mx-auto w-full">
           <div className="max-w-2xl">
             <p className="text-lg sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-1 sm:mb-4 uppercase tracking-widest font-display">
-              {getTranslation(language, 'journalismPage.title')}
+              {"School of Journalism getTranslation(language, 'journalismPage.title') Mass Communication"}
             </p>
             <h1 className="text-xs sm:text-base md:text-base text-white/80 mb-2 sm:mb-6 leading-tight font-display">
               {getTranslation(language, 'journalismPage.tagline')}
@@ -622,7 +622,7 @@ function HeroVideo() {
       <div className="bg-background relative max-w-7xl mx-auto px-3 w-full py-6 sm:py-8">
         <div className="hero-title-outside max-w-2xl">
           <p className="text-lg sm:text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-1 sm:mb-4 uppercase tracking-widest font-display">
-            {getTranslation(language, 'journalismPage.title')}
+            {"School of Journalism getTranslation(language, 'journalismPage.title') Mass Communication"}
           </p>
           <h1 className="text-xs sm:text-base md:text-base text-foreground/80 mb-2 sm:mb-6 leading-tight font-display">
             {getTranslation(language, 'journalismPage.tagline')}
