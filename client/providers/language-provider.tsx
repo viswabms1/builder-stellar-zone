@@ -5,7 +5,7 @@ import { translatePageContent } from '@/lib/libretranslate';
 
 interface LanguageContextType {
   language: Language;
-  setLanguage: (lang: Language) => void;
+  setLanguage: (lang: Language) => Promise<void>;
   t: (key: string) => string;
 }
 
