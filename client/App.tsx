@@ -39,6 +39,7 @@ import MBA from "./pages/commerce-and-management/MBA";
 import MBAFaculty from "./pages/commerce-and-management/MBAFaculty";
 import BComBBAFaculty from "./pages/commerce-and-management/BComBBAFaculty";
 import HealthSciences from "./pages/HealthSciences";
+import Nursing from "./pages/health-sciences/Nursing";
 import MedicalEducationResearch from "./pages/MedicalEducationResearch";
 import CEE from "./pages/CEE";
 import JournalismMassComm from "./pages/JournalismMassComm";
