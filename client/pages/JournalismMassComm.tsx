@@ -683,13 +683,13 @@ export default function JournalismMassComm() {
           <div className="mb-16">
             <div className="mb-8">
               <Badge className="bg-brand-magenta/15 text-brand-magenta">
-                {getTranslation(language, 'journalismPage.undergraduateProgram')}
+                {"Undergraduate Program"}
               </Badge>
               <h3 className="mt-4 font-display text-2xl md:text-3xl">
-                {getTranslation(language, 'journalismPage.bachelorDegree')}
+                {"Bachelor Degree Program"}
               </h3>
               <p className="mt-2 text-sm text-foreground font-body">
-                {getTranslation(language, 'journalismPage.bachelorDegreeDesc')}
+                {"Master multimedia storytelling across print, television, digital media and film"}
               </p>
             </div>
             <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-12">
@@ -708,7 +708,7 @@ export default function JournalismMassComm() {
         <div className="mx-auto max-w-7xl">
           <div className="mb-6 text-center">
             <h2 className="font-display text-3xl md:text-4xl">
-              {getTranslation(language, 'journalismPage.exploreMoreCJMC')}
+              {"Explore More at DSU CJMC"}
             </h2>
             <p className="mt-3 text-sm text-foreground font-body">
               {getTranslation(language, 'journalismPage.exploreMoreDesc')}
