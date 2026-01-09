@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import type { Language } from '@/lib/i18n';
 import { getTranslation } from '@/lib/i18n';
+import { translatePageContent } from '@/lib/libretranslate';
 
 interface LanguageContextType {
   language: Language;
@@ -25,6 +26,15 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     console.log('Language changed to:', lang);
     setLanguageState(lang);
     localStorage.setItem('language', lang);
+
+    // Translate entire page content if not English
+    if (lang !== 'en') {
+      setTimeout(() => {
+        translatePageContent(lang, 'en').catch(err =>
+          console.error('Translation failed:', err)
+        );
+      }, 100);
+    }
   };
 
   const t = (key: string): string => {
