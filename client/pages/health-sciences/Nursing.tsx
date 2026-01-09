@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link as RouterLink } from "react-router-dom";
 import { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -153,14 +153,23 @@ export default function Nursing() {
         </div>
       </div>
 
-      {/* Programs Offered */}
-      <section className="px-3 py-8 bg-gradient-to-r from-brand-magenta/5 via-brand-blue/5 to-brand-orange/5 border-y border-border/30">
-        <div className="max-w-6xl mx-auto">
-          <div className="mb-8">
-            <h2 className="headline-2 font-display mb-2">Programs Offered</h2>
-            <p className="text-foreground/80 font-body">Comprehensive nursing education with clinical immersion, research, and global exposure</p>
+      {/* Programs Section */}
+      <section id="programs" className="relative overflow-hidden px-3 py-8">
+        <div
+          className="pointer-events-none absolute inset-x-0 -top-32 h-64 bg-gradient-to-b from-brand-magenta/20 via-transparent to-transparent blur-3xl"
+          aria-hidden="true"
+        />
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-12">
+            <div className="max-w-3xl">
+              <h2 className="font-display text-3xl md:text-4xl">Programs Offered</h2>
+              <p className="mt-3 text-sm text-foreground font-body max-w-2xl">
+                Comprehensive nursing education with clinical immersion, research, and global exposure
+              </p>
+            </div>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {/* B.Sc Nursing */}
             <Card className="border border-border/50 bg-card/50 backdrop-blur-sm hover:shadow-lg transition-all">
               <CardHeader>
@@ -201,14 +210,14 @@ export default function Nursing() {
               </CardContent>
             </Card>
 
-            {/* Quick Facts */}
+            {/* Overview Card */}
             <Card className="border border-border/50 bg-card/50 backdrop-blur-sm">
               <CardHeader>
                 <div className="flex items-center gap-2 mb-2">
                   <Award className="w-5 h-5 text-brand-orange" />
                   <Badge className="bg-brand-orange/20 text-brand-orange border-brand-orange/30">Overview</Badge>
                 </div>
-                <CardTitle className="font-display">Why Choose DBAS Nursing?</CardTitle>
+                <CardTitle className="font-display">Why Choose DSU Nursing?</CardTitle>
               </CardHeader>
               <CardContent className="space-y-3 text-sm text-foreground font-body">
                 <p>✓ State-of-the-art simulation labs and clinical facilities</p>
@@ -223,9 +232,9 @@ export default function Nursing() {
       </section>
 
       {/* Why Choose Nursing */}
-      <section className="px-3 py-12 max-w-6xl mx-auto">
+      <section className="px-3 py-12 max-w-7xl mx-auto">
         <div className="mb-12">
-          <h2 className="headline-2 font-display mb-4">Why Choose Nursing at DSU?</h2>
+          <h2 className="font-display text-3xl md:text-4xl mb-4">Why Choose Nursing at DSU?</h2>
           <p className="text-foreground/80 font-body max-w-3xl mb-8">
             Our nursing programme prepares you to be a compassionate, competent healthcare professional with global standards and ethical responsibility.
           </p>
@@ -242,9 +251,9 @@ export default function Nursing() {
 
       {/* Career Pathways */}
       <section className="px-3 py-12 bg-gradient-to-r from-brand-magenta/5 via-brand-blue/5 to-brand-orange/5">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="mb-12">
-            <h2 className="headline-2 font-display mb-4">Career Pathways & Placements</h2>
+            <h2 className="font-display text-3xl md:text-4xl mb-4">Career Pathways & Placements</h2>
             <p className="text-foreground/80 font-body max-w-3xl">
               Our graduates are highly sought-after across India and globally. With 100% placement record, they pursue careers in clinical practice, research, education, and healthcare administration.
             </p>
@@ -262,50 +271,194 @@ export default function Nursing() {
         </div>
       </section>
 
-      {/* Contact */}
-      <section className="px-3 py-12 max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-3 gap-6">
-          <Card className="border border-brand-magenta/20 bg-brand-magenta/5">
+      {/* Related Resources */}
+      <section
+        id="related-resources"
+        className="bg-gradient-to-r from-brand-magenta/5 via-brand-blue/5 to-brand-orange/5 px-3 py-8"
+      >
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-6 text-center">
+            <h2 className="font-display text-3xl md:text-4xl">
+              Explore More at DSU Nursing
+            </h2>
+            <p className="mt-3 text-sm text-foreground font-body">
+              Discover our clinical excellence, research initiatives, placements and admission pathways
+            </p>
+          </div>
+          <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-4">
+            <a
+              href="/centre-of-excellence"
+              className="group rounded-none border border-border/40 bg-card/60 backdrop-blur-sm overflow-hidden hover:shadow-lg hover:shadow-brand-magenta/20 transition-all duration-500 hover:-translate-y-1"
+            >
+              <Card className="h-full border-0 bg-transparent">
+                <div className="relative h-32 bg-gradient-to-br from-brand-magenta/20 to-brand-magenta/10 flex items-center justify-center">
+                  <Award className="h-12 w-12 text-brand-magenta/70 group-hover:text-brand-magenta transition-colors" />
+                </div>
+                <CardHeader>
+                  <CardTitle className="font-display group-hover:text-brand-magenta transition-colors">
+                    Clinical Simulation Labs
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-foreground/80 font-body">
+                    State-of-the-art simulation labs and clinical training centers
+                  </p>
+                </CardContent>
+              </Card>
+            </a>
+
+            <a
+              href="/research"
+              className="group rounded-none border border-border/40 bg-card/60 backdrop-blur-sm overflow-hidden hover:shadow-lg hover:shadow-brand-blue/20 transition-all duration-500 hover:-translate-y-1"
+            >
+              <Card className="h-full border-0 bg-transparent">
+                <div className="relative h-32 bg-gradient-to-br from-brand-blue/20 to-brand-blue/10 flex items-center justify-center">
+                  <Microscope className="h-12 w-12 text-brand-blue/70 group-hover:text-brand-blue transition-colors" />
+                </div>
+                <CardHeader>
+                  <CardTitle className="font-display group-hover:text-brand-blue transition-colors">
+                    Research & Innovation
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-foreground/80 font-body">
+                    Faculty-led nursing research and healthcare innovation
+                  </p>
+                </CardContent>
+              </Card>
+            </a>
+
+            <a
+              href="/placements"
+              className="group rounded-none border border-border/40 bg-card/60 backdrop-blur-sm overflow-hidden hover:shadow-lg hover:shadow-brand-orange/20 transition-all duration-500 hover:-translate-y-1"
+            >
+              <Card className="h-full border-0 bg-transparent">
+                <div className="relative h-32 bg-gradient-to-br from-brand-orange/20 to-brand-orange/10 flex items-center justify-center">
+                  <GraduationCap className="h-12 w-12 text-brand-orange/70 group-hover:text-brand-orange transition-colors" />
+                </div>
+                <CardHeader>
+                  <CardTitle className="font-display group-hover:text-brand-orange transition-colors">
+                    Placements
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-foreground/80 font-body">
+                    Career pathways with leading hospitals and healthcare organizations
+                  </p>
+                </CardContent>
+              </Card>
+            </a>
+
+            <a
+              href="https://admissions.dsu.edu.in/"
+              target="_blank"
+              rel="noreferrer"
+              className="group rounded-none border border-border/40 bg-card/60 backdrop-blur-sm overflow-hidden hover:shadow-lg hover:shadow-brand-magenta/20 transition-all duration-500 hover:-translate-y-1"
+            >
+              <Card className="h-full border-0 bg-transparent">
+                <div className="relative h-32 bg-gradient-to-br from-brand-magenta/20 to-brand-magenta/10 flex items-center justify-center">
+                  <Heart className="h-12 w-12 text-brand-magenta/70 group-hover:text-brand-magenta transition-colors" />
+                </div>
+                <CardHeader>
+                  <CardTitle className="font-display group-hover:text-brand-magenta transition-colors">
+                    Admissions
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="flex flex-col gap-3">
+                  <p className="text-sm text-foreground/80 font-body">
+                    Join DSU Nursing and make a difference in healthcare
+                  </p>
+                  <span className="inline-flex items-center gap-2 text-xs font-medium text-brand-magenta group-hover:text-brand-magenta/80 transition-colors">
+                    Apply Now
+                    <ChevronRight className="h-3 w-3" />
+                  </span>
+                </CardContent>
+              </Card>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Leadership & Resources */}
+      <section className="px-3 py-8">
+        <div className="mx-auto grid max-w-5xl items-start gap-4 lg:grid-cols-2">
+          <Card className="rounded-none border border-brand-magenta/20 bg-brand-magenta/5">
             <CardHeader>
-              <CardTitle className="font-display text-lg">Contact</CardTitle>
+              <CardTitle className="font-display">Contact & Leadership</CardTitle>
             </CardHeader>
-            <CardContent className="space-y-3 text-sm font-body">
+            <CardContent className="grid gap-4 text-sm font-body text-foreground">
               <div>
-                <p className="text-foreground/70 text-xs uppercase tracking-wide">Email</p>
-                <p className="font-medium text-foreground">nursing@dsu.edu.in</p>
+                <div className="text-foreground/70 text-xs uppercase tracking-wide">
+                  Email
+                </div>
+                <div className="font-medium text-foreground">
+                  nursing@dsu.edu.in
+                </div>
               </div>
               <div>
-                <p className="text-foreground/70 text-xs uppercase tracking-wide">Phone</p>
-                <p className="font-medium text-foreground">+91-80-49092933</p>
+                <div className="text-foreground/70 text-xs uppercase tracking-wide">
+                  Phone
+                </div>
+                <div className="font-medium text-foreground">
+                  +91-80-49092933
+                </div>
+              </div>
+              <div>
+                <div className="text-foreground/70 text-xs uppercase tracking-wide">
+                  Campus Address
+                </div>
+                <div className="font-medium text-foreground">
+                  Kanakapura Road, Bengaluru, Karnataka
+                </div>
+              </div>
+              <div>
+                <div className="text-foreground/70 text-xs uppercase tracking-wide">
+                  Office Hours
+                </div>
+                <div className="font-medium text-foreground">
+                  Mon–Fri, 9:00 AM – 5:30 PM
+                </div>
               </div>
             </CardContent>
           </Card>
 
-          <Card className="border border-brand-blue/20 bg-brand-blue/5">
+          <Card className="rounded-none border border-brand-blue/20 bg-brand-blue/5">
             <CardHeader>
-              <CardTitle className="font-display text-lg">Admissions</CardTitle>
+              <CardTitle className="font-display">More Resources</CardTitle>
             </CardHeader>
-            <CardContent className="space-y-3 text-sm font-body">
-              <p>Apply for B.Sc and M.Sc Nursing programmes through the DSU admissions portal.</p>
-              <a href="https://admissions.dsu.edu.in/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-brand-magenta hover:text-brand-magenta/80 font-semibold">
-                Apply Now <ChevronRight className="h-4 w-4" />
+            <CardContent className="grid gap-3 text-sm font-body">
+              <a
+                href="https://www.dsu.edu.in/health-sciences/nursing-programs"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-brand-magenta"
+              >
+                Programs Overview
               </a>
-            </CardContent>
-          </Card>
-
-          <Card className="border border-brand-orange/20 bg-brand-orange/5">
-            <CardHeader>
-              <CardTitle className="font-display text-lg">Location</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-3 text-sm font-body">
-              <div>
-                <p className="text-foreground/70 text-xs uppercase tracking-wide">Campus</p>
-                <p className="font-medium text-foreground">Kanakapura Road, Bengaluru, Karnataka</p>
-              </div>
-              <div>
-                <p className="text-foreground/70 text-xs uppercase tracking-wide">Hours</p>
-                <p className="font-medium text-foreground">Mon–Fri, 9:00 AM – 5:30 PM</p>
-              </div>
+              <a
+                href="https://www.dsu.edu.in/health-sciences/nursing-faculty"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-brand-magenta"
+              >
+                Faculty Directory
+              </a>
+              <a
+                href="https://www.dsu.edu.in/health-sciences/nursing-library"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-brand-magenta"
+              >
+                Digital Library
+              </a>
+              <a
+                href="https://www.dsu.edu.in/health-sciences/student-hub"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-brand-magenta"
+              >
+                Student Hub
+              </a>
             </CardContent>
           </Card>
         </div>
