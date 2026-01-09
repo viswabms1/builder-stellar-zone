@@ -49,8 +49,9 @@ export default function BSc() {
           className="hero-video-container relative flex items-center justify-start"
         >
           <img
-            src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fd044958c77f54da59928341e747ad4db?format=webp&width=1920"
+            src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fd044958c77f54da59928341e747ad4db?format=webp&width=1200"
             alt="Bachelor of Science Program"
+            loading="lazy"
             style={{
               position: "absolute",
               top: 0,
