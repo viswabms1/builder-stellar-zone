@@ -323,7 +323,7 @@ const HERO_IMAGE =
 
 const UG_PROGRAM_CARDS: ProgramCard[] = [
   {
-    name: "B.Sc (3 Year Triple Major)",
+    name: "Bachelor of Science",
     area: "Interdisciplinary Sciences",
     description:
       "Innovative triple major programme combining core science disciplines, allowing students to specialise in multiple areas for enhanced flexibility and career opportunities.",
@@ -346,7 +346,7 @@ const UG_PROGRAM_CARDS: ProgramCard[] = [
 
 const PG_PROGRAM_CARDS: ProgramCard[] = [
   {
-    name: "M.Sc Specializations",
+    name: "Master of Science",
     area: "Advanced Life Sciences",
     description:
       "Specialized Master of Science programmes offering in-depth study and research opportunities with thesis work and industry collaboration.",
