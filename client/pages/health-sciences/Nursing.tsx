@@ -344,9 +344,11 @@ export default function Nursing() {
                   </div>
 
                   <div className="pt-2">
-                    <Button variant="link" className="text-brand-blue p-0 h-auto font-semibold">
-                      View Details <ChevronRight className="w-4 h-4 ml-1" />
-                    </Button>
+                    <RouterLink to="/academics/health-sciences/msc-nursing">
+                      <Button variant="link" className="text-brand-blue p-0 h-auto font-semibold">
+                        View Details <ChevronRight className="w-4 h-4 ml-1" />
+                      </Button>
+                    </RouterLink>
                   </div>
                 </CardContent>
               </Card>

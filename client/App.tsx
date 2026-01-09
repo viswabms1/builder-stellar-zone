@@ -40,6 +40,9 @@ import MBAFaculty from "./pages/commerce-and-management/MBAFaculty";
 import BComBBAFaculty from "./pages/commerce-and-management/BComBBAFaculty";
 import HealthSciences from "./pages/HealthSciences";
 import Nursing from "./pages/health-sciences/Nursing";
+import BScNursing from "./pages/health-sciences/BScNursing";
+import PBBScNursing from "./pages/health-sciences/PBBScNursing";
+import MScNursing from "./pages/health-sciences/MScNursing";
 import MedicalEducationResearch from "./pages/MedicalEducationResearch";
 import CEE from "./pages/CEE";
 import JournalismMassComm from "./pages/JournalismMassComm";
@@ -506,6 +509,18 @@ function App() {
                 <Route
                   path="/academics/health-sciences/nursing"
                   element={<Nursing />}
+                />
+                <Route
+                  path="/academics/health-sciences/bsc-nursing"
+                  element={<BScNursing />}
+                />
+                <Route
+                  path="/academics/health-sciences/pb-bsc-nursing"
+                  element={<PBBScNursing />}
+                />
+                <Route
+                  path="/academics/health-sciences/msc-nursing"
+                  element={<MScNursing />}
                 />
                 <Route
                   path="/academics/medical-education-research"
