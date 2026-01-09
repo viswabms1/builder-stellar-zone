@@ -292,6 +292,8 @@ export default function Index() {
   const [rotationProgress, setRotationProgress] = useState(100);
   const [selectedEventIndex, setSelectedEventIndex] = useState(0);
   const [isEventInteracting, setIsEventInteracting] = useState(false);
+  const [eventTransitioning, setEventTransitioning] = useState(false);
+  const [eventRotationProgress, setEventRotationProgress] = useState(100);
   const [selectedPublicationIndex, setSelectedPublicationIndex] = useState(0);
   const [isPublicationInteracting, setIsPublicationInteracting] =
     useState(false);
