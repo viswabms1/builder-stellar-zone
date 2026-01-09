@@ -318,25 +318,38 @@ export default function Nursing() {
               <h3 className="font-display text-2xl">M.Sc Nursing Programs</h3>
             </div>
             <div className="grid gap-6 md:grid-cols-2">
-            {/* M.Sc Nursing */}
-            <Card className="border border-border/50 bg-card/50 backdrop-blur-sm hover:shadow-lg transition-all h-full">
-              <CardHeader>
-                <div className="flex items-center gap-2 mb-2">
-                  <BookOpen className="w-5 h-5 text-brand-blue" />
-                  <Badge className="bg-brand-blue/20 text-brand-blue border-brand-blue/30">Postgraduate</Badge>
-                </div>
-                <CardTitle className="font-display">M.Sc Nursing</CardTitle>
-                <CardDescription className="font-body">2-Year Program</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-3">
-                <p className="text-sm text-foreground font-body">Leadership-oriented specialisations:</p>
-                <div className="flex flex-wrap gap-2">
-                  {["Clinical Excellence", "Nursing Education", "Research Thesis", "Healthcare Administration", "Leadership Development"].map((spec, i) => (
-                    <Badge key={i} variant="secondary" className="text-xs">{spec}</Badge>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
+              {/* M.Sc Nursing */}
+              <Card className="border border-border/50 bg-card/50 backdrop-blur-sm hover:shadow-lg transition-all h-full">
+                <CardHeader>
+                  <div className="flex items-center gap-2 mb-2">
+                    <BookOpen className="w-5 h-5 text-brand-blue" />
+                    <Badge className="bg-brand-blue/20 text-brand-blue border-brand-blue/30">Postgraduate</Badge>
+                  </div>
+                  <CardTitle className="font-display">M.Sc Nursing</CardTitle>
+                  <CardDescription className="font-body">2-Year Program</CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div>
+                    <h4 className="text-xs font-semibold uppercase tracking-wider text-brand-blue mb-1">Eligibility</h4>
+                    <p className="text-sm text-foreground/80 font-body leading-relaxed">
+                      Candidates should have passed BSc/PC BSc/PB BSc Nursing recognized by the Indian Nursing Council and a minimum of 55% marks in aggregate.
+                    </p>
+                    <p className="text-sm text-foreground/80 font-body leading-relaxed mt-2">
+                      <span className="font-semibold">Experience:</span> Applicants must have 1 year of experience after BSc Nursing in a hospital or in a community health program or in a school or college of nursing. PB BSc Degree holders need to have one year experience either before or after Post Basic BSc Nursing degree.
+                    </p>
+                  </div>
+                  <div>
+                    <h4 className="text-xs font-semibold uppercase tracking-wider text-brand-blue mb-1">Duration</h4>
+                    <p className="text-sm text-foreground/80 font-body">2 Years</p>
+                  </div>
+
+                  <div className="pt-2">
+                    <Button variant="link" className="text-brand-blue p-0 h-auto font-semibold">
+                      View Details <ChevronRight className="w-4 h-4 ml-1" />
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
 
             {/* Overview Card */}
             <Card className="border border-border/50 bg-card/50 backdrop-blur-sm h-full">
