@@ -3,7 +3,7 @@ import { useTheme } from '@/providers/theme-provider';
 import { getLanguageLabel } from '@/lib/i18n';
 import type { Language } from '@/lib/i18n';
 import { ChevronDown } from 'lucide-react';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 
 const LANGUAGES: Language[] = ['en', 'kn', 'hi'];
@@ -18,14 +18,20 @@ export default function LanguageSwitcher() {
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
         setIsOpen(false);
       }
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
+    if (isOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+      return () =>
+        document.removeEventListener('mousedown', handleClickOutside);
+    }
+  }, [isOpen]);
 
   useEffect(() => {
     if (buttonRef.current && isOpen) {
@@ -38,63 +44,56 @@ export default function LanguageSwitcher() {
   }, [isOpen]);
 
   return (
-    <div className="relative" ref={dropdownRef}>
+    <div ref={dropdownRef}>
       <button
         ref={buttonRef}
+        onClick={() => setIsOpen(!isOpen)}
         className={`text-xs font-medium transition-colors whitespace-nowrap flex items-center gap-1 ${
           theme === 'light'
             ? 'text-gray-600 hover:text-orange-600'
             : 'text-white/80 hover:text-white'
         }`}
-        onClick={() => setIsOpen(!isOpen)}
       >
         <span>{getLanguageLabel(language)}</span>
         <ChevronDown className="w-3 h-3" />
       </button>
 
-      {isOpen && createPortal(
-        <div
-          className={`fixed w-48 rounded-xl shadow-lg border z-[9999] ${
-            theme === 'light'
-              ? 'bg-white border-orange-200'
-              : 'bg-slate-900 border-slate-700'
-          }`}
-          style={{
-            top: `${dropdownPos.top + 8}px`,
-            right: `${dropdownPos.right}px`
-          }}
-        >
-          {LANGUAGES.map((lang, idx) => {
-            const isSelected = language === lang;
-            return (
+      {isOpen &&
+        createPortal(
+          <div
+            className={`fixed w-48 rounded-xl shadow-lg border z-[9999] ${
+              theme === 'light'
+                ? 'bg-white border-orange-200'
+                : 'bg-slate-900 border-slate-700'
+            }`}
+            style={{
+              top: `${dropdownPos.top + 8}px`,
+              right: `${dropdownPos.right}px`
+            }}
+          >
+            {LANGUAGES.map((lang, idx) => (
               <button
                 key={lang}
-                type="button"
-                onClick={(e) => {
-                  console.log('Language button clicked:', lang);
-                  e.preventDefault();
-                  e.stopPropagation();
+                onClick={() => {
                   setLanguage(lang);
                   setIsOpen(false);
                 }}
                 className={`w-full text-left px-4 py-3 text-sm font-medium transition-colors ${
-                  isSelected
+                  language === lang
                     ? 'bg-orange-500 text-white'
                     : theme === 'light'
-                    ? 'text-gray-700 hover:bg-orange-100 cursor-pointer'
-                    : 'text-slate-200 hover:bg-slate-800 cursor-pointer'
+                    ? 'text-gray-700 hover:bg-orange-100'
+                    : 'text-slate-200 hover:bg-slate-800'
                 } ${idx === 0 ? 'rounded-t-lg' : ''} ${
                   idx === LANGUAGES.length - 1 ? 'rounded-b-lg' : ''
                 }`}
-                style={{ pointerEvents: 'auto' }}
               >
                 {getLanguageLabel(lang)}
               </button>
-            );
-          })}
-        </div>,
-        document.body
-      )}
+            ))}
+          </div>,
+          document.body
+        )}
     </div>
   );
 }
