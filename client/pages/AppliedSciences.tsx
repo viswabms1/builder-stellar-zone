@@ -779,7 +779,7 @@ export default function AppliedSciences() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-foreground/80 font-body">
-                    Advanced research labs and innovation initiatives
+                    Advanced research labs with NVIDIA GPU-accelerated infrastructure for life sciences research
                   </p>
                 </CardContent>
               </Card>
@@ -795,13 +795,12 @@ export default function AppliedSciences() {
                 </div>
                 <CardHeader>
                   <CardTitle className="font-display group-hover:text-brand-blue transition-colors">
-                    Research & Innovation
+                    NVIDIA-Powered Research
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-foreground/80 font-body">
-                    Faculty-led research projects and student research
-                    opportunities
+                    Cutting-edge research in biotechnology, biochemistry and molecular sciences using GPU-accelerated computing
                   </p>
                 </CardContent>
               </Card>
