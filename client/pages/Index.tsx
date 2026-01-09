@@ -636,7 +636,7 @@ export default function Index() {
           {/* Title Section - Top on mobile */}
           <div className="max-w-4xl pt-2 md:pt-0 md:pb-12">
             <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-2 sm:mb-3 md:mb-4 leading-tight font-display">
-              Dayananda Sagar University
+              {t("hero.universityName") || "Dayananda Sagar University"}
             </h1>
             <p className="text-base sm:text-xl md:text-2xl lg:text-3xl font-semibold text-white mb-1 sm:mb-2 md:mb-6 leading-tight font-display hidden sm:block">
               {t("hero.mainHeading") || "India's AI First University"}
