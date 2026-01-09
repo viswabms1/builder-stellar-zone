@@ -685,14 +685,13 @@ export default function JournalismMassComm() {
           <div className="mb-16">
             <div className="mb-8">
               <Badge className="bg-brand-magenta/15 text-brand-magenta">
-                Undergraduate Program
+                {getTranslation(language, 'journalismPage.undergraduateProgram')}
               </Badge>
               <h3 className="mt-4 font-display text-2xl md:text-3xl">
-                Bachelor Degree Program
+                {getTranslation(language, 'journalismPage.bachelorDegree')}
               </h3>
               <p className="mt-2 text-sm text-foreground font-body">
-                Master multimedia storytelling across print, television, digital
-                media and film
+                {getTranslation(language, 'journalismPage.bachelorDegreeDesc')}
               </p>
             </div>
             <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-12">
