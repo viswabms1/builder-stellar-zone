@@ -439,7 +439,7 @@ function ProgramCardComponent({ program, language }: { program: ProgramCard; lan
               </p>
             </div>
             <div className="flex flex-wrap gap-2">
-              {getTranslation(language, 'journalismPage.highlights').split(', ').map((item) => (
+              {["Multimedia Storytelling", "Broadcast Production", "Digital Media"].map((item) => (
                 <span
                   key={item}
                   className="rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs uppercase tracking-wide text-white/85"
