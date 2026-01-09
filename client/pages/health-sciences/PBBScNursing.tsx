@@ -1,5 +1,4 @@
-import { useState, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -16,12 +15,7 @@ import {
   Download,
   CalendarDays,
   Zap,
-  Activity,
-  Syringe,
-  Volume2,
-  VolumeX,
 } from "lucide-react";
-import { useAutoMuteOnScroll } from "@/hooks/useAutoMuteOnScroll";
 
 export default function PBBScNursing() {
   const specializations = [
