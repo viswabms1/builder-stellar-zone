@@ -259,16 +259,26 @@ export default function Nursing() {
                   <CardTitle className="font-display">Basic B.Sc Nursing</CardTitle>
                   <CardDescription className="font-body">4-Year Program</CardDescription>
                 </CardHeader>
-                <CardContent className="space-y-3">
-                  <p className="text-sm text-foreground font-body">Foundational nursing education covering:</p>
-                  <div className="flex flex-wrap gap-2">
-                    {["Anatomy & Physiology", "Nursing Foundations", "Community Health", "Midwifery", "Child Health Nursing"].map((spec, i) => (
-                      <Badge key={i} variant="secondary" className="text-xs">{spec}</Badge>
-                    ))}
+                <CardContent className="space-y-4">
+                  <div>
+                    <h4 className="text-xs font-semibold uppercase tracking-wider text-brand-magenta mb-1">Eligibility</h4>
+                    <p className="text-sm text-foreground/80 font-body leading-relaxed">
+                      Pass in 10+2, A Level, IB, American 12th grade or equivalent with Physics, Chemistry, Biology and English and a minimum of 45% marks taken together in Physics, Chemistry, Biology and English.
+                    </p>
                   </div>
-                  <Button variant="link" className="text-brand-magenta p-0 h-auto font-semibold">
-                    View Details <ChevronRight className="w-4 h-4 ml-1" />
-                  </Button>
+                  <div>
+                    <h4 className="text-xs font-semibold uppercase tracking-wider text-brand-magenta mb-1">Duration</h4>
+                    <p className="text-sm text-foreground/80 font-body">4 Years</p>
+                  </div>
+
+                  <div className="pt-2">
+                    <p className="text-sm text-foreground font-body mb-2">Foundational nursing education covering:</p>
+                    <div className="flex flex-wrap gap-2">
+                      {["Anatomy & Physiology", "Nursing Foundations", "Community Health", "Midwifery", "Child Health Nursing"].map((spec, i) => (
+                        <Badge key={i} variant="secondary" className="text-xs">{spec}</Badge>
+                      ))}
+                    </div>
+                  </div>
                 </CardContent>
               </Card>
 
@@ -282,16 +292,26 @@ export default function Nursing() {
                   <CardTitle className="font-display">Post Basic B.Sc Nursing</CardTitle>
                   <CardDescription className="font-body">2-Year Program</CardDescription>
                 </CardHeader>
-                <CardContent className="space-y-3">
-                  <p className="text-sm text-foreground font-body">Advanced nursing for diploma holders:</p>
-                  <div className="flex flex-wrap gap-2">
-                    {["Advanced Medical-Surgical", "Mental Health Nursing", "Nursing Education", "Research & Statistics"].map((spec, i) => (
-                      <Badge key={i} variant="secondary" className="text-xs">{spec}</Badge>
-                    ))}
+                <CardContent className="space-y-4">
+                  <div>
+                    <h4 className="text-xs font-semibold uppercase tracking-wider text-brand-magenta mb-1">Eligibility</h4>
+                    <p className="text-sm text-foreground/80 font-body leading-relaxed">
+                      Pass in GNM after 10+2 or equivalent examination preferably with Science subjects with 50% marks in aggregate. Candidates should be a registered Nurse and registered Midwife or equivalent with any State Nursing Registration Council. Candidates should have completed their GNM course.
+                    </p>
                   </div>
-                  <Button variant="link" className="text-brand-magenta p-0 h-auto font-semibold">
-                    View Details <ChevronRight className="w-4 h-4 ml-1" />
-                  </Button>
+                  <div>
+                    <h4 className="text-xs font-semibold uppercase tracking-wider text-brand-magenta mb-1">Duration</h4>
+                    <p className="text-sm text-foreground/80 font-body">2 Years</p>
+                  </div>
+
+                  <div className="pt-2">
+                    <p className="text-sm text-foreground font-body mb-2">Advanced nursing for diploma holders:</p>
+                    <div className="flex flex-wrap gap-2">
+                      {["Advanced Medical-Surgical", "Mental Health Nursing", "Nursing Education", "Research & Statistics"].map((spec, i) => (
+                        <Badge key={i} variant="secondary" className="text-xs">{spec}</Badge>
+                      ))}
+                    </div>
+                  </div>
                 </CardContent>
               </Card>
             </div>
