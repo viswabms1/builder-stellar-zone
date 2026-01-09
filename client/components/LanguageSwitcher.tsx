@@ -1,6 +1,7 @@
 import { useTheme } from '@/providers/theme-provider';
 import { ChevronDown } from 'lucide-react';
 import { useState, useRef, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 
 declare global {
   interface Window {
@@ -12,17 +13,31 @@ export default function LanguageSwitcher() {
   const { theme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  const [dropdownPos, setDropdownPos] = useState({ top: 0, right: 0 });
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        setIsOpen(false);
+        if (buttonRef.current && !buttonRef.current.contains(event.target as Node)) {
+          setIsOpen(false);
+        }
       }
     };
 
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
+
+  useEffect(() => {
+    if (buttonRef.current && isOpen) {
+      const rect = buttonRef.current.getBoundingClientRect();
+      setDropdownPos({
+        top: rect.bottom + window.scrollY,
+        right: window.innerWidth - rect.right
+      });
+    }
+  }, [isOpen]);
 
   const handleLanguageSelect = (langCode: string) => {
     // Get the language select element from Google Translate
@@ -42,8 +57,9 @@ export default function LanguageSwitcher() {
   ];
 
   return (
-    <div className="relative" ref={dropdownRef}>
+    <div ref={dropdownRef}>
       <button
+        ref={buttonRef}
         className={`text-xs font-medium transition-colors whitespace-nowrap flex items-center gap-1 ${
           theme === 'light'
             ? 'text-gray-600 hover:text-orange-600'
@@ -55,15 +71,20 @@ export default function LanguageSwitcher() {
         <ChevronDown className="w-3 h-3" />
       </button>
 
-      {isOpen && (
+      {isOpen && createPortal(
         <div
-          className={`absolute top-full right-0 w-48 mt-2 rounded-xl shadow-lg border z-[9999] ${
+          className={`fixed rounded-lg shadow-lg border z-[9999] ${
             theme === 'light'
               ? 'bg-white border-orange-200'
               : 'bg-slate-900 border-slate-700'
           }`}
+          style={{
+            top: `${dropdownPos.top + 8}px`,
+            right: `${dropdownPos.right}px`,
+            minWidth: '160px'
+          }}
         >
-          {languages.map((lang) => (
+          {languages.map((lang, idx) => (
             <button
               key={lang.code}
               onClick={() => handleLanguageSelect(lang.code)}
@@ -71,14 +92,15 @@ export default function LanguageSwitcher() {
                 theme === 'light'
                   ? 'text-gray-700 hover:bg-orange-100'
                   : 'text-slate-200 hover:bg-slate-800'
-              } ${lang.code === languages[0].code ? 'rounded-t-lg' : ''} ${
-                lang.code === languages[languages.length - 1].code ? 'rounded-b-lg' : ''
+              } ${idx === 0 ? 'rounded-t-lg' : ''} ${
+                idx === languages.length - 1 ? 'rounded-b-lg' : ''
               }`}
             >
               {lang.label}
             </button>
           ))}
-        </div>
+        </div>,
+        document.body
       )}
     </div>
   );
