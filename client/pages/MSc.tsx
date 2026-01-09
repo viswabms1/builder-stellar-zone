@@ -487,7 +487,7 @@ function CurriculumLibrary() {
               </span>
             </h2>
             <p className="max-w-2xl text-sm text-foreground sm:text-base font-body">
-              Access comprehensive curriculum documentation, course structures, learning outcomes, and downloadable syllabus for the M.Sc Specializations programs.
+              Access comprehensive curriculum documentation for each specialization. Select any specialization below to view its course structure, learning outcomes, and downloadable syllabus.
             </p>
           </div>
           <Badge className="w-fit rounded-full bg-brand-orange/15 px-4 py-2 text-xs font-semibold text-brand-orange border border-brand-orange/20">
