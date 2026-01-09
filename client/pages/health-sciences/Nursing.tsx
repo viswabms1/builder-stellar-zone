@@ -80,10 +80,10 @@ const PG_PROGRAM_CARDS: ProgramCard[] = [
   {
     name: "M.Sc Nursing",
     area: "Postgraduate",
-    description: "2-Year Program specializing in advanced nursing practice, research, and healthcare leadership.",
+    description: "2-Year advanced nursing program. Specializations: Medical Surgical Nursing, Child Health Nursing, Mental Health Nursing, Obstetrics and Gynecological Nursing, and Psychiatric Nursing. Designed to equip advanced clinical skills and enable independent practice as advanced nurse practitioners or researchers.",
     image: "https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=1600&auto=format&fit=crop",
     link: "/academics/health-sciences/msc-nursing",
-    highlights: ["2 Years", "Specializations", "Research Focus"],
+    highlights: ["Medical Surgical", "Child Health", "Mental Health", "OB-GYN", "Psychiatric Nursing"],
     overlay: "bg-gradient-to-br from-brand-magenta/70 via-black/70 to-black/55 mix-blend-multiply",
     badgeClass: "bg-brand-magenta/30 text-foreground/90 border border-white/25 backdrop-blur",
     panelClass: "bg-black/55 backdrop-blur-xl",
