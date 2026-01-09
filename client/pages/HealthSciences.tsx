@@ -661,7 +661,7 @@ function HeroVideo() {
         className="hero-video-container relative flex items-center justify-start"
       >
         <img
-          src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F32b423e6548c4718ae3c444cc2c25f09?format=webp&width=800"
+          src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F9e87377449e3447f8c28ad6d3cbc7823?format=webp&width=800"
           alt="School of Health Sciences"
           className="absolute inset-0 object-cover w-full h-full"
           style={{
