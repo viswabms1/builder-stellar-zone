@@ -15,7 +15,6 @@ export default function Navigation() {
   const [expandedSubGroups, setExpandedSubGroups] = useState<Set<string>>(new Set());
   const [searchOpen, setSearchOpen] = useState(false);
   const location = useLocation();
-  const { t } = useLanguage();
   const { theme } = useTheme();
 
   const toggleSubGroup = (schoolName: string, groupName: string) => {
