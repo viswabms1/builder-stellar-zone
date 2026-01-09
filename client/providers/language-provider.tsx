@@ -81,6 +81,28 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     };
   }, [language]);
 
+  const triggerTranslation = () => {
+    if (language !== 'en') {
+      setIsTranslating(true);
+
+      if (translationTimeoutRef.current) {
+        clearTimeout(translationTimeoutRef.current);
+      }
+
+      translationTimeoutRef.current = setTimeout(() => {
+        translateDOMContent(language, 'en')
+          .then(() => {
+            console.log('Page translation triggered');
+            setIsTranslating(false);
+          })
+          .catch((err) => {
+            console.error('Translation failed:', err);
+            setIsTranslating(false);
+          });
+      }, 300);
+    }
+  };
+
   const setLanguage = (lang: Language) => {
     console.log('Language changed to:', lang);
     setLanguageState(lang);
@@ -116,7 +138,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   };
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t, isTranslating }}>
+    <LanguageContext.Provider value={{ language, setLanguage, t, isTranslating, triggerTranslation }}>
       {children}
     </LanguageContext.Provider>
   );
