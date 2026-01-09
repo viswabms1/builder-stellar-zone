@@ -543,6 +543,14 @@ function App() {
                   element={<AppliedSciences />}
                 />
                 <Route
+                  path="/academics/basic-applied-sciences/bsc-triple-major"
+                  element={<BSc />}
+                />
+                <Route
+                  path="/academics/basic-applied-sciences/msc-specializations"
+                  element={<MSc />}
+                />
+                <Route
                   path="/academics/engineering/computer-science"
                   element={<DeptCSE />}
                 />
