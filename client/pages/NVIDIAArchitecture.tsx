@@ -22,8 +22,6 @@ import {
 import { Link } from "react-router-dom";
 
 export default function NVIDIAArchitecture() {
-  const { t } = useLanguage();
-
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* DSU's NVIDIA Architecture */}
