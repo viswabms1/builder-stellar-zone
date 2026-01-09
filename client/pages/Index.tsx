@@ -1130,7 +1130,7 @@ export default function Index() {
                   >
                     <div className="flex gap-4">
                       <div className="flex-shrink-0">
-                        <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-brand-orange/10 text-brand-orange font-bold text-sm font-display">
+                        <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-brand-orange/10 text-brand-orange font-bold text-sm font-display event-calendar-icon group-hover:bg-brand-orange/20 transition-all duration-300">
                           <CalendarDays className="w-5 h-5" />
                         </div>
                       </div>
