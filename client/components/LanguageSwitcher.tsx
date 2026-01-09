@@ -12,8 +12,9 @@ export default function LanguageSwitcher() {
   const { language, setLanguage } = useLanguage();
   const { theme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
-  const [isTranslating, setIsTranslating] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  const [dropdownPos, setDropdownPos] = useState({ top: 0, right: 0 });
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -26,9 +27,6 @@ export default function LanguageSwitcher() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  const [dropdownPos, setDropdownPos] = useState({ top: 0, right: 0 });
-  const buttonRef = useRef<HTMLButtonElement>(null);
-
   useEffect(() => {
     if (buttonRef.current && isOpen) {
       const rect = buttonRef.current.getBoundingClientRect();
@@ -38,17 +36,6 @@ export default function LanguageSwitcher() {
       });
     }
   }, [isOpen]);
-
-  const handleLanguageSelect = async (lang: Language) => {
-    console.log('handleLanguageSelect called with:', lang);
-    try {
-      await setLanguage(lang);
-      console.log('Language changed successfully');
-      setIsOpen(false);
-    } catch (error) {
-      console.error('Failed to change language:', error);
-    }
-  };
 
   return (
     <div className="relative" ref={dropdownRef}>
@@ -77,26 +64,34 @@ export default function LanguageSwitcher() {
             right: `${dropdownPos.right}px`
           }}
         >
-          {LANGUAGES.map((lang) => (
-            <button
-              key={lang}
-              onClick={() => handleLanguageSelect(lang)}
-              disabled={isTranslating}
-              className={`w-full text-left px-4 py-3 text-sm font-medium transition-colors ${
-                isTranslating ? 'opacity-50 cursor-not-allowed' : ''
-              } ${
-                language === lang
-                  ? 'bg-orange-500 text-white'
-                  : theme === 'light'
-                  ? 'text-gray-700 hover:bg-orange-100'
-                  : 'text-slate-200 hover:bg-slate-800'
-              } ${lang === LANGUAGES[0] ? 'rounded-t-lg' : ''} ${
-                lang === LANGUAGES[LANGUAGES.length - 1] ? 'rounded-b-lg' : ''
-              }`}
-            >
-              {getLanguageLabel(lang)}
-            </button>
-          ))}
+          {LANGUAGES.map((lang, idx) => {
+            const isSelected = language === lang;
+            return (
+              <button
+                key={lang}
+                type="button"
+                onClick={(e) => {
+                  console.log('Language button clicked:', lang);
+                  e.preventDefault();
+                  e.stopPropagation();
+                  setLanguage(lang);
+                  setIsOpen(false);
+                }}
+                className={`w-full text-left px-4 py-3 text-sm font-medium transition-colors ${
+                  isSelected
+                    ? 'bg-orange-500 text-white'
+                    : theme === 'light'
+                    ? 'text-gray-700 hover:bg-orange-100 cursor-pointer'
+                    : 'text-slate-200 hover:bg-slate-800 cursor-pointer'
+                } ${idx === 0 ? 'rounded-t-lg' : ''} ${
+                  idx === LANGUAGES.length - 1 ? 'rounded-b-lg' : ''
+                }`}
+                style={{ pointerEvents: 'auto' }}
+              >
+                {getLanguageLabel(lang)}
+              </button>
+            );
+          })}
         </div>,
         document.body
       )}
