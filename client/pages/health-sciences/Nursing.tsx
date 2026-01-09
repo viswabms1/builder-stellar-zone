@@ -252,7 +252,7 @@ export default function Nursing() {
       </section>
 
       {/* Career Pathways */}
-      <section className="px-3 py-12 bg-gradient-to-r from-brand-magenta/5 via-brand-blue/5 to-brand-orange/5">
+      <section className="px-3 py-8 bg-gradient-to-r from-brand-magenta/5 via-brand-blue/5 to-brand-orange/5">
         <div className="max-w-7xl mx-auto">
           <div className="mb-12">
             <h2 className="font-display text-3xl md:text-4xl mb-4">Career Pathways & Placements</h2>
