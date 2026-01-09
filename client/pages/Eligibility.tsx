@@ -850,6 +850,10 @@ const importantNotes = [
 ];
 
 export default function Eligibility() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="bg-background text-foreground">
       <HeroSection />
