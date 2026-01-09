@@ -652,65 +652,47 @@ export default function HealthSciences() {
       {/* Dean's Message Section */}
       <DeanSection dean={DEAN_INFO} />
 
-      <section id="programs" className="relative overflow-hidden px-3 py-8">
+      <section id="colleges" className="relative overflow-hidden px-3 py-8">
         <div
           className="pointer-events-none absolute inset-x-0 -top-32 h-64 bg-gradient-to-b from-brand-magenta/20 via-transparent to-transparent blur-3xl"
           aria-hidden="true"
         />
         <div className="mx-auto max-w-7xl">
-          <div className="mb-6">
-            <div className="max-w-3xl">
-              <h2 className="font-display text-3xl md:text-4xl">
-                Academic Pathways in Health Sciences
-              </h2>
-              <p className="mt-3 text-sm text-foreground font-body">
-                Comprehensive undergraduate and postgraduate programmes
-                combining rigorous academics with clinical immersion, research
-                and mentorship to prepare compassionate healthcare
-                professionals.
-              </p>
-            </div>
-          </div>
-
-          {/* Undergraduate Programs */}
           <div className="mb-8">
-            <div className="mb-8">
-              <Badge className="bg-brand-magenta/15 text-brand-magenta">
-                Undergraduate Programs
-              </Badge>
-              <h3 className="mt-4 font-display text-2xl md:text-3xl">
-                Bachelor Degree Programs
-              </h3>
-              <p className="mt-2 text-sm text-foreground font-body">
-                Build foundation in nursing, pharmacy, physiotherapy and allied
-                health sciences
+            <div className="max-w-3xl">
+              <h2 className="font-display text-3xl md:text-4xl mb-3">
+                Our Colleges
+              </h2>
+              <p className="mt-3 text-sm text-foreground font-body max-w-2xl">
+                The School of Health Sciences affiliated with Dayananda Sagar University provides comprehensive education in the health sector and focuses on the betterment of the Healthcare System.
               </p>
-            </div>
-            <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-12">
-              {UG_PROGRAM_CARDS.map((program) => (
-                <ProgramCardComponent key={program.name} program={program} />
-              ))}
             </div>
           </div>
 
-          {/* Postgraduate Programs */}
-          <div>
-            <div className="mb-8">
-              <Badge className="bg-brand-blue/15 text-brand-blue">
-                Postgraduate Programs
-              </Badge>
-              <h3 className="mt-4 font-display text-2xl md:text-3xl">
-                Master Degree Programs
-              </h3>
-              <p className="mt-2 text-sm text-foreground font-body">
-                Advance into research, specialisation and clinical leadership
-              </p>
-            </div>
-            <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-12">
-              {PG_PROGRAM_CARDS.map((program) => (
-                <ProgramCardComponent key={program.name} program={program} />
-              ))}
-            </div>
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            {COLLEGE_CARDS.map((college) => {
+              const IconComponent = college.icon;
+              return (
+                <Card key={college.id} className={`rounded-lg border ${college.bgColor} bg-transparent`}>
+                  <CardHeader>
+                    <div className="flex items-start justify-between gap-2 mb-3">
+                      <IconComponent className={`h-8 w-8 ${college.color} flex-shrink-0`} />
+                    </div>
+                    <CardTitle className="font-display text-lg leading-tight">
+                      {college.name}
+                    </CardTitle>
+                    <CardDescription className="text-xs font-semibold text-foreground/70 mt-2">
+                      {college.collegeName}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-foreground/80 font-body">
+                      {college.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>
