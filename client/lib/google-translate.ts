@@ -1,6 +1,9 @@
 const API_KEY = import.meta.env.VITE_GOOGLE_TRANSLATE_API_KEY;
 const API_URL = 'https://translation.googleapis.com/language/translate/v2';
 
+// Log API key status on module load
+console.log('Google Translate API Key Status:', API_KEY ? 'Configured' : 'NOT CONFIGURED');
+
 interface TranslateResponse {
   data: {
     translations: Array<{
@@ -15,7 +18,7 @@ export async function translateText(
   sourceLanguage: string = 'en'
 ): Promise<string> {
   if (!API_KEY) {
-    console.error('Google Translate API key not configured');
+    console.error('❌ Google Translate API key not configured. Set VITE_GOOGLE_TRANSLATE_API_KEY environment variable.');
     return text;
   }
 
