@@ -634,13 +634,13 @@ export default function Index() {
           {/* Title Section - Top on mobile */}
           <div className="max-w-4xl pt-2 md:pt-0 md:pb-12">
             <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-2 sm:mb-3 md:mb-4 leading-tight font-display">
-              {t("hero.universityName") || "Dayananda Sagar University"}
+              Dayananda Sagar University
             </h1>
             <p className="text-base sm:text-xl md:text-2xl lg:text-3xl font-semibold text-white mb-1 sm:mb-2 md:mb-6 leading-tight font-display hidden sm:block">
-              {t("hero.mainHeading") || "India's AI First University"}
+              India's AI First University
             </p>
             <p className="text-sm sm:text-lg md:text-xl lg:text-2xl font-medium text-white/90 hidden sm:block font-display">
-              {t("hero.subheading") || "Powered by NVIDIA"}
+              Powered by NVIDIA
             </p>
           </div>
 
@@ -657,7 +657,7 @@ export default function Index() {
                   size="lg"
                   className="bg-white hover:bg-white/90 text-orange-600 hover:text-orange-700 px-4 sm:px-8 py-2 sm:py-6 text-xs sm:text-base font-semibold font-display transition-all duration-300 group border-2 border-white"
                 >
-                  {t("hero.applyToday") || "Apply Today"}
+                  Apply Today
                   <ArrowRight className="w-3 sm:w-5 h-3 sm:h-5 ml-1 sm:ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </a>
@@ -671,7 +671,7 @@ export default function Index() {
                   size="lg"
                   className="bg-white hover:bg-white/90 text-black hover:text-black px-4 sm:px-8 py-2 sm:py-6 text-xs sm:text-base font-semibold font-display transition-all duration-300 group border-2 border-white"
                 >
-                  {t("hero.virtualTour") || "Virtual Tour"}
+                  Virtual Tour
                 </Button>
               </a>
             </div>
@@ -683,7 +683,7 @@ export default function Index() {
                 size="lg"
                 className="bg-white hover:bg-white/90 text-black hover:text-black px-4 sm:px-8 py-2 sm:py-6 text-xs sm:text-base font-semibold font-display transition-all duration-300 group border-2 border-white"
               >
-                {t("hero.aiFirst") || "Build the Future of AI at DSU"}
+                Build the Future of AI at DSU
                 <ArrowRight className="w-3 sm:w-5 h-3 sm:h-5 ml-1 sm:ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
@@ -695,9 +695,9 @@ export default function Index() {
       <section className="px-3 py-8 relative bg-gradient-to-r from-brand-magenta/5 via-brand-orange/5 to-brand-blue/5 border-y border-border/30">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="headline-2 mb-4">{t("recognition.title") || "Recognized Excellence"}</h2>
+            <h2 className="headline-2 mb-4">Recognized Excellence</h2>
             <p className="subheadline text-foreground max-w-3xl mx-auto font-display text-lg">
-              {t("recognition.subtitle") || "Accredited by leading national and international bodies"}
+              Accredited by leading national and international bodies
             </p>
           </div>
 
@@ -715,9 +715,9 @@ export default function Index() {
       <section className="px-3 py-10 relative">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="headline-2 mb-6">{t("academics.title")}</h2>
+            <h2 className="headline-2 mb-6">Academic Excellence That Inspires</h2>
             <p className="subheadline text-foreground max-w-3xl mx-auto font-display">
-              {t("academics.subtitle")}
+              Discover our diverse range of undergraduate and postgraduate programs designed to shape the leaders of tomorrow.
             </p>
           </div>
 
