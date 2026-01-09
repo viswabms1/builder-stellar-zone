@@ -674,13 +674,10 @@ export default function JournalismMassComm() {
           <div className="mb-6">
             <div className="max-w-3xl">
               <h2 className="font-display text-3xl md:text-4xl">
-                Academic Pathways in Media & Communication
+                {getTranslation(language, 'journalismPage.academicPathways')}
               </h2>
               <p className="mt-3 text-sm text-foreground font-body">
-                Comprehensive programme combining rigorous academics with
-                multimedia storytelling, broadcast production, global
-                collaborations and real-world reporting experience to prepare
-                industry-ready communicators.
+                {getTranslation(language, 'journalismPage.academicPathwaysDesc')}
               </p>
             </div>
           </div>
