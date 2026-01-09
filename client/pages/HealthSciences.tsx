@@ -687,10 +687,16 @@ export default function HealthSciences() {
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {COLLEGE_CARDS.map((college) => {
               const IconComponent = college.icon;
+              const isInternal = college.link.startsWith("/");
+              const CardComponent = isInternal ? RouterLink : "a";
+              const cardProps = isInternal
+                ? { to: college.link }
+                : { href: college.link, target: "_blank", rel: "noreferrer" };
               return (
-                <div
+                <CardComponent
                   key={college.id}
-                  className="group relative overflow-hidden rounded-xl border border-white/10 bg-black/10 backdrop-blur-sm transition-all duration-700 hover:-translate-y-2 hover:shadow-2xl hover:shadow-brand-magenta/20 min-h-[400px] flex flex-col"
+                  {...cardProps}
+                  className="group relative overflow-hidden rounded-xl border border-white/10 bg-black/10 backdrop-blur-sm transition-all duration-700 hover:-translate-y-2 hover:shadow-2xl hover:shadow-brand-magenta/20 min-h-[400px] flex flex-col block no-underline"
                 >
                   <img
                     src={college.image}
@@ -729,7 +735,7 @@ export default function HealthSciences() {
                       </div>
                     </div>
                   </div>
-                </div>
+                </CardComponent>
               );
             })}
           </div>
