@@ -642,10 +642,25 @@ export default function Index() {
     }
 
     const interval = setInterval(() => {
-      setSelectedEventIndex((prev) => (prev + 1) % allEvents.length);
+      setEventTransitioning(true);
+      setTimeout(() => {
+        setSelectedEventIndex((prev) => (prev + 1) % allEvents.length);
+        setEventTransitioning(false);
+      }, 300);
+      setEventRotationProgress(0);
     }, 8000);
 
-    return () => clearInterval(interval);
+    const progressInterval = setInterval(() => {
+      setEventRotationProgress((prev) => {
+        if (prev >= 100) return 100;
+        return prev + 100 / 80;
+      });
+    }, 100);
+
+    return () => {
+      clearInterval(interval);
+      clearInterval(progressInterval);
+    };
   }, [allEvents.length, isEventInteracting]);
 
   // Auto-rotate publications every 8 seconds (pauses when user interacts)
