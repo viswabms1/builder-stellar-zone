@@ -769,12 +769,12 @@ export default function JournalismMassComm() {
                 </div>
                 <CardHeader>
                   <CardTitle className="font-display group-hover:text-brand-blue transition-colors">
-                    Research & Innovation
+                    {getTranslation(language, 'journalismPage.researchInnovation')}
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-foreground/80 font-body">
-                    Faculty-led media research and storytelling projects
+                    {getTranslation(language, 'journalismPage.researchInnovationDesc')}
                   </p>
                 </CardContent>
               </Card>
