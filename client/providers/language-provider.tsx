@@ -1,5 +1,4 @@
 import React, { createContext, useContext, useState, useEffect, useRef } from 'react';
-import { useLocation } from 'react-router-dom';
 import type { Language } from '@/lib/i18n';
 import { getTranslation } from '@/lib/i18n';
 import { translateDOMContent } from '@/lib/google-translate-dom';
@@ -9,6 +8,7 @@ interface LanguageContextType {
   setLanguage: (lang: Language) => void;
   t: (key: string) => string;
   isTranslating: boolean;
+  triggerTranslation: () => void;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
@@ -17,7 +17,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [language, setLanguageState] = useState<Language>('en');
   const [isTranslating, setIsTranslating] = useState(false);
   const translationTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-  const location = useLocation();
+  const lastPathRef = useRef<string>(window.location.pathname);
 
   // Load language from localStorage on mount
   useEffect(() => {
@@ -27,37 +27,59 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     }
   }, []);
 
-  // Re-translate when route changes and language is not English
+  // Monitor for route changes using popstate and mutation observer
   useEffect(() => {
-    if (language !== 'en') {
-      console.log('Route changed, re-translating to', language);
+    const handleRouteChange = () => {
+      const currentPath = window.location.pathname;
+      if (currentPath !== lastPathRef.current && language !== 'en') {
+        console.log('Route changed from', lastPathRef.current, 'to', currentPath, ', re-translating to', language);
+        lastPathRef.current = currentPath;
 
-      // Clear any pending translation
-      if (translationTimeoutRef.current) {
-        clearTimeout(translationTimeoutRef.current);
+        // Clear any pending translation
+        if (translationTimeoutRef.current) {
+          clearTimeout(translationTimeoutRef.current);
+        }
+
+        // Wait for page to render, then translate
+        setIsTranslating(true);
+        translationTimeoutRef.current = setTimeout(() => {
+          translateDOMContent(language, 'en')
+            .then(() => {
+              console.log('Page translation completed for route:', currentPath);
+              setIsTranslating(false);
+            })
+            .catch((err) => {
+              console.error('Translation failed:', err);
+              setIsTranslating(false);
+            });
+        }, 500);
       }
+    };
 
-      // Wait for page to render, then translate
-      setIsTranslating(true);
-      translationTimeoutRef.current = setTimeout(() => {
-        translateDOMContent(language, 'en')
-          .then(() => {
-            console.log('Page translation completed for route:', location.pathname);
-            setIsTranslating(false);
-          })
-          .catch((err) => {
-            console.error('Translation failed:', err);
-            setIsTranslating(false);
-          });
-      }, 500);
-    }
+    // Listen for popstate events (back/forward buttons)
+    window.addEventListener('popstate', handleRouteChange);
+
+    // Observe DOM changes to detect client-side navigation
+    const observer = new MutationObserver(() => {
+      const currentPath = window.location.pathname;
+      if (currentPath !== lastPathRef.current && language !== 'en') {
+        handleRouteChange();
+      }
+    });
+
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true,
+    });
 
     return () => {
+      window.removeEventListener('popstate', handleRouteChange);
+      observer.disconnect();
       if (translationTimeoutRef.current) {
         clearTimeout(translationTimeoutRef.current);
       }
     };
-  }, [location.pathname, language]);
+  }, [language]);
 
   const setLanguage = (lang: Language) => {
     console.log('Language changed to:', lang);
