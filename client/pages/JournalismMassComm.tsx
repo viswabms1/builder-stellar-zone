@@ -711,7 +711,7 @@ export default function JournalismMassComm() {
               {"Explore More at DSU CJMC"}
             </h2>
             <p className="mt-3 text-sm text-foreground font-body">
-              {getTranslation(language, 'journalismPage.exploreMoreDesc')}
+              {"Discover our creative studios, industry partnerships, placements and admission pathways"}
             </p>
           </div>
           <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-5">
@@ -725,12 +725,12 @@ export default function JournalismMassComm() {
                 </div>
                 <CardHeader>
                   <CardTitle className="font-display group-hover:text-brand-magenta transition-colors">
-                    {getTranslation(language, 'journalismPage.facultyDirectory')}
+                    {"Faculty Directory"}
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-foreground/80 font-body">
-                    {getTranslation(language, 'journalismPage.facultyDirectoryDesc')}
+                    {"Meet our distinguished faculty and academic leadership"}
                   </p>
                 </CardContent>
               </Card>
@@ -767,7 +767,7 @@ export default function JournalismMassComm() {
                 </div>
                 <CardHeader>
                   <CardTitle className="font-display group-hover:text-brand-blue transition-colors">
-                    {getTranslation(language, 'journalismPage.researchInnovation')}
+                    {"Research & Innovation"}
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
