@@ -95,7 +95,7 @@ export default function Nursing() {
           </button>
         </div>
         <div className="absolute inset-0 flex items-center">
-          <div className="max-w-7xl mx-auto px-3 pb-20 md:pb-12">
+          <div className="max-w-7xl mx-auto px-3 pb-8 sm:pb-12 md:pb-12">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-black/40 rounded-full border border-white/20 mb-4 backdrop-blur-sm">
               <Sparkles className="w-4 h-4 text-white" />
               <span className="text-sm font-medium text-white font-display">College of Nursing Sciences</span>
