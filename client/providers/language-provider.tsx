@@ -1,28 +1,16 @@
-import React, { createContext, useContext, useState, useEffect, useRef } from 'react';
-import { translateDOMContent } from '@/lib/google-translate-dom';
-import { initDebugPanel } from '@/lib/debug-translator';
-
-// Initialize debug panel on module load
-if (typeof window !== 'undefined') {
-  initDebugPanel();
-}
+import React, { createContext, useContext, useState, useEffect } from 'react';
 
 type Language = 'en' | 'kn' | 'hi';
 
 interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
-  isTranslating: boolean;
-  triggerTranslation: () => void;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [language, setLanguageState] = useState<Language>('en');
-  const [isTranslating, setIsTranslating] = useState(false);
-  const translationTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-  const lastPathRef = useRef<string>(window.location.pathname);
 
   // Load language from localStorage on mount
   useEffect(() => {
@@ -32,122 +20,15 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     }
   }, []);
 
-  // Monitor for route changes using popstate and mutation observer
-  useEffect(() => {
-    const handleRouteChange = () => {
-      const currentPath = window.location.pathname;
-      if (currentPath !== lastPathRef.current && language !== 'en') {
-        console.log('Route changed from', lastPathRef.current, 'to', currentPath, ', re-translating to', language);
-        lastPathRef.current = currentPath;
-
-        // Clear any pending translation
-        if (translationTimeoutRef.current) {
-          clearTimeout(translationTimeoutRef.current);
-        }
-
-        // Wait for page to render, then translate
-        setIsTranslating(true);
-        translationTimeoutRef.current = setTimeout(() => {
-          translateDOMContent(language, 'en')
-            .then(() => {
-              console.log('Page translation completed for route:', currentPath);
-              setIsTranslating(false);
-            })
-            .catch((err) => {
-              console.error('Translation failed:', err);
-              setIsTranslating(false);
-            });
-        }, 500);
-      }
-    };
-
-    // Listen for popstate events (back/forward buttons)
-    window.addEventListener('popstate', handleRouteChange);
-
-    // Observe DOM changes to detect client-side navigation
-    const observer = new MutationObserver(() => {
-      const currentPath = window.location.pathname;
-      if (currentPath !== lastPathRef.current && language !== 'en') {
-        handleRouteChange();
-      }
-    });
-
-    observer.observe(document.body, {
-      childList: true,
-      subtree: true,
-    });
-
-    return () => {
-      window.removeEventListener('popstate', handleRouteChange);
-      observer.disconnect();
-      if (translationTimeoutRef.current) {
-        clearTimeout(translationTimeoutRef.current);
-      }
-    };
-  }, [language]);
-
-  const triggerTranslation = () => {
-    if (language !== 'en') {
-      setIsTranslating(true);
-
-      if (translationTimeoutRef.current) {
-        clearTimeout(translationTimeoutRef.current);
-      }
-
-      translationTimeoutRef.current = setTimeout(() => {
-        translateDOMContent(language, 'en')
-          .then(() => {
-            console.log('Page translation triggered');
-            setIsTranslating(false);
-          })
-          .catch((err) => {
-            console.error('Translation failed:', err);
-            setIsTranslating(false);
-          });
-      }, 300);
-    }
-  };
-
   const setLanguage = (lang: Language) => {
-    console.log('🔤 Language changed to:', lang);
+    console.log('Language selected:', lang);
     setLanguageState(lang);
     localStorage.setItem('language', lang);
-
-    // Translate entire page content using Google Translate if not English
-    if (lang !== 'en') {
-      console.log('📝 Starting translation process for:', lang);
-      setIsTranslating(true);
-
-      // Clear any pending translation
-      if (translationTimeoutRef.current) {
-        clearTimeout(translationTimeoutRef.current);
-      }
-
-      translationTimeoutRef.current = setTimeout(() => {
-        console.log('⏱️  Calling translateDOMContent...');
-        translateDOMContent(lang, 'en')
-          .then(() => {
-            console.log('✅ Page translation completed');
-            setIsTranslating(false);
-          })
-          .catch((err) => {
-            console.error('❌ Translation failed:', err);
-            setIsTranslating(false);
-          });
-
-        // Fallback: Stop showing spinner after 10 seconds even if translation is still running
-        setTimeout(() => {
-          setIsTranslating(false);
-        }, 10000);
-      }, 100);
-    } else {
-      console.log('English selected - skipping translation');
-      setIsTranslating(false);
-    }
+    // Note: Translation API has been removed. Website displays in English only.
   };
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, isTranslating, triggerTranslation }}>
+    <LanguageContext.Provider value={{ language, setLanguage }}>
       {children}
     </LanguageContext.Provider>
   );
