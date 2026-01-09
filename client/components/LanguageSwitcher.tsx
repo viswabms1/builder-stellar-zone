@@ -40,14 +40,60 @@ export default function LanguageSwitcher() {
   }, [isOpen]);
 
   const handleLanguageSelect = (langCode: string) => {
-    // Get the language select element from Google Translate
-    const googleSelect = document.querySelector('select.goog-te-combo') as HTMLSelectElement;
-    if (googleSelect) {
-      googleSelect.value = langCode;
-      // Trigger change event to notify Google Translate
-      googleSelect.dispatchEvent(new Event('change'));
+    try {
+      // Wait for Google Translate to be fully loaded
+      const waitForGoogleTranslate = () => {
+        // Try multiple selectors for the language dropdown
+        let googleSelect = document.querySelector('select.goog-te-combo') as HTMLSelectElement;
+        
+        // If not found, look for the element inside iframe or other locations
+        if (!googleSelect) {
+          // Try finding it in the google translate element
+          const gtElement = document.getElementById('google_translate_element');
+          if (gtElement) {
+            googleSelect = gtElement.querySelector('select.goog-te-combo') as HTMLSelectElement;
+          }
+        }
+
+        if (googleSelect) {
+          googleSelect.value = langCode;
+          // Trigger both change and click events for better compatibility
+          googleSelect.dispatchEvent(new Event('change', { bubbles: true }));
+          
+          // Also try to find and trigger the option element
+          const option = Array.from(googleSelect.options).find(
+            opt => opt.value === langCode
+          );
+          if (option) {
+            option.selected = true;
+            googleSelect.dispatchEvent(new Event('change', { bubbles: true }));
+          }
+          return true;
+        }
+        return false;
+      };
+
+      // Try immediately
+      if (waitForGoogleTranslate()) {
+        setIsOpen(false);
+        return;
+      }
+
+      // If not found, wait and retry
+      let attempts = 0;
+      const retryInterval = setInterval(() => {
+        attempts++;
+        if (waitForGoogleTranslate()) {
+          clearInterval(retryInterval);
+          setIsOpen(false);
+        } else if (attempts > 10) {
+          clearInterval(retryInterval);
+          console.warn('Google Translate element not found after retries');
+        }
+      }, 100);
+    } catch (error) {
+      console.error('Error switching language:', error);
     }
-    setIsOpen(false);
   };
 
   const languages = [
