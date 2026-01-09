@@ -420,15 +420,41 @@ function CurriculumLibrary() {
 
   const programs: CurriculumProgram[] = [
     {
-      id: "bsc-triple-major",
-      label: "B.Sc Triple Major Curriculum",
-      description: "3-year comprehensive undergraduate pathway with flexible interdisciplinary options",
-      image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=600&h=400&fit=crop",
+      id: "bsc-biotech-biochem-genetics",
+      label: "Biotechnology, Biochemistry & Genetics",
+      description: "3-year specialized program combining biotechnology applications with biochemical analysis and genetic studies",
+      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=600&auto=format&fit=crop",
       batches: [
         {
           year: "2025-26",
-          summary: "Latest curriculum with integrated triple major options and practical laboratory components across all 6 semesters",
-          documentUrl: "https://www.dsu.edu.in/images/BasicAppliedSciences/BSc-TripleMajor-Curriculum-2025-26.pdf",
+          summary: "Latest curriculum with advanced biotechnology techniques, biochemical pathways, and genetic engineering across all 6 semesters",
+          documentUrl: "https://www.dsu.edu.in/images/BasicAppliedSciences/BSc-Biotech-Biochem-Genetics-2025-26.pdf",
+        },
+      ],
+    },
+    {
+      id: "bsc-biotech-chemistry-microbio",
+      label: "Biotechnology, Chemistry & Microbiology",
+      description: "3-year integrated program covering biotechnology, chemical processes, and microbial systems",
+      image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=600&auto=format&fit=crop",
+      batches: [
+        {
+          year: "2025-26",
+          summary: "Latest curriculum integrating biotechnology applications, chemical synthesis, and microbial cultivation across all 6 semesters",
+          documentUrl: "https://www.dsu.edu.in/images/BasicAppliedSciences/BSc-Biotech-Chemistry-Microbio-2025-26.pdf",
+        },
+      ],
+    },
+    {
+      id: "bsc-microbio-genetics-biochem",
+      label: "Microbiology, Genetics & Biochemistry",
+      description: "3-year comprehensive program focusing on microbial biology, genetic analysis, and biochemical mechanisms",
+      image: "https://images.unsplash.com/photo-1581091870622-5f1e9b8d2f70?q=80&w=600&auto=format&fit=crop",
+      batches: [
+        {
+          year: "2025-26",
+          summary: "Latest curriculum covering microbial ecology, genetic regulation, and biochemical pathways across all 6 semesters",
+          documentUrl: "https://www.dsu.edu.in/images/BasicAppliedSciences/BSc-Microbio-Genetics-Biochem-2025-26.pdf",
         },
       ],
     },
