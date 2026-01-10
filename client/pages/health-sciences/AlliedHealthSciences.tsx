@@ -75,7 +75,7 @@ const UG_PROGRAM_CARDS: ProgramCard[] = [
     description:
       "A comprehensive multi-disciplinary program offering specialized training in critical healthcare sectors. Our curriculum provides hands-on clinical exposure in state-of-the-art facilities, preparing students for technical excellence in modern medicine.",
     image:
-      "https://images.unsplash.com/photo-1513624954087-ca7109c0f710?q=80&w=1600&auto=format&fit=crop",
+      "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F0119480c4dc44173b0cb713cdd4d9176?format=webp&width=800",
     link: "/academics/health-sciences/allied-health-bsc",
     highlights: [
       "B.Sc. in Medical Laboratory Technology",
