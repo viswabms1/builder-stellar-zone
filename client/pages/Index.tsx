@@ -668,7 +668,7 @@ export default function Index() {
               Dayananda Sagar University
             </h1>
             <p className="text-base sm:text-xl md:text-2xl lg:text-3xl font-semibold text-white mb-1 sm:mb-2 md:mb-6 leading-tight font-display hidden sm:block">
-              India's AI First University
+              India’s AI-First University
             </p>
             <p className="text-sm sm:text-lg md:text-xl lg:text-2xl font-medium text-white/90 hidden sm:block font-display">
               Powered by NVIDIA
