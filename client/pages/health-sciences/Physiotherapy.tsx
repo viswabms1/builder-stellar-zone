@@ -37,14 +37,14 @@ import {
 type NoticeItem = ImportedNoticeItem;
 
 const PRINCIPAL_INFO: DeanInfo = {
-  name: "Dr. Priya Sharma",
-  title: "Principal (I/C)",
+  name: "Dr. Sathya Guruprasad",
+  title: "Principal & Professor",
   position: "College of Physiotherapy",
   photo:
-    "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F4a2f8f1c18424e98bc7edb721a95a5f2?format=webp&width=800",
+    "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F2b16ee0454b24beebd3fcf7c0cbb62aa?format=webp&width=800",
   message: [
     "Welcome to College of Physiotherapy, DSU!",
-    "As the Principal of this esteemed institution, I am proud to lead a community of dedicated educators, enthusiastic learners, and committed rehabilitation professionals. Our college is renowned for its rigorous academic programs, evidence-based clinical training, and innovative rehabilitation research, all designed to prepare our students to become skilled and compassionate physiotherapy professionals.",
+    "As the Principal and Professor of this esteemed institution, I am proud to lead a community of dedicated educators, enthusiastic learners, and committed rehabilitation professionals. Our college is renowned for its rigorous academic programs, evidence-based clinical training, and innovative rehabilitation research, all designed to prepare our students to become skilled and compassionate physiotherapy professionals.",
     "Our mission is to provide a dynamic learning environment that fosters scientific inquiry, clinical excellence, and a commitment to promoting health and wellness. We believe that physiotherapy is a vital healthcare profession that empowers individuals to achieve optimal functional recovery and quality of life.",
     "At College of Physiotherapy, DSU we offer comprehensive programs from undergraduate to postgraduate levels, each designed to meet the evolving needs of the healthcare and rehabilitation sectors. Our state-of-the-art rehabilitation facilities, experienced faculty, and strong partnerships with hospitals and sports organizations ensure that our students receive the best possible education and hands-on clinical experience.",
     "We are committed to fostering an inclusive and supportive learning community where every student can thrive academically and clinically. Our faculty and staff are dedicated to supporting your journey from classroom to clinical practice and beyond.",
