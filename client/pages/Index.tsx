@@ -723,11 +723,11 @@ export default function Index() {
       </section>
 
       {/* Performance Indicators Section */}
-      <section className="px-3 py-8 relative bg-gradient-to-r from-brand-magenta/5 via-brand-orange/5 to-brand-blue/5 border-y border-border/30">
+      <section className="px-3 pt-4 md:pt-8 pb-8 relative bg-gradient-to-r from-brand-magenta/5 via-brand-orange/5 to-brand-blue/5 border-y border-border/30">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="headline-2 mb-4">Recognized Excellence</h2>
-            <p className="subheadline text-foreground max-w-3xl mx-auto font-display text-lg">
+          <div className="text-center mb-8 md:mb-12">
+            <h2 className="headline-2 mb-3">Recognized Excellence</h2>
+            <p className="subheadline text-foreground max-w-3xl mx-auto font-display text-base md:text-lg">
               Accredited by leading national and international bodies
             </p>
           </div>
