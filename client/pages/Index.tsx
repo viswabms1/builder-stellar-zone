@@ -703,9 +703,8 @@ export default function Index() {
                 className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background w-full sm:w-auto"
               >
                 <Button
-                  size="lg"
                   variant="outline"
-                  className="bg-transparent hover:bg-white/10 text-white border-2 border-white px-8 py-6 text-base font-bold font-display transition-all duration-300 hover:shadow-xl hover:-translate-y-1 w-full sm:w-auto"
+                  className="bg-transparent hover:bg-white/10 text-white border border-white/70 px-6 py-3 text-sm font-medium font-display transition-all duration-300 w-full sm:w-auto"
                 >
                   Virtual Tour
                 </Button>
