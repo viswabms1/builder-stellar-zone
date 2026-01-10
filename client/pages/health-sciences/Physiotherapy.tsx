@@ -710,56 +710,6 @@ export default function Physiotherapy() {
         </div>
       </section>
 
-      {/* MPT Specialties Section */}
-      <section className="px-3 py-8 bg-gradient-to-r from-brand-blue/5 via-brand-green/5 to-brand-orange/5">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-12">
-            <h2 className="font-display text-3xl md:text-4xl mb-4">
-              MPT Specializations
-            </h2>
-            <p className="text-foreground/80 font-body max-w-3xl mb-8">
-              The DSU offers the following MPT specialty programs designed to develop advanced clinical expertise and research capabilities in specialized areas:
-            </p>
-          </div>
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {[
-              {
-                title: "MPT (Sports & Musculo Skeletal)",
-                description: "Specialized training in sports injury management and musculoskeletal rehabilitation.",
-              },
-              {
-                title: "MPT (Cardio Pulmonary)",
-                description: "Advanced clinical skills in cardiovascular and pulmonary rehabilitation.",
-              },
-              {
-                title: "MPT (Women's Health)",
-                description: "Specialized physiotherapy management for women's health and reproductive issues.",
-              },
-              {
-                title: "MPT (Neuro)",
-                description: "Advanced neurological rehabilitation for stroke, spinal cord, and neurological disorders.",
-              },
-              {
-                title: "MPT (Community Based Rehabilitation)",
-                description: "Training in community-based rehabilitation programs and public health physiotherapy.",
-              },
-            ].map((specialty, i) => (
-              <div
-                key={i}
-                className="p-6 rounded-lg border border-brand-blue/20 bg-brand-blue/5 hover:shadow-lg hover:shadow-brand-blue/10 transition-all duration-300"
-              >
-                <h3 className="font-display text-lg font-semibold text-foreground mb-3">
-                  {specialty.title}
-                </h3>
-                <p className="text-sm text-foreground/80 font-body">
-                  {specialty.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Why Choose Physiotherapy */}
       <section className="px-3 py-8">
         <div className="mx-auto max-w-7xl">
