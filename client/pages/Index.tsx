@@ -713,7 +713,7 @@ export default function Index() {
 
             <Link
               to="/ai-first"
-              className="inline-flex items-center gap-2 text-white hover:text-orange-200 transition-all duration-300 font-display font-semibold text-lg group w-fit"
+              className="hidden sm:inline-flex items-center gap-2 text-white hover:text-orange-200 transition-all duration-300 font-display font-semibold text-lg group w-fit"
             >
               <span>Build the Future of AI at DSU</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
