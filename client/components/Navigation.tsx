@@ -166,6 +166,10 @@ export default function Navigation() {
             name: "Physiotherapy Faculty",
             href: "/academics/health-sciences/physiotherapy/faculty",
           },
+          {
+            name: "MPH (Public Health)",
+            href: "/academics/health-sciences/mph",
+          },
           { name: "CDSIMER", href: "/academics/health-sciences/cdsimer" },
         ],
       },
