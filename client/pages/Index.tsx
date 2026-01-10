@@ -1329,10 +1329,11 @@ export default function Index() {
                     : "border-border/30 bg-card/40 hover:border-brand-magenta/50"
                 }`}
               >
-                <div className="relative h-32 overflow-hidden bg-foreground/5">
+                <div className="relative h-32 overflow-hidden bg-gradient-to-br from-brand-magenta/10 to-brand-blue/10">
                   <img
                     src={publication.image}
                     alt={publication.title}
+                    loading="lazy"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
