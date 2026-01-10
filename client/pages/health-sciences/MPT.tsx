@@ -540,7 +540,7 @@ function CurriculumLibrary() {
                   </div>
                   <Button
                     variant="outline"
-                    className="w-full border-brand-blue/30 hover:bg-brand-blue/10 text-brand-blue hover:text-brand-blue"
+                    className="border-brand-blue/30 hover:bg-brand-blue/10 text-brand-blue hover:text-brand-blue mt-auto"
                     onClick={() => setOpenProgram(isOpen ? null : program.id)}
                   >
                     <span className="flex items-center justify-center gap-2">
