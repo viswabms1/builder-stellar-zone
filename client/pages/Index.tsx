@@ -1293,28 +1293,27 @@ export default function Index() {
                     ✓ {allPublications[selectedPublicationIndex].authors}
                   </p>
                 </div>
-                <div className="flex items-center justify-between pt-4">
+                <div className="flex items-center justify-between pt-6">
                   {allPublications[selectedPublicationIndex].link ? (
                     <a
                       href={allPublications[selectedPublicationIndex].link}
                       target="_blank"
                       rel="noreferrer"
-                      className="no-underline"
+                      className="no-underline group"
                     >
-                      <Button className="bg-brand-gradient hover:opacity-90 text-foreground">
-                        Read Publication
-                        <ArrowRight className="w-4 h-4 ml-2" />
+                      <Button className="bg-brand-gradient hover:shadow-lg hover:shadow-brand-magenta/50 text-foreground font-semibold gap-2 transform group-hover:translate-x-1 transition-all">
+                        Read Full Paper
+                        <ArrowRight className="w-4 h-4" />
                       </Button>
                     </a>
                   ) : (
-                    <Button className="bg-brand-gradient hover:opacity-90 text-foreground">
+                    <Button className="bg-brand-gradient hover:shadow-lg hover:shadow-brand-magenta/50 text-foreground font-semibold gap-2">
                       Read Publication
-                      <ArrowRight className="w-4 h-4 ml-2" />
+                      <ArrowRight className="w-4 h-4" />
                     </Button>
                   )}
-                  <div className="text-xs text-foreground/60 font-body">
-                    Featured • {selectedPublicationIndex + 1} of{" "}
-                    {allPublications.length}
+                  <div className="text-xs text-foreground/60 font-semibold">
+                    {selectedPublicationIndex + 1} / {allPublications.length}
                   </div>
                 </div>
               </div>
