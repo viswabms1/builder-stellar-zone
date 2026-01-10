@@ -20,9 +20,11 @@ export default function LanguageSwitcher() {
           }}
           className={`px-2 py-1 text-xs font-medium rounded transition-colors ${
             language === lang
-              ? 'bg-orange-500 text-white'
+              ? theme === 'light'
+                ? 'bg-gray-200 text-gray-900'
+                : 'bg-white/15 text-white'
               : theme === 'light'
-              ? 'text-gray-600 hover:text-orange-600 hover:bg-orange-100'
+              ? 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
               : 'text-white/80 hover:text-white hover:bg-white/10'
           }`}
         >
