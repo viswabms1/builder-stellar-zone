@@ -1312,42 +1312,96 @@ export default function Index() {
             </div>
           </div>
 
-          {/* All Publications Grid */}
+          {/* Publications Grid with Dynamic Cards */}
           <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-3">
-            {allPublications.map((publication, idx) => (
-              <button
-                key={idx}
-                onMouseEnter={() => setIsPublicationInteracting(true)}
-                onMouseLeave={() => setIsPublicationInteracting(false)}
-                onClick={() => {
-                  setSelectedPublicationIndex(idx);
-                  setIsPublicationInteracting(true);
-                }}
-                className={`group relative overflow-hidden rounded-lg border-2 transition-all duration-300 p-4 text-left ${
-                  selectedPublicationIndex === idx
-                    ? "border-brand-magenta bg-brand-magenta/15"
-                    : "border-border/30 bg-card/50 hover:border-brand-magenta/50 hover:bg-card/70"
-                }`}
-              >
-                <div className="space-y-3">
-                  <div className="flex items-start justify-between gap-2">
-                    <Badge variant="secondary" className="text-xs flex-shrink-0">
-                      {publication.category.split(" ")[0]}
-                    </Badge>
-                    <span className="text-xs text-foreground/50 flex-shrink-0">
-                      {publication.date}
-                    </span>
+            {allPublications.map((publication, idx) => {
+              const isSpringer = publication.category.includes("Springer");
+              const isHighImpact = ["Physical Review E", "Progress in Photovoltaics"].includes(publication.category);
+              const colors = [
+                "from-brand-magenta/20 to-brand-magenta/5",
+                "from-brand-blue/20 to-brand-blue/5",
+                "from-brand-orange/20 to-brand-orange/5",
+                "from-emerald-500/20 to-emerald-500/5",
+                "from-purple-500/20 to-purple-500/5",
+              ];
+              const borderColors = [
+                "border-brand-magenta/30 hover:border-brand-magenta",
+                "border-brand-blue/30 hover:border-brand-blue",
+                "border-brand-orange/30 hover:border-brand-orange",
+                "border-emerald-500/30 hover:border-emerald-500",
+                "border-purple-500/30 hover:border-purple-500",
+              ];
+
+              return (
+                <button
+                  key={idx}
+                  onMouseEnter={() => setIsPublicationInteracting(true)}
+                  onMouseLeave={() => setIsPublicationInteracting(false)}
+                  onClick={() => {
+                    setSelectedPublicationIndex(idx);
+                    setIsPublicationInteracting(true);
+                  }}
+                  className={`group relative overflow-hidden rounded-xl border-2 transition-all duration-300 p-4 text-left h-full backdrop-blur-sm ${
+                    selectedPublicationIndex === idx
+                      ? "border-brand-magenta bg-brand-magenta/20 shadow-2xl shadow-brand-magenta/20 scale-105 z-10"
+                      : `${borderColors[idx % 5]} bg-gradient-to-br ${colors[idx % 5]} hover:shadow-xl hover:shadow-brand-magenta/10`
+                  }`}
+                  style={{
+                    animation: selectedPublicationIndex === idx ? "pulse 2s infinite" : "none",
+                  }}
+                >
+                  {/* Background accent */}
+                  <div className="absolute -top-8 -right-8 w-20 h-20 bg-gradient-to-br from-brand-magenta/20 to-transparent rounded-full blur-2xl group-hover:scale-150 transition-transform duration-500 pointer-events-none"></div>
+
+                  <div className="space-y-3 relative z-10">
+                    {/* Header with badges */}
+                    <div className="flex items-start justify-between gap-2">
+                      <div className="flex flex-col gap-2">
+                        <Badge
+                          variant="secondary"
+                          className={`text-xs flex-shrink-0 ${
+                            isSpringer
+                              ? "bg-brand-magenta/25 text-brand-magenta border-brand-magenta/50"
+                              : isHighImpact
+                              ? "bg-brand-blue/25 text-brand-blue border-brand-blue/50"
+                              : "bg-brand-orange/25 text-brand-orange border-brand-orange/50"
+                          }`}
+                        >
+                          {isSpringer ? "Q1 Journal" : isHighImpact ? "High Impact" : "Research"}
+                        </Badge>
+                      </div>
+                      <span className="text-xs text-foreground/60 flex-shrink-0 font-semibold">
+                        {publication.date}
+                      </span>
+                    </div>
+
+                    {/* Title with improved styling */}
+                    <h4 className="text-xs font-bold text-foreground font-display group-hover:text-brand-magenta transition-colors line-clamp-3 leading-tight">
+                      {publication.title}
+                    </h4>
+
+                    {/* Category description */}
+                    <p className="text-xs text-foreground/70 line-clamp-1 font-medium">
+                      {publication.category}
+                    </p>
+
+                    {/* CTA indicator */}
+                    <div className="flex items-center justify-between pt-2 border-t border-foreground/10">
+                      <div className="flex items-center gap-2 text-brand-magenta opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform group-hover:translate-x-1">
+                        <ChevronRight className="w-3 h-3" />
+                        <span className="text-xs font-semibold">Details</span>
+                      </div>
+                      <span className="text-xs px-2 py-1 rounded-full bg-foreground/5 text-foreground/60 group-hover:bg-brand-magenta/20 group-hover:text-brand-magenta transition-all">
+                        {idx + 1}/{allPublications.length}
+                      </span>
+                    </div>
                   </div>
-                  <h4 className="text-xs font-semibold text-foreground font-display group-hover:text-brand-magenta transition-colors line-clamp-3 leading-tight">
-                    {publication.title}
-                  </h4>
-                  <div className="flex items-center gap-2 text-brand-magenta opacity-0 group-hover:opacity-100 transition-opacity">
-                    <ChevronRight className="w-3 h-3" />
-                    <span className="text-xs font-medium">View</span>
-                  </div>
-                </div>
-              </button>
-            ))}
+
+                  {/* Hover overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none rounded-xl"></div>
+                </button>
+              );
+            })}
           </div>
         </div>
       </section>
