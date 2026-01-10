@@ -472,7 +472,7 @@ function CurriculumLibrary() {
             return (
               <div
                 key={program.id}
-                className={`rounded-3xl border-2 ${borderClass} overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-brand-blue/10 hover:-translate-y-1 flex flex-row`}
+                className={`rounded-3xl border-2 ${borderClass} overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-brand-blue/10 hover:-translate-y-1 flex items-stretch`}
               >
                 <div className="relative w-48 h-48 flex-shrink-0 overflow-hidden">
                   <img
@@ -482,7 +482,7 @@ function CurriculumLibrary() {
                   />
                 </div>
 
-                <div className="flex-1 p-3 bg-background/50 backdrop-blur-sm space-y-3 flex flex-col">
+                <div className="flex-1 p-3 bg-background/50 backdrop-blur-sm space-y-3 flex flex-col justify-between">
                   <div className="flex items-start gap-3">
                     <Badge className={`rounded-full border ${badgeClass}`}>
                       Undergraduate
