@@ -1257,12 +1257,13 @@ export default function Index() {
 
           {/* Featured Publication */}
           <div className="mb-12" style={{ contain: "content" }}>
-            <div className="w-full flex flex-col rounded-none border border-orange-500/20 bg-orange-500/10 cursor-pointer text-left overflow-hidden">
-              <div className="relative w-full h-48 overflow-hidden bg-foreground/5">
+            <div className="w-full flex flex-col rounded-xl border-2 border-brand-magenta/30 bg-gradient-to-br from-brand-magenta/10 to-brand-orange/5 cursor-pointer text-left overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500">
+              <div className="relative w-full h-48 overflow-hidden bg-gradient-to-br from-foreground/5 to-brand-magenta/5">
                 <img
                   src={allPublications[selectedPublicationIndex].image}
                   alt={allPublications[selectedPublicationIndex].title}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                  loading="eager"
                 />
               </div>
 
