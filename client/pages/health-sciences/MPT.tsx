@@ -214,8 +214,8 @@ export default function MPT() {
               </h3>
               <p className="text-sm text-foreground font-body">
                 Advanced practice in sports medicine and musculoskeletal
-                rehabilitation with emphasis on athletic performance,
-                injury prevention, and functional movement restoration.
+                rehabilitation with emphasis on athletic performance, injury
+                prevention, and functional movement restoration.
               </p>
             </div>
             <div className="p-6 rounded-lg border border-brand-blue/20 bg-brand-blue/10 backdrop-blur-sm">
@@ -225,7 +225,8 @@ export default function MPT() {
               <p className="text-sm text-foreground font-body">
                 Specialized rehabilitation for cardiovascular and pulmonary
                 conditions with focus on exercise prescription, breathing
-                techniques, and patient education for chronic disease management.
+                techniques, and patient education for chronic disease
+                management.
               </p>
             </div>
             <div className="p-6 rounded-lg border border-brand-blue/20 bg-brand-blue/10 backdrop-blur-sm">
@@ -347,8 +348,7 @@ export default function MPT() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-foreground/80 font-body">
-                    Faculty-led physiotherapy research and healthcare
-                    innovation
+                    Faculty-led physiotherapy research and healthcare innovation
                   </p>
                 </CardContent>
               </Card>
@@ -495,8 +495,8 @@ function CurriculumLibrary() {
             </h2>
             <p className="max-w-2xl text-sm text-foreground sm:text-base font-body">
               Access comprehensive curriculum documentation, specialization
-              details, learning outcomes, and downloadable syllabus for the M.P.T
-              program.
+              details, learning outcomes, and downloadable syllabus for the
+              M.P.T program.
             </p>
           </div>
           <Badge className="w-fit rounded-full bg-brand-blue/15 px-4 py-2 text-xs font-semibold text-brand-blue border border-brand-blue/20">

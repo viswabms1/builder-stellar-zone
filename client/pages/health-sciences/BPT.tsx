@@ -173,9 +173,9 @@ export default function BPT() {
                 with the knowledge, skills, and competencies necessary to excel
                 as qualified physiotherapists in diverse healthcare settings.
                 The curriculum emphasizes a balanced integration of theoretical
-                foundations and practical clinical exposure through rehabilitation
-                labs, case-based learning, and real-world clinical training in
-                hospitals and community healthcare centers.
+                foundations and practical clinical exposure through
+                rehabilitation labs, case-based learning, and real-world
+                clinical training in hospitals and community healthcare centers.
               </p>
             </div>
           </div>
@@ -306,8 +306,7 @@ export default function BPT() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-foreground/80 font-body">
-                    Faculty-led physiotherapy research and healthcare
-                    innovation
+                    Faculty-led physiotherapy research and healthcare innovation
                   </p>
                 </CardContent>
               </Card>

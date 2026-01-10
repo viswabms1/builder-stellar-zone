@@ -1,12 +1,7 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import {
   Activity,
@@ -35,32 +30,42 @@ export default function AlliedHealthBSc() {
     {
       icon: Microscope,
       label: "B.Sc. in Medical Laboratory Technology",
-      description: "Perform clinical tests on specimens of bodily fluids and tissues to gather critical health information or determine cause of death.",
-      image: "https://images.pexels.com/photos/5726714/pexels-photo-5726714.jpeg?auto=compress&cs=tinysrgb&w=1600"
+      description:
+        "Perform clinical tests on specimens of bodily fluids and tissues to gather critical health information or determine cause of death.",
+      image:
+        "https://images.pexels.com/photos/5726714/pexels-photo-5726714.jpeg?auto=compress&cs=tinysrgb&w=1600",
     },
     {
       icon: Activity,
       label: "B.Sc. in Emergency & Trauma Care Technology",
-      description: "Provide diagnostic, curative, and preventive medical services under doctor supervision, applying advanced procedures for treating injuries.",
-      image: "https://images.pexels.com/photos/8942228/pexels-photo-8942228.jpeg?auto=compress&cs=tinysrgb&w=1600"
+      description:
+        "Provide diagnostic, curative, and preventive medical services under doctor supervision, applying advanced procedures for treating injuries.",
+      image:
+        "https://images.pexels.com/photos/8942228/pexels-photo-8942228.jpeg?auto=compress&cs=tinysrgb&w=1600",
     },
     {
       icon: Stethoscope,
       label: "B.Sc. in Operation Theatre Technology",
-      description: "Assisting anesthetists, maintaining OTs, and managing sterile services and disaster preparedness in multidisciplinary surgical teams.",
-      image: "https://images.pexels.com/photos/18112241/pexels-photo-18112241.jpeg?auto=compress&cs=tinysrgb&w=1600"
+      description:
+        "Assisting anesthetists, maintaining OTs, and managing sterile services and disaster preparedness in multidisciplinary surgical teams.",
+      image:
+        "https://images.pexels.com/photos/18112241/pexels-photo-18112241.jpeg?auto=compress&cs=tinysrgb&w=1600",
     },
     {
       icon: Eye,
       label: "B.Sc. in Radiology & Imaging Technology",
-      description: "Operate radiographic, ultrasound, and MRI equipment to produce images for diagnosis and monitors radiation treatments.",
-      image: "https://images.pexels.com/photos/6502017/pexels-photo-6502017.jpeg?auto=compress&cs=tinysrgb&w=1600"
+      description:
+        "Operate radiographic, ultrasound, and MRI equipment to produce images for diagnosis and monitors radiation treatments.",
+      image:
+        "https://images.pexels.com/photos/6502017/pexels-photo-6502017.jpeg?auto=compress&cs=tinysrgb&w=1600",
     },
     {
       icon: Heart,
       label: "B.Sc. in Cardiac Care Technology",
-      description: "Expertise in circulatory systems and complex equipment operation for adult and pediatric cardiac interventions.",
-      image: "https://images.pexels.com/photos/4483339/pexels-photo-4483339.jpeg?auto=compress&cs=tinysrgb&w=1600"
+      description:
+        "Expertise in circulatory systems and complex equipment operation for adult and pediatric cardiac interventions.",
+      image:
+        "https://images.pexels.com/photos/4483339/pexels-photo-4483339.jpeg?auto=compress&cs=tinysrgb&w=1600",
     },
   ];
 
@@ -107,7 +112,8 @@ export default function AlliedHealthBSc() {
                 B.Sc. Allied Health Sciences
               </p>
               <h1 className="text-xs sm:text-base md:text-base text-white mb-2 sm:mb-6 leading-tight font-display font-bold">
-                Medical Lab | Emergency & Trauma | Operation Theatre | Radiology | Cardiac Care
+                Medical Lab | Emergency & Trauma | Operation Theatre | Radiology
+                | Cardiac Care
               </h1>
             </div>
 
@@ -195,24 +201,37 @@ export default function AlliedHealthBSc() {
               B.Sc. Programmes
             </h2>
             <p className="text-foreground/80 font-body max-w-2xl mx-auto text-center">
-              Our College of Allied Health Sciences offers comprehensive B.Sc. programmes designed to prepare students for technical excellence in modern healthcare.
+              Our College of Allied Health Sciences offers comprehensive B.Sc.
+              programmes designed to prepare students for technical excellence
+              in modern healthcare.
             </p>
           </div>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {bscPrograms.map((spec, i) => (
-              <Card key={i} className="group flex flex-col hover:shadow-2xl transition-all duration-500 border-brand-blue/20 overflow-hidden bg-card/50 backdrop-blur-sm">
+              <Card
+                key={i}
+                className="group flex flex-col hover:shadow-2xl transition-all duration-500 border-brand-blue/20 overflow-hidden bg-card/50 backdrop-blur-sm"
+              >
                 <div className="relative h-48 overflow-hidden">
-                  <img src={spec.image} alt={spec.label} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                  <img
+                    src={spec.image}
+                    alt={spec.label}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   <div className="absolute bottom-4 left-4 p-2 rounded-full bg-white/10 backdrop-blur-md text-white border border-white/20">
                     <spec.icon className="h-6 w-6" />
                   </div>
                 </div>
                 <CardHeader>
-                  <CardTitle className="font-display text-xl group-hover:text-brand-blue transition-colors">{spec.label}</CardTitle>
+                  <CardTitle className="font-display text-xl group-hover:text-brand-blue transition-colors">
+                    {spec.label}
+                  </CardTitle>
                 </CardHeader>
                 <CardContent className="flex-1 flex flex-col justify-between">
-                  <p className="text-sm text-foreground/70 font-body leading-relaxed">{spec.description}</p>
+                  <p className="text-sm text-foreground/70 font-body leading-relaxed">
+                    {spec.description}
+                  </p>
                 </CardContent>
               </Card>
             ))}
@@ -233,7 +252,10 @@ export default function AlliedHealthBSc() {
                 Program Highlights
               </h2>
               <p className="text-foreground/80 font-body mb-8">
-                Established in 2021, the B.Sc. Allied Health Sciences program at DSU is designed to produce highly skilled healthcare professionals who can meet the global demand for preventive, curative, and rehabilitative care.
+                Established in 2021, the B.Sc. Allied Health Sciences program at
+                DSU is designed to produce highly skilled healthcare
+                professionals who can meet the global demand for preventive,
+                curative, and rehabilitative care.
               </p>
             </div>
           </div>
@@ -260,7 +282,9 @@ export default function AlliedHealthBSc() {
               Career Pathways & Placements
             </h2>
             <p className="text-foreground/80 font-body max-w-3xl">
-              Graduates of the Allied Health Sciences program are prepared for diverse employment opportunities in diagnostic labs, multispecialty hospitals, and global healthcare systems.
+              Graduates of the Allied Health Sciences program are prepared for
+              diverse employment opportunities in diagnostic labs,
+              multispecialty hospitals, and global healthcare systems.
             </p>
           </div>
           <div className="grid gap-4 md:grid-cols-2">
@@ -290,7 +314,8 @@ export default function AlliedHealthBSc() {
               Eligibility & Fee Structure
             </h2>
             <p className="text-foreground/80 font-body max-w-3xl mx-auto">
-              Comprehensive information about admission requirements and fee structures for the B.Sc. Allied Health Sciences programmes.
+              Comprehensive information about admission requirements and fee
+              structures for the B.Sc. Allied Health Sciences programmes.
             </p>
           </div>
           <div className="flex flex-col items-center justify-center">
@@ -318,7 +343,8 @@ export default function AlliedHealthBSc() {
               Explore More at DSU
             </h2>
             <p className="mt-3 text-sm text-foreground font-body">
-              Discover our clinical training centers, research initiatives, and placement excellence
+              Discover our clinical training centers, research initiatives, and
+              placement excellence
             </p>
           </div>
           <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-4">
@@ -423,7 +449,8 @@ export default function AlliedHealthBSc() {
               Join the future of healthcare technology
             </h3>
             <p className="mb-6 text-foreground font-body">
-              Explore our B.Sc. programmes and start your journey towards technical excellence in medicine.
+              Explore our B.Sc. programmes and start your journey towards
+              technical excellence in medicine.
             </p>
             <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
               <a
@@ -556,7 +583,8 @@ function CurriculumLibrary() {
               </span>
             </h2>
             <p className="max-w-2xl text-sm text-foreground sm:text-base font-body">
-              Access comprehensive curriculum documentation and course structures for all B.Sc. programmes.
+              Access comprehensive curriculum documentation and course
+              structures for all B.Sc. programmes.
             </p>
           </div>
           <Badge className="w-fit rounded-full bg-brand-blue/15 px-4 py-2 text-xs font-semibold text-brand-blue border border-brand-blue/20">

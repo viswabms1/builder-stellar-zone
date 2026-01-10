@@ -95,7 +95,8 @@ export default function MPH() {
                 Masters in Public Health (MPH)
               </p>
               <h1 className="text-xs sm:text-base md:text-lg text-white/90 mb-2 sm:mb-6 leading-tight font-display max-w-2xl">
-                Bridging clinical expertise with managerial leadership for global healthcare impact.
+                Bridging clinical expertise with managerial leadership for
+                global healthcare impact.
               </h1>
             </div>
 
@@ -139,7 +140,8 @@ export default function MPH() {
             Masters in Public Health (MPH)
           </p>
           <h1 className="text-xs sm:text-base md:text-lg text-foreground/80 mb-2 sm:mb-6 leading-tight font-display">
-            Bridging clinical expertise with managerial leadership for global healthcare impact.
+            Bridging clinical expertise with managerial leadership for global
+            healthcare impact.
           </h1>
         </div>
 
@@ -189,10 +191,18 @@ export default function MPH() {
               </h2>
               <div className="space-y-4 text-foreground/80 font-body text-lg leading-relaxed">
                 <p>
-                  Public health programs demand special emphasis on studying disease epidemiology, various determinants of health, and emerging challenges in health, public policy making, and program management.
+                  Public health programs demand special emphasis on studying
+                  disease epidemiology, various determinants of health, and
+                  emerging challenges in health, public policy making, and
+                  program management.
                 </p>
                 <p>
-                  Public health professionals help in bridging the gap between the clinical and managerial aspects of program implementation and provide techno – managerial inputs. The curriculum is designed to prepare professionals who can lead health initiatives and manage complex health systems with technical excellence and strategic vision.
+                  Public health professionals help in bridging the gap between
+                  the clinical and managerial aspects of program implementation
+                  and provide techno – managerial inputs. The curriculum is
+                  designed to prepare professionals who can lead health
+                  initiatives and manage complex health systems with technical
+                  excellence and strategic vision.
                 </p>
               </div>
             </div>
@@ -220,12 +230,17 @@ export default function MPH() {
               Curriculum Highlights
             </h2>
             <p className="text-foreground/80 font-body max-w-3xl mx-auto text-center">
-              Our comprehensive curriculum covers the full spectrum of public health disciplines, from core sciences to advanced policy and management.
+              Our comprehensive curriculum covers the full spectrum of public
+              health disciplines, from core sciences to advanced policy and
+              management.
             </p>
           </div>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
             {curriculumItems.map((item, i) => (
-              <Card key={i} className="border-brand-blue/20 bg-card/50 backdrop-blur-sm hover:border-brand-blue transition-colors duration-300">
+              <Card
+                key={i}
+                className="border-brand-blue/20 bg-card/50 backdrop-blur-sm hover:border-brand-blue transition-colors duration-300"
+              >
                 <CardContent className="p-4 flex flex-col items-center text-center justify-center h-full">
                   <p className="font-display text-sm font-semibold">{item}</p>
                 </CardContent>
@@ -244,7 +259,9 @@ export default function MPH() {
                 <div className="p-4 rounded-full bg-brand-blue/10 text-brand-blue">
                   <spec.icon className="h-8 w-8" />
                 </div>
-                <span className="text-xs font-bold uppercase tracking-wider text-center font-display">{spec.label}</span>
+                <span className="text-xs font-bold uppercase tracking-wider text-center font-display">
+                  {spec.label}
+                </span>
               </div>
             ))}
           </div>
@@ -259,7 +276,9 @@ export default function MPH() {
               Career Pathways & Global Impact
             </h2>
             <p className="text-foreground/80 font-body max-w-3xl">
-              MPH graduates are prepared for leadership roles in government health departments, international organizations, and private healthcare consulting.
+              MPH graduates are prepared for leadership roles in government
+              health departments, international organizations, and private
+              healthcare consulting.
             </p>
           </div>
           <div className="grid gap-4 md:grid-cols-2">
@@ -269,7 +288,9 @@ export default function MPH() {
                 className="p-6 rounded-lg border border-border/50 bg-card/80 backdrop-blur-sm flex items-start gap-4"
               >
                 <Trophy className="h-6 w-6 text-brand-orange flex-shrink-0" />
-                <p className="text-sm md:text-base text-foreground font-body">{career}</p>
+                <p className="text-sm md:text-base text-foreground font-body">
+                  {career}
+                </p>
               </div>
             ))}
           </div>
@@ -284,7 +305,9 @@ export default function MPH() {
               Become a Leader in Global Health
             </h3>
             <p className="mb-8 text-foreground/80 font-body text-lg">
-              Join our Master of Public Health program and gain the techno-managerial skills to transform healthcare delivery and policy on a global scale.
+              Join our Master of Public Health program and gain the
+              techno-managerial skills to transform healthcare delivery and
+              policy on a global scale.
             </p>
             <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
               <a
@@ -297,10 +320,11 @@ export default function MPH() {
                   <GraduationCap className="ml-2 h-5 w-5" />
                 </Button>
               </a>
-              <a
-                href="/academics/health-sciences/allied-health"
-              >
-                <Button variant="outline" className="px-8 py-6 text-lg font-bold rounded-full border-brand-blue text-brand-blue">
+              <a href="/academics/health-sciences/allied-health">
+                <Button
+                  variant="outline"
+                  className="px-8 py-6 text-lg font-bold rounded-full border-brand-blue text-brand-blue"
+                >
                   Explore More Programs
                 </Button>
               </a>
