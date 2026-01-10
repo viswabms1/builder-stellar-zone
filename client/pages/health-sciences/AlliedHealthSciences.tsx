@@ -70,14 +70,14 @@ type ProgramCard = {
 
 const UG_PROGRAM_CARDS: ProgramCard[] = [
   {
-    name: "B.Sc Medical Laboratory Technology",
+    name: "B.Sc. Medical Laboratory Technology",
     area: "Undergraduate",
     description:
-      "Training in diagnostic procedures, lab management, and clinical research.",
+      "Performs clinical tests on specimens of bodily fluids and tissues to gather critical health information or determine cause of death.",
     image:
       "https://images.unsplash.com/photo-1513624954087-ca7109c0f710?q=80&w=1600&auto=format&fit=crop",
     link: "/academics/health-sciences/bsc-mlt",
-    highlights: ["4 Years", "Lab Diagnostics", "Clinical Training"],
+    highlights: ["Anatomy", "Physiology", "Biochemistry", "Microbiology", "Pathology"],
     overlay:
       "bg-gradient-to-br from-brand-blue/80 via-black/75 to-black/60 mix-blend-multiply",
     badgeClass:
@@ -85,14 +85,14 @@ const UG_PROGRAM_CARDS: ProgramCard[] = [
     panelClass: "bg-black/55 backdrop-blur-xl",
   },
   {
-    name: "B.Sc Emergency & Trauma Care Technology",
+    name: "B.Sc. Emergency & Trauma Care Technology",
     area: "Undergraduate",
     description:
-      "Specialized training in handling medical emergencies and critical trauma care.",
+      "Provides diagnostic, curative, and preventive medical services under doctor supervision, applying advanced procedures for treating injuries.",
     image:
       "https://images.unsplash.com/photo-1587350859728-117622bc75fb?q=80&w=1600&auto=format&fit=crop",
     link: "/academics/health-sciences/bsc-etct",
-    highlights: ["4 Years", "Critical Care", "Emergency Medicine"],
+    highlights: ["Anatomy", "Pharmacology", "Emergency Services", "Trauma Care"],
     overlay:
       "bg-gradient-to-br from-brand-orange/75 via-black/70 to-black/55 mix-blend-multiply",
     badgeClass:
@@ -100,14 +100,14 @@ const UG_PROGRAM_CARDS: ProgramCard[] = [
     panelClass: "bg-black/55 backdrop-blur-xl",
   },
   {
-    name: "B.Sc Anesthesia & Operation Theater Technology",
+    name: "B.Sc. in Operation Theatre Technology",
     area: "Undergraduate",
     description:
-      "Expertise in anesthesia assistance and operation theater management.",
+      "Member of multidisciplinary surgical teams assisting anesthetists, maintaining OTs, and managing sterile services and disaster preparedness.",
     image:
       "https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=1600&auto=format&fit=crop",
     link: "/academics/health-sciences/bsc-aott",
-    highlights: ["4 Years", "Surgical Support", "Patient Monitoring"],
+    highlights: ["Anesthesia Tech", "OT Management", "Pharmacology", "Medicine"],
     overlay:
       "bg-gradient-to-br from-brand-magenta/75 via-black/70 to-black/55 mix-blend-multiply",
     badgeClass:
@@ -115,14 +115,14 @@ const UG_PROGRAM_CARDS: ProgramCard[] = [
     panelClass: "bg-black/55 backdrop-blur-xl",
   },
   {
-    name: "B.Sc Medical Imaging & Radiology Technology",
+    name: "B.Sc. in Radiology & Imaging Technology",
     area: "Undergraduate",
     description:
-      "Focus on advanced imaging techniques including X-ray, CT, and MRI.",
+      "Tests and operates radiographic, ultrasound, and MRI equipment to produce images for diagnosis and monitors radiation treatments.",
     image:
       "https://images.unsplash.com/photo-1530497610245-94d3c16cda28?q=80&w=1600&auto=format&fit=crop",
     link: "/academics/health-sciences/bsc-mirt",
-    highlights: ["4 Years", "Radiology", "Advanced Imaging"],
+    highlights: ["Radiation Physics", "Imaging Physics", "Diagnostic Techniques", "Patient Care"],
     overlay:
       "bg-gradient-to-br from-brand-blue/75 via-black/70 to-black/55 mix-blend-multiply",
     badgeClass:
@@ -130,10 +130,10 @@ const UG_PROGRAM_CARDS: ProgramCard[] = [
     panelClass: "bg-black/55 backdrop-blur-xl",
   },
   {
-    name: "B.Sc Renal Dialysis Technology",
+    name: "B.Sc. Renal Dialysis Technology",
     area: "Undergraduate",
     description:
-      "Specialized training in dialysis procedures and kidney care management.",
+      "Specialized training in dialysis procedures, nephrology care, and kidney care management for patients with renal impairments.",
     image:
       "https://images.unsplash.com/photo-1505751172107-104990666014?q=80&w=1600&auto=format&fit=crop",
     link: "/academics/health-sciences/bsc-rdt",
@@ -145,14 +145,14 @@ const UG_PROGRAM_CARDS: ProgramCard[] = [
     panelClass: "bg-black/55 backdrop-blur-xl",
   },
   {
-    name: "B.Sc Cardiac Care Technology",
+    name: "B.Sc. Cardiac Care Technology",
     area: "Undergraduate",
     description:
-      "Comprehensive training in non-invasive cardiac diagnostics and patient care.",
+      "Expertise in circulatory systems and complex equipment operation for adult and pediatric cardiac interventions and structural defect correction.",
     image:
       "https://images.unsplash.com/photo-1576091160550-112569c0fce4?q=80&w=1600&auto=format&fit=crop",
     link: "/academics/health-sciences/bsc-cct",
-    highlights: ["4 Years", "Cardiac Diagnostics", "Critical Care"],
+    highlights: ["Human-Anatomy", "Biochemistry", "Blood Banking", "Hematology"],
     overlay:
       "bg-gradient-to-br from-brand-magenta/75 via-black/70 to-black/55 mix-blend-multiply",
     badgeClass:
@@ -196,14 +196,15 @@ const PG_PROGRAM_CARDS: ProgramCard[] = [
     name: "MPH (Masters in Public Health)",
     area: "Postgraduate",
     description:
-      "Advanced program focusing on public health policy, epidemiology, and healthcare management.",
+      "Focuses on disease epidemiology, public policy, and program management, bridging the gap between clinical and managerial aspects of healthcare implementation.",
     image:
       "https://images.unsplash.com/photo-1579165466511-70e21a47b192?q=80&w=1600&auto=format&fit=crop",
     link: "/academics/health-sciences/mph",
     highlights: [
-      "Public Health Policy",
       "Epidemiology",
-      "Healthcare Leadership",
+      "Public Policy",
+      "Health Economics",
+      "Biostatistics",
     ],
     overlay:
       "bg-gradient-to-br from-brand-blue/70 via-black/70 to-black/55 mix-blend-multiply",
