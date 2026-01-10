@@ -69,7 +69,7 @@ export default function BPT() {
           />
           <div className="absolute inset-0 bg-black/30"></div>
 
-          <div className="hero-title-inside absolute bottom-0 left-0 right-0 z-20 flex items-end justify-start p-3 sm:p-6 max-w-7xl mx-auto w-full">
+          <div className="hero-title-inside absolute bottom-0 left-0 right-0 z-20 flex items-end justify-between p-3 sm:p-6 max-w-7xl mx-auto w-full">
             <div className="max-w-2xl">
               <p className="text-lg sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-1 sm:mb-4 uppercase tracking-widest font-display">
                 B.P.T Physiotherapy
@@ -77,6 +77,37 @@ export default function BPT() {
               <h1 className="text-xs sm:text-base md:text-base text-white/80 mb-2 sm:mb-6 leading-tight font-display">
                 Healing Through Movement & Rehabilitation Excellence
               </h1>
+            </div>
+
+            {/* Buttons inside video - visible on md and up */}
+            <div className="hidden md:flex flex-col gap-2 sm:gap-4">
+              <a
+                href="https://admissions.dsu.edu.in/"
+                target="_blank"
+                rel="noreferrer"
+                className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              >
+                <Button
+                  size="sm"
+                  className="sm:size-lg bg-white hover:bg-white/90 text-brand-blue hover:text-brand-blue/80 px-4 sm:px-8 py-2 sm:py-6 text-xs sm:text-base font-semibold font-display transition-all duration-300 group border-2 border-white w-full sm:w-auto"
+                >
+                  Apply Now
+                  <ChevronRight className="w-4 sm:w-5 h-4 sm:h-5 ml-1 sm:ml-2 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </a>
+              <a
+                href="https://dsu.edu.in/virtual-tour/"
+                target="_blank"
+                rel="noreferrer"
+                className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              >
+                <Button
+                  size="sm"
+                  className="sm:size-lg bg-white hover:bg-white/90 text-brand-blue hover:text-brand-blue/80 px-4 sm:px-8 py-2 sm:py-6 text-xs sm:text-base font-semibold font-display transition-all duration-300 group border-2 border-white w-full sm:w-auto"
+                >
+                  Virtual Tour
+                </Button>
+              </a>
             </div>
           </div>
         </div>
@@ -92,7 +123,8 @@ export default function BPT() {
           </h1>
         </div>
 
-        <div className="flex flex-row gap-2 sm:gap-4">
+        {/* Buttons below video - visible only on mobile */}
+        <div className="flex md:hidden flex-row gap-2 sm:gap-4">
           <a
             href="https://admissions.dsu.edu.in/"
             target="_blank"
