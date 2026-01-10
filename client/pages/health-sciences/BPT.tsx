@@ -472,7 +472,7 @@ function CurriculumLibrary() {
             return (
               <div
                 key={program.id}
-                className={`rounded-3xl border-2 ${borderClass} overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-brand-blue/10 hover:-translate-y-1 flex items-stretch`}
+                className={`rounded-3xl border-2 ${borderClass} overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-brand-blue/10 hover:-translate-y-1 flex flex-row items-stretch`}
               >
                 <div className="relative w-48 h-48 flex-shrink-0 overflow-hidden">
                   <img
