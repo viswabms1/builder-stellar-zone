@@ -431,12 +431,12 @@ export default function Navigation() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-3">
-          <div className="flex items-center justify-between h-20">
+          <div className="flex items-center justify-between h-28 lg:h-20">
             {/* Logo - Visible on mobile and tablet portrait, hidden on desktop */}
             <Link
               to="/"
               className="lg:hidden flex-shrink-0 flex items-center justify-center pt-[15px]"
-              style={{ width: "auto", minWidth: "80px" }}
+              style={{ width: "auto", minWidth: "100px" }}
             >
               <img
                 src={
@@ -445,7 +445,7 @@ export default function Navigation() {
                     : "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F0caf0bf29be6421997005f26cdaae0ed?format=webp&width=800"
                 }
                 alt="Dayananda Sagar University Logo"
-                style={{ height: "50px", width: "auto" }}
+                style={{ height: "60px", width: "auto" }}
               />
             </Link>
 
