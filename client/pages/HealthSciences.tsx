@@ -648,7 +648,7 @@ function HeroVideo() {
               size="sm"
               className="sm:size-lg bg-white hover:bg-white/90 text-brand-orange hover:text-brand-orange/80 px-4 sm:px-8 py-2 sm:py-6 text-xs sm:text-base font-semibold font-display transition-all duration-300 group border-2 border-white w-full sm:w-auto"
             >
-              Virtual Campus Tour
+              Health Sciences Tour
             </Button>
           </a>
           <a
