@@ -992,7 +992,9 @@ export default function Index() {
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 mb-6">
               <div className="h-1 w-8 bg-brand-magenta rounded-full"></div>
-              <span className="text-xs font-bold uppercase tracking-widest text-brand-magenta">Research Excellence</span>
+              <span className="text-xs font-bold uppercase tracking-widest text-brand-magenta">
+                Research Excellence
+              </span>
               <div className="h-1 w-8 bg-brand-magenta rounded-full"></div>
             </div>
             <h2 className="headline-2 mb-6">
@@ -1002,7 +1004,8 @@ export default function Index() {
               </span>
             </h2>
             <p className="subheadline text-foreground max-w-2xl mx-auto font-display">
-              Discover cutting-edge research and academic insights from our top scholars across multiple disciplines
+              Discover cutting-edge research and academic insights from our top
+              scholars across multiple disciplines
             </p>
           </div>
 
@@ -1026,7 +1029,9 @@ export default function Index() {
                     </Badge>
                     <div className="flex items-center gap-2">
                       <span className="inline-block w-2 h-2 rounded-full bg-brand-magenta animate-pulse"></span>
-                      <span className="text-xs font-semibold text-brand-magenta">Featured Publication</span>
+                      <span className="text-xs font-semibold text-brand-magenta">
+                        Featured Publication
+                      </span>
                     </div>
                   </div>
                   <span className="text-sm font-bold text-foreground/60">
@@ -1075,7 +1080,10 @@ export default function Index() {
           <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-3">
             {allPublications.map((publication, idx) => {
               const isSpringer = publication.category.includes("Springer");
-              const isHighImpact = ["Physical Review E", "Progress in Photovoltaics"].includes(publication.category);
+              const isHighImpact = [
+                "Physical Review E",
+                "Progress in Photovoltaics",
+              ].includes(publication.category);
               const colors = [
                 "from-brand-magenta/20 to-brand-magenta/5",
                 "from-brand-blue/20 to-brand-blue/5",
@@ -1106,7 +1114,10 @@ export default function Index() {
                       : `${borderColors[idx % 5]} bg-gradient-to-br ${colors[idx % 5]} hover:shadow-xl hover:shadow-brand-magenta/10`
                   }`}
                   style={{
-                    animation: selectedPublicationIndex === idx ? "pulse 2s infinite" : "none",
+                    animation:
+                      selectedPublicationIndex === idx
+                        ? "pulse 2s infinite"
+                        : "none",
                   }}
                 >
                   {/* Background accent */}
@@ -1122,11 +1133,15 @@ export default function Index() {
                             isSpringer
                               ? "bg-brand-magenta/25 text-brand-magenta border-brand-magenta/50"
                               : isHighImpact
-                              ? "bg-brand-blue/25 text-brand-blue border-brand-blue/50"
-                              : "bg-brand-orange/25 text-brand-orange border-brand-orange/50"
+                                ? "bg-brand-blue/25 text-brand-blue border-brand-blue/50"
+                                : "bg-brand-orange/25 text-brand-orange border-brand-orange/50"
                           }`}
                         >
-                          {isSpringer ? "Q1 Journal" : isHighImpact ? "High Impact" : "Research"}
+                          {isSpringer
+                            ? "Q1 Journal"
+                            : isHighImpact
+                              ? "High Impact"
+                              : "Research"}
                         </Badge>
                       </div>
                       <span className="text-xs text-foreground/60 flex-shrink-0 font-semibold">
