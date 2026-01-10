@@ -1585,6 +1585,18 @@ export default function Engineering() {
                 </Button>
               </a>
               <a
+                href="https://dsu.edu.in/virtual-tour/#SchoolOfEngineeringEntrance_01,1.14,0,75,4"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Button
+                  variant="outline"
+                  className="border-transparent hover:bg-transparent"
+                >
+                  Engineering Tour
+                </Button>
+              </a>
+              <a
                 href="https://dsu.edu.in/virtual-tour/"
                 target="_blank"
                 rel="noreferrer"
@@ -1593,7 +1605,7 @@ export default function Engineering() {
                   variant="outline"
                   className="border-transparent hover:bg-transparent"
                 >
-                  Virtual Tour
+                  Full University Tour
                 </Button>
               </a>
             </div>
