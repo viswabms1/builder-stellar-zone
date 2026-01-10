@@ -40,7 +40,7 @@ import {
 type NoticeItem = ImportedNoticeItem;
 
 const DEAN_INFO: DeanInfo = {
-  name: "Dr. Nandan.T.M",
+  name: "Dr. Nandan.T.M, MBBS, MD, ACME",
   title: "Professor - Microbiology & Principal",
   position: "College of Allied Health Sciences",
   photo:
