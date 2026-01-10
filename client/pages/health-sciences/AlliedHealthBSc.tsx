@@ -37,14 +37,14 @@ export default function AlliedHealthBSc() {
       label: "B.Sc. in Medical Laboratory Technology",
       description: "Perform clinical tests on specimens of bodily fluids and tissues to gather critical health information or determine cause of death.",
       highlights: ["Anatomy", "Physiology", "Biochemistry", "Microbiology", "Pathology"],
-      image: "https://images.pexels.com/photos/5726785/pexels-photo-5726785.jpeg?auto=compress&cs=tinysrgb&w=1600"
+      image: "https://images.pexels.com/photos/5726714/pexels-photo-5726714.jpeg?auto=compress&cs=tinysrgb&w=1600"
     },
     {
       icon: Activity,
       label: "B.Sc. in Emergency & Trauma Care Technology",
       description: "Provide diagnostic, curative, and preventive medical services under doctor supervision, applying advanced procedures for treating injuries.",
       highlights: ["Emergency Medicine", "Trauma Care", "Pharmacology", "Life Support"],
-      image: "https://images.pexels.com/photos/27793058/pexels-photo-27793058.jpeg?auto=compress&cs=tinysrgb&w=1600"
+      image: "https://images.pexels.com/photos/8942228/pexels-photo-8942228.jpeg?auto=compress&cs=tinysrgb&w=1600"
     },
     {
       icon: Stethoscope,
@@ -58,7 +58,7 @@ export default function AlliedHealthBSc() {
       label: "B.Sc. in Radiology & Imaging Technology",
       description: "Operate radiographic, ultrasound, and MRI equipment to produce images for diagnosis and monitors radiation treatments.",
       highlights: ["Radiation Physics", "Imaging Physics", "Diagnostic Tech", "Patient Care"],
-      image: "https://images.pexels.com/photos/7088524/pexels-photo-7088524.jpeg?auto=compress&cs=tinysrgb&w=1600"
+      image: "https://images.pexels.com/photos/6502017/pexels-photo-6502017.jpeg?auto=compress&cs=tinysrgb&w=1600"
     },
     {
       icon: Heart,
