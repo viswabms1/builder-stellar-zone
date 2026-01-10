@@ -362,7 +362,7 @@ export default function Index() {
       description:
         "Groundbreaking research on multimodal AI for mental health diagnostics using voice, text, and facial cues. Achieved 20% accuracy gain via data fusion utilizing LSTM + CNN on DAIC-WoZ dataset. Published in Health Services and Outcomes Research Methodology by Springer Nature.",
       image:
-        "https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg",
+        "https://images.pexels.com/photos/8090286/pexels-photo-8090286.jpeg",
       authors: "Bipin Kumar Rai, Ishika Jain, Baibhav Tiwari, Abhay Saxena",
       link: "https://doi.org/10.1007/s10742-024-00329-2",
     },
@@ -373,7 +373,7 @@ export default function Index() {
       description:
         "Research on the effect of zircon reinforcement on aluminum/graphite hybrid composite materials, analyzing mechanical properties and structural improvements.",
       image:
-        "https://images.pexels.com/photos/3807517/pexels-photo-3807517.jpeg",
+        "https://images.pexels.com/photos/19825178/pexels-photo-19825178.jpeg",
       authors: "DSU Materials Science Team",
       link: "https://doi.org/10.1007/s40735-025-00944-7",
     },
@@ -384,7 +384,7 @@ export default function Index() {
       description:
         "Advanced stability analysis of perovskite solar cells using cutting-edge characterization techniques to improve long-term performance and reliability.",
       image:
-        "https://images.pexels.com/photos/9629789/pexels-photo-9629789.jpeg",
+        "https://images.pexels.com/photos/35501726/pexels-photo-35501726.jpeg",
       authors: "DSU Renewable Energy Lab",
       link: "https://doi.org/10.1002/pip.3861",
     },
@@ -395,7 +395,7 @@ export default function Index() {
       description:
         "Comprehensive study on host-guest inclusion complexes involving tafamidis, examining molecular interactions and structural characterization.",
       image:
-        "https://images.pexels.com/photos/8888537/pexels-photo-8888537.jpeg",
+        "https://images.pexels.com/photos/25626509/pexels-photo-25626509.jpeg",
       authors: "DSU Chemistry Research",
       link: "https://doi.org/10.1016/j.molstruc.2025.141649",
     },
@@ -406,7 +406,7 @@ export default function Index() {
       description:
         "Design and development of a laboratory-scale test rig for studying wheel system performance, thermal behavior, and durability characteristics.",
       image:
-        "https://images.pexels.com/photos/5632400/pexels-photo-5632400.jpeg",
+        "https://images.pexels.com/photos/9242838/pexels-photo-9242838.jpeg",
       authors: "DSU Mechanical Engineering",
       link: "https://doi.org/10.1115/1.4067351",
     },
@@ -417,7 +417,7 @@ export default function Index() {
       description:
         "Investigation of caffeine's molecular effects on membrane dynamics and protein interactions using advanced computational and experimental techniques.",
       image:
-        "https://images.pexels.com/photos/3962286/pexels-photo-3962286.jpeg",
+        "https://images.pexels.com/photos/25626515/pexels-photo-25626515.jpeg",
       authors: "DSU Biophysics Group",
       link: "https://doi.org/10.1103/PhysRevE.111.014402",
     },
@@ -428,7 +428,7 @@ export default function Index() {
       description:
         "Novel application of fiber Bragg gratings for high-precision temperature sensing in industrial and scientific applications.",
       image:
-        "https://images.pexels.com/photos/3865857/pexels-photo-3865857.jpeg",
+        "https://images.pexels.com/photos/16777744/pexels-photo-16777744.jpeg",
       authors: "DSU Photonics Lab",
       link: "https://doi.org/10.1007/s12596-024-01894-y",
     },
@@ -439,7 +439,7 @@ export default function Index() {
       description:
         "Integrated approach combining chemical synthesis, experimental characterization, and computational modeling for understanding molecular systems and their properties.",
       image:
-        "https://images.pexels.com/photos/12888560/pexels-photo-12888560.jpeg",
+        "https://images.pexels.com/photos/7723393/pexels-photo-7723393.jpeg",
       authors: "DSU Computational Chemistry",
       link: "https://doi.org/10.1016/j.molstruc.2025.142056",
     },
@@ -450,7 +450,7 @@ export default function Index() {
       description:
         "Development of advanced multilayer coating techniques for creating gold-encapsulated nanostructures with enhanced optical and plasmonic properties.",
       image:
-        "https://images.pexels.com/photos/8888557/pexels-photo-8888557.jpeg",
+        "https://images.pexels.com/photos/16777744/pexels-photo-16777744.jpeg",
       authors: "DSU Nanotechnology Research",
       link: "https://doi.org/10.1007/s12596-024-01711-6",
     },
@@ -461,68 +461,9 @@ export default function Index() {
       description:
         "Advanced forecasting methods for predicting solar radiation patterns to optimize renewable energy generation and grid integration.",
       image:
-        "https://images.pexels.com/photos/7974355/pexels-photo-7974355.jpeg",
+        "https://images.pexels.com/photos/9799712/pexels-photo-9799712.jpeg",
       authors: "DSU Sustainable Energy Institute",
       link: "https://doi.org/10.51646/jsesd.v14i1.386",
-    },
-    {
-      date: "Nov 2024",
-      title: "AI & Machine Learning in Healthcare: A DSU Research Perspective",
-      category: "Research Paper",
-      description:
-        "Explore groundbreaking research on how AI and machine learning are revolutionizing healthcare diagnostics and patient outcomes. Published in collaboration with leading medical institutions.",
-      image:
-        "https://images.pexels.com/photos/5726794/pexels-photo-5726794.jpeg",
-      authors: "Dr. Prakash Sheelvanthmath & Team",
-    },
-    {
-      date: "Oct 2024",
-      title: "Sustainable Engineering Solutions for Smart Cities",
-      category: "Technical Journal",
-      description:
-        "A comprehensive study on innovative engineering approaches to build sustainable, intelligent urban infrastructure. Featuring case studies from DSU's engineering initiatives.",
-      image:
-        "https://images.pexels.com/photos/3862638/pexels-photo-3862638.jpeg",
-      authors: "School of Engineering",
-    },
-    {
-      date: "Sep 2024",
-      title: "Digital Transformation in Higher Education: Best Practices",
-      category: "White Paper",
-      description:
-        "An in-depth analysis of digital transformation strategies in academic institutions, with insights from DSU's successful implementation of smart campus initiatives.",
-      image: "https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg",
-      authors: "DSU Innovation Lab",
-    },
-    {
-      date: "Aug 2024",
-      title: "Cybersecurity in Emerging Technologies: Challenges & Solutions",
-      category: "Research Article",
-      description:
-        "Addressing security concerns in AI, blockchain, and IoT applications. Features research from DSU's Cybersecurity Center of Excellence.",
-      image:
-        "https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg",
-      authors: "Cybersecurity Research Team",
-    },
-    {
-      date: "Jul 2024",
-      title: "Legal Frameworks for AI Governance in India",
-      category: "Policy Brief",
-      description:
-        "Comprehensive analysis of regulatory frameworks and legal considerations for AI implementation in India, prepared by DSU's School of Law.",
-      image:
-        "https://images.pexels.com/photos/8112201/pexels-photo-8112201.jpeg",
-      authors: "School of Law",
-    },
-    {
-      date: "Jun 2024",
-      title: "Innovation Metrics: Measuring Research Impact",
-      category: "Journal Article",
-      description:
-        "Framework for evaluating research impact and innovation metrics in academic institutions. A study by DSU's Research & Development Office.",
-      image:
-        "https://images.pexels.com/photos/6476783/pexels-photo-6476783.jpeg",
-      authors: "DSU Research Office",
     },
   ];
 
