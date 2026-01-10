@@ -217,7 +217,7 @@ const PG_PROGRAM_CARDS: ProgramCard[] = [
 function ProgramCardComponent({ program }: { program: ProgramCard }) {
   const isInternal = program.link.startsWith("/");
   const wrapperClasses = `group block h-full rounded-none ${
-    program.featured ? "lg:col-span-6" : "lg:col-span-4"
+    program.featured ? "lg:col-span-6" : "lg:col-span-3"
   } focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2 focus-visible:ring-offset-background`;
   const overlayClasses =
     program.overlay ??
