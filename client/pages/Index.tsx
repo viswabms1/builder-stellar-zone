@@ -1251,128 +1251,101 @@ export default function Index() {
             </p>
           </div>
 
-          <div
-            className="grid lg:grid-cols-3 gap-0 items-start"
-            style={{ contain: "layout style paint" }}
-          >
-            {/* Left side - Featured publication (50%) - Auto-rotating */}
-            <div className="lg:col-span-2" style={{ contain: "content" }}>
-              <div className="w-full flex flex-col rounded-none border border-orange-500/20 bg-orange-500/10 cursor-pointer text-left overflow-hidden">
-                <div className="relative w-full aspect-video overflow-hidden bg-foreground/5">
-                  <img
-                    src={allPublications[selectedPublicationIndex].image}
-                    alt={allPublications[selectedPublicationIndex].title}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+          {/* Featured Publication */}
+          <div className="mb-12" style={{ contain: "content" }}>
+            <div className="w-full flex flex-col rounded-none border border-orange-500/20 bg-orange-500/10 cursor-pointer text-left overflow-hidden">
+              <div className="relative w-full aspect-video overflow-hidden bg-foreground/5">
+                <img
+                  src={allPublications[selectedPublicationIndex].image}
+                  alt={allPublications[selectedPublicationIndex].title}
+                  className="w-full h-full object-cover"
+                />
+              </div>
 
-                <div className="p-8 space-y-4">
-                  <div className="flex items-center justify-between">
-                    <Badge className="bg-brand-orange/20 text-brand-orange">
-                      {allPublications[selectedPublicationIndex].category}
-                    </Badge>
-                    <span className="text-xs text-foreground/60 font-body">
-                      {allPublications[selectedPublicationIndex].date}
-                    </span>
-                  </div>
-                  <h3 className="text-2xl font-bold text-foreground font-display">
-                    {allPublications[selectedPublicationIndex].title}
-                  </h3>
-                  <p className="text-foreground/80 font-body">
-                    {allPublications[selectedPublicationIndex].description}
-                  </p>
-                  <p className="text-sm text-foreground/60 font-body">
-                    By {allPublications[selectedPublicationIndex].authors}
-                  </p>
-                  <div className="flex items-center justify-between pt-4">
-                    {allPublications[selectedPublicationIndex].link ? (
-                      <a
-                        href={allPublications[selectedPublicationIndex].link}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="no-underline"
-                      >
-                        <Button className="bg-brand-gradient hover:opacity-90 text-foreground">
-                          Read Publication
-                          <ArrowRight className="w-4 h-4 ml-2" />
-                        </Button>
-                      </a>
-                    ) : (
+              <div className="p-8 space-y-4">
+                <div className="flex items-center justify-between">
+                  <Badge className="bg-brand-orange/20 text-brand-orange">
+                    {allPublications[selectedPublicationIndex].category}
+                  </Badge>
+                  <span className="text-xs text-foreground/60 font-body">
+                    {allPublications[selectedPublicationIndex].date}
+                  </span>
+                </div>
+                <h3 className="text-2xl font-bold text-foreground font-display">
+                  {allPublications[selectedPublicationIndex].title}
+                </h3>
+                <p className="text-foreground/80 font-body">
+                  {allPublications[selectedPublicationIndex].description}
+                </p>
+                <p className="text-sm text-foreground/60 font-body">
+                  By {allPublications[selectedPublicationIndex].authors}
+                </p>
+                <div className="flex items-center justify-between pt-4">
+                  {allPublications[selectedPublicationIndex].link ? (
+                    <a
+                      href={allPublications[selectedPublicationIndex].link}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="no-underline"
+                    >
                       <Button className="bg-brand-gradient hover:opacity-90 text-foreground">
                         Read Publication
                         <ArrowRight className="w-4 h-4 ml-2" />
                       </Button>
-                    )}
-                    <div className="text-xs text-foreground/60 font-body">
-                      Auto-rotating • {selectedPublicationIndex + 1} of{" "}
-                      {allPublications.length}
-                    </div>
+                    </a>
+                  ) : (
+                    <Button className="bg-brand-gradient hover:opacity-90 text-foreground">
+                      Read Publication
+                      <ArrowRight className="w-4 h-4 ml-2" />
+                    </Button>
+                  )}
+                  <div className="text-xs text-foreground/60 font-body">
+                    Featured • {selectedPublicationIndex + 1} of{" "}
+                    {allPublications.length}
                   </div>
                 </div>
               </div>
             </div>
+          </div>
 
-            {/* Publications List - Right side */}
-            <div className="lg:col-span-1 space-y-0">
-              <h3 className="text-lg font-bold text-foreground mb-6 font-display">
-                More Publications
-              </h3>
-              <div className="space-y-0">
-                {allPublications.map((publication, idx) => (
-                  <button
-                    key={idx}
-                    onMouseEnter={() => setIsPublicationInteracting(true)}
-                    onMouseLeave={() => setIsPublicationInteracting(false)}
-                    onClick={() => {
-                      setSelectedPublicationIndex(idx);
-                      setIsPublicationInteracting(true);
-                    }}
-                    className={`group rounded-none border cursor-pointer w-full text-left p-4 ${
-                      selectedPublicationIndex === idx
-                        ? "border-brand-magenta bg-brand-magenta/10"
-                        : idx % 3 === 0
-                          ? "border-blue-500/20 bg-blue-500/10"
-                          : idx % 3 === 1
-                            ? "border-purple-500/20 bg-purple-500/10"
-                            : "border-orange-500/20 bg-orange-500/10"
-                    }`}
-                  >
-                    <div className="flex gap-4">
-                      <div className="flex-shrink-0">
-                        <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-brand-orange/10 text-brand-orange font-bold text-sm font-display">
-                          <BookOpen className="w-5 h-5" />
-                        </div>
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <p className="text-xs text-foreground/60 font-body font-semibold">
-                          {publication.date}
-                        </p>
-                        <h4 className="text-sm font-semibold text-foreground font-display group-hover:text-brand-magenta transition-colors line-clamp-2 mt-1">
-                          {publication.title}
-                        </h4>
-                        <Badge
-                          variant="secondary"
-                          className="text-xs mt-2 inline-block"
-                        >
-                          {publication.category}
-                        </Badge>
-                      </div>
-                      <div className="flex-shrink-0">
-                        <ChevronRight className="w-4 h-4 text-foreground/40 group-hover:text-brand-magenta transition-colors" />
-                      </div>
-                    </div>
-                  </button>
-                ))}
-              </div>
-
-              <Button
-                variant="outline"
-                className="w-full border-brand-orange/30 text-brand-orange hover:bg-brand-orange/5 mt-6"
+          {/* All Publications Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-4">
+            {allPublications.map((publication, idx) => (
+              <button
+                key={idx}
+                onMouseEnter={() => setIsPublicationInteracting(true)}
+                onMouseLeave={() => setIsPublicationInteracting(false)}
+                onClick={() => {
+                  setSelectedPublicationIndex(idx);
+                  setIsPublicationInteracting(true);
+                }}
+                className={`group relative overflow-hidden rounded-lg border-2 transition-all duration-300 h-full ${
+                  selectedPublicationIndex === idx
+                    ? "border-brand-magenta bg-brand-magenta/10 scale-105"
+                    : "border-border/30 bg-card/40 hover:border-brand-magenta/50"
+                }`}
               >
-                View All Publications
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </Button>
-            </div>
+                <div className="relative h-32 overflow-hidden bg-foreground/5">
+                  <img
+                    src={publication.image}
+                    alt={publication.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                </div>
+                <div className="p-4 space-y-2">
+                  <Badge variant="secondary" className="text-xs">
+                    {publication.category.split(" ")[0]}
+                  </Badge>
+                  <h4 className="text-xs font-semibold text-foreground font-display group-hover:text-brand-magenta transition-colors line-clamp-2 leading-tight">
+                    {publication.title}
+                  </h4>
+                  <p className="text-xs text-foreground/60 font-body">
+                    {publication.date}
+                  </p>
+                </div>
+              </button>
+            ))}
           </div>
         </div>
       </section>
