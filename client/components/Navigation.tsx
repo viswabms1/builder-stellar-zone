@@ -151,7 +151,7 @@ export default function Navigation() {
           { name: "Pharmacy", href: "/academics/health-sciences" },
           { name: "Nursing", href: "/academics/health-sciences/nursing" },
           {
-            name: "Allied Health Sciences",
+            name: "Allied Health Sciences (CAHS)",
             href: "/academics/health-sciences/allied-health",
           },
           {
