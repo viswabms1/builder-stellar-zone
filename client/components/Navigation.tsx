@@ -435,7 +435,7 @@ export default function Navigation() {
             {/* Logo - Visible on mobile and tablet portrait, hidden on desktop */}
             <Link
               to="/"
-              className="lg:hidden flex-shrink-0 flex items-center justify-center pt-2"
+              className="lg:hidden flex-shrink-0 flex items-center justify-center pt-6"
               style={{ width: "auto", minWidth: "80px" }}
             >
               <img
