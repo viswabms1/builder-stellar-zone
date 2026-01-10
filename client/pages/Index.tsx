@@ -1245,10 +1245,24 @@ export default function Index() {
                     By {allPublications[selectedPublicationIndex].authors}
                   </p>
                   <div className="flex items-center justify-between pt-4">
-                    <Button className="bg-brand-gradient hover:opacity-90 text-foreground">
-                      Read Publication
-                      <ArrowRight className="w-4 h-4 ml-2" />
-                    </Button>
+                    {allPublications[selectedPublicationIndex].link ? (
+                      <a
+                        href={allPublications[selectedPublicationIndex].link}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="no-underline"
+                      >
+                        <Button className="bg-brand-gradient hover:opacity-90 text-foreground">
+                          Read Publication
+                          <ArrowRight className="w-4 h-4 ml-2" />
+                        </Button>
+                      </a>
+                    ) : (
+                      <Button className="bg-brand-gradient hover:opacity-90 text-foreground">
+                        Read Publication
+                        <ArrowRight className="w-4 h-4 ml-2" />
+                      </Button>
+                    )}
                     <div className="text-xs text-foreground/60 font-body">
                       Auto-rotating • {selectedPublicationIndex + 1} of{" "}
                       {allPublications.length}
