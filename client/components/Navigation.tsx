@@ -155,6 +155,10 @@ export default function Navigation() {
             href: "/academics/health-sciences/allied-health",
           },
           {
+            name: "B.Sc. Allied Health Sciences",
+            href: "/academics/health-sciences/allied-health-bsc",
+          },
+          {
             name: "Physiotherapy",
             href: "/academics/health-sciences/physiotherapy",
           },
