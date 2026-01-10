@@ -70,79 +70,26 @@ type ProgramCard = {
 
 const UG_PROGRAM_CARDS: ProgramCard[] = [
   {
-    name: "B.Sc. Medical Laboratory Technology",
+    name: "B.Sc. Allied Health Sciences",
     area: "Undergraduate",
     description:
-      "Performs clinical tests on specimens of bodily fluids and tissues to gather critical health information or determine cause of death.",
+      "A comprehensive multi-disciplinary program offering specialized training in critical healthcare sectors. Our curriculum provides hands-on clinical exposure in state-of-the-art facilities, preparing students for technical excellence in modern medicine.",
     image:
       "https://images.unsplash.com/photo-1513624954087-ca7109c0f710?q=80&w=1600&auto=format&fit=crop",
-    link: "/academics/health-sciences/bsc-mlt",
-    highlights: ["Anatomy", "Physiology", "Biochemistry", "Microbiology", "Pathology"],
+    link: "/academics/health-sciences/allied-health-bsc",
+    highlights: [
+      "Medical Laboratory Technology",
+      "Emergency & Trauma Care",
+      "Operation Theatre Technology",
+      "Radiology & Imaging",
+      "Cardiac Care Technology",
+    ],
     overlay:
       "bg-gradient-to-br from-brand-blue/80 via-black/75 to-black/60 mix-blend-multiply",
     badgeClass:
       "bg-brand-blue/25 text-foreground/90 border border-white/30 backdrop-blur",
     panelClass: "bg-black/55 backdrop-blur-xl",
-  },
-  {
-    name: "B.Sc. Emergency & Trauma Care Technology",
-    area: "Undergraduate",
-    description:
-      "Provides diagnostic, curative, and preventive medical services under doctor supervision, applying advanced procedures for treating injuries.",
-    image:
-      "https://images.unsplash.com/photo-1587350859728-117622bc75fb?q=80&w=1600&auto=format&fit=crop",
-    link: "/academics/health-sciences/bsc-etct",
-    highlights: ["Anatomy", "Pharmacology", "Emergency Services", "Trauma Care"],
-    overlay:
-      "bg-gradient-to-br from-brand-orange/75 via-black/70 to-black/55 mix-blend-multiply",
-    badgeClass:
-      "bg-brand-orange/30 text-foreground/90 border border-white/25 backdrop-blur",
-    panelClass: "bg-black/55 backdrop-blur-xl",
-  },
-  {
-    name: "B.Sc. in Operation Theatre Technology",
-    area: "Undergraduate",
-    description:
-      "Member of multidisciplinary surgical teams assisting anesthetists, maintaining OTs, and managing sterile services and disaster preparedness.",
-    image:
-      "https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=1600&auto=format&fit=crop",
-    link: "/academics/health-sciences/bsc-aott",
-    highlights: ["Anesthesia Tech", "OT Management", "Pharmacology", "Medicine"],
-    overlay:
-      "bg-gradient-to-br from-brand-magenta/75 via-black/70 to-black/55 mix-blend-multiply",
-    badgeClass:
-      "bg-brand-magenta/30 text-foreground/90 border border-white/25 backdrop-blur",
-    panelClass: "bg-black/55 backdrop-blur-xl",
-  },
-  {
-    name: "B.Sc. in Radiology & Imaging Technology",
-    area: "Undergraduate",
-    description:
-      "Tests and operates radiographic, ultrasound, and MRI equipment to produce images for diagnosis and monitors radiation treatments.",
-    image:
-      "https://images.unsplash.com/photo-1530497610245-94d3c16cda28?q=80&w=1600&auto=format&fit=crop",
-    link: "/academics/health-sciences/bsc-mirt",
-    highlights: ["Radiation Physics", "Imaging Physics", "Diagnostic Techniques", "Patient Care"],
-    overlay:
-      "bg-gradient-to-br from-brand-blue/75 via-black/70 to-black/55 mix-blend-multiply",
-    badgeClass:
-      "bg-brand-blue/30 text-foreground/90 border border-white/25 backdrop-blur",
-    panelClass: "bg-black/55 backdrop-blur-xl",
-  },
-  {
-    name: "B.Sc. Cardiac Care Technology",
-    area: "Undergraduate",
-    description:
-      "Expertise in circulatory systems and complex equipment operation for adult and pediatric cardiac interventions and structural defect correction.",
-    image:
-      "https://images.unsplash.com/photo-1576091160550-112569c0fce4?q=80&w=1600&auto=format&fit=crop",
-    link: "/academics/health-sciences/bsc-cct",
-    highlights: ["Human-Anatomy", "Biochemistry", "Blood Banking", "Hematology"],
-    overlay:
-      "bg-gradient-to-br from-brand-magenta/75 via-black/70 to-black/55 mix-blend-multiply",
-    badgeClass:
-      "bg-brand-magenta/30 text-foreground/90 border border-white/25 backdrop-blur",
-    panelClass: "bg-black/55 backdrop-blur-xl",
+    featured: true,
   },
 ];
 
@@ -173,7 +120,7 @@ const PG_PROGRAM_CARDS: ProgramCard[] = [
 function ProgramCardComponent({ program }: { program: ProgramCard }) {
   const isInternal = program.link.startsWith("/");
   const wrapperClasses = `group block h-full rounded-none ${
-    program.featured ? "lg:col-span-6" : "lg:col-span-3"
+    program.featured ? "lg:col-span-12" : "lg:col-span-3"
   } focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2 focus-visible:ring-offset-background`;
   const overlayClasses =
     program.overlay ??
