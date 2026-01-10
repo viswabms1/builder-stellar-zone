@@ -105,7 +105,8 @@ export default function Navigation() {
         href: "/academics/health-sciences",
         departments: [
           { name: "Pharmacy", href: "/academics/health-sciences" },
-          { name: "Nursing", href: "/academics/health-sciences" },
+          { name: "Nursing", href: "/academics/health-sciences/nursing" },
+          { name: "Physiotherapy", href: "/academics/health-sciences/physiotherapy" },
           { name: "CDSIMER", href: "/academics/health-sciences/cdsimer" },
         ],
       },
