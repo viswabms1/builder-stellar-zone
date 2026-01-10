@@ -523,7 +523,7 @@ function CurriculumLibrary() {
       description:
         "Specialized curriculum on cardiovascular systems, ECG, echocardiography, and cardiac catheterization.",
       image:
-        "https://images.unsplash.com/photo-1576091160550-112569c0fce4?q=80&w=1600&auto=format&fit=crop",
+        "https://images.pexels.com/photos/11198232/pexels-photo-11198232.jpeg?auto=compress&cs=tinysrgb&w=1600",
       batches: [
         {
           year: "2025-26",
