@@ -1267,24 +1267,32 @@ export default function Index() {
                 />
               </div>
 
-              <div className="p-8 space-y-4">
-                <div className="flex items-center justify-between">
-                  <Badge className="bg-brand-orange/20 text-brand-orange">
-                    {allPublications[selectedPublicationIndex].category}
-                  </Badge>
-                  <span className="text-xs text-foreground/60 font-body">
+              <div className="p-8 space-y-5">
+                <div className="flex items-start justify-between gap-4">
+                  <div className="flex flex-col gap-3">
+                    <Badge className="bg-brand-magenta/25 text-brand-magenta border border-brand-magenta/50 w-fit">
+                      {allPublications[selectedPublicationIndex].category}
+                    </Badge>
+                    <div className="flex items-center gap-2">
+                      <span className="inline-block w-2 h-2 rounded-full bg-brand-magenta animate-pulse"></span>
+                      <span className="text-xs font-semibold text-brand-magenta">Featured Publication</span>
+                    </div>
+                  </div>
+                  <span className="text-sm font-bold text-foreground/60">
                     {allPublications[selectedPublicationIndex].date}
                   </span>
                 </div>
-                <h3 className="text-2xl font-bold text-foreground font-display">
+                <h3 className="text-2xl md:text-3xl font-bold text-foreground font-display leading-tight bg-gradient-to-r from-brand-magenta via-brand-orange to-brand-magenta bg-clip-text text-transparent">
                   {allPublications[selectedPublicationIndex].title}
                 </h3>
-                <p className="text-foreground/80 font-body">
+                <p className="text-foreground/85 font-body leading-relaxed">
                   {allPublications[selectedPublicationIndex].description}
                 </p>
-                <p className="text-sm text-foreground/60 font-body">
-                  By {allPublications[selectedPublicationIndex].authors}
-                </p>
+                <div className="pt-2 border-t border-foreground/10">
+                  <p className="text-sm text-brand-magenta font-semibold">
+                    ✓ {allPublications[selectedPublicationIndex].authors}
+                  </p>
+                </div>
                 <div className="flex items-center justify-between pt-4">
                   {allPublications[selectedPublicationIndex].link ? (
                     <a
