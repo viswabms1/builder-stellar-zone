@@ -46,12 +46,10 @@ const DEAN_INFO: DeanInfo = {
   photo:
     "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F828e34a3364649dd99857a8eb36a137a?format=webp&width=800",
   message: [
-    "Welcome to the College of Allied Health Sciences at Dayananda Sagar University!",
-    "As the Principal, I am honored to lead an institution that stands at the forefront of allied health education. Our mission is to transform students into highly skilled professionals who are technically competent and ethically grounded.",
-    "With a strong foundation in clinical microbiology and academic leadership (MBBS, MD, ACME), our leadership team ensures that our curriculum meets global standards and our laboratories provide the best hands-on training for future healthcare providers.",
-    "Allied health professionals are the backbone of modern healthcare, providing essential diagnostic, technical, therapeutic, and support services. Our college is dedicated to excellence in education, research, and patient-centered care.",
-    "I invite you to join our community and embark on a rewarding career that transforms lives and shapes the future of healthcare.",
-    "Best wishes for your academic journey!",
+    "Established in 2021, the College of Allied Health Sciences offers eight undergraduate programmes and a Master of Public Health (MPH). Our curriculum is designed to provide highly skilled healthcare professionals for global delivery of preventive, curative, and rehabilitative care.",
+    "Students are mentored by a multidisciplinary faculty of physicians, surgeons, and scientists, gaining real-life learning experiences through seminars, symposia, and clinical training from the start.",
+    "Integrated within our parent medical school and hospital, we provide state-of-the-art infrastructure—including advanced labs, OT complexes, and emergency departments—ensuring rigorous monitoring of academic progress and hands-on technical training.",
+    "Our graduates are prepared for diverse employment opportunities in the rapidly advancing healthcare industry worldwide. I wish all aspirants success in joining this revered sector.",
   ],
   borderColor: "border-brand-blue/20",
   bgColor: "bg-brand-blue/5",
@@ -87,18 +85,48 @@ const UG_PROGRAM_CARDS: ProgramCard[] = [
     panelClass: "bg-black/55 backdrop-blur-xl",
   },
   {
-    name: "B.Sc Medical Imaging Technology",
+    name: "B.Sc Emergency & Trauma Care Technology",
+    area: "Undergraduate",
+    description:
+      "Specialized training in handling medical emergencies and critical trauma care.",
+    image:
+      "https://images.unsplash.com/photo-1587350859728-117622bc75fb?q=80&w=1600&auto=format&fit=crop",
+    link: "/academics/health-sciences/bsc-etct",
+    highlights: ["4 Years", "Critical Care", "Emergency Medicine"],
+    overlay:
+      "bg-gradient-to-br from-brand-orange/75 via-black/70 to-black/55 mix-blend-multiply",
+    badgeClass:
+      "bg-brand-orange/30 text-foreground/90 border border-white/25 backdrop-blur",
+    panelClass: "bg-black/55 backdrop-blur-xl",
+  },
+  {
+    name: "B.Sc Anesthesia & Operation Theater Technology",
+    area: "Undergraduate",
+    description:
+      "Expertise in anesthesia assistance and operation theater management.",
+    image:
+      "https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=1600&auto=format&fit=crop",
+    link: "/academics/health-sciences/bsc-aott",
+    highlights: ["4 Years", "Surgical Support", "Patient Monitoring"],
+    overlay:
+      "bg-gradient-to-br from-brand-magenta/75 via-black/70 to-black/55 mix-blend-multiply",
+    badgeClass:
+      "bg-brand-magenta/30 text-foreground/90 border border-white/25 backdrop-blur",
+    panelClass: "bg-black/55 backdrop-blur-xl",
+  },
+  {
+    name: "B.Sc Medical Imaging & Radiology Technology",
     area: "Undergraduate",
     description:
       "Focus on advanced imaging techniques including X-ray, CT, and MRI.",
     image:
       "https://images.unsplash.com/photo-1530497610245-94d3c16cda28?q=80&w=1600&auto=format&fit=crop",
-    link: "/academics/health-sciences/bsc-mit",
+    link: "/academics/health-sciences/bsc-mirt",
     highlights: ["4 Years", "Radiology", "Advanced Imaging"],
     overlay:
-      "bg-gradient-to-br from-brand-magenta/75 via-black/70 to-black/55 mix-blend-multiply",
+      "bg-gradient-to-br from-brand-blue/75 via-black/70 to-black/55 mix-blend-multiply",
     badgeClass:
-      "bg-brand-magenta/30 text-foreground/90 border border-white/25 backdrop-blur",
+      "bg-brand-blue/30 text-foreground/90 border border-white/25 backdrop-blur",
     panelClass: "bg-black/55 backdrop-blur-xl",
   },
   {
@@ -116,20 +144,65 @@ const UG_PROGRAM_CARDS: ProgramCard[] = [
       "bg-brand-orange/30 text-foreground/90 border border-white/25 backdrop-blur",
     panelClass: "bg-black/55 backdrop-blur-xl",
   },
+  {
+    name: "B.Sc Cardiac Care Technology",
+    area: "Undergraduate",
+    description:
+      "Comprehensive training in non-invasive cardiac diagnostics and patient care.",
+    image:
+      "https://images.unsplash.com/photo-1576091160550-112569c0fce4?q=80&w=1600&auto=format&fit=crop",
+    link: "/academics/health-sciences/bsc-cct",
+    highlights: ["4 Years", "Cardiac Diagnostics", "Critical Care"],
+    overlay:
+      "bg-gradient-to-br from-brand-magenta/75 via-black/70 to-black/55 mix-blend-multiply",
+    badgeClass:
+      "bg-brand-magenta/30 text-foreground/90 border border-white/25 backdrop-blur",
+    panelClass: "bg-black/55 backdrop-blur-xl",
+  },
+  {
+    name: "B.Sc Audiology and Speech language Pathology",
+    area: "Undergraduate",
+    description:
+      "Diagnosis and treatment of hearing, speech, and language disorders.",
+    image:
+      "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?q=80&w=1600&auto=format&fit=crop",
+    link: "/academics/health-sciences/bsc-aslp",
+    highlights: ["4 Years", "Communication Disorders", "Clinical Practice"],
+    overlay:
+      "bg-gradient-to-br from-brand-blue/75 via-black/70 to-black/55 mix-blend-multiply",
+    badgeClass:
+      "bg-brand-blue/30 text-foreground/90 border border-white/25 backdrop-blur",
+    panelClass: "bg-black/55 backdrop-blur-xl",
+  },
+  {
+    name: "B.Sc Optometry",
+    area: "Undergraduate",
+    description:
+      "Professional training in vision care, diagnostic tests, and clinical optometry.",
+    image:
+      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1600&auto=format&fit=crop",
+    link: "/academics/health-sciences/bsc-optometry",
+    highlights: ["4 Years", "Vision Science", "Eye Care"],
+    overlay:
+      "bg-gradient-to-br from-brand-orange/75 via-black/70 to-black/55 mix-blend-multiply",
+    badgeClass:
+      "bg-brand-orange/30 text-foreground/90 border border-white/25 backdrop-blur",
+    panelClass: "bg-black/55 backdrop-blur-xl",
+  },
 ];
 
 const PG_PROGRAM_CARDS: ProgramCard[] = [
   {
-    name: "M.Sc Allied Health Programs",
+    name: "MPH (Masters in Public Health)",
     area: "Postgraduate",
     description:
-      "Advanced specializations in Medical Laboratory Technology, Imaging Technology, and Public Health.",
+      "Advanced program focusing on public health policy, epidemiology, and healthcare management.",
     image:
       "https://images.unsplash.com/photo-1579165466511-70e21a47b192?q=80&w=1600&auto=format&fit=crop",
-    link: "/academics/health-sciences/msc-allied-health",
+    link: "/academics/health-sciences/mph",
     highlights: [
-      "Advanced Research",
-      "Specialized Practice",
+      "Public Health Policy",
+      "Epidemiology",
       "Healthcare Leadership",
     ],
     overlay:
