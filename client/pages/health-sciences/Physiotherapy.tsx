@@ -288,7 +288,7 @@ function HeroVideo() {
           )}
         </button>
 
-        <div className="hero-title-inside absolute bottom-0 left-0 right-0 z-20 flex items-end justify-start p-3 sm:p-6 max-w-7xl mx-auto w-full">
+        <div className="hero-title-inside absolute bottom-0 left-0 right-0 z-20 flex items-end justify-between p-3 sm:p-6 max-w-7xl mx-auto w-full">
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-black/40 rounded-full border border-white/20 mb-4 backdrop-blur-sm">
               <Sparkles className="w-4 h-4 text-white" />
@@ -313,6 +313,37 @@ function HeroVideo() {
               ))}
             </div>
           </div>
+
+          {/* Buttons inside video - visible on md and up */}
+          <div className="hidden md:flex flex-col gap-2 sm:gap-4">
+            <a
+              href="https://admissions.dsu.edu.in/"
+              target="_blank"
+              rel="noreferrer"
+              className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            >
+              <Button
+                size="sm"
+                className="sm:size-lg bg-white hover:bg-white/90 text-brand-blue hover:text-brand-blue/80 px-4 sm:px-8 py-2 sm:py-6 text-xs sm:text-base font-semibold font-display transition-all duration-300 group border-2 border-white w-full sm:w-auto"
+              >
+                Apply Now
+                <ChevronRight className="w-4 sm:w-5 h-4 sm:h-5 ml-1 sm:ml-2 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </a>
+            <a
+              href="https://dsu.edu.in/virtual-tour/"
+              target="_blank"
+              rel="noreferrer"
+              className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            >
+              <Button
+                size="sm"
+                className="sm:size-lg bg-white hover:bg-white/90 text-brand-blue hover:text-brand-blue/80 px-4 sm:px-8 py-2 sm:py-6 text-xs sm:text-base font-semibold font-display transition-all duration-300 group border-2 border-white w-full sm:w-auto"
+              >
+                Virtual Tour
+              </Button>
+            </a>
+          </div>
         </div>
       </div>
 
@@ -326,7 +357,8 @@ function HeroVideo() {
           </h1>
         </div>
 
-        <div className="flex flex-row gap-2 sm:gap-4">
+        {/* Buttons below video - visible only on mobile */}
+        <div className="flex md:hidden flex-row gap-2 sm:gap-4">
           <a
             href="https://admissions.dsu.edu.in/"
             target="_blank"
