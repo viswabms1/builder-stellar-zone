@@ -661,7 +661,7 @@ export default function Index() {
         <div className="absolute inset-0 bg-black/40"></div>
 
         {/* Hero Content */}
-        <div className="relative max-w-7xl mx-auto px-3 w-full z-10 flex flex-col justify-between h-full py-0 md:py-0 md:items-start md:justify-center">
+        <div className="relative max-w-7xl mx-auto px-3 w-full z-10 flex flex-col justify-between h-full py-6 md:py-0 md:items-start md:justify-center">
           {/* Title Section - Top on mobile */}
           <div className="max-w-4xl pt-0 md:pt-0 md:pb-12">
             <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-2 sm:mb-3 md:mb-4 leading-tight font-display">
@@ -670,7 +670,7 @@ export default function Index() {
             <p className="text-base sm:text-xl md:text-2xl lg:text-3xl font-semibold text-white mb-1 sm:mb-2 md:mb-6 leading-tight font-display">
               India’s AI-First University
             </p>
-            <p className="text-sm sm:text-lg md:text-xl lg:text-2xl font-medium text-white/90 font-display">
+            <p className="text-sm sm:text-lg md:text-xl lg:text-2xl font-medium text-white/90 font-display mb-6 md:mb-0">
               Powered by NVIDIA
             </p>
             <p className="text-xs sm:text-base md:text-lg lg:text-xl font-medium text-white/80 mt-2 font-display hidden sm:block">
@@ -678,33 +678,34 @@ export default function Index() {
             </p>
           </div>
 
-          {/* Buttons Section - Bottom on mobile */}
-          <div className="flex flex-col gap-4 sm:gap-6">
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-              <a
-                href="https://admissions.dsu.edu.in/"
-                target="_blank"
-                rel="noreferrer"
-                className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          {/* Buttons Section - Apply Today full width on mobile, below tagline */}
+          <div className="flex flex-col gap-4 w-full sm:w-auto sm:gap-6">
+            <a
+              href="https://admissions.dsu.edu.in/"
+              target="_blank"
+              rel="noreferrer"
+              className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background w-full sm:w-auto"
+            >
+              <Button
+                size="lg"
+                className="bg-white hover:bg-white/90 text-orange-600 hover:text-orange-700 px-8 py-6 text-base font-bold font-display transition-all duration-300 group shadow-xl hover:shadow-2xl hover:-translate-y-1 w-full sm:w-auto"
               >
-                <Button
-                  size="lg"
-                  className="bg-white hover:bg-white/90 text-orange-600 hover:text-orange-700 px-8 py-6 text-base font-bold font-display transition-all duration-300 group shadow-xl hover:shadow-2xl hover:-translate-y-1"
-                >
-                  Apply Today
-                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-                </Button>
-              </a>
+                Apply Today
+                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </a>
+
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <a
                 href="https://dsu.edu.in/virtual-tour/"
                 target="_blank"
                 rel="noreferrer"
-                className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background w-full sm:w-auto"
               >
                 <Button
                   size="lg"
                   variant="outline"
-                  className="bg-transparent hover:bg-white/10 text-white border-2 border-white px-8 py-6 text-base font-bold font-display transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+                  className="bg-transparent hover:bg-white/10 text-white border-2 border-white px-8 py-6 text-base font-bold font-display transition-all duration-300 hover:shadow-xl hover:-translate-y-1 w-full sm:w-auto"
                 >
                   Virtual Tour
                 </Button>
