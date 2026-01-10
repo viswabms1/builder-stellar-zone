@@ -368,17 +368,6 @@ export default function Index() {
     },
     {
       date: "2025",
-      title: "Effect of Zircon on Aluminum/Graphite Alloy Hybrid Composites",
-      category: "Transactions of Indian Institute of Metals",
-      description:
-        "Research on the effect of zircon reinforcement on aluminum/graphite hybrid composite materials, analyzing mechanical properties and structural improvements.",
-      image:
-        "https://images.pexels.com/photos/19825178/pexels-photo-19825178.jpeg",
-      authors: "DSU Materials Science Team",
-      link: "https://doi.org/10.1007/s40735-025-00944-7",
-    },
-    {
-      date: "2025",
       title: "Perovskite Solar Cell Stability Analysis Using Advanced Techniques",
       category: "Progress in Photovoltaics",
       description:
@@ -387,28 +376,6 @@ export default function Index() {
         "https://images.pexels.com/photos/35501726/pexels-photo-35501726.jpeg",
       authors: "DSU Renewable Energy Lab",
       link: "https://doi.org/10.1002/pip.3861",
-    },
-    {
-      date: "2025",
-      title: "Host–Guest Inclusion Complexes of Tafamidis",
-      category: "Journal of Molecular Structure",
-      description:
-        "Comprehensive study on host-guest inclusion complexes involving tafamidis, examining molecular interactions and structural characterization.",
-      image:
-        "https://images.pexels.com/photos/25626509/pexels-photo-25626509.jpeg",
-      authors: "DSU Chemistry Research",
-      link: "https://doi.org/10.1016/j.molstruc.2025.141649",
-    },
-    {
-      date: "2025",
-      title: "Development of a Scaled-Down Test Rig for Wheel Systems",
-      category: "Journal of Thermal Science and Engineering Applications",
-      description:
-        "Design and development of a laboratory-scale test rig for studying wheel system performance, thermal behavior, and durability characteristics.",
-      image:
-        "https://images.pexels.com/photos/9242838/pexels-photo-9242838.jpeg",
-      authors: "DSU Mechanical Engineering",
-      link: "https://doi.org/10.1115/1.4067351",
     },
     {
       date: "2025",
@@ -431,28 +398,6 @@ export default function Index() {
         "https://images.pexels.com/photos/16777744/pexels-photo-16777744.jpeg",
       authors: "DSU Photonics Lab",
       link: "https://doi.org/10.1007/s12596-024-01894-y",
-    },
-    {
-      date: "2025",
-      title: "Synthesis, Characterization and Computational Study of Molecular Systems",
-      category: "Journal of Molecular Structure",
-      description:
-        "Integrated approach combining chemical synthesis, experimental characterization, and computational modeling for understanding molecular systems and their properties.",
-      image:
-        "https://images.pexels.com/photos/7723393/pexels-photo-7723393.jpeg",
-      authors: "DSU Computational Chemistry",
-      link: "https://doi.org/10.1016/j.molstruc.2025.142056",
-    },
-    {
-      date: "2024",
-      title: "Multilayer Coating-Assisted Gold-Encapsulated Nanostructures",
-      category: "Journal of Optics",
-      description:
-        "Development of advanced multilayer coating techniques for creating gold-encapsulated nanostructures with enhanced optical and plasmonic properties.",
-      image:
-        "https://images.pexels.com/photos/16777744/pexels-photo-16777744.jpeg",
-      authors: "DSU Nanotechnology Research",
-      link: "https://doi.org/10.1007/s12596-024-01711-6",
     },
     {
       date: "2024",
