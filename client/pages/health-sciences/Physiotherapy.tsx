@@ -173,9 +173,9 @@ function ProgramCardComponent({ program }: { program: ProgramCard }) {
 
   if (isInternal) {
     return (
-      <RouterLink to={program.link} className={wrapperClasses}>
+      <Link to={program.link} className={wrapperClasses}>
         {content}
-      </RouterLink>
+      </Link>
     );
   }
 
