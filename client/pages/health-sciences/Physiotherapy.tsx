@@ -90,11 +90,17 @@ const PG_PROGRAM_CARDS: ProgramCard[] = [
     name: "Master of Physiotherapy (MPT)",
     area: "Postgraduate",
     description:
-      "2-Year advanced physiotherapy program. Specializations: Orthopedic Physiotherapy, Neurology, Cardiopulmonary Physiotherapy, and Sports Physiotherapy. Designed to develop advanced clinical expertise and research capabilities.",
+      "Post Graduate program in Physiotherapy (MPT) prepares the students to develop excellent skills in clinical areas. The Program will build confidence in the students to work in challenging environment and enable to work independently as specialists, consultants, educators, administrators and researchers in a wide variety of professional settings.",
     image:
       "https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=1600&auto=format&fit=crop",
     link: "/academics/health-sciences/mpt",
-    highlights: ["Orthopedic", "Neurology", "Cardiopulmonary", "Sports Physio"],
+    highlights: [
+      "Sports & Musculo Skeletal",
+      "Cardio Pulmonary",
+      "Women's Health",
+      "Neuro",
+      "Community Based Rehabilitation",
+    ],
     overlay:
       "bg-gradient-to-br from-brand-blue/70 via-black/70 to-black/55 mix-blend-multiply",
     badgeClass:
