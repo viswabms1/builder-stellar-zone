@@ -639,6 +639,19 @@ function HeroVideo() {
             </Button>
           </a>
           <a
+            href="https://dsu.edu.in/virtual-tour/#SchoolofHealthSciencesEntrance,-56.94,0,75,4"
+            target="_blank"
+            rel="noreferrer"
+            className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          >
+            <Button
+              size="sm"
+              className="sm:size-lg bg-white hover:bg-white/90 text-brand-orange hover:text-brand-orange/80 px-4 sm:px-8 py-2 sm:py-6 text-xs sm:text-base font-semibold font-display transition-all duration-300 group border-2 border-white w-full sm:w-auto"
+            >
+              Virtual Campus Tour
+            </Button>
+          </a>
+          <a
             href="https://dsu.edu.in/virtual-tour/"
             target="_blank"
             rel="noreferrer"
@@ -648,7 +661,7 @@ function HeroVideo() {
               size="sm"
               className="sm:size-lg bg-white hover:bg-white/90 text-brand-orange hover:text-brand-orange/80 px-4 sm:px-8 py-2 sm:py-6 text-xs sm:text-base font-semibold font-display transition-all duration-300 group border-2 border-white w-full sm:w-auto"
             >
-              Virtual Tour
+              Full University Tour
             </Button>
           </a>
         </div>
