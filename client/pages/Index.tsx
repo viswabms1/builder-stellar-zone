@@ -356,6 +356,17 @@ export default function Index() {
   // All publications for rotation
   const allPublications = [
     {
+      date: "Jan 2025",
+      title: "Multimodal Mental State Analysis: AI-powered Depression Detection",
+      category: "Springer Q1 Journal",
+      description:
+        "Groundbreaking research on multimodal AI for mental health diagnostics using voice, text, and facial cues. Achieved 20% accuracy gain via data fusion utilizing LSTM + CNN on DAIC-WoZ dataset. Published in Health Services and Outcomes Research Methodology by Springer Nature.",
+      image:
+        "https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg",
+      authors: "Bipin Kumar Rai, Ishika Jain, Baibhav Tiwari, Abhay Saxena",
+      link: "https://doi.org/10.1007/s10742-024-00329-2",
+    },
+    {
       date: "Nov 2024",
       title: "AI & Machine Learning in Healthcare: A DSU Research Perspective",
       category: "Research Paper",
