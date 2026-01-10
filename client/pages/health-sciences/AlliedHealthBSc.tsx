@@ -475,7 +475,7 @@ function CurriculumLibrary() {
       description:
         "Focused on emergency medical services, trauma management, and advanced life support techniques.",
       image:
-        "https://images.unsplash.com/photo-1587350859728-117622bc75fb?q=80&w=1600&auto=format&fit=crop",
+        "https://images.pexels.com/photos/1250655/pexels-photo-1250655.jpeg?auto=compress&cs=tinysrgb&w=1600",
       batches: [
         {
           year: "2025-26",
