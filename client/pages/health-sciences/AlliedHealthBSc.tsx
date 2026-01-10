@@ -454,17 +454,81 @@ function CurriculumLibrary() {
 
   const programs: CurriculumProgram[] = [
     {
-      id: "bsc-allied-health",
-      label: "B.Sc. Allied Health Sciences Curriculum",
+      id: "bsc-mlt",
+      label: "B.Sc. in Medical Laboratory Technology",
       description:
-        "Multi-disciplinary curriculum covering Medical Lab, Radiology, Cardiac Care, and Emergency services.",
+        "Comprehensive curriculum covering clinical biochemistry, microbiology, pathology, and laboratory management.",
       image:
-        "https://images.unsplash.com/photo-1579152123223-28c001106c4e?w=600&h=400&fit=crop",
+        "https://images.unsplash.com/photo-1513624954087-ca7109c0f710?q=80&w=1600&auto=format&fit=crop",
       batches: [
         {
           year: "2025-26",
           summary:
-            "Latest multi-disciplinary curriculum with integrated clinical training at CDSIMER Medical College and hospital.",
+            "Latest curriculum with advanced training in molecular diagnostics and automated laboratory systems.",
+          documentUrl: "#",
+        },
+      ],
+    },
+    {
+      id: "bsc-etct",
+      label: "B.Sc. in Emergency & Trauma Care Technology",
+      description:
+        "Focused on emergency medical services, trauma management, and advanced life support techniques.",
+      image:
+        "https://images.unsplash.com/photo-1587350859728-117622bc75fb?q=80&w=1600&auto=format&fit=crop",
+      batches: [
+        {
+          year: "2025-26",
+          summary:
+            "Curriculum integrated with real-world trauma center exposure and emergency response protocols.",
+          documentUrl: "#",
+        },
+      ],
+    },
+    {
+      id: "bsc-ott",
+      label: "B.Sc. in Operation Theatre Technology",
+      description:
+        "Training in surgical procedures, anesthesia assistance, and operation theatre management.",
+      image:
+        "https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=1600&auto=format&fit=crop",
+      batches: [
+        {
+          year: "2025-26",
+          summary:
+            "Advanced curriculum covering robotic surgery assistance and sterile supply management.",
+          documentUrl: "#",
+        },
+      ],
+    },
+    {
+      id: "bsc-radiology",
+      label: "B.Sc. in Radiology & Imaging Technology",
+      description:
+        "In-depth study of radiographic techniques, CT, MRI, ultrasound, and radiation safety.",
+      image:
+        "https://images.unsplash.com/photo-1530497610245-94d3c16cda28?q=80&w=1600&auto=format&fit=crop",
+      batches: [
+        {
+          year: "2025-26",
+          summary:
+            "Latest training in digital radiography, 3D imaging, and interventional radiology procedures.",
+          documentUrl: "#",
+        },
+      ],
+    },
+    {
+      id: "bsc-cardiac",
+      label: "B.Sc. in Cardiac Care Technology",
+      description:
+        "Specialized curriculum on cardiovascular systems, ECG, echocardiography, and cardiac catheterization.",
+      image:
+        "https://images.unsplash.com/photo-1576091160550-112569c0fce4?q=80&w=1600&auto=format&fit=crop",
+      batches: [
+        {
+          year: "2025-26",
+          summary:
+            "Curriculum focusing on advanced cardiac life support and assistive technologies for heart care.",
           documentUrl: "#",
         },
       ],
