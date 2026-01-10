@@ -243,12 +243,26 @@ export default function Navigation() {
       {
         name: "School of Commerce & Management",
         href: "/academics/management-studies",
-        departments: [
-          { name: "Explore Programs", href: "/academics/management-studies" },
-          { name: "B.Com", href: "/academics/commerce-and-management/bcom" },
-          { name: "BBA", href: "/academics/commerce-and-management/bba" },
-          { name: "MBA", href: "/academics/commerce-and-management/mba" },
+        hasSubGroups: true,
+        subGroups: [
+          {
+            name: "Commerce",
+            departments: [
+              {
+                name: "B.Com",
+                href: "/academics/commerce-and-management/bcom",
+              },
+            ],
+          },
+          {
+            name: "Management",
+            departments: [
+              { name: "BBA", href: "/academics/commerce-and-management/bba" },
+              { name: "MBA", href: "/academics/commerce-and-management/mba" },
+            ],
+          },
         ],
+        departments: [],
       },
       {
         name: "School of Applied Sciences",
