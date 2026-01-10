@@ -373,7 +373,7 @@ const COLLEGE_CARDS: CollegeCard[] = [
     bgColor: "bg-brand-orange/10 border-brand-orange/30",
     image: "https://images.unsplash.com/photo-1576091160550-112569c0fce4?q=80&w=1600&auto=format&fit=crop",
     gradient: "from-brand-orange/80 via-black/70 to-black/60",
-    link: "https://www.dsu.edu.in/health-sciences/physiotherapy",
+    link: "/academics/health-sciences/physiotherapy",
   },
   {
     id: "allied-health",
