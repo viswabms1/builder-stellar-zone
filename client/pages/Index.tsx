@@ -841,7 +841,7 @@ export default function Index() {
             <h2 className="headline-2 mb-6">
               <span className="text-foreground">Featured </span>
               <span className="bg-brand-gradient bg-clip-text text-transparent">
-                News
+                News and Events
               </span>
             </h2>
             <p className="subheadline text-foreground max-w-2xl mx-auto font-display">
