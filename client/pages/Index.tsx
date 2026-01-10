@@ -670,8 +670,11 @@ export default function Index() {
             <p className="text-base sm:text-xl md:text-2xl lg:text-3xl font-semibold text-white mb-1 sm:mb-2 md:mb-6 leading-tight font-display">
               India’s AI-First University
             </p>
-            <p className="text-sm sm:text-lg md:text-xl lg:text-2xl font-medium text-white/90 hidden sm:block font-display">
+            <p className="text-sm sm:text-lg md:text-xl lg:text-2xl font-medium text-white/90 font-display">
               Powered by NVIDIA
+            </p>
+            <p className="text-xs sm:text-base md:text-lg lg:text-xl font-medium text-white/80 mt-2 font-display">
+              AI integrated across academics, research, and campus innovation
             </p>
           </div>
 
