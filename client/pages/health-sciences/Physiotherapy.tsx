@@ -960,14 +960,12 @@ export default function Physiotherapy() {
               >
                 Programs Overview
               </a>
-              <a
-                href="https://www.dsu.edu.in/health-sciences/physiotherapy-faculty"
-                target="_blank"
-                rel="noreferrer"
+              <Link
+                to="/academics/health-sciences/physiotherapy/faculty"
                 className="hover:text-brand-blue"
               >
                 Faculty Directory
-              </a>
+              </Link>
               <a
                 href="https://www.dsu.edu.in/health-sciences/physiotherapy-library"
                 target="_blank"
