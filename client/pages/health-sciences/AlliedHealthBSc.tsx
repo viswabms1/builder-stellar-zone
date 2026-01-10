@@ -281,7 +281,7 @@ export default function AlliedHealthBSc() {
               Eligibility & Fee Structure
             </h2>
             <p className="text-foreground/80 font-body max-w-3xl mx-auto">
-              Comprehensive information about admission requirements and fee structures for the B.Sc. Allied Health Sciences specializations.
+              Comprehensive information about admission requirements and fee structures for the B.Sc. Allied Health Sciences programmes.
             </p>
           </div>
           <div className="flex flex-col items-center justify-center">
