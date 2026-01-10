@@ -1254,7 +1254,7 @@ export default function Index() {
           {/* Featured Publication */}
           <div className="mb-12" style={{ contain: "content" }}>
             <div className="w-full flex flex-col rounded-none border border-orange-500/20 bg-orange-500/10 cursor-pointer text-left overflow-hidden">
-              <div className="relative w-full aspect-video overflow-hidden bg-foreground/5">
+              <div className="relative w-full h-48 overflow-hidden bg-foreground/5">
                 <img
                   src={allPublications[selectedPublicationIndex].image}
                   alt={allPublications[selectedPublicationIndex].title}
