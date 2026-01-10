@@ -665,7 +665,7 @@ export default function AlliedHealthSciences() {
     "State-of-the-art lecture halls, demo-rooms, and practical halls",
     "Integrated clinical training at parent medical school and attached hospital",
     "Hands-on exposure in Central Laboratory, OT Complexes, and Emergency Dept",
-    "Advanced training in Radio-diagnostics, Renal Dialysis, and Blood Bank",
+    "Advanced training in Radio-diagnostics and Blood Bank facilities",
     "Community health training centers equipped with advanced technology",
     "On-campus hostel facilities for a safe and convenient student life",
     "Rigorous monitoring of academic progress and vocational mentorship",
