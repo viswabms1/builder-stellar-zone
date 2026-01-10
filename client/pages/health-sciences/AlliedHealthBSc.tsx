@@ -35,27 +35,37 @@ export default function AlliedHealthBSc() {
     {
       icon: Microscope,
       label: "B.Sc. in Medical Laboratory Technology",
-      description: "Focuses on clinical tests on specimens of bodily fluids and tissues to gather critical health information."
+      description: "Perform clinical tests on specimens of bodily fluids and tissues to gather critical health information or determine cause of death.",
+      highlights: ["Anatomy", "Physiology", "Biochemistry", "Microbiology", "Pathology"],
+      image: "https://images.unsplash.com/photo-1513624954087-ca7109c0f710?q=80&w=1600&auto=format&fit=crop"
     },
     {
       icon: Activity,
       label: "B.Sc. in Emergency & Trauma Care Technology",
-      description: "Provides diagnostic, curative, and preventive services for treating acute injuries and medical emergencies."
+      description: "Provide diagnostic, curative, and preventive medical services under doctor supervision, applying advanced procedures for treating injuries.",
+      highlights: ["Emergency Medicine", "Trauma Care", "Pharmacology", "Life Support"],
+      image: "https://images.pexels.com/photos/1250655/pexels-photo-1250655.jpeg?auto=compress&cs=tinysrgb&w=1600"
     },
     {
       icon: Stethoscope,
       label: "B.Sc. in Operation Theatre Technology",
-      description: "Specialized training in assisting surgical teams, maintaining OTs, and managing sterile services."
+      description: "Assisting anesthetists, maintaining OTs, and managing sterile services and disaster preparedness in multidisciplinary surgical teams.",
+      highlights: ["Surgical Tech", "OT Management", "Sterile Services", "Anesthesia Assistance"],
+      image: "https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=1600&auto=format&fit=crop"
     },
     {
       icon: Eye,
       label: "B.Sc. in Radiology & Imaging Technology",
-      description: "Expertise in operating radiographic, ultrasound, and MRI equipment for diagnostic imaging."
+      description: "Operate radiographic, ultrasound, and MRI equipment to produce images for diagnosis and monitors radiation treatments.",
+      highlights: ["Radiation Physics", "Imaging Physics", "Diagnostic Tech", "Patient Care"],
+      image: "https://images.unsplash.com/photo-1530497610245-94d3c16cda28?q=80&w=1600&auto=format&fit=crop"
     },
     {
       icon: Heart,
       label: "B.Sc. in Cardiac Care Technology",
-      description: "Focuses on circulatory systems and complex equipment operation for cardiac interventions."
+      description: "Expertise in circulatory systems and complex equipment operation for adult and pediatric cardiac interventions.",
+      highlights: ["Cardiovascular Tech", "ECG Monitoring", "Echocardiography", "Cardiac Surgery Support"],
+      image: "https://images.pexels.com/photos/11198232/pexels-photo-11198232.jpeg?auto=compress&cs=tinysrgb&w=1600"
     },
   ];
 
@@ -193,17 +203,31 @@ export default function AlliedHealthBSc() {
               Our College of Allied Health Sciences offers comprehensive B.Sc. programmes designed to prepare students for technical excellence in modern healthcare.
             </p>
           </div>
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {bscPrograms.map((spec, i) => (
-              <Card key={i} className="group hover:shadow-lg transition-all border-brand-blue/20">
-                <CardHeader className="flex flex-row items-center gap-4">
-                  <div className="p-3 rounded-full bg-brand-blue/10 text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition-colors">
+              <Card key={i} className="group flex flex-col hover:shadow-2xl transition-all duration-500 border-brand-blue/20 overflow-hidden bg-card/50 backdrop-blur-sm">
+                <div className="relative h-48 overflow-hidden">
+                  <img src={spec.image} alt={spec.label} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute bottom-4 left-4 p-2 rounded-full bg-white/10 backdrop-blur-md text-white border border-white/20">
                     <spec.icon className="h-6 w-6" />
                   </div>
-                  <CardTitle className="font-display text-xl">{spec.label}</CardTitle>
+                </div>
+                <CardHeader>
+                  <CardTitle className="font-display text-xl group-hover:text-brand-blue transition-colors">{spec.label}</CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-foreground/70 font-body">{spec.description}</p>
+                <CardContent className="flex-1 flex flex-col justify-between space-y-4">
+                  <p className="text-sm text-foreground/70 font-body leading-relaxed">{spec.description}</p>
+                  <div className="space-y-3">
+                    <div className="text-xs font-semibold uppercase tracking-wider text-brand-blue/70">Key Areas of Focus:</div>
+                    <div className="flex flex-wrap gap-2">
+                      {spec.highlights?.map((h, idx) => (
+                        <Badge key={idx} variant="outline" className="bg-brand-blue/5 border-brand-blue/20 text-brand-blue text-[10px] uppercase">
+                          {h}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
                 </CardContent>
               </Card>
             ))}
