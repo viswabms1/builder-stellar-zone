@@ -302,17 +302,54 @@ export default function Navigation() {
       {
         name: "School of Design",
         href: "/academics/design/bdesign",
-        departments: [{ name: "B.Design", href: "/academics/design/bdesign" }],
+        hasSubGroups: true,
+        subGroups: [
+          {
+            name: "Undergraduate",
+            departments: [
+              {
+                name: "B.Design",
+                href: "/academics/design/bdesign/program",
+              },
+            ],
+          },
+          {
+            name: "Overview",
+            departments: [
+              {
+                name: "Design Overview",
+                href: "/academics/design/bdesign",
+              },
+            ],
+          },
+        ],
+        departments: [],
       },
       {
         name: "School of Media & Communication",
         href: "/academics/journalism-mass-communication",
-        departments: [
+        hasSubGroups: true,
+        subGroups: [
           {
-            name: "Journalism & Mass Communication",
-            href: "/academics/journalism-mass-communication",
+            name: "Undergraduate",
+            departments: [
+              {
+                name: "B.A. Journalism",
+                href: "/academics/journalism-mass-communication/ba",
+              },
+            ],
+          },
+          {
+            name: "Overview",
+            departments: [
+              {
+                name: "Media Overview",
+                href: "/academics/journalism-mass-communication",
+              },
+            ],
           },
         ],
+        departments: [],
       },
       {
         name: "Computer Applications",
