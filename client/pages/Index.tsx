@@ -1313,7 +1313,7 @@ export default function Index() {
           </div>
 
           {/* All Publications Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-4">
+          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-3">
             {allPublications.map((publication, idx) => (
               <button
                 key={idx}
@@ -1323,31 +1323,28 @@ export default function Index() {
                   setSelectedPublicationIndex(idx);
                   setIsPublicationInteracting(true);
                 }}
-                className={`group relative overflow-hidden rounded-lg border-2 transition-all duration-300 h-full ${
+                className={`group relative overflow-hidden rounded-lg border-2 transition-all duration-300 p-4 text-left ${
                   selectedPublicationIndex === idx
-                    ? "border-brand-magenta bg-brand-magenta/10 scale-105"
-                    : "border-border/30 bg-card/40 hover:border-brand-magenta/50"
+                    ? "border-brand-magenta bg-brand-magenta/15"
+                    : "border-border/30 bg-card/50 hover:border-brand-magenta/50 hover:bg-card/70"
                 }`}
               >
-                <div className="relative h-32 overflow-hidden bg-gradient-to-br from-brand-magenta/10 to-brand-blue/10">
-                  <img
-                    src={publication.image}
-                    alt={publication.title}
-                    loading="lazy"
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                </div>
-                <div className="p-4 space-y-2">
-                  <Badge variant="secondary" className="text-xs">
-                    {publication.category.split(" ")[0]}
-                  </Badge>
-                  <h4 className="text-xs font-semibold text-foreground font-display group-hover:text-brand-magenta transition-colors line-clamp-2 leading-tight">
+                <div className="space-y-3">
+                  <div className="flex items-start justify-between gap-2">
+                    <Badge variant="secondary" className="text-xs flex-shrink-0">
+                      {publication.category.split(" ")[0]}
+                    </Badge>
+                    <span className="text-xs text-foreground/50 flex-shrink-0">
+                      {publication.date}
+                    </span>
+                  </div>
+                  <h4 className="text-xs font-semibold text-foreground font-display group-hover:text-brand-magenta transition-colors line-clamp-3 leading-tight">
                     {publication.title}
                   </h4>
-                  <p className="text-xs text-foreground/60 font-body">
-                    {publication.date}
-                  </p>
+                  <div className="flex items-center gap-2 text-brand-magenta opacity-0 group-hover:opacity-100 transition-opacity">
+                    <ChevronRight className="w-3 h-3" />
+                    <span className="text-xs font-medium">View</span>
+                  </div>
                 </div>
               </button>
             ))}
