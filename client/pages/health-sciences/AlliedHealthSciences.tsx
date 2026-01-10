@@ -40,16 +40,16 @@ import {
 type NoticeItem = ImportedNoticeItem;
 
 const DEAN_INFO: DeanInfo = {
-  name: "Dr. Prem Kumar",
-  title: "Dean",
+  name: "Dr. Nandan.T.M",
+  title: "Professor - Microbiology & Principal",
   position: "College of Allied Health Sciences",
   photo:
-    "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F4a2f8f1c18424e98bc7edb721a95a5f2?format=webp&width=800",
+    "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F828e34a3364649dd99857a8eb36a137a?format=webp&width=800",
   message: [
     "Welcome to the College of Allied Health Sciences at Dayananda Sagar University!",
+    "As the Principal, I am honored to lead an institution that stands at the forefront of allied health education. Our mission is to transform students into highly skilled professionals who are technically competent and ethically grounded.",
+    "With a strong foundation in clinical microbiology and academic leadership (MBBS, MD, ACME), our leadership team ensures that our curriculum meets global standards and our laboratories provide the best hands-on training for future healthcare providers.",
     "Allied health professionals are the backbone of modern healthcare, providing essential diagnostic, technical, therapeutic, and support services. Our college is dedicated to excellence in education, research, and patient-centered care.",
-    "We offer a diverse range of programs designed to equip students with the knowledge and clinical skills required in today's rapidly evolving medical landscape. Our state-of-the-art laboratories and clinical training partnerships ensure that our graduates are ready to make a significant impact on the healthcare industry.",
-    "Our mission is to foster a learning environment that encourages innovation, ethical practice, and lifelong learning. We believe in empowering our students to become compassionate healthcare providers who lead with excellence.",
     "I invite you to join our community and embark on a rewarding career that transforms lives and shapes the future of healthcare.",
     "Best wishes for your academic journey!",
   ],
