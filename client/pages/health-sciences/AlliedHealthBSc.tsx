@@ -36,35 +36,30 @@ export default function AlliedHealthBSc() {
       icon: Microscope,
       label: "B.Sc. in Medical Laboratory Technology",
       description: "Perform clinical tests on specimens of bodily fluids and tissues to gather critical health information or determine cause of death.",
-      highlights: ["Anatomy", "Physiology", "Biochemistry", "Microbiology", "Pathology"],
       image: "https://images.pexels.com/photos/5726714/pexels-photo-5726714.jpeg?auto=compress&cs=tinysrgb&w=1600"
     },
     {
       icon: Activity,
       label: "B.Sc. in Emergency & Trauma Care Technology",
       description: "Provide diagnostic, curative, and preventive medical services under doctor supervision, applying advanced procedures for treating injuries.",
-      highlights: ["Emergency Medicine", "Trauma Care", "Pharmacology", "Life Support"],
       image: "https://images.pexels.com/photos/8942228/pexels-photo-8942228.jpeg?auto=compress&cs=tinysrgb&w=1600"
     },
     {
       icon: Stethoscope,
       label: "B.Sc. in Operation Theatre Technology",
       description: "Assisting anesthetists, maintaining OTs, and managing sterile services and disaster preparedness in multidisciplinary surgical teams.",
-      highlights: ["Surgical Tech", "OT Management", "Sterile Services", "Anesthesia Assistance"],
       image: "https://images.pexels.com/photos/18112241/pexels-photo-18112241.jpeg?auto=compress&cs=tinysrgb&w=1600"
     },
     {
       icon: Eye,
       label: "B.Sc. in Radiology & Imaging Technology",
       description: "Operate radiographic, ultrasound, and MRI equipment to produce images for diagnosis and monitors radiation treatments.",
-      highlights: ["Radiation Physics", "Imaging Physics", "Diagnostic Tech", "Patient Care"],
       image: "https://images.pexels.com/photos/6502017/pexels-photo-6502017.jpeg?auto=compress&cs=tinysrgb&w=1600"
     },
     {
       icon: Heart,
       label: "B.Sc. in Cardiac Care Technology",
       description: "Expertise in circulatory systems and complex equipment operation for adult and pediatric cardiac interventions.",
-      highlights: ["Cardiovascular Tech", "ECG Monitoring", "Echocardiography", "Cardiac Surgery Support"],
       image: "https://images.pexels.com/photos/4483339/pexels-photo-4483339.jpeg?auto=compress&cs=tinysrgb&w=1600"
     },
   ];
@@ -216,18 +211,8 @@ export default function AlliedHealthBSc() {
                 <CardHeader>
                   <CardTitle className="font-display text-xl group-hover:text-brand-blue transition-colors">{spec.label}</CardTitle>
                 </CardHeader>
-                <CardContent className="flex-1 flex flex-col justify-between space-y-4">
+                <CardContent className="flex-1 flex flex-col justify-between">
                   <p className="text-sm text-foreground/70 font-body leading-relaxed">{spec.description}</p>
-                  <div className="space-y-3">
-                    <div className="text-xs font-semibold uppercase tracking-wider text-brand-blue/70">Key Areas of Focus:</div>
-                    <div className="flex flex-wrap gap-2">
-                      {spec.highlights?.map((h, idx) => (
-                        <Badge key={idx} variant="outline" className="bg-brand-blue/5 border-brand-blue/20 text-brand-blue text-[10px] uppercase">
-                          {h}
-                        </Badge>
-                      ))}
-                    </div>
-                  </div>
                 </CardContent>
               </Card>
             ))}
