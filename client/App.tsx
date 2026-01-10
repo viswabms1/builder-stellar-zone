@@ -43,6 +43,7 @@ import Nursing from "./pages/health-sciences/Nursing";
 import Physiotherapy from "./pages/health-sciences/Physiotherapy";
 import BScNursing from "./pages/health-sciences/BScNursing";
 import BPT from "./pages/health-sciences/BPT";
+import MPT from "./pages/health-sciences/MPT";
 import PBBScNursing from "./pages/health-sciences/PBBScNursing";
 import MScNursing from "./pages/health-sciences/MScNursing";
 import NursingFaculty from "./pages/health-sciences/NursingFaculty";
@@ -740,6 +741,7 @@ function App() {
                   element={<Physiotherapy />}
                 />
                 <Route path="/academics/health-sciences/bpt" element={<BPT />} />
+                <Route path="/academics/health-sciences/mpt" element={<MPT />} />
                 <Route
                   path="/academics/health-sciences/bsc-nursing"
                   element={<BScNursing />}
