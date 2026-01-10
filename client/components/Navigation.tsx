@@ -153,10 +153,6 @@ export default function Navigation() {
             name: "Nursing",
             departments: [
               {
-                name: "Nursing Overview",
-                href: "/academics/health-sciences/nursing",
-              },
-              {
                 name: "B.Sc Nursing",
                 href: "/academics/health-sciences/bsc-nursing",
               },
@@ -173,10 +169,6 @@ export default function Navigation() {
           {
             name: "Physiotherapy",
             departments: [
-              {
-                name: "Physiotherapy Overview",
-                href: "/academics/health-sciences/physiotherapy",
-              },
               { name: "BPT", href: "/academics/health-sciences/bpt" },
               { name: "MPT", href: "/academics/health-sciences/mpt" },
             ],
@@ -185,10 +177,6 @@ export default function Navigation() {
             name: "Allied Health Sciences (CAHS)",
             departments: [
               {
-                name: "CAHS Overview",
-                href: "/academics/health-sciences/allied-health",
-              },
-              {
                 name: "B.Sc. Allied Health Sciences",
                 href: "/academics/health-sciences/allied-health-bsc",
               },
@@ -196,12 +184,6 @@ export default function Navigation() {
                 name: "MPH (Public Health)",
                 href: "/academics/health-sciences/mph",
               },
-            ],
-          },
-          {
-            name: "Pharmacy",
-            departments: [
-              { name: "Pharmacy Overview", href: "/academics/health-sciences" },
             ],
           },
           {
@@ -287,15 +269,6 @@ export default function Navigation() {
               },
             ],
           },
-          {
-            name: "Overview",
-            departments: [
-              {
-                name: "SBAS Overview",
-                href: "/academics/basic-applied-sciences",
-              },
-            ],
-          },
         ],
         departments: [],
       },
@@ -313,15 +286,6 @@ export default function Navigation() {
               },
             ],
           },
-          {
-            name: "Overview",
-            departments: [
-              {
-                name: "Design Overview",
-                href: "/academics/design/bdesign",
-              },
-            ],
-          },
         ],
         departments: [],
       },
@@ -336,15 +300,6 @@ export default function Navigation() {
               {
                 name: "B.A. Journalism",
                 href: "/academics/journalism-mass-communication/ba",
-              },
-            ],
-          },
-          {
-            name: "Overview",
-            departments: [
-              {
-                name: "Media Overview",
-                href: "/academics/journalism-mass-communication",
               },
             ],
           },
