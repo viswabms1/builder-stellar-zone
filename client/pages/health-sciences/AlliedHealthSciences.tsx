@@ -78,11 +78,11 @@ const UG_PROGRAM_CARDS: ProgramCard[] = [
       "https://images.unsplash.com/photo-1513624954087-ca7109c0f710?q=80&w=1600&auto=format&fit=crop",
     link: "/academics/health-sciences/allied-health-bsc",
     highlights: [
-      "Medical Laboratory Technology",
-      "Emergency & Trauma Care",
-      "Operation Theatre Technology",
-      "Radiology & Imaging",
-      "Cardiac Care Technology",
+      "B.Sc. in Medical Laboratory Technology",
+      "B.Sc. in Emergency & Trauma Care",
+      "B.Sc. in Operation Theatre Technology",
+      "B.Sc. in Radiology & Imaging",
+      "B.Sc. in Cardiac Care Technology",
     ],
     overlay:
       "bg-gradient-to-br from-brand-blue/80 via-black/75 to-black/60 mix-blend-multiply",

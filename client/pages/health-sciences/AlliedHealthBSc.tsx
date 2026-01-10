@@ -31,30 +31,30 @@ export default function AlliedHealthBSc() {
     window.scrollTo(0, 0);
   }, []);
 
-  const specializations = [
-    { 
-      icon: Microscope, 
-      label: "Medical Laboratory Technology",
+  const bscPrograms = [
+    {
+      icon: Microscope,
+      label: "B.Sc. in Medical Laboratory Technology",
       description: "Focuses on clinical tests on specimens of bodily fluids and tissues to gather critical health information."
     },
-    { 
-      icon: Activity, 
-      label: "Emergency & Trauma Care Technology",
+    {
+      icon: Activity,
+      label: "B.Sc. in Emergency & Trauma Care Technology",
       description: "Provides diagnostic, curative, and preventive services for treating acute injuries and medical emergencies."
     },
-    { 
-      icon: Stethoscope, 
-      label: "Operation Theatre Technology",
+    {
+      icon: Stethoscope,
+      label: "B.Sc. in Operation Theatre Technology",
       description: "Specialized training in assisting surgical teams, maintaining OTs, and managing sterile services."
     },
-    { 
-      icon: Eye, 
-      label: "Radiology & Imaging Technology",
+    {
+      icon: Eye,
+      label: "B.Sc. in Radiology & Imaging Technology",
       description: "Expertise in operating radiographic, ultrasound, and MRI equipment for diagnostic imaging."
     },
-    { 
-      icon: Heart, 
-      label: "Cardiac Care Technology",
+    {
+      icon: Heart,
+      label: "B.Sc. in Cardiac Care Technology",
       description: "Focuses on circulatory systems and complex equipment operation for cardiac interventions."
     },
   ];
@@ -182,19 +182,19 @@ export default function AlliedHealthBSc() {
         </div>
       </div>
 
-      {/* Specializations Section */}
+      {/* B.Sc. Programmes Section */}
       <section className="px-3 py-8 bg-brand-blue/5">
         <div className="mx-auto max-w-7xl">
           <div className="mb-12">
             <h2 className="font-display text-3xl md:text-4xl mb-4 text-center">
-              Available Specializations
+              B.Sc. Programmes
             </h2>
             <p className="text-foreground/80 font-body max-w-2xl mx-auto text-center">
-              Our B.Sc. Allied Health Sciences program offers diverse pathways for specialization, allowing students to tailor their education to their career aspirations.
+              Our College of Allied Health Sciences offers comprehensive B.Sc. programmes designed to prepare students for technical excellence in modern healthcare.
             </p>
           </div>
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {specializations.map((spec, i) => (
+            {bscPrograms.map((spec, i) => (
               <Card key={i} className="group hover:shadow-lg transition-all border-brand-blue/20">
                 <CardHeader className="flex flex-row items-center gap-4">
                   <div className="p-3 rounded-full bg-brand-blue/10 text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition-colors">
@@ -414,7 +414,7 @@ export default function AlliedHealthBSc() {
               Join the future of healthcare technology
             </h3>
             <p className="mb-6 text-foreground font-body">
-              Explore our B.Sc. Allied Health specializations and start your journey towards technical excellence in medicine.
+              Explore our B.Sc. programmes and start your journey towards technical excellence in medicine.
             </p>
             <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
               <a
@@ -483,7 +483,7 @@ function CurriculumLibrary() {
               </span>
             </h2>
             <p className="max-w-2xl text-sm text-foreground sm:text-base font-body">
-              Access comprehensive curriculum documentation and course structures for all Allied Health specializations.
+              Access comprehensive curriculum documentation and course structures for all B.Sc. programmes.
             </p>
           </div>
           <Badge className="w-fit rounded-full bg-brand-blue/15 px-4 py-2 text-xs font-semibold text-brand-blue border border-brand-blue/20">
