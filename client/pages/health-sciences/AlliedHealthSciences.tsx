@@ -46,7 +46,7 @@ const DEAN_INFO: DeanInfo = {
   photo:
     "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F828e34a3364649dd99857a8eb36a137a?format=webp&width=800",
   message: [
-    "Established in 2021, the College of Allied Health Sciences offers eight undergraduate programmes and a Master of Public Health (MPH). Our curriculum is designed to provide highly skilled healthcare professionals for global delivery of preventive, curative, and rehabilitative care.",
+    "Established in 2021, the College of Allied Health Sciences offers five undergraduate programmes and a Master of Public Health (MPH). Our curriculum is designed to provide highly skilled healthcare professionals for global delivery of preventive, curative, and rehabilitative care.",
     "Students are mentored by a multidisciplinary faculty of physicians, surgeons, and scientists, gaining real-life learning experiences through seminars, symposia, and clinical training from the start.",
     "Integrated within our parent medical school and hospital, we provide state-of-the-art infrastructure—including advanced labs, OT complexes, and emergency departments—ensuring rigorous monitoring of academic progress and hands-on technical training.",
     "Our graduates are prepared for diverse employment opportunities in the rapidly advancing healthcare industry worldwide. I wish all aspirants success in joining this revered sector.",
@@ -130,21 +130,6 @@ const UG_PROGRAM_CARDS: ProgramCard[] = [
     panelClass: "bg-black/55 backdrop-blur-xl",
   },
   {
-    name: "B.Sc. Renal Dialysis Technology",
-    area: "Undergraduate",
-    description:
-      "Specialized training in dialysis procedures, nephrology care, and kidney care management for patients with renal impairments.",
-    image:
-      "https://images.unsplash.com/photo-1505751172107-104990666014?q=80&w=1600&auto=format&fit=crop",
-    link: "/academics/health-sciences/bsc-rdt",
-    highlights: ["4 Years", "Nephrology Care", "Dialysis Support"],
-    overlay:
-      "bg-gradient-to-br from-brand-orange/75 via-black/70 to-black/55 mix-blend-multiply",
-    badgeClass:
-      "bg-brand-orange/30 text-foreground/90 border border-white/25 backdrop-blur",
-    panelClass: "bg-black/55 backdrop-blur-xl",
-  },
-  {
     name: "B.Sc. Cardiac Care Technology",
     area: "Undergraduate",
     description:
@@ -157,36 +142,6 @@ const UG_PROGRAM_CARDS: ProgramCard[] = [
       "bg-gradient-to-br from-brand-magenta/75 via-black/70 to-black/55 mix-blend-multiply",
     badgeClass:
       "bg-brand-magenta/30 text-foreground/90 border border-white/25 backdrop-blur",
-    panelClass: "bg-black/55 backdrop-blur-xl",
-  },
-  {
-    name: "B.Sc Audiology and Speech language Pathology",
-    area: "Undergraduate",
-    description:
-      "Diagnosis and treatment of hearing, speech, and language disorders.",
-    image:
-      "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?q=80&w=1600&auto=format&fit=crop",
-    link: "/academics/health-sciences/bsc-aslp",
-    highlights: ["4 Years", "Communication Disorders", "Clinical Practice"],
-    overlay:
-      "bg-gradient-to-br from-brand-blue/75 via-black/70 to-black/55 mix-blend-multiply",
-    badgeClass:
-      "bg-brand-blue/30 text-foreground/90 border border-white/25 backdrop-blur",
-    panelClass: "bg-black/55 backdrop-blur-xl",
-  },
-  {
-    name: "B.Sc Optometry",
-    area: "Undergraduate",
-    description:
-      "Professional training in vision care, diagnostic tests, and clinical optometry.",
-    image:
-      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1600&auto=format&fit=crop",
-    link: "/academics/health-sciences/bsc-optometry",
-    highlights: ["4 Years", "Vision Science", "Eye Care"],
-    overlay:
-      "bg-gradient-to-br from-brand-orange/75 via-black/70 to-black/55 mix-blend-multiply",
-    badgeClass:
-      "bg-brand-orange/30 text-foreground/90 border border-white/25 backdrop-blur",
     panelClass: "bg-black/55 backdrop-blur-xl",
   },
 ];
@@ -757,7 +712,7 @@ export default function AlliedHealthSciences() {
               <Badge className="bg-brand-blue/15 text-brand-blue mb-2">
                 Undergraduate
               </Badge>
-              <h3 className="font-display text-2xl">B.Sc Allied Health Programs</h3>
+              <h3 className="font-display text-2xl">Undergraduate Programs</h3>
             </div>
             <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-12">
               {UG_PROGRAM_CARDS.map((program) => (
@@ -772,7 +727,7 @@ export default function AlliedHealthSciences() {
               <Badge className="bg-brand-magenta/15 text-brand-magenta mb-2">
                 Postgraduate
               </Badge>
-              <h3 className="font-display text-2xl">M.Sc Programs</h3>
+              <h3 className="font-display text-2xl">Postgraduate Program</h3>
             </div>
             <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-12">
               {PG_PROGRAM_CARDS.map((program) => (
