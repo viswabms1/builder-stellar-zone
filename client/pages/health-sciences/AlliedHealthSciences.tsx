@@ -711,6 +711,7 @@ export default function AlliedHealthSciences() {
     "Hands-on exposure in Central Laboratory, OT Complexes, and Emergency Dept",
     "Advanced training in Radio-diagnostics, Renal Dialysis, and Blood Bank",
     "Community health training centers equipped with advanced technology",
+    "On-campus hostel facilities for a safe and convenient student life",
     "Rigorous monitoring of academic progress and vocational mentorship",
   ];
 
