@@ -112,9 +112,7 @@ const PG_PROGRAM_CARDS: ProgramCard[] = [
 
 function ProgramCardComponent({ program }: { program: ProgramCard }) {
   const isInternal = program.link.startsWith("/");
-  const wrapperClasses = `group block h-full rounded-none ${
-    program.featured ? "lg:col-span-6" : "lg:col-span-3"
-  } focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2 focus-visible:ring-offset-background`;
+  const wrapperClasses = `group block h-full rounded-none lg:col-span-12 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2 focus-visible:ring-offset-background`;
   const overlayClasses =
     program.overlay ??
     "bg-gradient-to-t from-black/85 via-black/50 to-transparent";
@@ -127,29 +125,29 @@ function ProgramCardComponent({ program }: { program: ProgramCard }) {
 
   const content = (
     <div
-      className={`relative flex h-full flex-col justify-end overflow-hidden rounded-none border border-white/10 bg-black/10 backdrop-blur-sm transition-all duration-700 hover:-translate-y-1 hover:shadow-2xl hover:shadow-brand-blue/20 ${
-        program.featured ? "min-h-[360px]" : "min-h-[300px]"
-      }`}
+      className={`relative flex h-full flex-col md:flex-row overflow-hidden rounded-none border border-white/10 bg-black/10 backdrop-blur-sm transition-all duration-700 hover:-translate-y-1 hover:shadow-2xl hover:shadow-brand-blue/20 min-h-[300px] md:min-h-[360px]`}
     >
-      <img
-        src={program.image}
-        alt={program.name}
-        loading="lazy"
-        className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-      />
-      <div className={`absolute inset-0 ${overlayClasses}`} />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
-      <div className={`absolute left-6 top-6 ${badgeClasses}`}>
-        {program.area}
+      <div className="relative w-full md:w-2/5 lg:w-1/2 overflow-hidden shrink-0">
+        <img
+          src={program.image}
+          alt={program.name}
+          loading="lazy"
+          className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+        />
+        <div className={`absolute inset-0 ${overlayClasses}`} />
+        <div className={`absolute left-6 top-6 ${badgeClasses}`}>
+          {program.area}
+        </div>
       </div>
-      <div className="relative z-10 flex h-full flex-col justify-end p-6 text-white">
+
+      <div className="relative z-10 flex flex-1 flex-col justify-center p-6 md:p-8 lg:p-12 text-white bg-black/40">
         <div className={panelClasses}>
           <div className="space-y-4">
             <div>
-              <h3 className="font-display text-2xl leading-tight text-white">
+              <h3 className="font-display text-2xl md:text-3xl lg:text-4xl leading-tight text-white">
                 {program.name}
               </h3>
-              <p className="mt-3 text-sm text-white/85 font-body">
+              <p className="mt-3 text-sm md:text-base text-white/85 font-body">
                 {program.description}
               </p>
             </div>
