@@ -267,12 +267,37 @@ export default function Navigation() {
       {
         name: "School of Applied Sciences",
         href: "/academics/basic-applied-sciences",
-        departments: [
+        hasSubGroups: true,
+        subGroups: [
           {
-            name: "Explore Programs",
-            href: "/academics/basic-applied-sciences",
+            name: "Undergraduate",
+            departments: [
+              {
+                name: "B.Sc. Triple Major",
+                href: "/academics/basic-applied-sciences/bsc-triple-major",
+              },
+            ],
+          },
+          {
+            name: "Postgraduate",
+            departments: [
+              {
+                name: "M.Sc. Specializations",
+                href: "/academics/basic-applied-sciences/msc-specializations",
+              },
+            ],
+          },
+          {
+            name: "Overview",
+            departments: [
+              {
+                name: "SBAS Overview",
+                href: "/academics/basic-applied-sciences",
+              },
+            ],
           },
         ],
+        departments: [],
       },
       {
         name: "School of Design",
