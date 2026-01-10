@@ -147,31 +147,71 @@ export default function Navigation() {
       {
         name: "School of Health Sciences",
         href: "/academics/health-sciences",
-        departments: [
-          { name: "Pharmacy", href: "/academics/health-sciences" },
-          { name: "Nursing", href: "/academics/health-sciences/nursing" },
+        hasSubGroups: true,
+        subGroups: [
           {
-            name: "Allied Health Sciences (CAHS)",
-            href: "/academics/health-sciences/allied-health",
-          },
-          {
-            name: "B.Sc. Allied Health Sciences",
-            href: "/academics/health-sciences/allied-health-bsc",
+            name: "Nursing",
+            departments: [
+              {
+                name: "Nursing Overview",
+                href: "/academics/health-sciences/nursing",
+              },
+              {
+                name: "B.Sc Nursing",
+                href: "/academics/health-sciences/bsc-nursing",
+              },
+              {
+                name: "Post Basic B.Sc Nursing",
+                href: "/academics/health-sciences/pb-bsc-nursing",
+              },
+              {
+                name: "M.Sc Nursing",
+                href: "/academics/health-sciences/msc-nursing",
+              },
+            ],
           },
           {
             name: "Physiotherapy",
-            href: "/academics/health-sciences/physiotherapy",
+            departments: [
+              {
+                name: "Physiotherapy Overview",
+                href: "/academics/health-sciences/physiotherapy",
+              },
+              { name: "BPT", href: "/academics/health-sciences/bpt" },
+              { name: "MPT", href: "/academics/health-sciences/mpt" },
+            ],
           },
           {
-            name: "Physiotherapy Faculty",
-            href: "/academics/health-sciences/physiotherapy/faculty",
+            name: "Allied Health Sciences (CAHS)",
+            departments: [
+              {
+                name: "CAHS Overview",
+                href: "/academics/health-sciences/allied-health",
+              },
+              {
+                name: "B.Sc. Allied Health Sciences",
+                href: "/academics/health-sciences/allied-health-bsc",
+              },
+              {
+                name: "MPH (Public Health)",
+                href: "/academics/health-sciences/mph",
+              },
+            ],
           },
           {
-            name: "MPH (Public Health)",
-            href: "/academics/health-sciences/mph",
+            name: "Pharmacy",
+            departments: [
+              { name: "Pharmacy Overview", href: "/academics/health-sciences" },
+            ],
           },
-          { name: "CDSIMER", href: "/academics/health-sciences/cdsimer" },
+          {
+            name: "Medical Education",
+            departments: [
+              { name: "CDSIMER", href: "/academics/health-sciences/cdsimer" },
+            ],
+          },
         ],
+        departments: [],
       },
       {
         name: "School of Law",
