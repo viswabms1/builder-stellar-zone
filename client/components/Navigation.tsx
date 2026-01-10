@@ -216,18 +216,29 @@ export default function Navigation() {
       {
         name: "School of Law",
         href: "/academics/law",
-        departments: [
-          { name: "Explore Programs", href: "/academics/law/programs" },
-          { name: "LLB (3-Year)", href: "/academics/law/llb-3-year" },
+        hasSubGroups: true,
+        subGroups: [
           {
-            name: "LLM in Law & Technology",
-            href: "/academics/law/llm-law-technology",
+            name: "Undergraduate",
+            departments: [
+              { name: "LLB (3-Year)", href: "/academics/law/llb-3-year" },
+            ],
           },
           {
-            name: "LLM in Corporate Law",
-            href: "/academics/law/llm-corporate-commercial",
+            name: "Postgraduate (LLM)",
+            departments: [
+              {
+                name: "LLM in Law & Technology",
+                href: "/academics/law/llm-law-technology",
+              },
+              {
+                name: "LLM in Corporate Law",
+                href: "/academics/law/llm-corporate-commercial",
+              },
+            ],
           },
         ],
+        departments: [],
       },
       {
         name: "School of Commerce & Management",
@@ -267,22 +278,30 @@ export default function Navigation() {
       {
         name: "Computer Applications",
         href: "/academics/computer-applications",
-        departments: [
+        hasSubGroups: true,
+        subGroups: [
           {
-            name: "Explore Programs",
-            href: "/academics/computer-applications",
+            name: "Undergraduate",
+            departments: [
+              { name: "B.C.A.", href: "/academics/computer-applications/bca" },
+              {
+                name: "B.Sc. Data Science",
+                href: "/academics/computer-applications/data-science",
+              },
+            ],
           },
-          { name: "B.C.A.", href: "/academics/computer-applications/bca" },
           {
-            name: "B.Sc. Data Science",
-            href: "/academics/computer-applications/data-science",
-          },
-          { name: "M.C.A.", href: "/academics/computer-applications/mca" },
-          {
-            name: "M.Sc. Data Science",
-            href: "/academics/computer-applications/msc-data-science",
+            name: "Postgraduate",
+            departments: [
+              { name: "M.C.A.", href: "/academics/computer-applications/mca" },
+              {
+                name: "M.Sc. Data Science",
+                href: "/academics/computer-applications/msc-data-science",
+              },
+            ],
           },
         ],
+        departments: [],
       },
       {
         name: "Medical Education & Research (CDSIMER)",
