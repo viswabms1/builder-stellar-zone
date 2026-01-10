@@ -367,6 +367,105 @@ export default function Index() {
       link: "https://doi.org/10.1007/s10742-024-00329-2",
     },
     {
+      date: "2025",
+      title: "Effect of Zircon on Aluminum/Graphite Alloy Hybrid Composites",
+      category: "Transactions of Indian Institute of Metals",
+      description:
+        "Research on the effect of zircon reinforcement on aluminum/graphite hybrid composite materials, analyzing mechanical properties and structural improvements.",
+      image:
+        "https://images.pexels.com/photos/3807517/pexels-photo-3807517.jpeg",
+      authors: "DSU Materials Science Team",
+      link: "https://doi.org/10.1007/s40735-025-00944-7",
+    },
+    {
+      date: "2025",
+      title: "Perovskite Solar Cell Stability Analysis Using Advanced Techniques",
+      category: "Progress in Photovoltaics",
+      description:
+        "Advanced stability analysis of perovskite solar cells using cutting-edge characterization techniques to improve long-term performance and reliability.",
+      image:
+        "https://images.pexels.com/photos/9629789/pexels-photo-9629789.jpeg",
+      authors: "DSU Renewable Energy Lab",
+      link: "https://doi.org/10.1002/pip.3861",
+    },
+    {
+      date: "2025",
+      title: "Host–Guest Inclusion Complexes of Tafamidis",
+      category: "Journal of Molecular Structure",
+      description:
+        "Comprehensive study on host-guest inclusion complexes involving tafamidis, examining molecular interactions and structural characterization.",
+      image:
+        "https://images.pexels.com/photos/8888537/pexels-photo-8888537.jpeg",
+      authors: "DSU Chemistry Research",
+      link: "https://doi.org/10.1016/j.molstruc.2025.141649",
+    },
+    {
+      date: "2025",
+      title: "Development of a Scaled-Down Test Rig for Wheel Systems",
+      category: "Journal of Thermal Science and Engineering Applications",
+      description:
+        "Design and development of a laboratory-scale test rig for studying wheel system performance, thermal behavior, and durability characteristics.",
+      image:
+        "https://images.pexels.com/photos/5632400/pexels-photo-5632400.jpeg",
+      authors: "DSU Mechanical Engineering",
+      link: "https://doi.org/10.1115/1.4067351",
+    },
+    {
+      date: "2025",
+      title: "Exploring Caffeine as a Disruptor of Membrane Dynamics",
+      category: "Physical Review E",
+      description:
+        "Investigation of caffeine's molecular effects on membrane dynamics and protein interactions using advanced computational and experimental techniques.",
+      image:
+        "https://images.pexels.com/photos/3962286/pexels-photo-3962286.jpeg",
+      authors: "DSU Biophysics Group",
+      link: "https://doi.org/10.1103/PhysRevE.111.014402",
+    },
+    {
+      date: "2024",
+      title: "Fiber Bragg Grating as a Temperature Sensor",
+      category: "Journal of Optics",
+      description:
+        "Novel application of fiber Bragg gratings for high-precision temperature sensing in industrial and scientific applications.",
+      image:
+        "https://images.pexels.com/photos/3865857/pexels-photo-3865857.jpeg",
+      authors: "DSU Photonics Lab",
+      link: "https://doi.org/10.1007/s12596-024-01894-y",
+    },
+    {
+      date: "2025",
+      title: "Synthesis, Characterization and Computational Study of Molecular Systems",
+      category: "Journal of Molecular Structure",
+      description:
+        "Integrated approach combining chemical synthesis, experimental characterization, and computational modeling for understanding molecular systems and their properties.",
+      image:
+        "https://images.pexels.com/photos/12888560/pexels-photo-12888560.jpeg",
+      authors: "DSU Computational Chemistry",
+      link: "https://doi.org/10.1016/j.molstruc.2025.142056",
+    },
+    {
+      date: "2024",
+      title: "Multilayer Coating-Assisted Gold-Encapsulated Nanostructures",
+      category: "Journal of Optics",
+      description:
+        "Development of advanced multilayer coating techniques for creating gold-encapsulated nanostructures with enhanced optical and plasmonic properties.",
+      image:
+        "https://images.pexels.com/photos/8888557/pexels-photo-8888557.jpeg",
+      authors: "DSU Nanotechnology Research",
+      link: "https://doi.org/10.1007/s12596-024-01711-6",
+    },
+    {
+      date: "2024",
+      title: "Optimizing Solar Radiation Forecasting for Renewable Energy Applications",
+      category: "Journal of Solar Energy & Sustainable Development",
+      description:
+        "Advanced forecasting methods for predicting solar radiation patterns to optimize renewable energy generation and grid integration.",
+      image:
+        "https://images.pexels.com/photos/7974355/pexels-photo-7974355.jpeg",
+      authors: "DSU Sustainable Energy Institute",
+      link: "https://doi.org/10.51646/jsesd.v14i1.386",
+    },
+    {
       date: "Nov 2024",
       title: "AI & Machine Learning in Healthcare: A DSU Research Perspective",
       category: "Research Paper",
