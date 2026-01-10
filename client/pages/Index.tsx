@@ -1307,13 +1307,13 @@ export default function Index() {
                       className="no-underline group"
                     >
                       <Button className="bg-brand-gradient hover:shadow-lg hover:shadow-brand-magenta/50 text-foreground font-semibold gap-2 transform group-hover:translate-x-1 transition-all">
-                        Read Full Paper
+                        Read More
                         <ArrowRight className="w-4 h-4" />
                       </Button>
                     </a>
                   ) : (
                     <Button className="bg-brand-gradient hover:shadow-lg hover:shadow-brand-magenta/50 text-foreground font-semibold gap-2">
-                      Read Publication
+                      Read More
                       <ArrowRight className="w-4 h-4" />
                     </Button>
                   )}
