@@ -673,7 +673,7 @@ export default function Index() {
             <p className="text-sm sm:text-lg md:text-xl lg:text-2xl font-medium text-white/90 font-display">
               Powered by NVIDIA
             </p>
-            <p className="text-xs sm:text-base md:text-lg lg:text-xl font-medium text-white/80 mt-2 font-display">
+            <p className="text-xs sm:text-base md:text-lg lg:text-xl font-medium text-white/80 mt-2 font-display hidden sm:block">
               AI integrated across academics, research, and campus innovation
             </p>
           </div>
