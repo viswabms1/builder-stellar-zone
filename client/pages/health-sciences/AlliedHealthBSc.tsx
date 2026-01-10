@@ -37,35 +37,35 @@ export default function AlliedHealthBSc() {
       label: "B.Sc. in Medical Laboratory Technology",
       description: "Perform clinical tests on specimens of bodily fluids and tissues to gather critical health information or determine cause of death.",
       highlights: ["Anatomy", "Physiology", "Biochemistry", "Microbiology", "Pathology"],
-      image: "https://images.unsplash.com/photo-1513624954087-ca7109c0f710?q=80&w=1600&auto=format&fit=crop"
+      image: "https://images.pexels.com/photos/5726785/pexels-photo-5726785.jpeg?auto=compress&cs=tinysrgb&w=1600"
     },
     {
       icon: Activity,
       label: "B.Sc. in Emergency & Trauma Care Technology",
       description: "Provide diagnostic, curative, and preventive medical services under doctor supervision, applying advanced procedures for treating injuries.",
       highlights: ["Emergency Medicine", "Trauma Care", "Pharmacology", "Life Support"],
-      image: "https://images.pexels.com/photos/1250655/pexels-photo-1250655.jpeg?auto=compress&cs=tinysrgb&w=1600"
+      image: "https://images.pexels.com/photos/27793058/pexels-photo-27793058.jpeg?auto=compress&cs=tinysrgb&w=1600"
     },
     {
       icon: Stethoscope,
       label: "B.Sc. in Operation Theatre Technology",
       description: "Assisting anesthetists, maintaining OTs, and managing sterile services and disaster preparedness in multidisciplinary surgical teams.",
       highlights: ["Surgical Tech", "OT Management", "Sterile Services", "Anesthesia Assistance"],
-      image: "https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=1600&auto=format&fit=crop"
+      image: "https://images.pexels.com/photos/18112241/pexels-photo-18112241.jpeg?auto=compress&cs=tinysrgb&w=1600"
     },
     {
       icon: Eye,
       label: "B.Sc. in Radiology & Imaging Technology",
       description: "Operate radiographic, ultrasound, and MRI equipment to produce images for diagnosis and monitors radiation treatments.",
       highlights: ["Radiation Physics", "Imaging Physics", "Diagnostic Tech", "Patient Care"],
-      image: "https://images.unsplash.com/photo-1530497610245-94d3c16cda28?q=80&w=1600&auto=format&fit=crop"
+      image: "https://images.pexels.com/photos/7088524/pexels-photo-7088524.jpeg?auto=compress&cs=tinysrgb&w=1600"
     },
     {
       icon: Heart,
       label: "B.Sc. in Cardiac Care Technology",
       description: "Expertise in circulatory systems and complex equipment operation for adult and pediatric cardiac interventions.",
       highlights: ["Cardiovascular Tech", "ECG Monitoring", "Echocardiography", "Cardiac Surgery Support"],
-      image: "https://images.pexels.com/photos/11198232/pexels-photo-11198232.jpeg?auto=compress&cs=tinysrgb&w=1600"
+      image: "https://images.pexels.com/photos/4483339/pexels-photo-4483339.jpeg?auto=compress&cs=tinysrgb&w=1600"
     },
   ];
 
@@ -483,7 +483,7 @@ function CurriculumLibrary() {
       description:
         "Comprehensive curriculum covering clinical biochemistry, microbiology, pathology, and laboratory management.",
       image:
-        "https://images.unsplash.com/photo-1513624954087-ca7109c0f710?q=80&w=1600&auto=format&fit=crop",
+        "https://images.pexels.com/photos/8279478/pexels-photo-8279478.jpeg?auto=compress&cs=tinysrgb&w=1600",
       batches: [
         {
           year: "2025-26",
@@ -499,7 +499,7 @@ function CurriculumLibrary() {
       description:
         "Focused on emergency medical services, trauma management, and advanced life support techniques.",
       image:
-        "https://images.pexels.com/photos/1250655/pexels-photo-1250655.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "https://images.pexels.com/photos/28271070/pexels-photo-28271070.jpeg?auto=compress&cs=tinysrgb&w=1600",
       batches: [
         {
           year: "2025-26",
@@ -515,7 +515,7 @@ function CurriculumLibrary() {
       description:
         "Training in surgical procedures, anesthesia assistance, and operation theatre management.",
       image:
-        "https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=1600&auto=format&fit=crop",
+        "https://images.pexels.com/photos/7581089/pexels-photo-7581089.jpeg?auto=compress&cs=tinysrgb&w=1600",
       batches: [
         {
           year: "2025-26",
@@ -531,7 +531,7 @@ function CurriculumLibrary() {
       description:
         "In-depth study of radiographic techniques, CT, MRI, ultrasound, and radiation safety.",
       image:
-        "https://images.unsplash.com/photo-1530497610245-94d3c16cda28?q=80&w=1600&auto=format&fit=crop",
+        "https://images.pexels.com/photos/4226264/pexels-photo-4226264.jpeg?auto=compress&cs=tinysrgb&w=1600",
       batches: [
         {
           year: "2025-26",
@@ -547,7 +547,7 @@ function CurriculumLibrary() {
       description:
         "Specialized curriculum on cardiovascular systems, ECG, echocardiography, and cardiac catheterization.",
       image:
-        "https://images.pexels.com/photos/11198232/pexels-photo-11198232.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "https://images.pexels.com/photos/5327920/pexels-photo-5327920.jpeg?auto=compress&cs=tinysrgb&w=1600",
       batches: [
         {
           year: "2025-26",
