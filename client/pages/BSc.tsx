@@ -1,7 +1,13 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import {
   CheckCircle2,
@@ -42,12 +48,9 @@ export default function BSc() {
   ];
 
   function HeroVideo() {
-
     return (
       <>
-        <div
-          className="hero-video-container relative flex items-center justify-start"
-        >
+        <div className="hero-video-container relative flex items-center justify-start">
           <img
             src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fd044958c77f54da59928341e747ad4db?format=webp&width=1200"
             alt="Bachelor of Science Program"
@@ -82,12 +85,13 @@ export default function BSc() {
             }}
           ></div>
 
-
           <div className="hero-title-inside absolute bottom-0 left-0 right-0 z-20 flex items-end justify-start p-3 sm:p-6 max-w-7xl mx-auto w-full">
             <div className="max-w-2xl">
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-brand-blue/10 rounded-full border border-brand-blue/20 mb-4">
                 <Sparkles className="w-4 h-4 text-brand-blue" />
-                <span className="text-sm font-medium text-brand-blue font-display">Bachelor of Science</span>
+                <span className="text-sm font-medium text-brand-blue font-display">
+                  Bachelor of Science
+                </span>
               </div>
               <p className="text-lg sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-1 sm:mb-4 uppercase tracking-widest font-display">
                 Bachelor of Science
@@ -103,7 +107,9 @@ export default function BSc() {
           <div className="hero-title-outside max-w-2xl">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-brand-blue/10 rounded-full border border-brand-blue/20 mb-4">
               <Sparkles className="w-4 h-4 text-brand-blue" />
-              <span className="text-sm font-medium text-brand-blue font-display">Bachelor of Science</span>
+              <span className="text-sm font-medium text-brand-blue font-display">
+                Bachelor of Science
+              </span>
             </div>
             <p className="text-lg sm:text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-1 sm:mb-4 uppercase tracking-widest font-display">
               Bachelor of Science
@@ -145,21 +151,36 @@ export default function BSc() {
       <section className="px-3 py-8 bg-gradient-to-r from-brand-blue/5 via-brand-magenta/5 to-brand-orange/5 border-y border-border/30">
         <div className="max-w-6xl mx-auto">
           <div className="mb-8">
-            <h2 className="headline-2 font-display mb-2">Specialization Options</h2>
-            <p className="text-foreground/80 font-body">Choose your pathway with interdisciplinary flexibility</p>
+            <h2 className="headline-2 font-display mb-2">
+              Specialization Options
+            </h2>
+            <p className="text-foreground/80 font-body">
+              Choose your pathway with interdisciplinary flexibility
+            </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {specializations.map((spec, idx) => (
-              <Card key={idx} className="border border-border/50 bg-card/50 backdrop-blur-sm hover:shadow-lg transition-all">
+              <Card
+                key={idx}
+                className="border border-border/50 bg-card/50 backdrop-blur-sm hover:shadow-lg transition-all"
+              >
                 <CardHeader>
                   <div className="flex items-center gap-2 mb-2">
                     <spec.icon className="w-5 h-5 text-brand-blue" />
-                    <Badge className="bg-brand-blue/20 text-brand-blue border-brand-blue/30">Triple Major</Badge>
+                    <Badge className="bg-brand-blue/20 text-brand-blue border-brand-blue/30">
+                      Triple Major
+                    </Badge>
                   </div>
-                  <CardTitle className="font-display text-base">{spec.label}</CardTitle>
+                  <CardTitle className="font-display text-base">
+                    {spec.label}
+                  </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-3">
-                  <p className="text-sm text-foreground/80 font-body">Comprehensive curriculum integrating three complementary science disciplines for maximum flexibility and career opportunities.</p>
+                  <p className="text-sm text-foreground/80 font-body">
+                    Comprehensive curriculum integrating three complementary
+                    science disciplines for maximum flexibility and career
+                    opportunities.
+                  </p>
                 </CardContent>
               </Card>
             ))}
@@ -177,23 +198,45 @@ export default function BSc() {
             <h2 className="headline-3 font-display">Overview</h2>
             <div className="space-y-4 text-foreground leading-relaxed font-body">
               <p>
-                The B.Sc (3 Year Triple Major) program is an innovative interdisciplinary initiative designed to provide students with comprehensive knowledge across multiple science disciplines. This unique structure allows students to specialize in three complementary areas, creating a well-rounded foundation in basic and applied sciences.
+                The B.Sc (3 Year Triple Major) program is an innovative
+                interdisciplinary initiative designed to provide students with
+                comprehensive knowledge across multiple science disciplines.
+                This unique structure allows students to specialize in three
+                complementary areas, creating a well-rounded foundation in basic
+                and applied sciences.
               </p>
               <p>
-                The program emphasizes the integration of theoretical concepts with hands-on practical experience in state-of-the-art laboratories. Students gain proficiency in research methodologies, analytical techniques, and problem-solving approaches essential for advanced study and professional practice in scientific fields.
+                The program emphasizes the integration of theoretical concepts
+                with hands-on practical experience in state-of-the-art
+                laboratories. Students gain proficiency in research
+                methodologies, analytical techniques, and problem-solving
+                approaches essential for advanced study and professional
+                practice in scientific fields.
               </p>
               <p>
-                Beyond technical expertise, the curriculum fosters critical thinking, scientific inquiry, and the ability to apply knowledge to real-world challenges. Students develop strong communication and collaboration skills through group projects, seminars, and presentations, preparing them for diverse career opportunities in research, industry, and academia.
+                Beyond technical expertise, the curriculum fosters critical
+                thinking, scientific inquiry, and the ability to apply knowledge
+                to real-world challenges. Students develop strong communication
+                and collaboration skills through group projects, seminars, and
+                presentations, preparing them for diverse career opportunities
+                in research, industry, and academia.
               </p>
             </div>
             <Card className="border border-border/50 bg-card/50 backdrop-blur-sm">
               <CardHeader className="pb-2">
-                <CardTitle className="text-lg font-display">Program Highlights</CardTitle>
-                <CardDescription className="font-body">Core curriculum focus areas</CardDescription>
+                <CardTitle className="text-lg font-display">
+                  Program Highlights
+                </CardTitle>
+                <CardDescription className="font-body">
+                  Core curriculum focus areas
+                </CardDescription>
               </CardHeader>
               <CardContent className="grid sm:grid-cols-2 gap-3 pt-0">
                 {highlights.map((h, idx) => (
-                  <div key={idx} className="flex items-start gap-2 text-sm text-foreground">
+                  <div
+                    key={idx}
+                    className="flex items-start gap-2 text-sm text-foreground"
+                  >
                     <CheckCircle2 className="w-4 h-4 text-brand-blue mt-0.5" />
                     <span>{h}</span>
                   </div>
@@ -204,11 +247,17 @@ export default function BSc() {
           <div>
             <Card className="overflow-hidden border border-border/50 bg-card/50">
               <div className="relative h-40">
-                <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=600&auto=format&fit=crop" alt="Science Lab" className="w-full h-full object-cover" />
+                <img
+                  src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=600&auto=format&fit=crop"
+                  alt="Science Lab"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <CardHeader>
                 <CardTitle className="font-display">Program Details</CardTitle>
-                <CardDescription className="font-body">Key specifications</CardDescription>
+                <CardDescription className="font-body">
+                  Key specifications
+                </CardDescription>
               </CardHeader>
               <CardContent className="grid gap-3 text-sm font-body">
                 <div className="flex items-center justify-between border-b border-border/20 pb-3">
@@ -237,7 +286,10 @@ export default function BSc() {
             <Card className="border border-border/50 bg-card/50">
               <CardContent className="p-3 grid gap-3">
                 {careers.map((c, i) => (
-                  <div key={i} className="flex items-start gap-2 text-sm text-foreground font-body">
+                  <div
+                    key={i}
+                    className="flex items-start gap-2 text-sm text-foreground font-body"
+                  >
                     <ChevronRight className="w-3 h-3 text-brand-blue mt-1" />
                     <span>{c}</span>
                   </div>
@@ -249,15 +301,32 @@ export default function BSc() {
             <h2 className="headline-3 mb-4 font-display">Get in Touch</h2>
             <Card className="overflow-hidden border border-border/50 bg-card/50">
               <div className="relative h-40">
-                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop" alt="Contact BSc" className="w-full h-full object-cover" />
+                <img
+                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop"
+                  alt="Contact BSc"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <CardHeader>
                 <CardTitle className="font-display">Program Contact</CardTitle>
-                <CardDescription className="font-body">School of Basic & Applied Sciences</CardDescription>
+                <CardDescription className="font-body">
+                  School of Basic & Applied Sciences
+                </CardDescription>
               </CardHeader>
               <CardContent className="grid gap-2 text-sm font-body">
-                <div className="flex items-center justify-between"><span>Email</span><a className="font-medium hover:underline" href="mailto:info-sbas@dsu.edu.in">info-sbas@dsu.edu.in</a></div>
-                <div className="flex items-center justify-between"><span>Phone</span><span className="font-medium">080-49092900</span></div>
+                <div className="flex items-center justify-between">
+                  <span>Email</span>
+                  <a
+                    className="font-medium hover:underline"
+                    href="mailto:info-sbas@dsu.edu.in"
+                  >
+                    info-sbas@dsu.edu.in
+                  </a>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span>Phone</span>
+                  <span className="font-medium">080-49092900</span>
+                </div>
               </CardContent>
             </Card>
           </div>
@@ -275,7 +344,8 @@ export default function BSc() {
               </span>
             </h2>
             <p className="text-foreground/80 font-body max-w-2xl mx-auto">
-              Discover research, placements, admission pathways, and Centers of Excellence at DSU
+              Discover research, placements, admission pathways, and Centers of
+              Excellence at DSU
             </p>
           </div>
 
@@ -365,39 +435,51 @@ function CurriculumLibrary() {
     {
       id: "bsc-biotech-biochem-genetics",
       label: "Biotechnology, Biochemistry & Genetics",
-      description: "3-year specialized program combining biotechnology applications with biochemical analysis and genetic studies",
-      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=600&auto=format&fit=crop",
+      description:
+        "3-year specialized program combining biotechnology applications with biochemical analysis and genetic studies",
+      image:
+        "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=600&auto=format&fit=crop",
       batches: [
         {
           year: "2025-26",
-          summary: "Latest curriculum with advanced biotechnology techniques, biochemical pathways, and genetic engineering across all 6 semesters",
-          documentUrl: "https://www.dsu.edu.in/images/BasicAppliedSciences/BSc-Biotech-Biochem-Genetics-2025-26.pdf",
+          summary:
+            "Latest curriculum with advanced biotechnology techniques, biochemical pathways, and genetic engineering across all 6 semesters",
+          documentUrl:
+            "https://www.dsu.edu.in/images/BasicAppliedSciences/BSc-Biotech-Biochem-Genetics-2025-26.pdf",
         },
       ],
     },
     {
       id: "bsc-biotech-chemistry-microbio",
       label: "Biotechnology, Chemistry & Microbiology",
-      description: "3-year integrated program covering biotechnology, chemical processes, and microbial systems",
-      image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=600&auto=format&fit=crop",
+      description:
+        "3-year integrated program covering biotechnology, chemical processes, and microbial systems",
+      image:
+        "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=600&auto=format&fit=crop",
       batches: [
         {
           year: "2025-26",
-          summary: "Latest curriculum integrating biotechnology applications, chemical synthesis, and microbial cultivation across all 6 semesters",
-          documentUrl: "https://www.dsu.edu.in/images/BasicAppliedSciences/BSc-Biotech-Chemistry-Microbio-2025-26.pdf",
+          summary:
+            "Latest curriculum integrating biotechnology applications, chemical synthesis, and microbial cultivation across all 6 semesters",
+          documentUrl:
+            "https://www.dsu.edu.in/images/BasicAppliedSciences/BSc-Biotech-Chemistry-Microbio-2025-26.pdf",
         },
       ],
     },
     {
       id: "bsc-microbio-genetics-biochem",
       label: "Microbiology, Genetics & Biochemistry",
-      description: "3-year comprehensive program focusing on microbial biology, genetic analysis, and biochemical mechanisms",
-      image: "https://images.unsplash.com/photo-1581091870622-5f1e9b8d2f70?q=80&w=600&auto=format&fit=crop",
+      description:
+        "3-year comprehensive program focusing on microbial biology, genetic analysis, and biochemical mechanisms",
+      image:
+        "https://images.unsplash.com/photo-1581091870622-5f1e9b8d2f70?q=80&w=600&auto=format&fit=crop",
       batches: [
         {
           year: "2025-26",
-          summary: "Latest curriculum covering microbial ecology, genetic regulation, and biochemical pathways across all 6 semesters",
-          documentUrl: "https://www.dsu.edu.in/images/BasicAppliedSciences/BSc-Microbio-Genetics-Biochem-2025-26.pdf",
+          summary:
+            "Latest curriculum covering microbial ecology, genetic regulation, and biochemical pathways across all 6 semesters",
+          documentUrl:
+            "https://www.dsu.edu.in/images/BasicAppliedSciences/BSc-Microbio-Genetics-Biochem-2025-26.pdf",
         },
       ],
     },
@@ -415,7 +497,9 @@ function CurriculumLibrary() {
               </span>
             </h2>
             <p className="max-w-2xl text-sm text-foreground sm:text-base font-body">
-              Access comprehensive curriculum documentation for each specialization. Select any specialization below to view its course structure, learning outcomes, and downloadable syllabus.
+              Access comprehensive curriculum documentation for each
+              specialization. Select any specialization below to view its course
+              structure, learning outcomes, and downloadable syllabus.
             </p>
           </div>
           <Badge className="w-fit rounded-full bg-brand-blue/15 px-4 py-2 text-xs font-semibold text-brand-blue border border-brand-blue/20">
@@ -427,7 +511,8 @@ function CurriculumLibrary() {
           {programs.map((program, programIdx) => {
             const isOpen = openProgram === program.id;
             const borderClass = "border-brand-blue/30";
-            const badgeClass = "bg-brand-blue/15 text-brand-blue border-brand-blue/20";
+            const badgeClass =
+              "bg-brand-blue/15 text-brand-blue border-brand-blue/20";
 
             return (
               <div
@@ -449,8 +534,12 @@ function CurriculumLibrary() {
                     </Badge>
                   </div>
                   <div>
-                    <h3 className="headline-3 font-display text-foreground mb-2">{program.label}</h3>
-                    <p className="text-sm text-foreground/80 font-body">{program.description}</p>
+                    <h3 className="headline-3 font-display text-foreground mb-2">
+                      {program.label}
+                    </h3>
+                    <p className="text-sm text-foreground/80 font-body">
+                      {program.description}
+                    </p>
                   </div>
                   <Button
                     variant="outline"
@@ -484,7 +573,9 @@ function CurriculumLibrary() {
                               </Badge>
                             </div>
                           </div>
-                          <p className="text-xs text-foreground/70 mb-3 font-body">{batch.summary}</p>
+                          <p className="text-xs text-foreground/70 mb-3 font-body">
+                            {batch.summary}
+                          </p>
                           <a
                             href={batch.documentUrl}
                             target="_blank"

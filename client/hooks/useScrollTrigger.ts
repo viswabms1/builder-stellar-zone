@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from "react";
 
 /**
  * Hook that triggers an animation when an element comes into view
@@ -9,16 +9,19 @@ export function useScrollTrigger(options = {}) {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) {
-        setIsVisible(true);
-        // Stop observing after animation triggers (optional - remove if you want repeat animations)
-        observer.unobserve(entry.target);
-      }
-    }, {
-      threshold: 0.1, // Trigger when 10% of element is visible
-      ...options,
-    });
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          // Stop observing after animation triggers (optional - remove if you want repeat animations)
+          observer.unobserve(entry.target);
+        }
+      },
+      {
+        threshold: 0.1, // Trigger when 10% of element is visible
+        ...options,
+      },
+    );
 
     if (elementRef.current) {
       observer.observe(elementRef.current);

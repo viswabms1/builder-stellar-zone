@@ -7,22 +7,24 @@ import { ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function NursingFaculty() {
-  const leadership = useMemo(
-    () => {
-      const rank = (title: string) => {
-        if (/Principal/i.test(title) || /Chairperson/i.test(title)) return 0;
-        if (/Dean/i.test(title)) return 1;
-        if (/HOD/i.test(title)) return 2;
-        if (/Professor/i.test(title) && !/Associate/i.test(title) && !/Assistant/i.test(title)) return 3;
-        if (/Associate Professor/i.test(title)) return 4;
-        if (/Assistant Professor/i.test(title)) return 5;
-        if (/Lecturer/i.test(title)) return 6;
-        return 7;
-      };
-      return nursingFaculty.sort((a, b) => rank(a.title) - rank(b.title));
-    },
-    [],
-  );
+  const leadership = useMemo(() => {
+    const rank = (title: string) => {
+      if (/Principal/i.test(title) || /Chairperson/i.test(title)) return 0;
+      if (/Dean/i.test(title)) return 1;
+      if (/HOD/i.test(title)) return 2;
+      if (
+        /Professor/i.test(title) &&
+        !/Associate/i.test(title) &&
+        !/Assistant/i.test(title)
+      )
+        return 3;
+      if (/Associate Professor/i.test(title)) return 4;
+      if (/Assistant Professor/i.test(title)) return 5;
+      if (/Lecturer/i.test(title)) return 6;
+      return 7;
+    };
+    return nursingFaculty.sort((a, b) => rank(a.title) - rank(b.title));
+  }, []);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -63,10 +65,16 @@ function FacultyGridCard({ faculty }: { faculty: FacultyEntry }) {
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 via-40% to-transparent group-hover:from-black/80 transition-all duration-300" />
         </AspectRatio>
         <div className="absolute bottom-0 w-full p-3 text-white">
-          <p className="text-xs font-bold line-clamp-2 group-hover:text-brand-magenta transition-colors">{faculty.name}</p>
-          <p className="text-xs opacity-80 line-clamp-1 group-hover:opacity-100 transition-opacity">{faculty.title}</p>
+          <p className="text-xs font-bold line-clamp-2 group-hover:text-brand-magenta transition-colors">
+            {faculty.name}
+          </p>
+          <p className="text-xs opacity-80 line-clamp-1 group-hover:opacity-100 transition-opacity">
+            {faculty.title}
+          </p>
           {faculty.specialty && (
-            <p className="text-xs opacity-70 line-clamp-1">{faculty.specialty}</p>
+            <p className="text-xs opacity-70 line-clamp-1">
+              {faculty.specialty}
+            </p>
           )}
         </div>
       </div>
@@ -89,7 +97,9 @@ function LeadershipSection({ leadership }: LeadershipSectionProps) {
           <div className="w-20 h-1.5 bg-gradient-to-r from-brand-magenta to-brand-orange rounded-full mx-auto" />
         </div>
         <p className="max-w-2xl mx-auto text-lg md:text-xl text-foreground/75 leading-relaxed">
-          Meet our exceptional faculty members—experienced nurses, researchers, and educators dedicated to fostering excellence in nursing education and patient care.
+          Meet our exceptional faculty members—experienced nurses, researchers,
+          and educators dedicated to fostering excellence in nursing education
+          and patient care.
         </p>
       </div>
 

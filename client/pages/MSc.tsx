@@ -1,7 +1,13 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import {
   CheckCircle2,
@@ -44,12 +50,9 @@ export default function MSc() {
   ];
 
   function HeroVideo() {
-
     return (
       <>
-        <div
-          className="hero-video-container relative flex items-center justify-start"
-        >
+        <div className="hero-video-container relative flex items-center justify-start">
           <img
             src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fda8a5f7e2a3e4c94832449d8c296a88b?format=webp&width=1200"
             alt="Master of Science Program"
@@ -84,12 +87,13 @@ export default function MSc() {
             }}
           ></div>
 
-
           <div className="hero-title-inside absolute bottom-0 left-0 right-0 z-20 flex items-end justify-start p-3 sm:p-6 max-w-7xl mx-auto w-full">
             <div className="max-w-2xl">
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-brand-orange/10 rounded-full border border-brand-orange/20 mb-4">
                 <Sparkles className="w-4 h-4 text-brand-orange" />
-                <span className="text-sm font-medium text-brand-orange font-display">Master of Science</span>
+                <span className="text-sm font-medium text-brand-orange font-display">
+                  Master of Science
+                </span>
               </div>
               <p className="text-lg sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-1 sm:mb-4 uppercase tracking-widest font-display">
                 Master of Science
@@ -105,7 +109,9 @@ export default function MSc() {
           <div className="hero-title-outside max-w-2xl">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-brand-orange/10 rounded-full border border-brand-orange/20 mb-4">
               <Sparkles className="w-4 h-4 text-brand-orange" />
-              <span className="text-sm font-medium text-brand-orange font-display">Master of Science</span>
+              <span className="text-sm font-medium text-brand-orange font-display">
+                Master of Science
+              </span>
             </div>
             <p className="text-lg sm:text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-1 sm:mb-4 uppercase tracking-widest font-display">
               Master of Science
@@ -147,21 +153,35 @@ export default function MSc() {
       <section className="px-3 py-8 bg-gradient-to-r from-brand-orange/5 via-brand-magenta/5 to-brand-blue/5 border-y border-border/30">
         <div className="max-w-6xl mx-auto">
           <div className="mb-8">
-            <h2 className="headline-2 font-display mb-2">Specialization Options</h2>
-            <p className="text-foreground/80 font-body">Choose your area of advanced study and research</p>
+            <h2 className="headline-2 font-display mb-2">
+              Specialization Options
+            </h2>
+            <p className="text-foreground/80 font-body">
+              Choose your area of advanced study and research
+            </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
             {specializations.map((spec, idx) => (
-              <Card key={idx} className="border border-border/50 bg-card/50 backdrop-blur-sm hover:shadow-lg transition-all">
+              <Card
+                key={idx}
+                className="border border-border/50 bg-card/50 backdrop-blur-sm hover:shadow-lg transition-all"
+              >
                 <CardHeader>
                   <div className="flex items-center gap-2 mb-2">
                     <spec.icon className="w-5 h-5 text-brand-orange" />
-                    <Badge className="bg-brand-orange/20 text-brand-orange border-brand-orange/30">Postgraduate</Badge>
+                    <Badge className="bg-brand-orange/20 text-brand-orange border-brand-orange/30">
+                      Postgraduate
+                    </Badge>
                   </div>
-                  <CardTitle className="font-display text-base">{spec.label}</CardTitle>
+                  <CardTitle className="font-display text-base">
+                    {spec.label}
+                  </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-3">
-                  <p className="text-sm text-foreground/80 font-body">Advanced specialization with research-intensive coursework, thesis work, and industry collaboration opportunities.</p>
+                  <p className="text-sm text-foreground/80 font-body">
+                    Advanced specialization with research-intensive coursework,
+                    thesis work, and industry collaboration opportunities.
+                  </p>
                 </CardContent>
               </Card>
             ))}
@@ -179,23 +199,45 @@ export default function MSc() {
             <h2 className="headline-3 font-display">Overview</h2>
             <div className="space-y-4 text-foreground leading-relaxed font-body">
               <p>
-                The Master of Science program at the School of Basic and Applied Sciences offers specialized pathways in four distinct disciplines: Biochemistry, Biotechnology, Microbiology, and Molecular Biology and Genetics. These postgraduate programs are designed for students seeking to deepen their knowledge and conduct advanced research in specialized areas of life sciences.
+                The Master of Science program at the School of Basic and Applied
+                Sciences offers specialized pathways in four distinct
+                disciplines: Biochemistry, Biotechnology, Microbiology, and
+                Molecular Biology and Genetics. These postgraduate programs are
+                designed for students seeking to deepen their knowledge and
+                conduct advanced research in specialized areas of life sciences.
               </p>
               <p>
-                Each specialization combines rigorous coursework with hands-on research experience, allowing students to engage in original investigations under the guidance of experienced faculty members. The curriculum emphasizes critical analysis, experimental design, and the development of independent research capabilities essential for academic and industrial careers.
+                Each specialization combines rigorous coursework with hands-on
+                research experience, allowing students to engage in original
+                investigations under the guidance of experienced faculty
+                members. The curriculum emphasizes critical analysis,
+                experimental design, and the development of independent research
+                capabilities essential for academic and industrial careers.
               </p>
               <p>
-                Students have access to state-of-the-art research facilities, collaborate with leading scientists, and have opportunities to present their work at national and international conferences. The program prepares graduates for diverse careers in pharmaceutical research, biotechnology, academic institutions, and research organizations.
+                Students have access to state-of-the-art research facilities,
+                collaborate with leading scientists, and have opportunities to
+                present their work at national and international conferences.
+                The program prepares graduates for diverse careers in
+                pharmaceutical research, biotechnology, academic institutions,
+                and research organizations.
               </p>
             </div>
             <Card className="border border-border/50 bg-card/50 backdrop-blur-sm">
               <CardHeader className="pb-2">
-                <CardTitle className="text-lg font-display">Program Highlights</CardTitle>
-                <CardDescription className="font-body">Core curriculum focus areas</CardDescription>
+                <CardTitle className="text-lg font-display">
+                  Program Highlights
+                </CardTitle>
+                <CardDescription className="font-body">
+                  Core curriculum focus areas
+                </CardDescription>
               </CardHeader>
               <CardContent className="grid sm:grid-cols-2 gap-3 pt-0">
                 {highlights.map((h, idx) => (
-                  <div key={idx} className="flex items-start gap-2 text-sm text-foreground">
+                  <div
+                    key={idx}
+                    className="flex items-start gap-2 text-sm text-foreground"
+                  >
                     <CheckCircle2 className="w-4 h-4 text-brand-orange mt-0.5" />
                     <span>{h}</span>
                   </div>
@@ -206,11 +248,17 @@ export default function MSc() {
           <div>
             <Card className="overflow-hidden border border-border/50 bg-card/50">
               <div className="relative h-40">
-                <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=600&auto=format&fit=crop" alt="Research Lab" className="w-full h-full object-cover" />
+                <img
+                  src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=600&auto=format&fit=crop"
+                  alt="Research Lab"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <CardHeader>
                 <CardTitle className="font-display">Program Details</CardTitle>
-                <CardDescription className="font-body">Key specifications</CardDescription>
+                <CardDescription className="font-body">
+                  Key specifications
+                </CardDescription>
               </CardHeader>
               <CardContent className="grid gap-3 text-sm font-body">
                 <div className="flex items-center justify-between border-b border-border/20 pb-3">
@@ -239,7 +287,10 @@ export default function MSc() {
             <Card className="border border-border/50 bg-card/50">
               <CardContent className="p-3 grid gap-3">
                 {careers.map((c, i) => (
-                  <div key={i} className="flex items-start gap-2 text-sm text-foreground font-body">
+                  <div
+                    key={i}
+                    className="flex items-start gap-2 text-sm text-foreground font-body"
+                  >
                     <ChevronRight className="w-3 h-3 text-brand-orange mt-1" />
                     <span>{c}</span>
                   </div>
@@ -251,15 +302,32 @@ export default function MSc() {
             <h2 className="headline-3 mb-4 font-display">Get in Touch</h2>
             <Card className="overflow-hidden border border-border/50 bg-card/50">
               <div className="relative h-40">
-                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop" alt="Contact MSc" className="w-full h-full object-cover" />
+                <img
+                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop"
+                  alt="Contact MSc"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <CardHeader>
                 <CardTitle className="font-display">Program Contact</CardTitle>
-                <CardDescription className="font-body">School of Basic & Applied Sciences</CardDescription>
+                <CardDescription className="font-body">
+                  School of Basic & Applied Sciences
+                </CardDescription>
               </CardHeader>
               <CardContent className="grid gap-2 text-sm font-body">
-                <div className="flex items-center justify-between"><span>Email</span><a className="font-medium hover:underline" href="mailto:info-sbas@dsu.edu.in">info-sbas@dsu.edu.in</a></div>
-                <div className="flex items-center justify-between"><span>Phone</span><span className="font-medium">080-49092900</span></div>
+                <div className="flex items-center justify-between">
+                  <span>Email</span>
+                  <a
+                    className="font-medium hover:underline"
+                    href="mailto:info-sbas@dsu.edu.in"
+                  >
+                    info-sbas@dsu.edu.in
+                  </a>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span>Phone</span>
+                  <span className="font-medium">080-49092900</span>
+                </div>
               </CardContent>
             </Card>
           </div>
@@ -277,7 +345,8 @@ export default function MSc() {
               </span>
             </h2>
             <p className="text-foreground/80 font-body max-w-2xl mx-auto">
-              Discover research, placements, admission pathways, and Centers of Excellence at DSU
+              Discover research, placements, admission pathways, and Centers of
+              Excellence at DSU
             </p>
           </div>
 
@@ -367,52 +436,68 @@ function CurriculumLibrary() {
     {
       id: "msc-biochemistry",
       label: "M.Sc. Biochemistry",
-      description: "2-year advanced program specializing in biochemical analysis, enzyme kinetics, and metabolic pathways with thesis research",
-      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=600&auto=format&fit=crop",
+      description:
+        "2-year advanced program specializing in biochemical analysis, enzyme kinetics, and metabolic pathways with thesis research",
+      image:
+        "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=600&auto=format&fit=crop",
       batches: [
         {
           year: "2025-26",
-          summary: "Latest curriculum covering advanced biochemistry, protein structure, enzyme mechanisms, and research methodology across 4 semesters with thesis",
-          documentUrl: "https://www.dsu.edu.in/images/BasicAppliedSciences/MSc-Biochemistry-2025-26.pdf",
+          summary:
+            "Latest curriculum covering advanced biochemistry, protein structure, enzyme mechanisms, and research methodology across 4 semesters with thesis",
+          documentUrl:
+            "https://www.dsu.edu.in/images/BasicAppliedSciences/MSc-Biochemistry-2025-26.pdf",
         },
       ],
     },
     {
       id: "msc-biotechnology",
       label: "M.Sc. Biotechnology",
-      description: "2-year specialized program in modern biotechnology, genetic engineering, and bioprocess development with industry collaboration",
-      image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=600&auto=format&fit=crop",
+      description:
+        "2-year specialized program in modern biotechnology, genetic engineering, and bioprocess development with industry collaboration",
+      image:
+        "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=600&auto=format&fit=crop",
       batches: [
         {
           year: "2025-26",
-          summary: "Latest curriculum featuring genetic engineering, recombinant DNA technology, bioprocess optimization, and applied research across 4 semesters with thesis",
-          documentUrl: "https://www.dsu.edu.in/images/BasicAppliedSciences/MSc-Biotechnology-2025-26.pdf",
+          summary:
+            "Latest curriculum featuring genetic engineering, recombinant DNA technology, bioprocess optimization, and applied research across 4 semesters with thesis",
+          documentUrl:
+            "https://www.dsu.edu.in/images/BasicAppliedSciences/MSc-Biotechnology-2025-26.pdf",
         },
       ],
     },
     {
       id: "msc-microbiology",
       label: "M.Sc. Microbiology",
-      description: "2-year advanced program in microbial diversity, pathogenesis, and industrial microbiology with research emphasis",
-      image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=600&auto=format&fit=crop",
+      description:
+        "2-year advanced program in microbial diversity, pathogenesis, and industrial microbiology with research emphasis",
+      image:
+        "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=600&auto=format&fit=crop",
       batches: [
         {
           year: "2025-26",
-          summary: "Latest curriculum covering microbial taxonomy, immunology, fermentation technology, and antimicrobial research across 4 semesters with thesis",
-          documentUrl: "https://www.dsu.edu.in/images/BasicAppliedSciences/MSc-Microbiology-2025-26.pdf",
+          summary:
+            "Latest curriculum covering microbial taxonomy, immunology, fermentation technology, and antimicrobial research across 4 semesters with thesis",
+          documentUrl:
+            "https://www.dsu.edu.in/images/BasicAppliedSciences/MSc-Microbiology-2025-26.pdf",
         },
       ],
     },
     {
       id: "msc-mol-bio-genetics",
       label: "M.Sc. Molecular Biology and Genetics",
-      description: "2-year specialized program in molecular mechanisms, gene expression, and genomics with cutting-edge research techniques",
-      image: "https://images.unsplash.com/photo-1581091870622-5f1e9b8d2f70?q=80&w=600&auto=format&fit=crop",
+      description:
+        "2-year specialized program in molecular mechanisms, gene expression, and genomics with cutting-edge research techniques",
+      image:
+        "https://images.unsplash.com/photo-1581091870622-5f1e9b8d2f70?q=80&w=600&auto=format&fit=crop",
       batches: [
         {
           year: "2025-26",
-          summary: "Latest curriculum featuring molecular biology techniques, genomics, epigenetics, and bioinformatics across 4 semesters with thesis",
-          documentUrl: "https://www.dsu.edu.in/images/BasicAppliedSciences/MSc-Molecular-Biology-Genetics-2025-26.pdf",
+          summary:
+            "Latest curriculum featuring molecular biology techniques, genomics, epigenetics, and bioinformatics across 4 semesters with thesis",
+          documentUrl:
+            "https://www.dsu.edu.in/images/BasicAppliedSciences/MSc-Molecular-Biology-Genetics-2025-26.pdf",
         },
       ],
     },
@@ -430,7 +515,9 @@ function CurriculumLibrary() {
               </span>
             </h2>
             <p className="max-w-2xl text-sm text-foreground sm:text-base font-body">
-              Access comprehensive curriculum documentation for each specialization. Select any specialization below to view its course structure, learning outcomes, and downloadable syllabus.
+              Access comprehensive curriculum documentation for each
+              specialization. Select any specialization below to view its course
+              structure, learning outcomes, and downloadable syllabus.
             </p>
           </div>
           <Badge className="w-fit rounded-full bg-brand-orange/15 px-4 py-2 text-xs font-semibold text-brand-orange border border-brand-orange/20">
@@ -442,7 +529,8 @@ function CurriculumLibrary() {
           {programs.map((program, programIdx) => {
             const isOpen = openProgram === program.id;
             const borderClass = "border-brand-orange/30";
-            const badgeClass = "bg-brand-orange/15 text-brand-orange border-brand-orange/20";
+            const badgeClass =
+              "bg-brand-orange/15 text-brand-orange border-brand-orange/20";
 
             return (
               <div
@@ -464,8 +552,12 @@ function CurriculumLibrary() {
                     </Badge>
                   </div>
                   <div>
-                    <h3 className="headline-3 font-display text-foreground mb-2">{program.label}</h3>
-                    <p className="text-sm text-foreground/80 font-body">{program.description}</p>
+                    <h3 className="headline-3 font-display text-foreground mb-2">
+                      {program.label}
+                    </h3>
+                    <p className="text-sm text-foreground/80 font-body">
+                      {program.description}
+                    </p>
                   </div>
                   <Button
                     variant="outline"
@@ -499,7 +591,9 @@ function CurriculumLibrary() {
                               </Badge>
                             </div>
                           </div>
-                          <p className="text-xs text-foreground/70 mb-3 font-body">{batch.summary}</p>
+                          <p className="text-xs text-foreground/70 mb-3 font-body">
+                            {batch.summary}
+                          </p>
                           <a
                             href={batch.documentUrl}
                             target="_blank"

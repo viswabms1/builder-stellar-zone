@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap");
 
@@ -23,16 +23,16 @@
     --popover: 220 13% 13%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 32 100% 45%;  /* Dark Orange #E58A00 */
+    --primary: 32 100% 45%; /* Dark Orange #E58A00 */
     --primary-foreground: 0 0% 2%;
 
-    --secondary: 32 100% 45%;  /* Dark Orange #E58A00 */
+    --secondary: 32 100% 45%; /* Dark Orange #E58A00 */
     --secondary-foreground: 0 0% 98%;
 
-    --muted: 220 11% 25%;  /* Medium gray for dark mode */
+    --muted: 220 11% 25%; /* Medium gray for dark mode */
     --muted-foreground: 0 0% 75%;
 
-    --accent: 32 100% 45%;  /* Orange */
+    --accent: 32 100% 45%; /* Orange */
     --accent-foreground: 0 0% 2%;
 
     --destructive: 0 100% 65%;
@@ -54,16 +54,24 @@
     --sidebar-ring: 32 100% 45%;
 
     /* DSU Brand Colors */
-    --brand-magenta: 295 100% 69%;     /* #E961FF */
-    --brand-orange: 32 100% 45%;       /* #E58A00 */
-    --brand-off-white: 0 0% 98%;       /* #FAFAFA */
-    --brand-blue: 201 100% 41%;        /* #008DCD */
-    --brand-yellow: 53 95% 57%;        /* #FCE529 */
-    --brand-gray: 220 9% 29%;          /* #4B5563 */
+    --brand-magenta: 295 100% 69%; /* #E961FF */
+    --brand-orange: 32 100% 45%; /* #E58A00 */
+    --brand-off-white: 0 0% 98%; /* #FAFAFA */
+    --brand-blue: 201 100% 41%; /* #008DCD */
+    --brand-yellow: 53 95% 57%; /* #FCE529 */
+    --brand-gray: 220 9% 29%; /* #4B5563 */
 
     /* Gradient combinations */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--brand-magenta)), hsl(var(--brand-orange)));
-    --gradient-secondary: linear-gradient(135deg, hsl(var(--brand-blue)), hsl(var(--brand-magenta)));
+    --gradient-primary: linear-gradient(
+      135deg,
+      hsl(var(--brand-magenta)),
+      hsl(var(--brand-orange))
+    );
+    --gradient-secondary: linear-gradient(
+      135deg,
+      hsl(var(--brand-blue)),
+      hsl(var(--brand-magenta))
+    );
   }
 
   .light {
@@ -109,16 +117,17 @@
 @layer base {
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', 'Poppins', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    font-family:
+      "Inter", "Poppins", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   }
 
   /* Typography utility classes */
   .font-display {
-    font-family: 'Poppins', 'Inter', sans-serif;
+    font-family: "Poppins", "Inter", sans-serif;
   }
 
   .font-body {
-    font-family: 'Inter', 'Poppins', sans-serif;
+    font-family: "Inter", "Poppins", sans-serif;
   }
 
   /* Brand Typography Styles */
@@ -127,7 +136,7 @@
     line-height: 4rem; /* 64px */
     letter-spacing: -0.04em; /* -4% tracking */
     font-weight: 500; /* Poppins Medium */
-    font-family: 'Poppins', 'Inter', sans-serif;
+    font-family: "Poppins", "Inter", sans-serif;
   }
 
   .headline-2 {
@@ -135,7 +144,7 @@
     line-height: 3rem; /* 48px */
     letter-spacing: -0.04em; /* -4% tracking */
     font-weight: 500; /* Poppins Medium */
-    font-family: 'Poppins', 'Inter', sans-serif;
+    font-family: "Poppins", "Inter", sans-serif;
   }
 
   .headline-3 {
@@ -143,7 +152,7 @@
     line-height: 2.625rem; /* 42px */
     letter-spacing: -0.04em; /* -4% tracking */
     font-weight: 600; /* Poppins SemiBold */
-    font-family: 'Poppins', 'Inter', sans-serif;
+    font-family: "Poppins", "Inter", sans-serif;
   }
 
   .headline-4 {
@@ -151,7 +160,7 @@
     line-height: 2.25rem; /* 36px */
     letter-spacing: -0.02em; /* -2% tracking */
     font-weight: 700; /* Poppins Bold */
-    font-family: 'Poppins', 'Inter', sans-serif;
+    font-family: "Poppins", "Inter", sans-serif;
   }
 
   .subheadline {
@@ -159,7 +168,7 @@
     line-height: 2rem; /* 32px */
     letter-spacing: -0.04em; /* -4% tracking */
     font-weight: 400; /* Poppins Regular */
-    font-family: 'Poppins', 'Inter', sans-serif;
+    font-family: "Poppins", "Inter", sans-serif;
   }
 
   /* Responsive typography */
@@ -188,7 +197,6 @@
     position: relative;
     z-index: 10;
   }
-
 
   @media (min-width: 768px) and (orientation: portrait) {
     .hero-video-container {
@@ -532,7 +540,8 @@
   }
 
   @keyframes shimmer {
-    0%, 100% {
+    0%,
+    100% {
       background-position: -1000px 0;
     }
     50% {
@@ -541,7 +550,8 @@
   }
 
   @keyframes pulseGlow {
-    0%, 100% {
+    0%,
+    100% {
       box-shadow: 0 0 0 0 rgba(233, 97, 255, 0.7);
     }
     50% {
@@ -596,7 +606,7 @@
 
   .rotation-progress-bar {
     height: 3px;
-    background: linear-gradient(90deg, #E961FF, #E58A00, #008DCD);
+    background: linear-gradient(90deg, #e961ff, #e58a00, #008dcd);
     animation: progressFill 8s linear forwards;
     border-radius: 2px;
   }
@@ -624,7 +634,7 @@
   }
 
   .featured-news-card::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -637,7 +647,8 @@
   }
 
   @keyframes borderGlow {
-    0%, 100% {
+    0%,
+    100% {
       border-color: rgba(233, 97, 255, 0);
     }
     50% {
@@ -668,7 +679,7 @@
   }
 
   .featured-event-card::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -682,7 +693,8 @@
   }
 
   @keyframes eventBorderGlow {
-    0%, 100% {
+    0%,
+    100% {
       border-color: rgba(229, 138, 0, 0);
     }
     50% {

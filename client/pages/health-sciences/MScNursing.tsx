@@ -1,6 +1,12 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import {
   Heart,
@@ -46,7 +52,6 @@ export default function MScNursing() {
     "Nursing Researcher → Research Director → Faculty Member",
     "International opportunities: USA, UK, Canada, Middle East (₹25-40 LPA+)",
   ];
-
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -126,16 +131,30 @@ export default function MScNursing() {
         <div className="mx-auto max-w-7xl">
           <div className="mb-12">
             <div className="max-w-3xl">
-              <h2 className="font-display text-3xl md:text-4xl mb-4">Program Overview</h2>
+              <h2 className="font-display text-3xl md:text-4xl mb-4">
+                Program Overview
+              </h2>
               <p className="text-foreground/80 font-body">
-                The M.Sc Nursing program is a comprehensive 2-year postgraduate pathway designed to equip students with advanced clinical skills, fostering confidence to excel in challenging healthcare environments. The program emphasizes a comprehensive approach to nursing education, ensuring graduates are well-prepared for specialized roles in the healthcare sector. Throughout the course, students are trained to practice patient-centered nursing with compassion and respect, prioritizing dignity and well-being while operating within professional, ethical, and legal frameworks.
+                The M.Sc Nursing program is a comprehensive 2-year postgraduate
+                pathway designed to equip students with advanced clinical
+                skills, fostering confidence to excel in challenging healthcare
+                environments. The program emphasizes a comprehensive approach to
+                nursing education, ensuring graduates are well-prepared for
+                specialized roles in the healthcare sector. Throughout the
+                course, students are trained to practice patient-centered
+                nursing with compassion and respect, prioritizing dignity and
+                well-being while operating within professional, ethical, and
+                legal frameworks.
               </p>
             </div>
           </div>
 
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {highlights.map((highlight, i) => (
-              <div key={i} className="flex gap-4 p-4 rounded-lg border border-brand-orange/20 bg-brand-orange/5">
+              <div
+                key={i}
+                className="flex gap-4 p-4 rounded-lg border border-brand-orange/20 bg-brand-orange/5"
+              >
                 <Heart className="h-5 w-5 text-brand-orange flex-shrink-0 mt-0.5" />
                 <p className="text-sm text-foreground font-body">{highlight}</p>
               </div>
@@ -148,35 +167,74 @@ export default function MScNursing() {
       <section className="px-3 py-8 bg-gradient-to-r from-brand-orange/5 via-brand-magenta/5 to-brand-blue/5">
         <div className="max-w-7xl mx-auto">
           <div className="mb-12">
-            <h2 className="font-display text-3xl md:text-4xl mb-4">Program Specializations</h2>
+            <h2 className="font-display text-3xl md:text-4xl mb-4">
+              Program Specializations
+            </h2>
             <p className="text-foreground/80 font-body max-w-3xl">
-              Choose from diverse specialization areas to focus your advanced nursing education and career development.
+              Choose from diverse specialization areas to focus your advanced
+              nursing education and career development.
             </p>
           </div>
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             <div className="p-6 rounded-lg border border-brand-orange/20 bg-brand-orange/10 backdrop-blur-sm">
-              <h3 className="font-display text-lg mb-2 text-brand-orange">Medical Surgical Nursing</h3>
-              <p className="text-sm text-foreground font-body">Advanced practice in acute and chronic medical-surgical conditions with emphasis on complex patient care and evidence-based interventions.</p>
+              <h3 className="font-display text-lg mb-2 text-brand-orange">
+                Medical Surgical Nursing
+              </h3>
+              <p className="text-sm text-foreground font-body">
+                Advanced practice in acute and chronic medical-surgical
+                conditions with emphasis on complex patient care and
+                evidence-based interventions.
+              </p>
             </div>
             <div className="p-6 rounded-lg border border-brand-orange/20 bg-brand-orange/10 backdrop-blur-sm">
-              <h3 className="font-display text-lg mb-2 text-brand-orange">Child Health Nursing</h3>
-              <p className="text-sm text-foreground font-body">Specialized pediatric nursing care covering neonatal, infant, child and adolescent health with focus on developmental approaches and family-centered care.</p>
+              <h3 className="font-display text-lg mb-2 text-brand-orange">
+                Child Health Nursing
+              </h3>
+              <p className="text-sm text-foreground font-body">
+                Specialized pediatric nursing care covering neonatal, infant,
+                child and adolescent health with focus on developmental
+                approaches and family-centered care.
+              </p>
             </div>
             <div className="p-6 rounded-lg border border-brand-orange/20 bg-brand-orange/10 backdrop-blur-sm">
-              <h3 className="font-display text-lg mb-2 text-brand-orange">Mental Health Nursing</h3>
-              <p className="text-sm text-foreground font-body">Advanced psychiatric and mental health nursing practice with focus on therapeutic communication, psychosocial interventions, and community mental health.</p>
+              <h3 className="font-display text-lg mb-2 text-brand-orange">
+                Mental Health Nursing
+              </h3>
+              <p className="text-sm text-foreground font-body">
+                Advanced psychiatric and mental health nursing practice with
+                focus on therapeutic communication, psychosocial interventions,
+                and community mental health.
+              </p>
             </div>
             <div className="p-6 rounded-lg border border-brand-orange/20 bg-brand-orange/10 backdrop-blur-sm">
-              <h3 className="font-display text-lg mb-2 text-brand-orange">Obstetrics & Gynecological Nursing</h3>
-              <p className="text-sm text-foreground font-body">Specialized nursing care in obstetrics, gynecology, and women's health with emphasis on maternal-newborn care and reproductive health.</p>
+              <h3 className="font-display text-lg mb-2 text-brand-orange">
+                Obstetrics & Gynecological Nursing
+              </h3>
+              <p className="text-sm text-foreground font-body">
+                Specialized nursing care in obstetrics, gynecology, and women's
+                health with emphasis on maternal-newborn care and reproductive
+                health.
+              </p>
             </div>
             <div className="p-6 rounded-lg border border-brand-orange/20 bg-brand-orange/10 backdrop-blur-sm">
-              <h3 className="font-display text-lg mb-2 text-brand-orange">Psychiatric Nursing</h3>
-              <p className="text-sm text-foreground font-body">Advanced psychiatric nursing focusing on mental health disorders, therapeutic modalities, crisis intervention, and rehabilitation nursing.</p>
+              <h3 className="font-display text-lg mb-2 text-brand-orange">
+                Psychiatric Nursing
+              </h3>
+              <p className="text-sm text-foreground font-body">
+                Advanced psychiatric nursing focusing on mental health
+                disorders, therapeutic modalities, crisis intervention, and
+                rehabilitation nursing.
+              </p>
             </div>
             <div className="p-6 rounded-lg border border-brand-orange/20 bg-brand-orange/10 backdrop-blur-sm">
-              <h3 className="font-display text-lg mb-2 text-brand-orange">Advanced Research</h3>
-              <p className="text-sm text-foreground font-body">Nursing research methodologies, evidence-based practice, research proposal development, and thesis-based research in specialized nursing areas.</p>
+              <h3 className="font-display text-lg mb-2 text-brand-orange">
+                Advanced Research
+              </h3>
+              <p className="text-sm text-foreground font-body">
+                Nursing research methodologies, evidence-based practice,
+                research proposal development, and thesis-based research in
+                specialized nursing areas.
+              </p>
             </div>
           </div>
         </div>
@@ -186,14 +244,20 @@ export default function MScNursing() {
       <section className="px-3 py-8 bg-gradient-to-r from-brand-orange/5 via-brand-magenta/5 to-brand-blue/5">
         <div className="max-w-7xl mx-auto">
           <div className="mb-12">
-            <h2 className="font-display text-3xl md:text-4xl mb-4">Career Pathways & Placements</h2>
+            <h2 className="font-display text-3xl md:text-4xl mb-4">
+              Career Pathways & Placements
+            </h2>
             <p className="text-foreground/80 font-body max-w-3xl">
-              Graduates emerge with the knowledge, skills, and ethical grounding necessary to lead in diverse clinical and research settings.
+              Graduates emerge with the knowledge, skills, and ethical grounding
+              necessary to lead in diverse clinical and research settings.
             </p>
           </div>
           <div className="grid gap-4 md:grid-cols-2">
             {careers.map((career, i) => (
-              <div key={i} className="p-6 rounded-lg border border-border/50 bg-card/50 backdrop-blur-sm">
+              <div
+                key={i}
+                className="p-6 rounded-lg border border-border/50 bg-card/50 backdrop-blur-sm"
+              >
                 <div className="flex items-start gap-3">
                   <Trophy className="h-5 w-5 text-brand-orange flex-shrink-0 mt-1" />
                   <p className="text-sm text-foreground font-body">{career}</p>
@@ -218,7 +282,8 @@ export default function MScNursing() {
               Explore More at DSU Nursing
             </h2>
             <p className="mt-3 text-sm text-foreground font-body">
-              Discover clinical excellence, research initiatives, placements and admission pathways
+              Discover clinical excellence, research initiatives, placements and
+              admission pathways
             </p>
           </div>
           <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-4">
@@ -237,7 +302,8 @@ export default function MScNursing() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-foreground/80 font-body">
-                    State-of-the-art simulation labs and clinical training centers
+                    State-of-the-art simulation labs and clinical training
+                    centers
                   </p>
                 </CardContent>
               </Card>
@@ -279,7 +345,8 @@ export default function MScNursing() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-foreground/80 font-body">
-                    Career pathways with leading hospitals and healthcare organizations
+                    Career pathways with leading hospitals and healthcare
+                    organizations
                   </p>
                 </CardContent>
               </Card>
@@ -323,7 +390,9 @@ export default function MScNursing() {
               Ready to excel in advanced nursing?
             </h3>
             <p className="mb-6 text-foreground font-body">
-              Explore the M.Sc Nursing program, take a virtual tour and begin your journey towards nursing leadership and excellence at DSU College of Nursing Sciences.
+              Explore the M.Sc Nursing program, take a virtual tour and begin
+              your journey towards nursing leadership and excellence at DSU
+              College of Nursing Sciences.
             </p>
             <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
               <a
@@ -365,18 +434,22 @@ function CurriculumLibrary() {
     {
       id: "msc-nursing",
       label: "M.Sc Nursing Curriculum",
-      description: "2-year comprehensive postgraduate pathway with specialization options and research thesis",
-      image: "https://images.unsplash.com/photo-1551076805-e1869033e561?w=600&h=400&fit=crop",
+      description:
+        "2-year comprehensive postgraduate pathway with specialization options and research thesis",
+      image:
+        "https://images.unsplash.com/photo-1551076805-e1869033e561?w=600&h=400&fit=crop",
       batches: [
         {
           year: "2025-26",
-          summary: "Latest curriculum with advanced nursing practice specializations, research methodology, and thesis work across 4 semesters",
+          summary:
+            "Latest curriculum with advanced nursing practice specializations, research methodology, and thesis work across 4 semesters",
           documentUrl:
             "https://www.dsu.edu.in/images/HealthSciences/nursing/MSC-Nursing-Curriculum-2025-26.pdf",
         },
         {
           year: "2024-25",
-          summary: "Previous curriculum batch with comprehensive postgraduate nursing theory and specialized clinical practice",
+          summary:
+            "Previous curriculum batch with comprehensive postgraduate nursing theory and specialized clinical practice",
           documentUrl:
             "https://www.dsu.edu.in/images/HealthSciences/nursing/MSC-Nursing-Curriculum-2024-25.pdf",
         },
@@ -396,7 +469,9 @@ function CurriculumLibrary() {
               </span>
             </h2>
             <p className="max-w-2xl text-sm text-foreground sm:text-base font-body">
-              Access comprehensive curriculum documentation, specialization details, learning outcomes, and downloadable syllabus for the M.Sc Nursing program.
+              Access comprehensive curriculum documentation, specialization
+              details, learning outcomes, and downloadable syllabus for the M.Sc
+              Nursing program.
             </p>
           </div>
           <Badge className="w-fit rounded-full bg-brand-orange/15 px-4 py-2 text-xs font-semibold text-brand-orange border border-brand-orange/20">
@@ -408,7 +483,8 @@ function CurriculumLibrary() {
           {programs.map((program) => {
             const isOpen = openProgram === program.id;
             const borderClass = "border-brand-orange/30";
-            const badgeClass = "bg-brand-orange/15 text-brand-orange border-brand-orange/20";
+            const badgeClass =
+              "bg-brand-orange/15 text-brand-orange border-brand-orange/20";
 
             return (
               <div
@@ -430,8 +506,12 @@ function CurriculumLibrary() {
                     </Badge>
                   </div>
                   <div>
-                    <h3 className="headline-3 font-display text-foreground mb-2">{program.label}</h3>
-                    <p className="text-sm text-foreground/80 font-body">{program.description}</p>
+                    <h3 className="headline-3 font-display text-foreground mb-2">
+                      {program.label}
+                    </h3>
+                    <p className="text-sm text-foreground/80 font-body">
+                      {program.description}
+                    </p>
                   </div>
                   <Button
                     variant="outline"
@@ -467,7 +547,9 @@ function CurriculumLibrary() {
                               )}
                             </div>
                           </div>
-                          <p className="text-xs text-foreground/80 font-body mb-3 leading-relaxed">{batch.summary}</p>
+                          <p className="text-xs text-foreground/80 font-body mb-3 leading-relaxed">
+                            {batch.summary}
+                          </p>
                           {batch.documentUrl && (
                             <Button
                               variant="ghost"
@@ -475,7 +557,12 @@ function CurriculumLibrary() {
                               className="w-full justify-center gap-1 rounded text-xs font-semibold bg-brand-orange/10 text-brand-orange hover:bg-brand-orange/20"
                               asChild
                             >
-                              <a href={batch.documentUrl} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-1">
+                              <a
+                                href={batch.documentUrl}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="flex items-center justify-center gap-1"
+                              >
                                 <Download className="h-3 w-3" />
                                 Download Curriculum PDF
                               </a>

@@ -359,7 +359,12 @@ const PG_PROGRAM_CARDS: ProgramCard[] = [
     image:
       "https://images.unsplash.com/photo-1576091160399-b2883cf36b6e?q=80&w=1600&auto=format&fit=crop",
     link: "/academics/basic-applied-sciences/msc-specializations",
-    highlights: ["M.Sc. Biochemistry", "M.Sc. Biotechnology", "M.Sc. Microbiology", "M.Sc. Molecular Biology and Genetics"],
+    highlights: [
+      "M.Sc. Biochemistry",
+      "M.Sc. Biotechnology",
+      "M.Sc. Microbiology",
+      "M.Sc. Molecular Biology and Genetics",
+    ],
     overlay:
       "bg-gradient-to-br from-brand-orange/70 via-black/70 to-black/55 mix-blend-multiply",
     badgeClass:
@@ -784,7 +789,8 @@ export default function AppliedSciences() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-foreground/80 font-body">
-                    Advanced research labs with NVIDIA GPU-accelerated infrastructure for life sciences research
+                    Advanced research labs with NVIDIA GPU-accelerated
+                    infrastructure for life sciences research
                   </p>
                 </CardContent>
               </Card>
@@ -805,7 +811,8 @@ export default function AppliedSciences() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-foreground/80 font-body">
-                    Cutting-edge research in biotechnology, biochemistry and molecular sciences using GPU-accelerated computing
+                    Cutting-edge research in biotechnology, biochemistry and
+                    molecular sciences using GPU-accelerated computing
                   </p>
                 </CardContent>
               </Card>
@@ -891,7 +898,9 @@ export default function AppliedSciences() {
               Research Excellence with NVIDIA AI Infrastructure
             </h2>
             <p className="text-sm text-foreground/80 font-body max-w-3xl">
-              SBAS leverages cutting-edge NVIDIA GPU technology to accelerate research across biotechnology, biochemistry, molecular biology and microbiology, enabling breakthrough discoveries in life sciences.
+              SBAS leverages cutting-edge NVIDIA GPU technology to accelerate
+              research across biotechnology, biochemistry, molecular biology and
+              microbiology, enabling breakthrough discoveries in life sciences.
             </p>
           </div>
 
@@ -899,13 +908,18 @@ export default function AppliedSciences() {
             <Card className="rounded-none border border-blue-500/30 bg-blue-500/10">
               <CardHeader>
                 <div className="flex items-start justify-between gap-2">
-                  <CardTitle className="font-display text-lg">GPU-Accelerated Molecular Modeling</CardTitle>
+                  <CardTitle className="font-display text-lg">
+                    GPU-Accelerated Molecular Modeling
+                  </CardTitle>
                   <Cpu className="h-5 w-5 text-blue-500/70 flex-shrink-0" />
                 </div>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-foreground/80 font-body">
-                  NVIDIA DGX and CUDA-accelerated workstations enable researchers to model protein structures, simulate molecular interactions, and predict biochemical reactions at unprecedented speeds.
+                  NVIDIA DGX and CUDA-accelerated workstations enable
+                  researchers to model protein structures, simulate molecular
+                  interactions, and predict biochemical reactions at
+                  unprecedented speeds.
                 </p>
               </CardContent>
             </Card>
@@ -913,13 +927,17 @@ export default function AppliedSciences() {
             <Card className="rounded-none border border-purple-500/30 bg-purple-500/10">
               <CardHeader>
                 <div className="flex items-start justify-between gap-2">
-                  <CardTitle className="font-display text-lg">Computational Bioinformatics</CardTitle>
+                  <CardTitle className="font-display text-lg">
+                    Computational Bioinformatics
+                  </CardTitle>
                   <Brain className="h-5 w-5 text-purple-500/70 flex-shrink-0" />
                 </div>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-foreground/80 font-body">
-                  Leverage GPU-powered RAPIDS for rapid genomic analysis, sequence alignment, and large-scale bioinformatics pipelines in biotechnology and genetics research.
+                  Leverage GPU-powered RAPIDS for rapid genomic analysis,
+                  sequence alignment, and large-scale bioinformatics pipelines
+                  in biotechnology and genetics research.
                 </p>
               </CardContent>
             </Card>
@@ -927,13 +945,17 @@ export default function AppliedSciences() {
             <Card className="rounded-none border border-green-500/30 bg-green-500/10">
               <CardHeader>
                 <div className="flex items-start justify-between gap-2">
-                  <CardTitle className="font-display text-lg">Machine Learning in Life Sciences</CardTitle>
+                  <CardTitle className="font-display text-lg">
+                    Machine Learning in Life Sciences
+                  </CardTitle>
                   <Lightbulb className="h-5 w-5 text-green-500/70 flex-shrink-0" />
                 </div>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-foreground/80 font-body">
-                  Apply PyTorch and TensorFlow on NVIDIA GPUs to develop AI models for drug discovery, disease prediction, and microbiological data analysis.
+                  Apply PyTorch and TensorFlow on NVIDIA GPUs to develop AI
+                  models for drug discovery, disease prediction, and
+                  microbiological data analysis.
                 </p>
               </CardContent>
             </Card>
@@ -941,13 +963,17 @@ export default function AppliedSciences() {
             <Card className="rounded-none border border-orange-500/30 bg-orange-500/10">
               <CardHeader>
                 <div className="flex items-start justify-between gap-2">
-                  <CardTitle className="font-display text-lg">Real-time Data Processing</CardTitle>
+                  <CardTitle className="font-display text-lg">
+                    Real-time Data Processing
+                  </CardTitle>
                   <Zap className="h-5 w-5 text-orange-500/70 flex-shrink-0" />
                 </div>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-foreground/80 font-body">
-                  Process high-volume experimental data from lab instruments and sensors using NVIDIA CUDA cores for instant analysis and visualization.
+                  Process high-volume experimental data from lab instruments and
+                  sensors using NVIDIA CUDA cores for instant analysis and
+                  visualization.
                 </p>
               </CardContent>
             </Card>
@@ -955,13 +981,17 @@ export default function AppliedSciences() {
             <Card className="rounded-none border border-cyan-500/30 bg-cyan-500/10">
               <CardHeader>
                 <div className="flex items-start justify-between gap-2">
-                  <CardTitle className="font-display text-lg">Collaborative Research Infrastructure</CardTitle>
+                  <CardTitle className="font-display text-lg">
+                    Collaborative Research Infrastructure
+                  </CardTitle>
                   <Network className="h-5 w-5 text-cyan-500/70 flex-shrink-0" />
                 </div>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-foreground/80 font-body">
-                  Multi-GPU research clusters with NVLink technology enable collaborative projects, massive simulations, and enterprise-grade computational workflows.
+                  Multi-GPU research clusters with NVLink technology enable
+                  collaborative projects, massive simulations, and
+                  enterprise-grade computational workflows.
                 </p>
               </CardContent>
             </Card>
@@ -969,13 +999,17 @@ export default function AppliedSciences() {
             <Card className="rounded-none border border-rose-500/30 bg-rose-500/10">
               <CardHeader>
                 <div className="flex items-start justify-between gap-2">
-                  <CardTitle className="font-display text-lg">Industry-Ready Skills</CardTitle>
+                  <CardTitle className="font-display text-lg">
+                    Industry-Ready Skills
+                  </CardTitle>
                   <Award className="h-5 w-5 text-rose-500/70 flex-shrink-0" />
                 </div>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-foreground/80 font-body">
-                  Students and faculty gain hands-on experience with NVIDIA technology stack, making them highly sought-after in biotech, pharmaceutical, and research-driven industries.
+                  Students and faculty gain hands-on experience with NVIDIA
+                  technology stack, making them highly sought-after in biotech,
+                  pharmaceutical, and research-driven industries.
                 </p>
               </CardContent>
             </Card>
@@ -985,9 +1019,17 @@ export default function AppliedSciences() {
             <div className="flex items-start gap-3">
               <Rocket className="h-6 w-6 text-blue-500/70 flex-shrink-0 mt-0.5" />
               <div>
-                <h3 className="font-display font-semibold text-foreground mb-2">Next-Generation Research</h3>
+                <h3 className="font-display font-semibold text-foreground mb-2">
+                  Next-Generation Research
+                </h3>
                 <p className="text-sm text-foreground/80 font-body">
-                  SBAS researchers are publishing groundbreaking work in peer-reviewed journals, leveraging NVIDIA's parallel computing capabilities to tackle complex problems in sustainable science, precision medicine, and environmental biotechnology. Our partnership with NVIDIA ensures students and faculty have access to the same technology used by leading research institutions worldwide.
+                  SBAS researchers are publishing groundbreaking work in
+                  peer-reviewed journals, leveraging NVIDIA's parallel computing
+                  capabilities to tackle complex problems in sustainable
+                  science, precision medicine, and environmental biotechnology.
+                  Our partnership with NVIDIA ensures students and faculty have
+                  access to the same technology used by leading research
+                  institutions worldwide.
                 </p>
               </div>
             </div>

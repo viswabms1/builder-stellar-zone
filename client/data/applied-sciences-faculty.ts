@@ -179,7 +179,8 @@ export const appliedSciencesFaculty: Faculty[] = [
     name: "Dr. Moulika Bhattacharyya",
     title: "Assistant Professor",
     qualifications: "M.Sc Ph.D.",
-    profileUrl: "/academics/basic-applied-sciences/faculty/moulika-bhattacharyya",
+    profileUrl:
+      "/academics/basic-applied-sciences/faculty/moulika-bhattacharyya",
   },
   {
     name: "Dr. Feroza Owaice",

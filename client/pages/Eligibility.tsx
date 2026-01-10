@@ -972,11 +972,20 @@ function SchoolsSection() {
 
   useEffect(() => {
     if (targetProgram && scrollTarget === null) {
-      const programElement = document.getElementById(`program-${targetProgram}`);
+      const programElement = document.getElementById(
+        `program-${targetProgram}`,
+      );
       if (programElement) {
         setTimeout(() => {
-          programElement.scrollIntoView({ behavior: "smooth", block: "center" });
-          programElement.classList.add("ring-2", "ring-orange-500", "rounded-lg");
+          programElement.scrollIntoView({
+            behavior: "smooth",
+            block: "center",
+          });
+          programElement.classList.add(
+            "ring-2",
+            "ring-orange-500",
+            "rounded-lg",
+          );
         }, 300);
         setScrollTarget(targetProgram);
       }

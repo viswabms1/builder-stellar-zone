@@ -1,7 +1,13 @@
 import { useState, useRef, useEffect } from "react";
 import { Link as RouterLink } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import {
   Sparkles,
@@ -33,7 +39,8 @@ const PRINCIPAL_INFO: DeanInfo = {
   name: "Dr. Shejila CH",
   title: "Principal (I/C)",
   position: "College of Nursing Sciences",
-  photo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F4a2f8f1c18424e98bc7edb721a95a5f2?format=webp&width=800",
+  photo:
+    "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F4a2f8f1c18424e98bc7edb721a95a5f2?format=webp&width=800",
   message: [
     "Welcome to College of Nursing Sciences, DSU!",
     "As the Principal of this esteemed institution, I am proud to lead a community of dedicated educators, enthusiastic learners, and committed healthcare professionals. Our college is renowned for its robust academic programs, cutting-edge research, and comprehensive clinical training, all designed to prepare our students to become compassionate and skilled nursing professionals.",
@@ -41,7 +48,7 @@ const PRINCIPAL_INFO: DeanInfo = {
     "At College of Nursing Sciences, DSU we offer a range of programs from undergraduate to doctoral levels, each designed to meet the diverse needs of the healthcare sector. Our state-of-the-art facilities, experienced faculty, and strong partnerships with healthcare institutions ensure that our students receive the best possible education and hands-on experience.",
     "We are committed to promoting an inclusive and supportive atmosphere where every student can thrive. Our faculty and staff are here to support you every step of the way, from your first day of classes to your transition into the professional world.",
     "I invite you to explore our website and learn more about our programs, faculty, research initiatives, and the many opportunities that await you here. Whether you are a prospective student, a current student, a parent, or a healthcare professional, we are here to assist you and answer any questions you may have.",
-    "BEST WISHES !"
+    "BEST WISHES !",
   ],
   borderColor: "border-brand-magenta/20",
   bgColor: "bg-brand-magenta/5",
@@ -64,23 +71,31 @@ const UG_PROGRAM_CARDS: ProgramCard[] = [
   {
     name: "Basic B.Sc Nursing",
     area: "Undergraduate",
-    description: "4-Year Program. Comprehensive nursing education integrated with scientific knowledge and holistic care practices.",
-    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1600&auto=format&fit=crop",
+    description:
+      "4-Year Program. Comprehensive nursing education integrated with scientific knowledge and holistic care practices.",
+    image:
+      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1600&auto=format&fit=crop",
     link: "/academics/health-sciences/bsc-nursing",
     highlights: ["4 Years", "Clinical Rotations", "Simulation Labs"],
-    overlay: "bg-gradient-to-br from-brand-magenta/80 via-black/75 to-black/60 mix-blend-multiply",
-    badgeClass: "bg-brand-magenta/25 text-foreground/90 border border-white/30 backdrop-blur",
+    overlay:
+      "bg-gradient-to-br from-brand-magenta/80 via-black/75 to-black/60 mix-blend-multiply",
+    badgeClass:
+      "bg-brand-magenta/25 text-foreground/90 border border-white/30 backdrop-blur",
     panelClass: "bg-black/55 backdrop-blur-xl",
   },
   {
     name: "Post Basic B.Sc Nursing",
     area: "Undergraduate",
-    description: "2-Year Program for registered nurses to upgrade their competencies and career prospects.",
-    image: "https://images.unsplash.com/photo-1584515933487-779824d29309?q=80&w=1600&auto=format&fit=crop",
+    description:
+      "2-Year Program for registered nurses to upgrade their competencies and career prospects.",
+    image:
+      "https://images.unsplash.com/photo-1584515933487-779824d29309?q=80&w=1600&auto=format&fit=crop",
     link: "/academics/health-sciences/pb-bsc-nursing",
     highlights: ["2 Years", "Advanced Practice", "Career Growth"],
-    overlay: "bg-gradient-to-br from-brand-blue/75 via-black/70 to-black/55 mix-blend-multiply",
-    badgeClass: "bg-brand-blue/30 text-foreground/90 border border-white/25 backdrop-blur",
+    overlay:
+      "bg-gradient-to-br from-brand-blue/75 via-black/70 to-black/55 mix-blend-multiply",
+    badgeClass:
+      "bg-brand-blue/30 text-foreground/90 border border-white/25 backdrop-blur",
     panelClass: "bg-black/55 backdrop-blur-xl",
   },
 ];
@@ -89,12 +104,22 @@ const PG_PROGRAM_CARDS: ProgramCard[] = [
   {
     name: "M.Sc Nursing",
     area: "Postgraduate",
-    description: "2-Year advanced nursing program. Specializations: Medical Surgical Nursing, Child Health Nursing, Mental Health Nursing, Obstetrics and Gynecological Nursing, and Psychiatric Nursing. Designed to equip advanced clinical skills and enable independent practice as advanced nurse practitioners or researchers.",
-    image: "https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=1600&auto=format&fit=crop",
+    description:
+      "2-Year advanced nursing program. Specializations: Medical Surgical Nursing, Child Health Nursing, Mental Health Nursing, Obstetrics and Gynecological Nursing, and Psychiatric Nursing. Designed to equip advanced clinical skills and enable independent practice as advanced nurse practitioners or researchers.",
+    image:
+      "https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=1600&auto=format&fit=crop",
     link: "/academics/health-sciences/msc-nursing",
-    highlights: ["Medical Surgical", "Child Health", "Mental Health", "OB-GYN", "Psychiatric Nursing"],
-    overlay: "bg-gradient-to-br from-brand-magenta/70 via-black/70 to-black/55 mix-blend-multiply",
-    badgeClass: "bg-brand-magenta/30 text-foreground/90 border border-white/25 backdrop-blur",
+    highlights: [
+      "Medical Surgical",
+      "Child Health",
+      "Mental Health",
+      "OB-GYN",
+      "Psychiatric Nursing",
+    ],
+    overlay:
+      "bg-gradient-to-br from-brand-magenta/70 via-black/70 to-black/55 mix-blend-multiply",
+    badgeClass:
+      "bg-brand-magenta/30 text-foreground/90 border border-white/25 backdrop-blur",
     panelClass: "bg-black/55 backdrop-blur-xl",
     featured: true,
   },
@@ -276,9 +301,11 @@ function HeroVideo() {
 
         <div className="hero-title-inside absolute bottom-0 left-0 right-0 z-20 flex items-end justify-start p-3 sm:p-6 max-w-7xl mx-auto w-full">
           <div className="max-w-2xl">
-             <div className="inline-flex items-center gap-2 px-4 py-2 bg-black/40 rounded-full border border-white/20 mb-4 backdrop-blur-sm">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-black/40 rounded-full border border-white/20 mb-4 backdrop-blur-sm">
               <Sparkles className="w-4 h-4 text-white" />
-              <span className="text-sm font-medium text-white font-display">College of Nursing Sciences</span>
+              <span className="text-sm font-medium text-white font-display">
+                College of Nursing Sciences
+              </span>
             </div>
             <p className="text-lg sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-1 sm:mb-4 uppercase tracking-widest font-display">
               College of Nursing Sciences
@@ -288,7 +315,10 @@ function HeroVideo() {
             </h1>
             <div className="mt-4 sm:mt-6 flex flex-wrap gap-1 sm:gap-2">
               {specializations.map((s, i) => (
-                <span key={i} className="inline-flex items-center gap-1 px-2 py-0.5 sm:gap-2 sm:px-3 sm:py-1 rounded-full bg-white/10 text-white text-xs backdrop-blur">
+                <span
+                  key={i}
+                  className="inline-flex items-center gap-1 px-2 py-0.5 sm:gap-2 sm:px-3 sm:py-1 rounded-full bg-white/10 text-white text-xs backdrop-blur"
+                >
                   <s.icon className="w-3 h-3 sm:w-3.5 sm:h-3.5" /> {s.label}
                 </span>
               ))}
@@ -537,13 +567,16 @@ function NoticeBoardCarousel() {
         <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <h2 className="headline-2 mb-3 font-display">
-              <span className="text-foreground">College of Nursing Sciences </span>
+              <span className="text-foreground">
+                College of Nursing Sciences{" "}
+              </span>
               <span className="bg-brand-gradient bg-clip-text text-transparent">
                 Notice Board
               </span>
             </h2>
             <p className="max-w-2xl text-sm text-foreground sm:text-base font-body">
-              Stay updated with upcoming events, news, and important announcements from the college.
+              Stay updated with upcoming events, news, and important
+              announcements from the college.
             </p>
           </div>
         </div>
@@ -618,9 +651,12 @@ export default function Nursing() {
         <div className="mx-auto max-w-7xl">
           <div className="mb-12">
             <div className="max-w-3xl">
-              <h2 className="font-display text-3xl md:text-4xl">Programs Offered</h2>
+              <h2 className="font-display text-3xl md:text-4xl">
+                Programs Offered
+              </h2>
               <p className="mt-3 text-sm text-foreground font-body max-w-2xl">
-                Comprehensive nursing education with clinical immersion, research, and global exposure
+                Comprehensive nursing education with clinical immersion,
+                research, and global exposure
               </p>
             </div>
           </div>
@@ -628,7 +664,9 @@ export default function Nursing() {
           {/* Undergraduate Programs */}
           <div className="mb-12">
             <div className="mb-6">
-              <Badge className="bg-brand-magenta/15 text-brand-magenta mb-2">Undergraduate</Badge>
+              <Badge className="bg-brand-magenta/15 text-brand-magenta mb-2">
+                Undergraduate
+              </Badge>
               <h3 className="font-display text-2xl">B.Sc Nursing Programs</h3>
             </div>
             <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-12">
@@ -641,7 +679,9 @@ export default function Nursing() {
           {/* Postgraduate Programs */}
           <div className="mb-12">
             <div className="mb-6">
-              <Badge className="bg-brand-blue/15 text-brand-blue mb-2">Postgraduate</Badge>
+              <Badge className="bg-brand-blue/15 text-brand-blue mb-2">
+                Postgraduate
+              </Badge>
               <h3 className="font-display text-2xl">M.Sc Nursing Programs</h3>
             </div>
             <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-12">
@@ -657,14 +697,21 @@ export default function Nursing() {
       <section className="px-3 py-8">
         <div className="mx-auto max-w-7xl">
           <div className="mb-12">
-            <h2 className="font-display text-3xl md:text-4xl mb-4">Why Choose Nursing at DSU?</h2>
+            <h2 className="font-display text-3xl md:text-4xl mb-4">
+              Why Choose Nursing at DSU?
+            </h2>
             <p className="text-foreground/80 font-body max-w-3xl mb-8">
-              Our nursing programme prepares you to be a compassionate, competent healthcare professional with global standards and ethical responsibility.
+              Our nursing programme prepares you to be a compassionate,
+              competent healthcare professional with global standards and
+              ethical responsibility.
             </p>
           </div>
           <div className="grid gap-4 md:grid-cols-2">
             {highlights.map((highlight, i) => (
-              <div key={i} className="flex gap-4 p-4 rounded-lg border border-brand-magenta/20 bg-brand-magenta/5">
+              <div
+                key={i}
+                className="flex gap-4 p-4 rounded-lg border border-brand-magenta/20 bg-brand-magenta/5"
+              >
                 <Stethoscope className="h-6 w-6 text-brand-magenta flex-shrink-0 mt-0.5" />
                 <p className="text-sm text-foreground font-body">{highlight}</p>
               </div>
@@ -677,14 +724,21 @@ export default function Nursing() {
       <section className="px-3 py-8 bg-gradient-to-r from-brand-magenta/5 via-brand-blue/5 to-brand-orange/5">
         <div className="max-w-7xl mx-auto">
           <div className="mb-12">
-            <h2 className="font-display text-3xl md:text-4xl mb-4">Career Pathways & Placements</h2>
+            <h2 className="font-display text-3xl md:text-4xl mb-4">
+              Career Pathways & Placements
+            </h2>
             <p className="text-foreground/80 font-body max-w-3xl">
-              Our graduates are highly sought-after across India and globally. With 100% placement record, they pursue careers in clinical practice, research, education, and healthcare administration.
+              Our graduates are highly sought-after across India and globally.
+              With 100% placement record, they pursue careers in clinical
+              practice, research, education, and healthcare administration.
             </p>
           </div>
           <div className="grid gap-4 md:grid-cols-2">
             {careers.map((career, i) => (
-              <div key={i} className="p-6 rounded-lg border border-border/50 bg-card/50 backdrop-blur-sm">
+              <div
+                key={i}
+                className="p-6 rounded-lg border border-border/50 bg-card/50 backdrop-blur-sm"
+              >
                 <div className="flex items-start gap-3">
                   <Trophy className="h-5 w-5 text-brand-orange flex-shrink-0 mt-1" />
                   <p className="text-sm text-foreground font-body">{career}</p>
@@ -706,7 +760,8 @@ export default function Nursing() {
               Explore More at DSU Nursing
             </h2>
             <p className="mt-3 text-sm text-foreground font-body">
-              Discover our clinical excellence, research initiatives, placements and admission pathways
+              Discover our clinical excellence, research initiatives, placements
+              and admission pathways
             </p>
           </div>
           <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-5">
@@ -746,7 +801,8 @@ export default function Nursing() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-foreground/80 font-body">
-                    State-of-the-art simulation labs and clinical training centers
+                    State-of-the-art simulation labs and clinical training
+                    centers
                   </p>
                 </CardContent>
               </Card>
@@ -788,7 +844,8 @@ export default function Nursing() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-foreground/80 font-body">
-                    Career pathways with leading hospitals and healthcare organizations
+                    Career pathways with leading hospitals and healthcare
+                    organizations
                   </p>
                 </CardContent>
               </Card>
@@ -829,7 +886,9 @@ export default function Nursing() {
         <div className="mx-auto grid max-w-5xl items-start gap-4 lg:grid-cols-2">
           <Card className="rounded-none border border-brand-magenta/20 bg-brand-magenta/5">
             <CardHeader>
-              <CardTitle className="font-display">Contact & Leadership</CardTitle>
+              <CardTitle className="font-display">
+                Contact & Leadership
+              </CardTitle>
             </CardHeader>
             <CardContent className="grid gap-4 text-sm font-body text-foreground">
               <div>

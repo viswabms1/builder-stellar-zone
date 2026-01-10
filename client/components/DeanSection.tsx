@@ -80,7 +80,9 @@ export function DeanSection({ dean }: DeanSectionProps) {
   return (
     <section className="dean-section-wrapper relative overflow-hidden px-3 py-2">
       <div className="mx-auto max-w-7xl">
-        <div className={`rounded-none border ${borderColorClass} ${bgColorClass} overflow-hidden backdrop-blur`}>
+        <div
+          className={`rounded-none border ${borderColorClass} ${bgColorClass} overflow-hidden backdrop-blur`}
+        >
           <div className="grid md:grid-cols-[300px_1fr] gap-0">
             {/* Dean's Photo */}
             <div className="relative overflow-hidden bg-gradient-to-br from-brand-magenta/10 to-brand-blue/10 flex items-start justify-center p-2 sm:p-3 md:p-6">
@@ -125,8 +127,12 @@ export function DeanSection({ dean }: DeanSectionProps) {
                 ) : (
                   <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-black/20 border border-border/30 flex items-center justify-center">
                     <div className="text-center space-y-2">
-                      <p className="text-foreground/60 text-sm font-medium">Coming Soon</p>
-                      <p className="text-foreground/40 text-xs">Dean's Message Video</p>
+                      <p className="text-foreground/60 text-sm font-medium">
+                        Coming Soon
+                      </p>
+                      <p className="text-foreground/40 text-xs">
+                        Dean's Message Video
+                      </p>
                     </div>
                   </div>
                 )}

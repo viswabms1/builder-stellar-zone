@@ -1,7 +1,13 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import {
   Heart,
@@ -126,16 +132,28 @@ export default function BScNursing() {
         <div className="mx-auto max-w-7xl">
           <div className="mb-12">
             <div className="max-w-3xl">
-              <h2 className="font-display text-3xl md:text-4xl mb-4">Program Overview</h2>
+              <h2 className="font-display text-3xl md:text-4xl mb-4">
+                Program Overview
+              </h2>
               <p className="text-foreground/80 font-body">
-                The B.Sc Nursing program is a 4-year comprehensive undergraduate pathway designed to equip students with the knowledge, skills, and competencies necessary to excel as qualified nurses in diverse healthcare settings. The curriculum emphasizes a balanced integration of theoretical foundations and practical clinical exposure through simulation labs, case-based learning, and real-world clinical training in hospitals and community healthcare centers.
+                The B.Sc Nursing program is a 4-year comprehensive undergraduate
+                pathway designed to equip students with the knowledge, skills,
+                and competencies necessary to excel as qualified nurses in
+                diverse healthcare settings. The curriculum emphasizes a
+                balanced integration of theoretical foundations and practical
+                clinical exposure through simulation labs, case-based learning,
+                and real-world clinical training in hospitals and community
+                healthcare centers.
               </p>
             </div>
           </div>
 
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {highlights.map((highlight, i) => (
-              <div key={i} className="flex gap-4 p-4 rounded-lg border border-brand-magenta/20 bg-brand-magenta/5">
+              <div
+                key={i}
+                className="flex gap-4 p-4 rounded-lg border border-brand-magenta/20 bg-brand-magenta/5"
+              >
                 <Heart className="h-5 w-5 text-brand-magenta flex-shrink-0 mt-0.5" />
                 <p className="text-sm text-foreground font-body">{highlight}</p>
               </div>
@@ -148,14 +166,22 @@ export default function BScNursing() {
       <section className="px-3 py-8 bg-gradient-to-r from-brand-magenta/5 via-brand-blue/5 to-brand-orange/5">
         <div className="max-w-7xl mx-auto">
           <div className="mb-12">
-            <h2 className="font-display text-3xl md:text-4xl mb-4">Career Pathways & Placements</h2>
+            <h2 className="font-display text-3xl md:text-4xl mb-4">
+              Career Pathways & Placements
+            </h2>
             <p className="text-foreground/80 font-body max-w-3xl">
-              Our graduates are highly sought-after across India and globally. With 100% placement record, they pursue diverse career paths in clinical practice, research, education, and healthcare administration.
+              Our graduates are highly sought-after across India and globally.
+              With 100% placement record, they pursue diverse career paths in
+              clinical practice, research, education, and healthcare
+              administration.
             </p>
           </div>
           <div className="grid gap-4 md:grid-cols-2">
             {careers.map((career, i) => (
-              <div key={i} className="p-6 rounded-lg border border-border/50 bg-card/50 backdrop-blur-sm">
+              <div
+                key={i}
+                className="p-6 rounded-lg border border-border/50 bg-card/50 backdrop-blur-sm"
+              >
                 <div className="flex items-start gap-3">
                   <Trophy className="h-5 w-5 text-brand-magenta flex-shrink-0 mt-1" />
                   <p className="text-sm text-foreground font-body">{career}</p>
@@ -173,9 +199,12 @@ export default function BScNursing() {
       <section className="px-3 py-8 bg-gradient-to-r from-brand-magenta/5 via-brand-blue/5 to-brand-orange/5">
         <div className="max-w-7xl mx-auto">
           <div className="mb-12 text-center">
-            <h2 className="font-display text-3xl md:text-4xl mb-4">Eligibility & Fee Structure</h2>
+            <h2 className="font-display text-3xl md:text-4xl mb-4">
+              Eligibility & Fee Structure
+            </h2>
             <p className="text-foreground/80 font-body max-w-3xl mx-auto">
-              Comprehensive information about admission requirements, entrance codes, and detailed fee structure for the B.Sc Nursing program.
+              Comprehensive information about admission requirements, entrance
+              codes, and detailed fee structure for the B.Sc Nursing program.
             </p>
           </div>
           <div className="flex flex-col items-center justify-center">
@@ -203,7 +232,8 @@ export default function BScNursing() {
               Explore More at DSU Nursing
             </h2>
             <p className="mt-3 text-sm text-foreground font-body">
-              Discover clinical excellence, research initiatives, placements and admission pathways
+              Discover clinical excellence, research initiatives, placements and
+              admission pathways
             </p>
           </div>
           <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-4">
@@ -222,7 +252,8 @@ export default function BScNursing() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-foreground/80 font-body">
-                    State-of-the-art simulation labs and clinical training centers
+                    State-of-the-art simulation labs and clinical training
+                    centers
                   </p>
                 </CardContent>
               </Card>
@@ -264,7 +295,8 @@ export default function BScNursing() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-foreground/80 font-body">
-                    Career pathways with leading hospitals and healthcare organizations
+                    Career pathways with leading hospitals and healthcare
+                    organizations
                   </p>
                 </CardContent>
               </Card>
@@ -308,7 +340,8 @@ export default function BScNursing() {
               Ready to launch your nursing career?
             </h3>
             <p className="mb-6 text-foreground font-body">
-              Explore the B.Sc Nursing program, take a virtual tour and begin your journey at DSU College of Nursing Sciences.
+              Explore the B.Sc Nursing program, take a virtual tour and begin
+              your journey at DSU College of Nursing Sciences.
             </p>
             <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
               <a
@@ -350,18 +383,22 @@ function CurriculumLibrary() {
     {
       id: "bsc-nursing",
       label: "B.Sc Nursing Curriculum",
-      description: "4-year comprehensive undergraduate pathway with integrated clinical training and simulation-based learning",
-      image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop",
+      description:
+        "4-year comprehensive undergraduate pathway with integrated clinical training and simulation-based learning",
+      image:
+        "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop",
       batches: [
         {
           year: "2025-26",
-          summary: "Latest curriculum with clinical rotation integration, simulation lab training, and evidence-based nursing practice across all 8 semesters",
+          summary:
+            "Latest curriculum with clinical rotation integration, simulation lab training, and evidence-based nursing practice across all 8 semesters",
           documentUrl:
             "https://www.dsu.edu.in/images/HealthSciences/nursing/BSC-Nursing-Curriculum-2025-26.pdf",
         },
         {
           year: "2024-25",
-          summary: "Previous curriculum batch with comprehensive nursing theory and clinical practice components",
+          summary:
+            "Previous curriculum batch with comprehensive nursing theory and clinical practice components",
           documentUrl:
             "https://www.dsu.edu.in/images/HealthSciences/nursing/BSC-Nursing-Curriculum-2024-25.pdf",
         },
@@ -381,7 +418,9 @@ function CurriculumLibrary() {
               </span>
             </h2>
             <p className="max-w-2xl text-sm text-foreground sm:text-base font-body">
-              Access comprehensive curriculum documentation, course structures, learning outcomes, and downloadable syllabus for the B.Sc Nursing program.
+              Access comprehensive curriculum documentation, course structures,
+              learning outcomes, and downloadable syllabus for the B.Sc Nursing
+              program.
             </p>
           </div>
           <Badge className="w-fit rounded-full bg-brand-magenta/15 px-4 py-2 text-xs font-semibold text-brand-magenta border border-brand-magenta/20">
@@ -393,7 +432,8 @@ function CurriculumLibrary() {
           {programs.map((program) => {
             const isOpen = openProgram === program.id;
             const borderClass = "border-brand-magenta/30";
-            const badgeClass = "bg-brand-magenta/15 text-brand-magenta border-brand-magenta/20";
+            const badgeClass =
+              "bg-brand-magenta/15 text-brand-magenta border-brand-magenta/20";
 
             return (
               <div
@@ -415,8 +455,12 @@ function CurriculumLibrary() {
                     </Badge>
                   </div>
                   <div>
-                    <h3 className="headline-3 font-display text-foreground mb-2">{program.label}</h3>
-                    <p className="text-sm text-foreground/80 font-body">{program.description}</p>
+                    <h3 className="headline-3 font-display text-foreground mb-2">
+                      {program.label}
+                    </h3>
+                    <p className="text-sm text-foreground/80 font-body">
+                      {program.description}
+                    </p>
                   </div>
                   <Button
                     variant="outline"
@@ -452,7 +496,9 @@ function CurriculumLibrary() {
                               )}
                             </div>
                           </div>
-                          <p className="text-xs text-foreground/80 font-body mb-3 leading-relaxed">{batch.summary}</p>
+                          <p className="text-xs text-foreground/80 font-body mb-3 leading-relaxed">
+                            {batch.summary}
+                          </p>
                           {batch.documentUrl && (
                             <Button
                               variant="ghost"
@@ -460,7 +506,12 @@ function CurriculumLibrary() {
                               className="w-full justify-center gap-1 rounded text-xs font-semibold bg-brand-magenta/10 text-brand-magenta hover:bg-brand-magenta/20"
                               asChild
                             >
-                              <a href={batch.documentUrl} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-1">
+                              <a
+                                href={batch.documentUrl}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="flex items-center justify-center gap-1"
+                              >
                                 <Download className="h-3 w-3" />
                                 Download Curriculum PDF
                               </a>

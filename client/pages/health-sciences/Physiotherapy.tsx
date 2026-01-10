@@ -1,7 +1,13 @@
 import { useState, useRef, useEffect } from "react";
 import { Link as RouterLink } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import {
   Sparkles,
@@ -34,7 +40,8 @@ const PRINCIPAL_INFO: DeanInfo = {
   name: "Dr. Priya Sharma",
   title: "Principal (I/C)",
   position: "College of Physiotherapy",
-  photo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F4a2f8f1c18424e98bc7edb721a95a5f2?format=webp&width=800",
+  photo:
+    "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F4a2f8f1c18424e98bc7edb721a95a5f2?format=webp&width=800",
   message: [
     "Welcome to College of Physiotherapy, DSU!",
     "As the Principal of this esteemed institution, I am proud to lead a community of dedicated educators, enthusiastic learners, and committed rehabilitation professionals. Our college is renowned for its rigorous academic programs, evidence-based clinical training, and innovative rehabilitation research, all designed to prepare our students to become skilled and compassionate physiotherapy professionals.",
@@ -42,7 +49,7 @@ const PRINCIPAL_INFO: DeanInfo = {
     "At College of Physiotherapy, DSU we offer comprehensive programs from undergraduate to postgraduate levels, each designed to meet the evolving needs of the healthcare and rehabilitation sectors. Our state-of-the-art rehabilitation facilities, experienced faculty, and strong partnerships with hospitals and sports organizations ensure that our students receive the best possible education and hands-on clinical experience.",
     "We are committed to fostering an inclusive and supportive learning community where every student can thrive academically and clinically. Our faculty and staff are dedicated to supporting your journey from classroom to clinical practice and beyond.",
     "I invite you to explore our website and discover our programs, faculty, research initiatives, clinical placements, and the many opportunities that await you here. Whether you are a prospective student, current student, parent, or healthcare professional, we are here to assist you.",
-    "BEST WISHES !"
+    "BEST WISHES !",
   ],
   borderColor: "border-brand-blue/20",
   bgColor: "bg-brand-blue/5",
@@ -65,12 +72,16 @@ const UG_PROGRAM_CARDS: ProgramCard[] = [
   {
     name: "Bachelor of Physiotherapy (BPT)",
     area: "Undergraduate",
-    description: "4-Year Program. Comprehensive physiotherapy education integrated with human anatomy, pathology, and modern rehabilitation techniques.",
-    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1600&auto=format&fit=crop",
+    description:
+      "4-Year Program. Comprehensive physiotherapy education integrated with human anatomy, pathology, and modern rehabilitation techniques.",
+    image:
+      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1600&auto=format&fit=crop",
     link: "/academics/health-sciences/bpt",
     highlights: ["4 Years", "Clinical Internships", "Rehabilitation Labs"],
-    overlay: "bg-gradient-to-br from-brand-blue/80 via-black/75 to-black/60 mix-blend-multiply",
-    badgeClass: "bg-brand-blue/25 text-foreground/90 border border-white/30 backdrop-blur",
+    overlay:
+      "bg-gradient-to-br from-brand-blue/80 via-black/75 to-black/60 mix-blend-multiply",
+    badgeClass:
+      "bg-brand-blue/25 text-foreground/90 border border-white/30 backdrop-blur",
     panelClass: "bg-black/55 backdrop-blur-xl",
   },
 ];
@@ -79,12 +90,16 @@ const PG_PROGRAM_CARDS: ProgramCard[] = [
   {
     name: "Master of Physiotherapy (MPT)",
     area: "Postgraduate",
-    description: "2-Year advanced physiotherapy program. Specializations: Orthopedic Physiotherapy, Neurology, Cardiopulmonary Physiotherapy, and Sports Physiotherapy. Designed to develop advanced clinical expertise and research capabilities.",
-    image: "https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=1600&auto=format&fit=crop",
+    description:
+      "2-Year advanced physiotherapy program. Specializations: Orthopedic Physiotherapy, Neurology, Cardiopulmonary Physiotherapy, and Sports Physiotherapy. Designed to develop advanced clinical expertise and research capabilities.",
+    image:
+      "https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=1600&auto=format&fit=crop",
     link: "/academics/health-sciences/mpt",
     highlights: ["Orthopedic", "Neurology", "Cardiopulmonary", "Sports Physio"],
-    overlay: "bg-gradient-to-br from-brand-blue/70 via-black/70 to-black/55 mix-blend-multiply",
-    badgeClass: "bg-brand-blue/30 text-foreground/90 border border-white/25 backdrop-blur",
+    overlay:
+      "bg-gradient-to-br from-brand-blue/70 via-black/70 to-black/55 mix-blend-multiply",
+    badgeClass:
+      "bg-brand-blue/30 text-foreground/90 border border-white/25 backdrop-blur",
     panelClass: "bg-black/55 backdrop-blur-xl",
     featured: true,
   },
@@ -272,7 +287,9 @@ function HeroVideo() {
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-black/40 rounded-full border border-white/20 mb-4 backdrop-blur-sm">
               <Sparkles className="w-4 h-4 text-white" />
-              <span className="text-sm font-medium text-white font-display">College of Physiotherapy</span>
+              <span className="text-sm font-medium text-white font-display">
+                College of Physiotherapy
+              </span>
             </div>
             <p className="text-lg sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-1 sm:mb-4 uppercase tracking-widest font-display">
               College of Physiotherapy
@@ -282,7 +299,10 @@ function HeroVideo() {
             </h1>
             <div className="mt-4 sm:mt-6 flex flex-wrap gap-1 sm:gap-2">
               {specializations.map((s, i) => (
-                <span key={i} className="inline-flex items-center gap-1 px-2 py-0.5 sm:gap-2 sm:px-3 sm:py-1 rounded-full bg-white/10 text-white text-xs backdrop-blur">
+                <span
+                  key={i}
+                  className="inline-flex items-center gap-1 px-2 py-0.5 sm:gap-2 sm:px-3 sm:py-1 rounded-full bg-white/10 text-white text-xs backdrop-blur"
+                >
                   <s.icon className="w-3 h-3 sm:w-3.5 sm:h-3.5" /> {s.label}
                 </span>
               ))}
@@ -537,7 +557,8 @@ function NoticeBoardCarousel() {
               </span>
             </h2>
             <p className="max-w-2xl text-sm text-foreground sm:text-base font-body">
-              Stay updated with upcoming events, news, and important announcements from the college.
+              Stay updated with upcoming events, news, and important
+              announcements from the college.
             </p>
           </div>
         </div>
@@ -612,9 +633,12 @@ export default function Physiotherapy() {
         <div className="mx-auto max-w-7xl">
           <div className="mb-12">
             <div className="max-w-3xl">
-              <h2 className="font-display text-3xl md:text-4xl">Programs Offered</h2>
+              <h2 className="font-display text-3xl md:text-4xl">
+                Programs Offered
+              </h2>
               <p className="mt-3 text-sm text-foreground font-body max-w-2xl">
-                Comprehensive physiotherapy education with clinical excellence, research, and global exposure
+                Comprehensive physiotherapy education with clinical excellence,
+                research, and global exposure
               </p>
             </div>
           </div>
@@ -622,7 +646,9 @@ export default function Physiotherapy() {
           {/* Undergraduate Programs */}
           <div className="mb-12">
             <div className="mb-6">
-              <Badge className="bg-brand-blue/15 text-brand-blue mb-2">Undergraduate</Badge>
+              <Badge className="bg-brand-blue/15 text-brand-blue mb-2">
+                Undergraduate
+              </Badge>
               <h3 className="font-display text-2xl">BPT Programs</h3>
             </div>
             <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-12">
@@ -635,7 +661,9 @@ export default function Physiotherapy() {
           {/* Postgraduate Programs */}
           <div className="mb-12">
             <div className="mb-6">
-              <Badge className="bg-brand-blue/15 text-brand-blue mb-2">Postgraduate</Badge>
+              <Badge className="bg-brand-blue/15 text-brand-blue mb-2">
+                Postgraduate
+              </Badge>
               <h3 className="font-display text-2xl">MPT Programs</h3>
             </div>
             <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-12">
@@ -651,14 +679,22 @@ export default function Physiotherapy() {
       <section className="px-3 py-8">
         <div className="mx-auto max-w-7xl">
           <div className="mb-12">
-            <h2 className="font-display text-3xl md:text-4xl mb-4">Why Choose Physiotherapy at DSU?</h2>
+            <h2 className="font-display text-3xl md:text-4xl mb-4">
+              Why Choose Physiotherapy at DSU?
+            </h2>
             <p className="text-foreground/80 font-body max-w-3xl mb-8">
-              Our physiotherapy programme prepares you to be a skilled, evidence-based professional dedicated to restoring function, reducing pain, and enhancing quality of life for diverse patient populations.
+              Our physiotherapy programme prepares you to be a skilled,
+              evidence-based professional dedicated to restoring function,
+              reducing pain, and enhancing quality of life for diverse patient
+              populations.
             </p>
           </div>
           <div className="grid gap-4 md:grid-cols-2">
             {highlights.map((highlight, i) => (
-              <div key={i} className="flex gap-4 p-4 rounded-lg border border-brand-blue/20 bg-brand-blue/5">
+              <div
+                key={i}
+                className="flex gap-4 p-4 rounded-lg border border-brand-blue/20 bg-brand-blue/5"
+              >
                 <Activity className="h-6 w-6 text-brand-blue flex-shrink-0 mt-0.5" />
                 <p className="text-sm text-foreground font-body">{highlight}</p>
               </div>
@@ -671,14 +707,22 @@ export default function Physiotherapy() {
       <section className="px-3 py-8 bg-gradient-to-r from-brand-blue/5 via-brand-green/5 to-brand-orange/5">
         <div className="max-w-7xl mx-auto">
           <div className="mb-12">
-            <h2 className="font-display text-3xl md:text-4xl mb-4">Career Pathways & Placements</h2>
+            <h2 className="font-display text-3xl md:text-4xl mb-4">
+              Career Pathways & Placements
+            </h2>
             <p className="text-foreground/80 font-body max-w-3xl">
-              Our graduates are highly sought-after across India and globally. With 96% placement record, they pursue careers in clinical practice, sports medicine, research, education, and healthcare administration.
+              Our graduates are highly sought-after across India and globally.
+              With 96% placement record, they pursue careers in clinical
+              practice, sports medicine, research, education, and healthcare
+              administration.
             </p>
           </div>
           <div className="grid gap-4 md:grid-cols-2">
             {careers.map((career, i) => (
-              <div key={i} className="p-6 rounded-lg border border-border/50 bg-card/50 backdrop-blur-sm">
+              <div
+                key={i}
+                className="p-6 rounded-lg border border-border/50 bg-card/50 backdrop-blur-sm"
+              >
                 <div className="flex items-start gap-3">
                   <Trophy className="h-5 w-5 text-brand-blue flex-shrink-0 mt-1" />
                   <p className="text-sm text-foreground font-body">{career}</p>
@@ -700,7 +744,8 @@ export default function Physiotherapy() {
               Explore More at DSU Physiotherapy
             </h2>
             <p className="mt-3 text-sm text-foreground font-body">
-              Discover our clinical excellence, research initiatives, placements and admission pathways
+              Discover our clinical excellence, research initiatives, placements
+              and admission pathways
             </p>
           </div>
           <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-5">
@@ -740,7 +785,8 @@ export default function Physiotherapy() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-foreground/80 font-body">
-                    State-of-the-art rehabilitation labs and clinical training centers
+                    State-of-the-art rehabilitation labs and clinical training
+                    centers
                   </p>
                 </CardContent>
               </Card>
@@ -761,7 +807,8 @@ export default function Physiotherapy() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-foreground/80 font-body">
-                    Faculty-led physiotherapy research and rehabilitation innovation
+                    Faculty-led physiotherapy research and rehabilitation
+                    innovation
                   </p>
                 </CardContent>
               </Card>
@@ -782,7 +829,8 @@ export default function Physiotherapy() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-foreground/80 font-body">
-                    Career pathways with leading hospitals and rehabilitation organizations
+                    Career pathways with leading hospitals and rehabilitation
+                    organizations
                   </p>
                 </CardContent>
               </Card>
@@ -805,7 +853,8 @@ export default function Physiotherapy() {
                 </CardHeader>
                 <CardContent className="flex flex-col gap-3">
                   <p className="text-sm text-foreground/80 font-body">
-                    Join DSU Physiotherapy and make a difference in rehabilitation
+                    Join DSU Physiotherapy and make a difference in
+                    rehabilitation
                   </p>
                   <span className="inline-flex items-center gap-2 text-xs font-medium text-brand-blue group-hover:text-brand-blue/80 transition-colors">
                     Apply Now
@@ -823,7 +872,9 @@ export default function Physiotherapy() {
         <div className="mx-auto grid max-w-5xl items-start gap-4 lg:grid-cols-2">
           <Card className="rounded-none border border-brand-blue/20 bg-brand-blue/5">
             <CardHeader>
-              <CardTitle className="font-display">Contact & Leadership</CardTitle>
+              <CardTitle className="font-display">
+                Contact & Leadership
+              </CardTitle>
             </CardHeader>
             <CardContent className="grid gap-4 text-sm font-body text-foreground">
               <div>

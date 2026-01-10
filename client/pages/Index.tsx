@@ -53,7 +53,7 @@ function HeroVideo() {
       video.muted = newMutedState;
       video.volume = newMutedState ? 0 : 1;
       setIsMuted(newMutedState);
-      console.log('Mute toggled:', newMutedState);
+      console.log("Mute toggled:", newMutedState);
     }
   };
 
@@ -100,32 +100,28 @@ function HeroVideo() {
       <button
         onClick={toggleMute}
         style={{
-          position: 'absolute',
-          top: '16px',
-          right: '16px',
+          position: "absolute",
+          top: "16px",
+          right: "16px",
           zIndex: 99999,
-          width: '48px',
-          height: '48px',
-          borderRadius: '50%',
-          backgroundColor: 'rgba(0, 0, 0, 0.6)',
-          color: 'white',
-          border: '1px solid rgba(255, 255, 255, 0.3)',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          cursor: 'pointer',
+          width: "48px",
+          height: "48px",
+          borderRadius: "50%",
+          backgroundColor: "rgba(0, 0, 0, 0.6)",
+          color: "white",
+          border: "1px solid rgba(255, 255, 255, 0.3)",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          cursor: "pointer",
           padding: 0,
           margin: 0,
-          pointerEvents: 'auto',
+          pointerEvents: "auto",
         }}
         aria-label={isMuted ? "Unmute" : "Mute"}
         type="button"
       >
-        {isMuted ? (
-          <VolumeX size={20} />
-        ) : (
-          <Volume2 size={20} />
-        )}
+        {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} />}
       </button>
     </div>
   );
@@ -785,9 +781,12 @@ export default function Index() {
       <section className="px-3 py-10 relative">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="headline-2 mb-6">Academic Excellence That Inspires</h2>
+            <h2 className="headline-2 mb-6">
+              Academic Excellence That Inspires
+            </h2>
             <p className="subheadline text-foreground max-w-3xl mx-auto font-display">
-              Discover our diverse range of undergraduate and postgraduate programs designed to shape the leaders of tomorrow.
+              Discover our diverse range of undergraduate and postgraduate
+              programs designed to shape the leaders of tomorrow.
             </p>
           </div>
 
@@ -857,7 +856,11 @@ export default function Index() {
               );
 
               return (
-                <SchoolCardWrapper key={index} index={index} delay={school.delay}>
+                <SchoolCardWrapper
+                  key={index}
+                  index={index}
+                  delay={school.delay}
+                >
                   {cardContent}
                 </SchoolCardWrapper>
               );
@@ -891,70 +894,75 @@ export default function Index() {
                 <button
                   onClick={() => setSelectedNews(currentFeatured)}
                   className={`w-full flex flex-col rounded-none border border-orange-500/20 bg-orange-500/10 cursor-pointer text-left overflow-hidden featured-news-card transition-all duration-300 ${
-                    newsTransitioning ? "featured-news-exit" : "featured-news-enter"
+                    newsTransitioning
+                      ? "featured-news-exit"
+                      : "featured-news-enter"
                   }`}
-              >
-                {currentFeatured.isVideo ? (
-                  <VideoWithFrameCapture
-                    src={currentFeatured.image}
-                    poster={currentFeatured.poster}
-                    onPlay={() => setIsVideoPlaying(true)}
-                    onPause={() => setIsVideoPlaying(false)}
-                    onEnded={() => setIsVideoPlaying(false)}
-                  />
-                ) : (
-                  <img
-                    src={currentFeatured.image}
-                    alt={currentFeatured.title}
-                    loading="lazy"
-                    className="w-full max-h-96 object-contain"
-                  />
-                )}
-                <div className="p-4 flex-1 flex flex-col space-y-2">
-                  <div className="flex items-center gap-2 flex-wrap">
-                    <div className="relative">
-                      <Badge
-                        className={`text-xs ${currentFeatured.color === "brand-orange" ? "bg-brand-orange/20 text-brand-orange" : currentFeatured.color === "brand-magenta" ? "bg-brand-magenta/20 text-brand-magenta" : "bg-brand-blue/20 text-brand-blue"}`}
-                      >
-                        {currentFeatured.category}
-                      </Badge>
-                      {!newsTransitioning && (
-                        <div className="absolute -top-1 -right-1 w-2 h-2 bg-brand-magenta rounded-full featured-news-pulse" />
-                      )}
+                >
+                  {currentFeatured.isVideo ? (
+                    <VideoWithFrameCapture
+                      src={currentFeatured.image}
+                      poster={currentFeatured.poster}
+                      onPlay={() => setIsVideoPlaying(true)}
+                      onPause={() => setIsVideoPlaying(false)}
+                      onEnded={() => setIsVideoPlaying(false)}
+                    />
+                  ) : (
+                    <img
+                      src={currentFeatured.image}
+                      alt={currentFeatured.title}
+                      loading="lazy"
+                      className="w-full max-h-96 object-contain"
+                    />
+                  )}
+                  <div className="p-4 flex-1 flex flex-col space-y-2">
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <div className="relative">
+                        <Badge
+                          className={`text-xs ${currentFeatured.color === "brand-orange" ? "bg-brand-orange/20 text-brand-orange" : currentFeatured.color === "brand-magenta" ? "bg-brand-magenta/20 text-brand-magenta" : "bg-brand-blue/20 text-brand-blue"}`}
+                        >
+                          {currentFeatured.category}
+                        </Badge>
+                        {!newsTransitioning && (
+                          <div className="absolute -top-1 -right-1 w-2 h-2 bg-brand-magenta rounded-full featured-news-pulse" />
+                        )}
+                      </div>
+                      <div className="flex items-center text-foreground/60 text-xs font-body">
+                        <CalendarDays className="w-3 h-3 mr-1" />{" "}
+                        {currentFeatured.date}
+                      </div>
                     </div>
-                    <div className="flex items-center text-foreground/60 text-xs font-body">
-                      <CalendarDays className="w-3 h-3 mr-1" />{" "}
-                      {currentFeatured.date}
+                    <h3 className="text-base font-semibold text-foreground font-display line-clamp-2">
+                      {currentFeatured.title}
+                    </h3>
+                    <p className="text-xs text-foreground/80 font-body line-clamp-2">
+                      {currentFeatured.excerpt}
+                    </p>
+                    <div className="flex items-center justify-between pt-2">
+                      <div className="text-xs text-foreground/60 font-body">
+                        Auto-rotating • {featuredNewsIndex + 1} of{" "}
+                        {allFeaturedNews.length}
+                      </div>
+                      <div className="flex gap-1">
+                        {allFeaturedNews.map((_, idx) => (
+                          <div
+                            key={idx}
+                            className={`h-1.5 rounded-full transition-all duration-300 ${
+                              idx === featuredNewsIndex
+                                ? "w-4 bg-brand-magenta"
+                                : "w-1.5 bg-foreground/30 hover:bg-foreground/50"
+                            }`}
+                          />
+                        ))}
+                      </div>
                     </div>
                   </div>
-                  <h3 className="text-base font-semibold text-foreground font-display line-clamp-2">
-                    {currentFeatured.title}
-                  </h3>
-                  <p className="text-xs text-foreground/80 font-body line-clamp-2">
-                    {currentFeatured.excerpt}
-                  </p>
-                  <div className="flex items-center justify-between pt-2">
-                    <div className="text-xs text-foreground/60 font-body">
-                      Auto-rotating • {featuredNewsIndex + 1} of{" "}
-                      {allFeaturedNews.length}
-                    </div>
-                    <div className="flex gap-1">
-                      {allFeaturedNews.map((_, idx) => (
-                        <div
-                          key={idx}
-                          className={`h-1.5 rounded-full transition-all duration-300 ${
-                            idx === featuredNewsIndex
-                              ? "w-4 bg-brand-magenta"
-                              : "w-1.5 bg-foreground/30 hover:bg-foreground/50"
-                          }`}
-                        />
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </button>
+                </button>
               </div>
-              <div className="rotation-progress-bar" style={{ width: `${rotationProgress}%` }} />
+              <div
+                className="rotation-progress-bar"
+                style={{ width: `${rotationProgress}%` }}
+              />
             </div>
 
             {/* Right side - Remaining stories (50%) - 2 column grid */}
@@ -1036,14 +1044,17 @@ export default function Index() {
             {/* Featured Event - Left side */}
             <div className="lg:col-span-2" style={{ contain: "content" }}>
               <div className="relative">
-                <div className={`rounded-none overflow-hidden border border-orange-500/20 bg-orange-500/10 featured-event-card transition-all duration-300 ${
-                  eventTransitioning ? "featured-news-exit" : "featured-news-enter"
-                }`}
-                style={{
-                  animation: eventTransitioning
-                    ? "slideOutLeft 0.3s ease-in forwards"
-                    : "slideInRight 0.3s ease-out forwards",
-                }}
+                <div
+                  className={`rounded-none overflow-hidden border border-orange-500/20 bg-orange-500/10 featured-event-card transition-all duration-300 ${
+                    eventTransitioning
+                      ? "featured-news-exit"
+                      : "featured-news-enter"
+                  }`}
+                  style={{
+                    animation: eventTransitioning
+                      ? "slideOutLeft 0.3s ease-in forwards"
+                      : "slideInRight 0.3s ease-out forwards",
+                  }}
                 >
                   <div className="relative h-96 overflow-hidden">
                     <img
@@ -1064,16 +1075,19 @@ export default function Index() {
                           <div className="absolute -top-1 -right-1 w-2 h-2 bg-brand-orange rounded-full featured-news-pulse" />
                         )}
                       </div>
-                      <Badge variant="secondary" className="text-xs transition-all duration-300">
+                      <Badge
+                        variant="secondary"
+                        className="text-xs transition-all duration-300"
+                      >
                         {allEvents[selectedEventIndex].category}
                       </Badge>
                     </div>
-                  <h3 className="text-2xl font-bold text-foreground mb-3 font-display">
-                    {allEvents[selectedEventIndex].title}
-                  </h3>
-                  <p className="text-foreground/80 mb-6 font-body">
-                    {allEvents[selectedEventIndex].description}
-                  </p>
+                    <h3 className="text-2xl font-bold text-foreground mb-3 font-display">
+                      {allEvents[selectedEventIndex].title}
+                    </h3>
+                    <p className="text-foreground/80 mb-6 font-body">
+                      {allEvents[selectedEventIndex].description}
+                    </p>
                     <div className="flex items-center justify-between flex-wrap gap-3">
                       <Button className="bg-brand-gradient hover:opacity-90 text-foreground transition-all duration-300">
                         Learn More
@@ -1100,7 +1114,10 @@ export default function Index() {
                   </div>
                 </div>
               </div>
-              <div className="rotation-progress-bar" style={{ width: `${eventRotationProgress}%` }} />
+              <div
+                className="rotation-progress-bar"
+                style={{ width: `${eventRotationProgress}%` }}
+              />
             </div>
 
             {/* Upcoming Events List - Right side */}

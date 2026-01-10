@@ -1,6 +1,12 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import {
   Heart,
@@ -46,7 +52,6 @@ export default function PBBScNursing() {
     "Nursing Educator → Academic Leadership → Faculty Member",
     "International opportunities: USA, UK, Canada, Middle East (₹20-35 LPA+)",
   ];
-
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -126,16 +131,28 @@ export default function PBBScNursing() {
         <div className="mx-auto max-w-7xl">
           <div className="mb-12">
             <div className="max-w-3xl">
-              <h2 className="font-display text-3xl md:text-4xl mb-4">Program Overview</h2>
+              <h2 className="font-display text-3xl md:text-4xl mb-4">
+                Program Overview
+              </h2>
               <p className="text-foreground/80 font-body">
-                The Post Basic B.Sc Nursing program is a 2-year comprehensive pathway designed for registered nurses seeking to upgrade their qualifications to degree level. This bridge program prepares nurses for advanced clinical practice, leadership roles, research, and nursing education. The curriculum emphasizes advanced nursing practice, evidence-based care, professional development, and specialization opportunities in diverse healthcare settings.
+                The Post Basic B.Sc Nursing program is a 2-year comprehensive
+                pathway designed for registered nurses seeking to upgrade their
+                qualifications to degree level. This bridge program prepares
+                nurses for advanced clinical practice, leadership roles,
+                research, and nursing education. The curriculum emphasizes
+                advanced nursing practice, evidence-based care, professional
+                development, and specialization opportunities in diverse
+                healthcare settings.
               </p>
             </div>
           </div>
 
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {highlights.map((highlight, i) => (
-              <div key={i} className="flex gap-4 p-4 rounded-lg border border-brand-blue/20 bg-brand-blue/5">
+              <div
+                key={i}
+                className="flex gap-4 p-4 rounded-lg border border-brand-blue/20 bg-brand-blue/5"
+              >
                 <Heart className="h-5 w-5 text-brand-blue flex-shrink-0 mt-0.5" />
                 <p className="text-sm text-foreground font-body">{highlight}</p>
               </div>
@@ -148,14 +165,21 @@ export default function PBBScNursing() {
       <section className="px-3 py-8 bg-gradient-to-r from-brand-blue/5 via-brand-magenta/5 to-brand-orange/5">
         <div className="max-w-7xl mx-auto">
           <div className="mb-12">
-            <h2 className="font-display text-3xl md:text-4xl mb-4">Career Pathways & Placements</h2>
+            <h2 className="font-display text-3xl md:text-4xl mb-4">
+              Career Pathways & Placements
+            </h2>
             <p className="text-foreground/80 font-body max-w-3xl">
-              Graduates of the Post Basic B.Sc Nursing program pursue diverse career paths in clinical practice, nursing administration, education, and research across India and globally.
+              Graduates of the Post Basic B.Sc Nursing program pursue diverse
+              career paths in clinical practice, nursing administration,
+              education, and research across India and globally.
             </p>
           </div>
           <div className="grid gap-4 md:grid-cols-2">
             {careers.map((career, i) => (
-              <div key={i} className="p-6 rounded-lg border border-border/50 bg-card/50 backdrop-blur-sm">
+              <div
+                key={i}
+                className="p-6 rounded-lg border border-border/50 bg-card/50 backdrop-blur-sm"
+              >
                 <div className="flex items-start gap-3">
                   <Trophy className="h-5 w-5 text-brand-blue flex-shrink-0 mt-1" />
                   <p className="text-sm text-foreground font-body">{career}</p>
@@ -180,7 +204,8 @@ export default function PBBScNursing() {
               Explore More at DSU Nursing
             </h2>
             <p className="mt-3 text-sm text-foreground font-body">
-              Discover clinical excellence, research initiatives, placements and admission pathways
+              Discover clinical excellence, research initiatives, placements and
+              admission pathways
             </p>
           </div>
           <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-4">
@@ -199,7 +224,8 @@ export default function PBBScNursing() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-foreground/80 font-body">
-                    State-of-the-art simulation labs and clinical training centers
+                    State-of-the-art simulation labs and clinical training
+                    centers
                   </p>
                 </CardContent>
               </Card>
@@ -241,7 +267,8 @@ export default function PBBScNursing() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-foreground/80 font-body">
-                    Career pathways with leading hospitals and healthcare organizations
+                    Career pathways with leading hospitals and healthcare
+                    organizations
                   </p>
                 </CardContent>
               </Card>
@@ -285,7 +312,9 @@ export default function PBBScNursing() {
               Ready to advance your nursing career?
             </h3>
             <p className="mb-6 text-foreground font-body">
-              Explore the Post Basic B.Sc Nursing program, take a virtual tour and upgrade your qualifications at DSU College of Nursing Sciences.
+              Explore the Post Basic B.Sc Nursing program, take a virtual tour
+              and upgrade your qualifications at DSU College of Nursing
+              Sciences.
             </p>
             <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
               <a
@@ -327,18 +356,22 @@ function CurriculumLibrary() {
     {
       id: "pb-bsc-nursing",
       label: "Post Basic B.Sc Nursing Curriculum",
-      description: "2-year comprehensive postgraduate pathway for registered nurses with advanced clinical and academic focus",
-      image: "https://images.unsplash.com/photo-1584515933487-779824d29309?w=600&h=400&fit=crop",
+      description:
+        "2-year comprehensive postgraduate pathway for registered nurses with advanced clinical and academic focus",
+      image:
+        "https://images.unsplash.com/photo-1584515933487-779824d29309?w=600&h=400&fit=crop",
       batches: [
         {
           year: "2025-26",
-          summary: "Latest curriculum with advanced nursing practice, research methods, and nursing specialization across 4 semesters",
+          summary:
+            "Latest curriculum with advanced nursing practice, research methods, and nursing specialization across 4 semesters",
           documentUrl:
             "https://www.dsu.edu.in/images/HealthSciences/nursing/PB-BSC-Nursing-Curriculum-2025-26.pdf",
         },
         {
           year: "2024-25",
-          summary: "Previous curriculum batch with comprehensive postgraduate nursing theory and advanced clinical practice",
+          summary:
+            "Previous curriculum batch with comprehensive postgraduate nursing theory and advanced clinical practice",
           documentUrl:
             "https://www.dsu.edu.in/images/HealthSciences/nursing/PB-BSC-Nursing-Curriculum-2024-25.pdf",
         },
@@ -358,7 +391,9 @@ function CurriculumLibrary() {
               </span>
             </h2>
             <p className="max-w-2xl text-sm text-foreground sm:text-base font-body">
-              Access comprehensive curriculum documentation, course structures, learning outcomes, and downloadable syllabus for the Post Basic B.Sc Nursing program.
+              Access comprehensive curriculum documentation, course structures,
+              learning outcomes, and downloadable syllabus for the Post Basic
+              B.Sc Nursing program.
             </p>
           </div>
           <Badge className="w-fit rounded-full bg-brand-blue/15 px-4 py-2 text-xs font-semibold text-brand-blue border border-brand-blue/20">
@@ -370,7 +405,8 @@ function CurriculumLibrary() {
           {programs.map((program) => {
             const isOpen = openProgram === program.id;
             const borderClass = "border-brand-blue/30";
-            const badgeClass = "bg-brand-blue/15 text-brand-blue border-brand-blue/20";
+            const badgeClass =
+              "bg-brand-blue/15 text-brand-blue border-brand-blue/20";
 
             return (
               <div
@@ -392,8 +428,12 @@ function CurriculumLibrary() {
                     </Badge>
                   </div>
                   <div>
-                    <h3 className="headline-3 font-display text-foreground mb-2">{program.label}</h3>
-                    <p className="text-sm text-foreground/80 font-body">{program.description}</p>
+                    <h3 className="headline-3 font-display text-foreground mb-2">
+                      {program.label}
+                    </h3>
+                    <p className="text-sm text-foreground/80 font-body">
+                      {program.description}
+                    </p>
                   </div>
                   <Button
                     variant="outline"
@@ -429,7 +469,9 @@ function CurriculumLibrary() {
                               )}
                             </div>
                           </div>
-                          <p className="text-xs text-foreground/80 font-body mb-3 leading-relaxed">{batch.summary}</p>
+                          <p className="text-xs text-foreground/80 font-body mb-3 leading-relaxed">
+                            {batch.summary}
+                          </p>
                           {batch.documentUrl && (
                             <Button
                               variant="ghost"
@@ -437,7 +479,12 @@ function CurriculumLibrary() {
                               className="w-full justify-center gap-1 rounded text-xs font-semibold bg-brand-blue/10 text-brand-blue hover:bg-brand-blue/20"
                               asChild
                             >
-                              <a href={batch.documentUrl} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-1">
+                              <a
+                                href={batch.documentUrl}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="flex items-center justify-center gap-1"
+                              >
                                 <Download className="h-3 w-3" />
                                 Download Curriculum PDF
                               </a>

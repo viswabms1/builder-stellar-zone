@@ -17,7 +17,8 @@ const NURSING_EVENTS: NoticeItem[] = [
     date: "Feb 21, 2025",
     description:
       "Conference featuring presentations on advanced nursing practices, clinical leadership, and healthcare innovation from faculty and students.",
-    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=300&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=300&fit=crop",
     link: "https://www.dsu.edu.in/images/HealthSciences/nursing/NursingExcellenceConference.pdf",
     department: "College of Nursing Sciences",
   },
@@ -28,7 +29,8 @@ const NURSING_EVENTS: NoticeItem[] = [
     date: "Feb 12, 2025",
     description:
       "Hands-on workshop on advanced critical care nursing, ventilator management, and intensive care unit protocols.",
-    image: "https://images.unsplash.com/photo-1578496321055-f8ee998ebb03?w=600&h=300&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1578496321055-f8ee998ebb03?w=600&h=300&fit=crop",
     department: "College of Nursing Sciences",
   },
   {
@@ -38,7 +40,8 @@ const NURSING_EVENTS: NoticeItem[] = [
     date: "Feb 5, 2025",
     description:
       "Seminar on research design, data analysis, ethics, and publication strategies for nursing research.",
-    image: "https://images.unsplash.com/photo-1576091160550-112173f31c77?w=600&h=300&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1576091160550-112173f31c77?w=600&h=300&fit=crop",
     department: "College of Nursing Sciences",
   },
   {
@@ -48,7 +51,8 @@ const NURSING_EVENTS: NoticeItem[] = [
     date: "Feb 8, 2025",
     description:
       "Community-based health promotion and disease prevention camp organized by nursing students and faculty.",
-    image: "https://images.unsplash.com/photo-1631217314830-4475217b10a8?w=600&h=300&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1631217314830-4475217b10a8?w=600&h=300&fit=crop",
     department: "College of Nursing Sciences",
   },
   {
@@ -58,7 +62,8 @@ const NURSING_EVENTS: NoticeItem[] = [
     date: "Feb 15, 2025",
     description:
       "Symposium on holistic nursing care, patient education, and excellence in clinical practice.",
-    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=300&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=300&fit=crop",
     department: "College of Nursing Sciences",
   },
 ];
@@ -71,7 +76,8 @@ const NURSING_NEWS: NoticeItem[] = [
     date: "Nov 18, 2025",
     description:
       "B.Sc Nursing graduates secured positions at leading hospitals and healthcare institutions globally.",
-    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=300&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=300&fit=crop",
     department: "College of Nursing Sciences",
   },
   {
@@ -81,7 +87,8 @@ const NURSING_NEWS: NoticeItem[] = [
     date: "Nov 8, 2025",
     description:
       "State-of-the-art clinical simulation lab with high-fidelity patient simulators opened for nursing education.",
-    image: "https://images.unsplash.com/photo-1578496321055-f8ee998ebb03?w=600&h=300&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1578496321055-f8ee998ebb03?w=600&h=300&fit=crop",
     department: "College of Nursing Sciences",
   },
   {
@@ -91,7 +98,8 @@ const NURSING_NEWS: NoticeItem[] = [
     date: "Oct 20, 2025",
     description:
       "Dr. Sarah Johnson recognized for excellence in nursing education and mentorship at national conference.",
-    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=300&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=300&fit=crop",
     department: "College of Nursing Sciences",
   },
   {
@@ -101,7 +109,8 @@ const NURSING_NEWS: NoticeItem[] = [
     date: "Oct 5, 2025",
     description:
       "Faculty-led nursing research on patient care outcomes published in top-tier international journal.",
-    image: "https://images.unsplash.com/photo-1576091160550-112173f31c77?w=600&h=300&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1576091160550-112173f31c77?w=600&h=300&fit=crop",
     department: "College of Nursing Sciences",
   },
 ];

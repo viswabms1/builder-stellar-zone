@@ -345,7 +345,8 @@ const COLLEGE_CARDS: CollegeCard[] = [
     icon: HeartPulse,
     color: "text-brand-magenta",
     bgColor: "bg-brand-magenta/10 border-brand-magenta/30",
-    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1600&auto=format&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1600&auto=format&fit=crop",
     gradient: "from-brand-magenta/80 via-black/70 to-black/60",
     link: "/academics/health-sciences/nursing",
   },
@@ -358,7 +359,8 @@ const COLLEGE_CARDS: CollegeCard[] = [
     icon: Pill,
     color: "text-brand-blue",
     bgColor: "bg-brand-blue/10 border-brand-blue/30",
-    image: "https://images.unsplash.com/photo-1585523740023-dea1b3ffe518?q=80&w=1600&auto=format&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1585523740023-dea1b3ffe518?q=80&w=1600&auto=format&fit=crop",
     gradient: "from-brand-blue/80 via-black/70 to-black/60",
     link: "https://www.dsu.edu.in/health-sciences/pharmacy",
   },
@@ -371,7 +373,8 @@ const COLLEGE_CARDS: CollegeCard[] = [
     icon: Activity,
     color: "text-brand-orange",
     bgColor: "bg-brand-orange/10 border-brand-orange/30",
-    image: "https://images.unsplash.com/photo-1576091160550-112569c0fce4?q=80&w=1600&auto=format&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1576091160550-112569c0fce4?q=80&w=1600&auto=format&fit=crop",
     gradient: "from-brand-orange/80 via-black/70 to-black/60",
     link: "/academics/health-sciences/physiotherapy",
   },
@@ -384,7 +387,8 @@ const COLLEGE_CARDS: CollegeCard[] = [
     icon: Zap,
     color: "text-emerald-500",
     bgColor: "bg-emerald-500/10 border-emerald-500/30",
-    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1600&auto=format&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1600&auto=format&fit=crop",
     gradient: "from-emerald-600/80 via-black/70 to-black/60",
     link: "https://www.dsu.edu.in/health-sciences/allied-health-sciences",
   },
@@ -692,7 +696,9 @@ export default function HealthSciences() {
                 Our Colleges
               </h2>
               <p className="mt-3 text-sm text-foreground font-body max-w-2xl">
-                The School of Health Sciences affiliated with Dayananda Sagar University provides comprehensive education in the health sector and focuses on the betterment of the Healthcare System.
+                The School of Health Sciences affiliated with Dayananda Sagar
+                University provides comprehensive education in the health sector
+                and focuses on the betterment of the Healthcare System.
               </p>
             </div>
           </div>
@@ -716,7 +722,9 @@ export default function HealthSciences() {
                     alt={college.collegeName}
                     className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
-                  <div className={`absolute inset-0 bg-gradient-to-br ${college.gradient} mix-blend-multiply`} />
+                  <div
+                    className={`absolute inset-0 bg-gradient-to-br ${college.gradient} mix-blend-multiply`}
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
                   <div
                     className="absolute inset-0 opacity-5 pointer-events-none"

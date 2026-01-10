@@ -17,7 +17,8 @@ const PHYSIOTHERAPY_EVENTS: NoticeItem[] = [
     date: "Feb 21, 2025",
     description:
       "Conference featuring presentations on advanced rehabilitation techniques, sports physiotherapy, and clinical innovations from faculty and students.",
-    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=300&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=300&fit=crop",
     link: "https://www.dsu.edu.in/images/HealthSciences/physiotherapy/PhysiotherapyExcellenceConference.pdf",
     department: "College of Physiotherapy",
   },
@@ -28,7 +29,8 @@ const PHYSIOTHERAPY_EVENTS: NoticeItem[] = [
     date: "Feb 12, 2025",
     description:
       "Hands-on workshop on sports injury management, rehabilitation protocols, and performance enhancement techniques.",
-    image: "https://images.unsplash.com/photo-1578496321055-f8ee998ebb03?w=600&h=300&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1578496321055-f8ee998ebb03?w=600&h=300&fit=crop",
     department: "College of Physiotherapy",
   },
   {
@@ -38,7 +40,8 @@ const PHYSIOTHERAPY_EVENTS: NoticeItem[] = [
     date: "Feb 5, 2025",
     description:
       "Seminar on research design, evidence-based practice, data analysis, and publication strategies for physiotherapy research.",
-    image: "https://images.unsplash.com/photo-1576091160550-112173f31c77?w=600&h=300&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1576091160550-112173f31c77?w=600&h=300&fit=crop",
     department: "College of Physiotherapy",
   },
   {
@@ -48,7 +51,8 @@ const PHYSIOTHERAPY_EVENTS: NoticeItem[] = [
     date: "Feb 8, 2025",
     description:
       "Community-based ergonomics awareness and health promotion camp organized by physiotherapy students and faculty.",
-    image: "https://images.unsplash.com/photo-1631217314830-4475217b10a8?w=600&h=300&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1631217314830-4475217b10a8?w=600&h=300&fit=crop",
     department: "College of Physiotherapy",
   },
   {
@@ -58,7 +62,8 @@ const PHYSIOTHERAPY_EVENTS: NoticeItem[] = [
     date: "Feb 15, 2025",
     description:
       "Symposium on holistic rehabilitation, functional recovery, and excellence in clinical practice for diverse patient populations.",
-    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=300&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=300&fit=crop",
     department: "College of Physiotherapy",
   },
 ];
@@ -71,7 +76,8 @@ const PHYSIOTHERAPY_NEWS: NoticeItem[] = [
     date: "Nov 18, 2025",
     description:
       "BPT graduates secured positions at leading hospitals, rehabilitation centers, and sports clinics globally.",
-    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=300&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=300&fit=crop",
     department: "College of Physiotherapy",
   },
   {
@@ -81,7 +87,8 @@ const PHYSIOTHERAPY_NEWS: NoticeItem[] = [
     date: "Nov 8, 2025",
     description:
       "State-of-the-art rehabilitation laboratory with advanced therapeutic equipment opened for physiotherapy education and research.",
-    image: "https://images.unsplash.com/photo-1578496321055-f8ee998ebb03?w=600&h=300&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1578496321055-f8ee998ebb03?w=600&h=300&fit=crop",
     department: "College of Physiotherapy",
   },
   {
@@ -91,7 +98,8 @@ const PHYSIOTHERAPY_NEWS: NoticeItem[] = [
     date: "Oct 20, 2025",
     description:
       "Dr. Rajesh Kumar recognized for excellence in physiotherapy education and clinical mentorship at national conference.",
-    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=300&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=300&fit=crop",
     department: "College of Physiotherapy",
   },
   {
@@ -101,7 +109,8 @@ const PHYSIOTHERAPY_NEWS: NoticeItem[] = [
     date: "Oct 5, 2025",
     description:
       "Faculty-led physiotherapy research on functional outcomes published in top-tier international journal.",
-    image: "https://images.unsplash.com/photo-1576091160550-112173f31c77?w=600&h=300&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1576091160550-112173f31c77?w=600&h=300&fit=crop",
     department: "College of Physiotherapy",
   },
 ];
@@ -167,5 +176,9 @@ export function getPhysiotherapyAnnouncements(): NoticeItem[] {
 }
 
 export function getAllPhysiotherapyNotices(): NoticeItem[] {
-  return [...PHYSIOTHERAPY_EVENTS, ...PHYSIOTHERAPY_NEWS, ...PHYSIOTHERAPY_ANNOUNCEMENTS];
+  return [
+    ...PHYSIOTHERAPY_EVENTS,
+    ...PHYSIOTHERAPY_NEWS,
+    ...PHYSIOTHERAPY_ANNOUNCEMENTS,
+  ];
 }

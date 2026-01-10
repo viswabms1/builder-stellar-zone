@@ -6,19 +6,21 @@ import { appliedSciencesFaculty } from "@/data/applied-sciences-faculty";
 import { ChevronRight } from "lucide-react";
 
 export default function SBASFaculty() {
-  const leadership = useMemo(
-    () => {
-      const rank = (title: string) => {
-        if (/Dean/i.test(title)) return 1;
-        if (/Professor/i.test(title) && !/Associate/i.test(title) && !/Assistant/i.test(title)) return 2;
-        if (/Associate Professor/i.test(title)) return 3;
-        if (/Assistant Professor/i.test(title)) return 4;
-        return 5;
-      };
-      return appliedSciencesFaculty.sort((a, b) => rank(a.title) - rank(b.title));
-    },
-    [],
-  );
+  const leadership = useMemo(() => {
+    const rank = (title: string) => {
+      if (/Dean/i.test(title)) return 1;
+      if (
+        /Professor/i.test(title) &&
+        !/Associate/i.test(title) &&
+        !/Assistant/i.test(title)
+      )
+        return 2;
+      if (/Associate Professor/i.test(title)) return 3;
+      if (/Assistant Professor/i.test(title)) return 4;
+      return 5;
+    };
+    return appliedSciencesFaculty.sort((a, b) => rank(a.title) - rank(b.title));
+  }, []);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -77,7 +79,9 @@ function LeadershipSection({ leadership }: LeadershipSectionProps) {
           <div className="w-20 h-1.5 bg-gradient-to-r from-brand-blue to-brand-magenta rounded-full mx-auto" />
         </div>
         <p className="max-w-2xl mx-auto text-lg md:text-xl text-foreground/75 leading-relaxed">
-          Meet our distinguished faculty—scientists, researchers, and educators dedicated to excellence in basic and applied sciences education and research.
+          Meet our distinguished faculty—scientists, researchers, and educators
+          dedicated to excellence in basic and applied sciences education and
+          research.
         </p>
       </div>
 
