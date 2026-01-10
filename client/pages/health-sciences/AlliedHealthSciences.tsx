@@ -706,19 +706,19 @@ function NoticeBoardCarousel() {
 
 export default function AlliedHealthSciences() {
   const highlights = [
-    "State-of-the-art diagnostic laboratories and imaging centers",
-    "Clinical rotations at premier hospitals including CDSIMER",
-    "Hands-on training in medical imaging, pathology, and renal care",
-    "Curriculum designed by healthcare experts and researchers",
-    "Focus on evidence-based practice and healthcare ethics",
-    "Placement opportunities in top healthcare organizations worldwide",
+    "State-of-the-art lecture halls, demo-rooms, and practical halls",
+    "Integrated clinical training at parent medical school and attached hospital",
+    "Hands-on exposure in Central Laboratory, OT Complexes, and Emergency Dept",
+    "Advanced training in Radio-diagnostics, Renal Dialysis, and Blood Bank",
+    "Community health training centers equipped with advanced technology",
+    "Rigorous monitoring of academic progress and vocational mentorship",
   ];
 
   const careers = [
-    "Medical Lab Technologist → Lab Manager → Quality Assurance Manager",
-    "Radiology Technologist → MRI/CT Specialist → Radiology Department Head",
-    "Dialysis Therapist → Renal Care Coordinator → Clinical Supervisor",
-    "Healthcare Consultant → Hospital Administrator → Public Health Officer",
+    "Medical Technologists → Laboratory/Clinical Managers → Department Heads",
+    "Public Health Professionals → Policy Analysts → Healthcare Administrators",
+    "Global opportunities in ever-advancing healthcare industries",
+    "100% placement focus in revered healthcare sectors locally and abroad",
   ];
 
   return (
