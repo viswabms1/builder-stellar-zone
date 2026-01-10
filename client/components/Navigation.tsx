@@ -154,6 +154,10 @@ export default function Navigation() {
             name: "Physiotherapy",
             href: "/academics/health-sciences/physiotherapy",
           },
+          {
+            name: "Physiotherapy Faculty",
+            href: "/academics/health-sciences/physiotherapy/faculty",
+          },
           { name: "CDSIMER", href: "/academics/health-sciences/cdsimer" },
         ],
       },
