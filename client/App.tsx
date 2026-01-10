@@ -48,6 +48,7 @@ import MPT from "./pages/health-sciences/MPT";
 import PBBScNursing from "./pages/health-sciences/PBBScNursing";
 import MScNursing from "./pages/health-sciences/MScNursing";
 import NursingFaculty from "./pages/health-sciences/NursingFaculty";
+import AlliedHealthSciences from "./pages/health-sciences/AlliedHealthSciences";
 import MedicalEducationResearch from "./pages/MedicalEducationResearch";
 import CEE from "./pages/CEE";
 import JournalismMassComm from "./pages/JournalismMassComm";
@@ -762,6 +763,10 @@ function App() {
                 <Route
                   path="/academics/health-sciences/nursing/faculty"
                   element={<NursingFaculty />}
+                />
+                <Route
+                  path="/academics/health-sciences/allied-health"
+                  element={<AlliedHealthSciences />}
                 />
                 <Route
                   path="/academics/medical-education-research"
