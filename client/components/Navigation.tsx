@@ -431,7 +431,7 @@ export default function Navigation() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-3">
-          <div className="flex items-center justify-between h-28 lg:h-20">
+          <div className="flex items-center justify-between h-40 lg:h-20">
             {/* Logo - Visible on mobile and tablet portrait, hidden on desktop */}
             <Link
               to="/"
