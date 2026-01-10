@@ -357,7 +357,8 @@ export default function Index() {
   const allPublications = [
     {
       date: "Jan 2025",
-      title: "Multimodal Mental State Analysis: AI-powered Depression Detection",
+      title:
+        "Multimodal Mental State Analysis: AI-powered Depression Detection",
       category: "Springer Q1 Journal",
       description:
         "Groundbreaking research on multimodal AI for mental health diagnostics using voice, text, and facial cues. Achieved 20% accuracy gain via data fusion utilizing LSTM + CNN on DAIC-WoZ dataset. Published in Health Services and Outcomes Research Methodology by Springer Nature.",
@@ -379,7 +380,8 @@ export default function Index() {
     },
     {
       date: "2025",
-      title: "Perovskite Solar Cell Stability Analysis Using Advanced Techniques",
+      title:
+        "Perovskite Solar Cell Stability Analysis Using Advanced Techniques",
       category: "Progress in Photovoltaics",
       description:
         "Advanced stability analysis of perovskite solar cells using cutting-edge characterization techniques to improve long-term performance and reliability.",
@@ -434,7 +436,8 @@ export default function Index() {
     },
     {
       date: "2025",
-      title: "Synthesis, Characterization and Computational Study of Molecular Systems",
+      title:
+        "Synthesis, Characterization and Computational Study of Molecular Systems",
       category: "Journal of Molecular Structure",
       description:
         "Integrated approach combining chemical synthesis, experimental characterization, and computational modeling for understanding molecular systems and their properties.",
@@ -456,7 +459,8 @@ export default function Index() {
     },
     {
       date: "2024",
-      title: "Optimizing Solar Radiation Forecasting for Renewable Energy Applications",
+      title:
+        "Optimizing Solar Radiation Forecasting for Renewable Energy Applications",
       category: "Journal of Solar Energy & Sustainable Development",
       description:
         "Advanced forecasting methods for predicting solar radiation patterns to optimize renewable energy generation and grid integration.",
