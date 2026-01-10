@@ -101,7 +101,7 @@ export default function AlliedHealthBSc() {
               <p className="text-lg sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-1 sm:mb-4 uppercase tracking-widest font-display">
                 B.Sc. Allied Health Sciences
               </p>
-              <h1 className="text-xs sm:text-base md:text-base text-white/80 mb-2 sm:mb-6 leading-tight font-display">
+              <h1 className="text-xs sm:text-base md:text-base text-white mb-2 sm:mb-6 leading-tight font-display font-bold">
                 Medical Lab | Emergency & Trauma | Operation Theatre | Radiology | Cardiac Care
               </h1>
             </div>
