@@ -486,7 +486,7 @@ export default function Index() {
         "https://images.pexels.com/photos/1279365/pexels-photo-1279365.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
       title: "School of Health Sciences",
       description: "",
-      programs: ["Pharmacy", "Nursing", "CDSIMER", "Allied Health"],
+      programs: ["Pharmacy", "Nursing", "CDSIMER", "CAHS"],
     },
     {
       key: "design",

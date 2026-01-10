@@ -390,7 +390,7 @@ const COLLEGE_CARDS: CollegeCard[] = [
     image:
       "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1600&auto=format&fit=crop",
     gradient: "from-emerald-600/80 via-black/70 to-black/60",
-    link: "https://www.dsu.edu.in/health-sciences/allied-health-sciences",
+    link: "/academics/health-sciences/allied-health",
   },
 ];
 
