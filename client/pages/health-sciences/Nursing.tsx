@@ -908,6 +908,11 @@ export default function Nursing() {
           </Card>
         </div>
       </section>
+
+      {/* Notice Board */}
+      <section id="notice-board" className="px-3 py-8">
+        <NoticeBoardCarousel />
+      </section>
     </div>
   );
 }
