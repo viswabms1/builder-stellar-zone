@@ -82,6 +82,7 @@ const UG_PROGRAM_CARDS: ProgramCard[] = [
     badgeClass:
       "bg-brand-blue/25 text-foreground/90 border border-white/30 backdrop-blur",
     panelClass: "bg-black/55 backdrop-blur-xl",
+    featured: true,
   },
 ];
 
