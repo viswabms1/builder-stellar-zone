@@ -1241,17 +1241,22 @@ export default function Index() {
       </section>
 
       {/* DSU Publications Section */}
-      <section className="px-3 py-10 bg-gradient-to-b from-brand-magenta/5 to-transparent">
+      <section className="px-3 py-10 bg-gradient-to-b from-brand-magenta/5 via-brand-blue/5 to-transparent">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 mb-6">
+              <div className="h-1 w-8 bg-brand-magenta rounded-full"></div>
+              <span className="text-xs font-bold uppercase tracking-widest text-brand-magenta">Research Excellence</span>
+              <div className="h-1 w-8 bg-brand-magenta rounded-full"></div>
+            </div>
             <h2 className="headline-2 mb-6">
               <span className="text-foreground">DSU </span>
               <span className="bg-brand-gradient bg-clip-text text-transparent">
-                Publications
+                Research Publications
               </span>
             </h2>
             <p className="subheadline text-foreground max-w-2xl mx-auto font-display">
-              Cutting-edge research and insights from our academic community
+              Discover cutting-edge research and academic insights from our top scholars across multiple disciplines
             </p>
           </div>
 
