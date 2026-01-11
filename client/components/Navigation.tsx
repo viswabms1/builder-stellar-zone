@@ -345,6 +345,15 @@ export default function Navigation() {
         href: "/academics/cee",
         departments: [{ name: "Explore Programs", href: "/academics/cee" }],
       },
+      {
+        name: "DSU Online",
+        href: "/academics/dsu-online",
+        departments: [
+          { name: "Online Degrees", href: "/academics/dsu-online" },
+          { name: "Certification Programs", href: "/academics/dsu-online" },
+          { name: "Professional Development", href: "/academics/dsu-online" },
+        ],
+      },
     ],
   };
 
