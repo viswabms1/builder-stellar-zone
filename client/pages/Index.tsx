@@ -968,7 +968,7 @@ export default function Index() {
                     </Badge>
                     <div className="flex items-center gap-2">
                       <span className="inline-block w-2 h-2 rounded-full bg-brand-magenta animate-pulse"></span>
-                      <span className="text-xs font-semibold text-brand-magenta">
+                      <span className="text-xs font-semibold text-white">
                         Featured Publication
                       </span>
                     </div>
