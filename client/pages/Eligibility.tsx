@@ -905,7 +905,6 @@ const schools: School[] = [
               "Pass in 10+2 with Physics, Chemistry and English with Mathematics or Biotechnology or Computer Science or Biology as optional subjects with a minimum of 40% marks in aggregate. Lateral: Diploma holders in Pharmacy from an institution recognized by the Pharmacy Council of India.",
             fees: [
               { label: "CET - Total Fees", amount: "Not Available" },
-              { label: "DSAT - Total Fees", amount: "₹2,52,000" },
               { label: "Others - Total Fees", amount: "₹2,82,000" },
             ],
           },
@@ -1399,7 +1398,7 @@ const contactLocations: ContactLocation[] = [
     name: "DSU City Innovation Campus",
     address:
       "Dayananda Sagar University, Innovation Campus, Administrative & Main Admission Office, Kudlu Gate, Hosur Road, Bengaluru - 560 068",
-    email: "admissions@dsu.edu.in | dsat@dsu.edu.in",
+    email: "admissions@dsu.edu.in",
     phones: [
       "080 46461800",
       "080 49092800",
@@ -1534,7 +1533,7 @@ function HeroSection() {
           <HeroHighlight
             icon={GraduationCap}
             title="Multiple Admission Channels"
-            description="CET | JEE Mains | Uniguage | Comed-K | PGCET | DSAT | Direct Admissions"
+            description="CET | JEE Mains | Uniguage | Comed-K | PGCET | Direct Admissions"
           />
           <HeroHighlight
             icon={IndianRupee}
