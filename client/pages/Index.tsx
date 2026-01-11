@@ -849,7 +849,7 @@ export default function Index() {
       </section>
 
       {/* Featured News Section */}
-      <section className="px-3 py-10 bg-gradient-to-r from-brand-blue/5 via-brand-magenta/5 to-brand-orange/5">
+      <section className="px-3 pt-4 md:pt-10 pb-10 bg-gradient-to-r from-brand-blue/5 via-brand-magenta/5 to-brand-orange/5">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="headline-2 mb-6">
