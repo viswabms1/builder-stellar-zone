@@ -372,42 +372,65 @@ const schools: School[] = [
   {
     name: "School of Computer Applications",
     tagline:
-      "Undergraduate and postgraduate programs in computing, analytics, and data science.",
+      "Yearly fee structure 2026-27 for undergraduate and postgraduate programs in computing, analytics, and data science.",
     icon: ClipboardList,
     categories: [
       {
-        title: "Undergraduate Programs",
+        title: "Undergraduate Programs (3 Years Duration)",
         description:
-          "Strong foundation in programming, analytics, and applied computing with industry projects.",
+          "Pass in 10+2, A Level, IB, American 12th grade or equivalent and a minimum of 45% marks in aggregate.",
         programs: [
           {
             name: "BCA - Bachelor of Computer Applications",
             level: "UG",
+            duration: "3 Years",
             eligibility:
-              "Pass in 10+2, A Level, IB, American 12th grade or equivalent examination with a minimum of 45% aggregate in any stream.",
+              "Pass in 10+2, A Level, IB, American 12th grade or equivalent and a minimum of 45% marks in aggregate.",
             fees: [
-              { label: "Term I", amount: "₹1,04,500" },
-              { label: "Term II", amount: "₹92,500" },
-              { label: "Total (Incl. Library Deposit)", amount: "₹1,97,000" },
+              { label: "Term I", amount: "₹1,09,500" },
+              { label: "Term II", amount: "₹97,500" },
+              { label: "Total Fee", amount: "₹2,07,000" },
             ],
-            notes: [
-              "Curriculum covers full-stack development, cloud-native applications, and internships with DSU innovation labs.",
+          },
+          {
+            name: "BCA in Artificial Intelligence & Data Sciences",
+            level: "UG",
+            duration: "3 Years",
+            eligibility:
+              "Pass in 10+2, A Level, IB, American 12th grade or equivalent and a minimum of 45% marks in aggregate.",
+            fees: [
+              { label: "Term I", amount: "₹1,09,500" },
+              { label: "Term II", amount: "₹97,500" },
+              { label: "Total Fee", amount: "₹2,07,000" },
             ],
           },
           {
             name: "B.Sc in Data Science",
             level: "UG",
+            duration: "3 Years",
             eligibility:
-              "10+2 or equivalent qualification with Mathematics/Statistics preferred; minimum 45% aggregate.",
+              "Pass in 10+2, A Level, IB, American 12th grade or equivalent and a minimum of 45% marks in aggregate.",
             fees: [
-              { label: "Term I", amount: "₹82,000" },
-              { label: "Term II", amount: "₹70,000" },
-              { label: "Total (Incl. Library Deposit)", amount: "₹1,52,000" },
-            ],
-            notes: [
-              "Includes projects in machine learning, business analytics, and visualization with industry mentorship.",
+              { label: "Term I", amount: "₹87,000" },
+              { label: "Term II", amount: "₹75,000" },
+              { label: "Total Fee", amount: "₹1,62,000" },
             ],
           },
+          {
+            name: "B.Sc in Cyber Security",
+            level: "UG",
+            duration: "3 Years",
+            eligibility:
+              "Pass in 10+2, A Level, IB, American 12th grade or equivalent and a minimum of 45% marks in aggregate.",
+            fees: [
+              { label: "Term I", amount: "₹87,000" },
+              { label: "Term II", amount: "₹75,000" },
+              { label: "Total Fee", amount: "₹1,62,000" },
+            ],
+          },
+        ],
+        footnotes: [
+          "Fee structure reflects the 2026-27 academic year. All fees shown are annual totals.",
         ],
       },
       {
