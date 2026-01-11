@@ -125,7 +125,7 @@ export default function EligibilityChecker() {
 
   const [step, setStep] = useState(1);
   const [education, setEducation] = useState<EducationLevel | "">("");
-  const [subjects, setSubjects] = useState<string[]>([]);
+  const [subjectRequirement, setSubjectRequirement] = useState<SubjectRequirement | "">("");
   const [percentage, setPercentage] = useState("");
   const [category, setCategory] = useState<Category | "">("");
   const [results, setResults] = useState<{ eligible: any[]; notEligible: any[] }>({ eligible: [], notEligible: [] });
