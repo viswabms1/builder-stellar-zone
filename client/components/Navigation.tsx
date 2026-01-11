@@ -433,7 +433,7 @@ export default function Navigation() {
 
       {/* Main Navigation Bar */}
       <nav
-        className={`sticky top-0 z-50 transition-all duration-300 overflow-visible ${
+        className={`sticky top-10 sm:top-10 z-[9997] transition-all duration-300 overflow-visible ${
           theme === "light"
             ? "bg-white border-b border-orange-200/30"
             : "bg-slate-950 border-b border-orange-600/20"
