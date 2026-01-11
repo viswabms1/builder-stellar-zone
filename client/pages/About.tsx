@@ -111,13 +111,13 @@ export default function About() {
             ].map((stat, index) => (
               <Card
                 key={index}
-                className="text-center p-3 bg-card/30 backdrop-blur-sm border border-border/30 hover:border-orange-500/30 transition-all duration-300"
+                className="text-center p-3 bg-white/95 backdrop-blur-sm border border-white/40 hover:border-white/60 transition-all duration-300"
               >
                 <stat.icon className="w-8 h-8 text-orange-500 mx-auto mb-3" />
-                <div className="text-3xl font-bold text-foreground mb-1">
+                <div className="text-3xl font-bold text-slate-900 mb-1">
                   {stat.number}
                 </div>
-                <div className="text-sm text-foreground">
+                <div className="text-sm text-slate-700">
                   {stat.label}
                 </div>
               </Card>
