@@ -135,6 +135,39 @@ export default function VisionMission() {
         </div>
       </section>
 
+      {/* How We Translate Vision into Action */}
+      <section className="px-3 py-10">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
+                How We Translate Vision into Action
+              </span>
+            </h2>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <div className="space-y-4">
+              {[
+                "AI-infused curricula and interdisciplinary learning",
+                "Research-driven teaching and innovation culture",
+                "Strong industry, startup and societal partnerships",
+              ].map((item, index) => (
+                <div
+                  key={index}
+                  className="flex gap-4 items-start p-4 rounded-lg bg-card/50 backdrop-blur-sm border border-border/50 hover:border-orange-500/30 transition-all duration-300"
+                >
+                  <CheckCircle className="w-6 h-6 text-orange-500 flex-shrink-0 mt-0.5" />
+                  <p className="text-lg text-foreground leading-relaxed">
+                    {item}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Core Values Section */}
       <section className="px-3 py-10 bg-gradient-to-br from-orange-500/5 via-red-600/5 to-background">
         <div className="max-w-7xl mx-auto">
