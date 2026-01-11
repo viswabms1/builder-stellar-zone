@@ -573,32 +573,20 @@ export default function NVIDIAArchitecture() {
           <div className="grid md:grid-cols-2 gap-8 mb-10">
             <Card className="border-border/50 bg-gradient-to-br from-blue-500/10 to-blue-500/5 backdrop-blur hover:border-blue-500/50 transition-all">
               <CardHeader>
-                <CardTitle className="flex items-center gap-3 text-2xl mb-4">
-                  <Award className="w-8 h-8 text-blue-500" />
-                  What Employers Want
-                </CardTitle>
+                <CardTitle className="text-2xl mb-6">What Employers Want</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="flex items-start gap-3">
-                  <CheckCircle className="w-6 h-6 text-blue-500 flex-shrink-0 mt-0.5" />
-                  <div>
-                    <p className="font-semibold text-foreground mb-1">Hands-on NVIDIA Experience</p>
-                    <p className="text-sm text-foreground/70">Every major AI company (Google, Meta, OpenAI, Microsoft) prioritizes hiring engineers with CUDA and NVIDIA GPU experience</p>
-                  </div>
+              <CardContent className="space-y-6">
+                <div>
+                  <p className="font-bold text-lg text-foreground mb-2">Hands-on NVIDIA Experience</p>
+                  <p className="text-sm text-foreground/70">Experience with CUDA, DGX systems, and GPU-accelerated workflows used across the AI industry</p>
                 </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle className="w-6 h-6 text-blue-500 flex-shrink-0 mt-0.5" />
-                  <div>
-                    <p className="font-semibold text-foreground mb-1">Production-Ready Skills</p>
-                    <p className="text-sm text-foreground/70">Unlike classroom projects, you'll have worked with the exact hardware and tools used in real production AI systems</p>
-                  </div>
+                <div>
+                  <p className="font-bold text-lg text-foreground mb-2">Production-Ready Skills</p>
+                  <p className="text-sm text-foreground/70">Exposure to real training, inference, optimization, and deployment pipelines</p>
                 </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle className="w-6 h-6 text-blue-500 flex-shrink-0 mt-0.5" />
-                  <div>
-                    <p className="font-semibold text-foreground mb-1">Demonstrated Capability</p>
-                    <p className="text-sm text-foreground/70">Your portfolio contains real projects trained on DGX B200 and deployed on enterprise infrastructure—proof you can handle complex AI challenges</p>
-                  </div>
+                <div>
+                  <p className="font-bold text-lg text-foreground mb-2">Demonstrated Capability</p>
+                  <p className="text-sm text-foreground/70">Portfolio projects trained and deployed on enterprise-grade NVIDIA infrastructure</p>
                 </div>
               </CardContent>
             </Card>
