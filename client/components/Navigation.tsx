@@ -427,20 +427,20 @@ export default function Navigation() {
                 {item.name}
               </Link>
             ))}
-            <div className="h-6 w-px bg-gray-300 dark:bg-white/20 mx-4"></div>
-            <LanguageSwitcher />
             <a
               href="https://ums.mydsi.org/Login.aspx/DSU"
               target="_blank"
               rel="noopener noreferrer"
-              className={`text-base font-bold transition-all duration-200 whitespace-nowrap px-6 py-2.5 rounded-lg hover:scale-105 shadow-md ${
+              className={`text-base font-medium transition-all duration-200 whitespace-nowrap px-5 py-2.5 rounded-lg hover:scale-105 ${
                 theme === "light"
-                  ? "text-orange-600 hover:text-white hover:bg-orange-600 border-2 border-orange-600 hover:shadow-lg"
-                  : "text-orange-400 hover:text-white hover:bg-orange-600 border-2 border-orange-400 hover:shadow-lg"
+                  ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100 hover:shadow-sm"
+                  : "text-white/80 hover:text-white hover:bg-white/10 hover:shadow-sm"
               }`}
             >
               ERP Login
             </a>
+            <div className="h-6 w-px bg-gray-300 dark:bg-white/20 mx-4"></div>
+            <LanguageSwitcher />
           </div>
         </div>
       </div>
