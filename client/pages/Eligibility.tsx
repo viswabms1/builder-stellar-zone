@@ -1381,9 +1381,9 @@ const regionalContacts: RegionalContact[] = [
   { label: "West Region", phone: "97414 88001" },
   { label: "North Region", phone: "74889 83636" },
   { label: "South Region", phone: "99628 35358" },
-  { label: "International Admissions", phone: "+91 96060 22152" },
-  { label: "International Support", phone: "+91 96060 22150" },
-  { label: "International Support (Alternate)", phone: "+91 96060 22149" },
+  { label: "NRI / Foreign Admissions Helpline", phone: "+91 9606022152" },
+  { label: "NRI / Foreign Admissions Support", phone: "+91 9606022150" },
+  { label: "NRI / Foreign Admissions Support (Alternate)", phone: "+91 9606022149" },
 ];
 
 const importantNotes = [
