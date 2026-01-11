@@ -523,20 +523,20 @@ const schools: School[] = [
   {
     name: "School of Law",
     tagline:
-      "Yearly fee structure 2026-27 for integrated legal programs with DSAT and CLAT pathways, curated clinics, and moot court training.",
+      "Yearly fee structure 2026-27 for integrated legal programs with CLAT pathways, curated clinics, and moot court training.",
     icon: FileText,
     categories: [
       {
         title: "Undergraduate Programs",
         description:
-          "10+2 or equivalent examination from a recognized Board with a minimum of 50% marks in aggregate. We accept CLAT and DSAT (Dayananda Sagar Scholarship Admission Test) scores.",
+          "10+2 or equivalent examination from a recognized Board with a minimum of 50% marks in aggregate. We accept CLAT scores.",
         programs: [
           {
             name: "B.A. LL.B",
             level: "UG",
             duration: "5 Years",
             eligibility:
-              "10+2 or equivalent examination from a recognized Board with a minimum of 50% marks in aggregate. We accept CLAT and DSAT (Dayananda Sagar Scholarship Admission Test) scores.",
+              "10+2 or equivalent examination from a recognized Board with a minimum of 50% marks in aggregate. We accept CLAT scores.",
             fees: [
               { label: "Tuition Fee", amount: "₹2,02,000" },
               { label: "Other Fee", amount: "₹50,000" },
@@ -549,7 +549,7 @@ const schools: School[] = [
             level: "UG",
             duration: "5 Years",
             eligibility:
-              "10+2 or equivalent examination from a recognized Board with a minimum of 50% marks in aggregate. We accept CLAT and DSAT (Dayananda Sagar Scholarship Admission Test) scores.",
+              "10+2 or equivalent examination from a recognized Board with a minimum of 50% marks in aggregate. We accept CLAT scores.",
             fees: [
               { label: "Tuition Fee", amount: "₹2,02,000" },
               { label: "Other Fee", amount: "₹50,000" },
