@@ -617,6 +617,7 @@ export default function NVIDIAArchitecture() {
             <div className="grid md:grid-cols-2 gap-8">
               <div>
                 <h3 className="text-2xl font-bold mb-4 text-foreground">The Recruitment Pipeline</h3>
+                <p className="text-foreground/80 mb-6">DSU's NVIDIA-powered ecosystem creates a clear pathway from learning to recruitment.</p>
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
                     <div className="flex items-center justify-center w-8 h-8 rounded-full bg-blue-500 text-white font-bold flex-shrink-0">1</div>
