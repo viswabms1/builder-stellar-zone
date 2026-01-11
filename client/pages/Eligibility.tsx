@@ -1211,7 +1211,7 @@ function SchoolsSection() {
                     <div className="flex flex-wrap items-center gap-3">
                       <span>{school.name}</span>
                       <Badge className="bg-orange-500/15 text-orange-500">
-                        {school.name === "School of Engineering" ? "2026-27" : "2025-26"}
+                        {school.name === "School of Engineering" || school.name === "School of Computer Applications" ? "2026-27" : "2025-26"}
                       </Badge>
                     </div>
                     <p className="mt-1 text-sm font-normal text-foreground">
