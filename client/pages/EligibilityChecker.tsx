@@ -18,7 +18,6 @@ import {
 } from "@/components/ui/table";
 import {
   ArrowRight,
-  BadgeCheck,
   BookOpen,
   CheckCircle2,
   ChevronRight,
@@ -26,9 +25,7 @@ import {
   FileText,
   Filter,
   GraduationCap,
-  IndianRupee,
   Lightbulb,
-  Search,
   Zap,
 } from "lucide-react";
 
