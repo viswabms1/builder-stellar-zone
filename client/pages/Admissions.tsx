@@ -767,6 +767,7 @@ function ContactSection() {
 }
 
 function SupportCallout() {
+  const { theme } = useTheme();
   return (
     <section className="px-3 pb-20">
       <div className="mx-auto max-w-4xl rounded-3xl border border-orange-500/20 bg-gradient-to-r from-orange-500/15 via-red-500/15 to-orange-500/15 p-10 text-center shadow-lg shadow-orange-500/10">
@@ -774,7 +775,9 @@ function SupportCallout() {
           <Sparkles className="h-4 w-4" />
           Ready to Start Your DSU Journey?
         </div>
-        <h2 className="mt-6 text-3xl font-bold text-foreground md:text-4xl">
+        <h2 className={`mt-6 text-3xl font-bold md:text-4xl ${
+          theme === "light" ? "text-orange-900" : "text-foreground"
+        }`}>
           Personalized Counseling is Just a Call Away
         </h2>
         <p className="mt-4 text-lg text-foreground">
