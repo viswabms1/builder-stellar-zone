@@ -1351,11 +1351,11 @@ const helplineGroups: HelplineGroup[] = [
   {
     title: "Admissions Helpline",
     entries: [
-      "080 4646 1800",
-      "080 4909 2800",
-      "+91 77609 64277",
-      "+91 82963 16737",
-      "+91 63668 85507",
+      "080 46461800",
+      "080 49092800",
+      "+91 7760964277",
+      "+91 8296316737",
+      "+91 6366885507",
     ],
   },
   {
@@ -1363,7 +1363,7 @@ const helplineGroups: HelplineGroup[] = [
     entries: ["080 4909 2910", "080 4909 2911"],
   },
   {
-    title: "Dean – Engineering",
+    title: "Dean – School of Engineering",
     entries: ["080 4909 2986", "080 4909 2932", "080 4909 2933"],
   },
   {
@@ -1371,12 +1371,8 @@ const helplineGroups: HelplineGroup[] = [
     entries: ["080 4909 2931"],
   },
   {
-    title: "EMBA Enquiries",
-    entries: ["080 4909 2930"],
-  },
-  {
     title: "Research Cell",
-    entries: ["080 4909 2912"],
+    entries: ["080 4909 2912", "+91 9739017462"],
   },
 ];
 
