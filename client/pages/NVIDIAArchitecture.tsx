@@ -698,10 +698,12 @@ export default function NVIDIAArchitecture() {
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
             </Link>
-            <Button variant="outline" size="lg" className="border-2 border-foreground text-foreground hover:bg-foreground hover:text-background">
-              View Programs
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </Button>
+            <Link to="/academics">
+              <Button variant="outline" size="lg" className="border-2 border-foreground text-foreground hover:bg-foreground hover:text-background">
+                View AI Programs & Curriculum
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
