@@ -1577,7 +1577,9 @@ function HeroSection() {
           Check Eligibility for Your Program
         </h1>
         <p className="mt-6 text-lg text-foreground md:text-xl">
-          Find out what you need to apply — eligibility criteria, required documents, admission pathways, and fee structures for Undergraduate, Postgraduate, and Doctoral programs.
+          Find out what you need to apply — eligibility criteria, required
+          documents, admission pathways, and fee structures for Undergraduate,
+          Postgraduate, and Doctoral programs.
         </p>
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Button
@@ -1596,7 +1598,11 @@ function HeroSection() {
             className="rounded-2xl border-2 border-orange-500 px-8 py-6 text-lg font-semibold text-orange-500"
             asChild
           >
-            <a href="https://admissions.dsu.edu.in/" target="_blank" rel="noreferrer">
+            <a
+              href="https://admissions.dsu.edu.in/"
+              target="_blank"
+              rel="noreferrer"
+            >
               Apply Now
               <ArrowRight className="h-5 w-5" />
             </a>
@@ -1650,7 +1656,9 @@ function SchoolsSection() {
   const [searchParams] = useSearchParams();
   const [openSchools, setOpenSchools] = useState<string[]>([]);
   const [scrollTarget, setScrollTarget] = useState<string | null>(null);
-  const [selectedLevel, setSelectedLevel] = useState<"all" | "UG" | "PG">("all");
+  const [selectedLevel, setSelectedLevel] = useState<"all" | "UG" | "PG">(
+    "all",
+  );
 
   const targetSchool = searchParams.get("school");
   const targetProgram = searchParams.get("program");
@@ -1746,7 +1754,8 @@ function SchoolsSection() {
                   ...category,
                   programs: category.programs.filter(
                     (program) =>
-                      selectedLevel === "all" || program.level === selectedLevel
+                      selectedLevel === "all" ||
+                      program.level === selectedLevel,
                   ),
                 }))
                 .filter((category) => category.programs.length > 0);
@@ -1777,11 +1786,14 @@ function SchoolsSection() {
                           {school.name === "School of Engineering" ||
                           school.name === "School of Computer Applications" ||
                           school.name === "School of Law" ||
-                          school.name === "School of Basic & Applied Sciences" ||
+                          school.name ===
+                            "School of Basic & Applied Sciences" ||
                           school.name === "School of Commerce & Management" ||
                           school.name === "School of Health Sciences" ||
-                          school.name === "School of Arts, Design & Humanities" ||
-                          school.name === "School of Design & Digital Trans-Media"
+                          school.name ===
+                            "School of Arts, Design & Humanities" ||
+                          school.name ===
+                            "School of Design & Digital Trans-Media"
                             ? "2026-27"
                             : "2025-26"}
                         </Badge>
@@ -1878,7 +1890,8 @@ function ProgramCard({ program }: ProgramCardProps) {
     return bullets;
   };
 
-  const eligibilityBullets = program.eligibilityPoints || parseEligibilityToBullets(program.eligibility);
+  const eligibilityBullets =
+    program.eligibilityPoints || parseEligibilityToBullets(program.eligibility);
 
   return (
     <Card
@@ -1985,7 +1998,11 @@ function ProgramCard({ program }: ProgramCardProps) {
               className="rounded-lg bg-orange-500 text-white hover:bg-orange-600 transition w-full"
               asChild
             >
-              <a href="https://admissions.dsu.edu.in/" target="_blank" rel="noreferrer">
+              <a
+                href="https://admissions.dsu.edu.in/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 Apply Now
                 <ArrowRight className="ml-1 h-3.5 w-3.5" />
               </a>
@@ -2011,15 +2028,23 @@ function ProgramCard({ program }: ProgramCardProps) {
 function BrochureSection() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedSchool, setSelectedSchool] = useState<string>("All");
-  const [selectedLevel, setSelectedLevel] = useState<"All" | "UG" | "PG" | "Professional">("All");
+  const [selectedLevel, setSelectedLevel] = useState<
+    "All" | "UG" | "PG" | "Professional"
+  >("All");
 
-  const schools = Array.from(new Set(brochureResources.map((b) => b.school))).sort();
+  const schools = Array.from(
+    new Set(brochureResources.map((b) => b.school)),
+  ).sort();
   const schoolOptions = ["All", ...schools];
 
   const filteredBrochures = brochureResources.filter((brochure) => {
-    const matchesSearch = brochure.title.toLowerCase().includes(searchQuery.toLowerCase());
-    const matchesSchool = selectedSchool === "All" || brochure.school === selectedSchool;
-    const matchesLevel = selectedLevel === "All" || brochure.level === selectedLevel;
+    const matchesSearch = brochure.title
+      .toLowerCase()
+      .includes(searchQuery.toLowerCase());
+    const matchesSchool =
+      selectedSchool === "All" || brochure.school === selectedSchool;
+    const matchesLevel =
+      selectedLevel === "All" || brochure.level === selectedLevel;
     return matchesSearch && matchesSchool && matchesLevel;
   });
 
@@ -2031,14 +2056,18 @@ function BrochureSection() {
             Download Program Brochures
           </h2>
           <p className="mt-3 text-lg text-foreground">
-            Explore detailed brochures covering curriculum, facilities, placements, and program highlights. Use the search and filters below to find exactly what you need.
+            Explore detailed brochures covering curriculum, facilities,
+            placements, and program highlights. Use the search and filters below
+            to find exactly what you need.
           </p>
         </div>
 
         <div className="mb-8 space-y-4">
           <div className="flex items-center gap-2">
             <div className="h-8 w-1 rounded-full bg-orange-500" />
-            <h3 className="text-xl font-semibold text-foreground">All Brochures</h3>
+            <h3 className="text-xl font-semibold text-foreground">
+              All Brochures
+            </h3>
           </div>
 
           <div className="rounded-xl border border-border/60 bg-card/50 backdrop-blur-sm p-4 space-y-4">
@@ -2055,7 +2084,9 @@ function BrochureSection() {
 
             <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               <div className="space-y-2">
-                <label className="text-xs uppercase font-semibold text-foreground">School</label>
+                <label className="text-xs uppercase font-semibold text-foreground">
+                  School
+                </label>
                 <select
                   value={selectedSchool}
                   onChange={(e) => setSelectedSchool(e.target.value)}
@@ -2070,10 +2101,16 @@ function BrochureSection() {
               </div>
 
               <div className="space-y-2">
-                <label className="text-xs uppercase font-semibold text-foreground">Program Level</label>
+                <label className="text-xs uppercase font-semibold text-foreground">
+                  Program Level
+                </label>
                 <select
                   value={selectedLevel}
-                  onChange={(e) => setSelectedLevel(e.target.value as "All" | "UG" | "PG" | "Professional")}
+                  onChange={(e) =>
+                    setSelectedLevel(
+                      e.target.value as "All" | "UG" | "PG" | "Professional",
+                    )
+                  }
                   className="w-full rounded-lg border border-border/60 bg-background px-3 py-2 text-sm text-foreground focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20"
                 >
                   <option value="All">All Levels</option>
@@ -2084,9 +2121,12 @@ function BrochureSection() {
               </div>
 
               <div className="space-y-2">
-                <label className="text-xs uppercase font-semibold text-foreground">Results</label>
+                <label className="text-xs uppercase font-semibold text-foreground">
+                  Results
+                </label>
                 <div className="rounded-lg border border-orange-500/30 bg-orange-500/10 px-3 py-2 text-sm font-medium text-orange-600">
-                  {filteredBrochures.length} brochure{filteredBrochures.length !== 1 ? "s" : ""} found
+                  {filteredBrochures.length} brochure
+                  {filteredBrochures.length !== 1 ? "s" : ""} found
                 </div>
               </div>
             </div>
@@ -2138,9 +2178,12 @@ function BrochureSection() {
         ) : (
           <div className="rounded-2xl border border-border/40 bg-card/50 p-12 text-center">
             <FileText className="mx-auto h-12 w-12 text-foreground/30 mb-4" />
-            <h3 className="text-xl font-semibold text-foreground mb-2">No Brochures Found</h3>
+            <h3 className="text-xl font-semibold text-foreground mb-2">
+              No Brochures Found
+            </h3>
             <p className="text-foreground/70">
-              Try adjusting your search or filter criteria to find what you're looking for.
+              Try adjusting your search or filter criteria to find what you're
+              looking for.
             </p>
           </div>
         )}

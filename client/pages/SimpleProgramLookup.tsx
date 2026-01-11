@@ -16,12 +16,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import {
-  CheckCircle2,
-  GraduationCap,
-  IndianRupee,
-  Filter,
-} from "lucide-react";
+import { CheckCircle2, GraduationCap, IndianRupee, Filter } from "lucide-react";
 import { schools } from "./Eligibility";
 
 type Program = {
@@ -59,12 +54,16 @@ export default function SimpleProgramLookup() {
     setAllPrograms(programs);
   }, []);
 
-  const schoolNames = Array.from(new Set(allPrograms.map((p) => p.school))).sort();
+  const schoolNames = Array.from(
+    new Set(allPrograms.map((p) => p.school)),
+  ).sort();
   const levels = ["UG", "PG", "Professional"];
 
   const filteredPrograms = allPrograms.filter((program) => {
-    const matchesSchool = selectedSchool === "All" || program.school === selectedSchool;
-    const matchesLevel = selectedLevel === "All" || program.level === selectedLevel;
+    const matchesSchool =
+      selectedSchool === "All" || program.school === selectedSchool;
+    const matchesLevel =
+      selectedLevel === "All" || program.level === selectedLevel;
     return matchesSchool && matchesLevel;
   });
 
@@ -103,7 +102,10 @@ export default function SimpleProgramLookup() {
                   <label className="text-sm font-semibold text-foreground mb-2 block">
                     School
                   </label>
-                  <Select value={selectedSchool} onValueChange={setSelectedSchool}>
+                  <Select
+                    value={selectedSchool}
+                    onValueChange={setSelectedSchool}
+                  >
                     <SelectTrigger className="h-11">
                       <SelectValue placeholder="Select school..." />
                     </SelectTrigger>
@@ -122,7 +124,10 @@ export default function SimpleProgramLookup() {
                   <label className="text-sm font-semibold text-foreground mb-2 block">
                     Program Level
                   </label>
-                  <Select value={selectedLevel} onValueChange={setSelectedLevel}>
+                  <Select
+                    value={selectedLevel}
+                    onValueChange={setSelectedLevel}
+                  >
                     <SelectTrigger className="h-11">
                       <SelectValue placeholder="Select level..." />
                     </SelectTrigger>
@@ -133,8 +138,8 @@ export default function SimpleProgramLookup() {
                           {level === "UG"
                             ? "Undergraduate (UG)"
                             : level === "PG"
-                            ? "Postgraduate (PG)"
-                            : "Professional"}
+                              ? "Postgraduate (PG)"
+                              : "Professional"}
                         </SelectItem>
                       ))}
                     </SelectContent>
@@ -144,7 +149,8 @@ export default function SimpleProgramLookup() {
 
               <div className="flex items-center justify-between pt-2">
                 <p className="text-sm text-foreground/60">
-                  {filteredPrograms.length} program{filteredPrograms.length !== 1 ? "s" : ""} found
+                  {filteredPrograms.length} program
+                  {filteredPrograms.length !== 1 ? "s" : ""} found
                 </p>
                 {(selectedSchool !== "All" || selectedLevel !== "All") && (
                   <Button
@@ -162,7 +168,10 @@ export default function SimpleProgramLookup() {
                 <label className="text-sm font-semibold text-foreground mb-2 block">
                   Select Program
                 </label>
-                <Select onValueChange={handleProgramSelect} value={selectedProgram?.name || ""}>
+                <Select
+                  onValueChange={handleProgramSelect}
+                  value={selectedProgram?.name || ""}
+                >
                   <SelectTrigger className="h-12 text-base">
                     <SelectValue placeholder="Choose a program from the filtered results..." />
                   </SelectTrigger>
@@ -179,7 +188,9 @@ export default function SimpleProgramLookup() {
                           className="py-3"
                         >
                           <div className="flex flex-col">
-                            <span className="font-semibold">{program.name}</span>
+                            <span className="font-semibold">
+                              {program.name}
+                            </span>
                             <span className="text-xs text-foreground/60">
                               {program.school} • {program.level}
                               {program.duration && ` • ${program.duration}`}
@@ -201,10 +212,13 @@ export default function SimpleProgramLookup() {
                   <div className="flex items-center gap-3">
                     <GraduationCap className="h-8 w-8 text-green-600" />
                     <div>
-                      <CardTitle className="text-2xl">{selectedProgram.name}</CardTitle>
+                      <CardTitle className="text-2xl">
+                        {selectedProgram.name}
+                      </CardTitle>
                       <CardDescription className="text-base">
                         {selectedProgram.school} • {selectedProgram.level}{" "}
-                        {selectedProgram.duration && `• ${selectedProgram.duration}`}
+                        {selectedProgram.duration &&
+                          `• ${selectedProgram.duration}`}
                       </CardDescription>
                     </div>
                   </div>
@@ -215,7 +229,9 @@ export default function SimpleProgramLookup() {
                 <CardHeader>
                   <div className="flex items-center gap-3">
                     <CheckCircle2 className="h-6 w-6 text-orange-500" />
-                    <CardTitle className="text-xl">Eligibility Criteria</CardTitle>
+                    <CardTitle className="text-xl">
+                      Eligibility Criteria
+                    </CardTitle>
                   </div>
                 </CardHeader>
                 <CardContent>
@@ -223,26 +239,39 @@ export default function SimpleProgramLookup() {
                     <p className="text-foreground leading-relaxed">
                       {selectedProgram.eligibility}
                     </p>
-                    {selectedProgram.eligibilityPoints && selectedProgram.eligibilityPoints.length > 0 && (
-                      <ul className="space-y-2">
-                        {selectedProgram.eligibilityPoints.map((point, idx) => (
-                          <li key={idx} className="flex items-start gap-2">
-                            <CheckCircle2 className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
-                            <span className="text-foreground">{point}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                    {selectedProgram.specializations && selectedProgram.specializations.length > 0 && (
-                      <div className="mt-4 pt-4 border-t border-border/40">
-                        <h4 className="font-semibold text-foreground mb-2">Specializations Available:</h4>
-                        <ul className="space-y-1">
-                          {selectedProgram.specializations.map((spec, idx) => (
-                            <li key={idx} className="text-sm text-foreground/80">• {spec}</li>
-                          ))}
+                    {selectedProgram.eligibilityPoints &&
+                      selectedProgram.eligibilityPoints.length > 0 && (
+                        <ul className="space-y-2">
+                          {selectedProgram.eligibilityPoints.map(
+                            (point, idx) => (
+                              <li key={idx} className="flex items-start gap-2">
+                                <CheckCircle2 className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
+                                <span className="text-foreground">{point}</span>
+                              </li>
+                            ),
+                          )}
                         </ul>
-                      </div>
-                    )}
+                      )}
+                    {selectedProgram.specializations &&
+                      selectedProgram.specializations.length > 0 && (
+                        <div className="mt-4 pt-4 border-t border-border/40">
+                          <h4 className="font-semibold text-foreground mb-2">
+                            Specializations Available:
+                          </h4>
+                          <ul className="space-y-1">
+                            {selectedProgram.specializations.map(
+                              (spec, idx) => (
+                                <li
+                                  key={idx}
+                                  className="text-sm text-foreground/80"
+                                >
+                                  • {spec}
+                                </li>
+                              ),
+                            )}
+                          </ul>
+                        </div>
+                      )}
                   </div>
                 </CardContent>
               </Card>
@@ -251,7 +280,9 @@ export default function SimpleProgramLookup() {
                 <CardHeader>
                   <div className="flex items-center gap-3">
                     <IndianRupee className="h-6 w-6 text-orange-500" />
-                    <CardTitle className="text-xl">Fee Structure (2026-27)</CardTitle>
+                    <CardTitle className="text-xl">
+                      Fee Structure (2026-27)
+                    </CardTitle>
                   </div>
                 </CardHeader>
                 <CardContent>
@@ -261,27 +292,37 @@ export default function SimpleProgramLookup() {
                         key={idx}
                         className="flex justify-between items-center p-4 rounded-lg bg-orange-500/5 border border-orange-500/20"
                       >
-                        <span className="font-semibold text-foreground">{fee.label}</span>
-                        <span className="text-lg font-bold text-orange-600">{fee.amount}</span>
+                        <span className="font-semibold text-foreground">
+                          {fee.label}
+                        </span>
+                        <span className="text-lg font-bold text-orange-600">
+                          {fee.amount}
+                        </span>
                       </div>
                     ))}
                   </div>
                   {selectedProgram.scholarships && (
                     <div className="mt-4 pt-4 border-t border-border/40">
-                      <p className="text-sm text-foreground/70">{selectedProgram.scholarships}</p>
+                      <p className="text-sm text-foreground/70">
+                        {selectedProgram.scholarships}
+                      </p>
                     </div>
                   )}
-                  {selectedProgram.notes && selectedProgram.notes.length > 0 && (
-                    <div className="mt-4 pt-4 border-t border-border/40">
-                      <ul className="space-y-2">
-                        {selectedProgram.notes.map((note, idx) => (
-                          <li key={idx} className="text-sm text-foreground/70">
-                            ℹ️ {note}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
+                  {selectedProgram.notes &&
+                    selectedProgram.notes.length > 0 && (
+                      <div className="mt-4 pt-4 border-t border-border/40">
+                        <ul className="space-y-2">
+                          {selectedProgram.notes.map((note, idx) => (
+                            <li
+                              key={idx}
+                              className="text-sm text-foreground/70"
+                            >
+                              ℹ️ {note}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
                 </CardContent>
               </Card>
 
@@ -330,7 +371,8 @@ function HeroSection() {
           Find Your Program Details
         </h1>
         <p className="mt-6 text-lg text-foreground md:text-xl">
-          Filter by school and level, then instantly view eligibility criteria, fee structure, and required documents.
+          Filter by school and level, then instantly view eligibility criteria,
+          fee structure, and required documents.
         </p>
       </div>
     </section>

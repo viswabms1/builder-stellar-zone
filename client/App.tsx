@@ -1656,7 +1656,10 @@ function App() {
                   element={<InternationalAdmissions />}
                 />
                 <Route path="/eligibility" element={<Eligibility />} />
-                <Route path="/program-lookup" element={<SimpleProgramLookup />} />
+                <Route
+                  path="/program-lookup"
+                  element={<SimpleProgramLookup />}
+                />
                 <Route path="/placements" element={<Placements />} />
                 <Route path="/careers" element={<Careers />} />
                 <Route path="/campus-life" element={<CampusLife />} />
