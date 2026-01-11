@@ -919,11 +919,7 @@ export default function Index() {
                 <button
                   key={idx}
                   onClick={() => setSelectedNews(item)}
-                  className={`group rounded-none overflow-hidden border text-left cursor-pointer news-grid-item transition-all duration-300 ${
-                    idx % 2 === 0
-                      ? "bg-blue-500/10 border-blue-500/20 hover:border-blue-500/40"
-                      : "bg-purple-500/10 border-purple-500/20 hover:border-purple-500/40"
-                  }`}
+                  className="group rounded-none overflow-hidden border border-brand-magenta/20 bg-brand-magenta/5 hover:border-brand-magenta/40 text-left cursor-pointer news-grid-item transition-all duration-300"
                 >
                   <div className="relative">
                     {item.isVideo ? (
