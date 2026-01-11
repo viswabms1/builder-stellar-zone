@@ -968,10 +968,10 @@ export default function Index() {
                     {allPublications[selectedPublicationIndex].date}
                   </span>
                 </div>
-                <h3 className="text-2xl md:text-3xl font-bold text-foreground font-display leading-tight bg-gradient-to-r from-brand-magenta via-brand-orange to-brand-magenta bg-clip-text text-transparent">
+                <h3 className="text-2xl md:text-3xl font-bold text-foreground font-display leading-tight">
                   {allPublications[selectedPublicationIndex].title}
                 </h3>
-                <p className="text-foreground/85 font-body leading-relaxed">
+                <p className="text-sm text-foreground/80 font-body leading-relaxed">
                   {allPublications[selectedPublicationIndex].description}
                 </p>
                 <div className="pt-2 border-t border-foreground/10">
