@@ -49,7 +49,6 @@ export default function SimpleProgramLookup() {
   const [allPrograms, setAllPrograms] = useState<Program[]>([]);
   const [selectedSchool, setSelectedSchool] = useState<string>("All");
   const [selectedLevel, setSelectedLevel] = useState<string>("All");
-  const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
     const programs: Program[] = [];
