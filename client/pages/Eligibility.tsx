@@ -2139,6 +2139,22 @@ function ProgramCard({ program }: ProgramCardProps) {
 }
 
 function BrochureSection() {
+  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedSchool, setSelectedSchool] = useState<string>("All");
+  const [selectedLevel, setSelectedLevel] = useState<"All" | "UG" | "PG" | "Professional">("All");
+
+  const schools = Array.from(new Set(brochureResources.map((b) => b.school))).sort();
+  const schoolOptions = ["All", ...schools];
+
+  const filteredBrochures = brochureResources.filter((brochure) => {
+    const matchesSearch = brochure.title.toLowerCase().includes(searchQuery.toLowerCase());
+    const matchesSchool = selectedSchool === "All" || brochure.school === selectedSchool;
+    const matchesLevel = selectedLevel === "All" || brochure.level === selectedLevel;
+    return matchesSearch && matchesSchool && matchesLevel;
+  });
+
+  const featuredBrochures = brochureResources.filter((b) => b.featured);
+
   return (
     <section className="bg-gradient-to-br from-orange-500/5 via-red-500/5 to-background px-3 py-8">
       <div className="mx-auto max-w-6xl">
@@ -2147,40 +2163,165 @@ function BrochureSection() {
             Download Program Brochures
           </h2>
           <p className="mt-3 text-lg text-foreground">
-            Access school-specific brochures detailing curriculum, laboratories,
-            internship opportunities, and placement tracks across UG, PG, and
-            professional programs.
+            Explore detailed brochures covering curriculum, facilities, placements, and program highlights. Use the search and filters below to find exactly what you need.
           </p>
         </div>
-        <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
-          {brochureResources.map((resource) => (
-            <Card
-              key={resource.title}
-              className="border border-border/60 bg-card/70 backdrop-blur-sm transition hover:-translate-y-1 hover:border-orange-500/40 hover:shadow-orange-500/10"
-            >
-              <CardHeader>
-                <CardTitle className="text-lg font-semibold text-foreground">
-                  {resource.title}
-                </CardTitle>
-                <CardDescription className="text-sm text-foreground">
-                  PDF download • Updated for academic year 2025-26
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Button
-                  variant="secondary"
-                  className="w-full justify-center rounded-xl bg-orange-500/10 text-orange-500 hover:bg-orange-500 hover:text-foreground"
-                  asChild
+
+        {featuredBrochures.length > 0 && (
+          <div className="mb-12">
+            <div className="mb-4 flex items-center gap-2">
+              <div className="h-8 w-1 rounded-full bg-orange-500" />
+              <h3 className="text-xl font-semibold text-foreground">
+                Featured Brochures
+              </h3>
+            </div>
+            <div className="grid gap-3 sm:grid-cols-2">
+              {featuredBrochures.map((resource) => (
+                <Card
+                  key={resource.title}
+                  className="border border-orange-500/40 bg-gradient-to-br from-orange-500/10 to-red-500/10 shadow-sm transition hover:-translate-y-1 hover:shadow-orange-500/20"
                 >
-                  <a href={resource.href} target="_blank" rel="noreferrer">
-                    Download PDF
-                    <Download className="ml-2 h-4 w-4" />
-                  </a>
-                </Button>
-              </CardContent>
-            </Card>
-          ))}
+                  <CardHeader>
+                    <div className="flex items-start justify-between gap-3">
+                      <div>
+                        <CardTitle className="text-lg font-semibold text-foreground">
+                          {resource.title}
+                        </CardTitle>
+                        <CardDescription className="mt-2 text-sm text-foreground">
+                          {resource.school}
+                        </CardDescription>
+                      </div>
+                      <Badge className="bg-orange-500/20 text-orange-600 flex-shrink-0">
+                        ⭐ Featured
+                      </Badge>
+                    </div>
+                  </CardHeader>
+                  <CardContent>
+                    <Button
+                      className="w-full justify-center rounded-lg bg-orange-500 text-white hover:bg-orange-600 transition"
+                      asChild
+                    >
+                      <a href={resource.href} target="_blank" rel="noreferrer">
+                        Download PDF
+                        <Download className="ml-2 h-4 w-4" />
+                      </a>
+                    </Button>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        )}
+
+        <div className="mb-8 space-y-4">
+          <div className="flex items-center gap-2">
+            <div className="h-8 w-1 rounded-full bg-orange-500" />
+            <h3 className="text-xl font-semibold text-foreground">All Brochures</h3>
+          </div>
+
+          <div className="rounded-xl border border-border/60 bg-card/50 backdrop-blur-sm p-4 space-y-4">
+            <div className="flex items-center gap-2">
+              <Globe className="h-5 w-5 text-orange-500" />
+              <input
+                type="text"
+                placeholder="Search brochures by program name..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="flex-1 rounded-lg border border-border/60 bg-background px-4 py-2 text-foreground placeholder-foreground/50 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20"
+              />
+            </div>
+
+            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="space-y-2">
+                <label className="text-xs uppercase font-semibold text-foreground">School</label>
+                <select
+                  value={selectedSchool}
+                  onChange={(e) => setSelectedSchool(e.target.value)}
+                  className="w-full rounded-lg border border-border/60 bg-background px-3 py-2 text-sm text-foreground focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20"
+                >
+                  {schoolOptions.map((school) => (
+                    <option key={school} value={school}>
+                      {school}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              <div className="space-y-2">
+                <label className="text-xs uppercase font-semibold text-foreground">Program Level</label>
+                <select
+                  value={selectedLevel}
+                  onChange={(e) => setSelectedLevel(e.target.value as "All" | "UG" | "PG" | "Professional")}
+                  className="w-full rounded-lg border border-border/60 bg-background px-3 py-2 text-sm text-foreground focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20"
+                >
+                  <option value="All">All Levels</option>
+                  <option value="UG">Undergraduate</option>
+                  <option value="PG">Postgraduate</option>
+                  <option value="Professional">Professional</option>
+                </select>
+              </div>
+
+              <div className="space-y-2">
+                <label className="text-xs uppercase font-semibold text-foreground">Results</label>
+                <div className="rounded-lg border border-orange-500/30 bg-orange-500/10 px-3 py-2 text-sm font-medium text-orange-600">
+                  {filteredBrochures.length} brochure{filteredBrochures.length !== 1 ? "s" : ""} found
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+
+        {filteredBrochures.length > 0 ? (
+          <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
+            {filteredBrochures.map((resource) => (
+              <Card
+                key={resource.title}
+                className="border border-border/60 bg-card/70 backdrop-blur-sm transition hover:-translate-y-1 hover:border-orange-500/40 hover:shadow-orange-500/10"
+              >
+                <CardHeader>
+                  <div className="flex items-start justify-between gap-3">
+                    <div className="flex-1">
+                      <CardTitle className="text-base font-semibold text-foreground line-clamp-2">
+                        {resource.title}
+                      </CardTitle>
+                      <CardDescription className="mt-2 text-xs text-foreground">
+                        {resource.school}
+                      </CardDescription>
+                    </div>
+                  </div>
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    <Badge className="bg-blue-500/15 text-blue-600">
+                      {resource.level === "UG"
+                        ? "Undergraduate"
+                        : resource.level === "PG"
+                          ? "Postgraduate"
+                          : "Professional"}
+                    </Badge>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <Button
+                    className="w-full justify-center rounded-lg bg-orange-500/10 text-orange-500 hover:bg-orange-500 hover:text-foreground transition"
+                    asChild
+                  >
+                    <a href={resource.href} target="_blank" rel="noreferrer">
+                      Download PDF
+                      <Download className="ml-2 h-4 w-4" />
+                    </a>
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        ) : (
+          <div className="rounded-2xl border border-border/40 bg-card/50 p-12 text-center">
+            <FileText className="mx-auto h-12 w-12 text-foreground/30 mb-4" />
+            <h3 className="text-xl font-semibold text-foreground mb-2">No Brochures Found</h3>
+            <p className="text-foreground/70">
+              Try adjusting your search or filter criteria to find what you're looking for.
+            </p>
+          </div>
+        )}
       </div>
     </section>
   );
