@@ -22,7 +22,7 @@ type EducationLevel = "10+2" | "Bachelor's" | "Master's" | "Law";
 type Category = "General" | "SC/ST" | "OBC";
 
 type EligibilityRule = {
-  requiredEducation: string;
+  requiredEducation: EducationLevel;
   requiredSubjects: string[];
   minimumPercentage: (category: Category) => number;
   applicablePrograms: string[];
@@ -31,7 +31,7 @@ type EligibilityRule = {
 
 const eligibilityRules: EligibilityRule[] = [
   {
-    requiredEducation: "10+2/PUC with PCM",
+    requiredEducation: "10+2",
     requiredSubjects: ["Physics", "Mathematics"],
     minimumPercentage: (cat) => (cat === "General" ? 45 : 40),
     applicablePrograms: [
@@ -51,50 +51,50 @@ const eligibilityRules: EligibilityRule[] = [
     reason: "Requires 10+2/PUC with Physics & Mathematics as compulsory subjects + one additional science subject, with minimum 45% (40% for SC/ST/OBC)",
   },
   {
-    requiredEducation: "10+2/PUC with PCB",
+    requiredEducation: "10+2",
     requiredSubjects: ["Physics", "Chemistry", "Biology"],
     minimumPercentage: (cat) => (cat === "General" ? 45 : 40),
     applicablePrograms: ["B.Sc Nursing", "B.Pharm"],
     reason: "Requires 10+2/PUC with Physics, Chemistry & Biology with minimum 45% (40% for SC/ST/OBC)",
   },
   {
-    requiredEducation: "10+2 - Any Stream",
+    requiredEducation: "10+2",
     requiredSubjects: [],
     minimumPercentage: (cat) => (cat === "General" ? 50 : 45),
     applicablePrograms: ["BBA", "B.Com General", "B.Com ACCA", "B.Com CA", "B.Com CMA", "BCA", "BA Journalism & Mass Communication"],
     reason: "Requires 10+2 or equivalent with minimum 50% marks (45% for SC/ST/OBC)",
   },
   {
-    requiredEducation: "10+2 - Law Background",
+    requiredEducation: "10+2",
     requiredSubjects: [],
     minimumPercentage: (cat) => (cat === "General" ? 50 : 45),
     applicablePrograms: ["B.A. LL.B", "B.B.A. LL.B", "3 Year LL.B"],
     reason: "Requires 10+2 or equivalent with minimum 50% marks. CLAT scores accepted.",
   },
   {
-    requiredEducation: "Bachelor's Degree - Any Stream",
+    requiredEducation: "Bachelor's",
     requiredSubjects: [],
     minimumPercentage: (cat) => (cat === "General" ? 50 : 45),
     applicablePrograms: ["MBA", "MCA", "M.Sc Data Science", "M.Sc Basic Sciences"],
     reason: "Requires Bachelor's degree with minimum 50% marks (45% for SC/ST/OBC)",
   },
   {
-    requiredEducation: "Bachelor's in Engineering/CSE",
-    requiredSubjects: ["Computer Science", "Engineering"],
+    requiredEducation: "Bachelor's",
+    requiredSubjects: ["Engineering", "CSE"],
     minimumPercentage: (cat) => 50,
     applicablePrograms: ["M.Tech CSE", "M.Tech AI & Data Science"],
-    reason: "Requires B.Tech in related field with minimum 50% marks",
+    reason: "Requires B.Tech in Engineering/CSE with minimum 50% marks",
   },
   {
-    requiredEducation: "Bachelor's in Law",
+    requiredEducation: "Law",
     requiredSubjects: ["Law"],
     minimumPercentage: (cat) => 50,
     applicablePrograms: ["LL.M"],
     reason: "Requires LL.B degree with minimum 50% marks",
   },
   {
-    requiredEducation: "B.Sc in Life Sciences",
-    requiredSubjects: ["Life Science"],
+    requiredEducation: "Master's",
+    requiredSubjects: ["Life Sciences"],
     minimumPercentage: (cat) => 50,
     applicablePrograms: ["M.Sc Nursing", "M.Sc Biotechnology", "M.Sc Microbiology"],
     reason: "Requires B.Sc in relevant life science subject with minimum 50% marks",
@@ -120,12 +120,12 @@ export default function EligibilityChecker() {
     setStep(2);
   };
 
-  const getSubjectOptions = (): { [key: string]: string[] } => {
+  const getSubjectOptions = (): { [key in EducationLevel]: string[] } => {
     return {
       "10+2": ["Physics, Chemistry, Mathematics (PCM)", "Physics, Chemistry, Biology (PCB)", "Commerce Subjects", "Arts/Humanities"],
-      "Bachelor's": ["Engineering/CSE", "Commerce", "Science", "Law", "Arts/Humanities"],
+      "Bachelor's": ["Engineering/CSE", "Commerce", "Science", "Arts/Humanities"],
       "Master's": ["Engineering", "Science", "Commerce", "Law"],
-      Law: ["Law"],
+      "Law": ["Law"],
     };
   };
 
@@ -150,7 +150,7 @@ export default function EligibilityChecker() {
     const notEligible: any[] = [];
 
     eligibilityRules.forEach((rule) => {
-      const isEducationMatch = isEducationMatching(rule.requiredEducation);
+      const isEducationMatch = rule.requiredEducation === education;
       const areSubjectsMatch = areSubjectsMatching(rule.requiredSubjects, subjects);
       const isPercentageOk = parseFloat(percentage) >= rule.minimumPercentage(selectedCategory);
 
@@ -182,14 +182,6 @@ export default function EligibilityChecker() {
     });
 
     setResults({ eligible, notEligible });
-  };
-
-  const isEducationMatching = (requiredEducation: string): boolean => {
-    if (education === "10+2") return requiredEducation.includes("10+2") || requiredEducation.includes("Any Stream");
-    if (education === "Bachelor's") return requiredEducation.includes("Bachelor's");
-    if (education === "Master's") return requiredEducation.includes("Master's") || requiredEducation.includes("Bachelor's in");
-    if (education === "Law") return requiredEducation.includes("Law");
-    return false;
   };
 
   const areSubjectsMatching = (requiredSubjects: string[], selectedSubjects: string[]): boolean => {
@@ -326,6 +318,13 @@ type StepEducationProps = {
 };
 
 function StepEducation({ onSelect }: StepEducationProps) {
+  const educationOptions: { label: string; value: EducationLevel }[] = [
+    { label: "10+2 / PUC", value: "10+2" },
+    { label: "Bachelor's Degree", value: "Bachelor's" },
+    { label: "Master's Degree", value: "Master's" },
+    { label: "Bachelor's in Law", value: "Law" },
+  ];
+
   return (
     <Card className="border-2 border-orange-500/20 bg-card/80 backdrop-blur-sm">
       <CardHeader>
@@ -341,13 +340,13 @@ function StepEducation({ onSelect }: StepEducationProps) {
       </CardHeader>
       <CardContent>
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {["10+2 / PUC", "Bachelor's Degree", "Master's Degree", "Bachelor's in Law"].map((option, idx) => (
+          {educationOptions.map((option) => (
             <button
-              key={idx}
-              onClick={() => onSelect(option.split(" /")[0] as EducationLevel)}
+              key={option.value}
+              onClick={() => onSelect(option.value)}
               className="rounded-xl border-2 border-orange-500/20 bg-card/50 p-6 text-left transition hover:border-orange-500/60 hover:bg-orange-500/5"
             >
-              <h3 className="font-semibold text-lg text-foreground">{option}</h3>
+              <h3 className="font-semibold text-lg text-foreground">{option.label}</h3>
             </button>
           ))}
         </div>
@@ -359,7 +358,7 @@ function StepEducation({ onSelect }: StepEducationProps) {
 type StepSubjectsProps = {
   education: EducationLevel;
   onSelect: (subjects: string[]) => void;
-  subjectOptions: { [key: string]: string[] };
+  subjectOptions: { [key in EducationLevel]: string[] };
 };
 
 function StepSubjects({ education, onSelect, subjectOptions }: StepSubjectsProps) {
