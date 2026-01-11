@@ -6,8 +6,6 @@ import Index from "./pages/Index";
 import Academics from "./pages/Academics";
 import Admissions from "./pages/Admissions";
 import Eligibility from "./pages/Eligibility";
-import EligibilityChecker from "./pages/EligibilityChecker";
-import SchoolOfEngineeringEligibility from "./pages/SchoolOfEngineeringEligibility";
 import SimpleProgramLookup from "./pages/SimpleProgramLookup";
 import InternationalAdmissions from "./pages/InternationalAdmissions";
 import CampusLife from "./pages/CampusLife";
