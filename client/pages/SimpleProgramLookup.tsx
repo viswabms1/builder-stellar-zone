@@ -35,7 +35,6 @@ type Program = {
   specializations?: string[];
   notes?: string[];
   scholarships?: string;
-  documentsRequired?: string[];
   school: string;
 };
 
