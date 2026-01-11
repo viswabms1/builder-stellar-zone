@@ -111,6 +111,11 @@ export default function About() {
             </a>
           </div>
 
+          {/* Metrics Connector */}
+          <p className="text-lg text-foreground/80 mb-8 max-w-4xl mx-auto">
+            A legacy built on scale, trust, and academic excellence
+          </p>
+
           {/* Key Numbers */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-4xl mx-auto">
             {[
