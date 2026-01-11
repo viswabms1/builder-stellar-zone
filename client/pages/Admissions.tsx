@@ -582,11 +582,14 @@ function QuickLinkCard({ item }: { item: QuickLink }) {
 }
 
 function BrochureSection() {
+  const { theme } = useTheme();
   return (
     <section className="px-3 py-8 bg-gradient-to-br from-orange-500/5 via-red-500/5 to-background">
       <div className="mx-auto max-w-6xl">
         <div className="mb-10 text-center">
-          <h2 className="text-3xl font-bold md:text-4xl">
+          <h2 className={`text-3xl font-bold md:text-4xl ${
+            theme === "light" ? "text-orange-900" : "text-white"
+          }`}>
             Program Guides & Brochures
           </h2>
           <p className="mt-3 text-lg text-foreground">
