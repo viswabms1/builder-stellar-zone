@@ -533,13 +533,13 @@ function StepCategory({ onSelect }: StepCategoryProps) {
 type StepResultsProps = {
   results: { eligible: any[]; notEligible: any[] };
   education: EducationLevel;
-  subjects: string[];
+  subjectRequirement: SubjectRequirement;
   percentage: string;
   category: Category;
   onReset: () => void;
 };
 
-function StepResults({ results, education, subjects, percentage, category, onReset }: StepResultsProps) {
+function StepResults({ results, education, subjectRequirement, percentage, category, onReset }: StepResultsProps) {
   return (
     <div className="space-y-6">
       <Card className="border-2 border-green-500/30 bg-gradient-to-r from-green-500/10 to-emerald-500/10">
@@ -561,8 +561,8 @@ function StepResults({ results, education, subjects, percentage, category, onRes
               <p className="mt-1 font-semibold text-foreground">{education}</p>
             </div>
             <div className="rounded-lg bg-background/50 p-3">
-              <p className="text-xs text-foreground/60">Subjects</p>
-              <p className="mt-1 font-semibold text-foreground text-xs">{subjects.join(", ") || "Any"}</p>
+              <p className="text-xs text-foreground/60">Stream/Subject</p>
+              <p className="mt-1 font-semibold text-foreground text-xs">{subjectRequirement}</p>
             </div>
             <div className="rounded-lg bg-background/50 p-3">
               <p className="text-xs text-foreground/60">Percentage</p>
