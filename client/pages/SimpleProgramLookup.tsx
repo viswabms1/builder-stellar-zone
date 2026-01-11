@@ -68,8 +68,7 @@ export default function SimpleProgramLookup() {
   const filteredPrograms = allPrograms.filter((program) => {
     const matchesSchool = selectedSchool === "All" || program.school === selectedSchool;
     const matchesLevel = selectedLevel === "All" || program.level === selectedLevel;
-    const matchesSearch = program.name.toLowerCase().includes(searchQuery.toLowerCase());
-    return matchesSchool && matchesLevel && matchesSearch;
+    return matchesSchool && matchesLevel;
   });
 
   const handleProgramSelect = (programName: string) => {
