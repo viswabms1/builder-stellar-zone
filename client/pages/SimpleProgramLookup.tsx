@@ -20,7 +20,6 @@ import {
   CheckCircle2,
   GraduationCap,
   IndianRupee,
-  FileText,
   Filter,
 } from "lucide-react";
 import { schools } from "./Eligibility";
