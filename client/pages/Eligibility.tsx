@@ -1878,38 +1878,7 @@ function ProgramCard({ program }: ProgramCardProps) {
     return bullets;
   };
 
-  const getDefaultDocuments = (): string[] => {
-    if (program.level === "UG") {
-      return [
-        "10+2 / PUC original mark sheets and pass certificate",
-        "Relevant subject mark cards (Physics, Chemistry, Mathematics, etc.)",
-        "Entrance exam admit card and score sheet (if applicable)",
-        "School leaving certificate or equivalent",
-        "Category certificate (SC/ST/OBC, if applicable)",
-        "Photo ID (Aadhaar / Passport / Driving License)",
-        "Recent passport-size photographs (4-6)",
-      ];
-    } else if (program.level === "PG") {
-      return [
-        "Bachelor's degree original mark sheets and certificate",
-        "Relevant entrance exam scorecard (PGCET/GATE/CAT, if applicable)",
-        "Category certificate (SC/ST/OBC, if applicable)",
-        "Work experience certificate (if applicable)",
-        "Photo ID (Aadhaar / Passport / Driving License)",
-        "Recent passport-size photographs (4-6)",
-      ];
-    } else {
-      return [
-        "12th standard mark sheets and certificate",
-        "Entrance exam scorecard (as per program requirements)",
-        "Category certificate (if applicable)",
-        "Photo ID and recent photographs",
-      ];
-    }
-  };
-
   const eligibilityBullets = program.eligibilityPoints || parseEligibilityToBullets(program.eligibility);
-  const documentsRequired = program.documentsRequired || getDefaultDocuments();
 
   return (
     <Card
@@ -1984,17 +1953,6 @@ function ProgramCard({ program }: ProgramCardProps) {
               ))}
             </TableBody>
           </Table>
-        </div>
-
-        <div className="rounded-xl border border-blue-500/20 bg-blue-500/10 p-4">
-          <p className="text-xs uppercase tracking-wide font-semibold text-blue-600 mb-2">
-            📋 Documents Required
-          </p>
-          <ul className="list-disc space-y-1 pl-5 text-sm text-foreground">
-            {documentsRequired.map((doc, idx) => (
-              <li key={`${program.name}-doc-${idx}`}>{doc}</li>
-            ))}
-          </ul>
         </div>
 
         {program.scholarships && (
