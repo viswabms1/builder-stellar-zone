@@ -53,7 +53,7 @@ export default function About() {
           <img
             src={heroBgImage}
             alt="DSU Campus"
-            className="w-full h-full object-cover opacity-20"
+            className="w-full h-full object-cover"
             onError={(e) => {
               (e.currentTarget as HTMLImageElement).style.display = 'none';
             }}
