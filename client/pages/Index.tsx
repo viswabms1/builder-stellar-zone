@@ -1090,14 +1090,9 @@ export default function Index() {
                     </p>
 
                     {/* CTA indicator */}
-                    <div className="flex items-center justify-between pt-2 border-t border-foreground/10">
-                      <div className="flex items-center gap-2 text-brand-magenta opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform group-hover:translate-x-1">
-                        <ChevronRight className="w-3 h-3" />
-                        <span className="text-xs font-semibold">Details</span>
-                      </div>
-                      <span className="text-xs px-2 py-1 rounded-full bg-foreground/5 text-foreground/60 group-hover:bg-brand-magenta/20 group-hover:text-brand-magenta transition-all">
-                        {idx + 1}/{allPublications.length}
-                      </span>
+                    <div className="flex items-center gap-2 text-brand-magenta opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform group-hover:translate-x-1 pt-2 border-t border-foreground/10">
+                      <ChevronRight className="w-3 h-3" />
+                      <span className="text-xs font-semibold">View Details</span>
                     </div>
                   </div>
 
