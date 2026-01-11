@@ -305,15 +305,14 @@ export default function History() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              "Engineering",
-              "Dental Sciences",
-              "Biological Sciences",
-              "Pharmacy & Healthcare",
-              "Nursing & Allied Health",
-              "Arts & Sciences",
-              "Commerce & Management",
-              "Information Technology",
-              "Business Applications",
+              "School of Engineering",
+              "School of Health Sciences",
+              "School of Law",
+              "School of Commerce & Management",
+              "School of Applied Sciences",
+              "School of Design",
+              "School of Media & Communication",
+              "Computer Applications",
             ].map((discipline, index) => (
               <Card
                 key={index}
