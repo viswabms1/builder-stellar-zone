@@ -845,6 +845,15 @@ const schools: School[] = [
             notes: [
               "Dual specialization options covering Business Analytics, Finance, Marketing, HR, and Operations.",
             ],
+            documentsRequired: [
+              "Bachelor's degree original mark sheets and certificate",
+              "CAT / MAT / GMAT / PGCET scorecard (if applicable)",
+              "Category certificate (SC/ST/OBC, if applicable)",
+              "Work experience certificate (if applicable)",
+              "Passport-size photographs (6)",
+              "Photo ID (Aadhaar / Passport / Driving License)",
+              "Transcripts from previous institutions",
+            ],
           },
         ],
         footnotes: [
