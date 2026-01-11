@@ -367,13 +367,18 @@ function HeroSection() {
           <GraduationCap className="h-4 w-4" />
           Admissions 2025 – Now Open
         </div>
-        <h1 className={`mt-8 text-4xl font-bold leading-tight md:text-6xl ${
-          theme === "light" ? "text-orange-900" : "text-white"
-        }`}>
+        <h1
+          className={`mt-8 text-4xl font-bold leading-tight md:text-6xl ${
+            theme === "light" ? "text-orange-900" : "text-white"
+          }`}
+        >
           Your Path to AI-First Education
         </h1>
         <p className="mt-6 text-lg text-white md:text-xl">
-          Multiple admission pathways, flexible programs, and a Bengaluru-based advantage. 100% placements with industry partnerships. Choose your route: DSAT (merit + scholarships), Direct Admissions, PGCET, International, or Online.
+          Multiple admission pathways, flexible programs, and a Bengaluru-based
+          advantage. 100% placements with industry partnerships. Choose your
+          route: DSAT (merit + scholarships), Direct Admissions, PGCET,
+          International, or Online.
         </p>
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Button
@@ -421,12 +426,17 @@ function HeroSection() {
 function AdmissionRoutesSection() {
   const { theme } = useTheme();
   return (
-    <section className="bg-gradient-to-br from-orange-500/5 via-red-500/5 to-background px-3 py-8" id="choose-pathway">
+    <section
+      className="bg-gradient-to-br from-orange-500/5 via-red-500/5 to-background px-3 py-8"
+      id="choose-pathway"
+    >
       <div className="mx-auto max-w-6xl">
         <div className="mb-10 text-center">
-          <h2 className={`text-3xl font-bold md:text-4xl ${
-            theme === "light" ? "text-orange-900" : "text-white"
-          }`}>
+          <h2
+            className={`text-3xl font-bold md:text-4xl ${
+              theme === "light" ? "text-orange-900" : "text-white"
+            }`}
+          >
             Choose Your Admission Pathway
           </h2>
           <p className="mt-3 text-lg text-foreground">
@@ -488,21 +498,26 @@ function EssentialsSection() {
     <section className="px-3 py-8">
       <div className="mx-auto max-w-6xl">
         <div className="mb-10 text-center">
-          <h2 className={`text-3xl font-bold md:text-4xl ${
-            theme === "light" ? "text-orange-900" : "text-white"
-          }`}>
+          <h2
+            className={`text-3xl font-bold md:text-4xl ${
+              theme === "light" ? "text-orange-900" : "text-white"
+            }`}
+          >
             Essential Resources
           </h2>
           <p className="mt-3 text-lg text-foreground">
-            Quick access to the information you need at every stage of your admission journey.
+            Quick access to the information you need at every stage of your
+            admission journey.
           </p>
         </div>
 
         {/* Block 1: Decision-Critical */}
         <div className="mb-12">
-          <h3 className={`mb-6 text-xl font-bold ${
-            theme === "light" ? "text-orange-900" : "text-white"
-          }`}>
+          <h3
+            className={`mb-6 text-xl font-bold ${
+              theme === "light" ? "text-orange-900" : "text-white"
+            }`}
+          >
             📋 Decision-Critical
           </h3>
           <div className="grid gap-3 md:grid-cols-3">
@@ -514,9 +529,11 @@ function EssentialsSection() {
 
         {/* Block 2: Support & Planning */}
         <div className="mb-12">
-          <h3 className={`mb-6 text-xl font-bold ${
-            theme === "light" ? "text-orange-900" : "text-white"
-          }`}>
+          <h3
+            className={`mb-6 text-xl font-bold ${
+              theme === "light" ? "text-orange-900" : "text-white"
+            }`}
+          >
             🤝 Support & Planning
           </h3>
           <div className="grid gap-3 md:grid-cols-3">
@@ -528,9 +545,11 @@ function EssentialsSection() {
 
         {/* Block 3: Special Categories */}
         <div>
-          <h3 className={`mb-6 text-xl font-bold ${
-            theme === "light" ? "text-orange-900" : "text-white"
-          }`}>
+          <h3
+            className={`mb-6 text-xl font-bold ${
+              theme === "light" ? "text-orange-900" : "text-white"
+            }`}
+          >
             🌍 Special Categories
           </h3>
           <div className="grid gap-3 md:grid-cols-2">
@@ -587,13 +606,18 @@ function BrochureSection() {
     <section className="px-3 py-8 bg-gradient-to-br from-orange-500/5 via-red-500/5 to-background">
       <div className="mx-auto max-w-6xl">
         <div className="mb-10 text-center">
-          <h2 className={`text-3xl font-bold md:text-4xl ${
-            theme === "light" ? "text-orange-900" : "text-white"
-          }`}>
+          <h2
+            className={`text-3xl font-bold md:text-4xl ${
+              theme === "light" ? "text-orange-900" : "text-white"
+            }`}
+          >
             Program Guides & Brochures
           </h2>
           <p className="mt-3 text-lg text-foreground">
-            Download detailed brochures for every school and program. Each brochure lists eligibility, semester-wise credits, laboratory infrastructure, internship partners, and placement support milestones.
+            Download detailed brochures for every school and program. Each
+            brochure lists eligibility, semester-wise credits, laboratory
+            infrastructure, internship partners, and placement support
+            milestones.
           </p>
         </div>
         <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
@@ -636,9 +660,11 @@ function ContactSection() {
     <section className="px-3 py-8">
       <div className="mx-auto max-w-6xl space-y-10">
         <div className="text-center">
-          <h2 className={`text-3xl font-bold md:text-4xl ${
-            theme === "light" ? "text-orange-900" : "text-white"
-          }`}>
+          <h2
+            className={`text-3xl font-bold md:text-4xl ${
+              theme === "light" ? "text-orange-900" : "text-white"
+            }`}
+          >
             Connect with Our Admissions Team
           </h2>
           <p className="mt-3 text-lg text-foreground">
@@ -671,7 +697,9 @@ function ContactSection() {
                     </CardHeader>
                     <CardContent className="space-y-4 text-sm text-foreground">
                       <div>
-                        <p className="font-semibold text-foreground">Helpline</p>
+                        <p className="font-semibold text-foreground">
+                          Helpline
+                        </p>
                         <div className="mt-2 space-y-1">
                           {campus.phone.map((phone) => (
                             <p key={phone}>{phone}</p>
@@ -738,8 +766,8 @@ function ContactSection() {
               <Card className="border border-orange-500/20 bg-card/70 backdrop-blur-sm">
                 <CardHeader>
                   <CardDescription className="text-sm text-foreground">
-                    Connect with zonal coordinators and global offices for localized
-                    support.
+                    Connect with zonal coordinators and global offices for
+                    localized support.
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="grid gap-3 sm:grid-cols-2">
@@ -748,7 +776,9 @@ function ContactSection() {
                       key={item.region}
                       className="rounded-2xl border border-orange-500/20 bg-background/70 p-4 text-sm"
                     >
-                      <p className="font-semibold text-foreground">{item.region}</p>
+                      <p className="font-semibold text-foreground">
+                        {item.region}
+                      </p>
                       <p className="mt-1 text-foreground">{item.contact}</p>
                     </div>
                   ))}
@@ -775,9 +805,11 @@ function SupportCallout() {
           <Sparkles className="h-4 w-4" />
           Ready to Start Your DSU Journey?
         </div>
-        <h2 className={`mt-6 text-3xl font-bold md:text-4xl ${
-          theme === "light" ? "text-orange-900" : "text-foreground"
-        }`}>
+        <h2
+          className={`mt-6 text-3xl font-bold md:text-4xl ${
+            theme === "light" ? "text-orange-900" : "text-foreground"
+          }`}
+        >
           Personalized Counseling is Just a Call Away
         </h2>
         <p className="mt-4 text-lg text-foreground">
