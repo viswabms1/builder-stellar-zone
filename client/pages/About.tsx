@@ -84,16 +84,7 @@ export default function About() {
             A multidisciplinary university where legacy education meets industry-grade AI, research, and innovation.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-            <Link to="/about/history">
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-red-600 hover:to-orange-500 text-foreground px-8 py-6 text-lg font-semibold rounded-2xl"
-              >
-                Our Legacy
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
-            </Link>
+          <div className="flex justify-center mb-8">
             <a
               href="https://dsu.edu.in/virtual-tour/"
               target="_blank"
@@ -101,11 +92,11 @@ export default function About() {
               className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
               <Button
-                variant="outline"
                 size="lg"
-                className="border-2 border-transparent text-orange-500 hover:bg-transparent hover:text-orange-500 px-8 py-6 text-lg font-semibold rounded-2xl"
+                className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-red-600 hover:to-orange-500 text-foreground px-8 py-6 text-lg font-semibold rounded-2xl"
               >
                 Campus Tour
+                <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
             </a>
           </div>
