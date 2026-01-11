@@ -185,10 +185,10 @@ export default function EligibilityChecker() {
 
     eligibilityRules.forEach((rule) => {
       const isEducationMatch = rule.requiredEducation === education;
-      const areSubjectsMatch = areSubjectsMatching(rule.requiredSubjects, subjects);
+      const isSubjectMatch = rule.subjectRequirement === "Any" || rule.subjectRequirement === subjectRequirement;
       const isPercentageOk = parseFloat(percentage) >= rule.minimumPercentage(selectedCategory);
 
-      const isEligible = isEducationMatch && areSubjectsMatch && isPercentageOk;
+      const isEligible = isEducationMatch && isSubjectMatch && isPercentageOk;
 
       rule.applicablePrograms.forEach((program) => {
         const result = {
@@ -197,7 +197,7 @@ export default function EligibilityChecker() {
           isEligible,
           failureReason: getFailureReason(
             isEducationMatch,
-            areSubjectsMatch,
+            isSubjectMatch,
             isPercentageOk,
             rule.minimumPercentage(selectedCategory)
           ),
@@ -216,12 +216,6 @@ export default function EligibilityChecker() {
     });
 
     setResults({ eligible, notEligible });
-  };
-
-  const areSubjectsMatching = (requiredSubjects: string[], selectedSubjects: string[]): boolean => {
-    if (requiredSubjects.length === 0) return true;
-    if (selectedSubjects.length === 0) return true;
-    return requiredSubjects.some((req) => selectedSubjects.some((sel) => sel.includes(req)));
   };
 
   const getFailureReason = (
