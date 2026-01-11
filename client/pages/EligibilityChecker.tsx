@@ -287,6 +287,7 @@ export default function EligibilityChecker() {
               education={education as EducationLevel}
               onSelect={handleSubjectsSelect}
               subjectOptions={getSubjectOptions()}
+              selectedSubject={subjectRequirement as SubjectRequirement | ""}
             />
           )}
 
