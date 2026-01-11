@@ -286,27 +286,6 @@ export default function SimpleProgramLookup() {
                 </CardContent>
               </Card>
 
-              {selectedProgram.documentsRequired && selectedProgram.documentsRequired.length > 0 && (
-                <Card className="border-2 border-orange-500/20">
-                  <CardHeader>
-                    <div className="flex items-center gap-3">
-                      <FileText className="h-6 w-6 text-orange-500" />
-                      <CardTitle className="text-xl">Documents Required</CardTitle>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <ul className="space-y-2">
-                      {selectedProgram.documentsRequired.map((doc, idx) => (
-                        <li key={idx} className="flex items-start gap-2">
-                          <CheckCircle2 className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
-                          <span className="text-foreground">{doc}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </CardContent>
-                </Card>
-              )}
-
               <div className="flex gap-3">
                 <Button
                   onClick={() => setSelectedProgram(null)}
