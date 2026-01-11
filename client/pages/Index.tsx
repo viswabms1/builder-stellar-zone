@@ -1116,20 +1116,19 @@ export default function Index() {
       </section>
 
       {/* CTA Section */}
-      <section className="px-3 py-10 relative">
+      <section className="px-3 py-6 md:py-10 relative">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="bg-gradient-to-r from-brand-magenta/10 via-brand-orange/10 to-brand-blue/10 rounded-3xl p-12 border border-brand-magenta/20">
+          <div className="bg-gradient-to-r from-brand-magenta/10 via-brand-orange/10 to-brand-blue/10 rounded-3xl p-8 md:p-12 border border-brand-magenta/20">
             <h2 className="headline-2 mb-6">
               Ready to
               <span className="bg-brand-gradient bg-clip-text text-transparent">
                 {" "}
-                Begin Your Journey
+                Build Your Future with AI
               </span>
               ?
             </h2>
             <p className="subheadline text-foreground mb-8 max-w-2xl mx-auto font-display">
-              Join thousands of students who've chosen DSU for their academic
-              and personal growth.
+              Join a university where AI is integrated across academics, research, and campus innovation.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
@@ -1142,14 +1141,14 @@ export default function Index() {
                   size="lg"
                   className="bg-brand-gradient hover:opacity-90 hover:shadow-lg hover:shadow-brand-magenta/25 text-foreground px-12 py-6 text-lg font-semibold font-display rounded-2xl transition-all duration-300 group"
                 >
-                  Apply Now
+                  Apply for 2025 Admissions
                   <GraduationCap className="w-5 h-5 ml-2 group-hover:rotate-12 transition-transform" />
                 </Button>
               </a>
             </div>
 
             <div className="flex flex-wrap justify-center gap-2">
-              {["Merit Scholarships Available", "Industry Partnerships"].map(
+              {["Merit-Based Scholarships Available", "Industry-Aligned Curriculum & Partnerships"].map(
                 (badge, index) => (
                   <Badge
                     key={index}
