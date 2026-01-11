@@ -83,7 +83,7 @@ export default function About() {
             </span>
           </h1>
 
-          <p className="text-xl md:text-2xl text-foreground mb-6 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl font-bold text-white mb-6 max-w-4xl mx-auto leading-relaxed">
             A multidisciplinary university where legacy education meets industry-grade AI, research, and innovation.
           </p>
 
