@@ -931,9 +931,11 @@ export default function Index() {
                 Research Publications
               </span>
             </h2>
-            <p className="subheadline text-foreground max-w-2xl mx-auto font-display">
-              Discover cutting-edge research and academic insights from our top
-              scholars across multiple disciplines
+            <p className="subheadline text-foreground max-w-2xl mx-auto font-display mb-4">
+              Showcasing high-impact, interdisciplinary research across AI, materials science, energy, and health
+            </p>
+            <p className="text-xs font-semibold text-brand-magenta/80 tracking-wide">
+              Spanning Scopus-indexed research in AI, materials science, renewable energy, and biomedical innovation
             </p>
           </div>
 
