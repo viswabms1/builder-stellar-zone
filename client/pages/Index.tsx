@@ -538,12 +538,13 @@ export default function Index() {
     },
   ];
 
-  // All featured news items for rotation
+  // Featured news carousel - curated to showcase institutional momentum
+  // Purpose: Major Institutional Events, Student/Research Breakthroughs, Flagship Campus Moments
   const allFeaturedNews = [
     {
       image:
         "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fbf6a54aff7814535b71eda78a3d5f95e?format=webp&width=800",
-      category: "Aerospace",
+      category: "Achievement",
       title: "DSU-MAK III Soars High at IN-SPACe Model Rocketry Finale",
       excerpt:
         "Our student-built rocket successfully achieves 1200.77m apogee and safe recovery, marking a triumph of innovation and technical mastery in aerospace engineering.",
@@ -552,43 +553,9 @@ export default function Index() {
     },
     {
       image:
-        "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Ff67a08f95a24431783dc54fc189e605b?format=webp&width=800",
-      category: "Leadership",
-      title: "DSU at 34th Elets World Education Summit 2025",
-      excerpt:
-        "Dr. Prakash Sheelvanthmath discusses Digital Transformation in Higher Education: Smart Campuses and Online Learning with national education leaders.",
-      date: "Nov 5, 2025",
-      color: "brand-blue",
-    },
-    {
-      image:
-        "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2Fd56a1c898842468187e8ff3260f0cdda?alt=media&token=6cb58cdf-a202-461d-b774-09ce61d439c3&apiKey=4aa279a8430d441dba9c55f659831878",
-      isVideo: true,
-      poster:
-        "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F85cbfdbb2c9047f0b769200939941be9?format=webp&width=800",
-      category: "Events",
-      title: "TEDxDSU Returns for Second Edition 2025",
-      excerpt:
-        "Join us on November 7th for inspiring talks and transformative ideas at TEDxDSU 2025.",
-      date: "Nov 7, 2025",
-      color: "brand-magenta",
-    },
-    {
-      image:
-        "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2Fee8dd0baa1344765ab26d165e6fc0acc?alt=media&token=37176f13-60ee-4bee-a61c-eff7b954b9a4&apiKey=4aa279a8430d441dba9c55f659831878",
-      isVideo: true,
-      category: "Research",
-      title: "Centre for Space Science & Technology",
-      excerpt:
-        "State-of-the-art satellite programme with ISO-08 cleanroom, mechanical lab, and ground station. Where ideas take shape and reach for the sky.",
-      date: "Oct 26, 2023",
-      color: "brand-blue",
-    },
-    {
-      image:
         "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F8ee07440d90c4bd685e8ec8da486df8d?alt=media&token=38c290b6-91a4-4825-a4c8-068661623f55&apiKey=4aa279a8430d441dba9c55f659831878",
       isVideo: true,
-      category: "Campus Life",
+      category: "Milestone",
       title:
         "9th Convocation at DSU: A Day of Reflection, Gratitude, and Pride",
       excerpt:
@@ -598,12 +565,15 @@ export default function Index() {
     },
     {
       image:
-        "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fca407f1fd5994b25a3cdb4b5e18e66b6?format=webp&width=800",
-      category: "International Relations",
-      title: "A Calm November Morning Welcomes the Gentle Charm of Tibet",
+        "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2Fd56a1c898842468187e8ff3260f0cdda?alt=media&token=6cb58cdf-a202-461d-b774-09ce61d439c3&apiKey=4aa279a8430d441dba9c55f659831878",
+      isVideo: true,
+      poster:
+        "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F85cbfdbb2c9047f0b769200939941be9?format=webp&width=800",
+      category: "Event",
+      title: "TEDxDSU Returns for Second Edition 2025",
       excerpt:
-        "DSU hosts distinguished guests from Tibet, fostering cultural exchange and international academic collaboration.",
-      date: "Nov 8, 2025",
+        "Join us on November 7th for inspiring talks and transformative ideas at TEDxDSU 2025.",
+      date: "Nov 7, 2025",
       color: "brand-blue",
     },
   ];
