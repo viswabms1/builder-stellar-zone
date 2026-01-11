@@ -58,6 +58,7 @@ export default function About() {
               (e.currentTarget as HTMLImageElement).style.display = 'none';
             }}
           />
+          <div className="absolute inset-0 bg-black/40"></div>
         </div>
 
         <div className="absolute inset-0 overflow-hidden">
