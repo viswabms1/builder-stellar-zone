@@ -21,8 +21,8 @@ const admissionSliderItems: CarouselItem[] = [
   },
   {
     image: "https://www.dsu.edu.in/cache/resized/a4359bd05fb868287dc18844ac2ffd9f.jpg",
-    title: "PGCET & DSAT",
-    description: "School of Commerce and Management Studies welcomes full-time MBA students from DSAT & PGCET",
+    title: "PGCET Admissions",
+    description: "School of Commerce and Management Studies welcomes full-time MBA students from PGCET",
   },
   {
     image: "https://www.dsu.edu.in/cache/resized/8a4ad3ecd59ce31c851a7b2cf20ecda6.jpg",
