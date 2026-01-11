@@ -21,7 +21,6 @@ import {
   GraduationCap,
   IndianRupee,
   FileText,
-  Search,
   Filter,
 } from "lucide-react";
 import { schools } from "./Eligibility";
