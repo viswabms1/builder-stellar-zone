@@ -137,12 +137,29 @@ export default function EligibilityChecker() {
     setStep(2);
   };
 
-  const getSubjectOptions = (): { [key in EducationLevel]: string[] } => {
+  const getSubjectOptions = (): { [key in EducationLevel]: { label: string; value: SubjectRequirement }[] } => {
     return {
-      "10+2": ["Physics, Chemistry, Mathematics (PCM)", "Physics, Chemistry, Biology (PCB)", "Commerce Subjects", "Arts/Humanities"],
-      "Bachelor's": ["Engineering/CSE", "Commerce", "Science", "Arts/Humanities"],
-      "Master's": ["Engineering", "Science", "Commerce", "Law"],
-      "Law": ["Law"],
+      "10+2": [
+        { label: "Physics, Chemistry, Mathematics (PCM)", value: "PCM" },
+        { label: "Physics, Chemistry, Biology (PCB)", value: "PCB" },
+        { label: "Commerce Subjects", value: "Commerce" },
+        { label: "Arts/Humanities", value: "Arts" },
+      ],
+      "Bachelor's": [
+        { label: "Engineering/CSE", value: "Engineering" },
+        { label: "Commerce", value: "Commerce" },
+        { label: "Science", value: "Science" },
+        { label: "Arts/Humanities", value: "Arts" },
+      ],
+      "Master's": [
+        { label: "Engineering", value: "Engineering" },
+        { label: "Science", value: "Science" },
+        { label: "Life Sciences", value: "Life Sciences" },
+        { label: "Commerce", value: "Commerce" },
+      ],
+      "Law": [
+        { label: "Law", value: "Law" },
+      ],
     };
   };
 
