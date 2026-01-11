@@ -163,8 +163,8 @@ export default function EligibilityChecker() {
     };
   };
 
-  const handleSubjectsSelect = (subs: string[]) => {
-    setSubjects(subs);
+  const handleSubjectsSelect = (sub: SubjectRequirement) => {
+    setSubjectRequirement(sub);
     setStep(3);
   };
 
