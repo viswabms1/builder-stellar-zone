@@ -593,32 +593,20 @@ export default function NVIDIAArchitecture() {
 
             <Card className="border-border/50 bg-gradient-to-br from-green-500/10 to-green-500/5 backdrop-blur hover:border-green-500/50 transition-all">
               <CardHeader>
-                <CardTitle className="flex items-center gap-3 text-2xl mb-4">
-                  <Rocket className="w-8 h-8 text-green-500" />
-                  Your Competitive Advantage
-                </CardTitle>
+                <CardTitle className="text-2xl mb-6">Your Competitive Advantage</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="flex items-start gap-3">
-                  <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
-                  <div>
-                    <p className="font-semibold text-foreground mb-1">Immediate Job Readiness</p>
-                    <p className="text-sm text-foreground/70">While peers are learning tools on the job, you're already proficient—hiring managers value candidates who can contribute on day one</p>
-                  </div>
+              <CardContent className="space-y-6">
+                <div>
+                  <p className="font-bold text-lg text-foreground mb-2">Immediate Job Readiness</p>
+                  <p className="text-sm text-foreground/70">While peers are learning tools on the job, you're already proficient—hiring managers value candidates who can contribute from day one</p>
                 </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
-                  <div>
-                    <p className="font-semibold text-foreground mb-1">Higher Salaries</p>
-                    <p className="text-sm text-foreground/70">NVIDIA-certified and GPU-experienced engineers command 20-40% higher salaries in the AI industry</p>
-                  </div>
+                <div>
+                  <p className="font-bold text-lg text-foreground mb-2">Higher Compensation</p>
+                  <p className="text-sm text-foreground/70">NVIDIA-certified and GPU-experienced engineers often command significantly higher compensation in the AI industry</p>
                 </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
-                  <div>
-                    <p className="font-semibold text-foreground mb-1">Exclusive Opportunities</p>
-                    <p className="text-sm text-foreground/70">Top-tier AI companies (Google Brain, Meta AI, NVIDIA, Anthropic) actively recruit from universities with advanced GPU infrastructure</p>
-                  </div>
+                <div>
+                  <p className="font-bold text-lg text-foreground mb-2">Exclusive Opportunities</p>
+                  <p className="text-sm text-foreground/70">Leading AI companies such as Google, Meta, Microsoft, and others actively recruit from universities with advanced GPU infrastructure</p>
                 </div>
               </CardContent>
             </Card>
