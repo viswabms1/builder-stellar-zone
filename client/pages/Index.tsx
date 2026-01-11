@@ -922,7 +922,7 @@ export default function Index() {
       </section>
 
       {/* DSU Publications Section */}
-      <section className="px-3 py-10 bg-gradient-to-b from-brand-magenta/5 via-brand-blue/5 to-transparent">
+      <section className="px-3 py-10 bg-gradient-to-b from-white/5 via-white/10 to-transparent">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 mb-6">
