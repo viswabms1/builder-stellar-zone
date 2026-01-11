@@ -1660,6 +1660,7 @@ function App() {
                 <Route path="/eligibility" element={<Eligibility />} />
                 <Route path="/eligibility-checker" element={<EligibilityChecker />} />
                 <Route path="/engineering-eligibility" element={<SchoolOfEngineeringEligibility />} />
+                <Route path="/program-lookup" element={<SimpleProgramLookup />} />
                 <Route path="/placements" element={<Placements />} />
                 <Route path="/careers" element={<Careers />} />
                 <Route path="/campus-life" element={<CampusLife />} />
