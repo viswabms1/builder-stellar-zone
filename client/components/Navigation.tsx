@@ -388,20 +388,20 @@ export default function Navigation() {
     <>
       {/* Top Menu Bar - Hidden on Mobile */}
       <div
-        className={`sticky top-0 z-[9998] transition-all duration-300 hidden lg:block ${
+        className={`sticky top-0 z-[9998] transition-all duration-300 hidden xl:block ${
           theme === "light"
             ? "bg-gradient-to-r from-orange-50 to-white border-b-2 border-orange-200/50"
             : "bg-gradient-to-r from-slate-900 to-slate-950 border-b-2 border-orange-600/30"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between gap-4">
+        <div className="max-w-[1400px] mx-auto px-6 py-3.5 flex items-center justify-between gap-3">
           {/* All Top Menu Items in one continuous row */}
-          <div className="flex items-center gap-2 flex-nowrap">
+          <div className="flex items-center gap-1.5 flex-nowrap overflow-x-auto scrollbar-hide">
             {topMenuItems.map((item, idx) => (
               <Link
                 key={idx}
                 to={item.href}
-                className={`text-sm font-medium transition-all duration-200 whitespace-nowrap px-3 py-2 rounded-lg hover:scale-105 ${
+                className={`text-sm font-medium transition-all duration-200 whitespace-nowrap px-3 py-2 rounded-lg hover:scale-105 flex-shrink-0 ${
                   theme === "light"
                     ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
                     : "text-white/80 hover:text-white hover:bg-white/10"
@@ -414,7 +414,7 @@ export default function Navigation() {
               href="https://ums.mydsi.org/Login.aspx/DSU"
               target="_blank"
               rel="noopener noreferrer"
-              className={`text-sm font-medium transition-all duration-200 whitespace-nowrap px-3 py-2 rounded-lg hover:scale-105 ${
+              className={`text-sm font-medium transition-all duration-200 whitespace-nowrap px-3 py-2 rounded-lg hover:scale-105 flex-shrink-0 ${
                 theme === "light"
                   ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
                   : "text-white/80 hover:text-white hover:bg-white/10"
@@ -434,7 +434,7 @@ export default function Navigation() {
 
       {/* Main Navigation Bar */}
       <nav
-        className={`sticky top-0 lg:top-[56px] z-[9997] transition-all duration-300 overflow-visible shadow-md ${
+        className={`sticky top-0 xl:top-[62px] z-[9997] transition-all duration-300 overflow-visible shadow-md ${
           theme === "light"
             ? "bg-white/95 backdrop-blur-sm border-b-2 border-orange-200/50"
             : "bg-slate-950/95 backdrop-blur-sm border-b-2 border-orange-600/30"
