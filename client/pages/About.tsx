@@ -105,7 +105,7 @@ export default function About() {
           </div>
 
           {/* Metrics Connector */}
-          <p className="text-lg text-foreground/80 mb-8 max-w-4xl mx-auto">
+          <p className="text-lg font-bold text-white mb-8 max-w-4xl mx-auto">
             A legacy built on scale, trust, and academic excellence
           </p>
 
