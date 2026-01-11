@@ -1145,28 +1145,60 @@ const schools: School[] = [
     ],
   },
   {
-    name: "School of Design",
+    name: "School of Design & Digital Trans-Media",
     tagline:
-      "Studio-based design program with immersive projects in product, UX, and visual storytelling.",
+      "Yearly fee structure 2026-27 for studio-based design programs with immersive projects in product, UX, animation, and game design.",
     icon: PenTool,
     categories: [
       {
-        title: "Undergraduate Program",
+        title: "Undergraduate Programs (4 Years Duration)",
+        description:
+          "Students with a minimum of 50% in Class XII from Science, Commerce, Arts, and Humanities.",
         programs: [
           {
-            name: "B.Design",
+            name: "B.Design : Product Design",
             level: "UG",
+            duration: "4 Years",
             eligibility:
-              "50% aggregate in Class XII from Science, Commerce, or Arts streams. Portfolio review and design aptitude assessment are part of the selection process.",
+              "Students with a minimum of 50% in Class XII from Science, Commerce, Arts, and Humanities.",
             fees: [
-              { label: "Tuition Fee (Annual)", amount: "₹2,07,000" },
-              { label: "Other Fees & Studio Resources", amount: "₹45,000" },
-              { label: "Total (Incl. Library Deposit)", amount: "₹2,52,000" },
-            ],
-            notes: [
-              "Access to design studios, fabrication labs, and collaborative projects with industry partners.",
+              { label: "Total Fees", amount: "₹3,02,000" },
             ],
           },
+          {
+            name: "B.Design : User Experience Design",
+            level: "UG",
+            duration: "4 Years",
+            eligibility:
+              "Students with a minimum of 50% in Class XII from Science, Commerce, Arts, and Humanities.",
+            fees: [
+              { label: "Total Fees", amount: "₹3,02,000" },
+            ],
+          },
+          {
+            name: "B.Design : Animation and VFX",
+            level: "UG",
+            duration: "4 Years",
+            eligibility:
+              "Students with a minimum of 50% in Class XII from Science, Commerce, Arts, and Humanities.",
+            fees: [
+              { label: "Total Fees", amount: "₹3,02,000" },
+            ],
+          },
+          {
+            name: "B.Design : Game Design",
+            level: "UG",
+            duration: "4 Years",
+            eligibility:
+              "Students with a minimum of 50% in Class XII from Science, Commerce, Arts, and Humanities.",
+            fees: [
+              { label: "Total Fees", amount: "₹3,02,000" },
+            ],
+          },
+        ],
+        footnotes: [
+          "Fee structure reflects the 2026-27 academic year. All fees shown are annual totals.",
+          "Access to design studios, fabrication labs, and collaborative projects with industry partners.",
         ],
       },
     ],
