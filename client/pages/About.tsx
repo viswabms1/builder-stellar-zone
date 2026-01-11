@@ -70,12 +70,6 @@ export default function About() {
         </div>
 
         <div className="relative max-w-7xl mx-auto px-3 text-center">
-          <div className="inline-flex items-center px-4 py-2 bg-brand-orange/10 rounded-full border border-brand-orange/20 mb-8">
-            <Building className="w-4 h-4 text-brand-orange mr-2" />
-            <span className="text-sm font-medium text-brand-orange">
-              Established 2008 | Legacy since 1960s
-            </span>
-          </div>
 
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight text-white">
             Building India's AI-First Academic Ecosystem
