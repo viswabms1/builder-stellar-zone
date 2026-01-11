@@ -1208,123 +1208,123 @@ const schools: School[] = [
 const brochureResources: BrochureResource[] = [
   {
     title: "B.Tech Computer Science & Technology (CST)",
-    href: "https://www.dsu.edu.in/images/Admission/brochures/2026/btech_cst_brochure_2026.pdf",
+    href: "https://www.dsu.edu.in/images/Admission/brochures/2026/btech_cst_brochure.pdf",
   },
   {
     title: "B.Tech Computer Science Engineering (CSE)",
-    href: "https://www.dsu.edu.in/images/Admission/brochures/2026/btech_cse_brochure_2026.pdf",
+    href: "https://www.dsu.edu.in/images/Admission/brochures/2026/btech_cse_brochure.pdf",
   },
   {
     title: "B.Tech CSE (Artificial Intelligence)",
-    href: "https://www.dsu.edu.in/images/Admission/brochures/2026/btech_cse_ai_brochure_2026.pdf",
+    href: "https://www.dsu.edu.in/images/Admission/brochures/2026/btech_cse_ai_brochure.pdf",
   },
   {
     title: "B.Tech CSE (Data Science)",
-    href: "https://www.dsu.edu.in/images/Admission/brochures/2026/btech_cse_ds_brochure_2026.pdf",
+    href: "https://www.dsu.edu.in/images/Admission/brochures/2026/btech_cse_ds_brochure.pdf",
   },
   {
     title: "B.Tech CSE (AI & ML)",
-    href: "https://www.dsu.edu.in/images/Admission/brochures/2026/btech_cse_aiml_brochure_2026.pdf",
+    href: "https://www.dsu.edu.in/images/Admission/brochures/2026/btech_cse_aiml_brochure.pdf",
   },
   {
     title: "B.Tech Artificial Intelligence & Robotics",
-    href: "https://www.dsu.edu.in/images/Admission/brochures/2026/btech_ai_robotics_brochure_2026.pdf",
+    href: "https://www.dsu.edu.in/images/Admission/brochures/2026/btech_ai_robotics_brochure.pdf",
   },
   {
     title: "B.Tech Electronics & Communication Engineering",
-    href: "https://www.dsu.edu.in/images/Admission/brochures/2026/btech_ece_brochure_2026.pdf",
+    href: "https://www.dsu.edu.in/images/Admission/brochures/2026/btech_ece_brochure.pdf",
   },
   {
     title: "B.Tech Mechanical Engineering",
-    href: "https://www.dsu.edu.in/images/Admission/brochures/2026/btech_mechanical_brochure_2026.pdf",
+    href: "https://www.dsu.edu.in/images/Admission/brochures/2026/btech_mechanical_brochure.pdf",
   },
   {
     title: "B.Tech Aerospace Engineering",
-    href: "https://www.dsu.edu.in/images/Admission/brochures/2026/btech_aerospace_brochure_2026.pdf",
+    href: "https://www.dsu.edu.in/images/Admission/brochures/2026/btech_aerospace_brochure.pdf",
   },
   {
     title: "B.Tech Cyber Security",
-    href: "https://www.dsu.edu.in/images/Admission/brochures/2026/btech_cybersecurity_brochure_2026.pdf",
+    href: "https://www.dsu.edu.in/images/Admission/brochures/2026/btech_cybersecurity_brochure.pdf",
   },
   {
     title: "M.Tech Artificial Intelligence & Data Science",
-    href: "https://www.dsu.edu.in/images/Admission/brochures/2026/mtech_ai_ds_brochure_2026.pdf",
+    href: "https://www.dsu.edu.in/images/Admission/brochures/2026/mtech_ai_ds_brochure.pdf",
   },
   {
     title: "M.Tech Computer Science Engineering",
-    href: "https://www.dsu.edu.in/images/Admission/brochures/2026/mtech_cse_brochure_2026.pdf",
+    href: "https://www.dsu.edu.in/images/Admission/brochures/2026/mtech_cse_brochure.pdf",
   },
   {
     title: "M.Tech Design Engineering",
-    href: "https://www.dsu.edu.in/images/Admission/brochures/2026/mtech_design_brochure_2026.pdf",
+    href: "https://www.dsu.edu.in/images/Admission/brochures/2026/mtech_design_brochure.pdf",
   },
   {
     title: "BBA (Bachelor of Business Administration)",
-    href: "https://www.dsu.edu.in/images/Admission/brochures/2026/bba_brochure_2026.pdf",
+    href: "https://www.dsu.edu.in/images/Admission/brochures/2026/bba_brochure.pdf",
   },
   {
     title: "MBA (Master of Business Administration)",
-    href: "https://www.dsu.edu.in/images/Admission/brochures/2026/mba_brochure_2026.pdf",
+    href: "https://www.dsu.edu.in/images/Admission/brochures/2026/mba_brochure.pdf",
   },
   {
     title: "B.Com (General)",
-    href: "https://www.dsu.edu.in/images/Admission/brochures/2026/bcom_brochure_2026.pdf",
+    href: "https://www.dsu.edu.in/images/Admission/brochures/2026/bcom_brochure.pdf",
   },
   {
     title: "B.Com (Honours)",
-    href: "https://www.dsu.edu.in/images/Admission/brochures/2026/bcom_honours_brochure_2026.pdf",
+    href: "https://www.dsu.edu.in/images/Admission/brochures/2026/bcom_honours_brochure.pdf",
   },
   {
     title: "BCA (Bachelor of Computer Applications)",
-    href: "https://www.dsu.edu.in/images/Admission/brochures/2026/bca_brochure_2026.pdf",
+    href: "https://www.dsu.edu.in/images/Admission/brochures/2026/bca_brochure.pdf",
   },
   {
     title: "MCA (Master of Computer Applications)",
-    href: "https://www.dsu.edu.in/images/Admission/brochures/2026/mca_brochure_2026.pdf",
+    href: "https://www.dsu.edu.in/images/Admission/brochures/2026/mca_brochure.pdf",
   },
   {
     title: "B.Sc Computer Science",
-    href: "https://www.dsu.edu.in/images/Admission/brochures/2026/bsc_cs_brochure_2026.pdf",
+    href: "https://www.dsu.edu.in/images/Admission/brochures/2026/bsc_cs_brochure.pdf",
   },
   {
     title: "B.Sc Data Science",
-    href: "https://www.dsu.edu.in/images/Admission/brochures/2026/bsc_ds_brochure_2026.pdf",
+    href: "https://www.dsu.edu.in/images/Admission/brochures/2026/bsc_ds_brochure.pdf",
   },
   {
     title: "M.Sc Data Science",
-    href: "https://www.dsu.edu.in/images/Admission/brochures/2026/msc_ds_brochure_2026.pdf",
+    href: "https://www.dsu.edu.in/images/Admission/brochures/2026/msc_ds_brochure.pdf",
   },
   {
     title: "BA Journalism & Mass Communication",
-    href: "https://www.dsu.edu.in/images/Admission/brochures/2026/ba_jmc_brochure_2026.pdf",
+    href: "https://www.dsu.edu.in/images/Admission/brochures/2026/ba_jmc_brochure.pdf",
   },
   {
     title: "B.Design",
-    href: "https://www.dsu.edu.in/images/Admission/brochures/2026/bdesign_brochure_2026.pdf",
+    href: "https://www.dsu.edu.in/images/Admission/brochures/2026/bdesign_brochure.pdf",
   },
   {
     title: "B.Sc Nursing",
-    href: "https://www.dsu.edu.in/images/Admission/brochures/2026/bsc_nursing_brochure_2026.pdf",
+    href: "https://www.dsu.edu.in/images/Admission/brochures/2026/bsc_nursing_brochure.pdf",
   },
   {
     title: "Post Basic B.Sc Nursing",
-    href: "https://www.dsu.edu.in/images/Admission/brochures/2026/post_basic_bsc_nursing_brochure_2026.pdf",
+    href: "https://www.dsu.edu.in/images/Admission/brochures/2026/post_basic_bsc_nursing_brochure.pdf",
   },
   {
     title: "M.Sc Nursing",
-    href: "https://www.dsu.edu.in/images/Admission/brochures/2026/msc_nursing_brochure_2026.pdf",
+    href: "https://www.dsu.edu.in/images/Admission/brochures/2026/msc_nursing_brochure.pdf",
   },
   {
     title: "Bachelor of Physiotherapy (BPT)",
-    href: "https://www.dsu.edu.in/images/Admission/brochures/2026/bpt_brochure_2026.pdf",
+    href: "https://www.dsu.edu.in/images/Admission/brochures/2026/bpt_brochure.pdf",
   },
   {
     title: "Master of Physiotherapy (MPT)",
-    href: "https://www.dsu.edu.in/images/Admission/brochures/2026/mpt_brochure_2026.pdf",
+    href: "https://www.dsu.edu.in/images/Admission/brochures/2026/mpt_brochure.pdf",
   },
   {
     title: "B.Pharm",
-    href: "https://www.dsu.edu.in/images/Admission/brochures/2026/bpharm_brochure_2026.pdf",
+    href: "https://www.dsu.edu.in/images/Admission/brochures/2026/bpharm_brochure.pdf",
   },
 ];
 
