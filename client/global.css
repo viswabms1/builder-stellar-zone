@@ -425,6 +425,37 @@
     }
   }
 
+  /* Tablet portrait specific - improve top menu visibility */
+  @media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+    /* Reduce top menu font size for better fit */
+    .sticky.top-0.z-50.hidden.sm\:block .hidden.sm\:flex.items-center.gap-3 {
+      gap: 2px !important;
+      flex-wrap: wrap;
+    }
+
+    .sticky.top-0.z-50.hidden.sm\:block .hidden.sm\:flex.items-center.gap-3 a {
+      font-size: 11px !important;
+      padding: 0 4px !important;
+      white-space: nowrap;
+    }
+
+    /* Make right side items more compact */
+    .sticky.top-0.z-50.hidden.sm\:block .flex.items-center.gap-3 {
+      gap: 2px !important;
+    }
+
+    .sticky.top-0.z-50.hidden.sm\:block .flex.items-center.gap-3 a,
+    .sticky.top-0.z-50.hidden.sm\:block .flex.items-center.gap-3 button {
+      font-size: 11px !important;
+      padding: 0 4px !important;
+    }
+
+    /* Reduce vertical padding of top menu */
+    .sticky.top-0.z-50.hidden.sm\:block > div {
+      padding: 0.5rem 0.75rem !important;
+    }
+  }
+
   /* Ensure mute button works on all devices */
   button[aria-label*="Mute"],
   button[aria-label*="Unmute"] {
