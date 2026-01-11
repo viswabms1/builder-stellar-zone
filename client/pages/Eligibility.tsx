@@ -53,6 +53,7 @@ type FeeDetail = {
 type Program = {
   name: string;
   level: "UG" | "PG" | "Professional";
+  duration?: string;
   eligibility: string;
   fees: FeeDetail[];
   specializations?: string[];
@@ -101,110 +102,271 @@ const schools: School[] = [
   {
     name: "School of Engineering",
     tagline:
-      "Yearly fee structure 2025-26 with DSAT, Comed-K, Uni-GAUGE, CET, and direct admission pathways.",
+      "Yearly fee structure 2026-27 with CET, JEE Mains / Uniguage / Comed-K ranking-based, and direct admission pathways.",
     icon: Layers,
     categories: [
       {
-        title: "Undergraduate Programs",
+        title: "Undergraduate Programs (4 Years Duration)",
         description:
-          "All B.Tech applicants must qualify with Physics and Mathematics alongside a science or technical elective, achieving 45% aggregate (40% for SC/ST & OBC).",
+          "Pass in PUC / 10+2 examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry / Biotechnology / Biology / Computer Science / Electronics / Technical Vocational subjects and obtained at least 45% marks (40% in case of candidate belonging to SC/ST & OBC category) in the above subjects taken together.",
         programs: [
           {
-            name: "B.Tech - Computer Science & Engineering",
+            name: "B.Tech Computer Science & Engineering",
             level: "UG",
-            specializations: [
-              "Computer Science & Engineering",
-              "Computer Science & Engineering (Data Sciences)",
-              "Computer Science & Engineering (Cyber Security)",
-              "Computer Science & Engineering (Artificial Intelligence and Machine Learning)",
-              "Computer Science & Engineering (AI & Data Science)",
-              "Computer Science and Medical Engineering",
-              "AI & Robotics",
-              "Computer Science & Technology",
-            ],
+            duration: "4 Years",
             eligibility:
-              "Pass in PUC / 10+2 examination with Physics and Mathematics as compulsory subjects along with Chemistry / Biotechnology / Biology / Computer Science / Electronics / Technical Vocational subjects, securing at least 45% marks (40% for SC/ST & OBC).",
+              "Pass in PUC / 10+2 examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry / Biotechnology / Biology / Computer Science / Electronics / Technical Vocational subjects and obtained at least 45% marks (40% in case of candidate belonging to SC/ST & OBC category) in the above subjects taken together.",
             fees: [
-              { label: "Tuition Fee (Annual)", amount: "₹3,92,000" },
-              { label: "Total (Incl. Library Deposit)", amount: "₹4,72,000" },
-            ],
-            notes: [
-              "Applicable for DSAT, Comed-K (Code: E182), Uni-GAUGE (Code: UNI-010), CET (Code: DSU-E240), PGCET lateral entry, and direct counseling.",
-              "Merit-based scholarships and DSAT performance incentives are available for top-ranking applicants.",
+              { label: "CET - Total Fee", amount: "Not Available" },
+              { label: "Ranking Based (JEE Mains/Uniguage/Comed-K)", amount: "₹4,12,000" },
+              { label: "Others - Total Fee", amount: "₹4,92,000" },
             ],
           },
           {
-            name: "B.Tech - Core Engineering Streams",
+            name: "B.Tech Computer Science & Engineering (Artificial Intelligence & Machine Learning)",
             level: "UG",
-            specializations: [
-              "Electronics & Communication Engineering",
-              "Mechanical Engineering",
-              "Aerospace Engineering",
-            ],
+            duration: "4 Years",
             eligibility:
-              "Pass in PUC / 10+2 with Physics, Mathematics, and one science / technical elective with a minimum of 45% aggregate (40% for SC/ST & OBC).",
+              "Pass in PUC / 10+2 examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry / Biotechnology / Biology / Computer Science / Electronics / Technical Vocational subjects and obtained at least 45% marks (40% in case of candidate belonging to SC/ST & OBC category) in the above subjects taken together.",
             fees: [
-              { label: "Tuition Fee (Annual)", amount: "₹3,02,000" },
-              { label: "Total (Incl. Library Deposit)", amount: "₹3,92,000" },
+              { label: "CET - Total Fee", amount: "Not Available" },
+              { label: "Ranking Based (JEE Mains/Uniguage/Comed-K)", amount: "₹4,35,000" },
+              { label: "Others - Total Fee", amount: "₹5,25,000" },
             ],
-            notes: [
-              "Admissions supported through DSAT merit, Comed-K counseling, Uni-GAUGE, CET seat allotments, and institutional quota.",
+          },
+          {
+            name: "B.Tech Computer Science & Engineering (Data Science)",
+            level: "UG",
+            duration: "4 Years",
+            eligibility:
+              "Pass in PUC / 10+2 examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry / Biotechnology / Biology / Computer Science / Electronics / Technical Vocational subjects and obtained at least 45% marks (40% in case of candidate belonging to SC/ST & OBC category) in the above subjects taken together.",
+            fees: [
+              { label: "CET - Total Fee", amount: "Not Available" },
+              { label: "Ranking Based (JEE Mains/Uniguage/Comed-K)", amount: "₹4,12,000" },
+              { label: "Others - Total Fee", amount: "₹4,92,000" },
+            ],
+          },
+          {
+            name: "B.Tech Computer Science & Engineering (Cyber Security)",
+            level: "UG",
+            duration: "4 Years",
+            eligibility:
+              "Pass in PUC / 10+2 examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry / Biotechnology / Biology / Computer Science / Electronics / Technical Vocational subjects and obtained at least 45% marks (40% in case of candidate belonging to SC/ST & OBC category) in the above subjects taken together.",
+            fees: [
+              { label: "CET - Total Fee", amount: "Not Available" },
+              { label: "Ranking Based (JEE Mains/Uniguage/Comed-K)", amount: "₹4,12,000" },
+              { label: "Others - Total Fee", amount: "₹4,92,000" },
+            ],
+          },
+          {
+            name: "B.Tech Computer Science & Engineering (Artificial Intelligence & Data Science)",
+            level: "UG",
+            duration: "4 Years",
+            eligibility:
+              "Pass in PUC / 10+2 examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry / Biotechnology / Biology / Computer Science / Electronics / Technical Vocational subjects and obtained at least 45% marks (40% in case of candidate belonging to SC/ST & OBC category) in the above subjects taken together.",
+            fees: [
+              { label: "CET - Total Fee", amount: "Not Available" },
+              { label: "Ranking Based (JEE Mains/Uniguage/Comed-K)", amount: "₹4,35,000" },
+              { label: "Others - Total Fee", amount: "₹5,25,000" },
+            ],
+          },
+          {
+            name: "B.Tech Computer Science & Medical Engineering",
+            level: "UG",
+            duration: "4 Years",
+            eligibility:
+              "Pass in PUC / 10+2 examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry / Biotechnology / Biology / Computer Science / Electronics / Technical Vocational subjects and obtained at least 45% marks (40% in case of candidate belonging to SC/ST & OBC category) in the above subjects taken together.",
+            fees: [
+              { label: "CET - Total Fee", amount: "Not Available" },
+              { label: "Ranking Based (JEE Mains/Uniguage/Comed-K)", amount: "₹4,12,000" },
+              { label: "Others - Total Fee", amount: "₹4,92,000" },
+            ],
+          },
+          {
+            name: "B.Tech Computer Science & Engineering (Artificial Intelligence)",
+            level: "UG",
+            duration: "4 Years",
+            eligibility:
+              "Pass in PUC / 10+2 examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry / Biotechnology / Biology / Computer Science / Electronics / Technical Vocational subjects and obtained at least 45% marks (40% in case of candidate belonging to SC/ST & OBC category) in the above subjects taken together.",
+            fees: [
+              { label: "CET - Total Fee", amount: "Not Available" },
+              { label: "Ranking Based (JEE Mains/Uniguage/Comed-K)", amount: "₹4,35,000" },
+              { label: "Others - Total Fee", amount: "₹5,25,000" },
+            ],
+          },
+          {
+            name: "B.Tech Computer Science & Technology",
+            level: "UG",
+            duration: "4 Years",
+            eligibility:
+              "Pass in PUC / 10+2 examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry / Biotechnology / Biology / Computer Science / Electronics / Technical Vocational subjects and obtained at least 45% marks (40% in case of candidate belonging to SC/ST & OBC category) in the above subjects taken together.",
+            fees: [
+              { label: "CET - Total Fee", amount: "Not Available" },
+              { label: "Ranking Based (JEE Mains/Uniguage/Comed-K)", amount: "₹4,12,000" },
+              { label: "Others - Total Fee", amount: "₹4,92,000" },
+            ],
+          },
+          {
+            name: "B.Tech AI & Robotics",
+            level: "UG",
+            duration: "4 Years",
+            eligibility:
+              "Pass in PUC / 10+2 examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry / Biotechnology / Biology / Computer Science / Electronics / Technical Vocational subjects and obtained at least 45% marks (40% in case of candidate belonging to SC/ST & OBC category) in the above subjects taken together.",
+            fees: [
+              { label: "CET - Total Fee", amount: "Not Available" },
+              { label: "Ranking Based (JEE Mains/Uniguage/Comed-K)", amount: "₹4,12,000" },
+              { label: "Others - Total Fee", amount: "₹4,92,000" },
+            ],
+          },
+          {
+            name: "B.Tech Electronics & Communication Engineering",
+            level: "UG",
+            duration: "4 Years",
+            eligibility:
+              "Pass in PUC / 10+2 examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry / Biotechnology / Biology / Computer Science / Electronics / Technical Vocational subjects and obtained at least 45% marks (40% in case of candidate belonging to SC/ST & OBC category) in the above subjects taken together.",
+            fees: [
+              { label: "CET - Total Fee", amount: "Not Available" },
+              { label: "Ranking Based (JEE Mains/Uniguage/Comed-K)", amount: "₹3,22,000" },
+              { label: "Others - Total Fee", amount: "₹4,12,000" },
+            ],
+          },
+          {
+            name: "B.Tech Mechanical Engineering",
+            level: "UG",
+            duration: "4 Years",
+            eligibility:
+              "Pass in PUC / 10+2 examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry / Biotechnology / Biology / Computer Science / Electronics / Technical Vocational subjects and obtained at least 45% marks (40% in case of candidate belonging to SC/ST & OBC category) in the above subjects taken together.",
+            fees: [
+              { label: "CET - Total Fee", amount: "Not Available" },
+              { label: "Ranking Based (JEE Mains/Uniguage/Comed-K)", amount: "₹3,22,000" },
+              { label: "Others - Total Fee", amount: "₹4,12,000" },
+            ],
+          },
+          {
+            name: "B.Tech Aerospace Engineering",
+            level: "UG",
+            duration: "4 Years",
+            eligibility:
+              "Pass in PUC / 10+2 examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry / Biotechnology / Biology / Computer Science / Electronics / Technical Vocational subjects and obtained at least 45% marks (40% in case of candidate belonging to SC/ST & OBC category) in the above subjects taken together.",
+            fees: [
+              { label: "CET - Total Fee", amount: "Not Available" },
+              { label: "Ranking Based (JEE Mains/Uniguage/Comed-K)", amount: "₹3,22,000" },
+              { label: "Others - Total Fee", amount: "₹4,12,000" },
             ],
           },
         ],
         footnotes: [
-          "Fee structure reflects the 2025-26 academic year and will align with any subsequent government revisions.",
+          "Fee structure reflects the 2026-27 academic year. All fees shown are annual totals.",
+          "CET pathway currently not available for Engineering programs.",
         ],
       },
       {
-        title: "Postgraduate Programs",
+        title: "Postgraduate Programs (2 Years Duration)",
         description:
-          "Minimum of 50% in the qualifying bachelor’s degree (45% for SC/ST & OBC) with eligible backgrounds as specified.",
+          "Minimum of 50% in the qualifying bachelor's degree (45% for SC/ST & OBC) with eligible backgrounds as specified.",
         programs: [
           {
-            name: "M.Tech - Computer Science & Engineering",
+            name: "M.Tech Computer Science & Engineering",
             level: "PG",
+            duration: "2 Years",
             eligibility:
-              "B.Tech in ECE, CSE, ISE, Biomedical, Medical Electronics, Electronics & Instrumentation, EEE, Telecommunications, Mechatronics, or related circuit branches with minimum 50% marks (45% for SC/ST & OBC).",
+              "Pass in B.Tech in ECE, CSE, ISE, Biomedical, Medical Electronics, Electronics & Instrumentation, EEE, Telecommunications, Mechatronics and other circuit Branches with a minimum of 50% marks in aggregate (45% in case of candidate belonging to SC/ST & OBC).",
             fees: [
-              { label: "Total (Incl. Library Deposit)", amount: "₹1,62,000" },
+              { label: "PGCET - Total Fee", amount: "Not Available" },
+              { label: "Others - Total Fee (Annual)", amount: "₹2,52,000" },
             ],
             notes: [
-              "PGCET Code: T970. Scholarships considered for GATE-qualified and high-scoring DSAT graduates.",
+              "Upon successful completion of the M.Tech programs (CSE/AI & ML/AI & Robotics/AI/AI & DS), candidates are offered a job with a starting salary of INR 65,000 per month for a year which will be extended after evaluating performance deliverables as per the Organization.",
             ],
           },
           {
-            name: "M.Tech - Embedded System",
+            name: "M.Tech Computer Science and Engineering (Artificial Intelligence and Machine Learning)",
             level: "PG",
+            duration: "2 Years",
             eligibility:
-              "B.Tech in electronics, computer science, instrumentation, telecommunications, electrical, or allied circuit branches with 50% aggregate (45% for SC/ST & OBC).",
+              "Pass in B.Tech in ECE, CSE, ISE, Biomedical, Medical Electronics, Electronics & Instrumentation, EEE, Telecommunications, Mechatronics and other circuit Branches with a minimum of 50% marks in aggregate (45% in case of candidate belonging to SC/ST & OBC).",
             fees: [
-              { label: "Total (Incl. Library Deposit)", amount: "₹1,62,000" },
+              { label: "PGCET - Total Fee", amount: "Not Available" },
+              { label: "Others - Total Fee (Annual)", amount: "₹2,52,000" },
             ],
             notes: [
-              "Includes advanced labs for FPGA, IoT, and real-time system design.",
+              "Upon successful completion of the M.Tech programs (CSE/AI & ML/AI & Robotics/AI/AI & DS), candidates are offered a job with a starting salary of INR 65,000 per month for a year which will be extended after evaluating performance deliverables as per the Organization.",
             ],
           },
           {
-            name: "M.Tech - Design Engineering",
+            name: "M.Tech Artificial Intelligence and Data Science",
             level: "PG",
+            duration: "2 Years",
             eligibility:
-              "B.Tech in Mechanical, Industrial Engineering & Management, Aerospace, Aeronautical, Automobile, or related disciplines with minimum 50% marks (45% for SC/ST & OBC).",
+              "Pass in B.Tech in ECE, CSE, ISE, Biomedical, Medical Electronics, Electronics & Instrumentation, EEE, Telecommunications, Mechatronics and other circuit Branches with a minimum of 50% marks in aggregate (45% in case of candidate belonging to SC/ST & OBC).",
             fees: [
-              { label: "Total (Incl. Library Deposit)", amount: "₹1,62,000" },
+              { label: "PGCET - Total Fee", amount: "Not Available" },
+              { label: "Others - Total Fee (Annual)", amount: "₹2,52,000" },
             ],
             notes: [
-              "Focus areas include CAD/CAE, design thinking, and advanced manufacturing.",
+              "Upon successful completion of the M.Tech programs (CSE/AI & ML/AI & Robotics/AI/AI & DS), candidates are offered a job with a starting salary of INR 65,000 per month for a year which will be extended after evaluating performance deliverables as per the Organization.",
+            ],
+          },
+          {
+            name: "M.Tech Artificial Intelligence",
+            level: "PG",
+            duration: "2 Years",
+            eligibility:
+              "Pass in B.Tech in ECE, CSE, ISE, Biomedical, Medical Electronics, Electronics & Instrumentation, EEE, Telecommunications, Mechatronics and other circuit Branches with a minimum of 50% marks in aggregate (45% in case of candidate belonging to SC/ST & OBC).",
+            fees: [
+              { label: "PGCET - Total Fee", amount: "Not Available" },
+              { label: "Others - Total Fee (Annual)", amount: "₹2,52,000" },
+            ],
+            notes: [
+              "Upon successful completion of the M.Tech programs (CSE/AI & ML/AI & Robotics/AI/AI & DS), candidates are offered a job with a starting salary of INR 65,000 per month for a year which will be extended after evaluating performance deliverables as per the Organization.",
+            ],
+          },
+          {
+            name: "M.Tech Artificial Intelligence and Robotics",
+            level: "PG",
+            duration: "2 Years",
+            eligibility:
+              "Pass in B.Tech in ECE, CSE, ISE, Biomedical, Medical Electronics, Electronics & Instrumentation, EEE, Telecommunications, Mechatronics and other circuit Branches with a minimum of 50% marks in aggregate (45% in case of candidate belonging to SC/ST & OBC).",
+            fees: [
+              { label: "PGCET - Total Fee", amount: "Not Available" },
+              { label: "Others - Total Fee (Annual)", amount: "₹2,52,000" },
+            ],
+            notes: [
+              "Upon successful completion of the M.Tech programs (CSE/AI & ML/AI & Robotics/AI/AI & DS), candidates are offered a job with a starting salary of INR 65,000 per month for a year which will be extended after evaluating performance deliverables as per the Organization.",
+            ],
+          },
+          {
+            name: "M.Tech Embedded System",
+            level: "PG",
+            duration: "2 Years",
+            eligibility:
+              "Pass in B.Tech in ECE, CSE, ISE, Biomedical, Medical Electronics, Electronics & Instrumentation, EEE, Telecommunications, Mechatronics and other circuit Branches with a minimum of 50% marks in aggregate (45% in case of candidate belonging to SC/ST & OBC).",
+            fees: [
+              { label: "PGCET - Total Fee", amount: "Not Available" },
+              { label: "Others - Total Fee (Annual)", amount: "₹1,62,000" },
+            ],
+          },
+          {
+            name: "M.Tech Design Engineering",
+            level: "PG",
+            duration: "2 Years",
+            eligibility:
+              "Pass in B.Tech in Mechanical, Industrial Engineering & Management, Aerospace, Aeronautical, Automobile, or related disciplines with minimum 50% marks in aggregate (45% in case of candidate belonging to SC/ST & OBC category).",
+            fees: [
+              { label: "PGCET - Total Fee", amount: "Not Available" },
+              { label: "Others - Total Fee (Annual)", amount: "₹1,62,000" },
             ],
           },
         ],
         footnotes: [
-          "PGCET and DSAT merit lists determine counseling order and scholarship eligibility.",
+          "Fee structure for 2026-27 academic year. Special job placement guarantee for select M.Tech AI programs (CSE, AI & ML, AI & Robotics, AI, AI & DS).",
+          "Job placement offer subject to successful completion and performance evaluation as per organizational standards.",
         ],
       },
     ],
     disclaimers: [
       "Any variation in the fee structure due to revision by the Government will accordingly be applicable.",
+      "Job placement guarantee for select M.Tech AI programs subject to successful completion and performance evaluation.",
     ],
   },
   {
@@ -257,7 +419,7 @@ const schools: School[] = [
             name: "MCA - Master of Computer Applications",
             level: "PG",
             eligibility:
-              "Bachelor’s degree in BCA / B.Sc (CS or IT) or any degree with Mathematics at 10+2 or graduation level. Non-CS graduates complete mandatory bridge courses. Minimum 50% aggregate (45% for SC/ST & OBC).",
+              "Bachelor's degree in BCA / B.Sc (CS or IT) or any degree with Mathematics at 10+2 or graduation level. Non-CS graduates complete mandatory bridge courses. Minimum 50% aggregate (45% for SC/ST & OBC).",
             fees: [
               { label: "Total (Incl. Library Deposit)", amount: "₹3,32,000" },
             ],
@@ -334,7 +496,7 @@ const schools: School[] = [
             name: "LL.M (1 Year)",
             level: "PG",
             eligibility:
-              "Bachelor’s degree in Law (LL.B or equivalent) with at least 50% marks (40% for SC/ST). Valid scores from CLAT, AILET, or DSU entrance exams.",
+              "Bachelor's degree in Law (LL.B or equivalent) with at least 50% marks (40% for SC/ST). Valid scores from CLAT, AILET, or DSU entrance exams.",
             fees: [
               { label: "Total (Incl. Library Deposit)", amount: "₹1,35,000" },
             ],
@@ -477,7 +639,7 @@ const schools: School[] = [
             name: "MBA",
             level: "PG",
             eligibility:
-              "Bachelor’s degree of three years in any stream with minimum 50% aggregate (45% for SC/ST & OBC). Entrance scores from DSAT, KMAT, CAT, MAT, or equivalent are accepted.",
+              "Bachelor's degree of three years in any stream with minimum 50% aggregate (45% for SC/ST & OBC). Entrance scores from DSAT, KMAT, CAT, MAT, or equivalent are accepted.",
             fees: [
               { label: "Year I Tuition Fee", amount: "₹1,72,000" },
               { label: "Year I Other Fees", amount: "₹1,60,000" },
@@ -875,7 +1037,7 @@ function HeroSection() {
       <div className="relative mx-auto max-w-6xl px-3 text-center">
         <div className="inline-flex items-center gap-2 rounded-full border border-orange-500/30 bg-orange-500/10 px-4 py-2 text-sm font-semibold text-orange-500">
           <BadgeCheck className="h-4 w-4" />
-          Programs, Eligibility &amp; Fees 2025-26
+          Programs, Eligibility &amp; Fees 2026-27
         </div>
         <h1 className="mt-8 text-4xl font-bold leading-tight md:text-6xl">
           Plan Your Dayananda Sagar University Journey
@@ -916,7 +1078,7 @@ function HeroSection() {
           <HeroHighlight
             icon={GraduationCap}
             title="Multiple Admission Channels"
-            description="DSAT | Comed-K E182 | Uni-GAUGE UNI-010 | CET DSU-E240 | PGCET T970 (M.Tech) | B365MB (MBA) | C520MC (MCA)"
+            description="CET | JEE Mains | Uniguage | Comed-K | PGCET | DSAT | Direct Admissions"
           />
           <HeroHighlight
             icon={IndianRupee}
@@ -1026,7 +1188,7 @@ function SchoolsSection() {
                     <div className="flex flex-wrap items-center gap-3">
                       <span>{school.name}</span>
                       <Badge className="bg-orange-500/15 text-orange-500">
-                        2025-26
+                        {school.name === "School of Engineering" ? "2026-27" : "2025-26"}
                       </Badge>
                     </div>
                     <p className="mt-1 text-sm font-normal text-foreground">
@@ -1112,6 +1274,7 @@ function ProgramCard({ program }: ProgramCardProps) {
               {program.name}
             </CardTitle>
             <CardDescription className="mt-2 text-sm text-foreground">
+              {program.duration && `Duration: ${program.duration} | `}
               Level:{" "}
               {program.level === "UG"
                 ? "Undergraduate"
