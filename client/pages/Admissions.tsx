@@ -83,7 +83,6 @@ type ChatMessage = {
 };
 
 const admissionCodes = [
-  "DSAT Admissions",
   "Comed-K Code: E182",
   "Uni-GAUGE Code: UNI-010",
   "CET Code: DSU-E240",
@@ -111,7 +110,7 @@ const quickLinks: QuickLink[] = [
   {
     title: "Direct Admissions – 2025",
     description:
-      "Secure your seat through the non-DSAT window and confirm early.",
+      "Secure your seat through the direct admissions window and confirm early.",
     href: "https://admissions.dsu.edu.in/?utm_source=Admissions%20Tab&utm_medium=Website&utm_campaign=WS-Admissions%202024",
     icon: Sparkles,
   },
@@ -125,7 +124,7 @@ const quickLinks: QuickLink[] = [
   {
     title: "FAQs",
     description:
-      "Find detailed answers to DSAT, eligibility, document, and process queries.",
+      "Find detailed answers to eligibility, document, and process queries.",
     href: "https://www.dsu.edu.in/images/Admission/FAQs-DSAT-DSU-2020.pdf",
     icon: Info,
   },
@@ -154,19 +153,6 @@ const quickLinks: QuickLink[] = [
 ];
 
 const admissionTracks: AdmissionTrack[] = [
-  {
-    title: "DSAT Admissions",
-    description:
-      "Apply through the DSU Scholastic Aptitude Test (DSAT) and qualify for scholarships based on merit.",
-    highlights: [
-      "Register for DSAT and receive test slots via email",
-      "Submit 10th, 11th/12th or qualifying exam marks",
-      "Attend counseling to finalize campus and branch",
-    ],
-    href: "https://admissions.dsu.edu.in/",
-    icon: GraduationCap,
-    ctaLabel: "Register for DSAT",
-  },
   {
     title: "Direct Admissions – 2025",
     description:
@@ -266,7 +252,7 @@ const campusContacts = [
     title: "DSU City Innovation Campus",
     address:
       "Administrative & Main Admission Office, Kudlu Gate, Hosur Road, Bengaluru – 560 114",
-    email: "dsat@dsu.edu.in",
+    email: "admissions@dsu.edu.in",
     phone: ["080 4646 1800", "080 4909 2800"],
   },
   {
@@ -328,7 +314,7 @@ const aiSamplePrompts = [
 
 const voiceScriptLines = [
   "Welcome to Dayananda Sagar University admissions.",
-  "You can apply through DSAT, Comed-K, or the direct admissions window.",
+  "You can apply through Comed-K, CET, PGCET, or the direct admissions window.",
   "Remember the key codes: Comed-K E182, CET DSU-E240, and PGCET T970 for M.Tech, B365MB for MBA, and C520MC for MCA.",
   "Visit admissions dot d s u dot e d u dot i n to start your application and download program brochures for detailed curricula.",
   "Our counselors can be reached at zero eight zero four six four six one eight zero zero or admissions at d s u dot e d u dot i n.",
@@ -336,7 +322,7 @@ const voiceScriptLines = [
 ];
 
 const supportHighlights = [
-  "Dedicated counseling support for DSAT, Direct, and International applicants",
+  "Dedicated counseling support for Direct and International applicants",
   "Merit-based scholarships and financial aid guidance from the admissions office",
   "Personalized onboarding to help you choose programs, campuses, and housing",
 ];
@@ -377,8 +363,7 @@ function HeroSection() {
         <p className="mt-6 text-lg text-white md:text-xl">
           Multiple admission pathways, flexible programs, and a Bengaluru-based
           advantage. 100% placements with industry partnerships. Choose your
-          route: DSAT (merit + scholarships), Direct Admissions, PGCET,
-          International, or Online.
+          route: Direct Admissions, PGCET, International, or Online.
         </p>
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Button
