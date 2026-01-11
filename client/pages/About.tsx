@@ -182,51 +182,43 @@ export default function About() {
           <div className="grid md:grid-cols-2 gap-4">
             {[
               {
+                icon: Cpu,
+                title: "AI-First Education",
+                bullets: [
+                  "AI integrated across engineering, sciences, health, law, and design",
+                  "Students learn on industry-grade AI workflows, not simulations"
+                ],
+              },
+              {
                 icon: Star,
-                title: "Unveiling a Legacy",
+                title: "Legacy with Trust",
                 bullets: [
                   "60+ years of educational impact",
-                  "Institutions that shape people, not products"
-                ],
-              },
-              {
-                icon: Building,
-                title: "Proud to be part of DSU",
-                bullets: [
-                  "Global education powerhouse across 5 campuses",
-                  "17,000+ students transformed into professionals"
-                ],
-              },
-              {
-                icon: Users,
-                title: "Best-in-class Facilities",
-                bullets: [
-                  "Well-equipped labs, libraries, and tech infrastructure",
-                  "World-class sports, cultural, and hostel facilities"
+                  "Institutions that shape people, not just degrees"
                 ],
               },
               {
                 icon: Lightbulb,
-                title: "Inspired by Innovators",
+                title: "Research & Innovation Culture",
                 bullets: [
-                  "25,000+ sq. ft. research & incubation space",
-                  "Strong industry and startup ecosystem support"
+                  "25,000+ sq. ft. research & incubation ecosystem",
+                  "High-impact publications and interdisciplinary projects"
                 ],
               },
               {
-                icon: Award,
-                title: "Stellar Performance – Time and Again",
+                icon: Briefcase,
+                title: "Industry & Career Readiness",
                 bullets: [
-                  "Consistently top rankings in all academic areas",
-                  "58 ranks from VTU among 220 engineering colleges in Karnataka"
+                  "Strong industry partnerships and startup ecosystem",
+                  "Focus on employability, research careers, and entrepreneurship"
                 ],
               },
               {
-                icon: Globe,
-                title: "Different Courses for Different Passions",
+                icon: Building,
+                title: "World-Class Infrastructure",
                 bullets: [
-                  "Diverse programs from Bachelors to Ph.D levels",
-                  "Centers of Excellence in emerging fields"
+                  "Advanced labs, libraries, and digital infrastructure",
+                  "Sports, cultural, and residential facilities"
                 ],
               },
             ].map((section, index) => {
