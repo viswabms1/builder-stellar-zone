@@ -106,7 +106,6 @@ const CONTACT_LOCATIONS = [
 
 const CONTACT_EMAILS = [
   { label: "Admissions", value: "admissions@dsu.edu.in" },
-  { label: "DSAT / Technical", value: "dsat@dsu.edu.in" },
   { label: "General Enquiry", value: "enquiry@dsu.edu.in" },
 ];
 
