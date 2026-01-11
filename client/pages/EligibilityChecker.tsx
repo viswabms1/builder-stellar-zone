@@ -234,7 +234,7 @@ export default function EligibilityChecker() {
   const handleReset = () => {
     setStep(1);
     setEducation("");
-    setSubjects([]);
+    setSubjectRequirement("");
     setPercentage("");
     setCategory("");
     setResults({ eligible: [], notEligible: [] });
