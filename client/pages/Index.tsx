@@ -987,20 +987,20 @@ export default function Index() {
                       rel="noreferrer"
                       className="no-underline group"
                     >
-                      <Button className="bg-brand-gradient hover:shadow-lg hover:shadow-brand-magenta/50 text-foreground font-semibold gap-2 transform group-hover:translate-x-1 transition-all">
-                        Read More
+                      <Button className="bg-brand-magenta hover:bg-brand-magenta/90 text-white font-bold gap-2 transform group-hover:translate-x-1 transition-all shadow-lg hover:shadow-xl">
+                        Read Full Paper
                         <ArrowRight className="w-4 h-4" />
                       </Button>
                     </a>
                   ) : (
-                    <Button className="bg-brand-gradient hover:shadow-lg hover:shadow-brand-magenta/50 text-foreground font-semibold gap-2">
-                      Read More
+                    <Button className="bg-brand-magenta hover:bg-brand-magenta/90 text-white font-bold gap-2 shadow-lg hover:shadow-xl">
+                      Read Full Paper
                       <ArrowRight className="w-4 h-4" />
                     </Button>
                   )}
-                  <div className="text-xs text-foreground/60 font-semibold">
-                    {selectedPublicationIndex + 1} / {allPublications.length}
-                  </div>
+                  <a href="/research-publications" className="text-xs text-brand-magenta hover:text-brand-magenta/80 font-semibold transition-colors">
+                    View All Research
+                  </a>
                 </div>
               </div>
             </div>
