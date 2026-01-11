@@ -658,69 +658,108 @@ const schools: School[] = [
   {
     name: "School of Commerce & Management",
     tagline:
-      "Industry-driven commerce, business, and management programs with professional certifications.",
+      "Yearly fee structure 2026-27 for industry-driven commerce, business, and management programs with professional certifications.",
     icon: Users,
     categories: [
       {
-        title: "Undergraduate Programs",
+        title: "Undergraduate Programs (3 Years Duration)",
         programs: [
           {
-            name: "BBA",
+            name: "BBA Regular",
             level: "UG",
-            specializations: [
-              "Regular",
-              "Banking, Financial Services & Insurance (BFSI)",
-              "Aviation Electives",
-            ],
+            duration: "3 Years",
             eligibility:
-              "10+2 or equivalent examination with minimum 50% aggregate (45% for SC/ST & OBC).",
-            fees: [{ label: "Program Total (Annual)", amount: "₹2,02,000" }],
-            notes: [
-              "Includes global immersion modules, analytics certification, and incubation support via DSU Innovation campus.",
+              "Pass in 10+2, A Level, IB, American 12th grade or equivalent with a minimum of 50% marks in aggregate (45% in case of candidate belonging to SC/ST & OBC category).",
+            fees: [
+              { label: "Term I", amount: "₹1,07,000" },
+              { label: "Term II", amount: "₹1,05,000" },
+              { label: "Total (Incl. Library Deposit)", amount: "₹2,12,000" },
             ],
           },
           {
-            name: "B.Com",
+            name: "B.Com - Regular",
             level: "UG",
-            specializations: [
-              "Regular",
-              "ACCA Integrated",
-              "CMA Integrated",
-              "With CA Coaching",
-            ],
+            duration: "3 Years",
             eligibility:
-              "Pre-University course with Business Studies and Accountancy; minimum 50% aggregate (45% for SC/ST & OBC).",
+              "Candidates who have completed two year Pre – University course of Karnataka State or its equivalent with Business Studies and Accountancy as two major subjects of study in both first and second year pre-university with aggregate of 50% PUC/ CBSE/ ISCE/10+2 or Equivalent Examination (45% in case of candidate belonging to SC/ST & OBC category).",
             fees: [
-              { label: "B.Com Regular (Annual Total)", amount: "₹1,47,000" },
-              {
-                label: "B.Com ACCA / CMA / CA Coaching (Annual Total)",
-                amount: "₹1,77,000",
-              },
+              { label: "Term I", amount: "₹79,500" },
+              { label: "Term II", amount: "₹77,500" },
+              { label: "Total (Incl. Library Deposit)", amount: "₹1,57,000" },
+            ],
+          },
+          {
+            name: "B.Com - ACCA Integrated",
+            level: "UG",
+            duration: "3 Years",
+            eligibility:
+              "Candidates who have completed two year Pre – University course of Karnataka State or its equivalent with Business Studies and Accountancy as two major subjects of study in both first and second year pre-university with aggregate of 50% PUC/ CBSE/ ISCE/10+2 or Equivalent Examination (45% in case of candidate belonging to SC/ST & OBC category).",
+            fees: [
+              { label: "Term I", amount: "₹99,500" },
+              { label: "Term II", amount: "₹87,500" },
+              { label: "Total (Incl. Library Deposit)", amount: "₹1,87,000" },
             ],
             notes: [
-              "Professional coaching for ACCA, CMA, and CA integrated within the timetable.",
+              "Professional ACCA coaching integrated within the timetable.",
+            ],
+          },
+          {
+            name: "B.Com - CMA Integrated",
+            level: "UG",
+            duration: "3 Years",
+            eligibility:
+              "Candidates who have completed two year Pre – University course of Karnataka State or its equivalent with Business Studies and Accountancy as two major subjects of study in both first and second year pre-university with aggregate of 50% PUC/ CBSE/ ISCE/10+2 or Equivalent Examination (45% in case of candidate belonging to SC/ST & OBC category).",
+            fees: [
+              { label: "Term I", amount: "₹99,500" },
+              { label: "Term II", amount: "₹87,500" },
+              { label: "Total (Incl. Library Deposit)", amount: "₹1,87,000" },
+            ],
+            notes: [
+              "Professional CMA coaching integrated within the timetable.",
+            ],
+          },
+          {
+            name: "B.Com - With CA Coaching",
+            level: "UG",
+            duration: "3 Years",
+            eligibility:
+              "Candidates who have completed two year Pre – University course of Karnataka State or its equivalent with Business Studies and Accountancy as two major subjects of study in both first and second year pre-university with aggregate of 50% PUC/ CBSE/ ISCE/10+2 or Equivalent Examination (45% in case of candidate belonging to SC/ST & OBC category).",
+            fees: [
+              { label: "Term I", amount: "₹99,500" },
+              { label: "Term II", amount: "₹87,500" },
+              { label: "Total (Incl. Library Deposit)", amount: "₹1,87,000" },
+            ],
+            notes: [
+              "Professional CA coaching integrated within the timetable.",
             ],
           },
         ],
+        footnotes: [
+          "Fee structure reflects the 2026-27 academic year. All fees shown are annual totals.",
+        ],
       },
       {
-        title: "Postgraduate Program",
+        title: "Postgraduate Program (2 Years Duration)",
         programs: [
           {
             name: "MBA",
             level: "PG",
+            duration: "2 Years",
             eligibility:
-              "Bachelor's degree of three years in any stream with minimum 50% aggregate (45% for SC/ST & OBC). Entrance scores from DSAT, KMAT, CAT, MAT, or equivalent are accepted.",
+              "Pass in a Bachelors degree of three years in any stream with minimum 50% (45% in case of candidates belonging to SC/ST & OBC category) of marks in aggregate from any recognized University / Institution or any other qualification recognized as equivalent there to.",
             fees: [
-              { label: "Year I Tuition Fee", amount: "₹1,72,000" },
-              { label: "Year I Other Fees", amount: "₹1,60,000" },
-              { label: "Annual Total", amount: "₹3,32,000" },
-              { label: "Program Total (Two Years)", amount: "₹6,02,000" },
+              { label: "PGCET - Total Fees", amount: "Not Available" },
+              { label: "Term I", amount: "₹3,07,000" },
+              { label: "Term II", amount: "₹2,95,000" },
+              { label: "Total Fees", amount: "₹6,02,000" },
             ],
             notes: [
               "Dual specialization options covering Business Analytics, Finance, Marketing, HR, and Operations.",
             ],
           },
+        ],
+        footnotes: [
+          "Fee structure reflects the 2026-27 academic year. All fees shown are annual totals.",
         ],
       },
     ],
