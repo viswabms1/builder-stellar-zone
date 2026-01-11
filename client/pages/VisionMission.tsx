@@ -80,7 +80,9 @@ export default function VisionMission() {
             </span>
           </div>
 
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight text-white">
+          <h1 className={`text-4xl md:text-5xl font-bold mb-6 leading-tight ${
+            theme === "light" ? "text-orange-900" : "text-white"
+          }`}>
             Vision, Mission and Values
           </h1>
 
@@ -139,7 +141,9 @@ export default function VisionMission() {
       <section className="px-3 py-10">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+            <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${
+              theme === "light" ? "text-orange-900" : "text-white"
+            }`}>
               How We Translate Vision into Action
             </h2>
           </div>
@@ -170,7 +174,9 @@ export default function VisionMission() {
       <section className="px-3 py-10 bg-gradient-to-br from-orange-500/5 via-red-600/5 to-background">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+            <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${
+              theme === "light" ? "text-orange-900" : "text-white"
+            }`}>
               Values
             </h2>
             <p className="text-lg text-foreground max-w-3xl mx-auto">
