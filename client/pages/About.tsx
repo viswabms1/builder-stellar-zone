@@ -145,10 +145,7 @@ export default function About() {
           <div className="space-y-6">
             <div className="text-lg text-foreground leading-relaxed space-y-3">
               <p>
-                Founded in the 1960s, the Dayananda Sagar Institutions have shaped generations of learners.
-              </p>
-              <p>
-                Established as a state university in 2014, DSU builds on this legacy with a bold, future-focused academic vision.
+                Founded in the 1960s, the Dayananda Sagar Institutions have shaped generations of learners. As a state university since 2014, DSU carries this legacy forward with a future-focused academic vision.
               </p>
             </div>
 
