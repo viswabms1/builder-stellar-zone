@@ -16,30 +16,64 @@ import {
   Target,
   Star,
   ArrowRight,
+  ChevronDown,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 export default function Leadership() {
   const leadershipTeam = [
     {
       role: "Chancellor",
       name: "Dr. D. Hemachandra Sagar",
-      description:
+      focus: "Institutional vision, academic strategy, and legacy-driven growth",
+      message:
         "Join me in taking the first steps as we set up the Dayananda Sagar University (DSU) that is backed by the legacy of Dayananda Sagar Institutions.",
-      bio: "Dr. D. Hemachandra Sagar, Chancellor of DSU, leads the university with a vision rooted in the five-decade legacy of Dayananda Sagar Institutions. The Year 2015 marked a major milestone in the pursuit of excellence in higher education. DSU is committed to designing academic programs that reflect present societal needs and future demands, enabling young graduates to be seen as proficient masters in their chosen domains.",
-      contact: "Sagar333@hotmail.com | 080-2449-6999",
+      bio: "Dr. D. Hemachandra Sagar leads DSU with a vision anchored in the legacy of Dayananda Sagar Institutions while steering the university toward future-ready academic models. Under his leadership, DSU focuses on programs aligned with societal needs and emerging global demands.",
+      contact: "chancellor.office@dsu.edu.in",
       image: "https://www.dsu.edu.in/images/demo/chancellor.jpg",
       icon: Target,
     },
     {
       role: "Pro Chancellor",
       name: "Dr. D. Premachandra Sagar",
-      description:
+      focus: "Incubation ecosystem, entrepreneurship culture, and student innovation",
+      message:
         "Success belongs to the hardworking and creative, but it requires institutional leadership, supportive ambience, responsive culture, and access to intellectual, infrastructural, and other critical needs.",
-      bio: "Dr. D. Premachandra Sagar, Pro Chancellor of DSU, emphasizes that DSU provides a unique ecosystem and platform for young minds to become innovators, scholars, and entrepreneurs. The university focuses on academics, incubation, and entrepreneurship—enabling students to walk in with ideas and emerge market-ready.",
-      contact: "premachandra.sagar@yahoo.com | 080-24496999",
+      bio: "Dr. D. Premachandra Sagar leads the university's entrepreneurial mission, providing a unique ecosystem and platform for young minds to become innovators, scholars, and entrepreneurs. The university focuses on academics, incubation, and entrepreneurship—enabling students to emerge market-ready.",
+      contact: "prochancellor.office@dsu.edu.in",
       image: "https://www.dsu.edu.in/images/demo/prochancellor1.jpg",
       icon: Building,
+    },
+  ];
+
+  const registrarAndViceChancellor = [
+    {
+      role: "Vice Chancellor",
+      name: "Prof B. S. Satyanarayana",
+      focus: "Academic excellence, research promotion, and sustainable learning",
+      message:
+        "We are in a rapidly changing world where knowledge life cycles have reduced drastically, and product and process life cycles are getting even shorter.",
+      bio: "Prof B. S. Satyanarayana (Ph.D from University of Cambridge) leads the university with a vision to enable learners to excel in education, research, innovation & entrepreneurship for a sustainable tomorrow. DSU aims to create a state-of-the-art campus with a unique, serene, and conducive ambience for multidisciplinary immersive experiential learning.",
+      contact: "vc.office@dsu.edu.in",
+      image: "https://www.dsu.edu.in/images/Prof_Satyanarayana.jpeg",
+      icon: Briefcase,
+    },
+    {
+      role: "Registrar",
+      name: "Dr. Puttamadappa C",
+      focus: "Administrative excellence, academic compliance, and operational efficiency",
+      message:
+        "I heartily welcome you to Dayananda Sagar University, Bangalore, established under Mahatma Gandhi Vidya Peetha.",
+      bio: "Dr. Puttamadappa C oversees the administrative and academic operations of the university. DSU's commitment to opening vast avenues of learning, especially in cutting edge technologies with thrust on creation and innovation, is paramount. The Registrar ensures consistent delivery of education relevant to today's workplace in a global setting.",
+      contact: "registrar.office@dsu.edu.in",
+      image: "https://www.dsu.edu.in/images/demo/Dr_Puttamadappa.jpg",
+      icon: BookOpen,
     },
   ];
 
@@ -47,125 +81,188 @@ export default function Leadership() {
     {
       role: "Pro Vice Chancellor",
       name: "Prof. R Janardhan",
-      description:
+      focus: "Innovation ecosystems and entrepreneurship development",
+      message:
         "Bengaluru is now known as the city of innovation and enterprise, globally. Dayananda Sagar University located in Bengaluru reflects that culture.",
-      bio: "Prof. R Janardhan, Pro-Vice Chancellor of DSU, emphasizes the university's role in fostering innovation and entrepreneurship. The campus at Kudlu Gate on Hosur Road exemplifies industry and academia partnerships. DSU provides a unique ecosystem with industry-sponsored labs, the AIC-DSU Foundation supported by a Rs 10.00 Crore grant, and a BTech in CS & Entrepreneurship. DSU is pioneering entrepreneurship education from Class 9 onwards, and continues to provide comprehensive support across academics, research, fitness, sports, arts, culture, innovation, entrepreneurship, and community service.",
-      contact: "janardhan.dsi@gmail.com | 9845074091",
+      bio: "Prof. R Janardhan emphasizes the university's role in fostering innovation and entrepreneurship. The campus exemplifies industry and academia partnerships.",
+      contributions: [
+        "Innovation and entrepreneurship ecosystems development",
+        "Industry-sponsored labs and research facilities",
+        "AIC-DSU Foundation with Rs 10.00 Crore grant management",
+        "BTech in CS & Entrepreneurship program leadership",
+        "Comprehensive support in research, sports, arts, and community service",
+      ],
       image: "https://www.dsu.edu.in/images/Prof_R_Janardhan.jpg",
       icon: BookOpen,
     },
     {
       role: "Pro Vice Chancellor",
       name: "Dr. Prakash Sheelvanthmath",
-      description:
+      focus: "AI-First institutional transformation and personalized learning",
+      message:
         "We heartily welcome you to Dayananda Sagar University—a distinguished institution of higher learning established under the visionary aegis of Mahatma Gandhi Vidya Peetha.",
-      bio: "Dr. Prakash S, Pro-Vice Chancellor, leads DSU's AI-centric transformation. The university aims to create a personalized, multidisciplinary, paperless ecosystem that enables each learner to realize their unique 'Talent DNA'. DSU is embedding intelligence into ERP, LMS, and operations to become an agile, insight-driven institution with an AI-First approach.",
-      contact: "pvc-prakash@dsu.edu.in | 9535797327",
+      bio: "Dr. Prakash S leads DSU's AI-centric transformation. The university aims to create a personalized, multidisciplinary, paperless ecosystem that enables each learner to realize their unique 'Talent DNA'.",
+      contributions: [
+        "AI-First institutional transformation",
+        "Intelligent ERP & LMS integration",
+        "Personalized, paperless academic ecosystem",
+        "Multidisciplinary and talent-centric education model",
+        "Data-driven insights for agile institutional management",
+      ],
       image: "https://www.dsu.edu.in/images/Dr_Prakash_S.jpg",
       icon: BookOpen,
     },
   ];
 
-  const registrarAndViceChancellor = [
+  const founders = [
     {
-      role: "Registrar",
-      name: "Dr. Puttamadappa C",
-      description:
-        "I heartily welcome you to Dayananda Sagar University, Bangalore, established under Mahatma Gandhi Vidya Peetha, a splendid temple of learning under the leadership of Dr. D Hemachandra Sagar, Chancellor and Dr. D Premachandra Sagar, Pro-Chancellor.",
-      bio: "Dr. Puttamadappa C, Registrar of DSU, oversees the administrative and academic operations of the university. At DSU, commitment to opening vast avenues of learning, especially in cutting edge technologies with thrust on creation and innovation, is paramount. The Registrar ensures that DSU consistently strives to provide education that leads to degrees relevant to today's workplace in a global setting, while maintaining excellence, effectiveness, academic rigor and personalized services.",
-      contact: "registrar@dsu.edu.in | 9845716228",
-      image: "https://www.dsu.edu.in/images/demo/Dr_Puttamadappa.jpg",
-      icon: BookOpen,
+      name: "Late Shri R Dayananda Sagar",
+      title: "Founder & Visionary Educationist",
+      bio: "Graduate in Arts & Commerce from India & a barrister-at-law from England. His visionary leadership laid the foundation for the institution's commitment to excellence and innovation.",
+      impact: "His values continue to guide DSU's emphasis on excellence, ethics, and service-oriented education.",
+      image:
+        "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Ffc8304264a444fa196e95ad74903200c?format=webp&width=800",
+      alt: "Late Shri R Dayananda Sagar",
     },
     {
-      role: "Vice Chancellor",
-      name: "Prof B. S. Satyanarayana",
-      description:
-        "We are in a rapidly changing world where knowledge life cycles have reduced drastically, and product and process life cycles are getting even shorter.",
-      bio: "Prof B. S. Satyanarayana, Vice Chancellor of DSU (Ph.D from University of Cambridge), leads the university with a vision to enable learners to excel in education, research, innovation & entrepreneurship for a sustainable tomorrow. DSU aims to create a state-of-the-art campus with a unique, serene, and conducive ambience for multidisciplinary immersive experiential learning.",
-      contact: "vicechancellor@dsu.edu.in | 9900084234",
-      image: "https://www.dsu.edu.in/images/Prof_Satyanarayana.jpeg",
-      icon: Briefcase,
+      name: "Late Smt Chandramma Sagar",
+      title: "Co-Founder & Healthcare Pioneer",
+      bio: "The first Indian woman to have acquired a triple fellowship from the Royal College of Surgeons (FRCS) from London, Edinburgh, and Dublin. A doctor by profession with unwavering dedication to service and excellence.",
+      impact: "Her pioneering spirit and commitment to healthcare excellence continue to inspire DSU's emphasis on holistic student development and social responsibility.",
+      image:
+        "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F028b835328ef468fbf5400faad79454f?format=webp&width=800",
+      alt: "Late Smt Chandramma Sagar",
     },
   ];
 
-  const committees = [
-    {
-      name: "Board of Governors",
-      icon: Users,
-      description: "Strategic governance and institutional oversight",
-      functions: [
-        "University policy development",
-        "Financial oversight",
-        "Institutional accountability",
+  const governanceStructure = {
+    strategic: {
+      title: "Strategic Governance",
+      description: "Institutional oversight and policy direction",
+      committees: [
+        {
+          name: "Board of Governors",
+          icon: Users,
+          description: "Strategic governance and institutional oversight",
+          functions: [
+            "University policy development",
+            "Financial oversight",
+            "Institutional accountability",
+          ],
+          link: "/about/board-of-governors",
+        },
+        {
+          name: "Board of Management",
+          icon: Building,
+          description: "Day-to-day operational management",
+          functions: [
+            "Administrative decisions",
+            "Resource management",
+            "Campus operations",
+          ],
+          link: "/about/board-of-management",
+        },
       ],
-      link: "/about/board-of-governors",
     },
-    {
-      name: "Academic Council",
-      icon: BookOpen,
+    academic: {
+      title: "Academic Governance",
       description: "Academic matters and curriculum development",
-      functions: [
-        "Curriculum approval",
-        "Academic standards",
-        "Research promotion",
+      committees: [
+        {
+          name: "Academic Council",
+          icon: BookOpen,
+          description: "Academic matters and curriculum development",
+          functions: [
+            "Curriculum approval",
+            "Academic standards",
+            "Research promotion",
+          ],
+          link: "/about/academic-council",
+        },
+        {
+          name: "Board of Studies",
+          icon: BookOpen,
+          description: "Academic curriculum and study program oversight",
+          functions: [
+            "Curriculum development",
+            "Academic standards",
+            "Study program approval",
+          ],
+          link: "https://www.dsu.edu.in/images/University/BOS.pdf",
+          external: true,
+        },
+        {
+          name: "Research & Innovation Council",
+          icon: Award,
+          description: "Research strategy and innovation initiatives",
+          functions: [
+            "Research promotion",
+            "Innovation support",
+            "Collaboration facilitation",
+          ],
+          link: "/about/research-innovation-council",
+        },
       ],
-      link: "/about/academic-council",
     },
-    {
-      name: "Board of Management",
-      icon: Building,
-      description: "Day-to-day operational management",
-      functions: [
-        "Administrative decisions",
-        "Resource management",
-        "Campus operations",
-      ],
-      link: "/about/board-of-management",
-    },
-    {
-      name: "Research & Innovation Council",
-      icon: Award,
-      description: "Research strategy and innovation initiatives",
-      functions: [
-        "Research promotion",
-        "Innovation support",
-        "Collaboration facilitation",
-      ],
-      link: "/about/research-innovation-council",
-    },
-    {
-      name: "Finance Committee",
-      icon: Briefcase,
-      description: "Financial planning and resource allocation",
-      functions: [
-        "Budget planning",
-        "Financial oversight",
-        "Resource optimization",
-      ],
-      link: "/about/finance-committee",
-    },
-    {
-      name: "IQAC (Quality)",
-      icon: Target,
+    quality: {
+      title: "Quality & Compliance",
       description: "Quality assurance and institutional effectiveness",
-      functions: [
-        "Quality monitoring",
-        "Accreditation preparation",
-        "Continuous improvement",
+      committees: [
+        {
+          name: "IQAC (Quality)",
+          icon: Target,
+          description: "Quality assurance and institutional effectiveness",
+          functions: [
+            "Quality monitoring",
+            "Accreditation preparation",
+            "Continuous improvement",
+          ],
+        },
+        {
+          name: "Finance Committee",
+          icon: Briefcase,
+          description: "Financial planning and resource allocation",
+          functions: [
+            "Budget planning",
+            "Financial oversight",
+            "Resource optimization",
+          ],
+          link: "/about/finance-committee",
+        },
       ],
     },
+  };
+
+  const principles = [
     {
-      name: "Board of Studies",
-      icon: BookOpen,
-      description: "Academic curriculum and study program oversight",
-      functions: [
-        "Curriculum development",
-        "Academic standards",
-        "Study program approval",
-      ],
-      link: "https://www.dsu.edu.in/images/University/BOS.pdf",
-      external: true,
+      title: "Academic Excellence",
+      description:
+        "Maintaining highest standards in teaching, research, and student development through rigorous curriculum and faculty-led innovation.",
+    },
+    {
+      title: "Innovation",
+      description:
+        "Encouraging interdisciplinary learning, AI-enabled systems, and entrepreneurship-driven education to prepare future leaders.",
+    },
+    {
+      title: "Transparency",
+      description:
+        "Open communication and transparent decision-making in all institutional matters, ensuring accountability to all stakeholders.",
+    },
+    {
+      title: "Collaboration",
+      description:
+        "Building strong partnerships with industry, research bodies, and global institutions to enhance learning and research outcomes.",
+    },
+    {
+      title: "Inclusivity",
+      description:
+        "Fostering diverse perspectives and inclusive environment where all students and faculty members can thrive and contribute.",
+    },
+    {
+      title: "Accountability",
+      description:
+        "Taking responsibility for decisions and institutional outcomes, continuously improving based on feedback and assessment.",
     },
   ];
 
@@ -196,15 +293,24 @@ export default function Leadership() {
           </h1>
 
           <p className="text-lg md:text-xl text-foreground mb-8 leading-relaxed max-w-3xl mx-auto">
-            Visionary leaders and dedicated administrators driving academic excellence and institutional growth.
+            Academic leaders, institutional builders, and administrators shaping DSU's legacy, governance, and future-ready transformation.
           </p>
         </div>
       </section>
+
+      {/* Founding Leadership Section Divider */}
+      <div className="h-1 bg-gradient-to-r from-transparent via-orange-500/20 to-transparent"></div>
 
       {/* Founders Section */}
       <section className="px-3 py-20 bg-gradient-to-r from-orange-500/5 via-red-600/5 to-background">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
+            <Badge
+              variant="outline"
+              className="border-orange-500/20 bg-orange-500/10 text-orange-500 mb-4"
+            >
+              Founding Leadership
+            </Badge>
             <h2 className="text-4xl md:text-5xl font-bold mb-3">
               <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
                 Our Founders
@@ -216,59 +322,54 @@ export default function Leadership() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-            {/* Founder 1 */}
-            <div className="group text-center">
-              <div className="mb-3 relative inline-block">
-                <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-red-600/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-500" />
-                <div className="relative w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-orange-500/30 group-hover:border-orange-500/60 transition-all duration-500 shadow-xl">
-                  <img
-                    src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Ffc8304264a444fa196e95ad74903200c?format=webp&width=800"
-                    alt="Late Shri R Dayananda Sagar"
-                    className="w-full h-full object-cover"
-                  />
+            {founders.map((founder, index) => (
+              <div key={index} className="group text-center">
+                <div className="mb-6 relative inline-block">
+                  <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-red-600/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-500" />
+                  <div className="relative w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-orange-500/30 group-hover:border-orange-500/60 transition-all duration-500 shadow-xl">
+                    <img
+                      src={founder.image}
+                      alt={founder.alt}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+                <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
+                  {founder.name}
+                </h3>
+                <p className="text-lg font-semibold text-orange-500 mb-4">
+                  {founder.title}
+                </p>
+                <p className="text-foreground/80 text-center mb-4">
+                  {founder.bio}
+                </p>
+                <div className="pt-4 border-t border-orange-500/20">
+                  <p className="text-sm font-semibold text-orange-500 mb-2">
+                    Institutional Impact
+                  </p>
+                  <p className="text-foreground/80 text-sm">
+                    {founder.impact}
+                  </p>
                 </div>
               </div>
-              <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
-                Late Shri R Dayananda Sagar
-              </h3>
-              <p className="text-lg font-semibold text-orange-500 mb-4">
-                Founding Father
-              </p>
-              <p className="text-foreground/80 text-center">
-                Our founding father, late Sri R Dayananda Sagar, was a graduate in Arts & Commerce from India & a barrister-at-law from England. His visionary leadership laid the foundation for the institution's commitment to excellence and innovation.
-              </p>
-            </div>
-
-            {/* Founder 2 */}
-            <div className="group text-center">
-              <div className="mb-3 relative inline-block">
-                <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-red-600/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-500" />
-                <div className="relative w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-orange-500/30 group-hover:border-orange-500/60 transition-all duration-500 shadow-xl">
-                  <img
-                    src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F028b835328ef468fbf5400faad79454f?format=webp&width=800"
-                    alt="Late Smt Chandramma Sagar"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
-              <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
-                Late Smt Chandramma Sagar
-              </h3>
-              <p className="text-lg font-semibold text-orange-500 mb-4">
-                Wife of the Founder
-              </p>
-              <p className="text-foreground/80 text-center">
-                Late Smt Chandramma Sagar was a doctor by profession, the first Indian woman to have acquired a triple fellowship from the Royal College of Surgeons (FRCS) from London, Edinburgh, and Dublin. Her dedication to service and excellence continues to inspire our mission.
-              </p>
-            </div>
+            ))}
           </div>
         </div>
       </section>
+
+      {/* University Executive Leadership Section Divider */}
+      <div className="h-1 bg-gradient-to-r from-transparent via-orange-500/20 to-transparent"></div>
 
       {/* Key Leadership Positions */}
       <section className="px-3 py-20">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
+            <Badge
+              variant="outline"
+              className="border-orange-500/20 bg-orange-500/10 text-orange-500 mb-4"
+            >
+              University Executive Leadership
+            </Badge>
             <h2 className="text-4xl md:text-5xl font-bold mb-3">
               <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
                 Key Leadership
@@ -285,30 +386,30 @@ export default function Leadership() {
               return (
                 <Card
                   key={index}
-                  className="group hover:shadow-lg hover:shadow-orange-500/10 transition-all duration-300 hover:border-orange-500/30 bg-card/50 backdrop-blur-sm border border-border/50 overflow-hidden"
+                  className="group hover:shadow-lg hover:shadow-orange-500/10 transition-all duration-300 hover:border-orange-500/30 bg-card/50 backdrop-blur-sm border border-border/50 overflow-hidden flex flex-col"
                 >
                   {/* Leader Image */}
                   {leader.image && (
-                    <div className="relative w-full bg-gradient-to-br from-orange-500/10 to-red-600/10 flex items-center justify-center h-96">
+                    <div className="relative w-full bg-gradient-to-br from-orange-500/10 to-red-600/10 flex items-center justify-center h-80">
                       <img
                         src={leader.image}
                         alt={leader.name}
                         className="h-full w-full object-contain group-hover:scale-105 transition-transform duration-500"
                         onError={(e) => {
-                          e.currentTarget.style.display = 'none';
+                          e.currentTarget.style.display = "none";
                         }}
                       />
                     </div>
                   )}
 
                   <CardHeader>
-                    <div className="flex items-start justify-between">
-                      <div>
+                    <div className="flex items-start justify-between gap-4">
+                      <div className="flex-grow">
                         <CardTitle className="text-2xl font-bold group-hover:text-orange-500 transition-colors">
-                          {leader.role}
-                        </CardTitle>
-                        <p className="text-sm text-foreground mt-1">
                           {leader.name}
+                        </CardTitle>
+                        <p className="text-sm font-semibold text-orange-500 mt-1">
+                          {leader.role}
                         </p>
                       </div>
                       <div className="w-12 h-12 rounded-2xl bg-orange-500/10 flex items-center justify-center group-hover:bg-orange-500/20 transition-colors flex-shrink-0">
@@ -316,23 +417,40 @@ export default function Leadership() {
                       </div>
                     </div>
                   </CardHeader>
-                  <CardContent className="space-y-4">
+
+                  <CardContent className="space-y-4 flex-grow flex flex-col">
                     <div>
-                      <p className="text-sm font-semibold text-foreground mb-2">
-                        Message from Our {leader.role}:
+                      <p className="text-xs font-semibold text-orange-500 mb-1">
+                        LEADERSHIP FOCUS
                       </p>
-                      <p className="text-sm text-foreground italic border-l-2 border-orange-500/30 pl-3">
-                        "{leader.description}"
+                      <p className="text-sm font-medium text-foreground">
+                        {leader.focus}
                       </p>
                     </div>
-                    <p className="text-foreground text-sm leading-relaxed">
+
+                    <p className="text-sm text-foreground leading-relaxed flex-grow">
                       {leader.bio}
                     </p>
-                    <div className="pt-4 border-t border-border/50">
+
+                    <Accordion type="single" collapsible className="w-full">
+                      <AccordionItem value="message" className="border-none">
+                        <AccordionTrigger className="text-sm font-semibold text-orange-500 hover:text-orange-600 py-2 px-0">
+                          <span className="flex items-center gap-2">
+                            <ChevronDown className="w-4 h-4" />
+                            Read {leader.role}'s Message
+                          </span>
+                        </AccordionTrigger>
+                        <AccordionContent className="text-sm text-foreground italic border-l-2 border-orange-500/30 pl-3 pb-0">
+                          "{leader.message}"
+                        </AccordionContent>
+                      </AccordionItem>
+                    </Accordion>
+
+                    <div className="pt-4 border-t border-border/50 mt-auto">
                       <p className="text-xs font-semibold text-foreground mb-2">
-                        Contact:
+                        📩 CONTACT
                       </p>
-                      <p className="text-xs text-foreground">
+                      <p className="text-xs text-foreground break-all">
                         {leader.contact}
                       </p>
                     </div>
@@ -345,12 +463,18 @@ export default function Leadership() {
       </section>
 
       {/* Registrar and Vice Chancellor */}
-      <section className="px-3 py-20">
+      <section className="px-3 py-20 bg-gradient-to-br from-orange-500/5 via-red-600/5 to-background">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
+            <Badge
+              variant="outline"
+              className="border-orange-500/20 bg-orange-500/10 text-orange-500 mb-4"
+            >
+              Administrative Leadership
+            </Badge>
             <h2 className="text-4xl md:text-5xl font-bold mb-3">
               <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
-                Administrative Leadership
+                Executive Officers
               </span>
             </h2>
             <p className="text-lg text-foreground max-w-3xl mx-auto">
@@ -368,26 +492,26 @@ export default function Leadership() {
                 >
                   {/* Leader Image */}
                   {leader.image && (
-                    <div className="relative w-full bg-gradient-to-br from-orange-500/10 to-red-600/10 flex items-center justify-center h-96">
+                    <div className="relative w-full bg-gradient-to-br from-orange-500/10 to-red-600/10 flex items-center justify-center h-80">
                       <img
                         src={leader.image}
                         alt={leader.name}
                         className="h-full w-full object-contain group-hover:scale-105 transition-transform duration-500"
                         onError={(e) => {
-                          e.currentTarget.style.display = 'none';
+                          e.currentTarget.style.display = "none";
                         }}
                       />
                     </div>
                   )}
 
                   <CardHeader>
-                    <div className="flex items-start justify-between">
-                      <div>
+                    <div className="flex items-start justify-between gap-4">
+                      <div className="flex-grow">
                         <CardTitle className="text-2xl font-bold group-hover:text-orange-500 transition-colors">
-                          {leader.role}
-                        </CardTitle>
-                        <p className="text-sm text-foreground mt-1">
                           {leader.name}
+                        </CardTitle>
+                        <p className="text-sm font-semibold text-orange-500 mt-1">
+                          {leader.role}
                         </p>
                       </div>
                       <div className="w-12 h-12 rounded-2xl bg-orange-500/10 flex items-center justify-center group-hover:bg-orange-500/20 transition-colors flex-shrink-0">
@@ -395,23 +519,40 @@ export default function Leadership() {
                       </div>
                     </div>
                   </CardHeader>
-                  <CardContent className="space-y-4 flex-grow">
+
+                  <CardContent className="space-y-4 flex-grow flex flex-col">
                     <div>
-                      <p className="text-sm font-semibold text-foreground mb-2">
-                        Message from Our {leader.role}:
+                      <p className="text-xs font-semibold text-orange-500 mb-1">
+                        LEADERSHIP FOCUS
                       </p>
-                      <p className="text-sm text-foreground italic border-l-2 border-orange-500/30 pl-3">
-                        "{leader.description}"
+                      <p className="text-sm font-medium text-foreground">
+                        {leader.focus}
                       </p>
                     </div>
-                    <p className="text-foreground text-sm leading-relaxed">
+
+                    <p className="text-sm text-foreground leading-relaxed flex-grow">
                       {leader.bio}
                     </p>
-                    <div className="pt-4 border-t border-border/50">
+
+                    <Accordion type="single" collapsible className="w-full">
+                      <AccordionItem value="message" className="border-none">
+                        <AccordionTrigger className="text-sm font-semibold text-orange-500 hover:text-orange-600 py-2 px-0">
+                          <span className="flex items-center gap-2">
+                            <ChevronDown className="w-4 h-4" />
+                            Read {leader.role}'s Message
+                          </span>
+                        </AccordionTrigger>
+                        <AccordionContent className="text-sm text-foreground italic border-l-2 border-orange-500/30 pl-3 pb-0">
+                          "{leader.message}"
+                        </AccordionContent>
+                      </AccordionItem>
+                    </Accordion>
+
+                    <div className="pt-4 border-t border-border/50 mt-auto">
                       <p className="text-xs font-semibold text-foreground mb-2">
-                        Contact:
+                        📩 CONTACT
                       </p>
-                      <p className="text-xs text-foreground">
+                      <p className="text-xs text-foreground break-all">
                         {leader.contact}
                       </p>
                     </div>
@@ -423,10 +564,19 @@ export default function Leadership() {
         </div>
       </section>
 
+      {/* Academic Leadership Section Divider */}
+      <div className="h-1 bg-gradient-to-r from-transparent via-orange-500/20 to-transparent"></div>
+
       {/* Pro Vice Chancellors */}
-      <section className="px-3 py-20 bg-gradient-to-br from-orange-500/5 via-red-600/5 to-background">
+      <section className="px-3 py-20">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
+            <Badge
+              variant="outline"
+              className="border-orange-500/20 bg-orange-500/10 text-orange-500 mb-4"
+            >
+              Academic Leadership
+            </Badge>
             <h2 className="text-4xl md:text-5xl font-bold mb-3">
               <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
                 Pro Vice Chancellors
@@ -447,26 +597,26 @@ export default function Leadership() {
                 >
                   {/* Leader Image */}
                   {pvc.image && (
-                    <div className="relative w-full bg-gradient-to-br from-orange-500/10 to-red-600/10 flex items-center justify-center h-96">
+                    <div className="relative w-full bg-gradient-to-br from-orange-500/10 to-red-600/10 flex items-center justify-center h-80">
                       <img
                         src={pvc.image}
                         alt={pvc.name}
                         className="h-full w-full object-contain group-hover:scale-105 transition-transform duration-500"
                         onError={(e) => {
-                          e.currentTarget.style.display = 'none';
+                          e.currentTarget.style.display = "none";
                         }}
                       />
                     </div>
                   )}
 
                   <CardHeader>
-                    <div className="flex items-start justify-between">
-                      <div>
+                    <div className="flex items-start justify-between gap-4">
+                      <div className="flex-grow">
                         <CardTitle className="text-2xl font-bold group-hover:text-orange-500 transition-colors">
-                          {pvc.role}
-                        </CardTitle>
-                        <p className="text-sm text-foreground mt-1">
                           {pvc.name}
+                        </CardTitle>
+                        <p className="text-sm font-semibold text-orange-500 mt-1">
+                          {pvc.role}
                         </p>
                       </div>
                       <div className="w-12 h-12 rounded-2xl bg-orange-500/10 flex items-center justify-center group-hover:bg-orange-500/20 transition-colors flex-shrink-0">
@@ -474,24 +624,58 @@ export default function Leadership() {
                       </div>
                     </div>
                   </CardHeader>
-                  <CardContent className="space-y-4 flex-grow">
+
+                  <CardContent className="space-y-4 flex-grow flex flex-col">
                     <div>
-                      <p className="text-sm font-semibold text-foreground mb-2">
-                        Message from Our {pvc.role}:
+                      <p className="text-xs font-semibold text-orange-500 mb-1">
+                        LEADERSHIP FOCUS
                       </p>
-                      <p className="text-sm text-foreground italic border-l-2 border-orange-500/30 pl-3">
-                        "{pvc.description}"
+                      <p className="text-sm font-medium text-foreground">
+                        {pvc.focus}
                       </p>
                     </div>
-                    <p className="text-foreground text-sm leading-relaxed">
+
+                    <p className="text-sm text-foreground leading-relaxed">
                       {pvc.bio}
                     </p>
-                    <div className="pt-4 border-t border-border/50">
+
+                    <div>
+                      <p className="text-xs font-semibold text-orange-500 mb-2">
+                        KEY CONTRIBUTIONS
+                      </p>
+                      <ul className="space-y-1">
+                        {pvc.contributions.map((contribution, idx) => (
+                          <li
+                            key={idx}
+                            className="flex items-start gap-2 text-xs text-foreground"
+                          >
+                            <Star className="w-3 h-3 text-orange-500 flex-shrink-0 mt-0.5" />
+                            <span>{contribution}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <Accordion type="single" collapsible className="w-full">
+                      <AccordionItem value="message" className="border-none">
+                        <AccordionTrigger className="text-sm font-semibold text-orange-500 hover:text-orange-600 py-2 px-0">
+                          <span className="flex items-center gap-2">
+                            <ChevronDown className="w-4 h-4" />
+                            Read {pvc.role}'s Message
+                          </span>
+                        </AccordionTrigger>
+                        <AccordionContent className="text-sm text-foreground italic border-l-2 border-orange-500/30 pl-3 pb-0">
+                          "{pvc.message}"
+                        </AccordionContent>
+                      </AccordionItem>
+                    </Accordion>
+
+                    <div className="pt-4 border-t border-border/50 mt-auto">
                       <p className="text-xs font-semibold text-foreground mb-2">
-                        Contact:
+                        📩 CONTACT
                       </p>
                       <p className="text-xs text-foreground">
-                        {pvc.contact}
+                        For official communication, please contact the University Administration Office.
                       </p>
                     </div>
                   </CardContent>
@@ -502,8 +686,11 @@ export default function Leadership() {
         </div>
       </section>
 
+      {/* Governance Section Divider */}
+      <div className="h-1 bg-gradient-to-r from-transparent via-orange-500/20 to-transparent"></div>
+
       {/* Governance Committees */}
-      <section id="administrative-committees" className="px-3 py-20">
+      <section id="administrative-committees" className="px-3 py-20 bg-gradient-to-br from-orange-500/5 via-red-600/5 to-background">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <Badge
@@ -514,127 +701,277 @@ export default function Leadership() {
             </Badge>
             <h2 className="text-4xl md:text-5xl font-bold mb-3">
               <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
-                Administrative Committees
+                Governance & Committees
               </span>
             </h2>
-            <p className="text-lg text-foreground max-w-3xl mx-auto">
-              Committees ensuring transparent governance and institutional excellence
+            <p className="text-lg text-foreground max-w-3xl mx-auto mb-8">
+              DSU follows a multi-tier governance model to ensure transparency, academic rigor, and continuous improvement.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {committees.map((committee, index) => {
-              const Icon = committee.icon;
-              const cardElement = (
-                <Card
-                  key={index}
-                  className="group hover:shadow-lg hover:shadow-orange-500/10 transition-all duration-300 hover:border-orange-500/30 bg-card/50 backdrop-blur-sm border border-border/50"
-                >
-                  <CardHeader>
-                    <div className="w-12 h-12 rounded-2xl bg-orange-500/10 flex items-center justify-center mb-4 group-hover:bg-orange-500/20 transition-colors">
-                      <Icon className="w-6 h-6 text-orange-500" />
-                    </div>
-                    <CardTitle className="text-lg group-hover:text-orange-500 transition-colors">
-                      {committee.name}
-                    </CardTitle>
-                    <CardDescription className="text-sm">
-                      {committee.description}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-2">
-                      {committee.functions.map((func, idx) => (
-                        <div
-                          key={idx}
-                          className="flex items-center gap-2 text-sm text-foreground"
-                        >
-                          <Star className="w-3 h-3 text-orange-500 flex-shrink-0" />
-                          {func}
+          {/* Strategic Governance */}
+          <div className="mb-16">
+            <h3 className="text-2xl font-bold text-orange-500 mb-2">
+              Strategic Governance
+            </h3>
+            <p className="text-foreground/70 mb-8 max-w-3xl">
+              {governanceStructure.strategic.description}
+            </p>
+            <div className="grid md:grid-cols-2 gap-6">
+              {governanceStructure.strategic.committees.map(
+                (committee, index) => {
+                  const Icon = committee.icon;
+                  const cardElement = (
+                    <Card
+                      key={index}
+                      className="group hover:shadow-lg hover:shadow-orange-500/10 transition-all duration-300 hover:border-orange-500/30 bg-card/50 backdrop-blur-sm border border-border/50"
+                    >
+                      <CardHeader>
+                        <div className="w-12 h-12 rounded-2xl bg-orange-500/10 flex items-center justify-center mb-4 group-hover:bg-orange-500/20 transition-colors">
+                          <Icon className="w-6 h-6 text-orange-500" />
                         </div>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-              );
+                        <CardTitle className="text-lg group-hover:text-orange-500 transition-colors">
+                          {committee.name}
+                        </CardTitle>
+                        <CardDescription className="text-sm">
+                          {committee.description}
+                        </CardDescription>
+                      </CardHeader>
+                      <CardContent>
+                        <div className="space-y-2">
+                          {committee.functions.map((func, idx) => (
+                            <div
+                              key={idx}
+                              className="flex items-center gap-2 text-sm text-foreground"
+                            >
+                              <Star className="w-3 h-3 text-orange-500 flex-shrink-0" />
+                              {func}
+                            </div>
+                          ))}
+                        </div>
+                      </CardContent>
+                    </Card>
+                  );
 
-              if (committee.link) {
-                if (committee.external || committee.link.startsWith("http")) {
-                  return (
-                    <a
-                      key={index}
-                      href={committee.link}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-lg"
-                    >
-                      {cardElement}
-                    </a>
-                  );
-                } else {
-                  return (
-                    <Link
-                      key={index}
-                      to={committee.link}
-                      className="block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-lg"
-                    >
-                      {cardElement}
-                    </Link>
-                  );
+                  if (committee.link) {
+                    if (
+                      committee.external ||
+                      committee.link.startsWith("http")
+                    ) {
+                      return (
+                        <a
+                          key={index}
+                          href={committee.link}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-lg"
+                        >
+                          {cardElement}
+                        </a>
+                      );
+                    } else {
+                      return (
+                        <Link
+                          key={index}
+                          to={committee.link}
+                          className="block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-lg"
+                        >
+                          {cardElement}
+                        </Link>
+                      );
+                    }
+                  }
+                  return cardElement;
                 }
-              }
-              return cardElement;
-            })}
+              )}
+            </div>
+          </div>
+
+          {/* Academic Governance */}
+          <div className="mb-16">
+            <h3 className="text-2xl font-bold text-orange-500 mb-2">
+              Academic Governance
+            </h3>
+            <p className="text-foreground/70 mb-8 max-w-3xl">
+              {governanceStructure.academic.description}
+            </p>
+            <div className="grid md:grid-cols-3 gap-6">
+              {governanceStructure.academic.committees.map(
+                (committee, index) => {
+                  const Icon = committee.icon;
+                  const cardElement = (
+                    <Card
+                      key={index}
+                      className="group hover:shadow-lg hover:shadow-orange-500/10 transition-all duration-300 hover:border-orange-500/30 bg-card/50 backdrop-blur-sm border border-border/50"
+                    >
+                      <CardHeader>
+                        <div className="w-12 h-12 rounded-2xl bg-orange-500/10 flex items-center justify-center mb-4 group-hover:bg-orange-500/20 transition-colors">
+                          <Icon className="w-6 h-6 text-orange-500" />
+                        </div>
+                        <CardTitle className="text-lg group-hover:text-orange-500 transition-colors">
+                          {committee.name}
+                        </CardTitle>
+                        <CardDescription className="text-sm">
+                          {committee.description}
+                        </CardDescription>
+                      </CardHeader>
+                      <CardContent>
+                        <div className="space-y-2">
+                          {committee.functions.map((func, idx) => (
+                            <div
+                              key={idx}
+                              className="flex items-center gap-2 text-sm text-foreground"
+                            >
+                              <Star className="w-3 h-3 text-orange-500 flex-shrink-0" />
+                              {func}
+                            </div>
+                          ))}
+                        </div>
+                      </CardContent>
+                    </Card>
+                  );
+
+                  if (committee.link) {
+                    if (
+                      committee.external ||
+                      committee.link.startsWith("http")
+                    ) {
+                      return (
+                        <a
+                          key={index}
+                          href={committee.link}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-lg"
+                        >
+                          {cardElement}
+                        </a>
+                      );
+                    } else {
+                      return (
+                        <Link
+                          key={index}
+                          to={committee.link}
+                          className="block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-lg"
+                        >
+                          {cardElement}
+                        </Link>
+                      );
+                    }
+                  }
+                  return cardElement;
+                }
+              )}
+            </div>
+          </div>
+
+          {/* Quality & Compliance */}
+          <div>
+            <h3 className="text-2xl font-bold text-orange-500 mb-2">
+              Quality & Compliance
+            </h3>
+            <p className="text-foreground/70 mb-8 max-w-3xl">
+              {governanceStructure.quality.description}
+            </p>
+            <div className="grid md:grid-cols-2 gap-6">
+              {governanceStructure.quality.committees.map(
+                (committee, index) => {
+                  const Icon = committee.icon;
+                  const cardElement = (
+                    <Card
+                      key={index}
+                      className="group hover:shadow-lg hover:shadow-orange-500/10 transition-all duration-300 hover:border-orange-500/30 bg-card/50 backdrop-blur-sm border border-border/50"
+                    >
+                      <CardHeader>
+                        <div className="w-12 h-12 rounded-2xl bg-orange-500/10 flex items-center justify-center mb-4 group-hover:bg-orange-500/20 transition-colors">
+                          <Icon className="w-6 h-6 text-orange-500" />
+                        </div>
+                        <CardTitle className="text-lg group-hover:text-orange-500 transition-colors">
+                          {committee.name}
+                        </CardTitle>
+                        <CardDescription className="text-sm">
+                          {committee.description}
+                        </CardDescription>
+                      </CardHeader>
+                      <CardContent>
+                        <div className="space-y-2">
+                          {committee.functions.map((func, idx) => (
+                            <div
+                              key={idx}
+                              className="flex items-center gap-2 text-sm text-foreground"
+                            >
+                              <Star className="w-3 h-3 text-orange-500 flex-shrink-0" />
+                              {func}
+                            </div>
+                          ))}
+                        </div>
+                      </CardContent>
+                    </Card>
+                  );
+
+                  if (committee.link) {
+                    if (
+                      committee.external ||
+                      committee.link.startsWith("http")
+                    ) {
+                      return (
+                        <a
+                          key={index}
+                          href={committee.link}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-lg"
+                        >
+                          {cardElement}
+                        </a>
+                      );
+                    } else {
+                      return (
+                        <Link
+                          key={index}
+                          to={committee.link}
+                          className="block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-lg"
+                        >
+                          {cardElement}
+                        </Link>
+                      );
+                    }
+                  }
+                  return cardElement;
+                }
+              )}
+            </div>
           </div>
         </div>
       </section>
 
+      {/* Leadership Values Section Divider */}
+      <div className="h-1 bg-gradient-to-r from-transparent via-orange-500/20 to-transparent"></div>
+
       {/* Organizational Values */}
-      <section className="px-3 py-20 bg-gradient-to-r from-orange-500/5 to-red-600/5">
+      <section className="px-3 py-20">
         <div className="max-w-4xl mx-auto">
-          <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-8 md:p-12">
+          <div className="text-center mb-16">
+            <Badge
+              variant="outline"
+              className="border-orange-500/20 bg-orange-500/10 text-orange-500 mb-4"
+            >
+              Leadership Values
+            </Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-3">
               <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
                 Leadership Principles
               </span>
             </h2>
+            <p className="text-lg text-foreground max-w-3xl mx-auto">
+              Core values guiding DSU's institutional direction and decision-making
+            </p>
+          </div>
 
-            <div className="grid md:grid-cols-2 gap-6">
-              {[
-                {
-                  title: "Academic Excellence",
-                  description:
-                    "Maintaining highest standards in teaching, research, and student development",
-                },
-                {
-                  title: "Transparency",
-                  description:
-                    "Open communication and transparent decision-making in all matters",
-                },
-                {
-                  title: "Innovation",
-                  description:
-                    "Encouraging creative thinking and continuous improvement",
-                },
-                {
-                  title: "Inclusivity",
-                  description:
-                    "Fostering diverse perspectives and inclusive environment",
-                },
-                {
-                  title: "Accountability",
-                  description:
-                    "Taking responsibility for decisions and institutional outcomes",
-                },
-                {
-                  title: "Collaboration",
-                  description:
-                    "Working together with faculty, staff, and stakeholders",
-                },
-              ].map((principle, index) => (
-                <div
-                  key={index}
-                  className="flex gap-4"
-                >
+          <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-8 md:p-12">
+            <div className="grid md:grid-cols-2 gap-8">
+              {principles.map((principle, index) => (
+                <div key={index} className="flex gap-4">
                   <div className="flex-shrink-0">
                     <div className="w-10 h-10 rounded-full bg-orange-500/20 flex items-center justify-center">
                       <Star className="w-5 h-5 text-orange-500" />
@@ -644,7 +981,7 @@ export default function Leadership() {
                     <h3 className="font-semibold text-foreground mb-1">
                       {principle.title}
                     </h3>
-                    <p className="text-sm text-foreground">
+                    <p className="text-sm text-foreground/80">
                       {principle.description}
                     </p>
                   </div>
@@ -656,13 +993,13 @@ export default function Leadership() {
       </section>
 
       {/* CTA Section */}
-      <section className="px-3 py-20">
+      <section className="px-3 py-20 bg-gradient-to-br from-orange-500/5 via-red-600/5 to-background">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-3">
             Connect With Our Team
           </h2>
           <p className="text-lg text-foreground mb-8 max-w-2xl mx-auto">
-            Have questions? Reach out to our administration for more information.
+            Have questions? Reach out to our administration for more information about DSU's leadership and governance.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
