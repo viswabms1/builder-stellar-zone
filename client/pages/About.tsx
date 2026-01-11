@@ -78,8 +78,11 @@ export default function About() {
             <span className="text-foreground">University</span>
           </h1>
 
+          <p className="text-xl md:text-2xl text-foreground mb-3 max-w-4xl mx-auto leading-relaxed">
+            Building India's AI-First Academic Ecosystem
+          </p>
           <p className="text-xl md:text-2xl text-foreground mb-6 max-w-4xl mx-auto leading-relaxed">
-            A centre of excellence in education, research & training, innovation & entrepreneurship producing citizens with exceptional leadership qualities
+            Where legacy education meets future-ready innovation.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
