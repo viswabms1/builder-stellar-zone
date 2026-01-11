@@ -344,7 +344,11 @@ export default function History() {
       {/* From Legacy to the Future Section */}
       <section className="px-3 py-10">
         <div className="max-w-7xl mx-auto">
-          <div className="bg-gradient-to-r from-orange-500/10 to-red-600/10 border border-orange-500/30 rounded-2xl p-8 md:p-12">
+          <div className={`rounded-2xl p-8 md:p-12 bg-gradient-to-r border ${
+            theme === "light"
+              ? "from-orange-100 to-red-100 border-orange-300"
+              : "from-orange-500/10 to-red-600/10 border-orange-500/30"
+          }`}>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
               From Legacy to the <span className={theme === "light" ? "text-orange-900" : "text-white"}>Future</span>
             </h2>
@@ -356,7 +360,11 @@ export default function History() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-foreground rounded-xl font-semibold"
+                  className={`border-2 rounded-xl font-semibold ${
+                    theme === "light"
+                      ? "border-orange-600 text-orange-600 hover:bg-orange-600"
+                      : "border-orange-500 text-orange-500 hover:bg-orange-500"
+                  } hover:text-foreground`}
                 >
                   Explore AI-First @ DSU
                   <ArrowRight className="w-5 h-5 ml-2" />
@@ -366,7 +374,11 @@ export default function History() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-foreground rounded-xl font-semibold"
+                  className={`border-2 rounded-xl font-semibold ${
+                    theme === "light"
+                      ? "border-orange-600 text-orange-600 hover:bg-orange-600"
+                      : "border-orange-500 text-orange-500 hover:bg-orange-500"
+                  } hover:text-foreground`}
                 >
                   View Our Academics
                   <ArrowRight className="w-5 h-5 ml-2" />
@@ -378,7 +390,11 @@ export default function History() {
       </section>
 
       {/* CTA Section */}
-      <section className="px-3 py-10 bg-gradient-to-r from-orange-500/5 to-red-600/5">
+      <section className={`px-3 py-10 bg-gradient-to-r ${
+        theme === "light"
+          ? "from-orange-100 to-red-100"
+          : "from-orange-500/5 to-red-600/5"
+      }`}>
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Begin Your Chapter Here
@@ -401,7 +417,11 @@ export default function History() {
               <Button
                 variant="outline"
                 size="lg"
-                className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-foreground px-8 py-6 font-semibold rounded-2xl"
+                className={`border-2 px-8 py-6 font-semibold rounded-2xl ${
+                  theme === "light"
+                    ? "border-orange-600 text-orange-600 hover:bg-orange-600"
+                    : "border-orange-500 text-orange-500 hover:bg-orange-500"
+                } hover:text-foreground`}
               >
                 Back to About
               </Button>
