@@ -355,6 +355,7 @@ export default function Admissions() {
 }
 
 function HeroSection() {
+  const { theme } = useTheme();
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-orange-500/10 via-red-500/10 to-background py-10 lg:py-28">
       <div className="absolute inset-0">
@@ -366,7 +367,9 @@ function HeroSection() {
           <GraduationCap className="h-4 w-4" />
           Admissions 2025 – Now Open
         </div>
-        <h1 className="mt-8 text-4xl font-bold leading-tight text-white md:text-6xl">
+        <h1 className={`mt-8 text-4xl font-bold leading-tight md:text-6xl ${
+          theme === "light" ? "text-orange-900" : "text-white"
+        }`}>
           Your Path to AI-First Education
         </h1>
         <p className="mt-6 text-lg text-white md:text-xl">
