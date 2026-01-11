@@ -364,7 +364,7 @@ export default function About() {
               ?
             </h2>
             <p className="text-xl text-foreground mb-8 max-w-2xl mx-auto">
-              Join our community of learners, innovators, and leaders shaping the future.
+              Join a university where legacy, innovation, and AI-driven education converge.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
