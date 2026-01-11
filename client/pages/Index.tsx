@@ -291,7 +291,8 @@ export default function Index() {
     useState(false);
   const { theme } = useTheme();
 
-  // All publications for rotation
+  // Featured publications - curated to showcase high-impact, interdisciplinary research
+  // Reduced to 5 items for homepage to improve clarity and reduce scroll fatigue
   const allPublications = [
     {
       date: "Jan 2025",
@@ -299,7 +300,7 @@ export default function Index() {
         "Multimodal Mental State Analysis: AI-powered Depression Detection",
       category: "Springer Q1 Journal",
       description:
-        "Groundbreaking research on multimodal AI for mental health diagnostics using voice, text, and facial cues. Achieved 20% accuracy gain via data fusion utilizing LSTM + CNN on DAIC-WoZ dataset. Published in Health Services and Outcomes Research Methodology by Springer Nature.",
+        "AI for mental health diagnostics using voice, text, and facial cues. Achieved 20% accuracy gain via data fusion utilizing LSTM + CNN.",
       image:
         "https://images.pexels.com/photos/8090286/pexels-photo-8090286.jpeg",
       authors: "Bipin Kumar Rai, Ishika Jain, Baibhav Tiwari, Abhay Saxena",
@@ -307,22 +308,11 @@ export default function Index() {
     },
     {
       date: "2025",
-      title: "Effect of Zircon on Aluminum/Graphite Alloy Hybrid Composites",
-      category: "Transactions of Indian Institute of Metals",
-      description:
-        "Research on the effect of zircon reinforcement on aluminum/graphite hybrid composite materials, analyzing mechanical properties and structural improvements.",
-      image:
-        "https://images.pexels.com/photos/19825178/pexels-photo-19825178.jpeg",
-      authors: "DSU Materials Science Team",
-      link: "https://doi.org/10.1007/s40735-025-00944-7",
-    },
-    {
-      date: "2025",
       title:
         "Perovskite Solar Cell Stability Analysis Using Advanced Techniques",
       category: "Progress in Photovoltaics",
       description:
-        "Advanced stability analysis of perovskite solar cells using cutting-edge characterization techniques to improve long-term performance and reliability.",
+        "Advanced stability analysis of perovskite solar cells using cutting-edge characterization techniques.",
       image:
         "https://images.pexels.com/photos/35501726/pexels-photo-35501726.jpeg",
       authors: "DSU Renewable Energy Lab",
@@ -330,21 +320,10 @@ export default function Index() {
     },
     {
       date: "2025",
-      title: "Host–Guest Inclusion Complexes of Tafamidis",
-      category: "Journal of Molecular Structure",
-      description:
-        "Comprehensive study on host-guest inclusion complexes involving tafamidis, examining molecular interactions and structural characterization.",
-      image:
-        "https://images.pexels.com/photos/25626509/pexels-photo-25626509.jpeg",
-      authors: "DSU Chemistry Research",
-      link: "https://doi.org/10.1016/j.molstruc.2025.141649",
-    },
-    {
-      date: "2025",
       title: "Development of a Scaled-Down Test Rig for Wheel Systems",
       category: "Journal of Thermal Science and Engineering Applications",
       description:
-        "Design and development of a laboratory-scale test rig for studying wheel system performance, thermal behavior, and durability characteristics.",
+        "Laboratory-scale test rig for studying wheel system performance and thermal behavior.",
       image:
         "https://images.pexels.com/photos/9242838/pexels-photo-9242838.jpeg",
       authors: "DSU Mechanical Engineering",
@@ -355,7 +334,7 @@ export default function Index() {
       title: "Exploring Caffeine as a Disruptor of Membrane Dynamics",
       category: "Physical Review E",
       description:
-        "Investigation of caffeine's molecular effects on membrane dynamics and protein interactions using advanced computational and experimental techniques.",
+        "Investigation of caffeine's molecular effects on membrane dynamics and protein interactions using advanced techniques.",
       image:
         "https://images.pexels.com/photos/25626515/pexels-photo-25626515.jpeg",
       authors: "DSU Biophysics Group",
@@ -366,46 +345,11 @@ export default function Index() {
       title: "Fiber Bragg Grating as a Temperature Sensor",
       category: "Journal of Optics",
       description:
-        "Novel application of fiber Bragg gratings for high-precision temperature sensing in industrial and scientific applications.",
+        "Novel application of fiber Bragg gratings for high-precision temperature sensing in industrial applications.",
       image:
         "https://images.pexels.com/photos/16777744/pexels-photo-16777744.jpeg",
       authors: "DSU Photonics Lab",
       link: "https://doi.org/10.1007/s12596-024-01894-y",
-    },
-    {
-      date: "2025",
-      title:
-        "Synthesis, Characterization and Computational Study of Molecular Systems",
-      category: "Journal of Molecular Structure",
-      description:
-        "Integrated approach combining chemical synthesis, experimental characterization, and computational modeling for understanding molecular systems and their properties.",
-      image:
-        "https://images.pexels.com/photos/7723393/pexels-photo-7723393.jpeg",
-      authors: "DSU Computational Chemistry",
-      link: "https://doi.org/10.1016/j.molstruc.2025.142056",
-    },
-    {
-      date: "2024",
-      title: "Multilayer Coating-Assisted Gold-Encapsulated Nanostructures",
-      category: "Journal of Optics",
-      description:
-        "Development of advanced multilayer coating techniques for creating gold-encapsulated nanostructures with enhanced optical and plasmonic properties.",
-      image:
-        "https://images.pexels.com/photos/16777744/pexels-photo-16777744.jpeg",
-      authors: "DSU Nanotechnology Research",
-      link: "https://doi.org/10.1007/s12596-024-01711-6",
-    },
-    {
-      date: "2024",
-      title:
-        "Optimizing Solar Radiation Forecasting for Renewable Energy Applications",
-      category: "Journal of Solar Energy & Sustainable Development",
-      description:
-        "Advanced forecasting methods for predicting solar radiation patterns to optimize renewable energy generation and grid integration.",
-      image:
-        "https://images.pexels.com/photos/9799712/pexels-photo-9799712.jpeg",
-      authors: "DSU Sustainable Energy Institute",
-      link: "https://doi.org/10.51646/jsesd.v14i1.386",
     },
   ];
 
