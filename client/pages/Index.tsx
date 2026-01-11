@@ -478,7 +478,12 @@ export default function Index() {
         "https://images.pexels.com/photos/7974355/pexels-photo-7974355.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
       title: "DSU Online",
       description: "",
-      programs: ["Online Degrees", "Flexible Learning", "Certification Programs", "Professional Development"],
+      programs: [
+        "Online Degrees",
+        "Flexible Learning",
+        "Certification Programs",
+        "Professional Development",
+      ],
     },
   ];
 
@@ -676,7 +681,9 @@ export default function Index() {
               Academic Excellence That Inspires
             </h2>
             <p className="subheadline text-foreground max-w-3xl mx-auto font-display">
-              Explore AI-integrated undergraduate and postgraduate programs spanning engineering, sciences, health, law, design, and management.
+              Explore AI-integrated undergraduate and postgraduate programs
+              spanning engineering, sciences, health, law, design, and
+              management.
             </p>
           </div>
 
@@ -932,10 +939,12 @@ export default function Index() {
               </span>
             </h2>
             <p className="subheadline text-foreground max-w-2xl mx-auto font-display mb-4">
-              Showcasing high-impact, interdisciplinary research across AI, materials science, energy, and health
+              Showcasing high-impact, interdisciplinary research across AI,
+              materials science, energy, and health
             </p>
             <p className="text-sm font-bold text-brand-magenta tracking-wide">
-              Spanning Scopus-indexed research in AI, materials science, renewable energy, and biomedical innovation
+              Spanning Scopus-indexed research in AI, materials science,
+              renewable energy, and biomedical innovation
             </p>
           </div>
 
@@ -998,7 +1007,10 @@ export default function Index() {
                       <ArrowRight className="w-4 h-4" />
                     </Button>
                   )}
-                  <a href="/research-publications" className="text-xs text-brand-magenta hover:text-brand-magenta/80 font-semibold transition-colors">
+                  <a
+                    href="/research-publications"
+                    className="text-xs text-brand-magenta hover:text-brand-magenta/80 font-semibold transition-colors"
+                  >
                     View All Research
                   </a>
                 </div>
@@ -1092,7 +1104,9 @@ export default function Index() {
                     {/* CTA indicator */}
                     <div className="flex items-center gap-2 text-brand-magenta opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform group-hover:translate-x-1 pt-2 border-t border-foreground/10">
                       <ChevronRight className="w-3 h-3" />
-                      <span className="text-xs font-semibold">View Details</span>
+                      <span className="text-xs font-semibold">
+                        View Details
+                      </span>
                     </div>
                   </div>
 
@@ -1128,7 +1142,8 @@ export default function Index() {
               ?
             </h2>
             <p className="subheadline text-foreground mb-8 max-w-2xl mx-auto font-display">
-              Join a university where AI is integrated across academics, research, and campus innovation.
+              Join a university where AI is integrated across academics,
+              research, and campus innovation.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
@@ -1148,17 +1163,18 @@ export default function Index() {
             </div>
 
             <div className="flex flex-wrap justify-center gap-2">
-              {["Merit-Based Scholarships Available", "Industry-Aligned Curriculum & Partnerships"].map(
-                (badge, index) => (
-                  <Badge
-                    key={index}
-                    variant="secondary"
-                    className="px-3 py-1 text-xs font-medium font-body"
-                  >
-                    {badge}
-                  </Badge>
-                ),
-              )}
+              {[
+                "Merit-Based Scholarships Available",
+                "Industry-Aligned Curriculum & Partnerships",
+              ].map((badge, index) => (
+                <Badge
+                  key={index}
+                  variant="secondary"
+                  className="px-3 py-1 text-xs font-medium font-body"
+                >
+                  {badge}
+                </Badge>
+              ))}
             </div>
           </div>
         </div>

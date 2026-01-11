@@ -748,8 +748,14 @@ function App() {
                   path="/academics/health-sciences/physiotherapy/faculty"
                   element={<PhysiotherapyFaculty />}
                 />
-                <Route path="/academics/health-sciences/bpt" element={<BPT />} />
-                <Route path="/academics/health-sciences/mpt" element={<MPT />} />
+                <Route
+                  path="/academics/health-sciences/bpt"
+                  element={<BPT />}
+                />
+                <Route
+                  path="/academics/health-sciences/mpt"
+                  element={<MPT />}
+                />
                 <Route
                   path="/academics/health-sciences/bsc-nursing"
                   element={<BScNursing />}
