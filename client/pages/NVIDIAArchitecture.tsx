@@ -678,7 +678,7 @@ export default function NVIDIAArchitecture() {
           <div className="bg-gradient-to-r from-green-500/20 to-blue-500/20 rounded-2xl p-8 border border-green-500/30 text-center">
             <h3 className="text-3xl font-bold mb-4">The Bottom Line</h3>
             <p className="text-xl text-foreground/80 leading-relaxed max-w-3xl mx-auto">
-              Top AI companies recruit from universities with world-class infrastructure. Your degree from DSU isn't just a credential—it's proof that you've mastered the tools and infrastructure used by the world's leading AI teams. That transforms placements from uncertain to exceptional.
+              Top AI companies recruit from universities with world-class infrastructure. Your degree from DSU isn't just a credential—it's proof that you've mastered the tools and infrastructure used by leading AI teams. That significantly strengthens your placement outcomes.
             </p>
           </div>
         </div>
