@@ -839,6 +839,11 @@ export default function Index() {
             {/* Left side - Featured story (50%) - Auto-rotating */}
             <div className="lg:col-span-2" style={{ contain: "content" }}>
               <div className="relative">
+                {featuredNewsIndex === 0 && (
+                  <div className="absolute top-2 right-3 z-10 text-xs font-semibold text-white/70 pointer-events-none animate-pulse">
+                    Swipe →
+                  </div>
+                )}
                 <button
                   onClick={() => setSelectedNews(currentFeatured)}
                   className={`w-full flex flex-col rounded-none border border-orange-500/20 bg-orange-500/10 cursor-pointer text-left overflow-hidden featured-news-card transition-all duration-300 ${
