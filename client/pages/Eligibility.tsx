@@ -430,15 +430,6 @@ const schools: School[] = [
               { label: "Term II", amount: "₹97,500" },
               { label: "Total Fee", amount: "₹2,07,000" },
             ],
-            documentsRequired: [
-              "10+2 original mark sheets and pass certificate",
-              "Mathematics or equivalent subject mark card",
-              "School leaving certificate",
-              "Category certificate (if applicable)",
-              "Photo ID (Aadhaar / Passport / Driving License)",
-              "Passport-size photographs (6)",
-              "Transfer certificate from previous institution",
-            ],
           },
           {
             name: "BCA in Artificial Intelligence & Data Sciences",
