@@ -29,10 +29,20 @@ type EligibilityRule = {
   reason: string;
 };
 
+type SubjectRequirement = "PCM" | "PCB" | "Commerce" | "Arts" | "Law" | "Engineering" | "Science" | "Life Sciences" | "Any";
+
+type EligibilityRule = {
+  requiredEducation: EducationLevel;
+  subjectRequirement: SubjectRequirement;
+  minimumPercentage: (category: Category) => number;
+  applicablePrograms: string[];
+  reason: string;
+};
+
 const eligibilityRules: EligibilityRule[] = [
   {
     requiredEducation: "10+2",
-    requiredSubjects: ["Physics", "Mathematics"],
+    subjectRequirement: "PCM",
     minimumPercentage: (cat) => (cat === "General" ? 45 : 40),
     applicablePrograms: [
       "B.Tech Computer Science & Engineering",
@@ -48,53 +58,60 @@ const eligibilityRules: EligibilityRule[] = [
       "B.Tech Mechanical Engineering",
       "B.Tech Aerospace Engineering",
     ],
-    reason: "Requires 10+2/PUC with Physics & Mathematics as compulsory subjects + one additional science subject, with minimum 45% (40% for SC/ST/OBC)",
+    reason: "Requires 10+2/PUC with Physics, Chemistry & Mathematics (PCM) with minimum 45% (40% for SC/ST/OBC)",
   },
   {
     requiredEducation: "10+2",
-    requiredSubjects: ["Physics", "Chemistry", "Biology"],
+    subjectRequirement: "PCB",
     minimumPercentage: (cat) => (cat === "General" ? 45 : 40),
     applicablePrograms: ["B.Sc Nursing", "B.Pharm"],
-    reason: "Requires 10+2/PUC with Physics, Chemistry & Biology with minimum 45% (40% for SC/ST/OBC)",
+    reason: "Requires 10+2/PUC with Physics, Chemistry & Biology (PCB) with minimum 45% (40% for SC/ST/OBC)",
   },
   {
     requiredEducation: "10+2",
-    requiredSubjects: [],
+    subjectRequirement: "Commerce",
     minimumPercentage: (cat) => (cat === "General" ? 50 : 45),
-    applicablePrograms: ["BBA", "B.Com General", "B.Com ACCA", "B.Com CA", "B.Com CMA", "BCA", "BA Journalism & Mass Communication"],
+    applicablePrograms: ["BBA", "B.Com General", "B.Com ACCA", "B.Com CA", "B.Com CMA", "BCA"],
+    reason: "Requires 10+2 or equivalent with Commerce subjects and minimum 50% marks (45% for SC/ST/OBC)",
+  },
+  {
+    requiredEducation: "10+2",
+    subjectRequirement: "Any",
+    minimumPercentage: (cat) => (cat === "General" ? 50 : 45),
+    applicablePrograms: ["BA Journalism & Mass Communication"],
     reason: "Requires 10+2 or equivalent with minimum 50% marks (45% for SC/ST/OBC)",
   },
   {
     requiredEducation: "10+2",
-    requiredSubjects: [],
+    subjectRequirement: "Any",
     minimumPercentage: (cat) => (cat === "General" ? 50 : 45),
     applicablePrograms: ["B.A. LL.B", "B.B.A. LL.B", "3 Year LL.B"],
-    reason: "Requires 10+2 or equivalent with minimum 50% marks. CLAT scores accepted.",
+    reason: "Requires 10+2 or equivalent with minimum 50% marks (45% for SC/ST/OBC)",
   },
   {
     requiredEducation: "Bachelor's",
-    requiredSubjects: [],
+    subjectRequirement: "Any",
     minimumPercentage: (cat) => (cat === "General" ? 50 : 45),
     applicablePrograms: ["MBA", "MCA", "M.Sc Data Science", "M.Sc Basic Sciences"],
     reason: "Requires Bachelor's degree with minimum 50% marks (45% for SC/ST/OBC)",
   },
   {
     requiredEducation: "Bachelor's",
-    requiredSubjects: ["Engineering", "CSE"],
+    subjectRequirement: "Engineering",
     minimumPercentage: (cat) => 50,
     applicablePrograms: ["M.Tech CSE", "M.Tech AI & Data Science"],
     reason: "Requires B.Tech in Engineering/CSE with minimum 50% marks",
   },
   {
     requiredEducation: "Law",
-    requiredSubjects: ["Law"],
+    subjectRequirement: "Law",
     minimumPercentage: (cat) => 50,
     applicablePrograms: ["LL.M"],
     reason: "Requires LL.B degree with minimum 50% marks",
   },
   {
     requiredEducation: "Master's",
-    requiredSubjects: ["Life Sciences"],
+    subjectRequirement: "Life Sciences",
     minimumPercentage: (cat) => 50,
     applicablePrograms: ["M.Sc Nursing", "M.Sc Biotechnology", "M.Sc Microbiology"],
     reason: "Requires B.Sc in relevant life science subject with minimum 50% marks",
