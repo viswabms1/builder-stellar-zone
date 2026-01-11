@@ -386,22 +386,22 @@ export default function Navigation() {
 
   return (
     <>
-      {/* Top Menu Bar - Hidden on Mobile */}
+      {/* Top Menu Bar */}
       <div
-        className={`sticky top-0 z-[9998] h-14 transition-all duration-300 hidden sm:flex items-center ${
+        className={`sticky top-0 z-[9998] h-14 transition-all duration-300 flex items-center ${
           theme === "light"
             ? "bg-gradient-to-r from-orange-50 to-white border-b-2 border-orange-200/50"
             : "bg-gradient-to-r from-slate-900 to-slate-950 border-b-2 border-orange-600/30"
         }`}
       >
-        <div className="w-full max-w-[1600px] mx-auto px-4 flex items-center justify-between gap-2">
+        <div className="w-full max-w-[1600px] mx-auto px-2 sm:px-4 flex items-center justify-between gap-1 sm:gap-2">
           {/* All Top Menu Items in one continuous row */}
-          <div className="flex items-center gap-1 flex-nowrap overflow-x-auto scrollbar-hide">
+          <div className="flex items-center gap-0.5 sm:gap-1 flex-nowrap overflow-x-auto scrollbar-hide">
             {topMenuItems.map((item, idx) => (
               <Link
                 key={idx}
                 to={item.href}
-                className={`text-sm font-medium transition-all duration-200 whitespace-nowrap px-2.5 py-2 rounded-md hover:scale-105 flex-shrink-0 ${
+                className={`text-xs sm:text-sm font-medium transition-all duration-200 whitespace-nowrap px-1.5 sm:px-2.5 py-1.5 sm:py-2 rounded-md hover:scale-105 flex-shrink-0 ${
                   theme === "light"
                     ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
                     : "text-white/80 hover:text-white hover:bg-white/10"
@@ -414,7 +414,7 @@ export default function Navigation() {
               href="https://ums.mydsi.org/Login.aspx/DSU"
               target="_blank"
               rel="noopener noreferrer"
-              className={`text-sm font-medium transition-all duration-200 whitespace-nowrap px-2.5 py-2 rounded-md hover:scale-105 flex-shrink-0 ${
+              className={`text-xs sm:text-sm font-medium transition-all duration-200 whitespace-nowrap px-1.5 sm:px-2.5 py-1.5 sm:py-2 rounded-md hover:scale-105 flex-shrink-0 ${
                 theme === "light"
                   ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
                   : "text-white/80 hover:text-white hover:bg-white/10"
@@ -434,7 +434,7 @@ export default function Navigation() {
 
       {/* Main Navigation Bar */}
       <nav
-        className={`sticky top-0 sm:top-14 z-[9997] transition-all duration-300 overflow-visible shadow-md ${
+        className={`sticky top-14 z-[9997] transition-all duration-300 overflow-visible shadow-md ${
           theme === "light"
             ? "bg-white/95 backdrop-blur-sm border-b-2 border-orange-200/50"
             : "bg-slate-950/95 backdrop-blur-sm border-b-2 border-orange-600/30"
