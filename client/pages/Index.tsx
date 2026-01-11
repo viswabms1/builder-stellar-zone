@@ -942,7 +942,7 @@ export default function Index() {
               Showcasing high-impact, interdisciplinary research across AI,
               materials science, energy, and health
             </p>
-            <p className="text-sm font-bold text-brand-magenta tracking-wide">
+            <p className="text-sm font-bold text-white tracking-wide">
               Spanning Scopus-indexed research in AI, materials science,
               renewable energy, and biomedical innovation
             </p>
