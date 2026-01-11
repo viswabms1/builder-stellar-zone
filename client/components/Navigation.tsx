@@ -477,18 +477,18 @@ export default function Navigation() {
                 const active = !item.external && isActive(item.href);
                 const isAbout = item.href === "/about";
                 const isAcademics = item.href === "/academics";
-                const sharedClasses = `flex items-center space-x-1 px-3 py-1.5 rounded-xl text-sm font-medium font-display transition-all duration-200 group ${
+                const sharedClasses = `flex items-center space-x-1 px-3 py-2 rounded-lg text-sm font-medium font-display transition-all duration-200 group ${
                   theme === "light"
                     ? active ||
                       (isAbout && aboutMenuOpen) ||
                       (isAcademics && academicsMenuOpen)
-                      ? "bg-orange-100 text-orange-900 font-semibold"
-                      : "text-gray-700 hover:text-orange-600 hover:bg-gray-100"
+                      ? "bg-orange-100 text-orange-900 font-semibold shadow-sm"
+                      : "text-gray-700 hover:text-orange-600 hover:bg-orange-50"
                     : active ||
                         (isAbout && aboutMenuOpen) ||
                         (isAcademics && academicsMenuOpen)
-                      ? "bg-white/20 text-white font-semibold"
-                      : "text-white hover:text-white hover:bg-white/10"
+                      ? "bg-white/20 text-white font-semibold shadow-sm"
+                      : "text-white/90 hover:text-white hover:bg-white/10"
                 }`;
 
                 const itemElement = (() => {
