@@ -1704,11 +1704,11 @@ function SchoolsSection() {
           </p>
         </div>
 
-        <div className="mb-8 flex flex-wrap gap-3 justify-center">
+        <div className="mb-8 flex flex-wrap gap-2 justify-center sm:gap-3">
           <Button
             onClick={() => setSelectedLevel("all")}
             variant={selectedLevel === "all" ? "default" : "outline"}
-            className={`rounded-full px-6 py-2 font-semibold transition ${
+            className={`rounded-full px-4 py-2 text-sm sm:px-6 font-semibold transition ${
               selectedLevel === "all"
                 ? "bg-orange-500 text-white hover:bg-orange-600"
                 : "border border-orange-500/30 text-foreground hover:bg-orange-500/10"
@@ -1719,7 +1719,7 @@ function SchoolsSection() {
           <Button
             onClick={() => setSelectedLevel("UG")}
             variant={selectedLevel === "UG" ? "default" : "outline"}
-            className={`rounded-full px-6 py-2 font-semibold transition ${
+            className={`rounded-full px-4 py-2 text-sm sm:px-6 font-semibold transition ${
               selectedLevel === "UG"
                 ? "bg-orange-500 text-white hover:bg-orange-600"
                 : "border border-orange-500/30 text-foreground hover:bg-orange-500/10"
@@ -1730,7 +1730,7 @@ function SchoolsSection() {
           <Button
             onClick={() => setSelectedLevel("PG")}
             variant={selectedLevel === "PG" ? "default" : "outline"}
-            className={`rounded-full px-6 py-2 font-semibold transition ${
+            className={`rounded-full px-4 py-2 text-sm sm:px-6 font-semibold transition ${
               selectedLevel === "PG"
                 ? "bg-orange-500 text-white hover:bg-orange-600"
                 : "border border-orange-500/30 text-foreground hover:bg-orange-500/10"
