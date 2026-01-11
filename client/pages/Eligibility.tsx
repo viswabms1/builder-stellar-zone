@@ -1664,12 +1664,8 @@ function HeroSection() {
             className="rounded-2xl bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 px-8 py-6 text-lg font-semibold text-foreground shadow-lg shadow-orange-500/30 transition hover:shadow-xl"
             asChild
           >
-            <a
-              href="https://admissions.dsu.edu.in/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Apply Now
+            <a href="/eligibility-checker">
+              🚀 Try Eligibility Checker
               <ArrowRight className="h-5 w-5" />
             </a>
           </Button>
@@ -1679,8 +1675,8 @@ function HeroSection() {
             className="rounded-2xl border-2 border-orange-500 px-8 py-6 text-lg font-semibold text-orange-500"
             asChild
           >
-            <a href="/admissions">
-              Visit Admissions Overview
+            <a href="https://admissions.dsu.edu.in/" target="_blank" rel="noreferrer">
+              Apply Now
               <ArrowRight className="h-5 w-5" />
             </a>
           </Button>
