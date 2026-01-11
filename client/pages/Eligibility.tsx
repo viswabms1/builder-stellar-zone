@@ -489,15 +489,6 @@ const schools: School[] = [
               { label: "Term II", amount: "₹1,65,000" },
               { label: "Total Fees", amount: "₹3,42,000" },
             ],
-            documentsRequired: [
-              "Bachelor's degree (BCA/B.Sc/B.Com) original mark sheets and certificate",
-              "PGCET admit card and scorecard (if applicable)",
-              "Category certificate (SC/ST/OBC, if applicable)",
-              "Mathematics certificates (10+2 level or graduation level)",
-              "Work experience certificate (if applicable)",
-              "Passport-size photographs (6)",
-              "Photo ID (Aadhaar / Passport / Driving License)",
-            ],
           },
           {
             name: "M.Sc in Data Science",
