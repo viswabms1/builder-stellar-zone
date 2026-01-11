@@ -1116,26 +1116,30 @@ const schools: School[] = [
   {
     name: "School of Arts, Design & Humanities",
     tagline:
-      "Creative programs combining storytelling, digital media, and field journalism.",
+      "Yearly fee structure 2026-27 for creative programs combining storytelling, digital media, and field journalism.",
     icon: BookOpen,
     categories: [
       {
-        title: "Undergraduate Program",
+        title: "Undergraduate Program (3 Years Duration)",
         programs: [
           {
             name: "B.A. Journalism and Mass Communication",
             level: "UG",
+            duration: "3 Years",
             eligibility:
-              "10+2 or equivalent examination with minimum 45% aggregate; preference for Arts and Humanities backgrounds.",
+              "Pass in 10+2, A Level, IB, American 12th grade or equivalent and a minimum of 45% marks in aggregate. Arts group subjects are preferred.",
             fees: [
               { label: "Term I", amount: "₹77,000" },
-              { label: "Term II", amount: "₹65,000" },
-              { label: "Total (Incl. Library Deposit)", amount: "₹1,42,000" },
+              { label: "Term II", amount: "₹75,000" },
+              { label: "Total Fees", amount: "₹1,52,000" },
             ],
             notes: [
               "Includes newsroom simulations, digital production labs, and internships with media houses.",
             ],
           },
+        ],
+        footnotes: [
+          "Fee structure reflects the 2026-27 academic year. All fees shown are annual totals.",
         ],
       },
     ],
