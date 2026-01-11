@@ -466,6 +466,15 @@
 }
 
 @layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
   .animate-gradient-shift {
     background-size: 200% auto;
     animation: gradient-shift 3s ease-in-out infinite;
