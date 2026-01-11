@@ -305,11 +305,14 @@ export default function History() {
           <div className="text-center mb-8">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
-                World-Class Infrastructure
+                Growth of Campus Infrastructure
               </span>
             </h2>
+            <p className="text-lg text-foreground max-w-3xl mx-auto mb-6">
+              Infrastructure development at DSU has evolved in parallel with academic growth, ensuring modern learning environments across generations.
+            </p>
             <p className="text-lg text-foreground max-w-3xl mx-auto">
-              Modern facilities supporting academic excellence and holistic development
+              Facilities supporting academic excellence and holistic development
             </p>
           </div>
 
