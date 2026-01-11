@@ -483,11 +483,14 @@ function AdmissionRoutesSection() {
 }
 
 function EssentialsSection() {
+  const { theme } = useTheme();
   return (
     <section className="px-3 py-8">
       <div className="mx-auto max-w-6xl">
         <div className="mb-10 text-center">
-          <h2 className="text-3xl font-bold md:text-4xl">
+          <h2 className={`text-3xl font-bold md:text-4xl ${
+            theme === "light" ? "text-orange-900" : "text-white"
+          }`}>
             Essential Resources
           </h2>
           <p className="mt-3 text-lg text-foreground">
