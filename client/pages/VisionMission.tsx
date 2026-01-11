@@ -25,25 +25,25 @@ export default function VisionMission() {
       icon: Lightbulb,
       title: "The Pursuit of Excellence",
       description:
-        "A commitment to strive continuously to improve ourselves and our systems with the aim of becoming the best in our field.",
+        "Continuous improvement in teaching, research, infrastructure and institutional practices.",
     },
     {
       icon: Award,
       title: "Fairness",
       description:
-        "A commitment to objectivity and impartiality, to earn the trust and respect of society.",
+        "Commitment to equity, inclusiveness, and unbiased academic and administrative processes.",
     },
     {
       icon: Target,
       title: "Leadership",
       description:
-        "A commitment to lead responsively and creatively in educational and research processes.",
+        "Developing responsible leaders capable of guiding change in education, research and industry.",
     },
     {
       icon: Heart,
       title: "Integrity and Transparency",
       description:
-        "A commitment to be ethical, sincere and transparent in all activities and to treat all individuals with dignity and respect.",
+        "Upholding ethical conduct, accountability and openness in governance and academics.",
     },
   ];
 
