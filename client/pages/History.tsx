@@ -317,9 +317,15 @@ export default function History() {
             ].map((discipline, index) => (
               <Card
                 key={index}
-                className="p-6 bg-card/50 backdrop-blur-sm border border-border/30 hover:border-orange-500/30 transition-all duration-300 flex items-center gap-3"
+                className={`p-6 bg-card/50 backdrop-blur-sm border transition-all duration-300 flex items-center gap-3 ${
+                  theme === "light"
+                    ? "border-border/30 hover:border-orange-300"
+                    : "border-border/30 hover:border-orange-500/30"
+                }`}
               >
-                <CheckCircle className="w-5 h-5 text-orange-500 flex-shrink-0" />
+                <CheckCircle className={`w-5 h-5 flex-shrink-0 ${
+                  theme === "light" ? "text-orange-700" : "text-orange-500"
+                }`} />
                 <span className="text-foreground font-medium">{discipline}</span>
               </Card>
             ))}
@@ -328,7 +334,11 @@ export default function History() {
       </section>
 
       {/* Campus Infrastructure Section */}
-      <section className="px-3 py-10 bg-gradient-to-br from-orange-500/5 via-red-600/5 to-background">
+      <section className={`px-3 py-10 bg-gradient-to-br ${
+        theme === "light"
+          ? "from-orange-100 via-orange-50 to-background"
+          : "from-orange-500/5 via-red-600/5 to-background"
+      }`}>
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-8">
             <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${
@@ -355,7 +365,11 @@ export default function History() {
             ].map((facility, index) => (
               <Card
                 key={index}
-                className="p-6 bg-card/50 backdrop-blur-sm border border-border/30 hover:border-orange-500/30 transition-all duration-300"
+                className={`p-6 bg-card/50 backdrop-blur-sm border transition-all duration-300 ${
+                  theme === "light"
+                    ? "border-border/30 hover:border-orange-300"
+                    : "border-border/30 hover:border-orange-500/30"
+                }`}
               >
                 <h3 className="text-lg font-semibold text-foreground mb-2">{facility.title}</h3>
                 <p className="text-sm text-foreground">{facility.description}</p>
