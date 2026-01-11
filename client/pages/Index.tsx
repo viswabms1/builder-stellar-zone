@@ -768,7 +768,7 @@ export default function Index() {
           </div>
 
           <div
-            className="grid md:grid-cols-2 lg:grid-cols-4 gap-0 auto-rows-max"
+            className="grid md:grid-cols-2 lg:grid-cols-5 gap-0 auto-rows-max"
             style={{ contain: "layout style paint" }}
           >
             {schoolsData.map((school, index) => {
