@@ -581,6 +581,15 @@ const schools: School[] = [
               { label: "Total Fees", amount: "₹2,52,000" },
             ],
             scholarships: "Scholarship Available",
+            documentsRequired: [
+              "10+2 / PUC original mark sheets and pass certificate",
+              "CLAT admit card and scorecard (if applicable)",
+              "School leaving certificate",
+              "Category certificate (SC/ST/OBC, if applicable)",
+              "Character certificate from school/college",
+              "Passport-size photographs (6)",
+              "Photo ID (Aadhaar / Passport / Driving License)",
+            ],
           },
           {
             name: "B.B.A. LL.B",
