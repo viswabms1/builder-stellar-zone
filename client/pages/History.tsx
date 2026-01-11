@@ -58,26 +58,26 @@ export default function History() {
   const heritage = [
     {
       period: "1960s - 2008",
-      title: "Dayananda Sagar Institutions Legacy",
+      title: "Institutional Foundations",
       description:
         "A visionary foundation built by Late Shri R Dayananda Sagar and Late Smt Chandramma Sagar, establishing a network of schools and colleges dedicated to quality education and community development.",
       highlights: [
-        "Over 60 years of educational excellence and trust",
-        "Alumni network of 100,000+ professionals worldwide",
-        "Pioneering approach to modern education",
-        "High-caliber teaching staff and modern infrastructure",
+        "Expansion across multiple disciplines and campuses",
+        "Establishment of strong alumni and community trust",
+        "Emphasis on quality teaching and infrastructure",
+        "Foundation for healthcare, technical, and professional education",
       ],
     },
     {
       period: "2008 - Present",
-      title: "Dayananda Sagar University Era",
+      title: "University Era",
       description:
         "Evolution into a comprehensive university creating a canvas for young global citizens to transform creative abilities into world-facing achievements through innovation, entrepreneurship, and leadership.",
       highlights: [
-        "Diverse academic programs from UG to PhD",
-        "World-class research and innovation initiatives",
-        "Global partnerships and collaborations",
-        "Campus supporting academics, arts, culture, and entrepreneurship",
+        "Transition to a multidisciplinary state university",
+        "Expansion into research, innovation, and entrepreneurship",
+        "Strengthening global collaborations and industry partnerships",
+        "Integration of emerging technologies and AI-driven education",
       ],
     },
   ];
