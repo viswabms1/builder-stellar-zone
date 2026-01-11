@@ -136,10 +136,10 @@ export default function EligibilityChecker() {
         { label: "Arts/Humanities", value: "Arts" },
       ],
       "Bachelor's": [
-        { label: "Engineering/CSE", value: "Engineering" },
-        { label: "Commerce", value: "Commerce" },
-        { label: "Science", value: "Science" },
-        { label: "Arts/Humanities", value: "Arts" },
+        { label: "Engineering (B.Tech)", value: "Engineering" },
+        { label: "Commerce (B.Com)", value: "Commerce" },
+        { label: "Science (B.Sc)", value: "Science" },
+        { label: "Arts/Humanities (B.A)", value: "Arts" },
       ],
       "Master's": [
         { label: "Engineering", value: "Engineering" },
