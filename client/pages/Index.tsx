@@ -984,7 +984,7 @@ export default function Index() {
                   {allPublications[selectedPublicationIndex].description}
                 </p>
                 <div className="pt-2 border-t border-foreground/10">
-                  <p className="text-sm text-brand-magenta font-semibold">
+                  <p className="text-sm text-white/90 font-semibold">
                     ✓ {allPublications[selectedPublicationIndex].authors}
                   </p>
                 </div>
