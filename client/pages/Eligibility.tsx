@@ -118,7 +118,10 @@ const schools: School[] = [
               "Pass in PUC / 10+2 examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry / Biotechnology / Biology / Computer Science / Electronics / Technical Vocational subjects and obtained at least 45% marks (40% in case of candidate belonging to SC/ST & OBC category) in the above subjects taken together.",
             fees: [
               { label: "CET - Total Fee", amount: "Not Available" },
-              { label: "Ranking Based (JEE Mains/Uniguage/Comed-K)", amount: "₹4,12,000" },
+              {
+                label: "Ranking Based (JEE Mains/Uniguage/Comed-K)",
+                amount: "₹4,12,000",
+              },
               { label: "Others - Total Fee", amount: "₹4,92,000" },
             ],
           },
@@ -130,7 +133,10 @@ const schools: School[] = [
               "Pass in PUC / 10+2 examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry / Biotechnology / Biology / Computer Science / Electronics / Technical Vocational subjects and obtained at least 45% marks (40% in case of candidate belonging to SC/ST & OBC category) in the above subjects taken together.",
             fees: [
               { label: "CET - Total Fee", amount: "Not Available" },
-              { label: "Ranking Based (JEE Mains/Uniguage/Comed-K)", amount: "₹4,35,000" },
+              {
+                label: "Ranking Based (JEE Mains/Uniguage/Comed-K)",
+                amount: "₹4,35,000",
+              },
               { label: "Others - Total Fee", amount: "₹5,25,000" },
             ],
           },
@@ -142,7 +148,10 @@ const schools: School[] = [
               "Pass in PUC / 10+2 examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry / Biotechnology / Biology / Computer Science / Electronics / Technical Vocational subjects and obtained at least 45% marks (40% in case of candidate belonging to SC/ST & OBC category) in the above subjects taken together.",
             fees: [
               { label: "CET - Total Fee", amount: "Not Available" },
-              { label: "Ranking Based (JEE Mains/Uniguage/Comed-K)", amount: "₹4,12,000" },
+              {
+                label: "Ranking Based (JEE Mains/Uniguage/Comed-K)",
+                amount: "₹4,12,000",
+              },
               { label: "Others - Total Fee", amount: "₹4,92,000" },
             ],
           },
@@ -154,7 +163,10 @@ const schools: School[] = [
               "Pass in PUC / 10+2 examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry / Biotechnology / Biology / Computer Science / Electronics / Technical Vocational subjects and obtained at least 45% marks (40% in case of candidate belonging to SC/ST & OBC category) in the above subjects taken together.",
             fees: [
               { label: "CET - Total Fee", amount: "Not Available" },
-              { label: "Ranking Based (JEE Mains/Uniguage/Comed-K)", amount: "₹4,12,000" },
+              {
+                label: "Ranking Based (JEE Mains/Uniguage/Comed-K)",
+                amount: "₹4,12,000",
+              },
               { label: "Others - Total Fee", amount: "₹4,92,000" },
             ],
           },
@@ -166,7 +178,10 @@ const schools: School[] = [
               "Pass in PUC / 10+2 examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry / Biotechnology / Biology / Computer Science / Electronics / Technical Vocational subjects and obtained at least 45% marks (40% in case of candidate belonging to SC/ST & OBC category) in the above subjects taken together.",
             fees: [
               { label: "CET - Total Fee", amount: "Not Available" },
-              { label: "Ranking Based (JEE Mains/Uniguage/Comed-K)", amount: "₹4,35,000" },
+              {
+                label: "Ranking Based (JEE Mains/Uniguage/Comed-K)",
+                amount: "₹4,35,000",
+              },
               { label: "Others - Total Fee", amount: "₹5,25,000" },
             ],
           },
@@ -178,7 +193,10 @@ const schools: School[] = [
               "Pass in PUC / 10+2 examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry / Biotechnology / Biology / Computer Science / Electronics / Technical Vocational subjects and obtained at least 45% marks (40% in case of candidate belonging to SC/ST & OBC category) in the above subjects taken together.",
             fees: [
               { label: "CET - Total Fee", amount: "Not Available" },
-              { label: "Ranking Based (JEE Mains/Uniguage/Comed-K)", amount: "₹4,12,000" },
+              {
+                label: "Ranking Based (JEE Mains/Uniguage/Comed-K)",
+                amount: "₹4,12,000",
+              },
               { label: "Others - Total Fee", amount: "₹4,92,000" },
             ],
           },
@@ -190,7 +208,10 @@ const schools: School[] = [
               "Pass in PUC / 10+2 examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry / Biotechnology / Biology / Computer Science / Electronics / Technical Vocational subjects and obtained at least 45% marks (40% in case of candidate belonging to SC/ST & OBC category) in the above subjects taken together.",
             fees: [
               { label: "CET - Total Fee", amount: "Not Available" },
-              { label: "Ranking Based (JEE Mains/Uniguage/Comed-K)", amount: "₹4,35,000" },
+              {
+                label: "Ranking Based (JEE Mains/Uniguage/Comed-K)",
+                amount: "₹4,35,000",
+              },
               { label: "Others - Total Fee", amount: "₹5,25,000" },
             ],
           },
@@ -202,7 +223,10 @@ const schools: School[] = [
               "Pass in PUC / 10+2 examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry / Biotechnology / Biology / Computer Science / Electronics / Technical Vocational subjects and obtained at least 45% marks (40% in case of candidate belonging to SC/ST & OBC category) in the above subjects taken together.",
             fees: [
               { label: "CET - Total Fee", amount: "Not Available" },
-              { label: "Ranking Based (JEE Mains/Uniguage/Comed-K)", amount: "₹4,12,000" },
+              {
+                label: "Ranking Based (JEE Mains/Uniguage/Comed-K)",
+                amount: "₹4,12,000",
+              },
               { label: "Others - Total Fee", amount: "₹4,92,000" },
             ],
           },
@@ -214,7 +238,10 @@ const schools: School[] = [
               "Pass in PUC / 10+2 examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry / Biotechnology / Biology / Computer Science / Electronics / Technical Vocational subjects and obtained at least 45% marks (40% in case of candidate belonging to SC/ST & OBC category) in the above subjects taken together.",
             fees: [
               { label: "CET - Total Fee", amount: "Not Available" },
-              { label: "Ranking Based (JEE Mains/Uniguage/Comed-K)", amount: "₹4,12,000" },
+              {
+                label: "Ranking Based (JEE Mains/Uniguage/Comed-K)",
+                amount: "₹4,12,000",
+              },
               { label: "Others - Total Fee", amount: "₹4,92,000" },
             ],
           },
@@ -226,7 +253,10 @@ const schools: School[] = [
               "Pass in PUC / 10+2 examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry / Biotechnology / Biology / Computer Science / Electronics / Technical Vocational subjects and obtained at least 45% marks (40% in case of candidate belonging to SC/ST & OBC category) in the above subjects taken together.",
             fees: [
               { label: "CET - Total Fee", amount: "Not Available" },
-              { label: "Ranking Based (JEE Mains/Uniguage/Comed-K)", amount: "₹3,22,000" },
+              {
+                label: "Ranking Based (JEE Mains/Uniguage/Comed-K)",
+                amount: "₹3,22,000",
+              },
               { label: "Others - Total Fee", amount: "₹4,12,000" },
             ],
           },
@@ -238,7 +268,10 @@ const schools: School[] = [
               "Pass in PUC / 10+2 examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry / Biotechnology / Biology / Computer Science / Electronics / Technical Vocational subjects and obtained at least 45% marks (40% in case of candidate belonging to SC/ST & OBC category) in the above subjects taken together.",
             fees: [
               { label: "CET - Total Fee", amount: "Not Available" },
-              { label: "Ranking Based (JEE Mains/Uniguage/Comed-K)", amount: "₹3,22,000" },
+              {
+                label: "Ranking Based (JEE Mains/Uniguage/Comed-K)",
+                amount: "₹3,22,000",
+              },
               { label: "Others - Total Fee", amount: "₹4,12,000" },
             ],
           },
@@ -250,7 +283,10 @@ const schools: School[] = [
               "Pass in PUC / 10+2 examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry / Biotechnology / Biology / Computer Science / Electronics / Technical Vocational subjects and obtained at least 45% marks (40% in case of candidate belonging to SC/ST & OBC category) in the above subjects taken together.",
             fees: [
               { label: "CET - Total Fee", amount: "Not Available" },
-              { label: "Ranking Based (JEE Mains/Uniguage/Comed-K)", amount: "₹3,22,000" },
+              {
+                label: "Ranking Based (JEE Mains/Uniguage/Comed-K)",
+                amount: "₹3,22,000",
+              },
               { label: "Others - Total Fee", amount: "₹4,12,000" },
             ],
           },
@@ -506,8 +542,7 @@ const schools: School[] = [
               { label: "Other Fee", amount: "₹50,000" },
               { label: "Total Fees", amount: "₹2,52,000" },
             ],
-            scholarships:
-              "Scholarship Available",
+            scholarships: "Scholarship Available",
           },
           {
             name: "B.B.A. LL.B",
@@ -520,8 +555,7 @@ const schools: School[] = [
               { label: "Other Fee", amount: "₹50,000" },
               { label: "Total Fees", amount: "₹2,52,000" },
             ],
-            scholarships:
-              "Scholarship Available",
+            scholarships: "Scholarship Available",
           },
           {
             name: "LL.B",
@@ -1161,9 +1195,7 @@ const schools: School[] = [
             duration: "4 Years",
             eligibility:
               "Students with a minimum of 50% in Class XII from Science, Commerce, Arts, and Humanities.",
-            fees: [
-              { label: "Total Fees", amount: "₹3,02,000" },
-            ],
+            fees: [{ label: "Total Fees", amount: "₹3,02,000" }],
           },
           {
             name: "B.Design : User Experience Design",
@@ -1171,9 +1203,7 @@ const schools: School[] = [
             duration: "4 Years",
             eligibility:
               "Students with a minimum of 50% in Class XII from Science, Commerce, Arts, and Humanities.",
-            fees: [
-              { label: "Total Fees", amount: "₹3,02,000" },
-            ],
+            fees: [{ label: "Total Fees", amount: "₹3,02,000" }],
           },
           {
             name: "B.Design : Animation and VFX",
@@ -1181,9 +1211,7 @@ const schools: School[] = [
             duration: "4 Years",
             eligibility:
               "Students with a minimum of 50% in Class XII from Science, Commerce, Arts, and Humanities.",
-            fees: [
-              { label: "Total Fees", amount: "₹3,02,000" },
-            ],
+            fees: [{ label: "Total Fees", amount: "₹3,02,000" }],
           },
           {
             name: "B.Design : Game Design",
@@ -1191,9 +1219,7 @@ const schools: School[] = [
             duration: "4 Years",
             eligibility:
               "Students with a minimum of 50% in Class XII from Science, Commerce, Arts, and Humanities.",
-            fees: [
-              { label: "Total Fees", amount: "₹3,02,000" },
-            ],
+            fees: [{ label: "Total Fees", amount: "₹3,02,000" }],
           },
         ],
         footnotes: [
@@ -1427,7 +1453,10 @@ const regionalContacts: RegionalContact[] = [
   { label: "South Region", phone: "99628 35358" },
   { label: "NRI / Foreign Admissions Helpline", phone: "+91 9606022152" },
   { label: "NRI / Foreign Admissions Support", phone: "+91 9606022150" },
-  { label: "NRI / Foreign Admissions Support (Alternate)", phone: "+91 9606022149" },
+  {
+    label: "NRI / Foreign Admissions Support (Alternate)",
+    phone: "+91 9606022149",
+  },
 ];
 
 const importantNotes = [
@@ -1615,7 +1644,16 @@ function SchoolsSection() {
                     <div className="flex flex-wrap items-center gap-3">
                       <span>{school.name}</span>
                       <Badge className="bg-orange-500/15 text-orange-500">
-                        {school.name === "School of Engineering" || school.name === "School of Computer Applications" || school.name === "School of Law" || school.name === "School of Basic & Applied Sciences" || school.name === "School of Commerce & Management" || school.name === "School of Health Sciences" || school.name === "School of Arts, Design & Humanities" || school.name === "School of Design & Digital Trans-Media" ? "2026-27" : "2025-26"}
+                        {school.name === "School of Engineering" ||
+                        school.name === "School of Computer Applications" ||
+                        school.name === "School of Law" ||
+                        school.name === "School of Basic & Applied Sciences" ||
+                        school.name === "School of Commerce & Management" ||
+                        school.name === "School of Health Sciences" ||
+                        school.name === "School of Arts, Design & Humanities" ||
+                        school.name === "School of Design & Digital Trans-Media"
+                          ? "2026-27"
+                          : "2025-26"}
                       </Badge>
                     </div>
                     <p className="mt-1 text-sm font-normal text-foreground">
