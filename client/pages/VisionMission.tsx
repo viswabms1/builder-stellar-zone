@@ -84,6 +84,10 @@ export default function VisionMission() {
             </span>
           </h1>
 
+          <p className="text-lg md:text-xl font-semibold text-foreground mb-4 leading-relaxed max-w-3xl mx-auto">
+            Guiding DSU's transition from a legacy institution to a future-ready, AI-first university
+          </p>
+
           <p className="text-lg md:text-xl text-foreground mb-8 leading-relaxed max-w-3xl mx-auto">
             Throwing light on the way forward
           </p>
