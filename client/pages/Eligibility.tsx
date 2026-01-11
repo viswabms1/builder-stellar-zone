@@ -546,15 +546,6 @@ const schools: School[] = [
               { label: "Total Fees", amount: "₹2,52,000" },
             ],
             scholarships: "Scholarship Available",
-            documentsRequired: [
-              "10+2 / PUC original mark sheets and pass certificate",
-              "CLAT admit card and scorecard (if applicable)",
-              "School leaving certificate",
-              "Category certificate (SC/ST/OBC, if applicable)",
-              "Character certificate from school/college",
-              "Passport-size photographs (6)",
-              "Photo ID (Aadhaar / Passport / Driving License)",
-            ],
           },
           {
             name: "B.B.A. LL.B",
@@ -721,14 +712,6 @@ const schools: School[] = [
               { label: "Term II", amount: "₹1,05,000" },
               { label: "Total (Incl. Library Deposit)", amount: "₹2,12,000" },
             ],
-            documentsRequired: [
-              "10+2 original mark sheets and pass certificate",
-              "School leaving certificate",
-              "Category certificate (if applicable)",
-              "Photo ID (Aadhaar / Passport / Driving License)",
-              "Passport-size photographs (6)",
-              "Transfer certificate from previous institution",
-            ],
           },
           {
             name: "B.Com - Regular",
@@ -809,15 +792,6 @@ const schools: School[] = [
             ],
             notes: [
               "Dual specialization options covering Business Analytics, Finance, Marketing, HR, and Operations.",
-            ],
-            documentsRequired: [
-              "Bachelor's degree original mark sheets and certificate",
-              "CAT / MAT / GMAT / PGCET scorecard (if applicable)",
-              "Category certificate (SC/ST/OBC, if applicable)",
-              "Work experience certificate (if applicable)",
-              "Passport-size photographs (6)",
-              "Photo ID (Aadhaar / Passport / Driving License)",
-              "Transcripts from previous institutions",
             ],
           },
         ],
