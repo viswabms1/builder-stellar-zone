@@ -713,7 +713,9 @@ export default function Leadership() {
 
           {/* Strategic Governance */}
           <div className="mb-16">
-            <h3 className="text-2xl font-bold text-orange-500 mb-2">
+            <h3 className={`text-2xl font-bold mb-2 ${
+              theme === "light" ? "text-orange-900" : "text-white"
+            }`}>
               Strategic Governance
             </h3>
             <p className="text-foreground/70 mb-8 max-w-3xl">
@@ -791,7 +793,9 @@ export default function Leadership() {
 
           {/* Academic Governance */}
           <div className="mb-16">
-            <h3 className="text-2xl font-bold text-orange-500 mb-2">
+            <h3 className={`text-2xl font-bold mb-2 ${
+              theme === "light" ? "text-orange-900" : "text-white"
+            }`}>
               Academic Governance
             </h3>
             <p className="text-foreground/70 mb-8 max-w-3xl">
@@ -869,7 +873,9 @@ export default function Leadership() {
 
           {/* Quality & Compliance */}
           <div>
-            <h3 className="text-2xl font-bold text-orange-500 mb-2">
+            <h3 className={`text-2xl font-bold mb-2 ${
+              theme === "light" ? "text-orange-900" : "text-white"
+            }`}>
               Quality & Compliance
             </h3>
             <p className="text-foreground/70 mb-8 max-w-3xl">
