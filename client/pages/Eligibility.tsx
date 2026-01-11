@@ -1575,6 +1575,7 @@ function SchoolsSection() {
   const [searchParams] = useSearchParams();
   const [openSchools, setOpenSchools] = useState<string[]>([]);
   const [scrollTarget, setScrollTarget] = useState<string | null>(null);
+  const [selectedLevel, setSelectedLevel] = useState<"all" | "UG" | "PG">("all");
 
   const targetSchool = searchParams.get("school");
   const targetProgram = searchParams.get("program");
