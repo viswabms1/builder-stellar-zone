@@ -386,20 +386,13 @@ function StepEducation({ onSelect }: StepEducationProps) {
 
 type StepSubjectsProps = {
   education: EducationLevel;
-  onSelect: (subjects: string[]) => void;
-  subjectOptions: { [key in EducationLevel]: string[] };
+  onSelect: (subject: SubjectRequirement) => void;
+  subjectOptions: { [key in EducationLevel]: { label: string; value: SubjectRequirement }[] };
+  selectedSubject: SubjectRequirement | "";
 };
 
-function StepSubjects({ education, onSelect, subjectOptions }: StepSubjectsProps) {
-  const [selected, setSelected] = useState<string[]>([]);
+function StepSubjects({ education, onSelect, subjectOptions, selectedSubject }: StepSubjectsProps) {
   const options = subjectOptions[education] || [];
-
-  const handleToggle = (option: string) => {
-    const updated = selected.includes(option)
-      ? selected.filter((s) => s !== option)
-      : [...selected, option];
-    setSelected(updated);
-  };
 
   return (
     <Card className="border-2 border-orange-500/20 bg-card/80 backdrop-blur-sm">
@@ -418,10 +411,10 @@ function StepSubjects({ education, onSelect, subjectOptions }: StepSubjectsProps
         <div className="space-y-2">
           {options.map((option) => (
             <button
-              key={option}
-              onClick={() => handleToggle(option)}
+              key={option.value}
+              onClick={() => onSelect(option.value)}
               className={`w-full rounded-lg border-2 p-4 text-left transition ${
-                selected.includes(option)
+                selectedSubject === option.value
                   ? "border-orange-500 bg-orange-500/10"
                   : "border-orange-500/20 bg-card/50 hover:border-orange-500/60"
               }`}
@@ -429,20 +422,20 @@ function StepSubjects({ education, onSelect, subjectOptions }: StepSubjectsProps
               <div className="flex items-center gap-3">
                 <div
                   className={`h-5 w-5 rounded border-2 transition ${
-                    selected.includes(option)
+                    selectedSubject === option.value
                       ? "border-orange-500 bg-orange-500"
                       : "border-border/60"
                   }`}
                 />
-                <span className="font-semibold text-foreground">{option}</span>
+                <span className="font-semibold text-foreground">{option.label}</span>
               </div>
             </button>
           ))}
         </div>
 
         <Button
-          onClick={() => onSelect(selected)}
-          disabled={selected.length === 0}
+          onClick={() => onSelect(selectedSubject as SubjectRequirement)}
+          disabled={selectedSubject === ""}
           className="w-full rounded-lg bg-orange-500 py-3 text-white hover:bg-orange-600 disabled:opacity-50"
         >
           Continue
