@@ -767,113 +767,342 @@ const schools: School[] = [
   {
     name: "School of Health Sciences",
     tagline:
-      "Allied health, pharmaceutical, nursing, public health, and physiotherapy programs with clinical immersion.",
+      "Yearly fee structure 2026-27 for allied health, pharmaceutical, nursing, public health, and physiotherapy programs with clinical immersion.",
     icon: Stethoscope,
     categories: [
       {
-        title: "College of Allied Health Sciences",
+        title: "College of Allied Health Sciences - UG Programs",
         description:
-          "Applicant must have English as a principal subject with Physics, Chemistry, Biology, or allied subjects at 10+2 level.",
+          "A candidate seeking admission to the BSc. programs shall have studied English as one of the principal subjects and shall have passed Two-year Pre-University examination or equivalent with Physics, Chemistry and Biology as major subjects of study.",
         programs: [
           {
-            name: "B.Sc Allied Health Programs",
+            name: "B.Sc : Medical Radiology & Imaging Technology",
             level: "UG",
-            specializations: [
-              "Radiology and Imaging Technology",
-              "Medical Laboratory Technology",
-              "Anesthesia and Operation Theatre Technology",
-              "Emergency & Trauma Care Technology",
-              "Cardiac Care Technology",
-            ],
+            duration: "3 Years",
             eligibility:
-              "Two-year Pre-University or equivalent with Physics, Chemistry, Biology, and English; alternative pathways include Pre-Degree with the same combination.",
-            fees: [{ label: "Program Total (Annual)", amount: "₹1,42,000" }],
-            notes: [
-              "Clinical postings at DSU teaching hospitals with simulation lab training.",
+              "A candidate seeking admission shall have studied English as one of the principal subjects and shall have passed Two-year Pre-University examination or equivalent as recognized by Dayananda Sagar University with Physics, Chemistry and Biology as major subjects of study.",
+            fees: [
+              { label: "Tuition Fee", amount: "₹1,42,000" },
+              { label: "Other Fee", amount: "₹30,000" },
+              { label: "Total Fee", amount: "₹1,72,000" },
             ],
           },
           {
-            name: "Master of Public Health (MPH)",
-            level: "PG",
+            name: "B.Sc : Medical Laboratory Technology",
+            level: "UG",
+            duration: "3 Years",
             eligibility:
-              "MBBS, BDS, BAMS, B.Sc Nursing, BPT, B.Pharm, or relevant health science degree with minimum 50% aggregate (40% for SC/ST).",
-            fees: [{ label: "Program Total (Annual)", amount: "₹1,42,000" }],
-            notes: [
-              "Focus areas include epidemiology, health policy, and data-driven community health projects.",
+              "A candidate seeking admission shall have studied English as one of the principal subjects and shall have passed Two-year Pre-University examination or equivalent as recognized by Dayananda Sagar University with Physics, Chemistry and Biology as major subjects of study.",
+            fees: [
+              { label: "Tuition Fee", amount: "₹1,12,000" },
+              { label: "Other Fee", amount: "₹30,000" },
+              { label: "Total Fee", amount: "₹1,42,000" },
+            ],
+          },
+          {
+            name: "B.Sc : Anesthesia and Operation Theatre Technology",
+            level: "UG",
+            duration: "3 Years",
+            eligibility:
+              "A candidate seeking admission shall have studied English as one of the principal subjects and shall have passed Two-year Pre-University examination or equivalent as recognized by Dayananda Sagar University with Physics, Chemistry and Biology as major subjects of study.",
+            fees: [
+              { label: "Tuition Fee", amount: "₹1,42,000" },
+              { label: "Other Fee", amount: "₹30,000" },
+              { label: "Total Fee", amount: "₹1,72,000" },
+            ],
+          },
+          {
+            name: "B.Sc : EET - Emergency & Trauma Care Technology",
+            level: "UG",
+            duration: "3 Years",
+            eligibility:
+              "A candidate seeking admission shall have studied English as one of the principal subjects and shall have passed Two-year Pre-University examination or equivalent as recognized by Dayananda Sagar University with Physics, Chemistry and Biology as major subjects of study.",
+            fees: [
+              { label: "Tuition Fee", amount: "₹1,12,000" },
+              { label: "Other Fee", amount: "₹30,000" },
+              { label: "Total Fee", amount: "₹1,42,000" },
+            ],
+          },
+          {
+            name: "B.Sc : Cardiac Care Technology",
+            level: "UG",
+            duration: "3 Years",
+            eligibility:
+              "A candidate seeking admission shall have studied English as one of the principal subjects and shall have passed Two-year Pre-University examination or equivalent as recognized by Dayananda Sagar University with Physics, Chemistry and Biology as major subjects of study.",
+            fees: [
+              { label: "Tuition Fee", amount: "₹1,72,000" },
+              { label: "Other Fee", amount: "₹30,000" },
+              { label: "Total Fee", amount: "₹2,02,000" },
             ],
           },
         ],
+        footnotes: [
+          "Fee structure reflects the 2026-27 academic year. All fees shown are annual totals.",
+        ],
       },
       {
-        title: "College of Pharmaceutical Sciences",
+        title: "College of Allied Health Sciences - PG Programs",
+        programs: [
+          {
+            name: "MPH - Masters in Public Health",
+            level: "PG",
+            duration: "2 Years",
+            eligibility:
+              "A candidate seeking admission to Masters in Public Health should have a degree in MBBS or BDS or BAMS or B.Sc Nursing or BPT or B. Pharm with minimum 50% marks from a University established under law considered equivalent by Dayananda Sagar University.",
+            fees: [
+              { label: "Tuition Fee", amount: "₹1,12,000" },
+              { label: "Others Fee", amount: "₹30,000" },
+              { label: "Total Fee", amount: "₹1,42,000" },
+            ],
+          },
+        ],
+        footnotes: [
+          "Any variation in the fee structure due to revision by the Govt will accordingly be applicable.",
+        ],
+      },
+      {
+        title: "College of Pharmaceutical Sciences - UG Programs",
         programs: [
           {
             name: "B.Pharm",
             level: "UG",
+            duration: "4 Years",
             eligibility:
-              "10+2 with Physics, Chemistry, and English plus Mathematics/Biology/Biotechnology/Computer Science. Lateral entry available for Diploma in Pharmacy graduates from PCI-recognized institutions.",
+              "Pass in 10+2 with Physics, Chemistry and English with Mathematics or Biotechnology or Computer Science or Biology as optional subjects with a minimum of 40% marks in aggregate. Lateral: Diploma holders in Pharmacy from an institution recognized by the Pharmacy Council of India.",
             fees: [
-              { label: "CET / DSAT Annual Total", amount: "₹2,52,000" },
-              { label: "Other Admissions Annual Total", amount: "₹2,82,000" },
+              { label: "CET - Total Fees", amount: "Not Available" },
+              { label: "DSAT - Total Fees", amount: "₹2,52,000" },
+              { label: "Others - Total Fees", amount: "₹2,82,000" },
             ],
-            notes: [
-              "PCI-approved program with industrial training and research projects.",
+          },
+        ],
+        footnotes: [
+          "Fee structure reflects the 2026-27 academic year. All fees shown are annual totals.",
+        ],
+      },
+      {
+        title: "College of Pharmaceutical Sciences - PG Programs",
+        programs: [
+          {
+            name: "M Pharma : Pharmaceutics",
+            level: "PG",
+            duration: "2 Years",
+            eligibility:
+              "Candidates should have passed B.pharm from an institution recognized by the Pharmacy Council of India with a minimum of 50% marks in aggregate.",
+            fees: [
+              { label: "PGCET - Total Fees", amount: "Not Available" },
+              { label: "Others - Total Fees", amount: "₹3,02,000" },
             ],
           },
           {
-            name: "Pharm.D",
+            name: "M Pharma : Pharmacology",
+            level: "PG",
+            duration: "2 Years",
+            eligibility:
+              "Candidates should have passed B.pharm from an institution recognized by the Pharmacy Council of India with a minimum of 50% marks in aggregate.",
+            fees: [
+              { label: "PGCET - Total Fees", amount: "Not Available" },
+              { label: "Others - Total Fees", amount: "₹3,02,000" },
+            ],
+          },
+          {
+            name: "M Pharma : Regulatory Affairs",
+            level: "PG",
+            duration: "2 Years",
+            eligibility:
+              "Candidates should have passed B.pharm from an institution recognized by the Pharmacy Council of India with a minimum of 50% marks in aggregate.",
+            fees: [
+              { label: "PGCET - Total Fees", amount: "Not Available" },
+              { label: "Others - Total Fees", amount: "₹3,02,000" },
+            ],
+          },
+          {
+            name: "Pharm D",
             level: "Professional",
+            duration: "6 Years",
             eligibility:
-              "10+2 with Physics, Chemistry, Biology or Mathematics and English, or a Diploma in Pharmacy from a PCI-recognized institute.",
-            fees: [{ label: "Program Total (Annual)", amount: "₹4,17,000" }],
-            notes: [
-              "Six-year professional program with clinical rotations and hospital internships.",
+              "Pass in 10+2 examination with Physics, Chemistry and English with Mathematics or Biology as optional subjects / DPharm or any other equivalent qualification recognized by the Pharmacy Council of India.",
+            fees: [
+              { label: "PGCET - Total Fees", amount: "Not Available" },
+              { label: "Others - Total Fees", amount: "₹4,52,000" },
             ],
           },
         ],
-      },
-      {
-        title: "College of Nursing Sciences",
-        programs: [
-          {
-            name: "B.Sc Nursing",
-            level: "UG",
-            eligibility:
-              "10+2 with Physics, Chemistry, Biology, and English; minimum 45% aggregate (40% for SC/ST).",
-            fees: [{ label: "Program Total (Annual)", amount: "₹1,42,000" }],
-          },
-          {
-            name: "Post Basic B.Sc Nursing",
-            level: "UG",
-            eligibility:
-              "General Nursing and Midwifery (GNM) with minimum 50% aggregate and registered nurse status with any State Nurses Registration Council.",
-            fees: [{ label: "Program Total (Annual)", amount: "₹92,000" }],
-          },
-          {
-            name: "M.Sc Nursing",
-            level: "PG",
-            eligibility:
-              "B.Sc Nursing / Post Basic B.Sc Nursing with at least 55% aggregate and one-year experience preferred; registered with State Nursing Council.",
-            fees: [{ label: "Program Total (Annual)", amount: "₹1,42,000" }],
-          },
+        footnotes: [
+          "Any variation in the fee structure due to revision by the Govt will accordingly be applicable.",
         ],
       },
       {
-        title: "College of Physiotherapy",
+        title: "College of Nursing Sciences - UG Programs",
         programs: [
           {
-            name: "Bachelor of Physiotherapy (BPT)",
+            name: "B.Sc - Nursing",
             level: "UG",
+            duration: "4 Years",
             eligibility:
-              "10+2 with Physics, Chemistry, Biology, and English securing minimum 40% aggregate (passing marks for SC/ST).",
-            fees: [{ label: "Program Total (Annual)", amount: "₹1,97,000" }],
+              "Pass in 10+2, A Level, IB, American 12th grade or equivalent with Physics, Chemistry, Biology and English and a minimum of 45% marks taken together in Physics, Chemistry, Biology and English.",
+            fees: [
+              { label: "CET - Total Fees", amount: "Not Available" },
+              { label: "Term I", amount: "₹97,000" },
+              { label: "Term II", amount: "₹85,000" },
+              { label: "Total Fees", amount: "₹1,82,000" },
+            ],
           },
           {
-            name: "Master of Physiotherapy (MPT)",
-            level: "PG",
+            name: "PB B.Sc - Nursing",
+            level: "UG",
+            duration: "2 Years",
             eligibility:
-              "BPT degree with minimum 50% aggregate and completion of internship or internship in progress.",
-            fees: [{ label: "Program Total (Annual)", amount: "₹2,52,000" }],
+              "Pass in GNM after 10+2 or equivalent examination preferably with Science subjects with 50% marks in aggregate. Candidates should be a registered Nurse and registered Midwife or equivalent with any State Nursing Registration Council. Candidates should have completed their GNM course on or before 01.06.2020.",
+            fees: [
+              { label: "CET - Total Fees", amount: "Not Available" },
+              { label: "Others - Total Fees", amount: "₹92,000" },
+            ],
+          },
+        ],
+        footnotes: [
+          "Fee structure reflects the 2026-27 academic year. All fees shown are annual totals.",
+        ],
+      },
+      {
+        title: "College of Nursing Sciences - PG Programs",
+        programs: [
+          {
+            name: "M.Sc : Medical Surgical Nursing",
+            level: "PG",
+            duration: "2 Years",
+            eligibility:
+              "Candidates should have passed BSc/PC BSc/PB BSc Nursing recognized by the Indian Nursing Council and a minimum of 55% marks in aggregate. Experience: Applicants must have 1 year of experience after BSc Nursing in a hospital or in a community health program or in a school or college of nursing. PB BSc Degree holders need to have one year experience either before or after Post Basic BSc Nursing degree.",
+            fees: [
+              { label: "PGCET - Total Fees", amount: "Not Available" },
+              { label: "Others - Total Fees", amount: "₹1,42,000" },
+            ],
+          },
+          {
+            name: "M.Sc : Child Health Nursing",
+            level: "PG",
+            duration: "2 Years",
+            eligibility:
+              "Candidates should have passed BSc/PC BSc/PB BSc Nursing recognized by the Indian Nursing Council and a minimum of 55% marks in aggregate. Experience: Applicants must have 1 year of experience after BSc Nursing in a hospital or in a community health program or in a school or college of nursing. PB BSc Degree holders need to have one year experience either before or after Post Basic BSc Nursing degree.",
+            fees: [
+              { label: "PGCET - Total Fees", amount: "Not Available" },
+              { label: "Others - Total Fees", amount: "₹1,42,000" },
+            ],
+          },
+          {
+            name: "M.Sc : Mental Health Nursing",
+            level: "PG",
+            duration: "2 Years",
+            eligibility:
+              "Candidates should have passed BSc/PC BSc/PB BSc Nursing recognized by the Indian Nursing Council and a minimum of 55% marks in aggregate. Experience: Applicants must have 1 year of experience after BSc Nursing in a hospital or in a community health program or in a school or college of nursing. PB BSc Degree holders need to have one year experience either before or after Post Basic BSc Nursing degree.",
+            fees: [
+              { label: "PGCET - Total Fees", amount: "Not Available" },
+              { label: "Others - Total Fees", amount: "₹1,42,000" },
+            ],
+          },
+          {
+            name: "M.Sc : Obstetrics and Genealogical Nursing",
+            level: "PG",
+            duration: "2 Years",
+            eligibility:
+              "Candidates should have passed BSc/PC BSc/PB BSc Nursing recognized by the Indian Nursing Council and a minimum of 55% marks in aggregate. Experience: Applicants must have 1 year of experience after BSc Nursing in a hospital or in a community health program or in a school or college of nursing. PB BSc Degree holders need to have one year experience either before or after Post Basic BSc Nursing degree.",
+            fees: [
+              { label: "PGCET - Total Fees", amount: "Not Available" },
+              { label: "Others - Total Fees", amount: "₹1,42,000" },
+            ],
+          },
+          {
+            name: "M.Sc : Community Health Nursing",
+            level: "PG",
+            duration: "2 Years",
+            eligibility:
+              "Candidates should have passed BSc/PC BSc/PB BSc Nursing recognized by the Indian Nursing Council and a minimum of 55% marks in aggregate. Experience: Applicants must have 1 year of experience after BSc Nursing in a hospital or in a community health program or in a school or college of nursing. PB BSc Degree holders need to have one year experience either before or after Post Basic BSc Nursing degree.",
+            fees: [
+              { label: "PGCET - Total Fees", amount: "Not Available" },
+              { label: "Others - Total Fees", amount: "₹1,42,000" },
+            ],
+          },
+        ],
+        footnotes: [
+          "Any variation in the fee structure due to revision by the Govt will accordingly be applicable.",
+        ],
+      },
+      {
+        title: "College of Physiotherapy - UG Programs",
+        programs: [
+          {
+            name: "Bachelor's in Physiotherapy (B.P.T.)",
+            level: "UG",
+            duration: "4 Years",
+            eligibility:
+              "Pass in 10+2, A Level, IB, American 12th grade or equivalent with Physics, Chemistry, English and Biology with a minimum of 40% marks taken together in Physics, Chemistry and Biology.",
+            fees: [
+              { label: "CET - Total Fees", amount: "Not Available" },
+              { label: "Others - Total Fees", amount: "₹2,17,000" },
+            ],
+          },
+        ],
+        footnotes: [
+          "Fee structure reflects the 2026-27 academic year. All fees shown are annual totals.",
+        ],
+      },
+      {
+        title: "College of Physiotherapy - PG Programs",
+        programs: [
+          {
+            name: "M.P.T : Sports & Muscular Skeletal",
+            level: "PG",
+            duration: "2 Years",
+            eligibility:
+              "Candidates should have passed BPT from a recognized university with a minimum of 50% marks in aggregate. INTERNSHIP: Completed or completing their compulsory internship on or before 15.08.2020.",
+            fees: [
+              { label: "PGCET - Total Fees", amount: "Not Available" },
+              { label: "Others - Total Fees", amount: "₹2,77,000" },
+            ],
+          },
+          {
+            name: "M.P.T : Cardio Pulmonary",
+            level: "PG",
+            duration: "2 Years",
+            eligibility:
+              "Candidates should have passed BPT from a recognized university with a minimum of 50% marks in aggregate. INTERNSHIP: Completed or completing their compulsory internship on or before 15.08.2020.",
+            fees: [
+              { label: "PGCET - Total Fees", amount: "Not Available" },
+              { label: "Others - Total Fees", amount: "₹2,77,000" },
+            ],
+          },
+          {
+            name: "M.P.T : Women's Health",
+            level: "PG",
+            duration: "2 Years",
+            eligibility:
+              "Candidates should have passed BPT from a recognized university with a minimum of 50% marks in aggregate. INTERNSHIP: Completed or completing their compulsory internship on or before 15.08.2020.",
+            fees: [
+              { label: "PGCET - Total Fees", amount: "Not Available" },
+              { label: "Others - Total Fees", amount: "₹2,77,000" },
+            ],
+          },
+          {
+            name: "M.P.T : Neuro",
+            level: "PG",
+            duration: "2 Years",
+            eligibility:
+              "Candidates should have passed BPT from a recognized university with a minimum of 50% marks in aggregate. INTERNSHIP: Completed or completing their compulsory internship on or before 15.08.2020.",
+            fees: [
+              { label: "PGCET - Total Fees", amount: "Not Available" },
+              { label: "Others - Total Fees", amount: "₹2,77,000" },
+            ],
+          },
+          {
+            name: "M.P.T : Community Based Rehabilitation",
+            level: "PG",
+            duration: "2 Years",
+            eligibility:
+              "Candidates should have passed BPT from a recognized university with a minimum of 50% marks in aggregate. INTERNSHIP: Completed or completing their compulsory internship on or before 15.08.2020.",
+            fees: [
+              { label: "PGCET - Total Fees", amount: "Not Available" },
+              { label: "Others - Total Fees", amount: "₹2,77,000" },
+            ],
           },
         ],
       },
@@ -881,6 +1110,7 @@ const schools: School[] = [
     disclaimers: [
       "Clinical postings are scheduled in DSU hospitals; medical fitness compliance is mandatory.",
       "Any changes in regulatory guidelines from statutory councils will be immediately adopted.",
+      "Any variation in the fee structure due to revision by the Govt will accordingly be applicable.",
     ],
   },
   {
