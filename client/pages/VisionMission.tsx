@@ -18,8 +18,10 @@ import {
   Lightbulb,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useTheme } from "@/providers/theme-provider";
 
 export default function VisionMission() {
+  const { theme } = useTheme();
   const coreValues = [
     {
       icon: Lightbulb,
