@@ -122,7 +122,9 @@ export default function History() {
               Inspiring the Shape of Things to Come
             </h1>
 
-            <p className="text-lg md:text-xl font-semibold text-orange-500 mb-6 leading-relaxed max-w-3xl mx-auto">
+            <p className={`text-lg md:text-xl font-semibold mb-6 leading-relaxed max-w-3xl mx-auto ${
+              theme === "light" ? "text-orange-700" : "text-white"
+            }`}>
               Tracing six decades of educational leadership culminating in a modern, multidisciplinary university.
             </p>
 
