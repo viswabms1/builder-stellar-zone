@@ -12,6 +12,12 @@ import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import {
   ArrowRight,
   BookOpen,
   Building,
@@ -87,13 +93,6 @@ const admissionCodes = [
 
 const quickLinks: QuickLink[] = [
   {
-    title: "Direct Admissions – 2025",
-    description:
-      "Secure your seat through the non-DSAT window and confirm early.",
-    href: "https://admissions.dsu.edu.in/?utm_source=Admissions%20Tab&utm_medium=Website&utm_campaign=WS-Admissions%202024",
-    icon: Sparkles,
-  },
-  {
     title: "Programs, Eligibility & Fee Structure",
     description:
       "Review intake, qualifying exams, and detailed fee statements for every course.",
@@ -102,11 +101,39 @@ const quickLinks: QuickLink[] = [
     external: false,
   },
   {
+    title: "Admission Closing Dates",
+    description:
+      "Track key deadlines for applications, counseling, and confirmation.",
+    href: "https://www.dsu.edu.in/admission-lastdates",
+    icon: CalendarCheck,
+  },
+  {
+    title: "Direct Admissions – 2025",
+    description:
+      "Secure your seat through the non-DSAT window and confirm early.",
+    href: "https://admissions.dsu.edu.in/?utm_source=Admissions%20Tab&utm_medium=Website&utm_campaign=WS-Admissions%202024",
+    icon: Sparkles,
+  },
+  {
     title: "Hostel Fee",
     description:
       "Plan residential life with the latest accommodation and dining charges.",
     href: "https://www.dsu.edu.in/images/PDF/Hostel_Fee_2025_1.pdf",
     icon: Building,
+  },
+  {
+    title: "FAQs",
+    description:
+      "Find detailed answers to DSAT, eligibility, document, and process queries.",
+    href: "https://www.dsu.edu.in/images/Admission/FAQs-DSAT-DSU-2020.pdf",
+    icon: Info,
+  },
+  {
+    title: "Admission Helpline",
+    description:
+      "Reach experienced counselors for personalized admission assistance.",
+    href: "https://www.dsu.edu.in/admission/helpline",
+    icon: PhoneCall,
   },
   {
     title: "International Admissions",
@@ -122,27 +149,6 @@ const quickLinks: QuickLink[] = [
       "Explore flexible DSU Online programs with industry-aligned curricula.",
     href: "https://apply.dsuonline.com/",
     icon: Laptop,
-  },
-  {
-    title: "Admission Helpline",
-    description:
-      "Reach experienced counselors for personalized admission assistance.",
-    href: "https://www.dsu.edu.in/admission/helpline",
-    icon: PhoneCall,
-  },
-  {
-    title: "FAQs",
-    description:
-      "Find detailed answers to DSAT, eligibility, document, and process queries.",
-    href: "https://www.dsu.edu.in/images/Admission/FAQs-DSAT-DSU-2020.pdf",
-    icon: Info,
-  },
-  {
-    title: "Admission Closing Dates",
-    description:
-      "Track key deadlines for applications, counseling, and confirmation.",
-    href: "https://www.dsu.edu.in/admission-lastdates",
-    icon: CalendarCheck,
   },
 ];
 
@@ -338,8 +344,8 @@ export default function Admissions() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <HeroSection />
-      <QuickLinksSection />
       <AdmissionRoutesSection />
+      <EssentialsSection />
       <BrochureSection />
       <ContactSection />
       <SupportCallout />
@@ -348,8 +354,6 @@ export default function Admissions() {
 }
 
 function HeroSection() {
-  
-
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-orange-500/10 via-red-500/10 to-background py-10 lg:py-28">
       <div className="absolute inset-0">
@@ -359,13 +363,13 @@ function HeroSection() {
       <div className="relative mx-auto max-w-6xl px-3 text-center">
         <div className="inline-flex items-center gap-2 rounded-full border border-orange-500/30 bg-orange-500/10 px-4 py-2 text-sm font-semibold text-orange-500">
           <GraduationCap className="h-4 w-4" />
-          Admissions 2025
+          Admissions 2025 – Now Open
         </div>
         <h1 className="mt-8 text-4xl font-bold leading-tight text-white md:text-6xl">
-          Join Dayananda Sagar University
+          Your Path to AI-First Education
         </h1>
         <p className="mt-6 text-lg text-white md:text-xl">
-          Discover our diverse range of undergraduate and postgraduate programs designed to shape the leaders of tomorrow.
+          Multiple admission pathways, flexible programs, and a Bengaluru-based advantage. 100% placements with industry partnerships. Choose your route: DSAT (merit + scholarships), Direct Admissions, PGCET, International, or Online.
         </p>
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Button
@@ -388,18 +392,14 @@ function HeroSection() {
             className="rounded-2xl border-2 border-orange-500 px-8 py-6 text-lg font-semibold text-orange-500"
             asChild
           >
-            <a
-              href="https://www.dsu.edu.in/images/Admission/brochures/2025/DSU_Main_Campus_Programs_2025.pdf"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Download Prospectus
-              <Download className="h-5 w-5" />
+            <a href="#choose-pathway">
+              Choose Your Pathway
+              <ArrowRight className="h-5 w-5" />
             </a>
           </Button>
         </div>
         <div className="mt-12 flex flex-wrap justify-center gap-3">
-          {admissionCodes.map((code) => (
+          {admissionCodes.slice(0, 4).map((code) => (
             <Badge
               key={code}
               variant="secondary"
@@ -414,66 +414,9 @@ function HeroSection() {
   );
 }
 
-function QuickLinksSection() {
-  return (
-    <section className="px-3 py-8">
-      <div className="mx-auto max-w-6xl">
-        <div className="mb-10 text-center">
-          <h2 className="text-3xl font-bold md:text-4xl">
-            Start with the Essentials
-          </h2>
-          <p className="mt-3 text-lg text-foreground">
-            Access the most requested admission resources, deadlines, and
-            application pathways in one place.
-          </p>
-        </div>
-        <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
-          {quickLinks.map((item) => (
-            <Card
-              key={item.title}
-              className="group border border-border/60 bg-card/60 backdrop-blur-sm transition hover:-translate-y-1 hover:border-orange-500/40 hover:shadow-xl hover:shadow-orange-500/10"
-            >
-              <CardHeader>
-                <div className="flex items-center justify-between">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-orange-500/15 text-orange-500 transition group-hover:bg-orange-500 group-hover:text-foreground">
-                    <item.icon className="h-6 w-6" />
-                  </div>
-                  <ExternalLink className="h-5 w-5 text-foreground group-hover:text-orange-500" />
-                </div>
-                <CardTitle className="mt-4 text-xl font-semibold group-hover:text-orange-500">
-                  {item.title}
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <CardDescription className="leading-relaxed text-foreground">
-                  {item.description}
-                </CardDescription>
-                <Button
-                  variant="secondary"
-                  className="w-full justify-center rounded-xl bg-orange-500/10 text-orange-500 hover:bg-orange-500 hover:text-foreground"
-                  asChild
-                >
-                  <a
-                    href={item.href}
-                    target={item.external === false ? undefined : "_blank"}
-                    rel={item.external === false ? undefined : "noreferrer"}
-                  >
-                    Open Resource
-                    <ArrowRight className="h-4 w-4" />
-                  </a>
-                </Button>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
 function AdmissionRoutesSection() {
   return (
-    <section className="bg-gradient-to-br from-orange-500/5 via-red-500/5 to-background px-3 py-8">
+    <section className="bg-gradient-to-br from-orange-500/5 via-red-500/5 to-background px-3 py-8" id="choose-pathway">
       <div className="mx-auto max-w-6xl">
         <div className="mb-10 text-center">
           <h2 className="text-3xl font-bold md:text-4xl">
@@ -532,17 +475,106 @@ function AdmissionRoutesSection() {
   );
 }
 
-function BrochureSection() {
+function EssentialsSection() {
   return (
     <section className="px-3 py-8">
       <div className="mx-auto max-w-6xl">
         <div className="mb-10 text-center">
           <h2 className="text-3xl font-bold md:text-4xl">
-            Program Guides &amp; Brochures
+            Essential Resources
           </h2>
           <p className="mt-3 text-lg text-foreground">
-            Download detailed brochures to understand curricula, laboratories,
-            internships, and placement pathways for every DSU school.
+            Quick access to the information you need at every stage of your admission journey.
+          </p>
+        </div>
+
+        {/* Block 1: Decision-Critical */}
+        <div className="mb-12">
+          <h3 className="mb-6 text-xl font-bold text-orange-500">
+            📋 Decision-Critical
+          </h3>
+          <div className="grid gap-3 md:grid-cols-3">
+            {quickLinks.slice(0, 3).map((item) => (
+              <QuickLinkCard key={item.title} item={item} />
+            ))}
+          </div>
+        </div>
+
+        {/* Block 2: Support & Planning */}
+        <div className="mb-12">
+          <h3 className="mb-6 text-xl font-bold text-orange-500">
+            🤝 Support & Planning
+          </h3>
+          <div className="grid gap-3 md:grid-cols-3">
+            {quickLinks.slice(3, 6).map((item) => (
+              <QuickLinkCard key={item.title} item={item} />
+            ))}
+          </div>
+        </div>
+
+        {/* Block 3: Special Categories */}
+        <div>
+          <h3 className="mb-6 text-xl font-bold text-orange-500">
+            🌍 Special Categories
+          </h3>
+          <div className="grid gap-3 md:grid-cols-2">
+            {quickLinks.slice(6, 8).map((item) => (
+              <QuickLinkCard key={item.title} item={item} />
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function QuickLinkCard({ item }: { item: QuickLink }) {
+  return (
+    <Card className="group border border-border/60 bg-card/60 backdrop-blur-sm transition hover:-translate-y-1 hover:border-orange-500/40 hover:shadow-xl hover:shadow-orange-500/10">
+      <CardHeader>
+        <div className="flex items-center justify-between">
+          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-orange-500/15 text-orange-500 transition group-hover:bg-orange-500 group-hover:text-foreground">
+            <item.icon className="h-6 w-6" />
+          </div>
+          <ExternalLink className="h-5 w-5 text-foreground group-hover:text-orange-500" />
+        </div>
+        <CardTitle className="mt-4 text-lg font-semibold group-hover:text-orange-500">
+          {item.title}
+        </CardTitle>
+      </CardHeader>
+      <CardContent className="space-y-4">
+        <CardDescription className="leading-relaxed text-foreground text-sm">
+          {item.description}
+        </CardDescription>
+        <Button
+          variant="secondary"
+          className="w-full justify-center rounded-xl bg-orange-500/10 text-orange-500 hover:bg-orange-500 hover:text-foreground"
+          asChild
+        >
+          <a
+            href={item.href}
+            target={item.external === false ? undefined : "_blank"}
+            rel={item.external === false ? undefined : "noreferrer"}
+          >
+            Access
+            <ArrowRight className="h-4 w-4" />
+          </a>
+        </Button>
+      </CardContent>
+    </Card>
+  );
+}
+
+function BrochureSection() {
+  return (
+    <section className="px-3 py-8 bg-gradient-to-br from-orange-500/5 via-red-500/5 to-background">
+      <div className="mx-auto max-w-6xl">
+        <div className="mb-10 text-center">
+          <h2 className="text-3xl font-bold md:text-4xl">
+            Program Guides & Brochures
+          </h2>
+          <p className="mt-3 text-lg text-foreground">
+            Download detailed brochures for every school and program. Each brochure lists eligibility, semester-wise credits, laboratory infrastructure, internship partners, and placement support milestones.
           </p>
         </div>
         <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
@@ -552,17 +584,17 @@ function BrochureSection() {
               className="border border-border/60 bg-card/60 backdrop-blur-sm transition hover:-translate-y-1 hover:border-orange-500/40 hover:shadow-orange-500/10"
             >
               <CardHeader>
-                <CardTitle className="text-xl font-semibold text-foreground">
+                <CardTitle className="text-lg font-semibold text-foreground">
                   {resource.title}
                 </CardTitle>
                 <CardDescription className="text-sm text-foreground">
                   {resource.subtitle}
                 </CardDescription>
               </CardHeader>
-              <CardContent className="flex flex-col gap-4">
+              <CardContent>
                 <Button
                   variant="secondary"
-                  className="justify-center rounded-xl bg-orange-500/10 text-orange-500 hover:bg-orange-500 hover:text-foreground"
+                  className="w-full justify-center rounded-xl bg-orange-500/10 text-orange-500 hover:bg-orange-500 hover:text-foreground"
                   asChild
                 >
                   <a href={resource.href} target="_blank" rel="noreferrer">
@@ -570,11 +602,6 @@ function BrochureSection() {
                     <Download className="h-4 w-4" />
                   </a>
                 </Button>
-                <p className="text-xs text-foreground">
-                  Each brochure lists eligibility, semester-wise credits,
-                  laboratory infrastructure, internship partners, and placement
-                  support milestones.
-                </p>
               </CardContent>
             </Card>
           ))}
@@ -583,7 +610,6 @@ function BrochureSection() {
     </section>
   );
 }
-
 
 function ContactSection() {
   return (
@@ -598,108 +624,121 @@ function ContactSection() {
             helpline numbers below for real-time assistance.
           </p>
         </div>
-        <div className="grid gap-3 lg:grid-cols-3">
-          {campusContacts.map((campus) => (
-            <Card
-              key={campus.title}
-              className="border border-border/60 bg-card/70 backdrop-blur-sm transition hover:-translate-y-1 hover:border-orange-500/30 hover:shadow-orange-500/10"
-            >
-              <CardHeader>
-                <div className="flex items-center gap-3">
-                  <MapPin className="h-6 w-6 text-orange-500" />
-                  <CardTitle className="text-xl font-semibold text-foreground">
-                    {campus.title}
-                  </CardTitle>
-                </div>
-                <CardDescription className="mt-4 text-sm leading-relaxed text-foreground">
-                  {campus.address}
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4 text-sm text-foreground">
-                <div>
-                  <p className="font-semibold text-foreground">Helpline</p>
-                  <div className="mt-2 space-y-1">
-                    {campus.phone.map((phone) => (
-                      <p key={phone}>{phone}</p>
-                    ))}
-                  </div>
-                </div>
-                <div>
-                  <p className="font-semibold text-foreground">Email</p>
-                  <a
-                    href={`mailto:${campus.email}`}
-                    className="mt-1 inline-flex items-center gap-2 text-orange-500 hover:underline"
+
+        {/* Campus Contacts */}
+        <Accordion type="single" collapsible defaultValue="item-1">
+          <AccordionItem value="item-1" className="border-none">
+            <AccordionTrigger className="text-xl font-bold text-orange-500 hover:text-orange-600 py-4">
+              <MapPin className="h-6 w-6 mr-3" />
+              Campus Locations
+            </AccordionTrigger>
+            <AccordionContent className="pt-6">
+              <div className="grid gap-3 lg:grid-cols-3">
+                {campusContacts.map((campus) => (
+                  <Card
+                    key={campus.title}
+                    className="border border-border/60 bg-card/70 backdrop-blur-sm transition hover:-translate-y-1 hover:border-orange-500/30 hover:shadow-orange-500/10"
                   >
-                    <Mail className="h-4 w-4" />
-                    {campus.email}
-                  </a>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-        <div className="grid gap-3 lg:grid-cols-2">
-          <Card className="border border-orange-500/20 bg-card/70 backdrop-blur-sm">
-            <CardHeader>
-              <div className="flex items-center gap-3">
-                <Users className="h-6 w-6 text-orange-500" />
-                <CardTitle className="text-xl font-semibold text-foreground">
-                  Hotline Directory
-                </CardTitle>
+                    <CardHeader>
+                      <CardTitle className="text-lg font-semibold text-foreground">
+                        {campus.title}
+                      </CardTitle>
+                      <CardDescription className="mt-2 text-sm leading-relaxed text-foreground">
+                        {campus.address}
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent className="space-y-4 text-sm text-foreground">
+                      <div>
+                        <p className="font-semibold text-foreground">Helpline</p>
+                        <div className="mt-2 space-y-1">
+                          {campus.phone.map((phone) => (
+                            <p key={phone}>{phone}</p>
+                          ))}
+                        </div>
+                      </div>
+                      <div>
+                        <p className="font-semibold text-foreground">Email</p>
+                        <a
+                          href={`mailto:${campus.email}`}
+                          className="mt-1 inline-flex items-center gap-2 text-orange-500 hover:underline"
+                        >
+                          <Mail className="h-4 w-4" />
+                          {campus.email}
+                        </a>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
               </div>
-              <CardDescription className="mt-2 text-sm text-foreground">
-                Reach specialized teams to clarify program requisites,
-                counseling logistics, and post-admission onboarding.
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="grid gap-4 sm:grid-cols-2">
-              {helplineGroups.map((group) => (
-                <div
-                  key={group.label}
-                  className="rounded-2xl border border-orange-500/20 bg-background/70 p-4"
-                >
-                  <p className="text-sm font-semibold text-foreground">
-                    {group.label}
-                  </p>
-                  <div className="mt-2 space-y-1 text-xs text-foreground">
-                    {group.entries.map((entry) => (
-                      <p key={`${group.label}-${entry}`}>{entry}</p>
-                    ))}
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem value="item-2" className="border-none">
+            <AccordionTrigger className="text-xl font-bold text-orange-500 hover:text-orange-600 py-4">
+              <Headphones className="h-6 w-6 mr-3" />
+              Hotline Directory
+            </AccordionTrigger>
+            <AccordionContent className="pt-6">
+              <Card className="border border-orange-500/20 bg-card/70 backdrop-blur-sm">
+                <CardHeader>
+                  <CardDescription className="text-sm text-foreground">
+                    Reach specialized teams to clarify program requisites,
+                    counseling logistics, and post-admission onboarding.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="grid gap-4 sm:grid-cols-2">
+                  {helplineGroups.map((group) => (
+                    <div
+                      key={group.label}
+                      className="rounded-2xl border border-orange-500/20 bg-background/70 p-4"
+                    >
+                      <p className="text-sm font-semibold text-foreground">
+                        {group.label}
+                      </p>
+                      <div className="mt-2 space-y-1 text-xs text-foreground">
+                        {group.entries.map((entry) => (
+                          <p key={`${group.label}-${entry}`}>{entry}</p>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </CardContent>
+              </Card>
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem value="item-3" className="border-none">
+            <AccordionTrigger className="text-xl font-bold text-orange-500 hover:text-orange-600 py-4">
+              <Flag className="h-6 w-6 mr-3" />
+              Regional & International Outreach
+            </AccordionTrigger>
+            <AccordionContent className="pt-6">
+              <Card className="border border-orange-500/20 bg-card/70 backdrop-blur-sm">
+                <CardHeader>
+                  <CardDescription className="text-sm text-foreground">
+                    Connect with zonal coordinators and global offices for localized
+                    support.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="grid gap-3 sm:grid-cols-2">
+                  {regionalContacts.map((item) => (
+                    <div
+                      key={item.region}
+                      className="rounded-2xl border border-orange-500/20 bg-background/70 p-4 text-sm"
+                    >
+                      <p className="font-semibold text-foreground">{item.region}</p>
+                      <p className="mt-1 text-foreground">{item.contact}</p>
+                    </div>
+                  ))}
+                  <div className="sm:col-span-2 rounded-2xl border border-orange-500/20 bg-orange-500/10 p-4 text-sm text-orange-500">
+                    For scholarship or sponsorship collaborations, email
+                    admissions@dsu.edu.in with program and applicant details.
                   </div>
-                </div>
-              ))}
-            </CardContent>
-          </Card>
-          <Card className="border border-orange-500/20 bg-card/70 backdrop-blur-sm">
-            <CardHeader>
-              <div className="flex items-center gap-3">
-                <Flag className="h-6 w-6 text-orange-500" />
-                <CardTitle className="text-xl font-semibold text-foreground">
-                  Regional &amp; International Outreach
-                </CardTitle>
-              </div>
-              <CardDescription className="mt-2 text-sm text-foreground">
-                Connect with zonal coordinators and global offices for localized
-                support.
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="grid gap-3 sm:grid-cols-2">
-              {regionalContacts.map((item) => (
-                <div
-                  key={item.region}
-                  className="rounded-2xl border border-orange-500/20 bg-background/70 p-4 text-sm"
-                >
-                  <p className="font-semibold text-foreground">{item.region}</p>
-                  <p className="mt-1 text-foreground">{item.contact}</p>
-                </div>
-              ))}
-              <div className="sm:col-span-2 rounded-2xl border border-orange-500/20 bg-orange-500/10 p-4 text-sm text-orange-500">
-                For scholarship or sponsorship collaborations, email
-                admissions@dsu.edu.in with program and applicant details.
-              </div>
-            </CardContent>
-          </Card>
-        </div>
+                </CardContent>
+              </Card>
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
       </div>
     </section>
   );
@@ -711,10 +750,10 @@ function SupportCallout() {
       <div className="mx-auto max-w-4xl rounded-3xl border border-orange-500/20 bg-gradient-to-r from-orange-500/15 via-red-500/15 to-orange-500/15 p-10 text-center shadow-lg shadow-orange-500/10">
         <div className="inline-flex items-center justify-center gap-2 rounded-full bg-orange-500/20 px-4 py-2 text-sm font-semibold text-orange-500">
           <Sparkles className="h-4 w-4" />
-          Experience DSU Admissions Support
+          Ready to Start Your DSU Journey?
         </div>
         <h2 className="mt-6 text-3xl font-bold text-foreground md:text-4xl">
-          Ready to Personalize Your Admission Journey?
+          Personalized Counseling is Just a Call Away
         </h2>
         <p className="mt-4 text-lg text-foreground">
           Our counselors are available across campuses, over phone, chat, and
