@@ -1666,8 +1666,8 @@ function HeroSection() {
             className="rounded-2xl bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 px-8 py-6 text-lg font-semibold text-foreground shadow-lg shadow-orange-500/30 transition hover:shadow-xl"
             asChild
           >
-            <a href="/eligibility-checker">
-              🚀 Try Eligibility Checker
+            <a href="/program-lookup">
+              🎓 Find Program Details
               <ArrowRight className="h-5 w-5" />
             </a>
           </Button>
