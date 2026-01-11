@@ -109,9 +109,17 @@ export default function History() {
 
         <div className="relative max-w-7xl mx-auto px-3 py-10 lg:py-32">
           <div className="text-center">
-            <div className="inline-flex items-center px-4 py-2 bg-orange-500/10 rounded-full border border-orange-500/20 mb-8">
-              <Calendar className="w-4 h-4 text-orange-500 mr-2" />
-              <span className="text-sm font-medium text-orange-500">
+            <div className={`inline-flex items-center px-4 py-2 rounded-full border mb-8 ${
+              theme === "light"
+                ? "bg-orange-100 border-orange-300"
+                : "bg-orange-500/10 border-orange-500/20"
+            }`}>
+              <Calendar className={`w-4 h-4 mr-2 ${
+                theme === "light" ? "text-orange-700" : "text-orange-500"
+              }`} />
+              <span className={`text-sm font-medium ${
+                theme === "light" ? "text-orange-700" : "text-orange-500"
+              }`}>
                 Founding Pillars
               </span>
             </div>
@@ -172,12 +180,18 @@ export default function History() {
                   )}
                   <CardHeader>
                     <div className="flex items-start gap-4 mb-2">
-                      <div className="w-12 h-12 rounded-2xl bg-orange-500/20 flex items-center justify-center flex-shrink-0">
-                        <Icon className="w-6 h-6 text-orange-500" />
+                      <div className={`w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0 ${
+                        theme === "light" ? "bg-orange-100" : "bg-orange-500/20"
+                      }`}>
+                        <Icon className={`w-6 h-6 ${
+                          theme === "light" ? "text-orange-700" : "text-orange-500"
+                        }`} />
                       </div>
                       <div>
                         <CardTitle className="text-2xl">{founder.name}</CardTitle>
-                        <p className="text-sm text-orange-500 font-semibold mt-1">{founder.title}</p>
+                        <p className={`text-sm font-semibold mt-1 ${
+                          theme === "light" ? "text-orange-700" : "text-orange-500"
+                        }`}>{founder.title}</p>
                       </div>
                     </div>
                   </CardHeader>
@@ -187,7 +201,9 @@ export default function History() {
                     </p>
 
                     <div className="bg-orange-500/5 border border-orange-500/20 rounded-lg p-3">
-                      <h4 className="text-sm font-semibold text-orange-600 mb-2">
+                      <h4 className={`text-sm font-semibold mb-2 ${
+                        theme === "light" ? "text-orange-700" : "text-orange-400"
+                      }`}>
                         {founder.philosophy}
                       </h4>
                       <p className="text-sm text-foreground leading-relaxed">
@@ -198,7 +214,9 @@ export default function History() {
                     <div className="space-y-2">
                       {founder.achievements.map((achievement, idx) => (
                         <div key={idx} className="flex items-start gap-2">
-                          <CheckCircle className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5" />
+                          <CheckCircle className={`w-4 h-4 flex-shrink-0 mt-0.5 ${
+                            theme === "light" ? "text-orange-700" : "text-orange-500"
+                          }`} />
                           <span className="text-sm text-foreground">
                             {achievement}
                           </span>
