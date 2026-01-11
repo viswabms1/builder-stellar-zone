@@ -1320,28 +1320,24 @@ const brochureResources: BrochureResource[] = [
     href: "https://www.dsu.edu.in/images/Admission/brochures/2026/BTech_CSE_Brochure.pdf",
     school: "School of Engineering",
     level: "UG",
-    featured: true,
   },
   {
     title: "M.Tech Computer Science Engineering",
     href: "https://www.dsu.edu.in/images/Admission/brochures/2026/DSU_MTech_CSE_Brochure_2026.pdf",
     school: "School of Engineering",
     level: "PG",
-    featured: true,
   },
   {
     title: "BBA (Bachelor of Business Administration)",
     href: "https://www.dsu.edu.in/images/Admission/brochures/2026/DSU_BBA_Brochure.pdf",
     school: "School of Commerce & Management",
     level: "UG",
-    featured: true,
   },
   {
     title: "MBA (Master of Business Administration)",
     href: "https://www.dsu.edu.in/images/Admission/brochures/2026/DSU_MBA_Brochure_26.pdf",
     school: "School of Commerce & Management",
     level: "PG",
-    featured: true,
   },
   {
     title: "B.Tech Computer Science & Technology (CST)",
