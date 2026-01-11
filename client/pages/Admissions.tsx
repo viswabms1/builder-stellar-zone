@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState, type FormEvent } from "react";
 
+import { useTheme } from "@/providers/theme-provider";
 import { Button } from "@/components/ui/button";
 import {
   Card,
