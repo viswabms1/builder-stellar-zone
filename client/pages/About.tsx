@@ -77,10 +77,8 @@ export default function About() {
             </span>
           </div>
 
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight">
-            <span className="bg-brand-gradient bg-clip-text text-transparent">
-              Building India's AI-First Academic Ecosystem
-            </span>
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight text-white">
+            Building India's AI-First Academic Ecosystem
           </h1>
 
           <p className="text-xl md:text-2xl font-bold text-white mb-6 max-w-4xl mx-auto leading-relaxed">
