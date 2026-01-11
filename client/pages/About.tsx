@@ -326,10 +326,10 @@ export default function About() {
         <div className="max-w-4xl mx-auto text-center">
           <div className="bg-gradient-to-r from-orange-500/10 via-red-600/10 to-pink-500/10 rounded-3xl p-12 border border-orange-500/20">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Ready to be
+              Ready to build your future with
               <span className="bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
                 {" "}
-                Part of DSU
+                AI-powered education
               </span>
               ?
             </h2>
