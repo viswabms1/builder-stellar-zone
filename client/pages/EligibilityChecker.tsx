@@ -132,7 +132,7 @@ export default function EligibilityChecker() {
 
   const handleEducationSelect = (edu: EducationLevel) => {
     setEducation(edu);
-    setSubjects([]);
+    setSubjectRequirement("");
     setPercentage("");
     setStep(2);
   };
