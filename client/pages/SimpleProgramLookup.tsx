@@ -354,7 +354,7 @@ function HeroSection() {
           Find Your Program Details
         </h1>
         <p className="mt-6 text-lg text-foreground md:text-xl">
-          Filter by school and level, search by name, then instantly view eligibility criteria, fee structure, and required documents.
+          Filter by school and level, then instantly view eligibility criteria, fee structure, and required documents.
         </p>
       </div>
     </section>
