@@ -116,10 +116,10 @@ export default function History() {
               </span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-              <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
-                Inspiring the Shape of Things to Come
-              </span>
+            <h1 className={`text-4xl md:text-5xl font-bold mb-6 leading-tight ${
+              theme === "light" ? "text-orange-900" : "text-white"
+            }`}>
+              Inspiring the Shape of Things to Come
             </h1>
 
             <p className="text-lg md:text-xl font-semibold text-orange-500 mb-6 leading-relaxed max-w-3xl mx-auto">
@@ -139,7 +139,7 @@ export default function History() {
           <div className="text-center mb-8">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               <span className="text-foreground">Our </span>
-              <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
+              <span className={theme === "light" ? "text-orange-900" : "text-white"}>
                 Founders
               </span>
             </h2>
@@ -217,7 +217,7 @@ export default function History() {
           <div className="text-center mb-8">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               <span className="text-foreground">Our </span>
-              <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
+              <span className={theme === "light" ? "text-orange-900" : "text-white"}>
                 Heritage
               </span>
             </h2>
@@ -265,7 +265,7 @@ export default function History() {
           <div className="text-center mb-8">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               <span className="text-foreground">Evolution of Academic </span>
-              <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
+              <span className={theme === "light" ? "text-orange-900" : "text-white"}>
                 Disciplines
               </span>
             </h2>
@@ -305,10 +305,10 @@ export default function History() {
       <section className="px-3 py-10 bg-gradient-to-br from-orange-500/5 via-red-600/5 to-background">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-8">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
-                Growth of Campus Infrastructure
-              </span>
+            <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${
+              theme === "light" ? "text-orange-900" : "text-white"
+            }`}>
+              Growth of Campus Infrastructure
             </h2>
             <p className="text-lg text-foreground max-w-3xl mx-auto mb-6">
               Infrastructure development at DSU has evolved in parallel with academic growth, ensuring modern learning environments across generations.
@@ -344,7 +344,7 @@ export default function History() {
         <div className="max-w-7xl mx-auto">
           <div className="bg-gradient-to-r from-orange-500/10 to-red-600/10 border border-orange-500/30 rounded-2xl p-8 md:p-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
-              From Legacy to the <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">Future</span>
+              From Legacy to the <span className={theme === "light" ? "text-orange-900" : "text-white"}>Future</span>
             </h2>
             <p className="text-lg text-foreground leading-relaxed max-w-3xl">
               Building on its strong foundation, Dayananda Sagar University continues to evolve as a future-ready institution—integrating emerging technologies, interdisciplinary learning, research-led education, and global engagement to prepare students for a rapidly changing world.
