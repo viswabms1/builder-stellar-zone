@@ -1316,23 +1316,34 @@ const contactLocations: ContactLocation[] = [
   {
     name: "DSU Main Campus",
     address:
-      "Devarakaggalahalli, Harohalli, Kanakapura Road, Bengaluru South District – 562 112",
+      "Dayananda Sagar University, Devarakaggalahalli, Harohalli, Kanakapura Road, Bengaluru South Dt. – 562 112",
     email: "admissions@dsu.edu.in",
-    phones: ["080 2861 1000"],
+    phones: [
+      "Office of Registrar: 080 24496999 (Extn-2)",
+      "Reception: 080 24496999 (Extn-1)",
+      "Registrar: 080 24496999 (Extn-3)",
+      "Dean, SOE: 080 24496999 (Extn-4)",
+    ],
   },
   {
     name: "DSU City Innovation Campus",
     address:
-      "Administrative & Main Admission Office, Kudlu Gate, Hosur Road, Bengaluru – 560 114",
-    email: "dsat@dsu.edu.in",
-    phones: ["080 4646 1800", "080 4909 2800"],
+      "Dayananda Sagar University, Innovation Campus, Administrative & Main Admission Office, Kudlu Gate, Hosur Road, Bengaluru - 560 068",
+    email: "admissions@dsu.edu.in | dsat@dsu.edu.in",
+    phones: [
+      "080 46461800",
+      "080 49092800",
+      "+91 7760964277",
+      "+91 8296316737",
+      "+91 6366885507",
+    ],
   },
   {
-    name: "City Admissions Office",
+    name: "Admission Information Center",
     address:
-      "Gate 2, 6th Floor, University Building, Dental Block, Kumaraswamy Layout, Bengaluru – 560 111",
-    email: "enquiry@dsu.edu.in",
-    phones: ["+91 77609 64277", "+91 82963 16737", "+91 63668 85507"],
+      "Gate 2, 6th Floor, University Building, Dental Block, Kumaraswamy Layout, Bengaluru - 560 111",
+    email: "admissions@dsu.edu.in",
+    phones: ["080 46461800", "080 49092800"],
   },
 ];
 
