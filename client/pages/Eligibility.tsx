@@ -568,74 +568,88 @@ const schools: School[] = [
   {
     name: "School of Basic & Applied Sciences",
     tagline:
-      "Life science programs blending lab research, internships, and interdisciplinary electives.",
+      "Yearly fee structure 2026-27 for life science programs blending lab research, internships, and interdisciplinary electives.",
     icon: Stethoscope,
     categories: [
       {
-        title: "Undergraduate Programs",
+        title: "Undergraduate Programs (3 Years Duration)",
         programs: [
           {
             name: "B.Sc - Life Science Combinations",
             level: "UG",
+            duration: "3 Years",
             specializations: [
               "Biotechnology, Biochemistry, and Genetics",
               "Biotechnology, Chemistry, and Microbiology",
               "Microbiology, Genetics, and Biochemistry",
             ],
             eligibility:
-              "10+2 with Physics, Chemistry, and English plus Biology, Biotechnology, Mathematics, or related subjects; minimum 45% aggregate (40% for SC/ST & OBC).",
+              "Pass in 10+2, A Level, IB, American 12th grade or equivalent with Physics, Chemistry and English with Biology or Biotechnology or Mathematics or any other Life Science subject as optional and a minimum of 45% marks taken together in Physics, Chemistry and any one of the optional subjects.",
             fees: [
               { label: "Term I", amount: "₹97,000" },
-              { label: "Term II", amount: "₹75,000" },
-              { label: "Total (Incl. Library Deposit)", amount: "₹1,72,000" },
-            ],
-            notes: [
-              "Industry internships with biotech labs and interdisciplinary research projects in genomics, proteomics, and bioinformatics.",
+              { label: "Term II", amount: "₹85,000" },
+              { label: "Total Fees", amount: "₹1,82,000" },
             ],
           },
         ],
+        footnotes: [
+          "Fee structure reflects the 2026-27 academic year. All fees shown are annual totals.",
+        ],
       },
       {
-        title: "Postgraduate Programs",
+        title: "Postgraduate Programs (2 Years Duration)",
         programs: [
           {
             name: "M.Sc Biochemistry",
             level: "PG",
+            duration: "2 Years",
             eligibility:
-              "B.Sc in Biochemistry or allied life science disciplines (MBBS, BDS, Nursing, Pharmaceutical Sciences, etc.) with minimum 50% aggregate.",
+              "B.Sc. with any of the following life science subjects such as Biochemistry, Chemistry, Biotechnology, Microbiology, Bioinformatics, Anatomy, Physiology, etc. Students having degree in Medical Sciences, Nursing Sciences, Pharmaceutical Sciences are also eligible to apply.",
             fees: [
-              { label: "Total (Incl. Library Deposit)", amount: "₹1,82,000" },
+              { label: "Term I", amount: "₹1,02,000" },
+              { label: "Term II", amount: "₹90,000" },
+              { label: "Total Fees", amount: "₹1,92,000" },
             ],
           },
           {
             name: "M.Sc Biotechnology",
             level: "PG",
+            duration: "2 Years",
             eligibility:
-              "B.Sc with life science subjects such as Biotechnology, Microbiology, Genetics, Biochemistry, or related programs with minimum 50% aggregate.",
+              "B.Sc. with any of the following subjects in Life Science such as Biotechnology, Microbiology, Genetics, Zoology, Botany, Biochemistry, Bioinformatics, etc.",
             fees: [
-              { label: "Total (Incl. Library Deposit)", amount: "₹1,82,000" },
+              { label: "Term I", amount: "₹1,02,000" },
+              { label: "Term II", amount: "₹90,000" },
+              { label: "Total Fees", amount: "₹1,92,000" },
             ],
           },
           {
             name: "M.Sc Microbiology",
             level: "PG",
+            duration: "2 Years",
             eligibility:
-              "B.Sc in science with life science subjects covering Microbiology, Biotechnology, Biochemistry, Zoology, or related specializations.",
+              "M.Sc. Microbiology is a 2 year full-time postgraduate course with minimum qualification required to apply is a bachelor's degree. Eligibility for which is B.Sc. in any stream of science with any of the following life science subjects such as Genetics, Zoology, Botany, Biochemistry, Chemistry, Microbiology etc. Students having degree in Medical Sciences, Nursing Sciences, Pharmaceutical Sciences are also eligible to apply from a recognized board.",
             fees: [
-              { label: "Total (Incl. Library Deposit)", amount: "₹1,82,000" },
+              { label: "Term I", amount: "₹1,02,000" },
+              { label: "Term II", amount: "₹90,000" },
+              { label: "Total Fees", amount: "₹1,92,000" },
             ],
           },
           {
-            name: "M.Sc Human Genetics",
+            name: "M.Sc Molecular Biology and Genetics",
             level: "PG",
+            duration: "2 Years",
             eligibility:
-              "B.Sc with relevant life science background, including Genetics, Biotechnology, Biochemistry, Microbiology, or allied programs.",
+              "B.Sc. with any of the following life science subjects such as Genetics, Zoology, Botany, Biochemistry, Chemistry, Microbiology, Bioinformatics, Anthropology, Anatomy, Physiology, etc. Students having degree in Medical Sciences, Nursing Sciences, Pharmaceutical Sciences are also eligible to apply.",
             fees: [
-              { label: "Total (Incl. Library Deposit)", amount: "₹1,82,000" },
+              { label: "Term I", amount: "₹1,02,000" },
+              { label: "Term II", amount: "₹90,000" },
+              { label: "Total Fees", amount: "₹1,92,000" },
             ],
           },
         ],
         footnotes: [
+          "Fee structure reflects the 2026-27 academic year. All fees shown are annual totals.",
           "Advanced instrumentation labs support research in molecular biology, genomic diagnostics, and translational sciences.",
         ],
       },
