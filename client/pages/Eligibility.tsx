@@ -1784,6 +1784,29 @@ type ProgramCardProps = {
 };
 
 function ProgramCard({ program }: ProgramCardProps) {
+  const parseEligibilityToBullets = (eligibilityText: string): string[] => {
+    const bullets: string[] = [];
+    const cleanText = eligibilityText.replace(/\s+/g, " ").trim();
+
+    if (cleanText.includes("Pass in") || cleanText.includes("Candidates")) {
+      const sentences = cleanText.split(/(?<=[.!?])\s+/);
+      sentences.forEach((sentence) => {
+        const trimmed = sentence.trim();
+        if (trimmed) {
+          bullets.push(trimmed);
+        }
+      });
+    }
+
+    if (bullets.length === 0) {
+      bullets.push(eligibilityText);
+    }
+
+    return bullets;
+  };
+
+  const eligibilityBullets = program.eligibilityPoints || parseEligibilityToBullets(program.eligibility);
+
   return (
     <Card
       id={`program-${program.name}`}
@@ -1810,15 +1833,21 @@ function ProgramCard({ program }: ProgramCardProps) {
             {program.level}
           </Badge>
         </div>
-        <p className="mt-4 text-sm leading-relaxed text-foreground">
-          <strong className="font-semibold text-foreground">
-            Eligibility:
-          </strong>{" "}
-          {program.eligibility}
-        </p>
+
+        <div className="mt-4">
+          <p className="text-xs uppercase tracking-wide text-orange-500 font-semibold">
+            Eligibility Criteria
+          </p>
+          <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-foreground">
+            {eligibilityBullets.map((bullet, idx) => (
+              <li key={`${program.name}-eligibility-${idx}`}>{bullet}</li>
+            ))}
+          </ul>
+        </div>
+
         {program.specializations && (
           <div className="mt-3">
-            <p className="text-xs uppercase tracking-wide text-orange-500">
+            <p className="text-xs uppercase tracking-wide text-orange-500 font-semibold">
               Includes Specializations
             </p>
             <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-foreground">
@@ -1852,19 +1881,68 @@ function ProgramCard({ program }: ProgramCardProps) {
             </TableBody>
           </Table>
         </div>
+
+        {program.documentsRequired && program.documentsRequired.length > 0 && (
+          <div className="rounded-xl border border-blue-500/20 bg-blue-500/10 p-4">
+            <p className="text-xs uppercase tracking-wide font-semibold text-blue-600 mb-2">
+              📋 Documents Required
+            </p>
+            <ul className="list-disc space-y-1 pl-5 text-sm text-foreground">
+              {program.documentsRequired.map((doc, idx) => (
+                <li key={`${program.name}-doc-${idx}`}>{doc}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+
         {program.scholarships && (
           <div className="rounded-xl border border-orange-500/30 bg-orange-500/10 p-3 text-sm text-orange-500">
             <CheckCircle2 className="mr-2 inline h-4 w-4" />
             {program.scholarships}
           </div>
         )}
+
         {program.notes && (
-          <ul className="list-disc space-y-2 pl-5 text-sm text-foreground">
-            {program.notes.map((note) => (
-              <li key={`${program.name}-note-${note}`}>{note}</li>
-            ))}
-          </ul>
+          <div className="rounded-xl border border-amber-500/20 bg-amber-500/10 p-3">
+            <p className="text-xs uppercase tracking-wide font-semibold text-amber-600 mb-2">
+              ⭐ Key Highlights
+            </p>
+            <ul className="list-disc space-y-1 pl-5 text-sm text-foreground">
+              {program.notes.map((note) => (
+                <li key={`${program.name}-note-${note}`}>{note}</li>
+              ))}
+            </ul>
+          </div>
         )}
+
+        <div className="pt-2 space-y-2 border-t border-border/40">
+          <p className="text-xs uppercase tracking-wide font-semibold text-orange-500 mb-3">
+            Next Steps
+          </p>
+          <div className="grid grid-cols-2 gap-2">
+            <Button
+              size="sm"
+              className="rounded-lg bg-orange-500/15 text-orange-500 hover:bg-orange-500 hover:text-foreground"
+              asChild
+            >
+              <a href="https://admissions.dsu.edu.in/" target="_blank" rel="noreferrer">
+                Apply Now
+                <ArrowRight className="ml-1 h-3.5 w-3.5" />
+              </a>
+            </Button>
+            <Button
+              size="sm"
+              variant="outline"
+              className="rounded-lg border-orange-500/30 text-orange-500 hover:bg-orange-500/10"
+              asChild
+            >
+              <a href="mailto:admissions@dsu.edu.in?subject=Query%20about%20%22{encodeURIComponent(program.name)}%22">
+                Ask Question
+                <Mail className="ml-1 h-3.5 w-3.5" />
+              </a>
+            </Button>
+          </div>
+        </div>
       </CardContent>
     </Card>
   );
