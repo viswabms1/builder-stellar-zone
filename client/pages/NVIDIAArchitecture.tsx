@@ -522,6 +522,12 @@ export default function NVIDIAArchitecture() {
             <h2 className="text-5xl md:text-6xl font-bold mb-6">Why This Setup Matters</h2>
           </div>
 
+          <div className="mb-8 bg-gradient-to-r from-blue-500/10 to-purple-500/10 p-6 rounded-lg border border-blue-500/30">
+            <p className="text-lg text-foreground/80 leading-relaxed">
+              This infrastructure bridges rigorous academic foundations with production-scale AI systems used in global research and industry.
+            </p>
+          </div>
+
           <div className="grid md:grid-cols-2 gap-8">
             <Card className="border-border/50 bg-card/50 backdrop-blur">
               <CardHeader>
@@ -531,9 +537,9 @@ export default function NVIDIAArchitecture() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4 text-sm text-foreground/70">
-                <p>You learn on the exact same tools used by AI researchers at top companies and universities worldwide.</p>
-                <p>When you graduate, you'll have hands-on experience that employers are desperately looking for.</p>
-                <p>No need to "re-learn" new tools—you'll already know what matters.</p>
+                <p>You learn on the same tools used by AI researchers at leading universities and companies worldwide.</p>
+                <p>When you graduate, you'll have hands-on experience with production-grade infrastructure.</p>
+                <p>No "re-learning" new tools—you're already proficient in what matters most.</p>
               </CardContent>
             </Card>
 
@@ -545,9 +551,9 @@ export default function NVIDIAArchitecture() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4 text-sm text-foreground/70">
-                <p>Every major AI company uses NVIDIA technology. You'll be job-ready from day one.</p>
+                <p>Leading AI companies prioritize hiring engineers with hands-on NVIDIA experience.</p>
                 <p>Build a portfolio of real AI projects on enterprise hardware.</p>
-                <p>Network with industry professionals and researchers who visit campus.</p>
+                <p>Network with industry professionals and researchers who collaborate with DSU.</p>
               </CardContent>
             </Card>
           </div>
