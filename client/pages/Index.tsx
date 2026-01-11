@@ -524,6 +524,18 @@ export default function Index() {
       description: "",
       programs: ["MBBS", "MD", "DM", "Fellowship"],
     },
+    {
+      key: "online",
+      icon: Laptop,
+      color: "brand-magenta",
+      delay: "0.85s",
+      href: "/academics/dsu-online",
+      image:
+        "https://images.pexels.com/photos/7974355/pexels-photo-7974355.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
+      title: "DSU Online",
+      description: "",
+      programs: ["Online Degrees", "Flexible Learning", "Certification Programs", "Professional Development"],
+    },
   ];
 
   // All featured news items for rotation
