@@ -262,11 +262,8 @@ export default function About() {
                 Explore About DSU
               </span>
             </h2>
-            <p className="text-lg text-foreground max-w-3xl mx-auto mb-2">
-              Learn more about our university through dedicated sections
-            </p>
-            <p className="text-foreground/80 max-w-3xl mx-auto">
-              Learn how DSU's vision, leadership, and infrastructure shape a future-ready university.
+            <p className="text-lg text-foreground max-w-3xl mx-auto">
+              Discover DSU's vision, leadership, legacy, and infrastructure that shape a future-ready university.
             </p>
           </div>
 
