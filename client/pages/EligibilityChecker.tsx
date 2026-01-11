@@ -20,15 +20,6 @@ import {
 
 type EducationLevel = "10+2" | "Bachelor's" | "Master's" | "Law";
 type Category = "General" | "SC/ST" | "OBC";
-
-type EligibilityRule = {
-  requiredEducation: EducationLevel;
-  requiredSubjects: string[];
-  minimumPercentage: (category: Category) => number;
-  applicablePrograms: string[];
-  reason: string;
-};
-
 type SubjectRequirement = "PCM" | "PCB" | "Commerce" | "Arts" | "Law" | "Engineering" | "Science" | "Life Sciences" | "Any";
 
 type EligibilityRule = {
