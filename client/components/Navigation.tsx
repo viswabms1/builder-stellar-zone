@@ -394,34 +394,17 @@ export default function Navigation() {
             : "bg-gradient-to-r from-slate-900 to-slate-950 border-b-2 border-orange-600/30"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-10 py-5 flex items-center justify-between gap-10">
-          {/* Top Menu Items - spread across the bar */}
-          <div className="flex items-center gap-4 flex-wrap">
-            {topMenuItems.slice(0, 7).map((item, idx) => (
+        <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between gap-4">
+          {/* All Top Menu Items in one continuous row */}
+          <div className="flex items-center gap-2 flex-nowrap">
+            {topMenuItems.map((item, idx) => (
               <Link
                 key={idx}
                 to={item.href}
-                className={`text-base font-medium transition-all duration-200 whitespace-nowrap px-5 py-2.5 rounded-lg hover:scale-105 ${
+                className={`text-sm font-medium transition-all duration-200 whitespace-nowrap px-3 py-2 rounded-lg hover:scale-105 ${
                   theme === "light"
-                    ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100 hover:shadow-sm"
-                    : "text-white/80 hover:text-white hover:bg-white/10 hover:shadow-sm"
-                }`}
-              >
-                {item.name}
-              </Link>
-            ))}
-          </div>
-
-          {/* Right side - More Links, Language Switcher and ERP Login */}
-          <div className="flex items-center gap-4">
-            {topMenuItems.slice(7).map((item, idx) => (
-              <Link
-                key={idx}
-                to={item.href}
-                className={`text-base font-medium transition-all duration-200 whitespace-nowrap px-5 py-2.5 rounded-lg hover:scale-105 ${
-                  theme === "light"
-                    ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100 hover:shadow-sm"
-                    : "text-white/80 hover:text-white hover:bg-white/10 hover:shadow-sm"
+                    ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
+                    : "text-white/80 hover:text-white hover:bg-white/10"
                 }`}
               >
                 {item.name}
@@ -431,15 +414,19 @@ export default function Navigation() {
               href="https://ums.mydsi.org/Login.aspx/DSU"
               target="_blank"
               rel="noopener noreferrer"
-              className={`text-base font-medium transition-all duration-200 whitespace-nowrap px-5 py-2.5 rounded-lg hover:scale-105 ${
+              className={`text-sm font-medium transition-all duration-200 whitespace-nowrap px-3 py-2 rounded-lg hover:scale-105 ${
                 theme === "light"
-                  ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100 hover:shadow-sm"
-                  : "text-white/80 hover:text-white hover:bg-white/10 hover:shadow-sm"
+                  ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
+                  : "text-white/80 hover:text-white hover:bg-white/10"
               }`}
             >
               ERP Login
             </a>
-            <div className="h-6 w-px bg-gray-300 dark:bg-white/20 mx-4"></div>
+          </div>
+
+          {/* Right side - Language Switcher */}
+          <div className="flex items-center gap-2 flex-shrink-0">
+            <div className="h-5 w-px bg-gray-300 dark:bg-white/20"></div>
             <LanguageSwitcher />
           </div>
         </div>
@@ -447,7 +434,7 @@ export default function Navigation() {
 
       {/* Main Navigation Bar */}
       <nav
-        className={`sticky top-0 lg:top-[76px] z-[9997] transition-all duration-300 overflow-visible shadow-md ${
+        className={`sticky top-0 lg:top-[56px] z-[9997] transition-all duration-300 overflow-visible shadow-md ${
           theme === "light"
             ? "bg-white/95 backdrop-blur-sm border-b-2 border-orange-200/50"
             : "bg-slate-950/95 backdrop-blur-sm border-b-2 border-orange-600/30"
