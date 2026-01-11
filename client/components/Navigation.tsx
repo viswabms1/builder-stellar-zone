@@ -388,7 +388,7 @@ export default function Navigation() {
     <>
       {/* Top Menu Bar - Hidden on Mobile */}
       <div
-        className={`sticky top-0 z-50 transition-all duration-300 hidden sm:block ${
+        className={`sticky top-0 z-[9998] transition-all duration-300 hidden sm:block ${
           theme === "light"
             ? "bg-white border-b border-orange-200/30"
             : "bg-slate-950 border-b border-orange-600/20"
