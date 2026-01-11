@@ -473,7 +473,7 @@ export default function Navigation() {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center gap-0.5">
+            <div className="hidden lg:flex items-center gap-1">
               {navigation.map((item, idx) => {
                 const active = !item.external && isActive(item.href);
                 const isAbout = item.href === "/about";
@@ -883,10 +883,10 @@ export default function Navigation() {
                     <Link
                       key="logo"
                       to="/"
-                      className={`flex items-center group flex-shrink-0 px-4 py-3 rounded-xl transition-all duration-300 ${
+                      className={`flex items-center group flex-shrink-0 px-3 py-2 rounded-xl transition-all duration-300 ${
                         theme === "light"
-                          ? "bg-white hover:bg-white"
-                          : "hover:bg-white/10"
+                          ? "bg-white hover:bg-orange-50"
+                          : "hover:bg-white/5"
                       }`}
                     >
                       <img
@@ -896,7 +896,7 @@ export default function Navigation() {
                             : "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F0caf0bf29be6421997005f26cdaae0ed?format=webp&width=800"
                         }
                         alt="Dayananda Sagar University Logo"
-                        className="h-20 w-auto object-contain group-hover:scale-110 transition-all duration-300"
+                        className="h-14 w-auto object-contain group-hover:scale-105 transition-all duration-300"
                       />
                     </Link>,
                     <Link
@@ -914,7 +914,7 @@ export default function Navigation() {
             </div>
 
             {/* Desktop Actions */}
-            <div className="hidden lg:flex items-center space-x-2">
+            <div className="hidden lg:flex items-center space-x-3">
               <Button
                 variant="ghost"
                 size="sm"
