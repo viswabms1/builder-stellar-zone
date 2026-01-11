@@ -732,11 +732,11 @@ export default function Index() {
             </p>
           </div>
 
-          <div className="flex items-center justify-center">
+          <div className="flex items-center justify-center py-4 md:py-0 overflow-x-auto">
             <img
               src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fffc582af946b444b924524e96904cc59?format=webp&width=1400"
               alt="Performance Indicators and Accreditations"
-              className="w-full max-w-5xl h-auto object-contain"
+              className="w-full max-w-sm md:max-w-5xl h-auto object-contain flex-shrink-0 md:flex-shrink"
             />
           </div>
         </div>
