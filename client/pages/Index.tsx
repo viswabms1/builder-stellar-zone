@@ -781,6 +781,8 @@ export default function Index() {
                 { bg: "bg-cyan-500/10", border: "border-cyan-500/20" },
                 { bg: "bg-amber-500/10", border: "border-amber-500/20" },
                 { bg: "bg-rose-500/10", border: "border-rose-500/20" },
+                { bg: "bg-indigo-500/10", border: "border-indigo-500/20" },
+                { bg: "bg-teal-500/10", border: "border-teal-500/20" },
               ];
               const style = styles[index % styles.length];
 
