@@ -667,6 +667,13 @@
     }
   }
 
+  /* Hide top menu bar on tablet portrait mode for better readability */
+  @media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+    .sticky.top-0.z-50.hidden.sm\:block {
+      display: none !important;
+    }
+  }
+
   /* Event card animations and effects */
   .featured-event-card {
     position: relative;
