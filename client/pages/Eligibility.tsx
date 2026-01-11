@@ -2024,14 +2024,14 @@ function ProgramCard({ program }: ProgramCardProps) {
           </div>
         )}
 
-        <div className="pt-2 space-y-2 border-t border-border/40">
+        <div className="pt-3 space-y-2 border-t border-border/40">
           <p className="text-xs uppercase tracking-wide font-semibold text-orange-500 mb-3">
             Next Steps
           </p>
-          <div className="grid grid-cols-2 gap-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
             <Button
               size="sm"
-              className="rounded-lg bg-orange-500/15 text-orange-500 hover:bg-orange-500 hover:text-foreground"
+              className="rounded-lg bg-orange-500 text-white hover:bg-orange-600 transition w-full"
               asChild
             >
               <a href="https://admissions.dsu.edu.in/" target="_blank" rel="noreferrer">
@@ -2042,10 +2042,10 @@ function ProgramCard({ program }: ProgramCardProps) {
             <Button
               size="sm"
               variant="outline"
-              className="rounded-lg border-orange-500/30 text-orange-500 hover:bg-orange-500/10"
+              className="rounded-lg border-2 border-orange-500/40 text-orange-500 hover:bg-orange-500/10 transition w-full"
               asChild
             >
-              <a href="mailto:admissions@dsu.edu.in?subject=Query%20about%20%22{encodeURIComponent(program.name)}%22">
+              <a href="mailto:admissions@dsu.edu.in?subject=Query%20about%20program">
                 Ask Question
                 <Mail className="ml-1 h-3.5 w-3.5" />
               </a>
