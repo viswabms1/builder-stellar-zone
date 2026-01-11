@@ -544,17 +544,23 @@ const schools: School[] = [
         title: "Postgraduate Program",
         programs: [
           {
-            name: "LL.M (1 Year)",
+            name: "LL.M",
             level: "PG",
+            duration: "1 Year",
             eligibility:
-              "Bachelor's degree in Law (LL.B or equivalent) with at least 50% marks (40% for SC/ST). Valid scores from CLAT, AILET, or DSU entrance exams.",
+              "A bachelor's degree in law (LL.B) or an equivalent degree from recognized university. A minimum of 50% marks in the qualifying degree (40% for SC/ST candidates). Valid scores in any national level entrance exams like CLAT or AILET.",
             fees: [
-              { label: "Total (Incl. Library Deposit)", amount: "₹1,35,000" },
+              { label: "Tuition Fee", amount: "₹1,10,000" },
+              { label: "Other Fee", amount: "₹35,000" },
+              { label: "Total Fees", amount: "₹1,45,000" },
             ],
             notes: [
               "Tracks include Corporate & Commercial Law, Intellectual Property Rights, and Human Rights Law.",
             ],
           },
+        ],
+        footnotes: [
+          "Fee structure reflects the 2026-27 academic year. All fees shown are annual totals.",
         ],
       },
     ],
