@@ -75,20 +75,13 @@ export default function About() {
           </div>
 
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight">
-            <span className="text-foreground">About</span>
-            <br />
             <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
-              Dayananda Sagar
+              Building India's AI-First Academic Ecosystem
             </span>
-            <br />
-            <span className="text-foreground">University</span>
           </h1>
 
-          <p className="text-xl md:text-2xl text-foreground mb-3 max-w-4xl mx-auto leading-relaxed">
-            Building India's AI-First Academic Ecosystem
-          </p>
           <p className="text-xl md:text-2xl text-foreground mb-6 max-w-4xl mx-auto leading-relaxed">
-            Where legacy education meets future-ready innovation.
+            A multidisciplinary university where legacy education meets industry-grade AI, research, and innovation.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
