@@ -433,12 +433,11 @@ export default function Navigation() {
 
       {/* Main Navigation Bar */}
       <nav
-        className={`sticky transition-all duration-300 hidden sm:block ${
+        className={`sticky top-0 z-50 transition-all duration-300 ${
           theme === "light"
             ? "bg-white border-b border-orange-200/30"
             : "bg-slate-950 border-b border-orange-600/20"
         }`}
-        style={{ top: "40px", zIndex: 49 }}
       >
         <div className="max-w-7xl mx-auto px-3">
           <div className="flex items-center justify-between h-20">
