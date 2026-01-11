@@ -1949,18 +1949,16 @@ function ProgramCard({ program }: ProgramCardProps) {
           </Table>
         </div>
 
-        {program.documentsRequired && program.documentsRequired.length > 0 && (
-          <div className="rounded-xl border border-blue-500/20 bg-blue-500/10 p-4">
-            <p className="text-xs uppercase tracking-wide font-semibold text-blue-600 mb-2">
-              📋 Documents Required
-            </p>
-            <ul className="list-disc space-y-1 pl-5 text-sm text-foreground">
-              {program.documentsRequired.map((doc, idx) => (
-                <li key={`${program.name}-doc-${idx}`}>{doc}</li>
-              ))}
-            </ul>
-          </div>
-        )}
+        <div className="rounded-xl border border-blue-500/20 bg-blue-500/10 p-4">
+          <p className="text-xs uppercase tracking-wide font-semibold text-blue-600 mb-2">
+            📋 Documents Required
+          </p>
+          <ul className="list-disc space-y-1 pl-5 text-sm text-foreground">
+            {documentsRequired.map((doc, idx) => (
+              <li key={`${program.name}-doc-${idx}`}>{doc}</li>
+            ))}
+          </ul>
+        </div>
 
         {program.scholarships && (
           <div className="rounded-xl border border-orange-500/30 bg-orange-500/10 p-3 text-sm text-orange-500">
