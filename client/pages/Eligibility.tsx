@@ -1664,93 +1664,113 @@ function SchoolsSection() {
           onValueChange={setOpenSchools}
           className="space-y-3"
         >
-          {schools.map((school) => (
-            <AccordionItem
-              key={school.name}
-              value={school.name}
-              className="overflow-hidden rounded-3xl border border-orange-500/20 bg-card/70 backdrop-blur-sm"
-            >
-              <AccordionTrigger className="px-3 py-4 text-left text-xl font-semibold text-foreground">
-                <div className="flex w-full items-center gap-3 text-left">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-orange-500/15 text-orange-500">
-                    <school.icon className="h-6 w-6" />
-                  </div>
-                  <div className="flex-1 text-left">
-                    <div className="flex flex-wrap items-center gap-3">
-                      <span>{school.name}</span>
-                      <Badge className="bg-orange-500/15 text-orange-500">
-                        {school.name === "School of Engineering" ||
-                        school.name === "School of Computer Applications" ||
-                        school.name === "School of Law" ||
-                        school.name === "School of Basic & Applied Sciences" ||
-                        school.name === "School of Commerce & Management" ||
-                        school.name === "School of Health Sciences" ||
-                        school.name === "School of Arts, Design & Humanities" ||
-                        school.name === "School of Design & Digital Trans-Media"
-                          ? "2026-27"
-                          : "2025-26"}
-                      </Badge>
+          {schools
+            .map((school) => {
+              const filteredCategories = school.categories
+                .map((category) => ({
+                  ...category,
+                  programs: category.programs.filter(
+                    (program) =>
+                      selectedLevel === "all" || program.level === selectedLevel
+                  ),
+                }))
+                .filter((category) => category.programs.length > 0);
+
+              return filteredCategories.length > 0
+                ? {
+                    ...school,
+                    categories: filteredCategories,
+                  }
+                : null;
+            })
+            .filter(Boolean)
+            .map((school) => (
+              <AccordionItem
+                key={school.name}
+                value={school.name}
+                className="overflow-hidden rounded-3xl border border-orange-500/20 bg-card/70 backdrop-blur-sm"
+              >
+                <AccordionTrigger className="px-3 py-4 text-left text-xl font-semibold text-foreground">
+                  <div className="flex w-full items-center gap-3 text-left">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-orange-500/15 text-orange-500">
+                      <school.icon className="h-6 w-6" />
                     </div>
-                    <p className="mt-1 text-sm font-normal text-foreground">
-                      {school.tagline}
-                    </p>
-                  </div>
-                </div>
-              </AccordionTrigger>
-              <AccordionContent className="px-3 pb-6">
-                <div className="space-y-10">
-                  {school.categories.map((category) => (
-                    <div
-                      key={`${school.name}-${category.title}`}
-                      className="space-y-4"
-                    >
-                      <div className="flex flex-wrap items-center justify-between gap-3">
-                        <div className="flex items-center gap-3">
-                          <Badge className="rounded-full bg-orange-500/15 px-4 py-2 text-orange-500">
-                            {category.title}
-                          </Badge>
-                          {category.description && (
-                            <p className="text-sm text-foreground">
-                              {category.description}
-                            </p>
-                          )}
-                        </div>
+                    <div className="flex-1 text-left">
+                      <div className="flex flex-wrap items-center gap-3">
+                        <span>{school.name}</span>
+                        <Badge className="bg-orange-500/15 text-orange-500">
+                          {school.name === "School of Engineering" ||
+                          school.name === "School of Computer Applications" ||
+                          school.name === "School of Law" ||
+                          school.name === "School of Basic & Applied Sciences" ||
+                          school.name === "School of Commerce & Management" ||
+                          school.name === "School of Health Sciences" ||
+                          school.name === "School of Arts, Design & Humanities" ||
+                          school.name === "School of Design & Digital Trans-Media"
+                            ? "2026-27"
+                            : "2025-26"}
+                        </Badge>
                       </div>
-                      <div className="grid gap-3 lg:grid-cols-2">
-                        {category.programs.map((program) => (
-                          <ProgramCard
-                            key={`${category.title}-${program.name}`}
-                            program={program}
-                          />
+                      <p className="mt-1 text-sm font-normal text-foreground">
+                        {school.tagline}
+                      </p>
+                    </div>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-3 pb-6">
+                  <div className="space-y-10">
+                    {school.categories.map((category) => (
+                      <div
+                        key={`${school.name}-${category.title}`}
+                        className="space-y-4"
+                      >
+                        <div className="flex flex-wrap items-center justify-between gap-3">
+                          <div className="flex items-center gap-3">
+                            <Badge className="rounded-full bg-orange-500/15 px-4 py-2 text-orange-500">
+                              {category.title}
+                            </Badge>
+                            {category.description && (
+                              <p className="text-sm text-foreground">
+                                {category.description}
+                              </p>
+                            )}
+                          </div>
+                        </div>
+                        <div className="grid gap-3 lg:grid-cols-2">
+                          {category.programs.map((program) => (
+                            <ProgramCard
+                              key={`${category.title}-${program.name}`}
+                              program={program}
+                            />
+                          ))}
+                        </div>
+                        {category.footnotes && (
+                          <ul className="list-disc space-y-2 pl-5 text-xs text-foreground">
+                            {category.footnotes.map((note) => (
+                              <li key={`${category.title}-note-${note}`}>
+                                {note}
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                      </div>
+                    ))}
+                    {school.disclaimers && (
+                      <div className="rounded-2xl border border-orange-500/20 bg-orange-500/10 p-4 text-sm text-orange-500">
+                        {school.disclaimers.map((disclaimer) => (
+                          <p
+                            key={`${school.name}-disclaimer-${disclaimer}`}
+                            className="leading-relaxed"
+                          >
+                            {disclaimer}
+                          </p>
                         ))}
                       </div>
-                      {category.footnotes && (
-                        <ul className="list-disc space-y-2 pl-5 text-xs text-foreground">
-                          {category.footnotes.map((note) => (
-                            <li key={`${category.title}-note-${note}`}>
-                              {note}
-                            </li>
-                          ))}
-                        </ul>
-                      )}
-                    </div>
-                  ))}
-                  {school.disclaimers && (
-                    <div className="rounded-2xl border border-orange-500/20 bg-orange-500/10 p-4 text-sm text-orange-500">
-                      {school.disclaimers.map((disclaimer) => (
-                        <p
-                          key={`${school.name}-disclaimer-${disclaimer}`}
-                          className="leading-relaxed"
-                        >
-                          {disclaimer}
-                        </p>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              </AccordionContent>
-            </AccordionItem>
-          ))}
+                    )}
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+            ))}
         </Accordion>
       </div>
     </section>
