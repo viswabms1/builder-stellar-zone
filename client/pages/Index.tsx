@@ -762,7 +762,7 @@ export default function Index() {
               Academic Excellence That Inspires
             </h2>
             <p className="subheadline text-foreground max-w-3xl mx-auto font-display">
-              Discover AI-enabled undergraduate and postgraduate programs across engineering, sciences, health, law, design, and management.
+              Explore AI-integrated undergraduate and postgraduate programs spanning engineering, sciences, health, law, design, and management.
             </p>
           </div>
 
