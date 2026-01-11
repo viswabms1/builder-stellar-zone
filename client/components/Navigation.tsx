@@ -394,14 +394,14 @@ export default function Navigation() {
             : "bg-gradient-to-r from-slate-900 to-slate-950 border-b border-orange-600/30"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between gap-6">
+        <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between gap-6">
           {/* Top Menu Items - spread across the bar */}
-          <div className="flex items-center gap-1 flex-wrap">
+          <div className="flex items-center gap-2 flex-wrap">
             {topMenuItems.slice(0, 7).map((item, idx) => (
               <Link
                 key={idx}
                 to={item.href}
-                className={`text-xs font-medium transition-all duration-200 whitespace-nowrap px-2.5 py-1 rounded-md hover:scale-105 ${
+                className={`text-sm font-medium transition-all duration-200 whitespace-nowrap px-3 py-1.5 rounded-md hover:scale-105 ${
                   theme === "light"
                     ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
                     : "text-white/80 hover:text-white hover:bg-white/10"
@@ -413,12 +413,12 @@ export default function Navigation() {
           </div>
 
           {/* Right side - More Links, Language Switcher and ERP Login */}
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-2">
             {topMenuItems.slice(7).map((item, idx) => (
               <Link
                 key={idx}
                 to={item.href}
-                className={`text-xs font-medium transition-all duration-200 whitespace-nowrap px-2.5 py-1 rounded-md hover:scale-105 ${
+                className={`text-sm font-medium transition-all duration-200 whitespace-nowrap px-3 py-1.5 rounded-md hover:scale-105 ${
                   theme === "light"
                     ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
                     : "text-white/80 hover:text-white hover:bg-white/10"
@@ -433,7 +433,7 @@ export default function Navigation() {
               href="https://ums.mydsi.org/Login.aspx/DSU"
               target="_blank"
               rel="noopener noreferrer"
-              className={`text-xs font-semibold transition-all duration-200 whitespace-nowrap px-3 py-1.5 rounded-md hover:scale-105 ${
+              className={`text-sm font-semibold transition-all duration-200 whitespace-nowrap px-4 py-1.5 rounded-md hover:scale-105 ${
                 theme === "light"
                   ? "text-orange-600 hover:text-white hover:bg-orange-600 border border-orange-600"
                   : "text-orange-400 hover:text-white hover:bg-orange-600 border border-orange-400"
@@ -447,7 +447,7 @@ export default function Navigation() {
 
       {/* Main Navigation Bar */}
       <nav
-        className={`sticky top-0 lg:top-[42px] z-[9997] transition-all duration-300 overflow-visible shadow-sm ${
+        className={`sticky top-0 lg:top-[52px] z-[9997] transition-all duration-300 overflow-visible shadow-sm ${
           theme === "light"
             ? "bg-white/95 backdrop-blur-sm border-b border-orange-200/50"
             : "bg-slate-950/95 backdrop-blur-sm border-b border-orange-600/30"
