@@ -288,10 +288,10 @@ export default function Leadership() {
             </span>
           </div>
 
-          <h1 className="text-4xl md:text-5xl font-bold mb-3 leading-tight">
-            <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
-              Leadership & Administration
-            </span>
+          <h1 className={`text-4xl md:text-5xl font-bold mb-3 leading-tight ${
+            theme === "light" ? "text-orange-900" : "text-white"
+          }`}>
+            Leadership & Administration
           </h1>
 
           <p className="text-lg md:text-xl text-foreground mb-8 leading-relaxed max-w-3xl mx-auto">
@@ -313,10 +313,10 @@ export default function Leadership() {
             >
               Founding Leadership
             </Badge>
-            <h2 className="text-4xl md:text-5xl font-bold mb-3">
-              <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
-                Our Founders
-              </span>
+            <h2 className={`text-4xl md:text-5xl font-bold mb-3 ${
+              theme === "light" ? "text-orange-900" : "text-white"
+            }`}>
+              Our Founders
             </h2>
             <p className="text-lg text-foreground max-w-3xl mx-auto">
               Visionary leaders whose legacy continues to inspire excellence and innovation
@@ -372,10 +372,10 @@ export default function Leadership() {
             >
               University Executive Leadership
             </Badge>
-            <h2 className="text-4xl md:text-5xl font-bold mb-3">
-              <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
-                Key Leadership
-              </span>
+            <h2 className={`text-4xl md:text-5xl font-bold mb-3 ${
+              theme === "light" ? "text-orange-900" : "text-white"
+            }`}>
+              Key Leadership
             </h2>
             <p className="text-lg text-foreground max-w-3xl mx-auto">
               Executive team guiding the university's mission and vision
@@ -474,10 +474,10 @@ export default function Leadership() {
             >
               Administrative Leadership
             </Badge>
-            <h2 className="text-4xl md:text-5xl font-bold mb-3">
-              <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
-                Executive Officers
-              </span>
+            <h2 className={`text-4xl md:text-5xl font-bold mb-3 ${
+              theme === "light" ? "text-orange-900" : "text-white"
+            }`}>
+              Executive Officers
             </h2>
             <p className="text-lg text-foreground max-w-3xl mx-auto">
               Key officers managing university operations and academic affairs
@@ -579,10 +579,10 @@ export default function Leadership() {
             >
               Academic Leadership
             </Badge>
-            <h2 className="text-4xl md:text-5xl font-bold mb-3">
-              <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
-                Pro Vice Chancellors
-              </span>
+            <h2 className={`text-4xl md:text-5xl font-bold mb-3 ${
+              theme === "light" ? "text-orange-900" : "text-white"
+            }`}>
+              Pro Vice Chancellors
             </h2>
             <p className="text-lg text-foreground max-w-3xl mx-auto">
               Academic visionaries shaping the university's future
@@ -701,10 +701,10 @@ export default function Leadership() {
             >
               Governance Structure
             </Badge>
-            <h2 className="text-4xl md:text-5xl font-bold mb-3">
-              <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
-                Governance & Committees
-              </span>
+            <h2 className={`text-4xl md:text-5xl font-bold mb-3 ${
+              theme === "light" ? "text-orange-900" : "text-white"
+            }`}>
+              Governance & Committees
             </h2>
             <p className="text-lg text-foreground max-w-3xl mx-auto mb-8">
               DSU follows a multi-tier governance model to ensure transparency, academic rigor, and continuous improvement.
@@ -960,10 +960,10 @@ export default function Leadership() {
             >
               Leadership Values
             </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-3">
-              <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
-                Leadership Principles
-              </span>
+            <h2 className={`text-3xl md:text-4xl font-bold mb-3 ${
+              theme === "light" ? "text-orange-900" : "text-white"
+            }`}>
+              Leadership Principles
             </h2>
             <p className="text-lg text-foreground max-w-3xl mx-auto">
               Core values guiding DSU's institutional direction and decision-making
