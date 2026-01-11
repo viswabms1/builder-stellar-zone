@@ -388,23 +388,23 @@ export default function Navigation() {
     <>
       {/* Top Menu Bar - Hidden on Mobile */}
       <div
-        className={`sticky top-0 z-[9998] transition-all duration-300 hidden sm:block ${
+        className={`sticky top-0 z-[9998] transition-all duration-300 hidden lg:block ${
           theme === "light"
-            ? "bg-white border-b border-orange-200/30"
-            : "bg-slate-950 border-b border-orange-600/20"
+            ? "bg-gradient-to-r from-orange-50 to-white border-b border-orange-200/50"
+            : "bg-gradient-to-r from-slate-900 to-slate-950 border-b border-orange-600/30"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-3 py-1.5 flex items-center justify-end gap-4">
-          {/* Top Menu Items - pushed to right starting from half screen */}
-          <div className="hidden sm:flex items-center gap-3">
-            {topMenuItems.map((item, idx) => (
+        <div className="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between gap-6">
+          {/* Top Menu Items - spread across the bar */}
+          <div className="flex items-center gap-1 flex-wrap">
+            {topMenuItems.slice(0, 7).map((item, idx) => (
               <Link
                 key={idx}
                 to={item.href}
-                className={`text-sm font-medium transition-colors whitespace-nowrap ${
+                className={`text-xs font-medium transition-all duration-200 whitespace-nowrap px-2.5 py-1 rounded-md hover:scale-105 ${
                   theme === "light"
-                    ? "text-gray-600 hover:text-orange-600"
-                    : "text-white/80 hover:text-white"
+                    ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
+                    : "text-white/80 hover:text-white hover:bg-white/10"
                 }`}
               >
                 {item.name}
@@ -412,17 +412,31 @@ export default function Navigation() {
             ))}
           </div>
 
-          {/* Right side - Language Switcher and ERP Login */}
-          <div className="flex items-center gap-3">
+          {/* Right side - More Links, Language Switcher and ERP Login */}
+          <div className="flex items-center gap-1">
+            {topMenuItems.slice(7).map((item, idx) => (
+              <Link
+                key={idx}
+                to={item.href}
+                className={`text-xs font-medium transition-all duration-200 whitespace-nowrap px-2.5 py-1 rounded-md hover:scale-105 ${
+                  theme === "light"
+                    ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
+                    : "text-white/80 hover:text-white hover:bg-white/10"
+                }`}
+              >
+                {item.name}
+              </Link>
+            ))}
+            <div className="h-4 w-px bg-gray-300 dark:bg-white/20 mx-2"></div>
             <LanguageSwitcher />
             <a
               href="https://ums.mydsi.org/Login.aspx/DSU"
               target="_blank"
               rel="noopener noreferrer"
-              className={`text-sm font-medium transition-colors whitespace-nowrap ${
+              className={`text-xs font-semibold transition-all duration-200 whitespace-nowrap px-3 py-1.5 rounded-md hover:scale-105 ${
                 theme === "light"
-                  ? "text-gray-600 hover:text-orange-600"
-                  : "text-white/80 hover:text-white"
+                  ? "text-orange-600 hover:text-white hover:bg-orange-600 border border-orange-600"
+                  : "text-orange-400 hover:text-white hover:bg-orange-600 border border-orange-400"
               }`}
             >
               ERP Login
@@ -433,14 +447,14 @@ export default function Navigation() {
 
       {/* Main Navigation Bar */}
       <nav
-        className={`sticky top-10 sm:top-10 z-[9997] transition-all duration-300 overflow-visible ${
+        className={`sticky top-0 lg:top-[42px] z-[9997] transition-all duration-300 overflow-visible shadow-sm ${
           theme === "light"
-            ? "bg-white border-b border-orange-200/30"
-            : "bg-slate-950 border-b border-orange-600/20"
+            ? "bg-white/95 backdrop-blur-sm border-b border-orange-200/50"
+            : "bg-slate-950/95 backdrop-blur-sm border-b border-orange-600/30"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-3 overflow-visible">
-          <div className="flex items-center justify-between h-20">
+        <div className="max-w-7xl mx-auto px-4 overflow-visible">
+          <div className="flex items-center justify-between h-16 lg:h-18">
             {/* Logo - Visible on mobile and tablet portrait, hidden on desktop */}
             <Link
               to="/"
