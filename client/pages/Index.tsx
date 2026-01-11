@@ -933,7 +933,7 @@ export default function Index() {
                         src={item.image}
                         alt={item.title}
                         loading="lazy"
-                        className="h-32 w-full object-cover news-card-image"
+                        className="h-48 w-full object-cover news-card-image"
                       />
                     )}
                     <div className="absolute top-2 left-2 transition-all duration-300 group-hover:scale-105">
