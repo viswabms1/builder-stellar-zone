@@ -55,10 +55,12 @@ type Program = {
   level: "UG" | "PG" | "Professional";
   duration?: string;
   eligibility: string;
+  eligibilityPoints?: string[];
   fees: FeeDetail[];
   specializations?: string[];
   notes?: string[];
   scholarships?: string;
+  documentsRequired?: string[];
 };
 
 type Category = {
