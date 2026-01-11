@@ -203,45 +203,57 @@ export default function About() {
               {
                 icon: Star,
                 title: "Unveiling a Legacy",
-                description:
-                  "Universities of great legacy across the world are the invaluable contribution of certain visionaries to the world. Universities don't manufacture products with specific use and determined life cycle. They share & impart multitudes of streams of knowledge and create wonderful human beings – learned practitioners & Disseminators of knowledge to make the world a better place to be.",
+                bullets: [
+                  "60+ years of educational impact",
+                  "Institutions that shape people, not products"
+                ],
               },
               {
                 icon: Building,
                 title: "Proud to be part of DSU",
-                description:
-                  "DSU is a proud member of the Dayananda Sagar Institutions family. Founded by Late Sri Dayananda Sagar in the early sixties with just four students, DSI has morphed into a global education powerhouse, spread over five campuses, catering to the education needs of over 17,000 students. Operating under the aegis of the Mahatma Gandhi Vidya Peetha Trust in Bengaluru, DSI has enabled the transformation of tens of thousands of young Indian and international citizens into professionals in diverse specializations.",
+                bullets: [
+                  "Global education powerhouse across 5 campuses",
+                  "17,000+ students transformed into professionals"
+                ],
               },
               {
                 icon: Users,
                 title: "Best-in-class Facilities",
-                description:
-                  "Besides our high-calibre teaching staff, the students are given a challenging academic environment with well-equipped lecture theatres, laboratories, excellent libraries and computer networking facilities. DSU also has exceptional infrastructure for students who possess a passion for sports and games. The hostel facilities, encompassing cultural and recreational needs, cater to both local and international students.",
+                bullets: [
+                  "Well-equipped labs, libraries, and tech infrastructure",
+                  "World-class sports, cultural, and hostel facilities"
+                ],
               },
               {
                 icon: Lightbulb,
                 title: "Inspired by Innovators",
-                description:
-                  "Research, Innovation and Incubation (spread over 25,000 sft of industry quality labs) form the core of DSU. DSU has laid the foundation to transform the entrepreneurial dream of every young Indian and global citizen into a reality. Enabling this transformation is the active support of industry leaders, industry bodies and a dedicated 4 lakh square feet modern ready-to-move-in infrastructure!",
+                bullets: [
+                  "25,000+ sq. ft. research & incubation space",
+                  "Strong industry and startup ecosystem support"
+                ],
               },
               {
                 icon: Award,
                 title: "Stellar Performance – Time and Again",
-                description:
-                  "Dayananda Sagar Institutions (DSI) have consistently topped the academic charts in every area of knowledge standing out from the midst of a sea of institutions of repute. In the recent past, DSI secured 58 ranks from Visvesvaraya Technological University among 220 engineering colleges in Karnataka.",
+                bullets: [
+                  "Consistently top rankings in all academic areas",
+                  "58 ranks from VTU among 220 engineering colleges in Karnataka"
+                ],
               },
               {
                 icon: Globe,
                 title: "Different Courses for Different Passions",
-                description:
-                  "Dayananda Sagar University offers courses in Engineering, Computer Applications, Sciences, Arts and Management in the Bachelors, Masters and Ph.D levels. Supporting the academic activities are the Centers of Excellence in ICT, Health Care, Energy and Life Science, among other fast evolving fields of study.",
+                bullets: [
+                  "Diverse programs from Bachelors to Ph.D levels",
+                  "Centers of Excellence in emerging fields"
+                ],
               },
             ].map((section, index) => {
               const Icon = section.icon;
               return (
                 <Card
                   key={index}
-                  className="group hover:shadow-lg hover:shadow-orange-500/10 transition-all duration-300 hover:border-orange-500/30 bg-card/50 backdrop-blur-sm border border-border/50"
+                  className="group hover:shadow-lg hover:shadow-orange-500/10 transition-all duration-300 hover:border-orange-500/30 bg-card/50 backdrop-blur-sm border border-border/50 flex flex-col"
                 >
                   <CardHeader>
                     <div className="w-12 h-12 rounded-2xl bg-orange-500/10 flex items-center justify-center mb-4 group-hover:bg-orange-500/20 transition-colors">
@@ -251,10 +263,15 @@ export default function About() {
                       {section.title}
                     </CardTitle>
                   </CardHeader>
-                  <CardContent>
-                    <p className="text-foreground leading-relaxed">
-                      {section.description}
-                    </p>
+                  <CardContent className="flex-1 flex flex-col">
+                    <ul className="space-y-2 text-foreground flex-1">
+                      {section.bullets.map((bullet, idx) => (
+                        <li key={idx} className="flex gap-3 text-sm leading-relaxed">
+                          <span className="text-orange-500 font-bold flex-shrink-0">✓</span>
+                          <span>{bullet}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </CardContent>
                 </Card>
               );
