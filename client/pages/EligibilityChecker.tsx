@@ -307,7 +307,7 @@ export default function EligibilityChecker() {
             <StepResults
               results={results}
               education={education as EducationLevel}
-              subjects={subjects}
+              subjectRequirement={subjectRequirement as SubjectRequirement}
               percentage={percentage}
               category={category as Category}
               onReset={handleReset}
