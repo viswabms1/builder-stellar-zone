@@ -377,10 +377,10 @@ export default function History() {
       <section className="px-3 py-10 bg-gradient-to-r from-orange-500/5 to-red-600/5">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Be Part of Our Future
+            Begin Your Chapter Here
           </h2>
           <p className="text-lg text-foreground mb-8 max-w-2xl mx-auto">
-            Join an institution with a proven track record of excellence and innovation. Shape your future with us.
+            Join an institution shaped by legacy and driven by innovation—where history informs the future. Shape your future with us.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
