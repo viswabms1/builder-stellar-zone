@@ -38,6 +38,8 @@ import {
   ChevronRight,
   Compass,
   History,
+  Cpu,
+  Briefcase,
 } from "lucide-react";
 
 export default function About() {
