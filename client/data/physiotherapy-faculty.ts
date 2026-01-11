@@ -177,15 +177,15 @@ const rawFaculty = [
   },
 ];
 
-export const physiotherapyFaculty: PhysiotherapyFacultyMember[] = rawFaculty.flatMap(
-  (dept) =>
+export const physiotherapyFaculty: PhysiotherapyFacultyMember[] =
+  rawFaculty.flatMap((dept) =>
     dept.members.map((member) => ({
       ...member,
       department: dept.department,
       slug: make(member.name),
       image: `https://ui-avatars.com/api/?name=${encodeURIComponent(member.name)}&background=random&color=fff`,
     })),
-);
+  );
 
 export const getPhysiotherapyFacultyBySlug = (slug: string) =>
   physiotherapyFaculty.find((f) => f.slug === slug);

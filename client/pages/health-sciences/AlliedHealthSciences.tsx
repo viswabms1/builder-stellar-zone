@@ -648,7 +648,8 @@ export default function AlliedHealthSciences() {
                 Programs Offered
               </h2>
               <p className="mt-3 text-sm text-foreground font-body max-w-2xl">
-                Comprehensive education in allied health sciences with a focus on clinical excellence and technical mastery
+                Comprehensive education in allied health sciences with a focus
+                on clinical excellence and technical mastery
               </p>
             </div>
           </div>
@@ -693,7 +694,9 @@ export default function AlliedHealthSciences() {
               Why Choose Allied Health Sciences at DSU?
             </h2>
             <p className="text-foreground/80 font-body max-w-3xl mb-8">
-              We provide a robust foundation for healthcare careers through advanced technology, expert faculty, and extensive clinical exposure.
+              We provide a robust foundation for healthcare careers through
+              advanced technology, expert faculty, and extensive clinical
+              exposure.
             </p>
           </div>
           <div className="grid gap-4 md:grid-cols-2">
@@ -718,7 +721,8 @@ export default function AlliedHealthSciences() {
               Career Pathways & Placements
             </h2>
             <p className="text-foreground/80 font-body max-w-3xl">
-              Our graduates are prepared for high-demand roles in hospitals, diagnostic centers, and research institutes across the globe.
+              Our graduates are prepared for high-demand roles in hospitals,
+              diagnostic centers, and research institutes across the globe.
             </p>
           </div>
           <div className="grid gap-4 md:grid-cols-2">

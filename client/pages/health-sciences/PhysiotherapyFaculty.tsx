@@ -1,8 +1,17 @@
 import { useMemo } from "react";
 import { Link } from "react-router-dom";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { physiotherapyFaculty, PhysiotherapyFacultyMember } from "@/data/physiotherapy-faculty";
-import { ChevronLeft, GraduationCap, Microscope, Award, ExternalLink } from "lucide-react";
+import {
+  physiotherapyFaculty,
+  PhysiotherapyFacultyMember,
+} from "@/data/physiotherapy-faculty";
+import {
+  ChevronLeft,
+  GraduationCap,
+  Microscope,
+  Award,
+  ExternalLink,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function PhysiotherapyFaculty() {
@@ -37,7 +46,9 @@ export default function PhysiotherapyFaculty() {
                 <div className="w-24 h-1.5 bg-brand-blue rounded-full mx-auto" />
               </div>
               <p className="max-w-3xl mx-auto text-lg text-foreground/75 leading-relaxed font-body">
-                Our faculty members are highly qualified professionals with extensive clinical experience and research expertise, dedicated to shaping the next generation of physiotherapists.
+                Our faculty members are highly qualified professionals with
+                extensive clinical experience and research expertise, dedicated
+                to shaping the next generation of physiotherapists.
               </p>
             </div>
           </div>
@@ -74,7 +85,7 @@ function FacultyGridCard({ faculty }: { faculty: PhysiotherapyFacultyMember }) {
           className="absolute inset-0 h-full w-full object-cover object-center grayscale group-hover:grayscale-0 transition-all duration-700 ease-out scale-100 group-hover:scale-110"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-brand-blue/90 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
-        
+
         {faculty.googleScholar && (
           <a
             href={faculty.googleScholar}
@@ -87,7 +98,7 @@ function FacultyGridCard({ faculty }: { faculty: PhysiotherapyFacultyMember }) {
           </a>
         )}
       </div>
-      
+
       <div className="p-5 space-y-3">
         <div>
           <h4 className="font-display font-bold text-lg text-foreground group-hover:text-brand-blue transition-colors duration-300">
@@ -97,15 +108,19 @@ function FacultyGridCard({ faculty }: { faculty: PhysiotherapyFacultyMember }) {
             {faculty.title}
           </p>
         </div>
-        
+
         <div className="space-y-2 pt-2 border-t border-brand-blue/5">
           <div className="flex items-start gap-2 text-xs text-foreground/70">
             <GraduationCap className="w-3.5 h-3.5 mt-0.5 text-brand-blue" />
-            <span className="font-body"><strong>Qualification:</strong> {faculty.qualifications}</span>
+            <span className="font-body">
+              <strong>Qualification:</strong> {faculty.qualifications}
+            </span>
           </div>
           <div className="flex items-start gap-2 text-xs text-foreground/70">
             <Award className="w-3.5 h-3.5 mt-0.5 text-brand-blue" />
-            <span className="font-body"><strong>Specialization:</strong> {faculty.specialty}</span>
+            <span className="font-body">
+              <strong>Specialization:</strong> {faculty.specialty}
+            </span>
           </div>
         </div>
       </div>
