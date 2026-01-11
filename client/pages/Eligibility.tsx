@@ -434,34 +434,52 @@ const schools: School[] = [
         ],
       },
       {
-        title: "Postgraduate Programs",
+        title: "Postgraduate Programs (2 Years Duration)",
         description:
           "Advanced computing degrees aligned with industry certifications and research opportunities.",
         programs: [
           {
             name: "MCA - Master of Computer Applications",
             level: "PG",
+            duration: "2 Years",
             eligibility:
-              "Bachelor's degree in BCA / B.Sc (CS or IT) or any degree with Mathematics at 10+2 or graduation level. Non-CS graduates complete mandatory bridge courses. Minimum 50% aggregate (45% for SC/ST & OBC).",
+              "Admission to First Year MCA shall be open to candidates with a UG degree in BCA/B.Sc.(CS/IT) or B.Sc./B.Com/BA from a recognized University with Mathematics at 10+2 level or Graduation Level (with additional Bridge Courses as per the norms of the University). Obtained at least 50% marks in the Qualifying Examination.",
             fees: [
-              { label: "Total (Incl. Library Deposit)", amount: "₹3,32,000" },
-            ],
-            notes: [
-              "Curriculum includes advanced software engineering, cloud deployment, and capstone with industry partners.",
+              { label: "PGCET - Total Fee", amount: "Not Available" },
+              { label: "Term I", amount: "₹1,77,000" },
+              { label: "Term II", amount: "₹1,65,000" },
+              { label: "Total Fees", amount: "₹3,42,000" },
             ],
           },
           {
             name: "M.Sc in Data Science",
             level: "PG",
+            duration: "2 Years",
             eligibility:
               "B.Sc in Life Science or related fields such as Biotechnology, Microbiology, Genetics, Zoology, Botany, Biochemistry, Bioinformatics, Statistics, or Computer Science with minimum 50% aggregate.",
             fees: [
-              { label: "Total (Incl. Library Deposit)", amount: "₹1,32,000" },
-            ],
-            notes: [
-              "Focus on AI-driven analytics, big data pipelines, and research-led problem solving.",
+              { label: "PGCET - Total Fee", amount: "Not Available" },
+              { label: "Term I", amount: "₹82,000" },
+              { label: "Term II", amount: "₹70,000" },
+              { label: "Total Fees", amount: "₹1,52,000" },
             ],
           },
+          {
+            name: "M.Sc in Cyber Security",
+            level: "PG",
+            duration: "2 Years",
+            eligibility:
+              "B.Sc in Computer Science, Information Technology, Cyber Security, or related fields with minimum 50% aggregate.",
+            fees: [
+              { label: "PGCET - Total Fee", amount: "Not Available" },
+              { label: "Term I", amount: "₹82,000" },
+              { label: "Term II", amount: "₹70,000" },
+              { label: "Total Fees", amount: "₹1,52,000" },
+            ],
+          },
+        ],
+        footnotes: [
+          "Fee structure reflects the 2026-27 academic year. All fees shown are annual totals.",
         ],
       },
     ],
