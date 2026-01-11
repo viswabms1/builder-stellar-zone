@@ -1494,13 +1494,11 @@ function HeroSection() {
           <BadgeCheck className="h-4 w-4" />
           Programs, Eligibility &amp; Fees 2026-27
         </div>
-        <h1 className="mt-8 text-4xl font-bold leading-tight md:text-6xl">
-          Plan Your Dayananda Sagar University Journey
+        <h1 className="mt-8 text-4xl font-bold leading-tight md:text-5xl">
+          Check Eligibility for Your Program
         </h1>
         <p className="mt-6 text-lg text-foreground md:text-xl">
-          Explore program-wise eligibility criteria, entrance codes, and
-          comprehensive fee structures across every DSU school. Choose the path
-          that aligns with your academic goals and career ambitions.
+          Find out what you need to apply — eligibility criteria, required documents, admission pathways, and fee structures for Undergraduate, Postgraduate, and Doctoral programs.
         </p>
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Button
