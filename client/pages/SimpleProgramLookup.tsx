@@ -145,27 +145,11 @@ export default function SimpleProgramLookup() {
                 </div>
               </div>
 
-              <div>
-                <label className="text-sm font-semibold text-foreground mb-2 block">
-                  Search Programs
-                </label>
-                <div className="relative">
-                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-foreground/40" />
-                  <input
-                    type="text"
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    placeholder="Search by program name..."
-                    className="w-full h-11 pl-10 pr-4 rounded-lg border border-border/60 bg-background text-foreground placeholder-foreground/50 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20"
-                  />
-                </div>
-              </div>
-
               <div className="flex items-center justify-between pt-2">
                 <p className="text-sm text-foreground/60">
                   {filteredPrograms.length} program{filteredPrograms.length !== 1 ? "s" : ""} found
                 </p>
-                {(selectedSchool !== "All" || selectedLevel !== "All" || searchQuery) && (
+                {(selectedSchool !== "All" || selectedLevel !== "All") && (
                   <Button
                     variant="ghost"
                     size="sm"
