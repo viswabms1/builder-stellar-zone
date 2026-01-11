@@ -181,6 +181,16 @@ export default function History() {
                     <p className="text-sm text-foreground italic border-l-2 border-orange-500/30 pl-3">
                       {founder.background}
                     </p>
+
+                    <div className="bg-orange-500/5 border border-orange-500/20 rounded-lg p-3">
+                      <h4 className="text-sm font-semibold text-orange-600 mb-2">
+                        {founder.philosophy}
+                      </h4>
+                      <p className="text-sm text-foreground leading-relaxed">
+                        {founder.philosophyText}
+                      </p>
+                    </div>
+
                     <div className="space-y-2">
                       {founder.achievements.map((achievement, idx) => (
                         <div key={idx} className="flex items-start gap-2">
