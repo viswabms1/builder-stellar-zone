@@ -337,6 +337,42 @@ export default function History() {
         </div>
       </section>
 
+      {/* From Legacy to the Future Section */}
+      <section className="px-3 py-10">
+        <div className="max-w-7xl mx-auto">
+          <div className="bg-gradient-to-r from-orange-500/10 to-red-600/10 border border-orange-500/30 rounded-2xl p-8 md:p-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
+              From Legacy to the <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">Future</span>
+            </h2>
+            <p className="text-lg text-foreground leading-relaxed max-w-3xl">
+              Building on its strong foundation, Dayananda Sagar University continues to evolve as a future-ready institution—integrating emerging technologies, interdisciplinary learning, research-led education, and global engagement to prepare students for a rapidly changing world.
+            </p>
+            <div className="mt-8 flex flex-col sm:flex-row gap-4">
+              <Link to="/ai-first">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-foreground rounded-xl font-semibold"
+                >
+                  Explore AI-First @ DSU
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Button>
+              </Link>
+              <Link to="/academics">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-foreground rounded-xl font-semibold"
+                >
+                  View Our Academics
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="px-3 py-10 bg-gradient-to-r from-orange-500/5 to-red-600/5">
         <div className="max-w-4xl mx-auto text-center">
