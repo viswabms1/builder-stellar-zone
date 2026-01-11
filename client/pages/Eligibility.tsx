@@ -1624,6 +1624,8 @@ const importantNotes = [
   "International applicants must furnish equivalence certificates and passport/visa documentation before enrollment.",
 ];
 
+export { schools };
+
 export default function Eligibility() {
   useEffect(() => {
     window.scrollTo(0, 0);
