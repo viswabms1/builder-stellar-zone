@@ -150,7 +150,7 @@ export default function About() {
       {/* Welcome Section */}
       <section className="px-3 py-10">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-6">
+          <div className="text-center mb-8">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
                 Welcome to DSU
@@ -158,13 +158,31 @@ export default function About() {
             </h2>
           </div>
 
-          <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-4 md:p-12 space-y-3">
-            <p className="text-lg text-foreground leading-relaxed">
-              Dayananda Sagar Institutions founded in the 60s by one such visionary, late Sri Dayananda Sagar committed to take knowledge to the people, transforms today's students into responsible citizens and professional leaders of tomorrow.
-            </p>
-            <p className="text-lg text-foreground leading-relaxed">
-              Dayananda Sagar University created by an Act of the Karnataka State in 2014, built on this adorable legacy and inspired by its own milestones, meeting the needs of quality higher education in this part of the world.
-            </p>
+          <div className="space-y-6">
+            <div className="text-lg text-foreground leading-relaxed space-y-3">
+              <p>
+                Founded in the 1960s, the Dayananda Sagar Institutions have shaped generations of learners.
+              </p>
+              <p>
+                Established as a state university in 2014, DSU builds on this legacy with a bold, future-focused academic vision.
+              </p>
+            </div>
+
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem value="story" className="border border-border/50 rounded-lg px-4">
+                <AccordionTrigger className="text-orange-500 hover:text-orange-600 font-semibold">
+                  Read Our Story →
+                </AccordionTrigger>
+                <AccordionContent className="space-y-4 text-foreground leading-relaxed">
+                  <p>
+                    Dayananda Sagar Institutions founded in the 60s by one such visionary, late Sri Dayananda Sagar committed to take knowledge to the people, transforms today's students into responsible citizens and professional leaders of tomorrow.
+                  </p>
+                  <p>
+                    Dayananda Sagar University created by an Act of the Karnataka State in 2014, built on this adorable legacy and inspired by its own milestones, meeting the needs of quality higher education in this part of the world.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </div>
         </div>
       </section>
