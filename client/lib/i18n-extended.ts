@@ -5,7 +5,12 @@ export const indexTranslations = {
       engineering: {
         title: "Engineering",
         description: "",
-        programs: ["B.Tech CSE", "B.Tech Mechanical", "B.Tech ECE", "B.Tech Civil"],
+        programs: [
+          "B.Tech CSE",
+          "B.Tech Mechanical",
+          "B.Tech ECE",
+          "B.Tech Civil",
+        ],
       },
       computerApplications: {
         title: "Computer Applications",
@@ -40,7 +45,12 @@ export const indexTranslations = {
       journalism: {
         title: "Journalism & Mass Communication",
         description: "",
-        programs: ["BJMC", "PG Diploma", "Documentary Filmmaking", "Digital Media"],
+        programs: [
+          "BJMC",
+          "PG Diploma",
+          "Documentary Filmmaking",
+          "Digital Media",
+        ],
       },
       medical: {
         title: "Medical Education & Research",
@@ -58,7 +68,12 @@ export const indexTranslations = {
       engineering: {
         title: "ಎಂಜಿನಿಯರಿಂಗ್",
         description: "",
-        programs: ["B.Tech CSE", "B.Tech ಮೆಕ್ಯಾನಿಕಲ್", "B.Tech ECE", "B.Tech ನಿರ್ಮಾಣ"],
+        programs: [
+          "B.Tech CSE",
+          "B.Tech ಮೆಕ್ಯಾನಿಕಲ್",
+          "B.Tech ECE",
+          "B.Tech ನಿರ್ಮಾಣ",
+        ],
       },
       computerApplications: {
         title: "ಕಂಪ್ಯೂಟರ್ ಅನ್ವಯಗಳು",
@@ -93,7 +108,12 @@ export const indexTranslations = {
       journalism: {
         title: "ಪತ್ರಿಕೋದ್ಯಮ ಮತ್ತು ಸಾಮೂಹಿಕ ಸಂವಹನ",
         description: "",
-        programs: ["BJMC", "PG ಡಿಪ್ಲೋಮಾ", "ಡಾಕ್ಯುಮೆಂಟರಿ ಫಿಲ್ಮ್ಮೇಕಿಂಗ್", "ಡಿಜಿಟಲ್ ಮಾಧ್ಯಮ"],
+        programs: [
+          "BJMC",
+          "PG ಡಿಪ್ಲೋಮಾ",
+          "ಡಾಕ್ಯುಮೆಂಟರಿ ಫಿಲ್ಮ್ಮೇಕಿಂಗ್",
+          "ಡಿಜಿಟಲ್ ಮಾಧ್ಯಮ",
+        ],
       },
       medical: {
         title: "ವೈದ್ಯಕೀಯ ಶಿಕ್ಷೆ ಮತ್ತು ಸಂಶೋಧನೆ",
@@ -111,7 +131,12 @@ export const indexTranslations = {
       engineering: {
         title: "इंजीनियरिंग",
         description: "",
-        programs: ["B.Tech CSE", "B.Tech यांत्रिक", "B.Tech ECE", "B.Tech सिविल"],
+        programs: [
+          "B.Tech CSE",
+          "B.Tech यांत्रिक",
+          "B.Tech ECE",
+          "B.Tech सिविल",
+        ],
       },
       computerApplications: {
         title: "कंप्यूटर अनुप्रयोग",
@@ -146,7 +171,12 @@ export const indexTranslations = {
       journalism: {
         title: "पत्रकारिता और जनसंचार",
         description: "",
-        programs: ["BJMC", "PG डिप्लोमा", "डॉक्यूमेंटरी फिल्ममेकिंग", "डिजिटल मीडिया"],
+        programs: [
+          "BJMC",
+          "PG डिप्लोमा",
+          "डॉक्यूमेंटरी फिल्ममेकिंग",
+          "डिजिटल मीडिया",
+        ],
       },
       medical: {
         title: "चिकित्सा शिक्षा और अनुसंधान",

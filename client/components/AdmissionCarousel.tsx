@@ -10,32 +10,42 @@ type CarouselItem = {
 
 const admissionSliderItems: CarouselItem[] = [
   {
-    image: "https://www.dsu.edu.in/cache/resized/ccb77541cad0917c758d7c8869ab88c3.jpg",
+    image:
+      "https://www.dsu.edu.in/cache/resized/ccb77541cad0917c758d7c8869ab88c3.jpg",
     title: "CJMC Admissions",
-    description: "Admissions open for: Journalism, Advertising & PR, Video Production",
+    description:
+      "Admissions open for: Journalism, Advertising & PR, Video Production",
   },
   {
-    image: "https://www.dsu.edu.in/cache/resized/daee71601a135f97bd8b57033cc23a3b.jpg",
+    image:
+      "https://www.dsu.edu.in/cache/resized/daee71601a135f97bd8b57033cc23a3b.jpg",
     title: "Business Applications",
-    description: "The only program that provides a unique 'Reverse Engineer Pedagogy' with hands-on AI & ML",
+    description:
+      "The only program that provides a unique 'Reverse Engineer Pedagogy' with hands-on AI & ML",
   },
   {
-    image: "https://www.dsu.edu.in/cache/resized/a4359bd05fb868287dc18844ac2ffd9f.jpg",
+    image:
+      "https://www.dsu.edu.in/cache/resized/a4359bd05fb868287dc18844ac2ffd9f.jpg",
     title: "PGCET Admissions",
-    description: "School of Commerce and Management Studies welcomes full-time MBA students from PGCET",
+    description:
+      "School of Commerce and Management Studies welcomes full-time MBA students from PGCET",
   },
   {
-    image: "https://www.dsu.edu.in/cache/resized/8a4ad3ecd59ce31c851a7b2cf20ecda6.jpg",
+    image:
+      "https://www.dsu.edu.in/cache/resized/8a4ad3ecd59ce31c851a7b2cf20ecda6.jpg",
     title: "AIC-DSU Innovation",
-    description: "Your Success is our Success. AIC-DSU Innovation Foundation is an Innovation Center that strives to empower startups",
+    description:
+      "Your Success is our Success. AIC-DSU Innovation Foundation is an Innovation Center that strives to empower startups",
   },
   {
-    image: "https://www.dsu.edu.in/cache/resized/2d89222379562f640d600b5be025d83a.jpg",
+    image:
+      "https://www.dsu.edu.in/cache/resized/2d89222379562f640d600b5be025d83a.jpg",
     title: "College of Pharmacy",
     description: "College of Pharmaceutical Sciences",
   },
   {
-    image: "https://www.dsu.edu.in/cache/resized/6c2ce349101d1198a3bbbada6d4dcdd3.jpg",
+    image:
+      "https://www.dsu.edu.in/cache/resized/6c2ce349101d1198a3bbbada6d4dcdd3.jpg",
     title: "School of Engineering",
     description: "School of Engineering",
   },
@@ -56,7 +66,7 @@ export default function AdmissionCarousel() {
   const goToPrevious = () => {
     setAutoPlay(false);
     setCurrentSlide((prev) =>
-      prev === 0 ? admissionSliderItems.length - 1 : prev - 1
+      prev === 0 ? admissionSliderItems.length - 1 : prev - 1,
     );
   };
 
@@ -89,7 +99,7 @@ export default function AdmissionCarousel() {
                   className="h-full w-full object-cover"
                   onError={(e) => {
                     const img = e.currentTarget as HTMLImageElement;
-                    img.style.display = 'none';
+                    img.style.display = "none";
                   }}
                 />
                 {/* Overlay with Content */}
@@ -105,7 +115,11 @@ export default function AdmissionCarousel() {
                       className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-red-600 hover:to-orange-500 text-foreground px-3 py-2 rounded-xl font-semibold"
                       asChild
                     >
-                      <a href="https://admissions.dsu.edu.in/" target="_blank" rel="noreferrer">
+                      <a
+                        href="https://admissions.dsu.edu.in/"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
                         Learn More
                       </a>
                     </Button>

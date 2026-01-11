@@ -135,15 +135,20 @@ const SOCIAL_LINKS = [
 export default function Footer() {
   const { language } = useLanguage();
   const { theme } = useTheme();
-  const footerTrans = footerTranslations[language as keyof typeof footerTranslations] || footerTranslations.en;
+  const footerTrans =
+    footerTranslations[language as keyof typeof footerTranslations] ||
+    footerTranslations.en;
 
   return (
-    <footer className="relative mt-24 border-t border-white/10 text-white" style={{
-      backgroundImage: `linear-gradient(rgba(7, 3, 17, 0.85), rgba(7, 3, 17, 0.85)), url('https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F5f8a1874869042e2af0199cc47745f77?format=webp&width=1200')`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      backgroundAttachment: 'fixed'
-    }}>
+    <footer
+      className="relative mt-24 border-t border-white/10 text-white"
+      style={{
+        backgroundImage: `linear-gradient(rgba(7, 3, 17, 0.85), rgba(7, 3, 17, 0.85)), url('https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F5f8a1874869042e2af0199cc47745f77?format=webp&width=1200')`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundAttachment: "fixed",
+      }}
+    >
       <div
         aria-hidden="true"
         className="pointer-events-none absolute -top-32 right-10 h-64 w-64 rounded-full bg-brand-magenta/20 blur-3xl"
@@ -160,9 +165,10 @@ export default function Footer() {
               className="inline-flex items-center gap-3 text-left text-white"
             >
               <img
-                src={theme === "light"
-                  ? "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F359db0babe0948ae98ad938f84bc1474?format=webp&width=800"
-                  : "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F0caf0bf29be6421997005f26cdaae0ed?format=webp&width=800"
+                src={
+                  theme === "light"
+                    ? "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F359db0babe0948ae98ad938f84bc1474?format=webp&width=800"
+                    : "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F0caf0bf29be6421997005f26cdaae0ed?format=webp&width=800"
                 }
                 alt="Dayananda Sagar University Logo"
                 className="h-16 w-auto object-contain"
@@ -189,7 +195,9 @@ export default function Footer() {
                 className="bg-brand-gradient text-white shadow-lg shadow-brand-magenta/20 hover:shadow-xl hover:shadow-brand-magenta/30"
               >
                 <RouterLink to="/admissions" className="gap-2">
-                  {footerTrans.sections.contact === 'Contact' ? 'Apply Now' : footerTrans.links.admissions}
+                  {footerTrans.sections.contact === "Contact"
+                    ? "Apply Now"
+                    : footerTrans.links.admissions}
                   <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
                 </RouterLink>
               </Button>
@@ -230,7 +238,8 @@ export default function Footer() {
                     aria-label={`${email.label} email ${email.value}`}
                     className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-medium uppercase tracking-wide text-white/80 transition hover:text-white"
                   >
-                    <Mail className="h-3 w-3" aria-hidden="true" /> {email.label}
+                    <Mail className="h-3 w-3" aria-hidden="true" />{" "}
+                    {email.label}
                   </a>
                 ))}
               </div>
@@ -270,7 +279,10 @@ export default function Footer() {
                             className="flex items-center gap-2 transition hover:text-white"
                           >
                             {link.label}
-                            <ArrowUpRight className="h-3 w-3" aria-hidden="true" />
+                            <ArrowUpRight
+                              className="h-3 w-3"
+                              aria-hidden="true"
+                            />
                           </a>
                         </li>
                       );
@@ -293,9 +305,15 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 grid gap-4 w-full" style={{ gridTemplateColumns: 'repeat(3, 1fr)' }}>
+        <div
+          className="mt-16 grid gap-4 w-full"
+          style={{ gridTemplateColumns: "repeat(3, 1fr)" }}
+        >
           {CONTACT_LOCATIONS.map((location, index) => (
-            <div key={location.title} className="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-[0_20px_80px_-50px_rgba(255,255,255,0.6)]">
+            <div
+              key={location.title}
+              className="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-[0_20px_80px_-50px_rgba(255,255,255,0.6)]"
+            >
               <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.28em] text-white/60">
                 <MapPin className="h-4 w-4" aria-hidden="true" />
                 {location.title}
@@ -308,7 +326,8 @@ export default function Footer() {
               <div className="mt-4 space-y-2 text-sm text-white/75 font-body">
                 {location.phones.map((phone) => {
                   const sanitised = phone.value.replace(/[^+0-9]/g, "");
-                  const isSingleNumber = !/[\/|]/.test(phone.value) && sanitised.length > 6;
+                  const isSingleNumber =
+                    !/[\/|]/.test(phone.value) && sanitised.length > 6;
                   return (
                     <p
                       key={`${location.title}-${phone.label}-${phone.value}`}
@@ -334,7 +353,14 @@ export default function Footer() {
         </div>
 
         <div className="mt-16 grid gap-6 border-t border-white/10 pt-6 text-sm text-white/60 font-body sm:flex sm:flex-wrap sm:items-center sm:justify-between">
-          <p>© 2026 Dayananda Sagar University. {language === 'en' ? 'All rights reserved.' : language === 'kn' ? 'ಎಲ್ಲಾ ಅಧಿಕಾರಗಳು ಸಂರಕ್ಷಿತ.' : 'सर्वाधिकार सुरक्षित.'}</p>
+          <p>
+            © 2026 Dayananda Sagar University.{" "}
+            {language === "en"
+              ? "All rights reserved."
+              : language === "kn"
+                ? "ಎಲ್ಲಾ ಅಧಿಕಾರಗಳು ಸಂರಕ್ಷಿತ."
+                : "सर्वाधिकार सुरक्षित."}
+          </p>
           <div className="flex flex-wrap gap-4">
             <a
               href="https://www.dsu.edu.in/privacy-policy"
