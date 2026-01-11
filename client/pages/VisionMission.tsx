@@ -180,7 +180,7 @@ export default function VisionMission() {
             Join Our Community
           </h2>
           <p className="text-lg text-foreground mb-8 max-w-2xl mx-auto">
-            Be part of a community dedicated to excellence, innovation, and making a positive impact on the world.
+            Be part of a university community shaping future-ready professionals, innovators and leaders.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
