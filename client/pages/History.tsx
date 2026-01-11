@@ -257,18 +257,21 @@ export default function History() {
         </div>
       </section>
 
-      {/* Academic Breadth Section */}
+      {/* Evolution of Academic Disciplines Section */}
       <section className="px-3 py-10">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-8">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="text-foreground">Academic </span>
+              <span className="text-foreground">Evolution of Academic </span>
               <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
-                Excellence
+                Disciplines
               </span>
             </h2>
+            <p className="text-lg text-foreground max-w-3xl mx-auto mb-6">
+              Over the decades, DSU has expanded from foundational disciplines to a comprehensive academic ecosystem spanning technology, healthcare, sciences, management, and design.
+            </p>
             <p className="text-lg text-foreground max-w-3xl mx-auto">
-              Comprehensive programs across multiple disciplines with modern infrastructure
+              Programs across multiple disciplines with modern infrastructure
             </p>
           </div>
 
