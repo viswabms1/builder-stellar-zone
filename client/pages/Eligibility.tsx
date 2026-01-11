@@ -81,6 +81,9 @@ type School = {
 type BrochureResource = {
   title: string;
   href: string;
+  school: string;
+  level: "UG" | "PG" | "Professional";
+  featured?: boolean;
 };
 
 type ContactLocation = {
