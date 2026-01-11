@@ -126,6 +126,15 @@ const schools: School[] = [
               },
               { label: "Others - Total Fee", amount: "₹4,92,000" },
             ],
+            documentsRequired: [
+              "10+2 original mark sheets and pass certificate",
+              "Physics, Chemistry, and Mathematics mark cards",
+              "CET / JEE Mains / Uniguage / Comed-K admit card and score sheet",
+              "School leaving certificate",
+              "Category certificate (if applicable)",
+              "Photo ID (Aadhaar / Passport / Driving License)",
+              "Recent passport-size photographs (4)",
+            ],
           },
           {
             name: "B.Tech Computer Science & Engineering (Artificial Intelligence & Machine Learning)",
