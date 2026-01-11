@@ -69,15 +69,15 @@ export default function About() {
         </div>
 
         <div className="relative max-w-7xl mx-auto px-3 text-center">
-          <div className="inline-flex items-center px-4 py-2 bg-orange-500/10 rounded-full border border-orange-500/20 mb-8">
-            <Building className="w-4 h-4 text-orange-500 mr-2" />
-            <span className="text-sm font-medium text-orange-500">
+          <div className="inline-flex items-center px-4 py-2 bg-brand-orange/10 rounded-full border border-brand-orange/20 mb-8">
+            <Building className="w-4 h-4 text-brand-orange mr-2" />
+            <span className="text-sm font-medium text-brand-orange">
               Established 2008 | Legacy since 1960s
             </span>
           </div>
 
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight">
-            <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
+            <span className="bg-brand-gradient bg-clip-text text-transparent">
               Building India's AI-First Academic Ecosystem
             </span>
           </h1>
@@ -95,7 +95,7 @@ export default function About() {
             >
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-red-600 hover:to-orange-500 text-foreground px-8 py-6 text-lg font-semibold rounded-2xl"
+                className="bg-brand-gradient hover:opacity-90 text-foreground px-8 py-6 text-lg font-semibold rounded-2xl"
               >
                 Campus Tour
                 <ArrowRight className="w-5 h-5 ml-2" />
@@ -137,8 +137,8 @@ export default function About() {
       <section className="px-3 py-10">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-8">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
+            <h2 className="headline-2 mb-6">
+              <span className="bg-brand-gradient bg-clip-text text-transparent">
                 Welcome to DSU
               </span>
             </h2>
@@ -171,11 +171,11 @@ export default function About() {
       </section>
 
       {/* Core Sections */}
-      <section className="px-3 py-10 bg-gradient-to-br from-orange-500/5 via-red-600/5 to-background">
+      <section className="px-3 py-10 bg-gradient-to-br from-brand-orange/5 via-brand-blue/5 to-background">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-8">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
+            <h2 className="headline-2 mb-6">
+              <span className="bg-brand-gradient bg-clip-text text-transparent">
                 What Makes DSU Special
               </span>
             </h2>
@@ -231,10 +231,10 @@ export default function About() {
                   className="group hover:shadow-lg hover:shadow-orange-500/10 transition-all duration-300 hover:border-orange-500/30 bg-card/50 backdrop-blur-sm border border-border/50 flex flex-col"
                 >
                   <CardHeader>
-                    <div className="w-12 h-12 rounded-2xl bg-orange-500/10 flex items-center justify-center mb-4 group-hover:bg-orange-500/20 transition-colors">
-                      <Icon className="w-6 h-6 text-orange-500" />
+                    <div className="w-12 h-12 rounded-2xl bg-brand-orange/10 flex items-center justify-center mb-4 group-hover:bg-brand-orange/20 transition-colors">
+                      <Icon className="w-6 h-6 text-brand-orange" />
                     </div>
-                    <CardTitle className="text-xl group-hover:text-orange-500 transition-colors">
+                    <CardTitle className="text-xl group-hover:text-brand-orange transition-colors">
                       {section.title}
                     </CardTitle>
                   </CardHeader>
@@ -242,7 +242,7 @@ export default function About() {
                     <ul className="space-y-2 text-foreground flex-1">
                       {section.bullets.map((bullet, idx) => (
                         <li key={idx} className="flex gap-3 text-sm leading-relaxed">
-                          <span className="text-orange-500 font-bold flex-shrink-0">✓</span>
+                          <span className="text-brand-orange font-bold flex-shrink-0">✓</span>
                           <span>{bullet}</span>
                         </li>
                       ))}
@@ -259,12 +259,12 @@ export default function About() {
       <section className="px-3 py-10">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-8">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
+            <h2 className="headline-2 mb-6">
+              <span className="bg-brand-gradient bg-clip-text text-transparent">
                 Explore About DSU
               </span>
             </h2>
-            <p className="text-lg text-foreground max-w-3xl mx-auto">
+            <p className="subheadline text-foreground max-w-3xl mx-auto">
               Discover DSU's vision, leadership, legacy, and infrastructure that shape a future-ready university.
             </p>
           </div>
@@ -305,10 +305,10 @@ export default function About() {
               const Icon = section.icon;
               return (
                 <Link key={index} to={section.href}>
-                  <Card className="h-full group hover:shadow-lg hover:shadow-orange-500/10 transition-all duration-300 hover:border-orange-500/30 bg-card/50 backdrop-blur-sm border border-border/50 cursor-pointer hover:-translate-y-1">
+                  <Card className="h-full group hover:shadow-lg hover:shadow-brand-orange/10 transition-all duration-300 hover:border-brand-orange/30 bg-card/50 backdrop-blur-sm border border-border/50 cursor-pointer hover:-translate-y-1">
                     <CardContent className="p-3 text-center">
-                      <Icon className="w-10 h-10 text-orange-500 mx-auto mb-4 group-hover:scale-110 transition-transform" />
-                      <h3 className="font-bold text-lg mb-2 group-hover:text-orange-500 transition-colors">
+                      <Icon className="w-10 h-10 text-brand-orange mx-auto mb-4 group-hover:scale-110 transition-transform" />
+                      <h3 className="font-bold text-lg mb-2 group-hover:text-brand-orange transition-colors">
                         {section.title}
                       </h3>
                       <p className="text-sm text-foreground">
@@ -324,18 +324,18 @@ export default function About() {
       </section>
 
       {/* CTA Section */}
-      <section className="px-3 py-10 bg-gradient-to-r from-orange-500/5 to-red-600/5">
+      <section className="px-3 py-10 bg-gradient-to-r from-brand-orange/5 to-brand-blue/5">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="bg-gradient-to-r from-orange-500/10 via-red-600/10 to-pink-500/10 rounded-3xl p-12 border border-orange-500/20">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <div className="bg-gradient-to-r from-brand-orange/10 via-brand-magenta/10 to-brand-blue/10 rounded-3xl p-12 border border-brand-orange/20">
+            <h2 className="headline-2 mb-6">
               Ready to build your future with
-              <span className="bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
+              <span className="bg-brand-gradient bg-clip-text text-transparent">
                 {" "}
                 AI-powered education
               </span>
               ?
             </h2>
-            <p className="text-xl text-foreground mb-8 max-w-2xl mx-auto">
+            <p className="subheadline text-foreground mb-8 max-w-2xl mx-auto">
               Join a university where legacy, innovation, and AI-driven education converge.
             </p>
 
@@ -347,7 +347,7 @@ export default function About() {
               >
                 <Button
                   size="lg"
-                  className="bg-gradient-to-r from-orange-500 via-red-600 to-pink-500 text-foreground px-12 py-6 text-lg font-semibold rounded-2xl"
+                  className="bg-brand-gradient hover:opacity-90 text-foreground px-12 py-6 text-lg font-semibold rounded-2xl"
                 >
                   Apply Now
                   <GraduationCap className="w-5 h-5 ml-2" />
@@ -362,7 +362,7 @@ export default function About() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-2 border-transparent text-orange-500 hover:bg-transparent hover:text-orange-500 px-12 py-6 text-lg font-semibold rounded-2xl"
+                  className="border-2 border-transparent text-brand-orange hover:bg-transparent hover:text-brand-orange px-12 py-6 text-lg font-semibold rounded-2xl"
                 >
                   Schedule Visit
                 </Button>
