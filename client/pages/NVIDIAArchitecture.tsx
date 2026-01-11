@@ -654,24 +654,20 @@ export default function NVIDIAArchitecture() {
                 <h3 className="text-2xl font-bold mb-4 text-foreground">Why DSU Graduates Stand Out</h3>
                 <div className="space-y-3 text-foreground/80">
                   <p className="flex items-start gap-3">
-                    <span className="text-2xl">🎯</span>
-                    <span><strong>Targeted Skills:</strong> You learn exactly what industry needs, not what textbooks say</span>
+                    <span className="font-bold text-blue-500 min-w-fit">✓ Targeted Skills:</span>
+                    <span>You learn exactly what industry needs, not what textbooks say</span>
                   </p>
                   <p className="flex items-start gap-3">
-                    <span className="text-2xl">⚡</span>
-                    <span><strong>Real Scale:</strong> Experience with infrastructure that handles real AI workloads, not simulations</span>
+                    <span className="font-bold text-blue-500 min-w-fit">✓ Real Scale:</span>
+                    <span>Experience with infrastructure that handles real AI workloads, not simulations</span>
                   </p>
                   <p className="flex items-start gap-3">
-                    <span className="text-2xl">🏆</span>
-                    <span><strong>Proven Track Record:</strong> Your projects are proof of capability—not just theory</span>
+                    <span className="font-bold text-blue-500 min-w-fit">✓ Proven Track Record:</span>
+                    <span>Your projects are proof of capability—not just theory</span>
                   </p>
                   <p className="flex items-start gap-3">
-                    <span className="text-2xl">🚀</span>
-                    <span><strong>First-Mover Advantage:</strong> Few Indian universities have this. You're competing with elite peers globally</span>
-                  </p>
-                  <p className="flex items-start gap-3">
-                    <span className="text-2xl">💼</span>
-                    <span><strong>Industry Trust:</strong> Recruiters know DSU graduates can hit the ground running</span>
+                    <span className="font-bold text-blue-500 min-w-fit">✓ First-Mover Advantage:</span>
+                    <span>Few Indian universities have this. You're competing with elite peers globally</span>
                   </p>
                 </div>
               </div>
