@@ -2148,8 +2148,6 @@ function BrochureSection() {
     return matchesSearch && matchesSchool && matchesLevel;
   });
 
-  const featuredBrochures = brochureResources.filter((b) => b.featured);
-
   return (
     <section className="bg-gradient-to-br from-orange-500/5 via-red-500/5 to-background px-3 py-8">
       <div className="mx-auto max-w-6xl">
@@ -2161,52 +2159,6 @@ function BrochureSection() {
             Explore detailed brochures covering curriculum, facilities, placements, and program highlights. Use the search and filters below to find exactly what you need.
           </p>
         </div>
-
-        {featuredBrochures.length > 0 && (
-          <div className="mb-12">
-            <div className="mb-4 flex items-center gap-2">
-              <div className="h-8 w-1 rounded-full bg-orange-500" />
-              <h3 className="text-xl font-semibold text-foreground">
-                Featured Brochures
-              </h3>
-            </div>
-            <div className="grid gap-3 sm:grid-cols-2">
-              {featuredBrochures.map((resource) => (
-                <Card
-                  key={resource.title}
-                  className="border border-orange-500/40 bg-gradient-to-br from-orange-500/10 to-red-500/10 shadow-sm transition hover:-translate-y-1 hover:shadow-orange-500/20"
-                >
-                  <CardHeader>
-                    <div className="flex items-start justify-between gap-3">
-                      <div>
-                        <CardTitle className="text-lg font-semibold text-foreground">
-                          {resource.title}
-                        </CardTitle>
-                        <CardDescription className="mt-2 text-sm text-foreground">
-                          {resource.school}
-                        </CardDescription>
-                      </div>
-                      <Badge className="bg-orange-500/20 text-orange-600 flex-shrink-0">
-                        ⭐ Featured
-                      </Badge>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <Button
-                      className="w-full justify-center rounded-lg bg-orange-500 text-white hover:bg-orange-600 transition"
-                      asChild
-                    >
-                      <a href={resource.href} target="_blank" rel="noreferrer">
-                        Download PDF
-                        <Download className="ml-2 h-4 w-4" />
-                      </a>
-                    </Button>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        )}
 
         <div className="mb-8 space-y-4">
           <div className="flex items-center gap-2">
