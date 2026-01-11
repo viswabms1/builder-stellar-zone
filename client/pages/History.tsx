@@ -27,6 +27,8 @@ export default function History() {
       name: "Late Shri R Dayananda Sagar",
       title: "Founder & Visionary Educationist",
       background: "Graduate in Arts & Commerce from India; Barrister-at-law from England",
+      philosophy: "Educational Philosophy",
+      philosophyText: "Late Shri R Dayananda Sagar believed education must empower individuals to serve society with competence, integrity, and leadership—principles that continue to guide DSU's academic culture.",
       achievements: [
         "Established Mahatma Gandhi Vidya Peetha Education Trust in the 1960s",
         "Founded Dayananda Sagar Schools and Colleges of Science, Arts, and Commerce",
@@ -40,6 +42,8 @@ export default function History() {
       name: "Late Smt Chandramma Sagar",
       title: "Co-Founder & Healthcare Pioneer",
       background: "Doctor by training with triple fellowship from Royal Colleges of Surgeons",
+      philosophy: "Healthcare & Social Impact Legacy",
+      philosophyText: "Late Smt Chandramma Sagar's pioneering work in healthcare education laid the foundation for DSU's continued emphasis on health sciences, ethics, and community well-being.",
       achievements: [
         "First Indian woman to acquire triple fellowship (FRCS) from Royal Colleges of Surgeons (London, Edinburgh, Glasgow)",
         "Member of the panel of doctors to the President of India",
