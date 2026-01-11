@@ -9,163 +9,97 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
-import {
-  ArrowRight,
-  BookOpen,
   CheckCircle2,
   ChevronRight,
-  Download,
-  FileText,
-  Filter,
   GraduationCap,
-  Lightbulb,
-  Zap,
+  XCircle,
+  AlertCircle,
+  BookOpen,
+  ArrowRight,
 } from "lucide-react";
 
-type EntranceExam = "CET" | "JEE" | "PGCET" | "CLAT" | "Direct" | "None";
+type EducationLevel = "10+2" | "Bachelor's" | "Master's" | "Law";
+type Category = "General" | "SC/ST" | "OBC";
 
-type Program = {
-  name: string;
-  school: string;
-  level: "UG" | "PG" | "Professional";
-  duration: string;
-  eligibility: string;
-  fees: { label: string; amount: string }[];
-  admissionPathways: string[];
+type EligibilityRule = {
+  requiredEducation: string;
+  requiredSubjects: string[];
+  minimumPercentage: (category: Category) => number;
+  applicablePrograms: string[];
+  reason: string;
 };
 
-const mockPrograms: Program[] = [
+const eligibilityRules: EligibilityRule[] = [
   {
-    name: "B.Tech Computer Science & Engineering",
-    school: "School of Engineering",
-    level: "UG",
-    duration: "4 Years",
-    eligibility: "PUC/10+2 with Physics & Mathematics (45% marks)",
-    fees: [
-      { label: "CET", amount: "Not Available" },
-      { label: "JEE Mains/Ranking Based", amount: "₹4,12,000" },
-      { label: "Others", amount: "₹4,92,000" },
+    requiredEducation: "10+2/PUC with PCM",
+    requiredSubjects: ["Physics", "Mathematics"],
+    minimumPercentage: (cat) => (cat === "General" ? 45 : 40),
+    applicablePrograms: [
+      "B.Tech Computer Science & Engineering",
+      "B.Tech CSE (AI & ML)",
+      "B.Tech CSE (Data Science)",
+      "B.Tech CSE (Cyber Security)",
+      "B.Tech CSE (AI & Data Science)",
+      "B.Tech CS & Medical Engineering",
+      "B.Tech CSE (Artificial Intelligence)",
+      "B.Tech Computer Science & Technology",
+      "B.Tech AI & Robotics",
+      "B.Tech Electronics & Communication",
+      "B.Tech Mechanical Engineering",
+      "B.Tech Aerospace Engineering",
     ],
-    admissionPathways: ["CET", "JEE", "Direct"],
+    reason: "Requires 10+2/PUC with Physics & Mathematics as compulsory subjects + one additional science subject, with minimum 45% (40% for SC/ST/OBC)",
   },
   {
-    name: "M.Tech Computer Science Engineering",
-    school: "School of Engineering",
-    level: "PG",
-    duration: "2 Years",
-    eligibility: "B.Tech in related field (50% marks)",
-    fees: [
-      { label: "PGCET", amount: "Not Available" },
-      { label: "Others", amount: "₹2,52,000" },
-    ],
-    admissionPathways: ["PGCET", "Direct"],
+    requiredEducation: "10+2/PUC with PCB",
+    requiredSubjects: ["Physics", "Chemistry", "Biology"],
+    minimumPercentage: (cat) => (cat === "General" ? 45 : 40),
+    applicablePrograms: ["B.Sc Nursing", "B.Pharm"],
+    reason: "Requires 10+2/PUC with Physics, Chemistry & Biology with minimum 45% (40% for SC/ST/OBC)",
   },
   {
-    name: "BBA Regular",
-    school: "School of Commerce & Management",
-    level: "UG",
-    duration: "3 Years",
-    eligibility: "PUC/10+2 with 50% marks",
-    fees: [
-      { label: "Term I", amount: "₹1,07,000" },
-      { label: "Term II", amount: "₹1,05,000" },
-    ],
-    admissionPathways: ["Direct"],
+    requiredEducation: "10+2 - Any Stream",
+    requiredSubjects: [],
+    minimumPercentage: (cat) => (cat === "General" ? 50 : 45),
+    applicablePrograms: ["BBA", "B.Com General", "B.Com ACCA", "B.Com CA", "B.Com CMA", "BCA", "BA Journalism & Mass Communication"],
+    reason: "Requires 10+2 or equivalent with minimum 50% marks (45% for SC/ST/OBC)",
   },
   {
-    name: "MBA",
-    school: "School of Commerce & Management",
-    level: "PG",
-    duration: "2 Years",
-    eligibility: "Bachelor's degree (50% marks)",
-    fees: [
-      { label: "Term I", amount: "₹3,07,000" },
-      { label: "Term II", amount: "₹2,95,000" },
-    ],
-    admissionPathways: ["PGCET", "CAT", "Direct"],
+    requiredEducation: "10+2 - Law Background",
+    requiredSubjects: [],
+    minimumPercentage: (cat) => (cat === "General" ? 50 : 45),
+    applicablePrograms: ["B.A. LL.B", "B.B.A. LL.B", "3 Year LL.B"],
+    reason: "Requires 10+2 or equivalent with minimum 50% marks. CLAT scores accepted.",
   },
   {
-    name: "B.A. LL.B",
-    school: "School of Law",
-    level: "UG",
-    duration: "5 Years",
-    eligibility: "PUC/10+2 with 50% marks (CLAT scores)",
-    fees: [
-      { label: "Tuition Fee", amount: "₹2,02,000" },
-      { label: "Other Fee", amount: "₹50,000" },
-    ],
-    admissionPathways: ["CLAT", "Direct"],
+    requiredEducation: "Bachelor's Degree - Any Stream",
+    requiredSubjects: [],
+    minimumPercentage: (cat) => (cat === "General" ? 50 : 45),
+    applicablePrograms: ["MBA", "MCA", "M.Sc Data Science", "M.Sc Basic Sciences"],
+    reason: "Requires Bachelor's degree with minimum 50% marks (45% for SC/ST/OBC)",
   },
   {
-    name: "LL.M",
-    school: "School of Law",
-    level: "PG",
-    duration: "1 Year",
-    eligibility: "LL.B degree (50% marks)",
-    fees: [
-      { label: "Tuition Fee", amount: "₹1,10,000" },
-      { label: "Other Fee", amount: "₹35,000" },
-    ],
-    admissionPathways: ["CLAT", "Direct"],
+    requiredEducation: "Bachelor's in Engineering/CSE",
+    requiredSubjects: ["Computer Science", "Engineering"],
+    minimumPercentage: (cat) => 50,
+    applicablePrograms: ["M.Tech CSE", "M.Tech AI & Data Science"],
+    reason: "Requires B.Tech in related field with minimum 50% marks",
   },
   {
-    name: "B.Sc Nursing",
-    school: "School of Health Sciences",
-    level: "UG",
-    duration: "4 Years",
-    eligibility: "PUC/10+2 with Physics, Chemistry, Biology (45%)",
-    fees: [
-      { label: "Term I", amount: "₹97,000" },
-      { label: "Term II", amount: "₹85,000" },
-    ],
-    admissionPathways: ["CET", "Direct"],
+    requiredEducation: "Bachelor's in Law",
+    requiredSubjects: ["Law"],
+    minimumPercentage: (cat) => 50,
+    applicablePrograms: ["LL.M"],
+    reason: "Requires LL.B degree with minimum 50% marks",
   },
   {
-    name: "M.Sc Nursing",
-    school: "School of Health Sciences",
-    level: "PG",
-    duration: "2 Years",
-    eligibility: "B.Sc Nursing (55% marks, 1 year experience)",
-    fees: [
-      { label: "Others", amount: "₹1,42,000" },
-    ],
-    admissionPathways: ["Direct"],
-  },
-  {
-    name: "BCA",
-    school: "School of Computer Applications",
-    level: "UG",
-    duration: "3 Years",
-    eligibility: "PUC/10+2 with 45% marks",
-    fees: [
-      { label: "Term I", amount: "₹1,09,500" },
-      { label: "Term II", amount: "₹97,500" },
-    ],
-    admissionPathways: ["Direct"],
-  },
-  {
-    name: "MCA",
-    school: "School of Computer Applications",
-    level: "PG",
-    duration: "2 Years",
-    eligibility: "BCA/B.Sc with Mathematics (50% marks)",
-    fees: [
-      { label: "Term I", amount: "₹1,77,000" },
-      { label: "Term II", amount: "₹1,65,000" },
-    ],
-    admissionPathways: ["Direct"],
+    requiredEducation: "B.Sc in Life Sciences",
+    requiredSubjects: ["Life Science"],
+    minimumPercentage: (cat) => 50,
+    applicablePrograms: ["M.Sc Nursing", "M.Sc Biotechnology", "M.Sc Microbiology"],
+    reason: "Requires B.Sc in relevant life science subject with minimum 50% marks",
   },
 ];
-
-const examOptions: EntranceExam[] = ["CET", "JEE", "PGCET", "CLAT", "Direct", "None"];
-const categoryOptions = ["General", "SC/ST", "OBC", "Not Applicable"];
 
 export default function EligibilityChecker() {
   useEffect(() => {
@@ -173,78 +107,131 @@ export default function EligibilityChecker() {
   }, []);
 
   const [step, setStep] = useState(1);
-  const [selectedExam, setSelectedExam] = useState<EntranceExam | "">("");
-  const [score, setScore] = useState("");
-  const [category, setCategory] = useState("");
-  const [programLevel, setProgramLevel] = useState<"" | "UG" | "PG">("UG");
-  const [matchedPrograms, setMatchedPrograms] = useState<Program[]>([]);
+  const [education, setEducation] = useState<EducationLevel | "">("");
+  const [subjects, setSubjects] = useState<string[]>([]);
+  const [percentage, setPercentage] = useState("");
+  const [category, setCategory] = useState<Category | "">("");
+  const [results, setResults] = useState<{ eligible: any[]; notEligible: any[] }>({ eligible: [], notEligible: [] });
 
-  const examPercentiles: Record<EntranceExam, { min: number; max: number }> = {
-    CET: { min: 0, max: 180 },
-    JEE: { min: 0, max: 100 },
-    PGCET: { min: 0, max: 180 },
-    CLAT: { min: 0, max: 120 },
-    Direct: { min: 0, max: 100 },
-    None: { min: 0, max: 100 },
-  };
-
-  const handleExamSelect = (exam: EntranceExam) => {
-    setSelectedExam(exam);
-    setScore("");
+  const handleEducationSelect = (edu: EducationLevel) => {
+    setEducation(edu);
+    setSubjects([]);
+    setPercentage("");
     setStep(2);
   };
 
-  const handleScoreSubmit = () => {
-    if (!score) return;
+  const getSubjectOptions = (): { [key: string]: string[] } => {
+    return {
+      "10+2": ["Physics, Chemistry, Mathematics (PCM)", "Physics, Chemistry, Biology (PCB)", "Commerce Subjects", "Arts/Humanities"],
+      "Bachelor's": ["Engineering/CSE", "Commerce", "Science", "Law", "Arts/Humanities"],
+      "Master's": ["Engineering", "Science", "Commerce", "Law"],
+      Law: ["Law"],
+    };
+  };
+
+  const handleSubjectsSelect = (subs: string[]) => {
+    setSubjects(subs);
     setStep(3);
   };
 
-  const handleCategorySelect = (cat: string) => {
-    setCategory(cat);
+  const handlePercentageSubmit = () => {
+    if (!percentage) return;
     setStep(4);
   };
 
-  const handleLevelSelect = (level: "UG" | "PG") => {
-    setProgramLevel(level);
-    findMatchingPrograms(level);
+  const handleCategorySelect = (cat: Category) => {
+    setCategory(cat);
+    findMatchingPrograms(cat);
     setStep(5);
   };
 
-  const findMatchingPrograms = (level: "UG" | "PG") => {
-    const matched = mockPrograms.filter((program) => {
-      const levelMatch = program.level === level;
-      const pathwayMatch = program.admissionPathways.includes(selectedExam as string) || selectedExam === "Direct";
-      return levelMatch && pathwayMatch;
+  const findMatchingPrograms = (selectedCategory: Category) => {
+    const eligible: any[] = [];
+    const notEligible: any[] = [];
+
+    eligibilityRules.forEach((rule) => {
+      const isEducationMatch = isEducationMatching(rule.requiredEducation);
+      const areSubjectsMatch = areSubjectsMatching(rule.requiredSubjects, subjects);
+      const isPercentageOk = parseFloat(percentage) >= rule.minimumPercentage(selectedCategory);
+
+      const isEligible = isEducationMatch && areSubjectsMatch && isPercentageOk;
+
+      rule.applicablePrograms.forEach((program) => {
+        const result = {
+          program,
+          rule,
+          isEligible,
+          failureReason: getFailureReason(
+            isEducationMatch,
+            areSubjectsMatch,
+            isPercentageOk,
+            rule.minimumPercentage(selectedCategory)
+          ),
+        };
+
+        if (isEligible) {
+          if (!eligible.find((e) => e.program === program)) {
+            eligible.push(result);
+          }
+        } else {
+          if (!notEligible.find((e) => e.program === program)) {
+            notEligible.push(result);
+          }
+        }
+      });
     });
-    setMatchedPrograms(matched);
+
+    setResults({ eligible, notEligible });
+  };
+
+  const isEducationMatching = (requiredEducation: string): boolean => {
+    if (education === "10+2") return requiredEducation.includes("10+2") || requiredEducation.includes("Any Stream");
+    if (education === "Bachelor's") return requiredEducation.includes("Bachelor's");
+    if (education === "Master's") return requiredEducation.includes("Master's") || requiredEducation.includes("Bachelor's in");
+    if (education === "Law") return requiredEducation.includes("Law");
+    return false;
+  };
+
+  const areSubjectsMatching = (requiredSubjects: string[], selectedSubjects: string[]): boolean => {
+    if (requiredSubjects.length === 0) return true;
+    if (selectedSubjects.length === 0) return true;
+    return requiredSubjects.some((req) => selectedSubjects.some((sel) => sel.includes(req)));
+  };
+
+  const getFailureReason = (
+    eduMatch: boolean,
+    subjectsMatch: boolean,
+    percentageOk: boolean,
+    required: number
+  ): string => {
+    const reasons = [];
+    if (!eduMatch) reasons.push("Education qualification doesn't match");
+    if (!subjectsMatch) reasons.push("Required subjects not matched");
+    if (!percentageOk) reasons.push(`Percentage below required minimum (${required}%)`);
+    return reasons.join("; ");
   };
 
   const handleReset = () => {
     setStep(1);
-    setSelectedExam("");
-    setScore("");
+    setEducation("");
+    setSubjects([]);
+    setPercentage("");
     setCategory("");
-    setProgramLevel("");
-    setMatchedPrograms([]);
+    setResults({ eligible: [], notEligible: [] });
   };
-
-  const scorePercentage = selectedExam
-    ? Math.round((parseFloat(score) / examPercentiles[selectedExam as EntranceExam].max) * 100)
-    : 0;
 
   return (
     <div className="bg-background text-foreground min-h-screen">
       <HeroSection />
-
       <section className="px-3 py-8">
         <div className="mx-auto max-w-6xl">
           {step < 5 && (
-            <div className="mb-8">
+            <div className="mb-10">
               <div className="flex items-center justify-between">
                 {[1, 2, 3, 4].map((stepNum) => (
-                  <div key={stepNum} className="flex items-center">
+                  <div key={stepNum} className="flex items-center flex-1">
                     <div
-                      className={`flex h-12 w-12 items-center justify-center rounded-full font-semibold transition ${
+                      className={`flex h-10 w-10 items-center justify-center rounded-full font-semibold transition flex-shrink-0 ${
                         step >= stepNum
                           ? "bg-orange-500 text-white"
                           : "border-2 border-border/60 text-foreground/50"
@@ -254,7 +241,7 @@ export default function EligibilityChecker() {
                     </div>
                     {stepNum < 4 && (
                       <div
-                        className={`mx-2 h-1 w-12 rounded-full transition ${
+                        className={`mx-2 h-1 flex-1 rounded-full transition ${
                           step > stepNum ? "bg-orange-500" : "bg-border/40"
                         }`}
                       />
@@ -262,42 +249,46 @@ export default function EligibilityChecker() {
                   </div>
                 ))}
               </div>
+              <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4 text-xs font-semibold text-foreground/60">
+                <div>Education</div>
+                <div>Subjects</div>
+                <div>Percentage</div>
+                <div>Category</div>
+              </div>
             </div>
           )}
 
           {step === 1 && (
-            <StepExamType examOptions={examOptions} onSelect={handleExamSelect} />
+            <StepEducation onSelect={handleEducationSelect} />
           )}
 
           {step === 2 && (
-            <StepScore
-              selectedExam={selectedExam as EntranceExam}
-              score={score}
-              onScoreChange={setScore}
-              onSubmit={handleScoreSubmit}
-              scorePercentage={scorePercentage}
+            <StepSubjects
+              education={education as EducationLevel}
+              onSelect={handleSubjectsSelect}
+              subjectOptions={getSubjectOptions()}
             />
           )}
 
           {step === 3 && (
-            <StepCategory
-              categoryOptions={categoryOptions}
-              onSelect={handleCategorySelect}
-              selectedCategory={category}
+            <StepPercentage
+              percentage={percentage}
+              onPercentageChange={setPercentage}
+              onSubmit={handlePercentageSubmit}
             />
           )}
 
           {step === 4 && (
-            <StepProgramLevel onSelect={handleLevelSelect} />
+            <StepCategory onSelect={handleCategorySelect} />
           )}
 
           {step === 5 && (
             <StepResults
-              programs={matchedPrograms}
-              selectedExam={selectedExam as EntranceExam}
-              score={score}
-              category={category}
-              programLevel={programLevel as "UG" | "PG"}
+              results={results}
+              education={education as EducationLevel}
+              subjects={subjects}
+              percentage={percentage}
+              category={category as Category}
               onReset={handleReset}
             />
           )}
@@ -316,26 +307,25 @@ function HeroSection() {
       </div>
       <div className="relative mx-auto max-w-6xl px-3 text-center">
         <div className="inline-flex items-center gap-2 rounded-full border border-orange-500/30 bg-orange-500/10 px-4 py-2 text-sm font-semibold text-orange-500">
-          <Zap className="h-4 w-4" />
-          Smart Eligibility Finder
+          <CheckCircle2 className="h-4 w-4" />
+          Eligibility Checker
         </div>
         <h1 className="mt-8 text-4xl font-bold leading-tight md:text-5xl">
-          Find Your Perfect Program
+          Check Your Eligibility
         </h1>
         <p className="mt-6 text-lg text-foreground md:text-xl">
-          Answer 4 simple questions to discover programs you're eligible for, compare fees, and understand admission pathways.
+          Answer 4 simple questions to find programs you're eligible for. Based on actual eligibility requirements, no guessing.
         </p>
       </div>
     </section>
   );
 }
 
-type StepExamTypeProps = {
-  examOptions: EntranceExam[];
-  onSelect: (exam: EntranceExam) => void;
+type StepEducationProps = {
+  onSelect: (edu: EducationLevel) => void;
 };
 
-function StepExamType({ examOptions, onSelect }: StepExamTypeProps) {
+function StepEducation({ onSelect }: StepEducationProps) {
   return (
     <Card className="border-2 border-orange-500/20 bg-card/80 backdrop-blur-sm">
       <CardHeader>
@@ -344,28 +334,20 @@ function StepExamType({ examOptions, onSelect }: StepExamTypeProps) {
             <GraduationCap className="h-6 w-6 text-orange-500" />
           </div>
           <div>
-            <CardTitle className="text-2xl">Step 1: Entrance Exam</CardTitle>
-            <CardDescription>Which entrance exam are you taking?</CardDescription>
+            <CardTitle className="text-2xl">Step 1: What have you completed?</CardTitle>
+            <CardDescription>Select your current education level</CardDescription>
           </div>
         </div>
       </CardHeader>
       <CardContent>
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {examOptions.map((exam) => (
+          {["10+2 / PUC", "Bachelor's Degree", "Master's Degree", "Bachelor's in Law"].map((option, idx) => (
             <button
-              key={exam}
-              onClick={() => onSelect(exam)}
+              key={idx}
+              onClick={() => onSelect(option.split(" /")[0] as EducationLevel)}
               className="rounded-xl border-2 border-orange-500/20 bg-card/50 p-6 text-left transition hover:border-orange-500/60 hover:bg-orange-500/5"
             >
-              <h3 className="font-semibold text-lg text-foreground">{exam}</h3>
-              <p className="mt-2 text-sm text-foreground/70">
-                {exam === "CET" && "Karnataka Common Entrance Test"}
-                {exam === "JEE" && "Joint Entrance Exam (Mains)"}
-                {exam === "PGCET" && "Post Graduate Common Entrance Test"}
-                {exam === "CLAT" && "Common Law Admission Test"}
-                {exam === "Direct" && "Merit-based Direct Admission"}
-                {exam === "None" && "Without entrance exam"}
-              </p>
+              <h3 className="font-semibold text-lg text-foreground">{option}</h3>
             </button>
           ))}
         </div>
@@ -374,72 +356,114 @@ function StepExamType({ examOptions, onSelect }: StepExamTypeProps) {
   );
 }
 
-type StepScoreProps = {
-  selectedExam: EntranceExam;
-  score: string;
-  onScoreChange: (score: string) => void;
-  onSubmit: () => void;
-  scorePercentage: number;
+type StepSubjectsProps = {
+  education: EducationLevel;
+  onSelect: (subjects: string[]) => void;
+  subjectOptions: { [key: string]: string[] };
 };
 
-function StepScore({ selectedExam, score, onScoreChange, onSubmit, scorePercentage }: StepScoreProps) {
-  const scoreRanges: Record<EntranceExam, { min: number; max: number; unit: string }> = {
-    CET: { min: 0, max: 180, unit: "marks out of 180" },
-    JEE: { min: 0, max: 100, unit: "percentile" },
-    PGCET: { min: 0, max: 180, unit: "marks out of 180" },
-    CLAT: { min: 0, max: 120, unit: "marks out of 120" },
-    Direct: { min: 0, max: 100, unit: "percentage (12th/Graduation)" },
-    None: { min: 0, max: 100, unit: "percentage (12th/Graduation)" },
-  };
+function StepSubjects({ education, onSelect, subjectOptions }: StepSubjectsProps) {
+  const [selected, setSelected] = useState<string[]>([]);
+  const options = subjectOptions[education] || [];
 
-  const range = scoreRanges[selectedExam];
-  const isValidScore = score && parseFloat(score) <= range.max && parseFloat(score) >= range.min;
+  const handleToggle = (option: string) => {
+    const updated = selected.includes(option)
+      ? selected.filter((s) => s !== option)
+      : [...selected, option];
+    setSelected(updated);
+  };
 
   return (
     <Card className="border-2 border-orange-500/20 bg-card/80 backdrop-blur-sm">
       <CardHeader>
         <div className="flex items-center gap-3">
           <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-orange-500/15">
-            <Lightbulb className="h-6 w-6 text-orange-500" />
+            <BookOpen className="h-6 w-6 text-orange-500" />
           </div>
           <div>
-            <CardTitle className="text-2xl">Step 2: Your Score</CardTitle>
-            <CardDescription>
-              Enter your score for {selectedExam} ({range.unit})
-            </CardDescription>
+            <CardTitle className="text-2xl">Step 2: What subjects did you study?</CardTitle>
+            <CardDescription>Select the stream/subjects applicable to your education</CardDescription>
+          </div>
+        </div>
+      </CardHeader>
+      <CardContent className="space-y-6">
+        <div className="space-y-2">
+          {options.map((option) => (
+            <button
+              key={option}
+              onClick={() => handleToggle(option)}
+              className={`w-full rounded-lg border-2 p-4 text-left transition ${
+                selected.includes(option)
+                  ? "border-orange-500 bg-orange-500/10"
+                  : "border-orange-500/20 bg-card/50 hover:border-orange-500/60"
+              }`}
+            >
+              <div className="flex items-center gap-3">
+                <div
+                  className={`h-5 w-5 rounded border-2 transition ${
+                    selected.includes(option)
+                      ? "border-orange-500 bg-orange-500"
+                      : "border-border/60"
+                  }`}
+                />
+                <span className="font-semibold text-foreground">{option}</span>
+              </div>
+            </button>
+          ))}
+        </div>
+
+        <Button
+          onClick={() => onSelect(selected)}
+          disabled={selected.length === 0}
+          className="w-full rounded-lg bg-orange-500 py-3 text-white hover:bg-orange-600 disabled:opacity-50"
+        >
+          Continue
+          <ArrowRight className="ml-2 h-4 w-4" />
+        </Button>
+      </CardContent>
+    </Card>
+  );
+}
+
+type StepPercentageProps = {
+  percentage: string;
+  onPercentageChange: (value: string) => void;
+  onSubmit: () => void;
+};
+
+function StepPercentage({ percentage, onPercentageChange, onSubmit }: StepPercentageProps) {
+  const isValid = percentage && parseFloat(percentage) >= 0 && parseFloat(percentage) <= 100;
+
+  return (
+    <Card className="border-2 border-orange-500/20 bg-card/80 backdrop-blur-sm">
+      <CardHeader>
+        <div className="flex items-center gap-3">
+          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-orange-500/15">
+            <AlertCircle className="h-6 w-6 text-orange-500" />
+          </div>
+          <div>
+            <CardTitle className="text-2xl">Step 3: Your Percentage/Grade</CardTitle>
+            <CardDescription>Enter your overall percentage or CGPA</CardDescription>
           </div>
         </div>
       </CardHeader>
       <CardContent className="space-y-6">
         <div>
-          <label className="text-sm font-semibold text-foreground">Score</label>
-          <div className="mt-3 flex gap-2">
-            <input
-              type="number"
-              min={range.min}
-              max={range.max}
-              value={score}
-              onChange={(e) => onScoreChange(e.target.value)}
-              placeholder={`Enter score (${range.min}-${range.max})`}
-              className="flex-1 rounded-lg border border-border/60 bg-background px-4 py-3 text-foreground placeholder-foreground/50 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20"
-            />
-            <span className="flex items-center rounded-lg bg-orange-500/10 px-4 py-3 text-sm font-semibold text-orange-600">
-              {scorePercentage}%
-            </span>
-          </div>
-          {score && (
-            <div className="mt-3 overflow-hidden rounded-lg bg-background/50">
-              <div
-                className="h-2 bg-gradient-to-r from-orange-500 to-red-500 transition-all duration-300"
-                style={{ width: `${Math.min(scorePercentage, 100)}%` }}
-              />
-            </div>
-          )}
+          <label className="text-sm font-semibold text-foreground">Percentage (%)</label>
+          <input
+            type="number"
+            min="0"
+            max="100"
+            value={percentage}
+            onChange={(e) => onPercentageChange(e.target.value)}
+            placeholder="Enter percentage (0-100)"
+            className="mt-3 w-full rounded-lg border border-border/60 bg-background px-4 py-3 text-foreground placeholder-foreground/50 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20"
+          />
         </div>
 
         <Button
           onClick={onSubmit}
-          disabled={!isValidScore}
+          disabled={!isValid}
           className="w-full rounded-lg bg-orange-500 py-3 text-white hover:bg-orange-600 disabled:opacity-50"
         >
           Continue
@@ -451,42 +475,32 @@ function StepScore({ selectedExam, score, onScoreChange, onSubmit, scorePercenta
 }
 
 type StepCategoryProps = {
-  categoryOptions: string[];
-  selectedCategory: string;
-  onSelect: (category: string) => void;
+  onSelect: (category: Category) => void;
 };
 
-function StepCategory({ categoryOptions, selectedCategory, onSelect }: StepCategoryProps) {
+function StepCategory({ onSelect }: StepCategoryProps) {
   return (
     <Card className="border-2 border-orange-500/20 bg-card/80 backdrop-blur-sm">
       <CardHeader>
         <div className="flex items-center gap-3">
           <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-orange-500/15">
-            <Filter className="h-6 w-6 text-orange-500" />
+            <AlertCircle className="h-6 w-6 text-orange-500" />
           </div>
           <div>
-            <CardTitle className="text-2xl">Step 3: Candidate Category</CardTitle>
-            <CardDescription>Select your category for admission eligibility</CardDescription>
+            <CardTitle className="text-2xl">Step 4: Your Category</CardTitle>
+            <CardDescription>Select your admission category</CardDescription>
           </div>
         </div>
       </CardHeader>
       <CardContent>
-        <div className="grid gap-3 sm:grid-cols-2">
-          {categoryOptions.map((cat) => (
+        <div className="grid gap-3 sm:grid-cols-3">
+          {(["General", "SC/ST", "OBC"] as const).map((cat) => (
             <button
               key={cat}
               onClick={() => onSelect(cat)}
-              className={`rounded-xl border-2 p-4 text-left transition ${
-                selectedCategory === cat
-                  ? "border-orange-500 bg-orange-500/10"
-                  : "border-orange-500/20 bg-card/50 hover:border-orange-500/60"
-              }`}
+              className="rounded-xl border-2 border-orange-500/20 bg-card/50 p-6 text-center transition hover:border-orange-500/60 hover:bg-orange-500/5"
             >
-              <h3 className="font-semibold text-foreground">{cat}</h3>
-              {cat === "General" && <p className="mt-1 text-xs text-foreground/70">Unreserved category</p>}
-              {cat === "SC/ST" && <p className="mt-1 text-xs text-foreground/70">Scheduled Caste / Scheduled Tribe</p>}
-              {cat === "OBC" && <p className="mt-1 text-xs text-foreground/70">Other Backward Classes</p>}
-              {cat === "Not Applicable" && <p className="mt-1 text-xs text-foreground/70">Foreign / NRI candidates</p>}
+              <h3 className="font-semibold text-lg text-foreground">{cat}</h3>
             </button>
           ))}
         </div>
@@ -495,92 +509,16 @@ function StepCategory({ categoryOptions, selectedCategory, onSelect }: StepCateg
   );
 }
 
-type StepProgramLevelProps = {
-  onSelect: (level: "UG" | "PG") => void;
-};
-
-function StepProgramLevel({ onSelect }: StepProgramLevelProps) {
-  return (
-    <Card className="border-2 border-orange-500/20 bg-card/80 backdrop-blur-sm">
-      <CardHeader>
-        <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-orange-500/15">
-            <BookOpen className="h-6 w-6 text-orange-500" />
-          </div>
-          <div>
-            <CardTitle className="text-2xl">Step 4: Program Level</CardTitle>
-            <CardDescription>What level of program are you interested in?</CardDescription>
-          </div>
-        </div>
-      </CardHeader>
-      <CardContent>
-        <div className="grid gap-3 sm:grid-cols-2">
-          <button
-            onClick={() => onSelect("UG")}
-            className="rounded-xl border-2 border-orange-500/20 bg-card/50 p-8 text-center transition hover:border-orange-500/60 hover:bg-orange-500/5"
-          >
-            <GraduationCap className="mx-auto h-10 w-10 text-orange-500 mb-3" />
-            <h3 className="font-semibold text-lg text-foreground">Undergraduate</h3>
-            <p className="mt-2 text-sm text-foreground/70">Bachelor's Degree (3-4 years)</p>
-          </button>
-          <button
-            onClick={() => onSelect("PG")}
-            className="rounded-xl border-2 border-orange-500/20 bg-card/50 p-8 text-center transition hover:border-orange-500/60 hover:bg-orange-500/5"
-          >
-            <BookOpen className="mx-auto h-10 w-10 text-orange-500 mb-3" />
-            <h3 className="font-semibold text-lg text-foreground">Postgraduate</h3>
-            <p className="mt-2 text-sm text-foreground/70">Master's Degree (1-2 years)</p>
-          </button>
-        </div>
-      </CardContent>
-    </Card>
-  );
-}
-
 type StepResultsProps = {
-  programs: Program[];
-  selectedExam: EntranceExam;
-  score: string;
-  category: string;
-  programLevel: "UG" | "PG";
+  results: { eligible: any[]; notEligible: any[] };
+  education: EducationLevel;
+  subjects: string[];
+  percentage: string;
+  category: Category;
   onReset: () => void;
 };
 
-function StepResults({ programs, selectedExam, score, category, programLevel, onReset }: StepResultsProps) {
-  const handleExportPDF = () => {
-    const content = `
-Eligibility Checker Results
-==========================
-
-Exam Type: ${selectedExam}
-Score: ${score}
-Category: ${category}
-Program Level: ${programLevel === "UG" ? "Undergraduate" : "Postgraduate"}
-
-Matching Programs (${programs.length} found):
-
-${programs.map((prog) => `
-Program: ${prog.name}
-School: ${prog.school}
-Duration: ${prog.duration}
-Admission Pathways: ${prog.admissionPathways.join(", ")}
-Eligibility: ${prog.eligibility}
-Fee Structure: ${prog.fees.map((f) => `${f.label}: ${f.amount}`).join("; ")}
----
-`).join("\n")}
-
-Generated at: ${new Date().toLocaleDateString("en-IN")}
-    `.trim();
-
-    const blob = new Blob([content], { type: "text/plain" });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = `eligibility-results-${Date.now()}.txt`;
-    a.click();
-    URL.revokeObjectURL(url);
-  };
-
+function StepResults({ results, education, subjects, percentage, category, onReset }: StepResultsProps) {
   return (
     <div className="space-y-6">
       <Card className="border-2 border-green-500/30 bg-gradient-to-r from-green-500/10 to-emerald-500/10">
@@ -588,115 +526,80 @@ Generated at: ${new Date().toLocaleDateString("en-IN")}
           <div className="flex items-center gap-3">
             <CheckCircle2 className="h-8 w-8 text-green-600" />
             <div>
-              <CardTitle className="text-2xl">Your Results</CardTitle>
+              <CardTitle className="text-2xl">Your Eligibility Results</CardTitle>
               <CardDescription>
-                Found {programs.length} {programs.length === 1 ? "program" : "programs"} matching your criteria
+                {results.eligible.length} eligible · {results.notEligible.length} not eligible
               </CardDescription>
             </div>
           </div>
         </CardHeader>
         <CardContent>
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            <div className="rounded-lg bg-background/50 p-4">
-              <p className="text-xs text-foreground/70">Entrance Exam</p>
-              <p className="mt-2 font-semibold text-foreground">{selectedExam}</p>
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4 text-sm">
+            <div className="rounded-lg bg-background/50 p-3">
+              <p className="text-xs text-foreground/60">Education</p>
+              <p className="mt-1 font-semibold text-foreground">{education}</p>
             </div>
-            <div className="rounded-lg bg-background/50 p-4">
-              <p className="text-xs text-foreground/70">Your Score</p>
-              <p className="mt-2 font-semibold text-foreground">{score}</p>
+            <div className="rounded-lg bg-background/50 p-3">
+              <p className="text-xs text-foreground/60">Subjects</p>
+              <p className="mt-1 font-semibold text-foreground text-xs">{subjects.join(", ") || "Any"}</p>
             </div>
-            <div className="rounded-lg bg-background/50 p-4">
-              <p className="text-xs text-foreground/70">Category</p>
-              <p className="mt-2 font-semibold text-foreground">{category}</p>
+            <div className="rounded-lg bg-background/50 p-3">
+              <p className="text-xs text-foreground/60">Percentage</p>
+              <p className="mt-1 font-semibold text-foreground">{percentage}%</p>
             </div>
-            <div className="rounded-lg bg-background/50 p-4">
-              <p className="text-xs text-foreground/70">Program Level</p>
-              <p className="mt-2 font-semibold text-foreground">
-                {programLevel === "UG" ? "Undergraduate" : "Postgraduate"}
-              </p>
+            <div className="rounded-lg bg-background/50 p-3">
+              <p className="text-xs text-foreground/60">Category</p>
+              <p className="mt-1 font-semibold text-foreground">{category}</p>
             </div>
           </div>
         </CardContent>
       </Card>
 
-      {programs.length > 0 ? (
-        <div className="space-y-4">
-          {programs.map((program, idx) => (
-            <Card
-              key={idx}
-              className="border border-border/60 bg-card/70 transition hover:-translate-y-1 hover:border-orange-500/40"
-            >
-              <CardHeader>
-                <div className="flex items-start justify-between gap-4">
-                  <div className="flex-1">
-                    <CardTitle className="text-lg font-semibold text-foreground">
-                      {program.name}
-                    </CardTitle>
-                    <CardDescription className="mt-1 text-sm text-foreground">
-                      {program.school}
-                    </CardDescription>
-                  </div>
-                  <Badge className="bg-orange-500/15 text-orange-500">{program.duration}</Badge>
-                </div>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="grid gap-3 sm:grid-cols-2">
-                  <div className="rounded-lg border border-border/40 p-3">
-                    <p className="text-xs uppercase text-foreground/60">Eligibility</p>
-                    <p className="mt-2 text-sm text-foreground">{program.eligibility}</p>
-                  </div>
-                  <div className="rounded-lg border border-border/40 p-3">
-                    <p className="text-xs uppercase text-foreground/60">Admission Via</p>
-                    <div className="mt-2 flex flex-wrap gap-1">
-                      {program.admissionPathways.map((pathway) => (
-                        <Badge key={pathway} className="bg-blue-500/15 text-blue-600">
-                          {pathway}
-                        </Badge>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
-                <div className="rounded-lg border border-orange-500/20">
-                  <Table>
-                    <TableHeader>
-                      <TableRow>
-                        <TableHead className="w-2/3">Fee Component</TableHead>
-                        <TableHead className="text-right">Amount</TableHead>
-                      </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                      {program.fees.map((fee, feeIdx) => (
-                        <TableRow key={feeIdx}>
-                          <TableCell className="text-sm text-foreground">{fee.label}</TableCell>
-                          <TableCell className="text-right text-orange-500 font-medium">{fee.amount}</TableCell>
-                        </TableRow>
-                      ))}
-                    </TableBody>
-                  </Table>
-                </div>
-
-                <Button
-                  variant="outline"
-                  className="w-full justify-center rounded-lg border-orange-500/30 text-orange-500"
-                  asChild
-                >
-                  <a href={`/eligibility?school=${encodeURIComponent(program.school)}`}>
-                    View Full Details
-                    <ChevronRight className="ml-2 h-4 w-4" />
-                  </a>
-                </Button>
-              </CardContent>
-            </Card>
-          ))}
+      {results.eligible.length > 0 && (
+        <div className="space-y-3">
+          <h3 className="text-lg font-bold text-foreground flex items-center gap-2">
+            <CheckCircle2 className="h-6 w-6 text-green-600" />
+            You Are Eligible For ({results.eligible.length})
+          </h3>
+          <div className="space-y-2">
+            {results.eligible.map((result, idx) => (
+              <Card key={idx} className="border border-green-500/30 bg-green-500/10">
+                <CardContent className="pt-4">
+                  <p className="font-semibold text-foreground">{result.program}</p>
+                  <p className="mt-1 text-xs text-green-700">✓ Meets all eligibility requirements</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
-      ) : (
-        <Card className="border border-red-500/30 bg-red-500/10">
+      )}
+
+      {results.notEligible.length > 0 && (
+        <div className="space-y-3">
+          <h3 className="text-lg font-bold text-foreground flex items-center gap-2">
+            <XCircle className="h-6 w-6 text-red-600" />
+            Not Eligible For ({results.notEligible.length})
+          </h3>
+          <div className="space-y-2">
+            {results.notEligible.map((result, idx) => (
+              <Card key={idx} className="border border-red-500/30 bg-red-500/10">
+                <CardContent className="pt-4">
+                  <p className="font-semibold text-foreground">{result.program}</p>
+                  <p className="mt-1 text-xs text-red-700">✗ {result.failureReason}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {results.eligible.length === 0 && results.notEligible.length === 0 && (
+        <Card className="border border-border/40 bg-card/50">
           <CardContent className="pt-8 text-center">
-            <FileText className="mx-auto h-12 w-12 text-red-500/50 mb-4" />
-            <h3 className="font-semibold text-foreground mb-2">No Matching Programs</h3>
+            <AlertCircle className="mx-auto h-12 w-12 text-foreground/30 mb-4" />
+            <h3 className="font-semibold text-foreground mb-2">No Programs Found</h3>
             <p className="text-sm text-foreground/70">
-              No programs match your criteria. Try adjusting your entrance exam or category selection.
+              No programs match the selected combination. Try adjusting your education or category.
             </p>
           </CardContent>
         </Card>
@@ -704,18 +607,21 @@ Generated at: ${new Date().toLocaleDateString("en-IN")}
 
       <div className="flex flex-col gap-3 sm:flex-row">
         <Button
-          onClick={handleExportPDF}
-          className="flex-1 rounded-lg bg-orange-500/15 text-orange-500 hover:bg-orange-500 hover:text-white transition"
+          onClick={onReset}
+          className="flex-1 rounded-lg bg-orange-500 py-3 text-white hover:bg-orange-600 transition"
         >
-          <Download className="mr-2 h-4 w-4" />
-          Export Results
+          <ArrowRight className="mr-2 h-4 w-4" />
+          Check Again
         </Button>
         <Button
-          onClick={onReset}
           variant="outline"
           className="flex-1 rounded-lg border-orange-500/30 text-orange-500 hover:bg-orange-500/10"
+          asChild
         >
-          Start Over
+          <a href="/eligibility">
+            View Full Program Details
+            <ChevronRight className="ml-2 h-4 w-4" />
+          </a>
         </Button>
       </div>
     </div>
