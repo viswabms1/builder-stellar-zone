@@ -390,21 +390,21 @@ export default function Navigation() {
       <div
         className={`sticky top-0 z-[9998] transition-all duration-300 hidden lg:block ${
           theme === "light"
-            ? "bg-gradient-to-r from-orange-50 to-white border-b border-orange-200/50"
-            : "bg-gradient-to-r from-slate-900 to-slate-950 border-b border-orange-600/30"
+            ? "bg-gradient-to-r from-orange-50 to-white border-b-2 border-orange-200/50"
+            : "bg-gradient-to-r from-slate-900 to-slate-950 border-b-2 border-orange-600/30"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-8 py-4 flex items-center justify-between gap-8">
+        <div className="max-w-7xl mx-auto px-10 py-5 flex items-center justify-between gap-10">
           {/* Top Menu Items - spread across the bar */}
-          <div className="flex items-center gap-3 flex-wrap">
+          <div className="flex items-center gap-4 flex-wrap">
             {topMenuItems.slice(0, 7).map((item, idx) => (
               <Link
                 key={idx}
                 to={item.href}
-                className={`text-sm font-medium transition-all duration-200 whitespace-nowrap px-4 py-2 rounded-lg hover:scale-105 ${
+                className={`text-base font-medium transition-all duration-200 whitespace-nowrap px-5 py-2.5 rounded-lg hover:scale-105 ${
                   theme === "light"
-                    ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
-                    : "text-white/80 hover:text-white hover:bg-white/10"
+                    ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100 hover:shadow-sm"
+                    : "text-white/80 hover:text-white hover:bg-white/10 hover:shadow-sm"
                 }`}
               >
                 {item.name}
@@ -413,30 +413,30 @@ export default function Navigation() {
           </div>
 
           {/* Right side - More Links, Language Switcher and ERP Login */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-4">
             {topMenuItems.slice(7).map((item, idx) => (
               <Link
                 key={idx}
                 to={item.href}
-                className={`text-sm font-medium transition-all duration-200 whitespace-nowrap px-4 py-2 rounded-lg hover:scale-105 ${
+                className={`text-base font-medium transition-all duration-200 whitespace-nowrap px-5 py-2.5 rounded-lg hover:scale-105 ${
                   theme === "light"
-                    ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
-                    : "text-white/80 hover:text-white hover:bg-white/10"
+                    ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100 hover:shadow-sm"
+                    : "text-white/80 hover:text-white hover:bg-white/10 hover:shadow-sm"
                 }`}
               >
                 {item.name}
               </Link>
             ))}
-            <div className="h-5 w-px bg-gray-300 dark:bg-white/20 mx-3"></div>
+            <div className="h-6 w-px bg-gray-300 dark:bg-white/20 mx-4"></div>
             <LanguageSwitcher />
             <a
               href="https://ums.mydsi.org/Login.aspx/DSU"
               target="_blank"
               rel="noopener noreferrer"
-              className={`text-sm font-semibold transition-all duration-200 whitespace-nowrap px-5 py-2 rounded-lg hover:scale-105 shadow-sm ${
+              className={`text-base font-bold transition-all duration-200 whitespace-nowrap px-6 py-2.5 rounded-lg hover:scale-105 shadow-md ${
                 theme === "light"
-                  ? "text-orange-600 hover:text-white hover:bg-orange-600 border-2 border-orange-600"
-                  : "text-orange-400 hover:text-white hover:bg-orange-600 border-2 border-orange-400"
+                  ? "text-orange-600 hover:text-white hover:bg-orange-600 border-2 border-orange-600 hover:shadow-lg"
+                  : "text-orange-400 hover:text-white hover:bg-orange-600 border-2 border-orange-400 hover:shadow-lg"
               }`}
             >
               ERP Login
@@ -447,14 +447,14 @@ export default function Navigation() {
 
       {/* Main Navigation Bar */}
       <nav
-        className={`sticky top-0 lg:top-[64px] z-[9997] transition-all duration-300 overflow-visible shadow-sm ${
+        className={`sticky top-0 lg:top-[76px] z-[9997] transition-all duration-300 overflow-visible shadow-md ${
           theme === "light"
-            ? "bg-white/95 backdrop-blur-sm border-b border-orange-200/50"
-            : "bg-slate-950/95 backdrop-blur-sm border-b border-orange-600/30"
+            ? "bg-white/95 backdrop-blur-sm border-b-2 border-orange-200/50"
+            : "bg-slate-950/95 backdrop-blur-sm border-b-2 border-orange-600/30"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 overflow-visible">
-          <div className="flex items-center justify-between h-16 lg:h-20">
+        <div className="max-w-7xl mx-auto px-8 overflow-visible">
+          <div className="flex items-center justify-between h-16 lg:h-22">
             {/* Logo - Visible on mobile and tablet portrait, hidden on desktop */}
             <Link
               to="/"
