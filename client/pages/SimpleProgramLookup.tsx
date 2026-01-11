@@ -95,7 +95,7 @@ export default function SimpleProgramLookup() {
                 <div>
                   <CardTitle className="text-2xl">Find Your Program</CardTitle>
                   <CardDescription>
-                    Filter by school and level, then search for your program
+                    Filter by school and level to find your program
                   </CardDescription>
                 </div>
               </div>
