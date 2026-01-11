@@ -7,6 +7,7 @@ import Academics from "./pages/Academics";
 import Admissions from "./pages/Admissions";
 import Eligibility from "./pages/Eligibility";
 import EligibilityChecker from "./pages/EligibilityChecker";
+import SchoolOfEngineeringEligibility from "./pages/SchoolOfEngineeringEligibility";
 import InternationalAdmissions from "./pages/InternationalAdmissions";
 import CampusLife from "./pages/CampusLife";
 import Examinations from "./pages/Examinations";
