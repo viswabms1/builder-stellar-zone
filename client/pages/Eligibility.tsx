@@ -487,47 +487,57 @@ const schools: School[] = [
   {
     name: "School of Law",
     tagline:
-      "Integrated legal programs with DSAT and CLAT pathways, curated clinics, and moot court training.",
+      "Yearly fee structure 2026-27 for integrated legal programs with DSAT and CLAT pathways, curated clinics, and moot court training.",
     icon: FileText,
     categories: [
       {
         title: "Undergraduate Programs",
+        description:
+          "10+2 or equivalent examination from a recognized Board with a minimum of 50% marks in aggregate. We accept CLAT and DSAT (Dayananda Sagar Scholarship Admission Test) scores.",
         programs: [
           {
-            name: "B.A. LL.B (Hons.)",
+            name: "B.A. LL.B",
             level: "UG",
+            duration: "5 Years",
             eligibility:
-              "10+2 or equivalent examination with minimum 50% aggregate (45% for SC/ST & OBC). DSU considers scores from CLAT, DSAT, and other national law entrance tests.",
+              "10+2 or equivalent examination from a recognized Board with a minimum of 50% marks in aggregate. We accept CLAT and DSAT (Dayananda Sagar Scholarship Admission Test) scores.",
             fees: [
-              { label: "Tuition Fee (Annual)", amount: "₹1,92,000" },
-              { label: "Other Fees & Library Deposit", amount: "₹50,000" },
-              { label: "Total (Incl. Library Deposit)", amount: "₹2,42,000" },
+              { label: "Tuition Fee", amount: "₹2,02,000" },
+              { label: "Other Fee", amount: "₹50,000" },
+              { label: "Total Fees", amount: "₹2,52,000" },
             ],
             scholarships:
-              "Scholarships are available for top performers in CLAT, DSAT, and academic excellence.",
+              "Scholarship Available",
           },
           {
-            name: "B.B.A. LL.B (Hons.)",
+            name: "B.B.A. LL.B",
             level: "UG",
+            duration: "5 Years",
             eligibility:
-              "10+2 or equivalent with minimum 50% aggregate (45% for SC/ST & OBC). Applicants may apply through CLAT, DSAT, or DSU direct admissions.",
+              "10+2 or equivalent examination from a recognized Board with a minimum of 50% marks in aggregate. We accept CLAT and DSAT (Dayananda Sagar Scholarship Admission Test) scores.",
             fees: [
-              { label: "Tuition Fee (Annual)", amount: "₹1,92,000" },
-              { label: "Other Fees & Library Deposit", amount: "₹50,000" },
-              { label: "Total (Incl. Library Deposit)", amount: "₹2,42,000" },
+              { label: "Tuition Fee", amount: "₹2,02,000" },
+              { label: "Other Fee", amount: "₹50,000" },
+              { label: "Total Fees", amount: "₹2,52,000" },
             ],
             scholarships:
-              "Merit scholarships offered based on admission test performance and academic record.",
+              "Scholarship Available",
           },
           {
-            name: "LL.B (3-Year)",
+            name: "LL.B",
             level: "UG",
+            duration: "3 Years",
             eligibility:
-              "Graduation or equivalent degree in any discipline with minimum 50% aggregate (45% for SC/ST & OBC).",
+              "Graduation or equivalent examination from a recognized University with a minimum of 50% marks in aggregate.",
             fees: [
-              { label: "Total (Incl. Library Deposit)", amount: "₹1,67,000" },
+              { label: "Tuition Fee", amount: "₹1,37,000" },
+              { label: "Other Fee", amount: "₹40,000" },
+              { label: "Total Fees", amount: "₹1,77,000" },
             ],
           },
+        ],
+        footnotes: [
+          "Fee structure reflects the 2026-27 academic year. All fees shown are annual totals.",
         ],
       },
       {
