@@ -20,8 +20,10 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useTheme } from "@/providers/theme-provider";
 
 export default function History() {
+  const { theme } = useTheme();
   const founders = [
     {
       name: "Late Shri R Dayananda Sagar",
