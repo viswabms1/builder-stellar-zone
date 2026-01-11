@@ -934,7 +934,7 @@ export default function Index() {
             <p className="subheadline text-foreground max-w-2xl mx-auto font-display mb-4">
               Showcasing high-impact, interdisciplinary research across AI, materials science, energy, and health
             </p>
-            <p className="text-xs font-semibold text-brand-magenta/80 tracking-wide">
+            <p className="text-sm font-bold text-brand-magenta tracking-wide">
               Spanning Scopus-indexed research in AI, materials science, renewable energy, and biomedical innovation
             </p>
           </div>
