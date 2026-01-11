@@ -79,7 +79,6 @@ export default function SimpleProgramLookup() {
   const handleReset = () => {
     setSelectedSchool("All");
     setSelectedLevel("All");
-    setSearchQuery("");
   };
 
   return (
