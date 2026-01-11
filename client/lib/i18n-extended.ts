@@ -198,7 +198,6 @@ export const footerTranslations = {
     },
     contactEmails: {
       admissions: "Admissions",
-      dsat: "DSAT / Technical",
       generalEnquiry: "General Enquiry",
     },
     socialLinks: {
@@ -245,7 +244,6 @@ export const footerTranslations = {
     },
     contactEmails: {
       admissions: "ಪ್ರವೇಶ",
-      dsat: "DSAT / ತಾಂತ್ರಿಕ",
       generalEnquiry: "ಸಾಮಾನ್ಯ ವಿಚಾರಣೆ",
     },
     socialLinks: {
@@ -292,7 +290,6 @@ export const footerTranslations = {
     },
     contactEmails: {
       admissions: "प्रवेश",
-      dsat: "DSAT / तकनीकी",
       generalEnquiry: "सामान्य पूछताछ",
     },
     socialLinks: {
