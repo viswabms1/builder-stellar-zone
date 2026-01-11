@@ -253,7 +253,11 @@ export default function History() {
                 className="bg-card/50 backdrop-blur-sm border border-border/50 hover:border-orange-500/30 transition-all duration-300"
               >
                 <CardHeader>
-                  <Badge variant="outline" className="w-fit mb-4 border-orange-500/20 bg-orange-500/10 text-orange-500">
+                  <Badge variant="outline" className={`w-fit mb-4 ${
+                    theme === "light"
+                      ? "border-orange-300 bg-orange-100 text-orange-700"
+                      : "border-orange-500/20 bg-orange-500/10 text-orange-500"
+                  }`}>
                     {era.period}
                   </Badge>
                   <CardTitle className="text-2xl">{era.title}</CardTitle>
@@ -265,7 +269,9 @@ export default function History() {
                   <div className="space-y-2">
                     {era.highlights.map((highlight, idx) => (
                       <div key={idx} className="flex items-center gap-2">
-                        <CheckCircle className="w-4 h-4 text-orange-500 flex-shrink-0" />
+                        <CheckCircle className={`w-4 h-4 flex-shrink-0 ${
+                          theme === "light" ? "text-orange-700" : "text-orange-500"
+                        }`} />
                         <span className="text-sm text-foreground">
                           {highlight}
                         </span>
