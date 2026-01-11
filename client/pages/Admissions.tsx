@@ -419,11 +419,14 @@ function HeroSection() {
 }
 
 function AdmissionRoutesSection() {
+  const { theme } = useTheme();
   return (
     <section className="bg-gradient-to-br from-orange-500/5 via-red-500/5 to-background px-3 py-8" id="choose-pathway">
       <div className="mx-auto max-w-6xl">
         <div className="mb-10 text-center">
-          <h2 className="text-3xl font-bold md:text-4xl">
+          <h2 className={`text-3xl font-bold md:text-4xl ${
+            theme === "light" ? "text-orange-900" : "text-white"
+          }`}>
             Choose Your Admission Pathway
           </h2>
           <p className="mt-3 text-lg text-foreground">
