@@ -639,6 +639,13 @@ export default function Navigation() {
             >
               <Search className="w-4 h-4" />
             </Button>
+            <ThemeToggle
+              className={`rounded-md hover:scale-105 transition-all p-1.5 ${
+                theme === "light"
+                  ? "text-gray-700 hover:text-orange-600 hover:bg-orange-50"
+                  : "text-white/80 hover:text-white hover:bg-white/10"
+              }`}
+            />
             <LanguageSwitcher />
           </div>
         </div>
