@@ -678,12 +678,12 @@ export default function Navigation() {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="flex items-center gap-1 justify-between flex-wrap w-full px-2">
+            <div className="flex items-center gap-0.5 justify-between flex-wrap w-full px-1">
               {navigation.map((item, idx) => {
                 const active = !item.external && isActive(item.href);
                 const isAbout = item.href === "/about";
                 const isAcademics = item.href === "/academics";
-                const sharedClasses = `flex items-center space-x-0.5 px-1 py-0.5 rounded-lg text-sm sm:text-base font-medium font-display transition-all duration-200 group ${
+                const sharedClasses = `flex items-center space-x-0 px-0.5 py-0.5 rounded-lg text-xs sm:text-sm font-medium font-display transition-all duration-200 group ${
                   theme === "light"
                     ? active ||
                       (isAbout && aboutMenuOpen) ||
