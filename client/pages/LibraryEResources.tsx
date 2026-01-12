@@ -156,7 +156,7 @@ export default function LibraryEResources() {
         </Card>
 
         {/* Collections Overview */}
-        <Card className="border-none shadow-lg bg-purple-50 dark:bg-purple-950/30">
+        <Card className="border-none shadow-lg bg-purple-50 dark:bg-purple-950/50">
           <CardHeader>
             <CardTitle className="text-3xl md:text-4xl">Our Digital Collections</CardTitle>
             <CardDescription className="text-lg">
