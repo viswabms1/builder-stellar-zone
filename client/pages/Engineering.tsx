@@ -1345,7 +1345,7 @@ export default function Engineering() {
               <ChevronRight className="h-4 w-4" />
             </a>
           </div>
-          <div className="grid gap-0 md:grid-cols-2 xl:grid-cols-3">
+          <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-4">
             {SUPPORTING_DEPARTMENTS.map((department) => (
               <SupportingDepartmentCard
                 key={department.name}
