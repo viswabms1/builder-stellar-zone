@@ -528,7 +528,8 @@ export default function Navigation() {
                     onMouseLeave={() => setLibraryMenuOpen(false)}
                   >
                     <button
-                      className={`${sharedClasses} justify-center`}
+                      onClick={() => setLibraryMenuOpen(!libraryMenuOpen)}
+                      className={`${sharedClasses} justify-center cursor-pointer`}
                     >
                       <span className="text-center">{item.name}</span>
                       <ChevronDown
