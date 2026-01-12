@@ -100,6 +100,7 @@ const PG_PROGRAMS = [
 ];
 
 const ENGINEERING_DEPARTMENTS: EngineeringDepartment[] = [
+  // CS CLUSTER PROGRAMS (8 programs)
   {
     name: "Computer Science & Engineering",
     area: "Flagship UG Major",
@@ -113,68 +114,6 @@ const ENGINEERING_DEPARTMENTS: EngineeringDepartment[] = [
       "bg-gradient-to-br from-brand-magenta/80 via-black/75 to-black/60 mix-blend-multiply",
     badgeClass:
       "bg-brand-magenta/25 text-foreground/90 border border-white/30 backdrop-blur",
-    panelClass: "bg-black/55 backdrop-blur-xl",
-    featured: true,
-  },
-  {
-    name: "Electronics & Communication Engineering",
-    area: "Intelligent Systems",
-    description:
-      "Design advanced electronics, VLSI, embedded and communication systems empowered by 5G, IoT and semiconductor labs.",
-    image:
-      "https://images.unsplash.com/photo-1580894908361-967195033215?q=80&w=1600&auto=format&fit=crop",
-    link: "/academics/engineering/electronics-communication",
-    highlights: ["VLSI Lab", "5G Research", "IoT Systems"],
-    overlay:
-      "bg-gradient-to-br from-brand-blue/80 via-black/75 to-black/60 mix-blend-multiply",
-    badgeClass:
-      "bg-brand-blue/30 text-foreground/90 border border-white/25 backdrop-blur",
-    panelClass: "bg-black/60 backdrop-blur-xl",
-    featured: true,
-  },
-  {
-    name: "Mechanical Engineering",
-    area: "Core Engineering",
-    description:
-      "Master sustainable manufacturing, automotive systems, robotics and design thinking with hands-on prototyping studios.",
-    image:
-      "https://images.unsplash.com/photo-1517677129300-07b130802f46?q=80&w=1600&auto=format&fit=crop",
-    link: "/academics/engineering/mechanical-engineering",
-    highlights: ["Advanced Manufacturing", "Robotics Studio", "CAE Tools"],
-    overlay:
-      "bg-gradient-to-br from-brand-orange/80 via-black/75 to-black/60 mix-blend-multiply",
-    badgeClass:
-      "bg-brand-orange/35 text-foreground/90 border border-white/25 backdrop-blur",
-    panelClass: "bg-black/65 backdrop-blur-xl",
-  },
-  {
-    name: "Aerospace Engineering",
-    area: "High Altitude Futures",
-    description:
-      "Explore flight mechanics, propulsion, avionics and composite materials in specialised aerospace laboratories.",
-    image:
-      "https://images.unsplash.com/photo-1489515217757-5fd1be406fef?q=80&w=1600&auto=format&fit=crop",
-    link: "/academics/engineering/aerospace-engineering",
-    highlights: ["Wind Tunnel", "Avionics Lab", "UAV Projects"],
-    overlay:
-      "bg-gradient-to-tr from-brand-blue/70 via-black/70 to-black/55 mix-blend-multiply",
-    badgeClass:
-      "bg-brand-blue/35 text-foreground/90 border border-white/25 backdrop-blur",
-    panelClass: "bg-black/55 backdrop-blur-xl",
-  },
-  {
-    name: "AI & Robotics",
-    area: "Interdisciplinary Edge",
-    description:
-      "Build human-centric intelligent systems blending robotics, machine vision, automation and IoT.",
-    image:
-      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1600&auto=format&fit=crop",
-    link: "/academics/engineering/ai-robotics",
-    highlights: ["Robotics Arena", "Machine Vision", "Automation"],
-    overlay:
-      "bg-gradient-to-br from-brand-magenta/70 via-black/70 to-black/55 mix-blend-multiply",
-    badgeClass:
-      "bg-brand-magenta/30 text-foreground/90 border border-white/25 backdrop-blur",
     panelClass: "bg-black/55 backdrop-blur-xl",
   },
   {
@@ -269,6 +208,67 @@ const ENGINEERING_DEPARTMENTS: EngineeringDepartment[] = [
       "bg-gradient-to-br from-brand-magenta/65 via-brand-blue/55 to-black/55 mix-blend-multiply",
     badgeClass:
       "bg-brand-magenta/30 text-foreground/90 border border-white/25 backdrop-blur",
+    panelClass: "bg-black/55 backdrop-blur-xl",
+  },
+  {
+    name: "AI & Robotics",
+    area: "Interdisciplinary Edge",
+    description:
+      "Build human-centric intelligent systems blending robotics, machine vision, automation and IoT.",
+    image:
+      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1600&auto=format&fit=crop",
+    link: "/academics/engineering/ai-robotics",
+    highlights: ["Robotics Arena", "Machine Vision", "Automation"],
+    overlay:
+      "bg-gradient-to-br from-brand-magenta/70 via-black/70 to-black/55 mix-blend-multiply",
+    badgeClass:
+      "bg-brand-magenta/30 text-foreground/90 border border-white/25 backdrop-blur",
+    panelClass: "bg-black/55 backdrop-blur-xl",
+  },
+  // OTHER ENGINEERING DISCIPLINES (3 programs)
+  {
+    name: "Electronics & Communication Engineering",
+    area: "Intelligent Systems",
+    description:
+      "Design advanced electronics, VLSI, embedded and communication systems empowered by 5G, IoT and semiconductor labs.",
+    image:
+      "https://images.unsplash.com/photo-1580894908361-967195033215?q=80&w=1600&auto=format&fit=crop",
+    link: "/academics/engineering/electronics-communication",
+    highlights: ["VLSI Lab", "5G Research", "IoT Systems"],
+    overlay:
+      "bg-gradient-to-br from-brand-blue/80 via-black/75 to-black/60 mix-blend-multiply",
+    badgeClass:
+      "bg-brand-blue/30 text-foreground/90 border border-white/25 backdrop-blur",
+    panelClass: "bg-black/60 backdrop-blur-xl",
+  },
+  {
+    name: "Mechanical Engineering",
+    area: "Core Engineering",
+    description:
+      "Master sustainable manufacturing, automotive systems, robotics and design thinking with hands-on prototyping studios.",
+    image:
+      "https://images.unsplash.com/photo-1517677129300-07b130802f46?q=80&w=1600&auto=format&fit=crop",
+    link: "/academics/engineering/mechanical-engineering",
+    highlights: ["Advanced Manufacturing", "Robotics Studio", "CAE Tools"],
+    overlay:
+      "bg-gradient-to-br from-brand-orange/80 via-black/75 to-black/60 mix-blend-multiply",
+    badgeClass:
+      "bg-brand-orange/35 text-foreground/90 border border-white/25 backdrop-blur",
+    panelClass: "bg-black/65 backdrop-blur-xl",
+  },
+  {
+    name: "Aerospace Engineering",
+    area: "High Altitude Futures",
+    description:
+      "Explore flight mechanics, propulsion, avionics and composite materials in specialised aerospace laboratories.",
+    image:
+      "https://images.unsplash.com/photo-1489515217757-5fd1be406fef?q=80&w=1600&auto=format&fit=crop",
+    link: "/academics/engineering/aerospace-engineering",
+    highlights: ["Wind Tunnel", "Avionics Lab", "UAV Projects"],
+    overlay:
+      "bg-gradient-to-tr from-brand-blue/70 via-black/70 to-black/55 mix-blend-multiply",
+    badgeClass:
+      "bg-brand-blue/35 text-foreground/90 border border-white/25 backdrop-blur",
     panelClass: "bg-black/55 backdrop-blur-xl",
   },
 ];
