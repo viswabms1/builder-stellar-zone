@@ -1122,7 +1122,7 @@ export default function Navigation() {
         {/* Mobile Navigation */}
         {isOpen && (
           <div
-            className={`lg:hidden border-t w-full ${
+            className={`md:hidden border-t w-full ${
               theme === "light"
                 ? "border-orange-200/30 bg-white"
                 : "border-orange-600/20 bg-slate-900"
