@@ -671,12 +671,12 @@ export default function Navigation() {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="flex items-center gap-1.5 justify-between flex-wrap w-full px-3">
+            <div className="flex items-center gap-1 justify-between flex-wrap w-full px-2">
               {navigation.map((item, idx) => {
                 const active = !item.external && isActive(item.href);
                 const isAbout = item.href === "/about";
                 const isAcademics = item.href === "/academics";
-                const sharedClasses = `flex items-center space-x-0.5 px-1.5 py-1 rounded-lg text-sm sm:text-base font-medium font-display transition-all duration-200 group ${
+                const sharedClasses = `flex items-center space-x-0.5 px-1 py-0.5 rounded-lg text-sm sm:text-base font-medium font-display transition-all duration-200 group ${
                   theme === "light"
                     ? active ||
                       (isAbout && aboutMenuOpen) ||
@@ -715,7 +715,7 @@ export default function Navigation() {
                       >
                         <button
                           onClick={() => setAboutMenuOpen(!aboutMenuOpen)}
-                          className={`${sharedClasses} justify-center`}
+                          className={`${sharedClasses} justify-center mx-0.5`}
                         >
                           <span className="max-w-[60px] text-center leading-tight">{item.name}</span>
                           <ChevronDown
@@ -827,7 +827,7 @@ export default function Navigation() {
                           }
                           className={`${sharedClasses} ml-4 justify-center`}
                         >
-                          <span className="max-w-[48px] text-center leading-tight">{item.name}</span>
+                          <span className="max-w-[56px] text-center leading-tight">{item.name}</span>
                           <ChevronDown
                             className={`w-4 h-4 transition-transform ${academicsMenuOpen ? "rotate-180" : ""}`}
                           />
