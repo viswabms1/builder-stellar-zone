@@ -827,7 +827,7 @@ export default function Navigation() {
                           }
                           className={`${sharedClasses} ml-4 justify-center`}
                         >
-                          <span className="max-w-[60px] text-center leading-tight">{item.name}</span>
+                          <span className="max-w-[48px] text-center leading-tight">{item.name}</span>
                           <ChevronDown
                             className={`w-4 h-4 transition-transform ${academicsMenuOpen ? "rotate-180" : ""}`}
                           />
