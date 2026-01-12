@@ -1075,7 +1075,7 @@ function HeroVideo() {
             <p className="text-lg sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-1 sm:mb-4 uppercase tracking-widest font-display">
               School of Engineering
             </p>
-            <h1 className="text-xs sm:text-base md:text-base text-white/80 mb-2 sm:mb-6 leading-tight font-display">
+            <h1 className="text-xs sm:text-base md:text-base text-white/80 mb-1 sm:mb-3 leading-tight font-display">
               Powered by NVIDIA DGX B200 — enterprise-scale AI compute for engineering education and research
             </h1>
             <div className="flex flex-wrap gap-3 sm:gap-4 text-xs sm:text-sm text-white/70">
@@ -1136,7 +1136,7 @@ function HeroVideo() {
           <p className="text-lg sm:text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-1 sm:mb-4 uppercase tracking-widest font-display">
             School of Engineering
           </p>
-          <h1 className="text-xs sm:text-base md:text-base text-foreground/80 mb-2 sm:mb-6 leading-tight font-display">
+          <h1 className="text-xs sm:text-base md:text-base text-foreground/80 mb-1 sm:mb-3 leading-tight font-display">
             Powered by NVIDIA DGX B200 — enterprise-scale AI compute for engineering education and research
           </h1>
           <div className="flex flex-wrap gap-3 sm:gap-4 text-xs sm:text-sm text-foreground/70">
