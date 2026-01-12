@@ -1397,19 +1397,27 @@ export default function Engineering() {
                   {/* Message Content */}
                   <div className="space-y-4 pt-4 border-t border-border/20">
                     <div>
-                      <p className="font-display text-lg font-bold text-brand-magenta mb-3">
+                      <p className="font-display text-lg font-bold text-brand-magenta mb-4">
                         BE YOU • BE THE DIFFERENCE!!!
                       </p>
                     </div>
-                    <ul className="space-y-3 text-sm text-foreground/85 font-body list-disc list-inside leading-relaxed">
-                      <li>Welcome to the new way of learning at School of Engineering (SoE). We are committed to helping you make a positive difference in the world.</li>
-                      <li>Outstanding education that equips students with skills, experience, and confidence to stand out from the crowd.</li>
-                      <li>Culture of Excellence including Interdisciplinary learning, Research, Creativity, Innovations, and Entrepreneurship on Cutting-Edge Technologies.</li>
-                      <li>World-Class, Student-centric, Research-centric Education where students become independent critical thinkers with societal and ethical responsibility.</li>
-                      <li>We value ability, not background. Support for all students to achieve their potential and gain knowledge, expertise, and employability skills for their chosen career path.</li>
-                      <li>Join us at School of Engineering, DSU, for a transformative education experience.</li>
-                    </ul>
-                    <p className="font-display font-semibold text-brand-magenta pt-2 text-sm">
+                    <div className="space-y-3 text-sm text-foreground/85 font-body leading-relaxed">
+                      <p>
+                        Welcome to the new way of learning at School of Engineering (SoE) of Dayananda Sagar University. We are committed to helping you make a positive difference in the world. We provide outstanding education that equips students with skills, experience, and confidence required to stand out from the crowd.
+                      </p>
+                      <p className="font-semibold text-foreground mt-4">
+                        Our core values include:
+                      </p>
+                      <ul className="space-y-2 text-sm text-foreground/85 font-body list-disc list-inside ml-2">
+                        <li>Culture of Excellence in Interdisciplinary learning, Research, Creativity, and Innovation</li>
+                        <li>Student-centric, Research-centric World-Class Education</li>
+                        <li>Developing independent critical thinkers with societal and ethical responsibility</li>
+                      </ul>
+                      <p className="pt-2">
+                        We value ability, not background. We support all students to achieve their potential and gain the knowledge, expertise, and employability skills for their chosen career path. Upon completion of your engineering degree at SoE, you will be well-prepared for your professional journey.
+                      </p>
+                    </div>
+                    <p className="font-display font-semibold text-brand-magenta pt-4 text-sm">
                       BEST WISHES!
                     </p>
                   </div>
