@@ -660,7 +660,7 @@ export default function Navigation() {
         }`}
       >
         <div className="w-full overflow-visible">
-          <div className="flex flex-col items-center justify-between h-auto lg:flex-row lg:items-center md:justify-center">
+          <div className="flex flex-row items-center justify-between h-auto md:flex-col md:items-center md:justify-center lg:flex-row">
 
             {/* Mobile Logo - Left side */}
             <Link
