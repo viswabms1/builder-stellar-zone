@@ -157,13 +157,13 @@ export default function LibraryEResources() {
 
         {/* Collections Overview */}
         <Card className="border-none shadow-lg bg-purple-50 dark:bg-slate-800">
-          <CardHeader>
+          <CardHeader style={{ backgroundColor: "rgba(0, 0, 0, 1)" }}>
             <CardTitle className="text-3xl md:text-4xl">Our Digital Collections</CardTitle>
             <CardDescription className="text-lg">
               Comprehensive resources across all academic disciplines
             </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-4">
+          <CardContent className="space-y-4" style={{ backgroundColor: "rgba(0, 0, 0, 0.7)" }}>
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <h4 className="font-semibold text-lg mb-2">Subject Areas Covered</h4>
