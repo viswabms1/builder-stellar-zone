@@ -1098,7 +1098,7 @@ export default function Navigation() {
 
 
             {/* Mobile menu button */}
-            <div className="lg:hidden">
+            <div className="md:hidden">
               <Button
                 variant="ghost"
                 size="sm"
