@@ -1075,14 +1075,14 @@ function HeroVideo() {
               School of Engineering
             </p>
             <h1 className="text-xs sm:text-base md:text-base text-white/80 mb-2 sm:mb-6 leading-tight font-display">
-              Shape the Future of Technology
+              Powered by NVIDIA DGX B200 — enterprise-scale AI compute for engineering education and research
             </h1>
             <div className="flex flex-wrap gap-3 sm:gap-4 text-xs sm:text-sm text-white/70">
               <span>NAAC A+</span>
               <span>•</span>
               <span>Industry-linked Programs</span>
               <span>•</span>
-              <span>AI-first Curriculum</span>
+              <span>GPU-accelerated Workloads</span>
             </div>
           </div>
 
@@ -1138,14 +1138,14 @@ function HeroVideo() {
             School of Engineering
           </p>
           <h1 className="text-xs sm:text-base md:text-base text-foreground/80 mb-2 sm:mb-6 leading-tight font-display">
-            Shape the Future of Technology
+            Powered by NVIDIA DGX B200 — enterprise-scale AI compute for engineering education and research
           </h1>
           <div className="flex flex-wrap gap-3 sm:gap-4 text-xs sm:text-sm text-foreground/70">
             <span>NAAC A+</span>
             <span>•</span>
             <span>Industry-linked Programs</span>
             <span>•</span>
-            <span>AI-first Curriculum</span>
+            <span>GPU-accelerated Workloads</span>
           </div>
         </div>
 
@@ -1745,33 +1745,33 @@ export default function Engineering() {
               Why Choose DSU, School of Engineering?
             </h2>
             <p className="mt-4 text-sm text-foreground/70 font-body max-w-3xl">
-              Backed by accreditation, cutting-edge research facilities, and industry-aligned education that shapes your career.
+              DSU, School of Engineering operates a centralized AI compute backbone built on NVIDIA DGX B200, enabling large-scale AI, simulation, and data-intensive workloads across multiple engineering labs.
             </p>
           </div>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {/* Industry Labs */}
+            {/* NVIDIA DGX B200 Infrastructure - FIRST */}
+            <Card className="rounded-2xl border border-brand-blue/20 bg-brand-blue/5 backdrop-blur lg:col-span-1 lg:row-span-1">
+              <CardHeader>
+                <CardTitle className="font-display flex items-center gap-2">
+                  <Cpu className="h-5 w-5 text-brand-blue" />
+                  NVIDIA DGX B200 Infrastructure
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="text-sm text-foreground/80 font-body">
+                GPU-accelerated workloads on NVIDIA DGX B200 for AI, machine learning, and data-intensive engineering simulations. Enterprise-scale compute backbone supporting all labs.
+              </CardContent>
+            </Card>
+
+            {/* Engineering Labs & Programs */}
             <Card className="rounded-2xl border border-brand-magenta/20 bg-brand-magenta/5 backdrop-blur">
               <CardHeader>
                 <CardTitle className="font-display flex items-center gap-2">
                   <Beaker className="h-5 w-5 text-brand-magenta" />
-                  Industry Labs
+                  Engineering Labs & Programs
                 </CardTitle>
               </CardHeader>
               <CardContent className="text-sm text-foreground/80 font-body">
-                AI Infrastructure Partner: NVIDIA. Hands-on research and development with enterprise-scale AI compute capabilities.
-              </CardContent>
-            </Card>
-
-            {/* AI-First Infrastructure */}
-            <Card className="rounded-2xl border border-brand-blue/20 bg-brand-blue/5 backdrop-blur">
-              <CardHeader>
-                <CardTitle className="font-display flex items-center gap-2">
-                  <Cpu className="h-5 w-5 text-brand-blue" />
-                  AI-First Infrastructure
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="text-sm text-foreground/80 font-body">
-                The School of Engineering at DSU hosts multiple engineering laboratories, with AI-intensive workloads supported on NVIDIA DGX B200 infrastructure.
+                Hands-on research and development across 10+ engineering disciplines powered by DGX B200 infrastructure.
               </CardContent>
             </Card>
 
@@ -1784,46 +1784,46 @@ export default function Engineering() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="text-sm text-foreground/80 font-body">
-                Active research in aerospace, embedded systems, robotics, healthcare technology, and sustainable engineering. Research initiatives supported by AI infrastructure.
-              </CardContent>
-            </Card>
-
-            {/* Career Readiness */}
-            <Card className="rounded-2xl border border-brand-magenta/20 bg-brand-magenta/5 backdrop-blur">
-              <CardHeader>
-                <CardTitle className="font-display flex items-center gap-2">
-                  <GraduationCap className="h-5 w-5 text-brand-magenta" />
-                  Career Readiness
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="text-sm text-foreground/80 font-body">
-                Industry-aligned curriculum and strong placement outcomes. Strong connections with leading global tech companies and enterprises.
+                Active research in aerospace, embedded systems, robotics, healthcare technology, and sustainable engineering supported by DGX B200 acceleration.
               </CardContent>
             </Card>
 
             {/* NAAC Accreditation */}
-            <Card className="rounded-2xl border border-brand-blue/20 bg-brand-blue/5 backdrop-blur">
+            <Card className="rounded-2xl border border-brand-magenta/20 bg-brand-magenta/5 backdrop-blur">
               <CardHeader>
                 <CardTitle className="font-display flex items-center gap-2">
-                  <Award className="h-5 w-5 text-brand-blue" />
+                  <Award className="h-5 w-5 text-brand-magenta" />
                   NAAC Accredited
                 </CardTitle>
               </CardHeader>
               <CardContent className="text-sm text-foreground/80 font-body">
-                NAAC A+ accreditation backed by continuous quality assurance and innovation.
+                NAAC A+ accreditation backed by continuous quality assurance, research depth, and infrastructure innovation.
               </CardContent>
             </Card>
 
             {/* Holistic Education */}
-            <Card className="rounded-2xl border border-brand-orange/20 bg-brand-orange/5 backdrop-blur">
+            <Card className="rounded-2xl border border-brand-blue/20 bg-brand-blue/5 backdrop-blur">
               <CardHeader>
                 <CardTitle className="font-display flex items-center gap-2">
-                  <Network className="h-5 w-5 text-brand-orange" />
+                  <Network className="h-5 w-5 text-brand-blue" />
                   Holistic Education
                 </CardTitle>
               </CardHeader>
               <CardContent className="text-sm text-foreground/80 font-body">
-                Strong fundamentals in science, math, and humanities complementing technical depth.
+                Strong fundamentals in science, math, and humanities complementing technical depth and industry preparation.
+              </CardContent>
+            </Card>
+
+            {/* Career Readiness - LAST */}
+            <Card className="rounded-2xl border border-brand-orange/20 bg-brand-orange/5 backdrop-blur">
+              <CardHeader>
+                <CardTitle className="font-display flex items-center gap-2">
+                  <GraduationCap className="h-5 w-5 text-brand-orange" />
+                  Career Readiness
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="text-sm text-foreground/80 font-body">
+                Industry-aligned curriculum with strong placement outcomes. Connections with leading global tech companies, AI-focused enterprises, and startups.
               </CardContent>
             </Card>
           </div>
