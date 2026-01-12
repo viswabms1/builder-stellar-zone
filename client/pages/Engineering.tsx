@@ -790,6 +790,11 @@ function DepartmentCard({ department }: { department: EngineeringDepartment }) {
                 </span>
               ))}
             </div>
+            {department.differentiator && (
+              <p className="text-xs text-white/70 italic font-body">
+                {department.differentiator}
+              </p>
+            )}
             <span className="inline-flex items-center gap-2 text-sm font-medium text-white/90 transition-colors group-hover:text-brand-magenta">
               Explore department
               <ChevronRight className="h-4 w-4 transition-colors group-hover:text-brand-magenta" />
@@ -933,6 +938,11 @@ function ProgramCardComponent({ program }: { program: ProgramCard }) {
                 </span>
               ))}
             </div>
+            {program.differentiator && (
+              <p className="text-xs text-white/70 italic font-body">
+                {program.differentiator}
+              </p>
+            )}
             <span className="inline-flex items-center gap-2 text-sm font-medium text-white/90 transition-colors group-hover:text-brand-magenta">
               Explore programme
               <ChevronRight className="h-4 w-4 transition-colors group-hover:text-brand-magenta" />
