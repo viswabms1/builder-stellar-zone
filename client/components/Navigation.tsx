@@ -424,19 +424,193 @@ export default function Navigation() {
         <div className="w-full mx-auto px-2 flex items-center justify-end gap-0">
           {/* All Top Menu Items in one continuous row */}
           <div className="flex items-center gap-0.5 sm:gap-1 flex-nowrap overflow-x-auto scrollbar-hide order-2">
-            {topMenuItems.map((item, idx) => (
-              <Link
-                key={idx}
-                to={item.href}
-                className={`text-xs sm:text-sm font-medium transition-all duration-200 whitespace-nowrap px-1.5 sm:px-2.5 py-1.5 sm:py-2 rounded-md hover:scale-105 flex-shrink-0 ${
-                  theme === "light"
-                    ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
-                    : "text-white/80 hover:text-white hover:bg-white/10"
-                }`}
-              >
-                {item.name}
-              </Link>
-            ))}
+            {topMenuItems.map((item, idx) => {
+              const isAlumni = item.href === "/alumni";
+              const isLibrary = item.href === "/library";
+              const sharedClasses = `text-xs sm:text-sm font-medium transition-all duration-200 whitespace-nowrap px-1.5 sm:px-2.5 py-1.5 sm:py-2 rounded-md hover:scale-105 flex-shrink-0 flex items-center gap-0.5 ${
+                theme === "light"
+                  ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
+                  : "text-white/80 hover:text-white hover:bg-white/10"
+              }`;
+
+              if (isAlumni) {
+                return (
+                  <div
+                    key={idx}
+                    className="relative group"
+                    onMouseEnter={() => setAlumniMenuOpen(true)}
+                    onMouseLeave={() => setAlumniMenuOpen(false)}
+                  >
+                    <button
+                      onClick={() => setAlumniMenuOpen(!alumniMenuOpen)}
+                      className={sharedClasses}
+                    >
+                      <span>{item.name}</span>
+                      <ChevronDown
+                        className={`w-3 h-3 transition-transform ${alumniMenuOpen ? "rotate-180" : ""}`}
+                      />
+                    </button>
+
+                    {/* Alumni Dropdown */}
+                    <div
+                      className={`absolute left-0 top-full mt-2 w-auto min-w-max max-w-2xl rounded-2xl shadow-2xl transition-all duration-300 py-4 px-4 max-h-[600px] overflow-y-auto backdrop-blur-sm z-[9999] ${
+                        alumniMenuOpen
+                          ? "opacity-100 visible"
+                          : "opacity-0 invisible"
+                      } ${
+                        theme === "light"
+                          ? "bg-white/95 border border-purple-200/50"
+                          : "bg-slate-800/95 border border-purple-600/30"
+                      }`}
+                      style={{
+                        scrollbarWidth: "thin",
+                        scrollbarColor:
+                          theme === "light"
+                            ? "rgba(168, 85, 247, 0.5) rgba(168, 85, 247, 0.1)"
+                            : "rgba(255, 255, 255, 0.3) rgba(255, 255, 255, 0.1)",
+                      }}
+                    >
+                      <div className="grid grid-cols-2 gap-2">
+                        {alumniSubmenus.map((submenu, subIdx) => {
+                          const cardColors = [
+                            {
+                              bg:
+                                theme === "light"
+                                  ? "bg-purple-50"
+                                  : "bg-purple-900/20",
+                              border:
+                                "border-purple-200/50 dark:border-purple-600/30",
+                              text: "text-purple-900 dark:text-purple-100",
+                            },
+                            {
+                              bg:
+                                theme === "light"
+                                  ? "bg-pink-50"
+                                  : "bg-pink-900/20",
+                              border:
+                                "border-pink-200/50 dark:border-pink-600/30",
+                              text: "text-pink-900 dark:text-pink-100",
+                            },
+                          ];
+                          const colors = cardColors[subIdx % cardColors.length];
+
+                          return (
+                            <Link
+                              key={submenu.name}
+                              to={submenu.href}
+                              onClick={() => setAlumniMenuOpen(false)}
+                              className={`${colors.bg} ${colors.border} border rounded-lg p-3 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 group block text-xs sm:text-sm font-semibold ${
+                                theme === "light"
+                                  ? "text-gray-900 group-hover:text-purple-600"
+                                  : "text-white group-hover:text-purple-200"
+                              }`}
+                            >
+                              {submenu.name}
+                            </Link>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  </div>
+                );
+              }
+
+              if (isLibrary) {
+                return (
+                  <div
+                    key={idx}
+                    className="relative group"
+                    onMouseEnter={() => setLibraryMenuOpen(true)}
+                    onMouseLeave={() => setLibraryMenuOpen(false)}
+                  >
+                    <button
+                      onClick={() => setLibraryMenuOpen(!libraryMenuOpen)}
+                      className={sharedClasses}
+                    >
+                      <span>{item.name}</span>
+                      <ChevronDown
+                        className={`w-3 h-3 transition-transform ${libraryMenuOpen ? "rotate-180" : ""}`}
+                      />
+                    </button>
+
+                    {/* Library Dropdown */}
+                    <div
+                      className={`absolute left-0 top-full mt-2 w-auto min-w-max max-w-2xl rounded-2xl shadow-2xl transition-all duration-300 py-4 px-4 max-h-[600px] overflow-y-auto backdrop-blur-sm z-[9999] ${
+                        libraryMenuOpen
+                          ? "opacity-100 visible"
+                          : "opacity-0 invisible"
+                      } ${
+                        theme === "light"
+                          ? "bg-white/95 border border-blue-200/50"
+                          : "bg-slate-800/95 border border-blue-600/30"
+                      }`}
+                      style={{
+                        scrollbarWidth: "thin",
+                        scrollbarColor:
+                          theme === "light"
+                            ? "rgba(59, 130, 246, 0.5) rgba(59, 130, 246, 0.1)"
+                            : "rgba(255, 255, 255, 0.3) rgba(255, 255, 255, 0.1)",
+                      }}
+                    >
+                      <div className="grid grid-cols-2 gap-2">
+                        {librarySubmenus.map((submenu, subIdx) => {
+                          const cardColors = [
+                            {
+                              bg:
+                                theme === "light"
+                                  ? "bg-blue-50"
+                                  : "bg-blue-900/20",
+                              border:
+                                "border-blue-200/50 dark:border-blue-600/30",
+                              text: "text-blue-900 dark:text-blue-100",
+                            },
+                            {
+                              bg:
+                                theme === "light"
+                                  ? "bg-cyan-50"
+                                  : "bg-cyan-900/20",
+                              border:
+                                "border-cyan-200/50 dark:border-cyan-600/30",
+                              text: "text-cyan-900 dark:text-cyan-100",
+                            },
+                          ];
+                          const colors = cardColors[subIdx % cardColors.length];
+
+                          return (
+                            <Link
+                              key={submenu.name}
+                              to={submenu.href}
+                              onClick={() => setLibraryMenuOpen(false)}
+                              className={`${colors.bg} ${colors.border} border rounded-lg p-3 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 group block text-xs sm:text-sm font-semibold ${
+                                theme === "light"
+                                  ? "text-gray-900 group-hover:text-blue-600"
+                                  : "text-white group-hover:text-blue-200"
+                              }`}
+                            >
+                              {submenu.name}
+                            </Link>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  </div>
+                );
+              }
+
+              return (
+                <Link
+                  key={idx}
+                  to={item.href}
+                  className={`text-xs sm:text-sm font-medium transition-all duration-200 whitespace-nowrap px-1.5 sm:px-2.5 py-1.5 sm:py-2 rounded-md hover:scale-105 flex-shrink-0 ${
+                    theme === "light"
+                      ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
+                      : "text-white/80 hover:text-white hover:bg-white/10"
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              );
+            })}
             <a
               href="https://ums.mydsi.org/Login.aspx/DSU"
               target="_blank"
