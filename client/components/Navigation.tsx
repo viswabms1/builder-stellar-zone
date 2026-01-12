@@ -665,7 +665,7 @@ export default function Navigation() {
             {/* Mobile Logo - Left side */}
             <Link
               to="/"
-              className="md:hidden flex-shrink-0 flex items-center justify-start px-1"
+              className="md:hidden flex-shrink-0 flex items-center justify-start px-1 -mt-1"
             >
               <img
                 src={
