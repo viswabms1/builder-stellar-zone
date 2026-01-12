@@ -11,6 +11,7 @@ export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [aboutMenuOpen, setAboutMenuOpen] = useState(false);
   const [academicsMenuOpen, setAcademicsMenuOpen] = useState(false);
+  const [libraryMenuOpen, setLibraryMenuOpen] = useState(false);
   const [expandedSubGroups, setExpandedSubGroups] = useState<Set<string>>(
     new Set(),
   );
