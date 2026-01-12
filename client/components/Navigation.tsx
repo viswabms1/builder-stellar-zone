@@ -70,6 +70,14 @@ export default function Navigation() {
     { name: "Facilities", href: "/about/facilities" },
   ];
 
+  const alumniSubmenus = [
+    { name: "Alumni Home", href: "/alumni" },
+    { name: "Vision & Mission", href: "/alumni/vision-mission" },
+    { name: "Alumni Events", href: "/alumni/events" },
+    { name: "Newsletter", href: "/alumni/newsletter" },
+    { name: "Contact & Support", href: "/alumni/contact" },
+  ];
+
   const librarySubmenus = [
     { name: "Library Home", href: "/library" },
     { name: "Vision & Mission", href: "/library/vision-mission" },
