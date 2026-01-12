@@ -817,7 +817,7 @@ export default function Navigation() {
                           onClick={() =>
                             setAcademicsMenuOpen(!academicsMenuOpen)
                           }
-                          className={`${sharedClasses} ml-4 justify-center`}
+                          className={`${sharedClasses} ml-0 sm:ml-4 justify-center`}
                         >
                           <span className="max-w-[85px] text-center leading-snug">{item.name}</span>
                           <ChevronDown
