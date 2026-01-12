@@ -659,7 +659,7 @@ export default function Navigation() {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="flex items-center gap-1 justify-between flex-wrap w-full px-4">
+            <div className="flex items-center gap-2 justify-between flex-wrap w-full px-4">
               {navigation.map((item, idx) => {
                 const active = !item.external && isActive(item.href);
                 const isAbout = item.href === "/about";
