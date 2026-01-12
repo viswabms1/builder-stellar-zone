@@ -427,7 +427,7 @@ export default function Navigation() {
       >
         <div className="w-full mx-auto px-2 flex items-center justify-end gap-0">
           {/* All Top Menu Items in one continuous row */}
-          <div className="flex items-center gap-0.5 sm:gap-1 flex-nowrap overflow-x-auto scrollbar-hide order-2">
+          <div className="flex items-center gap-0.5 sm:gap-1 flex-nowrap overflow-x-auto overflow-y-visible scrollbar-hide order-2">
             {topMenuItems.map((item, idx) => {
               const isAlumni = item.href === "/alumni";
               const isLibrary = item.href === "/library";
