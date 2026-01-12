@@ -1338,7 +1338,7 @@ export default function Engineering() {
           </div>
           <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-4">
             {SUPPORTING_DEPARTMENTS.map((department) => (
-              <SupportingDepartmentCard
+              <FoundationalDepartmentCard
                 key={department.name}
                 department={department}
               />
