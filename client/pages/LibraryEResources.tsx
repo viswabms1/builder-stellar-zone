@@ -156,7 +156,7 @@ export default function LibraryEResources() {
         </Card>
 
         {/* Collections Overview */}
-        <Card className="border-none shadow-lg bg-purple-50 dark:bg-purple-950/50">
+        <Card className="border-none shadow-lg bg-purple-50 dark:bg-slate-800">
           <CardHeader>
             <CardTitle className="text-3xl md:text-4xl">Our Digital Collections</CardTitle>
             <CardDescription className="text-lg">
@@ -205,9 +205,9 @@ export default function LibraryEResources() {
             <p className="text-foreground/70">
               If you experience any issues accessing our digital resources or need assistance, please contact our Reference Services team:
             </p>
-            <div className="bg-blue-50 dark:bg-blue-950/30 p-4 rounded-lg">
-              <p className="font-semibold">Email: <a href="mailto:e-resources@dsu.edu.in" className="text-blue-600 hover:text-blue-700">e-resources@dsu.edu.in</a></p>
-              <p className="font-semibold">Reference Desk: <a href="mailto:library@dsu.edu.in" className="text-blue-600 hover:text-blue-700">library@dsu.edu.in</a></p>
+            <div className="bg-blue-50 dark:bg-slate-700 p-4 rounded-lg">
+              <p className="font-semibold">Email: <a href="mailto:e-resources@dsu.edu.in" className="text-blue-600 dark:text-blue-400 hover:text-blue-700">e-resources@dsu.edu.in</a></p>
+              <p className="font-semibold">Reference Desk: <a href="mailto:library@dsu.edu.in" className="text-blue-600 dark:text-blue-400 hover:text-blue-700">library@dsu.edu.in</a></p>
             </div>
           </CardContent>
         </Card>
