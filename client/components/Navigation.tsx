@@ -1111,16 +1111,6 @@ export default function Navigation() {
               })}
             </div>
 
-            {/* Desktop Actions */}
-            <div className="hidden lg:flex items-center space-x-3">
-              <ThemeToggle
-                className={`rounded-lg hover:scale-105 transition-all ${
-                  theme === "light"
-                    ? "text-gray-700 hover:text-orange-600 hover:bg-orange-50"
-                    : "text-white/80 hover:text-white hover:bg-white/10"
-                }`}
-              />
-            </div>
 
             {/* Mobile menu button */}
             <div className="lg:hidden">
