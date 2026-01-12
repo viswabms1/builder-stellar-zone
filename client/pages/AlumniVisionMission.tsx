@@ -139,13 +139,13 @@ export default function AlumniVisionMission() {
 
         {/* Alumni Support */}
         <Card className="border-none shadow-lg bg-blue-50 dark:bg-slate-800 mb-8">
-          <CardHeader>
+          <CardHeader style={{ backgroundColor: "rgba(0, 0, 0, 1)" }}>
             <CardTitle className="text-3xl">How We Support Alumni</CardTitle>
             <CardDescription className="text-lg">
               The services and programs available to DSU alumni
             </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-6">
+          <CardContent className="space-y-6" style={{ backgroundColor: "rgba(0, 0, 0, 0.6)" }}>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="space-y-3">
                 <h4 className="font-semibold text-lg">Professional Development</h4>
