@@ -253,6 +253,12 @@
     }
   }
 
+  /* Hero buttons - horizontal layout in landscape */
+  .hero-title-inside .hidden.md\:flex {
+    flex-direction: row !important;
+    gap: 1rem !important;
+  }
+
   /* Hero title positioning - landscape vs portrait */
   .hero-title-inside {
     display: none !important;
