@@ -662,6 +662,22 @@ export default function Navigation() {
         <div className="w-full overflow-visible">
           <div className="flex flex-col items-center justify-center h-auto lg:flex-row">
 
+            {/* Mobile Logo - Left side */}
+            <Link
+              to="/"
+              className="md:hidden flex-shrink-0 flex items-center justify-start px-1"
+            >
+              <img
+                src={
+                  theme === "light"
+                    ? "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F359db0babe0948ae98ad938f84bc1474?format=webp&width=800"
+                    : "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F0caf0bf29be6421997005f26cdaae0ed?format=webp&width=800"
+                }
+                alt="Dayananda Sagar University Logo"
+                className="h-10 w-auto object-contain"
+              />
+            </Link>
+
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-0.5 sm:gap-1 justify-between flex-wrap w-full px-1 sm:px-2 py-1 sm:py-2">
               {navigation.map((item, idx) => {
