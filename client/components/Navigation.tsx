@@ -1106,18 +1106,6 @@ export default function Navigation() {
 
             {/* Desktop Actions */}
             <div className="hidden lg:flex items-center space-x-3">
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={() => setSearchOpen(true)}
-                className={`gap-2 border rounded-lg hover:scale-105 transition-all ${
-                  theme === "light"
-                    ? "text-gray-700 hover:text-orange-600 hover:bg-orange-50 border-gray-300 hover:border-orange-400"
-                    : "text-white/80 hover:text-white hover:bg-white/10 border-white/20 hover:border-white/40"
-                }`}
-              >
-                <Search className="w-4 h-4" />
-              </Button>
               <ThemeToggle
                 className={`rounded-lg hover:scale-105 transition-all ${
                   theme === "light"
