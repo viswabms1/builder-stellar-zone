@@ -668,16 +668,12 @@ export default function Navigation() {
                   theme === "light"
                     ? active ||
                       (isAbout && aboutMenuOpen) ||
-                      (isAcademics && academicsMenuOpen) ||
-                      (isAlumni && alumniMenuOpen) ||
-                      (isLibrary && libraryMenuOpen)
+                      (isAcademics && academicsMenuOpen)
                       ? "bg-orange-100 text-orange-900 font-semibold shadow-sm"
                       : "text-gray-700 hover:text-orange-600 hover:bg-orange-50"
                     : active ||
                         (isAbout && aboutMenuOpen) ||
-                        (isAcademics && academicsMenuOpen) ||
-                        (isAlumni && alumniMenuOpen) ||
-                        (isLibrary && libraryMenuOpen)
+                        (isAcademics && academicsMenuOpen)
                       ? "bg-white/20 text-white font-semibold shadow-sm"
                       : "text-white/90 hover:text-white hover:bg-white/10"
                 }`;
