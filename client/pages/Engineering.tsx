@@ -1077,6 +1077,13 @@ function HeroVideo() {
             <h1 className="text-xs sm:text-base md:text-base text-white/80 mb-2 sm:mb-6 leading-tight font-display">
               Shape the Future of Technology
             </h1>
+            <div className="flex flex-wrap gap-3 sm:gap-4 text-xs sm:text-sm text-white/70">
+              <span>NAAC A+</span>
+              <span>•</span>
+              <span>Industry-linked Programs</span>
+              <span>•</span>
+              <span>AI-first Curriculum</span>
+            </div>
           </div>
 
           {/* Buttons inside video - visible on md and up */}
@@ -1133,6 +1140,13 @@ function HeroVideo() {
           <h1 className="text-xs sm:text-base md:text-base text-foreground/80 mb-2 sm:mb-6 leading-tight font-display">
             Shape the Future of Technology
           </h1>
+          <div className="flex flex-wrap gap-3 sm:gap-4 text-xs sm:text-sm text-foreground/70">
+            <span>NAAC A+</span>
+            <span>•</span>
+            <span>Industry-linked Programs</span>
+            <span>•</span>
+            <span>AI-first Curriculum</span>
+          </div>
         </div>
 
         {/* Buttons below video - visible only on mobile */}
