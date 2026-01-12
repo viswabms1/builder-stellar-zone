@@ -517,26 +517,19 @@ export default function Navigation() {
                   <div
                     key={idx}
                     className="relative group"
-                    onMouseEnter={() => setLibraryMenuOpen(true)}
-                    onMouseLeave={() => setLibraryMenuOpen(false)}
                   >
                     <button
-                      onClick={() => setLibraryMenuOpen(!libraryMenuOpen)}
-                      className={`${sharedClasses} justify-center cursor-pointer`}
+                      className={`${sharedClasses} justify-center cursor-pointer group-hover:text-blue-600`}
                     >
                       <span className="text-center">{item.name}</span>
                       <ChevronDown
-                        className={`w-3 h-3 transition-transform ${libraryMenuOpen ? "rotate-180" : ""}`}
+                        className={`w-3 h-3 transition-transform group-hover:rotate-180`}
                       />
                     </button>
 
                     {/* Library Dropdown */}
                     <div
-                      className={`absolute left-0 top-full mt-2 w-auto min-w-max max-w-2xl rounded-2xl shadow-2xl transition-all duration-300 py-4 px-4 max-h-[600px] overflow-y-auto backdrop-blur-sm z-[9999] ${
-                        libraryMenuOpen
-                          ? "opacity-100 visible pointer-events-auto"
-                          : "opacity-0 invisible pointer-events-none"
-                      } ${
+                      className={`absolute left-0 top-full mt-2 w-auto min-w-max max-w-2xl rounded-2xl shadow-2xl transition-all duration-300 py-4 px-4 max-h-[600px] overflow-y-auto backdrop-blur-sm z-[9999] opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:pointer-events-auto pointer-events-none ${
                         theme === "light"
                           ? "bg-white/95 border border-blue-200/50"
                           : "bg-slate-800/95 border border-blue-600/30"
