@@ -833,7 +833,7 @@ function SupportingDepartmentCard({
       <div className={`absolute inset-0 ${overlayClasses}`} />
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent" />
       <div className={`absolute left-6 top-3 z-20 ${badgeClasses}`}>
-        Supporting Department
+        Foundational Department
       </div>
       <div className="relative z-10 flex h-[85%] flex-col justify-end p-4 text-white">
         <div className={`${panelClasses} flex flex-col h-full`}>
