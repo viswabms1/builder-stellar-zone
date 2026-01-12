@@ -207,7 +207,7 @@
 
   @media (min-width: 768px) and (orientation: landscape) {
     .hero-video-container {
-      height: 55vh;
+      height: 75vh;
       overflow: visible;
     }
   }
@@ -221,7 +221,7 @@
 
   @media (min-width: 1024px) and (orientation: landscape) {
     .hero-video-container {
-      height: 60vh;
+      height: 85vh;
       overflow: visible;
     }
   }
