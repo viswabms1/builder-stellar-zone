@@ -491,12 +491,14 @@ export default function Navigation() {
                 const active = !item.external && isActive(item.href);
                 const isAbout = item.href === "/about";
                 const isAcademics = item.href === "/academics";
+                const isAlumni = item.href === "/alumni";
                 const isLibrary = item.href === "/library";
                 const sharedClasses = `flex items-center space-x-1 px-3 py-2 rounded-lg text-sm font-medium font-display transition-all duration-200 group ${
                   theme === "light"
                     ? active ||
                       (isAbout && aboutMenuOpen) ||
                       (isAcademics && academicsMenuOpen) ||
+                      (isAlumni && alumniMenuOpen) ||
                       (isLibrary && libraryMenuOpen)
                       ? "bg-orange-100 text-orange-900 font-semibold shadow-sm"
                       : "text-gray-700 hover:text-orange-600 hover:bg-orange-50"
