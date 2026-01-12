@@ -807,7 +807,7 @@ function DepartmentCard({ department }: { department: EngineeringDepartment }) {
   );
 }
 
-function SupportingDepartmentCard({
+function FoundationalDepartmentCard({
   department,
 }: {
   department: SupportingDepartment;
