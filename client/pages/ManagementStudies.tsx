@@ -636,7 +636,7 @@ function HeroVideo() {
             width: "100%",
             height: "100%",
             objectFit: "cover",
-            objectPosition: "center center",
+            objectPosition: "center 85%",
             filter: "brightness(1.1) contrast(1.15) saturate(1.2)",
           }}
         />
