@@ -146,7 +146,7 @@ export default function LibraryAdvisoryCommittee() {
 
         {/* Governance Overview */}
         <Card className="border-none shadow-lg bg-violet-50 dark:bg-violet-950/30 mb-8">
-          <CardHeader>
+          <CardHeader style={{ backgroundColor: "rgba(0, 0, 0, 1)" }}>
             <CardTitle className="text-3xl md:text-4xl flex items-center gap-2">
               <Users className="h-8 w-8 text-violet-600" />
               Library Governance
@@ -155,7 +155,7 @@ export default function LibraryAdvisoryCommittee() {
               Collaborative approach to library management
             </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-4">
+          <CardContent className="space-y-4" style={{ backgroundColor: "rgba(0, 0, 0, 0.6)" }}>
             <p className="text-foreground/80">
               The DSU Central Library operates under a well-defined governance structure that ensures transparency, accountability, and continuous improvement. Our committees comprise faculty members, students, and library professionals working collaboratively to serve the university community.
             </p>
