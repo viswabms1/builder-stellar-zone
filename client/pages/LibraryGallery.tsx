@@ -53,7 +53,7 @@ export default function LibraryGallery() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero Section */}
-      <section className="relative py-16 lg:py-24 bg-gradient-to-br from-pink-500/10 via-rose-600/5 to-background dark:from-pink-500/20 dark:via-rose-600/15 overflow-hidden">
+      <section className="relative py-16 lg:py-24 bg-gradient-to-br from-pink-500/10 via-rose-600/5 to-background dark:from-slate-800 dark:via-slate-800 dark:to-slate-900 overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-20 left-10 w-72 h-72 bg-pink-500/10 dark:bg-pink-500/30 rounded-full filter blur-3xl animate-float"></div>
           <div

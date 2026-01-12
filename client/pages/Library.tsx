@@ -116,7 +116,7 @@ export default function Library() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero Section */}
-      <section className="relative py-10 lg:py-32 bg-gradient-to-br from-blue-500/10 via-purple-600/5 to-background dark:from-blue-500/20 dark:via-purple-600/15 overflow-hidden">
+      <section className="relative py-10 lg:py-32 bg-gradient-to-br from-blue-500/10 via-purple-600/5 to-background dark:from-slate-800 dark:via-slate-800 dark:to-slate-900 overflow-hidden">
         <div className="absolute inset-0">
           <img
             src={heroBgImage}
