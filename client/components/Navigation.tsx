@@ -1102,7 +1102,7 @@ export default function Navigation() {
                       to="/ai-first"
                       className={`${sharedClasses} justify-center`}
                     >
-                      <span className="max-w-[70px] text-center leading-snug">AI-First @ DSU</span>
+                      <span className="max-w-[85px] text-center leading-snug">AI-First @ DSU</span>
                     </Link>,
                   ];
                 }
