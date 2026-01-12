@@ -654,7 +654,7 @@ export default function Navigation() {
                     : "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F0caf0bf29be6421997005f26cdaae0ed?format=webp&width=800"
                 }
                 alt="Dayananda Sagar University Logo"
-                className="h-12 w-auto object-contain"
+                className="h-14 w-auto object-contain"
               />
             </Link>
 
@@ -1075,7 +1075,7 @@ export default function Navigation() {
                             : "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F0caf0bf29be6421997005f26cdaae0ed?format=webp&width=800"
                         }
                         alt="Dayananda Sagar University Logo"
-                        className="h-11 w-auto object-contain group-hover:scale-105 transition-all duration-300"
+                        className="h-13 w-auto object-contain group-hover:scale-105 transition-all duration-300"
                       />
                     </Link>,
                     <Link
