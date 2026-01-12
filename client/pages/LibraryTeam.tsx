@@ -155,7 +155,7 @@ export default function LibraryTeam() {
         </Card>
 
         {/* Contact Section */}
-        <Card className="border-none shadow-lg mt-8 bg-blue-50 dark:bg-blue-950/30">
+        <Card className="border-none shadow-lg mt-8 bg-blue-50 dark:bg-slate-800">
           <CardHeader>
             <CardTitle>Get in Touch</CardTitle>
             <CardDescription>

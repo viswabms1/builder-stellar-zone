@@ -119,7 +119,7 @@ export default function LibraryGallery() {
         </div>
 
         {/* Information Box */}
-        <Card className="border-none shadow-lg bg-pink-50 dark:bg-pink-950/30">
+        <Card className="border-none shadow-lg bg-pink-50 dark:bg-slate-800">
           <CardContent className="pt-6">
             <div className="text-center">
               <h3 className="text-2xl font-bold mb-3">Visit Our Library</h3>

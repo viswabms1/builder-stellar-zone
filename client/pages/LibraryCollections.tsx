@@ -127,7 +127,7 @@ export default function LibraryCollections() {
         </Card>
 
         {/* Collection Development Policy */}
-        <Card className="border-none shadow-lg bg-amber-50 dark:bg-amber-950/30">
+        <Card className="border-none shadow-lg bg-amber-50 dark:bg-slate-800">
           <CardHeader>
             <CardTitle className="text-3xl md:text-4xl">Collection Development</CardTitle>
             <CardDescription className="text-lg">
@@ -179,7 +179,7 @@ export default function LibraryCollections() {
                 </p>
               </div>
             </div>
-            <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-950/30 rounded-lg">
+            <div className="mt-6 p-4 bg-blue-50 dark:bg-slate-700 rounded-lg">
               <Button asChild className="w-full">
                 <a href="https://dsuunivopac.ltsinformatics.com/" target="_blank" rel="noopener noreferrer">
                   Search Library Collections <ArrowRight className="ml-2 h-4 w-4" />

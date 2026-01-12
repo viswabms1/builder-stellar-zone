@@ -132,7 +132,7 @@ export default function LibraryRulesRegulations() {
         </Card>
 
         {/* Fee Structure */}
-        <Card className="border-none shadow-lg bg-orange-50 dark:bg-orange-950/30 mb-8">
+        <Card className="border-none shadow-lg bg-orange-50 dark:bg-slate-800 mb-8">
           <CardHeader>
             <CardTitle className="text-3xl md:text-4xl flex items-center gap-2">
               <AlertCircle className="h-8 w-8 text-orange-600" />
@@ -177,7 +177,7 @@ export default function LibraryRulesRegulations() {
           </CardHeader>
           <CardContent className="space-y-6">
             <div className="grid md:grid-cols-2 gap-6">
-              <div className="p-4 border rounded-lg">
+              <div className="p-4 border rounded-lg dark:border-slate-700">
                 <h4 className="font-semibold text-lg mb-3">Undergraduate Students</h4>
                 <ul className="space-y-2 text-foreground/70">
                   <li>• Maximum 5 books per transaction</li>
@@ -186,7 +186,7 @@ export default function LibraryRulesRegulations() {
                   <li>• Fine: Re. 1/day/book</li>
                 </ul>
               </div>
-              <div className="p-4 border rounded-lg">
+              <div className="p-4 border rounded-lg dark:border-slate-700">
                 <h4 className="font-semibold text-lg mb-3">Postgraduate & Research Scholars</h4>
                 <ul className="space-y-2 text-foreground/70">
                   <li>• Maximum 10 books per transaction</li>
@@ -195,7 +195,7 @@ export default function LibraryRulesRegulations() {
                   <li>• Fine: Re. 1/day/book</li>
                 </ul>
               </div>
-              <div className="p-4 border rounded-lg md:col-span-2">
+              <div className="p-4 border rounded-lg dark:border-slate-700 md:col-span-2">
                 <h4 className="font-semibold text-lg mb-3">Faculty Members</h4>
                 <ul className="space-y-2 text-foreground/70">
                   <li>• Maximum 15 books per transaction</li>

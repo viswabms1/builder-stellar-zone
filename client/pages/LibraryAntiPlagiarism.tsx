@@ -134,7 +134,7 @@ export default function LibraryAntiPlagiarism() {
         </Card>
 
         {/* Citation Formats */}
-        <Card className="border-none shadow-lg bg-blue-50 dark:bg-blue-950/30">
+        <Card className="border-none shadow-lg bg-blue-50 dark:bg-slate-800">
           <CardHeader>
             <CardTitle className="text-3xl md:text-4xl">Citation Formats</CardTitle>
             <CardDescription className="text-lg">

@@ -155,7 +155,7 @@ export default function LibraryConstituentLibraries() {
         </div>
 
         {/* Network Information */}
-        <Card className="border-none shadow-lg mt-12 bg-green-50 dark:bg-green-950/30">
+        <Card className="border-none shadow-lg mt-12 bg-green-50 dark:bg-slate-800">
           <CardHeader>
             <CardTitle className="text-3xl md:text-4xl flex items-center gap-2">
               <Users className="h-8 w-8 text-green-600" />
