@@ -260,9 +260,12 @@
 
   /* Landscape orientation: make buttons horizontal */
   @media (orientation: landscape) {
-    .hero-title-inside > div > div:last-child {
+    .hero-title-inside {
       flex-direction: row !important;
-      gap: 1rem !important;
+    }
+
+    .hero-title-inside .hidden.md\:flex {
+      flex-direction: row !important;
     }
   }
 
