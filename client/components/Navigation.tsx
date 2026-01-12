@@ -861,6 +861,96 @@ export default function Navigation() {
                     );
                   }
 
+                  if (isAlumni) {
+                    return (
+                      <div
+                        key={idx}
+                        className="relative group"
+                        onMouseEnter={() => setAlumniMenuOpen(true)}
+                        onMouseLeave={() => setAlumniMenuOpen(false)}
+                      >
+                        <button
+                          onClick={() => setAlumniMenuOpen(!alumniMenuOpen)}
+                          className={sharedClasses}
+                        >
+                          <span>{item.name}</span>
+                          <ChevronDown
+                            className={`w-4 h-4 transition-transform ${alumniMenuOpen ? "rotate-180" : ""}`}
+                          />
+                          {active && (
+                            <div
+                              className={`w-1 h-1 rounded-full ${
+                                theme === "light" ? "bg-orange-600" : "bg-white"
+                              }`}
+                            />
+                          )}
+                        </button>
+
+                        {/* Alumni Menu Dropdown */}
+                        <div
+                          className={`absolute left-0 top-full mt-2 w-auto min-w-max max-w-2xl rounded-2xl shadow-2xl transition-all duration-300 py-5 px-5 max-h-[600px] overflow-y-auto backdrop-blur-sm z-[9999] ${
+                            alumniMenuOpen
+                              ? "opacity-100 visible"
+                              : "opacity-0 invisible"
+                          } ${
+                            theme === "light"
+                              ? "bg-white/95 border border-purple-200/50"
+                              : "bg-slate-800/95 border border-purple-600/30"
+                          }`}
+                          style={{
+                            scrollbarWidth: "thin",
+                            scrollbarColor:
+                              theme === "light"
+                                ? "rgba(168, 85, 247, 0.5) rgba(168, 85, 247, 0.1)"
+                                : "rgba(255, 255, 255, 0.3) rgba(255, 255, 255, 0.1)",
+                          }}
+                        >
+                          <div className="grid grid-cols-2 gap-4">
+                            {alumniSubmenus.map((submenu, idx) => {
+                              const cardColors = [
+                                {
+                                  bg:
+                                    theme === "light"
+                                      ? "bg-purple-50"
+                                      : "bg-purple-900/20",
+                                  border:
+                                    "border-purple-200/50 dark:border-purple-600/30",
+                                  text: "text-purple-900 dark:text-purple-100",
+                                },
+                                {
+                                  bg:
+                                    theme === "light"
+                                      ? "bg-pink-50"
+                                      : "bg-pink-900/20",
+                                  border:
+                                    "border-pink-200/50 dark:border-pink-600/30",
+                                  text: "text-pink-900 dark:text-pink-100",
+                                },
+                              ];
+                              const colors =
+                                cardColors[idx % cardColors.length];
+
+                              return (
+                                <Link
+                                  key={submenu.name}
+                                  to={submenu.href}
+                                  onClick={() => setAlumniMenuOpen(false)}
+                                  className={`${colors.bg} ${colors.border} border rounded-xl p-4 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 group block text-sm font-semibold ${
+                                    theme === "light"
+                                      ? "text-gray-900 group-hover:text-purple-600"
+                                      : "text-white group-hover:text-purple-200"
+                                  }`}
+                                >
+                                  {submenu.name}
+                                </Link>
+                              );
+                            })}
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  }
+
                   if (isLibrary) {
                     return (
                       <div
