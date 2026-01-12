@@ -640,7 +640,7 @@ export default function Navigation() {
             : "bg-slate-950/95 backdrop-blur-sm border-b-2 border-orange-600/30"
         }`}
       >
-        <div className="w-full mx-auto px-2 overflow-visible">
+        <div className="w-full overflow-visible">
           <div className="flex flex-col items-center justify-center h-16 lg:h-22 lg:flex-row">
             {/* Logo - Visible on mobile and tablet portrait, hidden on desktop */}
             <Link
@@ -659,7 +659,7 @@ export default function Navigation() {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="flex items-center gap-0.5 justify-center flex-wrap">
+            <div className="flex items-center gap-1 justify-between flex-wrap w-full px-4">
               {navigation.map((item, idx) => {
                 const active = !item.external && isActive(item.href);
                 const isAbout = item.href === "/about";
