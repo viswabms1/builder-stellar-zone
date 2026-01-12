@@ -1070,7 +1070,7 @@ export default function Navigation() {
                       to="/nvidia-ai-architecture"
                       className={`${sharedClasses} ml-0 justify-center`}
                     >
-                      <span className="max-w-[70px] text-center leading-snug">NVIDIA's AI Architecture</span>
+                      <span className="max-w-[85px] text-center leading-snug">NVIDIA's AI Architecture</span>
                     </Link>,
                   ];
                 }
