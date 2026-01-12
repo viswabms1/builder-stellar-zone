@@ -772,7 +772,7 @@ function DepartmentCard({ department }: { department: EngineeringDepartment }) {
         <div className={`${panelClasses} flex flex-col h-full`}>
           <div className="space-y-4 flex-1 overflow-hidden">
             <div>
-              <h3 className="font-display text-2xl leading-tight text-white line-clamp-2">
+              <h3 className="font-display text-2xl leading-tight text-white">
                 {department.name}
               </h3>
               <p className="mt-3 text-sm text-white/85 font-body line-clamp-2">
