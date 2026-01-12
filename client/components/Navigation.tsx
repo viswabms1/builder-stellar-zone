@@ -1042,7 +1042,7 @@ export default function Navigation() {
 
 
                   return (
-                    <Link key={idx} to={item.href} className={sharedClasses}>
+                    <Link key={idx} to={item.href} className={`${sharedClasses} justify-center`}>
                       <span className="max-w-[60px] text-center leading-tight">{item.name}</span>
                       {active && (
                         <div
