@@ -901,9 +901,7 @@ function ProgramCardComponent({ program }: { program: ProgramCard }) {
 
   const content = (
     <div
-      className={`relative flex h-full flex-col justify-end overflow-hidden rounded-none border border-white/10 bg-black/10 backdrop-blur-sm transition-all duration-700 hover:-translate-y-1 hover:shadow-2xl hover:shadow-brand-magenta/20 ${
-        program.featured ? "min-h-[360px]" : "min-h-[300px]"
-      }`}
+      className="relative flex h-full flex-col justify-end overflow-hidden rounded-none border border-white/10 bg-black/10 backdrop-blur-sm transition-all duration-700 hover:-translate-y-1 hover:shadow-2xl hover:shadow-brand-magenta/20 min-h-[420px]"
     >
       <img
         src={program.image}
@@ -913,12 +911,12 @@ function ProgramCardComponent({ program }: { program: ProgramCard }) {
       />
       <div className={`absolute inset-0 ${overlayClasses}`} />
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
-      <div className={`absolute left-6 top-3 ${badgeClasses}`}>
+      <div className={`absolute left-6 top-3 z-20 ${badgeClasses}`}>
         {program.area}
       </div>
-      <div className="relative z-10 flex h-full flex-col justify-end p-3 text-white">
-        <div className={panelClasses}>
-          <div className="space-y-4">
+      <div className="relative z-10 flex h-[85%] flex-col justify-end p-3 text-white">
+        <div className={`${panelClasses} flex flex-col h-full`}>
+          <div className="space-y-4 flex-1 overflow-hidden">
             <div>
               <h3 className="font-display text-2xl leading-tight text-white">
                 {program.name}
@@ -942,11 +940,11 @@ function ProgramCardComponent({ program }: { program: ProgramCard }) {
                 {program.differentiator}
               </p>
             )}
-            <span className="inline-flex items-center gap-2 text-sm font-medium text-white/90 transition-colors group-hover:text-brand-magenta">
-              Explore programme
-              <ChevronRight className="h-4 w-4 transition-colors group-hover:text-brand-magenta" />
-            </span>
           </div>
+          <span className="inline-flex items-center gap-2 text-sm font-medium text-white/90 transition-colors group-hover:text-brand-magenta mt-auto">
+            Explore programme
+            <ChevronRight className="h-4 w-4 transition-colors group-hover:text-brand-magenta" />
+          </span>
         </div>
       </div>
     </div>
