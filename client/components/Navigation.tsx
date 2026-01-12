@@ -443,7 +443,7 @@ export default function Navigation() {
                   >
                     <button
                       onClick={() => setAlumniMenuOpen(!alumniMenuOpen)}
-                      className={sharedClasses}
+                      className={`${sharedClasses} justify-center`}
                     >
                       <span>{item.name}</span>
                       <ChevronDown
