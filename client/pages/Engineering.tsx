@@ -436,7 +436,7 @@ const SUPPORTING_DEPARTMENTS: SupportingDepartment[] = [
     focus:
       "Advanced instrumentation and applied physics modules covering photonics, energy and smart materials.",
     image:
-      "https://images.unsplash.com/photo-1533364437721-6ee32f62e8d5?q=80&w=1600&auto=format&fit=crop",
+      "https://images.pexels.com/photos/3808219/pexels-photo-3808219.jpeg?auto=compress&cs=tinysrgb&w=1600",
     link: "/academics/physics",
   },
   {
@@ -444,7 +444,7 @@ const SUPPORTING_DEPARTMENTS: SupportingDepartment[] = [
     focus:
       "Materials science, polymer chemistry and environmental labs enabling sustainable engineering solutions.",
     image:
-      "https://images.unsplash.com/photo-1519903335872-a40a9f65a89f?q=80&w=1600&auto=format&fit=crop",
+      "https://images.pexels.com/photos/5632399/pexels-photo-5632399.jpeg?auto=compress&cs=tinysrgb&w=1600",
     link: "/academics/chemistry",
   },
   {
@@ -452,7 +452,7 @@ const SUPPORTING_DEPARTMENTS: SupportingDepartment[] = [
     focus:
       "Applied mathematics, statistics and computational techniques powering algorithmic and analytical thinking.",
     image:
-      "https://images.unsplash.com/photo-1551836022-4c4c79ecde51?q=80&w=1600&auto=format&fit=crop",
+      "https://images.pexels.com/photos/8370752/pexels-photo-8370752.jpeg?auto=compress&cs=tinysrgb&w=1600",
     link: "/academics/mathematics",
   },
   {
@@ -460,7 +460,7 @@ const SUPPORTING_DEPARTMENTS: SupportingDepartment[] = [
     focus:
       "Communication, design thinking, economics and liberal arts courses that shape socially conscious engineers.",
     image:
-      "https://images.unsplash.com/photo-1529070538774-1843cb3265df?q=80&w=1600&auto=format&fit=crop",
+      "https://images.pexels.com/photos/3769714/pexels-photo-3769714.jpeg?auto=compress&cs=tinysrgb&w=1600",
     link: "/academics/humanities-social-sciences",
   },
 ];
