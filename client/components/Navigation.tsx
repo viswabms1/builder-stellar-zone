@@ -1299,6 +1299,53 @@ export default function Navigation() {
                   );
                 }
 
+                if (isLibrary) {
+                  return (
+                    <div key={idx} className="space-y-2">
+                      <button
+                        onClick={() => setLibraryMenuOpen(!libraryMenuOpen)}
+                        className={`w-full text-left ${sharedClasses}`}
+                      >
+                        <span className="flex-1">{item.name}</span>
+                        <ChevronDown
+                          className={`w-4 h-4 transition-transform ${
+                            libraryMenuOpen ? "rotate-180" : ""
+                          }`}
+                        />
+                      </button>
+
+                      {/* Mobile Library Submenu */}
+                      {libraryMenuOpen && (
+                        <div
+                          className={`rounded-lg py-2 ml-4 border-l-2 ${
+                            theme === "light"
+                              ? "bg-blue-100 border-l-blue-300"
+                              : "bg-white/20 border-l-white/40"
+                          }`}
+                        >
+                          {librarySubmenus.map((submenu, subIdx) => (
+                            <Link
+                              key={subIdx}
+                              to={submenu.href}
+                              onClick={() => {
+                                setIsOpen(false);
+                                setLibraryMenuOpen(false);
+                              }}
+                              className={`block px-4 py-1.5 text-base sm:text-lg rounded transition-colors ${
+                                theme === "light"
+                                  ? "text-gray-700 hover:bg-blue-200"
+                                  : "text-white hover:bg-white/20"
+                              }`}
+                            >
+                              {submenu.name}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  );
+                }
+
                 return (
                   <Link
                     key={idx}
