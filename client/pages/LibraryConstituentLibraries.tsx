@@ -156,7 +156,7 @@ export default function LibraryConstituentLibraries() {
 
         {/* Network Information */}
         <Card className="border-none shadow-lg mt-12 bg-green-50 dark:bg-slate-800">
-          <CardHeader>
+          <CardHeader style={{ backgroundColor: "rgba(0, 0, 0, 1)" }}>
             <CardTitle className="text-3xl md:text-4xl flex items-center gap-2">
               <Users className="h-8 w-8 text-green-600" />
               Unified Library System
@@ -165,7 +165,7 @@ export default function LibraryConstituentLibraries() {
               Connected network of specialized libraries across DSU
             </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-4">
+          <CardContent className="space-y-4" style={{ backgroundColor: "rgba(0, 0, 0, 0.6)" }}>
             <p className="text-foreground/80">
               The DSU library system comprises multiple constituent libraries, each specializing in resources and services for their respective schools and departments. All libraries operate under a unified system, allowing students and faculty seamless access to resources across the entire network.
             </p>

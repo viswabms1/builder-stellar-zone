@@ -133,7 +133,7 @@ export default function LibraryRulesRegulations() {
 
         {/* Fee Structure */}
         <Card className="border-none shadow-lg bg-orange-50 dark:bg-slate-800 mb-8">
-          <CardHeader>
+          <CardHeader style={{ backgroundColor: "rgba(0, 0, 0, 1)" }}>
             <CardTitle className="text-3xl md:text-4xl flex items-center gap-2">
               <AlertCircle className="h-8 w-8 text-orange-600" />
               Fee Structure
@@ -142,7 +142,7 @@ export default function LibraryRulesRegulations() {
               Charges and penalties for library services
             </CardDescription>
           </CardHeader>
-          <CardContent>
+          <CardContent style={{ backgroundColor: "rgba(0, 0, 0, 0.6)" }}>
             <div className="overflow-x-auto">
               <table className="w-full">
                 <thead>
