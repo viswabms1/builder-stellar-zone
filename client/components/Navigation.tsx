@@ -1062,7 +1062,7 @@ export default function Navigation() {
                     <Link
                       key="logo"
                       to="/"
-                      className={`flex items-center group flex-shrink-0 px-3 py-2 rounded-xl transition-all duration-300 ${
+                      className={`flex items-center group flex-shrink-0 px-1.5 py-1 rounded-xl transition-all duration-300 ${
                         theme === "light"
                           ? "bg-white hover:bg-orange-50"
                           : "hover:bg-white/5"
