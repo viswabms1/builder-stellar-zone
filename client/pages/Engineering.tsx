@@ -55,6 +55,7 @@ type EngineeringDepartment = {
   badgeClass: string;
   panelClass: string;
   featured?: boolean;
+  differentiator?: string;
 };
 
 type SupportingDepartment = {
@@ -282,6 +283,7 @@ type ProgramCard = {
   badgeClass: string;
   panelClass: string;
   featured?: boolean;
+  differentiator?: string;
 };
 
 const UG_PROGRAM_CARDS: ProgramCard[] = [
