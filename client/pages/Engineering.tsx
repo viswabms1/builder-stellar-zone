@@ -1441,7 +1441,7 @@ export default function Engineering() {
               <h2 className="headline-2 mb-3 font-display">
                 <span className="text-foreground">What's Happening at </span>
                 <span className="bg-brand-gradient bg-clip-text text-transparent">
-                  DSU Engineering
+                  DSU, School of Engineering
                 </span>
               </h2>
               <p className="max-w-2xl text-sm text-foreground sm:text-base font-body">
@@ -1460,7 +1460,7 @@ export default function Engineering() {
         <div className="mx-auto max-w-7xl">
           <div className="mb-12 text-center">
             <h2 className="font-display text-3xl md:text-4xl">
-              Explore More at DSU Engineering
+              Explore More at DSU, School of Engineering
             </h2>
             <p className="mt-3 text-sm text-foreground font-body">
               Discover our research initiatives, innovation labs, placements and
@@ -1484,8 +1484,7 @@ export default function Engineering() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-foreground/80 font-body">
-                    Immersive innovation labs powered by industry leaders like
-                    IBM, NVIDIA and GE
+                    AI Infrastructure Partner: NVIDIA. Hands-on learning through research projects and industry collaboration.
                   </p>
                 </CardContent>
               </Card>
@@ -1558,7 +1557,7 @@ export default function Engineering() {
                 </CardHeader>
                 <CardContent className="flex flex-col gap-3">
                   <p className="text-sm text-foreground/80 font-body">
-                    Join DSU Engineering and shape your future
+                    Join DSU, School of Engineering and shape your future
                   </p>
                   <span className="inline-flex items-center gap-2 text-xs font-medium text-brand-magenta group-hover:text-brand-magenta/80 transition-colors">
                     Apply Now
@@ -1743,10 +1742,10 @@ export default function Engineering() {
         <div className="mx-auto max-w-7xl">
           <div className="mb-12">
             <h2 className="font-display text-3xl md:text-4xl">
-              Why Choose DSU Engineering?
+              Why Choose DSU, School of Engineering?
             </h2>
             <p className="mt-4 text-sm text-foreground/70 font-body max-w-3xl">
-              Backed by accreditation, innovation labs, and industry partnerships that shape your career.
+              Backed by accreditation, cutting-edge research facilities, and industry-aligned education that shapes your career.
             </p>
           </div>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -1759,7 +1758,7 @@ export default function Engineering() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="text-sm text-foreground/80 font-body">
-                IBM, NVIDIA, GE and VMware innovation centers driving real-world project experience.
+                AI Infrastructure Partner: NVIDIA. Hands-on research and development with enterprise-scale AI compute capabilities.
               </CardContent>
             </Card>
 
@@ -1772,7 +1771,7 @@ export default function Engineering() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="text-sm text-foreground/80 font-body">
-                Dedicated AI studios, ML labs, and emerging tech platforms embedded in every program.
+                The School of Engineering at DSU hosts multiple engineering laboratories, with AI-intensive workloads supported on NVIDIA DGX B200 infrastructure.
               </CardContent>
             </Card>
 
