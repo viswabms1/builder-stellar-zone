@@ -128,13 +128,13 @@ export default function LibraryCollections() {
 
         {/* Collection Development Policy */}
         <Card className="border-none shadow-lg bg-amber-50 dark:bg-slate-800">
-          <CardHeader>
+          <CardHeader style={{ backgroundColor: "rgba(0, 0, 0, 1)" }}>
             <CardTitle className="text-3xl md:text-4xl">Collection Development</CardTitle>
             <CardDescription className="text-lg">
               Our approach to building quality collections
             </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-4">
+          <CardContent className="space-y-4" style={{ backgroundColor: "rgba(0, 0, 0, 0.6)" }}>
             <p className="text-lg leading-relaxed text-foreground/80">
               The DSU Central Library follows a systematic and strategic approach to collection development. We focus on:
             </p>
