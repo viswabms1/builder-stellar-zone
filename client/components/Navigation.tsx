@@ -394,7 +394,7 @@ export default function Navigation() {
             : "bg-gradient-to-r from-slate-900 to-slate-950 border-b-2 border-orange-600/30"
         }`}
       >
-        <div className="w-full max-w-[1600px] mx-auto px-2 sm:px-4 flex items-center justify-between gap-1 sm:gap-2">
+        <div className="w-full max-w-6xl mx-auto px-2 sm:px-4 flex items-center justify-between gap-1 sm:gap-2">
           {/* All Top Menu Items in one continuous row */}
           <div className="flex items-center gap-0.5 sm:gap-1 flex-nowrap overflow-x-auto scrollbar-hide">
             {topMenuItems.map((item, idx) => (
@@ -440,7 +440,7 @@ export default function Navigation() {
             : "bg-slate-950/95 backdrop-blur-sm border-b-2 border-orange-600/30"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-8 overflow-visible">
+        <div className="w-full mx-auto px-8 overflow-visible">
           <div className="flex items-center justify-between h-16 lg:h-22">
             {/* Logo - Visible on mobile and tablet portrait, hidden on desktop */}
             <Link
