@@ -415,7 +415,7 @@ export default function Navigation() {
     <>
       {/* Top Menu Bar - Hidden on mobile/tablet portrait, shown on larger screens */}
       <div
-        className={`hidden md:flex sticky top-0 z-[9998] h-14 transition-all duration-300 items-center ${
+        className={`hidden lg:flex sticky top-0 z-[9998] h-14 transition-all duration-300 items-center ${
           theme === "light"
             ? "bg-gradient-to-r from-orange-50 to-white border-b-2 border-orange-200/50"
             : "bg-gradient-to-r from-slate-900 to-slate-950 border-b-2 border-orange-600/30"
@@ -653,19 +653,19 @@ export default function Navigation() {
 
       {/* Main Navigation Bar */}
       <nav
-        className={`sticky top-1 md:top-14 z-[9997] transition-all duration-300 overflow-visible shadow-md ${
+        className={`sticky top-1 lg:top-14 z-[9997] transition-all duration-300 overflow-visible shadow-md ${
           theme === "light"
             ? "bg-white/95 backdrop-blur-sm border-b-2 border-orange-200/50"
             : "bg-slate-950/95 backdrop-blur-sm border-b-2 border-orange-600/30"
         }`}
       >
         <div className="w-full overflow-visible">
-          <div className="flex flex-row items-center justify-between h-14 md:h-auto md:flex-col md:items-center md:justify-center lg:flex-row">
+          <div className="flex flex-row items-center justify-between h-14 lg:h-auto lg:flex-col lg:items-center lg:justify-center lg:flex-row">
 
             {/* Mobile Logo - Left side */}
             <Link
               to="/"
-              className="md:hidden flex-shrink-0 flex items-center justify-start px-1 -mt-3 -mb-2"
+              className="lg:hidden flex-shrink-0 flex items-center justify-start px-1 -mt-3 -mb-2"
             >
               <img
                 src={
@@ -679,7 +679,7 @@ export default function Navigation() {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center gap-0.5 sm:gap-1 justify-between flex-wrap w-full px-1 sm:px-2 py-1 sm:py-2">
+            <div className="hidden lg:flex items-center gap-0.5 sm:gap-1 justify-between flex-wrap w-full px-1 sm:px-2 py-1 sm:py-2">
               {navigation.map((item, idx) => {
                 const active = !item.external && isActive(item.href);
                 const isAbout = item.href === "/about";
@@ -1114,7 +1114,7 @@ export default function Navigation() {
 
 
             {/* Mobile menu button */}
-            <div className="md:hidden">
+            <div className="lg:hidden">
               <Button
                 variant="ghost"
                 size="sm"
@@ -1138,7 +1138,7 @@ export default function Navigation() {
         {/* Mobile Navigation */}
         {isOpen && (
           <div
-            className={`md:hidden border-t w-full ${
+            className={`lg:hidden border-t w-full ${
               theme === "light"
                 ? "border-orange-200/30 bg-white"
                 : "border-orange-600/20 bg-slate-900"
