@@ -101,8 +101,8 @@ export default function LibraryEResources() {
                       <CardTitle className="text-xl">{resource.title}</CardTitle>
                       <CardDescription>{resource.category}</CardDescription>
                     </div>
-                    <div className="p-2 rounded-lg bg-purple-500/10">
-                      <Icon className="h-5 w-5 text-purple-600" />
+                    <div className="p-2 rounded-lg bg-purple-500/10 dark:bg-purple-500/30">
+                      <Icon className="h-5 w-5 text-purple-600 dark:text-purple-400" />
                     </div>
                   </div>
                 </CardHeader>
