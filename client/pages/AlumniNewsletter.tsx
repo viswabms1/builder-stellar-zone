@@ -87,13 +87,13 @@ export default function AlumniNewsletter() {
       <section className="py-16 px-3 max-w-7xl mx-auto">
         {/* Newsletter Description */}
         <Card className="border-none shadow-lg mb-12 bg-green-50 dark:bg-slate-800">
-          <CardHeader>
+          <CardHeader style={{ backgroundColor: "rgba(0, 0, 0, 1)" }}>
             <CardTitle className="text-3xl">DSU Alumni Digest</CardTitle>
             <CardDescription className="text-lg">
               Your monthly source for alumni news and university updates
             </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-6 text-foreground/80 leading-relaxed">
+          <CardContent className="space-y-6 text-foreground/80 leading-relaxed" style={{ backgroundColor: "rgba(0, 0, 0, 0.7)" }}>
             <p>
               The DSU Alumni Digest is our flagship publication connecting alumni worldwide with the latest updates from campus, inspiring success stories from fellow alumni, and information about community events and opportunities.
             </p>

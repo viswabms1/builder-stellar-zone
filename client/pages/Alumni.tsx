@@ -134,13 +134,13 @@ export default function Alumni() {
       <section className="py-16 px-3 max-w-7xl mx-auto">
         {/* Welcome Section */}
         <Card className="border-none shadow-lg mb-12 bg-blue-50 dark:bg-slate-800">
-          <CardHeader>
+          <CardHeader style={{ backgroundColor: "rgba(0, 0, 0, 1)" }}>
             <CardTitle className="text-3xl md:text-4xl">Welcome to DSU Alumni</CardTitle>
             <CardDescription className="text-lg">
               A lifelong connection to your alma mater
             </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-6">
+          <CardContent className="space-y-6" style={{ backgroundColor: "rgba(0, 0, 0, 0.7)" }}>
             <div className="space-y-4 text-foreground/80 leading-relaxed">
               <p>
                 On behalf of the entire Dayananda Sagar University community, it is our privilege and pleasure to warmly welcome you back to your alma mater. Your association with DSU is lifelong, and we deeply appreciate the continued pride, support, and inspiration you bring to our institution.

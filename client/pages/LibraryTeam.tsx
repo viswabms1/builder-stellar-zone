@@ -156,13 +156,13 @@ export default function LibraryTeam() {
 
         {/* Contact Section */}
         <Card className="border-none shadow-lg mt-8 bg-blue-50 dark:bg-slate-800">
-          <CardHeader>
+          <CardHeader style={{ backgroundColor: "rgba(0, 0, 0, 1)" }}>
             <CardTitle>Get in Touch</CardTitle>
             <CardDescription>
               Contact our library team for support and inquiries
             </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-3">
+          <CardContent className="space-y-3" style={{ backgroundColor: "rgba(0, 0, 0, 0.6)" }}>
             <div className="flex items-center gap-3">
               <Mail className="h-5 w-5 text-blue-600" />
               <div>

@@ -140,7 +140,7 @@ export default function AlumniEvents() {
 
         {/* Event Types */}
         <Card className="border-none shadow-lg mb-12 bg-amber-50 dark:bg-slate-800">
-          <CardHeader>
+          <CardHeader style={{ backgroundColor: "rgba(0, 0, 0, 1)" }}>
             <CardTitle className="text-3xl">Types of Events We Host</CardTitle>
             <CardDescription className="text-lg">
               Diverse opportunities for alumni engagement and connection

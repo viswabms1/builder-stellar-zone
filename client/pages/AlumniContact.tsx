@@ -162,7 +162,7 @@ export default function AlumniContact() {
 
         {/* Quick Links */}
         <Card className="border-none shadow-lg mb-12 bg-red-50 dark:bg-slate-800">
-          <CardHeader>
+          <CardHeader style={{ backgroundColor: "rgba(0, 0, 0, 1)" }}>
             <CardTitle className="text-3xl">How Can We Help?</CardTitle>
             <CardDescription className="text-lg">
               Find answers and resources for common queries

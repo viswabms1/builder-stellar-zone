@@ -135,13 +135,13 @@ export default function LibraryAntiPlagiarism() {
 
         {/* Citation Formats */}
         <Card className="border-none shadow-lg bg-blue-50 dark:bg-slate-800">
-          <CardHeader>
+          <CardHeader style={{ backgroundColor: "rgba(0, 0, 0, 1)" }}>
             <CardTitle className="text-3xl md:text-4xl">Citation Formats</CardTitle>
             <CardDescription className="text-lg">
               Standard citation styles to acknowledge sources properly
             </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-4">
+          <CardContent className="space-y-4" style={{ backgroundColor: "rgba(0, 0, 0, 0.6)" }}>
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <h4 className="font-semibold text-lg mb-2">APA Format</h4>
