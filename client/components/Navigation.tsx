@@ -1145,6 +1145,31 @@ export default function Navigation() {
             }`}
           >
             <div className="px-2 py-2 space-y-1.5 max-h-[calc(100vh-140px)] sm:max-h-[calc(100vh-180px)] overflow-y-auto w-full">
+              {/* Top Menu Items First (Utility Links) */}
+              {topMenuItems.map((item, idx) => (
+                <Link
+                  key={`top-${idx}`}
+                  to={item.href}
+                  {...(item.external && { target: "_blank", rel: "noopener noreferrer" })}
+                  onClick={() => setIsOpen(false)}
+                  className={`flex items-center space-x-2 px-3 py-2 rounded-xl text-base sm:text-lg font-medium font-display transition-all duration-200 w-full ${
+                    theme === "light"
+                      ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
+                      : "text-white/90 hover:text-white hover:bg-white/10"
+                  }`}
+                >
+                  <span className="truncate">{item.name}</span>
+                </Link>
+              ))}
+
+              {/* Divider */}
+              <div
+                className={`my-2 ${
+                  theme === "light" ? "border-orange-200" : "border-white/20"
+                }`}
+                style={{ borderTop: `1px solid currentColor` }}
+              />
+
               {/* Main Navigation Items */}
               {navigation.map((item, idx) => {
                 const active = !item.external && isActive(item.href);
