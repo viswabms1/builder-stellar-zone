@@ -724,7 +724,7 @@ export default function Navigation() {
                           onClick={() => setAboutMenuOpen(!aboutMenuOpen)}
                           className={`${sharedClasses} justify-center`}
                         >
-                          <span className="max-w-[70px] text-center leading-snug">{item.name}</span>
+                          <span className="max-w-[85px] text-center leading-snug">{item.name}</span>
                           <ChevronDown
                             className={`w-4 h-4 transition-transform ${aboutMenuOpen ? "rotate-180" : ""}`}
                           />
