@@ -437,165 +437,17 @@ export default function Navigation() {
                   : "text-white/80 hover:text-white hover:bg-white/10"
               }`;
 
-              if (isAlumni) {
+              if (item.external) {
                 return (
-                  <div
+                  <a
                     key={idx}
-                    className="relative"
-                    onMouseEnter={() => setAlumniMenuOpen(true)}
-                    onMouseLeave={() => setAlumniMenuOpen(false)}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={sharedClasses}
                   >
-                    <button
-                      className={`${sharedClasses} justify-center cursor-pointer`}
-                    >
-                      <span className="text-center">{item.name}</span>
-                      <ChevronDown
-                        className={`w-3 h-3 transition-transform ${alumniMenuOpen ? "rotate-180" : ""}`}
-                      />
-                    </button>
-
-                    {/* Alumni Dropdown */}
-                    <div
-                      className={`absolute left-0 top-full mt-2 w-auto min-w-max max-w-2xl rounded-2xl shadow-2xl transition-all duration-300 py-4 px-4 max-h-[600px] overflow-y-auto backdrop-blur-sm z-[10000] ${
-                        alumniMenuOpen
-                          ? "opacity-100 visible pointer-events-auto"
-                          : "opacity-0 invisible pointer-events-none"
-                      } ${
-                        theme === "light"
-                          ? "bg-white/95 border border-purple-200/50"
-                          : "bg-slate-800/95 border border-purple-600/30"
-                      }`}
-                      style={{
-                        scrollbarWidth: "thin",
-                        scrollbarColor:
-                          theme === "light"
-                            ? "rgba(168, 85, 247, 0.5) rgba(168, 85, 247, 0.1)"
-                            : "rgba(255, 255, 255, 0.3) rgba(255, 255, 255, 0.1)",
-                      }}
-                    >
-                      <div className="grid grid-cols-2 gap-2">
-                        {alumniSubmenus.map((submenu, subIdx) => {
-                          const cardColors = [
-                            {
-                              bg:
-                                theme === "light"
-                                  ? "bg-purple-50"
-                                  : "bg-purple-900/20",
-                              border:
-                                "border-purple-200/50 dark:border-purple-600/30",
-                              text: "text-purple-900 dark:text-purple-100",
-                            },
-                            {
-                              bg:
-                                theme === "light"
-                                  ? "bg-pink-50"
-                                  : "bg-pink-900/20",
-                              border:
-                                "border-pink-200/50 dark:border-pink-600/30",
-                              text: "text-pink-900 dark:text-pink-100",
-                            },
-                          ];
-                          const colors = cardColors[subIdx % cardColors.length];
-
-                          return (
-                            <Link
-                              key={submenu.name}
-                              to={submenu.href}
-                              onClick={() => setAlumniMenuOpen(false)}
-                              className={`${colors.bg} ${colors.border} border rounded-lg p-3 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 group block text-xs sm:text-sm font-semibold ${
-                                theme === "light"
-                                  ? "text-gray-900 group-hover:text-purple-600"
-                                  : "text-white group-hover:text-purple-200"
-                              }`}
-                            >
-                              {submenu.name}
-                            </Link>
-                          );
-                        })}
-                      </div>
-                    </div>
-                  </div>
-                );
-              }
-
-              if (isLibrary) {
-                return (
-                  <div
-                    key={idx}
-                    className="relative"
-                    onMouseEnter={() => setLibraryMenuOpen(true)}
-                    onMouseLeave={() => setLibraryMenuOpen(false)}
-                  >
-                    <button
-                      className={`${sharedClasses} justify-center cursor-pointer`}
-                    >
-                      <span className="text-center">{item.name}</span>
-                      <ChevronDown
-                        className={`w-3 h-3 transition-transform ${libraryMenuOpen ? "rotate-180" : ""}`}
-                      />
-                    </button>
-
-                    {/* Library Dropdown */}
-                    <div
-                      className={`absolute left-0 top-full mt-2 w-auto min-w-max max-w-2xl rounded-2xl shadow-2xl transition-all duration-300 py-4 px-4 max-h-[600px] overflow-y-auto backdrop-blur-sm z-[10000] ${
-                        libraryMenuOpen
-                          ? "opacity-100 visible pointer-events-auto"
-                          : "opacity-0 invisible pointer-events-none"
-                      } ${
-                        theme === "light"
-                          ? "bg-white/95 border border-blue-200/50"
-                          : "bg-slate-800/95 border border-blue-600/30"
-                      }`}
-                      style={{
-                        scrollbarWidth: "thin",
-                        scrollbarColor:
-                          theme === "light"
-                            ? "rgba(59, 130, 246, 0.5) rgba(59, 130, 246, 0.1)"
-                            : "rgba(255, 255, 255, 0.3) rgba(255, 255, 255, 0.1)",
-                      }}
-                    >
-                      <div className="grid grid-cols-2 gap-2">
-                        {librarySubmenus.map((submenu, subIdx) => {
-                          const cardColors = [
-                            {
-                              bg:
-                                theme === "light"
-                                  ? "bg-blue-50"
-                                  : "bg-blue-900/20",
-                              border:
-                                "border-blue-200/50 dark:border-blue-600/30",
-                              text: "text-blue-900 dark:text-blue-100",
-                            },
-                            {
-                              bg:
-                                theme === "light"
-                                  ? "bg-cyan-50"
-                                  : "bg-cyan-900/20",
-                              border:
-                                "border-cyan-200/50 dark:border-cyan-600/30",
-                              text: "text-cyan-900 dark:text-cyan-100",
-                            },
-                          ];
-                          const colors = cardColors[subIdx % cardColors.length];
-
-                          return (
-                            <Link
-                              key={submenu.name}
-                              to={submenu.href}
-                              onClick={() => setLibraryMenuOpen(false)}
-                              className={`${colors.bg} ${colors.border} border rounded-lg p-3 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 group block text-xs sm:text-sm font-semibold ${
-                                theme === "light"
-                                  ? "text-gray-900 group-hover:text-blue-600"
-                                  : "text-white group-hover:text-blue-200"
-                              }`}
-                            >
-                              {submenu.name}
-                            </Link>
-                          );
-                        })}
-                      </div>
-                    </div>
-                  </div>
+                    <span>{item.name}</span>
+                  </a>
                 );
               }
 
