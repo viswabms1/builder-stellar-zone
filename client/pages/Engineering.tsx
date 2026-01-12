@@ -835,19 +835,19 @@ function SupportingDepartmentCard({
       <div className={`absolute left-6 top-3 z-20 ${badgeClasses}`}>
         Supporting Department
       </div>
-      <div className="relative z-10 flex h-[85%] flex-col justify-end p-3 text-white">
+      <div className="relative z-10 flex h-[85%] flex-col justify-end p-4 text-white">
         <div className={`${panelClasses} flex flex-col h-full`}>
-          <div className="space-y-4 flex-1 overflow-hidden">
+          <div className="space-y-3 flex-1 overflow-hidden">
             <div>
-              <h3 className="font-display text-2xl leading-tight text-white">
+              <h3 className="font-display text-xl leading-tight text-white">
                 {department.name}
               </h3>
-              <p className="mt-3 text-sm text-white/85 font-body">
+              <p className="mt-2 text-xs text-white/85 font-body">
                 {department.focus}
               </p>
             </div>
           </div>
-          <span className="inline-flex items-center gap-2 text-sm font-medium text-white/90 transition-colors group-hover:text-brand-magenta mt-auto">
+          <span className="inline-flex items-center gap-2 text-xs font-medium text-white/90 transition-colors group-hover:text-brand-magenta mt-auto">
             Visit department
             <ChevronRight className="h-4 w-4 transition-colors group-hover:text-brand-magenta" />
           </span>
