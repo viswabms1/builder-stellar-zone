@@ -816,11 +816,11 @@ function FoundationalDepartmentCard({
   const wrapperClasses =
     "group block h-full rounded-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-magenta focus-visible:ring-offset-2 focus-visible:ring-offset-background";
   const overlayClasses =
-    "bg-gradient-to-t from-black/95 via-black/70 to-transparent";
+    "bg-gradient-to-t from-black/85 via-black/50 to-transparent";
   const badgeClasses =
-    "inline-flex items-center gap-2 rounded-none px-3 py-1 text-xs uppercase tracking-wide bg-white/25 text-white backdrop-blur font-semibold";
+    "inline-flex items-center gap-2 rounded-none px-3 py-1 text-xs uppercase tracking-wide bg-white/20 text-white backdrop-blur";
   const panelClasses =
-    "rounded-none border border-white/15 p-3 shadow-[0_25px_80px_-35px_rgba(255,255,255,0.45)] transition-colors duration-500 bg-black/75 backdrop-blur-lg";
+    "rounded-none border border-white/15 p-3 shadow-[0_25px_80px_-35px_rgba(255,255,255,0.45)] transition-colors duration-500 bg-black/60 backdrop-blur-lg";
 
   const content = (
     <div className="relative flex h-full flex-col justify-end overflow-hidden rounded-none border border-white/10 bg-black/10 backdrop-blur-sm transition-all duration-700 hover:-translate-y-1 hover:shadow-2xl hover:shadow-brand-magenta/20 min-h-[340px]">
