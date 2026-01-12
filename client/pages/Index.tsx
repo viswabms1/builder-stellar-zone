@@ -580,7 +580,7 @@ export default function Index() {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       {/* Hero Section with Full-Screen Video Background */}
       <section
-        className="hero-section relative h-[40vh] md:h-[75vh] flex flex-col justify-between md:overflow-hidden overflow-visible md:mt-0"
+        className="hero-section relative h-[40vh] md:h-[75vh] flex flex-col justify-between md:overflow-hidden overflow-visible mt-14 md:mt-0"
         style={{ width: "100vw", marginLeft: "calc(-50vw + 50%)" }}
       >
         {/* Full-screen Background Video */}
