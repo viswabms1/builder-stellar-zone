@@ -505,6 +505,7 @@ export default function Navigation() {
                     : active ||
                         (isAbout && aboutMenuOpen) ||
                         (isAcademics && academicsMenuOpen) ||
+                        (isAlumni && alumniMenuOpen) ||
                         (isLibrary && libraryMenuOpen)
                       ? "bg-white/20 text-white font-semibold shadow-sm"
                       : "text-white/90 hover:text-white hover:bg-white/10"
