@@ -1375,9 +1375,9 @@ export default function Engineering() {
                 </div>
               </div>
 
-              {/* Dean's Message Video */}
+              {/* Dean's Message Text */}
               <div className="p-4 md:p-12 flex flex-col justify-center">
-                <div className="space-y-4">
+                <div className="space-y-6">
                   {/* Header with Name and Title */}
                   <div className="border-l-4 border-brand-magenta pl-4">
                     <h3 className="text-2xl font-semibold text-foreground font-display">
@@ -1391,8 +1391,25 @@ export default function Engineering() {
                     </p>
                   </div>
 
-                  {/* Video Container */}
-                  <DeanMessageVideo />
+                  {/* Message Content */}
+                  <div className="space-y-4">
+                    <div>
+                      <p className="font-display text-lg font-bold text-brand-magenta mb-3">
+                        BE YOU • BE THE DIFFERENCE!!!
+                      </p>
+                    </div>
+                    <ul className="space-y-3 text-sm text-foreground/90 font-body list-disc list-inside">
+                      <li>Welcome to the new way of learning at School of Engineering (SoE) of Dayananda Sagar University (DSU). We are committed to helping you make a positive difference in the world.</li>
+                      <li>We provide outstanding education that equips students with the skills, experience, and confidence required to stand out from the crowd.</li>
+                      <li>The School promotes Culture of Excellence including Interdisciplinary learning, Research, Creativity, Innovations, and Entrepreneurship on Cutting-Edge Technologies.</li>
+                      <li>We provide World-Class Education that is Student-centric and Research-centric, creating an educational space where students have transformative education, learn to be independent critical thinkers, and develop societal and ethical responsibility.</li>
+                      <li>We value ability, not background. We support all students to achieve their potential and ensure they have the knowledge, expertise, and employability skills for their chosen career path.</li>
+                      <li>We are pleased you are considering the School of Engineering at DSU and hope you choose to continue your education with us.</li>
+                    </ul>
+                    <p className="font-display font-semibold text-brand-magenta pt-2">
+                      BEST WISHES!
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
