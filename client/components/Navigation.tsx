@@ -397,6 +397,7 @@ export default function Navigation() {
     { name: "Admissions", href: "/admissions" },
     { name: "Campus Life", href: "/campus-life" },
     { name: "Centre of Excellence", href: "/centre-of-excellence" },
+    { name: "Library", href: "/library" },
     { name: "Placements", href: "/placements" },
   ];
 
