@@ -1438,28 +1438,128 @@ export default function Navigation() {
 
               {/* Top Menu Items (Below Main Navigation) */}
               <div
-                className={`pt-4 space-y-1.5 border-t ${
+                className={`pt-4 space-y-2 border-t ${
                   theme === "light" ? "border-orange-200" : "border-white/20"
                 }`}
               >
-                {topMenuItems.map((item, idx) => (
-                  <Link
-                    key={`top-${idx}`}
-                    to={item.href}
-                    {...(item.external && {
-                      target: "_blank",
-                      rel: "noopener noreferrer",
-                    })}
-                    onClick={() => setIsOpen(false)}
-                    className={`flex items-center space-x-2 px-3 py-2 rounded-xl text-base sm:text-lg font-medium font-display transition-all duration-200 w-full ${
-                      theme === "light"
-                        ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
-                        : "text-white/90 hover:text-white hover:bg-white/10"
-                    }`}
-                  >
-                    <span className="truncate">{item.name}</span>
-                  </Link>
-                ))}
+                {topMenuItems.map((item, idx) => {
+                  const isAlumni = item.href === "/alumni";
+                  const isLibrary = item.href === "/library";
+                  const sharedClasses = `flex items-center space-x-2 px-3 py-2 rounded-xl text-base sm:text-lg font-medium font-display transition-all duration-200 w-full ${
+                    theme === "light"
+                      ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
+                      : "text-white/90 hover:text-white hover:bg-white/10"
+                  }`;
+
+                  if (isAlumni) {
+                    return (
+                      <div key={`top-${idx}`} className="space-y-2">
+                        <button
+                          onClick={() => setAlumniMenuOpen(!alumniMenuOpen)}
+                          className={`w-full text-left ${sharedClasses}`}
+                        >
+                          <span className="flex-1 truncate">{item.name}</span>
+                          <ChevronDown
+                            className={`w-4 h-4 transition-transform flex-shrink-0 ${
+                              alumniMenuOpen ? "rotate-180" : ""
+                            }`}
+                          />
+                        </button>
+
+                        {/* Mobile Alumni Submenu */}
+                        {alumniMenuOpen && (
+                          <div
+                            className={`rounded-lg py-2 ml-4 border-l-2 ${
+                              theme === "light"
+                                ? "bg-purple-100 border-l-purple-300"
+                                : "bg-purple-900/20 border-l-purple-600"
+                            }`}
+                          >
+                            {alumniSubmenus.map((submenu, subIdx) => (
+                              <Link
+                                key={subIdx}
+                                to={submenu.href}
+                                onClick={() => {
+                                  setIsOpen(false);
+                                  setAlumniMenuOpen(false);
+                                }}
+                                className={`block px-4 py-1.5 text-base sm:text-lg rounded transition-colors ${
+                                  theme === "light"
+                                    ? "text-gray-700 hover:bg-purple-200"
+                                    : "text-white hover:bg-purple-900/40"
+                                }`}
+                              >
+                                {submenu.name}
+                              </Link>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    );
+                  }
+
+                  if (isLibrary) {
+                    return (
+                      <div key={`top-${idx}`} className="space-y-2">
+                        <button
+                          onClick={() => setLibraryMenuOpen(!libraryMenuOpen)}
+                          className={`w-full text-left ${sharedClasses}`}
+                        >
+                          <span className="flex-1 truncate">{item.name}</span>
+                          <ChevronDown
+                            className={`w-4 h-4 transition-transform flex-shrink-0 ${
+                              libraryMenuOpen ? "rotate-180" : ""
+                            }`}
+                          />
+                        </button>
+
+                        {/* Mobile Library Submenu */}
+                        {libraryMenuOpen && (
+                          <div
+                            className={`rounded-lg py-2 ml-4 border-l-2 max-h-64 overflow-y-auto ${
+                              theme === "light"
+                                ? "bg-blue-100 border-l-blue-300"
+                                : "bg-blue-900/20 border-l-blue-600"
+                            }`}
+                          >
+                            {librarySubmenus.map((submenu, subIdx) => (
+                              <Link
+                                key={subIdx}
+                                to={submenu.href}
+                                onClick={() => {
+                                  setIsOpen(false);
+                                  setLibraryMenuOpen(false);
+                                }}
+                                className={`block px-4 py-1.5 text-base sm:text-lg rounded transition-colors ${
+                                  theme === "light"
+                                    ? "text-gray-700 hover:bg-blue-200"
+                                    : "text-white hover:bg-blue-900/40"
+                                }`}
+                              >
+                                {submenu.name}
+                              </Link>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    );
+                  }
+
+                  return (
+                    <Link
+                      key={`top-${idx}`}
+                      to={item.href}
+                      {...(item.external && {
+                        target: "_blank",
+                        rel: "noopener noreferrer",
+                      })}
+                      onClick={() => setIsOpen(false)}
+                      className={sharedClasses}
+                    >
+                      <span className="truncate">{item.name}</span>
+                    </Link>
+                  );
+                })}
               </div>
 
               <div
