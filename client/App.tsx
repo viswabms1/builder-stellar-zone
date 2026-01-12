@@ -363,6 +363,20 @@ import VanishreeRPage from "./pages/humanities-social-sciences/VanishreeR";
 import MythriRPage from "./pages/humanities-social-sciences/MythriR";
 import BhagyajyothiKSPage from "./pages/humanities-social-sciences/BhagyajyothiKS";
 import About from "./pages/About";
+import Library from "./pages/Library";
+import LibraryVisionMission from "./pages/LibraryVisionMission";
+import LibraryTeam from "./pages/LibraryTeam";
+import LibraryEResources from "./pages/LibraryEResources";
+import LibraryCollections from "./pages/LibraryCollections";
+import LibraryAntiPlagiarism from "./pages/LibraryAntiPlagiarism";
+import LibraryRulesRegulations from "./pages/LibraryRulesRegulations";
+import LibraryCorporateMembership from "./pages/LibraryCorporateMembership";
+import LibraryUsefulLinks from "./pages/LibraryUsefulLinks";
+import LibraryBrochure from "./pages/LibraryBrochure";
+import LibraryConstituentLibraries from "./pages/LibraryConstituentLibraries";
+import LibraryGallery from "./pages/LibraryGallery";
+import LibraryAdvisoryCommittee from "./pages/LibraryAdvisoryCommittee";
+import LibraryContact from "./pages/LibraryContact";
 import NotFound from "./pages/NotFound";
 
 function App() {
