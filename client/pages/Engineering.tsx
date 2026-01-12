@@ -768,11 +768,11 @@ function DepartmentCard({ department }: { department: EngineeringDepartment }) {
       <div className={`absolute left-6 top-3 z-20 ${badgeClasses}`}>
         {department.area}
       </div>
-      <div className="relative z-10 flex h-3/4 flex-col justify-end p-3 text-white">
+      <div className="relative z-10 flex h-[85%] flex-col justify-end p-3 text-white">
         <div className={`${panelClasses} flex flex-col h-full`}>
-          <div className="space-y-3 flex-1 overflow-hidden">
+          <div className="space-y-2 flex-1 overflow-hidden">
             <div>
-              <h3 className="font-display text-xl leading-tight text-white line-clamp-2">
+              <h3 className="font-display text-lg leading-snug text-white line-clamp-3">
                 {department.name}
               </h3>
               <p className="mt-2 text-xs text-white/85 font-body line-clamp-2">
