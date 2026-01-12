@@ -687,54 +687,37 @@ function NoticeBoardCarousel() {
   };
 
   return (
-    <section className="px-3 py-8">
-      <div className="mx-auto max-w-7xl space-y-4">
-        <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <h2 className="headline-2 mb-3 font-display">
-              <span className="text-foreground">School of Engineering </span>
-              <span className="bg-brand-gradient bg-clip-text text-transparent">
-                Notice Board
-              </span>
-            </h2>
-            <p className="max-w-2xl text-sm text-foreground sm:text-base font-body">
-              Stay updated with upcoming events, news, and important
-              announcements from all departments.
-            </p>
-          </div>
+    <>
+      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <div>
+          {renderCarousel(
+            "Events",
+            events,
+            currentEventIndex,
+            setCurrentEventIndex,
+            "Event",
+          )}
         </div>
-
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          <div>
-            {renderCarousel(
-              "Events",
-              events,
-              currentEventIndex,
-              setCurrentEventIndex,
-              "Event",
-            )}
-          </div>
-          <div>
-            {renderCarousel(
-              "News",
-              news,
-              currentNewsIndex,
-              setCurrentNewsIndex,
-              "News",
-            )}
-          </div>
-          <div>
-            {renderCarousel(
-              "Announcements",
-              announcements,
-              currentAnnouncementIndex,
-              setCurrentAnnouncementIndex,
-              "Announcement",
-            )}
-          </div>
+        <div>
+          {renderCarousel(
+            "News",
+            news,
+            currentNewsIndex,
+            setCurrentNewsIndex,
+            "News",
+          )}
+        </div>
+        <div>
+          {renderCarousel(
+            "Announcements",
+            announcements,
+            currentAnnouncementIndex,
+            setCurrentAnnouncementIndex,
+            "Announcement",
+          )}
         </div>
       </div>
-    </section>
+    </>
   );
 }
 
