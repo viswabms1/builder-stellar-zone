@@ -813,46 +813,51 @@ function SupportingDepartmentCard({
   department: SupportingDepartment;
 }) {
   const isInternal = department.link.startsWith("/");
-  const cardContent = (
-    <Card className="h-full overflow-hidden rounded-none border border-purple-500/20 bg-purple-500/10 backdrop-blur">
-      <div className="relative h-48 overflow-hidden">
-        <img
-          src={department.image}
-          alt={department.name}
-          className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-        <div className="absolute bottom-4 left-4">
-          <Badge
-            className="bg-white/20 text-white backdrop-blur"
-            variant="secondary"
-          >
-            Supporting Department
-          </Badge>
-          <h3 className="mt-3 text-xl font-semibold text-white font-display">
-            {department.name}
-          </h3>
+  const wrapperClasses =
+    "group block h-full rounded-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-magenta focus-visible:ring-offset-2 focus-visible:ring-offset-background";
+  const badgeClasses =
+    "inline-flex items-center gap-2 rounded-none px-3 py-1 text-xs uppercase tracking-wide bg-white/20 text-white backdrop-blur";
+  const panelClasses =
+    "rounded-none border border-white/15 p-3 shadow-[0_25px_80px_-35px_rgba(255,255,255,0.45)] transition-colors duration-500 bg-black/60 backdrop-blur-lg";
+
+  const content = (
+    <div className="relative flex h-full flex-col justify-end overflow-hidden rounded-none border border-white/10 bg-black/10 backdrop-blur-sm transition-all duration-700 hover:-translate-y-1 hover:shadow-2xl hover:shadow-brand-magenta/20 min-h-[420px]">
+      <img
+        src={department.image}
+        alt={department.name}
+        loading="lazy"
+        className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
+      <div className={`absolute left-6 top-3 z-20 ${badgeClasses}`}>
+        Supporting Department
+      </div>
+      <div className="relative z-10 flex h-[85%] flex-col justify-end p-3 text-white">
+        <div className={`${panelClasses} flex flex-col h-full`}>
+          <div className="space-y-4 flex-1 overflow-hidden">
+            <div>
+              <h3 className="font-display text-2xl leading-tight text-white">
+                {department.name}
+              </h3>
+              <p className="mt-3 text-sm text-white/85 font-body">
+                {department.focus}
+              </p>
+            </div>
+          </div>
+          <span className="inline-flex items-center gap-2 text-sm font-medium text-white/90 transition-colors group-hover:text-brand-magenta mt-auto">
+            Visit department
+            <ChevronRight className="h-4 w-4 transition-colors group-hover:text-brand-magenta" />
+          </span>
         </div>
       </div>
-      <CardContent className="space-y-4 p-3">
-        <p className="text-sm leading-relaxed text-foreground font-body">
-          {department.focus}
-        </p>
-        <span className="inline-flex items-center gap-2 text-sm font-medium text-brand-magenta">
-          Visit department
-          <ChevronRight className="h-4 w-4" />
-        </span>
-      </CardContent>
-    </Card>
+    </div>
   );
 
   if (isInternal) {
     return (
-      <RouterLink
-        to={department.link}
-        className="group block h-full transform transition-all duration-500 hover:-translate-y-1"
-      >
-        {cardContent}
+      <RouterLink to={department.link} className={wrapperClasses}>
+        {content}
       </RouterLink>
     );
   }
@@ -862,9 +867,9 @@ function SupportingDepartmentCard({
       href={department.link}
       target="_blank"
       rel="noreferrer"
-      className="group block h-full transform transition-all duration-500 hover:-translate-y-1"
+      className={wrapperClasses}
     >
-      {cardContent}
+      {content}
     </a>
   );
 }
