@@ -767,7 +767,7 @@ function DepartmentCard({ department }: { department: EngineeringDepartment }) {
       />
       <div className={`absolute inset-0 ${overlayClasses}`} />
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
-      <div className={`absolute left-6 top-3 ${badgeClasses}`}>
+      <div className={`absolute left-6 top-3 z-20 ${badgeClasses}`}>
         {department.area}
       </div>
       <div className="relative z-10 flex h-full flex-col justify-end p-3 text-white">
