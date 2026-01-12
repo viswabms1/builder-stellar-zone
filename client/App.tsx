@@ -1726,6 +1726,12 @@ function App() {
                   element={<CentreOfExcellence />}
                 />
                 <Route path="/iqac" element={<IQAC />} />
+                {/* Alumni Routes */}
+                <Route path="/alumni" element={<Alumni />} />
+                <Route path="/alumni/vision-mission" element={<AlumniVisionMission />} />
+                <Route path="/alumni/events" element={<AlumniEvents />} />
+                <Route path="/alumni/newsletter" element={<AlumniNewsletter />} />
+                <Route path="/alumni/contact" element={<AlumniContact />} />
                 {/* Library Routes */}
                 <Route path="/library" element={<Library />} />
                 <Route path="/library/vision-mission" element={<LibraryVisionMission />} />
