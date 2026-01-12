@@ -177,13 +177,13 @@ export default function AlumniNewsletter() {
 
         {/* Subscribe Section */}
         <Card className="border-none shadow-lg bg-green-50 dark:bg-slate-800">
-          <CardHeader>
+          <CardHeader style={{ backgroundColor: "rgba(0, 0, 0, 1)" }}>
             <CardTitle className="text-3xl">Subscribe to Our Newsletter</CardTitle>
             <CardDescription className="text-lg">
               Never miss an update from the DSU alumni community
             </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-6">
+          <CardContent className="space-y-6" style={{ backgroundColor: "rgba(0, 0, 0, 0.7)" }}>
             <p className="text-foreground/80 leading-relaxed">
               Stay connected with monthly updates on alumni achievements, university news, upcoming events, and ways to get involved. Subscribe to the DSU Alumni Digest today and become part of our thriving global alumni community.
             </p>
