@@ -10,6 +10,7 @@ declare global {
 }
 import {
   Award,
+  ArrowRight,
   Beaker,
   CalendarDays,
   CheckCircle2,
