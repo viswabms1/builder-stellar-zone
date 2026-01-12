@@ -419,7 +419,7 @@ export default function Navigation() {
     <>
       {/* Top Menu Bar - Hidden on mobile/tablet portrait, shown on larger screens */}
       <div
-        className={`hidden lg:flex sticky top-0 z-[9998] h-14 transition-all duration-300 items-center ${
+        className={`hidden lg:flex sticky top-0 z-[10001] h-14 transition-all duration-300 items-center ${
           theme === "light"
             ? "bg-gradient-to-r from-orange-50 to-white border-b-2 border-orange-200/50"
             : "bg-gradient-to-r from-slate-900 to-slate-950 border-b-2 border-orange-600/30"
