@@ -1083,7 +1083,7 @@ export default function Navigation() {
                       to="/ai-first"
                       className={sharedClasses}
                     >
-                      <span>AI-First @ DSU</span>
+                      <span className="max-w-[60px] text-center leading-tight">AI-First @ DSU</span>
                     </Link>,
                   ];
                 }
