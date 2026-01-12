@@ -394,9 +394,9 @@ export default function Navigation() {
             : "bg-gradient-to-r from-slate-900 to-slate-950 border-b-2 border-orange-600/30"
         }`}
       >
-        <div className="w-full max-w-6xl mx-auto px-2 sm:px-4 flex items-center justify-between gap-1 sm:gap-2">
+        <div className="w-full max-w-6xl mx-auto px-2 sm:px-4 flex items-center justify-end gap-1 sm:gap-2">
           {/* All Top Menu Items in one continuous row */}
-          <div className="flex items-center gap-0.5 sm:gap-1 flex-nowrap overflow-x-auto scrollbar-hide">
+          <div className="flex items-center gap-0.5 sm:gap-1 flex-nowrap overflow-x-auto scrollbar-hide order-2">
             {topMenuItems.map((item, idx) => (
               <Link
                 key={idx}
@@ -425,7 +425,7 @@ export default function Navigation() {
           </div>
 
           {/* Right side - Language Switcher */}
-          <div className="flex items-center gap-2 flex-shrink-0">
+          <div className="flex items-center gap-2 flex-shrink-0 order-3">
             <div className="h-6 w-px bg-gray-300 dark:bg-white/20"></div>
             <LanguageSwitcher />
           </div>
@@ -441,11 +441,11 @@ export default function Navigation() {
         }`}
       >
         <div className="w-full mx-auto px-8 overflow-visible">
-          <div className="flex items-center justify-between h-16 lg:h-22">
+          <div className="flex flex-col items-center justify-center h-16 lg:h-22 lg:flex-row">
             {/* Logo - Visible on mobile and tablet portrait, hidden on desktop */}
             <Link
               to="/"
-              className="lg:hidden flex-shrink-0 flex items-center justify-center"
+              className="flex-shrink-0 flex items-center justify-center"
             >
               <img
                 src={
@@ -459,7 +459,7 @@ export default function Navigation() {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center gap-1">
+            <div className="flex items-center gap-1 flex-wrap justify-center">
               {navigation.map((item, idx) => {
                 const active = !item.external && isActive(item.href);
                 const isAbout = item.href === "/about";
