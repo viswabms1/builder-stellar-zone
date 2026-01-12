@@ -664,7 +664,7 @@ export default function Navigation() {
             {/* Logo - Visible on mobile portrait only, hidden on desktop and landscape */}
             <Link
               to="/"
-              className="lg:hidden landscape:hidden flex-shrink-0 flex items-center justify-center"
+              className="lg:hidden hidden sm:landscape:hidden portrait:flex flex-shrink-0 flex items-center justify-center"
             >
               <img
                 src={
