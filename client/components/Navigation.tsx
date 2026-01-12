@@ -660,7 +660,7 @@ export default function Navigation() {
         }`}
       >
         <div className="w-full overflow-visible">
-          <div className="flex flex-col items-center justify-center h-auto lg:h-auto lg:flex-row">
+          <div className="flex flex-col items-center justify-center h-auto lg:h-auto lg:flex-row max-h-32 sm:max-h-auto">
             {/* Logo - Visible on mobile portrait only, hidden on desktop and landscape */}
             <Link
               to="/"
