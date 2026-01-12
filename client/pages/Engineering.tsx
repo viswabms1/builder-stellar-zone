@@ -1381,8 +1381,76 @@ export default function Engineering() {
         </div>
       </section>
 
+      {/* Dean's Message Section - Moved after program overview */}
+      <section className="dean-section-wrapper relative overflow-hidden px-3 py-8 bg-gradient-to-r from-orange-500/5 via-brand-magenta/5 to-brand-blue/5">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-8">
+            <h2 className="font-display text-3xl md:text-4xl mb-2">
+              Message from the Dean
+            </h2>
+            <p className="text-sm text-foreground/70 font-body">
+              Vision for Engineering at DSU
+            </p>
+          </div>
+          <div className="rounded-none border border-orange-500/20 bg-orange-500/10 overflow-hidden backdrop-blur">
+            <div className="grid md:grid-cols-[300px_1fr] gap-0">
+              {/* Dean's Photo */}
+              <div className="relative overflow-hidden bg-gradient-to-br from-brand-magenta/10 to-brand-blue/10 flex items-start justify-center p-2 sm:p-4 md:p-12 pt-3 sm:pt-6 md:pt-12">
+                <div className="relative w-full max-w-[160px] sm:max-w-xs md:max-w-xs">
+                  <img
+                    src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fb0960f67ec5541b7bc257c9ecfe8e30b?format=webp&width=800"
+                    alt="Dr. Udaya Kumar Reddy K R"
+                    className="w-full h-auto object-cover rounded-none border-4 border-white/20"
+                  />
+                  <div
+                    className="absolute -left-2 top-0 bottom-0 w-1 bg-gradient-to-b from-brand-orange via-brand-magenta to-brand-blue"
+                    aria-hidden="true"
+                  />
+                </div>
+              </div>
+
+              {/* Dean's Message Video */}
+              <div className="p-4 md:p-12 flex flex-col justify-center">
+                <div className="space-y-4">
+                  {/* Header with Name and Title */}
+                  <div className="border-l-4 border-brand-magenta pl-4">
+                    <h3 className="text-2xl font-semibold text-foreground font-display">
+                      Dr. Udaya Kumar Reddy K R
+                    </h3>
+                    <p className="text-sm text-foreground mt-1 font-body">
+                      Ph.D
+                    </p>
+                    <p className="text-sm font-medium text-brand-magenta mt-2 font-display">
+                      Dean, School of Engineering
+                    </p>
+                  </div>
+
+                  {/* Video Container */}
+                  <DeanMessageVideo />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="notice-board" className="px-3 py-8">
-        <NoticeBoardCarousel />
+        <div className="mx-auto max-w-7xl">
+          <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between mb-8">
+            <div>
+              <h2 className="headline-2 mb-3 font-display">
+                <span className="text-foreground">What's Happening at </span>
+                <span className="bg-brand-gradient bg-clip-text text-transparent">
+                  DSU Engineering
+                </span>
+              </h2>
+              <p className="max-w-2xl text-sm text-foreground sm:text-base font-body">
+                Explore recent achievements, industry collaborations, and upcoming opportunities.
+              </p>
+            </div>
+          </div>
+          <NoticeBoardCarousel />
+        </div>
       </section>
 
       <section
@@ -1605,6 +1673,9 @@ export default function Engineering() {
             <p className="mb-6 text-foreground font-body">
               Explore programmes, take a virtual tour and begin your journey at
               the DSU School of Engineering.
+            </p>
+            <p className="mb-4 text-xs text-foreground/70 font-body">
+              Admissions support available across CET, Direct & International pathways.
             </p>
             <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
               <a
