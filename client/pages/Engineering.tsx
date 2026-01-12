@@ -1664,6 +1664,27 @@ export default function Engineering() {
         </div>
       </section>
 
+      {/* Eligibility Teaser Bar */}
+      <section className="bg-brand-magenta/5 border-y border-brand-magenta/20 px-3 py-4">
+        <div className="mx-auto max-w-7xl">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+            <div className="text-sm text-foreground font-body">
+              <span className="font-semibold">Quick Eligibility Check:</span>
+              <span className="ml-2 text-foreground/70">
+                10+2 with Physics & Mathematics | B.Tech | M.Tech via PGCET / Direct
+              </span>
+            </div>
+            <a
+              href="/program-lookup"
+              className="inline-flex items-center gap-2 text-sm font-medium text-brand-magenta hover:text-brand-magenta/80 transition-colors"
+            >
+              Explore Programs
+              <ChevronRight className="h-4 w-4" />
+            </a>
+          </div>
+        </div>
+      </section>
+
       <section className="px-3 pb-20">
         <div className="mx-auto max-w-4xl text-center">
           <div className="rounded-3xl border border-brand-magenta/20 bg-brand-magenta/5 p-10">
@@ -1713,6 +1734,99 @@ export default function Engineering() {
                 </Button>
               </a>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why DSU Engineering Section */}
+      <section className="px-3 py-12">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-12">
+            <h2 className="font-display text-3xl md:text-4xl">
+              Why Choose DSU Engineering?
+            </h2>
+            <p className="mt-4 text-sm text-foreground/70 font-body max-w-3xl">
+              Backed by accreditation, innovation labs, and industry partnerships that shape your career.
+            </p>
+          </div>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {/* Industry Labs */}
+            <Card className="rounded-2xl border border-brand-magenta/20 bg-brand-magenta/5 backdrop-blur">
+              <CardHeader>
+                <CardTitle className="font-display flex items-center gap-2">
+                  <Beaker className="h-5 w-5 text-brand-magenta" />
+                  Industry Labs
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="text-sm text-foreground/80 font-body">
+                IBM, NVIDIA, GE and VMware innovation centers driving real-world project experience.
+              </CardContent>
+            </Card>
+
+            {/* AI-First Infrastructure */}
+            <Card className="rounded-2xl border border-brand-blue/20 bg-brand-blue/5 backdrop-blur">
+              <CardHeader>
+                <CardTitle className="font-display flex items-center gap-2">
+                  <Cpu className="h-5 w-5 text-brand-blue" />
+                  AI-First Infrastructure
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="text-sm text-foreground/80 font-body">
+                Dedicated AI studios, ML labs, and emerging tech platforms embedded in every program.
+              </CardContent>
+            </Card>
+
+            {/* Research Centers */}
+            <Card className="rounded-2xl border border-brand-orange/20 bg-brand-orange/5 backdrop-blur">
+              <CardHeader>
+                <CardTitle className="font-display flex items-center gap-2">
+                  <Microscope className="h-5 w-5 text-brand-orange" />
+                  Research Centers
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="text-sm text-foreground/80 font-body">
+                Active research in aerospace, healthcare tech, robotics and sustainable engineering.
+              </CardContent>
+            </Card>
+
+            {/* Strong Placements */}
+            <Card className="rounded-2xl border border-brand-magenta/20 bg-brand-magenta/5 backdrop-blur">
+              <CardHeader>
+                <CardTitle className="font-display flex items-center gap-2">
+                  <GraduationCap className="h-5 w-5 text-brand-magenta" />
+                  Strong Placements
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="text-sm text-foreground/80 font-body">
+                Partnerships with global tech companies, startups and enterprises across sectors.
+              </CardContent>
+            </Card>
+
+            {/* NAAC Accreditation */}
+            <Card className="rounded-2xl border border-brand-blue/20 bg-brand-blue/5 backdrop-blur">
+              <CardHeader>
+                <CardTitle className="font-display flex items-center gap-2">
+                  <Award className="h-5 w-5 text-brand-blue" />
+                  NAAC Accredited
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="text-sm text-foreground/80 font-body">
+                NAAC A+ accreditation backed by continuous quality assurance and innovation.
+              </CardContent>
+            </Card>
+
+            {/* Holistic Education */}
+            <Card className="rounded-2xl border border-brand-orange/20 bg-brand-orange/5 backdrop-blur">
+              <CardHeader>
+                <CardTitle className="font-display flex items-center gap-2">
+                  <Network className="h-5 w-5 text-brand-orange" />
+                  Holistic Education
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="text-sm text-foreground/80 font-body">
+                Strong fundamentals in science, math, and humanities complementing technical depth.
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
