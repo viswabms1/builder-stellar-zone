@@ -1160,8 +1160,6 @@ export default function Navigation() {
                 const active = !item.external && isActive(item.href);
                 const isAbout = item.href === "/about";
                 const isAcademics = item.href === "/academics";
-                const isAlumni = item.href === "/alumni";
-                const isLibrary = item.href === "/library";
                 const sharedClasses = `flex items-center space-x-2 px-3 py-2.5 rounded-xl text-base sm:text-lg font-medium font-display transition-all duration-200 w-full ${
                   theme === "light"
                     ? active
