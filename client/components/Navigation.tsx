@@ -396,7 +396,11 @@ export default function Navigation() {
     { name: "News & Events", href: "/news-events" },
     { name: "Blog", href: "/blog" },
     { name: "Careers", href: "/careers" },
-    { name: "Public Self Disclosure", href: "https://dsu.edu.in/images/University/Public_Self_Disclosure_DSU.pdf", external: true },
+    {
+      name: "Public Self Disclosure",
+      href: "https://dsu.edu.in/images/University/Public_Self_Disclosure_DSU.pdf",
+      external: true,
+    },
   ];
 
   const navigation = [
@@ -661,7 +665,6 @@ export default function Navigation() {
       >
         <div className="w-full overflow-visible">
           <div className="flex flex-row items-center justify-between h-14 lg:h-auto lg:flex-col lg:items-center lg:justify-center lg:flex-row">
-
             {/* Mobile Logo - Left side */}
             <Link
               to="/"
@@ -725,7 +728,9 @@ export default function Navigation() {
                           onClick={() => setAboutMenuOpen(!aboutMenuOpen)}
                           className={`${sharedClasses} justify-center`}
                         >
-                          <span className="max-w-[85px] text-center leading-snug">{item.name}</span>
+                          <span className="max-w-[85px] text-center leading-snug">
+                            {item.name}
+                          </span>
                           <ChevronDown
                             className={`w-4 h-4 transition-transform ${aboutMenuOpen ? "rotate-180" : ""}`}
                           />
@@ -835,7 +840,9 @@ export default function Navigation() {
                           }
                           className={`${sharedClasses} ml-0 sm:ml-4 justify-center`}
                         >
-                          <span className="max-w-[85px] text-center leading-snug">{item.name}</span>
+                          <span className="max-w-[85px] text-center leading-snug">
+                            {item.name}
+                          </span>
                           <ChevronDown
                             className={`w-4 h-4 transition-transform ${academicsMenuOpen ? "rotate-180" : ""}`}
                           />
@@ -1048,10 +1055,15 @@ export default function Navigation() {
                     );
                   }
 
-
                   return (
-                    <Link key={idx} to={item.href} className={`${sharedClasses} justify-center`}>
-                      <span className="max-w-[85px] text-center leading-snug">{item.name}</span>
+                    <Link
+                      key={idx}
+                      to={item.href}
+                      className={`${sharedClasses} justify-center`}
+                    >
+                      <span className="max-w-[85px] text-center leading-snug">
+                        {item.name}
+                      </span>
                       {active && (
                         <div
                           className={`w-1 h-1 rounded-full ${
@@ -1071,7 +1083,9 @@ export default function Navigation() {
                       to="/nvidia-ai-architecture"
                       className={`${sharedClasses} ml-0 justify-center`}
                     >
-                      <span className="max-w-[85px] text-center leading-snug">NVIDIA's AI Architecture</span>
+                      <span className="max-w-[85px] text-center leading-snug">
+                        NVIDIA's AI Architecture
+                      </span>
                     </Link>,
                   ];
                 }
@@ -1103,7 +1117,9 @@ export default function Navigation() {
                       to="/ai-first"
                       className={`${sharedClasses} justify-center`}
                     >
-                      <span className="max-w-[85px] text-center leading-snug">AI-First @ DSU</span>
+                      <span className="max-w-[85px] text-center leading-snug">
+                        AI-First @ DSU
+                      </span>
                     </Link>,
                   ];
                 }
@@ -1111,7 +1127,6 @@ export default function Navigation() {
                 return itemElement;
               })}
             </div>
-
 
             {/* Mobile menu button */}
             <div className="lg:hidden">
@@ -1431,7 +1446,10 @@ export default function Navigation() {
                   <Link
                     key={`top-${idx}`}
                     to={item.href}
-                    {...(item.external && { target: "_blank", rel: "noopener noreferrer" })}
+                    {...(item.external && {
+                      target: "_blank",
+                      rel: "noopener noreferrer",
+                    })}
                     onClick={() => setIsOpen(false)}
                     className={`flex items-center space-x-2 px-3 py-2 rounded-xl text-base sm:text-lg font-medium font-display transition-all duration-200 w-full ${
                       theme === "light"
