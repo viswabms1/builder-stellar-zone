@@ -1397,11 +1397,11 @@ export default function Engineering() {
                   {/* Message Content */}
                   <div className="space-y-4 pt-4 border-t border-border/20">
                     <div>
-                      <p className="font-display text-base font-bold text-brand-magenta mb-3">
+                      <p className="font-display text-lg font-bold text-brand-magenta mb-3">
                         BE YOU • BE THE DIFFERENCE!!!
                       </p>
                     </div>
-                    <ul className="space-y-2 text-xs text-foreground/80 font-body list-disc list-inside">
+                    <ul className="space-y-3 text-sm text-foreground/85 font-body list-disc list-inside leading-relaxed">
                       <li>Welcome to the new way of learning at School of Engineering (SoE). We are committed to helping you make a positive difference in the world.</li>
                       <li>Outstanding education that equips students with skills, experience, and confidence to stand out from the crowd.</li>
                       <li>Culture of Excellence including Interdisciplinary learning, Research, Creativity, Innovations, and Entrepreneurship on Cutting-Edge Technologies.</li>
@@ -1409,7 +1409,7 @@ export default function Engineering() {
                       <li>We value ability, not background. Support for all students to achieve their potential and gain knowledge, expertise, and employability skills for their chosen career path.</li>
                       <li>Join us at School of Engineering, DSU, for a transformative education experience.</li>
                     </ul>
-                    <p className="font-display font-semibold text-brand-magenta pt-2 text-xs">
+                    <p className="font-display font-semibold text-brand-magenta pt-2 text-sm">
                       BEST WISHES!
                     </p>
                   </div>
