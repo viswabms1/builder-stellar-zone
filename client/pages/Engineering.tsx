@@ -1289,50 +1289,6 @@ export default function Engineering() {
         <HeroVideo />
       </section>
 
-      {/* Dean's Message Section */}
-      <section className="dean-section-wrapper relative overflow-hidden px-3 py-2">
-        <div className="mx-auto max-w-7xl">
-          <div className="rounded-none border border-orange-500/20 bg-orange-500/10 overflow-hidden backdrop-blur">
-            <div className="grid md:grid-cols-[300px_1fr] gap-0">
-              {/* Dean's Photo */}
-              <div className="relative overflow-hidden bg-gradient-to-br from-brand-magenta/10 to-brand-blue/10 flex items-start justify-center p-2 sm:p-4 md:p-12 pt-3 sm:pt-6 md:pt-12">
-                <div className="relative w-full max-w-[160px] sm:max-w-xs md:max-w-xs">
-                  <img
-                    src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fb0960f67ec5541b7bc257c9ecfe8e30b?format=webp&width=800"
-                    alt="Dr. Udaya Kumar Reddy K R"
-                    className="w-full h-auto object-cover rounded-none border-4 border-white/20"
-                  />
-                  <div
-                    className="absolute -left-2 top-0 bottom-0 w-1 bg-gradient-to-b from-brand-orange via-brand-magenta to-brand-blue"
-                    aria-hidden="true"
-                  />
-                </div>
-              </div>
-
-              {/* Dean's Message Video */}
-              <div className="p-4 md:p-12 flex flex-col justify-center">
-                <div className="space-y-4">
-                  {/* Header with Name and Title */}
-                  <div className="border-l-4 border-brand-magenta pl-4">
-                    <h3 className="text-2xl font-semibold text-foreground font-display">
-                      Dr. Udaya Kumar Reddy K R
-                    </h3>
-                    <p className="text-sm text-foreground mt-1 font-body">
-                      Ph.D
-                    </p>
-                    <p className="text-sm font-medium text-brand-magenta mt-2 font-display">
-                      Dean, School of Engineering
-                    </p>
-                  </div>
-
-                  {/* Video Container */}
-                  <DeanMessageVideo />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       <section id="programs" className="relative overflow-hidden px-3 py-8">
         <div
@@ -1398,8 +1354,11 @@ export default function Engineering() {
                 Supporting Departments
               </Badge>
               <h2 className="mt-4 font-display text-3xl md:text-4xl">
-                Holistic foundations that amplify every major
+                Foundational departments that power every engineering discipline
               </h2>
+              <p className="mt-4 text-sm text-foreground font-body max-w-3xl">
+                Every DSU engineer is backed by strong fundamentals in science, mathematics, and humanities.
+              </p>
             </div>
             <a
               href="https://www.dsu.edu.in/academics/schools/engineering#supporting-departments"
@@ -1505,6 +1464,9 @@ export default function Engineering() {
                   <p className="text-sm text-foreground/80 font-body">
                     Career pathways with leading companies and startup
                     opportunities
+                  </p>
+                  <p className="text-xs text-brand-orange font-medium mt-2">
+                    AI, core engineering, startups & enterprises
                   </p>
                 </CardContent>
               </Card>
