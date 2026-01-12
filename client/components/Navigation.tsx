@@ -68,6 +68,23 @@ export default function Navigation() {
     { name: "Facilities", href: "/about/facilities" },
   ];
 
+  const librarySubmenus = [
+    { name: "Library Home", href: "/library" },
+    { name: "Vision & Mission", href: "/library/vision-mission" },
+    { name: "Our Team", href: "/library/team" },
+    { name: "Collections", href: "/library/collections" },
+    { name: "E-Resources", href: "/library/e-resources" },
+    { name: "Rules & Regulations", href: "/library/rules-regulations" },
+    { name: "Anti-Plagiarism Tools", href: "/library/anti-plagiarism" },
+    { name: "Corporate Membership", href: "/library/corporate-membership" },
+    { name: "Useful Links", href: "/library/useful-links" },
+    { name: "Brochure", href: "/library/brochure" },
+    { name: "Constituent Libraries", href: "/library/constituent-libraries" },
+    { name: "Advisory Committee", href: "/library/advisory-committee" },
+    { name: "Gallery", href: "/library/gallery" },
+    { name: "Contact & Support", href: "/library/contact" },
+  ];
+
   const academicsSubmenus = {
     schools: [
       {
