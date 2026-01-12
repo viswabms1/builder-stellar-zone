@@ -446,7 +446,6 @@ export default function Navigation() {
                     onMouseLeave={() => setAlumniMenuOpen(false)}
                   >
                     <button
-                      onClick={() => setAlumniMenuOpen(!alumniMenuOpen)}
                       className={`${sharedClasses} justify-center`}
                     >
                       <span className="text-center">{item.name}</span>
