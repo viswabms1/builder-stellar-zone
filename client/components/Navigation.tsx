@@ -369,7 +369,7 @@ export default function Navigation() {
     { name: "News & Events", href: "/news-events" },
     { name: "Blog", href: "/blog" },
     { name: "Careers", href: "/careers" },
-    { name: "Public Self Disclosure", href: "/mandatory-disclosure" },
+    { name: "Public Self Disclosure", href: "https://dsu.edu.in/images/University/Public_Self_Disclosure_DSU.pdf", external: true },
   ];
 
   const navigation = [
