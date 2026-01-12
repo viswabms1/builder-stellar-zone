@@ -768,7 +768,7 @@ function DepartmentCard({ department }: { department: EngineeringDepartment }) {
       <div className={`absolute left-6 top-3 z-20 ${badgeClasses}`}>
         {department.area}
       </div>
-      <div className="relative z-10 flex h-1/2 flex-col justify-end p-3 text-white">
+      <div className="relative z-10 flex h-3/4 flex-col justify-end p-3 text-white">
         <div className={`${panelClasses} flex flex-col h-full`}>
           <div className="space-y-3 flex-1 overflow-hidden">
             <div>
