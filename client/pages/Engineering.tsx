@@ -775,7 +775,7 @@ function DepartmentCard({ department }: { department: EngineeringDepartment }) {
               <h3 className="font-display text-2xl leading-tight text-white">
                 {department.name}
               </h3>
-              <p className="mt-3 text-sm text-white/85 font-body line-clamp-2">
+              <p className="mt-3 text-sm text-white/85 font-body">
                 {department.description}
               </p>
             </div>
