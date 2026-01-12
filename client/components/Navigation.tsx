@@ -660,7 +660,7 @@ export default function Navigation() {
         }`}
       >
         <div className="w-full overflow-visible">
-          <div className="flex flex-col items-center justify-center h-auto lg:h-auto lg:flex-row max-h-32 sm:max-h-auto">
+          <div className="flex flex-col items-center justify-center h-auto lg:flex-row">
 
             {/* Desktop Navigation */}
             <div className="flex items-center gap-1 justify-between flex-wrap w-full px-2 py-2">
