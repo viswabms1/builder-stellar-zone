@@ -1087,46 +1087,44 @@ function HeroVideo() {
           </div>
 
           {/* Buttons inside video - visible on md and up */}
-          <div className="hidden md:flex flex-col gap-2 sm:gap-4">
+          <div className="hidden md:flex flex-col gap-4">
             <a
               href="https://admissions.dsu.edu.in/"
               target="_blank"
               rel="noreferrer"
-              className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background w-full sm:w-auto"
             >
               <Button
-                size="sm"
-                className="sm:size-lg bg-white hover:bg-white/90 text-orange-600 hover:text-orange-700 px-4 sm:px-8 py-2 sm:py-6 text-xs sm:text-base font-semibold font-display transition-all duration-300 group border-2 border-white w-full sm:w-auto"
+                size="lg"
+                className="bg-white hover:bg-white/90 text-orange-600 hover:text-orange-700 px-8 py-6 text-base font-bold font-display transition-all duration-300 group shadow-xl hover:shadow-2xl hover:-translate-y-1 w-full sm:w-auto"
               >
                 Apply Now
-                <ChevronRight className="w-4 sm:w-5 h-4 sm:h-5 ml-1 sm:ml-2 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
             </a>
+
             <a
               href="https://dsu.edu.in/virtual-tour/#SchoolOfEngineeringEntrance_01,1.14,0,75,4"
               target="_blank"
               rel="noreferrer"
-              className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background w-full sm:w-auto"
             >
               <Button
-                size="sm"
-                className="sm:size-lg bg-white hover:bg-white/90 text-orange-600 hover:text-orange-700 px-4 sm:px-8 py-2 sm:py-6 text-xs sm:text-base font-semibold font-display transition-all duration-300 group border-2 border-white w-full sm:w-auto"
+                variant="outline"
+                className="bg-transparent hover:bg-white/10 text-white border border-white/70 px-6 py-3 text-sm font-medium font-display transition-all duration-300 w-full sm:w-auto"
               >
                 Engineering Tour
               </Button>
             </a>
+
             <a
               href="https://dsu.edu.in/virtual-tour/"
               target="_blank"
               rel="noreferrer"
-              className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              className="inline-flex items-center gap-2 text-white hover:text-orange-200 transition-all duration-300 font-display font-semibold text-lg group w-fit"
             >
-              <Button
-                size="sm"
-                className="sm:size-lg bg-white hover:bg-white/90 text-orange-600 hover:text-orange-700 px-4 sm:px-8 py-2 sm:py-6 text-xs sm:text-base font-semibold font-display transition-all duration-300 group border-2 border-white w-full sm:w-auto"
-              >
-                Full University Tour
-              </Button>
+              <span>Full University Tour</span>
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
             </a>
           </div>
         </div>
@@ -1150,47 +1148,37 @@ function HeroVideo() {
         </div>
 
         {/* Buttons below video - visible only on mobile */}
-        <div className="flex md:hidden flex-row gap-2 sm:gap-4">
+        <div className="flex md:hidden flex-col gap-4 w-full sm:w-auto">
           <a
             href="https://admissions.dsu.edu.in/"
             target="_blank"
             rel="noreferrer"
-            className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background w-full sm:w-auto"
           >
             <Button
-              size="sm"
-              className="sm:size-lg bg-white hover:bg-white/90 text-orange-600 hover:text-orange-700 px-4 sm:px-8 py-2 sm:py-6 text-xs sm:text-base font-semibold font-display transition-all duration-300 group border-2 border-white w-full sm:w-auto"
+              size="lg"
+              className="bg-white hover:bg-white/90 text-orange-600 hover:text-orange-700 px-8 py-6 text-base font-bold font-display transition-all duration-300 group shadow-xl hover:shadow-2xl hover:-translate-y-1 w-full sm:w-auto"
             >
               Apply Now
-              <ChevronRight className="w-4 sm:w-5 h-4 sm:h-5 ml-1 sm:ml-2 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
           </a>
-          <a
-            href="https://dsu.edu.in/virtual-tour/#SchoolOfEngineeringEntrance_01,1.14,0,75,4"
-            target="_blank"
-            rel="noreferrer"
-            className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-          >
-            <Button
-              size="sm"
-              className="sm:size-lg bg-white hover:bg-white/90 text-orange-600 hover:text-orange-700 px-4 sm:px-8 py-2 sm:py-6 text-xs sm:text-base font-semibold font-display transition-all duration-300 group border-2 border-white w-full sm:w-auto"
+
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+            <a
+              href="https://dsu.edu.in/virtual-tour/#SchoolOfEngineeringEntrance_01,1.14,0,75,4"
+              target="_blank"
+              rel="noreferrer"
+              className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background w-full sm:w-auto"
             >
-              Engineering Tour
-            </Button>
-          </a>
-          <a
-            href="https://dsu.edu.in/virtual-tour/"
-            target="_blank"
-            rel="noreferrer"
-            className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-          >
-            <Button
-              size="sm"
-              className="sm:size-lg bg-white hover:bg-white/90 text-orange-600 hover:text-orange-700 px-4 sm:px-8 py-2 sm:py-6 text-xs sm:text-base font-semibold font-display transition-all duration-300 group border-2 border-white w-full sm:w-auto"
-            >
-              Full University Tour
-            </Button>
-          </a>
+              <Button
+                variant="outline"
+                className="bg-transparent hover:bg-white/10 text-white border border-white/70 px-6 py-3 text-sm font-medium font-display transition-all duration-300 w-full sm:w-auto"
+              >
+                Engineering Tour
+              </Button>
+            </a>
+          </div>
         </div>
       </div>
     </>
