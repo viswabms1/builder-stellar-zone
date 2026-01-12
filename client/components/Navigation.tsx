@@ -425,9 +425,9 @@ export default function Navigation() {
             : "bg-gradient-to-r from-slate-900 to-slate-950 border-b-2 border-orange-600/30"
         }`}
       >
-        <div className="w-full mx-auto px-2 flex items-center justify-end gap-0 overflow-visible">
+        <div className="w-full mx-auto px-2 flex items-center justify-end gap-0">
           {/* All Top Menu Items in one continuous row */}
-          <div className="flex items-center gap-0.5 sm:gap-1 flex-nowrap overflow-x-auto overflow-y-visible scrollbar-hide order-2 relative">
+          <div className="flex items-center gap-0.5 sm:gap-1 flex-nowrap scrollbar-hide order-2" style={{ overflowX: 'auto', overflowY: 'visible' }}>
             {topMenuItems.map((item, idx) => {
               const isAlumni = item.href === "/alumni";
               const isLibrary = item.href === "/library";
