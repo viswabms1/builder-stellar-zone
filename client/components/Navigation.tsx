@@ -445,7 +445,7 @@ export default function Navigation() {
             {/* Logo - Visible on mobile and tablet portrait, hidden on desktop */}
             <Link
               to="/"
-              className="flex-shrink-0 flex items-center justify-center"
+              className="lg:hidden flex-shrink-0 flex items-center justify-center"
             >
               <img
                 src={
