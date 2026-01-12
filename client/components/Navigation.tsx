@@ -445,7 +445,7 @@ export default function Navigation() {
                       onClick={() => setAlumniMenuOpen(!alumniMenuOpen)}
                       className={`${sharedClasses} justify-center`}
                     >
-                      <span>{item.name}</span>
+                      <span className="text-center">{item.name}</span>
                       <ChevronDown
                         className={`w-3 h-3 transition-transform ${alumniMenuOpen ? "rotate-180" : ""}`}
                       />
