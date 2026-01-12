@@ -68,11 +68,11 @@ export default function LibraryAdvisoryCommittee() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero Section */}
-      <section className="relative py-16 lg:py-24 bg-gradient-to-br from-violet-500/10 via-indigo-600/5 to-background overflow-hidden">
+      <section className="relative py-16 lg:py-24 bg-gradient-to-br from-violet-500/10 via-indigo-600/5 to-background dark:from-violet-500/20 dark:via-indigo-600/15 overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-violet-500/10 rounded-full filter blur-3xl animate-float"></div>
+          <div className="absolute top-20 left-10 w-72 h-72 bg-violet-500/10 dark:bg-violet-500/30 rounded-full filter blur-3xl animate-float"></div>
           <div
-            className="absolute bottom-20 right-10 w-96 h-96 bg-indigo-600/10 rounded-full filter blur-3xl animate-float"
+            className="absolute bottom-20 right-10 w-96 h-96 bg-indigo-600/10 dark:bg-indigo-600/30 rounded-full filter blur-3xl animate-float"
             style={{ animationDelay: "2s" }}
           ></div>
         </div>
