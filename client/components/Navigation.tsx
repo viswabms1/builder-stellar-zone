@@ -389,7 +389,6 @@ export default function Navigation() {
   const topMenuItems = [
     { name: "Research", href: "/research" },
     { name: "Alumni", href: "/alumni" },
-    { name: "Library", href: "/library" },
     { name: "Insights", href: "/insights" },
     { name: "Conferences", href: "/conferences" },
     { name: "Committees", href: "/committees" },
