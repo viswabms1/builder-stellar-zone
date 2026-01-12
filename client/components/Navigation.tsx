@@ -529,7 +529,7 @@ export default function Navigation() {
 
                     {/* Library Dropdown */}
                     <div
-                      className={`absolute left-0 top-full mt-2 w-auto min-w-max max-w-2xl rounded-2xl shadow-2xl transition-all duration-300 py-4 px-4 max-h-[600px] overflow-y-auto backdrop-blur-sm z-[9999] opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:pointer-events-auto pointer-events-none ${
+                      className={`absolute left-0 top-full mt-2 w-auto min-w-max max-w-2xl rounded-2xl shadow-2xl transition-all duration-300 py-4 px-4 max-h-[600px] overflow-y-auto backdrop-blur-sm z-[10000] opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:pointer-events-auto pointer-events-none ${
                         theme === "light"
                           ? "bg-white/95 border border-blue-200/50"
                           : "bg-slate-800/95 border border-blue-600/30"
