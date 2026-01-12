@@ -1421,6 +1421,29 @@ export default function Navigation() {
                 <span className="truncate">AI-First @ DSU</span>
               </Link>
 
+              {/* Top Menu Items (Below Main Navigation) */}
+              <div
+                className={`pt-4 space-y-1.5 border-t ${
+                  theme === "light" ? "border-orange-200" : "border-white/20"
+                }`}
+              >
+                {topMenuItems.map((item, idx) => (
+                  <Link
+                    key={`top-${idx}`}
+                    to={item.href}
+                    {...(item.external && { target: "_blank", rel: "noopener noreferrer" })}
+                    onClick={() => setIsOpen(false)}
+                    className={`flex items-center space-x-2 px-3 py-2 rounded-xl text-base sm:text-lg font-medium font-display transition-all duration-200 w-full ${
+                      theme === "light"
+                        ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
+                        : "text-white/90 hover:text-white hover:bg-white/10"
+                    }`}
+                  >
+                    <span className="truncate">{item.name}</span>
+                  </Link>
+                ))}
+              </div>
+
               <div
                 className={`pt-4 space-y-3 border-t ${
                   theme === "light" ? "border-orange-200" : "border-white/20"
