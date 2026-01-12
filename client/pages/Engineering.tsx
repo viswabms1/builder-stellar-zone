@@ -1323,10 +1323,10 @@ export default function Engineering() {
         className="bg-gradient-to-r from-brand-blue/10 via-brand-magenta/10 to-brand-orange/10 px-3 py-8"
       >
         <div className="mx-auto max-w-7xl">
-          <div className="mb-12 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+          <div className="mb-12">
             <div className="max-w-3xl">
               <Badge className="bg-brand-magenta/15 text-brand-magenta">
-                Supporting Departments
+                Foundational Departments
               </Badge>
               <h2 className="mt-4 font-display text-3xl md:text-4xl">
                 Foundational departments that power every engineering discipline
@@ -1335,15 +1335,6 @@ export default function Engineering() {
                 Every DSU engineer is backed by strong fundamentals in science, mathematics, and humanities.
               </p>
             </div>
-            <a
-              href="https://www.dsu.edu.in/academics/schools/engineering#supporting-departments"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 text-sm font-medium text-brand-magenta"
-            >
-              Explore supporting departments
-              <ChevronRight className="h-4 w-4" />
-            </a>
           </div>
           <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-4">
             {SUPPORTING_DEPARTMENTS.map((department) => (
