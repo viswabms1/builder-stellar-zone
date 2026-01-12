@@ -1401,6 +1401,53 @@ export default function Navigation() {
                   );
                 }
 
+                if (isAlumni) {
+                  return (
+                    <div key={idx} className="space-y-2">
+                      <button
+                        onClick={() => setAlumniMenuOpen(!alumniMenuOpen)}
+                        className={`w-full text-left ${sharedClasses}`}
+                      >
+                        <span className="flex-1">{item.name}</span>
+                        <ChevronDown
+                          className={`w-4 h-4 transition-transform ${
+                            alumniMenuOpen ? "rotate-180" : ""
+                          }`}
+                        />
+                      </button>
+
+                      {/* Mobile Alumni Submenu */}
+                      {alumniMenuOpen && (
+                        <div
+                          className={`rounded-lg py-2 ml-4 border-l-2 ${
+                            theme === "light"
+                              ? "bg-purple-100 border-l-purple-300"
+                              : "bg-white/20 border-l-white/40"
+                          }`}
+                        >
+                          {alumniSubmenus.map((submenu, subIdx) => (
+                            <Link
+                              key={subIdx}
+                              to={submenu.href}
+                              onClick={() => {
+                                setIsOpen(false);
+                                setAlumniMenuOpen(false);
+                              }}
+                              className={`block px-4 py-1.5 text-base sm:text-lg rounded transition-colors ${
+                                theme === "light"
+                                  ? "text-gray-700 hover:bg-purple-200"
+                                  : "text-white hover:bg-white/20"
+                              }`}
+                            >
+                              {submenu.name}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  );
+                }
+
                 if (isLibrary) {
                   return (
                     <div key={idx} className="space-y-2">
