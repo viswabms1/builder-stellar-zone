@@ -205,7 +205,7 @@ export default function LibraryEResources() {
             <p className="text-foreground/70">
               If you experience any issues accessing our digital resources or need assistance, please contact our Reference Services team:
             </p>
-            <div className="bg-blue-50 dark:bg-slate-700 p-4 rounded-lg">
+            <div className="p-4 rounded-lg" style={{ backgroundColor: "rgba(248, 231, 28, 0.61)" }}>
               <p className="font-semibold">Email: <a href="mailto:e-resources@dsu.edu.in" className="text-blue-600 dark:text-blue-400 hover:text-blue-700">e-resources@dsu.edu.in</a></p>
               <p className="font-semibold">Reference Desk: <a href="mailto:library@dsu.edu.in" className="text-blue-600 dark:text-blue-400 hover:text-blue-700">library@dsu.edu.in</a></p>
             </div>
