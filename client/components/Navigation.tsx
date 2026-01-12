@@ -653,7 +653,7 @@ export default function Navigation() {
         }`}
       >
         <div className="w-full overflow-visible">
-          <div className="flex flex-col items-center justify-center h-16 lg:h-22 lg:flex-row">
+          <div className="flex flex-col items-center justify-center h-20 lg:h-24 lg:flex-row">
             {/* Logo - Visible on mobile and tablet portrait, hidden on desktop */}
             <Link
               to="/"
@@ -666,17 +666,17 @@ export default function Navigation() {
                     : "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F0caf0bf29be6421997005f26cdaae0ed?format=webp&width=800"
                 }
                 alt="Dayananda Sagar University Logo"
-                className="h-14 w-auto object-contain"
+                className="h-16 w-auto object-contain"
               />
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="flex items-center gap-2 justify-between flex-wrap w-full px-4">
+            <div className="flex items-center gap-1.5 justify-between flex-wrap w-full px-3">
               {navigation.map((item, idx) => {
                 const active = !item.external && isActive(item.href);
                 const isAbout = item.href === "/about";
                 const isAcademics = item.href === "/academics";
-                const sharedClasses = `flex items-center space-x-1 px-2 py-1.5 rounded-lg text-sm sm:text-base font-medium font-display transition-all duration-200 group ${
+                const sharedClasses = `flex items-center space-x-0.5 px-1.5 py-1 rounded-lg text-xs sm:text-sm font-medium font-display transition-all duration-200 group ${
                   theme === "light"
                     ? active ||
                       (isAbout && aboutMenuOpen) ||
@@ -1074,7 +1074,7 @@ export default function Navigation() {
                     <Link
                       key="logo"
                       to="/"
-                      className={`flex items-center group flex-shrink-0 px-2 py-1 rounded-xl transition-all duration-300 ${
+                      className={`flex items-center group flex-shrink-0 px-1 py-0 rounded-xl transition-all duration-300 ${
                         theme === "light"
                           ? "bg-white hover:bg-orange-50"
                           : "hover:bg-white/5"
@@ -1087,7 +1087,7 @@ export default function Navigation() {
                             : "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F0caf0bf29be6421997005f26cdaae0ed?format=webp&width=800"
                         }
                         alt="Dayananda Sagar University Logo"
-                        className="h-14 w-auto object-contain group-hover:scale-105 transition-all duration-300"
+                        className="h-16 w-auto object-contain group-hover:scale-105 transition-all duration-300"
                       />
                     </Link>,
                     <Link
