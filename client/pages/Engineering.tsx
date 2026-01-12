@@ -1088,7 +1088,7 @@ function HeroVideo() {
           </div>
 
           {/* Buttons inside video - visible on md and up */}
-          <div className="hidden md:flex flex-col gap-4">
+          <div className="hidden md:flex flex-col lg:flex-row gap-4">
             <a
               href="https://admissions.dsu.edu.in/"
               target="_blank"
