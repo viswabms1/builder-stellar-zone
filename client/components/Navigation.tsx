@@ -426,7 +426,6 @@ export default function Navigation() {
 
           {/* Right side - Language Switcher */}
           <div className="flex items-center gap-2 flex-shrink-0 order-3">
-            <div className="h-6 w-px bg-gray-300 dark:bg-white/20"></div>
             <LanguageSwitcher />
           </div>
         </div>
