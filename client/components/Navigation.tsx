@@ -525,9 +525,9 @@ export default function Navigation() {
                   >
                     <button
                       onClick={() => setLibraryMenuOpen(!libraryMenuOpen)}
-                      className={sharedClasses}
+                      className={`${sharedClasses} justify-center`}
                     >
-                      <span>{item.name}</span>
+                      <span className="text-center">{item.name}</span>
                       <ChevronDown
                         className={`w-3 h-3 transition-transform ${libraryMenuOpen ? "rotate-180" : ""}`}
                       />
