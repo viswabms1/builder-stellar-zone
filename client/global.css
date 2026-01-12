@@ -258,13 +258,9 @@
     display: none !important;
   }
 
-  /* Landscape orientation: make buttons horizontal */
   @media (orientation: landscape) {
     .hero-title-inside {
-      flex-direction: row !important;
-    }
-
-    .hero-title-inside .hidden.md\:flex {
+      display: flex !important;
       flex-direction: row !important;
     }
   }
