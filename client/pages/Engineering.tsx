@@ -1319,7 +1319,7 @@ export default function Engineering() {
       </section>
 
       <section
-        id="supporting-departments"
+        id="foundational-departments"
         className="bg-gradient-to-r from-brand-blue/10 via-brand-magenta/10 to-brand-orange/10 px-3 py-8"
       >
         <div className="mx-auto max-w-7xl">
