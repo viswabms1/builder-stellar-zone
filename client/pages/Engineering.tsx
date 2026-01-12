@@ -1775,29 +1775,29 @@ export default function Engineering() {
               </CardContent>
             </Card>
 
-            {/* Research Centers */}
+            {/* Research & Innovation */}
             <Card className="rounded-2xl border border-brand-orange/20 bg-brand-orange/5 backdrop-blur">
               <CardHeader>
                 <CardTitle className="font-display flex items-center gap-2">
                   <Microscope className="h-5 w-5 text-brand-orange" />
-                  Research Centers
+                  Research & Innovation
                 </CardTitle>
               </CardHeader>
               <CardContent className="text-sm text-foreground/80 font-body">
-                Active research in aerospace, healthcare tech, robotics and sustainable engineering.
+                Active research in aerospace, embedded systems, robotics, healthcare technology, and sustainable engineering. Research initiatives supported by AI infrastructure.
               </CardContent>
             </Card>
 
-            {/* Strong Placements */}
+            {/* Career Readiness */}
             <Card className="rounded-2xl border border-brand-magenta/20 bg-brand-magenta/5 backdrop-blur">
               <CardHeader>
                 <CardTitle className="font-display flex items-center gap-2">
                   <GraduationCap className="h-5 w-5 text-brand-magenta" />
-                  Strong Placements
+                  Career Readiness
                 </CardTitle>
               </CardHeader>
               <CardContent className="text-sm text-foreground/80 font-body">
-                Partnerships with global tech companies, startups and enterprises across sectors.
+                Industry-aligned curriculum and strong placement outcomes. Strong connections with leading global tech companies and enterprises.
               </CardContent>
             </Card>
 
