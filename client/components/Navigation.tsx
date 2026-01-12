@@ -849,6 +849,96 @@ export default function Navigation() {
                     );
                   }
 
+                  if (isLibrary) {
+                    return (
+                      <div
+                        key={idx}
+                        className="relative group"
+                        onMouseEnter={() => setLibraryMenuOpen(true)}
+                        onMouseLeave={() => setLibraryMenuOpen(false)}
+                      >
+                        <button
+                          onClick={() => setLibraryMenuOpen(!libraryMenuOpen)}
+                          className={sharedClasses}
+                        >
+                          <span>{item.name}</span>
+                          <ChevronDown
+                            className={`w-4 h-4 transition-transform ${libraryMenuOpen ? "rotate-180" : ""}`}
+                          />
+                          {active && (
+                            <div
+                              className={`w-1 h-1 rounded-full ${
+                                theme === "light" ? "bg-orange-600" : "bg-white"
+                              }`}
+                            />
+                          )}
+                        </button>
+
+                        {/* Library Menu Dropdown */}
+                        <div
+                          className={`absolute left-0 top-full mt-2 w-auto min-w-max max-w-2xl rounded-2xl shadow-2xl transition-all duration-300 py-5 px-5 max-h-[600px] overflow-y-auto backdrop-blur-sm z-[9999] ${
+                            libraryMenuOpen
+                              ? "opacity-100 visible"
+                              : "opacity-0 invisible"
+                          } ${
+                            theme === "light"
+                              ? "bg-white/95 border border-blue-200/50"
+                              : "bg-slate-800/95 border border-blue-600/30"
+                          }`}
+                          style={{
+                            scrollbarWidth: "thin",
+                            scrollbarColor:
+                              theme === "light"
+                                ? "rgba(59, 130, 246, 0.5) rgba(59, 130, 246, 0.1)"
+                                : "rgba(255, 255, 255, 0.3) rgba(255, 255, 255, 0.1)",
+                          }}
+                        >
+                          <div className="grid grid-cols-2 gap-4">
+                            {librarySubmenus.map((submenu, idx) => {
+                              const cardColors = [
+                                {
+                                  bg:
+                                    theme === "light"
+                                      ? "bg-blue-50"
+                                      : "bg-blue-900/20",
+                                  border:
+                                    "border-blue-200/50 dark:border-blue-600/30",
+                                  text: "text-blue-900 dark:text-blue-100",
+                                },
+                                {
+                                  bg:
+                                    theme === "light"
+                                      ? "bg-cyan-50"
+                                      : "bg-cyan-900/20",
+                                  border:
+                                    "border-cyan-200/50 dark:border-cyan-600/30",
+                                  text: "text-cyan-900 dark:text-cyan-100",
+                                },
+                              ];
+                              const colors =
+                                cardColors[idx % cardColors.length];
+
+                              return (
+                                <Link
+                                  key={submenu.name}
+                                  to={submenu.href}
+                                  onClick={() => setLibraryMenuOpen(false)}
+                                  className={`${colors.bg} ${colors.border} border rounded-xl p-4 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 group block text-sm font-semibold ${
+                                    theme === "light"
+                                      ? "text-gray-900 group-hover:text-blue-600"
+                                      : "text-white group-hover:text-blue-200"
+                                  }`}
+                                >
+                                  {submenu.name}
+                                </Link>
+                              );
+                            })}
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  }
+
                   return (
                     <Link key={idx} to={item.href} className={sharedClasses}>
                       <span
