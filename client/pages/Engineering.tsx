@@ -436,7 +436,7 @@ const SUPPORTING_DEPARTMENTS: SupportingDepartment[] = [
     focus:
       "Advanced instrumentation and applied physics modules covering photonics, energy and smart materials.",
     image:
-      "https://images.pexels.com/photos/3825517/pexels-photo-3825517.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "https://images.pexels.com/photos/3962286/pexels-photo-3962286.jpeg?auto=compress&cs=tinysrgb&w=1600&h=900&fit=crop",
     link: "/academics/physics",
   },
   {
@@ -444,7 +444,7 @@ const SUPPORTING_DEPARTMENTS: SupportingDepartment[] = [
     focus:
       "Materials science, polymer chemistry and environmental labs enabling sustainable engineering solutions.",
     image:
-      "https://images.pexels.com/photos/3807517/pexels-photo-3807517.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "https://images.pexels.com/photos/3962281/pexels-photo-3962281.jpeg?auto=compress&cs=tinysrgb&w=1600&h=900&fit=crop",
     link: "/academics/chemistry",
   },
   {
