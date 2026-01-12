@@ -659,12 +659,12 @@ export default function Navigation() {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="flex items-center gap-1 flex-wrap justify-center">
+            <div className="flex items-center gap-0.5 flex-nowrap justify-center flex-shrink">
               {navigation.map((item, idx) => {
                 const active = !item.external && isActive(item.href);
                 const isAbout = item.href === "/about";
                 const isAcademics = item.href === "/academics";
-                const sharedClasses = `flex items-center space-x-1 px-3 py-2 rounded-lg text-sm font-medium font-display transition-all duration-200 group ${
+                const sharedClasses = `flex items-center space-x-1 px-2 py-1.5 rounded-lg text-xs sm:text-sm font-medium font-display transition-all duration-200 group whitespace-nowrap ${
                   theme === "light"
                     ? active ||
                       (isAbout && aboutMenuOpen) ||
