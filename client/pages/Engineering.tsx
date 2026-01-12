@@ -839,15 +839,15 @@ function SupportingDepartmentCard({
         <div className={`${panelClasses} flex flex-col h-full`}>
           <div className="space-y-3 flex-1 overflow-hidden">
             <div>
-              <h3 className="font-display text-xl leading-tight text-white">
+              <h3 className="font-display text-lg leading-tight text-white">
                 {department.name}
               </h3>
-              <p className="mt-2 text-xs text-white/85 font-body">
+              <p className="mt-2 text-sm text-white/85 font-body">
                 {department.focus}
               </p>
             </div>
           </div>
-          <span className="inline-flex items-center gap-2 text-xs font-medium text-white/90 transition-colors group-hover:text-brand-magenta mt-auto">
+          <span className="inline-flex items-center gap-2 text-sm font-medium text-white/90 transition-colors group-hover:text-brand-magenta mt-auto">
             Visit department
             <ChevronRight className="h-4 w-4 transition-colors group-hover:text-brand-magenta" />
           </span>
