@@ -660,7 +660,7 @@ export default function Navigation() {
         }`}
       >
         <div className="w-full overflow-visible">
-          <div className="flex flex-col items-center justify-center h-20 lg:h-24 lg:flex-row">
+          <div className="flex flex-col items-center justify-center h-auto lg:h-auto lg:flex-row">
             {/* Logo - Visible on mobile and tablet portrait, hidden on desktop */}
             <Link
               to="/"
@@ -678,12 +678,12 @@ export default function Navigation() {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="flex items-center gap-0.5 justify-between flex-wrap w-full px-1">
+            <div className="flex items-center gap-1 justify-center flex-wrap w-full px-2 py-2">
               {navigation.map((item, idx) => {
                 const active = !item.external && isActive(item.href);
                 const isAbout = item.href === "/about";
                 const isAcademics = item.href === "/academics";
-                const sharedClasses = `flex items-center space-x-0 px-0.5 py-0.5 rounded-lg text-sm sm:text-base font-medium font-display transition-all duration-200 group ${
+                const sharedClasses = `flex items-center space-x-1 px-2 py-1 rounded-lg text-sm sm:text-base font-medium font-display transition-all duration-200 group ${
                   theme === "light"
                     ? active ||
                       (isAbout && aboutMenuOpen) ||
