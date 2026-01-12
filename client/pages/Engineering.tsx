@@ -1078,7 +1078,7 @@ function HeroVideo() {
             <h1 className="text-xs sm:text-base md:text-base text-white/80 mb-0 sm:mb-2 leading-tight font-display">
               Powered by NVIDIA DGX B200 — enterprise-scale AI compute for engineering education and research
             </h1>
-            <div className="flex flex-wrap gap-3 sm:gap-4 text-xs sm:text-sm text-white/70">
+            <div className="flex flex-wrap gap-3 sm:gap-4 text-xs sm:text-sm text-white/70 mb-4 sm:mb-6">
               <span>NAAC A+</span>
               <span>•</span>
               <span>Industry-linked Programs</span>
@@ -1139,7 +1139,7 @@ function HeroVideo() {
           <h1 className="text-xs sm:text-base md:text-base text-foreground/80 mb-0 sm:mb-2 leading-tight font-display">
             Powered by NVIDIA DGX B200 — enterprise-scale AI compute for engineering education and research
           </h1>
-          <div className="flex flex-wrap gap-3 sm:gap-4 text-xs sm:text-sm text-foreground/70">
+          <div className="flex flex-wrap gap-3 sm:gap-4 text-xs sm:text-sm text-foreground/70 mb-4 sm:mb-6">
             <span>NAAC A+</span>
             <span>•</span>
             <span>Industry-linked Programs</span>
