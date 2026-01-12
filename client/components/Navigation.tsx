@@ -389,6 +389,7 @@ export default function Navigation() {
   const topMenuItems = [
     { name: "Research", href: "/research" },
     { name: "Alumni", href: "/alumni" },
+    { name: "Library", href: "/library" },
     { name: "Insights", href: "/insights" },
     { name: "Conferences", href: "/conferences" },
     { name: "Committees", href: "/committees" },
@@ -405,7 +406,6 @@ export default function Navigation() {
     { name: "Admissions", href: "/admissions" },
     { name: "Campus Life", href: "/campus-life" },
     { name: "Centre of Excellence", href: "/centre-of-excellence" },
-    { name: "Library", href: "/library" },
     { name: "Placements", href: "/placements" },
   ];
 
