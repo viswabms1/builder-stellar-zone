@@ -261,7 +261,12 @@
   @media (orientation: landscape) {
     .hero-title-inside {
       display: flex !important;
+    }
+
+    /* Make buttons horizontal in landscape */
+    .hero-title-inside > div:last-child {
       flex-direction: row !important;
+      align-items: center !important;
     }
   }
 
