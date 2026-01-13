@@ -171,7 +171,7 @@ export default function DeptAIRobotics() {
           <div className="lg:col-span-2 space-y-6">
             <h2 className="headline-3 font-display">Overview</h2>
             <p className="text-foreground leading-relaxed font-body">
-              The AI and Robotics program integrates cognitive technologies, AI/ML, computer vision, and robotics to develop intelligent systems capable of autonomous perception, reasoning, and action. The B.Tech AI and Robotics program at DSU combines foundational knowledge with cutting-edge tools and hands-on experience in creating systems that can learn, perceive, and act autonomously.
+              The AI and Robotics program integrates cognitive technologies, AI/ML, computer vision, and robotics to develop intelligent systems capable of autonomous perception, reasoning, and action. The B.Tech AI and Robotics program combines foundational knowledge with cutting-edge tools and hands-on experience in creating systems that can learn, perceive, and act autonomously. The M.Tech Artificial Intelligence and Robotics program provides advanced research opportunities in autonomous systems, intelligent control, machine vision systems, and applications in autonomous vehicles, manufacturing, and industrial automation. Together, these pathways prepare graduates for leadership roles in robotics engineering, autonomous systems design, and AI-driven innovation across diverse sectors.
             </p>
             <Card className="border border-border/50 bg-card/50 backdrop-blur-sm">
               <CardHeader className="pb-2">
