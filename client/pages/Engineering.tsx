@@ -1314,7 +1314,7 @@ function EngineeringProgramFinder() {
 
   return (
     <section className="px-3 py-8">
-      <div className="mx-auto max-w-7xl space-y-8">
+      <div className="mx-auto max-w-5xl space-y-8">
         <Card className="border-2 border-green-500/20 bg-gradient-to-r from-green-500/10 to-emerald-500/10 backdrop-blur-sm">
           <CardHeader>
             <div className="flex items-center gap-3">
