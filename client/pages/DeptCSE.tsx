@@ -128,7 +128,7 @@ export default function DeptCSE() {
               </CardContent>
             </Card>
 
-            {/* M.Tech Program */}
+            {/* M.Tech CSE */}
             <Card className="border border-border/50 bg-card/50 backdrop-blur-sm hover:shadow-lg transition-all">
               <CardHeader>
                 <div className="flex items-center gap-2 mb-2">
@@ -142,6 +142,26 @@ export default function DeptCSE() {
                 <p className="text-sm text-foreground font-body">Advanced research on DGX B200 supercomputers with NVIDIA partnership</p>
                 <div className="flex flex-wrap gap-2">
                   {["GPU-Accelerated AI", "Large-Scale Research", "NVIDIA Partnership Projects"].map((spec, i) => (
+                    <Badge key={i} variant="secondary" className="text-xs">{spec}</Badge>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* M.Tech CSE (AI & ML) */}
+            <Card className="border border-border/50 bg-card/50 backdrop-blur-sm hover:shadow-lg transition-all">
+              <CardHeader>
+                <div className="flex items-center gap-2 mb-2">
+                  <Brain className="w-5 h-5 text-brand-magenta" />
+                  <Badge className="bg-brand-magenta/20 text-brand-magenta border-brand-magenta/30">Postgraduate</Badge>
+                </div>
+                <CardTitle className="font-display">M.Tech CSE (Artificial Intelligence and Machine Learning), DSU School of Engineering</CardTitle>
+                <CardDescription className="font-body">2-Year Program</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <p className="text-sm text-foreground font-body">Specialization in AI and ML with GPU-accelerated research projects</p>
+                <div className="flex flex-wrap gap-2">
+                  {["Deep Learning", "ML Pipelines", "NLP & Computer Vision"].map((spec, i) => (
                     <Badge key={i} variant="secondary" className="text-xs">{spec}</Badge>
                   ))}
                 </div>
@@ -695,7 +715,8 @@ function EligibilityAndFees() {
       // Only show Core B.Tech CSE and M.Tech CSE (exclude specialization variants)
       const isCoreCSE = name === "b.tech computer science & engineering";
       const isMTechCSE = name === "m.tech computer science & engineering" || name === "m.tech - computer science & engineering";
-      return isCoreCSE || isMTechCSE;
+      const isMTechCSEAIML = name === "m.tech computer science and engineering (artificial intelligence and machine learning)" || name === "m.tech - computer science and engineering (artificial intelligence and machine learning)";
+      return isCoreCSE || isMTechCSE || isMTechCSEAIML;
     }) || [];
 
   const [expandedProgram, setExpandedProgram] = useState<string | null>(null);
@@ -1360,8 +1381,8 @@ function CurriculumLibrary() {
     },
     {
       id: "mtech",
-      label: "M.Tech Curriculum",
-      description: "2-year postgraduate program focused on advanced research",
+      label: "M.Tech Computer Science & Engineering",
+      description: "2-year postgraduate program focused on advanced systems and research",
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
       batches: [
         {
@@ -1387,6 +1408,38 @@ function CurriculumLibrary() {
           summary: "Sustainable computing, human-centric AI, and thesis publishing",
           documentUrl:
             "https://www.dsu.edu.in/images/Engineering/CSE-dept/curriculum/MTech-CSE-Curriculum-2028-29.pdf",
+        },
+      ],
+    },
+    {
+      id: "mtech-aiml",
+      label: "M.Tech CSE (Artificial Intelligence and Machine Learning)",
+      description: "2-year postgraduate specialization in AI and machine learning research",
+      image: "https://images.unsplash.com/photo-1534759846116-5799c33ce22a?q=80&w=1600&auto=format&fit=crop",
+      batches: [
+        {
+          year: "2025-26",
+          summary: "Foundations in deep learning, neural networks, and AI systems design",
+          documentUrl:
+            "https://www.dsu.edu.in/images/Engineering/CSE-dept/curriculum/MTech-CSE-AIML-Curriculum-2025-26.pdf",
+        },
+        {
+          year: "2026-27",
+          summary: "Machine learning pipelines, NLP, computer vision, and research projects",
+          documentUrl:
+            "https://www.dsu.edu.in/images/Engineering/CSE-dept/curriculum/MTech-CSE-AIML-Curriculum-2026-27.pdf",
+        },
+        {
+          year: "2027-28",
+          summary: "Advanced topics in generative AI, reinforcement learning, and responsible AI",
+          documentUrl:
+            "https://www.dsu.edu.in/images/Engineering/CSE-dept/curriculum/MTech-CSE-AIML-Curriculum-2027-28.pdf",
+        },
+        {
+          year: "2028-29",
+          summary: "AI research thesis, industry collaborations, and innovation lab immersion",
+          documentUrl:
+            "https://www.dsu.edu.in/images/Engineering/CSE-dept/curriculum/MTech-CSE-AIML-Curriculum-2028-29.pdf",
         },
       ],
     },
