@@ -435,7 +435,7 @@ const PG_PROGRAM_CARDS: ProgramCard[] = [
       "Engineer data products with applied analytics, data governance, cloud-native pipelines and real-time dashboards powered by GPU computing.",
     image:
       "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?q=80&w=1600&auto=format&fit=crop",
-    link: "/academics/engineering/ai-data-science",
+    link: "/academics/engineering/ai-data-science-dept",
     highlights: ["Data Engineering", "Analytics", "Cloud Pipelines"],
     overlay:
       "bg-gradient-to-br from-brand-blue/70 via-black/70 to-black/55 mix-blend-multiply",
