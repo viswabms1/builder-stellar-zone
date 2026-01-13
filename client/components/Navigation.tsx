@@ -155,8 +155,20 @@ export default function Navigation() {
             name: "M.Tech",
             departments: [
               {
-                name: "M.Tech Computer Science",
+                name: "M.Tech Computer Science & Engineering",
                 href: "/academics/engineering/computer-science",
+              },
+              {
+                name: "M.Tech Artificial Intelligence & Machine Learning",
+                href: "/academics/engineering/artificial-intelligence",
+              },
+              {
+                name: "M.Tech Artificial Intelligence & Data Science",
+                href: "/academics/engineering/ai-data-science",
+              },
+              {
+                name: "M.Tech Artificial Intelligence & Robotics",
+                href: "/academics/engineering/ai-robotics",
               },
               {
                 name: "M.Tech Embedded Systems",
