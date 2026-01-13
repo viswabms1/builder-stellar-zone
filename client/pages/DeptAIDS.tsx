@@ -206,6 +206,8 @@ export default function DeptAIDS() {
         </div>
       </section>
 
+      <EligibilityAndFees />
+
       <CurriculumLibrary />
 
       <AccreditationDocuments />
