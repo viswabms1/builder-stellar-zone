@@ -492,10 +492,10 @@ function EligibilityAndFees() {
                       {program.fees.map((fee, fidx) => (
                         <div
                           key={fidx}
-                          className="flex justify-between items-center p-3 rounded-lg bg-blue-500/10 border border-blue-500/20"
+                          className={`flex justify-between items-center p-3 rounded-lg ${isBTech ? "bg-blue-500/10 border border-blue-500/20" : "bg-purple-500/10 border border-purple-500/20"}`}
                         >
                           <span className="text-sm font-medium text-foreground">{fee.label}</span>
-                          <span className="text-base font-semibold text-blue-600">{fee.amount}</span>
+                          <span className={`text-base font-semibold ${isBTech ? "text-blue-600" : "text-purple-600"}`}>{fee.amount}</span>
                         </div>
                       ))}
                     </div>
