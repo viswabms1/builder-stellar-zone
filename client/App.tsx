@@ -1038,19 +1038,19 @@ function App() {
                   element={<SrinidhiAIMLPage />}
                 />
                 <Route
-                  path="/academics/engineering/cse-ai-ds"
+                  path="/academics/engineering/ai-data-science"
                   element={<DeptAIDS />}
                 />
                 <Route
-                  path="/academics/engineering/cse-ai-ds/faculty"
+                  path="/academics/engineering/ai-data-science/faculty"
                   element={<FacultyAIDS />}
                 />
                 <Route
-                  path="/academics/engineering/cse-ai-ds/faculty/dr-poongodi-t"
+                  path="/academics/engineering/ai-data-science/faculty/dr-poongodi-t"
                   element={<PoongodiFacultyPage />}
                 />
                 <Route
-                  path="/academics/engineering/cse-ai-ds/faculty/dr-ramesh-wadawadagi"
+                  path="/academics/engineering/ai-data-science/faculty/dr-ramesh-wadawadagi"
                   element={<RameshWadawadagiFacultyPage />}
                 />
                 <Route
