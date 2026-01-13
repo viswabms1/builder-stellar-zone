@@ -617,6 +617,38 @@ function CurriculumLibrary() {
         },
       ],
     },
+    {
+      id: "mtech",
+      label: "M.Tech Artificial Intelligence and Robotics",
+      description: "2-year postgraduate program with advanced research in AI-driven autonomous systems",
+      image: "https://images.unsplash.com/photo-1581091216562-40c08a5a4183?q=80&w=600&h=400&fit=crop",
+      batches: [
+        {
+          year: "2025-26",
+          summary: "Advanced AI techniques, control systems, and intelligent perception for robotics",
+          documentUrl:
+            "https://www.dsu.edu.in/images/Engineering/AIR-dept/curriculum/MTech-AIR-Curriculum-2025-26.pdf",
+        },
+        {
+          year: "2026-27",
+          summary: "Machine vision systems, autonomous navigation, and human-robot interaction",
+          documentUrl:
+            "https://www.dsu.edu.in/images/Engineering/AIR-dept/curriculum/MTech-AIR-Curriculum-2026-27.pdf",
+        },
+        {
+          year: "2027-28",
+          summary: "Research specializations in autonomous vehicles, swarm robotics, and AI applications",
+          documentUrl:
+            "https://www.dsu.edu.in/images/Engineering/AIR-dept/curriculum/MTech-AIR-Curriculum-2027-28.pdf",
+        },
+        {
+          year: "2028-29",
+          summary: "Thesis and research publications in AI and robotics",
+          documentUrl:
+            "https://www.dsu.edu.in/images/Engineering/AIR-dept/curriculum/MTech-AIR-Curriculum-2028-29.pdf",
+        },
+      ],
+    },
   ];
 
   return (
