@@ -21,7 +21,10 @@ import {
   ClipboardList,
   ArrowRight,
   Zap,
+  BookOpen,
+  IndianRupee,
 } from "lucide-react";
+import { schools } from "./Eligibility";
 
 export default function DeptAIRobotics() {
   const specializations = [
