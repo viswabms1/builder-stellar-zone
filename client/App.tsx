@@ -1054,7 +1054,7 @@ function App() {
                   element={<RameshWadawadagiFacultyPage />}
                 />
                 <Route
-                  path="/academics/engineering/cse-ai-ds/faculty/prof-nadavadi-harshith-gowd"
+                  path="/academics/engineering/ai-data-science/faculty/prof-nadavadi-harshith-gowd"
                   element={<HarshithGowdFacultyPage />}
                 />
                 <Route
