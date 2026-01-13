@@ -420,7 +420,7 @@ const PG_PROGRAM_CARDS: ProgramCard[] = [
       "Deep-dive into responsible AI, machine learning pipelines, NLP and computer vision with GPU-accelerated research on NVIDIA DGX B200.",
     image:
       "https://images.unsplash.com/photo-1534759846116-5799c33ce22a?q=80&w=1600&auto=format&fit=crop",
-    link: "/academics/engineering/cse-aiml",
+    link: "/academics/engineering/computer-science",
     highlights: ["ML Pipelines", "NLP & Vision", "Research Thesis"],
     overlay:
       "bg-gradient-to-br from-brand-magenta/65 via-brand-blue/55 to-black/55 mix-blend-multiply",
