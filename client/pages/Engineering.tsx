@@ -356,7 +356,7 @@ const UG_PROGRAM_CARDS: ProgramCard[] = [
       "Explore flight mechanics, propulsion, avionics and composite materials in specialised aerospace laboratories.",
     image:
       "https://images.unsplash.com/photo-1489515217757-5fd1be406fef?q=80&w=1600&auto=format&fit=crop",
-    link: "https://www.dsu.edu.in/engineering/aerospace-engineering",
+    link: "/academics/engineering/aerospace-engineering",
     highlights: ["Wind Tunnel", "Avionics Lab", "UAV Projects"],
     overlay:
       "bg-gradient-to-br from-brand-blue/70 via-black/70 to-black/55 mix-blend-multiply",
@@ -371,7 +371,7 @@ const UG_PROGRAM_CARDS: ProgramCard[] = [
       "Build human-centric intelligent systems blending robotics, machine vision, automation and IoT.",
     image:
       "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1600&auto=format&fit=crop",
-    link: "https://www.dsu.edu.in/engineering/artificial-intelligence-robotics",
+    link: "/academics/engineering/ai-robotics",
     highlights: ["Robotics Arena", "Machine Vision", "Automation"],
     overlay:
       "bg-gradient-to-br from-brand-magenta/70 via-black/70 to-black/55 mix-blend-multiply",
