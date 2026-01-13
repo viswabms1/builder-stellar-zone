@@ -655,7 +655,10 @@ function EligibilityAndFees() {
         </div>
 
         <div className="space-y-4">
-          {atmlPrograms.map((program, idx) => (
+          {aimlPrograms.map((program, idx) => {
+            const isBTech = program.name.toLowerCase().includes("b.tech");
+            const iconColor = isBTech ? "text-brand-magenta" : "text-brand-purple";
+            return (
             <Card
               key={idx}
               className="border border-border/50 bg-card/50 backdrop-blur-sm cursor-pointer hover:shadow-lg transition-all"
@@ -671,7 +674,7 @@ function EligibilityAndFees() {
                     </CardDescription>
                   </div>
                   <ChevronDown
-                    className={`w-5 h-5 text-brand-purple transition-transform ${
+                    className={`w-5 h-5 ${iconColor} transition-transform ${
                       expandedProgram === program.name ? "rotate-180" : ""
                     }`}
                   />
@@ -683,7 +686,7 @@ function EligibilityAndFees() {
                   {/* Eligibility */}
                   <div>
                     <h4 className="font-semibold text-foreground mb-2 flex items-center gap-2">
-                      <CheckCircle2 className="w-5 h-5 text-brand-purple" />
+                      <CheckCircle2 className={`w-5 h-5 ${iconColor}`} />
                       Eligibility Criteria
                     </h4>
                     <p className="text-sm text-foreground/80 font-body leading-relaxed">
@@ -693,7 +696,7 @@ function EligibilityAndFees() {
                       <ul className="mt-2 space-y-1">
                         {program.eligibilityPoints.map((point, pidx) => (
                           <li key={pidx} className="text-sm text-foreground/80 flex items-start gap-2">
-                            <span className="text-brand-purple">•</span>
+                            <span className={iconColor}>•</span>
                             {point}
                           </li>
                         ))}
@@ -704,7 +707,7 @@ function EligibilityAndFees() {
                   {/* Fee Structure */}
                   <div>
                     <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
-                      <IndianRupee className="w-5 h-5 text-brand-purple" />
+                      <IndianRupee className={`w-5 h-5 ${iconColor}`} />
                       Fee Structure (2026-27)
                     </h4>
                     <div className="grid gap-2">
@@ -765,7 +768,8 @@ function EligibilityAndFees() {
                 </CardContent>
               )}
             </Card>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
