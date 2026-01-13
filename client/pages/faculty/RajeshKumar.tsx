@@ -28,7 +28,7 @@ export default function RajeshKumarProfile() {
         content: [
           "B.E. in Electronics & Communication from a leading institute",
           "M.Tech in VLSI Design - National Institute of Technology",
-          "Ph.D. in Embedded Systems - DSU School of Engineering",
+          "Ph.D. in Embedded Systems - School of Engineering, DSU",
         ],
       },
       {
@@ -92,7 +92,7 @@ export default function RajeshKumarProfile() {
       {
         title: "Awards & Accolades",
         content: [
-          "Best Teacher Award - DSU School of Engineering, 2022",
+          "Best Teacher Award - School of Engineering, DSU, 2022",
           "Research Excellence Award for high-impact publications, 2023",
           "Distinguished Alumnus Award from NIT Warangal, 2021",
           "International travel grant for IEEE conference presentation, 2023",
