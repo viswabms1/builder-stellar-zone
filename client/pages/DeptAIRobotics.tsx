@@ -207,6 +207,8 @@ export default function DeptAIRobotics() {
         </div>
       </section>
 
+      <EligibilityAndFees />
+
       <CurriculumLibrary />
 
       <AccreditationDocuments />
