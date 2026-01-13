@@ -100,7 +100,7 @@ export default function DeptAIRobotics() {
             <h2 className="headline-2 font-display mb-2">Programs Offered</h2>
             <p className="text-foreground/80 font-body">Choose your pathway to AI and robotics excellence</p>
           </div>
-          <div className="grid md:grid-cols-2 gap-4">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {/* B.Tech Program */}
             <Card className="border border-border/50 bg-card/50 backdrop-blur-sm hover:shadow-lg transition-all">
               <CardHeader>
@@ -115,6 +115,26 @@ export default function DeptAIRobotics() {
                 <p className="text-sm text-foreground font-body">With specializations in:</p>
                 <div className="flex flex-wrap gap-2">
                   {["AI/ML", "Computer Vision", "Robotics", "Cognitive Tech"].map((spec, i) => (
+                    <Badge key={i} variant="secondary" className="text-xs">{spec}</Badge>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* M.Tech Program */}
+            <Card className="border border-border/50 bg-card/50 backdrop-blur-sm hover:shadow-lg transition-all">
+              <CardHeader>
+                <div className="flex items-center gap-2 mb-2">
+                  <BookOpen className="w-5 h-5 text-brand-magenta" />
+                  <Badge className="bg-brand-magenta/20 text-brand-magenta border-brand-magenta/30">Postgraduate</Badge>
+                </div>
+                <CardTitle className="font-display">M.Tech AI and Robotics, School of Engineering, DSU</CardTitle>
+                <CardDescription className="font-body">2-Year Program</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <p className="text-sm text-foreground font-body">Advanced research in autonomous systems:</p>
+                <div className="flex flex-wrap gap-2">
+                  {["Autonomous Systems", "Machine Vision", "Intelligent Control", "Advanced Robotics"].map((spec, i) => (
                     <Badge key={i} variant="secondary" className="text-xs">{spec}</Badge>
                   ))}
                 </div>
