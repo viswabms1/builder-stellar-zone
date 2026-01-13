@@ -75,9 +75,9 @@ export default function DeptCSE() {
               <Sparkles className="w-4 h-4 text-white" />
               <span className="text-sm font-medium text-white font-display">Department of Computer Science & Engineering</span>
             </div>
-            <h1 className="headline-1 text-white leading-tight font-display">Build the Future of AI on NVIDIA DGX B200</h1>
+            <h1 className="headline-1 text-white leading-tight font-display">Computer Science Engineering for the AI Era</h1>
             <p className="subheadline text-white/90 max-w-2xl mt-3 font-body">
-              Learn on enterprise-scale AI compute anchored by NVIDIA DGX B200—the same class of systems used in global AI research.
+              Learn core CS on NVIDIA DGX B200 supercomputing infrastructure
             </p>
             <div className="mt-6 flex flex-wrap gap-2">
               {specializations.map((s, i) => (
