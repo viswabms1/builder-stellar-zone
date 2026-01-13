@@ -41,19 +41,19 @@ export default function DeptCSE() {
   ];
 
   const highlights = [
-    "Access to NVIDIA's DGX B200 supercomputer and Jetson edge devices—same infrastructure used by Google, Meta, OpenAI",
+    "Access to NVIDIA DGX B200 supercomputer and Jetson edge devices—enterprise-grade infrastructure for advanced AI and compute",
     "Learn CUDA, PyTorch, TensorFlow on enterprise-grade hardware for real-world projects",
     "Project-based learning with GPU acceleration: AI models, data science pipelines, autonomous systems",
-    "Research collaboration with industry partners using world-class infrastructure",
+    "Research collaboration on NVIDIA DGX B200–based infrastructure within DSU, School of Engineering",
     "Early exposure to production-scale AI systems and GPU programming",
-    "Build portfolio projects that demonstrate mastery on tools used by top tech companies",
+    "Build portfolio projects demonstrating mastery with industry-standard tools",
   ];
 
   const careers = [
-    "AI/ML Engineer → Senior AI Researcher → ML Architect (₹20-40 LPA with NVIDIA skills)",
-    "Data Scientist → Analytics Lead → Chief Data Officer (with GPU-accelerated skills)",
-    "Opportunities in Government, Defense, and NVIDIA's ecosystem companies",
-    "100% placements; Highest CTC: ₹28 LPA—premium salaries for NVIDIA infrastructure experience",
+    "AI/ML Engineer → Senior AI Researcher → ML Architect",
+    "Data Scientist → Analytics Lead → Chief Data Officer",
+    "Opportunities in Government, Defense, and leading organizations",
+    "Strong placement outcomes driven by DGX B200–based AI and GPU computing skills",
   ];
 
   return (
@@ -75,9 +75,9 @@ export default function DeptCSE() {
               <Sparkles className="w-4 h-4 text-white" />
               <span className="text-sm font-medium text-white font-display">Department of Computer Science & Engineering</span>
             </div>
-            <h1 className="headline-1 text-white leading-tight font-display">Build the Future of AI on World-Class Hardware</h1>
+            <h1 className="headline-1 text-white leading-tight font-display">Build the Future of AI on NVIDIA DGX B200</h1>
             <p className="subheadline text-white/90 max-w-2xl mt-3 font-body">
-              Learn on DSU's NVIDIA AI infrastructure—the same tools used by Google, Meta, and OpenAI. Become a job-ready engineer with competitive advantage in AI.
+              Learn on enterprise-scale AI compute anchored by NVIDIA DGX B200—the same class of systems used in global AI research.
             </p>
             <div className="mt-6 flex flex-wrap gap-2">
               {specializations.map((s, i) => (
@@ -114,7 +114,7 @@ export default function DeptCSE() {
                   <GraduationCap className="w-5 h-5 text-brand-magenta" />
                   <Badge className="bg-brand-magenta/20 text-brand-magenta border-brand-magenta/30">Undergraduate</Badge>
                 </div>
-                <CardTitle className="font-display">B.Tech Computer Science & Engineering</CardTitle>
+                <CardTitle className="font-display">B.Tech Computer Science & Engineering, DSU School of Engineering</CardTitle>
                 <CardDescription className="font-body">4-Year Program</CardDescription>
               </CardHeader>
               <CardContent className="space-y-3">
@@ -134,7 +134,7 @@ export default function DeptCSE() {
                   <BookOpen className="w-5 h-5 text-brand-blue" />
                   <Badge className="bg-brand-blue/20 text-brand-blue border-brand-blue/30">Postgraduate</Badge>
                 </div>
-                <CardTitle className="font-display">M.Tech Computer Science & Engineering</CardTitle>
+                <CardTitle className="font-display">M.Tech Computer Science & Engineering, DSU School of Engineering</CardTitle>
                 <CardDescription className="font-body">2-Year Program</CardDescription>
               </CardHeader>
               <CardContent className="space-y-3">
@@ -150,12 +150,12 @@ export default function DeptCSE() {
             {/* Quick Info */}
             <Card className="border border-border/50 bg-card/50 backdrop-blur-sm">
               <CardHeader>
-                <CardTitle className="text-lg font-display">Why Choose CSE?</CardTitle>
+                <CardTitle className="text-lg font-display">Why Computer Science & Engineering at DSU, School of Engineering?</CardTitle>
               </CardHeader>
               <CardContent className="space-y-2 text-sm font-body">
                 <div className="flex items-center gap-2">
                   <Award className="w-4 h-4 text-brand-magenta flex-shrink-0" />
-                  <span>100% Placements (20-40% salary premium)</span>
+                  <span>Strong placement outcomes with DGX B200 advantage</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Zap className="w-4 h-4 text-brand-magenta flex-shrink-0" />
@@ -177,7 +177,7 @@ export default function DeptCSE() {
           <div className="lg:col-span-2 space-y-3">
             <h2 className="headline-3 font-display">Overview</h2>
             <p className="text-foreground leading-relaxed font-body">
-              The Department of Computer Science & Engineering offers a dynamic ecosystem for study, research, and professional growth—powered by DSU's partnership with NVIDIA. The B.Tech CSE program provides a solid foundation and new-age skills with access to enterprise-grade AI infrastructure including DGX B200 supercomputers, Jetson edge devices, and GPU-accelerated labs. Students learn on the exact tools used by Google, Meta, and OpenAI, gaining breadth across core computing and depth through AI/ML, Data Science, and Cybersecurity specializations, while developing leadership and professional readiness for industry.
+              The Department of Computer Science & Engineering at DSU, School of Engineering offers a dynamic ecosystem for study, research, and professional growth—powered by NVIDIA DGX B200 infrastructure. The B.Tech Computer Science & Engineering program provides a solid foundation and advanced skills with access to enterprise-grade AI infrastructure including DGX B200 supercomputers, Jetson edge devices, and GPU-accelerated labs. Students gain breadth across core computing and depth through AI/ML, Data Science, and Cybersecurity specializations, while developing leadership and professional readiness for industry.
             </p>
             <Card className="border border-border/50 bg-card/50 backdrop-blur-sm">
               <CardHeader className="pb-2">
@@ -221,9 +221,9 @@ export default function DeptCSE() {
               <Cpu className="w-5 h-5 text-blue-500" />
               <span className="text-sm font-medium text-blue-500 font-display">Enterprise-Grade Infrastructure</span>
             </div>
-            <h2 className="text-5xl md:text-6xl font-bold mb-6">DSU's NVIDIA AI Architecture</h2>
+            <h2 className="text-5xl md:text-6xl font-bold mb-6">Enterprise-grade NVIDIA DGX B200–centric AI Architecture</h2>
             <p className="text-2xl text-foreground/70 max-w-4xl mx-auto leading-relaxed">
-              A rare and prestigious partnership that gives CSE students access to the exact same AI infrastructure used by Google, Meta, and OpenAI.
+              Computer Science & Engineering students at DSU, School of Engineering gain access to advanced AI infrastructure for cutting-edge research and learning.
             </p>
           </div>
 
@@ -231,16 +231,16 @@ export default function DeptCSE() {
           <div className="relative overflow-hidden rounded-lg border-2 border-gradient-to-r from-gold-400 to-yellow-500/50 bg-gradient-to-r from-amber-50/50 to-yellow-50/50 dark:from-amber-950/30 dark:to-yellow-950/30 p-8 mb-14">
             <div className="absolute top-0 right-0 text-7xl opacity-10">👑</div>
             <div className="relative z-10">
-              <p className="text-lg font-bold text-amber-900 dark:text-amber-200 mb-2">🏆 A Rare Distinction</p>
+              <p className="text-lg font-bold text-amber-900 dark:text-amber-200 mb-2">🏆 Advanced Infrastructure Access</p>
               <p className="text-lg text-foreground/85 leading-relaxed font-semibold">
-                This complete NVIDIA AI infrastructure is available at only a handful of elite institutions across India. CSE students at DSU learn on world-class hardware that gives them a competitive advantage in placement and research.
+                Computer Science & Engineering students at DSU, School of Engineering leverage NVIDIA DGX B200 infrastructure for advanced AI research, learning, and career development.
               </p>
             </div>
           </div>
 
           {/* The Complete Stack */}
           <div className="space-y-4 mb-16">
-            <p className="text-lg font-semibold text-foreground mb-6">The Complete NVIDIA AI Stack CSE Students Master</p>
+            <p className="text-lg font-semibold text-foreground mb-6">The Complete NVIDIA AI Stack Computer Science & Engineering Students Master</p>
 
             <div className="grid md:grid-cols-2 gap-6">
               {/* Hardware Layer */}
@@ -314,15 +314,15 @@ export default function DeptCSE() {
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="w-6 h-6 text-blue-500 flex-shrink-0 mt-0.5" />
                   <div>
-                    <p className="font-semibold text-foreground mb-1">20-40% Higher Salaries</p>
-                    <p className="text-sm text-foreground/70">NVIDIA-experienced engineers command premium packages in tech industry</p>
+                    <p className="font-semibold text-foreground mb-1">Competitive Advantage in Placements</p>
+                    <p className="text-sm text-foreground/70">DGX B200 skills provide advantage in technical interviews and placement outcomes</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="w-6 h-6 text-blue-500 flex-shrink-0 mt-0.5" />
                   <div>
-                    <p className="font-semibold text-foreground mb-1">Top-Tier Company Access</p>
-                    <p className="text-sm text-foreground/70">Direct recruitment from Google, Meta, OpenAI, Microsoft, NVIDIA</p>
+                    <p className="font-semibold text-foreground mb-1">Industry-Ready Skills</p>
+                    <p className="text-sm text-foreground/70">Technologies aligned with those used in leading global AI research organizations</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -370,7 +370,7 @@ export default function DeptCSE() {
 
           {/* Real Capabilities */}
           <div className="bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-2xl p-8 border border-blue-500/30 mb-10">
-            <h3 className="text-2xl font-bold mb-4 text-foreground">What CSE Students Can Do With This Infrastructure</h3>
+            <h3 className="text-2xl font-bold mb-4 text-foreground">What Computer Science & Engineering Students Can Do With This Infrastructure</h3>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="space-y-3">
                 <div className="flex items-start gap-3">
@@ -537,10 +537,10 @@ export default function DeptCSE() {
               </div>
               <CardHeader>
                 <CardTitle className="font-display">Learn About NVIDIA Infrastructure</CardTitle>
-                <CardDescription className="font-body">Chairman, CSE — Questions about GPU labs, DGX access, and research</CardDescription>
+                <CardDescription className="font-body">Department Leadership — Questions about GPU labs, DGX access, and research</CardDescription>
               </CardHeader>
               <CardContent className="grid gap-2 text-sm font-body">
-                <div className="flex items-center justify-between"><span>Email</span><a className="font-medium hover:underline" href="mailto:chairman-cse@dsu.edu.in">chairman-cse@dsu.edu.in</a></div>
+                <div className="flex items-center justify-between"><span>Email</span><a className="font-medium hover:underline" href="mailto:cse-dept@dsu.edu.in">cse-dept@dsu.edu.in</a></div>
                 <div className="flex items-center justify-between"><span>Phone</span><span className="font-medium">080-49092935</span></div>
               </CardContent>
             </Card>
@@ -580,7 +580,7 @@ export default function DeptCSE() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-foreground/80 font-body">
-                    Immersive innovation labs powered by industry leaders like IBM, NVIDIA and GE
+                    NVIDIA-powered Centre of Excellence for AI and GPU Computing
                   </p>
                 </CardContent>
               </Card>
@@ -602,7 +602,7 @@ export default function DeptCSE() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-foreground/80 font-body">
-                    GPU-accelerated research on DGX B200 with NVIDIA partnership driving breakthrough innovations
+                    GPU-accelerated research on NVIDIA DGX B200 within DSU, School of Engineering
                   </p>
                 </CardContent>
               </Card>
@@ -624,7 +624,7 @@ export default function DeptCSE() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-foreground/80 font-body">
-                    20-40% higher salaries for NVIDIA-skilled engineers; direct recruitment from Google, Meta, OpenAI
+                    Strong placement outcomes driven by DGX B200–based AI and GPU computing skills
                   </p>
                 </CardContent>
               </Card>
@@ -648,7 +648,7 @@ export default function DeptCSE() {
                 </CardHeader>
                 <CardContent className="flex flex-col gap-3">
                   <p className="text-sm text-foreground/80 font-body">
-                    Join DSU CSE—learn on NVIDIA DGX B200 and become job-ready with premium placement prospects
+                    Join DSU, School of Engineering—learn on NVIDIA DGX B200 and become job-ready with strong placement prospects
                   </p>
                   <span className="inline-flex items-center gap-2 text-xs font-medium text-brand-magenta group-hover:text-brand-magenta/80 transition-colors">
                     Apply Now
@@ -665,8 +665,8 @@ export default function DeptCSE() {
       <section className="px-3 py-8">
         <div className="max-w-4xl mx-auto text-center">
           <div className="rounded-3xl p-5 border border-brand-magenta/20 bg-brand-magenta/5">
-            <h3 className="headline-3 mb-3 font-display">Join DSU CSE</h3>
-            <p className="text-foreground mb-6 font-body">Explore programs, discover research, and launch your career in Computer Science & Engineering.</p>
+            <h3 className="headline-3 mb-3 font-display">Join DSU, School of Engineering</h3>
+            <p className="text-foreground mb-6 font-body">Explore Computer Science & Engineering programs, discover NVIDIA-powered research, and launch your career.</p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a
                 href="https://admissions.dsu.edu.in/"
@@ -740,7 +740,7 @@ function LabsFacilitiesCarousel() {
         <div className="flex items-center justify-between">
           <div>
             <h2 className="headline-3 mb-2 font-display">Labs & Facilities</h2>
-            <p className="text-sm text-foreground/80 font-body">State-of-the-art infrastructure for hands-on learning</p>
+            <p className="text-sm text-foreground/80 font-body">DSU, School of Engineering hosts multiple Computer Science laboratories. All AI-intensive workloads are centrally powered by NVIDIA DGX B200 infrastructure.</p>
           </div>
           <div className="text-xs text-foreground/60 font-body">
             {currentLabIndex + 1} of {labs.length}
