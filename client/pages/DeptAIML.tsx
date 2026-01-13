@@ -638,7 +638,7 @@ function EligibilityAndFees() {
     .filter(p => {
       const name = p.name.toLowerCase();
       const isBTechAIML = name.includes("b.tech") && name.includes("artificial intelligence") && name.includes("machine learning");
-      const isMTechAI = name === "m.tech - artificial intelligence" || name === "m.tech artificial intelligence";
+      const isMTechAI = name === "m.tech artificial intelligence";
       return isBTechAIML || isMTechAI;
     }) || [];
 
