@@ -194,7 +194,7 @@ export default function DeptAIDS() {
               </div>
               <CardHeader>
                 <CardTitle className="font-display">Fast Facts</CardTitle>
-                <CardDescription className="font-body">What sets AI & DS apart at DSU</CardDescription>
+                <CardDescription className="font-body">What sets AI & DS apart at School of Engineering, DSU</CardDescription>
               </CardHeader>
               <CardContent className="grid gap-2 text-sm font-body">
                 <div className="flex items-center justify-between"><span>Program Type</span><span className="font-medium">B.Tech</span></div>
@@ -295,7 +295,7 @@ export default function DeptAIDS() {
               </span>
             </h2>
             <p className="text-foreground/80 font-body max-w-2xl mx-auto">
-              Discover research, placements, admission pathways, and Centers of Excellence at DSU
+              Discover research, placements, admission pathways, and Centers of Excellence at School of Engineering, DSU
             </p>
           </div>
 
