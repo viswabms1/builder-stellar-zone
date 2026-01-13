@@ -420,6 +420,8 @@ export default function DeptAIML() {
         </div>
       </section>
 
+      <EligibilityAndFees />
+
       <CurriculumLibrary />
 
       <AccreditationDocuments />
