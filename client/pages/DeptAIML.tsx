@@ -28,7 +28,9 @@ import {
   Cog,
   Award,
   Microscope,
+  IndianRupee,
 } from "lucide-react";
+import { schools } from "./Eligibility";
 
 export default function DeptAIML() {
   const specializations = [
