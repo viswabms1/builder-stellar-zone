@@ -115,7 +115,7 @@ export default function DeptCSE() {
                   <GraduationCap className="w-5 h-5 text-brand-magenta" />
                   <Badge className="bg-brand-magenta/20 text-brand-magenta border-brand-magenta/30">Undergraduate</Badge>
                 </div>
-                <CardTitle className="font-display">B.Tech Computer Science & Engineering, DSU School of Engineering</CardTitle>
+                <CardTitle className="font-display">B.Tech Computer Science & Engineering, School of Engineering, DSU</CardTitle>
                 <CardDescription className="font-body">4-Year Program</CardDescription>
               </CardHeader>
               <CardContent className="space-y-3">
@@ -135,7 +135,7 @@ export default function DeptCSE() {
                   <BookOpen className="w-5 h-5 text-brand-blue" />
                   <Badge className="bg-brand-blue/20 text-brand-blue border-brand-blue/30">Postgraduate</Badge>
                 </div>
-                <CardTitle className="font-display">M.Tech Computer Science & Engineering, DSU School of Engineering</CardTitle>
+                <CardTitle className="font-display">M.Tech Computer Science & Engineering, School of Engineering, DSU</CardTitle>
                 <CardDescription className="font-body">2-Year Program</CardDescription>
               </CardHeader>
               <CardContent className="space-y-3">
@@ -155,7 +155,7 @@ export default function DeptCSE() {
                   <Brain className="w-5 h-5 text-brand-magenta" />
                   <Badge className="bg-brand-magenta/20 text-brand-magenta border-brand-magenta/30">Postgraduate</Badge>
                 </div>
-                <CardTitle className="font-display">M.Tech CSE (Artificial Intelligence and Machine Learning), DSU School of Engineering</CardTitle>
+                <CardTitle className="font-display">M.Tech CSE (Artificial Intelligence and Machine Learning), School of Engineering, DSU</CardTitle>
                 <CardDescription className="font-body">2-Year Program</CardDescription>
               </CardHeader>
               <CardContent className="space-y-3">
@@ -198,7 +198,7 @@ export default function DeptCSE() {
           <div className="lg:col-span-2 space-y-3">
             <h2 className="headline-3 font-display">Overview</h2>
             <p className="text-foreground leading-relaxed font-body">
-              Computer Science & Engineering at DSU, School of Engineering is a core program built on algorithms, programming, systems, databases, networks, and software engineering. Students gain hands-on experience using NVIDIA DGX B200 infrastructure, with exposure to AI, machine learning, data science, and high-performance computing as extensions of core computer science—preparing them for software roles, advanced AI applications, research, and higher studies.
+              Computer Science & Engineering at School of Engineering, DSU is a core program built on algorithms, programming, systems, databases, networks, and software engineering. Students gain hands-on experience using NVIDIA DGX B200 infrastructure, with exposure to AI, machine learning, data science, and high-performance computing as extensions of core computer science—preparing them for software roles, advanced AI applications, research, and higher studies.
             </p>
             <Card className="border border-border/50 bg-card/50 backdrop-blur-sm">
               <CardHeader className="pb-2">
@@ -246,7 +246,7 @@ export default function DeptCSE() {
             </div>
             <h2 className="text-5xl md:text-6xl font-bold mb-6">Enterprise-grade NVIDIA DGX B200–centric AI Architecture</h2>
             <p className="text-2xl text-foreground/70 max-w-4xl mx-auto leading-relaxed">
-              Computer Science & Engineering students at DSU, School of Engineering gain access to advanced AI infrastructure for cutting-edge research and learning.
+              Computer Science & Engineering students at School of Engineering, DSU gain access to advanced AI infrastructure for cutting-edge research and learning.
             </p>
           </div>
 
@@ -256,7 +256,7 @@ export default function DeptCSE() {
             <div className="relative z-10">
               <p className="text-lg font-bold text-amber-900 dark:text-amber-200 mb-2">🏆 Advanced Infrastructure Access</p>
               <p className="text-lg text-foreground/85 leading-relaxed font-semibold">
-                Computer Science & Engineering students at DSU, School of Engineering leverage NVIDIA DGX B200 infrastructure for advanced AI research, learning, and career development.
+                Computer Science & Engineering students at School of Engineering, DSU leverage NVIDIA DGX B200 infrastructure for advanced AI research, learning, and career development.
               </p>
             </div>
           </div>
@@ -625,7 +625,7 @@ export default function DeptCSE() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-foreground/80 font-body">
-                    GPU-accelerated research on NVIDIA DGX B200 within DSU, School of Engineering
+                    GPU-accelerated research on NVIDIA DGX B200 within School of Engineering, DSU
                   </p>
                 </CardContent>
               </Card>
@@ -671,7 +671,7 @@ export default function DeptCSE() {
                 </CardHeader>
                 <CardContent className="flex flex-col gap-3">
                   <p className="text-sm text-foreground/80 font-body">
-                    Join DSU, School of Engineering—learn on NVIDIA DGX B200 and become job-ready with strong placement prospects
+                    Join School of Engineering, DSU—learn on NVIDIA DGX B200 and become job-ready with strong placement prospects
                   </p>
                   <span className="inline-flex items-center gap-2 text-xs font-medium text-brand-magenta group-hover:text-brand-magenta/80 transition-colors">
                     Apply Now
@@ -688,7 +688,7 @@ export default function DeptCSE() {
       <section className="px-3 py-8">
         <div className="max-w-4xl mx-auto text-center">
           <div className="rounded-3xl p-5 border border-brand-magenta/20 bg-brand-magenta/5">
-            <h3 className="headline-3 mb-3 font-display">Join DSU, School of Engineering</h3>
+            <h3 className="headline-3 mb-3 font-display">Join School of Engineering, DSU</h3>
             <p className="text-foreground mb-6 font-body">Explore Computer Science & Engineering programs, discover NVIDIA-powered research, and launch your career.</p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a
