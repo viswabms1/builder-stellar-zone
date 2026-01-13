@@ -1319,9 +1319,9 @@ function EngineeringProgramFinder() {
                 <Filter className="h-6 w-6 text-green-600" />
               </div>
               <div>
-                <CardTitle className="text-2xl">Find Engineering Program Details</CardTitle>
+                <CardTitle className="text-2xl">Eligibility and Fees for School of Engineering</CardTitle>
                 <CardDescription>
-                  Filter by level and explore program details, eligibility, and fee structure
+                  Explore program details, eligibility criteria, and fee structure
                 </CardDescription>
               </div>
             </div>
