@@ -177,7 +177,7 @@ export default function DeptCSE() {
           <div className="lg:col-span-2 space-y-3">
             <h2 className="headline-3 font-display">Overview</h2>
             <p className="text-foreground leading-relaxed font-body">
-              Computer Science & Engineering at DSU, School of Engineering is a core program focused on algorithms, programming, systems, databases, networks, and software engineering. We emphasize problem-solving, computational thinking, and system-level understanding as foundational skills. Students progress through hands-on learning supported by enterprise-scale AI infrastructure powered by NVIDIA DGX B200, gaining progressive exposure to AI, machine learning, data science, and high-performance computing as extensions of core CS. This approach enables students to apply computer science fundamentals to real-world, compute-intensive problems and prepares graduates for software engineering roles, AI-enabled applications, research, and higher studies.
+              Computer Science & Engineering at DSU, School of Engineering is a core program built on algorithms, programming, systems, databases, networks, and software engineering. Students gain hands-on experience using NVIDIA DGX B200 infrastructure, with exposure to AI, machine learning, data science, and high-performance computing as extensions of core computer science—preparing them for software roles, advanced AI applications, research, and higher studies.
             </p>
             <Card className="border border-border/50 bg-card/50 backdrop-blur-sm">
               <CardHeader className="pb-2">
