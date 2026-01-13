@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { schools } from "./Eligibility";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -20,6 +21,8 @@ import {
   Zap,
   Award,
   Microscope,
+  IndianRupee,
+  ArrowRight,
 } from "lucide-react";
 
 export default function DeptAIDS() {
@@ -96,7 +99,7 @@ export default function DeptAIDS() {
             <h2 className="headline-2 font-display mb-2">Programs Offered</h2>
             <p className="text-foreground/80 font-body">Choose your pathway to AI and data science excellence</p>
           </div>
-          <div className="grid md:grid-cols-2 gap-4">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {/* B.Tech Program */}
             <Card className="border border-border/50 bg-card/50 backdrop-blur-sm hover:shadow-lg transition-all">
               <CardHeader>
@@ -104,13 +107,33 @@ export default function DeptAIDS() {
                   <GraduationCap className="w-5 h-5 text-brand-blue" />
                   <Badge className="bg-brand-blue/20 text-brand-blue border-brand-blue/30">Undergraduate</Badge>
                 </div>
-                <CardTitle className="font-display">B.Tech CSE (AI & Data Science)</CardTitle>
+                <CardTitle className="font-display">B.Tech CSE (AI & Data Science), School of Engineering, DSU</CardTitle>
                 <CardDescription className="font-body">4-Year Program</CardDescription>
               </CardHeader>
               <CardContent className="space-y-3">
                 <p className="text-sm text-foreground font-body">With specializations in:</p>
                 <div className="flex flex-wrap gap-2">
                   {["Machine Learning", "Big Data Analytics", "Data Science", "Deep Learning"].map((spec, i) => (
+                    <Badge key={i} variant="secondary" className="text-xs">{spec}</Badge>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* M.Tech Program */}
+            <Card className="border border-border/50 bg-card/50 backdrop-blur-sm hover:shadow-lg transition-all">
+              <CardHeader>
+                <div className="flex items-center gap-2 mb-2">
+                  <BookOpen className="w-5 h-5 text-brand-purple" />
+                  <Badge className="bg-brand-purple/20 text-brand-purple border-brand-purple/30">Postgraduate</Badge>
+                </div>
+                <CardTitle className="font-display">M.Tech Artificial Intelligence and Data Science, School of Engineering, DSU</CardTitle>
+                <CardDescription className="font-body">2-Year Program</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <p className="text-sm text-foreground font-body">Advanced research with focus on:</p>
+                <div className="flex flex-wrap gap-2">
+                  {["Advanced Analytics", "AI Research", "Data Products"].map((spec, i) => (
                     <Badge key={i} variant="secondary" className="text-xs">{spec}</Badge>
                   ))}
                 </div>
@@ -147,7 +170,7 @@ export default function DeptAIDS() {
           <div className="lg:col-span-2 space-y-6">
             <h2 className="headline-3 font-display">Overview</h2>
             <p className="text-foreground leading-relaxed font-body">
-              Computer Science & Engineering (Artificial Intelligence & Data Science) is a discipline that concerns scientific methodologies, processes, and techniques drawn from statistics, cognitive science, and computing. The B.Tech AI & DS program transforms businesses around the world by equipping students with the skills to extract knowledge from structured and unstructured data. With the pace of change accelerating, the value of AI and data science provides a first-mover advantage on nascent industry trends, making impactful applications possible.
+              Artificial Intelligence and Data Science at School of Engineering, DSU is a discipline that concerns scientific methodologies, processes, and techniques drawn from statistics, cognitive science, and computing. Programs transform businesses around the world by equipping students with the skills to extract knowledge from structured and unstructured data. With the pace of change accelerating, the value of AI and data science provides a first-mover advantage on nascent industry trends, making impactful applications possible.
             </p>
             <Card className="border border-border/50 bg-card/50 backdrop-blur-sm">
               <CardHeader className="pb-2">
@@ -171,7 +194,7 @@ export default function DeptAIDS() {
               </div>
               <CardHeader>
                 <CardTitle className="font-display">Fast Facts</CardTitle>
-                <CardDescription className="font-body">What sets AI & DS at DSU apart</CardDescription>
+                <CardDescription className="font-body">What sets AI & DS apart at DSU</CardDescription>
               </CardHeader>
               <CardContent className="grid gap-2 text-sm font-body">
                 <div className="flex items-center justify-between"><span>Program Type</span><span className="font-medium">B.Tech</span></div>
