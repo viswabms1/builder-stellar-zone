@@ -214,6 +214,8 @@ export default function DeptCSE() {
         </div>
       </section>
 
+      <EligibilityAndFees />
+
       {/* NVIDIA AI Architecture Section */}
       <section className="px-3 py-20 bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-blue-500/5">
         <div className="max-w-7xl mx-auto">
