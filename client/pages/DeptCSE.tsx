@@ -29,6 +29,7 @@ import {
   Cog,
   Award,
   Microscope,
+  IndianRupee,
 } from "lucide-react";
 
 export default function DeptCSE() {
