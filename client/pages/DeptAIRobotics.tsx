@@ -674,11 +674,14 @@ function CurriculumLibrary() {
         <div className="grid gap-6">
           {programs.map((program) => {
             const isOpen = openProgram === program.id;
+            const isBTech = program.id === "btech";
+            const borderClass = isBTech ? "border-brand-magenta/30" : "border-brand-magenta/30";
+            const badgeClass = isBTech ? "bg-brand-magenta/15 text-brand-magenta border-brand-magenta/20" : "bg-brand-magenta/15 text-brand-magenta border-brand-magenta/20";
 
             return (
               <div
                 key={program.id}
-                className="rounded-3xl border-2 border-brand-magenta/30 overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-brand-magenta/10 hover:-translate-y-1"
+                className={`rounded-3xl border-2 ${borderClass} overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-brand-magenta/10 hover:-translate-y-1`}
               >
                 <div className="relative h-48 overflow-hidden">
                   <img
@@ -690,8 +693,8 @@ function CurriculumLibrary() {
 
                 <div className="p-6 bg-background/50 backdrop-blur-sm space-y-3">
                   <div className="flex items-start gap-3">
-                    <Badge className="rounded-full border bg-brand-magenta/15 text-brand-magenta border-brand-magenta/20">
-                      Undergraduate
+                    <Badge className={`rounded-full border ${badgeClass}`}>
+                      {isBTech ? "Undergraduate" : "Postgraduate"}
                     </Badge>
                   </div>
                   <div>
