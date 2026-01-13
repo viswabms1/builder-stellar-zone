@@ -425,7 +425,7 @@ function EligibilityAndFees() {
     .flatMap(cat => cat.programs)
     .filter(p => {
       const name = p.name.toLowerCase();
-      const isBTechAIDS = name.includes("b.tech") && name.includes("data science");
+      const isBTechAIDS = name.includes("b.tech") && name.includes("artificial intelligence") && name.includes("data science");
       const isMTechAIDS = name === "m.tech artificial intelligence and data science" || name === "m.tech - artificial intelligence and data science";
       return isBTechAIDS || isMTechAIDS;
     }) || [];
