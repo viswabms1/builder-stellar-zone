@@ -1172,18 +1172,18 @@ function CurriculumLibrary() {
                       {program.batches.map((batch, batchIdx) => (
                         <div
                           key={`${program.id}-${batch.year}`}
-                          className={`rounded-xl border border-border/40 bg-card/70 p-3 transition-all hover:border-brand-blue/40 ${
-                            batchIdx === 0 ? "ring-2 ring-brand-blue/20" : ""
+                          className={`rounded-xl border border-border/40 bg-card/70 p-3 transition-all ${isBtech ? "hover:border-brand-blue/40" : "hover:border-brand-purple/40"} ${
+                            batchIdx === 0 ? isBtech ? "ring-2 ring-brand-blue/20" : "ring-2 ring-brand-purple/20" : ""
                           }`}
                         >
                           <div className="flex items-start justify-between gap-2 mb-2">
                             <div className="flex items-center gap-2">
-                              <Badge className="rounded-full border text-xs bg-brand-blue/20 text-brand-blue border-brand-blue/30">
+                              <Badge className={`rounded-full border text-xs ${isBtech ? "bg-brand-blue/20 text-brand-blue border-brand-blue/30" : "bg-brand-purple/20 text-brand-purple border-brand-purple/30"}`}>
                                 <CalendarDays className="h-3 w-3 mr-1" />
                                 {batch.year}
                               </Badge>
                               {batchIdx === 0 && (
-                                <Badge className="rounded-full bg-brand-blue/20 text-brand-blue border-brand-blue/30 border text-xs">
+                                <Badge className={`rounded-full border text-xs ${isBtech ? "bg-brand-blue/20 text-brand-blue border-brand-blue/30" : "bg-brand-purple/20 text-brand-purple border-brand-purple/30"}`}>
                                   <Zap className="h-3 w-3 mr-1" />
                                   Current
                                 </Badge>
