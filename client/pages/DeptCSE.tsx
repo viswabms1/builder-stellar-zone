@@ -198,7 +198,7 @@ export default function DeptCSE() {
           <div className="lg:col-span-2 space-y-3">
             <h2 className="headline-3 font-display">Overview</h2>
             <p className="text-foreground leading-relaxed font-body">
-              Computer Science & Engineering at School of Engineering, DSU is a core program built on algorithms, programming, systems, databases, networks, and software engineering. Students gain hands-on experience using NVIDIA DGX B200 infrastructure, with exposure to AI, machine learning, data science, and high-performance computing as extensions of core computer science—preparing them for software roles, advanced AI applications, research, and higher studies.
+              Computer Science & Engineering at School of Engineering, DSU offers a comprehensive journey in computing—from undergraduate foundations to postgraduate research. The B.Tech program is built on algorithms, programming, systems, databases, networks, and software engineering, with hands-on experience using NVIDIA DGX B200 infrastructure and exposure to AI, machine learning, data science, and high-performance computing. The M.Tech programs (Core CSE and AI & ML specialization) provide advanced research opportunities in cutting-edge systems, GPU-accelerated AI, and industry-scale applications. Together, these pathways prepare students for software engineering roles, advanced AI applications, research leadership, and entrepreneurship in the technology sector.
             </p>
             <Card className="border border-border/50 bg-card/50 backdrop-blur-sm">
               <CardHeader className="pb-2">
