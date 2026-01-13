@@ -1069,6 +1069,38 @@ function CurriculumLibrary() {
         },
       ],
     },
+    {
+      id: "mtech",
+      label: "M.Tech Artificial Intelligence and Data Science",
+      description: "2-year postgraduate specialization in advanced AI and data science research",
+      image: "https://images.unsplash.com/photo-1516321318423-f06f70a504f9?q=80&w=600&h=400&fit=crop",
+      batches: [
+        {
+          year: "2025-26",
+          summary: "Foundations in advanced ML, statistical modeling, and data engineering architectures",
+          documentUrl:
+            "https://www.dsu.edu.in/images/Engineering/AIIDS-dept/curriculum/MTech-AIIDS-Curriculum-2025-26.pdf",
+        },
+        {
+          year: "2026-27",
+          summary: "Deep learning, NLP, computer vision, and large-scale data processing systems",
+          documentUrl:
+            "https://www.dsu.edu.in/images/Engineering/AIIDS-dept/curriculum/MTech-AIIDS-Curriculum-2026-27.pdf",
+        },
+        {
+          year: "2027-28",
+          summary: "Generative AI, reinforcement learning, advanced analytics, and research thesis",
+          documentUrl:
+            "https://www.dsu.edu.in/images/Engineering/AIIDS-dept/curriculum/MTech-AIIDS-Curriculum-2027-28.pdf",
+        },
+        {
+          year: "2028-29",
+          summary: "Research dissertation, industry collaborations, and innovation lab immersion",
+          documentUrl:
+            "https://www.dsu.edu.in/images/Engineering/AIIDS-dept/curriculum/MTech-AIIDS-Curriculum-2028-29.pdf",
+        },
+      ],
+    },
   ];
 
   return (
