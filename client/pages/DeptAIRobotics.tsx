@@ -451,7 +451,7 @@ function EligibilityAndFees() {
     .flatMap(cat => cat.programs)
     .filter(p => {
       const name = p.name.toLowerCase();
-      const isBTechAIR = name.includes("b.tech") && name.includes("artificial intelligence") && name.includes("robotics");
+      const isBTechAIR = name.includes("b.tech") && name.includes("robotics");
       const isMTechAIR = name === "m.tech artificial intelligence and robotics" || name === "m.tech - artificial intelligence and robotics";
       return isBTechAIR || isMTechAIR;
     }) || [];
