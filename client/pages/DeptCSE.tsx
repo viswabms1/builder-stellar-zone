@@ -41,12 +41,11 @@ export default function DeptCSE() {
   ];
 
   const highlights = [
-    "Access to NVIDIA DGX B200 supercomputer and Jetson edge devices—enterprise-grade infrastructure for advanced AI and compute",
-    "Learn CUDA, PyTorch, TensorFlow on enterprise-grade hardware for real-world projects",
-    "Project-based learning with GPU acceleration: AI models, data science pipelines, autonomous systems",
-    "Research collaboration on NVIDIA DGX B200–based infrastructure within DSU, School of Engineering",
-    "Early exposure to production-scale AI systems and GPU programming",
-    "Build portfolio projects demonstrating mastery with industry-standard tools",
+    "Access to NVIDIA DGX B200 supercomputing and Jetson edge platforms",
+    "Learn CUDA, PyTorch, and TensorFlow on enterprise-scale GPU systems",
+    "Project-based learning with GPU-accelerated AI and data pipelines",
+    "Research-driven learning enabled by DGX B200 infrastructure at DSU, School of Engineering",
+    "Portfolio projects showcasing real-world, production-scale computing skills",
   ];
 
   const careers = [
