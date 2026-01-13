@@ -690,7 +690,13 @@ function EligibilityAndFees() {
   const engineeringSchool = schools.find(s => s.name === "School of Engineering");
   const csePrograms = engineeringSchool?.categories
     .flatMap(cat => cat.programs)
-    .filter(p => p.name.includes("Computer Science")) || [];
+    .filter(p => {
+      const name = p.name.toLowerCase();
+      // Only show Core B.Tech CSE and M.Tech CSE (exclude specialization variants)
+      const isCoreCSE = name === "b.tech computer science & engineering";
+      const isMTechCSE = name === "m.tech computer science & engineering" || name === "m.tech - computer science & engineering";
+      return isCoreCSE || isMTechCSE;
+    }) || [];
 
   const [expandedProgram, setExpandedProgram] = useState<string | null>(null);
 
