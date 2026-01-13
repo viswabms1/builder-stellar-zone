@@ -111,11 +111,11 @@ export default function Navigation() {
               },
               {
                 name: "B.Tech CSE (AI & ML)",
-                href: "/academics/engineering/cse-aiml",
+                href: "/academics/engineering/artificial-intelligence",
               },
               {
                 name: "B.Tech CSE (AI & Data Science)",
-                href: "/academics/engineering/cse-ai-ds",
+                href: "/academics/engineering/ai-data-science",
               },
               {
                 name: "B.Tech CSE (Cybersecurity)",
