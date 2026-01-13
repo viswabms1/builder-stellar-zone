@@ -823,16 +823,6 @@ function EligibilityAndFees() {
             </Card>
           ))}
         </div>
-
-        <div className="mt-8 p-4 bg-orange-500/10 border border-orange-500/20 rounded-lg">
-          <p className="text-sm text-foreground/80 font-body">
-            <span className="font-semibold text-orange-600">Note:</span> Fee structure and eligibility criteria are subject to change. Please visit the{" "}
-            <Link to="/admissions" className="text-brand-magenta font-semibold hover:underline">
-              Admissions
-            </Link>
-            {" "}page for detailed information and updates.
-          </p>
-        </div>
       </div>
     </section>
   );
