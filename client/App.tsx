@@ -870,7 +870,7 @@ function App() {
                   element={<FacultyAIML />}
                 />
                 <Route
-                  path="/academics/engineering/cse-aiml/faculty/dr-jayavrinda-vrindavanam-v"
+                  path="/academics/engineering/artificial-intelligence/faculty/dr-jayavrinda-vrindavanam-v"
                   element={<JayavrindasVrindavnamPage />}
                 />
                 <Route
