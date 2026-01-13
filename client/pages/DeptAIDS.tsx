@@ -425,9 +425,9 @@ function EligibilityAndFees() {
     .flatMap(cat => cat.programs)
     .filter(p => {
       const name = p.name.toLowerCase();
-      // Show M.Tech AI & DS program
+      const isBTechAIDS = name.includes("b.tech") && name.includes("data science");
       const isMTechAIDS = name === "m.tech artificial intelligence and data science" || name === "m.tech - artificial intelligence and data science";
-      return isMTechAIDS;
+      return isBTechAIDS || isMTechAIDS;
     }) || [];
 
   const [expandedProgram, setExpandedProgram] = useState<string | null>(null);
@@ -438,7 +438,7 @@ function EligibilityAndFees() {
         <div className="mb-12">
           <h2 className="headline-2 font-display mb-3">Eligibility & Fees</h2>
           <p className="text-foreground/80 font-body max-w-3xl">
-            M.Tech Artificial Intelligence and Data Science at School of Engineering, DSU follows admission pathways based on PGCET and merit-based direct admission.
+            AI & Data Science programs at School of Engineering, DSU offer both undergraduate and postgraduate pathways. B.Tech follows merit-based admission through entrance exams (CET, JEE Mains, Comed-K). Explore eligibility requirements for each program below.
           </p>
         </div>
 
