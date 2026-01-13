@@ -384,7 +384,7 @@ export default function DeptAIDS() {
                 </CardHeader>
                 <CardContent className="flex flex-col gap-3">
                   <p className="text-sm text-foreground/80 font-body">
-                    Join DSU AI & DS and shape your future
+                    Join School of Engineering, DSU and shape your future
                   </p>
                   <span className="inline-flex items-center gap-2 text-xs font-medium text-brand-blue group-hover:text-brand-blue/80 transition-colors">
                     Apply Now
@@ -401,7 +401,7 @@ export default function DeptAIDS() {
       <section className="px-6 py-16">
         <div className="max-w-4xl mx-auto text-center">
           <div className="rounded-3xl p-10 border border-brand-blue/20 bg-brand-blue/5">
-            <h3 className="headline-3 mb-3 font-display">Join DSU AI & Data Science</h3>
+            <h3 className="headline-3 mb-3 font-display">Join School of Engineering, DSU</h3>
             <p className="text-foreground mb-6 font-body">Transform data into actionable intelligence and launch your career in AI and Data Science.</p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a
