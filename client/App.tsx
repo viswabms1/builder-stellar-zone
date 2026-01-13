@@ -874,167 +874,167 @@ function App() {
                   element={<JayavrindasVrindavnamPage />}
                 />
                 <Route
-                  path="/academics/engineering/cse-aiml/faculty/dr-hanumanth-sastry-sistla"
+                  path="/academics/engineering/artificial-intelligence/faculty/dr-hanumanth-sastry-sistla"
                   element={<HanumannthSastryPage />}
                 />
                 <Route
-                  path="/academics/engineering/cse-aiml/faculty/dr-bahubali-shiragapur"
+                  path="/academics/engineering/artificial-intelligence/faculty/dr-bahubali-shiragapur"
                   element={<BahubalSiragapurPage />}
                 />
                 <Route
-                  path="/academics/engineering/cse-aiml/faculty/dr-joshuva-arockia-dhanraj"
+                  path="/academics/engineering/artificial-intelligence/faculty/dr-joshuva-arockia-dhanraj"
                   element={<JoshuvaArockiaPage />}
                 />
                 <Route
-                  path="/academics/engineering/cse-aiml/faculty/prof-suresh-kandasamy"
+                  path="/academics/engineering/artificial-intelligence/faculty/prof-suresh-kandasamy"
                   element={<SureshKandasamyPage />}
                 />
                 <Route
-                  path="/academics/engineering/cse-aiml/faculty/dr-vegi-fernando-a"
+                  path="/academics/engineering/artificial-intelligence/faculty/dr-vegi-fernando-a"
                   element={<VegiFernandoPage />}
                 />
                 <Route
-                  path="/academics/engineering/cse-aiml/faculty/dr-vinutha-n"
+                  path="/academics/engineering/artificial-intelligence/faculty/dr-vinutha-n"
                   element={<VinuthaAIMLPage />}
                 />
                 <Route
-                  path="/academics/engineering/cse-aiml/faculty/dr-abdul-haq-nalband"
+                  path="/academics/engineering/artificial-intelligence/faculty/dr-abdul-haq-nalband"
                   element={<AbdulHaqPage />}
                 />
                 <Route
-                  path="/academics/engineering/cse-aiml/faculty/dr-prateek-verma"
+                  path="/academics/engineering/artificial-intelligence/faculty/dr-prateek-verma"
                   element={<PrateekVermaPage />}
                 />
                 <Route
-                  path="/academics/engineering/cse-aiml/faculty/dr-jitendra-jaiswal"
+                  path="/academics/engineering/artificial-intelligence/faculty/dr-jitendra-jaiswal"
                   element={<JitendraJaiswalPage />}
                 />
                 <Route
-                  path="/academics/engineering/cse-aiml/faculty/dr-mude-nagarjuna-naik"
+                  path="/academics/engineering/artificial-intelligence/faculty/dr-mude-nagarjuna-naik"
                   element={<NagarjunaNaikPage />}
                 />
                 <Route
-                  path="/academics/engineering/cse-aiml/faculty/dr-princy-randhawa"
+                  path="/academics/engineering/artificial-intelligence/faculty/dr-princy-randhawa"
                   element={<PrincyRandhawPage />}
                 />
                 <Route
-                  path="/academics/engineering/cse-aiml/faculty/dr-sumant-kumar-mohapatra"
+                  path="/academics/engineering/artificial-intelligence/faculty/dr-sumant-kumar-mohapatra"
                   element={<SumantMohaptraPage />}
                 />
                 <Route
-                  path="/academics/engineering/cse-aiml/faculty/dr-animesh-srivastava"
+                  path="/academics/engineering/artificial-intelligence/faculty/dr-animesh-srivastava"
                   element={<AnimeshSrivastavPage />}
                 />
                 <Route
-                  path="/academics/engineering/cse-aiml/faculty/dr-sumit-kumar-yadav"
+                  path="/academics/engineering/artificial-intelligence/faculty/dr-sumit-kumar-yadav"
                   element={<SumitYadavPage />}
                 />
                 <Route
-                  path="/academics/engineering/cse-aiml/faculty/mr-subhash-mondal"
+                  path="/academics/engineering/artificial-intelligence/faculty/mr-subhash-mondal"
                   element={<SubhashMondalPage />}
                 />
                 <Route
-                  path="/academics/engineering/cse-aiml/faculty/mr-pradeep-kumar-k"
+                  path="/academics/engineering/artificial-intelligence/faculty/mr-pradeep-kumar-k"
                   element={<PradeepKumarAIMLPage />}
                 />
                 <Route
-                  path="/academics/engineering/cse-aiml/faculty/mr-r-sriramkumar"
+                  path="/academics/engineering/artificial-intelligence/faculty/mr-r-sriramkumar"
                   element={<SriramkumarAIMLPage />}
                 />
                 <Route
-                  path="/academics/engineering/cse-aiml/faculty/mrs-mitha-guru"
+                  path="/academics/engineering/artificial-intelligence/faculty/mrs-mitha-guru"
                   element={<MithaGuruPage />}
                 />
                 <Route
-                  path="/academics/engineering/cse-aiml/faculty/rakshita-r"
+                  path="/academics/engineering/artificial-intelligence/faculty/rakshita-r"
                   element={<RakshitaAIMLPage />}
                 />
                 <Route
-                  path="/academics/engineering/cse-aiml/faculty/dr-m-lakshmanan"
+                  path="/academics/engineering/artificial-intelligence/faculty/dr-m-lakshmanan"
                   element={<LakshmananPage />}
                 />
                 <Route
-                  path="/academics/engineering/cse-aiml/faculty/dr-svkr-rajeswari"
+                  path="/academics/engineering/artificial-intelligence/faculty/dr-svkr-rajeswari"
                   element={<RajeswariPage />}
                 />
                 <Route
-                  path="/academics/engineering/cse-aiml/faculty/mr-sahil-pocker"
+                  path="/academics/engineering/artificial-intelligence/faculty/mr-sahil-pocker"
                   element={<SahilPockerPage />}
                 />
                 <Route
-                  path="/academics/engineering/cse-aiml/faculty/ms-bhuvana-mohini-t-n"
+                  path="/academics/engineering/artificial-intelligence/faculty/ms-bhuvana-mohini-t-n"
                   element={<BhuvanaMohiniPage />}
                 />
                 <Route
-                  path="/academics/engineering/cse-aiml/faculty/ms-nivetha-r"
+                  path="/academics/engineering/artificial-intelligence/faculty/ms-nivetha-r"
                   element={<NiveithaAIMLPage />}
                 />
                 <Route
-                  path="/academics/engineering/cse-aiml/faculty/prof-ankita-thakkar"
+                  path="/academics/engineering/artificial-intelligence/faculty/prof-ankita-thakkar"
                   element={<AnkitaThakkarPage />}
                 />
                 <Route
-                  path="/academics/engineering/cse-aiml/faculty/dr-sugandha-saxena"
+                  path="/academics/engineering/artificial-intelligence/faculty/dr-sugandha-saxena"
                   element={<SughandhaSaxenaPage />}
                 />
                 <Route
-                  path="/academics/engineering/cse-aiml/faculty/prof-trupthi-rao"
+                  path="/academics/engineering/artificial-intelligence/faculty/prof-trupthi-rao"
                   element={<TrupthiRaoPage />}
                 />
                 <Route
-                  path="/academics/engineering/cse-aiml/faculty/mr-govind-kumar-pandey"
+                  path="/academics/engineering/artificial-intelligence/faculty/mr-govind-kumar-pandey"
                   element={<GovindPandeyPage />}
                 />
                 <Route
-                  path="/academics/engineering/cse-aiml/faculty/ms-pragnya-pragatika-mishra"
+                  path="/academics/engineering/artificial-intelligence/faculty/ms-pragnya-pragatika-mishra"
                   element={<PragnyaMishaPage />}
                 />
                 <Route
-                  path="/academics/engineering/cse-aiml/faculty/mr-verriboina-antony"
+                  path="/academics/engineering/artificial-intelligence/faculty/mr-verriboina-antony"
                   element={<VerriboinaAntonyPage />}
                 />
                 <Route
-                  path="/academics/engineering/cse-aiml/faculty/ms-soheli-chakraborty"
+                  path="/academics/engineering/artificial-intelligence/faculty/ms-soheli-chakraborty"
                   element={<SoheliChakrabortyPage />}
                 />
                 <Route
-                  path="/academics/engineering/cse-aiml/faculty/mr-anubrata-singharoy"
+                  path="/academics/engineering/artificial-intelligence/faculty/mr-anubrata-singharoy"
                   element={<AnubrataSingharyPage />}
                 />
                 <Route
-                  path="/academics/engineering/cse-aiml/faculty/ms-tejal-khade"
+                  path="/academics/engineering/artificial-intelligence/faculty/ms-tejal-khade"
                   element={<TejalKhadePage />}
                 />
                 <Route
-                  path="/academics/engineering/cse-aiml/faculty/mr-shivnandan-rai"
+                  path="/academics/engineering/artificial-intelligence/faculty/mr-shivnandan-rai"
                   element={<ShivnandanRaiPage />}
                 />
                 <Route
-                  path="/academics/engineering/cse-aiml/faculty/mr-partha-protim-sen"
+                  path="/academics/engineering/artificial-intelligence/faculty/mr-partha-protim-sen"
                   element={<ParthaSenPage />}
                 />
                 <Route
-                  path="/academics/engineering/cse-aiml/faculty/mr-arpit-kumar"
+                  path="/academics/engineering/artificial-intelligence/faculty/mr-arpit-kumar"
                   element={<ArpitKumarPage />}
                 />
                 <Route
-                  path="/academics/engineering/cse-aiml/faculty/mr-souvik-ghosh"
+                  path="/academics/engineering/artificial-intelligence/faculty/mr-souvik-ghosh"
                   element={<SouvikGhoshPage />}
                 />
                 <Route
-                  path="/academics/engineering/cse-aiml/faculty/ms-amrita-kundu"
+                  path="/academics/engineering/artificial-intelligence/faculty/ms-amrita-kundu"
                   element={<AmritaKunduPage />}
                 />
                 <Route
-                  path="/academics/engineering/cse-aiml/faculty/ms-upasana-shil"
+                  path="/academics/engineering/artificial-intelligence/faculty/ms-upasana-shil"
                   element={<UpasanaShilPage />}
                 />
                 <Route
-                  path="/academics/engineering/cse-aiml/faculty/ms-hairunesa-beevi"
+                  path="/academics/engineering/artificial-intelligence/faculty/ms-hairunesa-beevi"
                   element={<HairunesaBeeviPage />}
                 />
                 <Route
-                  path="/academics/engineering/cse-aiml/faculty/prof-kuna-srinidhi"
+                  path="/academics/engineering/artificial-intelligence/faculty/prof-kuna-srinidhi"
                   element={<SrinidhiAIMLPage />}
                 />
                 <Route
