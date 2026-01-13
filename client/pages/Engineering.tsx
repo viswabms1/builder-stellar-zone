@@ -1312,11 +1312,11 @@ function EngineeringProgramFinder() {
   return (
     <section className="px-3 py-8">
       <div className="mx-auto max-w-7xl space-y-8">
-        <Card className="border-2 border-green-500/30 bg-gradient-to-r from-green-500/10 to-emerald-500/10 backdrop-blur-sm">
+        <Card className="border-2 border-border/30 bg-card/60 backdrop-blur-sm">
           <CardHeader>
             <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-green-500/15">
-                <Filter className="h-6 w-6 text-green-600" />
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-border/20">
+                <Filter className="h-6 w-6 text-foreground/60" />
               </div>
               <div>
                 <CardTitle className="text-2xl">Find Engineering Program Details</CardTitle>
@@ -1396,10 +1396,10 @@ function EngineeringProgramFinder() {
 
         {selectedProgram && (
           <div className="space-y-6">
-            <Card className="border-2 border-green-500/30 bg-gradient-to-r from-green-500/10 to-emerald-500/10">
+            <Card className="border-2 border-border/20 bg-card/50">
               <CardHeader>
                 <div className="flex items-center gap-3">
-                  <GraduationCap className="h-8 w-8 text-green-600" />
+                  <GraduationCap className="h-8 w-8 text-foreground/70" />
                   <div>
                     <CardTitle className="text-2xl">
                       {selectedProgram.name}
@@ -1413,10 +1413,10 @@ function EngineeringProgramFinder() {
               </CardHeader>
             </Card>
 
-            <Card className="border-2 border-green-500/20">
+            <Card className="border-2 border-border/20">
               <CardHeader>
                 <div className="flex items-center gap-3">
-                  <CheckCircle2 className="h-6 w-6 text-green-600" />
+                  <CheckCircle2 className="h-6 w-6 text-foreground/70" />
                   <CardTitle className="text-xl">
                     Eligibility Criteria
                   </CardTitle>
@@ -1433,7 +1433,7 @@ function EngineeringProgramFinder() {
                         {selectedProgram.eligibilityPoints.map(
                           (point, idx) => (
                             <li key={idx} className="flex items-start gap-2">
-                              <CheckCircle2 className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
+                              <CheckCircle2 className="h-5 w-5 text-foreground/60 mt-0.5 flex-shrink-0" />
                               <span className="text-foreground">{point}</span>
                             </li>
                           ),
@@ -1464,10 +1464,10 @@ function EngineeringProgramFinder() {
               </CardContent>
             </Card>
 
-            <Card className="border-2 border-green-500/20">
+            <Card className="border-2 border-border/20">
               <CardHeader>
                 <div className="flex items-center gap-3">
-                  <IndianRupee className="h-6 w-6 text-green-600" />
+                  <IndianRupee className="h-6 w-6 text-foreground/70" />
                   <CardTitle className="text-xl">
                     Fee Structure (2026-27)
                   </CardTitle>
@@ -1478,12 +1478,12 @@ function EngineeringProgramFinder() {
                   {selectedProgram.fees.map((fee, idx) => (
                     <div
                       key={idx}
-                      className="flex justify-between items-center p-4 rounded-lg bg-green-500/5 border border-green-500/20"
+                      className="flex justify-between items-center p-4 rounded-lg bg-border/10 border border-border/20"
                     >
                       <span className="font-semibold text-foreground">
                         {fee.label}
                       </span>
-                      <span className="text-lg font-bold text-green-600">
+                      <span className="text-lg font-bold text-foreground">
                         {fee.amount}
                       </span>
                     </div>
@@ -1518,12 +1518,12 @@ function EngineeringProgramFinder() {
               <Button
                 onClick={() => setSelectedProgram(null)}
                 variant="outline"
-                className="flex-1 rounded-lg border-green-500/30 text-green-600 hover:bg-green-500/10"
+                className="flex-1 rounded-lg"
               >
                 ← Back to Search
               </Button>
               <Button
-                className="flex-1 rounded-lg bg-green-600 text-white hover:bg-green-700"
+                className="flex-1 rounded-lg bg-brand-magenta text-white hover:bg-brand-magenta/90"
                 asChild
               >
                 <a
