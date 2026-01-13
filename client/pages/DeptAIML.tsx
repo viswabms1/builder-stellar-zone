@@ -1292,6 +1292,38 @@ function CurriculumLibrary() {
         },
       ],
     },
+    {
+      id: "mtech",
+      label: "M.Tech Artificial Intelligence",
+      description: "2-year postgraduate specialization in AI research and development",
+      image: "https://images.unsplash.com/photo-1535994636912-b5b474f267ea?q=80&w=1600&auto=format&fit=crop",
+      batches: [
+        {
+          year: "2025-26",
+          summary: "Foundations in deep learning, neural networks, and responsible AI systems design",
+          documentUrl:
+            "https://www.dsu.edu.in/images/Engineering/AIML-dept/curriculum/MTech-AI-Curriculum-2025-26.pdf",
+        },
+        {
+          year: "2026-27",
+          summary: "Generative AI, large language models, reinforcement learning, and research projects",
+          documentUrl:
+            "https://www.dsu.edu.in/images/Engineering/AIML-dept/curriculum/MTech-AI-Curriculum-2026-27.pdf",
+        },
+        {
+          year: "2027-28",
+          summary: "Advanced AI research, autonomous systems, and thesis supervision",
+          documentUrl:
+            "https://www.dsu.edu.in/images/Engineering/AIML-dept/curriculum/MTech-AI-Curriculum-2027-28.pdf",
+        },
+        {
+          year: "2028-29",
+          summary: "AI innovation labs, industry collaborations, and research publications",
+          documentUrl:
+            "https://www.dsu.edu.in/images/Engineering/AIML-dept/curriculum/MTech-AI-Curriculum-2028-29.pdf",
+        },
+      ],
+    },
   ];
 
   return (
