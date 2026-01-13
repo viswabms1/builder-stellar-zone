@@ -650,7 +650,7 @@ function EligibilityAndFees() {
         <div className="mb-12">
           <h2 className="headline-2 font-display mb-3">Eligibility & Fees</h2>
           <p className="text-foreground/80 font-body max-w-3xl">
-            AI & ML programs at School of Engineering, DSU offer both undergraduate and postgraduate pathways. B.Tech follows merit-based admission through entrance exams (CET, JEE Mains, Comed-K). M.Tech Artificial Intelligence requires a valid GATE score or entrance exam and is merit-based.
+            AI & ML programs at School of Engineering, DSU offer both undergraduate and postgraduate pathways. B.Tech follows merit-based admission through entrance exams (CET, JEE Mains, Comed-K). Explore eligibility requirements for each program below.
           </p>
         </div>
 
