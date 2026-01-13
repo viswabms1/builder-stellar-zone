@@ -426,6 +426,8 @@ export default function DeptCSE() {
 
       <LabsFacilitiesCarousel />
 
+      <EligibilityAndFees />
+
       {/* Leadership Section */}
       <section className="px-3 py-8">
         <div className="max-w-7xl mx-auto">
