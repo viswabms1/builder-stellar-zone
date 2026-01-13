@@ -685,6 +685,152 @@ export default function DeptCSE() {
   );
 }
 
+function EligibilityAndFees() {
+  const engineeringSchool = schools.find(s => s.name === "School of Engineering");
+  const csePrograms = engineeringSchool?.categories
+    .flatMap(cat => cat.programs)
+    .filter(p => p.name.includes("Computer Science")) || [];
+
+  const [expandedProgram, setExpandedProgram] = useState<string | null>(null);
+
+  return (
+    <section className="px-3 py-8 bg-gradient-to-r from-brand-magenta/5 via-brand-blue/5 to-brand-orange/5">
+      <div className="max-w-6xl mx-auto">
+        <div className="mb-12">
+          <h2 className="headline-2 font-display mb-3">Eligibility & Fees</h2>
+          <p className="text-foreground/80 font-body max-w-3xl">
+            B.Tech Computer Science & Engineering at DSU, School of Engineering follows admission pathways based on entrance exams (CET, JEE Mains, Uniguage, Comed-K) and merit-based direct admission.
+          </p>
+        </div>
+
+        <div className="space-y-4">
+          {csePrograms.map((program, idx) => (
+            <Card
+              key={idx}
+              className="border border-border/50 bg-card/50 backdrop-blur-sm cursor-pointer hover:shadow-lg transition-all"
+              onClick={() => setExpandedProgram(expandedProgram === program.name ? null : program.name)}
+            >
+              <CardHeader className="pb-3">
+                <div className="flex items-start justify-between">
+                  <div className="flex-1">
+                    <CardTitle className="text-lg font-display">{program.name}</CardTitle>
+                    <CardDescription className="font-body mt-1">
+                      {program.duration && <span>{program.duration} • </span>}
+                      {program.eligibility.substring(0, 100)}...
+                    </CardDescription>
+                  </div>
+                  <ChevronDown
+                    className={`w-5 h-5 text-brand-magenta transition-transform ${
+                      expandedProgram === program.name ? "rotate-180" : ""
+                    }`}
+                  />
+                </div>
+              </CardHeader>
+
+              {expandedProgram === program.name && (
+                <CardContent className="space-y-4 border-t border-border/20 pt-4">
+                  {/* Eligibility */}
+                  <div>
+                    <h4 className="font-semibold text-foreground mb-2 flex items-center gap-2">
+                      <CheckCircle2 className="w-5 h-5 text-brand-magenta" />
+                      Eligibility Criteria
+                    </h4>
+                    <p className="text-sm text-foreground/80 font-body leading-relaxed">
+                      {program.eligibility}
+                    </p>
+                    {program.eligibilityPoints && program.eligibilityPoints.length > 0 && (
+                      <ul className="mt-2 space-y-1">
+                        {program.eligibilityPoints.map((point, pidx) => (
+                          <li key={pidx} className="text-sm text-foreground/80 flex items-start gap-2">
+                            <span className="text-brand-magenta">•</span>
+                            {point}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+
+                  {/* Fee Structure */}
+                  <div>
+                    <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
+                      <IndianRupee className="w-5 h-5 text-brand-magenta" />
+                      Fee Structure (2026-27)
+                    </h4>
+                    <div className="grid gap-2">
+                      {program.fees.map((fee, fidx) => (
+                        <div
+                          key={fidx}
+                          className="flex justify-between items-center p-3 rounded-lg bg-green-500/10 border border-green-500/20"
+                        >
+                          <span className="text-sm font-medium text-foreground">{fee.label}</span>
+                          <span className="text-base font-semibold text-green-600">{fee.amount}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Specializations */}
+                  {program.specializations && program.specializations.length > 0 && (
+                    <div>
+                      <h4 className="font-semibold text-foreground mb-2">Specializations Available</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {program.specializations.map((spec, sidx) => (
+                          <Badge key={sidx} variant="secondary" className="text-xs">
+                            {spec}
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Scholarships */}
+                  {program.scholarships && (
+                    <div className="p-3 bg-blue-500/10 border border-blue-500/20 rounded-lg">
+                      <p className="text-sm text-foreground/80 font-body">
+                        <span className="font-semibold text-blue-600">Scholarships:</span> {program.scholarships}
+                      </p>
+                    </div>
+                  )}
+
+                  {/* Notes */}
+                  {program.notes && program.notes.length > 0 && (
+                    <div className="space-y-1">
+                      {program.notes.map((note, nidx) => (
+                        <p key={nidx} className="text-xs text-foreground/60 font-body">
+                          ℹ️ {note}
+                        </p>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* CTA */}
+                  <div className="pt-4 border-t border-border/20">
+                    <a href="https://admissions.dsu.edu.in/" target="_blank" rel="noreferrer">
+                      <Button className="w-full bg-brand-gradient text-foreground">
+                        Apply Now <ArrowRight className="w-4 h-4 ml-2" />
+                      </Button>
+                    </a>
+                  </div>
+                </CardContent>
+              )}
+            </Card>
+          ))}
+        </div>
+
+        <div className="mt-8 p-4 bg-orange-500/10 border border-orange-500/20 rounded-lg">
+          <p className="text-sm text-foreground/80 font-body">
+            <span className="font-semibold text-orange-600">Note:</span> Fee structure and eligibility criteria are subject to change. Please visit the{" "}
+            <Link to="/admissions" className="text-brand-magenta font-semibold hover:underline">
+              Admissions
+            </Link>
+            {" "}page for detailed information and updates.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 interface CurriculumProgram {
   id: string;
   label: string;
