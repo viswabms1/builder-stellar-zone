@@ -703,7 +703,7 @@ function CurriculumLibrary() {
                   </div>
                   <Button
                     variant="outline"
-                    className="w-full border-brand-magenta/30 hover:bg-brand-magenta/10 text-brand-magenta hover:text-brand-magenta"
+                    className={`w-full ${isBTech ? "border-brand-magenta/30 hover:bg-brand-magenta/10 text-brand-magenta hover:text-brand-magenta" : "border-brand-magenta/30 hover:bg-brand-magenta/10 text-brand-magenta hover:text-brand-magenta"}`}
                     onClick={() => setOpenProgram(isOpen ? null : program.id)}
                   >
                     <span className="flex items-center justify-center gap-2">
