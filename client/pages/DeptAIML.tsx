@@ -633,12 +633,13 @@ export default function DeptAIML() {
 
 function EligibilityAndFees() {
   const engineeringSchool = schools.find(s => s.name === "School of Engineering");
-  const atmlPrograms = engineeringSchool?.categories
+  const aimlPrograms = engineeringSchool?.categories
     .flatMap(cat => cat.programs)
     .filter(p => {
       const name = p.name.toLowerCase();
+      const isBTechAIML = name === "b.tech computer science & engineering (ai & ml)" || name === "b.tech cse (ai & ml)";
       const isMTechAI = name === "m.tech - artificial intelligence" || name === "m.tech artificial intelligence";
-      return isMTechAI;
+      return isBTechAIML || isMTechAI;
     }) || [];
 
   const [expandedProgram, setExpandedProgram] = useState<string | null>(null);
@@ -649,7 +650,7 @@ function EligibilityAndFees() {
         <div className="mb-12">
           <h2 className="headline-2 font-display mb-3">Eligibility & Fees</h2>
           <p className="text-foreground/80 font-body max-w-3xl">
-            M.Tech Artificial Intelligence at School of Engineering, DSU is a 2-year postgraduate program requiring a valid GATE score or entrance exam and is merit-based. Admission follows DSU's postgraduate admission procedures.
+            AI & ML programs at School of Engineering, DSU offer both undergraduate and postgraduate pathways. B.Tech follows merit-based admission through entrance exams (CET, JEE Mains, Comed-K). M.Tech Artificial Intelligence requires a valid GATE score or entrance exam and is merit-based.
           </p>
         </div>
 
