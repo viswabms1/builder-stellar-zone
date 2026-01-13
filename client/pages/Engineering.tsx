@@ -104,9 +104,13 @@ const UG_PROGRAM_LINKS: Record<string, string> = {
 };
 
 const PG_PROGRAMS = [
-  "Computer Science & Engineering",
-  "Embedded Systems",
-  "Design Engineering",
+  "M.Tech - Computer Science & Engineering",
+  "M.Tech - Computer Science and Engineering (Artificial Intelligence and Machine Learning)",
+  "M.Tech - Artificial Intelligence and Data Science",
+  "M.Tech - Artificial Intelligence",
+  "M.Tech - Artificial Intelligence and Robotics",
+  "M.Tech - Embedded Systems",
+  "M.Tech - Design Engineering",
 ];
 
 const ENGINEERING_DEPARTMENTS: EngineeringDepartment[] = [
@@ -402,6 +406,67 @@ const PG_PROGRAM_CARDS: ProgramCard[] = [
       "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1600&auto=format&fit=crop",
     link: "/academics/engineering/computer-science",
     highlights: ["AI Systems", "Research Thesis", "Industry Mentorship"],
+    overlay:
+      "bg-gradient-to-br from-brand-magenta/70 via-black/70 to-black/55 mix-blend-multiply",
+    badgeClass:
+      "bg-brand-magenta/30 text-foreground/90 border border-white/25 backdrop-blur",
+    panelClass: "bg-black/55 backdrop-blur-xl",
+    featured: true,
+  },
+  {
+    name: "M.Tech - Computer Science and Engineering (Artificial Intelligence and Machine Learning)",
+    area: "AI & ML Specialization",
+    description:
+      "Deep-dive into responsible AI, machine learning pipelines, NLP and computer vision with GPU-accelerated research on NVIDIA DGX B200.",
+    image:
+      "https://images.unsplash.com/photo-1534759846116-5799c33ce22a?q=80&w=1600&auto=format&fit=crop",
+    link: "/academics/engineering/cse-aiml",
+    highlights: ["ML Pipelines", "NLP & Vision", "Research Thesis"],
+    overlay:
+      "bg-gradient-to-br from-brand-magenta/65 via-brand-blue/55 to-black/55 mix-blend-multiply",
+    badgeClass:
+      "bg-brand-magenta/30 text-foreground/90 border border-white/25 backdrop-blur",
+    panelClass: "bg-black/55 backdrop-blur-xl",
+  },
+  {
+    name: "M.Tech - Artificial Intelligence and Data Science",
+    area: "Data Engineering",
+    description:
+      "Engineer data products with applied analytics, data governance, cloud-native pipelines and real-time dashboards powered by GPU computing.",
+    image:
+      "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?q=80&w=1600&auto=format&fit=crop",
+    link: "/academics/engineering/ai-data-science",
+    highlights: ["Data Engineering", "Analytics", "Cloud Pipelines"],
+    overlay:
+      "bg-gradient-to-br from-brand-blue/70 via-black/70 to-black/55 mix-blend-multiply",
+    badgeClass:
+      "bg-brand-blue/30 text-foreground/90 border border-white/25 backdrop-blur",
+    panelClass: "bg-black/55 backdrop-blur-xl",
+  },
+  {
+    name: "M.Tech - Artificial Intelligence",
+    area: "AI Research",
+    description:
+      "Explore cutting-edge artificial intelligence, generative models, reinforcement learning and responsible AI principles with industry partnerships.",
+    image:
+      "https://images.unsplash.com/photo-1535994636912-b5b474f267ea?q=80&w=1600&auto=format&fit=crop",
+    link: "/academics/engineering/artificial-intelligence",
+    highlights: ["Generative Models", "Reinforcement Learning", "Research"],
+    overlay:
+      "bg-gradient-to-br from-brand-purple/70 via-black/70 to-black/55 mix-blend-multiply",
+    badgeClass:
+      "bg-brand-purple/30 text-foreground/90 border border-white/25 backdrop-blur",
+    panelClass: "bg-black/55 backdrop-blur-xl",
+  },
+  {
+    name: "M.Tech - Artificial Intelligence and Robotics",
+    area: "Robotics & Automation",
+    description:
+      "Build intelligent robotic systems combining machine learning, computer vision, control systems and autonomous navigation.",
+    image:
+      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1600&auto=format&fit=crop",
+    link: "/academics/engineering/ai-robotics",
+    highlights: ["Robotics", "Machine Vision", "Autonomous Systems"],
     overlay:
       "bg-gradient-to-br from-brand-magenta/70 via-black/70 to-black/55 mix-blend-multiply",
     badgeClass:
