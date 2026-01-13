@@ -1115,7 +1115,7 @@ function CurriculumLibrary() {
               </span>
             </h2>
             <p className="max-w-2xl text-sm text-foreground sm:text-base font-body">
-              Explore comprehensive curriculum for the B.Tech AI & Data Science program. Access detailed course structures, learning outcomes, and downloadable syllabi.
+              Explore comprehensive curriculum for B.Tech and M.Tech AI & Data Science programs. Access detailed course structures, learning outcomes, and downloadable syllabi.
             </p>
           </div>
           <Badge className="w-fit rounded-full bg-brand-blue/15 px-4 py-2 text-xs font-semibold text-brand-blue border border-brand-blue/20">
