@@ -18,8 +18,10 @@ import {
   Cpu,
   Download,
   FileText,
+  Filter,
   FlaskConical,
   GraduationCap,
+  IndianRupee,
   Microscope,
   Network,
   Volume2,
@@ -36,12 +38,20 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import {
   getDepartmentEvents,
   getSchoolNews,
   getSchoolAnnouncements,
   type NoticeItem as ImportedNoticeItem,
 } from "@/data/engineering-events";
 import { useAutoMuteOnScroll } from "@/hooks/useAutoMuteOnScroll";
+import { schools } from "@/pages/Eligibility";
 
 const HERO_IMAGE = "https://www.dsu.edu.in/images/Engineering/engg-landing.jpg";
 
