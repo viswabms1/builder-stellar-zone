@@ -1802,7 +1802,7 @@ export default function Engineering() {
               <h2 className="headline-2 mb-3 font-display">
                 <span className="text-foreground">What's Happening at </span>
                 <span className="bg-brand-gradient bg-clip-text text-transparent">
-                  DSU, School of Engineering
+                  School of Engineering, DSU
                 </span>
               </h2>
               <p className="max-w-2xl text-sm text-foreground sm:text-base font-body">
@@ -1822,7 +1822,7 @@ export default function Engineering() {
         <div className="mx-auto max-w-7xl">
           <div className="mb-12 text-center">
             <h2 className="font-display text-3xl md:text-4xl">
-              Explore More at DSU, School of Engineering
+              Explore More at School of Engineering, DSU
             </h2>
             <p className="mt-3 text-sm text-foreground font-body">
               Discover our research initiatives, innovation labs, placements and
@@ -1920,7 +1920,7 @@ export default function Engineering() {
                 </CardHeader>
                 <CardContent className="flex flex-col gap-3">
                   <p className="text-sm text-foreground/80 font-body">
-                    Join DSU, School of Engineering and shape your future
+                    Join School of Engineering, DSU and shape your future
                   </p>
                   <span className="inline-flex items-center gap-2 text-xs font-medium text-brand-magenta group-hover:text-brand-magenta/80 transition-colors">
                     Apply Now
@@ -2056,7 +2056,7 @@ export default function Engineering() {
             </h3>
             <p className="mb-6 text-foreground font-body">
               Explore programmes, take a virtual tour and begin your journey at
-              the DSU School of Engineering.
+              the School of Engineering, DSU.
             </p>
             <p className="mb-4 text-xs text-foreground/70 font-body">
               Admissions support available across CET, Direct & International
@@ -2107,10 +2107,10 @@ export default function Engineering() {
         <div className="mx-auto max-w-7xl">
           <div className="mb-12">
             <h2 className="font-display text-3xl md:text-4xl">
-              Why Choose DSU, School of Engineering?
+              Why Choose School of Engineering, DSU?
             </h2>
             <p className="mt-4 text-sm text-foreground/70 font-body max-w-3xl">
-              DSU, School of Engineering operates a centralized AI compute
+              School of Engineering, DSU operates a centralized AI compute
               backbone built on NVIDIA DGX B200, enabling large-scale AI,
               simulation, and data-intensive workloads across multiple
               engineering labs.
