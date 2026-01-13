@@ -1267,6 +1267,281 @@ function CalendarResourceCard({ entry }: { entry: CalendarEntry }) {
   );
 }
 
+type Program = {
+  name: string;
+  level: "UG" | "PG" | "Professional";
+  duration?: string;
+  eligibility: string;
+  eligibilityPoints?: string[];
+  fees: { label: string; amount: string }[];
+  specializations?: string[];
+  notes?: string[];
+  scholarships?: string;
+  school: string;
+};
+
+function EngineeringProgramFinder() {
+  const [selectedProgram, setSelectedProgram] = useState<Program | null>(null);
+  const [engineeringPrograms, setEngineeringPrograms] = useState<Program[]>([]);
+  const [selectedLevel, setSelectedLevel] = useState<string>("All");
+
+  useEffect(() => {
+    const engineeringSchool = schools.find((s) => s.name === "School of Engineering");
+    if (engineeringSchool) {
+      const programs: Program[] = [];
+      engineeringSchool.categories.forEach((category) => {
+        category.programs.forEach((program) => {
+          programs.push({ ...program, school: engineeringSchool.name });
+        });
+      });
+      setEngineeringPrograms(programs);
+    }
+  }, []);
+
+  const filteredPrograms = engineeringPrograms.filter((program) => {
+    const matchesLevel =
+      selectedLevel === "All" || program.level === selectedLevel;
+    return matchesLevel;
+  });
+
+  const handleProgramSelect = (programName: string) => {
+    const program = engineeringPrograms.find((p) => p.name === programName);
+    setSelectedProgram(program || null);
+  };
+
+  return (
+    <section className="px-3 py-8">
+      <div className="mx-auto max-w-7xl space-y-8">
+        <Card className="border-2 border-brand-magenta/30 bg-card/80 backdrop-blur-sm">
+          <CardHeader>
+            <div className="flex items-center gap-3">
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-magenta/15">
+                <Filter className="h-6 w-6 text-brand-magenta" />
+              </div>
+              <div>
+                <CardTitle className="text-2xl">Find Engineering Program Details</CardTitle>
+                <CardDescription>
+                  Filter by level and explore program details, eligibility, and fee structure
+                </CardDescription>
+              </div>
+            </div>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div>
+              <label className="text-sm font-semibold text-foreground mb-2 block">
+                Program Level
+              </label>
+              <Select
+                value={selectedLevel}
+                onValueChange={setSelectedLevel}
+              >
+                <SelectTrigger className="h-11">
+                  <SelectValue placeholder="Select level..." />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="All">All Levels</SelectItem>
+                  <SelectItem value="UG">Undergraduate (UG)</SelectItem>
+                  <SelectItem value="PG">Postgraduate (PG)</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+
+            <div className="flex items-center justify-between pt-2">
+              <p className="text-sm text-foreground/60">
+                {filteredPrograms.length} program
+                {filteredPrograms.length !== 1 ? "s" : ""} found
+              </p>
+            </div>
+
+            <div className="border-t border-border/40 pt-4">
+              <label className="text-sm font-semibold text-foreground mb-2 block">
+                Select Program
+              </label>
+              <Select
+                onValueChange={handleProgramSelect}
+                value={selectedProgram?.name || ""}
+              >
+                <SelectTrigger className="h-12 text-base">
+                  <SelectValue placeholder="Choose a program from the filtered results..." />
+                </SelectTrigger>
+                <SelectContent className="max-h-[400px]">
+                  {filteredPrograms.length === 0 ? (
+                    <div className="p-4 text-center text-sm text-foreground/60">
+                      No programs match your filters
+                    </div>
+                  ) : (
+                    filteredPrograms.map((program) => (
+                      <SelectItem
+                        key={program.name}
+                        value={program.name}
+                        className="py-3"
+                      >
+                        <div className="flex flex-col">
+                          <span className="font-semibold">
+                            {program.name}
+                          </span>
+                          <span className="text-xs text-foreground/60">
+                            {program.level}
+                            {program.duration && ` • ${program.duration}`}
+                          </span>
+                        </div>
+                      </SelectItem>
+                    ))
+                  )}
+                </SelectContent>
+              </Select>
+            </div>
+          </CardContent>
+        </Card>
+
+        {selectedProgram && (
+          <div className="space-y-6">
+            <Card className="border-2 border-brand-magenta/30 bg-gradient-to-r from-brand-magenta/10 to-brand-orange/10">
+              <CardHeader>
+                <div className="flex items-center gap-3">
+                  <GraduationCap className="h-8 w-8 text-brand-magenta" />
+                  <div>
+                    <CardTitle className="text-2xl">
+                      {selectedProgram.name}
+                    </CardTitle>
+                    <CardDescription className="text-base">
+                      {selectedProgram.level}
+                      {selectedProgram.duration && ` • ${selectedProgram.duration}`}
+                    </CardDescription>
+                  </div>
+                </div>
+              </CardHeader>
+            </Card>
+
+            <Card className="border-2 border-brand-magenta/20">
+              <CardHeader>
+                <div className="flex items-center gap-3">
+                  <CheckCircle2 className="h-6 w-6 text-brand-magenta" />
+                  <CardTitle className="text-xl">
+                    Eligibility Criteria
+                  </CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  <p className="text-foreground leading-relaxed">
+                    {selectedProgram.eligibility}
+                  </p>
+                  {selectedProgram.eligibilityPoints &&
+                    selectedProgram.eligibilityPoints.length > 0 && (
+                      <ul className="space-y-2">
+                        {selectedProgram.eligibilityPoints.map(
+                          (point, idx) => (
+                            <li key={idx} className="flex items-start gap-2">
+                              <CheckCircle2 className="h-5 w-5 text-brand-magenta mt-0.5 flex-shrink-0" />
+                              <span className="text-foreground">{point}</span>
+                            </li>
+                          ),
+                        )}
+                      </ul>
+                    )}
+                  {selectedProgram.specializations &&
+                    selectedProgram.specializations.length > 0 && (
+                      <div className="mt-4 pt-4 border-t border-border/40">
+                        <h4 className="font-semibold text-foreground mb-2">
+                          Specializations Available:
+                        </h4>
+                        <ul className="space-y-1">
+                          {selectedProgram.specializations.map(
+                            (spec, idx) => (
+                              <li
+                                key={idx}
+                                className="text-sm text-foreground/80"
+                              >
+                                • {spec}
+                              </li>
+                            ),
+                          )}
+                        </ul>
+                      </div>
+                    )}
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="border-2 border-brand-magenta/20">
+              <CardHeader>
+                <div className="flex items-center gap-3">
+                  <IndianRupee className="h-6 w-6 text-brand-magenta" />
+                  <CardTitle className="text-xl">
+                    Fee Structure (2026-27)
+                  </CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-3">
+                  {selectedProgram.fees.map((fee, idx) => (
+                    <div
+                      key={idx}
+                      className="flex justify-between items-center p-4 rounded-lg bg-brand-magenta/5 border border-brand-magenta/20"
+                    >
+                      <span className="font-semibold text-foreground">
+                        {fee.label}
+                      </span>
+                      <span className="text-lg font-bold text-brand-magenta">
+                        {fee.amount}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+                {selectedProgram.scholarships && (
+                  <div className="mt-4 pt-4 border-t border-border/40">
+                    <p className="text-sm text-foreground/70">
+                      {selectedProgram.scholarships}
+                    </p>
+                  </div>
+                )}
+                {selectedProgram.notes &&
+                  selectedProgram.notes.length > 0 && (
+                    <div className="mt-4 pt-4 border-t border-border/40">
+                      <ul className="space-y-2">
+                        {selectedProgram.notes.map((note, idx) => (
+                          <li
+                            key={idx}
+                            className="text-sm text-foreground/70"
+                          >
+                            ℹ️ {note}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+              </CardContent>
+            </Card>
+
+            <div className="flex gap-3">
+              <Button
+                onClick={() => setSelectedProgram(null)}
+                variant="outline"
+                className="flex-1 rounded-lg border-brand-magenta/30 text-brand-magenta hover:bg-brand-magenta/10"
+              >
+                ← Back to Search
+              </Button>
+              <Button
+                className="flex-1 rounded-lg bg-brand-magenta text-white hover:bg-brand-magenta/90"
+                asChild
+              >
+                <a
+                  href="https://admissions.dsu.edu.in/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Apply Now →
+                </a>
+              </Button>
+            </div>
+          </div>
+        )}
+      </div>
+    </section>
+  );
+}
+
 export default function Engineering() {
   return (
     <div className="min-h-screen bg-background text-foreground">
