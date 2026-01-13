@@ -1123,7 +1123,7 @@ function CurriculumLibrary() {
           </Badge>
         </div>
 
-        <div className="grid gap-6">
+        <div className="grid gap-6 lg:grid-cols-2">
           {programs.map((program, programIdx) => {
             const isOpen = openProgram === program.id;
             const borderClass = "border-brand-blue/30";
