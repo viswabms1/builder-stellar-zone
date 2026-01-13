@@ -1603,6 +1603,8 @@ export default function Engineering() {
         </div>
       </section>
 
+      <EngineeringProgramFinder />
+
       <section
         id="foundational-departments"
         className="bg-gradient-to-r from-brand-blue/10 via-brand-magenta/10 to-brand-orange/10 px-3 py-8"
