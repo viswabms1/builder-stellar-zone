@@ -1195,7 +1195,7 @@ function CurriculumLibrary() {
                             <Button
                               variant="ghost"
                               size="sm"
-                              className="w-full justify-center gap-1 rounded text-xs font-semibold bg-brand-blue/10 text-brand-blue hover:bg-brand-blue/20"
+                              className={`w-full justify-center gap-1 rounded text-xs font-semibold ${isBtech ? "bg-brand-blue/10 text-brand-blue hover:bg-brand-blue/20" : "bg-brand-purple/10 text-brand-purple hover:bg-brand-purple/20"}`}
                               asChild
                             >
                               <a href={batch.documentUrl} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-1">
