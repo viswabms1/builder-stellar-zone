@@ -137,7 +137,7 @@ const ENGINEERING_DEPARTMENTS: EngineeringDepartment[] = [
       "Deep-dives into responsible AI, data engineering, ML pipelines and NLP with industry-certified projects.",
     image:
       "https://images.unsplash.com/photo-1534759846116-5799c33ce22a?q=80&w=1600&auto=format&fit=crop",
-    link: "/academics/engineering/cse-aiml",
+    link: "/academics/engineering/artificial-intelligence",
     highlights: ["Capstone Studios", "AI Research", "Dual Certifications"],
     overlay:
       "bg-gradient-to-br from-brand-magenta/70 via-brand-blue/60 to-black/60 mix-blend-multiply",
@@ -152,7 +152,7 @@ const ENGINEERING_DEPARTMENTS: EngineeringDepartment[] = [
       "Engineer data products with applied analytics, data governance, cloud-native pipelines and real-time dashboards.",
     image:
       "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?q=80&w=1600&auto=format&fit=crop",
-    link: "/academics/engineering/cse-ai-ds",
+    link: "/academics/engineering/ai-data-science",
     highlights: ["Data Engineering", "Analytics Studio", "Cloud Pipelines"],
     overlay:
       "bg-gradient-to-br from-brand-blue/75 via-black/70 to-black/55 mix-blend-multiply",
