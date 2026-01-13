@@ -1,7 +1,13 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import {
   Brain,
@@ -152,7 +158,9 @@ export default function MSCDataScience() {
             <div className="max-w-2xl">
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-brand-magenta/10 rounded-full border border-brand-magenta/20 mb-4">
                 <Sparkles className="w-4 h-4 text-brand-magenta" />
-                <span className="text-sm font-medium text-brand-magenta font-display">Master of Science in Data Science</span>
+                <span className="text-sm font-medium text-brand-magenta font-display">
+                  Master of Science in Data Science
+                </span>
               </div>
               <p className="text-lg sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-1 sm:mb-4 uppercase tracking-widest font-display">
                 Master of Science in Data Science
@@ -168,7 +176,9 @@ export default function MSCDataScience() {
           <div className="hero-title-outside max-w-2xl">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-brand-magenta/10 rounded-full border border-brand-magenta/20 mb-4">
               <Sparkles className="w-4 h-4 text-brand-magenta" />
-              <span className="text-sm font-medium text-brand-magenta font-display">Master of Science in Data Science</span>
+              <span className="text-sm font-medium text-brand-magenta font-display">
+                Master of Science in Data Science
+              </span>
             </div>
             <p className="text-lg sm:text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-1 sm:mb-4 uppercase tracking-widest font-display">
               Master of Science in Data Science
@@ -211,7 +221,9 @@ export default function MSCDataScience() {
         <div className="max-w-6xl mx-auto">
           <div className="mb-8">
             <h2 className="headline-2 font-display mb-2">Programs Offered</h2>
-            <p className="text-foreground/80 font-body">Choose your pathway to excellence</p>
+            <p className="text-foreground/80 font-body">
+              Choose your pathway to excellence
+            </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {/* M.Sc. Data Science Program */}
@@ -219,16 +231,33 @@ export default function MSCDataScience() {
               <CardHeader>
                 <div className="flex items-center gap-2 mb-2">
                   <GraduationCap className="w-5 h-5 text-brand-magenta" />
-                  <Badge className="bg-brand-magenta/20 text-brand-magenta border-brand-magenta/30">Postgraduate</Badge>
+                  <Badge className="bg-brand-magenta/20 text-brand-magenta border-brand-magenta/30">
+                    Postgraduate
+                  </Badge>
                 </div>
-                <CardTitle className="font-display">M.Sc. in Data Science</CardTitle>
-                <CardDescription className="font-body">2-Year Program</CardDescription>
+                <CardTitle className="font-display">
+                  M.Sc. in Data Science
+                </CardTitle>
+                <CardDescription className="font-body">
+                  2-Year Program
+                </CardDescription>
               </CardHeader>
               <CardContent className="space-y-3">
-                <p className="text-sm text-foreground font-body">Comprehensive curriculum covering:</p>
+                <p className="text-sm text-foreground font-body">
+                  Comprehensive curriculum covering:
+                </p>
                 <div className="flex flex-wrap gap-2">
-                  {["Machine Learning", "Data Management", "NLP", "Big Data Security", "IoT", "Bayesian Methods"].map((spec, i) => (
-                    <Badge key={i} variant="secondary" className="text-xs">{spec}</Badge>
+                  {[
+                    "Machine Learning",
+                    "Data Management",
+                    "NLP",
+                    "Big Data Security",
+                    "IoT",
+                    "Bayesian Methods",
+                  ].map((spec, i) => (
+                    <Badge key={i} variant="secondary" className="text-xs">
+                      {spec}
+                    </Badge>
                   ))}
                 </div>
               </CardContent>
@@ -239,16 +268,32 @@ export default function MSCDataScience() {
               <CardHeader>
                 <div className="flex items-center gap-2 mb-2">
                   <BookOpen className="w-5 h-5 text-brand-blue" />
-                  <Badge className="bg-brand-blue/20 text-brand-blue border-brand-blue/30">Key Features</Badge>
+                  <Badge className="bg-brand-blue/20 text-brand-blue border-brand-blue/30">
+                    Key Features
+                  </Badge>
                 </div>
-                <CardTitle className="font-display">Program Highlights</CardTitle>
-                <CardDescription className="font-body">What makes M.Sc. Data Science unique</CardDescription>
+                <CardTitle className="font-display">
+                  Program Highlights
+                </CardTitle>
+                <CardDescription className="font-body">
+                  What makes M.Sc. Data Science unique
+                </CardDescription>
               </CardHeader>
               <CardContent className="space-y-3">
-                <p className="text-sm text-foreground font-body">Advanced curriculum with:</p>
+                <p className="text-sm text-foreground font-body">
+                  Advanced curriculum with:
+                </p>
                 <div className="flex flex-wrap gap-2">
-                  {["Advanced ML", "Industry Tools", "Hands-on Projects", "Research Focus", "Analytics"].map((feat, i) => (
-                    <Badge key={i} variant="secondary" className="text-xs">{feat}</Badge>
+                  {[
+                    "Advanced ML",
+                    "Industry Tools",
+                    "Hands-on Projects",
+                    "Research Focus",
+                    "Analytics",
+                  ].map((feat, i) => (
+                    <Badge key={i} variant="secondary" className="text-xs">
+                      {feat}
+                    </Badge>
                   ))}
                 </div>
               </CardContent>
@@ -257,7 +302,9 @@ export default function MSCDataScience() {
             {/* Quick Info */}
             <Card className="border border-border/50 bg-card/50 backdrop-blur-sm">
               <CardHeader>
-                <CardTitle className="text-lg font-display">Why Choose M.Sc. Data Science?</CardTitle>
+                <CardTitle className="text-lg font-display">
+                  Why Choose M.Sc. Data Science?
+                </CardTitle>
               </CardHeader>
               <CardContent className="space-y-2 text-sm font-body">
                 <div className="flex items-center gap-2">
@@ -288,20 +335,38 @@ export default function MSCDataScience() {
             <h2 className="headline-3 font-display">Overview</h2>
             <div className="space-y-4 text-foreground leading-relaxed font-body">
               <p>
-                The M.Sc. (Data Science) program provides a robust foundation in data management, machine learning, and natural language processing. Students will gain proficiency in essential programming languages and tools such as Python, Tableau, Power BI, and SQL. The curriculum also covers advanced topics like Bayesian Inference, Big Data Security, and the Internet of Things (IoT).
+                The M.Sc. (Data Science) program provides a robust foundation in
+                data management, machine learning, and natural language
+                processing. Students will gain proficiency in essential
+                programming languages and tools such as Python, Tableau, Power
+                BI, and SQL. The curriculum also covers advanced topics like
+                Bayesian Inference, Big Data Security, and the Internet of
+                Things (IoT).
               </p>
               <p>
-                This program equips graduates with the analytical and technical skills necessary to interpret complex datasets, derive actionable insights, and support data-driven decision-making across diverse industries. Through rigorous coursework, hands-on projects, and industry collaborations, students develop expertise in cutting-edge data science methodologies and tools.
+                This program equips graduates with the analytical and technical
+                skills necessary to interpret complex datasets, derive
+                actionable insights, and support data-driven decision-making
+                across diverse industries. Through rigorous coursework, hands-on
+                projects, and industry collaborations, students develop
+                expertise in cutting-edge data science methodologies and tools.
               </p>
             </div>
             <Card className="border border-border/50 bg-card/50 backdrop-blur-sm">
               <CardHeader className="pb-2">
-                <CardTitle className="text-lg font-display">Program Highlights</CardTitle>
-                <CardDescription className="font-body">Core curriculum focus areas</CardDescription>
+                <CardTitle className="text-lg font-display">
+                  Program Highlights
+                </CardTitle>
+                <CardDescription className="font-body">
+                  Core curriculum focus areas
+                </CardDescription>
               </CardHeader>
               <CardContent className="grid sm:grid-cols-2 gap-3 pt-0">
                 {highlights.map((h, idx) => (
-                  <div key={idx} className="flex items-start gap-2 text-sm text-foreground">
+                  <div
+                    key={idx}
+                    className="flex items-start gap-2 text-sm text-foreground"
+                  >
                     <CheckCircle2 className="w-4 h-4 text-brand-magenta mt-0.5" />
                     <span>{h}</span>
                   </div>
@@ -312,11 +377,17 @@ export default function MSCDataScience() {
           <div>
             <Card className="overflow-hidden border border-border/50 bg-card/50">
               <div className="relative h-40">
-                <img src="https://images.unsplash.com/photo-1527219525129-dfc4e4c5fbf8?q=80&w=600&auto=format&fit=crop" alt="M.Sc. Data Science" className="w-full h-full object-cover" />
+                <img
+                  src="https://images.unsplash.com/photo-1527219525129-dfc4e4c5fbf8?q=80&w=600&auto=format&fit=crop"
+                  alt="M.Sc. Data Science"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <CardHeader>
                 <CardTitle className="font-display">Program Details</CardTitle>
-                <CardDescription className="font-body">Key specifications</CardDescription>
+                <CardDescription className="font-body">
+                  Key specifications
+                </CardDescription>
               </CardHeader>
               <CardContent className="grid gap-3 text-sm font-body">
                 <div className="flex items-center justify-between border-b border-border/20 pb-3">
@@ -345,7 +416,10 @@ export default function MSCDataScience() {
             <Card className="border border-border/50 bg-card/50">
               <CardContent className="p-3 grid gap-3">
                 {careers.map((c, i) => (
-                  <div key={i} className="flex items-start gap-2 text-sm text-foreground font-body">
+                  <div
+                    key={i}
+                    className="flex items-start gap-2 text-sm text-foreground font-body"
+                  >
                     <ChevronRight className="w-3 h-3 text-brand-magenta mt-1" />
                     <span>{c}</span>
                   </div>
@@ -357,15 +431,32 @@ export default function MSCDataScience() {
             <h2 className="headline-3 mb-4 font-display">Get in Touch</h2>
             <Card className="overflow-hidden border border-border/50 bg-card/50">
               <div className="relative h-40">
-                <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1200&auto=format&fit=crop" alt="Contact M.Sc. Data Science" className="w-full h-full object-cover" />
+                <img
+                  src="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1200&auto=format&fit=crop"
+                  alt="Contact M.Sc. Data Science"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <CardHeader>
                 <CardTitle className="font-display">Program Contact</CardTitle>
-                <CardDescription className="font-body">Computer Applications Department</CardDescription>
+                <CardDescription className="font-body">
+                  Computer Applications Department
+                </CardDescription>
               </CardHeader>
               <CardContent className="grid gap-2 text-sm font-body">
-                <div className="flex items-center justify-between"><span>Email</span><a className="font-medium hover:underline" href="mailto:info-mscdatascience@dsu.edu.in">info-mscdatascience@dsu.edu.in</a></div>
-                <div className="flex items-center justify-between"><span>Phone</span><span className="font-medium">080-49092900</span></div>
+                <div className="flex items-center justify-between">
+                  <span>Email</span>
+                  <a
+                    className="font-medium hover:underline"
+                    href="mailto:info-mscdatascience@dsu.edu.in"
+                  >
+                    info-mscdatascience@dsu.edu.in
+                  </a>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span>Phone</span>
+                  <span className="font-medium">080-49092900</span>
+                </div>
               </CardContent>
             </Card>
           </div>
@@ -383,7 +474,8 @@ export default function MSCDataScience() {
               </span>
             </h2>
             <p className="text-foreground/80 font-body max-w-2xl mx-auto">
-              Discover research, placements, admission pathways, and Centers of Excellence at DSU
+              Discover research, placements, admission pathways, and Centers of
+              Excellence at DSU
             </p>
           </div>
 
@@ -404,7 +496,8 @@ export default function MSCDataScience() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-foreground/80 font-body">
-                    Innovation labs and industry partnerships for cutting-edge learning
+                    Innovation labs and industry partnerships for cutting-edge
+                    learning
                   </p>
                 </CardContent>
               </Card>
@@ -426,7 +519,8 @@ export default function MSCDataScience() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-foreground/80 font-body">
-                    Opportunities to contribute to cutting-edge research initiatives
+                    Opportunities to contribute to cutting-edge research
+                    initiatives
                   </p>
                 </CardContent>
               </Card>
@@ -448,7 +542,8 @@ export default function MSCDataScience() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-foreground/80 font-body">
-                    Career pathways with leading companies and diverse opportunities
+                    Career pathways with leading companies and diverse
+                    opportunities
                   </p>
                 </CardContent>
               </Card>
@@ -489,15 +584,23 @@ export default function MSCDataScience() {
       <section className="px-3 py-8">
         <div className="max-w-4xl mx-auto text-center">
           <div className="rounded-3xl p-5 border border-brand-magenta/20 bg-brand-magenta/5">
-            <h3 className="headline-3 mb-3 font-display">Join DSU M.Sc. Data Science</h3>
-            <p className="text-foreground mb-6 font-body">Explore programs, discover opportunities, and launch your career as a data science master.</p>
+            <h3 className="headline-3 mb-3 font-display">
+              Join DSU M.Sc. Data Science
+            </h3>
+            <p className="text-foreground mb-6 font-body">
+              Explore programs, discover opportunities, and launch your career
+              as a data science master.
+            </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a
                 href="https://admissions.dsu.edu.in/"
                 target="_blank"
                 rel="noreferrer"
               >
-                <Button className="bg-brand-gradient text-foreground">Apply Now<GraduationCap className="w-4 h-4 ml-2" /></Button>
+                <Button className="bg-brand-gradient text-foreground">
+                  Apply Now
+                  <GraduationCap className="w-4 h-4 ml-2" />
+                </Button>
               </a>
             </div>
           </div>
@@ -528,12 +631,15 @@ function CurriculumLibrary() {
     {
       id: "mscdatascience",
       label: "M.Sc. Data Science Curriculum",
-      description: "2-year comprehensive postgraduate pathway with industry-aligned curriculum",
-      image: "https://images.unsplash.com/photo-1527219525129-dfc4e4c5fbf8?w=600&h=400&fit=crop",
+      description:
+        "2-year comprehensive postgraduate pathway with industry-aligned curriculum",
+      image:
+        "https://images.unsplash.com/photo-1527219525129-dfc4e4c5fbf8?w=600&h=400&fit=crop",
       batches: [
         {
           year: "2025-26",
-          summary: "Latest curriculum with machine learning, big data, and advanced analytics across all 4 semesters",
+          summary:
+            "Latest curriculum with machine learning, big data, and advanced analytics across all 4 semesters",
           documentUrl:
             "https://www.dsu.edu.in/images/ComputerApplications/MSCDataScience-Curriculum-2025-26.pdf",
         },
@@ -553,7 +659,9 @@ function CurriculumLibrary() {
               </span>
             </h2>
             <p className="max-w-2xl text-sm text-foreground sm:text-base font-body">
-              Access comprehensive curriculum documentation, course structures, learning outcomes, and downloadable syllabus for the M.Sc. Data Science program.
+              Access comprehensive curriculum documentation, course structures,
+              learning outcomes, and downloadable syllabus for the M.Sc. Data
+              Science program.
             </p>
           </div>
           <Badge className="w-fit rounded-full bg-brand-magenta/15 px-4 py-2 text-xs font-semibold text-brand-magenta border border-brand-magenta/20">
@@ -565,7 +673,8 @@ function CurriculumLibrary() {
           {programs.map((program) => {
             const isOpen = openProgram === program.id;
             const borderClass = "border-brand-magenta/30";
-            const badgeClass = "bg-brand-magenta/15 text-brand-magenta border-brand-magenta/20";
+            const badgeClass =
+              "bg-brand-magenta/15 text-brand-magenta border-brand-magenta/20";
 
             return (
               <div
@@ -587,8 +696,12 @@ function CurriculumLibrary() {
                     </Badge>
                   </div>
                   <div>
-                    <h3 className="headline-3 font-display text-foreground mb-2">{program.label}</h3>
-                    <p className="text-sm text-foreground/80 font-body">{program.description}</p>
+                    <h3 className="headline-3 font-display text-foreground mb-2">
+                      {program.label}
+                    </h3>
+                    <p className="text-sm text-foreground/80 font-body">
+                      {program.description}
+                    </p>
                   </div>
                   <Button
                     variant="outline"
@@ -624,7 +737,9 @@ function CurriculumLibrary() {
                               )}
                             </div>
                           </div>
-                          <p className="text-xs text-foreground/80 font-body mb-3 leading-relaxed">{batch.summary}</p>
+                          <p className="text-xs text-foreground/80 font-body mb-3 leading-relaxed">
+                            {batch.summary}
+                          </p>
                           {batch.documentUrl && (
                             <Button
                               variant="ghost"
@@ -632,7 +747,12 @@ function CurriculumLibrary() {
                               className="w-full justify-center gap-1 rounded text-xs font-semibold bg-brand-magenta/10 text-brand-magenta hover:bg-brand-magenta/20"
                               asChild
                             >
-                              <a href={batch.documentUrl} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-1">
+                              <a
+                                href={batch.documentUrl}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="flex items-center justify-center gap-1"
+                              >
                                 <Download className="h-3 w-3" />
                                 Download Curriculum PDF
                               </a>

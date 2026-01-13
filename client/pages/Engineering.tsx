@@ -902,9 +902,7 @@ function ProgramCardComponent({ program }: { program: ProgramCard }) {
   }`;
 
   const content = (
-    <div
-      className="relative flex h-full flex-col justify-end overflow-hidden rounded-none border border-white/10 bg-black/10 backdrop-blur-sm transition-all duration-700 hover:-translate-y-1 hover:shadow-2xl hover:shadow-brand-magenta/20 min-h-[420px]"
-    >
+    <div className="relative flex h-full flex-col justify-end overflow-hidden rounded-none border border-white/10 bg-black/10 backdrop-blur-sm transition-all duration-700 hover:-translate-y-1 hover:shadow-2xl hover:shadow-brand-magenta/20 min-h-[420px]">
       <img
         src={program.image}
         alt={program.name}
@@ -1075,7 +1073,8 @@ function HeroVideo() {
               School of Engineering
             </p>
             <h1 className="text-xs sm:text-base md:text-base text-white/80 mb-0 sm:mb-2 leading-tight font-display">
-              Powered by NVIDIA DGX B200 — enterprise-scale AI compute for engineering education and research
+              Powered by NVIDIA DGX B200 — enterprise-scale AI compute for
+              engineering education and research
             </h1>
             <div className="flex flex-wrap gap-3 sm:gap-4 text-xs sm:text-sm text-white/70 mb-4 sm:mb-6">
               <span>NAAC A+</span>
@@ -1136,7 +1135,8 @@ function HeroVideo() {
             School of Engineering
           </p>
           <h1 className="text-xs sm:text-base md:text-base text-foreground/80 mb-0 sm:mb-2 leading-tight font-display">
-            Powered by NVIDIA DGX B200 — enterprise-scale AI compute for engineering education and research
+            Powered by NVIDIA DGX B200 — enterprise-scale AI compute for
+            engineering education and research
           </h1>
           <div className="flex flex-wrap gap-3 sm:gap-4 text-xs sm:text-sm text-foreground/70 mb-4 sm:mb-6">
             <span>NAAC A+</span>
@@ -1289,7 +1289,9 @@ function EngineeringProgramFinder() {
   const [selectedLevel, setSelectedLevel] = useState<string>("All");
 
   useEffect(() => {
-    const engineeringSchool = schools.find((s) => s.name === "School of Engineering");
+    const engineeringSchool = schools.find(
+      (s) => s.name === "School of Engineering",
+    );
     if (engineeringSchool) {
       const programs: Program[] = [];
       engineeringSchool.categories.forEach((category) => {
@@ -1322,9 +1324,12 @@ function EngineeringProgramFinder() {
                 <Filter className="h-6 w-6 text-green-600" />
               </div>
               <div>
-                <CardTitle className="text-2xl">Eligibility and Fees for School of Engineering Programs</CardTitle>
+                <CardTitle className="text-2xl">
+                  Eligibility and Fees for School of Engineering Programs
+                </CardTitle>
                 <CardDescription>
-                  Explore program details, eligibility criteria, and fee structure
+                  Explore program details, eligibility criteria, and fee
+                  structure
                 </CardDescription>
               </div>
             </div>
@@ -1334,10 +1339,7 @@ function EngineeringProgramFinder() {
               <label className="text-sm font-semibold text-foreground mb-2 block">
                 Program Level
               </label>
-              <Select
-                value={selectedLevel}
-                onValueChange={setSelectedLevel}
-              >
+              <Select value={selectedLevel} onValueChange={setSelectedLevel}>
                 <SelectTrigger className="h-11">
                   <SelectValue placeholder="Select level..." />
                 </SelectTrigger>
@@ -1380,9 +1382,7 @@ function EngineeringProgramFinder() {
                         className="py-3"
                       >
                         <div className="flex flex-col">
-                          <span className="font-semibold">
-                            {program.name}
-                          </span>
+                          <span className="font-semibold">{program.name}</span>
                           <span className="text-xs text-foreground/60">
                             {program.level}
                             {program.duration && ` • ${program.duration}`}
@@ -1409,7 +1409,8 @@ function EngineeringProgramFinder() {
                     </CardTitle>
                     <CardDescription className="text-base">
                       {selectedProgram.level}
-                      {selectedProgram.duration && ` • ${selectedProgram.duration}`}
+                      {selectedProgram.duration &&
+                        ` • ${selectedProgram.duration}`}
                     </CardDescription>
                   </div>
                 </div>
@@ -1433,14 +1434,12 @@ function EngineeringProgramFinder() {
                   {selectedProgram.eligibilityPoints &&
                     selectedProgram.eligibilityPoints.length > 0 && (
                       <ul className="space-y-2">
-                        {selectedProgram.eligibilityPoints.map(
-                          (point, idx) => (
-                            <li key={idx} className="flex items-start gap-2">
-                              <CheckCircle2 className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
-                              <span className="text-foreground">{point}</span>
-                            </li>
-                          ),
-                        )}
+                        {selectedProgram.eligibilityPoints.map((point, idx) => (
+                          <li key={idx} className="flex items-start gap-2">
+                            <CheckCircle2 className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
+                            <span className="text-foreground">{point}</span>
+                          </li>
+                        ))}
                       </ul>
                     )}
                   {selectedProgram.specializations &&
@@ -1450,16 +1449,14 @@ function EngineeringProgramFinder() {
                           Specializations Available:
                         </h4>
                         <ul className="space-y-1">
-                          {selectedProgram.specializations.map(
-                            (spec, idx) => (
-                              <li
-                                key={idx}
-                                className="text-sm text-foreground/80"
-                              >
-                                • {spec}
-                              </li>
-                            ),
-                          )}
+                          {selectedProgram.specializations.map((spec, idx) => (
+                            <li
+                              key={idx}
+                              className="text-sm text-foreground/80"
+                            >
+                              • {spec}
+                            </li>
+                          ))}
                         </ul>
                       </div>
                     )}
@@ -1499,21 +1496,17 @@ function EngineeringProgramFinder() {
                     </p>
                   </div>
                 )}
-                {selectedProgram.notes &&
-                  selectedProgram.notes.length > 0 && (
-                    <div className="mt-4 pt-4 border-t border-border/40">
-                      <ul className="space-y-2">
-                        {selectedProgram.notes.map((note, idx) => (
-                          <li
-                            key={idx}
-                            className="text-sm text-foreground/70"
-                          >
-                            ℹ️ {note}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
+                {selectedProgram.notes && selectedProgram.notes.length > 0 && (
+                  <div className="mt-4 pt-4 border-t border-border/40">
+                    <ul className="space-y-2">
+                      {selectedProgram.notes.map((note, idx) => (
+                        <li key={idx} className="text-sm text-foreground/70">
+                          ℹ️ {note}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
               </CardContent>
             </Card>
 
@@ -1551,7 +1544,6 @@ export default function Engineering() {
       <section className="relative" id="top">
         <HeroVideo />
       </section>
-
 
       <section id="programs" className="relative overflow-hidden px-3 py-8">
         <div
@@ -1622,7 +1614,8 @@ export default function Engineering() {
                 Foundational departments that power every engineering discipline
               </h2>
               <p className="mt-4 text-sm text-foreground font-body max-w-3xl">
-                Every DSU engineer is backed by strong fundamentals in science, mathematics, and humanities.
+                Every DSU engineer is backed by strong fundamentals in science,
+                mathematics, and humanities.
               </p>
             </div>
           </div>
@@ -1693,18 +1686,37 @@ export default function Engineering() {
                     </div>
                     <div className="space-y-3 text-sm text-foreground/85 font-body leading-relaxed">
                       <p>
-                        Welcome to the new way of learning at School of Engineering (SoE) of Dayananda Sagar University. We are committed to helping you make a positive difference in the world. We provide outstanding education that equips students with skills, experience, and confidence required to stand out from the crowd.
+                        Welcome to the new way of learning at School of
+                        Engineering (SoE) of Dayananda Sagar University. We are
+                        committed to helping you make a positive difference in
+                        the world. We provide outstanding education that equips
+                        students with skills, experience, and confidence
+                        required to stand out from the crowd.
                       </p>
                       <p className="font-semibold text-foreground mt-4">
                         Our core values include:
                       </p>
                       <ul className="space-y-2 text-sm text-foreground/85 font-body list-disc list-inside ml-2">
-                        <li>Culture of Excellence in Interdisciplinary learning, Research, Creativity, and Innovation</li>
-                        <li>Student-centric, Research-centric World-Class Education</li>
-                        <li>Developing independent critical thinkers with societal and ethical responsibility</li>
+                        <li>
+                          Culture of Excellence in Interdisciplinary learning,
+                          Research, Creativity, and Innovation
+                        </li>
+                        <li>
+                          Student-centric, Research-centric World-Class
+                          Education
+                        </li>
+                        <li>
+                          Developing independent critical thinkers with societal
+                          and ethical responsibility
+                        </li>
                       </ul>
                       <p className="pt-2">
-                        We value ability, not background. We support all students to achieve their potential and gain the knowledge, expertise, and employability skills for their chosen career path. Upon completion of your engineering degree at SoE, you will be well-prepared for your professional journey.
+                        We value ability, not background. We support all
+                        students to achieve their potential and gain the
+                        knowledge, expertise, and employability skills for their
+                        chosen career path. Upon completion of your engineering
+                        degree at SoE, you will be well-prepared for your
+                        professional journey.
                       </p>
                     </div>
                     <p className="font-display font-semibold text-brand-magenta pt-4 text-sm">
@@ -1729,7 +1741,8 @@ export default function Engineering() {
                 </span>
               </h2>
               <p className="max-w-2xl text-sm text-foreground sm:text-base font-body">
-                Explore recent achievements, industry collaborations, and upcoming opportunities.
+                Explore recent achievements, industry collaborations, and
+                upcoming opportunities.
               </p>
             </div>
           </div>
@@ -1768,7 +1781,8 @@ export default function Engineering() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-foreground/80 font-body">
-                    AI Infrastructure Partner: NVIDIA. Hands-on learning through research projects and industry collaboration.
+                    AI Infrastructure Partner: NVIDIA. Hands-on learning through
+                    research projects and industry collaboration.
                   </p>
                 </CardContent>
               </Card>
@@ -1954,7 +1968,8 @@ export default function Engineering() {
             <div className="text-sm text-foreground font-body">
               <span className="font-semibold">Quick Eligibility Check:</span>
               <span className="ml-2 text-foreground/70">
-                10+2 with Physics & Mathematics | B.Tech | M.Tech via PGCET / Direct
+                10+2 with Physics & Mathematics | B.Tech | M.Tech via PGCET /
+                Direct
               </span>
             </div>
             <a
@@ -1979,7 +1994,8 @@ export default function Engineering() {
               the DSU School of Engineering.
             </p>
             <p className="mb-4 text-xs text-foreground/70 font-body">
-              Admissions support available across CET, Direct & International pathways.
+              Admissions support available across CET, Direct & International
+              pathways.
             </p>
             <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
               <a
@@ -2029,7 +2045,10 @@ export default function Engineering() {
               Why Choose DSU, School of Engineering?
             </h2>
             <p className="mt-4 text-sm text-foreground/70 font-body max-w-3xl">
-              DSU, School of Engineering operates a centralized AI compute backbone built on NVIDIA DGX B200, enabling large-scale AI, simulation, and data-intensive workloads across multiple engineering labs.
+              DSU, School of Engineering operates a centralized AI compute
+              backbone built on NVIDIA DGX B200, enabling large-scale AI,
+              simulation, and data-intensive workloads across multiple
+              engineering labs.
             </p>
           </div>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -2042,7 +2061,9 @@ export default function Engineering() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="text-sm text-foreground/80 font-body">
-                GPU-accelerated workloads on NVIDIA DGX B200 for AI, machine learning, and data-intensive engineering simulations. Enterprise-scale compute backbone supporting all labs.
+                GPU-accelerated workloads on NVIDIA DGX B200 for AI, machine
+                learning, and data-intensive engineering simulations.
+                Enterprise-scale compute backbone supporting all labs.
               </CardContent>
             </Card>
 
@@ -2055,7 +2076,8 @@ export default function Engineering() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="text-sm text-foreground/80 font-body">
-                Hands-on research and development across 10+ engineering disciplines powered by DGX B200 infrastructure.
+                Hands-on research and development across 10+ engineering
+                disciplines powered by DGX B200 infrastructure.
               </CardContent>
             </Card>
 
@@ -2068,7 +2090,9 @@ export default function Engineering() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="text-sm text-foreground/80 font-body">
-                Active research in aerospace, embedded systems, robotics, healthcare technology, and sustainable engineering supported by DGX B200 acceleration.
+                Active research in aerospace, embedded systems, robotics,
+                healthcare technology, and sustainable engineering supported by
+                DGX B200 acceleration.
               </CardContent>
             </Card>
 
@@ -2081,7 +2105,8 @@ export default function Engineering() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="text-sm text-foreground/80 font-body">
-                NAAC A+ accreditation backed by continuous quality assurance, research depth, and infrastructure innovation.
+                NAAC A+ accreditation backed by continuous quality assurance,
+                research depth, and infrastructure innovation.
               </CardContent>
             </Card>
 
@@ -2094,7 +2119,8 @@ export default function Engineering() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="text-sm text-foreground/80 font-body">
-                Strong fundamentals in science, math, and humanities complementing technical depth and industry preparation.
+                Strong fundamentals in science, math, and humanities
+                complementing technical depth and industry preparation.
               </CardContent>
             </Card>
 
@@ -2107,7 +2133,9 @@ export default function Engineering() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="text-sm text-foreground/80 font-body">
-                Industry-aligned curriculum with strong placement outcomes. Connections with leading global tech companies, AI-focused enterprises, and startups.
+                Industry-aligned curriculum with strong placement outcomes.
+                Connections with leading global tech companies, AI-focused
+                enterprises, and startups.
               </CardContent>
             </Card>
           </div>

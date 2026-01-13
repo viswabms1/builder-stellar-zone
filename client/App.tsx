@@ -1728,24 +1728,57 @@ function App() {
                 <Route path="/iqac" element={<IQAC />} />
                 {/* Alumni Routes */}
                 <Route path="/alumni" element={<Alumni />} />
-                <Route path="/alumni/vision-mission" element={<AlumniVisionMission />} />
+                <Route
+                  path="/alumni/vision-mission"
+                  element={<AlumniVisionMission />}
+                />
                 <Route path="/alumni/events" element={<AlumniEvents />} />
-                <Route path="/alumni/newsletter" element={<AlumniNewsletter />} />
+                <Route
+                  path="/alumni/newsletter"
+                  element={<AlumniNewsletter />}
+                />
                 <Route path="/alumni/contact" element={<AlumniContact />} />
                 {/* Library Routes */}
                 <Route path="/library" element={<Library />} />
-                <Route path="/library/vision-mission" element={<LibraryVisionMission />} />
+                <Route
+                  path="/library/vision-mission"
+                  element={<LibraryVisionMission />}
+                />
                 <Route path="/library/team" element={<LibraryTeam />} />
-                <Route path="/library/e-resources" element={<LibraryEResources />} />
-                <Route path="/library/collections" element={<LibraryCollections />} />
-                <Route path="/library/anti-plagiarism" element={<LibraryAntiPlagiarism />} />
-                <Route path="/library/rules-regulations" element={<LibraryRulesRegulations />} />
-                <Route path="/library/corporate-membership" element={<LibraryCorporateMembership />} />
-                <Route path="/library/useful-links" element={<LibraryUsefulLinks />} />
+                <Route
+                  path="/library/e-resources"
+                  element={<LibraryEResources />}
+                />
+                <Route
+                  path="/library/collections"
+                  element={<LibraryCollections />}
+                />
+                <Route
+                  path="/library/anti-plagiarism"
+                  element={<LibraryAntiPlagiarism />}
+                />
+                <Route
+                  path="/library/rules-regulations"
+                  element={<LibraryRulesRegulations />}
+                />
+                <Route
+                  path="/library/corporate-membership"
+                  element={<LibraryCorporateMembership />}
+                />
+                <Route
+                  path="/library/useful-links"
+                  element={<LibraryUsefulLinks />}
+                />
                 <Route path="/library/brochure" element={<LibraryBrochure />} />
-                <Route path="/library/constituent-libraries" element={<LibraryConstituentLibraries />} />
+                <Route
+                  path="/library/constituent-libraries"
+                  element={<LibraryConstituentLibraries />}
+                />
                 <Route path="/library/gallery" element={<LibraryGallery />} />
-                <Route path="/library/advisory-committee" element={<LibraryAdvisoryCommittee />} />
+                <Route
+                  path="/library/advisory-committee"
+                  element={<LibraryAdvisoryCommittee />}
+                />
                 <Route path="/library/contact" element={<LibraryContact />} />
                 {/* Redirect /engineering/* paths to /academics/engineering/* */}
                 <Route

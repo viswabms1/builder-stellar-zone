@@ -72,7 +72,6 @@ function NoticeBoardCarousel() {
   const [currentEventIndex, setCurrentEventIndex] = useState(0);
   const [currentNewsIndex, setCurrentNewsIndex] = useState(0);
   const [currentAnnouncementIndex, setCurrentAnnouncementIndex] = useState(0);
-  
 
   const events = getAllJournalismEvents();
   const news = getJournalismNewsData();
@@ -273,7 +272,9 @@ function NoticeBoardCarousel() {
               </span>
             </h2>
             <p className="max-w-2xl text-sm text-foreground sm:text-base font-body">
-              {"Stay updated with upcoming events, news, and important announcements from the school."}
+              {
+                "Stay updated with upcoming events, news, and important announcements from the school."
+              }
             </p>
           </div>
         </div>
@@ -435,11 +436,17 @@ function ProgramCardComponent({ program }: { program: ProgramCard }) {
                 {"BA (Journalism & Mass Communication)"}
               </h3>
               <p className="mt-3 text-sm text-white/85 font-body">
-                {"Three-year programme covering print, television, digital media, filmmaking, podcasting, advertising, public relations and theatre with compulsory two-month internship."}
+                {
+                  "Three-year programme covering print, television, digital media, filmmaking, podcasting, advertising, public relations and theatre with compulsory two-month internship."
+                }
               </p>
             </div>
             <div className="flex flex-wrap gap-2">
-              {["Multimedia Storytelling", "Broadcast Production", "Digital Media"].map((item) => (
+              {[
+                "Multimedia Storytelling",
+                "Broadcast Production",
+                "Digital Media",
+              ].map((item) => (
                 <span
                   key={item}
                   className="rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs uppercase tracking-wide text-white/85"
@@ -514,7 +521,6 @@ function HeroVideo() {
   const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useAutoMuteOnScroll(videoRef);
-  
 
   const toggleMute = () => {
     if (videoRef.current) {
@@ -651,7 +657,6 @@ function HeroVideo() {
 }
 
 export default function JournalismMassComm() {
-  
   return (
     <div className="min-h-screen bg-background text-foreground">
       <section className="relative" id="top">
@@ -675,7 +680,9 @@ export default function JournalismMassComm() {
                 {"Academic Pathways in Media & Communication"}
               </h2>
               <p className="mt-3 text-sm text-foreground font-body">
-                {"Comprehensive programme combining rigorous academics with multimedia storytelling, broadcast production, global collaborations and real-world reporting experience to prepare industry-ready communicators."}
+                {
+                  "Comprehensive programme combining rigorous academics with multimedia storytelling, broadcast production, global collaborations and real-world reporting experience to prepare industry-ready communicators."
+                }
               </p>
             </div>
           </div>
@@ -689,7 +696,9 @@ export default function JournalismMassComm() {
                 {"Bachelor Degree Program"}
               </h3>
               <p className="mt-2 text-sm text-foreground font-body">
-                {"Master multimedia storytelling across print, television, digital media and film"}
+                {
+                  "Master multimedia storytelling across print, television, digital media and film"
+                }
               </p>
             </div>
             <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-12">
@@ -711,7 +720,9 @@ export default function JournalismMassComm() {
               {"Explore More at DSU CJMC"}
             </h2>
             <p className="mt-3 text-sm text-foreground font-body">
-              {"Discover our creative studios, industry partnerships, placements and admission pathways"}
+              {
+                "Discover our creative studios, industry partnerships, placements and admission pathways"
+              }
             </p>
           </div>
           <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-5">
@@ -793,7 +804,9 @@ export default function JournalismMassComm() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-foreground/80 font-body">
-                    {"Career pathways with media organizations and production houses"}
+                    {
+                      "Career pathways with media organizations and production houses"
+                    }
                   </p>
                 </CardContent>
               </Card>
