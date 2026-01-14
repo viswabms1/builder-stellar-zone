@@ -382,9 +382,9 @@ export default function CampusLife() {
               },
               {
                 icon: Laptop,
-                title: "Innovation Hubs",
+                title: "Maker Spaces & Labs",
                 description:
-                  "Maker spaces, AI labs, prototyping facilities, and collaborative studios where research ideas become tangible breakthroughs.",
+                  "AI labs, 3D printing, electronics workshops, and collaborative studios where students prototype, build, and test ideas from concept to launch.",
                 image:
                   "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop",
               },
