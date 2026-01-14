@@ -892,11 +892,179 @@ function NoticeBoard() {
 }
 
 function CurriculumLibrary() {
+  const [openProgram, setOpenProgram] = useState<string | null>(null);
+
+  const programs: CurriculumProgram[] = [
+    {
+      id: "btech",
+      label: "B.Tech CSE (AI & ML)",
+      description: "4-year undergraduate pathway with specialized tracks in machine learning and AI systems",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&h=400&fit=crop",
+      batches: [
+        {
+          year: "2025-26",
+          summary: "Foundations in Python, Data Structures, Algorithms, and Mathematics with AI basics",
+          documentUrl:
+            "https://www.dsu.edu.in/images/Engineering/CSE-AIML/curriculum/BTech-AIML-Curriculum-2025-26.pdf",
+        },
+        {
+          year: "2026-27",
+          summary: "Machine Learning, Deep Learning on CUDA, Computer Vision, and GPU-accelerated computing",
+          documentUrl:
+            "https://www.dsu.edu.in/images/Engineering/CSE-AIML/curriculum/BTech-AIML-Curriculum-2026-27.pdf",
+        },
+        {
+          year: "2027-28",
+          summary: "Advanced Deep Learning, NLP, Reinforcement Learning, and LLM systems with NVIDIA infrastructure",
+          documentUrl:
+            "https://www.dsu.edu.in/images/Engineering/CSE-AIML/curriculum/BTech-AIML-Curriculum-2027-28.pdf",
+        },
+        {
+          year: "2028-29",
+          summary: "Capstone projects, industry internships, NVIDIA certification, and research publications",
+          documentUrl:
+            "https://www.dsu.edu.in/images/Engineering/CSE-AIML/curriculum/BTech-AIML-Curriculum-2028-29.pdf",
+        },
+      ],
+    },
+    {
+      id: "mtech",
+      label: "M.Tech Artificial Intelligence",
+      description: "2-year postgraduate specialization in advanced AI research and development",
+      image: "https://images.unsplash.com/photo-1516321318423-f06f70a504f9?q=80&w=600&h=400&fit=crop",
+      batches: [
+        {
+          year: "2025-26",
+          summary: "Foundations in advanced ML, statistical modeling, and GPU-accelerated data engineering",
+          documentUrl:
+            "https://www.dsu.edu.in/images/Engineering/CSE-AIML/curriculum/MTech-AI-Curriculum-2025-26.pdf",
+        },
+        {
+          year: "2026-27",
+          summary: "Generative Models, Large Language Models, Computer Vision, and reinforcement learning systems",
+          documentUrl:
+            "https://www.dsu.edu.in/images/Engineering/CSE-AIML/curriculum/MTech-AI-Curriculum-2026-27.pdf",
+        },
+        {
+          year: "2027-28",
+          summary: "Advanced AI research, thesis writing, NVIDIA partnership projects, and industry collaborations",
+          documentUrl:
+            "https://www.dsu.edu.in/images/Engineering/CSE-AIML/curriculum/MTech-AI-Curriculum-2027-28.pdf",
+        },
+      ],
+    },
+  ];
+
   return (
-    <section className="px-6 py-12">
-      <div className="max-w-6xl mx-auto">
-        <h3 className="text-sm font-semibold text-foreground/60 uppercase tracking-wider mb-2">Curriculum</h3>
-        <p className="text-sm text-foreground/80 mb-8">Program curriculum documents available upon request</p>
+    <section className="px-6 py-16 bg-gradient-to-r from-brand-blue/5 via-brand-blue/5 to-brand-blue/5">
+      <div className="mx-auto max-w-6xl space-y-8">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <h2 className="headline-2 mb-3 font-display">
+              <span className="text-foreground">Curriculum </span>
+              <span className="bg-brand-gradient bg-clip-text text-transparent">
+                Library
+              </span>
+            </h2>
+            <p className="max-w-2xl text-sm text-foreground sm:text-base font-body">
+              Explore comprehensive curriculum for B.Tech and M.Tech AI & ML programs. Access detailed course structures, learning outcomes, and downloadable syllabi.
+            </p>
+          </div>
+          <Badge className="w-fit rounded-full bg-brand-blue/15 px-4 py-2 text-xs font-semibold text-brand-blue border border-brand-blue/20">
+            2025 – 2029
+          </Badge>
+        </div>
+
+        <div className="grid gap-6 lg:grid-cols-2">
+          {programs.map((program, programIdx) => {
+            const isOpen = openProgram === program.id;
+            const isBtech = program.id === "btech";
+            const borderClass = isBtech ? "border-brand-blue/30" : "border-brand-purple/30";
+            const badgeClass = isBtech ? "bg-brand-blue/15 text-brand-blue border-brand-blue/20" : "bg-brand-purple/15 text-brand-purple border-brand-purple/20";
+            const hoverShadow = isBtech ? "hover:shadow-brand-blue/10" : "hover:shadow-brand-purple/10";
+
+            return (
+              <div
+                key={program.id}
+                className={`rounded-3xl border-2 ${borderClass} overflow-hidden transition-all duration-300 hover:shadow-xl ${hoverShadow} hover:-translate-y-1`}
+              >
+                <div className="relative h-48 overflow-hidden">
+                  <img
+                    src={program.image}
+                    alt={program.label}
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+
+                <div className="p-6 bg-background/50 backdrop-blur-sm space-y-3">
+                  <div className="flex items-start gap-3">
+                    <Badge className={`rounded-full border ${badgeClass}`}>
+                      {isBtech ? "Undergraduate" : "Postgraduate"}
+                    </Badge>
+                  </div>
+                  <div>
+                    <h3 className="headline-3 font-display text-foreground mb-2">{program.label}</h3>
+                    <p className="text-sm text-foreground/80 font-body">{program.description}</p>
+                  </div>
+                  <Button
+                    variant="outline"
+                    className={`w-full ${isBtech ? "border-brand-blue/30 hover:bg-brand-blue/10 text-brand-blue hover:text-brand-blue" : "border-brand-purple/30 hover:bg-brand-purple/10 text-brand-purple hover:text-brand-purple"}`}
+                    onClick={() => setOpenProgram(isOpen ? null : program.id)}
+                  >
+                    <span className="flex items-center justify-center gap-2">
+                      {isOpen ? "Hide" : "View"} Batches
+                      <ChevronDown
+                        className={`h-4 w-4 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
+                      />
+                    </span>
+                  </Button>
+
+                  {isOpen && (
+                    <div className="mt-4 space-y-3 border-t border-border/20 pt-4 animate-in fade-in slide-in-from-top-2 duration-300">
+                      {program.batches.map((batch, batchIdx) => (
+                        <div
+                          key={`${program.id}-${batch.year}`}
+                          className={`rounded-xl border border-border/40 bg-card/70 p-3 transition-all ${isBtech ? "hover:border-brand-blue/40" : "hover:border-brand-purple/40"} ${
+                            batchIdx === 0 ? isBtech ? "ring-2 ring-brand-blue/20" : "ring-2 ring-brand-purple/20" : ""
+                          }`}
+                        >
+                          <div className="flex items-start justify-between gap-2 mb-2">
+                            <div className="flex items-center gap-2">
+                              <Badge className={`rounded-full border text-xs ${isBtech ? "bg-brand-blue/20 text-brand-blue border-brand-blue/30" : "bg-brand-purple/20 text-brand-purple border-brand-purple/30"}`}>
+                                <CalendarDays className="h-3 w-3 mr-1" />
+                                {batch.year}
+                              </Badge>
+                              {batchIdx === 0 && (
+                                <Badge className={`rounded-full border text-xs ${isBtech ? "bg-brand-blue/20 text-brand-blue border-brand-blue/30" : "bg-brand-purple/20 text-brand-purple border-brand-purple/30"}`}>
+                                  <Zap className="h-3 w-3 mr-1" />
+                                  Current
+                                </Badge>
+                              )}
+                            </div>
+                          </div>
+                          <p className="text-xs text-foreground/80 font-body mb-3 leading-relaxed">{batch.summary}</p>
+                          {batch.documentUrl && (
+                            <Button
+                              variant="ghost"
+                              size="sm"
+                              className={`w-full justify-center gap-1 rounded text-xs font-semibold ${isBtech ? "bg-brand-blue/10 text-brand-blue hover:bg-brand-blue/20" : "bg-brand-purple/10 text-brand-purple hover:bg-brand-purple/20"}`}
+                              asChild
+                            >
+                              <a href={batch.documentUrl} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-1">
+                                <Download className="h-3 w-3" />
+                                PDF
+                              </a>
+                            </Button>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </section>
   );
