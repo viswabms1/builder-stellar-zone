@@ -623,10 +623,10 @@ export default function CampusLife() {
         </div>
       </section>
 
-      {/* Events Timeline with Images */}
+      {/* Events Timeline with Interactive Filters */}
       <section ref={eventsRef} className={`px-3 py-10 transition-opacity duration-700 ${eventsVisible ? "opacity-100" : "opacity-0"}`}>
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
                 Events
@@ -635,48 +635,40 @@ export default function CampusLife() {
             </h2>
           </div>
 
+          {/* Interactive Category Filter */}
+          <div className="flex flex-wrap justify-center gap-3 mb-12">
+            <button
+              onClick={() => setSelectedCategory(null)}
+              className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 border-2 ${
+                selectedCategory === null
+                  ? "bg-orange-500 text-foreground border-orange-500"
+                  : "bg-transparent text-foreground border-orange-500/30 hover:border-orange-500/60"
+              }`}
+            >
+              All Events
+            </button>
+            {eventCategories.map((cat) => (
+              <button
+                key={cat.id}
+                onClick={() => setSelectedCategory(cat.id)}
+                className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 border-2 inline-flex items-center gap-2 ${
+                  selectedCategory === cat.id
+                    ? "bg-orange-500 text-foreground border-orange-500"
+                    : "bg-transparent text-foreground border-orange-500/30 hover:border-orange-500/60"
+                }`}
+              >
+                <cat.icon className="w-4 h-4" />
+                {cat.label}
+              </button>
+            ))}
+          </div>
+
+          {/* Events Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-0">
-            {[
-              {
-                icon: Star,
-                title: "Annual Fest - DSUFEST",
-                image:
-                  "https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=400&h=300&fit=crop",
-                duration: "5 Days",
-                attendance: "50,000+",
-                category: "Cultural",
-              },
-              {
-                icon: Trophy,
-                title: "Sports Meet",
-                image:
-                  "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F4965c58a577f42679515554a2c799501?format=webp&width=800",
-                duration: "1 Week",
-                attendance: "15,000+",
-                category: "Sports",
-              },
-              {
-                icon: Mic,
-                title: "Tech Symposium",
-                image:
-                  "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop",
-                duration: "3 Days",
-                attendance: "20,000+",
-                category: "Technology",
-              },
-              {
-                icon: Heart,
-                title: "Social Initiatives",
-                image:
-                  "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=400&h=300&fit=crop",
-                duration: "Ongoing",
-                attendance: "2,000+",
-                category: "Social Impact",
-              },
-            ].map((event, index) => (
+            {filteredEvents.map((event, index) => (
               <Card
                 key={index}
-                className={`group overflow-hidden hover:shadow-lg hover:shadow-brand-magenta/10 transition-all duration-500 hover:-translate-y-2 backdrop-blur-sm border rounded-none scroll-fade-in-up ${
+                className={`group overflow-hidden hover:shadow-lg hover:shadow-brand-magenta/10 transition-all duration-500 hover:-translate-y-2 backdrop-blur-sm border rounded-none ${
                   index % 4 === 0
                     ? "bg-orange-500/10 border-orange-500/20"
                     : index % 4 === 1
