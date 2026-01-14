@@ -42,6 +42,7 @@ import {
 
 export default function CampusLife() {
   const [isMuted, setIsMuted] = useState(true);
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   const { elementRef: facilitiesRef, isVisible: facilitiesVisible } = useScrollTrigger();
@@ -58,6 +59,56 @@ export default function CampusLife() {
       setIsMuted(!isMuted);
     }
   };
+
+  const eventCategories = [
+    { id: "cultural", label: "Cultural", icon: Music },
+    { id: "sports", label: "Sports", icon: Trophy },
+    { id: "technology", label: "Technology", icon: Rocket },
+    { id: "social-impact", label: "Social Impact", icon: Heart },
+  ];
+
+  const allEvents = [
+    {
+      icon: Star,
+      title: "Annual Fest - DSUFEST",
+      image:
+        "https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=400&h=300&fit=crop",
+      duration: "5 Days",
+      attendance: "50,000+",
+      category: "cultural",
+    },
+    {
+      icon: Trophy,
+      title: "Sports Meet",
+      image:
+        "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F4965c58a577f42679515554a2c799501?format=webp&width=800",
+      duration: "1 Week",
+      attendance: "15,000+",
+      category: "sports",
+    },
+    {
+      icon: Mic,
+      title: "Tech Symposium",
+      image:
+        "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop",
+      duration: "3 Days",
+      attendance: "20,000+",
+      category: "technology",
+    },
+    {
+      icon: Heart,
+      title: "Social Initiatives",
+      image:
+        "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=400&h=300&fit=crop",
+      duration: "Ongoing",
+      attendance: "2,000+",
+      category: "social-impact",
+    },
+  ];
+
+  const filteredEvents = selectedCategory
+    ? allEvents.filter((event) => event.category === selectedCategory)
+    : allEvents;
 
   return (
     <div className="min-h-screen bg-background text-foreground">
