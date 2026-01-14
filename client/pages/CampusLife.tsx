@@ -582,23 +582,23 @@ export default function CampusLife() {
 
             {/* Trust Signals */}
             <div className="pt-8 border-t border-orange-500/20">
-              <p className="text-sm text-foreground/70 mb-4">
-                Trusted by students and industry leaders worldwide
+              <p className="text-sm text-foreground/70 mb-6">
+                Recognized for excellence by students, faculty, and industry
               </p>
               <div className="grid grid-cols-3 gap-6 items-center justify-center">
                 <div className="flex flex-col items-center">
-                  <Badge className="bg-orange-500/20 text-orange-400 mb-2 text-sm font-bold">
-                    NAAC A+
+                  <Badge className="bg-orange-500/20 text-orange-400 mb-2 text-sm font-bold px-4 py-1">
+                    NAAC A+ Accredited
                   </Badge>
-                  <p className="text-xs text-foreground/60">Accredited</p>
+                  <p className="text-xs text-foreground/60 mt-1">Assured Quality</p>
                 </div>
                 <div className="flex flex-col items-center">
-                  <p className="text-2xl font-bold text-orange-500">25,000+</p>
-                  <p className="text-xs text-foreground/60">Students</p>
+                  <p className="text-3xl font-bold bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">25,000+</p>
+                  <p className="text-xs text-foreground/60 mt-1">Active Students</p>
                 </div>
                 <div className="flex flex-col items-center">
-                  <p className="text-2xl font-bold text-orange-500">100+</p>
-                  <p className="text-xs text-foreground/60">Student Clubs</p>
+                  <p className="text-3xl font-bold bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">100+</p>
+                  <p className="text-xs text-foreground/60 mt-1">Clubs & Societies</p>
                 </div>
               </div>
             </div>
