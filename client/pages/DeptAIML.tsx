@@ -849,42 +849,323 @@ function AccreditationDocuments() {
   );
 }
 
+interface NoticeItem {
+  id: string;
+  title: string;
+  category: "Event" | "News" | "Announcement";
+  date: string;
+  description: string;
+  image?: string;
+  link?: string;
+}
+
 function NoticeBoard() {
+  const notices: NoticeItem[] = [
+    {
+      id: "notice-1",
+      title: "AI Summit 2025: Industry Leaders' Perspectives",
+      category: "Event",
+      date: "Feb 15, 2025",
+      description:
+        "Annual AI & ML summit featuring keynotes from Google, Microsoft, and NVIDIA on latest trends in generative AI, LLMs, and GPU-accelerated computing.",
+      image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=300&fit=crop",
+      link: "https://www.dsu.edu.in/images/Engineering/CSE-AIML/notices/AI-Summit-2025.pdf",
+    },
+    {
+      id: "notice-2",
+      title: "NVIDIA CUDA Programming Workshop",
+      category: "Event",
+      date: "Feb 5, 2025",
+      description:
+        "Hands-on workshop on GPU programming using CUDA, covering parallel processing, optimization techniques, and real-world AI applications.",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=300&fit=crop",
+      link: "https://www.dsu.edu.in/images/Engineering/CSE-AIML/notices/CUDA-Workshop-2025.pdf",
+    },
+    {
+      id: "notice-3",
+      title: "Capstone Project Showcase: AI Solutions",
+      category: "Event",
+      date: "Mar 10, 2025",
+      description:
+        "Final year students showcase capstone projects built on NVIDIA infrastructure, including generative AI, computer vision, and NLP applications.",
+      image: "https://images.unsplash.com/photo-1516321318423-f06f70a504f9?w=600&h=300&fit=crop",
+      link: "https://www.dsu.edu.in/images/Engineering/CSE-AIML/notices/Capstone-Showcase-2025.pdf",
+    },
+    {
+      id: "notice-4",
+      title: "Faculty Publications in Top AI Venues",
+      category: "News",
+      date: "Feb 1, 2025",
+      description:
+        "Department faculty published research in NeurIPS, ICML, and CVPR 2024, advancing work in generative models and AI safety.",
+      image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=300&fit=crop",
+      link: "https://www.dsu.edu.in/images/Engineering/CSE-AIML/notices/Faculty-Publications-2024.pdf",
+    },
+    {
+      id: "notice-5",
+      title: "Placement Results 2024-25",
+      category: "News",
+      date: "Jan 20, 2025",
+      description:
+        "Record-breaking placements with top AI companies including Google, Meta, Tesla, and NVIDIA. Premium packages for GPU-skilled engineers.",
+      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=300&fit=crop",
+      link: "https://www.dsu.edu.in/images/Engineering/CSE-AIML/notices/Placements-2024-25.pdf",
+    },
+    {
+      id: "notice-6",
+      title: "NAAC Accreditation - A++ Grade",
+      category: "News",
+      date: "Jan 10, 2025",
+      description:
+        "AI & ML program achieves A++ grade in NAAC assessment, recognizing excellence in curriculum design and industry alignment.",
+      image: "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=600&h=300&fit=crop",
+      link: "https://www.dsu.edu.in/images/Engineering/CSE-AIML/notices/NAAC-Accreditation-2025.pdf",
+    },
+    {
+      id: "notice-7",
+      title: "Semester IV Specialization Selection Open",
+      category: "Announcement",
+      date: "Jan 15, 2025",
+      description:
+        "Students can now register for specialization tracks: Generative AI, Computer Vision, Reinforcement Learning, and Healthcare AI.",
+      link: "https://www.dsu.edu.in/images/Engineering/CSE-AIML/notices/Specialization-Tracks-2025.pdf",
+    },
+    {
+      id: "notice-8",
+      title: "DGX B200 Lab Access for Research Projects",
+      category: "Announcement",
+      date: "Jan 8, 2025",
+      description:
+        "Apply now for access to DSU's NVIDIA DGX B200 supercomputers for research and development projects.",
+      link: "https://www.dsu.edu.in/images/Engineering/CSE-AIML/notices/GPU-Lab-Access-2025.pdf",
+    },
+    {
+      id: "notice-9",
+      title: "Kaggle AI Challenge - DSU Edition",
+      category: "Announcement",
+      date: "Jan 5, 2025",
+      description:
+        "International data science competition for AI & ML students with prizes, internship opportunities, and industry mentoring.",
+      link: "https://www.dsu.edu.in/images/Engineering/CSE-AIML/notices/Kaggle-Challenge-2025.pdf",
+    },
+  ];
+
+  const getCategoryStyle = (category: NoticeItem["category"]) => {
+    switch (category) {
+      case "Event":
+        return {
+          icon: CalendarDays,
+          label: "Event",
+          className: "bg-brand-magenta/15 text-brand-magenta",
+        };
+      case "News":
+        return {
+          icon: FileText,
+          label: "News",
+          className: "bg-brand-magenta/15 text-brand-magenta",
+        };
+      case "Announcement":
+        return {
+          icon: ClipboardList,
+          label: "Announcement",
+          className: "bg-brand-magenta/15 text-brand-magenta",
+        };
+      default:
+        return {
+          icon: ClipboardList,
+          label: category,
+          className: "bg-brand-magenta/15 text-brand-magenta",
+        };
+    }
+  };
+
+  const events = notices.filter((n) => n.category === "Event");
+  const news = notices.filter((n) => n.category === "News");
+  const announcements = notices.filter((n) => n.category === "Announcement");
+
+  const [currentEventIndex, setCurrentEventIndex] = useState(0);
+  const [currentNewsIndex, setCurrentNewsIndex] = useState(0);
+
+  useEffect(() => {
+    if (events.length === 0) return;
+    const interval = setInterval(() => {
+      setCurrentEventIndex((prev) => (prev + 1) % events.length);
+    }, 6000);
+    return () => clearInterval(interval);
+  }, [events.length]);
+
+  useEffect(() => {
+    if (news.length === 0) return;
+    const interval = setInterval(() => {
+      setCurrentNewsIndex((prev) => (prev + 1) % news.length);
+    }, 6000);
+    return () => clearInterval(interval);
+  }, [news.length]);
+
+  const renderCarousel = (title: string, items: NoticeItem[], color: string, currentIndex: number, setCurrentIndex: (idx: number) => void) => {
+    if (items.length === 0) {
+      return (
+        <div className="space-y-4">
+          <div className={`flex items-center gap-2 px-4 py-3 rounded-xl border-l-4 border-brand-magenta bg-brand-magenta/10`}>
+            <h3 className={`headline-4 font-display text-brand-magenta`}>{title}</h3>
+          </div>
+          <p className="text-xs text-foreground/60 italic p-4 text-center">No items to display</p>
+        </div>
+      );
+    }
+
+    const currentItem = items[currentIndex];
+
+    return (
+      <div className="space-y-4">
+        <div className={`flex items-center gap-2 px-4 py-3 rounded-xl border-l-4 border-brand-magenta bg-brand-magenta/10`}>
+          <h3 className={`headline-4 font-display text-brand-magenta`}>{title}</h3>
+          <Badge className="ml-auto text-xs">{currentIndex + 1} / {items.length}</Badge>
+        </div>
+
+        <Card className="group overflow-hidden rounded-2xl border-2 border-border/30 bg-card/40 backdrop-blur-sm">
+          {currentItem.image && (
+            <div className="relative h-48 overflow-hidden">
+              <img
+                src={currentItem.image}
+                alt={currentItem.title}
+                className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
+              />
+            </div>
+          )}
+          <CardContent className="p-4 space-y-3">
+            <div className="flex items-start justify-between gap-2">
+              <div className="flex-1">
+                <h4 className="font-display font-semibold text-sm text-foreground mb-2 line-clamp-2">{currentItem.title}</h4>
+                <p className="text-xs text-foreground/70 line-clamp-2">{currentItem.description}</p>
+              </div>
+            </div>
+            <div className="flex items-center justify-between pt-2 border-t border-border/20">
+              <span className="text-xs font-semibold text-foreground/60">{currentItem.date}</span>
+              {currentItem.link && (
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="h-6 px-2 text-xs bg-brand-magenta/10 text-brand-magenta hover:bg-brand-magenta/20"
+                  asChild
+                >
+                  <a href={currentItem.link} target="_blank" rel="noreferrer">
+                    <Download className="h-3 w-3 mr-1" />
+                    PDF
+                  </a>
+                </Button>
+              )}
+            </div>
+          </CardContent>
+        </Card>
+
+        <div className="flex items-center justify-between gap-2">
+          <div className="flex gap-1">
+            {items.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setCurrentIndex(idx)}
+                className={`h-1.5 rounded-full transition-all ${
+                  idx === currentIndex
+                    ? "bg-brand-magenta w-6"
+                    : "bg-border/40 w-1.5 hover:bg-border/60"
+                }`}
+              />
+            ))}
+          </div>
+          <div className="flex gap-1">
+            <Button
+              variant="outline"
+              size="sm"
+              className="h-7 px-2 text-xs"
+              onClick={() => setCurrentIndex((prev) => (prev - 1 + items.length) % items.length)}
+            >
+              ←
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              className="h-7 px-2 text-xs"
+              onClick={() => setCurrentIndex((prev) => (prev + 1) % items.length)}
+            >
+              →
+            </Button>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <section className="px-6 py-16">
-      <div className="mx-auto max-w-7xl">
-        <h2 className="headline-2 mb-3 font-display">
-          <span className="text-foreground">Department </span>
-          <span className="bg-brand-gradient bg-clip-text text-transparent">Notice Board</span>
-        </h2>
-        <p className="max-w-2xl text-sm text-foreground sm:text-base font-body mb-8">
-          Stay updated with upcoming events, news, and important announcements from the AI & ML department.
-        </p>
-        <div className="grid md:grid-cols-3 gap-4">
-          <Card className="bg-card/50">
-            <CardHeader>
-              <CardTitle className="text-sm">Latest Announcements</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-xs text-foreground/70">Check back soon for department updates</p>
-            </CardContent>
-          </Card>
-          <Card className="bg-card/50">
-            <CardHeader>
-              <CardTitle className="text-sm">Upcoming Events</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-xs text-foreground/70">Industry seminars and workshops</p>
-            </CardContent>
-          </Card>
-          <Card className="bg-card/50">
-            <CardHeader>
-              <CardTitle className="text-sm">Department News</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-xs text-foreground/70">Faculty research and student achievements</p>
-            </CardContent>
-          </Card>
+      <div className="mx-auto max-w-7xl space-y-8">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <h2 className="headline-2 mb-3 font-display">
+              <span className="text-foreground">Department </span>
+              <span className="bg-brand-gradient bg-clip-text text-transparent">
+                Notice Board
+              </span>
+            </h2>
+            <p className="max-w-2xl text-sm text-foreground sm:text-base font-body">
+              Stay updated with upcoming events, news, and important announcements from the AI & ML department.
+            </p>
+          </div>
+          <Badge className="w-fit rounded-full bg-brand-magenta/15 px-4 py-2 text-xs font-semibold text-brand-magenta border border-brand-magenta/20">
+            Updated weekly
+          </Badge>
+        </div>
+
+        <div className="grid lg:grid-cols-2 gap-8">
+          <div>
+            {renderCarousel("Events", events, "magenta", currentEventIndex, setCurrentEventIndex)}
+          </div>
+          <div>
+            {renderCarousel("News", news, "magenta", currentNewsIndex, setCurrentNewsIndex)}
+          </div>
+        </div>
+
+        <div className="space-y-4">
+          <div className="flex items-center gap-2 px-4 py-3 rounded-xl border-l-4 border-brand-magenta bg-brand-magenta/10">
+            <h3 className="headline-4 font-display text-brand-magenta">Announcements</h3>
+            <Badge className="ml-auto text-xs">{announcements.length}</Badge>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            {announcements.length > 0 ? (
+              announcements.map((notice) => (
+                <Card
+                  key={notice.id}
+                  className="group border border-border/40 bg-card/50 shadow-sm transition hover:-translate-y-1 hover:border-brand-magenta/40 hover:shadow-brand-magenta/5"
+                >
+                  <CardHeader className="pb-2">
+                    <div className="flex items-start justify-between gap-2 mb-2">
+                      <span className="text-xs font-semibold text-foreground/60">{notice.date}</span>
+                      {notice.link && (
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          className="h-6 px-2 text-xs bg-brand-magenta/10 text-brand-magenta hover:bg-brand-magenta/20"
+                          asChild
+                        >
+                          <a href={notice.link} target="_blank" rel="noreferrer">
+                            <Download className="h-3 w-3" />
+                          </a>
+                        </Button>
+                      )}
+                    </div>
+                    <CardTitle className="text-sm font-display text-foreground line-clamp-2">
+                      {notice.title}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="pt-0">
+                    <p className="text-xs text-foreground/70 line-clamp-2">{notice.description}</p>
+                  </CardContent>
+                </Card>
+              ))
+            ) : (
+              <p className="text-xs text-foreground/60 italic col-span-full p-4 text-center">No announcements to display</p>
+            )}
+          </div>
         </div>
       </div>
     </section>
