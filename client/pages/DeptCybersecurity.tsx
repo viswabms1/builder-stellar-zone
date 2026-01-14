@@ -26,8 +26,8 @@ import {
 
 export default function DeptCybersecurity() {
   const specializations = [
-    { icon: Shield, label: "Network Security" },
     { icon: Lock, label: "Cryptography" },
+    { icon: Shield, label: "Network Security" },
     { icon: Eye, label: "Threat Analysis" },
     { icon: AlertCircle, label: "Incident Response" },
   ];
