@@ -287,7 +287,7 @@ export default function DeptMechanical() {
               <Link to={`/academics/engineering/mechanical/faculty/${chairperson.slug}`}>
                 <div className="group relative overflow-hidden rounded-xl border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-orange/10 transition-all cursor-pointer w-fit mx-auto">
                   <div className="relative">
-                    <img src={chairperson.image} alt={chairperson.name} className="h-32 w-32 object-cover object-center group-hover:scale-[1.05] transition-transform duration-500" />
+                    <img src={chairperson.image} alt={chairperson.name} className="h-40 w-40 object-cover object-center group-hover:scale-[1.05] transition-transform duration-500" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
                   </div>
                   <div className="absolute bottom-0 p-2 w-full">
