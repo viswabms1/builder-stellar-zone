@@ -502,7 +502,7 @@ export default function CampusLife() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 md:gap-3">
             {[
               { title: "AI Research Lab", image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=300&h=300&fit=crop" },
               { title: "Campus Innovation Hub", image: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fa16295c3fda14368b934b709019e0e30?format=webp&width=300" },
