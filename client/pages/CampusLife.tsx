@@ -314,100 +314,66 @@ export default function CampusLife() {
         </div>
       </section>
 
-      {/* Campus Life Gallery - Masonry Layout */}
+      {/* Campus Life Gallery - Curated Strip */}
       <section className="px-3 py-10 bg-gradient-to-r from-orange-500/5 to-red-600/5">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
               <span className="text-foreground">Life in </span>
               <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
                 Pictures
               </span>
             </h2>
-            <p className="text-xl text-foreground">
-              Glimpses of the vibrant campus life at DSU
+            <p className="text-lg text-foreground">
+              Curated glimpses of campus moments
             </p>
           </div>
 
-          {/* Masonry Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 auto-rows-max gap-0">
+          {/* Horizontal Scrolling Gallery */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
             {[
               {
-                title: "Campus Tour",
-                category: "Orientation",
-                image:
-                  "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=400&h=300&fit=crop",
-                size: "col-span-1 row-span-2",
-              },
-              {
                 title: "Campus Entrance",
-                category: "Architecture",
                 image:
                   "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fa16295c3fda14368b934b709019e0e30?format=webp&width=800",
-                size: "col-span-1 row-span-2",
               },
               {
                 title: "Performing Arts",
-                category: "Culture",
                 image:
                   "https://static.wixstatic.com/media/a57b29_7432beeeab194cf19d467960322ed7b7~mv2.jpg/v1/fit/w_960,h_960,q_90,enc_avif,quality_auto/a57b29_7432beeeab194cf19d467960322ed7b7~mv2.jpg",
               },
               {
                 title: "Sports Day",
-                category: "Athletics",
                 image:
                   "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=300&h=300&fit=crop",
               },
               {
                 title: "Graduation",
-                category: "Ceremony",
                 image:
                   "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F692a9321c1bd4ab09f4bbb0f31d62fa2?format=webp&width=800",
               },
               {
                 title: "Tech Fair",
-                category: "Innovation",
                 image:
                   "https://images.unsplash.com/photo-1552664730-d307ca884978?w=300&h=300&fit=crop",
               },
               {
-                title: "Food Festival",
-                category: "Culture",
+                title: "Student Life",
                 image:
-                  "https://images.pexels.com/photos/18698231/pexels-photo-18698231.jpeg",
-              },
-              {
-                title: "Study Groups",
-                category: "Academic",
-                image:
-                  "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F216fee584984419caf29c0341644b072?format=webp&width=800",
-                size: "col-span-1 row-span-2",
-              },
-              {
-                title: "Night Life",
-                category: "Social",
-                image:
-                  "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=300&h=300&fit=crop",
+                  "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=400&h=300&fit=crop",
               },
             ].map((item, index) => (
               <div
                 key={index}
-                className={`${item.size || ""} relative group overflow-hidden rounded-none border border-border hover:border-orange-500/50 transition-all duration-300 cursor-pointer`}
+                className="relative group overflow-hidden rounded-none border border-border hover:border-orange-500/50 transition-all duration-300 cursor-pointer aspect-square"
               >
                 <img
                   src={item.image}
                   alt={item.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                  <div>
-                    <h3 className="font-bold text-white text-lg">
-                      {item.title}
-                    </h3>
-                    <Badge variant="secondary" className="mt-2 text-xs">
-                      {item.category}
-                    </Badge>
-                  </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3">
+                  <h3 className="font-bold text-white text-sm">{item.title}</h3>
                 </div>
               </div>
             ))}
