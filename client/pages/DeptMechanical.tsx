@@ -285,7 +285,7 @@ export default function DeptMechanical() {
                 <div className="group relative overflow-hidden rounded-xl border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-orange/10 transition-all cursor-pointer">
                   <div className="relative">
                     <div className="aspect-square w-full"></div>
-                    <img src="https://www.dsu.edu.in/engineering/mechanical-engineering/images/saravanabavan.jpg" alt="Dr. Saravana Bavan D" className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-500" />
+                    <img src="https://www.dsu.edu.in/images/Engineering/ME-dept/faculty/Saravana.jpg" alt="Dr. Saravana Bavan D" className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-500" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
                   </div>
                   <div className="absolute bottom-0 p-3 w-full">
