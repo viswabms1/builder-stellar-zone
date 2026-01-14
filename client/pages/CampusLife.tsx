@@ -137,13 +137,13 @@ export default function CampusLife() {
             {[
               {
                 icon: Rocket,
-                title: "Innovation & Research Culture",
+                title: "Research & Innovation",
                 description:
-                  "Students engage in cutting-edge research projects alongside faculty, AI labs, hackathons, and innovation challenges.",
+                  "Hands-on research projects, AI labs, NASA Space Apps, and innovation competitions where students turn ideas into impact.",
                 highlights: [
-                  "NASA Space Apps Challenge",
-                  "AI & ML Research Labs",
-                  "Hackathons & Innovation Competitions",
+                  "Published research across AI, materials, energy",
+                  "International hackathons and competitions",
+                  "Faculty-led research mentorship",
                 ],
                 image:
                   "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop",
@@ -151,13 +151,13 @@ export default function CampusLife() {
               },
               {
                 icon: Target,
-                title: "Leadership & Professional Growth",
+                title: "Leadership & Careers",
                 description:
-                  "Industry talks, tech symposiums, professional certifications, and student chapters (IEEE, ACM, SAE) prepare students for global careers.",
+                  "Industry partnerships, tech symposiums, and professional chapters (IEEE, ACM, SAE, NASSCOM) accelerate career readiness.",
                 highlights: [
-                  "Tech Symposiums & Conferences",
-                  "Industry Expert Sessions",
-                  "Student Professional Bodies",
+                  "Industry expert talks & networking",
+                  "Professional certifications",
+                  "Student-led technical societies",
                 ],
                 image:
                   "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop",
@@ -165,13 +165,13 @@ export default function CampusLife() {
               },
               {
                 icon: Music,
-                title: "Culture, Arts & Expression",
+                title: "Creative Expression",
                 description:
-                  "Performing arts, cultural nights, and creative clubs foster balance, diversity of thought, and holistic development.",
+                  "Performing arts, cultural events, and creative clubs balance technical rigor with artistic growth and diversity.",
                 highlights: [
-                  "Performing Arts & Dance",
-                  "Cultural Events & Festivals",
-                  "Creative & Arts Clubs",
+                  "Annual cultural festival & performances",
+                  "Student-run arts organizations",
+                  "Cross-cultural collaboration",
                 ],
                 image:
                   "https://static.wixstatic.com/media/a57b29_7432beeeab194cf19d467960322ed7b7~mv2.jpg/v1/fit/w_960,h_960,q_90,enc_avif,quality_auto/a57b29_7432beeeab194cf19d467960322ed7b7~mv2.jpg",
@@ -179,13 +179,13 @@ export default function CampusLife() {
               },
               {
                 icon: Trophy,
-                title: "Sports, Wellness & Community",
+                title: "Sports & Wellness",
                 description:
-                  "Sports programs, social initiatives, and volunteering build discipline, teamwork, resilience, and commitment to community.",
+                  "Athletic programs, sports meets, and social impact initiatives build teamwork, discipline, and community commitment.",
                 highlights: [
-                  "Sports Meet & Athletic Programs",
-                  "Social Initiatives & Volunteering",
-                  "Wellness & Fitness Programs",
+                  "Competitive sports programs & inter-college meets",
+                  "Community service & volunteering",
+                  "Wellness & fitness initiatives",
                 ],
                 image:
                   "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F4965c58a577f42679515554a2c799501?format=webp&width=800",
