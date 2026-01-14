@@ -139,11 +139,11 @@ export default function CampusLife() {
                 icon: Rocket,
                 title: "Research & Innovation",
                 description:
-                  "Hands-on research projects, AI labs, NASA Space Apps, and innovation competitions where students turn ideas into impact.",
+                  "Hackathons, hands-on projects, AI labs, and innovation challenges where students build, ship, and launch real solutions.",
                 highlights: [
-                  "Published research across AI, materials, energy",
-                  "International hackathons and competitions",
-                  "Faculty-led research mentorship",
+                  "Hackathons & 48-hour innovation sprints",
+                  "NASA Space Apps & international competitions",
+                  "Student-led research labs & mentorship",
                 ],
                 image:
                   "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop",
