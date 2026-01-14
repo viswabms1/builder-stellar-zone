@@ -391,7 +391,7 @@ export default function CampusLife() {
       </section>
 
       {/* Student Organizations with Images */}
-      <section className="px-3 py-10">
+      <section ref={organizationsRef} className={`px-3 py-10 transition-opacity duration-700 ${organizationsVisible ? "opacity-100" : "opacity-0"}`}>
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -500,7 +500,7 @@ export default function CampusLife() {
       </section>
 
       {/* Centre for Performing Arts - Featured Highlight */}
-      <section className="px-3 py-10 bg-gradient-to-r from-orange-500/10 to-red-600/10">
+      <section ref={performingArtsRef} className={`px-3 py-10 bg-gradient-to-r from-orange-500/10 to-red-600/10 transition-opacity duration-700 ${performingArtsVisible ? "opacity-100" : "opacity-0"}`}>
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Video */}
@@ -573,7 +573,7 @@ export default function CampusLife() {
       </section>
 
       {/* Events Timeline with Images */}
-      <section className="px-3 py-10">
+      <section ref={eventsRef} className={`px-3 py-10 transition-opacity duration-700 ${eventsVisible ? "opacity-100" : "opacity-0"}`}>
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -683,7 +683,7 @@ export default function CampusLife() {
       </section>
 
       {/* Student Stories Section */}
-      <section className="px-3 py-10 bg-gradient-to-r from-orange-500/5 to-red-600/5">
+      <section ref={storiesRef} className={`px-3 py-10 bg-gradient-to-r from-orange-500/5 to-red-600/5 transition-opacity duration-700 ${storiesVisible ? "opacity-100" : "opacity-0"}`}>
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -770,7 +770,7 @@ export default function CampusLife() {
       </section>
 
       {/* CTA Section */}
-      <section className="px-3 py-10">
+      <section ref={ctaRef} className={`px-3 py-10 transition-opacity duration-700 ${ctaVisible ? "opacity-100" : "opacity-0"}`}>
         <div className="max-w-4xl mx-auto text-center">
           <div className="bg-gradient-to-r from-orange-500/10 via-red-600/10 to-pink-500/10 rounded-3xl p-12 border border-orange-500/20">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
