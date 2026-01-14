@@ -350,95 +350,136 @@ export default function CampusLife() {
         </div>
       </section>
 
-      {/* ===== AIC-DSU INNOVATION FOUNDATION ===== */}
-      <section className="px-3 py-16 bg-gradient-to-r from-blue-500/10 to-blue-600/10">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            {/* Left: Content */}
-            <div className="space-y-6">
-              <div>
-                <Badge className="bg-blue-500/20 text-blue-300 mb-4 text-sm font-bold px-4 py-1">
-                  Startup Ecosystem
-                </Badge>
-                <h2 className="text-4xl md:text-5xl font-bold mb-4">
-                  <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
-                    From Student Ideas to Funded Startups
-                  </span>
-                </h2>
-              </div>
+      {/* ===== ENTREPRENEURSHIP ECOSYSTEM ===== */}
+      <section className="px-3 py-16 bg-gradient-to-b from-blue-500/10 via-transparent to-blue-500/5">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
+                DSU's Entrepreneurship Ecosystem
+              </span>
+            </h2>
+            <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
+              15+ years of nurturing innovators—from the IEDC (2009) to today's AIC-DSU backed by NITI Aayog & Government of India
+            </p>
+          </div>
 
-              <p className="text-lg text-foreground/85 leading-relaxed">
-                <strong>AIC-DSU Innovation Foundation</strong> is an official Atal Incubation Center transforming student hackathons and projects into scalable startups with institutional backing and mentorship.
-              </p>
+          {/* Two Pillars: Heritage + Modern */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* DERBI Foundation - Heritage */}
+            <Card className="overflow-hidden border border-blue-500/30 bg-gradient-to-br from-slate-900/60 to-slate-900/30 rounded-lg hover:border-blue-500/50 transition-colors">
+              <CardHeader className="space-y-4">
+                <div>
+                  <Badge className="bg-blue-500/20 text-blue-300 mb-4 text-xs font-bold px-3 py-1">
+                    Est. 2009
+                  </Badge>
+                  <h3 className="text-2xl font-bold text-foreground mb-2">DERBI Foundation</h3>
+                  <p className="text-sm text-blue-400">Innovation & Entrepreneurship Development Centre</p>
+                </div>
 
-              <div className="space-y-3">
-                <div className="flex items-start gap-3">
-                  <Rocket className="w-5 h-5 text-blue-500 flex-shrink-0 mt-1" />
-                  <div>
-                    <h3 className="font-semibold text-foreground">Idea to Incubation</h3>
-                    <p className="text-sm text-foreground/70">Student projects and hackathon winners get mentorship, workspace, and resources to launch startups.</p>
+                <p className="text-foreground/85 leading-relaxed">
+                  "All started with a seed of thought, subsequent small steps and a simple decision"—DERBI was established to nurture entrepreneurship among students and faculty of Dayananda Sagar Institutions, laying the foundation for DSU's innovation culture.
+                </p>
+
+                <div className="space-y-2">
+                  <div className="flex items-center gap-2 text-sm text-foreground">
+                    <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
+                    Student entrepreneurship mentorship
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-foreground">
+                    <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
+                    Business ideation workshops
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-foreground">
+                    <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
+                    Early-stage startup support
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3">
-                  <Star className="w-5 h-5 text-blue-500 flex-shrink-0 mt-1" />
-                  <div>
-                    <h3 className="font-semibold text-foreground">NITI Aayog & AIM Backed</h3>
-                    <p className="text-sm text-foreground/70">Part of the Atal Innovation Mission (AIM) network supported by Government of India.</p>
+                <a
+                  href="https://derbifoundation.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                >
+                  <Button
+                    variant="outline"
+                    className="border-blue-500/50 text-blue-400 hover:bg-blue-500/10 px-6 py-2 text-sm rounded-lg transition-all duration-300 group w-full"
+                  >
+                    Learn More
+                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </a>
+              </CardHeader>
+            </Card>
+
+            {/* AIC-DSU - Modern */}
+            <Card className="overflow-hidden border border-blue-500/50 bg-gradient-to-br from-blue-500/20 to-blue-600/10 rounded-lg hover:border-blue-400 transition-colors">
+              <CardHeader className="space-y-4">
+                <div>
+                  <Badge className="bg-blue-500/30 text-blue-200 mb-4 text-xs font-bold px-3 py-1">
+                    Govt. Backed
+                  </Badge>
+                  <h3 className="text-2xl font-bold text-foreground mb-2">AIC-DSU Innovation Foundation</h3>
+                  <p className="text-sm text-blue-300">Atal Incubation Center | NITI Aayog & AIM</p>
+                </div>
+
+                <p className="text-foreground/85 leading-relaxed">
+                  Building on DERBI's legacy, AIC-DSU is an official Atal Incubation Center transforming student hackathons and projects into scalable startups with government backing, mentorship, and investor networks.
+                </p>
+
+                <div className="space-y-2">
+                  <div className="flex items-center gap-2 text-sm text-foreground">
+                    <span className="w-2 h-2 bg-blue-400 rounded-full"></span>
+                    25+ startups incubated
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-foreground">
+                    <span className="w-2 h-2 bg-blue-400 rounded-full"></span>
+                    ₹50Cr+ funding raised
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-foreground">
+                    <span className="w-2 h-2 bg-blue-400 rounded-full"></span>
+                    150+ jobs created
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3">
-                  <Globe className="w-5 h-5 text-blue-500 flex-shrink-0 mt-1" />
-                  <div>
-                    <h3 className="font-semibold text-foreground">Network & Funding</h3>
-                    <p className="text-sm text-foreground/70">Access to investor networks, government grants, and partnerships for growth.</p>
+                <a
+                  href="https://aicdsu.foundation"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                >
+                  <Button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 text-sm rounded-lg transition-all duration-300 group w-full">
+                    Explore AIC-DSU
+                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </a>
+              </CardHeader>
+            </Card>
+          </div>
+
+          {/* Timeline showing progression */}
+          <div className="mt-16 pt-12 border-t border-blue-500/20">
+            <h3 className="text-2xl font-bold text-center text-foreground mb-10">
+              The Entrepreneurship Journey
+            </h3>
+
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+              {[
+                { year: "2009", title: "DERBI Founded", desc: "Entrepreneurship culture begins" },
+                { year: "2015", title: "Growth Phase", desc: "100+ startups mentored" },
+                { year: "2021", title: "AIC-DSU Launched", desc: "Government recognition" },
+                { year: "Today", title: "Scaling Impact", desc: "25+ active startups" },
+              ].map((milestone, idx) => (
+                <div key={idx} className="text-center">
+                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 border border-blue-500/50 mb-4 mx-auto">
+                    <span className="font-bold text-blue-300 text-sm">{idx + 1}</span>
                   </div>
+                  <p className="text-lg font-bold text-blue-400 mb-1">{milestone.year}</p>
+                  <h4 className="font-semibold text-foreground mb-2">{milestone.title}</h4>
+                  <p className="text-sm text-foreground/70">{milestone.desc}</p>
                 </div>
-              </div>
-
-              <a
-                href="https://aicdsu.foundation"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-              >
-                <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-base font-semibold rounded-full transition-all duration-300 group">
-                  Explore AIC-DSU
-                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-                </Button>
-              </a>
-            </div>
-
-            {/* Right: Stats/Impact */}
-            <div className="grid grid-cols-2 gap-6">
-              <Card className="bg-gradient-to-br from-blue-500/20 to-blue-600/20 border border-blue-500/30 rounded-lg p-6 text-center hover:border-blue-500/50 transition-colors">
-                <p className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-blue-500 bg-clip-text text-transparent mb-2">
-                  25+
-                </p>
-                <p className="text-sm font-semibold text-foreground">Startups Incubated</p>
-              </Card>
-
-              <Card className="bg-gradient-to-br from-blue-500/20 to-blue-600/20 border border-blue-500/30 rounded-lg p-6 text-center hover:border-blue-500/50 transition-colors">
-                <p className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-blue-500 bg-clip-text text-transparent mb-2">
-                  100%
-                </p>
-                <p className="text-sm font-semibold text-foreground">Student-Founded</p>
-              </Card>
-
-              <Card className="bg-gradient-to-br from-blue-500/20 to-blue-600/20 border border-blue-500/30 rounded-lg p-6 text-center hover:border-blue-500/50 transition-colors">
-                <p className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-blue-500 bg-clip-text text-transparent mb-2">
-                  ₹50Cr+
-                </p>
-                <p className="text-sm font-semibold text-foreground">Funding Raised</p>
-              </Card>
-
-              <Card className="bg-gradient-to-br from-blue-500/20 to-blue-600/20 border border-blue-500/30 rounded-lg p-6 text-center hover:border-blue-500/50 transition-colors">
-                <p className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-blue-500 bg-clip-text text-transparent mb-2">
-                  150+
-                </p>
-                <p className="text-sm font-semibold text-foreground">Jobs Created</p>
-              </Card>
+              ))}
             </div>
           </div>
         </div>
