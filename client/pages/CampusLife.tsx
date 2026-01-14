@@ -539,16 +539,16 @@ export default function CampusLife() {
       >
         <div className="max-w-4xl mx-auto text-center">
           <div className="bg-gradient-to-r from-orange-500/10 via-red-600/10 to-pink-500/10 rounded-3xl p-12 border border-orange-500/20">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Ready to experience
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+              Ready to build the future at
               <span className="bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
                 {" "}
-                a campus designed for the future
+                India's AI-First University
               </span>
               ?
             </h2>
-            <p className="text-xl text-foreground/80 mb-8 max-w-2xl mx-auto">
-              Where research, innovation, leadership, and community converge to build AI-ready, globally competent professionals.
+            <p className="text-lg text-foreground/80 mb-8 max-w-2xl mx-auto leading-relaxed">
+              Join a community where research, innovation, and global collaboration shape the next generation of leaders and innovators.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10">
