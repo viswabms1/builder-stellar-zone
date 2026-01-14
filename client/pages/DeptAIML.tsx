@@ -630,3 +630,183 @@ export default function DeptAIML() {
     </div>
   );
 }
+
+// Supporting Components
+
+function EligibilityAndFees() {
+  const [expandedProgram, setExpandedProgram] = useState<string | null>(null);
+  const engineeringSchool = schools.find(s => s.name === "School of Engineering");
+  const aimlPrograms = engineeringSchool?.categories
+    .flatMap(cat => cat.programs)
+    .filter(p => {
+      const name = p.name.toLowerCase();
+      const isBTechAIML = name.includes("b.tech") && (name.includes("artificial intelligence") || name.includes("ai & ml"));
+      const isMTechAI = name === "m.tech artificial intelligence" || name.includes("m.tech") && name.includes("artificial intelligence");
+      return isBTechAIML || isMTechAI;
+    }) || [];
+
+  return (
+    <section className="px-6 py-8 bg-gradient-to-r from-brand-blue/5 via-brand-blue/5 to-brand-orange/5">
+      <div className="max-w-6xl mx-auto">
+        <div className="mb-12">
+          <h2 className="headline-2 font-display mb-3">Eligibility & Fees</h2>
+          <p className="text-foreground/80 font-body max-w-3xl">
+            AI & ML programs at School of Engineering, DSU offer both undergraduate and postgraduate pathways.
+          </p>
+        </div>
+        <div className="space-y-4">
+          {aimlPrograms.map((program, idx) => (
+            <Card
+              key={idx}
+              className="border border-border/50 bg-card/50 backdrop-blur-sm cursor-pointer hover:shadow-lg transition-all"
+              onClick={() => setExpandedProgram(expandedProgram === program.name ? null : program.name)}
+            >
+              <CardHeader className="pb-3">
+                <div className="flex items-start justify-between">
+                  <div className="flex-1">
+                    <CardTitle className="text-lg font-display">{program.name}</CardTitle>
+                  </div>
+                  <ChevronDown
+                    className={`w-5 h-5 text-brand-magenta transition-transform ${
+                      expandedProgram === program.name ? "rotate-180" : ""
+                    }`}
+                  />
+                </div>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function LabsFacilitiesCarousel() {
+  const [currentLabIndex, setCurrentLabIndex] = useState(0);
+  const labs = [
+    { title: "NVIDIA GPU Lab", image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop" },
+    { title: "AI Research Studio", image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1200&auto=format&fit=crop" },
+    { title: "Deep Learning Center", image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop" },
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentLabIndex((prev) => (prev + 1) % labs.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [labs.length]);
+
+  const currentLab = labs[currentLabIndex];
+
+  return (
+    <section className="px-6 py-16 bg-gradient-to-r from-brand-blue/5 to-brand-blue/5">
+      <div className="max-w-7xl mx-auto space-y-6">
+        <div className="flex items-center justify-between">
+          <div>
+            <h2 className="headline-3 mb-2 font-display">Labs & Facilities</h2>
+            <p className="text-sm text-foreground/80 font-body">State-of-the-art infrastructure for hands-on learning</p>
+          </div>
+        </div>
+        <Card className="overflow-hidden rounded-3xl border-2 border-border/40">
+          <div className="relative h-80">
+            <img src={currentLab.image} alt={currentLab.title} className="w-full h-full object-cover" />
+          </div>
+          <CardContent className="p-6">
+            <CardTitle className="font-display text-2xl">{currentLab.title}</CardTitle>
+          </CardContent>
+        </Card>
+      </div>
+    </section>
+  );
+}
+
+function AccreditationDocuments() {
+  const documents = [
+    { title: "Board of Studies", abbr: "BOS", url: "https://www.dsu.edu.in/images/Engineering/CSE-AIML/accreditation/BOS.pdf" },
+    { title: "Program Educational Objectives", abbr: "PEO", url: "https://www.dsu.edu.in/images/Engineering/CSE-AIML/accreditation/PEO.pdf" },
+    { title: "Program Outcomes", abbr: "PO", url: "https://www.dsu.edu.in/images/Engineering/CSE-AIML/accreditation/PO.pdf" },
+    { title: "Program Specific Outcomes", abbr: "PSO", url: "https://www.dsu.edu.in/images/Engineering/CSE-AIML/accreditation/PSO.pdf" },
+  ];
+
+  return (
+    <section className="px-6 py-12 bg-background/50">
+      <div className="mx-auto max-w-6xl">
+        <div className="mb-8">
+          <h3 className="text-sm font-semibold text-foreground/60 uppercase tracking-wider mb-2">Accreditation Documents</h3>
+        </div>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+          {documents.map((doc, idx) => (
+            <a
+              key={idx}
+              href={doc.url}
+              target="_blank"
+              rel="noreferrer"
+              className="group relative rounded-lg border border-border/30 bg-card/30 p-4 transition-all hover:border-brand-blue/40 hover:bg-card/50"
+            >
+              <div className="flex items-center gap-3">
+                <FileText className="h-5 w-5 text-brand-blue" />
+                <div>
+                  <div className="text-xs font-semibold text-brand-blue">{doc.abbr}</div>
+                  <p className="text-xs text-foreground/70 line-clamp-2">{doc.title}</p>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function NoticeBoard() {
+  return (
+    <section className="px-6 py-16">
+      <div className="mx-auto max-w-7xl">
+        <h2 className="headline-2 mb-3 font-display">
+          <span className="text-foreground">Department </span>
+          <span className="bg-brand-gradient bg-clip-text text-transparent">Notice Board</span>
+        </h2>
+        <p className="max-w-2xl text-sm text-foreground sm:text-base font-body mb-8">
+          Stay updated with upcoming events, news, and important announcements from the AI & ML department.
+        </p>
+        <div className="grid md:grid-cols-3 gap-4">
+          <Card className="bg-card/50">
+            <CardHeader>
+              <CardTitle className="text-sm">Latest Announcements</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-xs text-foreground/70">Check back soon for department updates</p>
+            </CardContent>
+          </Card>
+          <Card className="bg-card/50">
+            <CardHeader>
+              <CardTitle className="text-sm">Upcoming Events</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-xs text-foreground/70">Industry seminars and workshops</p>
+            </CardContent>
+          </Card>
+          <Card className="bg-card/50">
+            <CardHeader>
+              <CardTitle className="text-sm">Department News</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-xs text-foreground/70">Faculty research and student achievements</p>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function CurriculumLibrary() {
+  return (
+    <section className="px-6 py-12">
+      <div className="max-w-6xl mx-auto">
+        <h3 className="text-sm font-semibold text-foreground/60 uppercase tracking-wider mb-2">Curriculum</h3>
+        <p className="text-sm text-foreground/80 mb-8">Program curriculum documents available upon request</p>
+      </div>
+    </section>
+  );
+}
