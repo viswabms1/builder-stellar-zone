@@ -202,18 +202,16 @@ export default function DeptCybersecurity() {
       {/* Leadership Section */}
       <section className="px-3 py-8">
         <div className="max-w-7xl mx-auto">
-          <div className="flex items-center justify-between mb-8">
-            <h2 className="headline-3 font-display">Department Leadership</h2>
-            <Link to="/academics/engineering/cybersecurity/faculty">
-              <Button variant="outline" className="border-brand-blue/40 hover:bg-brand-blue/10">
-                Explore full faculty list
-              </Button>
-            </Link>
+          <h2 className="headline-3 font-display mb-8">Department Leadership</h2>
+          <div className="max-w-4xl mb-12 p-6 rounded-2xl bg-card/40 border border-brand-blue/20">
+            <h3 className="headline-4 font-display mb-3">Message from the Chairperson</h3>
+            <p className="text-foreground/90 font-body leading-relaxed">
+              The Cybersecurity department at DSU emphasizes rigorous technical foundations, ethical security practices, and applied problem-solving. Our goal is to prepare graduates who can secure digital systems across industry, government, and critical infrastructure.
+            </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4">
-            {/* Chairperson */}
+          <div className="grid gap-6 lg:grid-cols-2 items-start">
             <div>
-              <p className="text-xs font-semibold text-brand-blue uppercase tracking-wider mb-2">Associate Professor & Chairperson</p>
+              <p className="text-xs font-semibold text-brand-blue uppercase tracking-wider mb-4">Associate Professor & Chairperson</p>
               <Link to="/academics/engineering/cybersecurity/faculty/dr-dilip-kumar-jang-bahadur-saini">
                 <div className="group relative overflow-hidden rounded-xl border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-blue/10 transition-all cursor-pointer">
                   <div className="relative">
