@@ -10,7 +10,7 @@ function make(name: string) {
 const BASE_URL = "https://www.dsu.edu.in";
 
 export const mechFaculty: Faculty[] = [
-  { name: "Dr. Saravana Bavan D", title: "Chairperson - Mechanical Engineering", image: `${BASE_URL}/images/Engineering/ME-dept/faculty/Saravana.jpg`, qualifications: "M.Tech, Ph.D" },
+  { name: "Dr. Saravana Bavan D", title: "Chairperson - Mechanical Engineering", image: `${BASE_URL}/images/Engineering/Mechanical-dept/SaravanaBavan.png`, qualifications: "M.Tech, Ph.D" },
   { name: "Dr. Viswanathan R", title: "Associate Professor", image: `${BASE_URL}/images/Engineering/ME-dept/faculty/Viswanathan.jpg`, qualifications: "M.Tech, Ph.D" },
   { name: "Dr. Vinayak B Hemadri", title: "Professor", image: `${BASE_URL}/images/Engineering/ME-dept/faculty/Vinayak.jpg`, qualifications: "M.Tech, Ph.D" },
   { name: "Dr. Rahul Kumar", title: "Associate Professor", image: `${BASE_URL}/images/Engineering/ME-dept/faculty/Rahul.jpg`, qualifications: "M.Tech, Ph.D" },
