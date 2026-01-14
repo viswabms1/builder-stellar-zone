@@ -287,6 +287,14 @@ export default function DeptAIDS() {
         </div>
       </section>
 
+      <CurriculumLibrary />
+
+      <EligibilityAndFees />
+
+      <NoticeBoard />
+
+      <AccreditationDocuments />
+
       {/* Quick Links Section */}
       <section className="px-6 py-20">
         <div className="max-w-7xl mx-auto">
