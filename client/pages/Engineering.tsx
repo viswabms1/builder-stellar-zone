@@ -449,7 +449,7 @@ const PG_PROGRAM_CARDS: ProgramCard[] = [
     description:
       "Explore cutting-edge artificial intelligence, generative models, reinforcement learning and responsible AI principles with industry partnerships.",
     image:
-      "https://images.unsplash.com/photo-1535994636912-b5b474f267ea?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1677442d019becad34db82ddfbc51fa08?q=80&w=1600&auto=format&fit=crop",
     link: "/academics/engineering/artificial-intelligence",
     highlights: ["Generative Models", "Reinforcement Learning", "Research"],
     overlay:
