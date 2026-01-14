@@ -527,7 +527,7 @@ export default function CampusLife() {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-0">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-0">
             {[
               {
                 icon: Star,
@@ -536,6 +536,7 @@ export default function CampusLife() {
                   "https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=400&h=300&fit=crop",
                 duration: "5 Days",
                 attendance: "50,000+",
+                category: "Cultural",
               },
               {
                 icon: Trophy,
@@ -544,6 +545,7 @@ export default function CampusLife() {
                   "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F4965c58a577f42679515554a2c799501?format=webp&width=800",
                 duration: "1 Week",
                 attendance: "15,000+",
+                category: "Sports",
               },
               {
                 icon: Mic,
@@ -552,23 +554,7 @@ export default function CampusLife() {
                   "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop",
                 duration: "3 Days",
                 attendance: "20,000+",
-              },
-              {
-                icon: Palette,
-                title: "Cultural Nights",
-                image:
-                  "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=300&fit=crop",
-                duration: "Monthly",
-                attendance: "5,000+",
-              },
-              {
-                icon: Rocket,
-                title: "NASA Space Apps Challenge 2025",
-                video:
-                  "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F9b4ce4c4527c4bcf85d247f9239568af?alt=media&token=fcd9b1d7-1f72-430d-8789-96c4226f5db9&apiKey=4aa279a8430d441dba9c55f659831878",
-                isVideo: true,
-                duration: "Online",
-                attendance: "International",
+                category: "Technology",
               },
               {
                 icon: Heart,
@@ -577,35 +563,31 @@ export default function CampusLife() {
                   "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=400&h=300&fit=crop",
                 duration: "Ongoing",
                 attendance: "2,000+",
+                category: "Social Impact",
               },
             ].map((event, index) => (
               <Card
                 key={index}
-                className={`group overflow-hidden hover:shadow-lg hover:shadow-brand-magenta/10 transition-all duration-500 hover:-translate-y-2 backdrop-blur-sm border rounded-none ${
-                  index % 3 === 0
+                className={`group overflow-hidden hover:shadow-lg hover:shadow-brand-magenta/10 transition-all duration-500 hover:-translate-y-2 backdrop-blur-sm border rounded-none scroll-fade-in-up ${
+                  index % 4 === 0
                     ? "bg-orange-500/10 border-orange-500/20"
-                    : index % 3 === 1
+                    : index % 4 === 1
                       ? "bg-blue-500/10 border-blue-500/20"
-                      : "bg-purple-500/10 border-purple-500/20"
+                      : index % 4 === 2
+                        ? "bg-purple-500/10 border-purple-500/20"
+                        : "bg-green-500/10 border-green-500/20"
                 }`}
+                style={{
+                  animation: `slideInUp 0.6s ease-out ${index * 0.08}s both`,
+                }}
               >
                 <div className="relative overflow-hidden bg-black aspect-video">
-                  {event.isVideo ? (
-                    <video
-                      src={event.video}
-                      controls
-                      className="w-full h-full"
-                    />
-                  ) : (
-                    <>
-                      <img
-                        src={event.image}
-                        alt={event.title}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                      />
-                      <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors"></div>
-                    </>
-                  )}
+                  <img
+                    src={event.image}
+                    alt={event.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors"></div>
                 </div>
                 <CardHeader>
                   <div className="flex items-center justify-between mb-4">
@@ -614,7 +596,7 @@ export default function CampusLife() {
                       {event.duration}
                     </Badge>
                   </div>
-                  <CardTitle className="text-lg font-bold group-hover:text-orange-500 transition-colors">
+                  <CardTitle className="text-lg font-bold group-hover:text-orange-500 transition-colors group-hover:-translate-y-1">
                     {event.title}
                   </CardTitle>
                   <Badge
@@ -626,6 +608,19 @@ export default function CampusLife() {
                 </CardHeader>
               </Card>
             ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <Link to="/all-events" className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2 focus-visible:ring-offset-background inline-block">
+              <Button
+                variant="outline"
+                size="lg"
+                className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-foreground px-10 py-6 text-lg font-semibold rounded-full inline-flex items-center gap-2"
+              >
+                View All Events
+                <ChevronRight className="w-5 h-5" />
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
