@@ -43,21 +43,14 @@ import {
 export default function CampusLife() {
   const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const facilitiesRef = useRef<HTMLDivElement>(null);
-  const galleryRef = useRef<HTMLDivElement>(null);
-  const organizationsRef = useRef<HTMLDivElement>(null);
-  const performingArtsRef = useRef<HTMLDivElement>(null);
-  const eventsRef = useRef<HTMLDivElement>(null);
-  const storiesRef = useRef<HTMLDivElement>(null);
-  const ctaRef = useRef<HTMLDivElement>(null);
 
-  const { isVisible: facilitiesVisible } = useScrollTrigger();
-  const { isVisible: galleryVisible } = useScrollTrigger();
-  const { isVisible: organizationsVisible } = useScrollTrigger();
-  const { isVisible: performingArtsVisible } = useScrollTrigger();
-  const { isVisible: eventsVisible } = useScrollTrigger();
-  const { isVisible: storiesVisible } = useScrollTrigger();
-  const { isVisible: ctaVisible } = useScrollTrigger();
+  const { elementRef: facilitiesRef, isVisible: facilitiesVisible } = useScrollTrigger();
+  const { elementRef: galleryRef, isVisible: galleryVisible } = useScrollTrigger();
+  const { elementRef: organizationsRef, isVisible: organizationsVisible } = useScrollTrigger();
+  const { elementRef: performingArtsRef, isVisible: performingArtsVisible } = useScrollTrigger();
+  const { elementRef: eventsRef, isVisible: eventsVisible } = useScrollTrigger();
+  const { elementRef: storiesRef, isVisible: storiesVisible } = useScrollTrigger();
+  const { elementRef: ctaRef, isVisible: ctaVisible } = useScrollTrigger();
 
   const toggleMute = () => {
     if (videoRef.current) {
