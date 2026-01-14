@@ -266,6 +266,12 @@ export default function DeptCybersecurity() {
         </div>
       </section>
 
+      <CurriculumLibrary />
+
+      <AccreditationDocuments />
+
+      <NoticeBoard />
+
       {/* Quick Links Section */}
       <section className="px-3 py-10">
         <div className="max-w-7xl mx-auto">
