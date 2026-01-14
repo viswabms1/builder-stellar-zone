@@ -53,7 +53,7 @@ export default function CampusLife() {
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero Section with Video Background */}
       <section className="relative h-[600px] overflow-hidden">
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 hero-zoom-video">
           <video
             ref={videoRef}
             src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F6b0c30504ae64c6aba12aa275eeac2e0?alt=media&token=038cd5f6-c13b-43c6-8760-c92abdbbc4dd&apiKey=4aa279a8430d441dba9c55f659831878"
