@@ -102,7 +102,7 @@ export default function CampusLife() {
         >
           <Button
             size="lg"
-            className="bg-black/10 border border-transparent hover:bg-black/20 backdrop-blur-sm text-foreground px-10 py-6 text-lg font-semibold rounded-full inline-flex items-center transition-all duration-300"
+            className="hero-button bg-black/10 border border-transparent hover:bg-black/20 backdrop-blur-sm text-foreground px-10 py-6 text-lg font-semibold rounded-full inline-flex items-center transition-all duration-300"
           >
             Virtual Campus Tour
             <ArrowRight className="w-5 h-5 ml-2" />
