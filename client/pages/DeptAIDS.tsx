@@ -27,10 +27,10 @@ import {
 
 export default function DeptAIDS() {
   const specializations = [
-    { icon: Brain, label: "Machine Learning" },
-    { icon: Database, label: "Big Data Analytics" },
+    { icon: Brain, label: "Artificial Intelligence" },
     { icon: BarChart3, label: "Data Science" },
-    { icon: Brain, label: "Deep Learning" },
+    { icon: Brain, label: "Machine Learning" },
+    { icon: Database, label: "Analytics Systems" },
   ];
 
   const highlights = [
