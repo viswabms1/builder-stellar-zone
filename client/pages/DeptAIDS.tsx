@@ -68,9 +68,9 @@ export default function DeptAIDS() {
               <Sparkles className="w-4 h-4 text-white" />
               <span className="text-sm font-medium text-white font-display">Department of AI & Data Science</span>
             </div>
-            <h1 className="headline-1 text-white leading-tight font-display">Transform Data into Intelligence</h1>
+            <h1 className="headline-1 text-white leading-tight font-display">Department of Artificial Intelligence & Data Science</h1>
             <p className="subheadline text-white/90 max-w-2xl mt-3 font-body">
-              Master the power of artificial intelligence and data science to solve complex business challenges at DSU.
+              An interdisciplinary department at the School of Engineering, DSU, focused on data-driven intelligence, AI systems, and applied analytics for industry and research.
             </p>
             <div className="mt-6 flex flex-wrap gap-2">
               {specializations.map((s, i) => (
