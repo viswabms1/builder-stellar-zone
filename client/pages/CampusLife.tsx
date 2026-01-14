@@ -79,20 +79,20 @@ export default function CampusLife() {
           )}
         </button>
 
-        <div className="relative h-full flex items-start justify-start text-left max-w-7xl mx-auto px-3 pt-8">
-          <div className="rounded-none px-3 md:px-8 py-8 max-w-2xl -ml-6 md:-ml-8">
-            <div className="hero-badge inline-flex items-center px-4 py-2 bg-orange-500/20 rounded-full border border-orange-500/40 mb-4">
+        <div className="relative h-full flex items-start justify-start text-left max-w-7xl mx-auto px-3 pt-8 md:pt-16">
+          <div className="rounded-none px-3 md:px-8 py-8 max-w-3xl">
+            <div className="hero-badge inline-flex items-center px-4 py-2 bg-orange-500/20 rounded-full border border-orange-500/40 mb-6">
               <Rocket className="w-4 h-4 text-orange-300 mr-2" />
-              <span className="text-sm font-medium text-orange-200">
+              <span className="text-xs md:text-sm font-medium text-orange-200">
                 Where Innovation Happens
               </span>
             </div>
 
-            <h1 className="hero-title text-3xl md:text-4xl lg:text-6xl font-bold mb-6 leading-tight text-white">
+            <h1 className="hero-title text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-white">
               Life That Builds the Future
             </h1>
 
-            <p className="hero-title text-base md:text-lg text-white/85 leading-relaxed max-w-2xl">
+            <p className="hero-title text-sm sm:text-base md:text-lg text-white/85 leading-relaxed max-w-2xl">
               At India's AI-First University, campus life seamlessly integrates research, innovation, leadership, and community—shaping graduates who drive global impact.
             </p>
           </div>
