@@ -616,8 +616,9 @@ function EligibilityAndFees() {
     .flatMap(cat => cat.programs)
     .filter(p => {
       const name = p.name.toLowerCase();
-      const isBTechAIML = name.includes("b.tech") && (name.includes("artificial intelligence") || name.includes("ai & ml"));
-      const isMTechAI = name === "m.tech artificial intelligence" || (name.includes("m.tech") && name.includes("artificial intelligence"));
+      // Only show B.Tech CSE (AI & ML) and M.Tech Artificial Intelligence
+      const isBTechAIML = name === "b.tech computer science & engineering (artificial intelligence & machine learning)";
+      const isMTechAI = name === "m.tech artificial intelligence";
       return isBTechAIML || isMTechAI;
     }) || [];
 
