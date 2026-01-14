@@ -96,8 +96,8 @@ export default function DeptAIDS() {
       <section className="px-6 py-8 bg-gradient-to-r from-brand-blue/5 via-brand-blue/5 to-brand-blue/5 border-y border-border/30">
         <div className="max-w-6xl mx-auto">
           <div className="mb-8">
-            <h2 className="headline-2 font-display mb-2">Programs Offered</h2>
-            <p className="text-foreground/80 font-body">Choose your pathway to AI and data science excellence</p>
+            <h2 className="headline-2 font-display mb-2">Academic Programs</h2>
+            <p className="text-foreground/80 font-body">Undergraduate and postgraduate programs designed to build strong foundations in AI, data science, and analytics, with pathways to industry and research careers.</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {/* B.Tech Program */}
