@@ -147,7 +147,13 @@ export default function DeptCybersecurity() {
       <section className="px-3 py-8">
         <div className="max-w-6xl mx-auto grid lg:grid-cols-3 gap-5 items-start">
           <div className="lg:col-span-2 space-y-3">
-            <h2 className="headline-3 font-display">Overview</h2>
+            <div>
+              <h2 className="headline-3 font-display mb-2">About the Department</h2>
+              <p className="text-foreground/90 font-body mb-4">
+                The Department of Cybersecurity at DSU focuses on securing digital infrastructure through strong foundations in computer science, security engineering, and applied cyber defense.
+              </p>
+            </div>
+            <h3 className="headline-4 font-display">Overview</h3>
             <p className="text-foreground leading-relaxed font-body">
               B.Tech CSE (Cybersecurity) is designed to address the industry's increasing demand for skilled security professionals in the public and private sector. The program covers core computer science subjects as well as cybersecurity-specific courses, with emphasis on nurturing students with the knowledge and skills required to secure computers, detect and analyze attacks and threats, respond to attacks, and develop security policies, procedures, and standards.
             </p>
