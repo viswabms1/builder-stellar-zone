@@ -274,9 +274,9 @@ export default function CampusLife() {
                 program: "B.Tech AI & Robotics",
                 year: "3rd Year",
                 achievement:
-                  "Led research on AI-powered mental health diagnostics using multimodal learning (voice + facial data), achieving 20% accuracy improvement.",
+                  "Built an AI-powered mental health chatbot at DSU's AI Hackathon. Won 1st place; internship offer from TCS for AI product development.",
                 quote:
-                  "Working on AI projects alongside faculty changed how I think about engineering.",
+                  "The hackathon pushed me to ship real code in 48 hours. That experience landed me an internship before graduation.",
                 image:
                   "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=500&fit=crop",
               },
@@ -285,9 +285,9 @@ export default function CampusLife() {
                 program: "B.Tech Mechanical Engineering",
                 year: "4th Year",
                 achievement:
-                  "Developed a scaled-down test rig for thermal analysis in wheel systems, published in Journal of Thermal Science and Engineering Applications.",
+                  "Designed & prototyped a thermal testing rig in campus labs. Turned project into startup idea; currently in DSU Incubator with 3 co-founders.",
                 quote:
-                  "Campus labs gave me the tools to turn ideas into published research.",
+                  "Campus labs and mentor support helped us validate an idea into a real business. We're now building a product.",
                 image:
                   "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=400&h=500&fit=crop",
               },
@@ -296,9 +296,9 @@ export default function CampusLife() {
                 program: "B.Tech Materials Science",
                 year: "2nd Year",
                 achievement:
-                  "Contributing to perovskite solar cell stability research under faculty mentorship, part of DSU's renewable energy innovation pipeline.",
+                  "Participated in renewable energy innovation challenge; developed solar cell testing protocol. Recruited into faculty research lab + secured internship at IIT.",
                 quote:
-                  "Faculty mentorship and peer collaboration created the environment for real impact.",
+                  "Taking on student-led projects opened doors to real research opportunities and career paths I didn't expect.",
                 image:
                   "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=400&h=500&fit=crop",
               },
