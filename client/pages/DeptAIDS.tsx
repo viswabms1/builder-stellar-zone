@@ -168,7 +168,13 @@ export default function DeptAIDS() {
       <section className="px-6 py-16">
         <div className="max-w-6xl mx-auto grid lg:grid-cols-3 gap-10 items-start">
           <div className="lg:col-span-2 space-y-6">
-            <h2 className="headline-3 font-display">Overview</h2>
+            <div>
+              <h2 className="headline-3 font-display mb-2">About the Department</h2>
+              <p className="text-foreground/90 font-body mb-4">
+                The Department of Artificial Intelligence & Data Science at DSU focuses on the theory, systems, and applications of intelligent data-driven technologies across engineering and applied domains.
+              </p>
+            </div>
+            <h3 className="headline-4 font-display">Overview</h3>
             <p className="text-foreground leading-relaxed font-body">
               Artificial Intelligence and Data Science at School of Engineering, DSU is a discipline that concerns scientific methodologies, processes, and techniques drawn from statistics, cognitive science, and computing. The B.Tech program equips students with skills to extract knowledge from structured and unstructured data through machine learning, big data analytics, and data science specializations. The M.Tech Artificial Intelligence and Data Science program provides advanced research pathways in generative AI, large-scale data systems, and data engineering architectures. Together, these programs transform students into leaders who deliver impactful AI and data science solutions across business, healthcare, finance, and emerging sectors.
             </p>
