@@ -798,4 +798,46 @@
   .publication-card {
     animation: slideInUp 0.5s ease-out;
   }
+
+  /* Hero section cinematic animations */
+  @keyframes cinematicZoomIn {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.05);
+    }
+  }
+
+  @keyframes heroTextFadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .hero-zoom-video {
+    animation: cinematicZoomIn 10s ease-out forwards;
+  }
+
+  .hero-badge {
+    animation: heroTextFadeUp 0.8s ease-out 0.4s both;
+  }
+
+  .hero-title {
+    animation: heroTextFadeUp 0.8s ease-out 0.6s both;
+  }
+
+  .hero-button {
+    animation: heroTextFadeUp 0.8s ease-out 0.8s both;
+  }
+
+  .hero-button:hover {
+    box-shadow: 0 8px 24px rgba(229, 138, 0, 0.2);
+    transition: all 0.3s ease-out;
+  }
 }
