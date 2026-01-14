@@ -374,33 +374,33 @@ export default function CampusLife() {
             {[
               {
                 icon: Microscope,
-                title: "Research-Ready Libraries & Labs",
+                title: "Research & Learning Centers",
                 description:
-                  "2M+ books, digital archives, and state-of-the-art research centers supporting AI, engineering, life sciences, and interdisciplinary innovation.",
+                  "Comprehensive library with 2M+ books, digital archives, AI labs, and specialized research centers enabling world-class experimentation and discovery.",
                 image:
                   "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F303af6a81dfe4b5bb9ea6952ee39c3b7?format=webp&width=800",
               },
               {
                 icon: Laptop,
-                title: "Innovation & Collaboration Hubs",
+                title: "Innovation Hubs",
                 description:
-                  "Maker spaces, AI labs, and collaborative work areas where students prototype, test, and develop breakthrough solutions.",
+                  "Maker spaces, AI labs, prototyping facilities, and collaborative studios where research ideas become tangible breakthroughs.",
                 image:
                   "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop",
               },
               {
                 icon: Building,
-                title: "Accommodation & Wellness",
+                title: "Student Living",
                 description:
-                  "Modern hostels with connectivity, fitness facilities, and wellness programs that support student health and productivity.",
+                  "Modern hostels with high-speed connectivity and wellness facilities designed to support academic success and student health.",
                 image:
                   "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F0357dfeb9259438fbb59b6cd31a06e5a?format=webp&width=800",
               },
               {
                 icon: Users,
-                title: "Community & Recreation Spaces",
+                title: "Social & Wellness Spaces",
                 description:
-                  "Multi-cuisine dining, sports complexes, and cultural venues that foster collaboration, creativity, and community.",
+                  "Dining, sports facilities, performance venues, and recreational areas that build community and support holistic student development.",
                 image:
                   "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Feaa91fe5c0b44c02b3ead40543f73fff?format=webp&width=800",
               },
