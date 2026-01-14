@@ -571,12 +571,12 @@ export default function CampusLife() {
                 rel="noreferrer"
               >
                 <Button
-                  variant="outline"
-                  size="lg"
-                  className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-foreground px-12 py-6 text-lg font-semibold rounded-full transition-all"
-                >
-                  Apply for 2026
-                </Button>
+                variant="outline"
+                size="lg"
+                className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-foreground px-12 py-6 text-lg font-semibold rounded-full transition-all duration-300"
+              >
+                Begin Your Journey
+              </Button>
               </a>
             </div>
 
