@@ -111,7 +111,7 @@ export default function CampusLife() {
         </a>
       </section>
 
-      {/* Featured Facilities with Large Images */}
+      {/* Featured Facilities with Tabs */}
       <section className="px-3 py-10 bg-gradient-to-r from-orange-500/5 to-red-600/5">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -123,114 +123,194 @@ export default function CampusLife() {
             </h2>
           </div>
 
-          {/* Two Column Featured Facility Layout */}
-          {[
-            {
-              title: "Modern Hostels",
-              image:
-                "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F0357dfeb9259438fbb59b6cd31a06e5a?format=webp&width=800",
-              description:
-                "Comfortable accommodation with all modern amenities",
-              features: ["AC Rooms", "WiFi", "Study Areas", "Recreation Rooms"],
-              link: "https://myposhtell.com/",
-            },
-            {
-              title: "Sports Complex",
-              image:
-                "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fbc9e4b114ef0435c809830c5bca27d60?format=webp&width=800",
-              description:
-                "State-of-the-art facilities for all sports and fitness",
-              features: [
-                "Swimming Pool",
-                "Gymnasium",
-                "Indoor Sports",
-                "Outdoor Courts",
-              ],
-            },
-            {
-              title: "Central Library",
-              image:
-                "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F303af6a81dfe4b5bb9ea6952ee39c3b7?format=webp&width=800",
-              description:
-                "Extensive collection with digital resources and study spaces",
-              features: [
-                "2M+ Books",
-                "Digital Library",
-                "Study Halls",
-                "Research Centers",
-              ],
-            },
-            {
-              title: "Food Courts",
-              image:
-                "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Feaa91fe5c0b44c02b3ead40543f73fff?format=webp&width=800",
-              description: "Multiple dining options with diverse cuisines",
-              features: [
-                "Multi-cuisine",
-                "Healthy Options",
-                "24/7 Cafes",
-                "Food Courts",
-              ],
-            },
-          ].map((facility, index) => (
-            <div
-              key={index}
-              className={`mb-12 grid grid-cols-1 md:grid-cols-2 gap-4 items-center ${index % 2 === 1 ? "md:grid-cols-2 md:[&>:first-child]:order-2" : ""}`}
-            >
-              {facility.link ? (
-                <a
-                  href={facility.link}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="relative overflow-hidden rounded-none h-80 border border-border hover:border-orange-500/50 transition-colors group block"
-                >
-                  <img
-                    src={facility.image}
-                    alt={facility.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                </a>
-              ) : (
+          <Tabs defaultValue="learn" className="w-full">
+            <TabsList className="grid w-full grid-cols-3 mb-12 rounded-none bg-transparent border-b border-orange-500/20">
+              <TabsTrigger
+                value="learn"
+                className="text-lg font-semibold rounded-none border-b-2 border-transparent data-[state=active]:border-orange-500 data-[state=active]:bg-transparent px-6 py-4"
+              >
+                <BookOpen className="w-5 h-5 mr-2" />
+                Learn
+              </TabsTrigger>
+              <TabsTrigger
+                value="live"
+                className="text-lg font-semibold rounded-none border-b-2 border-transparent data-[state=active]:border-orange-500 data-[state=active]:bg-transparent px-6 py-4"
+              >
+                <Building className="w-5 h-5 mr-2" />
+                Live
+              </TabsTrigger>
+              <TabsTrigger
+                value="play"
+                className="text-lg font-semibold rounded-none border-b-2 border-transparent data-[state=active]:border-orange-500 data-[state=active]:bg-transparent px-6 py-4"
+              >
+                <Trophy className="w-5 h-5 mr-2" />
+                Play
+              </TabsTrigger>
+            </TabsList>
+
+            {/* Learn Tab */}
+            <TabsContent value="learn" className="mt-0">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                 <div className="relative overflow-hidden rounded-none h-80 border border-border hover:border-orange-500/50 transition-colors group">
                   <img
-                    src={facility.image}
-                    alt={facility.title}
+                    src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F303af6a81dfe4b5bb9ea6952ee39c3b7?format=webp&width=800"
+                    alt="Central Library"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
-              )}
-              <div>
-                {facility.link ? (
-                  <a
-                    href={facility.link}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-block text-3xl font-bold text-foreground hover:text-orange-500 transition-colors mb-4"
-                  >
-                    {facility.title}
-                  </a>
-                ) : (
-                  <h3 className="text-3xl font-bold text-foreground mb-4">
-                    {facility.title}
+                <div className="space-y-4">
+                  <h3 className="text-3xl font-bold text-foreground">
+                    Central Library
                   </h3>
-                )}
-                <p className="text-lg text-foreground mb-6">
-                  {facility.description}
-                </p>
-                <div className="space-y-2 mb-6">
-                  {facility.features.map((feature) => (
-                    <div
-                      key={feature}
-                      className="flex items-center text-foreground"
-                    >
+                  <p className="text-lg text-foreground">
+                    Extensive collection with digital resources and study spaces
+                  </p>
+                  <div className="space-y-2">
+                    <div className="flex items-center text-foreground">
                       <span className="w-2 h-2 bg-orange-500 rounded-none mr-3"></span>
-                      {feature}
+                      2M+ Books
                     </div>
-                  ))}
+                    <div className="flex items-center text-foreground">
+                      <span className="w-2 h-2 bg-orange-500 rounded-none mr-3"></span>
+                      Digital Library
+                    </div>
+                    <div className="flex items-center text-foreground">
+                      <span className="w-2 h-2 bg-orange-500 rounded-none mr-3"></span>
+                      Study Halls
+                    </div>
+                    <div className="flex items-center text-foreground">
+                      <span className="w-2 h-2 bg-orange-500 rounded-none mr-3"></span>
+                      Research Centers
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            </TabsContent>
+
+            {/* Live Tab */}
+            <TabsContent value="live" className="mt-0 space-y-12">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div className="relative overflow-hidden rounded-none h-80 border border-border hover:border-orange-500/50 transition-colors group">
+                  <img
+                    src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F0357dfeb9259438fbb59b6cd31a06e5a?format=webp&width=800"
+                    alt="Modern Hostels"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <div className="space-y-4">
+                  <h3 className="text-3xl font-bold text-foreground">
+                    Modern Hostels
+                  </h3>
+                  <p className="text-lg text-foreground">
+                    Comfortable accommodation with all modern amenities
+                  </p>
+                  <div className="space-y-2">
+                    <div className="flex items-center text-foreground">
+                      <span className="w-2 h-2 bg-orange-500 rounded-none mr-3"></span>
+                      AC Rooms
+                    </div>
+                    <div className="flex items-center text-foreground">
+                      <span className="w-2 h-2 bg-orange-500 rounded-none mr-3"></span>
+                      WiFi
+                    </div>
+                    <div className="flex items-center text-foreground">
+                      <span className="w-2 h-2 bg-orange-500 rounded-none mr-3"></span>
+                      Study Areas
+                    </div>
+                    <div className="flex items-center text-foreground">
+                      <span className="w-2 h-2 bg-orange-500 rounded-none mr-3"></span>
+                      Recreation Rooms
+                    </div>
+                  </div>
+                  <a
+                    href="https://myposhtell.com/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-block mt-4"
+                  >
+                    <Button className="bg-orange-500 hover:bg-orange-600 text-foreground">
+                      Learn More <ArrowRight className="w-4 h-4 ml-2" />
+                    </Button>
+                  </a>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center md:[&>:first-child]:order-2">
+                <div className="relative overflow-hidden rounded-none h-80 border border-border hover:border-orange-500/50 transition-colors group">
+                  <img
+                    src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Feaa91fe5c0b44c02b3ead40543f73fff?format=webp&width=800"
+                    alt="Food Courts"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <div className="space-y-4">
+                  <h3 className="text-3xl font-bold text-foreground">
+                    Food Courts
+                  </h3>
+                  <p className="text-lg text-foreground">
+                    Multiple dining options with diverse cuisines
+                  </p>
+                  <div className="space-y-2">
+                    <div className="flex items-center text-foreground">
+                      <span className="w-2 h-2 bg-orange-500 rounded-none mr-3"></span>
+                      Multi-cuisine
+                    </div>
+                    <div className="flex items-center text-foreground">
+                      <span className="w-2 h-2 bg-orange-500 rounded-none mr-3"></span>
+                      Healthy Options
+                    </div>
+                    <div className="flex items-center text-foreground">
+                      <span className="w-2 h-2 bg-orange-500 rounded-none mr-3"></span>
+                      24/7 Cafes
+                    </div>
+                    <div className="flex items-center text-foreground">
+                      <span className="w-2 h-2 bg-orange-500 rounded-none mr-3"></span>
+                      Food Courts
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </TabsContent>
+
+            {/* Play Tab */}
+            <TabsContent value="play" className="mt-0">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div className="relative overflow-hidden rounded-none h-80 border border-border hover:border-orange-500/50 transition-colors group">
+                  <img
+                    src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fbc9e4b114ef0435c809830c5bca27d60?format=webp&width=800"
+                    alt="Sports Complex"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <div className="space-y-4">
+                  <h3 className="text-3xl font-bold text-foreground">
+                    Sports Complex
+                  </h3>
+                  <p className="text-lg text-foreground">
+                    State-of-the-art facilities for all sports and fitness
+                  </p>
+                  <div className="space-y-2">
+                    <div className="flex items-center text-foreground">
+                      <span className="w-2 h-2 bg-orange-500 rounded-none mr-3"></span>
+                      Swimming Pool
+                    </div>
+                    <div className="flex items-center text-foreground">
+                      <span className="w-2 h-2 bg-orange-500 rounded-none mr-3"></span>
+                      Gymnasium
+                    </div>
+                    <div className="flex items-center text-foreground">
+                      <span className="w-2 h-2 bg-orange-500 rounded-none mr-3"></span>
+                      Indoor Sports
+                    </div>
+                    <div className="flex items-center text-foreground">
+                      <span className="w-2 h-2 bg-orange-500 rounded-none mr-3"></span>
+                      Outdoor Courts
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </TabsContent>
+          </Tabs>
         </div>
       </section>
 
