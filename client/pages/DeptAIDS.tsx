@@ -264,7 +264,7 @@ export default function DeptAIDS() {
       <section className="px-6 py-16">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-10 items-start">
           <div>
-            <h2 className="headline-3 mb-4 font-display">Career Prospects</h2>
+            <h2 className="headline-3 mb-4 font-display">Career Pathways</h2>
             <Card className="border border-border/50 bg-card/50">
               <CardContent className="p-6 grid gap-3">
                 {careers.map((c, i) => (
