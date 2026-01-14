@@ -95,8 +95,8 @@ export default function DeptCybersecurity() {
       <section className="px-3 py-8 bg-gradient-to-r from-brand-blue/5 via-brand-blue/5 to-brand-blue/5 border-y border-border/30">
         <div className="max-w-6xl mx-auto">
           <div className="mb-8">
-            <h2 className="headline-2 font-display mb-2">Programs Offered</h2>
-            <p className="text-foreground/80 font-body">Choose your pathway to cybersecurity excellence</p>
+            <h2 className="headline-2 font-display mb-2">Academic Program</h2>
+            <p className="text-foreground/80 font-body">A structured undergraduate program designed to build strong foundations in computer science and cybersecurity principles.</p>
           </div>
           <div className="grid md:grid-cols-2 gap-4">
             {/* B.Tech Program */}
