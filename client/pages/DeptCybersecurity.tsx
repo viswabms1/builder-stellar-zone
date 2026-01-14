@@ -600,10 +600,13 @@ function LabsFacilitiesCarousel() {
   return (
     <section className="px-3 py-8 bg-gradient-to-r from-brand-blue/5 to-brand-blue/5">
       <div className="max-w-7xl mx-auto space-y-3">
+        <div className="space-y-3 mb-4">
+          <p className="text-foreground/80 font-body">Specialized cybersecurity laboratories support hands-on learning in cryptography, secure networks, threat detection, and cyber defense simulations.</p>
+        </div>
         <div className="flex items-center justify-between">
           <div>
             <h2 className="headline-3 mb-2 font-display">Labs & Facilities</h2>
-            <p className="text-sm text-foreground/80 font-body">State-of-the-art infrastructure for cybersecurity learning</p>
+            <p className="text-sm text-foreground/80 font-body">Explore our infrastructure ecosystem</p>
           </div>
           <div className="text-xs text-foreground/60 font-body">
             {currentLabIndex + 1} of {labs.length}
