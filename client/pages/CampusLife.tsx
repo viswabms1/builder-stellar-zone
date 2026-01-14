@@ -570,14 +570,16 @@ export default function CampusLife() {
                 href="https://admissions.dsu.edu.in/"
                 target="_blank"
                 rel="noreferrer"
+                className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
               >
                 <Button
-                variant="outline"
-                size="lg"
-                className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-foreground px-12 py-6 text-lg font-semibold rounded-full transition-all duration-300"
-              >
-                Begin Your Journey
-              </Button>
+                  variant="outline"
+                  size="lg"
+                  className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500/10 hover:border-orange-400 px-12 py-6 text-base font-semibold rounded-full transition-all duration-300"
+                >
+                  Apply Now
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Button>
               </a>
             </div>
 
