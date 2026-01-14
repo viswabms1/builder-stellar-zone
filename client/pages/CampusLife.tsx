@@ -153,11 +153,11 @@ export default function CampusLife() {
                 icon: Target,
                 title: "Leadership & Careers",
                 description:
-                  "Industry partnerships, tech symposiums, and professional chapters (IEEE, ACM, SAE, NASSCOM) accelerate career readiness.",
+                  "Startup incubation, industry partnerships, tech talks, and professional chapters turn student ideas into careers and ventures.",
                 highlights: [
-                  "Industry expert talks & networking",
-                  "Professional certifications",
-                  "Student-led technical societies",
+                  "Student incubator & startup mentorship",
+                  "Industry hiring from hackathons & projects",
+                  "Professional chapters (IEEE, ACM, SAE)",
                 ],
                 image:
                   "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop",
