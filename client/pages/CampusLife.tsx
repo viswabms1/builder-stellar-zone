@@ -458,7 +458,7 @@ export default function CampusLife() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
             {[
               { category: "Innovation & Technology", members: "4,500+", icon: Rocket },
               { category: "Research & Professional Bodies", members: "3,500+", icon: Microscope },
