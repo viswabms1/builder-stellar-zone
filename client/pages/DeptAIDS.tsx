@@ -46,7 +46,7 @@ export default function DeptAIDS() {
     "Data Scientist → Senior Data Scientist → Analytics Manager",
     "Machine Learning Engineer → AI Research Engineer → Technical Lead",
     "Business Analytics → Insights Engineer → Strategy Consultant",
-    "Strong placement record with leading tech and fintech companies",
+    "Graduates work across technology, analytics, fintech, and data-driven sectors",
   ];
 
   return (
