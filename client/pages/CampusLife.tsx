@@ -20,37 +20,27 @@ import {
   Music,
   Trophy,
   BookOpen,
-  Coffee,
-  Utensils,
-  Wifi,
-  Car,
-  Gamepad2,
-  Dumbbell,
-  Palette,
-  Camera,
-  Mic,
-  Drama,
-  Plane,
+  Microscope,
+  Laptop,
   MapPin,
-  Calendar,
-  Clock,
   ChevronRight,
   Rocket,
   Volume2,
   VolumeX,
+  Zap,
+  Target,
+  Globe,
 } from "lucide-react";
 
 export default function CampusLife() {
   const [isMuted, setIsMuted] = useState(true);
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  const { elementRef: facilitiesRef, isVisible: facilitiesVisible } = useScrollTrigger();
-  const { elementRef: galleryRef, isVisible: galleryVisible } = useScrollTrigger();
-  const { elementRef: organizationsRef, isVisible: organizationsVisible } = useScrollTrigger();
-  const { elementRef: performingArtsRef, isVisible: performingArtsVisible } = useScrollTrigger();
-  const { elementRef: eventsRef, isVisible: eventsVisible } = useScrollTrigger();
+  const { elementRef: pillarsRef, isVisible: pillarsVisible } = useScrollTrigger();
   const { elementRef: storiesRef, isVisible: storiesVisible } = useScrollTrigger();
+  const { elementRef: facilitiesRef, isVisible: facilitiesVisible } = useScrollTrigger();
+  const { elementRef: organizationsRef, isVisible: organizationsVisible } = useScrollTrigger();
+  const { elementRef: galleryRef, isVisible: galleryVisible } = useScrollTrigger();
   const { elementRef: ctaRef, isVisible: ctaVisible } = useScrollTrigger();
 
   const toggleMute = () => {
@@ -60,59 +50,9 @@ export default function CampusLife() {
     }
   };
 
-  const eventCategories = [
-    { id: "cultural", label: "Cultural", icon: Music },
-    { id: "sports", label: "Sports", icon: Trophy },
-    { id: "technology", label: "Technology", icon: Rocket },
-    { id: "social-impact", label: "Social Impact", icon: Heart },
-  ];
-
-  const allEvents = [
-    {
-      icon: Star,
-      title: "Annual Fest - DSUFEST",
-      image:
-        "https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=400&h=300&fit=crop",
-      duration: "5 Days",
-      attendance: "50,000+",
-      category: "cultural",
-    },
-    {
-      icon: Trophy,
-      title: "Sports Meet",
-      image:
-        "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F4965c58a577f42679515554a2c799501?format=webp&width=800",
-      duration: "1 Week",
-      attendance: "15,000+",
-      category: "sports",
-    },
-    {
-      icon: Mic,
-      title: "Tech Symposium",
-      image:
-        "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop",
-      duration: "3 Days",
-      attendance: "20,000+",
-      category: "technology",
-    },
-    {
-      icon: Heart,
-      title: "Social Initiatives",
-      image:
-        "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=400&h=300&fit=crop",
-      duration: "Ongoing",
-      attendance: "2,000+",
-      category: "social-impact",
-    },
-  ];
-
-  const filteredEvents = selectedCategory
-    ? allEvents.filter((event) => event.category === selectedCategory)
-    : allEvents;
-
   return (
     <div className="min-h-screen bg-background text-foreground">
-      {/* Hero Section with Video Background */}
+      {/* ===== HERO SECTION ===== */}
       <section className="relative h-[600px] overflow-hidden">
         <div className="absolute inset-0 hero-zoom-video">
           <video
@@ -127,7 +67,6 @@ export default function CampusLife() {
           />
         </div>
 
-        {/* Mute/Unmute Button */}
         <button
           onClick={toggleMute}
           className="absolute top-4 right-8 z-10 p-3 rounded-full bg-black/50 hover:bg-black/70 transition-colors text-white backdrop-blur-sm border border-white/20"
@@ -141,17 +80,21 @@ export default function CampusLife() {
         </button>
 
         <div className="relative h-full flex items-start justify-start text-left max-w-7xl mx-auto px-3 pt-8">
-          <div className="rounded-none px-3 md:px-8 py-8 max-w-xl -ml-6 md:-ml-8">
+          <div className="rounded-none px-3 md:px-8 py-8 max-w-2xl -ml-6 md:-ml-8">
             <div className="hero-badge inline-flex items-center px-4 py-2 bg-orange-500/20 rounded-full border border-orange-500/40 mb-4">
-              <Heart className="w-4 h-4 text-orange-300 mr-2" />
+              <Zap className="w-4 h-4 text-orange-300 mr-2" />
               <span className="text-sm font-medium text-orange-200">
-                Life @ DSU
+                Building the Future
               </span>
             </div>
 
-            <h1 className="hero-title text-2xl md:text-3xl lg:text-4xl font-bold mb-4 leading-tight text-white">
-              Campus Life
+            <h1 className="hero-title text-2xl md:text-3xl lg:text-5xl font-bold mb-4 leading-tight text-white">
+              Life That Builds the Future
             </h1>
+
+            <p className="hero-title text-lg md:text-xl text-white/90 leading-relaxed max-w-xl">
+              At DSU, campus life is designed to complement AI-infused academics, research excellence, leadership development, and global exposure.
+            </p>
           </div>
         </div>
 
@@ -165,608 +108,199 @@ export default function CampusLife() {
             size="lg"
             className="hero-button bg-black/10 border border-transparent hover:bg-black/20 backdrop-blur-sm text-foreground px-10 py-6 text-lg font-semibold rounded-full inline-flex items-center transition-all duration-300"
           >
-            Virtual Campus Tour
+            Explore Student Life
             <ArrowRight className="w-5 h-5 ml-2" />
           </Button>
         </a>
       </section>
 
-      {/* Featured Facilities with Tabs */}
-      <section ref={facilitiesRef} className={`px-3 py-10 bg-gradient-to-r from-orange-500/5 to-red-600/5 transition-opacity duration-700 ${facilitiesVisible ? "opacity-100" : "opacity-0"}`}>
+      {/* ===== 4 PILLARS SECTION ===== */}
+      <section
+        ref={pillarsRef}
+        className={`px-3 py-16 bg-gradient-to-b from-background to-slate-900/30 transition-opacity duration-700 ${
+          pillarsVisible ? "opacity-100" : "opacity-0"
+        }`}
+      >
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="text-foreground">World-Class </span>
+              <span className="text-foreground">Campus Life at </span>
               <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
-                Facilities
+                DSU
               </span>
             </h2>
-          </div>
-
-          <Tabs defaultValue="learn" className="w-full">
-            <TabsList className="grid w-full grid-cols-3 mb-12 rounded-none bg-transparent border-b border-orange-500/20">
-              <TabsTrigger
-                value="learn"
-                className="text-lg font-semibold rounded-none border-b-2 border-transparent data-[state=active]:border-orange-500 data-[state=active]:bg-transparent px-6 py-4"
-              >
-                <BookOpen className="w-5 h-5 mr-2" />
-                Learn
-              </TabsTrigger>
-              <TabsTrigger
-                value="live"
-                className="text-lg font-semibold rounded-none border-b-2 border-transparent data-[state=active]:border-orange-500 data-[state=active]:bg-transparent px-6 py-4"
-              >
-                <Building className="w-5 h-5 mr-2" />
-                Live
-              </TabsTrigger>
-              <TabsTrigger
-                value="play"
-                className="text-lg font-semibold rounded-none border-b-2 border-transparent data-[state=active]:border-orange-500 data-[state=active]:bg-transparent px-6 py-4"
-              >
-                <Trophy className="w-5 h-5 mr-2" />
-                Play
-              </TabsTrigger>
-            </TabsList>
-
-            {/* Learn Tab */}
-            <TabsContent value="learn" className="mt-0">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                <div className="relative overflow-hidden rounded-none h-80 border border-border hover:border-orange-500/50 transition-colors group">
-                  <img
-                    src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F303af6a81dfe4b5bb9ea6952ee39c3b7?format=webp&width=800"
-                    alt="Central Library"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-                <div className="space-y-4">
-                  <h3 className="text-3xl font-bold text-foreground">
-                    Central Library
-                  </h3>
-                  <p className="text-lg text-foreground">
-                    Extensive collection with digital resources and study spaces
-                  </p>
-                  <div className="space-y-2">
-                    <div className="flex items-center text-foreground">
-                      <span className="w-2 h-2 bg-orange-500 rounded-none mr-3"></span>
-                      2M+ Books
-                    </div>
-                    <div className="flex items-center text-foreground">
-                      <span className="w-2 h-2 bg-orange-500 rounded-none mr-3"></span>
-                      Digital Library
-                    </div>
-                    <div className="flex items-center text-foreground">
-                      <span className="w-2 h-2 bg-orange-500 rounded-none mr-3"></span>
-                      Study Halls
-                    </div>
-                    <div className="flex items-center text-foreground">
-                      <span className="w-2 h-2 bg-orange-500 rounded-none mr-3"></span>
-                      Research Centers
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </TabsContent>
-
-            {/* Live Tab */}
-            <TabsContent value="live" className="mt-0 space-y-12">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                <div className="relative overflow-hidden rounded-none h-80 border border-border hover:border-orange-500/50 transition-colors group">
-                  <img
-                    src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F0357dfeb9259438fbb59b6cd31a06e5a?format=webp&width=800"
-                    alt="Modern Hostels"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-                <div className="space-y-4">
-                  <h3 className="text-3xl font-bold text-foreground">
-                    Modern Hostels
-                  </h3>
-                  <p className="text-lg text-foreground">
-                    Comfortable accommodation with all modern amenities
-                  </p>
-                  <div className="space-y-2">
-                    <div className="flex items-center text-foreground">
-                      <span className="w-2 h-2 bg-orange-500 rounded-none mr-3"></span>
-                      AC Rooms
-                    </div>
-                    <div className="flex items-center text-foreground">
-                      <span className="w-2 h-2 bg-orange-500 rounded-none mr-3"></span>
-                      WiFi
-                    </div>
-                    <div className="flex items-center text-foreground">
-                      <span className="w-2 h-2 bg-orange-500 rounded-none mr-3"></span>
-                      Study Areas
-                    </div>
-                    <div className="flex items-center text-foreground">
-                      <span className="w-2 h-2 bg-orange-500 rounded-none mr-3"></span>
-                      Recreation Rooms
-                    </div>
-                  </div>
-                  <a
-                    href="https://myposhtell.com/"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-block mt-4"
-                  >
-                    <Button className="bg-orange-500 hover:bg-orange-600 text-foreground">
-                      Learn More <ArrowRight className="w-4 h-4 ml-2" />
-                    </Button>
-                  </a>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center md:[&>:first-child]:order-2">
-                <div className="relative overflow-hidden rounded-none h-80 border border-border hover:border-orange-500/50 transition-colors group">
-                  <img
-                    src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Feaa91fe5c0b44c02b3ead40543f73fff?format=webp&width=800"
-                    alt="Food Courts"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-                <div className="space-y-4">
-                  <h3 className="text-3xl font-bold text-foreground">
-                    Food Courts
-                  </h3>
-                  <p className="text-lg text-foreground">
-                    Multiple dining options with diverse cuisines
-                  </p>
-                  <div className="space-y-2">
-                    <div className="flex items-center text-foreground">
-                      <span className="w-2 h-2 bg-orange-500 rounded-none mr-3"></span>
-                      Multi-cuisine
-                    </div>
-                    <div className="flex items-center text-foreground">
-                      <span className="w-2 h-2 bg-orange-500 rounded-none mr-3"></span>
-                      Healthy Options
-                    </div>
-                    <div className="flex items-center text-foreground">
-                      <span className="w-2 h-2 bg-orange-500 rounded-none mr-3"></span>
-                      24/7 Cafes
-                    </div>
-                    <div className="flex items-center text-foreground">
-                      <span className="w-2 h-2 bg-orange-500 rounded-none mr-3"></span>
-                      Food Courts
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </TabsContent>
-
-            {/* Play Tab */}
-            <TabsContent value="play" className="mt-0">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                <div className="relative overflow-hidden rounded-none h-80 border border-border hover:border-orange-500/50 transition-colors group">
-                  <img
-                    src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fbc9e4b114ef0435c809830c5bca27d60?format=webp&width=800"
-                    alt="Sports Complex"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-                <div className="space-y-4">
-                  <h3 className="text-3xl font-bold text-foreground">
-                    Sports Complex
-                  </h3>
-                  <p className="text-lg text-foreground">
-                    State-of-the-art facilities for all sports and fitness
-                  </p>
-                  <div className="space-y-2">
-                    <div className="flex items-center text-foreground">
-                      <span className="w-2 h-2 bg-orange-500 rounded-none mr-3"></span>
-                      Swimming Pool
-                    </div>
-                    <div className="flex items-center text-foreground">
-                      <span className="w-2 h-2 bg-orange-500 rounded-none mr-3"></span>
-                      Gymnasium
-                    </div>
-                    <div className="flex items-center text-foreground">
-                      <span className="w-2 h-2 bg-orange-500 rounded-none mr-3"></span>
-                      Indoor Sports
-                    </div>
-                    <div className="flex items-center text-foreground">
-                      <span className="w-2 h-2 bg-orange-500 rounded-none mr-3"></span>
-                      Outdoor Courts
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </TabsContent>
-          </Tabs>
-        </div>
-      </section>
-
-      {/* Campus Life Gallery - Curated Strip */}
-      <section ref={galleryRef} className={`px-3 py-10 bg-gradient-to-r from-orange-500/5 to-red-600/5 transition-opacity duration-700 ${galleryVisible ? "opacity-100" : "opacity-0"}`}>
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              <span className="text-foreground">Life in </span>
-              <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
-                Pictures
-              </span>
-            </h2>
-            <p className="text-lg text-foreground">
-              Curated glimpses of campus moments
+            <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
+              Four dimensions of student experience that develop research-driven, globally competent professionals
             </p>
           </div>
 
-          {/* Horizontal Scrolling Gallery */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
+          <div className="grid md:grid-cols-2 gap-8">
             {[
               {
-                title: "Campus Entrance",
+                icon: Rocket,
+                title: "Innovation & Research Culture",
+                description:
+                  "Students engage in cutting-edge research projects alongside faculty, AI labs, hackathons, and innovation challenges.",
+                highlights: [
+                  "NASA Space Apps Challenge",
+                  "AI & ML Research Labs",
+                  "Hackathons & Innovation Competitions",
+                ],
                 image:
-                  "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fa16295c3fda14368b934b709019e0e30?format=webp&width=800",
+                  "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop",
+                link: "/research-publications",
               },
               {
-                title: "Performing Arts",
+                icon: Target,
+                title: "Leadership & Professional Growth",
+                description:
+                  "Industry talks, tech symposiums, professional certifications, and student chapters (IEEE, ACM, SAE) prepare students for global careers.",
+                highlights: [
+                  "Tech Symposiums & Conferences",
+                  "Industry Expert Sessions",
+                  "Student Professional Bodies",
+                ],
+                image:
+                  "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop",
+                link: "#",
+              },
+              {
+                icon: Music,
+                title: "Culture, Arts & Expression",
+                description:
+                  "Performing arts, cultural nights, and creative clubs foster balance, diversity of thought, and holistic development.",
+                highlights: [
+                  "Performing Arts & Dance",
+                  "Cultural Events & Festivals",
+                  "Creative & Arts Clubs",
+                ],
                 image:
                   "https://static.wixstatic.com/media/a57b29_7432beeeab194cf19d467960322ed7b7~mv2.jpg/v1/fit/w_960,h_960,q_90,enc_avif,quality_auto/a57b29_7432beeeab194cf19d467960322ed7b7~mv2.jpg",
+                link: "#",
               },
               {
-                title: "Sports Day",
+                icon: Trophy,
+                title: "Sports, Wellness & Community",
+                description:
+                  "Sports programs, social initiatives, and volunteering build discipline, teamwork, resilience, and commitment to community.",
+                highlights: [
+                  "Sports Meet & Athletic Programs",
+                  "Social Initiatives & Volunteering",
+                  "Wellness & Fitness Programs",
+                ],
                 image:
-                  "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=300&h=300&fit=crop",
+                  "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F4965c58a577f42679515554a2c799501?format=webp&width=800",
+                link: "#",
               },
-              {
-                title: "Graduation",
-                image:
-                  "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F692a9321c1bd4ab09f4bbb0f31d62fa2?format=webp&width=800",
-              },
-              {
-                title: "Tech Fair",
-                image:
-                  "https://images.unsplash.com/photo-1552664730-d307ca884978?w=300&h=300&fit=crop",
-              },
-              {
-                title: "Student Life",
-                image:
-                  "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=400&h=300&fit=crop",
-              },
-            ].map((item, index) => (
-              <div
+            ].map((pillar, index) => (
+              <Card
                 key={index}
-                className="relative group overflow-hidden rounded-none border border-border hover:border-orange-500/50 transition-all duration-300 cursor-pointer aspect-square"
+                className="group overflow-hidden hover:shadow-lg hover:shadow-orange-500/10 transition-all duration-500 backdrop-blur-sm border rounded-none bg-slate-900/50 border-orange-500/10"
+                style={{
+                  animation: `slideInUp 0.6s ease-out ${index * 0.1}s both`,
+                }}
               >
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3">
-                  <h3 className="font-bold text-white text-sm">{item.title}</h3>
+                <div className="relative overflow-hidden h-64 bg-black">
+                  <img
+                    src={pillar.image}
+                    alt={pillar.title}
+                    loading="lazy"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors"></div>
                 </div>
-              </div>
+
+                <CardHeader className="space-y-4">
+                  <div className="flex items-start justify-between">
+                    <div>
+                      <h3 className="text-2xl font-bold text-foreground group-hover:text-orange-500 transition-colors mb-2">
+                        {pillar.title}
+                      </h3>
+                    </div>
+                    <pillar.icon className="w-6 h-6 text-orange-500 flex-shrink-0" />
+                  </div>
+
+                  <p className="text-foreground/80 leading-relaxed">
+                    {pillar.description}
+                  </p>
+
+                  <div className="space-y-2 pt-2">
+                    {pillar.highlights.map((highlight) => (
+                      <div
+                        key={highlight}
+                        className="flex items-center text-foreground/90 text-sm"
+                      >
+                        <span className="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>
+                        {highlight}
+                      </div>
+                    ))}
+                  </div>
+
+                  <Link
+                    to={pillar.link}
+                    className="inline-flex items-center gap-2 text-orange-500 hover:text-orange-400 transition-colors text-sm font-semibold mt-2"
+                  >
+                    Explore <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </CardHeader>
+              </Card>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Student Organizations with Images */}
-      <section ref={organizationsRef} className={`px-3 py-10 transition-opacity duration-700 ${organizationsVisible ? "opacity-100" : "opacity-0"}`}>
+      {/* ===== RESEARCH-FOCUSED STUDENT STORIES ===== */}
+      <section
+        ref={storiesRef}
+        className={`px-3 py-16 transition-opacity duration-700 ${
+          storiesVisible ? "opacity-100" : "opacity-0"
+        }`}
+      >
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
                 Student
               </span>
-              <span className="text-foreground"> Organizations</span>
+              <span className="text-foreground"> Achievements</span>
             </h2>
-            <p className="text-xl text-foreground max-w-3xl mx-auto">
-              Discover your passion through our diverse range of student clubs
-              and societies
+            <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
+              How campus experiences translate into research breakthroughs and career impact
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-0">
-            {[
-              {
-                icon: Palette,
-                title: "Arts & Culture",
-                description: "Express your creativity through artistic mediums",
-                image:
-                  "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=300&fit=crop",
-                members: "2,500+",
-              },
-              {
-                icon: Trophy,
-                title: "Sports & Recreation",
-                description: "Stay active with comprehensive sports programs",
-                image:
-                  "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Febfd634b00b44333a5bb858290a814d7?format=webp&width=800",
-                members: "3,000+",
-              },
-              {
-                icon: Gamepad2,
-                title: "Technology & Innovation",
-                description: "Build innovative solutions with latest tech",
-                image:
-                  "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop",
-                members: "4,500+",
-              },
-              {
-                icon: Users,
-                title: "Social Service",
-                description: "Make a positive impact in the community",
-                image:
-                  "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=400&h=300&fit=crop",
-                members: "2,000+",
-              },
-              {
-                icon: BookOpen,
-                title: "Academic & Professional",
-                description: "Enhance your career development journey",
-                image:
-                  "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop",
-                members: "3,500+",
-              },
-              {
-                icon: Heart,
-                title: "Special Interest",
-                description: "Explore unique hobbies with like-minded peers",
-                image:
-                  "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=400&h=300&fit=crop",
-                members: "1,800+",
-              },
-            ].map((category, index) => (
-              <Card
-                key={index}
-                className={`group overflow-hidden hover:shadow-lg hover:shadow-brand-magenta/10 transition-all duration-500 hover:-translate-y-2 backdrop-blur-sm border rounded-none ${
-                  index % 3 === 0
-                    ? "bg-orange-500/10 border-orange-500/20"
-                    : index % 3 === 1
-                      ? "bg-blue-500/10 border-blue-500/20"
-                      : "bg-purple-500/10 border-purple-500/20"
-                }`}
-              >
-                <div className="relative overflow-hidden h-48">
-                  <img
-                    src={category.image}
-                    alt={category.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors"></div>
-                </div>
-                <CardHeader>
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="w-12 h-12 rounded-2xl bg-orange-500/10 flex items-center justify-center group-hover:bg-orange-500/20 transition-colors">
-                      <category.icon className="w-6 h-6 text-orange-500 group-hover:scale-110 transition-transform" />
-                    </div>
-                    <Badge variant="secondary" className="text-xs">
-                      {category.members}
-                    </Badge>
-                  </div>
-                  <CardTitle className="text-lg font-bold group-hover:text-orange-500 transition-colors">
-                    {category.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-foreground">
-                    {category.description}
-                  </CardDescription>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Centre for Performing Arts - Featured Highlight */}
-      <section ref={performingArtsRef} className={`px-3 py-10 bg-gradient-to-r from-orange-500/10 to-red-600/10 transition-opacity duration-700 ${performingArtsVisible ? "opacity-100" : "opacity-0"}`}>
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            {/* Video */}
-            <div className="relative overflow-hidden rounded-none h-96 border border-orange-500/20 group bg-black">
-              <video
-                src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F6b0c30504ae64c6aba12aa275eeac2e0?alt=media&token=038cd5f6-c13b-43c6-8760-c92abdbbc4dd&apiKey=4aa279a8430d441dba9c55f659831878"
-                controls
-                preload="none"
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none"></div>
-            </div>
-
-            {/* Content */}
-            <div className="space-y-3">
-              <div>
-                <Badge className="bg-orange-500/20 text-orange-600 mb-4">
-                  Arts & Culture
-                </Badge>
-                <h2 className="text-4xl md:text-5xl font-bold mb-4">
-                  <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
-                    Centre for Performing Arts
-                  </span>
-                </h2>
-              </div>
-
-              <p className="text-xl text-foreground leading-relaxed">
-                Express your creativity through artistic mediums
-              </p>
-
-              <p className="text-lg text-foreground/80 leading-relaxed">
-                A dedicated space for students to explore dance, music, theater,
-                and other performing arts. Our Centre for Performing Arts
-                nurtures talent and provides a platform for artistic expression
-                and cultural celebration.
-              </p>
-
-              <div className="space-y-3">
-                <div className="flex items-center gap-3 text-foreground">
-                  <Star className="w-5 h-5 text-orange-500 flex-shrink-0" />
-                  <span>Professional training and mentorship</span>
-                </div>
-                <div className="flex items-center gap-3 text-foreground">
-                  <Star className="w-5 h-5 text-orange-500 flex-shrink-0" />
-                  <span>State-of-the-art auditorium and rehearsal spaces</span>
-                </div>
-                <div className="flex items-center gap-3 text-foreground">
-                  <Star className="w-5 h-5 text-orange-500 flex-shrink-0" />
-                  <span>Regular performances and cultural events</span>
-                </div>
-              </div>
-
-              <a
-                href="https://www.centreforperformingarts.in"
-                target="_blank"
-                rel="noreferrer"
-                className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2 focus-visible:ring-offset-background inline-block"
-              >
-                <Button
-                  size="lg"
-                  className="bg-orange-500 hover:bg-orange-600 text-foreground px-8 py-6 text-lg font-semibold rounded-xl inline-flex items-center gap-2"
-                >
-                  Visit Centre for Performing Arts
-                  <ArrowRight className="w-5 h-5" />
-                </Button>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Events Timeline with Interactive Filters */}
-      <section ref={eventsRef} className={`px-3 py-10 transition-opacity duration-700 ${eventsVisible ? "opacity-100" : "opacity-0"}`}>
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
-                Events
-              </span>
-              <span className="text-foreground"> & Activities</span>
-            </h2>
-          </div>
-
-          {/* Interactive Category Filter */}
-          <div className="flex flex-wrap justify-center gap-3 mb-12">
-            <button
-              onClick={() => setSelectedCategory(null)}
-              className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 border-2 ${
-                selectedCategory === null
-                  ? "bg-orange-500 text-foreground border-orange-500"
-                  : "bg-transparent text-foreground border-orange-500/30 hover:border-orange-500/60"
-              }`}
-            >
-              All Events
-            </button>
-            {eventCategories.map((cat) => (
-              <button
-                key={cat.id}
-                onClick={() => setSelectedCategory(cat.id)}
-                className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 border-2 inline-flex items-center gap-2 ${
-                  selectedCategory === cat.id
-                    ? "bg-orange-500 text-foreground border-orange-500"
-                    : "bg-transparent text-foreground border-orange-500/30 hover:border-orange-500/60"
-                }`}
-              >
-                <cat.icon className="w-4 h-4" />
-                {cat.label}
-              </button>
-            ))}
-          </div>
-
-          {/* Events Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-0">
-            {filteredEvents.map((event, index) => (
-              <Card
-                key={index}
-                className={`group overflow-hidden hover:shadow-lg hover:shadow-brand-magenta/10 transition-all duration-500 hover:-translate-y-2 backdrop-blur-sm border rounded-none ${
-                  index % 4 === 0
-                    ? "bg-orange-500/10 border-orange-500/20"
-                    : index % 4 === 1
-                      ? "bg-blue-500/10 border-blue-500/20"
-                      : index % 4 === 2
-                        ? "bg-purple-500/10 border-purple-500/20"
-                        : "bg-green-500/10 border-green-500/20"
-                }`}
-                style={{
-                  animation: `slideInUp 0.6s ease-out ${index * 0.08}s both`,
-                }}
-              >
-                <div className="relative overflow-hidden bg-black aspect-video">
-                  <img
-                    src={event.image}
-                    alt={event.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors"></div>
-                </div>
-                <CardHeader>
-                  <div className="flex items-center justify-between mb-4">
-                    <event.icon className="w-6 h-6 text-orange-500 group-hover:scale-110 transition-transform" />
-                    <Badge variant="secondary" className="text-xs">
-                      {event.duration}
-                    </Badge>
-                  </div>
-                  <CardTitle className="text-lg font-bold group-hover:text-orange-500 transition-colors group-hover:-translate-y-1">
-                    {event.title}
-                  </CardTitle>
-                  <Badge
-                    variant="outline"
-                    className="w-fit text-xs border-orange-500/30 text-orange-500"
-                  >
-                    {event.attendance}
-                  </Badge>
-                </CardHeader>
-              </Card>
-            ))}
-          </div>
-
-          <div className="text-center mt-12">
-            <Link to="/all-events" className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2 focus-visible:ring-offset-background inline-block">
-              <Button
-                variant="outline"
-                size="lg"
-                className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-foreground px-10 py-6 text-lg font-semibold rounded-full inline-flex items-center gap-2"
-              >
-                View All Events
-                <ChevronRight className="w-5 h-5" />
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Student Stories Section */}
-      <section ref={storiesRef} className={`px-3 py-10 bg-gradient-to-r from-orange-500/5 to-red-600/5 transition-opacity duration-700 ${storiesVisible ? "opacity-100" : "opacity-0"}`}>
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="text-foreground">Student </span>
-              <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
-                Stories
-              </span>
-            </h2>
-            <p className="text-xl text-foreground">
-              Real voices and experiences from our student community
-            </p>
-          </div>
-
-          {/* Story Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
                 name: "Priya Sharma",
-                program: "B.Tech Computer Science",
-                year: "4th Year",
+                program: "B.Tech AI & Robotics",
+                year: "3rd Year",
+                achievement:
+                  "Led research on AI-powered mental health diagnostics using multimodal learning (voice + facial data), achieving 20% accuracy improvement.",
                 quote:
-                  "DSU gave me the freedom to explore, innovate, and grow beyond academics.",
+                  "Working on AI projects alongside faculty changed how I think about engineering.",
                 image:
                   "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=500&fit=crop",
               },
               {
                 name: "Arjun Mehta",
-                program: "B.Sc Data Science",
-                year: "3rd Year",
+                program: "B.Tech Mechanical Engineering",
+                year: "4th Year",
+                achievement:
+                  "Developed a scaled-down test rig for thermal analysis in wheel systems, published in Journal of Thermal Science and Engineering Applications.",
                 quote:
-                  "The collaborative spirit here transformed my learning journey completely.",
+                  "Campus labs gave me the tools to turn ideas into published research.",
                 image:
                   "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=400&h=500&fit=crop",
               },
               {
                 name: "Anaya Patel",
-                program: "B.Tech Electronics",
+                program: "B.Tech Materials Science",
                 year: "2nd Year",
+                achievement:
+                  "Contributing to perovskite solar cell stability research under faculty mentorship, part of DSU's renewable energy innovation pipeline.",
                 quote:
-                  "Faculty mentorship and peer support made all the difference in my success.",
+                  "Faculty mentorship and peer collaboration created the environment for real impact.",
                 image:
                   "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=400&h=500&fit=crop",
               },
@@ -782,18 +316,18 @@ export default function CampusLife() {
                   <img
                     src={story.image}
                     alt={story.name}
+                    loading="lazy"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors"></div>
                 </div>
+
                 <CardHeader className="space-y-4">
                   <div>
                     <h3 className="text-xl font-bold text-foreground group-hover:text-orange-500 transition-colors">
                       {story.name}
                     </h3>
-                    <p className="text-sm text-foreground/70 mt-1">
-                      {story.program}
-                    </p>
+                    <p className="text-sm text-foreground/70 mt-1">{story.program}</p>
                     <Badge
                       variant="secondary"
                       className="mt-2 text-xs bg-orange-500/20 text-orange-300"
@@ -802,9 +336,15 @@ export default function CampusLife() {
                     </Badge>
                   </div>
 
-                  <blockquote className="text-foreground italic border-l-2 border-orange-500 pl-3 py-2">
-                    "{story.quote}"
-                  </blockquote>
+                  <div className="space-y-3">
+                    <div className="text-sm text-foreground/80 font-medium leading-relaxed">
+                      <strong>Achievement:</strong> {story.achievement}
+                    </div>
+
+                    <blockquote className="text-foreground/80 italic border-l-2 border-orange-500 pl-3 py-2 text-sm">
+                      "{story.quote}"
+                    </blockquote>
+                  </div>
                 </CardHeader>
               </Card>
             ))}
@@ -812,31 +352,221 @@ export default function CampusLife() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section ref={ctaRef} className={`px-3 py-10 transition-opacity duration-700 ${ctaVisible ? "opacity-100" : "opacity-0"}`}>
+      {/* ===== RESEARCH-READY FACILITIES ===== */}
+      <section
+        ref={facilitiesRef}
+        className={`px-3 py-16 bg-gradient-to-r from-orange-500/5 to-red-600/5 transition-opacity duration-700 ${
+          facilitiesVisible ? "opacity-100" : "opacity-0"
+        }`}
+      >
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              <span className="text-foreground">Infrastructure That Enables </span>
+              <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
+                Excellence
+              </span>
+            </h2>
+            <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
+              World-class facilities designed to support research, learning, and innovation
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-10">
+            {[
+              {
+                icon: Microscope,
+                title: "Research-Ready Libraries & Labs",
+                description:
+                  "2M+ books, digital archives, and state-of-the-art research centers supporting AI, engineering, life sciences, and interdisciplinary innovation.",
+                image:
+                  "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F303af6a81dfe4b5bb9ea6952ee39c3b7?format=webp&width=800",
+              },
+              {
+                icon: Laptop,
+                title: "Innovation & Collaboration Hubs",
+                description:
+                  "Maker spaces, AI labs, and collaborative work areas where students prototype, test, and develop breakthrough solutions.",
+                image:
+                  "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop",
+              },
+              {
+                icon: Building,
+                title: "Accommodation & Wellness",
+                description:
+                  "Modern hostels with connectivity, fitness facilities, and wellness programs that support student health and productivity.",
+                image:
+                  "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F0357dfeb9259438fbb59b6cd31a06e5a?format=webp&width=800",
+              },
+              {
+                icon: Users,
+                title: "Community & Recreation Spaces",
+                description:
+                  "Multi-cuisine dining, sports complexes, and cultural venues that foster collaboration, creativity, and community.",
+                image:
+                  "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Feaa91fe5c0b44c02b3ead40543f73fff?format=webp&width=800",
+              },
+            ].map((facility, index) => (
+              <div
+                key={index}
+                className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center"
+                style={{
+                  animation: `slideInUp 0.6s ease-out ${index * 0.1}s both`,
+                }}
+              >
+                <div className="relative overflow-hidden rounded-none h-80 border border-border hover:border-orange-500/50 transition-colors group">
+                  <img
+                    src={facility.image}
+                    alt={facility.title}
+                    loading="lazy"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+
+                <div className="space-y-4">
+                  <div className="flex items-start gap-3">
+                    <facility.icon className="w-8 h-8 text-orange-500 flex-shrink-0 mt-1" />
+                    <h3 className="text-2xl font-bold text-foreground">
+                      {facility.title}
+                    </h3>
+                  </div>
+                  <p className="text-foreground/80 leading-relaxed">
+                    {facility.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== STUDENT ORGANIZATIONS (REFRAMED) ===== */}
+      <section
+        ref={organizationsRef}
+        className={`px-3 py-16 transition-opacity duration-700 ${
+          organizationsVisible ? "opacity-100" : "opacity-0"
+        }`}
+      >
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
+                Student
+              </span>
+              <span className="text-foreground"> Ecosystem</span>
+            </h2>
+            <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
+              100+ clubs and organizations aligned with innovation, research, arts, and community impact
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-4">
+            {[
+              { category: "Innovation & Technology", members: "4,500+", icon: Rocket },
+              { category: "Research & Professional Bodies", members: "3,500+", icon: Microscope },
+              { category: "Arts & Culture", members: "2,500+", icon: Music },
+              { category: "Sports & Wellness", members: "3,000+", icon: Trophy },
+              { category: "Social Impact", members: "2,000+", icon: Heart },
+            ].map((org, index) => (
+              <Card
+                key={index}
+                className="group hover:shadow-lg hover:shadow-orange-500/10 transition-all duration-500 backdrop-blur-sm border rounded-none bg-slate-900/50 border-orange-500/10 p-6 text-center"
+                style={{
+                  animation: `slideInUp 0.6s ease-out ${index * 0.08}s both`,
+                }}
+              >
+                <org.icon className="w-8 h-8 text-orange-500 mx-auto mb-3" />
+                <h3 className="font-bold text-foreground mb-2">{org.category}</h3>
+                <p className="text-2xl font-bold text-orange-500">{org.members}</p>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== CURATED CAMPUS GALLERY ===== */}
+      <section
+        ref={galleryRef}
+        className={`px-3 py-16 bg-gradient-to-r from-orange-500/5 to-red-600/5 transition-opacity duration-700 ${
+          galleryVisible ? "opacity-100" : "opacity-0"
+        }`}
+      >
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              <span className="text-foreground">Campus </span>
+              <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
+                Moments
+              </span>
+            </h2>
+            <p className="text-lg text-foreground/80">
+              Curated glimpses of research, innovation, and community at DSU
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
+            {[
+              { title: "AI Research Lab", image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=300&h=300&fit=crop" },
+              { title: "Campus Innovation Hub", image: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fa16295c3fda14368b934b709019e0e30?format=webp&width=300" },
+              { title: "Cultural Performance", image: "https://static.wixstatic.com/media/a57b29_7432beeeab194cf19d467960322ed7b7~mv2.jpg/v1/fit/w_300,h_300,q_90" },
+              { title: "Sports Excellence", image: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=300&h=300&fit=crop" },
+              { title: "Research Symposium", image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=300&h=300&fit=crop" },
+              { title: "Student Community", image: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=300&h=300&fit=crop" },
+            ].map((item, index) => (
+              <div
+                key={index}
+                className="relative group overflow-hidden rounded-none border border-border hover:border-orange-500/50 transition-all duration-300 cursor-pointer aspect-square"
+              >
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  loading="lazy"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-2">
+                  <p className="font-bold text-white text-xs">{item.title}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== FINAL CTA ===== */}
+      <section
+        ref={ctaRef}
+        className={`px-3 py-16 transition-opacity duration-700 ${
+          ctaVisible ? "opacity-100" : "opacity-0"
+        }`}
+      >
         <div className="max-w-4xl mx-auto text-center">
           <div className="bg-gradient-to-r from-orange-500/10 via-red-600/10 to-pink-500/10 rounded-3xl p-12 border border-orange-500/20">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Ready to be
+              Ready to experience
               <span className="bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
                 {" "}
-                Part of the Family
+                a campus designed for the future
               </span>
               ?
             </h2>
-            <p className="text-xl text-foreground mb-8 max-w-2xl mx-auto">
-              Join our vibrant community and create memories that will last a
-              lifetime.
+            <p className="text-xl text-foreground/80 mb-8 max-w-2xl mx-auto">
+              Where research, innovation, leadership, and community converge to build AI-ready, globally competent professionals.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10">
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-orange-500 via-red-600 to-pink-500 text-foreground px-12 py-6 text-lg font-semibold rounded-full"
+              <a
+                href="https://dsu.edu.in/virtual-tour/"
+                target="_blank"
+                rel="noreferrer"
               >
-                Visit Campus
-                <MapPin className="w-5 h-5 ml-2" />
-              </Button>
+                <Button
+                  size="lg"
+                  className="bg-gradient-to-r from-orange-500 via-red-600 to-pink-500 text-foreground px-12 py-6 text-lg font-semibold rounded-full hover:shadow-lg hover:shadow-orange-500/30 transition-all"
+                >
+                  Visit Campus
+                  <MapPin className="w-5 h-5 ml-2" />
+                </Button>
+              </a>
               <a
                 href="https://admissions.dsu.edu.in/"
                 target="_blank"
@@ -845,16 +575,18 @@ export default function CampusLife() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-foreground px-12 py-6 text-lg font-semibold rounded-full"
+                  className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-foreground px-12 py-6 text-lg font-semibold rounded-full transition-all"
                 >
-                  Apply Now
+                  Apply for 2026
                 </Button>
               </a>
             </div>
 
             {/* Trust Signals */}
             <div className="pt-8 border-t border-orange-500/20">
-              <p className="text-sm text-foreground/70 mb-4">Trusted by students worldwide</p>
+              <p className="text-sm text-foreground/70 mb-4">
+                Trusted by students and industry leaders worldwide
+              </p>
               <div className="grid grid-cols-3 gap-6 items-center justify-center">
                 <div className="flex flex-col items-center">
                   <Badge className="bg-orange-500/20 text-orange-400 mb-2 text-sm font-bold">
