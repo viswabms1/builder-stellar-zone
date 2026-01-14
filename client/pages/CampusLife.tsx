@@ -537,8 +537,8 @@ export default function CampusLife() {
           ctaVisible ? "opacity-100" : "opacity-0"
         }`}
       >
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="bg-gradient-to-r from-orange-500/10 via-red-600/10 to-pink-500/10 rounded-3xl p-12 border border-orange-500/20">
+        <div className="max-w-4xl mx-auto text-center px-3">
+          <div className="bg-gradient-to-r from-orange-500/10 via-red-600/10 to-pink-500/10 rounded-2xl md:rounded-3xl p-8 md:p-12 border border-orange-500/20">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
               Ready to build the future at
               <span className="bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
