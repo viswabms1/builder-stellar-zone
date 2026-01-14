@@ -67,9 +67,9 @@ export default function DeptCybersecurity() {
               <Sparkles className="w-4 h-4 text-white" />
               <span className="text-sm font-medium text-white font-display">B.Tech CSE (Cybersecurity)</span>
             </div>
-            <h1 className="headline-1 text-white leading-tight font-display">Secure the Digital Future</h1>
+            <h1 className="headline-1 text-white leading-tight font-display">Department of Cybersecurity</h1>
             <p className="subheadline text-white/90 max-w-2xl mt-3 font-body">
-              Master cybersecurity, cryptography, and threat analysis to protect critical systems at DSU.
+              A specialized department at the School of Engineering, DSU, focused on information security, cryptography, cyber defense, and secure digital systems.
             </p>
             <div className="mt-6 flex flex-wrap gap-2">
               {specializations.map((s, i) => (
