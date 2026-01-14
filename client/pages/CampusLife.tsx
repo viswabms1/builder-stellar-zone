@@ -499,6 +499,7 @@ export default function CampusLife() {
               <video
                 src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F6b0c30504ae64c6aba12aa275eeac2e0?alt=media&token=038cd5f6-c13b-43c6-8760-c92abdbbc4dd&apiKey=4aa279a8430d441dba9c55f659831878"
                 controls
+                preload="none"
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none"></div>
