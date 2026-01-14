@@ -212,14 +212,6 @@ export default function DeptAIDS() {
         </div>
       </section>
 
-      <EligibilityAndFees />
-
-      <CurriculumLibrary />
-
-      <AccreditationDocuments />
-
-      <NoticeBoard />
-
       <LabsFacilitiesCarousel />
 
       {/* Leadership Section */}
