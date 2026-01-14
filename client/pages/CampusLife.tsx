@@ -776,7 +776,7 @@ export default function CampusLife() {
               lifetime.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10">
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-orange-500 via-red-600 to-pink-500 text-foreground px-12 py-6 text-lg font-semibold rounded-full"
@@ -797,6 +797,27 @@ export default function CampusLife() {
                   Apply Now
                 </Button>
               </a>
+            </div>
+
+            {/* Trust Signals */}
+            <div className="pt-8 border-t border-orange-500/20">
+              <p className="text-sm text-foreground/70 mb-4">Trusted by students worldwide</p>
+              <div className="grid grid-cols-3 gap-6 items-center justify-center">
+                <div className="flex flex-col items-center">
+                  <Badge className="bg-orange-500/20 text-orange-400 mb-2 text-sm font-bold">
+                    NAAC A+
+                  </Badge>
+                  <p className="text-xs text-foreground/60">Accredited</p>
+                </div>
+                <div className="flex flex-col items-center">
+                  <p className="text-2xl font-bold text-orange-500">25,000+</p>
+                  <p className="text-xs text-foreground/60">Students</p>
+                </div>
+                <div className="flex flex-col items-center">
+                  <p className="text-2xl font-bold text-orange-500">100+</p>
+                  <p className="text-xs text-foreground/60">Student Clubs</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
