@@ -672,7 +672,7 @@ export default function CampusLife() {
         </div>
       </section>
 
-      {/* Photo Stories Section */}
+      {/* Student Stories Section */}
       <section className="px-3 py-10 bg-gradient-to-r from-orange-500/5 to-red-600/5">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -683,77 +683,77 @@ export default function CampusLife() {
               </span>
             </h2>
             <p className="text-xl text-foreground">
-              Real stories and experiences from our student community
+              Real voices and experiences from our student community
             </p>
           </div>
 
-          {/* Featured Story */}
-          <div className="relative overflow-hidden rounded-none h-96 mb-12 border border-border hover:border-orange-500/50 transition-colors group">
-            <img
-              src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=1200&h=400&fit=crop"
-              alt="Featured Story"
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex items-end p-4">
-              <div className="text-white">
-                <Badge className="mb-4 bg-orange-500">Featured</Badge>
-                <h3 className="text-3xl font-bold mb-2">My Journey at DSU</h3>
-                <p className="text-white">
-                  A student's journey of growth, learning, and unforgettable
-                  memories
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Story Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
+          {/* Story Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
-                title: "Friendship & Bonding",
+                name: "Priya Sharma",
+                program: "B.Tech Computer Science",
+                year: "4th Year",
+                quote:
+                  "DSU gave me the freedom to explore, innovate, and grow beyond academics.",
                 image:
-                  "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=400&h=300&fit=crop",
+                  "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=500&fit=crop",
               },
               {
-                title: "Academic Excellence",
+                name: "Arjun Mehta",
+                program: "B.Sc Data Science",
+                year: "3rd Year",
+                quote:
+                  "The collaborative spirit here transformed my learning journey completely.",
                 image:
-                  "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop",
+                  "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=400&h=500&fit=crop",
               },
               {
-                title: "Alumni Journey - Class of 2019",
-                video:
-                  "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F1f4b2fb88e2644fe9e6f6151ab7bdb80?alt=media&token=cf02de6b-7a3e-4453-8caa-2cd7b03ff170&apiKey=4aa279a8430d441dba9c55f659831878",
-                isVideo: true,
+                name: "Anaya Patel",
+                program: "B.Tech Electronics",
+                year: "2nd Year",
+                quote:
+                  "Faculty mentorship and peer support made all the difference in my success.",
+                image:
+                  "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=400&h=500&fit=crop",
               },
             ].map((story, index) => (
-              <div
+              <Card
                 key={index}
-                className="group relative overflow-hidden rounded-none h-64 border border-border hover:border-orange-500/50 transition-colors cursor-pointer"
+                className="group overflow-hidden hover:shadow-lg hover:shadow-orange-500/10 transition-all duration-500 backdrop-blur-sm border rounded-none bg-slate-900/50 border-orange-500/10"
+                style={{
+                  animation: `slideInUp 0.6s ease-out ${index * 0.1}s both`,
+                }}
               >
-                {story.isVideo ? (
-                  <video src={story.video} controls className="w-full h-full" />
-                ) : (
-                  <>
-                    <img
-                      src={story.image}
-                      alt={story.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                      <h3 className="text-white font-bold text-lg">
-                        {story.title}
-                      </h3>
-                    </div>
-                  </>
-                )}
-                {story.isVideo && (
-                  <div className="absolute top-0 left-0 right-0 bg-gradient-to-b from-black/40 to-transparent p-2">
-                    <h3 className="text-white font-bold text-sm">
-                      {story.title}
+                <div className="relative overflow-hidden h-64 bg-black">
+                  <img
+                    src={story.image}
+                    alt={story.name}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors"></div>
+                </div>
+                <CardHeader className="space-y-4">
+                  <div>
+                    <h3 className="text-xl font-bold text-foreground group-hover:text-orange-500 transition-colors">
+                      {story.name}
                     </h3>
+                    <p className="text-sm text-foreground/70 mt-1">
+                      {story.program}
+                    </p>
+                    <Badge
+                      variant="secondary"
+                      className="mt-2 text-xs bg-orange-500/20 text-orange-300"
+                    >
+                      {story.year}
+                    </Badge>
                   </div>
-                )}
-              </div>
+
+                  <blockquote className="text-foreground italic border-l-2 border-orange-500 pl-3 py-2">
+                    "{story.quote}"
+                  </blockquote>
+                </CardHeader>
+              </Card>
             ))}
           </div>
         </div>
