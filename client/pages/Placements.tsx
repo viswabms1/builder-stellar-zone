@@ -22,6 +22,7 @@ import {
   Code,
   Brain,
   Handshake,
+  Globe,
 } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useScrollTrigger } from "@/hooks/useScrollTrigger";
