@@ -180,8 +180,8 @@ export default function DeptAIDS() {
             </p>
             <Card className="border border-border/50 bg-card/50 backdrop-blur-sm">
               <CardHeader className="pb-2">
-                <CardTitle className="text-lg font-display">Curriculum Highlights</CardTitle>
-                <CardDescription className="font-body">Designed for data-driven careers</CardDescription>
+                <CardTitle className="text-lg font-display">Academic Strengths</CardTitle>
+                <CardDescription className="font-body">Core competencies powering our curriculum</CardDescription>
               </CardHeader>
               <CardContent className="grid sm:grid-cols-2 gap-3 pt-0">
                 {highlights.map((h, idx) => (
