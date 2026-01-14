@@ -191,12 +191,6 @@ export default function DeptCybersecurity() {
         </div>
       </section>
 
-      <CurriculumLibrary />
-
-      <AccreditationDocuments />
-
-      <NoticeBoard />
-
       <LabsFacilitiesCarousel />
 
       {/* Leadership Section */}
