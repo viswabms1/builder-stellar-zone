@@ -123,14 +123,13 @@ export default function CampusLife() {
       >
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="text-foreground">Campus Life at </span>
+            <h2 className="headline-2 mb-6">
               <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
-                DSU
+                Four Dimensions of Excellence
               </span>
             </h2>
-            <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
-              Four dimensions of student experience that develop research-driven, globally competent professionals
+            <p className="subheadline text-foreground/80 max-w-3xl mx-auto font-display">
+              How campus experiences at DSU develop research-driven, innovative, and globally competent professionals
             </p>
           </div>
 
