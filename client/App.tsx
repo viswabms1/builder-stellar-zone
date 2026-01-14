@@ -14,6 +14,7 @@ import Research from "./pages/Research";
 import AIFirst from "./pages/AIFirst";
 import NVIDIAArchitecture from "./pages/NVIDIAArchitecture";
 import Engineering from "./pages/Engineering";
+import SoENewsletter from "./pages/SoENewsletter";
 import ElectronicsCommunication from "./pages/ElectronicsCommunication";
 import ComputerApplications from "./pages/ComputerApplications";
 import ComputerApplicationsFaculty from "./pages/ComputerApplicationsFaculty";
