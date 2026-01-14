@@ -772,40 +772,92 @@ function EligibilityAndFees() {
   );
 }
 
+interface LabItem {
+  title: string;
+  image: string;
+}
+
 function LabsFacilitiesCarousel() {
   const [currentLabIndex, setCurrentLabIndex] = useState(0);
-  const labs = [
-    { title: "NVIDIA GPU Lab", image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop" },
-    { title: "AI Research Studio", image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1200&auto=format&fit=crop" },
-    { title: "Deep Learning Center", image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop" },
+
+  const labs: LabItem[] = [
+    { title: "NVIDIA DGX B200 Supercomputer Lab", image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop" },
+    { title: "GPU-Accelerated Deep Learning Studio", image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1200&auto=format&fit=crop" },
+    { title: "AI & ML Research Center", image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop" },
+    { title: "Computer Vision & Robotics Lab", image: "https://images.unsplash.com/photo-1516321318423-f06f70a504f9?q=80&w=1200&auto=format&fit=crop" },
+    { title: "Jetson Edge Computing Lab", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop" },
+    { title: "Data Visualization & Analytics Lab", image: "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1200&auto=format&fit=crop" },
   ];
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentLabIndex((prev) => (prev + 1) % labs.length);
     }, 5000);
+
     return () => clearInterval(interval);
   }, [labs.length]);
 
   const currentLab = labs[currentLabIndex];
 
   return (
-    <section className="px-6 py-16 bg-gradient-to-r from-brand-blue/5 to-brand-blue/5">
+    <section className="px-6 py-16 bg-gradient-to-r from-brand-magenta/5 to-brand-magenta/5">
       <div className="max-w-7xl mx-auto space-y-6">
         <div className="flex items-center justify-between">
           <div>
             <h2 className="headline-3 mb-2 font-display">Labs & Facilities</h2>
             <p className="text-sm text-foreground/80 font-body">State-of-the-art infrastructure for hands-on learning</p>
           </div>
+          <div className="text-xs text-foreground/60 font-body">
+            {currentLabIndex + 1} of {labs.length}
+          </div>
         </div>
-        <Card className="overflow-hidden rounded-3xl border-2 border-border/40">
-          <div className="relative h-80">
-            <img src={currentLab.image} alt={currentLab.title} className="w-full h-full object-cover" />
+
+        <Card className="group overflow-hidden rounded-3xl border-2 border-border/40 bg-card/40 backdrop-blur-sm">
+          <div className="relative h-80 overflow-hidden">
+            <img
+              src={currentLab.image}
+              alt={currentLab.title}
+              className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700"
+            />
           </div>
           <CardContent className="p-6">
-            <CardTitle className="font-display text-2xl">{currentLab.title}</CardTitle>
+            <CardTitle className="font-display text-2xl text-foreground">{currentLab.title}</CardTitle>
           </CardContent>
         </Card>
+
+        <div className="flex items-center justify-between gap-4">
+          <div className="flex gap-2">
+            {labs.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setCurrentLabIndex(idx)}
+                className={`h-2 rounded-full transition-all ${
+                  idx === currentLabIndex
+                    ? "bg-brand-magenta w-8"
+                    : "bg-border/40 w-2 hover:bg-border/60"
+                }`}
+              />
+            ))}
+          </div>
+          <div className="flex gap-2">
+            <Button
+              variant="outline"
+              size="sm"
+              className="border-border/40"
+              onClick={() => setCurrentLabIndex((prev) => (prev - 1 + labs.length) % labs.length)}
+            >
+              ← Previous
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              className="border-border/40"
+              onClick={() => setCurrentLabIndex((prev) => (prev + 1) % labs.length)}
+            >
+              Next →
+            </Button>
+          </div>
+        </div>
       </div>
     </section>
   );
