@@ -360,13 +360,13 @@ export default function CampusLife() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="text-foreground">Infrastructure That Enables </span>
+              <span className="text-foreground">World-Class </span>
               <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
-                Excellence
+                Infrastructure
               </span>
             </h2>
             <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
-              World-class facilities designed to support research, learning, and innovation
+              State-of-the-art facilities enabling research breakthroughs, innovation, and global-quality learning
             </p>
           </div>
 
