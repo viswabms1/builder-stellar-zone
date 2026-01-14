@@ -43,9 +43,9 @@ export default function DeptCybersecurity() {
 
   const careers = [
     "Security Analyst → Senior Security Engineer → Security Manager",
-    "Penetration Tester → Security Architect → Chief Information Security Officer",
+    "Penetration Tester → Security Architect → Information Security Leadership",
     "Cloud Security Engineer → Identity & Access Management Specialist → Solutions Architect",
-    "Career pathways in finance, healthcare, government, tech companies, and cybersecurity firms",
+    "Graduates work across technology firms, finance, healthcare, government, and cybersecurity organizations",
   ];
 
   return (
