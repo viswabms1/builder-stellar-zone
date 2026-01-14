@@ -575,10 +575,10 @@ export default function CampusLife() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500/10 hover:border-orange-400 px-12 py-6 text-base font-semibold rounded-full transition-all duration-300"
+                  className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500/10 hover:border-orange-400 px-8 sm:px-12 py-6 text-sm sm:text-base font-semibold rounded-full transition-all duration-300 w-full sm:w-auto"
                 >
                   Apply Now
-                  <ArrowRight className="w-5 h-5 ml-2" />
+                  <ArrowRight className="w-4 sm:w-5 h-4 sm:h-5 ml-2" />
                 </Button>
               </a>
             </div>
