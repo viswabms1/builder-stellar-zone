@@ -551,7 +551,7 @@ export default function CampusLife() {
               Join a community where research, innovation, and global collaboration shape the next generation of leaders and innovators.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-10">
               <a
                 href="https://dsu.edu.in/virtual-tour/"
                 target="_blank"
