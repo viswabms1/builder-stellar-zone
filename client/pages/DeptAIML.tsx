@@ -465,48 +465,10 @@ export default function DeptAIML() {
         </div>
       </section>
 
-      {/* ===== PROGRAMS & CURRICULUM (SIMPLIFIED) ===== */}
+      {/* ===== PROGRAMS & CURRICULUM ===== */}
       <EligibilityAndFees />
 
-      {/* Curriculum - Reduced to 2 cards with CTA */}
-      <section className="px-3 py-8">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex items-center justify-between mb-8">
-            <h2 className="headline-3 font-display">Curriculum Highlights</h2>
-            <Link to="/academics/engineering/ai-ml/curriculum">
-              <Button variant="outline" className="border-brand-magenta/40 hover:bg-brand-magenta/10">
-                Explore Full Curriculum
-              </Button>
-            </Link>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-4">
-            {/* B.Tech Curriculum */}
-            <Card className="border border-border/50 bg-card/50 backdrop-blur-sm">
-              <CardHeader>
-                <CardTitle className="font-display">B.Tech AI & ML</CardTitle>
-                <CardDescription className="font-body">Core + Specialization Tracks</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-2 text-sm font-body">
-                <p>Foundation in algorithms, data structures, mathematics, and CS principles</p>
-                <p>Specialization electives in deep learning, NLP, computer vision, robotics</p>
-              </CardContent>
-            </Card>
-
-            {/* M.Tech Curriculum */}
-            <Card className="border border-border/50 bg-card/50 backdrop-blur-sm">
-              <CardHeader>
-                <CardTitle className="font-display">M.Tech Artificial Intelligence</CardTitle>
-                <CardDescription className="font-body">Research + Advanced Topics</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-2 text-sm font-body">
-                <p>Advanced AI research methods, generative models, reinforcement learning</p>
-                <p>Thesis research on original AI problems with faculty guidance</p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
+      <CurriculumLibrary />
 
       <AccreditationDocuments />
 
