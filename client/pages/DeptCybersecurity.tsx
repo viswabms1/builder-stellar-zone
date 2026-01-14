@@ -226,6 +226,13 @@ export default function DeptCybersecurity() {
                 </div>
               </Link>
             </div>
+            <div>
+              <Link to="/academics/engineering/cybersecurity/faculty">
+                <Button variant="outline" className="border-brand-blue/40 hover:bg-brand-blue/10 w-full">
+                  Explore full faculty list
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
