@@ -407,7 +407,7 @@ export default function CampusLife() {
             ].map((facility, index) => (
               <div
                 key={index}
-                className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center"
+                className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-center"
                 style={{
                   animation: `slideInUp 0.6s ease-out ${index * 0.1}s both`,
                 }}
