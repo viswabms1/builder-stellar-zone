@@ -350,6 +350,100 @@ export default function CampusLife() {
         </div>
       </section>
 
+      {/* ===== AIC-DSU INNOVATION FOUNDATION ===== */}
+      <section className="px-3 py-16 bg-gradient-to-r from-blue-500/10 to-blue-600/10">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            {/* Left: Content */}
+            <div className="space-y-6">
+              <div>
+                <Badge className="bg-blue-500/20 text-blue-300 mb-4 text-sm font-bold px-4 py-1">
+                  Startup Ecosystem
+                </Badge>
+                <h2 className="text-4xl md:text-5xl font-bold mb-4">
+                  <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
+                    From Student Ideas to Funded Startups
+                  </span>
+                </h2>
+              </div>
+
+              <p className="text-lg text-foreground/85 leading-relaxed">
+                <strong>AIC-DSU Innovation Foundation</strong> is an official Atal Incubation Center transforming student hackathons and projects into scalable startups with institutional backing and mentorship.
+              </p>
+
+              <div className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <Rocket className="w-5 h-5 text-blue-500 flex-shrink-0 mt-1" />
+                  <div>
+                    <h3 className="font-semibold text-foreground">Idea to Incubation</h3>
+                    <p className="text-sm text-foreground/70">Student projects and hackathon winners get mentorship, workspace, and resources to launch startups.</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <Star className="w-5 h-5 text-blue-500 flex-shrink-0 mt-1" />
+                  <div>
+                    <h3 className="font-semibold text-foreground">NITI Aayog & AIM Backed</h3>
+                    <p className="text-sm text-foreground/70">Part of the Atal Innovation Mission (AIM) network supported by Government of India.</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <Globe className="w-5 h-5 text-blue-500 flex-shrink-0 mt-1" />
+                  <div>
+                    <h3 className="font-semibold text-foreground">Network & Funding</h3>
+                    <p className="text-sm text-foreground/70">Access to investor networks, government grants, and partnerships for growth.</p>
+                  </div>
+                </div>
+              </div>
+
+              <a
+                href="https://aicdsu.foundation"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              >
+                <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-base font-semibold rounded-full transition-all duration-300 group">
+                  Explore AIC-DSU
+                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </a>
+            </div>
+
+            {/* Right: Stats/Impact */}
+            <div className="grid grid-cols-2 gap-6">
+              <Card className="bg-gradient-to-br from-blue-500/20 to-blue-600/20 border border-blue-500/30 rounded-lg p-6 text-center hover:border-blue-500/50 transition-colors">
+                <p className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-blue-500 bg-clip-text text-transparent mb-2">
+                  25+
+                </p>
+                <p className="text-sm font-semibold text-foreground">Startups Incubated</p>
+              </Card>
+
+              <Card className="bg-gradient-to-br from-blue-500/20 to-blue-600/20 border border-blue-500/30 rounded-lg p-6 text-center hover:border-blue-500/50 transition-colors">
+                <p className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-blue-500 bg-clip-text text-transparent mb-2">
+                  100%
+                </p>
+                <p className="text-sm font-semibold text-foreground">Student-Founded</p>
+              </Card>
+
+              <Card className="bg-gradient-to-br from-blue-500/20 to-blue-600/20 border border-blue-500/30 rounded-lg p-6 text-center hover:border-blue-500/50 transition-colors">
+                <p className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-blue-500 bg-clip-text text-transparent mb-2">
+                  ₹50Cr+
+                </p>
+                <p className="text-sm font-semibold text-foreground">Funding Raised</p>
+              </Card>
+
+              <Card className="bg-gradient-to-br from-blue-500/20 to-blue-600/20 border border-blue-500/30 rounded-lg p-6 text-center hover:border-blue-500/50 transition-colors">
+                <p className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-blue-500 bg-clip-text text-transparent mb-2">
+                  150+
+                </p>
+                <p className="text-sm font-semibold text-foreground">Jobs Created</p>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ===== RESEARCH-READY FACILITIES ===== */}
       <section
         ref={facilitiesRef}
