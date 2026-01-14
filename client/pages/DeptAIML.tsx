@@ -32,9 +32,8 @@ import {
   IndianRupee,
 } from "lucide-react";
 import { schools } from "./Eligibility";
-
-// Imported components (preserved from original)
-import { EligibilityAndFees, CurriculumLibrary, AccreditationDocuments, NoticeBoard, LabsFacilitiesCarousel } from "./DeptAIML";
+import { useEffect, useState } from "react";
+import { Heart, Target } from "lucide-react";
 
 export default function DeptAIML() {
   const { elementRef: outcomeRef, isVisible: outcomeVisible } = useScrollTrigger();
