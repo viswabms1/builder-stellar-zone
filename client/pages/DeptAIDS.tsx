@@ -605,10 +605,13 @@ function LabsFacilitiesCarousel() {
   return (
     <section className="px-6 py-16 bg-gradient-to-r from-brand-blue/5 to-brand-blue/5">
       <div className="max-w-7xl mx-auto space-y-6">
+        <div className="space-y-3 mb-4">
+          <p className="text-foreground/80 font-body">State-of-the-art computing and analytics labs support hands-on learning, capstone projects, and applied research in AI and data science.</p>
+        </div>
         <div className="flex items-center justify-between">
           <div>
             <h2 className="headline-3 mb-2 font-display">Labs & Facilities</h2>
-            <p className="text-sm text-foreground/80 font-body">State-of-the-art infrastructure for hands-on learning</p>
+            <p className="text-sm text-foreground/80 font-body">Explore our infrastructure ecosystem</p>
           </div>
           <div className="text-xs text-foreground/60 font-body">
             {currentLabIndex + 1} of {labs.length}
