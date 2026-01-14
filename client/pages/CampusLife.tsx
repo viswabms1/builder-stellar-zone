@@ -324,7 +324,7 @@ export default function CampusLife() {
       </section>
 
       {/* Campus Life Gallery - Curated Strip */}
-      <section className="px-3 py-10 bg-gradient-to-r from-orange-500/5 to-red-600/5">
+      <section ref={galleryRef} className={`px-3 py-10 bg-gradient-to-r from-orange-500/5 to-red-600/5 transition-opacity duration-700 ${galleryVisible ? "opacity-100" : "opacity-0"}`}>
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
