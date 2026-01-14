@@ -121,7 +121,7 @@ export default function CampusLife() {
       </section>
 
       {/* Featured Facilities with Tabs */}
-      <section className="px-3 py-10 bg-gradient-to-r from-orange-500/5 to-red-600/5">
+      <section ref={facilitiesRef} className={`px-3 py-10 bg-gradient-to-r from-orange-500/5 to-red-600/5 transition-opacity duration-700 ${facilitiesVisible ? "opacity-100" : "opacity-0"}`}>
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
