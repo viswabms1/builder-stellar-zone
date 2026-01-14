@@ -180,6 +180,15 @@ export default function Navigation() {
               },
             ],
           },
+          {
+            name: "Resources",
+            departments: [
+              {
+                name: "SOE Bulletin - Newsletter",
+                href: "/academics/engineering/newsletter",
+              },
+            ],
+          },
         ],
         departments: [],
       },
