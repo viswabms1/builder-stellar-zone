@@ -401,6 +401,10 @@ function App() {
                   path="/academics/engineering"
                   element={<Engineering />}
                 />
+                <Route
+                  path="/academics/engineering/newsletter"
+                  element={<SoENewsletter />}
+                />
                 <Route path="/academics/physics" element={<Physics />} />
                 <Route path="/academics/chemistry" element={<Chemistry />} />
                 <Route
