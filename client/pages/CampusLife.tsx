@@ -556,13 +556,14 @@ export default function CampusLife() {
                 href="https://dsu.edu.in/virtual-tour/"
                 target="_blank"
                 rel="noreferrer"
+                className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
               >
                 <Button
                   size="lg"
-                  className="bg-gradient-to-r from-orange-500 via-red-600 to-pink-500 text-foreground px-12 py-6 text-lg font-semibold rounded-full hover:shadow-lg hover:shadow-orange-500/30 transition-all"
+                  className="bg-gradient-to-r from-orange-500 via-red-600 to-pink-500 text-foreground px-12 py-6 text-base font-semibold rounded-full hover:shadow-lg hover:shadow-orange-500/30 transition-all duration-300 group"
                 >
-                  Visit Campus
-                  <MapPin className="w-5 h-5 ml-2" />
+                  Virtual Campus Tour
+                  <MapPin className="w-5 h-5 ml-2 group-hover:-translate-y-0.5 transition-transform" />
                 </Button>
               </a>
               <a
