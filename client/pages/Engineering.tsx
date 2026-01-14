@@ -1989,14 +1989,12 @@ export default function Engineering() {
               >
                 Programs Overview
               </a>
-              <a
-                href="https://www.dsu.edu.in/engineering/newsletter-soe"
-                target="_blank"
-                rel="noreferrer"
+              <RouterLink
+                to="/academics/engineering/newsletter"
                 className="hover:text-brand-magenta"
               >
                 Monthly Newsletter – SOE Bulletin
-              </a>
+              </RouterLink>
               <a
                 href="https://www.dsu.edu.in/engineering/soe-library"
                 target="_blank"
