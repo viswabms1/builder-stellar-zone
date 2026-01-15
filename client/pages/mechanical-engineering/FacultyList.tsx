@@ -15,13 +15,12 @@ export default function MechanicalEngineeringFacultyList() {
 
   const FacultyCard = ({ f }: { f: typeof faculty[0] }) => (
     <Link to={`/faculty/${f.slug}`}>
-      <Card className="group border border-border/50 bg-card/50 hover:shadow-lg hover:shadow-brand-orange/10 transition-all hover:-translate-y-1 cursor-pointer overflow-hidden">
-        <div className="bg-muted flex items-center justify-center" style={{ maxHeight: '10cm' }}>
+      <Card className="group border border-border/50 bg-card/50 hover:shadow-lg hover:shadow-brand-orange/10 transition-all hover:-translate-y-1 cursor-pointer overflow-hidden h-full">
+        <div className="bg-muted flex items-center justify-center h-16">
           <img
             src={f.image}
             alt={f.name}
-            className="w-full object-contain"
-            style={{ maxHeight: '10cm' }}
+            className="w-full h-full object-cover"
           />
         </div>
         <div className="p-2">
