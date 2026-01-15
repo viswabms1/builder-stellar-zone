@@ -100,7 +100,8 @@ const UG_PROGRAMS = [
 
 const UG_PROGRAM_LINKS: Record<string, string> = {
   "Computer Science & Engineering": "/academics/engineering/computer-science",
-  "Computer Science & Engineering (AI & ML)": "/academics/engineering/artificial-intelligence",
+  "Computer Science & Engineering (AI & ML)":
+    "/academics/engineering/artificial-intelligence",
 };
 
 const PG_PROGRAMS = [
@@ -2054,38 +2055,75 @@ export default function Engineering() {
               Top Recruiting Partners
             </h2>
             <p className="mt-2 text-sm text-foreground/70 font-body max-w-3xl mx-auto">
-              School of Engineering graduates are sought after by global technology leaders and Fortune 500 companies.
+              School of Engineering graduates are sought after by global
+              technology leaders and Fortune 500 companies.
             </p>
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
             {[
-              { name: "Mercedes-Benz", logo: "https://logo.clearbit.com/mercedes-benz.de" },
+              {
+                name: "Mercedes-Benz",
+                logo: "https://logo.clearbit.com/mercedes-benz.de",
+              },
               { name: "ABB", logo: "https://logo.clearbit.com/abb.com" },
               { name: "Amazon", logo: "https://logo.clearbit.com/amazon.com" },
               { name: "Bosch", logo: "https://logo.clearbit.com/bosch.com" },
-              { name: "Deloitte", logo: "https://logo.clearbit.com/deloitte.com" },
+              {
+                name: "Deloitte",
+                logo: "https://logo.clearbit.com/deloitte.com",
+              },
               { name: "PWC", logo: "https://logo.clearbit.com/pwc.com" },
               { name: "EY", logo: "https://logo.clearbit.com/ey.com" },
               { name: "KPMG", logo: "https://logo.clearbit.com/kpmg.com" },
-              { name: "Infosys", logo: "https://logo.clearbit.com/infosys.com" },
+              {
+                name: "Infosys",
+                logo: "https://logo.clearbit.com/infosys.com",
+              },
               { name: "TCS", logo: "https://logo.clearbit.com/tcs.com" },
-              { name: "Tata Elxsi", logo: "https://logo.clearbit.com/tataelxsi.com" },
-              { name: "Accenture", logo: "https://logo.clearbit.com/accenture.com" },
+              {
+                name: "Tata Elxsi",
+                logo: "https://logo.clearbit.com/tataelxsi.com",
+              },
+              {
+                name: "Accenture",
+                logo: "https://logo.clearbit.com/accenture.com",
+              },
               { name: "CGI", logo: "https://logo.clearbit.com/cgi.com" },
-              { name: "J.P. Morgan", logo: "https://logo.clearbit.com/jpmorganchase.com" },
+              {
+                name: "J.P. Morgan",
+                logo: "https://logo.clearbit.com/jpmorganchase.com",
+              },
               { name: "Dell", logo: "https://logo.clearbit.com/dell.com" },
-              { name: "Mahindra Comviva", logo: "https://logo.clearbit.com/comviva.com" },
-              { name: "General Aeronautics", logo: "https://logo.clearbit.com/generalaeronautics.com" },
+              {
+                name: "Mahindra Comviva",
+                logo: "https://logo.clearbit.com/comviva.com",
+              },
+              {
+                name: "General Aeronautics",
+                logo: "https://logo.clearbit.com/generalaeronautics.com",
+              },
               { name: "SAP", logo: "https://logo.clearbit.com/sap.com" },
-              { name: "Quest Global", logo: "https://logo.clearbit.com/quest-global.com" },
+              {
+                name: "Quest Global",
+                logo: "https://logo.clearbit.com/quest-global.com",
+              },
               { name: "Wipro", logo: "https://logo.clearbit.com/wipro.com" },
-              { name: "Cognizant", logo: "https://logo.clearbit.com/cognizant.com" },
+              {
+                name: "Cognizant",
+                logo: "https://logo.clearbit.com/cognizant.com",
+              },
               { name: "IBM", logo: "https://logo.clearbit.com/ibm.com" },
               { name: "Nokia", logo: "https://logo.clearbit.com/nokia.com" },
-              { name: "Continental", logo: "https://logo.clearbit.com/continental.com" },
+              {
+                name: "Continental",
+                logo: "https://logo.clearbit.com/continental.com",
+              },
             ].map((recruiter, idx) => (
-              <div key={idx} className="bg-white dark:bg-slate-900 rounded-xl p-4 flex items-center justify-center h-24 border border-border/50 shadow-sm hover:shadow-md transition-all group">
+              <div
+                key={idx}
+                className="bg-white dark:bg-slate-900 rounded-xl p-4 flex items-center justify-center h-24 border border-border/50 shadow-sm hover:shadow-md transition-all group"
+              >
                 <img
                   src={recruiter.logo}
                   alt={recruiter.name}
@@ -2108,8 +2146,12 @@ export default function Engineering() {
 
           <div className="mt-12 text-center">
             <RouterLink to="/placements">
-              <Button size="lg" className="bg-brand-magenta hover:bg-brand-magenta/90 text-white px-8 py-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all">
-                Explore Full Placement Data <ArrowRight className="ml-2 h-5 w-5" />
+              <Button
+                size="lg"
+                className="bg-brand-magenta hover:bg-brand-magenta/90 text-white px-8 py-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all"
+              >
+                Explore Full Placement Data{" "}
+                <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </RouterLink>
           </div>

@@ -28,22 +28,30 @@ import { useState, useEffect } from "react";
 import { useScrollTrigger } from "@/hooks/useScrollTrigger";
 
 export default function Placements() {
-  const [expandedSchools, setExpandedSchools] = useState<Record<string, boolean>>({});
-  const [expandedSector, setExpandedSector] = useState<Record<string, boolean>>({
-    soe: true,
-    cms: true,
-    sbas: true,
-    sohs: true,
-    soadh: true,
-    intl: true,
-    mou: true,
-  });
+  const [expandedSchools, setExpandedSchools] = useState<
+    Record<string, boolean>
+  >({});
+  const [expandedSector, setExpandedSector] = useState<Record<string, boolean>>(
+    {
+      soe: true,
+      cms: true,
+      sbas: true,
+      sohs: true,
+      soadh: true,
+      intl: true,
+      mou: true,
+    },
+  );
 
   const { elementRef: statsRef, isVisible: statsVisible } = useScrollTrigger();
-  const { elementRef: outcomesRef, isVisible: outcomesVisible } = useScrollTrigger();
-  const { elementRef: pillarsRef, isVisible: pillarsVisible } = useScrollTrigger();
-  const { elementRef: storiesRef, isVisible: storiesVisible } = useScrollTrigger();
-  const { elementRef: recruitersRef, isVisible: recruitersVisible } = useScrollTrigger();
+  const { elementRef: outcomesRef, isVisible: outcomesVisible } =
+    useScrollTrigger();
+  const { elementRef: pillarsRef, isVisible: pillarsVisible } =
+    useScrollTrigger();
+  const { elementRef: storiesRef, isVisible: storiesVisible } =
+    useScrollTrigger();
+  const { elementRef: recruitersRef, isVisible: recruitersVisible } =
+    useScrollTrigger();
 
   const toggleSchool = (schoolKey: string) => {
     setExpandedSchools((prev) => ({
@@ -65,13 +73,34 @@ export default function Placements() {
       name: "School of Engineering",
       programs: "BE/B.Tech, M.Tech",
       batches: [
-        { year: "2025", link: "https://www.dsu.edu.in/images/placements/Hiring/SOE/soe_2025_RP.pdf" },
-        { year: "2024", link: "https://www.dsu.edu.in/images/placements/Hiring/SOE/soe_2024.pdf" },
-        { year: "2023", link: "https://www.dsu.edu.in/images/placements/Hiring/SOE/soe_2023_1.pdf" },
-        { year: "2022", link: "https://www.dsu.edu.in/images/placements/Hiring/SOE/soe_2022.pdf" },
-        { year: "2021", link: "https://www.dsu.edu.in/images/placements/Hiring/SOE/soe_2021.pdf" },
-        { year: "2020", link: "https://www.dsu.edu.in/images/placements/Hiring/SOE/soe_2020.pdf" },
-        { year: "2019", link: "https://www.dsu.edu.in/images/placements/Hiring/SOE/soe_2019.pdf" },
+        {
+          year: "2025",
+          link: "https://www.dsu.edu.in/images/placements/Hiring/SOE/soe_2025_RP.pdf",
+        },
+        {
+          year: "2024",
+          link: "https://www.dsu.edu.in/images/placements/Hiring/SOE/soe_2024.pdf",
+        },
+        {
+          year: "2023",
+          link: "https://www.dsu.edu.in/images/placements/Hiring/SOE/soe_2023_1.pdf",
+        },
+        {
+          year: "2022",
+          link: "https://www.dsu.edu.in/images/placements/Hiring/SOE/soe_2022.pdf",
+        },
+        {
+          year: "2021",
+          link: "https://www.dsu.edu.in/images/placements/Hiring/SOE/soe_2021.pdf",
+        },
+        {
+          year: "2020",
+          link: "https://www.dsu.edu.in/images/placements/Hiring/SOE/soe_2020.pdf",
+        },
+        {
+          year: "2019",
+          link: "https://www.dsu.edu.in/images/placements/Hiring/SOE/soe_2019.pdf",
+        },
       ],
     },
     {
@@ -79,13 +108,34 @@ export default function Placements() {
       name: "School of Commerce & Management Studies",
       programs: "BBA, MBA, B.Com, M.Com",
       batches: [
-        { year: "2025", link: "https://www.dsu.edu.in/images/placements/Hiring/CMS/Campus_placement_website_2025_School_of_Commerce__Mgt.pdf" },
-        { year: "2024", link: "https://www.dsu.edu.in/images/placements/Hiring/CMS/Campus_placement_website_2024_School_of_Commerce__Mgt.pdf" },
-        { year: "2023", link: "https://www.dsu.edu.in/images/placements/Hiring/CMS/cms_2023.pdf" },
-        { year: "2022", link: "https://www.dsu.edu.in/images/placements/Hiring/CMS/cms_2022.pdf" },
-        { year: "2021", link: "https://www.dsu.edu.in/images/placements/Hiring/CMS/cms_2021.pdf" },
-        { year: "2020", link: "https://www.dsu.edu.in/images/placements/Hiring/CMS/cms_2020.pdf" },
-        { year: "2019", link: "https://www.dsu.edu.in/images/placements/Hiring/CMS/cms_2019.pdf" },
+        {
+          year: "2025",
+          link: "https://www.dsu.edu.in/images/placements/Hiring/CMS/Campus_placement_website_2025_School_of_Commerce__Mgt.pdf",
+        },
+        {
+          year: "2024",
+          link: "https://www.dsu.edu.in/images/placements/Hiring/CMS/Campus_placement_website_2024_School_of_Commerce__Mgt.pdf",
+        },
+        {
+          year: "2023",
+          link: "https://www.dsu.edu.in/images/placements/Hiring/CMS/cms_2023.pdf",
+        },
+        {
+          year: "2022",
+          link: "https://www.dsu.edu.in/images/placements/Hiring/CMS/cms_2022.pdf",
+        },
+        {
+          year: "2021",
+          link: "https://www.dsu.edu.in/images/placements/Hiring/CMS/cms_2021.pdf",
+        },
+        {
+          year: "2020",
+          link: "https://www.dsu.edu.in/images/placements/Hiring/CMS/cms_2020.pdf",
+        },
+        {
+          year: "2019",
+          link: "https://www.dsu.edu.in/images/placements/Hiring/CMS/cms_2019.pdf",
+        },
       ],
     },
     {
@@ -93,12 +143,30 @@ export default function Placements() {
       name: "School of Basic & Applied Sciences",
       programs: "B.Sc, M.Sc",
       batches: [
-        { year: "2024", link: "https://www.dsu.edu.in/images/placements/Hiring/SBAS/sbas_2024.pdf" },
-        { year: "2023", link: "https://www.dsu.edu.in/images/placements/Hiring/SBAS/sbas_2023.pdf" },
-        { year: "2022", link: "https://www.dsu.edu.in/images/placements/Hiring/SBAS/sbas_2022.pdf" },
-        { year: "2021", link: "https://www.dsu.edu.in/images/placements/Hiring/SBAS/sbas_2021.pdf" },
-        { year: "2020", link: "https://www.dsu.edu.in/images/placements/Hiring/SBAS/sbas_2020.pdf" },
-        { year: "2019", link: "https://www.dsu.edu.in/images/placements/Hiring/SBAS/sbas_2019.pdf" },
+        {
+          year: "2024",
+          link: "https://www.dsu.edu.in/images/placements/Hiring/SBAS/sbas_2024.pdf",
+        },
+        {
+          year: "2023",
+          link: "https://www.dsu.edu.in/images/placements/Hiring/SBAS/sbas_2023.pdf",
+        },
+        {
+          year: "2022",
+          link: "https://www.dsu.edu.in/images/placements/Hiring/SBAS/sbas_2022.pdf",
+        },
+        {
+          year: "2021",
+          link: "https://www.dsu.edu.in/images/placements/Hiring/SBAS/sbas_2021.pdf",
+        },
+        {
+          year: "2020",
+          link: "https://www.dsu.edu.in/images/placements/Hiring/SBAS/sbas_2020.pdf",
+        },
+        {
+          year: "2019",
+          link: "https://www.dsu.edu.in/images/placements/Hiring/SBAS/sbas_2019.pdf",
+        },
       ],
     },
     {
@@ -109,34 +177,88 @@ export default function Placements() {
         {
           name: "Nursing",
           batches: [
-            { year: "2024", link: "https://www.dsu.edu.in/images/placements/Hiring/SOHS/Campus_placement_website_2024_CONS.pdf" },
-            { year: "2023", link: "https://www.dsu.edu.in/images/placements/Hiring/SOHS/Campus_placement_website_2023_CONS.pdf" },
-            { year: "2022", link: "https://www.dsu.edu.in/images/placements/Hiring/SOHS/Campus_placement_website_2022_CONS.pdf" },
-            { year: "2021", link: "https://www.dsu.edu.in/images/placements/Hiring/SOHS/nursing_2021.pdf" },
-            { year: "2020", link: "https://www.dsu.edu.in/images/placements/Hiring/SOHS/nursing_2020.pdf" },
-            { year: "2019", link: "https://www.dsu.edu.in/images/placements/Hiring/SOHS/nursing_2019.pdf" },
+            {
+              year: "2024",
+              link: "https://www.dsu.edu.in/images/placements/Hiring/SOHS/Campus_placement_website_2024_CONS.pdf",
+            },
+            {
+              year: "2023",
+              link: "https://www.dsu.edu.in/images/placements/Hiring/SOHS/Campus_placement_website_2023_CONS.pdf",
+            },
+            {
+              year: "2022",
+              link: "https://www.dsu.edu.in/images/placements/Hiring/SOHS/Campus_placement_website_2022_CONS.pdf",
+            },
+            {
+              year: "2021",
+              link: "https://www.dsu.edu.in/images/placements/Hiring/SOHS/nursing_2021.pdf",
+            },
+            {
+              year: "2020",
+              link: "https://www.dsu.edu.in/images/placements/Hiring/SOHS/nursing_2020.pdf",
+            },
+            {
+              year: "2019",
+              link: "https://www.dsu.edu.in/images/placements/Hiring/SOHS/nursing_2019.pdf",
+            },
           ],
         },
         {
           name: "Pharmacy",
           batches: [
-            { year: "2024", link: "https://www.dsu.edu.in/images/placements/Hiring/SOHS/Campus_placement_website__COPS_2024.pdf" },
-            { year: "2023", link: "https://www.dsu.edu.in/images/placements/Hiring/SOHS/pharmacy_2023.pdf" },
-            { year: "2022", link: "https://www.dsu.edu.in/images/placements/Hiring/SOHS/pharmacy_2022.pdf" },
-            { year: "2021", link: "https://www.dsu.edu.in/images/placements/Hiring/SOHS/pharmacy_2021.pdf" },
-            { year: "2020", link: "https://www.dsu.edu.in/images/placements/Hiring/SOHS/pharmacy_2020.pdf" },
-            { year: "2019", link: "https://www.dsu.edu.in/images/placements/Hiring/SOHS/pharmacy_2019.pdf" },
+            {
+              year: "2024",
+              link: "https://www.dsu.edu.in/images/placements/Hiring/SOHS/Campus_placement_website__COPS_2024.pdf",
+            },
+            {
+              year: "2023",
+              link: "https://www.dsu.edu.in/images/placements/Hiring/SOHS/pharmacy_2023.pdf",
+            },
+            {
+              year: "2022",
+              link: "https://www.dsu.edu.in/images/placements/Hiring/SOHS/pharmacy_2022.pdf",
+            },
+            {
+              year: "2021",
+              link: "https://www.dsu.edu.in/images/placements/Hiring/SOHS/pharmacy_2021.pdf",
+            },
+            {
+              year: "2020",
+              link: "https://www.dsu.edu.in/images/placements/Hiring/SOHS/pharmacy_2020.pdf",
+            },
+            {
+              year: "2019",
+              link: "https://www.dsu.edu.in/images/placements/Hiring/SOHS/pharmacy_2019.pdf",
+            },
           ],
         },
         {
           name: "Physiotherapy",
           batches: [
-            { year: "2024", link: "https://www.dsu.edu.in/images/placements/Hiring/SOHS/Campus_placement_website_2024__PHYSIOTHERAPY.pdf" },
-            { year: "2023", link: "https://www.dsu.edu.in/images/placements/Hiring/SOHS/physio_2023.pdf" },
-            { year: "2022", link: "https://www.dsu.edu.in/images/placements/Hiring/SOHS/physio_2022.pdf" },
-            { year: "2021", link: "https://www.dsu.edu.in/images/placements/Hiring/SOHS/physio_2021.pdf" },
-            { year: "2020", link: "https://www.dsu.edu.in/images/placements/Hiring/SOHS/physio_2020.pdf" },
-            { year: "2019", link: "https://www.dsu.edu.in/images/placements/Hiring/SOHS/physio_2019.pdf" },
+            {
+              year: "2024",
+              link: "https://www.dsu.edu.in/images/placements/Hiring/SOHS/Campus_placement_website_2024__PHYSIOTHERAPY.pdf",
+            },
+            {
+              year: "2023",
+              link: "https://www.dsu.edu.in/images/placements/Hiring/SOHS/physio_2023.pdf",
+            },
+            {
+              year: "2022",
+              link: "https://www.dsu.edu.in/images/placements/Hiring/SOHS/physio_2022.pdf",
+            },
+            {
+              year: "2021",
+              link: "https://www.dsu.edu.in/images/placements/Hiring/SOHS/physio_2021.pdf",
+            },
+            {
+              year: "2020",
+              link: "https://www.dsu.edu.in/images/placements/Hiring/SOHS/physio_2020.pdf",
+            },
+            {
+              year: "2019",
+              link: "https://www.dsu.edu.in/images/placements/Hiring/SOHS/physio_2019.pdf",
+            },
           ],
         },
       ],
@@ -146,11 +268,26 @@ export default function Placements() {
       name: "School of Arts, Design & Humanities",
       programs: "BA (JMC), B.Design",
       batches: [
-        { year: "2024", link: "https://www.dsu.edu.in/images/placements/Hiring/SOADH/soadh_2024.pdf" },
-        { year: "2023", link: "https://www.dsu.edu.in/images/placements/Hiring/SOADH/soadh_2023.pdf" },
-        { year: "2022", link: "https://www.dsu.edu.in/images/placements/Hiring/SOADH/soadh_2022.pdf" },
-        { year: "2021", link: "https://www.dsu.edu.in/images/placements/Hiring/SOADH/soadh_2021.pdf" },
-        { year: "2020", link: "https://www.dsu.edu.in/images/placements/Hiring/SOADH/soadh_2020.pdf" },
+        {
+          year: "2024",
+          link: "https://www.dsu.edu.in/images/placements/Hiring/SOADH/soadh_2024.pdf",
+        },
+        {
+          year: "2023",
+          link: "https://www.dsu.edu.in/images/placements/Hiring/SOADH/soadh_2023.pdf",
+        },
+        {
+          year: "2022",
+          link: "https://www.dsu.edu.in/images/placements/Hiring/SOADH/soadh_2022.pdf",
+        },
+        {
+          year: "2021",
+          link: "https://www.dsu.edu.in/images/placements/Hiring/SOADH/soadh_2021.pdf",
+        },
+        {
+          year: "2020",
+          link: "https://www.dsu.edu.in/images/placements/Hiring/SOADH/soadh_2020.pdf",
+        },
       ],
     },
     {
@@ -158,8 +295,14 @@ export default function Placements() {
       name: "School of Computer Application",
       programs: "BCA, MCA",
       batches: [
-        { year: "2025", link: "https://www.dsu.edu.in/images/placements/Hiring/SOCA/soca_2025.pdf" },
-        { year: "2024", link: "https://www.dsu.edu.in/images/placements/Hiring/SOCA/soca_2024.pdf" },
+        {
+          year: "2025",
+          link: "https://www.dsu.edu.in/images/placements/Hiring/SOCA/soca_2025.pdf",
+        },
+        {
+          year: "2024",
+          link: "https://www.dsu.edu.in/images/placements/Hiring/SOCA/soca_2024.pdf",
+        },
       ],
     },
   ];
@@ -169,7 +312,10 @@ export default function Placements() {
       name: "School of Engineering",
       icon: Building2,
       recruiters: [
-        { name: "Mercedes-Benz", logo: "https://logo.clearbit.com/mercedes-benz.de" },
+        {
+          name: "Mercedes-Benz",
+          logo: "https://logo.clearbit.com/mercedes-benz.de",
+        },
         { name: "ABB", logo: "https://logo.clearbit.com/abb.com" },
         { name: "Amazon", logo: "https://logo.clearbit.com/amazon.com" },
         { name: "Bosch", logo: "https://logo.clearbit.com/bosch.com" },
@@ -182,28 +328,64 @@ export default function Placements() {
         { name: "Tata Elxsi", logo: "https://logo.clearbit.com/tataelxsi.com" },
         { name: "Accenture", logo: "https://logo.clearbit.com/accenture.com" },
         { name: "CGI", logo: "https://logo.clearbit.com/cgi.com" },
-        { name: "J.P. Morgan", logo: "https://logo.clearbit.com/jpmorganchase.com" },
+        {
+          name: "J.P. Morgan",
+          logo: "https://logo.clearbit.com/jpmorganchase.com",
+        },
         { name: "Dell", logo: "https://logo.clearbit.com/dell.com" },
-        { name: "Mahindra Comviva", logo: "https://logo.clearbit.com/comviva.com" },
-        { name: "General Aeronautics", logo: "https://logo.clearbit.com/generalaeronautics.com" },
+        {
+          name: "Mahindra Comviva",
+          logo: "https://logo.clearbit.com/comviva.com",
+        },
+        {
+          name: "General Aeronautics",
+          logo: "https://logo.clearbit.com/generalaeronautics.com",
+        },
         { name: "SAP", logo: "https://logo.clearbit.com/sap.com" },
-        { name: "Informatica", logo: "https://logo.clearbit.com/informatica.com" },
-        { name: "Quest Global", logo: "https://logo.clearbit.com/quest-global.com" },
-        { name: "Happiest Minds", logo: "https://logo.clearbit.com/happiestminds.com" },
-        { name: "Societe Generale", logo: "https://logo.clearbit.com/societegenerale.com" },
+        {
+          name: "Informatica",
+          logo: "https://logo.clearbit.com/informatica.com",
+        },
+        {
+          name: "Quest Global",
+          logo: "https://logo.clearbit.com/quest-global.com",
+        },
+        {
+          name: "Happiest Minds",
+          logo: "https://logo.clearbit.com/happiestminds.com",
+        },
+        {
+          name: "Societe Generale",
+          logo: "https://logo.clearbit.com/societegenerale.com",
+        },
         { name: "TCL", logo: "https://logo.clearbit.com/tcl.com" },
         { name: "EXL", logo: "https://logo.clearbit.com/exlservice.com" },
         { name: "LSEG", logo: "https://logo.clearbit.com/lseg.com" },
-        { name: "Sunrise Systems", logo: "https://logo.clearbit.com/sunrisesys.com" },
+        {
+          name: "Sunrise Systems",
+          logo: "https://logo.clearbit.com/sunrisesys.com",
+        },
         { name: "Cognizant", logo: "https://logo.clearbit.com/cognizant.com" },
         { name: "Wipro", logo: "https://logo.clearbit.com/wipro.com" },
-        { name: "TEKsystems", logo: "https://logo.clearbit.com/teksystems.com" },
-        { name: "DXC Technology", logo: "https://logo.clearbit.com/dxc.technology" },
+        {
+          name: "TEKsystems",
+          logo: "https://logo.clearbit.com/teksystems.com",
+        },
+        {
+          name: "DXC Technology",
+          logo: "https://logo.clearbit.com/dxc.technology",
+        },
         { name: "IBM", logo: "https://logo.clearbit.com/ibm.com" },
         { name: "Nokia", logo: "https://logo.clearbit.com/nokia.com" },
         { name: "Kantar", logo: "https://logo.clearbit.com/kantar.com" },
-        { name: "Continental", logo: "https://logo.clearbit.com/continental.com" },
-        { name: "The MathCompany", logo: "https://logo.clearbit.com/themathcompany.com" },
+        {
+          name: "Continental",
+          logo: "https://logo.clearbit.com/continental.com",
+        },
+        {
+          name: "The MathCompany",
+          logo: "https://logo.clearbit.com/themathcompany.com",
+        },
       ],
     },
     cms: {
@@ -214,8 +396,14 @@ export default function Placements() {
         { name: "PWC", logo: "https://logo.clearbit.com/pwc.com" },
         { name: "EY", logo: "https://logo.clearbit.com/ey.com" },
         { name: "KPMG", logo: "https://logo.clearbit.com/kpmg.com" },
-        { name: "Goldman Sachs", logo: "https://logo.clearbit.com/goldmansachs.com" },
-        { name: "Morgan Stanley", logo: "https://logo.clearbit.com/morganstanley.com" },
+        {
+          name: "Goldman Sachs",
+          logo: "https://logo.clearbit.com/goldmansachs.com",
+        },
+        {
+          name: "Morgan Stanley",
+          logo: "https://logo.clearbit.com/morganstanley.com",
+        },
         { name: "ICICI Bank", logo: "https://logo.clearbit.com/icicibank.com" },
         { name: "HDFC Bank", logo: "https://logo.clearbit.com/hdfcbank.com" },
         { name: "Axis Bank", logo: "https://logo.clearbit.com/axisbank.com" },
@@ -229,9 +417,18 @@ export default function Placements() {
       icon: Code,
       recruiters: [
         { name: "Accenture", logo: "https://logo.clearbit.com/accenture.com" },
-        { name: "Anand Diagnostic Laboratory", logo: "https://logo.clearbit.com/anandlab.com" },
-        { name: "Anderson Diagnostics", logo: "https://logo.clearbit.com/andersondiagnostics.com" },
-        { name: "Anthem BioSciences", logo: "https://logo.clearbit.com/anthembio.com" },
+        {
+          name: "Anand Diagnostic Laboratory",
+          logo: "https://logo.clearbit.com/anandlab.com",
+        },
+        {
+          name: "Anderson Diagnostics",
+          logo: "https://logo.clearbit.com/andersondiagnostics.com",
+        },
+        {
+          name: "Anthem BioSciences",
+          logo: "https://logo.clearbit.com/anthembio.com",
+        },
         { name: "ARTECH", logo: "https://logo.clearbit.com/artech.co.in" },
         { name: "AugMedix", logo: "https://logo.clearbit.com/augmedix.com" },
         { name: "Bencos", logo: "https://logo.clearbit.com/bencos.com" },
@@ -253,12 +450,24 @@ export default function Placements() {
         { name: "GHA", logo: "https://logo.clearbit.com/gha.org.in" },
         { name: "GROWTHhub", logo: "https://logo.clearbit.com/growththub.io" },
         { name: "GSK", logo: "https://logo.clearbit.com/gsk.com" },
-        { name: "HealthPlix", logo: "https://logo.clearbit.com/healthplix.com" },
-        { name: "HealthMinds", logo: "https://logo.clearbit.com/healthminds.in" },
+        {
+          name: "HealthPlix",
+          logo: "https://logo.clearbit.com/healthplix.com",
+        },
+        {
+          name: "HealthMinds",
+          logo: "https://logo.clearbit.com/healthminds.in",
+        },
         { name: "HGS", logo: "https://logo.clearbit.com/hgs.com" },
         { name: "ICMR", logo: "https://logo.clearbit.com/icmr.gov.in" },
-        { name: "Immensphere", logo: "https://logo.clearbit.com/immensphere.com" },
-        { name: "ImpactGuru", logo: "https://logo.clearbit.com/impactguru.com" },
+        {
+          name: "Immensphere",
+          logo: "https://logo.clearbit.com/immensphere.com",
+        },
+        {
+          name: "ImpactGuru",
+          logo: "https://logo.clearbit.com/impactguru.com",
+        },
         { name: "Indo-MIM", logo: "https://logo.clearbit.com/indomim.com" },
       ],
     },
@@ -266,14 +475,35 @@ export default function Placements() {
       name: "School of Health Sciences",
       icon: Building2,
       recruiters: [
-        { name: "Apollo Hospitals", logo: "https://logo.clearbit.com/apollohospitals.com" },
-        { name: "Fortis Healthcare", logo: "https://logo.clearbit.com/fortishealthcare.com" },
-        { name: "Max Healthcare", logo: "https://logo.clearbit.com/maxhealthcare.in" },
-        { name: "Manipal Hospitals", logo: "https://logo.clearbit.com/manipalhospitals.com" },
-        { name: "Aravind Eye Care", logo: "https://logo.clearbit.com/aravind.org" },
-        { name: "Narayana Health", logo: "https://logo.clearbit.com/narayanahealth.org" },
+        {
+          name: "Apollo Hospitals",
+          logo: "https://logo.clearbit.com/apollohospitals.com",
+        },
+        {
+          name: "Fortis Healthcare",
+          logo: "https://logo.clearbit.com/fortishealthcare.com",
+        },
+        {
+          name: "Max Healthcare",
+          logo: "https://logo.clearbit.com/maxhealthcare.in",
+        },
+        {
+          name: "Manipal Hospitals",
+          logo: "https://logo.clearbit.com/manipalhospitals.com",
+        },
+        {
+          name: "Aravind Eye Care",
+          logo: "https://logo.clearbit.com/aravind.org",
+        },
+        {
+          name: "Narayana Health",
+          logo: "https://logo.clearbit.com/narayanahealth.org",
+        },
         { name: "Cipla", logo: "https://logo.clearbit.com/cipla.com" },
-        { name: "Dr. Reddy's Labs", logo: "https://logo.clearbit.com/drreddys.com" },
+        {
+          name: "Dr. Reddy's Labs",
+          logo: "https://logo.clearbit.com/drreddys.com",
+        },
         { name: "Lupin Limited", logo: "https://logo.clearbit.com/lupin.com" },
         { name: "Biocon", logo: "https://logo.clearbit.com/biocon.com" },
       ],
@@ -282,11 +512,17 @@ export default function Placements() {
       name: "School of Arts, Design & Humanities",
       icon: Lightbulb,
       recruiters: [
-        { name: "Google Creative", logo: "https://logo.clearbit.com/google.com" },
+        {
+          name: "Google Creative",
+          logo: "https://logo.clearbit.com/google.com",
+        },
         { name: "Adobe", logo: "https://logo.clearbit.com/adobe.com" },
         { name: "Meta", logo: "https://logo.clearbit.com/meta.com" },
         { name: "Flipkart", logo: "https://logo.clearbit.com/flipkart.com" },
-        { name: "Times Internet", logo: "https://logo.clearbit.com/timesinternet.com" },
+        {
+          name: "Times Internet",
+          logo: "https://logo.clearbit.com/timesinternet.com",
+        },
         { name: "Ogilvy", logo: "https://logo.clearbit.com/ogilvy.com" },
         { name: "Publicis", logo: "https://logo.clearbit.com/publicis.com" },
         { name: "Wavemaker", logo: "https://logo.clearbit.com/wavemaker.com" },
@@ -304,7 +540,10 @@ export default function Placements() {
         { name: "Apple", logo: "https://logo.clearbit.com/apple.com" },
         { name: "IBM", logo: "https://logo.clearbit.com/ibm.com" },
         { name: "Oracle", logo: "https://logo.clearbit.com/oracle.com" },
-        { name: "Goldman Sachs", logo: "https://logo.clearbit.com/goldmansachs.com" },
+        {
+          name: "Goldman Sachs",
+          logo: "https://logo.clearbit.com/goldmansachs.com",
+        },
       ],
     },
     mou: {
@@ -312,11 +551,26 @@ export default function Placements() {
       icon: Handshake,
       recruiters: [
         { name: "Tata Elxsi", logo: "https://logo.clearbit.com/tataelxsi.com" },
-        { name: "Quest Global", logo: "https://logo.clearbit.com/questglobal.com" },
-        { name: "Mahindra Comviva", logo: "https://logo.clearbit.com/comviva.com" },
-        { name: "Continental AG", logo: "https://logo.clearbit.com/continental.com" },
-        { name: "J.P. Morgan", logo: "https://logo.clearbit.com/jpmorganchase.com" },
-        { name: "Morgan Stanley", logo: "https://logo.clearbit.com/morganstanley.com" },
+        {
+          name: "Quest Global",
+          logo: "https://logo.clearbit.com/questglobal.com",
+        },
+        {
+          name: "Mahindra Comviva",
+          logo: "https://logo.clearbit.com/comviva.com",
+        },
+        {
+          name: "Continental AG",
+          logo: "https://logo.clearbit.com/continental.com",
+        },
+        {
+          name: "J.P. Morgan",
+          logo: "https://logo.clearbit.com/jpmorganchase.com",
+        },
+        {
+          name: "Morgan Stanley",
+          logo: "https://logo.clearbit.com/morganstanley.com",
+        },
       ],
     },
   };
@@ -332,19 +586,22 @@ export default function Placements() {
     {
       title: "AI-Enabled Curriculum",
       outcome: "→ AI/Data/Core Tech Roles",
-      description: "NVIDIA-powered academics prepare graduates for premium technical roles at top tech companies",
+      description:
+        "NVIDIA-powered academics prepare graduates for premium technical roles at top tech companies",
       icon: Brain,
     },
     {
       title: "Industry Projects",
       outcome: "→ Faster Employability",
-      description: "Real-world problem solving accelerates job readiness and reduces time-to-productivity",
+      description:
+        "Real-world problem solving accelerates job readiness and reduces time-to-productivity",
       icon: Target,
     },
     {
       title: "Research Exposure",
       outcome: "→ Higher-Order Roles",
-      description: "Published research and innovation experience qualify graduates for leadership and R&D positions",
+      description:
+        "Published research and innovation experience qualify graduates for leadership and R&D positions",
       icon: Lightbulb,
     },
   ];
@@ -357,12 +614,14 @@ export default function Placements() {
     },
     {
       title: "AI & Technology Readiness",
-      description: "NVIDIA-powered education ensuring cutting-edge technical competency",
+      description:
+        "NVIDIA-powered education ensuring cutting-edge technical competency",
       icon: Brain,
     },
     {
       title: "Professional & Leadership Development",
-      description: "Soft skills, communication, and management capabilities for career progression",
+      description:
+        "Soft skills, communication, and management capabilities for career progression",
       icon: Users,
     },
   ];
@@ -373,38 +632,44 @@ export default function Placements() {
       program: "Computer Science & Engineering",
       role: "Software Engineer",
       company: "Accenture & Infosys",
-      achievement: "AI-based projects and industry mentoring helped transition into software engineering role",
+      achievement:
+        "AI-based projects and industry mentoring helped transition into software engineering role",
     },
     {
       name: "Janamruth U",
       program: "Mechanical Engineering",
       role: "Design Engineer",
       company: "Continental AG",
-      achievement: "Industry-aligned curriculum and placement support secured position in automotive innovation",
+      achievement:
+        "Industry-aligned curriculum and placement support secured position in automotive innovation",
     },
     {
       name: "Aashna Bhaskaran",
       program: "Electronics & Communication Engineering",
       role: "Systems Engineer",
       company: "Cognizant & Accenture",
-      achievement: "Technical training and workshops from 3rd year enabled faster career progression",
+      achievement:
+        "Technical training and workshops from 3rd year enabled faster career progression",
     },
   ];
 
   const placementServices = [
     {
       title: "Campus Placements",
-      description: "Year-round on-campus recruitment driving placements across all schools",
+      description:
+        "Year-round on-campus recruitment driving placements across all schools",
       icon: Building2,
     },
     {
       title: "Industry-Linked Training",
-      description: "Technical and soft skills aligned with recruiter expectations",
+      description:
+        "Technical and soft skills aligned with recruiter expectations",
       icon: Zap,
     },
     {
       title: "Mentorship & Alumni Connect",
-      description: "Career guidance and networking with successful alumni across industries",
+      description:
+        "Career guidance and networking with successful alumni across industries",
       icon: Handshake,
     },
   ];
@@ -432,7 +697,8 @@ export default function Placements() {
       contacts: [
         {
           name: "Prof. Sanjay K",
-          title: "Director (Corporate Relations & Placement) Management Schools",
+          title:
+            "Director (Corporate Relations & Placement) Management Schools",
           phone: "+91 98802 83123",
           email: "sanjay.k@dsu.edu.in",
         },
@@ -452,14 +718,30 @@ export default function Placements() {
       <section className="relative py-10 lg:py-20 bg-gradient-to-br from-slate-900 via-orange-900 to-slate-900 overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-0 left-0 w-96 h-96 bg-orange-500/20 rounded-full filter blur-3xl animate-float"></div>
-          <div className="absolute top-1/3 right-0 w-80 h-80 bg-red-600/15 rounded-full filter blur-3xl animate-float" style={{ animationDelay: "1s" }}></div>
-          <div className="absolute bottom-0 left-1/3 w-72 h-72 bg-orange-400/10 rounded-full filter blur-3xl animate-float" style={{ animationDelay: "2s" }}></div>
+          <div
+            className="absolute top-1/3 right-0 w-80 h-80 bg-red-600/15 rounded-full filter blur-3xl animate-float"
+            style={{ animationDelay: "1s" }}
+          ></div>
+          <div
+            className="absolute bottom-0 left-1/3 w-72 h-72 bg-orange-400/10 rounded-full filter blur-3xl animate-float"
+            style={{ animationDelay: "2s" }}
+          ></div>
 
           <div className="absolute inset-0 opacity-10">
             <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
               <defs>
-                <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                  <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" strokeWidth="1" />
+                <pattern
+                  id="grid"
+                  width="40"
+                  height="40"
+                  patternUnits="userSpaceOnUse"
+                >
+                  <path
+                    d="M 40 0 L 0 0 0 40"
+                    fill="none"
+                    stroke="white"
+                    strokeWidth="1"
+                  />
                 </pattern>
               </defs>
               <rect width="100%" height="100%" fill="url(#grid)" />
@@ -467,7 +749,10 @@ export default function Placements() {
           </div>
 
           <div className="absolute top-10 right-20 w-40 h-40 border-2 border-orange-500/20 rounded-3xl transform rotate-45 animate-pulse"></div>
-          <div className="absolute bottom-20 left-10 w-32 h-32 border-2 border-red-500/20 rounded-full animate-pulse" style={{ animationDelay: "1s" }}></div>
+          <div
+            className="absolute bottom-20 left-10 w-32 h-32 border-2 border-red-500/20 rounded-full animate-pulse"
+            style={{ animationDelay: "1s" }}
+          ></div>
         </div>
 
         <div className="relative max-w-7xl mx-auto px-3 text-center">
@@ -489,7 +774,9 @@ export default function Placements() {
           </h1>
 
           <p className="text-lg md:text-xl text-gray-200 mb-8 leading-relaxed max-w-3xl mx-auto">
-            DSU graduates secure career-defining roles across technology, engineering, management, finance, and research through AI-integrated education, industry mentorship, and research excellence.
+            DSU graduates secure career-defining roles across technology,
+            engineering, management, finance, and research through AI-integrated
+            education, industry mentorship, and research excellence.
           </p>
         </div>
       </section>
@@ -504,7 +791,9 @@ export default function Placements() {
                 <Card
                   key={index}
                   className={`bg-card/50 backdrop-blur-sm border border-border/50 hover:border-orange-500/30 transition-all duration-300 transform ${
-                    statsVisible ? "scale-100 opacity-100" : "scale-95 opacity-0"
+                    statsVisible
+                      ? "scale-100 opacity-100"
+                      : "scale-95 opacity-0"
                   }`}
                   style={{
                     transitionDelay: `${index * 100}ms`,
@@ -546,7 +835,10 @@ export default function Placements() {
             {Object.entries(recruitersBySchool).map(([key, school]) => {
               const SchoolIcon = school.icon;
               return (
-                <div key={key} className="border border-border/50 rounded-2xl overflow-hidden bg-card/30">
+                <div
+                  key={key}
+                  className="border border-border/50 rounded-2xl overflow-hidden bg-card/30"
+                >
                   <button
                     onClick={() => toggleSector(key)}
                     className="w-full px-4 py-6 flex items-center justify-between hover:bg-orange-500/5 transition-colors text-left"
@@ -555,7 +847,9 @@ export default function Placements() {
                       <div className="w-10 h-10 rounded-lg bg-orange-500/10 flex items-center justify-center">
                         <SchoolIcon className="w-5 h-5 text-orange-500" />
                       </div>
-                      <h3 className="text-lg font-bold text-foreground uppercase tracking-wide">{school.name}</h3>
+                      <h3 className="text-lg font-bold text-foreground uppercase tracking-wide">
+                        {school.name}
+                      </h3>
                     </div>
                     <ChevronDown
                       className={`w-5 h-5 text-orange-500 flex-shrink-0 transition-transform duration-300 ${
@@ -601,7 +895,10 @@ export default function Placements() {
       </section>
 
       {/* ===== OUTCOME-DRIVEN ADVANTAGES ===== */}
-      <section ref={outcomesRef} className="px-3 py-10 lg:py-16 bg-gradient-to-br from-orange-500/5 via-red-600/5 to-background">
+      <section
+        ref={outcomesRef}
+        className="px-3 py-10 lg:py-16 bg-gradient-to-br from-orange-500/5 via-red-600/5 to-background"
+      >
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -621,7 +918,9 @@ export default function Placements() {
                 <Card
                   key={index}
                   className={`bg-card/50 backdrop-blur-sm border border-border/50 hover:border-orange-500/30 transition-all duration-300 transform ${
-                    outcomesVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+                    outcomesVisible
+                      ? "translate-y-0 opacity-100"
+                      : "translate-y-8 opacity-0"
                   }`}
                   style={{
                     transitionDelay: `${index * 150}ms`,
@@ -631,11 +930,17 @@ export default function Placements() {
                     <div className="w-12 h-12 rounded-2xl bg-orange-500/10 flex items-center justify-center mb-4">
                       <Icon className="w-6 h-6 text-orange-500" />
                     </div>
-                    <CardTitle className="text-foreground text-lg">{card.title}</CardTitle>
-                    <p className="text-sm font-semibold text-orange-500 mt-2">{card.outcome}</p>
+                    <CardTitle className="text-foreground text-lg">
+                      {card.title}
+                    </CardTitle>
+                    <p className="text-sm font-semibold text-orange-500 mt-2">
+                      {card.outcome}
+                    </p>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-sm text-foreground">{card.description}</p>
+                    <p className="text-sm text-foreground">
+                      {card.description}
+                    </p>
                   </CardContent>
                 </Card>
               );
@@ -674,7 +979,9 @@ export default function Placements() {
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-sm text-foreground">{pillar.description}</p>
+                    <p className="text-sm text-foreground">
+                      {pillar.description}
+                    </p>
                   </CardContent>
                 </Card>
               );
@@ -684,7 +991,10 @@ export default function Placements() {
       </section>
 
       {/* ===== OUTCOME-FOCUSED SUCCESS STORIES ===== */}
-      <section ref={storiesRef} className="px-3 py-10 lg:py-16 bg-gradient-to-br from-red-500/5 via-orange-500/5 to-background">
+      <section
+        ref={storiesRef}
+        className="px-3 py-10 lg:py-16 bg-gradient-to-br from-red-500/5 via-orange-500/5 to-background"
+      >
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -702,22 +1012,32 @@ export default function Placements() {
               <Card
                 key={index}
                 className={`bg-card/50 backdrop-blur-sm border border-border/50 hover:border-orange-500/30 transition-all duration-300 transform ${
-                  storiesVisible ? "scale-100 opacity-100" : "scale-95 opacity-0"
+                  storiesVisible
+                    ? "scale-100 opacity-100"
+                    : "scale-95 opacity-0"
                 }`}
                 style={{
                   transitionDelay: `${index * 100}ms`,
                 }}
               >
                 <CardHeader>
-                  <h3 className="text-lg font-bold text-foreground mb-1">{story.name}</h3>
-                  <p className="text-sm text-foreground/70 mb-3">{story.program}</p>
+                  <h3 className="text-lg font-bold text-foreground mb-1">
+                    {story.name}
+                  </h3>
+                  <p className="text-sm text-foreground/70 mb-3">
+                    {story.program}
+                  </p>
                   <div className="inline-flex items-center gap-2 px-3 py-1 bg-orange-500/10 rounded-full w-fit">
                     <Briefcase className="w-4 h-4 text-orange-500" />
-                    <span className="text-sm font-semibold text-orange-500">{story.role}</span>
+                    <span className="text-sm font-semibold text-orange-500">
+                      {story.role}
+                    </span>
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm font-medium text-foreground mb-3">{story.company}</p>
+                  <p className="text-sm font-medium text-foreground mb-3">
+                    {story.company}
+                  </p>
                   <p className="text-sm text-foreground italic border-l-2 border-orange-500 pl-3">
                     "{story.achievement}"
                   </p>
@@ -751,10 +1071,14 @@ export default function Placements() {
                     <div className="w-12 h-12 rounded-2xl bg-orange-500/10 flex items-center justify-center mb-4">
                       <Icon className="w-6 h-6 text-orange-500" />
                     </div>
-                    <CardTitle className="text-foreground">{service.title}</CardTitle>
+                    <CardTitle className="text-foreground">
+                      {service.title}
+                    </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-sm text-foreground">{service.description}</p>
+                    <p className="text-sm text-foreground">
+                      {service.description}
+                    </p>
                   </CardContent>
                 </Card>
               );
@@ -779,7 +1103,10 @@ export default function Placements() {
 
           <div className="space-y-4">
             {placementData.map((school) => (
-              <div key={school.key} className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl overflow-hidden hover:border-orange-500/30 transition-all duration-300">
+              <div
+                key={school.key}
+                className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl overflow-hidden hover:border-orange-500/30 transition-all duration-300"
+              >
                 <button
                   onClick={() => toggleSchool(school.key)}
                   className="w-full px-4 py-6 flex items-center justify-between hover:bg-orange-500/5 transition-colors"
@@ -789,8 +1116,12 @@ export default function Placements() {
                       <BookOpen className="w-5 h-5 text-orange-500" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold text-foreground mb-1">{school.name}</h3>
-                      <p className="text-sm text-foreground">{school.programs}</p>
+                      <h3 className="text-lg font-bold text-foreground mb-1">
+                        {school.name}
+                      </h3>
+                      <p className="text-sm text-foreground">
+                        {school.programs}
+                      </p>
                     </div>
                   </div>
                   <ChevronDown
@@ -806,7 +1137,9 @@ export default function Placements() {
                       <div className="space-y-6">
                         {school.subCategories.map((subCategory, subIdx) => (
                           <div key={subIdx}>
-                            <h4 className="text-base font-semibold text-foreground mb-4">{subCategory.name}</h4>
+                            <h4 className="text-base font-semibold text-foreground mb-4">
+                              {subCategory.name}
+                            </h4>
                             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-3">
                               {subCategory.batches.map((batch, batchIdx) => (
                                 <a
@@ -862,7 +1195,8 @@ export default function Placements() {
               </span>
             </h2>
             <p className="text-lg text-foreground max-w-3xl mx-auto">
-              Reach our placement team for recruitment and partnership opportunities
+              Reach our placement team for recruitment and partnership
+              opportunities
             </p>
           </div>
 
@@ -881,7 +1215,9 @@ export default function Placements() {
                       <h4 className="text-base font-bold text-foreground mb-1">
                         {contact.name}
                       </h4>
-                      <p className="text-xs text-foreground mb-3">{contact.title}</p>
+                      <p className="text-xs text-foreground mb-3">
+                        {contact.title}
+                      </p>
 
                       <div className="space-y-2">
                         <div className="flex items-center gap-2">
@@ -920,7 +1256,8 @@ export default function Placements() {
               Begin Your Success Story
             </h2>
             <p className="text-lg text-foreground mb-8 max-w-2xl mx-auto">
-              Join DSU and access opportunities with 500+ global recruiters committed to your career growth.
+              Join DSU and access opportunities with 500+ global recruiters
+              committed to your career growth.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
