@@ -312,114 +312,438 @@ export default function Placements() {
       name: "School of Engineering",
       icon: Building2,
       recruiters: [
-        { name: "Logo 1", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F1fd6f477dc64481abe276a3fd33ef046?format=webp&width=800" },
-        { name: "Logo 2", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F56fe2bf379f84dbeb2e24c5af7fdb51b?format=webp&width=800" },
-        { name: "Logo 3", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F779fdb29f4544b3ea7d528b0a75eb92c?format=webp&width=800" },
-        { name: "Logo 4", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fa06309789c5a4ccf9bbf66fdc4526f71?format=webp&width=800" },
-        { name: "Logo 5", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F84c117b53d30497888dc0eda95b81bdc?format=webp&width=800" },
-        { name: "Logo 6", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fc079e39dc01546bfbea1364ff627cd0f?format=webp&width=800" },
-        { name: "Logo 7", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F4c6423df114b417e8f131a64a2c41ec6?format=webp&width=800" },
-        { name: "Logo 8", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F4ff9e2538d1a472c9feb21852e32c5ce?format=webp&width=800" },
-        { name: "Logo 9", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F0ec93afdab7b4ad8846c510d97b24395?format=webp&width=800" },
-        { name: "Logo 10", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fca2364908f50463d93dc5c71ebf3838e?format=webp&width=800" },
-        { name: "Logo 11", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fd51e6b821589466e9103cd72de860fc9?format=webp&width=800" },
-        { name: "Logo 12", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F690c1a76d01f4a57b8c5b8cd610a9ce5?format=webp&width=800" },
-        { name: "Logo 13", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F8c7eda9d6f264aaeab200febfbd65bef?format=webp&width=800" },
-        { name: "Logo 14", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Feabd42fd06b84db3bb2dd34cfd4db415?format=webp&width=800" },
-        { name: "Logo 15", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fef238b2d95f843e99f89d64074176490?format=webp&width=800" },
-        { name: "Logo 16", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fb17227fd99ff43eba842419c9aaafa5c?format=webp&width=800" },
-        { name: "Logo 17", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fb6167ea0058d4ef69191a98a1d23c694?format=webp&width=800" },
-        { name: "Logo 18", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F3886e61c6cdf43098c147a62b868ac8d?format=webp&width=800" },
-        { name: "Logo 19", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fe6bf63a0e6ef4455b24d2ac3acf3659f?format=webp&width=800" },
-        { name: "Logo 20", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F6a2c4f72758b42acb31fa9d8d501ad51?format=webp&width=800" },
-        { name: "Logo 21", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Ff5a9bdb958f545f7b71b8fa466ae396a?format=webp&width=800" },
-        { name: "Logo 22", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fdebd05df321b4e2d9636725697cfcf5e?format=webp&width=800" },
-        { name: "Logo 23", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F153cfdca34574416b2948b580efc3421?format=webp&width=800" },
-        { name: "Logo 24", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F1feac0d1a7414f10a25d2944fe5e8408?format=webp&width=800" },
-        { name: "Logo 25", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F6205b8cbaf3b42ba9c3f665d80b1ecb5?format=webp&width=800" },
-        { name: "Logo 26", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fff87acfe2c494d478132a9fab8bd0a67?format=webp&width=800" },
-        { name: "Logo 27", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F931ec082d95a46819f9855e91db10edd?format=webp&width=800" },
-        { name: "Logo 28", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F0a7132bccf8e49e4b3482066ed403bfd?format=webp&width=800" },
-        { name: "Logo 29", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F78aa85f189e64d66b379f30e264a4de4?format=webp&width=800" },
-        { name: "Logo 30", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F6cd8aa4448bb49978a861b66cf3a1de8?format=webp&width=800" },
-        { name: "Logo 31", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F5d831d4ad32c4cba9df3b341fff6acd6?format=webp&width=800" },
-        { name: "Logo 32", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F4ae51ca9249145cea5a9b4f3cabc87a3?format=webp&width=800" },
-        { name: "Logo 33", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F56e05faa0878479f910a2603a98f8234?format=webp&width=800" },
-        { name: "Logo 34", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fd1548044cf9a4444b7229da78c066690?format=webp&width=800" },
-        { name: "Logo 35", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F59c5fc6bdfb94618b3ea02266a9eda5c?format=webp&width=800" },
-        { name: "Logo 36", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F877e5306def646ee98ae5c9a740b016f?format=webp&width=800" },
-        { name: "Logo 37", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F1d6f94cdbd2848fc83f4153e2a5e590f?format=webp&width=800" },
-        { name: "Logo 38", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fae735b17ca714bfe80bcf3df2198e021?format=webp&width=800" },
-        { name: "Logo 39", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F6530c32583ae42249b37b1587a7c0165?format=webp&width=800" },
-        { name: "Logo 40", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F8c6f41bff14e4d6ca64a7d1074df3013?format=webp&width=800" },
-        { name: "Logo 41", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fdd23585204c441ebbeeed1e477516936?format=webp&width=800" },
-        { name: "Logo 42", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F3eeede5befbf4c07920ee1bbf8584451?format=webp&width=800" },
-        { name: "Logo 43", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F2b66c0bd78874f499ae07af50976592b?format=webp&width=800" },
-        { name: "Logo 44", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fe6ea7c2665694f11b6d5069df4ef5300?format=webp&width=800" },
-        { name: "Logo 45", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fc8540b0ac9d24844ad9e68264c122081?format=webp&width=800" },
-        { name: "Logo 46", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F1add4f16e58f415d93405e0974adcdc7?format=webp&width=800" },
-        { name: "Logo 47", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F9ca6fb24aa03441d890316b0d7dcfe40?format=webp&width=800" },
-        { name: "Logo 48", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fdf69bea2803e46469eb335cac2e9d77f?format=webp&width=800" },
-        { name: "Logo 49", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F80c3f66c1d7142a5b933fa85de94b91b?format=webp&width=800" },
-        { name: "Logo 50", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F55701aca9dfb46369c9c50ca77f7cd1e?format=webp&width=800" },
-        { name: "Logo 51", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fbc122d31a8454e74911a35c9b355c4b6?format=webp&width=800" },
-        { name: "Logo 52", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fe0c9d64ffa454de8be0565c4c9cf722c?format=webp&width=800" },
-        { name: "Logo 53", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F934243373fe6435fba5d98d8be93300a?format=webp&width=800" },
-        { name: "Logo 54", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F374b0200289149fdbb356e57ca132a05?format=webp&width=800" },
-        { name: "Logo 55", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F471bb1cd92c14e57818282e01d20e874?format=webp&width=800" },
-        { name: "Logo 56", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F575465e349fe4b44a55b7e93fac60470?format=webp&width=800" },
-        { name: "Logo 57", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fa767073a5ab9483c9a664777f6db3e82?format=webp&width=800" },
-        { name: "Logo 58", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F517e2613aea641d5b5f636baef7b311f?format=webp&width=800" },
-        { name: "Logo 59", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F62d25891346e408580848b0b824ffa6f?format=webp&width=800" },
-        { name: "Logo 60", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fe45faa21fa7a49c69d3acd84568e7651?format=webp&width=800" },
-        { name: "Logo 61", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F1066c760a49c40289d12e26e51408f39?format=webp&width=800" },
-        { name: "Logo 62", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F2def30750ef7451086c47f2c344baf05?format=webp&width=800" },
-        { name: "Logo 63", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F0c9437af6db14b58891efbf22c4c0845?format=webp&width=800" },
-        { name: "Logo 64", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Ff3a6094793a74a54852a21960594929d?format=webp&width=800" },
-        { name: "Logo 65", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F1ad94222c05245589ef93be5dfc738d6?format=webp&width=800" },
-        { name: "Logo 66", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F1493293e2c8a419ca859fa94b274b412?format=webp&width=800" },
-        { name: "Logo 67", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F85b4483199ff43709e35950174ce2219?format=webp&width=800" },
-        { name: "Logo 68", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Feee66bea3041466bb25264cc10f7c16b?format=webp&width=800" },
-        { name: "Logo 69", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F2371c327d414465fb62e652c6fdb4d94?format=webp&width=800" },
-        { name: "Logo 70", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fabf686a4fe864a26996a1bb9e55ddd22?format=webp&width=800" },
-        { name: "Logo 71", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F6b196a3179094c09877b4fb78cb9c170?format=webp&width=800" },
-        { name: "Logo 72", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fb7f4da6dffd543ae8c56e84e06ae6aa8?format=webp&width=800" },
-        { name: "Logo 73", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F0386c01a787942e9a9d68b78c7f582c5?format=webp&width=800" },
-        { name: "Logo 74", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F0aa77e8f8b284c7f99e0647e50aa7478?format=webp&width=800" },
-        { name: "Logo 75", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F79f6370b4ef645e5814673b18b6b6bba?format=webp&width=800" },
-        { name: "Logo 76", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fa0eec134f0e84f5a8daf9562fc7dea51?format=webp&width=800" },
-        { name: "Logo 77", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Ffaf2ecaaa7dc4de893356111b928df05?format=webp&width=800" },
-        { name: "Logo 78", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F1472f169a432484a86930c1f87b1d9db?format=webp&width=800" },
-        { name: "Logo 79", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F28bfdf248deb411b8a2ab4161973cd87?format=webp&width=800" },
-        { name: "Logo 80", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F4ef407a394754a68ab02a6ca7d3ac0df?format=webp&width=800" },
-        { name: "Logo 81", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F4279d64cc5014ed780251b55a395cb0e?format=webp&width=800" },
-        { name: "Logo 82", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F3eb30563fcc8468ea5270003656cdad9?format=webp&width=800" },
-        { name: "Logo 83", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F8fb1d6263c564aa898fca7318dd55894?format=webp&width=800" },
-        { name: "Logo 84", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F81f1a03628384aab802f78555b4c63a3?format=webp&width=800" },
-        { name: "Logo 85", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F2d7251cb6b734bb2aabb6f25f53cd39d?format=webp&width=800" },
-        { name: "Logo 86", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fa7724a05fdae484fa33ee4604085d8e1?format=webp&width=800" },
-        { name: "Logo 87", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fa04f39ede3d141eca4738f31508c79ca?format=webp&width=800" },
-        { name: "Logo 88", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F569b018fcd584115b36def721bd1769b?format=webp&width=800" },
-        { name: "Logo 89", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F54d64add5d11455db7067b0b7a456a98?format=webp&width=800" },
-        { name: "Logo 90", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F9e5e8868ecd7425c9c37ae6729ba72ed?format=webp&width=800" },
-        { name: "Logo 91", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F89762d7e13cc49518b45e56ac6c35866?format=webp&width=800" },
-        { name: "Logo 92", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F3fca96a8c6084cd8998292f52203dffc?format=webp&width=800" },
-        { name: "Logo 93", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Ff7ae50033ee04a36b8dd46acafc6c076?format=webp&width=800" },
-        { name: "Logo 94", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fa56adeebc2d3483fb0382d939788acad?format=webp&width=800" },
-        { name: "Logo 95", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fcf2cd17ba79c4f41b0369dcd605a934f?format=webp&width=800" },
-        { name: "Logo 96", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F7ebc5ad2f84c4d38be898752854556f7?format=webp&width=800" },
-        { name: "Logo 97", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fc95b7e1b747544a4846ff8b6d0abc3df?format=webp&width=800" },
-        { name: "Logo 98", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F023dc2ebc3b24fc3920ec3251e762247?format=webp&width=800" },
-        { name: "Logo 99", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F8f4e42526e344e1793bc83c2ee797750?format=webp&width=800" },
-        { name: "Logo 100", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F559c4fde6e4947298c20b068db242ab6?format=webp&width=800" },
-        { name: "Logo 101", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F3e5997655b384b19a8cdac6b0710f91c?format=webp&width=800" },
-        { name: "Logo 102", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fef1ba4e053aa49ea9c774c70c51585fd?format=webp&width=800" },
-        { name: "Logo 103", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F2a52de68da5f4cf79ed594c4e78a7cf6?format=webp&width=800" },
-        { name: "Logo 104", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F7eb067e3467b46619fc6e2c3b05b4486?format=webp&width=800" },
-        { name: "Logo 105", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fd90430162bc04822b5fae6ae23f872c5?format=webp&width=800" },
-        { name: "Logo 106", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F28826edc06f14903bbac33952dfe9f56?format=webp&width=800" },
-        { name: "Logo 107", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fac25e701a28342b5ba77ca0aaac6daf0?format=webp&width=800" },
-        { name: "Logo 108", logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fcff33dffdf2f4e7fb310595817dc9946?format=webp&width=800" },
+        {
+          name: "Logo 1",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F1fd6f477dc64481abe276a3fd33ef046?format=webp&width=800",
+        },
+        {
+          name: "Logo 2",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F56fe2bf379f84dbeb2e24c5af7fdb51b?format=webp&width=800",
+        },
+        {
+          name: "Logo 3",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F779fdb29f4544b3ea7d528b0a75eb92c?format=webp&width=800",
+        },
+        {
+          name: "Logo 4",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fa06309789c5a4ccf9bbf66fdc4526f71?format=webp&width=800",
+        },
+        {
+          name: "Logo 5",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F84c117b53d30497888dc0eda95b81bdc?format=webp&width=800",
+        },
+        {
+          name: "Logo 6",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fc079e39dc01546bfbea1364ff627cd0f?format=webp&width=800",
+        },
+        {
+          name: "Logo 7",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F4c6423df114b417e8f131a64a2c41ec6?format=webp&width=800",
+        },
+        {
+          name: "Logo 8",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F4ff9e2538d1a472c9feb21852e32c5ce?format=webp&width=800",
+        },
+        {
+          name: "Logo 9",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F0ec93afdab7b4ad8846c510d97b24395?format=webp&width=800",
+        },
+        {
+          name: "Logo 10",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fca2364908f50463d93dc5c71ebf3838e?format=webp&width=800",
+        },
+        {
+          name: "Logo 11",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fd51e6b821589466e9103cd72de860fc9?format=webp&width=800",
+        },
+        {
+          name: "Logo 12",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F690c1a76d01f4a57b8c5b8cd610a9ce5?format=webp&width=800",
+        },
+        {
+          name: "Logo 13",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F8c7eda9d6f264aaeab200febfbd65bef?format=webp&width=800",
+        },
+        {
+          name: "Logo 14",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Feabd42fd06b84db3bb2dd34cfd4db415?format=webp&width=800",
+        },
+        {
+          name: "Logo 15",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fef238b2d95f843e99f89d64074176490?format=webp&width=800",
+        },
+        {
+          name: "Logo 16",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fb17227fd99ff43eba842419c9aaafa5c?format=webp&width=800",
+        },
+        {
+          name: "Logo 17",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fb6167ea0058d4ef69191a98a1d23c694?format=webp&width=800",
+        },
+        {
+          name: "Logo 18",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F3886e61c6cdf43098c147a62b868ac8d?format=webp&width=800",
+        },
+        {
+          name: "Logo 19",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fe6bf63a0e6ef4455b24d2ac3acf3659f?format=webp&width=800",
+        },
+        {
+          name: "Logo 20",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F6a2c4f72758b42acb31fa9d8d501ad51?format=webp&width=800",
+        },
+        {
+          name: "Logo 21",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Ff5a9bdb958f545f7b71b8fa466ae396a?format=webp&width=800",
+        },
+        {
+          name: "Logo 22",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fdebd05df321b4e2d9636725697cfcf5e?format=webp&width=800",
+        },
+        {
+          name: "Logo 23",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F153cfdca34574416b2948b580efc3421?format=webp&width=800",
+        },
+        {
+          name: "Logo 24",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F1feac0d1a7414f10a25d2944fe5e8408?format=webp&width=800",
+        },
+        {
+          name: "Logo 25",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F6205b8cbaf3b42ba9c3f665d80b1ecb5?format=webp&width=800",
+        },
+        {
+          name: "Logo 26",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fff87acfe2c494d478132a9fab8bd0a67?format=webp&width=800",
+        },
+        {
+          name: "Logo 27",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F931ec082d95a46819f9855e91db10edd?format=webp&width=800",
+        },
+        {
+          name: "Logo 28",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F0a7132bccf8e49e4b3482066ed403bfd?format=webp&width=800",
+        },
+        {
+          name: "Logo 29",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F78aa85f189e64d66b379f30e264a4de4?format=webp&width=800",
+        },
+        {
+          name: "Logo 30",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F6cd8aa4448bb49978a861b66cf3a1de8?format=webp&width=800",
+        },
+        {
+          name: "Logo 31",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F5d831d4ad32c4cba9df3b341fff6acd6?format=webp&width=800",
+        },
+        {
+          name: "Logo 32",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F4ae51ca9249145cea5a9b4f3cabc87a3?format=webp&width=800",
+        },
+        {
+          name: "Logo 33",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F56e05faa0878479f910a2603a98f8234?format=webp&width=800",
+        },
+        {
+          name: "Logo 34",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fd1548044cf9a4444b7229da78c066690?format=webp&width=800",
+        },
+        {
+          name: "Logo 35",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F59c5fc6bdfb94618b3ea02266a9eda5c?format=webp&width=800",
+        },
+        {
+          name: "Logo 36",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F877e5306def646ee98ae5c9a740b016f?format=webp&width=800",
+        },
+        {
+          name: "Logo 37",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F1d6f94cdbd2848fc83f4153e2a5e590f?format=webp&width=800",
+        },
+        {
+          name: "Logo 38",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fae735b17ca714bfe80bcf3df2198e021?format=webp&width=800",
+        },
+        {
+          name: "Logo 39",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F6530c32583ae42249b37b1587a7c0165?format=webp&width=800",
+        },
+        {
+          name: "Logo 40",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F8c6f41bff14e4d6ca64a7d1074df3013?format=webp&width=800",
+        },
+        {
+          name: "Logo 41",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fdd23585204c441ebbeeed1e477516936?format=webp&width=800",
+        },
+        {
+          name: "Logo 42",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F3eeede5befbf4c07920ee1bbf8584451?format=webp&width=800",
+        },
+        {
+          name: "Logo 43",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F2b66c0bd78874f499ae07af50976592b?format=webp&width=800",
+        },
+        {
+          name: "Logo 44",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fe6ea7c2665694f11b6d5069df4ef5300?format=webp&width=800",
+        },
+        {
+          name: "Logo 45",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fc8540b0ac9d24844ad9e68264c122081?format=webp&width=800",
+        },
+        {
+          name: "Logo 46",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F1add4f16e58f415d93405e0974adcdc7?format=webp&width=800",
+        },
+        {
+          name: "Logo 47",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F9ca6fb24aa03441d890316b0d7dcfe40?format=webp&width=800",
+        },
+        {
+          name: "Logo 48",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fdf69bea2803e46469eb335cac2e9d77f?format=webp&width=800",
+        },
+        {
+          name: "Logo 49",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F80c3f66c1d7142a5b933fa85de94b91b?format=webp&width=800",
+        },
+        {
+          name: "Logo 50",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F55701aca9dfb46369c9c50ca77f7cd1e?format=webp&width=800",
+        },
+        {
+          name: "Logo 51",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fbc122d31a8454e74911a35c9b355c4b6?format=webp&width=800",
+        },
+        {
+          name: "Logo 52",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fe0c9d64ffa454de8be0565c4c9cf722c?format=webp&width=800",
+        },
+        {
+          name: "Logo 53",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F934243373fe6435fba5d98d8be93300a?format=webp&width=800",
+        },
+        {
+          name: "Logo 54",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F374b0200289149fdbb356e57ca132a05?format=webp&width=800",
+        },
+        {
+          name: "Logo 55",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F471bb1cd92c14e57818282e01d20e874?format=webp&width=800",
+        },
+        {
+          name: "Logo 56",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F575465e349fe4b44a55b7e93fac60470?format=webp&width=800",
+        },
+        {
+          name: "Logo 57",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fa767073a5ab9483c9a664777f6db3e82?format=webp&width=800",
+        },
+        {
+          name: "Logo 58",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F517e2613aea641d5b5f636baef7b311f?format=webp&width=800",
+        },
+        {
+          name: "Logo 59",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F62d25891346e408580848b0b824ffa6f?format=webp&width=800",
+        },
+        {
+          name: "Logo 60",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fe45faa21fa7a49c69d3acd84568e7651?format=webp&width=800",
+        },
+        {
+          name: "Logo 61",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F1066c760a49c40289d12e26e51408f39?format=webp&width=800",
+        },
+        {
+          name: "Logo 62",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F2def30750ef7451086c47f2c344baf05?format=webp&width=800",
+        },
+        {
+          name: "Logo 63",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F0c9437af6db14b58891efbf22c4c0845?format=webp&width=800",
+        },
+        {
+          name: "Logo 64",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Ff3a6094793a74a54852a21960594929d?format=webp&width=800",
+        },
+        {
+          name: "Logo 65",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F1ad94222c05245589ef93be5dfc738d6?format=webp&width=800",
+        },
+        {
+          name: "Logo 66",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F1493293e2c8a419ca859fa94b274b412?format=webp&width=800",
+        },
+        {
+          name: "Logo 67",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F85b4483199ff43709e35950174ce2219?format=webp&width=800",
+        },
+        {
+          name: "Logo 68",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Feee66bea3041466bb25264cc10f7c16b?format=webp&width=800",
+        },
+        {
+          name: "Logo 69",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F2371c327d414465fb62e652c6fdb4d94?format=webp&width=800",
+        },
+        {
+          name: "Logo 70",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fabf686a4fe864a26996a1bb9e55ddd22?format=webp&width=800",
+        },
+        {
+          name: "Logo 71",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F6b196a3179094c09877b4fb78cb9c170?format=webp&width=800",
+        },
+        {
+          name: "Logo 72",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fb7f4da6dffd543ae8c56e84e06ae6aa8?format=webp&width=800",
+        },
+        {
+          name: "Logo 73",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F0386c01a787942e9a9d68b78c7f582c5?format=webp&width=800",
+        },
+        {
+          name: "Logo 74",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F0aa77e8f8b284c7f99e0647e50aa7478?format=webp&width=800",
+        },
+        {
+          name: "Logo 75",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F79f6370b4ef645e5814673b18b6b6bba?format=webp&width=800",
+        },
+        {
+          name: "Logo 76",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fa0eec134f0e84f5a8daf9562fc7dea51?format=webp&width=800",
+        },
+        {
+          name: "Logo 77",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Ffaf2ecaaa7dc4de893356111b928df05?format=webp&width=800",
+        },
+        {
+          name: "Logo 78",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F1472f169a432484a86930c1f87b1d9db?format=webp&width=800",
+        },
+        {
+          name: "Logo 79",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F28bfdf248deb411b8a2ab4161973cd87?format=webp&width=800",
+        },
+        {
+          name: "Logo 80",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F4ef407a394754a68ab02a6ca7d3ac0df?format=webp&width=800",
+        },
+        {
+          name: "Logo 81",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F4279d64cc5014ed780251b55a395cb0e?format=webp&width=800",
+        },
+        {
+          name: "Logo 82",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F3eb30563fcc8468ea5270003656cdad9?format=webp&width=800",
+        },
+        {
+          name: "Logo 83",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F8fb1d6263c564aa898fca7318dd55894?format=webp&width=800",
+        },
+        {
+          name: "Logo 84",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F81f1a03628384aab802f78555b4c63a3?format=webp&width=800",
+        },
+        {
+          name: "Logo 85",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F2d7251cb6b734bb2aabb6f25f53cd39d?format=webp&width=800",
+        },
+        {
+          name: "Logo 86",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fa7724a05fdae484fa33ee4604085d8e1?format=webp&width=800",
+        },
+        {
+          name: "Logo 87",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fa04f39ede3d141eca4738f31508c79ca?format=webp&width=800",
+        },
+        {
+          name: "Logo 88",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F569b018fcd584115b36def721bd1769b?format=webp&width=800",
+        },
+        {
+          name: "Logo 89",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F54d64add5d11455db7067b0b7a456a98?format=webp&width=800",
+        },
+        {
+          name: "Logo 90",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F9e5e8868ecd7425c9c37ae6729ba72ed?format=webp&width=800",
+        },
+        {
+          name: "Logo 91",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F89762d7e13cc49518b45e56ac6c35866?format=webp&width=800",
+        },
+        {
+          name: "Logo 92",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F3fca96a8c6084cd8998292f52203dffc?format=webp&width=800",
+        },
+        {
+          name: "Logo 93",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Ff7ae50033ee04a36b8dd46acafc6c076?format=webp&width=800",
+        },
+        {
+          name: "Logo 94",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fa56adeebc2d3483fb0382d939788acad?format=webp&width=800",
+        },
+        {
+          name: "Logo 95",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fcf2cd17ba79c4f41b0369dcd605a934f?format=webp&width=800",
+        },
+        {
+          name: "Logo 96",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F7ebc5ad2f84c4d38be898752854556f7?format=webp&width=800",
+        },
+        {
+          name: "Logo 97",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fc95b7e1b747544a4846ff8b6d0abc3df?format=webp&width=800",
+        },
+        {
+          name: "Logo 98",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F023dc2ebc3b24fc3920ec3251e762247?format=webp&width=800",
+        },
+        {
+          name: "Logo 99",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F8f4e42526e344e1793bc83c2ee797750?format=webp&width=800",
+        },
+        {
+          name: "Logo 100",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F559c4fde6e4947298c20b068db242ab6?format=webp&width=800",
+        },
+        {
+          name: "Logo 101",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F3e5997655b384b19a8cdac6b0710f91c?format=webp&width=800",
+        },
+        {
+          name: "Logo 102",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fef1ba4e053aa49ea9c774c70c51585fd?format=webp&width=800",
+        },
+        {
+          name: "Logo 103",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F2a52de68da5f4cf79ed594c4e78a7cf6?format=webp&width=800",
+        },
+        {
+          name: "Logo 104",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F7eb067e3467b46619fc6e2c3b05b4486?format=webp&width=800",
+        },
+        {
+          name: "Logo 105",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fd90430162bc04822b5fae6ae23f872c5?format=webp&width=800",
+        },
+        {
+          name: "Logo 106",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F28826edc06f14903bbac33952dfe9f56?format=webp&width=800",
+        },
+        {
+          name: "Logo 107",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fac25e701a28342b5ba77ca0aaac6daf0?format=webp&width=800",
+        },
+        {
+          name: "Logo 108",
+          logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fcff33dffdf2f4e7fb310595817dc9946?format=webp&width=800",
+        },
       ],
     },
     cms: {
