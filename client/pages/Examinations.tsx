@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -34,6 +35,13 @@ import {
   Megaphone,
   Phone,
   ScrollText,
+  ChevronLeft,
+  ChevronRight,
+  Calendar,
+  HelpCircle,
+  AlertCircle,
+  CheckCircle,
+  Clock,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -70,6 +78,25 @@ type ContactCard = {
 type Guideline = {
   title: string;
   points: string[];
+};
+
+type CalendarEvent = {
+  date: string;
+  title: string;
+  type: "theory" | "practical" | "internal";
+};
+
+type ResultItem = {
+  title: string;
+  date: string;
+  status: "declared" | "awaiting" | "correction";
+  href: string;
+};
+
+type FAQItem = {
+  question: string;
+  answer: string;
+  category: string;
 };
 
 const APPLICATION_DOCUMENTS: ExamDocument[] = [
@@ -267,32 +294,138 @@ const EXAM_SECTIONS: ExamSection[] = [
 
 const QUICK_LINKS: QuickLink[] = [
   {
-    anchor: "#applications",
-    title: "Download Forms",
+    anchor: "#calendar",
+    title: "📅 Exam Timetables",
     description:
-      "Access migration, PDC, transcript, and revaluation applications instantly.",
+      "Access detailed schedules for theory, practical, and internal examinations.",
+    icon: CalendarClock,
+  },
+  {
+    anchor: "#applications",
+    title: "📝 Forms & Applications",
+    description:
+      "Download revaluation, photocopy, hall ticket, and eligibility forms.",
     icon: FileText,
   },
   {
     anchor: "#circulars",
-    title: "Exam Timetables",
+    title: "🧾 Regulations & Guidelines",
     description:
-      "Review circulars and timetables for upcoming examinations across programmes.",
-    icon: CalendarClock,
+      "Review credit system, GPA rules, and examination policies.",
+    icon: ScrollText,
   },
   {
     anchor: "#results",
-    title: "Results Desk",
+    title: "📈 Results & Circulars",
     description:
-      "Check the newest results and official examination notifications.",
+      "Check latest results and official examination notifications.",
     icon: GraduationCap,
   },
   {
-    anchor: "https://ums.mydsi.org/Login.aspx/DSU",
-    title: "Student ERP",
+    anchor: "#applications",
+    title: "📋 Hall Tickets & Instructions",
     description:
-      "Login to the ERP portal for hall tickets, fee payment, and attendance records.",
-    icon: ExternalLink,
+      "Print your hall ticket and review exam day guidelines.",
+    icon: ClipboardList,
+  },
+  {
+    anchor: "#faqs",
+    title: "💬 Student FAQs",
+    description:
+      "Find answers to common questions about exams and processes.",
+    icon: HelpCircle,
+  },
+];
+
+const CALENDAR_EVENTS: CalendarEvent[] = [
+  { date: "2025-01-25", title: "B.Tech 1st Semester Theory Exams Begin", type: "theory" },
+  { date: "2025-02-10", title: "Internal Assessment Deadline", type: "internal" },
+  { date: "2025-02-15", title: "M.Tech Practical Examinations", type: "practical" },
+  { date: "2025-03-01", title: "MBA Theory Examinations", type: "theory" },
+  { date: "2025-03-15", title: "Results Declaration Window", type: "theory" },
+];
+
+const RESULT_ITEMS: ResultItem[] = [
+  {
+    title: "B.Tech 2nd Sem End Exam Results",
+    date: "Declared on Jan 20, 2025",
+    status: "declared",
+    href: "#results",
+  },
+  {
+    title: "M.Tech 1st Sem Revaluation Results",
+    date: "Expected by Feb 5, 2025",
+    status: "awaiting",
+    href: "#results",
+  },
+  {
+    title: "MBA 1st Sem Grade Correction Notice",
+    date: "Updated on Jan 18, 2025",
+    status: "correction",
+    href: "#results",
+  },
+  {
+    title: "Ph.D Entrance Exam Shortlist",
+    date: "Declared on Jan 15, 2025",
+    status: "declared",
+    href: "#results",
+  },
+  {
+    title: "B.Voc 3rd Sem Supplementary Results",
+    date: "Expected by Feb 10, 2025",
+    status: "awaiting",
+    href: "#results",
+  },
+];
+
+const FAQ_ITEMS: FAQItem[] = [
+  {
+    question: "How do I apply for revaluation?",
+    answer:
+      "Download the revaluation application form, fill in your course details and semester information, and submit it to the examination office within the notified deadline with the prescribed fee. Original hall ticket is mandatory.",
+    category: "Revaluation",
+  },
+  {
+    question: "When will results be declared?",
+    answer:
+      "Results are typically declared 30-45 days after the examination concludes. You can track the expected declaration date in the examination circular released before the exam. Updates are sent to your registered email and DSU portal.",
+    category: "Results",
+  },
+  {
+    question: "What is the late fee for forms?",
+    answer:
+      "Late submission of examination forms typically incurs a fee of ₹500 to ₹2,000 depending on the form type. Exact amounts are mentioned in the respective examination circular. Payment must be made through the DSU portal.",
+    category: "Fees",
+  },
+  {
+    question: "How do I request a photocopy of my answer booklet?",
+    answer:
+      "Submit the photocopy request form with your hall ticket and course details to the examination office. Processing takes 7-10 working days. You can view the photocopy at the examination office or request a scanned copy.",
+    category: "Revaluation",
+  },
+  {
+    question: "What documents do I need for the hall ticket?",
+    answer:
+      "Hall tickets are generated automatically in the DSU student ERP portal after form submission. You need to log in with your enrollment number and password, verify your details, and download the PDF. Bring a printed copy to the examination hall.",
+    category: "Hall Ticket",
+  },
+  {
+    question: "Can I apply for supplementary examinations?",
+    answer:
+      "Yes, eligible students can apply for supplementary examinations if they have failed or wish to improve their grades. Applications are invited only during the notified window. Check the examination circular for eligibility and deadline details.",
+    category: "Supplementary",
+  },
+  {
+    question: "How is GPA/CGPA calculated?",
+    answer:
+      "GPA is calculated based on the grades obtained in your courses weighted by their credits. The formula is: GPA = (Sum of Credit × Grade Point) / Total Credits. CGPA is the cumulative GPA across all semesters. Detailed rules are available in the academic regulations.",
+    category: "Grading",
+  },
+  {
+    question: "What happens if I miss the exam?",
+    answer:
+      "Absence from examinations may be marked as 'AB' (absence). You can apply for a make-up examination if you have valid medical or emergency documentation. Apply within 7 days of missing the exam with supporting certificates.",
+    category: "Absences",
   },
 ];
 
@@ -354,7 +487,10 @@ export default function Examinations() {
     <div className="min-h-screen bg-background text-foreground">
       <HeroSection />
       <QuickLinksSection />
+      <CalendarSection />
       <ResourceSections />
+      <ResultsCarousel />
+      <FAQSection />
       <GuidelinesSection />
       <ContactSection />
     </div>
@@ -373,23 +509,25 @@ function HeroSection() {
           Examination Services Portal
         </span>
         <h1 className="mt-8 text-4xl font-bold leading-tight md:text-6xl">
-          Access Official{" "}
+          Exams Made Easy.{" "}
           <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
-            Examination Resources
+            Transparent. Accessible.
           </span>
         </h1>
         <p className="mt-6 max-w-3xl text-lg text-foreground md:text-xl">
-          Download forms, view circulars, and preview examination documents
-          instantly. Each PDF opens in an on-page viewer so you can skim the
-          content before downloading.
+          Find circulars, timetables, results, forms, and guidelines for all DSU
+          examinations in one place.
         </p>
         <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row">
           <Button
             size="lg"
             className="bg-gradient-to-r from-orange-500 via-red-600 to-pink-500 text-foreground"
+            asChild
           >
-            Explore Resources
-            <ArrowRight className="h-5 w-5" />
+            <a href="#calendar">
+              View Exam Calendar
+              <ArrowRight className="h-5 w-5" />
+            </a>
           </Button>
           <Button
             variant="outline"
@@ -419,10 +557,10 @@ function QuickLinksSection() {
           <h2 className="text-3xl font-bold md:text-4xl">Quick Access</h2>
           <p className="text-foreground md:text-lg">
             Jump directly to the section you need or launch the ERP portal for
-            hall tickets and personalised updates.
+            hall tickets and personalized updates.
           </p>
         </div>
-        <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
           {QUICK_LINKS.map((item) => (
             <Card
               key={item.title}
@@ -445,16 +583,78 @@ function QuickLinksSection() {
                 >
                   <a
                     href={item.anchor}
-                    target={item.anchor.startsWith("http") ? "_blank" : "_self"}
+                    target={
+                      item.anchor.startsWith("http") ? "_blank" : "_self"
+                    }
                     rel="noreferrer"
                   >
-                    Open
+                    Access
                     <ArrowRight className="h-4 w-4" />
                   </a>
                 </Button>
               </CardContent>
             </Card>
           ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function CalendarSection() {
+  return (
+    <section
+      id="calendar"
+      className="bg-gradient-to-b from-orange-500/5 to-transparent px-3 py-10"
+    >
+      <div className="mx-auto max-w-6xl">
+        <div className="mb-10 space-y-3 text-center">
+          <h2 className="text-3xl font-bold md:text-4xl">Exam Calendar</h2>
+          <p className="text-foreground md:text-lg">
+            Upcoming examination dates and events across all programmes.
+          </p>
+        </div>
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {CALENDAR_EVENTS.map((event, index) => {
+            const typeColors = {
+              theory: "bg-blue-500/10 border-blue-500/30 text-blue-600",
+              practical: "bg-green-500/10 border-green-500/30 text-green-600",
+              internal: "bg-purple-500/10 border-purple-500/30 text-purple-600",
+            };
+            return (
+              <Card
+                key={index}
+                className={`border ${typeColors[event.type]} backdrop-blur-sm`}
+              >
+                <CardHeader className="space-y-3">
+                  <div className="flex items-start justify-between">
+                    <Calendar className="h-5 w-5" />
+                    <Badge variant="outline" className="capitalize">
+                      {event.type}
+                    </Badge>
+                  </div>
+                  <CardTitle className="text-lg">{event.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-foreground">
+                    {new Date(event.date).toLocaleDateString("en-US", {
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
+                    })}
+                  </p>
+                </CardContent>
+              </Card>
+            );
+          })}
+        </div>
+        <div className="mt-8 rounded-2xl border border-orange-500/20 bg-orange-500/5 p-6">
+          <p className="text-sm text-foreground">
+            <strong>Note:</strong> Calendar events are indicative and subject to
+            change. Always refer to official circulars for confirmed dates. New
+            dates and updates are announced through the examination cell and
+            student ERP portal.
+          </p>
         </div>
       </div>
     </section>
@@ -573,6 +773,240 @@ function ExamDocumentCard({ document }: { document: ExamDocument }) {
         </div>
       </CardContent>
     </Card>
+  );
+}
+
+function ResultsCarousel() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [autoPlay, setAutoPlay] = useState(true);
+
+  useEffect(() => {
+    if (!autoPlay) return;
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % RESULT_ITEMS.length);
+    }, 6000);
+    return () => clearInterval(interval);
+  }, [autoPlay]);
+
+  const goToPrevious = () => {
+    setAutoPlay(false);
+    setCurrentSlide((prev) =>
+      prev === 0 ? RESULT_ITEMS.length - 1 : prev - 1
+    );
+  };
+
+  const goToNext = () => {
+    setAutoPlay(false);
+    setCurrentSlide((prev) => (prev + 1) % RESULT_ITEMS.length);
+  };
+
+  const statusStyles = {
+    declared: {
+      icon: CheckCircle,
+      color: "text-green-600",
+      bg: "bg-green-500/10",
+      badge: "bg-green-500/20 text-green-700",
+    },
+    awaiting: {
+      icon: Clock,
+      color: "text-orange-600",
+      bg: "bg-orange-500/10",
+      badge: "bg-orange-500/20 text-orange-700",
+    },
+    correction: {
+      icon: AlertCircle,
+      color: "text-red-600",
+      bg: "bg-red-500/10",
+      badge: "bg-red-500/20 text-red-700",
+    },
+  };
+
+  return (
+    <section className="px-3 py-10 bg-gradient-to-b from-background to-orange-500/5">
+      <div className="mx-auto max-w-6xl">
+        <div className="mb-10 space-y-3 text-center">
+          <h2 className="text-3xl font-bold md:text-4xl">
+            Results & Notifications
+          </h2>
+          <p className="text-foreground md:text-lg">
+            Latest examination results, status updates, and official
+            notifications.
+          </p>
+        </div>
+        <div className="relative">
+          <div className="overflow-hidden rounded-2xl border border-orange-500/20">
+            <div className="flex">
+              {RESULT_ITEMS.map((item, index) => {
+                const style = statusStyles[item.status];
+                const StatusIcon = style.icon;
+                return (
+                  <div
+                    key={index}
+                    className={`min-w-full transition-transform duration-500 ease-out ${
+                      index === currentSlide ? "translate-x-0" : ""
+                    }`}
+                    style={{
+                      transform: `translateX(${(index - currentSlide) * 100}%)`,
+                    }}
+                  >
+                    <Card
+                      className={`m-3 border-0 ${style.bg} backdrop-blur-sm`}
+                    >
+                      <CardHeader className="space-y-4">
+                        <div className="flex items-start justify-between">
+                          <div className={`h-12 w-12 rounded-xl ${style.bg} flex items-center justify-center`}>
+                            <StatusIcon className={`h-6 w-6 ${style.color}`} />
+                          </div>
+                          <Badge className={style.badge}>
+                            {item.status.charAt(0).toUpperCase() +
+                              item.status.slice(1)}
+                          </Badge>
+                        </div>
+                        <div>
+                          <CardTitle className="text-xl">
+                            {item.title}
+                          </CardTitle>
+                          <p className="mt-2 text-sm text-foreground/70">
+                            {item.date}
+                          </p>
+                        </div>
+                      </CardHeader>
+                      <CardContent>
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          className="text-orange-500 hover:bg-transparent"
+                          asChild
+                        >
+                          <a href={item.href}>
+                            View Details
+                            <ArrowRight className="ml-2 h-4 w-4" />
+                          </a>
+                        </Button>
+                      </CardContent>
+                    </Card>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          <button
+            onClick={goToPrevious}
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-16 rounded-full bg-orange-500/20 p-2 text-orange-600 transition hover:bg-orange-500/30"
+            aria-label="Previous result"
+          >
+            <ChevronLeft className="h-6 w-6" />
+          </button>
+          <button
+            onClick={goToNext}
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-16 rounded-full bg-orange-500/20 p-2 text-orange-600 transition hover:bg-orange-500/30"
+            aria-label="Next result"
+          >
+            <ChevronRight className="h-6 w-6" />
+          </button>
+
+          <div className="mt-6 flex justify-center gap-2">
+            {RESULT_ITEMS.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => {
+                  setAutoPlay(false);
+                  setCurrentSlide(index);
+                }}
+                className={`h-2 rounded-full transition-all ${
+                  index === currentSlide
+                    ? "h-3 w-8 bg-orange-500"
+                    : "w-2 bg-orange-500/40 hover:bg-orange-500/60"
+                }`}
+                aria-label={`Go to result ${index + 1}`}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function FAQSection() {
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const categories = Array.from(new Set(FAQ_ITEMS.map((item) => item.category)));
+  const filteredFAQs =
+    selectedCategory === null
+      ? FAQ_ITEMS
+      : FAQ_ITEMS.filter((item) => item.category === selectedCategory);
+
+  return (
+    <section id="faqs" className="px-3 py-10">
+      <div className="mx-auto max-w-5xl">
+        <div className="mb-10 text-center">
+          <h2 className="text-3xl font-bold md:text-4xl">Student FAQs</h2>
+          <p className="mt-3 text-foreground md:text-lg">
+            Find answers to common questions about examinations, forms, and
+            processes.
+          </p>
+        </div>
+
+        <div className="mb-8 flex flex-wrap justify-center gap-2">
+          <Button
+            variant={selectedCategory === null ? "default" : "outline"}
+            onClick={() => setSelectedCategory(null)}
+            className="rounded-full"
+          >
+            All
+          </Button>
+          {categories.map((category) => (
+            <Button
+              key={category}
+              variant={
+                selectedCategory === category ? "default" : "outline"
+              }
+              onClick={() => setSelectedCategory(category)}
+              className="rounded-full"
+            >
+              {category}
+            </Button>
+          ))}
+        </div>
+
+        <Accordion
+          type="single"
+          collapsible
+          className="w-full divide-y divide-border/40 rounded-3xl border border-border/40 bg-card/50 backdrop-blur"
+        >
+          {filteredFAQs.map((item, index) => (
+            <AccordionItem key={index} value={`faq-${index}`}>
+              <AccordionTrigger className="text-left text-base font-semibold text-foreground hover:no-underline">
+                <div className="flex items-center gap-3">
+                  <HelpCircle className="h-5 w-5 text-orange-500 flex-shrink-0" />
+                  {item.question}
+                </div>
+              </AccordionTrigger>
+              <AccordionContent>
+                <p className="text-sm text-foreground md:text-base leading-relaxed ml-8">
+                  {item.answer}
+                </p>
+              </AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
+
+        <div className="mt-8 rounded-2xl border border-orange-500/20 bg-orange-500/5 p-6">
+          <p className="text-sm text-foreground">
+            <strong>Didn't find your answer?</strong> Contact the examination
+            department at{" "}
+            <a href="mailto:coe@dsu.edu.in" className="text-orange-600 hover:underline font-semibold">
+              coe@dsu.edu.in
+            </a>{" "}
+            or call us at{" "}
+            <a href="tel:+919606022151" className="text-orange-600 hover:underline font-semibold">
+              +91 9606 022 151
+            </a>
+          </p>
+        </div>
+      </div>
+    </section>
   );
 }
 
