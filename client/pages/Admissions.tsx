@@ -92,6 +92,29 @@ const admissionCodes = [
   "PGCET Code (MCA): C520MC",
 ];
 
+const carouselImages = [
+  {
+    image: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Ffce3e67bcc814c1aabf809c71102e1cc?format=webp&width=800",
+    alt: "B.Tech JEE MAIN Admissions",
+  },
+  {
+    image: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fcb5e92e25b634bdcaa9de2b0b31ec415?format=webp&width=800",
+    alt: "Academic Excellence in Global Environment",
+  },
+  {
+    image: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fac9ce7ef53604970818f60f8a54c7350?format=webp&width=800",
+    alt: "Programs at DSU City Innovation Campus",
+  },
+  {
+    image: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F73a8c29a2bec44baa4271feceae5c5e2?format=webp&width=800",
+    alt: "B.Tech Admissions 2026-27",
+  },
+  {
+    image: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fe5b128a011904d638fd0f853cafb7acc?format=webp&width=800",
+    alt: "Admissions Open for NRI/Foreign Nationals",
+  },
+];
+
 const quickLinks: QuickLink[] = [
   {
     title: "Programs, Eligibility & Fee Structure",
