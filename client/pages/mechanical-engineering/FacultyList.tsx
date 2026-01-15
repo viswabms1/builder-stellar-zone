@@ -15,26 +15,26 @@ export default function MechanicalEngineeringFacultyList() {
 
   const FacultyCard = ({ f }: { f: typeof faculty[0] }) => (
     <Link to={`/faculty/${f.slug}`}>
-      <Card className="group border border-border/50 bg-card/50 hover:shadow-lg hover:shadow-brand-orange/10 transition-all hover:-translate-y-1 cursor-pointer overflow-hidden h-full">
-        <div className="bg-muted flex items-center justify-center h-16">
-          <img
-            src={f.image}
-            alt={f.name}
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div className="p-2">
-          <div className="mb-1">
-            <Badge className="bg-brand-orange/20 text-brand-orange border-brand-orange/30 text-xs py-0 px-1.5">
+      <Card className="group bg-card hover:shadow-md transition-all cursor-pointer rounded-2xl p-5">
+        <div className="flex flex-col items-center gap-4">
+          <div className="w-[140px] h-[140px] flex-shrink-0">
+            <img
+              src={f.image}
+              alt={f.name}
+              className="w-full h-full object-cover rounded-xl"
+            />
+          </div>
+          <div className="text-center space-y-2 w-full">
+            <Badge className="bg-brand-orange/20 text-brand-orange border-brand-orange/30 text-xs">
               {f.title}
             </Badge>
+            <h3 className="font-semibold text-sm">{f.name}</h3>
+            <p className="text-xs text-muted-foreground">{f.qualifications}</p>
+            <span className="inline-flex items-center gap-1 text-xs font-medium text-brand-orange group-hover:text-brand-orange/80">
+              View Profile
+              <ChevronRight className="h-3 w-3" />
+            </span>
           </div>
-          <h3 className="font-display text-xs mb-1">{f.name}</h3>
-          <p className="text-xs text-foreground/70 mb-1">{f.qualifications}</p>
-          <span className="inline-flex items-center gap-1 text-xs font-medium text-brand-orange group-hover:text-brand-orange/80">
-            View Profile
-            <ChevronRight className="h-2 w-2" />
-          </span>
         </div>
       </Card>
     </Link>
