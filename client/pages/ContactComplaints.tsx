@@ -131,7 +131,7 @@ function CommitteeLinksSection() {
               <CardContent className="p-4">
                 <Button
                   variant="ghost"
-                  className="h-auto w-full justify-start text-left text-sm font-semibold text-foreground hover:text-orange-600 p-0"
+                  className="h-auto w-full justify-start text-left text-sm font-semibold text-foreground hover:text-amber-400 active:text-white p-0"
                   asChild
                 >
                   <a href={link.path} {...(link.external ? { target: "_blank", rel: "noreferrer" } : {})}>
