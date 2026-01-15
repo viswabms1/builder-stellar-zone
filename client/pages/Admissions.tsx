@@ -355,6 +355,7 @@ export default function Admissions() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <HeroSection />
+      <AdmissionCarouselNew items={carouselImages} />
       <AdmissionRoutesSection />
       <EssentialsSection />
       <BrochureSection />
