@@ -869,7 +869,7 @@ export default function Placements() {
                             <img
                               src={recruiter.logo}
                               alt={recruiter.name}
-                              className="max-w-full max-h-20 object-contain"
+                              className="max-w-full max-h-24 object-contain"
                               onError={(e) => {
                                 e.currentTarget.style.display = "none";
                                 const next = e.currentTarget.nextElementSibling;
