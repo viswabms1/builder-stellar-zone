@@ -46,7 +46,7 @@ export default function AdmissionCarouselNew({ items }: AdmissionCarouselNewProp
       <div className="mx-auto max-w-6xl">
         <div className="relative w-full overflow-hidden rounded-2xl border border-orange-500/20 bg-background shadow-xl">
           {/* Carousel Container */}
-          <div className="relative aspect-video w-full">
+          <div className="relative w-full" style={{ aspectRatio: "16 / 9" }}>
             {items.map((item, index) => (
               <div
                 key={index}
@@ -57,7 +57,7 @@ export default function AdmissionCarouselNew({ items }: AdmissionCarouselNewProp
                 <img
                   src={item.image}
                   alt={item.alt}
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-contain bg-gray-900"
                   onError={(e) => {
                     const img = e.currentTarget as HTMLImageElement;
                     img.style.background = "linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%)";
