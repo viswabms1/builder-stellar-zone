@@ -5,9 +5,8 @@ import { Badge } from "@/components/ui/badge";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { mechFaculty } from "@/data/mech-faculty";
 
-const faculty = mechFaculty;
-
 export default function MechanicalEngineeringFacultyList() {
+  const faculty = mechFaculty;
   const chairperson = faculty.filter(f => f.title.includes("Chairperson"));
   const professors = faculty.filter(f => f.title === "Professor");
   const associateProfessors = faculty.filter(f => f.title === "Associate Professor");
