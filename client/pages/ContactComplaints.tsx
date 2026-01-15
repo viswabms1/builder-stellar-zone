@@ -162,8 +162,10 @@ function CommitteeDetailsSection() {
 }
 
 function CommitteeCard({ committee }: { committee: Committee }) {
+  const isAntiRaggingCell = committee.name === "Anti Ragging Committee";
+
   return (
-    <Card className="border border-orange-500/20 bg-card/70 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:shadow-orange-500/10">
+    <Card className="border border-orange-500/20 bg-card/70 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:shadow-orange-500/10 flex flex-col">
       <CardHeader className="space-y-3">
         <CardTitle className="text-lg md:text-xl text-foreground leading-snug">
           {committee.name}
@@ -174,7 +176,7 @@ function CommitteeCard({ committee }: { committee: Committee }) {
           </Badge>
         )}
       </CardHeader>
-      <CardContent className="space-y-4">
+      <CardContent className="space-y-4 flex-1 flex flex-col">
         {committee.chairperson && (
           <div className="space-y-1">
             <p className="text-sm font-semibold text-foreground">Chairperson</p>
@@ -214,6 +216,18 @@ function CommitteeCard({ committee }: { committee: Committee }) {
             </a>
           )}
         </div>
+
+        {isAntiRaggingCell && (
+          <Button
+            className="mt-4 bg-gradient-to-r from-orange-500 to-red-600 text-white font-semibold w-full"
+            asChild
+          >
+            <a href="/anti-ragging-cell">
+              View Cell Details
+              <ExternalLink className="ml-2 h-4 w-4" />
+            </a>
+          </Button>
+        )}
       </CardContent>
     </Card>
   );
