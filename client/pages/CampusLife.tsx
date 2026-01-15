@@ -98,7 +98,7 @@ export default function CampusLife() {
             </h1>
           </div>
 
-          <div className="rounded-none px-4 md:px-8 max-w-3xl mt-auto">
+          <div className="rounded-none px-4 md:px-8 max-w-3xl mt-auto pb-20 md:pb-32">
             <p className="hero-title text-sm sm:text-base md:text-lg text-white/95 leading-relaxed max-w-2xl drop-shadow-md" style={{textShadow: '0 1px 4px rgba(0, 0, 0, 0.8)'}}>
               At India's AI-First University, campus life seamlessly integrates research, innovation, leadership, and community—shaping graduates who drive global impact.
             </p>
