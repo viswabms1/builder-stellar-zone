@@ -711,6 +711,61 @@ export default function Index() {
               />
             </div>
           </div>
+
+          <div className="mt-12 mb-6">
+            <div className="text-center mb-6">
+              <h2 className="headline-2 mb-1 md:mb-2 text-foreground">Top Recruiting Partners</h2>
+              <p className="subheadline text-foreground/60 max-w-3xl mx-auto font-display text-sm md:text-base">
+                Leading global organizations recruiting from School of Engineering
+              </p>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-4 items-center justify-center">
+              {[
+                { name: "Mercedes-Benz", logo: "https://logo.clearbit.com/mercedes-benz.de" },
+                { name: "ABB", logo: "https://logo.clearbit.com/abb.com" },
+                { name: "Amazon", logo: "https://logo.clearbit.com/amazon.com" },
+                { name: "Bosch", logo: "https://logo.clearbit.com/bosch.com" },
+                { name: "Deloitte", logo: "https://logo.clearbit.com/deloitte.com" },
+                { name: "PWC", logo: "https://logo.clearbit.com/pwc.com" },
+                { name: "EY", logo: "https://logo.clearbit.com/ey.com" },
+                { name: "KPMG", logo: "https://logo.clearbit.com/kpmg.com" },
+                { name: "Infosys", logo: "https://logo.clearbit.com/infosys.com" },
+                { name: "TCS", logo: "https://logo.clearbit.com/tcs.com" },
+                { name: "Tata Elxsi", logo: "https://logo.clearbit.com/tataelxsi.com" },
+                { name: "Accenture", logo: "https://logo.clearbit.com/accenture.com" },
+                { name: "CGI", logo: "https://logo.clearbit.com/cgi.com" },
+                { name: "J.P. Morgan", logo: "https://logo.clearbit.com/jpmorganchase.com" },
+                { name: "Dell", logo: "https://logo.clearbit.com/dell.com" },
+                { name: "Mahindra Comviva", logo: "https://logo.clearbit.com/comviva.com" },
+              ].map((recruiter, idx) => (
+                <div key={idx} className="bg-white rounded-lg p-3 flex items-center justify-center h-16 border border-border/50 shadow-sm hover:shadow-md transition-all">
+                  <img
+                    src={recruiter.logo}
+                    alt={recruiter.name}
+                    className="max-h-full max-w-full object-contain"
+                    onError={(e) => {
+                      e.currentTarget.style.display = "none";
+                      const next = e.currentTarget.nextElementSibling;
+                      if (next) {
+                        next.classList.remove("hidden");
+                        next.classList.add("block");
+                      }
+                    }}
+                  />
+                  <span className="hidden text-center font-semibold text-[10px] text-foreground px-1">
+                    {recruiter.name}
+                  </span>
+                </div>
+              ))}
+            </div>
+            <div className="mt-8 text-center">
+              <Link to="/placements">
+                <Button variant="outline" size="sm" className="rounded-full border-brand-magenta/30 hover:border-brand-magenta text-brand-magenta">
+                  View All Recruiting Partners <ArrowRight className="w-4 h-4 ml-2" />
+                </Button>
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
 
