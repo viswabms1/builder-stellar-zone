@@ -179,7 +179,7 @@ function CommitteeCard({ committee }: { committee: Committee }) {
           {committee.name}
         </CardTitle>
         {committee.helpline && (
-          <Badge variant="outline" className="w-fit text-xs border-orange-500/40 text-orange-600">
+          <Badge variant="outline" className="w-fit text-xs border-orange-500/40 text-white">
             {committee.helpline}
           </Badge>
         )}
@@ -196,7 +196,7 @@ function CommitteeCard({ committee }: { committee: Committee }) {
           <div className="space-y-2">
             <a
               href={`tel:${committee.phone}`}
-              className="flex items-center gap-2 text-sm text-orange-600 hover:text-orange-700 font-medium"
+              className="flex items-center gap-2 text-sm text-white hover:text-amber-300 font-medium"
             >
               <Phone className="h-4 w-4" />
               {committee.phone}
@@ -208,7 +208,7 @@ function CommitteeCard({ committee }: { committee: Committee }) {
           {committee.email && (
             <a
               href={`mailto:${committee.email}`}
-              className="flex items-start gap-2 text-sm text-orange-600 hover:text-orange-700 font-medium break-all"
+              className="flex items-start gap-2 text-sm text-white hover:text-amber-300 font-medium break-all"
             >
               <Mail className="h-4 w-4 mt-0.5 flex-shrink-0" />
               <span>{committee.email}</span>
@@ -217,7 +217,7 @@ function CommitteeCard({ committee }: { committee: Committee }) {
           {committee.chairEmail && (
             <a
               href={`mailto:${committee.chairEmail}`}
-              className="flex items-start gap-2 text-sm text-orange-600 hover:text-orange-700 font-medium break-all"
+              className="flex items-start gap-2 text-sm text-white hover:text-amber-300 font-medium break-all"
             >
               <Mail className="h-4 w-4 mt-0.5 flex-shrink-0" />
               <span>{committee.chairEmail}</span>
@@ -240,7 +240,7 @@ function CommitteeCard({ committee }: { committee: Committee }) {
         {committee.pdfUrl && (
           <Button
             variant="outline"
-            className="mt-4 border-orange-500/40 text-orange-600 hover:bg-orange-50 w-full"
+            className="mt-4 border-orange-500/40 text-white hover:text-amber-300 w-full"
             asChild
           >
             <a href={committee.pdfUrl} target="_blank" rel="noreferrer">
