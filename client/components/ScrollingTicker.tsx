@@ -13,7 +13,7 @@ export default function ScrollingTicker() {
   ];
 
   return (
-    <div className="relative w-full bg-gradient-to-r from-orange-500 via-red-600 to-orange-500 overflow-hidden py-2 md:py-3">
+    <div className="relative w-full bg-blue-900 overflow-hidden py-2 md:py-3">
       {/* Scrolling Container */}
       <div className="flex animate-scroll whitespace-nowrap">
         {/* First set of items */}
