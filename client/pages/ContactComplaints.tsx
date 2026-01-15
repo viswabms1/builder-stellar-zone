@@ -69,7 +69,7 @@ const COMMITTEE_LINKS: CommitteeLink[] = [
   { label: "Constitution of Ombudsman Committee", path: "https://www.dsu.edu.in/images/Committee/Ombudsperson_22092023.pdf", external: true },
   { label: "Constitute of Anti Drug Committee", path: "https://www.dsu.edu.in/images/Committee/Anti_Drug_Committee_2023.pdf", external: true },
   { label: "Students Grievance Redressal Mechanism", path: "https://www.dsu.edu.in/images/Grievance_Redressal_Mechanism-compressed.pdf", external: true },
-  { label: "Internal Complaint Committee", path: "#details" },
+  { label: "Internal Complaint Committee", path: "https://www.dsu.edu.in/images/Committee/ICC_21072025.pdf", external: true },
   { label: "Equal Opportunity Cell", path: "#details" },
   { label: "Socio-Economically Disadvantaged Groups Cell", path: "#details" },
   { label: "UGC e-Samadhaan", path: "#details" },
