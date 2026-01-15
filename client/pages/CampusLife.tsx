@@ -54,7 +54,7 @@ export default function CampusLife() {
     <div className="min-h-screen bg-background text-foreground">
       {/* ===== HERO SECTION ===== */}
       <section className="relative h-[600px] overflow-hidden">
-        <div className="absolute inset-0 hero-zoom-video opacity-20">
+        <div className="absolute inset-0 hero-zoom-video">
           <video
             ref={videoRef}
             src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F6b0c30504ae64c6aba12aa275eeac2e0?alt=media&token=038cd5f6-c13b-43c6-8760-c92abdbbc4dd&apiKey=4aa279a8430d441dba9c55f659831878"
@@ -67,10 +67,10 @@ export default function CampusLife() {
           />
         </div>
 
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-800/40 to-slate-900/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-800/10 to-slate-900/20"></div>
 
         <div className="relative h-full flex items-start justify-start text-left max-w-7xl mx-auto px-3 pt-8 md:pt-16">
-          <div className="rounded-none px-4 md:px-8 py-8 max-w-3xl bg-black/30 backdrop-blur-sm rounded-lg">
+          <div className="rounded-none px-4 md:px-8 py-8 max-w-3xl bg-black/10 backdrop-blur-sm rounded-lg">
             <div className="hero-badge inline-flex items-center px-4 py-2 bg-orange-500/30 rounded-full border border-orange-500/60 mb-6">
               <Rocket className="w-4 h-4 text-orange-200 mr-2" />
               <span className="text-xs md:text-sm font-semibold text-orange-100">
