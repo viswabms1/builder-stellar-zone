@@ -411,12 +411,11 @@ export default function Navigation() {
     { name: "Research", href: "/research" },
     { name: "Alumni", href: "/alumni" },
     { name: "Library", href: "/library" },
-    { name: "Insights", href: "/insights" },
-    { name: "Conferences", href: "/conferences" },
     { name: "Committees", href: "/committees" },
     { name: "News & Events", href: "/news-events" },
     { name: "Blog", href: "/blog" },
     { name: "Careers", href: "/careers" },
+    { name: "Hostel@Harohalli", href: "https://myposhtell.com", external: true },
     {
       name: "Public Self Disclosure",
       href: "https://dsu.edu.in/images/University/Public_Self_Disclosure_DSU.pdf",
