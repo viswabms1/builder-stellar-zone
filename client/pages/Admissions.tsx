@@ -51,6 +51,7 @@ type QuickLink = {
   href: string;
   icon: LucideIcon;
   external?: boolean;
+  featured?: boolean;
 };
 
 type AdmissionTrack = {
