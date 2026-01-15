@@ -5,30 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { mechFaculty } from "@/data/mech-faculty";
 
-const faculty = [
-  { name: "Dr. Saravana Bavan D", title: "Chairperson - ME", slug: "saravana-bavan-d", qualifications: "M.Tech, Ph.D" },
-  { name: "Dr. Vinayak B Hemadri", title: "Professor", slug: "vinayak-b-hemadri", qualifications: "M.Tech, Ph.D" },
-  { name: "Dr. Viswanathan R", title: "Associate Professor", slug: "viswanathan-r", qualifications: "M.Tech, Ph.D" },
-  { name: "Dr. Rahul Kumar", title: "Associate Professor", slug: "rahul-kumar", qualifications: "M.Tech, Ph.D" },
-  { name: "Dr. Shashidhara L C", title: "Assistant Professor", slug: "shashidhara-l-c", qualifications: "M.Tech, Ph.D" },
-  { name: "Dr. Ravitej Y P", title: "Assistant Professor", slug: "ravitej-y-p", qualifications: "M.Tech, Ph.D" },
-  { name: "Abhijith N", title: "Assistant Professor", slug: "abhijith-n", qualifications: "M.Tech, (Ph.D)" },
-  { name: "Dr. Manish Kumar Mishra", title: "Assistant Professor", slug: "manish-kumar-mishra", qualifications: "Ph.D" },
-  { name: "Dr. Abhilash O", title: "Assistant Professor", slug: "abhilash-o", qualifications: "Ph.D" },
-  { name: "Dr. Rajeev Kumar Gupta", title: "Assistant Professor", slug: "rajeev-kumar-gupta", qualifications: "Ph.D" },
-  { name: "Dr. Naseem Khayum", title: "Assistant Professor", slug: "naseem-khayum", qualifications: "Ph.D" },
-  { name: "Dr. Rajesh Ranjan Ravi", title: "Assistant Professor", slug: "rajesh-ranjan-ravi", qualifications: "Ph.D" },
-  { name: "Dr. K. Sudha Deepthi", title: "Assistant Professor", slug: "k-sudha-deepthi", qualifications: "Ph.D" },
-  { name: "Dr. Vinay M S", title: "Assistant Professor", slug: "vinay-m-s", qualifications: "M.Tech, Ph.D" },
-  { name: "Mr. Karthik S B", title: "Assistant Professor", slug: "karthik-s-b", qualifications: "M.E, (Ph.D)" },
-  { name: "Dr. P M G B Asdaque", title: "Assistant Professor", slug: "p-m-g-b-asdaque", qualifications: "Ph.D" },
-  { name: "Dr. Joy Mondal", title: "Assistant Professor", slug: "joy-mondal", qualifications: "Ph.D" },
-  { name: "Dr. Velugula Ravi", title: "Assistant Professor", slug: "velugula-ravi", qualifications: "Ph.D" },
-  { name: "Dr. Deepu Kumar", title: "Assistant Professor", slug: "deepu-kumar", qualifications: "Ph.D" },
-  { name: "Dr. Lokendra Singh", title: "Assistant Professor", slug: "lokendra-singh", qualifications: "Ph.D" },
-  { name: "Dr. Samrat Sagar", title: "Assistant Professor", slug: "samrat-sagar", qualifications: "Ph.D" },
-  { name: "Dr. Ashok Kaushal", title: "Visiting Professor", slug: "ashok-kaushal", qualifications: "Ph.D, PEO" },
-];
+const faculty = mechFaculty;
 
 export default function MechanicalEngineeringFacultyList() {
   const chairperson = faculty.filter(f => f.title.includes("Chairperson"));
