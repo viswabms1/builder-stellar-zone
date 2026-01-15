@@ -32,11 +32,11 @@ export default function Placements() {
   const [expandedSector, setExpandedSector] = useState<Record<string, boolean>>({
     soe: true,
     cms: true,
-    sbas: false,
-    sohs: false,
-    soadh: false,
-    intl: false,
-    mou: false,
+    sbas: true,
+    sohs: true,
+    soadh: true,
+    intl: true,
+    mou: true,
   });
 
   const { elementRef: statsRef, isVisible: statsVisible } = useScrollTrigger();
@@ -706,10 +706,14 @@ export default function Placements() {
                               className="max-w-full max-h-20 object-contain"
                               onError={(e) => {
                                 e.currentTarget.style.display = "none";
-                                e.currentTarget.nextElementSibling?.classList.remove("hidden");
+                                const next = e.currentTarget.nextElementSibling;
+                                if (next) {
+                                  next.classList.remove("hidden");
+                                  next.classList.add("block");
+                                }
                               }}
                             />
-                            <span className="hidden text-center font-semibold text-foreground text-xs">
+                            <span className="hidden text-center font-semibold text-foreground text-sm px-2">
                               {recruiter.name}
                             </span>
                           </div>
