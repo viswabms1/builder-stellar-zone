@@ -10,6 +10,7 @@ type Committee = {
   phone?: string;
   chairEmail?: string;
   helpline?: string;
+  pdfUrl?: string;
 };
 
 const COMMITTEES: Committee[] = [
