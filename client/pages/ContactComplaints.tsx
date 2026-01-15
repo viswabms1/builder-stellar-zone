@@ -43,6 +43,7 @@ const COMMITTEES: Committee[] = [
     chairperson: "Dr. Puttamadappa C",
     phone: "9845716228",
     chairEmail: "registrar@dsu.edu.in",
+    pdfUrl: "https://www.dsu.edu.in/images/Committee/Grievance_Redressal_02022024.pdf",
   },
   {
     name: "Anti Drug Committee",
