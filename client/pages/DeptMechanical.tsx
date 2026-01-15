@@ -274,7 +274,7 @@ export default function DeptMechanical() {
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center justify-between mb-8">
             <h2 className="headline-3 font-display">Department Leadership</h2>
-            <Link to="/academics/engineering/mechanical/faculty">
+            <Link to="/academics/engineering/mechanical-engineering/faculty">
               <Button variant="outline" className="border-brand-orange/40 hover:bg-brand-orange/10">
                 Explore full faculty list
               </Button>
