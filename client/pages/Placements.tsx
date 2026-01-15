@@ -528,6 +528,78 @@ export default function Placements() {
         </div>
       </section>
 
+      {/* ===== RECRUITERS BY SCHOOL ===== */}
+      <section ref={recruitersRef} className="px-3 py-10 lg:py-16">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
+                Top Recruiting Partners
+              </span>
+            </h2>
+            <p className="text-lg text-foreground max-w-3xl mx-auto">
+              Global leaders actively recruiting DSU graduates
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            {Object.entries(recruitersBySchool).map(([key, school]) => {
+              const SchoolIcon = school.icon;
+              return (
+                <div key={key} className="border border-border/50 rounded-2xl overflow-hidden bg-card/30">
+                  <button
+                    onClick={() => toggleSector(key)}
+                    className="w-full px-4 py-6 flex items-center justify-between hover:bg-orange-500/5 transition-colors text-left"
+                  >
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-lg bg-orange-500/10 flex items-center justify-center">
+                        <SchoolIcon className="w-5 h-5 text-orange-500" />
+                      </div>
+                      <h3 className="text-lg font-bold text-foreground uppercase tracking-wide">{school.name}</h3>
+                    </div>
+                    <ChevronDown
+                      className={`w-5 h-5 text-orange-500 flex-shrink-0 transition-transform duration-300 ${
+                        expandedSector[key] ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+
+                  {expandedSector[key] && (
+                    <div className="border-t border-border/30 px-4 py-8 bg-gradient-to-b from-orange-500/5 to-transparent">
+                      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                        {school.recruiters.map((recruiter, recruiterIdx) => (
+                          <div
+                            key={recruiterIdx}
+                            className="border-2 border-slate-400 dark:border-slate-600 rounded-lg p-4 flex items-center justify-center min-h-32 hover:border-orange-500 hover:shadow-md transition-all duration-300 bg-white dark:bg-card/50"
+                          >
+                            <img
+                              src={recruiter.logo}
+                              alt={recruiter.name}
+                              className="max-w-full max-h-20 object-contain"
+                              onError={(e) => {
+                                e.currentTarget.style.display = "none";
+                                const next = e.currentTarget.nextElementSibling;
+                                if (next) {
+                                  next.classList.remove("hidden");
+                                  next.classList.add("block");
+                                }
+                              }}
+                            />
+                            <span className="hidden text-center font-semibold text-foreground text-sm px-2">
+                              {recruiter.name}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       {/* ===== OUTCOME-DRIVEN ADVANTAGES ===== */}
       <section ref={outcomesRef} className="px-3 py-10 lg:py-16 bg-gradient-to-br from-orange-500/5 via-red-600/5 to-background">
         <div className="max-w-7xl mx-auto">
@@ -652,78 +724,6 @@ export default function Placements() {
                 </CardContent>
               </Card>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ===== RECRUITERS BY SECTOR ===== */}
-      <section ref={recruitersRef} className="px-3 py-10 lg:py-16">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
-                Top Recruiting Partners
-              </span>
-            </h2>
-            <p className="text-lg text-foreground max-w-3xl mx-auto">
-              Global leaders actively recruiting DSU graduates
-            </p>
-          </div>
-
-          <div className="space-y-4">
-            {Object.entries(recruitersBySchool).map(([key, school]) => {
-              const SchoolIcon = school.icon;
-              return (
-                <div key={key} className="border border-border/50 rounded-2xl overflow-hidden bg-card/30">
-                  <button
-                    onClick={() => toggleSector(key)}
-                    className="w-full px-4 py-6 flex items-center justify-between hover:bg-orange-500/5 transition-colors text-left"
-                  >
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-lg bg-orange-500/10 flex items-center justify-center">
-                        <SchoolIcon className="w-5 h-5 text-orange-500" />
-                      </div>
-                      <h3 className="text-lg font-bold text-foreground uppercase tracking-wide">{school.name}</h3>
-                    </div>
-                    <ChevronDown
-                      className={`w-5 h-5 text-orange-500 flex-shrink-0 transition-transform duration-300 ${
-                        expandedSector[key] ? "rotate-180" : ""
-                      }`}
-                    />
-                  </button>
-
-                  {expandedSector[key] && (
-                    <div className="border-t border-border/30 px-4 py-8 bg-gradient-to-b from-orange-500/5 to-transparent">
-                      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                        {school.recruiters.map((recruiter, recruiterIdx) => (
-                          <div
-                            key={recruiterIdx}
-                            className="border-2 border-slate-400 dark:border-slate-600 rounded-lg p-4 flex items-center justify-center min-h-32 hover:border-orange-500 hover:shadow-md transition-all duration-300 bg-white dark:bg-card/50"
-                          >
-                            <img
-                              src={recruiter.logo}
-                              alt={recruiter.name}
-                              className="max-w-full max-h-20 object-contain"
-                              onError={(e) => {
-                                e.currentTarget.style.display = "none";
-                                const next = e.currentTarget.nextElementSibling;
-                                if (next) {
-                                  next.classList.remove("hidden");
-                                  next.classList.add("block");
-                                }
-                              }}
-                            />
-                            <span className="hidden text-center font-semibold text-foreground text-sm px-2">
-                              {recruiter.name}
-                            </span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-                </div>
-              );
-            })}
           </div>
         </div>
       </section>
