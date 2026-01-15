@@ -46,7 +46,7 @@ export default function AdmissionCarouselNew({ items }: AdmissionCarouselNewProp
       <div className="mx-auto max-w-6xl">
         <div className="relative w-full overflow-hidden rounded-2xl border border-orange-500/20 bg-background shadow-xl">
           {/* Carousel Container */}
-          <div className="relative w-full" style={{ aspectRatio: "2 / 1" }}>
+          <div className="relative w-full" style={{ aspectRatio: "16 / 9" }}>
             {items.map((item, index) => (
               <div
                 key={index}
