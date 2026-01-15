@@ -412,8 +412,6 @@ export default function Navigation() {
     { name: "Alumni", href: "/alumni" },
     { name: "Library", href: "/library" },
     { name: "Committees", href: "/contact-complaints" },
-    { name: "News & Events", href: "/news-events" },
-    { name: "Blog", href: "/blog" },
     { name: "Careers", href: "/careers" },
     { name: "Hostel@Harohalli", href: "https://myposhtell.com", external: true },
     {
