@@ -125,8 +125,8 @@ function CommitteeLinksSection() {
                   className="h-auto w-full justify-start text-left text-sm font-semibold text-foreground hover:text-orange-600 p-0"
                   asChild
                 >
-                  <a href="#details">
-                    {link}
+                  <a href={link.path}>
+                    {link.label}
                     <ArrowRight className="ml-auto h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </a>
                 </Button>
