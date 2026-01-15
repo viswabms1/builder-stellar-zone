@@ -67,7 +67,7 @@ const COMMITTEE_LINKS: CommitteeLink[] = [
   { label: "Gender Champions Committee", path: "https://www.dsu.edu.in/images/Committee/Gender_Championship_Committee_26022024.pdf", external: true },
   { label: "Constitute of Anti Ragging Squad Committee", path: "https://www.dsu.edu.in/images/Committee/Anti_Ragging_Squad_25052024.pdf", external: true },
   { label: "Constitution of Ombudsman Committee", path: "https://www.dsu.edu.in/images/Committee/Ombudsperson_22092023.pdf", external: true },
-  { label: "Constitute of Anti Drug Committee", path: "#details" },
+  { label: "Constitute of Anti Drug Committee", path: "https://www.dsu.edu.in/images/Committee/Anti_Drug_Committee_2023.pdf", external: true },
   { label: "Students Grievance Redressal Mechanism", path: "#details" },
   { label: "Internal Complaint Committee", path: "#details" },
   { label: "Equal Opportunity Cell", path: "#details" },
