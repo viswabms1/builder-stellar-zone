@@ -69,8 +69,23 @@ export default function CampusLife() {
 
         <div className="absolute inset-0 bg-gradient-to-b from-slate-800/10 to-slate-900/20"></div>
 
-        <div className="relative h-full flex flex-col justify-between text-left max-w-7xl mx-auto px-3 pt-4 md:pt-8 pb-8 md:pb-16">
+        <div className="relative h-full flex flex-col justify-between text-left max-w-7xl mx-auto px-3 pt-8 md:pt-16 pb-8 md:pb-16">
           <div className="rounded-none px-4 md:px-8">
+            <a
+              href="https://dsu.edu.in/virtual-tour/"
+              target="_blank"
+              rel="noreferrer"
+              className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2 focus-visible:ring-offset-background inline-block mb-6"
+            >
+              <Button
+                size="lg"
+                className="hero-button bg-black/10 border border-transparent hover:bg-black/20 backdrop-blur-sm text-foreground px-10 py-6 text-lg font-semibold rounded-full inline-flex items-center transition-all duration-300"
+              >
+                Explore Student Life
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+            </a>
+
             <div className="hero-badge inline-flex items-center px-4 py-2 bg-orange-500/30 rounded-full border border-orange-500/60 mb-6">
               <Rocket className="w-4 h-4 text-orange-200 mr-2" />
               <span className="text-xs md:text-sm font-semibold text-orange-100">
@@ -83,7 +98,7 @@ export default function CampusLife() {
             </h1>
           </div>
 
-          <div className="rounded-none px-4 md:px-8 py-8 max-w-3xl bg-black/10 backdrop-blur-sm rounded-lg">
+          <div className="rounded-none px-4 md:px-8 max-w-3xl">
             <p className="hero-title text-sm sm:text-base md:text-lg text-white/95 leading-relaxed max-w-2xl drop-shadow-md" style={{textShadow: '0 1px 4px rgba(0, 0, 0, 0.8)'}}>
               At India's AI-First University, campus life seamlessly integrates research, innovation, leadership, and community—shaping graduates who drive global impact.
             </p>
@@ -101,21 +116,6 @@ export default function CampusLife() {
             <Volume2 className="h-5 w-5" />
           )}
         </button>
-
-        <a
-          href="https://dsu.edu.in/virtual-tour/"
-          target="_blank"
-          rel="noreferrer"
-          className="absolute bottom-8 left-6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2 focus-visible:ring-offset-background z-10"
-        >
-          <Button
-            size="lg"
-            className="hero-button bg-black/10 border border-transparent hover:bg-black/20 backdrop-blur-sm text-foreground px-10 py-6 text-lg font-semibold rounded-full inline-flex items-center transition-all duration-300"
-          >
-            Explore Student Life
-            <ArrowRight className="w-5 h-5 ml-2" />
-          </Button>
-        </a>
       </section>
 
       {/* ===== 4 PILLARS SECTION ===== */}
