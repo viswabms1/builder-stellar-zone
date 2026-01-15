@@ -42,7 +42,7 @@ export default function AdmissionCarouselNew({ items }: AdmissionCarouselNewProp
   };
 
   return (
-    <section className="relative w-full overflow-hidden bg-background px-3 py-8">
+    <section className="relative w-full overflow-hidden bg-background px-3 py-0">
       <div className="mx-auto max-w-6xl">
         <div className="relative w-full overflow-hidden rounded-2xl border border-orange-500/20 bg-background shadow-xl">
           {/* Carousel Container */}
