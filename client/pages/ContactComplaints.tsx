@@ -52,20 +52,19 @@ const COMMITTEES: Committee[] = [
 ];
 
 const COMMITTEE_LINKS = [
-  "Anti Ragging Committee Details",
-  "Anti Ragging Cell",
-  "Caste Based Discrimination Committee Details",
-  "Students Grievance Redressal Committee",
-  "Gender Champions Committee",
-  "Constitute of Anti Ragging Squad Committee",
-  "Constitution of Ombudsman Committee",
-  "Constitute of Anti Drug Committee",
-  "Students Grievance Redressal Mechanism",
-  "Internal Complaint Committee",
-  "Equal Opportunity Cell",
-  "Socio-Economically Disadvantaged Groups Cell",
-  "UGC e-Samadhaan",
-  "Red Cross Committee",
+  { label: "Anti Ragging Cell", path: "/anti-ragging-cell" },
+  { label: "Caste Based Discrimination Committee Details", path: "#details" },
+  { label: "Students Grievance Redressal Committee", path: "#details" },
+  { label: "Gender Champions Committee", path: "#details" },
+  { label: "Constitute of Anti Ragging Squad Committee", path: "#details" },
+  { label: "Constitution of Ombudsman Committee", path: "#details" },
+  { label: "Constitute of Anti Drug Committee", path: "#details" },
+  { label: "Students Grievance Redressal Mechanism", path: "#details" },
+  { label: "Internal Complaint Committee", path: "#details" },
+  { label: "Equal Opportunity Cell", path: "#details" },
+  { label: "Socio-Economically Disadvantaged Groups Cell", path: "#details" },
+  { label: "UGC e-Samadhaan", path: "#details" },
+  { label: "Red Cross Committee", path: "#details" },
 ];
 
 export default function ContactComplaints() {
