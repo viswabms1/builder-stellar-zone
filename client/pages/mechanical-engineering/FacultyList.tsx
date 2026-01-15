@@ -15,15 +15,12 @@ export default function MechanicalEngineeringFacultyList() {
 
   const FacultyCard = ({ f }: { f: typeof faculty[0] }) => (
     <Link to={`/faculty/${f.slug}`}>
-      <Card className="group bg-card hover:shadow-md transition-all cursor-pointer rounded-2xl p-5">
-        <div className="flex flex-col items-center gap-4">
-          <div className="w-[50px] h-[50px] flex-shrink-0">
-            <img
-              src={f.image}
-              alt={f.name}
-              className="w-full h-full object-cover rounded-xl"
-            />
-          </div>
+      <Card className="builder-faculty-card group bg-card hover:shadow-md transition-all cursor-pointer">
+        <div className="flex flex-col items-center">
+          <img
+            src={f.image}
+            alt={f.name}
+          />
           <div className="text-center space-y-2 w-full">
             <Badge className="bg-brand-orange/20 text-brand-orange border-brand-orange/30 text-xs">
               {f.title}
@@ -60,7 +57,7 @@ export default function MechanicalEngineeringFacultyList() {
           {chairperson.length > 0 && (
             <div className="mb-12">
               <h2 className="headline-3 font-display mb-6">Chairperson</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div className="builder-faculty-grid">
                 {chairperson.map((f) => (
                   <FacultyCard key={f.slug} f={f} />
                 ))}
@@ -72,7 +69,7 @@ export default function MechanicalEngineeringFacultyList() {
           {professors.length > 0 && (
             <div className="mb-12">
               <h2 className="headline-3 font-display mb-6">Professors</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div className="builder-faculty-grid">
                 {professors.map((f) => (
                   <FacultyCard key={f.slug} f={f} />
                 ))}
@@ -84,7 +81,7 @@ export default function MechanicalEngineeringFacultyList() {
           {associateProfessors.length > 0 && (
             <div className="mb-12">
               <h2 className="headline-3 font-display mb-6">Associate Professors</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div className="builder-faculty-grid">
                 {associateProfessors.map((f) => (
                   <FacultyCard key={f.slug} f={f} />
                 ))}
@@ -96,7 +93,7 @@ export default function MechanicalEngineeringFacultyList() {
           {assistants.length > 0 && (
             <div className="mb-12">
               <h2 className="headline-3 font-display mb-6">Assistant Professors</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div className="builder-faculty-grid">
                 {assistants.map((f) => (
                   <FacultyCard key={f.slug} f={f} />
                 ))}
@@ -108,7 +105,7 @@ export default function MechanicalEngineeringFacultyList() {
           {visiting.length > 0 && (
             <div>
               <h2 className="headline-3 font-display mb-6">Visiting Faculty</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div className="builder-faculty-grid">
                 {visiting.map((f) => (
                   <FacultyCard key={f.slug} f={f} />
                 ))}
