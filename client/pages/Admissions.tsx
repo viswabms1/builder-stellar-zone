@@ -124,6 +124,7 @@ const quickLinks: QuickLink[] = [
     href: "/eligibility",
     icon: BookOpen,
     external: false,
+    featured: true,
   },
   {
     title: "Admission Closing Dates",
