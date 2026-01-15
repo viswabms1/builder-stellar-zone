@@ -628,8 +628,8 @@ export default function Placements() {
           </div>
 
           <div className="space-y-4">
-            {Object.entries(recruitersByCategory).map(([key, sector]) => {
-              const SectorIcon = sector.icon;
+            {Object.entries(recruitersBySchool).map(([key, school]) => {
+              const SchoolIcon = school.icon;
               return (
                 <div key={key} className="border border-border/50 rounded-2xl overflow-hidden bg-card/30">
                   <button
@@ -638,9 +638,9 @@ export default function Placements() {
                   >
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 rounded-lg bg-orange-500/10 flex items-center justify-center">
-                        <SectorIcon className="w-5 h-5 text-orange-500" />
+                        <SchoolIcon className="w-5 h-5 text-orange-500" />
                       </div>
-                      <h3 className="text-lg font-bold text-foreground uppercase tracking-wide">{sector.name}</h3>
+                      <h3 className="text-lg font-bold text-foreground uppercase tracking-wide">{school.name}</h3>
                     </div>
                     <ChevronDown
                       className={`w-5 h-5 text-orange-500 flex-shrink-0 transition-transform duration-300 ${
@@ -652,7 +652,7 @@ export default function Placements() {
                   {expandedSector[key] && (
                     <div className="border-t border-border/30 px-4 py-8 bg-gradient-to-b from-orange-500/5 to-transparent">
                       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                        {sector.recruiters.map((recruiter, recruiterIdx) => (
+                        {school.recruiters.map((recruiter, recruiterIdx) => (
                           <div
                             key={recruiterIdx}
                             className="border-2 border-slate-400 dark:border-slate-600 rounded-lg p-4 flex items-center justify-center min-h-32 hover:border-orange-500 hover:shadow-md transition-all duration-300 bg-white dark:bg-card/50"
