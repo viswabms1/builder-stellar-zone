@@ -15,8 +15,8 @@ export default function MechanicalEngineeringFacultyList() {
 
   const FacultyCard = ({ f }: { f: typeof faculty[0] }) => (
     <Link to={`/faculty/${f.slug}`}>
-      <Card className="h-full group border border-border/50 bg-card/50 hover:shadow-lg hover:shadow-brand-orange/10 transition-all hover:-translate-y-1 cursor-pointer overflow-hidden">
-        <div className="overflow-hidden bg-muted" style={{ height: '2cm' }}>
+      <Card className="group border border-border/50 bg-card/50 hover:shadow-lg hover:shadow-brand-orange/10 transition-all hover:-translate-y-1 cursor-pointer overflow-hidden max-w-xs">
+        <div className="h-20 overflow-hidden bg-muted">
           <img
             src={f.image}
             alt={f.name}
@@ -24,23 +24,17 @@ export default function MechanicalEngineeringFacultyList() {
           />
         </div>
         <div className="p-2">
-          <CardHeader className="p-0 pb-1">
-            <div className="mb-1">
-              <Badge className="bg-brand-orange/20 text-brand-orange border-brand-orange/30 text-xs py-0 px-1.5">
-                {f.title}
-              </Badge>
-            </div>
-            <CardTitle className="font-display text-xs">{f.name}</CardTitle>
-          </CardHeader>
-          <CardContent className="p-0 pt-1">
-            <div className="mb-1">
-              <p className="text-xs text-foreground/70">{f.qualifications}</p>
-            </div>
-            <span className="inline-flex items-center gap-1 text-xs font-medium text-brand-orange group-hover:text-brand-orange/80">
-              View Profile
-              <ChevronRight className="h-2 w-2" />
-            </span>
-          </CardContent>
+          <div className="mb-1">
+            <Badge className="bg-brand-orange/20 text-brand-orange border-brand-orange/30 text-xs py-0 px-1.5">
+              {f.title}
+            </Badge>
+          </div>
+          <h3 className="font-display text-xs mb-1">{f.name}</h3>
+          <p className="text-xs text-foreground/70 mb-1">{f.qualifications}</p>
+          <span className="inline-flex items-center gap-1 text-xs font-medium text-brand-orange group-hover:text-brand-orange/80">
+            View Profile
+            <ChevronRight className="h-2 w-2" />
+          </span>
         </div>
       </Card>
     </Link>
