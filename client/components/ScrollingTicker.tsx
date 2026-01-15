@@ -49,7 +49,13 @@ export default function ScrollingTicker() {
         }
 
         .animate-scroll {
-          animation: scroll 40s linear infinite;
+          animation: scroll 20s linear infinite;
+        }
+
+        @media (min-width: 768px) {
+          .animate-scroll {
+            animation: scroll 40s linear infinite;
+          }
         }
 
         .animate-scroll:hover {
