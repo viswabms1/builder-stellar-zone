@@ -20,6 +20,14 @@ export default function MechanicalEngineeringFacultyList() {
           <img
             src={f.image}
             alt={f.name}
+            style={{
+              width: '140px',
+              height: '140px',
+              objectFit: 'cover',
+              borderRadius: '12px',
+              display: 'block',
+              margin: '0 auto 16px auto'
+            }}
           />
           <div className="text-center space-y-2 w-full">
             <Badge className="bg-brand-orange/20 text-brand-orange border-brand-orange/30 text-xs">
