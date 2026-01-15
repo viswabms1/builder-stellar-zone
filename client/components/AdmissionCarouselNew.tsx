@@ -48,9 +48,12 @@ export default function AdmissionCarouselNew({ items }: AdmissionCarouselNewProp
           {/* Carousel Container */}
           <div className="relative w-full flex items-center justify-center min-h-96">
             {items.map((item, index) => (
-              <div
+              <a
                 key={index}
-                className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
+                href="https://admissions.dsu.edu.in"
+                target="_blank"
+                rel="noreferrer"
+                className={`absolute inset-0 transition-opacity duration-700 ease-in-out cursor-pointer block ${
                   index === currentSlide ? "opacity-100" : "opacity-0"
                 }`}
               >
@@ -63,7 +66,7 @@ export default function AdmissionCarouselNew({ items }: AdmissionCarouselNewProp
                     img.style.background = "linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%)";
                   }}
                 />
-              </div>
+              </a>
             ))}
           </div>
 
