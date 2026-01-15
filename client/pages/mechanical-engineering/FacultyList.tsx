@@ -16,7 +16,7 @@ export default function MechanicalEngineeringFacultyList() {
   const FacultyCard = ({ f }: { f: typeof faculty[0] }) => (
     <Link to={`/faculty/${f.slug}`}>
       <Card className="h-full group border border-border/50 bg-card/50 hover:shadow-lg hover:shadow-brand-orange/10 transition-all hover:-translate-y-1 cursor-pointer overflow-hidden">
-        <div className="h-24 overflow-hidden bg-muted">
+        <div className="overflow-hidden bg-muted" style={{ height: '3cm' }}>
           <img
             src={f.image}
             alt={f.name}
