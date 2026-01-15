@@ -31,6 +31,7 @@ export const mechFaculty: Faculty[] = [
   { name: "Dr. Deepu Kumar", title: "Assistant Professor", image: `${BASE_URL}/images/Engineering/ME-dept/faculty/Deepu.jpg`, qualifications: "Ph.D" },
   { name: "Dr. Lokendra Singh", title: "Assistant Professor", image: `${BASE_URL}/images/Engineering/ME-dept/faculty/Lokendra.jpg`, qualifications: "Ph.D" },
   { name: "Dr. Samrat Sagar", title: "Assistant Professor", image: `${BASE_URL}/images/Engineering/ME-dept/faculty/Samrat.jpg`, qualifications: "Ph.D" },
+  { name: "Dr. Ashok Kaushal", title: "Visiting Professor", image: `${BASE_URL}/images/Engineering/ME-dept/faculty/Ashok.jpg`, qualifications: "Ph.D, PEO" },
 ].map((f) => ({
   ...f,
   slug: make(f.name),
