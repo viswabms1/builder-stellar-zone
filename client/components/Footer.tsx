@@ -171,7 +171,7 @@ export default function Footer() {
                     : "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F0caf0bf29be6421997005f26cdaae0ed?format=webp&width=800"
                 }
                 alt="Dayananda Sagar University Logo"
-                className="h-16 w-auto object-contain"
+                className="h-16 w-auto object-contain bg-transparent"
               />
               <div>
                 <p className="text-xs uppercase tracking-[0.3em] text-white/60">
