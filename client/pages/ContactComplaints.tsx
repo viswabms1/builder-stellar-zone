@@ -62,7 +62,7 @@ const COMMITTEE_LINKS = [
   { label: "Anti Ragging Cell", path: "/anti-ragging-cell" },
   { label: "Caste Based Discrimination Committee Details", path: "#details" },
   { label: "Students Grievance Redressal Committee", path: "#details" },
-  { label: "Gender Champions Committee", path: "#details" },
+  { label: "Gender Champions Committee", path: "https://www.dsu.edu.in/images/Committee/Gender_Championship_Committee_26022024.pdf", external: true },
   { label: "Constitute of Anti Ragging Squad Committee", path: "#details" },
   { label: "Constitution of Ombudsman Committee", path: "#details" },
   { label: "Constitute of Anti Drug Committee", path: "#details" },
