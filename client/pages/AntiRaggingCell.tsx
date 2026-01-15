@@ -312,6 +312,20 @@ function CommitteeSection() {
             Comprehensive committee with representation from all schools and
             administrative departments.
           </p>
+          <Button
+            variant="outline"
+            className="mt-6 border-orange-500/40 text-orange-600 hover:bg-orange-50"
+            asChild
+          >
+            <a
+              href="https://www.dsu.edu.in/images/Committee/Anti_Ragging_Committee_25052024.pdf"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Download Committee Details (PDF)
+              <ExternalLink className="ml-2 h-4 w-4" />
+            </a>
+          </Button>
         </div>
 
         {/* Committee Table */}
