@@ -69,8 +69,8 @@ export default function CampusLife() {
 
         <div className="absolute inset-0 bg-gradient-to-b from-slate-800/10 to-slate-900/20"></div>
 
-        <div className="relative h-full flex flex-col justify-between text-left max-w-7xl mx-auto px-3 pt-8 md:pt-16 pb-8 md:pb-16">
-          <div className="rounded-none px-4 md:px-8 py-8 max-w-3xl bg-black/10 backdrop-blur-sm rounded-lg">
+        <div className="relative h-full flex flex-col justify-between text-left max-w-7xl mx-auto px-3 pt-4 md:pt-8 pb-8 md:pb-16">
+          <div className="rounded-none px-4 md:px-8">
             <div className="hero-badge inline-flex items-center px-4 py-2 bg-orange-500/30 rounded-full border border-orange-500/60 mb-6">
               <Rocket className="w-4 h-4 text-orange-200 mr-2" />
               <span className="text-xs md:text-sm font-semibold text-orange-100">
