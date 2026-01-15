@@ -667,7 +667,7 @@ export default function Index() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 md:gap-8 items-center justify-center py-6 md:py-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 md:gap-8 items-center justify-center py-2 md:py-3">
             <div className="flex items-center justify-center h-24 md:h-28">
               <img
                 src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Ff0867b0eefa441e5aa0675ef12215dfa?format=webp&width=800"
