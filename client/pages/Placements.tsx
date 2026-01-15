@@ -30,10 +30,13 @@ import { useScrollTrigger } from "@/hooks/useScrollTrigger";
 export default function Placements() {
   const [expandedSchools, setExpandedSchools] = useState<Record<string, boolean>>({});
   const [expandedSector, setExpandedSector] = useState<Record<string, boolean>>({
-    tech_ai: true,
-    core_engineering: true,
-    management: false,
-    consulting: false,
+    soe: true,
+    cms: true,
+    sbas: false,
+    sohs: false,
+    soadh: false,
+    intl: false,
+    mou: false,
   });
 
   const { elementRef: statsRef, isVisible: statsVisible } = useScrollTrigger();
