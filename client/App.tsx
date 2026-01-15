@@ -1701,6 +1701,7 @@ function App() {
                   element={<VisionMission />}
                 />
                 <Route path="/about/history" element={<History />} />
+                <Route path="/contact-complaints" element={<ContactComplaints />} />
                 <Route path="/about/leadership" element={<Leadership />} />
                 <Route
                   path="/about/board-of-governors"
