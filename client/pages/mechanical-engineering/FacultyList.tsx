@@ -80,7 +80,7 @@ export default function MechanicalEngineeringFacultyList() {
           {chairperson.length > 0 && (
             <div className="mb-12">
               <h2 className="headline-3 font-display mb-6">Chairperson</h2>
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-4">
                 {chairperson.map((f) => (
                   <FacultyCard key={f.slug} f={f} />
                 ))}
@@ -92,7 +92,7 @@ export default function MechanicalEngineeringFacultyList() {
           {professors.length > 0 && (
             <div className="mb-12">
               <h2 className="headline-3 font-display mb-6">Professors</h2>
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-4">
                 {professors.map((f) => (
                   <FacultyCard key={f.slug} f={f} />
                 ))}
@@ -104,7 +104,7 @@ export default function MechanicalEngineeringFacultyList() {
           {associateProfessors.length > 0 && (
             <div className="mb-12">
               <h2 className="headline-3 font-display mb-6">Associate Professors</h2>
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-4">
                 {associateProfessors.map((f) => (
                   <FacultyCard key={f.slug} f={f} />
                 ))}
@@ -116,7 +116,7 @@ export default function MechanicalEngineeringFacultyList() {
           {assistants.length > 0 && (
             <div className="mb-12">
               <h2 className="headline-3 font-display mb-6">Assistant Professors</h2>
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-4">
                 {assistants.map((f) => (
                   <FacultyCard key={f.slug} f={f} />
                 ))}
@@ -128,7 +128,7 @@ export default function MechanicalEngineeringFacultyList() {
           {visiting.length > 0 && (
             <div>
               <h2 className="headline-3 font-display mb-6">Visiting Faculty</h2>
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-4">
                 {visiting.map((f) => (
                   <FacultyCard key={f.slug} f={f} />
                 ))}
