@@ -2,14 +2,14 @@ import { useEffect, useState } from "react";
 
 export default function ScrollingTicker() {
   const tickerItems = [
-    "Admissions Open for 2026-27 Batch",
-    "AI-Infused Curriculum Across All Programs",
-    "Merit Scholarships Available",
-    "Industry Partnerships & Internships",
-    "NVIDIA AI Architecture Lab",
-    "100% Placement Record",
-    "International Collaborations",
-    "Campus Innovation Hub Now Open",
+    "Net Zero Conclave on 29/12/2025",
+    "Academic Calendar for 2025-26 Even Semester (SOE)",
+    "Academic Calendar for 2025-26",
+    "Apply for March 2026 Executive MBA Batch - Contact: Aravind N.V. 9972598981 / aravind.nv@dsu.edu.in",
+    "National Anti Ragging Help Line: 1800-180-5522",
+    "DSU 3 Years LL.B Admissions for School of Law - Contact: 9606484800",
+    "AIC-DSU Foundation - Scholarships for Research Scholars & Scientific Officers",
+    "AICTE Recognition",
   ];
 
   return (
