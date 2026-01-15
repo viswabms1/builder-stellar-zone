@@ -840,4 +840,31 @@
     box-shadow: 0 8px 24px rgba(229, 138, 0, 0.2);
     transition: all 0.3s ease-out;
   }
+
+  /* Faculty Grid Styles */
+  .builder-faculty-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)) !important;
+    gap: 32px !important;
+  }
+
+  .builder-faculty-card {
+    padding: 20px !important;
+    border-radius: 16px !important;
+  }
+
+  .builder-faculty-card img {
+    width: 140px !important;
+    height: 140px !important;
+    object-fit: cover !important;
+    border-radius: 12px !important;
+    margin: 0 auto 16px auto !important;
+    display: block !important;
+  }
+
+  .builder-faculty-card img,
+  .builder-faculty-card picture,
+  .builder-faculty-card picture img {
+    max-width: none !important;
+  }
 }
