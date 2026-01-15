@@ -20,17 +20,17 @@ export default function ScrollingTicker() {
         {tickerItems.map((item, index) => (
           <div
             key={index}
-            className="px-6 md:px-8 py-1 text-white font-semibold text-xs md:text-sm flex items-center shrink-0"
+            className="px-4 md:px-6 py-0.5 text-white font-semibold text-xs md:text-sm flex items-center shrink-0"
           >
             <span>•</span>
-            <span className="ml-3">{item}</span>
+            <span className="ml-2">{item}</span>
           </div>
         ))}
         {/* Duplicate set for seamless loop */}
         {tickerItems.map((item, index) => (
           <div
             key={`duplicate-${index}`}
-            className="px-6 md:px-8 py-1 text-white font-semibold text-xs md:text-sm flex items-center shrink-0"
+            className="px-4 md:px-6 py-0.5 text-white font-semibold text-xs md:text-sm flex items-center shrink-0"
           >
             <span>•</span>
             <span className="ml-3">{item}</span>
