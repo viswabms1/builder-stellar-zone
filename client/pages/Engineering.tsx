@@ -2064,7 +2064,7 @@ export default function Engineering() {
             {[
               {
                 name: "Mercedes-Benz",
-                logo: "https://logo.clearbit.com/mercedes-benz.de",
+                logo: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F15075793b3de4c26add33ee22e7e528a?format=webp&width=800",
               },
               { name: "ABB", logo: "https://logo.clearbit.com/abb.com" },
               { name: "Amazon", logo: "https://logo.clearbit.com/amazon.com" },
