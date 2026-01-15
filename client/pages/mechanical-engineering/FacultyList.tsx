@@ -17,7 +17,7 @@ export default function MechanicalEngineeringFacultyList() {
     <Link to={`/faculty/${f.slug}`}>
       <Card className="group bg-card hover:shadow-md transition-all cursor-pointer rounded-2xl p-5">
         <div className="flex flex-col items-center gap-4">
-          <div className="w-[140px] h-[140px] flex-shrink-0">
+          <div className="w-[50px] h-[50px] flex-shrink-0">
             <img
               src={f.image}
               alt={f.name}
