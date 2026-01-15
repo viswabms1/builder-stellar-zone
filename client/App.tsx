@@ -1703,6 +1703,7 @@ function App() {
                 />
                 <Route path="/about/history" element={<History />} />
                 <Route path="/contact-complaints" element={<ContactComplaints />} />
+                <Route path="/anti-ragging-cell" element={<AntiRaggingCell />} />
                 <Route path="/about/leadership" element={<Leadership />} />
                 <Route
                   path="/about/board-of-governors"
