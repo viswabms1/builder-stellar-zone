@@ -28,6 +28,7 @@ const COMMITTEES: Committee[] = [
     chairperson: "Prof. Rakesh S Katarey",
     phone: "9663063388",
     chairEmail: "prof.rakesh@dsu.edu.in",
+    pdfUrl: "https://www.dsu.edu.in/images/Committee/pcbdc_20012023.pdf",
   },
   {
     name: "Anti-sexual Harassment Committee (ICC)",
