@@ -577,15 +577,32 @@ function EssentialsSection() {
 
 function QuickLinkCard({ item }: { item: QuickLink }) {
   return (
-    <Card className="group border border-border/60 bg-card/60 backdrop-blur-sm transition hover:-translate-y-1 hover:border-orange-500/40 hover:shadow-xl hover:shadow-orange-500/10">
+    <Card className={`group border transition hover:-translate-y-1 hover:shadow-xl ${
+      item.featured
+        ? "border-orange-500/60 bg-gradient-to-br from-orange-500/15 to-red-500/10 backdrop-blur-sm hover:border-orange-500/80 hover:shadow-orange-500/20 relative overflow-hidden"
+        : "border-border/60 bg-card/60 backdrop-blur-sm hover:border-orange-500/40 hover:shadow-orange-500/10"
+    }`}>
+      {item.featured && (
+        <div className="absolute top-0 right-0">
+          <Badge className="rounded-none rounded-bl-2xl bg-gradient-to-r from-orange-500 to-red-500 text-white text-xs font-bold px-3 py-1">
+            RECOMMENDED
+          </Badge>
+        </div>
+      )}
       <CardHeader>
         <div className="flex items-center justify-between">
-          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-orange-500/15 text-orange-500 transition group-hover:bg-orange-500 group-hover:text-foreground">
+          <div className={`flex h-12 w-12 items-center justify-center rounded-xl transition ${
+            item.featured
+              ? "bg-orange-500 text-foreground"
+              : "bg-orange-500/15 text-orange-500 group-hover:bg-orange-500 group-hover:text-foreground"
+          }`}>
             <item.icon className="h-6 w-6" />
           </div>
           <ExternalLink className="h-5 w-5 text-foreground group-hover:text-orange-500" />
         </div>
-        <CardTitle className="mt-4 text-lg font-semibold group-hover:text-orange-500">
+        <CardTitle className={`mt-4 text-lg font-semibold ${
+          item.featured ? "text-orange-600 group-hover:text-orange-500" : "group-hover:text-orange-500"
+        }`}>
           {item.title}
         </CardTitle>
       </CardHeader>
@@ -594,8 +611,11 @@ function QuickLinkCard({ item }: { item: QuickLink }) {
           {item.description}
         </CardDescription>
         <Button
-          variant="secondary"
-          className="w-full justify-center rounded-xl bg-orange-500/10 text-orange-500 hover:bg-orange-500 hover:text-foreground"
+          className={`w-full justify-center rounded-xl ${
+            item.featured
+              ? "bg-gradient-to-r from-orange-500 to-red-500 text-foreground hover:from-orange-600 hover:to-red-600"
+              : "bg-orange-500/10 text-orange-500 hover:bg-orange-500 hover:text-foreground"
+          }`}
           asChild
         >
           <a
