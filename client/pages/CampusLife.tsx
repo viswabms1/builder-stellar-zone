@@ -531,7 +531,7 @@ export default function CampusLife() {
                 description:
                   "Modern hostels with high-speed connectivity and wellness facilities designed to support academic success and student health.",
                 image:
-                  "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F0357dfeb9259438fbb59b6cd31a06e5a?format=webp&width=800",
+                  "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F6c9d0613167f4e2eb914a419384301a0?format=webp&width=800",
                 href: "https://myposhtell.com",
               },
               {
