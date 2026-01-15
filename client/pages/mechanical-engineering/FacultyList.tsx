@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { mechFaculty } from "@/data/mech-faculty";
 
 const faculty = [
   { name: "Dr. Saravana Bavan D", title: "Chairperson - ME", slug: "saravana-bavan-d", qualifications: "M.Tech, Ph.D" },
