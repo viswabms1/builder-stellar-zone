@@ -57,7 +57,7 @@ export default function AdmissionCarouselNew({ items }: AdmissionCarouselNewProp
                 <img
                   src={item.image}
                   alt={item.alt}
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-contain"
                   onError={(e) => {
                     const img = e.currentTarget as HTMLImageElement;
                     img.style.background = "linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%)";
