@@ -86,6 +86,7 @@ import Accreditations from "./pages/Accreditations";
 import Facilities from "./pages/Facilities";
 import Placements from "./pages/Placements";
 import Careers from "./pages/Careers";
+import ContactComplaints from "./pages/ContactComplaints";
 import MedicalEngineering from "./pages/MedicalEngineering";
 import Physics from "./pages/Physics";
 import Chemistry from "./pages/Chemistry";
