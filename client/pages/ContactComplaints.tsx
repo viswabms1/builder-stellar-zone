@@ -73,7 +73,7 @@ const COMMITTEE_LINKS: CommitteeLink[] = [
   { label: "Equal Opportunity Cell", path: "https://www.dsu.edu.in/images/Committee/Equal_opporunity_Cell.pdf", external: true },
   { label: "Socio-Economically Disadvantaged Groups Cell", path: "https://www.dsu.edu.in/images/Committee/SEDG.pdf", external: true },
   { label: "UGC e-Samadhaan", path: "https://samadhaan.ugc.ac.in/Home/Index", external: true },
-  { label: "Red Cross Committee", path: "#details" },
+  { label: "Red Cross Committee", path: "https://www.dsu.edu.in/images/Committee/Red_Cross_Wing_Committee.pdf", external: true },
 ];
 
 export default function ContactComplaints() {
