@@ -667,12 +667,49 @@ export default function Index() {
             </p>
           </div>
 
-          <div className="flex items-center justify-center py-4 md:py-0 overflow-x-auto">
-            <img
-              src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fffc582af946b444b924524e96904cc59?format=webp&width=1400"
-              alt="Performance Indicators and Accreditations"
-              className="w-full max-w-sm md:max-w-5xl h-auto object-contain flex-shrink-0 md:flex-shrink"
-            />
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 md:gap-8 items-center justify-center py-6 md:py-8">
+            <div className="flex items-center justify-center h-24 md:h-28">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F3c4cfada60ba4b1394c956782c4daa9b?format=webp&width=800"
+                alt="KSURI Teaching Excellence"
+                className="h-full w-auto object-contain"
+              />
+            </div>
+            <div className="flex items-center justify-center h-24 md:h-28">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F8b709d82bfc74d6db9ad48dcc8839f49?format=webp&width=800"
+                alt="IIRF 2023 National Rank"
+                className="h-full w-auto object-contain"
+              />
+            </div>
+            <div className="flex items-center justify-center h-24 md:h-28">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F3ea02afdba384ab18493f01f740f2572?format=webp&width=800"
+                alt="AllianceIndia Ranked B School"
+                className="h-full w-auto object-contain"
+              />
+            </div>
+            <div className="flex items-center justify-center h-24 md:h-28">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F54da0554e889484290313954c571275e?format=webp&width=800"
+                alt="Educational Excellence Award 2021"
+                className="h-full w-auto object-contain"
+              />
+            </div>
+            <div className="flex items-center justify-center h-24 md:h-28">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F815dc802ec3148348545468b3b9d2cca?format=webp&width=800"
+                alt="Times Best Emerging University 2021"
+                className="h-full w-auto object-contain"
+              />
+            </div>
+            <div className="flex items-center justify-center h-24 md:h-28">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Ff0867b0eefa441e5aa0675ef12215dfa?format=webp&width=800"
+                alt="NAAC A+ Accreditation"
+                className="h-full w-auto object-contain"
+              />
+            </div>
           </div>
         </div>
       </section>
