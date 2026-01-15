@@ -13,6 +13,12 @@ type Committee = {
   pdfUrl?: string;
 };
 
+type CommitteeLink = {
+  label: string;
+  path: string;
+  external?: boolean;
+};
+
 const COMMITTEES: Committee[] = [
   {
     name: "Anti Ragging Committee",
