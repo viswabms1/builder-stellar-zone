@@ -628,11 +628,11 @@ export default function CampusLife() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
             {[
-              { category: "Innovation & Technology", members: "4,500+", icon: Rocket },
-              { category: "Research & Professional Bodies", members: "3,500+", icon: Microscope },
-              { category: "Arts & Culture", members: "2,500+", icon: Music },
-              { category: "Sports & Wellness", members: "3,000+", icon: Trophy },
-              { category: "Social Impact", members: "2,000+", icon: Heart },
+              { category: "Innovation & Technology", icon: Rocket },
+              { category: "Research & Professional Bodies", icon: Microscope },
+              { category: "Arts & Culture", icon: Music },
+              { category: "Sports & Wellness", icon: Trophy },
+              { category: "Social Impact", icon: Heart },
             ].map((org, index) => (
               <Card
                 key={index}
@@ -642,8 +642,7 @@ export default function CampusLife() {
                 }}
               >
                 <org.icon className="w-8 h-8 text-orange-500 mx-auto mb-3" />
-                <h3 className="font-bold text-foreground mb-2">{org.category}</h3>
-                <p className="text-2xl font-bold text-orange-500">{org.members}</p>
+                <h3 className="font-bold text-foreground">{org.category}</h3>
               </Card>
             ))}
           </div>
