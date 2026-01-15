@@ -58,10 +58,6 @@ const COMMITTEES: Committee[] = [
     phone: "9986321964",
     chairEmail: "dean-cee@dsu.edu.in",
   },
-  {
-    name: "Gender Champions Committee",
-    pdfUrl: "https://www.dsu.edu.in/images/Committee/Gender_Championship_Committee_26022024.pdf",
-  },
 ];
 
 const COMMITTEE_LINKS: CommitteeLink[] = [
