@@ -579,6 +579,9 @@ export default function Index() {
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+      {/* Scrolling Ticker */}
+      <ScrollingTicker />
+
       {/* Hero Section with Full-Screen Video Background */}
       <section
         className="hero-section relative h-[40vh] md:h-[75vh] flex flex-col justify-between md:overflow-hidden overflow-visible mt-14 md:mt-0"
