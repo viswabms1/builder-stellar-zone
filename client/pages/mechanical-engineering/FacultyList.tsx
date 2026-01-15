@@ -15,13 +15,26 @@ export default function MechanicalEngineeringFacultyList() {
 
   const FacultyCard = ({ f }: { f: typeof faculty[0] }) => (
     <Link to={`/faculty/${f.slug}`}>
-      <Card className="group border border-border/50 bg-card/50 hover:shadow-lg hover:shadow-brand-orange/10 transition-all hover:-translate-y-1 cursor-pointer overflow-hidden max-w-xs h-[50px]">
-        <div className="h-[50px] overflow-hidden bg-muted">
+      <Card className="group border border-border/50 bg-card/50 hover:shadow-lg hover:shadow-brand-orange/10 transition-all hover:-translate-y-1 cursor-pointer overflow-hidden">
+        <div className="bg-muted">
           <img
             src={f.image}
             alt={f.name}
-            className="w-full h-full object-cover"
+            className="w-full"
           />
+        </div>
+        <div className="p-2">
+          <div className="mb-1">
+            <Badge className="bg-brand-orange/20 text-brand-orange border-brand-orange/30 text-xs py-0 px-1.5">
+              {f.title}
+            </Badge>
+          </div>
+          <h3 className="font-display text-xs mb-1">{f.name}</h3>
+          <p className="text-xs text-foreground/70 mb-1">{f.qualifications}</p>
+          <span className="inline-flex items-center gap-1 text-xs font-medium text-brand-orange group-hover:text-brand-orange/80">
+            View Profile
+            <ChevronRight className="h-2 w-2" />
+          </span>
         </div>
       </Card>
     </Link>
