@@ -128,15 +128,15 @@ function CommitteeLinksSection() {
               key={index}
               className="group border border-border/50 bg-card/60 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-orange-500/10 h-full"
             >
-              <CardContent className="p-4">
+              <CardContent className="p-4 flex flex-col">
                 <Button
                   variant="ghost"
-                  className="h-auto w-full justify-start text-left text-sm font-semibold text-foreground hover:text-amber-400 active:text-white p-0"
+                  className="h-auto w-full justify-start text-left text-sm font-semibold text-foreground hover:text-amber-400 active:text-white p-0 whitespace-normal"
                   asChild
                 >
-                  <a href={link.path} {...(link.external ? { target: "_blank", rel: "noreferrer" } : {})}>
-                    {link.label}
-                    <ArrowRight className="ml-auto h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <a href={link.path} {...(link.external ? { target: "_blank", rel: "noreferrer" } : {})} className="flex items-start justify-between gap-2">
+                    <span>{link.label}</span>
+                    <ArrowRight className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0" />
                   </a>
                 </Button>
               </CardContent>
