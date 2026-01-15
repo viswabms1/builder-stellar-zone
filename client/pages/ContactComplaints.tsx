@@ -229,6 +229,19 @@ function CommitteeCard({ committee }: { committee: Committee }) {
             </a>
           </Button>
         )}
+
+        {committee.pdfUrl && (
+          <Button
+            variant="outline"
+            className="mt-4 border-orange-500/40 text-orange-600 hover:bg-orange-50 w-full"
+            asChild
+          >
+            <a href={committee.pdfUrl} target="_blank" rel="noreferrer">
+              Download Details (PDF)
+              <ExternalLink className="ml-2 h-4 w-4" />
+            </a>
+          </Button>
+        )}
       </CardContent>
     </Card>
   );
