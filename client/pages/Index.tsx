@@ -670,6 +670,13 @@ export default function Index() {
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 md:gap-8 items-center justify-center py-6 md:py-8">
             <div className="flex items-center justify-center h-24 md:h-28">
               <img
+                src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Ff0867b0eefa441e5aa0675ef12215dfa?format=webp&width=800"
+                alt="NAAC A+ Accreditation"
+                className="h-full w-auto object-contain"
+              />
+            </div>
+            <div className="flex items-center justify-center h-24 md:h-28">
+              <img
                 src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F3c4cfada60ba4b1394c956782c4daa9b?format=webp&width=800"
                 alt="KSURI Teaching Excellence"
                 className="h-full w-auto object-contain"
@@ -700,13 +707,6 @@ export default function Index() {
               <img
                 src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F815dc802ec3148348545468b3b9d2cca?format=webp&width=800"
                 alt="Times Best Emerging University 2021"
-                className="h-full w-auto object-contain"
-              />
-            </div>
-            <div className="flex items-center justify-center h-24 md:h-28">
-              <img
-                src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Ff0867b0eefa441e5aa0675ef12215dfa?format=webp&width=800"
-                alt="NAAC A+ Accreditation"
                 className="h-full w-auto object-contain"
               />
             </div>
