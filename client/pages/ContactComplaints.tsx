@@ -64,7 +64,7 @@ const COMMITTEES: Committee[] = [
   },
 ];
 
-const COMMITTEE_LINKS = [
+const COMMITTEE_LINKS: CommitteeLink[] = [
   { label: "Anti Ragging Cell", path: "/anti-ragging-cell" },
   { label: "Caste Based Discrimination Committee Details", path: "#details" },
   { label: "Students Grievance Redressal Committee", path: "#details" },
