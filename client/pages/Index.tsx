@@ -5,6 +5,7 @@ import { useAutoMuteOnScroll } from "@/hooks/useAutoMuteOnScroll";
 import { useScrollTrigger } from "@/hooks/useScrollTrigger";
 import { indexTranslations } from "@/lib/i18n-extended";
 import { Button } from "@/components/ui/button";
+import ScrollingTicker from "@/components/ScrollingTicker";
 import {
   Card,
   CardContent,
