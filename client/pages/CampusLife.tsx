@@ -514,6 +514,7 @@ export default function CampusLife() {
                   "Comprehensive library with 2M+ books, digital archives, AI labs, and specialized research centers enabling world-class experimentation and discovery.",
                 image:
                   "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F303af6a81dfe4b5bb9ea6952ee39c3b7?format=webp&width=800",
+                href: null,
               },
               {
                 icon: Laptop,
@@ -522,6 +523,7 @@ export default function CampusLife() {
                   "AI labs, 3D printing, electronics workshops, and collaborative studios where students prototype, build, and test ideas from concept to launch.",
                 image:
                   "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop",
+                href: null,
               },
               {
                 icon: Building,
@@ -530,6 +532,7 @@ export default function CampusLife() {
                   "Modern hostels with high-speed connectivity and wellness facilities designed to support academic success and student health.",
                 image:
                   "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F0357dfeb9259438fbb59b6cd31a06e5a?format=webp&width=800",
+                href: "https://myposhtell.com",
               },
               {
                 icon: Users,
@@ -538,6 +541,7 @@ export default function CampusLife() {
                   "Dining, sports facilities, performance venues, and recreational areas that build community and support holistic student development.",
                 image:
                   "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Feaa91fe5c0b44c02b3ead40543f73fff?format=webp&width=800",
+                href: null,
               },
             ].map((facility, index) => (
               <div
@@ -547,21 +551,50 @@ export default function CampusLife() {
                   animation: `slideInUp 0.6s ease-out ${index * 0.1}s both`,
                 }}
               >
-                <div className="relative overflow-hidden rounded-none h-80 border border-border hover:border-orange-500/50 transition-colors group">
-                  <img
-                    src={facility.image}
-                    alt={facility.title}
-                    loading="lazy"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
+                {facility.href ? (
+                  <a
+                    href={facility.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="relative overflow-hidden rounded-none h-80 border border-border hover:border-orange-500/50 transition-colors group cursor-pointer"
+                  >
+                    <img
+                      src={facility.image}
+                      alt={facility.title}
+                      loading="lazy"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </a>
+                ) : (
+                  <div className="relative overflow-hidden rounded-none h-80 border border-border hover:border-orange-500/50 transition-colors group">
+                    <img
+                      src={facility.image}
+                      alt={facility.title}
+                      loading="lazy"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                )}
 
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
                     <facility.icon className="w-8 h-8 text-orange-500 flex-shrink-0 mt-1" />
-                    <h3 className="text-2xl font-bold text-foreground">
-                      {facility.title}
-                    </h3>
+                    {facility.href ? (
+                      <a
+                        href={facility.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="block hover:text-orange-500 transition-colors"
+                      >
+                        <h3 className="text-2xl font-bold text-foreground hover:text-orange-500 transition-colors">
+                          {facility.title}
+                        </h3>
+                      </a>
+                    ) : (
+                      <h3 className="text-2xl font-bold text-foreground">
+                        {facility.title}
+                      </h3>
+                    )}
                   </div>
                   <p className="text-foreground/80 leading-relaxed">
                     {facility.description}
