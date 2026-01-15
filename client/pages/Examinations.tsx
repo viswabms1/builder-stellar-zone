@@ -509,7 +509,7 @@ function HeroSection() {
           Examination Services Portal
         </span>
         <h1 className="mt-8 text-4xl font-bold leading-tight md:text-6xl">
-          Exams Made Easy.{" "}
+          Examination Resources.{" "}
           <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
             Transparent. Accessible.
           </span>
