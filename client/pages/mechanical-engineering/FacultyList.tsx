@@ -38,22 +38,22 @@ export default function MechanicalEngineeringFacultyList() {
 
   const FacultyCard = ({ f }: { f: typeof faculty[0] }) => (
     <Link to={`/faculty/${f.slug}`}>
-      <Card className="h-full group border border-border/50 bg-card/50 hover:shadow-lg hover:shadow-brand-orange/10 transition-all hover:-translate-y-1 cursor-pointer">
-        <CardHeader className="pb-2">
-          <div className="mb-2">
-            <Badge className="bg-brand-orange/20 text-brand-orange border-brand-orange/30 text-xs">
+      <Card className="h-full group border border-border/50 bg-card/50 hover:shadow-lg hover:shadow-brand-orange/10 transition-all hover:-translate-y-1 cursor-pointer p-3">
+        <CardHeader className="p-0 pb-1">
+          <div className="mb-1">
+            <Badge className="bg-brand-orange/20 text-brand-orange border-brand-orange/30 text-xs py-0 px-2">
               {f.title}
             </Badge>
           </div>
-          <CardTitle className="font-display text-base">{f.name}</CardTitle>
+          <CardTitle className="font-display text-sm">{f.name}</CardTitle>
         </CardHeader>
-        <CardContent className="pt-2">
-          <div className="mb-2">
+        <CardContent className="p-0 pt-1">
+          <div className="mb-1">
             <p className="text-xs text-foreground/70">{f.qualifications}</p>
           </div>
           <span className="inline-flex items-center gap-1 text-xs font-medium text-brand-orange group-hover:text-brand-orange/80">
             View Profile
-            <ChevronRight className="h-3 w-3" />
+            <ChevronRight className="h-2 w-2" />
           </span>
         </CardContent>
       </Card>
