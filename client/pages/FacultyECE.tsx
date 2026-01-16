@@ -52,7 +52,9 @@ function FacultyGridCard({ faculty }: { faculty: FacultyEntry }) {
           <img
             src={faculty.image}
             alt={faculty.name}
-            className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-110 transition-transform duration-500 ease-out"
+            className={`absolute inset-0 h-full w-full object-cover object-center group-hover:scale-110 transition-transform duration-500 ease-out ${
+              faculty.name.includes("Gangadharaiah") ? "rotate-90" : ""
+            }`}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 via-40% to-transparent group-hover:from-black/80 transition-all duration-300" />
         </AspectRatio>
