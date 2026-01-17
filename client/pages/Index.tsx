@@ -1292,6 +1292,9 @@ export default function Index() {
         newsItem={selectedNews}
         onClose={() => setSelectedNews(null)}
       />
+
+      {/* Application Popup - Left Bottom */}
+      <ApplicationPopup />
     </div>
   );
 }
