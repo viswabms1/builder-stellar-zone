@@ -593,8 +593,23 @@
     }
   }
 
+  @keyframes popupFadeOutDown {
+    0% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(40px) scale(0.95);
+    }
+  }
+
   .animate-fadeInUp {
     animation: popupFadeInUp 0.6s ease-out forwards;
+  }
+
+  .animate-fadeOutDown {
+    animation: popupFadeOutDown 0.3s ease-in forwards;
   }
 
   @keyframes fadeInUp {
