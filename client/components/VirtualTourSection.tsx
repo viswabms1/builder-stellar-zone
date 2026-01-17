@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { useScrollTrigger } from "@/hooks/useScrollTrigger";
 
 export function VirtualTourSection() {
   const { elementRef, isVisible } = useScrollTrigger({ threshold: 0.2 });
