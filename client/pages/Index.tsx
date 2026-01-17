@@ -855,12 +855,33 @@ export default function Index() {
                   key={selectedPublicationIndex}
                   src={allPublications[selectedPublicationIndex].image}
                   alt={allPublications[selectedPublicationIndex].title}
-                  className="w-full h-full object-cover transition-all duration-500 hover:scale-105 animate-featured-publication-fade"
+                  className="w-full h-full object-cover transition-all duration-500 hover:scale-105"
+                  style={{
+                    animation: [
+                      "featuredPublicationSlideLeft 0.7s ease-out",
+                      "featuredPublicationSlideRight 0.7s ease-out",
+                      "featuredPublicationSlideUpRotate 0.8s ease-out",
+                      "featuredPublicationBounceDown 0.8s ease-out",
+                      "featuredPublicationSpiralIn 0.9s ease-out",
+                    ][selectedPublicationIndex],
+                  }}
                   loading="eager"
                 />
               </div>
 
-              <div key={`content-${selectedPublicationIndex}`} className="p-8 space-y-5 animate-featured-publication-content">
+              <div
+                key={`content-${selectedPublicationIndex}`}
+                className="p-8 space-y-5"
+                style={{
+                  animation: [
+                    "featuredPublicationContentFadeIn0 0.7s ease-out 0.1s both",
+                    "featuredPublicationContentFadeIn1 0.7s ease-out 0.1s both",
+                    "featuredPublicationContentFadeIn2 0.8s ease-out 0.1s both",
+                    "featuredPublicationContentFadeIn3 0.8s ease-out 0.1s both",
+                    "featuredPublicationContentFadeIn4 0.9s ease-out 0.1s both",
+                  ][selectedPublicationIndex],
+                }}
+              >
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex flex-col gap-3">
                     <Badge className="bg-emerald-500/25 text-emerald-500 border border-emerald-500/50 w-fit">
