@@ -556,7 +556,7 @@ export default function Index() {
     };
   }, [allFeaturedNews.length, isVideoPlaying]);
 
-  // Auto-rotate publications every 8 seconds (pauses when user interacts)
+  // Auto-rotate publications every 6 seconds (pauses when user interacts)
   useEffect(() => {
     if (isPublicationInteracting) {
       return;
@@ -566,7 +566,7 @@ export default function Index() {
       setSelectedPublicationIndex(
         (prev) => (prev + 1) % allPublications.length,
       );
-    }, 8000);
+    }, 6000);
 
     return () => clearInterval(interval);
   }, [allPublications.length, isPublicationInteracting]);
