@@ -82,32 +82,32 @@ export function ApplicationPopup() {
         isFadingOut ? "animate-fadeOutDown" : "animate-fadeInUp"
       }`}
     >
-      <div className="bg-background rounded-2xl shadow-2xl overflow-hidden border-2 border-brand-orange/30 backdrop-blur-sm">
-        {/* Close Button */}
+      <div className="bg-background rounded-xl shadow-2xl overflow-hidden border-2 border-brand-orange/30 backdrop-blur-sm relative">
+        {/* Close Button - Transparent Overlay on Top */}
         <button
           onClick={() => setIsClosed(true)}
-          className="absolute top-2 right-2 p-1 hover:bg-white/10 rounded-full transition-colors z-50"
+          className="absolute top-1.5 right-1.5 p-0.5 hover:bg-white/15 rounded-full transition-colors z-50 bg-white/5"
           aria-label="Close"
         >
-          <X className="w-5 h-5 text-foreground/60" />
+          <X className="w-4 h-4 text-foreground/70" />
         </button>
 
         {/* Header - Brand Gradient */}
-        <div className="bg-gradient-to-r from-brand-orange to-brand-blue px-4 pt-4 pb-4">
-          <p className="text-xs text-white/90 text-center font-semibold">
+        <div className="bg-gradient-to-r from-brand-orange to-brand-blue px-3 pt-2.5 pb-2.5">
+          <p className="text-xs text-white/90 text-center font-semibold leading-tight">
             Application window for PhD Admissions
           </p>
-          <p className="text-xs text-white/90 text-center mt-2 font-semibold">
+          <p className="text-xs text-white/90 text-center mt-1 font-semibold leading-tight">
             (2025-26 Even sem) Closes on
           </p>
-          <p className="text-lg font-bold text-white text-center mt-3">
+          <p className="text-sm font-bold text-white text-center mt-2">
             31<sup className="text-xs">st</sup> January 2026
           </p>
         </div>
 
         {/* Countdown - Dark Theme */}
-        <div className="px-3 py-4 bg-card/50">
-          <div className="grid grid-cols-4 gap-2">
+        <div className="px-2 py-2.5 bg-card/50">
+          <div className="grid grid-cols-4 gap-1.5">
             {[
               { label: "DAYS", value: timeLeft.days },
               { label: "HOURS", value: timeLeft.hours },
@@ -116,12 +116,12 @@ export function ApplicationPopup() {
             ].map((item, idx) => (
               <div
                 key={idx}
-                className="bg-background rounded-lg p-2 text-center border border-brand-orange/20"
+                className="bg-background rounded-md p-1.5 text-center border border-brand-orange/20"
               >
-                <div className="text-brand-orange font-bold text-lg leading-tight">
+                <div className="text-brand-orange font-bold text-base leading-tight">
                   {String(item.value).padStart(2, "0")}
                 </div>
-                <div className="text-foreground/60 text-xs font-semibold mt-1">
+                <div className="text-foreground/60 text-xs font-semibold mt-0.5">
                   {item.label}
                 </div>
               </div>
@@ -130,22 +130,22 @@ export function ApplicationPopup() {
         </div>
 
         {/* CTA Button */}
-        <div className="px-3 py-3 bg-foreground/5 border-t border-brand-orange/20">
+        <div className="px-2 py-2 bg-foreground/5 border-t border-brand-orange/20">
           <a
             href="https://admissions.dsu.edu.in/"
             target="_blank"
             rel="noreferrer"
             className="block no-underline"
           >
-            <Button className="w-full bg-gradient-to-r from-brand-orange to-brand-blue hover:from-brand-orange hover:to-brand-blue text-white font-bold py-3 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-brand-orange/50 text-sm">
+            <Button className="w-full bg-gradient-to-r from-brand-orange to-brand-blue hover:from-brand-orange hover:to-brand-blue text-white font-bold py-2 px-2 rounded-md transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-brand-orange/50 text-xs">
               APPLY NOW !
             </Button>
           </a>
         </div>
 
         {/* Footer Note */}
-        <div className="px-3 py-2 bg-card border-t border-brand-orange/20">
-          <p className="text-xs text-foreground/70 text-center font-medium">
+        <div className="px-2 py-1.5 bg-card border-t border-brand-orange/20">
+          <p className="text-xs text-foreground/70 text-center font-medium leading-tight">
             Don't miss the deadline
           </p>
         </div>
