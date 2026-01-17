@@ -1238,7 +1238,7 @@ export default function Index() {
 
       {/* CTA Section */}
       <section className="px-3 py-6 md:py-10 relative">
-        <div className="max-w-4xl mx-auto text-center scroll-fade-in-up">
+        <div className="max-w-4xl mx-auto text-center">
           <div className="bg-gradient-to-r from-brand-magenta/10 via-brand-orange/10 to-brand-blue/10 rounded-3xl p-8 md:p-12 border border-brand-magenta/20">
             <h2 className="headline-2 mb-6">
               Ready to
