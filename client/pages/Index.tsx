@@ -851,11 +851,11 @@ export default function Index() {
               <div className="p-8 space-y-5">
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex flex-col gap-3">
-                    <Badge className="bg-brand-magenta/25 text-brand-magenta border border-brand-magenta/50 w-fit">
+                    <Badge className="bg-emerald-500/25 text-emerald-500 border border-emerald-500/50 w-fit">
                       {allPublications[selectedPublicationIndex].category}
                     </Badge>
                     <div className="flex items-center gap-2">
-                      <span className="inline-block w-2 h-2 rounded-full bg-brand-magenta animate-pulse"></span>
+                      <span className="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
                       <span className="text-xs font-semibold text-white">
                         Featured Publication
                       </span>
