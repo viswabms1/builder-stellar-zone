@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import ScrollingTicker from "@/components/ScrollingTicker";
 import { ApplicationPopup } from "@/components/ApplicationPopup";
 import { VirtualTourSection } from "@/components/VirtualTourSection";
+import { AdmissionsCTASection } from "@/components/AdmissionsCTASection";
 import {
   Card,
   CardContent,
