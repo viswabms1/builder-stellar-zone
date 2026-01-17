@@ -78,9 +78,10 @@ export function ApplicationPopup() {
 
   return (
     <div
-      className={`fixed left-3 bottom-20 z-40 max-w-xs ${
+      className={`fixed left-3 bottom-20 z-40 ${
         isFadingOut ? "animate-fadeOutDown" : "animate-fadeInUp"
       }`}
+      style={{ maxWidth: "288px" }}
     >
       <div className="bg-background rounded-xl shadow-2xl overflow-hidden border-2 border-brand-orange/30 backdrop-blur-sm relative">
         {/* Close Button - Transparent Overlay on Top */}
