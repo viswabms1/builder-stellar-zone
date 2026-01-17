@@ -717,7 +717,7 @@ export default function Index() {
       {/* Academics Section */}
       <section className="px-3 pt-10 pb-4 md:pb-10 relative">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 scroll-fade-in-up">
             <h2 className="headline-2 mb-6">
               Academic Excellence That Inspires
             </h2>
