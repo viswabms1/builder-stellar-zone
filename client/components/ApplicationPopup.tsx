@@ -19,19 +19,21 @@ export function ApplicationPopup() {
   });
   const [isClosed, setIsClosed] = useState(false);
   const [isFadingOut, setIsFadingOut] = useState(false);
+  const [hasBeenShown, setHasBeenShown] = useState(false);
 
-  // Handle scroll to show/hide popup based on scroll position
+  // Handle scroll to show popup on first scroll, then hide on scroll back to top
   useEffect(() => {
     const handleScroll = () => {
       if (!isClosed) {
         const isScrolledDown = window.scrollY > 100;
 
-        if (isScrolledDown && !isVisible && !isFadingOut) {
-          // Show popup when scrolling down
+        if (isScrolledDown && !hasBeenShown && !isVisible) {
+          // Show popup on first scroll down only
           setIsVisible(true);
+          setHasBeenShown(true);
           setIsFadingOut(false);
-        } else if (!isScrolledDown && isVisible) {
-          // Hide popup when scrolling back to top
+        } else if (!isScrolledDown && isVisible && hasBeenShown) {
+          // Hide popup when scrolling back to top (don't show again)
           setIsFadingOut(true);
           setTimeout(() => {
             setIsVisible(false);
@@ -42,7 +44,7 @@ export function ApplicationPopup() {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [isVisible, isClosed, isFadingOut]);
+  }, [isVisible, isClosed, isFadingOut, hasBeenShown]);
 
   // Countdown timer logic
   useEffect(() => {
