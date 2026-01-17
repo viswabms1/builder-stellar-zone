@@ -3,7 +3,6 @@ import { useEffect, useRef, useState, useMemo } from "react";
 import { useTheme } from "@/providers/theme-provider";
 import { useAutoMuteOnScroll } from "@/hooks/useAutoMuteOnScroll";
 import { useScrollTrigger } from "@/hooks/useScrollTrigger";
-import { ScrollSection } from "@/components/ScrollSection";
 import { indexTranslations } from "@/lib/i18n-extended";
 import { Button } from "@/components/ui/button";
 import ScrollingTicker from "@/components/ScrollingTicker";
