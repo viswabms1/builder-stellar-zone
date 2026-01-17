@@ -50,6 +50,7 @@ export function VirtualTourSection() {
             src={tourLink}
             frameBorder="0"
             allowFullScreen
+            sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
             className="w-full h-full"
             style={{
               border: "none",
