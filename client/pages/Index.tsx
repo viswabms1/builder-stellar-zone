@@ -940,7 +940,7 @@ export default function Index() {
           </div>
 
           {/* Featured Publications Grid - 5 Cards */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-3 mb-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-3 mb-8 scroll-fade-in-up">
             {allPublications.map((publication, idx) => {
               const isSpringer = publication.category.includes("Springer");
               const isHighImpact = [
