@@ -11,7 +11,6 @@ interface TimeLeft {
 
 export function ApplicationPopup() {
   const [isVisible, setIsVisible] = useState(false);
-  const [hasScrolled, setHasScrolled] = useState(false);
   const [timeLeft, setTimeLeft] = useState<TimeLeft>({
     days: 0,
     hours: 0,
@@ -21,16 +20,18 @@ export function ApplicationPopup() {
   const [isClosed, setIsClosed] = useState(false);
   const [isFadingOut, setIsFadingOut] = useState(false);
 
-  // Handle scroll to show popup after first scroll and fade away on scroll to top
+  // Handle scroll to show/hide popup based on scroll position
   useEffect(() => {
     const handleScroll = () => {
       if (!isClosed) {
-        if (!hasScrolled && window.scrollY > 100) {
-          setHasScrolled(true);
+        const isScrolledDown = window.scrollY > 100;
+
+        if (isScrolledDown && !isVisible && !isFadingOut) {
+          // Show popup when scrolling down
           setIsVisible(true);
           setIsFadingOut(false);
-        } else if (hasScrolled && window.scrollY < 100) {
-          // Fade out when scrolling back to top
+        } else if (!isScrolledDown && isVisible) {
+          // Hide popup when scrolling back to top
           setIsFadingOut(true);
           setTimeout(() => {
             setIsVisible(false);
@@ -41,7 +42,7 @@ export function ApplicationPopup() {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [hasScrolled, isClosed]);
+  }, [isVisible, isClosed, isFadingOut]);
 
   // Countdown timer logic
   useEffect(() => {
