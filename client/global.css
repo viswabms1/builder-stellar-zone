@@ -990,6 +990,26 @@
     animation: featuredPublicationContentFade 0.7s ease-out;
   }
 
+  .animate-featured-publication-slide-left {
+    animation: featuredPublicationSlideLeft 0.7s ease-out;
+  }
+
+  .animate-featured-publication-slide-right {
+    animation: featuredPublicationSlideRight 0.7s ease-out;
+  }
+
+  .animate-featured-publication-slide-up-rotate {
+    animation: featuredPublicationSlideUpRotate 0.8s ease-out;
+  }
+
+  .animate-featured-publication-bounce-down {
+    animation: featuredPublicationBounceDown 0.8s ease-out;
+  }
+
+  .animate-featured-publication-spiral-in {
+    animation: featuredPublicationSpiralIn 0.9s ease-out;
+  }
+
   .animate-publication-card-enter {
     animation: publicationCardEnter 0.6s ease-out;
   }
