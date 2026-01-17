@@ -64,7 +64,7 @@ function FacultyGridCard({ faculty }: { faculty: FacultyEntry }) {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 via-40% to-transparent group-hover:from-black/80 transition-all duration-300" />
         </AspectRatio>
-        <div className="absolute bottom-0 w-full p-3 text-white">
+        <div className="absolute bottom-0 w-full p-2 text-white">
           <p className="text-xs font-bold line-clamp-2 group-hover:text-brand-magenta transition-colors">{faculty.name}</p>
           <p className="text-xs opacity-80 line-clamp-1 group-hover:opacity-100 transition-opacity">{faculty.title}</p>
         </div>
