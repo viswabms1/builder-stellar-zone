@@ -4,7 +4,7 @@ import { GraduationCap } from "lucide-react";
 
 export function AdmissionsCTASection() {
   return (
-    <section className="px-3 py-10 md:py-16 relative bg-background">
+    <section className="px-3 py-0 relative bg-background">
       <div className="max-w-4xl mx-auto text-center">
         <div className="bg-gradient-to-r from-brand-magenta/10 via-brand-orange/10 to-brand-blue/10 rounded-3xl p-8 md:p-12 border border-brand-magenta/20 shadow-xl">
           <h2 className="headline-2 mb-6">
