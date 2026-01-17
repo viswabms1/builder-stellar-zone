@@ -1289,6 +1289,9 @@ export default function Index() {
         </div>
       </section>
 
+      {/* Virtual Tour Section */}
+      <VirtualTourSection />
+
       <NewsModal
         newsItem={selectedNews}
         onClose={() => setSelectedNews(null)}
