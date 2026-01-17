@@ -842,9 +842,10 @@ export default function Index() {
               {/* Progress bar indicator */}
               <div className="h-1 bg-white/10 overflow-hidden">
                 <div
+                  key={`progress-${selectedPublicationIndex}`}
                   className="h-full bg-gradient-to-r from-emerald-500 via-brand-blue to-brand-orange"
                   style={{
-                    animation: "progressFill 8s linear forwards",
+                    animation: "progressFill 6s linear forwards",
                   }}
                 />
               </div>
