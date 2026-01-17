@@ -839,16 +839,27 @@ export default function Index() {
           {/* Featured Publication */}
           <div className="mb-12" style={{ contain: "content" }}>
             <div className="w-full flex flex-col rounded-xl border-2 border-white/20 bg-gradient-to-br from-white/5 to-white/10 cursor-pointer text-left overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500">
+              {/* Progress bar indicator */}
+              <div className="h-1 bg-white/10 overflow-hidden">
+                <div
+                  className="h-full bg-gradient-to-r from-emerald-500 via-brand-blue to-brand-orange"
+                  style={{
+                    animation: "progressFill 8s linear forwards",
+                  }}
+                />
+              </div>
+
               <div className="relative w-full h-48 overflow-hidden bg-gradient-to-br from-foreground/5 to-white/5">
                 <img
+                  key={selectedPublicationIndex}
                   src={allPublications[selectedPublicationIndex].image}
                   alt={allPublications[selectedPublicationIndex].title}
-                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                  className="w-full h-full object-cover transition-all duration-500 hover:scale-105 animate-featured-publication-fade"
                   loading="eager"
                 />
               </div>
 
-              <div className="p-8 space-y-5">
+              <div className="p-8 space-y-5 animate-featured-publication-content">
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex flex-col gap-3">
                     <Badge className="bg-emerald-500/25 text-emerald-500 border border-emerald-500/50 w-fit">
