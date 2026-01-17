@@ -22,32 +22,18 @@ export function VirtualTourSection() {
           </p>
         </div>
 
-        {/* Virtual Tour Container */}
-        <div className="w-full bg-gradient-to-br from-brand-orange/10 to-brand-blue/10 rounded-2xl overflow-hidden h-96 md:h-[500px] flex items-center justify-center">
-          <div className="text-center px-6">
-            <div className="mb-6">
-              <div className="w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-brand-orange/20 to-brand-blue/20 rounded-full flex items-center justify-center">
-                <ExternalLink className="w-12 h-12 text-brand-orange animate-pulse" />
-              </div>
-            </div>
-            <h3 className="text-2xl font-bold text-foreground mb-3 font-display">
-              Virtual Campus Tour
-            </h3>
-            <p className="text-foreground/70 mb-8 max-w-md mx-auto">
-              Explore our state-of-the-art campus with an immersive 360° virtual tour.
-              The tour opens automatically or click below to experience it now!
-            </p>
-            <a
-              href={tourLink}
-              target="_blank"
-              rel="noreferrer"
-              onClick={() => setHasOpened(true)}
-              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-brand-orange to-brand-blue hover:from-brand-orange hover:to-brand-blue text-white font-bold rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
-            >
-              <span>Start Virtual Tour</span>
-              <ExternalLink className="w-5 h-5" />
-            </a>
-          </div>
+        {/* Virtual Tour Embedded - Full Section */}
+        <div className="w-full bg-background rounded-2xl overflow-hidden h-screen md:h-[90vh] border-2 border-brand-orange/20 shadow-2xl">
+          <iframe
+            title="DSU Virtual Tour"
+            src={tourLink}
+            frameBorder="0"
+            allowFullScreen
+            className="w-full h-full"
+            style={{
+              border: "none",
+            }}
+          />
         </div>
 
         {/* Tour Information */}
