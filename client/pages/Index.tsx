@@ -1293,6 +1293,9 @@ export default function Index() {
       {/* Virtual Tour Section */}
       <VirtualTourSection />
 
+      {/* Admissions CTA Section */}
+      <AdmissionsCTASection />
+
       <NewsModal
         newsItem={selectedNews}
         onClose={() => setSelectedNews(null)}
