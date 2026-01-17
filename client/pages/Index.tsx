@@ -949,16 +949,16 @@ export default function Index() {
                     setSelectedPublicationIndex(idx);
                     setIsPublicationInteracting(true);
                   }}
-                  className={`group relative overflow-hidden rounded-xl border-2 transition-all duration-300 p-4 text-left h-full backdrop-blur-sm ${
+                  className={`group relative overflow-hidden rounded-xl border-2 transition-all duration-500 p-4 text-left h-full backdrop-blur-sm animate-publication-card-enter ${
                     selectedPublicationIndex === idx
                       ? "border-emerald-500 bg-emerald-500/20 shadow-2xl shadow-emerald-500/20 scale-105 z-10"
-                      : `${borderColors[idx % 5]} bg-gradient-to-br ${colors[idx % 5]} hover:shadow-xl hover:shadow-brand-magenta/10`
+                      : `${borderColors[idx % 5]} bg-gradient-to-br ${colors[idx % 5]} hover:shadow-xl hover:shadow-emerald-500/20`
                   }`}
                   style={{
                     animation:
                       selectedPublicationIndex === idx
-                        ? "pulse 2s infinite"
-                        : "none",
+                        ? "publication-card-pulse 2s infinite"
+                        : `publication-card-enter 0.6s ease-out ${idx * 0.08}s both`,
                   }}
                 >
                   {/* Background accent */}
