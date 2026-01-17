@@ -33,43 +33,31 @@ export function VirtualTourSection() {
         </div>
 
         {/* Virtual Tour Container */}
-        <div className="w-full bg-gradient-to-br from-foreground/5 to-foreground/10 rounded-2xl overflow-hidden">
-          <div
-            className={`relative w-full transition-all duration-500 ${
-              isExpanded ? "h-96 md:h-[500px]" : "h-64 md:h-80"
-            }`}
-          >
-            {/* Matterport Tour Embed */}
-            <iframe
-              title="DSU Virtual Tour"
-              src="https://my.matterport.com/show/?m=nH2v6Nsdy8e&utm_source=embed&utm_medium=iframe&utm_campaign=never"
-              frameBorder="0"
-              allowFullScreen
-              allow="xr-spatial-tracking"
-              className="w-full h-full"
-              style={{
-                border: "none",
-              }}
-            />
+        <div className="w-full bg-gradient-to-br from-brand-orange/10 to-brand-blue/10 rounded-2xl overflow-hidden h-96 md:h-[500px] flex items-center justify-center">
+          <div className="text-center px-6">
+            <div className="mb-6">
+              <div className="w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-brand-orange/20 to-brand-blue/20 rounded-full flex items-center justify-center">
+                <ExternalLink className="w-12 h-12 text-brand-orange animate-pulse" />
+              </div>
+            </div>
+            <h3 className="text-2xl font-bold text-foreground mb-3 font-display">
+              Virtual Campus Tour
+            </h3>
+            <p className="text-foreground/70 mb-8 max-w-md mx-auto">
+              Explore our state-of-the-art campus with an immersive 360° virtual tour.
+              The tour opens automatically or click below to experience it now!
+            </p>
+            <a
+              href={tourLink}
+              target="_blank"
+              rel="noreferrer"
+              onClick={() => setHasOpened(true)}
+              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-brand-orange to-brand-blue hover:from-brand-orange hover:to-brand-blue text-white font-bold rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
+            >
+              <span>Start Virtual Tour</span>
+              <ExternalLink className="w-5 h-5" />
+            </a>
           </div>
-        </div>
-
-        {/* Tour Controls */}
-        <div className="flex justify-center gap-4 mt-8">
-          <button
-            onClick={() => setIsExpanded(!isExpanded)}
-            className="px-6 py-3 bg-gradient-to-r from-brand-orange to-brand-blue hover:from-brand-orange hover:to-brand-blue text-white font-bold rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
-          >
-            {isExpanded ? "Collapse Tour" : "Expand Tour"}
-          </button>
-          <a
-            href="https://my.matterport.com/show/?m=nH2v6Nsdy8e"
-            target="_blank"
-            rel="noreferrer"
-            className="px-6 py-3 bg-foreground/10 hover:bg-foreground/20 text-foreground font-bold rounded-lg transition-all duration-300 border border-brand-orange/30"
-          >
-            Open Full Screen
-          </a>
         </div>
 
         {/* Tour Information */}
