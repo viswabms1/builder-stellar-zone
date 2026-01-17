@@ -236,8 +236,8 @@ function NewsModal({
               className={`${
                 newsItem.color === "brand-orange"
                   ? "bg-brand-orange/20 text-brand-orange"
-                  : newsItem.color === "brand-magenta"
-                    ? "bg-brand-magenta/20 text-brand-magenta"
+                  : newsItem.color === "emerald-500"
+                    ? "bg-emerald-500/20 text-emerald-500"
                     : "bg-brand-blue/20 text-brand-blue"
               }`}
             >
@@ -376,7 +376,7 @@ export default function Index() {
     {
       key: "computerApplications",
       icon: Cpu,
-      color: "brand-magenta",
+      color: "emerald-500",
       delay: "0.1s",
       href: "/academics/computer-applications",
       image:
@@ -412,7 +412,7 @@ export default function Index() {
     {
       key: "sciences",
       icon: FlaskConical,
-      color: "brand-magenta",
+      color: "emerald-500",
       delay: "0.4s",
       href: "/academics/basic-applied-sciences",
       image:
@@ -436,7 +436,7 @@ export default function Index() {
     {
       key: "design",
       icon: Film,
-      color: "brand-magenta",
+      color: "emerald-500",
       delay: "0.7s",
       href: "/academics/design/bdesign",
       image:
@@ -472,7 +472,7 @@ export default function Index() {
     {
       key: "online",
       icon: Laptop,
-      color: "brand-magenta",
+      color: "emerald-500",
       delay: "0.85s",
       href: "/academics/dsu-online",
       image:
@@ -499,7 +499,7 @@ export default function Index() {
       excerpt:
         "Our student-built rocket successfully achieves 1200.77m apogee and safe recovery, marking a triumph of innovation and technical mastery in aerospace engineering.",
       date: "Oct 29, 2025",
-      color: "brand-magenta",
+      color: "emerald-500",
     },
     {
       image:
@@ -511,7 +511,7 @@ export default function Index() {
       excerpt:
         "Celebrating the achievements and milestones of our graduating students and faculty.",
       date: "Oct 15, 2025",
-      color: "brand-magenta",
+      color: "emerald-500",
     },
     {
       image:
@@ -1102,7 +1102,7 @@ export default function Index() {
                             key={idx}
                             className={`h-1.5 rounded-full transition-all duration-300 ${
                               idx === featuredNewsIndex
-                                ? "w-4 bg-brand-magenta"
+                                ? "w-4 bg-emerald-500"
                                 : "w-1.5 bg-foreground/30 hover:bg-foreground/50"
                             }`}
                           />
