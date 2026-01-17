@@ -1053,7 +1053,7 @@ export default function Index() {
       {/* Featured News Section */}
       <section className="px-3 pt-4 md:pt-10 pb-10 bg-gradient-to-r from-brand-blue/5 via-brand-magenta/5 to-brand-orange/5">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16 scroll-fade-in-up">
+          <div className="text-center mb-16">
             <h2 className="headline-2 mb-6">
               <span className="text-foreground">Featured </span>
               <span className="bg-brand-gradient bg-clip-text text-transparent">
