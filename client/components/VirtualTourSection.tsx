@@ -1,8 +1,30 @@
 export function VirtualTourSection() {
+  const { elementRef, isVisible } = useScrollTrigger({ threshold: 0.2 });
   const tourLink = "https://dsu.edu.in/virtual-tour";
+  const iframeRef = useRef<HTMLIFrameElement>(null);
+
+  // Automatically click start button when section becomes visible
+  useEffect(() => {
+    if (isVisible && iframeRef.current) {
+      // Try to interact with iframe to trigger tour
+      try {
+        const iframeDoc = iframeRef.current.contentDocument || iframeRef.current.contentWindow?.document;
+        if (iframeDoc) {
+          // Find and click the start/play button inside the iframe
+          const startButton = iframeDoc.querySelector('[class*="start"], [class*="play"], button[type="button"]');
+          if (startButton) {
+            (startButton as HTMLElement).click();
+          }
+        }
+      } catch (err) {
+        // If iframe interaction fails (due to CORS), open in new window instead
+        console.log("Could not interact with iframe, tour will be displayed normally");
+      }
+    }
+  }, [isVisible]);
 
   return (
-    <section className="px-3 py-10 md:py-16 relative bg-background">
+    <section ref={elementRef} className="px-3 py-10 md:py-16 relative bg-background">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-12">
@@ -20,6 +42,7 @@ export function VirtualTourSection() {
         {/* Virtual Tour Embedded - Full Section */}
         <div className="w-full bg-background rounded-2xl overflow-hidden h-screen md:h-[90vh] border-2 border-brand-orange/20 shadow-2xl">
           <iframe
+            ref={iframeRef}
             title="DSU Virtual Tour"
             src={tourLink}
             frameBorder="0"
