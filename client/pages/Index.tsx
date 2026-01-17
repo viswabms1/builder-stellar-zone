@@ -6,6 +6,7 @@ import { useScrollTrigger } from "@/hooks/useScrollTrigger";
 import { indexTranslations } from "@/lib/i18n-extended";
 import { Button } from "@/components/ui/button";
 import ScrollingTicker from "@/components/ScrollingTicker";
+import { ApplicationPopup } from "@/components/ApplicationPopup";
 import {
   Card,
   CardContent,
