@@ -1,16 +1,20 @@
 import { useState, useEffect } from "react";
 import { useScrollTrigger } from "@/hooks/useScrollTrigger";
+import { ExternalLink } from "lucide-react";
 
 export function VirtualTourSection() {
   const { elementRef, isVisible } = useScrollTrigger({ threshold: 0.3 });
-  const [isExpanded, setIsExpanded] = useState(false);
+  const [hasOpened, setHasOpened] = useState(false);
+  const tourLink = "https://my.matterport.com/show/?m=nH2v6Nsdy8e&utm_source=dsu&utm_medium=website";
 
-  // Automatically expand when section becomes visible on scroll
+  // Automatically open tour link when section becomes visible on scroll
   useEffect(() => {
-    if (isVisible && !isExpanded) {
-      setIsExpanded(true);
+    if (isVisible && !hasOpened) {
+      // Open the tour in a new tab
+      window.open(tourLink, "_blank");
+      setHasOpened(true);
     }
-  }, [isVisible, isExpanded]);
+  }, [isVisible, hasOpened, tourLink]);
 
   return (
     <section ref={elementRef} className="px-3 py-10 md:py-16 relative bg-background">
