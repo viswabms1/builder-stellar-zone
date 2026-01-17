@@ -74,7 +74,11 @@ export function ApplicationPopup() {
   }
 
   return (
-    <div className="fixed left-3 bottom-20 z-40 max-w-xs animate-fadeInUp">
+    <div
+      className={`fixed left-3 bottom-20 z-40 max-w-xs ${
+        isFadingOut ? "animate-fadeOutDown" : "animate-fadeInUp"
+      }`}
+    >
       <div className="bg-background rounded-2xl shadow-2xl overflow-hidden border-2 border-brand-orange/30 backdrop-blur-sm">
         {/* Close Button */}
         <button
