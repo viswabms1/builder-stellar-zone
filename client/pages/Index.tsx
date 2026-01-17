@@ -837,7 +837,7 @@ export default function Index() {
           </div>
 
           {/* Featured Publication */}
-          <div className="mb-12" style={{ contain: "content" }}>
+          <div className="mb-12 scroll-fade-in-up" style={{ contain: "content" }}>
             <div className="w-full flex flex-col rounded-xl border-2 border-white/20 bg-gradient-to-br from-white/5 to-white/10 cursor-pointer text-left overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500">
               {/* Progress bar indicator - Full rectangle */}
               <div className="h-2 bg-white/10 overflow-hidden">
