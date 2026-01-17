@@ -112,17 +112,17 @@ export function ApplicationPopup() {
             {[
               { label: "DAYS", value: timeLeft.days },
               { label: "HOURS", value: timeLeft.hours },
-              { label: "MINUTES", value: timeLeft.minutes },
-              { label: "SECONDS", value: timeLeft.seconds },
+              { label: "MINS", value: timeLeft.minutes },
+              { label: "SECS", value: timeLeft.seconds },
             ].map((item, idx) => (
               <div
                 key={idx}
-                className="bg-background rounded-md p-1.5 text-center border border-brand-orange/20"
+                className="bg-background rounded-md p-1 text-center border border-brand-orange/20 overflow-hidden"
               >
                 <div className="text-brand-orange font-bold text-base leading-tight">
                   {String(item.value).padStart(2, "0")}
                 </div>
-                <div className="text-foreground/60 text-xs font-semibold mt-0.5">
+                <div className="text-foreground/60 text-xs font-semibold mt-0.5 leading-tight truncate">
                   {item.label}
                 </div>
               </div>
