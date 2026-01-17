@@ -860,7 +860,7 @@ export default function Index() {
                 />
               </div>
 
-              <div className="p-8 space-y-5 animate-featured-publication-content">
+              <div key={`content-${selectedPublicationIndex}`} className="p-8 space-y-5 animate-featured-publication-content">
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex flex-col gap-3">
                     <Badge className="bg-emerald-500/25 text-emerald-500 border border-emerald-500/50 w-fit">
