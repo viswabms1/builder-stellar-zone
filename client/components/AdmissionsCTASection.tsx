@@ -15,10 +15,6 @@ export function AdmissionsCTASection() {
             </span>
             ?
           </h2>
-          <p className="subheadline text-foreground mb-8 max-w-2xl mx-auto font-display">
-            Join a university where AI is integrated across academics,
-            research, and campus innovation.
-          </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
             <a
