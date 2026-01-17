@@ -646,8 +646,8 @@ export default function Navigation() {
                                 {
                                   bg:
                                     theme === "light"
-                                      ? "bg-pink-50"
-                                      : "bg-pink-900/20",
+                                      ? "bg-emerald-50"
+                                      : "bg-emerald-900/20",
                                   border:
                                     "border-emerald-200/50 dark:border-emerald-600/30",
                                   text: "text-emerald-900 dark:text-emerald-100",
@@ -773,8 +773,8 @@ export default function Navigation() {
                                   {
                                     bg:
                                       theme === "light"
-                                        ? "bg-pink-50"
-                                        : "bg-pink-900/20",
+                                        ? "bg-emerald-50"
+                                      : "bg-emerald-900/20",
                                     border:
                                       "border-emerald-200/50 dark:border-emerald-600/30",
                                     text: "text-emerald-900 dark:text-emerald-100",
