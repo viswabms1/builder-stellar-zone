@@ -56,7 +56,7 @@ function FacultyGridCard({ faculty }: { faculty: FacultyEntry }) {
       className="group overflow-hidden rounded-xl border border-border/50 bg-card/70 shadow-md transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg hover:shadow-brand-magenta/20 active:scale-95"
     >
       <div className="relative overflow-hidden bg-slate-200 dark:bg-slate-800">
-        <AspectRatio ratio={2 / 3}>
+        <AspectRatio ratio={1 / 1.5}>
           <img
             src={faculty.image}
             alt={faculty.name}
