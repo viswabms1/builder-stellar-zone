@@ -77,27 +77,15 @@ export function ApplicationPopup() {
 
         {/* Header - Brand Gradient */}
         <div className="bg-gradient-to-r from-brand-orange to-brand-blue px-4 pt-4 pb-4">
-          <h3 className="text-sm font-bold text-white text-center leading-tight">
-            PhD Admissions
-          </h3>
+          <p className="text-xs text-white/90 text-center font-semibold">
+            Application window for PhD Admissions
+          </p>
           <p className="text-xs text-white/90 text-center mt-2 font-semibold">
-            (2025-26 Even) Closes on
+            (2025-26 Even sem) Closes on
           </p>
-          <p className="text-lg font-bold text-white text-center mt-2">
-            31<sup className="text-xs">st</sup> January 2026 to
+          <p className="text-lg font-bold text-white text-center mt-3">
+            31<sup className="text-xs">st</sup> January 2026
           </p>
-
-          <div className="mt-3 pt-3 border-t border-white/20">
-            <p className="text-xs text-white/90 text-center font-semibold">
-              Application window for PhD Admissions
-            </p>
-            <p className="text-xs text-white/90 text-center mt-1 font-semibold">
-              (2025-26 Even sem) Closes on
-            </p>
-            <p className="text-lg font-bold text-white text-center mt-2">
-              31<sup className="text-xs">st</sup> January 2026
-            </p>
-          </div>
         </div>
 
         {/* Countdown - Dark Theme */}
