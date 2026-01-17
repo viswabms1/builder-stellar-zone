@@ -38,7 +38,7 @@ export function VirtualTourSection() {
             </span>
           </h2>
           <p className="subheadline text-foreground max-w-2xl mx-auto font-display">
-            Experience our intelligent, innovative campus through an immersive virtual tour
+            Experience our Simmons powdered intelligent, innovative campus through an immersive virtual tour
           </p>
         </div>
 
