@@ -83,14 +83,14 @@ export function ApplicationPopup() {
       }`}
       style={{ maxWidth: "288px" }}
     >
-      <div className="bg-background rounded-xl shadow-2xl overflow-hidden border-2 border-brand-orange/30 backdrop-blur-sm relative">
-        {/* Close Button - Transparent Overlay on Top */}
+      <div className="bg-background rounded-xl shadow-2xl overflow-visible border-2 border-brand-orange/30 backdrop-blur-sm relative">
+        {/* Close Button - Top Right Corner */}
         <button
           onClick={() => setIsClosed(true)}
-          className="absolute top-1.5 right-1.5 p-0.5 hover:bg-white/15 rounded-full transition-colors z-50 bg-white/5"
+          className="absolute -top-2 -right-2 p-1 hover:bg-brand-orange/80 rounded-full transition-colors z-50 bg-brand-orange/60 shadow-lg"
           aria-label="Close"
         >
-          <X className="w-4 h-4 text-foreground/70" />
+          <X className="w-4 h-4 text-white" />
         </button>
 
         {/* Header - Brand Gradient */}
