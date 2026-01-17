@@ -1,11 +1,8 @@
-import { useScrollTrigger } from "@/hooks/useScrollTrigger";
-
 export function VirtualTourSection() {
-  const { elementRef, isVisible } = useScrollTrigger({ threshold: 0.3 });
   const tourLink = "https://dsu.edu.in/virtual-tour";
 
   return (
-    <section ref={elementRef} className="px-3 py-10 md:py-16 relative bg-background">
+    <section className="px-3 py-10 md:py-16 relative bg-background">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-12">
