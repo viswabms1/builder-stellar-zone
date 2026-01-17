@@ -1071,6 +1071,17 @@ export default function Index() {
           >
             {/* Left side - Featured story (50%) - Auto-rotating */}
             <div className="lg:col-span-2" style={{ contain: "content" }}>
+              {/* Full Rectangle Progress Bar */}
+              <div className="h-2 bg-white/10 overflow-hidden">
+                <div
+                  key={`news-progress-${featuredNewsIndex}`}
+                  className="h-full bg-gradient-to-r from-brand-blue via-brand-orange to-emerald-500"
+                  style={{
+                    animation: "progressFill 4s linear forwards",
+                  }}
+                />
+              </div>
+
               <div className="relative">
                 {featuredNewsIndex === 0 && (
                   <div className="absolute top-2 right-3 z-10 text-xs font-semibold text-white/70 pointer-events-none animate-pulse">
@@ -1084,6 +1095,16 @@ export default function Index() {
                       ? "featured-news-exit"
                       : "featured-news-enter"
                   }`}
+                  style={{
+                    animation: [
+                      "featuredPublicationSlideLeft 0.7s ease-out",
+                      "featuredPublicationSlideRight 0.7s ease-out",
+                      "featuredPublicationSlideUpRotate 0.8s ease-out",
+                      "featuredPublicationBounceDown 0.8s ease-out",
+                      "featuredPublicationSpiralIn 0.9s ease-out",
+                      "featuredPublicationSlideLeft 0.7s ease-out",
+                    ][featuredNewsIndex % 6],
+                  }}
                 >
                   {currentFeatured.isVideo ? (
                     <VideoWithFrameCapture
