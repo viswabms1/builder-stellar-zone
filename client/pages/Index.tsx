@@ -1077,7 +1077,7 @@ export default function Index() {
                           {currentFeatured.category}
                         </Badge>
                         {!newsTransitioning && (
-                          <div className="absolute -top-1 -right-1 w-2 h-2 bg-brand-magenta rounded-full featured-news-pulse" />
+                          <div className="absolute -top-1 -right-1 w-2 h-2 bg-emerald-500 rounded-full featured-news-pulse" />
                         )}
                       </div>
                       <div className="flex items-center text-foreground/60 text-xs font-body">
