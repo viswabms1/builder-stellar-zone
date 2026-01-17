@@ -884,20 +884,20 @@ export default function Index() {
                       rel="noreferrer"
                       className="no-underline group"
                     >
-                      <Button className="bg-brand-magenta hover:bg-brand-magenta/90 text-white font-bold gap-2 transform group-hover:translate-x-1 transition-all shadow-lg hover:shadow-xl">
+                      <Button className="bg-emerald-500 hover:bg-emerald-600 text-white font-bold gap-2 transform group-hover:translate-x-1 transition-all shadow-lg hover:shadow-xl">
                         Read Full Paper
                         <ArrowRight className="w-4 h-4" />
                       </Button>
                     </a>
                   ) : (
-                    <Button className="bg-brand-magenta hover:bg-brand-magenta/90 text-white font-bold gap-2 shadow-lg hover:shadow-xl">
+                    <Button className="bg-emerald-500 hover:bg-emerald-600 text-white font-bold gap-2 shadow-lg hover:shadow-xl">
                       Read Full Paper
                       <ArrowRight className="w-4 h-4" />
                     </Button>
                   )}
                   <a
                     href="/research-publications"
-                    className="text-xs text-brand-magenta hover:text-brand-magenta/80 font-semibold transition-colors"
+                    className="text-xs text-emerald-500 hover:text-emerald-600 font-semibold transition-colors"
                   >
                     View All Research
                   </a>
@@ -915,14 +915,14 @@ export default function Index() {
                 "Progress in Photovoltaics",
               ].includes(publication.category);
               const colors = [
-                "from-brand-magenta/20 to-brand-magenta/5",
+                "from-emerald-500/20 to-emerald-500/5",
                 "from-brand-blue/20 to-brand-blue/5",
                 "from-brand-orange/20 to-brand-orange/5",
                 "from-emerald-500/20 to-emerald-500/5",
                 "from-purple-500/20 to-purple-500/5",
               ];
               const borderColors = [
-                "border-brand-magenta/30 hover:border-brand-magenta",
+                "border-emerald-500/30 hover:border-emerald-500",
                 "border-brand-blue/30 hover:border-brand-blue",
                 "border-brand-orange/30 hover:border-brand-orange",
                 "border-emerald-500/30 hover:border-emerald-500",
@@ -940,7 +940,7 @@ export default function Index() {
                   }}
                   className={`group relative overflow-hidden rounded-xl border-2 transition-all duration-300 p-4 text-left h-full backdrop-blur-sm ${
                     selectedPublicationIndex === idx
-                      ? "border-brand-magenta bg-brand-magenta/20 shadow-2xl shadow-brand-magenta/20 scale-105 z-10"
+                      ? "border-emerald-500 bg-emerald-500/20 shadow-2xl shadow-emerald-500/20 scale-105 z-10"
                       : `${borderColors[idx % 5]} bg-gradient-to-br ${colors[idx % 5]} hover:shadow-xl hover:shadow-brand-magenta/10`
                   }`}
                   style={{
@@ -951,7 +951,7 @@ export default function Index() {
                   }}
                 >
                   {/* Background accent */}
-                  <div className="absolute -top-8 -right-8 w-20 h-20 bg-gradient-to-br from-brand-magenta/20 to-transparent rounded-full blur-2xl group-hover:scale-150 transition-transform duration-500 pointer-events-none"></div>
+                  <div className="absolute -top-8 -right-8 w-20 h-20 bg-gradient-to-br from-emerald-500/20 to-transparent rounded-full blur-2xl group-hover:scale-150 transition-transform duration-500 pointer-events-none"></div>
 
                   <div className="space-y-3 relative z-10">
                     {/* Header with badges */}
@@ -961,7 +961,7 @@ export default function Index() {
                           variant="secondary"
                           className={`text-xs flex-shrink-0 ${
                             isSpringer
-                              ? "bg-brand-magenta/25 text-brand-magenta border-brand-magenta/50"
+                              ? "bg-emerald-500/25 text-emerald-500 border-emerald-500/50"
                               : isHighImpact
                                 ? "bg-brand-blue/25 text-brand-blue border-brand-blue/50"
                                 : "bg-brand-orange/25 text-brand-orange border-brand-orange/50"
@@ -980,7 +980,7 @@ export default function Index() {
                     </div>
 
                     {/* Title with improved styling */}
-                    <h4 className="text-xs font-bold text-foreground font-display group-hover:text-brand-magenta transition-colors line-clamp-3 leading-tight">
+                    <h4 className="text-xs font-bold text-foreground font-display group-hover:text-emerald-500 transition-colors line-clamp-3 leading-tight">
                       {publication.title}
                     </h4>
 
@@ -990,7 +990,7 @@ export default function Index() {
                     </p>
 
                     {/* CTA indicator */}
-                    <div className="flex items-center gap-2 text-brand-magenta opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform group-hover:translate-x-1 pt-2 border-t border-foreground/10">
+                    <div className="flex items-center gap-2 text-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform group-hover:translate-x-1 pt-2 border-t border-foreground/10">
                       <ChevronRight className="w-3 h-3" />
                       <span className="text-xs font-semibold">
                         View Details
@@ -1008,7 +1008,7 @@ export default function Index() {
           {/* View All Research Publications CTA */}
           <div className="flex justify-center">
             <a href="/research-publications" className="no-underline">
-              <Button className="bg-white hover:bg-white/90 text-brand-magenta hover:text-brand-magenta/80 px-8 py-3 font-bold border-2 border-brand-magenta/30 hover:border-brand-magenta transition-all">
+              <Button className="bg-white hover:bg-white/90 text-emerald-500 hover:text-emerald-600 px-8 py-3 font-bold border-2 border-emerald-500/30 hover:border-emerald-500 transition-all">
                 View All Research Publications
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
