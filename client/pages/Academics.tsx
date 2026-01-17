@@ -463,8 +463,8 @@ export default function Academics() {
       {/* CTA Section - Modernized */}
       <section className="px-3 py-10">
         <div className="max-w-4xl mx-auto">
-          <div className="bg-gradient-to-br from-orange-500/10 via-red-600/10 to-pink-500/10 rounded-3xl p-12 border border-orange-500/20 relative overflow-hidden">
-            <div className="absolute -top-20 -right-20 w-96 h-96 bg-brand-magenta/5 rounded-full blur-3xl" />
+          <div className="bg-gradient-to-br from-orange-500/10 via-red-600/10 to-emerald-500/10 rounded-3xl p-12 border border-orange-500/20 relative overflow-hidden">
+            <div className="absolute -top-20 -right-20 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl" />
             <div className="absolute -bottom-20 -left-20 w-96 h-96 bg-brand-orange/5 rounded-full blur-3xl" />
             
             <div className="relative z-10">
@@ -488,7 +488,7 @@ export default function Academics() {
                 >
                   <Button
                     size="lg"
-                    className="bg-gradient-to-r from-orange-500 via-red-600 to-pink-500 text-foreground px-12 py-6 text-lg font-semibold rounded-xl hover:opacity-90 transition-all duration-300"
+                    className="bg-gradient-to-r from-orange-500 via-red-600 to-emerald-500 text-foreground px-12 py-6 text-lg font-semibold rounded-xl hover:opacity-90 transition-all duration-300"
                   >
                     Apply Now
                     <GraduationCap className="w-5 h-5 ml-2" />
