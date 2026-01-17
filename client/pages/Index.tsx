@@ -812,7 +812,7 @@ export default function Index() {
       {/* DSU Publications Section */}
       <section className="px-3 py-10 bg-gradient-to-b from-white/5 via-white/10 to-transparent">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 scroll-fade-in-up">
             <div className="inline-flex items-center gap-2 mb-6">
               <div className="h-1 w-8 bg-white rounded-full"></div>
               <span className="text-xs font-bold uppercase tracking-widest text-white">
