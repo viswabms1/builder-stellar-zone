@@ -1122,7 +1122,20 @@ export default function Index() {
                       className="w-full max-h-96 object-contain"
                     />
                   )}
-                  <div className="p-4 flex-1 flex flex-col space-y-2">
+                  <div
+                    key={`news-content-${featuredNewsIndex}`}
+                    className="p-4 flex-1 flex flex-col space-y-2"
+                    style={{
+                      animation: [
+                        "featuredPublicationContentFadeIn0 0.7s ease-out 0.1s both",
+                        "featuredPublicationContentFadeIn1 0.7s ease-out 0.1s both",
+                        "featuredPublicationContentFadeIn2 0.8s ease-out 0.1s both",
+                        "featuredPublicationContentFadeIn3 0.8s ease-out 0.1s both",
+                        "featuredPublicationContentFadeIn4 0.9s ease-out 0.1s both",
+                        "featuredPublicationContentFadeIn0 0.7s ease-out 0.1s both",
+                      ][featuredNewsIndex % 6],
+                    }}
+                  >
                     <div className="flex items-center gap-2 flex-wrap">
                       <div className="relative">
                         <Badge
