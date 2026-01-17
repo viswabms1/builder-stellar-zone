@@ -650,7 +650,7 @@ export default function Navigation() {
                                       : "bg-pink-900/20",
                                   border:
                                     "border-pink-200/50 dark:border-pink-600/30",
-                                  text: "text-pink-900 dark:text-pink-100",
+                                  text: "text-emerald-900 dark:text-emerald-100",
                                 },
                                 {
                                   bg:
@@ -777,7 +777,7 @@ export default function Navigation() {
                                         : "bg-pink-900/20",
                                     border:
                                       "border-pink-200/50 dark:border-pink-600/30",
-                                    text: "text-pink-900 dark:text-pink-100",
+                                    text: "text-emerald-900 dark:text-emerald-100",
                                   },
                                   {
                                     bg:
