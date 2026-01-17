@@ -581,6 +581,22 @@
     animation-delay: 0.4s;
   }
 
+  /* Application Popup Animations */
+  @keyframes popupFadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(40px) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  .animate-fadeInUp {
+    animation: popupFadeInUp 0.6s ease-out forwards;
+  }
+
   @keyframes fadeInUp {
     from {
       opacity: 0;
