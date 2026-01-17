@@ -718,18 +718,16 @@ export default function Index() {
       {/* Academics Section */}
       <section className="px-3 pt-10 pb-4 md:pb-10 relative">
         <div className="max-w-7xl mx-auto">
-          <ScrollAnimatedElement>
-            <div className="text-center mb-16">
-              <h2 className="headline-2 mb-6">
-                Academic Excellence That Inspires
-              </h2>
-              <p className="subheadline text-foreground max-w-3xl mx-auto font-display">
-                Explore AI-integrated undergraduate and postgraduate programs
-                spanning engineering, sciences, health, law, design, and
-                management.
-              </p>
-            </div>
-          </ScrollAnimatedElement>
+          <div className="text-center mb-16">
+            <h2 className="headline-2 mb-6">
+              Academic Excellence That Inspires
+            </h2>
+            <p className="subheadline text-foreground max-w-3xl mx-auto font-display">
+              Explore AI-integrated undergraduate and postgraduate programs
+              spanning engineering, sciences, health, law, design, and
+              management.
+            </p>
+          </div>
 
           <div
             className="grid md:grid-cols-2 lg:grid-cols-5 gap-0 auto-rows-max"
