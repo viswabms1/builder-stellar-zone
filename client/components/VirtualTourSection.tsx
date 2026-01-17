@@ -32,13 +32,13 @@ export function VirtualTourSection() {
         {/* Section Header */}
         <div className="text-center mb-12">
           <h2 className="headline-2 mb-6">
-            <span className="text-foreground">Step Inside </span>
+            <span className="text-foreground">Walk the </span>
             <span className="bg-brand-gradient bg-clip-text text-transparent">
-              Dayananda Sagar University – Virtually!
+              DSU Smart Campus — Virtually
             </span>
           </h2>
           <p className="subheadline text-foreground max-w-2xl mx-auto font-display">
-            Explore our state-of-the-art campus through an immersive 360° virtual tour
+            Experience our intelligent, innovative campus through an immersive virtual tour
           </p>
         </div>
 
