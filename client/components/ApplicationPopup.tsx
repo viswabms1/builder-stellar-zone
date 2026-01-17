@@ -19,19 +19,29 @@ export function ApplicationPopup() {
     seconds: 0,
   });
   const [isClosed, setIsClosed] = useState(false);
+  const [isFadingOut, setIsFadingOut] = useState(false);
 
-  // Handle scroll to show popup after first scroll
+  // Handle scroll to show popup after first scroll and fade away on scroll to top
   useEffect(() => {
     const handleScroll = () => {
-      if (!hasScrolled && window.scrollY > 100) {
-        setHasScrolled(true);
-        setIsVisible(true);
+      if (!isClosed) {
+        if (!hasScrolled && window.scrollY > 100) {
+          setHasScrolled(true);
+          setIsVisible(true);
+          setIsFadingOut(false);
+        } else if (hasScrolled && window.scrollY < 100) {
+          // Fade out when scrolling back to top
+          setIsFadingOut(true);
+          setTimeout(() => {
+            setIsVisible(false);
+          }, 300);
+        }
       }
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [hasScrolled]);
+  }, [hasScrolled, isClosed]);
 
   // Countdown timer logic
   useEffect(() => {
