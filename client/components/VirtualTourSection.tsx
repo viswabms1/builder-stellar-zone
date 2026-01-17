@@ -3,7 +3,7 @@ import { useScrollTrigger } from "@/hooks/useScrollTrigger";
 
 export function VirtualTourSection() {
   const { elementRef, isVisible } = useScrollTrigger({ threshold: 0.2 });
-  const tourLink = "https://dsu.edu.in/virtual-tour";
+  const tourLink = "https://dsu.edu.in/virtual-tour/#DayanandaSagarUniversity_01,2.01108,-3.39268,75,4";
   const iframeRef = useRef<HTMLIFrameElement>(null);
 
   // Automatically click start button when section becomes visible
