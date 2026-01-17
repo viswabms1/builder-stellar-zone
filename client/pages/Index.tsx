@@ -735,7 +735,7 @@ export default function Index() {
             {schoolsData.map((school, index) => {
               const styles = [
                 { bg: "bg-orange-500/10", border: "border-orange-500/20" },
-                { bg: "bg-pink-500/10", border: "border-pink-500/20" },
+                { bg: "bg-violet-500/10", border: "border-violet-500/20" },
                 { bg: "bg-blue-500/10", border: "border-blue-500/20" },
                 { bg: "bg-emerald-500/10", border: "border-emerald-500/20" },
                 { bg: "bg-purple-500/10", border: "border-purple-500/20" },
