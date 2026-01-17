@@ -528,7 +528,7 @@ export default function Index() {
     },
   ];
 
-  // Auto-rotate featured news every 8 seconds (pauses when video is playing)
+  // Auto-rotate featured news every 4 seconds (pauses when video is playing)
   useEffect(() => {
     if (isVideoPlaying) {
       return;
@@ -541,12 +541,12 @@ export default function Index() {
         setNewsTransitioning(false);
       }, 300);
       setRotationProgress(0);
-    }, 8000);
+    }, 4000);
 
     const progressInterval = setInterval(() => {
       setRotationProgress((prev) => {
         if (prev >= 100) return 100;
-        return prev + 100 / 80;
+        return prev + 100 / 40;
       });
     }, 100);
 
