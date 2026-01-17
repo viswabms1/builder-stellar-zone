@@ -1,6 +1,4 @@
-import { useState, useEffect } from "react";
 import { useScrollTrigger } from "@/hooks/useScrollTrigger";
-import { ExternalLink } from "lucide-react";
 
 export function VirtualTourSection() {
   const { elementRef, isVisible } = useScrollTrigger({ threshold: 0.3 });
