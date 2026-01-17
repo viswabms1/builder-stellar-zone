@@ -49,7 +49,6 @@ export function VirtualTourSection() {
             title="DSU Virtual Tour"
             src={tourLink}
             frameBorder="0"
-            allowFullScreen
             sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
             className="w-full h-full"
             style={{
