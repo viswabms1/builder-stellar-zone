@@ -1188,6 +1188,9 @@ export default function Index() {
                   key={idx}
                   onClick={() => setSelectedNews(item)}
                   className="group rounded-none overflow-hidden border border-brand-magenta/20 bg-brand-magenta/5 hover:border-brand-magenta/40 text-left cursor-pointer news-grid-item transition-all duration-300"
+                  style={{
+                    animation: `publicationCardEnter 0.6s ease-out ${idx * 0.1}s both`,
+                  }}
                 >
                   <div className="relative">
                     {item.isVideo ? (
