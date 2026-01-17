@@ -815,29 +815,31 @@ export default function Index() {
       {/* DSU Publications Section */}
       <section className="px-3 py-10 bg-gradient-to-b from-white/5 via-white/10 to-transparent">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16 scroll-fade-in-up">
-            <div className="inline-flex items-center gap-2 mb-6">
-              <div className="h-1 w-8 bg-white rounded-full"></div>
-              <span className="text-xs font-bold uppercase tracking-widest text-white">
-                Research Excellence
-              </span>
-              <div className="h-1 w-8 bg-white rounded-full"></div>
+          <ScrollAnimatedElement>
+            <div className="text-center mb-16">
+              <div className="inline-flex items-center gap-2 mb-6">
+                <div className="h-1 w-8 bg-white rounded-full"></div>
+                <span className="text-xs font-bold uppercase tracking-widest text-white">
+                  Research Excellence
+                </span>
+                <div className="h-1 w-8 bg-white rounded-full"></div>
+              </div>
+              <h2 className="headline-2 mb-6">
+                <span className="text-foreground">DSU </span>
+                <span className="bg-brand-gradient bg-clip-text text-transparent">
+                  Research Publications
+                </span>
+              </h2>
+              <p className="subheadline text-foreground max-w-2xl mx-auto font-display mb-4">
+                Showcasing high-impact, interdisciplinary research across AI,
+                materials science, energy, and health
+              </p>
+              <p className="text-sm font-bold text-white tracking-wide">
+                Spanning Scopus-indexed research in AI, materials science,
+                renewable energy, and biomedical innovation
+              </p>
             </div>
-            <h2 className="headline-2 mb-6">
-              <span className="text-foreground">DSU </span>
-              <span className="bg-brand-gradient bg-clip-text text-transparent">
-                Research Publications
-              </span>
-            </h2>
-            <p className="subheadline text-foreground max-w-2xl mx-auto font-display mb-4">
-              Showcasing high-impact, interdisciplinary research across AI,
-              materials science, energy, and health
-            </p>
-            <p className="text-sm font-bold text-white tracking-wide">
-              Spanning Scopus-indexed research in AI, materials science,
-              renewable energy, and biomedical innovation
-            </p>
-          </div>
+          </ScrollAnimatedElement>
 
           {/* Featured Publication */}
           <div className="mb-12 scroll-fade-in-up" style={{ contain: "content" }}>
