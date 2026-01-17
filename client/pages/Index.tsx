@@ -1072,7 +1072,7 @@ export default function Index() {
                     <div className="flex items-center gap-2 flex-wrap">
                       <div className="relative">
                         <Badge
-                          className={`text-xs ${currentFeatured.color === "brand-orange" ? "bg-brand-orange/20 text-brand-orange" : currentFeatured.color === "brand-magenta" ? "bg-brand-magenta/20 text-brand-magenta" : "bg-brand-blue/20 text-brand-blue"}`}
+                          className={`text-xs ${currentFeatured.color === "brand-orange" ? "bg-brand-orange/20 text-brand-orange" : currentFeatured.color === "emerald-500" ? "bg-emerald-500/20 text-emerald-500" : "bg-brand-blue/20 text-brand-blue"}`}
                         >
                           {currentFeatured.category}
                         </Badge>
