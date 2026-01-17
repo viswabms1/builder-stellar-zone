@@ -4,17 +4,7 @@ import { ExternalLink } from "lucide-react";
 
 export function VirtualTourSection() {
   const { elementRef, isVisible } = useScrollTrigger({ threshold: 0.3 });
-  const [hasOpened, setHasOpened] = useState(false);
-  const tourLink = "https://my.matterport.com/show/?m=nH2v6Nsdy8e&utm_source=dsu&utm_medium=website";
-
-  // Automatically open tour link when section becomes visible on scroll
-  useEffect(() => {
-    if (isVisible && !hasOpened) {
-      // Open the tour in a new tab
-      window.open(tourLink, "_blank");
-      setHasOpened(true);
-    }
-  }, [isVisible, hasOpened, tourLink]);
+  const tourLink = "https://dsu.edu.in/virtual-tour";
 
   return (
     <section ref={elementRef} className="px-3 py-10 md:py-16 relative bg-background">
