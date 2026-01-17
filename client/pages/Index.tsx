@@ -1179,10 +1179,6 @@ export default function Index() {
                   </div>
                 </button>
               </div>
-              <div
-                className="rotation-progress-bar"
-                style={{ width: `${rotationProgress}%` }}
-              />
             </div>
 
             {/* Right side - Remaining stories (50%) - 1 column, 2 tiles (medium size) */}
