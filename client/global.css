@@ -795,8 +795,71 @@
     }
   }
 
+  /* Featured publication fade transition */
+  @keyframes featuredPublicationFade {
+    0% {
+      opacity: 0;
+      transform: scale(0.98);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* Featured publication content fade */
+  @keyframes featuredPublicationContentFade {
+    0% {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Publication card staggered entrance */
+  @keyframes publicationCardEnter {
+    0% {
+      opacity: 0;
+      transform: translateY(20px) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  /* Publication card pulse effect for selected */
+  @keyframes publicationCardPulse {
+    0%,
+    100% {
+      opacity: 1;
+      box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4);
+    }
+    50% {
+      opacity: 0.95;
+    }
+    75% {
+      box-shadow: 0 0 0 10px rgba(16, 185, 129, 0);
+    }
+  }
+
   .publication-card {
     animation: slideInUp 0.5s ease-out;
+  }
+
+  .animate-featured-publication-fade {
+    animation: featuredPublicationFade 0.6s ease-out;
+  }
+
+  .animate-featured-publication-content {
+    animation: featuredPublicationContentFade 0.7s ease-out;
+  }
+
+  .animate-publication-card-enter {
+    animation: publicationCardEnter 0.6s ease-out;
   }
 
   /* Hero section cinematic animations */
