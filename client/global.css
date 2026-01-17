@@ -519,19 +519,63 @@
   /* Scroll-triggered animation utilities */
   .scroll-fade-in-up {
     opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 0.6s ease-out forwards;
+    transform: translateY(40px);
+    will-change: opacity, transform;
+  }
+
+  .scroll-fade-in-up.visible {
+    animation: fadeInUp 0.7s ease-out forwards;
   }
 
   .scroll-fade-in {
     opacity: 0;
+    will-change: opacity;
+  }
+
+  .scroll-fade-in.visible {
     animation: fadeIn 0.6s ease-out forwards;
   }
 
   .scroll-scale-in {
     opacity: 0;
     transform: scale(0.95);
+    will-change: opacity, transform;
+  }
+
+  .scroll-scale-in.visible {
     animation: scaleIn 0.6s ease-out forwards;
+  }
+
+  /* Staggered scroll animations */
+  .scroll-stagger-item {
+    opacity: 0;
+    transform: translateY(40px);
+    will-change: opacity, transform;
+  }
+
+  .scroll-stagger-item.visible {
+    animation: fadeInUp 0.7s ease-out forwards;
+  }
+
+  /* Stagger delays */
+  .scroll-stagger-item:nth-child(1).visible {
+    animation-delay: 0s;
+  }
+
+  .scroll-stagger-item:nth-child(2).visible {
+    animation-delay: 0.1s;
+  }
+
+  .scroll-stagger-item:nth-child(3).visible {
+    animation-delay: 0.2s;
+  }
+
+  .scroll-stagger-item:nth-child(4).visible {
+    animation-delay: 0.3s;
+  }
+
+  .scroll-stagger-item:nth-child(5).visible {
+    animation-delay: 0.4s;
   }
 
   @keyframes fadeInUp {
