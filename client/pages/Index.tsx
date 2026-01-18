@@ -610,6 +610,12 @@ export default function Index() {
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-black/40"></div>
 
+        {/* Location Badge */}
+        <div className="absolute top-6 right-6 z-20 flex items-center gap-2 px-3 py-1.5 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 opacity-50 hover:opacity-75 transition-opacity">
+          <MapPin className="w-3 h-3 text-white" />
+          <span className="text-xs font-medium text-white whitespace-nowrap">Main Campus, Harohalli</span>
+        </div>
+
         {/* Hero Content */}
         <div className="relative max-w-7xl mx-auto px-3 w-full z-10 flex flex-col justify-between h-full py-6 md:py-0 md:items-start md:justify-center">
           {/* Title Section - Top on mobile */}
