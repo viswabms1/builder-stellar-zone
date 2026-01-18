@@ -611,62 +611,116 @@ function NVIDIAPartnershipSection() {
 }
 
 function CoursesSection() {
-  const tableRows = useMemo(() => {
-    const rows: Array<{ campus: string; course: string; specialization: string }> = [];
+  const groupedBySchool = useMemo(() => {
+    const groups: { [key: string]: { [key: string]: string[] } } = {};
     courses.forEach((courseItem) => {
-      courseItem.programs.forEach((program) => {
-        rows.push({
-          campus: courseItem.school,
-          course: courseItem.level,
-          specialization: program,
-        });
-      });
+      if (!groups[courseItem.school]) {
+        groups[courseItem.school] = {};
+      }
+      if (!groups[courseItem.school][courseItem.level]) {
+        groups[courseItem.school][courseItem.level] = [];
+      }
+      groups[courseItem.school][courseItem.level].push(...courseItem.programs);
     });
-    return rows;
+    return groups;
   }, []);
+
+  const totalPrograms = courses.reduce((sum, c) => sum + c.programs.length, 0);
+
+  const getLevelColor = (level: string) => {
+    if (level.includes("UG")) return "bg-blue-500/10 text-blue-600 border border-blue-500/30";
+    if (level.includes("PG")) return "bg-purple-500/10 text-purple-600 border border-purple-500/30";
+    if (level.includes("Ph.D")) return "bg-amber-500/10 text-amber-600 border border-amber-500/30";
+    return "bg-green-500/10 text-green-600 border border-green-500/30";
+  };
 
   return (
     <section className="bg-gradient-to-br from-blue-500/5 via-indigo-500/5 to-background px-3 py-8" id="courses">
       <div className="mx-auto max-w-7xl">
-        <div className="mb-10 text-center">
-          <Badge className="mx-auto w-fit rounded-full bg-blue-500/15 px-4 py-2 text-blue-500">
+        <div className="mb-12 text-center">
+          <Badge className="mx-auto w-fit rounded-full bg-blue-500/15 px-4 py-2 text-blue-500 mb-4">
             <BookOpen className="mr-2 h-4 w-4 inline" />
             Courses Offered
           </Badge>
           <h2 className="mt-4 text-3xl font-bold md:text-4xl">Comprehensive Programme Portfolio</h2>
-          <p className="mt-3 text-lg text-foreground">
+          <p className="mt-3 text-lg text-foreground/80 max-w-3xl mx-auto">
             Programmes available at the Harohalli Main Campus with immersive labs, international faculty, and industry-aligned curricula.
           </p>
+          <div className="mt-6 flex justify-center gap-6 flex-wrap">
+            <div className="text-center">
+              <p className="text-3xl font-bold text-blue-500">{totalPrograms}</p>
+              <p className="text-sm text-foreground/70">Total Programmes</p>
+            </div>
+            <div className="text-center">
+              <p className="text-3xl font-bold text-blue-500">{Object.keys(groupedBySchool).length}</p>
+              <p className="text-sm text-foreground/70">Schools & Colleges</p>
+            </div>
+          </div>
         </div>
 
-        <div className="overflow-x-auto rounded-2xl border border-blue-500/20 bg-card/80 backdrop-blur">
-          <table className="w-full">
-            <thead>
-              <tr className="border-b border-blue-500/20 bg-blue-500/10">
-                <th className="px-6 py-4 text-left font-semibold text-foreground">Campus</th>
-                <th className="px-6 py-4 text-left font-semibold text-foreground">Course</th>
-                <th className="px-6 py-4 text-left font-semibold text-foreground">Specialization</th>
-              </tr>
-            </thead>
-            <tbody>
-              {tableRows.map((row, idx) => (
-                <tr
-                  key={`${row.campus}-${row.course}-${row.specialization}`}
-                  className={`border-b border-blue-500/10 transition hover:bg-blue-500/5 ${
-                    idx % 2 === 0 ? "bg-background/50" : "bg-background/80"
-                  }`}
-                >
-                  <td className="px-6 py-4 text-sm text-foreground font-medium">{row.campus}</td>
-                  <td className="px-6 py-4 text-sm text-foreground font-medium">{row.course}</td>
-                  <td className="px-6 py-4 text-sm text-foreground/80">{row.specialization}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        <div className="space-y-8">
+          {Object.entries(groupedBySchool).map(([school, levels]) => (
+            <div
+              key={school}
+              className="rounded-2xl border border-blue-500/20 overflow-hidden shadow-lg shadow-blue-500/10 bg-gradient-to-br from-blue-500/5 to-background"
+            >
+              {/* School Header */}
+              <div className="bg-gradient-to-r from-blue-600 to-indigo-600 px-6 py-5">
+                <h3 className="text-xl font-bold text-white">{school}</h3>
+              </div>
+
+              {/* Levels & Programs */}
+              <div className="p-6 space-y-6">
+                {Object.entries(levels).map(([level, programs]) => (
+                  <div key={`${school}-${level}`} className="space-y-3">
+                    <div className="flex items-center gap-3">
+                      <Badge className={`rounded-full px-4 py-2 font-semibold ${getLevelColor(level)}`}>
+                        {level}
+                      </Badge>
+                      <span className="text-sm text-foreground/60">
+                        {programs.length} programme{programs.length > 1 ? "s" : ""}
+                      </span>
+                    </div>
+
+                    {/* Programs Grid */}
+                    <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-3 pl-6">
+                      {programs.map((program) => (
+                        <div
+                          key={program}
+                          className="rounded-lg border border-blue-500/20 bg-background/60 p-4 transition hover:bg-blue-500/10 hover:border-blue-500/40"
+                        >
+                          <p className="text-sm text-foreground leading-relaxed">{program}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
 
-        <div className="mt-6 text-center text-sm text-foreground/70">
-          Total Programmes: <span className="font-semibold text-blue-500">{tableRows.length}+</span>
+        {/* Legend */}
+        <div className="mt-12 rounded-2xl border border-blue-500/20 bg-background/50 p-6">
+          <p className="text-sm font-semibold text-foreground mb-4">Program Levels:</p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="flex items-center gap-2">
+              <span className="inline-block w-3 h-3 rounded bg-blue-500"></span>
+              <span className="text-xs text-foreground/80">Undergraduate (UG)</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="inline-block w-3 h-3 rounded bg-purple-500"></span>
+              <span className="text-xs text-foreground/80">Postgraduate (PG)</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="inline-block w-3 h-3 rounded bg-amber-500"></span>
+              <span className="text-xs text-foreground/80">Doctoral (Ph.D)</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="inline-block w-3 h-3 rounded bg-green-500"></span>
+              <span className="text-xs text-foreground/80">Other</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
