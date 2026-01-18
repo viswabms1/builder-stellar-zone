@@ -1173,5 +1173,19 @@
     .hero-international-content {
       margin-top: 160px !important;
     }
+
+    /* Ensure school page hero titles are visible in mobile landscape */
+    .hero-title-inside {
+      display: flex !important;
+      white-space: normal !important;
+      word-break: break-word !important;
+    }
+
+    .hero-title-inside p {
+      font-size: 1.5rem !important;
+      line-height: 1.2 !important;
+      overflow: visible !important;
+      white-space: normal !important;
+    }
   }
 }
