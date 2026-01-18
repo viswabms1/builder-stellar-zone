@@ -102,11 +102,10 @@ export default function About() {
           </p>
 
           {/* Key Numbers */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-4xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 max-w-4xl mx-auto">
             {[
               { number: "17,000+", label: "Students", icon: Users },
               { number: "60+", label: "Years Heritage", icon: Calendar },
-              { number: "5", label: "Campuses Worldwide", icon: Globe },
               { number: "2014", label: "University Status", icon: Building },
             ].map((stat, index) => (
               <Card
