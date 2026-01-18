@@ -780,10 +780,15 @@ export default function Index() {
                   <div
                     className={`${style.bg} ${style.border} border border-t-0 rounded-none p-3 flex flex-col justify-center items-center h-24 w-full backdrop-blur-sm`}
                   >
-                    <div className="text-center">
+                    <div className="text-center space-y-1.5">
                       <h3 className="text-lg font-bold text-foreground font-display hover:text-brand-magenta transition-colors text-center">
                         {school.title}
                       </h3>
+                      {school.campus && (
+                        <p className="text-xs font-semibold text-foreground/70 bg-foreground/10 px-2 py-0.5 rounded-full inline-block">
+                          {school.campus}
+                        </p>
+                      )}
                     </div>
                   </div>
                 </div>
