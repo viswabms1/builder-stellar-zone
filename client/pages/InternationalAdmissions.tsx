@@ -344,8 +344,8 @@ export default function InternationalAdmissions() {
       <AboutSection />
       <NVIDIAPartnershipSection />
       <CoursesSection />
-      <InnovationSection />
-      <GallerySection />
+      <CampusLifeSection />
+      <CentreOfExcellenceSection />
       <InstructionsSection />
       <ApplySection />
     </div>
