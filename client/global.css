@@ -1168,56 +1168,30 @@
     }
   }
 
-  /* Mobile landscape (below 768px) - increase hero container size */
+  /* Mobile landscape (below 768px) - pull page down */
   @media (max-width: 768px) and (orientation: landscape) {
     .hero-international-content {
       margin-top: 160px !important;
     }
 
-    /* Increase hero video container height in landscape */
-    div[class*="hero-video-container"],
+    /* Pull entire hero section down in landscape */
+    section:first-of-type {
+      margin-top: 180px !important;
+      padding-top: 100px !important;
+    }
+
+    /* Hero containers - add top margin to push down */
+    div[class*="relative"][class*="overflow-hidden"] {
+      margin-top: 150px !important;
+    }
+
     .hero-video-container {
-      height: 60vh !important;
-      min-height: 400px !important;
+      margin-top: 120px !important;
     }
 
-    /* Force hero title to be visible */
-    .hero-title-inside {
-      bottom: 2rem !important;
-      left: 0 !important;
-      right: 0 !important;
-      top: auto !important;
-      transform: none !important;
-      align-items: flex-start !important;
-      justify-content: flex-start !important;
-      padding: 1rem !important;
-    }
-
-    /* Hero title text - make fully visible */
-    .hero-title-inside p {
-      font-size: 1.5rem !important;
-      line-height: 1.2 !important;
-      text-shadow: 0 3px 15px rgba(0, 0, 0, 0.95) !important;
-      word-break: break-word !important;
-      display: block !important;
-      margin: 0 !important;
-      padding: 0 !important;
-      overflow: visible !important;
-      white-space: normal !important;
-    }
-
-    .hero-title-inside h1 {
-      font-size: 0.7rem !important;
-      line-height: 1 !important;
-      text-shadow: 0 3px 15px rgba(0, 0, 0, 0.95) !important;
-      display: block !important;
-      margin: 0.25rem 0 0 0 !important;
-      padding: 0 !important;
-    }
-
-    /* Hide buttons in landscape mobile */
-    .hero-title-inside > div:not(:first-child) {
-      display: none !important;
+    /* Generic hero section push down */
+    [class*="hero"] {
+      margin-top: 100px !important;
     }
   }
 }
