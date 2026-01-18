@@ -9,6 +9,7 @@ import ScrollingTicker from "@/components/ScrollingTicker";
 import { ApplicationPopup } from "@/components/ApplicationPopup";
 import { VirtualTourSection } from "@/components/VirtualTourSection";
 import { AdmissionsCTASection } from "@/components/AdmissionsCTASection";
+import { CampusLocationsSection } from "@/components/CampusLocationsSection";
 import {
   Card,
   CardContent,
