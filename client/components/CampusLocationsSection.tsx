@@ -1,7 +1,10 @@
+import { useState } from "react";
 import { MapPin, Phone, Mail, Navigation, Info } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export function CampusLocationsSection() {
+  const [activeTab, setActiveTab] = useState(0);
+
   const campuses = [
     {
       name: "DSU Main Campus",
