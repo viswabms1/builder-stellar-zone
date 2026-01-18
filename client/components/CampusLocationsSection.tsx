@@ -196,20 +196,6 @@ export function CampusLocationsSection() {
           </div>
         </div>
 
-        {/* Info Banner */}
-        <div className="mt-12 bg-gradient-to-r from-brand-orange/10 via-brand-blue/10 to-brand-orange/10 rounded-xl p-6 md:p-8 border border-brand-orange/20">
-          <div className="flex gap-4 items-start">
-            <MapPin className="w-6 h-6 text-brand-orange flex-shrink-0 mt-1" />
-            <div>
-              <h4 className="font-bold text-foreground mb-2 font-display">
-                Plan Your Visit
-              </h4>
-              <p className="text-sm text-foreground/80">
-                Both campuses are well-connected by public transportation. Visit us during campus tours to experience our state-of-the-art facilities, meet our faculty, and explore student life at DSU.
-              </p>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
