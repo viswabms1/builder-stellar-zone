@@ -1175,51 +1175,54 @@
     }
 
     /* All school page hero titles in landscape - reposition and make visible */
-    .hero-title-inside {
-      bottom: auto !important;
-      top: 25% !important;
+    div.hero-title-inside,
+    div.hero-school-title {
+      position: relative !important;
+      bottom: unset !important;
+      top: unset !important;
       transform: none !important;
       align-items: flex-start !important;
       justify-content: flex-start !important;
-      padding: 0.75rem 1rem !important;
+      padding: 0.5rem 0.75rem !important;
+      margin-top: 10px !important;
     }
 
-    .hero-school-title {
-      bottom: auto !important;
-      top: 25% !important;
-      transform: none !important;
-      align-items: flex-start !important;
-      justify-content: flex-start !important;
-      padding: 0.75rem 1rem !important;
-    }
-
-    .school-title-text {
+    div.school-title-text {
       max-width: 100% !important;
     }
 
     /* School title text sizing for landscape mobile */
-    .hero-title-inside p,
-    .school-title-text p {
-      font-size: 1.125rem !important;
-      line-height: 1 !important;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8) !important;
+    div.hero-title-inside p,
+    div.school-title-text p {
+      font-size: 1rem !important;
+      line-height: 1.2 !important;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9) !important;
       word-break: break-word !important;
       display: block !important;
       margin-bottom: 0.25rem !important;
+      overflow: visible !important;
     }
 
-    .hero-title-inside h1,
-    .school-title-text h1 {
-      font-size: 0.625rem !important;
-      line-height: 0.9 !important;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8) !important;
+    div.hero-title-inside h1,
+    div.school-title-text h1 {
+      font-size: 0.65rem !important;
+      line-height: 1 !important;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9) !important;
       display: block !important;
     }
 
     /* Hide secondary buttons and info in mobile landscape */
-    .hero-title-inside > div:last-child,
-    .school-title-text > div:last-child {
+    div.hero-title-inside div:last-child,
+    div.school-title-text div:last-child {
       display: none !important;
+    }
+
+    /* Make sure absolute positioning is overridden */
+    .hero-title-inside[style*="bottom"],
+    .hero-school-title[style*="bottom"] {
+      position: relative !important;
+      bottom: unset !important;
+      top: unset !important;
     }
   }
 }
