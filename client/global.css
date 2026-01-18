@@ -330,6 +330,12 @@
       margin-bottom: -350px !important;
     }
 
+    /* Hide the hero-title-outside section in landscape */
+    .hero-title-outside,
+    .hero-video-container + div.bg-background {
+      display: none !important;
+    }
+
     /* Pull International Admissions hero down */
     .hero-international-content {
       padding-top: 420px !important;
@@ -338,9 +344,14 @@
 
     /* Reduce gap after hero section - pull next section up */
     .hero-video-container + * {
-      margin-top: -300px !important;
+      margin-top: 0 !important;
       position: relative !important;
       z-index: 10 !important;
+    }
+
+    /* But pull up sections that are not the immediate bg-background sibling */
+    .hero-video-container ~ section {
+      margin-top: -300px !important;
     }
 
     /* Pull all hero sections down */
