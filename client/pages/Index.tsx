@@ -10,6 +10,7 @@ import { ApplicationPopup } from "@/components/ApplicationPopup";
 import { VirtualTourSection } from "@/components/VirtualTourSection";
 import { AdmissionsCTASection } from "@/components/AdmissionsCTASection";
 import { CampusLocationsSection } from "@/components/CampusLocationsSection";
+import { StoryboardSection } from "@/components/StoryboardSection";
 import {
   Card,
   CardContent,
