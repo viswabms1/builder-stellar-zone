@@ -345,20 +345,6 @@ export default function About() {
                   <GraduationCap className="w-5 h-5 ml-2" />
                 </Button>
               </a>
-              <a
-                href="https://dsu.edu.in/virtual-tour/"
-                target="_blank"
-                rel="noreferrer"
-                className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-              >
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="border-2 border-transparent text-brand-orange hover:bg-transparent hover:text-brand-orange px-12 py-6 text-lg font-semibold rounded-2xl"
-                >
-                  Schedule Visit
-                </Button>
-              </a>
             </div>
 
             <div className="flex flex-wrap justify-center gap-2">
