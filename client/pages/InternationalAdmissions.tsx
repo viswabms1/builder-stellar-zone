@@ -664,52 +664,65 @@ function CoursesSection() {
   );
 }
 
-function InnovationSection() {
-  const logosChunks = useMemo(() => {
-    const chunkSize = 4;
-    const chunks: InnovationLogo[][] = [];
-    for (let i = 0; i < innovationLogos.length; i += chunkSize) {
-      chunks.push(innovationLogos.slice(i, i + chunkSize));
-    }
-    return chunks;
-  }, []);
-
+function CampusLifeSection() {
   return (
-    <section className="bg-gradient-to-br from-blue-500/5 via-indigo-500/5 to-background px-3 py-8">
+    <section className="px-3 py-8 bg-gradient-to-br from-green-500/5 via-emerald-500/5 to-background">
       <div className="mx-auto max-w-6xl">
-        <div className="mb-10 text-center">
-          <Badge className="mx-auto w-fit rounded-full bg-blue-500/15 px-4 py-2 text-blue-500">
-            Innovation Centres
+        <div className="rounded-3xl border border-green-500/30 bg-gradient-to-r from-green-500/10 to-emerald-500/10 p-10 text-center shadow-lg shadow-green-500/20">
+          <Badge className="mx-auto w-fit rounded-full bg-green-500/20 px-4 py-2 text-green-600 mb-4">
+            Campus Experience
           </Badge>
-          <h2 className="mt-4 text-3xl font-bold md:text-4xl">Centres Fueling Research & Entrepreneurship</h2>
-          <p className="mt-3 text-lg text-foreground">
-            Dedicated hubs on campus provide access to advanced laboratories, design studios, incubation support, and industry collaborations.
+          <h2 className="text-4xl font-bold md:text-5xl text-foreground mb-4">
+            Life at DSU
+          </h2>
+          <p className="mt-4 text-lg text-foreground/80 max-w-3xl mx-auto mb-8">
+            Experience a vibrant community with on-campus hostel facilities, diverse student clubs, cultural events, sports, and interactive learning environments that foster personal growth and lasting friendships.
           </p>
-        </div>
-        <div className="space-y-6">
-          {logosChunks.map((chunk, index) => (
-            <div key={`logos-${index}`} className="grid gap-3 sm:grid-cols-2 md:grid-cols-4">
-              {chunk.map((logo) => (
-                <div
-                  key={logo.src}
-                  className="flex h-28 items-center justify-center rounded-2xl border border-blue-500/20 bg-background/80 p-6 shadow-sm"
-                >
-                  <img
-                    src={logo.src}
-                    alt={logo.alt}
-                    className="max-h-full max-w-full object-contain"
-                    loading="lazy"
-                  />
-                </div>
-              ))}
-            </div>
-          ))}
+          <Button
+            size="lg"
+            className="rounded-2xl bg-gradient-to-r from-green-500 to-emerald-500 px-8 py-6 text-lg font-semibold text-white"
+            asChild
+          >
+            <Link to="/campus-life">
+              Explore Campus Life
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Link>
+          </Button>
         </div>
       </div>
     </section>
   );
 }
 
+function CentreOfExcellenceSection() {
+  return (
+    <section className="px-3 py-8">
+      <div className="mx-auto max-w-6xl">
+        <div className="rounded-3xl border border-purple-500/30 bg-gradient-to-r from-purple-500/10 to-indigo-500/10 p-10 text-center shadow-lg shadow-purple-500/20">
+          <Badge className="mx-auto w-fit rounded-full bg-purple-500/20 px-4 py-2 text-purple-600 mb-4">
+            Research & Innovation
+          </Badge>
+          <h2 className="text-4xl font-bold md:text-5xl text-foreground mb-4">
+            Centres of Excellence
+          </h2>
+          <p className="mt-4 text-lg text-foreground/80 max-w-3xl mx-auto mb-8">
+            Access our dedicated research hubs equipped with cutting-edge laboratories, design studios, incubation support, and industry collaborations enabling groundbreaking discoveries.
+          </p>
+          <Button
+            size="lg"
+            className="rounded-2xl bg-gradient-to-r from-purple-500 to-indigo-500 px-8 py-6 text-lg font-semibold text-white"
+            asChild
+          >
+            <Link to="/centre-of-excellence">
+              Discover Centres of Excellence
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Link>
+          </Button>
+        </div>
+      </div>
+    </section>
+  );
+}
 
 function InstructionsSection() {
   return (
@@ -750,46 +763,6 @@ function InstructionsSection() {
             </AccordionItem>
           ))}
         </Accordion>
-      </div>
-    </section>
-  );
-}
-
-function GallerySection() {
-  return (
-    <section className="bg-gradient-to-br from-blue-500/5 via-indigo-500/5 to-background px-3 py-8">
-      <div className="mx-auto max-w-6xl">
-        <div className="mb-10 text-center">
-          <Badge className="mx-auto w-fit rounded-full bg-blue-500/15 px-4 py-2 text-blue-500">
-            Gallery
-          </Badge>
-          <h2 className="mt-4 text-3xl font-bold md:text-4xl">
-            Explore Our Campus & Facilities
-          </h2>
-          <p className="mt-3 text-lg text-foreground">
-            Glimpse into DSU's laboratories, collaborative spaces, and vibrant student life.
-          </p>
-        </div>
-        <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
-          {galleryImages.map((image) => (
-            <Card
-              key={image.src}
-              className="group overflow-hidden border border-blue-500/20 bg-card/80 shadow-sm"
-            >
-              <div className="relative h-56 overflow-hidden">
-                <img
-                  src={image.src}
-                  alt={image.alt}
-                  className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-                  loading="lazy"
-                />
-              </div>
-              <CardContent className="p-4 text-sm text-foreground">
-                {image.alt}
-              </CardContent>
-            </Card>
-          ))}
-        </div>
       </div>
     </section>
   );
