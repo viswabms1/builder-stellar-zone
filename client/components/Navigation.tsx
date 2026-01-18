@@ -97,7 +97,6 @@ export default function Navigation() {
       href: "/about/leadership#administrative-committees",
     },
     { name: "Accreditations", href: "/about/accreditations" },
-    { name: "Facilities", href: "/about/facilities" },
   ];
 
   const alumniSubmenus = [
