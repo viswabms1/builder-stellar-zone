@@ -230,8 +230,8 @@ export default function Academics() {
               {[
                 { icon: Award, label: "AI-Integrated Curriculum", desc: "Every program includes AI and emerging tech" },
                 { icon: Globe, label: "Industry Partnerships", desc: "Real-world projects with leading companies" },
-                { icon: TrendingUp, label: "Career Focused", desc: "90%+ placement success rate" },
                 { icon: Users, label: "Diverse Schools", desc: "10+ specialized schools across all fields" },
+                { icon: TrendingUp, label: "Research & Innovation", desc: "World-class research centers and labs" },
               ].map((item, idx) => (
                 <div key={idx} className="p-4 rounded-lg bg-white/5 border border-foreground/10 hover:border-brand-orange/30 transition-all">
                   <item.icon className="w-6 h-6 text-brand-orange mb-2" />
