@@ -732,8 +732,8 @@ export default function Navigation() {
                       <div
                         key={idx}
                         className="relative group"
-                        onMouseEnter={() => setAcademicsMenuOpen(true)}
-                        onMouseLeave={() => setAcademicsMenuOpen(false)}
+                        onMouseEnter={handleAcademicsMenuEnter}
+                        onMouseLeave={handleAcademicsMenuLeave}
                       >
                         <button
                           onClick={() =>
