@@ -377,7 +377,7 @@ function HeroSection() {
         <div className="absolute -top-10 -left-14 h-64 w-64 rounded-full bg-blue-500/25 blur-3xl" />
         <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-indigo-500/25 blur-3xl" />
       </div>
-      <div className="relative mx-auto flex max-w-6xl flex-col gap-12 px-3 lg:flex-row lg:items-center">
+      <div className="hero-international-content relative mx-auto flex max-w-6xl flex-col gap-12 px-3 lg:flex-row lg:items-center">
         <div className="flex-1 text-center lg:text-left">
           <div className="inline-flex items-center gap-2 rounded-full border border-blue-500/30 bg-blue-500/10 px-4 py-2 text-sm font-semibold text-blue-500">
             <Globe2 className="h-4 w-4" />
