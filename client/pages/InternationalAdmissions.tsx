@@ -615,14 +615,32 @@ function CampusLifeSection() {
   return (
     <section className="px-3 py-8 bg-gradient-to-br from-green-500/5 via-emerald-500/5 to-background">
       <div className="mx-auto max-w-6xl">
-        <div className="rounded-3xl border border-green-500/30 bg-gradient-to-r from-green-500/10 to-emerald-500/10 p-10 text-center shadow-lg shadow-green-500/20">
+        <div className="mb-8 text-center">
           <Badge className="mx-auto w-fit rounded-full bg-green-500/20 px-4 py-2 text-green-600 mb-4">
             Campus Experience
           </Badge>
           <h2 className="text-4xl font-bold md:text-5xl text-foreground mb-4">
             Life at DSU
           </h2>
-          <p className="mt-4 text-lg text-foreground/80 max-w-3xl mx-auto mb-8">
+        </div>
+
+        <div className="rounded-3xl overflow-hidden border border-green-500/30 shadow-lg shadow-green-500/20 mb-8">
+          <div className="relative h-96 md:h-[500px] w-full overflow-hidden bg-background">
+            <video
+              src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F6b0c30504ae64c6aba12aa275eeac2e0?alt=media&token=038cd5f6-c13b-43c6-8760-c92abdbbc4dd&apiKey=4aa279a8430d441dba9c55f659831878"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-transparent"></div>
+          </div>
+        </div>
+
+        <div className="rounded-3xl border border-green-500/30 bg-gradient-to-r from-green-500/10 to-emerald-500/10 p-10 text-center shadow-lg shadow-green-500/20">
+          <p className="text-lg text-foreground/80 max-w-3xl mx-auto mb-8">
             Experience a vibrant community with on-campus hostel facilities, diverse student clubs, cultural events, sports, and interactive learning environments that foster personal growth and lasting friendships.
           </p>
           <Button
