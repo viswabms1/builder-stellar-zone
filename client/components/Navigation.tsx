@@ -620,8 +620,8 @@ export default function Navigation() {
                       <div
                         key={idx}
                         className="relative group"
-                        onMouseEnter={() => setAboutMenuOpen(true)}
-                        onMouseLeave={() => setAboutMenuOpen(false)}
+                        onMouseEnter={handleAboutMenuEnter}
+                        onMouseLeave={handleAboutMenuLeave}
                       >
                         <button
                           onClick={() => setAboutMenuOpen(!aboutMenuOpen)}
