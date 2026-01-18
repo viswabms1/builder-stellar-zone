@@ -370,11 +370,11 @@ export default function InternationalAdmissions() {
       <HeroSection />
       <AwardsSection />
       <AboutSection />
+      <NVIDIAPartnershipSection />
       <CoursesSection />
       <InnovationSection />
-      <ProcessSection />
-      <InstructionsSection />
       <GallerySection />
+      <InstructionsSection />
       <ApplySection />
     </div>
   );
