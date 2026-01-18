@@ -551,20 +551,23 @@ function NVIDIAPartnershipSection() {
 }
 
 function CoursesSection() {
-  const groupedCourses = useMemo(() => {
-    const groups: { [key: string]: Course[] } = {};
-    courses.forEach((course) => {
-      if (!groups[course.school]) {
-        groups[course.school] = [];
-      }
-      groups[course.school].push(course);
+  const tableRows = useMemo(() => {
+    const rows: Array<{ campus: string; course: string; specialization: string }> = [];
+    courses.forEach((courseItem) => {
+      courseItem.programs.forEach((program) => {
+        rows.push({
+          campus: courseItem.school,
+          course: courseItem.level,
+          specialization: program,
+        });
+      });
     });
-    return groups;
+    return rows;
   }, []);
 
   return (
     <section className="bg-gradient-to-br from-blue-500/5 via-indigo-500/5 to-background px-3 py-8" id="courses">
-      <div className="mx-auto max-w-6xl">
+      <div className="mx-auto max-w-7xl">
         <div className="mb-10 text-center">
           <Badge className="mx-auto w-fit rounded-full bg-blue-500/15 px-4 py-2 text-blue-500">
             <BookOpen className="mr-2 h-4 w-4 inline" />
@@ -576,36 +579,35 @@ function CoursesSection() {
           </p>
         </div>
 
-        <Accordion type="single" collapsible className="space-y-4">
-          {Object.entries(groupedCourses).map(([school, schoolCourses]) => (
-            <AccordionItem
-              key={school}
-              value={school}
-              className="overflow-hidden rounded-2xl border border-blue-500/20 bg-card/80 backdrop-blur"
-            >
-              <AccordionTrigger className="px-4 py-4 text-left text-lg font-semibold text-foreground hover:no-underline">
-                <span>{school}</span>
-              </AccordionTrigger>
-              <AccordionContent className="px-4 pb-6">
-                <div className="space-y-6">
-                  {schoolCourses.map((course) => (
-                    <div key={`${course.school}-${course.level}`} className="border-l-4 border-blue-500/30 pl-4">
-                      <h4 className="mb-3 font-semibold text-blue-500">{course.level}</h4>
-                      <ul className="grid gap-2 md:grid-cols-2">
-                        {course.programs.map((program) => (
-                          <li key={program} className="flex items-start gap-2 text-sm text-foreground">
-                            <span className="mt-1.5 inline-block h-1.5 w-1.5 flex-shrink-0 rounded-full bg-blue-500" />
-                            <span>{program}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
-                </div>
-              </AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
+        <div className="overflow-x-auto rounded-2xl border border-blue-500/20 bg-card/80 backdrop-blur">
+          <table className="w-full">
+            <thead>
+              <tr className="border-b border-blue-500/20 bg-blue-500/10">
+                <th className="px-6 py-4 text-left font-semibold text-foreground">Campus</th>
+                <th className="px-6 py-4 text-left font-semibold text-foreground">Course</th>
+                <th className="px-6 py-4 text-left font-semibold text-foreground">Specialization</th>
+              </tr>
+            </thead>
+            <tbody>
+              {tableRows.map((row, idx) => (
+                <tr
+                  key={`${row.campus}-${row.course}-${row.specialization}`}
+                  className={`border-b border-blue-500/10 transition hover:bg-blue-500/5 ${
+                    idx % 2 === 0 ? "bg-background/50" : "bg-background/80"
+                  }`}
+                >
+                  <td className="px-6 py-4 text-sm text-foreground font-medium">{row.campus}</td>
+                  <td className="px-6 py-4 text-sm text-foreground font-medium">{row.course}</td>
+                  <td className="px-6 py-4 text-sm text-foreground/80">{row.specialization}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <div className="mt-6 text-center text-sm text-foreground/70">
+          Total Programmes: <span className="font-semibold text-blue-500">{tableRows.length}+</span>
+        </div>
       </div>
     </section>
   );
