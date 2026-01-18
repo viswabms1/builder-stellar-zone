@@ -951,12 +951,6 @@ export default function Index() {
                       <ArrowRight className="w-4 h-4" />
                     </Button>
                   )}
-                  <a
-                    href="/research-publications"
-                    className="text-xs text-emerald-500 hover:text-emerald-600 font-semibold transition-colors"
-                  >
-                    View All Research
-                  </a>
                 </div>
               </div>
             </div>
