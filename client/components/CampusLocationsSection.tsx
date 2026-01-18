@@ -1,0 +1,184 @@
+import { MapPin, Phone, Mail, Navigation, Info } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
+export function CampusLocationsSection() {
+  const campuses = [
+    {
+      name: "DSU Main Campus",
+      address: "Devarakaggalahalli, Harohalli, Kanakapura Road, Bengaluru South Dt. – 562 112",
+      phone: "+91-80-2797-1000",
+      email: "info@dsu.edu.in",
+      highlights: ["Engineering Programs", "Health Sciences", "Medical Research"],
+      mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.5554269548903!2d77.5236!3d12.7539!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3a8b8b8b8b8b%3A0x8b8b8b8b8b8b8b8b!2sDevarakaggalahalli%2C%20Harohalli%2C%20Bengaluru!5e0!3m2!1sen!2sin!4v1234567890",
+      directionsUrl: "https://maps.app.goo.gl/GhhwYuELs9kFdEwXA",
+      color: "brand-orange",
+    },
+    {
+      name: "DSU City Innovation Campus",
+      address: "Kudlu Gate, Hosur Road, Bengaluru - 560 114",
+      phone: "+91-80-2797-2000",
+      email: "admissions@dsu.edu.in",
+      highlights: ["Law School", "Design & Media", "Commerce & Management"],
+      mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.9847558046286!2d77.6312!3d12.9352!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1581c1c1c1c1%3A0x1c1c1c1c1c1c1c1c!2sKudlu%20Gate%2C%20Hosur%20Road%2C%20Bengaluru!5e0!3m2!1sen!2sin!4v1234567890",
+      directionsUrl: "https://maps.app.goo.gl/KudluGateCampus",
+      color: "brand-blue",
+    },
+  ];
+
+  return (
+    <section className="px-3 py-10 md:py-16 relative bg-background">
+      <div className="max-w-7xl mx-auto">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center gap-2 mb-6">
+            <div className="h-1 w-8 bg-white rounded-full"></div>
+            <span className="text-xs font-bold uppercase tracking-widest text-brand-orange">
+              Visit Us
+            </span>
+            <div className="h-1 w-8 bg-white rounded-full"></div>
+          </div>
+          <h2 className="headline-2 mb-6">
+            <span className="text-foreground">Visit Our </span>
+            <span className="bg-brand-gradient bg-clip-text text-transparent">
+              Campuses
+            </span>
+          </h2>
+          <p className="subheadline text-foreground max-w-2xl mx-auto font-display">
+            Explore our state-of-the-art facilities across two vibrant campuses designed for academic excellence and innovation
+          </p>
+        </div>
+
+        {/* Campus Cards Grid */}
+        <div className="grid md:grid-cols-2 gap-8 mb-8">
+          {campuses.map((campus, index) => (
+            <div
+              key={index}
+              className="group rounded-2xl overflow-hidden border-2 border-brand-orange/20 bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm hover:border-brand-orange/40 transition-all duration-500 hover:shadow-2xl hover:shadow-brand-orange/20"
+            >
+              {/* Map Container */}
+              <div className="relative h-64 md:h-80 w-full overflow-hidden bg-foreground/5">
+                <iframe
+                  title={`${campus.name} Map`}
+                  src={campus.mapEmbed}
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="w-full h-full"
+                ></iframe>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none" />
+              </div>
+
+              {/* Campus Info */}
+              <div className="p-6 md:p-8 space-y-5">
+                {/* Campus Name */}
+                <div>
+                  <h3 className="text-2xl md:text-3xl font-bold text-foreground font-display mb-2 group-hover:text-brand-orange transition-colors">
+                    {campus.name}
+                  </h3>
+                  <div className="h-1 w-12 bg-gradient-to-r from-brand-orange to-brand-blue rounded-full" />
+                </div>
+
+                {/* Address */}
+                <div className="flex gap-3">
+                  <MapPin className="w-5 h-5 text-brand-orange flex-shrink-0 mt-0.5" />
+                  <div>
+                    <p className="text-sm text-foreground/70 font-body leading-relaxed">
+                      {campus.address}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Contact Info */}
+                <div className="space-y-3 pt-2 border-t border-foreground/10">
+                  <div className="flex gap-3 items-center">
+                    <Phone className="w-4 h-4 text-brand-orange flex-shrink-0" />
+                    <a
+                      href={`tel:${campus.phone}`}
+                      className="text-sm text-foreground/80 hover:text-brand-orange transition-colors font-medium"
+                    >
+                      {campus.phone}
+                    </a>
+                  </div>
+                  <div className="flex gap-3 items-center">
+                    <Mail className="w-4 h-4 text-brand-orange flex-shrink-0" />
+                    <a
+                      href={`mailto:${campus.email}`}
+                      className="text-sm text-foreground/80 hover:text-brand-orange transition-colors font-medium"
+                    >
+                      {campus.email}
+                    </a>
+                  </div>
+                </div>
+
+                {/* Highlights */}
+                <div className="pt-2">
+                  <div className="flex items-center gap-2 mb-3">
+                    <Info className="w-4 h-4 text-brand-orange" />
+                    <span className="text-xs font-semibold text-foreground/60 uppercase tracking-widest">
+                      Key Programs
+                    </span>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {campus.highlights.map((highlight, idx) => (
+                      <span
+                        key={idx}
+                        className="text-xs font-semibold px-3 py-1.5 rounded-full bg-brand-orange/20 text-foreground/90 border border-brand-orange/30 hover:bg-brand-orange/30 transition-colors"
+                      >
+                        {highlight}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* CTA Buttons */}
+                <div className="flex gap-3 pt-4">
+                  <a
+                    href={campus.directionsUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex-1"
+                  >
+                    <Button className="w-full bg-brand-gradient hover:opacity-90 text-foreground font-bold gap-2 transition-all">
+                      <Navigation className="w-4 h-4" />
+                      Get Directions
+                    </Button>
+                  </a>
+                  <a
+                    href={`mailto:${campus.email}`}
+                    className="flex-1"
+                  >
+                    <Button
+                      variant="outline"
+                      className="w-full text-foreground hover:text-brand-orange hover:border-brand-orange border-brand-orange/30 transition-all"
+                    >
+                      <Mail className="w-4 h-4" />
+                      Contact
+                    </Button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Info Banner */}
+        <div className="bg-gradient-to-r from-brand-orange/10 via-brand-blue/10 to-brand-orange/10 rounded-xl p-6 md:p-8 border border-brand-orange/20">
+          <div className="flex gap-4 items-start">
+            <MapPin className="w-6 h-6 text-brand-orange flex-shrink-0 mt-1" />
+            <div>
+              <h4 className="font-bold text-foreground mb-2 font-display">
+                Plan Your Visit
+              </h4>
+              <p className="text-sm text-foreground/80">
+                Both campuses are well-connected by public transportation. Visit us during campus tours to experience our state-of-the-art facilities, meet our faculty, and explore student life at DSU.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
