@@ -125,22 +125,23 @@ export function CampusLocationsSection() {
                   </div>
                 </div>
 
-                {/* Highlights */}
+                {/* Schools */}
                 <div className="pt-2">
                   <div className="flex items-center gap-2 mb-3">
                     <Info className="w-4 h-4 text-brand-orange" />
                     <span className="text-xs font-semibold text-foreground/60 uppercase tracking-widest">
-                      Key Programs
+                      Schools Located Here
                     </span>
                   </div>
-                  <div className="flex flex-wrap gap-2">
-                    {campus.highlights.map((highlight, idx) => (
-                      <span
+                  <div className="space-y-2">
+                    {campus.schools.map((school, idx) => (
+                      <div
                         key={idx}
-                        className="text-xs font-semibold px-3 py-1.5 rounded-full bg-brand-orange/20 text-foreground/90 border border-brand-orange/30 hover:bg-brand-orange/30 transition-colors"
+                        className="flex items-start gap-2 text-sm text-foreground/85 p-2 rounded-lg hover:bg-foreground/5 transition-colors"
                       >
-                        {highlight}
-                      </span>
+                        <span className="text-brand-orange font-bold mt-0.5">•</span>
+                        <span className="font-medium">{school}</span>
+                      </div>
                     ))}
                   </div>
                 </div>
