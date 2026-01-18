@@ -1254,6 +1254,9 @@ export default function Index() {
       {/* Virtual Tour Section */}
       <VirtualTourSection />
 
+      {/* Campus Locations Section */}
+      <CampusLocationsSection />
+
       {/* Admissions CTA Section */}
       <AdmissionsCTASection />
 
