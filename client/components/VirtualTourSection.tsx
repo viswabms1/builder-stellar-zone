@@ -42,8 +42,8 @@ export function VirtualTourSection() {
           </p>
         </div>
 
-        {/* Virtual Tour Embedded - Full Section */}
-        <div className="w-full bg-background rounded-2xl overflow-hidden h-[47vh] border-2 border-brand-orange/20 shadow-2xl">
+        {/* Virtual Tour Embedded - Constrained Width */}
+        <div className="mx-auto max-w-3xl bg-background rounded-2xl overflow-hidden h-[47vh] border-2 border-brand-orange/20 shadow-2xl">
           <iframe
             ref={iframeRef}
             title="DSU Virtual Tour"
