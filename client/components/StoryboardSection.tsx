@@ -28,7 +28,7 @@ export function StoryboardSection() {
     },
     {
       icon: BookOpen,
-      title: "Academic Excellence",
+      title: "Life at DSU",
       description: "Experience vibrant campus life with student clubs, events, facilities, and a thriving community that fosters personal growth and lasting friendships.",
       cta: "Discover Campus Life",
       link: "/campus-life",
