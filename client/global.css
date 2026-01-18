@@ -1177,39 +1177,4 @@
   .builder-faculty-card picture img {
     max-width: none !important;
   }
-
-  /* International Admissions Hero - Landscape Mode Adjustments */
-  @media (max-width: 1024px) and (orientation: landscape) {
-    .hero-international-content {
-      margin-top: 140px !important;
-    }
-  }
-
-  /* Mobile landscape (below 768px) - pull page down aggressively */
-  @media (max-width: 768px) and (orientation: landscape) {
-    .hero-international-content {
-      margin-top: 300px !important;
-    }
-
-    /* Pull hero video container down - International Admissions */
-    div.hero-international-content {
-      margin-top: 320px !important;
-    }
-
-    /* Pull school page hero video container down */
-    div.hero-video-container {
-      margin-top: 280px !important;
-      position: relative !important;
-    }
-
-    /* Pull all hero sections down */
-    section.relative.overflow-hidden {
-      margin-top: 260px !important;
-    }
-
-    /* Additional push for pages with relative positioning */
-    main > section:first-child {
-      margin-top: 280px !important;
-    }
-  }
 }
