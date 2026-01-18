@@ -1168,26 +1168,31 @@
     }
   }
 
-  /* Mobile landscape (below 768px) - pull page down */
+  /* Mobile landscape (below 768px) - pull page down aggressively */
   @media (max-width: 768px) and (orientation: landscape) {
     .hero-international-content {
-      margin-top: 220px !important;
+      margin-top: 300px !important;
     }
 
     /* Pull hero video container down - International Admissions */
     div.hero-international-content {
-      margin-top: 250px !important;
+      margin-top: 320px !important;
     }
 
     /* Pull school page hero video container down */
     div.hero-video-container {
-      margin-top: 200px !important;
+      margin-top: 280px !important;
       position: relative !important;
     }
 
     /* Pull all hero sections down */
     section.relative.overflow-hidden {
-      margin-top: 180px !important;
+      margin-top: 260px !important;
+    }
+
+    /* Additional push for pages with relative positioning */
+    main > section:first-child {
+      margin-top: 280px !important;
     }
   }
 }
