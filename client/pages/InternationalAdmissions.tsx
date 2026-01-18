@@ -742,47 +742,6 @@ function InnovationSection() {
   );
 }
 
-function ProcessSection() {
-  return (
-    <section className="px-3 py-8">
-      <div className="mx-auto max-w-6xl">
-        <div className="mb-10 text-center">
-          <Badge className="mx-auto w-fit rounded-full bg-blue-500/15 px-4 py-2 text-blue-500">
-            Admission Process
-          </Badge>
-          <h2 className="mt-4 text-3xl font-bold md:text-4xl">
-            How to Join DSU as an International Student
-          </h2>
-          <p className="mt-3 text-lg text-foreground">
-            Follow these steps to complete your enrolment. Our admissions counsellors support you at every stage.
-          </p>
-        </div>
-        <div className="grid gap-3 md:grid-cols-2">
-          {processSteps.map((step, idx) => (
-            <Card
-              key={step.title}
-              className="border border-blue-500/20 bg-card/80 shadow-sm transition hover:-translate-y-1 hover:shadow-blue-500/10"
-            >
-              <CardHeader className="flex flex-row items-start gap-4">
-                <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-blue-500/10 text-lg font-bold text-blue-500">
-                  {idx + 1}
-                </div>
-                <div className="flex-1">
-                  <CardTitle className="text-xl font-semibold text-foreground">
-                    {step.title}
-                  </CardTitle>
-                  <CardDescription className="mt-2 text-sm text-foreground">
-                    {step.description}
-                  </CardDescription>
-                </div>
-              </CardHeader>
-            </Card>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
 
 function InstructionsSection() {
   return (
