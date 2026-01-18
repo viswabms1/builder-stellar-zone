@@ -1160,4 +1160,25 @@
   .builder-faculty-card picture img {
     max-width: none !important;
   }
+
+  /* International Admissions Hero - Landscape Mode Adjustments */
+  @media (max-width: 1024px) and (orientation: landscape) {
+    /* Target the hero section directly with significant top padding */
+    section.relative.overflow-hidden.bg-gradient-to-br {
+      padding-top: 200px !important;
+    }
+
+    /* Specifically for International Admissions hero */
+    section.relative.overflow-hidden.bg-gradient-to-br.from-blue-500\/10 {
+      padding-top: 180px !important;
+      margin-top: 0 !important;
+    }
+  }
+
+  /* Even more aggressive for mobile landscape (below 768px) */
+  @media (max-width: 768px) and (orientation: landscape) {
+    section.relative.overflow-hidden.bg-gradient-to-br.from-blue-500\/10 {
+      padding-top: 220px !important;
+    }
+  }
 }
