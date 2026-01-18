@@ -17,6 +17,8 @@ import {
 } from "@/components/ui/card";
 import {
   ArrowRight,
+  Award,
+  BookOpen,
   CloudLightning,
   ContactRound,
   FileText,
@@ -26,14 +28,19 @@ import {
   MessageCircle,
   PhoneCall,
   ShieldCheck,
+  Star,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
-type Program = {
-  name: string;
-  college: string;
-  offerings: string;
-  image: string;
+type Course = {
+  school: string;
+  level: string;
+  programs: string[];
+};
+
+type Award = {
+  title: string;
+  description: string;
 };
 
 type ProcessStep = {
@@ -72,36 +79,186 @@ const heroStats = [
   },
 ];
 
-const programs: Program[] = [
+const awards: Award[] = [
   {
-    name: "School of Engineering",
-    college: "B.Tech • M.Tech",
-    offerings: "AI-driven labs, engineering design studios, and research internships.",
-    image: "https://www.dsu.edu.in/images/school-of-enginering.svg",
+    title: "NAAC Accreditation",
+    description: "Accredited with A+ grade for academic excellence",
   },
   {
-    name: "College of Nursing Sciences",
-    college: "B.Sc Nursing • PB B.Sc Nursing • M.Sc Nursing",
-    offerings: "Clinical immersion, simulation labs, and global health collaborations.",
-    image: "https://www.dsu.edu.in/images/college-of-nurse.svg",
+    title: "IIRF Top 19",
+    description: "Ranked among top 19 private engineering colleges in India",
   },
   {
-    name: "College of Allied Health Sciences",
-    college: "B.Sc (Allied Health Sciences) • MPH",
-    offerings: "Hospital-embedded learning with multidisciplinary faculty mentors.",
-    image: "https://www.dsu.edu.in/images/c-o-a-s.svg",
+    title: "AICTE Approved",
+    description: "Approved for engineering and professional programmes",
   },
   {
-    name: "College of Pharmaceutical Sciences",
-    college: "B.Pharm • Pharm.D • M.Pharm",
-    offerings: "PCI-recognized programs with industry research and clinical rotations.",
-    image: "https://www.dsu.edu.in/images/c-o-p-s.svg",
+    title: "UGC Recognized",
+    description: "Recognized as a premier private university",
+  },
+];
+
+const courses: Course[] = [
+  {
+    school: "School of Engineering",
+    level: "UG Programs",
+    programs: [
+      "B.Tech Computer Science & Engineering",
+      "B.Tech Computer Science & Engineering (Data Sciences)",
+      "B.Tech Computer Science & Engineering (Cyber Security)",
+      "B.Tech Computer Science & Engineering (Artificial Intelligence and Machine Learning)",
+      "B.Tech Robotics & AI",
+      "B.Tech Electronics & Communication Engineering",
+      "B.Tech Mechanical Engineering",
+      "B.Tech Computer Science & Technology",
+      "B.Tech Aerospace Engineering",
+      "B Voc Mechatronics",
+      "B Voc CSE (Data Analytics)",
+      "B Voc Tool Engineering",
+      "B Voc Pharmaceutical Manufacturing Technologies",
+      "B Voc CSE (Computer Engineering and IT Infrastructure)",
+      "BCA - Bachelor of Computer Applications",
+    ],
   },
   {
-    name: "College of Physiotherapy",
-    college: "BPT • MPT",
-    offerings: "Advanced rehabilitation facilities and sports therapy internships.",
-    image: "https://www.dsu.edu.in/images/c-o-p.svg",
+    school: "School of Engineering",
+    level: "PG Programs",
+    programs: [
+      "M.Tech Computer Science & Engineering",
+      "M.Tech Embedded System",
+      "M.Tech Design Engineering",
+      "MCA - Master of Computer Applications",
+    ],
+  },
+  {
+    school: "School of Law",
+    level: "UG Programs",
+    programs: [
+      "B.A. LL.B (Hons.) - 5 year integrated course",
+      "B.B.A. LL.B (Hons.) - 5 year integrated course",
+      "LL.B - 3 year law course",
+    ],
+  },
+  {
+    school: "School of Basic and Applied Sciences",
+    level: "UG Programs",
+    programs: [
+      "Bachelor of Science (Honours) - Biochemistry - 4 years",
+      "Bachelor of Science (Honours) - Biotechnology - 4 years",
+      "Bachelor of Science (Honours) - Genetics - 4 years",
+      "Bachelor of Science (Honours) - Microbiology - 4 years",
+      "Bachelor of Science (Honours) - Chemistry - 4 years",
+      "B.Sc (Biotechnology, Biochemistry and Genetics)",
+      "B.Sc (Biotechnology, Chemistry and Microbiology)",
+      "B.Sc (Microbiology, Genetics and Biochemistry)",
+    ],
+  },
+  {
+    school: "School of Basic and Applied Sciences",
+    level: "PG Programs",
+    programs: [
+      "M.Sc Biochemistry",
+      "M.Sc Biotechnology",
+      "M.Sc Microbiology",
+      "M.Sc Human Genetics",
+    ],
+  },
+  {
+    school: "School of Commerce and Management",
+    level: "UG Programs",
+    programs: [
+      "BBA Regular",
+      "BBA BFSI",
+      "BBA Retail",
+      "B.Com - Regular",
+      "B.Com - ACCA Integrated",
+      "B.Com - CMA Integrated",
+      "B.Com - With CA Coaching",
+    ],
+  },
+  {
+    school: "School of Commerce and Management",
+    level: "PG Programs",
+    programs: ["MBA"],
+  },
+  {
+    school: "College of Allied Health Sciences",
+    level: "UG Programs",
+    programs: [
+      "B.Sc Radiology and Imaging Technology",
+      "B.Sc MLT - Medical Lab Technology",
+      "B.Sc Operation Theatre Technology (OTT)",
+      "B.Sc RDT - Renal Dialysis Technology",
+      "B.Sc EET - Emergency & Trauma Care Technology",
+      "B.Sc Audiology & Speech Language Pathology",
+      "B.Sc Cardiac Care Technology",
+      "B.Sc Optometry",
+      "B.Sc Anesthesia and Operation Theatre Technology",
+    ],
+  },
+  {
+    school: "College of Allied Health Sciences",
+    level: "PG Programs",
+    programs: ["MPH - Masters in Public Health"],
+  },
+  {
+    school: "College of Pharmaceutical Sciences",
+    level: "UG Programs",
+    programs: ["B.Pharm"],
+  },
+  {
+    school: "College of Pharmaceutical Sciences",
+    level: "PG Programs",
+    programs: ["M Pharma", "Pharm D"],
+  },
+  {
+    school: "College of Nursing Sciences",
+    level: "UG Programs",
+    programs: ["B.Sc Nursing", "PB B.Sc Nursing"],
+  },
+  {
+    school: "College of Nursing Sciences",
+    level: "PG Programs",
+    programs: ["M.Sc Nursing"],
+  },
+  {
+    school: "College of Physiotherapy",
+    level: "UG Programs",
+    programs: ["Bachelor's in Physiotherapy (B.P.T.)"],
+  },
+  {
+    school: "College of Physiotherapy",
+    level: "PG Programs",
+    programs: ["Master's in Physiotherapy (M.P.T.)"],
+  },
+  {
+    school: "School of Arts, Design and Humanities",
+    level: "UG Programs",
+    programs: [
+      "B.Design",
+      "BA Journalism and Mass Communication",
+    ],
+  },
+  {
+    school: "School of Computer Applications",
+    level: "UG Programs",
+    programs: [
+      "BCA - Bachelor of Computer Applications",
+      "B.Sc in Data Science",
+    ],
+  },
+  {
+    school: "School of Computer Applications",
+    level: "PG Programs",
+    programs: [
+      "MCA - Master of Computer Applications",
+      "M.Sc in Data Science",
+    ],
+  },
+  {
+    school: "School of Medicine",
+    level: "UG Programs",
+    programs: ["MBBS"],
   },
 ];
 
@@ -164,7 +321,7 @@ const instructions: Instruction[] = [
       "Upload all mandatory documents to avoid the application being marked as incomplete. Avoid password-protected files.",
   },
   {
-    title: "Required Documents",
+    title: "Required Documents For Admission",
     content: [
       "Scanned passport-sized colour photograph",
       "Scanned signature",
@@ -177,12 +334,12 @@ const instructions: Instruction[] = [
     ],
   },
   {
-    title: "Fee Payment Modes",
+    title: "Fee Payment Options",
     content:
       "Accepted payment methods include Credit Card, Debit Card, Net Banking, and UPI/Wallets.",
   },
   {
-    title: "Welcome Message",
+    title: "Welcome",
     content:
       "We look forward to welcoming you to Dayananda Sagar University.",
   },
@@ -211,10 +368,11 @@ export default function InternationalAdmissions() {
   return (
     <div className="bg-background text-foreground">
       <HeroSection />
+      <AwardsSection />
       <AboutSection />
-      <ProgramsSection />
-      <ProcessSection />
+      <CoursesSection />
       <InnovationSection />
+      <ProcessSection />
       <InstructionsSection />
       <GallerySection />
       <ApplySection />
@@ -233,34 +391,30 @@ function HeroSection() {
         <div className="flex-1 text-center lg:text-left">
           <div className="inline-flex items-center gap-2 rounded-full border border-blue-500/30 bg-blue-500/10 px-4 py-2 text-sm font-semibold text-blue-500">
             <Globe2 className="h-4 w-4" />
-            International &amp; NRI Admissions 2025
+            International & NRI Admissions 2026
           </div>
           <h1 className="mt-8 text-4xl font-bold leading-tight md:text-6xl">
-            Study at Dayananda Sagar University from Anywhere in the World
+            Empowering Students with <span className="bg-gradient-to-r from-blue-500 to-indigo-500 bg-clip-text text-transparent">Knowledge, Discovery & Healing</span>
           </h1>
           <p className="mt-6 text-lg text-foreground md:text-xl">
-            Join a multidisciplinary, research-driven campus with global alumni, immersive hostel life, and interactive learning environments designed for exploration, innovation, and international careers.
+            Perfect for International Students seeking a world-class education in Bangalore
           </p>
-          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row lg:justify-start">
-            <Button
-              size="lg"
-              className="rounded-2xl bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 px-8 py-6 text-lg font-semibold text-foreground shadow-lg shadow-blue-500/30 transition hover:shadow-xl"
-              asChild
-            >
-              <a href="#apply-now">Apply Now
-                <ArrowRight className="h-5 w-5" />
-              </a>
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="rounded-2xl border-2 border-blue-500 px-8 py-6 text-lg font-semibold text-blue-500"
-              asChild
-            >
-              <a href="#instructions">View Requirements
-                <ArrowRight className="h-5 w-5" />
-              </a>
-            </Button>
+          <div className="mt-8 rounded-2xl border border-blue-500/20 bg-blue-500/10 p-6">
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <p className="text-sm font-semibold text-blue-500">Scholarship Upto 40%</p>
+                <p className="text-xs text-foreground">*For Eligible Students</p>
+              </div>
+              <Button
+                size="lg"
+                className="rounded-2xl bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 px-8 py-6 text-lg font-semibold text-white shadow-lg shadow-blue-500/30 transition hover:shadow-xl"
+                asChild
+              >
+                <a href="#apply-now">Enquire Now
+                  <ArrowRight className="h-5 w-5" />
+                </a>
+              </Button>
+            </div>
           </div>
           <div className="mt-12 grid gap-4 sm:grid-cols-3">
             {heroStats.map((stat) => (
@@ -277,7 +431,7 @@ function HeroSection() {
         <div className="flex-1">
           <div className="rounded-3xl border border-blue-500/20 bg-card/80 p-6 shadow-xl backdrop-blur" id="apply-now">
             <CardTitle className="text-2xl font-semibold text-foreground">
-              Enquire or Apply Today
+              Results Out? Apply Now!
             </CardTitle>
             <CardDescription className="mt-2 text-sm leading-relaxed text-foreground">
               Complete the enquiry form to receive personalised assistance on eligibility, visa support, scholarships, and onboarding.
@@ -300,57 +454,33 @@ function HeroSection() {
   );
 }
 
-function AboutSection() {
+function AwardsSection() {
   return (
-    <section className="px-3 py-8">
-      <div className="mx-auto max-w-6xl">
-        <div className="rounded-3xl border border-blue-500/20 bg-blue-500/5 p-10 text-center shadow-lg shadow-blue-500/10">
-          <Badge className="mx-auto mb-4 w-fit rounded-full bg-blue-500/15 px-4 py-2 text-blue-500">
-            About International Admissions
-          </Badge>
-          <p className="text-lg leading-relaxed text-foreground">
-            Experience the pinnacle of academic excellence at Dayananda Sagar University, where innovation flourishes and students are inspired to grow, excel, invent, and create. Our vibrant community of more than 50,000 alumni, contemporary hostel facilities, and interactive learning environments build an ecosystem for personal and professional transformation. With state-of-the-art infrastructure supporting cutting-edge research and technology, DSU offers unparalleled opportunities for international students to engage in groundbreaking discoveries, internships, and placements across the globe.
-          </p>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function ProgramsSection() {
-  return (
-    <section className="bg-gradient-to-br from-blue-500/5 via-indigo-500/5 to-background px-3 py-8">
+    <section className="bg-gradient-to-br from-yellow-500/5 via-amber-500/5 to-background px-3 py-8">
       <div className="mx-auto max-w-6xl">
         <div className="mb-10 text-center">
-          <h2 className="text-3xl font-bold md:text-4xl">Applications Open — 2025 Intake</h2>
-          <p className="mt-3 text-lg text-foreground">
-            Programmes available at the Harohalli Main Campus with immersive labs, international faculty, and industry-aligned curricula.
-          </p>
+          <Badge className="mx-auto w-fit rounded-full bg-yellow-500/15 px-4 py-2 text-yellow-600">
+            <Award className="mr-2 h-4 w-4 inline" />
+            Awards & Recognition
+          </Badge>
+          <h2 className="mt-4 text-3xl font-bold md:text-4xl">Recognized for Excellence</h2>
         </div>
-        <div className="grid gap-3 lg:grid-cols-3">
-          {programs.map((program) => (
+        <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-4">
+          {awards.map((award) => (
             <Card
-              key={program.name}
-              className="h-full border border-blue-500/20 bg-card/80 shadow-sm transition hover:-translate-y-1 hover:shadow-blue-500/10"
+              key={award.title}
+              className="h-full border border-yellow-500/20 bg-card/80 shadow-sm transition hover:-translate-y-1 hover:shadow-yellow-500/10"
             >
-              <CardHeader className="flex flex-col items-center text-center">
-                <div className="flex h-20 w-20 items-center justify-center rounded-2xl border border-blue-500/20 bg-blue-500/10">
-                  <img
-                    src={program.image}
-                    alt={program.name}
-                    className="h-12 w-12 object-contain"
-                    loading="lazy"
-                  />
+              <CardHeader className="text-center">
+                <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-yellow-500/10 text-yellow-600">
+                  <Star className="h-6 w-6" />
                 </div>
-                <CardTitle className="mt-4 text-xl font-semibold text-foreground">
-                  {program.name}
+                <CardTitle className="text-lg font-semibold text-foreground">
+                  {award.title}
                 </CardTitle>
-                <Badge className="mt-2 w-fit rounded-full bg-blue-500/15 px-3 py-1 text-xs text-blue-500">
-                  {program.college}
-                </Badge>
               </CardHeader>
               <CardContent className="text-center text-sm text-foreground">
-                {program.offerings}
+                {award.description}
               </CardContent>
             </Card>
           ))}
@@ -360,43 +490,107 @@ function ProgramsSection() {
   );
 }
 
-function ProcessSection() {
+function AboutSection() {
   return (
     <section className="px-3 py-8">
       <div className="mx-auto max-w-6xl">
         <div className="mb-10 text-center">
+          <h2 className="text-3xl font-bold md:text-4xl">Experience International Education</h2>
+        </div>
+        <div className="grid gap-6 md:grid-cols-2">
+          <div className="rounded-3xl border border-blue-500/20 bg-blue-500/5 p-8 shadow-lg shadow-blue-500/10">
+            <p className="leading-relaxed text-foreground">
+              Experience the pinnacle of academic excellence at our multidisciplinary and interdisciplinary university, where innovation flourishes and students are inspired to grow, excel, invent, and innovate.
+            </p>
+          </div>
+          <div className="rounded-3xl border border-blue-500/20 bg-blue-500/5 p-8 shadow-lg shadow-blue-500/10">
+            <p className="leading-relaxed text-foreground">
+              Our vibrant community, comprising over 50,000 alumni, coupled with on-campus hostel facilities and a focus on interactive learning, creates a dynamic environment for personal and professional development.
+            </p>
+          </div>
+          <div className="rounded-3xl border border-blue-500/20 bg-blue-500/5 p-8 shadow-lg shadow-blue-500/10">
+            <p className="leading-relaxed text-foreground">
+              Our state-of-the-art infrastructure supports cutting-edge research and technology, offering unparalleled opportunities for students to engage in groundbreaking discoveries.
+            </p>
+          </div>
+          <div className="rounded-3xl border border-blue-500/20 bg-blue-500/5 p-8 shadow-lg shadow-blue-500/10">
+            <p className="leading-relaxed text-foreground">
+              Recognized as a premier institution for placements and internships, we provide a world-class education in a global setting, shaping the leaders of tomorrow.
+            </p>
+          </div>
+        </div>
+        <div className="mt-8 text-center">
+          <Button
+            size="lg"
+            className="rounded-2xl bg-gradient-to-r from-blue-500 to-indigo-500 px-8 py-6 text-lg font-semibold text-white"
+            asChild
+          >
+            <a href="#courses">Apply Now
+              <ArrowRight className="h-5 w-5" />
+            </a>
+          </Button>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function CoursesSection() {
+  const groupedCourses = useMemo(() => {
+    const groups: { [key: string]: Course[] } = {};
+    courses.forEach((course) => {
+      if (!groups[course.school]) {
+        groups[course.school] = [];
+      }
+      groups[course.school].push(course);
+    });
+    return groups;
+  }, []);
+
+  return (
+    <section className="bg-gradient-to-br from-blue-500/5 via-indigo-500/5 to-background px-3 py-8" id="courses">
+      <div className="mx-auto max-w-6xl">
+        <div className="mb-10 text-center">
           <Badge className="mx-auto w-fit rounded-full bg-blue-500/15 px-4 py-2 text-blue-500">
-            Admission Process
+            <BookOpen className="mr-2 h-4 w-4 inline" />
+            Courses Offered
           </Badge>
-          <h2 className="mt-4 text-3xl font-bold md:text-4xl">
-            How to Join DSU as an International Student
-          </h2>
+          <h2 className="mt-4 text-3xl font-bold md:text-4xl">Comprehensive Programme Portfolio</h2>
           <p className="mt-3 text-lg text-foreground">
-            Follow these steps to complete your enrolment. Our admissions counsellors support you at every stage.
+            Programmes available at the Harohalli Main Campus with immersive labs, international faculty, and industry-aligned curricula.
           </p>
         </div>
-        <div className="grid gap-3 md:grid-cols-2">
-          {processSteps.map((step) => (
-            <Card
-              key={step.title}
-              className="border border-blue-500/20 bg-card/80 shadow-sm transition hover:-translate-y-1 hover:shadow-blue-500/10"
+
+        <Accordion type="single" collapsible className="space-y-4">
+          {Object.entries(groupedCourses).map(([school, schoolCourses]) => (
+            <AccordionItem
+              key={school}
+              value={school}
+              className="overflow-hidden rounded-2xl border border-blue-500/20 bg-card/80 backdrop-blur"
             >
-              <CardHeader className="flex flex-row items-start gap-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-500/10 text-blue-500">
-                  <step.icon className="h-6 w-6" />
+              <AccordionTrigger className="px-4 py-4 text-left text-lg font-semibold text-foreground hover:no-underline">
+                <span>{school}</span>
+              </AccordionTrigger>
+              <AccordionContent className="px-4 pb-6">
+                <div className="space-y-6">
+                  {schoolCourses.map((course) => (
+                    <div key={`${course.school}-${course.level}`} className="border-l-4 border-blue-500/30 pl-4">
+                      <h4 className="mb-3 font-semibold text-blue-500">{course.level}</h4>
+                      <ul className="grid gap-2 md:grid-cols-2">
+                        {course.programs.map((program) => (
+                          <li key={program} className="flex items-start gap-2 text-sm text-foreground">
+                            <span className="mt-1.5 inline-block h-1.5 w-1.5 flex-shrink-0 rounded-full bg-blue-500" />
+                            <span>{program}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
                 </div>
-                <div>
-                  <CardTitle className="text-xl font-semibold text-foreground">
-                    {step.title}
-                  </CardTitle>
-                  <CardDescription className="mt-2 text-sm text-foreground">
-                    {step.description}
-                  </CardDescription>
-                </div>
-              </CardHeader>
-            </Card>
+              </AccordionContent>
+            </AccordionItem>
           ))}
-        </div>
+        </Accordion>
       </div>
     </section>
   );
@@ -419,7 +613,7 @@ function InnovationSection() {
           <Badge className="mx-auto w-fit rounded-full bg-blue-500/15 px-4 py-2 text-blue-500">
             Innovation Centres
           </Badge>
-          <h2 className="mt-4 text-3xl font-bold md:text-4xl">Centres Fueling Research &amp; Entrepreneurship</h2>
+          <h2 className="mt-4 text-3xl font-bold md:text-4xl">Centres Fueling Research & Entrepreneurship</h2>
           <p className="mt-3 text-lg text-foreground">
             Dedicated hubs on campus provide access to advanced laboratories, design studios, incubation support, and industry collaborations.
           </p>
@@ -448,9 +642,51 @@ function InnovationSection() {
   );
 }
 
+function ProcessSection() {
+  return (
+    <section className="px-3 py-8">
+      <div className="mx-auto max-w-6xl">
+        <div className="mb-10 text-center">
+          <Badge className="mx-auto w-fit rounded-full bg-blue-500/15 px-4 py-2 text-blue-500">
+            Admission Process
+          </Badge>
+          <h2 className="mt-4 text-3xl font-bold md:text-4xl">
+            How to Join DSU as an International Student
+          </h2>
+          <p className="mt-3 text-lg text-foreground">
+            Follow these steps to complete your enrolment. Our admissions counsellors support you at every stage.
+          </p>
+        </div>
+        <div className="grid gap-3 md:grid-cols-2">
+          {processSteps.map((step, idx) => (
+            <Card
+              key={step.title}
+              className="border border-blue-500/20 bg-card/80 shadow-sm transition hover:-translate-y-1 hover:shadow-blue-500/10"
+            >
+              <CardHeader className="flex flex-row items-start gap-4">
+                <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-blue-500/10 text-lg font-bold text-blue-500">
+                  {idx + 1}
+                </div>
+                <div className="flex-1">
+                  <CardTitle className="text-xl font-semibold text-foreground">
+                    {step.title}
+                  </CardTitle>
+                  <CardDescription className="mt-2 text-sm text-foreground">
+                    {step.description}
+                  </CardDescription>
+                </div>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function InstructionsSection() {
   return (
-    <section className="px-3 py-8" id="instructions">
+    <section className="bg-gradient-to-br from-blue-500/5 via-indigo-500/5 to-background px-3 py-8" id="instructions">
       <div className="mx-auto max-w-6xl">
         <div className="mb-10 text-center">
           <Badge className="mx-auto w-fit rounded-full bg-blue-500/15 px-4 py-2 text-blue-500">
@@ -501,7 +737,7 @@ function GallerySection() {
             Gallery
           </Badge>
           <h2 className="mt-4 text-3xl font-bold md:text-4xl">
-            Explore Our Campus &amp; Facilities
+            Explore Our Campus & Facilities
           </h2>
           <p className="mt-3 text-lg text-foreground">
             Glimpse into DSU's laboratories, collaborative spaces, and vibrant student life.
@@ -549,7 +785,7 @@ function ApplySection() {
         <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <Button
             size="lg"
-            className="rounded-2xl bg-gradient-to-r from-blue-500 to-indigo-500 px-8 py-6 text-lg font-semibold text-foreground hover:from-indigo-500 hover:to-blue-500"
+            className="rounded-2xl bg-gradient-to-r from-blue-500 to-indigo-500 px-8 py-6 text-lg font-semibold text-white hover:from-indigo-500 hover:to-blue-500"
             asChild
           >
             <a href="https://widgets.in8.nopaperforms.com/register?&r=&q=&w=f3162f9d0da45b80ccb6342d22a3c1cb&m=&cu=https://www.dsu.edu.in/admissions-international/" target="_blank" rel="noreferrer">
@@ -563,7 +799,7 @@ function ApplySection() {
             className="rounded-2xl border-2 border-blue-500 px-8 py-6 text-lg font-semibold text-blue-500"
             asChild
           >
-            <a href="mailto:admissions@dsu.edu.in?subject=International%20Admissions%20Enquiry">
+            <a href="mailto:international-admissions@dsu.edu.in?subject=International%20Admissions%20Enquiry">
               Email Admissions
               <Mail className="ml-2 h-5 w-5" />
             </a>
@@ -578,7 +814,7 @@ function ApplySection() {
           <SupportCard
             icon={PhoneCall}
             title="Helpline"
-            description="Call +91 96060 22152 / 22150 / 22149 for NRI & foreign admissions."
+            description="Call +91 96060 22152 / 22150 / 22149 for international admissions."
           />
           <SupportCard
             icon={CloudLightning}
