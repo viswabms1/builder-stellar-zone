@@ -266,32 +266,6 @@ const courses: Course[] = [
   },
 ];
 
-const processSteps: ProcessStep[] = [
-  {
-    title: "Online Application Form",
-    description:
-      "Fill in programme details, pay the programme fee, and upload the required documents for review.",
-    icon: FileText,
-  },
-  {
-    title: "Registration Fee",
-    description:
-      "Sign up on the admissions portal and complete the US $25 registration payment to initiate processing.",
-    icon: ShieldCheck,
-  },
-  {
-    title: "Document Verification",
-    description:
-      "The university admissions team validates submitted credentials and communicates status via email.",
-    icon: ContactRound,
-  },
-  {
-    title: "Student Onboarding",
-    description:
-      "Receive confirmation, student ID, and LMS credentials to start your DSU learning experience.",
-    icon: Globe2,
-  },
-];
 
 const instructions: Instruction[] = [
   {
