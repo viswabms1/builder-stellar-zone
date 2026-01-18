@@ -535,6 +535,102 @@ function AboutSection() {
   );
 }
 
+function NVIDIAPartnershipSection() {
+  return (
+    <section className="px-3 py-8 bg-gradient-to-r from-purple-500/5 via-blue-500/5 to-purple-500/5">
+      <div className="mx-auto max-w-6xl">
+        <div className="rounded-3xl border border-purple-500/30 bg-gradient-to-r from-purple-500/10 to-blue-500/10 p-10 shadow-lg shadow-purple-500/20">
+          <div className="mb-8 text-center">
+            <Badge className="mx-auto w-fit rounded-full bg-purple-500/20 px-4 py-2 text-purple-500 mb-4">
+              Industry Partnership
+            </Badge>
+            <h2 className="text-4xl font-bold md:text-5xl text-foreground mb-4">
+              Powered by <span className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">NVIDIA AI Infrastructure</span>
+            </h2>
+            <p className="mt-4 text-lg text-foreground/80 max-w-3xl mx-auto">
+              Dayananda Sagar University has partnered with NVIDIA to create a complete, enterprise-grade AI infrastructure for transforming education and research globally.
+            </p>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-2 mt-8">
+            <Card className="border border-purple-500/20 bg-background/80 shadow-sm">
+              <CardHeader>
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-purple-500/20 text-purple-500">
+                    <Cpu className="h-6 w-6" />
+                  </div>
+                  <CardTitle className="text-lg">NVIDIA DGX B200</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent className="text-foreground/80">
+                Enterprise-grade GPU infrastructure enabling large-scale AI model training, deep learning research, and high-performance computing for students and faculty.
+              </CardContent>
+            </Card>
+
+            <Card className="border border-purple-500/20 bg-background/80 shadow-sm">
+              <CardHeader>
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-purple-500/20 text-purple-500">
+                    <Brain className="h-6 w-6" />
+                  </div>
+                  <CardTitle className="text-lg">CUDA & AI Frameworks</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent className="text-foreground/80">
+                Industry-standard tools including PyTorch, TensorFlow, RAPIDS, and CUDA programming to build, train, and deploy AI systems at scale.
+              </CardContent>
+            </Card>
+
+            <Card className="border border-purple-500/20 bg-background/80 shadow-sm">
+              <CardHeader>
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-purple-500/20 text-purple-500">
+                    <Zap className="h-6 w-6" />
+                  </div>
+                  <CardTitle className="text-lg">Research Excellence</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent className="text-foreground/80">
+                Access to world-class infrastructure supporting cutting-edge AI/ML research across computer vision, NLP, robotics, and biomedical domains.
+              </CardContent>
+            </Card>
+
+            <Card className="border border-purple-500/20 bg-background/80 shadow-sm">
+              <CardHeader>
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-purple-500/20 text-purple-500">
+                    <Award className="h-6 w-6" />
+                  </div>
+                  <CardTitle className="text-lg">Career Advantage</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent className="text-foreground/80">
+                Hands-on NVIDIA experience and GPU-certified engineers command 20-40% higher salaries in the AI industry. Direct recruitment from leading AI companies.
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="mt-8 text-center">
+            <p className="text-sm text-foreground/70 mb-4">
+              This complete NVIDIA AI infrastructure stack is available at only a handful of elite institutions across India.
+            </p>
+            <Button
+              size="lg"
+              className="rounded-2xl bg-gradient-to-r from-purple-500 to-blue-500 px-8 py-6 text-lg font-semibold text-white"
+              asChild
+            >
+              <Link to="/nvidia-ai-architecture">
+                Explore Full NVIDIA Architecture
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function CoursesSection() {
   const groupedCourses = useMemo(() => {
     const groups: { [key: string]: Course[] } = {};
