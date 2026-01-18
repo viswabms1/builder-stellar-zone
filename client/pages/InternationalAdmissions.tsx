@@ -53,21 +53,6 @@ type Instruction = {
   content: string | string[];
 };
 
-const heroStats = [
-  {
-    label: "Global alumni network",
-    value: "50,000+",
-  },
-  {
-    label: "International cohorts",
-    value: "40+ nations",
-  },
-  {
-    label: "Research & innovation hubs",
-    value: "8 centres",
-  },
-];
-
 const awards: Award[] = [
   {
     title: "NAAC Accreditation",
@@ -360,17 +345,6 @@ function HeroSection() {
                 </a>
               </Button>
             </div>
-          </div>
-          <div className="mt-12 grid gap-4 sm:grid-cols-3">
-            {heroStats.map((stat) => (
-              <div
-                key={stat.label}
-                className="rounded-2xl border border-blue-500/20 bg-background/80 p-5 text-left shadow-sm backdrop-blur"
-              >
-                <p className="text-2xl font-semibold text-blue-500">{stat.value}</p>
-                <p className="mt-1 text-sm text-foreground">{stat.label}</p>
-              </div>
-            ))}
           </div>
         </div>
         <div className="flex-1">
