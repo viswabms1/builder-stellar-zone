@@ -34,7 +34,7 @@ export function VirtualTourSection() {
           <h2 className="headline-2 mb-6">
             <span className="text-foreground">Walk the DSU Smart Campus - </span>
             <span className="bg-brand-gradient bg-clip-text text-transparent">
-              360° Virtually
+              360° Virtually (Main Campus)
             </span>
           </h2>
           <p className="subheadline text-foreground max-w-2xl mx-auto font-display">
