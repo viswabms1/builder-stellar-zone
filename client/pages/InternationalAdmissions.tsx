@@ -26,6 +26,7 @@ import {
   Cpu,
   FileText,
   Globe2,
+  Home,
   Mail,
   MapPin,
   MessageCircle,
