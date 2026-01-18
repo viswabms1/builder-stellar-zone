@@ -196,38 +196,52 @@ export default function Academics() {
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
-      {/* Hero Section with Video Background */}
-      <section className="relative flex items-end md:items-center justify-start overflow-hidden">
-        <div className="absolute inset-0 w-full h-full">
-          <HeroVideo />
-        </div>
+      {/* Hero Section - What Makes Us Different */}
+      <section className="relative px-3 py-16 md:py-20 bg-gradient-to-br from-brand-blue/10 via-background to-brand-orange/10 border-b border-brand-orange/20">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <p className="text-sm md:text-base text-brand-orange mb-4 uppercase tracking-widest font-display font-semibold">
+                What Makes DSU Different
+              </p>
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-6 leading-tight font-display">
+                Academic Programs <span className="bg-brand-gradient bg-clip-text text-transparent">Powered by AI</span>
+              </h1>
+              <p className="text-lg text-foreground/80 mb-8 max-w-xl font-display leading-relaxed">
+                We're not just teaching traditional subjects. We're integrating AI, emerging technologies, and industry partnerships into every program to prepare you for careers that don't exist yet.
+              </p>
 
-        <div className="absolute inset-0 bg-black/40"></div>
-
-        <div className="relative max-w-7xl mx-auto px-3 w-full z-10 pb-20 md:pb-0">
-          <div className="max-w-2xl">
-            <p className="text-sm md:text-base text-white/80 mb-4 uppercase tracking-widest font-display">
-              Explore Excellence
-            </p>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight font-display">
-              Academic Programs <span className="bg-gradient-to-r from-orange-400 via-pink-400 to-red-400 bg-clip-text text-transparent">That Transform</span>
-            </h1>
-
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href="https://admissions.dsu.edu.in/"
-                target="_blank"
-                rel="noreferrer"
-                className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-              >
-                <Button
-                  size="lg"
-                  className="bg-white hover:bg-white/90 text-orange-600 hover:text-orange-700 px-8 py-6 text-base font-semibold font-display transition-all duration-300 group border-2 border-white"
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a
+                  href="https://admissions.dsu.edu.in/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                 >
-                  Start Exploring
-                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-                </Button>
-              </a>
+                  <Button
+                    size="lg"
+                    className="bg-brand-gradient hover:opacity-90 text-foreground px-8 py-6 text-base font-semibold font-display transition-all duration-300 group border-2 border-transparent"
+                  >
+                    Start Exploring
+                    <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </a>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-2 gap-4">
+              {[
+                { icon: Award, label: "AI-Integrated Curriculum", desc: "Every program includes AI and emerging tech" },
+                { icon: Globe, label: "Industry Partnerships", desc: "Real-world projects with leading companies" },
+                { icon: TrendingUp, label: "Career Focused", desc: "90%+ placement success rate" },
+                { icon: Users, label: "Diverse Schools", desc: "10+ specialized schools across all fields" },
+              ].map((item, idx) => (
+                <div key={idx} className="p-4 rounded-lg bg-white/5 border border-foreground/10 hover:border-brand-orange/30 transition-all">
+                  <item.icon className="w-6 h-6 text-brand-orange mb-2" />
+                  <p className="font-bold text-sm text-foreground mb-1">{item.label}</p>
+                  <p className="text-xs text-foreground/60">{item.desc}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
