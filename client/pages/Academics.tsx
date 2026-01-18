@@ -31,8 +31,6 @@ import {
   Laptop,
   PenSquare,
   Presentation,
-  Volume2,
-  VolumeX,
 } from "lucide-react";
 
 
