@@ -1061,15 +1061,6 @@ export default function Index() {
             })}
           </div>
 
-          {/* View All Research Publications CTA */}
-          <div className="flex justify-center">
-            <a href="/research-publications" className="no-underline">
-              <Button className="bg-white hover:bg-white/90 text-emerald-500 hover:text-emerald-600 px-8 py-3 font-bold border-2 border-emerald-500/30 hover:border-emerald-500 transition-all">
-                View All Research Publications
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </Button>
-            </a>
-          </div>
         </div>
       </section>
 
