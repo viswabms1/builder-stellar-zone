@@ -325,19 +325,19 @@
 
     /* Pull hero video container down for school pages */
     .hero-video-container {
-      padding-top: 280px !important;
+      padding-top: 400px !important;
       margin-top: 0 !important;
     }
 
     /* Pull International Admissions hero down */
     .hero-international-content {
-      padding-top: 320px !important;
+      padding-top: 420px !important;
       margin-top: 0 !important;
     }
 
     /* Pull all hero sections down */
     section.relative.overflow-hidden {
-      padding-top: 260px !important;
+      padding-top: 380px !important;
     }
 
     /* Ensure hero sections use proper top padding */
