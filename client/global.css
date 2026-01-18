@@ -1174,25 +1174,37 @@
       margin-top: 160px !important;
     }
 
-    /* School page hero titles - ensure full visibility in mobile landscape */
-    .hero-title-inside p {
+    /* School page hero titles in landscape - reposition and make visible */
+    .hero-school-title {
+      bottom: auto !important;
+      top: 50% !important;
+      transform: translateY(-50%) !important;
+      align-items: flex-start !important;
+      justify-content: flex-start !important;
+      padding: 1rem !important;
+    }
+
+    .school-title-text {
       max-width: 100% !important;
-      word-wrap: break-word !important;
-      overflow-wrap: break-word !important;
-      white-space: pre-wrap !important;
+    }
+
+    .school-title-text p {
+      font-size: 1.25rem !important;
+      line-height: 1.1 !important;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7) !important;
+      word-break: break-word !important;
       display: block !important;
     }
 
-    /* Increase hero video container height for landscape to show title better */
-    .hero-video-container {
-      height: auto !important;
-      min-height: 45vh !important;
+    .school-title-text h1 {
+      font-size: 0.75rem !important;
+      line-height: 1 !important;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7) !important;
     }
 
-    /* Ensure hero-title-inside has enough padding to show content */
-    .hero-title-inside {
-      padding: 2rem !important;
-      bottom: 0 !important;
+    /* Hide secondary info in mobile landscape */
+    .school-title-text > div {
+      display: none !important;
     }
   }
 }
