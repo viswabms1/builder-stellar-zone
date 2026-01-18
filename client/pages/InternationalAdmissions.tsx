@@ -234,6 +234,66 @@ const courses: Course[] = [
     level: "UG Programs",
     programs: ["MBBS"],
   },
+  {
+    school: "Faculty of Engineering",
+    level: "Ph.D Programs",
+    programs: [
+      "Ph.D in CSE (AI & ML, Data Science, Cybersecurity, AI & Robotics)",
+      "Ph.D in Electronics & Communication Engineering",
+      "Ph.D in Mechanical Engineering",
+      "Ph.D in Aerospace Engineering",
+      "Ph.D in Mathematics, Chemistry & Physics",
+    ],
+  },
+  {
+    school: "Faculty of Commerce & Management Studies",
+    level: "Ph.D Programs",
+    programs: ["Ph.D in Commerce & Management Studies"],
+  },
+  {
+    school: "Faculty of Basic & Applied Sciences",
+    level: "Ph.D Programs",
+    programs: ["Ph.D in Life Sciences"],
+  },
+  {
+    school: "Faculty of Health Sciences (Pharmaceutical Sciences)",
+    level: "Ph.D Programs",
+    programs: [
+      "Ph.D in Pharmaceutics",
+      "Ph.D in Pharmacology",
+      "Ph.D in Pharmaceutical Chemistry",
+      "Ph.D in Pharmacognosy",
+      "Ph.D in Pharmaceutical Analysis",
+      "Ph.D in Pharmacy Practice",
+      "Ph.D in Pharmaceutical Regulatory Affairs",
+      "Ph.D in Pharmaceutical Quality Assurance",
+    ],
+  },
+  {
+    school: "Faculty of Health Sciences (Physiotherapy)",
+    level: "Ph.D Programs",
+    programs: ["Ph.D in Physiotherapy"],
+  },
+  {
+    school: "Faculty of Health Sciences (Nursing Sciences)",
+    level: "Ph.D Programs",
+    programs: ["Ph.D in Nursing Sciences"],
+  },
+  {
+    school: "Faculty of School of Law",
+    level: "Ph.D Programs",
+    programs: ["Ph.D in Law"],
+  },
+  {
+    school: "Faculty of School of Arts, Design and Humanities",
+    level: "Ph.D Programs",
+    programs: ["Ph.D in Journalism and Mass Communication"],
+  },
+  {
+    school: "Faculty of School of Computer Applications",
+    level: "Ph.D Programs",
+    programs: ["Ph.D in Computer Applications"],
+  },
 ];
 
 
