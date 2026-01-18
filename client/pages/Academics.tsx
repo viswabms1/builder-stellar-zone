@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState, useMemo } from "react";
 import { useAutoMuteOnScroll } from "@/hooks/useAutoMuteOnScroll";
 import { Button } from "@/components/ui/button";
 import {
