@@ -20,7 +20,7 @@ export function StoryboardSection() {
       title: "Why DSU Stands Out",
       description: "Discover what makes DSU special—from world-class faculty to industry partnerships and transformative student experiences.",
       cta: "Learn Our Story",
-      link: "/about",
+      link: "/centre-of-excellence",
       color: "from-brand-blue to-cyan-500",
       bgColor: "bg-brand-blue/10",
       borderColor: "border-brand-blue/30",
