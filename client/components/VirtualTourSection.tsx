@@ -27,7 +27,7 @@ export function VirtualTourSection() {
   }, [isVisible]);
 
   return (
-    <section ref={elementRef} className="px-3 py-10 md:py-16 relative bg-background">
+    <section ref={elementRef} className="px-3 py-10 md:py-12 pb-4 md:pb-6 relative bg-background">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-12">
