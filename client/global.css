@@ -329,6 +329,17 @@
       margin-top: 0 !important;
     }
 
+    /* Pull International Admissions hero down */
+    .hero-international-content {
+      padding-top: 320px !important;
+      margin-top: 0 !important;
+    }
+
+    /* Pull all hero sections down */
+    section.relative.overflow-hidden {
+      padding-top: 260px !important;
+    }
+
     /* Ensure hero sections use proper top padding */
     .hero-section {
       margin-top: 0 !important;
