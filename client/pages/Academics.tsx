@@ -205,7 +205,7 @@ export default function Academics() {
                 Academic Programs <span className="bg-brand-gradient bg-clip-text text-transparent">Powered by AI</span>
               </h1>
               <p className="text-lg text-foreground/80 mb-8 max-w-xl font-display leading-relaxed">
-                We're not just teaching traditional subjects. We're integrating AI, emerging technologies, and industry partnerships into every program to prepare you for careers that don't exist yet.
+                We're not just teaching traditional courses. We're integrating AI, emerging technologies, and industry partnerships into every program to prepare you for careers that don't exist yet.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
