@@ -1,4 +1,5 @@
 import { useMemo } from "react";
+import { Link } from "react-router-dom";
 
 import {
   Accordion,
@@ -19,8 +20,10 @@ import {
   ArrowRight,
   Award,
   BookOpen,
+  Brain,
   CloudLightning,
   ContactRound,
+  Cpu,
   FileText,
   Globe2,
   Mail,
@@ -29,6 +32,7 @@ import {
   PhoneCall,
   ShieldCheck,
   Star,
+  Zap,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
