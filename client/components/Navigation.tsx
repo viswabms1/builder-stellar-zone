@@ -444,6 +444,7 @@ export default function Navigation() {
     { name: "Committees", href: "/contact-complaints" },
     { name: "Examinations", href: "/examinations" },
     { name: "Careers", href: "/careers" },
+    { name: "International Admissions", href: "/admissions/international" },
     { name: "Hostel@Harohalli", href: "https://myposhtell.com", external: true },
     {
       name: "Public Self Disclosure",
