@@ -17,8 +17,38 @@ export default function Navigation() {
     new Set(),
   );
   const [searchOpen, setSearchOpen] = useState(false);
+  const aboutCloseTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const academicsCloseTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const location = useLocation();
   const { theme } = useTheme();
+
+  const handleAboutMenuLeave = () => {
+    aboutCloseTimeoutRef.current = setTimeout(() => {
+      setAboutMenuOpen(false);
+    }, 100);
+  };
+
+  const handleAboutMenuEnter = () => {
+    if (aboutCloseTimeoutRef.current) {
+      clearTimeout(aboutCloseTimeoutRef.current);
+      aboutCloseTimeoutRef.current = null;
+    }
+    setAboutMenuOpen(true);
+  };
+
+  const handleAcademicsMenuLeave = () => {
+    academicsCloseTimeoutRef.current = setTimeout(() => {
+      setAcademicsMenuOpen(false);
+    }, 100);
+  };
+
+  const handleAcademicsMenuEnter = () => {
+    if (academicsCloseTimeoutRef.current) {
+      clearTimeout(academicsCloseTimeoutRef.current);
+      academicsCloseTimeoutRef.current = null;
+    }
+    setAcademicsMenuOpen(true);
+  };
 
   const toggleSubGroup = (schoolName: string, groupName: string) => {
     const key = `${schoolName}-${groupName}`;
