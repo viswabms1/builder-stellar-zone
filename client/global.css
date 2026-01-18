@@ -1179,6 +1179,10 @@
       display: flex !important;
       white-space: normal !important;
       word-break: break-word !important;
+      overflow: visible !important;
+      bottom: auto !important;
+      top: 50% !important;
+      transform: translateY(-50%) !important;
     }
 
     .hero-title-inside p {
@@ -1186,6 +1190,12 @@
       line-height: 1.2 !important;
       overflow: visible !important;
       white-space: normal !important;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5) !important;
+    }
+
+    .hero-video-container {
+      height: 40vh !important;
+      min-height: 250px !important;
     }
   }
 }
