@@ -38,7 +38,7 @@ export function VirtualTourSection() {
             </span>
           </h2>
           <p className="subheadline text-foreground max-w-2xl mx-auto font-display">
-            Experience our Simmons powdered intelligent, innovative campus through an immersive virtual tour
+            Explore our state-of-the-art facilities, cutting-edge labs, and AI-integrated spaces designed to inspire innovation and transformative learning
           </p>
         </div>
 
