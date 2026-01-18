@@ -219,7 +219,7 @@ export default function Academics() {
                     size="lg"
                     className="bg-brand-gradient hover:opacity-90 text-foreground px-8 py-6 text-base font-semibold font-display transition-all duration-300 group border-2 border-transparent"
                   >
-                    Start Exploring
+                    Apply Now
                     <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </a>
