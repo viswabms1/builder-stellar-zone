@@ -1174,36 +1174,51 @@
       margin-top: 160px !important;
     }
 
-    /* School page hero titles in landscape - reposition and make visible */
-    .hero-school-title {
+    /* All school page hero titles in landscape - reposition and make visible */
+    .hero-title-inside {
       bottom: auto !important;
-      top: 50% !important;
-      transform: translateY(-50%) !important;
+      top: 25% !important;
+      transform: none !important;
       align-items: flex-start !important;
       justify-content: flex-start !important;
-      padding: 1rem !important;
+      padding: 0.75rem 1rem !important;
+    }
+
+    .hero-school-title {
+      bottom: auto !important;
+      top: 25% !important;
+      transform: none !important;
+      align-items: flex-start !important;
+      justify-content: flex-start !important;
+      padding: 0.75rem 1rem !important;
     }
 
     .school-title-text {
       max-width: 100% !important;
     }
 
+    /* School title text sizing for landscape mobile */
+    .hero-title-inside p,
     .school-title-text p {
-      font-size: 1.25rem !important;
-      line-height: 1.1 !important;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7) !important;
+      font-size: 1.125rem !important;
+      line-height: 1 !important;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8) !important;
       word-break: break-word !important;
+      display: block !important;
+      margin-bottom: 0.25rem !important;
+    }
+
+    .hero-title-inside h1,
+    .school-title-text h1 {
+      font-size: 0.625rem !important;
+      line-height: 0.9 !important;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8) !important;
       display: block !important;
     }
 
-    .school-title-text h1 {
-      font-size: 0.75rem !important;
-      line-height: 1 !important;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7) !important;
-    }
-
-    /* Hide secondary info in mobile landscape */
-    .school-title-text > div {
+    /* Hide secondary buttons and info in mobile landscape */
+    .hero-title-inside > div:last-child,
+    .school-title-text > div:last-child {
       display: none !important;
     }
   }
