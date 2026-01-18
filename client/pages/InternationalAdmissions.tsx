@@ -372,7 +372,7 @@ export default function InternationalAdmissions() {
 
 function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-blue-500/10 via-indigo-500/10 to-background py-10 lg:py-28 landscape:pt-20 landscape:lg:pt-0">
+    <section className="relative overflow-hidden bg-gradient-to-br from-blue-500/10 via-indigo-500/10 to-background py-10 lg:py-28 landscape:pt-56 landscape:lg:pt-0">
       <div className="absolute inset-0">
         <div className="absolute -top-10 -left-14 h-64 w-64 rounded-full bg-blue-500/25 blur-3xl" />
         <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-indigo-500/25 blur-3xl" />
