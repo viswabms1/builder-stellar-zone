@@ -44,6 +44,7 @@ import {
   X,
   Volume2,
   VolumeX,
+  MapPin,
 } from "lucide-react";
 
 function HeroVideo() {
