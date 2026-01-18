@@ -53,16 +53,6 @@ type Instruction = {
   content: string | string[];
 };
 
-type GalleryImage = {
-  src: string;
-  alt: string;
-};
-
-type InnovationLogo = {
-  src: string;
-  alt: string;
-};
-
 const heroStats = [
   {
     label: "Global alumni network",
@@ -318,24 +308,6 @@ const instructions: Instruction[] = [
   },
 ];
 
-const innovationLogos: InnovationLogo[] = [
-  { src: "https://www.dsu.edu.in/images/center/1.png", alt: "Advanced research center" },
-  { src: "https://www.dsu.edu.in/images/center/2.png", alt: "Innovation centre" },
-  { src: "https://www.dsu.edu.in/images/center/3.png", alt: "Technology incubation hub" },
-  { src: "https://www.dsu.edu.in/images/center/4.png", alt: "Centre of excellence" },
-  { src: "https://www.dsu.edu.in/images/center/5.png", alt: "Entrepreneurship lab" },
-  { src: "https://www.dsu.edu.in/images/center/6.png", alt: "Applied sciences lab" },
-  { src: "https://www.dsu.edu.in/images/center/7.png", alt: "Design innovation studio" },
-  { src: "https://www.dsu.edu.in/images/center/8.png", alt: "Healthcare innovation unit" },
-];
-
-const galleryImages: GalleryImage[] = [
-  { src: "https://www.dsu.edu.in/images/gallery-img/img3.jpg", alt: "DSU innovation corridor" },
-  { src: "https://www.dsu.edu.in/images/gallery-img/img4.jpg", alt: "Campus aerial view" },
-  { src: "https://www.dsu.edu.in/images/gallery-img/img5.jpg", alt: "Student collaboration space" },
-  { src: "https://www.dsu.edu.in/images/gallery-img/img1.jpg", alt: "Engineering laboratory" },
-  { src: "https://www.dsu.edu.in/images/gallery-img/img2.jpg", alt: "Learning commons" },
-];
 
 export default function InternationalAdmissions() {
   return (
