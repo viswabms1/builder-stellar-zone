@@ -1168,61 +1168,56 @@
     }
   }
 
-  /* Mobile landscape (below 768px) - more aggressive push down */
+  /* Mobile landscape (below 768px) - increase hero container size */
   @media (max-width: 768px) and (orientation: landscape) {
     .hero-international-content {
       margin-top: 160px !important;
     }
 
-    /* All school page hero titles in landscape - reposition and make visible */
-    div.hero-title-inside,
-    div.hero-school-title {
-      position: relative !important;
-      bottom: unset !important;
-      top: unset !important;
+    /* Increase hero video container height in landscape */
+    div[class*="hero-video-container"],
+    .hero-video-container {
+      height: 60vh !important;
+      min-height: 400px !important;
+    }
+
+    /* Force hero title to be visible */
+    .hero-title-inside {
+      bottom: 2rem !important;
+      left: 0 !important;
+      right: 0 !important;
+      top: auto !important;
       transform: none !important;
       align-items: flex-start !important;
       justify-content: flex-start !important;
-      padding: 0.5rem 0.75rem !important;
-      margin-top: 10px !important;
+      padding: 1rem !important;
     }
 
-    div.school-title-text {
-      max-width: 100% !important;
-    }
-
-    /* School title text sizing for landscape mobile */
-    div.hero-title-inside p,
-    div.school-title-text p {
-      font-size: 1rem !important;
+    /* Hero title text - make fully visible */
+    .hero-title-inside p {
+      font-size: 1.5rem !important;
       line-height: 1.2 !important;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9) !important;
+      text-shadow: 0 3px 15px rgba(0, 0, 0, 0.95) !important;
       word-break: break-word !important;
       display: block !important;
-      margin-bottom: 0.25rem !important;
+      margin: 0 !important;
+      padding: 0 !important;
       overflow: visible !important;
+      white-space: normal !important;
     }
 
-    div.hero-title-inside h1,
-    div.school-title-text h1 {
-      font-size: 0.65rem !important;
+    .hero-title-inside h1 {
+      font-size: 0.7rem !important;
       line-height: 1 !important;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9) !important;
+      text-shadow: 0 3px 15px rgba(0, 0, 0, 0.95) !important;
       display: block !important;
+      margin: 0.25rem 0 0 0 !important;
+      padding: 0 !important;
     }
 
-    /* Hide secondary buttons and info in mobile landscape */
-    div.hero-title-inside div:last-child,
-    div.school-title-text div:last-child {
+    /* Hide buttons in landscape mobile */
+    .hero-title-inside > div:not(:first-child) {
       display: none !important;
-    }
-
-    /* Make sure absolute positioning is overridden */
-    .hero-title-inside[style*="bottom"],
-    .hero-school-title[style*="bottom"] {
-      position: relative !important;
-      bottom: unset !important;
-      top: unset !important;
     }
   }
 }
