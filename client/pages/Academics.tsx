@@ -462,22 +462,22 @@ export default function Academics() {
 
 
       {/* CTA Section - Modernized */}
-      <section className="px-3 py-10">
+      <section className="px-3 py-10 relative bg-background">
         <div className="max-w-4xl mx-auto">
-          <div className="bg-gradient-to-br from-orange-500/10 via-red-600/10 to-emerald-500/10 rounded-3xl p-12 border border-orange-500/20 relative overflow-hidden">
-            <div className="absolute -top-20 -right-20 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl" />
+          <div className="bg-gradient-to-r from-brand-magenta/10 via-brand-orange/10 to-brand-blue/10 rounded-3xl p-8 md:p-12 border border-brand-magenta/20 shadow-xl">
+            <div className="absolute -top-20 -right-20 w-96 h-96 bg-brand-magenta/5 rounded-full blur-3xl" />
             <div className="absolute -bottom-20 -left-20 w-96 h-96 bg-brand-orange/5 rounded-full blur-3xl" />
-            
+
             <div className="relative z-10">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 font-display">
+              <h2 className="headline-2 mb-6">
                 Ready to
-                <span className="bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
+                <span className="bg-brand-gradient bg-clip-text text-transparent">
                   {" "}
                   Begin Your Journey
                 </span>
                 ?
               </h2>
-              <p className="text-xl text-foreground/80 mb-8 max-w-2xl font-display">
+              <p className="text-lg text-foreground/80 mb-8 max-w-2xl font-display">
                 Explore our academic programs and find the perfect fit for your career aspirations. Join thousands of students who have transformed their futures at DSU.
               </p>
 
@@ -489,10 +489,10 @@ export default function Academics() {
                 >
                   <Button
                     size="lg"
-                    className="bg-gradient-to-r from-orange-500 via-red-600 to-emerald-500 text-foreground px-12 py-6 text-lg font-semibold rounded-xl hover:opacity-90 transition-all duration-300"
+                    className="bg-brand-gradient hover:opacity-90 hover:shadow-lg hover:shadow-brand-magenta/25 text-foreground px-12 py-6 text-lg font-semibold font-display rounded-2xl transition-all duration-300 group"
                   >
                     Apply Now
-                    <GraduationCap className="w-5 h-5 ml-2" />
+                    <GraduationCap className="w-5 h-5 ml-2 group-hover:rotate-12 transition-transform" />
                   </Button>
                 </a>
                 <a
@@ -503,7 +503,7 @@ export default function Academics() {
                   <Button
                     variant="outline"
                     size="lg"
-                    className="border-2 border-transparent text-orange-500 hover:bg-black/20 bg-black/10 backdrop-blur-sm hover:text-orange-500 px-12 py-6 text-lg font-semibold rounded-xl transition-all duration-300"
+                    className="border-2 border-brand-orange/40 text-brand-orange hover:bg-brand-orange/10 hover:border-brand-orange/60 px-12 py-6 text-lg font-semibold font-display rounded-2xl transition-all duration-300"
                   >
                     Virtual Tour
                     <ArrowRight className="w-5 h-5 ml-2" />
@@ -511,16 +511,17 @@ export default function Academics() {
                 </a>
               </div>
 
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap justify-start gap-2">
                 {[
-                  "Merit Scholarships",
-                  "Industry Internships",
-                  "Global Exposure",
-                  "Career Support",
+                  "Merit-Based Scholarships Available",
+                  "Industry-Aligned Curriculum & Partnerships",
+                  "Career Support & Mentoring",
+                  "Global Exposure Programs",
                 ].map((badge, index) => (
                   <Badge
                     key={index}
-                    className="px-4 py-2 text-xs font-medium bg-foreground/10 border border-foreground/20 hover:bg-foreground/20 transition-all"
+                    variant="secondary"
+                    className="px-3 py-1 text-xs font-medium font-body"
                   >
                     {badge}
                   </Badge>
