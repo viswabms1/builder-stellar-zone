@@ -368,6 +368,7 @@ export default function Index() {
       image:
         "https://images.pexels.com/photos/3862638/pexels-photo-3862638.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
       title: "School of Engineering",
+      campus: "Main Campus",
       description: "",
       programs: [
         "B.Tech CSE",
@@ -385,6 +386,7 @@ export default function Index() {
       image:
         "https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
       title: "School of Computer Applications",
+      campus: "City Innovation Campus",
       description: "",
       programs: ["BCA", "MCA", "Data Science", "Cloud Computing"],
     },
@@ -397,6 +399,7 @@ export default function Index() {
       image:
         "https://images.pexels.com/photos/8112201/pexels-photo-8112201.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
       title: "School of Law",
+      campus: "City Innovation Campus",
       description: "",
       programs: ["BA LLB", "BBA LLB", "LLB", "LLM"],
     },
@@ -409,6 +412,7 @@ export default function Index() {
       image:
         "https://images.pexels.com/photos/6694543/pexels-photo-6694543.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
       title: "School of Commerce & Management",
+      campus: "City Innovation Campus",
       description: "",
       programs: ["B.Com", "BBA", "MBA", "Finance & Marketing"],
     },
@@ -421,6 +425,7 @@ export default function Index() {
       image:
         "https://images.pexels.com/photos/9628799/pexels-photo-9628799.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
       title: "School of Applied Sciences",
+      campus: "City Innovation Campus",
       description: "",
       programs: ["Physics", "Chemistry", "Mathematics", "Biotechnology"],
     },
@@ -433,6 +438,7 @@ export default function Index() {
       image:
         "https://images.pexels.com/photos/1279365/pexels-photo-1279365.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
       title: "School of Health Sciences",
+      campus: "Main Campus",
       description: "",
       programs: ["Pharmacy", "Nursing", "CDSIMER", "CAHS"],
     },
@@ -445,6 +451,7 @@ export default function Index() {
       image:
         "https://images.pexels.com/photos/7147711/pexels-photo-7147711.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
       title: "School of Design",
+      campus: "City Innovation Campus",
       description: "",
       programs: ["Animation", "UX/UI", "Graphic Design", "Digital Media"],
     },
@@ -457,6 +464,7 @@ export default function Index() {
       image:
         "https://images.pexels.com/photos/7317291/pexels-photo-7317291.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
       title: "School of Journalism & Mass Communication",
+      campus: "City Innovation Campus",
       description: "",
       programs: ["BJMC", "PG Diploma", "Documentary", "Digital Media"],
     },
@@ -469,6 +477,7 @@ export default function Index() {
       image:
         "https://images.pexels.com/photos/5726794/pexels-photo-5726794.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
       title: "Medical Education & Research",
+      campus: "Main Campus",
       description: "",
       programs: ["MBBS", "MD", "DM", "Fellowship"],
     },
@@ -481,6 +490,7 @@ export default function Index() {
       image:
         "https://images.pexels.com/photos/7974355/pexels-photo-7974355.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
       title: "DSU Online",
+      campus: "City Innovation Campus",
       description: "",
       programs: [
         "Online Degrees",
