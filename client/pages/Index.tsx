@@ -611,9 +611,9 @@ export default function Index() {
         <div className="absolute inset-0 bg-black/40"></div>
 
         {/* Location Badge */}
-        <div className="absolute top-6 right-6 z-20 flex items-center gap-2 px-3 py-1.5 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 opacity-50 hover:opacity-75 transition-opacity">
-          <MapPin className="w-3 h-3 text-white" />
-          <span className="text-xs font-medium text-white whitespace-nowrap">Main Campus, Harohalli</span>
+        <div className="absolute top-6 right-6 z-20 flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-md rounded-full border border-white/40 shadow-lg">
+          <MapPin className="w-4 h-4 text-white font-bold" />
+          <span className="text-sm font-semibold text-white whitespace-nowrap">Main Campus</span>
         </div>
 
         {/* Hero Content */}
