@@ -327,6 +327,7 @@
     .hero-video-container {
       padding-top: 400px !important;
       margin-top: 0 !important;
+      margin-bottom: -250px !important;
     }
 
     /* Pull International Admissions hero down */
@@ -335,9 +336,15 @@
       margin-top: 0 !important;
     }
 
+    /* Reduce gap after hero section */
+    .hero-video-container + * {
+      margin-top: -200px !important;
+    }
+
     /* Pull all hero sections down */
     section.relative.overflow-hidden {
       padding-top: 380px !important;
+      margin-bottom: -250px !important;
     }
 
     /* Ensure hero sections use proper top padding */
@@ -346,6 +353,7 @@
       padding-top: 300px !important;
       height: auto !important;
       min-height: calc(100vh + 300px) !important;
+      margin-bottom: -150px !important;
     }
 
     section[id="top"] {
