@@ -30,7 +30,7 @@ export function StoryboardSection() {
       icon: BookOpen,
       title: "Academic Excellence",
       description: "Dive into our diverse schools and programs, designed to nurture leaders, innovators, and changemakers.",
-      cta: "Explore Programs",
+      cta: "Discover Campus Life",
       link: "/campus-life",
       color: "from-emerald-500 to-teal-500",
       bgColor: "bg-emerald-500/10",
