@@ -31,7 +31,7 @@ export function StoryboardSection() {
       title: "Academic Excellence",
       description: "Dive into our diverse schools and programs, designed to nurture leaders, innovators, and changemakers.",
       cta: "Explore Programs",
-      link: "/academics",
+      link: "/campus-life",
       color: "from-emerald-500 to-teal-500",
       bgColor: "bg-emerald-500/10",
       borderColor: "border-emerald-500/30",
