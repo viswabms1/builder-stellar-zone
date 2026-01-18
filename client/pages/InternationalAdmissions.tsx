@@ -47,12 +47,6 @@ type Award = {
   description: string;
 };
 
-type ProcessStep = {
-  title: string;
-  description: string;
-  icon: LucideIcon;
-};
-
 type Instruction = {
   title: string;
   content: string | string[];
