@@ -348,110 +348,99 @@ export default function Academics() {
         </div>
       </section>
 
-      {/* Schools & Colleges - Modernized Section */}
-      <section className="px-3 py-10 relative bg-gradient-to-b from-background via-brand-orange/2 to-background">
+      {/* Schools & Colleges - Matching Homepage Layout */}
+      <section className="px-3 pt-10 pb-4 md:pb-10 relative">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-8">
-            <div className="inline-flex items-center px-4 py-2 bg-orange-500/10 rounded-full border border-orange-500/20 mb-8">
-              <BookOpen className="w-4 h-4 text-orange-500 mr-2" />
-              <span className="text-sm font-medium text-orange-500">Our Schools</span>
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="text-foreground">Schools </span>
-              <span className="bg-gradient-to-r from-orange-500 via-pink-500 to-red-600 bg-clip-text text-transparent">
-                under Dayananda Sagar University
-              </span>
+          <div className="text-center mb-16">
+            <h2 className="headline-2 mb-6">
+              Academic Excellence That Inspires
             </h2>
-            <p className="text-xl text-foreground/80 max-w-3xl mx-auto font-display">
-              Choose from our diverse range of academic schools, each offering cutting-edge programs and world-class faculty
+            <p className="subheadline text-foreground max-w-3xl mx-auto font-display">
+              Explore AI-integrated undergraduate and postgraduate programs
+              spanning engineering, sciences, health, law, design, and
+              management.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
+          <div
+            className="grid md:grid-cols-2 lg:grid-cols-5 gap-0 auto-rows-max"
+            style={{ contain: "layout style paint" }}
+          >
             {schoolsData.map((school, index) => {
-              const colors = colorClasses[school.color as keyof typeof colorClasses];
-              
+              const styles = [
+                { bg: "bg-orange-500/10", border: "border-orange-500/20" },
+                { bg: "bg-violet-500/10", border: "border-violet-500/20" },
+                { bg: "bg-blue-500/10", border: "border-blue-500/20" },
+                { bg: "bg-emerald-500/10", border: "border-emerald-500/20" },
+                { bg: "bg-purple-500/10", border: "border-purple-500/20" },
+                { bg: "bg-cyan-500/10", border: "border-cyan-500/20" },
+                { bg: "bg-amber-500/10", border: "border-amber-500/20" },
+                { bg: "bg-rose-500/10", border: "border-rose-500/20" },
+                { bg: "bg-indigo-500/10", border: "border-indigo-500/20" },
+                { bg: "bg-teal-500/10", border: "border-teal-500/20" },
+              ];
+              const style = styles[index % styles.length];
+
               const cardElement = (
-                <div className={`group h-full rounded-xl border ${colors.border} ${colors.bg} overflow-hidden backdrop-blur-sm hover:shadow-xl hover:shadow-brand-magenta/20 transition-all duration-500 hover:-translate-y-2 flex flex-col`}>
-                  {/* Image Section */}
-                  <div className="relative h-48 w-full overflow-hidden bg-gradient-to-br from-foreground/5 to-foreground/10">
+                <div
+                  className={`rounded-none overflow-hidden cursor-pointer h-full`}
+                  style={{ contain: "content" }}
+                >
+                  {/* Image Container */}
+                  <div className="relative w-full aspect-square overflow-hidden bg-foreground/5 flex items-center justify-center">
                     <img
                       src={school.image}
                       alt={school.title}
-                      className={`h-full w-full object-cover group-hover:scale-110 transition-transform duration-700 ${
-                        school.title === "Online Degree Programs"
-                          ? "object-contain bg-white/5"
-                          : school.title === "Computer Applications"
-                          ? "object-cover object-top"
-                          : "object-cover"
-                      }`}
+                      loading="lazy"
+                      className="w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent pointer-events-none" />
-                    <div className="absolute top-3 left-3 inline-flex items-center gap-2 rounded-full bg-black/40 backdrop-blur px-3 py-1.5 text-foreground text-xs font-medium pointer-events-none">
-                      <school.icon className="w-4 h-4" /> School
-                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent pointer-events-none" />
                   </div>
 
-                  {/* Content Section */}
-                  <div className="flex-1 p-3 flex flex-col justify-between">
-                    <div>
-                      <div className="mb-4">
-                        <h3 className="text-xl font-bold text-foreground group-hover:text-brand-magenta transition-colors leading-tight font-display">
-                          {school.title}
-                        </h3>
-                      </div>
-
-                      <div className="space-y-3">
-                        <p className="text-xs font-semibold text-foreground/60 uppercase tracking-wider">
-                          Key Programs:
+                  {/* Content Container */}
+                  <div
+                    className={`${style.bg} ${style.border} border border-t-0 rounded-none p-3 flex flex-col justify-center items-center h-24 w-full backdrop-blur-sm`}
+                  >
+                    <div className="text-center space-y-1.5">
+                      <h3 className="text-lg font-bold text-foreground font-display hover:text-brand-magenta transition-colors text-center">
+                        {school.title}
+                      </h3>
+                      {school.campus && (
+                        <p className="text-xs font-semibold text-foreground/70 bg-foreground/10 px-2 py-0.5 rounded-full inline-block">
+                          {school.campus}
                         </p>
-                        <div className="flex flex-wrap gap-2">
-                          {school.programs.slice(0, 4).map((program, idx) => (
-                            <Badge
-                              key={idx}
-                              className={`text-xs font-medium ${colors.badge} border cursor-default hover:bg-opacity-75 transition-all`}
-                            >
-                              {program}
-                            </Badge>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* CTA Button */}
-                    <div className="mt-6">
-                      <button className="w-full text-foreground font-semibold text-sm flex items-center justify-between gap-2 py-2 px-3 rounded-lg hover:bg-foreground/5 group-hover:text-brand-magenta transition-all group/btn">
-                        Explore School
-                        <ChevronRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                      </button>
+                      )}
                     </div>
                   </div>
                 </div>
               );
 
+              const cardContent = school.href ? (
+                school.href.startsWith("http") ? (
+                  <a
+                    href={school.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="block"
+                  >
+                    {cardElement}
+                  </a>
+                ) : (
+                  <Link to={school.href} className="block">
+                    {cardElement}
+                  </Link>
+                )
+              ) : (
+                cardElement
+              );
+
               return (
-                <div key={index}>
-                  {school.href ? (
-                    school.href.startsWith("http") ? (
-                      <a
-                        href={school.href}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="block"
-                      >
-                        {cardElement}
-                      </a>
-                    ) : (
-                      <Link
-                        to={school.href}
-                        className="block"
-                      >
-                        {cardElement}
-                      </Link>
-                    )
-                  ) : (
-                    cardElement
-                  )}
+                <div
+                  key={index}
+                  style={{ animationDelay: school.delay || "0s" }}
+                  className={`scroll-fade-in-up`}
+                >
+                  {cardContent}
                 </div>
               );
             })}
