@@ -644,8 +644,8 @@ export default function Navigation() {
 
                         {/* Mega Menu Dropdown - Modern Card-Based Layout */}
                         <div
-                          onMouseEnter={() => setAboutMenuOpen(true)}
-                          onMouseLeave={() => setAboutMenuOpen(false)}
+                          onMouseEnter={handleAboutMenuEnter}
+                          onMouseLeave={handleAboutMenuLeave}
                           className={`absolute left-0 top-full mt-2 w-auto min-w-max max-w-2xl rounded-2xl shadow-2xl transition-all duration-300 py-5 px-5 max-h-[600px] overflow-y-auto backdrop-blur-sm z-[9999] ${
                             aboutMenuOpen
                               ? "opacity-100 visible pointer-events-auto"
