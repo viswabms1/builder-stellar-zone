@@ -758,8 +758,8 @@ export default function Navigation() {
 
                         {/* Academics Mega Menu - Modern Card-Based Layout */}
                         <div
-                          onMouseEnter={() => setAcademicsMenuOpen(true)}
-                          onMouseLeave={() => setAcademicsMenuOpen(false)}
+                          onMouseEnter={handleAcademicsMenuEnter}
+                          onMouseLeave={handleAcademicsMenuLeave}
                           className={`absolute left-0 top-full mt-2 w-auto min-w-max max-w-5xl rounded-2xl shadow-2xl transition-all duration-300 py-5 px-5 max-h-[600px] overflow-y-auto backdrop-blur-sm z-[9999] ${
                             academicsMenuOpen
                               ? "opacity-100 visible pointer-events-auto"
