@@ -40,6 +40,8 @@ export function CampusLocationsSection() {
     },
   ];
 
+  const activeCampus = campuses[activeTab];
+
   return (
     <section className="px-3 py-10 md:py-16 relative bg-background">
       <div className="max-w-7xl mx-auto">
@@ -63,125 +65,139 @@ export function CampusLocationsSection() {
           </p>
         </div>
 
-        {/* Campus Cards Grid */}
-        <div className="grid md:grid-cols-2 gap-8 mb-8">
+        {/* Campus Tabs */}
+        <div className="flex gap-0 mb-8 border-b-2 border-foreground/10 max-w-3xl mx-auto">
           {campuses.map((campus, index) => (
-            <div
+            <button
               key={index}
-              className="group rounded-2xl overflow-hidden border-2 border-brand-orange/20 bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm hover:border-brand-orange/40 transition-all duration-500 hover:shadow-2xl hover:shadow-brand-orange/20"
+              onClick={() => setActiveTab(index)}
+              className={`flex-1 px-6 py-4 font-semibold transition-all duration-300 border-b-2 -mb-[2px] text-center text-lg ${
+                activeTab === index
+                  ? "text-brand-orange border-b-brand-orange"
+                  : "text-foreground/60 border-b-transparent hover:text-foreground/80"
+              }`}
             >
-              {/* Map Container */}
-              <div className="relative h-64 md:h-80 w-full overflow-hidden bg-foreground/5">
-                <iframe
-                  title={`${campus.name} Map`}
-                  src={campus.mapEmbed}
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  className="w-full h-full"
-                ></iframe>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none" />
-              </div>
-
-              {/* Campus Info */}
-              <div className="p-6 md:p-8 space-y-5">
-                {/* Campus Name */}
-                <div>
-                  <h3 className="text-2xl md:text-3xl font-bold text-foreground font-display mb-2 group-hover:text-brand-orange transition-colors">
-                    {campus.name}
-                  </h3>
-                  <div className="h-1 w-12 bg-gradient-to-r from-brand-orange to-brand-blue rounded-full" />
-                </div>
-
-                {/* Address */}
-                <div className="flex gap-3">
-                  <MapPin className="w-5 h-5 text-brand-orange flex-shrink-0 mt-0.5" />
-                  <div>
-                    <p className="text-sm text-foreground/70 font-body leading-relaxed">
-                      {campus.address}
-                    </p>
-                  </div>
-                </div>
-
-                {/* Contact Info */}
-                <div className="space-y-3 pt-2 border-t border-foreground/10">
-                  <div className="flex gap-3 items-center">
-                    <Phone className="w-4 h-4 text-brand-orange flex-shrink-0" />
-                    <a
-                      href={`tel:${campus.phone}`}
-                      className="text-sm text-foreground/80 hover:text-brand-orange transition-colors font-medium"
-                    >
-                      {campus.phone}
-                    </a>
-                  </div>
-                  <div className="flex gap-3 items-center">
-                    <Mail className="w-4 h-4 text-brand-orange flex-shrink-0" />
-                    <a
-                      href={`mailto:${campus.email}`}
-                      className="text-sm text-foreground/80 hover:text-brand-orange transition-colors font-medium"
-                    >
-                      {campus.email}
-                    </a>
-                  </div>
-                </div>
-
-                {/* Schools */}
-                <div className="pt-2">
-                  <div className="flex items-center gap-2 mb-3">
-                    <Info className="w-4 h-4 text-brand-orange" />
-                    <span className="text-xs font-semibold text-foreground/60 uppercase tracking-widest">
-                      Schools Located Here
-                    </span>
-                  </div>
-                  <div className="space-y-2">
-                    {campus.schools.map((school, idx) => (
-                      <div
-                        key={idx}
-                        className="flex items-start gap-2 text-sm text-foreground/85 p-2 rounded-lg hover:bg-foreground/5 transition-colors"
-                      >
-                        <span className="text-brand-orange font-bold mt-0.5">•</span>
-                        <span className="font-medium">{school}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* CTA Buttons */}
-                <div className="flex gap-3 pt-4">
-                  <a
-                    href={campus.directionsUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="flex-1"
-                  >
-                    <Button className="w-full bg-brand-gradient hover:opacity-90 text-foreground font-bold gap-2 transition-all">
-                      <Navigation className="w-4 h-4" />
-                      Get Directions
-                    </Button>
-                  </a>
-                  <a
-                    href={`mailto:${campus.email}`}
-                    className="flex-1"
-                  >
-                    <Button
-                      variant="outline"
-                      className="w-full text-foreground hover:text-brand-orange hover:border-brand-orange border-brand-orange/30 transition-all"
-                    >
-                      <Mail className="w-4 h-4" />
-                      Contact
-                    </Button>
-                  </a>
-                </div>
-              </div>
-            </div>
+              {campus.name}
+            </button>
           ))}
         </div>
 
+        {/* Campus Content - Tab View */}
+        <div className="max-w-3xl mx-auto">
+          <div
+            className="rounded-2xl overflow-hidden border-2 border-brand-orange/20 bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm hover:border-brand-orange/40 transition-all duration-500 hover:shadow-2xl hover:shadow-brand-orange/20"
+          >
+            {/* Map Container */}
+            <div className="relative h-96 w-full overflow-hidden bg-foreground/5">
+              <iframe
+                title={`${activeCampus.name} Map`}
+                src={activeCampus.mapEmbed}
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full h-full"
+              ></iframe>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none" />
+            </div>
+
+            {/* Campus Info */}
+            <div className="p-6 md:p-8 space-y-5">
+              {/* Campus Name */}
+              <div>
+                <h3 className="text-2xl md:text-3xl font-bold text-foreground font-display mb-2 hover:text-brand-orange transition-colors">
+                  {activeCampus.name}
+                </h3>
+                <div className="h-1 w-12 bg-gradient-to-r from-brand-orange to-brand-blue rounded-full" />
+              </div>
+
+              {/* Address */}
+              <div className="flex gap-3">
+                <MapPin className="w-5 h-5 text-brand-orange flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="text-sm text-foreground/70 font-body leading-relaxed">
+                    {activeCampus.address}
+                  </p>
+                </div>
+              </div>
+
+              {/* Contact Info */}
+              <div className="space-y-3 pt-2 border-t border-foreground/10">
+                <div className="flex gap-3 items-center">
+                  <Phone className="w-4 h-4 text-brand-orange flex-shrink-0" />
+                  <a
+                    href={`tel:${activeCampus.phone}`}
+                    className="text-sm text-foreground/80 hover:text-brand-orange transition-colors font-medium"
+                  >
+                    {activeCampus.phone}
+                  </a>
+                </div>
+                <div className="flex gap-3 items-center">
+                  <Mail className="w-4 h-4 text-brand-orange flex-shrink-0" />
+                  <a
+                    href={`mailto:${activeCampus.email}`}
+                    className="text-sm text-foreground/80 hover:text-brand-orange transition-colors font-medium"
+                  >
+                    {activeCampus.email}
+                  </a>
+                </div>
+              </div>
+
+              {/* Schools */}
+              <div className="pt-2">
+                <div className="flex items-center gap-2 mb-3">
+                  <Info className="w-4 h-4 text-brand-orange" />
+                  <span className="text-xs font-semibold text-foreground/60 uppercase tracking-widest">
+                    Schools Located Here
+                  </span>
+                </div>
+                <div className="space-y-2">
+                  {activeCampus.schools.map((school, idx) => (
+                    <div
+                      key={idx}
+                      className="flex items-start gap-2 text-sm text-foreground/85 p-2 rounded-lg hover:bg-foreground/5 transition-colors"
+                    >
+                      <span className="text-brand-orange font-bold mt-0.5">•</span>
+                      <span className="font-medium">{school}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* CTA Buttons */}
+              <div className="flex gap-3 pt-4">
+                <a
+                  href={activeCampus.directionsUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex-1"
+                >
+                  <Button className="w-full bg-brand-gradient hover:opacity-90 text-foreground font-bold gap-2 transition-all">
+                    <Navigation className="w-4 h-4" />
+                    Get Directions
+                  </Button>
+                </a>
+                <a
+                  href={`mailto:${activeCampus.email}`}
+                  className="flex-1"
+                >
+                  <Button
+                    variant="outline"
+                    className="w-full text-foreground hover:text-brand-orange hover:border-brand-orange border-brand-orange/30 transition-all"
+                  >
+                    <Mail className="w-4 h-4" />
+                    Contact
+                  </Button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Info Banner */}
-        <div className="bg-gradient-to-r from-brand-orange/10 via-brand-blue/10 to-brand-orange/10 rounded-xl p-6 md:p-8 border border-brand-orange/20">
+        <div className="mt-12 bg-gradient-to-r from-brand-orange/10 via-brand-blue/10 to-brand-orange/10 rounded-xl p-6 md:p-8 border border-brand-orange/20">
           <div className="flex gap-4 items-start">
             <MapPin className="w-6 h-6 text-brand-orange flex-shrink-0 mt-1" />
             <div>
