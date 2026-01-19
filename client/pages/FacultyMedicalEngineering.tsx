@@ -57,7 +57,7 @@ function LeadershipSection({ leadership }: LeadershipSectionProps) {
         <p className="text-foreground/80">Meet the dedicated faculty members of the Computer Science and Medical Engineering program.</p>
       </div>
 
-      <div className="grid auto-rows-max gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid auto-rows-max gap-4 grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-9">
         {leadership.map((person) => (
           <FacultyCard key={person.name} member={person} />
         ))}
