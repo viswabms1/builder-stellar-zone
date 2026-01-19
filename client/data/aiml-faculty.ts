@@ -11,7 +11,7 @@ const base = "https://www.dsu.edu.in";
 const BASE_URL = "https://www.dsu.edu.in";
 
 export const aimlFaculty: Faculty[] = [
-  { name: "Dr. Jayavrinda Vrindavanam V", title: "Professor and Chairperson CSE(AIML)", image: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F8e5cfa68b7d441c48c9f98ef001d7033?format=webp&width=800", qualifications: "Ph.D" },
+  { name: "Dr. Jayavrinda Vrindavanam V", title: "Professor and Chairperson CSE(AIML)", image: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fb706de4f31c9486da4e200f393cf115c?format=webp&width=800", qualifications: "Ph.D" },
   { name: "Dr. Hanumanth Sastry Sistla", title: "Professor", image: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Ff762cff9586b4610aaff3a8302e35071?format=webp&width=800", qualifications: "Ph.D" },
   { name: "Dr. Bahubali Shiragapur", title: "Professor", image: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F3bf860aef9354034a74422a4475708b7?format=webp&width=800", qualifications: "Ph.D" },
   { name: "Dr. Joshuva Arockia Dhanraj", title: "Professor", image: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fad13667bb8444527a28dbc92bcc9dc23?format=webp&width=800", qualifications: "Ph.D" },
