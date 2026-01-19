@@ -239,8 +239,8 @@ export default function StudyInIndia() {
                   <div className="flex gap-4">
                     <span className="text-3xl flex-shrink-0">{item.icon}</span>
                     <div>
-                      <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                      <p className="text-foreground/80">{item.description}</p>
+                      <h3 className="text-xl font-bold mb-2 text-black">{item.title}</h3>
+                      <p className="text-black">{item.description}</p>
                     </div>
                   </div>
                 </div>
