@@ -74,9 +74,9 @@ function FacultyCard({ member }: FacultyCardProps) {
   if (member.profileUrl) {
     return (
       <Link to={member.profileUrl} className="group">
-        <Card className="overflow-hidden border border-border/40 bg-card/40 transition-all hover:shadow-lg hover:-translate-y-1 cursor-pointer h-full">
+        <div className="overflow-hidden rounded-lg border border-border/40 bg-card/40 transition-all hover:shadow-lg cursor-pointer h-full flex flex-col">
           {member.image && (
-            <AspectRatio ratio={1 / 1}>
+            <AspectRatio ratio={1 / 1.3} className="flex-shrink-0">
               <img
                 src={member.image}
                 alt={member.name}
@@ -84,28 +84,21 @@ function FacultyCard({ member }: FacultyCardProps) {
               />
             </AspectRatio>
           )}
-          <CardHeader>
-            <CardTitle className="text-lg font-display">{member.name}</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-3">
+          <div className="p-2 flex-1 flex flex-col justify-between min-w-0">
             <div>
-              <p className="text-sm text-foreground/80">{member.title}</p>
-              <p className="text-xs text-foreground/60">Qualification: {member.qualifications}</p>
+              <p className="text-xs font-semibold text-foreground truncate">{member.name}</p>
+              <p className="text-xs text-foreground/70 line-clamp-2">{member.title}</p>
             </div>
-            <div className="flex items-center text-brand-magenta text-sm font-medium">
-              View Profile
-              <ChevronRight className="ml-2 h-4 w-4" />
-            </div>
-          </CardContent>
-        </Card>
+          </div>
+        </div>
       </Link>
     );
   }
 
   return (
-    <Card className="overflow-hidden border border-border/40 bg-card/40 transition-all hover:shadow-lg">
+    <div className="overflow-hidden rounded-lg border border-border/40 bg-card/40 transition-all hover:shadow-lg h-full flex flex-col">
       {member.image && (
-        <AspectRatio ratio={1 / 1}>
+        <AspectRatio ratio={1 / 1.3} className="flex-shrink-0">
           <img
             src={member.image}
             alt={member.name}
@@ -113,15 +106,12 @@ function FacultyCard({ member }: FacultyCardProps) {
           />
         </AspectRatio>
       )}
-      <CardHeader>
-        <CardTitle className="text-lg font-display">{member.name}</CardTitle>
-      </CardHeader>
-      <CardContent className="space-y-3">
+      <div className="p-2 flex-1 flex flex-col justify-between min-w-0">
         <div>
-          <p className="text-sm text-foreground/80">{member.title}</p>
-          <p className="text-xs text-foreground/60">Qualification: {member.qualifications}</p>
+          <p className="text-xs font-semibold text-foreground truncate">{member.name}</p>
+          <p className="text-xs text-foreground/70 line-clamp-2">{member.title}</p>
         </div>
-      </CardContent>
-    </Card>
+      </div>
+    </div>
   );
 }
