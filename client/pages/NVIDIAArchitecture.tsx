@@ -61,11 +61,11 @@ export default function NVIDIAArchitecture() {
               </div>
 
               {/* Subheadline */}
-              <div className="space-y-3">
+              <div className="space-y-2">
                 <p className="text-lg sm:text-xl text-gray-300 leading-relaxed">
                   Invitation To Experience India's First AI-Native Research Ecosystem.
                 </p>
-                <div className="space-y-2">
+                <div className="space-y-1">
                   <p className="text-base sm:text-lg text-green-400 font-semibold flex items-center gap-2">
                     <span className="w-2 h-2 bg-green-400 rounded-full"></span>
                     20 NVIDIA DGX B200 Nodes
