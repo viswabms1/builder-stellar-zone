@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { useScrollTrigger } from "@/hooks/useScrollTrigger";
+import { useMemo } from "react";
 import {
   Bot,
   Brain,
@@ -34,10 +35,15 @@ import {
   Target,
 } from "lucide-react";
 import { schools } from "./Eligibility";
+import { aimlFaculty } from "@/data/aiml-faculty";
 
 export default function DeptAIML() {
   const { elementRef: outcomeRef, isVisible: outcomeVisible } = useScrollTrigger();
   const { elementRef: focusRef, isVisible: focusVisible } = useScrollTrigger();
+
+  const chairperson = useMemo(() => {
+    return aimlFaculty.find((f) => f.title.includes("Chairperson"));
+  }, []);
   
   const specializations = [
     { icon: Brain, label: "GPU-Accelerated ML" },
