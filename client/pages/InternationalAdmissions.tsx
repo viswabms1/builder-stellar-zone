@@ -482,7 +482,7 @@ function AboutSection() {
             className="rounded-2xl bg-gradient-to-r from-blue-500 to-indigo-500 px-8 py-6 text-lg font-semibold text-white"
             asChild
           >
-            <a href="#courses">Apply Now
+            <a href="https://international-admissions.dsu.edu.in" target="_blank" rel="noopener noreferrer">Apply Now
               <ArrowRight className="h-5 w-5" />
             </a>
           </Button>
