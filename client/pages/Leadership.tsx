@@ -119,7 +119,7 @@ export default function Leadership() {
   const founders = [
     {
       name: "Late Shri R Dayananda Sagar",
-      title: "Founder & Visionary Educationist",
+      title: "Visionary Educationist",
       bio: "Graduate in Arts & Commerce from India & a barrister-at-law from England. His visionary leadership laid the foundation for the institution's commitment to excellence and innovation.",
       impact: "His values continue to guide DSU's emphasis on excellence, ethics, and service-oriented education.",
       image:
@@ -128,7 +128,7 @@ export default function Leadership() {
     },
     {
       name: "Late Smt Chandramma Sagar",
-      title: "Co-Founder & Healthcare Pioneer",
+      title: "Healthcare Pioneer",
       bio: "The first Indian woman to have acquired a triple fellowship from the Royal College of Surgeons (FRCS) from London, Edinburgh, and Dublin. A doctor by profession with unwavering dedication to service and excellence.",
       impact: "Her pioneering spirit and commitment to healthcare excellence continue to inspire DSU's emphasis on holistic student development and social responsibility.",
       image:
