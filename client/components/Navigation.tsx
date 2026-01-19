@@ -505,14 +505,16 @@ export default function Navigation() {
               }`;
 
               if (isInternationalAdmissions) {
+                const buttonRect = internationalAdmissionsButtonRef.current?.getBoundingClientRect();
                 return (
                   <div
                     key={idx}
-                    className="relative flex-shrink-0"
+                    className="flex-shrink-0 static"
                     onMouseEnter={handleInternationalAdmissionsMenuEnter}
                     onMouseLeave={handleInternationalAdmissionsMenuLeave}
                   >
                     <button
+                      ref={internationalAdmissionsButtonRef}
                       onClick={() => setInternationalAdmissionsMenuOpen(!internationalAdmissionsMenuOpen)}
                       className={`${sharedClasses} flex items-center gap-1`}
                     >
@@ -520,17 +522,17 @@ export default function Navigation() {
                       <ChevronDown className={`w-3 h-3 transition-transform ${internationalAdmissionsMenuOpen ? "rotate-180" : ""}`} />
                     </button>
 
-                    {/* International Admissions Submenu - Fixed positioning to escape overflow */}
-                    {internationalAdmissionsMenuOpen && (
+                    {/* International Admissions Submenu - Fixed positioning to escape overflow container */}
+                    {internationalAdmissionsMenuOpen && buttonRect && (
                       <div
-                        className={`fixed mt-1 rounded-lg shadow-lg min-w-max backdrop-blur-sm z-[10002] ${
+                        className={`fixed rounded-lg shadow-lg min-w-max backdrop-blur-sm z-[10002] ${
                           theme === "light"
                             ? "bg-white/95 border border-orange-200/50"
                             : "bg-slate-800/95 border border-orange-600/30"
                         }`}
                         style={{
-                          top: `${document.querySelector('[data-international-admissions-btn]')?.getBoundingClientRect().bottom ?? 0}px`,
-                          left: `${document.querySelector('[data-international-admissions-btn]')?.getBoundingClientRect().left ?? 0}px`,
+                          top: `${buttonRect.bottom + 4}px`,
+                          left: `${buttonRect.left}px`,
                         }}
                         onMouseEnter={handleInternationalAdmissionsMenuEnter}
                         onMouseLeave={handleInternationalAdmissionsMenuLeave}
