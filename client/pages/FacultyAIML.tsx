@@ -1,5 +1,4 @@
 import { useMemo } from "react";
-import { useMemo } from "react";
 
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { aimlFaculty } from "@/data/aiml-faculty";
