@@ -75,7 +75,7 @@ export const cseFaculty: Faculty[] = [
   { name: "Naitik S T", title: "Assistant Professor", image: `${BASE_URL}/images/Engineering/CSE-dept/faculty/Naitik.jpg`, qualifications: "M.Tech(CNE), Ph.D", profileUrl: "/naitik-s" },
   { name: "Sasikala N", title: "Assistant Professor", image: `${BASE_URL}/images/Engineering/CSE-dept/faculty/Sasikala_N.jpg`, qualifications: "M.Tech", profileUrl: "/sasikala-n" },
   { name: "Radhika K", title: "Assistant Professor", image: `${BASE_URL}/images/Engineering/CSE-dept/faculty/Radhika_K.jpg`, qualifications: "M.Tech", profileUrl: "/radhika-k" },
-  { name: "Benaka Santhosha S", title: "Assistant Professor", image: `${BASE_URL}/images/Engineering/CSE-dept/faculty/benaka-s`, qualifications: "M.Tech, (Ph.D)", profileUrl: "/benaka-s" },
+  { name: "Benaka Santhosha S", title: "Assistant Professor", image: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Faaa823e162114055abcedb879e284ffb?format=webp&width=800", qualifications: "M.Tech, (Ph.D)", profileUrl: "/benaka-s" },
 ].map((f) => ({
   ...f,
   slug: make(f.name),
