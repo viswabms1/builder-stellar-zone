@@ -25,7 +25,7 @@ export default function Navigation() {
   const handleAboutMenuLeave = () => {
     aboutCloseTimeoutRef.current = setTimeout(() => {
       setAboutMenuOpen(false);
-    }, 100);
+    }, 300);
   };
 
   const handleAboutMenuEnter = () => {
@@ -39,7 +39,7 @@ export default function Navigation() {
   const handleAcademicsMenuLeave = () => {
     academicsCloseTimeoutRef.current = setTimeout(() => {
       setAcademicsMenuOpen(false);
-    }, 100);
+    }, 300);
   };
 
   const handleAcademicsMenuEnter = () => {
