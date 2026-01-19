@@ -9,6 +9,7 @@ import Eligibility from "./pages/Eligibility";
 import SimpleProgramLookup from "./pages/SimpleProgramLookup";
 import InternationalAdmissions from "./pages/InternationalAdmissions";
 import InternationalAffairs from "./pages/InternationalAffairs";
+import StudyInIndia from "./pages/StudyInIndia";
 import CampusLife from "./pages/CampusLife";
 import Examinations from "./pages/Examinations";
 import Research from "./pages/Research";
