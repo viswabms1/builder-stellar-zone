@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -22,8 +22,12 @@ import {
   Cpu,
   ArrowRight,
 } from "lucide-react";
+import { dataScienceFaculty } from "@/data/data-science-faculty";
 
 export default function DeptDataScience() {
+  const chairperson = useMemo(() => {
+    return dataScienceFaculty.find((f) => f.title.includes("Chairperson"));
+  }, []);
   const specializations = [
     { icon: Brain, label: "GPU-Accelerated ML" },
     { icon: BarChart3, label: "RAPIDS Data Analytics" },
