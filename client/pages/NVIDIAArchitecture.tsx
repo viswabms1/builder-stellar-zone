@@ -25,73 +25,86 @@ export default function NVIDIAArchitecture() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero Section */}
-      <section className="relative py-10 lg:py-32 bg-gradient-to-br from-blue-600/20 via-purple-600/20 to-background overflow-hidden">
-        <div className="absolute inset-0">
-          <img
-            src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F935799d5edb9464794f76adfc8ca6552?format=webp&width=1200"
-            alt="NVIDIA AI Architecture"
-            className="w-full h-full object-cover"
-            onError={(e) => {
-              (e.currentTarget as HTMLImageElement).style.display = 'none';
-            }}
-          />
-          <div className="absolute inset-0 bg-black/50"></div>
+      <section className="relative py-16 lg:py-24 bg-gradient-to-b from-slate-900 via-blue-900/20 to-background overflow-hidden">
+        {/* Background with grid effect */}
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute inset-0 bg-gradient-to-b from-green-500/5 to-transparent"></div>
         </div>
 
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/10 rounded-full filter blur-3xl animate-float"></div>
-          <div
-            className="absolute bottom-20 right-10 w-96 h-96 bg-purple-600/10 rounded-full filter blur-3xl animate-float"
-            style={{ animationDelay: "2s" }}
-          ></div>
-        </div>
+        {/* Main Content Grid */}
+        <div className="relative max-w-7xl mx-auto px-3">
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[500px] lg:min-h-[600px]">
+            {/* Left Side - Campus Image */}
+            <div className="relative rounded-2xl overflow-hidden group">
+              <img
+                src="https://www.dsu.edu.in/images/main-campus.jpg"
+                alt="DSU Campus"
+                className="w-full h-full object-cover rounded-2xl shadow-2xl group-hover:scale-105 transition-transform duration-500"
+                onError={(e) => {
+                  (e.currentTarget as HTMLImageElement).src = "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F935799d5edb9464794f76adfc8ca6552?format=webp&width=800";
+                }}
+              />
+              {/* Green light effect overlay */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-green-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+            </div>
 
-        <div className="relative max-w-7xl mx-auto px-3 text-center">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight text-white">
-            NVIDIA's AI Architecture at DSU
-          </h1>
+            {/* Right Side - Content */}
+            <div className="space-y-8">
+              {/* Main Headline */}
+              <div>
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-4">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-blue-300">
+                    THE WORLD IS BUILDING AI.
+                  </span>
+                  <br />
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-cyan-400">
+                    WE ARE BUILDING THE FACTORY.
+                  </span>
+                </h1>
+              </div>
 
-          <p className="text-xl md:text-2xl font-bold text-white mb-6 max-w-4xl mx-auto leading-relaxed">
-            Enterprise-grade AI infrastructure powering next-generation AI research, innovation, and education.
-          </p>
-
-          <div className="flex justify-center mb-8">
-            <a
-              href="#explore"
-              className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-            >
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 text-white px-8 py-6 text-lg font-semibold rounded-2xl"
-              >
-                Explore the Stack
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
-            </a>
-          </div>
-
-          {/* Key Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 max-w-4xl mx-auto">
-            {[
-              { number: "8x", label: "Blackwell GPUs", icon: Cpu },
-              { number: "1.4TB", label: "Memory", icon: HardDrive },
-              { number: "1.8TB/s", label: "GPU Bandwidth", icon: Zap },
-            ].map((stat, index) => (
-              <Card
-                key={index}
-                className="text-center p-3 bg-white/95 backdrop-blur-sm border border-white/40 hover:border-white/60 transition-all duration-300"
-              >
-                <stat.icon className="w-8 h-8 text-blue-500 mx-auto mb-3" />
-                <div className="text-3xl font-bold text-slate-900 mb-1">
-                  {stat.number}
+              {/* Subheadline */}
+              <div className="space-y-3">
+                <p className="text-lg sm:text-xl text-gray-300 leading-relaxed">
+                  Invitation To Lead India's First AI-Native Research Ecosystem.
+                </p>
+                <div className="space-y-2">
+                  <p className="text-base sm:text-lg text-green-400 font-semibold flex items-center gap-2">
+                    <span className="w-2 h-2 bg-green-400 rounded-full"></span>
+                    Five Chair Professors
+                  </p>
+                  <p className="text-base sm:text-lg text-green-400 font-semibold flex items-center gap-2">
+                    <span className="w-2 h-2 bg-green-400 rounded-full"></span>
+                    20 NVIDIA DGX B200 Nodes
+                  </p>
+                  <p className="text-base sm:text-lg text-green-400 font-semibold flex items-center gap-2">
+                    <span className="w-2 h-2 bg-green-400 rounded-full"></span>
+                    One Mission
+                  </p>
                 </div>
-                <div className="text-sm text-slate-700">
-                  {stat.label}
-                </div>
-              </Card>
-            ))}
+              </div>
+
+              {/* CTA Button */}
+              <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                <a
+                  href="#explore"
+                  className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                >
+                  <Button
+                    size="lg"
+                    className="w-full sm:w-auto bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 text-white px-8 py-6 text-lg font-semibold rounded-2xl"
+                  >
+                    Explore the Stack
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </Button>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
+
+        {/* Bottom gradient accent */}
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-slate-950 to-transparent"></div>
       </section>
 
       {/* The Technology Behind Your AI Future Section */}
