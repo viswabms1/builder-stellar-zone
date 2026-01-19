@@ -94,6 +94,30 @@ export default function NVIDIAArchitecture() {
         </div>
       </section>
 
+      {/* The Technology Behind Your AI Future Section */}
+      <section className="relative py-20 pt-32 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-3">
+          <div className="text-center mb-12">
+            <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-foreground mb-6">
+              The Technology Behind Your AI Future
+            </h1>
+            <p className="text-2xl md:text-3xl text-foreground/70 max-w-4xl mx-auto leading-relaxed">
+              NVIDIA's complete AI stack—from classroom labs to cutting-edge
+              research. Everything you need to master artificial intelligence.
+            </p>
+          </div>
+
+          <div className="mb-16">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F935799d5edb9464794f76adfc8ca6552?format=webp&width=1200"
+              alt="NVIDIA Stack for Accelerated Computing"
+              className="w-full rounded-xl shadow-2xl border border-border/30"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* DSU's NVIDIA Architecture */}
       <section id="explore" className="px-3 py-20 bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-blue-500/5">
         <div className="max-w-7xl mx-auto">
