@@ -365,7 +365,6 @@ export default function InternationalAdmissions() {
       <CampusLifeSection />
       <CentreOfExcellenceSection />
       <InstructionsSection />
-      <ApplyFormSection />
       <ApplySection />
     </div>
   );
