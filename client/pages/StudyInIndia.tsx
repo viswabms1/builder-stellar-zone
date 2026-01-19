@@ -22,9 +22,9 @@ export default function StudyInIndia() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero Section */}
-      <section className="relative h-[50vh] md:h-[60vh] overflow-hidden bg-gradient-to-br from-orange-500/10 via-yellow-500/10 to-background">
+      <section className="relative h-[50vh] md:h-[60vh] overflow-hidden bg-white">
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background/50"></div>
         </div>
         <div className="relative h-full flex items-center justify-center text-center px-4">
           <div className="space-y-6">
