@@ -52,6 +52,20 @@ export default function Navigation() {
     setAcademicsMenuOpen(true);
   };
 
+  const handleInternationalAdmissionsMenuLeave = () => {
+    internationalAdmissionsCloseTimeoutRef.current = setTimeout(() => {
+      setInternationalAdmissionsMenuOpen(false);
+    }, 300);
+  };
+
+  const handleInternationalAdmissionsMenuEnter = () => {
+    if (internationalAdmissionsCloseTimeoutRef.current) {
+      clearTimeout(internationalAdmissionsCloseTimeoutRef.current);
+      internationalAdmissionsCloseTimeoutRef.current = null;
+    }
+    setInternationalAdmissionsMenuOpen(true);
+  };
+
   const toggleSubGroup = (schoolName: string, groupName: string) => {
     const key = `${schoolName}-${groupName}`;
     const newSet = new Set(expandedSubGroups);
