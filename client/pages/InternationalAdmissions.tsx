@@ -24,7 +24,6 @@ import {
   CloudLightning,
   ContactRound,
   Cpu,
-  FileText,
   Globe2,
   Home,
   Mail,
