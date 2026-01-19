@@ -646,7 +646,7 @@ export default function Navigation() {
                         <div
                           onMouseEnter={handleAboutMenuEnter}
                           onMouseLeave={handleAboutMenuLeave}
-                          className={`absolute left-0 top-full mt-2 w-auto min-w-max max-w-2xl rounded-2xl shadow-2xl transition-all duration-300 py-5 px-5 max-h-[600px] overflow-y-auto backdrop-blur-sm z-[9999] ${
+                          className={`absolute left-0 top-full mt-0 w-auto min-w-max max-w-2xl rounded-2xl shadow-2xl transition-all duration-300 py-5 px-5 max-h-[600px] overflow-y-auto backdrop-blur-sm z-[9999] ${
                             aboutMenuOpen
                               ? "opacity-100 visible pointer-events-auto"
                               : "opacity-0 invisible pointer-events-none"
@@ -760,7 +760,7 @@ export default function Navigation() {
                         <div
                           onMouseEnter={handleAcademicsMenuEnter}
                           onMouseLeave={handleAcademicsMenuLeave}
-                          className={`absolute left-0 top-full mt-2 w-auto min-w-max max-w-5xl rounded-2xl shadow-2xl transition-all duration-300 py-5 px-5 max-h-[600px] overflow-y-auto backdrop-blur-sm z-[9999] ${
+                          className={`absolute left-0 top-full mt-0 w-auto min-w-max max-w-5xl rounded-2xl shadow-2xl transition-all duration-300 py-5 px-5 max-h-[600px] overflow-y-auto backdrop-blur-sm z-[9999] ${
                             academicsMenuOpen
                               ? "opacity-100 visible pointer-events-auto"
                               : "opacity-0 invisible pointer-events-none"
