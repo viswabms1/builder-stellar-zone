@@ -572,22 +572,40 @@ export default function Navigation() {
                         onMouseEnter={handleInternationalAdmissionsMenuEnter}
                         onMouseLeave={handleInternationalAdmissionsMenuLeave}
                       >
-                        {internationalSubmenuItems.map((submenuItem, submenuIdx) => (
-                          <a
-                            key={submenuItem.name}
-                            href={submenuItem.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            onClick={() => setInternationalAdmissionsMenuOpen(false)}
-                            className={`block px-4 py-2.5 text-xs sm:text-sm whitespace-nowrap transition-all ${
-                              theme === "light"
-                                ? "text-gray-700 hover:bg-orange-100 hover:text-orange-700"
-                                : "text-white/80 hover:bg-white/20 hover:text-white"
-                            } ${submenuIdx < internationalSubmenuItems.length - 1 ? (theme === "light" ? "border-b border-orange-200/30" : "border-b border-white/10") : ""}`}
-                          >
-                            {submenuItem.name}
-                          </a>
-                        ))}
+                        {internationalSubmenuItems.map((submenuItem, submenuIdx) => {
+                          const isExternal = submenuItem.href.startsWith("http");
+                          const baseClasses = `block px-4 py-2.5 text-xs sm:text-sm whitespace-nowrap transition-all ${
+                            theme === "light"
+                              ? "text-gray-700 hover:bg-orange-100 hover:text-orange-700"
+                              : "text-white/80 hover:bg-white/20 hover:text-white"
+                          } ${submenuIdx < internationalSubmenuItems.length - 1 ? (theme === "light" ? "border-b border-orange-200/30" : "border-b border-white/10") : ""}`;
+
+                          if (isExternal) {
+                            return (
+                              <a
+                                key={submenuItem.name}
+                                href={submenuItem.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                onClick={() => setInternationalAdmissionsMenuOpen(false)}
+                                className={baseClasses}
+                              >
+                                {submenuItem.name}
+                              </a>
+                            );
+                          }
+
+                          return (
+                            <Link
+                              key={submenuItem.name}
+                              to={submenuItem.href}
+                              onClick={() => setInternationalAdmissionsMenuOpen(false)}
+                              className={baseClasses}
+                            >
+                              {submenuItem.name}
+                            </Link>
+                          );
+                        })}
                       </div>
                     )}
                   </div>
