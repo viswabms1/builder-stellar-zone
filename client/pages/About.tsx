@@ -264,16 +264,16 @@ export default function About() {
           <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-4">
             {[
               {
-                icon: Compass,
-                title: "Vision & Mission",
-                description: "Our guiding principles and strategic goals",
-                href: "/about/vision-mission",
-              },
-              {
                 icon: History,
                 title: "History",
                 description: "60+ years of educational excellence",
                 href: "/about/history",
+              },
+              {
+                icon: Compass,
+                title: "Vision & Mission",
+                description: "Our guiding principles and strategic goals",
+                href: "/about/vision-mission",
               },
               {
                 icon: Users,
