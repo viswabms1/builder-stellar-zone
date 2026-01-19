@@ -46,7 +46,18 @@ export default function ScrollingTicker() {
             className="px-4 md:px-6 py-0.5 text-white font-semibold text-xs md:text-sm flex items-center shrink-0"
           >
             <span>•</span>
-            <span className="ml-2">{item}</span>
+            {item.href ? (
+              <a
+                href={item.href}
+                target={item.external ? "_blank" : undefined}
+                rel={item.external ? "noopener noreferrer" : undefined}
+                className="ml-2 hover:text-amber-200 transition-colors cursor-pointer"
+              >
+                {item.text}
+              </a>
+            ) : (
+              <span className="ml-2">{item.text}</span>
+            )}
           </div>
         ))}
         {/* Duplicate set for seamless loop */}
@@ -56,7 +67,18 @@ export default function ScrollingTicker() {
             className="px-4 md:px-6 py-0.5 text-white font-semibold text-xs md:text-sm flex items-center shrink-0"
           >
             <span>•</span>
-            <span className="ml-3">{item}</span>
+            {item.href ? (
+              <a
+                href={item.href}
+                target={item.external ? "_blank" : undefined}
+                rel={item.external ? "noopener noreferrer" : undefined}
+                className="ml-3 hover:text-amber-200 transition-colors cursor-pointer"
+              >
+                {item.text}
+              </a>
+            ) : (
+              <span className="ml-3">{item.text}</span>
+            )}
           </div>
         ))}
       </div>
