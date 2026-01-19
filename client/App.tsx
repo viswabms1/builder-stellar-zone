@@ -96,7 +96,9 @@ import HumanitiesSocialSciences from "./pages/HumanitiesSocialSciences";
 import { ThemeProvider } from "./providers/theme-provider";
 import { LanguageProvider } from "./providers/language-provider";
 import FacultyProfile from "./pages/FacultyProfile";
+import { ChatWidget } from "./components/ChatWidget";
 import FacultyRohitKumarSingh from "./pages/faculty/RohitKumarSingh";
+
 import GirishaGSPage from "./pages/faculty/GirishaGS";
 import UdayaKumarReddyPage from "./pages/faculty/UdayaKumarReddy";
 import BipinKumarRaiPage from "./pages/faculty/BipinKumarRai";
@@ -396,6 +398,8 @@ function App() {
           <div className="min-h-screen bg-background text-foreground flex flex-col overflow-x-hidden">
             <Navigation />
             <main className="w-full">
+              <ChatWidget />
+
               <Routes>
                 <Route path="/" element={<Index />} />
                 <Route path="/academics" element={<Academics />} />
