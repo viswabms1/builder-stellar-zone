@@ -63,7 +63,7 @@ export default function NVIDIAArchitecture() {
               {/* Subheadline */}
               <div className="space-y-3">
                 <p className="text-lg sm:text-xl text-gray-300 leading-relaxed">
-                  Invitation To Lead India's First AI-Native Research Ecosystem.
+                  Invitation To Experience India's First AI-Native Research Ecosystem.
                 </p>
                 <div className="space-y-2">
                   <p className="text-base sm:text-lg text-green-400 font-semibold flex items-center gap-2">
