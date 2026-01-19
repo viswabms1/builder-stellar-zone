@@ -517,7 +517,6 @@ export default function Navigation() {
               }`;
 
               if (isInternationalAdmissions) {
-                const buttonRect = internationalAdmissionsButtonRef.current?.getBoundingClientRect();
                 return (
                   <div
                     key={idx}
@@ -535,7 +534,7 @@ export default function Navigation() {
                     </button>
 
                     {/* International Admissions Submenu - Fixed positioning to escape overflow container */}
-                    {internationalAdmissionsMenuOpen && buttonRect && (
+                    {internationalAdmissionsMenuOpen && internationalAdmissionsPosition && (
                       <div
                         className={`fixed rounded-lg shadow-lg min-w-max backdrop-blur-sm z-[10002] ${
                           theme === "light"
@@ -543,8 +542,8 @@ export default function Navigation() {
                             : "bg-slate-800/95 border border-orange-600/30"
                         }`}
                         style={{
-                          top: `${buttonRect.bottom + 4}px`,
-                          left: `${buttonRect.left}px`,
+                          top: `${internationalAdmissionsPosition.top}px`,
+                          left: `${internationalAdmissionsPosition.left}px`,
                         }}
                         onMouseEnter={handleInternationalAdmissionsMenuEnter}
                         onMouseLeave={handleInternationalAdmissionsMenuLeave}
