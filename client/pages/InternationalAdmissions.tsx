@@ -828,48 +828,6 @@ function InstructionsSection() {
   );
 }
 
-function ApplyFormSection() {
-  return (
-    <section className="px-3 py-8 bg-gradient-to-br from-blue-500/5 via-indigo-500/5 to-background" id="apply-form">
-      <div className="mx-auto max-w-4xl">
-        <div className="mb-12 text-center">
-          <Badge className="mx-auto w-fit rounded-full bg-blue-500/15 px-4 py-2 text-blue-500 mb-4">
-            <FileText className="mr-2 h-4 w-4 inline" />
-            Apply Now
-          </Badge>
-          <h2 className="mt-4 text-3xl font-bold md:text-4xl">Begin Your Journey</h2>
-        </div>
-
-        <div className="rounded-3xl border border-blue-500/20 bg-card/80 p-8 shadow-xl backdrop-blur">
-          <div className="mb-8">
-            <h3 className="text-2xl font-semibold text-foreground mb-3">
-              Complete the Enquiry Form
-            </h3>
-            <p className="text-lg text-foreground/80 leading-relaxed mb-6">
-              Receive personalised assistance on eligibility, visa support, scholarships, and onboarding.
-            </p>
-          </div>
-
-          <div className="overflow-hidden rounded-2xl border border-blue-500/20 mb-6">
-            <iframe
-              title="International Admissions Enquiry"
-              src="https://widgets.in8.nopaperforms.com/register?&r=&q=&w=f3162f9d0da45b80ccb6342d22a3c1cb&m=&cu=https://www.dsu.edu.in/admissions-international/"
-              className="h-[500px] w-full"
-              loading="lazy"
-            />
-          </div>
-
-          <div className="rounded-xl bg-blue-500/10 border border-blue-500/20 p-4">
-            <p className="text-sm text-foreground">
-              <span className="font-semibold">📋 Consent Notice:</span> By submitting the form, you consent to communications from Dayananda Sagar University via email, SMS, and phone.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 function ApplySection() {
   return (
     <section className="px-3 pb-20">
