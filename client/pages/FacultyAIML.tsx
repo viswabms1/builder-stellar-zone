@@ -23,7 +23,7 @@ export default function FacultyAIML() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <div className="relative px-6 py-16">
+      <div className="relative px-3 py-8">
         <div className="mx-auto max-w-7xl">
           <LeadershipSection leadership={leadership} />
         </div>
