@@ -37,7 +37,7 @@ export default function FacultyDataScience() {
       {/* Faculty Grid */}
       <section className="px-6 py-16">
         <div className="max-w-7xl mx-auto">
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-6 grid-cols-9">
             {dataScienceFaculty.map((member) => (
               <Link key={member.slug} to={`/academics/engineering/data-science/faculty/${member.slug}`}>
                 <Card className="group overflow-hidden border border-border/40 bg-card/50 hover:shadow-lg hover:shadow-brand-orange/20 hover:border-brand-orange/40 transition-all duration-300 cursor-pointer h-full">
