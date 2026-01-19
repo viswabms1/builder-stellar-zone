@@ -400,7 +400,7 @@ function HeroSection() {
                 className="rounded-2xl bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 px-8 py-6 text-lg font-semibold text-white shadow-lg shadow-blue-500/30 transition hover:shadow-xl"
                 asChild
               >
-                <a href="#apply-now">Enquire Now
+                <a href="#apply-form">Apply Now
                   <ArrowRight className="h-5 w-5" />
                 </a>
               </Button>
