@@ -1,15 +1,38 @@
 import { useEffect, useState } from "react";
 
+interface TickerItem {
+  text: string;
+  href?: string;
+  external?: boolean;
+}
+
 export default function ScrollingTicker() {
-  const tickerItems = [
-    "Net Zero Conclave on 29/12/2025",
-    "Academic Calendar for 2025-26 Even Semester (SOE)",
-    "Academic Calendar for 2025-26",
-    "Apply for March 2026 Executive MBA Batch - Contact: Aravind N.V. 9972598981 / aravind.nv@dsu.edu.in",
-    "National Anti Ragging Help Line: 1800-180-5522",
-    "DSU 3 Years LL.B Admissions for School of Law - Contact: 9606484800",
-    "AIC-DSU Foundation - Scholarships for Research Scholars & Scientific Officers",
-    "AICTE Recognition",
+  const tickerItems: TickerItem[] = [
+    {
+      text: "NetZero Conclave",
+      href: "https://dsu.edu.in/netzero-conclave/",
+      external: true,
+    },
+    {
+      text: "Academic Calendar - Even Semester 2025-26 (SOE)",
+      href: "https://dsu.edu.in/images/Engineering/coe/AC_Even_sem_2025_26.pdf",
+      external: true,
+    },
+    {
+      text: "Academic Calendar - 2025-26",
+      href: "https://dsu.edu.in/images/AC_11082025.pdf",
+      external: true,
+    },
+    {
+      text: "Center for Executive Education (CEE)",
+      href: "https://dsu.edu.in/academics/cee",
+      external: true,
+    },
+    {
+      text: "AIC-DSU Foundation",
+      href: "https://dsu.edu.in/images/AIC-DSU_CONTENT.pdf",
+      external: true,
+    },
   ];
 
   return (
