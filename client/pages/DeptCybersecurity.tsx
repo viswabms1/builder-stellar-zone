@@ -207,30 +207,29 @@ export default function DeptCybersecurity() {
               The Cybersecurity department at DSU emphasizes rigorous technical foundations, ethical security practices, and applied problem-solving. Our goal is to prepare graduates who can secure digital systems across industry, government, and critical infrastructure.
             </p>
           </div>
-          <div className="grid gap-6 lg:grid-cols-2 items-start">
+          <div className="grid auto-rows-max gap-3 grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6">
             {chairperson && (
               <div>
-                <p className="text-xs font-semibold text-brand-blue uppercase tracking-wider mb-4">Associate Professor & Chairperson</p>
-                <div className="group relative overflow-hidden rounded-xl border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-blue/10 transition-all">
+                <div className="group relative overflow-hidden rounded-lg border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-blue/10 transition-all h-full">
                   <div className="relative">
-                    <div className="aspect-square w-full"></div>
-                    <img src={chairperson.image} alt={chairperson.name} className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-500" />
+                    <div className="aspect-[1/1.3] w-full"></div>
+                    <img src={chairperson.image} alt={chairperson.name} className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-105 transition-transform duration-500" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
                   </div>
-                  <div className="absolute bottom-0 p-3 w-full">
-                    <div className="text-white text-xs opacity-80">Associate Professor</div>
-                    <div className="text-white font-semibold text-sm font-display line-clamp-2">{chairperson.name}</div>
+                  <div className="absolute bottom-0 p-2 w-full">
+                    <div className="text-white text-xs opacity-80 line-clamp-1">Chairperson</div>
+                    <div className="text-white font-semibold text-xs font-display line-clamp-2">{chairperson.name}</div>
                   </div>
                 </div>
               </div>
             )}
-            <div>
-              <Link to="/academics/engineering/cybersecurity/faculty">
-                <Button variant="outline" className="border-brand-blue/40 hover:bg-brand-blue/10 w-full">
-                  Explore full faculty list
-                </Button>
-              </Link>
-            </div>
+          </div>
+          <div className="mt-6">
+            <Link to="/academics/engineering/cybersecurity/faculty">
+              <Button variant="outline" className="border-brand-blue/40 hover:bg-brand-blue/10">
+                Explore full faculty list
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
