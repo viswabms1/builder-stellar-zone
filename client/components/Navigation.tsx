@@ -1482,7 +1482,7 @@ export default function Navigation() {
                 {topMenuItems.map((item, idx) => {
                   const isAlumni = item.href === "/alumni";
                   const isLibrary = item.href === "/library";
-                  const isInternationalAdmissions = item.href === "/admissions/international";
+                  const isInternationalAdmissions = item.href === "https://dsu.edu.in/international/";
                   const sharedClasses = `flex items-center space-x-2 px-3 py-2 rounded-xl text-base sm:text-lg font-medium font-display transition-all duration-200 w-full ${
                     theme === "light"
                       ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
