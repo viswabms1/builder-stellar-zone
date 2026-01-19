@@ -1,6 +1,5 @@
 import { useMemo } from "react";
 import { Link } from "react-router-dom";
-import { useMemo } from "react";
 
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { aidsFaculty } from "@/data/ai-ds-faculty";
