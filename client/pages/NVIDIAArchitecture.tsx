@@ -104,7 +104,7 @@ export default function NVIDIAArchitecture() {
       <section className="relative py-16 pt-20 overflow-hidden">
         <div className="max-w-7xl mx-auto px-3">
           <div className="text-center mb-8">
-            <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-foreground mb-6">
+            <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-foreground mb-4">
               The Technology Behind Your AI Future
             </h1>
             <p className="text-2xl md:text-3xl text-foreground/70 max-w-4xl mx-auto leading-relaxed">
@@ -113,7 +113,7 @@ export default function NVIDIAArchitecture() {
             </p>
           </div>
 
-          <div className="mb-16">
+          <div className="mb-8">
             <img
               src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F935799d5edb9464794f76adfc8ca6552?format=webp&width=1200"
               alt="NVIDIA Stack for Accelerated Computing"
