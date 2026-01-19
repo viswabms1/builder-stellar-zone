@@ -232,42 +232,50 @@ export default function MedicalEngineering() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {/* Chairperson */}
-            <div>
-              <p className="text-xs font-semibold text-brand-magenta uppercase tracking-wider mb-2">Chairperson</p>
-              <Link to="/academics/engineering/cs-medical-engineering/faculty/dr-rajesh-tm" className="group block">
-                <div className="relative overflow-hidden rounded-xl border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-magenta/10 hover:-translate-y-1 transition-all cursor-pointer">
-                  <div className="aspect-square w-full bg-gradient-to-br from-brand-magenta/20 to-brand-magenta/5 flex items-center justify-center group-hover:scale-105 transition-transform">
-                    <div className="text-center">
-                      <Microscope className="w-12 h-12 text-brand-magenta/60 mx-auto mb-2" />
+            {chairperson && (
+              <div>
+                <p className="text-xs font-semibold text-brand-magenta uppercase tracking-wider mb-2">Chairperson</p>
+                <Link to={chairperson.profileUrl || "#"} className="group block">
+                  <div className="relative overflow-hidden rounded-xl border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-magenta/10 hover:-translate-y-1 transition-all cursor-pointer">
+                    <div className="relative">
+                      <div className="aspect-square w-full"></div>
+                      {chairperson.image && (
+                        <img src={chairperson.image} alt={chairperson.name} className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-500" />
+                      )}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+                    </div>
+                    <div className="absolute bottom-0 p-3 w-full">
+                      <div className="text-white text-xs opacity-80">Associate Professor</div>
+                      <div className="text-white font-semibold text-sm font-display line-clamp-2">{chairperson.name}</div>
+                      <div className="text-white text-xs opacity-75 mt-1">Qualification: {chairperson.qualifications}</div>
                     </div>
                   </div>
-                  <div className="p-3">
-                    <div className="text-foreground/80 text-xs font-medium mb-1">Associate Professor</div>
-                    <div className="text-foreground font-semibold text-sm font-display mb-2">Dr. Rajesh T M</div>
-                    <div className="text-foreground/60 text-xs">Qualification: Ph.D</div>
-                  </div>
-                </div>
-              </Link>
-            </div>
+                </Link>
+              </div>
+            )}
 
-            {/* Faculty Member */}
-            <div>
-              <p className="text-xs font-semibold text-brand-magenta uppercase tracking-wider mb-2">Faculty</p>
-              <Link to="/academics/engineering/cs-medical-engineering/faculty/prof-pruthvi-patel" className="group block">
-                <div className="relative overflow-hidden rounded-xl border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-magenta/10 hover:-translate-y-1 transition-all cursor-pointer">
-                  <div className="aspect-square w-full bg-gradient-to-br from-brand-magenta/20 to-brand-magenta/5 flex items-center justify-center group-hover:scale-105 transition-transform">
-                    <div className="text-center">
-                      <Microscope className="w-12 h-12 text-brand-magenta/60 mx-auto mb-2" />
+            {/* Faculty Members */}
+            {faculty.map((member) => (
+              <div key={member.name}>
+                <p className="text-xs font-semibold text-brand-magenta uppercase tracking-wider mb-2">Faculty</p>
+                <Link to={member.profileUrl || "#"} className="group block">
+                  <div className="relative overflow-hidden rounded-xl border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-magenta/10 hover:-translate-y-1 transition-all cursor-pointer">
+                    <div className="relative">
+                      <div className="aspect-square w-full"></div>
+                      {member.image && (
+                        <img src={member.image} alt={member.name} className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-500" />
+                      )}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+                    </div>
+                    <div className="absolute bottom-0 p-3 w-full">
+                      <div className="text-white text-xs opacity-80">{member.title.split(" & ")[0]}</div>
+                      <div className="text-white font-semibold text-sm font-display line-clamp-2">{member.name}</div>
+                      <div className="text-white text-xs opacity-75 mt-1">Qualification: {member.qualifications}</div>
                     </div>
                   </div>
-                  <div className="p-3">
-                    <div className="text-foreground/80 text-xs font-medium mb-1">Assistant Professor</div>
-                    <div className="text-foreground font-semibold text-sm font-display mb-2">Prof. Pruthvi Patel</div>
-                    <div className="text-foreground/60 text-xs">Qualification: M.Tech</div>
-                  </div>
-                </div>
-              </Link>
-            </div>
+                </Link>
+              </div>
+            ))}
           </div>
         </div>
       </section>
