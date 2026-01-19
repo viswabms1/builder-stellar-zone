@@ -206,6 +206,64 @@ export default function StudyInIndia() {
         </div>
       </section>
 
+      {/* Research & Innovation Section */}
+      <section className="py-16 md:py-24 px-4 md:px-8">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center">
+            Research & Innovation
+          </h2>
+          <p className="text-lg text-foreground/80 text-center mb-12 max-w-3xl mx-auto">
+            Hackathons, hands-on projects, AI labs, and innovation challenges where students build, ship, and launch real solutions.
+          </p>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-12 items-center">
+            <div className="space-y-6">
+              {[
+                {
+                  title: "Hackathons & 48-hour Innovation Sprints",
+                  description: "Participate in intensive innovation events where you collaborate with peers to develop real-world solutions.",
+                  icon: "⚡",
+                },
+                {
+                  title: "NASA Space Apps & International Competitions",
+                  description: "Compete on global platforms like NASA Space Apps Challenge and other international innovation competitions.",
+                  icon: "🚀",
+                },
+                {
+                  title: "Student-led Research Labs & Mentorship",
+                  description: "Lead cutting-edge research projects with dedicated mentorship from experienced faculty and industry leaders.",
+                  icon: "🔬",
+                },
+              ].map((item, idx) => (
+                <div key={idx} className="bg-gradient-to-br from-orange-50 to-yellow-50 dark:from-orange-950/20 dark:to-yellow-950/20 rounded-lg p-6 border border-orange-200/50 dark:border-orange-600/30 hover:shadow-lg transition-shadow">
+                  <div className="flex gap-4">
+                    <span className="text-3xl flex-shrink-0">{item.icon}</span>
+                    <div>
+                      <h3 className="text-xl font-bold mb-2">{item.title}</h3>
+                      <p className="text-foreground/80">{item.description}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="flex justify-center">
+              <img
+                src="https://images.pexels.com/photos/1181260/pexels-photo-1181260.jpeg"
+                alt="Students collaborating on innovative projects"
+                className="w-full h-auto rounded-lg shadow-lg object-cover max-h-96"
+              />
+            </div>
+          </div>
+
+          <div className="bg-gradient-to-r from-orange-500/10 via-yellow-500/10 to-background rounded-lg border border-orange-200/50 dark:border-orange-600/30 p-8 text-center">
+            <p className="text-lg text-foreground/80">
+              At DSU, we cultivate a culture of innovation where students are encouraged to think beyond the classroom, experiment with new ideas, and transform their visions into reality. Our research initiatives provide the platform and support needed to make a tangible impact.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section className="py-16 md:py-24 px-4 md:px-8 bg-gradient-to-br from-blue-500/5 to-background">
         <div className="max-w-4xl mx-auto">
