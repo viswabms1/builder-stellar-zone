@@ -86,7 +86,7 @@ function LeadershipSection({ leadership }: LeadershipSectionProps) {
         </p>
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 auto-rows-max">
+      <div className="grid gap-4 grid-cols-9 auto-rows-max">
         {leadership.map((faculty) => (
           <FacultyGridCard key={faculty.slug} faculty={faculty} />
         ))}
