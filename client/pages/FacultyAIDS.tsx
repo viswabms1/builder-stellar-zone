@@ -1,11 +1,7 @@
 import { useMemo } from "react";
-import { Link } from "react-router-dom";
 
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { aidsFaculty } from "@/data/ai-ds-faculty";
-import {
-  ChevronRight,
-} from "lucide-react";
 
 export default function FacultyAIDS() {
   const leadership = useMemo(
