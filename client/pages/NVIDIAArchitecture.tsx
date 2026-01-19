@@ -101,9 +101,9 @@ export default function NVIDIAArchitecture() {
       </section>
 
       {/* The Technology Behind Your AI Future Section */}
-      <section className="relative py-20 pt-32 overflow-hidden">
+      <section className="relative py-16 pt-20 overflow-hidden">
         <div className="max-w-7xl mx-auto px-3">
-          <div className="text-center mb-12">
+          <div className="text-center mb-8">
             <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-foreground mb-6">
               The Technology Behind Your AI Future
             </h1>
