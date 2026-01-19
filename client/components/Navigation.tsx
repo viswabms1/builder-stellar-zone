@@ -13,12 +13,14 @@ export default function Navigation() {
   const [academicsMenuOpen, setAcademicsMenuOpen] = useState(false);
   const [alumniMenuOpen, setAlumniMenuOpen] = useState(false);
   const [libraryMenuOpen, setLibraryMenuOpen] = useState(false);
+  const [internationalAdmissionsMenuOpen, setInternationalAdmissionsMenuOpen] = useState(false);
   const [expandedSubGroups, setExpandedSubGroups] = useState<Set<string>>(
     new Set(),
   );
   const [searchOpen, setSearchOpen] = useState(false);
   const aboutCloseTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const academicsCloseTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const internationalAdmissionsCloseTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const location = useLocation();
   const { theme } = useTheme();
 
