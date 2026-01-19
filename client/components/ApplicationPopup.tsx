@@ -49,8 +49,8 @@ export function ApplicationPopup() {
   // Countdown timer logic
   useEffect(() => {
     const calculateTimeLeft = () => {
-      // Target date: January 31, 2026, 23:59:59
-      const targetDate = new Date("2026-01-31T23:59:59").getTime();
+      // Target date: February 10, 2026, 23:59:59
+      const targetDate = new Date("2026-02-10T23:59:59").getTime();
       const now = new Date().getTime();
       const difference = targetDate - now;
 
