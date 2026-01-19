@@ -67,7 +67,7 @@ function LeadershipSection({ leadership }: LeadershipSectionProps) {
   }
 
   return (
-    <section className="py-20 md:py-28">
+    <section className="py-10 md:py-28">
       <div className="text-center space-y-4 mb-16">
         <div>
           <h2 className="text-4xl md:text-5xl font-bold font-display text-foreground mb-3">
