@@ -19,7 +19,7 @@ export const cseFaculty: Faculty[] = [
   { name: "Natarajan Venkateswaran", title: "Professor of Practice", image: `${BASE_URL}/images/Engineering/CSE-dept/faculty/Natarajan.jpg`, qualifications: "Ph.D" },
   { name: "Dr. Bondu Venkateswarlu", title: "Professor", image: `${BASE_URL}/images/Engineering/CSE-dept/faculty/venkateswarlu.png`, qualifications: "M.Tech, Ph.D" },
   { name: "Dr. S K Mouleeswaran", title: "Professor", image: `${BASE_URL}/images/Engineering/CSE-dept/faculty/Moulee.jpg`, qualifications: "M.E., Ph.D" },
-  { name: "Dr. Vengatesan Krishnasamy", title: "Professor", image: `${BASE_URL}/images/Engineering/CSE-dept/faculty/Vengatesan.jpg`, qualifications: "M.Tech, Ph.D" },
+  { name: "Dr. Vengatesan Krishnasamy", title: "Professor", image: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F65d5da61fa0f4b309178a6850323c88f?format=webp&width=800", qualifications: "M.Tech, Ph.D" },
   { name: "Dr. George Fernandez I", title: "Associate Professor", image: `${BASE_URL}/images/Engineering/CSE-dept/faculty/George.jpg`, qualifications: "Ph.D" },
   { name: "Dr. Shashikiran V", title: "Associate Professor", image: `${BASE_URL}/images/Engineering/CSE-dept/faculty/shashikiran.jpg`, qualifications: "Ph.D" },
   { name: "Dr. Tanvir Habib Sardar", title: "Associate Professor", image: `${BASE_URL}/images/Engineering/CSE-dept/faculty/Tanvir_H.png`, qualifications: "M.Tech, Ph.D" },
