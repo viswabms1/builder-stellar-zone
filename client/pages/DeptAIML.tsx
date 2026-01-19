@@ -477,7 +477,7 @@ export default function DeptAIML() {
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center justify-between mb-8">
             <h2 className="headline-3 font-display">Department Leadership</h2>
-            <Link to="/academics/engineering/ai-ml/faculty">
+            <Link to="/academics/engineering/artificial-intelligence/faculty">
               <Button variant="outline" className="border-brand-magenta/40 hover:bg-brand-magenta/10">
                 Explore Full Faculty
               </Button>
