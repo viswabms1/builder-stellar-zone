@@ -1004,6 +1004,16 @@ export default function Navigation() {
                 }
 
                 if (idx === 3) {
+                  const aiFirstActive = isActive("/ai-first");
+                  const aiFirstClasses = `flex items-center space-x-0.5 sm:space-x-1 px-1 sm:px-2 py-0.5 sm:py-1 rounded-lg text-xs sm:text-sm font-medium font-display transition-all duration-200 group justify-center ${
+                    theme === "light"
+                      ? aiFirstActive
+                        ? "bg-orange-100 text-orange-900 font-semibold shadow-sm"
+                        : "text-gray-700 hover:text-orange-600 hover:bg-orange-50"
+                      : aiFirstActive
+                        ? "bg-white/20 text-white font-semibold shadow-sm"
+                        : "text-white/90 hover:text-white hover:bg-white/10"
+                  }`;
                   return [
                     itemElement,
                     <Link
@@ -1028,7 +1038,7 @@ export default function Navigation() {
                     <Link
                       key="ai-label"
                       to="/ai-first"
-                      className={`${sharedClasses} justify-center`}
+                      className={aiFirstClasses}
                     >
                       <span className="max-w-[85px] text-center leading-snug">
                         AI-First @ DSU
