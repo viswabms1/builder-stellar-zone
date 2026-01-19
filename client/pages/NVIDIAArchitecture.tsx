@@ -71,10 +71,6 @@ export default function NVIDIAArchitecture() {
                 <div className="space-y-2">
                   <p className="text-base sm:text-lg text-green-400 font-semibold flex items-center gap-2">
                     <span className="w-2 h-2 bg-green-400 rounded-full"></span>
-                    Five Chair Professors
-                  </p>
-                  <p className="text-base sm:text-lg text-green-400 font-semibold flex items-center gap-2">
-                    <span className="w-2 h-2 bg-green-400 rounded-full"></span>
                     20 NVIDIA DGX B200 Nodes
                   </p>
                   <p className="text-base sm:text-lg text-green-400 font-semibold flex items-center gap-2">
