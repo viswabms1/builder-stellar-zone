@@ -176,6 +176,14 @@ export default function About() {
           <div className="grid md:grid-cols-2 gap-4">
             {[
               {
+                icon: Award,
+                title: "World Class Center of Excellence",
+                bullets: [
+                  "State-of-the-art research facilities and specialized technology hubs",
+                  "Collaborative spaces designed for breakthrough discoveries and innovation"
+                ],
+              },
+              {
                 icon: Cpu,
                 title: "AI-First Education",
                 bullets: [
@@ -208,11 +216,11 @@ export default function About() {
                 ],
               },
               {
-                icon: Building,
-                title: "World-Class Infrastructure",
+                icon: Globe,
+                title: "World Class Physical and Digital Infrastructure",
                 bullets: [
-                  "Advanced labs, libraries, and digital infrastructure",
-                  "Sports, cultural, and residential facilities"
+                  "Modern campus facilities with cutting-edge laboratories and digital networks",
+                  "Seamless integration of physical and virtual learning environments"
                 ],
               },
             ].map((section, index) => {
