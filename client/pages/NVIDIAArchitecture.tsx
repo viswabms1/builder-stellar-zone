@@ -78,7 +78,7 @@ export default function NVIDIAArchitecture() {
               </div>
 
               {/* CTA Button */}
-              <div className="flex flex-col sm:flex-row gap-4 pt-4">
+              <div className="flex flex-col sm:flex-row gap-4 pt-2">
                 <a
                   href="#explore"
                   className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
