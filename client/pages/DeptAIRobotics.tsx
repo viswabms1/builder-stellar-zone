@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -25,8 +25,12 @@ import {
   IndianRupee,
 } from "lucide-react";
 import { schools } from "./Eligibility";
+import { aiRoboticsFaculty } from "@/data/ai-robotics-faculty";
 
 export default function DeptAIRobotics() {
+  const chairperson = useMemo(() => {
+    return aiRoboticsFaculty.find((f) => f.title.includes("Chairman") || f.title.includes("Chairperson"));
+  }, []);
   const specializations = [
     { icon: Brain, label: "AI/ML" },
     { icon: Eye, label: "Computer Vision" },
