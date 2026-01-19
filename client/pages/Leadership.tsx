@@ -123,7 +123,7 @@ export default function Leadership() {
       bio: "Graduate in Arts & Commerce from India & a barrister-at-law from England. His visionary leadership laid the foundation for the institution's commitment to excellence and innovation.",
       impact: "His values continue to guide DSU's emphasis on excellence, ethics, and service-oriented education.",
       image:
-        "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Ffc8304264a444fa196e95ad74903200c?format=webp&width=800",
+        "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fcacac77f6c114bb1a4a34ad1388f4453?format=webp&width=800",
       alt: "Late Shri R Dayananda Sagar",
     },
     {
