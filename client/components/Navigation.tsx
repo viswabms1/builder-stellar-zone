@@ -487,13 +487,19 @@ export default function Navigation() {
     { name: "Committees", href: "/contact-complaints" },
     { name: "Examinations", href: "/examinations" },
     { name: "Careers", href: "/careers" },
-    { name: "International Admissions", href: "/admissions/international" },
+    { name: "International Admissions", href: "https://dsu.edu.in/international/", external: true, hasSubmenu: true },
     { name: "Hostel@Campus", href: "https://myposhtell.com", external: true },
     {
       name: "Public Self Disclosure",
       href: "https://dsu.edu.in/images/University/Public_Self_Disclosure_DSU.pdf",
       external: true,
     },
+  ];
+
+  const internationalSubmenuItems = [
+    { name: "International Admissions", href: "https://dsu.edu.in/international/" },
+    { name: "International Affairs", href: "https://dsu.edu.in/international/international-affairs/" },
+    { name: "Study in India", href: "https://dsu.edu.in/int/study-in-india" },
   ];
 
   const navigation = [
