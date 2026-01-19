@@ -268,7 +268,7 @@ export default function FacultyDirectory() {
               </CardHeader>
             </Card>
           ) : (
-            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            <div className="grid gap-4 grid-cols-9">
               {filteredFaculty.map((member) => (
                 <FacultyCard key={member.id} member={member} />
               ))}
@@ -346,7 +346,7 @@ type SchoolOverviewGridProps = {
 
 function SchoolOverviewGrid({ counts }: SchoolOverviewGridProps) {
   return (
-    <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-4">
+    <div className="grid gap-3 grid-cols-9">
       {facultySchoolsMeta.map((school) => {
         const profileCount = counts[school.id] ?? 0;
         const meta = getFacultySchoolMeta(school.id);
