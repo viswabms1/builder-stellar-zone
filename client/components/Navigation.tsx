@@ -496,11 +496,69 @@ export default function Navigation() {
             {topMenuItems.map((item, idx) => {
               const isAlumni = item.href === "/alumni";
               const isLibrary = item.href === "/library";
+              const isInternationalAdmissions = item.href === "/admissions/international";
               const sharedClasses = `text-xs sm:text-sm font-medium transition-all duration-200 whitespace-nowrap px-1.5 sm:px-2.5 py-1.5 sm:py-2 rounded-md hover:scale-105 flex-shrink-0 flex items-center gap-0.5 ${
                 theme === "light"
                   ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
                   : "text-white/80 hover:text-white hover:bg-white/10"
               }`;
+
+              if (isInternationalAdmissions) {
+                return (
+                  <div
+                    key={idx}
+                    className="relative group"
+                    onMouseEnter={handleInternationalAdmissionsMenuEnter}
+                    onMouseLeave={handleInternationalAdmissionsMenuLeave}
+                  >
+                    <button
+                      onClick={() => setInternationalAdmissionsMenuOpen(!internationalAdmissionsMenuOpen)}
+                      className={`${sharedClasses} flex items-center gap-1`}
+                    >
+                      <span>{item.name}</span>
+                      <ChevronDown className="w-3 h-3 transition-transform" />
+                    </button>
+
+                    {/* International Admissions Submenu */}
+                    <div
+                      className={`absolute left-0 top-full mt-0 rounded-lg shadow-lg transition-all duration-300 py-2 backdrop-blur-sm z-[10002] ${
+                        internationalAdmissionsMenuOpen
+                          ? "opacity-100 visible pointer-events-auto"
+                          : "opacity-0 invisible pointer-events-none"
+                      } ${
+                        theme === "light"
+                          ? "bg-white/95 border border-orange-200/50"
+                          : "bg-slate-800/95 border border-orange-600/30"
+                      }`}
+                      onMouseEnter={handleInternationalAdmissionsMenuEnter}
+                      onMouseLeave={handleInternationalAdmissionsMenuLeave}
+                    >
+                      <Link
+                        to="/admissions/international"
+                        onClick={() => setInternationalAdmissionsMenuOpen(false)}
+                        className={`block px-4 py-2 text-xs sm:text-sm rounded transition-colors ${
+                          theme === "light"
+                            ? "text-gray-700 hover:bg-orange-100 hover:text-orange-700"
+                            : "text-white/80 hover:bg-white/20 hover:text-white"
+                        }`}
+                      >
+                        International Admissions
+                      </Link>
+                      <Link
+                        to="/international-affairs"
+                        onClick={() => setInternationalAdmissionsMenuOpen(false)}
+                        className={`block px-4 py-2 text-xs sm:text-sm rounded transition-colors ${
+                          theme === "light"
+                            ? "text-gray-700 hover:bg-orange-100 hover:text-orange-700"
+                            : "text-white/80 hover:bg-white/20 hover:text-white"
+                        }`}
+                      >
+                        International Affairs
+                      </Link>
+                    </div>
+                  </div>
+                );
+              }
 
               if (item.external) {
                 return (
