@@ -1254,7 +1254,7 @@
   }
 
   /* Reduce spacing between Virtual Tour Section and Storyboard Section */
-  section:has(> div > .mx-auto.max-w-4xl.bg-background.rounded-2xl) {
-    margin-bottom: -3rem !important;
+  section.virtual-tour-section {
+    margin-bottom: -2rem !important;
   }
 }
