@@ -560,7 +560,7 @@ export default function Navigation() {
                     {/* International Admissions Submenu - Fixed positioning to escape overflow container */}
                     {internationalAdmissionsMenuOpen && internationalAdmissionsPosition && (
                       <div
-                        className={`fixed rounded-lg shadow-lg min-w-max backdrop-blur-sm z-[10002] ${
+                        className={`fixed rounded-lg shadow-lg min-w-max backdrop-blur-sm z-[10002] py-2 ${
                           theme === "light"
                             ? "bg-white/95 border border-orange-200/50"
                             : "bg-slate-800/95 border border-orange-600/30"
@@ -572,18 +572,18 @@ export default function Navigation() {
                         onMouseEnter={handleInternationalAdmissionsMenuEnter}
                         onMouseLeave={handleInternationalAdmissionsMenuLeave}
                       >
-                        {internationalSubmenuItems.map((submenuItem) => (
+                        {internationalSubmenuItems.map((submenuItem, submenuIdx) => (
                           <a
                             key={submenuItem.name}
                             href={submenuItem.href}
                             target="_blank"
                             rel="noopener noreferrer"
                             onClick={() => setInternationalAdmissionsMenuOpen(false)}
-                            className={`block px-4 py-2 text-xs sm:text-sm rounded transition-colors whitespace-nowrap ${
+                            className={`block px-4 py-2.5 text-xs sm:text-sm whitespace-nowrap transition-all ${
                               theme === "light"
                                 ? "text-gray-700 hover:bg-orange-100 hover:text-orange-700"
                                 : "text-white/80 hover:bg-white/20 hover:text-white"
-                            }`}
+                            } ${submenuIdx < internationalSubmenuItems.length - 1 ? (theme === "light" ? "border-b border-orange-200/30" : "border-b border-white/10") : ""}`}
                           >
                             {submenuItem.name}
                           </a>
