@@ -546,7 +546,7 @@ export default function Navigation() {
                     onMouseLeave={handleInternationalAdmissionsMenuLeave}
                   >
                     <a
-                      ref={internationalAdmissionsButtonRef as any}
+                      ref={internationalAdmissionsButtonRef}
                       href={item.href}
                       target="_blank"
                       rel="noopener noreferrer"
