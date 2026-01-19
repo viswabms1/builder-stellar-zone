@@ -44,7 +44,7 @@ export function StoryboardSection() {
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 mb-6">
+          <div className="inline-flex items-center gap-2 mb-2">
             <div className="h-1 w-8 bg-white rounded-full"></div>
             <span className="text-xs font-bold uppercase tracking-widest text-brand-orange">
               Our Story
