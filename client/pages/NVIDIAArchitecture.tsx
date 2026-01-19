@@ -24,8 +24,78 @@ import { Link } from "react-router-dom";
 export default function NVIDIAArchitecture() {
   return (
     <div className="min-h-screen bg-background text-foreground">
+      {/* Hero Section */}
+      <section className="relative py-10 lg:py-32 bg-gradient-to-br from-blue-600/20 via-purple-600/20 to-background overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F935799d5edb9464794f76adfc8ca6552?format=webp&width=1200"
+            alt="NVIDIA AI Architecture"
+            className="w-full h-full object-cover"
+            onError={(e) => {
+              (e.currentTarget as HTMLImageElement).style.display = 'none';
+            }}
+          />
+          <div className="absolute inset-0 bg-black/50"></div>
+        </div>
+
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/10 rounded-full filter blur-3xl animate-float"></div>
+          <div
+            className="absolute bottom-20 right-10 w-96 h-96 bg-purple-600/10 rounded-full filter blur-3xl animate-float"
+            style={{ animationDelay: "2s" }}
+          ></div>
+        </div>
+
+        <div className="relative max-w-7xl mx-auto px-3 text-center">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight text-white">
+            NVIDIA's AI Architecture at DSU
+          </h1>
+
+          <p className="text-xl md:text-2xl font-bold text-white mb-6 max-w-4xl mx-auto leading-relaxed">
+            Enterprise-grade AI infrastructure powering next-generation AI research, innovation, and education.
+          </p>
+
+          <div className="flex justify-center mb-8">
+            <a
+              href="#explore"
+              className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            >
+              <Button
+                size="lg"
+                className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 text-white px-8 py-6 text-lg font-semibold rounded-2xl"
+              >
+                Explore the Stack
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+            </a>
+          </div>
+
+          {/* Key Stats */}
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 max-w-4xl mx-auto">
+            {[
+              { number: "8x", label: "Blackwell GPUs", icon: Cpu },
+              { number: "1.4TB", label: "Memory", icon: HardDrive },
+              { number: "1.8TB/s", label: "GPU Bandwidth", icon: Zap },
+            ].map((stat, index) => (
+              <Card
+                key={index}
+                className="text-center p-3 bg-white/95 backdrop-blur-sm border border-white/40 hover:border-white/60 transition-all duration-300"
+              >
+                <stat.icon className="w-8 h-8 text-blue-500 mx-auto mb-3" />
+                <div className="text-3xl font-bold text-slate-900 mb-1">
+                  {stat.number}
+                </div>
+                <div className="text-sm text-slate-700">
+                  {stat.label}
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* DSU's NVIDIA Architecture */}
-      <section className="px-3 py-20 bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-blue-500/5">
+      <section id="explore" className="px-3 py-20 bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-blue-500/5">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-14">
             <h2 className="text-5xl md:text-6xl font-bold mb-6">
