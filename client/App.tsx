@@ -873,7 +873,15 @@ function App() {
                   element={<DeptAIML />}
                 />
                 <Route
+                  path="/academics/engineering/ai-ml"
+                  element={<DeptAIML />}
+                />
+                <Route
                   path="/academics/engineering/artificial-intelligence/faculty"
+                  element={<FacultyAIML />}
+                />
+                <Route
+                  path="/academics/engineering/ai-ml/faculty"
                   element={<FacultyAIML />}
                 />
                 <Route
