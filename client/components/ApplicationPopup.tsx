@@ -144,12 +144,6 @@ export function ApplicationPopup() {
           </a>
         </div>
 
-        {/* Footer Note */}
-        <div className="px-2 py-1.5 bg-card border-t border-brand-orange/20">
-          <p className="text-xs text-foreground/70 text-center font-medium leading-tight">
-            Don't miss the deadline
-          </p>
-        </div>
       </div>
     </div>
   );
