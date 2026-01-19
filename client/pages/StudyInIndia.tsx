@@ -36,10 +36,10 @@ export default function StudyInIndia() {
               />
             </div>
             <div>
-              <h1 className="text-5xl md:text-6xl font-bold mb-4">
+              <h1 className="text-5xl md:text-6xl font-bold mb-4 text-gray-900 dark:text-gray-100">
                 Study In India
               </h1>
-              <p className="text-xl md:text-2xl text-foreground/80 font-semibold">
+              <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 font-semibold">
                 LEARN | DISCOVER | INNOVATE
               </p>
             </div>
