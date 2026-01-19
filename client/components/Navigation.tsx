@@ -1473,11 +1473,70 @@ export default function Navigation() {
                 {topMenuItems.map((item, idx) => {
                   const isAlumni = item.href === "/alumni";
                   const isLibrary = item.href === "/library";
+                  const isInternationalAdmissions = item.href === "/admissions/international";
                   const sharedClasses = `flex items-center space-x-2 px-3 py-2 rounded-xl text-base sm:text-lg font-medium font-display transition-all duration-200 w-full ${
                     theme === "light"
                       ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
                       : "text-white/90 hover:text-white hover:bg-white/10"
                   }`;
+
+                  if (isInternationalAdmissions) {
+                    return (
+                      <div key={`top-${idx}`} className="space-y-2">
+                        <button
+                          onClick={() => setInternationalAdmissionsMobileMenuOpen(!internationalAdmissionsMobileMenuOpen)}
+                          className={`w-full text-left ${sharedClasses}`}
+                        >
+                          <span className="flex-1 truncate">{item.name}</span>
+                          <ChevronDown
+                            className={`w-4 h-4 transition-transform flex-shrink-0 ${
+                              internationalAdmissionsMobileMenuOpen ? "rotate-180" : ""
+                            }`}
+                          />
+                        </button>
+
+                        {/* Mobile International Admissions Submenu */}
+                        {internationalAdmissionsMobileMenuOpen && (
+                          <div
+                            className={`rounded-lg py-2 ml-4 border-l-2 ${
+                              theme === "light"
+                                ? "bg-orange-100 border-l-orange-300"
+                                : "bg-orange-900/20 border-l-orange-600"
+                            }`}
+                          >
+                            <Link
+                              to="/admissions/international"
+                              onClick={() => {
+                                setIsOpen(false);
+                                setInternationalAdmissionsMobileMenuOpen(false);
+                              }}
+                              className={`block px-4 py-1.5 text-base sm:text-lg rounded transition-colors ${
+                                theme === "light"
+                                  ? "text-gray-700 hover:bg-orange-200"
+                                  : "text-white hover:bg-orange-900/40"
+                              }`}
+                            >
+                              International Admissions
+                            </Link>
+                            <Link
+                              to="/international-affairs"
+                              onClick={() => {
+                                setIsOpen(false);
+                                setInternationalAdmissionsMobileMenuOpen(false);
+                              }}
+                              className={`block px-4 py-1.5 text-base sm:text-lg rounded transition-colors ${
+                                theme === "light"
+                                  ? "text-gray-700 hover:bg-orange-200"
+                                  : "text-white hover:bg-orange-900/40"
+                              }`}
+                            >
+                              International Affairs
+                            </Link>
+                          </div>
+                        )}
+                      </div>
+                    );
+                  }
 
                   if (isAlumni) {
                     return (
