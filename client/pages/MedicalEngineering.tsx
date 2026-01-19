@@ -24,6 +24,14 @@ import {
 } from "lucide-react";
 
 export default function MedicalEngineering() {
+  const chairperson = useMemo(() => {
+    return medicalEngineeringFaculty.find((f) => f.title.includes("Chairperson"));
+  }, []);
+
+  const faculty = useMemo(() => {
+    return medicalEngineeringFaculty.filter((f) => !f.title.includes("Chairperson"));
+  }, []);
+
   const specializations = [
     { icon: Heart, label: "Biomedical Devices" },
     { icon: Microscope, label: "Biomaterials" },
