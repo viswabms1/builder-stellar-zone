@@ -34,11 +34,11 @@ export default function NVIDIAArchitecture() {
         {/* Main Content Grid */}
         <div className="relative max-w-7xl mx-auto px-3">
           <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[500px] lg:min-h-[600px]">
-            {/* Left Side - DGX Image */}
+            {/* Left Side - Campus with AI Infrastructure Image */}
             <div className="relative rounded-2xl overflow-hidden group">
               <img
-                src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fde519473f250427594505b3e9ad6d595?format=webp&width=800"
-                alt="NVIDIA DGX B200"
+                src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Ffd142f634f47493e974aa82a480af412?format=webp&width=800"
+                alt="DSU Campus with AI Infrastructure"
                 className="w-full h-full object-cover rounded-2xl shadow-2xl group-hover:scale-105 transition-transform duration-500"
               />
               {/* Green light effect overlay */}
