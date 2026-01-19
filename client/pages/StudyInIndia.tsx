@@ -213,8 +213,8 @@ export default function StudyInIndia() {
             Get In Touch
           </h2>
           
-          <div className="bg-white dark:bg-slate-900 rounded-2xl border border-orange-200/50 dark:border-orange-600/30 p-8 md:p-12">
-            <h3 className="text-2xl font-bold mb-8">
+          <div className="bg-black rounded-2xl border border-orange-200/50 dark:border-orange-600/30 p-8 md:p-12">
+            <h3 className="text-2xl font-bold mb-8 text-white">
               International Admissions Office
             </h3>
 
@@ -222,8 +222,8 @@ export default function StudyInIndia() {
               <div className="flex gap-4">
                 <Mail className="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" />
                 <div>
-                  <p className="font-semibold mb-2">Email</p>
-                  <a href="mailto:international-admissions@dsu.edu.in" className="text-blue-600 hover:text-blue-700">
+                  <p className="font-semibold mb-2 text-white">Email</p>
+                  <a href="mailto:international-admissions@dsu.edu.in" className="text-orange-400 hover:text-orange-300">
                     international-admissions@dsu.edu.in
                   </a>
                 </div>
@@ -232,12 +232,12 @@ export default function StudyInIndia() {
               <div className="flex gap-4">
                 <MessageCircle className="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" />
                 <div>
-                  <p className="font-semibold mb-2">WhatsApp</p>
+                  <p className="font-semibold mb-2 text-white">WhatsApp</p>
                   <div className="space-y-2">
-                    <a href="https://wa.me/919606022152" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-700 block">
+                    <a href="https://wa.me/919606022152" target="_blank" rel="noopener noreferrer" className="text-orange-400 hover:text-orange-300 block">
                       +91 9606022152
                     </a>
-                    <a href="https://wa.me/919606022149" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-700 block">
+                    <a href="https://wa.me/919606022149" target="_blank" rel="noopener noreferrer" className="text-orange-400 hover:text-orange-300 block">
                       +91 9606022149
                     </a>
                   </div>
@@ -245,9 +245,9 @@ export default function StudyInIndia() {
               </div>
             </div>
 
-            <div className="mt-10 pt-8 border-t border-gray-200 dark:border-gray-700">
-              <p className="text-foreground/80 leading-relaxed mb-6">
-                Interested in learning more? <span className="font-semibold">Click here for details</span> and take your first step toward an impactful education at DSU.
+            <div className="mt-10 pt-8 border-t border-gray-700">
+              <p className="text-gray-300 leading-relaxed mb-6">
+                Interested in learning more? <span className="font-semibold text-white">Click here for details</span> and take your first step toward an impactful education at DSU.
               </p>
               <Button
                 asChild
