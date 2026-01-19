@@ -1626,14 +1626,25 @@ export default function Navigation() {
                     );
                   }
 
+                  if (item.external) {
+                    return (
+                      <a
+                        key={`top-${idx}`}
+                        href={item.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => setIsOpen(false)}
+                        className={sharedClasses}
+                      >
+                        <span className="truncate">{item.name}</span>
+                      </a>
+                    );
+                  }
+
                   return (
                     <Link
                       key={`top-${idx}`}
                       to={item.href}
-                      {...(item.external && {
-                        target: "_blank",
-                        rel: "noopener noreferrer",
-                      })}
                       onClick={() => setIsOpen(false)}
                       className={sharedClasses}
                     >
