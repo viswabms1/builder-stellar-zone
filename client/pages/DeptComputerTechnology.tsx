@@ -27,6 +27,10 @@ import {
 } from "lucide-react";
 
 export default function DeptComputerTechnology() {
+  const chairperson = useMemo(() => {
+    return computerTechnologyFaculty.find((f) => f.title.includes("Chairperson"));
+  }, []);
+
   const specializations = [
     { icon: Code2, label: "Software Engineering" },
     { icon: Network, label: "Systems Integration" },
