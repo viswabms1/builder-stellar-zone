@@ -460,14 +460,13 @@ export default function DeptCSE() {
               </Button>
             </Link>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid auto-rows-max gap-3 grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6">
             {/* Dean */}
             <div>
-              <p className="text-xs font-semibold text-brand-magenta uppercase tracking-wider mb-2">Dean of School of Engineering</p>
               <Link to="/academics/engineering/computer-science/faculty/dr-udaya-kumar-reddy-k-r">
-                <div className="group relative overflow-hidden rounded-xl border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-magenta/10 transition-all cursor-pointer">
+                <div className="group relative overflow-hidden rounded-lg border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-magenta/10 transition-all h-full cursor-pointer">
                   <div className="relative">
-                    <div className="aspect-square w-full"></div>
+                    <div className="aspect-[1/1.3] w-full"></div>
                     <img src="https://www.dsu.edu.in/images/Engineering/CSE-dept/faculty/Udaya.jpg" alt="Dr. Udaya Kumar Reddy K R" className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-500" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
                   </div>
