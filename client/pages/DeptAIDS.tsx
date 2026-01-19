@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { schools } from "./Eligibility";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { useMemo } from "react";
 import {
   Brain,
   Database,
@@ -24,8 +25,12 @@ import {
   IndianRupee,
   ArrowRight,
 } from "lucide-react";
+import { aidsFaculty } from "@/data/ai-ds-faculty";
 
 export default function DeptAIDS() {
+  const chairperson = useMemo(() => {
+    return aidsFaculty.find((f) => f.title.includes("Chairperson"));
+  }, []);
   const specializations = [
     { icon: Brain, label: "Artificial Intelligence" },
     { icon: BarChart3, label: "Data Science" },
