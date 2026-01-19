@@ -219,7 +219,7 @@ export default function About() {
                 icon: Globe,
                 title: "World Class Physical and Digital Infrastructure",
                 bullets: [
-                  "Modern campus facilities with cutting-edge laboratories and digital networks",
+                  "Modern campus facilities including Simmons Library with cutting-edge laboratories and digital networks",
                   "Seamless integration of physical and virtual learning environments"
                 ],
               },
