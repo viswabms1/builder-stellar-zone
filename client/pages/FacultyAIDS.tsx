@@ -67,12 +67,12 @@ function LeadershipSection({ leadership }: LeadershipSectionProps) {
 
   return (
     <section className="py-10 md:py-28">
-      <div className="text-center space-y-4 mb-8">
+      <div className="text-center space-y-4 mb-16">
         <div>
           <h2 className="text-4xl md:text-5xl font-bold font-display text-foreground mb-3">
             AI & Data Science Faculty Directory
           </h2>
-          <div className="w-20 h-1.5 bg-gradient-to-r from-brand-blue to-brand-blue rounded-full mx-auto" />
+          <div className="w-20 h-1.5 bg-gradient-to-r from-brand-magenta to-brand-magenta rounded-full mx-auto" />
         </div>
         <p className="max-w-2xl mx-auto text-lg md:text-xl text-foreground/75 leading-relaxed">
           Meet our exceptional faculty members—experts in machine learning, data analytics, deep learning, and AI innovation.
