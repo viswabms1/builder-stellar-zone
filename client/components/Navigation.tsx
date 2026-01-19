@@ -484,15 +484,15 @@ export default function Navigation() {
     <>
       {/* Top Menu Bar - Hidden on mobile/tablet portrait, shown on larger screens */}
       <div
-        className={`hidden lg:flex sticky top-0 z-[10001] h-14 transition-all duration-300 items-center overflow-visible pt-5 pb-2 ${
+        className={`hidden lg:flex sticky top-0 z-[10001] h-14 transition-all duration-300 items-center pt-5 pb-2 ${
           theme === "light"
             ? "bg-gradient-to-r from-orange-50 to-white border-b-2 border-orange-200/50"
             : "bg-gradient-to-r from-slate-900 to-slate-950 border-b-2 border-orange-600/30"
         }`}
       >
-        <div className="w-full mx-auto px-2 flex items-center justify-end gap-0 overflow-visible">
-          {/* All Top Menu Items in one continuous row */}
-          <div className="flex items-center gap-0.5 sm:gap-1 flex-nowrap overflow-x-auto overflow-y-visible scrollbar-hide order-2">
+        <div className="w-full mx-auto px-2 flex items-center justify-end gap-0">
+          {/* All Top Menu Items in one continuous row - with scrollable container */}
+          <div className="flex items-center gap-0.5 sm:gap-1 flex-nowrap overflow-x-auto scrollbar-hide order-2">
             {topMenuItems.map((item, idx) => {
               const isAlumni = item.href === "/alumni";
               const isLibrary = item.href === "/library";
@@ -507,7 +507,7 @@ export default function Navigation() {
                 return (
                   <div
                     key={idx}
-                    className="relative"
+                    className="relative flex-shrink-0"
                     onMouseEnter={handleInternationalAdmissionsMenuEnter}
                     onMouseLeave={handleInternationalAdmissionsMenuLeave}
                   >
@@ -519,14 +519,18 @@ export default function Navigation() {
                       <ChevronDown className={`w-3 h-3 transition-transform ${internationalAdmissionsMenuOpen ? "rotate-180" : ""}`} />
                     </button>
 
-                    {/* International Admissions Submenu */}
+                    {/* International Admissions Submenu - Fixed positioning to escape overflow */}
                     {internationalAdmissionsMenuOpen && (
                       <div
-                        className={`absolute left-0 top-full mt-1 rounded-lg shadow-lg min-w-max backdrop-blur-sm z-[10002] ${
+                        className={`fixed mt-1 rounded-lg shadow-lg min-w-max backdrop-blur-sm z-[10002] ${
                           theme === "light"
                             ? "bg-white/95 border border-orange-200/50"
                             : "bg-slate-800/95 border border-orange-600/30"
                         }`}
+                        style={{
+                          top: `${document.querySelector('[data-international-admissions-btn]')?.getBoundingClientRect().bottom ?? 0}px`,
+                          left: `${document.querySelector('[data-international-admissions-btn]')?.getBoundingClientRect().left ?? 0}px`,
+                        }}
                         onMouseEnter={handleInternationalAdmissionsMenuEnter}
                         onMouseLeave={handleInternationalAdmissionsMenuLeave}
                       >
