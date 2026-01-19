@@ -60,9 +60,6 @@ export function CampusLocationsSection() {
               Campuses
             </span>
           </h2>
-          <p className="subheadline text-foreground max-w-2xl mx-auto font-display">
-            Explore our state-of-the-art facilities across two vibrant campuses designed for academic excellence and innovation
-          </p>
         </div>
 
         {/* Campus Tabs */}
