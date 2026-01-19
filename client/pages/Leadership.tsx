@@ -328,11 +328,11 @@ export default function Leadership() {
               <div key={index} className="group text-center">
                 <div className="mb-6 relative inline-block">
                   <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-red-600/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-500" />
-                  <div className="relative w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden transition-all duration-500 shadow-xl" style={{ boxShadow: "inset 0 0 0 4px rgba(249, 115, 22, 0.3), 0 0 20px rgba(0, 0, 0, 0.3)" }}>
+                  <div className="relative w-48 h-48 md:w-56 md:h-56 flex items-center justify-center">
                     <img
                       src={founder.image}
                       alt={founder.alt}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-contain"
                     />
                   </div>
                 </div>
