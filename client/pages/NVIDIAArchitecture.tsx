@@ -132,14 +132,7 @@ export default function NVIDIAArchitecture() {
               DSU's NVIDIA AI Architecture
             </h2>
             <p className="text-2xl text-foreground/70 max-w-4xl mx-auto leading-relaxed mb-8">
-              Dayananda Sagar University has partnered with NVIDIA to create a
-              complete, enterprise-grade AI infrastructure dedicated to
-              transforming education and research.
-            </p>
-            <p className="text-xl text-foreground/80 max-w-3xl mx-auto leading-relaxed font-semibold">
-              DSU's NVIDIA-powered AI architecture enables students to build,
-              train, and deploy large-scale AI systems across vision, language,
-              and data-intensive domains.
+              Dayananda Sagar University has partnered with NVIDIA to create a AI architecture enables students to build, train, and deploy large-scale AI systems across vision, language, and data-intensive domains.
             </p>
           </div>
 
