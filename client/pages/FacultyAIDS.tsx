@@ -43,9 +43,8 @@ type LeadershipSectionProps = {
 
 function FacultyGridCard({ faculty }: { faculty: FacultyEntry }) {
   return (
-    <Link
-      to={`/academics/engineering/ai-ds/faculty/${faculty.slug}`}
-      className="group overflow-hidden rounded-xl border border-border/50 bg-card/70 shadow-md transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg hover:shadow-brand-blue/20 active:scale-95"
+    <div
+      className="group overflow-hidden rounded-xl border border-border/50 bg-card/70 shadow-md transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg hover:shadow-brand-blue/20"
     >
       <div className="relative overflow-hidden bg-slate-200 dark:bg-slate-800">
         <AspectRatio ratio={3 / 4}>
@@ -61,7 +60,7 @@ function FacultyGridCard({ faculty }: { faculty: FacultyEntry }) {
           <p className="text-xs opacity-80 line-clamp-1 group-hover:opacity-100 transition-opacity">{faculty.title}</p>
         </div>
       </div>
-    </Link>
+    </div>
   );
 }
 
