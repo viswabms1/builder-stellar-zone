@@ -1507,7 +1507,7 @@ export default function Navigation() {
                         {/* Mobile International Admissions Submenu */}
                         {internationalAdmissionsMobileMenuOpen && (
                           <div
-                            className={`rounded-lg py-2 ml-4 border-l-2 ${
+                            className={`rounded-lg py-2 ml-4 border-l-2 space-y-0 ${
                               theme === "light"
                                 ? "bg-orange-100 border-l-orange-300"
                                 : "bg-orange-900/20 border-l-orange-600"
@@ -1523,7 +1523,7 @@ export default function Navigation() {
                                   setIsOpen(false);
                                   setInternationalAdmissionsMobileMenuOpen(false);
                                 }}
-                                className={`block px-4 py-1.5 text-base sm:text-lg rounded transition-colors ${
+                                className={`block px-4 py-2.5 text-base sm:text-lg transition-colors ${
                                   theme === "light"
                                     ? "text-gray-700 hover:bg-orange-200"
                                     : "text-white hover:bg-orange-900/40"
