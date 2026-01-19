@@ -1204,4 +1204,52 @@
   .builder-faculty-card picture img {
     max-width: none !important;
   }
+
+  /* Remove spacing between sections - global */
+  section {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+
+  /* Remove padding from containers */
+  .container,
+  [class*="container"] {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  /* Reduce gap in grids */
+  .grid {
+    gap: 1rem !important;
+  }
+
+  /* Remove extra spacing from divs between sections */
+  div[class*="bg-gradient"],
+  div[class*="bg-background"],
+  div[class*="px-3"] {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* Hero sections - keep minimal spacing */
+  .hero-section,
+  [class*="hero"] {
+    margin-bottom: 0 !important;
+  }
+
+  /* Remove space-y utility classes */
+  [class*="space-y"] {
+    --tw-space-y-reverse: 0;
+  }
+
+  /* Collapse section padding to minimal */
+  section > div:first-child {
+    margin-top: 0 !important;
+  }
+
+  section > div:last-child {
+    margin-bottom: 0 !important;
+  }
 }
