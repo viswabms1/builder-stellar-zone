@@ -547,11 +547,12 @@ export default function Navigation() {
                   >
                     <a
                       ref={internationalAdmissionsButtonRef}
-                      href={item.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={() => setInternationalAdmissionsMenuOpen(!internationalAdmissionsMenuOpen)}
-                      className={`${sharedClasses} flex items-center gap-1`}
+                      href="#"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setInternationalAdmissionsMenuOpen(!internationalAdmissionsMenuOpen);
+                      }}
+                      className={`${sharedClasses} flex items-center gap-1 cursor-pointer`}
                     >
                       <span>{item.name}</span>
                       <ChevronDown className={`w-3 h-3 transition-transform ${internationalAdmissionsMenuOpen ? "rotate-180" : ""}`} />
