@@ -102,7 +102,7 @@ export function ApplicationPopup() {
             (2025-26 Even sem) Closes on
           </p>
           <p className="text-sm font-bold text-white text-center mt-2">
-            31<sup className="text-xs">st</sup> January 2026
+            10<sup className="text-xs">th</sup> January 2026
           </p>
         </div>
 
