@@ -491,24 +491,26 @@ export default function DeptAIML() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {/* Chairperson */}
-            <div>
-              <p className="text-xs font-semibold text-brand-magenta uppercase tracking-wider mb-2">Chairperson</p>
-              <div className="group relative overflow-hidden rounded-xl border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-magenta/10 transition-all cursor-pointer">
-                <div className="relative">
-                  <div className="aspect-square w-full"></div>
-                  <img
-                    src="https://www.dsu.edu.in/images/Engineering/CSE-AIML/faculty/Jayavrinda.jpg"
-                    alt="Dr. Jayavrinda Vrindavanam V"
-                    className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
-                </div>
-                <div className="absolute bottom-0 p-3 w-full">
-                  <div className="text-white text-xs opacity-80">Professor</div>
-                  <div className="text-white font-semibold text-sm font-display line-clamp-2">Dr. Jayavrinda Vrindavanam V</div>
-                </div>
+            {chairperson && (
+              <div>
+                <p className="text-xs font-semibold text-brand-magenta uppercase tracking-wider mb-2">Chairperson</p>
+                <Link to={`/academics/engineering/artificial-intelligence/faculty/${chairperson.slug}`} className="group relative overflow-hidden rounded-xl border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-magenta/10 transition-all cursor-pointer block">
+                  <div className="relative">
+                    <div className="aspect-square w-full"></div>
+                    <img
+                      src={chairperson.image}
+                      alt={chairperson.name}
+                      className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+                  </div>
+                  <div className="absolute bottom-0 p-3 w-full">
+                    <div className="text-white text-xs opacity-80">Professor</div>
+                    <div className="text-white font-semibold text-sm font-display line-clamp-2">{chairperson.name}</div>
+                  </div>
+                </Link>
               </div>
-            </div>
+            )}
           </div>
         </div>
       </section>
