@@ -33,6 +33,12 @@ export default function ScrollingTicker() {
       href: "https://dsu.edu.in/images/AIC-DSU_CONTENT.pdf",
       external: true,
     },
+    {
+      text: "National Anti Ragging Help Line: 1800-180-5522",
+    },
+    {
+      text: "DSU 3 Years LL.B Admissions for School of Law - Contact: 9606484800",
+    },
   ];
 
   return (
