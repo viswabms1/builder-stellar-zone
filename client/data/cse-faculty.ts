@@ -28,7 +28,7 @@ export const cseFaculty: Faculty[] = [
   { name: "Dr. Rupam Bhagawati", title: "Associate Professor", image: `${BASE_URL}/images/Engineering/CSE-dept/faculty/Rupam_B.jpg`, qualifications: "M.Tech, Ph.D" },
   { name: "Dr. A. Senthil Kumar", title: "Associate Professor", image: `${BASE_URL}/images/Engineering/CSE-dept/faculty/DrSenthil.jpg`, qualifications: "Ph.D" },
   { name: "Dr. J. Sebastian Nixon", title: "Professor", image: `${BASE_URL}/images/Engineering/CSE-dept/faculty/DrNixon.jpg`, qualifications: "PhD", profileUrl: "/dr-nixon" },
-  { name: "Dr. Prabhakar M", title: "Professor", image: `${BASE_URL}/images/Engineering/CSE-dept/faculty/DrPrabhakar.jpg`, qualifications: "Ph.D", profileUrl: "/dr-prabhakar" },
+  { name: "Dr. Prabhakar M", title: "Professor", image: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F1466bec589b24c3ca3c0eec70162cbad?format=webp&width=800", qualifications: "Ph.D", profileUrl: "/dr-prabhakar" },
   { name: "Dr. Ramesh S", title: "Associate Professor", image: `${BASE_URL}/images/Engineering/CSE-dept/faculty/Ramesh_S.jpg`, qualifications: "Ph.D" },
   { name: "Dr. Meenakshi Malhotra", title: "Associate Professor", image: `${BASE_URL}/images/Engineering/CSE-dept/faculty/Meenakshi.jpg`, qualifications: "M.Tech, Ph.D", profileUrl: "/dr-meenakshi" },
   { name: "Dr. Praveen Kulkarni", title: "Associate Professor", image: `${BASE_URL}/images/Engineering/CSE-dept/faculty/DrPraveen.jpg`, qualifications: "Ph.D", profileUrl: "/dr-praveen" },
