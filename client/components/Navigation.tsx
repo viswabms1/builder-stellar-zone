@@ -545,14 +545,17 @@ export default function Navigation() {
                     onMouseEnter={handleInternationalAdmissionsMenuEnter}
                     onMouseLeave={handleInternationalAdmissionsMenuLeave}
                   >
-                    <button
-                      ref={internationalAdmissionsButtonRef}
+                    <a
+                      ref={internationalAdmissionsButtonRef as any}
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       onClick={() => setInternationalAdmissionsMenuOpen(!internationalAdmissionsMenuOpen)}
                       className={`${sharedClasses} flex items-center gap-1`}
                     >
                       <span>{item.name}</span>
                       <ChevronDown className={`w-3 h-3 transition-transform ${internationalAdmissionsMenuOpen ? "rotate-180" : ""}`} />
-                    </button>
+                    </a>
 
                     {/* International Admissions Submenu - Fixed positioning to escape overflow container */}
                     {internationalAdmissionsMenuOpen && internationalAdmissionsPosition && (
@@ -569,28 +572,22 @@ export default function Navigation() {
                         onMouseEnter={handleInternationalAdmissionsMenuEnter}
                         onMouseLeave={handleInternationalAdmissionsMenuLeave}
                       >
-                        <Link
-                          to="/admissions/international"
-                          onClick={() => setInternationalAdmissionsMenuOpen(false)}
-                          className={`block px-4 py-2 text-xs sm:text-sm rounded transition-colors whitespace-nowrap ${
-                            theme === "light"
-                              ? "text-gray-700 hover:bg-orange-100 hover:text-orange-700"
-                              : "text-white/80 hover:bg-white/20 hover:text-white"
-                          }`}
-                        >
-                          International Admissions
-                        </Link>
-                        <Link
-                          to="/international-affairs"
-                          onClick={() => setInternationalAdmissionsMenuOpen(false)}
-                          className={`block px-4 py-2 text-xs sm:text-sm rounded transition-colors whitespace-nowrap ${
-                            theme === "light"
-                              ? "text-gray-700 hover:bg-orange-100 hover:text-orange-700"
-                              : "text-white/80 hover:bg-white/20 hover:text-white"
-                          }`}
-                        >
-                          International Affairs
-                        </Link>
+                        {internationalSubmenuItems.map((submenuItem) => (
+                          <a
+                            key={submenuItem.name}
+                            href={submenuItem.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={() => setInternationalAdmissionsMenuOpen(false)}
+                            className={`block px-4 py-2 text-xs sm:text-sm rounded transition-colors whitespace-nowrap ${
+                              theme === "light"
+                                ? "text-gray-700 hover:bg-orange-100 hover:text-orange-700"
+                                : "text-white/80 hover:bg-white/20 hover:text-white"
+                            }`}
+                          >
+                            {submenuItem.name}
+                          </a>
+                        ))}
                       </div>
                     )}
                   </div>
