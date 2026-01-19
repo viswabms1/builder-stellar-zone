@@ -88,46 +88,55 @@ export default function StudyInIndia() {
                 title: "School of Engineering",
                 description: "Innovation-driven education for the tech-savvy world.",
                 color: "blue",
+                href: "/academics/engineering",
               },
               {
                 title: "School of Law",
                 description: "Training tomorrow's legal minds with a focus on justice and impact.",
                 color: "purple",
+                href: "/academics/law",
               },
               {
                 title: "School of Medicine",
                 description: "Excellence in healthcare education and leadership.",
                 color: "red",
+                href: "/academics/health-sciences/cdsimer",
               },
               {
                 title: "School of Basic and Applied Science",
                 description: "Practical approaches rooted in foundational sciences.",
                 color: "green",
+                href: "/academics/basic-applied-sciences",
               },
               {
                 title: "School of Health Sciences",
                 description: "Equipping future leaders in global health and wellness.",
                 color: "emerald",
+                href: "/academics/health-sciences",
               },
               {
                 title: "School of Computer Applications",
                 description: "Cutting-edge IT education for the digital age.",
                 color: "indigo",
+                href: "/academics/computer-applications",
               },
               {
                 title: "School of Commerce and Management",
                 description: "Shaping tomorrow's business and industry leaders.",
                 color: "amber",
+                href: "/academics/management-studies",
               },
               {
                 title: "School of Arts, Design, and Humanities",
                 description: "Cultivating creativity, culture, and critical thinking.",
                 color: "pink",
+                href: "/academics/humanities-social-sciences",
               },
               {
                 title: "School of Design and Digital Trans-media",
                 description: "Bringing creativity to reality.",
                 color: "violet",
+                href: "/academics/design/bdesign",
               },
             ].map((program, idx) => {
               const colorMap: Record<string, { bg: string; border: string; text: string }> = {
@@ -143,14 +152,16 @@ export default function StudyInIndia() {
               };
               const colors = colorMap[program.color];
               return (
-                <Card key={idx} className={`${colors.bg} border-2 ${colors.border} hover:shadow-lg transition-shadow`}>
-                  <CardHeader>
-                    <CardTitle className={colors.text}>{program.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-foreground/80">{program.description}</p>
-                  </CardContent>
-                </Card>
+                <Link key={idx} to={program.href}>
+                  <Card className={`${colors.bg} border-2 ${colors.border} hover:shadow-lg transition-shadow cursor-pointer h-full`}>
+                    <CardHeader>
+                      <CardTitle className={colors.text}>{program.title}</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-foreground/80">{program.description}</p>
+                    </CardContent>
+                  </Card>
+                </Link>
               );
             })}
           </div>
