@@ -1,11 +1,8 @@
 import { useMemo } from "react";
-import { Link } from "react-router-dom";
+import { useMemo } from "react";
 
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { aimlFaculty } from "@/data/aiml-faculty";
-import {
-  ChevronRight,
-} from "lucide-react";
 
 export default function FacultyAIML() {
   const leadership = useMemo(
