@@ -91,6 +91,17 @@ export default function Navigation() {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, []);
 
+  // Calculate position for International Admissions submenu
+  useEffect(() => {
+    if (internationalAdmissionsMenuOpen && internationalAdmissionsButtonRef.current) {
+      const rect = internationalAdmissionsButtonRef.current.getBoundingClientRect();
+      setInternationalAdmissionsPosition({
+        top: rect.bottom + 4,
+        left: rect.left,
+      });
+    }
+  }, [internationalAdmissionsMenuOpen]);
+
   // Reset expandedSubGroups when academics menu closes
   useEffect(() => {
     if (!academicsMenuOpen) {
