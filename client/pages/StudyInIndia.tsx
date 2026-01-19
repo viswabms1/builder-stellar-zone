@@ -68,7 +68,7 @@ export default function StudyInIndia() {
 
             <div className="bg-blue-500/10 border border-blue-500/20 rounded-lg p-6 mt-8">
               <p className="mb-4">
-                For more information on e-Student VISA, <a href="#" className="text-blue-600 hover:text-blue-700 font-semibold underline">Click Here</a>
+                For more information on e-Student VISA, <a href="https://studyinindia.gov.in/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-700 font-semibold underline">Click Here</a>
               </p>
             </div>
           </div>
