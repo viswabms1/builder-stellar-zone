@@ -132,7 +132,7 @@ export default function Leadership() {
       bio: "The first Indian woman to have acquired a triple fellowship from the Royal College of Surgeons (FRCS) from London, Edinburgh, and Dublin. A doctor by profession with unwavering dedication to service and excellence.",
       impact: "Her pioneering spirit and commitment to healthcare excellence continue to inspire DSU's emphasis on holistic student development and social responsibility.",
       image:
-        "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F028b835328ef468fbf5400faad79454f?format=webp&width=800",
+        "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F7c95103cd25e4990afc8d402e7cc5d6e?format=webp&width=800",
       alt: "Late Smt Chandramma Sagar",
     },
   ];
