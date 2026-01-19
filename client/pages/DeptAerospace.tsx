@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -22,8 +22,12 @@ import {
   Cpu,
   ArrowRight,
 } from "lucide-react";
+import { aerospaceFaculty } from "@/data/aerospace-faculty";
 
 export default function DeptAerospace() {
+  const chairperson = useMemo(() => {
+    return aerospaceFaculty.find((f) => f.title.includes("Chairman") || f.title.includes("Chairperson"));
+  }, []);
   const specializations = [
     { icon: Rocket, label: "GPU-Accelerated CFD" },
     { icon: Wind, label: "Propulsion Simulation" },
