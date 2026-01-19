@@ -25,7 +25,7 @@ export default function NVIDIAArchitecture() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero Section */}
-      <section className="relative py-16 lg:py-24 bg-gradient-to-b from-slate-900 via-blue-900/20 to-background overflow-hidden">
+      <section className="relative py-8 lg:py-12 bg-gradient-to-b from-slate-900 via-blue-900/20 to-background overflow-hidden">
         {/* Background with grid effect */}
         <div className="absolute inset-0 opacity-30">
           <div className="absolute inset-0 bg-gradient-to-b from-green-500/5 to-transparent"></div>
@@ -33,7 +33,7 @@ export default function NVIDIAArchitecture() {
 
         {/* Main Content Grid */}
         <div className="relative max-w-7xl mx-auto px-3">
-          <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[500px] lg:min-h-[600px]">
+          <div className="grid md:grid-cols-2 gap-6 lg:gap-8 items-center">
             {/* Left Side - Campus with AI Infrastructure Image */}
             <div className="relative rounded-2xl overflow-hidden group">
               <img
