@@ -282,7 +282,7 @@ export default function CampusLife() {
                 quote:
                   "The hackathon pushed me to ship real code in 48 hours. That experience landed me an internship before graduation.",
                 image:
-                  "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=500&fit=crop",
+                  "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F595bbbef684e4f9fbdc3e7401a0aa8aa?format=webp&width=800",
               },
               {
                 name: "Arjun Mehta",
