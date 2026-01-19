@@ -594,33 +594,39 @@ export default function Navigation() {
                 );
               }
 
-              if (item.external) {
+              if (item.external && !isInternationalAdmissions) {
                 return (
                   <a
                     key={idx}
                     href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={sharedClasses}
+                    className={`text-xs sm:text-sm font-medium transition-all duration-200 whitespace-nowrap px-1.5 sm:px-2.5 py-1.5 sm:py-2 rounded-md hover:scale-105 flex-shrink-0 text-center ${
+                      theme === "light"
+                        ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
+                        : "text-white/80 hover:text-white hover:bg-white/10"
+                    }`}
                   >
                     <span>{item.name}</span>
                   </a>
                 );
               }
 
-              return (
-                <Link
-                  key={idx}
-                  to={item.href}
-                  className={`text-xs sm:text-sm font-medium transition-all duration-200 whitespace-nowrap px-1.5 sm:px-2.5 py-1.5 sm:py-2 rounded-md hover:scale-105 flex-shrink-0 text-center ${
-                    theme === "light"
-                      ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
-                      : "text-white/80 hover:text-white hover:bg-white/10"
-                  }`}
-                >
-                  {item.name}
-                </Link>
-              );
+              if (!isInternationalAdmissions) {
+                return (
+                  <Link
+                    key={idx}
+                    to={item.href}
+                    className={`text-xs sm:text-sm font-medium transition-all duration-200 whitespace-nowrap px-1.5 sm:px-2.5 py-1.5 sm:py-2 rounded-md hover:scale-105 flex-shrink-0 text-center ${
+                      theme === "light"
+                        ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
+                        : "text-white/80 hover:text-white hover:bg-white/10"
+                    }`}
+                  >
+                    {item.name}
+                  </Link>
+                );
+              }
             })}
             <a
               href="https://ums.mydsi.org/Login.aspx/DSU"
