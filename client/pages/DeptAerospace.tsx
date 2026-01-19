@@ -264,22 +264,22 @@ export default function DeptAerospace() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4">
             {/* Chairperson */}
-            <div>
-              <p className="text-xs font-semibold text-brand-blue uppercase tracking-wider mb-2">Chairperson</p>
-              <Link to="/academics/engineering/aerospace/faculty/dr-nagaraja-s-r">
-                <div className="group relative overflow-hidden rounded-xl border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-blue/10 transition-all cursor-pointer">
+            {chairperson && (
+              <div>
+                <p className="text-xs font-semibold text-brand-blue uppercase tracking-wider mb-2">{chairperson.title}</p>
+                <div className="group relative overflow-hidden rounded-xl border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-blue/10 transition-all">
                   <div className="relative">
                     <div className="aspect-square w-full"></div>
-                    <img src="https://images.unsplash.com/photo-1507842072343-583f20270319?q=80&w=500&auto=format&fit=crop" alt="Dr. Nagaraja S. R." className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-500" />
+                    <img src={chairperson.image} alt={chairperson.name} className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-500" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
                   </div>
                   <div className="absolute bottom-0 p-3 w-full">
                     <div className="text-white text-xs opacity-80">Professor & Chairperson</div>
-                    <div className="text-white font-semibold text-sm font-display line-clamp-2">Dr. Nagaraja S. R.</div>
+                    <div className="text-white font-semibold text-sm font-display line-clamp-2">{chairperson.name}</div>
                   </div>
                 </div>
-              </Link>
-            </div>
+              </div>
+            )}
           </div>
         </div>
       </section>
