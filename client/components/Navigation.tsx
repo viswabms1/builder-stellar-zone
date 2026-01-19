@@ -1507,34 +1507,25 @@ export default function Navigation() {
                                 : "bg-orange-900/20 border-l-orange-600"
                             }`}
                           >
-                            <Link
-                              to="/admissions/international"
-                              onClick={() => {
-                                setIsOpen(false);
-                                setInternationalAdmissionsMobileMenuOpen(false);
-                              }}
-                              className={`block px-4 py-1.5 text-base sm:text-lg rounded transition-colors ${
-                                theme === "light"
-                                  ? "text-gray-700 hover:bg-orange-200"
-                                  : "text-white hover:bg-orange-900/40"
-                              }`}
-                            >
-                              International Admissions
-                            </Link>
-                            <Link
-                              to="/international-affairs"
-                              onClick={() => {
-                                setIsOpen(false);
-                                setInternationalAdmissionsMobileMenuOpen(false);
-                              }}
-                              className={`block px-4 py-1.5 text-base sm:text-lg rounded transition-colors ${
-                                theme === "light"
-                                  ? "text-gray-700 hover:bg-orange-200"
-                                  : "text-white hover:bg-orange-900/40"
-                              }`}
-                            >
-                              International Affairs
-                            </Link>
+                            {internationalSubmenuItems.map((submenuItem) => (
+                              <a
+                                key={submenuItem.name}
+                                href={submenuItem.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                onClick={() => {
+                                  setIsOpen(false);
+                                  setInternationalAdmissionsMobileMenuOpen(false);
+                                }}
+                                className={`block px-4 py-1.5 text-base sm:text-lg rounded transition-colors ${
+                                  theme === "light"
+                                    ? "text-gray-700 hover:bg-orange-200"
+                                    : "text-white hover:bg-orange-900/40"
+                                }`}
+                              >
+                                {submenuItem.name}
+                              </a>
+                            ))}
                           </div>
                         )}
                       </div>
