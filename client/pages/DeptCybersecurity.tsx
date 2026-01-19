@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -23,8 +23,12 @@ import {
   ArrowRight,
   Zap,
 } from "lucide-react";
+import { cybersecurityFaculty } from "@/data/cybersecurity-faculty";
 
 export default function DeptCybersecurity() {
+  const chairperson = useMemo(() => {
+    return cybersecurityFaculty.find((f) => f.title.includes("Chairperson"));
+  }, []);
   const specializations = [
     { icon: Lock, label: "Cryptography" },
     { icon: Shield, label: "Network Security" },
