@@ -489,24 +489,23 @@ export default function DeptAIML() {
               </Button>
             </Link>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid auto-rows-max gap-3 grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6">
             {/* Chairperson */}
             {chairperson && (
               <div>
-                <p className="text-xs font-semibold text-brand-magenta uppercase tracking-wider mb-2">Chairperson</p>
-                <Link to={`/academics/engineering/artificial-intelligence/faculty/${chairperson.slug}`} className="group relative overflow-hidden rounded-xl border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-magenta/10 transition-all cursor-pointer block">
+                <Link to={`/academics/engineering/artificial-intelligence/faculty/${chairperson.slug}`} className="group relative overflow-hidden rounded-lg border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-magenta/10 transition-all cursor-pointer block h-full">
                   <div className="relative">
-                    <div className="aspect-square w-full"></div>
+                    <div className="aspect-[1/1.3] w-full"></div>
                     <img
                       src={chairperson.image}
                       alt={chairperson.name}
-                      className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-500"
+                      className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
                   </div>
-                  <div className="absolute bottom-0 p-3 w-full">
-                    <div className="text-white text-xs opacity-80">Professor</div>
-                    <div className="text-white font-semibold text-sm font-display line-clamp-2">{chairperson.name}</div>
+                  <div className="absolute bottom-0 p-2 w-full">
+                    <div className="text-white text-xs opacity-80 line-clamp-1">Chairperson</div>
+                    <div className="text-white font-semibold text-xs font-display line-clamp-2">{chairperson.name}</div>
                   </div>
                 </Link>
               </div>
