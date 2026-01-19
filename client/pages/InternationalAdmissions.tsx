@@ -847,7 +847,7 @@ function ApplySection() {
             className="rounded-2xl bg-gradient-to-r from-blue-500 to-indigo-500 px-8 py-6 text-lg font-semibold text-white hover:from-indigo-500 hover:to-blue-500"
             asChild
           >
-            <a href="https://widgets.in8.nopaperforms.com/register?&r=&q=&w=f3162f9d0da45b80ccb6342d22a3c1cb&m=&cu=https://www.dsu.edu.in/admissions-international/" target="_blank" rel="noreferrer">
+            <a href="https://international-admissions.dsu.edu.in" target="_blank" rel="noopener noreferrer">
               Enquire Now
               <ArrowRight className="ml-2 h-5 w-5" />
             </a>
