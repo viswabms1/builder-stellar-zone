@@ -497,7 +497,6 @@ export default function Navigation() {
   ];
 
   const internationalSubmenuItems = [
-    { name: "International Admissions", href: "https://dsu.edu.in/international/" },
     { name: "International Affairs", href: "https://dsu.edu.in/international/international-affairs/" },
     { name: "Study in India", href: "https://dsu.edu.in/int/study-in-india" },
   ];
