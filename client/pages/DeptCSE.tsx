@@ -467,12 +467,12 @@ export default function DeptCSE() {
                 <div className="group relative overflow-hidden rounded-lg border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-magenta/10 transition-all h-full cursor-pointer">
                   <div className="relative">
                     <div className="aspect-[1/1.3] w-full"></div>
-                    <img src="https://www.dsu.edu.in/images/Engineering/CSE-dept/faculty/Udaya.jpg" alt="Dr. Udaya Kumar Reddy K R" className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-500" />
+                    <img src="https://www.dsu.edu.in/images/Engineering/CSE-dept/faculty/Udaya.jpg" alt="Dr. Udaya Kumar Reddy K R" className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-105 transition-transform duration-500" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
                   </div>
-                  <div className="absolute bottom-0 p-3 w-full">
-                    <div className="text-white text-xs opacity-80">Professor</div>
-                    <div className="text-white font-semibold text-sm font-display line-clamp-2">Dr. Udaya Kumar Reddy K R</div>
+                  <div className="absolute bottom-0 p-2 w-full">
+                    <div className="text-white text-xs opacity-80 line-clamp-1">Dean</div>
+                    <div className="text-white font-semibold text-xs font-display line-clamp-2">Dr. Udaya Kumar Reddy K R</div>
                   </div>
                 </div>
               </Link>
@@ -480,17 +480,16 @@ export default function DeptCSE() {
 
             {/* Chairperson */}
             <div>
-              <p className="text-xs font-semibold text-brand-magenta uppercase tracking-wider mb-2">Chairperson</p>
               <Link to="/academics/engineering/computer-science/faculty/dr-girisha-g-s">
-                <div className="group relative overflow-hidden rounded-xl border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-magenta/10 transition-all cursor-pointer">
+                <div className="group relative overflow-hidden rounded-lg border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-magenta/10 transition-all h-full cursor-pointer">
                   <div className="relative">
-                    <div className="aspect-square w-full"></div>
-                    <img src="https://www.dsu.edu.in/images/Engineering/CSE-dept/faculty/Girisha_GS.jpg" alt="Dr. Girisha G S" className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-500" />
+                    <div className="aspect-[1/1.3] w-full"></div>
+                    <img src="https://www.dsu.edu.in/images/Engineering/CSE-dept/faculty/Girisha_GS.jpg" alt="Dr. Girisha G S" className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-105 transition-transform duration-500" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
                   </div>
-                  <div className="absolute bottom-0 p-3 w-full">
-                    <div className="text-white text-xs opacity-80">Professor</div>
-                    <div className="text-white font-semibold text-sm font-display line-clamp-2">Dr. Girisha G S</div>
+                  <div className="absolute bottom-0 p-2 w-full">
+                    <div className="text-white text-xs opacity-80 line-clamp-1">Chairperson</div>
+                    <div className="text-white font-semibold text-xs font-display line-clamp-2">Dr. Girisha G S</div>
                   </div>
                 </div>
               </Link>
@@ -498,17 +497,16 @@ export default function DeptCSE() {
 
             {/* Associate Chair 1 */}
             <div>
-              <p className="text-xs font-semibold text-brand-magenta uppercase tracking-wider mb-2">Associate Chair</p>
               <Link to="/academics/engineering/computer-science/faculty/dr-bipin-kumar-rai">
-                <div className="group relative overflow-hidden rounded-xl border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-magenta/10 transition-all cursor-pointer">
+                <div className="group relative overflow-hidden rounded-lg border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-magenta/10 transition-all h-full cursor-pointer">
                   <div className="relative">
-                    <div className="aspect-square w-full"></div>
-                    <img src="https://www.dsu.edu.in/images/Engineering/CSE-dept/faculty/DrBipin_1.jpg" alt="Dr. Bipin Kumar Rai" className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-500" />
+                    <div className="aspect-[1/1.3] w-full"></div>
+                    <img src="https://www.dsu.edu.in/images/Engineering/CSE-dept/faculty/DrBipin_1.jpg" alt="Dr. Bipin Kumar Rai" className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-105 transition-transform duration-500" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
                   </div>
-                  <div className="absolute bottom-0 p-3 w-full">
-                    <div className="text-white text-xs opacity-80">Professor</div>
-                    <div className="text-white font-semibold text-sm font-display line-clamp-2">Dr. Bipin Kumar Rai</div>
+                  <div className="absolute bottom-0 p-2 w-full">
+                    <div className="text-white text-xs opacity-80 line-clamp-1">Associate Chair</div>
+                    <div className="text-white font-semibold text-xs font-display line-clamp-2">Dr. Bipin Kumar Rai</div>
                   </div>
                 </div>
               </Link>
@@ -516,17 +514,16 @@ export default function DeptCSE() {
 
             {/* Associate Chair 2 */}
             <div>
-              <p className="text-xs font-semibold text-brand-magenta uppercase tracking-wider mb-2">Associate Chair</p>
               <Link to="/academics/engineering/computer-science/faculty/dr-revathi-v">
-                <div className="group relative overflow-hidden rounded-xl border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-magenta/10 transition-all cursor-pointer">
+                <div className="group relative overflow-hidden rounded-lg border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-magenta/10 transition-all h-full cursor-pointer">
                   <div className="relative">
-                    <div className="aspect-square w-full"></div>
-                    <img src="https://www.dsu.edu.in/images/Engineering/CSE-dept/faculty/Revathi_V.jpg" alt="Dr. Revathi V" className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-500" />
+                    <div className="aspect-[1/1.3] w-full"></div>
+                    <img src="https://www.dsu.edu.in/images/Engineering/CSE-dept/faculty/Revathi_V.jpg" alt="Dr. Revathi V" className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-105 transition-transform duration-500" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
                   </div>
-                  <div className="absolute bottom-0 p-3 w-full">
-                    <div className="text-white text-xs opacity-80">Associate Professor</div>
-                    <div className="text-white font-semibold text-sm font-display line-clamp-2">Dr. Revathi V</div>
+                  <div className="absolute bottom-0 p-2 w-full">
+                    <div className="text-white text-xs opacity-80 line-clamp-1">Associate Chair</div>
+                    <div className="text-white font-semibold text-xs font-display line-clamp-2">Dr. Revathi V</div>
                   </div>
                 </div>
               </Link>
