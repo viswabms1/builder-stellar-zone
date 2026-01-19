@@ -21,6 +21,7 @@ export default function Navigation() {
   const aboutCloseTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const academicsCloseTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const internationalAdmissionsCloseTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const internationalAdmissionsButtonRef = useRef<HTMLButtonElement>(null);
   const location = useLocation();
   const { theme } = useTheme();
 
