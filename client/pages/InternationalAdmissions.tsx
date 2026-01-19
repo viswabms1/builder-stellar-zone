@@ -407,27 +407,6 @@ function HeroSection() {
             </div>
           </div>
         </div>
-        <div className="flex-1">
-          <div className="rounded-3xl border border-blue-500/20 bg-card/80 p-6 shadow-xl backdrop-blur" id="apply-now">
-            <CardTitle className="text-2xl font-semibold text-foreground">
-              Results Out? Apply Now!
-            </CardTitle>
-            <CardDescription className="mt-2 text-sm leading-relaxed text-foreground">
-              Complete the enquiry form to receive personalised assistance on eligibility, visa support, scholarships, and onboarding.
-            </CardDescription>
-            <div className="mt-6 overflow-hidden rounded-2xl border border-blue-500/20">
-              <iframe
-                title="International Admissions Enquiry"
-                src="https://widgets.in8.nopaperforms.com/register?&r=&q=&w=f3162f9d0da45b80ccb6342d22a3c1cb&m=&cu=https://www.dsu.edu.in/admissions-international/"
-                className="h-[420px] w-full"
-                loading="lazy"
-              />
-            </div>
-            <p className="mt-4 text-xs text-foreground">
-              By submitting the form, you consent to communications from Dayananda Sagar University via email, SMS, and phone.
-            </p>
-          </div>
-        </div>
       </div>
     </section>
   );
