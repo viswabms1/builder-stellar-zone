@@ -261,8 +261,8 @@ function sanitizeMessage(message: string): string {
 }
 
 /**
- * Handle chat messages with Responses API
- * Uses GPT-5 Nano with persistent reasoning and state management
+ * Handle chat messages with Chat Completions API
+ * Uses GPT-4o-mini with temperature 0.3 for consistent responses
  */
 export const handleRagChat = async (req: Request, res: Response) => {
   try {
