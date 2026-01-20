@@ -1,165 +1,142 @@
 /**
  * ChatWidget Component - Production-Ready
  *
- * Uses the OFFICIAL OpenAI ChatKit web component to communicate
+ * Uses the OFFICIAL @openai/chatkit-react library to communicate
  * directly with the DSU Admission Assistant Agent Builder workflow.
  *
- * Flow:
- * 1. Get client_secret + domain_pk from /api/chat/session
- * 2. Render <openai-chatkit> web component with client-secret attribute
- * 3. ChatKit communicates DIRECTLY with OpenAI using your workflow
+ * This implementation uses the HostedApiConfig approach with a
+ * getClientSecret function that fetches tokens from our backend.
  *
- * The ChatKit CDN script must be loaded in index.html:
- * <script src="https://cdn.platform.openai.com/deployments/chatkit/chatkit.js" async></script>
+ * Flow:
+ * 1. useChatKit hook calls getClientSecret when needed
+ * 2. getClientSecret fetches a new token from /api/chat/session
+ * 3. ChatKit renders and communicates with OpenAI using the workflow
  */
 
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useCallback } from "react";
+import { ChatKit, useChatKit } from "@openai/chatkit-react";
 import { MessageSquare, X, Bot, Loader2, RefreshCw } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 
-// Extend JSX to recognize the openai-chatkit custom element
-declare global {
-    namespace JSX {
-        interface IntrinsicElements {
-            "openai-chatkit": React.DetailedHTMLProps<
-                React.HTMLAttributes<HTMLElement> & {
-                    "client-secret"?: string;
-                    "domain-pk"?: string;
-                },
-                HTMLElement
-            >;
-        }
+/**
+ * Fetches a new client secret from our backend API.
+ * This is called by ChatKit when it needs a token (initial load or refresh).
+ */
+async function fetchClientSecret(): Promise<string> {
+    console.log("[ChatWidget] Fetching client secret from backend...");
+
+    const response = await fetch("/api/chat/session", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+        const errorMessage = data.error || data.details || "Failed to create session";
+        console.error("[ChatWidget] API error:", errorMessage);
+        throw new Error(errorMessage);
     }
+
+    if (!data.clientSecret) {
+        throw new Error("No client secret received from server");
+    }
+
+    console.log("[ChatWidget] Client secret obtained successfully");
+    return data.clientSecret;
 }
 
-interface SessionData {
-    clientSecret: string;
-    domainPk: string;
-    workflowId: string;
-    expiresAt?: string;
-}
+/**
+ * Inner ChatKit component that uses the useChatKit hook.
+ * Separated to allow conditional rendering while maintaining hook rules.
+ */
+function ChatKitPanel({
+    onError,
+    onReady,
+}: {
+    onError: (error: Error) => void;
+    onReady: () => void;
+}) {
+    const { control } = useChatKit({
+        api: {
+            getClientSecret: async (_currentSecret: string | null) => {
+                return await fetchClientSecret();
+            },
+        },
+        onReady: () => {
+            console.log("[ChatWidget] ChatKit is ready");
+            onReady();
+        },
+        onError: (event: { error: Error }) => {
+            console.error("[ChatWidget] ChatKit error:", event.error);
+            onError(event.error);
+        },
+    });
 
-const QUICK_REPLIES = [
-    "Admission procedure?",
-    "Engineering courses?",
-    "Fee structure?",
-    "Campus facilities?",
-    "Placements?",
-    "Hostel info?",
-    "Scholarships?",
-    "Application deadline?",
-];
+    return (
+        <ChatKit
+            control={control}
+            className="h-full w-full"
+            style={{
+                height: "100%",
+                width: "100%",
+                display: "block",
+                ["--openai-chatkit-background" as string]: "#1a1a1a",
+                ["--openai-chatkit-text-color" as string]: "#e5e5e5",
+                ["--openai-chatkit-primary-color" as string]: "#f97316",
+            }}
+        />
+    );
+}
 
 export function ChatWidget() {
     const [isOpen, setIsOpen] = useState(false);
-    const [sessionData, setSessionData] = useState<SessionData | null>(null);
-    const [isLoading, setIsLoading] = useState(false);
+    const [isConnected, setIsConnected] = useState(false);
     const [error, setError] = useState<string | null>(null);
-    const [chatkitReady, setChatkitReady] = useState(false);
-    const chatkitRef = useRef<HTMLElement | null>(null);
+    const [key, setKey] = useState(0); // Used to force re-mount ChatKit
 
-    // Check if ChatKit custom element is registered
-    useEffect(() => {
-        const checkChatKit = () => {
-            if (customElements.get("openai-chatkit")) {
-                setChatkitReady(true);
-                console.log("[ChatWidget] openai-chatkit custom element is registered");
-            } else {
-                console.log("[ChatWidget] Waiting for openai-chatkit registration...");
-                setTimeout(checkChatKit, 500);
-            }
-        };
-        checkChatKit();
+    const handleError = useCallback((err: Error) => {
+        setError(err.message);
+        setIsConnected(false);
     }, []);
 
-    /**
-     * Get client_secret from backend - tied to Agent Builder workflow
-     */
-    const initializeChatKitSession = useCallback(async () => {
-        setIsLoading(true);
+    const handleReady = useCallback(() => {
+        setIsConnected(true);
         setError(null);
-
-        try {
-            console.log("[ChatWidget] Requesting ChatKit session...");
-
-            const response = await fetch("/api/chat/session", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-            });
-
-            const data = await response.json();
-
-            if (!response.ok) {
-                throw new Error(
-                    data.error || data.details || "Failed to create session"
-                );
-            }
-
-            if (data.clientSecret) {
-                setSessionData({
-                    clientSecret: data.clientSecret,
-                    domainPk: data.domainPk || "",
-                    workflowId: data.workflowId,
-                    expiresAt: data.expiresAt,
-                });
-                console.log(
-                    "[ChatWidget] ChatKit session ready - workflow:",
-                    data.workflowId
-                );
-                console.log("[ChatWidget] Domain PK:", data.domainPk ? "present" : "not set");
-            } else {
-                throw new Error("No client secret received from server");
-            }
-        } catch (err: unknown) {
-            const errorMessage =
-                err instanceof Error ? err.message : "Failed to connect to chat service";
-            console.error("[ChatWidget] Session error:", errorMessage);
-            setError(errorMessage);
-        } finally {
-            setIsLoading(false);
-        }
     }, []);
 
-    // Initialize ChatKit session when widget opens
-    useEffect(() => {
-        if (isOpen && !sessionData && !isLoading && chatkitReady) {
-            initializeChatKitSession();
-        }
-    }, [isOpen, sessionData, isLoading, chatkitReady, initializeChatKitSession]);
-
-    const resetSession = useCallback(async () => {
-        setSessionData(null);
+    const resetChat = useCallback(() => {
+        setKey((k) => k + 1);
+        setIsConnected(false);
         setError(null);
-        await initializeChatKitSession();
-    }, [initializeChatKitSession]);
+        console.log("[ChatWidget] Chat reset - new session will be created");
+    }, []);
 
     return (
         <>
             <style>{`
-        /* ChatKit custom styling */
-        .chatkit-wrapper openai-chatkit {
-          --openai-chatkit-background: #1a1a1a;
-          --openai-chatkit-text-color: #e5e5e5;
-          --openai-chatkit-primary-color: #f97316;
-          height: 100%;
-          width: 100%;
-          display: block;
-        }
-        
-        /* Marquee animation for quick replies */
-        @keyframes marquee {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
-        .marquee-container {
-          display: flex;
-          animation: marquee 20s linear infinite;
-        }
-        .marquee-container:hover {
-          animation-play-state: paused;
-        }
-      `}</style>
+                /* ChatKit custom styling */
+                .chatkit-wrapper {
+                    height: 100%;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                }
+                
+                /* Marquee animation for quick replies */
+                @keyframes marquee {
+                    0% { transform: translateX(0); }
+                    100% { transform: translateX(-50%); }
+                }
+                .marquee-container {
+                    display: flex;
+                    animation: marquee 20s linear infinite;
+                }
+                .marquee-container:hover {
+                    animation-play-state: paused;
+                }
+            `}</style>
 
             <AnimatePresence>
                 {isOpen && (
@@ -188,32 +165,26 @@ export function ChatWidget() {
                                         <span
                                             className={cn(
                                                 "w-1.5 h-1.5 rounded-full",
-                                                sessionData
+                                                isConnected
                                                     ? "bg-green-400"
-                                                    : isLoading
-                                                        ? "bg-yellow-400 animate-pulse"
-                                                        : error
-                                                            ? "bg-red-400"
-                                                            : "bg-gray-400"
+                                                    : error
+                                                        ? "bg-red-400"
+                                                        : "bg-yellow-400 animate-pulse"
                                             )}
                                         />
                                         <p className="text-[10px] text-white/70">
-                                            {sessionData
+                                            {isConnected
                                                 ? "Agent Builder Connected"
-                                                : isLoading
-                                                    ? "Connecting..."
-                                                    : error
-                                                        ? "Connection Error"
-                                                        : !chatkitReady
-                                                            ? "Loading ChatKit..."
-                                                            : "Admission Assistant"}
+                                                : error
+                                                    ? "Connection Error"
+                                                    : "Connecting..."}
                                         </p>
                                     </div>
                                 </div>
                             </div>
                             <div className="flex items-center gap-2">
                                 <button
-                                    onClick={resetSession}
+                                    onClick={resetChat}
                                     className="w-7 h-7 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
                                     title="New conversation"
                                 >
@@ -230,53 +201,23 @@ export function ChatWidget() {
 
                         {/* Chat Content */}
                         <div className="flex-1 overflow-hidden chatkit-wrapper">
-                            {!chatkitReady && (
-                                <div className="flex items-center justify-center h-full">
-                                    <div className="text-center">
-                                        <Loader2 className="w-8 h-8 animate-spin text-[#f97316] mx-auto mb-3" />
-                                        <p className="text-sm text-[#999]">Loading ChatKit...</p>
-                                    </div>
-                                </div>
-                            )}
-
-                            {chatkitReady && isLoading && (
-                                <div className="flex items-center justify-center h-full">
-                                    <div className="text-center">
-                                        <Loader2 className="w-8 h-8 animate-spin text-[#f97316] mx-auto mb-3" />
-                                        <p className="text-sm text-[#999]">
-                                            Connecting to Agent Builder...
-                                        </p>
-                                        <p className="text-xs text-[#666] mt-1">
-                                            Your workflow is loading
-                                        </p>
-                                    </div>
-                                </div>
-                            )}
-
-                            {chatkitReady && error && (
+                            {error ? (
                                 <div className="flex items-center justify-center h-full px-4">
                                     <div className="text-center">
                                         <p className="text-sm text-red-400 mb-3">{error}</p>
                                         <button
-                                            onClick={initializeChatKitSession}
+                                            onClick={resetChat}
                                             className="px-4 py-2 bg-[#f97316] text-white rounded-lg text-sm hover:bg-[#ea580c] transition-colors"
                                         >
                                             Try Again
                                         </button>
                                     </div>
                                 </div>
-                            )}
-
-                            {chatkitReady && sessionData && (
-                                <openai-chatkit
-                                    ref={chatkitRef as React.RefObject<HTMLElement>}
-                                    client-secret={sessionData.clientSecret}
-                                    domain-pk={sessionData.domainPk}
-                                    style={{
-                                        height: "100%",
-                                        width: "100%",
-                                        display: "block",
-                                    }}
+                            ) : (
+                                <ChatKitPanel
+                                    key={key}
+                                    onError={handleError}
+                                    onReady={handleReady}
                                 />
                             )}
                         </div>
@@ -286,7 +227,16 @@ export function ChatWidget() {
                             <div className="relative overflow-hidden">
                                 <div className="marquee-container">
                                     <div className="flex gap-2 shrink-0 pr-2">
-                                        {QUICK_REPLIES.map((reply, idx) => (
+                                        {[
+                                            "Admission procedure?",
+                                            "Engineering courses?",
+                                            "Fee structure?",
+                                            "Campus facilities?",
+                                            "Placements?",
+                                            "Hostel info?",
+                                            "Scholarships?",
+                                            "Application deadline?",
+                                        ].map((reply, idx) => (
                                             <button
                                                 key={`first-${idx}`}
                                                 className="text-xs px-3 py-1.5 rounded-full bg-[#2a2a2a] text-[#999] border border-[#333] hover:bg-[#f97316] hover:text-white hover:border-[#f97316] transition-all whitespace-nowrap cursor-pointer"
@@ -296,7 +246,16 @@ export function ChatWidget() {
                                         ))}
                                     </div>
                                     <div className="flex gap-2 shrink-0 pr-2">
-                                        {QUICK_REPLIES.map((reply, idx) => (
+                                        {[
+                                            "Admission procedure?",
+                                            "Engineering courses?",
+                                            "Fee structure?",
+                                            "Campus facilities?",
+                                            "Placements?",
+                                            "Hostel info?",
+                                            "Scholarships?",
+                                            "Application deadline?",
+                                        ].map((reply, idx) => (
                                             <button
                                                 key={`second-${idx}`}
                                                 className="text-xs px-3 py-1.5 rounded-full bg-[#2a2a2a] text-[#999] border border-[#333] hover:bg-[#f97316] hover:text-white hover:border-[#f97316] transition-all whitespace-nowrap cursor-pointer"
