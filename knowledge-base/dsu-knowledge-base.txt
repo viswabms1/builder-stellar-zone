@@ -32,31 +32,31 @@ PROGRAMS OFFERED
 ----------------
 
 COMPUTER SCIENCE & ENGINEERING DEPARTMENT:
-  • B.Tech Computer Science & Engineering (4 Years)
-  • B.Tech CSE (Artificial Intelligence & Machine Learning) (4 Years)
-  • B.Tech CSE (Data Science) (4 Years)
-  • B.Tech CSE (Cyber Security) (4 Years)
-  • B.Tech CSE (AI & Data Science) (4 Years)
-  • B.Tech CSE (Artificial Intelligence) (4 Years)
-  • B.Tech Computer Science & Technology (4 Years)
-  • B.Tech Computer Science & Medical Engineering (4 Years)
-  • B.Tech AI & Robotics (4 Years)
-  • M.Tech Computer Science & Engineering (2 Years)
-  • M.Tech CSE (AI & Machine Learning) (2 Years)
-  • M.Tech AI & Data Science (2 Years)
-  • M.Tech Artificial Intelligence (2 Years)
-  • M.Tech AI & Robotics (2 Years)
+  - B.Tech Computer Science & Engineering (4 Years)
+  - B.Tech CSE (Artificial Intelligence & Machine Learning) (4 Years)
+  - B.Tech CSE (Data Science) (4 Years)
+  - B.Tech CSE (Cyber Security) (4 Years)
+  - B.Tech CSE (AI & Data Science) (4 Years)
+  - B.Tech CSE (Artificial Intelligence) (4 Years)
+  - B.Tech Computer Science & Technology (4 Years)
+  - B.Tech Computer Science & Medical Engineering (4 Years)
+  - B.Tech AI & Robotics (4 Years)
+  - M.Tech Computer Science & Engineering (2 Years)
+  - M.Tech CSE (AI & Machine Learning) (2 Years)
+  - M.Tech AI & Data Science (2 Years)
+  - M.Tech Artificial Intelligence (2 Years)
+  - M.Tech AI & Robotics (2 Years)
 
 ELECTRONICS & COMMUNICATION DEPARTMENT:
-  • B.Tech Electronics & Communication Engineering (4 Years)
-  • M.Tech Embedded System (2 Years)
+  - B.Tech Electronics & Communication Engineering (4 Years)
+  - M.Tech Embedded System (2 Years)
 
 MECHANICAL ENGINEERING DEPARTMENT:
-  • B.Tech Mechanical Engineering (4 Years)
-  • M.Tech Design Engineering (2 Years)
+  - B.Tech Mechanical Engineering (4 Years)
+  - M.Tech Design Engineering (2 Years)
 
 AEROSPACE ENGINEERING DEPARTMENT:
-  • B.Tech Aerospace Engineering (4 Years)
+  - B.Tech Aerospace Engineering (4 Years)
 
 ELIGIBILITY REQUIREMENTS
 ------------------------
@@ -73,13 +73,13 @@ FEE STRUCTURE
 -------------
 
 B.Tech Programs (Annual Fees):
-  • CET: Not Available
-  • Ranking Based (JEE Mains/Uniguage/Comed-K): ₹3,22,000 - ₹4,35,000
-  • Others: ₹4,12,000 - ₹5,25,000
+  - CET: Not Available
+  - Ranking Based (JEE Mains/Uniguage/Comed-K): ₹3,22,000 - ₹4,35,000
+  - Others: ₹4,12,000 - ₹5,25,000
 
 M.Tech Programs (Annual Fees):
-  • PGCET: Not Available
-  • Annual: ₹1,62,000 - ₹2,52,000
+  - PGCET: Not Available
+  - Annual: ₹1,62,000 - ₹2,52,000
 
 Special Notes (M.Tech):
   Job placement guarantee: Upon successful completion, candidates are offered a job with a starting salary of INR 65,000 per month for a year.
@@ -95,13 +95,13 @@ PROGRAMS OFFERED
 ----------------
 
 DEPARTMENT OF COMPUTER APPLICATIONS:
-  • BCA - Bachelor of Computer Applications (3 Years)
-  • BCA in AI & Data Sciences (3 Years)
-  • B.Sc Data Science (3 Years)
-  • B.Sc Cyber Security (3 Years)
-  • MCA - Master of Computer Applications (2 Years)
-  • M.Sc Data Science (2 Years)
-  • M.Sc Cyber Security (2 Years)
+  - BCA - Bachelor of Computer Applications (3 Years)
+  - BCA in AI & Data Sciences (3 Years)
+  - B.Sc Data Science (3 Years)
+  - B.Sc Cyber Security (3 Years)
+  - MCA - Master of Computer Applications (2 Years)
+  - M.Sc Data Science (2 Years)
+  - M.Sc Cyber Security (2 Years)
 
 ELIGIBILITY REQUIREMENTS
 ------------------------
@@ -125,26 +125,26 @@ FEE STRUCTURE
 
 BCA & B.Sc Programs (Annual Fees):
   Data Science / Cyber Security:
-    • Term I: ₹87,000
-    • Term II: ₹75,000
-    • Total: ₹1,62,000
+    - Term I: ₹87,000
+    - Term II: ₹75,000
+    - Total: ₹1,62,000
   
   BCA / BCA AI & Data Sciences:
-    • Term I: ₹1,09,500
-    • Term II: ₹97,500
-    • Total: ₹2,07,000
+    - Term I: ₹1,09,500
+    - Term II: ₹97,500
+    - Total: ₹2,07,000
 
 MCA Program (Annual Fees):
-  • PGCET: Not Available
-  • Term I: ₹1,77,000
-  • Term II: ₹1,65,000
-  • Total: ₹3,42,000
+  - PGCET: Not Available
+  - Term I: ₹1,77,000
+  - Term II: ₹1,65,000
+  - Total: ₹3,42,000
 
 M.Sc Programs (Annual Fees):
-  • PGCET: Not Available
-  • Term I: ₹82,000
-  • Term II: ₹70,000
-  • Total: ₹1,52,000
+  - PGCET: Not Available
+  - Term I: ₹82,000
+  - Term II: ₹70,000
+  - Total: ₹1,52,000
 
 More Info: https://dsu.edu.in/eligibility
 
@@ -157,10 +157,10 @@ PROGRAMS OFFERED
 ----------------
 
 DEPARTMENT OF LEGAL STUDIES:
-  • B.A. LL.B (Hons) (5 Years)
-  • B.B.A. LL.B (Hons) (5 Years)
-  • LL.B (3 Years)
-  • LL.M (1 Year)
+  - B.A. LL.B (Hons) (5 Years)
+  - B.B.A. LL.B (Hons) (5 Years)
+  - LL.B (3 Years)
+  - LL.M (1 Year)
 
 ELIGIBILITY REQUIREMENTS
 ------------------------
@@ -178,20 +178,20 @@ FEE STRUCTURE
 -------------
 
 B.A. LL.B (Hons) & B.B.A. LL.B (Hons) (Annual Fees):
-  • Tuition Fee: ₹2,02,000
-  • Other Fee: ₹50,000
-  • Total: ₹2,52,000
+  - Tuition Fee: ₹2,02,000
+  - Other Fee: ₹50,000
+  - Total: ₹2,52,000
   💰 Scholarship Available
 
 LL.B (3 Year) (Annual Fees):
-  • Tuition Fee: ₹1,37,000
-  • Other Fee: ₹40,000
-  • Total: ₹1,77,000
+  - Tuition Fee: ₹1,37,000
+  - Other Fee: ₹40,000
+  - Total: ₹1,77,000
 
 LL.M (Annual Fees):
-  • Tuition Fee: ₹1,10,000
-  • Other Fee: ₹35,000
-  • Total: ₹1,45,000
+  - Tuition Fee: ₹1,10,000
+  - Other Fee: ₹35,000
+  - Total: ₹1,45,000
 
 Special Notes:
   LL.M Tracks: Corporate & Commercial Law, Intellectual Property Rights, Human Rights Law
@@ -207,11 +207,11 @@ PROGRAMS OFFERED
 ----------------
 
 DEPARTMENT OF LIFE SCIENCES:
-  • B.Sc Life Science (Biotechnology, Biochemistry, Genetics) (3 Years)
-  • M.Sc Biochemistry (2 Years)
-  • M.Sc Biotechnology (2 Years)
-  • M.Sc Microbiology (2 Years)
-  • M.Sc Molecular Biology and Genetics (2 Years)
+  - B.Sc Life Science (Biotechnology, Biochemistry, Genetics) (3 Years)
+  - M.Sc Biochemistry (2 Years)
+  - M.Sc Biotechnology (2 Years)
+  - M.Sc Microbiology (2 Years)
+  - M.Sc Molecular Biology and Genetics (2 Years)
 
 ELIGIBILITY REQUIREMENTS
 ------------------------
@@ -235,15 +235,15 @@ FEE STRUCTURE
 -------------
 
 B.Sc Life Science (Annual Fees):
-  • Term I: ₹97,000
-  • Term II: ₹85,000
-  • Total: ₹1,82,000
+  - Term I: ₹97,000
+  - Term II: ₹85,000
+  - Total: ₹1,82,000
 
 M.Sc Programs (Annual Fees):
-  • PGCET: Not Available
-  • Term I: ₹1,02,000
-  • Term II: ₹90,000
-  • Total: ₹1,92,000
+  - PGCET: Not Available
+  - Term I: ₹1,02,000
+  - Term II: ₹90,000
+  - Total: ₹1,92,000
 
 More Info: https://dsu.edu.in/eligibility
 
@@ -256,14 +256,14 @@ PROGRAMS OFFERED
 ----------------
 
 DEPARTMENT OF COMMERCE:
-  • B.Com Regular (3 Years)
-  • B.Com ACCA Integrated (3 Years)
-  • B.Com CMA Integrated (3 Years)
-  • B.Com With CA Coaching (3 Years)
+  - B.Com Regular (3 Years)
+  - B.Com ACCA Integrated (3 Years)
+  - B.Com CMA Integrated (3 Years)
+  - B.Com With CA Coaching (3 Years)
 
 DEPARTMENT OF MANAGEMENT:
-  • BBA Regular (3 Years)
-  • MBA (2 Years)
+  - BBA Regular (3 Years)
+  - MBA (2 Years)
 
 ELIGIBILITY REQUIREMENTS
 ------------------------
@@ -282,25 +282,25 @@ FEE STRUCTURE
 
 B.Com Programs (Annual Fees):
   Regular:
-    • Term I: ₹79,500
-    • Term II: ₹77,500
-    • Total (Incl. Library Deposit): ₹1,57,000
+    - Term I: ₹79,500
+    - Term II: ₹77,500
+    - Total (Incl. Library Deposit): ₹1,57,000
   
   ACCA Integrated / CMA Integrated / CA Coaching:
-    • Term I: ₹99,500
-    • Term II: ₹87,500
-    • Total (Incl. Library Deposit): ₹1,87,000
+    - Term I: ₹99,500
+    - Term II: ₹87,500
+    - Total (Incl. Library Deposit): ₹1,87,000
 
 BBA Regular (Annual Fees):
-  • Term I: ₹1,07,000
-  • Term II: ₹1,05,000
-  • Total (Incl. Library Deposit): ₹2,12,000
+  - Term I: ₹1,07,000
+  - Term II: ₹1,05,000
+  - Total (Incl. Library Deposit): ₹2,12,000
 
 MBA (Annual Fees):
-  • PGCET: Not Available
-  • Term I: ₹3,07,000
-  • Term II: ₹2,95,000
-  • Total: ₹6,02,000
+  - PGCET: Not Available
+  - Term I: ₹3,07,000
+  - Term II: ₹2,95,000
+  - Total: ₹6,02,000
 
 Special Notes:
   MBA offers dual specialization options covering Business Analytics, Finance, Marketing, HR, and Operations.
@@ -316,36 +316,36 @@ PROGRAMS OFFERED
 ----------------
 
 COLLEGE OF PHARMACEUTICAL SCIENCES:
-  • B.Pharm (4 Years)
-  • M.Pharm Pharmaceutics (2 Years)
-  • M.Pharm Pharmacology (2 Years)
-  • M.Pharm Regulatory Affairs (2 Years)
-  • Pharm.D (6 Years)
+  - B.Pharm (4 Years)
+  - M.Pharm Pharmaceutics (2 Years)
+  - M.Pharm Pharmacology (2 Years)
+  - M.Pharm Regulatory Affairs (2 Years)
+  - Pharm.D (6 Years)
 
 COLLEGE OF NURSING SCIENCES:
-  • B.Sc Nursing (4 Years)
-  • PB B.Sc Nursing (2 Years)
-  • M.Sc Medical Surgical Nursing (2 Years)
-  • M.Sc Child Health Nursing (2 Years)
-  • M.Sc Mental Health Nursing (2 Years)
-  • M.Sc Obstetrics and Genealogical Nursing (2 Years)
-  • M.Sc Community Health Nursing (2 Years)
+  - B.Sc Nursing (4 Years)
+  - PB B.Sc Nursing (2 Years)
+  - M.Sc Medical Surgical Nursing (2 Years)
+  - M.Sc Child Health Nursing (2 Years)
+  - M.Sc Mental Health Nursing (2 Years)
+  - M.Sc Obstetrics and Genealogical Nursing (2 Years)
+  - M.Sc Community Health Nursing (2 Years)
 
 COLLEGE OF PHYSIOTHERAPY:
-  • Bachelor's in Physiotherapy (BPT) (4 Years)
-  • M.P.T Sports & Muscular Skeletal (2 Years)
-  • M.P.T Cardio Pulmonary (2 Years)
-  • M.P.T Women's Health (2 Years)
-  • M.P.T Neuro (2 Years)
-  • M.P.T Community Based Rehabilitation (2 Years)
+  - Bachelor's in Physiotherapy (BPT) (4 Years)
+  - M.P.T Sports & Muscular Skeletal (2 Years)
+  - M.P.T Cardio Pulmonary (2 Years)
+  - M.P.T Women's Health (2 Years)
+  - M.P.T Neuro (2 Years)
+  - M.P.T Community Based Rehabilitation (2 Years)
 
 COLLEGE OF ALLIED HEALTH SCIENCES:
-  • B.Sc Medical Radiology & Imaging Technology (3 Years)
-  • B.Sc Medical Laboratory Technology (3 Years)
-  • B.Sc Anesthesia and Operation Theatre Technology (3 Years)
-  • B.Sc Emergency & Trauma Care Technology (3 Years)
-  • B.Sc Cardiac Care Technology (3 Years)
-  • MPH - Masters in Public Health (2 Years)
+  - B.Sc Medical Radiology & Imaging Technology (3 Years)
+  - B.Sc Medical Laboratory Technology (3 Years)
+  - B.Sc Anesthesia and Operation Theatre Technology (3 Years)
+  - B.Sc Emergency & Trauma Care Technology (3 Years)
+  - B.Sc Cardiac Care Technology (3 Years)
+  - MPH - Masters in Public Health (2 Years)
 
 ELIGIBILITY REQUIREMENTS
 ------------------------
@@ -383,54 +383,54 @@ FEE STRUCTURE
 -------------
 
 B.Pharm (Annual Fees):
-  • CET: Not Available
-  • Others: ₹2,82,000
+  - CET: Not Available
+  - Others: ₹2,82,000
 
 M.Pharm Programs (Annual Fees):
-  • PGCET: Not Available
-  • Others: ₹3,02,000
+  - PGCET: Not Available
+  - Others: ₹3,02,000
 
 Pharm.D (Annual Fees):
-  • PGCET: Not Available
-  • Others: ₹4,52,000
+  - PGCET: Not Available
+  - Others: ₹4,52,000
 
 B.Sc Nursing (Annual Fees):
-  • CET: Not Available
-  • Term I: ₹97,000
-  • Term II: ₹85,000
-  • Total: ₹1,82,000
+  - CET: Not Available
+  - Term I: ₹97,000
+  - Term II: ₹85,000
+  - Total: ₹1,82,000
 
 PB B.Sc Nursing (Annual Fees):
-  • CET: Not Available
-  • Others: ₹92,000
+  - CET: Not Available
+  - Others: ₹92,000
 
 M.Sc Nursing Programs (Annual Fees):
-  • PGCET: Not Available
-  • Others: ₹1,42,000
+  - PGCET: Not Available
+  - Others: ₹1,42,000
 
 BPT (Annual Fees):
-  • CET: Not Available
-  • Others: ₹2,17,000
+  - CET: Not Available
+  - Others: ₹2,17,000
 
 M.P.T Programs (Annual Fees):
-  • PGCET: Not Available
-  • Others: ₹2,77,000
+  - PGCET: Not Available
+  - Others: ₹2,77,000
 
 College of Allied Health Sciences - B.Sc Programs (Annual Fees):
   Medical Radiology & Imaging / Anesthesia & OT / Cardiac Care:
-    • Tuition Fee: ₹1,42,000
-    • Other Fee: ₹30,000
-    • Total: ₹1,72,000
+    - Tuition Fee: ₹1,42,000
+    - Other Fee: ₹30,000
+    - Total: ₹1,72,000
   
   Medical Laboratory / Emergency & Trauma Care:
-    • Tuition Fee: ₹1,12,000
-    • Other Fee: ₹30,000
-    • Total: ₹1,42,000
+    - Tuition Fee: ₹1,12,000
+    - Other Fee: ₹30,000
+    - Total: ₹1,42,000
 
 MPH - Masters in Public Health (Annual Fees):
-  • Tuition Fee: ₹1,12,000
-  • Others Fee: ₹30,000
-  • Total: ₹1,42,000
+  - Tuition Fee: ₹1,12,000
+  - Others Fee: ₹30,000
+  - Total: ₹1,42,000
 
 More Info: https://dsu.edu.in/eligibility
 
@@ -443,7 +443,7 @@ PROGRAMS OFFERED
 ----------------
 
 DEPARTMENT OF JOURNALISM & MASS COMMUNICATION:
-  • B.A. Journalism and Mass Communication (3 Years)
+  - B.A. Journalism and Mass Communication (3 Years)
 
 ELIGIBILITY REQUIREMENTS
 ------------------------
@@ -455,9 +455,9 @@ FEE STRUCTURE
 -------------
 
 B.A. Journalism and Mass Communication (Annual Fees):
-  • Term I: ₹77,000
-  • Term II: ₹75,000
-  • Total: ₹1,52,000
+  - Term I: ₹77,000
+  - Term II: ₹75,000
+  - Total: ₹1,52,000
 
 Special Notes:
   Includes newsroom simulations, digital production labs, and internships with media houses.
@@ -473,10 +473,10 @@ PROGRAMS OFFERED
 ----------------
 
 DEPARTMENT OF DESIGN:
-  • B.Design Product Design (4 Years)
-  • B.Design User Experience Design (4 Years)
-  • B.Design Animation and VFX (4 Years)
-  • B.Design Game Design (4 Years)
+  - B.Design Product Design (4 Years)
+  - B.Design User Experience Design (4 Years)
+  - B.Design Animation and VFX (4 Years)
+  - B.Design Game Design (4 Years)
 
 ELIGIBILITY REQUIREMENTS
 ------------------------
@@ -488,7 +488,7 @@ FEE STRUCTURE
 -------------
 
 All B.Design Programs (Annual Fees):
-  • Total: ₹3,02,000
+  - Total: ₹3,02,000
 
 More Info: https://dsu.edu.in/eligibility
 
@@ -497,36 +497,36 @@ RESEARCH & INNOVATION
 ================================================================================
 
 Key Highlights:
-  • Hackathons & 48-hour innovation sprints
-  • NASA Space Apps & international competitions
-  • Student-led research labs & mentorship
-  • AI labs and cutting-edge research facilities
-  • Industry partnerships and collaborative research
-  • Patent filing and intellectual property support
+  - Hackathons & 48-hour innovation sprints
+  - NASA Space Apps & international competitions
+  - Student-led research labs & mentorship
+  - AI labs and cutting-edge research facilities
+  - Industry partnerships and collaborative research
+  - Patent filing and intellectual property support
 
 Entrepreneurship Ecosystem:
-  • DERBI Foundation - Established 2009
-  • AIC-DSU Innovation Foundation - Government backed by NITI Aayog
-  • 25+ startups incubated
-  • ₹50Cr+ funding raised
-  • 150+ jobs created
+  - DERBI Foundation - Established 2009
+  - AIC-DSU Innovation Foundation - Government backed by NITI Aayog
+  - 25+ startups incubated
+  - ₹50Cr+ funding raised
+  - 150+ jobs created
 
 ================================================================================
 CAMPUS LIFE
 ================================================================================
 
 Four Pillars of Excellence:
-  • Research & Innovation - Hackathons, hands-on projects, AI labs
-  • Leadership & Careers - Startup incubation, industry partnerships
-  • Creative Expression - Performing arts, cultural events
-  • Sports & Wellness - Athletic programs, community service
+  - Research & Innovation - Hackathons, hands-on projects, AI labs
+  - Leadership & Careers - Startup incubation, industry partnerships
+  - Creative Expression - Performing arts, cultural events
+  - Sports & Wellness - Athletic programs, community service
 
 World-Class Facilities:
-  • State-of-the-art library with 2M+ books
-  • AI labs and maker spaces with 3D printing
-  • Modern hostels with high-speed connectivity
-  • Sports facilities and wellness centers
-  • Performance venues and recreational areas
+  - State-of-the-art library with 2M+ books
+  - AI labs and maker spaces with 3D printing
+  - Modern hostels with high-speed connectivity
+  - Sports facilities and wellness centers
+  - Performance venues and recreational areas
 
 Student Organizations: 100+ clubs and student organizations
 
@@ -565,33 +565,33 @@ IMPORTANT EXTERNAL LINKS
 PARTNERSHIPS & COLLABORATIONS
 ================================================================================
 
-  • NVIDIA AI Architecture Partnership
-  • Industry collaborations with leading tech companies
-  • International university partnerships
-  • Research collaborations with IITs and premier institutions
+  - NVIDIA AI Architecture Partnership
+  - Industry collaborations with leading tech companies
+  - International university partnerships
+  - Research collaborations with IITs and premier institutions
 
 ================================================================================
 INFRASTRUCTURE
 ================================================================================
 
-  • World-class campus with modern facilities
-  • AI and research labs
-  • Library with extensive digital archives
-  • Maker spaces and innovation hubs
-  • Sports complexes
-  • Hostel accommodation
-  • Healthcare facilities
+  - World-class campus with modern facilities
+  - AI and research labs
+  - Library with extensive digital archives
+  - Maker spaces and innovation hubs
+  - Sports complexes
+  - Hostel accommodation
+  - Healthcare facilities
 
 ================================================================================
 KEY ACHIEVEMENTS
 ================================================================================
 
-  • NAAC A+ Accreditation
-  • 25,000+ Active Students
-  • 100+ Clubs & Societies
-  • High placement rates with top companies
-  • International research collaborations
-  • Multiple patents and publications
+  - NAAC A+ Accreditation
+  - 25,000+ Active Students
+  - 100+ Clubs & Societies
+  - High placement rates with top companies
+  - International research collaborations
+  - Multiple patents and publications
 
 ================================================================================
 CONTACT INFORMATION
@@ -617,18 +617,18 @@ Hostel & Accommodation:
 QUICK FACTS
 ================================================================================
 
-  • NAAC A+ Accredited University
-  • 25,000+ Active Students
-  • 100+ Clubs & Societies
-  • India's AI-First University
-  • Multiple schools offering diverse programs
-  • Strong industry partnerships
-  • World-class infrastructure
-  • Active research and innovation ecosystem
-  • International student programs
-  • Government-backed incubation center (AIC-DSU)
-  • Comprehensive fee structures and scholarships available
-  • Multiple admission pathways (CET, CLAT, JEE, Direct)
+  - NAAC A+ Accredited University
+  - 25,000+ Active Students
+  - 100+ Clubs & Societies
+  - India's AI-First University
+  - Multiple schools offering diverse programs
+  - Strong industry partnerships
+  - World-class infrastructure
+  - Active research and innovation ecosystem
+  - International student programs
+  - Government-backed incubation center (AIC-DSU)
+  - Comprehensive fee structures and scholarships available
+  - Multiple admission pathways (CET, CLAT, JEE, Direct)
 
 ================================================================================
 Generated: 1/20/2026
