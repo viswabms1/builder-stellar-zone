@@ -16,11 +16,6 @@ Website: https://8660401238.vercel.app
 Description:
 Dayananda Sagar University is India's AI-First University offering world-class education in Engineering, Law, Health Sciences, Commerce, Basic and Applied Sciences, Computer Applications, Design, and Humanities.
 
-================================================================================
-COMPLETE PROGRAMS, FEES, AND ELIGIBILITY DETAILS
-Academic Year 2026-27
-================================================================================
-
 IMPORTANT NOTES:
 • All fees listed are annual fees for the academic year 2026-27
 • CET = Common Entrance Test (Karnataka)
@@ -28,1125 +23,478 @@ IMPORTANT NOTES:
 • Fees may vary based on government revisions
 • For detailed brochures and application: https://dsu.edu.in/eligibility
 
-
 ================================================================================
 SCHOOL OF ENGINEERING
 ================================================================================
 Innovation-driven education for the tech-savvy world with cutting-edge AI labs and research facilities.
 
+PROGRAMS OFFERED
+----------------
 
---------------------------------------------------------------------------------
-DEPARTMENT: Computer Science & Engineering Department
---------------------------------------------------------------------------------
+COMPUTER SCIENCE & ENGINEERING DEPARTMENT:
+  • B.Tech Computer Science & Engineering (4 Years)
+  • B.Tech CSE (Artificial Intelligence & Machine Learning) (4 Years)
+  • B.Tech CSE (Data Science) (4 Years)
+  • B.Tech CSE (Cyber Security) (4 Years)
+  • B.Tech CSE (AI & Data Science) (4 Years)
+  • B.Tech CSE (Artificial Intelligence) (4 Years)
+  • B.Tech Computer Science & Technology (4 Years)
+  • B.Tech Computer Science & Medical Engineering (4 Years)
+  • B.Tech AI & Robotics (4 Years)
+  • M.Tech Computer Science & Engineering (2 Years)
+  • M.Tech CSE (AI & Machine Learning) (2 Years)
+  • M.Tech AI & Data Science (2 Years)
+  • M.Tech Artificial Intelligence (2 Years)
+  • M.Tech AI & Robotics (2 Years)
 
+ELECTRONICS & COMMUNICATION DEPARTMENT:
+  • B.Tech Electronics & Communication Engineering (4 Years)
+  • M.Tech Embedded System (2 Years)
 
-Program: B.Tech Computer Science & Engineering
-Level: UG | Duration: 4 Years
+MECHANICAL ENGINEERING DEPARTMENT:
+  • B.Tech Mechanical Engineering (4 Years)
+  • M.Tech Design Engineering (2 Years)
 
-Eligibility:
-Pass in PUC / 10+2 examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry / Biotechnology / Biology / Computer Science / Electronics / Technical Vocational subjects and obtained at least 45% marks (40% in case of candidate belonging to SC/ST & OBC category) in the above subjects taken together.
+AEROSPACE ENGINEERING DEPARTMENT:
+  • B.Tech Aerospace Engineering (4 Years)
 
-Fee Structure (Annual):
+ELIGIBILITY REQUIREMENTS
+------------------------
+
+UNDERGRADUATE (B.Tech) PROGRAMS:
+  Pass in PUC / 10+2 examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry / Biotechnology / Biology / Computer Science / Electronics / Technical Vocational subjects and obtained at least 45% marks (40% in case of candidate belonging to SC/ST & OBC category) in the above subjects taken together.
+
+POSTGRADUATE (M.Tech) PROGRAMS:
+  Pass in B.Tech in ECE, CSE, ISE, Biomedical, Medical Electronics, Electronics & Instrumentation, EEE, Telecommunications, Mechatronics and other related branches with a minimum of 50% marks in aggregate (45% in case of candidate belonging to SC/ST & OBC).
+  
+  Exception (Design Engineering): B.Tech in Mechanical, Industrial Engineering & Management, Aerospace, Aeronautical, Automobile, or related disciplines with minimum 50% marks in aggregate (45% for SC/ST/OBC).
+
+FEE STRUCTURE
+-------------
+
+B.Tech Programs (Annual Fees):
   • CET: Not Available
-  • Ranking Based (JEE Mains/Uniguage/Comed-K): ₹4,12,000
-  • Others: ₹4,92,000
+  • Ranking Based (JEE Mains/Uniguage/Comed-K): ₹3,22,000 - ₹4,35,000
+  • Others: ₹4,12,000 - ₹5,25,000
 
-More Info: https://dsu.edu.in/eligibility
-----------------------------------------
-
-Program: B.Tech CSE (Artificial Intelligence & Machine Learning)
-Level: UG | Duration: 4 Years
-
-Eligibility:
-Pass in PUC / 10+2 examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry / Biotechnology / Biology / Computer Science / Electronics / Technical Vocational subjects and obtained at least 45% marks (40% in case of candidate belonging to SC/ST & OBC category) in the above subjects taken together.
-
-Fee Structure (Annual):
-  • CET: Not Available
-  • Ranking Based (JEE Mains/Uniguage/Comed-K): ₹4,35,000
-  • Others: ₹5,25,000
-
-More Info: https://dsu.edu.in/eligibility
-----------------------------------------
-
-Program: B.Tech CSE (Data Science)
-Level: UG | Duration: 4 Years
-
-Eligibility:
-Pass in PUC / 10+2 examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry / Biotechnology / Biology / Computer Science / Electronics / Technical Vocational subjects and obtained at least 45% marks (40% in case of candidate belonging to SC/ST & OBC category) in the above subjects taken together.
-
-Fee Structure (Annual):
-  • CET: Not Available
-  • Ranking Based (JEE Mains/Uniguage/Comed-K): ₹4,12,000
-  • Others: ₹4,92,000
-
-More Info: https://dsu.edu.in/eligibility
-----------------------------------------
-
-Program: B.Tech CSE (Cyber Security)
-Level: UG | Duration: 4 Years
-
-Eligibility:
-Pass in PUC / 10+2 examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry / Biotechnology / Biology / Computer Science / Electronics / Technical Vocational subjects and obtained at least 45% marks (40% in case of candidate belonging to SC/ST & OBC category) in the above subjects taken together.
-
-Fee Structure (Annual):
-  • CET: Not Available
-  • Ranking Based (JEE Mains/Uniguage/Comed-K): ₹4,12,000
-  • Others: ₹4,92,000
-
-More Info: https://dsu.edu.in/eligibility
-----------------------------------------
-
-Program: B.Tech CSE (AI & Data Science)
-Level: UG | Duration: 4 Years
-
-Eligibility:
-Pass in PUC / 10+2 examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry / Biotechnology / Biology / Computer Science / Electronics / Technical Vocational subjects and obtained at least 45% marks (40% in case of candidate belonging to SC/ST & OBC category) in the above subjects taken together.
-
-Fee Structure (Annual):
-  • CET: Not Available
-  • Ranking Based (JEE Mains/Uniguage/Comed-K): ₹4,35,000
-  • Others: ₹5,25,000
-
-More Info: https://dsu.edu.in/eligibility
-----------------------------------------
-
-Program: B.Tech CSE (Artificial Intelligence)
-Level: UG | Duration: 4 Years
-
-Eligibility:
-Pass in PUC / 10+2 examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry / Biotechnology / Biology / Computer Science / Electronics / Technical Vocational subjects and obtained at least 45% marks (40% in case of candidate belonging to SC/ST & OBC category) in the above subjects taken together.
-
-Fee Structure (Annual):
-  • CET: Not Available
-  • Ranking Based (JEE Mains/Uniguage/Comed-K): ₹4,35,000
-  • Others: ₹5,25,000
-
-More Info: https://dsu.edu.in/eligibility
-----------------------------------------
-
-Program: B.Tech Computer Science & Technology
-Level: UG | Duration: 4 Years
-
-Eligibility:
-Pass in PUC / 10+2 examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry / Biotechnology / Biology / Computer Science / Electronics / Technical Vocational subjects and obtained at least 45% marks (40% in case of candidate belonging to SC/ST & OBC category) in the above subjects taken together.
-
-Fee Structure (Annual):
-  • CET: Not Available
-  • Ranking Based (JEE Mains/Uniguage/Comed-K): ₹4,12,000
-  • Others: ₹4,92,000
-
-More Info: https://dsu.edu.in/eligibility
-----------------------------------------
-
-Program: B.Tech Computer Science & Medical Engineering
-Level: UG | Duration: 4 Years
-
-Eligibility:
-Pass in PUC / 10+2 examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry / Biotechnology / Biology / Computer Science / Electronics / Technical Vocational subjects and obtained at least 45% marks (40% in case of candidate belonging to SC/ST & OBC category) in the above subjects taken together.
-
-Fee Structure (Annual):
-  • CET: Not Available
-  • Ranking Based (JEE Mains/Uniguage/Comed-K): ₹4,12,000
-  • Others: ₹4,92,000
-
-More Info: https://dsu.edu.in/eligibility
-----------------------------------------
-
-Program: B.Tech AI & Robotics
-Level: UG | Duration: 4 Years
-
-Eligibility:
-Pass in PUC / 10+2 examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry / Biotechnology / Biology / Computer Science / Electronics / Technical Vocational subjects and obtained at least 45% marks (40% in case of candidate belonging to SC/ST & OBC category) in the above subjects taken together.
-
-Fee Structure (Annual):
-  • CET: Not Available
-  • Ranking Based (JEE Mains/Uniguage/Comed-K): ₹4,12,000
-  • Others: ₹4,92,000
-
-More Info: https://dsu.edu.in/eligibility
-----------------------------------------
-
-Program: M.Tech Computer Science & Engineering
-Level: PG | Duration: 2 Years
-
-Eligibility:
-Pass in B.Tech in ECE, CSE, ISE, Biomedical, Medical Electronics, Electronics & Instrumentation, EEE, Telecommunications, Mechatronics and other circuit Branches with a minimum of 50% marks in aggregate (45% in case of candidate belonging to SC/ST & OBC).
-
-Fee Structure (Annual):
+M.Tech Programs (Annual Fees):
   • PGCET: Not Available
-  • Others (Annual): ₹2,52,000
+  • Annual: ₹1,62,000 - ₹2,52,000
 
-Special Notes:
-Job placement guarantee: Upon successful completion, candidates are offered a job with a starting salary of INR 65,000 per month for a year.
-
-More Info: https://dsu.edu.in/eligibility
-----------------------------------------
-
-Program: M.Tech CSE (AI & Machine Learning)
-Level: PG | Duration: 2 Years
-
-Eligibility:
-Pass in B.Tech in ECE, CSE, ISE, Biomedical, Medical Electronics, Electronics & Instrumentation, EEE, Telecommunications, Mechatronics and other circuit Branches with a minimum of 50% marks in aggregate (45% in case of candidate belonging to SC/ST & OBC).
-
-Fee Structure (Annual):
-  • PGCET: Not Available
-  • Others (Annual): ₹2,52,000
-
-Special Notes:
-Job placement guarantee: Upon successful completion, candidates are offered a job with a starting salary of INR 65,000 per month for a year.
+Special Notes (M.Tech):
+  Job placement guarantee: Upon successful completion, candidates are offered a job with a starting salary of INR 65,000 per month for a year.
 
 More Info: https://dsu.edu.in/eligibility
-----------------------------------------
-
-Program: M.Tech AI & Data Science
-Level: PG | Duration: 2 Years
-
-Eligibility:
-Pass in B.Tech in ECE, CSE, ISE, Biomedical, Medical Electronics, Electronics & Instrumentation, EEE, Telecommunications, Mechatronics and other circuit Branches with a minimum of 50% marks in aggregate (45% in case of candidate belonging to SC/ST & OBC).
-
-Fee Structure (Annual):
-  • PGCET: Not Available
-  • Others (Annual): ₹2,52,000
-
-Special Notes:
-Job placement guarantee: Upon successful completion, candidates are offered a job with a starting salary of INR 65,000 per month for a year.
-
-More Info: https://dsu.edu.in/eligibility
-----------------------------------------
-
-Program: M.Tech Artificial Intelligence
-Level: PG | Duration: 2 Years
-
-Eligibility:
-Pass in B.Tech in ECE, CSE, ISE, Biomedical, Medical Electronics, Electronics & Instrumentation, EEE, Telecommunications, Mechatronics and other circuit Branches with a minimum of 50% marks in aggregate (45% in case of candidate belonging to SC/ST & OBC).
-
-Fee Structure (Annual):
-  • PGCET: Not Available
-  • Others (Annual): ₹2,52,000
-
-Special Notes:
-Job placement guarantee: Upon successful completion, candidates are offered a job with a starting salary of INR 65,000 per month for a year.
-
-More Info: https://dsu.edu.in/eligibility
-----------------------------------------
-
-Program: M.Tech AI & Robotics
-Level: PG | Duration: 2 Years
-
-Eligibility:
-Pass in B.Tech in ECE, CSE, ISE, Biomedical, Medical Electronics, Electronics & Instrumentation, EEE, Telecommunications, Mechatronics and other circuit Branches with a minimum of 50% marks in aggregate (45% in case of candidate belonging to SC/ST & OBC).
-
-Fee Structure (Annual):
-  • PGCET: Not Available
-  • Others (Annual): ₹2,52,000
-
-Special Notes:
-Job placement guarantee: Upon successful completion, candidates are offered a job with a starting salary of INR 65,000 per month for a year.
-
-More Info: https://dsu.edu.in/eligibility
-----------------------------------------
-
---------------------------------------------------------------------------------
-DEPARTMENT: Electronics & Communication Department
---------------------------------------------------------------------------------
-
-
-Program: B.Tech Electronics & Communication Engineering
-Level: UG | Duration: 4 Years
-
-Eligibility:
-Pass in PUC / 10+2 examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry / Biotechnology / Biology / Computer Science / Electronics / Technical Vocational subjects and obtained at least 45% marks (40% in case of candidate belonging to SC/ST & OBC category) in the above subjects taken together.
-
-Fee Structure (Annual):
-  • CET: Not Available
-  • Ranking Based (JEE Mains/Uniguage/Comed-K): ₹3,22,000
-  • Others: ₹4,12,000
-
-More Info: https://dsu.edu.in/eligibility
-----------------------------------------
-
-Program: M.Tech Embedded System
-Level: PG | Duration: 2 Years
-
-Eligibility:
-Pass in B.Tech in ECE, CSE, ISE, Biomedical, Medical Electronics, Electronics & Instrumentation, EEE, Telecommunications, Mechatronics and other circuit Branches with a minimum of 50% marks in aggregate (45% in case of candidate belonging to SC/ST & OBC).
-
-Fee Structure (Annual):
-  • PGCET: Not Available
-  • Others (Annual): ₹1,62,000
-
-More Info: https://dsu.edu.in/eligibility
-----------------------------------------
-
---------------------------------------------------------------------------------
-DEPARTMENT: Mechanical Engineering Department
---------------------------------------------------------------------------------
-
-
-Program: B.Tech Mechanical Engineering
-Level: UG | Duration: 4 Years
-
-Eligibility:
-Pass in PUC / 10+2 examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry / Biotechnology / Biology / Computer Science / Electronics / Technical Vocational subjects and obtained at least 45% marks (40% in case of candidate belonging to SC/ST & OBC category) in the above subjects taken together.
-
-Fee Structure (Annual):
-  • CET: Not Available
-  • Ranking Based (JEE Mains/Uniguage/Comed-K): ₹3,22,000
-  • Others: ₹4,12,000
-
-More Info: https://dsu.edu.in/eligibility
-----------------------------------------
-
-Program: M.Tech Design Engineering
-Level: PG | Duration: 2 Years
-
-Eligibility:
-Pass in B.Tech in Mechanical, Industrial Engineering & Management, Aerospace, Aeronautical, Automobile, or related disciplines with minimum 50% marks in aggregate (45% in case of candidate belonging to SC/ST & OBC category).
-
-Fee Structure (Annual):
-  • PGCET: Not Available
-  • Others (Annual): ₹1,62,000
-
-More Info: https://dsu.edu.in/eligibility
-----------------------------------------
-
---------------------------------------------------------------------------------
-DEPARTMENT: Aerospace Engineering Department
---------------------------------------------------------------------------------
-
-
-Program: B.Tech Aerospace Engineering
-Level: UG | Duration: 4 Years
-
-Eligibility:
-Pass in PUC / 10+2 examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry / Biotechnology / Biology / Computer Science / Electronics / Technical Vocational subjects and obtained at least 45% marks (40% in case of candidate belonging to SC/ST & OBC category) in the above subjects taken together.
-
-Fee Structure (Annual):
-  • CET: Not Available
-  • Ranking Based (JEE Mains/Uniguage/Comed-K): ₹3,22,000
-  • Others: ₹4,12,000
-
-More Info: https://dsu.edu.in/eligibility
-----------------------------------------
 
 ================================================================================
 SCHOOL OF COMPUTER APPLICATIONS
 ================================================================================
 Cutting-edge IT education for the digital age with industry certifications.
 
+PROGRAMS OFFERED
+----------------
 
---------------------------------------------------------------------------------
-DEPARTMENT: Department of Computer Applications
---------------------------------------------------------------------------------
+DEPARTMENT OF COMPUTER APPLICATIONS:
+  • BCA - Bachelor of Computer Applications (3 Years)
+  • BCA in AI & Data Sciences (3 Years)
+  • B.Sc Data Science (3 Years)
+  • B.Sc Cyber Security (3 Years)
+  • MCA - Master of Computer Applications (2 Years)
+  • M.Sc Data Science (2 Years)
+  • M.Sc Cyber Security (2 Years)
 
+ELIGIBILITY REQUIREMENTS
+------------------------
 
-Program: BCA - Bachelor of Computer Applications
-Level: UG | Duration: 3 Years
+UNDERGRADUATE PROGRAMS (BCA, B.Sc):
+  Pass in 10+2, A Level, IB, American 12th grade or equivalent and a minimum of 45% marks in aggregate.
 
-Eligibility:
-Pass in 10+2, A Level, IB, American 12th grade or equivalent and a minimum of 45% marks in aggregate.
+POSTGRADUATE PROGRAMS:
 
-Fee Structure (Annual):
-  • Term I: ₹1,09,500
-  • Term II: ₹97,500
-  • Total: ₹2,07,000
+MCA:
+  Admission to First Year MCA shall be open to candidates with a UG degree in BCA/B.Sc.(CS/IT) or B.Sc./B.Com/BA from a recognized University with Mathematics at 10+2 level or Graduation Level. Obtained at least 50% marks in the Qualifying Examination.
 
-More Info: https://dsu.edu.in/eligibility
-----------------------------------------
+M.Sc Data Science:
+  B.Sc in Life Science or related fields such as Biotechnology, Microbiology, Genetics, Zoology, Botany, Biochemistry, Bioinformatics, Statistics, or Computer Science with minimum 50% aggregate.
 
-Program: BCA in AI & Data Sciences
-Level: UG | Duration: 3 Years
+M.Sc Cyber Security:
+  B.Sc in Computer Science, Cyber Security, or related fields with minimum 50% aggregate.
 
-Eligibility:
-Pass in 10+2, A Level, IB, American 12th grade or equivalent and a minimum of 45% marks in aggregate.
+FEE STRUCTURE
+-------------
 
-Fee Structure (Annual):
-  • Term I: ₹1,09,500
-  • Term II: ₹97,500
-  • Total: ₹2,07,000
+BCA & B.Sc Programs (Annual Fees):
+  Data Science / Cyber Security:
+    • Term I: ₹87,000
+    • Term II: ₹75,000
+    • Total: ₹1,62,000
+  
+  BCA / BCA AI & Data Sciences:
+    • Term I: ₹1,09,500
+    • Term II: ₹97,500
+    • Total: ₹2,07,000
 
-More Info: https://dsu.edu.in/eligibility
-----------------------------------------
-
-Program: B.Sc Data Science
-Level: UG | Duration: 3 Years
-
-Eligibility:
-Pass in 10+2, A Level, IB, American 12th grade or equivalent and a minimum of 45% marks in aggregate.
-
-Fee Structure (Annual):
-  • Term I: ₹87,000
-  • Term II: ₹75,000
-  • Total: ₹1,62,000
-
-More Info: https://dsu.edu.in/eligibility
-----------------------------------------
-
-Program: B.Sc Cyber Security
-Level: UG | Duration: 3 Years
-
-Eligibility:
-Pass in 10+2, A Level, IB, American 12th grade or equivalent and a minimum of 45% marks in aggregate.
-
-Fee Structure (Annual):
-  • Term I: ₹87,000
-  • Term II: ₹75,000
-  • Total: ₹1,62,000
-
-More Info: https://dsu.edu.in/eligibility
-----------------------------------------
-
-Program: MCA - Master of Computer Applications
-Level: PG | Duration: 2 Years
-
-Eligibility:
-Admission to First Year MCA shall be open to candidates with a UG degree in BCA/B.Sc.(CS/IT) or B.Sc./B.Com/BA from a recognized University with Mathematics at 10+2 level or Graduation Level. Obtained at least 50% marks in the Qualifying Examination.
-
-Fee Structure (Annual):
+MCA Program (Annual Fees):
   • PGCET: Not Available
   • Term I: ₹1,77,000
   • Term II: ₹1,65,000
   • Total: ₹3,42,000
 
-More Info: https://dsu.edu.in/eligibility
-----------------------------------------
-
-Program: M.Sc Data Science
-Level: PG | Duration: 2 Years
-
-Eligibility:
-B.Sc in Life Science or related fields such as Biotechnology, Microbiology, Genetics, Zoology, Botany, Biochemistry, Bioinformatics, Statistics, or Computer Science with minimum 50% aggregate.
-
-Fee Structure (Annual):
+M.Sc Programs (Annual Fees):
   • PGCET: Not Available
   • Term I: ₹82,000
   • Term II: ₹70,000
   • Total: ₹1,52,000
 
 More Info: https://dsu.edu.in/eligibility
-----------------------------------------
-
-Program: M.Sc Cyber Security
-Level: PG | Duration: 2 Years
-
-Eligibility:
-B.Sc in Computer Science, Cyber Security, or related fields with minimum 50% aggregate.
-
-Fee Structure (Annual):
-  • PGCET: Not Available
-  • Term I: ₹82,000
-  • Term II: ₹70,000
-  • Total: ₹1,52,000
-
-More Info: https://dsu.edu.in/eligibility
-----------------------------------------
 
 ================================================================================
 SCHOOL OF LAW
 ================================================================================
 Training tomorrow's legal minds with a focus on justice and impact.
 
+PROGRAMS OFFERED
+----------------
 
---------------------------------------------------------------------------------
-DEPARTMENT: Department of Legal Studies
---------------------------------------------------------------------------------
+DEPARTMENT OF LEGAL STUDIES:
+  • B.A. LL.B (Hons) (5 Years)
+  • B.B.A. LL.B (Hons) (5 Years)
+  • LL.B (3 Years)
+  • LL.M (1 Year)
 
+ELIGIBILITY REQUIREMENTS
+------------------------
 
-Program: B.A. LL.B (Hons)
-Level: UG | Duration: 5 Years
+B.A. LL.B (Hons) & B.B.A. LL.B (Hons):
+  10+2 or equivalent examination from a recognized Board with a minimum of 50% marks in aggregate. We accept CLAT scores.
 
-Eligibility:
-10+2 or equivalent examination from a recognized Board with a minimum of 50% marks in aggregate. We accept CLAT scores.
+LL.B (3 Year):
+  Graduation or equivalent examination from a recognized University with a minimum of 50% marks in aggregate.
 
-Fee Structure (Annual):
+LL.M (1 Year):
+  A bachelor's degree in law (LL.B) or an equivalent degree from recognized university with a minimum of 50% marks in the qualifying degree (40% for SC/ST candidates). Valid scores in any national level entrance exams like CLAT or AILET.
+
+FEE STRUCTURE
+-------------
+
+B.A. LL.B (Hons) & B.B.A. LL.B (Hons) (Annual Fees):
   • Tuition Fee: ₹2,02,000
   • Other Fee: ₹50,000
   • Total: ₹2,52,000
+  💰 Scholarship Available
 
-💰 Scholarship Available
-
-More Info: https://dsu.edu.in/eligibility
-----------------------------------------
-
-Program: B.B.A. LL.B (Hons)
-Level: UG | Duration: 5 Years
-
-Eligibility:
-10+2 or equivalent examination from a recognized Board with a minimum of 50% marks in aggregate. We accept CLAT scores.
-
-Fee Structure (Annual):
-  • Tuition Fee: ₹2,02,000
-  • Other Fee: ₹50,000
-  • Total: ₹2,52,000
-
-💰 Scholarship Available
-
-More Info: https://dsu.edu.in/eligibility
-----------------------------------------
-
-Program: LL.B
-Level: UG | Duration: 3 Years
-
-Eligibility:
-Graduation or equivalent examination from a recognized University with a minimum of 50% marks in aggregate.
-
-Fee Structure (Annual):
+LL.B (3 Year) (Annual Fees):
   • Tuition Fee: ₹1,37,000
   • Other Fee: ₹40,000
   • Total: ₹1,77,000
 
-More Info: https://dsu.edu.in/eligibility
-----------------------------------------
-
-Program: LL.M
-Level: PG | Duration: 1 Year
-
-Eligibility:
-A bachelor's degree in law (LL.B) or an equivalent degree from recognized university. A minimum of 50% marks in the qualifying degree (40% for SC/ST candidates). Valid scores in any national level entrance exams like CLAT or AILET.
-
-Fee Structure (Annual):
+LL.M (Annual Fees):
   • Tuition Fee: ₹1,10,000
   • Other Fee: ₹35,000
   • Total: ₹1,45,000
 
 Special Notes:
-Tracks include Corporate & Commercial Law, Intellectual Property Rights, and Human Rights Law.
+  LL.M Tracks: Corporate & Commercial Law, Intellectual Property Rights, Human Rights Law
 
 More Info: https://dsu.edu.in/eligibility
-----------------------------------------
 
 ================================================================================
 SCHOOL OF BASIC & APPLIED SCIENCES
 ================================================================================
 Practical approaches rooted in foundational sciences with advanced lab research.
 
+PROGRAMS OFFERED
+----------------
 
---------------------------------------------------------------------------------
-DEPARTMENT: Department of Life Sciences
---------------------------------------------------------------------------------
+DEPARTMENT OF LIFE SCIENCES:
+  • B.Sc Life Science (Biotechnology, Biochemistry, Genetics) (3 Years)
+  • M.Sc Biochemistry (2 Years)
+  • M.Sc Biotechnology (2 Years)
+  • M.Sc Microbiology (2 Years)
+  • M.Sc Molecular Biology and Genetics (2 Years)
 
+ELIGIBILITY REQUIREMENTS
+------------------------
 
-Program: B.Sc Life Science (Biotechnology, Biochemistry, Genetics)
-Level: UG | Duration: 3 Years
+B.Sc Life Science:
+  Pass in 10+2, A Level, IB, American 12th grade or equivalent with Physics, Chemistry and English with Biology or Biotechnology or Mathematics or any other Life Science subject as optional and a minimum of 45% marks taken together.
 
-Eligibility:
-Pass in 10+2, A Level, IB, American 12th grade or equivalent with Physics, Chemistry and English with Biology or Biotechnology or Mathematics or any other Life Science subject as optional and a minimum of 45% marks taken together.
+M.Sc Biochemistry:
+  B.Sc. with any of the following life science subjects such as Biochemistry, Chemistry, Biotechnology, Microbiology, Bioinformatics, Anatomy, Physiology, etc. Students having degree in Medical Sciences, Nursing Sciences, Pharmaceutical Sciences are also eligible.
 
-Fee Structure (Annual):
+M.Sc Biotechnology:
+  B.Sc. with any of the following subjects in Life Science such as Biotechnology, Microbiology, Genetics, Zoology, Botany, Biochemistry, Bioinformatics, etc.
+
+M.Sc Microbiology:
+  B.Sc. in any stream of science with any of the following life science subjects such as Genetics, Zoology, Botany, Biochemistry, Chemistry, Microbiology etc. Students having degree in Medical Sciences, Nursing Sciences, Pharmaceutical Sciences are also eligible.
+
+M.Sc Molecular Biology and Genetics:
+  B.Sc. with any of the following life science subjects such as Genetics, Zoology, Botany, Biochemistry, Chemistry, Microbiology, Bioinformatics, Anthropology, Anatomy, Physiology, etc. Students having degree in Medical Sciences, Nursing Sciences, Pharmaceutical Sciences are also eligible.
+
+FEE STRUCTURE
+-------------
+
+B.Sc Life Science (Annual Fees):
   • Term I: ₹97,000
   • Term II: ₹85,000
   • Total: ₹1,82,000
 
-More Info: https://dsu.edu.in/eligibility
-----------------------------------------
-
-Program: M.Sc Biochemistry
-Level: PG | Duration: 2 Years
-
-Eligibility:
-B.Sc. with any of the following life science subjects such as Biochemistry, Chemistry, Biotechnology, Microbiology, Bioinformatics, Anatomy, Physiology, etc. Students having degree in Medical Sciences, Nursing Sciences, Pharmaceutical Sciences are also eligible.
-
-Fee Structure (Annual):
+M.Sc Programs (Annual Fees):
+  • PGCET: Not Available
   • Term I: ₹1,02,000
   • Term II: ₹90,000
   • Total: ₹1,92,000
 
 More Info: https://dsu.edu.in/eligibility
-----------------------------------------
-
-Program: M.Sc Biotechnology
-Level: PG | Duration: 2 Years
-
-Eligibility:
-B.Sc. with any of the following subjects in Life Science such as Biotechnology, Microbiology, Genetics, Zoology, Botany, Biochemistry, Bioinformatics, etc.
-
-Fee Structure (Annual):
-  • Term I: ₹1,02,000
-  • Term II: ₹90,000
-  • Total: ₹1,92,000
-
-More Info: https://dsu.edu.in/eligibility
-----------------------------------------
-
-Program: M.Sc Microbiology
-Level: PG | Duration: 2 Years
-
-Eligibility:
-B.Sc. in any stream of science with any of the following life science subjects such as Genetics, Zoology, Botany, Biochemistry, Chemistry, Microbiology etc. Students having degree in Medical Sciences, Nursing Sciences, Pharmaceutical Sciences are also eligible.
-
-Fee Structure (Annual):
-  • Term I: ₹1,02,000
-  • Term II: ₹90,000
-  • Total: ₹1,92,000
-
-More Info: https://dsu.edu.in/eligibility
-----------------------------------------
-
-Program: M.Sc Molecular Biology and Genetics
-Level: PG | Duration: 2 Years
-
-Eligibility:
-B.Sc. with any of the following life science subjects such as Genetics, Zoology, Botany, Biochemistry, Chemistry, Microbiology, Bioinformatics, Anthropology, Anatomy, Physiology, etc. Students having degree in Medical Sciences, Nursing Sciences, Pharmaceutical Sciences are also eligible.
-
-Fee Structure (Annual):
-  • Term I: ₹1,02,000
-  • Term II: ₹90,000
-  • Total: ₹1,92,000
-
-More Info: https://dsu.edu.in/eligibility
-----------------------------------------
 
 ================================================================================
 SCHOOL OF COMMERCE & MANAGEMENT
 ================================================================================
 Shaping tomorrow's business and industry leaders with professional certifications.
 
+PROGRAMS OFFERED
+----------------
 
---------------------------------------------------------------------------------
-DEPARTMENT: Department of Commerce
---------------------------------------------------------------------------------
+DEPARTMENT OF COMMERCE:
+  • B.Com Regular (3 Years)
+  • B.Com ACCA Integrated (3 Years)
+  • B.Com CMA Integrated (3 Years)
+  • B.Com With CA Coaching (3 Years)
 
+DEPARTMENT OF MANAGEMENT:
+  • BBA Regular (3 Years)
+  • MBA (2 Years)
 
-Program: B.Com Regular
-Level: UG | Duration: 3 Years
+ELIGIBILITY REQUIREMENTS
+------------------------
 
-Eligibility:
-Candidates who have completed two year Pre – University course of Karnataka State or its equivalent with Business Studies and Accountancy as two major subjects of study with aggregate of 50% (45% in case of candidate belonging to SC/ST & OBC category).
+B.Com Programs:
+  Candidates who have completed two year Pre – University course of Karnataka State or its equivalent with Business Studies and Accountancy as two major subjects of study with aggregate of 50% (45% in case of candidate belonging to SC/ST & OBC category).
 
-Fee Structure (Annual):
-  • Term I: ₹79,500
-  • Term II: ₹77,500
-  • Total (Incl. Library Deposit): ₹1,57,000
+BBA Regular:
+  Pass in 10+2, A Level, IB, American 12th grade or equivalent with a minimum of 50% marks in aggregate (45% in case of candidate belonging to SC/ST & OBC category).
 
-More Info: https://dsu.edu.in/eligibility
-----------------------------------------
+MBA:
+  Pass in a Bachelors degree of three years in any stream with minimum 50% (45% in case of candidates belonging to SC/ST & OBC category) of marks in aggregate from any recognized University / Institution.
 
-Program: B.Com ACCA Integrated
-Level: UG | Duration: 3 Years
+FEE STRUCTURE
+-------------
 
-Eligibility:
-Candidates who have completed two year Pre – University course of Karnataka State or its equivalent with Business Studies and Accountancy as two major subjects of study with aggregate of 50% (45% in case of candidate belonging to SC/ST & OBC category).
+B.Com Programs (Annual Fees):
+  Regular:
+    • Term I: ₹79,500
+    • Term II: ₹77,500
+    • Total (Incl. Library Deposit): ₹1,57,000
+  
+  ACCA Integrated / CMA Integrated / CA Coaching:
+    • Term I: ₹99,500
+    • Term II: ₹87,500
+    • Total (Incl. Library Deposit): ₹1,87,000
 
-Fee Structure (Annual):
-  • Term I: ₹99,500
-  • Term II: ₹87,500
-  • Total (Incl. Library Deposit): ₹1,87,000
-
-Special Notes:
-Professional ACCA coaching integrated within the timetable.
-
-More Info: https://dsu.edu.in/eligibility
-----------------------------------------
-
-Program: B.Com CMA Integrated
-Level: UG | Duration: 3 Years
-
-Eligibility:
-Candidates who have completed two year Pre – University course of Karnataka State or its equivalent with Business Studies and Accountancy as two major subjects of study with aggregate of 50% (45% in case of candidate belonging to SC/ST & OBC category).
-
-Fee Structure (Annual):
-  • Term I: ₹99,500
-  • Term II: ₹87,500
-  • Total (Incl. Library Deposit): ₹1,87,000
-
-Special Notes:
-Professional CMA coaching integrated within the timetable.
-
-More Info: https://dsu.edu.in/eligibility
-----------------------------------------
-
-Program: B.Com With CA Coaching
-Level: UG | Duration: 3 Years
-
-Eligibility:
-Candidates who have completed two year Pre – University course of Karnataka State or its equivalent with Business Studies and Accountancy as two major subjects of study with aggregate of 50% (45% in case of candidate belonging to SC/ST & OBC category).
-
-Fee Structure (Annual):
-  • Term I: ₹99,500
-  • Term II: ₹87,500
-  • Total (Incl. Library Deposit): ₹1,87,000
-
-Special Notes:
-Professional CA coaching integrated within the timetable.
-
-More Info: https://dsu.edu.in/eligibility
-----------------------------------------
-
---------------------------------------------------------------------------------
-DEPARTMENT: Department of Management
---------------------------------------------------------------------------------
-
-
-Program: BBA Regular
-Level: UG | Duration: 3 Years
-
-Eligibility:
-Pass in 10+2, A Level, IB, American 12th grade or equivalent with a minimum of 50% marks in aggregate (45% in case of candidate belonging to SC/ST & OBC category).
-
-Fee Structure (Annual):
+BBA Regular (Annual Fees):
   • Term I: ₹1,07,000
   • Term II: ₹1,05,000
   • Total (Incl. Library Deposit): ₹2,12,000
 
-More Info: https://dsu.edu.in/eligibility
-----------------------------------------
-
-Program: MBA
-Level: PG | Duration: 2 Years
-
-Eligibility:
-Pass in a Bachelors degree of three years in any stream with minimum 50% (45% in case of candidates belonging to SC/ST & OBC category) of marks in aggregate from any recognized University / Institution.
-
-Fee Structure (Annual):
+MBA (Annual Fees):
   • PGCET: Not Available
   • Term I: ₹3,07,000
   • Term II: ₹2,95,000
   • Total: ₹6,02,000
 
 Special Notes:
-Dual specialization options covering Business Analytics, Finance, Marketing, HR, and Operations.
+  MBA offers dual specialization options covering Business Analytics, Finance, Marketing, HR, and Operations.
 
 More Info: https://dsu.edu.in/eligibility
-----------------------------------------
 
 ================================================================================
 SCHOOL OF HEALTH SCIENCES
 ================================================================================
 Equipping future leaders in global health and wellness with clinical immersion.
 
+PROGRAMS OFFERED
+----------------
 
---------------------------------------------------------------------------------
-DEPARTMENT: College of Allied Health Sciences
---------------------------------------------------------------------------------
+COLLEGE OF PHARMACEUTICAL SCIENCES:
+  • B.Pharm (4 Years)
+  • M.Pharm Pharmaceutics (2 Years)
+  • M.Pharm Pharmacology (2 Years)
+  • M.Pharm Regulatory Affairs (2 Years)
+  • Pharm.D (6 Years)
 
+COLLEGE OF NURSING SCIENCES:
+  • B.Sc Nursing (4 Years)
+  • PB B.Sc Nursing (2 Years)
+  • M.Sc Medical Surgical Nursing (2 Years)
+  • M.Sc Child Health Nursing (2 Years)
+  • M.Sc Mental Health Nursing (2 Years)
+  • M.Sc Obstetrics and Genealogical Nursing (2 Years)
+  • M.Sc Community Health Nursing (2 Years)
 
-Program: B.Sc Medical Radiology & Imaging Technology
-Level: UG | Duration: 3 Years
+COLLEGE OF PHYSIOTHERAPY:
+  • Bachelor's in Physiotherapy (BPT) (4 Years)
+  • M.P.T Sports & Muscular Skeletal (2 Years)
+  • M.P.T Cardio Pulmonary (2 Years)
+  • M.P.T Women's Health (2 Years)
+  • M.P.T Neuro (2 Years)
+  • M.P.T Community Based Rehabilitation (2 Years)
 
-Eligibility:
-A candidate seeking admission shall have studied English as one of the principal subjects and shall have passed Two-year Pre-University examination or equivalent with Physics, Chemistry and Biology as major subjects of study.
+COLLEGE OF ALLIED HEALTH SCIENCES:
+  • B.Sc Medical Radiology & Imaging Technology (3 Years)
+  • B.Sc Medical Laboratory Technology (3 Years)
+  • B.Sc Anesthesia and Operation Theatre Technology (3 Years)
+  • B.Sc Emergency & Trauma Care Technology (3 Years)
+  • B.Sc Cardiac Care Technology (3 Years)
+  • MPH - Masters in Public Health (2 Years)
 
-Fee Structure (Annual):
-  • Tuition Fee: ₹1,42,000
-  • Other Fee: ₹30,000
-  • Total: ₹1,72,000
+ELIGIBILITY REQUIREMENTS
+------------------------
 
-More Info: https://dsu.edu.in/eligibility
-----------------------------------------
+B.Pharm:
+  Pass in 10+2 with Physics, Chemistry and English with Mathematics or Biotechnology or Computer Science or Biology as optional subjects with a minimum of 40% marks in aggregate.
 
-Program: B.Sc Medical Laboratory Technology
-Level: UG | Duration: 3 Years
+M.Pharm Programs & Pharm.D:
+  Candidates should have passed B.pharm from an institution recognized by the Pharmacy Council of India with a minimum of 50% marks in aggregate.
 
-Eligibility:
-A candidate seeking admission shall have studied English as one of the principal subjects and shall have passed Two-year Pre-University examination or equivalent with Physics, Chemistry and Biology as major subjects of study.
+B.Sc Nursing:
+  Pass in 10+2, A Level, IB, American 12th grade or equivalent with Physics, Chemistry, Biology and English and a minimum of 45% marks taken together.
 
-Fee Structure (Annual):
-  • Tuition Fee: ₹1,12,000
-  • Other Fee: ₹30,000
-  • Total: ₹1,42,000
+PB B.Sc Nursing:
+  Pass in GNM after 10+2 or equivalent examination preferably with Science subjects with 50% marks in aggregate. Candidates should be a registered Nurse and registered Midwife.
 
-More Info: https://dsu.edu.in/eligibility
-----------------------------------------
+M.Sc Nursing Programs:
+  Candidates should have passed BSc/PC BSc/PB BSc Nursing recognized by the Indian Nursing Council and a minimum of 55% marks in aggregate.
+  Experience: 1 year of experience after BSc Nursing in a hospital or community health program required.
 
-Program: B.Sc Anesthesia and Operation Theatre Technology
-Level: UG | Duration: 3 Years
+BPT (Bachelor's in Physiotherapy):
+  Pass in 10+2, A Level, IB, American 12th grade or equivalent with Physics, Chemistry, English and Biology with a minimum of 40% marks taken together.
 
-Eligibility:
-A candidate seeking admission shall have studied English as one of the principal subjects and shall have passed Two-year Pre-University examination or equivalent with Physics, Chemistry and Biology as major subjects of study.
+M.P.T Programs:
+  Candidates should have passed BPT from a recognized university with a minimum of 50% marks in aggregate.
+  INTERNSHIP: Completed or completing their compulsory internship.
 
-Fee Structure (Annual):
-  • Tuition Fee: ₹1,42,000
-  • Other Fee: ₹30,000
-  • Total: ₹1,72,000
+College of Allied Health Sciences (B.Sc Programs):
+  A candidate seeking admission shall have studied English as one of the principal subjects and shall have passed Two-year Pre-University examination or equivalent with Physics, Chemistry and Biology as major subjects of study.
 
-More Info: https://dsu.edu.in/eligibility
-----------------------------------------
+MPH - Masters in Public Health:
+  A candidate seeking admission should have a degree in MBBS or BDS or BAMS or B.Sc Nursing or BPT or B. Pharm with minimum 50% marks from a University established under law.
 
-Program: B.Sc Emergency & Trauma Care Technology
-Level: UG | Duration: 3 Years
+FEE STRUCTURE
+-------------
 
-Eligibility:
-A candidate seeking admission shall have studied English as one of the principal subjects and shall have passed Two-year Pre-University examination or equivalent with Physics, Chemistry and Biology as major subjects of study.
-
-Fee Structure (Annual):
-  • Tuition Fee: ₹1,12,000
-  • Other Fee: ₹30,000
-  • Total: ₹1,42,000
-
-More Info: https://dsu.edu.in/eligibility
-----------------------------------------
-
-Program: B.Sc Cardiac Care Technology
-Level: UG | Duration: 3 Years
-
-Eligibility:
-A candidate seeking admission shall have studied English as one of the principal subjects and shall have passed Two-year Pre-University examination or equivalent with Physics, Chemistry and Biology as major subjects of study.
-
-Fee Structure (Annual):
-  • Tuition Fee: ₹1,72,000
-  • Other Fee: ₹30,000
-  • Total: ₹2,02,000
-
-More Info: https://dsu.edu.in/eligibility
-----------------------------------------
-
-Program: MPH - Masters in Public Health
-Level: PG | Duration: 2 Years
-
-Eligibility:
-A candidate seeking admission should have a degree in MBBS or BDS or BAMS or B.Sc Nursing or BPT or B. Pharm with minimum 50% marks from a University established under law.
-
-Fee Structure (Annual):
-  • Tuition Fee: ₹1,12,000
-  • Others Fee: ₹30,000
-  • Total: ₹1,42,000
-
-More Info: https://dsu.edu.in/eligibility
-----------------------------------------
-
---------------------------------------------------------------------------------
-DEPARTMENT: College of Pharmaceutical Sciences
---------------------------------------------------------------------------------
-
-
-Program: B.Pharm
-Level: UG | Duration: 4 Years
-
-Eligibility:
-Pass in 10+2 with Physics, Chemistry and English with Mathematics or Biotechnology or Computer Science or Biology as optional subjects with a minimum of 40% marks in aggregate.
-
-Fee Structure (Annual):
+B.Pharm (Annual Fees):
   • CET: Not Available
   • Others: ₹2,82,000
 
-More Info: https://dsu.edu.in/eligibility
-----------------------------------------
-
-Program: M.Pharm Pharmaceutics
-Level: PG | Duration: 2 Years
-
-Eligibility:
-Candidates should have passed B.pharm from an institution recognized by the Pharmacy Council of India with a minimum of 50% marks in aggregate.
-
-Fee Structure (Annual):
+M.Pharm Programs (Annual Fees):
   • PGCET: Not Available
   • Others: ₹3,02,000
 
-More Info: https://dsu.edu.in/eligibility
-----------------------------------------
-
-Program: M.Pharm Pharmacology
-Level: PG | Duration: 2 Years
-
-Eligibility:
-Candidates should have passed B.pharm from an institution recognized by the Pharmacy Council of India with a minimum of 50% marks in aggregate.
-
-Fee Structure (Annual):
-  • PGCET: Not Available
-  • Others: ₹3,02,000
-
-More Info: https://dsu.edu.in/eligibility
-----------------------------------------
-
-Program: M.Pharm Regulatory Affairs
-Level: PG | Duration: 2 Years
-
-Eligibility:
-Candidates should have passed B.pharm from an institution recognized by the Pharmacy Council of India with a minimum of 50% marks in aggregate.
-
-Fee Structure (Annual):
-  • PGCET: Not Available
-  • Others: ₹3,02,000
-
-More Info: https://dsu.edu.in/eligibility
-----------------------------------------
-
-Program: Pharm.D
-Level: Professional | Duration: 6 Years
-
-Eligibility:
-Pass in 10+2 examination with Physics, Chemistry and English with Mathematics or Biology as optional subjects / DPharm or any other equivalent qualification recognized by the Pharmacy Council of India.
-
-Fee Structure (Annual):
+Pharm.D (Annual Fees):
   • PGCET: Not Available
   • Others: ₹4,52,000
 
-More Info: https://dsu.edu.in/eligibility
-----------------------------------------
-
---------------------------------------------------------------------------------
-DEPARTMENT: College of Nursing Sciences
---------------------------------------------------------------------------------
-
-
-Program: B.Sc Nursing
-Level: UG | Duration: 4 Years
-
-Eligibility:
-Pass in 10+2, A Level, IB, American 12th grade or equivalent with Physics, Chemistry, Biology and English and a minimum of 45% marks taken together.
-
-Fee Structure (Annual):
+B.Sc Nursing (Annual Fees):
   • CET: Not Available
   • Term I: ₹97,000
   • Term II: ₹85,000
   • Total: ₹1,82,000
 
-More Info: https://dsu.edu.in/eligibility
-----------------------------------------
-
-Program: PB B.Sc Nursing
-Level: UG | Duration: 2 Years
-
-Eligibility:
-Pass in GNM after 10+2 or equivalent examination preferably with Science subjects with 50% marks in aggregate. Candidates should be a registered Nurse and registered Midwife.
-
-Fee Structure (Annual):
+PB B.Sc Nursing (Annual Fees):
   • CET: Not Available
   • Others: ₹92,000
 
-More Info: https://dsu.edu.in/eligibility
-----------------------------------------
-
-Program: M.Sc Medical Surgical Nursing
-Level: PG | Duration: 2 Years
-
-Eligibility:
-Candidates should have passed BSc/PC BSc/PB BSc Nursing recognized by the Indian Nursing Council and a minimum of 55% marks in aggregate. Experience: 1 year of experience after BSc Nursing in a hospital or community health program.
-
-Fee Structure (Annual):
+M.Sc Nursing Programs (Annual Fees):
   • PGCET: Not Available
   • Others: ₹1,42,000
 
-More Info: https://dsu.edu.in/eligibility
-----------------------------------------
-
-Program: M.Sc Child Health Nursing
-Level: PG | Duration: 2 Years
-
-Eligibility:
-Candidates should have passed BSc/PC BSc/PB BSc Nursing recognized by the Indian Nursing Council and a minimum of 55% marks in aggregate. Experience: 1 year of experience after BSc Nursing.
-
-Fee Structure (Annual):
-  • PGCET: Not Available
-  • Others: ₹1,42,000
-
-More Info: https://dsu.edu.in/eligibility
-----------------------------------------
-
-Program: M.Sc Mental Health Nursing
-Level: PG | Duration: 2 Years
-
-Eligibility:
-Candidates should have passed BSc/PC BSc/PB BSc Nursing recognized by the Indian Nursing Council and a minimum of 55% marks in aggregate. Experience: 1 year of experience after BSc Nursing.
-
-Fee Structure (Annual):
-  • PGCET: Not Available
-  • Others: ₹1,42,000
-
-More Info: https://dsu.edu.in/eligibility
-----------------------------------------
-
-Program: M.Sc Obstetrics and Genealogical Nursing
-Level: PG | Duration: 2 Years
-
-Eligibility:
-Candidates should have passed BSc/PC BSc/PB BSc Nursing recognized by the Indian Nursing Council and a minimum of 55% marks in aggregate. Experience: 1 year of experience after BSc Nursing.
-
-Fee Structure (Annual):
-  • PGCET: Not Available
-  • Others: ₹1,42,000
-
-More Info: https://dsu.edu.in/eligibility
-----------------------------------------
-
-Program: M.Sc Community Health Nursing
-Level: PG | Duration: 2 Years
-
-Eligibility:
-Candidates should have passed BSc/PC BSc/PB BSc Nursing recognized by the Indian Nursing Council and a minimum of 55% marks in aggregate. Experience: 1 year of experience after BSc Nursing.
-
-Fee Structure (Annual):
-  • PGCET: Not Available
-  • Others: ₹1,42,000
-
-More Info: https://dsu.edu.in/eligibility
-----------------------------------------
-
---------------------------------------------------------------------------------
-DEPARTMENT: College of Physiotherapy
---------------------------------------------------------------------------------
-
-
-Program: Bachelor's in Physiotherapy (BPT)
-Level: UG | Duration: 4 Years
-
-Eligibility:
-Pass in 10+2, A Level, IB, American 12th grade or equivalent with Physics, Chemistry, English and Biology with a minimum of 40% marks taken together.
-
-Fee Structure (Annual):
+BPT (Annual Fees):
   • CET: Not Available
   • Others: ₹2,17,000
 
-More Info: https://dsu.edu.in/eligibility
-----------------------------------------
-
-Program: M.P.T Sports & Muscular Skeletal
-Level: PG | Duration: 2 Years
-
-Eligibility:
-Candidates should have passed BPT from a recognized university with a minimum of 50% marks in aggregate. INTERNSHIP: Completed or completing their compulsory internship.
-
-Fee Structure (Annual):
+M.P.T Programs (Annual Fees):
   • PGCET: Not Available
   • Others: ₹2,77,000
 
-More Info: https://dsu.edu.in/eligibility
-----------------------------------------
+College of Allied Health Sciences - B.Sc Programs (Annual Fees):
+  Medical Radiology & Imaging / Anesthesia & OT / Cardiac Care:
+    • Tuition Fee: ₹1,42,000
+    • Other Fee: ₹30,000
+    • Total: ₹1,72,000
+  
+  Medical Laboratory / Emergency & Trauma Care:
+    • Tuition Fee: ₹1,12,000
+    • Other Fee: ₹30,000
+    • Total: ₹1,42,000
 
-Program: M.P.T Cardio Pulmonary
-Level: PG | Duration: 2 Years
-
-Eligibility:
-Candidates should have passed BPT from a recognized university with a minimum of 50% marks in aggregate. INTERNSHIP: Completed or completing their compulsory internship.
-
-Fee Structure (Annual):
-  • PGCET: Not Available
-  • Others: ₹2,77,000
-
-More Info: https://dsu.edu.in/eligibility
-----------------------------------------
-
-Program: M.P.T Women's Health
-Level: PG | Duration: 2 Years
-
-Eligibility:
-Candidates should have passed BPT from a recognized university with a minimum of 50% marks in aggregate. INTERNSHIP: Completed or completing their compulsory internship.
-
-Fee Structure (Annual):
-  • PGCET: Not Available
-  • Others: ₹2,77,000
+MPH - Masters in Public Health (Annual Fees):
+  • Tuition Fee: ₹1,12,000
+  • Others Fee: ₹30,000
+  • Total: ₹1,42,000
 
 More Info: https://dsu.edu.in/eligibility
-----------------------------------------
-
-Program: M.P.T Neuro
-Level: PG | Duration: 2 Years
-
-Eligibility:
-Candidates should have passed BPT from a recognized university with a minimum of 50% marks in aggregate. INTERNSHIP: Completed or completing their compulsory internship.
-
-Fee Structure (Annual):
-  • PGCET: Not Available
-  • Others: ₹2,77,000
-
-More Info: https://dsu.edu.in/eligibility
-----------------------------------------
-
-Program: M.P.T Community Based Rehabilitation
-Level: PG | Duration: 2 Years
-
-Eligibility:
-Candidates should have passed BPT from a recognized university with a minimum of 50% marks in aggregate. INTERNSHIP: Completed or completing their compulsory internship.
-
-Fee Structure (Annual):
-  • PGCET: Not Available
-  • Others: ₹2,77,000
-
-More Info: https://dsu.edu.in/eligibility
-----------------------------------------
 
 ================================================================================
 SCHOOL OF ARTS, DESIGN & HUMANITIES
 ================================================================================
 Cultivating creativity, culture, and critical thinking through storytelling and digital media.
 
+PROGRAMS OFFERED
+----------------
 
---------------------------------------------------------------------------------
-DEPARTMENT: Department of Journalism & Mass Communication
---------------------------------------------------------------------------------
+DEPARTMENT OF JOURNALISM & MASS COMMUNICATION:
+  • B.A. Journalism and Mass Communication (3 Years)
 
+ELIGIBILITY REQUIREMENTS
+------------------------
 
-Program: B.A. Journalism and Mass Communication
-Level: UG | Duration: 3 Years
+B.A. Journalism and Mass Communication:
+  Pass in 10+2, A Level, IB, American 12th grade or equivalent and a minimum of 45% marks in aggregate. Arts group subjects are preferred.
 
-Eligibility:
-Pass in 10+2, A Level, IB, American 12th grade or equivalent and a minimum of 45% marks in aggregate. Arts group subjects are preferred.
+FEE STRUCTURE
+-------------
 
-Fee Structure (Annual):
+B.A. Journalism and Mass Communication (Annual Fees):
   • Term I: ₹77,000
   • Term II: ₹75,000
   • Total: ₹1,52,000
 
 Special Notes:
-Includes newsroom simulations, digital production labs, and internships with media houses.
+  Includes newsroom simulations, digital production labs, and internships with media houses.
 
 More Info: https://dsu.edu.in/eligibility
-----------------------------------------
 
 ================================================================================
 SCHOOL OF DESIGN & DIGITAL TRANS-MEDIA
 ================================================================================
 Studio-based design programs with immersive projects in product, UX, animation, and game design.
 
+PROGRAMS OFFERED
+----------------
 
---------------------------------------------------------------------------------
-DEPARTMENT: Department of Design
---------------------------------------------------------------------------------
+DEPARTMENT OF DESIGN:
+  • B.Design Product Design (4 Years)
+  • B.Design User Experience Design (4 Years)
+  • B.Design Animation and VFX (4 Years)
+  • B.Design Game Design (4 Years)
 
+ELIGIBILITY REQUIREMENTS
+------------------------
 
-Program: B.Design Product Design
-Level: UG | Duration: 4 Years
+All B.Design Programs:
+  Students with a minimum of 50% in Class XII from Science, Commerce, Arts, and Humanities.
 
-Eligibility:
-Students with a minimum of 50% in Class XII from Science, Commerce, Arts, and Humanities.
+FEE STRUCTURE
+-------------
 
-Fee Structure (Annual):
+All B.Design Programs (Annual Fees):
   • Total: ₹3,02,000
 
 More Info: https://dsu.edu.in/eligibility
-----------------------------------------
-
-Program: B.Design User Experience Design
-Level: UG | Duration: 4 Years
-
-Eligibility:
-Students with a minimum of 50% in Class XII from Science, Commerce, Arts, and Humanities.
-
-Fee Structure (Annual):
-  • Total: ₹3,02,000
-
-More Info: https://dsu.edu.in/eligibility
-----------------------------------------
-
-Program: B.Design Animation and VFX
-Level: UG | Duration: 4 Years
-
-Eligibility:
-Students with a minimum of 50% in Class XII from Science, Commerce, Arts, and Humanities.
-
-Fee Structure (Annual):
-  • Total: ₹3,02,000
-
-More Info: https://dsu.edu.in/eligibility
-----------------------------------------
-
-Program: B.Design Game Design
-Level: UG | Duration: 4 Years
-
-Eligibility:
-Students with a minimum of 50% in Class XII from Science, Commerce, Arts, and Humanities.
-
-Fee Structure (Annual):
-  • Total: ₹3,02,000
-
-More Info: https://dsu.edu.in/eligibility
-----------------------------------------
 
 ================================================================================
 RESEARCH & INNOVATION
 ================================================================================
-
-Research & Innovation
 
 Key Highlights:
   • Hackathons & 48-hour innovation sprints
@@ -1166,8 +514,6 @@ Entrepreneurship Ecosystem:
 ================================================================================
 CAMPUS LIFE
 ================================================================================
-
-Campus Life at DSU
 
 Four Pillars of Excellence:
   • Research & Innovation - Hackathons, hands-on projects, AI labs
@@ -1248,54 +594,11 @@ KEY ACHIEVEMENTS
   • Multiple patents and publications
 
 ================================================================================
-WEBSITE NAVIGATION STRUCTURE
-================================================================================
-
-All available pages on the website (Full URLs):
-
-  https://dsu.edu.in/                                                              - Home - Dayananda Sagar University
-  https://dsu.edu.in/about                                                         - About DSU
-  https://dsu.edu.in/academics                                                     - Academics
-  https://dsu.edu.in/academics/engineering                                         - School of Engineering
-  https://dsu.edu.in/academics/law                                                 - School of Law
-  https://dsu.edu.in/academics/health-sciences                                     - School of Health Sciences
-  https://dsu.edu.in/academics/computer-applications                               - School of Computer Applications
-  https://dsu.edu.in/academics/basic-applied-sciences                              - School of Basic and Applied Sciences
-  https://dsu.edu.in/academics/commerce-and-management                             - School of Commerce and Management
-  https://dsu.edu.in/academics/humanities-social-sciences                          - School of Humanities and Social Sciences
-  https://dsu.edu.in/academics/design/bdesign                                      - School of Design and Digital Trans-media
-  https://dsu.edu.in/academics/journalism-mass-communication                       - School of Journalism and Mass Communication
-  https://dsu.edu.in/admissions                                                    - Admissions
-  https://dsu.edu.in/eligibility                                                   - Eligibility & Fee Structure
-  https://dsu.edu.in/international-admissions                                      - International Admissions
-  https://dsu.edu.in/study-in-india                                                - Study in India
-  https://dsu.edu.in/campus-life                                                   - Campus Life
-  https://dsu.edu.in/research                                                      - Research
-  https://dsu.edu.in/library                                                       - Library
-  https://dsu.edu.in/alumni                                                        - Alumni
-  https://dsu.edu.in/placements                                                    - Placements
-  https://dsu.edu.in/ai-first                                                      - AI-First University
-  https://dsu.edu.in/nvidia-ai-architecture                                        - NVIDIA AI Architecture
-  https://dsu.edu.in/faculty-directory                                             - Faculty Directory
-  https://dsu.edu.in/vision-mission                                                - Vision & Mission
-  https://dsu.edu.in/leadership                                                    - Leadership
-  https://dsu.edu.in/accreditations                                                - Accreditations
-  https://dsu.edu.in/facilities                                                    - Facilities
-  https://dsu.edu.in/careers                                                       - Careers
-  https://dsu.edu.in/examinations                                                  - Examinations
-
-================================================================================
 CONTACT INFORMATION
 ================================================================================
 
 Main Website: https://8660401238.vercel.app
 General Inquiries: Contact through website
-
-International Admissions:
-  Email: international-admissions@dsu.edu.in
-  WhatsApp: +91 9606022152, +91 9606022149
-  Portal: https://international-admissions.dsu.edu.in
-  Study in India: https://studyinindia.gov.in/
 
 Admissions & Applications:
   General Admissions Portal: https://admissions.dsu.edu.in
@@ -1328,7 +631,7 @@ QUICK FACTS
   • Multiple admission pathways (CET, CLAT, JEE, Direct)
 
 ================================================================================
-Generated: 1/20/2026, 2:42:00 AM
-Purpose: RAG Chatbot Knowledge Base
+Generated: 1/20/2026
+Purpose: RAG Chatbot Knowledge Base - Reorganized Structure
 Academic Year: 2026-27
 ================================================================================
