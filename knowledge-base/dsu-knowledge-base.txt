@@ -17,11 +17,11 @@ Description:
 Dayananda Sagar University is India's AI-First University offering world-class education in Engineering, Law, Health Sciences, Commerce, Basic and Applied Sciences, Computer Applications, Design, and Humanities.
 
 IMPORTANT NOTES:
-• All fees listed are annual fees for the academic year 2026-27
-• CET = Common Entrance Test (Karnataka)
-• PGCET = Post-Graduate Common Entrance Test
-• Fees may vary based on government revisions
-• For detailed brochures and application: https://dsu.edu.in/eligibility
+- All fees listed are annual fees for the academic year 2026-27
+- CET = Common Entrance Test (Karnataka)
+- PGCET = Post-Graduate Common Entrance Test
+- Fees may vary based on government revisions
+- For detailed brochures and application: https://dsu.edu.in/eligibility
 
 ================================================================================
 SCHOOL OF ENGINEERING
