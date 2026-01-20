@@ -308,11 +308,6 @@ export function RagChatWidget() {
                     <p className="text-sm leading-relaxed whitespace-pre-wrap">
                       {message.content}
                     </p>
-                    {message.contextCount !== undefined && (
-                      <p className="text-xs opacity-60 mt-2">
-                        📚 Based on {message.contextCount} knowledge sources
-                      </p>
-                    )}
                   </div>
                 </motion.div>
               ))}
