@@ -1,17 +1,70 @@
 /**
  * RAG-Based ChatWidget Component
- * 
+ *
  * A modern, production-ready chatbot using Retrieval-Augmented Generation (RAG)
  * with OpenAI API integration for DSU Admissions assistance.
  */
 
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef, useCallback, ReactNode } from "react";
 import { MessageSquare, X, Send, Loader2, AlertCircle, RefreshCw } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useTheme } from "@/providers/theme-provider";
+
+/**
+ * Helper function to detect URLs in text and convert them to clickable links
+ */
+function parseMessageWithLinks(text: string): ReactNode[] {
+  // URL regex pattern that matches http(s)://, www., and domain.tld patterns
+  const urlRegex = /(https?:\/\/[^\s]+|www\.[^\s]+|(?:^|\s)[a-zA-Z0-9][\w\-\.]*\.[a-zA-Z]{2,}(?:\/[^\s]*)?)/g;
+
+  const parts: ReactNode[] = [];
+  let lastIndex = 0;
+  let match;
+
+  // Create a copy of the regex to iterate through matches
+  const regex = /(https?:\/\/[^\s]+)/g;
+
+  while ((match = regex.exec(text)) !== null) {
+    const url = match[0];
+    const startIndex = match.index;
+
+    // Add text before the URL
+    if (startIndex > lastIndex) {
+      parts.push(text.substring(lastIndex, startIndex));
+    }
+
+    // Add the URL as a link
+    let href = url;
+    if (!href.startsWith('http://') && !href.startsWith('https://')) {
+      href = 'https://' + href;
+    }
+
+    parts.push(
+      <a
+        key={`link_${startIndex}`}
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="underline text-blue-400 hover:text-blue-300 font-semibold transition-colors"
+      >
+        {url}
+      </a>
+    );
+
+    lastIndex = regex.lastIndex;
+  }
+
+  // Add remaining text after the last URL
+  if (lastIndex < text.length) {
+    parts.push(text.substring(lastIndex));
+  }
+
+  // If no URLs were found, just return the original text
+  return parts.length === 0 ? [text] : parts;
+}
 
 interface Message {
   id: string;
