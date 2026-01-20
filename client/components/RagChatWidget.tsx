@@ -24,8 +24,9 @@ import { useTheme } from "@/providers/theme-provider";
  * Helper function to detect URLs in text and convert them to clickable links
  */
 function parseMessageWithLinks(text: string): ReactNode {
-  // URL regex pattern - matches http(s):// URLs
-  const urlRegex = /(https?:\/\/[^\s]+)/g;
+  // URL regex pattern - matches http(s):// URLs, excluding trailing punctuation
+  // This prevents URLs like "example.com.)" from including the ".))"
+  const urlRegex = /(https?:\/\/[^\s]+?)([.,;:!?\)\]\}]*\s|[.,;:!?\)\]\}]*$)/g;
 
   const parts: ReactNode[] = [];
   let lastIndex = 0;
@@ -33,8 +34,9 @@ function parseMessageWithLinks(text: string): ReactNode {
   let keyCounter = 0;
 
   while ((match = urlRegex.exec(text)) !== null) {
-    const url = match[0];
+    let url = match[1]; // Get the URL part (without the trailing punctuation)
     const startIndex = match.index;
+    const trailingPunctuation = match[2]; // Get any trailing punctuation and whitespace
 
     // Add text before the URL
     if (startIndex > lastIndex) {
