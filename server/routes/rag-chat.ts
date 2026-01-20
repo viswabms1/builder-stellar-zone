@@ -386,9 +386,15 @@ export const handleRagChat = async (req: Request, res: Response) => {
     let assistantMessage = "";
 
     // Chat Completions API returns choices array
-    if (response.choices && Array.isArray(response.choices) && response.choices.length > 0) {
+    if (
+      response.choices &&
+      Array.isArray(response.choices) &&
+      response.choices.length > 0
+    ) {
       const firstChoice = response.choices[0];
-      console.log(`[RAG] Processing first choice (finish_reason: ${firstChoice.finish_reason})`);
+      console.log(
+        `[RAG] Processing first choice (finish_reason: ${firstChoice.finish_reason})`,
+      );
       if (firstChoice.message && firstChoice.message.content) {
         assistantMessage = firstChoice.message.content;
       }
