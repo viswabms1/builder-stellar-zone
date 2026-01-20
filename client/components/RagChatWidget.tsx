@@ -24,19 +24,33 @@ import { useTheme } from "@/providers/theme-provider";
  * Helper function to detect URLs in text and convert them to clickable links
  */
 function parseMessageWithLinks(text: string): ReactNode {
-  // URL regex pattern - matches http(s):// URLs, excluding trailing punctuation
-  // This prevents URLs like "example.com.)" from including the ".))"
-  const urlRegex = /(https?:\/\/[^\s]+?)([.,;:!?\)\]\}]*\s|[.,;:!?\)\]\}]*$)/g;
+  // URL regex pattern - matches http(s):// URLs
+  const urlRegex = /(https?:\/\/[^\s]+)/g;
 
   const parts: ReactNode[] = [];
   let lastIndex = 0;
   let match;
   let keyCounter = 0;
 
+  // Function to clean trailing punctuation from URLs
+  const cleanUrl = (url: string): { clean: string; trailing: string } => {
+    // Remove trailing punctuation like . , ; : ! ? ) ] } etc.
+    let trailingPunct = "";
+    let cleanedUrl = url;
+
+    // Keep removing trailing punctuation one char at a time
+    while (cleanedUrl.length > 0 && /[.,;:!?\)\]\}]$/.test(cleanedUrl)) {
+      trailingPunct = cleanedUrl[cleanedUrl.length - 1] + trailingPunct;
+      cleanedUrl = cleanedUrl.slice(0, -1);
+    }
+
+    return { clean: cleanedUrl, trailing: trailingPunct };
+  };
+
   while ((match = urlRegex.exec(text)) !== null) {
-    let url = match[1]; // Get the URL part (without the trailing punctuation)
+    let rawUrl = match[0];
+    const { clean: cleanedUrl, trailing: trailingPunct } = cleanUrl(rawUrl);
     const startIndex = match.index;
-    const trailingPunctuation = match[2]; // Get any trailing punctuation and whitespace
 
     // Add text before the URL
     if (startIndex > lastIndex) {
@@ -49,17 +63,23 @@ function parseMessageWithLinks(text: string): ReactNode {
     parts.push(
       <a
         key={`link_${keyCounter}`}
-        href={url}
+        href={cleanedUrl}
         target="_blank"
         rel="noopener noreferrer"
         className="underline text-blue-400 hover:text-blue-300 font-semibold transition-colors"
       >
-        {url}
+        {cleanedUrl}
       </a>,
     );
     keyCounter++;
 
-    lastIndex = urlRegex.lastIndex;
+    // Add trailing punctuation back as plain text if any
+    if (trailingPunct) {
+      parts.push(<span key={`trail_${keyCounter}`}>{trailingPunct}</span>);
+      keyCounter++;
+    }
+
+    lastIndex = startIndex + rawUrl.length;
   }
 
   // Add remaining text after the last URL
