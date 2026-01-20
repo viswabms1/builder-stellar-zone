@@ -468,9 +468,9 @@ export const handleRagHealthCheck = async (_req: Request, res: Response) => {
       knowledgeBaseChunks: knowledgeBaseChunks?.length || 0,
       openaiConfigured: !!process.env.OPENAI_API_KEY,
       apiEndpoint: "Chat Completions API (/v1/chat/completions)",
-      model: "gpt-5-nano",
-      reasoningEffort: "minimal",
-      contextWindow: "400,000 tokens",
+      model: "gpt-4o-mini",
+      temperature: 0.3,
+      contextWindow: "128,000 tokens",
       timestamp: new Date().toISOString(),
     });
   } catch (error) {
