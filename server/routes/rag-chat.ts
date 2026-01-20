@@ -258,7 +258,8 @@ export const handleRagChat = async (req: Request, res: Response) => {
     console.log(`[RAG] Processing query: "${message}"`);
 
     // Retrieve relevant context from knowledge base
-    const contextChunks = retrieveContext(message, 5);
+    // Increased from 5 to 8 to get more comprehensive program/fee information
+    const contextChunks = retrieveContext(message, 8);
 
     if (contextChunks.length === 0) {
       console.warn("[RAG] No relevant context found for query");
