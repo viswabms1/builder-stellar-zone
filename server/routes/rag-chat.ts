@@ -218,7 +218,7 @@ export const handleRagChat = async (req: Request, res: Response) => {
 
     // Call OpenAI API
     const response = await openai.chat.completions.create({
-      model: "gpt-4o-mini",
+      model: "gpt-5-nano",
       messages: messages,
       temperature: 0.7,
       max_tokens: 1024,
