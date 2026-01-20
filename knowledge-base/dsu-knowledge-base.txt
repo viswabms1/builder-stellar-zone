@@ -430,7 +430,7 @@ Program: M.Sc Cyber Security
 Level: PG | Duration: 2 Years
 
 Eligibility:
-B.Sc in Computer Science, Information Technology, Cyber Security, or related fields with minimum 50% aggregate.
+B.Sc in Computer Science, Cyber Security, or related fields with minimum 50% aggregate.
 
 Fee Structure (Annual):
   • PGCET: Not Available
