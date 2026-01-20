@@ -1,6 +1,10 @@
-import "dotenv/config";
-import express from "express";
+import dotenv from "dotenv";
+import path from "path";
+
+// Explicitly load .env from project root (works in both Vite dev and production)
+dotenv.config({ path: path.resolve(process.cwd(), ".env") });
 import cors from "cors";
+import express from "express";
 import cookieParser from "cookie-parser";
 import { handleDemo } from "./routes/demo";
 import { handleSessionInit, handleHealthCheck } from "./routes/chat";
