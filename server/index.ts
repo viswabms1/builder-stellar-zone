@@ -28,5 +28,9 @@ export function createServer() {
   app.post("/api/chat/session", handleSessionInit);
   app.get("/api/chat/health", handleHealthCheck);
 
+  // RAG Chat endpoint - new implementation using knowledge base
+  app.post("/api/rag-chat", handleRagChat);
+  app.get("/api/rag-chat/health", handleRagHealthCheck);
+
   return app;
 }
