@@ -140,7 +140,6 @@ export default function Navigation() {
       name: "Administrative Committees",
       href: "/about/leadership#administrative-committees",
     },
-    { name: "Accreditations", href: "/about/accreditations" },
   ];
 
   const alumniSubmenus = [
