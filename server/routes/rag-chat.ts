@@ -247,6 +247,18 @@ DO NOT INVENT INFORMATION ABOUT DSU THAT IS NOT IN THE KNOWLEDGE BASE.
 }
 
 /**
+ * Sanitize message by removing markdown and special formatting characters
+ */
+function sanitizeMessage(message: string): string {
+  return message
+    .replace(/\*\*/g, "") // Remove bold markdown (**)
+    .replace(/\*/g, "") // Remove italics/asterisks (*)
+    .replace(/^[•\-\s]+/gm, "-") // Replace special bullets with simple dash
+    .replace(/[\u2022]/g, "-") // Replace bullet point unicode with dash
+    .trim();
+}
+
+/**
  * Handle chat messages with Responses API
  * Uses GPT-5 Nano with persistent reasoning and state management
  */
