@@ -180,7 +180,7 @@ export default function Academics() {
         "Professional Development",
       ],
       color: "orange",
-      href: "/academics/dsu-online",
+      href: "https://dsuonline.com/",
       delay: "0.85s",
     },
   ];
