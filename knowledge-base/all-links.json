@@ -1,0 +1,299 @@
+{
+  "university": {
+    "name": "Dayananda Sagar University",
+    "tagline": "India's AI-First University",
+    "mainWebsite": "https://dsu.edu.in"
+  },
+  "primaryPages": {
+    "home": "https://dsu.edu.in/",
+    "about": "https://dsu.edu.in/about",
+    "visionMission": "https://dsu.edu.in/vision-mission",
+    "leadership": "https://dsu.edu.in/leadership",
+    "accreditations": "https://dsu.edu.in/accreditations",
+    "facilities": "https://dsu.edu.in/facilities"
+  },
+  "academics": {
+    "main": "https://dsu.edu.in/academics",
+    "facultyDirectory": "https://dsu.edu.in/faculty-directory",
+    "examinations": "https://dsu.edu.in/examinations",
+    "schools": {
+      "engineering": {
+        "url": "https://dsu.edu.in/academics/engineering",
+        "programs": [
+          "B.Tech AI & ML",
+          "B.Tech AI & Robotics",
+          "B.Tech Data Science",
+          "B.Tech Cybersecurity",
+          "B.Tech Computer Science",
+          "B.Tech Mechanical Engineering",
+          "B.Tech Aerospace Engineering",
+          "B.Tech Electronics & Communication"
+        ]
+      },
+      "law": {
+        "url": "https://dsu.edu.in/academics/law",
+        "programs": [
+          "BA LLB (Hons)",
+          "BBA LLB (Hons)",
+          "LLB (3 Year)",
+          "LLM Law & Technology",
+          "LLM Corporate & Commercial Law"
+        ]
+      },
+      "healthSciences": {
+        "url": "https://dsu.edu.in/academics/health-sciences",
+        "programs": [
+          "B.Sc Nursing",
+          "BPT (Physiotherapy)",
+          "MPT",
+          "MSc Nursing",
+          "MPH",
+          "Allied Health Sciences"
+        ]
+      },
+      "computerApplications": {
+        "url": "https://dsu.edu.in/academics/computer-applications",
+        "programs": [
+          "BCA",
+          "MCA",
+          "B.Sc Data Science",
+          "M.Sc Data Science"
+        ]
+      },
+      "basicAppliedSciences": {
+        "url": "https://dsu.edu.in/academics/basic-applied-sciences",
+        "programs": [
+          "B.Sc Triple Major (Physics, Chemistry, Mathematics)",
+          "M.Sc Programs"
+        ]
+      },
+      "commerceManagement": {
+        "url": "https://dsu.edu.in/academics/commerce-and-management",
+        "programs": [
+          "B.Com",
+          "BBA",
+          "MBA"
+        ]
+      },
+      "humanitiesSocialSciences": {
+        "url": "https://dsu.edu.in/academics/humanities-social-sciences",
+        "programs": [
+          "Humanities Programs",
+          "Social Sciences"
+        ]
+      },
+      "design": {
+        "url": "https://dsu.edu.in/academics/design/bdesign",
+        "programs": [
+          "B.Design"
+        ]
+      },
+      "journalism": {
+        "url": "https://dsu.edu.in/academics/journalism-mass-communication",
+        "programs": [
+          "BA Journalism & Mass Communication"
+        ]
+      }
+    }
+  },
+  "admissions": {
+    "general": "https://dsu.edu.in/admissions",
+    "eligibility": "https://dsu.edu.in/eligibility",
+    "portal": "https://admissions.dsu.edu.in",
+    "international": {
+      "page": "https://dsu.edu.in/international-admissions",
+      "portal": "https://international-admissions.dsu.edu.in",
+      "studyInIndia": "https://dsu.edu.in/study-in-india"
+    }
+  },
+  "international": {
+    "main": "https://dsu.edu.in/international/",
+    "affairs": "https://dsu.edu.in/international/international-affairs/",
+    "studyInIndiaGov": "https://studyinindia.gov.in/",
+    "contact": {
+      "email": "international-admissions@dsu.edu.in",
+      "whatsapp": [
+        "+91 9606022152",
+        "+91 9606022149"
+      ]
+    }
+  },
+  "studentLife": {
+    "campusLife": "https://dsu.edu.in/campus-life",
+    "library": "https://dsu.edu.in/library",
+    "alumni": "https://dsu.edu.in/alumni",
+    "hostel": "https://myposhtell.com"
+  },
+  "researchInnovation": {
+    "research": "https://dsu.edu.in/research",
+    "aiFirst": "https://dsu.edu.in/ai-first",
+    "nvidiaAI": "https://dsu.edu.in/nvidia-ai-architecture",
+    "entrepreneurship": {
+      "derbi": "https://derbifoundation.com",
+      "aicDsu": "https://aicdsu.foundation"
+    }
+  },
+  "careersPlacement": {
+    "placements": "https://dsu.edu.in/placements",
+    "careers": "https://dsu.edu.in/careers"
+  },
+  "virtualExperience": {
+    "virtualTour": "https://dsu.edu.in/virtual-tour/"
+  },
+  "allPages": [
+    {
+      "title": "Home - Dayananda Sagar University",
+      "url": "https://dsu.edu.in/"
+    },
+    {
+      "title": "About DSU",
+      "url": "https://dsu.edu.in/about"
+    },
+    {
+      "title": "Academics",
+      "url": "https://dsu.edu.in/academics"
+    },
+    {
+      "title": "School of Engineering",
+      "url": "https://dsu.edu.in/academics/engineering"
+    },
+    {
+      "title": "School of Law",
+      "url": "https://dsu.edu.in/academics/law"
+    },
+    {
+      "title": "School of Health Sciences",
+      "url": "https://dsu.edu.in/academics/health-sciences"
+    },
+    {
+      "title": "School of Computer Applications",
+      "url": "https://dsu.edu.in/academics/computer-applications"
+    },
+    {
+      "title": "School of Basic and Applied Sciences",
+      "url": "https://dsu.edu.in/academics/basic-applied-sciences"
+    },
+    {
+      "title": "School of Commerce and Management",
+      "url": "https://dsu.edu.in/academics/commerce-and-management"
+    },
+    {
+      "title": "School of Humanities and Social Sciences",
+      "url": "https://dsu.edu.in/academics/humanities-social-sciences"
+    },
+    {
+      "title": "School of Design and Digital Trans-media",
+      "url": "https://dsu.edu.in/academics/design/bdesign"
+    },
+    {
+      "title": "School of Journalism and Mass Communication",
+      "url": "https://dsu.edu.in/academics/journalism-mass-communication"
+    },
+    {
+      "title": "Admissions",
+      "url": "https://dsu.edu.in/admissions"
+    },
+    {
+      "title": "Eligibility",
+      "url": "https://dsu.edu.in/eligibility"
+    },
+    {
+      "title": "International Admissions",
+      "url": "https://dsu.edu.in/international-admissions"
+    },
+    {
+      "title": "Study in India",
+      "url": "https://dsu.edu.in/study-in-india"
+    },
+    {
+      "title": "Campus Life",
+      "url": "https://dsu.edu.in/campus-life"
+    },
+    {
+      "title": "Research",
+      "url": "https://dsu.edu.in/research"
+    },
+    {
+      "title": "Library",
+      "url": "https://dsu.edu.in/library"
+    },
+    {
+      "title": "Alumni",
+      "url": "https://dsu.edu.in/alumni"
+    },
+    {
+      "title": "Placements",
+      "url": "https://dsu.edu.in/placements"
+    },
+    {
+      "title": "AI-First University",
+      "url": "https://dsu.edu.in/ai-first"
+    },
+    {
+      "title": "NVIDIA AI Architecture",
+      "url": "https://dsu.edu.in/nvidia-ai-architecture"
+    },
+    {
+      "title": "Faculty Directory",
+      "url": "https://dsu.edu.in/faculty-directory"
+    },
+    {
+      "title": "Vision & Mission",
+      "url": "https://dsu.edu.in/vision-mission"
+    },
+    {
+      "title": "Leadership",
+      "url": "https://dsu.edu.in/leadership"
+    },
+    {
+      "title": "Accreditations",
+      "url": "https://dsu.edu.in/accreditations"
+    },
+    {
+      "title": "Facilities",
+      "url": "https://dsu.edu.in/facilities"
+    },
+    {
+      "title": "Careers",
+      "url": "https://dsu.edu.in/careers"
+    },
+    {
+      "title": "Examinations",
+      "url": "https://dsu.edu.in/examinations"
+    }
+  ],
+  "quickReference": [
+    {
+      "name": "Main Website",
+      "url": "https://dsu.edu.in"
+    },
+    {
+      "name": "Admissions Portal",
+      "url": "https://admissions.dsu.edu.in"
+    },
+    {
+      "name": "International Admissions",
+      "url": "https://international-admissions.dsu.edu.in"
+    },
+    {
+      "name": "Virtual Tour",
+      "url": "https://dsu.edu.in/virtual-tour/"
+    },
+    {
+      "name": "Campus Life",
+      "url": "https://dsu.edu.in/campus-life"
+    },
+    {
+      "name": "Research",
+      "url": "https://dsu.edu.in/research"
+    },
+    {
+      "name": "Study in India",
+      "url": "https://dsu.edu.in/study-in-india"
+    },
+    {
+      "name": "AIC-DSU Innovation",
+      "url": "https://aicdsu.foundation"
+    }
+  ]
+}
