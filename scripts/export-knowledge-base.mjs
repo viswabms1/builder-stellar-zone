@@ -474,12 +474,27 @@ ${routes.map(route => `  ${route.url.padEnd(80)} - ${route.title}`).join('\n')}
 CONTACT INFORMATION
 ================================================================================
 
+Main Website: https://dsu.edu.in
 General Inquiries: Contact through website
-International Admissions: international-admissions@dsu.edu.in
-WhatsApp (International): +91 9606022152, +91 9606022149
-Website: https://dsu.edu.in
-Admissions Portal: https://admissions.dsu.edu.in
-Virtual Tour: https://dsu.edu.in/virtual-tour/
+
+International Admissions:
+  Email: international-admissions@dsu.edu.in
+  WhatsApp: +91 9606022152, +91 9606022149
+  Portal: https://international-admissions.dsu.edu.in
+  Study in India: https://studyinindia.gov.in/
+
+Admissions & Applications:
+  General Admissions Portal: https://admissions.dsu.edu.in
+  Virtual Campus Tour: https://dsu.edu.in/virtual-tour/
+  International Page: https://dsu.edu.in/international/
+  International Affairs: https://dsu.edu.in/international/international-affairs/
+
+Innovation & Entrepreneurship:
+  DERBI Foundation: https://derbifoundation.com
+  AIC-DSU Foundation: https://aicdsu.foundation
+
+Hostel & Accommodation:
+  Hostel Portal: https://myposhtell.com
 
 ================================================================================
 QUICK FACTS
