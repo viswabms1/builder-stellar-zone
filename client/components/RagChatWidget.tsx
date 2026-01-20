@@ -16,36 +16,33 @@ import { useTheme } from "@/providers/theme-provider";
 /**
  * Helper function to detect URLs in text and convert them to clickable links
  */
-function parseMessageWithLinks(text: string): ReactNode[] {
-  // URL regex pattern that matches http(s)://, www., and domain.tld patterns
-  const urlRegex = /(https?:\/\/[^\s]+|www\.[^\s]+|(?:^|\s)[a-zA-Z0-9][\w\-\.]*\.[a-zA-Z]{2,}(?:\/[^\s]*)?)/g;
+function parseMessageWithLinks(text: string): ReactNode {
+  // URL regex pattern - matches http(s):// URLs
+  const urlRegex = /(https?:\/\/[^\s]+)/g;
 
   const parts: ReactNode[] = [];
   let lastIndex = 0;
   let match;
+  let keyCounter = 0;
 
-  // Create a copy of the regex to iterate through matches
-  const regex = /(https?:\/\/[^\s]+)/g;
-
-  while ((match = regex.exec(text)) !== null) {
+  while ((match = urlRegex.exec(text)) !== null) {
     const url = match[0];
     const startIndex = match.index;
 
     // Add text before the URL
     if (startIndex > lastIndex) {
-      parts.push(text.substring(lastIndex, startIndex));
+      const textBefore = text.substring(lastIndex, startIndex);
+      parts.push(
+        <span key={`text_${keyCounter}`}>{textBefore}</span>
+      );
+      keyCounter++;
     }
 
     // Add the URL as a link
-    let href = url;
-    if (!href.startsWith('http://') && !href.startsWith('https://')) {
-      href = 'https://' + href;
-    }
-
     parts.push(
       <a
-        key={`link_${startIndex}`}
-        href={href}
+        key={`link_${keyCounter}`}
+        href={url}
         target="_blank"
         rel="noopener noreferrer"
         className="underline text-blue-400 hover:text-blue-300 font-semibold transition-colors"
@@ -53,17 +50,21 @@ function parseMessageWithLinks(text: string): ReactNode[] {
         {url}
       </a>
     );
+    keyCounter++;
 
-    lastIndex = regex.lastIndex;
+    lastIndex = urlRegex.lastIndex;
   }
 
   // Add remaining text after the last URL
   if (lastIndex < text.length) {
-    parts.push(text.substring(lastIndex));
+    const textAfter = text.substring(lastIndex);
+    parts.push(
+      <span key={`text_${keyCounter}`}>{textAfter}</span>
+    );
   }
 
   // If no URLs were found, just return the original text
-  return parts.length === 0 ? [text] : parts;
+  return parts.length === 0 ? text : parts;
 }
 
 interface Message {
