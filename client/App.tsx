@@ -1819,7 +1819,7 @@ function App() {
               </Routes>
             </main>
             <Footer />
-            <ChatWidget />
+            <RagChatWidget />
           </div>
         </BrowserRouter>
       </ThemeProvider>
