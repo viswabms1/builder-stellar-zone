@@ -418,11 +418,11 @@ export const handleRagChat = async (req: Request, res: Response) => {
         relevanceScore: chunk.score,
       })),
       timestamp: new Date().toISOString(),
-      // Include state info for next turn (Responses API manages this)
+      // Include model info for next turn
       modelInfo: {
-        model: "gpt-5-nano",
-        reasoningEffort: "minimal",
-        contextWindow: "400k tokens",
+        model: "gpt-4o-mini",
+        temperature: 0.3,
+        contextWindow: "128k tokens",
       },
     });
   } catch (error: any) {
