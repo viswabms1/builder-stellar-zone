@@ -420,9 +420,9 @@ ${keyContent.achievements.map(a => `  • ${a}`).join('\n')}
 WEBSITE NAVIGATION STRUCTURE
 ================================================================================
 
-All available pages on the website:
+All available pages on the website (Full URLs):
 
-${routes.map(route => `  ${route.path.padEnd(50)} - ${route.title}`).join('\n')}
+${routes.map(route => `  ${route.url.padEnd(80)} - ${route.title}`).join('\n')}
 
 ================================================================================
 CONTACT INFORMATION
