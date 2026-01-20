@@ -66,8 +66,12 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
         console.log(`[ChatKit] Session created for user: ${userId}`);
 
+        // Get domain public key for ChatKit domain verification
+        const domainPk = process.env.OPENAI_DOMAIN_PK || "";
+
         res.status(200).json({
             clientSecret: data.client_secret,
+            domainPk: domainPk,
             workflowId: WORKFLOW_ID,
             expiresAt: data.expires_at,
             userId: userId,
