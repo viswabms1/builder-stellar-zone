@@ -58,6 +58,7 @@ function loadKnowledgeBase(): string {
 
 /**
  * Split knowledge base into chunks
+ * Larger chunks to keep program info together
  */
 function getKnowledgeBaseChunks(): Array<{ text: string; index: number }> {
   if (knowledgeBaseChunks) {
@@ -65,8 +66,8 @@ function getKnowledgeBaseChunks(): Array<{ text: string; index: number }> {
   }
 
   const content = loadKnowledgeBase();
-  const chunkSize = 1000; // Characters per chunk
-  const overlap = 200; // Character overlap between chunks
+  const chunkSize = 2000; // Increased from 1000 to keep program/fee info together
+  const overlap = 300; // Increased overlap
   const chunks: Array<{ text: string; index: number }> = [];
 
   for (let i = 0; i < content.length; i += chunkSize - overlap) {
