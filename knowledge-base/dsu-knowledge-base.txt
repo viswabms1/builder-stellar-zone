@@ -1,0 +1,274 @@
+
+================================================================================
+DAYANANDA SAGAR UNIVERSITY - COMPLETE KNOWLEDGE BASE
+India's AI-First University
+================================================================================
+
+UNIVERSITY OVERVIEW
+-------------------
+Name: Dayananda Sagar University
+Tagline: India's AI-First University
+Location: Bangalore, Karnataka, India
+Accreditation: NAAC A+ Accredited
+Legacy: Building on legacy since 1979
+Website: https://dsu.edu.in
+
+Description:
+Dayananda Sagar University is India's AI-First University offering world-class education in Engineering, Law, Health Sciences, Commerce, Basic and Applied Sciences, Computer Applications, Design, and Humanities.
+
+================================================================================
+SCHOOLS & PROGRAMS
+================================================================================
+
+
+1. SCHOOL OF ENGINEERING
+------------------------
+Description: Innovation-driven education for the tech-savvy world with cutting-edge AI labs and research facilities.
+
+Programs Offered:
+  • B.Tech in AI & ML
+  • B.Tech in AI & Robotics
+  • B.Tech in Data Science
+  • B.Tech in Cybersecurity
+  • B.Tech in Computer Science
+  • B.Tech in Mechanical Engineering
+  • B.Tech in Aerospace Engineering
+  • B.Tech in Electronics & Communication
+
+
+2. SCHOOL OF LAW
+----------------
+Description: Training tomorrow's legal minds with a focus on justice and impact.
+
+Programs Offered:
+  • BA LLB (Hons)
+  • BBA LLB (Hons)
+  • LLB (3 Year)
+  • LLM in Law & Technology
+  • LLM in Corporate & Commercial Law
+
+
+3. SCHOOL OF HEALTH SCIENCES
+----------------------------
+Description: Equipping future leaders in global health and wellness.
+
+Programs Offered:
+  • B.Sc Nursing
+  • BPT (Physiotherapy)
+  • MPT
+  • MSc Nursing
+  • MPH (Master of Public Health)
+  • Allied Health Sciences
+
+
+4. SCHOOL OF COMPUTER APPLICATIONS
+----------------------------------
+Description: Cutting-edge IT education for the digital age.
+
+Programs Offered:
+  • BCA
+  • MCA
+  • B.Sc Data Science
+  • M.Sc Data Science
+
+
+5. SCHOOL OF BASIC AND APPLIED SCIENCE
+--------------------------------------
+Description: Practical approaches rooted in foundational sciences.
+
+Programs Offered:
+  • B.Sc Triple Major (Physics, Chemistry, Mathematics)
+  • M.Sc in specializations
+
+
+6. SCHOOL OF COMMERCE AND MANAGEMENT
+------------------------------------
+Description: Shaping tomorrow's business and industry leaders.
+
+Programs Offered:
+  • B.Com
+  • BBA
+  • MBA
+
+
+7. SCHOOL OF ARTS, DESIGN, AND HUMANITIES
+-----------------------------------------
+Description: Cultivating creativity, culture, and critical thinking.
+
+Programs Offered:
+  • Humanities programs
+  • Social Sciences
+
+
+8. SCHOOL OF DESIGN AND DIGITAL TRANS-MEDIA
+-------------------------------------------
+Description: Bringing creativity to reality through innovative design education.
+
+Programs Offered:
+  • B.Design
+
+
+9. SCHOOL OF JOURNALISM AND MASS COMMUNICATION
+----------------------------------------------
+Description: Training future media professionals and storytellers.
+
+Programs Offered:
+  • BA Journalism and Mass Communication
+
+
+================================================================================
+RESEARCH & INNOVATION
+================================================================================
+
+Research & Innovation
+
+Key Highlights:
+  • Hackathons & 48-hour innovation sprints
+  • NASA Space Apps & international competitions
+  • Student-led research labs & mentorship
+  • AI labs and cutting-edge research facilities
+  • Industry partnerships and collaborative research
+  • Patent filing and intellectual property support
+
+Entrepreneurship Ecosystem:
+  • DERBI Foundation - Established 2009
+  • AIC-DSU Innovation Foundation - Government backed by NITI Aayog
+  • 25+ startups incubated
+  • ₹50Cr+ funding raised
+  • 150+ jobs created
+
+================================================================================
+CAMPUS LIFE
+================================================================================
+
+Campus Life at DSU
+
+Four Pillars of Excellence:
+  • Research & Innovation - Hackathons, hands-on projects, AI labs
+  • Leadership & Careers - Startup incubation, industry partnerships
+  • Creative Expression - Performing arts, cultural events
+  • Sports & Wellness - Athletic programs, community service
+
+World-Class Facilities:
+  • State-of-the-art library with 2M+ books
+  • AI labs and maker spaces with 3D printing
+  • Modern hostels with high-speed connectivity
+  • Sports facilities and wellness centers
+  • Performance venues and recreational areas
+
+Student Organizations: 100+ clubs and student organizations
+
+================================================================================
+INTERNATIONAL ADMISSIONS
+================================================================================
+
+Study in India Initiative
+
+Philosophy: वसुधैव कुटुम्बकम | Vasudhaiva Kutumbakam - The world is one family
+
+Contact Information:
+  Email: international-admissions@dsu.edu.in
+  WhatsApp: +91 9606022152, +91 9606022149
+
+Eligibility: Programs available for 10+2 pass students with various specializations
+Application Process: Online application through admissions.dsu.edu.in
+
+================================================================================
+PARTNERSHIPS & COLLABORATIONS
+================================================================================
+
+  • NVIDIA AI Architecture Partnership
+  • Industry collaborations with leading tech companies
+  • International university partnerships
+  • Research collaborations with IITs and premier institutions
+
+================================================================================
+INFRASTRUCTURE
+================================================================================
+
+  • World-class campus with modern facilities
+  • AI and research labs
+  • Library with extensive digital archives
+  • Maker spaces and innovation hubs
+  • Sports complexes
+  • Hostel accommodation
+  • Healthcare facilities
+
+================================================================================
+KEY ACHIEVEMENTS
+================================================================================
+
+  • NAAC A+ Accreditation
+  • 25,000+ Active Students
+  • 100+ Clubs & Societies
+  • High placement rates with top companies
+  • International research collaborations
+  • Multiple patents and publications
+
+================================================================================
+WEBSITE NAVIGATION STRUCTURE
+================================================================================
+
+All available pages on the website:
+
+  /                                                  - Home - Dayananda Sagar University
+  /about                                             - About DSU
+  /academics                                         - Academics
+  /academics/engineering                             - School of Engineering
+  /academics/law                                     - School of Law
+  /academics/health-sciences                         - School of Health Sciences
+  /academics/computer-applications                   - School of Computer Applications
+  /academics/basic-applied-sciences                  - School of Basic and Applied Sciences
+  /academics/commerce-and-management                 - School of Commerce and Management
+  /academics/humanities-social-sciences              - School of Humanities and Social Sciences
+  /academics/design/bdesign                          - School of Design and Digital Trans-media
+  /academics/journalism-mass-communication           - School of Journalism and Mass Communication
+  /admissions                                        - Admissions
+  /eligibility                                       - Eligibility
+  /international-admissions                          - International Admissions
+  /study-in-india                                    - Study in India
+  /campus-life                                       - Campus Life
+  /research                                          - Research
+  /library                                           - Library
+  /alumni                                            - Alumni
+  /placements                                        - Placements
+  /ai-first                                          - AI-First University
+  /nvidia-ai-architecture                            - NVIDIA AI Architecture
+  /faculty-directory                                 - Faculty Directory
+  /vision-mission                                    - Vision & Mission
+  /leadership                                        - Leadership
+  /accreditations                                    - Accreditations
+  /facilities                                        - Facilities
+  /careers                                           - Careers
+  /examinations                                      - Examinations
+
+================================================================================
+CONTACT INFORMATION
+================================================================================
+
+General Inquiries: Contact through website
+International Admissions: international-admissions@dsu.edu.in
+WhatsApp (International): +91 9606022152, +91 9606022149
+Website: https://dsu.edu.in
+Admissions Portal: https://admissions.dsu.edu.in
+Virtual Tour: https://dsu.edu.in/virtual-tour/
+
+================================================================================
+QUICK FACTS
+================================================================================
+
+  • NAAC A+ Accredited University
+  • 25,000+ Active Students
+  • 100+ Clubs & Societies
+  • India's AI-First University
+  • Multiple schools offering diverse programs
+  • Strong industry partnerships
+  • World-class infrastructure
+  • Active research and innovation ecosystem
+  • International student programs
+  • Government-backed incubation center (AIC-DSU)
+
+================================================================================
+Generated: 1/20/2026, 2:10:45 AM
+Purpose: RAG Chatbot Knowledge Base
+================================================================================
