@@ -25,6 +25,7 @@ declare global {
             "openai-chatkit": React.DetailedHTMLProps<
                 React.HTMLAttributes<HTMLElement> & {
                     "client-secret"?: string;
+                    "domain-pk"?: string;
                 },
                 HTMLElement
             >;
@@ -270,6 +271,7 @@ export function ChatWidget() {
                                 <openai-chatkit
                                     ref={chatkitRef as React.RefObject<HTMLElement>}
                                     client-secret={sessionData.clientSecret}
+                                    domain-pk={sessionData.domainPk}
                                     style={{
                                         height: "100%",
                                         width: "100%",
