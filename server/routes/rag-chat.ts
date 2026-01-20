@@ -321,61 +321,59 @@ export const handleRagChat = async (req: Request, res: Response) => {
     }
 
     console.log(
-      `[RAG] Calling Responses API with ${contextChunks.length} context chunks`,
+      `[RAG] Calling Chat Completions API with ${contextChunks.length} context chunks`,
     );
-    console.log("[RAG] Using GPT-5 Nano with reasoning_effort: minimal");
+    console.log("[RAG] Using gpt-4o-mini with temperature: 0.3");
 
-    // Call Responses API with GPT-5 Nano using direct HTTP request
-    // The Responses API uses a different structure from Chat Completions API
-    const responsesApiUrl = "https://api.openai.com/v1/responses";
+    // Call Chat Completions API with gpt-4o-mini
+    const completionsApiUrl = "https://api.openai.com/v1/chat/completions";
 
-    // Build input array in the Responses API format
-    const inputArray: any[] = [
+    // Build messages array for Chat Completions API
+    const messagesArray: any[] = [
       {
-        role: "developer",
+        role: "system",
         content: systemInstruction,
       },
     ];
 
     // Add conversation history if provided
     if (conversationHistory && Array.isArray(conversationHistory)) {
-      inputArray.push(...conversationHistory.slice(-10)); // Keep last 10 messages
+      messagesArray.push(...conversationHistory.slice(-10)); // Keep last 10 messages
     }
 
     // Add current user message
-    inputArray.push({
+    messagesArray.push({
       role: "user",
       content: message,
     });
 
-    const responseApiBody = {
-      model: "gpt-5-nano",
-      input: inputArray, // Responses API uses 'input' instead of 'messages'
-      reasoning: {
-        effort: "minimal", // Minimal reasoning for speed and cost
-      },
+    const completionsApiBody = {
+      model: "gpt-4o-mini",
+      messages: messagesArray,
+      temperature: 0.3, // Lower temperature for more consistent/deterministic responses
+      max_tokens: 1024,
     };
 
-    console.log("[RAG] Sending request to Responses API endpoint");
-    console.log(`[RAG] Input array has ${inputArray.length} messages`);
+    console.log("[RAG] Sending request to Chat Completions API endpoint");
+    console.log(`[RAG] Messages array has ${messagesArray.length} messages`);
 
-    const apiResponse = await fetch(responsesApiUrl, {
+    const apiResponse = await fetch(completionsApiUrl, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
       },
-      body: JSON.stringify(responseApiBody),
+      body: JSON.stringify(completionsApiBody),
     });
 
     if (!apiResponse.ok) {
       const errorData = await apiResponse.json();
-      console.error("[RAG] Responses API error:", {
+      console.error("[RAG] Chat Completions API error:", {
         status: apiResponse.status,
         error: errorData,
       });
       throw new Error(
-        `Responses API error: ${errorData.error?.message || "Unknown error"}`,
+        `Chat Completions API error: ${errorData.error?.message || "Unknown error"}`,
       );
     }
 
@@ -384,35 +382,20 @@ export const handleRagChat = async (req: Request, res: Response) => {
     // Debug: log the full response structure
     console.log("[RAG] Full API response:", JSON.stringify(response, null, 2));
 
-    // Extract response content from Responses API output
+    // Extract response content from Chat Completions API output
     let assistantMessage = "";
 
-    // Responses API returns output as an array of items
-    if (response.output && Array.isArray(response.output)) {
-      console.log(`[RAG] Processing ${response.output.length} output items`);
-      for (const item of response.output) {
-        console.log(`[RAG] Item type: ${item.type}`);
-        if (item.type === "message") {
-          // Message items have content array with output_text objects
-          if (Array.isArray(item.content)) {
-            for (const content of item.content) {
-              // Check for output_text type (this is what Responses API uses)
-              if (content.type === "output_text" && content.text) {
-                assistantMessage += content.text;
-              } else if (content.type === "text" && content.text) {
-                assistantMessage += content.text;
-              }
-            }
-          }
-        }
+    // Chat Completions API returns choices array
+    if (response.choices && Array.isArray(response.choices) && response.choices.length > 0) {
+      const firstChoice = response.choices[0];
+      console.log(`[RAG] Processing first choice (finish_reason: ${firstChoice.finish_reason})`);
+      if (firstChoice.message && firstChoice.message.content) {
+        assistantMessage = firstChoice.message.content;
       }
-    } else if (response.output_text) {
-      // Alternative response format
-      assistantMessage = response.output_text;
     }
 
     if (!assistantMessage) {
-      console.error("[RAG] Empty response from OpenAI Responses API");
+      console.error("[RAG] Empty response from OpenAI Chat Completions API");
       assistantMessage =
         "I encountered an error generating a response. Please try again.";
     } else {
