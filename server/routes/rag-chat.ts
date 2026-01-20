@@ -309,18 +309,17 @@ export const handleRagChat = async (req: Request, res: Response) => {
       console.log(`[RAG] Processing ${response.output.length} output items`);
       for (const item of response.output) {
         console.log(`[RAG] Item type: ${item.type}`);
-        if (item.type === "text") {
-          assistantMessage += item.text || "";
-        } else if (item.type === "message") {
-          // Message items have content array
+        if (item.type === "message") {
+          // Message items have content array with output_text objects
           if (Array.isArray(item.content)) {
             for (const content of item.content) {
-              if (content.type === "text") {
-                assistantMessage += content.text || "";
+              // Check for output_text type (this is what Responses API uses)
+              if (content.type === "output_text" && content.text) {
+                assistantMessage += content.text;
+              } else if (content.type === "text" && content.text) {
+                assistantMessage += content.text;
               }
             }
-          } else if (typeof item.content === "string") {
-            assistantMessage += item.content;
           }
         }
       }
