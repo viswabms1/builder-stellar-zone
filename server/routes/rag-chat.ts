@@ -463,11 +463,11 @@ export const handleRagHealthCheck = async (_req: Request, res: Response) => {
 
     res.json({
       status: "ok",
-      service: "DSU RAG Chat API (GPT-5 Nano)",
+      service: "DSU RAG Chat API (GPT-4o-mini)",
       knowledgeBaseAvailable: kbExists,
       knowledgeBaseChunks: knowledgeBaseChunks?.length || 0,
       openaiConfigured: !!process.env.OPENAI_API_KEY,
-      apiEndpoint: "Responses API (/v1/responses)",
+      apiEndpoint: "Chat Completions API (/v1/chat/completions)",
       model: "gpt-5-nano",
       reasoningEffort: "minimal",
       contextWindow: "400,000 tokens",
