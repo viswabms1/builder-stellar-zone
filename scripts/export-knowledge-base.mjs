@@ -423,9 +423,26 @@ Philosophy: ${keyContent.admissions.international.philosophy}
 Contact Information:
   Email: ${keyContent.admissions.international.contact}
   WhatsApp: ${keyContent.admissions.international.whatsapp.join(', ')}
+  Study in India Portal: ${keyContent.admissions.international.studyInIndiaGov}
 
 Eligibility: ${keyContent.admissions.eligibility}
 Application Process: ${keyContent.admissions.process}
+
+Application Portals:
+  General Admissions: ${keyContent.admissions.admissionsPortal}
+  International Admissions: ${keyContent.admissions.internationalAdmissions}
+
+================================================================================
+IMPORTANT EXTERNAL LINKS
+================================================================================
+
+  Virtual Campus Tour: ${keyContent.externalLinks.virtualTour}
+  Hostel Accommodation: ${keyContent.externalLinks.hostel}
+  DERBI Foundation: ${keyContent.externalLinks.derbiFoundation}
+  AIC-DSU Innovation Foundation: ${keyContent.externalLinks.aicDsu}
+  Study in India Gov Portal: ${keyContent.externalLinks.studyInIndia}
+  International Page: ${keyContent.externalLinks.internationalPage}
+  International Affairs: ${keyContent.externalLinks.internationalAffairs}
 
 ================================================================================
 PARTNERSHIPS & COLLABORATIONS
