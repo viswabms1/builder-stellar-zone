@@ -198,8 +198,8 @@ function retrieveContext(
 }
 
 /**
- * System instruction using XML-style tags (preferred for GPT-5)
- * This is the declarative instruction style recommended for 2026
+ * System instruction using XML-style tags (works well with GPT-4o-mini)
+ * This is the declarative instruction style for clear, consistent responses
  */
 function buildSystemInstruction(contextString: string): string {
   return `<system>
