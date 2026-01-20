@@ -118,7 +118,7 @@ export function RagChatWidget() {
           id: "greeting",
           role: "assistant",
           content:
-            "Hello! 👋 I'm your DSU admission assistant. I can help you with information about programs, fees, admissions, campus facilities, and more. What would you like to know?",
+            "Hello! 👋 I'm your DSU's Buddy for Admission assistant. I can help you with information about programs, fees, admissions, campus facilities, and more. What would you like to know?",
           timestamp: new Date(),
         },
       ]);
@@ -232,7 +232,7 @@ export function RagChatWidget() {
         id: "greeting",
         role: "assistant",
         content:
-          "Hello! 👋 I'm your DSU admission assistant. I can help you with information about programs, fees, admissions, campus facilities, and more. What would you like to know?",
+          "Hello! 👋 I'm your DSU's Buddy for Admission assistant. I can help you with information about programs, fees, admissions, campus facilities, and more. What would you like to know?",
         timestamp: new Date(),
       },
     ]);
