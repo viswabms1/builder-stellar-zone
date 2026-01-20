@@ -276,7 +276,7 @@ export function RagChatWidget() {
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.2 }}
             className={cn(
-              "fixed bottom-16 sm:bottom-20 lg:bottom-6 xl:bottom-6 right-6 z-[9998] w-96 h-[600px] rounded-2xl shadow-2xl flex flex-col",
+              "fixed bottom-16 sm:bottom-20 lg:bottom-6 xl:bottom-6 right-12 lg:right-6 z-[9998] w-96 h-[600px] rounded-2xl shadow-2xl flex flex-col",
               theme === "light"
                 ? "bg-white border border-gray-200"
                 : "bg-slate-900 border border-slate-700",
