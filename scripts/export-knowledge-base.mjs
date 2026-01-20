@@ -313,7 +313,7 @@ function generateHTML() {
         <h2>🗺️ Website Structure</h2>
         <p>Complete navigation paths available on the website:</p>
         <ul>
-            ${routes.map(route => `<li><span class="route">${route.path}</span> - ${route.title}</li>`).join('')}
+            ${routes.map(route => `<li><a href="${route.url}" target="_blank">${route.url}</a> - ${route.title}</li>`).join('')}
         </ul>
     </div>
 
