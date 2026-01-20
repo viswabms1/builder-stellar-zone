@@ -239,7 +239,7 @@ export function RagChatWidget() {
                 <div>
                   <h3 className="font-semibold text-sm">DSU Admissions Bot</h3>
                   <p className="text-xs opacity-70">
-                    Powered by AI • Always here to help
+                    Powered by AI-First
                   </p>
                 </div>
               </div>
