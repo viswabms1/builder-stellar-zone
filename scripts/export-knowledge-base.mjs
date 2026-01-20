@@ -144,10 +144,23 @@ const keyContent = {
       title: 'Study in India Initiative',
       philosophy: 'वसुधैव कुटुम्बकम | Vasudhaiva Kutumbakam - The world is one family',
       contact: 'international-admissions@dsu.edu.in',
-      whatsapp: ['+91 9606022152', '+91 9606022149']
+      whatsapp: ['+91 9606022152', '+91 9606022149'],
+      studyInIndiaGov: 'https://studyinindia.gov.in/'
     },
     eligibility: 'Programs available for 10+2 pass students with various specializations',
-    process: 'Online application through admissions.dsu.edu.in'
+    process: 'Online application through admissions.dsu.edu.in',
+    admissionsPortal: 'https://admissions.dsu.edu.in',
+    internationalAdmissions: 'https://international-admissions.dsu.edu.in'
+  },
+
+  externalLinks: {
+    virtualTour: 'https://dsu.edu.in/virtual-tour/',
+    hostel: 'https://myposhtell.com',
+    derbiFoundation: 'https://derbifoundation.com',
+    aicDsu: 'https://aicdsu.foundation',
+    studyInIndia: 'https://studyinindia.gov.in/',
+    internationalPage: 'https://dsu.edu.in/international/',
+    internationalAffairs: 'https://dsu.edu.in/international/international-affairs/'
   },
 
   partnerships: [
