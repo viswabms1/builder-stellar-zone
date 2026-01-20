@@ -33,16 +33,14 @@ import {
   Presentation,
 } from "lucide-react";
 
-
 export default function Academics() {
-  
-
   const schoolsData = [
     {
       icon: Cog,
       title: "School of Engineering",
       campus: "Main Campus",
-      image: "https://images.pexels.com/photos/3862638/pexels-photo-3862638.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
+      image:
+        "https://images.pexels.com/photos/3862638/pexels-photo-3862638.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
       programs: [
         "B.Tech CSE",
         "B.Tech Mechanical",
@@ -57,13 +55,9 @@ export default function Academics() {
       icon: Cpu,
       title: "School of Computer Applications",
       campus: "City Innovation Campus",
-      image: "https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
-      programs: [
-        "BCA",
-        "MCA",
-        "Data Science",
-        "Cloud Computing",
-      ],
+      image:
+        "https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
+      programs: ["BCA", "MCA", "Data Science", "Cloud Computing"],
       color: "magenta",
       href: "/academics/computer-applications",
       delay: "0.1s",
@@ -72,13 +66,9 @@ export default function Academics() {
       icon: Gavel,
       title: "School of Law",
       campus: "City Innovation Campus",
-      image: "https://images.pexels.com/photos/8112201/pexels-photo-8112201.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
-      programs: [
-        "BA LLB",
-        "BBA LLB",
-        "LLB",
-        "LLM",
-      ],
+      image:
+        "https://images.pexels.com/photos/8112201/pexels-photo-8112201.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
+      programs: ["BA LLB", "BBA LLB", "LLB", "LLM"],
       color: "blue",
       href: "/academics/law",
       delay: "0.2s",
@@ -87,7 +77,8 @@ export default function Academics() {
       icon: Briefcase,
       title: "School of Commerce & Management",
       campus: "City Innovation Campus",
-      image: "https://images.pexels.com/photos/6694543/pexels-photo-6694543.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
+      image:
+        "https://images.pexels.com/photos/6694543/pexels-photo-6694543.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
       programs: ["B.Com", "BBA", "MBA", "Finance & Marketing"],
       color: "orange",
       href: "/academics/management-studies",
@@ -97,13 +88,9 @@ export default function Academics() {
       icon: FlaskConical,
       title: "School of Applied Sciences",
       campus: "City Innovation Campus",
-      image: "https://images.pexels.com/photos/9628799/pexels-photo-9628799.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
-      programs: [
-        "Physics",
-        "Chemistry",
-        "Mathematics",
-        "Biotechnology",
-      ],
+      image:
+        "https://images.pexels.com/photos/9628799/pexels-photo-9628799.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
+      programs: ["Physics", "Chemistry", "Mathematics", "Biotechnology"],
       color: "magenta",
       href: "/academics/basic-applied-sciences",
       delay: "0.4s",
@@ -112,13 +99,9 @@ export default function Academics() {
       icon: Stethoscope,
       title: "School of Health Sciences",
       campus: "Main Campus",
-      image: "https://images.pexels.com/photos/1279365/pexels-photo-1279365.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
-      programs: [
-        "Pharmacy",
-        "Nursing",
-        "CDSIMER",
-        "CAHS",
-      ],
+      image:
+        "https://images.pexels.com/photos/1279365/pexels-photo-1279365.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
+      programs: ["Pharmacy", "Nursing", "CDSIMER", "CAHS"],
       color: "blue",
       href: "/academics/health-sciences",
       delay: "0.5s",
@@ -127,13 +110,9 @@ export default function Academics() {
       icon: Film,
       title: "School of Design",
       campus: "City Innovation Campus",
-      image: "https://images.pexels.com/photos/7147711/pexels-photo-7147711.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
-      programs: [
-        "Animation",
-        "UX/UI",
-        "Graphic Design",
-        "Digital Media",
-      ],
+      image:
+        "https://images.pexels.com/photos/7147711/pexels-photo-7147711.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
+      programs: ["Animation", "UX/UI", "Graphic Design", "Digital Media"],
       color: "magenta",
       href: "/academics/design/bdesign",
       delay: "0.7s",
@@ -142,13 +121,9 @@ export default function Academics() {
       icon: PenSquare,
       title: "School of Journalism & Mass Communication",
       campus: "City Innovation Campus",
-      image: "https://images.pexels.com/photos/7317291/pexels-photo-7317291.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
-      programs: [
-        "BJMC",
-        "PG Diploma",
-        "Documentary",
-        "Digital Media",
-      ],
+      image:
+        "https://images.pexels.com/photos/7317291/pexels-photo-7317291.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
+      programs: ["BJMC", "PG Diploma", "Documentary", "Digital Media"],
       color: "blue",
       href: "/academics/journalism-mass-communication",
       delay: "0.75s",
@@ -157,13 +132,9 @@ export default function Academics() {
       icon: Microscope,
       title: "Medical Education & Research",
       campus: "Main Campus",
-      image: "https://images.pexels.com/photos/5726794/pexels-photo-5726794.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
-      programs: [
-        "MBBS",
-        "MD",
-        "DM",
-        "Fellowship",
-      ],
+      image:
+        "https://images.pexels.com/photos/5726794/pexels-photo-5726794.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
+      programs: ["MBBS", "MD", "DM", "Fellowship"],
       color: "blue",
       href: "https://cdsimer.edu.in",
       delay: "0.8s",
@@ -172,7 +143,8 @@ export default function Academics() {
       icon: Laptop,
       title: "DSU Online",
       campus: "City Innovation Campus",
-      image: "https://images.pexels.com/photos/7974355/pexels-photo-7974355.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
+      image:
+        "https://images.pexels.com/photos/7974355/pexels-photo-7974355.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
       programs: [
         "Online Degrees",
         "Flexible Learning",
@@ -186,9 +158,24 @@ export default function Academics() {
   ];
 
   const colorClasses = {
-    orange: { bg: 'bg-gradient-to-br from-orange-500/10 to-orange-600/5', border: 'border-orange-500/30', text: 'text-orange-500', badge: 'bg-orange-500/30 text-foreground border-orange-500/50' },
-    magenta: { bg: 'bg-gradient-to-br from-brand-magenta/10 to-pink-600/5', border: 'border-brand-magenta/30', text: 'text-brand-magenta', badge: 'bg-brand-magenta/30 text-foreground border-brand-magenta/50' },
-    blue: { bg: 'bg-gradient-to-br from-blue-500/10 to-cyan-600/5', border: 'border-blue-500/30', text: 'text-blue-500', badge: 'bg-blue-500/30 text-foreground border-blue-500/50' },
+    orange: {
+      bg: "bg-gradient-to-br from-orange-500/10 to-orange-600/5",
+      border: "border-orange-500/30",
+      text: "text-orange-500",
+      badge: "bg-orange-500/30 text-foreground border-orange-500/50",
+    },
+    magenta: {
+      bg: "bg-gradient-to-br from-brand-magenta/10 to-pink-600/5",
+      border: "border-brand-magenta/30",
+      text: "text-brand-magenta",
+      badge: "bg-brand-magenta/30 text-foreground border-brand-magenta/50",
+    },
+    blue: {
+      bg: "bg-gradient-to-br from-blue-500/10 to-cyan-600/5",
+      border: "border-blue-500/30",
+      text: "text-blue-500",
+      badge: "bg-blue-500/30 text-foreground border-blue-500/50",
+    },
   };
 
   return (
@@ -202,10 +189,15 @@ export default function Academics() {
                 What Makes DSU Different
               </p>
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-6 leading-tight font-display">
-                Academic Programs <span className="bg-brand-gradient bg-clip-text text-transparent">Powered by AI</span>
+                Academic Programs{" "}
+                <span className="bg-brand-gradient bg-clip-text text-transparent">
+                  Powered by AI
+                </span>
               </h1>
               <p className="text-lg text-foreground/80 mb-8 max-w-xl font-display leading-relaxed">
-                We're not just teaching traditional courses. We're integrating AI, emerging technologies, and industry partnerships into every program to prepare you the way the industry is looking for.
+                We're not just teaching traditional courses. We're integrating
+                AI, emerging technologies, and industry partnerships into every
+                program to prepare you the way the industry is looking for.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
@@ -228,14 +220,35 @@ export default function Academics() {
 
             <div className="grid grid-cols-2 gap-4">
               {[
-                { icon: Award, label: "AI-Integrated Curriculum", desc: "Every program includes AI and emerging tech" },
-                { icon: Globe, label: "Industry Partnerships", desc: "Real-world projects with leading companies" },
-                { icon: Users, label: "Diverse Schools", desc: "10+ specialized schools across all fields" },
-                { icon: TrendingUp, label: "Research & Innovation", desc: "World-class research centers and labs" },
+                {
+                  icon: Award,
+                  label: "AI-Integrated Curriculum",
+                  desc: "Every program includes AI and emerging tech",
+                },
+                {
+                  icon: Globe,
+                  label: "Industry Partnerships",
+                  desc: "Real-world projects with leading companies",
+                },
+                {
+                  icon: Users,
+                  label: "Diverse Schools",
+                  desc: "10+ specialized schools across all fields",
+                },
+                {
+                  icon: TrendingUp,
+                  label: "Research & Innovation",
+                  desc: "World-class research centers and labs",
+                },
               ].map((item, idx) => (
-                <div key={idx} className="p-4 rounded-lg bg-white/5 border border-foreground/10 hover:border-brand-orange/30 transition-all">
+                <div
+                  key={idx}
+                  className="p-4 rounded-lg bg-white/5 border border-foreground/10 hover:border-brand-orange/30 transition-all"
+                >
                   <item.icon className="w-6 h-6 text-brand-orange mb-2" />
-                  <p className="font-bold text-sm text-foreground mb-1">{item.label}</p>
+                  <p className="font-bold text-sm text-foreground mb-1">
+                    {item.label}
+                  </p>
                   <p className="text-xs text-foreground/60">{item.desc}</p>
                 </div>
               ))}
@@ -344,7 +357,6 @@ export default function Academics() {
         </div>
       </section>
 
-
       {/* CTA Section - Modernized */}
       <section className="px-3 py-10 relative bg-background">
         <div className="max-w-4xl mx-auto">
@@ -362,7 +374,9 @@ export default function Academics() {
                 ?
               </h2>
               <p className="text-lg text-foreground/80 mb-8 max-w-2xl font-display">
-                Explore our academic programs and find the perfect fit for your career aspirations. Join thousands of students who have transformed their futures at DSU.
+                Explore our academic programs and find the perfect fit for your
+                career aspirations. Join thousands of students who have
+                transformed their futures at DSU.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
