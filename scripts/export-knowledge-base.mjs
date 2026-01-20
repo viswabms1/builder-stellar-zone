@@ -294,11 +294,27 @@ function generateHTML() {
         <div class="highlight">
             <h3>${keyContent.admissions.international.title}</h3>
             <p><strong>Philosophy:</strong> ${keyContent.admissions.international.philosophy}</p>
-            <p><strong>Contact Email:</strong> ${keyContent.admissions.international.contact}</p>
+            <p><strong>Contact Email:</strong> <a href="mailto:${keyContent.admissions.international.contact}">${keyContent.admissions.international.contact}</a></p>
             <p><strong>WhatsApp:</strong> ${keyContent.admissions.international.whatsapp.join(', ')}</p>
+            <p><strong>Study in India Portal:</strong> <a href="${keyContent.admissions.international.studyInIndiaGov}" target="_blank">${keyContent.admissions.international.studyInIndiaGov}</a></p>
         </div>
         <p><strong>Eligibility:</strong> ${keyContent.admissions.eligibility}</p>
         <p><strong>Application Process:</strong> ${keyContent.admissions.process}</p>
+        <p><strong>Admissions Portal:</strong> <a href="${keyContent.admissions.admissionsPortal}" target="_blank">${keyContent.admissions.admissionsPortal}</a></p>
+        <p><strong>International Admissions:</strong> <a href="${keyContent.admissions.internationalAdmissions}" target="_blank">${keyContent.admissions.internationalAdmissions}</a></p>
+    </div>
+
+    <div class="section">
+        <h2>🔗 Important External Links</h2>
+        <ul>
+            <li><strong>Virtual Campus Tour:</strong> <a href="${keyContent.externalLinks.virtualTour}" target="_blank">${keyContent.externalLinks.virtualTour}</a></li>
+            <li><strong>Hostel Accommodation:</strong> <a href="${keyContent.externalLinks.hostel}" target="_blank">${keyContent.externalLinks.hostel}</a></li>
+            <li><strong>DERBI Foundation:</strong> <a href="${keyContent.externalLinks.derbiFoundation}" target="_blank">${keyContent.externalLinks.derbiFoundation}</a></li>
+            <li><strong>AIC-DSU Innovation Foundation:</strong> <a href="${keyContent.externalLinks.aicDsu}" target="_blank">${keyContent.externalLinks.aicDsu}</a></li>
+            <li><strong>Study in India Gov Portal:</strong> <a href="${keyContent.externalLinks.studyInIndia}" target="_blank">${keyContent.externalLinks.studyInIndia}</a></li>
+            <li><strong>International Page:</strong> <a href="${keyContent.externalLinks.internationalPage}" target="_blank">${keyContent.externalLinks.internationalPage}</a></li>
+            <li><strong>International Affairs:</strong> <a href="${keyContent.externalLinks.internationalAffairs}" target="_blank">${keyContent.externalLinks.internationalAffairs}</a></li>
+        </ul>
     </div>
 
     <div class="section">
