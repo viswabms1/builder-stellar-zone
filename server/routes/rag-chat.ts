@@ -298,16 +298,30 @@ export const handleRagChat = async (req: Request, res: Response) => {
 
     const response = await apiResponse.json();
 
+    // Debug: log the full response structure
+    console.log("[RAG] Full API response:", JSON.stringify(response, null, 2));
+
     // Extract response content from Responses API output
     let assistantMessage = "";
 
     // Responses API returns output as an array of items
     if (response.output && Array.isArray(response.output)) {
+      console.log(`[RAG] Processing ${response.output.length} output items`);
       for (const item of response.output) {
-        if (item.type === "text" && item.text) {
-          assistantMessage += item.text;
-        } else if (item.type === "message" && item.content) {
-          assistantMessage += item.content;
+        console.log(`[RAG] Item type: ${item.type}`);
+        if (item.type === "text") {
+          assistantMessage += item.text || "";
+        } else if (item.type === "message") {
+          // Message items have content array
+          if (Array.isArray(item.content)) {
+            for (const content of item.content) {
+              if (content.type === "text") {
+                assistantMessage += content.text || "";
+              }
+            }
+          } else if (typeof item.content === "string") {
+            assistantMessage += item.content;
+          }
         }
       }
     } else if (response.output_text) {
@@ -316,12 +330,11 @@ export const handleRagChat = async (req: Request, res: Response) => {
     }
 
     if (!assistantMessage) {
-      console.error("[RAG] Empty response from OpenAI Responses API:", {
-        response: response,
-      });
+      console.error("[RAG] Empty response from OpenAI Responses API");
       assistantMessage = "I encountered an error generating a response. Please try again.";
     } else {
       console.log("[RAG] Response generated successfully");
+      console.log(`[RAG] Message length: ${assistantMessage.length} characters`);
     }
 
     // Return response with metadata
