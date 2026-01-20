@@ -15,6 +15,21 @@ export default defineConfig(({ mode }) => ({
   },
   build: {
     outDir: "dist/spa",
+    // Enable SSG optimizations
+    minify: true,
+    cssMinify: true,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
+        },
+      },
+    },
+  },
+  // Enable SSG mode
+  ssgOptions: {
+    script: 'async',
+    formatting: 'minify',
   },
   plugins: [react(), expressPlugin()],
   resolve: {
