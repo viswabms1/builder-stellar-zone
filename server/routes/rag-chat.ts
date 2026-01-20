@@ -1,15 +1,15 @@
 /**
  * RAG-Based Chat Endpoint for DSU Chatbot
- * 
+ *
  * Uses OpenAI Responses API with Retrieval-Augmented Generation (RAG)
  * to answer questions based on the DSU knowledge base.
- * 
+ *
  * Integrated with GPT-5 Nano using:
  * - Responses API (/v1/responses) for persistent reasoning and state management
  * - XML-style instruction tags for declarative prompting
  * - Minimal reasoning effort for speed and cost efficiency
  * - 400K context window for comprehensive knowledge base access
- * 
+ *
  * Flow:
  * 1. User sends a message
  * 2. System retrieves relevant context from knowledge base
@@ -45,7 +45,7 @@ function loadKnowledgeBase(): string {
   try {
     const kbPath = path.join(
       __dirname,
-      "../../knowledge-base/dsu-knowledge-base.txt"
+      "../../knowledge-base/dsu-knowledge-base.txt",
     );
     knowledgeBaseContent = fs.readFileSync(kbPath, "utf-8");
     console.log("[RAG] Knowledge base loaded successfully");
@@ -116,13 +116,19 @@ function calculateSimilarity(query: string, text: string): number {
   }
 
   // Special boost for specific program/fee queries
-  if ((queryLower.includes("fee") || queryLower.includes("cost")) &&
-      textLower.includes("₹")) {
+  if (
+    (queryLower.includes("fee") || queryLower.includes("cost")) &&
+    textLower.includes("₹")
+  ) {
     score += 20; // Boost chunks with rupee amounts
   }
 
-  if ((queryLower.includes("eligible") || queryLower.includes("eligibility")) &&
-      (textLower.includes("eligibility") || textLower.includes("pass") || textLower.includes("marks"))) {
+  if (
+    (queryLower.includes("eligible") || queryLower.includes("eligibility")) &&
+    (textLower.includes("eligibility") ||
+      textLower.includes("pass") ||
+      textLower.includes("marks"))
+  ) {
     score += 20; // Boost eligibility-related chunks
   }
 
@@ -135,13 +141,21 @@ function calculateSimilarity(query: string, text: string): number {
   }
 
   // CSE variations
-  if ((queryLower.includes("cse") || queryLower.includes("computer science")) &&
-      (textLower.includes("computer science") || textLower.includes("cse"))) {
+  if (
+    (queryLower.includes("cse") || queryLower.includes("computer science")) &&
+    (textLower.includes("computer science") || textLower.includes("cse"))
+  ) {
     score += 15;
   }
 
   // Program-specific bonus for exact matches
-  const programs = ["engineering", "law", "health sciences", "commerce", "design"];
+  const programs = [
+    "engineering",
+    "law",
+    "health sciences",
+    "commerce",
+    "design",
+  ];
   for (const prog of programs) {
     if (queryLower.includes(prog) && textLower.includes(prog)) {
       score += 10;
@@ -166,7 +180,7 @@ function calculateSimilarity(query: string, text: string): number {
  */
 function retrieveContext(
   query: string,
-  topK: number = 5
+  topK: number = 5,
 ): Array<{ text: string; score: number }> {
   const chunks = getKnowledgeBaseChunks();
 
@@ -293,7 +307,7 @@ export const handleRagChat = async (req: Request, res: Response) => {
     }
 
     console.log(
-      `[RAG] Calling Responses API with ${contextChunks.length} context chunks`
+      `[RAG] Calling Responses API with ${contextChunks.length} context chunks`,
     );
     console.log("[RAG] Using GPT-5 Nano with reasoning_effort: minimal");
 
@@ -347,7 +361,7 @@ export const handleRagChat = async (req: Request, res: Response) => {
         error: errorData,
       });
       throw new Error(
-        `Responses API error: ${errorData.error?.message || "Unknown error"}`
+        `Responses API error: ${errorData.error?.message || "Unknown error"}`,
       );
     }
 
@@ -385,10 +399,13 @@ export const handleRagChat = async (req: Request, res: Response) => {
 
     if (!assistantMessage) {
       console.error("[RAG] Empty response from OpenAI Responses API");
-      assistantMessage = "I encountered an error generating a response. Please try again.";
+      assistantMessage =
+        "I encountered an error generating a response. Please try again.";
     } else {
       console.log("[RAG] Response generated successfully");
-      console.log(`[RAG] Message length: ${assistantMessage.length} characters`);
+      console.log(
+        `[RAG] Message length: ${assistantMessage.length} characters`,
+      );
     }
 
     // Return response with metadata
@@ -440,7 +457,7 @@ export const handleRagHealthCheck = async (_req: Request, res: Response) => {
   try {
     const kbPath = path.join(
       __dirname,
-      "../../knowledge-base/dsu-knowledge-base.txt"
+      "../../knowledge-base/dsu-knowledge-base.txt",
     );
     const kbExists = fs.existsSync(kbPath);
 

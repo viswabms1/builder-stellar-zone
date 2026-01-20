@@ -19,12 +19,14 @@ The DSU RAG (Retrieval-Augmented Generation) Chatbot is a production-ready AI-po
 ### Components
 
 1. **RAG Chat API** (`server/routes/rag-chat.ts`)
+
    - Handles chat requests from the frontend
    - Retrieves relevant context from the knowledge base
    - Calls OpenAI API with contextual information
    - Returns AI-generated responses
 
 2. **RagChatWidget** (`client/components/RagChatWidget.tsx`)
+
    - Modern, responsive chat interface
    - Floating chat button in bottom-right corner
    - Conversation history management
@@ -68,6 +70,7 @@ npm install
 ```
 
 All required dependencies are already in `package.json`:
+
 - `openai` - OpenAI API client
 - `express` - Backend server
 - `framer-motion` - Animations
@@ -75,11 +78,13 @@ All required dependencies are already in `package.json`:
 ### Step 4: Run the Application
 
 **Development mode:**
+
 ```bash
 npm run dev
 ```
 
 **Build and run:**
+
 ```bash
 npm run build
 npm start
@@ -115,16 +120,19 @@ AI Response with Sources
 ### Key Features
 
 1. **Context-Aware Responses**
+
    - System finds the 5 most relevant knowledge base chunks
    - Context is included in the OpenAI prompt
    - Responses are grounded in actual DSU information
 
 2. **Conversation Memory**
+
    - Last 10 messages are kept for context
    - Enables follow-up questions
    - Multi-turn conversation support
 
 3. **Semantic Search**
+
    - Keyword-based retrieval from knowledge base
    - Relevant chunks are scored and ranked
    - Only high-relevance results are used
@@ -141,6 +149,7 @@ AI Response with Sources
 Send a chat message and get a response.
 
 **Request:**
+
 ```json
 {
   "message": "What programs does DSU offer?",
@@ -153,6 +162,7 @@ Send a chat message and get a response.
 ```
 
 **Response:**
+
 ```json
 {
   "success": true,
@@ -171,6 +181,7 @@ Send a chat message and get a response.
 Check RAG chat service health.
 
 **Response:**
+
 ```json
 {
   "status": "ok",
@@ -247,22 +258,27 @@ The server already logs important events. Check console output for:
 ### Common Issues & Solutions
 
 **Issue: "Knowledge base not available"**
+
 - Solution: Ensure `knowledge-base/dsu-knowledge-base.txt` exists
 - Regenerate it: `node scripts/export-knowledge-base.mjs`
 
 **Issue: "OPENAI_API_KEY is not configured"**
+
 - Solution: Add your API key to `.env` file
 - Verify the key is valid on OpenAI dashboard
 
 **Issue: Chatbot responds with generic information**
+
 - Solution: The knowledge base might need updating
 - Regenerate: `node scripts/export-knowledge-base.mjs`
 
 **Issue: Slow responses**
+
 - Solution: Check OpenAI API status
 - May be rate-limited; reduce context chunks from 5 to 3
 
 **Issue: Chat button not appearing**
+
 - Solution: Ensure RagChatWidget is imported in App.tsx
 - Check browser console for import errors
 
@@ -271,15 +287,18 @@ The server already logs important events. Check console output for:
 ### For Production
 
 1. **Cache Knowledge Base Chunks**
+
    - Knowledge base is loaded and split once
    - Subsequent requests reuse cached chunks
    - Add cache invalidation for knowledge base updates
 
 2. **Batch API Calls**
+
    - Use OpenAI batch API for high-volume usage
    - Reduces per-request cost
 
 3. **Implement Response Caching**
+
    - Cache frequent questions and responses
    - Check cache before calling OpenAI API
 
@@ -316,6 +335,7 @@ Based on typical usage:
 - **GPT-4o-mini**: ~$0.00015 per 1K input tokens, $0.0006 per 1K output tokens
 
 **Estimated monthly cost** (10,000 chat requests):
+
 - Using GPT-4o-mini: ~$5-10/month
 - Using GPT-3.5-turbo: ~$1-3/month
 
@@ -340,6 +360,7 @@ curl -X POST http://localhost:5173/api/rag-chat \
 ### View Server Logs
 
 The server logs detailed information about each request. Look for:
+
 - Knowledge base loading status
 - Query processing details
 - OpenAI API calls
@@ -358,21 +379,25 @@ wc -l knowledge-base/dsu-knowledge-base.txt
 ## Advanced Features (Future Enhancements)
 
 1. **Multi-language Support**
+
    - Translate queries to English for processing
    - Translate responses back to user's language
    - Use i18n infrastructure already in place
 
 2. **User Analytics**
+
    - Track frequently asked questions
    - Identify knowledge base gaps
    - Improve system prompt based on user feedback
 
 3. **Document Citations**
+
    - Return source document references
    - Link to specific pages on website
    - Build trust with citations
 
 4. **Feedback Loop**
+
    - Let users rate responses
    - Use feedback to improve context retrieval
    - Train on commonly asked questions
@@ -385,16 +410,19 @@ wc -l knowledge-base/dsu-knowledge-base.txt
 ## Security Considerations
 
 1. **API Key Management**
+
    - Never commit `.env` to version control
    - Use environment variables for secrets
    - Rotate API keys regularly
 
 2. **Rate Limiting**
+
    - Implement rate limiting in production
    - Prevent abuse and excessive API calls
    - Add CAPTCHA if needed
 
 3. **Input Validation**
+
    - Sanitize user input
    - Prevent injection attacks
    - Validate API responses
@@ -409,15 +437,18 @@ wc -l knowledge-base/dsu-knowledge-base.txt
 ### Regular Maintenance
 
 1. **Update Knowledge Base Monthly**
+
    ```bash
    node scripts/export-knowledge-base.mjs
    ```
 
 2. **Monitor API Usage**
+
    - Check OpenAI dashboard for usage trends
    - Optimize prompts if costs increase
 
 3. **Review User Feedback**
+
    - Analyze chat logs
    - Identify areas needing improvement
 
@@ -430,6 +461,7 @@ wc -l knowledge-base/dsu-knowledge-base.txt
 ### Contact & Support
 
 For issues or questions:
+
 - Create an issue in the project repository
 - Contact development team
 - Check OpenAI API documentation

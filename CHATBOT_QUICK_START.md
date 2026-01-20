@@ -5,6 +5,7 @@
 ### 1. Add Your OpenAI API Key
 
 Edit `.env` (create if it doesn't exist):
+
 ```bash
 OPENAI_API_KEY=sk_your_api_key_here
 ```
@@ -30,21 +31,25 @@ npm run dev
 ## 📋 What You Can Ask
 
 **Programs & Academics**
+
 - "What engineering programs do you have?"
 - "Tell me about B.Tech CSE AI & ML"
 - "What's the fee for MBA?"
 
 **Admissions**
+
 - "How do I apply?"
 - "What's the eligibility for law programs?"
 - "Do you accept international students?"
 
 **Campus Life**
+
 - "What facilities are available?"
 - "Tell me about student clubs"
 - "What sports programs exist?"
 
 **General Info**
+
 - "What is DSU?"
 - "Where are you located?"
 - "How can I contact you?"
@@ -54,16 +59,19 @@ npm run dev
 ## 🔧 Troubleshooting
 
 ### Chat button not showing?
+
 1. Check browser console for errors
 2. Ensure `npm run dev` is running
 3. Hard refresh the page (Ctrl+Shift+R)
 
 ### Getting errors?
+
 1. **"OPENAI_API_KEY is not configured"** → Add API key to `.env`
 2. **"Knowledge base not found"** → Run `node scripts/export-knowledge-base.mjs`
 3. **Slow responses** → Check OpenAI service status
 
 ### Need help?
+
 See full guide: `RAG_CHATBOT_GUIDE.md`
 
 ---
@@ -98,12 +106,14 @@ Shows Sources Used
 ## 🚀 Deploy to Production
 
 ### Netlify
+
 ```bash
 npm run build
 # Push to git, Netlify auto-deploys
 ```
 
 ### Vercel
+
 ```bash
 npm run build
 # Connect repo to Vercel
@@ -112,6 +122,7 @@ npm run build
 ### Environment Variables
 
 Set these in your hosting platform's environment settings:
+
 - `OPENAI_API_KEY` - Your OpenAI API key
 
 ---
@@ -119,6 +130,7 @@ Set these in your hosting platform's environment settings:
 ## 💰 Cost
 
 Using OpenAI's GPT-4o-mini model:
+
 - **Cheap**: ~$0.001 per message average
 - **10,000 messages/month**: ~$10/month
 - **Budget friendly**: GPT-3.5-turbo would be ~$2/month
@@ -144,7 +156,7 @@ Using OpenAI's GPT-4o-mini model:
 ✅ Dark/Light theme support  
 ✅ Mobile responsive  
 ✅ Production ready  
-✅ Easy to customize  
+✅ Easy to customize
 
 ---
 

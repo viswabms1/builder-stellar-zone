@@ -6,7 +6,14 @@
  */
 
 import { useState, useEffect, useRef, useCallback, ReactNode } from "react";
-import { MessageSquare, X, Send, Loader2, AlertCircle, RefreshCw } from "lucide-react";
+import {
+  MessageSquare,
+  X,
+  Send,
+  Loader2,
+  AlertCircle,
+  RefreshCw,
+} from "lucide-react";
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -32,9 +39,7 @@ function parseMessageWithLinks(text: string): ReactNode {
     // Add text before the URL
     if (startIndex > lastIndex) {
       const textBefore = text.substring(lastIndex, startIndex);
-      parts.push(
-        <span key={`text_${keyCounter}`}>{textBefore}</span>
-      );
+      parts.push(<span key={`text_${keyCounter}`}>{textBefore}</span>);
       keyCounter++;
     }
 
@@ -48,7 +53,7 @@ function parseMessageWithLinks(text: string): ReactNode {
         className="underline text-blue-400 hover:text-blue-300 font-semibold transition-colors"
       >
         {url}
-      </a>
+      </a>,
     );
     keyCounter++;
 
@@ -58,9 +63,7 @@ function parseMessageWithLinks(text: string): ReactNode {
   // Add remaining text after the last URL
   if (lastIndex < text.length) {
     const textAfter = text.substring(lastIndex);
-    parts.push(
-      <span key={`text_${keyCounter}`}>{textAfter}</span>
-    );
+    parts.push(<span key={`text_${keyCounter}`}>{textAfter}</span>);
   }
 
   // If no URLs were found, just return the original text
@@ -168,7 +171,9 @@ export function RagChatWidget() {
         const data: RagChatResponse = await response.json();
 
         if (!response.ok) {
-          throw new Error(data.details || data.error || "Failed to get response");
+          throw new Error(
+            data.details || data.error || "Failed to get response",
+          );
         }
 
         if (data.success && data.message) {
@@ -203,7 +208,7 @@ export function RagChatWidget() {
         setIsLoading(false);
       }
     },
-    [messages, sessionId]
+    [messages, sessionId],
   );
 
   /**
@@ -253,7 +258,7 @@ export function RagChatWidget() {
               "fixed bottom-6 right-6 z-[100] rounded-full p-4 shadow-lg hover:shadow-xl transition-all hover:scale-110",
               theme === "light"
                 ? "bg-orange-500 hover:bg-orange-600 text-white"
-                : "bg-orange-600 hover:bg-orange-700 text-white"
+                : "bg-orange-600 hover:bg-orange-700 text-white",
             )}
             aria-label="Open chat"
           >
@@ -274,7 +279,7 @@ export function RagChatWidget() {
               "fixed bottom-6 right-6 z-[101] w-96 h-[600px] rounded-2xl shadow-2xl flex flex-col",
               theme === "light"
                 ? "bg-white border border-gray-200"
-                : "bg-slate-900 border border-slate-700"
+                : "bg-slate-900 border border-slate-700",
             )}
           >
             {/* Header */}
@@ -283,7 +288,7 @@ export function RagChatWidget() {
                 "flex items-center justify-between p-4 rounded-t-2xl border-b",
                 theme === "light"
                   ? "bg-gradient-to-r from-orange-50 to-orange-100 border-orange-200"
-                  : "bg-gradient-to-r from-orange-900/20 to-orange-800/20 border-orange-700/30"
+                  : "bg-gradient-to-r from-orange-900/20 to-orange-800/20 border-orange-700/30",
               )}
             >
               <div className="flex items-center gap-3">
@@ -292,9 +297,7 @@ export function RagChatWidget() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-sm">DSU Admissions Bot</h3>
-                  <p className="text-xs opacity-70">
-                    Powered by AI-First
-                  </p>
+                  <p className="text-xs opacity-70">Powered by AI-First</p>
                 </div>
               </div>
               <div className="flex gap-2">
@@ -319,9 +322,7 @@ export function RagChatWidget() {
             <div
               className={cn(
                 "flex-1 overflow-y-auto p-4 space-y-4",
-                theme === "light"
-                  ? "bg-gray-50"
-                  : "bg-slate-800/50"
+                theme === "light" ? "bg-gray-50" : "bg-slate-800/50",
               )}
             >
               {messages.map((message) => (
@@ -331,7 +332,7 @@ export function RagChatWidget() {
                   animate={{ opacity: 1, y: 0 }}
                   className={cn(
                     "flex gap-3 max-w-xs",
-                    message.role === "user" ? "ml-auto flex-row-reverse" : ""
+                    message.role === "user" ? "ml-auto flex-row-reverse" : "",
                   )}
                 >
                   {/* Avatar */}
@@ -340,7 +341,7 @@ export function RagChatWidget() {
                       "w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold",
                       message.role === "user"
                         ? "bg-blue-500 text-white"
-                        : "bg-orange-500 text-white"
+                        : "bg-orange-500 text-white",
                     )}
                   >
                     {message.role === "user" ? "You" : "Bot"}
@@ -355,8 +356,8 @@ export function RagChatWidget() {
                           ? "bg-blue-500 text-white"
                           : "bg-blue-600 text-white"
                         : theme === "light"
-                        ? "bg-white border border-gray-200 text-gray-900"
-                        : "bg-slate-700 border border-slate-600 text-white"
+                          ? "bg-white border border-gray-200 text-gray-900"
+                          : "bg-slate-700 border border-slate-600 text-white",
                     )}
                   >
                     <p className="text-sm leading-relaxed whitespace-pre-wrap">
@@ -400,7 +401,9 @@ export function RagChatWidget() {
                   className="flex gap-2 p-3 rounded-lg bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800"
                 >
                   <AlertCircle className="w-5 h-5 text-red-500 flex-shrink-0" />
-                  <p className="text-sm text-red-700 dark:text-red-200">{error}</p>
+                  <p className="text-sm text-red-700 dark:text-red-200">
+                    {error}
+                  </p>
                 </motion.div>
               )}
 
@@ -424,7 +427,7 @@ export function RagChatWidget() {
                           "text-left text-xs p-2 rounded-lg transition-colors border cursor-pointer hover:scale-105 transform",
                           theme === "light"
                             ? "bg-orange-50 border-orange-200 hover:bg-orange-100 text-orange-900"
-                            : "bg-orange-900/20 border-orange-700/30 hover:bg-orange-900/40 text-orange-100"
+                            : "bg-orange-900/20 border-orange-700/30 hover:bg-orange-900/40 text-orange-100",
                         )}
                       >
                         {reply}
@@ -444,7 +447,7 @@ export function RagChatWidget() {
                 "p-4 border-t",
                 theme === "light"
                   ? "bg-gray-50 border-gray-200"
-                  : "bg-slate-800 border-slate-700"
+                  : "bg-slate-800 border-slate-700",
               )}
             >
               <div className="flex gap-2">
@@ -457,7 +460,7 @@ export function RagChatWidget() {
                     "text-sm h-10",
                     theme === "light"
                       ? "bg-white border-gray-300"
-                      : "bg-slate-700 border-slate-600 text-white"
+                      : "bg-slate-700 border-slate-600 text-white",
                   )}
                   autoFocus
                 />

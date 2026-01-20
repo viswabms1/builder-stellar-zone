@@ -1692,10 +1692,7 @@ function App() {
                   path="/international-affairs"
                   element={<InternationalAffairs />}
                 />
-                <Route
-                  path="/study-in-india"
-                  element={<StudyInIndia />}
-                />
+                <Route path="/study-in-india" element={<StudyInIndia />} />
                 <Route path="/eligibility" element={<Eligibility />} />
                 <Route
                   path="/program-lookup"
@@ -1717,8 +1714,14 @@ function App() {
                   element={<VisionMission />}
                 />
                 <Route path="/about/history" element={<History />} />
-                <Route path="/contact-complaints" element={<ContactComplaints />} />
-                <Route path="/anti-ragging-cell" element={<AntiRaggingCell />} />
+                <Route
+                  path="/contact-complaints"
+                  element={<ContactComplaints />}
+                />
+                <Route
+                  path="/anti-ragging-cell"
+                  element={<AntiRaggingCell />}
+                />
                 <Route path="/about/leadership" element={<Leadership />} />
                 <Route
                   path="/about/board-of-governors"

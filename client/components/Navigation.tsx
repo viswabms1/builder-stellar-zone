@@ -13,16 +13,23 @@ export default function Navigation() {
   const [academicsMenuOpen, setAcademicsMenuOpen] = useState(false);
   const [alumniMenuOpen, setAlumniMenuOpen] = useState(false);
   const [libraryMenuOpen, setLibraryMenuOpen] = useState(false);
-  const [internationalAdmissionsMenuOpen, setInternationalAdmissionsMenuOpen] = useState(false);
-  const [internationalAdmissionsMobileMenuOpen, setInternationalAdmissionsMobileMenuOpen] = useState(false);
-  const [internationalAdmissionsPosition, setInternationalAdmissionsPosition] = useState<{ top: number; left: number } | null>(null);
+  const [internationalAdmissionsMenuOpen, setInternationalAdmissionsMenuOpen] =
+    useState(false);
+  const [
+    internationalAdmissionsMobileMenuOpen,
+    setInternationalAdmissionsMobileMenuOpen,
+  ] = useState(false);
+  const [internationalAdmissionsPosition, setInternationalAdmissionsPosition] =
+    useState<{ top: number; left: number } | null>(null);
   const [expandedSubGroups, setExpandedSubGroups] = useState<Set<string>>(
     new Set(),
   );
   const [searchOpen, setSearchOpen] = useState(false);
   const aboutCloseTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const academicsCloseTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-  const internationalAdmissionsCloseTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const internationalAdmissionsCloseTimeoutRef = useRef<NodeJS.Timeout | null>(
+    null,
+  );
   const internationalAdmissionsButtonRef = useRef<HTMLAnchorElement>(null);
   const location = useLocation();
   const { theme } = useTheme();
@@ -95,8 +102,12 @@ export default function Navigation() {
   // Calculate position for International Admissions submenu
   useEffect(() => {
     const updatePosition = () => {
-      if (internationalAdmissionsMenuOpen && internationalAdmissionsButtonRef.current) {
-        const rect = internationalAdmissionsButtonRef.current.getBoundingClientRect();
+      if (
+        internationalAdmissionsMenuOpen &&
+        internationalAdmissionsButtonRef.current
+      ) {
+        const rect =
+          internationalAdmissionsButtonRef.current.getBoundingClientRect();
         setInternationalAdmissionsPosition({
           top: rect.bottom + 4,
           left: rect.left,
@@ -107,12 +118,12 @@ export default function Navigation() {
     updatePosition();
 
     if (internationalAdmissionsMenuOpen) {
-      window.addEventListener('scroll', updatePosition);
-      window.addEventListener('resize', updatePosition);
+      window.addEventListener("scroll", updatePosition);
+      window.addEventListener("resize", updatePosition);
 
       return () => {
-        window.removeEventListener('scroll', updatePosition);
-        window.removeEventListener('resize', updatePosition);
+        window.removeEventListener("scroll", updatePosition);
+        window.removeEventListener("resize", updatePosition);
       };
     }
   }, [internationalAdmissionsMenuOpen]);
@@ -462,7 +473,12 @@ export default function Navigation() {
     { name: "Committees", href: "/contact-complaints" },
     { name: "Examinations", href: "/examinations" },
     { name: "Careers", href: "/careers" },
-    { name: "International", href: "https://dsu.edu.in/international/", external: true, hasSubmenu: true },
+    {
+      name: "International",
+      href: "https://dsu.edu.in/international/",
+      external: true,
+      hasSubmenu: true,
+    },
     { name: "Hostel@Campus", href: "https://myposhtell.com", external: true },
     {
       name: "Public Self Disclosure",
@@ -472,8 +488,14 @@ export default function Navigation() {
   ];
 
   const internationalSubmenuItems = [
-    { name: "International Admissions", href: "https://dsu.edu.in/international/" },
-    { name: "International Affairs", href: "https://dsu.edu.in/international/international-affairs/" },
+    {
+      name: "International Admissions",
+      href: "https://dsu.edu.in/international/",
+    },
+    {
+      name: "International Affairs",
+      href: "https://dsu.edu.in/international/international-affairs/",
+    },
     { name: "Study in India", href: "/study-in-india" },
   ];
 
@@ -505,7 +527,8 @@ export default function Navigation() {
             {topMenuItems.map((item, idx) => {
               const isAlumni = item.href === "/alumni";
               const isLibrary = item.href === "/library";
-              const isInternationalAdmissions = item.href === "https://dsu.edu.in/international/";
+              const isInternationalAdmissions =
+                item.href === "https://dsu.edu.in/international/";
               const sharedClasses = `text-xs sm:text-sm font-medium transition-all duration-200 whitespace-nowrap px-1.5 sm:px-2.5 py-1.5 sm:py-2 rounded-md hover:scale-105 flex-shrink-0 flex items-center gap-0.5 ${
                 theme === "light"
                   ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
@@ -525,65 +548,77 @@ export default function Navigation() {
                       href="#"
                       onClick={(e) => {
                         e.preventDefault();
-                        setInternationalAdmissionsMenuOpen(!internationalAdmissionsMenuOpen);
+                        setInternationalAdmissionsMenuOpen(
+                          !internationalAdmissionsMenuOpen,
+                        );
                       }}
                       className={`${sharedClasses} flex items-center gap-1 cursor-pointer`}
                     >
                       <span>{item.name}</span>
-                      <ChevronDown className={`w-3 h-3 transition-transform ${internationalAdmissionsMenuOpen ? "rotate-180" : ""}`} />
+                      <ChevronDown
+                        className={`w-3 h-3 transition-transform ${internationalAdmissionsMenuOpen ? "rotate-180" : ""}`}
+                      />
                     </a>
 
                     {/* International Admissions Submenu - Fixed positioning to escape overflow container */}
-                    {internationalAdmissionsMenuOpen && internationalAdmissionsPosition && (
-                      <div
-                        className={`fixed rounded-lg shadow-lg min-w-max backdrop-blur-sm z-[10002] py-2 ${
-                          theme === "light"
-                            ? "bg-white/95 border border-orange-200/50"
-                            : "bg-slate-800/95 border border-orange-600/30"
-                        }`}
-                        style={{
-                          top: `${internationalAdmissionsPosition.top}px`,
-                          left: `${internationalAdmissionsPosition.left}px`,
-                        }}
-                        onMouseEnter={handleInternationalAdmissionsMenuEnter}
-                        onMouseLeave={handleInternationalAdmissionsMenuLeave}
-                      >
-                        {internationalSubmenuItems.map((submenuItem, submenuIdx) => {
-                          const isExternal = submenuItem.href.startsWith("http");
-                          const baseClasses = `block px-4 py-2.5 text-xs sm:text-sm whitespace-nowrap transition-all ${
+                    {internationalAdmissionsMenuOpen &&
+                      internationalAdmissionsPosition && (
+                        <div
+                          className={`fixed rounded-lg shadow-lg min-w-max backdrop-blur-sm z-[10002] py-2 ${
                             theme === "light"
-                              ? "text-gray-700 hover:bg-orange-100 hover:text-orange-700"
-                              : "text-white/80 hover:bg-white/20 hover:text-white"
-                          } ${submenuIdx < internationalSubmenuItems.length - 1 ? (theme === "light" ? "border-b border-orange-200/30" : "border-b border-white/10") : ""}`;
+                              ? "bg-white/95 border border-orange-200/50"
+                              : "bg-slate-800/95 border border-orange-600/30"
+                          }`}
+                          style={{
+                            top: `${internationalAdmissionsPosition.top}px`,
+                            left: `${internationalAdmissionsPosition.left}px`,
+                          }}
+                          onMouseEnter={handleInternationalAdmissionsMenuEnter}
+                          onMouseLeave={handleInternationalAdmissionsMenuLeave}
+                        >
+                          {internationalSubmenuItems.map(
+                            (submenuItem, submenuIdx) => {
+                              const isExternal =
+                                submenuItem.href.startsWith("http");
+                              const baseClasses = `block px-4 py-2.5 text-xs sm:text-sm whitespace-nowrap transition-all ${
+                                theme === "light"
+                                  ? "text-gray-700 hover:bg-orange-100 hover:text-orange-700"
+                                  : "text-white/80 hover:bg-white/20 hover:text-white"
+                              } ${submenuIdx < internationalSubmenuItems.length - 1 ? (theme === "light" ? "border-b border-orange-200/30" : "border-b border-white/10") : ""}`;
 
-                          if (isExternal) {
-                            return (
-                              <a
-                                key={submenuItem.name}
-                                href={submenuItem.href}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                onClick={() => setInternationalAdmissionsMenuOpen(false)}
-                                className={baseClasses}
-                              >
-                                {submenuItem.name}
-                              </a>
-                            );
-                          }
+                              if (isExternal) {
+                                return (
+                                  <a
+                                    key={submenuItem.name}
+                                    href={submenuItem.href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    onClick={() =>
+                                      setInternationalAdmissionsMenuOpen(false)
+                                    }
+                                    className={baseClasses}
+                                  >
+                                    {submenuItem.name}
+                                  </a>
+                                );
+                              }
 
-                          return (
-                            <Link
-                              key={submenuItem.name}
-                              to={submenuItem.href}
-                              onClick={() => setInternationalAdmissionsMenuOpen(false)}
-                              className={baseClasses}
-                            >
-                              {submenuItem.name}
-                            </Link>
-                          );
-                        })}
-                      </div>
-                    )}
+                              return (
+                                <Link
+                                  key={submenuItem.name}
+                                  to={submenuItem.href}
+                                  onClick={() =>
+                                    setInternationalAdmissionsMenuOpen(false)
+                                  }
+                                  className={baseClasses}
+                                >
+                                  {submenuItem.name}
+                                </Link>
+                              );
+                            },
+                          )}
+                        </div>
+                      )}
                   </div>
                 );
               }
@@ -916,7 +951,7 @@ export default function Navigation() {
                                     bg:
                                       theme === "light"
                                         ? "bg-emerald-50"
-                                      : "bg-emerald-900/20",
+                                        : "bg-emerald-900/20",
                                     border:
                                       "border-emerald-200/50 dark:border-emerald-600/30",
                                     text: "text-emerald-900 dark:text-emerald-100",
@@ -1476,7 +1511,8 @@ export default function Navigation() {
                 {topMenuItems.map((item, idx) => {
                   const isAlumni = item.href === "/alumni";
                   const isLibrary = item.href === "/library";
-                  const isInternationalAdmissions = item.href === "https://dsu.edu.in/international/";
+                  const isInternationalAdmissions =
+                    item.href === "https://dsu.edu.in/international/";
                   const sharedClasses = `flex items-center space-x-2 px-3 py-2 rounded-xl text-base sm:text-lg font-medium font-display transition-all duration-200 w-full ${
                     theme === "light"
                       ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
@@ -1487,13 +1523,19 @@ export default function Navigation() {
                     return (
                       <div key={`top-${idx}`} className="space-y-2">
                         <button
-                          onClick={() => setInternationalAdmissionsMobileMenuOpen(!internationalAdmissionsMobileMenuOpen)}
+                          onClick={() =>
+                            setInternationalAdmissionsMobileMenuOpen(
+                              !internationalAdmissionsMobileMenuOpen,
+                            )
+                          }
                           className={`w-full text-left ${sharedClasses}`}
                         >
                           <span className="flex-1 truncate">{item.name}</span>
                           <ChevronDown
                             className={`w-4 h-4 transition-transform flex-shrink-0 ${
-                              internationalAdmissionsMobileMenuOpen ? "rotate-180" : ""
+                              internationalAdmissionsMobileMenuOpen
+                                ? "rotate-180"
+                                : ""
                             }`}
                           />
                         </button>
@@ -1508,7 +1550,8 @@ export default function Navigation() {
                             }`}
                           >
                             {internationalSubmenuItems.map((submenuItem) => {
-                              const isExternal = submenuItem.href.startsWith("http");
+                              const isExternal =
+                                submenuItem.href.startsWith("http");
                               const baseClasses = `block px-4 py-2.5 text-base sm:text-lg transition-colors ${
                                 theme === "light"
                                   ? "text-gray-700 hover:bg-orange-200"
@@ -1524,7 +1567,9 @@ export default function Navigation() {
                                     rel="noopener noreferrer"
                                     onClick={() => {
                                       setIsOpen(false);
-                                      setInternationalAdmissionsMobileMenuOpen(false);
+                                      setInternationalAdmissionsMobileMenuOpen(
+                                        false,
+                                      );
                                     }}
                                     className={baseClasses}
                                   >
@@ -1539,7 +1584,9 @@ export default function Navigation() {
                                   to={submenuItem.href}
                                   onClick={() => {
                                     setIsOpen(false);
-                                    setInternationalAdmissionsMobileMenuOpen(false);
+                                    setInternationalAdmissionsMobileMenuOpen(
+                                      false,
+                                    );
                                   }}
                                   className={baseClasses}
                                 >
