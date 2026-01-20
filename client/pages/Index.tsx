@@ -70,6 +70,19 @@ function HeroVideo() {
 
     // Play video at normal speed
     video.playbackRate = 1;
+
+    // Attempt to play video - handle promise rejection for autoplay restrictions
+    video.play().catch((error) => {
+      console.warn("Video autoplay failed:", error);
+      // Try again when user interacts with page
+      const playOnInteraction = () => {
+        video.play().catch(() => {});
+        document.removeEventListener("click", playOnInteraction);
+        document.removeEventListener("scroll", playOnInteraction);
+      };
+      document.addEventListener("click", playOnInteraction);
+      document.addEventListener("scroll", playOnInteraction);
+    });
   }, []);
 
   useEffect(() => {
