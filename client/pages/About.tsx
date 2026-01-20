@@ -289,18 +289,6 @@ export default function About() {
                 description: "Meet our visionary leadership team",
                 href: "/about/leadership",
               },
-              {
-                icon: Award,
-                title: "Accreditations",
-                description: "National and international recognitions",
-                href: "/about/accreditations",
-              },
-              {
-                icon: Building,
-                title: "Facilities",
-                description: "World-class infrastructure and amenities",
-                href: "/about/facilities",
-              },
             ].map((section, index) => {
               const Icon = section.icon;
               return (
