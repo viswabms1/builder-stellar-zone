@@ -1,20 +1,20 @@
 /**
  * RAG-Based Chat Endpoint for DSU Chatbot
  *
- * Uses OpenAI Responses API with Retrieval-Augmented Generation (RAG)
+ * Uses OpenAI Chat Completions API with Retrieval-Augmented Generation (RAG)
  * to answer questions based on the DSU knowledge base.
  *
- * Integrated with GPT-5 Nano using:
- * - Responses API (/v1/responses) for persistent reasoning and state management
+ * Integrated with GPT-4o-mini using:
+ * - Chat Completions API (/v1/chat/completions) for fast, reliable responses
  * - XML-style instruction tags for declarative prompting
- * - Minimal reasoning effort for speed and cost efficiency
- * - 400K context window for comprehensive knowledge base access
+ * - Temperature 0.3 for consistent and deterministic responses
+ * - 128K context window for comprehensive knowledge base access
  *
  * Flow:
  * 1. User sends a message
  * 2. System retrieves relevant context from knowledge base
- * 3. Responses API processes with GPT-5 Nano (maintains chain of thought)
- * 4. Response is returned to the user with state for next turn
+ * 3. Chat Completions API processes with GPT-4o-mini
+ * 4. Response is returned to the user
  */
 
 import OpenAI from "openai";
