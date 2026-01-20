@@ -31,32 +31,22 @@ Innovation-driven education for the tech-savvy world with cutting-edge AI labs a
 PROGRAMS OFFERED
 ----------------
 
-COMPUTER SCIENCE & ENGINEERING DEPARTMENT:
-  - B.Tech Computer Science & Engineering (4 Years)
-  - B.Tech CSE (Artificial Intelligence & Machine Learning) (4 Years)
-  - B.Tech CSE (Data Science) (4 Years)
-  - B.Tech CSE (Cyber Security) (4 Years)
-  - B.Tech CSE (AI & Data Science) (4 Years)
-  - B.Tech CSE (Artificial Intelligence) (4 Years)
-  - B.Tech Computer Science & Technology (4 Years)
-  - B.Tech Computer Science & Medical Engineering (4 Years)
-  - B.Tech AI & Robotics (4 Years)
+B.TECH UNDERGRADUATE PROGRAMS:
+  1. B.Tech Computer Science & Technology (4 Years)
+  2. B.Tech Computer Science & Medical Engineering (4 Years)
+  3. B.Tech AI & Robotics (4 Years)
+  4. B.Tech Electronics & Communication Engineering (4 Years)
+  5. B.Tech Mechanical Engineering (4 Years)
+  6. B.Tech Aerospace Engineering (4 Years)
+
+M.TECH POSTGRADUATE PROGRAMS:
   - M.Tech Computer Science & Engineering (2 Years)
   - M.Tech CSE (AI & Machine Learning) (2 Years)
   - M.Tech AI & Data Science (2 Years)
   - M.Tech Artificial Intelligence (2 Years)
   - M.Tech AI & Robotics (2 Years)
-
-ELECTRONICS & COMMUNICATION DEPARTMENT:
-  - B.Tech Electronics & Communication Engineering (4 Years)
   - M.Tech Embedded System (2 Years)
-
-MECHANICAL ENGINEERING DEPARTMENT:
-  - B.Tech Mechanical Engineering (4 Years)
   - M.Tech Design Engineering (2 Years)
-
-AEROSPACE ENGINEERING DEPARTMENT:
-  - B.Tech Aerospace Engineering (4 Years)
 
 ELIGIBILITY REQUIREMENTS
 ------------------------
