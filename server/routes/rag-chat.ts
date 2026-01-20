@@ -85,28 +85,75 @@ function getKnowledgeBaseChunks(): Array<{ text: string; index: number }> {
 }
 
 /**
- * Calculate simple similarity between query and text
- * Uses keyword matching and TF-IDF-like scoring
+ * Calculate similarity between query and text
+ * Enhanced with better keyword matching for fees, eligibility, and programs
  */
 function calculateSimilarity(query: string, text: string): number {
-  const queryWords = query
-    .toLowerCase()
-    .split(/\s+/)
-    .filter((w) => w.length > 3); // Ignore short words
+  const queryLower = query.toLowerCase();
   const textLower = text.toLowerCase();
 
   let score = 0;
-  for (const word of queryWords) {
-    // Count occurrences
-    const matches = (textLower.match(new RegExp(word, "g")) || []).length;
-    score += matches;
+
+  // Exact phrase match (highest priority)
+  if (textLower.includes(queryLower)) {
+    score += 50;
   }
 
-  // Boost score for longer matches (phrases)
-  if (queryWords.length > 1) {
-    const phrase = queryWords.join(" ");
-    if (textLower.includes(phrase)) {
+  // Keyword-based scoring with special handling for common terms
+  const keywords = queryLower.split(/\s+/).filter((w) => w.length > 2);
+
+  for (const keyword of keywords) {
+    // Count word occurrences
+    const pattern = new RegExp(`\\b${keyword}\\b`, "g");
+    const matches = (textLower.match(pattern) || []).length;
+    score += matches * 5;
+
+    // Partial matches for acronyms and variations
+    if (textLower.includes(keyword)) {
+      score += 2;
+    }
+  }
+
+  // Special boost for specific program/fee queries
+  if ((queryLower.includes("fee") || queryLower.includes("cost")) &&
+      textLower.includes("₹")) {
+    score += 20; // Boost chunks with rupee amounts
+  }
+
+  if ((queryLower.includes("eligible") || queryLower.includes("eligibility")) &&
+      (textLower.includes("eligibility") || textLower.includes("pass") || textLower.includes("marks"))) {
+    score += 20; // Boost eligibility-related chunks
+  }
+
+  if (queryLower.includes("b.tech") && textLower.includes("b.tech")) {
+    score += 15;
+  }
+
+  if (queryLower.includes("m.tech") && textLower.includes("m.tech")) {
+    score += 15;
+  }
+
+  // CSE variations
+  if ((queryLower.includes("cse") || queryLower.includes("computer science")) &&
+      (textLower.includes("computer science") || textLower.includes("cse"))) {
+    score += 15;
+  }
+
+  // Program-specific bonus for exact matches
+  const programs = ["engineering", "law", "health sciences", "commerce", "design"];
+  for (const prog of programs) {
+    if (queryLower.includes(prog) && textLower.includes(prog)) {
       score += 10;
+    }
+  }
+
+  // Phrase matching (multiple words together)
+  if (keywords.length > 1) {
+    for (let i = 0; i < keywords.length - 1; i++) {
+      const phrase = keywords[i] + " " + keywords[i + 1];
+      if (textLower.includes(phrase)) {
+        score += 8;
+      }
     }
   }
 
