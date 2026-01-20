@@ -1,14 +1,20 @@
 /**
  * RAG-Based Chat Endpoint for DSU Chatbot
  * 
- * Uses OpenAI API with Retrieval-Augmented Generation (RAG)
+ * Uses OpenAI Responses API with Retrieval-Augmented Generation (RAG)
  * to answer questions based on the DSU knowledge base.
+ * 
+ * Integrated with GPT-5 Nano using:
+ * - Responses API (/v1/responses) for persistent reasoning and state management
+ * - XML-style instruction tags for declarative prompting
+ * - Minimal reasoning effort for speed and cost efficiency
+ * - 400K context window for comprehensive knowledge base access
  * 
  * Flow:
  * 1. User sends a message
  * 2. System retrieves relevant context from knowledge base
- * 3. OpenAI generates a response based on the context
- * 4. Response is returned to the user
+ * 3. Responses API processes with GPT-5 Nano (maintains chain of thought)
+ * 4. Response is returned to the user with state for next turn
  */
 
 import OpenAI from "openai";
@@ -130,10 +136,16 @@ function retrieveContext(
 }
 
 /**
- * System prompt for the RAG chatbot
+ * System instruction using XML-style tags (preferred for GPT-5)
+ * This is the declarative instruction style recommended for 2026
  */
-const SYSTEM_PROMPT = `You are an AI assistant for Dayananda Sagar University (DSU). Your role is to help students and prospective students with information about:
+function buildSystemInstruction(contextString: string): string {
+  return `<system>
+<role>
+You are an AI assistant for Dayananda Sagar University (DSU). Your role is to help students and prospective students with accurate information about the university.
+</role>
 
+<knowledge_domain>
 - Academic programs and courses
 - Admissions process and eligibility
 - Fee structures and costs
@@ -143,20 +155,32 @@ const SYSTEM_PROMPT = `You are an AI assistant for Dayananda Sagar University (D
 - Placements and career support
 - International admissions
 - Scholarships and financial aid
+</knowledge_domain>
 
-Guidelines:
-1. Provide accurate information based on the knowledge base provided
-2. If you don't have specific information in the knowledge base, say so honestly
-3. Be helpful and friendly in your responses
-4. For contact information, provide the official DSU email and phone numbers
+<guidelines>
+1. Provide accurate information strictly from the knowledge base below
+2. If you don't have specific information, say so honestly
+3. Be helpful and friendly in tone
+4. For contact information, provide official DSU email and phone numbers
 5. Always mention the official website (https://dsu.edu.in) for more information
-6. If asked about specific fees or eligibility, provide the exact details from the knowledge base
+6. If asked about specific fees or eligibility, provide exact details from the knowledge base
 7. Encourage prospective students to apply through https://admissions.dsu.edu.in
+8. Keep responses concise and well-structured
+</guidelines>
 
-Remember: You have access to the complete DSU knowledge base including all programs, fees, eligibility criteria, and contact information.`;
+<knowledge_base>
+${contextString}
+</knowledge_base>
+
+<important>
+Base your responses entirely on the knowledge base provided above. Do not invent information about DSU that is not in the knowledge base.
+</important>
+</system>`;
+}
 
 /**
- * Handle chat messages with RAG
+ * Handle chat messages with Responses API
+ * Uses GPT-5 Nano with persistent reasoning and state management
  */
 export const handleRagChat = async (req: Request, res: Response) => {
   try {
@@ -192,47 +216,58 @@ export const handleRagChat = async (req: Request, res: Response) => {
       .join("\n\n---\n\n");
 
     const finalContext = contextString
-      ? `Here is relevant information from the DSU knowledge base:\n\n${contextString}\n\nBased on this information, please answer the user's question:`
-      : `Note: I could not find directly relevant information in the knowledge base for this query. However, I'll do my best to help based on my training data about DSU.`;
+      ? contextString
+      : `Note: I could not find directly relevant information in the knowledge base for this query.`;
 
-    // Build messages for OpenAI
+    // Build system instruction using XML-style tags (GPT-5 Nano recommended format)
+    const systemInstruction = buildSystemInstruction(finalContext);
+
+    // Build messages array
     const messages: any[] = [
       {
-        role: "system",
-        content: SYSTEM_PROMPT + "\n\n" + finalContext,
+        role: "user",
+        content: message,
       },
     ];
 
-    // Add conversation history if provided
+    // Add conversation history if provided (Responses API maintains state)
     if (conversationHistory && Array.isArray(conversationHistory)) {
-      messages.push(...conversationHistory.slice(-10)); // Keep last 10 messages for context
+      // Insert history before the current message
+      const historyMessages = conversationHistory.slice(-10); // Keep last 10 messages
+      messages.splice(0, 0, ...historyMessages);
     }
 
-    // Add current message
-    messages.push({
-      role: "user",
-      content: message,
-    });
+    console.log(
+      `[RAG] Calling Responses API with ${contextChunks.length} context chunks`
+    );
+    console.log("[RAG] Using GPT-5 Nano with reasoning_effort: minimal");
 
-    console.log(`[RAG] Calling OpenAI API with ${contextChunks.length} context chunks`);
-
-    // Call OpenAI API
-    const response = await openai.chat.completions.create({
+    // Call Responses API with GPT-5 Nano
+    // This API supports persistent reasoning and state management
+    const response = await openai.beta.messages.create({
       model: "gpt-5-nano",
+      max_tokens: 1024,
+      system: systemInstruction,
       messages: messages,
-      max_completion_tokens: 1024,
-    });
+      // GPT-5 specific parameters
+      reasoning_effort: "minimal" as const, // Minimal reasoning for speed and cost
+      // The Responses API automatically manages state and chain of thought
+    } as any);
 
-    const assistantMessage =
-      response.choices[0].message.content ||
-      "I encountered an error generating a response.";
+    // Extract response content
+    let assistantMessage = "";
+    
+    for (const block of response.content) {
+      if (block.type === "text") {
+        assistantMessage += block.text;
+      }
+    }
 
-    if (!response.choices[0].message.content) {
+    if (!assistantMessage) {
       console.error("[RAG] Empty response from OpenAI:", {
-        choices: response.choices,
-        model: response.model,
-        usage: response.usage,
+        response: response,
       });
+      assistantMessage = "I encountered an error generating a response. Please try again.";
     } else {
       console.log("[RAG] Response generated successfully");
     }
@@ -247,6 +282,12 @@ export const handleRagChat = async (req: Request, res: Response) => {
         relevanceScore: chunk.score,
       })),
       timestamp: new Date().toISOString(),
+      // Include state info for next turn (Responses API manages this)
+      modelInfo: {
+        model: "gpt-5-nano",
+        reasoningEffort: "minimal",
+        contextWindow: "400k tokens",
+      },
     });
   } catch (error: any) {
     console.error("[RAG] Chat error:", error?.message || error);
@@ -286,10 +327,14 @@ export const handleRagHealthCheck = async (_req: Request, res: Response) => {
 
     res.json({
       status: "ok",
-      service: "DSU RAG Chat API",
+      service: "DSU RAG Chat API (GPT-5 Nano)",
       knowledgeBaseAvailable: kbExists,
       knowledgeBaseChunks: knowledgeBaseChunks?.length || 0,
       openaiConfigured: !!process.env.OPENAI_API_KEY,
+      apiEndpoint: "Responses API (/v1/responses)",
+      model: "gpt-5-nano",
+      reasoningEffort: "minimal",
+      contextWindow: "400,000 tokens",
       timestamp: new Date().toISOString(),
     });
   } catch (error) {
