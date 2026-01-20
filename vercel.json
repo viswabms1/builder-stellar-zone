@@ -1,6 +1,24 @@
 {
   "rewrites": [
-    { "source": "/api/(.*)", "destination": "/api/$1" },
-    { "source": "/(.*)", "destination": "/index.html" }
+    {
+      "source": "/api/rag-chat",
+      "destination": "/api/rag-chat"
+    },
+    {
+      "source": "/api/rag-chat/health",
+      "destination": "/api/rag-chat/health"
+    },
+    {
+      "source": "/api/chat/session",
+      "destination": "/api/chat/session"
+    },
+    {
+      "source": "/api/chat/health",
+      "destination": "/api/chat/health"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
   ]
 }
