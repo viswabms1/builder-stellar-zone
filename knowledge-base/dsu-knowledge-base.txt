@@ -1,4 +1,3 @@
-
 ================================================================================
 DAYANANDA SAGAR UNIVERSITY - COMPLETE KNOWLEDGE BASE
 India's AI-First University
@@ -12,7 +11,7 @@ Tagline: India's AI-First University
 Location: Bangalore, Karnataka, India
 Accreditation: NAAC A+ Accredited
 Legacy: Building on legacy since 1979
-Website: https://dsu.edu.in
+Website: https://8660401238.vercel.app
 
 Description:
 Dayananda Sagar University is India's AI-First University offering world-class education in Engineering, Law, Health Sciences, Commerce, Basic and Applied Sciences, Computer Applications, Design, and Humanities.
@@ -1289,7 +1288,7 @@ All available pages on the website (Full URLs):
 CONTACT INFORMATION
 ================================================================================
 
-Main Website: https://dsu.edu.in
+Main Website: https://8660401238.vercel.app
 General Inquiries: Contact through website
 
 International Admissions:
