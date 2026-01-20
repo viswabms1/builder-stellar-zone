@@ -21,15 +21,15 @@ export default defineConfig(({ mode }) => ({
     rollupOptions: {
       output: {
         manualChunks: {
-          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
+          "react-vendor": ["react", "react-dom", "react-router-dom"],
         },
       },
     },
   },
   // Enable SSG mode
   ssgOptions: {
-    script: 'async',
-    formatting: 'minify',
+    script: "async",
+    formatting: "minify",
   },
   plugins: [react(), expressPlugin()],
   resolve: {
