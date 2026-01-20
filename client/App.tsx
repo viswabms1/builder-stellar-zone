@@ -388,6 +388,7 @@ import LibraryGallery from "./pages/LibraryGallery";
 import LibraryAdvisoryCommittee from "./pages/LibraryAdvisoryCommittee";
 import LibraryContact from "./pages/LibraryContact";
 import NotFound from "./pages/NotFound";
+import { ChatWidget } from "./components/ChatWidget";
 
 function App() {
   return (
@@ -1818,6 +1819,7 @@ function App() {
               </Routes>
             </main>
             <Footer />
+            <ChatWidget />
           </div>
         </BrowserRouter>
       </ThemeProvider>
