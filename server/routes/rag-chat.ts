@@ -227,7 +227,15 @@ export const handleRagChat = async (req: Request, res: Response) => {
       response.choices[0].message.content ||
       "I encountered an error generating a response.";
 
-    console.log("[RAG] Response generated successfully");
+    if (!response.choices[0].message.content) {
+      console.error("[RAG] Empty response from OpenAI:", {
+        choices: response.choices,
+        model: response.model,
+        usage: response.usage,
+      });
+    } else {
+      console.log("[RAG] Response generated successfully");
+    }
 
     // Return response with metadata
     res.json({
