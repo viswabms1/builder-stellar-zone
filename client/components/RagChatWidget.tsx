@@ -359,7 +359,9 @@ export function RagChatWidget() {
                     )}
                   >
                     <p className="text-sm leading-relaxed whitespace-pre-wrap">
-                      {message.content}
+                      {message.role === "assistant"
+                        ? parseMessageWithLinks(message.content)
+                        : message.content}
                     </p>
                   </div>
                 </motion.div>
