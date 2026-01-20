@@ -253,15 +253,6 @@ export default function Navigation() {
               },
             ],
           },
-          {
-            name: "Resources",
-            departments: [
-              {
-                name: "SOE Bulletin - Newsletter",
-                href: "/academics/engineering/newsletter",
-              },
-            ],
-          },
         ],
         departments: [],
       },
@@ -305,12 +296,6 @@ export default function Navigation() {
                 name: "MPH (Public Health)",
                 href: "/academics/health-sciences/mph",
               },
-            ],
-          },
-          {
-            name: "Medical Education",
-            departments: [
-              { name: "CDSIMER", href: "/academics/health-sciences/cdsimer" },
             ],
           },
         ],
@@ -465,15 +450,6 @@ export default function Navigation() {
         name: "Center for Executive Education",
         href: "/academics/cee",
         departments: [{ name: "Explore Programs", href: "/academics/cee" }],
-      },
-      {
-        name: "DSU Online",
-        href: "/academics/dsu-online",
-        departments: [
-          { name: "Online Degrees", href: "/academics/dsu-online" },
-          { name: "Certification Programs", href: "/academics/dsu-online" },
-          { name: "Professional Development", href: "/academics/dsu-online" },
-        ],
       },
     ],
   };
