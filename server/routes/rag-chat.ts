@@ -242,29 +242,55 @@ export const handleRagChat = async (req: Request, res: Response) => {
     );
     console.log("[RAG] Using GPT-5 Nano with reasoning_effort: minimal");
 
-    // Call Responses API with GPT-5 Nano
-    // This API supports persistent reasoning and state management
-    const response = await openai.beta.messages.create({
+    // Call Responses API with GPT-5 Nano using direct HTTP request
+    // The OpenAI SDK doesn't have this API built-in yet, so we make a direct call
+    const responsesApiUrl = "https://api.openai.com/v1/responses";
+
+    const responseApiBody = {
       model: "gpt-5-nano",
       max_tokens: 1024,
       system: systemInstruction,
       messages: messages,
-      // GPT-5 specific parameters
-      reasoning_effort: "minimal" as const, // Minimal reasoning for speed and cost
-      // The Responses API automatically manages state and chain of thought
-    } as any);
+      reasoning_effort: "minimal", // Minimal reasoning for speed and cost
+    };
+
+    console.log("[RAG] Sending request to Responses API endpoint");
+
+    const apiResponse = await fetch(responsesApiUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
+      },
+      body: JSON.stringify(responseApiBody),
+    });
+
+    if (!apiResponse.ok) {
+      const errorData = await apiResponse.json();
+      console.error("[RAG] Responses API error:", {
+        status: apiResponse.status,
+        error: errorData,
+      });
+      throw new Error(
+        `Responses API error: ${errorData.error?.message || "Unknown error"}`
+      );
+    }
+
+    const response = await apiResponse.json();
 
     // Extract response content
     let assistantMessage = "";
-    
-    for (const block of response.content) {
-      if (block.type === "text") {
-        assistantMessage += block.text;
+
+    if (response.content && Array.isArray(response.content)) {
+      for (const block of response.content) {
+        if (block.type === "text") {
+          assistantMessage += block.text;
+        }
       }
     }
 
     if (!assistantMessage) {
-      console.error("[RAG] Empty response from OpenAI:", {
+      console.error("[RAG] Empty response from OpenAI Responses API:", {
         response: response,
       });
       assistantMessage = "I encountered an error generating a response. Please try again.";
