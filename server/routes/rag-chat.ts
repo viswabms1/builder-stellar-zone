@@ -267,7 +267,6 @@ export const handleRagChat = async (req: Request, res: Response) => {
 
     const responseApiBody = {
       model: "gpt-5-nano",
-      max_tokens: 1024,
       input: inputArray, // Responses API uses 'input' instead of 'messages'
       reasoning: {
         effort: "minimal", // Minimal reasoning for speed and cost
