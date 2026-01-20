@@ -243,18 +243,39 @@ export const handleRagChat = async (req: Request, res: Response) => {
     console.log("[RAG] Using GPT-5 Nano with reasoning_effort: minimal");
 
     // Call Responses API with GPT-5 Nano using direct HTTP request
-    // The OpenAI SDK doesn't have this API built-in yet, so we make a direct call
+    // The Responses API uses a different structure from Chat Completions API
     const responsesApiUrl = "https://api.openai.com/v1/responses";
+
+    // Build input array in the Responses API format
+    const inputArray: any[] = [
+      {
+        role: "developer",
+        content: systemInstruction,
+      },
+    ];
+
+    // Add conversation history if provided
+    if (conversationHistory && Array.isArray(conversationHistory)) {
+      inputArray.push(...conversationHistory.slice(-10)); // Keep last 10 messages
+    }
+
+    // Add current user message
+    inputArray.push({
+      role: "user",
+      content: message,
+    });
 
     const responseApiBody = {
       model: "gpt-5-nano",
       max_tokens: 1024,
-      system: systemInstruction,
-      messages: messages,
-      reasoning_effort: "minimal", // Minimal reasoning for speed and cost
+      input: inputArray, // Responses API uses 'input' instead of 'messages'
+      reasoning: {
+        effort: "minimal", // Minimal reasoning for speed and cost
+      },
     };
 
     console.log("[RAG] Sending request to Responses API endpoint");
+    console.log(`[RAG] Input array has ${inputArray.length} messages`);
 
     const apiResponse = await fetch(responsesApiUrl, {
       method: "POST",
@@ -278,15 +299,21 @@ export const handleRagChat = async (req: Request, res: Response) => {
 
     const response = await apiResponse.json();
 
-    // Extract response content
+    // Extract response content from Responses API output
     let assistantMessage = "";
 
-    if (response.content && Array.isArray(response.content)) {
-      for (const block of response.content) {
-        if (block.type === "text") {
-          assistantMessage += block.text;
+    // Responses API returns output as an array of items
+    if (response.output && Array.isArray(response.output)) {
+      for (const item of response.output) {
+        if (item.type === "text" && item.text) {
+          assistantMessage += item.text;
+        } else if (item.type === "message" && item.content) {
+          assistantMessage += item.content;
         }
       }
+    } else if (response.output_text) {
+      // Alternative response format
+      assistantMessage = response.output_text;
     }
 
     if (!assistantMessage) {
