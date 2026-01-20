@@ -221,7 +221,7 @@ export const handleRagChat = async (req: Request, res: Response) => {
       model: "gpt-5-nano",
       messages: messages,
       temperature: 0.7,
-      max_tokens: 1024,
+      max_completion_tokens: 1024,
     });
 
     const assistantMessage =
