@@ -420,10 +420,13 @@ export const handleRagChat = async (req: Request, res: Response) => {
       );
     }
 
+    // Sanitize message to remove markdown and special characters
+    const cleanMessage = sanitizeMessage(assistantMessage);
+
     // Return response with metadata
     res.json({
       success: true,
-      message: assistantMessage,
+      message: cleanMessage,
       contextCount: contextChunks.length,
       sources: contextChunks.map((chunk, i) => ({
         id: i + 1,
