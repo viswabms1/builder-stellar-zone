@@ -388,7 +388,7 @@ import LibraryGallery from "./pages/LibraryGallery";
 import LibraryAdvisoryCommittee from "./pages/LibraryAdvisoryCommittee";
 import LibraryContact from "./pages/LibraryContact";
 import NotFound from "./pages/NotFound";
-import { ChatWidget } from "./components/ChatWidget";
+import { RagChatWidget } from "./components/RagChatWidget";
 
 function App() {
   return (
