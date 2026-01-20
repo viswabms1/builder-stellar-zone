@@ -1,0 +1,175 @@
+================================================================================
+DAYANANDA SAGAR UNIVERSITY - COMPLETE LINKS REFERENCE
+All URLs for RAG Chatbot Knowledge Base
+================================================================================
+
+MAIN WEBSITE
+------------
+https://dsu.edu.in
+
+
+PRIMARY PAGES
+-------------
+Homepage:                    https://dsu.edu.in/
+About DSU:                   https://dsu.edu.in/about
+Vision & Mission:            https://dsu.edu.in/vision-mission
+Leadership:                  https://dsu.edu.in/leadership
+Accreditations:              https://dsu.edu.in/accreditations
+Facilities:                  https://dsu.edu.in/facilities
+
+
+ACADEMICS - MAIN
+----------------
+Academics Hub:               https://dsu.edu.in/academics
+Faculty Directory:           https://dsu.edu.in/faculty-directory
+Examinations:                https://dsu.edu.in/examinations
+
+
+SCHOOLS & PROGRAMS
+------------------
+School of Engineering:                              https://dsu.edu.in/academics/engineering
+School of Law:                                      https://dsu.edu.in/academics/law
+School of Health Sciences:                          https://dsu.edu.in/academics/health-sciences
+School of Computer Applications:                    https://dsu.edu.in/academics/computer-applications
+School of Basic and Applied Sciences:               https://dsu.edu.in/academics/basic-applied-sciences
+School of Commerce and Management:                  https://dsu.edu.in/academics/commerce-and-management
+School of Humanities and Social Sciences:           https://dsu.edu.in/academics/humanities-social-sciences
+School of Design and Digital Trans-media:           https://dsu.edu.in/academics/design/bdesign
+School of Journalism and Mass Communication:        https://dsu.edu.in/academics/journalism-mass-communication
+
+
+ADMISSIONS
+----------
+General Admissions:          https://dsu.edu.in/admissions
+Eligibility:                 https://dsu.edu.in/eligibility
+Admissions Portal:           https://admissions.dsu.edu.in
+International Admissions:    https://dsu.edu.in/international-admissions
+International Portal:        https://international-admissions.dsu.edu.in
+Study in India:              https://dsu.edu.in/study-in-india
+
+
+INTERNATIONAL
+-------------
+International Page:          https://dsu.edu.in/international/
+International Affairs:       https://dsu.edu.in/international/international-affairs/
+Study in India Gov Portal:   https://studyinindia.gov.in/
+
+
+STUDENT LIFE
+------------
+Campus Life:                 https://dsu.edu.in/campus-life
+Library:                     https://dsu.edu.in/library
+Alumni:                      https://dsu.edu.in/alumni
+Hostel (Poshtell):          https://myposhtell.com
+
+
+RESEARCH & INNOVATION
+---------------------
+Research:                    https://dsu.edu.in/research
+AI-First University:         https://dsu.edu.in/ai-first
+NVIDIA AI Architecture:      https://dsu.edu.in/nvidia-ai-architecture
+
+
+ENTREPRENEURSHIP
+----------------
+DERBI Foundation:            https://derbifoundation.com
+AIC-DSU Foundation:          https://aicdsu.foundation
+
+
+CAREERS & PLACEMENTS
+--------------------
+Placements:                  https://dsu.edu.in/placements
+Careers:                     https://dsu.edu.in/careers
+
+
+VIRTUAL EXPERIENCE
+------------------
+Virtual Campus Tour:         https://dsu.edu.in/virtual-tour/
+
+
+CONTACT INFORMATION
+-------------------
+General Email:               Contact through website
+International Email:         international-admissions@dsu.edu.in
+WhatsApp (International):    +91 9606022152
+WhatsApp (International):    +91 9606022149
+
+
+SOCIAL MEDIA & EXTERNAL
+-----------------------
+Main Website:                https://dsu.edu.in
+Study in India Initiative:   https://studyinindia.gov.in/
+
+
+================================================================================
+QUICK REFERENCE - MOST IMPORTANT LINKS
+================================================================================
+
+1. Main Website:             https://dsu.edu.in
+2. Admissions Portal:        https://admissions.dsu.edu.in
+3. International:            https://international-admissions.dsu.edu.in
+4. Virtual Tour:             https://dsu.edu.in/virtual-tour/
+5. Campus Life:              https://dsu.edu.in/campus-life
+6. Research:                 https://dsu.edu.in/research
+7. Study in India:           https://dsu.edu.in/study-in-india
+8. AIC-DSU (Innovation):     https://aicdsu.foundation
+
+
+================================================================================
+ALL ACADEMIC PROGRAMS (Direct Links)
+================================================================================
+
+Engineering:                 https://dsu.edu.in/academics/engineering
+  • B.Tech AI & ML
+  • B.Tech AI & Robotics
+  • B.Tech Data Science
+  • B.Tech Cybersecurity
+  • B.Tech Computer Science
+  • B.Tech Mechanical Engineering
+  • B.Tech Aerospace Engineering
+  • B.Tech Electronics & Communication
+
+Law:                         https://dsu.edu.in/academics/law
+  • BA LLB (Hons)
+  • BBA LLB (Hons)
+  • LLB (3 Year)
+  • LLM Law & Technology
+  • LLM Corporate & Commercial Law
+
+Health Sciences:             https://dsu.edu.in/academics/health-sciences
+  • B.Sc Nursing
+  • BPT (Physiotherapy)
+  • MPT
+  • MSc Nursing
+  • MPH
+  • Allied Health Sciences
+
+Computer Applications:       https://dsu.edu.in/academics/computer-applications
+  • BCA
+  • MCA
+  • B.Sc Data Science
+  • M.Sc Data Science
+
+Commerce & Management:       https://dsu.edu.in/academics/commerce-and-management
+  • B.Com
+  • BBA
+  • MBA
+
+Basic & Applied Sciences:    https://dsu.edu.in/academics/basic-applied-sciences
+  • B.Sc Triple Major
+  • M.Sc Programs
+
+Design:                      https://dsu.edu.in/academics/design/bdesign
+  • B.Design
+
+Journalism:                  https://dsu.edu.in/academics/journalism-mass-communication
+  • BA Journalism & Mass Communication
+
+Humanities:                  https://dsu.edu.in/academics/humanities-social-sciences
+  • Various humanities programs
+
+
+================================================================================
+Generated: ${new Date().toLocaleString()}
+Purpose: Complete URL Reference for RAG Chatbot
+================================================================================
