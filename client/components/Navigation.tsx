@@ -289,6 +289,15 @@ export default function Navigation() {
             ],
           },
           {
+            name: "Pharmacy",
+            departments: [
+              {
+                name: "B.Pharm",
+                href: "/academics/health-sciences/pharmacy",
+              },
+            ],
+          },
+          {
             name: "Physiotherapy",
             departments: [
               { name: "BPT", href: "/academics/health-sciences/bpt" },
