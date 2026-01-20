@@ -1,6 +1,14 @@
 {
   "rewrites": [
     {
+      "source": "/api/rag-chat",
+      "destination": "/api/rag-chat"
+    },
+    {
+      "source": "/api/rag-chat/health",
+      "destination": "/api/rag-chat/health"
+    },
+    {
       "source": "/api/chat/session",
       "destination": "/api/chat/session"
     },
