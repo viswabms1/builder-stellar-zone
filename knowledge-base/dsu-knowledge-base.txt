@@ -169,9 +169,26 @@ Philosophy: वसुधैव कुटुम्बकम | Vasudhaiva Kutumbak
 Contact Information:
   Email: international-admissions@dsu.edu.in
   WhatsApp: +91 9606022152, +91 9606022149
+  Study in India Portal: https://studyinindia.gov.in/
 
 Eligibility: Programs available for 10+2 pass students with various specializations
 Application Process: Online application through admissions.dsu.edu.in
+
+Application Portals:
+  General Admissions: https://admissions.dsu.edu.in
+  International Admissions: https://international-admissions.dsu.edu.in
+
+================================================================================
+IMPORTANT EXTERNAL LINKS
+================================================================================
+
+  Virtual Campus Tour: https://dsu.edu.in/virtual-tour/
+  Hostel Accommodation: https://myposhtell.com
+  DERBI Foundation: https://derbifoundation.com
+  AIC-DSU Innovation Foundation: https://aicdsu.foundation
+  Study in India Gov Portal: https://studyinindia.gov.in/
+  International Page: https://dsu.edu.in/international/
+  International Affairs: https://dsu.edu.in/international/international-affairs/
 
 ================================================================================
 PARTNERSHIPS & COLLABORATIONS
@@ -209,49 +226,64 @@ KEY ACHIEVEMENTS
 WEBSITE NAVIGATION STRUCTURE
 ================================================================================
 
-All available pages on the website:
+All available pages on the website (Full URLs):
 
-  /                                                  - Home - Dayananda Sagar University
-  /about                                             - About DSU
-  /academics                                         - Academics
-  /academics/engineering                             - School of Engineering
-  /academics/law                                     - School of Law
-  /academics/health-sciences                         - School of Health Sciences
-  /academics/computer-applications                   - School of Computer Applications
-  /academics/basic-applied-sciences                  - School of Basic and Applied Sciences
-  /academics/commerce-and-management                 - School of Commerce and Management
-  /academics/humanities-social-sciences              - School of Humanities and Social Sciences
-  /academics/design/bdesign                          - School of Design and Digital Trans-media
-  /academics/journalism-mass-communication           - School of Journalism and Mass Communication
-  /admissions                                        - Admissions
-  /eligibility                                       - Eligibility
-  /international-admissions                          - International Admissions
-  /study-in-india                                    - Study in India
-  /campus-life                                       - Campus Life
-  /research                                          - Research
-  /library                                           - Library
-  /alumni                                            - Alumni
-  /placements                                        - Placements
-  /ai-first                                          - AI-First University
-  /nvidia-ai-architecture                            - NVIDIA AI Architecture
-  /faculty-directory                                 - Faculty Directory
-  /vision-mission                                    - Vision & Mission
-  /leadership                                        - Leadership
-  /accreditations                                    - Accreditations
-  /facilities                                        - Facilities
-  /careers                                           - Careers
-  /examinations                                      - Examinations
+  https://dsu.edu.in/                                                              - Home - Dayananda Sagar University
+  https://dsu.edu.in/about                                                         - About DSU
+  https://dsu.edu.in/academics                                                     - Academics
+  https://dsu.edu.in/academics/engineering                                         - School of Engineering
+  https://dsu.edu.in/academics/law                                                 - School of Law
+  https://dsu.edu.in/academics/health-sciences                                     - School of Health Sciences
+  https://dsu.edu.in/academics/computer-applications                               - School of Computer Applications
+  https://dsu.edu.in/academics/basic-applied-sciences                              - School of Basic and Applied Sciences
+  https://dsu.edu.in/academics/commerce-and-management                             - School of Commerce and Management
+  https://dsu.edu.in/academics/humanities-social-sciences                          - School of Humanities and Social Sciences
+  https://dsu.edu.in/academics/design/bdesign                                      - School of Design and Digital Trans-media
+  https://dsu.edu.in/academics/journalism-mass-communication                       - School of Journalism and Mass Communication
+  https://dsu.edu.in/admissions                                                    - Admissions
+  https://dsu.edu.in/eligibility                                                   - Eligibility
+  https://dsu.edu.in/international-admissions                                      - International Admissions
+  https://dsu.edu.in/study-in-india                                                - Study in India
+  https://dsu.edu.in/campus-life                                                   - Campus Life
+  https://dsu.edu.in/research                                                      - Research
+  https://dsu.edu.in/library                                                       - Library
+  https://dsu.edu.in/alumni                                                        - Alumni
+  https://dsu.edu.in/placements                                                    - Placements
+  https://dsu.edu.in/ai-first                                                      - AI-First University
+  https://dsu.edu.in/nvidia-ai-architecture                                        - NVIDIA AI Architecture
+  https://dsu.edu.in/faculty-directory                                             - Faculty Directory
+  https://dsu.edu.in/vision-mission                                                - Vision & Mission
+  https://dsu.edu.in/leadership                                                    - Leadership
+  https://dsu.edu.in/accreditations                                                - Accreditations
+  https://dsu.edu.in/facilities                                                    - Facilities
+  https://dsu.edu.in/careers                                                       - Careers
+  https://dsu.edu.in/examinations                                                  - Examinations
 
 ================================================================================
 CONTACT INFORMATION
 ================================================================================
 
+Main Website: https://dsu.edu.in
 General Inquiries: Contact through website
-International Admissions: international-admissions@dsu.edu.in
-WhatsApp (International): +91 9606022152, +91 9606022149
-Website: https://dsu.edu.in
-Admissions Portal: https://admissions.dsu.edu.in
-Virtual Tour: https://dsu.edu.in/virtual-tour/
+
+International Admissions:
+  Email: international-admissions@dsu.edu.in
+  WhatsApp: +91 9606022152, +91 9606022149
+  Portal: https://international-admissions.dsu.edu.in
+  Study in India: https://studyinindia.gov.in/
+
+Admissions & Applications:
+  General Admissions Portal: https://admissions.dsu.edu.in
+  Virtual Campus Tour: https://dsu.edu.in/virtual-tour/
+  International Page: https://dsu.edu.in/international/
+  International Affairs: https://dsu.edu.in/international/international-affairs/
+
+Innovation & Entrepreneurship:
+  DERBI Foundation: https://derbifoundation.com
+  AIC-DSU Foundation: https://aicdsu.foundation
+
+Hostel & Accommodation:
+  Hostel Portal: https://myposhtell.com
 
 ================================================================================
 QUICK FACTS
@@ -269,6 +301,6 @@ QUICK FACTS
   • Government-backed incubation center (AIC-DSU)
 
 ================================================================================
-Generated: 1/20/2026, 2:10:45 AM
+Generated: 1/20/2026, 2:14:01 AM
 Purpose: RAG Chatbot Knowledge Base
 ================================================================================
