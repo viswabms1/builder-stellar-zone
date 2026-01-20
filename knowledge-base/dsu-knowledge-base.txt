@@ -32,12 +32,21 @@ PROGRAMS OFFERED
 ----------------
 
 B.TECH UNDERGRADUATE PROGRAMS:
+
+COMPUTER SCIENCE & ENGINEERING SPECIALIZATIONS:
   1. B.Tech Computer Science & Technology (4 Years)
   2. B.Tech Computer Science & Medical Engineering (4 Years)
-  3. B.Tech AI & Robotics (4 Years)
-  4. B.Tech Electronics & Communication Engineering (4 Years)
-  5. B.Tech Mechanical Engineering (4 Years)
-  6. B.Tech Aerospace Engineering (4 Years)
+  3. B.Tech CSE (Artificial Intelligence & Machine Learning) (4 Years)
+  4. B.Tech CSE (Data Science) (4 Years)
+  5. B.Tech CSE (Cyber Security) (4 Years)
+  6. B.Tech CSE (AI & Data Science) (4 Years)
+  7. B.Tech CSE (Artificial Intelligence) (4 Years)
+  8. B.Tech AI & Robotics (4 Years)
+
+OTHER ENGINEERING SPECIALIZATIONS:
+  9. B.Tech Electronics & Communication Engineering (4 Years)
+  10. B.Tech Mechanical Engineering (4 Years)
+  11. B.Tech Aerospace Engineering (4 Years)
 
 M.TECH POSTGRADUATE PROGRAMS:
   - M.Tech Computer Science & Engineering (2 Years)
