@@ -24,7 +24,7 @@ const routes = [
   { path: '/academics/design/bdesign', url: `${BASE_URL}/academics/design/bdesign`, title: 'School of Design and Digital Trans-media' },
   { path: '/academics/journalism-mass-communication', url: `${BASE_URL}/academics/journalism-mass-communication`, title: 'School of Journalism and Mass Communication' },
   { path: '/admissions', url: `${BASE_URL}/admissions`, title: 'Admissions' },
-  { path: '/eligibility', url: `${BASE_URL}/eligibility`, title: 'Eligibility' },
+  { path: '/eligibility', url: `${BASE_URL}/eligibility`, title: 'Eligibility & Fee Structure' },
   { path: '/international-admissions', url: `${BASE_URL}/international-admissions`, title: 'International Admissions' },
   { path: '/study-in-india', url: `${BASE_URL}/study-in-india`, title: 'Study in India' },
   { path: '/campus-life', url: `${BASE_URL}/campus-life`, title: 'Campus Life' },
@@ -43,6 +43,881 @@ const routes = [
   { path: '/examinations', url: `${BASE_URL}/examinations`, title: 'Examinations' },
 ];
 
+// Detailed Program, Fee, and Eligibility Information (Academic Year 2026-27)
+const detailedProgramData = {
+  "School of Engineering": {
+    tagline: "Innovation-driven education for the tech-savvy world with cutting-edge AI labs and research facilities.",
+    departments: [
+      {
+        name: "Computer Science & Engineering Department",
+        programs: [
+          {
+            name: "B.Tech Computer Science & Engineering",
+            level: "UG",
+            duration: "4 Years",
+            eligibility: "Pass in PUC / 10+2 examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry / Biotechnology / Biology / Computer Science / Electronics / Technical Vocational subjects and obtained at least 45% marks (40% in case of candidate belonging to SC/ST & OBC category) in the above subjects taken together.",
+            fees: {
+              "CET": "Not Available",
+              "Ranking Based (JEE Mains/Uniguage/Comed-K)": "₹4,12,000",
+              "Others": "₹4,92,000"
+            }
+          },
+          {
+            name: "B.Tech CSE (Artificial Intelligence & Machine Learning)",
+            level: "UG",
+            duration: "4 Years",
+            eligibility: "Pass in PUC / 10+2 examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry / Biotechnology / Biology / Computer Science / Electronics / Technical Vocational subjects and obtained at least 45% marks (40% in case of candidate belonging to SC/ST & OBC category) in the above subjects taken together.",
+            fees: {
+              "CET": "Not Available",
+              "Ranking Based (JEE Mains/Uniguage/Comed-K)": "₹4,35,000",
+              "Others": "₹5,25,000"
+            }
+          },
+          {
+            name: "B.Tech CSE (Data Science)",
+            level: "UG",
+            duration: "4 Years",
+            eligibility: "Pass in PUC / 10+2 examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry / Biotechnology / Biology / Computer Science / Electronics / Technical Vocational subjects and obtained at least 45% marks (40% in case of candidate belonging to SC/ST & OBC category) in the above subjects taken together.",
+            fees: {
+              "CET": "Not Available",
+              "Ranking Based (JEE Mains/Uniguage/Comed-K)": "₹4,12,000",
+              "Others": "₹4,92,000"
+            }
+          },
+          {
+            name: "B.Tech CSE (Cyber Security)",
+            level: "UG",
+            duration: "4 Years",
+            eligibility: "Pass in PUC / 10+2 examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry / Biotechnology / Biology / Computer Science / Electronics / Technical Vocational subjects and obtained at least 45% marks (40% in case of candidate belonging to SC/ST & OBC category) in the above subjects taken together.",
+            fees: {
+              "CET": "Not Available",
+              "Ranking Based (JEE Mains/Uniguage/Comed-K)": "₹4,12,000",
+              "Others": "₹4,92,000"
+            }
+          },
+          {
+            name: "B.Tech CSE (AI & Data Science)",
+            level: "UG",
+            duration: "4 Years",
+            eligibility: "Pass in PUC / 10+2 examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry / Biotechnology / Biology / Computer Science / Electronics / Technical Vocational subjects and obtained at least 45% marks (40% in case of candidate belonging to SC/ST & OBC category) in the above subjects taken together.",
+            fees: {
+              "CET": "Not Available",
+              "Ranking Based (JEE Mains/Uniguage/Comed-K)": "₹4,35,000",
+              "Others": "₹5,25,000"
+            }
+          },
+          {
+            name: "B.Tech CSE (Artificial Intelligence)",
+            level: "UG",
+            duration: "4 Years",
+            eligibility: "Pass in PUC / 10+2 examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry / Biotechnology / Biology / Computer Science / Electronics / Technical Vocational subjects and obtained at least 45% marks (40% in case of candidate belonging to SC/ST & OBC category) in the above subjects taken together.",
+            fees: {
+              "CET": "Not Available",
+              "Ranking Based (JEE Mains/Uniguage/Comed-K)": "₹4,35,000",
+              "Others": "₹5,25,000"
+            }
+          },
+          {
+            name: "B.Tech Computer Science & Technology",
+            level: "UG",
+            duration: "4 Years",
+            eligibility: "Pass in PUC / 10+2 examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry / Biotechnology / Biology / Computer Science / Electronics / Technical Vocational subjects and obtained at least 45% marks (40% in case of candidate belonging to SC/ST & OBC category) in the above subjects taken together.",
+            fees: {
+              "CET": "Not Available",
+              "Ranking Based (JEE Mains/Uniguage/Comed-K)": "₹4,12,000",
+              "Others": "₹4,92,000"
+            }
+          },
+          {
+            name: "B.Tech Computer Science & Medical Engineering",
+            level: "UG",
+            duration: "4 Years",
+            eligibility: "Pass in PUC / 10+2 examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry / Biotechnology / Biology / Computer Science / Electronics / Technical Vocational subjects and obtained at least 45% marks (40% in case of candidate belonging to SC/ST & OBC category) in the above subjects taken together.",
+            fees: {
+              "CET": "Not Available",
+              "Ranking Based (JEE Mains/Uniguage/Comed-K)": "₹4,12,000",
+              "Others": "₹4,92,000"
+            }
+          },
+          {
+            name: "B.Tech AI & Robotics",
+            level: "UG",
+            duration: "4 Years",
+            eligibility: "Pass in PUC / 10+2 examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry / Biotechnology / Biology / Computer Science / Electronics / Technical Vocational subjects and obtained at least 45% marks (40% in case of candidate belonging to SC/ST & OBC category) in the above subjects taken together.",
+            fees: {
+              "CET": "Not Available",
+              "Ranking Based (JEE Mains/Uniguage/Comed-K)": "₹4,12,000",
+              "Others": "₹4,92,000"
+            }
+          },
+          {
+            name: "M.Tech Computer Science & Engineering",
+            level: "PG",
+            duration: "2 Years",
+            eligibility: "Pass in B.Tech in ECE, CSE, ISE, Biomedical, Medical Electronics, Electronics & Instrumentation, EEE, Telecommunications, Mechatronics and other circuit Branches with a minimum of 50% marks in aggregate (45% in case of candidate belonging to SC/ST & OBC).",
+            fees: {
+              "PGCET": "Not Available",
+              "Others (Annual)": "₹2,52,000"
+            },
+            notes: "Job placement guarantee: Upon successful completion, candidates are offered a job with a starting salary of INR 65,000 per month for a year."
+          },
+          {
+            name: "M.Tech CSE (AI & Machine Learning)",
+            level: "PG",
+            duration: "2 Years",
+            eligibility: "Pass in B.Tech in ECE, CSE, ISE, Biomedical, Medical Electronics, Electronics & Instrumentation, EEE, Telecommunications, Mechatronics and other circuit Branches with a minimum of 50% marks in aggregate (45% in case of candidate belonging to SC/ST & OBC).",
+            fees: {
+              "PGCET": "Not Available",
+              "Others (Annual)": "₹2,52,000"
+            },
+            notes: "Job placement guarantee: Upon successful completion, candidates are offered a job with a starting salary of INR 65,000 per month for a year."
+          },
+          {
+            name: "M.Tech AI & Data Science",
+            level: "PG",
+            duration: "2 Years",
+            eligibility: "Pass in B.Tech in ECE, CSE, ISE, Biomedical, Medical Electronics, Electronics & Instrumentation, EEE, Telecommunications, Mechatronics and other circuit Branches with a minimum of 50% marks in aggregate (45% in case of candidate belonging to SC/ST & OBC).",
+            fees: {
+              "PGCET": "Not Available",
+              "Others (Annual)": "₹2,52,000"
+            },
+            notes: "Job placement guarantee: Upon successful completion, candidates are offered a job with a starting salary of INR 65,000 per month for a year."
+          },
+          {
+            name: "M.Tech Artificial Intelligence",
+            level: "PG",
+            duration: "2 Years",
+            eligibility: "Pass in B.Tech in ECE, CSE, ISE, Biomedical, Medical Electronics, Electronics & Instrumentation, EEE, Telecommunications, Mechatronics and other circuit Branches with a minimum of 50% marks in aggregate (45% in case of candidate belonging to SC/ST & OBC).",
+            fees: {
+              "PGCET": "Not Available",
+              "Others (Annual)": "₹2,52,000"
+            },
+            notes: "Job placement guarantee: Upon successful completion, candidates are offered a job with a starting salary of INR 65,000 per month for a year."
+          },
+          {
+            name: "M.Tech AI & Robotics",
+            level: "PG",
+            duration: "2 Years",
+            eligibility: "Pass in B.Tech in ECE, CSE, ISE, Biomedical, Medical Electronics, Electronics & Instrumentation, EEE, Telecommunications, Mechatronics and other circuit Branches with a minimum of 50% marks in aggregate (45% in case of candidate belonging to SC/ST & OBC).",
+            fees: {
+              "PGCET": "Not Available",
+              "Others (Annual)": "₹2,52,000"
+            },
+            notes: "Job placement guarantee: Upon successful completion, candidates are offered a job with a starting salary of INR 65,000 per month for a year."
+          },
+        ]
+      },
+      {
+        name: "Electronics & Communication Department",
+        programs: [
+          {
+            name: "B.Tech Electronics & Communication Engineering",
+            level: "UG",
+            duration: "4 Years",
+            eligibility: "Pass in PUC / 10+2 examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry / Biotechnology / Biology / Computer Science / Electronics / Technical Vocational subjects and obtained at least 45% marks (40% in case of candidate belonging to SC/ST & OBC category) in the above subjects taken together.",
+            fees: {
+              "CET": "Not Available",
+              "Ranking Based (JEE Mains/Uniguage/Comed-K)": "₹3,22,000",
+              "Others": "₹4,12,000"
+            }
+          },
+          {
+            name: "M.Tech Embedded System",
+            level: "PG",
+            duration: "2 Years",
+            eligibility: "Pass in B.Tech in ECE, CSE, ISE, Biomedical, Medical Electronics, Electronics & Instrumentation, EEE, Telecommunications, Mechatronics and other circuit Branches with a minimum of 50% marks in aggregate (45% in case of candidate belonging to SC/ST & OBC).",
+            fees: {
+              "PGCET": "Not Available",
+              "Others (Annual)": "₹1,62,000"
+            }
+          }
+        ]
+      },
+      {
+        name: "Mechanical Engineering Department",
+        programs: [
+          {
+            name: "B.Tech Mechanical Engineering",
+            level: "UG",
+            duration: "4 Years",
+            eligibility: "Pass in PUC / 10+2 examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry / Biotechnology / Biology / Computer Science / Electronics / Technical Vocational subjects and obtained at least 45% marks (40% in case of candidate belonging to SC/ST & OBC category) in the above subjects taken together.",
+            fees: {
+              "CET": "Not Available",
+              "Ranking Based (JEE Mains/Uniguage/Comed-K)": "₹3,22,000",
+              "Others": "₹4,12,000"
+            }
+          },
+          {
+            name: "M.Tech Design Engineering",
+            level: "PG",
+            duration: "2 Years",
+            eligibility: "Pass in B.Tech in Mechanical, Industrial Engineering & Management, Aerospace, Aeronautical, Automobile, or related disciplines with minimum 50% marks in aggregate (45% in case of candidate belonging to SC/ST & OBC category).",
+            fees: {
+              "PGCET": "Not Available",
+              "Others (Annual)": "₹1,62,000"
+            }
+          }
+        ]
+      },
+      {
+        name: "Aerospace Engineering Department",
+        programs: [
+          {
+            name: "B.Tech Aerospace Engineering",
+            level: "UG",
+            duration: "4 Years",
+            eligibility: "Pass in PUC / 10+2 examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry / Biotechnology / Biology / Computer Science / Electronics / Technical Vocational subjects and obtained at least 45% marks (40% in case of candidate belonging to SC/ST & OBC category) in the above subjects taken together.",
+            fees: {
+              "CET": "Not Available",
+              "Ranking Based (JEE Mains/Uniguage/Comed-K)": "₹3,22,000",
+              "Others": "₹4,12,000"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "School of Computer Applications": {
+    tagline: "Cutting-edge IT education for the digital age with industry certifications.",
+    departments: [
+      {
+        name: "Department of Computer Applications",
+        programs: [
+          {
+            name: "BCA - Bachelor of Computer Applications",
+            level: "UG",
+            duration: "3 Years",
+            eligibility: "Pass in 10+2, A Level, IB, American 12th grade or equivalent and a minimum of 45% marks in aggregate.",
+            fees: {
+              "Term I": "₹1,09,500",
+              "Term II": "₹97,500",
+              "Total": "₹2,07,000"
+            }
+          },
+          {
+            name: "BCA in AI & Data Sciences",
+            level: "UG",
+            duration: "3 Years",
+            eligibility: "Pass in 10+2, A Level, IB, American 12th grade or equivalent and a minimum of 45% marks in aggregate.",
+            fees: {
+              "Term I": "₹1,09,500",
+              "Term II": "₹97,500",
+              "Total": "₹2,07,000"
+            }
+          },
+          {
+            name: "B.Sc Data Science",
+            level: "UG",
+            duration: "3 Years",
+            eligibility: "Pass in 10+2, A Level, IB, American 12th grade or equivalent and a minimum of 45% marks in aggregate.",
+            fees: {
+              "Term I": "₹87,000",
+              "Term II": "₹75,000",
+              "Total": "₹1,62,000"
+            }
+          },
+          {
+            name: "B.Sc Cyber Security",
+            level: "UG",
+            duration: "3 Years",
+            eligibility: "Pass in 10+2, A Level, IB, American 12th grade or equivalent and a minimum of 45% marks in aggregate.",
+            fees: {
+              "Term I": "₹87,000",
+              "Term II": "₹75,000",
+              "Total": "₹1,62,000"
+            }
+          },
+          {
+            name: "MCA - Master of Computer Applications",
+            level: "PG",
+            duration: "2 Years",
+            eligibility: "Admission to First Year MCA shall be open to candidates with a UG degree in BCA/B.Sc.(CS/IT) or B.Sc./B.Com/BA from a recognized University with Mathematics at 10+2 level or Graduation Level. Obtained at least 50% marks in the Qualifying Examination.",
+            fees: {
+              "PGCET": "Not Available",
+              "Term I": "₹1,77,000",
+              "Term II": "₹1,65,000",
+              "Total": "₹3,42,000"
+            }
+          },
+          {
+            name: "M.Sc Data Science",
+            level: "PG",
+            duration: "2 Years",
+            eligibility: "B.Sc in Life Science or related fields such as Biotechnology, Microbiology, Genetics, Zoology, Botany, Biochemistry, Bioinformatics, Statistics, or Computer Science with minimum 50% aggregate.",
+            fees: {
+              "PGCET": "Not Available",
+              "Term I": "₹82,000",
+              "Term II": "₹70,000",
+              "Total": "₹1,52,000"
+            }
+          },
+          {
+            name: "M.Sc Cyber Security",
+            level: "PG",
+            duration: "2 Years",
+            eligibility: "B.Sc in Computer Science, Information Technology, Cyber Security, or related fields with minimum 50% aggregate.",
+            fees: {
+              "PGCET": "Not Available",
+              "Term I": "₹82,000",
+              "Term II": "₹70,000",
+              "Total": "₹1,52,000"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "School of Law": {
+    tagline: "Training tomorrow's legal minds with a focus on justice and impact.",
+    departments: [
+      {
+        name: "Department of Legal Studies",
+        programs: [
+          {
+            name: "B.A. LL.B (Hons)",
+            level: "UG",
+            duration: "5 Years",
+            eligibility: "10+2 or equivalent examination from a recognized Board with a minimum of 50% marks in aggregate. We accept CLAT scores.",
+            fees: {
+              "Tuition Fee": "₹2,02,000",
+              "Other Fee": "₹50,000",
+              "Total": "₹2,52,000"
+            },
+            scholarships: "Scholarship Available"
+          },
+          {
+            name: "B.B.A. LL.B (Hons)",
+            level: "UG",
+            duration: "5 Years",
+            eligibility: "10+2 or equivalent examination from a recognized Board with a minimum of 50% marks in aggregate. We accept CLAT scores.",
+            fees: {
+              "Tuition Fee": "₹2,02,000",
+              "Other Fee": "₹50,000",
+              "Total": "₹2,52,000"
+            },
+            scholarships: "Scholarship Available"
+          },
+          {
+            name: "LL.B",
+            level: "UG",
+            duration: "3 Years",
+            eligibility: "Graduation or equivalent examination from a recognized University with a minimum of 50% marks in aggregate.",
+            fees: {
+              "Tuition Fee": "₹1,37,000",
+              "Other Fee": "₹40,000",
+              "Total": "₹1,77,000"
+            }
+          },
+          {
+            name: "LL.M",
+            level: "PG",
+            duration: "1 Year",
+            eligibility: "A bachelor's degree in law (LL.B) or an equivalent degree from recognized university. A minimum of 50% marks in the qualifying degree (40% for SC/ST candidates). Valid scores in any national level entrance exams like CLAT or AILET.",
+            fees: {
+              "Tuition Fee": "₹1,10,000",
+              "Other Fee": "₹35,000",
+              "Total": "₹1,45,000"
+            },
+            notes: "Tracks include Corporate & Commercial Law, Intellectual Property Rights, and Human Rights Law."
+          }
+        ]
+      }
+    ]
+  },
+  "School of Basic & Applied Sciences": {
+    tagline: "Practical approaches rooted in foundational sciences with advanced lab research.",
+    departments: [
+      {
+        name: "Department of Life Sciences",
+        programs: [
+          {
+            name: "B.Sc Life Science (Biotechnology, Biochemistry, Genetics)",
+            level: "UG",
+            duration: "3 Years",
+            eligibility: "Pass in 10+2, A Level, IB, American 12th grade or equivalent with Physics, Chemistry and English with Biology or Biotechnology or Mathematics or any other Life Science subject as optional and a minimum of 45% marks taken together.",
+            fees: {
+              "Term I": "₹97,000",
+              "Term II": "₹85,000",
+              "Total": "₹1,82,000"
+            }
+          },
+          {
+            name: "M.Sc Biochemistry",
+            level: "PG",
+            duration: "2 Years",
+            eligibility: "B.Sc. with any of the following life science subjects such as Biochemistry, Chemistry, Biotechnology, Microbiology, Bioinformatics, Anatomy, Physiology, etc. Students having degree in Medical Sciences, Nursing Sciences, Pharmaceutical Sciences are also eligible.",
+            fees: {
+              "Term I": "₹1,02,000",
+              "Term II": "₹90,000",
+              "Total": "₹1,92,000"
+            }
+          },
+          {
+            name: "M.Sc Biotechnology",
+            level: "PG",
+            duration: "2 Years",
+            eligibility: "B.Sc. with any of the following subjects in Life Science such as Biotechnology, Microbiology, Genetics, Zoology, Botany, Biochemistry, Bioinformatics, etc.",
+            fees: {
+              "Term I": "₹1,02,000",
+              "Term II": "₹90,000",
+              "Total": "₹1,92,000"
+            }
+          },
+          {
+            name: "M.Sc Microbiology",
+            level: "PG",
+            duration: "2 Years",
+            eligibility: "B.Sc. in any stream of science with any of the following life science subjects such as Genetics, Zoology, Botany, Biochemistry, Chemistry, Microbiology etc. Students having degree in Medical Sciences, Nursing Sciences, Pharmaceutical Sciences are also eligible.",
+            fees: {
+              "Term I": "₹1,02,000",
+              "Term II": "₹90,000",
+              "Total": "₹1,92,000"
+            }
+          },
+          {
+            name: "M.Sc Molecular Biology and Genetics",
+            level: "PG",
+            duration: "2 Years",
+            eligibility: "B.Sc. with any of the following life science subjects such as Genetics, Zoology, Botany, Biochemistry, Chemistry, Microbiology, Bioinformatics, Anthropology, Anatomy, Physiology, etc. Students having degree in Medical Sciences, Nursing Sciences, Pharmaceutical Sciences are also eligible.",
+            fees: {
+              "Term I": "₹1,02,000",
+              "Term II": "₹90,000",
+              "Total": "₹1,92,000"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "School of Commerce & Management": {
+    tagline: "Shaping tomorrow's business and industry leaders with professional certifications.",
+    departments: [
+      {
+        name: "Department of Commerce",
+        programs: [
+          {
+            name: "B.Com Regular",
+            level: "UG",
+            duration: "3 Years",
+            eligibility: "Candidates who have completed two year Pre – University course of Karnataka State or its equivalent with Business Studies and Accountancy as two major subjects of study with aggregate of 50% (45% in case of candidate belonging to SC/ST & OBC category).",
+            fees: {
+              "Term I": "₹79,500",
+              "Term II": "₹77,500",
+              "Total (Incl. Library Deposit)": "₹1,57,000"
+            }
+          },
+          {
+            name: "B.Com ACCA Integrated",
+            level: "UG",
+            duration: "3 Years",
+            eligibility: "Candidates who have completed two year Pre – University course of Karnataka State or its equivalent with Business Studies and Accountancy as two major subjects of study with aggregate of 50% (45% in case of candidate belonging to SC/ST & OBC category).",
+            fees: {
+              "Term I": "₹99,500",
+              "Term II": "₹87,500",
+              "Total (Incl. Library Deposit)": "₹1,87,000"
+            },
+            notes: "Professional ACCA coaching integrated within the timetable."
+          },
+          {
+            name: "B.Com CMA Integrated",
+            level: "UG",
+            duration: "3 Years",
+            eligibility: "Candidates who have completed two year Pre – University course of Karnataka State or its equivalent with Business Studies and Accountancy as two major subjects of study with aggregate of 50% (45% in case of candidate belonging to SC/ST & OBC category).",
+            fees: {
+              "Term I": "₹99,500",
+              "Term II": "₹87,500",
+              "Total (Incl. Library Deposit)": "₹1,87,000"
+            },
+            notes: "Professional CMA coaching integrated within the timetable."
+          },
+          {
+            name: "B.Com With CA Coaching",
+            level: "UG",
+            duration: "3 Years",
+            eligibility: "Candidates who have completed two year Pre – University course of Karnataka State or its equivalent with Business Studies and Accountancy as two major subjects of study with aggregate of 50% (45% in case of candidate belonging to SC/ST & OBC category).",
+            fees: {
+              "Term I": "₹99,500",
+              "Term II": "₹87,500",
+              "Total (Incl. Library Deposit)": "₹1,87,000"
+            },
+            notes: "Professional CA coaching integrated within the timetable."
+          }
+        ]
+      },
+      {
+        name: "Department of Management",
+        programs: [
+          {
+            name: "BBA Regular",
+            level: "UG",
+            duration: "3 Years",
+            eligibility: "Pass in 10+2, A Level, IB, American 12th grade or equivalent with a minimum of 50% marks in aggregate (45% in case of candidate belonging to SC/ST & OBC category).",
+            fees: {
+              "Term I": "₹1,07,000",
+              "Term II": "₹1,05,000",
+              "Total (Incl. Library Deposit)": "₹2,12,000"
+            }
+          },
+          {
+            name: "MBA",
+            level: "PG",
+            duration: "2 Years",
+            eligibility: "Pass in a Bachelors degree of three years in any stream with minimum 50% (45% in case of candidates belonging to SC/ST & OBC category) of marks in aggregate from any recognized University / Institution.",
+            fees: {
+              "PGCET": "Not Available",
+              "Term I": "₹3,07,000",
+              "Term II": "₹2,95,000",
+              "Total": "₹6,02,000"
+            },
+            notes: "Dual specialization options covering Business Analytics, Finance, Marketing, HR, and Operations."
+          }
+        ]
+      }
+    ]
+  },
+  "School of Health Sciences": {
+    tagline: "Equipping future leaders in global health and wellness with clinical immersion.",
+    departments: [
+      {
+        name: "College of Allied Health Sciences",
+        programs: [
+          {
+            name: "B.Sc Medical Radiology & Imaging Technology",
+            level: "UG",
+            duration: "3 Years",
+            eligibility: "A candidate seeking admission shall have studied English as one of the principal subjects and shall have passed Two-year Pre-University examination or equivalent with Physics, Chemistry and Biology as major subjects of study.",
+            fees: {
+              "Tuition Fee": "₹1,42,000",
+              "Other Fee": "₹30,000",
+              "Total": "₹1,72,000"
+            }
+          },
+          {
+            name: "B.Sc Medical Laboratory Technology",
+            level: "UG",
+            duration: "3 Years",
+            eligibility: "A candidate seeking admission shall have studied English as one of the principal subjects and shall have passed Two-year Pre-University examination or equivalent with Physics, Chemistry and Biology as major subjects of study.",
+            fees: {
+              "Tuition Fee": "₹1,12,000",
+              "Other Fee": "₹30,000",
+              "Total": "₹1,42,000"
+            }
+          },
+          {
+            name: "B.Sc Anesthesia and Operation Theatre Technology",
+            level: "UG",
+            duration: "3 Years",
+            eligibility: "A candidate seeking admission shall have studied English as one of the principal subjects and shall have passed Two-year Pre-University examination or equivalent with Physics, Chemistry and Biology as major subjects of study.",
+            fees: {
+              "Tuition Fee": "₹1,42,000",
+              "Other Fee": "₹30,000",
+              "Total": "₹1,72,000"
+            }
+          },
+          {
+            name: "B.Sc Emergency & Trauma Care Technology",
+            level: "UG",
+            duration: "3 Years",
+            eligibility: "A candidate seeking admission shall have studied English as one of the principal subjects and shall have passed Two-year Pre-University examination or equivalent with Physics, Chemistry and Biology as major subjects of study.",
+            fees: {
+              "Tuition Fee": "₹1,12,000",
+              "Other Fee": "₹30,000",
+              "Total": "₹1,42,000"
+            }
+          },
+          {
+            name: "B.Sc Cardiac Care Technology",
+            level: "UG",
+            duration: "3 Years",
+            eligibility: "A candidate seeking admission shall have studied English as one of the principal subjects and shall have passed Two-year Pre-University examination or equivalent with Physics, Chemistry and Biology as major subjects of study.",
+            fees: {
+              "Tuition Fee": "₹1,72,000",
+              "Other Fee": "₹30,000",
+              "Total": "₹2,02,000"
+            }
+          },
+          {
+            name: "MPH - Masters in Public Health",
+            level: "PG",
+            duration: "2 Years",
+            eligibility: "A candidate seeking admission should have a degree in MBBS or BDS or BAMS or B.Sc Nursing or BPT or B. Pharm with minimum 50% marks from a University established under law.",
+            fees: {
+              "Tuition Fee": "₹1,12,000",
+              "Others Fee": "₹30,000",
+              "Total": "₹1,42,000"
+            }
+          }
+        ]
+      },
+      {
+        name: "College of Pharmaceutical Sciences",
+        programs: [
+          {
+            name: "B.Pharm",
+            level: "UG",
+            duration: "4 Years",
+            eligibility: "Pass in 10+2 with Physics, Chemistry and English with Mathematics or Biotechnology or Computer Science or Biology as optional subjects with a minimum of 40% marks in aggregate.",
+            fees: {
+              "CET": "Not Available",
+              "Others": "₹2,82,000"
+            }
+          },
+          {
+            name: "M.Pharm Pharmaceutics",
+            level: "PG",
+            duration: "2 Years",
+            eligibility: "Candidates should have passed B.pharm from an institution recognized by the Pharmacy Council of India with a minimum of 50% marks in aggregate.",
+            fees: {
+              "PGCET": "Not Available",
+              "Others": "₹3,02,000"
+            }
+          },
+          {
+            name: "M.Pharm Pharmacology",
+            level: "PG",
+            duration: "2 Years",
+            eligibility: "Candidates should have passed B.pharm from an institution recognized by the Pharmacy Council of India with a minimum of 50% marks in aggregate.",
+            fees: {
+              "PGCET": "Not Available",
+              "Others": "₹3,02,000"
+            }
+          },
+          {
+            name: "M.Pharm Regulatory Affairs",
+            level: "PG",
+            duration: "2 Years",
+            eligibility: "Candidates should have passed B.pharm from an institution recognized by the Pharmacy Council of India with a minimum of 50% marks in aggregate.",
+            fees: {
+              "PGCET": "Not Available",
+              "Others": "₹3,02,000"
+            }
+          },
+          {
+            name: "Pharm.D",
+            level: "Professional",
+            duration: "6 Years",
+            eligibility: "Pass in 10+2 examination with Physics, Chemistry and English with Mathematics or Biology as optional subjects / DPharm or any other equivalent qualification recognized by the Pharmacy Council of India.",
+            fees: {
+              "PGCET": "Not Available",
+              "Others": "₹4,52,000"
+            }
+          }
+        ]
+      },
+      {
+        name: "College of Nursing Sciences",
+        programs: [
+          {
+            name: "B.Sc Nursing",
+            level: "UG",
+            duration: "4 Years",
+            eligibility: "Pass in 10+2, A Level, IB, American 12th grade or equivalent with Physics, Chemistry, Biology and English and a minimum of 45% marks taken together.",
+            fees: {
+              "CET": "Not Available",
+              "Term I": "₹97,000",
+              "Term II": "₹85,000",
+              "Total": "₹1,82,000"
+            }
+          },
+          {
+            name: "PB B.Sc Nursing",
+            level: "UG",
+            duration: "2 Years",
+            eligibility: "Pass in GNM after 10+2 or equivalent examination preferably with Science subjects with 50% marks in aggregate. Candidates should be a registered Nurse and registered Midwife.",
+            fees: {
+              "CET": "Not Available",
+              "Others": "₹92,000"
+            }
+          },
+          {
+            name: "M.Sc Medical Surgical Nursing",
+            level: "PG",
+            duration: "2 Years",
+            eligibility: "Candidates should have passed BSc/PC BSc/PB BSc Nursing recognized by the Indian Nursing Council and a minimum of 55% marks in aggregate. Experience: 1 year of experience after BSc Nursing in a hospital or community health program.",
+            fees: {
+              "PGCET": "Not Available",
+              "Others": "₹1,42,000"
+            }
+          },
+          {
+            name: "M.Sc Child Health Nursing",
+            level: "PG",
+            duration: "2 Years",
+            eligibility: "Candidates should have passed BSc/PC BSc/PB BSc Nursing recognized by the Indian Nursing Council and a minimum of 55% marks in aggregate. Experience: 1 year of experience after BSc Nursing.",
+            fees: {
+              "PGCET": "Not Available",
+              "Others": "₹1,42,000"
+            }
+          },
+          {
+            name: "M.Sc Mental Health Nursing",
+            level: "PG",
+            duration: "2 Years",
+            eligibility: "Candidates should have passed BSc/PC BSc/PB BSc Nursing recognized by the Indian Nursing Council and a minimum of 55% marks in aggregate. Experience: 1 year of experience after BSc Nursing.",
+            fees: {
+              "PGCET": "Not Available",
+              "Others": "₹1,42,000"
+            }
+          },
+          {
+            name: "M.Sc Obstetrics and Genealogical Nursing",
+            level: "PG",
+            duration: "2 Years",
+            eligibility: "Candidates should have passed BSc/PC BSc/PB BSc Nursing recognized by the Indian Nursing Council and a minimum of 55% marks in aggregate. Experience: 1 year of experience after BSc Nursing.",
+            fees: {
+              "PGCET": "Not Available",
+              "Others": "₹1,42,000"
+            }
+          },
+          {
+            name: "M.Sc Community Health Nursing",
+            level: "PG",
+            duration: "2 Years",
+            eligibility: "Candidates should have passed BSc/PC BSc/PB BSc Nursing recognized by the Indian Nursing Council and a minimum of 55% marks in aggregate. Experience: 1 year of experience after BSc Nursing.",
+            fees: {
+              "PGCET": "Not Available",
+              "Others": "₹1,42,000"
+            }
+          }
+        ]
+      },
+      {
+        name: "College of Physiotherapy",
+        programs: [
+          {
+            name: "Bachelor's in Physiotherapy (BPT)",
+            level: "UG",
+            duration: "4 Years",
+            eligibility: "Pass in 10+2, A Level, IB, American 12th grade or equivalent with Physics, Chemistry, English and Biology with a minimum of 40% marks taken together.",
+            fees: {
+              "CET": "Not Available",
+              "Others": "₹2,17,000"
+            }
+          },
+          {
+            name: "M.P.T Sports & Muscular Skeletal",
+            level: "PG",
+            duration: "2 Years",
+            eligibility: "Candidates should have passed BPT from a recognized university with a minimum of 50% marks in aggregate. INTERNSHIP: Completed or completing their compulsory internship.",
+            fees: {
+              "PGCET": "Not Available",
+              "Others": "₹2,77,000"
+            }
+          },
+          {
+            name: "M.P.T Cardio Pulmonary",
+            level: "PG",
+            duration: "2 Years",
+            eligibility: "Candidates should have passed BPT from a recognized university with a minimum of 50% marks in aggregate. INTERNSHIP: Completed or completing their compulsory internship.",
+            fees: {
+              "PGCET": "Not Available",
+              "Others": "₹2,77,000"
+            }
+          },
+          {
+            name: "M.P.T Women's Health",
+            level: "PG",
+            duration: "2 Years",
+            eligibility: "Candidates should have passed BPT from a recognized university with a minimum of 50% marks in aggregate. INTERNSHIP: Completed or completing their compulsory internship.",
+            fees: {
+              "PGCET": "Not Available",
+              "Others": "₹2,77,000"
+            }
+          },
+          {
+            name: "M.P.T Neuro",
+            level: "PG",
+            duration: "2 Years",
+            eligibility: "Candidates should have passed BPT from a recognized university with a minimum of 50% marks in aggregate. INTERNSHIP: Completed or completing their compulsory internship.",
+            fees: {
+              "PGCET": "Not Available",
+              "Others": "₹2,77,000"
+            }
+          },
+          {
+            name: "M.P.T Community Based Rehabilitation",
+            level: "PG",
+            duration: "2 Years",
+            eligibility: "Candidates should have passed BPT from a recognized university with a minimum of 50% marks in aggregate. INTERNSHIP: Completed or completing their compulsory internship.",
+            fees: {
+              "PGCET": "Not Available",
+              "Others": "₹2,77,000"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "School of Arts, Design & Humanities": {
+    tagline: "Cultivating creativity, culture, and critical thinking through storytelling and digital media.",
+    departments: [
+      {
+        name: "Department of Journalism & Mass Communication",
+        programs: [
+          {
+            name: "B.A. Journalism and Mass Communication",
+            level: "UG",
+            duration: "3 Years",
+            eligibility: "Pass in 10+2, A Level, IB, American 12th grade or equivalent and a minimum of 45% marks in aggregate. Arts group subjects are preferred.",
+            fees: {
+              "Term I": "₹77,000",
+              "Term II": "₹75,000",
+              "Total": "₹1,52,000"
+            },
+            notes: "Includes newsroom simulations, digital production labs, and internships with media houses."
+          }
+        ]
+      }
+    ]
+  },
+  "School of Design & Digital Trans-Media": {
+    tagline: "Studio-based design programs with immersive projects in product, UX, animation, and game design.",
+    departments: [
+      {
+        name: "Department of Design",
+        programs: [
+          {
+            name: "B.Design Product Design",
+            level: "UG",
+            duration: "4 Years",
+            eligibility: "Students with a minimum of 50% in Class XII from Science, Commerce, Arts, and Humanities.",
+            fees: {
+              "Total": "₹3,02,000"
+            }
+          },
+          {
+            name: "B.Design User Experience Design",
+            level: "UG",
+            duration: "4 Years",
+            eligibility: "Students with a minimum of 50% in Class XII from Science, Commerce, Arts, and Humanities.",
+            fees: {
+              "Total": "₹3,02,000"
+            }
+          },
+          {
+            name: "B.Design Animation and VFX",
+            level: "UG",
+            duration: "4 Years",
+            eligibility: "Students with a minimum of 50% in Class XII from Science, Commerce, Arts, and Humanities.",
+            fees: {
+              "Total": "₹3,02,000"
+            }
+          },
+          {
+            name: "B.Design Game Design",
+            level: "UG",
+            duration: "4 Years",
+            eligibility: "Students with a minimum of 50% in Class XII from Science, Commerce, Arts, and Humanities.",
+            fees: {
+              "Total": "₹3,02,000"
+            }
+          }
+        ]
+      }
+    ]
+  }
+};
+
 const keyContent = {
   university: {
     name: 'Dayananda Sagar University',
@@ -53,54 +928,6 @@ const keyContent = {
     website: 'https://dsu.edu.in',
     description: 'Dayananda Sagar University is India\'s AI-First University offering world-class education in Engineering, Law, Health Sciences, Commerce, Basic and Applied Sciences, Computer Applications, Design, and Humanities.'
   },
-  
-  schools: [
-    {
-      name: 'School of Engineering',
-      programs: ['B.Tech in AI & ML', 'B.Tech in AI & Robotics', 'B.Tech in Data Science', 'B.Tech in Cybersecurity', 'B.Tech in Computer Science', 'B.Tech in Mechanical Engineering', 'B.Tech in Aerospace Engineering', 'B.Tech in Electronics & Communication'],
-      description: 'Innovation-driven education for the tech-savvy world with cutting-edge AI labs and research facilities.'
-    },
-    {
-      name: 'School of Law',
-      programs: ['BA LLB (Hons)', 'BBA LLB (Hons)', 'LLB (3 Year)', 'LLM in Law & Technology', 'LLM in Corporate & Commercial Law'],
-      description: 'Training tomorrow\'s legal minds with a focus on justice and impact.'
-    },
-    {
-      name: 'School of Health Sciences',
-      programs: ['B.Sc Nursing', 'BPT (Physiotherapy)', 'MPT', 'MSc Nursing', 'MPH (Master of Public Health)', 'Allied Health Sciences'],
-      description: 'Equipping future leaders in global health and wellness.'
-    },
-    {
-      name: 'School of Computer Applications',
-      programs: ['BCA', 'MCA', 'B.Sc Data Science', 'M.Sc Data Science'],
-      description: 'Cutting-edge IT education for the digital age.'
-    },
-    {
-      name: 'School of Basic and Applied Science',
-      programs: ['B.Sc Triple Major (Physics, Chemistry, Mathematics)', 'M.Sc in specializations'],
-      description: 'Practical approaches rooted in foundational sciences.'
-    },
-    {
-      name: 'School of Commerce and Management',
-      programs: ['B.Com', 'BBA', 'MBA'],
-      description: 'Shaping tomorrow\'s business and industry leaders.'
-    },
-    {
-      name: 'School of Arts, Design, and Humanities',
-      programs: ['Humanities programs', 'Social Sciences'],
-      description: 'Cultivating creativity, culture, and critical thinking.'
-    },
-    {
-      name: 'School of Design and Digital Trans-media',
-      programs: ['B.Design'],
-      description: 'Bringing creativity to reality through innovative design education.'
-    },
-    {
-      name: 'School of Journalism and Mass Communication',
-      programs: ['BA Journalism and Mass Communication'],
-      description: 'Training future media professionals and storytellers.'
-    }
-  ],
 
   researchInnovation: {
     title: 'Research & Innovation',
@@ -147,7 +974,6 @@ const keyContent = {
       whatsapp: ['+91 9606022152', '+91 9606022149'],
       studyInIndiaGov: 'https://studyinindia.gov.in/'
     },
-    eligibility: 'Programs available for 10+2 pass students with various specializations',
     process: 'Online application through admissions.dsu.edu.in',
     admissionsPortal: 'https://admissions.dsu.edu.in',
     internationalAdmissions: 'https://international-admissions.dsu.edu.in'
@@ -190,175 +1016,12 @@ const keyContent = {
   ]
 };
 
-function generateHTML() {
-  return `<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dayananda Sagar University - Complete Knowledge Base</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            background: #f5f5f5;
-        }
-        h1 { color: #ff6b35; border-bottom: 3px solid #ff6b35; padding-bottom: 10px; }
-        h2 { color: #004e89; margin-top: 30px; }
-        h3 { color: #1a659e; }
-        .section {
-            background: white;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        .highlight {
-            background: #fff3cd;
-            padding: 15px;
-            border-left: 4px solid #ff6b35;
-            margin: 10px 0;
-        }
-        ul { line-height: 1.8; }
-        .route { color: #6c757d; font-family: monospace; }
-        .school-card {
-            border: 1px solid #e0e0e0;
-            padding: 15px;
-            margin: 10px 0;
-            border-radius: 5px;
-        }
-    </style>
-</head>
-<body>
-    <h1>🎓 Dayananda Sagar University - Complete Knowledge Base</h1>
-    
-    <div class="section highlight">
-        <h2>University Overview</h2>
-        <p><strong>${keyContent.university.name}</strong></p>
-        <p><em>${keyContent.university.tagline}</em></p>
-        <ul>
-            <li><strong>Location:</strong> ${keyContent.university.location}</li>
-            <li><strong>Accreditation:</strong> ${keyContent.university.accreditation}</li>
-            <li><strong>Legacy:</strong> ${keyContent.university.established}</li>
-            <li><strong>Website:</strong> <a href="${keyContent.university.website}">${keyContent.university.website}</a></li>
-        </ul>
-        <p>${keyContent.university.description}</p>
-    </div>
-
-    <div class="section">
-        <h2>📚 Schools & Programs</h2>
-        ${keyContent.schools.map(school => `
-            <div class="school-card">
-                <h3>${school.name}</h3>
-                <p>${school.description}</p>
-                <p><strong>Programs Offered:</strong></p>
-                <ul>
-                    ${school.programs.map(program => `<li>${program}</li>`).join('')}
-                </ul>
-            </div>
-        `).join('')}
-    </div>
-
-    <div class="section">
-        <h2>🔬 Research & Innovation</h2>
-        <h3>${keyContent.researchInnovation.title}</h3>
-        <p><strong>Key Highlights:</strong></p>
-        <ul>
-            ${keyContent.researchInnovation.highlights.map(h => `<li>${h}</li>`).join('')}
-        </ul>
-        <h3>Entrepreneurship Ecosystem</h3>
-        <ul>
-            ${keyContent.researchInnovation.entrepreneurship.map(e => `<li>${e}</li>`).join('')}
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2>🏫 Campus Life</h2>
-        <h3>${keyContent.campusLife.title}</h3>
-        <p><strong>Four Pillars of Excellence:</strong></p>
-        <ul>
-            ${keyContent.campusLife.pillars.map(p => `<li>${p}</li>`).join('')}
-        </ul>
-        <p><strong>World-Class Facilities:</strong></p>
-        <ul>
-            ${keyContent.campusLife.facilities.map(f => `<li>${f}</li>`).join('')}
-        </ul>
-        <p>${keyContent.campusLife.organizations}</p>
-    </div>
-
-    <div class="section">
-        <h2>🌍 International Admissions</h2>
-        <div class="highlight">
-            <h3>${keyContent.admissions.international.title}</h3>
-            <p><strong>Philosophy:</strong> ${keyContent.admissions.international.philosophy}</p>
-            <p><strong>Contact Email:</strong> <a href="mailto:${keyContent.admissions.international.contact}">${keyContent.admissions.international.contact}</a></p>
-            <p><strong>WhatsApp:</strong> ${keyContent.admissions.international.whatsapp.join(', ')}</p>
-            <p><strong>Study in India Portal:</strong> <a href="${keyContent.admissions.international.studyInIndiaGov}" target="_blank">${keyContent.admissions.international.studyInIndiaGov}</a></p>
-        </div>
-        <p><strong>Eligibility:</strong> ${keyContent.admissions.eligibility}</p>
-        <p><strong>Application Process:</strong> ${keyContent.admissions.process}</p>
-        <p><strong>Admissions Portal:</strong> <a href="${keyContent.admissions.admissionsPortal}" target="_blank">${keyContent.admissions.admissionsPortal}</a></p>
-        <p><strong>International Admissions:</strong> <a href="${keyContent.admissions.internationalAdmissions}" target="_blank">${keyContent.admissions.internationalAdmissions}</a></p>
-    </div>
-
-    <div class="section">
-        <h2>🔗 Important External Links</h2>
-        <ul>
-            <li><strong>Virtual Campus Tour:</strong> <a href="${keyContent.externalLinks.virtualTour}" target="_blank">${keyContent.externalLinks.virtualTour}</a></li>
-            <li><strong>Hostel Accommodation:</strong> <a href="${keyContent.externalLinks.hostel}" target="_blank">${keyContent.externalLinks.hostel}</a></li>
-            <li><strong>DERBI Foundation:</strong> <a href="${keyContent.externalLinks.derbiFoundation}" target="_blank">${keyContent.externalLinks.derbiFoundation}</a></li>
-            <li><strong>AIC-DSU Innovation Foundation:</strong> <a href="${keyContent.externalLinks.aicDsu}" target="_blank">${keyContent.externalLinks.aicDsu}</a></li>
-            <li><strong>Study in India Gov Portal:</strong> <a href="${keyContent.externalLinks.studyInIndia}" target="_blank">${keyContent.externalLinks.studyInIndia}</a></li>
-            <li><strong>International Page:</strong> <a href="${keyContent.externalLinks.internationalPage}" target="_blank">${keyContent.externalLinks.internationalPage}</a></li>
-            <li><strong>International Affairs:</strong> <a href="${keyContent.externalLinks.internationalAffairs}" target="_blank">${keyContent.externalLinks.internationalAffairs}</a></li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2>🤝 Partnerships & Collaborations</h2>
-        <ul>
-            ${keyContent.partnerships.map(p => `<li>${p}</li>`).join('')}
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2>🏗️ Infrastructure</h2>
-        <ul>
-            ${keyContent.infrastructure.map(i => `<li>${i}</li>`).join('')}
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2>🏆 Key Achievements</h2>
-        <ul>
-            ${keyContent.achievements.map(a => `<li>${a}</li>`).join('')}
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2>🗺️ Website Structure</h2>
-        <p>Complete navigation paths available on the website:</p>
-        <ul>
-            ${routes.map(route => `<li><a href="${route.url}" target="_blank">${route.url}</a> - ${route.title}</li>`).join('')}
-        </ul>
-    </div>
-
-    <footer style="margin-top: 40px; padding: 20px; text-align: center; color: #6c757d;">
-        <p>Generated Knowledge Base for Dayananda Sagar University RAG Chatbot</p>
-        <p>Last Updated: ${new Date().toLocaleDateString()}</p>
-    </footer>
-</body>
-</html>`;
-}
-
 function generateTXT() {
-  return `
+  let output = `
 ================================================================================
 DAYANANDA SAGAR UNIVERSITY - COMPLETE KNOWLEDGE BASE
 India's AI-First University
+Academic Year 2026-27
 ================================================================================
 
 UNIVERSITY OVERVIEW
@@ -374,18 +1037,56 @@ Description:
 ${keyContent.university.description}
 
 ================================================================================
-SCHOOLS & PROGRAMS
+COMPLETE PROGRAMS, FEES, AND ELIGIBILITY DETAILS
+Academic Year 2026-27
 ================================================================================
 
-${keyContent.schools.map((school, index) => `
-${index + 1}. ${school.name.toUpperCase()}
-${'-'.repeat(school.name.length + 3)}
-Description: ${school.description}
+IMPORTANT NOTES:
+• All fees listed are annual fees for the academic year 2026-27
+• CET = Common Entrance Test (Karnataka)
+• PGCET = Post-Graduate Common Entrance Test
+• Fees may vary based on government revisions
+• For detailed brochures and application: https://dsu.edu.in/eligibility
 
-Programs Offered:
-${school.programs.map(p => `  • ${p}`).join('\n')}
-`).join('\n')}
+`;
 
+  // Add detailed program information for each school
+  for (const [schoolName, schoolData] of Object.entries(detailedProgramData)) {
+    output += `\n${'='.repeat(80)}\n`;
+    output += `${schoolName.toUpperCase()}\n`;
+    output += `${'='.repeat(80)}\n`;
+    output += `${schoolData.tagline}\n\n`;
+
+    for (const dept of schoolData.departments) {
+      output += `\n${'-'.repeat(80)}\n`;
+      output += `DEPARTMENT: ${dept.name}\n`;
+      output += `${'-'.repeat(80)}\n\n`;
+
+      for (const program of dept.programs) {
+        output += `\nProgram: ${program.name}\n`;
+        output += `Level: ${program.level} | Duration: ${program.duration}\n`;
+        output += `\nEligibility:\n${program.eligibility}\n`;
+        
+        output += `\nFee Structure (Annual):\n`;
+        for (const [feeType, amount] of Object.entries(program.fees)) {
+          output += `  • ${feeType}: ${amount}\n`;
+        }
+        
+        if (program.scholarships) {
+          output += `\n💰 ${program.scholarships}\n`;
+        }
+        
+        if (program.notes) {
+          output += `\nSpecial Notes:\n${program.notes}\n`;
+        }
+        
+        output += `\nMore Info: ${BASE_URL}/eligibility\n`;
+        output += `${'-'.repeat(40)}\n`;
+      }
+    }
+  }
+
+  output += `
 ================================================================================
 RESEARCH & INNOVATION
 ================================================================================
@@ -425,7 +1126,6 @@ Contact Information:
   WhatsApp: ${keyContent.admissions.international.whatsapp.join(', ')}
   Study in India Portal: ${keyContent.admissions.international.studyInIndiaGov}
 
-Eligibility: ${keyContent.admissions.eligibility}
 Application Process: ${keyContent.admissions.process}
 
 Application Portals:
@@ -485,9 +1185,9 @@ International Admissions:
 
 Admissions & Applications:
   General Admissions Portal: https://admissions.dsu.edu.in
+  Eligibility & Fees: https://dsu.edu.in/eligibility
   Virtual Campus Tour: https://dsu.edu.in/virtual-tour/
   International Page: https://dsu.edu.in/international/
-  International Affairs: https://dsu.edu.in/international/international-affairs/
 
 Innovation & Entrepreneurship:
   DERBI Foundation: https://derbifoundation.com
@@ -510,16 +1210,20 @@ QUICK FACTS
   • Active research and innovation ecosystem
   • International student programs
   • Government-backed incubation center (AIC-DSU)
+  • Comprehensive fee structures and scholarships available
+  • Multiple admission pathways (CET, CLAT, JEE, Direct)
 
 ================================================================================
 Generated: ${new Date().toLocaleString()}
 Purpose: RAG Chatbot Knowledge Base
+Academic Year: 2026-27
 ================================================================================
 `;
+
+  return output;
 }
 
 // Generate files
-const htmlContent = generateHTML();
 const txtContent = generateTXT();
 
 const outputDir = path.join(__dirname, '..', 'knowledge-base');
@@ -527,10 +1231,15 @@ if (!fs.existsSync(outputDir)) {
   fs.mkdirSync(outputDir, { recursive: true });
 }
 
-fs.writeFileSync(path.join(outputDir, 'dsu-knowledge-base.html'), htmlContent);
 fs.writeFileSync(path.join(outputDir, 'dsu-knowledge-base.txt'), txtContent);
+
+// Also generate the links files
+const allLinks = routes.map(r => r.url);
+fs.writeFileSync(path.join(outputDir, 'all-links.txt'), allLinks.join('\n'));
+fs.writeFileSync(path.join(outputDir, 'all-links.json'), JSON.stringify(routes, null, 2));
 
 console.log('✅ Knowledge base files generated successfully!');
 console.log('📁 Location: knowledge-base/');
-console.log('  - dsu-knowledge-base.html');
-console.log('  - dsu-knowledge-base.txt');
+console.log('  - dsu-knowledge-base.txt (with detailed fees and eligibility)');
+console.log('  - all-links.txt');
+console.log('  - all-links.json');
