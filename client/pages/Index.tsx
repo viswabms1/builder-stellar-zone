@@ -104,11 +104,15 @@ function HeroVideo() {
           muted={isMuted}
           loop
           playsInline
-          preload="metadata"
+          preload="auto"
           crossOrigin="anonymous"
+          controls={false}
           className="w-full h-full object-cover"
           style={{
             objectPosition: "center center",
+            display: "block",
+            width: "100%",
+            height: "100%",
           }}
         />
 
