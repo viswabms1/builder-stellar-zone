@@ -444,8 +444,8 @@ export default function Pharmacy() {
             </p>
           </div>
           <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-5">
-            <RouterLink
-              to="/faculty-directory"
+            <a
+              href="#faculty"
               className="group rounded-none border border-border/40 bg-card/60 backdrop-blur-sm overflow-hidden hover:shadow-lg hover:shadow-brand-blue/20 transition-all duration-500 hover:-translate-y-1"
             >
               <Card className="h-full border-0 bg-transparent">
@@ -463,7 +463,7 @@ export default function Pharmacy() {
                   </p>
                 </CardContent>
               </Card>
-            </RouterLink>
+            </a>
 
             <a
               href="/centre-of-excellence"
@@ -559,7 +559,7 @@ export default function Pharmacy() {
       </section>
 
       {/* Faculty Section */}
-      <section className="px-3 py-8 bg-gradient-to-r from-brand-blue/5 via-brand-magenta/5 to-brand-orange/5">
+      <section id="faculty" className="px-3 py-8 bg-gradient-to-r from-brand-blue/5 via-brand-magenta/5 to-brand-orange/5">
         <div className="mx-auto max-w-7xl">
           <div className="mb-12">
             <h2 className="font-display text-3xl md:text-4xl mb-4">
