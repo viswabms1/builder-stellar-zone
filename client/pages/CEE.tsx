@@ -450,22 +450,15 @@ function HeroVideo() {
 
   return (
     <div
-      ref={containerRef}
       className="h-[40vh] sm:h-[55vh] md:h-[65vh] lg:h-[75vh] relative overflow-hidden flex items-center justify-start hero-video-container"
     >
-      <video
-        ref={videoRef}
-        src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F0b20f5ea03294f4d824e69fd8489b78c?alt=media&token=0c4092c4-4afd-4237-b850-81046ecf52f7&apiKey=4aa279a8430d441dba9c55f659831878"
-        autoPlay
-        muted={isMuted}
-        loop
-        playsInline
-        preload="metadata"
-        crossOrigin="anonymous"
+      <img
+        src={HERO_IMAGE}
+        alt="Center for Executive Education - Professional Leadership"
         className="absolute inset-0 object-cover"
         style={{
           filter: "brightness(1.1) contrast(1.15) saturate(1.2)",
-          objectPosition: "center 85%",
+          objectPosition: "center 50%",
         }}
       />
 
