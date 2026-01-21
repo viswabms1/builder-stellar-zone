@@ -706,6 +706,48 @@ export default function Index() {
         </div>
       </section>
 
+      {/* Mobile Buttons Section - Visible only on mobile portrait */}
+      <section className="md:hidden bg-background relative max-w-7xl mx-auto px-3 w-full py-6">
+        <div className="flex flex-col gap-4 sm:flex-row landscape-buttons">
+          <a
+            href="https://admissions.dsu.edu.in/"
+            target="_blank"
+            rel="noreferrer"
+            className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background w-full sm:w-auto"
+          >
+            <Button
+              size="lg"
+              className="bg-white hover:bg-white/90 text-orange-600 hover:text-orange-700 font-bold font-display transition-all duration-300 group shadow-xl hover:shadow-2xl hover:-translate-y-1 w-full sm:w-auto"
+              style={{
+                padding: 'clamp(0.75rem, 2vw, 1rem) clamp(1.5rem, 4vw, 2rem)',
+                fontSize: 'clamp(0.875rem, 2vw, 1rem)',
+              }}
+            >
+              Apply Today
+              <ArrowRight style={{ width: 'clamp(1rem, 2vw, 1.25rem)', height: 'clamp(1rem, 2vw, 1.25rem)' }} className="ml-2 group-hover:translate-x-1 transition-transform" />
+            </Button>
+          </a>
+
+          <a
+            href="https://dsu.edu.in/virtual-tour/"
+            target="_blank"
+            rel="noreferrer"
+            className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background w-full sm:w-auto"
+          >
+            <Button
+              variant="outline"
+              className="bg-transparent hover:bg-white/10 text-foreground border border-border hover:border-brand-orange font-medium font-display transition-all duration-300 w-full sm:w-auto"
+              style={{
+                padding: 'clamp(0.5rem, 1.5vw, 0.75rem) clamp(1.25rem, 3vw, 1.5rem)',
+                fontSize: 'clamp(0.8125rem, 1.8vw, 0.875rem)',
+              }}
+            >
+              Virtual Tour
+            </Button>
+          </a>
+        </div>
+      </section>
+
       {/* Performance Indicators Section */}
       <section className="px-3 pt-2 md:pt-4 pb-3 md:pb-4 relative bg-gradient-to-r from-brand-magenta/5 via-brand-orange/5 to-brand-blue/5 border-y border-border/30">
         <div className="max-w-7xl mx-auto">
