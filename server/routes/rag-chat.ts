@@ -318,7 +318,7 @@ export const handleRagChat = async (req: Request, res: Response) => {
       ? contextString
       : `Note: I could not find directly relevant information in the knowledge base for this query.`;
 
-    // Build system instruction using XML-style tags (GPT-5 Nano recommended format)
+    // Build system instruction using XML-style tags (works well with GPT-4o-mini)
     const systemInstruction = buildSystemInstruction(finalContext);
 
     // Build messages array
