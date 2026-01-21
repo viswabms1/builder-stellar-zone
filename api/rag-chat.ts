@@ -265,14 +265,30 @@ Eligibility: BPT with a minimum of 50% marks in aggregate.
 SCHOOL OF BASIC & APPLIED SCIENCES
 ================================================================================
 
-Program: B.Sc Life Science (Biotechnology, Biochemistry, Genetics)
-Level: UG | Duration: 3 Years
-Eligibility: 10+2 with Physics, Chemistry, English with Biology/Biotech/Math as optional, minimum 45% marks.
-Fee Structure (Annual): ₹1,82,000
+UNDERGRADUATE PROGRAMS:
+Programs Offered:
+  1. B.Sc in Biotechnology, Biochemistry, and Genetics (3 Years)
+  2. B.Sc in Biotechnology, Chemistry, and Microbiology (3 Years)
+  3. B.Sc in Microbiology, Genetics, and Biochemistry (3 Years)
 
-Program: M.Sc Biochemistry / Biotechnology / Microbiology / Molecular Biology
-Level: PG | Duration: 2 Years
-Fee Structure (Annual): ₹1,92,000
+Eligibility:
+  - 10+2 or equivalent with Physics, Chemistry, and Biology or Biotechnology with at least 45% marks.
+
+Fees (Annual - 2026-27):
+  - All B.Sc Programs: ₹1,82,000 (Term I: ₹97,000, Term II: ₹85,000)
+
+POSTGRADUATE PROGRAMS:
+Programs Offered:
+  1. M.Sc in Biochemistry (2 Years)
+  2. M.Sc in Biotechnology (2 Years)
+  3. M.Sc in Microbiology (2 Years)
+  4. M.Sc in Molecular Biology and Genetics (2 Years)
+
+Eligibility:
+  - B.Sc. with Life Science subjects or degrees in Medical Sciences, Nursing, Pharmaceutical Sciences.
+
+Fees (Annual - 2026-27):
+  - All M.Sc Programs: ₹1,92,000 (Term I: ₹1,02,000, Term II: ₹90,000)
 
 ================================================================================
 SCHOOL OF DESIGN & DIGITAL TRANS-MEDIA
