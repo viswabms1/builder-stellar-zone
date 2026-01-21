@@ -742,7 +742,7 @@ export default function CEE() {
             </p>
             <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
               <a
-                href="https://bit.ly/DSUEMBAApp"
+                href="https://docs.google.com/forms/d/e/1FAIpQLSdsBxDLGLdxHeUXCT6U6xaVkSTlkSJh1b95THI6MeoIImKHLw/viewform?pli=1"
                 target="_blank"
                 rel="noreferrer"
               >
