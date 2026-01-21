@@ -355,7 +355,7 @@ export const handleRagChat = async (req: Request, res: Response) => {
     const completionsApiBody = {
       model: "gpt-4o-mini",
       messages: messagesArray,
-      temperature: 0.3, // Lower temperature for more consistent/deterministic responses
+      temperature: 0, // 0 = completely deterministic, prevents hallucinations
       max_tokens: 1024,
     };
 
