@@ -393,7 +393,57 @@
    * - No device-specific code to maintain
    * - Smoother transitions between sizes
    * - Better performance (browser-optimized)
+   *
+   * ANTI-OVERLAP RULES:
+   * - No fixed heights (use padding, aspect-ratio, or auto)
+   * - No negative margins (use natural flow)
+   * - No absolute positioning for layout (only for decorative elements)
+   * - Content defines height, not viewport
    */
+
+  /* ===== SITE-WIDE HERO SECTION FIXES ===== */
+
+  /* Override all fixed-height hero divs with fluid aspect ratios */
+  [class*="h-["][class*="vh"] {
+    height: auto !important;
+    aspect-ratio: 21 / 9;
+  }
+
+  [class*="min-h-["][class*="vh"] {
+    min-height: auto !important;
+  }
+
+  /* Specific hero patterns found across the site */
+  .h-\[50vh\],
+  .md\:h-\[65vh\],
+  .h-\[40vh\],
+  .md\:h-\[75vh\] {
+    height: auto !important;
+    aspect-ratio: 21 / 9;
+    min-height: clamp(300px, 40vh, 600px);
+  }
+
+  /* Department hero sections - remove fixed top padding */
+  .pt-40,
+  .pt-16,
+  .md\:pt-0 {
+    padding-top: var(--space-xl) !important;
+  }
+
+  /* Hero containers should flow naturally */
+  section.relative,
+  .hero-section,
+  .dept-hero-section {
+    overflow: visible;
+  }
+
+  /* Images in heroes should maintain aspect ratio */
+  section img,
+  .hero-section img,
+  .dept-hero-section img {
+    max-width: 100%;
+    height: auto;
+  }
 
   .scrollbar-hide {
     -ms-overflow-style: none;
