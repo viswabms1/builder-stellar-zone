@@ -375,7 +375,7 @@ function HeroSection() {
         <p className="mt-6 text-lg text-white md:text-xl">
           Multiple admission pathways, flexible programs, and a Bengaluru-based
           advantage. 100% placements with industry partnerships. Choose your
-          route: Direct Admissions, PGCET, International, or Online.
+          route: Direct Admissions, International, or Online.
         </p>
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Button
