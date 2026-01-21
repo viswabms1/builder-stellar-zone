@@ -203,13 +203,24 @@ const FEATURED_NEWS: NewsItem[] = [
 ];
 
 const DEAN_INFO: DeanInfo = {
-  name: "Dr. Ashok Kumar",
-  title: "MBA, Ph.D",
-  position: "Director, Center for Executive Education",
+  name: "CAPT. A. Nagaraj Subbarao",
+  title:
+    "Master Mariner (Dredging & Ocean Engineering/Navigation) | Specialization in Leadership & Strategy (University of Illinois – Urbana Champaign, USA) | MBA | M.Phil | PhD",
+  position: "Professor & Dean, SCMS",
   photo:
-    "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop",
-  videoUrl:
-    "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F0c95c62aa88741fca8ebdc32aade53d5?alt=media&token=c57ff4a9-aea8-4ff3-843b-23ce820ba630&apiKey=4aa279a8430d441dba9c55f659831878",
+    "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F1a8c3f53dac94d93a61385f8bb1ff3a6?format=webp&width=800&height=1200",
+  message: [
+    "Dear Prospective Executive MBA Participants,",
+    "Welcome to our Executive MBA program — a transformative journey designed to elevate your career, leadership, and impact in the ever-evolving world of business. In today's dynamic and interconnected global economy, leaders are constantly challenged to adapt, innovate, and drive meaningful change. Our Executive MBA program has been thoughtfully crafted to provide you with the strategic acumen, leadership insights, and problem-solving skills needed to navigate these complexities and thrive as an industry leader or entrepreneur.",
+    "At the heart of our program is a commitment to academic excellence, industry relevance, and experiential learning. We emphasize the case study method, real-world business challenges, and global perspectives, ensuring that learning is not only theoretical but deeply practical. Our faculty comprises distinguished scholars, seasoned industry practitioners, and accomplished mentors who bring a wealth of knowledge and experience to the classroom. They are dedicated to your growth, guiding you to become innovative thinkers and resilient leaders.",
+    "Our diverse cohort of professionals — drawn from engineering, technology, finance, healthcare, manufacturing, and more — creates a rich, collaborative learning environment. This diversity fosters peer-to-peer learning, networking, and the exchange of ideas that transcend industries and disciplines. The program is designed to accommodate the demands of your professional life, providing flexible schedules and robust support systems to ensure your success.",
+    "We take immense pride in the achievements of our graduates, who have gone on to attain senior leadership roles, launch successful ventures, and transform their organizations. The Executive MBA journey at our institution is more than a degree; it's an investment in your future — one that will empower you to lead with vision, creativity, and integrity.",
+    "I invite you to embark on this remarkable journey of learning, growth, and transformation. We look forward to partnering with you as you redefine your career, expand your horizons, and shape the future of business.",
+    "As Dayananda Sagar University continues to grow in prestige and excellence as an institution of higher education, there has never been a better time to become a part of our distinctive learning community represented by bright and enthusiastic students guided by professorial excellence.",
+    "Warm regards,",
+    "Capt A. Nagaraj Subbarao, PhD",
+    "Dean | SCMS | Dayananda Sagar University, Bengaluru, India",
+  ],
   borderColor: "border-purple-500/20",
   bgColor: "bg-purple-500/10",
 };
