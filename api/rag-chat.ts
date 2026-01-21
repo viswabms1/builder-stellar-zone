@@ -52,79 +52,62 @@ SCHOOL OF ENGINEERING
 ================================================================================
 Innovation-driven education for the tech-savvy world with cutting-edge AI labs and research facilities.
 
-Program: B.Tech Computer Science & Engineering
-Level: UG | Duration: 4 Years
-Eligibility: Pass in PUC / 10+2 examination with Physics and Mathematics as compulsory subjects along with one of the Chemistry / Biotechnology / Biology / Computer Science / Electronics / Technical Vocational subjects and obtained at least 45% marks (40% in case of candidate belonging to SC/ST & OBC category) in the above subjects taken together.
-Fee Structure (Annual):
-  • CET: Not Available
-  • Ranking Based (JEE Mains/Uniguage/Comed-K): ₹4,12,000
-  • Others: ₹4,92,000
+PROGRAMS OFFERED
+----------------
 
-Program: B.Tech CSE (Artificial Intelligence & Machine Learning)
-Level: UG | Duration: 4 Years
-Eligibility: Same as B.Tech CSE
-Fee Structure (Annual):
-  • Ranking Based (JEE Mains/Uniguage/Comed-K): ₹4,35,000
-  • Others: ₹5,25,000
+B.TECH UNDERGRADUATE PROGRAMS:
 
-Program: B.Tech CSE (Data Science)
-Level: UG | Duration: 4 Years
-Fee Structure (Annual):
-  • Ranking Based (JEE Mains/Uniguage/Comed-K): ₹4,12,000
-  • Others: ₹4,92,000
+COMPUTER SCIENCE & ENGINEERING SPECIALIZATIONS:
+  1. B.Tech Computer Science & Technology (4 Years)
+  2. B.Tech Computer Science & Medical Engineering (4 Years)
+  3. B.Tech CSE (Artificial Intelligence & Machine Learning) (4 Years)
+  4. B.Tech CSE (Data Science) (4 Years)
+  5. B.Tech CSE (Cyber Security) (4 Years)
+  6. B.Tech CSE (AI & Data Science) (4 Years)
+  7. B.Tech CSE (Artificial Intelligence) (4 Years)
+  8. B.Tech AI & Robotics (4 Years)
 
-Program: B.Tech CSE (Cyber Security)
-Level: UG | Duration: 4 Years
-Fee Structure (Annual):
-  • Ranking Based (JEE Mains/Uniguage/Comed-K): ₹4,12,000
-  • Others: ₹4,92,000
+OTHER ENGINEERING SPECIALIZATIONS:
+  9. B.Tech Electronics & Communication Engineering (4 Years)
+  10. B.Tech Mechanical Engineering (4 Years)
+  11. B.Tech Aerospace Engineering (4 Years)
 
-Program: B.Tech CSE (AI & Data Science)
-Level: UG | Duration: 4 Years
-Fee Structure (Annual):
-  • Ranking Based (JEE Mains/Uniguage/Comed-K): ₹4,35,000
-  • Others: ₹5,25,000
+M.TECH POSTGRADUATE PROGRAMS:
+  - M.Tech Computer Science & Engineering (2 Years)
+  - M.Tech CSE (AI & Machine Learning) (2 Years)
+  - M.Tech AI & Data Science (2 Years)
+  - M.Tech Artificial Intelligence (2 Years)
+  - M.Tech AI & Robotics (2 Years)
+  - M.Tech Embedded System (2 Years)
+  - M.Tech Design Engineering (2 Years)
 
-Program: B.Tech CSE (Artificial Intelligence)
-Level: UG | Duration: 4 Years
-Fee Structure (Annual):
-  • Ranking Based (JEE Mains/Uniguage/Comed-K): ₹4,35,000
-  • Others: ₹5,25,000
+ELIGIBILITY REQUIREMENTS
+------------------------
 
-Program: B.Tech AI & Robotics
-Level: UG | Duration: 4 Years
-Fee Structure (Annual):
-  • Ranking Based (JEE Mains/Uniguage/Comed-K): ₹4,12,000
-  • Others: ₹4,92,000
+UNDERGRADUATE (B.Tech) PROGRAMS:
+  - Pass in PUC / 10+2 examination with Physics and Mathematics as compulsory subjects along with one of the following: Chemistry / Biotechnology / Biology / Computer Science / Electronics / Technical Vocational subjects.
+  - Minimum of 45% marks in the above subjects taken together (40% for SC/ST/OBC candidates).
 
-Program: B.Tech Electronics & Communication Engineering
-Level: UG | Duration: 4 Years
-Fee Structure (Annual):
-  • Ranking Based (JEE Mains/Uniguage/Comed-K): ₹3,22,000
-  • Others: ₹4,12,000
+POSTGRADUATE (M.Tech) PROGRAMS:
+  - Pass in B.Tech in ECE, CSE, ISE, Biomedical, Medical Electronics, Electronics & Instrumentation, EEE, Telecommunications, Mechatronics and other related branches with a minimum of 50% marks in aggregate (45% in case of candidate belonging to SC/ST & OBC).
+  - Exception (Design Engineering): B.Tech in Mechanical, Industrial Engineering & Management, Aerospace, Aeronautical, Automobile, or related disciplines with minimum 50% marks in aggregate (45% for SC/ST/OBC).
 
-Program: B.Tech Mechanical Engineering
-Level: UG | Duration: 4 Years
-Fee Structure (Annual):
-  • Ranking Based (JEE Mains/Uniguage/Comed-K): ₹3,22,000
-  • Others: ₹4,12,000
+FEE STRUCTURE
+-------------
 
-Program: B.Tech Aerospace Engineering
-Level: UG | Duration: 4 Years
-Fee Structure (Annual):
-  • Ranking Based (JEE Mains/Uniguage/Comed-K): ₹3,22,000
-  • Others: ₹4,12,000
+B.TECH PROGRAMS (Annual Fees):
+  - CET: Not Available
+  - Ranking Based (JEE Mains / Uniguage / Comed-K): ₹3,22,000 - ₹4,35,000
+  - Others: ₹4,12,000 - ₹5,25,000
 
-Program: M.Tech Computer Science & Engineering
-Level: PG | Duration: 2 Years
-Eligibility: Pass in B.Tech in ECE, CSE, ISE, Biomedical, Medical Electronics, Electronics & Instrumentation, EEE, Telecommunications, Mechatronics and other circuit Branches with a minimum of 50% marks in aggregate (45% in case of candidate belonging to SC/ST & OBC).
-Fee Structure (Annual): ₹2,52,000
-Special: Job placement guarantee with starting salary of INR 65,000 per month for a year.
+M.Tech Programs (Annual Fees):
+  - PGCET: Not Available
+  - Annual: ₹1,62,000 - ₹2,52,000
 
-Program: M.Tech CSE (AI & Machine Learning)
-Level: PG | Duration: 2 Years
-Fee Structure (Annual): ₹2,52,000
-Special: Job placement guarantee with starting salary of INR 65,000 per month for a year.
+Special Notes (M.Tech):
+  Job placement guarantee: Upon successful completion, candidates are offered a job with a starting salary of INR 65,000 per month for a year.
+
+More Info: https://dsu.edu.in/eligibility
 
 ================================================================================
 SCHOOL OF COMPUTER APPLICATIONS
