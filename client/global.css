@@ -279,10 +279,8 @@
     }
   }
 
-  /* Fluid Department Hero Sections - Natural Padding */
+  /* Department Hero Sections - Minimal styling, let pages control their own layout */
   .dept-hero-section {
-    padding-top: var(--space-xl);
-    padding-bottom: var(--space-lg);
     position: relative;
   }
 
