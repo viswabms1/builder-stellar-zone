@@ -558,56 +558,6 @@ export default function Pharmacy() {
         </div>
       </section>
 
-      {/* Faculty Section */}
-      <section id="faculty" className="px-3 py-8 bg-gradient-to-r from-brand-blue/5 via-brand-magenta/5 to-brand-orange/5">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-12">
-            <h2 className="font-display text-3xl md:text-4xl mb-4">
-              Our Faculty
-            </h2>
-            <p className="text-foreground/80 font-body max-w-3xl">
-              Meet our dedicated team of pharmaceutical educators, researchers, and industry experts committed to excellence in pharmaceutical sciences education.
-            </p>
-          </div>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {pharmacyFaculty.map((faculty, i) => (
-              <Card
-                key={i}
-                className="rounded-lg border border-border/40 bg-card/60 backdrop-blur-sm overflow-hidden hover:shadow-lg hover:shadow-brand-blue/20 transition-all duration-500 hover:-translate-y-1"
-              >
-                <CardHeader className="pb-3">
-                  <CardTitle className="font-display text-lg leading-tight">
-                    {faculty.name}
-                  </CardTitle>
-                  <CardDescription className="text-xs font-medium text-brand-blue">
-                    {faculty.title}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-2">
-                  <div>
-                    <p className="text-xs text-foreground/60 uppercase tracking-wide mb-1">
-                      Qualifications
-                    </p>
-                    <p className="text-sm text-foreground/90 font-body">
-                      {faculty.qualifications}
-                    </p>
-                  </div>
-                  {faculty.profileUrl && (
-                    <a
-                      href={faculty.profileUrl}
-                      className="inline-flex items-center gap-2 text-xs font-medium text-brand-blue hover:text-brand-blue/80 transition-colors pt-2"
-                    >
-                      View Profile
-                      <ChevronRight className="h-3 w-3" />
-                    </a>
-                  )}
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Contact & Resources */}
       <section className="px-3 py-8">
         <div className="mx-auto grid max-w-5xl items-start gap-4 lg:grid-cols-2">
