@@ -480,7 +480,30 @@ function calculateSimilarity(query: string, text: string): number {
     score += 20;
   }
 
-  // Program-specific boosts
+  // Program-specific boosts with aliases and common sense matching
+  const programAliases: { [key: string]: string[] } = {
+    "pharmacy": ["pharmacy", "pharm", "b.pharm", "bpharm", "pharm.d", "pharmd", "m.pharma", "mpharma", "pharmaceutical"],
+    "engineering": ["engineering", "b.tech", "m.tech", "cse", "cs", "mechanical", "aerospace", "electronics"],
+    "nursing": ["nursing", "b.sc nursing", "bsc nursing", "nurse"],
+    "business": ["business", "bba", "mba", "commerce", "b.com", "bcom", "management"],
+    "law": ["law", "llb", "ll.b", "llm", "ll.m"],
+    "computer": ["computer", "cse", "cs", "bca", "mca", "data science", "artificial intelligence", "ai"],
+    "design": ["design", "b.design", "bdesign", "product design", "ux", "animation", "vfx"],
+    "health": ["health", "healthcare", "medical", "allied health", "physiotherapy", "bpt", "nutrition"],
+    "science": ["science", "b.sc", "bsc", "m.sc", "msc", "biotechnology", "microbiology"],
+    "journalism": ["journalism", "jmc", "mass communication", "ba jmc"],
+  };
+
+  for (const [alias, terms] of Object.entries(programAliases)) {
+    const queryHasTerm = terms.some(term => queryLower.includes(term));
+    const textHasTerm = terms.some(term => textLower.includes(term));
+
+    if (queryHasTerm && textHasTerm) {
+      score += 20; // Increased boost for alias matches
+    }
+  }
+
+  // Legacy program list for direct matches
   const programs = [
     "b.tech",
     "m.tech",
@@ -496,6 +519,10 @@ function calculateSimilarity(query: string, text: string): number {
     "ai",
     "machine learning",
     "data science",
+    "b.pharm",
+    "pharm.d",
+    "m.pharma",
+    "pharmacy",
   ];
   for (const prog of programs) {
     if (queryLower.includes(prog) && textLower.includes(prog)) {
