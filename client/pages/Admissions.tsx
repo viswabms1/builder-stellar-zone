@@ -132,7 +132,7 @@ const quickLinks: QuickLink[] = [
     icon: CalendarCheck,
   },
   {
-    title: "Direct Admissions – 2025",
+    title: "Direct Admissions – 2026",
     description:
       "Secure your seat through the direct admissions window and confirm early.",
     href: "https://admissions.dsu.edu.in/?utm_source=Admissions%20Tab&utm_medium=Website&utm_campaign=WS-Admissions%202024",
