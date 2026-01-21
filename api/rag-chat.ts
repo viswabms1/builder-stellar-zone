@@ -209,29 +209,57 @@ Special Notes:
 SCHOOL OF HEALTH SCIENCES
 ================================================================================
 
-Program: B.Sc Nursing
-Level: UG | Duration: 4 Years
-Eligibility: 10+2 with Physics, Chemistry, Biology and English with minimum 45% marks.
-Fee Structure (Annual): ₹1,82,000
+COLLEGE OF ALLIED HEALTH SCIENCES:
+UNDERGRADUATE PROGRAMS:
+  1. B.Sc in Medical Radiology & Imaging Technology (3 Years) - ₹1,72,000
+  2. B.Sc in Medical Laboratory Technology (3 Years) - ₹1,42,000
+  3. B.Sc in Anesthesia and Operation Theatre Technology (3 Years) - ₹1,72,000
+  4. B.Sc in Emergency & Trauma Care Technology (3 Years) - ₹1,42,000
+  5. B.Sc in Cardiac Care Technology (3 Years) - ₹2,02,000
 
-Program: Bachelor's in Physiotherapy (BPT)
-Level: UG | Duration: 4 Years
-Eligibility: 10+2 with Physics, Chemistry, English and Biology with minimum 40% marks.
-Fee Structure (Annual): ₹2,17,000
+Eligibility: 10+2 with Physics, Chemistry, Biology, and English with a minimum of 45% marks.
 
-Program: B.Pharm
-Level: UG | Duration: 4 Years
-Eligibility: 10+2 with Physics, Chemistry, English with Math/Bio as optional with minimum 40% marks.
-Fee Structure (Annual): ₹2,82,000
+POSTGRADUATE PROGRAMS:
+  1. MPH - Masters in Public Health (2 Years) - ₹1,42,000
 
-Program: B.Sc Medical Laboratory Technology
-Level: UG | Duration: 3 Years
-Fee Structure (Annual): ₹1,42,000
+Eligibility: Degree in MBBS, BDS, BAMS, B.Sc Nursing, BPT, B.Pharm with minimum 50% marks.
 
-Program: MPH - Masters in Public Health
-Level: PG | Duration: 2 Years
-Eligibility: MBBS/BDS/BAMS/B.Sc Nursing/BPT/B.Pharm with minimum 50% marks.
-Fee Structure (Annual): ₹1,42,000
+COLLEGE OF PHARMACEUTICAL SCIENCES:
+UNDERGRADUATE PROGRAMS:
+  1. B.Pharm (4 Years) - CET: ₹2,52,000, DSAT: ₹2,82,000
+
+Eligibility: 10+2 with Physics, Chemistry, English with Math/Biotech/CS/Biology with minimum 40% marks.
+
+POSTGRADUATE PROGRAMS:
+  1. M.Pharma in Pharmaceutics, Pharmacology, Regulatory Affairs (2 Years) - ₹3,02,000
+  2. Pharm D (6 Years) - ₹4,52,000
+
+Eligibility: B.Pharm with minimum 50% marks.
+
+COLLEGE OF NURSING SCIENCES:
+UNDERGRADUATE PROGRAMS:
+  1. B.Sc in Nursing (4 Years) - ₹1,82,000
+  2. PB B.Sc in Nursing (2 Years) - ₹92,000
+
+Eligibility:
+  - B.Sc in Nursing: 10+2 with Physics, Chemistry, Biology, English with 45% marks.
+  - PB B.Sc in Nursing: GNM with 50% marks, registered Nurse and Midwife.
+
+POSTGRADUATE PROGRAMS:
+  1. M.Sc in Medical Surgical Nursing, Child Health Nursing, Mental Health Nursing, Obstetrics and Gynecology Nursing, Community Health Nursing (2 Years) - ₹1,42,000
+
+Eligibility: B.Sc/PC B.Sc/PB B.Sc Nursing with minimum 55% marks.
+
+COLLEGE OF PHYSIOTHERAPY:
+UNDERGRADUATE PROGRAMS:
+  1. Bachelor's in Physiotherapy (B.P.T.) (4 Years) - ₹2,17,000
+
+Eligibility: 10+2 with Physics, Chemistry, Biology, and English with a minimum of 40% marks.
+
+POSTGRADUATE PROGRAMS:
+  1. M.P.T in Sports & Muscular Skeletal, Cardio Pulmonary, Women's Health, Neuro, Community-Based Rehabilitation (2 Years) - ₹2,77,000
+
+Eligibility: BPT with a minimum of 50% marks in aggregate.
 
 ================================================================================
 SCHOOL OF BASIC & APPLIED SCIENCES
