@@ -354,6 +354,13 @@
     font-size: clamp(0.75rem, 1vw + 0.25rem, 1rem);
   }
 
+  /* Landscape mobile: Force buttons to flex-row to prevent cutoff */
+  @media (max-height: 550px) and (max-width: 768px) {
+    .hero-title-outside ~ .flex.md\:hidden {
+      flex-direction: row !important;
+    }
+  }
+
   /* Location badge - relative to hero, not absolute viewport */
   .hero-section .absolute.top-10 {
     top: clamp(1rem, 2vh, 2rem);
