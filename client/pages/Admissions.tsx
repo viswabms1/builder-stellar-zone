@@ -199,9 +199,10 @@ const admissionTracks: AdmissionTrack[] = [
       "Support for visa letters and equivalence certificates",
       "Scholarship consideration for exceptional profiles",
     ],
-    href: "/admissions/international",
+    href: "https://dsu.edu.in/international/",
     icon: Globe,
     ctaLabel: "Explore International Pathway",
+    external: true,
   },
   {
     title: "DSU Online & Professional Programs",
