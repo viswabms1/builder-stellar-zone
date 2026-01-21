@@ -320,11 +320,16 @@ export function RagChatWidget() {
             {/* Header */}
             <div
               className={cn(
-                "flex items-center justify-between p-4 rounded-t-2xl border-b",
+                "flex items-center justify-between border-b",
                 theme === "light"
                   ? "bg-gradient-to-r from-orange-50 to-orange-100 border-orange-200"
                   : "bg-gradient-to-r from-orange-900/20 to-orange-800/20 border-orange-700/30",
               )}
+              style={{
+                padding: "clamp(0.75rem, 2vmin, 1rem)",
+                borderTopLeftRadius: "clamp(0.75rem, 2vmin, 1rem)",
+                borderTopRightRadius: "clamp(0.75rem, 2vmin, 1rem)",
+              }}
             >
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-orange-500 flex items-center justify-center">
