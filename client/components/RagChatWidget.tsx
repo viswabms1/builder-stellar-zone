@@ -302,17 +302,18 @@ export function RagChatWidget() {
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.2 }}
             className={cn(
-              "fixed rounded-2xl shadow-2xl flex flex-col z-[99999] block",
+              "rounded-2xl shadow-2xl flex flex-col",
               theme === "light"
                 ? "bg-white border border-gray-200"
                 : "bg-slate-900 border border-slate-700",
             )}
             style={{
               position: "fixed",
-              bottom: "1rem",
-              right: "1rem",
-              width: "min(400px, calc(100vw - 2rem))",
-              height: "min(600px, calc(100vh - 2rem))",
+              bottom: "24px",
+              right: "24px",
+              zIndex: 99999,
+              width: "min(400px, calc(100vw - 48px))",
+              height: "min(600px, calc(100vh - 48px))",
             }}
           >
             {/* Header */}
