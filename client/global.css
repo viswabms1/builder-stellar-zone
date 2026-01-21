@@ -400,29 +400,35 @@
       padding-bottom: 1rem !important;
     }
 
-    /* Adjust hero title size for landscape */
+    /* Adjust hero title size for landscape - more compact */
     .hero-section h1 {
       margin-top: 0 !important;
-      font-size: 2rem !important;
-      line-height: 2.25rem !important;
-      margin-bottom: 0.5rem !important;
+      font-size: 1.5rem !important;
+      line-height: 1.75rem !important;
+      margin-bottom: 0.25rem !important;
     }
 
     .hero-section p {
-      font-size: 1rem !important;
-      line-height: 1.5rem !important;
-      margin-bottom: 0.25rem !important;
+      font-size: 0.875rem !important;
+      line-height: 1.25rem !important;
+      margin-bottom: 0.125rem !important;
     }
 
     /* Compact button spacing */
     .hero-section .flex.flex-col.gap-4 {
-      gap: 0.75rem !important;
+      gap: 0.5rem !important;
     }
 
     .hero-section button,
     .hero-section a button {
-      padding: 0.5rem 1.5rem !important;
-      font-size: 0.875rem !important;
+      padding: 0.375rem 1rem !important;
+      font-size: 0.75rem !important;
+      line-height: 1rem !important;
+    }
+
+    /* Hide secondary button row to save space */
+    .hero-section .flex.flex-col.sm\:flex-row {
+      display: none !important;
     }
 
     /* Hide extra link in landscape to save space */
