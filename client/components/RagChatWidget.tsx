@@ -277,11 +277,15 @@ export function RagChatWidget() {
             exit={{ scale: 0, opacity: 0 }}
             onClick={() => setIsOpen(true)}
             className={cn(
-              "rounded-full p-4 shadow-lg hover:shadow-xl transition-all hover:scale-110",
+              "fixed rounded-full p-4 shadow-lg hover:shadow-xl transition-all hover:scale-110 z-[10002]",
               theme === "light"
                 ? "bg-orange-500 hover:bg-orange-600 text-white"
                 : "bg-orange-600 hover:bg-orange-700 text-white",
             )}
+            style={{
+              bottom: "clamp(1rem, 4vh, 1.5rem)",
+              right: "clamp(1rem, 3vw, 1.5rem)",
+            }}
             aria-label="Open chat"
           >
             <MessageSquare className="w-6 h-6" />
