@@ -251,11 +251,6 @@ const brochureResources: BrochureResource[] = [
     subtitle: "Brochure 2025",
     href: "https://www.dsu.edu.in/images/Admission/brochures/2025/allied_health_sciences_2025.pdf",
   },
-  {
-    title: "Admission Closing Dates",
-    subtitle: "Important Dates",
-    href: "/admissions/closing-dates",
-  },
 ];
 
 const campusContacts = [
