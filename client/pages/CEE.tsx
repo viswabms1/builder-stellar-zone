@@ -450,7 +450,7 @@ function HeroVideo() {
 
           <div className="flex flex-col sm:flex-row gap-4">
             <a
-              href="https://bit.ly/DSUEMBAApp"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSdsBxDLGLdxHeUXCT6U6xaVkSTlkSJh1b95THI6MeoIImKHLw/viewform?pli=1"
               target="_blank"
               rel="noreferrer"
               className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background"
