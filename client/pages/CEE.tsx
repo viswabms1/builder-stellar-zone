@@ -108,7 +108,7 @@ const PROGRAM_CARDS: ProgramCard[] = [
       "Modular Executive MBA for senior managers with flexible weekend schedules, strategic modules and global immersion.",
     image:
       "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1600&auto=format&fit=crop",
-    link: "https://bit.ly/DSUEMBAApp",
+    link: "https://docs.google.com/forms/d/e/1FAIpQLSdsBxDLGLdxHeUXCT6U6xaVkSTlkSJh1b95THI6MeoIImKHLw/viewform?pli=1",
     highlights: ["Weekend Classes", "Global Immersion", "CXO Mentorship"],
     overlay:
       "bg-gradient-to-br from-brand-magenta/80 via-black/75 to-black/60 mix-blend-multiply",
