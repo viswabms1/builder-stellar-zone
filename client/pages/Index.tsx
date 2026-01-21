@@ -664,10 +664,14 @@ export default function Index() {
             >
               <Button
                 size="lg"
-                className="bg-white hover:bg-white/90 text-orange-600 hover:text-orange-700 px-6 py-4 text-sm sm:text-base font-bold font-display transition-all duration-300 group shadow-xl hover:shadow-2xl hover:-translate-y-1 w-full sm:w-auto"
+                className="bg-white hover:bg-white/90 text-orange-600 hover:text-orange-700 font-bold font-display transition-all duration-300 group shadow-xl hover:shadow-2xl hover:-translate-y-1 w-full sm:w-auto"
+                style={{
+                  padding: 'clamp(0.75rem, 2vw, 1rem) clamp(1.5rem, 4vw, 2rem)',
+                  fontSize: 'clamp(0.875rem, 2vw, 1rem)',
+                }}
               >
                 Apply Today
-                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight style={{ width: 'clamp(1rem, 2vw, 1.25rem)', height: 'clamp(1rem, 2vw, 1.25rem)' }} className="ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
             </a>
 
