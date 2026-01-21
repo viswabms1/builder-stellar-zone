@@ -280,8 +280,8 @@ export function RagChatWidget() {
           )}
           style={{
             position: "fixed",
-            bottom: "24px",
-            right: "24px",
+            bottom: "clamp(4rem, 8vh, 1.5rem)",
+            right: "clamp(1rem, 3vw, 1.5rem)",
             zIndex: 99999,
             display: "block",
             width: "56px",
