@@ -1047,58 +1047,23 @@
     max-width: none !important;
   }
 
-  /* Fluid Section Spacing */
+  /* Fluid Section Spacing - Natural Flow */
   section {
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-    padding-top: clamp(2rem, 4vw, 4rem) !important;
-    padding-bottom: clamp(2rem, 4vw, 4rem) !important;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: var(--space-lg);
+    padding-bottom: var(--space-lg);
   }
 
   /* Fluid container padding */
   .container,
   [class*="container"] {
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
     padding-left: clamp(0.75rem, 2vw, 1.5rem);
     padding-right: clamp(0.75rem, 2vw, 1.5rem);
   }
 
   /* Fluid grid gaps */
   .grid {
-    gap: clamp(0.75rem, 2vw, 1.5rem) !important;
-  }
-
-  /* Remove extra spacing from divs between sections */
-  div[class*="bg-gradient"],
-  div[class*="bg-background"],
-  div[class*="px-3"] {
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-  }
-
-  /* Hero sections - keep minimal spacing */
-  .hero-section,
-  [class*="hero"] {
-    margin-bottom: 0 !important;
-  }
-
-  /* Remove space-y utility classes */
-  [class*="space-y"] {
-    --tw-space-y-reverse: 0;
-  }
-
-  /* Collapse section padding to minimal */
-  section > div:first-child {
-    margin-top: 0 !important;
-  }
-
-  section > div:last-child {
-    margin-bottom: 0 !important;
-  }
-
-  /* Reduce spacing between Virtual Tour Section and Storyboard Section */
-  section.virtual-tour-section {
-    margin-bottom: -2rem !important;
+    gap: clamp(0.75rem, 2vw, 1.5rem);
   }
 }
