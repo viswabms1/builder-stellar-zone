@@ -364,10 +364,12 @@
     .hero-section {
       margin-top: 0 !important;
       padding-top: 0 !important;
-      height: 100vh !important;
-      min-height: 100vh !important;
-      max-height: 100vh !important;
+      height: 85vh !important;
+      min-height: 85vh !important;
+      max-height: 85vh !important;
       margin-bottom: 0 !important;
+      position: relative !important;
+      z-index: 1 !important;
     }
 
     /* Better content alignment in homepage hero */
@@ -380,6 +382,13 @@
       padding-top: 2rem !important;
       padding-bottom: 2rem !important;
       gap: 1.5rem !important;
+    }
+
+    /* Prevent next section from overlapping hero */
+    .hero-section + section {
+      position: relative !important;
+      z-index: 2 !important;
+      margin-top: 0 !important;
     }
 
     /* Adjust hero title size for landscape */
