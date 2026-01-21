@@ -362,7 +362,7 @@ const COLLEGE_CARDS: CollegeCard[] = [
     image:
       "https://images.unsplash.com/photo-1585523740023-dea1b3ffe518?q=80&w=1600&auto=format&fit=crop",
     gradient: "from-brand-blue/80 via-black/70 to-black/60",
-    link: "https://www.dsu.edu.in/health-sciences/pharmacy",
+    link: "/academics/health-sciences/pharmacy",
   },
   {
     id: "physiotherapy",
