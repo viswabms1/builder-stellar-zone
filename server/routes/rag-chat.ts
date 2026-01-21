@@ -492,7 +492,8 @@ export const handleRagHealthCheck = async (_req: Request, res: Response) => {
       openaiConfigured: !!process.env.OPENAI_API_KEY,
       apiEndpoint: "Chat Completions API (/v1/chat/completions)",
       model: "gpt-4o-mini",
-      temperature: 0.3,
+      temperature: 0,
+      deterministic: true,
       contextWindow: "128,000 tokens",
       timestamp: new Date().toISOString(),
     });
