@@ -309,10 +309,12 @@ export function RagChatWidget() {
                 : "bg-slate-900 border border-slate-700",
             )}
             style={{
-              bottom: "clamp(1.5rem, 5vh, 6rem)",
-              right: "clamp(1.5rem, 4vw, 3rem)",
-              width: "clamp(280px, 85vw, 400px)",
-              height: "clamp(350px, 70vh, 600px)",
+              bottom: "clamp(0.75rem, 2vh, 1.5rem)",
+              right: "clamp(0.75rem, 2vw, 1.5rem)",
+              width: "clamp(280px, 90vw, 400px)",
+              maxWidth: "calc(100vw - 1.5rem)",
+              height: "clamp(300px, 60vh, 550px)",
+              maxHeight: "calc(100vh - 8rem)",
             }}
           >
             {/* Header */}
