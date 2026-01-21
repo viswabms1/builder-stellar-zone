@@ -517,11 +517,14 @@ export function RagChatWidget() {
                   placeholder="Ask me anything about DSU..."
                   disabled={isLoading}
                   className={cn(
-                    "text-sm h-10",
                     theme === "light"
                       ? "bg-white border-gray-300"
                       : "bg-slate-700 border-slate-600 text-white",
                   )}
+                  style={{
+                    fontSize: "clamp(0.75rem, 2vmin, 0.875rem)",
+                    height: "clamp(2rem, 5vmin, 2.5rem)",
+                  }}
                   autoFocus
                 />
                 <Button
