@@ -291,23 +291,35 @@ Fees (Annual - 2026-27):
   - All M.Sc Programs: ₹1,92,000 (Term I: ₹1,02,000, Term II: ₹90,000)
 
 ================================================================================
+SCHOOL OF ARTS, DESIGN & HUMANITIES
+================================================================================
+
+UNDERGRADUATE PROGRAMS:
+Programs Offered:
+  1. B.A. in Journalism and Mass Communication (3 Years)
+
+Eligibility:
+  - 10+2 with a minimum of 45% marks (Arts group subjects preferred).
+
+Fees (Annual - 2026-27):
+  - B.A. Journalism and Mass Communication: ₹1,52,000 (Term I: ₹77,000, Term II: ₹75,000)
+
+================================================================================
 SCHOOL OF DESIGN & DIGITAL TRANS-MEDIA
 ================================================================================
 
-Program: B.Design (Product Design / UX Design / Animation and VFX / Game Design)
-Level: UG | Duration: 4 Years
-Eligibility: 50% in Class XII from Science, Commerce, Arts, or Humanities.
-Fee Structure (Annual): ₹3,02,000
+UNDERGRADUATE PROGRAMS:
+Programs Offered:
+  1. B.Design in Product Design (4 Years)
+  2. B.Design in User Experience Design (4 Years)
+  3. B.Design in Animation and VFX (4 Years)
+  4. B.Design in Game Design (4 Years)
 
-================================================================================
-SCHOOL OF JOURNALISM & MASS COMMUNICATION
-================================================================================
+Eligibility:
+  - Minimum 50% in Class XII from Science, Commerce, Arts, or Humanities.
 
-Program: B.A. Journalism and Mass Communication
-Level: UG | Duration: 3 Years
-Eligibility: 10+2 or equivalent with minimum 45% marks. Arts subjects preferred.
-Fee Structure (Annual): ₹1,52,000
-Special: Newsroom simulations, digital production labs, media internships.
+Fees (Annual - 2026-27):
+  - All B.Design Programs: ₹3,02,000
 
 ================================================================================
 CAMPUS & FACILITIES
