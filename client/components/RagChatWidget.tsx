@@ -496,7 +496,7 @@ export function RagChatWidget() {
                 padding: "clamp(0.75rem, 2vmin, 1rem)",
               }}
             >
-              <div className="flex gap-2">
+              <div className="flex" style={{ gap: "clamp(0.25rem, 1vmin, 0.5rem)" }}>
                 <Input
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
