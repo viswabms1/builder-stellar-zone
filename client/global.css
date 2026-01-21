@@ -350,6 +350,23 @@
 }
 
 @layer utilities {
+  /**
+   * FLUID LAYOUT PHILOSOPHY
+   * ========================
+   * This codebase uses modern CSS fluid techniques:
+   * - clamp() for responsive sizing without media queries
+   * - Flexbox with fluid gaps (clamp-based)
+   * - CSS Grid with minmax() and auto-fit
+   * - Viewport units (vw, vh, vmin, vmax) for scaling
+   * - Aspect-ratio media queries instead of device-specific breakpoints
+   *
+   * Benefits:
+   * - Works on ANY screen size (even ones that don't exist yet)
+   * - No device-specific code to maintain
+   * - Smoother transitions between sizes
+   * - Better performance (browser-optimized)
+   */
+
   .scrollbar-hide {
     -ms-overflow-style: none;
     scrollbar-width: none;
