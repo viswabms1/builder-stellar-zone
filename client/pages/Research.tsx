@@ -376,11 +376,6 @@ export default function Research() {
           <div className="grid md:grid-cols-3 gap-4">
             {[
               {
-                icon: DollarSign,
-                title: "Funding & Grants",
-                description: "Government and industry funding mechanisms for research commercialization",
-              },
-              {
                 icon: Target,
                 title: "Mentorship & IP",
                 description: "Patent assistance and entrepreneurship support for research innovations",
