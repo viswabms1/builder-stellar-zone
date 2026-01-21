@@ -487,7 +487,7 @@ export default function Research() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://www.dsu.edu.in/research/phd-admission"
+                href="https://www.dsu.edu.in/images/phd/Syllabus/2025_dec/Application_2025.pdf"
                 target="_blank"
                 rel="noreferrer"
               >
