@@ -454,38 +454,195 @@ function calculateSimilarity(query: string, text: string): number {
 
   // School/Department Level Aliases
   const schoolAliases: { [key: string]: string[] } = {
-    "health sciences": ["health", "healthcare", "medical", "hospital", "nursing", "pharmacy", "physiotherapy", "allied health", "pharm", "pt", "bpt"],
-    "engineering": ["engineering", "tech", "technology", "machine", "cse", "ece", "mechanical", "aerospace", "embedded", "robotics"],
-    "commerce": ["commerce", "business", "accounting", "finance", "bcom", "bba", "mba", "management", "accounting", "cma", "acca"],
-    "computer": ["computer", "computing", "software", "it", "cse", "bca", "mca", "ai", "ml", "data science", "cyber"],
-    "law": ["law", "legal", "llb", "llm", "governance", "corporate"],
-    "design": ["design", "creative", "ux", "ui", "animation", "vfx", "graphic", "product design"],
-    "science": ["science", "research", "biotechnology", "microbiology", "chemistry", "biology", "physics"],
-    "humanities": ["journalism", "arts", "communication", "media", "mass communication"],
+    "health sciences": [
+      "health",
+      "healthcare",
+      "medical",
+      "hospital",
+      "nursing",
+      "pharmacy",
+      "physiotherapy",
+      "allied health",
+      "pharm",
+      "pt",
+      "bpt",
+    ],
+    engineering: [
+      "engineering",
+      "tech",
+      "technology",
+      "machine",
+      "cse",
+      "ece",
+      "mechanical",
+      "aerospace",
+      "embedded",
+      "robotics",
+    ],
+    commerce: [
+      "commerce",
+      "business",
+      "accounting",
+      "finance",
+      "bcom",
+      "bba",
+      "mba",
+      "management",
+      "accounting",
+      "cma",
+      "acca",
+    ],
+    computer: [
+      "computer",
+      "computing",
+      "software",
+      "it",
+      "cse",
+      "bca",
+      "mca",
+      "ai",
+      "ml",
+      "data science",
+      "cyber",
+    ],
+    law: ["law", "legal", "llb", "llm", "governance", "corporate"],
+    design: [
+      "design",
+      "creative",
+      "ux",
+      "ui",
+      "animation",
+      "vfx",
+      "graphic",
+      "product design",
+    ],
+    science: [
+      "science",
+      "research",
+      "biotechnology",
+      "microbiology",
+      "chemistry",
+      "biology",
+      "physics",
+    ],
+    humanities: [
+      "journalism",
+      "arts",
+      "communication",
+      "media",
+      "mass communication",
+    ],
   };
 
   // Academic Level Aliases
   const levelAliases: { [key: string]: string[] } = {
-    "undergraduate": ["undergraduate", "ug", "bachelor", "bachelors", "b.tech", "b.sc", "b.com", "bca", "first degree"],
-    "postgraduate": ["postgraduate", "pg", "master", "masters", "m.tech", "m.sc", "mba", "mca", "advanced degree"],
-    "doctoral": ["doctoral", "doctorate", "phd", "ph.d", "research"],
+    undergraduate: [
+      "undergraduate",
+      "ug",
+      "bachelor",
+      "bachelors",
+      "b.tech",
+      "b.sc",
+      "b.com",
+      "bca",
+      "first degree",
+    ],
+    postgraduate: [
+      "postgraduate",
+      "pg",
+      "master",
+      "masters",
+      "m.tech",
+      "m.sc",
+      "mba",
+      "mca",
+      "advanced degree",
+    ],
+    doctoral: ["doctoral", "doctorate", "phd", "ph.d", "research"],
   };
 
   // Query Concept Aliases
   const conceptAliases: { [key: string]: string[] } = {
-    "fees": ["fee", "cost", "price", "charge", "tuition", "expense", "payment", "rupees", "₹"],
-    "eligibility": ["eligible", "eligibility", "qualify", "requirements", "pass", "marks", "percentage", "aggregate", "qualification", "entrance", "exam"],
-    "admission": ["admission", "apply", "application", "enroll", "enrollment", "register", "registration", "intake", "seat"],
-    "contact": ["contact", "phone", "email", "address", "reach", "call", "whatsapp", "helpline", "support"],
-    "placement": ["placement", "job", "career", "employment", "salary", "graduate", "companies"],
-    "campus": ["campus", "facility", "infrastructure", "lab", "laboratory", "library", "hostel", "accommodation"],
-    "program": ["program", "course", "degree", "specialization", "major", "stream", "branch"],
+    fees: [
+      "fee",
+      "cost",
+      "price",
+      "charge",
+      "tuition",
+      "expense",
+      "payment",
+      "rupees",
+      "₹",
+    ],
+    eligibility: [
+      "eligible",
+      "eligibility",
+      "qualify",
+      "requirements",
+      "pass",
+      "marks",
+      "percentage",
+      "aggregate",
+      "qualification",
+      "entrance",
+      "exam",
+    ],
+    admission: [
+      "admission",
+      "apply",
+      "application",
+      "enroll",
+      "enrollment",
+      "register",
+      "registration",
+      "intake",
+      "seat",
+    ],
+    contact: [
+      "contact",
+      "phone",
+      "email",
+      "address",
+      "reach",
+      "call",
+      "whatsapp",
+      "helpline",
+      "support",
+    ],
+    placement: [
+      "placement",
+      "job",
+      "career",
+      "employment",
+      "salary",
+      "graduate",
+      "companies",
+    ],
+    campus: [
+      "campus",
+      "facility",
+      "infrastructure",
+      "lab",
+      "laboratory",
+      "library",
+      "hostel",
+      "accommodation",
+    ],
+    program: [
+      "program",
+      "course",
+      "degree",
+      "specialization",
+      "major",
+      "stream",
+      "branch",
+    ],
   };
 
   // Check school aliases
   for (const [school, terms] of Object.entries(schoolAliases)) {
-    const queryHasTerm = terms.some(term => queryLower.includes(term));
-    const textHasTerm = terms.some(term => textLower.includes(term));
+    const queryHasTerm = terms.some((term) => queryLower.includes(term));
+    const textHasTerm = terms.some((term) => textLower.includes(term));
     if (queryHasTerm && textHasTerm) {
       score += 25;
     }
@@ -493,8 +650,8 @@ function calculateSimilarity(query: string, text: string): number {
 
   // Check level aliases
   for (const [level, terms] of Object.entries(levelAliases)) {
-    const queryHasTerm = terms.some(term => queryLower.includes(term));
-    const textHasTerm = terms.some(term => textLower.includes(term));
+    const queryHasTerm = terms.some((term) => queryLower.includes(term));
+    const textHasTerm = terms.some((term) => textLower.includes(term));
     if (queryHasTerm && textHasTerm) {
       score += 15;
     }
@@ -502,8 +659,8 @@ function calculateSimilarity(query: string, text: string): number {
 
   // Check concept aliases
   for (const [concept, terms] of Object.entries(conceptAliases)) {
-    const queryHasTerm = terms.some(term => queryLower.includes(term));
-    const textHasTerm = terms.some(term => textLower.includes(term));
+    const queryHasTerm = terms.some((term) => queryLower.includes(term));
+    const textHasTerm = terms.some((term) => textLower.includes(term));
     if (queryHasTerm && textHasTerm) {
       score += 20;
     }
@@ -524,25 +681,48 @@ function calculateSimilarity(query: string, text: string): number {
 
   // ===== PROGRAM NAME SPECIFIC BOOSTS =====
   const programVariations: { [key: string]: string[] } = {
-    "cse": ["cse", "computer science", "cs", "computer science & engineering", "computer science & technology"],
-    "btech": ["b.tech", "btech", "bachelor of technology", "engineering"],
-    "mtech": ["m.tech", "mtech", "master of technology"],
-    "nursing": ["nursing", "b.sc nursing", "bsc nursing", "nurse"],
-    "pharmacy": ["pharmacy", "pharm", "b.pharm", "bpharm", "pharm.d", "pharmd", "m.pharma", "mpharma", "pharmaceutical", "college of pharmaceutical"],
-    "bca": ["bca", "bachelor of computer applications"],
-    "mca": ["mca", "master of computer applications"],
-    "bba": ["bba", "bachelor of business administration"],
-    "mba": ["mba", "master of business administration"],
-    "commerce": ["b.com", "bcom", "commerce", "bachelor of commerce"],
-    "law": ["law", "llb", "ll.b", "llm", "ll.m", "law school"],
-    "design": ["design", "b.design", "bdesign"],
-    "jmc": ["journalism", "jmc", "mass communication", "media"],
-    "allied": ["allied health", "physiotherapy", "nursing", "radiology", "laboratory technology"],
+    cse: [
+      "cse",
+      "computer science",
+      "cs",
+      "computer science & engineering",
+      "computer science & technology",
+    ],
+    btech: ["b.tech", "btech", "bachelor of technology", "engineering"],
+    mtech: ["m.tech", "mtech", "master of technology"],
+    nursing: ["nursing", "b.sc nursing", "bsc nursing", "nurse"],
+    pharmacy: [
+      "pharmacy",
+      "pharm",
+      "b.pharm",
+      "bpharm",
+      "pharm.d",
+      "pharmd",
+      "m.pharma",
+      "mpharma",
+      "pharmaceutical",
+      "college of pharmaceutical",
+    ],
+    bca: ["bca", "bachelor of computer applications"],
+    mca: ["mca", "master of computer applications"],
+    bba: ["bba", "bachelor of business administration"],
+    mba: ["mba", "master of business administration"],
+    commerce: ["b.com", "bcom", "commerce", "bachelor of commerce"],
+    law: ["law", "llb", "ll.b", "llm", "ll.m", "law school"],
+    design: ["design", "b.design", "bdesign"],
+    jmc: ["journalism", "jmc", "mass communication", "media"],
+    allied: [
+      "allied health",
+      "physiotherapy",
+      "nursing",
+      "radiology",
+      "laboratory technology",
+    ],
   };
 
   for (const [prog, terms] of Object.entries(programVariations)) {
-    const queryHasTerm = terms.some(term => queryLower.includes(term));
-    const textHasTerm = terms.some(term => textLower.includes(term));
+    const queryHasTerm = terms.some((term) => queryLower.includes(term));
+    const textHasTerm = terms.some((term) => textLower.includes(term));
     if (queryHasTerm && textHasTerm) {
       score += 18;
     }
@@ -551,43 +731,98 @@ function calculateSimilarity(query: string, text: string): number {
   // ===== CONTEXT-SPECIFIC BOOSTS =====
 
   // If asking about fees, boost chunks with fee information
-  if ((queryLower.includes("fee") || queryLower.includes("cost") || queryLower.includes("price")) &&
-      (textLower.includes("₹") || textLower.includes("annual") || textLower.includes("fees"))) {
+  if (
+    (queryLower.includes("fee") ||
+      queryLower.includes("cost") ||
+      queryLower.includes("price")) &&
+    (textLower.includes("₹") ||
+      textLower.includes("annual") ||
+      textLower.includes("fees"))
+  ) {
     score += 25;
   }
 
   // If asking about eligibility, boost chunks with eligibility info
-  if ((queryLower.includes("eligible") || queryLower.includes("eligibility") || queryLower.includes("requirement") || queryLower.includes("qualify")) &&
-      (textLower.includes("eligibility") || textLower.includes("pass") || textLower.includes("marks") || textLower.includes("minimum") || textLower.includes("percentage"))) {
+  if (
+    (queryLower.includes("eligible") ||
+      queryLower.includes("eligibility") ||
+      queryLower.includes("requirement") ||
+      queryLower.includes("qualify")) &&
+    (textLower.includes("eligibility") ||
+      textLower.includes("pass") ||
+      textLower.includes("marks") ||
+      textLower.includes("minimum") ||
+      textLower.includes("percentage"))
+  ) {
     score += 25;
   }
 
   // If asking about admission, boost chunks with admission info
-  if ((queryLower.includes("admission") || queryLower.includes("apply") || queryLower.includes("enroll")) &&
-      (textLower.includes("admission") || textLower.includes("apply") || textLower.includes("admission") || textLower.includes("eligible"))) {
+  if (
+    (queryLower.includes("admission") ||
+      queryLower.includes("apply") ||
+      queryLower.includes("enroll")) &&
+    (textLower.includes("admission") ||
+      textLower.includes("apply") ||
+      textLower.includes("admission") ||
+      textLower.includes("eligible"))
+  ) {
     score += 20;
   }
 
   // If asking about contact, boost chunks with contact info
-  if ((queryLower.includes("contact") || queryLower.includes("phone") || queryLower.includes("email") || queryLower.includes("address")) &&
-      (textLower.includes("contact") || textLower.includes("email") || textLower.includes("phone") || textLower.includes("address"))) {
+  if (
+    (queryLower.includes("contact") ||
+      queryLower.includes("phone") ||
+      queryLower.includes("email") ||
+      queryLower.includes("address")) &&
+    (textLower.includes("contact") ||
+      textLower.includes("email") ||
+      textLower.includes("phone") ||
+      textLower.includes("address"))
+  ) {
     score += 25;
   }
 
   // If asking about placement/career/job, boost relevant chunks
-  if ((queryLower.includes("placement") || queryLower.includes("job") || queryLower.includes("career") || queryLower.includes("salary")) &&
-      (textLower.includes("placement") || textLower.includes("job") || textLower.includes("career") || textLower.includes("salary"))) {
+  if (
+    (queryLower.includes("placement") ||
+      queryLower.includes("job") ||
+      queryLower.includes("career") ||
+      queryLower.includes("salary")) &&
+    (textLower.includes("placement") ||
+      textLower.includes("job") ||
+      textLower.includes("career") ||
+      textLower.includes("salary"))
+  ) {
     score += 20;
   }
 
   // ===== NEGATIVE SCORING (IRRELEVANT CONTENT) =====
   // Reduce score if query is about X but text is clearly about a different program
-  const programKeywords = ["b.tech", "m.tech", "bca", "mca", "nursing", "pharmacy", "law", "commerce", "design", "engineering"];
-  const queryPrograms = programKeywords.filter(prog => queryLower.includes(prog));
-  const textPrograms = programKeywords.filter(prog => textLower.includes(prog));
+  const programKeywords = [
+    "b.tech",
+    "m.tech",
+    "bca",
+    "mca",
+    "nursing",
+    "pharmacy",
+    "law",
+    "commerce",
+    "design",
+    "engineering",
+  ];
+  const queryPrograms = programKeywords.filter((prog) =>
+    queryLower.includes(prog),
+  );
+  const textPrograms = programKeywords.filter((prog) =>
+    textLower.includes(prog),
+  );
 
   if (queryPrograms.length > 0 && textPrograms.length > 0) {
-    const hasCommonProgram = queryPrograms.some(p => textPrograms.includes(p));
+    const hasCommonProgram = queryPrograms.some((p) =>
+      textPrograms.includes(p),
+    );
     if (!hasCommonProgram && queryPrograms[0] !== textPrograms[0]) {
       score -= 10; // Penalize unrelated program matches
     }
