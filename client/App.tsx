@@ -1725,6 +1725,10 @@ function App() {
                   element={<InternationalAdmissions />}
                 />
                 <Route
+                  path="/admissions/closing-dates"
+                  element={<AdmissionClosingDates />}
+                />
+                <Route
                   path="/international-affairs"
                   element={<InternationalAffairs />}
                 />
