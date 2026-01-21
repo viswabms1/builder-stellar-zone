@@ -1205,7 +1205,7 @@ export default function Navigation() {
                             : "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F0caf0bf29be6421997005f26cdaae0ed?format=webp&width=800"
                         }
                         alt="Dayananda Sagar University Logo"
-                        className="max-h-[4.5rem] w-auto object-contain group-hover:scale-105 transition-all duration-300"
+                        className="max-h-[4rem] w-auto object-contain group-hover:scale-105 transition-all duration-300"
                       />
                     </Link>,
                     <Link
@@ -1213,8 +1213,8 @@ export default function Navigation() {
                       to="/ai-first"
                       className={aiFirstClasses}
                     >
-                      <span className="text-center leading-tight">
-                        AI-First @ DSU
+                      <span className="text-center leading-tight whitespace-nowrap">
+                        AI-First@DSU
                       </span>
                     </Link>,
                   ];
