@@ -487,11 +487,14 @@ export function RagChatWidget() {
             <form
               onSubmit={handleSubmit}
               className={cn(
-                "p-4 border-t",
+                "border-t",
                 theme === "light"
                   ? "bg-gray-50 border-gray-200"
                   : "bg-slate-800 border-slate-700",
               )}
+              style={{
+                padding: "clamp(0.75rem, 2vmin, 1rem)",
+              }}
             >
               <div className="flex gap-2">
                 <Input
