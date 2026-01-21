@@ -256,6 +256,13 @@
     }
   }
 
+  /* Engineering Page: Hide text overlay in portrait mode (redundant with text below video) */
+  @media (max-aspect-ratio: 13/9) {
+    .hero-school-title .school-title-text {
+      display: none !important;
+    }
+  }
+
   /* Fluid Department Hero Sections - Natural Padding */
   .dept-hero-section {
     padding-top: var(--space-xl);
