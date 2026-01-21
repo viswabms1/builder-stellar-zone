@@ -618,7 +618,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
             model: "gpt-4o-mini",
             messages: messages,
             max_tokens: 1000,
-            temperature: 0.3,
+            temperature: 0,
         });
 
         const assistantMessage = completion.choices[0]?.message?.content || "";
