@@ -278,7 +278,7 @@ function sanitizeMessage(message: string): string {
 
 /**
  * Handle chat messages with Chat Completions API
- * Uses GPT-4o-mini with temperature 0.3 for consistent responses
+ * Uses GPT-4o-mini with temperature 0 for completely deterministic responses (prevents hallucinations)
  */
 export const handleRagChat = async (req: Request, res: Response) => {
   try {
