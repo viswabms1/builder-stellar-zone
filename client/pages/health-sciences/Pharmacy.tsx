@@ -199,12 +199,12 @@ function ProgramCardComponent({ program }: { program: ProgramCard }) {
 
 function HeroSection() {
   const specializations = [
-    { icon: Pill, label: "Drug Formulation" },
-    { icon: FlaskConical, label: "Pharmacology" },
-    { icon: Microscope, label: "Pharmaceutics" },
-    { icon: Award, label: "Regulatory Affairs" },
-    { icon: Heart, label: "Clinical Pharmacy" },
-    { icon: Stethoscope, label: "Hospital Pharmacy" },
+    { icon: Pill, label: "B.Pharm" },
+    { icon: FlaskConical, label: "M.Pharm" },
+    { icon: Microscope, label: "Pharm.D" },
+    { icon: Award, label: "Research" },
+    { icon: Heart, label: "Clinical Practice" },
+    { icon: Stethoscope, label: "Industry Training" },
   ];
 
   return (
