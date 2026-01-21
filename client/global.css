@@ -1094,4 +1094,19 @@
   .grid {
     gap: clamp(0.75rem, 2vw, 1.5rem);
   }
+
+  /* Global: Remove all min-h-screen that cause layout issues */
+  /* Keep min-h-screen on root divs but prevent child conflicts */
+  .min-h-screen > section:first-child {
+    min-height: auto;
+  }
+
+  /* Global: Prevent absolute positioning conflicts */
+  .absolute.inset-0 {
+    pointer-events: none;
+  }
+
+  .absolute.inset-0 > * {
+    pointer-events: auto;
+  }
 }
