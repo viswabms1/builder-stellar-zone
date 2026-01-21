@@ -368,6 +368,15 @@ export default function Navigation() {
               { name: "MBA", href: "/academics/commerce-and-management/mba" },
             ],
           },
+          {
+            name: "Executive Education",
+            departments: [
+              {
+                name: "Center for Executive Education",
+                href: "/academics/cee",
+              },
+            ],
+          },
         ],
         departments: [],
       },
