@@ -128,8 +128,9 @@ const quickLinks: QuickLink[] = [
     title: "Admission Closing Dates",
     description:
       "Track key deadlines for applications, counseling, and confirmation.",
-    href: "https://www.dsu.edu.in/admission-lastdates",
+    href: "/admissions/closing-dates",
     icon: CalendarCheck,
+    external: false,
   },
   {
     title: "Direct Admissions – 2026",
