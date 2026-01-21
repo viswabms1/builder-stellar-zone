@@ -75,7 +75,7 @@ type Resource = {
 };
 
 const HERO_IMAGE =
-  "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2000&auto=format&fit=crop";
+  "https://images.pexels.com/photos/3931561/pexels-photo-3931561.jpeg?auto=compress&cs=tinysrgb&w=1600";
 
 const OFFERINGS: Offering[] = [
   {
