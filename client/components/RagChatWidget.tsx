@@ -312,8 +312,9 @@ export function RagChatWidget() {
               bottom: "clamp(4rem, 8vh, 1.5rem)",
               right: "clamp(1rem, 3vw, 1.5rem)",
               zIndex: 99999,
-              width: "min(400px, calc(100vw - 2rem))",
-              height: "min(600px, calc(100vh - 10rem))",
+              width: "clamp(280px, 90vw, 400px)",
+              height: "clamp(300px, 70vh, 600px)",
+              borderRadius: "clamp(0.75rem, 2vmin, 1rem)",
             }}
           >
             {/* Header */}
