@@ -637,7 +637,7 @@ export default function Index() {
         </div>
 
         {/* Hero Content */}
-        <div className="relative max-w-7xl mx-auto px-3 w-full z-10 flex flex-col justify-between h-full py-6 md:py-0 md:items-start md:justify-center">
+        <div className="relative max-w-7xl mx-auto px-3 w-full z-10 flex flex-col justify-start md:justify-between h-full py-6 md:py-0 md:items-start md:justify-center">
           {/* Title Section - Top on mobile */}
           <div className="max-w-4xl pt-0 md:pt-0 md:pb-12">
             <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-2 sm:mb-3 md:mb-4 leading-tight font-display">
