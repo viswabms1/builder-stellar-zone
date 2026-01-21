@@ -470,6 +470,15 @@ export default function Navigation() {
         href: "/academics/cee",
         departments: [{ name: "Explore Programs", href: "/academics/cee" }],
       },
+      {
+        name: "DSU Online",
+        href: "https://dsuonline.com/",
+        departments: [
+          { name: "Online Programs", href: "https://dsuonline.com/" },
+          { name: "Apply Now", href: "https://apply.dsuonline.com/" },
+        ],
+        external: true,
+      },
     ],
   };
 
