@@ -50,6 +50,7 @@ import Pharmacy from "./pages/health-sciences/Pharmacy";
 import PharmacyFaculty from "./pages/health-sciences/PharmacyFaculty";
 import BPharm from "./pages/health-sciences/BPharm";
 import PharmD from "./pages/health-sciences/PharmD";
+import MPharm from "./pages/health-sciences/MPharm";
 import MPharmPharmaceutics from "./pages/health-sciences/MPharmPharmaceutics";
 import MPharmPharmacology from "./pages/health-sciences/MPharmPharmacology";
 import BScNursing from "./pages/health-sciences/BScNursing";
