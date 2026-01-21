@@ -289,7 +289,7 @@ export function RagChatWidget() {
             }}
             aria-label="Open chat"
           >
-            <MessageSquare className="w-6 h-6" />
+            <MessageSquare style={{ width: "clamp(1.25rem, 4vmin, 1.5rem)", height: "clamp(1.25rem, 4vmin, 1.5rem)" }} />
           </motion.button>
         )}
       </AnimatePresence>
