@@ -204,7 +204,8 @@ const FEATURED_NEWS: NewsItem[] = [
 
 const DEAN_INFO: DeanInfo = {
   name: "CAPT. A. Nagaraj Subbarao",
-  title: "Master Mariner (Dredging & Ocean Engineering/Navigation) | Specialization in Leadership & Strategy (University of Illinois – Urbana Champaign, USA) | MBA | M.Phil | PhD",
+  title:
+    "Master Mariner (Dredging & Ocean Engineering/Navigation) | Specialization in Leadership & Strategy (University of Illinois – Urbana Champaign, USA) | MBA | M.Phil | PhD",
   position: "Professor & Dean, SCMS",
   photo:
     "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F1a8c3f53dac94d93a61385f8bb1ff3a6?format=webp&width=800&height=1200",
@@ -218,7 +219,7 @@ const DEAN_INFO: DeanInfo = {
     "As Dayananda Sagar University continues to grow in prestige and excellence as an institution of higher education, there has never been a better time to become a part of our distinctive learning community represented by bright and enthusiastic students guided by professorial excellence.",
     "Warm regards,",
     "Capt A. Nagaraj Subbarao, PhD",
-    "Dean | SCMS | Dayananda Sagar University, Bengaluru, India"
+    "Dean | SCMS | Dayananda Sagar University, Bengaluru, India",
   ],
   borderColor: "border-purple-500/20",
   bgColor: "bg-purple-500/10",
