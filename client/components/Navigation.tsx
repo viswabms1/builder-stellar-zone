@@ -1169,7 +1169,7 @@ export default function Navigation() {
                       to="/nvidia-ai-architecture"
                       className={nvidiaClasses}
                     >
-                      <span className="max-w-[75px] text-center leading-tight text-[0.7rem]">
+                      <span className="text-center leading-tight">
                         NVIDIA's AI Architecture
                       </span>
                     </Link>,
@@ -1213,7 +1213,7 @@ export default function Navigation() {
                       to="/ai-first"
                       className={aiFirstClasses}
                     >
-                      <span className="max-w-[70px] text-center leading-tight text-[0.7rem]">
+                      <span className="text-center leading-tight">
                         AI-First @ DSU
                       </span>
                     </Link>,
