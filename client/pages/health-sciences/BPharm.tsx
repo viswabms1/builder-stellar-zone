@@ -172,7 +172,14 @@ export default function BPharm() {
                 Program Overview
               </h2>
               <p className="text-foreground/80 font-body">
-                The B.Pharm (Bachelor of Pharmacy) is a 4-year undergraduate course which imparts adequate knowledge and scientific information in broad areas of pharmacy such as pharmaceutical chemistry, pharmaceutics, pharmacology and pharmacognosy. Students learn practical aspects of synthesis, formulation and analysis of various pharmaceutical and herbal medicinal agents, pharmacological screening, biological standardization and in vivo drug interaction.
+                The B.Pharm (Bachelor of Pharmacy) is a 4-year undergraduate
+                course which imparts adequate knowledge and scientific
+                information in broad areas of pharmacy such as pharmaceutical
+                chemistry, pharmaceutics, pharmacology and pharmacognosy.
+                Students learn practical aspects of synthesis, formulation and
+                analysis of various pharmaceutical and herbal medicinal agents,
+                pharmacological screening, biological standardization and in
+                vivo drug interaction.
               </p>
             </div>
           </div>
@@ -212,7 +219,8 @@ export default function BPharm() {
                     Pharmaceutical Chemistry
                   </h3>
                   <p className="text-sm text-foreground/80">
-                    Synthesis, structure-activity relationships, and analysis of pharmaceutical compounds
+                    Synthesis, structure-activity relationships, and analysis of
+                    pharmaceutical compounds
                   </p>
                 </div>
               </div>
@@ -226,7 +234,8 @@ export default function BPharm() {
                     Pharmaceutics
                   </h3>
                   <p className="text-sm text-foreground/80">
-                    Formulation, drug delivery systems, and dosage form development
+                    Formulation, drug delivery systems, and dosage form
+                    development
                   </p>
                 </div>
               </div>
@@ -240,7 +249,8 @@ export default function BPharm() {
                     Pharmacology
                   </h3>
                   <p className="text-sm text-foreground/80">
-                    Drug action, pharmacological screening, and therapeutic applications
+                    Drug action, pharmacological screening, and therapeutic
+                    applications
                   </p>
                 </div>
               </div>
@@ -254,7 +264,8 @@ export default function BPharm() {
                     Pharmacognosy
                   </h3>
                   <p className="text-sm text-foreground/80">
-                    Natural products, herbal medicines, and plant-derived pharmaceuticals
+                    Natural products, herbal medicines, and plant-derived
+                    pharmaceuticals
                   </p>
                 </div>
               </div>
@@ -268,7 +279,8 @@ export default function BPharm() {
                     Pharmaceutical Analysis
                   </h3>
                   <p className="text-sm text-foreground/80">
-                    Quality control, analytical methods, and pharmaceutical testing
+                    Quality control, analytical methods, and pharmaceutical
+                    testing
                   </p>
                 </div>
               </div>
@@ -282,7 +294,8 @@ export default function BPharm() {
                     Clinical Pharmacy
                   </h3>
                   <p className="text-sm text-foreground/80">
-                    Patient care, drug interactions, and therapeutic drug monitoring
+                    Patient care, drug interactions, and therapeutic drug
+                    monitoring
                   </p>
                 </div>
               </div>
@@ -299,7 +312,9 @@ export default function BPharm() {
               Career Pathways & Placements
             </h2>
             <p className="text-foreground/80 font-body max-w-3xl">
-              B.Pharm graduates are highly sought-after in pharmaceutical industries, hospitals, research institutions, and regulatory bodies with excellent placement opportunities.
+              B.Pharm graduates are highly sought-after in pharmaceutical
+              industries, hospitals, research institutions, and regulatory
+              bodies with excellent placement opportunities.
             </p>
           </div>
           <div className="grid gap-4 md:grid-cols-2">
@@ -358,8 +373,8 @@ export default function BPharm() {
               Explore More at DSU Pharmacy
             </h2>
             <p className="mt-3 text-sm text-foreground font-body">
-              Discover pharmaceutical research, industry partnerships, placements and
-              admission pathways
+              Discover pharmaceutical research, industry partnerships,
+              placements and admission pathways
             </p>
           </div>
           <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-4">

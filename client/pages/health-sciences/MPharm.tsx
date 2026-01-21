@@ -30,7 +30,8 @@ export default function MPharm() {
     {
       name: "Pharmaceutics",
       icon: Beaker,
-      description: "Study of quantitative aspects of drug delivery and dosage form development",
+      description:
+        "Study of quantitative aspects of drug delivery and dosage form development",
       highlights: [
         "Drug formulation and delivery systems",
         "Novel drug delivery technologies",
@@ -38,12 +39,14 @@ export default function MPharm() {
         "Manufacturing processes",
       ],
       link: "/academics/health-sciences/m-pharm-pharmaceutics",
-      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1600&auto=format&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1600&auto=format&fit=crop",
     },
     {
       name: "Pharmacology",
       icon: Brain,
-      description: "Pre-clinical evaluation of drug candidates and mechanisms of action",
+      description:
+        "Pre-clinical evaluation of drug candidates and mechanisms of action",
       highlights: [
         "Pre-clinical drug evaluation",
         "Cardiovascular pharmacology",
@@ -51,7 +54,8 @@ export default function MPharm() {
         "Neurological pharmacology",
       ],
       link: "/academics/health-sciences/m-pharm-pharmacology",
-      image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1600&auto=format&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1600&auto=format&fit=crop",
     },
   ];
 
@@ -175,10 +179,15 @@ export default function MPharm() {
                 Master of Pharmacy (M.Pharm)
               </h2>
               <p className="text-foreground/80 font-body mb-4">
-                The M.Pharm is a comprehensive 2-year postgraduate program designed to provide advanced knowledge and research skills in pharmaceutical sciences. The program offers specializations in two key areas: Pharmaceutics and Pharmacology.
+                The M.Pharm is a comprehensive 2-year postgraduate program
+                designed to provide advanced knowledge and research skills in
+                pharmaceutical sciences. The program offers specializations in
+                two key areas: Pharmaceutics and Pharmacology.
               </p>
               <p className="text-foreground/80 font-body">
-                Choose your specialization based on your interests in drug formulation and delivery or pre-clinical drug evaluation and mechanism studies.
+                Choose your specialization based on your interests in drug
+                formulation and delivery or pre-clinical drug evaluation and
+                mechanism studies.
               </p>
             </div>
           </div>
@@ -193,7 +202,8 @@ export default function MPharm() {
               Choose Your Specialization
             </h2>
             <p className="text-foreground/80 font-body max-w-3xl">
-              Select the M.Pharm specialization that matches your career goals and interests
+              Select the M.Pharm specialization that matches your career goals
+              and interests
             </p>
           </div>
 
@@ -270,7 +280,8 @@ export default function MPharm() {
                 </h3>
               </div>
               <p className="text-sm text-foreground/80">
-                Hands-on research experience with state-of-the-art laboratory facilities
+                Hands-on research experience with state-of-the-art laboratory
+                facilities
               </p>
             </div>
 
@@ -282,7 +293,8 @@ export default function MPharm() {
                 </h3>
               </div>
               <p className="text-sm text-foreground/80">
-                Learn from experienced pharmacists and researchers with industry expertise
+                Learn from experienced pharmacists and researchers with industry
+                expertise
               </p>
             </div>
 
@@ -294,7 +306,8 @@ export default function MPharm() {
                 </h3>
               </div>
               <p className="text-sm text-foreground/80">
-                Partnership with leading pharmaceutical companies for internships and projects
+                Partnership with leading pharmaceutical companies for
+                internships and projects
               </p>
             </div>
 
@@ -306,7 +319,8 @@ export default function MPharm() {
                 </h3>
               </div>
               <p className="text-sm text-foreground/80">
-                Strong placement record with pharmaceutical R&D, hospitals, and research institutions
+                Strong placement record with pharmaceutical R&D, hospitals, and
+                research institutions
               </p>
             </div>
 
@@ -318,7 +332,8 @@ export default function MPharm() {
                 </h3>
               </div>
               <p className="text-sm text-foreground/80">
-                Curriculum aligned with global pharmaceutical education standards
+                Curriculum aligned with global pharmaceutical education
+                standards
               </p>
             </div>
 
@@ -330,7 +345,8 @@ export default function MPharm() {
                 </h3>
               </div>
               <p className="text-sm text-foreground/80">
-                Access to advanced equipment and technology for research and practical training
+                Access to advanced equipment and technology for research and
+                practical training
               </p>
             </div>
           </div>
@@ -473,7 +489,8 @@ export default function MPharm() {
               Ready to advance your pharmaceutical career?
             </h3>
             <p className="mb-6 text-foreground font-body">
-              Choose your M.Pharm specialization and begin your journey at DSU College of Pharmaceutical Sciences.
+              Choose your M.Pharm specialization and begin your journey at DSU
+              College of Pharmaceutical Sciences.
             </p>
             <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
               <a

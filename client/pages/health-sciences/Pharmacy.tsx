@@ -104,7 +104,12 @@ const PG_PROGRAM_CARDS: ProgramCard[] = [
     image:
       "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1600&auto=format&fit=crop",
     link: "/academics/health-sciences/m-pharm",
-    highlights: ["2 Years", "Pharmaceutics", "Pharmacology", "Regulatory Affairs"],
+    highlights: [
+      "2 Years",
+      "Pharmaceutics",
+      "Pharmacology",
+      "Regulatory Affairs",
+    ],
     overlay:
       "bg-gradient-to-br from-brand-blue/75 via-black/70 to-black/55 mix-blend-multiply",
     badgeClass:
@@ -338,7 +343,9 @@ export default function Pharmacy() {
                 Programs Offered
               </h2>
               <p className="mt-3 text-sm text-foreground font-body max-w-2xl">
-                Professional pharmaceutical education: B.Pharm (Undergraduate), Pharm.D and M.Pharm (Postgraduate) with industry exposure, research, and clinical practice
+                Professional pharmaceutical education: B.Pharm (Undergraduate),
+                Pharm.D and M.Pharm (Postgraduate) with industry exposure,
+                research, and clinical practice
               </p>
             </div>
           </div>
@@ -383,7 +390,10 @@ export default function Pharmacy() {
               Why Choose Pharmacy at DSU?
             </h2>
             <p className="text-foreground/80 font-body max-w-3xl mb-8">
-              Our B.Pharm, M.Pharm, and Pharm.D programs prepare you to be a skilled, innovative pharmaceutical professional with strong technical knowledge, clinical expertise, and ethical responsibility.
+              Our B.Pharm, M.Pharm, and Pharm.D programs prepare you to be a
+              skilled, innovative pharmaceutical professional with strong
+              technical knowledge, clinical expertise, and ethical
+              responsibility.
             </p>
           </div>
           <div className="grid gap-4 md:grid-cols-2">
@@ -408,7 +418,10 @@ export default function Pharmacy() {
               Career Pathways & Placements
             </h2>
             <p className="text-foreground/80 font-body max-w-3xl">
-              Our B.Pharm, M.Pharm, and Pharm.D graduates are highly sought-after in pharmaceutical industry, hospitals, research institutions, and regulatory bodies. Excellent placement record with leading organizations.
+              Our B.Pharm, M.Pharm, and Pharm.D graduates are highly
+              sought-after in pharmaceutical industry, hospitals, research
+              institutions, and regulatory bodies. Excellent placement record
+              with leading organizations.
             </p>
           </div>
           <div className="grid gap-4 md:grid-cols-2">
@@ -607,28 +620,16 @@ export default function Pharmacy() {
               <CardTitle className="font-display">More Resources</CardTitle>
             </CardHeader>
             <CardContent className="grid gap-3 text-sm font-body">
-              <a
-                href="/eligibility"
-                className="hover:text-brand-blue"
-              >
+              <a href="/eligibility" className="hover:text-brand-blue">
                 Programs & Fees
               </a>
-              <a
-                href="/faculty-directory"
-                className="hover:text-brand-blue"
-              >
+              <a href="/faculty-directory" className="hover:text-brand-blue">
                 Faculty Directory
               </a>
-              <a
-                href="/research"
-                className="hover:text-brand-blue"
-              >
+              <a href="/research" className="hover:text-brand-blue">
                 Research Projects
               </a>
-              <a
-                href="/placements"
-                className="hover:text-brand-blue"
-              >
+              <a href="/placements" className="hover:text-brand-blue">
                 Placements & Careers
               </a>
             </CardContent>

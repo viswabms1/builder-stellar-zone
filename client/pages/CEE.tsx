@@ -406,11 +406,8 @@ function CalendarResourceCard({ entry }: { entry: CalendarEntry }) {
 }
 
 function HeroVideo() {
-
   return (
-    <div
-      className="h-[40vh] sm:h-[55vh] md:h-[65vh] lg:h-[75vh] relative overflow-hidden flex items-center justify-start hero-video-container"
-    >
+    <div className="h-[40vh] sm:h-[55vh] md:h-[65vh] lg:h-[75vh] relative overflow-hidden flex items-center justify-start hero-video-container">
       <img
         src={HERO_IMAGE}
         alt="Center for Executive Education - Professional Leadership"
@@ -466,7 +463,6 @@ function HeroVideo() {
           </div>
         </div>
       </div>
-
     </div>
   );
 }

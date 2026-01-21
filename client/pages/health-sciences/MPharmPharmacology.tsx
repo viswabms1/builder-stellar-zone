@@ -181,7 +181,13 @@ export default function MPharmPharmacology() {
                 Program Overview
               </h2>
               <p className="text-foreground/80 font-body">
-                The M.Pharm Pharmacology program is a comprehensive 2-year postgraduate course focused on pre-clinical evaluation of candidate molecules of both natural and synthetic origin. The Department of Pharmacology is actively conducting research in screening new chemical entities and herbal drugs for their possible therapeutic activities, which can be exploited in developing clinically useful drug molecules.
+                The M.Pharm Pharmacology program is a comprehensive 2-year
+                postgraduate course focused on pre-clinical evaluation of
+                candidate molecules of both natural and synthetic origin. The
+                Department of Pharmacology is actively conducting research in
+                screening new chemical entities and herbal drugs for their
+                possible therapeutic activities, which can be exploited in
+                developing clinically useful drug molecules.
               </p>
             </div>
           </div>
@@ -208,7 +214,8 @@ export default function MPharmPharmacology() {
               Research Areas
             </h2>
             <p className="text-foreground/80 font-body max-w-3xl">
-              The department specializes in pre-clinical evaluation across multiple therapeutic areas
+              The department specializes in pre-clinical evaluation across
+              multiple therapeutic areas
             </p>
           </div>
 
@@ -219,13 +226,27 @@ export default function MPharmPharmacology() {
                 className="p-6 rounded-lg border border-brand-blue/20 bg-brand-blue/5"
               >
                 <div className="flex items-start gap-3">
-                  {i === 0 && <Heart className="h-5 w-5 text-brand-blue flex-shrink-0 mt-0.5" />}
-                  {i === 1 && <Microscope className="h-5 w-5 text-brand-blue flex-shrink-0 mt-0.5" />}
-                  {i === 2 && <Brain className="h-5 w-5 text-brand-blue flex-shrink-0 mt-0.5" />}
-                  {i === 3 && <BookOpen className="h-5 w-5 text-brand-blue flex-shrink-0 mt-0.5" />}
-                  {i === 4 && <Beaker className="h-5 w-5 text-brand-blue flex-shrink-0 mt-0.5" />}
-                  {i === 5 && <Award className="h-5 w-5 text-brand-blue flex-shrink-0 mt-0.5" />}
-                  <p className="text-sm font-semibold text-foreground">{area}</p>
+                  {i === 0 && (
+                    <Heart className="h-5 w-5 text-brand-blue flex-shrink-0 mt-0.5" />
+                  )}
+                  {i === 1 && (
+                    <Microscope className="h-5 w-5 text-brand-blue flex-shrink-0 mt-0.5" />
+                  )}
+                  {i === 2 && (
+                    <Brain className="h-5 w-5 text-brand-blue flex-shrink-0 mt-0.5" />
+                  )}
+                  {i === 3 && (
+                    <BookOpen className="h-5 w-5 text-brand-blue flex-shrink-0 mt-0.5" />
+                  )}
+                  {i === 4 && (
+                    <Beaker className="h-5 w-5 text-brand-blue flex-shrink-0 mt-0.5" />
+                  )}
+                  {i === 5 && (
+                    <Award className="h-5 w-5 text-brand-blue flex-shrink-0 mt-0.5" />
+                  )}
+                  <p className="text-sm font-semibold text-foreground">
+                    {area}
+                  </p>
                 </div>
               </div>
             ))}
@@ -241,7 +262,10 @@ export default function MPharmPharmacology() {
               Understanding Pharmacology
             </h2>
             <p className="text-foreground/80 font-body max-w-3xl mb-8">
-              Pharmacology is the study of how drugs work. It analyzes the mechanisms that drugs employ to bring about their therapeutic effects and deals with the effects of drugs on living organisms and their components.
+              Pharmacology is the study of how drugs work. It analyzes the
+              mechanisms that drugs employ to bring about their therapeutic
+              effects and deals with the effects of drugs on living organisms
+              and their components.
             </p>
           </div>
 
@@ -251,7 +275,11 @@ export default function MPharmPharmacology() {
                 Fundamental Principle
               </h3>
               <p className="text-foreground/80 font-body">
-                Drugs act as healing agents and are effective because they mimic or block molecules that control natural processes like blood pressure, organ development, and pain perception. Examples of important medicines include antibacterial drugs, anti-cancer drugs, and anti-migraine agents.
+                Drugs act as healing agents and are effective because they mimic
+                or block molecules that control natural processes like blood
+                pressure, organ development, and pain perception. Examples of
+                important medicines include antibacterial drugs, anti-cancer
+                drugs, and anti-migraine agents.
               </p>
             </div>
 
@@ -260,7 +288,12 @@ export default function MPharmPharmacology() {
                 Interdisciplinary Approach
               </h3>
               <p className="text-foreground/80 font-body">
-                Pharmacology makes use of information from many branches of sciences such as cell biology, biochemistry, molecular biology, and genetics to discover new ways to treat diseases. This interdisciplinary approach allows researchers to assimilate different scientific perspectives in the study of how drugs act and how to improve them.
+                Pharmacology makes use of information from many branches of
+                sciences such as cell biology, biochemistry, molecular biology,
+                and genetics to discover new ways to treat diseases. This
+                interdisciplinary approach allows researchers to assimilate
+                different scientific perspectives in the study of how drugs act
+                and how to improve them.
               </p>
             </div>
 
@@ -269,7 +302,10 @@ export default function MPharmPharmacology() {
                 Molecular Understanding
               </h3>
               <p className="text-foreground/80 font-body">
-                Pharmacology deals with the effects of drugs on cells, membranes, enzymes and DNA. Understanding how drugs interact at the molecular level is crucial for developing more effective therapeutics and predicting potential side effects.
+                Pharmacology deals with the effects of drugs on cells,
+                membranes, enzymes and DNA. Understanding how drugs interact at
+                the molecular level is crucial for developing more effective
+                therapeutics and predicting potential side effects.
               </p>
             </div>
           </div>
@@ -284,7 +320,8 @@ export default function MPharmPharmacology() {
               Pharmacologist Responsibilities
             </h2>
             <p className="text-foreground/80 font-body max-w-3xl">
-              Key responsibilities in the search for and development of new medicines
+              Key responsibilities in the search for and development of new
+              medicines
             </p>
           </div>
 
@@ -296,7 +333,9 @@ export default function MPharmPharmacology() {
               >
                 <div className="flex items-start gap-3">
                   <Pill className="h-5 w-5 text-brand-blue flex-shrink-0 mt-0.5" />
-                  <p className="text-sm font-semibold text-foreground">{responsibility}</p>
+                  <p className="text-sm font-semibold text-foreground">
+                    {responsibility}
+                  </p>
                 </div>
               </div>
             ))}
@@ -312,7 +351,9 @@ export default function MPharmPharmacology() {
               Career Pathways & Placements
             </h2>
             <p className="text-foreground/80 font-body max-w-3xl">
-              M.Pharm Pharmacology graduates are highly sought-after in pharmaceutical research, academia, and clinical settings with excellent career advancement opportunities.
+              M.Pharm Pharmacology graduates are highly sought-after in
+              pharmaceutical research, academia, and clinical settings with
+              excellent career advancement opportunities.
             </p>
           </div>
           <div className="grid gap-4 md:grid-cols-2">
@@ -343,7 +384,8 @@ export default function MPharmPharmacology() {
             </h2>
             <p className="text-foreground/80 font-body max-w-3xl mx-auto">
               Comprehensive information about admission requirements, entrance
-              codes, and detailed fee structure for the M.Pharm Pharmacology program.
+              codes, and detailed fee structure for the M.Pharm Pharmacology
+              program.
             </p>
           </div>
           <div className="flex flex-col items-center justify-center">
@@ -371,8 +413,8 @@ export default function MPharmPharmacology() {
               Explore More at DSU Pharmacy
             </h2>
             <p className="mt-3 text-sm text-foreground font-body">
-              Discover pharmaceutical research, industry partnerships, placements and
-              admission pathways
+              Discover pharmaceutical research, industry partnerships,
+              placements and admission pathways
             </p>
           </div>
           <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-4">
@@ -477,8 +519,8 @@ export default function MPharmPharmacology() {
               Ready to advance drug discovery and development?
             </h3>
             <p className="mb-6 text-foreground font-body">
-              Explore the M.Pharm Pharmacology program, take a virtual tour and begin your
-              journey at DSU College of Pharmaceutical Sciences.
+              Explore the M.Pharm Pharmacology program, take a virtual tour and
+              begin your journey at DSU College of Pharmaceutical Sciences.
             </p>
             <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
               <a
@@ -556,7 +598,8 @@ function CurriculumLibrary() {
             </h2>
           </div>
           <div className="text-foreground/70 text-sm">
-            Download M.Pharm Pharmacology curriculum for different academic batches
+            Download M.Pharm Pharmacology curriculum for different academic
+            batches
           </div>
         </div>
 

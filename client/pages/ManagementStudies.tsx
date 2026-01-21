@@ -397,7 +397,11 @@ const PG_PROGRAM_CARDS: ProgramCard[] = [
     image:
       "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1600&auto=format&fit=crop",
     link: "/academics/cee",
-    highlights: ["Professional Skills", "Leadership Development", "Career Growth"],
+    highlights: [
+      "Professional Skills",
+      "Leadership Development",
+      "Career Growth",
+    ],
     overlay:
       "bg-gradient-to-br from-amber-600/70 via-black/70 to-black/55 mix-blend-multiply",
     badgeClass:

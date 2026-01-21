@@ -174,7 +174,12 @@ export default function PharmD() {
                 Program Overview
               </h2>
               <p className="text-foreground/80 font-body">
-                Pharm.D (Doctor of Pharmacy) is a professional 6-year pharmacy doctoral program after 10+2 with the objectives of meeting the growing needs and expectations of the patient and the medical community both globally and nationally. The program focuses on advancing clinical pharmacy practice, pharmaceutical care delivery, and professional excellence in healthcare.
+                Pharm.D (Doctor of Pharmacy) is a professional 6-year pharmacy
+                doctoral program after 10+2 with the objectives of meeting the
+                growing needs and expectations of the patient and the medical
+                community both globally and nationally. The program focuses on
+                advancing clinical pharmacy practice, pharmaceutical care
+                delivery, and professional excellence in healthcare.
               </p>
             </div>
           </div>
@@ -201,7 +206,8 @@ export default function PharmD() {
               Program Objectives
             </h2>
             <p className="text-foreground/80 font-body max-w-3xl">
-              The Pharm.D program is designed to develop future leaders in pharmacy practice and healthcare
+              The Pharm.D program is designed to develop future leaders in
+              pharmacy practice and healthcare
             </p>
           </div>
 
@@ -214,7 +220,9 @@ export default function PharmD() {
                     Professional Educational Excellence
                   </h3>
                   <p className="text-sm text-foreground/80">
-                    Providing professional educational opportunities for students to enable them to practice comprehensive pharmaceutical care and adapt to changing professional roles
+                    Providing professional educational opportunities for
+                    students to enable them to practice comprehensive
+                    pharmaceutical care and adapt to changing professional roles
                   </p>
                 </div>
               </div>
@@ -228,7 +236,8 @@ export default function PharmD() {
                     Pharmaceutical Care Practice
                   </h3>
                   <p className="text-sm text-foreground/80">
-                    Meeting the growing needs and expectations of patients, society, and healthcare systems both nationally and globally
+                    Meeting the growing needs and expectations of patients,
+                    society, and healthcare systems both nationally and globally
                   </p>
                 </div>
               </div>
@@ -242,7 +251,9 @@ export default function PharmD() {
                     Clinical Skills Development
                   </h3>
                   <p className="text-sm text-foreground/80">
-                    Developing clinical skills, attitudes, responsibility, and professionalism to become future leaders of the healthcare profession
+                    Developing clinical skills, attitudes, responsibility, and
+                    professionalism to become future leaders of the healthcare
+                    profession
                   </p>
                 </div>
               </div>
@@ -256,7 +267,8 @@ export default function PharmD() {
                     Research & Innovation
                   </h3>
                   <p className="text-sm text-foreground/80">
-                    Using new technologies and contributing new knowledge to the profession through research and clinical practice
+                    Using new technologies and contributing new knowledge to the
+                    profession through research and clinical practice
                   </p>
                 </div>
               </div>
@@ -273,7 +285,8 @@ export default function PharmD() {
               Department Activities & Services
             </h2>
             <p className="text-foreground/80 font-body max-w-3xl">
-              Comprehensive patient care services covering the entire spectrum of pharmaceutical practice
+              Comprehensive patient care services covering the entire spectrum
+              of pharmaceutical practice
             </p>
           </div>
 
@@ -285,7 +298,9 @@ export default function PharmD() {
               >
                 <div className="flex items-start gap-3">
                   <AlertCircle className="h-5 w-5 text-brand-magenta flex-shrink-0 mt-0.5" />
-                  <p className="text-sm text-foreground font-body">{activity}</p>
+                  <p className="text-sm text-foreground font-body">
+                    {activity}
+                  </p>
                 </div>
               </div>
             ))}
@@ -301,7 +316,9 @@ export default function PharmD() {
               Career Pathways & Placements
             </h2>
             <p className="text-foreground/80 font-body max-w-3xl">
-              Pharm.D graduates are highly sought-after in hospitals, clinical practice, pharmaceutical industry, and research institutions with excellent career advancement opportunities.
+              Pharm.D graduates are highly sought-after in hospitals, clinical
+              practice, pharmaceutical industry, and research institutions with
+              excellent career advancement opportunities.
             </p>
           </div>
           <div className="grid gap-4 md:grid-cols-2">
@@ -401,7 +418,8 @@ export default function PharmD() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-foreground/80 font-body">
-                    State-of-the-art clinical training centers and healthcare facilities
+                    State-of-the-art clinical training centers and healthcare
+                    facilities
                   </p>
                 </CardContent>
               </Card>

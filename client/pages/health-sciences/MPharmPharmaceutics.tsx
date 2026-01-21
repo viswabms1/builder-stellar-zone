@@ -183,10 +183,17 @@ export default function MPharmPharmaceutics() {
                 Program Overview
               </h2>
               <p className="text-foreground/80 font-body mb-4">
-                The M.Pharm Pharmaceutics program is a comprehensive 2-year postgraduate course aimed at providing skillful theoretical and hands-on practical knowledge to students. The course enables rational thinking and generation of innovative ideas in pharmaceutical science.
+                The M.Pharm Pharmaceutics program is a comprehensive 2-year
+                postgraduate course aimed at providing skillful theoretical and
+                hands-on practical knowledge to students. The course enables
+                rational thinking and generation of innovative ideas in
+                pharmaceutical science.
               </p>
               <p className="text-foreground/80 font-body">
-                After completion of the course, students will have thorough knowledge in the design, development, manufacturing, quality control, quality assurance, in-process quality control, stability and regulatory aspects of pharmaceutical dosage forms.
+                After completion of the course, students will have thorough
+                knowledge in the design, development, manufacturing, quality
+                control, quality assurance, in-process quality control,
+                stability and regulatory aspects of pharmaceutical dosage forms.
               </p>
             </div>
           </div>
@@ -213,7 +220,9 @@ export default function MPharmPharmaceutics() {
               About Department of Pharmaceutics
             </h2>
             <p className="text-foreground/80 font-body max-w-3xl mb-8">
-              Established in 2007, the Department of Pharmaceutics is committed to excellence in research, instruction and service through the productivity and success of faculty, staff and students.
+              Established in 2007, the Department of Pharmaceutics is committed
+              to excellence in research, instruction and service through the
+              productivity and success of faculty, staff and students.
             </p>
           </div>
 
@@ -225,7 +234,9 @@ export default function MPharmPharmaceutics() {
               >
                 <div className="flex items-start gap-3">
                   <Zap className="h-5 w-5 text-brand-blue flex-shrink-0 mt-0.5" />
-                  <p className="text-sm text-foreground font-body">{highlight}</p>
+                  <p className="text-sm text-foreground font-body">
+                    {highlight}
+                  </p>
                 </div>
               </div>
             ))}
@@ -241,7 +252,9 @@ export default function MPharmPharmaceutics() {
               Laboratory Instrumentation & Facilities
             </h2>
             <p className="text-foreground/80 font-body max-w-3xl mb-8">
-              The department is well-equipped with sophisticated instruments to carry out research activities effectively and provide hands-on practical training
+              The department is well-equipped with sophisticated instruments to
+              carry out research activities effectively and provide hands-on
+              practical training
             </p>
           </div>
 
@@ -271,7 +284,9 @@ export default function MPharmPharmaceutics() {
               Key Highlights
             </h2>
             <p className="text-foreground/80 font-body max-w-3xl">
-              Pharmaceutics is the study of the quantitative aspects of drug delivery and seeks to understand the relationships between drug formulation, delivery, disposition and clinical response.
+              Pharmaceutics is the study of the quantitative aspects of drug
+              delivery and seeks to understand the relationships between drug
+              formulation, delivery, disposition and clinical response.
             </p>
           </div>
 
@@ -281,7 +296,12 @@ export default function MPharmPharmaceutics() {
                 Course Objectives
               </h3>
               <p className="text-foreground/80 font-body">
-                The course aims to make students understand the concepts behind the development of pharmaceutical dosage forms including novel drug delivery systems by imparting skillful learning blended with practical knowledge. Students gain expertise in design, development and evaluation of drugs in combination with appropriate dosage forms.
+                The course aims to make students understand the concepts behind
+                the development of pharmaceutical dosage forms including novel
+                drug delivery systems by imparting skillful learning blended
+                with practical knowledge. Students gain expertise in design,
+                development and evaluation of drugs in combination with
+                appropriate dosage forms.
               </p>
             </div>
 
@@ -290,7 +310,12 @@ export default function MPharmPharmaceutics() {
                 Learning Environment
               </h3>
               <p className="text-foreground/80 font-body">
-                The department offers an environment that includes state-of-the-art laboratory instrumentation and technologies, devoted and experienced faculty and staff. Regular seminars provide platforms for students to interact with renowned experts from pharmaceutical industry and research institutes to understand recent advancements in the field.
+                The department offers an environment that includes
+                state-of-the-art laboratory instrumentation and technologies,
+                devoted and experienced faculty and staff. Regular seminars
+                provide platforms for students to interact with renowned experts
+                from pharmaceutical industry and research institutes to
+                understand recent advancements in the field.
               </p>
             </div>
 
@@ -299,7 +324,11 @@ export default function MPharmPharmaceutics() {
                 Research Excellence
               </h3>
               <p className="text-foreground/80 font-body">
-                The department is well equipped with sophisticated instruments such as tablet punching machines, disintegration testers, dissolution apparatus, ultrasonicators, ultracentrifuges, lyophilizers and stability chambers to carry out effective research and provide comprehensive practical training.
+                The department is well equipped with sophisticated instruments
+                such as tablet punching machines, disintegration testers,
+                dissolution apparatus, ultrasonicators, ultracentrifuges,
+                lyophilizers and stability chambers to carry out effective
+                research and provide comprehensive practical training.
               </p>
             </div>
           </div>
@@ -314,7 +343,9 @@ export default function MPharmPharmaceutics() {
               Career Pathways & Placements
             </h2>
             <p className="text-foreground/80 font-body max-w-3xl">
-              M.Pharm Pharmaceutics graduates are highly sought-after in pharmaceutical R&D, manufacturing, quality assurance, and research institutions with excellent career advancement opportunities.
+              M.Pharm Pharmaceutics graduates are highly sought-after in
+              pharmaceutical R&D, manufacturing, quality assurance, and research
+              institutions with excellent career advancement opportunities.
             </p>
           </div>
           <div className="grid gap-4 md:grid-cols-2">
@@ -345,7 +376,8 @@ export default function MPharmPharmaceutics() {
             </h2>
             <p className="text-foreground/80 font-body max-w-3xl mx-auto">
               Comprehensive information about admission requirements, entrance
-              codes, and detailed fee structure for the M.Pharm Pharmaceutics program.
+              codes, and detailed fee structure for the M.Pharm Pharmaceutics
+              program.
             </p>
           </div>
           <div className="flex flex-col items-center justify-center">
@@ -373,8 +405,8 @@ export default function MPharmPharmaceutics() {
               Explore More at DSU Pharmacy
             </h2>
             <p className="mt-3 text-sm text-foreground font-body">
-              Discover pharmaceutical research, industry partnerships, placements and
-              admission pathways
+              Discover pharmaceutical research, industry partnerships,
+              placements and admission pathways
             </p>
           </div>
           <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-4">
@@ -479,8 +511,8 @@ export default function MPharmPharmaceutics() {
               Ready to master pharmaceutical innovation?
             </h3>
             <p className="mb-6 text-foreground font-body">
-              Explore the M.Pharm Pharmaceutics program, take a virtual tour and begin your
-              journey at DSU College of Pharmaceutical Sciences.
+              Explore the M.Pharm Pharmaceutics program, take a virtual tour and
+              begin your journey at DSU College of Pharmaceutical Sciences.
             </p>
             <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
               <a
@@ -558,7 +590,8 @@ function CurriculumLibrary() {
             </h2>
           </div>
           <div className="text-foreground/70 text-sm">
-            Download M.Pharm Pharmaceutics curriculum for different academic batches
+            Download M.Pharm Pharmaceutics curriculum for different academic
+            batches
           </div>
         </div>
 

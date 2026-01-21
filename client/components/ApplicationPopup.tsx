@@ -143,7 +143,6 @@ export function ApplicationPopup() {
             </Button>
           </a>
         </div>
-
       </div>
     </div>
   );

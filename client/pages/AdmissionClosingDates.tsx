@@ -64,7 +64,9 @@ export default function AdmissionClosingDates() {
             <CardHeader className="border-b border-border/30 pb-6">
               <div className="flex items-center gap-3">
                 <CalendarDays className="w-6 h-6 text-brand-magenta" />
-                <CardTitle className="text-2xl">2025-26 Admission Timeline</CardTitle>
+                <CardTitle className="text-2xl">
+                  2025-26 Admission Timeline
+                </CardTitle>
               </div>
             </CardHeader>
 
@@ -169,10 +171,12 @@ export default function AdmissionClosingDates() {
 
           {/* Need Help Section */}
           <div className="mt-12 p-8 rounded-lg bg-gradient-to-r from-brand-magenta/5 to-brand-blue/5 border border-brand-magenta/20">
-            <h3 className="text-xl font-semibold mb-3">Need Help with Admissions?</h3>
+            <h3 className="text-xl font-semibold mb-3">
+              Need Help with Admissions?
+            </h3>
             <p className="text-foreground/80 mb-4">
-              Contact our admissions team for any queries regarding closing dates,
-              application procedures, or program eligibility.
+              Contact our admissions team for any queries regarding closing
+              dates, application procedures, or program eligibility.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
