@@ -348,9 +348,9 @@ export default function Pharmacy() {
           <div className="mb-12">
             <div className="mb-6">
               <Badge className="bg-brand-blue/15 text-brand-blue mb-2">
-                Undergraduate
+                Undergraduate Program
               </Badge>
-              <h3 className="font-display text-2xl">B.Pharm Program</h3>
+              <h3 className="font-display text-2xl">B.Pharm</h3>
             </div>
             <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-12">
               {UG_PROGRAM_CARDS.map((program) => (
@@ -363,27 +363,14 @@ export default function Pharmacy() {
           <div className="mb-12">
             <div className="mb-6">
               <Badge className="bg-brand-magenta/15 text-brand-magenta mb-2">
-                Postgraduate
+                Postgraduate Programs
               </Badge>
-              <h3 className="font-display text-2xl">M.Pharm Programs</h3>
+              <h3 className="font-display text-2xl">Pharm.D & M.Pharm</h3>
             </div>
             <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-12">
               {PG_PROGRAM_CARDS.map((program) => (
                 <ProgramCardComponent key={program.name} program={program} />
               ))}
-            </div>
-          </div>
-
-          {/* Pharm.D Program */}
-          <div className="mb-12">
-            <div className="mb-6">
-              <Badge className="bg-brand-orange/15 text-brand-orange mb-2">
-                Doctoral Program
-              </Badge>
-              <h3 className="font-display text-2xl">Pharm.D</h3>
-            </div>
-            <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-12">
-              <ProgramCardComponent program={PHARMD_PROGRAM} />
             </div>
           </div>
         </div>
