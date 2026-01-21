@@ -5,6 +5,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import Index from "./pages/Index";
 import Academics from "./pages/Academics";
 import Admissions from "./pages/Admissions";
+import AdmissionClosingDates from "./pages/AdmissionClosingDates";
 import Eligibility from "./pages/Eligibility";
 import SimpleProgramLookup from "./pages/SimpleProgramLookup";
 import InternationalAdmissions from "./pages/InternationalAdmissions";
