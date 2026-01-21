@@ -330,12 +330,17 @@
     .hero-section {
       padding-top: clamp(1.5rem, 4vh, 2rem);
       padding-bottom: 0;
-      min-height: clamp(500px, 85vh, 700px);
+      /* Match video height more precisely */
+      min-height: 100vh;
+      height: 100vh;
+      max-height: 100vh;
     }
 
     /* Ensure buttons stay at absolute bottom in portrait */
     .hero-section .relative.max-w-7xl {
+      height: 100%;
       padding-bottom: clamp(1rem, 3vh, 2rem);
+      justify-content: space-between;
     }
   }
 
