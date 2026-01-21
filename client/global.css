@@ -234,9 +234,10 @@
     }
   }
 
-  /* Fluid Department Hero Sections */
+  /* Fluid Department Hero Sections - Natural Padding */
   .dept-hero-section {
-    padding-top: clamp(10rem, 20vh, 25rem);
+    padding-top: var(--space-xl);
+    padding-bottom: var(--space-lg);
   }
 
   /* Fluid Hero Section - Let Content Define Height */
