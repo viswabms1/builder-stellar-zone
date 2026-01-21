@@ -426,10 +426,11 @@
       top: 1rem !important;
     }
 
-    /* Pull up sections following hero */
-    section:not([class*="hero"]) {
+    /* Reset sections following hero - don't pull them up */
+    section:not([class*="hero"]):not(.hero-section + section) {
       position: relative !important;
       z-index: 10 !important;
+      margin-top: 0 !important;
     }
 
     section[id="top"] {
