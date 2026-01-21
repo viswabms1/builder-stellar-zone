@@ -297,11 +297,11 @@ function HeroSection() {
 
 export default function Pharmacy() {
   const highlights = [
+    "Comprehensive B.Pharm, M.Pharm, and Pharm.D programs",
     "State-of-the-art pharmaceutical laboratories with advanced equipment",
     "Industry internships at leading pharmaceutical companies",
     "Research opportunities in drug discovery and development",
-    "Exposure to GMP standards and regulatory compliance",
-    "Clinical pharmacy rotations at partner hospitals",
+    "Exposure to GMP standards, regulatory compliance, and clinical practice",
     "Mentorship by experienced pharmaceutical scientists and industry experts",
   ];
 
