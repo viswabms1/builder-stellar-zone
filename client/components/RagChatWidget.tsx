@@ -309,11 +309,11 @@ export function RagChatWidget() {
             )}
             style={{
               position: "fixed",
-              bottom: "24px",
-              right: "24px",
+              bottom: "clamp(4rem, 8vh, 1.5rem)",
+              right: "clamp(1rem, 3vw, 1.5rem)",
               zIndex: 99999,
-              width: "min(400px, calc(100vw - 48px))",
-              height: "min(600px, calc(100vh - 48px))",
+              width: "min(400px, calc(100vw - 2rem))",
+              height: "min(600px, calc(100vh - 10rem))",
             }}
           >
             {/* Header */}
