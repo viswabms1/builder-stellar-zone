@@ -1153,7 +1153,7 @@ export default function Navigation() {
 
                 if (idx === 1) {
                   const nvidiaActive = isActive("/nvidia-ai-architecture");
-                  const nvidiaClasses = `flex items-center space-x-0 px-[0.2rem] py-0.5 rounded-lg text-[0.7rem] font-medium font-display transition-all duration-200 group ml-0 justify-center flex-shrink ${
+                  const nvidiaClasses = `flex items-center space-x-0 px-[0.2rem] py-0.5 rounded-lg text-[0.65rem] font-medium font-display transition-all duration-200 group ml-0 justify-center flex-shrink ${
                     theme === "light"
                       ? nvidiaActive
                         ? "bg-orange-100 text-orange-900 font-semibold shadow-sm"
@@ -1178,7 +1178,7 @@ export default function Navigation() {
 
                 if (idx === 3) {
                   const aiFirstActive = isActive("/ai-first");
-                  const aiFirstClasses = `flex items-center space-x-0 px-[0.2rem] py-0.5 rounded-lg text-[0.7rem] font-medium font-display transition-all duration-200 group ml-0 justify-center flex-shrink ${
+                  const aiFirstClasses = `flex items-center space-x-0 px-[0.2rem] py-0.5 rounded-lg text-[0.65rem] font-medium font-display transition-all duration-200 group ml-0 justify-center flex-shrink ${
                     theme === "light"
                       ? aiFirstActive
                         ? "bg-orange-100 text-orange-900 font-semibold shadow-sm"
@@ -1205,7 +1205,7 @@ export default function Navigation() {
                             : "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F0caf0bf29be6421997005f26cdaae0ed?format=webp&width=800"
                         }
                         alt="Dayananda Sagar University Logo"
-                        className="max-h-[3.75rem] w-auto object-contain group-hover:scale-105 transition-all duration-300"
+                        className="max-h-[4.5rem] w-auto object-contain group-hover:scale-105 transition-all duration-300"
                       />
                     </Link>,
                     <Link
