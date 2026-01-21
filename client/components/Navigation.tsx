@@ -808,7 +808,7 @@ export default function Navigation() {
                           />
                           {active && (
                             <div
-                              className={`w-1 h-1 rounded-full ${
+                              className={`w-0.5 h-0.5 rounded-full ${
                                 theme === "light" ? "bg-orange-600" : "bg-white"
                               }`}
                             />
@@ -922,7 +922,7 @@ export default function Navigation() {
                           />
                           {active && (
                             <div
-                              className={`w-1 h-1 rounded-full ${
+                              className={`w-0.5 h-0.5 rounded-full ${
                                 theme === "light" ? "bg-orange-600" : "bg-white"
                               }`}
                             />
@@ -1142,7 +1142,7 @@ export default function Navigation() {
                       </span>
                       {active && (
                         <div
-                          className={`w-1 h-1 rounded-full ${
+                          className={`w-0.5 h-0.5 rounded-full ${
                             theme === "light" ? "bg-orange-600" : "bg-white"
                           }`}
                         />
