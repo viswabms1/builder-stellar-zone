@@ -338,8 +338,7 @@ export default function Pharmacy() {
                 Programs Offered
               </h2>
               <p className="mt-3 text-sm text-foreground font-body max-w-2xl">
-                Comprehensive pharmaceutical education with industry exposure,
-                research, and clinical practice
+                Professional pharmaceutical education: B.Pharm (Undergraduate), Pharm.D and M.Pharm (Postgraduate) with industry exposure, research, and clinical practice
               </p>
             </div>
           </div>
