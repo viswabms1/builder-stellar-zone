@@ -532,11 +532,15 @@ export function RagChatWidget() {
                   disabled={!input.trim() || isLoading}
                   size="sm"
                   className="bg-orange-500 hover:bg-orange-600 text-white"
+                  style={{
+                    minHeight: "clamp(2rem, 5vmin, 2.5rem)",
+                    padding: "clamp(0.25rem, 1vmin, 0.5rem)",
+                  }}
                 >
-                  <Send className="w-4 h-4" />
+                  <Send style={{ width: "clamp(0.875rem, 2.5vmin, 1rem)", height: "clamp(0.875rem, 2.5vmin, 1rem)" }} />
                 </Button>
               </div>
-              <p className="text-xs opacity-50 mt-2">
+              <p className="opacity-50" style={{ fontSize: "clamp(0.625rem, 1.5vmin, 0.75rem)", marginTop: "clamp(0.25rem, 1vmin, 0.5rem)" }}>
                 💡 Ask about programs, fees, admissions, facilities, and more!
               </p>
             </form>
