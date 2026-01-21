@@ -1153,7 +1153,7 @@ export default function Navigation() {
 
                 if (idx === 1) {
                   const nvidiaActive = isActive("/nvidia-ai-architecture");
-                  const nvidiaClasses = `flex items-center space-x-0.5 px-1 py-0.5 rounded-lg text-[0.7rem] font-medium font-display transition-all duration-200 group ml-0 justify-center ${
+                  const nvidiaClasses = `flex items-center space-x-0.5 px-0.5 py-0.5 rounded-lg text-[0.7rem] font-medium font-display transition-all duration-200 group ml-0 justify-center flex-shrink ${
                     theme === "light"
                       ? nvidiaActive
                         ? "bg-orange-100 text-orange-900 font-semibold shadow-sm"
@@ -1178,7 +1178,7 @@ export default function Navigation() {
 
                 if (idx === 3) {
                   const aiFirstActive = isActive("/ai-first");
-                  const aiFirstClasses = `flex items-center space-x-0.5 px-1 py-0.5 rounded-lg text-[0.7rem] font-medium font-display transition-all duration-200 group justify-center ${
+                  const aiFirstClasses = `flex items-center space-x-0.5 px-0.5 py-0.5 rounded-lg text-[0.7rem] font-medium font-display transition-all duration-200 group justify-center flex-shrink ${
                     theme === "light"
                       ? aiFirstActive
                         ? "bg-orange-100 text-orange-900 font-semibold shadow-sm"
