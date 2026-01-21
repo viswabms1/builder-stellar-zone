@@ -401,48 +401,33 @@
    * - Content defines height, not viewport
    */
 
-  /* ===== SITE-WIDE HERO SECTION FIXES ===== */
+  /* ===== SITE-WIDE HERO SECTION OVERRIDES ===== */
 
-  /* Override all fixed-height hero divs with fluid aspect ratios */
-  [class*="h-["][class*="vh"] {
-    height: auto !important;
-    aspect-ratio: 21 / 9;
+  /* Target hero containers and remove fixed heights */
+  section.relative > div {
+    height: auto;
   }
 
-  [class*="min-h-["][class*="vh"] {
-    min-height: auto !important;
+  /* Hero images use natural aspect ratio */
+  section.relative > div > img,
+  section .overflow-hidden > img {
+    width: 100%;
+    height: auto;
+    max-height: clamp(300px, 50vh, 600px);
+    object-fit: cover;
   }
 
-  /* Specific hero patterns found across the site */
-  .h-\[50vh\],
-  .md\:h-\[65vh\],
-  .h-\[40vh\],
-  .md\:h-\[75vh\] {
-    height: auto !important;
-    aspect-ratio: 21 / 9;
-    min-height: clamp(300px, 40vh, 600px);
+  /* Department hero sections */
+  .dept-hero-section {
+    padding-top: clamp(4rem, 8vh, 8rem);
   }
 
-  /* Department hero sections - remove fixed top padding */
-  .pt-40,
-  .pt-16,
-  .md\:pt-0 {
-    padding-top: var(--space-xl) !important;
-  }
-
-  /* Hero containers should flow naturally */
-  section.relative,
+  /* All hero sections flow naturally */
+  section[class*="hero"],
   .hero-section,
   .dept-hero-section {
     overflow: visible;
-  }
-
-  /* Images in heroes should maintain aspect ratio */
-  section img,
-  .hero-section img,
-  .dept-hero-section img {
-    max-width: 100%;
-    height: auto;
+    position: relative;
   }
 
   .scrollbar-hide {
