@@ -383,9 +383,7 @@ export default function Pharmacy() {
               Why Choose Pharmacy at DSU?
             </h2>
             <p className="text-foreground/80 font-body max-w-3xl mb-8">
-              Our pharmaceutical sciences program prepares you to be a skilled,
-              innovative healthcare professional with strong technical knowledge
-              and ethical responsibility.
+              Our B.Pharm, M.Pharm, and Pharm.D programs prepare you to be a skilled, innovative pharmaceutical professional with strong technical knowledge, clinical expertise, and ethical responsibility.
             </p>
           </div>
           <div className="grid gap-4 md:grid-cols-2">
