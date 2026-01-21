@@ -404,7 +404,7 @@ export function RagChatWidget() {
                   {/* Message Bubble */}
                   <div
                     className={cn(
-                      "rounded-2xl px-4 py-2 max-w-sm",
+                      "rounded-2xl max-w-sm",
                       message.role === "user"
                         ? theme === "light"
                           ? "bg-blue-500 text-white"
@@ -413,6 +413,9 @@ export function RagChatWidget() {
                           ? "bg-white border border-gray-200 text-gray-900"
                           : "bg-slate-700 border border-slate-600 text-white",
                     )}
+                    style={{
+                      padding: "clamp(0.5rem, 1.5vmin, 0.75rem) clamp(0.75rem, 2vmin, 1rem)",
+                    }}
                   >
                     <p className="text-sm leading-relaxed whitespace-pre-wrap">
                       {message.role === "assistant"
