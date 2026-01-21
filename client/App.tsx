@@ -785,6 +785,10 @@ function App() {
                   element={<Pharmacy />}
                 />
                 <Route
+                  path="/academics/health-sciences/pharmacy/faculty"
+                  element={<PharmacyFaculty />}
+                />
+                <Route
                   path="/academics/health-sciences/bpt"
                   element={<BPT />}
                 />
