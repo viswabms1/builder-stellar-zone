@@ -7,14 +7,15 @@
  * Integrated with GPT-4o-mini using:
  * - Chat Completions API (/v1/chat/completions) for fast, reliable responses
  * - XML-style instruction tags for declarative prompting
- * - Temperature 0.3 for consistent and deterministic responses
+ * - Temperature 0 (zero) for completely deterministic responses (prevents hallucinations)
  * - 128K context window for comprehensive knowledge base access
+ * - Strong anti-hallucination guidelines in system prompt
  *
  * Flow:
  * 1. User sends a message
- * 2. System retrieves relevant context from knowledge base
+ * 2. System retrieves relevant context from knowledge base (8 chunks)
  * 3. Chat Completions API processes with GPT-4o-mini
- * 4. Response is returned to the user
+ * 4. Response is returned to the user (strictly based on knowledge base only)
  */
 
 import OpenAI from "openai";
