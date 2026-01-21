@@ -800,6 +800,10 @@ function App() {
                   element={<PharmD />}
                 />
                 <Route
+                  path="/academics/health-sciences/m-pharm-pharmaceutics"
+                  element={<MPharmPharmaceutics />}
+                />
+                <Route
                   path="/academics/health-sciences/bpt"
                   element={<BPT />}
                 />
