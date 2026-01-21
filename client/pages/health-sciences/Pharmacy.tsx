@@ -410,9 +410,7 @@ export default function Pharmacy() {
               Career Pathways & Placements
             </h2>
             <p className="text-foreground/80 font-body max-w-3xl">
-              Our graduates are highly sought-after in the pharmaceutical
-              industry, healthcare sector, research institutions, and regulatory
-              bodies. Excellent placement record with leading organizations.
+              Our B.Pharm, M.Pharm, and Pharm.D graduates are highly sought-after in pharmaceutical industry, hospitals, research institutions, and regulatory bodies. Excellent placement record with leading organizations.
             </p>
           </div>
           <div className="grid gap-4 md:grid-cols-2">
