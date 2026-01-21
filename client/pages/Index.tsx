@@ -684,7 +684,11 @@ export default function Index() {
               >
                 <Button
                   variant="outline"
-                  className="bg-transparent hover:bg-white/10 text-white border border-white/70 px-5 py-2.5 text-sm font-medium font-display transition-all duration-300 w-full sm:w-auto"
+                  className="bg-transparent hover:bg-white/10 text-white border border-white/70 font-medium font-display transition-all duration-300 w-full sm:w-auto"
+                  style={{
+                    padding: 'clamp(0.5rem, 1.5vw, 0.75rem) clamp(1.25rem, 3vw, 1.5rem)',
+                    fontSize: 'clamp(0.8125rem, 1.8vw, 0.875rem)',
+                  }}
                 >
                   Virtual Tour
                 </Button>
