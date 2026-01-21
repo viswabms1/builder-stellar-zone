@@ -1089,24 +1089,26 @@
     max-width: none !important;
   }
 
-  /* Remove spacing between sections - global */
+  /* Fluid Section Spacing */
   section {
     margin-top: 0 !important;
     margin-bottom: 0 !important;
-    padding-top: 4rem !important;
-    padding-bottom: 4rem !important;
+    padding-top: clamp(2rem, 4vw, 4rem) !important;
+    padding-bottom: clamp(2rem, 4vw, 4rem) !important;
   }
 
-  /* Remove padding from containers */
+  /* Fluid container padding */
   .container,
   [class*="container"] {
     padding-top: 0 !important;
     padding-bottom: 0 !important;
+    padding-left: clamp(0.75rem, 2vw, 1.5rem);
+    padding-right: clamp(0.75rem, 2vw, 1.5rem);
   }
 
-  /* Reduce gap in grids */
+  /* Fluid grid gaps */
   .grid {
-    gap: 1rem !important;
+    gap: clamp(0.75rem, 2vw, 1.5rem) !important;
   }
 
   /* Remove extra spacing from divs between sections */
