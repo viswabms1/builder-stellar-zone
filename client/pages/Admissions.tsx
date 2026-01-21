@@ -88,9 +88,7 @@ const admissionCodes = [
   "Comed-K Code: E182",
   "Uni-GAUGE Code: UNI-010",
   "CET Code: DSU-E240",
-  "PGCET Code (M.Tech): T970",
-  "PGCET Code (MBA): B365MB",
-  "PGCET Code (MCA): C520MC",
+  "MCA Code: C520MC",
 ];
 
 const carouselImages = [
