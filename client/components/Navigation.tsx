@@ -295,6 +295,14 @@ export default function Navigation() {
                 name: "B.Pharm",
                 href: "/academics/health-sciences/pharmacy",
               },
+              {
+                name: "Pharm.D",
+                href: "/academics/health-sciences/pharmd",
+              },
+              {
+                name: "M.Pharm",
+                href: "/academics/health-sciences/mpharm",
+              },
             ],
           },
           {
