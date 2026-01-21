@@ -273,19 +273,19 @@ export function RagChatWidget() {
         <button
           onClick={() => setIsOpen(true)}
           className={cn(
-            "!fixed rounded-full shadow-2xl hover:shadow-xl transition-all hover:scale-110 !z-[99999] !block !visible !opacity-100",
+            "rounded-full shadow-2xl hover:shadow-xl transition-all hover:scale-110 p-4",
             theme === "light"
               ? "bg-orange-500 hover:bg-orange-600 text-white"
               : "bg-orange-600 hover:bg-orange-700 text-white",
           )}
           style={{
-            position: "fixed !important",
-            bottom: "1.5rem !important",
-            right: "1.5rem !important",
-            padding: "1rem !important",
-            display: "block !important",
-            visibility: "visible !important",
-            opacity: "1 !important",
+            position: "fixed",
+            bottom: "24px",
+            right: "24px",
+            zIndex: 99999,
+            display: "block",
+            width: "56px",
+            height: "56px",
           }}
           aria-label="Open chat"
         >
