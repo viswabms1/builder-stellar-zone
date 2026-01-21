@@ -655,7 +655,7 @@ export default function Index() {
           </div>
 
           {/* Buttons Section - Apply Today full width on mobile, below tagline */}
-          <div className="flex flex-col gap-4 w-full sm:w-auto sm:gap-6 pb-6 md:pb-0">
+          <div className="flex flex-col gap-4 w-full sm:w-auto sm:gap-6 pb-6 md:pb-0 landscape-buttons">
             <a
               href="https://admissions.dsu.edu.in/"
               target="_blank"
