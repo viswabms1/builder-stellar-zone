@@ -322,7 +322,7 @@ export default function Research() {
                 problem: "Manufacturing Inefficiency",
                 solution: "AI-Powered Digital Twins",
                 impact: "Real-time optimization reducing production downtime by 40% in pilot factories",
-                outcome: "Deployed in 3 Tier-1 automotive suppliers; ₹8Cr annual revenue run-rate",
+                outcome: "Deployed in 3 Tier-1 automotive suppliers",
               },
               {
                 problem: "Rural Healthcare Access",
