@@ -1042,13 +1042,26 @@ function calculateSimilarity(query: string, text: string): number {
   if (
     (queryLower.includes("admission") ||
       queryLower.includes("apply") ||
-      queryLower.includes("enroll")) &&
+      queryLower.includes("enroll") ||
+      queryLower.includes("process") ||
+      queryLower.includes("document") ||
+      queryLower.includes("counseling") ||
+      queryLower.includes("deadline") ||
+      queryLower.includes("merit") ||
+      queryLower.includes("how to") ||
+      queryLower.includes("step")) &&
     (textLower.includes("admission") ||
       textLower.includes("apply") ||
-      textLower.includes("admission") ||
-      textLower.includes("eligible"))
+      textLower.includes("document") ||
+      textLower.includes("counseling") ||
+      textLower.includes("process") ||
+      textLower.includes("step") ||
+      textLower.includes("deadline") ||
+      textLower.includes("merit list") ||
+      textLower.includes("registration") ||
+      textLower.includes("enrollment"))
   ) {
-    score += 20;
+    score += 30; // Increased boost for admission process queries
   }
 
   // If asking about contact, boost chunks with contact info
