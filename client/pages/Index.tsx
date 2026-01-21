@@ -655,7 +655,7 @@ export default function Index() {
           </div>
 
           {/* Buttons Section - Apply Today full width on mobile, below tagline */}
-          <div className="flex flex-col gap-4 w-full sm:w-auto sm:gap-6">
+          <div className="flex flex-col gap-4 w-full sm:w-auto sm:gap-6 pb-4">
             <a
               href="https://admissions.dsu.edu.in/"
               target="_blank"
@@ -664,10 +664,10 @@ export default function Index() {
             >
               <Button
                 size="lg"
-                className="bg-white hover:bg-white/90 text-orange-600 hover:text-orange-700 px-8 py-6 text-base font-bold font-display transition-all duration-300 group shadow-xl hover:shadow-2xl hover:-translate-y-1 w-full sm:w-auto"
+                className="bg-white hover:bg-white/90 text-orange-600 hover:text-orange-700 px-6 py-4 text-sm sm:text-base font-bold font-display transition-all duration-300 group shadow-xl hover:shadow-2xl hover:-translate-y-1 w-full sm:w-auto"
               >
                 Apply Today
-                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
             </a>
 
@@ -680,7 +680,7 @@ export default function Index() {
               >
                 <Button
                   variant="outline"
-                  className="bg-transparent hover:bg-white/10 text-white border border-white/70 px-6 py-3 text-sm font-medium font-display transition-all duration-300 w-full sm:w-auto"
+                  className="bg-transparent hover:bg-white/10 text-white border border-white/70 px-5 py-2.5 text-sm font-medium font-display transition-all duration-300 w-full sm:w-auto"
                 >
                   Virtual Tour
                 </Button>
