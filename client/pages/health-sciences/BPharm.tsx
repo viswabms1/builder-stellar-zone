@@ -23,7 +23,7 @@ import {
   CalendarDays,
   Zap,
   FlaskConical,
-  Vials,
+  Droplets,
 } from "lucide-react";
 
 export default function BPharm() {
