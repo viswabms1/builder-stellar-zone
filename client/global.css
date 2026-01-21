@@ -231,28 +231,44 @@
   }
 
   /* Fluid Hero Title Positioning - Container Query Approach */
+  /* Portrait Mode (default): Show outside text, hide overlay */
   .hero-title-inside {
-    display: none;
+    display: none !important;
   }
 
   .hero-title-outside {
-    display: block;
+    display: block !important;
   }
 
-  /* Use aspect-ratio media query for landscape detection */
+  /* Landscape Mode: Show overlay text inside video, hide outside duplicate */
   @media (min-aspect-ratio: 13/9) {
     .hero-title-inside {
-      display: flex;
+      display: flex !important;
       z-index: 51;
     }
 
     .hero-title-outside {
-      display: none;
+      display: none !important;
     }
 
     .hero-title-inside > div:last-child {
       flex-direction: row;
       align-items: center;
+    }
+  }
+
+  /* Extra safeguard: Portrait media query for all school pages */
+  @media (max-aspect-ratio: 13/9) {
+    .hero-title-inside {
+      display: none !important;
+      visibility: hidden !important;
+      height: 0 !important;
+      overflow: hidden !important;
+    }
+
+    .hero-title-outside {
+      display: block !important;
+      visibility: visible !important;
     }
   }
 
