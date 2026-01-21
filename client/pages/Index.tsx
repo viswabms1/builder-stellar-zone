@@ -629,7 +629,7 @@ export default function Index() {
         <div className="absolute inset-0 bg-black/40"></div>
 
         {/* Location Badge */}
-        <div className="absolute top-10 md:top-20 right-6 z-20 flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-md rounded-full border border-white/40 shadow-lg">
+        <div className="absolute top-16 md:top-28 right-6 z-20 flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-md rounded-full border border-white/40 shadow-lg">
           <MapPin className="w-4 h-4 text-white font-bold" />
           <span className="text-sm font-semibold text-white whitespace-nowrap">
             Main Campus
