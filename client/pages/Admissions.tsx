@@ -327,8 +327,8 @@ const aiSamplePrompts = [
 
 const voiceScriptLines = [
   "Welcome to Dayananda Sagar University admissions.",
-  "You can apply through Comed-K, CET, PGCET, or the direct admissions window.",
-  "Remember the key codes: Comed-K E182, CET DSU-E240, and PGCET T970 for M.Tech, B365MB for MBA, and C520MC for MCA.",
+  "You can apply through Comed-K, CET, or the direct admissions window.",
+  "Remember the key codes: Comed-K E182, CET DSU-E240, and C520MC for MCA.",
   "Visit admissions dot d s u dot e d u dot i n to start your application and download program brochures for detailed curricula.",
   "Our counselors can be reached at zero eight zero four six four six one eight zero zero or admissions at d s u dot e d u dot i n.",
   "We look forward to welcoming you to DSU.",
