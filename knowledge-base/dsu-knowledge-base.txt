@@ -128,60 +128,65 @@ SCHOOL OF COMPUTER APPLICATIONS
 ================================================================================
 Cutting-edge IT education for the digital age with industry certifications.
 
-PROGRAMS OFFERED
-----------------
+UNDERGRADUATE PROGRAMS
+----------------------
 
-DEPARTMENT OF COMPUTER APPLICATIONS:
-  - BCA - Bachelor of Computer Applications (3 Years)
-  - BCA in AI & Data Sciences (3 Years)
-  - B.Sc Data Science (3 Years)
-  - B.Sc Cyber Security (3 Years)
-  - MCA - Master of Computer Applications (2 Years)
-  - M.Sc Data Science (2 Years)
-  - M.Sc Cyber Security (2 Years)
+Programs Offered:
+  1. BCA in Computer Applications (3 Years)
+  2. BCA in Artificial Intelligence & Data Sciences (3 Years)
+  3. B.Sc in Data Science (3 Years)
+  4. B.Sc in Cyber Security (3 Years)
 
-ELIGIBILITY REQUIREMENTS
-------------------------
+Eligibility:
+  - 10+2 or equivalent with a minimum of 45% marks in aggregate.
 
-UNDERGRADUATE PROGRAMS (BCA, B.Sc):
-  Pass in 10+2, A Level, IB, American 12th grade or equivalent and a minimum of 45% marks in aggregate.
+Fees (Annual - 2026-27):
+  - BCA in Computer Applications:
+    Term I: ₹1,09,500
+    Term II: ₹97,500
+    Total Fee: ₹2,07,000
 
-POSTGRADUATE PROGRAMS:
+  - BCA in Artificial Intelligence & Data Sciences:
+    Term I: ₹1,09,500
+    Term II: ₹97,500
+    Total Fee: ₹2,07,000
 
-MCA:
-  Admission to First Year MCA shall be open to candidates with a UG degree in BCA/B.Sc.(CS/IT) or B.Sc./B.Com/BA from a recognized University with Mathematics at 10+2 level or Graduation Level. Obtained at least 50% marks in the Qualifying Examination.
+  - B.Sc in Data Science:
+    Term I: ₹87,000
+    Term II: ₹75,000
+    Total Fee: ₹1,62,000
 
-M.Sc Data Science:
-  B.Sc in Life Science or related fields such as Biotechnology, Microbiology, Genetics, Zoology, Botany, Biochemistry, Bioinformatics, Statistics, or Computer Science with minimum 50% aggregate.
+  - B.Sc in Cyber Security:
+    Term I: ₹87,000
+    Term II: ₹75,000
+    Total Fee: ₹1,62,000
 
-M.Sc Cyber Security:
-  B.Sc in Computer Science, Cyber Security, or related fields with minimum 50% aggregate.
+POSTGRADUATE PROGRAMS
+---------------------
 
-FEE STRUCTURE
--------------
+Programs Offered:
+  1. MCA in Computer Applications (2 Years)
+  2. M.Sc in Data Science (2 Years)
+  3. M.Sc in Cyber Security (2 Years)
 
-BCA & B.Sc Programs (Annual Fees):
-  Data Science / Cyber Security:
-    - Term I: ₹87,000
-    - Term II: ₹75,000
-    - Total: ₹1,62,000
-  
-  BCA / BCA AI & Data Sciences:
-    - Term I: ₹1,09,500
-    - Term II: ₹97,500
-    - Total: ₹2,07,000
+Eligibility:
+  - BCA/B.Sc.(CS/IT) or B.Sc./B.Com/BA with Mathematics in 10+2 level.
 
-MCA Program (Annual Fees):
-  - PGCET: Not Available
-  - Term I: ₹1,77,000
-  - Term II: ₹1,65,000
-  - Total: ₹3,42,000
+Fees (Annual - 2026-27):
+  - MCA in Computer Applications:
+    Term I: ₹1,77,000
+    Term II: ₹1,65,000
+    Total Fee: ₹3,42,000
 
-M.Sc Programs (Annual Fees):
-  - PGCET: Not Available
-  - Term I: ₹82,000
-  - Term II: ₹70,000
-  - Total: ₹1,52,000
+  - M.Sc in Data Science:
+    Term I: ₹82,000
+    Term II: ₹70,000
+    Total Fee: ₹1,52,000
+
+  - M.Sc in Cyber Security:
+    Term I: ₹82,000
+    Term II: ₹70,000
+    Total Fee: ₹1,52,000
 
 More Info: https://dsu.edu.in/eligibility
 
