@@ -31,7 +31,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         configuration: {
             openaiApiKey: hasApiKey ? "configured" : "NOT CONFIGURED ⚠️",
             model: "gpt-4o-mini",
+            temperature: 0,
             maxTokens: 1000,
+            deterministic: true,
         },
         features: {
             ragEnabled: true,
