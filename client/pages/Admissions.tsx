@@ -163,9 +163,9 @@ const quickLinks: QuickLink[] = [
     title: "International Admissions",
     description:
       "Dedicated guidance for foreign nationals, NRIs, and PIO applicants.",
-    href: "/admissions/international",
+    href: "https://dsu.edu.in/international/",
     icon: Globe,
-    external: false,
+    external: true,
   },
   {
     title: "Online Degree",
