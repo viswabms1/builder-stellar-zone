@@ -329,8 +329,13 @@
   @media (max-aspect-ratio: 1/1) {
     .hero-section {
       padding-top: clamp(1.5rem, 4vh, 2rem);
-      padding-bottom: clamp(1.5rem, 4vh, 2rem);
-      min-height: clamp(400px, 70vh, 600px);
+      padding-bottom: 0;
+      min-height: clamp(500px, 85vh, 700px);
+    }
+
+    /* Ensure buttons stay at absolute bottom in portrait */
+    .hero-section .relative.max-w-7xl {
+      padding-bottom: clamp(1rem, 3vh, 2rem);
     }
   }
 
