@@ -1194,8 +1194,8 @@ export default function Navigation() {
                       to="/"
                       className={`flex items-center group flex-shrink-0 px-0.5 py-0 rounded-xl transition-all duration-300 ${
                         theme === "light"
-                          ? "bg-white hover:bg-orange-50"
-                          : "bg-slate-800/50 hover:bg-slate-700/60"
+                          ? "bg-transparent hover:bg-orange-50/30"
+                          : "bg-transparent hover:bg-white/5"
                       }`}
                     >
                       <img
