@@ -417,23 +417,15 @@
     z-index: 99999 !important;
   }
 
-  /* Fluid CTA Buttons - Responsive sizing across all devices */
-  button:not([aria-label*="Mute"]):not([aria-label*="Unmute"]) {
-    font-size: clamp(0.8125rem, 1.8vw + 0.25rem, 1rem);
+  /* Fluid CTA button class - opt-in for buttons that should be fluid */
+  .fluid-cta-button {
+    padding: clamp(0.75rem, 2vw, 1rem) clamp(1.5rem, 4vw, 2rem);
+    font-size: clamp(0.875rem, 2vw, 1rem);
   }
 
-  /* Large CTA buttons (Apply, Get Started, etc.) */
-  button[class*="size-lg"],
-  button[class*="text-base"] {
-    padding: clamp(0.75rem, 2vw, 1rem) clamp(1.5rem, 4vw, 2rem) !important;
-    font-size: clamp(0.875rem, 2vw, 1rem) !important;
-  }
-
-  /* Medium CTA buttons */
-  button[class*="size-default"],
-  button[class*="text-sm"]:not([class*="size-lg"]) {
-    padding: clamp(0.5rem, 1.5vw, 0.75rem) clamp(1rem, 3vw, 1.5rem) !important;
-    font-size: clamp(0.8125rem, 1.8vw, 0.875rem) !important;
+  .fluid-cta-button-small {
+    padding: clamp(0.5rem, 1.5vw, 0.75rem) clamp(1.25rem, 3vw, 1.5rem);
+    font-size: clamp(0.8125rem, 1.8vw, 0.875rem);
   }
 }
 
