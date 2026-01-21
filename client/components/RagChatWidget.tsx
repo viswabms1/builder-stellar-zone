@@ -387,11 +387,16 @@ export function RagChatWidget() {
                   {/* Avatar */}
                   <div
                     className={cn(
-                      "w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold",
+                      "rounded-full flex items-center justify-center flex-shrink-0 font-bold",
                       message.role === "user"
                         ? "bg-blue-500 text-white"
                         : "bg-orange-500 text-white",
                     )}
+                    style={{
+                      width: "clamp(1.75rem, 4vmin, 2rem)",
+                      height: "clamp(1.75rem, 4vmin, 2rem)",
+                      fontSize: "clamp(0.625rem, 1.5vmin, 0.75rem)",
+                    }}
                   >
                     {message.role === "user" ? "You" : "Bot"}
                   </div>
