@@ -693,10 +693,14 @@ function HeroVideo() {
           >
             <Button
               size="sm"
-              className="sm:size-lg bg-white hover:bg-white/90 text-brand-orange hover:text-brand-orange/80 px-4 sm:px-8 py-2 sm:py-6 text-xs sm:text-base font-semibold font-display transition-all duration-300 group border-2 border-white w-full sm:w-auto"
+              className="sm:size-lg bg-white hover:bg-white/90 text-brand-orange hover:text-brand-orange/80 font-semibold font-display transition-all duration-300 group border-2 border-white w-full sm:w-auto"
+              style={{
+                padding: 'clamp(0.5rem, 1.5vw, 1rem) clamp(1rem, 3vw, 2rem)',
+                fontSize: 'clamp(0.75rem, 1.8vw, 1rem)',
+              }}
             >
               Apply Now
-              <ChevronRight className="w-4 sm:w-5 h-4 sm:h-5 ml-1 sm:ml-2 group-hover:translate-x-1 transition-transform" />
+              <ChevronRight style={{ width: 'clamp(1rem, 2vw, 1.25rem)', height: 'clamp(1rem, 2vw, 1.25rem)' }} className="ml-1 sm:ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
           </a>
           <a
@@ -707,7 +711,11 @@ function HeroVideo() {
           >
             <Button
               size="sm"
-              className="sm:size-lg bg-white hover:bg-white/90 text-brand-orange hover:text-brand-orange/80 px-4 sm:px-8 py-2 sm:py-6 text-xs sm:text-base font-semibold font-display transition-all duration-300 group border-2 border-white w-full sm:w-auto"
+              className="sm:size-lg bg-white hover:bg-white/90 text-brand-orange hover:text-brand-orange/80 font-semibold font-display transition-all duration-300 group border-2 border-white w-full sm:w-auto"
+              style={{
+                padding: 'clamp(0.5rem, 1.5vw, 1rem) clamp(1rem, 3vw, 2rem)',
+                fontSize: 'clamp(0.75rem, 1.8vw, 1rem)',
+              }}
             >
               Health Sciences Tour
             </Button>
@@ -720,7 +728,11 @@ function HeroVideo() {
           >
             <Button
               size="sm"
-              className="sm:size-lg bg-white hover:bg-white/90 text-brand-orange hover:text-brand-orange/80 px-4 sm:px-8 py-2 sm:py-6 text-xs sm:text-base font-semibold font-display transition-all duration-300 group border-2 border-white w-full sm:w-auto"
+              className="sm:size-lg bg-white hover:bg-white/90 text-brand-orange hover:text-brand-orange/80 font-semibold font-display transition-all duration-300 group border-2 border-white w-full sm:w-auto"
+              style={{
+                padding: 'clamp(0.5rem, 1.5vw, 1rem) clamp(1rem, 3vw, 2rem)',
+                fontSize: 'clamp(0.75rem, 1.8vw, 1rem)',
+              }}
             >
               Full University Tour
             </Button>
