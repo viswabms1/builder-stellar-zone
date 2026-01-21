@@ -178,7 +178,7 @@ const quickLinks: QuickLink[] = [
 
 const admissionTracks: AdmissionTrack[] = [
   {
-    title: "Direct Admissions – 2025",
+    title: "Direct Admissions – 2026",
     description:
       "Utilize the direct admissions channel with spot counseling support for eligible candidates.",
     highlights: [
