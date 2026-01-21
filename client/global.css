@@ -389,6 +389,14 @@
       position: relative !important;
       z-index: 2 !important;
       margin-top: 0 !important;
+      padding-top: 2rem !important;
+    }
+
+    /* Override global section rules for sections immediately after hero */
+    section.relative.bg-gradient-to-r {
+      margin-top: 0 !important;
+      padding-top: 1rem !important;
+      padding-bottom: 1rem !important;
     }
 
     /* Adjust hero title size for landscape */
