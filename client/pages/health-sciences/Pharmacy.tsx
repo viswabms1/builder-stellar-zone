@@ -28,7 +28,6 @@ import {
 } from "lucide-react";
 import { DeanSection, type DeanInfo } from "@/components/DeanSection";
 import { useAutoMuteOnScroll } from "@/hooks/useAutoMuteOnScroll";
-import { pharmacyFaculty } from "@/data/pharmacy-faculty";
 
 const DEAN_INFO: DeanInfo = {
   name: "Dr. MAYUR YERGERI CHANDRASEKHARAPPA",
