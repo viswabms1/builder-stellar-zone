@@ -49,6 +49,7 @@ import PhysiotherapyFaculty from "./pages/health-sciences/PhysiotherapyFaculty";
 import Pharmacy from "./pages/health-sciences/Pharmacy";
 import PharmacyFaculty from "./pages/health-sciences/PharmacyFaculty";
 import BPharm from "./pages/health-sciences/BPharm";
+import PharmD from "./pages/health-sciences/PharmD";
 import BScNursing from "./pages/health-sciences/BScNursing";
 import BPT from "./pages/health-sciences/BPT";
 import MPT from "./pages/health-sciences/MPT";
