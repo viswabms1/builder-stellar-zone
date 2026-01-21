@@ -444,8 +444,8 @@ export default function Pharmacy() {
             </p>
           </div>
           <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-5">
-            <a
-              href="#faculty"
+            <RouterLink
+              to="/academics/health-sciences/pharmacy/faculty"
               className="group rounded-none border border-border/40 bg-card/60 backdrop-blur-sm overflow-hidden hover:shadow-lg hover:shadow-brand-blue/20 transition-all duration-500 hover:-translate-y-1"
             >
               <Card className="h-full border-0 bg-transparent">
@@ -463,7 +463,7 @@ export default function Pharmacy() {
                   </p>
                 </CardContent>
               </Card>
-            </a>
+            </RouterLink>
 
             <a
               href="/centre-of-excellence"
