@@ -68,7 +68,7 @@ const UG_PROGRAM_CARDS: ProgramCard[] = [
       "4-Year Program. Comprehensive pharmaceutical education integrating drug discovery, formulation, and patient care.",
     image:
       "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?q=80&w=1600&auto=format&fit=crop",
-    link: "/eligibility",
+    link: "/academics/health-sciences/b-pharm",
     highlights: ["4 Years", "Industry Training", "Research Labs"],
     overlay:
       "bg-gradient-to-br from-brand-blue/80 via-black/75 to-black/60 mix-blend-multiply",
