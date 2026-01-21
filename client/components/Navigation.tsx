@@ -918,7 +918,7 @@ export default function Navigation() {
                             {item.name}
                           </span>
                           <ChevronDown
-                            className={`w-4 h-4 transition-transform ${academicsMenuOpen ? "rotate-180" : ""}`}
+                            className={`w-3 h-3 transition-transform ${academicsMenuOpen ? "rotate-180" : ""}`}
                           />
                           {active && (
                             <div
