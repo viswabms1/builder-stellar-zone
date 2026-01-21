@@ -341,6 +341,269 @@ World-Class Facilities:
 Student Organizations: 100+ clubs and student organizations
 
 ================================================================================
+ADMISSION PROCESS
+================================================================================
+
+GENERAL ADMISSION PROCESS
+
+Step 1: Check Eligibility
+- Review the eligibility requirements for your chosen program
+- Ensure you meet the minimum marks and subject requirements
+- Check if entrance exam scores are required (CET, JEE, PGCET, CLAT, etc.)
+
+Step 2: Register on Admissions Portal
+- Visit the official admissions page: https://8660401238.vercel.app/admissions
+- Create your account with your email and mobile number
+- Fill in your basic information (name, date of birth, contact details)
+- Choose your preferred program(s)
+
+Step 3: Submit Online Application
+- Fill out the complete application form with all required details
+- Upload necessary documents (see below for required documents)
+- Pay the application fee (if applicable)
+- Submit the application and receive a confirmation
+
+Step 4: Entrance Exam (if applicable)
+- For certain programs, entrance exams are required:
+  * UNDERGRADUATE: CET, JEE Mains (for B.Tech), UGAT (for law), NATA/Portfolio (for design)
+  * POSTGRADUATE: PGCET (for M.Tech), CLAT/DSAT (for Law), CAT/MAT/GMAT (for MBA)
+  * PROFESSIONAL: Pharmacy entrance exam (for B.Pharm), Nursing entrance exam
+- Prepare according to exam guidelines and register for the exam
+- Appear for the entrance exam on the scheduled date
+- Secure a valid score as per the eligibility criteria
+
+Step 5: Merit List/Selection
+- DSU publishes merit lists based on:
+  * Entrance exam scores (where applicable)
+  * Academic performance (10+2/graduation marks)
+  * Qualifying marks cutoff
+- Check if your name appears in the merit list
+- Merit lists are published on the admissions portal and DSU website
+
+Step 6: Counseling & Seat Allocation (if applicable)
+- Register for counseling process
+- Participate in the counseling rounds
+- Indicate your program and seat preferences
+- Receive seat allotment letter with allocated program
+- Check the allotted seat on the admissions portal
+
+Step 7: Fee Payment & Enrollment
+- Complete fee payment as per the fee structure
+- Fee payment can be done online (net banking, card) or offline
+- Maintain proof of payment
+- Complete online enrollment after fee payment
+- Receive enrollment confirmation and registration number
+
+Step 8: Document Verification & Admission Completion
+- Submit original documents for verification:
+  * 10+2 / PUC marksheet and certificate
+  * Graduation marksheet and certificate (for postgraduate programs)
+  * Entrance exam scorecard
+  * Birth certificate or proof of date of birth
+  * Caste certificate (if applicable)
+  * Income certificate (if applicable)
+  * Medical fitness certificate
+  * 4-6 passport size photographs
+  * ID proof (Aadhar, PAN, Passport, etc.)
+  * Address proof
+- Participate in document verification at the campus
+- Once verified, receive the final admission letter
+- Enroll in student information system
+
+IMPORTANT DATES & DEADLINES (2026-27)
+
+For detailed admission deadlines for specific programs, visit:
+https://8660401238.vercel.app/admissions/closing-dates
+
+Key Milestones (Approximate):
+- Application Registration: Starts from March/April
+- Application Submission Deadline: Varies by program (typically May-June)
+- Entrance Exam Dates: As per respective exam schedules
+- Merit List Publication: June-July
+- Counseling Rounds: July-August
+- Final Admission: August
+
+REQUIRED DOCUMENTS
+
+GENERAL REQUIREMENTS (for all students):
+- 10+2 marksheet and certificate (original and photocopy)
+- Entrance exam scorecard (original and photocopy)
+- Proof of Date of Birth (Birth Certificate, 10th pass certificate, Aadhar, etc.)
+- ID Proof (Aadhar, PAN, Passport, Voter ID)
+- Address Proof (Aadhar, Driving License, Utility Bill, Rental Agreement)
+- Recent passport size photographs (4-6 color photos, white background, 3.5 x 4.5 cm)
+
+ADDITIONAL FOR POSTGRADUATE PROGRAMS:
+- Graduation degree certificate and marksheet
+- Transcripts from all undergraduate semesters
+- Character certificate from previous institution
+- Medical fitness certificate
+
+ADDITIONAL IF APPLICABLE:
+- Caste Certificate (SC/ST/OBC) - as per government requirements
+- Income Certificate - for scholarship applications
+- Medical examination report
+- Migration certificate (if from other state/university)
+- Gap certificate (if there is a gap in studies)
+
+APPLICATION MODES
+
+ONLINE APPLICATION:
+- Preferred method
+- Apply through https://8660401238.vercel.app/admissions
+- Upload all documents in PDF format
+- Maximum file size: 5MB per document
+- Supported formats: PDF only
+
+FEE PAYMENT OPTIONS:
+- Online: Debit Card, Credit Card, Net Banking, UPI
+- Payment Gateway: Secure and encrypted
+- Receipt generated automatically after successful payment
+- Application fee (typically ₹500-1000, non-refundable)
+
+COUNSELING PROCESS
+
+ROUND 1:
+- Register for counseling with your registration number
+- Choose up to 5 programs in order of preference
+- View seat availability
+- Seat allocation based on merit and choice
+
+SUBSEQUENT ROUNDS:
+- Additional counseling rounds if seats available
+- New choices can be exercised
+- Floating and sliding categories of seats
+
+SPOT ADMISSION:
+- For remaining vacant seats after counseling rounds
+- Direct admission to qualified candidates
+- Subject to document verification
+
+CONTACTS & SUPPORT
+
+For Admissions Help:
+- Website: https://8660401238.vercel.app/admissions
+- Email: admissions@dsu.edu.in
+- Phone: Contact through website
+- Portal-based chat support available
+
+For International Student Admissions:
+- Email: international-admissions@dsu.edu.in
+- WhatsApp: +91 9606022152, +91 9606022149
+- Special admission pathway for international candidates
+
+For Program-Specific Queries:
+- School offices provide specific program information
+- Faculty advisors available for consultation
+- Virtual counseling available on request
+
+ENTRANCE EXAMS ACCEPTED
+
+UNDERGRADUATE:
+- CET (Common Entrance Test) - Karnataka
+- JEE Mains - National level engineering entrance
+- UGAT - DSU's own entrance test for specific programs
+- NATA - National Aptitude Test in Architecture
+- Merit based selection for certain programs
+
+POSTGRADUATE:
+- PGCET - Post-Graduate Common Entrance Test
+- CLAT - Common Law Admission Test
+- DSAT - DSU's Standardized Aptitude Test
+- CAT, MAT, GMAT - For MBA programs
+- Merit based selection for certain programs
+
+HEALTH SCIENCES:
+- CEE/CET - Pharmacy entrance test
+- Nursing entrance exams
+- Professional entrance exams
+
+SCHOLARSHIPS & FINANCIAL AID
+
+Merit Scholarships:
+- Based on entrance exam performance
+- Up to 100% tuition fee waiver for top performers
+- Partial scholarships for qualifying candidates
+
+Need-based Scholarships:
+- Available for deserving students
+- Application required with income certificate
+- Contact financial aid office for details
+
+Government Scholarships:
+- SC/ST scholarships as per government provisions
+- Minority scholarships
+- Post-Matric and Pre-Matric scholarships
+
+Special Categories:
+- Sports scholarships for athletes
+- Reserved category benefits (SC/ST/OBC)
+- PwD (Person with Disability) scholarships
+
+Hostel Financial Assistance:
+- Subsidized hostel for economically weaker sections
+- Merit-based hostel scholarships
+- Contact hostel office for application
+
+POLICIES & GUIDELINES
+
+Admission Terms:
+- Admission is conditional on verification of documents
+- False information leads to cancellation of admission
+- All fees are non-refundable after confirmation
+- Students must maintain academic standards
+
+Code of Conduct:
+- Students must follow DSU's code of conduct
+- Attendance and academic policies apply
+- Anti-ragging policy strictly enforced
+- Grievance redressal mechanism available
+
+Refund Policy:
+- Application fee: Non-refundable
+- Tuition fee: Refundable if cancelled before semester starts (95% refund)
+- After semester starts: No refund on tuition fee
+- Hostel charges: Follow hostel policy
+
+Documentation Policy:
+- Original documents required at time of admission
+- Photocopies must be attested
+- All documents valid as per education board norms
+- Expired IDs require renewal
+
+FREQUENTLY ASKED QUESTIONS ABOUT ADMISSION
+
+Q: When does admission process start?
+A: Typically in March/April for the academic year starting in July/August. Check the admissions portal for exact dates.
+
+Q: Are entrance exams mandatory for all programs?
+A: Not all programs require entrance exams. Some programs offer merit-based direct admission. Check the specific program requirements.
+
+Q: Can I apply for multiple programs?
+A: Yes, you can apply for multiple programs. You'll indicate preferences during counseling.
+
+Q: What if I don't have entrance exam scores?
+A: Some programs offer merit-based direct admission based on 10+2 marks. Check individual program eligibility.
+
+Q: How long does the admission process take?
+A: Typically 2-3 months from application to final admission.
+
+Q: Is there any entrance test conducted by DSU?
+A: Yes, DSU conducts UGAT and DSAT for specific undergraduate and postgraduate programs.
+
+Q: When will I get the admission letter?
+A: After successful document verification, usually within 1-2 weeks.
+
+Q: Can I change my program after counseling?
+A: Limited changes may be possible in subsequent counseling rounds. Contact admissions office for details.
+
+Q: Is hostel accommodation guaranteed?
+A: Hostel availability is subject to on-campus bed availability. Priority given to outstation students.
+
+Q: How do I pay the fees?
+A: Online payment via debit card, credit card, net banking, or UPI through the admissions portal.
+
+================================================================================
 INTERNATIONAL ADMISSIONS
 ================================================================================
 
