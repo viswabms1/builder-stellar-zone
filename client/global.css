@@ -317,12 +317,21 @@
     /* Remove fixed heights - let content flow naturally */
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     position: relative;
     padding: clamp(3rem, 8vh, 8rem) clamp(0.75rem, 2vw, 1.5rem);
-    /* Ensure minimum height on mobile portrait to show video */
-    min-height: clamp(400px, 100vh, 800px);
+    /* Use vmax to ensure video visibility across all orientations */
+    min-height: clamp(450px, 85vmax, 100vh);
+  }
+
+  /* Mobile portrait: Reduce padding to free up space for video */
+  @media (max-aspect-ratio: 1/1) {
+    .hero-section {
+      padding-top: clamp(1.5rem, 4vh, 2rem);
+      padding-bottom: clamp(1.5rem, 4vh, 2rem);
+      min-height: clamp(400px, 70vh, 600px);
+    }
   }
 
   /* Fluid hero content container */
