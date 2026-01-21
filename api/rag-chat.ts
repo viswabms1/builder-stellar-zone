@@ -351,123 +351,123 @@ Virtual Campus Tour: https://dsu.edu.in/virtual-tour/
 // ============================================================================
 
 interface KnowledgeChunk {
-    text: string;
-    score: number;
+  text: string;
+  score: number;
 }
 
 /**
  * Split knowledge base into chunks for retrieval
  */
 function getKnowledgeChunks(): Array<{ text: string; index: number }> {
-    const chunkSize = 2000;
-    const overlap = 300;
-    const chunks: Array<{ text: string; index: number }> = [];
+  const chunkSize = 2000;
+  const overlap = 300;
+  const chunks: Array<{ text: string; index: number }> = [];
 
-    for (let i = 0; i < KNOWLEDGE_BASE.length; i += chunkSize - overlap) {
-        const chunk = KNOWLEDGE_BASE.substring(i, i + chunkSize);
-        if (chunk.trim()) {
-            chunks.push({
-                text: chunk,
-                index: chunks.length,
-            });
-        }
+  for (let i = 0; i < KNOWLEDGE_BASE.length; i += chunkSize - overlap) {
+    const chunk = KNOWLEDGE_BASE.substring(i, i + chunkSize);
+    if (chunk.trim()) {
+      chunks.push({
+        text: chunk,
+        index: chunks.length,
+      });
     }
+  }
 
-    return chunks;
+  return chunks;
 }
 
 /**
  * Calculate similarity between query and text
  */
 function calculateSimilarity(query: string, text: string): number {
-    const queryLower = query.toLowerCase();
-    const textLower = text.toLowerCase();
+  const queryLower = query.toLowerCase();
+  const textLower = text.toLowerCase();
 
-    let score = 0;
+  let score = 0;
 
-    // Exact phrase match
-    if (textLower.includes(queryLower)) {
-        score += 50;
+  // Exact phrase match
+  if (textLower.includes(queryLower)) {
+    score += 50;
+  }
+
+  // Keyword-based scoring
+  const keywords = queryLower.split(/\s+/).filter((w) => w.length > 2);
+
+  for (const keyword of keywords) {
+    const pattern = new RegExp(`\\b${keyword}\\b`, "g");
+    const matches = (textLower.match(pattern) || []).length;
+    score += matches * 5;
+
+    if (textLower.includes(keyword)) {
+      score += 2;
     }
+  }
 
-    // Keyword-based scoring
-    const keywords = queryLower.split(/\s+/).filter((w) => w.length > 2);
+  // Special boost for specific queries
+  if (
+    (queryLower.includes("fee") || queryLower.includes("cost")) &&
+    textLower.includes("₹")
+  ) {
+    score += 20;
+  }
 
-    for (const keyword of keywords) {
-        const pattern = new RegExp(`\\b${keyword}\\b`, "g");
-        const matches = (textLower.match(pattern) || []).length;
-        score += matches * 5;
+  if (
+    (queryLower.includes("eligible") || queryLower.includes("eligibility")) &&
+    (textLower.includes("eligibility") ||
+      textLower.includes("pass") ||
+      textLower.includes("marks"))
+  ) {
+    score += 20;
+  }
 
-        if (textLower.includes(keyword)) {
-            score += 2;
-        }
+  // Program-specific boosts
+  const programs = [
+    "b.tech",
+    "m.tech",
+    "bca",
+    "mca",
+    "bba",
+    "mba",
+    "law",
+    "nursing",
+    "engineering",
+    "cse",
+    "computer science",
+    "ai",
+    "machine learning",
+    "data science",
+  ];
+  for (const prog of programs) {
+    if (queryLower.includes(prog) && textLower.includes(prog)) {
+      score += 15;
     }
+  }
 
-    // Special boost for specific queries
-    if (
-        (queryLower.includes("fee") || queryLower.includes("cost")) &&
-        textLower.includes("₹")
-    ) {
-        score += 20;
-    }
-
-    if (
-        (queryLower.includes("eligible") || queryLower.includes("eligibility")) &&
-        (textLower.includes("eligibility") ||
-            textLower.includes("pass") ||
-            textLower.includes("marks"))
-    ) {
-        score += 20;
-    }
-
-    // Program-specific boosts
-    const programs = [
-        "b.tech",
-        "m.tech",
-        "bca",
-        "mca",
-        "bba",
-        "mba",
-        "law",
-        "nursing",
-        "engineering",
-        "cse",
-        "computer science",
-        "ai",
-        "machine learning",
-        "data science",
-    ];
-    for (const prog of programs) {
-        if (queryLower.includes(prog) && textLower.includes(prog)) {
-            score += 15;
-        }
-    }
-
-    return score;
+  return score;
 }
 
 /**
  * Retrieve relevant context from knowledge base
  */
 function retrieveContext(query: string, topK: number = 6): KnowledgeChunk[] {
-    const chunks = getKnowledgeChunks();
+  const chunks = getKnowledgeChunks();
 
-    const scored = chunks.map((chunk) => ({
-        text: chunk.text,
-        score: calculateSimilarity(query, chunk.text),
-    }));
+  const scored = chunks.map((chunk) => ({
+    text: chunk.text,
+    score: calculateSimilarity(query, chunk.text),
+  }));
 
-    return scored
-        .filter((item) => item.score > 0)
-        .sort((a, b) => b.score - a.score)
-        .slice(0, topK);
+  return scored
+    .filter((item) => item.score > 0)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, topK);
 }
 
 /**
  * Build system prompt for OpenAI
  */
 function buildSystemPrompt(contextString: string): string {
-    return `You are an AI assistant for Dayananda Sagar University (DSU), India's AI-First University. Your role is to help students and prospective students with SPECIFIC, DETAILED, and ACCURATE information about the university.
+  return `You are an AI assistant for Dayananda Sagar University (DSU), India's AI-First University. Your role is to help students and prospective students with SPECIFIC, DETAILED, and ACCURATE information about the university.
 
 KNOWLEDGE DOMAIN:
 - Academic programs and courses (with specific names and durations)
@@ -527,153 +527,159 @@ DO NOT INVENT INFORMATION ABOUT DSU THAT IS NOT IN THE KNOWLEDGE BASE.`;
 // ============================================================================
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
-    // Set CORS headers
-    res.setHeader("Access-Control-Allow-Credentials", "true");
-    res.setHeader("Access-Control-Allow-Origin", "*");
-    res.setHeader(
-        "Access-Control-Allow-Methods",
-        "GET,OPTIONS,PATCH,DELETE,POST,PUT"
+  // Set CORS headers
+  res.setHeader("Access-Control-Allow-Credentials", "true");
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader(
+    "Access-Control-Allow-Methods",
+    "GET,OPTIONS,PATCH,DELETE,POST,PUT",
+  );
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version",
+  );
+
+  // Handle preflight
+  if (req.method === "OPTIONS") {
+    res.status(200).end();
+    return;
+  }
+
+  // Only allow POST
+  if (req.method !== "POST") {
+    return res.status(405).json({ error: "Method not allowed" });
+  }
+
+  try {
+    const { message, conversationHistory } = req.body;
+
+    // Validate request
+    if (!message || typeof message !== "string") {
+      return res.status(400).json({
+        success: false,
+        error: "Invalid request",
+        details: "Message is required and must be a string",
+      });
+    }
+
+    // Validate API key
+    if (!process.env.OPENAI_API_KEY) {
+      console.error("[RAG] OPENAI_API_KEY is not configured");
+      return res.status(500).json({
+        success: false,
+        error: "Server configuration error",
+        details: "OpenAI API key not configured",
+      });
+    }
+
+    console.log(`[RAG] Processing query: "${message}"`);
+
+    // Retrieve relevant context from knowledge base
+    const contextChunks = retrieveContext(message, 6);
+
+    if (contextChunks.length === 0) {
+      console.warn("[RAG] No relevant context found for query");
+    }
+
+    // Build context string
+    const contextString =
+      contextChunks.length > 0
+        ? contextChunks
+            .map((chunk, i) => `[Source ${i + 1}]\n${chunk.text}`)
+            .join("\n\n---\n\n")
+        : "Note: No directly relevant information found in knowledge base.";
+
+    // Build system prompt
+    const systemPrompt = buildSystemPrompt(contextString);
+
+    // Build messages array for OpenAI
+    const messages: Array<{
+      role: "system" | "user" | "assistant";
+      content: string;
+    }> = [{ role: "system", content: systemPrompt }];
+
+    // Add conversation history if provided (last 10 messages)
+    if (conversationHistory && Array.isArray(conversationHistory)) {
+      const recentHistory = conversationHistory.slice(-10);
+      for (const msg of recentHistory) {
+        if (msg.role === "user" || msg.role === "assistant") {
+          messages.push({
+            role: msg.role,
+            content: msg.content,
+          });
+        }
+      }
+    }
+
+    // Add current user message
+    messages.push({ role: "user", content: message });
+
+    console.log(
+      `[RAG] Calling OpenAI API with ${contextChunks.length} context chunks`,
     );
-    res.setHeader(
-        "Access-Control-Allow-Headers",
-        "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
-    );
 
-    // Handle preflight
-    if (req.method === "OPTIONS") {
-        res.status(200).end();
-        return;
+    // Initialize OpenAI client
+    const openai = new OpenAI({
+      apiKey: process.env.OPENAI_API_KEY,
+    });
+
+    // Call OpenAI Chat Completions API
+    const completion = await openai.chat.completions.create({
+      model: "gpt-4o-mini",
+      messages: messages,
+      max_tokens: 1000,
+      temperature: 0,
+    });
+
+    const assistantMessage = completion.choices[0]?.message?.content || "";
+
+    if (!assistantMessage) {
+      console.error("[RAG] Empty response from OpenAI");
+      return res.status(500).json({
+        success: false,
+        error: "Empty response",
+        details: "No response generated from AI",
+      });
     }
 
-    // Only allow POST
-    if (req.method !== "POST") {
-        return res.status(405).json({ error: "Method not allowed" });
+    console.log("[RAG] Response generated successfully");
+    console.log(`[RAG] Message length: ${assistantMessage.length} characters`);
+
+    // Return response
+    return res.status(200).json({
+      success: true,
+      message: assistantMessage,
+      contextCount: contextChunks.length,
+      sources: contextChunks.map((chunk, i) => ({
+        id: i + 1,
+        relevanceScore: chunk.score,
+      })),
+      timestamp: new Date().toISOString(),
+    });
+  } catch (error: any) {
+    console.error("[RAG] Chat error:", error?.message || error);
+
+    // Handle specific OpenAI errors
+    if (error?.status === 401) {
+      return res.status(500).json({
+        success: false,
+        error: "Authentication failed",
+        details: "Invalid OpenAI API key",
+      });
     }
 
-    try {
-        const { message, conversationHistory } = req.body;
-
-        // Validate request
-        if (!message || typeof message !== "string") {
-            return res.status(400).json({
-                success: false,
-                error: "Invalid request",
-                details: "Message is required and must be a string",
-            });
-        }
-
-        // Validate API key
-        if (!process.env.OPENAI_API_KEY) {
-            console.error("[RAG] OPENAI_API_KEY is not configured");
-            return res.status(500).json({
-                success: false,
-                error: "Server configuration error",
-                details: "OpenAI API key not configured",
-            });
-        }
-
-        console.log(`[RAG] Processing query: "${message}"`);
-
-        // Retrieve relevant context from knowledge base
-        const contextChunks = retrieveContext(message, 6);
-
-        if (contextChunks.length === 0) {
-            console.warn("[RAG] No relevant context found for query");
-        }
-
-        // Build context string
-        const contextString = contextChunks.length > 0
-            ? contextChunks.map((chunk, i) => `[Source ${i + 1}]\n${chunk.text}`).join("\n\n---\n\n")
-            : "Note: No directly relevant information found in knowledge base.";
-
-        // Build system prompt
-        const systemPrompt = buildSystemPrompt(contextString);
-
-        // Build messages array for OpenAI
-        const messages: Array<{ role: "system" | "user" | "assistant"; content: string }> = [
-            { role: "system", content: systemPrompt },
-        ];
-
-        // Add conversation history if provided (last 10 messages)
-        if (conversationHistory && Array.isArray(conversationHistory)) {
-            const recentHistory = conversationHistory.slice(-10);
-            for (const msg of recentHistory) {
-                if (msg.role === "user" || msg.role === "assistant") {
-                    messages.push({
-                        role: msg.role,
-                        content: msg.content,
-                    });
-                }
-            }
-        }
-
-        // Add current user message
-        messages.push({ role: "user", content: message });
-
-        console.log(`[RAG] Calling OpenAI API with ${contextChunks.length} context chunks`);
-
-        // Initialize OpenAI client
-        const openai = new OpenAI({
-            apiKey: process.env.OPENAI_API_KEY,
-        });
-
-        // Call OpenAI Chat Completions API
-        const completion = await openai.chat.completions.create({
-            model: "gpt-4o-mini",
-            messages: messages,
-            max_tokens: 1000,
-            temperature: 0,
-        });
-
-        const assistantMessage = completion.choices[0]?.message?.content || "";
-
-        if (!assistantMessage) {
-            console.error("[RAG] Empty response from OpenAI");
-            return res.status(500).json({
-                success: false,
-                error: "Empty response",
-                details: "No response generated from AI",
-            });
-        }
-
-        console.log("[RAG] Response generated successfully");
-        console.log(`[RAG] Message length: ${assistantMessage.length} characters`);
-
-        // Return response
-        return res.status(200).json({
-            success: true,
-            message: assistantMessage,
-            contextCount: contextChunks.length,
-            sources: contextChunks.map((chunk, i) => ({
-                id: i + 1,
-                relevanceScore: chunk.score,
-            })),
-            timestamp: new Date().toISOString(),
-        });
-    } catch (error: any) {
-        console.error("[RAG] Chat error:", error?.message || error);
-
-        // Handle specific OpenAI errors
-        if (error?.status === 401) {
-            return res.status(500).json({
-                success: false,
-                error: "Authentication failed",
-                details: "Invalid OpenAI API key",
-            });
-        }
-
-        if (error?.status === 429) {
-            return res.status(429).json({
-                success: false,
-                error: "Rate limit exceeded",
-                details: "Please try again in a few moments",
-            });
-        }
-
-        return res.status(500).json({
-            success: false,
-            error: "Failed to process chat message",
-            details: error?.message || "Unknown error",
-        });
+    if (error?.status === 429) {
+      return res.status(429).json({
+        success: false,
+        error: "Rate limit exceeded",
+        details: "Please try again in a few moments",
+      });
     }
+
+    return res.status(500).json({
+      success: false,
+      error: "Failed to process chat message",
+      details: error?.message || "Unknown error",
+    });
+  }
 }
