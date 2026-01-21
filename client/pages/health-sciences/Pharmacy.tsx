@@ -81,68 +81,38 @@ const UG_PROGRAM_CARDS: ProgramCard[] = [
 
 const PG_PROGRAM_CARDS: ProgramCard[] = [
   {
-    name: "M.Pharm Pharmaceutics",
+    name: "Pharm.D",
     area: "Postgraduate",
     description:
-      "2-Year advanced program in pharmaceutical formulation and drug delivery systems.",
+      "6-Year Doctor of Pharmacy program preparing students for advanced patient care, clinical research, and pharmaceutical consultancy roles.",
+    image:
+      "https://images.unsplash.com/photo-1631549916768-4119b2e5f926?q=80&w=1600&auto=format&fit=crop",
+    link: "/eligibility",
+    highlights: ["6 Years", "Clinical Practice", "Patient Care", "Research"],
+    overlay:
+      "bg-gradient-to-br from-brand-magenta/80 via-black/75 to-black/60 mix-blend-multiply",
+    badgeClass:
+      "bg-brand-magenta/25 text-foreground/90 border border-white/30 backdrop-blur",
+    panelClass: "bg-black/55 backdrop-blur-xl",
+    featured: true,
+  },
+  {
+    name: "M.Pharm",
+    area: "Postgraduate",
+    description:
+      "2-Year Master of Pharmacy program with specializations in Pharmaceutics, Pharmacology, and Regulatory Affairs.",
     image:
       "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1600&auto=format&fit=crop",
     link: "/eligibility",
-    highlights: ["Drug Formulation", "Research", "Industry Focus"],
+    highlights: ["2 Years", "Pharmaceutics", "Pharmacology", "Regulatory Affairs"],
     overlay:
-      "bg-gradient-to-br from-brand-magenta/75 via-black/70 to-black/55 mix-blend-multiply",
+      "bg-gradient-to-br from-brand-blue/75 via-black/70 to-black/55 mix-blend-multiply",
     badgeClass:
-      "bg-brand-magenta/30 text-foreground/90 border border-white/25 backdrop-blur",
+      "bg-brand-blue/30 text-foreground/90 border border-white/25 backdrop-blur",
     panelClass: "bg-black/55 backdrop-blur-xl",
-  },
-  {
-    name: "M.Pharm Pharmacology",
-    area: "Postgraduate",
-    description:
-      "2-Year program specializing in drug action, safety, and therapeutic applications.",
-    image:
-      "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=1600&auto=format&fit=crop",
-    link: "/eligibility",
-    highlights: ["Drug Action", "Clinical Research", "Toxicology"],
-    overlay:
-      "bg-gradient-to-br from-brand-orange/75 via-black/70 to-black/55 mix-blend-multiply",
-    badgeClass:
-      "bg-brand-orange/30 text-foreground/90 border border-white/25 backdrop-blur",
-    panelClass: "bg-black/55 backdrop-blur-xl",
-  },
-  {
-    name: "M.Pharm Regulatory Affairs",
-    area: "Postgraduate",
-    description:
-      "2-Year program focusing on pharmaceutical regulations, quality assurance, and compliance.",
-    image:
-      "https://images.unsplash.com/photo-1581594549595-35f6edc7b762?q=80&w=1600&auto=format&fit=crop",
-    link: "/eligibility",
-    highlights: ["GMP Standards", "Compliance", "Quality Control"],
-    overlay:
-      "bg-gradient-to-br from-brand-blue/70 via-black/70 to-black/55 mix-blend-multiply",
-    badgeClass:
-      "bg-brand-blue/35 text-foreground/90 border border-white/25 backdrop-blur",
-    panelClass: "bg-black/55 backdrop-blur-xl",
+    featured: true,
   },
 ];
-
-const PHARMD_PROGRAM: ProgramCard = {
-  name: "Pharm.D",
-  area: "Doctor of Pharmacy",
-  description:
-    "6-Year clinical pharmacy program preparing students for advanced patient care, clinical research, and pharmaceutical consultancy roles.",
-  image:
-    "https://images.unsplash.com/photo-1631549916768-4119b2e5f926?q=80&w=1600&auto=format&fit=crop",
-  link: "/eligibility",
-  highlights: ["6 Years", "Clinical Practice", "Patient Care", "Research"],
-  overlay:
-    "bg-gradient-to-br from-brand-magenta/80 via-black/75 to-black/60 mix-blend-multiply",
-  badgeClass:
-    "bg-brand-magenta/25 text-foreground/90 border border-white/30 backdrop-blur",
-  panelClass: "bg-black/55 backdrop-blur-xl",
-  featured: true,
-};
 
 function ProgramCardComponent({ program }: { program: ProgramCard }) {
   const isInternal = program.link.startsWith("/");
