@@ -805,6 +805,10 @@ function App() {
                   element={<MPharmPharmaceutics />}
                 />
                 <Route
+                  path="/academics/health-sciences/m-pharm-pharmacology"
+                  element={<MPharmPharmacology />}
+                />
+                <Route
                   path="/academics/health-sciences/bpt"
                   element={<BPT />}
                 />
