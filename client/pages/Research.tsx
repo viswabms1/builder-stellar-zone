@@ -280,9 +280,6 @@ export default function Research() {
                         <Badge variant="secondary" className="text-xs">
                           {pillar.projects}
                         </Badge>
-                        <Badge variant="outline" className="text-xs border-orange-500/30 text-orange-500">
-                          {pillar.funding}
-                        </Badge>
                         <Badge variant="outline" className="text-xs border-green-500/30 text-green-500">
                           {pillar.publications}
                         </Badge>
