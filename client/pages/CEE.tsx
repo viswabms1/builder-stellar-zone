@@ -207,7 +207,7 @@ const DEAN_INFO: DeanInfo = {
   title: "Master Mariner (Dredging & Ocean Engineering/Navigation) | Specialization in Leadership & Strategy (University of Illinois – Urbana Champaign, USA) | MBA | M.Phil | PhD",
   position: "Professor & Dean, SCMS",
   photo:
-    "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop",
+    "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F1a8c3f53dac94d93a61385f8bb1ff3a6?format=webp&width=800&height=1200",
   message: [
     "Dear Prospective Executive MBA Participants,",
     "Welcome to our Executive MBA program — a transformative journey designed to elevate your career, leadership, and impact in the ever-evolving world of business. In today's dynamic and interconnected global economy, leaders are constantly challenged to adapt, innovate, and drive meaningful change. Our Executive MBA program has been thoughtfully crafted to provide you with the strategic acumen, leadership insights, and problem-solving skills needed to navigate these complexities and thrive as an industry leader or entrepreneur.",
