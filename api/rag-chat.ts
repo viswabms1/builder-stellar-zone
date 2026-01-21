@@ -175,36 +175,35 @@ Fees (Annual - 2026-27):
 SCHOOL OF COMMERCE & MANAGEMENT
 ================================================================================
 
-Program: B.Com Regular
-Level: UG | Duration: 3 Years
-Eligibility: PUC or equivalent with Business Studies and Accountancy, aggregate 50% (45% for SC/ST/OBC).
-Fee Structure (Annual): ₹1,57,000
+UNDERGRADUATE PROGRAMS:
+Programs Offered:
+  - B.Com Regular (3 Years)
+  - B.Com ACCA Integrated (3 Years)
+  - B.Com CMA Integrated (3 Years)
+  - B.Com With CA Coaching (3 Years)
+  - BBA Regular (3 Years)
 
-Program: B.Com ACCA Integrated
-Level: UG | Duration: 3 Years
-Fee Structure (Annual): ₹1,87,000
-Special: Professional ACCA coaching integrated within timetable.
+Eligibility:
+  - B.Com Programs: 10+2 with Business Studies and Accountancy with aggregate of 50% (45% for SC/ST & OBC).
+  - BBA Regular: 10+2 or equivalent with a minimum of 50% marks in aggregate (45% for SC/ST & OBC).
 
-Program: B.Com CMA Integrated
-Level: UG | Duration: 3 Years
-Fee Structure (Annual): ₹1,87,000
-Special: Professional CMA coaching integrated within timetable.
+Fees (Annual - 2026-27):
+  - B.Com Regular: ₹1,57,000 (Term I: ₹79,500, Term II: ₹77,500)
+  - B.Com ACCA Integrated / CMA Integrated / CA Coaching: ₹1,87,000 (Term I: ₹99,500, Term II: ₹87,500)
+  - BBA Regular: ₹2,12,000 (Term I: ₹1,07,000, Term II: ₹1,05,000)
 
-Program: B.Com With CA Coaching
-Level: UG | Duration: 3 Years
-Fee Structure (Annual): ₹1,87,000
-Special: Professional CA coaching integrated within timetable.
+POSTGRADUATE PROGRAMS:
+Programs Offered:
+  - MBA (2 Years)
 
-Program: BBA Regular
-Level: UG | Duration: 3 Years
-Eligibility: 10+2 or equivalent with minimum 50% marks (45% for SC/ST/OBC).
-Fee Structure (Annual): ₹2,12,000
+Eligibility:
+  - Bachelor's degree in any stream with minimum 50% (45% for SC/ST & OBC).
 
-Program: MBA
-Level: PG | Duration: 2 Years
-Eligibility: Bachelor's degree (3 years) with minimum 50% (45% for SC/ST/OBC).
-Fee Structure (Annual): ₹6,02,000
-Special: Dual specialization - Business Analytics, Finance, Marketing, HR, Operations.
+Fees (Annual - 2026-27):
+  - MBA: ₹6,02,000 (Term I: ₹3,07,000, Term II: ₹2,95,000)
+
+Special Notes:
+  MBA offers dual specialization options covering Business Analytics, Finance, Marketing, HR, and Operations.
 
 ================================================================================
 SCHOOL OF HEALTH SCIENCES
