@@ -331,7 +331,10 @@ export function RagChatWidget() {
                 borderTopRightRadius: "clamp(0.75rem, 2vmin, 1rem)",
               }}
             >
-              <div className="flex items-center" style={{ gap: "clamp(0.5rem, 2vmin, 0.75rem)" }}>
+              <div
+                className="flex items-center"
+                style={{ gap: "clamp(0.5rem, 2vmin, 0.75rem)" }}
+              >
                 <div
                   className="rounded-full bg-orange-500 flex items-center justify-center"
                   style={{
@@ -339,14 +342,33 @@ export function RagChatWidget() {
                     height: "clamp(2rem, 5vmin, 2.5rem)",
                   }}
                 >
-                  <MessageSquare style={{ width: "clamp(1rem, 3vmin, 1.5rem)", height: "clamp(1rem, 3vmin, 1.5rem)" }} className="text-white" />
+                  <MessageSquare
+                    style={{
+                      width: "clamp(1rem, 3vmin, 1.5rem)",
+                      height: "clamp(1rem, 3vmin, 1.5rem)",
+                    }}
+                    className="text-white"
+                  />
                 </div>
                 <div>
-                  <h3 className="font-semibold" style={{ fontSize: "clamp(0.75rem, 2vmin, 0.875rem)" }}>DSU Admissions Bot</h3>
-                  <p className="opacity-70" style={{ fontSize: "clamp(0.625rem, 1.5vmin, 0.75rem)" }}>Powered by AI-First</p>
+                  <h3
+                    className="font-semibold"
+                    style={{ fontSize: "clamp(0.75rem, 2vmin, 0.875rem)" }}
+                  >
+                    DSU Admissions Bot
+                  </h3>
+                  <p
+                    className="opacity-70"
+                    style={{ fontSize: "clamp(0.625rem, 1.5vmin, 0.75rem)" }}
+                  >
+                    Powered by AI-First
+                  </p>
                 </div>
               </div>
-              <div className="flex" style={{ gap: "clamp(0.25rem, 1vmin, 0.5rem)" }}>
+              <div
+                className="flex"
+                style={{ gap: "clamp(0.25rem, 1vmin, 0.5rem)" }}
+              >
                 <button
                   onClick={clearConversation}
                   className="p-2 hover:bg-white/20 rounded-lg transition-colors"
@@ -414,7 +436,8 @@ export function RagChatWidget() {
                           : "bg-slate-700 border border-slate-600 text-white",
                     )}
                     style={{
-                      padding: "clamp(0.5rem, 1.5vmin, 0.75rem) clamp(0.75rem, 2vmin, 1rem)",
+                      padding:
+                        "clamp(0.5rem, 1.5vmin, 0.75rem) clamp(0.75rem, 2vmin, 1rem)",
                     }}
                   >
                     <p className="text-sm leading-relaxed whitespace-pre-wrap">
@@ -510,7 +533,10 @@ export function RagChatWidget() {
                 padding: "clamp(0.75rem, 2vmin, 1rem)",
               }}
             >
-              <div className="flex" style={{ gap: "clamp(0.25rem, 1vmin, 0.5rem)" }}>
+              <div
+                className="flex"
+                style={{ gap: "clamp(0.25rem, 1vmin, 0.5rem)" }}
+              >
                 <Input
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
@@ -537,10 +563,21 @@ export function RagChatWidget() {
                     padding: "clamp(0.25rem, 1vmin, 0.5rem)",
                   }}
                 >
-                  <Send style={{ width: "clamp(0.875rem, 2.5vmin, 1rem)", height: "clamp(0.875rem, 2.5vmin, 1rem)" }} />
+                  <Send
+                    style={{
+                      width: "clamp(0.875rem, 2.5vmin, 1rem)",
+                      height: "clamp(0.875rem, 2.5vmin, 1rem)",
+                    }}
+                  />
                 </Button>
               </div>
-              <p className="opacity-50" style={{ fontSize: "clamp(0.625rem, 1.5vmin, 0.75rem)", marginTop: "clamp(0.25rem, 1vmin, 0.5rem)" }}>
+              <p
+                className="opacity-50"
+                style={{
+                  fontSize: "clamp(0.625rem, 1.5vmin, 0.75rem)",
+                  marginTop: "clamp(0.25rem, 1vmin, 0.5rem)",
+                }}
+              >
                 💡 Ask about programs, fees, admissions, facilities, and more!
               </p>
             </form>

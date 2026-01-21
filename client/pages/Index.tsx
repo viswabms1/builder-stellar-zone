@@ -666,12 +666,18 @@ export default function Index() {
                 size="lg"
                 className="bg-white hover:bg-white/90 text-orange-600 hover:text-orange-700 font-bold font-display transition-all duration-300 group shadow-xl hover:shadow-2xl hover:-translate-y-1 w-full sm:w-auto"
                 style={{
-                  padding: 'clamp(0.75rem, 2vw, 1rem) clamp(1.5rem, 4vw, 2rem)',
-                  fontSize: 'clamp(0.875rem, 2vw, 1rem)',
+                  padding: "clamp(0.75rem, 2vw, 1rem) clamp(1.5rem, 4vw, 2rem)",
+                  fontSize: "clamp(0.875rem, 2vw, 1rem)",
                 }}
               >
                 Apply Today
-                <ArrowRight style={{ width: 'clamp(1rem, 2vw, 1.25rem)', height: 'clamp(1rem, 2vw, 1.25rem)' }} className="ml-2 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight
+                  style={{
+                    width: "clamp(1rem, 2vw, 1.25rem)",
+                    height: "clamp(1rem, 2vw, 1.25rem)",
+                  }}
+                  className="ml-2 group-hover:translate-x-1 transition-transform"
+                />
               </Button>
             </a>
 
@@ -686,8 +692,9 @@ export default function Index() {
                   variant="outline"
                   className="bg-transparent hover:bg-white/10 text-white border border-white/70 font-medium font-display transition-all duration-300 w-full sm:w-auto"
                   style={{
-                    padding: 'clamp(0.5rem, 1.5vw, 0.75rem) clamp(1.25rem, 3vw, 1.5rem)',
-                    fontSize: 'clamp(0.8125rem, 1.8vw, 0.875rem)',
+                    padding:
+                      "clamp(0.5rem, 1.5vw, 0.75rem) clamp(1.25rem, 3vw, 1.5rem)",
+                    fontSize: "clamp(0.8125rem, 1.8vw, 0.875rem)",
                   }}
                 >
                   Virtual Tour
@@ -719,12 +726,18 @@ export default function Index() {
               size="lg"
               className="bg-white hover:bg-white/90 text-orange-600 hover:text-orange-700 font-bold font-display transition-all duration-300 group shadow-xl hover:shadow-2xl hover:-translate-y-1 w-full sm:w-auto"
               style={{
-                padding: 'clamp(0.75rem, 2vw, 1rem) clamp(1.5rem, 4vw, 2rem)',
-                fontSize: 'clamp(0.875rem, 2vw, 1rem)',
+                padding: "clamp(0.75rem, 2vw, 1rem) clamp(1.5rem, 4vw, 2rem)",
+                fontSize: "clamp(0.875rem, 2vw, 1rem)",
               }}
             >
               Apply Today
-              <ArrowRight style={{ width: 'clamp(1rem, 2vw, 1.25rem)', height: 'clamp(1rem, 2vw, 1.25rem)' }} className="ml-2 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight
+                style={{
+                  width: "clamp(1rem, 2vw, 1.25rem)",
+                  height: "clamp(1rem, 2vw, 1.25rem)",
+                }}
+                className="ml-2 group-hover:translate-x-1 transition-transform"
+              />
             </Button>
           </a>
 
@@ -738,8 +751,9 @@ export default function Index() {
               variant="outline"
               className="bg-transparent hover:bg-white/10 text-foreground border border-border hover:border-brand-orange font-medium font-display transition-all duration-300 w-full sm:w-auto"
               style={{
-                padding: 'clamp(0.5rem, 1.5vw, 0.75rem) clamp(1.25rem, 3vw, 1.5rem)',
-                fontSize: 'clamp(0.8125rem, 1.8vw, 0.875rem)',
+                padding:
+                  "clamp(0.5rem, 1.5vw, 0.75rem) clamp(1.25rem, 3vw, 1.5rem)",
+                fontSize: "clamp(0.8125rem, 1.8vw, 0.875rem)",
               }}
             >
               Virtual Tour

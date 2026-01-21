@@ -2,7 +2,13 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { schools } from "./Eligibility";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import {
   Bot,
@@ -66,24 +72,39 @@ export default function DeptCSE() {
             src="https://www.dsu.edu.in/images/Engineering/CSE-dept/abt-cse.JPG"
             alt="Department of Computer Science & Engineering"
             className="w-full h-auto object-cover"
-            style={{ aspectRatio: "21 / 9", maxHeight: "600px", minHeight: "300px", objectFit: "cover" }}
+            style={{
+              aspectRatio: "21 / 9",
+              maxHeight: "600px",
+              minHeight: "300px",
+              objectFit: "cover",
+            }}
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
         </div>
-        <div className="absolute inset-0 flex items-center" style={{ top: 0, bottom: 0 }}>
+        <div
+          className="absolute inset-0 flex items-center"
+          style={{ top: 0, bottom: 0 }}
+        >
           <div className="max-w-7xl mx-auto px-3 pb-20 md:pb-0 pt-6 md:pt-0">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-black/40 rounded-full border border-white/20 mb-4 backdrop-blur-sm">
               <Sparkles className="w-4 h-4 text-white" />
-              <span className="text-sm font-medium text-white font-display">Department of Computer Science & Engineering</span>
+              <span className="text-sm font-medium text-white font-display">
+                Department of Computer Science & Engineering
+              </span>
             </div>
-            <h1 className="headline-1 text-white leading-tight font-display">Computer Science Engineering for the AI Era</h1>
+            <h1 className="headline-1 text-white leading-tight font-display">
+              Computer Science Engineering for the AI Era
+            </h1>
             <p className="subheadline text-white/90 max-w-2xl mt-3 font-body">
               Learn core CS on NVIDIA DGX B200 supercomputing infrastructure
             </p>
             <div className="mt-6 flex flex-wrap gap-2">
               {specializations.map((s, i) => (
-                <span key={i} className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-white text-xs backdrop-blur">
+                <span
+                  key={i}
+                  className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-white text-xs backdrop-blur"
+                >
                   <s.icon className="w-3.5 h-3.5" /> {s.label}
                 </span>
               ))}
@@ -94,7 +115,9 @@ export default function DeptCSE() {
                 target="_blank"
                 rel="noreferrer"
               >
-                <Button className="bg-brand-gradient text-foreground">Apply Now <GraduationCap className="w-4 h-4 ml-2" /></Button>
+                <Button className="bg-brand-gradient text-foreground">
+                  Apply Now <GraduationCap className="w-4 h-4 ml-2" />
+                </Button>
               </a>
             </div>
           </div>
@@ -106,7 +129,10 @@ export default function DeptCSE() {
         <div className="max-w-6xl mx-auto">
           <div className="mb-8">
             <h2 className="headline-2 font-display mb-2">Programs Offered</h2>
-            <p className="text-foreground/80 font-body">Learn on NVIDIA infrastructure: DGX B200 supercomputers, Jetson edge devices, and GPU workstations</p>
+            <p className="text-foreground/80 font-body">
+              Learn on NVIDIA infrastructure: DGX B200 supercomputers, Jetson
+              edge devices, and GPU workstations
+            </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {/* B.Tech Programs */}
@@ -114,16 +140,34 @@ export default function DeptCSE() {
               <CardHeader>
                 <div className="flex items-center gap-2 mb-2">
                   <GraduationCap className="w-5 h-5 text-brand-magenta" />
-                  <Badge className="bg-brand-magenta/20 text-brand-magenta border-brand-magenta/30">Undergraduate</Badge>
+                  <Badge className="bg-brand-magenta/20 text-brand-magenta border-brand-magenta/30">
+                    Undergraduate
+                  </Badge>
                 </div>
-                <CardTitle className="font-display">B.Tech Computer Science & Engineering, School of Engineering, DSU</CardTitle>
-                <CardDescription className="font-body">4-Year Program</CardDescription>
+                <CardTitle className="font-display">
+                  B.Tech Computer Science & Engineering, School of Engineering,
+                  DSU
+                </CardTitle>
+                <CardDescription className="font-body">
+                  4-Year Program
+                </CardDescription>
               </CardHeader>
               <CardContent className="space-y-3">
-                <p className="text-sm text-foreground font-body">With specializations in (powered by NVIDIA infrastructure):</p>
+                <p className="text-sm text-foreground font-body">
+                  With specializations in (powered by NVIDIA infrastructure):
+                </p>
                 <div className="flex flex-wrap gap-2">
-                  {["AI & ML on CUDA", "GPU-accelerated Data Science", "Cyber Security AI", "Robotics & Autonomous Systems", "GPU Computing", "Networks & Edge AI"].map((spec, i) => (
-                    <Badge key={i} variant="secondary" className="text-xs">{spec}</Badge>
+                  {[
+                    "AI & ML on CUDA",
+                    "GPU-accelerated Data Science",
+                    "Cyber Security AI",
+                    "Robotics & Autonomous Systems",
+                    "GPU Computing",
+                    "Networks & Edge AI",
+                  ].map((spec, i) => (
+                    <Badge key={i} variant="secondary" className="text-xs">
+                      {spec}
+                    </Badge>
                   ))}
                 </div>
               </CardContent>
@@ -134,16 +178,32 @@ export default function DeptCSE() {
               <CardHeader>
                 <div className="flex items-center gap-2 mb-2">
                   <BookOpen className="w-5 h-5 text-brand-blue" />
-                  <Badge className="bg-brand-blue/20 text-brand-blue border-brand-blue/30">Postgraduate</Badge>
+                  <Badge className="bg-brand-blue/20 text-brand-blue border-brand-blue/30">
+                    Postgraduate
+                  </Badge>
                 </div>
-                <CardTitle className="font-display">M.Tech Computer Science & Engineering, School of Engineering, DSU</CardTitle>
-                <CardDescription className="font-body">2-Year Program</CardDescription>
+                <CardTitle className="font-display">
+                  M.Tech Computer Science & Engineering, School of Engineering,
+                  DSU
+                </CardTitle>
+                <CardDescription className="font-body">
+                  2-Year Program
+                </CardDescription>
               </CardHeader>
               <CardContent className="space-y-3">
-                <p className="text-sm text-foreground font-body">Advanced research on DGX B200 supercomputers with NVIDIA partnership</p>
+                <p className="text-sm text-foreground font-body">
+                  Advanced research on DGX B200 supercomputers with NVIDIA
+                  partnership
+                </p>
                 <div className="flex flex-wrap gap-2">
-                  {["GPU-Accelerated AI", "Large-Scale Research", "NVIDIA Partnership Projects"].map((spec, i) => (
-                    <Badge key={i} variant="secondary" className="text-xs">{spec}</Badge>
+                  {[
+                    "GPU-Accelerated AI",
+                    "Large-Scale Research",
+                    "NVIDIA Partnership Projects",
+                  ].map((spec, i) => (
+                    <Badge key={i} variant="secondary" className="text-xs">
+                      {spec}
+                    </Badge>
                   ))}
                 </div>
               </CardContent>
@@ -154,16 +214,32 @@ export default function DeptCSE() {
               <CardHeader>
                 <div className="flex items-center gap-2 mb-2">
                   <Brain className="w-5 h-5 text-brand-magenta" />
-                  <Badge className="bg-brand-magenta/20 text-brand-magenta border-brand-magenta/30">Postgraduate</Badge>
+                  <Badge className="bg-brand-magenta/20 text-brand-magenta border-brand-magenta/30">
+                    Postgraduate
+                  </Badge>
                 </div>
-                <CardTitle className="font-display">M.Tech CSE (Artificial Intelligence and Machine Learning), School of Engineering, DSU</CardTitle>
-                <CardDescription className="font-body">2-Year Program</CardDescription>
+                <CardTitle className="font-display">
+                  M.Tech CSE (Artificial Intelligence and Machine Learning),
+                  School of Engineering, DSU
+                </CardTitle>
+                <CardDescription className="font-body">
+                  2-Year Program
+                </CardDescription>
               </CardHeader>
               <CardContent className="space-y-3">
-                <p className="text-sm text-foreground font-body">Specialization in AI and ML with GPU-accelerated research projects</p>
+                <p className="text-sm text-foreground font-body">
+                  Specialization in AI and ML with GPU-accelerated research
+                  projects
+                </p>
                 <div className="flex flex-wrap gap-2">
-                  {["Deep Learning", "ML Pipelines", "NLP & Computer Vision"].map((spec, i) => (
-                    <Badge key={i} variant="secondary" className="text-xs">{spec}</Badge>
+                  {[
+                    "Deep Learning",
+                    "ML Pipelines",
+                    "NLP & Computer Vision",
+                  ].map((spec, i) => (
+                    <Badge key={i} variant="secondary" className="text-xs">
+                      {spec}
+                    </Badge>
                   ))}
                 </div>
               </CardContent>
@@ -172,7 +248,10 @@ export default function DeptCSE() {
             {/* Quick Info */}
             <Card className="border border-border/50 bg-card/50 backdrop-blur-sm">
               <CardHeader>
-                <CardTitle className="text-lg font-display">Why Computer Science & Engineering at DSU, School of Engineering?</CardTitle>
+                <CardTitle className="text-lg font-display">
+                  Why Computer Science & Engineering at DSU, School of
+                  Engineering?
+                </CardTitle>
               </CardHeader>
               <CardContent className="space-y-2 text-sm font-body">
                 <div className="flex items-center gap-2">
@@ -199,16 +278,35 @@ export default function DeptCSE() {
           <div className="lg:col-span-2 space-y-3">
             <h2 className="headline-3 font-display">Overview</h2>
             <p className="text-foreground leading-relaxed font-body">
-              Computer Science & Engineering at School of Engineering, DSU offers a comprehensive journey in computing—from undergraduate foundations to postgraduate research. The B.Tech program is built on algorithms, programming, systems, databases, networks, and software engineering, with hands-on experience using NVIDIA DGX B200 infrastructure and exposure to AI, machine learning, data science, and high-performance computing. The M.Tech programs (Core CSE and AI & ML specialization) provide advanced research opportunities in cutting-edge systems, GPU-accelerated AI, and industry-scale applications. Together, these pathways prepare students for software engineering roles, advanced AI applications, research leadership, and entrepreneurship in the technology sector.
+              Computer Science & Engineering at School of Engineering, DSU
+              offers a comprehensive journey in computing—from undergraduate
+              foundations to postgraduate research. The B.Tech program is built
+              on algorithms, programming, systems, databases, networks, and
+              software engineering, with hands-on experience using NVIDIA DGX
+              B200 infrastructure and exposure to AI, machine learning, data
+              science, and high-performance computing. The M.Tech programs (Core
+              CSE and AI & ML specialization) provide advanced research
+              opportunities in cutting-edge systems, GPU-accelerated AI, and
+              industry-scale applications. Together, these pathways prepare
+              students for software engineering roles, advanced AI applications,
+              research leadership, and entrepreneurship in the technology
+              sector.
             </p>
             <Card className="border border-border/50 bg-card/50 backdrop-blur-sm">
               <CardHeader className="pb-2">
-                <CardTitle className="text-lg font-display">Curriculum Highlights</CardTitle>
-                <CardDescription className="font-body">Built on NVIDIA infrastructure and industry partnerships</CardDescription>
+                <CardTitle className="text-lg font-display">
+                  Curriculum Highlights
+                </CardTitle>
+                <CardDescription className="font-body">
+                  Built on NVIDIA infrastructure and industry partnerships
+                </CardDescription>
               </CardHeader>
               <CardContent className="grid sm:grid-cols-2 gap-3 pt-0">
                 {highlights.map((h, idx) => (
-                  <div key={idx} className="flex items-start gap-2 text-sm text-foreground">
+                  <div
+                    key={idx}
+                    className="flex items-start gap-2 text-sm text-foreground"
+                  >
                     <CheckCircle2 className="w-4 h-4 text-brand-magenta mt-0.5" />
                     <span>{h}</span>
                   </div>
@@ -219,16 +317,31 @@ export default function DeptCSE() {
           <div>
             <Card className="overflow-hidden border border-border/50 bg-card/50">
               <div className="relative h-40">
-                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1200&auto=format&fit=crop" alt="CSE Labs" className="w-full h-full object-cover" />
+                <img
+                  src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1200&auto=format&fit=crop"
+                  alt="CSE Labs"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <CardHeader>
                 <CardTitle className="font-display">Fast Facts</CardTitle>
-                <CardDescription className="font-body">NVIDIA-powered advantage at CSE DSU</CardDescription>
+                <CardDescription className="font-body">
+                  NVIDIA-powered advantage at CSE DSU
+                </CardDescription>
               </CardHeader>
               <CardContent className="grid gap-2 text-sm font-body">
-                <div className="flex items-center justify-between"><span>Salary Premium</span><span className="font-medium">+20-40% (GPU skills)</span></div>
-                <div className="flex items-center justify-between"><span>Infrastructure</span><span className="font-medium">DGX B200 & Jetson</span></div>
-                <div className="flex items-center justify-between"><span>Global Practice</span><span className="font-medium">CUDA, PyTorch, TensorFlow</span></div>
+                <div className="flex items-center justify-between">
+                  <span>Salary Premium</span>
+                  <span className="font-medium">+20-40% (GPU skills)</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span>Infrastructure</span>
+                  <span className="font-medium">DGX B200 & Jetson</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span>Global Practice</span>
+                  <span className="font-medium">CUDA, PyTorch, TensorFlow</span>
+                </div>
               </CardContent>
             </Card>
           </div>
@@ -243,11 +356,17 @@ export default function DeptCSE() {
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/10 rounded-full border border-blue-500/20 mb-4">
               <Cpu className="w-5 h-5 text-blue-500" />
-              <span className="text-sm font-medium text-blue-500 font-display">Enterprise-Grade Infrastructure</span>
+              <span className="text-sm font-medium text-blue-500 font-display">
+                Enterprise-Grade Infrastructure
+              </span>
             </div>
-            <h2 className="text-5xl md:text-6xl font-bold mb-6">Enterprise-grade NVIDIA DGX B200–centric AI Architecture</h2>
+            <h2 className="text-5xl md:text-6xl font-bold mb-6">
+              Enterprise-grade NVIDIA DGX B200–centric AI Architecture
+            </h2>
             <p className="text-2xl text-foreground/70 max-w-4xl mx-auto leading-relaxed">
-              Computer Science & Engineering students at School of Engineering, DSU gain access to advanced AI infrastructure for cutting-edge research and learning.
+              Computer Science & Engineering students at School of Engineering,
+              DSU gain access to advanced AI infrastructure for cutting-edge
+              research and learning.
             </p>
           </div>
 
@@ -255,63 +374,116 @@ export default function DeptCSE() {
           <div className="relative overflow-hidden rounded-lg border-2 border-gradient-to-r from-gold-400 to-yellow-500/50 bg-gradient-to-r from-amber-50/50 to-yellow-50/50 dark:from-amber-950/30 dark:to-yellow-950/30 p-8 mb-14">
             <div className="absolute top-0 right-0 text-7xl opacity-10">👑</div>
             <div className="relative z-10">
-              <p className="text-lg font-bold text-amber-900 dark:text-amber-200 mb-2">🏆 Advanced Infrastructure Access</p>
+              <p className="text-lg font-bold text-amber-900 dark:text-amber-200 mb-2">
+                🏆 Advanced Infrastructure Access
+              </p>
               <p className="text-lg text-foreground/85 leading-relaxed font-semibold">
-                Computer Science & Engineering students at School of Engineering, DSU leverage NVIDIA DGX B200 infrastructure for advanced AI research, learning, and career development.
+                Computer Science & Engineering students at School of
+                Engineering, DSU leverage NVIDIA DGX B200 infrastructure for
+                advanced AI research, learning, and career development.
               </p>
             </div>
           </div>
 
           {/* The Complete Stack */}
           <div className="space-y-4 mb-16">
-            <p className="text-lg font-semibold text-foreground mb-6">The Complete NVIDIA AI Stack Computer Science & Engineering Students Master</p>
+            <p className="text-lg font-semibold text-foreground mb-6">
+              The Complete NVIDIA AI Stack Computer Science & Engineering
+              Students Master
+            </p>
 
             <div className="grid md:grid-cols-2 gap-6">
               {/* Hardware Layer */}
               <div className="bg-gradient-to-r from-green-500/10 to-emerald-500/10 p-6 rounded-lg border border-green-500/30">
-                <h4 className="text-xl font-bold text-green-500 mb-3">Layer 1: Hardware Foundation</h4>
+                <h4 className="text-xl font-bold text-green-500 mb-3">
+                  Layer 1: Hardware Foundation
+                </h4>
                 <p className="text-base text-foreground/80 leading-relaxed mb-3">
-                  Enterprise-grade NVIDIA GPU infrastructure for real-world AI projects
+                  Enterprise-grade NVIDIA GPU infrastructure for real-world AI
+                  projects
                 </p>
                 <ul className="space-y-2 text-base text-foreground/70">
-                  <li>✓ <span className="font-semibold">DGX B200</span> - Supercomputer for training massive models</li>
-                  <li>✓ <span className="font-semibold">Jetson Family</span> - Edge AI devices for deployment</li>
-                  <li>✓ <span className="font-semibold">GPU Workstations</span> - High-performance development</li>
-                  <li>✓ <span className="font-semibold">NVLink</span> - Ultra-fast GPU-to-GPU communication</li>
+                  <li>
+                    ✓ <span className="font-semibold">DGX B200</span> -
+                    Supercomputer for training massive models
+                  </li>
+                  <li>
+                    ✓ <span className="font-semibold">Jetson Family</span> -
+                    Edge AI devices for deployment
+                  </li>
+                  <li>
+                    ✓ <span className="font-semibold">GPU Workstations</span> -
+                    High-performance development
+                  </li>
+                  <li>
+                    ✓ <span className="font-semibold">NVLink</span> - Ultra-fast
+                    GPU-to-GPU communication
+                  </li>
                 </ul>
               </div>
 
               {/* CUDA Layer */}
               <div className="bg-gradient-to-r from-blue-500/10 to-cyan-500/10 p-6 rounded-lg border border-blue-500/30">
-                <h4 className="text-xl font-bold text-blue-500 mb-3">Layer 2: CUDA - Parallel Computing</h4>
+                <h4 className="text-xl font-bold text-blue-500 mb-3">
+                  Layer 2: CUDA - Parallel Computing
+                </h4>
                 <p className="text-base text-foreground/80 leading-relaxed mb-3">
-                  NVIDIA's core platform that enables massive parallel processing
+                  NVIDIA's core platform that enables massive parallel
+                  processing
                 </p>
                 <ul className="space-y-2 text-base text-foreground/70">
-                  <li>✓ <span className="font-semibold">CUDA Cores</span> - Thousands of processors working in parallel</li>
-                  <li>✓ <span className="font-semibold">cuDNN</span> - Optimized neural network operations</li>
-                  <li>✓ <span className="font-semibold">CUTLASS</span> - Fast matrix operations for deep learning</li>
-                  <li>✓ <span className="font-semibold">cuBLAS</span> - GPU-accelerated linear algebra</li>
+                  <li>
+                    ✓ <span className="font-semibold">CUDA Cores</span> -
+                    Thousands of processors working in parallel
+                  </li>
+                  <li>
+                    ✓ <span className="font-semibold">cuDNN</span> - Optimized
+                    neural network operations
+                  </li>
+                  <li>
+                    ✓ <span className="font-semibold">CUTLASS</span> - Fast
+                    matrix operations for deep learning
+                  </li>
+                  <li>
+                    ✓ <span className="font-semibold">cuBLAS</span> -
+                    GPU-accelerated linear algebra
+                  </li>
                 </ul>
               </div>
 
               {/* Framework Layer */}
               <div className="bg-gradient-to-r from-purple-500/10 to-violet-500/10 p-6 rounded-lg border border-purple-500/30">
-                <h4 className="text-xl font-bold text-purple-500 mb-3">Layer 3: AI Frameworks</h4>
+                <h4 className="text-xl font-bold text-purple-500 mb-3">
+                  Layer 3: AI Frameworks
+                </h4>
                 <p className="text-base text-foreground/80 leading-relaxed mb-3">
                   Industry-standard frameworks optimized for NVIDIA GPUs
                 </p>
                 <ul className="space-y-2 text-base text-foreground/70">
-                  <li>✓ <span className="font-semibold">PyTorch</span> - Deep learning research and production</li>
-                  <li>✓ <span className="font-semibold">TensorFlow</span> - Scalable machine learning</li>
-                  <li>✓ <span className="font-semibold">RAPIDS</span> - GPU-accelerated data science (50X faster)</li>
-                  <li>✓ <span className="font-semibold">TensorRT</span> - High-performance inference (10X faster)</li>
+                  <li>
+                    ✓ <span className="font-semibold">PyTorch</span> - Deep
+                    learning research and production
+                  </li>
+                  <li>
+                    ✓ <span className="font-semibold">TensorFlow</span> -
+                    Scalable machine learning
+                  </li>
+                  <li>
+                    ✓ <span className="font-semibold">RAPIDS</span> -
+                    GPU-accelerated data science (50X faster)
+                  </li>
+                  <li>
+                    ✓ <span className="font-semibold">TensorRT</span> -
+                    High-performance inference (10X faster)
+                  </li>
                 </ul>
               </div>
 
               {/* Applications Layer */}
               <div className="bg-gradient-to-r from-amber-500/10 to-orange-500/10 p-6 rounded-lg border border-orange-500/30">
-                <h4 className="text-xl font-bold text-orange-500 mb-3">Layer 4: AI Applications</h4>
+                <h4 className="text-xl font-bold text-orange-500 mb-3">
+                  Layer 4: AI Applications
+                </h4>
                 <p className="text-base text-foreground/80 leading-relaxed mb-3">
                   Build real-world AI solutions that matter
                 </p>
@@ -338,22 +510,37 @@ export default function DeptCSE() {
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="w-6 h-6 text-blue-500 flex-shrink-0 mt-0.5" />
                   <div>
-                    <p className="font-semibold text-foreground mb-1">Competitive Advantage in Placements</p>
-                    <p className="text-sm text-foreground/70">DGX B200 skills provide advantage in technical interviews and placement outcomes</p>
+                    <p className="font-semibold text-foreground mb-1">
+                      Competitive Advantage in Placements
+                    </p>
+                    <p className="text-sm text-foreground/70">
+                      DGX B200 skills provide advantage in technical interviews
+                      and placement outcomes
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="w-6 h-6 text-blue-500 flex-shrink-0 mt-0.5" />
                   <div>
-                    <p className="font-semibold text-foreground mb-1">Industry-Ready Skills</p>
-                    <p className="text-sm text-foreground/70">Technologies aligned with those used in leading global AI research organizations</p>
+                    <p className="font-semibold text-foreground mb-1">
+                      Industry-Ready Skills
+                    </p>
+                    <p className="text-sm text-foreground/70">
+                      Technologies aligned with those used in leading global AI
+                      research organizations
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="w-6 h-6 text-blue-500 flex-shrink-0 mt-0.5" />
                   <div>
-                    <p className="font-semibold text-foreground mb-1">Day-One Readiness</p>
-                    <p className="text-sm text-foreground/70">You're job-ready immediately—no need to learn new tools on the job</p>
+                    <p className="font-semibold text-foreground mb-1">
+                      Day-One Readiness
+                    </p>
+                    <p className="text-sm text-foreground/70">
+                      You're job-ready immediately—no need to learn new tools on
+                      the job
+                    </p>
                   </div>
                 </div>
               </CardContent>
@@ -370,22 +557,37 @@ export default function DeptCSE() {
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="w-6 h-6 text-purple-500 flex-shrink-0 mt-0.5" />
                   <div>
-                    <p className="font-semibold text-foreground mb-1">Industry Collaborations</p>
-                    <p className="text-sm text-foreground/70">Work on real problems with leading companies through research partnerships</p>
+                    <p className="font-semibold text-foreground mb-1">
+                      Industry Collaborations
+                    </p>
+                    <p className="text-sm text-foreground/70">
+                      Work on real problems with leading companies through
+                      research partnerships
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="w-6 h-6 text-purple-500 flex-shrink-0 mt-0.5" />
                   <div>
-                    <p className="font-semibold text-foreground mb-1">Publication Quality</p>
-                    <p className="text-sm text-foreground/70">Publish groundbreaking research in top-tier venues like NeurIPS, ICML</p>
+                    <p className="font-semibold text-foreground mb-1">
+                      Publication Quality
+                    </p>
+                    <p className="text-sm text-foreground/70">
+                      Publish groundbreaking research in top-tier venues like
+                      NeurIPS, ICML
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="w-6 h-6 text-purple-500 flex-shrink-0 mt-0.5" />
                   <div>
-                    <p className="font-semibold text-foreground mb-1">Venture Capital Ready</p>
-                    <p className="text-sm text-foreground/70">Launch AI startups with proven infrastructure and investor interest</p>
+                    <p className="font-semibold text-foreground mb-1">
+                      Venture Capital Ready
+                    </p>
+                    <p className="text-sm text-foreground/70">
+                      Launch AI startups with proven infrastructure and investor
+                      interest
+                    </p>
                   </div>
                 </div>
               </CardContent>
@@ -394,21 +596,28 @@ export default function DeptCSE() {
 
           {/* Real Capabilities */}
           <div className="bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-2xl p-8 border border-blue-500/30 mb-10">
-            <h3 className="text-2xl font-bold mb-4 text-foreground">What Computer Science & Engineering Students Can Do With This Infrastructure</h3>
+            <h3 className="text-2xl font-bold mb-4 text-foreground">
+              What Computer Science & Engineering Students Can Do With This
+              Infrastructure
+            </h3>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="space-y-3">
                 <div className="flex items-start gap-3">
                   <span className="text-2xl">🚀</span>
                   <div>
                     <p className="font-semibold">Train Large Language Models</p>
-                    <p className="text-sm text-foreground/70">Build GPT-scale models with billions of parameters</p>
+                    <p className="text-sm text-foreground/70">
+                      Build GPT-scale models with billions of parameters
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <span className="text-2xl">🎯</span>
                   <div>
                     <p className="font-semibold">Process Massive Datasets</p>
-                    <p className="text-sm text-foreground/70">Hours instead of weeks for data science pipelines</p>
+                    <p className="text-sm text-foreground/70">
+                      Hours instead of weeks for data science pipelines
+                    </p>
                   </div>
                 </div>
               </div>
@@ -417,14 +626,20 @@ export default function DeptCSE() {
                   <span className="text-2xl">🤖</span>
                   <div>
                     <p className="font-semibold">Deploy Production Systems</p>
-                    <p className="text-sm text-foreground/70">Real-world AI applications that scale to millions of users</p>
+                    <p className="text-sm text-foreground/70">
+                      Real-world AI applications that scale to millions of users
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <span className="text-2xl">🔬</span>
                   <div>
-                    <p className="font-semibold">Conduct Cutting-Edge Research</p>
-                    <p className="text-sm text-foreground/70">Push AI boundaries with industry partners</p>
+                    <p className="font-semibold">
+                      Conduct Cutting-Edge Research
+                    </p>
+                    <p className="text-sm text-foreground/70">
+                      Push AI boundaries with industry partners
+                    </p>
                   </div>
                 </div>
               </div>
@@ -433,7 +648,10 @@ export default function DeptCSE() {
 
           <div className="text-center">
             <Link to="/nvidia-ai-architecture">
-              <Button size="lg" className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 text-white">
+              <Button
+                size="lg"
+                className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 text-white"
+              >
                 Explore Full NVIDIA Architecture
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
@@ -456,7 +674,10 @@ export default function DeptCSE() {
           <div className="flex items-center justify-between mb-8">
             <h2 className="headline-3 font-display">Department Leadership</h2>
             <Link to="/academics/engineering/computer-science/faculty">
-              <Button variant="outline" className="border-brand-magenta/40 hover:bg-brand-magenta/10">
+              <Button
+                variant="outline"
+                className="border-brand-magenta/40 hover:bg-brand-magenta/10"
+              >
                 Explore full faculty list
               </Button>
             </Link>
@@ -468,12 +689,20 @@ export default function DeptCSE() {
                 <div className="group relative overflow-hidden rounded-lg border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-magenta/10 transition-all h-full cursor-pointer">
                   <div className="relative">
                     <div className="aspect-[1/1.3] w-full"></div>
-                    <img src="https://www.dsu.edu.in/images/Engineering/CSE-dept/faculty/Udaya.jpg" alt="Dr. Udaya Kumar Reddy K R" className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-105 transition-transform duration-500" />
+                    <img
+                      src="https://www.dsu.edu.in/images/Engineering/CSE-dept/faculty/Udaya.jpg"
+                      alt="Dr. Udaya Kumar Reddy K R"
+                      className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                    />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
                   </div>
                   <div className="absolute bottom-0 p-2 w-full">
-                    <div className="text-white text-xs opacity-80 line-clamp-1">Dean</div>
-                    <div className="text-white font-semibold text-xs font-display line-clamp-2">Dr. Udaya Kumar Reddy K R</div>
+                    <div className="text-white text-xs opacity-80 line-clamp-1">
+                      Dean
+                    </div>
+                    <div className="text-white font-semibold text-xs font-display line-clamp-2">
+                      Dr. Udaya Kumar Reddy K R
+                    </div>
                   </div>
                 </div>
               </Link>
@@ -485,12 +714,20 @@ export default function DeptCSE() {
                 <div className="group relative overflow-hidden rounded-lg border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-magenta/10 transition-all h-full cursor-pointer">
                   <div className="relative">
                     <div className="aspect-[1/1.3] w-full"></div>
-                    <img src="https://www.dsu.edu.in/images/Engineering/CSE-dept/faculty/Girisha_GS.jpg" alt="Dr. Girisha G S" className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-105 transition-transform duration-500" />
+                    <img
+                      src="https://www.dsu.edu.in/images/Engineering/CSE-dept/faculty/Girisha_GS.jpg"
+                      alt="Dr. Girisha G S"
+                      className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                    />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
                   </div>
                   <div className="absolute bottom-0 p-2 w-full">
-                    <div className="text-white text-xs opacity-80 line-clamp-1">Chairperson</div>
-                    <div className="text-white font-semibold text-xs font-display line-clamp-2">Dr. Girisha G S</div>
+                    <div className="text-white text-xs opacity-80 line-clamp-1">
+                      Chairperson
+                    </div>
+                    <div className="text-white font-semibold text-xs font-display line-clamp-2">
+                      Dr. Girisha G S
+                    </div>
                   </div>
                 </div>
               </Link>
@@ -502,12 +739,20 @@ export default function DeptCSE() {
                 <div className="group relative overflow-hidden rounded-lg border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-magenta/10 transition-all h-full cursor-pointer">
                   <div className="relative">
                     <div className="aspect-[1/1.3] w-full"></div>
-                    <img src="https://www.dsu.edu.in/images/Engineering/CSE-dept/faculty/DrBipin_1.jpg" alt="Dr. Bipin Kumar Rai" className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-105 transition-transform duration-500" />
+                    <img
+                      src="https://www.dsu.edu.in/images/Engineering/CSE-dept/faculty/DrBipin_1.jpg"
+                      alt="Dr. Bipin Kumar Rai"
+                      className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                    />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
                   </div>
                   <div className="absolute bottom-0 p-2 w-full">
-                    <div className="text-white text-xs opacity-80 line-clamp-1">Associate Chair</div>
-                    <div className="text-white font-semibold text-xs font-display line-clamp-2">Dr. Bipin Kumar Rai</div>
+                    <div className="text-white text-xs opacity-80 line-clamp-1">
+                      Associate Chair
+                    </div>
+                    <div className="text-white font-semibold text-xs font-display line-clamp-2">
+                      Dr. Bipin Kumar Rai
+                    </div>
                   </div>
                 </div>
               </Link>
@@ -519,12 +764,20 @@ export default function DeptCSE() {
                 <div className="group relative overflow-hidden rounded-lg border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-magenta/10 transition-all h-full cursor-pointer">
                   <div className="relative">
                     <div className="aspect-[1/1.3] w-full"></div>
-                    <img src="https://www.dsu.edu.in/images/Engineering/CSE-dept/faculty/Revathi_V.jpg" alt="Dr. Revathi V" className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-105 transition-transform duration-500" />
+                    <img
+                      src="https://www.dsu.edu.in/images/Engineering/CSE-dept/faculty/Revathi_V.jpg"
+                      alt="Dr. Revathi V"
+                      className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                    />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
                   </div>
                   <div className="absolute bottom-0 p-2 w-full">
-                    <div className="text-white text-xs opacity-80 line-clamp-1">Associate Chair</div>
-                    <div className="text-white font-semibold text-xs font-display line-clamp-2">Dr. Revathi V</div>
+                    <div className="text-white text-xs opacity-80 line-clamp-1">
+                      Associate Chair
+                    </div>
+                    <div className="text-white font-semibold text-xs font-display line-clamp-2">
+                      Dr. Revathi V
+                    </div>
                   </div>
                 </div>
               </Link>
@@ -537,11 +790,16 @@ export default function DeptCSE() {
       <section className="px-3 py-8">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-5 items-start">
           <div>
-            <h2 className="headline-3 mb-4 font-display">Career Prospects (with NVIDIA Skills)</h2>
+            <h2 className="headline-3 mb-4 font-display">
+              Career Prospects (with NVIDIA Skills)
+            </h2>
             <Card className="border border-border/50 bg-card/50">
               <CardContent className="p-3 grid gap-3">
                 {careers.map((c, i) => (
-                  <div key={i} className="flex items-start gap-2 text-sm text-foreground font-body">
+                  <div
+                    key={i}
+                    className="flex items-start gap-2 text-sm text-foreground font-body"
+                  >
                     <ChevronRight className="w-3 h-3 text-brand-magenta mt-1" />
                     <span>{c}</span>
                   </div>
@@ -553,15 +811,35 @@ export default function DeptCSE() {
             <h2 className="headline-3 mb-4 font-display">Get in Touch</h2>
             <Card className="overflow-hidden border border-border/50 bg-card/50">
               <div className="relative h-40">
-                <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1200&auto=format&fit=crop" alt="Contact CSE" className="w-full h-full object-cover" />
+                <img
+                  src="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1200&auto=format&fit=crop"
+                  alt="Contact CSE"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <CardHeader>
-                <CardTitle className="font-display">Learn About NVIDIA Infrastructure</CardTitle>
-                <CardDescription className="font-body">Department Leadership — Questions about GPU labs, DGX access, and research</CardDescription>
+                <CardTitle className="font-display">
+                  Learn About NVIDIA Infrastructure
+                </CardTitle>
+                <CardDescription className="font-body">
+                  Department Leadership — Questions about GPU labs, DGX access,
+                  and research
+                </CardDescription>
               </CardHeader>
               <CardContent className="grid gap-2 text-sm font-body">
-                <div className="flex items-center justify-between"><span>Email</span><a className="font-medium hover:underline" href="mailto:cse-dept@dsu.edu.in">cse-dept@dsu.edu.in</a></div>
-                <div className="flex items-center justify-between"><span>Phone</span><span className="font-medium">080-49092935</span></div>
+                <div className="flex items-center justify-between">
+                  <span>Email</span>
+                  <a
+                    className="font-medium hover:underline"
+                    href="mailto:cse-dept@dsu.edu.in"
+                  >
+                    cse-dept@dsu.edu.in
+                  </a>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span>Phone</span>
+                  <span className="font-medium">080-49092935</span>
+                </div>
               </CardContent>
             </Card>
           </div>
@@ -579,7 +857,8 @@ export default function DeptCSE() {
               </span>
             </h2>
             <p className="text-foreground/80 font-body max-w-2xl mx-auto">
-              Explore NVIDIA AI infrastructure, research partnerships, placement outcomes, and centers of excellence powered by GPU computing
+              Explore NVIDIA AI infrastructure, research partnerships, placement
+              outcomes, and centers of excellence powered by GPU computing
             </p>
           </div>
 
@@ -622,7 +901,8 @@ export default function DeptCSE() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-foreground/80 font-body">
-                    GPU-accelerated research on NVIDIA DGX B200 within School of Engineering, DSU
+                    GPU-accelerated research on NVIDIA DGX B200 within School of
+                    Engineering, DSU
                   </p>
                 </CardContent>
               </Card>
@@ -644,7 +924,8 @@ export default function DeptCSE() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-foreground/80 font-body">
-                    Strong placement outcomes driven by DGX B200–based AI and GPU computing skills
+                    Strong placement outcomes driven by DGX B200–based AI and
+                    GPU computing skills
                   </p>
                 </CardContent>
               </Card>
@@ -668,7 +949,8 @@ export default function DeptCSE() {
                 </CardHeader>
                 <CardContent className="flex flex-col gap-3">
                   <p className="text-sm text-foreground/80 font-body">
-                    Join School of Engineering, DSU—learn on NVIDIA DGX B200 and become job-ready with strong placement prospects
+                    Join School of Engineering, DSU—learn on NVIDIA DGX B200 and
+                    become job-ready with strong placement prospects
                   </p>
                   <span className="inline-flex items-center gap-2 text-xs font-medium text-brand-magenta group-hover:text-brand-magenta/80 transition-colors">
                     Apply Now
@@ -685,15 +967,23 @@ export default function DeptCSE() {
       <section className="px-3 py-8">
         <div className="max-w-4xl mx-auto text-center">
           <div className="rounded-3xl p-5 border border-brand-magenta/20 bg-brand-magenta/5">
-            <h3 className="headline-3 mb-3 font-display">Join School of Engineering, DSU</h3>
-            <p className="text-foreground mb-6 font-body">Explore Computer Science & Engineering programs, discover NVIDIA-powered research, and launch your career.</p>
+            <h3 className="headline-3 mb-3 font-display">
+              Join School of Engineering, DSU
+            </h3>
+            <p className="text-foreground mb-6 font-body">
+              Explore Computer Science & Engineering programs, discover
+              NVIDIA-powered research, and launch your career.
+            </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a
                 href="https://admissions.dsu.edu.in/"
                 target="_blank"
                 rel="noreferrer"
               >
-                <Button className="bg-brand-gradient text-foreground">Apply Now<GraduationCap className="w-4 h-4 ml-2" /></Button>
+                <Button className="bg-brand-gradient text-foreground">
+                  Apply Now
+                  <GraduationCap className="w-4 h-4 ml-2" />
+                </Button>
               </a>
             </div>
           </div>
@@ -704,17 +994,26 @@ export default function DeptCSE() {
 }
 
 function EligibilityAndFees() {
-  const engineeringSchool = schools.find(s => s.name === "School of Engineering");
-  const csePrograms = engineeringSchool?.categories
-    .flatMap(cat => cat.programs)
-    .filter(p => {
-      const name = p.name.toLowerCase();
-      // Only show Core B.Tech CSE and M.Tech CSE (exclude specialization variants)
-      const isCoreCSE = name === "b.tech computer science & engineering";
-      const isMTechCSE = name === "m.tech computer science & engineering" || name === "m.tech - computer science & engineering";
-      const isMTechCSEAIML = name === "m.tech computer science and engineering (artificial intelligence and machine learning)" || name === "m.tech - computer science and engineering (artificial intelligence and machine learning)";
-      return isCoreCSE || isMTechCSE || isMTechCSEAIML;
-    }) || [];
+  const engineeringSchool = schools.find(
+    (s) => s.name === "School of Engineering",
+  );
+  const csePrograms =
+    engineeringSchool?.categories
+      .flatMap((cat) => cat.programs)
+      .filter((p) => {
+        const name = p.name.toLowerCase();
+        // Only show Core B.Tech CSE and M.Tech CSE (exclude specialization variants)
+        const isCoreCSE = name === "b.tech computer science & engineering";
+        const isMTechCSE =
+          name === "m.tech computer science & engineering" ||
+          name === "m.tech - computer science & engineering";
+        const isMTechCSEAIML =
+          name ===
+            "m.tech computer science and engineering (artificial intelligence and machine learning)" ||
+          name ===
+            "m.tech - computer science and engineering (artificial intelligence and machine learning)";
+        return isCoreCSE || isMTechCSE || isMTechCSEAIML;
+      }) || [];
 
   const [expandedProgram, setExpandedProgram] = useState<string | null>(null);
 
@@ -724,7 +1023,9 @@ function EligibilityAndFees() {
         <div className="mb-12">
           <h2 className="headline-2 font-display mb-3">Eligibility & Fees</h2>
           <p className="text-foreground/80 font-body max-w-3xl">
-            B.Tech Computer Science & Engineering at DSU, School of Engineering follows admission pathways based on entrance exams (CET, JEE Mains, Uniguage, Comed-K) and merit-based direct admission.
+            B.Tech Computer Science & Engineering at DSU, School of Engineering
+            follows admission pathways based on entrance exams (CET, JEE Mains,
+            Uniguage, Comed-K) and merit-based direct admission.
           </p>
         </div>
 
@@ -733,12 +1034,18 @@ function EligibilityAndFees() {
             <Card
               key={idx}
               className="border border-border/50 bg-card/50 backdrop-blur-sm cursor-pointer hover:shadow-lg transition-all"
-              onClick={() => setExpandedProgram(expandedProgram === program.name ? null : program.name)}
+              onClick={() =>
+                setExpandedProgram(
+                  expandedProgram === program.name ? null : program.name,
+                )
+              }
             >
               <CardHeader className="pb-3">
                 <div className="flex items-start justify-between">
                   <div className="flex-1">
-                    <CardTitle className="text-lg font-display">{program.name}</CardTitle>
+                    <CardTitle className="text-lg font-display">
+                      {program.name}
+                    </CardTitle>
                     <CardDescription className="font-body mt-1">
                       {program.duration && <span>{program.duration} • </span>}
                       {program.eligibility.substring(0, 100)}...
@@ -763,16 +1070,20 @@ function EligibilityAndFees() {
                     <p className="text-sm text-foreground/80 font-body leading-relaxed">
                       {program.eligibility}
                     </p>
-                    {program.eligibilityPoints && program.eligibilityPoints.length > 0 && (
-                      <ul className="mt-2 space-y-1">
-                        {program.eligibilityPoints.map((point, pidx) => (
-                          <li key={pidx} className="text-sm text-foreground/80 flex items-start gap-2">
-                            <span className="text-brand-magenta">•</span>
-                            {point}
-                          </li>
-                        ))}
-                      </ul>
-                    )}
+                    {program.eligibilityPoints &&
+                      program.eligibilityPoints.length > 0 && (
+                        <ul className="mt-2 space-y-1">
+                          {program.eligibilityPoints.map((point, pidx) => (
+                            <li
+                              key={pidx}
+                              className="text-sm text-foreground/80 flex items-start gap-2"
+                            >
+                              <span className="text-brand-magenta">•</span>
+                              {point}
+                            </li>
+                          ))}
+                        </ul>
+                      )}
                   </div>
 
                   {/* Fee Structure */}
@@ -787,32 +1098,46 @@ function EligibilityAndFees() {
                           key={fidx}
                           className="flex justify-between items-center p-3 rounded-lg bg-green-500/10 border border-green-500/20"
                         >
-                          <span className="text-sm font-medium text-foreground">{fee.label}</span>
-                          <span className="text-base font-semibold text-green-600">{fee.amount}</span>
+                          <span className="text-sm font-medium text-foreground">
+                            {fee.label}
+                          </span>
+                          <span className="text-base font-semibold text-green-600">
+                            {fee.amount}
+                          </span>
                         </div>
                       ))}
                     </div>
                   </div>
 
                   {/* Specializations */}
-                  {program.specializations && program.specializations.length > 0 && (
-                    <div>
-                      <h4 className="font-semibold text-foreground mb-2">Specializations Available</h4>
-                      <div className="flex flex-wrap gap-2">
-                        {program.specializations.map((spec, sidx) => (
-                          <Badge key={sidx} variant="secondary" className="text-xs">
-                            {spec}
-                          </Badge>
-                        ))}
+                  {program.specializations &&
+                    program.specializations.length > 0 && (
+                      <div>
+                        <h4 className="font-semibold text-foreground mb-2">
+                          Specializations Available
+                        </h4>
+                        <div className="flex flex-wrap gap-2">
+                          {program.specializations.map((spec, sidx) => (
+                            <Badge
+                              key={sidx}
+                              variant="secondary"
+                              className="text-xs"
+                            >
+                              {spec}
+                            </Badge>
+                          ))}
+                        </div>
                       </div>
-                    </div>
-                  )}
+                    )}
 
                   {/* Scholarships */}
                   {program.scholarships && (
                     <div className="p-3 bg-blue-500/10 border border-blue-500/20 rounded-lg">
                       <p className="text-sm text-foreground/80 font-body">
-                        <span className="font-semibold text-blue-600">Scholarships:</span> {program.scholarships}
+                        <span className="font-semibold text-blue-600">
+                          Scholarships:
+                        </span>{" "}
+                        {program.scholarships}
                       </p>
                     </div>
                   )}
@@ -821,7 +1146,10 @@ function EligibilityAndFees() {
                   {program.notes && program.notes.length > 0 && (
                     <div className="space-y-1">
                       {program.notes.map((note, nidx) => (
-                        <p key={nidx} className="text-xs text-foreground/60 font-body">
+                        <p
+                          key={nidx}
+                          className="text-xs text-foreground/60 font-body"
+                        >
                           ℹ️ {note}
                         </p>
                       ))}
@@ -830,7 +1158,11 @@ function EligibilityAndFees() {
 
                   {/* CTA */}
                   <div className="pt-4 border-t border-border/20">
-                    <a href="https://admissions.dsu.edu.in/" target="_blank" rel="noreferrer">
+                    <a
+                      href="https://admissions.dsu.edu.in/"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
                       <Button className="w-full bg-brand-gradient text-foreground">
                         Apply Now <ArrowRight className="w-4 h-4 ml-2" />
                       </Button>
@@ -879,12 +1211,36 @@ function LabsFacilitiesCarousel() {
   const [currentLabIndex, setCurrentLabIndex] = useState(0);
 
   const labs: LabItem[] = [
-    { title: "Programming & Systems Labs", image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop" },
-    { title: "AI & Data Science Lab", image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop" },
-    { title: "Networks & IoT Lab", image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop" },
-    { title: "Cyber Security Lab", image: "https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1200&auto=format&fit=crop" },
-    { title: "Cloud & Web Tech Studio", image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop" },
-    { title: "Innovation & Projects Space", image: "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1200&auto=format&fit=crop" },
+    {
+      title: "Programming & Systems Labs",
+      image:
+        "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop",
+    },
+    {
+      title: "AI & Data Science Lab",
+      image:
+        "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop",
+    },
+    {
+      title: "Networks & IoT Lab",
+      image:
+        "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop",
+    },
+    {
+      title: "Cyber Security Lab",
+      image:
+        "https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1200&auto=format&fit=crop",
+    },
+    {
+      title: "Cloud & Web Tech Studio",
+      image:
+        "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop",
+    },
+    {
+      title: "Innovation & Projects Space",
+      image:
+        "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1200&auto=format&fit=crop",
+    },
   ];
 
   useEffect(() => {
@@ -903,7 +1259,11 @@ function LabsFacilitiesCarousel() {
         <div className="flex items-center justify-between">
           <div>
             <h2 className="headline-3 mb-2 font-display">Labs & Facilities</h2>
-            <p className="text-sm text-foreground/80 font-body">DSU, School of Engineering hosts multiple Computer Science laboratories. All AI-intensive workloads are centrally powered by NVIDIA DGX B200 infrastructure.</p>
+            <p className="text-sm text-foreground/80 font-body">
+              DSU, School of Engineering hosts multiple Computer Science
+              laboratories. All AI-intensive workloads are centrally powered by
+              NVIDIA DGX B200 infrastructure.
+            </p>
           </div>
           <div className="text-xs text-foreground/60 font-body">
             {currentLabIndex + 1} of {labs.length}
@@ -919,7 +1279,9 @@ function LabsFacilitiesCarousel() {
             />
           </div>
           <CardContent className="p-3">
-            <CardTitle className="font-display text-2xl text-foreground">{currentLab.title}</CardTitle>
+            <CardTitle className="font-display text-2xl text-foreground">
+              {currentLab.title}
+            </CardTitle>
           </CardContent>
         </Card>
 
@@ -942,7 +1304,11 @@ function LabsFacilitiesCarousel() {
               variant="outline"
               size="sm"
               className="border-border/40"
-              onClick={() => setCurrentLabIndex((prev) => (prev - 1 + labs.length) % labs.length)}
+              onClick={() =>
+                setCurrentLabIndex(
+                  (prev) => (prev - 1 + labs.length) % labs.length,
+                )
+              }
             >
               ← Previous
             </Button>
@@ -950,7 +1316,9 @@ function LabsFacilitiesCarousel() {
               variant="outline"
               size="sm"
               className="border-border/40"
-              onClick={() => setCurrentLabIndex((prev) => (prev + 1) % labs.length)}
+              onClick={() =>
+                setCurrentLabIndex((prev) => (prev + 1) % labs.length)
+              }
             >
               Next →
             </Button>
@@ -989,8 +1357,12 @@ function AccreditationDocuments() {
     <section className="px-3 py-12 bg-background/50">
       <div className="mx-auto max-w-6xl">
         <div className="mb-8">
-          <h3 className="text-sm font-semibold text-foreground/60 uppercase tracking-wider mb-2">Accreditation Documents</h3>
-          <p className="text-xs text-foreground/50 font-body">Program documentation and learning outcomes</p>
+          <h3 className="text-sm font-semibold text-foreground/60 uppercase tracking-wider mb-2">
+            Accreditation Documents
+          </h3>
+          <p className="text-xs text-foreground/50 font-body">
+            Program documentation and learning outcomes
+          </p>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
           {documents.map((doc, idx) => (
@@ -1006,8 +1378,12 @@ function AccreditationDocuments() {
                   <FileText className="h-5 w-5" />
                 </div>
                 <div className="min-w-0 flex-1">
-                  <div className="text-xs font-semibold text-brand-magenta">{doc.abbr}</div>
-                  <p className="text-xs text-foreground/70 line-clamp-2">{doc.title}</p>
+                  <div className="text-xs font-semibold text-brand-magenta">
+                    {doc.abbr}
+                  </div>
+                  <p className="text-xs text-foreground/70 line-clamp-2">
+                    {doc.title}
+                  </p>
                 </div>
               </div>
             </a>
@@ -1027,7 +1403,8 @@ function NoticeBoard() {
       date: "Feb 12, 2025",
       description:
         "Interdisciplinary hackathon hosted by CSE with tracks in AI for Health, Sustainable Tech, and FinTech innovation.",
-      image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=300&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=300&fit=crop",
       link: "https://www.dsu.edu.in/images/Engineering/CSE-dept/notices/HackDSU-2025.pdf",
     },
     {
@@ -1046,7 +1423,8 @@ function NoticeBoard() {
       date: "Jan 24, 2025",
       description:
         "Guest session by Dr. Leela Narayanan, Principal Scientist at Novus Labs. Venue: Innovation Theatre, 10:30 AM.",
-      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=300&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=300&fit=crop",
       link: "https://www.dsu.edu.in/images/Engineering/CSE-dept/notices/Responsible-GenAI-Guest-Lecture.pdf",
     },
     {
@@ -1056,7 +1434,8 @@ function NoticeBoard() {
       date: "Jan 18, 2025",
       description:
         "The department's comprehensive annual report showcasing research, placements, and student achievements has been published.",
-      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=300&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=300&fit=crop",
       link: "https://www.dsu.edu.in/images/Engineering/CSE-dept/notices/Annual-Report-2024-25.pdf",
     },
     {
@@ -1066,7 +1445,8 @@ function NoticeBoard() {
       date: "Feb 5, 2025",
       description:
         "Join Prof. Rajesh Kumar from IISc Bangalore for an in-depth discussion on quantum computing advances.",
-      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&h=300&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&h=300&fit=crop",
     },
     {
       id: "notice-6",
@@ -1075,7 +1455,8 @@ function NoticeBoard() {
       date: "Jan 25, 2025",
       description:
         "Three research papers from CSE faculty have been accepted at IEEE and ACM international conferences.",
-      image: "https://images.unsplash.com/photo-1516321318423-f06f70a504f9?w=600&h=300&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1516321318423-f06f70a504f9?w=600&h=300&fit=crop",
       link: "https://www.dsu.edu.in/images/Engineering/CSE-dept/notices/Faculty-Publications-2025.pdf",
     },
     {
@@ -1094,7 +1475,8 @@ function NoticeBoard() {
       date: "Feb 8, 2025",
       description:
         "Hands-on workshop by AWS certified architects covering microservices and containerization strategies.",
-      image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=300&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=300&fit=crop",
     },
     {
       id: "notice-9",
@@ -1103,7 +1485,8 @@ function NoticeBoard() {
       date: "Jan 15, 2025",
       description:
         "The department has secured 'A' grade in the latest NAAC assessment, reflecting excellence in academic and research standards.",
-      image: "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=600&h=300&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=600&h=300&fit=crop",
       link: "https://www.dsu.edu.in/images/Engineering/CSE-dept/notices/NAAC-Accreditation-2025.pdf",
     },
   ];
@@ -1160,18 +1543,32 @@ function NoticeBoard() {
     return () => clearInterval(interval);
   }, [news.length]);
 
-  const renderCarousel = (title: string, items: NoticeItem[], color: string, currentIndex: number, setCurrentIndex: (idx: number) => void) => {
+  const renderCarousel = (
+    title: string,
+    items: NoticeItem[],
+    color: string,
+    currentIndex: number,
+    setCurrentIndex: (idx: number) => void,
+  ) => {
     if (items.length === 0) {
       return (
         <div className="space-y-4">
-          <div className={`flex items-center gap-2 px-4 py-3 rounded-xl border-l-4 ${
-            color === "magenta"
-              ? "border-brand-magenta bg-brand-magenta/10"
-              : "border-brand-orange bg-brand-orange/10"
-          }`}>
-            <h3 className={`headline-4 font-display ${color === "magenta" ? "text-brand-magenta" : "text-brand-orange"}`}>{title}</h3>
+          <div
+            className={`flex items-center gap-2 px-4 py-3 rounded-xl border-l-4 ${
+              color === "magenta"
+                ? "border-brand-magenta bg-brand-magenta/10"
+                : "border-brand-orange bg-brand-orange/10"
+            }`}
+          >
+            <h3
+              className={`headline-4 font-display ${color === "magenta" ? "text-brand-magenta" : "text-brand-orange"}`}
+            >
+              {title}
+            </h3>
           </div>
-          <p className="text-xs text-foreground/60 italic p-4 text-center">No items to display</p>
+          <p className="text-xs text-foreground/60 italic p-4 text-center">
+            No items to display
+          </p>
         </div>
       );
     }
@@ -1180,13 +1577,21 @@ function NoticeBoard() {
 
     return (
       <div className="space-y-4">
-        <div className={`flex items-center gap-2 px-4 py-3 rounded-xl border-l-4 ${
-          color === "magenta"
-            ? "border-brand-magenta bg-brand-magenta/10"
-            : "border-brand-orange bg-brand-orange/10"
-        }`}>
-          <h3 className={`headline-4 font-display ${color === "magenta" ? "text-brand-magenta" : "text-brand-orange"}`}>{title}</h3>
-          <Badge className="ml-auto text-xs">{currentIndex + 1} / {items.length}</Badge>
+        <div
+          className={`flex items-center gap-2 px-4 py-3 rounded-xl border-l-4 ${
+            color === "magenta"
+              ? "border-brand-magenta bg-brand-magenta/10"
+              : "border-brand-orange bg-brand-orange/10"
+          }`}
+        >
+          <h3
+            className={`headline-4 font-display ${color === "magenta" ? "text-brand-magenta" : "text-brand-orange"}`}
+          >
+            {title}
+          </h3>
+          <Badge className="ml-auto text-xs">
+            {currentIndex + 1} / {items.length}
+          </Badge>
         </div>
 
         <Card className="group overflow-hidden rounded-2xl border-2 border-border/30 bg-card/40 backdrop-blur-sm">
@@ -1202,12 +1607,18 @@ function NoticeBoard() {
           <CardContent className="p-4 space-y-3">
             <div className="flex items-start justify-between gap-2">
               <div className="flex-1">
-                <h4 className="font-display font-semibold text-sm text-foreground mb-2 line-clamp-2">{currentItem.title}</h4>
-                <p className="text-xs text-foreground/70 line-clamp-2">{currentItem.description}</p>
+                <h4 className="font-display font-semibold text-sm text-foreground mb-2 line-clamp-2">
+                  {currentItem.title}
+                </h4>
+                <p className="text-xs text-foreground/70 line-clamp-2">
+                  {currentItem.description}
+                </p>
               </div>
             </div>
             <div className="flex items-center justify-between pt-2 border-t border-border/20">
-              <span className="text-xs font-semibold text-foreground/60">{currentItem.date}</span>
+              <span className="text-xs font-semibold text-foreground/60">
+                {currentItem.date}
+              </span>
               {currentItem.link && (
                 <Button
                   variant="ghost"
@@ -1246,7 +1657,11 @@ function NoticeBoard() {
               variant="outline"
               size="sm"
               className="h-7 px-2 text-xs"
-              onClick={() => setCurrentIndex((prev) => (prev - 1 + items.length) % items.length)}
+              onClick={() =>
+                setCurrentIndex(
+                  (prev) => (prev - 1 + items.length) % items.length,
+                )
+              }
             >
               ←
             </Button>
@@ -1254,7 +1669,9 @@ function NoticeBoard() {
               variant="outline"
               size="sm"
               className="h-7 px-2 text-xs"
-              onClick={() => setCurrentIndex((prev) => (prev + 1) % items.length)}
+              onClick={() =>
+                setCurrentIndex((prev) => (prev + 1) % items.length)
+              }
             >
               →
             </Button>
@@ -1276,7 +1693,8 @@ function NoticeBoard() {
               </span>
             </h2>
             <p className="max-w-2xl text-sm text-foreground sm:text-base font-body">
-              Stay updated with upcoming events, news, and important announcements from the CSE department.
+              Stay updated with upcoming events, news, and important
+              announcements from the CSE department.
             </p>
           </div>
           <Badge className="w-fit rounded-full bg-brand-magenta/15 px-4 py-2 text-xs font-semibold text-brand-magenta border border-brand-magenta/20">
@@ -1286,16 +1704,30 @@ function NoticeBoard() {
 
         <div className="grid lg:grid-cols-2 gap-4">
           <div>
-            {renderCarousel("Events", events, "magenta", currentEventIndex, setCurrentEventIndex)}
+            {renderCarousel(
+              "Events",
+              events,
+              "magenta",
+              currentEventIndex,
+              setCurrentEventIndex,
+            )}
           </div>
           <div>
-            {renderCarousel("News", news, "orange", currentNewsIndex, setCurrentNewsIndex)}
+            {renderCarousel(
+              "News",
+              news,
+              "orange",
+              currentNewsIndex,
+              setCurrentNewsIndex,
+            )}
           </div>
         </div>
 
         <div className="space-y-4">
           <div className="flex items-center gap-2 px-4 py-3 rounded-xl border-l-4 border-brand-blue bg-brand-blue/10">
-            <h3 className="headline-4 font-display text-brand-blue">Announcements</h3>
+            <h3 className="headline-4 font-display text-brand-blue">
+              Announcements
+            </h3>
             <Badge className="ml-auto text-xs">{announcements.length}</Badge>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
@@ -1307,7 +1739,9 @@ function NoticeBoard() {
                 >
                   <CardHeader className="pb-2">
                     <div className="flex items-start justify-between gap-2 mb-2">
-                      <span className="text-xs font-semibold text-foreground/60">{notice.date}</span>
+                      <span className="text-xs font-semibold text-foreground/60">
+                        {notice.date}
+                      </span>
                       {notice.link && (
                         <Button
                           variant="ghost"
@@ -1315,7 +1749,11 @@ function NoticeBoard() {
                           className="h-6 px-2 text-xs bg-brand-blue/10 text-brand-blue hover:bg-brand-blue/20"
                           asChild
                         >
-                          <a href={notice.link} target="_blank" rel="noreferrer">
+                          <a
+                            href={notice.link}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
                             <Download className="h-3 w-3" />
                           </a>
                         </Button>
@@ -1326,12 +1764,16 @@ function NoticeBoard() {
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="pt-0">
-                    <p className="text-xs text-foreground/70 line-clamp-2">{notice.description}</p>
+                    <p className="text-xs text-foreground/70 line-clamp-2">
+                      {notice.description}
+                    </p>
                   </CardContent>
                 </Card>
               ))
             ) : (
-              <p className="text-xs text-foreground/60 italic col-span-full p-4 text-center">No announcements to display</p>
+              <p className="text-xs text-foreground/60 italic col-span-full p-4 text-center">
+                No announcements to display
+              </p>
             )}
           </div>
         </div>
@@ -1347,30 +1789,36 @@ function CurriculumLibrary() {
     {
       id: "btech",
       label: "B.Tech CSE",
-      description: "4-year undergraduate pathway with industry-aligned specializations",
-      image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=400&fit=crop",
+      description:
+        "4-year undergraduate pathway with industry-aligned specializations",
+      image:
+        "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=400&fit=crop",
       batches: [
         {
           year: "2025-26",
-          summary: "NEP-aligned with industry electives and design thinking studio",
+          summary:
+            "NEP-aligned with industry electives and design thinking studio",
           documentUrl:
             "https://www.dsu.edu.in/images/Engineering/CSE-dept/curriculum/BTech-CSE-Curriculum-2025-26.pdf",
         },
         {
           year: "2026-27",
-          summary: "Analytics labs, full-stack projects, and internship immersion",
+          summary:
+            "Analytics labs, full-stack projects, and internship immersion",
           documentUrl:
             "https://www.dsu.edu.in/images/Engineering/CSE-dept/curriculum/BTech-CSE-Curriculum-2026-27.pdf",
         },
         {
           year: "2027-28",
-          summary: "Autonomous systems track with global university partnerships",
+          summary:
+            "Autonomous systems track with global university partnerships",
           documentUrl:
             "https://www.dsu.edu.in/images/Engineering/CSE-dept/curriculum/BTech-CSE-Curriculum-2027-28.pdf",
         },
         {
           year: "2028-29",
-          summary: "XR applications, blockchain engineering, and capstone showcase",
+          summary:
+            "XR applications, blockchain engineering, and capstone showcase",
           documentUrl:
             "https://www.dsu.edu.in/images/Engineering/CSE-dept/curriculum/BTech-CSE-Curriculum-2028-29.pdf",
         },
@@ -1379,30 +1827,36 @@ function CurriculumLibrary() {
     {
       id: "mtech",
       label: "M.Tech Computer Science & Engineering",
-      description: "2-year postgraduate program focused on advanced systems and research",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
+      description:
+        "2-year postgraduate program focused on advanced systems and research",
+      image:
+        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
       batches: [
         {
           year: "2025-26",
-          summary: "Distributed systems, deep learning, and secure computing research",
+          summary:
+            "Distributed systems, deep learning, and secure computing research",
           documentUrl:
             "https://www.dsu.edu.in/images/Engineering/CSE-dept/curriculum/MTech-CSE-Curriculum-2025-26.pdf",
         },
         {
           year: "2026-27",
-          summary: "AI clinics, cloud-native automation, and innovation lab immersion",
+          summary:
+            "AI clinics, cloud-native automation, and innovation lab immersion",
           documentUrl:
             "https://www.dsu.edu.in/images/Engineering/CSE-dept/curriculum/MTech-CSE-Curriculum-2026-27.pdf",
         },
         {
           year: "2027-28",
-          summary: "Quantum-safe cryptography, edge intelligence, and research dissertations",
+          summary:
+            "Quantum-safe cryptography, edge intelligence, and research dissertations",
           documentUrl:
             "https://www.dsu.edu.in/images/Engineering/CSE-dept/curriculum/MTech-CSE-Curriculum-2027-28.pdf",
         },
         {
           year: "2028-29",
-          summary: "Sustainable computing, human-centric AI, and thesis publishing",
+          summary:
+            "Sustainable computing, human-centric AI, and thesis publishing",
           documentUrl:
             "https://www.dsu.edu.in/images/Engineering/CSE-dept/curriculum/MTech-CSE-Curriculum-2028-29.pdf",
         },
@@ -1411,30 +1865,36 @@ function CurriculumLibrary() {
     {
       id: "mtech-aiml",
       label: "M.Tech CSE (Artificial Intelligence and Machine Learning)",
-      description: "2-year postgraduate specialization in AI and machine learning research",
-      image: "https://images.unsplash.com/photo-1534759846116-5799c33ce22a?q=80&w=1600&auto=format&fit=crop",
+      description:
+        "2-year postgraduate specialization in AI and machine learning research",
+      image:
+        "https://images.unsplash.com/photo-1534759846116-5799c33ce22a?q=80&w=1600&auto=format&fit=crop",
       batches: [
         {
           year: "2025-26",
-          summary: "Foundations in deep learning, neural networks, and AI systems design",
+          summary:
+            "Foundations in deep learning, neural networks, and AI systems design",
           documentUrl:
             "https://www.dsu.edu.in/images/Engineering/CSE-dept/curriculum/MTech-CSE-AIML-Curriculum-2025-26.pdf",
         },
         {
           year: "2026-27",
-          summary: "Machine learning pipelines, NLP, computer vision, and research projects",
+          summary:
+            "Machine learning pipelines, NLP, computer vision, and research projects",
           documentUrl:
             "https://www.dsu.edu.in/images/Engineering/CSE-dept/curriculum/MTech-CSE-AIML-Curriculum-2026-27.pdf",
         },
         {
           year: "2027-28",
-          summary: "Advanced topics in generative AI, reinforcement learning, and responsible AI",
+          summary:
+            "Advanced topics in generative AI, reinforcement learning, and responsible AI",
           documentUrl:
             "https://www.dsu.edu.in/images/Engineering/CSE-dept/curriculum/MTech-CSE-AIML-Curriculum-2027-28.pdf",
         },
         {
           year: "2028-29",
-          summary: "AI research thesis, industry collaborations, and innovation lab immersion",
+          summary:
+            "AI research thesis, industry collaborations, and innovation lab immersion",
           documentUrl:
             "https://www.dsu.edu.in/images/Engineering/CSE-dept/curriculum/MTech-CSE-AIML-Curriculum-2028-29.pdf",
         },
@@ -1454,7 +1914,9 @@ function CurriculumLibrary() {
               </span>
             </h2>
             <p className="max-w-2xl text-sm text-foreground sm:text-base font-body">
-              Explore comprehensive curriculum packs for B.Tech and M.Tech programs. Access detailed course structures, learning outcomes, and downloadable syllabi.
+              Explore comprehensive curriculum packs for B.Tech and M.Tech
+              programs. Access detailed course structures, learning outcomes,
+              and downloadable syllabi.
             </p>
           </div>
           <Badge className="w-fit rounded-full bg-brand-magenta/15 px-4 py-2 text-xs font-semibold text-brand-magenta border border-brand-magenta/20">
@@ -1494,8 +1956,12 @@ function CurriculumLibrary() {
                     </Badge>
                   </div>
                   <div>
-                    <h3 className="headline-3 font-display text-foreground mb-2">{program.label}</h3>
-                    <p className="text-sm text-foreground/80 font-body">{program.description}</p>
+                    <h3 className="headline-3 font-display text-foreground mb-2">
+                      {program.label}
+                    </h3>
+                    <p className="text-sm text-foreground/80 font-body">
+                      {program.description}
+                    </p>
                   </div>
                   <Button
                     variant="outline"
@@ -1521,7 +1987,9 @@ function CurriculumLibrary() {
                         >
                           <div className="flex items-start justify-between gap-2 mb-2">
                             <div className="flex items-center gap-2">
-                              <Badge className={`rounded-full border text-xs ${isProgramBtech ? "bg-brand-orange/20 text-brand-orange border-brand-orange/30" : "bg-brand-blue/20 text-brand-blue border-brand-blue/30"}`}>
+                              <Badge
+                                className={`rounded-full border text-xs ${isProgramBtech ? "bg-brand-orange/20 text-brand-orange border-brand-orange/30" : "bg-brand-blue/20 text-brand-blue border-brand-blue/30"}`}
+                              >
                                 <CalendarDays className="h-3 w-3 mr-1" />
                                 {batch.year}
                               </Badge>
@@ -1533,7 +2001,9 @@ function CurriculumLibrary() {
                               )}
                             </div>
                           </div>
-                          <p className="text-xs text-foreground/80 font-body mb-3 leading-relaxed">{batch.summary}</p>
+                          <p className="text-xs text-foreground/80 font-body mb-3 leading-relaxed">
+                            {batch.summary}
+                          </p>
                           {batch.documentUrl && (
                             <Button
                               variant="ghost"
@@ -1545,7 +2015,12 @@ function CurriculumLibrary() {
                               }`}
                               asChild
                             >
-                              <a href={batch.documentUrl} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-1">
+                              <a
+                                href={batch.documentUrl}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="flex items-center justify-center gap-1"
+                              >
                                 <Download className="h-3 w-3" />
                                 PDF
                               </a>

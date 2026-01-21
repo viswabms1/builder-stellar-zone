@@ -1,32 +1,39 @@
 # Fluid Layout Migration - Site-Wide
 
 ## Overview
+
 The entire website has been migrated from device-specific, fixed-height layouts to **fluid, content-driven layouts** using modern CSS techniques.
 
 ## Philosophy
 
 ### Before (❌ Old Approach)
+
 ```tsx
 <div className="h-[50vh] md:h-[65vh]">
   <img className="w-full h-full" />
 </div>
 ```
+
 **Problems:**
+
 - Fixed heights cause overlaps on different devices
 - Negative margins needed to compensate
 - Content gets clipped or stretched
 - Doesn't work on unconventional screen sizes
 
 ### After (✅ New Approach)
+
 ```tsx
 <div className="w-full overflow-hidden relative">
-  <img 
-    className="w-full h-auto" 
+  <img
+    className="w-full h-auto"
     style={{ aspectRatio: "21 / 9", maxHeight: "600px", minHeight: "300px" }}
   />
 </div>
 ```
+
 **Benefits:**
+
 - Content defines height naturally
 - No overlaps - elements stack properly
 - Works on ANY screen size (foldables, ultra-wides, etc.)
@@ -37,6 +44,7 @@ The entire website has been migrated from device-specific, fixed-height layouts 
 ### Global CSS Rules (`client/global.css`)
 
 #### 1. **Hero Section Height Override**
+
 ```css
 section.relative > div[class*="h-["],
 section.dept-hero-section > div[class*="h-["] {
@@ -44,9 +52,11 @@ section.dept-hero-section > div[class*="h-["] {
   min-height: clamp(300px, 40vh, 500px) !important;
 }
 ```
+
 **Affects:** All department pages, school pages, program pages
 
 #### 2. **Hero Images - Aspect Ratio**
+
 ```css
 .dept-hero-section img,
 .hero-section img {
@@ -56,18 +66,22 @@ section.dept-hero-section > div[class*="h-["] {
   max-height: 600px;
 }
 ```
+
 **Affects:** All hero images across the site
 
 #### 3. **Department Hero Padding**
+
 ```css
 .dept-hero-section {
   padding-top: clamp(4rem, 8vh, 8rem) !important;
 }
 ```
+
 **Replaces:** Fixed `pt-40 md:pt-0` with fluid padding
-**Affects:** All department pages (Dept*.tsx)
+**Affects:** All department pages (Dept\*.tsx)
 
 #### 4. **Navigation Fixes**
+
 ```css
 /* Top menu bar */
 .hidden.lg:flex.sticky {
@@ -83,15 +97,23 @@ nav.sticky {
 ```
 
 ### Fluid Typography
+
 All text scales naturally using `clamp()`:
 
 ```css
-.headline-1 { font-size: clamp(2.5rem, 3vw + 1rem, 3.5rem); }
-.headline-2 { font-size: clamp(2rem, 2.5vw + 0.5rem, 2.5rem); }
-.subheadline { font-size: clamp(1.125rem, 1.2vw + 0.5rem, 1.5rem); }
+.headline-1 {
+  font-size: clamp(2.5rem, 3vw + 1rem, 3.5rem);
+}
+.headline-2 {
+  font-size: clamp(2rem, 2.5vw + 0.5rem, 2.5rem);
+}
+.subheadline {
+  font-size: clamp(1.125rem, 1.2vw + 0.5rem, 1.5rem);
+}
 ```
 
 ### Fluid Spacing
+
 CSS custom properties for consistent scaling:
 
 ```css
@@ -105,7 +127,8 @@ CSS custom properties for consistent scaling:
 ## Pages Automatically Fixed
 
 ### ✅ Department Pages (8 pages)
-- DeptCSE.tsx *(manually updated as template)*
+
+- DeptCSE.tsx _(manually updated as template)_
 - DeptAIDS.tsx
 - DeptAIML.tsx
 - DeptAIRobotics.tsx
@@ -116,6 +139,7 @@ CSS custom properties for consistent scaling:
 - DeptMechanical.tsx
 
 ### ✅ School Pages (Auto-fixed by CSS)
+
 - Engineering.tsx
 - HealthSciences.tsx
 - Law.tsx
@@ -125,6 +149,7 @@ CSS custom properties for consistent scaling:
 - CEE.tsx
 
 ### ✅ Subject Pages (Auto-fixed)
+
 - Chemistry.tsx
 - Mathematics.tsx
 - Physics.tsx
@@ -132,7 +157,8 @@ CSS custom properties for consistent scaling:
 - MedicalEngineering.tsx
 
 ### ✅ Homepage & Core Pages
-- Index.tsx *(manually updated)*
+
+- Index.tsx _(manually updated)_
 - About.tsx
 - Academics.tsx
 - Admissions.tsx
@@ -142,11 +168,13 @@ CSS custom properties for consistent scaling:
 - CampusLife.tsx
 
 ### ✅ All 200+ Faculty Profile Pages
+
 Auto-fixed by global CSS rules
 
 ## Key Changes
 
 ### 1. **Removed**
+
 - ❌ Fixed heights (`h-[50vh]`, `h-[70vh]`, etc.)
 - ❌ Fixed padding (`pt-40`, `pt-16`)
 - ❌ Negative margins (`-mt-3`, `-mb-2`, `margin-bottom: -2rem`)
@@ -154,6 +182,7 @@ Auto-fixed by global CSS rules
 - ❌ `!important` declarations (except for overrides)
 
 ### 2. **Added**
+
 - ✅ `aspect-ratio` for images
 - ✅ `clamp()` for fluid sizing
 - ✅ CSS custom properties (`var(--space-lg)`)
@@ -161,13 +190,16 @@ Auto-fixed by global CSS rules
 - ✅ Content-driven heights
 
 ### 3. **Navigation**
+
 **Before:**
+
 ```tsx
 <div className="h-14 pt-5 pb-2 sticky top-0">
 <nav className="h-14 sticky top-1 lg:top-14">
 ```
 
 **After:**
+
 ```tsx
 <div className="py-2 sticky top-0">
 <nav className="py-2 sticky top-0">
@@ -188,11 +220,12 @@ Test on these viewports to verify no overlaps:
 ## Maintenance Guidelines
 
 ### ✅ DO:
+
 ```tsx
 // Fluid container with natural height
 <div className="w-full overflow-hidden">
-  <img 
-    src="..." 
+  <img
+    src="..."
     className="w-full h-auto"
     style={{ aspectRatio: "16 / 9" }}
   />
@@ -206,6 +239,7 @@ Test on these viewports to verify no overlaps:
 ```
 
 ### ❌ DON'T:
+
 ```tsx
 // Fixed heights
 <div className="h-[50vh]"> ❌
@@ -223,11 +257,13 @@ Test on these viewports to verify no overlaps:
 ## Performance Impact
 
 **Before:**
+
 - ~200 device-specific media queries
 - Fixed heights causing layout recalculations
 - Overlaps requiring z-index management
 
 **After:**
+
 - ~20 fluid CSS rules
 - Browser-native aspect-ratio calculations
 - Natural stacking order
@@ -237,6 +273,7 @@ Test on these viewports to verify no overlaps:
 ## Future-Proofing
 
 This approach works on:
+
 - ✅ Current devices (phones, tablets, desktops)
 - ✅ Foldable phones (varying aspect ratios)
 - ✅ Ultra-wide monitors
@@ -247,6 +284,7 @@ This approach works on:
 The key principle: **Let content define height, not the viewport.**
 
 If you see overlaps, check for:
+
 1. Fixed heights
 2. Absolute positioning (for layout)
 3. Negative margins
