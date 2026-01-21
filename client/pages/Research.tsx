@@ -316,7 +316,7 @@ export default function Research() {
                 problem: "Agricultural Waste Management",
                 solution: "Upcycled Protein Technology",
                 impact: "SynTech Bio: Converting 10,000 tons agricultural waste annually into sustainable protein",
-                outcome: "Patent-pending process; 2 industry partnerships; ₹2Cr+ licensing value",
+                outcome: "Patent-pending process; 2 industry partnerships",
               },
               {
                 problem: "Manufacturing Inefficiency",
