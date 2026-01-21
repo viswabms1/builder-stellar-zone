@@ -60,17 +60,18 @@ export default function DeptCSE() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero */}
-      <section className="dept-hero-section relative pt-40 md:pt-0">
-        <div className="h-[70vh] md:h-[65vh] max-h-[400px] md:max-h-none w-full overflow-hidden">
+      <section className="dept-hero-section relative">
+        <div className="w-full overflow-hidden relative">
           <img
             src="https://www.dsu.edu.in/images/Engineering/CSE-dept/abt-cse.JPG"
             alt="Department of Computer Science & Engineering"
-            className="w-full h-full object-cover"
+            className="w-full h-auto object-cover"
+            style={{ aspectRatio: "21 / 9", maxHeight: "600px", minHeight: "300px", objectFit: "cover" }}
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
         </div>
-        <div className="absolute inset-0 flex items-center">
+        <div className="absolute inset-0 flex items-center" style={{ top: 0, bottom: 0 }}>
           <div className="max-w-7xl mx-auto px-3 pb-20 md:pb-0 pt-6 md:pt-0">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-black/40 rounded-full border border-white/20 mb-4 backdrop-blur-sm">
               <Sparkles className="w-4 h-4 text-white" />
