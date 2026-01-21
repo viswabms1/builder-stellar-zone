@@ -233,7 +233,7 @@ const RESOURCES: Resource[] = [
     title: "Executive MBA Application",
     description:
       "Apply for the upcoming Executive MBA cohort with flexible weekend modes and cohort-based learning.",
-    href: "https://bit.ly/DSUEMBAApp",
+    href: "https://docs.google.com/forms/d/e/1FAIpQLSdsBxDLGLdxHeUXCT6U6xaVkSTlkSJh1b95THI6MeoIImKHLw/viewform?pli=1",
     badge: "Admissions",
   },
   {
