@@ -87,7 +87,7 @@ const PG_PROGRAM_CARDS: ProgramCard[] = [
       "6-Year Doctor of Pharmacy program preparing students for advanced patient care, clinical research, and pharmaceutical consultancy roles.",
     image:
       "https://images.unsplash.com/photo-1631549916768-4119b2e5f926?q=80&w=1600&auto=format&fit=crop",
-    link: "/eligibility",
+    link: "/academics/health-sciences/pharm-d",
     highlights: ["6 Years", "Clinical Practice", "Patient Care", "Research"],
     overlay:
       "bg-gradient-to-br from-brand-magenta/80 via-black/75 to-black/60 mix-blend-multiply",
