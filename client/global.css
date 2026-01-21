@@ -190,45 +190,35 @@
     padding-top: clamp(0rem, 2vh, 2rem);
   }
 
-  /* Hero title positioning - landscape vs portrait */
+  /* Fluid Hero Title Positioning - Container Query Approach */
   .hero-title-inside {
-    display: none !important;
-  }
-
-  @media (orientation: landscape) {
-    .hero-title-inside {
-      display: flex !important;
-    }
-
-    /* Make buttons horizontal in landscape */
-    .hero-title-inside > div:last-child {
-      flex-direction: row !important;
-      align-items: center !important;
-    }
+    display: none;
   }
 
   .hero-title-outside {
-    display: block !important;
+    display: block;
   }
 
-  /* In landscape (all sizes): show title inside video, hide outside */
-  @media (orientation: landscape) {
+  /* Use aspect-ratio media query for landscape detection */
+  @media (min-aspect-ratio: 13/9) {
     .hero-title-inside {
-      display: block !important;
-      z-index: 51 !important;
+      display: flex;
+      z-index: 51;
     }
 
     .hero-title-outside {
-      display: none !important;
+      display: none;
+    }
+
+    .hero-title-inside > div:last-child {
+      flex-direction: row;
+      align-items: center;
     }
   }
 
-  /* Fix hero text hidden behind navbar on mobile portrait */
-  @media screen and (max-width: 768px) and (orientation: portrait) {
-    /* Reduce excessive padding on department hero sections in portrait */
-    .dept-hero-section {
-      padding-top: 375px !important;
-    }
+  /* Fluid Department Hero Sections */
+  .dept-hero-section {
+    padding-top: clamp(10rem, 20vh, 25rem);
   }
 
   /* Fluid Hero Section - Device Agnostic */
