@@ -103,7 +103,7 @@ const PG_PROGRAM_CARDS: ProgramCard[] = [
       "2-Year Master of Pharmacy program with specializations in Pharmaceutics, Pharmacology, and Regulatory Affairs.",
     image:
       "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1600&auto=format&fit=crop",
-    link: "/academics/health-sciences/m-pharm-pharmaceutics",
+    link: "/academics/health-sciences/m-pharm",
     highlights: ["2 Years", "Pharmaceutics", "Pharmacology", "Regulatory Affairs"],
     overlay:
       "bg-gradient-to-br from-brand-blue/75 via-black/70 to-black/55 mix-blend-multiply",
