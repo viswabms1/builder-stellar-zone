@@ -1213,7 +1213,7 @@ export default function Navigation() {
                       to="/ai-first"
                       className={aiFirstClasses}
                     >
-                      <span className="text-center leading-tight flex flex-col items-center">
+                      <span className="text-center leading-[0.9] flex flex-col items-center gap-0">
                         <span className="whitespace-nowrap">AI-First @</span>
                         <span>DSU</span>
                       </span>
