@@ -1213,9 +1213,8 @@ export default function Navigation() {
                       to="/ai-first"
                       className={aiFirstClasses}
                     >
-                      <span className="text-center leading-tight flex flex-col">
-                        <span>AI-First</span>
-                        <span>@ DSU</span>
+                      <span className="text-center leading-tight whitespace-nowrap">
+                        AI-First @ DSU
                       </span>
                     </Link>,
                   ];
