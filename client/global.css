@@ -342,15 +342,15 @@
       margin-top: 0 !important;
     }
 
-    /* Reduce gap after hero section - pull next section up */
-    .hero-video-container + * {
+    /* Reduce gap after hero section - don't pull up for homepage */
+    .hero-video-container + *:not(.hero-section + section) {
       margin-top: 0 !important;
       position: relative !important;
       z-index: 10 !important;
     }
 
-    /* But pull up sections that are not the immediate bg-background sibling */
-    .hero-video-container ~ section {
+    /* Don't pull up sections on the homepage */
+    .hero-video-container ~ section:not(.hero-section + section) {
       margin-top: -300px !important;
     }
 
