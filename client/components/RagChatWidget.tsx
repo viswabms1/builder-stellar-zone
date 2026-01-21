@@ -302,16 +302,16 @@ export function RagChatWidget() {
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.2 }}
             className={cn(
-              "fixed rounded-2xl shadow-2xl flex flex-col z-[10003]",
+              "fixed rounded-2xl shadow-2xl flex flex-col z-[10003] block",
               theme === "light"
                 ? "bg-white border border-gray-200"
                 : "bg-slate-900 border border-slate-700",
             )}
             style={{
-              bottom: "clamp(1rem, 4vh, 1.5rem)",
-              right: "clamp(1rem, 3vw, 1.5rem)",
-              width: "clamp(320px, 90vw, 400px)",
-              height: "clamp(400px, 80vh, 600px)",
+              bottom: "clamp(1.5rem, 5vh, 6rem)",
+              right: "clamp(1.5rem, 4vw, 3rem)",
+              width: "clamp(280px, 85vw, 400px)",
+              height: "clamp(350px, 70vh, 600px)",
             }}
           >
             {/* Header */}
