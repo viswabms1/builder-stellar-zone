@@ -306,13 +306,13 @@ export default function Pharmacy() {
   ];
 
   const careers = [
-    "Pharmacist → Senior Pharmacist → Pharmacy Manager → Chief Pharmacist",
-    "Quality Assurance Officer → QA Manager → Director of Quality",
-    "Drug Regulatory Affairs → Regulatory Manager → VP Regulatory Affairs",
-    "Research Scientist → Senior Scientist → Principal Scientist",
-    "Clinical Pharmacist → Clinical Coordinator → Director of Pharmacy Services",
-    "International opportunities in pharmaceutical industry (₹15-35 LPA+)",
-    "Excellent placement record with top pharma companies and hospitals",
+    "B.Pharm graduates: Pharmacist → Senior Pharmacist → Pharmacy Manager → Chief Pharmacist",
+    "M.Pharm graduates: Research Scientist → Senior Scientist → Principal Scientist in pharma R&D",
+    "Pharm.D graduates: Clinical Pharmacist → Clinical Coordinator → Director of Pharmacy Services",
+    "Quality Assurance & Regulatory Affairs roles in pharmaceutical industry",
+    "Hospital and community pharmacy practice opportunities",
+    "International career opportunities in pharmaceutical industry (₹15-35 LPA+)",
+    "Excellent placement record with leading pharma companies, hospitals, and research institutions",
   ];
 
   return (
