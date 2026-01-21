@@ -463,7 +463,7 @@ export default function Research() {
               Join India's AI Research Frontier
             </h2>
             <p className="text-lg text-foreground mb-8 max-w-2xl mx-auto">
-              Collaborate with DSU on transformative research advancing AI, healthcare, sustainability, and national missions. Industry partnerships, doctoral opportunities, and innovation funding available.
+              Collaborate with DSU on transformative research advancing AI, healthcare, sustainability, and national missions. Industry partnerships and doctoral opportunities available.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
