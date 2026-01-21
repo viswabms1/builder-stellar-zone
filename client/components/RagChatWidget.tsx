@@ -340,7 +340,7 @@ export function RagChatWidget() {
                   <p className="text-xs opacity-70">Powered by AI-First</p>
                 </div>
               </div>
-              <div className="flex gap-2">
+              <div className="flex" style={{ gap: "clamp(0.25rem, 1vmin, 0.5rem)" }}>
                 <button
                   onClick={clearConversation}
                   className="p-2 hover:bg-white/20 rounded-lg transition-colors"
