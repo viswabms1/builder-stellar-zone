@@ -443,7 +443,8 @@ export const handleRagChat = async (req: Request, res: Response) => {
       // Include model info for next turn
       modelInfo: {
         model: "gpt-4o-mini",
-        temperature: 0.3,
+        temperature: 0,
+        deterministic: true,
         contextWindow: "128k tokens",
       },
     });
