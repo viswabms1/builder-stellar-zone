@@ -800,7 +800,7 @@ export default function Navigation() {
                           onClick={() => setAboutMenuOpen(!aboutMenuOpen)}
                           className={`${sharedClasses} justify-center`}
                         >
-                          <span className="max-w-[85px] text-center leading-snug">
+                          <span className="text-center leading-tight">
                             {item.name}
                           </span>
                           <ChevronDown
@@ -914,7 +914,7 @@ export default function Navigation() {
                           }
                           className={`${sharedClasses} ml-0 sm:ml-4 justify-center`}
                         >
-                          <span className="max-w-[85px] text-center leading-snug">
+                          <span className="text-center leading-tight">
                             {item.name}
                           </span>
                           <ChevronDown
@@ -1137,7 +1137,7 @@ export default function Navigation() {
                       to={item.href}
                       className={`${sharedClasses} justify-center`}
                     >
-                      <span className="max-w-[85px] text-center leading-snug">
+                      <span className="text-center leading-tight">
                         {item.name}
                       </span>
                       {active && (
