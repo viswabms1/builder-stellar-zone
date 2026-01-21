@@ -277,7 +277,7 @@ export function RagChatWidget() {
             exit={{ scale: 0, opacity: 0 }}
             onClick={() => setIsOpen(true)}
             className={cn(
-              "fixed bottom-16 sm:bottom-20 lg:bottom-6 xl:bottom-6 right-12 lg:right-6 z-[10002] rounded-full p-4 shadow-lg hover:shadow-xl transition-all hover:scale-110",
+              "!fixed !bottom-16 sm:!bottom-20 lg:!bottom-6 xl:!bottom-6 !right-12 lg:!right-6 !z-[10002] rounded-full p-4 shadow-lg hover:shadow-xl transition-all hover:scale-110",
               theme === "light"
                 ? "bg-orange-500 hover:bg-orange-600 text-white"
                 : "bg-orange-600 hover:bg-orange-700 text-white",
