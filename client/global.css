@@ -480,6 +480,69 @@
     display: none;
   }
 
+  /* ===== UTILITY CLASSES FOR FLUID LAYOUTS ===== */
+
+  /* Fluid Hero Image Container */
+  .fluid-hero-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .fluid-hero-container img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 21 / 9;
+    object-fit: cover;
+    min-height: 300px;
+    max-height: 600px;
+  }
+
+  /* Fluid Section Spacing */
+  .fluid-section {
+    padding-top: var(--space-lg);
+    padding-bottom: var(--space-lg);
+    margin: 0;
+  }
+
+  /* Fluid Container */
+  .fluid-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-left: clamp(0.75rem, 2vw, 1.5rem);
+    padding-right: clamp(0.75rem, 2vw, 1.5rem);
+  }
+
+  /* Fluid Grid - Auto-fit columns */
+  .fluid-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+    gap: clamp(1rem, 2vw, 2rem);
+  }
+
+  /* Fluid Text - For body text */
+  .fluid-text {
+    font-size: clamp(1rem, 1.2vw, 1.125rem);
+    line-height: 1.6;
+  }
+
+  /* Aspect Ratio Containers */
+  .aspect-video {
+    aspect-ratio: 16 / 9;
+  }
+
+  .aspect-cinema {
+    aspect-ratio: 21 / 9;
+  }
+
+  .aspect-square {
+    aspect-ratio: 1 / 1;
+  }
+
+  .aspect-portrait {
+    aspect-ratio: 3 / 4;
+  }
+
   .animate-gradient-shift {
     background-size: 200% auto;
     animation: gradient-shift 3s ease-in-out infinite;
