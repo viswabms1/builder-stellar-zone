@@ -447,71 +447,15 @@
   /* ===== SITE-WIDE HERO SECTION OVERRIDES ===== */
 
   /**
-   * AUTOMATIC HERO FIXES
-   * These rules automatically fix all hero sections across the site
-   * without requiring individual page edits
+   * HOMEPAGE HERO SECTION ONLY
+   * These rules apply ONLY to the .hero-section class (homepage)
+   * Department pages (.dept-hero-section) are intentionally excluded
    */
 
-  /* Remove all fixed heights from hero containers */
-  section.relative > div[class*="h-["],
-  section.dept-hero-section > div[class*="h-["],
-  section[class*="hero"] > div[class*="h-["] {
-    height: auto !important;
-    min-height: clamp(300px, 40vh, 500px) !important;
-    max-height: none !important;
-  }
-
-  /* Hero images: natural aspect ratio, no fixed heights */
-  section.relative > div > img,
-  section .overflow-hidden > img,
-  .dept-hero-section img,
-  .hero-section img {
-    width: 100%;
-    height: auto !important;
-    aspect-ratio: 21 / 9;
-    object-fit: cover;
-    min-height: 300px;
-    max-height: 600px;
-  }
-
-  /* Department hero sections: fluid padding instead of fixed */
-  .dept-hero-section {
-    padding-top: clamp(4rem, 8vh, 8rem) !important;
-    padding-bottom: 0;
-  }
-
-  /* Remove fixed top padding from dept heros */
-  .dept-hero-section.pt-40,
-  .dept-hero-section.pt-16 {
-    padding-top: clamp(4rem, 8vh, 8rem) !important;
-  }
-
-  /* All hero sections flow naturally - no forced heights */
-  section[class*="hero"],
-  .hero-section,
-  .dept-hero-section {
+  /* Homepage hero section specific styles - DO NOT affect dept pages */
+  .hero-section {
     overflow: visible !important;
     position: relative;
-  }
-
-  /* Absolute content in heros should not clip */
-  section.relative .absolute.inset-0 {
-    position: absolute;
-    pointer-events: none;
-  }
-
-  section.relative .absolute.inset-0 > * {
-    pointer-events: auto;
-  }
-
-  /* Ensure hero text containers don't force height */
-  .dept-hero-section .absolute.inset-0.flex {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    height: auto;
   }
 
   .scrollbar-hide {
