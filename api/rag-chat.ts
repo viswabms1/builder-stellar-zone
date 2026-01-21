@@ -147,28 +147,29 @@ Fees (Annual - 2026-27):
 SCHOOL OF LAW
 ================================================================================
 
-Program: B.A. LL.B (Hons)
-Level: UG | Duration: 5 Years
-Eligibility: 10+2 or equivalent with minimum 50% marks. CLAT scores accepted.
-Fee Structure (Annual): ₹2,52,000
-💰 Scholarship Available
+UNDERGRADUATE PROGRAMS:
+Programs Offered:
+  1. B.A. LL.B (5 Years)
+  2. B.B.A. LL.B (5 Years)
+  3. LL.B (3 Years)
 
-Program: B.B.A. LL.B (Hons)
-Level: UG | Duration: 5 Years
-Eligibility: 10+2 or equivalent with minimum 50% marks. CLAT scores accepted.
-Fee Structure (Annual): ₹2,52,000
-💰 Scholarship Available
+Eligibility:
+  - B.A. LL.B and B.B.A. LL.B: 10+2 or equivalent with a minimum of 50% marks. CLAT and DSAT scores accepted.
+  - LL.B: Graduation or equivalent examination with a minimum of 50% marks.
 
-Program: LL.B
-Level: UG | Duration: 3 Years
-Eligibility: Graduation with minimum 50% marks.
-Fee Structure (Annual): ₹1,77,000
+Fees (Annual - 2026-27):
+  - B.A. LL.B and B.B.A. LL.B: ₹2,52,000 (Tuition Fee: ₹2,02,000, Other Fee: ₹50,000)
+  - LL.B: ₹1,77,000 (Tuition Fee: ₹1,37,000, Other Fee: ₹40,000)
 
-Program: LL.M
-Level: PG | Duration: 1 Year
-Eligibility: LL.B or equivalent with minimum 50% marks (40% for SC/ST). CLAT or AILET scores accepted.
-Fee Structure (Annual): ₹1,45,000
-Tracks: Corporate & Commercial Law, Intellectual Property Rights, Human Rights Law.
+POSTGRADUATE PROGRAMS:
+Programs Offered:
+  1. LL.M (1 Year)
+
+Eligibility:
+  - LL.B with a minimum of 50% marks.
+
+Fees (Annual - 2026-27):
+  - LL.M: ₹1,45,000 (Tuition Fee: ₹1,10,000, Other Fee: ₹35,000)
 
 ================================================================================
 SCHOOL OF COMMERCE & MANAGEMENT
