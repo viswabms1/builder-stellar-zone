@@ -105,11 +105,6 @@ export default function Research() {
                 context: "Across top-tier journals (2018–2024)",
               },
               {
-                number: "₹100Cr+",
-                label: "Research Funding Secured",
-                context: "Government + industry grants",
-              },
-              {
                 number: "150+",
                 label: "Patents Filed",
                 context: "Industry-commercialized innovations",
