@@ -415,6 +415,17 @@ function HeroSection() {
               <ArrowRight className="h-5 w-5" />
             </a>
           </Button>
+          <Button
+            variant="outline"
+            size="lg"
+            className="rounded-2xl border-2 border-orange-500 px-8 py-6 text-lg font-semibold text-orange-500"
+            asChild
+          >
+            <a href="/admissions/closing-dates">
+              Closing Dates
+              <CalendarCheck className="h-5 w-5" />
+            </a>
+          </Button>
         </div>
         <div className="mt-12 flex flex-wrap justify-center gap-3">
           {admissionCodes.slice(0, 4).map((code) => (
