@@ -35,7 +35,7 @@ export default function BPharm() {
     { icon: Pill, label: "Pharmaceutical Chemistry" },
     { icon: Beaker, label: "Pharmaceutics" },
     { icon: FlaskConical, label: "Pharmacology" },
-    { icon: Vials, label: "Pharmacognosy" },
+    { icon: Droplets, label: "Pharmacognosy" },
     { icon: Microscope, label: "Drug Analysis" },
     { icon: Award, label: "Clinical Practice" },
   ];
