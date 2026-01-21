@@ -342,8 +342,8 @@ export function RagChatWidget() {
                   <MessageSquare style={{ width: "clamp(1rem, 3vmin, 1.5rem)", height: "clamp(1rem, 3vmin, 1.5rem)" }} className="text-white" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-sm">DSU Admissions Bot</h3>
-                  <p className="text-xs opacity-70">Powered by AI-First</p>
+                  <h3 className="font-semibold" style={{ fontSize: "clamp(0.75rem, 2vmin, 0.875rem)" }}>DSU Admissions Bot</h3>
+                  <p className="opacity-70" style={{ fontSize: "clamp(0.625rem, 1.5vmin, 0.75rem)" }}>Powered by AI-First</p>
                 </div>
               </div>
               <div className="flex" style={{ gap: "clamp(0.25rem, 1vmin, 0.5rem)" }}>
