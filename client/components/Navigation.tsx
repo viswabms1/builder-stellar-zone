@@ -475,11 +475,6 @@ export default function Navigation() {
         external: true,
       },
       {
-        name: "Center for Executive Education",
-        href: "/academics/cee",
-        departments: [{ name: "Explore Programs", href: "/academics/cee" }],
-      },
-      {
         name: "DSU Online",
         href: "https://dsuonline.com/",
         departments: [
