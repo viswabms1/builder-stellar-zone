@@ -331,9 +331,15 @@ export function RagChatWidget() {
                 borderTopRightRadius: "clamp(0.75rem, 2vmin, 1rem)",
               }}
             >
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-orange-500 flex items-center justify-center">
-                  <MessageSquare className="w-6 h-6 text-white" />
+              <div className="flex items-center" style={{ gap: "clamp(0.5rem, 2vmin, 0.75rem)" }}>
+                <div
+                  className="rounded-full bg-orange-500 flex items-center justify-center"
+                  style={{
+                    width: "clamp(2rem, 5vmin, 2.5rem)",
+                    height: "clamp(2rem, 5vmin, 2.5rem)",
+                  }}
+                >
+                  <MessageSquare style={{ width: "clamp(1rem, 3vmin, 1.5rem)", height: "clamp(1rem, 3vmin, 1.5rem)" }} className="text-white" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-sm">DSU Admissions Bot</h3>
