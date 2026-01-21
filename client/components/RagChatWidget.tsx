@@ -269,31 +269,29 @@ export function RagChatWidget() {
   return (
     <>
       {/* Chat Button */}
-      <AnimatePresence>
-        {!isOpen && (
-          <motion.button
-            initial={{ scale: 0, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0, opacity: 0 }}
-            onClick={() => setIsOpen(true)}
-            className={cn(
-              "fixed rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-110 z-[99999] block",
-              theme === "light"
-                ? "bg-orange-500 hover:bg-orange-600 text-white"
-                : "bg-orange-600 hover:bg-orange-700 text-white",
-            )}
-            style={{
-              position: "fixed",
-              bottom: "1rem",
-              right: "1rem",
-              padding: "1rem",
-            }}
-            aria-label="Open chat"
-          >
-            <MessageSquare style={{ width: "clamp(1.25rem, 4vmin, 1.5rem)", height: "clamp(1.25rem, 4vmin, 1.5rem)" }} />
-          </motion.button>
-        )}
-      </AnimatePresence>
+      {!isOpen && (
+        <button
+          onClick={() => setIsOpen(true)}
+          className={cn(
+            "!fixed rounded-full shadow-2xl hover:shadow-xl transition-all hover:scale-110 !z-[99999] !block !visible !opacity-100",
+            theme === "light"
+              ? "bg-orange-500 hover:bg-orange-600 text-white"
+              : "bg-orange-600 hover:bg-orange-700 text-white",
+          )}
+          style={{
+            position: "fixed !important",
+            bottom: "1.5rem !important",
+            right: "1.5rem !important",
+            padding: "1rem !important",
+            display: "block !important",
+            visibility: "visible !important",
+            opacity: "1 !important",
+          }}
+          aria-label="Open chat"
+        >
+          <MessageSquare className="w-6 h-6" />
+        </button>
+      )}
 
       {/* Chat Window */}
       <AnimatePresence>
