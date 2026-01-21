@@ -1,3 +1,25 @@
+/**
+ * DSU GLOBAL STYLES - FLUID LAYOUT SYSTEM
+ * ========================================
+ *
+ * This stylesheet uses a modern, device-agnostic fluid layout approach:
+ *
+ * KEY PRINCIPLES:
+ * - Content defines height (not viewport)
+ * - No fixed heights (use padding, aspect-ratio, or auto)
+ * - No negative margins (use natural flow)
+ * - clamp() for fluid sizing
+ * - CSS custom properties for spacing
+ *
+ * BENEFITS:
+ * - No overlaps on any device
+ * - Works on screens that don't exist yet
+ * - Better performance (browser-optimized)
+ * - Easier to maintain (no device-specific code)
+ *
+ * See FLUID_LAYOUT_MIGRATION.md for full documentation
+ */
+
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap");
