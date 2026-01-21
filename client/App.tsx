@@ -404,7 +404,7 @@ function App() {
       <ThemeProvider>
         <BrowserRouter>
           <ScrollToTop />
-          <div className="min-h-screen bg-background text-foreground flex flex-col overflow-x-hidden">
+          <div className="relative min-h-screen bg-background text-foreground flex flex-col overflow-x-hidden">
             <Navigation />
             <main className="w-full">
               <Routes>
