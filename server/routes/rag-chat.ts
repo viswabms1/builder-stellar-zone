@@ -339,7 +339,7 @@ export const handleRagChat = async (req: Request, res: Response) => {
     console.log(
       `[RAG] Calling Chat Completions API with ${contextChunks.length} context chunks`,
     );
-    console.log("[RAG] Using gpt-4o-mini with temperature: 0.3");
+    console.log("[RAG] Using gpt-4o-mini with temperature: 0 (deterministic mode)");
 
     // Call Chat Completions API with gpt-4o-mini
     const completionsApiUrl = "https://api.openai.com/v1/chat/completions";
