@@ -361,9 +361,12 @@ export function RagChatWidget() {
             {/* Messages Container */}
             <div
               className={cn(
-                "flex-1 overflow-y-auto p-4 space-y-4",
+                "flex-1 overflow-y-auto space-y-4",
                 theme === "light" ? "bg-gray-50" : "bg-slate-800/50",
               )}
+              style={{
+                padding: "clamp(0.75rem, 2vmin, 1rem)",
+              }}
             >
               {messages.map((message) => (
                 <motion.div
