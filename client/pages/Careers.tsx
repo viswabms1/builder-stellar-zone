@@ -1,13 +1,17 @@
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Briefcase, MapPin, Users, Award } from "lucide-react";
+import { ArrowRight, Briefcase, ChevronDown } from "lucide-react";
 
 export default function Careers() {
+  const [expandedId, setExpandedId] = useState<number | null>(null);
+
   const jobOpenings = [
     {
+      id: 1,
       title: "Professors & Associate Professors",
       department: "Dr. Chandramma Dayananda Sagar Institute of Medical Education and Research (CDSIMER)",
+      preview: "Medical positions across multiple specialties",
       positions: [
         "General Medicine",
         "Emergency Medicine",
@@ -48,8 +52,10 @@ export default function Careers() {
       deadline: "7 days from the date of advertisement",
     },
     {
+      id: 2,
       title: "Senior Project Engineers",
       department: "School of Engineering",
+      preview: "15+ years civil engineering construction experience required",
       description: "Bachelor's Degree in Civil Engineering with minimum 15 years of experience in premier construction industry",
       requirements: [
         "Extensive experience in construction, plumbing, carpentry, electrical engineering, environmental engineering, HVAC, and mechanical systems",
@@ -62,8 +68,10 @@ export default function Careers() {
       deadline: "15 days from the date of advertisement",
     },
     {
+      id: 3,
       title: "School of Engineering Faculty Positions",
       department: "School of Engineering",
+      preview: "Multiple engineering specializations including CSE, AI&ML, ECE, Aerospace",
       positions: [
         "Computer Science & Engineering",
         "Computer Science & Engineering (Data Sciences)",
@@ -81,8 +89,10 @@ export default function Careers() {
       deadline: "10 days from the date of advertisement",
     },
     {
+      id: 4,
       title: "General Manager - Administration",
       department: "Dayananda Sagar University",
+      preview: "Oversee day-to-day administration with 15-20 years experience",
       description: "Oversee day-to-day administration of Educational Campus",
       responsibilities: [
         "Developing and managing Admin Operations and Maintenance",
@@ -96,8 +106,10 @@ export default function Careers() {
       deadline: "Within 10 days from the date of advertisement",
     },
     {
+      id: 5,
       title: "Manager - Facilities Management",
       department: "Dayananda Sagar University",
+      preview: "Manage campus facilities and infrastructure with 10+ years experience",
       description: "Manage and oversee Campus facilities and infrastructure",
       responsibilities: [
         "Managing Admin Operations & Maintenance",
@@ -111,13 +123,19 @@ export default function Careers() {
       deadline: "Within 10 days from the date of advertisement",
     },
     {
+      id: 6,
       title: "Faculty Positions - School of Computer Applications",
       department: "School of Computer Applications",
+      preview: "Assistant Professor, Associate Professor, and Professor positions available",
       positions: ["Assistant Professor", "Associate Professor", "Professor"],
       contact: "careers@dsu.edu.in",
       applyUrl: "https://www.dsu.edu.in/careers",
     },
   ];
+
+  const toggleExpand = (id: number) => {
+    setExpandedId(expandedId === id ? null : id);
+  };
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -160,32 +178,46 @@ export default function Careers() {
           <div className="mb-12">
             <h2 className="headline-2 font-display mb-3">Current Openings</h2>
             <p className="text-foreground/80 font-body max-w-3xl">
-              Explore available positions across our institution and join our growing team of dedicated professionals.
+              Click on any position to view full details and application instructions.
             </p>
           </div>
 
-          <div className="space-y-6">
-            {jobOpenings.map((job, idx) => (
+          <div className="space-y-4">
+            {jobOpenings.map((job) => (
               <Card
-                key={idx}
+                key={job.id}
                 className="border border-border/50 bg-card/50 backdrop-blur-sm hover:border-orange-500/30 transition-all hover:shadow-lg overflow-hidden"
               >
-                <CardHeader className="bg-gradient-to-r from-orange-600/10 to-transparent pb-4">
-                  <div className="flex items-start justify-between gap-4">
-                    <div>
-                      <CardTitle className="text-xl md:text-2xl font-display">
-                        {job.title}
-                      </CardTitle>
-                      <CardDescription className="mt-2 flex items-center gap-2">
-                        <Briefcase className="w-4 h-4" />
-                        {job.department}
-                      </CardDescription>
+                <button
+                  onClick={() => toggleExpand(job.id)}
+                  className="w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                >
+                  <CardHeader className="pb-4 text-left hover:bg-orange-600/5 transition-colors">
+                    <div className="flex items-start justify-between gap-4">
+                      <div>
+                        <CardTitle className="text-lg md:text-xl font-display">
+                          {job.title}
+                        </CardTitle>
+                        <CardDescription className="mt-2 flex items-center gap-2">
+                          <Briefcase className="w-4 h-4" />
+                          {job.department}
+                        </CardDescription>
+                      </div>
+                      <ChevronDown
+                        className={`w-5 h-5 text-orange-600 flex-shrink-0 transition-transform duration-300 ${
+                          expandedId === job.id ? "rotate-180" : ""
+                        }`}
+                      />
                     </div>
-                  </div>
-                </CardHeader>
+                    <p className="text-sm text-foreground/70 mt-3">
+                      {job.preview}
+                    </p>
+                  </CardHeader>
+                </button>
 
-                <CardContent className="pt-6">
-                  <div className="space-y-6">
+                {/* Expanded Content */}
+                {expandedId === job.id && (
+                  <CardContent className="pt-0 border-t border-border/50 space-y-6 animate-in fade-in slide-in-from-top-2 duration-300">
                     {/* Positions */}
                     {job.positions && job.positions.length > 0 && (
                       <div>
@@ -221,6 +253,21 @@ export default function Careers() {
                       <div>
                         <h4 className="font-semibold text-foreground mb-2">Description:</h4>
                         <p className="text-sm text-foreground/80">{job.description}</p>
+                      </div>
+                    )}
+
+                    {/* Responsibilities */}
+                    {job.responsibilities && job.responsibilities.length > 0 && (
+                      <div>
+                        <h4 className="font-semibold text-foreground mb-3">Responsibilities:</h4>
+                        <div className="space-y-2">
+                          {job.responsibilities.map((resp, i) => (
+                            <div key={i} className="flex items-start gap-2">
+                              <span className="text-orange-600 text-lg leading-none">•</span>
+                              <span className="text-sm text-foreground/80">{resp}</span>
+                            </div>
+                          ))}
+                        </div>
                       </div>
                     )}
 
@@ -314,8 +361,8 @@ export default function Careers() {
                         </a>
                       )}
                     </div>
-                  </div>
-                </CardContent>
+                  </CardContent>
+                )}
               </Card>
             ))}
           </div>
