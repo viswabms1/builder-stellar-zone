@@ -113,31 +113,35 @@ More Info: https://dsu.edu.in/eligibility
 SCHOOL OF COMPUTER APPLICATIONS
 ================================================================================
 
-Program: BCA - Bachelor of Computer Applications
-Level: UG | Duration: 3 Years
-Eligibility: Pass in 10+2, A Level, IB, American 12th grade or equivalent and a minimum of 45% marks in aggregate.
-Fee Structure (Annual): ₹2,07,000
+UNDERGRADUATE PROGRAMS:
+Programs Offered:
+  1. BCA in Computer Applications (3 Years)
+  2. BCA in Artificial Intelligence & Data Sciences (3 Years)
+  3. B.Sc in Data Science (3 Years)
+  4. B.Sc in Cyber Security (3 Years)
 
-Program: BCA in AI & Data Sciences
-Level: UG | Duration: 3 Years
-Fee Structure (Annual): ₹2,07,000
+Eligibility:
+  - 10+2 or equivalent with a minimum of 45% marks in aggregate.
 
-Program: B.Sc Data Science
-Level: UG | Duration: 3 Years
-Fee Structure (Annual): ₹1,62,000
+Fees (Annual - 2026-27):
+  - BCA in Computer Applications: ₹2,07,000 (Term I: ₹1,09,500, Term II: ₹97,500)
+  - BCA in Artificial Intelligence & Data Sciences: ₹2,07,000 (Term I: ₹1,09,500, Term II: ₹97,500)
+  - B.Sc in Data Science: ₹1,62,000 (Term I: ₹87,000, Term II: ₹75,000)
+  - B.Sc in Cyber Security: ₹1,62,000 (Term I: ₹87,000, Term II: ₹75,000)
 
-Program: B.Sc Cyber Security
-Level: UG | Duration: 3 Years
-Fee Structure (Annual): ₹1,62,000
+POSTGRADUATE PROGRAMS:
+Programs Offered:
+  1. MCA in Computer Applications (2 Years)
+  2. M.Sc in Data Science (2 Years)
+  3. M.Sc in Cyber Security (2 Years)
 
-Program: MCA - Master of Computer Applications
-Level: PG | Duration: 2 Years
-Eligibility: UG degree in BCA/B.Sc.(CS/IT) or B.Sc./B.Com/BA with Mathematics at 10+2 level or Graduation Level. Minimum 50% marks.
-Fee Structure (Annual): ₹3,42,000
+Eligibility:
+  - BCA/B.Sc.(CS/IT) or B.Sc./B.Com/BA with Mathematics in 10+2 level.
 
-Program: M.Sc Data Science
-Level: PG | Duration: 2 Years
-Fee Structure (Annual): ₹1,52,000
+Fees (Annual - 2026-27):
+  - MCA in Computer Applications: ₹3,42,000 (Term I: ₹1,77,000, Term II: ₹1,65,000)
+  - M.Sc in Data Science: ₹1,52,000 (Term I: ₹82,000, Term II: ₹70,000)
+  - M.Sc in Cyber Security: ₹1,52,000 (Term I: ₹82,000, Term II: ₹70,000)
 
 ================================================================================
 SCHOOL OF LAW
