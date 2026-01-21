@@ -248,7 +248,7 @@ export default function BPharm() {
 
             <div className="p-6 rounded-lg border border-brand-blue/20 bg-brand-blue/5">
               <div className="flex items-start gap-4">
-                <Vials className="h-6 w-6 text-brand-blue flex-shrink-0 mt-1" />
+                <Droplets className="h-6 w-6 text-brand-blue flex-shrink-0 mt-1" />
                 <div>
                   <h3 className="font-display font-semibold mb-2">
                     Pharmacognosy
