@@ -95,7 +95,16 @@ export default function ElectronicsCommunication() {
                 target="_blank"
                 rel="noreferrer"
               >
-                <Button className="bg-brand-gradient text-foreground">Apply Now <GraduationCap className="w-4 h-4 ml-2" /></Button>
+                <Button
+                  className="bg-brand-gradient text-foreground"
+                  style={{
+                    padding: 'clamp(0.5rem, 1.5vw, 0.75rem) clamp(1rem, 3vw, 1.5rem)',
+                    fontSize: 'clamp(0.8125rem, 1.8vw, 0.875rem)',
+                  }}
+                >
+                  Apply Now
+                  <GraduationCap style={{ width: 'clamp(0.875rem, 1.5vw, 1rem)', height: 'clamp(0.875rem, 1.5vw, 1rem)' }} className="ml-2" />
+                </Button>
               </a>
             </div>
           </div>
