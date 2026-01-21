@@ -30,19 +30,18 @@ import { DeanSection, type DeanInfo } from "@/components/DeanSection";
 import { useAutoMuteOnScroll } from "@/hooks/useAutoMuteOnScroll";
 
 const DEAN_INFO: DeanInfo = {
-  name: "Dr. Pharmacy Dean",
-  title: "Principal (I/C)",
-  position: "College of Pharmaceutical Sciences",
+  name: "Dr. MAYUR YERGERI CHANDRASEKHARAPPA",
+  title: "M. Pharm, Ph.D.",
+  position: "Principal, College of Pharmaceutical Sciences",
   photo:
-    "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=800&auto=format&fit=crop",
+    "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fcd86871d1f5644d8a1ded621ddadb75b?format=webp&width=800&height=1200",
   message: [
-    "Welcome to College of Pharmaceutical Sciences, DSU!",
-    "As the Principal of this esteemed institution, I am proud to lead a community of dedicated educators, enthusiastic learners, and committed pharmaceutical professionals. Our college is renowned for its robust academic programs, cutting-edge research, and comprehensive practical training, all designed to prepare our students to become skilled and ethical pharmacy professionals.",
-    "Our mission is to provide a nurturing and dynamic learning environment that fosters intellectual growth, ethical practice, and a commitment to lifelong learning. We believe that pharmacy is not just a profession but a calling that serves humanity through the science of medicines.",
-    "At College of Pharmaceutical Sciences, DSU we offer a range of programs from undergraduate to postgraduate levels, each designed to meet the diverse needs of the pharmaceutical and healthcare sector. Our state-of-the-art laboratories, experienced faculty, and strong industry partnerships ensure that our students receive the best possible education and hands-on experience.",
-    "We are committed to promoting an inclusive and supportive atmosphere where every student can thrive. Our faculty and staff are here to support you every step of the way, from your first day of classes to your transition into the professional world.",
-    "I invite you to explore our website and learn more about our programs, faculty, research initiatives, and the many opportunities that await you here.",
-    "BEST WISHES!",
+    "The College of Pharmaceutical Sciences at Dayananda Sagar University envisions becoming a global leader in pharmaceutical education, research, and innovation, aligned with the future needs of India and the world. Our mission is to nurture a new generation of pharmaceutical professionals who are equipped with cutting-edge knowledge, ethical values, and a commitment to addressing the evolving healthcare challenges of the 21st century.",
+    "In the coming decades, India will face unprecedented demands in healthcare, driven by population growth, aging demographics, and the rise of chronic diseases. The College of Pharmaceutical Sciences aims to be at the forefront of this transformation by fostering interdisciplinary research, promoting drug discovery, and developing affordable, sustainable healthcare solutions. We will focus on emerging areas such as personalized medicine, nanotechnology, biologics, and artificial intelligence in drug development, ensuring our graduates are prepared to lead in a rapidly changing industry.",
+    "Our vision emphasizes collaboration with industry, government, and global academic institutions to bridge the gap between academia and real-world applications. By establishing state-of-the-art research facilities and pharma startups, we will empower students and faculty to innovate and translate research into impactful products and therapies. We also aim to address India's need for self-reliance in pharmaceuticals by promoting indigenous drug development and reducing dependency on imports.",
+    "Ethics and social responsibility will remain at the core of our curriculum, ensuring that our graduates not only excel in their careers but also contribute to the well-being of society. We envision a future where the DSU's College of Pharmaceutical Sciences is recognized as a hub of excellence, driving advancements in healthcare and improving the quality of life for millions. Through our commitment to education, research, and innovation, we aspire to play a pivotal role in shaping a healthier and a sustainable future for India and the world.",
+    "Dr. MAYUR YERGERI CHANDRASEKHARAPPA",
+    "Principal",
   ],
   borderColor: "border-brand-blue/20",
   bgColor: "bg-brand-blue/5",
