@@ -193,19 +193,19 @@
     font-family: "Poppins", "Inter", sans-serif;
   }
 
-  /* Fluid Hero Video Container */
+  /* Fluid Hero Video Container - No Fixed Height */
   .hero-video-container {
     width: 100%;
-    height: clamp(35vh, 40vh + 5vmin, 85vh);
-    overflow: visible;
+    /* Let video aspect ratio define height naturally */
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
     position: relative;
-    z-index: 10;
   }
 
   /* Fluid Dean Section Spacing */
   .dean-section-wrapper {
     margin-top: 0;
-    padding-top: clamp(0rem, 2vh, 2rem);
+    padding-top: var(--space-md);
   }
 
   /* Fluid Hero Title Positioning - Container Query Approach */
