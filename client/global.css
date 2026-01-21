@@ -355,9 +355,15 @@
   }
 
   /* Landscape mobile: Force buttons to flex-row to prevent cutoff */
-  @media (max-height: 550px) and (max-width: 768px) {
-    .hero-title-outside ~ .flex.md\:hidden {
+  @media (max-height: 550px) and (orientation: landscape) {
+    .landscape-buttons {
       flex-direction: row !important;
+      flex-wrap: wrap;
+    }
+
+    .landscape-buttons > a {
+      flex: 1 1 auto;
+      min-width: 140px;
     }
   }
 
