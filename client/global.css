@@ -286,31 +286,8 @@
     position: relative;
   }
 
-  /* Remove all fixed heights from hero containers */
-  .dept-hero-section > div[class*="h-["],
-  section[class*="hero"] > div[class*="h-["],
-  div[class*="hero"] > div[class*="h-["] {
-    height: auto !important;
-    min-height: auto !important;
-  }
-
-  /* Fluid hero image containers - use aspect ratio */
-  .dept-hero-section img,
-  section[class*="hero"] img,
-  div[class*="hero"] img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    aspect-ratio: 16 / 9;
-  }
-
-  /* Standard hero sections across the site */
-  section.relative > div[class*="h-[50vh]"],
-  section.relative > div[class*="h-[65vh]"] {
-    height: auto !important;
-    min-height: 300px;
-    aspect-ratio: 21 / 9;
-  }
+  /* Note: Removed overly broad rules that were affecting department pages */
+  /* Department hero sections should use their own specific heights */
 
   /* Fluid Hero Section - Let Content Define Height */
   .hero-section {
