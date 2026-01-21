@@ -359,11 +359,17 @@
     .landscape-buttons {
       flex-direction: row !important;
       flex-wrap: wrap;
+      gap: clamp(0.5rem, 1vw, 0.75rem) !important;
     }
 
     .landscape-buttons > a {
       flex: 1 1 auto;
-      min-width: 140px;
+      min-width: auto;
+    }
+
+    /* Also handle any flex-col elements within button containers */
+    .landscape-buttons .flex-col {
+      flex-direction: row;
     }
   }
 
