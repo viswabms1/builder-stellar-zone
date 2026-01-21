@@ -193,19 +193,6 @@ const admissionTracks: AdmissionTrack[] = [
     ctaLabel: "Begin Direct Application",
   },
   {
-    title: "PGCET & Lateral Entry Admissions",
-    description:
-      "Follow Karnataka PGCET counseling codes for postgraduate programs and lateral admissions.",
-    highlights: [
-      "PGCET Codes: T970 (M.Tech) and B365MB (MBA)",
-      "Document verification at KEA designated centers",
-      "DSU assistance for branch selection and onboarding",
-    ],
-    href: "https://www.dsu.edu.in/eligibility",
-    icon: School,
-    ctaLabel: "View PGCET Guidelines",
-  },
-  {
     title: "International Admissions",
     description:
       "Dedicated advisors support foreign nationals, NRIs, and PIO applicants with documentation and visas.",
