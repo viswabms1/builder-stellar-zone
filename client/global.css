@@ -298,165 +298,78 @@
     }
   }
 
-  /* Fix hero text hidden behind navbar on mobile landscape */
-  @media screen and (max-width: 950px) and (orientation: landscape) {
-    /* Hide the top menu bar entirely in landscape */
-    .sticky.top-0.z-50.hidden.sm\:block {
-      display: none !important;
-    }
+  /* Fluid Hero Section - Device Agnostic */
+  .hero-section {
+    /* Fluid height using clamp - adapts to viewport */
+    height: clamp(50vh, 40vh + 10vw, 80vh);
+    min-height: clamp(50vh, 40vh + 10vw, 80vh);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: visible;
+  }
 
-    /* Make main nav more compact */
-    nav.sticky {
-      padding: 4px 8px !important;
-      min-height: auto !important;
-    }
+  /* Fluid hero content container */
+  .hero-section .relative.max-w-7xl {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: clamp(0.75rem, 2vw, 2rem);
+    padding: clamp(1rem, 3vw, 3rem) clamp(0.75rem, 2vw, 1.5rem);
+    width: 100%;
+    height: 100%;
+  }
 
-    nav.sticky > div {
-      height: auto !important;
-      gap: 2px !important;
-    }
+  /* Fluid typography using clamp() */
+  .hero-section h1 {
+    font-size: clamp(1.5rem, 4vw + 0.5rem, 4.5rem);
+    line-height: 1.1;
+    margin-bottom: clamp(0.25rem, 1vw, 1rem);
+  }
 
-    nav.sticky a,
-    nav.sticky button {
-      padding: 4px 6px !important;
-      font-size: 11px !important;
-      line-height: 1.2 !important;
-    }
+  .hero-section p {
+    font-size: clamp(0.875rem, 1.5vw + 0.25rem, 1.5rem);
+    line-height: 1.4;
+    margin-bottom: clamp(0.125rem, 0.5vw, 0.5rem);
+  }
 
-    /* Pull hero video container down for school pages */
-    .hero-video-container {
-      padding-top: 400px !important;
-      margin-top: 0 !important;
-      margin-bottom: -350px !important;
-    }
+  /* Fluid button container */
+  .hero-section .flex.flex-col {
+    gap: clamp(0.5rem, 1.5vw, 1.5rem);
+  }
 
-    /* Hide the hero-title-outside section in landscape */
-    .hero-title-outside,
-    .hero-video-container + div.bg-background {
-      display: none !important;
-    }
+  /* Fluid buttons */
+  .hero-section button,
+  .hero-section a button {
+    padding: clamp(0.5rem, 1vw, 1.5rem) clamp(1rem, 2vw, 2rem);
+    font-size: clamp(0.75rem, 1vw + 0.25rem, 1rem);
+  }
 
-    /* Pull International Admissions hero down */
-    .hero-international-content {
-      padding-top: 420px !important;
-      margin-top: 0 !important;
-    }
+  /* Fluid location badge */
+  .hero-section .absolute.top-10 {
+    top: clamp(1rem, 2vh, 5rem);
+    right: clamp(0.75rem, 2vw, 1.5rem);
+  }
 
-    /* Reduce gap after hero section - don't pull up for homepage */
-    .hero-video-container + *:not(.hero-section + section) {
-      margin-top: 0 !important;
-      position: relative !important;
-      z-index: 10 !important;
-    }
+  /* Ensure sections flow naturally */
+  .hero-section + section {
+    margin-top: 0;
+    padding-top: clamp(1rem, 3vw, 4rem);
+  }
 
-    /* Don't pull up sections on the homepage */
-    .hero-video-container ~ section:not(.hero-section + section) {
-      margin-top: -300px !important;
-    }
-
-    /* Pull all hero sections down */
-    section.relative.overflow-hidden {
-      padding-top: 380px !important;
-      margin-bottom: -350px !important;
-    }
-
-    /* Ensure hero sections use proper top padding and height for mobile landscape */
+  /* Compact layout for short viewports (landscape phones, etc.) */
+  @media (max-height: 500px) {
     .hero-section {
-      margin-top: 0 !important;
-      padding-top: 0 !important;
-      height: 55vh !important;
-      min-height: 55vh !important;
-      max-height: 55vh !important;
-      margin-bottom: 0 !important;
-      position: relative !important;
-      z-index: 1 !important;
-      overflow: visible !important;
+      height: clamp(60vh, 70vh, 90vh);
+      min-height: clamp(60vh, 70vh, 90vh);
     }
 
-    /* Better content alignment in homepage hero */
-    .hero-section .relative.max-w-7xl {
-      height: 100% !important;
-      display: flex !important;
-      flex-direction: column !important;
-      justify-content: center !important;
-      align-items: flex-start !important;
-      padding-top: 1rem !important;
-      padding-bottom: 1rem !important;
-      gap: 1rem !important;
-    }
-
-    /* Prevent next section from overlapping hero */
-    .hero-section + section {
-      position: relative !important;
-      z-index: 2 !important;
-      margin-top: 0 !important;
-      padding-top: 2rem !important;
-    }
-
-    /* Override global section rules for sections immediately after hero */
-    section.relative.bg-gradient-to-r {
-      margin-top: 0 !important;
-      padding-top: 1rem !important;
-      padding-bottom: 1rem !important;
-    }
-
-    /* Adjust hero title size for landscape - more compact */
-    .hero-section h1 {
-      margin-top: 0 !important;
-      font-size: 1.5rem !important;
-      line-height: 1.75rem !important;
-      margin-bottom: 0.25rem !important;
-    }
-
-    .hero-section p {
-      font-size: 0.875rem !important;
-      line-height: 1.25rem !important;
-      margin-bottom: 0.125rem !important;
-    }
-
-    /* Compact button spacing */
-    .hero-section .flex.flex-col.gap-4 {
-      gap: 0.5rem !important;
-    }
-
-    .hero-section button,
-    .hero-section a button {
-      padding: 0.375rem 1rem !important;
-      font-size: 0.75rem !important;
-      line-height: 1rem !important;
-    }
-
-    /* Hide secondary button row to save space */
-    .hero-section .flex.flex-col.sm\:flex-row {
-      display: none !important;
-    }
-
-    /* Hide extra link in landscape to save space */
+    .hero-section .flex.flex-col.sm\:flex-row,
     .hero-section a[href="/ai-first"] {
-      display: none !important;
-    }
-
-    /* Location badge positioning */
-    .hero-section .absolute.top-10 {
-      top: 1rem !important;
-    }
-
-    /* Reset sections following hero - don't pull them up */
-    section:not([class*="hero"]):not(.hero-section + section) {
-      position: relative !important;
-      z-index: 10 !important;
-      margin-top: 0 !important;
-    }
-
-    section[id="top"] {
-      margin-top: 0 !important;
-      padding-top: 0 !important;
-    }
-
-    /* Reduce excessive padding on department hero sections in landscape */
-    .dept-hero-section {
-      margin-top: 0 !important;
-      padding-top: 300px !important;
+      display: none;
     }
   }
 
