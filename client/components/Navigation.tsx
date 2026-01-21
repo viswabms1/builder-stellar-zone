@@ -729,18 +729,18 @@ export default function Navigation() {
 
       {/* Main Navigation Bar */}
       <nav
-        className={`sticky top-1 lg:top-14 z-[9997] transition-all duration-300 overflow-visible shadow-md ${
+        className={`sticky top-1 lg:top-0 z-[9997] transition-all duration-300 overflow-visible shadow-md ${
           theme === "light"
             ? "bg-white/95 backdrop-blur-sm border-b-2 border-orange-200/50"
             : "bg-slate-950/95 backdrop-blur-sm border-b-2 border-orange-600/30"
         }`}
       >
         <div className="w-full overflow-visible">
-          <div className="flex flex-row items-center justify-between h-14 lg:h-auto lg:flex-col lg:items-center lg:justify-center lg:flex-row">
+          <div className="flex flex-row items-center justify-between py-2 lg:py-0 lg:flex-col lg:items-center lg:justify-center lg:flex-row">
             {/* Mobile Logo - Left side */}
             <Link
               to="/"
-              className="lg:hidden flex-shrink-0 flex items-center justify-start px-1 -mt-3 -mb-2"
+              className="lg:hidden flex-shrink-0 flex items-center justify-start px-1"
             >
               <img
                 src={
