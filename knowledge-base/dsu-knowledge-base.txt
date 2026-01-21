@@ -282,55 +282,50 @@ SCHOOL OF COMMERCE & MANAGEMENT
 ================================================================================
 Shaping tomorrow's business and industry leaders with professional certifications.
 
-PROGRAMS OFFERED
-----------------
+UNDERGRADUATE PROGRAMS
+----------------------
 
-DEPARTMENT OF COMMERCE:
+Programs Offered:
   - B.Com Regular (3 Years)
   - B.Com ACCA Integrated (3 Years)
   - B.Com CMA Integrated (3 Years)
   - B.Com With CA Coaching (3 Years)
-
-DEPARTMENT OF MANAGEMENT:
   - BBA Regular (3 Years)
+
+Eligibility:
+  - B.Com Programs: Candidates who have completed 10+2 with Business Studies and Accountancy with aggregate of 50% (45% for SC/ST & OBC).
+  - BBA Regular: 10+2 or equivalent with a minimum of 50% marks in aggregate (45% for SC/ST & OBC).
+
+Fees (Annual - 2026-27):
+  - B.Com Regular:
+    Term I: ₹79,500
+    Term II: ₹77,500
+    Total (Incl. Library Deposit): ₹1,57,000
+
+  - B.Com ACCA Integrated / CMA Integrated / CA Coaching:
+    Term I: ₹99,500
+    Term II: ₹87,500
+    Total (Incl. Library Deposit): ₹1,87,000
+
+  - BBA Regular:
+    Term I: ₹1,07,000
+    Term II: ₹1,05,000
+    Total (Incl. Library Deposit): ₹2,12,000
+
+POSTGRADUATE PROGRAMS
+---------------------
+
+Programs Offered:
   - MBA (2 Years)
 
-ELIGIBILITY REQUIREMENTS
-------------------------
+Eligibility:
+  - Pass in a Bachelor's degree in any stream with minimum 50% (45% for SC/ST & OBC) from any recognized University/Institution.
 
-B.Com Programs:
-  Candidates who have completed two year Pre – University course of Karnataka State or its equivalent with Business Studies and Accountancy as two major subjects of study with aggregate of 50% (45% in case of candidate belonging to SC/ST & OBC category).
-
-BBA Regular:
-  Pass in 10+2, A Level, IB, American 12th grade or equivalent with a minimum of 50% marks in aggregate (45% in case of candidate belonging to SC/ST & OBC category).
-
-MBA:
-  Pass in a Bachelors degree of three years in any stream with minimum 50% (45% in case of candidates belonging to SC/ST & OBC category) of marks in aggregate from any recognized University / Institution.
-
-FEE STRUCTURE
--------------
-
-B.Com Programs (Annual Fees):
-  Regular:
-    - Term I: ₹79,500
-    - Term II: ₹77,500
-    - Total (Incl. Library Deposit): ₹1,57,000
-  
-  ACCA Integrated / CMA Integrated / CA Coaching:
-    - Term I: ₹99,500
-    - Term II: ₹87,500
-    - Total (Incl. Library Deposit): ₹1,87,000
-
-BBA Regular (Annual Fees):
-  - Term I: ₹1,07,000
-  - Term II: ₹1,05,000
-  - Total (Incl. Library Deposit): ₹2,12,000
-
-MBA (Annual Fees):
-  - PGCET: Not Available
-  - Term I: ₹3,07,000
-  - Term II: ₹2,95,000
-  - Total: ₹6,02,000
+Fees (Annual - 2026-27):
+  - MBA:
+    Term I: ₹3,07,000
+    Term II: ₹2,95,000
+    Total: ₹6,02,000
 
 Special Notes:
   MBA offers dual specialization options covering Business Analytics, Finance, Marketing, HR, and Operations.
