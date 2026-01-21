@@ -28,60 +28,98 @@ SCHOOL OF ENGINEERING
 ================================================================================
 Innovation-driven education for the tech-savvy world with cutting-edge AI labs and research facilities.
 
-PROGRAMS OFFERED
-----------------
+UNDERGRADUATE PROGRAMS (B.TECH)
+--------------------------------
 
-B.TECH UNDERGRADUATE PROGRAMS:
+Programs Offered:
+  1. B.Tech in Computer Science & Engineering (4 Years)
+  2. B.Tech in Computer Science & Engineering (Artificial Intelligence & Machine Learning) (4 Years)
+  3. B.Tech in Computer Science & Engineering (Data Science) (4 Years)
+  4. B.Tech in Computer Science & Engineering (Cyber Security) (4 Years)
+  5. B.Tech in Computer Science & Engineering (Artificial Intelligence & Data Science) (4 Years)
+  6. B.Tech in Computer Science & Medical Engineering (4 Years)
+  7. B.Tech in Computer Science & Engineering (Artificial Intelligence) (4 Years)
+  8. B.Tech in Computer Science & Technology (4 Years)
+  9. B.Tech in AI & Robotics (4 Years)
+  10. B.Tech in Electronics & Communication Engineering (4 Years)
+  11. B.Tech in Mechanical Engineering (4 Years)
+  12. B.Tech in Aerospace Engineering (4 Years)
 
-COMPUTER SCIENCE & ENGINEERING SPECIALIZATIONS:
-  1. B.Tech Computer Science & Technology (4 Years)
-  2. B.Tech Computer Science & Medical Engineering (4 Years)
-  3. B.Tech CSE (Artificial Intelligence & Machine Learning) (4 Years)
-  4. B.Tech CSE (Data Science) (4 Years)
-  5. B.Tech CSE (Cyber Security) (4 Years)
-  6. B.Tech CSE (AI & Data Science) (4 Years)
-  7. B.Tech CSE (Artificial Intelligence) (4 Years)
-  8. B.Tech AI & Robotics (4 Years)
+Eligibility:
+  - Pass in 10+2 with Physics, Chemistry, and Mathematics with at least 45% marks (40% for SC/ST & OBC candidates).
 
-OTHER ENGINEERING SPECIALIZATIONS:
-  9. B.Tech Electronics & Communication Engineering (4 Years)
-  10. B.Tech Mechanical Engineering (4 Years)
-  11. B.Tech Aerospace Engineering (4 Years)
+Fees (Annual - 2026-27):
+  - B.Tech in Computer Science & Engineering:
+    CET: ₹4,12,000
+    JEE Mains/Uniguage/Comed-K: ₹4,92,000
 
-M.TECH POSTGRADUATE PROGRAMS:
-  - M.Tech Computer Science & Engineering (2 Years)
-  - M.Tech CSE (AI & Machine Learning) (2 Years)
-  - M.Tech AI & Data Science (2 Years)
-  - M.Tech Artificial Intelligence (2 Years)
-  - M.Tech AI & Robotics (2 Years)
-  - M.Tech Embedded System (2 Years)
-  - M.Tech Design Engineering (2 Years)
+  - B.Tech in Computer Science & Engineering (Artificial Intelligence & Machine Learning):
+    CET: ₹4,35,000
+    JEE Mains/Uniguage/Comed-K: ₹5,25,000
 
-ELIGIBILITY REQUIREMENTS
-------------------------
+  - B.Tech in Computer Science & Engineering (Data Science):
+    CET: ₹4,12,000
+    JEE Mains/Uniguage/Comed-K: ₹4,92,000
 
-UNDERGRADUATE (B.Tech) PROGRAMS:
-  - Pass in PUC / 10+2 examination with Physics and Mathematics as compulsory subjects along with one of the following: Chemistry / Biotechnology / Biology / Computer Science / Electronics / Technical Vocational subjects.
-  - Minimum of 45% marks in the above subjects taken together (40% for SC/ST/OBC candidates).
+  - B.Tech in Computer Science & Engineering (Cyber Security):
+    CET: ₹4,12,000
+    JEE Mains/Uniguage/Comed-K: ₹4,92,000
 
-POSTGRADUATE (M.Tech) PROGRAMS:
-  - Pass in B.Tech in ECE, CSE, ISE, Biomedical, Medical Electronics, Electronics & Instrumentation, EEE, Telecommunications, Mechatronics and other related branches with a minimum of 50% marks in aggregate (45% in case of candidate belonging to SC/ST & OBC).
-  - Exception (Design Engineering): B.Tech in Mechanical, Industrial Engineering & Management, Aerospace, Aeronautical, Automobile, or related disciplines with minimum 50% marks in aggregate (45% for SC/ST/OBC).
+  - B.Tech in Computer Science & Engineering (Artificial Intelligence & Data Science):
+    CET: ₹4,35,000
+    JEE Mains/Uniguage/Comed-K: ₹5,25,000
 
-FEE STRUCTURE
--------------
+  - B.Tech in Computer Science & Medical Engineering:
+    CET: ₹4,12,000
+    JEE Mains/Uniguage/Comed-K: ₹4,92,000
 
-B.TECH PROGRAMS (Annual Fees):
-  - CET: Not Available
-  - Ranking Based (JEE Mains / Uniguage / Comed-K): ₹3,22,000 - ₹4,35,000
-  - Others: ₹4,12,000 - ₹5,25,000
+  - B.Tech in Computer Science & Engineering (Artificial Intelligence):
+    CET: ₹4,35,000
+    JEE Mains/Uniguage/Comed-K: ₹5,25,000
 
-M.Tech Programs (Annual Fees):
-  - PGCET: Not Available
-  - Annual: ₹1,62,000 - ₹2,52,000
+  - B.Tech in Computer Science & Technology:
+    CET: ₹4,12,000
+    JEE Mains/Uniguage/Comed-K: ₹4,92,000
 
-Special Notes (M.Tech):
-  Job placement guarantee: Upon successful completion, candidates are offered a job with a starting salary of INR 65,000 per month for a year.
+  - B.Tech in AI & Robotics:
+    CET: ₹4,12,000
+    JEE Mains/Uniguage/Comed-K: ₹4,92,000
+
+  - B.Tech in Electronics & Communication Engineering:
+    CET: ₹3,22,000
+    JEE Mains/Uniguage/Comed-K: ₹4,12,000
+
+  - B.Tech in Mechanical Engineering:
+    CET: ₹3,22,000
+    JEE Mains/Uniguage/Comed-K: ₹4,12,000
+
+  - B.Tech in Aerospace Engineering:
+    CET: ₹3,22,000
+    JEE Mains/Uniguage/Comed-K: ₹4,12,000
+
+POSTGRADUATE PROGRAMS (M.TECH)
+-------------------------------
+
+Programs Offered:
+  1. M.Tech in Computer Science & Engineering (2 Years)
+  2. M.Tech in Computer Science & Engineering (Artificial Intelligence and Machine Learning) (2 Years)
+  3. M.Tech in Artificial Intelligence and Data Science (2 Years)
+  4. M.Tech in Artificial Intelligence (2 Years)
+  5. M.Tech in Artificial Intelligence and Robotics (2 Years)
+  6. M.Tech in Embedded Systems (2 Years)
+  7. M.Tech in Design Engineering (2 Years)
+
+Eligibility:
+  - B.Tech in relevant discipline with a minimum of 50% marks (45% for SC/ST & OBC candidates).
+
+Fees (Annual - 2026-27):
+  - M.Tech in Computer Science & Engineering: ₹2,52,000
+  - M.Tech in Computer Science & Engineering (Artificial Intelligence and Machine Learning): ₹2,52,000
+  - M.Tech in Artificial Intelligence and Data Science: ₹2,52,000
+  - M.Tech in Artificial Intelligence: ₹2,52,000
+  - M.Tech in Artificial Intelligence and Robotics: ₹2,52,000
+  - M.Tech in Embedded Systems: ₹1,62,000
+  - M.Tech in Design Engineering: ₹1,62,000
 
 More Info: https://dsu.edu.in/eligibility
 
