@@ -1,0 +1,113 @@
+{
+  "data": {
+    "id": 1,
+    "documentId": "abc123xyz",
+    "title": "Vision, Mission and Values",
+    "slug": "vision-mission",
+    "description": "Guiding DSU's transition from a legacy institution to a future-ready, AI-first university",
+    "publishedAt": "2024-01-15T10:30:00.000Z",
+    "createdAt": "2024-01-15T09:00:00.000Z",
+    "updatedAt": "2024-01-15T10:30:00.000Z",
+    "hero": {
+      "id": 1,
+      "image": {
+        "id": 1,
+        "name": "vision-mission.jpg",
+        "url": "https://www.dsu.edu.in/images/Home/vision-mission.jpg",
+        "alternativeText": "Vision and Mission",
+        "width": 1200,
+        "height": 600
+      },
+      "heading": "Vision, Mission and Values",
+      "subtitle": "Guiding DSU's transition from a legacy institution to a future-ready, AI-first university",
+      "description": "Throwing light on the way forward",
+      "badgeIcon": "compass",
+      "badgeText": "Our Direction"
+    },
+    "sections": [
+      {
+        "id": 1,
+        "__component": "vision-mission.vision-mission",
+        "vision_title": "Vision",
+        "vision_description": "To be a centre of excellence in education, research & training, innovation & entrepreneurship and to produce citizens with exceptional leadership qualities to serve national and global needs.",
+        "vision_icon": "eye",
+        "mission_title": "Mission",
+        "mission_description": "To achieve our objectives in an environment that enhances creativity, innovation and scholarly pursuits while adhering to our vision.",
+        "mission_icon": "target"
+      },
+      {
+        "id": 2,
+        "__component": "action-items.action-items",
+        "title": "How We Translate Vision into Action",
+        "items": [
+          "AI-infused curricula and interdisciplinary learning",
+          "Research-driven teaching and innovation culture",
+          "Strong industry, startup and societal partnerships"
+        ]
+      },
+      {
+        "id": 3,
+        "__component": "core-values.core-values",
+        "title": "Values",
+        "description": "The principles that guide our decisions, actions, and interactions",
+        "values": [
+          {
+            "id": 1,
+            "icon": "lightbulb",
+            "title": "The Pursuit of Excellence",
+            "description": "Continuous improvement in teaching, research, infrastructure and institutional practices."
+          },
+          {
+            "id": 2,
+            "icon": "award",
+            "title": "Fairness",
+            "description": "Commitment to equity, inclusiveness, and unbiased academic and administrative processes."
+          },
+          {
+            "id": 3,
+            "icon": "target",
+            "title": "Leadership",
+            "description": "Developing responsible leaders capable of guiding change in education, research and industry."
+          },
+          {
+            "id": 4,
+            "icon": "heart",
+            "title": "Integrity and Transparency",
+            "description": "Upholding ethical conduct, accountability and openness in governance and academics."
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "__component": "cta.cta-section",
+        "title": "Join Our Community",
+        "description": "Be part of a university community shaping future-ready professionals, innovators and leaders.",
+        "primaryButton": {
+          "id": 1,
+          "label": "Apply Now",
+          "url": "https://admissions.dsu.edu.in/",
+          "type": "primary"
+        },
+        "secondaryButton": {
+          "id": 2,
+          "label": "Back to About",
+          "url": "/about",
+          "type": "secondary"
+        }
+      }
+    ],
+    "seo": {
+      "id": 1,
+      "metaTitle": "Vision, Mission and Values | Dayananda Sagar University",
+      "metaDescription": "Learn about DSU's vision, mission and core values guiding our journey as India's AI-first university.",
+      "keywords": "vision, mission, values, excellence, innovation, leadership",
+      "ogImage": {
+        "id": 1,
+        "name": "og-vision-mission.jpg",
+        "url": "https://www.dsu.edu.in/images/social/og-vision-mission.jpg",
+        "width": 1200,
+        "height": 630
+      }
+    }
+  }
+}
