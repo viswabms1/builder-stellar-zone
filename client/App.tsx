@@ -84,7 +84,7 @@ import RajeshTMPage from "./pages/faculty/RajeshTM";
 import PruthviPatelPage from "./pages/faculty/PruthviPatel";
 import ComputerTechnologyFacultyProfile from "./pages/ComputerTechnologyFacultyProfile";
 import CentreOfExcellence from "./pages/CentreOfExcellence";
-import VisionMission from "./pages/VisionMission";
+import VisionMission from "./pages/VisionMissionStrapi";
 import History from "./pages/History";
 import Leadership from "./pages/Leadership";
 import BoardOfGovernors from "./pages/BoardOfGovernors";
