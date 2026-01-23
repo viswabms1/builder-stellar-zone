@@ -41,6 +41,10 @@ export function createServer() {
   // Usage: GET /api/page/vision-mission?locale=en
   app.get("/api/page/:slug", getPageBySlug);
 
+  // Fetch pages by content type (university, engineering, etc.)
+  // Usage: GET /api/pages?contentType=university&locale=en
+  app.get("/api/pages", getPagesByContentType);
+
   // Webhook for Strapi cache invalidation
   // Configure in Strapi: Settings > Webhooks > Add Webhook
   // POST /api/strapi/webhook/publish
