@@ -121,6 +121,65 @@ export const getPageBySlug: RequestHandler = async (req, res) => {
 };
 
 /**
+ * Fetch pages by content type (university, department, etc.)
+ * Example: /api/strapi/pages?contentType=university
+ */
+export const getPagesByContentType: RequestHandler = async (req, res) => {
+  const { contentType } = req.query;
+  const locale = req.query.locale as string || 'en';
+
+  if (!contentType) {
+    return res.status(400).json({
+      error: 'contentType query parameter is required',
+    });
+  }
+
+  try {
+    const cacheKey = `pages:${contentType}:${locale}`;
+    const cachedData = getFromCache<StrapiResponse<PageContent[]>>(cacheKey);
+
+    if (cachedData) {
+      console.log(`[CACHE HIT] ${cacheKey}`);
+      return res.json(cachedData);
+    }
+
+    // Fetch from Strapi filtered by contentType
+    const query = new URLSearchParams({
+      'filters[contentType][$eq]': contentType as string,
+      'populate': '*',
+      'locale': locale,
+    });
+
+    const response = await fetch(
+      `${STRAPI_URL}/api/pages?${query.toString()}`,
+      {
+        headers: {
+          'Authorization': `Bearer ${STRAPI_API_TOKEN}`,
+          'Content-Type': 'application/json',
+        },
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error(`Strapi API error: ${response.statusText}`);
+    }
+
+    const data: StrapiResponse<PageContent[]> = await response.json();
+
+    // Cache the response
+    setCache(cacheKey, data);
+
+    res.json(data);
+  } catch (error) {
+    console.error('[STRAPI ERROR]', error);
+    res.status(500).json({
+      error: 'Failed to fetch pages by content type',
+      message: error instanceof Error ? error.message : 'Unknown error',
+    });
+  }
+};
+
+/**
  * Webhook endpoint for cache invalidation when content is published in Strapi
  * Configure this in Strapi: Settings > Webhooks
  * POST /api/strapi/webhook/publish
