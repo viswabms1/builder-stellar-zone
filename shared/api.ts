@@ -123,6 +123,7 @@ export interface PageContent {
   title: string;
   slug: string;
   description: string;
+  contentType: 'university' | 'engineering' | 'health-sciences' | 'commerce-management' | 'applied-sciences' | 'humanities-social-sciences' | 'law' | 'journalism' | 'mathematics' | 'physics' | 'chemistry' | 'library' | 'administration';
   hero: HeroSection;
   sections: PageBlock[];
   seo: SEOMetadata;
