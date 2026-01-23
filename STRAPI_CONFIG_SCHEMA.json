@@ -303,6 +303,199 @@
         "update": false,
         "delete": false
       }
+    },
+    "authenticated": {
+      "page": {
+        "find": true,
+        "findOne": true,
+        "create": false,
+        "update": false,
+        "delete": false
+      }
     }
-  }
+  },
+  "roles": [
+    {
+      "name": "University",
+      "description": "Can manage university-level pages (Vision, Mission, Values, etc.)",
+      "permissions": {
+        "page": {
+          "find": true,
+          "findOne": true,
+          "create": false,
+          "update": true,
+          "delete": false,
+          "filter": "contentType=university"
+        }
+      }
+    },
+    {
+      "name": "Engineering",
+      "description": "Can manage Engineering department pages",
+      "permissions": {
+        "page": {
+          "find": true,
+          "findOne": true,
+          "create": false,
+          "update": true,
+          "delete": false,
+          "filter": "contentType=engineering"
+        }
+      }
+    },
+    {
+      "name": "Health Sciences",
+      "description": "Can manage Health Sciences department pages",
+      "permissions": {
+        "page": {
+          "find": true,
+          "findOne": true,
+          "create": false,
+          "update": true,
+          "delete": false,
+          "filter": "contentType=health-sciences"
+        }
+      }
+    },
+    {
+      "name": "Commerce & Management",
+      "description": "Can manage Commerce & Management department pages",
+      "permissions": {
+        "page": {
+          "find": true,
+          "findOne": true,
+          "create": false,
+          "update": true,
+          "delete": false,
+          "filter": "contentType=commerce-management"
+        }
+      }
+    },
+    {
+      "name": "Applied Sciences",
+      "description": "Can manage Applied Sciences department pages",
+      "permissions": {
+        "page": {
+          "find": true,
+          "findOne": true,
+          "create": false,
+          "update": true,
+          "delete": false,
+          "filter": "contentType=applied-sciences"
+        }
+      }
+    },
+    {
+      "name": "Humanities & Social Sciences",
+      "description": "Can manage Humanities & Social Sciences department pages",
+      "permissions": {
+        "page": {
+          "find": true,
+          "findOne": true,
+          "create": false,
+          "update": true,
+          "delete": false,
+          "filter": "contentType=humanities-social-sciences"
+        }
+      }
+    },
+    {
+      "name": "Law",
+      "description": "Can manage Law department pages",
+      "permissions": {
+        "page": {
+          "find": true,
+          "findOne": true,
+          "create": false,
+          "update": true,
+          "delete": false,
+          "filter": "contentType=law"
+        }
+      }
+    },
+    {
+      "name": "Journalism",
+      "description": "Can manage Journalism department pages",
+      "permissions": {
+        "page": {
+          "find": true,
+          "findOne": true,
+          "create": false,
+          "update": true,
+          "delete": false,
+          "filter": "contentType=journalism"
+        }
+      }
+    },
+    {
+      "name": "Mathematics",
+      "description": "Can manage Mathematics department pages",
+      "permissions": {
+        "page": {
+          "find": true,
+          "findOne": true,
+          "create": false,
+          "update": true,
+          "delete": false,
+          "filter": "contentType=mathematics"
+        }
+      }
+    },
+    {
+      "name": "Physics",
+      "description": "Can manage Physics department pages",
+      "permissions": {
+        "page": {
+          "find": true,
+          "findOne": true,
+          "create": false,
+          "update": true,
+          "delete": false,
+          "filter": "contentType=physics"
+        }
+      }
+    },
+    {
+      "name": "Chemistry",
+      "description": "Can manage Chemistry department pages",
+      "permissions": {
+        "page": {
+          "find": true,
+          "findOne": true,
+          "create": false,
+          "update": true,
+          "delete": false,
+          "filter": "contentType=chemistry"
+        }
+      }
+    },
+    {
+      "name": "Library",
+      "description": "Can manage Library pages",
+      "permissions": {
+        "page": {
+          "find": true,
+          "findOne": true,
+          "create": false,
+          "update": true,
+          "delete": false,
+          "filter": "contentType=library"
+        }
+      }
+    },
+    {
+      "name": "Administration",
+      "description": "Can manage Administration pages",
+      "permissions": {
+        "page": {
+          "find": true,
+          "findOne": true,
+          "create": false,
+          "update": true,
+          "delete": false,
+          "filter": "contentType=administration"
+        }
+      }
+    }
+  ]
 }
