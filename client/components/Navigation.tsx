@@ -693,7 +693,7 @@ export default function Navigation() {
                         : "text-white/80 hover:text-white hover:bg-white/10"
                     }`}
                     style={{
-                      fontSize: "clamp(0.55rem, 1vw, 0.7rem)",
+                      fontSize: "clamp(0.7rem, 1.2vw, 0.85rem)",
                       padding:
                         "clamp(0.75rem, 1.5vmin, 1rem) clamp(0.5rem, 1vw, 0.75rem)",
                     }}
@@ -714,7 +714,7 @@ export default function Navigation() {
                         : "text-white/80 hover:text-white hover:bg-white/10"
                     }`}
                     style={{
-                      fontSize: "clamp(0.55rem, 1vw, 0.7rem)",
+                      fontSize: "clamp(0.7rem, 1.2vw, 0.85rem)",
                       padding:
                         "clamp(0.75rem, 1.5vmin, 1rem) clamp(0.5rem, 1vw, 0.75rem)",
                     }}
