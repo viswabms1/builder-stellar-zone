@@ -1517,22 +1517,28 @@ export default function Navigation() {
                   );
                 }
 
+                const isHome = item.href === "/";
                 return (
                   <Link
                     key={idx}
                     to={item.href}
                     onClick={() => setIsOpen(false)}
                     className={sharedClasses}
+                    title={isHome ? "Home" : undefined}
                   >
-                    <span
-                      className={
-                        item.href === "/centre-of-excellence"
-                          ? "max-w-[100px]"
-                          : ""
-                      }
-                    >
-                      {item.name}
-                    </span>
+                    {isHome ? (
+                      <HomeIcon className="w-5 h-5" />
+                    ) : (
+                      <span
+                        className={
+                          item.href === "/centre-of-excellence"
+                            ? "max-w-[100px]"
+                            : ""
+                        }
+                      >
+                        {item.name}
+                      </span>
+                    )}
                   </Link>
                 );
               })}
