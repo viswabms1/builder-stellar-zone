@@ -15,7 +15,6 @@
  * - STRAPI_API_TOKEN: Your Strapi API token (must have admin/super-admin role)
  */
 
-const fetch = require('node-fetch');
 const readline = require('readline');
 
 // Color codes for terminal output
