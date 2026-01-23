@@ -46,6 +46,26 @@
           "repeatable": false,
           "required": false,
           "component": "seo.seo"
+        },
+        "contentType": {
+          "type": "enumeration",
+          "enum": [
+            "university",
+            "engineering",
+            "health-sciences",
+            "commerce-management",
+            "applied-sciences",
+            "humanities-social-sciences",
+            "law",
+            "journalism",
+            "mathematics",
+            "physics",
+            "chemistry",
+            "library",
+            "administration"
+          ],
+          "required": true,
+          "default": "university"
         }
       }
     }
