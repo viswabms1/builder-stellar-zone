@@ -545,21 +545,30 @@ export default function Navigation() {
     <>
       {/* Top Menu Bar - Hidden on mobile/tablet portrait, shown on larger screens */}
       <div
-        className={`hidden lg:flex sticky top-0 z-[10001] transition-all duration-300 items-center py-2 ${
+        className={`hidden lg:flex sticky top-0 z-[10001] transition-all duration-300 items-center ${
           theme === "light"
             ? "bg-gradient-to-r from-orange-50 to-white border-b-2 border-orange-200/50"
             : "bg-gradient-to-r from-slate-900 to-slate-950 border-b-2 border-orange-600/30"
         }`}
+        style={{
+          padding: 'clamp(0.5rem, 1.5vmin, 1rem) 0',
+        }}
       >
-        <div className="w-full mx-auto px-2 flex items-center justify-end gap-0">
+        <div className="w-full mx-auto flex items-center justify-end" style={{
+          paddingLeft: 'clamp(0.5rem, 2vw, 1.5rem)',
+          paddingRight: 'clamp(0.5rem, 2vw, 1.5rem)',
+          gap: '0',
+        }}>
           {/* All Top Menu Items in one continuous row - with scrollable container */}
-          <div className="flex items-center gap-0.25 sm:gap-0.5 flex-nowrap overflow-x-auto scrollbar-hide order-2">
+          <div className="flex items-center flex-nowrap overflow-x-auto scrollbar-hide order-2" style={{
+            gap: 'clamp(0.1rem, 0.5vw, 0.25rem)',
+          }}>
             {topMenuItems.map((item, idx) => {
               const isAlumni = item.href === "/alumni";
               const isLibrary = item.href === "/library";
               const isInternationalAdmissions =
                 item.href === "https://dsu.edu.in/international/";
-              const sharedClasses = `text-[0.6rem] sm:text-[0.65rem] font-medium transition-all duration-200 whitespace-nowrap px-1 sm:px-1.5 py-1.5 sm:py-2 rounded-md hover:scale-105 flex-shrink-0 flex items-center gap-0.5 ${
+              const sharedClasses = `font-medium transition-all duration-200 whitespace-nowrap rounded-md hover:scale-105 flex-shrink-0 flex items-center gap-0.5 ${
                 theme === "light"
                   ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
                   : "text-white/80 hover:text-white hover:bg-white/10"
