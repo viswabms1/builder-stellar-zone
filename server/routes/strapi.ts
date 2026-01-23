@@ -1,11 +1,11 @@
-import { RequestHandler } from 'express';
-import { PageContent, StrapiResponse } from '@shared/api';
+import { RequestHandler } from "express";
+import { PageContent, StrapiResponse } from "@shared/api";
 
 /**
  * Strapi Configuration
  */
-const STRAPI_URL = process.env.STRAPI_URL || 'http://localhost:1337';
-const STRAPI_API_TOKEN = process.env.STRAPI_API_TOKEN || '';
+const STRAPI_URL = process.env.STRAPI_URL || "http://localhost:1337";
+const STRAPI_API_TOKEN = process.env.STRAPI_API_TOKEN || "";
 
 /**
  * Simple in-memory cache with TTL (Time To Live)
@@ -63,13 +63,13 @@ export function invalidateCache(pattern: string): void {
  */
 export const getPageBySlug: RequestHandler = async (req, res) => {
   const { slug } = req.params;
-  const locale = req.query.locale as string || 'en';
+  const locale = (req.query.locale as string) || "en";
 
   try {
     // Check cache first
     const cacheKey = `page:${slug}:${locale}`;
     const cachedData = getFromCache<StrapiResponse<PageContent>>(cacheKey);
-    
+
     if (cachedData) {
       console.log(`[CACHE HIT] ${cacheKey}`);
       return res.json(cachedData);
@@ -77,20 +77,20 @@ export const getPageBySlug: RequestHandler = async (req, res) => {
 
     // Fetch from Strapi
     const query = new URLSearchParams({
-      'filters[slug][$eq]': slug,
-      'populate': '*', // Populate all relations
-      'pagination[pageSize]': '1',
-      'locale': locale,
+      "filters[slug][$eq]": slug,
+      populate: "*", // Populate all relations
+      "pagination[pageSize]": "1",
+      locale: locale,
     });
 
     const response = await fetch(
       `${STRAPI_URL}/api/pages?${query.toString()}`,
       {
         headers: {
-          'Authorization': `Bearer ${STRAPI_API_TOKEN}`,
-          'Content-Type': 'application/json',
+          Authorization: `Bearer ${STRAPI_API_TOKEN}`,
+          "Content-Type": "application/json",
         },
-      }
+      },
     );
 
     if (!response.ok) {
@@ -112,10 +112,10 @@ export const getPageBySlug: RequestHandler = async (req, res) => {
 
     res.json({ data: pageContent });
   } catch (error) {
-    console.error('[STRAPI ERROR]', error);
+    console.error("[STRAPI ERROR]", error);
     res.status(500).json({
-      error: 'Failed to fetch page content',
-      message: error instanceof Error ? error.message : 'Unknown error',
+      error: "Failed to fetch page content",
+      message: error instanceof Error ? error.message : "Unknown error",
     });
   }
 };
@@ -126,11 +126,11 @@ export const getPageBySlug: RequestHandler = async (req, res) => {
  */
 export const getPagesByContentType: RequestHandler = async (req, res) => {
   const { contentType } = req.query;
-  const locale = req.query.locale as string || 'en';
+  const locale = (req.query.locale as string) || "en";
 
   if (!contentType) {
     return res.status(400).json({
-      error: 'contentType query parameter is required',
+      error: "contentType query parameter is required",
     });
   }
 
@@ -145,19 +145,19 @@ export const getPagesByContentType: RequestHandler = async (req, res) => {
 
     // Fetch from Strapi filtered by contentType
     const query = new URLSearchParams({
-      'filters[contentType][$eq]': contentType as string,
-      'populate': '*',
-      'locale': locale,
+      "filters[contentType][$eq]": contentType as string,
+      populate: "*",
+      locale: locale,
     });
 
     const response = await fetch(
       `${STRAPI_URL}/api/pages?${query.toString()}`,
       {
         headers: {
-          'Authorization': `Bearer ${STRAPI_API_TOKEN}`,
-          'Content-Type': 'application/json',
+          Authorization: `Bearer ${STRAPI_API_TOKEN}`,
+          "Content-Type": "application/json",
         },
-      }
+      },
     );
 
     if (!response.ok) {
@@ -171,10 +171,10 @@ export const getPagesByContentType: RequestHandler = async (req, res) => {
 
     res.json(data);
   } catch (error) {
-    console.error('[STRAPI ERROR]', error);
+    console.error("[STRAPI ERROR]", error);
     res.status(500).json({
-      error: 'Failed to fetch pages by content type',
-      message: error instanceof Error ? error.message : 'Unknown error',
+      error: "Failed to fetch pages by content type",
+      message: error instanceof Error ? error.message : "Unknown error",
     });
   }
 };
@@ -194,7 +194,7 @@ export const handleStrapiWebhook: RequestHandler = async (req, res) => {
   // }
 
   try {
-    if (event === 'entry.publish' || event === 'entry.update') {
+    if (event === "entry.publish" || event === "entry.update") {
       const slug = data.slug || data.attributes?.slug;
       if (slug) {
         invalidateCache(slug);
@@ -204,8 +204,8 @@ export const handleStrapiWebhook: RequestHandler = async (req, res) => {
 
     res.json({ success: true });
   } catch (error) {
-    console.error('[WEBHOOK ERROR]', error);
-    res.status(500).json({ error: 'Webhook processing failed' });
+    console.error("[WEBHOOK ERROR]", error);
+    res.status(500).json({ error: "Webhook processing failed" });
   }
 };
 
@@ -216,23 +216,23 @@ export const checkStrapiHealth: RequestHandler = async (req, res) => {
   try {
     const response = await fetch(`${STRAPI_URL}/api/health`, {
       headers: {
-        'Authorization': `Bearer ${STRAPI_API_TOKEN}`,
+        Authorization: `Bearer ${STRAPI_API_TOKEN}`,
       },
     });
 
     if (response.ok) {
-      res.json({ status: 'connected', strapi_url: STRAPI_URL });
+      res.json({ status: "connected", strapi_url: STRAPI_URL });
     } else {
-      res.status(503).json({ 
-        status: 'error', 
-        message: 'Strapi service unavailable' 
+      res.status(503).json({
+        status: "error",
+        message: "Strapi service unavailable",
       });
     }
   } catch (error) {
-    res.status(500).json({ 
-      status: 'error', 
-      message: 'Cannot connect to Strapi',
-      error: error instanceof Error ? error.message : 'Unknown error',
+    res.status(500).json({
+      status: "error",
+      message: "Cannot connect to Strapi",
+      error: error instanceof Error ? error.message : "Unknown error",
     });
   }
 };

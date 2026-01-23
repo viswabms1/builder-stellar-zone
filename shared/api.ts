@@ -40,7 +40,7 @@ export interface HeroSection {
 
 // Vision & Mission Block
 export interface VisionMissionBlock {
-  __component: 'vision-mission.vision-mission';
+  __component: "vision-mission.vision-mission";
   id: string;
   vision_title: string;
   vision_description: string;
@@ -60,7 +60,7 @@ export interface CoreValue {
 
 // Core Values Block
 export interface CoreValuesBlock {
-  __component: 'core-values.core-values';
+  __component: "core-values.core-values";
   id: string;
   title: string;
   description: string;
@@ -69,7 +69,7 @@ export interface CoreValuesBlock {
 
 // Action Items Block
 export interface ActionItemsBlock {
-  __component: 'action-items.action-items';
+  __component: "action-items.action-items";
   id: string;
   title: string;
   items: string[];
@@ -79,12 +79,12 @@ export interface ActionItemsBlock {
 export interface ButtonData {
   label: string;
   url: string;
-  type: 'primary' | 'secondary';
+  type: "primary" | "secondary";
 }
 
 // CTA Section Block
 export interface CTABlock {
-  __component: 'cta.cta-section';
+  __component: "cta.cta-section";
   id: string;
   title: string;
   description: string;
@@ -123,7 +123,20 @@ export interface PageContent {
   title: string;
   slug: string;
   description: string;
-  contentType: 'university' | 'engineering' | 'health-sciences' | 'commerce-management' | 'applied-sciences' | 'humanities-social-sciences' | 'law' | 'journalism' | 'mathematics' | 'physics' | 'chemistry' | 'library' | 'administration';
+  contentType:
+    | "university"
+    | "engineering"
+    | "health-sciences"
+    | "commerce-management"
+    | "applied-sciences"
+    | "humanities-social-sciences"
+    | "law"
+    | "journalism"
+    | "mathematics"
+    | "physics"
+    | "chemistry"
+    | "library"
+    | "administration";
   hero: HeroSection;
   sections: PageBlock[];
   seo: SEOMetadata;

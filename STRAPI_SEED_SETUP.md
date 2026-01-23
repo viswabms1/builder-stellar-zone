@@ -44,6 +44,7 @@ npm run seed:strapi
 ```
 
 The script will ask you for:
+
 - Your Strapi URL
 - Your API Token
 
@@ -62,12 +63,14 @@ npm run seed:strapi
 ## Step 3: Wait for Completion
 
 The script will:
+
 1. ✅ Test Strapi connection
 2. ✅ Create Page content type
 3. ✅ Create all department roles
 4. ✅ Create sample Vision & Mission content
 
 You'll see output like:
+
 ```
 ✅ Connected to Strapi successfully!
 ✅ Page content type created!
@@ -98,6 +101,7 @@ For each role (University, Engineering, etc.):
 2. Click on the role (e.g., "University")
 3. Find the **Page** permission
 4. Set:
+
    - ✅ **Find** (read list)
    - ✅ **FindOne** (read single)
    - ✅ **Update** (edit their pages)
@@ -105,6 +109,7 @@ For each role (University, Engineering, etc.):
    - ❌ **Delete** (cannot delete)
 
 5. Click **Update** to add a **filter**:
+
    - Field: `contentType`
    - Condition: `equals`
    - Value: `university` (for University role), `engineering` (for Engineering role), etc.
@@ -134,17 +139,21 @@ For each role (University, Engineering, etc.):
 ## Troubleshooting
 
 ### "Cannot connect to Strapi"
+
 - ✅ Check your Strapi URL is correct
 - ✅ Check your API Token is valid
 - ✅ Make sure Strapi is running
 
 ### "Page content type might already exist"
+
 - This is OK! The script will skip it if it already exists
 
 ### "Role already exists"
+
 - This is OK! The script will continue with other roles
 
 ### "Permission denied for API"
+
 - Make sure your API Token has `Full access` or admin role
 
 ---
@@ -154,6 +163,7 @@ For each role (University, Engineering, etc.):
 ### Content Type: Page
 
 Fields:
+
 - `title` - String, required
 - `slug` - String, unique, required
 - `description` - Text

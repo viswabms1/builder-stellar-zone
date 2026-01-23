@@ -5,7 +5,12 @@ import cookieParser from "cookie-parser";
 import { handleDemo } from "./routes/demo";
 import { handleSessionInit, handleHealthCheck } from "./routes/chat";
 import { handleRagChat, handleRagHealthCheck } from "./routes/rag-chat";
-import { getPageBySlug, getPagesByContentType, handleStrapiWebhook, checkStrapiHealth } from "./routes/strapi";
+import {
+  getPageBySlug,
+  getPagesByContentType,
+  handleStrapiWebhook,
+  checkStrapiHealth,
+} from "./routes/strapi";
 
 export function createServer() {
   const app = express();

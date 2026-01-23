@@ -4,7 +4,14 @@ import { ThemeToggle } from "./ThemeToggle";
 import SearchDialog from "./SearchDialog";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useTheme } from "@/providers/theme-provider";
-import { Menu, X, ChevronDown, Search, ArrowRight, Home as HomeIcon } from "lucide-react";
+import {
+  Menu,
+  X,
+  ChevronDown,
+  Search,
+  ArrowRight,
+  Home as HomeIcon,
+} from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 
 export default function Navigation() {
@@ -551,18 +558,24 @@ export default function Navigation() {
             : "bg-gradient-to-r from-slate-900 to-slate-950 border-b-2 border-orange-600/30"
         }`}
         style={{
-          padding: 'clamp(0.5rem, 1.5vmin, 1rem) 0',
+          padding: "clamp(0.5rem, 1.5vmin, 1rem) 0",
         }}
       >
-        <div className="w-full mx-auto flex items-center justify-end" style={{
-          paddingLeft: 'clamp(0.5rem, 2vw, 1.5rem)',
-          paddingRight: 'clamp(0.5rem, 2vw, 1.5rem)',
-          gap: '0',
-        }}>
+        <div
+          className="w-full mx-auto flex items-center justify-end"
+          style={{
+            paddingLeft: "clamp(0.5rem, 2vw, 1.5rem)",
+            paddingRight: "clamp(0.5rem, 2vw, 1.5rem)",
+            gap: "0",
+          }}
+        >
           {/* All Top Menu Items in one continuous row - with scrollable container */}
-          <div className="flex items-center flex-nowrap overflow-x-auto scrollbar-hide order-2" style={{
-            gap: 'clamp(0.1rem, 0.5vw, 0.25rem)',
-          }}>
+          <div
+            className="flex items-center flex-nowrap overflow-x-auto scrollbar-hide order-2"
+            style={{
+              gap: "clamp(0.1rem, 0.5vw, 0.25rem)",
+            }}
+          >
             {topMenuItems.map((item, idx) => {
               const isAlumni = item.href === "/alumni";
               const isLibrary = item.href === "/library";
@@ -593,8 +606,9 @@ export default function Navigation() {
                       }}
                       className={`${sharedClasses} flex items-center gap-1 cursor-pointer`}
                       style={{
-                        fontSize: 'clamp(0.55rem, 1vw, 0.7rem)',
-                        padding: 'clamp(0.75rem, 1.5vmin, 1rem) clamp(0.5rem, 1vw, 0.75rem)',
+                        fontSize: "clamp(0.55rem, 1vw, 0.7rem)",
+                        padding:
+                          "clamp(0.75rem, 1.5vmin, 1rem) clamp(0.5rem, 1vw, 0.75rem)",
                       }}
                     >
                       <span>{item.name}</span>
@@ -679,8 +693,9 @@ export default function Navigation() {
                         : "text-white/80 hover:text-white hover:bg-white/10"
                     }`}
                     style={{
-                      fontSize: 'clamp(0.55rem, 1vw, 0.7rem)',
-                      padding: 'clamp(0.75rem, 1.5vmin, 1rem) clamp(0.5rem, 1vw, 0.75rem)',
+                      fontSize: "clamp(0.55rem, 1vw, 0.7rem)",
+                      padding:
+                        "clamp(0.75rem, 1.5vmin, 1rem) clamp(0.5rem, 1vw, 0.75rem)",
                     }}
                   >
                     <span>{item.name}</span>
@@ -699,8 +714,9 @@ export default function Navigation() {
                         : "text-white/80 hover:text-white hover:bg-white/10"
                     }`}
                     style={{
-                      fontSize: 'clamp(0.55rem, 1vw, 0.7rem)',
-                      padding: 'clamp(0.75rem, 1.5vmin, 1rem) clamp(0.5rem, 1vw, 0.75rem)',
+                      fontSize: "clamp(0.55rem, 1vw, 0.7rem)",
+                      padding:
+                        "clamp(0.75rem, 1.5vmin, 1rem) clamp(0.5rem, 1vw, 0.75rem)",
                     }}
                   >
                     {item.name}
