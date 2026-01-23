@@ -1152,15 +1152,21 @@ export default function Navigation() {
                     );
                   }
 
+                  const isHome = item.href === "/";
                   return (
                     <Link
                       key={idx}
                       to={item.href}
                       className={`${sharedClasses} justify-center`}
+                      title={isHome ? "Home" : undefined}
                     >
-                      <span className="text-center leading-tight">
-                        {item.name}
-                      </span>
+                      {isHome ? (
+                        <HomeIcon className="w-4 h-4" />
+                      ) : (
+                        <span className="text-center leading-tight">
+                          {item.name}
+                        </span>
+                      )}
                       {active && (
                         <div
                           className={`w-0.5 h-0.5 rounded-full ${
