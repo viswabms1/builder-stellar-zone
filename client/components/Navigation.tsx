@@ -4,7 +4,7 @@ import { ThemeToggle } from "./ThemeToggle";
 import SearchDialog from "./SearchDialog";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useTheme } from "@/providers/theme-provider";
-import { Menu, X, ChevronDown, Search, ArrowRight } from "lucide-react";
+import { Menu, X, ChevronDown, Search, ArrowRight, Home as HomeIcon } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 
 export default function Navigation() {
