@@ -497,7 +497,7 @@ export default function BDesignProgram() {
               <CardHeader>
                 <CardTitle className="font-display">Program Contact</CardTitle>
                 <CardDescription className="font-body">
-                  School of Design
+                  School of Design & Digital Trans-Media
                 </CardDescription>
               </CardHeader>
               <CardContent className="grid gap-2 text-sm font-body">
