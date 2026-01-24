@@ -1285,6 +1285,7 @@ export default function Navigation() {
                       key="ai-label"
                       to="/ai-first"
                       className={aiFirstClasses}
+                      style={sharedStyle}
                     >
                       <span className="text-center leading-[0.9] flex flex-col items-center gap-0">
                         <span className="whitespace-nowrap">AI-First @</span>
