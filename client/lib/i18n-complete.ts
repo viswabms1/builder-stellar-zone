@@ -146,7 +146,7 @@ export const completeTranslations = {
       title: 'School of Arts, Design & Humanities',
     },
     bDesign: {
-      title: 'School of Design',
+      title: 'School of Design & Digital Trans-Media',
     },
     // Department Pages
     deptCSE: {
