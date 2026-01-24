@@ -264,7 +264,7 @@ export default function Academics() {
             <h2 className="headline-2 mb-6">
               Academic Excellence That Inspires
             </h2>
-            <p className="subheadline text-foreground max-w-3xl mx-auto font-display">
+            <p className="subheadline text-foreground max-w-3xl mx-auto">
               Explore AI-integrated undergraduate and postgraduate programs
               spanning engineering, sciences, health, law, design, and
               management.
