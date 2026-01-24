@@ -767,7 +767,7 @@ export default function Index() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-4 md:mb-6">
             <h2 className="headline-2 mb-1 md:mb-2">Recognized Excellence</h2>
-            <p className="subheadline text-foreground max-w-3xl mx-auto font-display text-sm md:text-base">
+            <p className="subheadline text-foreground max-w-3xl mx-auto font-display">
               Accredited by leading national and international bodies
             </p>
           </div>
