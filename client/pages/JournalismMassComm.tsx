@@ -616,7 +616,7 @@ function HeroVideo() {
         <div className="hero-title-inside absolute bottom-0 left-0 right-0 z-20 flex items-end justify-start p-3 sm:p-6 max-w-7xl mx-auto w-full">
           <div className="max-w-2xl">
             <p className="text-lg sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-1 sm:mb-4 uppercase tracking-widest font-display">
-              School of Journalism & Mass Communication
+              School of Arts, Design & Humanities
             </p>
             <h1 className="text-xs sm:text-base md:text-base text-white/80 mb-2 sm:mb-6 leading-tight font-display">
               Storytellers for the Now & Next
@@ -628,7 +628,7 @@ function HeroVideo() {
       <div className="bg-background relative max-w-7xl mx-auto px-3 w-full py-6 sm:py-8">
         <div className="hero-title-outside max-w-2xl">
           <p className="text-lg sm:text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-1 sm:mb-4 uppercase tracking-widest font-display">
-            School of Journalism & Mass Communication
+            School of Arts, Design & Humanities
           </p>
           <h1 className="text-xs sm:text-base md:text-base text-foreground/80 mb-2 sm:mb-6 leading-tight font-display">
             Storytellers for the Now & Next
