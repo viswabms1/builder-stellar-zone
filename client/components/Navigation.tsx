@@ -977,6 +977,7 @@ export default function Navigation() {
                             setAcademicsMenuOpen(!academicsMenuOpen)
                           }
                           className={`${sharedClasses} ml-0 sm:ml-4 justify-center`}
+                          style={sharedStyle}
                         >
                           <span className="text-center leading-tight">
                             {item.name}
