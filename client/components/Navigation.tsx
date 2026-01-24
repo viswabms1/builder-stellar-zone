@@ -519,10 +519,10 @@ export default function Navigation() {
         external: true,
       },
       {
-        name: "DSU Online",
+        name: "Online Degree Programs",
         href: "https://dsuonline.com/",
         departments: [
-          { name: "Online Programs", href: "https://dsuonline.com/" },
+          { name: "Online Degree Programs", href: "https://dsuonline.com/" },
           { name: "Apply Now", href: "https://apply.dsuonline.com/" },
         ],
         external: true,
