@@ -18,6 +18,7 @@ export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [topBarHeight, setTopBarHeight] = useState(0);
   const [navBarHeight, setNavBarHeight] = useState(0);
+  const [isNavFixed, setIsNavFixed] = useState(false);
   const [aboutMenuOpen, setAboutMenuOpen] = useState(false);
   const [academicsMenuOpen, setAcademicsMenuOpen] = useState(false);
   const [alumniMenuOpen, setAlumniMenuOpen] = useState(false);
@@ -149,6 +150,19 @@ export default function Navigation() {
     window.addEventListener("resize", updateHeights);
     return () => window.removeEventListener("resize", updateHeights);
   }, []);
+
+  // Handle scroll to fix nav bar when scrolling past top bar
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const threshold = topBarHeight;
+      setIsNavFixed(scrollY >= threshold);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll(); // Check initial state
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [topBarHeight]);
 
   // Reset expandedSubGroups when academics menu closes
   useEffect(() => {
