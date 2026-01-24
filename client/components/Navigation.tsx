@@ -783,7 +783,7 @@ export default function Navigation() {
       {/* Main Navigation Bar */}
       <nav
         ref={navBarRef}
-        className={`sticky top-0 z-[9997] overflow-visible shadow-md ${
+        className={`fixed top-0 left-0 right-0 z-[10002] overflow-visible shadow-md ${
           theme === "light"
             ? "bg-white/95 backdrop-blur-sm border-b-2 border-orange-200/50"
             : "bg-slate-950/95 backdrop-blur-sm border-b-2 border-orange-600/30"
@@ -831,8 +831,8 @@ export default function Navigation() {
                       : "text-white/90 hover:text-white hover:bg-white/10"
                 }`;
                 const sharedStyle = {
-                  fontSize: "clamp(0.7rem, 1.2vw, 0.85rem)",
-                  padding: "clamp(0.5rem, 1vmin, 0.75rem) clamp(0.4rem, 0.8vw, 0.6rem)",
+                  fontSize: "clamp(0.85rem, 1.5vw, 1rem)",
+                  padding: "clamp(0.6rem, 1.2vmin, 0.9rem) clamp(0.5rem, 1vw, 0.75rem)",
                 };
 
                 const itemElement = (() => {
