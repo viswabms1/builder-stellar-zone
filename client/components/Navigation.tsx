@@ -844,6 +844,7 @@ export default function Navigation() {
                         target="_blank"
                         rel="noreferrer"
                         className={sharedClasses}
+                        style={sharedStyle}
                       >
                         <span>{item.name}</span>
                       </a>
@@ -861,6 +862,7 @@ export default function Navigation() {
                         <button
                           onClick={() => setAboutMenuOpen(!aboutMenuOpen)}
                           className={`${sharedClasses} justify-center`}
+                          style={sharedStyle}
                         >
                           <span className="text-center leading-tight">
                             {item.name}
