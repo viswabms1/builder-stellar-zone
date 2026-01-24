@@ -568,7 +568,7 @@ export default function Navigation() {
       {/* Top Menu Bar - Hidden on mobile/tablet portrait, shown on larger screens */}
       <div
         ref={topBarRef}
-        className={`hidden lg:flex fixed top-0 left-0 right-0 z-[10001] items-center ${
+        className={`hidden lg:flex z-[10001] items-center ${
           theme === "light"
             ? "bg-gradient-to-r from-orange-50 to-white border-b-2 border-orange-200/50"
             : "bg-gradient-to-r from-slate-900 to-slate-950 border-b-2 border-orange-600/30"
@@ -780,24 +780,14 @@ export default function Navigation() {
         </div>
       </div>
 
-      {/* Spacer to prevent layout shift from fixed positioning */}
-      <div
-        className="hidden lg:block"
-        style={{ height: topBarHeight }}
-        aria-hidden="true"
-      />
-
       {/* Main Navigation Bar */}
       <nav
         ref={navBarRef}
-        className={`fixed left-0 right-0 z-[9997] overflow-visible shadow-md ${
+        className={`fixed top-0 left-0 right-0 z-[9997] overflow-visible shadow-md ${
           theme === "light"
             ? "bg-white/95 backdrop-blur-sm border-b-2 border-orange-200/50"
             : "bg-slate-950/95 backdrop-blur-sm border-b-2 border-orange-600/30"
         }`}
-        style={{
-          top: topBarHeight,
-        }}
       >
         <div className="w-full overflow-visible">
           <div className="flex flex-row items-center justify-between py-2 lg:py-0 lg:flex-col lg:items-center lg:justify-center lg:flex-row">
