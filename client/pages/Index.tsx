@@ -617,7 +617,7 @@ export default function Index() {
 
       {/* Hero Section with Full-Screen Video Background */}
       <section
-        className="hero-section relative h-[40vh] md:h-[75vh] flex flex-col justify-between overflow-hidden mt-14 md:mt-0"
+        className="hero-section relative flex flex-col justify-between overflow-hidden"
         style={{ width: "100vw", marginLeft: "calc(-50vw + 50%)" }}
       >
         {/* Full-screen Background Video */}
@@ -629,7 +629,7 @@ export default function Index() {
         <div className="absolute inset-0 bg-black/40"></div>
 
         {/* Location Badge */}
-        <div className="absolute top-10 md:top-20 right-6 z-20 flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-md rounded-full border border-white/40 shadow-lg">
+        <div className="absolute top-16 md:top-28 right-6 z-20 flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-md rounded-full border border-white/40 shadow-lg">
           <MapPin className="w-4 h-4 text-white font-bold" />
           <span className="text-sm font-semibold text-white whitespace-nowrap">
             Main Campus
@@ -637,9 +637,9 @@ export default function Index() {
         </div>
 
         {/* Hero Content */}
-        <div className="relative max-w-7xl mx-auto px-3 w-full z-10 flex flex-col justify-between h-full py-6 md:py-0 md:items-start md:justify-center">
+        <div className="relative max-w-7xl mx-auto px-3 w-full z-10 flex flex-col justify-between h-full py-0 md:py-0 md:items-start md:justify-center">
           {/* Title Section - Top on mobile */}
-          <div className="max-w-4xl pt-0 md:pt-0 md:pb-12">
+          <div className="max-w-4xl pt-6 md:pt-0 md:pb-12">
             <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-2 sm:mb-3 md:mb-4 leading-tight font-display">
               Dayananda Sagar University
             </h1>
@@ -655,7 +655,7 @@ export default function Index() {
           </div>
 
           {/* Buttons Section - Apply Today full width on mobile, below tagline */}
-          <div className="flex flex-col gap-4 w-full sm:w-auto sm:gap-6">
+          <div className="flex flex-col gap-4 w-full sm:w-auto sm:gap-6 pb-6 md:pb-0 landscape-buttons md:flex hidden">
             <a
               href="https://admissions.dsu.edu.in/"
               target="_blank"
@@ -664,10 +664,20 @@ export default function Index() {
             >
               <Button
                 size="lg"
-                className="bg-white hover:bg-white/90 text-orange-600 hover:text-orange-700 px-8 py-6 text-base font-bold font-display transition-all duration-300 group shadow-xl hover:shadow-2xl hover:-translate-y-1 w-full sm:w-auto"
+                className="bg-white hover:bg-white/90 text-orange-600 hover:text-orange-700 font-bold font-display transition-all duration-300 group shadow-xl hover:shadow-2xl hover:-translate-y-1 w-full sm:w-auto"
+                style={{
+                  padding: "clamp(0.75rem, 2vw, 1rem) clamp(1.5rem, 4vw, 2rem)",
+                  fontSize: "clamp(0.875rem, 2vw, 1rem)",
+                }}
               >
                 Apply Today
-                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight
+                  style={{
+                    width: "clamp(1rem, 2vw, 1.25rem)",
+                    height: "clamp(1rem, 2vw, 1.25rem)",
+                  }}
+                  className="ml-2 group-hover:translate-x-1 transition-transform"
+                />
               </Button>
             </a>
 
@@ -680,7 +690,12 @@ export default function Index() {
               >
                 <Button
                   variant="outline"
-                  className="bg-transparent hover:bg-white/10 text-white border border-white/70 px-6 py-3 text-sm font-medium font-display transition-all duration-300 w-full sm:w-auto"
+                  className="bg-transparent hover:bg-white/10 text-white border border-white/70 font-medium font-display transition-all duration-300 w-full sm:w-auto"
+                  style={{
+                    padding:
+                      "clamp(0.5rem, 1.5vw, 0.75rem) clamp(1.25rem, 3vw, 1.5rem)",
+                    fontSize: "clamp(0.8125rem, 1.8vw, 0.875rem)",
+                  }}
                 >
                   Virtual Tour
                 </Button>
@@ -695,6 +710,55 @@ export default function Index() {
               <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* Mobile Buttons Section - Visible only on mobile portrait */}
+      <section className="md:hidden bg-background relative max-w-7xl mx-auto px-3 w-full py-6">
+        <div className="flex flex-col gap-4 sm:flex-row landscape-buttons">
+          <a
+            href="https://admissions.dsu.edu.in/"
+            target="_blank"
+            rel="noreferrer"
+            className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background w-full sm:w-auto"
+          >
+            <Button
+              size="lg"
+              className="bg-white hover:bg-white/90 text-orange-600 hover:text-orange-700 font-bold font-display transition-all duration-300 group shadow-xl hover:shadow-2xl hover:-translate-y-1 w-full sm:w-auto"
+              style={{
+                padding: "clamp(0.75rem, 2vw, 1rem) clamp(1.5rem, 4vw, 2rem)",
+                fontSize: "clamp(0.875rem, 2vw, 1rem)",
+              }}
+            >
+              Apply Today
+              <ArrowRight
+                style={{
+                  width: "clamp(1rem, 2vw, 1.25rem)",
+                  height: "clamp(1rem, 2vw, 1.25rem)",
+                }}
+                className="ml-2 group-hover:translate-x-1 transition-transform"
+              />
+            </Button>
+          </a>
+
+          <a
+            href="https://dsu.edu.in/virtual-tour/"
+            target="_blank"
+            rel="noreferrer"
+            className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background w-full sm:w-auto"
+          >
+            <Button
+              variant="outline"
+              className="bg-transparent hover:bg-white/10 text-foreground border border-border hover:border-brand-orange font-medium font-display transition-all duration-300 w-full sm:w-auto"
+              style={{
+                padding:
+                  "clamp(0.5rem, 1.5vw, 0.75rem) clamp(1.25rem, 3vw, 1.5rem)",
+                fontSize: "clamp(0.8125rem, 1.8vw, 0.875rem)",
+              }}
+            >
+              Virtual Tour
+            </Button>
+          </a>
         </div>
       </section>
 

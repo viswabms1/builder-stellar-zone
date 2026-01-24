@@ -1,6 +1,12 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { useScrollTrigger } from "@/hooks/useScrollTrigger";
 import {
@@ -29,14 +35,18 @@ import {
   ClipboardList,
   Megaphone,
   Lightbulb,
-  CheckCircle
+  CheckCircle,
 } from "lucide-react";
 
 export default function Research() {
-  const { elementRef: centersRef, isVisible: centersVisible } = useScrollTrigger();
-  const { elementRef: metricsRef, isVisible: metricsVisible } = useScrollTrigger();
-  const { elementRef: pillarsRef, isVisible: pillarsVisible } = useScrollTrigger();
-  const { elementRef: spotlightsRef, isVisible: spotlightsVisible } = useScrollTrigger();
+  const { elementRef: centersRef, isVisible: centersVisible } =
+    useScrollTrigger();
+  const { elementRef: metricsRef, isVisible: metricsVisible } =
+    useScrollTrigger();
+  const { elementRef: pillarsRef, isVisible: pillarsVisible } =
+    useScrollTrigger();
+  const { elementRef: spotlightsRef, isVisible: spotlightsVisible } =
+    useScrollTrigger();
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -44,14 +54,30 @@ export default function Research() {
       <section className="relative py-10 lg:py-28 bg-gradient-to-br from-slate-900 via-orange-900 to-slate-900 overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-0 left-0 w-96 h-96 bg-orange-500/20 rounded-full filter blur-3xl animate-float"></div>
-          <div className="absolute top-1/3 right-0 w-80 h-80 bg-red-600/15 rounded-full filter blur-3xl animate-float" style={{ animationDelay: "1s" }}></div>
-          <div className="absolute bottom-0 left-1/3 w-72 h-72 bg-orange-400/10 rounded-full filter blur-3xl animate-float" style={{ animationDelay: "2s" }}></div>
+          <div
+            className="absolute top-1/3 right-0 w-80 h-80 bg-red-600/15 rounded-full filter blur-3xl animate-float"
+            style={{ animationDelay: "1s" }}
+          ></div>
+          <div
+            className="absolute bottom-0 left-1/3 w-72 h-72 bg-orange-400/10 rounded-full filter blur-3xl animate-float"
+            style={{ animationDelay: "2s" }}
+          ></div>
 
           <div className="absolute inset-0 opacity-10">
             <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
               <defs>
-                <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                  <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" strokeWidth="1" />
+                <pattern
+                  id="grid"
+                  width="40"
+                  height="40"
+                  patternUnits="userSpaceOnUse"
+                >
+                  <path
+                    d="M 40 0 L 0 0 0 40"
+                    fill="none"
+                    stroke="white"
+                    strokeWidth="1"
+                  />
                 </pattern>
               </defs>
               <rect width="100%" height="100%" fill="url(#grid)" />
@@ -59,7 +85,10 @@ export default function Research() {
           </div>
 
           <div className="absolute top-10 right-20 w-40 h-40 border-2 border-orange-500/20 rounded-3xl transform rotate-45 animate-pulse"></div>
-          <div className="absolute bottom-20 left-10 w-32 h-32 border-2 border-red-500/20 rounded-full animate-pulse" style={{ animationDelay: "1s" }}></div>
+          <div
+            className="absolute bottom-20 left-10 w-32 h-32 border-2 border-red-500/20 rounded-full animate-pulse"
+            style={{ animationDelay: "1s" }}
+          ></div>
         </div>
 
         <div className="relative max-w-7xl mx-auto px-3 text-center">
@@ -81,17 +110,27 @@ export default function Research() {
           </h1>
 
           <p className="text-lg md:text-xl text-gray-200 mb-8 leading-relaxed max-w-3xl mx-auto">
-            DSU advances AI-enabled research across digital transformation, biotechnology, sustainable energy, and healthcare innovation—powered by NVIDIA's computing infrastructure and strategic industry partnerships.
+            DSU advances AI-enabled research across digital transformation,
+            biotechnology, sustainable energy, and healthcare innovation—powered
+            by NVIDIA's computing infrastructure and strategic industry
+            partnerships.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
             <a href="#research-centers">
-              <Button size="lg" className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-red-600 hover:to-orange-500 text-foreground px-8 py-6 text-lg font-semibold rounded-2xl transition-all duration-300">
+              <Button
+                size="lg"
+                className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-red-600 hover:to-orange-500 text-foreground px-8 py-6 text-lg font-semibold rounded-2xl transition-all duration-300"
+              >
                 Explore Research Centers
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
             </a>
-            <Button variant="outline" size="lg" className="border-orange-500/30 hover:bg-orange-500/10 px-8 py-6 text-lg font-semibold rounded-2xl">
+            <Button
+              variant="outline"
+              size="lg"
+              className="border-orange-500/30 hover:bg-orange-500/10 px-8 py-6 text-lg font-semibold rounded-2xl"
+            >
               Research Publications
             </Button>
           </div>
@@ -103,11 +142,6 @@ export default function Research() {
                 number: "2000+",
                 label: "Peer-Reviewed Publications",
                 context: "Across top-tier journals (2018–2024)",
-              },
-              {
-                number: "₹100Cr+",
-                label: "Research Funding Secured",
-                context: "Government + industry grants",
               },
               {
                 number: "150+",
@@ -123,12 +157,18 @@ export default function Research() {
               <Card
                 key={index}
                 className={`text-center p-4 bg-card/30 backdrop-blur-sm border border-border/30 hover:border-orange-500/30 transition-all duration-300 transform ${
-                  metricsVisible ? "scale-100 opacity-100" : "scale-95 opacity-0"
+                  metricsVisible
+                    ? "scale-100 opacity-100"
+                    : "scale-95 opacity-0"
                 }`}
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
-                <div className="text-3xl font-bold text-orange-500 mb-2">{stat.number}</div>
-                <div className="text-sm font-semibold text-foreground mb-2">{stat.label}</div>
+                <div className="text-3xl font-bold text-orange-500 mb-2">
+                  {stat.number}
+                </div>
+                <div className="text-sm font-semibold text-foreground mb-2">
+                  {stat.label}
+                </div>
                 <div className="text-xs text-foreground/70">{stat.context}</div>
               </Card>
             ))}
@@ -146,7 +186,8 @@ export default function Research() {
               </span>
             </h2>
             <p className="text-lg text-foreground max-w-3xl mx-auto">
-              Strategic research focused on national missions and AI-first infrastructure
+              Strategic research focused on national missions and AI-first
+              infrastructure
             </p>
           </div>
 
@@ -155,17 +196,20 @@ export default function Research() {
               {
                 icon: Lightbulb,
                 title: "ANRF & DST Missions",
-                description: "Strategic alignment with Atal Innovation Mission, DST initiatives, and national research priorities",
+                description:
+                  "Strategic alignment with Atal Innovation Mission, DST initiatives, and national research priorities",
               },
               {
                 icon: Brain,
                 title: "NVIDIA-Powered AI Stack",
-                description: "Computing infrastructure enabling cutting-edge AI/ML research at scale",
+                description:
+                  "Computing infrastructure enabling cutting-edge AI/ML research at scale",
               },
               {
                 icon: Briefcase,
                 title: "Industry Translation",
-                description: "Direct commercialization pathway from research labs to market applications",
+                description:
+                  "Direct commercialization pathway from research labs to market applications",
               },
             ].map((pillar, index) => {
               const Icon = pillar.icon;
@@ -178,10 +222,14 @@ export default function Research() {
                     <div className="w-12 h-12 rounded-2xl bg-orange-500/10 flex items-center justify-center mb-4">
                       <Icon className="w-6 h-6 text-orange-500" />
                     </div>
-                    <CardTitle className="text-foreground">{pillar.title}</CardTitle>
+                    <CardTitle className="text-foreground">
+                      {pillar.title}
+                    </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-sm text-foreground">{pillar.description}</p>
+                    <p className="text-sm text-foreground">
+                      {pillar.description}
+                    </p>
                   </CardContent>
                 </Card>
               );
@@ -191,7 +239,11 @@ export default function Research() {
       </section>
 
       {/* ===== RESEARCH CENTERS: STRATEGIC PILLARS (5-6 WITH AI SPINE) ===== */}
-      <section id="research-centers" ref={centersRef} className="px-3 py-10 lg:py-16">
+      <section
+        id="research-centers"
+        ref={centersRef}
+        className="px-3 py-10 lg:py-16"
+      >
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -210,61 +262,70 @@ export default function Research() {
                 icon: Cpu,
                 title: "AI & Machine Learning Systems",
                 tagline: "Deep Learning | Computer Vision | NLP | Robotics",
-                description: "Advanced AI/ML research leveraging NVIDIA's computing infrastructure for real-world applications across manufacturing, healthcare, and autonomous systems.",
+                description:
+                  "Advanced AI/ML research leveraging NVIDIA's computing infrastructure for real-world applications across manufacturing, healthcare, and autonomous systems.",
                 projects: "25+ Active",
-                funding: "₹15 Cr",
                 publications: "150+",
-                impact: "Industry partnerships: Manufacturing optimization, autonomous vehicle systems",
+                impact:
+                  "Industry partnerships: Manufacturing optimization, autonomous vehicle systems",
               },
               {
                 icon: Dna,
                 title: "Digital & Computational Biology",
-                tagline: "Biotech Engineering | Protein Design | Bioinformatics",
-                description: "AI-enabled biotechnology research for drug discovery, protein engineering, and genome analysis addressing healthcare and agricultural challenges.",
+                tagline:
+                  "Biotech Engineering | Protein Design | Bioinformatics",
+                description:
+                  "AI-enabled biotechnology research for drug discovery, protein engineering, and genome analysis addressing healthcare and agricultural challenges.",
                 projects: "20+ Active",
-                funding: "₹12 Cr",
                 publications: "120+",
-                impact: "Patent pipeline: 5+ active biotech patents in commercialization",
+                impact:
+                  "Patent pipeline: 5+ active biotech patents in commercialization",
               },
               {
                 icon: Leaf,
                 title: "Sustainable Energy & Climate",
-                tagline: "Solar Systems | Energy Storage | Smart Grids | Climate AI",
-                description: "Renewable energy innovation and climate-resilient technologies for India's green energy transition and net-zero commitments.",
+                tagline:
+                  "Solar Systems | Energy Storage | Smart Grids | Climate AI",
+                description:
+                  "Renewable energy innovation and climate-resilient technologies for India's green energy transition and net-zero commitments.",
                 projects: "18+ Active",
-                funding: "₹10 Cr",
                 publications: "100+",
-                impact: "Deployed: 3 grid-scale energy systems; 2 climate modeling partnerships",
+                impact:
+                  "Deployed: 3 grid-scale energy systems; 2 climate modeling partnerships",
               },
               {
                 icon: Heart,
                 title: "Healthcare & Medical Devices",
-                tagline: "AI Diagnostics | Biomedical Engineering | Telemedicine",
-                description: "Next-generation medical devices and AI-powered diagnostics improving healthcare access and outcomes across rural and urban India.",
+                tagline:
+                  "AI Diagnostics | Biomedical Engineering | Telemedicine",
+                description:
+                  "Next-generation medical devices and AI-powered diagnostics improving healthcare access and outcomes across rural and urban India.",
                 projects: "22+ Active",
-                funding: "₹18 Cr",
                 publications: "110+",
-                impact: "Clinical trials: 2 devices in FDA/India regulatory pathways",
+                impact:
+                  "Clinical trials: 2 devices in FDA/India regulatory pathways",
               },
               {
                 icon: Telescope,
                 title: "Aerospace & Advanced Manufacturing",
                 tagline: "Digital Twins | Space Tech | Smart Manufacturing",
-                description: "Digital twin technology and aerospace innovations supporting India's space program and next-gen manufacturing competitiveness.",
+                description:
+                  "Digital twin technology and aerospace innovations supporting India's space program and next-gen manufacturing competitiveness.",
                 projects: "12+ Active",
-                funding: "₹20 Cr",
                 publications: "80+",
-                impact: "ISRO collaborations: 2 satellite systems in development",
+                impact:
+                  "ISRO collaborations: 2 satellite systems in development",
               },
               {
                 icon: Brain,
                 title: "Human-AI Interaction & Cognition",
                 tagline: "Neuroscience | Behavioral AI | HCI | Ethics",
-                description: "Interdisciplinary research at the intersection of human cognition, AI, and responsible technology design for societal benefit.",
+                description:
+                  "Interdisciplinary research at the intersection of human cognition, AI, and responsible technology design for societal benefit.",
                 projects: "15+ Active",
-                funding: "₹8 Cr",
                 publications: "90+",
-                impact: "Policy contribution: AI ethics framework adopted by 2 government bodies",
+                impact:
+                  "Policy contribution: AI ethics framework adopted by 2 government bodies",
               },
             ].map((pillar, index) => {
               const Icon = pillar.icon;
@@ -272,7 +333,9 @@ export default function Research() {
                 <Card
                   key={index}
                   className={`bg-card/50 backdrop-blur-sm border border-border/50 hover:border-orange-500/30 transition-all duration-300 transform ${
-                    centersVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+                    centersVisible
+                      ? "translate-y-0 opacity-100"
+                      : "translate-y-8 opacity-0"
                   }`}
                   style={{ transitionDelay: `${index * 100}ms` }}
                 >
@@ -285,22 +348,30 @@ export default function Research() {
                         <Badge variant="secondary" className="text-xs">
                           {pillar.projects}
                         </Badge>
-                        <Badge variant="outline" className="text-xs border-orange-500/30 text-orange-500">
-                          {pillar.funding}
-                        </Badge>
-                        <Badge variant="outline" className="text-xs border-green-500/30 text-green-500">
+                        <Badge
+                          variant="outline"
+                          className="text-xs border-green-500/30 text-green-500"
+                        >
                           {pillar.publications}
                         </Badge>
                       </div>
                     </div>
-                    <CardTitle className="text-2xl font-bold mb-2">{pillar.title}</CardTitle>
-                    <p className="text-sm font-semibold text-orange-500 mb-3">{pillar.tagline}</p>
+                    <CardTitle className="text-2xl font-bold mb-2">
+                      {pillar.title}
+                    </CardTitle>
+                    <p className="text-sm font-semibold text-orange-500 mb-3">
+                      {pillar.tagline}
+                    </p>
                   </CardHeader>
                   <CardContent>
                     <p className="text-foreground mb-4">{pillar.description}</p>
                     <div className="border-l-2 border-orange-500 pl-4">
-                      <p className="text-sm font-semibold text-foreground mb-1">Real-World Impact:</p>
-                      <p className="text-sm text-foreground/80">{pillar.impact}</p>
+                      <p className="text-sm font-semibold text-foreground mb-1">
+                        Real-World Impact:
+                      </p>
+                      <p className="text-sm text-foreground/80">
+                        {pillar.impact}
+                      </p>
                     </div>
                   </CardContent>
                 </Card>
@@ -311,7 +382,10 @@ export default function Research() {
       </section>
 
       {/* ===== RESEARCH SPOTLIGHTS: OUTCOME NARRATIVES ===== */}
-      <section ref={spotlightsRef} className="px-3 py-10 lg:py-16 bg-gradient-to-br from-red-500/5 via-orange-500/5 to-background">
+      <section
+        ref={spotlightsRef}
+        className="px-3 py-10 lg:py-16 bg-gradient-to-br from-red-500/5 via-orange-500/5 to-background"
+      >
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -329,42 +403,58 @@ export default function Research() {
               {
                 problem: "Agricultural Waste Management",
                 solution: "Upcycled Protein Technology",
-                impact: "SynTech Bio: Converting 10,000 tons agricultural waste annually into sustainable protein",
-                outcome: "Patent-pending process; 2 industry partnerships; ₹2Cr+ licensing value",
+                impact:
+                  "SynTech Bio: Converting 10,000 tons agricultural waste annually into sustainable protein",
+                outcome: "Patent-pending process; 2 industry partnerships",
               },
               {
                 problem: "Manufacturing Inefficiency",
                 solution: "AI-Powered Digital Twins",
-                impact: "Real-time optimization reducing production downtime by 40% in pilot factories",
-                outcome: "Deployed in 3 Tier-1 automotive suppliers; ₹8Cr annual revenue run-rate",
+                impact:
+                  "Real-time optimization reducing production downtime by 40% in pilot factories",
+                outcome: "Deployed in 3 Tier-1 automotive suppliers",
               },
               {
                 problem: "Rural Healthcare Access",
                 solution: "AI-Enabled Diagnostics",
-                impact: "Telemedicine platform screening 50,000+ patients in underserved regions",
-                outcome: "2 medical devices in regulatory approval; partnership with Apollo Hospitals",
+                impact:
+                  "Telemedicine platform screening 50,000+ patients in underserved regions",
+                outcome:
+                  "2 medical devices in regulatory approval; partnership with Apollo Hospitals",
               },
             ].map((spotlight, index) => (
               <Card
                 key={index}
                 className={`bg-card/50 backdrop-blur-sm border border-border/50 hover:border-orange-500/30 transition-all duration-300 transform ${
-                  spotlightsVisible ? "scale-100 opacity-100" : "scale-95 opacity-0"
+                  spotlightsVisible
+                    ? "scale-100 opacity-100"
+                    : "scale-95 opacity-0"
                 }`}
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
                 <CardHeader>
                   <div className="inline-flex items-center gap-2 px-3 py-1 bg-orange-500/10 rounded-full mb-4 w-fit">
                     <Target className="w-4 h-4 text-orange-500" />
-                    <span className="text-xs font-semibold text-orange-500">Real-World Impact</span>
+                    <span className="text-xs font-semibold text-orange-500">
+                      Real-World Impact
+                    </span>
                   </div>
-                  <CardTitle className="text-lg font-bold mb-2">{spotlight.solution}</CardTitle>
-                  <p className="text-sm text-foreground/70">Problem: {spotlight.problem}</p>
+                  <CardTitle className="text-lg font-bold mb-2">
+                    {spotlight.solution}
+                  </CardTitle>
+                  <p className="text-sm text-foreground/70">
+                    Problem: {spotlight.problem}
+                  </p>
                 </CardHeader>
                 <CardContent>
                   <p className="text-foreground mb-4">{spotlight.impact}</p>
                   <div className="pt-4 border-t border-border/30">
-                    <p className="text-sm font-semibold text-orange-500 mb-1">Outcome:</p>
-                    <p className="text-sm text-foreground">{spotlight.outcome}</p>
+                    <p className="text-sm font-semibold text-orange-500 mb-1">
+                      Outcome:
+                    </p>
+                    <p className="text-sm text-foreground">
+                      {spotlight.outcome}
+                    </p>
                   </div>
                 </CardContent>
               </Card>
@@ -390,19 +480,16 @@ export default function Research() {
           <div className="grid md:grid-cols-3 gap-4">
             {[
               {
-                icon: DollarSign,
-                title: "Funding & Grants",
-                description: "Government and industry funding mechanisms for research commercialization",
-              },
-              {
                 icon: Target,
                 title: "Mentorship & IP",
-                description: "Patent assistance and entrepreneurship support for research innovations",
+                description:
+                  "Patent assistance and entrepreneurship support for research innovations",
               },
               {
                 icon: Globe,
                 title: "Global Collaboration",
-                description: "International partnerships amplifying research reach and impact",
+                description:
+                  "International partnerships amplifying research reach and impact",
               },
             ].map((support, index) => {
               const Icon = support.icon;
@@ -415,10 +502,14 @@ export default function Research() {
                     <div className="w-12 h-12 rounded-2xl bg-orange-500/10 flex items-center justify-center mb-4">
                       <Icon className="w-6 h-6 text-orange-500" />
                     </div>
-                    <CardTitle className="text-foreground">{support.title}</CardTitle>
+                    <CardTitle className="text-foreground">
+                      {support.title}
+                    </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-sm text-foreground">{support.description}</p>
+                    <p className="text-sm text-foreground">
+                      {support.description}
+                    </p>
                   </CardContent>
                 </Card>
               );
@@ -433,7 +524,9 @@ export default function Research() {
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               <span className="text-foreground">Research Portal & </span>
-              <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">PhD Programs</span>
+              <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
+                PhD Programs
+              </span>
             </h2>
             <p className="text-lg text-foreground max-w-3xl mx-auto">
               Administrative resources for scholars and researchers
@@ -442,15 +535,51 @@ export default function Research() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
             {[
-              { icon: Calendar, title: "Ph.D Calendar of Events", href: "https://www.dsu.edu.in/research/phd-calendar-of-events" },
-              { icon: ClipboardList, title: "Ph.D Admission - July '25", href: "https://www.dsu.edu.in/research/phd-admission" },
-              { icon: Users, title: "Research Supervisor List", href: "https://www.dsu.edu.in/research/research-supervisor-list" },
-              { icon: FileText, title: "Ph.D Regulations", href: "https://www.dsu.edu.in/research/phd-regulations" },
-              { icon: FileText, title: "Templates & Guidelines", href: "https://www.dsu.edu.in/research/templates" },
-              { icon: Shield, title: "Code of Ethics", href: "https://www.dsu.edu.in/research/code-of-ethics" },
-              { icon: Briefcase, title: "Research Positions", href: "https://www.dsu.edu.in/research/research-positions" },
-              { icon: Award, title: "Research Promotion Policy", href: "https://www.dsu.edu.in/research/research-promotion-policy" },
-              { icon: Megaphone, title: "Calls & Opportunities", href: "https://www.dsu.edu.in/research/calls" },
+              {
+                icon: Calendar,
+                title: "Ph.D Calendar of Events",
+                href: "https://www.dsu.edu.in/research/phd-calendar-of-events",
+              },
+              {
+                icon: ClipboardList,
+                title: "Ph.D Admission - July '25",
+                href: "https://www.dsu.edu.in/research/phd-admission",
+              },
+              {
+                icon: Users,
+                title: "Research Supervisor List",
+                href: "https://www.dsu.edu.in/research/research-supervisor-list",
+              },
+              {
+                icon: FileText,
+                title: "Ph.D Regulations",
+                href: "https://www.dsu.edu.in/research/phd-regulations",
+              },
+              {
+                icon: FileText,
+                title: "Templates & Guidelines",
+                href: "https://www.dsu.edu.in/research/templates",
+              },
+              {
+                icon: Shield,
+                title: "Code of Ethics",
+                href: "https://www.dsu.edu.in/research/code-of-ethics",
+              },
+              {
+                icon: Briefcase,
+                title: "Research Positions",
+                href: "https://www.dsu.edu.in/research/research-positions",
+              },
+              {
+                icon: Award,
+                title: "Research Promotion Policy",
+                href: "https://www.dsu.edu.in/research/research-promotion-policy",
+              },
+              {
+                icon: Megaphone,
+                title: "Calls & Opportunities",
+                href: "https://www.dsu.edu.in/research/calls",
+              },
             ].map((item, idx) => (
               <a
                 key={idx}
@@ -464,7 +593,9 @@ export default function Research() {
                     <item.icon className="w-5 h-5 text-orange-500" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="font-medium text-foreground group-hover:text-orange-500 transition-colors">{item.title}</h3>
+                    <h3 className="font-medium text-foreground group-hover:text-orange-500 transition-colors">
+                      {item.title}
+                    </h3>
                   </div>
                   <ChevronRight className="w-4 h-4 text-orange-500/50 group-hover:text-orange-500 transition-colors" />
                 </div>
@@ -482,12 +613,14 @@ export default function Research() {
               Join India's AI Research Frontier
             </h2>
             <p className="text-lg text-foreground mb-8 max-w-2xl mx-auto">
-              Collaborate with DSU on transformative research advancing AI, healthcare, sustainability, and national missions. Industry partnerships, doctoral opportunities, and innovation funding available.
+              Collaborate with DSU on transformative research advancing AI,
+              healthcare, sustainability, and national missions. Industry
+              partnerships and doctoral opportunities available.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://www.dsu.edu.in/research/phd-admission"
+                href="https://www.dsu.edu.in/images/phd/Syllabus/2025_dec/Application_2025.pdf"
                 target="_blank"
                 rel="noreferrer"
               >

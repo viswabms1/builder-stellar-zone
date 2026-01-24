@@ -1,5 +1,4 @@
 import { Link as RouterLink } from "react-router-dom";
-import { useState, useRef, useEffect } from "react";
 import type { LucideIcon } from "lucide-react";
 import {
   Award,
@@ -15,8 +14,6 @@ import {
   Presentation,
   Sparkle,
   Users,
-  Volume2,
-  VolumeX,
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -29,7 +26,6 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { DeanSection, type DeanInfo } from "@/components/DeanSection";
-import { useAutoMuteOnScroll } from "@/hooks/useAutoMuteOnScroll";
 
 type ProgramCard = {
   name: string;
@@ -75,7 +71,7 @@ type Resource = {
 };
 
 const HERO_IMAGE =
-  "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2000&auto=format&fit=crop";
+  "https://images.pexels.com/photos/3931561/pexels-photo-3931561.jpeg?auto=compress&cs=tinysrgb&w=1600";
 
 const OFFERINGS: Offering[] = [
   {
@@ -112,7 +108,7 @@ const PROGRAM_CARDS: ProgramCard[] = [
       "Modular Executive MBA for senior managers with flexible weekend schedules, strategic modules and global immersion.",
     image:
       "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1600&auto=format&fit=crop",
-    link: "https://bit.ly/DSUEMBAApp",
+    link: "https://docs.google.com/forms/d/e/1FAIpQLSdsBxDLGLdxHeUXCT6U6xaVkSTlkSJh1b95THI6MeoIImKHLw/viewform?pli=1",
     highlights: ["Weekend Classes", "Global Immersion", "CXO Mentorship"],
     overlay:
       "bg-gradient-to-br from-brand-magenta/80 via-black/75 to-black/60 mix-blend-multiply",
@@ -237,7 +233,7 @@ const RESOURCES: Resource[] = [
     title: "Executive MBA Application",
     description:
       "Apply for the upcoming Executive MBA cohort with flexible weekend modes and cohort-based learning.",
-    href: "https://bit.ly/DSUEMBAApp",
+    href: "https://docs.google.com/forms/d/e/1FAIpQLSdsBxDLGLdxHeUXCT6U6xaVkSTlkSJh1b95THI6MeoIImKHLw/viewform?pli=1",
     badge: "Admissions",
   },
   {
@@ -410,62 +406,15 @@ function CalendarResourceCard({ entry }: { entry: CalendarEntry }) {
 }
 
 function HeroVideo() {
-  const [isMuted, setIsMuted] = useState(true);
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const containerRef = useAutoMuteOnScroll(videoRef);
-
-  const toggleMute = () => {
-    if (videoRef.current) {
-      videoRef.current.muted = !videoRef.current.muted;
-      setIsMuted(!isMuted);
-    }
-  };
-
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    video.muted = isMuted;
-  }, [isMuted]);
-
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    const handleEnded = () => {
-      const rect = containerRef.current?.getBoundingClientRect();
-      const isVisible =
-        rect && rect.top < window.innerHeight && rect.bottom > 0;
-      if (isVisible) {
-        video.currentTime = 0;
-        video.play().catch(() => {});
-      }
-    };
-
-    video.addEventListener("ended", handleEnded);
-    return () => {
-      video.removeEventListener("ended", handleEnded);
-    };
-  }, []);
-
   return (
-    <div
-      ref={containerRef}
-      className="h-[40vh] sm:h-[55vh] md:h-[65vh] lg:h-[75vh] relative overflow-hidden flex items-center justify-start hero-video-container"
-    >
-      <video
-        ref={videoRef}
-        src="https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F0b20f5ea03294f4d824e69fd8489b78c?alt=media&token=0c4092c4-4afd-4237-b850-81046ecf52f7&apiKey=4aa279a8430d441dba9c55f659831878"
-        autoPlay
-        muted={isMuted}
-        loop
-        playsInline
-        preload="metadata"
-        crossOrigin="anonymous"
+    <div className="h-[40vh] sm:h-[55vh] md:h-[65vh] lg:h-[75vh] relative overflow-hidden flex items-center justify-start hero-video-container">
+      <img
+        src={HERO_IMAGE}
+        alt="Center for Executive Education - Professional Leadership"
         className="absolute inset-0 object-cover"
         style={{
           filter: "brightness(1.1) contrast(1.15) saturate(1.2)",
-          objectPosition: "center 85%",
+          objectPosition: "center 50%",
         }}
       />
 
@@ -498,7 +447,7 @@ function HeroVideo() {
 
           <div className="flex flex-col sm:flex-row gap-4">
             <a
-              href="https://bit.ly/DSUEMBAApp"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSdsBxDLGLdxHeUXCT6U6xaVkSTlkSJh1b95THI6MeoIImKHLw/viewform?pli=1"
               target="_blank"
               rel="noreferrer"
               className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background"
@@ -514,18 +463,6 @@ function HeroVideo() {
           </div>
         </div>
       </div>
-
-      <button
-        onClick={toggleMute}
-        className="absolute top-8 right-8 z-10 p-3 rounded-full bg-black/50 hover:bg-black/70 transition-colors text-white backdrop-blur-sm border border-white/20"
-        aria-label={isMuted ? "Unmute" : "Mute"}
-      >
-        {isMuted ? (
-          <VolumeX className="h-5 w-5" />
-        ) : (
-          <Volume2 className="h-5 w-5" />
-        )}
-      </button>
     </div>
   );
 }
@@ -801,7 +738,7 @@ export default function CEE() {
             </p>
             <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
               <a
-                href="https://bit.ly/DSUEMBAApp"
+                href="https://docs.google.com/forms/d/e/1FAIpQLSdsBxDLGLdxHeUXCT6U6xaVkSTlkSJh1b95THI6MeoIImKHLw/viewform?pli=1"
                 target="_blank"
                 rel="noreferrer"
               >

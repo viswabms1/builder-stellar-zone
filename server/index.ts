@@ -5,6 +5,12 @@ import cookieParser from "cookie-parser";
 import { handleDemo } from "./routes/demo";
 import { handleSessionInit, handleHealthCheck } from "./routes/chat";
 import { handleRagChat, handleRagHealthCheck } from "./routes/rag-chat";
+import {
+  getPageBySlug,
+  getPagesByContentType,
+  handleStrapiWebhook,
+  checkStrapiHealth,
+} from "./routes/strapi";
 
 export function createServer() {
   const app = express();
@@ -31,6 +37,27 @@ export function createServer() {
   // RAG Chat endpoint - new implementation using knowledge base
   app.post("/api/rag-chat", handleRagChat);
   app.get("/api/rag-chat/health", handleRagHealthCheck);
+
+  // ============================================
+  // STRAPI CMS INTEGRATION ROUTES
+  // ============================================
+
+  // Fetch page content by slug
+  // Usage: GET /api/page/vision-mission?locale=en
+  app.get("/api/page/:slug", getPageBySlug);
+
+  // Fetch pages by content type (university, engineering, etc.)
+  // Usage: GET /api/pages?contentType=university&locale=en
+  app.get("/api/pages", getPagesByContentType);
+
+  // Webhook for Strapi cache invalidation
+  // Configure in Strapi: Settings > Webhooks > Add Webhook
+  // POST /api/strapi/webhook/publish
+  app.post("/api/strapi/webhook/publish", handleStrapiWebhook);
+
+  // Health check for Strapi connection
+  // Usage: GET /api/strapi/health
+  app.get("/api/strapi/health", checkStrapiHealth);
 
   return app;
 }

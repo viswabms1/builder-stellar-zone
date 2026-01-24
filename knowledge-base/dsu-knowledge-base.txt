@@ -28,60 +28,98 @@ SCHOOL OF ENGINEERING
 ================================================================================
 Innovation-driven education for the tech-savvy world with cutting-edge AI labs and research facilities.
 
-PROGRAMS OFFERED
-----------------
+UNDERGRADUATE PROGRAMS (B.TECH)
+--------------------------------
 
-B.TECH UNDERGRADUATE PROGRAMS:
+Programs Offered:
+  1. B.Tech in Computer Science & Engineering (4 Years)
+  2. B.Tech in Computer Science & Engineering (Artificial Intelligence & Machine Learning) (4 Years)
+  3. B.Tech in Computer Science & Engineering (Data Science) (4 Years)
+  4. B.Tech in Computer Science & Engineering (Cyber Security) (4 Years)
+  5. B.Tech in Computer Science & Engineering (Artificial Intelligence & Data Science) (4 Years)
+  6. B.Tech in Computer Science & Medical Engineering (4 Years)
+  7. B.Tech in Computer Science & Engineering (Artificial Intelligence) (4 Years)
+  8. B.Tech in Computer Science & Technology (4 Years)
+  9. B.Tech in AI & Robotics (4 Years)
+  10. B.Tech in Electronics & Communication Engineering (4 Years)
+  11. B.Tech in Mechanical Engineering (4 Years)
+  12. B.Tech in Aerospace Engineering (4 Years)
 
-COMPUTER SCIENCE & ENGINEERING SPECIALIZATIONS:
-  1. B.Tech Computer Science & Technology (4 Years)
-  2. B.Tech Computer Science & Medical Engineering (4 Years)
-  3. B.Tech CSE (Artificial Intelligence & Machine Learning) (4 Years)
-  4. B.Tech CSE (Data Science) (4 Years)
-  5. B.Tech CSE (Cyber Security) (4 Years)
-  6. B.Tech CSE (AI & Data Science) (4 Years)
-  7. B.Tech CSE (Artificial Intelligence) (4 Years)
-  8. B.Tech AI & Robotics (4 Years)
+Eligibility:
+  - Pass in 10+2 with Physics, Chemistry, and Mathematics with at least 45% marks (40% for SC/ST & OBC candidates).
 
-OTHER ENGINEERING SPECIALIZATIONS:
-  9. B.Tech Electronics & Communication Engineering (4 Years)
-  10. B.Tech Mechanical Engineering (4 Years)
-  11. B.Tech Aerospace Engineering (4 Years)
+Fees (Annual - 2026-27):
+  - B.Tech in Computer Science & Engineering:
+    CET: ₹4,12,000
+    JEE Mains/Uniguage/Comed-K: ₹4,92,000
 
-M.TECH POSTGRADUATE PROGRAMS:
-  - M.Tech Computer Science & Engineering (2 Years)
-  - M.Tech CSE (AI & Machine Learning) (2 Years)
-  - M.Tech AI & Data Science (2 Years)
-  - M.Tech Artificial Intelligence (2 Years)
-  - M.Tech AI & Robotics (2 Years)
-  - M.Tech Embedded System (2 Years)
-  - M.Tech Design Engineering (2 Years)
+  - B.Tech in Computer Science & Engineering (Artificial Intelligence & Machine Learning):
+    CET: ₹4,35,000
+    JEE Mains/Uniguage/Comed-K: ₹5,25,000
 
-ELIGIBILITY REQUIREMENTS
-------------------------
+  - B.Tech in Computer Science & Engineering (Data Science):
+    CET: ₹4,12,000
+    JEE Mains/Uniguage/Comed-K: ₹4,92,000
 
-UNDERGRADUATE (B.Tech) PROGRAMS:
-  - Pass in PUC / 10+2 examination with Physics and Mathematics as compulsory subjects along with one of the following: Chemistry / Biotechnology / Biology / Computer Science / Electronics / Technical Vocational subjects.
-  - Minimum of 45% marks in the above subjects taken together (40% for SC/ST/OBC candidates).
+  - B.Tech in Computer Science & Engineering (Cyber Security):
+    CET: ₹4,12,000
+    JEE Mains/Uniguage/Comed-K: ₹4,92,000
 
-POSTGRADUATE (M.Tech) PROGRAMS:
-  - Pass in B.Tech in ECE, CSE, ISE, Biomedical, Medical Electronics, Electronics & Instrumentation, EEE, Telecommunications, Mechatronics and other related branches with a minimum of 50% marks in aggregate (45% in case of candidate belonging to SC/ST & OBC).
-  - Exception (Design Engineering): B.Tech in Mechanical, Industrial Engineering & Management, Aerospace, Aeronautical, Automobile, or related disciplines with minimum 50% marks in aggregate (45% for SC/ST/OBC).
+  - B.Tech in Computer Science & Engineering (Artificial Intelligence & Data Science):
+    CET: ₹4,35,000
+    JEE Mains/Uniguage/Comed-K: ₹5,25,000
 
-FEE STRUCTURE
--------------
+  - B.Tech in Computer Science & Medical Engineering:
+    CET: ₹4,12,000
+    JEE Mains/Uniguage/Comed-K: ₹4,92,000
 
-B.TECH PROGRAMS (Annual Fees):
-  - CET: Not Available
-  - Ranking Based (JEE Mains / Uniguage / Comed-K): ₹3,22,000 - ₹4,35,000
-  - Others: ₹4,12,000 - ₹5,25,000
+  - B.Tech in Computer Science & Engineering (Artificial Intelligence):
+    CET: ₹4,35,000
+    JEE Mains/Uniguage/Comed-K: ₹5,25,000
 
-M.Tech Programs (Annual Fees):
-  - PGCET: Not Available
-  - Annual: ₹1,62,000 - ₹2,52,000
+  - B.Tech in Computer Science & Technology:
+    CET: ₹4,12,000
+    JEE Mains/Uniguage/Comed-K: ₹4,92,000
 
-Special Notes (M.Tech):
-  Job placement guarantee: Upon successful completion, candidates are offered a job with a starting salary of INR 65,000 per month for a year.
+  - B.Tech in AI & Robotics:
+    CET: ₹4,12,000
+    JEE Mains/Uniguage/Comed-K: ₹4,92,000
+
+  - B.Tech in Electronics & Communication Engineering:
+    CET: ₹3,22,000
+    JEE Mains/Uniguage/Comed-K: ₹4,12,000
+
+  - B.Tech in Mechanical Engineering:
+    CET: ₹3,22,000
+    JEE Mains/Uniguage/Comed-K: ₹4,12,000
+
+  - B.Tech in Aerospace Engineering:
+    CET: ₹3,22,000
+    JEE Mains/Uniguage/Comed-K: ₹4,12,000
+
+POSTGRADUATE PROGRAMS (M.TECH)
+-------------------------------
+
+Programs Offered:
+  1. M.Tech in Computer Science & Engineering (2 Years)
+  2. M.Tech in Computer Science & Engineering (Artificial Intelligence and Machine Learning) (2 Years)
+  3. M.Tech in Artificial Intelligence and Data Science (2 Years)
+  4. M.Tech in Artificial Intelligence (2 Years)
+  5. M.Tech in Artificial Intelligence and Robotics (2 Years)
+  6. M.Tech in Embedded Systems (2 Years)
+  7. M.Tech in Design Engineering (2 Years)
+
+Eligibility:
+  - B.Tech in relevant discipline with a minimum of 50% marks (45% for SC/ST & OBC candidates).
+
+Fees (Annual - 2026-27):
+  - M.Tech in Computer Science & Engineering: ₹2,52,000
+  - M.Tech in Computer Science & Engineering (Artificial Intelligence and Machine Learning): ₹2,52,000
+  - M.Tech in Artificial Intelligence and Data Science: ₹2,52,000
+  - M.Tech in Artificial Intelligence: ₹2,52,000
+  - M.Tech in Artificial Intelligence and Robotics: ₹2,52,000
+  - M.Tech in Embedded Systems: ₹1,62,000
+  - M.Tech in Design Engineering: ₹1,62,000
 
 More Info: https://dsu.edu.in/eligibility
 
@@ -90,60 +128,65 @@ SCHOOL OF COMPUTER APPLICATIONS
 ================================================================================
 Cutting-edge IT education for the digital age with industry certifications.
 
-PROGRAMS OFFERED
-----------------
+UNDERGRADUATE PROGRAMS
+----------------------
 
-DEPARTMENT OF COMPUTER APPLICATIONS:
-  - BCA - Bachelor of Computer Applications (3 Years)
-  - BCA in AI & Data Sciences (3 Years)
-  - B.Sc Data Science (3 Years)
-  - B.Sc Cyber Security (3 Years)
-  - MCA - Master of Computer Applications (2 Years)
-  - M.Sc Data Science (2 Years)
-  - M.Sc Cyber Security (2 Years)
+Programs Offered:
+  1. BCA in Computer Applications (3 Years)
+  2. BCA in Artificial Intelligence & Data Sciences (3 Years)
+  3. B.Sc in Data Science (3 Years)
+  4. B.Sc in Cyber Security (3 Years)
 
-ELIGIBILITY REQUIREMENTS
-------------------------
+Eligibility:
+  - 10+2 or equivalent with a minimum of 45% marks in aggregate.
 
-UNDERGRADUATE PROGRAMS (BCA, B.Sc):
-  Pass in 10+2, A Level, IB, American 12th grade or equivalent and a minimum of 45% marks in aggregate.
+Fees (Annual - 2026-27):
+  - BCA in Computer Applications:
+    Term I: ₹1,09,500
+    Term II: ₹97,500
+    Total Fee: ₹2,07,000
 
-POSTGRADUATE PROGRAMS:
+  - BCA in Artificial Intelligence & Data Sciences:
+    Term I: ₹1,09,500
+    Term II: ₹97,500
+    Total Fee: ₹2,07,000
 
-MCA:
-  Admission to First Year MCA shall be open to candidates with a UG degree in BCA/B.Sc.(CS/IT) or B.Sc./B.Com/BA from a recognized University with Mathematics at 10+2 level or Graduation Level. Obtained at least 50% marks in the Qualifying Examination.
+  - B.Sc in Data Science:
+    Term I: ₹87,000
+    Term II: ₹75,000
+    Total Fee: ₹1,62,000
 
-M.Sc Data Science:
-  B.Sc in Life Science or related fields such as Biotechnology, Microbiology, Genetics, Zoology, Botany, Biochemistry, Bioinformatics, Statistics, or Computer Science with minimum 50% aggregate.
+  - B.Sc in Cyber Security:
+    Term I: ₹87,000
+    Term II: ₹75,000
+    Total Fee: ₹1,62,000
 
-M.Sc Cyber Security:
-  B.Sc in Computer Science, Cyber Security, or related fields with minimum 50% aggregate.
+POSTGRADUATE PROGRAMS
+---------------------
 
-FEE STRUCTURE
--------------
+Programs Offered:
+  1. MCA in Computer Applications (2 Years)
+  2. M.Sc in Data Science (2 Years)
+  3. M.Sc in Cyber Security (2 Years)
 
-BCA & B.Sc Programs (Annual Fees):
-  Data Science / Cyber Security:
-    - Term I: ₹87,000
-    - Term II: ₹75,000
-    - Total: ₹1,62,000
-  
-  BCA / BCA AI & Data Sciences:
-    - Term I: ₹1,09,500
-    - Term II: ₹97,500
-    - Total: ₹2,07,000
+Eligibility:
+  - BCA/B.Sc.(CS/IT) or B.Sc./B.Com/BA with Mathematics in 10+2 level.
 
-MCA Program (Annual Fees):
-  - PGCET: Not Available
-  - Term I: ₹1,77,000
-  - Term II: ₹1,65,000
-  - Total: ₹3,42,000
+Fees (Annual - 2026-27):
+  - MCA in Computer Applications:
+    Term I: ₹1,77,000
+    Term II: ₹1,65,000
+    Total Fee: ₹3,42,000
 
-M.Sc Programs (Annual Fees):
-  - PGCET: Not Available
-  - Term I: ₹82,000
-  - Term II: ₹70,000
-  - Total: ₹1,52,000
+  - M.Sc in Data Science:
+    Term I: ₹82,000
+    Term II: ₹70,000
+    Total Fee: ₹1,52,000
+
+  - M.Sc in Cyber Security:
+    Term I: ₹82,000
+    Term II: ₹70,000
+    Total Fee: ₹1,52,000
 
 More Info: https://dsu.edu.in/eligibility
 
@@ -152,48 +195,43 @@ SCHOOL OF LAW
 ================================================================================
 Training tomorrow's legal minds with a focus on justice and impact.
 
-PROGRAMS OFFERED
-----------------
+UNDERGRADUATE PROGRAMS
+----------------------
 
-DEPARTMENT OF LEGAL STUDIES:
-  - B.A. LL.B (Hons) (5 Years)
-  - B.B.A. LL.B (Hons) (5 Years)
-  - LL.B (3 Years)
-  - LL.M (1 Year)
+Programs Offered:
+  1. B.A. LL.B (5 Years)
+  2. B.B.A. LL.B (5 Years)
+  3. LL.B (3 Years)
 
-ELIGIBILITY REQUIREMENTS
-------------------------
+Eligibility:
+  - B.A. LL.B and B.B.A. LL.B: 10+2 or equivalent with a minimum of 50% marks. CLAT and DSAT scores accepted.
+  - LL.B: Graduation or equivalent examination with a minimum of 50% marks.
 
-B.A. LL.B (Hons) & B.B.A. LL.B (Hons):
-  10+2 or equivalent examination from a recognized Board with a minimum of 50% marks in aggregate. We accept CLAT scores.
+Fees (Annual - 2026-27):
+  - B.A. LL.B and B.B.A. LL.B:
+    Tuition Fee: ₹2,02,000
+    Other Fee: ₹50,000
+    Total Fee: ₹2,52,000
 
-LL.B (3 Year):
-  Graduation or equivalent examination from a recognized University with a minimum of 50% marks in aggregate.
+  - LL.B:
+    Tuition Fee: ₹1,37,000
+    Other Fee: ₹40,000
+    Total Fee: ₹1,77,000
 
-LL.M (1 Year):
-  A bachelor's degree in law (LL.B) or an equivalent degree from recognized university with a minimum of 50% marks in the qualifying degree (40% for SC/ST candidates). Valid scores in any national level entrance exams like CLAT or AILET.
+POSTGRADUATE PROGRAMS
+---------------------
 
-FEE STRUCTURE
--------------
+Programs Offered:
+  1. LL.M (1 Year)
 
-B.A. LL.B (Hons) & B.B.A. LL.B (Hons) (Annual Fees):
-  - Tuition Fee: ₹2,02,000
-  - Other Fee: ₹50,000
-  - Total: ₹2,52,000
-  💰 Scholarship Available
+Eligibility:
+  - LL.B with a minimum of 50% marks.
 
-LL.B (3 Year) (Annual Fees):
-  - Tuition Fee: ₹1,37,000
-  - Other Fee: ₹40,000
-  - Total: ₹1,77,000
-
-LL.M (Annual Fees):
-  - Tuition Fee: ₹1,10,000
-  - Other Fee: ₹35,000
-  - Total: ₹1,45,000
-
-Special Notes:
-  LL.M Tracks: Corporate & Commercial Law, Intellectual Property Rights, Human Rights Law
+Fees (Annual - 2026-27):
+  - LL.M:
+    Tuition Fee: ₹1,10,000
+    Other Fee: ₹35,000
+    Total Fee: ₹1,45,000
 
 More Info: https://dsu.edu.in/eligibility
 
@@ -202,47 +240,40 @@ SCHOOL OF BASIC & APPLIED SCIENCES
 ================================================================================
 Practical approaches rooted in foundational sciences with advanced lab research.
 
-PROGRAMS OFFERED
-----------------
+UNDERGRADUATE PROGRAMS
+----------------------
 
-DEPARTMENT OF LIFE SCIENCES:
-  - B.Sc Life Science (Biotechnology, Biochemistry, Genetics) (3 Years)
-  - M.Sc Biochemistry (2 Years)
-  - M.Sc Biotechnology (2 Years)
-  - M.Sc Microbiology (2 Years)
-  - M.Sc Molecular Biology and Genetics (2 Years)
+Programs Offered:
+  1. B.Sc in Biotechnology, Biochemistry, and Genetics (3 Years)
+  2. B.Sc in Biotechnology, Chemistry, and Microbiology (3 Years)
+  3. B.Sc in Microbiology, Genetics, and Biochemistry (3 Years)
 
-ELIGIBILITY REQUIREMENTS
-------------------------
+Eligibility:
+  - 10+2 or equivalent with Physics, Chemistry, and Biology or Biotechnology as subjects, with at least 45% marks in aggregate.
 
-B.Sc Life Science:
-  Pass in 10+2, A Level, IB, American 12th grade or equivalent with Physics, Chemistry and English with Biology or Biotechnology or Mathematics or any other Life Science subject as optional and a minimum of 45% marks taken together.
+Fees (Annual - 2026-27):
+  - All B.Sc Programs:
+    Term I: ₹97,000
+    Term II: ₹85,000
+    Total Fee: ₹1,82,000
 
-M.Sc Biochemistry:
-  B.Sc. with any of the following life science subjects such as Biochemistry, Chemistry, Biotechnology, Microbiology, Bioinformatics, Anatomy, Physiology, etc. Students having degree in Medical Sciences, Nursing Sciences, Pharmaceutical Sciences are also eligible.
+POSTGRADUATE PROGRAMS
+---------------------
 
-M.Sc Biotechnology:
-  B.Sc. with any of the following subjects in Life Science such as Biotechnology, Microbiology, Genetics, Zoology, Botany, Biochemistry, Bioinformatics, etc.
+Programs Offered:
+  1. M.Sc in Biochemistry (2 Years)
+  2. M.Sc in Biotechnology (2 Years)
+  3. M.Sc in Microbiology (2 Years)
+  4. M.Sc in Molecular Biology and Genetics (2 Years)
 
-M.Sc Microbiology:
-  B.Sc. in any stream of science with any of the following life science subjects such as Genetics, Zoology, Botany, Biochemistry, Chemistry, Microbiology etc. Students having degree in Medical Sciences, Nursing Sciences, Pharmaceutical Sciences are also eligible.
+Eligibility:
+  - B.Sc. with Life Science subjects (e.g., Biochemistry, Chemistry, Biotechnology, Microbiology, Genetics, etc.), or degrees in Medical Sciences, Nursing, Pharmaceutical Sciences.
 
-M.Sc Molecular Biology and Genetics:
-  B.Sc. with any of the following life science subjects such as Genetics, Zoology, Botany, Biochemistry, Chemistry, Microbiology, Bioinformatics, Anthropology, Anatomy, Physiology, etc. Students having degree in Medical Sciences, Nursing Sciences, Pharmaceutical Sciences are also eligible.
-
-FEE STRUCTURE
--------------
-
-B.Sc Life Science (Annual Fees):
-  - Term I: ₹97,000
-  - Term II: ₹85,000
-  - Total: ₹1,82,000
-
-M.Sc Programs (Annual Fees):
-  - PGCET: Not Available
-  - Term I: ₹1,02,000
-  - Term II: ₹90,000
-  - Total: ₹1,92,000
+Fees (Annual - 2026-27):
+  - All M.Sc Programs:
+    Term I: ₹1,02,000
+    Term II: ₹90,000
+    Total Fee: ₹1,92,000
 
 More Info: https://dsu.edu.in/eligibility
 
@@ -251,55 +282,50 @@ SCHOOL OF COMMERCE & MANAGEMENT
 ================================================================================
 Shaping tomorrow's business and industry leaders with professional certifications.
 
-PROGRAMS OFFERED
-----------------
+UNDERGRADUATE PROGRAMS
+----------------------
 
-DEPARTMENT OF COMMERCE:
+Programs Offered:
   - B.Com Regular (3 Years)
   - B.Com ACCA Integrated (3 Years)
   - B.Com CMA Integrated (3 Years)
   - B.Com With CA Coaching (3 Years)
-
-DEPARTMENT OF MANAGEMENT:
   - BBA Regular (3 Years)
+
+Eligibility:
+  - B.Com Programs: Candidates who have completed 10+2 with Business Studies and Accountancy with aggregate of 50% (45% for SC/ST & OBC).
+  - BBA Regular: 10+2 or equivalent with a minimum of 50% marks in aggregate (45% for SC/ST & OBC).
+
+Fees (Annual - 2026-27):
+  - B.Com Regular:
+    Term I: ₹79,500
+    Term II: ₹77,500
+    Total (Incl. Library Deposit): ₹1,57,000
+
+  - B.Com ACCA Integrated / CMA Integrated / CA Coaching:
+    Term I: ₹99,500
+    Term II: ₹87,500
+    Total (Incl. Library Deposit): ₹1,87,000
+
+  - BBA Regular:
+    Term I: ₹1,07,000
+    Term II: ₹1,05,000
+    Total (Incl. Library Deposit): ₹2,12,000
+
+POSTGRADUATE PROGRAMS
+---------------------
+
+Programs Offered:
   - MBA (2 Years)
 
-ELIGIBILITY REQUIREMENTS
-------------------------
+Eligibility:
+  - Pass in a Bachelor's degree in any stream with minimum 50% (45% for SC/ST & OBC) from any recognized University/Institution.
 
-B.Com Programs:
-  Candidates who have completed two year Pre – University course of Karnataka State or its equivalent with Business Studies and Accountancy as two major subjects of study with aggregate of 50% (45% in case of candidate belonging to SC/ST & OBC category).
-
-BBA Regular:
-  Pass in 10+2, A Level, IB, American 12th grade or equivalent with a minimum of 50% marks in aggregate (45% in case of candidate belonging to SC/ST & OBC category).
-
-MBA:
-  Pass in a Bachelors degree of three years in any stream with minimum 50% (45% in case of candidates belonging to SC/ST & OBC category) of marks in aggregate from any recognized University / Institution.
-
-FEE STRUCTURE
--------------
-
-B.Com Programs (Annual Fees):
-  Regular:
-    - Term I: ₹79,500
-    - Term II: ₹77,500
-    - Total (Incl. Library Deposit): ₹1,57,000
-  
-  ACCA Integrated / CMA Integrated / CA Coaching:
-    - Term I: ₹99,500
-    - Term II: ₹87,500
-    - Total (Incl. Library Deposit): ₹1,87,000
-
-BBA Regular (Annual Fees):
-  - Term I: ₹1,07,000
-  - Term II: ₹1,05,000
-  - Total (Incl. Library Deposit): ₹2,12,000
-
-MBA (Annual Fees):
-  - PGCET: Not Available
-  - Term I: ₹3,07,000
-  - Term II: ₹2,95,000
-  - Total: ₹6,02,000
+Fees (Annual - 2026-27):
+  - MBA:
+    Term I: ₹3,07,000
+    Term II: ₹2,95,000
+    Total: ₹6,02,000
 
 Special Notes:
   MBA offers dual specialization options covering Business Analytics, Finance, Marketing, HR, and Operations.
@@ -311,125 +337,155 @@ SCHOOL OF HEALTH SCIENCES
 ================================================================================
 Equipping future leaders in global health and wellness with clinical immersion.
 
-PROGRAMS OFFERED
-----------------
+COLLEGE OF ALLIED HEALTH SCIENCES
+----------------------------------
 
-COLLEGE OF PHARMACEUTICAL SCIENCES:
-  - B.Pharm (4 Years)
-  - M.Pharm Pharmaceutics (2 Years)
-  - M.Pharm Pharmacology (2 Years)
-  - M.Pharm Regulatory Affairs (2 Years)
-  - Pharm.D (6 Years)
+UNDERGRADUATE PROGRAMS:
+Programs Offered:
+  1. B.Sc in Medical Radiology & Imaging Technology (3 Years)
+  2. B.Sc in Medical Laboratory Technology (3 Years)
+  3. B.Sc in Anesthesia and Operation Theatre Technology (3 Years)
+  4. B.Sc in Emergency & Trauma Care Technology (3 Years)
+  5. B.Sc in Cardiac Care Technology (3 Years)
 
-COLLEGE OF NURSING SCIENCES:
-  - B.Sc Nursing (4 Years)
-  - PB B.Sc Nursing (2 Years)
-  - M.Sc Medical Surgical Nursing (2 Years)
-  - M.Sc Child Health Nursing (2 Years)
-  - M.Sc Mental Health Nursing (2 Years)
-  - M.Sc Obstetrics and Genealogical Nursing (2 Years)
-  - M.Sc Community Health Nursing (2 Years)
+Eligibility:
+  - 10+2 with Physics, Chemistry, Biology, and English with a minimum of 45% marks.
 
-COLLEGE OF PHYSIOTHERAPY:
-  - Bachelor's in Physiotherapy (BPT) (4 Years)
-  - M.P.T Sports & Muscular Skeletal (2 Years)
-  - M.P.T Cardio Pulmonary (2 Years)
-  - M.P.T Women's Health (2 Years)
-  - M.P.T Neuro (2 Years)
-  - M.P.T Community Based Rehabilitation (2 Years)
+Fees (Annual - 2026-27):
+  - B.Sc in Medical Radiology & Imaging Technology:
+    Tuition Fee: ₹1,42,000
+    Other Fee: ₹30,000
+    Total Fee: ₹1,72,000
 
-COLLEGE OF ALLIED HEALTH SCIENCES:
-  - B.Sc Medical Radiology & Imaging Technology (3 Years)
-  - B.Sc Medical Laboratory Technology (3 Years)
-  - B.Sc Anesthesia and Operation Theatre Technology (3 Years)
-  - B.Sc Emergency & Trauma Care Technology (3 Years)
-  - B.Sc Cardiac Care Technology (3 Years)
-  - MPH - Masters in Public Health (2 Years)
+  - B.Sc in Medical Laboratory Technology:
+    Tuition Fee: ₹1,12,000
+    Other Fee: ₹30,000
+    Total Fee: ₹1,42,000
 
-ELIGIBILITY REQUIREMENTS
-------------------------
+  - B.Sc in Anesthesia and Operation Theatre Technology:
+    Tuition Fee: ₹1,42,000
+    Other Fee: ₹30,000
+    Total Fee: ₹1,72,000
 
-B.Pharm:
-  Pass in 10+2 with Physics, Chemistry and English with Mathematics or Biotechnology or Computer Science or Biology as optional subjects with a minimum of 40% marks in aggregate.
+  - B.Sc in Emergency & Trauma Care Technology:
+    Tuition Fee: ₹1,12,000
+    Other Fee: ₹30,000
+    Total Fee: ₹1,42,000
 
-M.Pharm Programs & Pharm.D:
-  Candidates should have passed B.pharm from an institution recognized by the Pharmacy Council of India with a minimum of 50% marks in aggregate.
+  - B.Sc in Cardiac Care Technology:
+    Tuition Fee: ₹1,72,000
+    Other Fee: ₹30,000
+    Total Fee: ₹2,02,000
 
-B.Sc Nursing:
-  Pass in 10+2, A Level, IB, American 12th grade or equivalent with Physics, Chemistry, Biology and English and a minimum of 45% marks taken together.
+POSTGRADUATE PROGRAMS:
+Programs Offered:
+  1. MPH - Masters in Public Health (2 Years)
 
-PB B.Sc Nursing:
-  Pass in GNM after 10+2 or equivalent examination preferably with Science subjects with 50% marks in aggregate. Candidates should be a registered Nurse and registered Midwife.
+Eligibility:
+  - Degree in MBBS, BDS, BAMS, B.Sc Nursing, BPT, B. Pharm or equivalent with a minimum of 50% marks.
 
-M.Sc Nursing Programs:
-  Candidates should have passed BSc/PC BSc/PB BSc Nursing recognized by the Indian Nursing Council and a minimum of 55% marks in aggregate.
-  Experience: 1 year of experience after BSc Nursing in a hospital or community health program required.
+Fees (Annual - 2026-27):
+  - MPH - Masters in Public Health:
+    Tuition Fee: ₹1,12,000
+    Other Fee: ₹30,000
+    Total Fee: ₹1,42,000
 
-BPT (Bachelor's in Physiotherapy):
-  Pass in 10+2, A Level, IB, American 12th grade or equivalent with Physics, Chemistry, English and Biology with a minimum of 40% marks taken together.
+COLLEGE OF PHARMACEUTICAL SCIENCES
+-----------------------------------
 
-M.P.T Programs:
-  Candidates should have passed BPT from a recognized university with a minimum of 50% marks in aggregate.
-  INTERNSHIP: Completed or completing their compulsory internship.
+UNDERGRADUATE PROGRAMS:
+Programs Offered:
+  1. B.Pharm (4 Years)
 
-College of Allied Health Sciences (B.Sc Programs):
-  A candidate seeking admission shall have studied English as one of the principal subjects and shall have passed Two-year Pre-University examination or equivalent with Physics, Chemistry and Biology as major subjects of study.
+Eligibility:
+  - 10+2 with Physics, Chemistry, and English with Mathematics/Biotechnology/Computer Science/Biology as optional subjects with a minimum of 40% marks.
 
-MPH - Masters in Public Health:
-  A candidate seeking admission should have a degree in MBBS or BDS or BAMS or B.Sc Nursing or BPT or B. Pharm with minimum 50% marks from a University established under law.
+Fees (Annual - 2026-27):
+  - B.Pharm:
+    CET: ₹2,52,000
+    DSAT: ₹2,82,000
 
-FEE STRUCTURE
--------------
+POSTGRADUATE PROGRAMS:
+Programs Offered:
+  1. M. Pharma in Pharmaceutics (2 Years)
+  2. M. Pharma in Pharmacology (2 Years)
+  3. M. Pharma in Regulatory Affairs (2 Years)
+  4. Pharm D (6 Years)
 
-B.Pharm (Annual Fees):
-  - CET: Not Available
-  - Others: ₹2,82,000
+Eligibility:
+  - B.Pharm with minimum 50% marks.
 
-M.Pharm Programs (Annual Fees):
-  - PGCET: Not Available
-  - Others: ₹3,02,000
+Fees (Annual - 2026-27):
+  - M. Pharma in Pharmaceutics, Pharmacology, Regulatory Affairs:
+    Total Fee: ₹3,02,000
 
-Pharm.D (Annual Fees):
-  - PGCET: Not Available
-  - Others: ₹4,52,000
+  - Pharm D:
+    Total Fee: ₹4,52,000
 
-B.Sc Nursing (Annual Fees):
-  - CET: Not Available
-  - Term I: ₹97,000
-  - Term II: ₹85,000
-  - Total: ₹1,82,000
+COLLEGE OF NURSING SCIENCES
+----------------------------
 
-PB B.Sc Nursing (Annual Fees):
-  - CET: Not Available
-  - Others: ₹92,000
+UNDERGRADUATE PROGRAMS:
+Programs Offered:
+  1. B.Sc in Nursing (4 Years)
+  2. PB B.Sc in Nursing (2 Years)
 
-M.Sc Nursing Programs (Annual Fees):
-  - PGCET: Not Available
-  - Others: ₹1,42,000
+Eligibility:
+  - B.Sc in Nursing: 10+2 with Physics, Chemistry, Biology, English with 45% marks.
+  - PB B.Sc in Nursing: GNM with 50% marks, registered Nurse and Midwife.
 
-BPT (Annual Fees):
-  - CET: Not Available
-  - Others: ₹2,17,000
+Fees (Annual - 2026-27):
+  - B.Sc in Nursing:
+    Term I: ₹97,000
+    Term II: ₹85,000
+    Total Fee: ₹1,82,000
 
-M.P.T Programs (Annual Fees):
-  - PGCET: Not Available
-  - Others: ₹2,77,000
+  - PB B.Sc in Nursing:
+    Total Fee: ₹92,000
 
-College of Allied Health Sciences - B.Sc Programs (Annual Fees):
-  Medical Radiology & Imaging / Anesthesia & OT / Cardiac Care:
-    - Tuition Fee: ₹1,42,000
-    - Other Fee: ₹30,000
-    - Total: ₹1,72,000
-  
-  Medical Laboratory / Emergency & Trauma Care:
-    - Tuition Fee: ₹1,12,000
-    - Other Fee: ₹30,000
-    - Total: ₹1,42,000
+POSTGRADUATE PROGRAMS:
+Programs Offered:
+  1. M.Sc in Medical Surgical Nursing (2 Years)
+  2. M.Sc in Child Health Nursing (2 Years)
+  3. M.Sc in Mental Health Nursing (2 Years)
+  4. M.Sc in Obstetrics and Gynecology Nursing (2 Years)
+  5. M.Sc in Community Health Nursing (2 Years)
 
-MPH - Masters in Public Health (Annual Fees):
-  - Tuition Fee: ₹1,12,000
-  - Others Fee: ₹30,000
-  - Total: ₹1,42,000
+Eligibility:
+  - B.Sc/PC B.Sc/PB B.Sc Nursing with minimum 55% marks.
+
+Fees (Annual - 2026-27):
+  - All M.Sc Programs:
+    Total Fee: ₹1,42,000
+
+COLLEGE OF PHYSIOTHERAPY
+-------------------------
+
+UNDERGRADUATE PROGRAMS:
+Programs Offered:
+  1. Bachelor's in Physiotherapy (B.P.T.) (4 Years)
+
+Eligibility:
+  - 10+2 with Physics, Chemistry, Biology, and English with a minimum of 40% marks.
+
+Fees (Annual - 2026-27):
+  - B.P.T.:
+    Total Fee: ₹2,17,000
+
+POSTGRADUATE PROGRAMS:
+Programs Offered:
+  1. M.P.T in Sports & Muscular Skeletal (2 Years)
+  2. M.P.T in Cardio Pulmonary (2 Years)
+  3. M.P.T in Women's Health (2 Years)
+  4. M.P.T in Neuro (2 Years)
+  5. M.P.T in Community-Based Rehabilitation (2 Years)
+
+Eligibility:
+  - BPT with a minimum of 50% marks in aggregate.
+
+Fees (Annual - 2026-27):
+  - All M.P.T Programs:
+    Total Fee: ₹2,77,000
 
 More Info: https://dsu.edu.in/eligibility
 
@@ -438,28 +494,20 @@ SCHOOL OF ARTS, DESIGN & HUMANITIES
 ================================================================================
 Cultivating creativity, culture, and critical thinking through storytelling and digital media.
 
-PROGRAMS OFFERED
-----------------
+UNDERGRADUATE PROGRAMS
+----------------------
 
-DEPARTMENT OF JOURNALISM & MASS COMMUNICATION:
-  - B.A. Journalism and Mass Communication (3 Years)
+Programs Offered:
+  1. B.A. in Journalism and Mass Communication (3 Years)
 
-ELIGIBILITY REQUIREMENTS
-------------------------
+Eligibility:
+  - 10+2 with a minimum of 45% marks (Arts group subjects preferred).
 
-B.A. Journalism and Mass Communication:
-  Pass in 10+2, A Level, IB, American 12th grade or equivalent and a minimum of 45% marks in aggregate. Arts group subjects are preferred.
-
-FEE STRUCTURE
--------------
-
-B.A. Journalism and Mass Communication (Annual Fees):
-  - Term I: ₹77,000
-  - Term II: ₹75,000
-  - Total: ₹1,52,000
-
-Special Notes:
-  Includes newsroom simulations, digital production labs, and internships with media houses.
+Fees (Annual - 2026-27):
+  - B.A. Journalism and Mass Communication:
+    Term I: ₹77,000
+    Term II: ₹75,000
+    Total Fee: ₹1,52,000
 
 More Info: https://dsu.edu.in/eligibility
 
@@ -468,26 +516,21 @@ SCHOOL OF DESIGN & DIGITAL TRANS-MEDIA
 ================================================================================
 Studio-based design programs with immersive projects in product, UX, animation, and game design.
 
-PROGRAMS OFFERED
-----------------
+UNDERGRADUATE PROGRAMS
+----------------------
 
-DEPARTMENT OF DESIGN:
-  - B.Design Product Design (4 Years)
-  - B.Design User Experience Design (4 Years)
-  - B.Design Animation and VFX (4 Years)
-  - B.Design Game Design (4 Years)
+Programs Offered:
+  1. B.Design in Product Design (4 Years)
+  2. B.Design in User Experience Design (4 Years)
+  3. B.Design in Animation and VFX (4 Years)
+  4. B.Design in Game Design (4 Years)
 
-ELIGIBILITY REQUIREMENTS
-------------------------
+Eligibility:
+  - Minimum 50% in Class XII from Science, Commerce, Arts, or Humanities.
 
-All B.Design Programs:
-  Students with a minimum of 50% in Class XII from Science, Commerce, Arts, and Humanities.
-
-FEE STRUCTURE
--------------
-
-All B.Design Programs (Annual Fees):
-  - Total: ₹3,02,000
+Fees (Annual - 2026-27):
+  - All B.Design Programs:
+    Total Fee: ₹3,02,000
 
 More Info: https://dsu.edu.in/eligibility
 

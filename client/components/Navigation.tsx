@@ -4,7 +4,14 @@ import { ThemeToggle } from "./ThemeToggle";
 import SearchDialog from "./SearchDialog";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useTheme } from "@/providers/theme-provider";
-import { Menu, X, ChevronDown, Search, ArrowRight } from "lucide-react";
+import {
+  Menu,
+  X,
+  ChevronDown,
+  Search,
+  ArrowRight,
+  Home as HomeIcon,
+} from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 
 export default function Navigation() {
@@ -295,6 +302,14 @@ export default function Navigation() {
                 name: "B.Pharm",
                 href: "/academics/health-sciences/pharmacy",
               },
+              {
+                name: "Pharm.D",
+                href: "/academics/health-sciences/pharmd",
+              },
+              {
+                name: "M.Pharm",
+                href: "/academics/health-sciences/mpharm",
+              },
             ],
           },
           {
@@ -366,6 +381,15 @@ export default function Navigation() {
             departments: [
               { name: "BBA", href: "/academics/commerce-and-management/bba" },
               { name: "MBA", href: "/academics/commerce-and-management/mba" },
+            ],
+          },
+          {
+            name: "Executive Education",
+            departments: [
+              {
+                name: "Center for Executive Education",
+                href: "/academics/cee",
+              },
             ],
           },
         ],
@@ -466,11 +490,6 @@ export default function Navigation() {
         external: true,
       },
       {
-        name: "Center for Executive Education",
-        href: "/academics/cee",
-        departments: [{ name: "Explore Programs", href: "/academics/cee" }],
-      },
-      {
         name: "DSU Online",
         href: "https://dsuonline.com/",
         departments: [
@@ -533,21 +552,36 @@ export default function Navigation() {
     <>
       {/* Top Menu Bar - Hidden on mobile/tablet portrait, shown on larger screens */}
       <div
-        className={`hidden lg:flex sticky top-0 z-[10001] h-14 transition-all duration-300 items-center pt-5 pb-2 ${
+        className={`hidden lg:flex sticky top-0 z-[10001] transition-all duration-300 items-center ${
           theme === "light"
             ? "bg-gradient-to-r from-orange-50 to-white border-b-2 border-orange-200/50"
             : "bg-gradient-to-r from-slate-900 to-slate-950 border-b-2 border-orange-600/30"
         }`}
+        style={{
+          padding: "clamp(0.5rem, 1.5vmin, 1rem) 0",
+        }}
       >
-        <div className="w-full mx-auto px-2 flex items-center justify-end gap-0">
+        <div
+          className="w-full mx-auto flex items-center justify-end"
+          style={{
+            paddingLeft: "clamp(0.5rem, 2vw, 1.5rem)",
+            paddingRight: "clamp(0.5rem, 2vw, 1.5rem)",
+            gap: "0",
+          }}
+        >
           {/* All Top Menu Items in one continuous row - with scrollable container */}
-          <div className="flex items-center gap-0.5 sm:gap-1 flex-nowrap overflow-x-auto scrollbar-hide order-2">
+          <div
+            className="flex items-center flex-nowrap overflow-x-auto scrollbar-hide order-2"
+            style={{
+              gap: "clamp(0.1rem, 0.5vw, 0.25rem)",
+            }}
+          >
             {topMenuItems.map((item, idx) => {
               const isAlumni = item.href === "/alumni";
               const isLibrary = item.href === "/library";
               const isInternationalAdmissions =
                 item.href === "https://dsu.edu.in/international/";
-              const sharedClasses = `text-xs sm:text-sm font-medium transition-all duration-200 whitespace-nowrap px-1.5 sm:px-2.5 py-1.5 sm:py-2 rounded-md hover:scale-105 flex-shrink-0 flex items-center gap-0.5 ${
+              const sharedClasses = `font-medium transition-all duration-200 whitespace-nowrap rounded-md hover:scale-105 flex-shrink-0 flex items-center gap-0.5 ${
                 theme === "light"
                   ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
                   : "text-white/80 hover:text-white hover:bg-white/10"
@@ -571,6 +605,11 @@ export default function Navigation() {
                         );
                       }}
                       className={`${sharedClasses} flex items-center gap-1 cursor-pointer`}
+                      style={{
+                        fontSize: "clamp(0.7rem, 1.2vw, 0.85rem)",
+                        padding:
+                          "clamp(0.75rem, 1.5vmin, 1rem) clamp(0.5rem, 1vw, 0.75rem)",
+                      }}
                     >
                       <span>{item.name}</span>
                       <ChevronDown
@@ -648,11 +687,16 @@ export default function Navigation() {
                     href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`text-xs sm:text-sm font-medium transition-all duration-200 whitespace-nowrap px-1.5 sm:px-2.5 py-1.5 sm:py-2 rounded-md hover:scale-105 flex-shrink-0 text-center ${
+                    className={`font-medium transition-all duration-200 whitespace-nowrap rounded-md hover:scale-105 flex-shrink-0 text-center ${
                       theme === "light"
                         ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
                         : "text-white/80 hover:text-white hover:bg-white/10"
                     }`}
+                    style={{
+                      fontSize: "clamp(0.7rem, 1.2vw, 0.85rem)",
+                      padding:
+                        "clamp(0.75rem, 1.5vmin, 1rem) clamp(0.5rem, 1vw, 0.75rem)",
+                    }}
                   >
                     <span>{item.name}</span>
                   </a>
@@ -664,11 +708,16 @@ export default function Navigation() {
                   <Link
                     key={idx}
                     to={item.href}
-                    className={`text-xs sm:text-sm font-medium transition-all duration-200 whitespace-nowrap px-1.5 sm:px-2.5 py-1.5 sm:py-2 rounded-md hover:scale-105 flex-shrink-0 text-center ${
+                    className={`font-medium transition-all duration-200 whitespace-nowrap rounded-md hover:scale-105 flex-shrink-0 text-center ${
                       theme === "light"
                         ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
                         : "text-white/80 hover:text-white hover:bg-white/10"
                     }`}
+                    style={{
+                      fontSize: "clamp(0.7rem, 1.2vw, 0.85rem)",
+                      padding:
+                        "clamp(0.75rem, 1.5vmin, 1rem) clamp(0.5rem, 1vw, 0.75rem)",
+                    }}
                   >
                     {item.name}
                   </Link>
@@ -717,18 +766,18 @@ export default function Navigation() {
 
       {/* Main Navigation Bar */}
       <nav
-        className={`sticky top-1 lg:top-14 z-[9997] transition-all duration-300 overflow-visible shadow-md ${
+        className={`sticky top-1 lg:top-0 z-[9997] transition-all duration-300 overflow-visible shadow-md ${
           theme === "light"
             ? "bg-white/95 backdrop-blur-sm border-b-2 border-orange-200/50"
             : "bg-slate-950/95 backdrop-blur-sm border-b-2 border-orange-600/30"
         }`}
       >
         <div className="w-full overflow-visible">
-          <div className="flex flex-row items-center justify-between h-14 lg:h-auto lg:flex-col lg:items-center lg:justify-center lg:flex-row">
+          <div className="flex flex-row items-center justify-between py-2 lg:py-0 lg:flex-col lg:items-center lg:justify-center lg:flex-row">
             {/* Mobile Logo - Left side */}
             <Link
               to="/"
-              className="lg:hidden flex-shrink-0 flex items-center justify-start px-1 -mt-3 -mb-2"
+              className="lg:hidden flex-shrink-0 flex items-center justify-start px-1"
             >
               <img
                 src={
@@ -737,17 +786,17 @@ export default function Navigation() {
                     : "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F0caf0bf29be6421997005f26cdaae0ed?format=webp&width=800"
                 }
                 alt="Dayananda Sagar University Logo"
-                className="h-16 w-auto object-contain"
+                className="h-12 w-auto object-contain"
               />
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center gap-0.5 sm:gap-1 justify-between flex-wrap w-full px-1 sm:px-2 py-1 sm:py-2">
+            <div className="hidden lg:flex items-center gap-0 justify-between w-full px-0 py-2">
               {navigation.map((item, idx) => {
                 const active = !item.external && isActive(item.href);
                 const isAbout = item.href === "/about";
                 const isAcademics = item.href === "/academics";
-                const sharedClasses = `flex items-center space-x-0.5 sm:space-x-1 px-1 sm:px-2 py-0.5 sm:py-1 rounded-lg text-xs sm:text-sm font-medium font-display transition-all duration-200 group ${
+                const sharedClasses = `flex items-center space-x-0 px-[0.1rem] py-1 rounded-lg text-[0.62rem] font-medium font-display transition-all duration-200 group flex-shrink ${
                   theme === "light"
                     ? active ||
                       (isAbout && aboutMenuOpen) ||
@@ -788,15 +837,15 @@ export default function Navigation() {
                           onClick={() => setAboutMenuOpen(!aboutMenuOpen)}
                           className={`${sharedClasses} justify-center`}
                         >
-                          <span className="max-w-[85px] text-center leading-snug">
+                          <span className="text-center leading-tight">
                             {item.name}
                           </span>
                           <ChevronDown
-                            className={`w-4 h-4 transition-transform ${aboutMenuOpen ? "rotate-180" : ""}`}
+                            className={`w-3 h-3 transition-transform ${aboutMenuOpen ? "rotate-180" : ""}`}
                           />
                           {active && (
                             <div
-                              className={`w-1 h-1 rounded-full ${
+                              className={`w-0.5 h-0.5 rounded-full ${
                                 theme === "light" ? "bg-orange-600" : "bg-white"
                               }`}
                             />
@@ -902,15 +951,15 @@ export default function Navigation() {
                           }
                           className={`${sharedClasses} ml-0 sm:ml-4 justify-center`}
                         >
-                          <span className="max-w-[85px] text-center leading-snug">
+                          <span className="text-center leading-tight">
                             {item.name}
                           </span>
                           <ChevronDown
-                            className={`w-4 h-4 transition-transform ${academicsMenuOpen ? "rotate-180" : ""}`}
+                            className={`w-3 h-3 transition-transform ${academicsMenuOpen ? "rotate-180" : ""}`}
                           />
                           {active && (
                             <div
-                              className={`w-1 h-1 rounded-full ${
+                              className={`w-0.5 h-0.5 rounded-full ${
                                 theme === "light" ? "bg-orange-600" : "bg-white"
                               }`}
                             />
@@ -1119,18 +1168,24 @@ export default function Navigation() {
                     );
                   }
 
+                  const isHome = item.href === "/";
                   return (
                     <Link
                       key={idx}
                       to={item.href}
                       className={`${sharedClasses} justify-center`}
+                      title={isHome ? "Home" : undefined}
                     >
-                      <span className="max-w-[85px] text-center leading-snug">
-                        {item.name}
-                      </span>
+                      {isHome ? (
+                        <HomeIcon className="w-4 h-4" />
+                      ) : (
+                        <span className="text-center leading-tight">
+                          {item.name}
+                        </span>
+                      )}
                       {active && (
                         <div
-                          className={`w-1 h-1 rounded-full ${
+                          className={`w-0.5 h-0.5 rounded-full ${
                             theme === "light" ? "bg-orange-600" : "bg-white"
                           }`}
                         />
@@ -1141,7 +1196,7 @@ export default function Navigation() {
 
                 if (idx === 1) {
                   const nvidiaActive = isActive("/nvidia-ai-architecture");
-                  const nvidiaClasses = `flex items-center space-x-0.5 sm:space-x-1 px-1 sm:px-2 py-0.5 sm:py-1 rounded-lg text-xs sm:text-sm font-medium font-display transition-all duration-200 group ml-0 justify-center ${
+                  const nvidiaClasses = `flex items-center space-x-0 px-[0.1rem] py-1 rounded-lg text-[0.62rem] font-medium font-display transition-all duration-200 group ml-0 justify-center flex-shrink ${
                     theme === "light"
                       ? nvidiaActive
                         ? "bg-orange-100 text-orange-900 font-semibold shadow-sm"
@@ -1157,7 +1212,7 @@ export default function Navigation() {
                       to="/nvidia-ai-architecture"
                       className={nvidiaClasses}
                     >
-                      <span className="max-w-[85px] text-center leading-snug">
+                      <span className="text-center leading-tight">
                         NVIDIA's AI Architecture
                       </span>
                     </Link>,
@@ -1166,7 +1221,7 @@ export default function Navigation() {
 
                 if (idx === 3) {
                   const aiFirstActive = isActive("/ai-first");
-                  const aiFirstClasses = `flex items-center space-x-0.5 sm:space-x-1 px-1 sm:px-2 py-0.5 sm:py-1 rounded-lg text-xs sm:text-sm font-medium font-display transition-all duration-200 group justify-center ${
+                  const aiFirstClasses = `flex items-center space-x-0 px-[0.1rem] py-1 rounded-lg text-[0.62rem] font-medium font-display transition-all duration-200 group ml-0 justify-center flex-shrink ${
                     theme === "light"
                       ? aiFirstActive
                         ? "bg-orange-100 text-orange-900 font-semibold shadow-sm"
@@ -1180,10 +1235,10 @@ export default function Navigation() {
                     <Link
                       key="logo"
                       to="/"
-                      className={`flex items-center group flex-shrink-0 px-1 py-0 rounded-xl transition-all duration-300 ${
+                      className={`flex items-center group flex-shrink-0 px-0 py-0 rounded-xl transition-all duration-300 ${
                         theme === "light"
-                          ? "bg-white hover:bg-orange-50"
-                          : "hover:bg-white/5"
+                          ? "bg-transparent hover:bg-orange-50/30"
+                          : "bg-transparent hover:bg-white/5"
                       }`}
                     >
                       <img
@@ -1193,7 +1248,7 @@ export default function Navigation() {
                             : "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F0caf0bf29be6421997005f26cdaae0ed?format=webp&width=800"
                         }
                         alt="Dayananda Sagar University Logo"
-                        className="h-20 w-auto object-contain group-hover:scale-105 transition-all duration-300"
+                        className="max-h-[4rem] w-auto object-contain group-hover:scale-105 transition-all duration-300"
                       />
                     </Link>,
                     <Link
@@ -1201,8 +1256,9 @@ export default function Navigation() {
                       to="/ai-first"
                       className={aiFirstClasses}
                     >
-                      <span className="max-w-[85px] text-center leading-snug">
-                        AI-First @ DSU
+                      <span className="text-center leading-[0.9] flex flex-col items-center gap-0">
+                        <span className="whitespace-nowrap">AI-First @</span>
+                        <span>DSU</span>
                       </span>
                     </Link>,
                   ];
@@ -1477,22 +1533,28 @@ export default function Navigation() {
                   );
                 }
 
+                const isHome = item.href === "/";
                 return (
                   <Link
                     key={idx}
                     to={item.href}
                     onClick={() => setIsOpen(false)}
                     className={sharedClasses}
+                    title={isHome ? "Home" : undefined}
                   >
-                    <span
-                      className={
-                        item.href === "/centre-of-excellence"
-                          ? "max-w-[100px]"
-                          : ""
-                      }
-                    >
-                      {item.name}
-                    </span>
+                    {isHome ? (
+                      <HomeIcon className="w-5 h-5" />
+                    ) : (
+                      <span
+                        className={
+                          item.href === "/centre-of-excellence"
+                            ? "max-w-[100px]"
+                            : ""
+                        }
+                      >
+                        {item.name}
+                      </span>
+                    )}
                   </Link>
                 );
               })}

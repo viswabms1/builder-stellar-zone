@@ -5,6 +5,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import Index from "./pages/Index";
 import Academics from "./pages/Academics";
 import Admissions from "./pages/Admissions";
+import AdmissionClosingDates from "./pages/AdmissionClosingDates";
 import Eligibility from "./pages/Eligibility";
 import SimpleProgramLookup from "./pages/SimpleProgramLookup";
 import InternationalAdmissions from "./pages/InternationalAdmissions";
@@ -46,6 +47,13 @@ import HealthSciences from "./pages/HealthSciences";
 import Nursing from "./pages/health-sciences/Nursing";
 import Physiotherapy from "./pages/health-sciences/Physiotherapy";
 import PhysiotherapyFaculty from "./pages/health-sciences/PhysiotherapyFaculty";
+import Pharmacy from "./pages/health-sciences/Pharmacy";
+import PharmacyFaculty from "./pages/health-sciences/PharmacyFaculty";
+import BPharm from "./pages/health-sciences/BPharm";
+import PharmD from "./pages/health-sciences/PharmD";
+import MPharm from "./pages/health-sciences/MPharm";
+import MPharmPharmaceutics from "./pages/health-sciences/MPharmPharmaceutics";
+import MPharmPharmacology from "./pages/health-sciences/MPharmPharmacology";
 import BScNursing from "./pages/health-sciences/BScNursing";
 import BPT from "./pages/health-sciences/BPT";
 import MPT from "./pages/health-sciences/MPT";
@@ -396,7 +404,7 @@ function App() {
       <ThemeProvider>
         <BrowserRouter>
           <ScrollToTop />
-          <div className="min-h-screen bg-background text-foreground flex flex-col overflow-x-hidden">
+          <div className="relative min-h-screen bg-background text-foreground flex flex-col overflow-x-hidden">
             <Navigation />
             <main className="w-full">
               <Routes>
@@ -777,6 +785,34 @@ function App() {
                 <Route
                   path="/academics/health-sciences/physiotherapy/faculty"
                   element={<PhysiotherapyFaculty />}
+                />
+                <Route
+                  path="/academics/health-sciences/pharmacy"
+                  element={<Pharmacy />}
+                />
+                <Route
+                  path="/academics/health-sciences/pharmacy/faculty"
+                  element={<PharmacyFaculty />}
+                />
+                <Route
+                  path="/academics/health-sciences/b-pharm"
+                  element={<BPharm />}
+                />
+                <Route
+                  path="/academics/health-sciences/pharm-d"
+                  element={<PharmD />}
+                />
+                <Route
+                  path="/academics/health-sciences/m-pharm"
+                  element={<MPharm />}
+                />
+                <Route
+                  path="/academics/health-sciences/m-pharm-pharmaceutics"
+                  element={<MPharmPharmaceutics />}
+                />
+                <Route
+                  path="/academics/health-sciences/m-pharm-pharmacology"
+                  element={<MPharmPharmacology />}
                 />
                 <Route
                   path="/academics/health-sciences/bpt"
@@ -1687,6 +1723,10 @@ function App() {
                 <Route
                   path="/admissions/international"
                   element={<InternationalAdmissions />}
+                />
+                <Route
+                  path="/admissions/closing-dates"
+                  element={<AdmissionClosingDates />}
                 />
                 <Route
                   path="/international-affairs"

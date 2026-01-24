@@ -133,7 +133,7 @@ export function ApplicationPopup() {
         {/* CTA Button */}
         <div className="px-2 py-2 bg-foreground/5 border-t border-brand-orange/20">
           <a
-            href="https://admissions.dsu.edu.in/"
+            href="https://www.dsu.edu.in/images/phd/Syllabus/2025_dec/Application_2025.pdf"
             target="_blank"
             rel="noreferrer"
             className="block no-underline"
@@ -143,7 +143,6 @@ export function ApplicationPopup() {
             </Button>
           </a>
         </div>
-
       </div>
     </div>
   );

@@ -1,0 +1,501 @@
+{
+  "collections": [
+    {
+      "name": "Page",
+      "singularName": "page",
+      "pluralName": "pages",
+      "displayName": "Page",
+      "kind": "collectionType",
+      "attributes": {
+        "title": {
+          "type": "string",
+          "required": true,
+          "minLength": 1,
+          "maxLength": 255
+        },
+        "slug": {
+          "type": "string",
+          "required": true,
+          "unique": true,
+          "minLength": 1,
+          "maxLength": 255,
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+        },
+        "description": {
+          "type": "text",
+          "required": false
+        },
+        "hero": {
+          "type": "component",
+          "repeatable": false,
+          "required": true,
+          "component": "hero-section.hero-section"
+        },
+        "sections": {
+          "type": "dynamiczone",
+          "required": true,
+          "components": [
+            "vision-mission.vision-mission",
+            "action-items.action-items",
+            "core-values.core-values",
+            "cta.cta-section"
+          ]
+        },
+        "seo": {
+          "type": "component",
+          "repeatable": false,
+          "required": false,
+          "component": "seo.seo"
+        },
+        "contentType": {
+          "type": "enumeration",
+          "enum": [
+            "university",
+            "engineering",
+            "health-sciences",
+            "commerce-management",
+            "applied-sciences",
+            "humanities-social-sciences",
+            "law",
+            "journalism",
+            "mathematics",
+            "physics",
+            "chemistry",
+            "library",
+            "administration"
+          ],
+          "required": true,
+          "default": "university"
+        }
+      }
+    }
+  ],
+  "components": [
+    {
+      "name": "HeroSection",
+      "displayName": "Hero Section",
+      "group": "hero-section",
+      "attributes": {
+        "image": {
+          "type": "media",
+          "multiple": false,
+          "required": false,
+          "allowedTypes": ["images"]
+        },
+        "heading": {
+          "type": "string",
+          "required": true,
+          "maxLength": 255
+        },
+        "subtitle": {
+          "type": "string",
+          "required": true,
+          "maxLength": 500
+        },
+        "description": {
+          "type": "text",
+          "required": true
+        },
+        "badgeIcon": {
+          "type": "enumeration",
+          "enum": ["compass", "target", "eye", "heart", "lightbulb", "award"],
+          "required": false
+        },
+        "badgeText": {
+          "type": "string",
+          "required": false,
+          "maxLength": 100
+        }
+      }
+    },
+    {
+      "name": "VisionMission",
+      "displayName": "Vision & Mission",
+      "group": "vision-mission",
+      "attributes": {
+        "vision_title": {
+          "type": "string",
+          "required": true,
+          "maxLength": 255
+        },
+        "vision_description": {
+          "type": "richtext",
+          "required": true
+        },
+        "vision_icon": {
+          "type": "enumeration",
+          "enum": ["compass", "target", "eye", "heart", "lightbulb", "award"],
+          "required": false
+        },
+        "mission_title": {
+          "type": "string",
+          "required": true,
+          "maxLength": 255
+        },
+        "mission_description": {
+          "type": "richtext",
+          "required": true
+        },
+        "mission_icon": {
+          "type": "enumeration",
+          "enum": ["compass", "target", "eye", "heart", "lightbulb", "award"],
+          "required": false
+        }
+      }
+    },
+    {
+      "name": "CoreValue",
+      "displayName": "Core Value",
+      "group": "core-value",
+      "attributes": {
+        "icon": {
+          "type": "enumeration",
+          "enum": ["compass", "target", "eye", "heart", "lightbulb", "award"],
+          "required": true
+        },
+        "title": {
+          "type": "string",
+          "required": true,
+          "maxLength": 255
+        },
+        "description": {
+          "type": "text",
+          "required": true
+        }
+      }
+    },
+    {
+      "name": "CoreValues",
+      "displayName": "Core Values",
+      "group": "core-values",
+      "attributes": {
+        "title": {
+          "type": "string",
+          "required": true,
+          "maxLength": 255
+        },
+        "description": {
+          "type": "text",
+          "required": true
+        },
+        "values": {
+          "type": "component",
+          "repeatable": true,
+          "required": true,
+          "component": "core-value.core-value"
+        }
+      }
+    },
+    {
+      "name": "ActionItems",
+      "displayName": "Action Items",
+      "group": "action-items",
+      "attributes": {
+        "title": {
+          "type": "string",
+          "required": true,
+          "maxLength": 255
+        },
+        "items": {
+          "type": "component",
+          "repeatable": true,
+          "required": true,
+          "component": "action-item.action-item"
+        }
+      }
+    },
+    {
+      "name": "ActionItem",
+      "displayName": "Action Item",
+      "group": "action-item",
+      "attributes": {
+        "text": {
+          "type": "text",
+          "required": true
+        }
+      }
+    },
+    {
+      "name": "Button",
+      "displayName": "Button",
+      "group": "button",
+      "attributes": {
+        "label": {
+          "type": "string",
+          "required": true,
+          "maxLength": 100
+        },
+        "url": {
+          "type": "string",
+          "required": true,
+          "maxLength": 500
+        },
+        "type": {
+          "type": "enumeration",
+          "enum": ["primary", "secondary"],
+          "default": "primary",
+          "required": true
+        }
+      }
+    },
+    {
+      "name": "CTASection",
+      "displayName": "CTA Section",
+      "group": "cta",
+      "attributes": {
+        "title": {
+          "type": "string",
+          "required": true,
+          "maxLength": 255
+        },
+        "description": {
+          "type": "richtext",
+          "required": true
+        },
+        "primaryButton": {
+          "type": "component",
+          "repeatable": false,
+          "required": true,
+          "component": "button.button"
+        },
+        "secondaryButton": {
+          "type": "component",
+          "repeatable": false,
+          "required": false,
+          "component": "button.button"
+        }
+      }
+    },
+    {
+      "name": "SEO",
+      "displayName": "SEO",
+      "group": "seo",
+      "attributes": {
+        "metaTitle": {
+          "type": "string",
+          "required": false,
+          "maxLength": 255
+        },
+        "metaDescription": {
+          "type": "text",
+          "required": false,
+          "maxLength": 160
+        },
+        "keywords": {
+          "type": "text",
+          "required": false
+        },
+        "ogImage": {
+          "type": "media",
+          "multiple": false,
+          "required": false,
+          "allowedTypes": ["images"]
+        }
+      }
+    }
+  ],
+  "permissions": {
+    "public": {
+      "page": {
+        "find": true,
+        "findOne": true,
+        "create": false,
+        "update": false,
+        "delete": false
+      }
+    },
+    "authenticated": {
+      "page": {
+        "find": true,
+        "findOne": true,
+        "create": false,
+        "update": false,
+        "delete": false
+      }
+    }
+  },
+  "roles": [
+    {
+      "name": "University",
+      "description": "Can manage university-level pages (Vision, Mission, Values, etc.)",
+      "permissions": {
+        "page": {
+          "find": true,
+          "findOne": true,
+          "create": false,
+          "update": true,
+          "delete": false,
+          "filter": "contentType=university"
+        }
+      }
+    },
+    {
+      "name": "Engineering",
+      "description": "Can manage Engineering department pages",
+      "permissions": {
+        "page": {
+          "find": true,
+          "findOne": true,
+          "create": false,
+          "update": true,
+          "delete": false,
+          "filter": "contentType=engineering"
+        }
+      }
+    },
+    {
+      "name": "Health Sciences",
+      "description": "Can manage Health Sciences department pages",
+      "permissions": {
+        "page": {
+          "find": true,
+          "findOne": true,
+          "create": false,
+          "update": true,
+          "delete": false,
+          "filter": "contentType=health-sciences"
+        }
+      }
+    },
+    {
+      "name": "Commerce & Management",
+      "description": "Can manage Commerce & Management department pages",
+      "permissions": {
+        "page": {
+          "find": true,
+          "findOne": true,
+          "create": false,
+          "update": true,
+          "delete": false,
+          "filter": "contentType=commerce-management"
+        }
+      }
+    },
+    {
+      "name": "Applied Sciences",
+      "description": "Can manage Applied Sciences department pages",
+      "permissions": {
+        "page": {
+          "find": true,
+          "findOne": true,
+          "create": false,
+          "update": true,
+          "delete": false,
+          "filter": "contentType=applied-sciences"
+        }
+      }
+    },
+    {
+      "name": "Humanities & Social Sciences",
+      "description": "Can manage Humanities & Social Sciences department pages",
+      "permissions": {
+        "page": {
+          "find": true,
+          "findOne": true,
+          "create": false,
+          "update": true,
+          "delete": false,
+          "filter": "contentType=humanities-social-sciences"
+        }
+      }
+    },
+    {
+      "name": "Law",
+      "description": "Can manage Law department pages",
+      "permissions": {
+        "page": {
+          "find": true,
+          "findOne": true,
+          "create": false,
+          "update": true,
+          "delete": false,
+          "filter": "contentType=law"
+        }
+      }
+    },
+    {
+      "name": "Journalism",
+      "description": "Can manage Journalism department pages",
+      "permissions": {
+        "page": {
+          "find": true,
+          "findOne": true,
+          "create": false,
+          "update": true,
+          "delete": false,
+          "filter": "contentType=journalism"
+        }
+      }
+    },
+    {
+      "name": "Mathematics",
+      "description": "Can manage Mathematics department pages",
+      "permissions": {
+        "page": {
+          "find": true,
+          "findOne": true,
+          "create": false,
+          "update": true,
+          "delete": false,
+          "filter": "contentType=mathematics"
+        }
+      }
+    },
+    {
+      "name": "Physics",
+      "description": "Can manage Physics department pages",
+      "permissions": {
+        "page": {
+          "find": true,
+          "findOne": true,
+          "create": false,
+          "update": true,
+          "delete": false,
+          "filter": "contentType=physics"
+        }
+      }
+    },
+    {
+      "name": "Chemistry",
+      "description": "Can manage Chemistry department pages",
+      "permissions": {
+        "page": {
+          "find": true,
+          "findOne": true,
+          "create": false,
+          "update": true,
+          "delete": false,
+          "filter": "contentType=chemistry"
+        }
+      }
+    },
+    {
+      "name": "Library",
+      "description": "Can manage Library pages",
+      "permissions": {
+        "page": {
+          "find": true,
+          "findOne": true,
+          "create": false,
+          "update": true,
+          "delete": false,
+          "filter": "contentType=library"
+        }
+      }
+    },
+    {
+      "name": "Administration",
+      "description": "Can manage Administration pages",
+      "permissions": {
+        "page": {
+          "find": true,
+          "findOne": true,
+          "create": false,
+          "update": true,
+          "delete": false,
+          "filter": "contentType=administration"
+        }
+      }
+    }
+  ]
+}

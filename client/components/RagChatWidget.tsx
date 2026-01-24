@@ -269,25 +269,29 @@ export function RagChatWidget() {
   return (
     <>
       {/* Chat Button */}
-      <AnimatePresence>
-        {!isOpen && (
-          <motion.button
-            initial={{ scale: 0, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0, opacity: 0 }}
-            onClick={() => setIsOpen(true)}
-            className={cn(
-              "fixed bottom-16 sm:bottom-20 lg:bottom-6 xl:bottom-6 right-12 lg:right-6 z-[10002] rounded-full p-4 shadow-lg hover:shadow-xl transition-all hover:scale-110",
-              theme === "light"
-                ? "bg-orange-500 hover:bg-orange-600 text-white"
-                : "bg-orange-600 hover:bg-orange-700 text-white",
-            )}
-            aria-label="Open chat"
-          >
-            <MessageSquare className="w-6 h-6" />
-          </motion.button>
-        )}
-      </AnimatePresence>
+      {!isOpen && (
+        <button
+          onClick={() => setIsOpen(true)}
+          className={cn(
+            "rounded-full shadow-2xl hover:shadow-xl transition-all hover:scale-110 p-4",
+            theme === "light"
+              ? "bg-orange-500 hover:bg-orange-600 text-white"
+              : "bg-orange-600 hover:bg-orange-700 text-white",
+          )}
+          style={{
+            position: "fixed",
+            bottom: "clamp(6rem, 12vh, 8rem)",
+            right: "clamp(1rem, 3vw, 1.5rem)",
+            zIndex: 99999,
+            display: "block",
+            width: "56px",
+            height: "56px",
+          }}
+          aria-label="Open chat"
+        >
+          <MessageSquare className="w-6 h-6" />
+        </button>
+      )}
 
       {/* Chat Window */}
       <AnimatePresence>
@@ -298,31 +302,73 @@ export function RagChatWidget() {
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.2 }}
             className={cn(
-              "fixed bottom-16 sm:bottom-20 lg:bottom-6 xl:bottom-6 right-12 lg:right-6 z-[10003] w-96 h-[600px] rounded-2xl shadow-2xl flex flex-col",
+              "rounded-2xl shadow-2xl flex flex-col",
               theme === "light"
                 ? "bg-white border border-gray-200"
                 : "bg-slate-900 border border-slate-700",
             )}
+            style={{
+              position: "fixed",
+              bottom: "clamp(6rem, 12vh, 8rem)",
+              right: "clamp(1rem, 3vw, 1.5rem)",
+              zIndex: 99999,
+              width: "clamp(280px, 90vw, 400px)",
+              height: "clamp(300px, 70vh, 600px)",
+              borderRadius: "clamp(0.75rem, 2vmin, 1rem)",
+            }}
           >
             {/* Header */}
             <div
               className={cn(
-                "flex items-center justify-between p-4 rounded-t-2xl border-b",
+                "flex items-center justify-between border-b",
                 theme === "light"
                   ? "bg-gradient-to-r from-orange-50 to-orange-100 border-orange-200"
                   : "bg-gradient-to-r from-orange-900/20 to-orange-800/20 border-orange-700/30",
               )}
+              style={{
+                padding: "clamp(0.75rem, 2vmin, 1rem)",
+                borderTopLeftRadius: "clamp(0.75rem, 2vmin, 1rem)",
+                borderTopRightRadius: "clamp(0.75rem, 2vmin, 1rem)",
+              }}
             >
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-orange-500 flex items-center justify-center">
-                  <MessageSquare className="w-6 h-6 text-white" />
+              <div
+                className="flex items-center"
+                style={{ gap: "clamp(0.5rem, 2vmin, 0.75rem)" }}
+              >
+                <div
+                  className="rounded-full bg-orange-500 flex items-center justify-center"
+                  style={{
+                    width: "clamp(2rem, 5vmin, 2.5rem)",
+                    height: "clamp(2rem, 5vmin, 2.5rem)",
+                  }}
+                >
+                  <MessageSquare
+                    style={{
+                      width: "clamp(1rem, 3vmin, 1.5rem)",
+                      height: "clamp(1rem, 3vmin, 1.5rem)",
+                    }}
+                    className="text-white"
+                  />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-sm">DSU Admissions Bot</h3>
-                  <p className="text-xs opacity-70">Powered by AI-First</p>
+                  <h3
+                    className="font-semibold"
+                    style={{ fontSize: "clamp(0.75rem, 2vmin, 0.875rem)" }}
+                  >
+                    DSU Admissions Bot
+                  </h3>
+                  <p
+                    className="opacity-70"
+                    style={{ fontSize: "clamp(0.625rem, 1.5vmin, 0.75rem)" }}
+                  >
+                    Powered by AI-First
+                  </p>
                 </div>
               </div>
-              <div className="flex gap-2">
+              <div
+                className="flex"
+                style={{ gap: "clamp(0.25rem, 1vmin, 0.5rem)" }}
+              >
                 <button
                   onClick={clearConversation}
                   className="p-2 hover:bg-white/20 rounded-lg transition-colors"
@@ -343,9 +389,12 @@ export function RagChatWidget() {
             {/* Messages Container */}
             <div
               className={cn(
-                "flex-1 overflow-y-auto p-4 space-y-4",
+                "flex-1 overflow-y-auto space-y-4",
                 theme === "light" ? "bg-gray-50" : "bg-slate-800/50",
               )}
+              style={{
+                padding: "clamp(0.75rem, 2vmin, 1rem)",
+              }}
             >
               {messages.map((message) => (
                 <motion.div
@@ -360,11 +409,16 @@ export function RagChatWidget() {
                   {/* Avatar */}
                   <div
                     className={cn(
-                      "w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold",
+                      "rounded-full flex items-center justify-center flex-shrink-0 font-bold",
                       message.role === "user"
                         ? "bg-blue-500 text-white"
                         : "bg-orange-500 text-white",
                     )}
+                    style={{
+                      width: "clamp(1.75rem, 4vmin, 2rem)",
+                      height: "clamp(1.75rem, 4vmin, 2rem)",
+                      fontSize: "clamp(0.625rem, 1.5vmin, 0.75rem)",
+                    }}
                   >
                     {message.role === "user" ? "You" : "Bot"}
                   </div>
@@ -372,7 +426,7 @@ export function RagChatWidget() {
                   {/* Message Bubble */}
                   <div
                     className={cn(
-                      "rounded-2xl px-4 py-2 max-w-sm",
+                      "rounded-2xl max-w-sm",
                       message.role === "user"
                         ? theme === "light"
                           ? "bg-blue-500 text-white"
@@ -381,6 +435,10 @@ export function RagChatWidget() {
                           ? "bg-white border border-gray-200 text-gray-900"
                           : "bg-slate-700 border border-slate-600 text-white",
                     )}
+                    style={{
+                      padding:
+                        "clamp(0.5rem, 1.5vmin, 0.75rem) clamp(0.75rem, 2vmin, 1rem)",
+                    }}
                   >
                     <p className="text-sm leading-relaxed whitespace-pre-wrap">
                       {message.role === "assistant"
@@ -466,24 +524,33 @@ export function RagChatWidget() {
             <form
               onSubmit={handleSubmit}
               className={cn(
-                "p-4 border-t",
+                "border-t",
                 theme === "light"
                   ? "bg-gray-50 border-gray-200"
                   : "bg-slate-800 border-slate-700",
               )}
+              style={{
+                padding: "clamp(0.75rem, 2vmin, 1rem)",
+              }}
             >
-              <div className="flex gap-2">
+              <div
+                className="flex"
+                style={{ gap: "clamp(0.25rem, 1vmin, 0.5rem)" }}
+              >
                 <Input
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   placeholder="Ask me anything about DSU..."
                   disabled={isLoading}
                   className={cn(
-                    "text-sm h-10",
                     theme === "light"
                       ? "bg-white border-gray-300"
                       : "bg-slate-700 border-slate-600 text-white",
                   )}
+                  style={{
+                    fontSize: "clamp(0.75rem, 2vmin, 0.875rem)",
+                    height: "clamp(2rem, 5vmin, 2.5rem)",
+                  }}
                   autoFocus
                 />
                 <Button
@@ -491,11 +558,26 @@ export function RagChatWidget() {
                   disabled={!input.trim() || isLoading}
                   size="sm"
                   className="bg-orange-500 hover:bg-orange-600 text-white"
+                  style={{
+                    minHeight: "clamp(2rem, 5vmin, 2.5rem)",
+                    padding: "clamp(0.25rem, 1vmin, 0.5rem)",
+                  }}
                 >
-                  <Send className="w-4 h-4" />
+                  <Send
+                    style={{
+                      width: "clamp(0.875rem, 2.5vmin, 1rem)",
+                      height: "clamp(0.875rem, 2.5vmin, 1rem)",
+                    }}
+                  />
                 </Button>
               </div>
-              <p className="text-xs opacity-50 mt-2">
+              <p
+                className="opacity-50"
+                style={{
+                  fontSize: "clamp(0.625rem, 1.5vmin, 0.75rem)",
+                  marginTop: "clamp(0.25rem, 1vmin, 0.5rem)",
+                }}
+              >
                 💡 Ask about programs, fees, admissions, facilities, and more!
               </p>
             </form>

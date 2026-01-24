@@ -389,6 +389,26 @@ const PG_PROGRAM_CARDS: ProgramCard[] = [
     panelClass: "bg-black/55 backdrop-blur-xl",
     featured: true,
   },
+  {
+    name: "Center for Executive Education",
+    area: "Professional Development",
+    description:
+      "Tailored executive programmes designed for working professionals seeking to enhance their skills, leadership capabilities and career advancement through industry-focused training and certifications.",
+    image:
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1600&auto=format&fit=crop",
+    link: "/academics/cee",
+    highlights: [
+      "Professional Skills",
+      "Leadership Development",
+      "Career Growth",
+    ],
+    overlay:
+      "bg-gradient-to-br from-amber-600/70 via-black/70 to-black/55 mix-blend-multiply",
+    badgeClass:
+      "bg-amber-600/30 text-foreground/90 border border-white/25 backdrop-blur",
+    panelClass: "bg-black/55 backdrop-blur-xl",
+    featured: true,
+  },
 ];
 
 const CALENDAR_ENTRIES: CalendarEntry[] = [

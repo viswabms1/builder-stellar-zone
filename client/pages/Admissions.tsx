@@ -88,30 +88,33 @@ const admissionCodes = [
   "Comed-K Code: E182",
   "Uni-GAUGE Code: UNI-010",
   "CET Code: DSU-E240",
-  "PGCET Code (M.Tech): T970",
-  "PGCET Code (MBA): B365MB",
-  "PGCET Code (MCA): C520MC",
+  "MCA Code: C520MC",
 ];
 
 const carouselImages = [
   {
-    image: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Ffce3e67bcc814c1aabf809c71102e1cc?format=webp&width=800",
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Ffce3e67bcc814c1aabf809c71102e1cc?format=webp&width=800",
     alt: "B.Tech JEE MAIN Admissions",
   },
   {
-    image: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fcb5e92e25b634bdcaa9de2b0b31ec415?format=webp&width=800",
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fcb5e92e25b634bdcaa9de2b0b31ec415?format=webp&width=800",
     alt: "Academic Excellence in Global Environment",
   },
   {
-    image: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fac9ce7ef53604970818f60f8a54c7350?format=webp&width=800",
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fac9ce7ef53604970818f60f8a54c7350?format=webp&width=800",
     alt: "Programs at DSU City Innovation Campus",
   },
   {
-    image: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F73a8c29a2bec44baa4271feceae5c5e2?format=webp&width=800",
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F73a8c29a2bec44baa4271feceae5c5e2?format=webp&width=800",
     alt: "B.Tech Admissions 2026-27",
   },
   {
-    image: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fe5b128a011904d638fd0f853cafb7acc?format=webp&width=800",
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fe5b128a011904d638fd0f853cafb7acc?format=webp&width=800",
     alt: "Admissions Open for NRI/Foreign Nationals",
   },
 ];
@@ -130,11 +133,12 @@ const quickLinks: QuickLink[] = [
     title: "Admission Closing Dates",
     description:
       "Track key deadlines for applications, counseling, and confirmation.",
-    href: "https://www.dsu.edu.in/admission-lastdates",
+    href: "/admissions/closing-dates",
     icon: CalendarCheck,
+    external: false,
   },
   {
-    title: "Direct Admissions – 2025",
+    title: "Direct Admissions – 2026",
     description:
       "Secure your seat through the direct admissions window and confirm early.",
     href: "https://admissions.dsu.edu.in/?utm_source=Admissions%20Tab&utm_medium=Website&utm_campaign=WS-Admissions%202024",
@@ -165,9 +169,9 @@ const quickLinks: QuickLink[] = [
     title: "International Admissions",
     description:
       "Dedicated guidance for foreign nationals, NRIs, and PIO applicants.",
-    href: "/admissions/international",
+    href: "https://dsu.edu.in/international/",
     icon: Globe,
-    external: false,
+    external: true,
   },
   {
     title: "Online Degree",
@@ -180,7 +184,7 @@ const quickLinks: QuickLink[] = [
 
 const admissionTracks: AdmissionTrack[] = [
   {
-    title: "Direct Admissions – 2025",
+    title: "Direct Admissions – 2026",
     description:
       "Utilize the direct admissions channel with spot counseling support for eligible candidates.",
     highlights: [
@@ -193,19 +197,6 @@ const admissionTracks: AdmissionTrack[] = [
     ctaLabel: "Begin Direct Application",
   },
   {
-    title: "PGCET & Lateral Entry Admissions",
-    description:
-      "Follow Karnataka PGCET counseling codes for postgraduate programs and lateral admissions.",
-    highlights: [
-      "PGCET Codes: T970 (M.Tech) and B365MB (MBA)",
-      "Document verification at KEA designated centers",
-      "DSU assistance for branch selection and onboarding",
-    ],
-    href: "https://www.dsu.edu.in/eligibility",
-    icon: School,
-    ctaLabel: "View PGCET Guidelines",
-  },
-  {
     title: "International Admissions",
     description:
       "Dedicated advisors support foreign nationals, NRIs, and PIO applicants with documentation and visas.",
@@ -214,9 +205,10 @@ const admissionTracks: AdmissionTrack[] = [
       "Support for visa letters and equivalence certificates",
       "Scholarship consideration for exceptional profiles",
     ],
-    href: "/admissions/international",
+    href: "https://dsu.edu.in/international/",
     icon: Globe,
     ctaLabel: "Explore International Pathway",
+    external: true,
   },
   {
     title: "DSU Online & Professional Programs",
@@ -340,8 +332,8 @@ const aiSamplePrompts = [
 
 const voiceScriptLines = [
   "Welcome to Dayananda Sagar University admissions.",
-  "You can apply through Comed-K, CET, PGCET, or the direct admissions window.",
-  "Remember the key codes: Comed-K E182, CET DSU-E240, and PGCET T970 for M.Tech, B365MB for MBA, and C520MC for MCA.",
+  "You can apply through Comed-K, CET, or the direct admissions window.",
+  "Remember the key codes: Comed-K E182, CET DSU-E240, and C520MC for MCA.",
   "Visit admissions dot d s u dot e d u dot i n to start your application and download program brochures for detailed curricula.",
   "Our counselors can be reached at zero eight zero four six four six one eight zero zero or admissions at d s u dot e d u dot i n.",
   "We look forward to welcoming you to DSU.",
@@ -390,7 +382,7 @@ function HeroSection() {
         <p className="mt-6 text-lg text-white md:text-xl">
           Multiple admission pathways, flexible programs, and a Bengaluru-based
           advantage. 100% placements with industry partnerships. Choose your
-          route: Direct Admissions, PGCET, International, or Online.
+          route: Direct Admissions, International, or Online.
         </p>
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Button
@@ -427,6 +419,17 @@ function HeroSection() {
             <a href="#choose-pathway">
               Choose Your Pathway
               <ArrowRight className="h-5 w-5" />
+            </a>
+          </Button>
+          <Button
+            variant="outline"
+            size="lg"
+            className="rounded-2xl border-2 border-orange-500 px-8 py-6 text-lg font-semibold text-orange-500"
+            asChild
+          >
+            <a href="/admissions/closing-dates">
+              Closing Dates
+              <CalendarCheck className="h-5 w-5" />
             </a>
           </Button>
         </div>
@@ -588,11 +591,13 @@ function EssentialsSection() {
 
 function QuickLinkCard({ item }: { item: QuickLink }) {
   return (
-    <Card className={`group border transition hover:-translate-y-1 hover:shadow-xl ${
-      item.featured
-        ? "border-orange-500/60 bg-gradient-to-br from-orange-500/15 to-red-500/10 backdrop-blur-sm hover:border-orange-500/80 hover:shadow-orange-500/20 relative overflow-hidden"
-        : "border-border/60 bg-card/60 backdrop-blur-sm hover:border-orange-500/40 hover:shadow-orange-500/10"
-    }`}>
+    <Card
+      className={`group border transition hover:-translate-y-1 hover:shadow-xl ${
+        item.featured
+          ? "border-orange-500/60 bg-gradient-to-br from-orange-500/15 to-red-500/10 backdrop-blur-sm hover:border-orange-500/80 hover:shadow-orange-500/20 relative overflow-hidden"
+          : "border-border/60 bg-card/60 backdrop-blur-sm hover:border-orange-500/40 hover:shadow-orange-500/10"
+      }`}
+    >
       {item.featured && (
         <div className="absolute top-0 right-0">
           <Badge className="rounded-none rounded-bl-2xl bg-gradient-to-r from-orange-500 to-red-500 text-white text-xs font-bold px-3 py-1">
@@ -602,18 +607,24 @@ function QuickLinkCard({ item }: { item: QuickLink }) {
       )}
       <CardHeader>
         <div className="flex items-center justify-between">
-          <div className={`flex h-12 w-12 items-center justify-center rounded-xl transition ${
-            item.featured
-              ? "bg-orange-500 text-foreground"
-              : "bg-orange-500/15 text-orange-500 group-hover:bg-orange-500 group-hover:text-foreground"
-          }`}>
+          <div
+            className={`flex h-12 w-12 items-center justify-center rounded-xl transition ${
+              item.featured
+                ? "bg-orange-500 text-foreground"
+                : "bg-orange-500/15 text-orange-500 group-hover:bg-orange-500 group-hover:text-foreground"
+            }`}
+          >
             <item.icon className="h-6 w-6" />
           </div>
           <ExternalLink className="h-5 w-5 text-foreground group-hover:text-orange-500" />
         </div>
-        <CardTitle className={`mt-4 text-lg font-semibold ${
-          item.featured ? "text-orange-600 group-hover:text-orange-500" : "group-hover:text-orange-500"
-        }`}>
+        <CardTitle
+          className={`mt-4 text-lg font-semibold ${
+            item.featured
+              ? "text-orange-600 group-hover:text-orange-500"
+              : "group-hover:text-orange-500"
+          }`}
+        >
           {item.title}
         </CardTitle>
       </CardHeader>

@@ -1,7 +1,13 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import {
   Bot,
@@ -76,15 +82,24 @@ export default function ElectronicsCommunication() {
           <div className="max-w-7xl mx-auto px-6 pb-20 md:pb-0 pt-6 md:pt-0">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-black/40 rounded-full border border-white/20 mb-4 backdrop-blur-sm">
               <Sparkles className="w-4 h-4 text-white" />
-              <span className="text-sm font-medium text-white font-display">Department of Electronics & Communication Engineering</span>
+              <span className="text-sm font-medium text-white font-display">
+                Department of Electronics & Communication Engineering
+              </span>
             </div>
-            <h1 className="headline-1 text-white leading-tight font-display">Build Chips & AI on GPU Acceleration</h1>
+            <h1 className="headline-1 text-white leading-tight font-display">
+              Build Chips & AI on GPU Acceleration
+            </h1>
             <p className="subheadline text-white/90 max-w-2xl mt-3 font-body">
-              Master VLSI, 5G, signal processing, and edge AI using GPU-accelerated design tools, NVIDIA CUDA, and Jetson platforms. Design next-gen electronics at supercomputer speed.
+              Master VLSI, 5G, signal processing, and edge AI using
+              GPU-accelerated design tools, NVIDIA CUDA, and Jetson platforms.
+              Design next-gen electronics at supercomputer speed.
             </p>
             <div className="mt-6 flex flex-wrap gap-2">
               {specializations.map((s, i) => (
-                <span key={i} className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-white text-xs backdrop-blur">
+                <span
+                  key={i}
+                  className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-white text-xs backdrop-blur"
+                >
                   <s.icon className="w-3.5 h-3.5" /> {s.label}
                 </span>
               ))}
@@ -95,7 +110,23 @@ export default function ElectronicsCommunication() {
                 target="_blank"
                 rel="noreferrer"
               >
-                <Button className="bg-brand-gradient text-foreground">Apply Now <GraduationCap className="w-4 h-4 ml-2" /></Button>
+                <Button
+                  className="bg-brand-gradient text-foreground"
+                  style={{
+                    padding:
+                      "clamp(0.5rem, 1.5vw, 0.75rem) clamp(1rem, 3vw, 1.5rem)",
+                    fontSize: "clamp(0.8125rem, 1.8vw, 0.875rem)",
+                  }}
+                >
+                  Apply Now
+                  <GraduationCap
+                    style={{
+                      width: "clamp(0.875rem, 1.5vw, 1rem)",
+                      height: "clamp(0.875rem, 1.5vw, 1rem)",
+                    }}
+                    className="ml-2"
+                  />
+                </Button>
               </a>
             </div>
           </div>
@@ -107,7 +138,10 @@ export default function ElectronicsCommunication() {
         <div className="max-w-6xl mx-auto">
           <div className="mb-8">
             <h2 className="headline-2 font-display mb-2">Programs Offered</h2>
-            <p className="text-foreground/80 font-body">Choose your pathway with GPU-accelerated design tools, edge AI, and supercomputer-scale simulation infrastructure</p>
+            <p className="text-foreground/80 font-body">
+              Choose your pathway with GPU-accelerated design tools, edge AI,
+              and supercomputer-scale simulation infrastructure
+            </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {/* B.Tech Program */}
@@ -115,16 +149,31 @@ export default function ElectronicsCommunication() {
               <CardHeader>
                 <div className="flex items-center gap-2 mb-2">
                   <GraduationCap className="w-5 h-5 text-brand-blue" />
-                  <Badge className="bg-brand-blue/20 text-brand-blue border-brand-blue/30">Undergraduate</Badge>
+                  <Badge className="bg-brand-blue/20 text-brand-blue border-brand-blue/30">
+                    Undergraduate
+                  </Badge>
                 </div>
-                <CardTitle className="font-display">B.Tech Electronics & Communication Engineering</CardTitle>
-                <CardDescription className="font-body">4-Year Program</CardDescription>
+                <CardTitle className="font-display">
+                  B.Tech Electronics & Communication Engineering
+                </CardTitle>
+                <CardDescription className="font-body">
+                  4-Year Program
+                </CardDescription>
               </CardHeader>
               <CardContent className="space-y-3">
-                <p className="text-sm text-foreground font-body">With specializations in embedded systems and communication</p>
+                <p className="text-sm text-foreground font-body">
+                  With specializations in embedded systems and communication
+                </p>
                 <div className="flex flex-wrap gap-2">
-                  {["Embedded Systems", "VLSI Design", "5G & IoT", "Signal Processing"].map((spec, i) => (
-                    <Badge key={i} variant="secondary" className="text-xs">{spec}</Badge>
+                  {[
+                    "Embedded Systems",
+                    "VLSI Design",
+                    "5G & IoT",
+                    "Signal Processing",
+                  ].map((spec, i) => (
+                    <Badge key={i} variant="secondary" className="text-xs">
+                      {spec}
+                    </Badge>
                   ))}
                 </div>
               </CardContent>
@@ -135,16 +184,30 @@ export default function ElectronicsCommunication() {
               <CardHeader>
                 <div className="flex items-center gap-2 mb-2">
                   <BookOpen className="w-5 h-5 text-brand-blue" />
-                  <Badge className="bg-brand-blue/20 text-brand-blue border-brand-blue/30">Postgraduate</Badge>
+                  <Badge className="bg-brand-blue/20 text-brand-blue border-brand-blue/30">
+                    Postgraduate
+                  </Badge>
                 </div>
-                <CardTitle className="font-display">M.Tech Embedded Systems</CardTitle>
-                <CardDescription className="font-body">2-Year Program</CardDescription>
+                <CardTitle className="font-display">
+                  M.Tech Embedded Systems
+                </CardTitle>
+                <CardDescription className="font-body">
+                  2-Year Program
+                </CardDescription>
               </CardHeader>
               <CardContent className="space-y-3">
-                <p className="text-sm text-foreground font-body">Advanced embedded systems and real-time design</p>
+                <p className="text-sm text-foreground font-body">
+                  Advanced embedded systems and real-time design
+                </p>
                 <div className="flex flex-wrap gap-2">
-                  {["RTOS Design", "Hardware Integration", "Edge Computing"].map((spec, i) => (
-                    <Badge key={i} variant="secondary" className="text-xs">{spec}</Badge>
+                  {[
+                    "RTOS Design",
+                    "Hardware Integration",
+                    "Edge Computing",
+                  ].map((spec, i) => (
+                    <Badge key={i} variant="secondary" className="text-xs">
+                      {spec}
+                    </Badge>
                   ))}
                 </div>
               </CardContent>
@@ -153,7 +216,9 @@ export default function ElectronicsCommunication() {
             {/* Quick Info */}
             <Card className="border border-border/50 bg-card/50 backdrop-blur-sm">
               <CardHeader>
-                <CardTitle className="text-lg font-display">Why Choose ECE?</CardTitle>
+                <CardTitle className="text-lg font-display">
+                  Why Choose ECE?
+                </CardTitle>
               </CardHeader>
               <CardContent className="space-y-2 text-sm font-body">
                 <div className="flex items-center gap-2">
@@ -180,16 +245,30 @@ export default function ElectronicsCommunication() {
           <div className="lg:col-span-2 space-y-6">
             <h2 className="headline-3 font-display">Overview</h2>
             <p className="text-foreground leading-relaxed font-body">
-              The Department of Electronics & Communication Engineering offers a dynamic ecosystem for study, research, and professional growth. The B.Tech ECE program provides a solid foundation and new-age skills with an innovative curriculum and pedagogy aligned to NEP and industry partnerships. Students gain breadth across core electronics and communication, and depth through elective streams, while developing leadership and personal effectiveness for holistic growth.
+              The Department of Electronics & Communication Engineering offers a
+              dynamic ecosystem for study, research, and professional growth.
+              The B.Tech ECE program provides a solid foundation and new-age
+              skills with an innovative curriculum and pedagogy aligned to NEP
+              and industry partnerships. Students gain breadth across core
+              electronics and communication, and depth through elective streams,
+              while developing leadership and personal effectiveness for
+              holistic growth.
             </p>
             <Card className="border border-border/50 bg-card/50 backdrop-blur-sm">
               <CardHeader className="pb-2">
-                <CardTitle className="text-lg font-display">Program Highlights</CardTitle>
-                <CardDescription className="font-body">Designed for electronics innovation</CardDescription>
+                <CardTitle className="text-lg font-display">
+                  Program Highlights
+                </CardTitle>
+                <CardDescription className="font-body">
+                  Designed for electronics innovation
+                </CardDescription>
               </CardHeader>
               <CardContent className="grid sm:grid-cols-2 gap-3 pt-0">
                 {highlights.map((h, idx) => (
-                  <div key={idx} className="flex items-start gap-2 text-sm text-foreground">
+                  <div
+                    key={idx}
+                    className="flex items-start gap-2 text-sm text-foreground"
+                  >
                     <CheckCircle2 className="w-4 h-4 text-brand-blue mt-0.5" />
                     <span>{h}</span>
                   </div>
@@ -200,16 +279,31 @@ export default function ElectronicsCommunication() {
           <div>
             <Card className="overflow-hidden border border-border/50 bg-card/50">
               <div className="relative h-40">
-                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=1200&auto=format&fit=crop" alt="ECE Labs" className="w-full h-full object-cover" />
+                <img
+                  src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=1200&auto=format&fit=crop"
+                  alt="ECE Labs"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <CardHeader>
                 <CardTitle className="font-display">Fast Facts</CardTitle>
-                <CardDescription className="font-body">What sets ECE at DSU apart</CardDescription>
+                <CardDescription className="font-body">
+                  What sets ECE at DSU apart
+                </CardDescription>
               </CardHeader>
               <CardContent className="grid gap-2 text-sm font-body">
-                <div className="flex items-center justify-between"><span>GPU Acceleration</span><span className="font-medium">NVIDIA CUDA & Jetson</span></div>
-                <div className="flex items-center justify-between"><span>Simulation Speedup</span><span className="font-medium">100X faster design</span></div>
-                <div className="flex items-center justify-between"><span>Research Focus</span><span className="font-medium">AI Chips & 5G Design</span></div>
+                <div className="flex items-center justify-between">
+                  <span>GPU Acceleration</span>
+                  <span className="font-medium">NVIDIA CUDA & Jetson</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span>Simulation Speedup</span>
+                  <span className="font-medium">100X faster design</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span>Research Focus</span>
+                  <span className="font-medium">AI Chips & 5G Design</span>
+                </div>
               </CardContent>
             </Card>
           </div>
@@ -220,51 +314,112 @@ export default function ElectronicsCommunication() {
       <section className="px-6 py-16">
         <div className="max-w-6xl mx-auto">
           <div className="mb-8">
-            <h2 className="headline-2 font-display mb-2">Advanced Computational Tools Powered by NVIDIA</h2>
-            <p className="text-foreground/80 font-body max-w-2xl">Access GPU-accelerated design, simulation, and AI platforms for faster chip design, signal processing, and edge AI development</p>
+            <h2 className="headline-2 font-display mb-2">
+              Advanced Computational Tools Powered by NVIDIA
+            </h2>
+            <p className="text-foreground/80 font-body max-w-2xl">
+              Access GPU-accelerated design, simulation, and AI platforms for
+              faster chip design, signal processing, and edge AI development
+            </p>
           </div>
           <div className="grid md:grid-cols-2 gap-6">
             {/* VLSI & Circuit Simulation */}
             <div className="bg-gradient-to-r from-blue-500/10 to-cyan-500/10 p-6 rounded-lg border border-blue-500/30">
-              <h4 className="text-xl font-bold text-blue-500 mb-3">GPU-Accelerated VLSI Design & Simulation</h4>
+              <h4 className="text-xl font-bold text-blue-500 mb-3">
+                GPU-Accelerated VLSI Design & Simulation
+              </h4>
               <ul className="space-y-2 text-base text-foreground/70">
-                <li>✓ NVIDIA CUDA-powered circuit simulation: 50-100X faster design verification</li>
-                <li>✓ High-performance timing analysis, static/dynamic power estimation using GPUs</li>
-                <li>✓ Rapid prototyping: Simulate complex chip designs in hours instead of weeks</li>
-                <li>✓ Machine learning-assisted design: AI models for placement, routing, and optimization</li>
+                <li>
+                  ✓ NVIDIA CUDA-powered circuit simulation: 50-100X faster
+                  design verification
+                </li>
+                <li>
+                  ✓ High-performance timing analysis, static/dynamic power
+                  estimation using GPUs
+                </li>
+                <li>
+                  ✓ Rapid prototyping: Simulate complex chip designs in hours
+                  instead of weeks
+                </li>
+                <li>
+                  ✓ Machine learning-assisted design: AI models for placement,
+                  routing, and optimization
+                </li>
               </ul>
             </div>
 
             {/* Signal Processing & Communication */}
             <div className="bg-gradient-to-r from-orange-500/10 to-red-500/10 p-6 rounded-lg border border-orange-500/30">
-              <h4 className="text-xl font-bold text-orange-500 mb-3">GPU-Accelerated Signal Processing & 5G</h4>
+              <h4 className="text-xl font-bold text-orange-500 mb-3">
+                GPU-Accelerated Signal Processing & 5G
+              </h4>
               <ul className="space-y-2 text-base text-foreground/70">
-                <li>✓ cuFFT, cuBLAS, cuDNN for high-speed DSP: real-time signal processing on GPUs</li>
-                <li>✓ 5G/6G communication simulation: Channel modeling, beamforming, MIMO analysis at scale</li>
-                <li>✓ Wireless communication design on NVIDIA infrastructure (PyTorch, TensorFlow)</li>
-                <li>✓ Spectrum analysis and software-defined radio (SDR) using GPU acceleration</li>
+                <li>
+                  ✓ cuFFT, cuBLAS, cuDNN for high-speed DSP: real-time signal
+                  processing on GPUs
+                </li>
+                <li>
+                  ✓ 5G/6G communication simulation: Channel modeling,
+                  beamforming, MIMO analysis at scale
+                </li>
+                <li>
+                  ✓ Wireless communication design on NVIDIA infrastructure
+                  (PyTorch, TensorFlow)
+                </li>
+                <li>
+                  ✓ Spectrum analysis and software-defined radio (SDR) using GPU
+                  acceleration
+                </li>
               </ul>
             </div>
 
             {/* Edge AI & Jetson */}
             <div className="bg-gradient-to-r from-purple-500/10 to-pink-500/10 p-6 rounded-lg border border-purple-500/30">
-              <h4 className="text-xl font-bold text-purple-500 mb-3">Edge AI on NVIDIA Jetson Platforms</h4>
+              <h4 className="text-xl font-bold text-purple-500 mb-3">
+                Edge AI on NVIDIA Jetson Platforms
+              </h4>
               <ul className="space-y-2 text-base text-foreground/70">
-                <li>✓ Deploy AI models on Jetson Nano/Xavier/AGX: Real-time inference for IoT and embedded systems</li>
-                <li>✓ AI-powered IoT solutions: Object detection, speech recognition, computer vision on edge devices</li>
-                <li>✓ TensorRT optimization for model deployment on energy-efficient Jetson hardware</li>
-                <li>✓ Real-world embedded AI projects: UAVs, robotics, autonomous systems with neural networks</li>
+                <li>
+                  ✓ Deploy AI models on Jetson Nano/Xavier/AGX: Real-time
+                  inference for IoT and embedded systems
+                </li>
+                <li>
+                  ✓ AI-powered IoT solutions: Object detection, speech
+                  recognition, computer vision on edge devices
+                </li>
+                <li>
+                  ✓ TensorRT optimization for model deployment on
+                  energy-efficient Jetson hardware
+                </li>
+                <li>
+                  ✓ Real-world embedded AI projects: UAVs, robotics, autonomous
+                  systems with neural networks
+                </li>
               </ul>
             </div>
 
             {/* Competitive Advantage */}
             <div className="bg-gradient-to-r from-emerald-500/10 to-teal-500/10 p-6 rounded-lg border border-emerald-500/30">
-              <h4 className="text-xl font-bold text-emerald-500 mb-3">Industry-Ready Competitive Edge</h4>
+              <h4 className="text-xl font-bold text-emerald-500 mb-3">
+                Industry-Ready Competitive Edge
+              </h4>
               <ul className="space-y-2 text-base text-foreground/70">
-                <li>✓ Experience with tools used by semiconductor leaders: NVIDIA, Qualcomm, ARM, Intel</li>
-                <li>✓ 20-30% salary premium for CUDA and GPU-accelerated electronics engineers</li>
-                <li>✓ Direct pathway to roles in semiconductor design, 5G infrastructure, and AI chip development</li>
-                <li>✓ Rare GPU-accelerated ECE infrastructure in Indian engineering education</li>
+                <li>
+                  ✓ Experience with tools used by semiconductor leaders: NVIDIA,
+                  Qualcomm, ARM, Intel
+                </li>
+                <li>
+                  ✓ 20-30% salary premium for CUDA and GPU-accelerated
+                  electronics engineers
+                </li>
+                <li>
+                  ✓ Direct pathway to roles in semiconductor design, 5G
+                  infrastructure, and AI chip development
+                </li>
+                <li>
+                  ✓ Rare GPU-accelerated ECE infrastructure in Indian
+                  engineering education
+                </li>
               </ul>
             </div>
           </div>
@@ -285,7 +440,10 @@ export default function ElectronicsCommunication() {
           <div className="flex items-center justify-between mb-8">
             <h2 className="headline-3 font-display">Department Leadership</h2>
             <Link to="/academics/engineering/electronics-communication/faculty">
-              <Button variant="outline" className="border-brand-blue/40 hover:bg-brand-blue/10">
+              <Button
+                variant="outline"
+                className="border-brand-blue/40 hover:bg-brand-blue/10"
+              >
                 Explore full faculty list
               </Button>
             </Link>
@@ -293,16 +451,24 @@ export default function ElectronicsCommunication() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {/* Chairperson */}
             <div>
-              <p className="text-xs font-semibold text-brand-blue uppercase tracking-wider mb-2">Chairperson</p>
+              <p className="text-xs font-semibold text-brand-blue uppercase tracking-wider mb-2">
+                Chairperson
+              </p>
               <div className="group relative overflow-hidden rounded-xl border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-blue/10 transition-all cursor-pointer">
                 <div className="relative">
                   <div className="aspect-square w-full"></div>
-                  <img src="https://www.dsu.edu.in/images/Engineering/ECE-dept/faculty/ArunBalodi.jpg" alt="Dr Arun Balodi" className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-500" />
+                  <img
+                    src="https://www.dsu.edu.in/images/Engineering/ECE-dept/faculty/ArunBalodi.jpg"
+                    alt="Dr Arun Balodi"
+                    className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-500"
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
                 </div>
                 <div className="absolute bottom-0 p-3 w-full">
                   <div className="text-white text-xs opacity-80">Professor</div>
-                  <div className="text-white font-semibold text-sm font-display line-clamp-2">Dr Arun Balodi</div>
+                  <div className="text-white font-semibold text-sm font-display line-clamp-2">
+                    Dr Arun Balodi
+                  </div>
                 </div>
               </div>
             </div>
@@ -318,7 +484,10 @@ export default function ElectronicsCommunication() {
             <Card className="border border-border/50 bg-card/50">
               <CardContent className="p-6 grid gap-3">
                 {careers.map((c, i) => (
-                  <div key={i} className="flex items-start gap-2 text-sm text-foreground font-body">
+                  <div
+                    key={i}
+                    className="flex items-start gap-2 text-sm text-foreground font-body"
+                  >
                     <ChevronRight className="w-3 h-3 text-brand-blue mt-1" />
                     <span>{c}</span>
                   </div>
@@ -330,15 +499,34 @@ export default function ElectronicsCommunication() {
             <h2 className="headline-3 mb-4 font-display">Get in Touch</h2>
             <Card className="overflow-hidden border border-border/50 bg-card/50">
               <div className="relative h-40">
-                <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1200&auto=format&fit=crop" alt="Contact ECE" className="w-full h-full object-cover" />
+                <img
+                  src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1200&auto=format&fit=crop"
+                  alt="Contact ECE"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <CardHeader>
-                <CardTitle className="font-display">Department Contact</CardTitle>
-                <CardDescription className="font-body">Chairperson, Electronics & Communication Engineering</CardDescription>
+                <CardTitle className="font-display">
+                  Department Contact
+                </CardTitle>
+                <CardDescription className="font-body">
+                  Chairperson, Electronics & Communication Engineering
+                </CardDescription>
               </CardHeader>
               <CardContent className="grid gap-2 text-sm font-body">
-                <div className="flex items-center justify-between"><span>Email</span><a className="font-medium hover:underline" href="mailto:chairman-ece@dsu.edu.in">chairman-ece@dsu.edu.in</a></div>
-                <div className="flex items-center justify-between"><span>Phone</span><span className="font-medium">+91-080-49092937</span></div>
+                <div className="flex items-center justify-between">
+                  <span>Email</span>
+                  <a
+                    className="font-medium hover:underline"
+                    href="mailto:chairman-ece@dsu.edu.in"
+                  >
+                    chairman-ece@dsu.edu.in
+                  </a>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span>Phone</span>
+                  <span className="font-medium">+91-080-49092937</span>
+                </div>
               </CardContent>
             </Card>
           </div>
@@ -356,7 +544,8 @@ export default function ElectronicsCommunication() {
               </span>
             </h2>
             <p className="text-foreground/80 font-body max-w-2xl mx-auto">
-              Discover research, placements, admission pathways, and Centers of Excellence at DSU
+              Discover research, placements, admission pathways, and Centers of
+              Excellence at DSU
             </p>
           </div>
 
@@ -377,7 +566,8 @@ export default function ElectronicsCommunication() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-foreground/80 font-body">
-                    Immersive innovation labs powered by industry leaders like Bosch and Analog Devices
+                    Immersive innovation labs powered by industry leaders like
+                    Bosch and Analog Devices
                   </p>
                 </CardContent>
               </Card>
@@ -399,7 +589,8 @@ export default function ElectronicsCommunication() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-foreground/80 font-body">
-                    Cutting-edge electronics research initiatives and innovation labs
+                    Cutting-edge electronics research initiatives and innovation
+                    labs
                   </p>
                 </CardContent>
               </Card>
@@ -421,7 +612,8 @@ export default function ElectronicsCommunication() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-foreground/80 font-body">
-                    Career pathways with leading electronics and semiconductor companies
+                    Career pathways with leading electronics and semiconductor
+                    companies
                   </p>
                 </CardContent>
               </Card>
@@ -463,14 +655,20 @@ export default function ElectronicsCommunication() {
         <div className="max-w-4xl mx-auto text-center">
           <div className="rounded-3xl p-10 border border-brand-blue/20 bg-brand-blue/5">
             <h3 className="headline-3 mb-3 font-display">Join DSU ECE</h3>
-            <p className="text-foreground mb-6 font-body">Explore programs, discover research, and launch your career in Electronics & Communication Engineering.</p>
+            <p className="text-foreground mb-6 font-body">
+              Explore programs, discover research, and launch your career in
+              Electronics & Communication Engineering.
+            </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a
                 href="https://admissions.dsu.edu.in/"
                 target="_blank"
                 rel="noreferrer"
               >
-                <Button className="bg-brand-gradient text-foreground">Apply Now<GraduationCap className="w-4 h-4 ml-2" /></Button>
+                <Button className="bg-brand-gradient text-foreground">
+                  Apply Now
+                  <GraduationCap className="w-4 h-4 ml-2" />
+                </Button>
               </a>
             </div>
           </div>
@@ -513,12 +711,36 @@ function LabsFacilitiesCarouselECE() {
   const [currentLabIndex, setCurrentLabIndex] = useState(0);
 
   const labs: LabItem[] = [
-    { title: "VLSI Design Lab", image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=1200&auto=format&fit=crop" },
-    { title: "Bosch ETAS Lab", image: "https://images.unsplash.com/photo-1517677129300-07b130802f46?q=80&w=1200&auto=format&fit=crop" },
-    { title: "Communication Systems Lab", image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1200&auto=format&fit=crop" },
-    { title: "IoT & Robotics Lab", image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=1200&auto=format&fit=crop" },
-    { title: "Microcontroller Lab", image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=1200&auto=format&fit=crop" },
-    { title: "Analog Devices Lab", image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop" },
+    {
+      title: "VLSI Design Lab",
+      image:
+        "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=1200&auto=format&fit=crop",
+    },
+    {
+      title: "Bosch ETAS Lab",
+      image:
+        "https://images.unsplash.com/photo-1517677129300-07b130802f46?q=80&w=1200&auto=format&fit=crop",
+    },
+    {
+      title: "Communication Systems Lab",
+      image:
+        "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1200&auto=format&fit=crop",
+    },
+    {
+      title: "IoT & Robotics Lab",
+      image:
+        "https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=1200&auto=format&fit=crop",
+    },
+    {
+      title: "Microcontroller Lab",
+      image:
+        "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=1200&auto=format&fit=crop",
+    },
+    {
+      title: "Analog Devices Lab",
+      image:
+        "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop",
+    },
   ];
 
   useEffect(() => {
@@ -537,7 +759,10 @@ function LabsFacilitiesCarouselECE() {
         <div className="flex items-center justify-between">
           <div>
             <h2 className="headline-3 mb-2 font-display">Labs & Facilities</h2>
-            <p className="text-sm text-foreground/80 font-body">State-of-the-art infrastructure for electronics and communication hands-on learning</p>
+            <p className="text-sm text-foreground/80 font-body">
+              State-of-the-art infrastructure for electronics and communication
+              hands-on learning
+            </p>
           </div>
           <div className="text-xs text-foreground/60 font-body">
             {currentLabIndex + 1} of {labs.length}
@@ -553,7 +778,9 @@ function LabsFacilitiesCarouselECE() {
             />
           </div>
           <CardContent className="p-6">
-            <CardTitle className="font-display text-2xl text-foreground">{currentLab.title}</CardTitle>
+            <CardTitle className="font-display text-2xl text-foreground">
+              {currentLab.title}
+            </CardTitle>
           </CardContent>
         </Card>
 
@@ -576,7 +803,11 @@ function LabsFacilitiesCarouselECE() {
               variant="outline"
               size="sm"
               className="border-border/40"
-              onClick={() => setCurrentLabIndex((prev) => (prev - 1 + labs.length) % labs.length)}
+              onClick={() =>
+                setCurrentLabIndex(
+                  (prev) => (prev - 1 + labs.length) % labs.length,
+                )
+              }
             >
               ← Previous
             </Button>
@@ -584,7 +815,9 @@ function LabsFacilitiesCarouselECE() {
               variant="outline"
               size="sm"
               className="border-border/40"
-              onClick={() => setCurrentLabIndex((prev) => (prev + 1) % labs.length)}
+              onClick={() =>
+                setCurrentLabIndex((prev) => (prev + 1) % labs.length)
+              }
             >
               Next →
             </Button>
@@ -623,8 +856,12 @@ function AccreditationDocumentsECE() {
     <section className="px-6 py-12 bg-background/50">
       <div className="mx-auto max-w-6xl">
         <div className="mb-8">
-          <h3 className="text-sm font-semibold text-foreground/60 uppercase tracking-wider mb-2">Accreditation Documents</h3>
-          <p className="text-xs text-foreground/50 font-body">Program documentation and learning outcomes</p>
+          <h3 className="text-sm font-semibold text-foreground/60 uppercase tracking-wider mb-2">
+            Accreditation Documents
+          </h3>
+          <p className="text-xs text-foreground/50 font-body">
+            Program documentation and learning outcomes
+          </p>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
           {documents.map((doc, idx) => (
@@ -640,8 +877,12 @@ function AccreditationDocumentsECE() {
                   <FileText className="h-5 w-5" />
                 </div>
                 <div className="min-w-0 flex-1">
-                  <div className="text-xs font-semibold text-brand-blue">{doc.abbr}</div>
-                  <p className="text-xs text-foreground/70 line-clamp-2">{doc.title}</p>
+                  <div className="text-xs font-semibold text-brand-blue">
+                    {doc.abbr}
+                  </div>
+                  <p className="text-xs text-foreground/70 line-clamp-2">
+                    {doc.title}
+                  </p>
                 </div>
               </div>
             </a>
@@ -659,8 +900,10 @@ function NoticeBoardECE() {
       title: "ECE Symposium 2025: Electronics & Communication Innovation",
       category: "Event",
       date: "Feb 14, 2025",
-      description: "Department-hosted symposium with industry experts on latest VLSI, 5G, and IoT advancements.",
-      image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=300&fit=crop",
+      description:
+        "Department-hosted symposium with industry experts on latest VLSI, 5G, and IoT advancements.",
+      image:
+        "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=300&fit=crop",
       link: "https://www.dsu.edu.in/images/Engineering/ECE-dept/notices/ECE-Symposium-2025.pdf",
     },
     {
@@ -668,7 +911,8 @@ function NoticeBoardECE() {
       title: "B.Tech ECE Elective Registration",
       category: "Announcement",
       date: "Jan 31, 2025",
-      description: "Register for sem VI electives including Advanced Embedded Systems, 5G Networks, and VLSI design.",
+      description:
+        "Register for sem VI electives including Advanced Embedded Systems, 5G Networks, and VLSI design.",
       link: "https://www.dsu.edu.in/images/Engineering/ECE-dept/notices/Elective-Registration-2025.pdf",
     },
     {
@@ -676,8 +920,10 @@ function NoticeBoardECE() {
       title: "Bosch ETAS Lab: Real-Time Systems Workshop",
       category: "Event",
       date: "Feb 5, 2025",
-      description: "Industry-led workshop on embedded real-time operating systems for automotive applications.",
-      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=300&fit=crop",
+      description:
+        "Industry-led workshop on embedded real-time operating systems for automotive applications.",
+      image:
+        "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=300&fit=crop",
       link: "https://www.dsu.edu.in/images/Engineering/ECE-dept/notices/ETAS-Workshop-2025.pdf",
     },
     {
@@ -685,8 +931,10 @@ function NoticeBoardECE() {
       title: "ECE Faculty Publications in IEEE Conferences",
       category: "News",
       date: "Jan 23, 2025",
-      description: "Two faculty papers accepted at IEEE International Conference on Electronics & Communication.",
-      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=300&fit=crop",
+      description:
+        "Two faculty papers accepted at IEEE International Conference on Electronics & Communication.",
+      image:
+        "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=300&fit=crop",
       link: "https://www.dsu.edu.in/images/Engineering/ECE-dept/notices/Faculty-Publications-2025.pdf",
     },
     {
@@ -694,16 +942,20 @@ function NoticeBoardECE() {
       title: "5G & IoT Research Lab Inauguration",
       category: "Event",
       date: "Feb 12, 2025",
-      description: "Official inauguration of the new 5G & IoT research facility with state-of-the-art equipment.",
-      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&h=300&fit=crop",
+      description:
+        "Official inauguration of the new 5G & IoT research facility with state-of-the-art equipment.",
+      image:
+        "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&h=300&fit=crop",
     },
     {
       id: "notice-6",
       title: "VLSI Design Competition 2025",
       category: "News",
       date: "Jan 24, 2025",
-      description: "Inter-college VLSI chip design competition with participation from engineering colleges across India.",
-      image: "https://images.unsplash.com/photo-1516321318423-f06f70a504f9?w=600&h=300&fit=crop",
+      description:
+        "Inter-college VLSI chip design competition with participation from engineering colleges across India.",
+      image:
+        "https://images.unsplash.com/photo-1516321318423-f06f70a504f9?w=600&h=300&fit=crop",
       link: "https://www.dsu.edu.in/images/Engineering/ECE-dept/notices/VLSI-Competition-2025.pdf",
     },
     {
@@ -711,7 +963,8 @@ function NoticeBoardECE() {
       title: "Industrial Internship Policy Update",
       category: "Announcement",
       date: "Jan 26, 2025",
-      description: "New guidelines for mandatory summer internships in electronics and semiconductor industries.",
+      description:
+        "New guidelines for mandatory summer internships in electronics and semiconductor industries.",
       link: "https://www.dsu.edu.in/images/Engineering/ECE-dept/notices/Internship-Policy-2025.pdf",
     },
     {
@@ -719,16 +972,20 @@ function NoticeBoardECE() {
       title: "Analog Devices Lab Workshop",
       category: "Event",
       date: "Feb 9, 2025",
-      description: "Advanced analog circuit design workshop in collaboration with Analog Devices engineers.",
-      image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=300&fit=crop",
+      description:
+        "Advanced analog circuit design workshop in collaboration with Analog Devices engineers.",
+      image:
+        "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=300&fit=crop",
     },
     {
       id: "notice-9",
       title: "NAAC Accreditation: A Grade Maintained",
       category: "News",
       date: "Jan 17, 2025",
-      description: "ECE department successfully maintains 'A' grade in latest NAAC cycle assessment.",
-      image: "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=600&h=300&fit=crop",
+      description:
+        "ECE department successfully maintains 'A' grade in latest NAAC cycle assessment.",
+      image:
+        "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=600&h=300&fit=crop",
       link: "https://www.dsu.edu.in/images/Engineering/ECE-dept/notices/NAAC-Accreditation-2025.pdf",
     },
   ];
@@ -785,18 +1042,32 @@ function NoticeBoardECE() {
     return () => clearInterval(interval);
   }, [news.length]);
 
-  const renderCarousel = (title: string, items: NoticeItem[], color: string, currentIndex: number, setCurrentIndex: (idx: number) => void) => {
+  const renderCarousel = (
+    title: string,
+    items: NoticeItem[],
+    color: string,
+    currentIndex: number,
+    setCurrentIndex: (idx: number) => void,
+  ) => {
     if (items.length === 0) {
       return (
         <div className="space-y-4">
-          <div className={`flex items-center gap-2 px-4 py-3 rounded-xl border-l-4 ${
-            color === "blue"
-              ? "border-brand-blue bg-brand-blue/10"
-              : "border-brand-orange bg-brand-orange/10"
-          }`}>
-            <h3 className={`headline-4 font-display ${color === "blue" ? "text-brand-blue" : "text-brand-orange"}`}>{title}</h3>
+          <div
+            className={`flex items-center gap-2 px-4 py-3 rounded-xl border-l-4 ${
+              color === "blue"
+                ? "border-brand-blue bg-brand-blue/10"
+                : "border-brand-orange bg-brand-orange/10"
+            }`}
+          >
+            <h3
+              className={`headline-4 font-display ${color === "blue" ? "text-brand-blue" : "text-brand-orange"}`}
+            >
+              {title}
+            </h3>
           </div>
-          <p className="text-xs text-foreground/60 italic p-4 text-center">No items to display</p>
+          <p className="text-xs text-foreground/60 italic p-4 text-center">
+            No items to display
+          </p>
         </div>
       );
     }
@@ -805,13 +1076,21 @@ function NoticeBoardECE() {
 
     return (
       <div className="space-y-4">
-        <div className={`flex items-center gap-2 px-4 py-3 rounded-xl border-l-4 ${
-          color === "blue"
-            ? "border-brand-blue bg-brand-blue/10"
-            : "border-brand-orange bg-brand-orange/10"
-        }`}>
-          <h3 className={`headline-4 font-display ${color === "blue" ? "text-brand-blue" : "text-brand-orange"}`}>{title}</h3>
-          <Badge className="ml-auto text-xs">{currentIndex + 1} / {items.length}</Badge>
+        <div
+          className={`flex items-center gap-2 px-4 py-3 rounded-xl border-l-4 ${
+            color === "blue"
+              ? "border-brand-blue bg-brand-blue/10"
+              : "border-brand-orange bg-brand-orange/10"
+          }`}
+        >
+          <h3
+            className={`headline-4 font-display ${color === "blue" ? "text-brand-blue" : "text-brand-orange"}`}
+          >
+            {title}
+          </h3>
+          <Badge className="ml-auto text-xs">
+            {currentIndex + 1} / {items.length}
+          </Badge>
         </div>
 
         <Card className="group overflow-hidden rounded-2xl border-2 border-border/30 bg-card/40 backdrop-blur-sm">
@@ -827,12 +1106,18 @@ function NoticeBoardECE() {
           <CardContent className="p-4 space-y-3">
             <div className="flex items-start justify-between gap-2">
               <div className="flex-1">
-                <h4 className="font-display font-semibold text-sm text-foreground mb-2 line-clamp-2">{currentItem.title}</h4>
-                <p className="text-xs text-foreground/70 line-clamp-2">{currentItem.description}</p>
+                <h4 className="font-display font-semibold text-sm text-foreground mb-2 line-clamp-2">
+                  {currentItem.title}
+                </h4>
+                <p className="text-xs text-foreground/70 line-clamp-2">
+                  {currentItem.description}
+                </p>
               </div>
             </div>
             <div className="flex items-center justify-between pt-2 border-t border-border/20">
-              <span className="text-xs font-semibold text-foreground/60">{currentItem.date}</span>
+              <span className="text-xs font-semibold text-foreground/60">
+                {currentItem.date}
+              </span>
               {currentItem.link && (
                 <Button
                   variant="ghost"
@@ -871,7 +1156,11 @@ function NoticeBoardECE() {
               variant="outline"
               size="sm"
               className="h-7 px-2 text-xs"
-              onClick={() => setCurrentIndex((prev) => (prev - 1 + items.length) % items.length)}
+              onClick={() =>
+                setCurrentIndex(
+                  (prev) => (prev - 1 + items.length) % items.length,
+                )
+              }
             >
               ←
             </Button>
@@ -879,7 +1168,9 @@ function NoticeBoardECE() {
               variant="outline"
               size="sm"
               className="h-7 px-2 text-xs"
-              onClick={() => setCurrentIndex((prev) => (prev + 1) % items.length)}
+              onClick={() =>
+                setCurrentIndex((prev) => (prev + 1) % items.length)
+              }
             >
               →
             </Button>
@@ -901,7 +1192,8 @@ function NoticeBoardECE() {
               </span>
             </h2>
             <p className="max-w-2xl text-sm text-foreground sm:text-base font-body">
-              Stay updated with upcoming events, news, and important announcements from the ECE department.
+              Stay updated with upcoming events, news, and important
+              announcements from the ECE department.
             </p>
           </div>
           <Badge className="w-fit rounded-full bg-brand-blue/15 px-4 py-2 text-xs font-semibold text-brand-blue border border-brand-blue/20">
@@ -911,16 +1203,30 @@ function NoticeBoardECE() {
 
         <div className="grid lg:grid-cols-2 gap-8">
           <div>
-            {renderCarousel("Events", events, "blue", currentEventIndex, setCurrentEventIndex)}
+            {renderCarousel(
+              "Events",
+              events,
+              "blue",
+              currentEventIndex,
+              setCurrentEventIndex,
+            )}
           </div>
           <div>
-            {renderCarousel("News", news, "orange", currentNewsIndex, setCurrentNewsIndex)}
+            {renderCarousel(
+              "News",
+              news,
+              "orange",
+              currentNewsIndex,
+              setCurrentNewsIndex,
+            )}
           </div>
         </div>
 
         <div className="space-y-4">
           <div className="flex items-center gap-2 px-4 py-3 rounded-xl border-l-4 border-brand-blue bg-brand-blue/10">
-            <h3 className="headline-4 font-display text-brand-blue">Announcements</h3>
+            <h3 className="headline-4 font-display text-brand-blue">
+              Announcements
+            </h3>
             <Badge className="ml-auto text-xs">{announcements.length}</Badge>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
@@ -932,7 +1238,9 @@ function NoticeBoardECE() {
                 >
                   <CardHeader className="pb-2">
                     <div className="flex items-start justify-between gap-2 mb-2">
-                      <span className="text-xs font-semibold text-foreground/60">{notice.date}</span>
+                      <span className="text-xs font-semibold text-foreground/60">
+                        {notice.date}
+                      </span>
                       {notice.link && (
                         <Button
                           variant="ghost"
@@ -940,7 +1248,11 @@ function NoticeBoardECE() {
                           className="h-6 px-2 text-xs bg-brand-blue/10 text-brand-blue hover:bg-brand-blue/20"
                           asChild
                         >
-                          <a href={notice.link} target="_blank" rel="noreferrer">
+                          <a
+                            href={notice.link}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
                             <Download className="h-3 w-3" />
                           </a>
                         </Button>
@@ -951,12 +1263,16 @@ function NoticeBoardECE() {
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="pt-0">
-                    <p className="text-xs text-foreground/70 line-clamp-2">{notice.description}</p>
+                    <p className="text-xs text-foreground/70 line-clamp-2">
+                      {notice.description}
+                    </p>
                   </CardContent>
                 </Card>
               ))
             ) : (
-              <p className="text-xs text-foreground/60 italic col-span-full p-4 text-center">No announcements to display</p>
+              <p className="text-xs text-foreground/60 italic col-span-full p-4 text-center">
+                No announcements to display
+              </p>
             )}
           </div>
         </div>
@@ -972,8 +1288,10 @@ function CurriculumLibraryECE() {
     {
       id: "btech",
       label: "B.Tech Curriculum",
-      description: "4-year undergraduate pathway with electronics and communication specializations",
-      image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=400&fit=crop",
+      description:
+        "4-year undergraduate pathway with electronics and communication specializations",
+      image:
+        "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=400&fit=crop",
       batches: [
         {
           year: "2025-26",
@@ -989,13 +1307,15 @@ function CurriculumLibraryECE() {
         },
         {
           year: "2027-28",
-          summary: "Signal processing specialization with Bosch ETAS partnership",
+          summary:
+            "Signal processing specialization with Bosch ETAS partnership",
           documentUrl:
             "https://www.dsu.edu.in/images/Engineering/ECE-dept/curriculum/BTech-ECE-Curriculum-2027-28.pdf",
         },
         {
           year: "2028-29",
-          summary: "5G technologies, wireless communication, and capstone design projects",
+          summary:
+            "5G technologies, wireless communication, and capstone design projects",
           documentUrl:
             "https://www.dsu.edu.in/images/Engineering/ECE-dept/curriculum/BTech-ECE-Curriculum-2028-29.pdf",
         },
@@ -1004,8 +1324,10 @@ function CurriculumLibraryECE() {
     {
       id: "mtech",
       label: "M.Tech Curriculum",
-      description: "2-year postgraduate program in embedded systems and VLSI design",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
+      description:
+        "2-year postgraduate program in embedded systems and VLSI design",
+      image:
+        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
       batches: [
         {
           year: "2025-26",
@@ -1027,7 +1349,8 @@ function CurriculumLibraryECE() {
         },
         {
           year: "2028-29",
-          summary: "IoT systems, edge computing, and thesis publication support",
+          summary:
+            "IoT systems, edge computing, and thesis publication support",
           documentUrl:
             "https://www.dsu.edu.in/images/Engineering/ECE-dept/curriculum/MTech-ECE-Curriculum-2028-29.pdf",
         },
@@ -1047,7 +1370,9 @@ function CurriculumLibraryECE() {
               </span>
             </h2>
             <p className="max-w-2xl text-sm text-foreground sm:text-base font-body">
-              Explore comprehensive curriculum packs for B.Tech and M.Tech programs. Access detailed course structures, learning outcomes, and downloadable syllabi.
+              Explore comprehensive curriculum packs for B.Tech and M.Tech
+              programs. Access detailed course structures, learning outcomes,
+              and downloadable syllabi.
             </p>
           </div>
           <Badge className="w-fit rounded-full bg-brand-blue/15 px-4 py-2 text-xs font-semibold text-brand-blue border border-brand-blue/20">
@@ -1087,8 +1412,12 @@ function CurriculumLibraryECE() {
                     </Badge>
                   </div>
                   <div>
-                    <h3 className="headline-3 font-display text-foreground mb-2">{program.label}</h3>
-                    <p className="text-sm text-foreground/80 font-body">{program.description}</p>
+                    <h3 className="headline-3 font-display text-foreground mb-2">
+                      {program.label}
+                    </h3>
+                    <p className="text-sm text-foreground/80 font-body">
+                      {program.description}
+                    </p>
                   </div>
                   <Button
                     variant="outline"
@@ -1114,7 +1443,9 @@ function CurriculumLibraryECE() {
                         >
                           <div className="flex items-start justify-between gap-2 mb-2">
                             <div className="flex items-center gap-2">
-                              <Badge className={`rounded-full border text-xs ${isProgramBtech ? "bg-brand-orange/20 text-brand-orange border-brand-orange/30" : "bg-brand-blue/20 text-brand-blue border-brand-blue/30"}`}>
+                              <Badge
+                                className={`rounded-full border text-xs ${isProgramBtech ? "bg-brand-orange/20 text-brand-orange border-brand-orange/30" : "bg-brand-blue/20 text-brand-blue border-brand-blue/30"}`}
+                              >
                                 <CalendarDays className="h-3 w-3 mr-1" />
                                 {batch.year}
                               </Badge>
@@ -1126,7 +1457,9 @@ function CurriculumLibraryECE() {
                               )}
                             </div>
                           </div>
-                          <p className="text-xs text-foreground/80 font-body mb-3 leading-relaxed">{batch.summary}</p>
+                          <p className="text-xs text-foreground/80 font-body mb-3 leading-relaxed">
+                            {batch.summary}
+                          </p>
                           {batch.documentUrl && (
                             <Button
                               variant="ghost"
@@ -1138,7 +1471,12 @@ function CurriculumLibraryECE() {
                               }`}
                               asChild
                             >
-                              <a href={batch.documentUrl} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-1">
+                              <a
+                                href={batch.documentUrl}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="flex items-center justify-center gap-1"
+                              >
                                 <Download className="h-3 w-3" />
                                 PDF
                               </a>
