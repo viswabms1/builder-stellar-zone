@@ -309,8 +309,8 @@ export default function History() {
               "School of Health Sciences",
               "School of Law",
               "School of Commerce & Management",
-              "School of Applied Sciences",
-              "School of Design",
+              "School of Basic & Applied Sciences",
+              "School of Design & Digital Trans-Media",
               "School of Media & Communication",
               "Computer Applications",
             ].map((discipline, index) => (
