@@ -230,11 +230,11 @@ export const translations = {
       centresExcellence: "Centers of Excellence",
     },
     journalismPage: {
-      title: "School of Journalism & Mass Communication",
+      title: "School of Arts, Design & Humanities",
       tagline: "Storytellers for the Now & Next",
       deanName: "Dr. K Sai Prasad",
       deanTitle: "Professor & Dean",
-      deanPosition: "Dean, School of Journalism & Mass Communication",
+      deanPosition: "Dean, School of Arts, Design & Humanities",
       academicPathways: "Academic Pathways in Media & Communication",
       academicPathwaysDesc:
         "Comprehensive programme combining rigorous academics with multimedia storytelling, broadcast production, global collaborations and real-world reporting experience to prepare industry-ready communicators.",
