@@ -513,7 +513,7 @@ export default function Navigation() {
         departments: [],
       },
       {
-        name: "Medical Education & Research (CDSIMER)",
+        name: "Dr. Chandramma Dayananda Sagar Institute of Medical Education & Research (CDSIMER)",
         href: "https://cdsimer.edu.in",
         departments: [],
         external: true,
