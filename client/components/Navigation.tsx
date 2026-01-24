@@ -831,7 +831,7 @@ export default function Navigation() {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center gap-0 justify-between w-full px-0 py-2">
+            <div className="hidden lg:flex items-center gap-8 justify-center w-full px-0 py-2">
               {navigation.map((item, idx) => {
                 const active = !item.external && isActive(item.href);
                 const isAbout = item.href === "/about";
