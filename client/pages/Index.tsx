@@ -870,10 +870,10 @@ export default function Index() {
 
                   {/* Content Container */}
                   <div
-                    className={`${style.bg} ${style.border} border border-t-0 rounded-none p-2 flex flex-col ${school.key === 'medical' ? 'justify-between' : 'justify-center'} items-center h-24 w-full backdrop-blur-sm`}
+                    className={`${style.bg} ${style.border} border border-t-0 rounded-none p-2 flex flex-col ${school.key === 'medical' ? 'justify-between' : 'justify-center'} items-center ${school.key === 'medical' ? 'sm:h-24 md:h-24 h-28' : 'h-24'} w-full backdrop-blur-sm`}
                   >
                     <div className={`text-center ${school.key === 'medical' ? 'space-y-0.5' : 'space-y-1.5'}`}>
-                      <h3 className={`${school.key === 'medical' ? 'text-xs md:text-sm leading-snug' : 'text-base md:text-lg'} font-bold text-foreground font-display hover:text-brand-magenta transition-colors text-center ${school.key === 'medical' ? 'line-clamp-3' : 'line-clamp-2'}`}>
+                      <h3 className={`${school.key === 'medical' ? 'text-[8px] sm:text-xs md:text-sm leading-snug' : 'text-base md:text-lg'} font-bold text-foreground font-display hover:text-brand-magenta transition-colors text-center ${school.key === 'medical' ? 'line-clamp-4' : 'line-clamp-2'}`}>
                         {school.title}
                       </h3>
                     </div>
