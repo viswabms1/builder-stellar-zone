@@ -797,12 +797,17 @@ export default function Navigation() {
       {/* Main Navigation Bar */}
       <nav
         ref={navBarRef}
-        className={`sticky top-0 z-[10002] overflow-visible shadow-md ${
+        className={`${isNavFixed ? "fixed top-0 left-0 right-0" : ""} z-[10002] overflow-visible shadow-md ${
           theme === "light"
             ? "bg-white/95 backdrop-blur-sm border-b-2 border-orange-200/50"
             : "bg-slate-950/95 backdrop-blur-sm border-b-2 border-orange-600/30"
         }`}
       >
+
+      {/* Spacer when nav is fixed to prevent layout shift */}
+      {isNavFixed && (
+        <div style={{ height: navBarHeight }} aria-hidden="true" />
+      )}
         <div className="w-full overflow-visible">
           <div className="flex flex-row items-center justify-between py-2 lg:py-0 lg:flex-col lg:items-center lg:justify-center lg:flex-row">
             {/* Mobile Logo - Left side */}
