@@ -16,6 +16,7 @@ import { useState, useEffect, useRef } from "react";
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
+  const [topBarHeight, setTopBarHeight] = useState(0);
   const [aboutMenuOpen, setAboutMenuOpen] = useState(false);
   const [academicsMenuOpen, setAcademicsMenuOpen] = useState(false);
   const [alumniMenuOpen, setAlumniMenuOpen] = useState(false);
@@ -38,6 +39,7 @@ export default function Navigation() {
     null,
   );
   const internationalAdmissionsButtonRef = useRef<HTMLAnchorElement>(null);
+  const topBarRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
   const { theme } = useTheme();
 
@@ -134,6 +136,16 @@ export default function Navigation() {
       };
     }
   }, [internationalAdmissionsMenuOpen]);
+
+  useEffect(() => {
+    const updateTopBarHeight = () => {
+      setTopBarHeight(topBarRef.current?.offsetHeight ?? 0);
+    };
+
+    updateTopBarHeight();
+    window.addEventListener("resize", updateTopBarHeight);
+    return () => window.removeEventListener("resize", updateTopBarHeight);
+  }, []);
 
   // Reset expandedSubGroups when academics menu closes
   useEffect(() => {
@@ -552,6 +564,7 @@ export default function Navigation() {
     <>
       {/* Top Menu Bar - Hidden on mobile/tablet portrait, shown on larger screens */}
       <div
+        ref={topBarRef}
         className={`hidden lg:flex sticky top-0 z-[10001] transition-all duration-300 items-center ${
           theme === "light"
             ? "bg-gradient-to-r from-orange-50 to-white border-b-2 border-orange-200/50"
@@ -766,11 +779,14 @@ export default function Navigation() {
 
       {/* Main Navigation Bar */}
       <nav
-        className={`fixed top-0 left-0 right-0 z-[9997] transition-all duration-300 overflow-visible shadow-md ${
+        className={`sticky z-[9997] transition-all duration-300 overflow-visible shadow-md ${
           theme === "light"
             ? "bg-white/95 backdrop-blur-sm border-b-2 border-orange-200/50"
             : "bg-slate-950/95 backdrop-blur-sm border-b-2 border-orange-600/30"
         }`}
+        style={{
+          top: topBarHeight,
+        }}
       >
         <div className="w-full overflow-visible">
           <div className="flex flex-row items-center justify-between py-2 lg:py-0 lg:flex-col lg:items-center lg:justify-center lg:flex-row">
