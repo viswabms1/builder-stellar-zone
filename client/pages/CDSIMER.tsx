@@ -498,8 +498,7 @@ export default function CDSIMER() {
               Holistic Medical Ecosystem
             </h2>
             <p className="mt-3 text-sm text-foreground font-body max-w-3xl mx-auto">
-              CDSIMER unifies medical education, hospital services, research
-              innovation and vibrant student life on a single connected campus.
+              The Dr. Chandramma Dayananda Sagar Institute of Medical Education & Research (CDSIMER) unifies medical education, hospital services, research innovation and vibrant student life on a single connected campus.
             </p>
           </div>
           <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
