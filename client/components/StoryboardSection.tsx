@@ -57,7 +57,7 @@ export function StoryboardSection() {
               DSU Special
             </span>
           </h2>
-          <p className="subheadline text-foreground max-w-2xl mx-auto font-display">
+          <p className="subheadline text-foreground max-w-2xl mx-auto">
             Three stories that define who we are and why students choose DSU
           </p>
         </div>
@@ -119,7 +119,7 @@ export function StoryboardSection() {
           <h3 className="headline-2 mb-6 text-foreground">
             Ready to Be Part of Our Story?
           </h3>
-          <p className="subheadline text-foreground/80 mb-6 max-w-2xl mx-auto font-display">
+          <p className="subheadline text-foreground/80 mb-6 max-w-2xl mx-auto">
             Join thousands of students who have chosen DSU to transform their futures through AI-integrated education.
           </p>
           <a href="https://admissions.dsu.edu.in/" target="_blank" rel="noreferrer">
