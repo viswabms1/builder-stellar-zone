@@ -462,8 +462,8 @@ export default function SoENewsletter() {
 
         {/* CTA Section */}
         <div className="mt-16 text-center p-8 rounded-xl bg-gradient-to-r from-brand-magenta/10 via-brand-blue/10 to-brand-orange/10 border border-brand-magenta/20">
-          <h3 className="text-2xl font-bold mb-3 font-display">Ready to Explore?</h3>
-          <p className="text-foreground/70 mb-6 max-w-2xl mx-auto font-body">
+          <h3 className="headline-3 mb-6 font-display">Ready to Explore?</h3>
+          <p className="subheadline text-foreground/70 mb-6 max-w-2xl mx-auto font-body">
             Download the latest SOE Bulletin and stay updated with everything happening in the School of Engineering
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
