@@ -133,7 +133,7 @@ export default function StudyInIndia() {
                 href: "/academics/humanities-social-sciences",
               },
               {
-                title: "School of Design and Digital Trans-media",
+                title: "School of Design & Digital Trans-Media",
                 description: "Bringing creativity to reality.",
                 color: "violet",
                 href: "/academics/design/bdesign",
