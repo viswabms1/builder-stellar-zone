@@ -425,7 +425,7 @@ export default function Navigation() {
         departments: [],
       },
       {
-        name: "School of Applied Sciences",
+        name: "School of Basic & Applied Sciences",
         href: "/academics/basic-applied-sciences",
         hasSubGroups: true,
         subGroups: [
