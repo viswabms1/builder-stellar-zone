@@ -41,7 +41,7 @@ export default function LibraryConstituentLibraries() {
     },
     {
       name: "Science & Technology Library",
-      location: "School of Applied Sciences Building",
+      location: "School of Basic & Applied Sciences Building",
       description:
         "Dedicated facility for science and research resources",
       features: [
