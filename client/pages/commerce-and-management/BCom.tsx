@@ -320,7 +320,7 @@ export default function BCom() {
       <section className="px-6 py-16">
         <div className="mx-auto max-w-5xl text-center">
           <h2 className="headline-2 mb-6">Ready to Shape Your Career?</h2>
-          <p className="subheadline text-foreground/80 mb-8 max-w-2xl mx-auto font-display">
+          <p className="subheadline text-foreground/80 mb-8 max-w-2xl mx-auto">
             Join DSU's B.Com program and gain the expertise and credentials needed for success in the global business landscape.
           </p>
           <a href="https://admissions.dsu.edu.in/" target="_blank" rel="noreferrer">
