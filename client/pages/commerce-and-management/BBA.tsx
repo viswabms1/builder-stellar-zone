@@ -307,8 +307,8 @@ export default function BBA() {
       {/* CTA Section */}
       <section className="px-6 py-16">
         <div className="mx-auto max-w-5xl text-center">
-          <h2 className="text-3xl font-bold font-display mb-6">Ready to Lead with Excellence?</h2>
-          <p className="text-lg text-foreground/80 mb-8 max-w-2xl mx-auto">
+          <h2 className="headline-2 mb-6">Ready to Lead with Excellence?</h2>
+          <p className="subheadline text-foreground/80 mb-8 max-w-2xl mx-auto font-display">
             Join DSU's BBA program and develop the skills, knowledge, and mindset needed to become an effective business leader.
           </p>
           <a href="https://admissions.dsu.edu.in/" target="_blank" rel="noreferrer">
