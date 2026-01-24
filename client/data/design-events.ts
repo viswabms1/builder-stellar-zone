@@ -20,7 +20,7 @@ const DESIGN_EVENTS: NoticeItem[] = [
     image:
       "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=300&fit=crop",
     link: "https://www.dsu.edu.in/images/BDesign/notices/DesignThinking.pdf",
-    department: "School of Design",
+    department: "School of Design & Digital Trans-Media",
   },
   {
     id: "design-event-2",
@@ -31,7 +31,7 @@ const DESIGN_EVENTS: NoticeItem[] = [
       "Professional training on sustainable design practices, eco-friendly materials, and circular design principles.",
     image:
       "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=300&fit=crop",
-    department: "School of Design",
+    department: "School of Design & Digital Trans-Media",
   },
   {
     id: "design-event-3",
@@ -42,7 +42,7 @@ const DESIGN_EVENTS: NoticeItem[] = [
       "Industry critique session with design professionals reviewing student portfolios and providing feedback.",
     image:
       "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=300&fit=crop",
-    department: "School of Design",
+    department: "School of Design & Digital Trans-Media",
   },
   {
     id: "design-event-4",
@@ -53,7 +53,7 @@ const DESIGN_EVENTS: NoticeItem[] = [
       "Annual showcase of student design projects and innovations in product design, communication, and experience design.",
     image:
       "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=300&fit=crop",
-    department: "School of Design",
+    department: "School of Design & Digital Trans-Media",
   },
 ];
 
@@ -67,7 +67,7 @@ const DESIGN_NEWS: NoticeItem[] = [
       "DSU design students' sustainable product design wins gold at international design competition.",
     image:
       "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=300&fit=crop",
-    department: "School of Design",
+    department: "School of Design & Digital Trans-Media",
   },
   {
     id: "design-news-2",
@@ -78,7 +78,7 @@ const DESIGN_NEWS: NoticeItem[] = [
       "New collaboration with leading tech companies bringing real-world design projects to students.",
     image:
       "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=300&fit=crop",
-    department: "School of Design",
+    department: "School of Design & Digital Trans-Media",
   },
   {
     id: "design-news-3",
@@ -89,7 +89,7 @@ const DESIGN_NEWS: NoticeItem[] = [
       "New state-of-the-art design studios with 3D printing, prototyping labs, and digital fabrication equipment now available.",
     image:
       "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=300&fit=crop",
-    department: "School of Design",
+    department: "School of Design & Digital Trans-Media",
   },
 ];
 
@@ -101,7 +101,7 @@ const DESIGN_ANNOUNCEMENTS: NoticeItem[] = [
     date: "Dec 28, 2024",
     description:
       "Registration deadline has been extended to January 20, 2025. All students must complete registration by this date.",
-    department: "School of Design",
+    department: "School of Design & Digital Trans-Media",
   },
   {
     id: "design-announce-2",
@@ -110,7 +110,7 @@ const DESIGN_ANNOUNCEMENTS: NoticeItem[] = [
     date: "Dec 22, 2024",
     description:
       "Summer internship opportunities with leading design studios and companies. Apply by January 15, 2025.",
-    department: "School of Design",
+    department: "School of Design & Digital Trans-Media",
   },
   {
     id: "design-announce-3",
@@ -119,7 +119,7 @@ const DESIGN_ANNOUNCEMENTS: NoticeItem[] = [
     date: "Dec 20, 2024",
     description:
       "Final design projects and portfolios due by January 31, 2025. Guidelines available on student portal.",
-    department: "School of Design",
+    department: "School of Design & Digital Trans-Media",
   },
   {
     id: "design-announce-4",
@@ -128,7 +128,7 @@ const DESIGN_ANNOUNCEMENTS: NoticeItem[] = [
     date: "Dec 14, 2024",
     description:
       "Annual student design exhibition showcasing best works from all specialization tracks. Mark your calendars!",
-    department: "School of Design",
+    department: "School of Design & Digital Trans-Media",
   },
 ];
 
