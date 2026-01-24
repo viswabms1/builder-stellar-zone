@@ -1874,11 +1874,6 @@ export default function Navigation() {
         <SearchDialog open={searchOpen} onOpenChange={setSearchOpen} />
       </nav>
 
-      {/* Spacer to prevent layout shift from fixed nav bar */}
-      <div
-        style={{ height: navBarHeight }}
-        aria-hidden="true"
-      />
     </>
   );
 }
