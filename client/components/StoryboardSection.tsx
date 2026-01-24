@@ -116,10 +116,10 @@ export function StoryboardSection() {
 
         {/* Bottom CTA Banner */}
         <div className="bg-gradient-to-r from-brand-orange/10 via-brand-blue/10 to-brand-magenta/10 rounded-2xl p-8 md:p-12 border border-brand-orange/20 text-center">
-          <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4 font-display">
+          <h3 className="headline-2 mb-6 text-foreground">
             Ready to Be Part of Our Story?
           </h3>
-          <p className="text-foreground/80 mb-6 max-w-2xl mx-auto">
+          <p className="subheadline text-foreground/80 mb-6 max-w-2xl mx-auto font-display">
             Join thousands of students who have chosen DSU to transform their futures through AI-integrated education.
           </p>
           <a href="https://admissions.dsu.edu.in/" target="_blank" rel="noreferrer">
