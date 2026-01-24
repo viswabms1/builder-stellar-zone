@@ -250,7 +250,7 @@ export default function BAJournalism() {
               </div>
               <CardHeader>
                 <CardTitle className="font-display">Program Contact</CardTitle>
-                <CardDescription className="font-body">School of Journalism & Mass Communication</CardDescription>
+                <CardDescription className="font-body">School of Arts, Design & Humanities</CardDescription>
               </CardHeader>
               <CardContent className="grid gap-2 text-sm font-body">
                 <div className="flex items-center justify-between"><span>Email</span><a className="font-medium hover:underline" href="mailto:cjmc@dsu.edu.in">cjmc@dsu.edu.in</a></div>
