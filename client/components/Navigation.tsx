@@ -451,7 +451,7 @@ export default function Navigation() {
         departments: [],
       },
       {
-        name: "School of Design",
+        name: "School of Design & Digital Trans-Media",
         href: "/academics/design/bdesign",
         hasSubGroups: true,
         subGroups: [
