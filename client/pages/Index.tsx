@@ -470,7 +470,7 @@ export default function Index() {
       href: "/academics/design/bdesign",
       image:
         "https://images.pexels.com/photos/7147711/pexels-photo-7147711.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
-      title: "School of Design",
+      title: "School of Design & Digital Trans-Media",
       campus: "City Innovation Campus",
       description: "",
       programs: ["Animation", "UX/UI", "Graphic Design", "Digital Media"],
