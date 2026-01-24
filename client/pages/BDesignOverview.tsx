@@ -867,7 +867,7 @@ export default function BDesignOverview() {
                 </CardHeader>
                 <CardContent className="flex flex-col gap-3">
                   <p className="text-sm text-foreground/80 font-body">
-                    Join DSU School of Design and shape human-centered solutions
+                    Join DSU School of Design & Digital Trans-Media and shape human-centered solutions
                   </p>
                   <span className="inline-flex items-center gap-2 text-xs font-medium text-brand-magenta group-hover:text-brand-magenta/80 transition-colors">
                     Apply Now
