@@ -870,7 +870,7 @@ export default function Index() {
 
                   {/* Content Container */}
                   <div
-                    className={`${style.bg} ${style.border} border border-t-0 rounded-none p-3 flex flex-col justify-center items-center h-24 w-full backdrop-blur-sm`}
+                    className={`${style.bg} ${style.border} border border-t-0 rounded-none p-3 flex flex-col justify-start items-center h-24 w-full backdrop-blur-sm pt-1`}
                   >
                     <div className="text-center space-y-1.5">
                       <h3 className="text-base md:text-lg font-bold text-foreground font-display hover:text-brand-magenta transition-colors text-center line-clamp-2">
