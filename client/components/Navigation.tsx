@@ -817,7 +817,7 @@ export default function Navigation() {
                 const active = !item.external && isActive(item.href);
                 const isAbout = item.href === "/about";
                 const isAcademics = item.href === "/academics";
-                const sharedClasses = `flex items-center space-x-0 px-[0.1rem] py-1 rounded-lg text-[0.62rem] font-medium font-display transition-all duration-200 group flex-shrink ${
+                const sharedClasses = `flex items-center space-x-1 px-2 py-1.5 rounded-lg text-sm font-medium font-display transition-all duration-200 group flex-shrink ${
                   theme === "light"
                     ? active ||
                       (isAbout && aboutMenuOpen) ||
