@@ -878,7 +878,7 @@ export default function Index() {
                       </h3>
                     </div>
                     {school.campus && (
-                      <p className={`${school.key === 'medical' ? 'text-[7px] py-0.5 px-1' : 'text-xs py-0.5 px-2'} font-semibold text-foreground/70 bg-foreground/10 rounded-full inline-block`}>
+                      <p className={`${school.key === 'medical' ? 'text-[9px] py-0.5 px-1.5' : 'text-xs py-0.5 px-2'} font-semibold text-foreground/70 bg-foreground/10 rounded-full inline-block`}>
                         {school.campus}
                       </p>
                     )}
