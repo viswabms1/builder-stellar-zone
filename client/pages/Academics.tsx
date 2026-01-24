@@ -86,7 +86,7 @@ export default function Academics() {
     },
     {
       icon: FlaskConical,
-      title: "School of Applied Sciences",
+      title: "School of Basic & Applied Sciences",
       campus: "City Innovation Campus",
       image:
         "https://images.pexels.com/photos/9628799/pexels-photo-9628799.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
