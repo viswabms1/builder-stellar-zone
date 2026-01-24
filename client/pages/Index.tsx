@@ -509,7 +509,7 @@ export default function Index() {
       href: "https://dsuonline.com/",
       image:
         "https://images.pexels.com/photos/7974355/pexels-photo-7974355.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
-      title: "DSU Online",
+      title: "Online Degree Programs",
       campus: "City Innovation Campus",
       description: "",
       programs: [
