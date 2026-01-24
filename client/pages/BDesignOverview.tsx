@@ -779,7 +779,7 @@ export default function BDesignOverview() {
         <div className="mx-auto max-w-7xl">
           <div className="mb-6 text-center">
             <h2 className="font-display text-3xl md:text-4xl">
-              Explore More at DSU School of Design
+              Explore More at DSU School of Design & Digital Trans-Media
             </h2>
             <p className="mt-3 text-sm text-foreground font-body">
               Discover our design studios, innovation labs, placements and
