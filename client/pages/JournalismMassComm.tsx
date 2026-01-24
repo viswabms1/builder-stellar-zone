@@ -387,7 +387,7 @@ const FEATURED_NEWS: NewsItem[] = [
 const DEAN_INFO: DeanInfo = {
   name: "Dr. K Sai Prasad",
   title: "Professor & Dean",
-  position: "Dean, School of Journalism & Mass Communication",
+  position: "Dean, School of Arts, Design & Humanities",
   photo:
     "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F71f29d6bd6b5411ab1eb11bd6367da53?format=webp&width=800",
   videoUrl:
