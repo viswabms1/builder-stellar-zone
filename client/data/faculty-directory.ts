@@ -59,7 +59,7 @@ export const facultySchoolsMeta: FacultySchoolMeta[] = [
   },
   {
     id: "medical",
-    name: "Medical Education & Research",
+    name: "Dr. Chandramma Dayananda Sagar Institute of Medical Education & Research",
     description:
       "Medical education and translational research bridging clinical excellence, community engagement and innovative healthcare delivery.",
     href: "/academics/medical-education-research",
