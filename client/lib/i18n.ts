@@ -84,7 +84,7 @@ export const translations = {
         ],
       },
       medical: {
-        title: "Medical Education & Research",
+        title: "Dr. Chandramma Dayananda Sagar Institute of Medical Education & Research",
         programs: ["MBBS", "MD", "DM", "Fellowship"],
       },
     },
