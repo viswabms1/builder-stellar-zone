@@ -483,7 +483,7 @@ export default function Index() {
       href: "/academics/journalism-mass-communication",
       image:
         "https://images.pexels.com/photos/7317291/pexels-photo-7317291.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
-      title: "School of Journalism & Mass Communication",
+      title: "School of Arts, Design & Humanities",
       campus: "City Innovation Campus",
       description: "",
       programs: ["BJMC", "PG Diploma", "Documentary", "Digital Media"],
