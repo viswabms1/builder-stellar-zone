@@ -32,7 +32,7 @@ export function CampusLocationsSection() {
         "School of Basic & Applied Sciences",
         "School of Design & Digital Trans-Media",
         "School of Arts, Design & Humanities",
-        "DSU Online",
+        "Online Degree Programs",
       ],
       mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.9847558046286!2d77.6312!3d12.9352!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1581c1c1c1c1%3A0x1c1c1c1c1c1c1c1c!2sKudlu%20Gate%2C%20Hosur%20Road%2C%20Bengaluru!5e0!3m2!1sen!2sin!4v1234567890",
       directionsUrl: "https://maps.app.goo.gl/KudluGateCampus",
