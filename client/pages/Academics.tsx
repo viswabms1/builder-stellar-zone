@@ -130,7 +130,8 @@ export default function Academics() {
     },
     {
       icon: Microscope,
-      title: "Dr. Chandramma Dayananda Sagar Institute of Medical Education & Research",
+      title:
+        "Dr. Chandramma Dayananda Sagar Institute of Medical Education & Research",
       campus: "Main Campus",
       image:
         "https://images.pexels.com/photos/5726794/pexels-photo-5726794.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",

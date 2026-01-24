@@ -1,7 +1,13 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import {
   CalendarDays,
@@ -53,7 +59,10 @@ export default function BAJournalism() {
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero */}
       <section className="relative">
-        <div className="h-[50vh] sm:h-[65vh] md:h-[65vh] w-full overflow-hidden" style={{ minHeight: '200px' }}>
+        <div
+          className="h-[50vh] sm:h-[65vh] md:h-[65vh] w-full overflow-hidden"
+          style={{ minHeight: "200px" }}
+        >
           <img
             src="https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fc027ba151bfe4b128709651c407602fd?format=webp&width=800"
             alt="BA Journalism Program"
@@ -62,19 +71,31 @@ export default function BAJournalism() {
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
         </div>
-        <div className="absolute inset-0 flex items-start md:items-center md:pt-0 z-10" style={{ marginTop: '80px' }}>
+        <div
+          className="absolute inset-0 flex items-start md:items-center md:pt-0 z-10"
+          style={{ marginTop: "80px" }}
+        >
           <div className="max-w-7xl mx-auto px-3">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-brand-magenta/10 rounded-full border border-brand-magenta/20 mb-4">
               <Sparkles className="w-4 h-4 text-brand-magenta" />
-              <span className="text-xs sm:text-sm font-medium text-white font-display">Bachelor of Arts in Journalism & Mass Communication</span>
+              <span className="text-xs sm:text-sm font-medium text-white font-display">
+                Bachelor of Arts in Journalism & Mass Communication
+              </span>
             </div>
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white leading-tight font-display font-bold">Bachelor of Arts in Journalism & Mass Communication</h1>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white leading-tight font-display font-bold">
+              Bachelor of Arts in Journalism & Mass Communication
+            </h1>
             <p className="subheadline text-white/90 max-w-2xl mt-3 font-body">
-              A comprehensive three-year program designed to transform you into a skilled storyteller across multimedia platforms with industry expertise.
+              A comprehensive three-year program designed to transform you into
+              a skilled storyteller across multimedia platforms with industry
+              expertise.
             </p>
             <div className="mt-6 hidden sm:flex flex-wrap gap-2">
               {specializations.map((s, i) => (
-                <span key={i} className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-white text-xs backdrop-blur">
+                <span
+                  key={i}
+                  className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-white text-xs backdrop-blur"
+                >
                   <s.icon className="w-3.5 h-3.5" /> {s.label}
                 </span>
               ))}
@@ -85,7 +106,9 @@ export default function BAJournalism() {
                 target="_blank"
                 rel="noreferrer"
               >
-                <Button className="bg-brand-gradient text-foreground">Apply Now <GraduationCap className="w-4 h-4 ml-2" /></Button>
+                <Button className="bg-brand-gradient text-foreground">
+                  Apply Now <GraduationCap className="w-4 h-4 ml-2" />
+                </Button>
               </a>
             </div>
           </div>
@@ -97,7 +120,9 @@ export default function BAJournalism() {
         <div className="max-w-6xl mx-auto">
           <div className="mb-8">
             <h2 className="headline-2 font-display mb-2">Program Overview</h2>
-            <p className="text-foreground/80 font-body">Master the art and science of storytelling</p>
+            <p className="text-foreground/80 font-body">
+              Master the art and science of storytelling
+            </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {/* BA Journalism Program */}
@@ -105,16 +130,33 @@ export default function BAJournalism() {
               <CardHeader>
                 <div className="flex items-center gap-2 mb-2">
                   <GraduationCap className="w-5 h-5 text-brand-magenta" />
-                  <Badge className="bg-brand-magenta/20 text-brand-magenta border-brand-magenta/30">Undergraduate</Badge>
+                  <Badge className="bg-brand-magenta/20 text-brand-magenta border-brand-magenta/30">
+                    Undergraduate
+                  </Badge>
                 </div>
-                <CardTitle className="font-display">BA Journalism & Mass Communication</CardTitle>
-                <CardDescription className="font-body">3-Year Program</CardDescription>
+                <CardTitle className="font-display">
+                  BA Journalism & Mass Communication
+                </CardTitle>
+                <CardDescription className="font-body">
+                  3-Year Program
+                </CardDescription>
               </CardHeader>
               <CardContent className="space-y-3">
-                <p className="text-sm text-foreground font-body">Comprehensive curriculum covering:</p>
+                <p className="text-sm text-foreground font-body">
+                  Comprehensive curriculum covering:
+                </p>
                 <div className="flex flex-wrap gap-2">
-                  {["Print Journalism", "Broadcast Media", "Digital Storytelling", "Filmmaking", "Media Ethics", "Public Relations"].map((spec, i) => (
-                    <Badge key={i} variant="secondary" className="text-xs">{spec}</Badge>
+                  {[
+                    "Print Journalism",
+                    "Broadcast Media",
+                    "Digital Storytelling",
+                    "Filmmaking",
+                    "Media Ethics",
+                    "Public Relations",
+                  ].map((spec, i) => (
+                    <Badge key={i} variant="secondary" className="text-xs">
+                      {spec}
+                    </Badge>
                   ))}
                 </div>
               </CardContent>
@@ -125,16 +167,32 @@ export default function BAJournalism() {
               <CardHeader>
                 <div className="flex items-center gap-2 mb-2">
                   <BookOpen className="w-5 h-5 text-brand-blue" />
-                  <Badge className="bg-brand-blue/20 text-brand-blue border-brand-blue/30">Key Features</Badge>
+                  <Badge className="bg-brand-blue/20 text-brand-blue border-brand-blue/30">
+                    Key Features
+                  </Badge>
                 </div>
-                <CardTitle className="font-display">Program Highlights</CardTitle>
-                <CardDescription className="font-body">What makes BA Journalism unique</CardDescription>
+                <CardTitle className="font-display">
+                  Program Highlights
+                </CardTitle>
+                <CardDescription className="font-body">
+                  What makes BA Journalism unique
+                </CardDescription>
               </CardHeader>
               <CardContent className="space-y-3">
-                <p className="text-sm text-foreground font-body">Industry-ready curriculum with:</p>
+                <p className="text-sm text-foreground font-body">
+                  Industry-ready curriculum with:
+                </p>
                 <div className="flex flex-wrap gap-2">
-                  {["Newsroom Labs", "Studio Production", "Field Reporting", "Internships", "Industry Partnerships"].map((feat, i) => (
-                    <Badge key={i} variant="secondary" className="text-xs">{feat}</Badge>
+                  {[
+                    "Newsroom Labs",
+                    "Studio Production",
+                    "Field Reporting",
+                    "Internships",
+                    "Industry Partnerships",
+                  ].map((feat, i) => (
+                    <Badge key={i} variant="secondary" className="text-xs">
+                      {feat}
+                    </Badge>
                   ))}
                 </div>
               </CardContent>
@@ -143,7 +201,9 @@ export default function BAJournalism() {
             {/* Quick Info */}
             <Card className="border border-border/50 bg-card/50 backdrop-blur-sm">
               <CardHeader>
-                <CardTitle className="text-lg font-display">Why Choose BA Journalism?</CardTitle>
+                <CardTitle className="text-lg font-display">
+                  Why Choose BA Journalism?
+                </CardTitle>
               </CardHeader>
               <CardContent className="space-y-2 text-sm font-body">
                 <div className="flex items-center gap-2">
@@ -174,23 +234,46 @@ export default function BAJournalism() {
             <h2 className="headline-3 font-display">Overview</h2>
             <div className="space-y-4 text-foreground leading-relaxed font-body">
               <p>
-                The BA Journalism & Mass Communication program is meticulously designed to nurture creative storytellers and thoughtful communicators. Spanning three years, this comprehensive curriculum blends theoretical knowledge with hands-on practical training in multimedia journalism, preparing students to excel in today's dynamic media landscape.
+                The BA Journalism & Mass Communication program is meticulously
+                designed to nurture creative storytellers and thoughtful
+                communicators. Spanning three years, this comprehensive
+                curriculum blends theoretical knowledge with hands-on practical
+                training in multimedia journalism, preparing students to excel
+                in today's dynamic media landscape.
               </p>
               <p>
-                In an age of unprecedented information flow and audience fragmentation, skilled journalists and communicators are more essential than ever. This program addresses the evolving needs of the media industry by immersing students in contemporary platforms—from traditional print and broadcast to cutting-edge digital media—while grounding them in timeless principles of ethical journalism and compelling storytelling.
+                In an age of unprecedented information flow and audience
+                fragmentation, skilled journalists and communicators are more
+                essential than ever. This program addresses the evolving needs
+                of the media industry by immersing students in contemporary
+                platforms—from traditional print and broadcast to cutting-edge
+                digital media—while grounding them in timeless principles of
+                ethical journalism and compelling storytelling.
               </p>
               <p>
-                Beyond technical proficiency in audio, video, photography, and writing, the program develops critical thinking, research skills, and the ability to engage with complex social issues. Students learn to work collaboratively in fast-paced editorial environments, adapt to emerging technologies, and maintain the ethical standards that define professional journalism.
+                Beyond technical proficiency in audio, video, photography, and
+                writing, the program develops critical thinking, research
+                skills, and the ability to engage with complex social issues.
+                Students learn to work collaboratively in fast-paced editorial
+                environments, adapt to emerging technologies, and maintain the
+                ethical standards that define professional journalism.
               </p>
             </div>
             <Card className="border border-border/50 bg-card/50 backdrop-blur-sm">
               <CardHeader className="pb-2">
-                <CardTitle className="text-lg font-display">Program Highlights</CardTitle>
-                <CardDescription className="font-body">Core curriculum focus areas</CardDescription>
+                <CardTitle className="text-lg font-display">
+                  Program Highlights
+                </CardTitle>
+                <CardDescription className="font-body">
+                  Core curriculum focus areas
+                </CardDescription>
               </CardHeader>
               <CardContent className="grid sm:grid-cols-2 gap-3 pt-0">
                 {highlights.map((h, idx) => (
-                  <div key={idx} className="flex items-start gap-2 text-sm text-foreground">
+                  <div
+                    key={idx}
+                    className="flex items-start gap-2 text-sm text-foreground"
+                  >
                     <CheckCircle2 className="w-4 h-4 text-brand-magenta mt-0.5" />
                     <span>{h}</span>
                   </div>
@@ -201,11 +284,17 @@ export default function BAJournalism() {
           <div>
             <Card className="overflow-hidden border border-border/50 bg-card/50">
               <div className="relative h-40">
-                <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=600&auto=format&fit=crop" alt="Journalism Labs" className="w-full h-full object-cover" />
+                <img
+                  src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=600&auto=format&fit=crop"
+                  alt="Journalism Labs"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <CardHeader>
                 <CardTitle className="font-display">Program Details</CardTitle>
-                <CardDescription className="font-body">Key specifications</CardDescription>
+                <CardDescription className="font-body">
+                  Key specifications
+                </CardDescription>
               </CardHeader>
               <CardContent className="grid gap-3 text-sm font-body">
                 <div className="flex items-center justify-between border-b border-border/20 pb-3">
@@ -234,7 +323,10 @@ export default function BAJournalism() {
             <Card className="border border-border/50 bg-card/50">
               <CardContent className="p-3 grid gap-3">
                 {careers.map((c, i) => (
-                  <div key={i} className="flex items-start gap-2 text-sm text-foreground font-body">
+                  <div
+                    key={i}
+                    className="flex items-start gap-2 text-sm text-foreground font-body"
+                  >
                     <ChevronRight className="w-3 h-3 text-brand-magenta mt-1" />
                     <span>{c}</span>
                   </div>
@@ -246,15 +338,32 @@ export default function BAJournalism() {
             <h2 className="headline-3 mb-4 font-display">Get in Touch</h2>
             <Card className="overflow-hidden border border-border/50 bg-card/50">
               <div className="relative h-40">
-                <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1200&auto=format&fit=crop" alt="Contact Journalism" className="w-full h-full object-cover" />
+                <img
+                  src="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1200&auto=format&fit=crop"
+                  alt="Contact Journalism"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <CardHeader>
                 <CardTitle className="font-display">Program Contact</CardTitle>
-                <CardDescription className="font-body">School of Arts, Design & Humanities</CardDescription>
+                <CardDescription className="font-body">
+                  School of Arts, Design & Humanities
+                </CardDescription>
               </CardHeader>
               <CardContent className="grid gap-2 text-sm font-body">
-                <div className="flex items-center justify-between"><span>Email</span><a className="font-medium hover:underline" href="mailto:cjmc@dsu.edu.in">cjmc@dsu.edu.in</a></div>
-                <div className="flex items-center justify-between"><span>Phone</span><span className="font-medium">+91-80-49092933</span></div>
+                <div className="flex items-center justify-between">
+                  <span>Email</span>
+                  <a
+                    className="font-medium hover:underline"
+                    href="mailto:cjmc@dsu.edu.in"
+                  >
+                    cjmc@dsu.edu.in
+                  </a>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span>Phone</span>
+                  <span className="font-medium">+91-80-49092933</span>
+                </div>
               </CardContent>
             </Card>
           </div>
@@ -272,7 +381,8 @@ export default function BAJournalism() {
               </span>
             </h2>
             <p className="text-foreground/80 font-body max-w-2xl mx-auto">
-              Discover research, placements, admission pathways, and Centers of Excellence at DSU
+              Discover research, placements, admission pathways, and Centers of
+              Excellence at DSU
             </p>
           </div>
 
@@ -378,15 +488,23 @@ export default function BAJournalism() {
       <section className="px-3 py-8">
         <div className="max-w-4xl mx-auto text-center">
           <div className="rounded-3xl p-5 border border-brand-magenta/20 bg-brand-magenta/5">
-            <h3 className="headline-3 mb-3 font-display">Join DSU BA Journalism</h3>
-            <p className="text-foreground mb-6 font-body">Explore programs, discover opportunities, and launch your career in journalism and mass communication.</p>
+            <h3 className="headline-3 mb-3 font-display">
+              Join DSU BA Journalism
+            </h3>
+            <p className="text-foreground mb-6 font-body">
+              Explore programs, discover opportunities, and launch your career
+              in journalism and mass communication.
+            </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a
                 href="https://admissions.dsu.edu.in/"
                 target="_blank"
                 rel="noreferrer"
               >
-                <Button className="bg-brand-gradient text-foreground">Apply Now<GraduationCap className="w-4 h-4 ml-2" /></Button>
+                <Button className="bg-brand-gradient text-foreground">
+                  Apply Now
+                  <GraduationCap className="w-4 h-4 ml-2" />
+                </Button>
               </a>
             </div>
           </div>
@@ -417,12 +535,15 @@ function CurriculumLibrary() {
     {
       id: "ba-journalism",
       label: "B.A. Journalism & Mass Communication Curriculum",
-      description: "3-year comprehensive undergraduate pathway with multimedia journalism focus",
-      image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=600&h=400&fit=crop",
+      description:
+        "3-year comprehensive undergraduate pathway with multimedia journalism focus",
+      image:
+        "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=600&h=400&fit=crop",
       batches: [
         {
           year: "2025-26",
-          summary: "Latest curriculum with comprehensive coverage of print, broadcast, digital media, and documentary filmmaking across all 6 semesters with industry partnerships",
+          summary:
+            "Latest curriculum with comprehensive coverage of print, broadcast, digital media, and documentary filmmaking across all 6 semesters with industry partnerships",
           documentUrl:
             "https://www.dsu.edu.in/images/CJMC/BA-Journalism-Curriculum-2025-26.pdf",
         },
@@ -442,7 +563,9 @@ function CurriculumLibrary() {
               </span>
             </h2>
             <p className="max-w-2xl text-sm text-foreground sm:text-base font-body">
-              Access comprehensive curriculum documentation, course structures, learning outcomes, and downloadable syllabus for the BA Journalism & Mass Communication program.
+              Access comprehensive curriculum documentation, course structures,
+              learning outcomes, and downloadable syllabus for the BA Journalism
+              & Mass Communication program.
             </p>
           </div>
           <Badge className="w-fit rounded-full bg-brand-magenta/15 px-4 py-2 text-xs font-semibold text-brand-magenta border border-brand-magenta/20">
@@ -454,7 +577,8 @@ function CurriculumLibrary() {
           {programs.map((program, programIdx) => {
             const isOpen = openProgram === program.id;
             const borderClass = "border-brand-magenta/30";
-            const badgeClass = "bg-brand-magenta/15 text-brand-magenta border-brand-magenta/20";
+            const badgeClass =
+              "bg-brand-magenta/15 text-brand-magenta border-brand-magenta/20";
 
             return (
               <div
@@ -476,8 +600,12 @@ function CurriculumLibrary() {
                     </Badge>
                   </div>
                   <div>
-                    <h3 className="headline-3 font-display text-foreground mb-2">{program.label}</h3>
-                    <p className="text-sm text-foreground/80 font-body">{program.description}</p>
+                    <h3 className="headline-3 font-display text-foreground mb-2">
+                      {program.label}
+                    </h3>
+                    <p className="text-sm text-foreground/80 font-body">
+                      {program.description}
+                    </p>
                   </div>
                   <Button
                     variant="outline"
@@ -513,7 +641,9 @@ function CurriculumLibrary() {
                               )}
                             </div>
                           </div>
-                          <p className="text-xs text-foreground/80 font-body mb-3 leading-relaxed">{batch.summary}</p>
+                          <p className="text-xs text-foreground/80 font-body mb-3 leading-relaxed">
+                            {batch.summary}
+                          </p>
                           {batch.documentUrl && (
                             <Button
                               variant="ghost"
@@ -521,7 +651,12 @@ function CurriculumLibrary() {
                               className="w-full justify-center gap-1 rounded text-xs font-semibold bg-brand-magenta/10 text-brand-magenta hover:bg-brand-magenta/20"
                               asChild
                             >
-                              <a href={batch.documentUrl} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-1">
+                              <a
+                                href={batch.documentUrl}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="flex items-center justify-center gap-1"
+                              >
                                 <Download className="h-3 w-3" />
                                 Download Curriculum PDF
                               </a>

@@ -281,7 +281,8 @@ export default function MedicalEducationResearch() {
             <div className="mb-3 inline-flex items-center rounded-full border border-brand-magenta/20 bg-brand-magenta/10 px-4 py-2 transform -translate-y-2">
               <Microscope className="mr-2 h-4 w-4 text-brand-magenta" />
               <span className="text-sm sm:text-base font-medium text-brand-magenta font-display">
-                Dr. Chandramma Dayananda Sagar Institute of Medical Education & Research (CDSIMER)
+                Dr. Chandramma Dayananda Sagar Institute of Medical Education &
+                Research (CDSIMER)
               </span>
             </div>
             <h1 className="mb-4 font-display text-4xl leading-tight text-white md:text-6xl">
@@ -349,7 +350,10 @@ export default function MedicalEducationResearch() {
               One Ecosystem. Many Possibilities.
             </h2>
             <p className="mt-3 text-sm text-foreground font-body max-w-3xl mx-auto">
-              From classroom to clinic, the Dr. Chandramma Dayananda Sagar Institute of Medical Education & Research (CDSIMER) unifies learning, care delivery and innovation for future-ready physicians.
+              From classroom to clinic, the Dr. Chandramma Dayananda Sagar
+              Institute of Medical Education & Research (CDSIMER) unifies
+              learning, care delivery and innovation for future-ready
+              physicians.
             </p>
           </div>
           <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">

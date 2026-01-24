@@ -23,13 +23,17 @@ function CurriculumLibrary() {
     {
       id: "llmcorp",
       label: "LLM in Corporate and Commercial Law Curriculum",
-      description: "Advanced postgraduate program focusing on corporate law complexities and business transactions",
-      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200&auto=format&fit=crop",
+      description:
+        "Advanced postgraduate program focusing on corporate law complexities and business transactions",
+      image:
+        "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200&auto=format&fit=crop",
       batches: [
         {
           year: "2025-26",
-          summary: "Latest curriculum covering M&A, IP rights, corporate governance, and regulatory frameworks across 4 semesters",
-          documentUrl: "https://www.dsu.edu.in/images/Law/LLM-Corporate-Curriculum-2025-26.pdf",
+          summary:
+            "Latest curriculum covering M&A, IP rights, corporate governance, and regulatory frameworks across 4 semesters",
+          documentUrl:
+            "https://www.dsu.edu.in/images/Law/LLM-Corporate-Curriculum-2025-26.pdf",
         },
       ],
     },
@@ -40,37 +44,70 @@ function CurriculumLibrary() {
       {programs.map((program) => {
         const isOpen = openProgram === program.id;
         return (
-          <div key={program.id} className="rounded-3xl border-2 border-brand-magenta/30 overflow-hidden transition-all hover:shadow-xl hover:shadow-brand-magenta/10">
+          <div
+            key={program.id}
+            className="rounded-3xl border-2 border-brand-magenta/30 overflow-hidden transition-all hover:shadow-xl hover:shadow-brand-magenta/10"
+          >
             <div className="relative h-48 overflow-hidden">
-              <img src={program.image} alt={program.label} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+              <img
+                src={program.image}
+                alt={program.label}
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              />
             </div>
             <div className="p-6 bg-background/50 backdrop-blur-sm space-y-4">
               <div className="flex items-start gap-3">
-                <Badge className="rounded-full border bg-brand-magenta/15 text-brand-magenta border-brand-magenta/20">Postgraduate</Badge>
+                <Badge className="rounded-full border bg-brand-magenta/15 text-brand-magenta border-brand-magenta/20">
+                  Postgraduate
+                </Badge>
               </div>
               <div>
-                <h3 className="text-xl font-bold font-display text-foreground mb-2">{program.label}</h3>
-                <p className="text-sm text-foreground/80">{program.description}</p>
+                <h3 className="text-xl font-bold font-display text-foreground mb-2">
+                  {program.label}
+                </h3>
+                <p className="text-sm text-foreground/80">
+                  {program.description}
+                </p>
               </div>
-              <Button variant="outline" className="w-full border-brand-magenta/30 hover:bg-brand-magenta/10 text-brand-magenta" onClick={() => setOpenProgram(isOpen ? null : program.id)}>
+              <Button
+                variant="outline"
+                className="w-full border-brand-magenta/30 hover:bg-brand-magenta/10 text-brand-magenta"
+                onClick={() => setOpenProgram(isOpen ? null : program.id)}
+              >
                 <span className="flex items-center justify-center gap-2">
                   {isOpen ? "Hide" : "View"} Curriculum
-                  <ChevronDown className={`h-4 w-4 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`} />
+                  <ChevronDown
+                    className={`h-4 w-4 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
+                  />
                 </span>
               </Button>
               {isOpen && (
                 <div className="mt-4 space-y-3 border-t border-border/20 pt-4">
                   {program.batches.map((batch) => (
-                    <div key={batch.year} className="rounded-xl border border-border/40 bg-card/70 p-4 space-y-3">
+                    <div
+                      key={batch.year}
+                      className="rounded-xl border border-border/40 bg-card/70 p-4 space-y-3"
+                    >
                       <div className="flex items-center gap-2">
                         <Badge className="rounded-full border text-xs bg-brand-magenta/20 text-brand-magenta border-brand-magenta/30">
                           <CalendarDays className="h-3 w-3 mr-1" />
                           {batch.year}
                         </Badge>
                       </div>
-                      <p className="text-sm text-foreground/80">{batch.summary}</p>
-                      <a href={batch.documentUrl} target="_blank" rel="noreferrer" className="inline-block">
-                        <Button size="sm" variant="outline" className="gap-2 border-brand-magenta/30 hover:bg-brand-magenta/10 text-brand-magenta">
+                      <p className="text-sm text-foreground/80">
+                        {batch.summary}
+                      </p>
+                      <a
+                        href={batch.documentUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-block"
+                      >
+                        <Button
+                          size="sm"
+                          variant="outline"
+                          className="gap-2 border-brand-magenta/30 hover:bg-brand-magenta/10 text-brand-magenta"
+                        >
                           <Download className="w-4 h-4" /> Download Syllabus
                         </Button>
                       </a>
@@ -106,10 +143,22 @@ export default function LLMCorporateCommercial() {
   ];
 
   const careers = [
-    { title: "Corporate Counsel", description: "Senior legal advisor for major corporations" },
-    { title: "M&A Specialist", description: "Handle mergers, acquisitions, and negotiations" },
-    { title: "IP Manager", description: "Manage intellectual property portfolios" },
-    { title: "Legal Consultant", description: "Advise businesses on corporate strategies" },
+    {
+      title: "Corporate Counsel",
+      description: "Senior legal advisor for major corporations",
+    },
+    {
+      title: "M&A Specialist",
+      description: "Handle mergers, acquisitions, and negotiations",
+    },
+    {
+      title: "IP Manager",
+      description: "Manage intellectual property portfolios",
+    },
+    {
+      title: "Legal Consultant",
+      description: "Advise businesses on corporate strategies",
+    },
   ];
 
   return (
@@ -137,7 +186,9 @@ export default function LLMCorporateCommercial() {
             </Link>
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-brand-magenta/10 rounded-full border border-brand-magenta/20 mb-4">
               <Briefcase className="w-4 h-4 text-brand-magenta" />
-              <span className="text-sm font-medium text-brand-magenta font-display">Postgraduate Program</span>
+              <span className="text-sm font-medium text-brand-magenta font-display">
+                Postgraduate Program
+              </span>
             </div>
             <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight font-display mb-4">
               LLM in Corporate and Commercial Law
@@ -146,7 +197,11 @@ export default function LLMCorporateCommercial() {
               2-Year Advanced Program
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <a href="https://admissions.dsu.edu.in/" target="_blank" rel="noreferrer">
+              <a
+                href="https://admissions.dsu.edu.in/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <Button className="bg-brand-gradient text-foreground">
                   Apply Now <ChevronRight className="w-4 h-4 ml-2" />
                 </Button>
@@ -161,9 +216,14 @@ export default function LLMCorporateCommercial() {
         <div className="mx-auto max-w-7xl">
           <div className="grid md:grid-cols-2 gap-12">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold font-display mb-6">Program Overview</h2>
+              <h2 className="text-3xl md:text-4xl font-bold font-display mb-6">
+                Program Overview
+              </h2>
               <p className="text-lg text-foreground/75 mb-6 leading-relaxed">
-                This program delves into the complexities of corporate law, focusing on the regulatory environment, business transactions, mergers and acquisitions, intellectual property rights, and other aspects essential for a career in corporate law.
+                This program delves into the complexities of corporate law,
+                focusing on the regulatory environment, business transactions,
+                mergers and acquisitions, intellectual property rights, and
+                other aspects essential for a career in corporate law.
               </p>
               <div className="space-y-4">
                 <div className="flex items-start gap-4">
@@ -177,14 +237,18 @@ export default function LLMCorporateCommercial() {
                   <Award className="w-6 h-6 text-brand-magenta flex-shrink-0 mt-1" />
                   <div>
                     <h3 className="font-semibold mb-1">Eligibility</h3>
-                    <p className="text-foreground/75">Bachelor of Laws (LLB) degree</p>
+                    <p className="text-foreground/75">
+                      Bachelor of Laws (LLB) degree
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <Briefcase className="w-6 h-6 text-brand-magenta flex-shrink-0 mt-1" />
                   <div>
                     <h3 className="font-semibold mb-1">Qualification</h3>
-                    <p className="text-foreground/75">LLM in Corporate and Commercial Law</p>
+                    <p className="text-foreground/75">
+                      LLM in Corporate and Commercial Law
+                    </p>
                   </div>
                 </div>
               </div>
@@ -193,7 +257,9 @@ export default function LLMCorporateCommercial() {
             <div className="space-y-6">
               <Card className="border-border/30 bg-card/40 backdrop-blur-sm">
                 <CardHeader>
-                  <CardTitle className="font-display">Why This Program?</CardTitle>
+                  <CardTitle className="font-display">
+                    Why This Program?
+                  </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-3">
                   <p className="flex items-start gap-2">
@@ -225,10 +291,13 @@ export default function LLMCorporateCommercial() {
           <div className="mb-8">
             <h2 className="text-3xl md:text-4xl font-bold font-display mb-4">
               <span className="text-foreground">Curriculum </span>
-              <span className="bg-brand-gradient bg-clip-text text-transparent">Library</span>
+              <span className="bg-brand-gradient bg-clip-text text-transparent">
+                Library
+              </span>
             </h2>
             <p className="text-lg text-foreground/75 max-w-2xl">
-              Access comprehensive curriculum documentation and syllabus for LLM in Corporate and Commercial Law
+              Access comprehensive curriculum documentation and syllabus for LLM
+              in Corporate and Commercial Law
             </p>
           </div>
           <CurriculumLibrary />
@@ -238,10 +307,15 @@ export default function LLMCorporateCommercial() {
       {/* Specializations Section */}
       <section className="px-3 py-16">
         <div className="mx-auto max-w-7xl">
-          <h2 className="text-3xl md:text-4xl font-bold font-display mb-12">Specialization Areas</h2>
+          <h2 className="text-3xl md:text-4xl font-bold font-display mb-12">
+            Specialization Areas
+          </h2>
           <div className="grid md:grid-cols-2 gap-6">
             {specializations.map((spec, i) => (
-              <Card key={i} className="border-border/30 bg-card/40 backdrop-blur-sm">
+              <Card
+                key={i}
+                className="border-border/30 bg-card/40 backdrop-blur-sm"
+              >
                 <CardContent className="pt-6 flex items-start gap-4">
                   <Award className="w-5 h-5 text-brand-magenta flex-shrink-0 mt-1" />
                   <p className="font-medium">{spec}</p>
@@ -255,10 +329,15 @@ export default function LLMCorporateCommercial() {
       {/* Career Paths Section */}
       <section className="px-3 py-16">
         <div className="mx-auto max-w-7xl">
-          <h2 className="text-3xl md:text-4xl font-bold font-display mb-12">Career Paths</h2>
+          <h2 className="text-3xl md:text-4xl font-bold font-display mb-12">
+            Career Paths
+          </h2>
           <div className="grid md:grid-cols-2 gap-6">
             {careers.map((career, i) => (
-              <Card key={i} className="border-border/30 bg-card/40 backdrop-blur-sm">
+              <Card
+                key={i}
+                className="border-border/30 bg-card/40 backdrop-blur-sm"
+              >
                 <CardHeader>
                   <CardTitle className="font-display flex items-center gap-2">
                     <Briefcase className="w-5 h-5 text-brand-magenta" />
@@ -281,9 +360,14 @@ export default function LLMCorporateCommercial() {
             Ready to Excel in Corporate Law?
           </h2>
           <p className="text-lg text-foreground/75 mb-8 max-w-2xl mx-auto">
-            Apply now to LLM in Corporate and Commercial Law and master the complexities of modern business.
+            Apply now to LLM in Corporate and Commercial Law and master the
+            complexities of modern business.
           </p>
-          <a href="https://admissions.dsu.edu.in/" target="_blank" rel="noreferrer">
+          <a
+            href="https://admissions.dsu.edu.in/"
+            target="_blank"
+            rel="noreferrer"
+          >
             <Button className="bg-brand-gradient text-foreground">
               Apply Now <ChevronRight className="w-4 h-4 ml-2" />
             </Button>

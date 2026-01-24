@@ -225,7 +225,9 @@ export default function FacultyDirectory() {
               <span className="text-xs font-medium text-foreground">
                 {filteredFaculty.length} faculty matched
               </span>
-              {(searchTerm || schoolFilter !== ALL_SCHOOLS_VALUE || focusFilter !== ALL_AREAS) && (
+              {(searchTerm ||
+                schoolFilter !== ALL_SCHOOLS_VALUE ||
+                focusFilter !== ALL_AREAS) && (
                 <Button
                   variant="ghost"
                   size="sm"

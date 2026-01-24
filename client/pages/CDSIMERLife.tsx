@@ -347,9 +347,7 @@ function StatCard({ stat }: { stat: Stat }) {
           <CardTitle className="text-2xl font-semibold font-display">
             {stat.value}
           </CardTitle>
-          <p className="text-sm text-foreground font-body">
-            {stat.label}
-          </p>
+          <p className="text-sm text-foreground font-body">{stat.label}</p>
         </div>
       </CardHeader>
       <CardContent className="pt-0">

@@ -23,13 +23,17 @@ function CurriculumLibrary() {
     {
       id: "bballb",
       label: "BBA.LLB (Honors) Curriculum",
-      description: "5-year integrated program combining business administration with rigorous legal education",
-      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop",
+      description:
+        "5-year integrated program combining business administration with rigorous legal education",
+      image:
+        "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop",
       batches: [
         {
           year: "2025-26",
-          summary: "Latest curriculum integrating business management with legal expertise across 10 semesters with practical business law focus",
-          documentUrl: "https://www.dsu.edu.in/images/Law/BBA-LLB-Curriculum-2025-26.pdf",
+          summary:
+            "Latest curriculum integrating business management with legal expertise across 10 semesters with practical business law focus",
+          documentUrl:
+            "https://www.dsu.edu.in/images/Law/BBA-LLB-Curriculum-2025-26.pdf",
         },
       ],
     },
@@ -40,37 +44,70 @@ function CurriculumLibrary() {
       {programs.map((program) => {
         const isOpen = openProgram === program.id;
         return (
-          <div key={program.id} className="rounded-3xl border-2 border-brand-magenta/30 overflow-hidden transition-all hover:shadow-xl hover:shadow-brand-magenta/10">
+          <div
+            key={program.id}
+            className="rounded-3xl border-2 border-brand-magenta/30 overflow-hidden transition-all hover:shadow-xl hover:shadow-brand-magenta/10"
+          >
             <div className="relative h-48 overflow-hidden">
-              <img src={program.image} alt={program.label} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+              <img
+                src={program.image}
+                alt={program.label}
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              />
             </div>
             <div className="p-6 bg-background/50 backdrop-blur-sm space-y-4">
               <div className="flex items-start gap-3">
-                <Badge className="rounded-full border bg-brand-magenta/15 text-brand-magenta border-brand-magenta/20">Integrated Program</Badge>
+                <Badge className="rounded-full border bg-brand-magenta/15 text-brand-magenta border-brand-magenta/20">
+                  Integrated Program
+                </Badge>
               </div>
               <div>
-                <h3 className="text-xl font-bold font-display text-foreground mb-2">{program.label}</h3>
-                <p className="text-sm text-foreground/80">{program.description}</p>
+                <h3 className="text-xl font-bold font-display text-foreground mb-2">
+                  {program.label}
+                </h3>
+                <p className="text-sm text-foreground/80">
+                  {program.description}
+                </p>
               </div>
-              <Button variant="outline" className="w-full border-brand-magenta/30 hover:bg-brand-magenta/10 text-brand-magenta" onClick={() => setOpenProgram(isOpen ? null : program.id)}>
+              <Button
+                variant="outline"
+                className="w-full border-brand-magenta/30 hover:bg-brand-magenta/10 text-brand-magenta"
+                onClick={() => setOpenProgram(isOpen ? null : program.id)}
+              >
                 <span className="flex items-center justify-center gap-2">
                   {isOpen ? "Hide" : "View"} Curriculum
-                  <ChevronDown className={`h-4 w-4 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`} />
+                  <ChevronDown
+                    className={`h-4 w-4 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
+                  />
                 </span>
               </Button>
               {isOpen && (
                 <div className="mt-4 space-y-3 border-t border-border/20 pt-4">
                   {program.batches.map((batch) => (
-                    <div key={batch.year} className="rounded-xl border border-border/40 bg-card/70 p-4 space-y-3">
+                    <div
+                      key={batch.year}
+                      className="rounded-xl border border-border/40 bg-card/70 p-4 space-y-3"
+                    >
                       <div className="flex items-center gap-2">
                         <Badge className="rounded-full border text-xs bg-brand-magenta/20 text-brand-magenta border-brand-magenta/30">
                           <CalendarDays className="h-3 w-3 mr-1" />
                           {batch.year}
                         </Badge>
                       </div>
-                      <p className="text-sm text-foreground/80">{batch.summary}</p>
-                      <a href={batch.documentUrl} target="_blank" rel="noreferrer" className="inline-block">
-                        <Button size="sm" variant="outline" className="gap-2 border-brand-magenta/30 hover:bg-brand-magenta/10 text-brand-magenta">
+                      <p className="text-sm text-foreground/80">
+                        {batch.summary}
+                      </p>
+                      <a
+                        href={batch.documentUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-block"
+                      >
+                        <Button
+                          size="sm"
+                          variant="outline"
+                          className="gap-2 border-brand-magenta/30 hover:bg-brand-magenta/10 text-brand-magenta"
+                        >
                           <Download className="w-4 h-4" /> Download Syllabus
                         </Button>
                       </a>
@@ -99,10 +136,22 @@ export default function BBALLBHonors() {
   ];
 
   const careers = [
-    { title: "Corporate Counsel", description: "Legal advisor for multinational corporations" },
-    { title: "Compliance Officer", description: "Ensure regulatory compliance in business operations" },
-    { title: "Business Manager", description: "Combine legal expertise with business strategy" },
-    { title: "Entrepreneur", description: "Start and manage your own legal business" },
+    {
+      title: "Corporate Counsel",
+      description: "Legal advisor for multinational corporations",
+    },
+    {
+      title: "Compliance Officer",
+      description: "Ensure regulatory compliance in business operations",
+    },
+    {
+      title: "Business Manager",
+      description: "Combine legal expertise with business strategy",
+    },
+    {
+      title: "Entrepreneur",
+      description: "Start and manage your own legal business",
+    },
   ];
 
   const specializations = [
@@ -137,7 +186,9 @@ export default function BBALLBHonors() {
             </Link>
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-brand-magenta/10 rounded-full border border-brand-magenta/20 mb-4">
               <BookOpen className="w-4 h-4 text-brand-magenta" />
-              <span className="text-sm font-medium text-brand-magenta font-display">Integrated Program</span>
+              <span className="text-sm font-medium text-brand-magenta font-display">
+                Integrated Program
+              </span>
             </div>
             <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight font-display mb-4">
               BBA.LLB (Honors)
@@ -146,7 +197,11 @@ export default function BBALLBHonors() {
               5-Year Integrated Program
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <a href="https://admissions.dsu.edu.in/" target="_blank" rel="noreferrer">
+              <a
+                href="https://admissions.dsu.edu.in/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <Button className="bg-brand-gradient text-foreground">
                   Apply Now <ChevronRight className="w-4 h-4 ml-2" />
                 </Button>
@@ -161,9 +216,15 @@ export default function BBALLBHonors() {
         <div className="mx-auto max-w-7xl">
           <div className="grid md:grid-cols-2 gap-12">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold font-display mb-6">Program Overview</h2>
+              <h2 className="text-3xl md:text-4xl font-bold font-display mb-6">
+                Program Overview
+              </h2>
               <p className="text-lg text-foreground/75 mb-6 leading-relaxed">
-                The BBA.LLB (Honors) is a five-year integrated program tailored for students who wish to study law alongside business administration. This integrated course prepares students for a variety of careers that require expertise in both law and business.
+                The BBA.LLB (Honors) is a five-year integrated program tailored
+                for students who wish to study law alongside business
+                administration. This integrated course prepares students for a
+                variety of careers that require expertise in both law and
+                business.
               </p>
               <div className="space-y-4">
                 <div className="flex items-start gap-4">
@@ -177,14 +238,18 @@ export default function BBALLBHonors() {
                   <Target className="w-6 h-6 text-brand-magenta flex-shrink-0 mt-1" />
                   <div>
                     <h3 className="font-semibold mb-1">Eligibility</h3>
-                    <p className="text-foreground/75">12+2 pass from recognized board</p>
+                    <p className="text-foreground/75">
+                      12+2 pass from recognized board
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <Award className="w-6 h-6 text-brand-magenta flex-shrink-0 mt-1" />
                   <div>
                     <h3 className="font-semibold mb-1">Qualification</h3>
-                    <p className="text-foreground/75">BBA.LLB (Honors) Degree</p>
+                    <p className="text-foreground/75">
+                      BBA.LLB (Honors) Degree
+                    </p>
                   </div>
                 </div>
               </div>
@@ -193,7 +258,9 @@ export default function BBALLBHonors() {
             <div className="space-y-6">
               <Card className="border-border/30 bg-card/40 backdrop-blur-sm">
                 <CardHeader>
-                  <CardTitle className="font-display">Why This Program?</CardTitle>
+                  <CardTitle className="font-display">
+                    Why This Program?
+                  </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-3">
                   <p className="flex items-start gap-2">
@@ -202,7 +269,9 @@ export default function BBALLBHonors() {
                   </p>
                   <p className="flex items-start gap-2">
                     <ChevronRight className="w-5 h-5 text-brand-magenta flex-shrink-0 mt-0.5" />
-                    <span>Business expertise combined with legal knowledge</span>
+                    <span>
+                      Business expertise combined with legal knowledge
+                    </span>
                   </p>
                   <p className="flex items-start gap-2">
                     <ChevronRight className="w-5 h-5 text-brand-magenta flex-shrink-0 mt-0.5" />
@@ -225,10 +294,13 @@ export default function BBALLBHonors() {
           <div className="mb-8">
             <h2 className="text-3xl md:text-4xl font-bold font-display mb-4">
               <span className="text-foreground">Curriculum </span>
-              <span className="bg-brand-gradient bg-clip-text text-transparent">Library</span>
+              <span className="bg-brand-gradient bg-clip-text text-transparent">
+                Library
+              </span>
             </h2>
             <p className="text-lg text-foreground/75 max-w-2xl">
-              Access comprehensive curriculum documentation and syllabus for BBA.LLB (Honors)
+              Access comprehensive curriculum documentation and syllabus for
+              BBA.LLB (Honors)
             </p>
           </div>
           <CurriculumLibrary />
@@ -238,12 +310,17 @@ export default function BBALLBHonors() {
       {/* Specializations Section */}
       <section className="px-3 py-16">
         <div className="mx-auto max-w-7xl">
-          <h2 className="text-3xl md:text-4xl font-bold font-display mb-12">Specialization Areas</h2>
+          <h2 className="text-3xl md:text-4xl font-bold font-display mb-12">
+            Specialization Areas
+          </h2>
           <div className="grid md:grid-cols-4 gap-6">
             {specializations.map((spec, i) => {
               const Icon = spec.icon;
               return (
-                <Card key={i} className="border-border/30 bg-card/40 backdrop-blur-sm text-center">
+                <Card
+                  key={i}
+                  className="border-border/30 bg-card/40 backdrop-blur-sm text-center"
+                >
                   <CardContent className="pt-6">
                     <Icon className="w-8 h-8 text-brand-magenta mx-auto mb-4" />
                     <p className="font-semibold">{spec.label}</p>
@@ -258,10 +335,15 @@ export default function BBALLBHonors() {
       {/* Career Paths Section */}
       <section className="px-3 py-16">
         <div className="mx-auto max-w-7xl">
-          <h2 className="text-3xl md:text-4xl font-bold font-display mb-12">Career Paths</h2>
+          <h2 className="text-3xl md:text-4xl font-bold font-display mb-12">
+            Career Paths
+          </h2>
           <div className="grid md:grid-cols-2 gap-6">
             {careers.map((career, i) => (
-              <Card key={i} className="border-border/30 bg-card/40 backdrop-blur-sm">
+              <Card
+                key={i}
+                className="border-border/30 bg-card/40 backdrop-blur-sm"
+              >
                 <CardHeader>
                   <CardTitle className="font-display flex items-center gap-2">
                     <Briefcase className="w-5 h-5 text-brand-magenta" />
@@ -284,9 +366,14 @@ export default function BBALLBHonors() {
             Ready to Begin Your Journey?
           </h2>
           <p className="text-lg text-foreground/75 mb-8 max-w-2xl mx-auto">
-            Apply now to BBA.LLB (Honors) and combine legal expertise with business acumen.
+            Apply now to BBA.LLB (Honors) and combine legal expertise with
+            business acumen.
           </p>
-          <a href="https://admissions.dsu.edu.in/" target="_blank" rel="noreferrer">
+          <a
+            href="https://admissions.dsu.edu.in/"
+            target="_blank"
+            rel="noreferrer"
+          >
             <Button className="bg-brand-gradient text-foreground">
               Apply Now <ChevronRight className="w-4 h-4 ml-2" />
             </Button>
