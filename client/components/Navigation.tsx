@@ -787,9 +787,7 @@ export default function Navigation() {
                 }
                 alt="Dayananda Sagar University Logo"
                 className={`h-12 w-auto object-contain ${
-                  theme === "light"
-                    ? "mix-blend-multiply"
-                    : "mix-blend-screen"
+                  theme === "light" ? "mix-blend-multiply" : "mix-blend-screen"
                 }`}
               />
             </Link>
