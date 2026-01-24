@@ -766,7 +766,7 @@ export default function Navigation() {
 
       {/* Main Navigation Bar */}
       <nav
-        className={`sticky top-1 lg:top-0 z-[9997] transition-all duration-300 overflow-visible shadow-md ${
+        className={`sticky top-0 z-[9997] transition-all duration-300 overflow-visible shadow-md ${
           theme === "light"
             ? "bg-white/95 backdrop-blur-sm border-b-2 border-orange-200/50"
             : "bg-slate-950/95 backdrop-blur-sm border-b-2 border-orange-600/30"
@@ -787,7 +787,9 @@ export default function Navigation() {
                 }
                 alt="Dayananda Sagar University Logo"
                 className={`h-12 w-auto object-contain ${
-                  theme === "light" ? "mix-blend-multiply" : "mix-blend-screen"
+                  theme === "light"
+                    ? "mix-blend-multiply"
+                    : "mix-blend-screen"
                 }`}
               />
             </Link>
