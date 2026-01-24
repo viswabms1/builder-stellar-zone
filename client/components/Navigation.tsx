@@ -830,6 +830,10 @@ export default function Navigation() {
                       ? "bg-white/20 text-white font-semibold shadow-sm"
                       : "text-white/90 hover:text-white hover:bg-white/10"
                 }`;
+                const sharedStyle = {
+                  fontSize: "clamp(0.7rem, 1.2vw, 0.85rem)",
+                  padding: "clamp(0.5rem, 1vmin, 0.75rem) clamp(0.4rem, 0.8vw, 0.6rem)",
+                };
 
                 const itemElement = (() => {
                   if (item.external) {
