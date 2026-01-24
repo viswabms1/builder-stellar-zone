@@ -794,6 +794,11 @@ export default function Navigation() {
         </div>
       </div>
 
+      {/* Spacer when nav is fixed to prevent layout shift */}
+      {isNavFixed && (
+        <div style={{ height: navBarHeight }} aria-hidden="true" />
+      )}
+
       {/* Main Navigation Bar */}
       <nav
         ref={navBarRef}
@@ -803,11 +808,6 @@ export default function Navigation() {
             : "bg-slate-950/95 backdrop-blur-sm border-b-2 border-orange-600/30"
         }`}
       >
-
-      {/* Spacer when nav is fixed to prevent layout shift */}
-      {isNavFixed && (
-        <div style={{ height: navBarHeight }} aria-hidden="true" />
-      )}
         <div className="w-full overflow-visible">
           <div className="flex flex-row items-center justify-between py-2 lg:py-0 lg:flex-col lg:items-center lg:justify-center lg:flex-row">
             {/* Mobile Logo - Left side */}
