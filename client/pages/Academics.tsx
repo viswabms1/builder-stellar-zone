@@ -119,7 +119,7 @@ export default function Academics() {
     },
     {
       icon: PenSquare,
-      title: "School of Journalism & Mass Communication",
+      title: "School of Arts, Design & Humanities",
       campus: "City Innovation Campus",
       image:
         "https://images.pexels.com/photos/7317291/pexels-photo-7317291.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
