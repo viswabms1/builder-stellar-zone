@@ -174,9 +174,9 @@ const quickLinks: QuickLink[] = [
     external: true,
   },
   {
-    title: "Online Degree",
+    title: "Online Degree Programs",
     description:
-      "Explore flexible DSU Online programs with industry-aligned curricula.",
+      "Explore flexible Online Degree Programs with industry-aligned curricula.",
     href: "https://apply.dsuonline.com/",
     icon: Laptop,
   },
