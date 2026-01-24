@@ -143,7 +143,7 @@ export const completeTranslations = {
       title: 'School of Health Sciences',
     },
     journalismMassComm: {
-      title: 'School of Journalism & Mass Communication',
+      title: 'School of Arts, Design & Humanities',
     },
     bDesign: {
       title: 'School of Design',
