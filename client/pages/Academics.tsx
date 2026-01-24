@@ -373,7 +373,7 @@ export default function Academics() {
                 </span>
                 ?
               </h2>
-              <p className="subheadline text-foreground/80 mb-8 max-w-2xl font-display">
+              <p className="subheadline text-foreground/80 mb-8 max-w-2xl">
                 Explore our academic programs and find the perfect fit for your
                 career aspirations. Join thousands of students who have
                 transformed their futures at DSU.
