@@ -389,7 +389,7 @@ export default function CDSIMER() {
         </div>
         <div className="absolute inset-0 flex items-center">
           <div className="mx-auto max-w-7xl px-3">
-            <div className="mb-6 inline-flex items-center rounded-full border border-brand-magenta/20 bg-brand-magenta/10 px-4 py-2">
+            <div className="mb-6 inline-flex items-center rounded-full border border-brand-magenta/20 bg-brand-magenta/10 px-4 py-2 transform -translate-y-2">
               <Hospital className="mr-2 h-4 w-4 text-brand-magenta" />
               <span className="text-sm sm:text-base font-medium text-brand-magenta font-display">
                 Dr. Chandramma Dayananda Sagar Institute of Medical Education & Research (CDSIMER)
