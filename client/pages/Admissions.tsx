@@ -211,9 +211,9 @@ const admissionTracks: AdmissionTrack[] = [
     external: true,
   },
   {
-    title: "DSU Online & Professional Programs",
+    title: "Online Degree Programs & Professional Programs",
     description:
-      "Earn DSU degrees remotely with live mentorship, digital labs, and career-aligned curricula.",
+      "Earn degrees remotely with live mentorship, digital labs, and career-aligned curricula.",
     highlights: [
       "UGC-entitled, NAAC A+ institution",
       "Self-paced learning with weekend live sessions",
@@ -221,7 +221,7 @@ const admissionTracks: AdmissionTrack[] = [
     ],
     href: "https://apply.dsuonline.com/",
     icon: Laptop,
-    ctaLabel: "Discover DSU Online",
+    ctaLabel: "Discover Online Degree Programs",
   },
 ];
 
