@@ -588,7 +588,7 @@ export default function Navigation() {
             : "bg-gradient-to-r from-slate-900 to-slate-950 border-b-2 border-orange-600/30"
         }`}
         style={{
-          padding: "clamp(0.5rem, 1.5vmin, 1rem) 0",
+          padding: "clamp(0.25rem, 0.7vmin, 0.5rem) 0",
         }}
       >
         <div
