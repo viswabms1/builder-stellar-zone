@@ -349,9 +349,7 @@ export default function MedicalEducationResearch() {
               One Ecosystem. Many Possibilities.
             </h2>
             <p className="mt-3 text-sm text-foreground font-body max-w-3xl mx-auto">
-              From classroom to clinic, DSU Medical Education & Research unifies
-              learning, care delivery and innovation for future-ready
-              physicians.
+              From classroom to clinic, the Dr. Chandramma Dayananda Sagar Institute of Medical Education & Research (CDSIMER) unifies learning, care delivery and innovation for future-ready physicians.
             </p>
           </div>
           <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
