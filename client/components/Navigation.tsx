@@ -1202,6 +1202,7 @@ export default function Navigation() {
                       key={idx}
                       to={item.href}
                       className={`${sharedClasses} justify-center`}
+                      style={sharedStyle}
                       title={isHome ? "Home" : undefined}
                     >
                       {isHome ? (
