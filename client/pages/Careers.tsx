@@ -17,7 +17,7 @@ export default function Careers() {
       id: 1,
       title: "Professors & Associate Professors",
       department:
-        "Dr. Chandramma Dayananda Sagar Institute of Medical Education and Research (CDSIMER)",
+        "Dr. Chandramma Dayananda Sagar Institute of Medical Education & Research (CDSIMER)",
       preview: "Medical positions across multiple specialties",
       positions: [
         "General Medicine",
