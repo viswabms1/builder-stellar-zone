@@ -783,7 +783,7 @@ export default function Navigation() {
       {/* Main Navigation Bar */}
       <nav
         ref={navBarRef}
-        className={`fixed top-0 left-0 right-0 z-[9997] overflow-visible shadow-md ${
+        className={`sticky top-0 z-[9997] overflow-visible shadow-md ${
           theme === "light"
             ? "bg-white/95 backdrop-blur-sm border-b-2 border-orange-200/50"
             : "bg-slate-950/95 backdrop-blur-sm border-b-2 border-orange-600/30"
