@@ -126,7 +126,7 @@ export const searchIndex: SearchResult[] = [
   },
   {
     id: "medical-education",
-    title: "Medical Education & Research",
+    title: "Dr. Chandramma Dayananda Sagar Institute of Medical Education & Research",
     description: "Advanced programs in medical education and research",
     path: "/academics/medical-education-research",
     category: "Academics",
