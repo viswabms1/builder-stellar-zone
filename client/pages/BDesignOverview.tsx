@@ -165,7 +165,7 @@ const PROGRAM_CARDS: ProgramCard[] = [
 
 const DEAN_INFO: DeanInfo = {
   name: "Prof. Dinesh Kulkarni",
-  position: "Dean, School of Design",
+  position: "Dean, School of Design & Digital Trans-Media",
   photo:
     "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F4c97444b3cb24a3481336dfe91ee22db?format=webp&width=800",
   videoUrl:
