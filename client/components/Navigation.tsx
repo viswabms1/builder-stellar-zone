@@ -1235,11 +1235,7 @@ export default function Navigation() {
                     <Link
                       key="logo"
                       to="/"
-                      className={`flex items-center group flex-shrink-0 px-0 py-0 !rounded-none transition-all duration-300 !bg-transparent hover:!bg-transparent ${
-                        theme === "light"
-                          ? ""
-                          : ""
-                      }`}
+                      className="flex items-center group flex-shrink-0 px-0 py-0 !rounded-none transition-all duration-300 !bg-transparent hover:!bg-transparent"
                     >
                       <img
                         src={
@@ -1248,7 +1244,11 @@ export default function Navigation() {
                             : "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F0caf0bf29be6421997005f26cdaae0ed?format=webp&width=800"
                         }
                         alt="Dayananda Sagar University Logo"
-                        className="max-h-[4rem] w-auto object-contain group-hover:scale-105 transition-all duration-300"
+                        className={`max-h-[4rem] w-auto object-contain group-hover:scale-105 transition-all duration-300 ${
+                          theme === "light"
+                            ? "mix-blend-multiply"
+                            : "mix-blend-screen"
+                        }`}
                       />
                     </Link>,
                     <Link
