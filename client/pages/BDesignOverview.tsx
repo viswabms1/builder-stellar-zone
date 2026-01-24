@@ -661,7 +661,7 @@ function HeroVideo() {
       <div className="bg-background relative max-w-7xl mx-auto px-3 w-full py-6 sm:py-8">
         <div className="hero-title-outside max-w-2xl">
           <p className="text-lg sm:text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-1 sm:mb-4 uppercase tracking-widest font-display">
-            School of Design
+            School of Design & Digital Trans-Media
           </p>
           <h1 className="text-sm md:text-base text-foreground/80 mb-2 sm:mb-6 leading-tight font-display">
             Design Your Impact
