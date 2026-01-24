@@ -19,7 +19,7 @@ const APPLIED_SCIENCES_EVENTS: NoticeItem[] = [
       "Showcase of student research projects in physics, chemistry, and mathematics with interactive demonstrations and poster presentations.",
     image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=600&h=300&fit=crop",
     link: "https://www.dsu.edu.in/images/AppliedSciences/notices/ResearchExpo-2025.pdf",
-    department: "Applied Sciences",
+    department: "School of Basic & Applied Sciences",
   },
   {
     id: "sci-event-2",
@@ -29,7 +29,7 @@ const APPLIED_SCIENCES_EVENTS: NoticeItem[] = [
     description:
       "Hands-on workshop on materials characterization, synthesis techniques, and applications in emerging technologies.",
     image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=600&h=300&fit=crop",
-    department: "Applied Sciences",
+    department: "School of Basic & Applied Sciences",
   },
   {
     id: "sci-event-3",
@@ -39,7 +39,7 @@ const APPLIED_SCIENCES_EVENTS: NoticeItem[] = [
     description:
       "Multi-part seminar on quantum mechanics, quantum computing, and applications in cryptography and sensors.",
     image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=600&h=300&fit=crop",
-    department: "Applied Sciences",
+    department: "School of Basic & Applied Sciences",
   },
   {
     id: "sci-event-4",
@@ -49,7 +49,7 @@ const APPLIED_SCIENCES_EVENTS: NoticeItem[] = [
     description:
       "Practical training on molecular dynamics simulations, quantum chemistry calculations, and drug discovery applications.",
     image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=600&h=300&fit=crop",
-    department: "Applied Sciences",
+    department: "School of Basic & Applied Sciences",
   },
   {
     id: "sci-event-5",
@@ -59,7 +59,7 @@ const APPLIED_SCIENCES_EVENTS: NoticeItem[] = [
     description:
       "Workshop on applying mathematical models to environmental, biological, and engineering challenges.",
     image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=600&h=300&fit=crop",
-    department: "Applied Sciences",
+    department: "School of Basic & Applied Sciences",
   },
 ];
 
@@ -72,7 +72,7 @@ const APPLIED_SCIENCES_NEWS: NoticeItem[] = [
     description:
       "School of Applied Sciences receives major research grant for advanced materials and quantum physics research projects.",
     image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=600&h=300&fit=crop",
-    department: "Applied Sciences",
+    department: "School of Basic & Applied Sciences",
   },
   {
     id: "sci-news-2",
@@ -82,7 +82,7 @@ const APPLIED_SCIENCES_NEWS: NoticeItem[] = [
     description:
       "Multiple faculty members published groundbreaking research in top-tier international scientific journals.",
     image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=600&h=300&fit=crop",
-    department: "Applied Sciences",
+    department: "School of Basic & Applied Sciences",
   },
   {
     id: "sci-news-3",
@@ -92,7 +92,7 @@ const APPLIED_SCIENCES_NEWS: NoticeItem[] = [
     description:
       "State-of-the-art laboratory with advanced instrumentation for physics, chemistry, and mathematical research.",
     image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=600&h=300&fit=crop",
-    department: "Applied Sciences",
+    department: "School of Basic & Applied Sciences",
   },
   {
     id: "sci-news-4",
@@ -102,7 +102,7 @@ const APPLIED_SCIENCES_NEWS: NoticeItem[] = [
     description:
       "Applied Sciences student team wins national science fair recognition for innovative research project in quantum physics.",
     image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=600&h=300&fit=crop",
-    department: "Applied Sciences",
+    department: "School of Basic & Applied Sciences",
   },
 ];
 
@@ -114,7 +114,7 @@ const APPLIED_SCIENCES_ANNOUNCEMENTS: NoticeItem[] = [
     date: "Dec 28, 2024",
     description:
       "Registration deadline has been extended to January 20, 2025. All students must complete registration by this date.",
-    department: "Applied Sciences",
+    department: "School of Basic & Applied Sciences",
   },
   {
     id: "sci-announce-2",
@@ -123,7 +123,7 @@ const APPLIED_SCIENCES_ANNOUNCEMENTS: NoticeItem[] = [
     date: "Dec 24, 2024",
     description:
       "All students must complete safety training before accessing laboratories. Sessions available January 6-10, 2025.",
-    department: "Applied Sciences",
+    department: "School of Basic & Applied Sciences",
   },
   {
     id: "sci-announce-3",
@@ -132,7 +132,7 @@ const APPLIED_SCIENCES_ANNOUNCEMENTS: NoticeItem[] = [
     date: "Dec 20, 2024",
     description:
       "Examinations commence from February 3, 2025. Complete timetable available on the student portal.",
-    department: "Applied Sciences",
+    department: "School of Basic & Applied Sciences",
   },
   {
     id: "sci-announce-4",
@@ -141,7 +141,7 @@ const APPLIED_SCIENCES_ANNOUNCEMENTS: NoticeItem[] = [
     date: "Dec 18, 2024",
     description:
       "Laboratory facilities will undergo upgrades from January 5-20. Practical classes rescheduled accordingly.",
-    department: "Applied Sciences",
+    department: "School of Basic & Applied Sciences",
   },
   {
     id: "sci-announce-5",
@@ -150,7 +150,7 @@ const APPLIED_SCIENCES_ANNOUNCEMENTS: NoticeItem[] = [
     date: "Dec 14, 2024",
     description:
       "Final year research paper submission due by January 31, 2025. Submit via the online portal with supervisor approval.",
-    department: "Applied Sciences",
+    department: "School of Basic & Applied Sciences",
   },
 ];
 
