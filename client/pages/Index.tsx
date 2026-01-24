@@ -444,7 +444,7 @@ export default function Index() {
       href: "/academics/basic-applied-sciences",
       image:
         "https://images.pexels.com/photos/9628799/pexels-photo-9628799.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
-      title: "School of Applied Sciences",
+      title: "School of Basic & Applied Sciences",
       campus: "City Innovation Campus",
       description: "",
       programs: ["Physics", "Chemistry", "Mathematics", "Biotechnology"],
