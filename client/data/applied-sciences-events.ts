@@ -70,7 +70,7 @@ const APPLIED_SCIENCES_NEWS: NoticeItem[] = [
     category: "News",
     date: "Nov 18, 2025",
     description:
-      "School of Applied Sciences receives major research grant for advanced materials and quantum physics research projects.",
+      "School of Basic & Applied Sciences receives major research grant for advanced materials and quantum physics research projects.",
     image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=600&h=300&fit=crop",
     department: "School of Basic & Applied Sciences",
   },
