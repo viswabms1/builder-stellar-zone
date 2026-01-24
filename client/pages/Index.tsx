@@ -767,7 +767,7 @@ export default function Index() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-4 md:mb-6">
             <h2 className="headline-2 mb-1 md:mb-2">Recognized Excellence</h2>
-            <p className="subheadline text-foreground max-w-3xl mx-auto font-display">
+            <p className="subheadline text-foreground max-w-3xl mx-auto">
               Accredited by leading national and international bodies
             </p>
           </div>
@@ -826,7 +826,7 @@ export default function Index() {
             <h2 className="headline-2 mb-6">
               Academic Excellence That Inspires
             </h2>
-            <p className="subheadline text-foreground max-w-3xl mx-auto font-display">
+            <p className="subheadline text-foreground max-w-3xl mx-auto">
               Explore AI-integrated undergraduate and postgraduate programs
               spanning engineering, sciences, health, law, design, and
               management.
@@ -936,7 +936,7 @@ export default function Index() {
                 Research Publications
               </span>
             </h2>
-            <p className="subheadline text-foreground max-w-2xl mx-auto font-display mb-4">
+            <p className="subheadline text-foreground max-w-2xl mx-auto mb-4">
               Showcasing high-impact, interdisciplinary research across AI,
               materials science, energy, and health
             </p>
@@ -1150,7 +1150,7 @@ export default function Index() {
                 News and Events
               </span>
             </h2>
-            <p className="subheadline text-foreground max-w-2xl mx-auto font-display">
+            <p className="subheadline text-foreground max-w-2xl mx-auto">
               Stories from research, campus life, and our community
             </p>
           </div>
