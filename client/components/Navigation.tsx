@@ -468,7 +468,7 @@ export default function Navigation() {
         departments: [],
       },
       {
-        name: "School of Media & Communication",
+        name: "School of Arts, Design & Humanities",
         href: "/academics/journalism-mass-communication",
         hasSubGroups: true,
         subGroups: [
@@ -476,7 +476,7 @@ export default function Navigation() {
             name: "Undergraduate",
             departments: [
               {
-                name: "B.A. Journalism",
+                name: "B.A. Journalism & Mass Communication",
                 href: "/academics/journalism-mass-communication/ba",
               },
             ],
