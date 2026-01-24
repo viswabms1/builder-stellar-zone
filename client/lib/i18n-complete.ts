@@ -134,7 +134,7 @@ export const completeTranslations = {
       title: 'School of Law',
     },
     appliedSciences: {
-      title: 'School of Applied Sciences',
+      title: 'School of Basic & Applied Sciences',
     },
     managementStudies: {
       title: 'School of Management Studies',
