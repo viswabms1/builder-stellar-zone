@@ -73,7 +73,7 @@ function LeadershipSection({ leadership }: LeadershipSectionProps) {
       <div className="text-center space-y-4 mb-16">
         <div>
           <h2 className="text-4xl md:text-5xl font-bold font-display text-foreground mb-3">
-            School of Journalism & Mass Communication Faculty Directory
+            School of Arts, Design & Humanities Faculty Directory
           </h2>
           <div className="w-20 h-1.5 bg-gradient-to-r from-brand-magenta to-brand-orange rounded-full mx-auto" />
         </div>
