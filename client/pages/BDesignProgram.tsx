@@ -81,7 +81,7 @@ export default function BDesignProgram() {
             <h1 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl text-white leading-tight font-display font-bold">
               Bachelor of Design
             </h1>
-            <p className="subheadline text-white/90 max-w-2xl mt-2 sm:mt-3 text-sm sm:text-base font-body">
+            <p className="subheadline text-white/90 max-w-2xl mt-2 sm:mt-3 font-body">
               A comprehensive four-year program designed to transform you into
               an innovative designer across multiple creative disciplines with
               industry expertise.
