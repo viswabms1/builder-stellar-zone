@@ -870,13 +870,13 @@ export default function Index() {
 
                   {/* Content Container */}
                   <div
-                    className={`${style.bg} ${style.border} border border-t-0 rounded-none p-3 flex flex-col justify-start items-center h-24 w-full backdrop-blur-sm pt-1`}
+                    className={`${style.bg} ${style.border} border border-t-0 rounded-none p-3 flex flex-col justify-start items-center ${school.key === 'medical' ? 'h-32' : 'h-24'} w-full backdrop-blur-sm pt-1`}
                   >
                     <div className="text-center space-y-1.5">
-                      <h3 className="text-base md:text-lg font-bold text-foreground font-display hover:text-brand-magenta transition-colors text-center line-clamp-2">
+                      <h3 className={`${school.key === 'medical' ? 'text-xs md:text-sm' : 'text-base md:text-lg'} font-bold text-foreground font-display hover:text-brand-magenta transition-colors text-center ${school.key === 'medical' ? 'line-clamp-3' : 'line-clamp-2'}`}>
                         {school.title}
                       </h3>
-                      {school.campus && (
+                      {school.campus && school.key !== 'medical' && (
                         <p className="text-xs font-semibold text-foreground/70 bg-foreground/10 px-2 py-0.5 rounded-full inline-block">
                           {school.campus}
                         </p>
