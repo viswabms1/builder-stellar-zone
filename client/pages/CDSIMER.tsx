@@ -391,8 +391,8 @@ export default function CDSIMER() {
           <div className="mx-auto max-w-7xl px-3">
             <div className="mb-6 inline-flex items-center rounded-full border border-brand-magenta/20 bg-brand-magenta/10 px-4 py-2">
               <Hospital className="mr-2 h-4 w-4 text-brand-magenta" />
-              <span className="text-sm font-medium text-brand-magenta font-display">
-                CDSIMER · DSU Medical Campus
+              <span className="text-sm sm:text-base font-medium text-brand-magenta font-display">
+                Dr. Chandramma Dayananda Sagar Institute of Medical Education & Research (CDSIMER)
               </span>
             </div>
             <h1 className="mb-4 font-display text-4xl leading-tight text-white md:text-6xl">
