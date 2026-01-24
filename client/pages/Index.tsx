@@ -873,7 +873,7 @@ export default function Index() {
                     className={`${style.bg} ${style.border} border border-t-0 rounded-none p-3 flex flex-col justify-center items-center h-24 w-full backdrop-blur-sm`}
                   >
                     <div className="text-center space-y-1.5">
-                      <h3 className="text-lg font-bold text-foreground font-display hover:text-brand-magenta transition-colors text-center">
+                      <h3 className="text-base md:text-lg font-bold text-foreground font-display hover:text-brand-magenta transition-colors text-center line-clamp-2">
                         {school.title}
                       </h3>
                       {school.campus && (
