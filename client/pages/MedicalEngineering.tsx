@@ -70,8 +70,8 @@ export default function MedicalEngineering() {
               <Sparkles className="w-4 h-4 text-brand-magenta" />
               <span className="text-sm font-medium text-brand-magenta font-display">Medical Engineering</span>
             </div>
-            <h1 className="headline-1 text-white leading-tight font-display">Transform Healthcare with Engineering</h1>
-            <p className="subheadline text-white/90 max-w-2xl mt-3 font-body">
+            <h1 className="headline-1 text-white leading-tight">Transform Healthcare with Engineering</h1>
+            <p className="subheadline text-white/90 max-w-2xl mt-3">
               Design and develop innovative solutions that improve human health and healthcare delivery.
             </p>
             <div className="mt-6 flex flex-wrap gap-2">
