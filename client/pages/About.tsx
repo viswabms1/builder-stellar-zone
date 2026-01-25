@@ -369,8 +369,7 @@ export default function About() {
               ].map((badge, index) => (
                 <Badge
                   key={index}
-                  variant="secondary"
-                  className="px-3 py-1 text-xs font-medium"
+                  className="px-3 py-1 text-xs font-medium font-body bg-white text-slate-900 dark:bg-white dark:text-slate-900 hover:bg-white/90 dark:hover:bg-white/90"
                 >
                   {badge}
                 </Badge>
