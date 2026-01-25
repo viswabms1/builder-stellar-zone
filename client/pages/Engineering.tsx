@@ -1676,7 +1676,7 @@ export default function Engineering() {
         <div className="mx-auto max-w-7xl">
           <div className="mb-12">
             <div className="max-w-3xl">
-              <Badge className="bg-brand-magenta/15 text-brand-magenta">
+              <Badge className="bg-brand-blue/15 text-brand-blue">
                 Foundational Departments
               </Badge>
               <h2 className="headline-2 mb-6 mt-4">
