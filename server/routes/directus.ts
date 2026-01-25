@@ -71,7 +71,7 @@ export const getVisionMission: RequestHandler = async (req, res) => {
 
     // Fetch from Directus - adjust item ID and collection name as needed
     // Example: university_info collection, item ID 1
-    const fetchUrl = `${DIRECTUS_URL}/api/items/university_info/1?fields=*.*`;
+    const fetchUrl = `${DIRECTUS_URL}/items/university_info/1?fields=*.*`;
 
     console.log(`[Directus API] Fetching from: ${fetchUrl}`);
 
