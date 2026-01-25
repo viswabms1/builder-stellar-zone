@@ -71,19 +71,26 @@ export const getVisionMission: RequestHandler = async (req, res) => {
 
     // Fetch from Directus - adjust item ID and collection name as needed
     // Example: university_info collection, item ID 1
-    const response = await fetch(
-      `${DIRECTUS_URL}/api/items/university_info/1?fields=*.*`,
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
+    const fetchUrl = `${DIRECTUS_URL}/api/items/university_info/1?fields=*.*`;
+
+    console.log(`[Directus API] Fetching from: ${fetchUrl}`);
+
+    const response = await fetch(fetchUrl, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
       },
+    });
+
+    console.log(
+      `[Directus API] Response status: ${response.status} ${response.statusText}`,
     );
 
     if (!response.ok) {
+      const errorBody = await response.text();
       console.error(
         `Directus API error: ${response.status} ${response.statusText}`,
+        errorBody,
       );
       throw new Error(
         `Directus API error: ${response.status} ${response.statusText}`,
@@ -91,20 +98,29 @@ export const getVisionMission: RequestHandler = async (req, res) => {
     }
 
     const data = await response.json();
+    console.log("[Directus API] Response data:", JSON.stringify(data, null, 2));
 
     // Transform Directus response to match our interface
+    // Handle both nested (data.data) and flat responses
+    const directusData = data.data || data;
+
     const transformedData = {
-      id: data.data?.id,
-      vision_title: data.data?.vision_title || "Our Vision",
+      id: directusData?.id,
+      vision_title: directusData?.vision_title || "Our Vision",
       vision_description:
-        data.data?.vision_description ||
+        directusData?.vision_description ||
         "Transforming education through innovation",
-      mission_title: data.data?.mission_title || "Our Mission",
+      mission_title: directusData?.mission_title || "Our Mission",
       mission_description:
-        data.data?.mission_description ||
+        directusData?.mission_description ||
         "Empowering students with knowledge and skills",
-      core_values: data.data?.core_values || [],
+      core_values: directusData?.core_values || [],
     };
+
+    console.log(
+      "[Directus API] Transformed data:",
+      JSON.stringify(transformedData, null, 2),
+    );
 
     // Cache the response
     setCache(cacheKey, transformedData);
