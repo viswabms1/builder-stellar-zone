@@ -106,14 +106,19 @@ export const getVisionMission: RequestHandler = async (req, res) => {
 
     const transformedData = {
       id: directusData?.id,
-      vision_title: directusData?.vision_title || "Our Vision",
+      vision_title: directusData?.vision_title || "Vision",
       vision_description:
+        directusData?.Vision ||
+        directusData?.vision ||
         directusData?.vision_description ||
-        "Transforming education through innovation",
-      mission_title: directusData?.mission_title || "Our Mission",
+        "To be a centre of excellence in education, research & training, innovation & entrepreneurship and to produce citizens with exceptional leadership qualities to serve national and global needs.",
+      mission_title: directusData?.mission_title || "Mission",
       mission_description:
+        directusData?.Mission_ ||
+        directusData?.Mission ||
+        directusData?.mission ||
         directusData?.mission_description ||
-        "Empowering students with knowledge and skills",
+        "To achieve our objectives in an environment that enhances creativity, innovation and scholarly pursuits while adhering to our vision.",
       core_values: directusData?.core_values || [],
     };
 
