@@ -2059,7 +2059,7 @@ export default function Engineering() {
 
       <section className="px-3 pb-20">
         <div className="mx-auto max-w-4xl text-center">
-          <div className="rounded-3xl border border-brand-magenta/20 bg-brand-magenta/5 p-10">
+          <div className="rounded-3xl border border-brand-blue/20 bg-brand-blue/5 p-10">
             <h3 className="mb-3 font-display text-3xl">
               Ready to shape the future?
             </h3>
