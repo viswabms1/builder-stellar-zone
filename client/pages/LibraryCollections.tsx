@@ -192,7 +192,8 @@ export default function LibraryCollections() {
         <div className="mt-12 text-center">
           <Button asChild className="bg-amber-600 hover:bg-amber-700">
             <Link to="/library">
-              Back to Library <ArrowRight className="ml-2 h-4 w-4" />
+              <ArrowLeft className="mr-2 h-4 w-4" />
+              Back to Library
             </Link>
           </Button>
         </div>
