@@ -172,8 +172,8 @@ export function CampusLocationsSection() {
                   className="flex-1"
                 >
                   <Button className="w-full bg-brand-blue hover:bg-brand-blue/90 text-white font-bold gap-2 transition-all">
-                    <Navigation className="w-4 h-4" />
                     Get Directions
+                    <Navigation className="w-4 h-4" />
                   </Button>
                 </a>
                 <a
@@ -184,8 +184,8 @@ export function CampusLocationsSection() {
                     variant="outline"
                     className="w-full text-foreground hover:text-brand-blue hover:border-brand-blue border-brand-blue/30 transition-all"
                   >
-                    <Mail className="w-4 h-4" />
                     Contact
+                    <Mail className="w-4 h-4" />
                   </Button>
                 </a>
               </div>
