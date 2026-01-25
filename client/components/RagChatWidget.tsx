@@ -557,7 +557,7 @@ export function RagChatWidget() {
                   type="submit"
                   disabled={!input.trim() || isLoading}
                   size="sm"
-                  className="bg-orange-500 hover:bg-orange-600 text-white"
+                  className="bg-brand-blue hover:bg-brand-blue/90 text-white"
                   style={{
                     minHeight: "clamp(2rem, 5vmin, 2.5rem)",
                     padding: "clamp(0.25rem, 1vmin, 0.5rem)",
