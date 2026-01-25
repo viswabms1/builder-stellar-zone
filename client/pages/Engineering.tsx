@@ -1716,7 +1716,7 @@ export default function Engineering() {
               Vision for Engineering at DSU
             </p>
           </div>
-          <div className="rounded-none border border-orange-500/20 bg-orange-500/10 overflow-hidden backdrop-blur">
+          <div className="rounded-none border border-brand-blue/20 bg-brand-blue/10 overflow-hidden backdrop-blur">
             <div className="grid md:grid-cols-[300px_1fr] gap-0">
               {/* Dean's Photo */}
               <div className="relative overflow-hidden bg-gradient-to-br from-brand-magenta/10 to-brand-blue/10 flex items-start justify-center p-2 sm:p-4 md:p-12 pt-3 sm:pt-6 md:pt-12">
