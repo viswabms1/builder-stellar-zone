@@ -143,12 +143,12 @@ export default function VisionMission() {
                   <Eye className="w-8 h-8 text-blue-500" />
                 </div>
                 <CardTitle className="text-3xl font-bold text-foreground">
-                  {visionMissionData.vision_title || "Vision"}
+                  Vision
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-lg text-foreground leading-relaxed">
-                  {visionMissionData.vision_description}
+                  {content.Vision || "Loading..."}
                 </p>
               </CardContent>
             </Card>
@@ -160,12 +160,12 @@ export default function VisionMission() {
                   <Target className="w-8 h-8 text-blue-500" />
                 </div>
                 <CardTitle className="text-3xl font-bold text-foreground">
-                  {visionMissionData.mission_title || "Mission"}
+                  Mission
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-lg text-foreground leading-relaxed">
-                  {visionMissionData.mission_description}
+                  {content.Mission_ || "Loading..."}
                 </p>
               </CardContent>
             </Card>
