@@ -455,7 +455,7 @@ export function RagChatWidget() {
                   animate={{ opacity: 1 }}
                   className="flex gap-3"
                 >
-                  <div className="w-8 h-8 rounded-full bg-orange-500 text-white flex items-center justify-center flex-shrink-0">
+                  <div className="w-8 h-8 rounded-full bg-brand-blue text-white flex items-center justify-center flex-shrink-0">
                     <Loader2 className="w-4 h-4 animate-spin" />
                   </div>
                   <div className="rounded-2xl px-4 py-2 bg-gray-200 dark:bg-slate-700">
