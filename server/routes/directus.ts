@@ -108,6 +108,9 @@ export const getVisionMission: RequestHandler = async (req, res) => {
     // Transform Directus response to match our interface
     // Handle both nested (data.data) and flat responses
     const directusData = data.data || data;
+    console.log("[Directus API] Extracted directusData:", JSON.stringify(directusData, null, 2));
+    console.log("[Directus API] Vision field:", directusData?.Vision);
+    console.log("[Directus API] Mission_ field:", directusData?.Mission_);
 
     const transformedData = {
       id: directusData?.id,
