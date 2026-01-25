@@ -250,7 +250,8 @@ export default function LibraryContact() {
                 </Button>
                 <Button asChild variant="outline">
                   <Link to="/library">
-                    Back to Library <ArrowRight className="ml-2 h-4 w-4" />
+                    <ArrowLeft className="mr-2 h-4 w-4" />
+                    Back to Library
                   </Link>
                 </Button>
               </div>
