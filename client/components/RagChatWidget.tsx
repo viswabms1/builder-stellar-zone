@@ -322,8 +322,8 @@ export function RagChatWidget() {
               className={cn(
                 "flex items-center justify-between border-b",
                 theme === "light"
-                  ? "bg-gradient-to-r from-orange-50 to-orange-100 border-orange-200"
-                  : "bg-gradient-to-r from-orange-900/20 to-orange-800/20 border-orange-700/30",
+                  ? "bg-gradient-to-r from-blue-50 to-blue-100 border-blue-200"
+                  : "bg-gradient-to-r from-brand-blue/10 to-brand-blue/5 border-brand-blue/30",
               )}
               style={{
                 padding: "clamp(0.75rem, 2vmin, 1rem)",
