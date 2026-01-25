@@ -78,17 +78,26 @@ export default function VisionMission() {
     const fetchVisionMission = async () => {
       try {
         setLoading(true);
-        console.log("[VisionMission] Fetching from Directus API...");
+        console.log("[VisionMission] Starting fetch from /api/directus/vision-mission");
 
         const response = await fetch("/api/directus/vision-mission");
 
+        console.log("[VisionMission] Fetch completed");
         console.log("[VisionMission] Response status:", response.status);
+        console.log("[VisionMission] Response ok:", response.ok);
+        console.log("[VisionMission] Response headers:", {
+          contentType: response.headers.get("content-type"),
+        });
 
         if (!response.ok) {
+          const errorText = await response.text();
           console.warn(
-            `[VisionMission] API returned ${response.status}, using fallback content`,
+            `[VisionMission] API returned ${response.status}, error body:`,
+            errorText,
           );
+          console.warn("Using fallback content");
           setVisionMissionData(DEFAULT_VISION_MISSION);
+          setIsFromAPI(false);
           return;
         }
 
