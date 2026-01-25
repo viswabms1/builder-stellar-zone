@@ -2174,7 +2174,7 @@ export default function Engineering() {
             <Card className="rounded-2xl border border-brand-magenta/20 bg-brand-magenta/5 backdrop-blur">
               <CardHeader>
                 <CardTitle className="font-display flex items-center gap-2">
-                  <Award className="h-5 w-5 text-brand-magenta" />
+                  <Award className="h-5 w-5 text-brand-blue" />
                   NAAC Accredited
                 </CardTitle>
               </CardHeader>
