@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 import {
   Card,
   CardContent,
@@ -20,34 +21,96 @@ import {
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/providers/theme-provider";
 
+// Type for Directus response
+interface VisionMissionData {
+  vision_title?: string;
+  vision_description?: string;
+  mission_title?: string;
+  mission_description?: string;
+}
+
+// Default vision & mission (fallback)
+const DEFAULT_VISION_MISSION = {
+  vision_title: "Vision",
+  vision_description:
+    "To be a centre of excellence in education, research & training, innovation & entrepreneurship and to produce citizens with exceptional leadership qualities to serve national and global needs.",
+  mission_title: "Mission",
+  mission_description:
+    "To achieve our objectives in an environment that enhances creativity, innovation and scholarly pursuits while adhering to our vision.",
+};
+
+const DEFAULT_CORE_VALUES = [
+  {
+    icon: Lightbulb,
+    title: "The Pursuit of Excellence",
+    description:
+      "Continuous improvement in teaching, research, infrastructure and institutional practices.",
+  },
+  {
+    icon: Award,
+    title: "Fairness",
+    description:
+      "Commitment to equity, inclusiveness, and unbiased academic and administrative processes.",
+  },
+  {
+    icon: Target,
+    title: "Leadership",
+    description:
+      "Developing responsible leaders capable of guiding change in education, research and industry.",
+  },
+  {
+    icon: Heart,
+    title: "Integrity and Transparency",
+    description:
+      "Upholding ethical conduct, accountability and openness in governance and academics.",
+  },
+];
+
 export default function VisionMission() {
   const { theme } = useTheme();
-  const coreValues = [
-    {
-      icon: Lightbulb,
-      title: "The Pursuit of Excellence",
-      description:
-        "Continuous improvement in teaching, research, infrastructure and institutional practices.",
-    },
-    {
-      icon: Award,
-      title: "Fairness",
-      description:
-        "Commitment to equity, inclusiveness, and unbiased academic and administrative processes.",
-    },
-    {
-      icon: Target,
-      title: "Leadership",
-      description:
-        "Developing responsible leaders capable of guiding change in education, research and industry.",
-    },
-    {
-      icon: Heart,
-      title: "Integrity and Transparency",
-      description:
-        "Upholding ethical conduct, accountability and openness in governance and academics.",
-    },
-  ];
+  const [visionMissionData, setVisionMissionData] = useState<VisionMissionData>(DEFAULT_VISION_MISSION);
+  const [loading, setLoading] = useState(true);
+  const coreValues = DEFAULT_CORE_VALUES;
+
+  // Fetch Vision & Mission from Directus API
+  useEffect(() => {
+    const fetchVisionMission = async () => {
+      try {
+        setLoading(true);
+        console.log("[VisionMission] Fetching from Directus API...");
+
+        const response = await fetch("/api/directus/vision-mission");
+
+        console.log("[VisionMission] Response status:", response.status);
+
+        if (!response.ok) {
+          console.warn(
+            `[VisionMission] API returned ${response.status}, using fallback content`,
+          );
+          setVisionMissionData(DEFAULT_VISION_MISSION);
+          return;
+        }
+
+        const result = await response.json();
+        console.log("[VisionMission] Response data:", result);
+
+        if (result.success && result.data) {
+          console.log("[VisionMission] Using fetched data:", result.data);
+          setVisionMissionData(result.data);
+        } else {
+          console.warn("[VisionMission] Using fallback content");
+          setVisionMissionData(DEFAULT_VISION_MISSION);
+        }
+      } catch (err) {
+        console.error("[VisionMission] Error fetching vision-mission:", err);
+        setVisionMissionData(DEFAULT_VISION_MISSION);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchVisionMission();
+  }, []);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -107,12 +170,12 @@ export default function VisionMission() {
                   <Eye className="w-8 h-8 text-blue-500" />
                 </div>
                 <CardTitle className="text-3xl font-bold text-foreground">
-                  Vision
+                  {visionMissionData.vision_title || "Vision"}
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-lg text-foreground leading-relaxed">
-                  To be a centre of excellence in education, research & training, innovation & entrepreneurship and to produce citizens with exceptional leadership qualities to serve national and global needs.
+                  {visionMissionData.vision_description}
                 </p>
               </CardContent>
             </Card>
@@ -124,12 +187,12 @@ export default function VisionMission() {
                   <Target className="w-8 h-8 text-blue-500" />
                 </div>
                 <CardTitle className="text-3xl font-bold text-foreground">
-                  Mission
+                  {visionMissionData.mission_title || "Mission"}
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-lg text-foreground leading-relaxed">
-                  To achieve our objectives in an environment that enhances creativity, innovation and scholarly pursuits while adhering to our vision.
+                  {visionMissionData.mission_description}
                 </p>
               </CardContent>
             </Card>
