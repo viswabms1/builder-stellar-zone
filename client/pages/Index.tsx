@@ -830,7 +830,10 @@ export default function Index() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="headline-2 mb-6">
-              Academic Excellence That Inspires
+              Academic Excellence
+              <span className="bg-brand-gradient bg-clip-text text-transparent">
+                {" "}That Inspires
+              </span>
             </h2>
             <p className="subheadline text-foreground max-w-3xl mx-auto">
               Explore AI-integrated undergraduate and postgraduate programs
