@@ -93,11 +93,16 @@ export default function VisionMission() {
 
         const result = await response.json();
         console.log("[VisionMission] Response data:", result);
+        console.log("[VisionMission] result.success:", result.success);
+        console.log("[VisionMission] result.data:", result.data);
 
         if (result.success && result.data) {
           console.log("[VisionMission] Using fetched data:", result.data);
+          console.log("[VisionMission] Vision description:", result.data.vision_description);
+          console.log("[VisionMission] Mission description:", result.data.mission_description);
           setVisionMissionData(result.data);
         } else {
+          console.warn("[VisionMission] Condition not met. Success:", result.success, "Data:", result.data);
           console.warn("[VisionMission] Using fallback content");
           setVisionMissionData(DEFAULT_VISION_MISSION);
         }
