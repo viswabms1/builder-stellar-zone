@@ -418,8 +418,11 @@ export default function Academics() {
                 ].map((badge, index) => (
                   <Badge
                     key={index}
-                    variant="secondary"
-                    className="px-3 py-1 text-xs font-medium font-body"
+                    className={`px-3 py-1 text-xs font-medium font-body ${
+                      index < 2
+                        ? "bg-white text-slate-900 dark:bg-white dark:text-slate-900 hover:bg-white/90 dark:hover:bg-white/90"
+                        : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                    }`}
                   >
                     {badge}
                   </Badge>
