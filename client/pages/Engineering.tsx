@@ -1794,7 +1794,7 @@ export default function Engineering() {
                         professional journey.
                       </p>
                     </div>
-                    <p className="font-display font-semibold text-brand-magenta pt-4 text-sm">
+                    <p className="font-display font-semibold text-brand-blue pt-4 text-sm">
                       BEST WISHES!
                     </p>
                   </div>
