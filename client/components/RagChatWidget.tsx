@@ -506,8 +506,8 @@ export function RagChatWidget() {
                         className={cn(
                           "text-left text-xs p-2 rounded-lg transition-colors border cursor-pointer hover:scale-105 transform",
                           theme === "light"
-                            ? "bg-orange-50 border-orange-200 hover:bg-orange-100 text-orange-900"
-                            : "bg-orange-900/20 border-orange-700/30 hover:bg-orange-900/40 text-orange-100",
+                            ? "bg-blue-50 border-blue-200 hover:bg-blue-100 text-blue-900"
+                            : "bg-brand-blue/20 border-brand-blue/30 hover:bg-brand-blue/30 text-brand-blue",
                         )}
                       >
                         {reply}
