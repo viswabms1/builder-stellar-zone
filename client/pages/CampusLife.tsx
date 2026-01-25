@@ -79,7 +79,7 @@ export default function CampusLife() {
             >
               <Button
                 size="lg"
-                className="hero-button bg-black/10 border border-transparent hover:bg-black/20 backdrop-blur-sm text-foreground px-10 py-6 text-lg font-semibold rounded-full inline-flex items-center transition-all duration-300"
+                className="hero-button bg-black/10 border border-transparent hover:bg-black/20 backdrop-blur-sm text-foreground px-10 py-6 title-sm font-semibold rounded-full inline-flex items-center transition-all duration-300"
               >
                 Explore Student Life
                 <ArrowRight className="w-5 h-5 ml-2" />
@@ -88,18 +88,18 @@ export default function CampusLife() {
 
             <div className="hero-badge inline-flex items-center px-4 py-2 bg-orange-500/30 rounded-full border border-orange-500/60 mb-6">
               <Rocket className="w-4 h-4 text-orange-200 mr-2" />
-              <span className="text-xs md:text-sm font-semibold text-orange-100">
+              <span className="body-sm md:body-md font-semibold text-orange-100">
                 Where Innovation Happens
               </span>
             </div>
 
-            <h1 className="hero-title text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-white drop-shadow-lg" style={{textShadow: '0 2px 8px rgba(0, 0, 0, 0.8), 0 4px 16px rgba(0, 0, 0, 0.6)'}}>
+            <h1 className="hero-title headline-1 font-bold mb-6 leading-tight text-white drop-shadow-lg" style={{textShadow: '0 2px 8px rgba(0, 0, 0, 0.8), 0 4px 16px rgba(0, 0, 0, 0.6)'}}>
               Life That Builds the Future
             </h1>
           </div>
 
           <div className="rounded-none px-4 md:px-8 max-w-3xl mt-auto pb-20 md:pb-32">
-            <p className="hero-title text-sm sm:text-base md:text-lg text-white/95 leading-relaxed max-w-2xl drop-shadow-md" style={{textShadow: '0 1px 4px rgba(0, 0, 0, 0.8)'}}>
+            <p className="hero-title subheadline text-white/95 leading-relaxed max-w-2xl drop-shadow-md" style={{textShadow: '0 1px 4px rgba(0, 0, 0, 0.8)'}}>
               At India's AI-First University, campus life seamlessly integrates research, innovation, leadership, and community—shaping graduates who drive global impact.
             </p>
           </div>

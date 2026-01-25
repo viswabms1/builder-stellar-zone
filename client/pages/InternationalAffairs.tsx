@@ -35,10 +35,10 @@ export default function InternationalAffairs() {
         </div>
         <div className="relative h-full flex items-center justify-center text-center px-4">
           <div>
-            <h1 className="text-5xl md:text-6xl font-bold mb-4">
+            <h1 className="headline-1 mb-4">
               Dayananda Sagar University
             </h1>
-            <p className="text-xl md:text-2xl text-foreground/80">
+            <p className="subheadline text-foreground/80">
               International Affairs
             </p>
           </div>
@@ -52,14 +52,14 @@ export default function InternationalAffairs() {
             <Badge className="mb-4 bg-blue-500/20 text-blue-600">
               Spotlight Story
             </Badge>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">TEDxDSU</h2>
-            <p className="text-lg text-foreground/80 mb-4">
+            <h2 className="headline-2 mb-6">TEDxDSU</h2>
+            <p className="body-lg text-foreground/80 mb-4">
               TEDx DSU is a full-day event, curated by a passionate team at DSU, 
               and will take place at our Main Campus in Harohalli. Our Pro-Chancellor, 
               Dr. D Premachandra Sagar, has a deep commitment to advancing DSU to new 
               heights of excellence and innovation in education.
             </p>
-            <p className="text-lg text-foreground/80 mb-6">
+            <p className="body-lg text-foreground/80 mb-6">
               The event will feature talks on diverse topics, sparking conversations 
               that encourage wonder, curiosity, and change by Consulates from various 
               countries and prominent personalities from various fields.
@@ -94,7 +94,7 @@ export default function InternationalAffairs() {
             className="w-full rounded-xl shadow-xl mb-8"
           />
           <div className="text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="headline-3 mb-4">
               Explore Opportunities: Bootcamp for Innovators
             </h2>
             <Button
@@ -125,29 +125,29 @@ export default function InternationalAffairs() {
             <Badge className="mb-4 bg-indigo-500/20 text-indigo-600">
               International Programs
             </Badge>
-            <h2 className="text-4xl md:text-5xl font-bold mb-8">
+            <h2 className="headline-2 mb-8">
               Internationalization at DSU
             </h2>
             
             <div className="space-y-8">
               <div>
-                <h3 className="text-2xl font-bold mb-2">
+                <h3 className="title-lg font-bold mb-2">
                   <Link to="#" className="hover:text-blue-500 transition-colors">
                     Master's Desk
                   </Link>
                 </h3>
-                <p className="text-foreground/80">
+                <p className="body-md text-foreground/80">
                   Discover opportunities with Collaborated Universities for your master's abroad.
                 </p>
               </div>
               
               <div>
-                <h3 className="text-2xl font-bold mb-2">
+                <h3 className="title-lg font-bold mb-2">
                   <Link to="#" className="hover:text-blue-500 transition-colors">
                     Student Exchange
                   </Link>
                 </h3>
-                <p className="text-foreground/80">
+                <p className="body-md text-foreground/80">
                   Study a semester abroad with student exchange opportunities.
                 </p>
               </div>
@@ -159,7 +159,7 @@ export default function InternationalAffairs() {
       {/* Initiatives Section */}
       <section className="py-16 md:py-24 px-4 md:px-8 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-background">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold mb-12 text-center">Initiatives</h2>
+          <h2 className="headline-2 mb-12 text-center">Initiatives</h2>
           
           <div className="grid md:grid-cols-4 gap-6">
             {[
@@ -195,7 +195,7 @@ export default function InternationalAffairs() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                   </div>
                   <CardHeader className="absolute bottom-0 w-full text-white">
-                    <CardTitle className="text-lg">{initiative.title}</CardTitle>
+                    <CardTitle className="title-sm">{initiative.title}</CardTitle>
                   </CardHeader>
                 </Card>
               </Link>
@@ -208,8 +208,8 @@ export default function InternationalAffairs() {
       <section className="py-16 md:py-24 px-4 md:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="rounded-2xl bg-gradient-to-r from-blue-500/10 to-indigo-500/10 p-8 md:p-12 border border-blue-500/20">
-            <h2 className="text-3xl font-bold mb-6">About Dayananda Sagar University</h2>
-            <p className="text-lg text-foreground/80 leading-relaxed mb-6">
+            <h2 className="headline-3 mb-6">About Dayananda Sagar University</h2>
+            <p className="body-lg text-foreground/80 leading-relaxed mb-6">
               Dayananda Sagar Institutions was founded in the 1960s, and Dayananda Sagar 
               University (DSU) was established in 2014. DSU is renowned for its world-class 
               interdisciplinary programs, including Medicine, Engineering, Business, Design, 
@@ -266,7 +266,7 @@ export default function InternationalAffairs() {
 
           <div className="md:col-span-2">
             <h3 className="font-bold mb-4">Contact & Social</h3>
-            <p className="text-foreground/70 mb-4">
+            <p className="body-sm text-foreground/70 mb-4">
               Dayananda Sagar University<br />
               Devarakaggalahalli, Harohalli<br />
               Kanakapura Road, Ramanagara<br />
@@ -303,7 +303,7 @@ export default function InternationalAffairs() {
         </div>
 
         <div className="max-w-7xl mx-auto mt-12 pt-8 border-t border-foreground/10">
-          <p className="text-center text-foreground/60 text-sm">
+          <p className="text-center text-foreground/60 body-sm">
             © {new Date().getFullYear()} Dayananda Sagar University. All rights reserved.
           </p>
         </div>

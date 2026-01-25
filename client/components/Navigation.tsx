@@ -4,21 +4,11 @@ import { ThemeToggle } from "./ThemeToggle";
 import SearchDialog from "./SearchDialog";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useTheme } from "@/providers/theme-provider";
-import {
-  Menu,
-  X,
-  ChevronDown,
-  Search,
-  ArrowRight,
-  Home as HomeIcon,
-} from "lucide-react";
+import { Menu, X, ChevronDown, Search, ArrowRight } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
-  const [topBarHeight, setTopBarHeight] = useState(0);
-  const [navBarHeight, setNavBarHeight] = useState(0);
-  const [isNavFixed, setIsNavFixed] = useState(false);
   const [aboutMenuOpen, setAboutMenuOpen] = useState(false);
   const [academicsMenuOpen, setAcademicsMenuOpen] = useState(false);
   const [alumniMenuOpen, setAlumniMenuOpen] = useState(false);
@@ -41,8 +31,6 @@ export default function Navigation() {
     null,
   );
   const internationalAdmissionsButtonRef = useRef<HTMLAnchorElement>(null);
-  const topBarRef = useRef<HTMLDivElement>(null);
-  const navBarRef = useRef<HTMLElement>(null);
   const location = useLocation();
   const { theme } = useTheme();
 
@@ -139,30 +127,6 @@ export default function Navigation() {
       };
     }
   }, [internationalAdmissionsMenuOpen]);
-
-  useEffect(() => {
-    const updateHeights = () => {
-      setTopBarHeight(topBarRef.current?.offsetHeight ?? 0);
-      setNavBarHeight(navBarRef.current?.offsetHeight ?? 0);
-    };
-
-    updateHeights();
-    window.addEventListener("resize", updateHeights);
-    return () => window.removeEventListener("resize", updateHeights);
-  }, []);
-
-  // Handle scroll to fix nav bar when scrolling past top bar
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const threshold = topBarHeight;
-      setIsNavFixed(scrollY >= threshold);
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll(); // Check initial state
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [topBarHeight]);
 
   // Reset expandedSubGroups when academics menu closes
   useEffect(() => {
@@ -325,23 +289,6 @@ export default function Navigation() {
             ],
           },
           {
-            name: "Pharmacy",
-            departments: [
-              {
-                name: "B.Pharm",
-                href: "/academics/health-sciences/pharmacy",
-              },
-              {
-                name: "Pharm.D",
-                href: "/academics/health-sciences/pharmd",
-              },
-              {
-                name: "M.Pharm",
-                href: "/academics/health-sciences/mpharm",
-              },
-            ],
-          },
-          {
             name: "Physiotherapy",
             departments: [
               { name: "BPT", href: "/academics/health-sciences/bpt" },
@@ -412,20 +359,11 @@ export default function Navigation() {
               { name: "MBA", href: "/academics/commerce-and-management/mba" },
             ],
           },
-          {
-            name: "Executive Education",
-            departments: [
-              {
-                name: "Center for Executive Education",
-                href: "/academics/cee",
-              },
-            ],
-          },
         ],
         departments: [],
       },
       {
-        name: "School of Basic & Applied Sciences",
+        name: "School of Applied Sciences",
         href: "/academics/basic-applied-sciences",
         hasSubGroups: true,
         subGroups: [
@@ -451,7 +389,7 @@ export default function Navigation() {
         departments: [],
       },
       {
-        name: "School of Design & Digital Trans-Media",
+        name: "School of Design",
         href: "/academics/design/bdesign",
         hasSubGroups: true,
         subGroups: [
@@ -468,7 +406,7 @@ export default function Navigation() {
         departments: [],
       },
       {
-        name: "School of Arts, Design & Humanities",
+        name: "School of Media & Communication",
         href: "/academics/journalism-mass-communication",
         hasSubGroups: true,
         subGroups: [
@@ -476,7 +414,7 @@ export default function Navigation() {
             name: "Undergraduate",
             departments: [
               {
-                name: "B.A. Journalism & Mass Communication",
+                name: "B.A. Journalism",
                 href: "/academics/journalism-mass-communication/ba",
               },
             ],
@@ -513,19 +451,15 @@ export default function Navigation() {
         departments: [],
       },
       {
-        name: "Dr. Chandramma Dayananda Sagar Institute of Medical Education & Research (CDSIMER)",
+        name: "Medical Education & Research (CDSIMER)",
         href: "https://cdsimer.edu.in",
         departments: [],
         external: true,
       },
       {
-        name: "Online Degree Programs",
-        href: "https://dsuonline.com/",
-        departments: [
-          { name: "Online Degree Programs", href: "https://dsuonline.com/" },
-          { name: "Apply Now", href: "https://apply.dsuonline.com/" },
-        ],
-        external: true,
+        name: "Center for Executive Education",
+        href: "/academics/cee",
+        departments: [{ name: "Explore Programs", href: "/academics/cee" }],
       },
     ],
   };
@@ -579,39 +513,24 @@ export default function Navigation() {
 
   return (
     <>
-      {/* Top Menu Bar - Hidden on mobile/tablet portrait, shown on larger screens */}
-      <div
-        ref={topBarRef}
-        className={`hidden lg:flex z-[10001] items-center ${
-          theme === "light"
-            ? "bg-gradient-to-r from-orange-50 to-white border-b-2 border-orange-200/50"
-            : "bg-gradient-to-r from-slate-900 to-slate-950 border-b-2 border-orange-600/30"
-        }`}
-        style={{
-          padding: "clamp(0.25rem, 0.7vmin, 0.5rem) 0",
-        }}
-      >
+      <div className="nav-legacy">
+        {/* Top Menu Bar - Hidden on mobile/tablet portrait, shown on larger screens */}
         <div
-          className="w-full mx-auto flex items-center justify-end"
-          style={{
-            paddingLeft: "clamp(0.5rem, 2vw, 1.5rem)",
-            paddingRight: "clamp(0.5rem, 2vw, 1.5rem)",
-            gap: "0",
-          }}
+          className={`nav-topbar hidden lg:flex sticky top-0 z-[10001] h-14 transition-all duration-300 items-center pt-5 pb-2 ${
+            theme === "light"
+              ? "bg-gradient-to-r from-orange-50 to-white border-b-2 border-orange-200/50"
+              : "bg-gradient-to-r from-black to-black border-b-2 border-orange-600/30"
+          }`}
         >
+        <div className="w-full mx-auto px-2 flex items-center justify-end gap-0">
           {/* All Top Menu Items in one continuous row - with scrollable container */}
-          <div
-            className="flex items-center flex-nowrap overflow-x-auto scrollbar-hide order-2"
-            style={{
-              gap: "clamp(0.1rem, 0.5vw, 0.25rem)",
-            }}
-          >
+          <div className="flex items-center gap-0.5 sm:gap-1 flex-nowrap overflow-x-auto scrollbar-hide order-2">
             {topMenuItems.map((item, idx) => {
               const isAlumni = item.href === "/alumni";
               const isLibrary = item.href === "/library";
               const isInternationalAdmissions =
                 item.href === "https://dsu.edu.in/international/";
-              const sharedClasses = `font-medium transition-all duration-200 whitespace-nowrap rounded-md hover:scale-105 flex-shrink-0 flex items-center gap-0.5 ${
+              const sharedClasses = `body-sm sm:body-md font-medium transition-all duration-200 whitespace-nowrap px-1.5 sm:px-2.5 py-1.5 sm:py-2 rounded-md hover:scale-105 flex-shrink-0 flex items-center gap-0.5 ${
                 theme === "light"
                   ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
                   : "text-white/80 hover:text-white hover:bg-white/10"
@@ -635,11 +554,6 @@ export default function Navigation() {
                         );
                       }}
                       className={`${sharedClasses} flex items-center gap-1 cursor-pointer`}
-                      style={{
-                        fontSize: "clamp(0.7rem, 1.2vw, 0.85rem)",
-                        padding:
-                          "clamp(0.75rem, 1.5vmin, 1rem) clamp(0.5rem, 1vw, 0.75rem)",
-                      }}
                     >
                       <span>{item.name}</span>
                       <ChevronDown
@@ -651,10 +565,10 @@ export default function Navigation() {
                     {internationalAdmissionsMenuOpen &&
                       internationalAdmissionsPosition && (
                         <div
-                          className={`fixed rounded-lg shadow-lg min-w-max backdrop-blur-sm z-[10002] py-2 ${
+                          className={`nav-dropdown fixed rounded-lg shadow-lg min-w-max backdrop-blur-sm z-[10002] py-2 ${
                             theme === "light"
                               ? "bg-white/95 border border-orange-200/50"
-                              : "bg-slate-800/95 border border-orange-600/30"
+                              : "bg-black/90 border border-orange-600/30"
                           }`}
                           style={{
                             top: `${internationalAdmissionsPosition.top}px`,
@@ -667,7 +581,7 @@ export default function Navigation() {
                             (submenuItem, submenuIdx) => {
                               const isExternal =
                                 submenuItem.href.startsWith("http");
-                              const baseClasses = `block px-4 py-2.5 text-xs sm:text-sm whitespace-nowrap transition-all ${
+                              const baseClasses = `block px-4 py-2.5 body-sm sm:body-md whitespace-nowrap transition-all ${
                                 theme === "light"
                                   ? "text-gray-700 hover:bg-orange-100 hover:text-orange-700"
                                   : "text-white/80 hover:bg-white/20 hover:text-white"
@@ -717,16 +631,11 @@ export default function Navigation() {
                     href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`font-medium transition-all duration-200 whitespace-nowrap rounded-md hover:scale-105 flex-shrink-0 text-center ${
+                    className={`body-sm sm:body-md font-medium transition-all duration-200 whitespace-nowrap px-1.5 sm:px-2.5 py-1.5 sm:py-2 rounded-md hover:scale-105 flex-shrink-0 text-center ${
                       theme === "light"
                         ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
                         : "text-white/80 hover:text-white hover:bg-white/10"
                     }`}
-                    style={{
-                      fontSize: "clamp(0.7rem, 1.2vw, 0.85rem)",
-                      padding:
-                        "clamp(0.75rem, 1.5vmin, 1rem) clamp(0.5rem, 1vw, 0.75rem)",
-                    }}
                   >
                     <span>{item.name}</span>
                   </a>
@@ -738,16 +647,11 @@ export default function Navigation() {
                   <Link
                     key={idx}
                     to={item.href}
-                    className={`font-medium transition-all duration-200 whitespace-nowrap rounded-md hover:scale-105 flex-shrink-0 text-center ${
+                    className={`body-sm sm:body-md font-medium transition-all duration-200 whitespace-nowrap px-1.5 sm:px-2.5 py-1.5 sm:py-2 rounded-md hover:scale-105 flex-shrink-0 text-center ${
                       theme === "light"
                         ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
                         : "text-white/80 hover:text-white hover:bg-white/10"
                     }`}
-                    style={{
-                      fontSize: "clamp(0.7rem, 1.2vw, 0.85rem)",
-                      padding:
-                        "clamp(0.75rem, 1.5vmin, 1rem) clamp(0.5rem, 1vw, 0.75rem)",
-                    }}
                   >
                     {item.name}
                   </Link>
@@ -758,7 +662,7 @@ export default function Navigation() {
               href="https://ums.mydsi.org/Login.aspx/DSU"
               target="_blank"
               rel="noopener noreferrer"
-              className={`text-xs sm:text-sm font-medium transition-all duration-200 whitespace-nowrap px-1.5 sm:px-2.5 py-1.5 sm:py-2 rounded-md hover:scale-105 flex-shrink-0 text-center ${
+              className={`body-sm sm:body-md font-medium transition-all duration-200 whitespace-nowrap px-1.5 sm:px-2.5 py-1.5 sm:py-2 rounded-md hover:scale-105 flex-shrink-0 text-center ${
                 theme === "light"
                   ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
                   : "text-white/80 hover:text-white hover:bg-white/10"
@@ -794,26 +698,20 @@ export default function Navigation() {
         </div>
       </div>
 
-      {/* Spacer when nav is fixed to prevent layout shift */}
-      {isNavFixed && (
-        <div style={{ height: navBarHeight }} aria-hidden="true" />
-      )}
-
       {/* Main Navigation Bar */}
       <nav
-        ref={navBarRef}
-        className={`${isNavFixed ? "fixed top-0 left-0 right-0" : ""} z-[10002] overflow-visible shadow-md ${
+        className={`nav-mainbar sticky top-1 lg:top-14 z-[9997] transition-all duration-300 overflow-visible shadow-md ${
           theme === "light"
             ? "bg-white/95 backdrop-blur-sm border-b-2 border-orange-200/50"
-            : "bg-slate-950/95 backdrop-blur-sm border-b-2 border-orange-600/30"
+            : "bg-black/95 backdrop-blur-sm border-b-2 border-orange-600/30"
         }`}
       >
         <div className="w-full overflow-visible">
-          <div className="flex flex-row items-center justify-between py-2 lg:py-0 lg:flex-col lg:items-center lg:justify-center lg:flex-row">
+          <div className="flex flex-row items-center justify-between h-14 lg:h-auto lg:flex-col lg:items-center lg:justify-center lg:flex-row">
             {/* Mobile Logo - Left side */}
             <Link
               to="/"
-              className="lg:hidden flex-shrink-0 flex items-center justify-start px-1"
+              className="lg:hidden flex-shrink-0 flex items-center justify-start px-1 -mt-3 -mb-2"
             >
               <img
                 src={
@@ -822,21 +720,17 @@ export default function Navigation() {
                     : "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F0caf0bf29be6421997005f26cdaae0ed?format=webp&width=800"
                 }
                 alt="Dayananda Sagar University Logo"
-                className={`h-12 w-auto object-contain ${
-                  theme === "light"
-                    ? "mix-blend-multiply"
-                    : "mix-blend-screen"
-                }`}
+                className="h-16 w-auto object-contain"
               />
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center gap-4 justify-center w-full px-0 py-2">
+            <div className="hidden lg:flex items-center gap-0.5 sm:gap-1 justify-between flex-wrap w-full px-1 sm:px-2 py-1 sm:py-2">
               {navigation.map((item, idx) => {
                 const active = !item.external && isActive(item.href);
                 const isAbout = item.href === "/about";
                 const isAcademics = item.href === "/academics";
-                const sharedClasses = `flex items-center space-x-1 rounded-lg font-medium font-display transition-all duration-200 group flex-shrink ${
+                const sharedClasses = `flex items-center space-x-0.5 sm:space-x-1 px-1 sm:px-2 py-0.5 sm:py-1 rounded-lg body-sm sm:body-md font-medium font-display transition-all duration-200 group ${
                   theme === "light"
                     ? active ||
                       (isAbout && aboutMenuOpen) ||
@@ -849,10 +743,6 @@ export default function Navigation() {
                       ? "bg-white/20 text-white font-semibold shadow-sm"
                       : "text-white/90 hover:text-white hover:bg-white/10"
                 }`;
-                const sharedStyle = {
-                  fontSize: "clamp(0.85rem, 1.5vw, 1rem)",
-                  padding: "clamp(0.6rem, 1.2vmin, 0.9rem) clamp(0.5rem, 1vw, 0.75rem)",
-                };
 
                 const itemElement = (() => {
                   if (item.external) {
@@ -863,7 +753,6 @@ export default function Navigation() {
                         target="_blank"
                         rel="noreferrer"
                         className={sharedClasses}
-                        style={sharedStyle}
                       >
                         <span>{item.name}</span>
                       </a>
@@ -881,17 +770,16 @@ export default function Navigation() {
                         <button
                           onClick={() => setAboutMenuOpen(!aboutMenuOpen)}
                           className={`${sharedClasses} justify-center`}
-                          style={sharedStyle}
                         >
-                          <span className="text-center leading-tight">
+                          <span className="max-w-[85px] text-center leading-snug">
                             {item.name}
                           </span>
                           <ChevronDown
-                            className={`w-3 h-3 transition-transform ${aboutMenuOpen ? "rotate-180" : ""}`}
+                            className={`w-4 h-4 transition-transform ${aboutMenuOpen ? "rotate-180" : ""}`}
                           />
                           {active && (
                             <div
-                              className={`w-0.5 h-0.5 rounded-full ${
+                              className={`w-1 h-1 rounded-full ${
                                 theme === "light" ? "bg-orange-600" : "bg-white"
                               }`}
                             />
@@ -902,14 +790,14 @@ export default function Navigation() {
                         <div
                           onMouseEnter={handleAboutMenuEnter}
                           onMouseLeave={handleAboutMenuLeave}
-                          className={`absolute left-0 top-full mt-0 w-auto min-w-max max-w-2xl rounded-2xl shadow-2xl transition-all duration-300 py-5 px-5 max-h-[600px] overflow-y-auto backdrop-blur-sm z-[9999] ${
+                          className={`nav-dropdown-panel absolute left-0 top-full mt-0 w-auto min-w-max max-w-2xl rounded-2xl shadow-2xl transition-all duration-300 py-5 px-5 max-h-[600px] overflow-y-auto backdrop-blur-sm z-[9999] ${
                             aboutMenuOpen
                               ? "opacity-100 visible pointer-events-auto"
                               : "opacity-0 invisible pointer-events-none"
                           } ${
                             theme === "light"
                               ? "bg-white/95 border border-orange-200/50"
-                              : "bg-slate-800/95 border border-orange-600/30"
+                              : "bg-black/90 border border-orange-600/30"
                           }`}
                           style={{
                             scrollbarWidth: "thin",
@@ -967,10 +855,10 @@ export default function Navigation() {
                                   key={submenu.name}
                                   to={submenu.href}
                                   onClick={() => setAboutMenuOpen(false)}
-                                  className={`${colors.bg} ${colors.border} border rounded-xl p-4 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 group block text-sm font-semibold ${
+                                  className={`${colors.bg} ${colors.border} border rounded-xl p-4 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 group block body-sm font-semibold nav-dropdown-heading ${
                                     theme === "light"
                                       ? "text-gray-900 group-hover:text-orange-600"
-                                      : "text-white group-hover:text-orange-200"
+                                      : "text-white group-hover:text-white"
                                   }`}
                                 >
                                   {submenu.name}
@@ -996,17 +884,16 @@ export default function Navigation() {
                             setAcademicsMenuOpen(!academicsMenuOpen)
                           }
                           className={`${sharedClasses} ml-0 sm:ml-4 justify-center`}
-                          style={sharedStyle}
                         >
-                          <span className="text-center leading-tight">
+                          <span className="max-w-[85px] text-center leading-snug">
                             {item.name}
                           </span>
                           <ChevronDown
-                            className={`w-3 h-3 transition-transform ${academicsMenuOpen ? "rotate-180" : ""}`}
+                            className={`w-4 h-4 transition-transform ${academicsMenuOpen ? "rotate-180" : ""}`}
                           />
                           {active && (
                             <div
-                              className={`w-0.5 h-0.5 rounded-full ${
+                              className={`w-1 h-1 rounded-full ${
                                 theme === "light" ? "bg-orange-600" : "bg-white"
                               }`}
                             />
@@ -1017,14 +904,14 @@ export default function Navigation() {
                         <div
                           onMouseEnter={handleAcademicsMenuEnter}
                           onMouseLeave={handleAcademicsMenuLeave}
-                          className={`absolute left-0 top-full mt-0 w-auto min-w-max max-w-5xl rounded-2xl shadow-2xl transition-all duration-300 py-5 px-5 max-h-[600px] overflow-y-auto backdrop-blur-sm z-[9999] ${
+                          className={`nav-dropdown-panel absolute left-0 top-full mt-0 w-auto min-w-max max-w-5xl rounded-2xl shadow-2xl transition-all duration-300 py-5 px-5 max-h-[600px] overflow-y-auto backdrop-blur-sm z-[9999] ${
                             academicsMenuOpen
                               ? "opacity-100 visible pointer-events-auto"
                               : "opacity-0 invisible pointer-events-none"
                           } ${
                             theme === "light"
                               ? "bg-white/95 border border-orange-200/50"
-                              : "bg-slate-800/95 border border-orange-600/30"
+                              : "bg-black/90 border border-orange-600/30"
                           }`}
                           style={{
                             scrollbarWidth: "thin",
@@ -1038,10 +925,10 @@ export default function Navigation() {
                           <Link
                             to="/academics"
                             onClick={() => setAcademicsMenuOpen(false)}
-                            className={`w-full block rounded-xl p-4 mb-4 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 font-semibold text-sm ${
+                            className={`nav-dropdown-heading w-full block rounded-xl p-4 mb-4 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 font-semibold body-sm ${
                               theme === "light"
                                 ? "bg-gradient-to-r from-orange-100 to-orange-50 border border-orange-200/50 text-orange-900 hover:bg-orange-100 hover:text-orange-700"
-                                : "bg-gradient-to-r from-orange-900/30 to-orange-900/10 border border-orange-600/30 text-orange-200 hover:bg-orange-900/40 hover:text-orange-100"
+                                : "bg-gradient-to-r from-orange-900/30 to-orange-900/10 border border-orange-600/30 text-white hover:bg-orange-900/40 hover:text-white"
                             }`}
                           >
                             Explore All Academics
@@ -1102,10 +989,10 @@ export default function Navigation() {
                                         href={school.href}
                                         target="_blank"
                                         rel="noreferrer"
-                                        className={`block font-bold text-sm mb-2 transition-colors ${
+                                        className={`nav-dropdown-heading block font-bold body-sm mb-2 transition-colors ${
                                           theme === "light"
                                             ? "text-gray-900 group-hover:text-orange-600"
-                                            : "text-white group-hover:text-orange-200"
+                                            : "text-white group-hover:text-white"
                                         }`}
                                       >
                                         {school.name}
@@ -1116,10 +1003,10 @@ export default function Navigation() {
                                         onClick={() =>
                                           setAcademicsMenuOpen(false)
                                         }
-                                        className={`block font-bold text-sm mb-2 transition-colors ${
+                                        className={`nav-dropdown-heading block font-bold body-sm mb-2 transition-colors ${
                                           theme === "light"
                                             ? "text-gray-900 group-hover:text-orange-600"
-                                            : "text-white group-hover:text-orange-200"
+                                            : "text-white group-hover:text-white"
                                         }`}
                                       >
                                         {school.name}
@@ -1143,7 +1030,7 @@ export default function Navigation() {
                                                       group.name,
                                                     )
                                                   }
-                                                  className={`text-xs font-semibold flex items-center gap-2 transition-all w-full p-2 rounded hover:bg-white/30 dark:hover:bg-white/10 ${
+                                                  className={`body-sm font-semibold flex items-center gap-2 transition-all w-full p-2 rounded hover:bg-white/30 dark:hover:bg-white/10 ${
                                                     theme === "light"
                                                       ? "text-gray-700 hover:text-orange-700"
                                                       : "text-white/80 hover:text-white"
@@ -1166,7 +1053,7 @@ export default function Navigation() {
                                                               false,
                                                             )
                                                           }
-                                                          className={`block text-xs py-1 px-2 rounded transition-all hover:bg-white/20 dark:hover:bg-white/10 ${
+                                                          className={`block body-sm py-1 px-2 rounded transition-all hover:bg-white/20 dark:hover:bg-white/10 ${
                                                             theme === "light"
                                                               ? "text-gray-700 hover:text-orange-700"
                                                               : "text-white/70 hover:text-white"
@@ -1193,7 +1080,7 @@ export default function Navigation() {
                                               onClick={() =>
                                                 setAcademicsMenuOpen(false)
                                               }
-                                              className={`block text-xs py-1 px-2 rounded transition-all hover:bg-white/20 dark:hover:bg-white/10 ${
+                                              className={`block body-sm py-1 px-2 rounded transition-all hover:bg-white/20 dark:hover:bg-white/10 ${
                                                 theme === "light"
                                                   ? "text-gray-700 hover:text-orange-700"
                                                   : "text-white/70 hover:text-white"
@@ -1215,25 +1102,18 @@ export default function Navigation() {
                     );
                   }
 
-                  const isHome = item.href === "/";
                   return (
                     <Link
                       key={idx}
                       to={item.href}
                       className={`${sharedClasses} justify-center`}
-                      style={sharedStyle}
-                      title={isHome ? "Home" : undefined}
                     >
-                      {isHome ? (
-                        <HomeIcon className="w-4 h-4" />
-                      ) : (
-                        <span className="text-center leading-tight">
-                          {item.name}
-                        </span>
-                      )}
+                      <span className="max-w-[85px] text-center leading-snug">
+                        {item.name}
+                      </span>
                       {active && (
                         <div
-                          className={`w-0.5 h-0.5 rounded-full ${
+                          className={`w-1 h-1 rounded-full ${
                             theme === "light" ? "bg-orange-600" : "bg-white"
                           }`}
                         />
@@ -1244,7 +1124,7 @@ export default function Navigation() {
 
                 if (idx === 1) {
                   const nvidiaActive = isActive("/nvidia-ai-architecture");
-                  const nvidiaClasses = `flex items-center space-x-1 rounded-lg font-medium font-display transition-all duration-200 group ml-0 justify-center flex-shrink ${
+                  const nvidiaClasses = `flex items-center space-x-0.5 sm:space-x-1 px-1 sm:px-2 py-0.5 sm:py-1 rounded-lg body-sm sm:body-md font-medium font-display transition-all duration-200 group ml-0 justify-center ${
                     theme === "light"
                       ? nvidiaActive
                         ? "bg-orange-100 text-orange-900 font-semibold shadow-sm"
@@ -1259,9 +1139,8 @@ export default function Navigation() {
                       key="nvidia-ai"
                       to="/nvidia-ai-architecture"
                       className={nvidiaClasses}
-                      style={sharedStyle}
                     >
-                      <span className="text-center leading-tight">
+                      <span className="max-w-[85px] text-center leading-snug">
                         NVIDIA's AI Architecture
                       </span>
                     </Link>,
@@ -1270,7 +1149,7 @@ export default function Navigation() {
 
                 if (idx === 3) {
                   const aiFirstActive = isActive("/ai-first");
-                  const aiFirstClasses = `flex items-center space-x-1 rounded-lg font-medium font-display transition-all duration-200 group ml-0 justify-center flex-shrink ${
+                  const aiFirstClasses = `flex items-center space-x-0.5 sm:space-x-1 px-1 sm:px-2 py-0.5 sm:py-1 rounded-lg body-sm sm:body-md font-medium font-display transition-all duration-200 group justify-center ${
                     theme === "light"
                       ? aiFirstActive
                         ? "bg-orange-100 text-orange-900 font-semibold shadow-sm"
@@ -1284,7 +1163,11 @@ export default function Navigation() {
                     <Link
                       key="logo"
                       to="/"
-                      className="flex items-center group flex-shrink-0 px-0 py-0 !rounded-none transition-all duration-300 !bg-transparent hover:!bg-transparent"
+                      className={`flex items-center group flex-shrink-0 px-1 py-0 rounded-xl transition-all duration-300 ${
+                        theme === "light"
+                          ? "bg-white hover:bg-orange-50"
+                          : "hover:bg-white/5"
+                      }`}
                     >
                       <img
                         src={
@@ -1293,22 +1176,16 @@ export default function Navigation() {
                             : "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F0caf0bf29be6421997005f26cdaae0ed?format=webp&width=800"
                         }
                         alt="Dayananda Sagar University Logo"
-                        className={`max-h-[4rem] w-auto object-contain group-hover:scale-105 transition-all duration-300 ${
-                          theme === "light"
-                            ? "mix-blend-multiply"
-                            : "mix-blend-screen"
-                        }`}
+                        className="h-20 w-auto object-contain group-hover:scale-105 transition-all duration-300"
                       />
                     </Link>,
                     <Link
                       key="ai-label"
                       to="/ai-first"
                       className={aiFirstClasses}
-                      style={sharedStyle}
                     >
-                      <span className="text-center leading-[0.9] flex flex-col items-center gap-0">
-                        <span className="whitespace-nowrap">AI-First @</span>
-                        <span>DSU</span>
+                      <span className="max-w-[85px] text-center leading-snug">
+                        AI-First @ DSU
                       </span>
                     </Link>,
                   ];
@@ -1343,10 +1220,10 @@ export default function Navigation() {
         {/* Mobile Navigation */}
         {isOpen && (
           <div
-            className={`lg:hidden border-t w-full ${
+            className={`nav-mobile-panel lg:hidden border-t w-full ${
               theme === "light"
                 ? "border-orange-200/30 bg-white"
-                : "border-orange-600/20 bg-slate-900"
+                : "border-orange-600/20 bg-black"
             }`}
           >
             <div className="px-2 py-2 space-y-1.5 max-h-[calc(100vh-140px)] sm:max-h-[calc(100vh-180px)] overflow-y-auto w-full">
@@ -1355,11 +1232,11 @@ export default function Navigation() {
                 const active = !item.external && isActive(item.href);
                 const isAbout = item.href === "/about";
                 const isAcademics = item.href === "/academics";
-                const sharedClasses = `flex items-center space-x-2 px-3 py-2.5 rounded-xl text-base sm:text-lg font-medium font-display transition-all duration-200 w-full ${
+                const sharedClasses = `nav-mobile-item flex items-center space-x-2 px-3 py-2.5 rounded-xl body-md sm:body-lg font-medium font-display transition-all duration-200 w-full ${
                   theme === "light"
                     ? active
-                      ? "bg-orange-200 text-orange-900 font-semibold"
-                      : "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
+                      ? "nav-mobile-active bg-orange-100 text-orange-900 font-semibold"
+                      : "text-gray-700 hover:text-orange-600 hover:bg-orange-50"
                     : active
                       ? "bg-white/20 text-white font-semibold"
                       : "text-white hover:text-white hover:bg-white/10"
@@ -1398,9 +1275,9 @@ export default function Navigation() {
                       {/* Mobile About Submenu */}
                       {aboutMenuOpen && (
                         <div
-                          className={`rounded-lg py-2 ml-4 border-l-2 ${
+                          className={`nav-mobile-submenu rounded-lg py-2 ml-4 border-l-2 ${
                             theme === "light"
-                              ? "bg-orange-100 border-l-orange-300"
+                              ? "bg-white/95 border-l-orange-200/60"
                               : "bg-white/20 border-l-white/40"
                           }`}
                         >
@@ -1412,9 +1289,9 @@ export default function Navigation() {
                                 setIsOpen(false);
                                 setAboutMenuOpen(false);
                               }}
-                              className={`block px-4 py-1.5 text-base sm:text-lg rounded transition-colors ${
+                              className={`nav-mobile-subitem block px-4 py-1.5 body-md sm:body-lg rounded transition-colors ${
                                 theme === "light"
-                                  ? "text-gray-700 hover:bg-orange-200"
+                                  ? "text-gray-700 hover:bg-orange-100"
                                   : "text-white hover:bg-white/20"
                               }`}
                             >
@@ -1445,9 +1322,9 @@ export default function Navigation() {
                       {/* Mobile Academics Submenu */}
                       {academicsMenuOpen && (
                         <div
-                          className={`rounded-lg py-2 ml-4 border-l-2 max-h-96 overflow-y-auto ${
+                          className={`nav-mobile-submenu rounded-lg py-2 ml-4 border-l-2 max-h-96 overflow-y-auto ${
                             theme === "light"
-                              ? "bg-orange-100 border-l-orange-300"
+                              ? "bg-white/95 border-l-orange-200/60"
                               : "bg-white/20 border-l-white/40"
                           }`}
                         >
@@ -1463,9 +1340,9 @@ export default function Navigation() {
                                       setIsOpen(false);
                                       setAcademicsMenuOpen(false);
                                     }}
-                                    className={`block px-4 py-2 text-base sm:text-lg font-semibold rounded transition-colors ${
+                                    className={`nav-mobile-subitem block px-4 py-2 body-md sm:body-lg font-semibold rounded transition-colors ${
                                       theme === "light"
-                                        ? "text-orange-900 hover:bg-orange-200"
+                                        ? "text-orange-900 hover:bg-orange-100"
                                         : "text-white hover:bg-white/20"
                                     }`}
                                   >
@@ -1478,9 +1355,9 @@ export default function Navigation() {
                                       setIsOpen(false);
                                       setAcademicsMenuOpen(false);
                                     }}
-                                    className={`block px-4 py-2 text-base sm:text-lg font-semibold rounded transition-colors ${
+                                    className={`nav-mobile-subitem block px-4 py-2 body-md sm:body-lg font-semibold rounded transition-colors ${
                                       theme === "light"
-                                        ? "text-orange-900 hover:bg-orange-200"
+                                        ? "text-orange-900 hover:bg-orange-100"
                                         : "text-white hover:bg-white/20"
                                     }`}
                                   >
@@ -1505,9 +1382,9 @@ export default function Navigation() {
                                                   group.name,
                                                 )
                                               }
-                                              className={`w-full text-left px-4 py-1 text-sm sm:text-base font-semibold flex items-center gap-1 rounded transition-colors ${
+                                              className={`nav-mobile-subtoggle w-full text-left px-4 py-1 body-sm sm:body-md font-semibold flex items-center gap-1 rounded transition-colors ${
                                                 theme === "light"
-                                                  ? "text-orange-900 hover:bg-orange-200"
+                                                  ? "text-orange-900 hover:bg-orange-100"
                                                   : "text-white/90 hover:bg-white/20"
                                               }`}
                                             >
@@ -1532,9 +1409,9 @@ export default function Navigation() {
                                                           false,
                                                         );
                                                       }}
-                                                      className={`block px-6 py-1 text-sm sm:text-base rounded transition-colors ${
+                                                      className={`nav-mobile-subitem block px-6 py-1 body-sm sm:body-md rounded transition-colors ${
                                                         theme === "light"
-                                                          ? "text-gray-700 hover:bg-orange-200"
+                                                          ? "text-gray-700 hover:bg-orange-100"
                                                           : "text-white/80 hover:bg-white/20"
                                                       }`}
                                                     >
@@ -1561,9 +1438,9 @@ export default function Navigation() {
                                               setIsOpen(false);
                                               setAcademicsMenuOpen(false);
                                             }}
-                                            className={`block px-4 py-1 text-sm sm:text-base rounded transition-colors ${
+                                            className={`nav-mobile-subitem block px-4 py-1 body-sm sm:body-md rounded transition-colors ${
                                               theme === "light"
-                                                ? "text-gray-700 hover:bg-orange-200"
+                                                ? "text-gray-700 hover:bg-orange-100"
                                                 : "text-white/80 hover:bg-white/20"
                                             }`}
                                           >
@@ -1583,28 +1460,22 @@ export default function Navigation() {
                   );
                 }
 
-                const isHome = item.href === "/";
                 return (
                   <Link
                     key={idx}
                     to={item.href}
                     onClick={() => setIsOpen(false)}
                     className={sharedClasses}
-                    title={isHome ? "Home" : undefined}
                   >
-                    {isHome ? (
-                      <HomeIcon className="w-5 h-5" />
-                    ) : (
-                      <span
-                        className={
-                          item.href === "/centre-of-excellence"
-                            ? "max-w-[100px]"
-                            : ""
-                        }
-                      >
-                        {item.name}
-                      </span>
-                    )}
+                    <span
+                      className={
+                        item.href === "/centre-of-excellence"
+                          ? "max-w-[100px]"
+                          : ""
+                      }
+                    >
+                      {item.name}
+                    </span>
                   </Link>
                 );
               })}
@@ -1612,7 +1483,7 @@ export default function Navigation() {
               <Link
                 to="/nvidia-ai-architecture"
                 onClick={() => setIsOpen(false)}
-                className={`flex items-center space-x-2 px-3 py-2.5 rounded-xl text-base sm:text-lg font-medium font-display transition-all duration-200 w-full ${
+                className={`nav-mobile-item flex items-center space-x-2 px-3 py-2.5 rounded-xl body-md sm:body-lg font-medium font-display transition-all duration-200 w-full ${
                   theme === "light"
                     ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
                     : "text-white hover:text-white hover:bg-white/10"
@@ -1623,7 +1494,7 @@ export default function Navigation() {
               <Link
                 to="/ai-first"
                 onClick={() => setIsOpen(false)}
-                className={`flex items-center space-x-2 px-3 py-2.5 rounded-xl text-base sm:text-lg font-medium font-display transition-all duration-200 w-full ${
+                className={`nav-mobile-item flex items-center space-x-2 px-3 py-2.5 rounded-xl body-md sm:body-lg font-medium font-display transition-all duration-200 w-full ${
                   theme === "light"
                     ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
                     : "text-white hover:text-white hover:bg-white/10"
@@ -1643,9 +1514,9 @@ export default function Navigation() {
                   const isLibrary = item.href === "/library";
                   const isInternationalAdmissions =
                     item.href === "https://dsu.edu.in/international/";
-                  const sharedClasses = `flex items-center space-x-2 px-3 py-2 rounded-xl text-base sm:text-lg font-medium font-display transition-all duration-200 w-full ${
+                  const sharedClasses = `nav-mobile-item flex items-center space-x-2 px-3 py-2 rounded-xl body-md sm:body-lg font-medium font-display transition-all duration-200 w-full ${
                     theme === "light"
-                      ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
+                      ? "text-gray-700 hover:text-orange-600 hover:bg-orange-50"
                       : "text-white/90 hover:text-white hover:bg-white/10"
                   }`;
 
@@ -1673,18 +1544,18 @@ export default function Navigation() {
                         {/* Mobile International Admissions Submenu */}
                         {internationalAdmissionsMobileMenuOpen && (
                           <div
-                            className={`rounded-lg py-2 ml-4 border-l-2 space-y-0 ${
+                            className={`nav-mobile-submenu rounded-lg py-2 ml-4 border-l-2 space-y-0 ${
                               theme === "light"
-                                ? "bg-orange-100 border-l-orange-300"
+                                ? "bg-white/95 border-l-orange-200/60"
                                 : "bg-orange-900/20 border-l-orange-600"
                             }`}
                           >
                             {internationalSubmenuItems.map((submenuItem) => {
                               const isExternal =
                                 submenuItem.href.startsWith("http");
-                              const baseClasses = `block px-4 py-2.5 text-base sm:text-lg transition-colors ${
+                              const baseClasses = `nav-mobile-subitem block px-4 py-2.5 body-md sm:body-lg transition-colors ${
                                 theme === "light"
-                                  ? "text-gray-700 hover:bg-orange-200"
+                                  ? "text-gray-700 hover:bg-orange-100"
                                   : "text-white hover:bg-orange-900/40"
                               }`;
 
@@ -1748,9 +1619,9 @@ export default function Navigation() {
                         {/* Mobile Alumni Submenu */}
                         {alumniMenuOpen && (
                           <div
-                            className={`rounded-lg py-2 ml-4 border-l-2 ${
+                            className={`nav-mobile-submenu rounded-lg py-2 ml-4 border-l-2 ${
                               theme === "light"
-                                ? "bg-purple-100 border-l-purple-300"
+                                ? "bg-white/95 border-l-orange-200/60"
                                 : "bg-purple-900/20 border-l-purple-600"
                             }`}
                           >
@@ -1762,9 +1633,9 @@ export default function Navigation() {
                                   setIsOpen(false);
                                   setAlumniMenuOpen(false);
                                 }}
-                                className={`block px-4 py-1.5 text-base sm:text-lg rounded transition-colors ${
+                                className={`nav-mobile-subitem block px-4 py-1.5 body-md sm:body-lg rounded transition-colors ${
                                   theme === "light"
-                                    ? "text-gray-700 hover:bg-purple-200"
+                                    ? "text-gray-700 hover:bg-orange-100"
                                     : "text-white hover:bg-purple-900/40"
                                 }`}
                               >
@@ -1795,9 +1666,9 @@ export default function Navigation() {
                         {/* Mobile Library Submenu */}
                         {libraryMenuOpen && (
                           <div
-                            className={`rounded-lg py-2 ml-4 border-l-2 max-h-64 overflow-y-auto ${
+                            className={`nav-mobile-submenu rounded-lg py-2 ml-4 border-l-2 max-h-64 overflow-y-auto ${
                               theme === "light"
-                                ? "bg-blue-100 border-l-blue-300"
+                                ? "bg-white/95 border-l-orange-200/60"
                                 : "bg-blue-900/20 border-l-blue-600"
                             }`}
                           >
@@ -1809,9 +1680,9 @@ export default function Navigation() {
                                   setIsOpen(false);
                                   setLibraryMenuOpen(false);
                                 }}
-                                className={`block px-4 py-1.5 text-base sm:text-lg rounded transition-colors ${
+                                className={`nav-mobile-subitem block px-4 py-1.5 body-md sm:body-lg rounded transition-colors ${
                                   theme === "light"
-                                    ? "text-gray-700 hover:bg-blue-200"
+                                    ? "text-gray-700 hover:bg-orange-100"
                                     : "text-white hover:bg-blue-900/40"
                                 }`}
                               >
@@ -1864,9 +1735,9 @@ export default function Navigation() {
                     setSearchOpen(true);
                     setIsOpen(false);
                   }}
-                  className={`w-full text-left justify-start gap-3 text-base sm:text-lg ${
+                  className={`nav-mobile-item w-full text-left justify-start gap-3 body-md sm:body-lg ${
                     theme === "light"
-                      ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
+                      ? "text-gray-700 hover:text-orange-600 hover:bg-orange-50"
                       : "text-white/80 hover:text-white hover:bg-white/10"
                   }`}
                 >
@@ -1874,9 +1745,9 @@ export default function Navigation() {
                   <span>Search</span>
                 </Button>
                 <ThemeToggle
-                  className={`self-start text-base sm:text-lg ${
+                  className={`nav-mobile-item self-start body-md sm:body-lg ${
                     theme === "light"
-                      ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
+                      ? "text-gray-700 hover:text-orange-600 hover:bg-orange-50"
                       : "text-white/80 hover:text-white hover:bg-white/10"
                   }`}
                   onToggle={() => setIsOpen(false)}
@@ -1887,9 +1758,9 @@ export default function Navigation() {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setIsOpen(false)}
-                  className={`flex items-center space-x-2 px-3 py-2.5 rounded-xl text-base sm:text-lg font-medium font-display transition-all duration-200 w-full ${
+                  className={`nav-mobile-item flex items-center space-x-2 px-3 py-2.5 rounded-xl body-md sm:body-lg font-medium font-display transition-all duration-200 w-full ${
                     theme === "light"
-                      ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
+                      ? "text-gray-700 hover:text-orange-600 hover:bg-orange-50"
                       : "text-white/90 hover:text-white hover:bg-white/10"
                   }`}
                 >
@@ -1902,7 +1773,7 @@ export default function Navigation() {
 
         <SearchDialog open={searchOpen} onOpenChange={setSearchOpen} />
       </nav>
-
+      </div>
     </>
   );
 }

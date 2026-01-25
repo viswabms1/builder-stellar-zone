@@ -43,9 +43,13 @@ export default function FacultyProfile() {
             </AspectRatio>
           </Card>
           <div className="md:col-span-2">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-magenta/10 text-brand-magenta text-xs mb-3">CSE Faculty</div>
-            <h1 className="text-3xl md:text-5xl font-bold font-display">{f.name}</h1>
-            <p className="text-foreground mt-1 font-body">{f.title}{f.qualifications ? ` • ${f.qualifications}` : ''}</p>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-magenta/10 text-brand-magenta body-sm mb-3">
+              CSE Faculty
+            </div>
+            <h1 className="headline-2">{f.name}</h1>
+            <p className="text-foreground mt-1 body-md">
+              {f.title}{f.qualifications ? ` • ${f.qualifications}` : ''}
+            </p>
             {f.email && (
               <div className="mt-5">
                 <a href={`mailto:${f.email}`}>
@@ -62,17 +66,19 @@ export default function FacultyProfile() {
           <div className="lg:col-span-2 space-y-6">
             <Card className="border border-border/50 bg-card/50">
               <CardHeader>
-                <CardTitle className="font-display">About</CardTitle>
-                <CardDescription className="font-body">Professional interests and focus areas</CardDescription>
+                <CardTitle>About</CardTitle>
+                <CardDescription>Professional interests and focus areas</CardDescription>
               </CardHeader>
-              <CardContent className="space-y-3 text-sm text-foreground font-body">
+              <CardContent className="space-y-3 body-md text-foreground">
                 <p>
                   {`Professor ${f.name} is part of the Computer Science & Engineering department at DSU. Areas of interest include modern computing domains across AI/ML, Data Science, Systems, and Applications.`}
                 </p>
                 {f.interests && f.interests.length > 0 && (
                   <div className="flex flex-wrap gap-2 pt-2">
                     {f.interests.map((i, idx) => (
-                      <span key={idx} className="px-2 py-1 rounded-full bg-brand-magenta/10 text-brand-magenta text-xs">{i}</span>
+                      <span key={idx} className="px-2 py-1 rounded-full bg-brand-magenta/10 text-brand-magenta body-sm">
+                        {i}
+                      </span>
                     ))}
                   </div>
                 )}
@@ -81,7 +87,7 @@ export default function FacultyProfile() {
 
             {f.interests && f.interests.length > 0 ? (
               <div className="space-y-3">
-                <h3 className="font-semibold font-display">Research Gallery</h3>
+                <h3 className="title-sm font-semibold">Research Gallery</h3>
                 <div className="grid sm:grid-cols-2 gap-4">
                   {f.interests.map((kw, i) => (
                     <Card key={i} className="overflow-hidden border border-border/40 bg-card/40">
@@ -89,7 +95,7 @@ export default function FacultyProfile() {
                         <img src={imgFor(kw)} alt={kw} className="absolute inset-0 h-full w-full object-cover" />
                       </AspectRatio>
                       <CardContent className="pt-3">
-                        <div className="text-sm text-foreground font-body">{kw}</div>
+                        <div className="body-sm text-foreground">{kw}</div>
                       </CardContent>
                     </Card>
                   ))}
@@ -113,8 +119,8 @@ export default function FacultyProfile() {
       <section className="px-3 pb-16">
         <div className="max-w-4xl mx-auto text-center">
           <div className="rounded-3xl p-4 border border-brand-magenta/20 bg-brand-magenta/5">
-            <h3 className="headline-4 mb-2 font-display">Interested in studying under {f.name.split(' ')[0]}?</h3>
-            <p className="text-foreground mb-4 font-body">Explore CSE programs and start your application today.</p>
+            <h3 className="headline-4 mb-2">Interested in studying under {f.name.split(' ')[0]}?</h3>
+            <p className="text-foreground mb-4 body-md">Explore CSE programs and start your application today.</p>
             <a
               href="https://admissions.dsu.edu.in/"
               target="_blank"

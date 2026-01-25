@@ -32,24 +32,8 @@ function parseMessageWithLinks(text: string): ReactNode {
   let match;
   let keyCounter = 0;
 
-  // Function to clean trailing punctuation from URLs
-  const cleanUrl = (url: string): { clean: string; trailing: string } => {
-    // Remove trailing punctuation like . , ; : ! ? ) ] } etc.
-    let trailingPunct = "";
-    let cleanedUrl = url;
-
-    // Keep removing trailing punctuation one char at a time
-    while (cleanedUrl.length > 0 && /[.,;:!?\)\]\}]$/.test(cleanedUrl)) {
-      trailingPunct = cleanedUrl[cleanedUrl.length - 1] + trailingPunct;
-      cleanedUrl = cleanedUrl.slice(0, -1);
-    }
-
-    return { clean: cleanedUrl, trailing: trailingPunct };
-  };
-
   while ((match = urlRegex.exec(text)) !== null) {
-    let rawUrl = match[0];
-    const { clean: cleanedUrl, trailing: trailingPunct } = cleanUrl(rawUrl);
+    const url = match[0];
     const startIndex = match.index;
 
     // Add text before the URL
@@ -63,23 +47,17 @@ function parseMessageWithLinks(text: string): ReactNode {
     parts.push(
       <a
         key={`link_${keyCounter}`}
-        href={cleanedUrl}
+        href={url}
         target="_blank"
         rel="noopener noreferrer"
-        className="underline text-blue-400 hover:text-blue-300 font-semibold transition-colors"
+        className="rag-chat-link underline text-blue-400 hover:text-blue-300 font-semibold transition-colors"
       >
-        {cleanedUrl}
+        {url}
       </a>,
     );
     keyCounter++;
 
-    // Add trailing punctuation back as plain text if any
-    if (trailingPunct) {
-      parts.push(<span key={`trail_${keyCounter}`}>{trailingPunct}</span>);
-      keyCounter++;
-    }
-
-    lastIndex = startIndex + rawUrl.length;
+    lastIndex = urlRegex.lastIndex;
   }
 
   // Add remaining text after the last URL
@@ -267,31 +245,32 @@ export function RagChatWidget() {
   };
 
   return (
-    <>
-      {/* Chat Button */}
-      {!isOpen && (
-        <button
-          onClick={() => setIsOpen(true)}
-          className={cn(
-            "rounded-full shadow-2xl hover:shadow-xl transition-all hover:scale-110 p-4",
-            theme === "light"
-              ? "bg-orange-500 hover:bg-orange-600 text-white"
-              : "bg-orange-600 hover:bg-orange-700 text-white",
-          )}
-          style={{
-            position: "fixed",
-            bottom: "clamp(6rem, 12vh, 8rem)",
-            right: "clamp(1rem, 3vw, 1.5rem)",
-            zIndex: 99999,
-            display: "block",
-            width: "56px",
-            height: "56px",
-          }}
-          aria-label="Open chat"
-        >
-          <MessageSquare className="w-6 h-6" />
-        </button>
+    <div
+      className={cn(
+        "rag-legacy",
+        theme === "light" ? "rag-theme-light" : "rag-theme-dark",
       )}
+    >
+      {/* Chat Button */}
+      <AnimatePresence>
+        {!isOpen && (
+          <motion.button
+            initial={{ scale: 0, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0, opacity: 0 }}
+            onClick={() => setIsOpen(true)}
+            className={cn(
+              "rag-chat-button fixed bottom-6 right-6 z-[100] rounded-full p-4 shadow-lg hover:shadow-xl transition-all hover:scale-110",
+              theme === "light"
+                ? "bg-orange-500 hover:bg-orange-600 text-white"
+                : "bg-orange-600 hover:bg-orange-700 text-white",
+            )}
+            aria-label="Open chat"
+          >
+            <MessageSquare className="w-6 h-6" />
+          </motion.button>
+        )}
+      </AnimatePresence>
 
       {/* Chat Window */}
       <AnimatePresence>
@@ -302,73 +281,31 @@ export function RagChatWidget() {
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.2 }}
             className={cn(
-              "rounded-2xl shadow-2xl flex flex-col",
+              "rag-chat-window fixed bottom-6 right-6 z-[101] w-96 h-[600px] rounded-2xl shadow-2xl flex flex-col",
               theme === "light"
                 ? "bg-white border border-gray-200"
                 : "bg-slate-900 border border-slate-700",
             )}
-            style={{
-              position: "fixed",
-              bottom: "clamp(6rem, 12vh, 8rem)",
-              right: "clamp(1rem, 3vw, 1.5rem)",
-              zIndex: 99999,
-              width: "clamp(280px, 90vw, 400px)",
-              height: "clamp(300px, 70vh, 600px)",
-              borderRadius: "clamp(0.75rem, 2vmin, 1rem)",
-            }}
           >
             {/* Header */}
             <div
               className={cn(
-                "flex items-center justify-between border-b",
+                "rag-chat-header flex items-center justify-between p-4 rounded-t-2xl border-b",
                 theme === "light"
                   ? "bg-gradient-to-r from-orange-50 to-orange-100 border-orange-200"
                   : "bg-gradient-to-r from-orange-900/20 to-orange-800/20 border-orange-700/30",
               )}
-              style={{
-                padding: "clamp(0.75rem, 2vmin, 1rem)",
-                borderTopLeftRadius: "clamp(0.75rem, 2vmin, 1rem)",
-                borderTopRightRadius: "clamp(0.75rem, 2vmin, 1rem)",
-              }}
             >
-              <div
-                className="flex items-center"
-                style={{ gap: "clamp(0.5rem, 2vmin, 0.75rem)" }}
-              >
-                <div
-                  className="rounded-full bg-orange-500 flex items-center justify-center"
-                  style={{
-                    width: "clamp(2rem, 5vmin, 2.5rem)",
-                    height: "clamp(2rem, 5vmin, 2.5rem)",
-                  }}
-                >
-                  <MessageSquare
-                    style={{
-                      width: "clamp(1rem, 3vmin, 1.5rem)",
-                      height: "clamp(1rem, 3vmin, 1.5rem)",
-                    }}
-                    className="text-white"
-                  />
+              <div className="flex items-center gap-3">
+                <div className="rag-chat-avatar w-10 h-10 rounded-full bg-orange-500 flex items-center justify-center">
+                  <MessageSquare className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h3
-                    className="font-semibold"
-                    style={{ fontSize: "clamp(0.75rem, 2vmin, 0.875rem)" }}
-                  >
-                    DSU Admissions Bot
-                  </h3>
-                  <p
-                    className="opacity-70"
-                    style={{ fontSize: "clamp(0.625rem, 1.5vmin, 0.75rem)" }}
-                  >
-                    Powered by AI-First
-                  </p>
+                  <h3 className="title-xs font-semibold">DSU Admissions Bot</h3>
+                  <p className="body-sm opacity-70">Powered by AI-First</p>
                 </div>
               </div>
-              <div
-                className="flex"
-                style={{ gap: "clamp(0.25rem, 1vmin, 0.5rem)" }}
-              >
+              <div className="flex gap-2">
                 <button
                   onClick={clearConversation}
                   className="p-2 hover:bg-white/20 rounded-lg transition-colors"
@@ -389,12 +326,9 @@ export function RagChatWidget() {
             {/* Messages Container */}
             <div
               className={cn(
-                "flex-1 overflow-y-auto space-y-4",
+                "rag-chat-body flex-1 overflow-y-auto p-4 space-y-4",
                 theme === "light" ? "bg-gray-50" : "bg-slate-800/50",
               )}
-              style={{
-                padding: "clamp(0.75rem, 2vmin, 1rem)",
-              }}
             >
               {messages.map((message) => (
                 <motion.div
@@ -409,16 +343,11 @@ export function RagChatWidget() {
                   {/* Avatar */}
                   <div
                     className={cn(
-                      "rounded-full flex items-center justify-center flex-shrink-0 font-bold",
+                      "rag-chat-avatar w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 body-sm font-bold",
                       message.role === "user"
                         ? "bg-blue-500 text-white"
                         : "bg-orange-500 text-white",
                     )}
-                    style={{
-                      width: "clamp(1.75rem, 4vmin, 2rem)",
-                      height: "clamp(1.75rem, 4vmin, 2rem)",
-                      fontSize: "clamp(0.625rem, 1.5vmin, 0.75rem)",
-                    }}
                   >
                     {message.role === "user" ? "You" : "Bot"}
                   </div>
@@ -426,21 +355,17 @@ export function RagChatWidget() {
                   {/* Message Bubble */}
                   <div
                     className={cn(
-                      "rounded-2xl max-w-sm",
+                      "rag-chat-bubble rounded-2xl px-4 py-2 max-w-sm",
                       message.role === "user"
                         ? theme === "light"
-                          ? "bg-blue-500 text-white"
-                          : "bg-blue-600 text-white"
+                          ? "rag-chat-bubble-user bg-blue-500 text-white"
+                          : "rag-chat-bubble-user bg-blue-600 text-white"
                         : theme === "light"
-                          ? "bg-white border border-gray-200 text-gray-900"
-                          : "bg-slate-700 border border-slate-600 text-white",
+                          ? "rag-chat-bubble-bot bg-white border border-gray-200 text-gray-900"
+                          : "rag-chat-bubble-bot bg-slate-700 border border-slate-600 text-white",
                     )}
-                    style={{
-                      padding:
-                        "clamp(0.5rem, 1.5vmin, 0.75rem) clamp(0.75rem, 2vmin, 1rem)",
-                    }}
                   >
-                    <p className="text-sm leading-relaxed whitespace-pre-wrap">
+                    <p className="body-md leading-relaxed whitespace-pre-wrap">
                       {message.role === "assistant"
                         ? parseMessageWithLinks(message.content)
                         : message.content}
@@ -455,10 +380,10 @@ export function RagChatWidget() {
                   animate={{ opacity: 1 }}
                   className="flex gap-3"
                 >
-                  <div className="w-8 h-8 rounded-full bg-orange-500 text-white flex items-center justify-center flex-shrink-0">
+                  <div className="rag-chat-avatar w-8 h-8 rounded-full bg-orange-500 text-white flex items-center justify-center flex-shrink-0">
                     <Loader2 className="w-4 h-4 animate-spin" />
                   </div>
-                  <div className="rounded-2xl px-4 py-2 bg-gray-200 dark:bg-slate-700">
+                  <div className="rag-chat-bubble rag-chat-bubble-bot rounded-2xl px-4 py-2 bg-gray-200 dark:bg-slate-700">
                     <div className="flex gap-1">
                       <div className="w-2 h-2 bg-gray-600 dark:bg-gray-400 rounded-full animate-bounce" />
                       <div
@@ -481,7 +406,7 @@ export function RagChatWidget() {
                   className="flex gap-2 p-3 rounded-lg bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800"
                 >
                   <AlertCircle className="w-5 h-5 text-red-500 flex-shrink-0" />
-                  <p className="text-sm text-red-700 dark:text-red-200">
+                  <p className="body-sm text-red-700 dark:text-red-200">
                     {error}
                   </p>
                 </motion.div>
@@ -494,7 +419,7 @@ export function RagChatWidget() {
                   animate={{ opacity: 1, y: 0 }}
                   className="mt-4 space-y-2"
                 >
-                  <p className="text-xs font-semibold opacity-60">
+                  <p className="body-sm font-semibold opacity-60">
                     Suggested questions:
                   </p>
                   <div className="grid gap-2">
@@ -504,7 +429,7 @@ export function RagChatWidget() {
                         onClick={() => handleQuickReply(reply)}
                         disabled={isLoading}
                         className={cn(
-                          "text-left text-xs p-2 rounded-lg transition-colors border cursor-pointer hover:scale-105 transform",
+                          "rag-chat-quick-reply text-left body-sm p-2 rounded-lg transition-colors border cursor-pointer hover:scale-105 transform",
                           theme === "light"
                             ? "bg-orange-50 border-orange-200 hover:bg-orange-100 text-orange-900"
                             : "bg-orange-900/20 border-orange-700/30 hover:bg-orange-900/40 text-orange-100",
@@ -524,66 +449,42 @@ export function RagChatWidget() {
             <form
               onSubmit={handleSubmit}
               className={cn(
-                "border-t",
+                "rag-chat-input-bar p-4 border-t",
                 theme === "light"
                   ? "bg-gray-50 border-gray-200"
                   : "bg-slate-800 border-slate-700",
               )}
-              style={{
-                padding: "clamp(0.75rem, 2vmin, 1rem)",
-              }}
             >
-              <div
-                className="flex"
-                style={{ gap: "clamp(0.25rem, 1vmin, 0.5rem)" }}
-              >
+              <div className="flex gap-2">
                 <Input
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   placeholder="Ask me anything about DSU..."
                   disabled={isLoading}
                   className={cn(
+                    "rag-chat-input body-md h-10",
                     theme === "light"
                       ? "bg-white border-gray-300"
                       : "bg-slate-700 border-slate-600 text-white",
                   )}
-                  style={{
-                    fontSize: "clamp(0.75rem, 2vmin, 0.875rem)",
-                    height: "clamp(2rem, 5vmin, 2.5rem)",
-                  }}
                   autoFocus
                 />
                 <Button
                   type="submit"
                   disabled={!input.trim() || isLoading}
                   size="sm"
-                  className="bg-orange-500 hover:bg-orange-600 text-white"
-                  style={{
-                    minHeight: "clamp(2rem, 5vmin, 2.5rem)",
-                    padding: "clamp(0.25rem, 1vmin, 0.5rem)",
-                  }}
+                  className="rag-chat-send bg-orange-500 hover:bg-orange-600 text-white"
                 >
-                  <Send
-                    style={{
-                      width: "clamp(0.875rem, 2.5vmin, 1rem)",
-                      height: "clamp(0.875rem, 2.5vmin, 1rem)",
-                    }}
-                  />
+                  <Send className="w-4 h-4" />
                 </Button>
               </div>
-              <p
-                className="opacity-50"
-                style={{
-                  fontSize: "clamp(0.625rem, 1.5vmin, 0.75rem)",
-                  marginTop: "clamp(0.25rem, 1vmin, 0.5rem)",
-                }}
-              >
+              <p className="body-sm opacity-50 mt-2">
                 💡 Ask about programs, fees, admissions, facilities, and more!
               </p>
             </form>
           </motion.div>
         )}
       </AnimatePresence>
-    </>
+    </div>
   );
 }

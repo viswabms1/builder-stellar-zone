@@ -104,13 +104,13 @@ export function DeanSection({ dean }: DeanSectionProps) {
               <div className="space-y-4">
                 {/* Header with Name and Title */}
                 <div className="border-l-4 border-brand-magenta pl-4">
-                  <h3 className="text-2xl font-semibold text-foreground font-display">
+                  <h3 className="title-lg font-semibold text-foreground">
                     {dean.name}
                   </h3>
-                  <p className="text-sm text-foreground mt-1 font-body">
+                  <p className="body-sm text-foreground mt-1">
                     {dean.title}
                   </p>
-                  <p className="text-sm font-medium text-brand-magenta mt-2 font-display">
+                  <p className="body-sm font-medium text-brand-magenta mt-2">
                     {dean.position}
                   </p>
                 </div>
@@ -119,7 +119,7 @@ export function DeanSection({ dean }: DeanSectionProps) {
                 {dean.videoUrl ? (
                   <DeanMessageVideo videoUrl={dean.videoUrl} />
                 ) : dean.message ? (
-                  <div className="space-y-4 text-foreground/90 font-body leading-relaxed text-sm md:text-base">
+                  <div className="space-y-4 text-foreground/90 leading-relaxed body-md">
                     {dean.message.map((paragraph, idx) => (
                       <p key={idx}>{paragraph}</p>
                     ))}
@@ -127,10 +127,10 @@ export function DeanSection({ dean }: DeanSectionProps) {
                 ) : (
                   <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-black/20 border border-border/30 flex items-center justify-center">
                     <div className="text-center space-y-2">
-                      <p className="text-foreground/60 text-sm font-medium">
+                      <p className="text-foreground/60 body-sm font-medium">
                         Coming Soon
                       </p>
-                      <p className="text-foreground/40 text-xs">
+                      <p className="text-foreground/40 body-sm">
                         Dean's Message Video
                       </p>
                     </div>

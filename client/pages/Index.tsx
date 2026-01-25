@@ -70,19 +70,6 @@ function HeroVideo() {
 
     // Play video at normal speed
     video.playbackRate = 1;
-
-    // Attempt to play video - handle promise rejection for autoplay restrictions
-    video.play().catch((error) => {
-      console.warn("Video autoplay failed:", error);
-      // Try again when user interacts with page
-      const playOnInteraction = () => {
-        video.play().catch(() => {});
-        document.removeEventListener("click", playOnInteraction);
-        document.removeEventListener("scroll", playOnInteraction);
-      };
-      document.addEventListener("click", playOnInteraction);
-      document.addEventListener("scroll", playOnInteraction);
-    });
   }, []);
 
   useEffect(() => {
@@ -104,15 +91,11 @@ function HeroVideo() {
           muted={isMuted}
           loop
           playsInline
-          preload="auto"
+          preload="metadata"
           crossOrigin="anonymous"
-          controls={false}
           className="w-full h-full object-cover"
           style={{
             objectPosition: "center center",
-            display: "block",
-            width: "100%",
-            height: "100%",
           }}
         />
 
@@ -259,21 +242,21 @@ function NewsModal({
               className={`${
                 newsItem.color === "brand-orange"
                   ? "bg-brand-orange/20 text-brand-orange"
-                  : newsItem.color === "emerald-500"
-                    ? "bg-emerald-500/20 text-emerald-500"
+                  : newsItem.color === "brand-magenta"
+                    ? "bg-brand-magenta/20 text-brand-magenta"
                     : "bg-brand-blue/20 text-brand-blue"
               }`}
             >
               {newsItem.category}
             </Badge>
-            <div className="flex items-center text-foreground/60 text-xs font-body">
+            <div className="flex items-center text-foreground/60 body-sm">
               <CalendarDays className="w-4 h-4 mr-1" /> {newsItem.date}
             </div>
           </div>
-          <h2 className="text-3xl font-semibold text-foreground mb-4 font-display">
+          <h2 className="title-xl text-foreground mb-4">
             {newsItem.title}
           </h2>
-          <p className="text-foreground/80 text-lg font-body">
+          <p className="text-foreground/80 body-lg">
             {newsItem.excerpt}
           </p>
         </div>
@@ -400,7 +383,7 @@ export default function Index() {
     {
       key: "computerApplications",
       icon: Cpu,
-      color: "emerald-500",
+      color: "brand-blue",
       delay: "0.1s",
       href: "/academics/computer-applications",
       image:
@@ -439,12 +422,12 @@ export default function Index() {
     {
       key: "sciences",
       icon: FlaskConical,
-      color: "emerald-500",
+      color: "brand-blue",
       delay: "0.4s",
       href: "/academics/basic-applied-sciences",
       image:
         "https://images.pexels.com/photos/9628799/pexels-photo-9628799.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
-      title: "School of Basic & Applied Sciences",
+      title: "School of Applied Sciences",
       campus: "City Innovation Campus",
       description: "",
       programs: ["Physics", "Chemistry", "Mathematics", "Biotechnology"],
@@ -465,12 +448,12 @@ export default function Index() {
     {
       key: "design",
       icon: Film,
-      color: "emerald-500",
+      color: "brand-blue",
       delay: "0.7s",
       href: "/academics/design/bdesign",
       image:
         "https://images.pexels.com/photos/7147711/pexels-photo-7147711.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
-      title: "School of Design & Digital Trans-Media",
+      title: "School of Design",
       campus: "City Innovation Campus",
       description: "",
       programs: ["Animation", "UX/UI", "Graphic Design", "Digital Media"],
@@ -483,7 +466,7 @@ export default function Index() {
       href: "/academics/journalism-mass-communication",
       image:
         "https://images.pexels.com/photos/7317291/pexels-photo-7317291.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
-      title: "School of Arts, Design & Humanities",
+      title: "School of Journalism & Mass Communication",
       campus: "City Innovation Campus",
       description: "",
       programs: ["BJMC", "PG Diploma", "Documentary", "Digital Media"],
@@ -496,8 +479,7 @@ export default function Index() {
       href: "https://cdsimer.edu.in",
       image:
         "https://images.pexels.com/photos/5726794/pexels-photo-5726794.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
-      title:
-        "Dr. Chandramma Dayananda Sagar Institute of Medical Education & Research",
+      title: "Medical Education & Research",
       campus: "Main Campus",
       description: "",
       programs: ["MBBS", "MD", "DM", "Fellowship"],
@@ -505,12 +487,12 @@ export default function Index() {
     {
       key: "online",
       icon: Laptop,
-      color: "emerald-500",
+      color: "brand-blue",
       delay: "0.85s",
-      href: "https://dsuonline.com/",
+      href: "/academics/dsu-online",
       image:
         "https://images.pexels.com/photos/7974355/pexels-photo-7974355.jpeg?auto=compress&cs=tinysrgb&w=400&q=75",
-      title: "Online Degree Programs",
+      title: "DSU Online",
       campus: "City Innovation Campus",
       description: "",
       programs: [
@@ -533,7 +515,8 @@ export default function Index() {
       excerpt:
         "Our student-built rocket successfully achieves 1200.77m apogee and safe recovery, marking a triumph of innovation and technical mastery in aerospace engineering.",
       date: "Oct 29, 2025",
-      color: "emerald-500",
+      color: "brand-magenta",
+      rotate: false,
     },
     {
       image:
@@ -545,7 +528,8 @@ export default function Index() {
       excerpt:
         "Celebrating the achievements and milestones of our graduating students and faculty.",
       date: "Oct 15, 2025",
-      color: "emerald-500",
+      color: "brand-orange",
+      rotate: false,
     },
     {
       image:
@@ -559,6 +543,7 @@ export default function Index() {
         "Join us on November 7th for inspiring talks and transformative ideas at TEDxDSU 2025.",
       date: "Nov 7, 2025",
       color: "brand-blue",
+      rotate: false,
     },
   ];
 
@@ -618,7 +603,7 @@ export default function Index() {
 
       {/* Hero Section with Full-Screen Video Background */}
       <section
-        className="hero-section relative flex flex-col justify-between overflow-hidden"
+        className="hero-section relative h-[40vh] md:h-[75vh] flex flex-col justify-between md:overflow-hidden overflow-visible mt-14 md:mt-0"
         style={{ width: "100vw", marginLeft: "calc(-50vw + 50%)" }}
       >
         {/* Full-screen Background Video */}
@@ -630,33 +615,33 @@ export default function Index() {
         <div className="absolute inset-0 bg-black/40"></div>
 
         {/* Location Badge */}
-        <div className="absolute top-16 md:top-28 right-6 z-20 flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-md rounded-full border border-white/40 shadow-lg">
+        <div className="absolute top-20 right-6 z-20 flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-md rounded-full border border-white/40 shadow-lg">
           <MapPin className="w-4 h-4 text-white font-bold" />
-          <span className="text-sm font-semibold text-white whitespace-nowrap">
+          <span className="body-sm font-semibold text-white whitespace-nowrap">
             Main Campus
           </span>
         </div>
 
         {/* Hero Content */}
-        <div className="relative max-w-7xl mx-auto px-3 w-full z-10 flex flex-col justify-between h-full py-0 md:py-0 md:items-start md:justify-center">
+        <div className="relative max-w-7xl mx-auto px-3 w-full z-10 flex flex-col justify-between h-full py-6 md:py-0 md:items-start md:justify-center">
           {/* Title Section - Top on mobile */}
-          <div className="max-w-4xl pt-6 md:pt-0 md:pb-12">
-            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-2 sm:mb-3 md:mb-4 leading-tight font-display">
+          <div className="max-w-4xl pt-0 md:pt-0 md:pb-12">
+            <h1 className="headline-1 font-bold text-white mb-2 sm:mb-3 md:mb-4 leading-tight">
               Dayananda Sagar University
             </h1>
-            <p className="text-base sm:text-xl md:text-2xl lg:text-3xl font-semibold text-white mb-1 sm:mb-2 md:mb-6 leading-tight font-display">
+            <p className="headline-3 text-white mb-1 sm:mb-2 md:mb-6 leading-tight">
               India’s AI-First University
             </p>
-            <p className="text-xs sm:text-sm md:text-base lg:text-lg font-normal text-white/75 mb-2 md:mb-0">
+            <p className="body-sm text-white/75 mb-2 md:mb-0">
               Powered by NVIDIA
             </p>
-            <p className="text-xs sm:text-base md:text-lg lg:text-xl font-medium text-white/80 mt-2 font-display hidden sm:block">
+            <p className="body-lg text-white/80 mt-2 hidden sm:block">
               AI integrated across academics, research, and campus innovation
             </p>
           </div>
 
           {/* Buttons Section - Apply Today full width on mobile, below tagline */}
-          <div className="flex flex-col gap-4 w-full sm:w-auto sm:gap-6 pb-6 md:pb-0 landscape-buttons md:flex hidden">
+          <div className="flex flex-col gap-4 w-full sm:w-auto sm:gap-6">
             <a
               href="https://admissions.dsu.edu.in/"
               target="_blank"
@@ -665,20 +650,10 @@ export default function Index() {
             >
               <Button
                 size="lg"
-                className="bg-white hover:bg-white/90 text-orange-600 hover:text-orange-700 font-bold font-display transition-all duration-300 group shadow-xl hover:shadow-2xl hover:-translate-y-1 w-full sm:w-auto"
-                style={{
-                  padding: "clamp(0.75rem, 2vw, 1rem) clamp(1.5rem, 4vw, 2rem)",
-                  fontSize: "clamp(0.875rem, 2vw, 1rem)",
-                }}
+                className="bg-white hover:bg-white/90 text-brand-orange hover:text-brand-orange/80 px-8 py-6 title-sm transition-all duration-300 group shadow-xl hover:shadow-2xl hover:-translate-y-1 w-full sm:w-auto"
               >
                 Apply Today
-                <ArrowRight
-                  style={{
-                    width: "clamp(1rem, 2vw, 1.25rem)",
-                    height: "clamp(1rem, 2vw, 1.25rem)",
-                  }}
-                  className="ml-2 group-hover:translate-x-1 transition-transform"
-                />
+                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
             </a>
 
@@ -691,12 +666,7 @@ export default function Index() {
               >
                 <Button
                   variant="outline"
-                  className="bg-transparent hover:bg-white/10 text-white border border-white/70 font-medium font-display transition-all duration-300 w-full sm:w-auto"
-                  style={{
-                    padding:
-                      "clamp(0.5rem, 1.5vw, 0.75rem) clamp(1.25rem, 3vw, 1.5rem)",
-                    fontSize: "clamp(0.8125rem, 1.8vw, 0.875rem)",
-                  }}
+                  className="bg-transparent hover:bg-white/10 text-white border border-white/70 px-6 py-3 body-md font-medium transition-all duration-300 w-full sm:w-auto"
                 >
                   Virtual Tour
                 </Button>
@@ -705,7 +675,7 @@ export default function Index() {
 
             <Link
               to="/ai-first"
-              className="hidden sm:inline-flex items-center gap-2 text-white hover:text-orange-200 transition-all duration-300 font-display font-semibold text-lg group w-fit"
+              className="hidden sm:inline-flex items-center gap-2 text-white hover:text-brand-orange/80 transition-all duration-300 title-sm group w-fit"
             >
               <span>Build the Future of AI at DSU</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
@@ -714,61 +684,12 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Mobile Buttons Section - Visible only on mobile portrait */}
-      <section className="md:hidden bg-background relative max-w-7xl mx-auto px-3 w-full py-6">
-        <div className="flex flex-col gap-4 sm:flex-row landscape-buttons">
-          <a
-            href="https://admissions.dsu.edu.in/"
-            target="_blank"
-            rel="noreferrer"
-            className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background w-full sm:w-auto"
-          >
-            <Button
-              size="lg"
-              className="bg-white hover:bg-white/90 text-orange-600 hover:text-orange-700 font-bold font-display transition-all duration-300 group shadow-xl hover:shadow-2xl hover:-translate-y-1 w-full sm:w-auto"
-              style={{
-                padding: "clamp(0.75rem, 2vw, 1rem) clamp(1.5rem, 4vw, 2rem)",
-                fontSize: "clamp(0.875rem, 2vw, 1rem)",
-              }}
-            >
-              Apply Today
-              <ArrowRight
-                style={{
-                  width: "clamp(1rem, 2vw, 1.25rem)",
-                  height: "clamp(1rem, 2vw, 1.25rem)",
-                }}
-                className="ml-2 group-hover:translate-x-1 transition-transform"
-              />
-            </Button>
-          </a>
-
-          <a
-            href="https://dsu.edu.in/virtual-tour/"
-            target="_blank"
-            rel="noreferrer"
-            className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background w-full sm:w-auto"
-          >
-            <Button
-              variant="outline"
-              className="bg-transparent hover:bg-white/10 text-foreground border border-border hover:border-brand-orange font-medium font-display transition-all duration-300 w-full sm:w-auto"
-              style={{
-                padding:
-                  "clamp(0.5rem, 1.5vw, 0.75rem) clamp(1.25rem, 3vw, 1.5rem)",
-                fontSize: "clamp(0.8125rem, 1.8vw, 0.875rem)",
-              }}
-            >
-              Virtual Tour
-            </Button>
-          </a>
-        </div>
-      </section>
-
       {/* Performance Indicators Section */}
       <section className="px-3 pt-2 md:pt-4 pb-3 md:pb-4 relative bg-gradient-to-r from-brand-magenta/5 via-brand-orange/5 to-brand-blue/5 border-y border-border/30">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-4 md:mb-6">
             <h2 className="headline-2 mb-1 md:mb-2">Recognized Excellence</h2>
-            <p className="subheadline text-foreground max-w-3xl mx-auto">
+            <p className="body-md text-foreground max-w-3xl mx-auto">
               Accredited by leading national and international bodies
             </p>
           </div>
@@ -840,16 +761,16 @@ export default function Index() {
           >
             {schoolsData.map((school, index) => {
               const styles = [
-                { bg: "bg-orange-500/10", border: "border-orange-500/20" },
-                { bg: "bg-violet-500/10", border: "border-violet-500/20" },
-                { bg: "bg-blue-500/10", border: "border-blue-500/20" },
-                { bg: "bg-emerald-500/10", border: "border-emerald-500/20" },
-                { bg: "bg-purple-500/10", border: "border-purple-500/20" },
-                { bg: "bg-cyan-500/10", border: "border-cyan-500/20" },
-                { bg: "bg-amber-500/10", border: "border-amber-500/20" },
-                { bg: "bg-rose-500/10", border: "border-rose-500/20" },
-                { bg: "bg-indigo-500/10", border: "border-indigo-500/20" },
-                { bg: "bg-teal-500/10", border: "border-teal-500/20" },
+                { bg: "bg-brand-orange/10", border: "border-brand-orange/20" },
+                { bg: "bg-brand-magenta/10", border: "border-brand-magenta/20" },
+                { bg: "bg-brand-blue/10", border: "border-brand-blue/20" },
+                { bg: "bg-brand-orange/10", border: "border-brand-orange/20" },
+                { bg: "bg-brand-magenta/10", border: "border-brand-magenta/20" },
+                { bg: "bg-brand-blue/10", border: "border-brand-blue/20" },
+                { bg: "bg-brand-orange/10", border: "border-brand-orange/20" },
+                { bg: "bg-brand-magenta/10", border: "border-brand-magenta/20" },
+                { bg: "bg-brand-blue/10", border: "border-brand-blue/20" },
+                { bg: "bg-brand-orange/10", border: "border-brand-orange/20" },
               ];
               const style = styles[index % styles.length];
 
@@ -871,24 +792,18 @@ export default function Index() {
 
                   {/* Content Container */}
                   <div
-                    className={`${style.bg} ${style.border} border border-t-0 rounded-none ${school.key === "medical" ? "p-1" : "p-2"} flex flex-col ${school.key === "medical" ? "justify-start" : "justify-center"} items-center h-24 w-full backdrop-blur-sm`}
+                    className={`${style.bg} ${style.border} border border-t-0 rounded-none p-3 flex flex-col justify-center items-center h-24 w-full backdrop-blur-sm`}
                   >
-                    <div
-                      className={`text-center ${school.key === "medical" ? "space-y-0.25" : "space-y-1.5"}`}
-                    >
-                      <h3
-                        className={`${school.key === "medical" ? "text-[8px] sm:text-xs md:text-sm leading-tight" : "text-base md:text-lg"} font-bold text-foreground font-display hover:text-brand-magenta transition-colors text-center ${school.key === "medical" ? "line-clamp-4" : "line-clamp-2"}`}
-                      >
+                    <div className="text-center space-y-1.5">
+                      <h3 className="title-sm text-foreground hover:text-brand-magenta transition-colors text-center">
                         {school.title}
                       </h3>
+                      {school.campus && (
+                        <p className="body-sm font-semibold text-foreground/70 bg-foreground/10 px-2 py-0.5 rounded-full inline-block">
+                          {school.campus}
+                        </p>
+                      )}
                     </div>
-                    {school.campus && (
-                      <p
-                        className={`${school.key === "medical" ? "text-[8px] py-0 px-1 mt-0.5" : "text-xs py-0.5 px-2"} font-semibold text-foreground/70 bg-foreground/10 rounded-full inline-block`}
-                      >
-                        {school.campus}
-                      </p>
-                    )}
                   </div>
                 </div>
               );
@@ -932,7 +847,7 @@ export default function Index() {
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 mb-6">
               <div className="h-1 w-8 bg-white rounded-full"></div>
-              <span className="text-xs font-bold uppercase tracking-widest text-white">
+              <span className="eyebrow text-white">
                 Research Excellence
               </span>
               <div className="h-1 w-8 bg-white rounded-full"></div>
@@ -956,7 +871,7 @@ export default function Index() {
               <div className="h-2 bg-white/10 overflow-hidden">
                 <div
                   key={`progress-${selectedPublicationIndex}`}
-                  className="h-full bg-gradient-to-r from-emerald-500 via-brand-blue to-brand-orange"
+                  className="h-full bg-gradient-to-r from-brand-magenta via-brand-blue to-brand-orange"
                   style={{
                     animation: "progressFill 4s linear forwards",
                   }}
@@ -997,28 +912,28 @@ export default function Index() {
               >
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex flex-col gap-3">
-                    <Badge className="bg-emerald-500/25 text-emerald-500 border border-emerald-500/50 w-fit">
+                    <Badge className="bg-brand-blue/25 text-brand-blue border border-brand-blue/50 w-fit">
                       {allPublications[selectedPublicationIndex].category}
                     </Badge>
                     <div className="flex items-center gap-2">
-                      <span className="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                      <span className="text-xs font-semibold text-white">
+                      <span className="inline-block w-2 h-2 rounded-full bg-brand-blue animate-pulse"></span>
+                      <span className="body-sm font-semibold text-white">
                         Featured Publication
                       </span>
                     </div>
                   </div>
-                  <span className="text-sm font-bold text-foreground/60">
+                  <span className="body-sm font-semibold text-foreground/60">
                     {allPublications[selectedPublicationIndex].date}
                   </span>
                 </div>
-                <h3 className="text-2xl md:text-3xl font-bold text-foreground font-display leading-tight">
+                <h3 className="title-lg text-foreground leading-tight">
                   {allPublications[selectedPublicationIndex].title}
                 </h3>
-                <p className="text-sm text-foreground/80 font-body leading-relaxed">
+                <p className="body-md text-foreground/80 leading-relaxed">
                   {allPublications[selectedPublicationIndex].description}
                 </p>
                 <div className="pt-2 border-t border-foreground/10">
-                  <p className="text-sm text-white/90 font-semibold">
+                  <p className="body-sm text-white/90 font-semibold">
                     ✓ {allPublications[selectedPublicationIndex].authors}
                   </p>
                 </div>
@@ -1030,13 +945,13 @@ export default function Index() {
                       rel="noreferrer"
                       className="no-underline group"
                     >
-                      <Button className="bg-emerald-500 hover:bg-emerald-600 text-white font-bold gap-2 transform group-hover:translate-x-1 transition-all shadow-lg hover:shadow-xl">
+                      <Button className="bg-brand-blue hover:bg-brand-blue/80 text-white font-bold gap-2 transform group-hover:translate-x-1 transition-all shadow-lg hover:shadow-xl">
                         Read Full Paper
                         <ArrowRight className="w-4 h-4" />
                       </Button>
                     </a>
                   ) : (
-                    <Button className="bg-emerald-500 hover:bg-emerald-600 text-white font-bold gap-2 shadow-lg hover:shadow-xl">
+                    <Button className="bg-brand-blue hover:bg-brand-blue/80 text-white font-bold gap-2 shadow-lg hover:shadow-xl">
                       Read Full Paper
                       <ArrowRight className="w-4 h-4" />
                     </Button>
@@ -1055,18 +970,18 @@ export default function Index() {
                 "Progress in Photovoltaics",
               ].includes(publication.category);
               const colors = [
-                "from-emerald-500/20 to-emerald-500/5",
-                "from-brand-blue/20 to-brand-blue/5",
                 "from-brand-orange/20 to-brand-orange/5",
-                "from-emerald-500/20 to-emerald-500/5",
-                "from-purple-500/20 to-purple-500/5",
+                "from-brand-magenta/20 to-brand-magenta/5",
+                "from-brand-orange/20 to-brand-orange/5",
+                "from-brand-magenta/20 to-brand-magenta/5",
+                "from-brand-orange/20 to-brand-orange/5",
               ];
               const borderColors = [
-                "border-emerald-500/30 hover:border-emerald-500",
-                "border-brand-blue/30 hover:border-brand-blue",
                 "border-brand-orange/30 hover:border-brand-orange",
-                "border-emerald-500/30 hover:border-emerald-500",
-                "border-purple-500/30 hover:border-purple-500",
+                "border-brand-magenta/30 hover:border-brand-magenta",
+                "border-brand-orange/30 hover:border-brand-orange",
+                "border-brand-magenta/30 hover:border-brand-magenta",
+                "border-brand-orange/30 hover:border-brand-orange",
               ];
 
               return (
@@ -1080,8 +995,8 @@ export default function Index() {
                   }}
                   className={`group relative overflow-hidden rounded-xl border-2 transition-all duration-500 p-4 text-left h-full backdrop-blur-sm animate-publication-card-enter ${
                     selectedPublicationIndex === idx
-                      ? "border-emerald-500 bg-emerald-500/20 shadow-2xl shadow-emerald-500/20 scale-105 z-10"
-                      : `${borderColors[idx % 5]} bg-gradient-to-br ${colors[idx % 5]} hover:shadow-xl hover:shadow-emerald-500/20`
+                      ? "border-brand-blue bg-brand-blue/20 shadow-2xl shadow-brand-blue/20 scale-105 z-10"
+                      : `${borderColors[idx % 5]} bg-gradient-to-br ${colors[idx % 5]} hover:shadow-xl hover:shadow-brand-orange/20`
                   }`}
                   style={{
                     animation:
@@ -1091,7 +1006,7 @@ export default function Index() {
                   }}
                 >
                   {/* Background accent */}
-                  <div className="absolute -top-8 -right-8 w-20 h-20 bg-gradient-to-br from-emerald-500/20 to-transparent rounded-full blur-2xl group-hover:scale-150 transition-transform duration-500 pointer-events-none"></div>
+                  <div className="absolute -top-8 -right-8 w-20 h-20 bg-gradient-to-br from-brand-magenta/20 to-transparent rounded-full blur-2xl group-hover:scale-150 transition-transform duration-500 pointer-events-none"></div>
 
                   <div className="space-y-3 relative z-10">
                     {/* Header with badges */}
@@ -1099,9 +1014,9 @@ export default function Index() {
                       <div className="flex flex-col gap-2">
                         <Badge
                           variant="secondary"
-                          className={`text-xs flex-shrink-0 ${
+                          className={`body-sm flex-shrink-0 ${
                             isSpringer
-                              ? "bg-emerald-500/25 text-emerald-500 border-emerald-500/50"
+                              ? "bg-brand-magenta/25 text-brand-magenta border-brand-magenta/50"
                               : isHighImpact
                                 ? "bg-brand-blue/25 text-brand-blue border-brand-blue/50"
                                 : "bg-brand-orange/25 text-brand-orange border-brand-orange/50"
@@ -1114,25 +1029,25 @@ export default function Index() {
                               : "Research"}
                         </Badge>
                       </div>
-                      <span className="text-xs text-foreground/60 flex-shrink-0 font-semibold">
+                      <span className="body-sm text-foreground/60 flex-shrink-0 font-semibold">
                         {publication.date}
                       </span>
                     </div>
 
                     {/* Title with improved styling */}
-                    <h4 className="text-xs font-bold text-foreground font-display group-hover:text-emerald-500 transition-colors line-clamp-3 leading-tight">
+                    <h4 className="title-xs text-foreground group-hover:text-brand-orange transition-colors line-clamp-3 leading-tight">
                       {publication.title}
                     </h4>
 
                     {/* Category description */}
-                    <p className="text-xs text-foreground/70 line-clamp-1 font-medium">
+                    <p className="body-sm text-foreground/70 line-clamp-1 font-medium">
                       {publication.category}
                     </p>
 
                     {/* CTA indicator */}
-                    <div className="flex items-center gap-2 text-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform group-hover:translate-x-1 pt-2 border-t border-foreground/10">
+                    <div className="flex items-center gap-2 text-brand-orange opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform group-hover:translate-x-1 pt-2 border-t border-foreground/10">
                       <ChevronRight className="w-3 h-3" />
-                      <span className="text-xs font-semibold">
+                      <span className="body-sm font-semibold">
                         View Details
                       </span>
                     </div>
@@ -1144,6 +1059,7 @@ export default function Index() {
               );
             })}
           </div>
+
         </div>
       </section>
 
@@ -1172,7 +1088,7 @@ export default function Index() {
               <div className="h-2 bg-white/10 overflow-hidden">
                 <div
                   key={`news-progress-${featuredNewsIndex}`}
-                  className="h-full bg-gradient-to-r from-brand-blue via-brand-orange to-emerald-500"
+                  className="h-full bg-gradient-to-r from-brand-blue via-brand-magenta to-brand-orange"
                   style={{
                     animation: "progressFill 4s linear forwards",
                   }}
@@ -1181,13 +1097,13 @@ export default function Index() {
 
               <div className="relative">
                 {featuredNewsIndex === 0 && (
-                  <div className="absolute top-2 right-3 z-10 text-xs font-semibold text-white/70 pointer-events-none animate-pulse">
+                  <div className="absolute top-2 right-3 z-10 body-sm font-semibold text-white/70 pointer-events-none animate-pulse">
                     Swipe →
                   </div>
                 )}
                 <button
                   onClick={() => setSelectedNews(currentFeatured)}
-                  className={`w-full flex flex-col rounded-none border border-orange-500/20 bg-orange-500/10 cursor-pointer text-left overflow-hidden featured-news-card transition-all duration-300 ${
+                  className={`w-full flex flex-col rounded-none border border-brand-orange/20 bg-brand-orange/10 cursor-pointer text-left overflow-hidden featured-news-card transition-all duration-300 ${
                     newsTransitioning
                       ? "featured-news-exit"
                       : "featured-news-enter"
@@ -1236,27 +1152,27 @@ export default function Index() {
                     <div className="flex items-center gap-2 flex-wrap">
                       <div className="relative">
                         <Badge
-                          className={`text-xs ${currentFeatured.color === "brand-orange" ? "bg-brand-orange/20 text-brand-orange" : currentFeatured.color === "emerald-500" ? "bg-emerald-500/20 text-emerald-500" : "bg-brand-blue/20 text-brand-blue"}`}
+                          className={`body-sm ${currentFeatured.color === "brand-orange" ? "bg-brand-orange/20 text-brand-orange" : currentFeatured.color === "brand-magenta" ? "bg-brand-magenta/20 text-brand-magenta" : "bg-brand-blue/20 text-brand-blue"}`}
                         >
                           {currentFeatured.category}
                         </Badge>
                         {!newsTransitioning && (
-                          <div className="absolute -top-1 -right-1 w-2 h-2 bg-emerald-500 rounded-full featured-news-pulse" />
+                          <div className="absolute -top-1 -right-1 w-2 h-2 bg-brand-blue rounded-full featured-news-pulse" />
                         )}
                       </div>
-                      <div className="flex items-center text-foreground/60 text-xs font-body">
+                      <div className="flex items-center text-foreground/60 body-sm">
                         <CalendarDays className="w-3 h-3 mr-1" />{" "}
                         {currentFeatured.date}
                       </div>
                     </div>
-                    <h3 className="text-base font-semibold text-foreground font-display line-clamp-2">
+                    <h3 className="title-sm text-foreground line-clamp-2">
                       {currentFeatured.title}
                     </h3>
-                    <p className="text-xs text-foreground/80 font-body line-clamp-2">
+                    <p className="body-sm text-foreground/80 line-clamp-2">
                       {currentFeatured.excerpt}
                     </p>
                     <div className="flex items-center justify-between pt-2">
-                      <div className="text-xs text-foreground/60 font-body">
+                      <div className="body-sm text-foreground/60">
                         Auto-rotating • {featuredNewsIndex + 1} of{" "}
                         {allFeaturedNews.length}
                       </div>
@@ -1266,7 +1182,7 @@ export default function Index() {
                             key={idx}
                             className={`h-1.5 rounded-full transition-all duration-300 ${
                               idx === featuredNewsIndex
-                                ? "w-4 bg-emerald-500"
+                                ? "w-4 bg-brand-blue"
                                 : "w-1.5 bg-foreground/30 hover:bg-foreground/50"
                             }`}
                           />
@@ -1306,21 +1222,21 @@ export default function Index() {
                     )}
                     <div className="absolute top-2 left-2 transition-all duration-300 group-hover:scale-105">
                       <Badge
-                        className={`text-xs transition-all duration-300 ${item.color === "brand-orange" ? "bg-brand-orange/20 text-brand-orange group-hover:bg-brand-orange/40" : item.color === "brand-magenta" ? "bg-brand-magenta/20 text-brand-magenta group-hover:bg-brand-magenta/40" : "bg-brand-blue/20 text-brand-blue group-hover:bg-brand-blue/40"}`}
+                        className={`body-sm transition-all duration-300 ${item.color === "brand-orange" ? "bg-brand-orange/20 text-brand-orange group-hover:bg-brand-orange/40" : item.color === "brand-magenta" ? "bg-brand-magenta/20 text-brand-magenta group-hover:bg-brand-magenta/40" : "bg-brand-blue/20 text-brand-blue group-hover:bg-brand-blue/40"}`}
                       >
                         {item.category}
                       </Badge>
                     </div>
                   </div>
                   <div className="p-4 space-y-1">
-                    <h4 className="text-sm font-semibold font-display group-hover:text-brand-magenta transition-colors line-clamp-2">
+                    <h4 className="title-xs group-hover:text-brand-magenta transition-colors line-clamp-2">
                       {item.title}
                     </h4>
-                    <p className="text-xs text-foreground/80 font-body line-clamp-2">
+                    <p className="body-sm text-foreground/80 line-clamp-2">
                       {item.excerpt}
                     </p>
                     <div className="flex items-center justify-between pt-1">
-                      <span className="text-xs text-foreground font-body flex items-center">
+                      <span className="body-sm text-foreground flex items-center">
                         <CalendarDays className="w-4 h-4 mr-1" /> {item.date}
                       </span>
                       <ChevronRight className="w-4 h-4 text-foreground group-hover:text-brand-magenta" />

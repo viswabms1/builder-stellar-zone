@@ -42,14 +42,14 @@ export default function ScrollingTicker() {
   ];
 
   return (
-    <div className="relative w-full bg-gradient-to-r from-black to-amber-900 overflow-hidden py-1 md:py-1.5">
+    <div className="relative w-full bg-gradient-to-r from-black to-brand-orange overflow-hidden py-1 md:py-1.5">
       {/* Scrolling Container */}
       <div className="flex animate-scroll whitespace-nowrap">
         {/* First set of items */}
         {tickerItems.map((item, index) => (
           <div
             key={index}
-            className="px-4 md:px-6 py-0.5 text-white font-semibold text-xs md:text-sm flex items-center shrink-0"
+            className="px-4 md:px-6 py-0.5 text-white font-semibold body-sm flex items-center shrink-0"
           >
             <span>•</span>
             {item.href ? (
@@ -57,7 +57,7 @@ export default function ScrollingTicker() {
                 href={item.href}
                 target={item.external ? "_blank" : undefined}
                 rel={item.external ? "noopener noreferrer" : undefined}
-                className="ml-2 hover:text-amber-200 transition-colors cursor-pointer"
+                className="ml-2 hover:text-brand-orange/80 transition-colors cursor-pointer"
               >
                 {item.text}
               </a>
@@ -70,7 +70,7 @@ export default function ScrollingTicker() {
         {tickerItems.map((item, index) => (
           <div
             key={`duplicate-${index}`}
-            className="px-4 md:px-6 py-0.5 text-white font-semibold text-xs md:text-sm flex items-center shrink-0"
+            className="px-4 md:px-6 py-0.5 text-white font-semibold body-sm flex items-center shrink-0"
           >
             <span>•</span>
             {item.href ? (
@@ -78,7 +78,7 @@ export default function ScrollingTicker() {
                 href={item.href}
                 target={item.external ? "_blank" : undefined}
                 rel={item.external ? "noopener noreferrer" : undefined}
-                className="ml-3 hover:text-amber-200 transition-colors cursor-pointer"
+                className="ml-3 hover:text-brand-orange/80 transition-colors cursor-pointer"
               >
                 {item.text}
               </a>

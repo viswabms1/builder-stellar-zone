@@ -57,9 +57,9 @@ export default function FacultyPageTemplate({
                   <img src={faculty.image} alt={faculty.name} className="w-full h-full object-cover object-center" />
                 </div>
                 <div className="flex-1">
-                  <div className={`${config.colorText} text-xs font-body`}>{department}</div>
-                  <h1 className="text-2xl md:text-3xl font-bold font-display">{faculty.name}</h1>
-                  <div className="text-foreground text-sm">{faculty.title}</div>
+                  <div className={`${config.colorText} body-sm`}>{department}</div>
+                  <h1 className="headline-3">{faculty.name}</h1>
+                  <div className="text-foreground body-sm">{faculty.title}</div>
                   <div className="mt-2 flex flex-wrap gap-2">
                     {topics.map((t) => (
                       <Badge key={t} className={`${config.colorBg} ${config.colorText}`}>{t}</Badge>
@@ -81,18 +81,18 @@ export default function FacultyPageTemplate({
           <div className="lg:col-span-2 space-y-4">
             <Card className="border border-border/50 bg-card/50">
               <CardHeader>
-                <CardTitle className="font-display text-lg">Biography</CardTitle>
+                <CardTitle>Biography</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <p className="text-base leading-relaxed text-foreground font-body">
+                <p className="body-md leading-relaxed text-foreground">
                   {faculty.name} is a dedicated faculty member in the {department} department at Dayananda Sagar University. With strong expertise and academic credentials, {faculty.name.split(' ')[0]} contributes significantly to academic excellence and research endeavors.
                 </p>
-                <p className="text-base leading-relaxed text-foreground font-body">
+                <p className="body-md leading-relaxed text-foreground">
                   Committed to advancing education and fostering innovation, {faculty.name.split(' ')[0]} engages in curriculum development, student mentorship, and collaborative projects with academic institutions and industry partners. The faculty brings a blend of theoretical knowledge and practical expertise to enrich the learning experience of students.
                 </p>
                 {faculty.qualifications && (
                   <div className="mt-4 pt-4 border-t border-border/30">
-                    <div className="text-sm text-foreground/70">
+                    <div className="body-sm text-foreground/70">
                       <strong>Qualifications:</strong> {faculty.qualifications}
                     </div>
                   </div>
@@ -102,9 +102,9 @@ export default function FacultyPageTemplate({
 
             <Card className="border border-border/50 bg-card/50">
               <CardHeader>
-                <CardTitle className="font-display">Area of Research</CardTitle>
+                <CardTitle>Area of Research</CardTitle>
               </CardHeader>
-              <CardContent className="text-sm text-foreground font-body">
+              <CardContent className="body-sm text-foreground">
                 <p>
                   Dedicated to advancing education and research in the field. Engaged in curriculum development, student mentorship, and collaborative projects with industry and academic institutions.
                 </p>
@@ -114,7 +114,7 @@ export default function FacultyPageTemplate({
             {topics.length > 0 && (
               <Card className="border border-border/50 bg-card/50">
                 <CardHeader>
-                  <CardTitle className="font-display">Areas of Interest</CardTitle>
+                <CardTitle>Areas of Interest</CardTitle>
                 </CardHeader>
                 <CardContent className="flex flex-wrap gap-2">
                   {topics.map((topic) => (
@@ -132,9 +132,9 @@ export default function FacultyPageTemplate({
           <div className="space-y-4">
             <Card className="border border-border/50 bg-card/50">
               <CardHeader>
-                <CardTitle className="font-display">Faculty Details</CardTitle>
+                <CardTitle>Faculty Details</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-3 text-sm font-body">
+              <CardContent className="space-y-3 body-sm">
                 <div>
                   <div className="text-foreground/70">Position</div>
                   <div className="font-medium">{faculty.title}</div>
@@ -155,12 +155,12 @@ export default function FacultyPageTemplate({
 
             <Card className="border border-border/50 bg-card/50">
               <CardHeader>
-                <CardTitle className="font-display">Contact</CardTitle>
+                <CardTitle>Contact</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-2 text-sm font-body">
+              <CardContent className="space-y-2 body-sm">
                 <div className="text-foreground">Dayananda Sagar University</div>
                 <div className="text-foreground/70">{department}</div>
-                <div className="text-foreground/70 text-xs">Bangalore, India</div>
+                <div className="text-foreground/70 body-sm">Bangalore, India</div>
               </CardContent>
             </Card>
 

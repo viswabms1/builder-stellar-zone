@@ -36,10 +36,10 @@ export default function StudyInIndia() {
               />
             </div>
             <div>
-              <h1 className="text-5xl md:text-6xl font-bold mb-4 text-gray-900 dark:text-gray-100">
+              <h1 className="headline-1 mb-4 text-gray-900 dark:text-gray-100">
                 Study In India
               </h1>
-              <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 font-semibold">
+              <p className="subheadline text-gray-700 dark:text-gray-300 font-semibold">
                 LEARN | DISCOVER | INNOVATE
               </p>
             </div>
@@ -53,11 +53,11 @@ export default function StudyInIndia() {
           <Badge className="mb-4 bg-orange-500/20 text-orange-600">
             Global Opportunity
           </Badge>
-          <h2 className="text-4xl md:text-5xl font-bold mb-8">
+          <h2 className="headline-2 mb-8">
             Welcome to Dayananda Sagar University
           </h2>
           
-          <div className="space-y-6 text-lg text-foreground/80 leading-relaxed">
+          <div className="space-y-6 body-lg text-foreground/80 leading-relaxed">
             <p>
               Dayananda Sagar University extends a warm invitation to international students to apply for our diverse undergraduate and postgraduate programs across multiple disciplines. At DSU, we seek students from around the world who demonstrate a commitment to academic excellence, creativity, and innovation.
             </p>
@@ -78,7 +78,7 @@ export default function StudyInIndia() {
       {/* Programs Section */}
       <section className="py-16 md:py-24 px-4 md:px-8 bg-gradient-to-br from-orange-500/5 via-yellow-500/5 to-background">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center">
+          <h2 className="headline-2 mb-12 text-center">
             Programs Offered at DSU
           </h2>
           
@@ -158,7 +158,9 @@ export default function StudyInIndia() {
                       <CardTitle className={colors.text}>{program.title}</CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <p className="text-foreground/80">{program.description}</p>
+                      <p className="body-sm text-foreground/80">
+                        {program.description}
+                      </p>
                     </CardContent>
                   </Card>
                 </Link>
@@ -171,7 +173,7 @@ export default function StudyInIndia() {
       {/* Why DSU Section */}
       <section className="py-16 md:py-24 px-4 md:px-8">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center">
+          <h2 className="headline-2 mb-12 text-center">
             Why Study at DSU?
           </h2>
           
@@ -181,8 +183,8 @@ export default function StudyInIndia() {
                 <Globe className="w-12 h-12 text-orange-600" />
               </div>
               <div>
-                <h3 className="text-2xl font-bold mb-2">Global Perspectives</h3>
-                <p className="text-foreground/80">
+                <h3 className="title-lg font-bold mb-2">Global Perspectives</h3>
+                <p className="body-md text-foreground/80">
                   Join a transformative academic journey offering global perspectives and a community dedicated to learning, leadership, and creativity.
                 </p>
               </div>
@@ -193,8 +195,8 @@ export default function StudyInIndia() {
                 <ArrowRight className="w-12 h-12 text-orange-600" />
               </div>
               <div>
-                <h3 className="text-2xl font-bold mb-2">World-Class Education</h3>
-                <p className="text-foreground/80">
+                <h3 className="title-lg font-bold mb-2">World-Class Education</h3>
+                <p className="body-md text-foreground/80">
                   Accredited with a NAAC A+ rating, we offer world-class interdisciplinary programs across multiple disciplines.
                 </p>
               </div>
@@ -207,8 +209,8 @@ export default function StudyInIndia() {
                 </div>
               </div>
               <div>
-                <h3 className="text-2xl font-bold mb-2">Inclusive Community</h3>
-                <p className="text-foreground/80">
+                <h3 className="title-lg font-bold mb-2">Inclusive Community</h3>
+                <p className="body-md text-foreground/80">
                   An inclusive and vibrant community where diverse perspectives meet, enriching each student's learning experience.
                 </p>
               </div>
@@ -220,10 +222,10 @@ export default function StudyInIndia() {
       {/* Research & Innovation Section */}
       <section className="py-16 md:py-24 px-4 md:px-8">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center">
+          <h2 className="headline-2 mb-4 text-center">
             Research & Innovation
           </h2>
-          <p className="text-lg text-foreground/80 text-center mb-12 max-w-3xl mx-auto">
+          <p className="body-lg text-foreground/80 text-center mb-12 max-w-3xl mx-auto">
             Hackathons, hands-on projects, AI labs, and innovation challenges where students build, ship, and launch real solutions.
           </p>
 
@@ -248,10 +250,12 @@ export default function StudyInIndia() {
               ].map((item, idx) => (
                 <div key={idx} className="bg-gradient-to-br from-orange-50 to-yellow-50 dark:from-orange-950/20 dark:to-yellow-950/20 rounded-lg p-6 border border-orange-200/50 dark:border-orange-600/30 hover:shadow-lg transition-shadow">
                   <div className="flex gap-4">
-                    <span className="text-3xl flex-shrink-0">{item.icon}</span>
+                    <span className="title-lg flex-shrink-0">{item.icon}</span>
                     <div>
-                      <h3 className="text-xl font-bold mb-2 text-black">{item.title}</h3>
-                      <p className="text-black">{item.description}</p>
+                      <h3 className="title-sm font-bold mb-2 text-black">
+                        {item.title}
+                      </h3>
+                      <p className="body-sm text-black">{item.description}</p>
                     </div>
                   </div>
                 </div>
@@ -268,7 +272,7 @@ export default function StudyInIndia() {
           </div>
 
           <div className="bg-gradient-to-r from-orange-500/10 via-yellow-500/10 to-background rounded-lg border border-orange-200/50 dark:border-orange-600/30 p-8 text-center">
-            <p className="text-lg text-foreground/80">
+            <p className="body-lg text-foreground/80">
               At DSU, we cultivate a culture of innovation where students are encouraged to think beyond the classroom, experiment with new ideas, and transform their visions into reality. Our research initiatives provide the platform and support needed to make a tangible impact.
             </p>
           </div>
@@ -278,12 +282,12 @@ export default function StudyInIndia() {
       {/* Contact Section */}
       <section className="py-16 md:py-24 px-4 md:px-8 bg-gradient-to-br from-blue-500/5 to-background">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center">
+          <h2 className="headline-2 mb-12 text-center">
             Get In Touch
           </h2>
           
           <div className="bg-black rounded-2xl border border-orange-200/50 dark:border-orange-600/30 p-8 md:p-12">
-            <h3 className="text-2xl font-bold mb-8 text-white">
+            <h3 className="title-lg font-bold mb-8 text-white">
               International Admissions Office
             </h3>
 
@@ -291,7 +295,7 @@ export default function StudyInIndia() {
               <div className="flex gap-4">
                 <Mail className="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" />
                 <div>
-                  <p className="font-semibold mb-2 text-white">Email</p>
+                  <p className="body-sm font-semibold mb-2 text-white">Email</p>
                   <a href="mailto:international-admissions@dsu.edu.in" className="text-orange-400 hover:text-orange-300">
                     international-admissions@dsu.edu.in
                   </a>
@@ -301,7 +305,7 @@ export default function StudyInIndia() {
               <div className="flex gap-4">
                 <MessageCircle className="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" />
                 <div>
-                  <p className="font-semibold mb-2 text-white">WhatsApp</p>
+                  <p className="body-sm font-semibold mb-2 text-white">WhatsApp</p>
                   <div className="space-y-2">
                     <a href="https://wa.me/919606022152" target="_blank" rel="noopener noreferrer" className="text-orange-400 hover:text-orange-300 block">
                       +91 9606022152
@@ -315,7 +319,7 @@ export default function StudyInIndia() {
             </div>
 
             <div className="mt-10 pt-8 border-t border-gray-700">
-              <p className="text-gray-300 leading-relaxed mb-6">
+              <p className="body-md text-gray-300 leading-relaxed mb-6">
                 Interested in learning more? <span className="font-semibold text-white">Click here for details</span> and take your first step toward an impactful education at DSU.
               </p>
               <Button
@@ -336,10 +340,10 @@ export default function StudyInIndia() {
       {/* CTA Section */}
       <section className="py-16 md:py-24 px-4 md:px-8">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="headline-2 mb-6">
             Ready to Begin Your Journey?
           </h2>
-          <p className="text-xl text-foreground/80 mb-8">
+          <p className="subheadline text-foreground/80 mb-8">
             Join us at DSU, where a transformative academic journey awaits, offering global perspectives and a community dedicated to learning, leadership, and creativity.
           </p>
           <Button

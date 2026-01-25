@@ -105,10 +105,10 @@ export default function AdmissionCarousel() {
                 {/* Overlay with Content */}
                 <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent flex items-center">
                   <div className="max-w-xl px-4 py-6">
-                    <h3 className="text-3xl md:text-4xl font-bold text-white mb-3">
+                    <h3 className="title-lg font-bold text-white mb-3">
                       {item.title}
                     </h3>
-                    <p className="text-lg text-gray-100 mb-3 line-clamp-3">
+                    <p className="body-lg text-gray-100 mb-3 line-clamp-3">
                       {item.description}
                     </p>
                     <Button

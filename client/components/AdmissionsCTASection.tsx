@@ -24,7 +24,7 @@ export function AdmissionsCTASection() {
             >
               <Button
                 size="lg"
-                className="bg-brand-gradient hover:opacity-90 hover:shadow-lg hover:shadow-brand-magenta/25 text-foreground px-12 py-6 text-lg font-semibold font-display rounded-2xl transition-all duration-300 group"
+                className="bg-brand-gradient hover:opacity-90 hover:shadow-lg hover:shadow-brand-magenta/25 text-foreground px-12 py-6 title-sm rounded-2xl transition-all duration-300 group"
               >
                 Apply for 2026 Admissions
                 <GraduationCap className="w-5 h-5 ml-2 group-hover:rotate-12 transition-transform" />
@@ -40,7 +40,7 @@ export function AdmissionsCTASection() {
               <Badge
                 key={index}
                 variant="secondary"
-                className="px-3 py-1 text-xs font-medium font-body"
+                className="px-3 py-1 body-sm font-medium"
               >
                 {badge}
               </Badge>

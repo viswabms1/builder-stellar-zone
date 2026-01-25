@@ -7,8 +7,7 @@ export function StoryboardSection() {
     {
       icon: Zap,
       title: "AI-First Innovation",
-      description:
-        "Explore how NVIDIA's AI architecture powers every aspect of education, research, and campus life at DSU.",
+      description: "Explore how NVIDIA's AI architecture powers every aspect of education, research, and campus life at DSU.",
       cta: "Explore AI Architecture",
       link: "/nvidia-ai-architecture",
       color: "from-brand-orange to-brand-magenta",
@@ -19,11 +18,10 @@ export function StoryboardSection() {
     {
       icon: Heart,
       title: "Why DSU Stands Out",
-      description:
-        "Discover what makes DSU special—from world-class faculty and centers of excellence to industry partnerships and transformative student experiences.",
+      description: "Discover what makes DSU special—from world-class faculty and centers of excellence to industry partnerships and transformative student experiences.",
       cta: "Learn Our Story",
       link: "/about",
-      color: "from-brand-blue to-cyan-500",
+      color: "from-brand-blue to-brand-magenta",
       bgColor: "bg-brand-blue/10",
       borderColor: "border-brand-blue/30",
       hoverColor: "hover:border-brand-blue/60",
@@ -31,14 +29,13 @@ export function StoryboardSection() {
     {
       icon: BookOpen,
       title: "Life at DSU",
-      description:
-        "Experience vibrant campus life with student clubs, events, facilities, and a thriving community that fosters personal growth and lasting friendships.",
+      description: "Experience vibrant campus life with student clubs, events, facilities, and a thriving community that fosters personal growth and lasting friendships.",
       cta: "Discover Campus Life",
       link: "/campus-life",
-      color: "from-emerald-500 to-teal-500",
-      bgColor: "bg-emerald-500/10",
-      borderColor: "border-emerald-500/30",
-      hoverColor: "hover:border-emerald-500/60",
+      color: "from-brand-magenta to-brand-orange",
+      bgColor: "bg-brand-magenta/10",
+      borderColor: "border-brand-magenta/30",
+      hoverColor: "hover:border-brand-magenta/60",
     },
   ];
 
@@ -49,7 +46,7 @@ export function StoryboardSection() {
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 mb-2">
             <div className="h-1 w-8 bg-white rounded-full"></div>
-            <span className="text-xs font-bold uppercase tracking-widest text-brand-orange">
+            <span className="eyebrow text-brand-orange">
               Our Story
             </span>
             <div className="h-1 w-8 bg-white rounded-full"></div>
@@ -76,19 +73,17 @@ export function StoryboardSection() {
                 className={`group h-full rounded-2xl p-8 border-2 transition-all duration-500 ${story.bgColor} ${story.borderColor} ${story.hoverColor} hover:shadow-2xl hover:-translate-y-2 flex flex-col`}
               >
                 {/* Icon Circle */}
-                <div
-                  className={`inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br ${story.color} mb-6 group-hover:scale-110 transition-transform duration-500`}
-                >
+                <div className={`inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br ${story.color} mb-6 group-hover:scale-110 transition-transform duration-500`}>
                   <IconComponent className="w-8 h-8 text-white" />
                 </div>
 
                 {/* Title */}
-                <h3 className="text-xl md:text-2xl font-bold text-foreground mb-4 font-display group-hover:text-transparent group-hover:bg-brand-gradient group-hover:bg-clip-text transition-all duration-300">
+                <h3 className="title-md text-foreground mb-4 group-hover:text-transparent group-hover:bg-brand-gradient group-hover:bg-clip-text transition-all duration-300">
                   {story.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-sm md:text-base text-foreground/80 font-body mb-8 flex-grow leading-relaxed">
+                <p className="body-md text-foreground/80 mb-8 flex-grow leading-relaxed">
                   {story.description}
                 </p>
 
@@ -106,7 +101,9 @@ export function StoryboardSection() {
             return (
               <div key={index}>
                 {isInternal ? (
-                  <Link to={story.link}>{cardContent}</Link>
+                  <Link to={story.link}>
+                    {cardContent}
+                  </Link>
                 ) : (
                   <a href={story.link} target="_blank" rel="noreferrer">
                     {cardContent}
@@ -119,18 +116,13 @@ export function StoryboardSection() {
 
         {/* Bottom CTA Banner */}
         <div className="bg-gradient-to-r from-brand-orange/10 via-brand-blue/10 to-brand-magenta/10 rounded-2xl p-8 md:p-12 border border-brand-orange/20 text-center">
-          <h3 className="headline-2 mb-6 text-foreground">
+          <h3 className="title-lg text-foreground mb-4">
             Ready to Be Part of Our Story?
           </h3>
-          <p className="subheadline text-foreground/80 mb-6 max-w-2xl mx-auto">
-            Join thousands of students who have chosen DSU to transform their
-            futures through AI-integrated education.
+          <p className="body-md text-foreground/80 mb-6 max-w-2xl mx-auto">
+            Join thousands of students who have chosen DSU to transform their futures through AI-integrated education.
           </p>
-          <a
-            href="https://admissions.dsu.edu.in/"
-            target="_blank"
-            rel="noreferrer"
-          >
+          <a href="https://admissions.dsu.edu.in/" target="_blank" rel="noreferrer">
             <Button className="bg-brand-gradient hover:opacity-90 text-foreground px-8 py-3 font-bold gap-2">
               Start Your Journey
               <ArrowRight className="w-4 h-4" />

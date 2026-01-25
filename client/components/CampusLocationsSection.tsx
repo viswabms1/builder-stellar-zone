@@ -52,7 +52,7 @@ export function CampusLocationsSection() {
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 mb-6">
             <div className="h-1 w-8 bg-white rounded-full"></div>
-            <span className="text-xs font-bold uppercase tracking-widest text-brand-orange">
+            <span className="eyebrow text-brand-orange">
               Visit Us
             </span>
             <div className="h-1 w-8 bg-white rounded-full"></div>
@@ -71,7 +71,7 @@ export function CampusLocationsSection() {
             <button
               key={index}
               onClick={() => setActiveTab(index)}
-              className={`flex-1 px-6 py-4 font-semibold transition-all duration-300 border-b-2 -mb-[2px] text-center text-lg ${
+              className={`flex-1 px-6 py-4 transition-all duration-300 border-b-2 -mb-[2px] text-center title-sm ${
                 activeTab === index
                   ? "text-brand-orange border-b-brand-orange"
                   : "text-foreground/60 border-b-transparent hover:text-foreground/80"
@@ -105,7 +105,7 @@ export function CampusLocationsSection() {
             <div className="p-6 md:p-8 space-y-5">
               {/* Campus Name */}
               <div>
-                <h3 className="text-2xl md:text-3xl font-bold text-foreground font-display mb-2 hover:text-brand-orange transition-colors">
+                <h3 className="title-lg text-foreground mb-2 hover:text-brand-orange transition-colors">
                   {activeCampus.name}
                 </h3>
                 <div className="h-1 w-12 bg-gradient-to-r from-brand-orange to-brand-blue rounded-full" />
@@ -115,7 +115,7 @@ export function CampusLocationsSection() {
               <div className="flex gap-3">
                 <MapPin className="w-5 h-5 text-brand-orange flex-shrink-0 mt-0.5" />
                 <div>
-                  <p className="text-sm text-foreground/70 font-body leading-relaxed">
+                  <p className="body-md text-foreground/70 leading-relaxed">
                     {activeCampus.address}
                   </p>
                 </div>
@@ -127,7 +127,7 @@ export function CampusLocationsSection() {
                   <Phone className="w-4 h-4 text-brand-orange flex-shrink-0" />
                   <a
                     href={`tel:${activeCampus.phone}`}
-                    className="text-sm text-foreground/80 hover:text-brand-orange transition-colors font-medium"
+                    className="body-md text-foreground/80 hover:text-brand-orange transition-colors font-medium"
                   >
                     {activeCampus.phone}
                   </a>
@@ -136,7 +136,7 @@ export function CampusLocationsSection() {
                   <Mail className="w-4 h-4 text-brand-orange flex-shrink-0" />
                   <a
                     href={`mailto:${activeCampus.email}`}
-                    className="text-sm text-foreground/80 hover:text-brand-orange transition-colors font-medium"
+                    className="body-md text-foreground/80 hover:text-brand-orange transition-colors font-medium"
                   >
                     {activeCampus.email}
                   </a>
@@ -147,7 +147,7 @@ export function CampusLocationsSection() {
               <div className="pt-2">
                 <div className="flex items-center gap-2 mb-3">
                   <Info className="w-4 h-4 text-brand-orange" />
-                  <span className="text-xs font-semibold text-foreground/60 uppercase tracking-widest">
+                  <span className="eyebrow text-foreground/60">
                     Schools Located Here
                   </span>
                 </div>
@@ -155,7 +155,7 @@ export function CampusLocationsSection() {
                   {activeCampus.schools.map((school, idx) => (
                     <div
                       key={idx}
-                      className="flex items-start gap-2 text-sm text-foreground/85 p-2 rounded-lg hover:bg-foreground/5 transition-colors"
+                      className="flex items-start gap-2 body-md text-foreground/85 p-2 rounded-lg hover:bg-foreground/5 transition-colors"
                     >
                       <span className="text-brand-orange font-bold mt-0.5">
                         •

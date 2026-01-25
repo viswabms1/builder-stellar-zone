@@ -48,11 +48,11 @@ export default function FacultyProfileCard({ faculty }: { faculty: FacultyProfil
       <div className="max-w-7xl mx-auto px-3">
         {/* Header Section */}
         <div className="mb-4">
-          <h1 className="text-4xl font-bold font-display text-foreground mb-1">
+          <h1 className="headline-3 font-bold text-foreground mb-1">
             {faculty.name}
           </h1>
-          <p className="text-lg font-semibold text-brand-blue mb-1">{faculty.title}</p>
-          <p className="text-sm text-foreground/70">{faculty.department}</p>
+          <p className="title-sm font-semibold text-brand-blue mb-1">{faculty.title}</p>
+          <p className="body-sm text-foreground/70">{faculty.department}</p>
         </div>
 
         <div className="grid lg:grid-cols-4 gap-4">
@@ -75,14 +75,14 @@ export default function FacultyProfileCard({ faculty }: { faculty: FacultyProfil
             {/* Information Sidebar */}
             <Card className="border border-border/50 bg-card/50">
               <CardHeader className="pb-3 border-b border-border/30">
-                <CardTitle className="text-base font-display">Information</CardTitle>
+                <CardTitle className="title-sm">Information</CardTitle>
               </CardHeader>
               <CardContent className="pt-4 space-y-4">
                 {faculty.office && (
                   <div className="flex items-start gap-3">
                     <MapPin className="w-4 h-4 text-brand-blue mt-0.5 flex-shrink-0" />
-                    <div className="text-sm">
-                      <p className="text-foreground/60 text-xs uppercase tracking-wide">Office</p>
+                    <div className="body-sm">
+                      <p className="eyebrow text-foreground/60">Office</p>
                       <p className="font-medium text-foreground">{faculty.office}</p>
                     </div>
                   </div>
@@ -91,8 +91,8 @@ export default function FacultyProfileCard({ faculty }: { faculty: FacultyProfil
                 {faculty.phone && (
                   <div className="flex items-start gap-3">
                     <Phone className="w-4 h-4 text-brand-blue mt-0.5 flex-shrink-0" />
-                    <div className="text-sm">
-                      <p className="text-foreground/60 text-xs uppercase tracking-wide">Phone</p>
+                    <div className="body-sm">
+                      <p className="eyebrow text-foreground/60">Phone</p>
                       <a
                         href={`tel:${faculty.phone}`}
                         className="font-medium text-foreground hover:text-brand-blue transition-colors"
@@ -106,8 +106,8 @@ export default function FacultyProfileCard({ faculty }: { faculty: FacultyProfil
                 {faculty.email && (
                   <div className="flex items-start gap-3">
                     <Mail className="w-4 h-4 text-brand-blue mt-0.5 flex-shrink-0" />
-                    <div className="text-sm">
-                      <p className="text-foreground/60 text-xs uppercase tracking-wide">Email</p>
+                    <div className="body-sm">
+                      <p className="eyebrow text-foreground/60">Email</p>
                       <a
                         href={`mailto:${faculty.email}`}
                         className="font-medium text-foreground hover:text-brand-blue transition-colors break-all"
@@ -121,8 +121,8 @@ export default function FacultyProfileCard({ faculty }: { faculty: FacultyProfil
                 {faculty.website && (
                   <div className="flex items-start gap-3">
                     <Globe className="w-4 h-4 text-brand-blue mt-0.5 flex-shrink-0" />
-                    <div className="text-sm">
-                      <p className="text-foreground/60 text-xs uppercase tracking-wide">Website</p>
+                    <div className="body-sm">
+                      <p className="eyebrow text-foreground/60">Website</p>
                       <a
                         href={faculty.website}
                         target="_blank"
@@ -137,8 +137,8 @@ export default function FacultyProfileCard({ faculty }: { faculty: FacultyProfil
 
                 <div className="flex items-start gap-3">
                   <Award className="w-4 h-4 text-brand-blue mt-0.5 flex-shrink-0" />
-                  <div className="text-sm">
-                    <p className="text-foreground/60 text-xs uppercase tracking-wide">Qualifications</p>
+                  <div className="body-sm">
+                    <p className="eyebrow text-foreground/60">Qualifications</p>
                     <p className="font-medium text-foreground">{faculty.qualifications}</p>
                   </div>
                 </div>
@@ -156,10 +156,10 @@ export default function FacultyProfileCard({ faculty }: { faculty: FacultyProfil
                   className="border border-border/50 bg-gradient-to-br from-brand-blue/5 to-brand-orange/5 overflow-hidden"
                 >
                   <CardContent className="p-4 text-center">
-                    <div className="text-3xl font-bold text-brand-blue mb-1">
+                    <div className="title-lg font-bold text-brand-blue mb-1">
                       {stat.value}
                     </div>
-                    <p className="text-xs font-semibold text-foreground/70 uppercase tracking-wide">
+                    <p className="eyebrow text-foreground/70">
                       {stat.label}
                     </p>
                   </CardContent>
@@ -170,7 +170,7 @@ export default function FacultyProfileCard({ faculty }: { faculty: FacultyProfil
             {/* Research Areas */}
             <Card className="border border-border/50 bg-card/50">
               <CardHeader className="pb-3 border-b border-border/30">
-                <CardTitle className="text-lg font-display">Research Areas</CardTitle>
+                <CardTitle className="title-sm">Research Areas</CardTitle>
               </CardHeader>
               <CardContent className="pt-6">
                 <div className="flex flex-wrap gap-3">
@@ -199,7 +199,7 @@ export default function FacultyProfileCard({ faculty }: { faculty: FacultyProfil
                       onClick={() => toggleSection(section.title)}
                       className="w-full px-3 py-4 flex items-center justify-between hover:bg-white/5 transition-colors"
                     >
-                      <CardTitle className="text-base font-display text-foreground">
+                      <CardTitle className="title-sm text-foreground">
                         {section.title}
                       </CardTitle>
                       <ChevronDown
@@ -216,7 +216,7 @@ export default function FacultyProfileCard({ faculty }: { faculty: FacultyProfil
                             {section.content.map((item, itemIdx) => (
                               <li
                                 key={itemIdx}
-                                className="text-sm text-foreground/80 flex items-start gap-2"
+                                className="body-sm text-foreground/80 flex items-start gap-2"
                               >
                                 <span className="text-brand-blue mt-1">•</span>
                                 <span>{item}</span>
@@ -224,7 +224,7 @@ export default function FacultyProfileCard({ faculty }: { faculty: FacultyProfil
                             ))}
                           </ul>
                         ) : (
-                          <p className="text-sm text-foreground/80 whitespace-pre-wrap">
+                          <p className="body-sm text-foreground/80 whitespace-pre-wrap">
                             {section.content}
                           </p>
                         )}

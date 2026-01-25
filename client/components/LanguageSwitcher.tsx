@@ -18,7 +18,7 @@ export default function LanguageSwitcher() {
     <div className="relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`flex items-center gap-1 px-2 py-1 text-xs font-medium rounded transition-colors ${
+        className={`flex items-center gap-1 px-2 py-1 body-sm font-medium rounded transition-colors ${
           theme === 'light'
             ? 'bg-gray-200 text-gray-900'
             : 'bg-white/15 text-white'
@@ -43,7 +43,7 @@ export default function LanguageSwitcher() {
                 setLanguage(lang);
                 setIsOpen(false);
               }}
-              className={`block w-full text-left px-3 py-2 text-xs font-medium rounded-none transition-colors ${
+              className={`block w-full text-left px-3 py-2 body-sm font-medium rounded-none transition-colors ${
                 theme === 'light'
                   ? 'text-gray-700 hover:bg-gray-100'
                   : 'text-white/80 hover:bg-white/10'

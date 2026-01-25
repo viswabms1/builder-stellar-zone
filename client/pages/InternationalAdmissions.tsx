@@ -378,25 +378,27 @@ function HeroSection() {
       </div>
       <div className="hero-international-content relative mx-auto flex max-w-6xl flex-col gap-12 px-3 lg:flex-row lg:items-center lg:justify-center">
         <div className="flex-1 text-center lg:text-left max-w-2xl">
-          <div className="inline-flex items-center gap-2 rounded-full border border-blue-500/30 bg-blue-500/10 px-4 py-2 text-sm font-semibold text-blue-500">
+          <div className="inline-flex items-center gap-2 rounded-full border border-blue-500/30 bg-blue-500/10 px-4 py-2 body-sm font-semibold text-blue-500">
             <Globe2 className="h-4 w-4" />
             International & NRI Admissions 2026
           </div>
-          <h1 className="mt-8 text-4xl font-bold leading-tight md:text-6xl">
+          <h1 className="mt-8 headline-1 leading-tight">
             Empowering Students with <span className="bg-gradient-to-r from-blue-500 to-indigo-500 bg-clip-text text-transparent">Knowledge, Discovery & Healing</span>
           </h1>
-          <p className="mt-6 text-lg text-foreground md:text-xl">
+          <p className="mt-6 subheadline text-foreground">
             Perfect for International Students seeking a world-class education in Bangalore
           </p>
           <div className="mt-8 rounded-2xl border border-blue-500/20 bg-blue-500/10 p-6">
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
               <div>
-                <p className="text-sm font-semibold text-blue-500">Scholarship Upto 40%</p>
-                <p className="text-xs text-foreground">*For Eligible Students</p>
+                <p className="body-sm font-semibold text-blue-500">
+                  Scholarship Upto 40%
+                </p>
+                <p className="body-sm text-foreground">*For Eligible Students</p>
               </div>
               <Button
                 size="lg"
-                className="rounded-2xl bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 px-8 py-6 text-lg font-semibold text-white shadow-lg shadow-blue-500/30 transition hover:shadow-xl"
+                className="rounded-2xl bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 px-8 py-6 title-sm font-semibold text-white shadow-lg shadow-blue-500/30 transition hover:shadow-xl"
                 asChild
               >
                 <a href="https://international-admissions.dsu.edu.in" target="_blank" rel="noopener noreferrer">Apply Now
@@ -420,7 +422,7 @@ function AwardsSection() {
             <Award className="mr-2 h-4 w-4 inline" />
             Awards & Recognition
           </Badge>
-          <h2 className="mt-4 text-3xl font-bold md:text-4xl">Recognized for Excellence</h2>
+          <h2 className="mt-4 headline-3">Recognized for Excellence</h2>
         </div>
         <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-4">
           {awards.map((award) => (
@@ -432,11 +434,11 @@ function AwardsSection() {
                 <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-yellow-500/10 text-yellow-600">
                   <Star className="h-6 w-6" />
                 </div>
-                <CardTitle className="text-lg font-semibold text-foreground">
+                <CardTitle className="title-sm font-semibold text-foreground">
                   {award.title}
                 </CardTitle>
               </CardHeader>
-              <CardContent className="text-center text-sm text-foreground">
+              <CardContent className="text-center body-sm text-foreground">
                 {award.description}
               </CardContent>
             </Card>
@@ -452,26 +454,26 @@ function AboutSection() {
     <section className="px-3 py-8">
       <div className="mx-auto max-w-6xl">
         <div className="mb-10 text-center">
-          <h2 className="text-3xl font-bold md:text-4xl">Experience International Education</h2>
+          <h2 className="headline-3">Experience International Education</h2>
         </div>
         <div className="grid gap-6 md:grid-cols-2">
           <div className="rounded-3xl border border-blue-500/20 bg-blue-500/5 p-8 shadow-lg shadow-blue-500/10">
-            <p className="leading-relaxed text-foreground">
+            <p className="leading-relaxed body-md text-foreground">
               Experience the pinnacle of academic excellence at our multidisciplinary and interdisciplinary university, where innovation flourishes and students are inspired to grow, excel, invent, and innovate.
             </p>
           </div>
           <div className="rounded-3xl border border-blue-500/20 bg-blue-500/5 p-8 shadow-lg shadow-blue-500/10">
-            <p className="leading-relaxed text-foreground">
+            <p className="leading-relaxed body-md text-foreground">
               Our vibrant community, comprising over 50,000 alumni, coupled with on-campus hostel facilities and a focus on interactive learning, creates a dynamic environment for personal and professional development.
             </p>
           </div>
           <div className="rounded-3xl border border-blue-500/20 bg-blue-500/5 p-8 shadow-lg shadow-blue-500/10">
-            <p className="leading-relaxed text-foreground">
+            <p className="leading-relaxed body-md text-foreground">
               Our state-of-the-art infrastructure supports cutting-edge research and technology, offering unparalleled opportunities for students to engage in groundbreaking discoveries.
             </p>
           </div>
           <div className="rounded-3xl border border-blue-500/20 bg-blue-500/5 p-8 shadow-lg shadow-blue-500/10">
-            <p className="leading-relaxed text-foreground">
+            <p className="leading-relaxed body-md text-foreground">
               Recognized as a premier institution for placements and internships, we provide a world-class education in a global setting, shaping the leaders of tomorrow.
             </p>
           </div>
@@ -479,7 +481,7 @@ function AboutSection() {
         <div className="mt-8 text-center">
           <Button
             size="lg"
-            className="rounded-2xl bg-gradient-to-r from-blue-500 to-indigo-500 px-8 py-6 text-lg font-semibold text-white"
+            className="rounded-2xl bg-gradient-to-r from-blue-500 to-indigo-500 px-8 py-6 title-sm font-semibold text-white"
             asChild
           >
             <a href="https://international-admissions.dsu.edu.in" target="_blank" rel="noopener noreferrer">Apply Now
@@ -501,10 +503,10 @@ function NVIDIAPartnershipSection() {
             <Badge className="mx-auto w-fit rounded-full bg-purple-500/20 px-4 py-2 text-purple-500 mb-4">
               Industry Partnership
             </Badge>
-            <h2 className="text-4xl font-bold md:text-5xl text-foreground mb-4">
+            <h2 className="headline-2 text-foreground mb-4">
               Powered by <span className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">NVIDIA AI Infrastructure</span>
             </h2>
-            <p className="mt-4 text-lg text-foreground/80 max-w-3xl mx-auto">
+            <p className="mt-4 body-lg text-foreground/80 max-w-3xl mx-auto">
               Dayananda Sagar University has partnered with NVIDIA to create a complete, enterprise-grade AI infrastructure for transforming education and research globally.
             </p>
           </div>
@@ -516,7 +518,7 @@ function NVIDIAPartnershipSection() {
                   <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-purple-500/20 text-purple-500">
                     <Cpu className="h-6 w-6" />
                   </div>
-                  <CardTitle className="text-lg">NVIDIA DGX B200</CardTitle>
+                  <CardTitle className="title-sm">NVIDIA DGX B200</CardTitle>
                 </div>
               </CardHeader>
               <CardContent className="text-foreground/80">
@@ -530,7 +532,7 @@ function NVIDIAPartnershipSection() {
                   <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-purple-500/20 text-purple-500">
                     <Brain className="h-6 w-6" />
                   </div>
-                  <CardTitle className="text-lg">CUDA & AI Frameworks</CardTitle>
+                  <CardTitle className="title-sm">CUDA & AI Frameworks</CardTitle>
                 </div>
               </CardHeader>
               <CardContent className="text-foreground/80">
@@ -544,7 +546,7 @@ function NVIDIAPartnershipSection() {
                   <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-purple-500/20 text-purple-500">
                     <Zap className="h-6 w-6" />
                   </div>
-                  <CardTitle className="text-lg">Research Excellence</CardTitle>
+                  <CardTitle className="title-sm">Research Excellence</CardTitle>
                 </div>
               </CardHeader>
               <CardContent className="text-foreground/80">
@@ -558,7 +560,7 @@ function NVIDIAPartnershipSection() {
                   <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-purple-500/20 text-purple-500">
                     <Award className="h-6 w-6" />
                   </div>
-                  <CardTitle className="text-lg">Career Advantage</CardTitle>
+                  <CardTitle className="title-sm">Career Advantage</CardTitle>
                 </div>
               </CardHeader>
               <CardContent className="text-foreground/80">
@@ -568,12 +570,12 @@ function NVIDIAPartnershipSection() {
           </div>
 
           <div className="mt-8 text-center">
-            <p className="text-sm text-foreground/70 mb-4">
+            <p className="body-sm text-foreground/70 mb-4">
               This complete NVIDIA AI infrastructure stack is available at only a handful of elite institutions across India.
             </p>
             <Button
               size="lg"
-              className="rounded-2xl bg-gradient-to-r from-purple-500 to-blue-500 px-8 py-6 text-lg font-semibold text-white"
+              className="rounded-2xl bg-gradient-to-r from-purple-500 to-blue-500 px-8 py-6 title-sm font-semibold text-white"
               asChild
             >
               <Link to="/nvidia-ai-architecture">
@@ -620,18 +622,20 @@ function CoursesSection() {
             <BookOpen className="mr-2 h-4 w-4 inline" />
             Courses Offered
           </Badge>
-          <h2 className="mt-4 text-3xl font-bold md:text-4xl">Comprehensive Programme Portfolio</h2>
-          <p className="mt-3 text-lg text-foreground/80 max-w-3xl mx-auto">
+          <h2 className="mt-4 headline-3">Comprehensive Programme Portfolio</h2>
+          <p className="mt-3 body-lg text-foreground/80 max-w-3xl mx-auto">
             Programmes available at the Harohalli Main Campus with immersive labs, international faculty, and industry-aligned curricula.
           </p>
           <div className="mt-6 flex justify-center gap-6 flex-wrap">
             <div className="text-center">
-              <p className="text-3xl font-bold text-blue-500">{totalPrograms}</p>
-              <p className="text-sm text-foreground/70">Total Programmes</p>
+              <p className="title-lg font-bold text-blue-500">{totalPrograms}</p>
+              <p className="body-sm text-foreground/70">Total Programmes</p>
             </div>
             <div className="text-center">
-              <p className="text-3xl font-bold text-blue-500">{Object.keys(groupedBySchool).length}</p>
-              <p className="text-sm text-foreground/70">Schools & Colleges</p>
+              <p className="title-lg font-bold text-blue-500">
+                {Object.keys(groupedBySchool).length}
+              </p>
+              <p className="body-sm text-foreground/70">Schools & Colleges</p>
             </div>
           </div>
         </div>
@@ -644,7 +648,7 @@ function CoursesSection() {
             >
               {/* School Header */}
               <div className="bg-gradient-to-r from-blue-600 to-indigo-600 px-6 py-5">
-                <h3 className="text-xl font-bold text-white">{school}</h3>
+                <h3 className="title-sm font-bold text-white">{school}</h3>
               </div>
 
               {/* Levels & Programs */}
@@ -655,7 +659,7 @@ function CoursesSection() {
                       <Badge className={`rounded-full px-4 py-2 font-semibold ${getLevelColor(level)}`}>
                         {level}
                       </Badge>
-                      <span className="text-sm text-foreground/60">
+                      <span className="body-sm text-foreground/60">
                         {programs.length} programme{programs.length > 1 ? "s" : ""}
                       </span>
                     </div>
@@ -667,7 +671,9 @@ function CoursesSection() {
                           key={program}
                           className="rounded-lg border border-blue-500/20 bg-background/60 p-4 transition hover:bg-blue-500/10 hover:border-blue-500/40"
                         >
-                          <p className="text-sm text-foreground leading-relaxed">{program}</p>
+                          <p className="body-sm text-foreground leading-relaxed">
+                            {program}
+                          </p>
                         </div>
                       ))}
                     </div>
@@ -680,23 +686,31 @@ function CoursesSection() {
 
         {/* Legend */}
         <div className="mt-12 rounded-2xl border border-blue-500/20 bg-background/50 p-6">
-          <p className="text-sm font-semibold text-foreground mb-4">Program Levels:</p>
+          <p className="body-sm font-semibold text-foreground mb-4">
+            Program Levels:
+          </p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div className="flex items-center gap-2">
               <span className="inline-block w-3 h-3 rounded bg-blue-500"></span>
-              <span className="text-xs text-foreground/80">Undergraduate (UG)</span>
+              <span className="body-sm text-foreground/80">
+                Undergraduate (UG)
+              </span>
             </div>
             <div className="flex items-center gap-2">
               <span className="inline-block w-3 h-3 rounded bg-purple-500"></span>
-              <span className="text-xs text-foreground/80">Postgraduate (PG)</span>
+              <span className="body-sm text-foreground/80">
+                Postgraduate (PG)
+              </span>
             </div>
             <div className="flex items-center gap-2">
               <span className="inline-block w-3 h-3 rounded bg-amber-500"></span>
-              <span className="text-xs text-foreground/80">Doctoral (Ph.D)</span>
+              <span className="body-sm text-foreground/80">
+                Doctoral (Ph.D)
+              </span>
             </div>
             <div className="flex items-center gap-2">
               <span className="inline-block w-3 h-3 rounded bg-green-500"></span>
-              <span className="text-xs text-foreground/80">Other</span>
+              <span className="body-sm text-foreground/80">Other</span>
             </div>
           </div>
         </div>
@@ -713,7 +727,7 @@ function CampusLifeSection() {
           <Badge className="mx-auto w-fit rounded-full bg-green-500/20 px-4 py-2 text-green-600 mb-4">
             Campus Experience
           </Badge>
-          <h2 className="text-4xl font-bold md:text-5xl text-foreground mb-4">
+          <h2 className="headline-2 text-foreground mb-4">
             Life at DSU
           </h2>
         </div>
@@ -734,12 +748,12 @@ function CampusLifeSection() {
         </div>
 
         <div className="rounded-3xl border border-green-500/30 bg-gradient-to-r from-green-500/10 to-emerald-500/10 p-10 text-center shadow-lg shadow-green-500/20">
-          <p className="text-lg text-foreground/80 max-w-3xl mx-auto mb-8">
+          <p className="body-lg text-foreground/80 max-w-3xl mx-auto mb-8">
             Experience a vibrant community with on-campus hostel facilities, diverse student clubs, cultural events, sports, and interactive learning environments that foster personal growth and lasting friendships.
           </p>
           <Button
             size="lg"
-            className="rounded-2xl bg-gradient-to-r from-green-500 to-emerald-500 px-8 py-6 text-lg font-semibold text-white"
+            className="rounded-2xl bg-gradient-to-r from-green-500 to-emerald-500 px-8 py-6 title-sm font-semibold text-white"
             asChild
           >
             <Link to="/campus-life">
@@ -761,15 +775,15 @@ function CentreOfExcellenceSection() {
           <Badge className="mx-auto w-fit rounded-full bg-purple-500/20 px-4 py-2 text-purple-600 mb-4">
             Research & Innovation
           </Badge>
-          <h2 className="text-4xl font-bold md:text-5xl text-foreground mb-4">
+          <h2 className="headline-2 text-foreground mb-4">
             Centres of Excellence
           </h2>
-          <p className="mt-4 text-lg text-foreground/80 max-w-3xl mx-auto mb-8">
+          <p className="mt-4 body-lg text-foreground/80 max-w-3xl mx-auto mb-8">
             Access our dedicated research hubs equipped with cutting-edge laboratories, design studios, incubation support, and industry collaborations enabling groundbreaking discoveries.
           </p>
           <Button
             size="lg"
-            className="rounded-2xl bg-gradient-to-r from-purple-500 to-indigo-500 px-8 py-6 text-lg font-semibold text-white"
+            className="rounded-2xl bg-gradient-to-r from-purple-500 to-indigo-500 px-8 py-6 title-sm font-semibold text-white"
             asChild
           >
             <Link to="/centre-of-excellence">
@@ -791,10 +805,10 @@ function InstructionsSection() {
           <Badge className="mx-auto w-fit rounded-full bg-blue-500/15 px-4 py-2 text-blue-500">
             Important Instructions
           </Badge>
-          <h2 className="mt-4 text-3xl font-bold md:text-4xl">
+          <h2 className="mt-4 headline-3">
             Before You Submit Your Application
           </h2>
-          <p className="mt-3 text-lg text-foreground">
+          <p className="mt-3 body-lg text-foreground">
             Review all instructions to ensure your documents, eligibility, and contact details are in order for a seamless admission journey.
           </p>
         </div>
@@ -805,10 +819,10 @@ function InstructionsSection() {
               value={instruction.title}
               className="overflow-hidden rounded-2xl border border-blue-500/20 bg-card/80 backdrop-blur"
             >
-              <AccordionTrigger className="px-3 py-4 text-left text-lg font-semibold text-foreground">
+              <AccordionTrigger className="px-3 py-4 text-left title-sm font-semibold text-foreground">
                 {instruction.title}
               </AccordionTrigger>
-              <AccordionContent className="px-3 pb-6 text-sm text-foreground">
+              <AccordionContent className="px-3 pb-6 body-sm text-foreground">
                 {Array.isArray(instruction.content) ? (
                   <ul className="list-disc space-y-2 pl-5">
                     {instruction.content.map((item) => (
@@ -831,20 +845,20 @@ function ApplySection() {
   return (
     <section className="px-3 pb-20">
       <div className="mx-auto max-w-5xl rounded-3xl border border-blue-500/20 bg-gradient-to-r from-blue-500/15 via-indigo-500/15 to-blue-500/15 p-10 text-center shadow-lg shadow-blue-500/10">
-        <div className="inline-flex items-center justify-center gap-2 rounded-full bg-blue-500/20 px-4 py-2 text-sm font-semibold text-blue-500">
+        <div className="inline-flex items-center justify-center gap-2 rounded-full bg-blue-500/20 px-4 py-2 body-sm font-semibold text-blue-500">
           <MessageCircle className="h-4 w-4" />
           Need More Guidance?
         </div>
-        <h2 className="mt-6 text-3xl font-bold text-foreground md:text-4xl">
+        <h2 className="mt-6 headline-3 text-foreground">
           Talk to Our International Admissions Team
         </h2>
-        <p className="mt-4 text-lg text-foreground">
+        <p className="mt-4 body-lg text-foreground">
           Share your academic goals, visa queries, or scholarship requirements. Our counsellors will connect with you within one business day.
         </p>
         <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <Button
             size="lg"
-            className="rounded-2xl bg-gradient-to-r from-blue-500 to-indigo-500 px-8 py-6 text-lg font-semibold text-white hover:from-indigo-500 hover:to-blue-500"
+            className="rounded-2xl bg-gradient-to-r from-blue-500 to-indigo-500 px-8 py-6 title-sm font-semibold text-white hover:from-indigo-500 hover:to-blue-500"
             asChild
           >
             <a href="https://international-admissions.dsu.edu.in" target="_blank" rel="noopener noreferrer">
@@ -855,7 +869,7 @@ function ApplySection() {
           <Button
             size="lg"
             variant="outline"
-            className="rounded-2xl border-2 border-blue-500 px-8 py-6 text-lg font-semibold text-blue-500"
+            className="rounded-2xl border-2 border-blue-500 px-8 py-6 title-sm font-semibold text-blue-500"
             asChild
           >
             <a href="mailto:international-admissions@dsu.edu.in?subject=International%20Admissions%20Enquiry">
@@ -899,9 +913,9 @@ function SupportCard({ icon: Icon, title, description }: SupportCardProps) {
         <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-500/10 text-blue-500">
           <Icon className="h-5 w-5" />
         </div>
-        <p className="text-sm font-semibold text-foreground">{title}</p>
+        <p className="body-sm font-semibold text-foreground">{title}</p>
       </div>
-      <p className="mt-3 text-sm text-foreground leading-relaxed">{description}</p>
+      <p className="mt-3 body-sm text-foreground leading-relaxed">{description}</p>
     </div>
   );
 }

@@ -171,16 +171,16 @@ export default function Footer() {
                 style={{ mixBlendMode: "lighten" }}
               />
               <div>
-                <p className="text-xs uppercase tracking-[0.3em] text-white/60">
+                <p className="eyebrow text-white/60">
                   Dayananda Sagar University
                 </p>
-                <h2 className="mt-1 text-2xl font-display text-white">
+                <h2 className="mt-1 title-lg text-white">
                   Future-ready education for a world in motion
                 </h2>
               </div>
             </RouterLink>
 
-            <p className="max-w-xl text-sm leading-relaxed text-white/70 font-body">
+            <p className="max-w-xl body-sm leading-relaxed text-white/70">
               A multidisciplinary university in Bengaluru nurturing innovators,
               leaders and change makers through a blend of academics, research
               and hands-on learning.
@@ -202,14 +202,14 @@ export default function Footer() {
                 href="https://dsu.edu.in/virtual-tour"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 text-sm font-medium text-white/80 transition hover:text-white"
+                className="inline-flex items-center gap-2 body-sm font-medium text-white/80 transition hover:text-white"
               >
                 Take a virtual tour
                 <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
               </a>
             </div>
 
-            <div className="mt-10 grid gap-4 rounded-3xl border border-white/10 bg-white/5 p-6 text-sm text-white/80 font-body sm:flex sm:flex-wrap sm:items-center sm:justify-between">
+            <div className="mt-10 grid gap-4 rounded-3xl border border-white/10 bg-white/5 p-6 body-sm text-white/80 sm:flex sm:flex-wrap sm:items-center sm:justify-between">
               <div className="flex flex-wrap items-center gap-3 text-white">
                 <Phone className="h-4 w-4" aria-hidden="true" />
                 <span className="text-white/70">Helpline</span>
@@ -233,7 +233,7 @@ export default function Footer() {
                     key={email.value}
                     href={`mailto:${email.value}`}
                     aria-label={`${email.label} email ${email.value}`}
-                    className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-medium uppercase tracking-wide text-white/80 transition hover:text-white"
+                    className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 eyebrow text-white/80 transition hover:text-white"
                   >
                     <Mail className="h-3 w-3" aria-hidden="true" />{" "}
                     {email.label}
@@ -261,10 +261,10 @@ export default function Footer() {
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {FOOTER_LINK_GROUPS.map((group) => (
               <nav key={group.title} className="space-y-5">
-                <h3 className="text-sm font-semibold uppercase tracking-widest text-white/70">
+                <h3 className="eyebrow text-white/70">
                   {group.title}
                 </h3>
-                <ul className="space-y-3 text-sm text-white/70 font-body">
+                <ul className="space-y-3 body-sm text-white/70">
                   {group.links.map((link) => {
                     if (link.external) {
                       return (
@@ -311,16 +311,16 @@ export default function Footer() {
               key={location.title}
               className="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-[0_20px_80px_-50px_rgba(255,255,255,0.6)]"
             >
-              <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.28em] text-white/60">
+              <div className="inline-flex items-center gap-2 eyebrow text-white/60">
                 <MapPin className="h-4 w-4" aria-hidden="true" />
                 {location.title}
               </div>
-              <div className="mt-3 space-y-1 text-sm text-white/80 font-body">
+              <div className="mt-3 space-y-1 body-sm text-white/80">
                 {location.address.map((line) => (
                   <p key={line}>{line}</p>
                 ))}
               </div>
-              <div className="mt-4 space-y-2 text-sm text-white/75 font-body">
+              <div className="mt-4 space-y-2 body-sm text-white/75">
                 {location.phones.map((phone) => {
                   const sanitised = phone.value.replace(/[^+0-9]/g, "");
                   const isSingleNumber =
@@ -349,7 +349,7 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="mt-16 grid gap-6 border-t border-white/10 pt-6 text-sm text-white/60 font-body sm:flex sm:flex-wrap sm:items-center sm:justify-between">
+        <div className="mt-16 grid gap-6 border-t border-white/10 pt-6 body-sm text-white/60 sm:flex sm:flex-wrap sm:items-center sm:justify-between">
           <p>
             © 2026 Dayananda Sagar University.{" "}
             {language === "en"

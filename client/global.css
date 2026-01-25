@@ -1,25 +1,3 @@
-/**
- * DSU GLOBAL STYLES - FLUID LAYOUT SYSTEM
- * ========================================
- *
- * This stylesheet uses a modern, device-agnostic fluid layout approach:
- *
- * KEY PRINCIPLES:
- * - Content defines height (not viewport)
- * - No fixed heights (use padding, aspect-ratio, or auto)
- * - No negative margins (use natural flow)
- * - clamp() for fluid sizing
- * - CSS custom properties for spacing
- *
- * BENEFITS:
- * - No overlaps on any device
- * - Works on screens that don't exist yet
- * - Better performance (browser-optimized)
- * - Easier to maintain (no device-specific code)
- *
- * See FLUID_LAYOUT_MIGRATION.md for full documentation
- */
-
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap");
@@ -69,24 +47,6 @@
     --ring: 32 100% 45%;
 
     --radius: 0.75rem;
-
-    /* Fluid Spacing System - Device Agnostic */
-    --space-xs: clamp(0.25rem, 0.5vw, 0.5rem);
-    --space-sm: clamp(0.5rem, 1vw, 1rem);
-    --space-md: clamp(1rem, 2vw, 2rem);
-    --space-lg: clamp(2rem, 4vw, 4rem);
-    --space-xl: clamp(3rem, 6vw, 6rem);
-    --space-2xl: clamp(4rem, 8vw, 8rem);
-
-    /* Fluid Font Sizes */
-    --text-xs: clamp(0.75rem, 0.9vw, 0.875rem);
-    --text-sm: clamp(0.875rem, 1.1vw, 1rem);
-    --text-base: clamp(1rem, 1.2vw, 1.125rem);
-    --text-lg: clamp(1.125rem, 1.4vw, 1.25rem);
-    --text-xl: clamp(1.25rem, 1.6vw, 1.5rem);
-    --text-2xl: clamp(1.5rem, 2vw, 2rem);
-    --text-3xl: clamp(2rem, 3vw, 3rem);
-    --text-4xl: clamp(2.5rem, 4vw, 4rem);
 
     --sidebar-background: 0 0% 2%;
     --sidebar-foreground: 0 0% 98%;
@@ -174,259 +134,386 @@
     font-family: "Inter", "Poppins", sans-serif;
   }
 
-  /* Fluid Typography - Device Agnostic */
+  /* Brand Typography Styles */
   .headline-1 {
-    font-size: clamp(2.5rem, 3vw + 1rem, 3.5rem);
-    line-height: 1.15;
-    letter-spacing: -0.04em;
-    font-weight: 500;
+    font-size: 3.5rem; /* 56px */
+    line-height: 4rem; /* 64px */
+    letter-spacing: -0.04em; /* -4% tracking */
+    font-weight: 500; /* Poppins Medium */
     font-family: "Poppins", "Inter", sans-serif;
   }
 
   .headline-2 {
-    font-size: clamp(2rem, 2.5vw + 0.5rem, 2.5rem);
-    line-height: 1.2;
-    letter-spacing: -0.04em;
-    font-weight: 500;
+    font-size: 2.5rem; /* 40px */
+    line-height: 3rem; /* 48px */
+    letter-spacing: -0.04em; /* -4% tracking */
+    font-weight: 500; /* Poppins Medium */
     font-family: "Poppins", "Inter", sans-serif;
   }
 
   .headline-3 {
-    font-size: clamp(1.75rem, 2vw + 0.5rem, 2.25rem);
-    line-height: 1.17;
-    letter-spacing: -0.04em;
-    font-weight: 600;
+    font-size: 2.25rem; /* 36px */
+    line-height: 2.625rem; /* 42px */
+    letter-spacing: -0.04em; /* -4% tracking */
+    font-weight: 600; /* Poppins SemiBold */
     font-family: "Poppins", "Inter", sans-serif;
   }
 
   .headline-4 {
-    font-size: clamp(1.5rem, 1.5vw + 0.5rem, 1.75rem);
-    line-height: 1.29;
-    letter-spacing: -0.02em;
-    font-weight: 700;
+    font-size: 1.75rem; /* 28px */
+    line-height: 2.25rem; /* 36px */
+    letter-spacing: -0.02em; /* -2% tracking */
+    font-weight: 700; /* Poppins Bold */
     font-family: "Poppins", "Inter", sans-serif;
   }
 
   .subheadline {
-    font-size: clamp(1.125rem, 1.2vw + 0.5rem, 1.5rem);
-    line-height: 1.33;
-    letter-spacing: -0.04em;
-    font-weight: 400;
+    font-size: 1.5rem; /* 24px */
+    line-height: 2rem; /* 32px */
+    letter-spacing: -0.04em; /* -4% tracking */
+    font-weight: 400; /* Poppins Regular */
     font-family: "Poppins", "Inter", sans-serif;
   }
 
-  /* Fluid Hero Video Container - No Fixed Height */
+  /* Responsive typography */
+  @media (max-width: 768px) {
+    .headline-1 {
+      font-size: 2.5rem; /* 40px on mobile */
+      line-height: 3rem; /* 48px on mobile */
+    }
+
+    .headline-2 {
+      font-size: 2rem; /* 32px on mobile */
+      line-height: 2.5rem; /* 40px on mobile */
+    }
+
+    .headline-3 {
+      font-size: 1.75rem; /* 28px on mobile */
+      line-height: 2.25rem; /* 36px on mobile */
+    }
+  }
+
+  /* Hero video height responsiveness - keep full video visible */
   .hero-video-container {
     width: 100%;
-    /* Let video aspect ratio define height naturally */
-    aspect-ratio: 16 / 9;
-    overflow: hidden;
+    height: 35vh;
+    overflow: visible;
     position: relative;
+    z-index: 10;
   }
 
-  /* Fluid Dean Section Spacing */
+  @media (min-width: 768px) and (orientation: portrait) {
+    .hero-video-container {
+      height: 40vh;
+      overflow: visible;
+    }
+  }
+
+  @media (min-width: 768px) and (orientation: landscape) {
+    .hero-video-container {
+      height: 75vh;
+      overflow: visible;
+    }
+  }
+
+  @media (min-width: 1024px) and (orientation: portrait) {
+    .hero-video-container {
+      height: 45vh;
+      overflow: visible;
+    }
+  }
+
+  @media (min-width: 1024px) and (orientation: landscape) {
+    .hero-video-container {
+      height: 85vh;
+      overflow: visible;
+    }
+  }
+
+  /* Dean section spacing - reduced gap without overlap */
   .dean-section-wrapper {
     margin-top: 0;
-    padding-top: var(--space-md);
+    padding-top: 0;
   }
 
-  /* Fluid Hero Title Positioning - Container Query Approach */
-  /* Portrait Mode (default): Show outside text, hide overlay */
+  /* Add more space on mobile landscape to prevent overlap */
+  @media (max-height: 500px) and (orientation: landscape) {
+    .dean-section-wrapper {
+      padding-top: 2rem;
+    }
+  }
+
+  /* Minimal gap on mobile portrait */
+  @media (max-height: 900px) and (orientation: portrait) {
+    .dean-section-wrapper {
+      padding-top: 0;
+    }
+  }
+
+  /* Minimal gap on tablet portrait */
+  @media (min-height: 900px) and (orientation: portrait) {
+    .dean-section-wrapper {
+      padding-top: 0;
+    }
+  }
+
+  /* Hero title positioning - landscape vs portrait */
   .hero-title-inside {
     display: none !important;
+  }
+
+  @media (orientation: landscape) {
+    .hero-title-inside {
+      display: flex !important;
+    }
+
+    /* Make buttons horizontal in landscape */
+    .hero-title-inside > div:last-child {
+      flex-direction: row !important;
+      align-items: center !important;
+    }
   }
 
   .hero-title-outside {
     display: block !important;
   }
 
-  /* Landscape Mode: Show overlay text inside video, hide outside duplicate */
-  @media (min-aspect-ratio: 13/9) {
+  /* In landscape (all sizes): show title inside video, hide outside */
+  @media (orientation: landscape) {
     .hero-title-inside {
-      display: flex !important;
-      z-index: 51;
-    }
-
-    .hero-title-outside {
-      display: none !important;
-    }
-
-    .hero-title-inside > div:last-child {
-      flex-direction: row;
-      align-items: center;
-    }
-  }
-
-  /* Extra safeguard: Portrait media query for all school pages */
-  @media (max-aspect-ratio: 13/9) {
-    .hero-title-inside {
-      display: none !important;
-      visibility: hidden !important;
-      height: 0 !important;
-      overflow: hidden !important;
-    }
-
-    .hero-title-outside {
       display: block !important;
-      visibility: visible !important;
+      z-index: 51 !important;
     }
-  }
 
-  /* Engineering Page: Hide text overlay in portrait mode (redundant with text below video) */
-  @media (max-aspect-ratio: 13/9) {
-    .hero-school-title .school-title-text {
+    .hero-title-outside {
       display: none !important;
     }
   }
 
-  /* Department Hero Sections - Minimal styling, let pages control their own layout */
-  .dept-hero-section {
-    position: relative;
+  /* Fix hero text hidden behind navbar on mobile portrait */
+  @media screen and (max-width: 768px) and (orientation: portrait) {
+    /* Reduce excessive padding on department hero sections in portrait */
+    .dept-hero-section {
+      padding-top: 375px !important;
+    }
   }
 
-  /* Note: Removed overly broad rules that were affecting department pages */
-  /* Department hero sections should use their own specific heights */
+  /* Fix hero text hidden behind navbar on mobile landscape */
+  @media screen and (max-width: 950px) and (orientation: landscape) {
+    /* Hide the top menu bar entirely in landscape */
+    .sticky.top-0.z-50.hidden.sm\:block {
+      display: none !important;
+    }
 
-  /* Fluid Hero Section - Let Content Define Height */
-  .hero-section {
-    /* Remove fixed heights - let content flow naturally */
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    position: relative;
-    padding: clamp(3rem, 8vh, 8rem) clamp(0.75rem, 2vw, 1.5rem);
-    /* Use vmax to ensure video visibility across all orientations */
-    min-height: clamp(450px, 85vmax, 100vh);
-  }
+    /* Make main nav more compact */
+    nav.sticky {
+      padding: 4px 8px !important;
+      min-height: auto !important;
+    }
 
-  /* Mobile portrait: Reduce padding to free up space for video */
-  @media (max-aspect-ratio: 1/1) {
+    nav.sticky > div {
+      height: auto !important;
+      gap: 2px !important;
+    }
+
+    nav.sticky a,
+    nav.sticky button {
+      padding: 4px 6px !important;
+      font-size: 11px !important;
+      line-height: 1.2 !important;
+    }
+
+    /* Pull hero video container down for school pages */
+    .hero-video-container {
+      padding-top: 400px !important;
+      margin-top: 0 !important;
+      margin-bottom: -350px !important;
+    }
+
+    /* Hide the hero-title-outside section in landscape */
+    .hero-title-outside,
+    .hero-video-container + div.bg-background {
+      display: none !important;
+    }
+
+    /* Pull International Admissions hero down */
+    .hero-international-content {
+      padding-top: 420px !important;
+      margin-top: 0 !important;
+    }
+
+    /* Reduce gap after hero section - pull next section up */
+    .hero-video-container + * {
+      margin-top: 0 !important;
+      position: relative !important;
+      z-index: 10 !important;
+    }
+
+    /* But pull up sections that are not the immediate bg-background sibling */
+    .hero-video-container ~ section {
+      margin-top: -300px !important;
+    }
+
+    /* Pull all hero sections down */
+    section.relative.overflow-hidden {
+      padding-top: 380px !important;
+      margin-bottom: -350px !important;
+    }
+
+    /* Ensure hero sections use proper top padding */
     .hero-section {
-      padding-top: clamp(1.5rem, 4vh, 2rem);
-      padding-bottom: 0;
-      /* Match video height more precisely */
-      min-height: 100vh;
-      height: 100vh;
-      max-height: 100vh;
+      margin-top: 0 !important;
+      padding-top: 300px !important;
+      height: auto !important;
+      min-height: calc(100vh + 300px) !important;
+      margin-bottom: -250px !important;
     }
 
-    /* Ensure buttons stay at absolute bottom in portrait */
-    .hero-section .relative.max-w-7xl {
-      height: 100%;
-      padding-bottom: clamp(1rem, 3vh, 2rem);
-      justify-content: space-between;
+    /* Pull up sections following hero */
+    section:not([class*="hero"]) {
+      position: relative !important;
+      z-index: 10 !important;
+    }
+
+    section[id="top"] {
+      margin-top: 0 !important;
+      padding-top: 0 !important;
+    }
+
+    /* Reduce excessive padding on department hero sections in landscape */
+    .dept-hero-section {
+      margin-top: 0 !important;
+      padding-top: 300px !important;
+    }
+
+    /* Shift university name up in mobile landscape */
+    .hero-section h1 {
+      margin-top: -80px !important;
     }
   }
 
-  /* Fluid hero content container */
-  .hero-section .relative.max-w-7xl {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    gap: clamp(0.75rem, 2vw, 2rem);
-    width: 100%;
+  /* Increase menu font sizes for mobile and tablet devices */
+  @media screen and (max-width: 1024px) {
+    /* Main navigation menu items */
+    nav.sticky a,
+    nav.sticky button {
+      font-size: 18px !important;
+    }
+
+    /* Mobile menu items */
+    .lg\:hidden .flex.items-center.space-x-2 {
+      font-size: 18px !important;
+    }
+
+    /* Submenu items and links */
+    .rounded-lg.py-2.ml-4 a,
+    .rounded-lg.py-2.ml-4 button {
+      font-size: 18px !important;
+    }
+
+    /* School names in dropdowns */
+    .px-4.py-2.font-semibold {
+      font-size: 18px !important;
+    }
+
+    /* Subgroup headers */
+    .text-sm.sm\:text-base.font-semibold,
+    .text-xs.sm\:text-base.font-semibold {
+      font-size: 16px !important;
+    }
+
+    /* Department links */
+    .text-sm.sm\:text-base,
+    .text-xs.sm\:text-base {
+      font-size: 16px !important;
+    }
+
+    /* Top menu bar items */
+    .hidden.sm\:flex.items-center.gap-3 a {
+      font-size: 15px !important;
+    }
   }
 
-  /* Fluid typography using clamp() */
-  .hero-section h1 {
-    font-size: clamp(1.5rem, 4vw + 0.5rem, 4.5rem);
-    line-height: 1.1;
-    margin-bottom: clamp(0.25rem, 1vw, 1rem);
+  /* Further increase for mobile landscape specifically */
+  @media screen and (max-width: 768px) and (orientation: landscape) {
+    nav.sticky a,
+    nav.sticky button {
+      font-size: 16px !important;
+    }
+
+    .lg\:hidden .flex.items-center.space-x-2 {
+      font-size: 16px !important;
+    }
+
+    .rounded-lg.py-2.ml-4 a,
+    .rounded-lg.py-2.ml-4 button {
+      font-size: 15px !important;
+    }
   }
 
-  .hero-section p {
-    font-size: clamp(0.875rem, 1.5vw + 0.25rem, 1.5rem);
-    line-height: 1.4;
-    margin-bottom: clamp(0.125rem, 0.5vw, 0.5rem);
+  /* Increase for mobile portrait */
+  @media screen and (max-width: 768px) and (orientation: portrait) {
+    nav.sticky a,
+    nav.sticky button {
+      font-size: 18px !important;
+    }
+
+    .lg\:hidden .flex.items-center.space-x-2 {
+      font-size: 18px !important;
+    }
+
+    .rounded-lg.py-2.ml-4 a,
+    .rounded-lg.py-2.ml-4 button {
+      font-size: 16px !important;
+    }
   }
 
-  /* Fluid button container */
-  .hero-section .flex.flex-col {
-    gap: clamp(0.5rem, 1.5vw, 1.5rem);
+  /* Tablet specific (768px to 1024px) */
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    nav.sticky a,
+    nav.sticky button {
+      font-size: 20px !important;
+    }
+
+    .lg\:hidden .flex.items-center.space-x-2 {
+      font-size: 20px !important;
+    }
+
+    .rounded-lg.py-2.ml-4 a,
+    .rounded-lg.py-2.ml-4 button {
+      font-size: 18px !important;
+    }
   }
 
-  /* Fluid buttons */
-  .hero-section button,
-  .hero-section a button {
-    padding: clamp(0.5rem, 1vw, 1.5rem) clamp(1rem, 2vw, 2rem);
-    font-size: clamp(0.75rem, 1vw + 0.25rem, 1rem);
-  }
-
-  /* Landscape mobile: Force buttons to flex-row to prevent cutoff */
-  @media (max-height: 550px) and (orientation: landscape) {
-    .landscape-buttons {
-      flex-direction: row !important;
+  /* Tablet portrait specific - improve top menu visibility */
+  @media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+    /* Reduce top menu font size for better fit */
+    .sticky.top-0.z-50.hidden.sm\:block .hidden.sm\:flex.items-center.gap-3 {
+      gap: 2px !important;
       flex-wrap: wrap;
-      gap: clamp(0.5rem, 1vw, 0.75rem) !important;
     }
 
-    .landscape-buttons > a {
-      flex: 1 1 auto;
-      min-width: auto;
+    .sticky.top-0.z-50.hidden.sm\:block .hidden.sm\:flex.items-center.gap-3 a {
+      font-size: 11px !important;
+      padding: 0 4px !important;
+      white-space: nowrap;
     }
 
-    /* Also handle any flex-col elements within button containers */
-    .landscape-buttons .flex-col {
-      flex-direction: row;
+    /* Make right side items more compact */
+    .sticky.top-0.z-50.hidden.sm\:block .flex.items-center.gap-3 {
+      gap: 2px !important;
     }
-  }
 
-  /* Location badge - relative to hero, not absolute viewport */
-  .hero-section .absolute.top-10 {
-    top: clamp(1rem, 2vh, 2rem);
-    right: clamp(0.75rem, 2vw, 1.5rem);
-  }
+    .sticky.top-0.z-50.hidden.sm\:block .flex.items-center.gap-3 a,
+    .sticky.top-0.z-50.hidden.sm\:block .flex.items-center.gap-3 button {
+      font-size: 11px !important;
+      padding: 0 4px !important;
+    }
 
-  /* Sections flow naturally - no forced spacing */
-  .hero-section + section {
-    margin-top: 0;
-  }
-
-  /* Fluid Navigation Typography */
-  nav.sticky a,
-  nav.sticky button {
-    font-size: clamp(0.75rem, 1.2vw + 0.25rem, 1.125rem);
-    padding: clamp(0.25rem, 0.5vw, 0.75rem) clamp(0.5rem, 1vw, 1rem);
-  }
-
-  /* Mobile menu items */
-  .lg\:hidden .flex.items-center.space-x-2 {
-    font-size: clamp(1rem, 2vw, 1.25rem);
-  }
-
-  /* Submenu items */
-  .rounded-lg.py-2.ml-4 a,
-  .rounded-lg.py-2.ml-4 button {
-    font-size: clamp(0.875rem, 1.5vw, 1.125rem);
-  }
-
-  /* School names in dropdowns */
-  .px-4.py-2.font-semibold {
-    font-size: clamp(1rem, 1.8vw, 1.25rem);
-  }
-
-  /* Subgroup headers */
-  .text-sm.sm\:text-base.font-semibold,
-  .text-xs.sm\:text-base.font-semibold {
-    font-size: clamp(0.875rem, 1.3vw, 1rem);
-  }
-
-  /* Department links */
-  .text-sm.sm\:text-base,
-  .text-xs.sm\:text-base {
-    font-size: clamp(0.875rem, 1.2vw, 1rem);
-  }
-
-  /* Top menu bar - fluid sizing */
-  .hidden.sm\:flex.items-center.gap-3 {
-    gap: clamp(0.125rem, 0.5vw, 0.75rem);
-  }
-
-  .hidden.sm\:flex.items-center.gap-3 a {
-    font-size: clamp(0.6875rem, 0.9vw, 0.9375rem);
-    padding: clamp(0.125rem, 0.3vw, 0.5rem) clamp(0.25rem, 0.5vw, 0.75rem);
+    /* Reduce vertical padding of top menu */
+    .sticky.top-0.z-50.hidden.sm\:block > div {
+      padding: 0.5rem 0.75rem !important;
+    }
   }
 
   /* Ensure mute button works on all devices */
@@ -435,56 +522,377 @@
     pointer-events: auto !important;
     z-index: 99999 !important;
   }
-
-  /* Fluid CTA button class - opt-in for buttons that should be fluid */
-  .fluid-cta-button {
-    padding: clamp(0.75rem, 2vw, 1rem) clamp(1.5rem, 4vw, 2rem);
-    font-size: clamp(0.875rem, 2vw, 1rem);
-  }
-
-  .fluid-cta-button-small {
-    padding: clamp(0.5rem, 1.5vw, 0.75rem) clamp(1.25rem, 3vw, 1.5rem);
-    font-size: clamp(0.8125rem, 1.8vw, 0.875rem);
-  }
 }
 
 @layer utilities {
-  /**
-   * FLUID LAYOUT PHILOSOPHY
-   * ========================
-   * This codebase uses modern CSS fluid techniques:
-   * - clamp() for responsive sizing without media queries
-   * - Flexbox with fluid gaps (clamp-based)
-   * - CSS Grid with minmax() and auto-fit
-   * - Viewport units (vw, vh, vmin, vmax) for scaling
-   * - Aspect-ratio media queries instead of device-specific breakpoints
-   *
-   * Benefits:
-   * - Works on ANY screen size (even ones that don't exist yet)
-   * - No device-specific code to maintain
-   * - Smoother transitions between sizes
-   * - Better performance (browser-optimized)
-   *
-   * ANTI-OVERLAP RULES:
-   * - No fixed heights (use padding, aspect-ratio, or auto)
-   * - No negative margins (use natural flow)
-   * - No absolute positioning for layout (only for decorative elements)
-   * - Content defines height, not viewport
-   */
-
-  /* ===== SITE-WIDE HERO SECTION OVERRIDES ===== */
-
-  /**
-   * HOMEPAGE HERO SECTION ONLY
-   * These rules apply ONLY to the .hero-section class (homepage)
-   * Department pages (.dept-hero-section) are intentionally excluded
-   */
-
-  /* Homepage hero section specific styles - DO NOT affect dept pages */
-  .hero-section {
-    overflow: visible !important;
-    position: relative;
+  /* Homepage typography scale */
+  .eyebrow {
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-family: "Poppins", "Inter", sans-serif;
   }
+
+  .title-xl {
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+    font-weight: 700;
+    font-family: "Poppins", "Inter", sans-serif;
+  }
+
+  .title-lg {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 600;
+    font-family: "Poppins", "Inter", sans-serif;
+  }
+
+  .title-md {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-weight: 600;
+    font-family: "Poppins", "Inter", sans-serif;
+  }
+
+  .title-sm {
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+    font-weight: 600;
+    font-family: "Poppins", "Inter", sans-serif;
+  }
+
+  .title-xs {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 600;
+    font-family: "Poppins", "Inter", sans-serif;
+  }
+
+  .body-lg {
+    font-size: 1rem;
+    line-height: 1.75rem;
+    font-family: "Inter", "Poppins", sans-serif;
+  }
+
+  .body-md {
+    font-size: 0.9375rem;
+    line-height: 1.5rem;
+    font-family: "Inter", "Poppins", sans-serif;
+  }
+
+  .body-sm {
+    font-size: 0.8125rem;
+    line-height: 1.25rem;
+    font-family: "Inter", "Poppins", sans-serif;
+  }
+
+  @media (min-width: 768px) {
+    .title-xl {
+      font-size: 2rem;
+      line-height: 2.5rem;
+    }
+
+    .title-lg {
+      font-size: 1.75rem;
+      line-height: 2.25rem;
+    }
+
+    .title-md {
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
+
+    .title-sm {
+      font-size: 1.25rem;
+      line-height: 1.75rem;
+    }
+
+    .title-xs {
+      font-size: 0.9375rem;
+      line-height: 1.375rem;
+    }
+
+    .body-lg {
+      font-size: 1.125rem;
+    }
+
+    .body-md {
+      font-size: 1rem;
+    }
+
+    .body-sm {
+      font-size: 0.875rem;
+    }
+  }
+
+  /* Normalize Tailwind text utilities to typography scale */
+  .text-xs {
+    font-size: 0.8125rem;
+    line-height: 1.25rem;
+  }
+
+  .text-sm {
+    font-size: 0.8125rem;
+    line-height: 1.25rem;
+  }
+
+  .text-base {
+    font-size: 0.9375rem;
+    line-height: 1.5rem;
+  }
+
+  .text-lg {
+    font-size: 1rem;
+    line-height: 1.75rem;
+  }
+
+  .text-xl {
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+  }
+
+  .text-2xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  .text-3xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .text-4xl {
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+  }
+
+  .text-5xl {
+    font-size: 2.25rem;
+    line-height: 2.625rem;
+  }
+
+  .text-6xl {
+    font-size: 2.5rem;
+    line-height: 3rem;
+  }
+
+  .text-7xl {
+    font-size: 3.5rem;
+    line-height: 4rem;
+  }
+  /* Legacy light header styling (opt-out of color remap) */
+  .light .nav-legacy .nav-topbar {
+    background: linear-gradient(90deg, #fff7ed, #ffffff) !important;
+    border-bottom: 2px solid rgba(254, 215, 170, 0.5) !important;
+  }
+
+  .light .nav-legacy .nav-mainbar {
+    background: rgba(255, 255, 255, 0.95) !important;
+    border-bottom: 2px solid rgba(254, 215, 170, 0.5) !important;
+  }
+
+  .light .nav-legacy a,
+  .light .nav-legacy button {
+    color: #000000 !important;
+  }
+
+  .light .nav-legacy a:hover,
+  .light .nav-legacy button:hover {
+    color: #e58a00 !important;
+    background-image: linear-gradient(
+      90deg,
+      rgba(229, 138, 0, 0.06),
+      rgba(229, 138, 0, 0.03),
+      transparent
+    ) !important;
+  }
+
+  .light .nav-legacy .nav-dropdown {
+    background: rgba(255, 255, 255, 0.95) !important;
+    border: 1px solid rgba(254, 215, 170, 0.5) !important;
+  }
+
+/* Dark mode dropdown headings: force white */
+.dark .nav-legacy .nav-dropdown-panel .nav-dropdown-heading {
+  color: #ffffff !important;
+  opacity: 1 !important;
+}
+
+/* Keep dropdown hover text white on laptop/desktop screens */
+@media screen and (min-width: 1024px) {
+  .dark .nav-legacy .nav-dropdown a:hover,
+  .dark .nav-legacy .nav-dropdown button:hover {
+    color: #ffffff !important;
+  }
+
+  .dark .nav-legacy .nav-dropdown .nav-dropdown-heading {
+    color: #ffffff !important;
+    opacity: 1 !important;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6);
+  }
+}
+
+/* RAG chatbot opt-out of brand color remap */
+.rag-legacy {
+  color: #111827;
+}
+
+.rag-legacy.rag-theme-dark {
+  color: #e5e7eb;
+}
+
+.rag-legacy .rag-chat-button {
+  background-color: #f97316 !important;
+  color: #ffffff !important;
+}
+
+.rag-legacy .rag-chat-button:hover {
+  background-color: #ea580c !important;
+}
+
+.rag-legacy .rag-chat-window {
+  background-color: #ffffff !important;
+  border-color: #e5e7eb !important;
+}
+
+.rag-legacy.rag-theme-dark .rag-chat-window {
+  background-color: #0f172a !important;
+  border-color: #334155 !important;
+}
+
+.rag-legacy .rag-chat-header {
+  background: linear-gradient(90deg, #ffedd5, #fed7aa) !important;
+  border-color: #fed7aa !important;
+}
+
+.rag-legacy.rag-theme-dark .rag-chat-header {
+  background: linear-gradient(90deg, rgba(124, 45, 18, 0.45), rgba(154, 52, 18, 0.35)) !important;
+  border-color: rgba(194, 65, 12, 0.4) !important;
+}
+
+.rag-legacy .rag-chat-body {
+  background-color: #f9fafb !important;
+}
+
+.rag-legacy.rag-theme-dark .rag-chat-body {
+  background-color: rgba(30, 41, 59, 0.6) !important;
+}
+
+.rag-legacy .rag-chat-avatar {
+  background-color: #f97316 !important;
+  color: #ffffff !important;
+}
+
+.rag-legacy .rag-chat-bubble-user {
+  background-color: #3b82f6 !important;
+  color: #ffffff !important;
+  border-color: transparent !important;
+}
+
+.rag-legacy .rag-chat-bubble-bot {
+  background-color: #ffffff !important;
+  color: #111827 !important;
+  border-color: #e5e7eb !important;
+}
+
+.rag-legacy.rag-theme-dark .rag-chat-bubble-bot {
+  background-color: #334155 !important;
+  color: #f8fafc !important;
+  border-color: #475569 !important;
+}
+
+.rag-legacy .rag-chat-quick-reply {
+  background-color: #ffedd5 !important;
+  border-color: #fed7aa !important;
+  color: #9a3412 !important;
+}
+
+.rag-legacy .rag-chat-quick-reply:hover {
+  background-color: #fed7aa !important;
+}
+
+.rag-legacy.rag-theme-dark .rag-chat-quick-reply {
+  background-color: rgba(124, 45, 18, 0.4) !important;
+  border-color: rgba(194, 65, 12, 0.45) !important;
+  color: #fde68a !important;
+}
+
+.rag-legacy .rag-chat-input-bar {
+  background-color: #f9fafb !important;
+  border-color: #e5e7eb !important;
+}
+
+.rag-legacy.rag-theme-dark .rag-chat-input-bar {
+  background-color: #1f2937 !important;
+  border-color: #334155 !important;
+}
+
+.rag-legacy .rag-chat-input {
+  background-color: #ffffff !important;
+  border-color: #d1d5db !important;
+  color: #111827 !important;
+}
+
+.rag-legacy.rag-theme-dark .rag-chat-input {
+  background-color: #334155 !important;
+  border-color: #475569 !important;
+  color: #f8fafc !important;
+}
+
+.rag-legacy .rag-chat-send {
+  background-color: #f97316 !important;
+  color: #ffffff !important;
+}
+
+.rag-legacy .rag-chat-send:hover {
+  background-color: #ea580c !important;
+}
+
+.rag-legacy .rag-chat-link {
+  color: #60a5fa !important;
+}
+
+.rag-legacy .rag-chat-link:hover {
+  color: #93c5fd !important;
+}
+
+/* Mobile/tablet header consistency */
+.light .nav-legacy .nav-mobile-panel {
+  background: rgba(255, 255, 255, 0.98) !important;
+  border-top: 1px solid rgba(254, 215, 170, 0.4) !important;
+}
+
+.light .nav-legacy .nav-mobile-item {
+  color: #1f2937 !important;
+}
+
+.light .nav-legacy .nav-mobile-item:hover {
+  color: #e58a00 !important;
+  background-image: linear-gradient(
+    90deg,
+    rgba(229, 138, 0, 0.06),
+    rgba(229, 138, 0, 0.03),
+    transparent
+  ) !important;
+}
+
+.light .nav-legacy .nav-mobile-active {
+  color: #7c3f00 !important;
+  background-color: rgba(229, 138, 0, 0.12) !important;
+}
+
+.light .nav-legacy .nav-mobile-submenu {
+  background: rgba(255, 255, 255, 0.96) !important;
+  border-left: 2px solid rgba(254, 215, 170, 0.5) !important;
+}
+
+.light .nav-legacy .nav-mobile-subitem:hover,
+.light .nav-legacy .nav-mobile-subtoggle:hover {
+  color: #b85f00 !important;
+  background-color: rgba(229, 138, 0, 0.1) !important;
+}
 
   .scrollbar-hide {
     -ms-overflow-style: none;
@@ -493,69 +901,6 @@
 
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
-  }
-
-  /* ===== UTILITY CLASSES FOR FLUID LAYOUTS ===== */
-
-  /* Fluid Hero Image Container */
-  .fluid-hero-container {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-  }
-
-  .fluid-hero-container img {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 21 / 9;
-    object-fit: cover;
-    min-height: 300px;
-    max-height: 600px;
-  }
-
-  /* Fluid Section Spacing */
-  .fluid-section {
-    padding-top: var(--space-lg);
-    padding-bottom: var(--space-lg);
-    margin: 0;
-  }
-
-  /* Fluid Container */
-  .fluid-container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding-left: clamp(0.75rem, 2vw, 1.5rem);
-    padding-right: clamp(0.75rem, 2vw, 1.5rem);
-  }
-
-  /* Fluid Grid - Auto-fit columns */
-  .fluid-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
-    gap: clamp(1rem, 2vw, 2rem);
-  }
-
-  /* Fluid Text - For body text */
-  .fluid-text {
-    font-size: clamp(1rem, 1.2vw, 1.125rem);
-    line-height: 1.6;
-  }
-
-  /* Aspect Ratio Containers */
-  .aspect-video {
-    aspect-ratio: 16 / 9;
-  }
-
-  .aspect-cinema {
-    aspect-ratio: 21 / 9;
-  }
-
-  .aspect-square {
-    aspect-ratio: 1 / 1;
-  }
-
-  .aspect-portrait {
-    aspect-ratio: 3 / 4;
   }
 
   .animate-gradient-shift {
@@ -1229,38 +1574,56 @@
     max-width: none !important;
   }
 
-  /* Fluid Section Spacing - Natural Flow */
+  /* Remove spacing between sections - global */
   section {
-    margin-top: 0;
-    margin-bottom: 0;
-    padding-top: var(--space-lg);
-    padding-bottom: var(--space-lg);
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
   }
 
-  /* Fluid container padding */
+  /* Remove padding from containers */
   .container,
   [class*="container"] {
-    padding-left: clamp(0.75rem, 2vw, 1.5rem);
-    padding-right: clamp(0.75rem, 2vw, 1.5rem);
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
   }
 
-  /* Fluid grid gaps */
+  /* Reduce gap in grids */
   .grid {
-    gap: clamp(0.75rem, 2vw, 1.5rem);
+    gap: 1rem !important;
   }
 
-  /* Global: Remove all min-h-screen that cause layout issues */
-  /* Keep min-h-screen on root divs but prevent child conflicts */
-  .min-h-screen > section:first-child {
-    min-height: auto;
+  /* Remove extra spacing from divs between sections */
+  div[class*="bg-gradient"],
+  div[class*="bg-background"],
+  div[class*="px-3"] {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
   }
 
-  /* Global: Prevent absolute positioning conflicts */
-  .absolute.inset-0 {
-    pointer-events: none;
+  /* Hero sections - keep minimal spacing */
+  .hero-section,
+  [class*="hero"] {
+    margin-bottom: 0 !important;
   }
 
-  .absolute.inset-0 > * {
-    pointer-events: auto;
+  /* Remove space-y utility classes */
+  [class*="space-y"] {
+    --tw-space-y-reverse: 0;
+  }
+
+  /* Collapse section padding to minimal */
+  section > div:first-child {
+    margin-top: 0 !important;
+  }
+
+  section > div:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  /* Reduce spacing between Virtual Tour Section and Storyboard Section */
+  section.virtual-tour-section {
+    margin-bottom: -2rem !important;
   }
 }

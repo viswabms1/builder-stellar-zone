@@ -95,14 +95,14 @@ export function ApplicationPopup() {
 
         {/* Header - Brand Gradient */}
         <div className="bg-gradient-to-r from-brand-orange to-brand-blue px-3 pt-2.5 pb-2.5">
-          <p className="text-xs text-white/90 text-center font-semibold leading-tight">
+          <p className="body-sm text-white/90 text-center font-semibold leading-tight">
             Application window for PhD Admissions
           </p>
-          <p className="text-xs text-white/90 text-center mt-1 font-semibold leading-tight">
+          <p className="body-sm text-white/90 text-center mt-1 font-semibold leading-tight">
             (2025-26 Even sem) Closes on
           </p>
-          <p className="text-sm font-bold text-white text-center mt-2">
-            10<sup className="text-xs">th</sup> February 2026
+          <p className="title-xs font-bold text-white text-center mt-2">
+            10<sup className="body-sm">th</sup> February 2026
           </p>
         </div>
 
@@ -119,10 +119,10 @@ export function ApplicationPopup() {
                 key={idx}
                 className="bg-background rounded-md p-1 text-center border border-brand-orange/20 overflow-hidden"
               >
-                <div className="text-brand-orange font-bold text-base leading-tight">
+                <div className="text-brand-orange font-bold body-md leading-tight">
                   {String(item.value).padStart(2, "0")}
                 </div>
-                <div className="text-foreground/60 text-xs font-semibold mt-0.5 leading-tight truncate">
+                <div className="text-foreground/60 body-sm font-semibold mt-0.5 leading-tight truncate">
                   {item.label}
                 </div>
               </div>
@@ -138,7 +138,7 @@ export function ApplicationPopup() {
             rel="noreferrer"
             className="block no-underline"
           >
-            <Button className="w-full bg-gradient-to-r from-brand-orange to-brand-blue hover:from-brand-orange hover:to-brand-blue text-white font-bold py-2 px-2 rounded-md transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-brand-orange/50 text-xs">
+            <Button className="w-full bg-gradient-to-r from-brand-orange to-brand-blue hover:from-brand-orange hover:to-brand-blue text-white font-bold py-2 px-2 rounded-md transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-brand-orange/50 body-sm">
               APPLY NOW !
             </Button>
           </a>

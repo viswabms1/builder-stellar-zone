@@ -180,7 +180,7 @@ export function ChatWidget() {
                                     <Bot className="w-5 h-5 text-white" />
                                 </div>
                                 <div>
-                                    <h2 className="font-semibold text-white text-sm">
+                                    <h2 className="title-xs font-semibold text-white">
                                         DSU Chatbot
                                     </h2>
                                     <div className="flex items-center gap-1.5">
@@ -196,7 +196,7 @@ export function ChatWidget() {
                                                             : "bg-gray-400"
                                             )}
                                         />
-                                        <p className="text-[10px] text-white/70">
+                                        <p className="body-sm text-white/70">
                                             {sessionData
                                                 ? "Agent Builder Connected"
                                                 : isLoading
@@ -233,7 +233,7 @@ export function ChatWidget() {
                                 <div className="flex items-center justify-center h-full">
                                     <div className="text-center">
                                         <Loader2 className="w-8 h-8 animate-spin text-[#f97316] mx-auto mb-3" />
-                                        <p className="text-sm text-[#999]">Loading ChatKit...</p>
+                                        <p className="body-sm text-[#999]">Loading ChatKit...</p>
                                     </div>
                                 </div>
                             )}
@@ -242,10 +242,10 @@ export function ChatWidget() {
                                 <div className="flex items-center justify-center h-full">
                                     <div className="text-center">
                                         <Loader2 className="w-8 h-8 animate-spin text-[#f97316] mx-auto mb-3" />
-                                        <p className="text-sm text-[#999]">
+                                        <p className="body-sm text-[#999]">
                                             Connecting to Agent Builder...
                                         </p>
-                                        <p className="text-xs text-[#666] mt-1">
+                                        <p className="body-sm text-[#666] mt-1">
                                             Your workflow is loading
                                         </p>
                                     </div>
@@ -255,10 +255,10 @@ export function ChatWidget() {
                             {chatkitReady && error && (
                                 <div className="flex items-center justify-center h-full px-4">
                                     <div className="text-center">
-                                        <p className="text-sm text-red-400 mb-3">{error}</p>
+                                        <p className="body-sm text-red-400 mb-3">{error}</p>
                                         <button
                                             onClick={initializeChatKitSession}
-                                            className="px-4 py-2 bg-[#f97316] text-white rounded-lg text-sm hover:bg-[#ea580c] transition-colors"
+                                            className="px-4 py-2 bg-[#f97316] text-white rounded-lg body-sm hover:bg-[#ea580c] transition-colors"
                                         >
                                             Try Again
                                         </button>
@@ -287,7 +287,7 @@ export function ChatWidget() {
                                         {QUICK_REPLIES.map((reply, idx) => (
                                             <button
                                                 key={`first-${idx}`}
-                                                className="text-xs px-3 py-1.5 rounded-full bg-[#2a2a2a] text-[#999] border border-[#333] hover:bg-[#f97316] hover:text-white hover:border-[#f97316] transition-all whitespace-nowrap cursor-pointer"
+                                                className="body-sm px-3 py-1.5 rounded-full bg-[#2a2a2a] text-[#999] border border-[#333] hover:bg-[#f97316] hover:text-white hover:border-[#f97316] transition-all whitespace-nowrap cursor-pointer"
                                             >
                                                 {reply}
                                             </button>
@@ -297,7 +297,7 @@ export function ChatWidget() {
                                         {QUICK_REPLIES.map((reply, idx) => (
                                             <button
                                                 key={`second-${idx}`}
-                                                className="text-xs px-3 py-1.5 rounded-full bg-[#2a2a2a] text-[#999] border border-[#333] hover:bg-[#f97316] hover:text-white hover:border-[#f97316] transition-all whitespace-nowrap cursor-pointer"
+                                                className="body-sm px-3 py-1.5 rounded-full bg-[#2a2a2a] text-[#999] border border-[#333] hover:bg-[#f97316] hover:text-white hover:border-[#f97316] transition-all whitespace-nowrap cursor-pointer"
                                             >
                                                 {reply}
                                             </button>

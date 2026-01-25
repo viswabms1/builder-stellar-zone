@@ -70,10 +70,10 @@ export default function SearchDialog({
                       <h3 className="font-medium text-foreground group-hover:text-orange-600">
                         {result.title}
                       </h3>
-                      <p className="text-sm text-muted-foreground">
+                      <p className="body-sm text-muted-foreground">
                         {result.description}
                       </p>
-                      <p className="text-xs text-muted-foreground mt-1">
+                      <p className="body-sm text-muted-foreground mt-1">
                         {result.category}
                       </p>
                     </div>
