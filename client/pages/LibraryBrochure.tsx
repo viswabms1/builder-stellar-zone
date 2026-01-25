@@ -73,7 +73,7 @@ export default function LibraryBrochure() {
           <div className="flex justify-center">
             <Button asChild variant="outline">
               <Link to="/library">
-                <ArrowRight className="mr-2 h-4 w-4" />
+                <ArrowLeft className="mr-2 h-4 w-4" />
                 Back to Library
               </Link>
             </Button>
