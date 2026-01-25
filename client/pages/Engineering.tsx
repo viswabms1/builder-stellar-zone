@@ -1703,7 +1703,7 @@ export default function Engineering() {
       </section>
 
       {/* Dean's Message Section - Moved after program overview */}
-      <section className="dean-section-wrapper relative overflow-hidden px-3 py-8 bg-gradient-to-r from-orange-500/5 via-brand-magenta/5 to-brand-blue/5">
+      <section className="dean-section-wrapper relative overflow-hidden px-3 py-8 bg-gradient-to-r from-brand-blue/5 via-brand-magenta/5 to-brand-blue/5">
         <div className="mx-auto max-w-7xl">
           <div className="mb-8">
             <h2 className="headline-2 mb-2">
