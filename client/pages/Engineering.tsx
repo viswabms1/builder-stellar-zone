@@ -1847,11 +1847,11 @@ export default function Engineering() {
               className="group rounded-3xl border border-border/40 bg-card/60 backdrop-blur-sm overflow-hidden hover:shadow-lg hover:shadow-brand-magenta/20 transition-all duration-500 hover:-translate-y-1"
             >
               <Card className="h-full border-0 bg-transparent">
-                <div className="relative h-32 bg-gradient-to-br from-brand-magenta/20 to-brand-magenta/10 flex items-center justify-center">
-                  <Award className="h-12 w-12 text-brand-magenta/70 group-hover:text-brand-magenta transition-colors" />
+                <div className="relative h-32 bg-gradient-to-br from-brand-blue/20 to-brand-blue/10 flex items-center justify-center">
+                  <Award className="h-12 w-12 text-brand-blue/70 group-hover:text-brand-blue transition-colors" />
                 </div>
                 <CardHeader>
-                  <CardTitle className="font-display group-hover:text-brand-magenta transition-colors">
+                  <CardTitle className="font-display group-hover:text-brand-blue transition-colors">
                     Centre of Excellence
                   </CardTitle>
                 </CardHeader>
@@ -1890,14 +1890,14 @@ export default function Engineering() {
             {/* Placements */}
             <RouterLink
               to="/placements"
-              className="group rounded-3xl border border-border/40 bg-card/60 backdrop-blur-sm overflow-hidden hover:shadow-lg hover:shadow-brand-orange/20 transition-all duration-500 hover:-translate-y-1"
+              className="group rounded-3xl border border-border/40 bg-card/60 backdrop-blur-sm overflow-hidden hover:shadow-lg hover:shadow-brand-blue/20 transition-all duration-500 hover:-translate-y-1"
             >
               <Card className="h-full border-0 bg-transparent">
-                <div className="relative h-32 bg-gradient-to-br from-brand-orange/20 to-brand-orange/10 flex items-center justify-center">
-                  <GraduationCap className="h-12 w-12 text-brand-orange/70 group-hover:text-brand-orange transition-colors" />
+                <div className="relative h-32 bg-gradient-to-br from-brand-blue/20 to-brand-blue/10 flex items-center justify-center">
+                  <GraduationCap className="h-12 w-12 text-brand-blue/70 group-hover:text-brand-blue transition-colors" />
                 </div>
                 <CardHeader>
-                  <CardTitle className="font-display group-hover:text-brand-orange transition-colors">
+                  <CardTitle className="font-display group-hover:text-brand-blue transition-colors">
                     Placements
                   </CardTitle>
                 </CardHeader>
