@@ -1918,14 +1918,14 @@ export default function Engineering() {
               href="https://admissions.dsu.edu.in/"
               target="_blank"
               rel="noreferrer"
-              className="group rounded-3xl border border-border/40 bg-card/60 backdrop-blur-sm overflow-hidden hover:shadow-lg hover:shadow-brand-magenta/20 transition-all duration-500 hover:-translate-y-1"
+              className="group rounded-3xl border border-border/40 bg-card/60 backdrop-blur-sm overflow-hidden hover:shadow-lg hover:shadow-brand-blue/20 transition-all duration-500 hover:-translate-y-1"
             >
               <Card className="h-full border-0 bg-transparent">
-                <div className="relative h-32 bg-gradient-to-br from-brand-magenta/20 to-brand-magenta/10 flex items-center justify-center">
-                  <Cpu className="h-12 w-12 text-brand-magenta/70 group-hover:text-brand-magenta transition-colors" />
+                <div className="relative h-32 bg-gradient-to-br from-brand-blue/20 to-brand-blue/10 flex items-center justify-center">
+                  <Cpu className="h-12 w-12 text-brand-blue/70 group-hover:text-brand-blue transition-colors" />
                 </div>
                 <CardHeader>
-                  <CardTitle className="font-display group-hover:text-brand-magenta transition-colors">
+                  <CardTitle className="font-display group-hover:text-brand-blue transition-colors">
                     Admissions
                   </CardTitle>
                 </CardHeader>
@@ -1933,7 +1933,7 @@ export default function Engineering() {
                   <p className="text-sm text-foreground/80 font-body">
                     Join School of Engineering, DSU and shape your future
                   </p>
-                  <span className="inline-flex items-center gap-2 text-xs font-medium text-brand-magenta group-hover:text-brand-magenta/80 transition-colors">
+                  <span className="inline-flex items-center gap-2 text-xs font-medium text-brand-blue group-hover:text-brand-blue/80 transition-colors">
                     Apply Now
                     <ChevronRight className="h-3 w-3" />
                   </span>
