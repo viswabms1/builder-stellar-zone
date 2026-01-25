@@ -48,7 +48,7 @@ export default function About() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero Section with Background Image */}
-      <section className="relative py-10 lg:py-32 bg-gradient-to-br from-orange-500/10 via-red-600/5 to-background overflow-hidden">
+      <section className="relative py-10 lg:py-32 bg-gradient-to-br from-brand-blue/10 via-brand-magenta/5 to-background overflow-hidden">
         <div className="absolute inset-0">
           <img
             src={heroBgImage}
@@ -62,9 +62,9 @@ export default function About() {
         </div>
 
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-orange-500/10 rounded-full filter blur-3xl animate-float"></div>
+          <div className="absolute top-20 left-10 w-72 h-72 bg-brand-blue/10 rounded-full filter blur-3xl animate-float"></div>
           <div
-            className="absolute bottom-20 right-10 w-96 h-96 bg-red-600/10 rounded-full filter blur-3xl animate-float"
+            className="absolute bottom-20 right-10 w-96 h-96 bg-brand-magenta/10 rounded-full filter blur-3xl animate-float"
             style={{ animationDelay: "2s" }}
           ></div>
         </div>
@@ -88,7 +88,7 @@ export default function About() {
             >
               <Button
                 size="lg"
-                className="bg-brand-gradient hover:opacity-90 text-foreground px-8 py-6 text-lg font-semibold rounded-2xl"
+                className="bg-brand-blue hover:bg-brand-blue/90 text-white px-8 py-6 text-lg font-semibold rounded-2xl shadow-lg shadow-brand-blue/30 hover:shadow-brand-blue/50 transition-all"
               >
                 Campus Tour
                 <ArrowRight className="w-5 h-5 ml-2" />
@@ -112,7 +112,7 @@ export default function About() {
                 key={index}
                 className="text-center p-3 bg-white/95 backdrop-blur-sm border border-white/40 hover:border-white/60 transition-all duration-300"
               >
-                <stat.icon className="w-8 h-8 text-orange-500 mx-auto mb-3" />
+                <stat.icon className="w-8 h-8 text-brand-blue mx-auto mb-3" />
                 <div className="text-3xl font-bold text-slate-900 mb-1">
                   {stat.number}
                 </div>
@@ -149,7 +149,7 @@ export default function About() {
                 value="story"
                 className="border border-border/50 rounded-lg px-4"
               >
-                <AccordionTrigger className="text-orange-500 hover:text-orange-600 font-semibold">
+                <AccordionTrigger className="text-brand-blue hover:text-brand-blue/80 font-semibold">
                   Read Our Story →
                 </AccordionTrigger>
                 <AccordionContent className="space-y-4 text-foreground leading-relaxed">
@@ -173,7 +173,7 @@ export default function About() {
       </section>
 
       {/* Core Sections */}
-      <section className="px-3 py-10 bg-gradient-to-br from-brand-orange/5 via-brand-blue/5 to-background">
+      <section className="px-3 py-10 bg-gradient-to-br from-brand-blue/5 via-brand-magenta/3 to-background">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-8">
             <h2 className="headline-2 mb-6">
@@ -238,13 +238,13 @@ export default function About() {
               return (
                 <Card
                   key={index}
-                  className="group hover:shadow-lg hover:shadow-orange-500/10 transition-all duration-300 hover:border-orange-500/30 bg-card/50 backdrop-blur-sm border border-border/50 flex flex-col"
+                  className="group hover:shadow-lg hover:shadow-brand-blue/20 transition-all duration-300 hover:border-brand-blue/30 bg-card/50 backdrop-blur-sm border border-border/50 flex flex-col"
                 >
                   <CardHeader>
-                    <div className="w-12 h-12 rounded-2xl bg-brand-orange/10 flex items-center justify-center mb-4 group-hover:bg-brand-orange/20 transition-colors">
-                      <Icon className="w-6 h-6 text-brand-orange" />
+                    <div className="w-12 h-12 rounded-2xl bg-brand-blue/10 flex items-center justify-center mb-4 group-hover:bg-brand-blue/20 transition-colors">
+                      <Icon className="w-6 h-6 text-brand-blue" />
                     </div>
-                    <CardTitle className="text-xl group-hover:text-brand-orange transition-colors">
+                    <CardTitle className="text-xl group-hover:text-brand-blue transition-colors">
                       {section.title}
                     </CardTitle>
                   </CardHeader>
@@ -255,7 +255,7 @@ export default function About() {
                           key={idx}
                           className="flex gap-3 text-sm leading-relaxed"
                         >
-                          <span className="text-brand-orange font-bold flex-shrink-0">
+                          <span className="text-brand-blue font-bold flex-shrink-0">
                             ✓
                           </span>
                           <span>{bullet}</span>
@@ -309,10 +309,10 @@ export default function About() {
               const Icon = section.icon;
               return (
                 <Link key={index} to={section.href}>
-                  <Card className="h-full group hover:shadow-lg hover:shadow-brand-orange/10 transition-all duration-300 hover:border-brand-orange/30 bg-card/50 backdrop-blur-sm border border-border/50 cursor-pointer hover:-translate-y-1">
+                  <Card className="h-full group hover:shadow-lg hover:shadow-brand-blue/20 transition-all duration-300 hover:border-brand-blue/30 bg-card/50 backdrop-blur-sm border border-border/50 cursor-pointer hover:-translate-y-1">
                     <CardContent className="p-3 text-center">
-                      <Icon className="w-10 h-10 text-brand-orange mx-auto mb-4 group-hover:scale-110 transition-transform" />
-                      <h3 className="font-bold text-lg mb-2 group-hover:text-brand-orange transition-colors">
+                      <Icon className="w-10 h-10 text-brand-blue mx-auto mb-4 group-hover:scale-110 transition-transform" />
+                      <h3 className="font-bold text-lg mb-2 group-hover:text-brand-blue transition-colors">
                         {section.title}
                       </h3>
                       <p className="text-sm text-foreground">
@@ -328,9 +328,9 @@ export default function About() {
       </section>
 
       {/* CTA Section */}
-      <section className="px-3 py-10 bg-gradient-to-r from-brand-orange/5 to-brand-blue/5">
+      <section className="px-3 py-10 bg-gradient-to-r from-brand-blue/5 to-brand-magenta/5">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="bg-gradient-to-r from-brand-orange/10 via-brand-magenta/10 to-brand-blue/10 rounded-3xl p-12 border border-brand-orange/20">
+          <div className="bg-gradient-to-r from-brand-blue/10 via-brand-magenta/10 to-brand-blue/5 rounded-3xl p-12 border border-brand-blue/20">
             <h2 className="headline-2 mb-6">
               Ready to build your future with
               <span className="bg-brand-gradient bg-clip-text text-transparent">
@@ -352,7 +352,7 @@ export default function About() {
               >
                 <Button
                   size="lg"
-                  className="bg-brand-gradient hover:opacity-90 text-foreground px-12 py-6 text-lg font-semibold rounded-2xl"
+                  className="bg-brand-blue hover:bg-brand-blue/90 text-white px-12 py-6 text-lg font-semibold rounded-2xl shadow-lg shadow-brand-blue/30 hover:shadow-brand-blue/50 transition-all"
                 >
                   Apply Now
                   <GraduationCap className="w-5 h-5 ml-2" />
