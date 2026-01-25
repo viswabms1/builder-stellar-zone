@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 import {
   Card,
   CardContent,
@@ -20,34 +21,93 @@ import {
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/providers/theme-provider";
 
+// Type for Directus response
+interface VisionMissionData {
+  vision_title?: string;
+  vision_description?: string;
+  mission_title?: string;
+  mission_description?: string;
+}
+
+// Default core values (fallback)
+const DEFAULT_CORE_VALUES = [
+  {
+    icon: Lightbulb,
+    title: "The Pursuit of Excellence",
+    description:
+      "Continuous improvement in teaching, research, infrastructure and institutional practices.",
+  },
+  {
+    icon: Award,
+    title: "Fairness",
+    description:
+      "Commitment to equity, inclusiveness, and unbiased academic and administrative processes.",
+  },
+  {
+    icon: Target,
+    title: "Leadership",
+    description:
+      "Developing responsible leaders capable of guiding change in education, research and industry.",
+  },
+  {
+    icon: Heart,
+    title: "Integrity and Transparency",
+    description:
+      "Upholding ethical conduct, accountability and openness in governance and academics.",
+  },
+];
+
+// Default vision & mission (fallback)
+const DEFAULT_VISION_MISSION = {
+  vision_title: "Vision",
+  vision_description:
+    "To be a centre of excellence in education, research & training, innovation & entrepreneurship and to produce citizens with exceptional leadership qualities to serve national and global needs.",
+  mission_title: "Mission",
+  mission_description:
+    "To achieve our objectives in an environment that enhances creativity, innovation and scholarly pursuits while adhering to our vision.",
+};
+
 export default function VisionMission() {
   const { theme } = useTheme();
-  const coreValues = [
-    {
-      icon: Lightbulb,
-      title: "The Pursuit of Excellence",
-      description:
-        "Continuous improvement in teaching, research, infrastructure and institutional practices.",
-    },
-    {
-      icon: Award,
-      title: "Fairness",
-      description:
-        "Commitment to equity, inclusiveness, and unbiased academic and administrative processes.",
-    },
-    {
-      icon: Target,
-      title: "Leadership",
-      description:
-        "Developing responsible leaders capable of guiding change in education, research and industry.",
-    },
-    {
-      icon: Heart,
-      title: "Integrity and Transparency",
-      description:
-        "Upholding ethical conduct, accountability and openness in governance and academics.",
-    },
-  ];
+  const [visionMissionData, setVisionMissionData] = useState<VisionMissionData>(DEFAULT_VISION_MISSION);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const coreValues = DEFAULT_CORE_VALUES;
+
+  // Fetch Vision & Mission from Directus API
+  useEffect(() => {
+    const fetchVisionMission = async () => {
+      try {
+        setLoading(true);
+        const response = await fetch("/api/directus/vision-mission");
+
+        if (!response.ok) {
+          throw new Error("Failed to fetch vision-mission content");
+        }
+
+        const result = await response.json();
+
+        if (result.success && result.data) {
+          setVisionMissionData(result.data);
+        } else if (result.fallback) {
+          // Use default if API has fallback
+          console.warn("Using fallback vision-mission content");
+          setVisionMissionData(DEFAULT_VISION_MISSION);
+        }
+
+        setError(null);
+      } catch (err) {
+        console.error("Error fetching vision-mission:", err);
+        setError(err instanceof Error ? err.message : "Unknown error");
+        // Use default content on error
+        setVisionMissionData(DEFAULT_VISION_MISSION);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchVisionMission();
+  }, []);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -99,41 +159,49 @@ export default function VisionMission() {
       {/* Vision & Mission - Two Pillars */}
       <section className="px-3 py-10">
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-4">
-            {/* Vision Card */}
-            <Card className="bg-card/50 backdrop-blur-sm border border-blue-500/30 hover:shadow-lg transition-all duration-300">
-              <CardHeader>
-                <div className="w-16 h-16 rounded-2xl bg-blue-500/20 flex items-center justify-center mb-4">
-                  <Eye className="w-8 h-8 text-blue-500" />
-                </div>
-                <CardTitle className="text-3xl font-bold text-foreground">
-                  Vision
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-lg text-foreground leading-relaxed">
-                  To be a centre of excellence in education, research & training, innovation & entrepreneurship and to produce citizens with exceptional leadership qualities to serve national and global needs.
-                </p>
-              </CardContent>
-            </Card>
+          {loading && (
+            <div className="text-center py-12">
+              <p className="text-foreground">Loading vision & mission content...</p>
+            </div>
+          )}
 
-            {/* Mission Card */}
-            <Card className="bg-card/50 backdrop-blur-sm border border-blue-500/30 hover:shadow-lg transition-all duration-300">
-              <CardHeader>
-                <div className="w-16 h-16 rounded-2xl bg-blue-500/20 flex items-center justify-center mb-4">
-                  <Target className="w-8 h-8 text-blue-500" />
-                </div>
-                <CardTitle className="text-3xl font-bold text-foreground">
-                  Mission
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-lg text-foreground leading-relaxed">
-                  To achieve our objectives in an environment that enhances creativity, innovation and scholarly pursuits while adhering to our vision.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
+          {!loading && (
+            <div className="grid md:grid-cols-2 gap-4">
+              {/* Vision Card */}
+              <Card className="bg-card/50 backdrop-blur-sm border border-blue-500/30 hover:shadow-lg transition-all duration-300">
+                <CardHeader>
+                  <div className="w-16 h-16 rounded-2xl bg-blue-500/20 flex items-center justify-center mb-4">
+                    <Eye className="w-8 h-8 text-blue-500" />
+                  </div>
+                  <CardTitle className="text-3xl font-bold text-foreground">
+                    {visionMissionData.vision_title || "Vision"}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-lg text-foreground leading-relaxed">
+                    {visionMissionData.vision_description}
+                  </p>
+                </CardContent>
+              </Card>
+
+              {/* Mission Card */}
+              <Card className="bg-card/50 backdrop-blur-sm border border-blue-500/30 hover:shadow-lg transition-all duration-300">
+                <CardHeader>
+                  <div className="w-16 h-16 rounded-2xl bg-blue-500/20 flex items-center justify-center mb-4">
+                    <Target className="w-8 h-8 text-blue-500" />
+                  </div>
+                  <CardTitle className="text-3xl font-bold text-foreground">
+                    {visionMissionData.mission_title || "Mission"}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-lg text-foreground leading-relaxed">
+                    {visionMissionData.mission_description}
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          )}
         </div>
       </section>
 
