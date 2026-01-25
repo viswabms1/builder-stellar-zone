@@ -73,7 +73,7 @@ export function StoryboardSection() {
                 className={`group h-full rounded-2xl p-8 border-2 transition-all duration-500 ${story.bgColor} ${story.borderColor} ${story.hoverColor} hover:shadow-2xl hover:-translate-y-2 flex flex-col`}
               >
                 {/* Icon Circle */}
-                <div className={`inline-flex items-center justify-center w-16 h-16 rounded-full bg-${story.color} mb-6 group-hover:scale-110 transition-transform duration-500`}>
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-brand-blue mb-6 group-hover:scale-110 transition-transform duration-500">
                   <IconComponent className="w-8 h-8 text-white" />
                 </div>
 
