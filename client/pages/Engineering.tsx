@@ -1309,7 +1309,7 @@ function CalendarResourceCard({ entry }: { entry: CalendarEntry }) {
     <Card className="h-full rounded-none border border-purple-500/20 bg-purple-500/10 backdrop-blur">
       <CardHeader className="pb-2">
         <div className="flex items-center justify-between gap-4">
-          <Badge className="bg-brand-magenta/15 text-brand-magenta">
+          <Badge className="bg-brand-blue/15 text-brand-blue">
             {entry.tag}
           </Badge>
           <span className="text-xs text-foreground font-body">
