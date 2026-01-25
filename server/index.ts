@@ -14,6 +14,7 @@ import {
 import {
   getVisionMission,
   checkDirectusHealth,
+  clearDirectusCache,
 } from "./routes/directus";
 
 // CRITICAL: Force override of cached environment variables
@@ -84,6 +85,10 @@ export function createServer() {
   // Health check for Directus connection
   // Usage: GET /api/directus/health
   app.get("/api/directus/health", checkDirectusHealth);
+
+  // Clear Directus cache (for development/testing)
+  // Usage: POST /api/directus/cache/clear
+  app.post("/api/directus/cache/clear", clearDirectusCache);
 
   return app;
 }
