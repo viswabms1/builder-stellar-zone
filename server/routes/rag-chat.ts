@@ -286,7 +286,8 @@ export const handleRagChat = async (req: Request, res: Response) => {
       });
     }
 
-    if (!process.env.OPENAI_API_KEY) {
+    const apiKey = process.env.OPENAI_API_KEY;
+    if (!apiKey) {
       console.error("[RAG] OPENAI_API_KEY is not configured");
       return res.status(500).json({
         error: "Server configuration error",
@@ -294,6 +295,9 @@ export const handleRagChat = async (req: Request, res: Response) => {
       });
     }
 
+    // Log key status without exposing the full key
+    const keyPreview = apiKey ? `${apiKey.substring(0, 15)}...${apiKey.substring(apiKey.length - 5)}` : "NOT SET";
+    console.log(`[RAG] Using API key: ${keyPreview}`);
     console.log(`[RAG] Processing query: "${message}"`);
 
     // Retrieve relevant context from knowledge base
