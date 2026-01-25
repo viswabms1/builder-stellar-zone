@@ -1755,7 +1755,7 @@ export default function Engineering() {
                   {/* Message Content */}
                   <div className="space-y-4 pt-4 border-t border-border/20">
                     <div>
-                      <p className="font-display text-lg font-bold text-brand-magenta mb-4">
+                      <p className="font-display text-lg font-bold text-brand-blue mb-4">
                         BE YOU • BE THE DIFFERENCE!!!
                       </p>
                     </div>
