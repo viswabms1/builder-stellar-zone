@@ -1946,7 +1946,7 @@ export default function Engineering() {
 
       <section className="px-3 py-8">
         <div className="mx-auto grid max-w-5xl items-start gap-4 lg:grid-cols-2">
-          <Card className="rounded-none border border-orange-500/20 bg-orange-500/10">
+          <Card className="rounded-none border border-brand-blue/20 bg-brand-blue/10">
             <CardHeader>
               <CardTitle className="font-display">Leadership</CardTitle>
             </CardHeader>
