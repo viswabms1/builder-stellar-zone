@@ -34,7 +34,7 @@ export default function AlumniContact() {
           <div className="flex justify-center">
             <Button asChild variant="outline">
               <Link to="/alumni">
-                <ArrowRight className="mr-2 h-4 w-4" />
+                <ArrowLeft className="mr-2 h-4 w-4" />
                 Back to Alumni
               </Link>
             </Button>
