@@ -146,7 +146,7 @@ export const getVisionMission: RequestHandler = async (req, res) => {
  */
 export const checkDirectusHealth: RequestHandler = async (req, res) => {
   try {
-    const response = await fetch(`${DIRECTUS_URL}/api/health`, {
+    const response = await fetch(`${DIRECTUS_URL}/admin`, {
       method: "GET",
     });
 
