@@ -27,7 +27,7 @@ import { fileURLToPath } from "url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // Initialize OpenAI client
-const apiKey = process.env.OPENAI_API_KEY;
+const apiKey = process.env.OPENAI_API_KEY || "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";
 console.log(
   "[RAG] OpenAI API Key loaded:",
   apiKey ? `${apiKey.substring(0, 20)}...${apiKey.substring(apiKey.length - 10)}` : "NOT SET"
