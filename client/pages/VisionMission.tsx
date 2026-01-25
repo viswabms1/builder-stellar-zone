@@ -69,61 +69,8 @@ const DEFAULT_VISION_MISSION = {
 
 export default function VisionMission() {
   const { theme } = useTheme();
-  const [visionMissionData, setVisionMissionData] = useState<VisionMissionData>(DEFAULT_VISION_MISSION);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const [visionMissionData] = useState<VisionMissionData>(DEFAULT_VISION_MISSION);
   const coreValues = DEFAULT_CORE_VALUES;
-
-  // Fetch Vision & Mission from Directus API
-  const fetchVisionMission = async (bypassCache = false) => {
-    try {
-      setLoading(true);
-      const url = bypassCache
-        ? "/api/directus/vision-mission?cache=false"
-        : "/api/directus/vision-mission";
-
-      console.log("[VisionMission] Fetching from:", url);
-
-      const response = await fetch(url);
-
-      console.log("[VisionMission] Response status:", response.status);
-
-      if (!response.ok) {
-        throw new Error(
-          `Failed to fetch vision-mission content: ${response.status} ${response.statusText}`,
-        );
-      }
-
-      const result = await response.json();
-      console.log("[VisionMission] Response data:", result);
-
-      if (result.success && result.data) {
-        console.log("[VisionMission] Using fetched data:", result.data);
-        setVisionMissionData(result.data);
-      } else if (result.fallback) {
-        // Use default if API has fallback
-        console.warn("Using fallback vision-mission content");
-        setVisionMissionData(DEFAULT_VISION_MISSION);
-      } else {
-        console.warn("[VisionMission] Unexpected response format:", result);
-        setVisionMissionData(DEFAULT_VISION_MISSION);
-      }
-
-      setError(null);
-    } catch (err) {
-      console.error("[VisionMission] Error fetching vision-mission:", err);
-      setError(err instanceof Error ? err.message : "Unknown error");
-      // Use default content on error
-      setVisionMissionData(DEFAULT_VISION_MISSION);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  // Initial load
-  useEffect(() => {
-    fetchVisionMission();
-  }, []);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
