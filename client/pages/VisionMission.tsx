@@ -176,13 +176,6 @@ export default function VisionMission() {
             </span>
           </div>
 
-          {/* Debug: Show data source */}
-          <div className="mb-4 text-xs">
-            {loading && <span className="text-blue-400">Loading...</span>}
-            {!loading && isFromAPI && <span className="text-green-400">✓ Using live Directus data</span>}
-            {!loading && !isFromAPI && <span className="text-yellow-400">Using fallback content</span>}
-          </div>
-
           <h1 className={`text-4xl md:text-5xl font-bold mb-6 leading-tight ${
             theme === "light" ? "text-orange-900" : "text-white"
           }`}>
