@@ -66,7 +66,7 @@ function parseMessageWithLinks(text: string): ReactNode {
         href={cleanedUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="underline text-blue-400 hover:text-blue-300 font-semibold transition-colors"
+        className="rag-chat-link underline text-blue-400 hover:text-blue-300 font-semibold transition-colors"
       >
         {cleanedUrl}
       </a>,
@@ -267,13 +267,18 @@ export function RagChatWidget() {
   };
 
   return (
-    <>
+    <div
+      className={cn(
+        "rag-legacy",
+        theme === "light" ? "rag-theme-light" : "rag-theme-dark",
+      )}
+    >
       {/* Chat Button */}
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
           className={cn(
-            "rounded-full shadow-2xl hover:shadow-xl transition-all hover:scale-110 p-4",
+            "rag-chat-button rounded-full shadow-2xl hover:shadow-xl transition-all hover:scale-110 p-4",
             theme === "light"
               ? "bg-orange-500 hover:bg-orange-600 text-white"
               : "bg-orange-600 hover:bg-orange-700 text-white",
@@ -302,7 +307,7 @@ export function RagChatWidget() {
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.2 }}
             className={cn(
-              "rounded-2xl shadow-2xl flex flex-col",
+              "rag-chat-window rounded-2xl shadow-2xl flex flex-col",
               theme === "light"
                 ? "bg-white border border-gray-200"
                 : "bg-slate-900 border border-slate-700",
@@ -320,7 +325,7 @@ export function RagChatWidget() {
             {/* Header */}
             <div
               className={cn(
-                "flex items-center justify-between border-b",
+                "rag-chat-header flex items-center justify-between border-b",
                 theme === "light"
                   ? "bg-gradient-to-r from-orange-50 to-orange-100 border-orange-200"
                   : "bg-gradient-to-r from-orange-900/20 to-orange-800/20 border-orange-700/30",
@@ -336,7 +341,7 @@ export function RagChatWidget() {
                 style={{ gap: "clamp(0.5rem, 2vmin, 0.75rem)" }}
               >
                 <div
-                  className="rounded-full bg-orange-500 flex items-center justify-center"
+                  className="rag-chat-avatar rounded-full bg-orange-500 flex items-center justify-center"
                   style={{
                     width: "clamp(2rem, 5vmin, 2.5rem)",
                     height: "clamp(2rem, 5vmin, 2.5rem)",
@@ -389,7 +394,7 @@ export function RagChatWidget() {
             {/* Messages Container */}
             <div
               className={cn(
-                "flex-1 overflow-y-auto space-y-4",
+                "rag-chat-body flex-1 overflow-y-auto space-y-4",
                 theme === "light" ? "bg-gray-50" : "bg-slate-800/50",
               )}
               style={{
@@ -409,7 +414,7 @@ export function RagChatWidget() {
                   {/* Avatar */}
                   <div
                     className={cn(
-                      "rounded-full flex items-center justify-center flex-shrink-0 font-bold",
+                      "rag-chat-avatar rounded-full flex items-center justify-center flex-shrink-0 font-bold",
                       message.role === "user"
                         ? "bg-blue-500 text-white"
                         : "bg-orange-500 text-white",
@@ -426,14 +431,14 @@ export function RagChatWidget() {
                   {/* Message Bubble */}
                   <div
                     className={cn(
-                      "rounded-2xl max-w-sm",
+                      "rag-chat-bubble rounded-2xl max-w-sm",
                       message.role === "user"
                         ? theme === "light"
-                          ? "bg-blue-500 text-white"
-                          : "bg-blue-600 text-white"
+                          ? "rag-chat-bubble-user bg-blue-500 text-white"
+                          : "rag-chat-bubble-user bg-blue-600 text-white"
                         : theme === "light"
-                          ? "bg-white border border-gray-200 text-gray-900"
-                          : "bg-slate-700 border border-slate-600 text-white",
+                          ? "rag-chat-bubble-bot bg-white border border-gray-200 text-gray-900"
+                          : "rag-chat-bubble-bot bg-slate-700 border border-slate-600 text-white",
                     )}
                     style={{
                       padding:
@@ -455,10 +460,10 @@ export function RagChatWidget() {
                   animate={{ opacity: 1 }}
                   className="flex gap-3"
                 >
-                  <div className="w-8 h-8 rounded-full bg-orange-500 text-white flex items-center justify-center flex-shrink-0">
+                  <div className="rag-chat-avatar w-8 h-8 rounded-full bg-orange-500 text-white flex items-center justify-center flex-shrink-0">
                     <Loader2 className="w-4 h-4 animate-spin" />
                   </div>
-                  <div className="rounded-2xl px-4 py-2 bg-gray-200 dark:bg-slate-700">
+                  <div className="rag-chat-bubble rag-chat-bubble-bot rounded-2xl px-4 py-2 bg-gray-200 dark:bg-slate-700">
                     <div className="flex gap-1">
                       <div className="w-2 h-2 bg-gray-600 dark:bg-gray-400 rounded-full animate-bounce" />
                       <div
@@ -504,7 +509,7 @@ export function RagChatWidget() {
                         onClick={() => handleQuickReply(reply)}
                         disabled={isLoading}
                         className={cn(
-                          "text-left text-xs p-2 rounded-lg transition-colors border cursor-pointer hover:scale-105 transform",
+                          "rag-chat-quick-reply text-left text-xs p-2 rounded-lg transition-colors border cursor-pointer hover:scale-105 transform",
                           theme === "light"
                             ? "bg-orange-50 border-orange-200 hover:bg-orange-100 text-orange-900"
                             : "bg-orange-900/20 border-orange-700/30 hover:bg-orange-900/40 text-orange-100",
@@ -524,7 +529,7 @@ export function RagChatWidget() {
             <form
               onSubmit={handleSubmit}
               className={cn(
-                "border-t",
+                "rag-chat-input-bar border-t",
                 theme === "light"
                   ? "bg-gray-50 border-gray-200"
                   : "bg-slate-800 border-slate-700",
@@ -543,6 +548,7 @@ export function RagChatWidget() {
                   placeholder="Ask me anything about DSU..."
                   disabled={isLoading}
                   className={cn(
+                    "rag-chat-input",
                     theme === "light"
                       ? "bg-white border-gray-300"
                       : "bg-slate-700 border-slate-600 text-white",
@@ -557,7 +563,7 @@ export function RagChatWidget() {
                   type="submit"
                   disabled={!input.trim() || isLoading}
                   size="sm"
-                  className="bg-orange-500 hover:bg-orange-600 text-white"
+                  className="rag-chat-send bg-orange-500 hover:bg-orange-600 text-white"
                   style={{
                     minHeight: "clamp(2rem, 5vmin, 2.5rem)",
                     padding: "clamp(0.25rem, 1vmin, 0.5rem)",
@@ -584,6 +590,6 @@ export function RagChatWidget() {
           </motion.div>
         )}
       </AnimatePresence>
-    </>
+    </div>
   );
 }

@@ -578,14 +578,14 @@ export default function Navigation() {
   const isActive = (href: string) => location.pathname === href;
 
   return (
-    <>
+    <div>
       {/* Top Menu Bar - Hidden on mobile/tablet portrait, shown on larger screens */}
       <div
         ref={topBarRef}
-        className={`hidden lg:flex z-[10001] items-center ${
+        className={`nav-topbar hidden lg:flex z-[10001] items-center ${
           theme === "light"
-            ? "bg-gradient-to-r from-orange-50 to-white border-b-2 border-orange-200/50"
-            : "bg-gradient-to-r from-slate-900 to-slate-950 border-b-2 border-orange-600/30"
+            ? "bg-gradient-to-r from-brand-orange/10 via-brand-magenta/10 to-brand-blue/10 border-b-2 border-brand-orange/20"
+            : "bg-gradient-to-r from-brand-blue/20 via-brand-magenta/20 to-brand-orange/20 border-b-2 border-brand-orange/30"
         }`}
         style={{
           padding: "clamp(0.25rem, 0.7vmin, 0.5rem) 0",
@@ -613,8 +613,8 @@ export default function Navigation() {
                 item.href === "https://dsu.edu.in/international/";
               const sharedClasses = `font-medium transition-all duration-200 whitespace-nowrap rounded-md hover:scale-105 flex-shrink-0 flex items-center gap-0.5 ${
                 theme === "light"
-                  ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
-                  : "text-white/80 hover:text-white hover:bg-white/10"
+                  ? "text-brand-blue hover:text-brand-orange hover:bg-brand-orange/10"
+                  : "text-brand-off-white/80 hover:text-brand-off-white hover:bg-brand-blue/20"
               }`;
 
               if (isInternationalAdmissions) {
@@ -651,10 +651,10 @@ export default function Navigation() {
                     {internationalAdmissionsMenuOpen &&
                       internationalAdmissionsPosition && (
                         <div
-                          className={`fixed rounded-lg shadow-lg min-w-max backdrop-blur-sm z-[10002] py-2 ${
+                          className={`nav-dropdown fixed rounded-lg shadow-lg min-w-max backdrop-blur-sm z-[20020] py-2 ${
                             theme === "light"
-                              ? "bg-white/95 border border-orange-200/50"
-                              : "bg-slate-800/95 border border-orange-600/30"
+                              ? "bg-brand-off-white border border-brand-orange/20"
+                              : "bg-background border border-brand-orange/30"
                           }`}
                           style={{
                             top: `${internationalAdmissionsPosition.top}px`,
@@ -669,9 +669,9 @@ export default function Navigation() {
                                 submenuItem.href.startsWith("http");
                               const baseClasses = `block px-4 py-2.5 text-xs sm:text-sm whitespace-nowrap transition-all ${
                                 theme === "light"
-                                  ? "text-gray-700 hover:bg-orange-100 hover:text-orange-700"
-                                  : "text-white/80 hover:bg-white/20 hover:text-white"
-                              } ${submenuIdx < internationalSubmenuItems.length - 1 ? (theme === "light" ? "border-b border-orange-200/30" : "border-b border-white/10") : ""}`;
+                                  ? "text-brand-blue hover:bg-brand-orange/10 hover:text-brand-orange"
+                                  : "text-brand-off-white/80 hover:bg-brand-blue/20 hover:text-brand-off-white"
+                              } ${submenuIdx < internationalSubmenuItems.length - 1 ? (theme === "light" ? "border-b border-brand-orange/10" : "border-b border-brand-blue/20") : ""}`;
 
                               if (isExternal) {
                                 return (
@@ -719,8 +719,8 @@ export default function Navigation() {
                     rel="noopener noreferrer"
                     className={`font-medium transition-all duration-200 whitespace-nowrap rounded-md hover:scale-105 flex-shrink-0 text-center ${
                       theme === "light"
-                        ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
-                        : "text-white/80 hover:text-white hover:bg-white/10"
+                        ? "text-brand-blue hover:text-brand-orange hover:bg-brand-orange/10"
+                        : "text-brand-off-white/80 hover:text-brand-off-white hover:bg-brand-blue/20"
                     }`}
                     style={{
                       fontSize: "clamp(0.7rem, 1.2vw, 0.85rem)",
@@ -740,8 +740,8 @@ export default function Navigation() {
                     to={item.href}
                     className={`font-medium transition-all duration-200 whitespace-nowrap rounded-md hover:scale-105 flex-shrink-0 text-center ${
                       theme === "light"
-                        ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
-                        : "text-white/80 hover:text-white hover:bg-white/10"
+                        ? "text-brand-blue hover:text-brand-orange hover:bg-brand-orange/10"
+                        : "text-brand-off-white/80 hover:text-brand-off-white hover:bg-brand-blue/20"
                     }`}
                     style={{
                       fontSize: "clamp(0.7rem, 1.2vw, 0.85rem)",
@@ -760,8 +760,8 @@ export default function Navigation() {
               rel="noopener noreferrer"
               className={`text-xs sm:text-sm font-medium transition-all duration-200 whitespace-nowrap px-1.5 sm:px-2.5 py-1.5 sm:py-2 rounded-md hover:scale-105 flex-shrink-0 text-center ${
                 theme === "light"
-                  ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
-                  : "text-white/80 hover:text-white hover:bg-white/10"
+                  ? "text-brand-blue hover:text-brand-orange hover:bg-brand-orange/10"
+                  : "text-brand-off-white/80 hover:text-brand-off-white hover:bg-brand-blue/20"
               }`}
             >
               ERP Login
@@ -776,8 +776,8 @@ export default function Navigation() {
               onClick={() => setSearchOpen(true)}
               className={`gap-2 border rounded-md p-1.5 hover:scale-105 transition-all ${
                 theme === "light"
-                  ? "text-gray-700 hover:text-orange-600 hover:bg-orange-50 border-gray-300 hover:border-orange-400"
-                  : "text-white/80 hover:text-white hover:bg-white/10 border-white/20 hover:border-white/40"
+                  ? "text-brand-blue hover:text-brand-orange hover:bg-brand-orange/10 border-brand-blue/20 hover:border-brand-orange/40"
+                  : "text-brand-off-white/80 hover:text-brand-off-white hover:bg-brand-blue/20 border-brand-blue/30 hover:border-brand-orange/40"
               }`}
             >
               <Search className="w-4 h-4" />
@@ -785,8 +785,8 @@ export default function Navigation() {
             <ThemeToggle
               className={`rounded-md hover:scale-105 transition-all p-1.5 ${
                 theme === "light"
-                  ? "text-gray-700 hover:text-orange-600 hover:bg-orange-50"
-                  : "text-white/80 hover:text-white hover:bg-white/10"
+                  ? "text-brand-blue hover:text-brand-orange hover:bg-brand-orange/10"
+                  : "text-brand-off-white/80 hover:text-brand-off-white hover:bg-brand-blue/20"
               }`}
             />
             <LanguageSwitcher />
@@ -802,10 +802,10 @@ export default function Navigation() {
       {/* Main Navigation Bar */}
       <nav
         ref={navBarRef}
-        className={`${isNavFixed ? "fixed top-0 left-0 right-0" : ""} z-[10002] overflow-visible shadow-md ${
+        className={`nav-mainbar relative ${isNavFixed ? "fixed top-0 left-0 right-0" : ""} z-[20000] overflow-visible shadow-md ${
           theme === "light"
-            ? "bg-white/95 backdrop-blur-sm border-b-2 border-orange-200/50"
-            : "bg-slate-950/95 backdrop-blur-sm border-b-2 border-orange-600/30"
+            ? "bg-background/95 backdrop-blur-sm border-b-2 border-brand-orange/20"
+            : "bg-background/95 backdrop-blur-sm border-b-2 border-brand-orange/30"
         }`}
       >
         <div className="w-full overflow-visible">
@@ -841,13 +841,13 @@ export default function Navigation() {
                     ? active ||
                       (isAbout && aboutMenuOpen) ||
                       (isAcademics && academicsMenuOpen)
-                      ? "bg-orange-100 text-orange-900 font-semibold shadow-sm"
-                      : "text-gray-700 hover:text-orange-600 hover:bg-orange-50"
+                      ? "bg-brand-orange/20 text-brand-orange font-semibold shadow-sm"
+                      : "text-brand-blue hover:text-brand-orange hover:bg-brand-orange/10"
                     : active ||
                         (isAbout && aboutMenuOpen) ||
                         (isAcademics && academicsMenuOpen)
-                      ? "bg-white/20 text-white font-semibold shadow-sm"
-                      : "text-white/90 hover:text-white hover:bg-white/10"
+                      ? "bg-brand-blue/20 text-brand-off-white font-semibold shadow-sm"
+                      : "text-brand-off-white/90 hover:text-brand-off-white hover:bg-brand-blue/20"
                 }`;
                 const sharedStyle = {
                   fontSize: "clamp(0.85rem, 1.5vw, 1rem)",
@@ -892,7 +892,9 @@ export default function Navigation() {
                           {active && (
                             <div
                               className={`w-0.5 h-0.5 rounded-full ${
-                                theme === "light" ? "bg-orange-600" : "bg-white"
+                                theme === "light"
+                                  ? "bg-brand-orange"
+                                  : "bg-brand-off-white"
                               }`}
                             />
                           )}
@@ -902,14 +904,14 @@ export default function Navigation() {
                         <div
                           onMouseEnter={handleAboutMenuEnter}
                           onMouseLeave={handleAboutMenuLeave}
-                          className={`absolute left-0 top-full mt-0 w-auto min-w-max max-w-2xl rounded-2xl shadow-2xl transition-all duration-300 py-5 px-5 max-h-[600px] overflow-y-auto backdrop-blur-sm z-[9999] ${
+                          className={`nav-dropdown nav-dropdown-panel absolute left-0 top-full mt-0 w-auto min-w-max max-w-2xl rounded-2xl shadow-2xl transition-all duration-300 py-5 px-5 max-h-[600px] overflow-y-auto backdrop-blur-sm z-[20010] ${
                             aboutMenuOpen
                               ? "opacity-100 visible pointer-events-auto"
                               : "opacity-0 invisible pointer-events-none"
                           } ${
                             theme === "light"
-                              ? "bg-white/95 border border-orange-200/50"
-                              : "bg-slate-800/95 border border-orange-600/30"
+                              ? "bg-brand-off-white border border-brand-orange/20"
+                              : "bg-background border border-brand-orange/30"
                           }`}
                           style={{
                             scrollbarWidth: "thin",
@@ -925,38 +927,35 @@ export default function Navigation() {
                                 {
                                   bg:
                                     theme === "light"
-                                      ? "bg-orange-50"
-                                      : "bg-orange-900/20",
-                                  border:
-                                    "border-orange-200/50 dark:border-orange-600/30",
-                                  text: "text-orange-900 dark:text-orange-100",
+                                      ? "bg-brand-orange/10"
+                                      : "bg-brand-orange/20",
+                                  border: "border-brand-orange/20",
+                                  text:
+                                    theme === "light"
+                                      ? "text-brand-orange"
+                                      : "text-brand-orange/90",
                                 },
                                 {
                                   bg:
                                     theme === "light"
-                                      ? "bg-emerald-50"
-                                      : "bg-emerald-900/20",
-                                  border:
-                                    "border-emerald-200/50 dark:border-emerald-600/30",
-                                  text: "text-emerald-900 dark:text-emerald-100",
+                                      ? "bg-brand-magenta/10"
+                                      : "bg-brand-magenta/20",
+                                  border: "border-brand-magenta/20",
+                                  text:
+                                    theme === "light"
+                                      ? "text-brand-magenta"
+                                      : "text-brand-magenta/90",
                                 },
                                 {
                                   bg:
                                     theme === "light"
-                                      ? "bg-blue-50"
-                                      : "bg-blue-900/20",
-                                  border:
-                                    "border-blue-200/50 dark:border-blue-600/30",
-                                  text: "text-blue-900 dark:text-blue-100",
-                                },
-                                {
-                                  bg:
+                                      ? "bg-brand-blue/10"
+                                      : "bg-brand-blue/20",
+                                  border: "border-brand-blue/20",
+                                  text:
                                     theme === "light"
-                                      ? "bg-purple-50"
-                                      : "bg-purple-900/20",
-                                  border:
-                                    "border-purple-200/50 dark:border-purple-600/30",
-                                  text: "text-purple-900 dark:text-purple-100",
+                                      ? "text-brand-blue"
+                                      : "text-brand-blue/90",
                                 },
                               ];
                               const colors =
@@ -967,10 +966,10 @@ export default function Navigation() {
                                   key={submenu.name}
                                   to={submenu.href}
                                   onClick={() => setAboutMenuOpen(false)}
-                                  className={`${colors.bg} ${colors.border} border rounded-xl p-4 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 group block text-sm font-semibold ${
+                                  className={`${colors.bg} ${colors.border} nav-dropdown-heading border rounded-xl p-4 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 group block text-sm font-semibold ${colors.text} ${
                                     theme === "light"
-                                      ? "text-gray-900 group-hover:text-orange-600"
-                                      : "text-white group-hover:text-orange-200"
+                                      ? "group-hover:text-brand-orange"
+                                      : "group-hover:text-brand-off-white"
                                   }`}
                                 >
                                   {submenu.name}
@@ -1007,7 +1006,9 @@ export default function Navigation() {
                           {active && (
                             <div
                               className={`w-0.5 h-0.5 rounded-full ${
-                                theme === "light" ? "bg-orange-600" : "bg-white"
+                                theme === "light"
+                                  ? "bg-brand-orange"
+                                  : "bg-brand-off-white"
                               }`}
                             />
                           )}
@@ -1017,14 +1018,14 @@ export default function Navigation() {
                         <div
                           onMouseEnter={handleAcademicsMenuEnter}
                           onMouseLeave={handleAcademicsMenuLeave}
-                          className={`absolute left-0 top-full mt-0 w-auto min-w-max max-w-5xl rounded-2xl shadow-2xl transition-all duration-300 py-5 px-5 max-h-[600px] overflow-y-auto backdrop-blur-sm z-[9999] ${
+                          className={`nav-dropdown nav-dropdown-panel absolute left-0 top-full mt-0 w-auto min-w-max max-w-5xl rounded-2xl shadow-2xl transition-all duration-300 py-5 px-5 max-h-[600px] overflow-y-auto backdrop-blur-sm z-[20010] ${
                             academicsMenuOpen
                               ? "opacity-100 visible pointer-events-auto"
                               : "opacity-0 invisible pointer-events-none"
                           } ${
                             theme === "light"
-                              ? "bg-white/95 border border-orange-200/50"
-                              : "bg-slate-800/95 border border-orange-600/30"
+                              ? "bg-brand-off-white border border-brand-orange/20"
+                              : "bg-background border border-brand-orange/30"
                           }`}
                           style={{
                             scrollbarWidth: "thin",
@@ -1038,10 +1039,10 @@ export default function Navigation() {
                           <Link
                             to="/academics"
                             onClick={() => setAcademicsMenuOpen(false)}
-                            className={`w-full block rounded-xl p-4 mb-4 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 font-semibold text-sm ${
+                            className={`nav-dropdown-heading w-full block rounded-xl p-4 mb-4 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 font-semibold text-sm ${
                               theme === "light"
-                                ? "bg-gradient-to-r from-orange-100 to-orange-50 border border-orange-200/50 text-orange-900 hover:bg-orange-100 hover:text-orange-700"
-                                : "bg-gradient-to-r from-orange-900/30 to-orange-900/10 border border-orange-600/30 text-orange-200 hover:bg-orange-900/40 hover:text-orange-100"
+                                ? "bg-gradient-to-r from-brand-magenta/20 via-brand-orange/20 to-brand-blue/20 border border-brand-orange/20 text-brand-blue hover:bg-brand-orange/10 hover:text-brand-orange"
+                                : "bg-gradient-to-r from-brand-magenta/30 via-brand-orange/30 to-brand-blue/30 border border-brand-orange/30 text-brand-off-white hover:bg-brand-blue/20 hover:text-brand-off-white"
                             }`}
                           >
                             Explore All Academics
@@ -1055,38 +1056,35 @@ export default function Navigation() {
                                   {
                                     bg:
                                       theme === "light"
-                                        ? "bg-orange-50"
-                                        : "bg-orange-900/20",
-                                    border:
-                                      "border-orange-200/50 dark:border-orange-600/30",
-                                    text: "text-orange-900 dark:text-orange-100",
+                                        ? "bg-brand-orange/10"
+                                        : "bg-brand-orange/20",
+                                    border: "border-brand-orange/20",
+                                    text:
+                                      theme === "light"
+                                        ? "text-brand-orange"
+                                        : "text-brand-orange/90",
                                   },
                                   {
                                     bg:
                                       theme === "light"
-                                        ? "bg-emerald-50"
-                                        : "bg-emerald-900/20",
-                                    border:
-                                      "border-emerald-200/50 dark:border-emerald-600/30",
-                                    text: "text-emerald-900 dark:text-emerald-100",
+                                        ? "bg-brand-magenta/10"
+                                        : "bg-brand-magenta/20",
+                                    border: "border-brand-magenta/20",
+                                    text:
+                                      theme === "light"
+                                        ? "text-brand-magenta"
+                                        : "text-brand-magenta/90",
                                   },
                                   {
                                     bg:
                                       theme === "light"
-                                        ? "bg-blue-50"
-                                        : "bg-blue-900/20",
-                                    border:
-                                      "border-blue-200/50 dark:border-blue-600/30",
-                                    text: "text-blue-900 dark:text-blue-100",
-                                  },
-                                  {
-                                    bg:
+                                        ? "bg-brand-blue/10"
+                                        : "bg-brand-blue/20",
+                                    border: "border-brand-blue/20",
+                                    text:
                                       theme === "light"
-                                        ? "bg-purple-50"
-                                        : "bg-purple-900/20",
-                                    border:
-                                      "border-purple-200/50 dark:border-purple-600/30",
-                                    text: "text-purple-900 dark:text-purple-100",
+                                        ? "text-brand-blue"
+                                        : "text-brand-blue/90",
                                   },
                                 ];
                                 const colors =
@@ -1102,10 +1100,10 @@ export default function Navigation() {
                                         href={school.href}
                                         target="_blank"
                                         rel="noreferrer"
-                                        className={`block font-bold text-sm mb-2 transition-colors ${
+                                        className={`nav-dropdown-heading block font-bold text-sm mb-2 transition-colors ${colors.text} ${
                                           theme === "light"
-                                            ? "text-gray-900 group-hover:text-orange-600"
-                                            : "text-white group-hover:text-orange-200"
+                                            ? "group-hover:text-brand-orange"
+                                            : "group-hover:text-brand-off-white"
                                         }`}
                                       >
                                         {school.name}
@@ -1116,10 +1114,10 @@ export default function Navigation() {
                                         onClick={() =>
                                           setAcademicsMenuOpen(false)
                                         }
-                                        className={`block font-bold text-sm mb-2 transition-colors ${
+                                        className={`nav-dropdown-heading block font-bold text-sm mb-2 transition-colors ${colors.text} ${
                                           theme === "light"
-                                            ? "text-gray-900 group-hover:text-orange-600"
-                                            : "text-white group-hover:text-orange-200"
+                                            ? "group-hover:text-brand-orange"
+                                            : "group-hover:text-brand-off-white"
                                         }`}
                                       >
                                         {school.name}
@@ -1143,10 +1141,10 @@ export default function Navigation() {
                                                       group.name,
                                                     )
                                                   }
-                                                  className={`text-xs font-semibold flex items-center gap-2 transition-all w-full p-2 rounded hover:bg-white/30 dark:hover:bg-white/10 ${
+                                                  className={`text-xs font-semibold flex items-center gap-2 transition-all w-full p-2 rounded hover:bg-brand-orange/10 dark:hover:bg-brand-blue/20 ${
                                                     theme === "light"
-                                                      ? "text-gray-700 hover:text-orange-700"
-                                                      : "text-white/80 hover:text-white"
+                                                      ? "text-brand-blue hover:text-brand-orange"
+                                                      : "text-brand-off-white/80 hover:text-brand-off-white"
                                                   }`}
                                                 >
                                                   <ChevronDown
@@ -1155,7 +1153,7 @@ export default function Navigation() {
                                                   {group.name}
                                                 </button>
                                                 {isExpanded && (
-                                                  <div className="space-y-1 ml-2 pl-2 border-l border-white/20">
+                                                  <div className="space-y-1 ml-2 pl-2 border-l border-brand-blue/30">
                                                     {group.departments.map(
                                                       (dept: any) => (
                                                         <Link
@@ -1166,10 +1164,10 @@ export default function Navigation() {
                                                               false,
                                                             )
                                                           }
-                                                          className={`block text-xs py-1 px-2 rounded transition-all hover:bg-white/20 dark:hover:bg-white/10 ${
+                                                          className={`block text-xs py-1 px-2 rounded transition-all hover:bg-brand-orange/10 dark:hover:bg-brand-blue/20 ${
                                                             theme === "light"
-                                                              ? "text-gray-700 hover:text-orange-700"
-                                                              : "text-white/70 hover:text-white"
+                                                              ? "text-brand-blue hover:text-brand-orange"
+                                                              : "text-brand-off-white/70 hover:text-brand-off-white"
                                                           }`}
                                                         >
                                                           {dept.name}
@@ -1193,10 +1191,10 @@ export default function Navigation() {
                                               onClick={() =>
                                                 setAcademicsMenuOpen(false)
                                               }
-                                              className={`block text-xs py-1 px-2 rounded transition-all hover:bg-white/20 dark:hover:bg-white/10 ${
+                                              className={`block text-xs py-1 px-2 rounded transition-all hover:bg-brand-orange/10 dark:hover:bg-brand-blue/20 ${
                                                 theme === "light"
-                                                  ? "text-gray-700 hover:text-orange-700"
-                                                  : "text-white/70 hover:text-white"
+                                                  ? "text-brand-blue hover:text-brand-orange"
+                                                  : "text-brand-off-white/70 hover:text-brand-off-white"
                                               }`}
                                             >
                                               {dept.name}
@@ -1234,7 +1232,9 @@ export default function Navigation() {
                       {active && (
                         <div
                           className={`w-0.5 h-0.5 rounded-full ${
-                            theme === "light" ? "bg-orange-600" : "bg-white"
+                            theme === "light"
+                              ? "bg-brand-orange"
+                              : "bg-brand-off-white"
                           }`}
                         />
                       )}
@@ -1247,11 +1247,11 @@ export default function Navigation() {
                   const nvidiaClasses = `flex items-center space-x-1 rounded-lg font-medium font-display transition-all duration-200 group ml-0 justify-center flex-shrink ${
                     theme === "light"
                       ? nvidiaActive
-                        ? "bg-orange-100 text-orange-900 font-semibold shadow-sm"
-                        : "text-gray-700 hover:text-orange-600 hover:bg-orange-50"
+                        ? "bg-brand-orange/20 text-brand-orange font-semibold shadow-sm"
+                        : "text-brand-blue hover:text-brand-orange hover:bg-brand-orange/10"
                       : nvidiaActive
-                        ? "bg-white/20 text-white font-semibold shadow-sm"
-                        : "text-white/90 hover:text-white hover:bg-white/10"
+                        ? "bg-brand-blue/20 text-brand-off-white font-semibold shadow-sm"
+                        : "text-brand-off-white/90 hover:text-brand-off-white hover:bg-brand-blue/20"
                   }`;
                   return [
                     itemElement,
@@ -1273,11 +1273,11 @@ export default function Navigation() {
                   const aiFirstClasses = `flex items-center space-x-1 rounded-lg font-medium font-display transition-all duration-200 group ml-0 justify-center flex-shrink ${
                     theme === "light"
                       ? aiFirstActive
-                        ? "bg-orange-100 text-orange-900 font-semibold shadow-sm"
-                        : "text-gray-700 hover:text-orange-600 hover:bg-orange-50"
+                        ? "bg-brand-orange/20 text-brand-orange font-semibold shadow-sm"
+                        : "text-brand-blue hover:text-brand-orange hover:bg-brand-orange/10"
                       : aiFirstActive
-                        ? "bg-white/20 text-white font-semibold shadow-sm"
-                        : "text-white/90 hover:text-white hover:bg-white/10"
+                        ? "bg-brand-blue/20 text-brand-off-white font-semibold shadow-sm"
+                        : "text-brand-off-white/90 hover:text-brand-off-white hover:bg-brand-blue/20"
                   }`;
                   return [
                     itemElement,
@@ -1326,8 +1326,8 @@ export default function Navigation() {
                 onClick={() => setIsOpen(!isOpen)}
                 className={`${
                   theme === "light"
-                    ? "text-gray-700 hover:text-orange-600"
-                    : "text-white/80 hover:text-white"
+                    ? "text-brand-blue hover:text-brand-orange"
+                    : "text-brand-off-white/80 hover:text-brand-off-white"
                 } !bg-transparent !hover:bg-transparent active:!bg-transparent`}
               >
                 {isOpen ? (
@@ -1343,10 +1343,10 @@ export default function Navigation() {
         {/* Mobile Navigation */}
         {isOpen && (
           <div
-            className={`lg:hidden border-t w-full ${
+            className={`nav-mobile-panel lg:hidden border-t w-full ${
               theme === "light"
-                ? "border-orange-200/30 bg-white"
-                : "border-orange-600/20 bg-slate-900"
+                ? "border-brand-orange/20 bg-brand-off-white"
+                : "border-brand-orange/30 bg-background"
             }`}
           >
             <div className="px-2 py-2 space-y-1.5 max-h-[calc(100vh-140px)] sm:max-h-[calc(100vh-180px)] overflow-y-auto w-full">
@@ -1355,14 +1355,14 @@ export default function Navigation() {
                 const active = !item.external && isActive(item.href);
                 const isAbout = item.href === "/about";
                 const isAcademics = item.href === "/academics";
-                const sharedClasses = `flex items-center space-x-2 px-3 py-2.5 rounded-xl text-base sm:text-lg font-medium font-display transition-all duration-200 w-full ${
+                const sharedClasses = `nav-mobile-item flex items-center space-x-2 px-3 py-2.5 rounded-xl text-base sm:text-lg font-medium font-display transition-all duration-200 w-full ${
                   theme === "light"
                     ? active
-                      ? "bg-orange-200 text-orange-900 font-semibold"
-                      : "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
+                      ? "nav-mobile-active bg-brand-orange/20 text-brand-orange font-semibold"
+                      : "text-brand-blue hover:text-brand-orange hover:bg-brand-orange/10"
                     : active
-                      ? "bg-white/20 text-white font-semibold"
-                      : "text-white hover:text-white hover:bg-white/10"
+                      ? "nav-mobile-active bg-brand-blue/20 text-brand-off-white font-semibold"
+                      : "text-brand-off-white hover:text-brand-off-white hover:bg-brand-blue/20"
                 }`;
 
                 if (item.external) {
@@ -1398,10 +1398,10 @@ export default function Navigation() {
                       {/* Mobile About Submenu */}
                       {aboutMenuOpen && (
                         <div
-                          className={`rounded-lg py-2 ml-4 border-l-2 ${
+                          className={`nav-mobile-submenu rounded-lg py-2 ml-4 border-l-2 ${
                             theme === "light"
-                              ? "bg-orange-100 border-l-orange-300"
-                              : "bg-white/20 border-l-white/40"
+                              ? "bg-brand-orange/10 border-l-brand-orange/30"
+                              : "bg-brand-blue/20 border-l-brand-blue/30"
                           }`}
                         >
                           {aboutSubmenus.map((submenu, subIdx) => (
@@ -1412,10 +1412,10 @@ export default function Navigation() {
                                 setIsOpen(false);
                                 setAboutMenuOpen(false);
                               }}
-                              className={`block px-4 py-1.5 text-base sm:text-lg rounded transition-colors ${
+                              className={`nav-mobile-subitem block px-4 py-1.5 text-base sm:text-lg rounded transition-colors ${
                                 theme === "light"
-                                  ? "text-gray-700 hover:bg-orange-200"
-                                  : "text-white hover:bg-white/20"
+                                  ? "text-brand-blue hover:bg-brand-orange/10 hover:text-brand-orange"
+                                  : "text-brand-off-white hover:bg-brand-blue/20"
                               }`}
                             >
                               {submenu.name}
@@ -1445,10 +1445,10 @@ export default function Navigation() {
                       {/* Mobile Academics Submenu */}
                       {academicsMenuOpen && (
                         <div
-                          className={`rounded-lg py-2 ml-4 border-l-2 max-h-96 overflow-y-auto ${
+                          className={`nav-mobile-submenu rounded-lg py-2 ml-4 border-l-2 max-h-96 overflow-y-auto ${
                             theme === "light"
-                              ? "bg-orange-100 border-l-orange-300"
-                              : "bg-white/20 border-l-white/40"
+                              ? "bg-brand-orange/10 border-l-brand-orange/30"
+                              : "bg-brand-blue/20 border-l-brand-blue/30"
                           }`}
                         >
                           {academicsSubmenus.schools.map(
@@ -1463,10 +1463,10 @@ export default function Navigation() {
                                       setIsOpen(false);
                                       setAcademicsMenuOpen(false);
                                     }}
-                                    className={`block px-4 py-2 text-base sm:text-lg font-semibold rounded transition-colors ${
+                                    className={`nav-mobile-subitem block px-4 py-2 text-base sm:text-lg font-semibold rounded transition-colors ${
                                       theme === "light"
-                                        ? "text-orange-900 hover:bg-orange-200"
-                                        : "text-white hover:bg-white/20"
+                                        ? "text-brand-orange hover:bg-brand-orange/10"
+                                        : "text-brand-off-white hover:bg-brand-blue/20"
                                     }`}
                                   >
                                     {school.name}
@@ -1478,10 +1478,10 @@ export default function Navigation() {
                                       setIsOpen(false);
                                       setAcademicsMenuOpen(false);
                                     }}
-                                    className={`block px-4 py-2 text-base sm:text-lg font-semibold rounded transition-colors ${
+                                    className={`nav-mobile-subitem block px-4 py-2 text-base sm:text-lg font-semibold rounded transition-colors ${
                                       theme === "light"
-                                        ? "text-orange-900 hover:bg-orange-200"
-                                        : "text-white hover:bg-white/20"
+                                        ? "text-brand-orange hover:bg-brand-orange/10"
+                                        : "text-brand-off-white hover:bg-brand-blue/20"
                                     }`}
                                   >
                                     {school.name}
@@ -1505,10 +1505,10 @@ export default function Navigation() {
                                                   group.name,
                                                 )
                                               }
-                                              className={`w-full text-left px-4 py-1 text-sm sm:text-base font-semibold flex items-center gap-1 rounded transition-colors ${
+                                              className={`nav-mobile-subtoggle w-full text-left px-4 py-1 text-sm sm:text-base font-semibold flex items-center gap-1 rounded transition-colors ${
                                                 theme === "light"
-                                                  ? "text-orange-900 hover:bg-orange-200"
-                                                  : "text-white/90 hover:bg-white/20"
+                                                  ? "text-brand-orange hover:bg-brand-orange/10"
+                                                  : "text-brand-off-white/90 hover:bg-brand-blue/20"
                                               }`}
                                             >
                                               <ChevronDown
@@ -1532,10 +1532,10 @@ export default function Navigation() {
                                                           false,
                                                         );
                                                       }}
-                                                      className={`block px-6 py-1 text-sm sm:text-base rounded transition-colors ${
+                                                      className={`nav-mobile-subitem block px-6 py-1 text-sm sm:text-base rounded transition-colors ${
                                                         theme === "light"
-                                                          ? "text-gray-700 hover:bg-orange-200"
-                                                          : "text-white/80 hover:bg-white/20"
+                                                          ? "text-brand-blue hover:bg-brand-orange/10 hover:text-brand-orange"
+                                                          : "text-brand-off-white/80 hover:bg-brand-blue/20"
                                                       }`}
                                                     >
                                                       {dept.name}
@@ -1561,10 +1561,10 @@ export default function Navigation() {
                                               setIsOpen(false);
                                               setAcademicsMenuOpen(false);
                                             }}
-                                            className={`block px-4 py-1 text-sm sm:text-base rounded transition-colors ${
+                                            className={`nav-mobile-subitem block px-4 py-1 text-sm sm:text-base rounded transition-colors ${
                                               theme === "light"
-                                                ? "text-gray-700 hover:bg-orange-200"
-                                                : "text-white/80 hover:bg-white/20"
+                                                ? "text-brand-blue hover:bg-brand-orange/10 hover:text-brand-orange"
+                                                : "text-brand-off-white/80 hover:bg-brand-blue/20"
                                             }`}
                                           >
                                             {dept.name}
@@ -1614,8 +1614,8 @@ export default function Navigation() {
                 onClick={() => setIsOpen(false)}
                 className={`flex items-center space-x-2 px-3 py-2.5 rounded-xl text-base sm:text-lg font-medium font-display transition-all duration-200 w-full ${
                   theme === "light"
-                    ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
-                    : "text-white hover:text-white hover:bg-white/10"
+                    ? "text-brand-blue hover:text-brand-orange hover:bg-brand-orange/10"
+                    : "text-brand-off-white hover:text-brand-off-white hover:bg-brand-blue/20"
                 }`}
               >
                 <span className="truncate">NVIDIA's AI Architecture</span>
@@ -1625,8 +1625,8 @@ export default function Navigation() {
                 onClick={() => setIsOpen(false)}
                 className={`flex items-center space-x-2 px-3 py-2.5 rounded-xl text-base sm:text-lg font-medium font-display transition-all duration-200 w-full ${
                   theme === "light"
-                    ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
-                    : "text-white hover:text-white hover:bg-white/10"
+                    ? "text-brand-blue hover:text-brand-orange hover:bg-brand-orange/10"
+                    : "text-brand-off-white hover:text-brand-off-white hover:bg-brand-blue/20"
                 }`}
               >
                 <span className="truncate">AI-First @ DSU</span>
@@ -1635,7 +1635,7 @@ export default function Navigation() {
               {/* Top Menu Items (Below Main Navigation) */}
               <div
                 className={`pt-4 space-y-2 border-t ${
-                  theme === "light" ? "border-orange-200" : "border-white/20"
+                  theme === "light" ? "border-brand-orange/20" : "border-brand-blue/30"
                 }`}
               >
                 {topMenuItems.map((item, idx) => {
@@ -1645,8 +1645,8 @@ export default function Navigation() {
                     item.href === "https://dsu.edu.in/international/";
                   const sharedClasses = `flex items-center space-x-2 px-3 py-2 rounded-xl text-base sm:text-lg font-medium font-display transition-all duration-200 w-full ${
                     theme === "light"
-                      ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
-                      : "text-white/90 hover:text-white hover:bg-white/10"
+                      ? "text-brand-blue hover:text-brand-orange hover:bg-brand-orange/10"
+                      : "text-brand-off-white/90 hover:text-brand-off-white hover:bg-brand-blue/20"
                   }`;
 
                   if (isInternationalAdmissions) {
@@ -1675,8 +1675,8 @@ export default function Navigation() {
                           <div
                             className={`rounded-lg py-2 ml-4 border-l-2 space-y-0 ${
                               theme === "light"
-                                ? "bg-orange-100 border-l-orange-300"
-                                : "bg-orange-900/20 border-l-orange-600"
+                                ? "bg-brand-orange/10 border-l-brand-orange/30"
+                                : "bg-brand-blue/20 border-l-brand-blue/30"
                             }`}
                           >
                             {internationalSubmenuItems.map((submenuItem) => {
@@ -1684,8 +1684,8 @@ export default function Navigation() {
                                 submenuItem.href.startsWith("http");
                               const baseClasses = `block px-4 py-2.5 text-base sm:text-lg transition-colors ${
                                 theme === "light"
-                                  ? "text-gray-700 hover:bg-orange-200"
-                                  : "text-white hover:bg-orange-900/40"
+                                  ? "text-brand-blue hover:bg-brand-orange/10 hover:text-brand-orange"
+                                  : "text-brand-off-white hover:bg-brand-blue/20"
                               }`;
 
                               if (isExternal) {
@@ -1750,8 +1750,8 @@ export default function Navigation() {
                           <div
                             className={`rounded-lg py-2 ml-4 border-l-2 ${
                               theme === "light"
-                                ? "bg-purple-100 border-l-purple-300"
-                                : "bg-purple-900/20 border-l-purple-600"
+                                ? "bg-brand-magenta/10 border-l-brand-magenta/30"
+                                : "bg-brand-magenta/20 border-l-brand-magenta/30"
                             }`}
                           >
                             {alumniSubmenus.map((submenu, subIdx) => (
@@ -1764,8 +1764,8 @@ export default function Navigation() {
                                 }}
                                 className={`block px-4 py-1.5 text-base sm:text-lg rounded transition-colors ${
                                   theme === "light"
-                                    ? "text-gray-700 hover:bg-purple-200"
-                                    : "text-white hover:bg-purple-900/40"
+                                    ? "text-brand-blue hover:bg-brand-magenta/10 hover:text-brand-magenta"
+                                    : "text-brand-off-white hover:bg-brand-magenta/20"
                                 }`}
                               >
                                 {submenu.name}
@@ -1797,8 +1797,8 @@ export default function Navigation() {
                           <div
                             className={`rounded-lg py-2 ml-4 border-l-2 max-h-64 overflow-y-auto ${
                               theme === "light"
-                                ? "bg-blue-100 border-l-blue-300"
-                                : "bg-blue-900/20 border-l-blue-600"
+                                ? "bg-brand-blue/10 border-l-brand-blue/30"
+                                : "bg-brand-blue/20 border-l-brand-blue/30"
                             }`}
                           >
                             {librarySubmenus.map((submenu, subIdx) => (
@@ -1811,8 +1811,8 @@ export default function Navigation() {
                                 }}
                                 className={`block px-4 py-1.5 text-base sm:text-lg rounded transition-colors ${
                                   theme === "light"
-                                    ? "text-gray-700 hover:bg-blue-200"
-                                    : "text-white hover:bg-blue-900/40"
+                                    ? "text-brand-blue hover:bg-brand-blue/10 hover:text-brand-blue"
+                                    : "text-brand-off-white hover:bg-brand-blue/20"
                                 }`}
                               >
                                 {submenu.name}
@@ -1854,7 +1854,7 @@ export default function Navigation() {
 
               <div
                 className={`pt-4 space-y-3 border-t ${
-                  theme === "light" ? "border-orange-200" : "border-white/20"
+                  theme === "light" ? "border-brand-orange/20" : "border-brand-blue/30"
                 }`}
               >
                 <Button
@@ -1866,8 +1866,8 @@ export default function Navigation() {
                   }}
                   className={`w-full text-left justify-start gap-3 text-base sm:text-lg ${
                     theme === "light"
-                      ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
-                      : "text-white/80 hover:text-white hover:bg-white/10"
+                      ? "text-brand-blue hover:text-brand-orange hover:bg-brand-orange/10"
+                      : "text-brand-off-white/80 hover:text-brand-off-white hover:bg-brand-blue/20"
                   }`}
                 >
                   <Search className="w-4 h-4" />
@@ -1876,8 +1876,8 @@ export default function Navigation() {
                 <ThemeToggle
                   className={`self-start text-base sm:text-lg ${
                     theme === "light"
-                      ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
-                      : "text-white/80 hover:text-white hover:bg-white/10"
+                      ? "text-brand-blue hover:text-brand-orange hover:bg-brand-orange/10"
+                      : "text-brand-off-white/80 hover:text-brand-off-white hover:bg-brand-blue/20"
                   }`}
                   onToggle={() => setIsOpen(false)}
                 />
@@ -1889,8 +1889,8 @@ export default function Navigation() {
                   onClick={() => setIsOpen(false)}
                   className={`flex items-center space-x-2 px-3 py-2.5 rounded-xl text-base sm:text-lg font-medium font-display transition-all duration-200 w-full ${
                     theme === "light"
-                      ? "text-gray-700 hover:text-orange-600 hover:bg-orange-100"
-                      : "text-white/90 hover:text-white hover:bg-white/10"
+                      ? "text-brand-blue hover:text-brand-orange hover:bg-brand-orange/10"
+                      : "text-brand-off-white/90 hover:text-brand-off-white hover:bg-brand-blue/20"
                   }`}
                 >
                   <span className="truncate">ERP Login</span>
@@ -1903,6 +1903,6 @@ export default function Navigation() {
         <SearchDialog open={searchOpen} onOpenChange={setSearchOpen} />
       </nav>
 
-    </>
+    </div>
   );
 }
