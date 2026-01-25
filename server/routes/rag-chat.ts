@@ -26,16 +26,6 @@ import { fileURLToPath } from "url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-// Initialize OpenAI client
-const apiKey = process.env.OPENAI_API_KEY;
-console.log(
-  "[RAG] OpenAI API Key Debug - ENV value is:",
-  apiKey ? `${apiKey.substring(0, 20)}...${apiKey.substring(apiKey.length - 10)}` : "NOT SET"
-);
-const openai = new OpenAI({
-  apiKey: apiKey,
-});
-
 // Knowledge base content cache
 let knowledgeBaseContent: string | null = null;
 let knowledgeBaseChunks: Array<{ text: string; index: number }> | null = null;
