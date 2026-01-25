@@ -964,7 +964,7 @@ export default function Index() {
               <div className="h-2 bg-white/10 overflow-hidden">
                 <div
                   key={`progress-${selectedPublicationIndex}`}
-                  className="h-full bg-gradient-to-r from-brand-blue via-brand-magenta to-brand-orange"
+                  className="h-full bg-gradient-to-r from-brand-blue via-brand-yellow to-brand-magenta"
                   style={{
                     animation: "progressFill 4s linear forwards",
                   }}
@@ -1180,7 +1180,7 @@ export default function Index() {
               <div className="h-2 bg-white/10 overflow-hidden">
                 <div
                   key={`news-progress-${featuredNewsIndex}`}
-                  className="h-full bg-gradient-to-r from-brand-blue via-brand-magenta to-brand-orange"
+                  className="h-full bg-gradient-to-r from-brand-blue via-brand-yellow to-brand-magenta"
                   style={{
                     animation: "progressFill 4s linear forwards",
                   }}
