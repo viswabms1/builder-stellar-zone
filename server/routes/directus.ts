@@ -149,3 +149,28 @@ export const checkDirectusHealth: RequestHandler = async (req, res) => {
     });
   }
 };
+
+/**
+ * Clear Directus cache for all entries
+ * Endpoint: POST /api/directus/cache/clear
+ * This can be called manually to force refresh content
+ */
+export const clearDirectusCache: RequestHandler = (req, res) => {
+  try {
+    const cacheKey = "directus:vision-mission";
+    cache.delete(cacheKey);
+    console.log(`[CACHE CLEARED] ${cacheKey}`);
+
+    res.json({
+      success: true,
+      message: "Directus cache cleared successfully",
+      cleared_key: cacheKey,
+    });
+  } catch (error) {
+    console.error("[Cache Clear Error]", error);
+    res.status(500).json({
+      success: false,
+      error: error instanceof Error ? error.message : "Failed to clear cache",
+    });
+  }
+};
