@@ -49,7 +49,7 @@ export function CampusLocationsSection() {
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 mb-6">
             <div className="h-1 w-8 bg-white rounded-full"></div>
-            <span className="text-xs font-bold uppercase tracking-widest text-brand-orange">
+            <span className="text-xs font-bold uppercase tracking-widest text-brand-blue">
               Visit Us
             </span>
             <div className="h-1 w-8 bg-white rounded-full"></div>
@@ -70,7 +70,7 @@ export function CampusLocationsSection() {
               onClick={() => setActiveTab(index)}
               className={`flex-1 px-6 py-4 font-semibold transition-all duration-300 border-b-2 -mb-[2px] text-center text-lg ${
                 activeTab === index
-                  ? "text-brand-orange border-b-brand-orange"
+                  ? "text-brand-blue border-b-brand-blue"
                   : "text-foreground/60 border-b-transparent hover:text-foreground/80"
               }`}
             >
@@ -82,7 +82,7 @@ export function CampusLocationsSection() {
         {/* Campus Content - Tab View */}
         <div className="max-w-3xl mx-auto">
           <div
-            className="rounded-2xl overflow-hidden border-2 border-brand-orange/20 bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm hover:border-brand-orange/40 transition-all duration-500 hover:shadow-2xl hover:shadow-brand-orange/20"
+            className="rounded-2xl overflow-hidden border-2 border-brand-blue/20 bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm hover:border-brand-blue/40 transition-all duration-500 hover:shadow-2xl hover:shadow-brand-blue/20"
           >
             {/* Map Container */}
             <div className="relative h-96 w-full overflow-hidden bg-foreground/5">
@@ -104,15 +104,15 @@ export function CampusLocationsSection() {
             <div className="p-6 md:p-8 space-y-5">
               {/* Campus Name */}
               <div>
-                <h3 className="text-2xl md:text-3xl font-bold text-foreground font-display mb-2 hover:text-brand-orange transition-colors">
+                <h3 className="text-2xl md:text-3xl font-bold text-foreground font-display mb-2 hover:text-brand-blue transition-colors">
                   {activeCampus.name}
                 </h3>
-                <div className="h-1 w-12 bg-gradient-to-r from-brand-orange to-brand-blue rounded-full" />
+                <div className="h-1 w-12 bg-brand-blue rounded-full" />
               </div>
 
               {/* Address */}
               <div className="flex gap-3">
-                <MapPin className="w-5 h-5 text-brand-orange flex-shrink-0 mt-0.5" />
+                <MapPin className="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" />
                 <div>
                   <p className="text-sm text-foreground/70 font-body leading-relaxed">
                     {activeCampus.address}
@@ -123,19 +123,19 @@ export function CampusLocationsSection() {
               {/* Contact Info */}
               <div className="space-y-3 pt-2 border-t border-foreground/10">
                 <div className="flex gap-3 items-center">
-                  <Phone className="w-4 h-4 text-brand-orange flex-shrink-0" />
+                  <Phone className="w-4 h-4 text-brand-blue flex-shrink-0" />
                   <a
                     href={`tel:${activeCampus.phone}`}
-                    className="text-sm text-foreground/80 hover:text-brand-orange transition-colors font-medium"
+                    className="text-sm text-foreground/80 hover:text-brand-blue transition-colors font-medium"
                   >
                     {activeCampus.phone}
                   </a>
                 </div>
                 <div className="flex gap-3 items-center">
-                  <Mail className="w-4 h-4 text-brand-orange flex-shrink-0" />
+                  <Mail className="w-4 h-4 text-brand-blue flex-shrink-0" />
                   <a
                     href={`mailto:${activeCampus.email}`}
-                    className="text-sm text-foreground/80 hover:text-brand-orange transition-colors font-medium"
+                    className="text-sm text-foreground/80 hover:text-brand-blue transition-colors font-medium"
                   >
                     {activeCampus.email}
                   </a>
@@ -145,7 +145,7 @@ export function CampusLocationsSection() {
               {/* Schools */}
               <div className="pt-2">
                 <div className="flex items-center gap-2 mb-3">
-                  <Info className="w-4 h-4 text-brand-orange" />
+                  <Info className="w-4 h-4 text-brand-blue" />
                   <span className="text-xs font-semibold text-foreground/60 uppercase tracking-widest">
                     Schools Located Here
                   </span>
@@ -156,7 +156,7 @@ export function CampusLocationsSection() {
                       key={idx}
                       className="flex items-start gap-2 text-sm text-foreground/85 p-2 rounded-lg hover:bg-foreground/5 transition-colors"
                     >
-                      <span className="text-brand-orange font-bold mt-0.5">•</span>
+                      <span className="text-brand-blue font-bold mt-0.5">•</span>
                       <span className="font-medium">{school}</span>
                     </div>
                   ))}
@@ -171,7 +171,7 @@ export function CampusLocationsSection() {
                   rel="noreferrer"
                   className="flex-1"
                 >
-                  <Button className="w-full bg-brand-gradient hover:opacity-90 text-foreground font-bold gap-2 transition-all">
+                  <Button className="w-full bg-brand-blue hover:bg-brand-blue/90 text-white font-bold gap-2 transition-all">
                     <Navigation className="w-4 h-4" />
                     Get Directions
                   </Button>
@@ -182,7 +182,7 @@ export function CampusLocationsSection() {
                 >
                   <Button
                     variant="outline"
-                    className="w-full text-foreground hover:text-brand-orange hover:border-brand-orange border-brand-orange/30 transition-all"
+                    className="w-full text-foreground hover:text-brand-blue hover:border-brand-blue border-brand-blue/30 transition-all"
                   >
                     <Mail className="w-4 h-4" />
                     Contact
