@@ -1326,7 +1326,7 @@ function CalendarResourceCard({ entry }: { entry: CalendarEntry }) {
           href={entry.documentUrl}
           target="_blank"
           rel="noreferrer"
-          className="inline-flex items-center gap-2 text-sm font-medium text-brand-magenta"
+          className="inline-flex items-center gap-2 text-sm font-medium text-brand-blue"
         >
           Download PDF
           <ChevronRight className="h-4 w-4" />
