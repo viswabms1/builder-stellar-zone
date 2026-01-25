@@ -584,8 +584,8 @@ export default function Navigation() {
         ref={topBarRef}
         className={`hidden lg:flex z-[10001] items-center ${
           theme === "light"
-            ? "bg-gradient-to-r from-orange-50 to-white border-b-2 border-orange-200/50"
-            : "bg-gradient-to-r from-slate-900 to-slate-950 border-b-2 border-orange-600/30"
+            ? "bg-gradient-to-r from-blue-50 to-white border-b-2 border-blue-200/50"
+            : "bg-gradient-to-r from-slate-900 to-slate-950 border-b-2 border-blue-600/30"
         }`}
         style={{
           padding: "clamp(0.25rem, 0.7vmin, 0.5rem) 0",
