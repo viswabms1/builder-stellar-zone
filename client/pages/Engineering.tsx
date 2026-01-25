@@ -1161,7 +1161,7 @@ function HeroVideo() {
             >
               <Button
                 size="lg"
-                className="bg-white hover:bg-white/90 text-orange-600 hover:text-orange-700 px-8 py-6 text-base font-bold font-display transition-all duration-300 group shadow-xl hover:shadow-2xl hover:-translate-y-1 w-full sm:w-auto"
+                className="bg-brand-blue hover:bg-brand-blue/90 text-white px-8 py-6 text-base font-bold font-display transition-all duration-300 group shadow-xl shadow-brand-blue/30 hover:shadow-2xl hover:shadow-brand-blue/50 hover:-translate-y-1 w-full sm:w-auto"
               >
                 Apply Now
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -1186,10 +1186,10 @@ function HeroVideo() {
               href="https://dsu.edu.in/virtual-tour/"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 text-white hover:text-orange-200 transition-all duration-300 font-display font-semibold text-lg group w-fit"
+              className="inline-flex items-center gap-2 text-white hover:text-blue-100 transition-all duration-300 font-display font-semibold text-lg group w-fit"
             >
               <span>Full University Tour</span>
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform group-hover:text-brand-blue" />
             </a>
           </div>
         </div>
@@ -1223,7 +1223,7 @@ function HeroVideo() {
           >
             <Button
               size="lg"
-              className="bg-white hover:bg-white/90 text-orange-600 hover:text-orange-700 px-8 py-6 text-base font-bold font-display transition-all duration-300 group shadow-xl hover:shadow-2xl hover:-translate-y-1 w-full sm:w-auto"
+              className="bg-brand-blue hover:bg-brand-blue/90 text-white px-8 py-6 text-base font-bold font-display transition-all duration-300 group shadow-xl shadow-brand-blue/30 hover:shadow-2xl hover:shadow-brand-blue/50 hover:-translate-y-1 w-full sm:w-auto"
             >
               Apply Now
               <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -1619,8 +1619,11 @@ export default function Engineering() {
         <div className="mx-auto max-w-7xl">
           <div className="mb-12">
             <div className="max-w-3xl">
-              <h2 className="font-display text-3xl md:text-4xl">
-                Future-ready engineering disciplines
+              <h2 className="headline-2 mb-6">
+                Future-ready engineering
+                <span className="bg-brand-gradient bg-clip-text text-transparent">
+                  {" "}disciplines
+                </span>
               </h2>
             </div>
           </div>
@@ -1676,8 +1679,11 @@ export default function Engineering() {
               <Badge className="bg-brand-magenta/15 text-brand-magenta">
                 Foundational Departments
               </Badge>
-              <h2 className="mt-4 font-display text-3xl md:text-4xl">
-                Foundational departments that power every engineering discipline
+              <h2 className="headline-2 mb-6 mt-4">
+                Foundational departments that power every engineering
+                <span className="bg-brand-gradient bg-clip-text text-transparent">
+                  {" "}discipline
+                </span>
               </h2>
               <p className="mt-4 text-sm text-foreground font-body max-w-3xl">
                 Every DSU engineer is backed by strong fundamentals in science,
@@ -1700,8 +1706,11 @@ export default function Engineering() {
       <section className="dean-section-wrapper relative overflow-hidden px-3 py-8 bg-gradient-to-r from-orange-500/5 via-brand-magenta/5 to-brand-blue/5">
         <div className="mx-auto max-w-7xl">
           <div className="mb-8">
-            <h2 className="font-display text-3xl md:text-4xl mb-2">
-              Message from the Dean
+            <h2 className="headline-2 mb-2">
+              Message from the
+              <span className="bg-brand-gradient bg-clip-text text-transparent">
+                {" "}Dean
+              </span>
             </h2>
             <p className="text-sm text-foreground/70 font-body">
               Vision for Engineering at DSU
@@ -1800,12 +1809,13 @@ export default function Engineering() {
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between mb-8">
             <div>
-              <h2 className="headline-2 mb-3 font-display">
-                <span className="text-foreground">What's Happening at </span>
-                <span className="bg-brand-gradient bg-clip-text text-transparent">
-                  School of Engineering, DSU
-                </span>
-              </h2>
+              <h2 className="headline-2 mb-3">
+            <span className="text-foreground">What's </span>
+            <span className="bg-brand-gradient bg-clip-text text-transparent">
+              Happening
+            </span>
+            <span className="text-foreground"> at School of Engineering, DSU</span>
+          </h2>
               <p className="max-w-2xl text-sm text-foreground sm:text-base font-body">
                 Explore recent achievements, industry collaborations, and
                 upcoming opportunities.
