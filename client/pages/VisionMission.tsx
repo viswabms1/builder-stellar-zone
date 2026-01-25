@@ -75,37 +75,42 @@ export default function VisionMission() {
   const coreValues = DEFAULT_CORE_VALUES;
 
   // Fetch Vision & Mission from Directus API
-  useEffect(() => {
-    const fetchVisionMission = async () => {
-      try {
-        setLoading(true);
-        const response = await fetch("/api/directus/vision-mission");
+  const fetchVisionMission = async (bypassCache = false) => {
+    try {
+      setLoading(true);
+      const url = bypassCache
+        ? "/api/directus/vision-mission?cache=false"
+        : "/api/directus/vision-mission";
 
-        if (!response.ok) {
-          throw new Error("Failed to fetch vision-mission content");
-        }
+      const response = await fetch(url);
 
-        const result = await response.json();
-
-        if (result.success && result.data) {
-          setVisionMissionData(result.data);
-        } else if (result.fallback) {
-          // Use default if API has fallback
-          console.warn("Using fallback vision-mission content");
-          setVisionMissionData(DEFAULT_VISION_MISSION);
-        }
-
-        setError(null);
-      } catch (err) {
-        console.error("Error fetching vision-mission:", err);
-        setError(err instanceof Error ? err.message : "Unknown error");
-        // Use default content on error
-        setVisionMissionData(DEFAULT_VISION_MISSION);
-      } finally {
-        setLoading(false);
+      if (!response.ok) {
+        throw new Error("Failed to fetch vision-mission content");
       }
-    };
 
+      const result = await response.json();
+
+      if (result.success && result.data) {
+        setVisionMissionData(result.data);
+      } else if (result.fallback) {
+        // Use default if API has fallback
+        console.warn("Using fallback vision-mission content");
+        setVisionMissionData(DEFAULT_VISION_MISSION);
+      }
+
+      setError(null);
+    } catch (err) {
+      console.error("Error fetching vision-mission:", err);
+      setError(err instanceof Error ? err.message : "Unknown error");
+      // Use default content on error
+      setVisionMissionData(DEFAULT_VISION_MISSION);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // Initial load
+  useEffect(() => {
     fetchVisionMission();
   }, []);
 
