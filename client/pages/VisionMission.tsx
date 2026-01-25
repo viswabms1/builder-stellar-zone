@@ -93,18 +93,22 @@ export default function VisionMission() {
         }
 
         const result = await response.json();
-        console.log("[VisionMission] Response data:", result);
-        console.log("[VisionMission] result.success:", result.success);
-        console.log("[VisionMission] result.data:", result.data);
+        console.log("[VisionMission] Full Response:", JSON.stringify(result, null, 2));
+        console.log("[VisionMission] response type:", typeof result);
+        console.log("[VisionMission] result keys:", Object.keys(result));
+        console.log("[VisionMission] result.success:", result.success, "type:", typeof result.success);
+        console.log("[VisionMission] result.data:", result.data, "type:", typeof result.data);
+        console.log("[VisionMission] Checking condition: success && data =", result.success && result.data);
 
         if (result.success && result.data) {
-          console.log("[VisionMission] Using fetched data:", result.data);
-          console.log("[VisionMission] Vision description:", result.data.vision_description);
-          console.log("[VisionMission] Mission description:", result.data.mission_description);
+          console.log("[VisionMission] ✓ Condition TRUE - Using fetched data");
+          console.log("[VisionMission] Data object:", JSON.stringify(result.data, null, 2));
           setVisionMissionData(result.data);
           setIsFromAPI(true);
         } else {
-          console.warn("[VisionMission] Condition not met. Success:", result.success, "Data:", result.data);
+          console.warn("[VisionMission] ✗ Condition FALSE");
+          console.warn("[VisionMission]   - success is:", result.success, "(expected: true)");
+          console.warn("[VisionMission]   - data is:", result.data, "(expected: object)");
           console.warn("[VisionMission] Using fallback content");
           setVisionMissionData(DEFAULT_VISION_MISSION);
           setIsFromAPI(false);
