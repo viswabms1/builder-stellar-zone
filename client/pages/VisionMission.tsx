@@ -109,16 +109,18 @@ export default function VisionMission() {
         console.log("[VisionMission] result.data:", result.data, "type:", typeof result.data);
         console.log("[VisionMission] Checking condition: success && data =", result.success && result.data);
 
-        if (result.success && result.data) {
-          console.log("[VisionMission] ✓ Condition TRUE - Using fetched data");
-          console.log("[VisionMission] Data object:", JSON.stringify(result.data, null, 2));
+        // Check if we have valid data
+        if (result && result.data && typeof result.data === "object" && result.data.vision_description) {
+          console.log("[VisionMission] ✓ Using fetched data from API");
+          setVisionMissionData(result.data);
+          setIsFromAPI(true);
+        } else if (result.success && result.data) {
+          console.log("[VisionMission] ✓ Using fetched data from API (alternate path)");
           setVisionMissionData(result.data);
           setIsFromAPI(true);
         } else {
-          console.warn("[VisionMission] ✗ Condition FALSE");
-          console.warn("[VisionMission]   - success is:", result.success, "(expected: true)");
-          console.warn("[VisionMission]   - data is:", result.data, "(expected: object)");
-          console.warn("[VisionMission] Using fallback content");
+          console.warn("[VisionMission] No valid data found, using fallback");
+          console.warn("[VisionMission]   Result object:", result);
           setVisionMissionData(DEFAULT_VISION_MISSION);
           setIsFromAPI(false);
         }
