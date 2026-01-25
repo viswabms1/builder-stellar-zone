@@ -1048,18 +1048,18 @@ export default function Index() {
                 "Progress in Photovoltaics",
               ].includes(publication.category);
               const colors = [
-                "from-emerald-500/20 to-emerald-500/5",
+                "from-brand-magenta/20 to-brand-magenta/5",
                 "from-brand-blue/20 to-brand-blue/5",
                 "from-brand-orange/20 to-brand-orange/5",
-                "from-emerald-500/20 to-emerald-500/5",
-                "from-purple-500/20 to-purple-500/5",
+                "from-brand-magenta/20 to-brand-magenta/5",
+                "from-brand-blue/20 to-brand-blue/5",
               ];
               const borderColors = [
-                "border-emerald-500/30 hover:border-emerald-500",
+                "border-brand-magenta/30 hover:border-brand-magenta",
                 "border-brand-blue/30 hover:border-brand-blue",
                 "border-brand-orange/30 hover:border-brand-orange",
-                "border-emerald-500/30 hover:border-emerald-500",
-                "border-purple-500/30 hover:border-purple-500",
+                "border-brand-magenta/30 hover:border-brand-magenta",
+                "border-brand-blue/30 hover:border-brand-blue",
               ];
 
               return (
