@@ -1,4 +1,4 @@
-import { ArrowRight, Mail, Phone, MapPin, Globe, Clock } from "lucide-react";
+import { ArrowLeft, Mail, Phone, MapPin, Globe, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import {
