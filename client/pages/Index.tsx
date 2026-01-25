@@ -1073,8 +1073,8 @@ export default function Index() {
                   }}
                   className={`group relative overflow-hidden rounded-xl border-2 transition-all duration-500 p-4 text-left h-full backdrop-blur-sm animate-publication-card-enter ${
                     selectedPublicationIndex === idx
-                      ? "border-emerald-500 bg-emerald-500/20 shadow-2xl shadow-emerald-500/20 scale-105 z-10"
-                      : `${borderColors[idx % 5]} bg-gradient-to-br ${colors[idx % 5]} hover:shadow-xl hover:shadow-emerald-500/20`
+                      ? "border-brand-magenta bg-brand-magenta/20 shadow-2xl shadow-brand-magenta/20 scale-105 z-10"
+                      : `${borderColors[idx % 5]} bg-gradient-to-br ${colors[idx % 5]} hover:shadow-xl hover:shadow-brand-magenta/20`
                   }`}
                   style={{
                     animation:
@@ -1084,7 +1084,7 @@ export default function Index() {
                   }}
                 >
                   {/* Background accent */}
-                  <div className="absolute -top-8 -right-8 w-20 h-20 bg-gradient-to-br from-emerald-500/20 to-transparent rounded-full blur-2xl group-hover:scale-150 transition-transform duration-500 pointer-events-none"></div>
+                  <div className="absolute -top-8 -right-8 w-20 h-20 bg-gradient-to-br from-brand-magenta/20 to-transparent rounded-full blur-2xl group-hover:scale-150 transition-transform duration-500 pointer-events-none"></div>
 
                   <div className="space-y-3 relative z-10">
                     {/* Header with badges */}
@@ -1094,7 +1094,7 @@ export default function Index() {
                           variant="secondary"
                           className={`text-xs flex-shrink-0 ${
                             isSpringer
-                              ? "bg-emerald-500/25 text-emerald-500 border-emerald-500/50"
+                              ? "bg-brand-magenta/25 text-brand-magenta border-brand-magenta/50"
                               : isHighImpact
                                 ? "bg-brand-blue/25 text-brand-blue border-brand-blue/50"
                                 : "bg-brand-orange/25 text-brand-orange border-brand-orange/50"
@@ -1113,7 +1113,7 @@ export default function Index() {
                     </div>
 
                     {/* Title with improved styling */}
-                    <h4 className="text-xs font-bold text-foreground font-display group-hover:text-emerald-500 transition-colors line-clamp-3 leading-tight">
+                    <h4 className="text-xs font-bold text-foreground font-display group-hover:text-brand-magenta transition-colors line-clamp-3 leading-tight">
                       {publication.title}
                     </h4>
 
@@ -1123,7 +1123,7 @@ export default function Index() {
                     </p>
 
                     {/* CTA indicator */}
-                    <div className="flex items-center gap-2 text-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform group-hover:translate-x-1 pt-2 border-t border-foreground/10">
+                    <div className="flex items-center gap-2 text-brand-magenta opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform group-hover:translate-x-1 pt-2 border-t border-foreground/10">
                       <ChevronRight className="w-3 h-3" />
                       <span className="text-xs font-semibold">
                         View Details
