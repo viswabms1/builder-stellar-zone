@@ -336,7 +336,7 @@ export function RagChatWidget() {
                 style={{ gap: "clamp(0.5rem, 2vmin, 0.75rem)" }}
               >
                 <div
-                  className="rounded-full bg-orange-500 flex items-center justify-center"
+                  className="rounded-full bg-brand-blue flex items-center justify-center"
                   style={{
                     width: "clamp(2rem, 5vmin, 2.5rem)",
                     height: "clamp(2rem, 5vmin, 2.5rem)",
