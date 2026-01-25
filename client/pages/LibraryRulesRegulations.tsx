@@ -269,7 +269,8 @@ export default function LibraryRulesRegulations() {
         <div className="mt-12 text-center">
           <Button asChild className="bg-slate-600 hover:bg-slate-700">
             <Link to="/library">
-              Back to Library <ArrowRight className="ml-2 h-4 w-4" />
+              <ArrowLeft className="mr-2 h-4 w-4" />
+              Back to Library
             </Link>
           </Button>
         </div>
