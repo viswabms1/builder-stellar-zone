@@ -1631,7 +1631,7 @@ export default function Engineering() {
           {/* Undergraduate Programs */}
           <div className="mb-16">
             <div className="mb-8">
-              <Badge className="bg-brand-magenta/15 text-brand-magenta">
+              <Badge className="bg-brand-blue/15 text-brand-blue">
                 Undergraduate Programs
               </Badge>
               <h3 className="mt-4 font-display text-2xl md:text-3xl">
