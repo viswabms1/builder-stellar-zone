@@ -1737,7 +1737,7 @@ export default function Engineering() {
               <div className="p-4 md:p-12 flex flex-col justify-center">
                 <div className="space-y-6">
                   {/* Header with Name and Title */}
-                  <div className="border-l-4 border-brand-magenta pl-4">
+                  <div className="border-l-4 border-brand-blue pl-4">
                     <h3 className="text-2xl font-semibold text-foreground font-display">
                       Dr. Udaya Kumar Reddy K R
                     </h3>
