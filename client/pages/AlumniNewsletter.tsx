@@ -1,4 +1,4 @@
-import { ArrowRight, Mail, TrendingUp, Users, Star } from "lucide-react";
+import { ArrowRight, ArrowLeft, Mail, TrendingUp, Users, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import {
