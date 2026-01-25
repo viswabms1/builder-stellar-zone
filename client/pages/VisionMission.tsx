@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import axios from "axios";
 import {
   Card,
   CardContent,
@@ -22,22 +23,11 @@ import { Button } from "@/components/ui/button";
 import { useTheme } from "@/providers/theme-provider";
 
 // Type for Directus response
-interface VisionMissionData {
-  vision_title?: string;
-  vision_description?: string;
-  mission_title?: string;
-  mission_description?: string;
+interface VisionMissionContent {
+  Vision?: string;
+  Mission_?: string;
+  [key: string]: any;
 }
-
-// Default vision & mission (fallback)
-const DEFAULT_VISION_MISSION = {
-  vision_title: "Vision",
-  vision_description:
-    "To be a centre of excellence in education, research & training, innovation & entrepreneurship and to produce citizens with exceptional leadership qualities to serve national and global needs.",
-  mission_title: "Mission",
-  mission_description:
-    "To achieve our objectives in an environment that enhances creativity, innovation and scholarly pursuits while adhering to our vision.",
-};
 
 const DEFAULT_CORE_VALUES = [
   {
@@ -68,81 +58,31 @@ const DEFAULT_CORE_VALUES = [
 
 export default function VisionMission() {
   const { theme } = useTheme();
-  const [visionMissionData, setVisionMissionData] = useState<VisionMissionData>(DEFAULT_VISION_MISSION);
+  const [content, setContent] = useState<VisionMissionContent>({
+    Vision:
+      "To be a centre of excellence in education, research & training, innovation & entrepreneurship and to produce citizens with exceptional leadership qualities to serve national and global needs.",
+    Mission_:
+      "To achieve our objectives in an environment that enhances creativity, innovation and scholarly pursuits while adhering to our vision.",
+  });
   const [loading, setLoading] = useState(true);
-  const [isFromAPI, setIsFromAPI] = useState(false);
   const coreValues = DEFAULT_CORE_VALUES;
 
-  // Fetch Vision & Mission from Directus API
+  // Fetch Vision & Mission directly from Directus
   useEffect(() => {
-    const fetchVisionMission = async () => {
-      try {
-        setLoading(true);
-        console.log("[VisionMission] Starting fetch from /api/directus/vision-mission");
-
-        const response = await fetch(`/api/directus/vision-mission?t=${Date.now()}`);
-
-        console.log("[VisionMission] Fetch completed");
-        console.log("[VisionMission] Response status:", response.status);
-        console.log("[VisionMission] Response ok:", response.ok);
-        console.log("[VisionMission] Response headers:", {
-          contentType: response.headers.get("content-type"),
-        });
-
-        if (!response.ok) {
-          const errorText = await response.text();
-          console.warn(
-            `[VisionMission] API returned ${response.status}, error body:`,
-            errorText,
-          );
-          console.warn("Using fallback content");
-          setVisionMissionData(DEFAULT_VISION_MISSION);
-          setIsFromAPI(false);
-          return;
-        }
-
-        let result;
-        try {
-          result = await response.json();
-          console.log("[VisionMission] JSON parsed successfully");
-        } catch (parseError) {
-          console.error("[VisionMission] JSON parse error:", parseError);
-          const text = await response.text();
-          console.error("[VisionMission] Response body was:", text);
-          throw new Error("Failed to parse JSON response");
-        }
-
-        console.log("[VisionMission] Full Response:", JSON.stringify(result, null, 2));
-        console.log("[VisionMission] response type:", typeof result);
-        console.log("[VisionMission] result keys:", Object.keys(result));
-        console.log("[VisionMission] result.success:", result.success, "type:", typeof result.success);
-        console.log("[VisionMission] result.data:", result.data, "type:", typeof result.data);
-        console.log("[VisionMission] Checking condition: success && data =", result.success && result.data);
-
-        // Check if we have valid data
-        if (result && result.data && typeof result.data === "object" && result.data.vision_description) {
-          console.log("[VisionMission] ✓ Using fetched data from API");
-          setVisionMissionData(result.data);
-          setIsFromAPI(true);
-        } else if (result.success && result.data) {
-          console.log("[VisionMission] ✓ Using fetched data from API (alternate path)");
-          setVisionMissionData(result.data);
-          setIsFromAPI(true);
-        } else {
-          console.warn("[VisionMission] No valid data found, using fallback");
-          console.warn("[VisionMission]   Result object:", result);
-          setVisionMissionData(DEFAULT_VISION_MISSION);
-          setIsFromAPI(false);
-        }
-      } catch (err) {
-        console.error("[VisionMission] Error fetching vision-mission:", err);
-        setVisionMissionData(DEFAULT_VISION_MISSION);
-      } finally {
+    axios
+      .get(
+        "https://dsu-website-headless-cms.directus.app/items/university_info/1",
+      )
+      .then((res) => {
+        console.log("[VisionMission] Directus data fetched:", res.data.data);
+        setContent(res.data.data);
+      })
+      .catch((err) => {
+        console.error("[VisionMission] Error fetching data:", err);
+      })
+      .finally(() => {
         setLoading(false);
-      }
-    };
-
-    fetchVisionMission();
+      });
   }, []);
 
   return (
