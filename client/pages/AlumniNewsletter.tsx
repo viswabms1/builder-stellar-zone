@@ -228,7 +228,8 @@ export default function AlumniNewsletter() {
         <div className="mt-12 text-center">
           <Button asChild className="bg-green-600 hover:bg-green-700">
             <Link to="/alumni">
-              Back to Alumni <ArrowRight className="ml-2 h-4 w-4" />
+              <ArrowLeft className="mr-2 h-4 w-4" />
+              Back to Alumni
             </Link>
           </Button>
         </div>
