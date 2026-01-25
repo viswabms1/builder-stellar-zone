@@ -915,7 +915,7 @@ export default function Navigation() {
                             scrollbarWidth: "thin",
                             scrollbarColor:
                               theme === "light"
-                                ? "rgba(249, 115, 22, 0.5) rgba(249, 115, 22, 0.1)"
+                                ? "rgba(59, 130, 246, 0.5) rgba(59, 130, 246, 0.1)"
                                 : "rgba(255, 255, 255, 0.3) rgba(255, 255, 255, 0.1)",
                           }}
                         >
@@ -1030,7 +1030,7 @@ export default function Navigation() {
                             scrollbarWidth: "thin",
                             scrollbarColor:
                               theme === "light"
-                                ? "rgba(249, 115, 22, 0.5) rgba(249, 115, 22, 0.1)"
+                                ? "rgba(59, 130, 246, 0.5) rgba(59, 130, 246, 0.1)"
                                 : "rgba(255, 255, 255, 0.3) rgba(255, 255, 255, 0.1)",
                           }}
                         >
