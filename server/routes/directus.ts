@@ -1,0 +1,142 @@
+import { RequestHandler } from "express";
+
+/**
+ * Directus Configuration
+ */
+const DIRECTUS_URL =
+  process.env.DIRECTUS_URL ||
+  "https://dsu-website-headless-cms.directus.app";
+
+/**
+ * Simple in-memory cache with TTL (Time To Live)
+ * In production, use Redis or similar
+ */
+interface CacheEntry<T> {
+  data: T;
+  timestamp: number;
+}
+
+const cache = new Map<string, CacheEntry<any>>();
+const CACHE_TTL = 5 * 60 * 1000; // 5 minutes
+
+/**
+ * Get from cache if not expired
+ */
+function getFromCache<T>(key: string): T | null {
+  const entry = cache.get(key);
+  if (!entry) return null;
+
+  const age = Date.now() - entry.timestamp;
+  if (age > CACHE_TTL) {
+    cache.delete(key);
+    return null;
+  }
+
+  return entry.data;
+}
+
+/**
+ * Set cache entry
+ */
+function setCache<T>(key: string, data: T): void {
+  cache.set(key, {
+    data,
+    timestamp: Date.now(),
+  });
+}
+
+/**
+ * Fetch Vision & Mission content from Directus
+ * Endpoint: GET /api/directus/vision-mission
+ */
+export const getVisionMission: RequestHandler = async (req, res) => {
+  try {
+    // Check cache first
+    const cacheKey = "directus:vision-mission";
+    const cachedData = getFromCache<any>(cacheKey);
+
+    if (cachedData) {
+      console.log(`[CACHE HIT] ${cacheKey}`);
+      return res.json(cachedData);
+    }
+
+    // Fetch from Directus - adjust item ID and collection name as needed
+    // Example: university_info collection, item ID 1
+    const response = await fetch(
+      `${DIRECTUS_URL}/api/items/university_info/1?fields=*.*`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      },
+    );
+
+    if (!response.ok) {
+      console.error(
+        `Directus API error: ${response.status} ${response.statusText}`,
+      );
+      throw new Error(
+        `Directus API error: ${response.status} ${response.statusText}`,
+      );
+    }
+
+    const data = await response.json();
+
+    // Transform Directus response to match our interface
+    const transformedData = {
+      id: data.data?.id,
+      vision_title: data.data?.vision_title || "Our Vision",
+      vision_description:
+        data.data?.vision_description ||
+        "Transforming education through innovation",
+      mission_title: data.data?.mission_title || "Our Mission",
+      mission_description:
+        data.data?.mission_description ||
+        "Empowering students with knowledge and skills",
+      core_values: data.data?.core_values || [],
+    };
+
+    // Cache the response
+    setCache(cacheKey, transformedData);
+
+    res.json({
+      success: true,
+      data: transformedData,
+    });
+  } catch (error) {
+    console.error("[Directus Vision-Mission Error]", error);
+    res.status(500).json({
+      success: false,
+      error:
+        error instanceof Error ? error.message : "Failed to fetch vision-mission content",
+      fallback: true, // Signal client to use fallback content
+    });
+  }
+};
+
+/**
+ * Check Directus connection health
+ * Endpoint: GET /api/directus/health
+ */
+export const checkDirectusHealth: RequestHandler = async (req, res) => {
+  try {
+    const response = await fetch(`${DIRECTUS_URL}/api/health`, {
+      method: "GET",
+    });
+
+    res.json({
+      status: response.ok ? "healthy" : "unhealthy",
+      directus_url: DIRECTUS_URL,
+      response_status: response.status,
+    });
+  } catch (error) {
+    console.error("[Directus Health Check Error]", error);
+    res.status(503).json({
+      status: "unhealthy",
+      directus_url: DIRECTUS_URL,
+      error:
+        error instanceof Error ? error.message : "Health check failed",
+    });
+  }
+};
