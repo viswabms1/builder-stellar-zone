@@ -767,7 +767,12 @@ export default function Index() {
       <section className="px-3 pt-2 md:pt-4 pb-3 md:pb-4 relative bg-gradient-to-r from-brand-magenta/5 via-brand-orange/5 to-brand-blue/5 border-y border-border/30">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-4 md:mb-6">
-            <h2 className="headline-2 mb-1 md:mb-2">Recognized Excellence</h2>
+            <h2 className="headline-2 mb-1 md:mb-2">
+              Recognized
+              <span className="bg-brand-gradient bg-clip-text text-transparent">
+                {" "}Excellence
+              </span>
+            </h2>
             <p className="subheadline text-foreground max-w-3xl mx-auto">
               Accredited by leading national and international bodies
             </p>
