@@ -80,7 +80,7 @@ export default function VisionMission() {
         setLoading(true);
         console.log("[VisionMission] Starting fetch from /api/directus/vision-mission");
 
-        const response = await fetch("/api/directus/vision-mission");
+        const response = await fetch(`/api/directus/vision-mission?t=${Date.now()}`);
 
         console.log("[VisionMission] Fetch completed");
         console.log("[VisionMission] Response status:", response.status);
