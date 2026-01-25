@@ -101,7 +101,17 @@ export default function VisionMission() {
           return;
         }
 
-        const result = await response.json();
+        let result;
+        try {
+          result = await response.json();
+          console.log("[VisionMission] JSON parsed successfully");
+        } catch (parseError) {
+          console.error("[VisionMission] JSON parse error:", parseError);
+          const text = await response.text();
+          console.error("[VisionMission] Response body was:", text);
+          throw new Error("Failed to parse JSON response");
+        }
+
         console.log("[VisionMission] Full Response:", JSON.stringify(result, null, 2));
         console.log("[VisionMission] response type:", typeof result);
         console.log("[VisionMission] result keys:", Object.keys(result));
