@@ -48,16 +48,25 @@ function setCache<T>(key: string, data: T): void {
 /**
  * Fetch Vision & Mission content from Directus
  * Endpoint: GET /api/directus/vision-mission
+ * Query params: ?cache=false to bypass cache (development only)
  */
 export const getVisionMission: RequestHandler = async (req, res) => {
   try {
-    // Check cache first
     const cacheKey = "directus:vision-mission";
-    const cachedData = getFromCache<any>(cacheKey);
+    const bypassCache = req.query.cache === "false";
 
-    if (cachedData) {
-      console.log(`[CACHE HIT] ${cacheKey}`);
-      return res.json(cachedData);
+    // Check cache first (unless explicitly bypassed)
+    if (!bypassCache) {
+      const cachedData = getFromCache<any>(cacheKey);
+
+      if (cachedData) {
+        console.log(`[CACHE HIT] ${cacheKey}`);
+        return res.json(cachedData);
+      }
+    }
+
+    if (bypassCache) {
+      console.log(`[CACHE BYPASS] ${cacheKey}`);
     }
 
     // Fetch from Directus - adjust item ID and collection name as needed
