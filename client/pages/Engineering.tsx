@@ -2048,7 +2048,7 @@ export default function Engineering() {
             </div>
             <a
               href="/program-lookup"
-              className="inline-flex items-center gap-2 text-sm font-medium text-brand-magenta hover:text-brand-magenta/80 transition-colors"
+              className="inline-flex items-center gap-2 text-sm font-medium text-brand-blue hover:text-brand-blue/80 transition-colors"
             >
               Explore Programs
               <ChevronRight className="h-4 w-4" />
