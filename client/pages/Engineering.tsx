@@ -2145,7 +2145,7 @@ export default function Engineering() {
             <Card className="rounded-2xl border border-brand-magenta/20 bg-brand-magenta/5 backdrop-blur">
               <CardHeader>
                 <CardTitle className="font-display flex items-center gap-2">
-                  <Beaker className="h-5 w-5 text-brand-magenta" />
+                  <Beaker className="h-5 w-5 text-brand-blue" />
                   Engineering Labs & Programs
                 </CardTitle>
               </CardHeader>
