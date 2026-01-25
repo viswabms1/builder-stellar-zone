@@ -1996,13 +1996,13 @@ export default function Engineering() {
                 href="https://www.dsu.edu.in/engineering/programs-engineering"
                 target="_blank"
                 rel="noreferrer"
-                className="hover:text-brand-magenta"
+                className="hover:text-brand-blue"
               >
                 Programs Overview
               </a>
               <RouterLink
                 to="/academics/engineering/newsletter"
-                className="hover:text-brand-magenta"
+                className="hover:text-brand-blue"
               >
                 Monthly Newsletter – SOE Bulletin
               </RouterLink>
@@ -2010,7 +2010,7 @@ export default function Engineering() {
                 href="https://www.dsu.edu.in/engineering/soe-library"
                 target="_blank"
                 rel="noreferrer"
-                className="hover:text-brand-magenta"
+                className="hover:text-brand-blue"
               >
                 Engineering Library
               </a>
@@ -2018,7 +2018,7 @@ export default function Engineering() {
                 href="https://www.dsu.edu.in/engineering/club-activities"
                 target="_blank"
                 rel="noreferrer"
-                className="hover:text-brand-magenta"
+                className="hover:text-brand-blue"
               >
                 Club Activities & Chapters
               </a>
@@ -2026,7 +2026,7 @@ export default function Engineering() {
                 href="https://dsu.acm.org/"
                 target="_blank"
                 rel="noreferrer"
-                className="hover:text-brand-magenta"
+                className="hover:text-brand-blue"
               >
                 DSU ACM Student Chapter
               </a>
