@@ -158,6 +158,19 @@ export default function VisionMission() {
           <p className="text-lg md:text-xl text-foreground mb-8 leading-relaxed max-w-3xl mx-auto">
             Throwing light on the way forward
           </p>
+
+          {/* Refresh button (for development/testing) */}
+          <div className="mt-8">
+            <Button
+              onClick={() => fetchVisionMission(true)}
+              disabled={loading}
+              variant="outline"
+              className="border-white text-white hover:bg-white/10"
+              size="sm"
+            >
+              {loading ? "Refreshing..." : "Refresh Content"}
+            </Button>
+          </div>
         </div>
       </section>
 
