@@ -19,6 +19,10 @@ interface CacheEntry<T> {
 const cache = new Map<string, CacheEntry<any>>();
 const CACHE_TTL = 5 * 60 * 1000; // 5 minutes
 
+// Clear any cached data on server startup
+cache.clear();
+console.log("[Directus] Cache cleared on server startup");
+
 /**
  * Get from cache if not expired
  */
@@ -29,6 +33,7 @@ function getFromCache<T>(key: string): T | null {
   const age = Date.now() - entry.timestamp;
   if (age > CACHE_TTL) {
     cache.delete(key);
+    console.log(`[Directus] Cache expired for: ${key}`);
     return null;
   }
 
