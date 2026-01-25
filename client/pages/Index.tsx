@@ -949,7 +949,7 @@ export default function Index() {
               <div className="h-2 bg-white/10 overflow-hidden">
                 <div
                   key={`progress-${selectedPublicationIndex}`}
-                  className="h-full bg-gradient-to-r from-emerald-500 via-brand-blue to-brand-orange"
+                  className="h-full bg-gradient-to-r from-brand-magenta via-brand-blue to-brand-orange"
                   style={{
                     animation: "progressFill 4s linear forwards",
                   }}
@@ -990,11 +990,11 @@ export default function Index() {
               >
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex flex-col gap-3">
-                    <Badge className="bg-emerald-500/25 text-emerald-500 border border-emerald-500/50 w-fit">
+                    <Badge className="bg-brand-magenta/25 text-brand-magenta border border-brand-magenta/50 w-fit">
                       {allPublications[selectedPublicationIndex].category}
                     </Badge>
                     <div className="flex items-center gap-2">
-                      <span className="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                      <span className="inline-block w-2 h-2 rounded-full bg-brand-magenta animate-pulse"></span>
                       <span className="text-xs font-semibold text-white">
                         Featured Publication
                       </span>
@@ -1023,13 +1023,13 @@ export default function Index() {
                       rel="noreferrer"
                       className="no-underline group"
                     >
-                      <Button className="bg-emerald-500 hover:bg-emerald-600 text-white font-bold gap-2 transform group-hover:translate-x-1 transition-all shadow-lg hover:shadow-xl">
+                      <Button className="bg-brand-magenta hover:bg-brand-magenta/90 text-white font-bold gap-2 transform group-hover:translate-x-1 transition-all shadow-lg hover:shadow-xl">
                         Read Full Paper
                         <ArrowRight className="w-4 h-4" />
                       </Button>
                     </a>
                   ) : (
-                    <Button className="bg-emerald-500 hover:bg-emerald-600 text-white font-bold gap-2 shadow-lg hover:shadow-xl">
+                    <Button className="bg-brand-magenta hover:bg-brand-magenta/90 text-white font-bold gap-2 shadow-lg hover:shadow-xl">
                       Read Full Paper
                       <ArrowRight className="w-4 h-4" />
                     </Button>
