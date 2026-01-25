@@ -1195,7 +1195,7 @@ export default function Index() {
                 )}
                 <button
                   onClick={() => setSelectedNews(currentFeatured)}
-                  className={`w-full flex flex-col rounded-none border border-orange-500/20 bg-orange-500/10 cursor-pointer text-left overflow-hidden featured-news-card transition-all duration-300 ${
+                  className={`w-full flex flex-col rounded-none border border-brand-blue/20 bg-gradient-to-br from-brand-blue/10 to-brand-magenta/5 cursor-pointer text-left overflow-hidden featured-news-card transition-all duration-300 ${
                     newsTransitioning
                       ? "featured-news-exit"
                       : "featured-news-enter"
