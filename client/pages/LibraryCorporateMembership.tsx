@@ -1,4 +1,4 @@
-import { ArrowRight, Building, Users, Award, Globe, CheckCircle } from "lucide-react";
+import { ArrowRight, ArrowLeft, Building, Users, Award, Globe, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import {
