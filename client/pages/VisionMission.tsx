@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import axios from "axios";
 import {
   Card,
   CardContent,
@@ -69,13 +68,11 @@ export default function VisionMission() {
 
   // Fetch Vision & Mission directly from Directus
   useEffect(() => {
-    axios
-      .get(
-        "https://dsu-website-headless-cms.directus.app/items/university_info/1",
-      )
-      .then((res) => {
-        console.log("[VisionMission] Directus data fetched:", res.data.data);
-        setContent(res.data.data);
+    fetch("https://dsu-website-headless-cms.directus.app/items/university_info/1")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("[VisionMission] Directus data fetched:", data.data);
+        setContent(data.data);
       })
       .catch((err) => {
         console.error("[VisionMission] Error fetching data:", err);
