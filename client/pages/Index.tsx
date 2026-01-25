@@ -532,7 +532,7 @@ export default function Index() {
       excerpt:
         "Our student-built rocket successfully achieves 1200.77m apogee and safe recovery, marking a triumph of innovation and technical mastery in aerospace engineering.",
       date: "Oct 29, 2025",
-      color: "emerald-500",
+      color: "brand-magenta",
     },
     {
       image:
@@ -544,7 +544,7 @@ export default function Index() {
       excerpt:
         "Celebrating the achievements and milestones of our graduating students and faculty.",
       date: "Oct 15, 2025",
-      color: "emerald-500",
+      color: "brand-magenta",
     },
     {
       image:
@@ -1229,12 +1229,12 @@ export default function Index() {
                     <div className="flex items-center gap-2 flex-wrap">
                       <div className="relative">
                         <Badge
-                          className={`text-xs ${currentFeatured.color === "brand-orange" ? "bg-brand-orange/20 text-brand-orange" : currentFeatured.color === "emerald-500" ? "bg-emerald-500/20 text-emerald-500" : "bg-brand-blue/20 text-brand-blue"}`}
+                          className={`text-xs ${currentFeatured.color === "brand-orange" ? "bg-brand-orange/20 text-brand-orange" : currentFeatured.color === "brand-magenta" ? "bg-brand-magenta/20 text-brand-magenta" : "bg-brand-blue/20 text-brand-blue"}`}
                         >
                           {currentFeatured.category}
                         </Badge>
                         {!newsTransitioning && (
-                          <div className="absolute -top-1 -right-1 w-2 h-2 bg-emerald-500 rounded-full featured-news-pulse" />
+                          <div className="absolute -top-1 -right-1 w-2 h-2 bg-brand-magenta rounded-full featured-news-pulse" />
                         )}
                       </div>
                       <div className="flex items-center text-foreground/60 text-xs font-body">
@@ -1259,7 +1259,7 @@ export default function Index() {
                             key={idx}
                             className={`h-1.5 rounded-full transition-all duration-300 ${
                               idx === featuredNewsIndex
-                                ? "w-4 bg-emerald-500"
+                                ? "w-4 bg-brand-magenta"
                                 : "w-1.5 bg-foreground/30 hover:bg-foreground/50"
                             }`}
                           />
