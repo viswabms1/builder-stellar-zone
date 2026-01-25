@@ -138,10 +138,17 @@ export const getVisionMission: RequestHandler = async (req, res) => {
     // Cache the response
     setCache(cacheKey, transformedData);
 
-    res.json({
+    const responseToSend = {
       success: true,
       data: transformedData,
-    });
+    };
+
+    console.log("[Directus API] Sending response to client:");
+    console.log("[Directus API] JSON.stringify(responseToSend):", JSON.stringify(responseToSend, null, 2));
+    console.log("[Directus API] responseToSend.success:", responseToSend.success);
+    console.log("[Directus API] responseToSend.data is object:", typeof responseToSend.data === "object");
+
+    res.json(responseToSend);
   } catch (error) {
     console.error("[Directus Vision-Mission Error]", error);
     res.status(500).json({
