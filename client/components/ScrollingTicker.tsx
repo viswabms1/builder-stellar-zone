@@ -57,7 +57,7 @@ export default function ScrollingTicker() {
                 href={item.href}
                 target={item.external ? "_blank" : undefined}
                 rel={item.external ? "noopener noreferrer" : undefined}
-                className="ml-2 hover:text-amber-200 transition-colors cursor-pointer"
+                className="ml-2 hover:text-blue-100 transition-colors cursor-pointer"
               >
                 {item.text}
               </a>
