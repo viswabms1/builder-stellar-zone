@@ -11,6 +11,10 @@ import {
   handleStrapiWebhook,
   checkStrapiHealth,
 } from "./routes/strapi";
+import {
+  getVisionMission,
+  checkDirectusHealth,
+} from "./routes/directus";
 
 // CRITICAL: Force override of cached environment variables
 // This ensures that environment variables set via DevServerControl take precedence
@@ -68,6 +72,18 @@ export function createServer() {
   // Health check for Strapi connection
   // Usage: GET /api/strapi/health
   app.get("/api/strapi/health", checkStrapiHealth);
+
+  // ============================================
+  // DIRECTUS CMS INTEGRATION ROUTES
+  // ============================================
+
+  // Fetch Vision & Mission content from Directus
+  // Usage: GET /api/directus/vision-mission
+  app.get("/api/directus/vision-mission", getVisionMission);
+
+  // Health check for Directus connection
+  // Usage: GET /api/directus/health
+  app.get("/api/directus/health", checkDirectusHealth);
 
   return app;
 }
