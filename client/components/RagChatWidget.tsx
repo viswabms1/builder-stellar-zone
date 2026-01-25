@@ -275,8 +275,8 @@ export function RagChatWidget() {
           className={cn(
             "rounded-full shadow-2xl hover:shadow-xl transition-all hover:scale-110 p-4",
             theme === "light"
-              ? "bg-orange-500 hover:bg-orange-600 text-white"
-              : "bg-orange-600 hover:bg-orange-700 text-white",
+              ? "bg-brand-blue hover:bg-brand-blue/90 text-white"
+              : "bg-brand-blue hover:bg-brand-blue/90 text-white",
           )}
           style={{
             position: "fixed",
