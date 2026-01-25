@@ -1744,7 +1744,7 @@ export default function Engineering() {
                     <p className="text-sm text-foreground mt-1 font-body">
                       Ph.D
                     </p>
-                    <p className="text-sm font-medium text-brand-magenta mt-2 font-display">
+                    <p className="text-sm font-medium text-brand-blue mt-2 font-display">
                       Dean, School of Engineering
                     </p>
                   </div>
