@@ -82,25 +82,36 @@ export default function VisionMission() {
         ? "/api/directus/vision-mission?cache=false"
         : "/api/directus/vision-mission";
 
+      console.log("[VisionMission] Fetching from:", url);
+
       const response = await fetch(url);
 
+      console.log("[VisionMission] Response status:", response.status);
+
       if (!response.ok) {
-        throw new Error("Failed to fetch vision-mission content");
+        throw new Error(
+          `Failed to fetch vision-mission content: ${response.status} ${response.statusText}`,
+        );
       }
 
       const result = await response.json();
+      console.log("[VisionMission] Response data:", result);
 
       if (result.success && result.data) {
+        console.log("[VisionMission] Using fetched data:", result.data);
         setVisionMissionData(result.data);
       } else if (result.fallback) {
         // Use default if API has fallback
         console.warn("Using fallback vision-mission content");
         setVisionMissionData(DEFAULT_VISION_MISSION);
+      } else {
+        console.warn("[VisionMission] Unexpected response format:", result);
+        setVisionMissionData(DEFAULT_VISION_MISSION);
       }
 
       setError(null);
     } catch (err) {
-      console.error("Error fetching vision-mission:", err);
+      console.error("[VisionMission] Error fetching vision-mission:", err);
       setError(err instanceof Error ? err.message : "Unknown error");
       // Use default content on error
       setVisionMissionData(DEFAULT_VISION_MISSION);
