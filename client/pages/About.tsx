@@ -70,11 +70,11 @@ export default function About() {
         </div>
 
         <div className="relative max-w-7xl mx-auto px-3 text-center">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight text-white">
+          <h1 className="headline-1 font-display mb-8 text-white">
             Building India's AI-First Academic Ecosystem
           </h1>
 
-          <p className="text-xl md:text-2xl font-bold text-white mb-6 max-w-4xl mx-auto leading-relaxed">
+          <p className="subheadline font-display text-white mb-6 max-w-4xl mx-auto">
             A multidisciplinary university where legacy education meets
             industry-grade AI, research, and innovation.
           </p>
@@ -97,7 +97,7 @@ export default function About() {
           </div>
 
           {/* Metrics Connector */}
-          <p className="text-lg font-bold text-white mb-8 max-w-4xl mx-auto">
+          <p className="subheadline font-display text-white mb-8 max-w-4xl mx-auto">
             A legacy built on scale, trust, and academic excellence
           </p>
 
@@ -113,10 +113,10 @@ export default function About() {
                 className="text-center p-3 bg-white/95 backdrop-blur-sm border border-white/40 hover:border-white/60 transition-all duration-300"
               >
                 <stat.icon className="w-8 h-8 text-brand-blue mx-auto mb-3" />
-                <div className="text-3xl font-bold text-slate-900 mb-1">
+                <div className="text-2xl md:text-3xl font-bold text-slate-900 mb-1 font-display">
                   {stat.number}
                 </div>
-                <div className="text-sm text-slate-700">{stat.label}</div>
+                <div className="text-xs md:text-sm text-slate-700 font-body">{stat.label}</div>
               </Card>
             ))}
           </div>
@@ -135,7 +135,7 @@ export default function About() {
           </div>
 
           <div className="space-y-6">
-            <div className="text-lg text-foreground leading-relaxed space-y-3">
+            <div className="text-base md:text-lg text-foreground leading-relaxed space-y-3 font-body">
               <p>
                 Founded in the 1960s, the Dayananda Sagar Institutions have
                 shaped generations of learners. As a state university since
@@ -244,7 +244,7 @@ export default function About() {
                     <div className="w-12 h-12 rounded-2xl bg-brand-blue/10 flex items-center justify-center mb-4 group-hover:bg-brand-blue/20 transition-colors">
                       <Icon className="w-6 h-6 text-brand-blue" />
                     </div>
-                    <CardTitle className="text-xl group-hover:text-brand-blue transition-colors">
+                    <CardTitle className="text-lg md:text-xl font-display group-hover:text-brand-blue transition-colors">
                       {section.title}
                     </CardTitle>
                   </CardHeader>
@@ -253,7 +253,7 @@ export default function About() {
                       {section.bullets.map((bullet, idx) => (
                         <li
                           key={idx}
-                          className="flex gap-3 text-sm leading-relaxed"
+                          className="flex gap-3 text-xs md:text-sm leading-relaxed font-body"
                         >
                           <span className="text-brand-blue font-bold flex-shrink-0">
                             ✓
@@ -312,10 +312,10 @@ export default function About() {
                   <Card className="h-full group hover:shadow-lg hover:shadow-brand-blue/20 transition-all duration-300 hover:border-brand-blue/30 bg-card/50 backdrop-blur-sm border border-border/50 cursor-pointer hover:-translate-y-1">
                     <CardContent className="p-3 text-center">
                       <Icon className="w-10 h-10 text-brand-blue mx-auto mb-4 group-hover:scale-110 transition-transform" />
-                      <h3 className="font-bold text-lg mb-2 group-hover:text-brand-blue transition-colors">
+                      <h3 className="font-bold text-base md:text-lg font-display mb-2 group-hover:text-brand-blue transition-colors">
                         {section.title}
                       </h3>
-                      <p className="text-sm text-foreground">
+                      <p className="text-xs md:text-sm text-foreground font-body">
                         {section.description}
                       </p>
                     </CardContent>
