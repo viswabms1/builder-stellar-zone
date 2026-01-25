@@ -877,7 +877,7 @@ export default function Index() {
                       className={`text-center ${school.key === "medical" ? "space-y-0.25" : "space-y-1.5"}`}
                     >
                       <h3
-                        className={`${school.key === "medical" ? "text-[8px] sm:text-xs md:text-sm leading-tight" : "text-base md:text-lg"} font-bold text-foreground font-display hover:text-brand-magenta transition-colors text-center ${school.key === "medical" ? "line-clamp-4" : "line-clamp-2"}`}
+                        className={`${school.key === "medical" ? "text-[8px] sm:text-xs md:text-sm leading-tight" : "text-base md:text-lg"} font-bold text-foreground font-display hover:text-brand-blue transition-colors text-center ${school.key === "medical" ? "line-clamp-4" : "line-clamp-2"}`}
                       >
                         {school.title}
                       </h3>
