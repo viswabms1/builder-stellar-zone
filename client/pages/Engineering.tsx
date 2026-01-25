@@ -2202,7 +2202,7 @@ export default function Engineering() {
             <Card className="rounded-2xl border border-brand-orange/20 bg-brand-orange/5 backdrop-blur">
               <CardHeader>
                 <CardTitle className="font-display flex items-center gap-2">
-                  <GraduationCap className="h-5 w-5 text-brand-orange" />
+                  <GraduationCap className="h-5 w-5 text-brand-blue" />
                   Career Readiness
                 </CardTitle>
               </CardHeader>
