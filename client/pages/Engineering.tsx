@@ -1906,7 +1906,7 @@ export default function Engineering() {
                     Career pathways with leading companies and startup
                     opportunities
                   </p>
-                  <p className="text-xs text-brand-orange font-medium mt-2">
+                  <p className="text-xs text-brand-blue font-medium mt-2">
                     AI, core engineering, startups & enterprises
                   </p>
                 </CardContent>
