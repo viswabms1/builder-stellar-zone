@@ -1,4 +1,4 @@
-import { ArrowRight, FileText, Clock, AlertCircle, BookOpen } from "lucide-react";
+import { ArrowRight, ArrowLeft, FileText, Clock, AlertCircle, BookOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import {
@@ -90,7 +90,7 @@ export default function LibraryRulesRegulations() {
           <div className="flex justify-center">
             <Button asChild variant="outline">
               <Link to="/library">
-                <ArrowRight className="mr-2 h-4 w-4" />
+                <ArrowLeft className="mr-2 h-4 w-4" />
                 Back to Library
               </Link>
             </Button>
