@@ -1383,10 +1383,10 @@ function EngineeringProgramFinder() {
   return (
     <section className="px-3 py-8 mx-auto max-w-4xl">
       <div className="space-y-8">
-        <Card className="border-2 border-green-500/20 bg-gradient-to-r from-green-500/10 to-emerald-500/10 backdrop-blur-sm">
+        <Card className="border-2 border-brand-blue/20 bg-gradient-to-r from-brand-blue/10 to-brand-blue/5 backdrop-blur-sm">
           <CardHeader>
             <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-green-500/15">
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-blue/15">
                 <Filter className="h-6 w-6 text-brand-blue" />
               </div>
               <div>
@@ -1468,7 +1468,7 @@ function EngineeringProgramFinder() {
             <Card className="border-2 border-green-500/20 bg-gradient-to-r from-green-500/10 to-emerald-500/10">
               <CardHeader>
                 <div className="flex items-center gap-3">
-                  <GraduationCap className="h-8 w-8 text-green-600" />
+                  <GraduationCap className="h-8 w-8 text-brand-blue" />
                   <div>
                     <CardTitle className="text-2xl">
                       {selectedProgram.name}
@@ -1483,10 +1483,10 @@ function EngineeringProgramFinder() {
               </CardHeader>
             </Card>
 
-            <Card className="border-2 border-green-500/20">
+            <Card className="border-2 border-brand-blue/20">
               <CardHeader>
                 <div className="flex items-center gap-3">
-                  <CheckCircle2 className="h-6 w-6 text-green-600" />
+                  <CheckCircle2 className="h-6 w-6 text-brand-blue" />
                   <CardTitle className="text-xl">
                     Eligibility Criteria
                   </CardTitle>
@@ -1530,10 +1530,10 @@ function EngineeringProgramFinder() {
               </CardContent>
             </Card>
 
-            <Card className="border-2 border-green-500/20">
+            <Card className="border-2 border-brand-blue/20">
               <CardHeader>
                 <div className="flex items-center gap-3">
-                  <IndianRupee className="h-6 w-6 text-green-600" />
+                  <IndianRupee className="h-6 w-6 text-brand-blue" />
                   <CardTitle className="text-xl">
                     Fee Structure (2026-27)
                   </CardTitle>
@@ -1549,7 +1549,7 @@ function EngineeringProgramFinder() {
                       <span className="font-semibold text-foreground">
                         {fee.label}
                       </span>
-                      <span className="text-lg font-bold text-green-600">
+                      <span className="text-lg font-bold text-brand-blue">
                         {fee.amount}
                       </span>
                     </div>
