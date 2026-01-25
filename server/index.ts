@@ -17,7 +17,9 @@ import {
 // over any cached values in the Docker container
 if (process.env.OPENAI_API_KEY === "REPLACE_ENV.OPENAI_API_KEY") {
   // This placeholder means the secure key should be injected by the system
-  console.log("[Server] Detected REPLACE_ENV placeholder - awaiting system injection");
+  console.log(
+    "[Server] Detected REPLACE_ENV placeholder - awaiting system injection",
+  );
 }
 
 export function createServer() {

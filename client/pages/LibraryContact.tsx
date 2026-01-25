@@ -1,4 +1,12 @@
-import { ArrowRight, ArrowLeft, Mail, Phone, MapPin, MessageSquare, Clock } from "lucide-react";
+import {
+  ArrowRight,
+  ArrowLeft,
+  Mail,
+  Phone,
+  MapPin,
+  MessageSquare,
+  Clock,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import {
@@ -72,7 +80,9 @@ export default function LibraryContact() {
       {/* Content Section */}
       <section className="py-16 px-3 max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Reach Out To Us</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Reach Out To Us
+          </h2>
           <p className="text-lg text-foreground/70">
             Multiple ways to contact our library for different needs
           </p>
@@ -81,7 +91,10 @@ export default function LibraryContact() {
         {/* Contact Cards */}
         <div className="grid md:grid-cols-2 gap-6 mb-12">
           {contacts.map((contact, idx) => (
-            <Card key={idx} className="border-none shadow-md hover:shadow-lg transition-shadow">
+            <Card
+              key={idx}
+              className="border-none shadow-md hover:shadow-lg transition-shadow"
+            >
               <CardHeader>
                 <CardTitle className="text-xl">{contact.title}</CardTitle>
                 <CardDescription>{contact.description}</CardDescription>
@@ -125,9 +138,12 @@ export default function LibraryContact() {
               <div>
                 <h4 className="font-semibold text-lg mb-2">Main Campus</h4>
                 <p className="text-foreground/70 mb-3">
-                  Devarakaggalahalli<br />
-                  Harohalli, Bengaluru South<br />
-                  Karnataka 562112<br />
+                  Devarakaggalahalli
+                  <br />
+                  Harohalli, Bengaluru South
+                  <br />
+                  Karnataka 562112
+                  <br />
                   India
                 </p>
                 <a
@@ -142,13 +158,17 @@ export default function LibraryContact() {
                 </a>
               </div>
               <div>
-                <h4 className="font-semibold text-lg mb-2">Hours of Operation</h4>
+                <h4 className="font-semibold text-lg mb-2">
+                  Hours of Operation
+                </h4>
                 <div className="flex items-start gap-2 mb-3">
                   <Clock className="h-5 w-5 text-emerald-600 flex-shrink-0 mt-0.5" />
                   <div>
                     <p className="text-foreground/70">
-                      Monday - Saturday<br />
-                      8:00 AM - 6:00 PM<br />
+                      Monday - Saturday
+                      <br />
+                      8:00 AM - 6:00 PM
+                      <br />
                       <br />
                       <em>Closed on Sundays and public holidays</em>
                     </p>
@@ -203,31 +223,45 @@ export default function LibraryContact() {
         {/* FAQ Section */}
         <Card className="border-none shadow-lg">
           <CardHeader>
-            <CardTitle className="text-2xl">Frequently Asked Questions</CardTitle>
+            <CardTitle className="text-2xl">
+              Frequently Asked Questions
+            </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="space-y-2">
-              <h4 className="font-semibold">How do I register for library membership?</h4>
+              <h4 className="font-semibold">
+                How do I register for library membership?
+              </h4>
               <p className="text-foreground/70">
-                All DSU students and staff are eligible. Visit the library with your ID card to register and receive your library card.
+                All DSU students and staff are eligible. Visit the library with
+                your ID card to register and receive your library card.
               </p>
             </div>
             <div className="space-y-2">
-              <h4 className="font-semibold">Can I access the digital library from home?</h4>
+              <h4 className="font-semibold">
+                Can I access the digital library from home?
+              </h4>
               <p className="text-foreground/70">
-                Yes, all registered users can access digital resources 24/7 using their DSU credentials. Contact e-resources@dsu.edu.in for access issues.
+                Yes, all registered users can access digital resources 24/7
+                using their DSU credentials. Contact e-resources@dsu.edu.in for
+                access issues.
               </p>
             </div>
             <div className="space-y-2">
-              <h4 className="font-semibold">What is the maximum borrowing limit?</h4>
+              <h4 className="font-semibold">
+                What is the maximum borrowing limit?
+              </h4>
               <p className="text-foreground/70">
-                It varies by user category. Undergraduates can borrow up to 5 books for 14 days. Faculty can borrow up to 15 books for 30 days.
+                It varies by user category. Undergraduates can borrow up to 5
+                books for 14 days. Faculty can borrow up to 15 books for 30
+                days.
               </p>
             </div>
             <div className="space-y-2">
               <h4 className="font-semibold">How can I renew my books?</h4>
               <p className="text-foreground/70">
-                Visit the library, call the circulation desk, or use the online renewal system if no other user has requested the book.
+                Visit the library, call the circulation desk, or use the online
+                renewal system if no other user has requested the book.
               </p>
             </div>
           </CardContent>
@@ -237,9 +271,12 @@ export default function LibraryContact() {
         <Card className="border-none shadow-lg mt-8 bg-gradient-to-r from-emerald-500/10 to-teal-500/10">
           <CardContent className="pt-6">
             <div className="text-center">
-              <h3 className="text-2xl font-bold mb-3">Need Immediate Assistance?</h3>
+              <h3 className="text-2xl font-bold mb-3">
+                Need Immediate Assistance?
+              </h3>
               <p className="text-foreground/70 mb-6">
-                Visit us in person or send an email for quick responses to your queries
+                Visit us in person or send an email for quick responses to your
+                queries
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button asChild className="bg-emerald-600 hover:bg-emerald-700">

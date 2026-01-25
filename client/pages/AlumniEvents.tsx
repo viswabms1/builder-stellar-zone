@@ -1,4 +1,11 @@
-import { ArrowRight, ArrowLeft, Calendar, MapPin, Users, Clock } from "lucide-react";
+import {
+  ArrowRight,
+  ArrowLeft,
+  Calendar,
+  MapPin,
+  Users,
+  Clock,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import {
@@ -15,7 +22,8 @@ export default function AlumniEvents() {
       title: "Alumni Reunion 2026",
       date: "March 15-17, 2026",
       location: "DSU Campus, Bangalore",
-      description: "Annual celebration bringing together alumni from all batches",
+      description:
+        "Annual celebration bringing together alumni from all batches",
       category: "Reunion",
     },
     {
@@ -106,7 +114,10 @@ export default function AlumniEvents() {
 
           <div className="grid md:grid-cols-2 gap-6">
             {upcomingEvents.map((event, idx) => (
-              <Card key={idx} className="border-none shadow-md hover:shadow-lg transition-shadow">
+              <Card
+                key={idx}
+                className="border-none shadow-md hover:shadow-lg transition-shadow"
+              >
                 <CardHeader>
                   <div className="flex items-start justify-between mb-2">
                     <div className="flex-1">
@@ -126,9 +137,18 @@ export default function AlumniEvents() {
                     <MapPin className="h-4 w-4" />
                     <span>{event.location}</span>
                   </div>
-                  <p className="text-foreground/70 text-sm">{event.description}</p>
-                  <Button asChild className="w-full mt-4 bg-amber-600 hover:bg-amber-700">
-                    <a href="https://alumni.dsu.edu.in/" target="_blank" rel="noopener noreferrer">
+                  <p className="text-foreground/70 text-sm">
+                    {event.description}
+                  </p>
+                  <Button
+                    asChild
+                    className="w-full mt-4 bg-amber-600 hover:bg-amber-700"
+                  >
+                    <a
+                      href="https://alumni.dsu.edu.in/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       Register Now <ArrowRight className="ml-2 h-4 w-4" />
                     </a>
                   </Button>
@@ -154,7 +174,9 @@ export default function AlumniEvents() {
                   Reunions & Celebrations
                 </h4>
                 <p className="text-foreground/70">
-                  Annual alumni reunions, batch gatherings, and celebration dinners to reconnect with classmates and create lasting memories.
+                  Annual alumni reunions, batch gatherings, and celebration
+                  dinners to reconnect with classmates and create lasting
+                  memories.
                 </p>
               </div>
               <div className="space-y-3">
@@ -163,7 +185,8 @@ export default function AlumniEvents() {
                   Networking Events
                 </h4>
                 <p className="text-foreground/70">
-                  Professional networking breakfasts, industry meetups, and mentorship sessions to expand your professional circle.
+                  Professional networking breakfasts, industry meetups, and
+                  mentorship sessions to expand your professional circle.
                 </p>
               </div>
               <div className="space-y-3">
@@ -172,7 +195,8 @@ export default function AlumniEvents() {
                   Educational Programs
                 </h4>
                 <p className="text-foreground/70">
-                  Workshops, seminars, and training programs on career development, skill enhancement, and industry trends.
+                  Workshops, seminars, and training programs on career
+                  development, skill enhancement, and industry trends.
                 </p>
               </div>
               <div className="space-y-3">
@@ -181,7 +205,8 @@ export default function AlumniEvents() {
                   Regional Chapters
                 </h4>
                 <p className="text-foreground/70">
-                  Local chapter meetups in different cities bringing together alumni in your region for social and professional events.
+                  Local chapter meetups in different cities bringing together
+                  alumni in your region for social and professional events.
                 </p>
               </div>
             </div>
@@ -211,7 +236,9 @@ export default function AlumniEvents() {
                     </div>
                     <div className="flex items-center gap-2">
                       <Users className="h-4 w-4" />
-                      <span className="text-sm">{event.attendees} attended</span>
+                      <span className="text-sm">
+                        {event.attendees} attended
+                      </span>
                     </div>
                   </div>
                 </CardContent>
@@ -223,9 +250,12 @@ export default function AlumniEvents() {
         {/* Call to Action */}
         <Card className="border-none shadow-lg bg-gradient-to-r from-amber-600/10 to-orange-600/10 dark:from-amber-950/30 dark:to-orange-950/30">
           <CardContent className="py-12 text-center">
-            <h3 className="text-2xl md:text-3xl font-bold mb-4">Stay Updated on Alumni Events</h3>
+            <h3 className="text-2xl md:text-3xl font-bold mb-4">
+              Stay Updated on Alumni Events
+            </h3>
             <p className="text-lg text-foreground/70 mb-6 max-w-2xl mx-auto">
-              Subscribe to our newsletter to receive updates about upcoming events and special gatherings
+              Subscribe to our newsletter to receive updates about upcoming
+              events and special gatherings
             </p>
             <Button asChild className="bg-amber-600 hover:bg-amber-700">
               <Link to="/alumni/newsletter">

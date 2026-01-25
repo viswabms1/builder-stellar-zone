@@ -1,4 +1,12 @@
-import { ArrowRight, ArrowLeft, ExternalLink, Globe, Database, BookOpen, Zap } from "lucide-react";
+import {
+  ArrowRight,
+  ArrowLeft,
+  ExternalLink,
+  Globe,
+  Database,
+  BookOpen,
+  Zap,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import {
@@ -152,7 +160,9 @@ export default function LibraryUsefulLinks() {
       {/* Content Section */}
       <section className="py-16 px-3 max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">External Resources</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            External Resources
+          </h2>
           <p className="text-lg text-foreground/70">
             Handpicked links to enhance your research and learning
           </p>
@@ -167,23 +177,38 @@ export default function LibraryUsefulLinks() {
                   <div className="p-2 rounded-lg bg-indigo-500/10">
                     <Icon className="h-6 w-6 text-indigo-600" />
                   </div>
-                  <h3 className="text-2xl md:text-3xl font-bold">{section.category}</h3>
+                  <h3 className="text-2xl md:text-3xl font-bold">
+                    {section.category}
+                  </h3>
                 </div>
                 <div className="grid md:grid-cols-2 gap-4">
                   {section.items.map((item, i) => (
-                    <Card key={i} className="border-none shadow-md hover:shadow-lg transition-shadow group">
+                    <Card
+                      key={i}
+                      className="border-none shadow-md hover:shadow-lg transition-shadow group"
+                    >
                       <CardContent className="pt-6">
                         <div className="flex items-start justify-between gap-4">
                           <div className="flex-1">
                             <h4 className="font-semibold text-lg mb-1 group-hover:text-indigo-600 transition-colors">
                               {item.name}
                             </h4>
-                            <p className="text-sm text-foreground/70 mb-3">{item.description}</p>
+                            <p className="text-sm text-foreground/70 mb-3">
+                              {item.description}
+                            </p>
                           </div>
                           <ExternalLink className="h-5 w-5 text-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0" />
                         </div>
-                        <Button asChild variant="ghost" className="w-full justify-start px-0">
-                          <a href={item.url} target="_blank" rel="noopener noreferrer">
+                        <Button
+                          asChild
+                          variant="ghost"
+                          className="w-full justify-start px-0"
+                        >
+                          <a
+                            href={item.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
                             Visit <ArrowRight className="ml-2 h-4 w-4" />
                           </a>
                         </Button>
@@ -199,7 +224,9 @@ export default function LibraryUsefulLinks() {
         {/* Recommended Resources */}
         <Card className="border-none shadow-lg mt-12 bg-indigo-50 dark:bg-indigo-950/30">
           <CardHeader>
-            <CardTitle className="text-3xl md:text-4xl">Recommended Resources</CardTitle>
+            <CardTitle className="text-3xl md:text-4xl">
+              Recommended Resources
+            </CardTitle>
             <CardDescription className="text-lg">
               Essential tools and platforms for academic success
             </CardDescription>
@@ -216,7 +243,9 @@ export default function LibraryUsefulLinks() {
                 </ul>
               </div>
               <div>
-                <h4 className="font-semibold text-lg mb-3">For Writing & Citations</h4>
+                <h4 className="font-semibold text-lg mb-3">
+                  For Writing & Citations
+                </h4>
                 <ul className="space-y-2 text-foreground/70">
                   <li>• Zotero for reference management</li>
                   <li>• Grammarly for writing assistance</li>

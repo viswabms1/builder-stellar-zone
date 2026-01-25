@@ -1,4 +1,12 @@
-import { ArrowRight, ArrowLeft, Building, Users, Award, Globe, CheckCircle } from "lucide-react";
+import {
+  ArrowRight,
+  ArrowLeft,
+  Building,
+  Users,
+  Award,
+  Globe,
+  CheckCircle,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import {
@@ -109,7 +117,9 @@ export default function LibraryCorporateMembership() {
       {/* Content Section */}
       <section className="py-16 px-3 max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Benefits of Corporate Membership</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Benefits of Corporate Membership
+          </h2>
           <p className="text-lg text-foreground/70">
             Unlock comprehensive library resources for your organization
           </p>
@@ -119,13 +129,20 @@ export default function LibraryCorporateMembership() {
           {benefits.map((benefit, idx) => {
             const Icon = benefit.icon;
             return (
-              <Card key={idx} className="border-none shadow-md hover:shadow-lg transition-shadow">
+              <Card
+                key={idx}
+                className="border-none shadow-md hover:shadow-lg transition-shadow"
+              >
                 <CardContent className="pt-6">
                   <div className="p-3 rounded-lg bg-cyan-500/10 w-fit mb-4">
                     <Icon className="h-6 w-6 text-cyan-600" />
                   </div>
-                  <h3 className="font-semibold text-lg mb-2">{benefit.title}</h3>
-                  <p className="text-sm text-foreground/70">{benefit.description}</p>
+                  <h3 className="font-semibold text-lg mb-2">
+                    {benefit.title}
+                  </h3>
+                  <p className="text-sm text-foreground/70">
+                    {benefit.description}
+                  </p>
                 </CardContent>
               </Card>
             );
@@ -134,27 +151,39 @@ export default function LibraryCorporateMembership() {
 
         {/* Membership Packages */}
         <div className="mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">Membership Packages</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">
+            Membership Packages
+          </h2>
           <div className="grid md:grid-cols-3 gap-6">
             {packages.map((pkg, idx) => (
-              <Card key={idx} className={`border-none shadow-lg hover:shadow-xl transition-all ${idx === 1 ? 'ring-2 ring-cyan-500 scale-105' : ''}`}>
+              <Card
+                key={idx}
+                className={`border-none shadow-lg hover:shadow-xl transition-all ${idx === 1 ? "ring-2 ring-cyan-500 scale-105" : ""}`}
+              >
                 <CardHeader>
                   <CardTitle className="text-2xl">{pkg.name}</CardTitle>
                   <CardDescription className="text-lg font-semibold text-cyan-600">
                     {pkg.price}
                   </CardDescription>
-                  <p className="text-sm text-foreground/70 mt-2">{pkg.duration}</p>
+                  <p className="text-sm text-foreground/70 mt-2">
+                    {pkg.duration}
+                  </p>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <ul className="space-y-2">
                     {pkg.features.map((feature, i) => (
                       <li key={i} className="flex items-start gap-2">
                         <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                        <span className="text-sm text-foreground/70">{feature}</span>
+                        <span className="text-sm text-foreground/70">
+                          {feature}
+                        </span>
                       </li>
                     ))}
                   </ul>
-                  <Button asChild className="w-full mt-4 bg-cyan-600 hover:bg-cyan-700">
+                  <Button
+                    asChild
+                    className="w-full mt-4 bg-cyan-600 hover:bg-cyan-700"
+                  >
                     <Link to="/library/contact">
                       Inquire Now <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
@@ -180,7 +209,10 @@ export default function LibraryCorporateMembership() {
             <ul className="space-y-3">
               <li className="flex gap-3">
                 <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                <span>Access to over 5 lakh volumes and comprehensive digital resources</span>
+                <span>
+                  Access to over 5 lakh volumes and comprehensive digital
+                  resources
+                </span>
               </li>
               <li className="flex gap-3">
                 <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
@@ -188,11 +220,15 @@ export default function LibraryCorporateMembership() {
               </li>
               <li className="flex gap-3">
                 <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                <span>Personalized research support and consultation services</span>
+                <span>
+                  Personalized research support and consultation services
+                </span>
               </li>
               <li className="flex gap-3">
                 <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                <span>Flexible membership options tailored to organization needs</span>
+                <span>
+                  Flexible membership options tailored to organization needs
+                </span>
               </li>
               <li className="flex gap-3">
                 <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
@@ -215,13 +251,15 @@ export default function LibraryCorporateMembership() {
           <CardHeader>
             <CardTitle className="text-2xl">Ready to Get Started?</CardTitle>
             <CardDescription>
-              Contact our Corporate Membership team to discuss your organization's needs
+              Contact our Corporate Membership team to discuss your
+              organization's needs
             </CardDescription>
           </CardHeader>
           <CardContent>
             <Button asChild className="w-full bg-cyan-600 hover:bg-cyan-700">
               <Link to="/library/contact">
-                Contact Corporate Membership <ArrowRight className="ml-2 h-4 w-4" />
+                Contact Corporate Membership{" "}
+                <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
           </CardContent>

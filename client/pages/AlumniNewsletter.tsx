@@ -1,4 +1,11 @@
-import { ArrowRight, ArrowLeft, Mail, TrendingUp, Users, Star } from "lucide-react";
+import {
+  ArrowRight,
+  ArrowLeft,
+  Mail,
+  TrendingUp,
+  Users,
+  Star,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import {
@@ -19,12 +26,20 @@ export default function AlumniNewsletter() {
     {
       title: "DSU Alumni Digest - December 2025",
       date: "December 2025",
-      highlights: ["Year-End Review", "Holiday Celebrations", "New Initiatives"],
+      highlights: [
+        "Year-End Review",
+        "Holiday Celebrations",
+        "New Initiatives",
+      ],
     },
     {
       title: "DSU Alumni Digest - November 2025",
       date: "November 2025",
-      highlights: ["Campus Updates", "Alumni Network News", "Industry Insights"],
+      highlights: [
+        "Campus Updates",
+        "Alumni Network News",
+        "Industry Insights",
+      ],
     },
   ];
 
@@ -32,7 +47,8 @@ export default function AlumniNewsletter() {
     {
       icon: TrendingUp,
       title: "Alumni Success Stories",
-      description: "Inspiring achievements and career trajectories of DSU alumni",
+      description:
+        "Inspiring achievements and career trajectories of DSU alumni",
     },
     {
       icon: Users,
@@ -93,15 +109,27 @@ export default function AlumniNewsletter() {
               Your monthly source for alumni news and university updates
             </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-6 text-foreground/80 leading-relaxed" style={{ backgroundColor: "rgba(0, 0, 0, 0.7)" }}>
+          <CardContent
+            className="space-y-6 text-foreground/80 leading-relaxed"
+            style={{ backgroundColor: "rgba(0, 0, 0, 0.7)" }}
+          >
             <p>
-              The DSU Alumni Digest is our flagship publication connecting alumni worldwide with the latest updates from campus, inspiring success stories from fellow alumni, and information about community events and opportunities.
+              The DSU Alumni Digest is our flagship publication connecting
+              alumni worldwide with the latest updates from campus, inspiring
+              success stories from fellow alumni, and information about
+              community events and opportunities.
             </p>
             <p>
-              Published monthly, our newsletter celebrates alumni achievements, shares news about the university's academic and research initiatives, and highlights upcoming events where alumni can reconnect and engage.
+              Published monthly, our newsletter celebrates alumni achievements,
+              shares news about the university's academic and research
+              initiatives, and highlights upcoming events where alumni can
+              reconnect and engage.
             </p>
             <p>
-              Whether you're interested in staying informed about campus developments, networking with fellow alumni, or discovering how you can contribute to DSU's future, the Alumni Digest keeps you connected to your alma mater and your alumni family.
+              Whether you're interested in staying informed about campus
+              developments, networking with fellow alumni, or discovering how
+              you can contribute to DSU's future, the Alumni Digest keeps you
+              connected to your alma mater and your alumni family.
             </p>
           </CardContent>
         </Card>
@@ -121,11 +149,18 @@ export default function AlumniNewsletter() {
             {features.map((feature, idx) => {
               const Icon = feature.icon;
               return (
-                <Card key={idx} className="border-none shadow-md hover:shadow-lg transition-shadow">
+                <Card
+                  key={idx}
+                  className="border-none shadow-md hover:shadow-lg transition-shadow"
+                >
                   <CardContent className="pt-6">
                     <Icon className="h-8 w-8 text-green-600 mb-4" />
-                    <h3 className="font-semibold text-lg mb-2">{feature.title}</h3>
-                    <p className="text-sm text-foreground/70">{feature.description}</p>
+                    <h3 className="font-semibold text-lg mb-2">
+                      {feature.title}
+                    </h3>
+                    <p className="text-sm text-foreground/70">
+                      {feature.description}
+                    </p>
                   </CardContent>
                 </Card>
               );
@@ -146,12 +181,19 @@ export default function AlumniNewsletter() {
 
           <div className="space-y-4">
             {newsletters.map((newsletter, idx) => (
-              <Card key={idx} className="border-none shadow-md hover:shadow-lg transition-shadow">
+              <Card
+                key={idx}
+                className="border-none shadow-md hover:shadow-lg transition-shadow"
+              >
                 <CardContent className="py-6">
                   <div className="flex items-start justify-between">
                     <div className="flex-1">
-                      <h3 className="font-semibold text-lg mb-2">{newsletter.title}</h3>
-                      <p className="text-foreground/70 mb-3">{newsletter.date}</p>
+                      <h3 className="font-semibold text-lg mb-2">
+                        {newsletter.title}
+                      </h3>
+                      <p className="text-foreground/70 mb-3">
+                        {newsletter.date}
+                      </p>
                       <div className="flex flex-wrap gap-2">
                         {newsletter.highlights.map((highlight, i) => (
                           <span
@@ -163,8 +205,15 @@ export default function AlumniNewsletter() {
                         ))}
                       </div>
                     </div>
-                    <Button asChild className="ml-4 bg-green-600 hover:bg-green-700">
-                      <a href="https://alumni.dsu.edu.in/" target="_blank" rel="noopener noreferrer">
+                    <Button
+                      asChild
+                      className="ml-4 bg-green-600 hover:bg-green-700"
+                    >
+                      <a
+                        href="https://alumni.dsu.edu.in/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         Read <ArrowRight className="ml-2 h-4 w-4" />
                       </a>
                     </Button>
@@ -178,14 +227,22 @@ export default function AlumniNewsletter() {
         {/* Subscribe Section */}
         <Card className="border-none shadow-lg bg-green-50 dark:bg-slate-800">
           <CardHeader style={{ backgroundColor: "rgba(0, 0, 0, 1)" }}>
-            <CardTitle className="text-3xl">Subscribe to Our Newsletter</CardTitle>
+            <CardTitle className="text-3xl">
+              Subscribe to Our Newsletter
+            </CardTitle>
             <CardDescription className="text-lg">
               Never miss an update from the DSU alumni community
             </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-6" style={{ backgroundColor: "rgba(0, 0, 0, 0.7)" }}>
+          <CardContent
+            className="space-y-6"
+            style={{ backgroundColor: "rgba(0, 0, 0, 0.7)" }}
+          >
             <p className="text-foreground/80 leading-relaxed">
-              Stay connected with monthly updates on alumni achievements, university news, upcoming events, and ways to get involved. Subscribe to the DSU Alumni Digest today and become part of our thriving global alumni community.
+              Stay connected with monthly updates on alumni achievements,
+              university news, upcoming events, and ways to get involved.
+              Subscribe to the DSU Alumni Digest today and become part of our
+              thriving global alumni community.
             </p>
             <div className="space-y-3">
               <p className="font-semibold">Subscribe benefits:</p>
@@ -198,7 +255,11 @@ export default function AlumniNewsletter() {
               </ul>
             </div>
             <Button asChild className="w-full bg-green-600 hover:bg-green-700">
-              <a href="https://alumni.dsu.edu.in/" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://alumni.dsu.edu.in/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Subscribe Now <Mail className="ml-2 h-4 w-4" />
               </a>
             </Button>
@@ -215,7 +276,8 @@ export default function AlumniNewsletter() {
           </CardHeader>
           <CardContent>
             <p className="text-foreground/70 mb-4">
-              Have suggestions for newsletter content or want to share your story? We'd love to hear from you!
+              Have suggestions for newsletter content or want to share your
+              story? We'd love to hear from you!
             </p>
             <Button asChild variant="outline">
               <Link to="/alumni/contact">

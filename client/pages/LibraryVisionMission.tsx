@@ -53,10 +53,17 @@ export default function LibraryVisionMission() {
           </CardHeader>
           <CardContent className="space-y-4">
             <p className="text-lg leading-relaxed text-foreground/80">
-              The DSU Central Library envisions itself as a premier knowledge hub that serves as the intellectual heart of the university. We aspire to be recognized as a model library that seamlessly integrates traditional and digital resources to support world-class education and research.
+              The DSU Central Library envisions itself as a premier knowledge
+              hub that serves as the intellectual heart of the university. We
+              aspire to be recognized as a model library that seamlessly
+              integrates traditional and digital resources to support
+              world-class education and research.
             </p>
             <p className="text-lg leading-relaxed text-foreground/80">
-              Our vision is to empower learners and researchers by providing comprehensive access to global knowledge, fostering critical thinking, and promoting academic excellence across all disciplines.
+              Our vision is to empower learners and researchers by providing
+              comprehensive access to global knowledge, fostering critical
+              thinking, and promoting academic excellence across all
+              disciplines.
             </p>
           </CardContent>
         </Card>
@@ -73,14 +80,25 @@ export default function LibraryVisionMission() {
               The DSU Central Library is committed to:
             </p>
             <ul className="list-disc list-inside space-y-2 text-lg text-foreground/80">
-              <li>Providing comprehensive collections of print and digital resources</li>
-              <li>Facilitating access to global knowledge and information sources</li>
+              <li>
+                Providing comprehensive collections of print and digital
+                resources
+              </li>
+              <li>
+                Facilitating access to global knowledge and information sources
+              </li>
               <li>Supporting academic programs and research initiatives</li>
               <li>Promoting information literacy and research skills</li>
               <li>Creating an inclusive and welcoming learning environment</li>
               <li>Fostering intellectual discourse and academic growth</li>
-              <li>Maintaining the highest standards of library services and professional ethics</li>
-              <li>Embracing technology to enhance user experience and accessibility</li>
+              <li>
+                Maintaining the highest standards of library services and
+                professional ethics
+              </li>
+              <li>
+                Embracing technology to enhance user experience and
+                accessibility
+              </li>
             </ul>
           </CardContent>
         </Card>
@@ -137,7 +155,8 @@ export default function LibraryVisionMission() {
         <div className="mt-12 text-center">
           <Button asChild className="bg-blue-600 hover:bg-blue-700">
             <Link to="/library">
-              Explore More Library Services <ArrowRight className="ml-2 h-4 w-4" />
+              Explore More Library Services{" "}
+              <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
         </div>

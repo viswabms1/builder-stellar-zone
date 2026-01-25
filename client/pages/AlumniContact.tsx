@@ -50,9 +50,7 @@ export default function AlumniContact() {
           <Card className="border-none shadow-lg">
             <CardHeader>
               <CardTitle className="text-2xl">Alumni Office</CardTitle>
-              <CardDescription>
-                Dayananda Sagar University
-              </CardDescription>
+              <CardDescription>Dayananda Sagar University</CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="space-y-2">
@@ -61,8 +59,10 @@ export default function AlumniContact() {
                   Address
                 </h4>
                 <p className="text-foreground/70">
-                  Dayananda Sagar University<br />
-                  Bangalore, India<br />
+                  Dayananda Sagar University
+                  <br />
+                  Bangalore, India
+                  <br />
                   Campus Location
                 </p>
               </div>
@@ -85,7 +85,10 @@ export default function AlumniContact() {
                   <Phone className="h-5 w-5 text-red-600" />
                   Phone
                 </h4>
-                <a href="tel:+919000000000" className="text-blue-600 dark:text-blue-400 hover:text-blue-700">
+                <a
+                  href="tel:+919000000000"
+                  className="text-blue-600 dark:text-blue-400 hover:text-blue-700"
+                >
                   +91-XXXXXXXXXX
                 </a>
               </div>
@@ -96,8 +99,10 @@ export default function AlumniContact() {
                   Office Hours
                 </h4>
                 <p className="text-foreground/70">
-                  Monday - Friday<br />
-                  9:00 AM - 5:00 PM IST<br />
+                  Monday - Friday
+                  <br />
+                  9:00 AM - 5:00 PM IST
+                  <br />
                   Saturday & Sunday - Closed
                 </p>
               </div>
@@ -108,9 +113,7 @@ export default function AlumniContact() {
           <Card className="border-none shadow-lg">
             <CardHeader>
               <CardTitle className="text-2xl">Connect With Us</CardTitle>
-              <CardDescription>
-                Find us on different platforms
-              </CardDescription>
+              <CardDescription>Find us on different platforms</CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="space-y-3">
@@ -119,10 +122,15 @@ export default function AlumniContact() {
                   Alumni Portal
                 </h4>
                 <p className="text-foreground/70 mb-3">
-                  Access the dedicated alumni portal for registration, networking, and exclusive resources.
+                  Access the dedicated alumni portal for registration,
+                  networking, and exclusive resources.
                 </p>
                 <Button asChild className="w-full bg-red-600 hover:bg-red-700">
-                  <a href="https://alumni.dsu.edu.in/" target="_blank" rel="noopener noreferrer">
+                  <a
+                    href="https://alumni.dsu.edu.in/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     Visit Alumni Portal <ArrowRight className="ml-2 h-4 w-4" />
                   </a>
                 </Button>
@@ -131,26 +139,43 @@ export default function AlumniContact() {
               <div className="border-t pt-6">
                 <h4 className="font-semibold mb-3">Follow Us</h4>
                 <p className="text-foreground/70 mb-3">
-                  Stay updated through our social media channels for news, events, and alumni stories.
+                  Stay updated through our social media channels for news,
+                  events, and alumni stories.
                 </p>
                 <div className="flex gap-3 flex-wrap">
                   <Button asChild variant="outline" size="sm">
-                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                    <a
+                      href="https://facebook.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       Facebook
                     </a>
                   </Button>
                   <Button asChild variant="outline" size="sm">
-                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                    <a
+                      href="https://linkedin.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       LinkedIn
                     </a>
                   </Button>
                   <Button asChild variant="outline" size="sm">
-                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+                    <a
+                      href="https://twitter.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       Twitter
                     </a>
                   </Button>
                   <Button asChild variant="outline" size="sm">
-                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                    <a
+                      href="https://instagram.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       Instagram
                     </a>
                   </Button>
@@ -173,10 +198,15 @@ export default function AlumniContact() {
               <div className="space-y-3">
                 <h4 className="font-semibold text-lg">Alumni Registration</h4>
                 <p className="text-foreground/70 mb-3">
-                  New to our alumni network? Register with the alumni portal to access exclusive benefits and connect with fellow alumni.
+                  New to our alumni network? Register with the alumni portal to
+                  access exclusive benefits and connect with fellow alumni.
                 </p>
                 <Button asChild variant="outline" size="sm">
-                  <a href="https://alumni.dsu.edu.in/" target="_blank" rel="noopener noreferrer">
+                  <a
+                    href="https://alumni.dsu.edu.in/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     Register <ArrowRight className="ml-2 h-4 w-4" />
                   </a>
                 </Button>
@@ -185,7 +215,8 @@ export default function AlumniContact() {
               <div className="space-y-3">
                 <h4 className="font-semibold text-lg">Events & Gatherings</h4>
                 <p className="text-foreground/70 mb-3">
-                  Looking for information about upcoming alumni events, reunions, or networking opportunities?
+                  Looking for information about upcoming alumni events,
+                  reunions, or networking opportunities?
                 </p>
                 <Button asChild variant="outline" size="sm">
                   <Link to="/alumni/events">
@@ -197,7 +228,8 @@ export default function AlumniContact() {
               <div className="space-y-3">
                 <h4 className="font-semibold text-lg">Newsletter</h4>
                 <p className="text-foreground/70 mb-3">
-                  Want to stay updated with alumni news, success stories, and university announcements?
+                  Want to stay updated with alumni news, success stories, and
+                  university announcements?
                 </p>
                 <Button asChild variant="outline" size="sm">
                   <Link to="/alumni/newsletter">
@@ -209,7 +241,8 @@ export default function AlumniContact() {
               <div className="space-y-3">
                 <h4 className="font-semibold text-lg">Mentorship Programs</h4>
                 <p className="text-foreground/70 mb-3">
-                  Interested in mentoring current students or seeking guidance from experienced alumni?
+                  Interested in mentoring current students or seeking guidance
+                  from experienced alumni?
                 </p>
                 <Button asChild variant="outline" size="sm">
                   <a href="mailto:alumni@dsu.edu.in">
@@ -221,10 +254,15 @@ export default function AlumniContact() {
               <div className="space-y-3">
                 <h4 className="font-semibold text-lg">Giving Back</h4>
                 <p className="text-foreground/70 mb-3">
-                  Support the future of DSU through scholarships, awards, and mentorship programs.
+                  Support the future of DSU through scholarships, awards, and
+                  mentorship programs.
                 </p>
                 <Button asChild variant="outline" size="sm">
-                  <a href="https://alumni.dsu.edu.in/" target="_blank" rel="noopener noreferrer">
+                  <a
+                    href="https://alumni.dsu.edu.in/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     Contribute <ArrowRight className="ml-2 h-4 w-4" />
                   </a>
                 </Button>
@@ -233,7 +271,8 @@ export default function AlumniContact() {
               <div className="space-y-3">
                 <h4 className="font-semibold text-lg">Career Services</h4>
                 <p className="text-foreground/70 mb-3">
-                  Seeking career opportunities, professional development, or networking with alumni in your field?
+                  Seeking career opportunities, professional development, or
+                  networking with alumni in your field?
                 </p>
                 <Button asChild variant="outline" size="sm">
                   <a href="mailto:alumni@dsu.edu.in">
@@ -255,13 +294,20 @@ export default function AlumniContact() {
           </CardHeader>
           <CardContent className="space-y-4">
             <p className="text-foreground/70">
-              For detailed inquiries about events, mentorship programs, giving opportunities, or any other alumni-related matters, please use the contact form available on the alumni portal.
+              For detailed inquiries about events, mentorship programs, giving
+              opportunities, or any other alumni-related matters, please use the
+              contact form available on the alumni portal.
             </p>
             <p className="text-foreground/70">
-              We typically respond to inquiries within 2-3 business days. For urgent matters, please call our office during business hours.
+              We typically respond to inquiries within 2-3 business days. For
+              urgent matters, please call our office during business hours.
             </p>
             <Button asChild className="bg-red-600 hover:bg-red-700">
-              <a href="https://alumni.dsu.edu.in/" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://alumni.dsu.edu.in/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Go to Alumni Portal <ArrowRight className="ml-2 h-4 w-4" />
               </a>
             </Button>

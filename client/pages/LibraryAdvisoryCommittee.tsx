@@ -100,28 +100,41 @@ export default function LibraryAdvisoryCommittee() {
       {/* Content Section */}
       <section className="py-16 px-3 max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Committee Structure</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Committee Structure
+          </h2>
           <p className="text-lg text-foreground/70">
-            Multiple specialized committees overseeing different aspects of library operations
+            Multiple specialized committees overseeing different aspects of
+            library operations
           </p>
         </div>
 
         <div className="space-y-8 mb-12">
           {committees.map((committee, idx) => (
-            <Card key={idx} className="border-none shadow-md hover:shadow-lg transition-shadow">
+            <Card
+              key={idx}
+              className="border-none shadow-md hover:shadow-lg transition-shadow"
+            >
               <CardHeader>
                 <CardTitle className="text-2xl flex items-center gap-2">
                   <Award className="h-6 w-6 text-violet-600" />
                   {committee.name}
                 </CardTitle>
-                <CardDescription className="text-base">{committee.role}</CardDescription>
+                <CardDescription className="text-base">
+                  {committee.role}
+                </CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
                 <div>
-                  <h4 className="font-semibold text-lg mb-3">Committee Members</h4>
+                  <h4 className="font-semibold text-lg mb-3">
+                    Committee Members
+                  </h4>
                   <ul className="space-y-2">
                     {committee.members.map((member, i) => (
-                      <li key={i} className="text-foreground/70 flex items-center gap-2">
+                      <li
+                        key={i}
+                        className="text-foreground/70 flex items-center gap-2"
+                      >
                         <span className="h-2 w-2 rounded-full bg-violet-600"></span>
                         {member}
                       </li>
@@ -129,10 +142,15 @@ export default function LibraryAdvisoryCommittee() {
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-lg mb-3">Key Responsibilities</h4>
+                  <h4 className="font-semibold text-lg mb-3">
+                    Key Responsibilities
+                  </h4>
                   <ul className="space-y-2">
                     {committee.responsibilities.map((resp, i) => (
-                      <li key={i} className="text-foreground/70 flex items-start gap-2">
+                      <li
+                        key={i}
+                        className="text-foreground/70 flex items-start gap-2"
+                      >
                         <span className="h-1.5 w-1.5 rounded-full bg-violet-600 mt-1.5 flex-shrink-0"></span>
                         <span>{resp}</span>
                       </li>
@@ -155,9 +173,16 @@ export default function LibraryAdvisoryCommittee() {
               Collaborative approach to library management
             </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-4" style={{ backgroundColor: "rgba(0, 0, 0, 0.6)" }}>
+          <CardContent
+            className="space-y-4"
+            style={{ backgroundColor: "rgba(0, 0, 0, 0.6)" }}
+          >
             <p className="text-foreground/80">
-              The DSU Central Library operates under a well-defined governance structure that ensures transparency, accountability, and continuous improvement. Our committees comprise faculty members, students, and library professionals working collaboratively to serve the university community.
+              The DSU Central Library operates under a well-defined governance
+              structure that ensures transparency, accountability, and
+              continuous improvement. Our committees comprise faculty members,
+              students, and library professionals working collaboratively to
+              serve the university community.
             </p>
             <div className="grid md:grid-cols-3 gap-4 mt-6">
               <div className="p-4 border rounded-lg">
@@ -203,20 +228,25 @@ export default function LibraryAdvisoryCommittee() {
             <div>
               <h4 className="font-semibold mb-2">Meeting Frequency</h4>
               <p className="text-foreground/70">
-                Library Advisory Committee: Meets quarterly or as needed<br />
+                Library Advisory Committee: Meets quarterly or as needed
+                <br />
                 Subcommittees: Meet bi-monthly or as per requirement
               </p>
             </div>
             <div>
               <h4 className="font-semibold mb-2">Meeting Agendas</h4>
               <p className="text-foreground/70">
-                Meeting agendas are prepared with input from committee members and focus on current library initiatives, budget matters, and strategic priorities.
+                Meeting agendas are prepared with input from committee members
+                and focus on current library initiatives, budget matters, and
+                strategic priorities.
               </p>
             </div>
             <div>
               <h4 className="font-semibold mb-2">Feedback & Suggestions</h4>
               <p className="text-foreground/70">
-                The committees welcome feedback and suggestions from the university community. You can share your ideas and concerns through email or during library consultations.
+                The committees welcome feedback and suggestions from the
+                university community. You can share your ideas and concerns
+                through email or during library consultations.
               </p>
             </div>
           </CardContent>
@@ -232,7 +262,10 @@ export default function LibraryAdvisoryCommittee() {
           </CardHeader>
           <CardContent>
             <p className="text-foreground/70 mb-4">
-              We welcome faculty and student representatives who are interested in contributing to library governance and improvement. Contact the Chief Librarian for more information about committee opportunities.
+              We welcome faculty and student representatives who are interested
+              in contributing to library governance and improvement. Contact the
+              Chief Librarian for more information about committee
+              opportunities.
             </p>
             <Button asChild className="w-full">
               <Link to="/library/contact">

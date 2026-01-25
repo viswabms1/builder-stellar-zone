@@ -1,4 +1,11 @@
-import { ArrowRight, ArrowLeft, FileText, Clock, AlertCircle, BookOpen } from "lucide-react";
+import {
+  ArrowRight,
+  ArrowLeft,
+  FileText,
+  Clock,
+  AlertCircle,
+  BookOpen,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import {
@@ -101,9 +108,12 @@ export default function LibraryRulesRegulations() {
       {/* Content Section */}
       <section className="py-16 px-3 max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Library Guidelines</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Library Guidelines
+          </h2>
           <p className="text-lg text-foreground/70">
-            Important rules to ensure a productive and respectful library environment
+            Important rules to ensure a productive and respectful library
+            environment
           </p>
         </div>
 
@@ -148,12 +158,17 @@ export default function LibraryRulesRegulations() {
                 <thead>
                   <tr className="border-b">
                     <th className="text-left py-3 px-4 font-semibold">Item</th>
-                    <th className="text-left py-3 px-4 font-semibold">Amount</th>
+                    <th className="text-left py-3 px-4 font-semibold">
+                      Amount
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
                   {feeStructure.map((fee, idx) => (
-                    <tr key={idx} className="border-b last:border-b-0 hover:bg-white/50 dark:hover:bg-orange-900/20">
+                    <tr
+                      key={idx}
+                      className="border-b last:border-b-0 hover:bg-white/50 dark:hover:bg-orange-900/20"
+                    >
                       <td className="py-3 px-4">{fee.item}</td>
                       <td className="py-3 px-4 font-semibold">{fee.amount}</td>
                     </tr>
@@ -178,7 +193,9 @@ export default function LibraryRulesRegulations() {
           <CardContent className="space-y-6">
             <div className="grid md:grid-cols-2 gap-6">
               <div className="p-4 border rounded-lg dark:border-slate-700">
-                <h4 className="font-semibold text-lg mb-3">Undergraduate Students</h4>
+                <h4 className="font-semibold text-lg mb-3">
+                  Undergraduate Students
+                </h4>
                 <ul className="space-y-2 text-foreground/70">
                   <li>• Maximum 5 books per transaction</li>
                   <li>• Loan period: 14 days</li>
@@ -187,7 +204,9 @@ export default function LibraryRulesRegulations() {
                 </ul>
               </div>
               <div className="p-4 border rounded-lg dark:border-slate-700">
-                <h4 className="font-semibold text-lg mb-3">Postgraduate & Research Scholars</h4>
+                <h4 className="font-semibold text-lg mb-3">
+                  Postgraduate & Research Scholars
+                </h4>
                 <ul className="space-y-2 text-foreground/70">
                   <li>• Maximum 10 books per transaction</li>
                   <li>• Loan period: 21 days</li>
@@ -224,14 +243,18 @@ export default function LibraryRulesRegulations() {
               <div className="p-4 bg-purple-50 dark:bg-purple-950/30 rounded-lg">
                 <h4 className="font-semibold text-lg mb-2">Regular Hours</h4>
                 <p className="text-foreground/70">
-                  Monday - Saturday<br />
+                  Monday - Saturday
+                  <br />
                   8:00 AM - 6:00 PM
                 </p>
               </div>
               <div className="p-4 bg-purple-50 dark:bg-purple-950/30 rounded-lg">
-                <h4 className="font-semibold text-lg mb-2">Examination Period</h4>
+                <h4 className="font-semibold text-lg mb-2">
+                  Examination Period
+                </h4>
                 <p className="text-foreground/70">
-                  Extended hours available<br />
+                  Extended hours available
+                  <br />
                   Check notice board for details
                 </p>
               </div>
@@ -249,19 +272,24 @@ export default function LibraryRulesRegulations() {
           </CardHeader>
           <CardContent className="space-y-3">
             <p className="text-foreground/70">
-              • Violation of library rules may result in temporary or permanent suspension of library privileges
+              • Violation of library rules may result in temporary or permanent
+              suspension of library privileges
             </p>
             <p className="text-foreground/70">
-              • Library staff reserves the right to inspect bags and materials during exit
+              • Library staff reserves the right to inspect bags and materials
+              during exit
             </p>
             <p className="text-foreground/70">
-              • Reserved books and materials requested by other users must be returned on time
+              • Reserved books and materials requested by other users must be
+              returned on time
             </p>
             <p className="text-foreground/70">
-              • Users are responsible for any damage to borrowed materials beyond normal wear and tear
+              • Users are responsible for any damage to borrowed materials
+              beyond normal wear and tear
             </p>
             <p className="text-foreground/70">
-              • For queries, contact the library staff or send an email to library@dsu.edu.in
+              • For queries, contact the library staff or send an email to
+              library@dsu.edu.in
             </p>
           </CardContent>
         </Card>

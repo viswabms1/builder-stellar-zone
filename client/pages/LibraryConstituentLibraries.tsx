@@ -1,4 +1,11 @@
-import { ArrowRight, ArrowLeft, MapPin, Phone, Mail, Users } from "lucide-react";
+import {
+  ArrowRight,
+  ArrowLeft,
+  MapPin,
+  Phone,
+  Mail,
+  Users,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import {
@@ -42,8 +49,7 @@ export default function LibraryConstituentLibraries() {
     {
       name: "Science & Technology Library",
       location: "School of Basic & Applied Sciences Building",
-      description:
-        "Dedicated facility for science and research resources",
+      description: "Dedicated facility for science and research resources",
       features: [
         "Research journals",
         "Laboratory manuals",
@@ -56,8 +62,7 @@ export default function LibraryConstituentLibraries() {
     {
       name: "Commerce & Management Library",
       location: "School of Management Building",
-      description:
-        "Resources for management, commerce, and business studies",
+      description: "Resources for management, commerce, and business studies",
       features: [
         "Business databases",
         "Management journals",
@@ -104,15 +109,21 @@ export default function LibraryConstituentLibraries() {
       {/* Content Section */}
       <section className="py-16 px-3 max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Library Network</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Our Library Network
+          </h2>
           <p className="text-lg text-foreground/70">
-            Specialized library facilities serving different schools and departments
+            Specialized library facilities serving different schools and
+            departments
           </p>
         </div>
 
         <div className="space-y-6">
           {libraries.map((lib, idx) => (
-            <Card key={idx} className="border-none shadow-md hover:shadow-lg transition-shadow">
+            <Card
+              key={idx}
+              className="border-none shadow-md hover:shadow-lg transition-shadow"
+            >
               <CardHeader>
                 <CardTitle className="text-2xl">{lib.name}</CardTitle>
                 <CardDescription className="text-base flex items-center gap-2">
@@ -122,12 +133,15 @@ export default function LibraryConstituentLibraries() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-foreground/80">{lib.description}</p>
-                
+
                 <div>
                   <h4 className="font-semibold mb-2">Highlights</h4>
                   <ul className="grid md:grid-cols-2 gap-2">
                     {lib.features.map((feature, i) => (
-                      <li key={i} className="text-sm text-foreground/70 flex items-center gap-2">
+                      <li
+                        key={i}
+                        className="text-sm text-foreground/70 flex items-center gap-2"
+                      >
                         <span className="h-1.5 w-1.5 rounded-full bg-green-600"></span>
                         {feature}
                       </li>
@@ -138,13 +152,19 @@ export default function LibraryConstituentLibraries() {
                 <div className="border-t pt-4 space-y-2">
                   <div className="flex items-center gap-3">
                     <Phone className="h-4 w-4 text-green-600" />
-                    <a href={`tel:${lib.phone}`} className="text-green-600 hover:text-green-700">
+                    <a
+                      href={`tel:${lib.phone}`}
+                      className="text-green-600 hover:text-green-700"
+                    >
                       {lib.phone}
                     </a>
                   </div>
                   <div className="flex items-center gap-3">
                     <Mail className="h-4 w-4 text-green-600" />
-                    <a href={`mailto:${lib.email}`} className="text-green-600 hover:text-green-700">
+                    <a
+                      href={`mailto:${lib.email}`}
+                      className="text-green-600 hover:text-green-700"
+                    >
                       {lib.email}
                     </a>
                   </div>
@@ -165,27 +185,37 @@ export default function LibraryConstituentLibraries() {
               Connected network of specialized libraries across DSU
             </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-4" style={{ backgroundColor: "rgba(0, 0, 0, 0.6)" }}>
+          <CardContent
+            className="space-y-4"
+            style={{ backgroundColor: "rgba(0, 0, 0, 0.6)" }}
+          >
             <p className="text-foreground/80">
-              The DSU library system comprises multiple constituent libraries, each specializing in resources and services for their respective schools and departments. All libraries operate under a unified system, allowing students and faculty seamless access to resources across the entire network.
+              The DSU library system comprises multiple constituent libraries,
+              each specializing in resources and services for their respective
+              schools and departments. All libraries operate under a unified
+              system, allowing students and faculty seamless access to resources
+              across the entire network.
             </p>
             <div className="grid md:grid-cols-3 gap-4 mt-4">
               <div className="p-4 border rounded-lg">
                 <h4 className="font-semibold mb-2">Integrated Catalog</h4>
                 <p className="text-sm text-foreground/70">
-                  Search and access resources from all libraries through a single online catalog
+                  Search and access resources from all libraries through a
+                  single online catalog
                 </p>
               </div>
               <div className="p-4 border rounded-lg">
                 <h4 className="font-semibold mb-2">Resource Sharing</h4>
                 <p className="text-sm text-foreground/70">
-                  Borrow materials from any constituent library with your library card
+                  Borrow materials from any constituent library with your
+                  library card
                 </p>
               </div>
               <div className="p-4 border rounded-lg">
                 <h4 className="font-semibold mb-2">Coordinated Services</h4>
                 <p className="text-sm text-foreground/70">
-                  Access consistent services and support across all library locations
+                  Access consistent services and support across all library
+                  locations
                 </p>
               </div>
             </div>
@@ -205,14 +235,16 @@ export default function LibraryConstituentLibraries() {
               <div className="p-4 border rounded-lg">
                 <h4 className="font-semibold mb-2">Regular Hours</h4>
                 <p className="text-foreground/70">
-                  Monday - Saturday<br />
+                  Monday - Saturday
+                  <br />
                   8:00 AM - 6:00 PM
                 </p>
               </div>
               <div className="p-4 border rounded-lg">
                 <h4 className="font-semibold mb-2">Digital Access</h4>
                 <p className="text-foreground/70">
-                  24/7 Online Library<br />
+                  24/7 Online Library
+                  <br />
                   E-resources anytime, anywhere
                 </p>
               </div>

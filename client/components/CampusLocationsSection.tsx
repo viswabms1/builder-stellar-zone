@@ -8,7 +8,8 @@ export function CampusLocationsSection() {
   const campuses = [
     {
       name: "DSU Main Campus",
-      address: "Devarakaggalahalli, Harohalli, Kanakapura Road, Bengaluru South Dt. – 562 112",
+      address:
+        "Devarakaggalahalli, Harohalli, Kanakapura Road, Bengaluru South Dt. – 562 112",
       phone: "+91-80-2797-1000",
       email: "info@dsu.edu.in",
       schools: [
@@ -16,7 +17,8 @@ export function CampusLocationsSection() {
         "School of Health Sciences",
         "Dr. Chandramma Dayananda Sagar Institute of Medical Education & Research",
       ],
-      mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.5554269548903!2d77.5236!3d12.7539!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3a8b8b8b8b8b%3A0x8b8b8b8b8b8b8b8b!2sDevarakaggalahalli%2C%20Harohalli%2C%20Bengaluru!5e0!3m2!1sen!2sin!4v1234567890",
+      mapEmbed:
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.5554269548903!2d77.5236!3d12.7539!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3a8b8b8b8b8b%3A0x8b8b8b8b8b8b8b8b!2sDevarakaggalahalli%2C%20Harohalli%2C%20Bengaluru!5e0!3m2!1sen!2sin!4v1234567890",
       directionsUrl: "https://maps.app.goo.gl/GhhwYuELs9kFdEwXA",
       color: "brand-blue",
     },
@@ -34,7 +36,8 @@ export function CampusLocationsSection() {
         "School of Arts, Design & Humanities",
         "Online Degree Programs",
       ],
-      mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.9847558046286!2d77.6312!3d12.9352!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1581c1c1c1c1%3A0x1c1c1c1c1c1c1c1c!2sKudlu%20Gate%2C%20Hosur%20Road%2C%20Bengaluru!5e0!3m2!1sen!2sin!4v1234567890",
+      mapEmbed:
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.9847558046286!2d77.6312!3d12.9352!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1581c1c1c1c1%3A0x1c1c1c1c1c1c1c1c!2sKudlu%20Gate%2C%20Hosur%20Road%2C%20Bengaluru!5e0!3m2!1sen!2sin!4v1234567890",
       directionsUrl: "https://maps.app.goo.gl/KudluGateCampus",
       color: "brand-blue",
     },
@@ -81,9 +84,7 @@ export function CampusLocationsSection() {
 
         {/* Campus Content - Tab View */}
         <div className="max-w-3xl mx-auto">
-          <div
-            className="rounded-2xl overflow-hidden border-2 border-brand-blue/20 bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm hover:border-brand-blue/40 transition-all duration-500 hover:shadow-2xl hover:shadow-brand-blue/20"
-          >
+          <div className="rounded-2xl overflow-hidden border-2 border-brand-blue/20 bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm hover:border-brand-blue/40 transition-all duration-500 hover:shadow-2xl hover:shadow-brand-blue/20">
             {/* Map Container */}
             <div className="relative h-96 w-full overflow-hidden bg-foreground/5">
               <iframe
@@ -156,7 +157,9 @@ export function CampusLocationsSection() {
                       key={idx}
                       className="flex items-start gap-2 text-sm text-foreground/85 p-2 rounded-lg hover:bg-foreground/5 transition-colors"
                     >
-                      <span className="text-brand-blue font-bold mt-0.5">•</span>
+                      <span className="text-brand-blue font-bold mt-0.5">
+                        •
+                      </span>
                       <span className="font-medium">{school}</span>
                     </div>
                   ))}
@@ -176,10 +179,7 @@ export function CampusLocationsSection() {
                     <Navigation className="w-4 h-4" />
                   </Button>
                 </a>
-                <a
-                  href={`mailto:${activeCampus.email}`}
-                  className="flex-1"
-                >
+                <a href={`mailto:${activeCampus.email}`} className="flex-1">
                   <Button
                     variant="outline"
                     className="w-full text-foreground hover:text-brand-blue hover:border-brand-blue border-brand-blue/30 transition-all"
@@ -192,7 +192,6 @@ export function CampusLocationsSection() {
             </div>
           </div>
         </div>
-
       </div>
     </section>
   );

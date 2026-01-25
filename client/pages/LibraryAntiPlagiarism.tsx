@@ -1,4 +1,11 @@
-import { ArrowRight, ArrowLeft, Shield, CheckCircle, AlertCircle, HelpCircle } from "lucide-react";
+import {
+  ArrowRight,
+  ArrowLeft,
+  Shield,
+  CheckCircle,
+  AlertCircle,
+  HelpCircle,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import {
@@ -14,32 +21,47 @@ export default function LibraryAntiPlagiarism() {
     {
       name: "Turnitin",
       description: "Leading plagiarism detection tool for academic integrity",
-      features: ["Document checking", "Citation verification", "Originality reports"],
+      features: [
+        "Document checking",
+        "Citation verification",
+        "Originality reports",
+      ],
     },
     {
       name: "Copyleaks",
       description: "Advanced plagiarism detection and content verification",
-      features: ["AI-powered detection", "Source identification", "Citation suggestions"],
+      features: [
+        "AI-powered detection",
+        "Source identification",
+        "Citation suggestions",
+      ],
     },
     {
       name: "Grammarly",
       description: "Writing assistant with plagiarism checking capabilities",
-      features: ["Grammar checking", "Plagiarism detection", "Citation formatting"],
+      features: [
+        "Grammar checking",
+        "Plagiarism detection",
+        "Citation formatting",
+      ],
     },
   ];
 
   const guidelines = [
     {
       title: "What is Plagiarism?",
-      content: "Plagiarism is the use of someone else's work, ideas, words, or intellectual property without proper acknowledgment or attribution. This includes copying text, paraphrasing without citation, and submitting work not originally created by you.",
+      content:
+        "Plagiarism is the use of someone else's work, ideas, words, or intellectual property without proper acknowledgment or attribution. This includes copying text, paraphrasing without citation, and submitting work not originally created by you.",
     },
     {
       title: "Types of Plagiarism",
-      content: "Direct copying, paraphrasing without citation, self-plagiarism, mosaic plagiarism, accidental plagiarism, and patchwriting are common forms of plagiarism that must be avoided.",
+      content:
+        "Direct copying, paraphrasing without citation, self-plagiarism, mosaic plagiarism, accidental plagiarism, and patchwriting are common forms of plagiarism that must be avoided.",
     },
     {
       title: "How to Avoid Plagiarism",
-      content: "Use proper citation formats (APA, MLA, Chicago, Harvard), maintain detailed notes with sources, use quotation marks for direct quotes, paraphrase carefully with citations, and always attribute ideas to their original creators.",
+      content:
+        "Use proper citation formats (APA, MLA, Chicago, Harvard), maintain detailed notes with sources, use quotation marks for direct quotes, paraphrase carefully with citations, and always attribute ideas to their original creators.",
     },
   ];
 
@@ -78,16 +100,22 @@ export default function LibraryAntiPlagiarism() {
       {/* Content Section */}
       <section className="py-16 px-3 max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Academic Integrity</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Academic Integrity
+          </h2>
           <p className="text-lg text-foreground/70">
-            Resources and tools to help you maintain academic integrity and avoid plagiarism
+            Resources and tools to help you maintain academic integrity and
+            avoid plagiarism
           </p>
         </div>
 
         {/* Available Tools */}
         <div className="grid md:grid-cols-3 gap-6 mb-12">
           {tools.map((tool, idx) => (
-            <Card key={idx} className="border-none shadow-md hover:shadow-lg transition-shadow">
+            <Card
+              key={idx}
+              className="border-none shadow-md hover:shadow-lg transition-shadow"
+            >
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Shield className="h-5 w-5 text-red-600" />
@@ -100,7 +128,10 @@ export default function LibraryAntiPlagiarism() {
                   <p className="text-sm font-semibold mb-2">Key Features:</p>
                   <ul className="space-y-1">
                     {tool.features.map((feature, i) => (
-                      <li key={i} className="text-sm text-foreground/70 flex items-center gap-2">
+                      <li
+                        key={i}
+                        className="text-sm text-foreground/70 flex items-center gap-2"
+                      >
                         <CheckCircle className="h-4 w-4 text-green-600" />
                         {feature}
                       </li>
@@ -125,8 +156,13 @@ export default function LibraryAntiPlagiarism() {
           </CardHeader>
           <CardContent className="space-y-6">
             {guidelines.map((guideline, idx) => (
-              <div key={idx} className="pb-6 border-b last:pb-0 last:border-b-0">
-                <h4 className="font-semibold text-lg mb-2">{guideline.title}</h4>
+              <div
+                key={idx}
+                className="pb-6 border-b last:pb-0 last:border-b-0"
+              >
+                <h4 className="font-semibold text-lg mb-2">
+                  {guideline.title}
+                </h4>
                 <p className="text-foreground/70">{guideline.content}</p>
               </div>
             ))}
@@ -136,12 +172,17 @@ export default function LibraryAntiPlagiarism() {
         {/* Citation Formats */}
         <Card className="border-none shadow-lg bg-blue-50 dark:bg-slate-800">
           <CardHeader style={{ backgroundColor: "rgba(0, 0, 0, 1)" }}>
-            <CardTitle className="text-3xl md:text-4xl">Citation Formats</CardTitle>
+            <CardTitle className="text-3xl md:text-4xl">
+              Citation Formats
+            </CardTitle>
             <CardDescription className="text-lg">
               Standard citation styles to acknowledge sources properly
             </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-4" style={{ backgroundColor: "rgba(0, 0, 0, 0.6)" }}>
+          <CardContent
+            className="space-y-4"
+            style={{ backgroundColor: "rgba(0, 0, 0, 0.6)" }}
+          >
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <h4 className="font-semibold text-lg mb-2">APA Format</h4>
@@ -198,27 +239,41 @@ export default function LibraryAntiPlagiarism() {
             <ul className="space-y-3">
               <li className="flex gap-3">
                 <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                <span>Keep detailed notes with source citations during research</span>
+                <span>
+                  Keep detailed notes with source citations during research
+                </span>
               </li>
               <li className="flex gap-3">
                 <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                <span>Use quotation marks for direct quotes and cite the source</span>
+                <span>
+                  Use quotation marks for direct quotes and cite the source
+                </span>
               </li>
               <li className="flex gap-3">
                 <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                <span>Paraphrase carefully and always cite the original source</span>
+                <span>
+                  Paraphrase carefully and always cite the original source
+                </span>
               </li>
               <li className="flex gap-3">
                 <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                <span>Use plagiarism detection tools to check your work before submission</span>
+                <span>
+                  Use plagiarism detection tools to check your work before
+                  submission
+                </span>
               </li>
               <li className="flex gap-3">
                 <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                <span>Maintain consistent citation format throughout your document</span>
+                <span>
+                  Maintain consistent citation format throughout your document
+                </span>
               </li>
               <li className="flex gap-3">
                 <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                <span>Ask your instructor or librarian if you're unsure about citations</span>
+                <span>
+                  Ask your instructor or librarian if you're unsure about
+                  citations
+                </span>
               </li>
             </ul>
           </CardContent>
@@ -232,12 +287,14 @@ export default function LibraryAntiPlagiarism() {
               Need Help?
             </CardTitle>
             <CardDescription>
-              Our library staff can help you with citation formatting and plagiarism prevention
+              Our library staff can help you with citation formatting and
+              plagiarism prevention
             </CardDescription>
           </CardHeader>
           <CardContent>
             <p className="text-foreground/70 mb-4">
-              Contact our Reference Services for guidance on avoiding plagiarism and proper citation techniques:
+              Contact our Reference Services for guidance on avoiding plagiarism
+              and proper citation techniques:
             </p>
             <Button asChild className="w-full">
               <Link to="/library/contact">

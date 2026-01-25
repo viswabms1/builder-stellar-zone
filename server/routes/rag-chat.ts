@@ -296,7 +296,9 @@ export const handleRagChat = async (req: Request, res: Response) => {
     }
 
     // Log key status without exposing the full key
-    const keyPreview = apiKey ? `${apiKey.substring(0, 15)}...${apiKey.substring(apiKey.length - 5)}` : "NOT SET";
+    const keyPreview = apiKey
+      ? `${apiKey.substring(0, 15)}...${apiKey.substring(apiKey.length - 5)}`
+      : "NOT SET";
     console.log(`[RAG] Using API key: ${keyPreview}`);
     console.log(`[RAG] Processing query: "${message}"`);
 

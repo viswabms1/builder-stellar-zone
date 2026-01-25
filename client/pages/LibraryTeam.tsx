@@ -84,18 +84,26 @@ export default function LibraryTeam() {
       {/* Content Section */}
       <section className="py-16 px-3 max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Meet Our Librarians</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Meet Our Librarians
+          </h2>
           <p className="text-lg text-foreground/70">
-            A team of skilled, professional, and compassionate library staff members dedicated to helping our community
+            A team of skilled, professional, and compassionate library staff
+            members dedicated to helping our community
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {teamMembers.map((member, idx) => (
-            <Card key={idx} className="border-none shadow-md hover:shadow-lg transition-shadow">
+            <Card
+              key={idx}
+              className="border-none shadow-md hover:shadow-lg transition-shadow"
+            >
               <CardHeader>
                 <CardTitle className="text-xl">{member.name}</CardTitle>
-                <CardDescription className="text-base">{member.role}</CardDescription>
+                <CardDescription className="text-base">
+                  {member.role}
+                </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-foreground/70">{member.description}</p>
@@ -116,38 +124,52 @@ export default function LibraryTeam() {
         {/* Team Philosophy */}
         <Card className="border-none shadow-lg mt-12">
           <CardHeader>
-            <CardTitle className="text-3xl md:text-4xl">Our Commitment</CardTitle>
+            <CardTitle className="text-3xl md:text-4xl">
+              Our Commitment
+            </CardTitle>
             <CardDescription className="text-lg">
               What we stand for
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
             <p className="text-lg leading-relaxed text-foreground/80">
-              Our library team is committed to providing exceptional service to all members of the DSU community. We believe that every user deserves personalized attention and support in their academic journey.
+              Our library team is committed to providing exceptional service to
+              all members of the DSU community. We believe that every user
+              deserves personalized attention and support in their academic
+              journey.
             </p>
             <div className="grid md:grid-cols-2 gap-6 mt-6">
               <div>
-                <h4 className="font-semibold text-lg mb-2">Professional Expertise</h4>
+                <h4 className="font-semibold text-lg mb-2">
+                  Professional Expertise
+                </h4>
                 <p className="text-foreground/70">
-                  Our staff members are trained professionals with expertise in information science, collection management, and digital resources
+                  Our staff members are trained professionals with expertise in
+                  information science, collection management, and digital
+                  resources
                 </p>
               </div>
               <div>
-                <h4 className="font-semibold text-lg mb-2">User-Centric Service</h4>
+                <h4 className="font-semibold text-lg mb-2">
+                  User-Centric Service
+                </h4>
                 <p className="text-foreground/70">
-                  We prioritize user satisfaction and continuously work to improve our services based on feedback and evolving needs
+                  We prioritize user satisfaction and continuously work to
+                  improve our services based on feedback and evolving needs
                 </p>
               </div>
               <div>
                 <h4 className="font-semibold text-lg mb-2">Innovation</h4>
                 <p className="text-foreground/70">
-                  We embrace new technologies and methodologies to enhance library services and user experience
+                  We embrace new technologies and methodologies to enhance
+                  library services and user experience
                 </p>
               </div>
               <div>
                 <h4 className="font-semibold text-lg mb-2">Accessibility</h4>
                 <p className="text-foreground/70">
-                  We ensure that all resources and services are accessible to every member of our community
+                  We ensure that all resources and services are accessible to
+                  every member of our community
                 </p>
               </div>
             </div>
@@ -162,12 +184,18 @@ export default function LibraryTeam() {
               Contact our library team for support and inquiries
             </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-3" style={{ backgroundColor: "rgba(0, 0, 0, 0.6)" }}>
+          <CardContent
+            className="space-y-3"
+            style={{ backgroundColor: "rgba(0, 0, 0, 0.6)" }}
+          >
             <div className="flex items-center gap-3">
               <Mail className="h-5 w-5 text-blue-600" />
               <div>
                 <p className="font-semibold">Email</p>
-                <a href="mailto:library@dsu.edu.in" className="text-blue-600 hover:text-blue-700">
+                <a
+                  href="mailto:library@dsu.edu.in"
+                  className="text-blue-600 hover:text-blue-700"
+                >
                   library@dsu.edu.in
                 </a>
               </div>

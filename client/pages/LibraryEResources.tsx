@@ -1,4 +1,12 @@
-import { ArrowRight, ArrowLeft, Globe, Database, BookOpen, Lock, Zap } from "lucide-react";
+import {
+  ArrowRight,
+  ArrowLeft,
+  Globe,
+  Database,
+  BookOpen,
+  Lock,
+  Zap,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import {
@@ -64,7 +72,11 @@ export default function LibraryEResources() {
           </div>
           <div className="flex justify-center gap-4 flex-wrap">
             <Button asChild className="bg-blue-600 hover:bg-blue-700">
-              <a href="https://dsuunivopac.ltsinformatics.com/" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://dsuunivopac.ltsinformatics.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Globe className="mr-2 h-4 w-4" />
                 Access Digital Library
               </a>
@@ -94,11 +106,16 @@ export default function LibraryEResources() {
           {resources.map((resource, idx) => {
             const Icon = resource.icon;
             return (
-              <Card key={idx} className="border-none shadow-md hover:shadow-lg transition-shadow">
+              <Card
+                key={idx}
+                className="border-none shadow-md hover:shadow-lg transition-shadow"
+              >
                 <CardHeader>
                   <div className="flex items-start justify-between">
                     <div className="flex-1">
-                      <CardTitle className="text-xl">{resource.title}</CardTitle>
+                      <CardTitle className="text-xl">
+                        {resource.title}
+                      </CardTitle>
                       <CardDescription>{resource.category}</CardDescription>
                     </div>
                     <div className="p-2 rounded-lg bg-purple-500/10 dark:bg-purple-500/30">
@@ -108,8 +125,16 @@ export default function LibraryEResources() {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <p className="text-foreground/70">{resource.description}</p>
-                  <Button asChild variant="ghost" className="w-full justify-start">
-                    <a href={resource.url} target="_blank" rel="noopener noreferrer">
+                  <Button
+                    asChild
+                    variant="ghost"
+                    className="w-full justify-start"
+                  >
+                    <a
+                      href={resource.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       Access Resource <ArrowRight className="ml-2 h-4 w-4" />
                     </a>
                   </Button>
@@ -137,7 +162,9 @@ export default function LibraryEResources() {
                 On-Campus Access
               </h4>
               <p className="text-foreground/70">
-                Students and faculty on campus can directly access the digital library platform using their DSU credentials without any additional authentication.
+                Students and faculty on campus can directly access the digital
+                library platform using their DSU credentials without any
+                additional authentication.
               </p>
             </div>
             <div>
@@ -158,15 +185,22 @@ export default function LibraryEResources() {
         {/* Collections Overview */}
         <Card className="border-none shadow-lg bg-purple-50 dark:bg-slate-800">
           <CardHeader style={{ backgroundColor: "rgba(0, 0, 0, 1)" }}>
-            <CardTitle className="text-3xl md:text-4xl">Our Digital Collections</CardTitle>
+            <CardTitle className="text-3xl md:text-4xl">
+              Our Digital Collections
+            </CardTitle>
             <CardDescription className="text-lg">
               Comprehensive resources across all academic disciplines
             </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-4" style={{ backgroundColor: "rgba(0, 0, 0, 0.7)" }}>
+          <CardContent
+            className="space-y-4"
+            style={{ backgroundColor: "rgba(0, 0, 0, 0.7)" }}
+          >
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <h4 className="font-semibold text-lg mb-2">Subject Areas Covered</h4>
+                <h4 className="font-semibold text-lg mb-2">
+                  Subject Areas Covered
+                </h4>
                 <ul className="list-disc list-inside space-y-1 text-foreground/70">
                   <li>Engineering & Technology</li>
                   <li>Computer Science & Applications</li>
@@ -198,16 +232,37 @@ export default function LibraryEResources() {
           <CardHeader>
             <CardTitle>Need Help?</CardTitle>
             <CardDescription>
-              Our library staff is here to assist with e-resource access and research
+              Our library staff is here to assist with e-resource access and
+              research
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-3">
             <p className="text-foreground/70">
-              If you experience any issues accessing our digital resources or need assistance, please contact our Reference Services team:
+              If you experience any issues accessing our digital resources or
+              need assistance, please contact our Reference Services team:
             </p>
-            <div className="p-4 rounded-lg" style={{ backgroundColor: "rgba(248, 231, 28, 0.61)" }}>
-              <p className="font-semibold">Email: <a href="mailto:e-resources@dsu.edu.in" className="text-blue-600 dark:text-blue-400 hover:text-blue-700">e-resources@dsu.edu.in</a></p>
-              <p className="font-semibold">Reference Desk: <a href="mailto:library@dsu.edu.in" className="text-blue-600 dark:text-blue-400 hover:text-blue-700">library@dsu.edu.in</a></p>
+            <div
+              className="p-4 rounded-lg"
+              style={{ backgroundColor: "rgba(248, 231, 28, 0.61)" }}
+            >
+              <p className="font-semibold">
+                Email:{" "}
+                <a
+                  href="mailto:e-resources@dsu.edu.in"
+                  className="text-blue-600 dark:text-blue-400 hover:text-blue-700"
+                >
+                  e-resources@dsu.edu.in
+                </a>
+              </p>
+              <p className="font-semibold">
+                Reference Desk:{" "}
+                <a
+                  href="mailto:library@dsu.edu.in"
+                  className="text-blue-600 dark:text-blue-400 hover:text-blue-700"
+                >
+                  library@dsu.edu.in
+                </a>
+              </p>
             </div>
           </CardContent>
         </Card>

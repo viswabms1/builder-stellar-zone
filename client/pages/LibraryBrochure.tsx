@@ -84,7 +84,9 @@ export default function LibraryBrochure() {
       {/* Content Section */}
       <section className="py-16 px-3 max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Available Brochures</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Available Brochures
+          </h2>
           <p className="text-lg text-foreground/70">
             Download comprehensive guides and information materials
           </p>
@@ -92,7 +94,10 @@ export default function LibraryBrochure() {
 
         <div className="grid md:grid-cols-2 gap-6 mb-12">
           {brochures.map((brochure, idx) => (
-            <Card key={idx} className="border-none shadow-md hover:shadow-lg transition-shadow group">
+            <Card
+              key={idx}
+              className="border-none shadow-md hover:shadow-lg transition-shadow group"
+            >
               <CardContent className="pt-6">
                 <div className="flex items-start justify-between gap-4 mb-4">
                   <div className="p-3 rounded-lg bg-teal-500/10 group-hover:bg-teal-500/20 transition-colors">
@@ -105,9 +110,16 @@ export default function LibraryBrochure() {
                 <h3 className="font-semibold text-lg mb-2 group-hover:text-teal-600 transition-colors">
                   {brochure.title}
                 </h3>
-                <p className="text-sm text-foreground/70 mb-3">{brochure.description}</p>
-                <p className="text-xs text-foreground/60 mb-4">{brochure.fileSize}</p>
-                <Button asChild className="w-full bg-teal-600 hover:bg-teal-700">
+                <p className="text-sm text-foreground/70 mb-3">
+                  {brochure.description}
+                </p>
+                <p className="text-xs text-foreground/60 mb-4">
+                  {brochure.fileSize}
+                </p>
+                <Button
+                  asChild
+                  className="w-full bg-teal-600 hover:bg-teal-700"
+                >
                   <a href="#" download>
                     <FileDown className="mr-2 h-4 w-4" />
                     Download Brochure
@@ -121,7 +133,9 @@ export default function LibraryBrochure() {
         {/* Information Section */}
         <Card className="border-none shadow-lg bg-teal-50 dark:bg-teal-950/30">
           <CardHeader>
-            <CardTitle className="text-3xl md:text-4xl">Library Information</CardTitle>
+            <CardTitle className="text-3xl md:text-4xl">
+              Library Information
+            </CardTitle>
             <CardDescription className="text-lg">
               Key details about DSU Central Library
             </CardDescription>
@@ -129,7 +143,9 @@ export default function LibraryBrochure() {
           <CardContent className="space-y-6">
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <h4 className="font-semibold text-lg mb-3">Library Highlights</h4>
+                <h4 className="font-semibold text-lg mb-3">
+                  Library Highlights
+                </h4>
                 <ul className="space-y-2 text-foreground/70">
                   <li>• Over 5 lakh volumes in collection</li>
                   <li>• Seating capacity for 560 students</li>
@@ -162,7 +178,8 @@ export default function LibraryBrochure() {
           </CardHeader>
           <CardContent className="space-y-3">
             <p className="text-foreground/70">
-              For digital copies or additional materials, please contact our library team:
+              For digital copies or additional materials, please contact our
+              library team:
             </p>
             <Button asChild className="w-full">
               <Link to="/library/contact">
