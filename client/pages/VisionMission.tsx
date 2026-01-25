@@ -70,6 +70,7 @@ export default function VisionMission() {
   const { theme } = useTheme();
   const [visionMissionData, setVisionMissionData] = useState<VisionMissionData>(DEFAULT_VISION_MISSION);
   const [loading, setLoading] = useState(true);
+  const [isFromAPI, setIsFromAPI] = useState(false);
   const coreValues = DEFAULT_CORE_VALUES;
 
   // Fetch Vision & Mission from Directus API
@@ -101,10 +102,12 @@ export default function VisionMission() {
           console.log("[VisionMission] Vision description:", result.data.vision_description);
           console.log("[VisionMission] Mission description:", result.data.mission_description);
           setVisionMissionData(result.data);
+          setIsFromAPI(true);
         } else {
           console.warn("[VisionMission] Condition not met. Success:", result.success, "Data:", result.data);
           console.warn("[VisionMission] Using fallback content");
           setVisionMissionData(DEFAULT_VISION_MISSION);
+          setIsFromAPI(false);
         }
       } catch (err) {
         console.error("[VisionMission] Error fetching vision-mission:", err);
