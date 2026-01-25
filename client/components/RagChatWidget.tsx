@@ -411,8 +411,8 @@ export function RagChatWidget() {
                     className={cn(
                       "rounded-full flex items-center justify-center flex-shrink-0 font-bold",
                       message.role === "user"
-                        ? "bg-blue-500 text-white"
-                        : "bg-orange-500 text-white",
+                        ? "bg-brand-blue text-white"
+                        : "bg-brand-blue text-white",
                     )}
                     style={{
                       width: "clamp(1.75rem, 4vmin, 2rem)",
