@@ -1,8 +1,9 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { DepartmentNoticeBoard } from "@/components/DepartmentNoticeBoard";
+import { CurriculumLibrary } from "@/components/CurriculumLibrary";
+import { getCurriculumByDepartment } from "@/lib/content-manager";
 import { Link } from "react-router-dom";
-import { useState } from "react";
 import {
   ChevronRight,
   BookOpen,
