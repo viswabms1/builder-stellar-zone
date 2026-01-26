@@ -516,7 +516,12 @@ interface NoticeItem {
   link?: string;
 }
 
-function CurriculumLibrary() {
+function CurriculumLibraryWrapper() {
+  const programs = getCurriculumByDepartment("Engineering", "Data Science");
+  return <CurriculumLibrary programs={programs} themeColor="blue" />;
+}
+
+function OldCurriculumLibrary() {
   const [openProgram, setOpenProgram] = useState<string | null>(null);
 
   const programs: CurriculumProgram[] = [
