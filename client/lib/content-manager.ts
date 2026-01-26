@@ -694,15 +694,58 @@ const ALL_CURRICULA: CurriculumProgram[] = [
   {
     id: "bcom-standard",
     label: "B.Com (Standard)",
-    description:
-      "3-year comprehensive commerce program with accounting focus",
-    image: "https://images.unsplash.com/photo-4386431/pexels-photo-4386431.jpeg",
+    description: "3-year comprehensive undergraduate program with foundation in accounting, finance, and commerce",
+    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200&auto=format&fit=crop",
     batches: [
       {
         year: "2025-26",
-        summary:
-          "Latest B.Com curriculum across 6 semesters with comprehensive accounting, finance, and commerce subjects",
-        documentUrl: "https://www.dsu.edu.in/images/Commerce/B-Com-Curriculum-2025-26.pdf",
+        summary: "Latest curriculum across 6 semesters combining rigorous academics with practical application",
+        documentUrl: "https://www.dsu.edu.in/images/Commerce/B-Com-Standard-Curriculum-2025-26.pdf",
+        current: true,
+      },
+    ],
+    meta: { level: "Undergraduate", department: "BCom", school: "Commerce & Management" },
+  },
+  {
+    id: "bcom-acca",
+    label: "B.Com with ACCA Coaching",
+    description: "3-year program integrated with ACCA (Association of Chartered Certified Accountants) coaching",
+    image: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=1200&auto=format&fit=crop",
+    batches: [
+      {
+        year: "2025-26",
+        summary: "Dual certification program combining B.Com degree with ACCA coaching and up to 6 paper exemptions",
+        documentUrl: "https://www.dsu.edu.in/images/Commerce/B-Com-ACCA-Curriculum-2025-26.pdf",
+        current: true,
+      },
+    ],
+    meta: { level: "Undergraduate", department: "BCom", school: "Commerce & Management" },
+  },
+  {
+    id: "bcom-cma",
+    label: "B.Com with USA-CMA Coaching",
+    description: "3-year program with Certified Management Accountant (CMA) certification from USA",
+    image: "https://images.unsplash.com/photo-1553729784-e91953dec042?q=80&w=1200&auto=format&fit=crop",
+    batches: [
+      {
+        year: "2025-26",
+        summary: "Advanced curriculum covering financial reporting, planning, performance control, and financial decision making",
+        documentUrl: "https://www.dsu.edu.in/images/Commerce/B-Com-CMA-Curriculum-2025-26.pdf",
+        current: true,
+      },
+    ],
+    meta: { level: "Undergraduate", department: "BCom", school: "Commerce & Management" },
+  },
+  {
+    id: "bcom-ca",
+    label: "B.Com with CA Foundation Coaching",
+    description: "3-year program enabling simultaneous pursuit of B.Com and Chartered Accountant (CA)",
+    image: "https://images.unsplash.com/photo-1590080876-e50b5ff8f5d9?q=80&w=1200&auto=format&fit=crop",
+    batches: [
+      {
+        year: "2025-26",
+        summary: "Integrated program blending B.Com and CA curricula with morning UG classes and afternoon CA classes on campus",
+        documentUrl: "https://www.dsu.edu.in/images/Commerce/B-Com-CA-Curriculum-2025-26.pdf",
         current: true,
       },
     ],
@@ -710,16 +753,15 @@ const ALL_CURRICULA: CurriculumProgram[] = [
   },
   // ============ COMMERCE & MANAGEMENT: MBA ============
   {
-    id: "mba-standard",
+    id: "mba-general",
     label: "MBA (General)",
-    description: "2-year postgraduate management program",
+    description: "2-year postgraduate management program with specializations",
     image: "https://images.unsplash.com/photo-3184338/pexels-photo-3184338.jpeg",
     batches: [
       {
         year: "2025-27",
-        summary:
-          "Latest MBA curriculum with specializations in Finance, Marketing, Operations, and Business Analytics across 4 semesters",
-        documentUrl: "https://www.dsu.edu.in/images/Commerce/MBA-Curriculum-2025-27.pdf",
+        summary: "Latest MBA curriculum with specializations in Finance, Marketing, Operations, and Business Analytics across 4 semesters",
+        documentUrl: "https://www.dsu.edu.in/images/Commerce/MBA-General-Curriculum-2025-27.pdf",
         current: true,
       },
     ],
