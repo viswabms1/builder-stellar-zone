@@ -10,6 +10,27 @@
 // DATA STRUCTURES & TYPES
 // ============================================================================
 
+export interface CurriculumBatch {
+  year: string;
+  summary: string;
+  documentUrl?: string;
+  current?: boolean;
+}
+
+export interface CurriculumProgram {
+  id: string;
+  label: string;
+  description: string;
+  details?: string;
+  image: string;
+  batches: CurriculumBatch[];
+  meta?: {
+    level?: "Undergraduate" | "Postgraduate" | "Certificate";
+    department?: string;
+    school?: string;
+  };
+}
+
 export interface Announcement {
   id: string;
   title: string;
