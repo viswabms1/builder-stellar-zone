@@ -15,15 +15,26 @@ Filtering Hooks
 ├── useNews() → filters by school, department, category
 └── useEvents() → filters by school, department, category
 
+Auto-Detection
+└── useContentContext() → automatically detects school/department from URL
+
 Display Components
-├── AnnouncementBanner (3 variants: banner, card, list)
-├── NewsSection (3 variants: grid, list, featured)
-└── EventsSection (3 variants: grid, list, upcoming)
+├── AnnouncementBanner (auto-filters, 3 variants: banner, card, list)
+├── NewsSection (auto-filters, 3 variants: grid, list, featured)
+└── EventsSection (auto-filters, 3 variants: grid, list, upcoming)
 ```
+
+## How It Works
+
+The components **automatically detect which school/department page the user is viewing** and filter content accordingly. **No manual props needed!**
+
+The `useContentContext()` hook analyzes the URL and returns:
+- `school` — Detected school (e.g., "Engineering", "Health Sciences")
+- `department` — Detected department (e.g., "CSE", "Pharmacy")
 
 ## Usage Examples
 
-### 1. Display Announcements on Engineering School Page
+### 1. Engineering School Page (Automatic Filtering)
 
 ```typescript
 // client/pages/Engineering.tsx
@@ -35,35 +46,14 @@ import { EventsSection } from "@/components/EventsSection";
 export default function EngineeringPage() {
   return (
     <div className="space-y-12">
-      {/* High-priority announcements (circulars, notices, etc.) */}
-      <section>
-        <AnnouncementBanner 
-          school="Engineering"
-          priority="high"
-          variant="banner"
-          dismissible={true}
-        />
-      </section>
+      {/* ✅ Automatically shows only Engineering announcements */}
+      <AnnouncementBanner priority="high" variant="banner" />
 
-      {/* Engineering school news */}
-      <section>
-        <NewsSection 
-          school="Engineering"
-          limit={6}
-          variant="grid"
-          title="Engineering News"
-        />
-      </section>
+      {/* ✅ Automatically shows only Engineering news */}
+      <NewsSection limit={6} variant="grid" title="Engineering News" />
 
-      {/* Engineering school events */}
-      <section>
-        <EventsSection 
-          school="Engineering"
-          limit={5}
-          variant="upcoming"
-          title="Upcoming Events"
-        />
-      </section>
+      {/* ✅ Automatically shows only Engineering events */}
+      <EventsSection limit={5} variant="upcoming" title="Upcoming Events" />
     </div>
   );
 }
