@@ -5,8 +5,8 @@ import { Badge } from "@/components/ui/badge";
 import { getDepartmentContent, getCategoryStyles, type CarouselItem } from "@/lib/content-manager";
 import { Download } from "lucide-react";
 
-export function DepartmentNoticeBoard({ department }: { department: string }) {
-  const { announcements, news: newsItems, events: eventItems } = getDepartmentContent("Engineering", department);
+export function DepartmentNoticeBoard({ school = "Engineering", department }: { school?: string; department: string }) {
+  const { announcements, news: newsItems, events: eventItems } = getDepartmentContent(school, department);
 
   const [currentAnnouncementIndex, setCurrentAnnouncementIndex] = useState(0);
   const [currentNewsIndex, setCurrentNewsIndex] = useState(0);
