@@ -1187,7 +1187,7 @@ export function getEventsByDepartment(school: string | undefined, department: st
 export function getAnnouncementsByDepartment(school: string | undefined, department: string | undefined): Announcement[] {
   if (!school || !department) return [];
   return ALL_ANNOUNCEMENTS.filter(
-    (a) => a.status === "active" && a.school === school
+    (a) => a.status === "active" && a.school === school && a.department === department
   ).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 }
 
