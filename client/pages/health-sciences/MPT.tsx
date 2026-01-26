@@ -295,7 +295,7 @@ export default function MPT() {
       </section>
 
       {/* Curriculum Library */}
-      <CurriculumLibrary />
+      <CurriculumLibraryComponent />
 
       {/* Related Resources */}
       <section
