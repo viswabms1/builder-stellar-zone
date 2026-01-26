@@ -41,6 +41,7 @@ export function EventsSection({
   title = "Upcoming Events",
   description,
   showViewAll = false,
+  compact = false,
 }: EventsSectionProps) {
   // Auto-detect school and department from current page context
   const { school: contextSchool, department: contextDepartment } = useContentContext();
