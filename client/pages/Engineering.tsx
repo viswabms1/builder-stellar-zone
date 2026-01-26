@@ -562,8 +562,6 @@ const INNOVATION_LABS = [
   "IBM Centre of Excellence",
 ];
 
-type NoticeItem = ImportedNoticeItem;
-
 // Centralized content is now managed through:
 // - client/data/announcements.ts
 // - client/data/news.ts
