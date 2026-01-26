@@ -256,8 +256,8 @@ export default function DeptComputerTechnology() {
       </section>
 
       <AnnouncementBanner priority="high" variant="banner" />
-      <NewsSection variant="grid" title="Department News" />
-      <EventsSection variant="upcoming" title="Upcoming Events" />
+      <NewsSection variant="carousel" title="Department News" />
+      <EventsSection variant="carousel" title="Upcoming Events" />
 
       <LabsFacilitiesCarousel />
 
