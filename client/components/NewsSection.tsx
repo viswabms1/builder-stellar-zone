@@ -1,11 +1,12 @@
 import { useNews } from "@/hooks/useNews";
+import { useContentContext } from "@/hooks/useContentContext";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, User, ArrowRight } from "lucide-react";
 
 interface NewsSectionProps {
-  school?: string;
-  department?: string;
+  school?: string; // Optional override
+  department?: string; // Optional override
   limit?: number;
   variant?: "grid" | "list" | "featured";
   title?: string;
