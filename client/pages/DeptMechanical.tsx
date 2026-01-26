@@ -474,19 +474,6 @@ export default function DeptMechanical() {
   );
 }
 
-interface CurriculumProgram {
-  id: string;
-  label: string;
-  description: string;
-  image: string;
-  batches: CurriculumBatch[];
-}
-
-interface CurriculumBatch {
-  year: string;
-  summary: string;
-  documentUrl?: string;
-}
 
 interface LabItem {
   title: string;
