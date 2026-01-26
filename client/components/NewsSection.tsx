@@ -248,9 +248,10 @@ interface NewsCarouselProps {
   news: any[];
   title?: string;
   description?: string;
+  compact?: boolean;
 }
 
-function NewsCarousel({ news, title, description }: NewsCarouselProps) {
+function NewsCarousel({ news, title, description, compact = false }: NewsCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
