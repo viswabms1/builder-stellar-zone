@@ -117,7 +117,7 @@ export default function BCom() {
           {/* Curriculum Library */}
           <div className="space-y-6">
             <h2 className="text-3xl font-bold font-display">Program Varieties & Curriculum</h2>
-            <CurriculumLibrary />
+            <CurriculumLibraryComponent />
           </div>
         </div>
       </section>
