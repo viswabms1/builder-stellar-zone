@@ -36,9 +36,13 @@ export function AnnouncementBanner({
   variant = "banner",
   dismissible = true,
   limit = 3,
-  school,
+  school: schoolProp,
   category,
 }: AnnouncementBannerProps) {
+  // Auto-detect school from current page context
+  const { school: contextSchool } = useContentContext();
+  const school = schoolProp || contextSchool; // Use prop if provided, otherwise use context
+
   const { announcements, loading, error } = useAnnouncements({
     priority,
     category,
