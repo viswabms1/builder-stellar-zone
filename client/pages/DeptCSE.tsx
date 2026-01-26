@@ -5,6 +5,10 @@ import { schools } from "./Eligibility";
 import { NewsSection } from "@/components/NewsSection";
 import { EventsSection } from "@/components/EventsSection";
 import { AnnouncementBanner } from "@/components/AnnouncementBanner";
+import { getDepartmentContent, getCategoryStyles, type CarouselItem } from "@/lib/content-manager";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent } from "@/components/ui/card";
+import { Download, ChevronLeft, ChevronRight } from "lucide-react";
 import {
   Card,
   CardContent,
