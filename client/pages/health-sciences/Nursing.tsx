@@ -28,14 +28,6 @@ import {
 } from "lucide-react";
 import { DeanSection, type DeanInfo } from "@/components/DeanSection";
 import { useAutoMuteOnScroll } from "@/hooks/useAutoMuteOnScroll";
-import {
-  getNursingEvents,
-  getNursingNews,
-  getNursingAnnouncements,
-  type NoticeItem as ImportedNoticeItem,
-} from "@/data/nursing-events";
-
-type NoticeItem = ImportedNoticeItem;
 
 const PRINCIPAL_INFO: DeanInfo = {
   name: "Dr. Shejila CH",
