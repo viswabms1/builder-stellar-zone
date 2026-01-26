@@ -1,4 +1,5 @@
 import { useEvents } from "@/hooks/useEvents";
+import { useEvents } from "@/hooks/useEvents";
 import { useContentContext } from "@/hooks/useContentContext";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
