@@ -643,16 +643,48 @@ const ALL_CURRICULA: CurriculumProgram[] = [
   },
   // ============ COMMERCE & MANAGEMENT: BBA ============
   {
-    id: "bba-standard",
-    label: "BBA (Standard)",
-    description: "3-year comprehensive business administration program",
-    image: "https://images.unsplash.com/photo-3184291/pexels-photo-3184291.jpeg",
+    id: "bba-regular",
+    label: "BBA (Regular)",
+    description: "3-year comprehensive program preparing effective managers with modern teaching, research, and industry interaction",
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop",
     batches: [
       {
         year: "2025-26",
         summary:
-          "Latest BBA curriculum with focus on business management, entrepreneurship, and industry exposure across 6 semesters",
-        documentUrl: "https://www.dsu.edu.in/images/Commerce/BBA-Curriculum-2025-26.pdf",
+          "Curriculum designed to develop competent, innovation-oriented, ethical managers with focus on leadership in global marketplace across 6 semesters",
+        documentUrl: "https://www.dsu.edu.in/images/Commerce/BBA-Regular-Curriculum-2025-26.pdf",
+        current: true,
+      },
+    ],
+    meta: { level: "Undergraduate", department: "BBA", school: "Commerce & Management" },
+  },
+  {
+    id: "bba-bfsi",
+    label: "BBA BFSI",
+    description: "Specialization in Banking, Financial Services & Insurance with quantitative techniques and financial expertise",
+    image: "https://images.unsplash.com/photo-1606531824254-d473aeb44dc5?q=80&w=1200&auto=format&fit=crop",
+    batches: [
+      {
+        year: "2025-26",
+        summary:
+          "Specialized curriculum emphasizing application of quantitative techniques to finance, investment banking, securities trading, and risk management",
+        documentUrl: "https://www.dsu.edu.in/images/Commerce/BBA-BFSI-Curriculum-2025-26.pdf",
+        current: true,
+      },
+    ],
+    meta: { level: "Undergraduate", department: "BBA", school: "Commerce & Management" },
+  },
+  {
+    id: "bba-ro",
+    label: "BBA Retail Operations (RO)",
+    description: "4-year program in association with Retailers Association's Skill Council with earn-while-you-learn approach",
+    image: "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?q=80&w=1200&auto=format&fit=crop",
+    batches: [
+      {
+        year: "2025-26",
+        summary:
+          "8-semester program covering retail operations with on-the-job internships, dual degree from DSU and RASCI, hands-on retail industry exposure",
+        documentUrl: "https://www.dsu.edu.in/images/Commerce/BBA-RO-Curriculum-2025-26.pdf",
         current: true,
       },
     ],
