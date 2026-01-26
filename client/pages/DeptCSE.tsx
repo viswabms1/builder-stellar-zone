@@ -2203,36 +2203,38 @@ function DepartmentNoticeBoard({ department }: { department: string }) {
   };
 
   return (
-    <>
-      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-        <div>
-          {renderCarousel(
-            "Events",
-            eventItems,
-            currentEventIndex,
-            setCurrentEventIndex,
-            "Event",
-          )}
-        </div>
-        <div>
-          {renderCarousel(
-            "News",
-            newsItems,
-            currentNewsIndex,
-            setCurrentNewsIndex,
-            "News",
-          )}
-        </div>
-        <div>
-          {renderCarousel(
-            "Announcements",
-            announcements,
-            currentAnnouncementIndex,
-            setCurrentAnnouncementIndex,
-            "Announcement",
-          )}
+    <section id="notice-board" className="px-3 py-8">
+      <div className="mx-auto max-w-7xl">
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          <div>
+            {renderCarousel(
+              "Events",
+              eventItems,
+              currentEventIndex,
+              setCurrentEventIndex,
+              "Event",
+            )}
+          </div>
+          <div>
+            {renderCarousel(
+              "News",
+              newsItems,
+              currentNewsIndex,
+              setCurrentNewsIndex,
+              "News",
+            )}
+          </div>
+          <div>
+            {renderCarousel(
+              "Announcements",
+              announcements,
+              currentAnnouncementIndex,
+              setCurrentAnnouncementIndex,
+              "Announcement",
+            )}
+          </div>
         </div>
       </div>
-    </>
+    </section>
   );
 }
