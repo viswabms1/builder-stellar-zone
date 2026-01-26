@@ -3,9 +3,8 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { NewsSection } from "@/components/NewsSection";
-import { EventsSection } from "@/components/EventsSection";
 import { AnnouncementBanner } from "@/components/AnnouncementBanner";
+import { getDepartmentContent, getCategoryStyles, type CarouselItem } from "@/lib/content-manager";
 import {
   Sparkles,
   Brain,
@@ -196,8 +195,7 @@ export default function DeptDataScience() {
       <AccreditationDocuments />
 
       <AnnouncementBanner priority="high" variant="banner" />
-      <NewsSection variant="carousel" title="Department News" />
-      <EventsSection variant="carousel" title="Upcoming Events" />
+      <DepartmentNoticeBoard department="Data Science" />
 
       <LabsFacilitiesCarousel />
 
