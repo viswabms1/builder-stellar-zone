@@ -564,59 +564,14 @@ const INNOVATION_LABS = [
   "IBM Centre of Excellence",
 ];
 
-// Type for carousel items (compatible with centralized data)
-type NoticeItem = {
-  id: string;
-  title: string;
-  category: "Event" | "News" | "Announcement";
-  date: string;
-  description: string;
-  image?: string;
-  link?: string;
-};
-
-// Centralized content is fetched from unified data sources using custom hooks
-// Design remains unchanged - same carousel layout and styling
+// Centralized Notice Board - fetches from single content-manager.ts file
 function NoticeBoardCarousel() {
   const [currentEventIndex, setCurrentEventIndex] = useState(0);
   const [currentNewsIndex, setCurrentNewsIndex] = useState(0);
   const [currentAnnouncementIndex, setCurrentAnnouncementIndex] = useState(0);
 
-  // Fetch data from centralized sources
-  const { announcements: allAnnouncements } = useAnnouncements({ school: "Engineering", limit: 10 });
-  const { news } = useNews({ school: "Engineering", limit: 10 });
-  const { events } = useEvents({ school: "Engineering", limit: 10 });
-
-  // Convert announcement items to match carousel display format
-  const announcements = allAnnouncements.map((a) => ({
-    id: a.id,
-    title: a.title,
-    category: "Announcement" as const,
-    date: a.date,
-    description: a.content,
-    image: a.image,
-    link: a.attachments?.[0]?.fileUrl,
-  }));
-
-  // Convert news items to match carousel display format
-  const newsItems = news.map((n) => ({
-    id: n.id,
-    title: n.title,
-    category: "News" as const,
-    date: n.date,
-    description: n.excerpt || n.content.substring(0, 100),
-    image: n.image,
-  }));
-
-  // Convert event items to match carousel display format
-  const eventItems = events.map((e) => ({
-    id: e.id,
-    title: e.title,
-    category: "Event" as const,
-    date: e.date,
-    description: e.description,
-    image: e.image,
-  }));
+  // Get all school content from centralized manager
+  const { announcements, news: newsItems, events: eventItems } = getSchoolContent("Engineering");
 
   useEffect(() => {
     if (eventItems.length === 0) return;
