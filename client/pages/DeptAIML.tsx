@@ -6,7 +6,8 @@ import { Badge } from "@/components/ui/badge";
 import { useScrollTrigger } from "@/hooks/useScrollTrigger";
 import { useMemo } from "react";
 import { DepartmentNoticeBoard } from "@/components/DepartmentNoticeBoard";
-import { AnnouncementBanner } from "@/components/AnnouncementBanner";
+import { CurriculumLibrary } from "@/components/CurriculumLibrary";
+import { getCurriculumByDepartment } from "@/lib/content-manager";
 import {
   Bot,
   Brain,
