@@ -31,6 +31,7 @@ import {
 } from "@/components/ui/card";
 import { DeanSection, type DeanInfo } from "@/components/DeanSection";
 import { useAutoMuteOnScroll } from "@/hooks/useAutoMuteOnScroll";
+import { SchoolNoticeBoard } from "@/components/SchoolNoticeBoard";
 import {
   getHealthSciencesEvents,
   getHealthSciencesNews,
