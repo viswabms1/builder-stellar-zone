@@ -30,6 +30,7 @@ import {
 } from "lucide-react";
 import { DeanSection, type DeanInfo } from "@/components/DeanSection";
 import { useAutoMuteOnScroll } from "@/hooks/useAutoMuteOnScroll";
+import { DepartmentNoticeBoard } from "@/components/DepartmentNoticeBoard";
 import {
   getAlliedHealthEvents,
   getAlliedHealthNews,
@@ -958,9 +959,7 @@ export default function AlliedHealthSciences() {
       </section>
 
       {/* Notice Board */}
-      <section id="notice-board" className="px-3 py-8">
-        <NoticeBoardCarousel />
-      </section>
+      <DepartmentNoticeBoard school="Health Sciences" department="Allied Health Sciences" />
     </div>
   );
 }
