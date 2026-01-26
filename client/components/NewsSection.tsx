@@ -262,83 +262,92 @@ function NewsCarousel({ news, title, description, compact = false }: NewsCarouse
     return () => clearInterval(interval);
   }, [news.length]);
 
+  const carouselContent = (
+    <>
+      <div className="flex items-center gap-2 px-4 py-3 rounded-xl border-l-4 border-brand-orange bg-brand-orange/10">
+        <h3 className="headline-4 font-display text-brand-orange">{title}</h3>
+        {news.length > 0 && <Badge className="ml-auto text-xs">{currentIndex + 1} / {news.length}</Badge>}
+      </div>
+
+      {news.length > 0 && (
+        <>
+          <Card className="group overflow-hidden rounded-2xl border-2 border-border/30 bg-card/40 backdrop-blur-sm">
+            {news[currentIndex]?.image && (
+              <div className="relative h-48 overflow-hidden">
+                <img
+                  src={news[currentIndex].image}
+                  alt={news[currentIndex].title}
+                  className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                />
+              </div>
+            )}
+            <CardContent className="p-4 space-y-3">
+              <div className="flex items-start justify-between gap-2">
+                <div className="flex-1">
+                  <h4 className="font-display font-semibold text-sm text-foreground mb-2 line-clamp-2">{news[currentIndex].title}</h4>
+                  <p className="text-xs text-foreground/70 line-clamp-2">{news[currentIndex].excerpt || (news[currentIndex].content ? news[currentIndex].content.substring(0, 100) : '')}</p>
+                </div>
+              </div>
+              <div className="flex items-center justify-between pt-2 border-t border-border/20">
+                <span className="text-xs font-semibold text-foreground/60">{new Date(news[currentIndex].date).toLocaleDateString()}</span>
+              </div>
+            </CardContent>
+          </Card>
+
+          <div className="flex items-center justify-between gap-2">
+            <div className="flex gap-1">
+              {news.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setCurrentIndex(idx)}
+                  className={`h-1.5 rounded-full transition-all ${
+                    idx === currentIndex ? "bg-brand-orange w-6" : "bg-border/40 w-1.5 hover:bg-border/60"
+                  }`}
+                />
+              ))}
+            </div>
+            <div className="flex gap-1">
+              <Button
+                variant="outline"
+                size="sm"
+                className="h-7 px-2 text-xs"
+                onClick={() => setCurrentIndex((prev) => (prev - 1 + news.length) % news.length)}
+              >
+                ←
+              </Button>
+              <Button
+                variant="outline"
+                size="sm"
+                className="h-7 px-2 text-xs"
+                onClick={() => setCurrentIndex((prev) => (prev + 1) % news.length)}
+              >
+                →
+              </Button>
+            </div>
+          </div>
+        </>
+      )}
+    </>
+  );
+
+  if (compact) {
+    return <div className="space-y-4">{carouselContent}</div>;
+  }
+
   if (news.length === 0) {
     return (
       <section className="px-3 py-8">
         <div className="mx-auto max-w-7xl space-y-4">
-          <div className="flex items-center gap-2 px-4 py-3 rounded-xl border-l-4 border-brand-orange bg-brand-orange/10">
-            <h3 className="headline-4 font-display text-brand-orange">{title}</h3>
-          </div>
-          <p className="text-xs text-foreground/60 italic p-4 text-center">No items to display</p>
+          {carouselContent}
         </div>
       </section>
     );
   }
 
-  const currentItem = news[currentIndex];
-
   return (
     <section className="px-3 py-8">
       <div className="mx-auto max-w-7xl space-y-4">
-        <div className="flex items-center gap-2 px-4 py-3 rounded-xl border-l-4 border-brand-orange bg-brand-orange/10">
-          <h3 className="headline-4 font-display text-brand-orange">{title}</h3>
-          <Badge className="ml-auto text-xs">{currentIndex + 1} / {news.length}</Badge>
-        </div>
-
-        <Card className="group overflow-hidden rounded-2xl border-2 border-border/30 bg-card/40 backdrop-blur-sm">
-          {currentItem.image && (
-            <div className="relative h-48 overflow-hidden">
-              <img
-                src={currentItem.image}
-                alt={currentItem.title}
-                className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
-              />
-            </div>
-          )}
-          <CardContent className="p-4 space-y-3">
-            <div className="flex items-start justify-between gap-2">
-              <div className="flex-1">
-                <h4 className="font-display font-semibold text-sm text-foreground mb-2 line-clamp-2">{currentItem.title}</h4>
-                <p className="text-xs text-foreground/70 line-clamp-2">{currentItem.excerpt || (currentItem.content ? currentItem.content.substring(0, 100) : '')}</p>
-              </div>
-            </div>
-            <div className="flex items-center justify-between pt-2 border-t border-border/20">
-              <span className="text-xs font-semibold text-foreground/60">{new Date(currentItem.date).toLocaleDateString()}</span>
-            </div>
-          </CardContent>
-        </Card>
-
-        <div className="flex items-center justify-between gap-2">
-          <div className="flex gap-1">
-            {news.map((_, idx) => (
-              <button
-                key={idx}
-                onClick={() => setCurrentIndex(idx)}
-                className={`h-1.5 rounded-full transition-all ${
-                  idx === currentIndex ? "bg-brand-orange w-6" : "bg-border/40 w-1.5 hover:bg-border/60"
-                }`}
-              />
-            ))}
-          </div>
-          <div className="flex gap-1">
-            <Button
-              variant="outline"
-              size="sm"
-              className="h-7 px-2 text-xs"
-              onClick={() => setCurrentIndex((prev) => (prev - 1 + news.length) % news.length)}
-            >
-              ←
-            </Button>
-            <Button
-              variant="outline"
-              size="sm"
-              className="h-7 px-2 text-xs"
-              onClick={() => setCurrentIndex((prev) => (prev + 1) % news.length)}
-            >
-              →
-            </Button>
-          </div>
-        </div>
+        {carouselContent}
       </div>
     </section>
   );
