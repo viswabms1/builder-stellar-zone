@@ -732,92 +732,44 @@ function AccreditationDocuments() {
   );
 }
 
-function NoticeBoard() {
-  const notices: NoticeItem[] = [
-    {
-      id: "notice-1",
-      title: "B.Tech CSE (Cybersecurity) Program Launch",
-      category: "Event",
-      date: "Jan 2025",
-      description: "Welcome to the Cybersecurity program with cutting-edge curriculum focusing on data security and network protection.",
-      image: "https://images.unsplash.com/photo-1550751827-4bd582f200e7?w=600&h=300&fit=crop",
-      link: "https://www.dsu.edu.in/images/Engineering/Cybersec-dept/notices/Program-Launch.pdf",
-    },
-    {
-      id: "notice-2",
-      title: "Guest Lectures by Cybersecurity Industry Experts",
-      category: "Event",
-      date: "Upcoming",
-      description: "Weekly sessions featuring security professionals from leading cybersecurity firms.",
-      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=300&fit=crop",
-    },
-    {
-      id: "notice-3",
-      title: "Cybersecurity Internship Opportunities",
-      category: "News",
-      date: "Year-round",
-      description: "Paid internships with top cybersecurity and IT companies in security operations centers and threat analysis.",
-      image: "https://images.unsplash.com/photo-1563986768609-7f64142852dc?w=600&h=300&fit=crop",
-      link: "https://www.dsu.edu.in/images/Engineering/Cybersec-dept/notices/Internships.pdf",
-    },
-    {
-      id: "notice-4",
-      title: "Research in Network Security Published",
-      category: "News",
-      date: "Jan 2025",
-      description: "Faculty research on advanced encryption and intrusion detection systems accepted in security journals.",
-      image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=300&fit=crop",
-    },
-    {
-      id: "notice-5",
-      title: "Security Project Showcase",
-      category: "Announcement",
-      date: "Mar 2025",
-      description: "Students showcase their cybersecurity projects to industry recruiters and security professionals.",
-    },
-    {
-      id: "notice-6",
-      title: "New Electives in Cloud Security and Ethical Hacking",
-      category: "Announcement",
-      date: "Feb 2025",
-      description: "New courses in Cloud Security, Penetration Testing, and Advanced Threat Analysis available for registration.",
-      link: "https://www.dsu.edu.in/images/Engineering/Cybersec-dept/notices/Curriculum-Updates.pdf",
-    },
-  ];
+function DepartmentNoticeBoard({ department }: { department: string }) {
+  const { announcements, news: newsItems, events: eventItems } = getDepartmentContent("Engineering", department);
 
-  const events = notices.filter((n) => n.category === "Event");
-  const news = notices.filter((n) => n.category === "News");
-  const announcements = notices.filter((n) => n.category === "Announcement");
-
-  const [currentEventIndex, setCurrentEventIndex] = useState(0);
+  const [currentAnnouncementIndex, setCurrentAnnouncementIndex] = useState(0);
   const [currentNewsIndex, setCurrentNewsIndex] = useState(0);
+  const [currentEventIndex, setCurrentEventIndex] = useState(0);
 
   useEffect(() => {
-    if (events.length === 0) return;
+    if (announcements.length === 0) return;
     const interval = setInterval(() => {
-      setCurrentEventIndex((prev) => (prev + 1) % events.length);
+      setCurrentAnnouncementIndex((prev) => (prev + 1) % announcements.length);
     }, 6000);
     return () => clearInterval(interval);
-  }, [events.length]);
+  }, [announcements.length]);
 
   useEffect(() => {
-    if (news.length === 0) return;
+    if (newsItems.length === 0) return;
     const interval = setInterval(() => {
-      setCurrentNewsIndex((prev) => (prev + 1) % news.length);
+      setCurrentNewsIndex((prev) => (prev + 1) % newsItems.length);
     }, 6000);
     return () => clearInterval(interval);
-  }, [news.length]);
+  }, [newsItems.length]);
 
-  const renderCarousel = (title: string, items: NoticeItem[], color: string, currentIndex: number, setCurrentIndex: (idx: number) => void) => {
+  useEffect(() => {
+    if (eventItems.length === 0) return;
+    const interval = setInterval(() => {
+      setCurrentEventIndex((prev) => (prev + 1) % eventItems.length);
+    }, 6000);
+    return () => clearInterval(interval);
+  }, [eventItems.length]);
+
+  const renderCarousel = (title: string, items: CarouselItem[], currentIndex: number, setCurrentIndex: (idx: number) => void, category: "Announcement" | "News" | "Event") => {
+    const styles = getCategoryStyles(category);
     if (items.length === 0) {
       return (
         <div className="space-y-4">
-          <div className={`flex items-center gap-2 px-4 py-3 rounded-xl border-l-4 ${
-            color === "blue"
-              ? "border-brand-blue bg-brand-blue/10"
-              : "border-brand-blue bg-brand-blue/10"
-          }`}>
-            <h3 className={`headline-4 font-display ${color === "blue" ? "text-brand-blue" : "text-brand-blue"}`}>{title}</h3>
+          <div className={`flex items-center gap-2 px-4 py-3 rounded-xl border-l-4 ${styles.borderColor} ${styles.bgColor}`}>
+            <h3 className={`headline-4 font-display ${styles.textColor}`}>{title}</h3>
           </div>
           <p className="text-xs text-foreground/60 italic p-4 text-center">No items to display</p>
         </div>
@@ -828,12 +780,8 @@ function NoticeBoard() {
 
     return (
       <div className="space-y-4">
-        <div className={`flex items-center gap-2 px-4 py-3 rounded-xl border-l-4 ${
-          color === "blue"
-            ? "border-brand-blue bg-brand-blue/10"
-            : "border-brand-blue bg-brand-blue/10"
-        }`}>
-          <h3 className={`headline-4 font-display ${color === "blue" ? "text-brand-blue" : "text-brand-blue"}`}>{title}</h3>
+        <div className={`flex items-center gap-2 px-4 py-3 rounded-xl border-l-4 ${styles.borderColor} ${styles.bgColor}`}>
+          <h3 className={`headline-4 font-display ${styles.textColor}`}>{title}</h3>
           <Badge className="ml-auto text-xs">{currentIndex + 1} / {items.length}</Badge>
         </div>
 
@@ -881,7 +829,7 @@ function NoticeBoard() {
                 onClick={() => setCurrentIndex(idx)}
                 className={`h-1.5 rounded-full transition-all ${
                   idx === currentIndex
-                    ? "bg-brand-blue w-6"
+                    ? `${styles.bgColor} w-6`
                     : "bg-border/40 w-1.5 hover:bg-border/60"
                 }`}
               />
@@ -911,77 +859,18 @@ function NoticeBoard() {
   };
 
   return (
-    <section className="px-3 py-8">
+    <section id="notice-board" className="px-3 py-8">
       <div className="mx-auto max-w-7xl space-y-4">
-        <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <h2 className="headline-2 mb-3 font-display">
-              <span className="text-foreground">Department </span>
-              <span className="bg-brand-gradient bg-clip-text text-transparent">
-                Notice Board
-              </span>
-            </h2>
-            <p className="max-w-2xl text-sm text-foreground sm:text-base font-body">
-              Stay updated with upcoming events, news, and important announcements from the Cybersecurity department.
-            </p>
-          </div>
-          <Badge className="w-fit rounded-full bg-brand-blue/15 px-4 py-2 text-xs font-semibold text-brand-blue border border-brand-blue/20">
-            Updated weekly
-          </Badge>
-        </div>
-
-        <div className="grid lg:grid-cols-2 gap-4">
-          <div>
-            {renderCarousel("Events", events, "blue", currentEventIndex, setCurrentEventIndex)}
-          </div>
-          <div>
-            {renderCarousel("News", news, "blue", currentNewsIndex, setCurrentNewsIndex)}
-          </div>
-        </div>
-
-        <div className="space-y-4">
-          <div className="flex items-center gap-2 px-4 py-3 rounded-xl border-l-4 border-brand-blue bg-brand-blue/10">
-            <h3 className="headline-4 font-display text-brand-blue">Announcements</h3>
-            <Badge className="ml-auto text-xs">{announcements.length}</Badge>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
-            {announcements.length > 0 ? (
-              announcements.map((notice) => (
-                <Card
-                  key={notice.id}
-                  className="group border border-border/40 bg-card/50 shadow-sm transition hover:-translate-y-1 hover:border-brand-blue/40 hover:shadow-brand-blue/5"
-                >
-                  <CardHeader className="pb-2">
-                    <div className="flex items-start justify-between gap-2 mb-2">
-                      <span className="text-xs font-semibold text-foreground/60">{notice.date}</span>
-                      {notice.link && (
-                        <Button
-                          variant="ghost"
-                          size="sm"
-                          className="h-6 px-2 text-xs bg-brand-blue/10 text-brand-blue hover:bg-brand-blue/20"
-                          asChild
-                        >
-                          <a href={notice.link} target="_blank" rel="noreferrer">
-                            <Download className="h-3 w-3" />
-                          </a>
-                        </Button>
-                      )}
-                    </div>
-                    <CardTitle className="text-sm font-display text-foreground line-clamp-2">
-                      {notice.title}
-                    </CardTitle>
-                    {notice.description && (
-                      <CardDescription className="text-xs line-clamp-2 mt-1">
-                        {notice.description}
-                      </CardDescription>
-                    )}
-                  </CardHeader>
-                </Card>
-              ))
-            ) : (
-              <p className="col-span-full text-center text-sm text-foreground/60 py-8">No announcements yet</p>
-            )}
-          </div>
+        <h2 className="headline-2 mb-3 font-display">
+          <span className="text-foreground">Department </span>
+          <span className="bg-brand-gradient bg-clip-text text-transparent">
+            Notice Board
+          </span>
+        </h2>
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {renderCarousel("Events", eventItems, currentEventIndex, setCurrentEventIndex, "Event")}
+          {renderCarousel("News", newsItems, currentNewsIndex, setCurrentNewsIndex, "News")}
+          {renderCarousel("Announcements", announcements, currentAnnouncementIndex, setCurrentAnnouncementIndex, "Announcement")}
         </div>
       </div>
     </section>
