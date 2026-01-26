@@ -67,15 +67,30 @@ export function useContentContext(): ContentContext {
 
   // Department mappings (extracted from path)
   const departmentMap: Record<string, string> = {
+    // Engineering departments
+    "computer-science": "CSE",
     "cse": "CSE",
-    "ece": "ECE",
-    "mechanical": "Mechanical",
-    "aerospace": "Aerospace",
-    "aiml": "AIML",
+    "artificial-intelligence": "AIML",
     "ai-ml": "AIML",
+    "aiml": "AIML",
+    "ai-data-science": "AI & DS",
     "ai-ds": "AI & DS",
-    "ai-robotics": "AI Robotics",
+    "aids": "AI & DS",
+    "data-science": "Data Science",
+    "datasci": "Data Science",
     "cybersecurity": "Cybersecurity",
+    "computer-technology": "Computer Technology",
+    "cs-medical-engineering": "CS Medical Engineering",
+    "ai-robotics": "AI Robotics",
+    "airobotics": "AI Robotics",
+    "mechanical-engineering": "Mechanical",
+    "mechanical": "Mechanical",
+    "aerospace-engineering": "Aerospace",
+    "aerospace": "Aerospace",
+    "electronics-communication": "ECE",
+    "ece": "ECE",
+
+    // Health Sciences departments
     "pharmacy": "Pharmacy",
     "nursing": "Nursing",
     "physiotherapy": "Physiotherapy",
@@ -83,6 +98,8 @@ export function useContentContext(): ContentContext {
     "bpharma": "Pharmacy",
     "bscnursing": "Nursing",
     "allied-health": "Allied Health",
+
+    // Other departments
     "law": "Law",
     "bcom": "Commerce",
     "bba": "Management",
