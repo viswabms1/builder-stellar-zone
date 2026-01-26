@@ -267,9 +267,40 @@ When ready to move to Directus CMS, simply:
 
 3. Keep the data structures and components unchanged
 
+## How Auto-Detection Works
+
+The `useContentContext()` hook detects the current page by analyzing the URL:
+
+```typescript
+// Examples of auto-detection:
+"/engineering"              → school: "Engineering"
+"/dept-cse" or "/deptcse"   → school: "Engineering", department: "CSE"
+"/pharmacy"                 → school: "Health Sciences", department: "Pharmacy"
+"/mba"                      → school: "Commerce & Management", department: "MBA"
+```
+
+See `client/hooks/useContentContext.ts` for the complete mapping.
+
+## Adding Support for New Routes
+
+If you add new school or department pages, update the mappings in `client/hooks/useContentContext.ts`:
+
+```typescript
+const schoolMap = {
+  "/your-new-path": "Your School Name",
+  // ... existing mappings
+};
+
+const departmentMap = {
+  "your-dept": "Your Department Name",
+  // ... existing mappings
+};
+```
+
 ## Next Steps
 
-- Add these sections to your existing school/department pages
-- Update file paths as needed for your project structure
-- Test filtering with different school/department combinations
-- When ready, connect to Directus CMS (no component changes needed)
+1. **Add to your pages** — Drop components into school/department pages
+2. **No props needed** — Components auto-filter based on current page
+3. **Override if needed** — Use `school` prop to force specific content
+4. **Update route mappings** — Add new routes to `useContentContext.ts` as you add pages
+5. **When ready** — Connect to Directus CMS (no component changes needed)
