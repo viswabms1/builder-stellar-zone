@@ -8,6 +8,8 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { CurriculumLibrary } from "@/components/CurriculumLibrary";
+import { getCurriculumByDepartment } from "@/lib/content-manager";
 import {
   Heart,
   Stethoscope,
