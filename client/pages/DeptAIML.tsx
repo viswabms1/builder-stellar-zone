@@ -477,7 +477,7 @@ export default function DeptAIML() {
       {/* ===== PROGRAMS & CURRICULUM ===== */}
       <EligibilityAndFees />
 
-      <CurriculumLibrary />
+      <CurriculumLibraryWrapper />
 
       <AccreditationDocuments />
 
