@@ -4,33 +4,34 @@ This is the correct mapping based on actual school pages and Navigation structur
 
 ## 1. School of Engineering
 
-### Main Departments (CS Cluster)
-- B.Tech Computer Science & Engineering (CSE)
+### Undergraduate Programs (4 Years)
+- B.Tech Computer Science & Engineering
 - B.Tech CSE (AI & ML)
-- B.Tech CSE (AI & Data Science)
 - B.Tech CSE (Data Science)
-- B.Tech CSE (Cybersecurity)
-- B.Tech CSE (AI & Robotics)
-- Computer Science & Technology
-
-### Other Engineering Disciplines
-- B.Tech Electronics & Communication Engineering (ECE)
+- B.Tech CSE (Cyber Security)
+- B.Tech CSE (AI & Data Science)
+- B.Tech CSE (AI) / Computer Science & Engineering (Artificial Intelligence)
+- B.Tech Computer Science & Medical Engineering
+- B.Tech Computer Science & Technology
+- B.Tech AI & Robotics
+- B.Tech Electronics & Communication Engineering
 - B.Tech Mechanical Engineering
 - B.Tech Aerospace Engineering
-- B.Tech Computer Science and Medical Engineering
 
-### Postgraduate (M.Tech)
+### Postgraduate Programs (2 Years - M.Tech)
 - M.Tech Computer Science & Engineering
-- M.Tech Artificial Intelligence & Machine Learning
-- M.Tech Artificial Intelligence & Data Science
-- M.Tech Artificial Intelligence & Robotics
+- M.Tech CSE (AI & ML)
+- M.Tech AI & Data Science
+- M.Tech AI
+- M.Tech AI & Robotics
 - M.Tech Embedded Systems
 - M.Tech Design Engineering
 
 ### Foundation/Supporting Departments (Under SOE)
-- **Physics** ← Foundation department
-- **Chemistry** ← Foundation department
-- **Mathematics** ← Foundation department
+These are critical foundational programs that support all SOE students:
+- **Physics** ← All Engineering students take Physics
+- **Chemistry** ← All Engineering students take Chemistry
+- **Mathematics** ← All Engineering students take Mathematics
 
 ---
 
