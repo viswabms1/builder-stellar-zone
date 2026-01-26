@@ -51,6 +51,7 @@ import {
   getCategoryStyles,
   type CarouselItem,
 } from "@/lib/content-manager";
+import { SchoolNoticeBoard } from "@/components/SchoolNoticeBoard";
 
 const HERO_IMAGE = "https://www.dsu.edu.in/images/Engineering/engg-landing.jpg";
 
