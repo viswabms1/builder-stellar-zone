@@ -667,10 +667,30 @@ export default function DeptCSE() {
 
       <AccreditationDocuments />
 
-      {/* Auto-filtered content based on current department context */}
-      <AnnouncementBanner priority="high" variant="banner" />
-      <NewsSection variant="carousel" title="Department News" />
-      <EventsSection variant="carousel" title="Upcoming Events" />
+      {/* Auto-filtered content based on current department context - 3-column grid layout */}
+      <section id="notice-board" className="px-3 py-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between mb-8">
+            <div>
+              <h2 className="headline-2 mb-3">
+                <span className="text-foreground">What's </span>
+                <span className="bg-brand-gradient bg-clip-text text-transparent">
+                  Happening
+                </span>
+                <span className="text-foreground"> at CSE</span>
+              </h2>
+              <p className="max-w-2xl text-sm text-foreground sm:text-base font-body">
+                Explore recent achievements, industry collaborations, and upcoming opportunities.
+              </p>
+            </div>
+          </div>
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            <NewsSection variant="carousel" title="Department News" compact={true} />
+            <EventsSection variant="carousel" title="Upcoming Events" compact={true} />
+            <AnnouncementBanner priority="high" variant="list" />
+          </div>
+        </div>
+      </section>
 
       <LabsFacilitiesCarousel />
 
