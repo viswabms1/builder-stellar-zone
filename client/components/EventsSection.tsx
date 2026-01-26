@@ -281,56 +281,46 @@ function EventsCarousel({ events, title, description }: EventsCarouselProps) {
 
   if (events.length === 0) {
     return (
-      <div className="px-3 py-8">
-        <div className="mx-auto max-w-7xl">
-          {title && <h2 className="text-2xl font-bold text-foreground mb-4">{title}</h2>}
-          <div className="text-center py-12 text-foreground/50">
-            <p>No upcoming events at this time.</p>
+      <section className="px-3 py-8">
+        <div className="mx-auto max-w-7xl space-y-4">
+          <div className="flex items-center gap-2 px-4 py-3 rounded-xl border-l-4 border-brand-magenta bg-brand-magenta/10">
+            <h3 className="headline-4 font-display text-brand-magenta">{title}</h3>
           </div>
+          <p className="text-xs text-foreground/60 italic p-4 text-center">No items to display</p>
         </div>
-      </div>
+      </section>
     );
   }
 
   const currentEvent = events[currentIndex];
 
   return (
-    <div className="px-3 py-8">
+    <section className="px-3 py-8">
       <div className="mx-auto max-w-7xl space-y-4">
-        <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            {title && <h2 className="text-2xl font-bold text-foreground mb-2">{title}</h2>}
-            {description && <p className="text-foreground/70 text-sm">{description}</p>}
-          </div>
-          <Badge className="w-fit text-xs">{currentIndex + 1} / {events.length}</Badge>
+        <div className="flex items-center gap-2 px-4 py-3 rounded-xl border-l-4 border-brand-magenta bg-brand-magenta/10">
+          <h3 className="headline-4 font-display text-brand-magenta">{title}</h3>
+          <Badge className="ml-auto text-xs">{currentIndex + 1} / {events.length}</Badge>
         </div>
 
-        <Card className="overflow-hidden border border-border/30">
+        <Card className="group overflow-hidden rounded-2xl border-2 border-border/30 bg-card/40 backdrop-blur-sm">
           {currentEvent.image && (
-            <img
-              src={currentEvent.image}
-              alt={currentEvent.title}
-              className="w-full h-48 object-cover"
-            />
+            <div className="relative h-48 overflow-hidden">
+              <img
+                src={currentEvent.image}
+                alt={currentEvent.title}
+                className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
+              />
+            </div>
           )}
-          <CardContent className="p-4">
-            <CardTitle className="text-lg mb-2">{currentEvent.title}</CardTitle>
-            <p className="text-sm text-foreground/70 line-clamp-2">{currentEvent.description}</p>
-            <div className="mt-3 space-y-1 text-xs text-foreground/60">
-              <div className="flex items-center gap-2">
-                <Calendar className="h-3 w-3" />
-                <span>{new Date(currentEvent.date).toLocaleDateString()}</span>
+          <CardContent className="p-4 space-y-3">
+            <div className="flex items-start justify-between gap-2">
+              <div className="flex-1">
+                <h4 className="font-display font-semibold text-sm text-foreground mb-2 line-clamp-2">{currentEvent.title}</h4>
+                <p className="text-xs text-foreground/70 line-clamp-2">{currentEvent.description}</p>
               </div>
-              {currentEvent.time && (
-                <div className="flex items-center gap-2">
-                  <Clock className="h-3 w-3" />
-                  <span>{currentEvent.time}</span>
-                </div>
-              )}
-              <div className="flex items-center gap-2">
-                <MapPin className="h-3 w-3" />
-                <span>{currentEvent.location}</span>
-              </div>
+            </div>
+            <div className="flex items-center justify-between pt-2 border-t border-border/20">
+              <span className="text-xs font-semibold text-foreground/60">{new Date(currentEvent.date).toLocaleDateString()}</span>
             </div>
           </CardContent>
         </Card>
@@ -341,31 +331,32 @@ function EventsCarousel({ events, title, description }: EventsCarouselProps) {
               <button
                 key={idx}
                 onClick={() => setCurrentIndex(idx)}
-                className={`h-2 rounded-full transition-all ${
-                  idx === currentIndex ? "bg-red-600 w-6" : "bg-gray-300 w-2"
+                className={`h-1.5 rounded-full transition-all ${
+                  idx === currentIndex ? "bg-brand-magenta w-6" : "bg-border/40 w-1.5 hover:bg-border/60"
                 }`}
-                aria-label={`Go to event ${idx + 1}`}
               />
             ))}
           </div>
-          <div className="flex gap-2">
+          <div className="flex gap-1">
             <Button
               variant="outline"
               size="sm"
+              className="h-7 px-2 text-xs"
               onClick={() => setCurrentIndex((prev) => (prev - 1 + events.length) % events.length)}
             >
-              ← Previous
+              ←
             </Button>
             <Button
               variant="outline"
               size="sm"
+              className="h-7 px-2 text-xs"
               onClick={() => setCurrentIndex((prev) => (prev + 1) % events.length)}
             >
-              Next →
+              →
             </Button>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
