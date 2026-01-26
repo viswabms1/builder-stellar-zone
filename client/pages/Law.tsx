@@ -75,7 +75,6 @@ type NoticeItem = ImportedNoticeItem;
 const getAllLawEvents = () => getLawEvents();
 const getLawNewsData = () => getLawNews();
 const getLawAnnouncementsData = () => getLawAnnouncements();
-}
 
 const PROGRAM_CARDS: ProgramCard[] = [
   {

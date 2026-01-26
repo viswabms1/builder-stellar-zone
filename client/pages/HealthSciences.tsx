@@ -88,7 +88,6 @@ const getAllHealthSciencesEvents = () => getHealthSciencesEvents();
 const getHealthSciencesNewsData = () => getHealthSciencesNews();
 const getHealthSciencesAnnouncementsData = () =>
   getHealthSciencesAnnouncements();
-}
 
 const HERO_IMAGE =
   "https://images.unsplash.com/photo-1580281657521-8a19aa08c8c8?q=80&w=2000&auto=format&fit=crop";
