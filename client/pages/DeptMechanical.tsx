@@ -264,11 +264,10 @@ export default function DeptMechanical() {
         </div>
       </section>
 
-      <CurriculumLibrary />
+      <CurriculumLibraryWrapper />
 
       <AccreditationDocuments />
 
-      <AnnouncementBanner priority="high" variant="banner" />
       <DepartmentNoticeBoard department="Mechanical Engineering" />
 
       <LabsFacilitiesCarousel />
