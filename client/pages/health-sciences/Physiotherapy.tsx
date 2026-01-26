@@ -9,8 +9,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { NewsSection } from "@/components/NewsSection";
-import { EventsSection } from "@/components/EventsSection";
+import { DepartmentNoticeBoard } from "@/components/DepartmentNoticeBoard";
 import { AnnouncementBanner } from "@/components/AnnouncementBanner";
 import {
   Sparkles,
@@ -994,8 +993,7 @@ export default function Physiotherapy() {
       </section>
 
       <AnnouncementBanner priority="high" variant="banner" />
-      <NewsSection variant="carousel" title="Department News" />
-      <EventsSection variant="carousel" title="Upcoming Events" />
+      <DepartmentNoticeBoard school="Health Sciences" department="Physiotherapy" />
     </div>
   );
 }
