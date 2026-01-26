@@ -27,6 +27,11 @@ import {
   BookOpen,
 } from "lucide-react";
 
+function CurriculumLibraryComponent() {
+  const programs = getCurriculumByDepartment("Health Sciences", "Pharmacy");
+  return <CurriculumLibrary programs={programs} themeColor="blue" />;
+}
+
 export default function MPharmPharmaceutics() {
   useEffect(() => {
     window.scrollTo(0, 0);
