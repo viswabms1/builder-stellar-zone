@@ -597,8 +597,10 @@ export default function DeptAIML() {
       {/* ===== LABS & FACILITIES ===== */}
       <LabsFacilitiesCarousel />
 
-      {/* ===== NEWS & ANNOUNCEMENTS (KEPT AS IS) ===== */}
-      <NoticeBoard />
+      {/* ===== NEWS & ANNOUNCEMENTS ===== */}
+      <AnnouncementBanner priority="high" variant="banner" />
+      <NewsSection variant="grid" title="Department News" />
+      <EventsSection variant="upcoming" title="Upcoming Events" />
     </div>
   );
 }
