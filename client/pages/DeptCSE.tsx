@@ -44,6 +44,11 @@ import {
   IndianRupee,
 } from "lucide-react";
 
+function CurriculumLibraryComponent() {
+  const programs = getCurriculumByDepartment("Engineering", "CSE");
+  return <CurriculumLibrary programs={programs} themeColor="blue" />;
+}
+
 export default function DeptCSE() {
   const specializations = [
     { icon: Brain, label: "AI & ML" },
