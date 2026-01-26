@@ -5,9 +5,8 @@ import { schools } from "./Eligibility";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { useMemo } from "react";
-import { NewsSection } from "@/components/NewsSection";
-import { EventsSection } from "@/components/EventsSection";
 import { AnnouncementBanner } from "@/components/AnnouncementBanner";
+import { getDepartmentContent, getCategoryStyles, type CarouselItem } from "@/lib/content-manager";
 import {
   Brain,
   Database,
