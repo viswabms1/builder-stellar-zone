@@ -4,9 +4,8 @@ import { Button } from "@/components/ui/button";
 import { computerTechnologyFaculty } from "@/data/computer-technology-faculty";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { NewsSection } from "@/components/NewsSection";
-import { EventsSection } from "@/components/EventsSection";
 import { AnnouncementBanner } from "@/components/AnnouncementBanner";
+import { getDepartmentContent, getCategoryStyles, type CarouselItem } from "@/lib/content-manager";
 import {
   Code2,
   Cpu,
@@ -256,8 +255,7 @@ export default function DeptComputerTechnology() {
       </section>
 
       <AnnouncementBanner priority="high" variant="banner" />
-      <NewsSection variant="carousel" title="Department News" />
-      <EventsSection variant="carousel" title="Upcoming Events" />
+      <DepartmentNoticeBoard department="Computer Science & Technology" />
 
       <LabsFacilitiesCarousel />
 
