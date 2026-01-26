@@ -2038,12 +2038,13 @@ function CurriculumLibrary() {
   );
 }
 
-// Department-specific notice board using 3-column grid design (matching School of Engineering layout)
+// Department-specific notice board using EXACT School of Engineering design
 function DepartmentNoticeBoard({ department }: { department: string }) {
   const [currentEventIndex, setCurrentEventIndex] = useState(0);
   const [currentNewsIndex, setCurrentNewsIndex] = useState(0);
   const [currentAnnouncementIndex, setCurrentAnnouncementIndex] = useState(0);
 
+  // Get department content from centralized manager
   const { announcements, news: newsItems, events: eventItems } = getDepartmentContent("Engineering", department);
 
   useEffect(() => {
@@ -2075,7 +2076,7 @@ function DepartmentNoticeBoard({ department }: { department: string }) {
     items: CarouselItem[],
     currentIndex: number,
     setCurrentIndex: (idx: number) => void,
-    category: "Event" | "News" | "Announcement"
+    category: "Event" | "News" | "Announcement",
   ) => {
     const styles = getCategoryStyles(category);
 
@@ -2177,7 +2178,11 @@ function DepartmentNoticeBoard({ department }: { department: string }) {
               variant="outline"
               size="sm"
               className="h-7 px-2 text-xs"
-              onClick={() => setCurrentIndex((prev) => (prev - 1 + items.length) % items.length)}
+              onClick={() =>
+                setCurrentIndex(
+                  (prev) => (prev - 1 + items.length) % items.length,
+                )
+              }
             >
               ←
             </Button>
@@ -2185,7 +2190,9 @@ function DepartmentNoticeBoard({ department }: { department: string }) {
               variant="outline"
               size="sm"
               className="h-7 px-2 text-xs"
-              onClick={() => setCurrentIndex((prev) => (prev + 1) % items.length)}
+              onClick={() =>
+                setCurrentIndex((prev) => (prev + 1) % items.length)
+              }
             >
               →
             </Button>
@@ -2197,54 +2204,35 @@ function DepartmentNoticeBoard({ department }: { department: string }) {
 
   return (
     <>
-      <section id="notice-board" className="px-3 py-8">
-        <div className="mx-auto max-w-7xl">
-          <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between mb-8">
-            <div>
-              <h2 className="headline-2 mb-3">
-                <span className="text-foreground">What's </span>
-                <span className="bg-brand-gradient bg-clip-text text-transparent">
-                  Happening
-                </span>
-                <span className="text-foreground"> at {department}</span>
-              </h2>
-              <p className="max-w-2xl text-sm text-foreground sm:text-base font-body">
-                Explore recent achievements, industry collaborations, and
-                upcoming opportunities.
-              </p>
-            </div>
-          </div>
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            <div>
-              {renderCarousel(
-                "Events",
-                eventItems,
-                currentEventIndex,
-                setCurrentEventIndex,
-                "Event"
-              )}
-            </div>
-            <div>
-              {renderCarousel(
-                "News",
-                newsItems,
-                currentNewsIndex,
-                setCurrentNewsIndex,
-                "News"
-              )}
-            </div>
-            <div>
-              {renderCarousel(
-                "Announcements",
-                announcements,
-                currentAnnouncementIndex,
-                setCurrentAnnouncementIndex,
-                "Announcement"
-              )}
-            </div>
-          </div>
+      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <div>
+          {renderCarousel(
+            "Events",
+            eventItems,
+            currentEventIndex,
+            setCurrentEventIndex,
+            "Event",
+          )}
         </div>
-      </section>
+        <div>
+          {renderCarousel(
+            "News",
+            newsItems,
+            currentNewsIndex,
+            setCurrentNewsIndex,
+            "News",
+          )}
+        </div>
+        <div>
+          {renderCarousel(
+            "Announcements",
+            announcements,
+            currentAnnouncementIndex,
+            setCurrentAnnouncementIndex,
+            "Announcement",
+          )}
+        </div>
+      </div>
     </>
   );
 }
