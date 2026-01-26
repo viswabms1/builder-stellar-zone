@@ -5,8 +5,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { useScrollTrigger } from "@/hooks/useScrollTrigger";
 import { useMemo } from "react";
-import { NewsSection } from "@/components/NewsSection";
-import { EventsSection } from "@/components/EventsSection";
+import { getDepartmentContent, getCategoryStyles, type CarouselItem } from "@/lib/content-manager";
+import { Download } from "lucide-react";
 import { AnnouncementBanner } from "@/components/AnnouncementBanner";
 import {
   Bot,
