@@ -10,6 +10,8 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { DepartmentNoticeBoard } from "@/components/DepartmentNoticeBoard";
+import { CurriculumLibrary } from "@/components/CurriculumLibrary";
+import { getCurriculumByDepartment } from "@/lib/content-manager";
 import {
   Heart,
   Activity,
