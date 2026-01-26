@@ -156,55 +156,81 @@ export function AnnouncementBanner({
   if (variant === "card") {
     return (
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 mb-6">
-        {visibleAnnouncements.map((announcement) => (
-          <div
-            key={announcement.id}
-            className={`rounded-lg border p-4 ${
-              announcement.priority === "high"
-                ? "border-red-200 bg-red-50"
-                : announcement.priority === "medium"
-                  ? "border-yellow-200 bg-yellow-50"
-                  : "border-blue-200 bg-blue-50"
-            }`}
-          >
-            {announcement.image && (
-              <img
-                src={announcement.image}
-                alt={announcement.title}
-                className="w-full h-32 object-cover rounded mb-3"
-              />
-            )}
-            <div className="flex items-start justify-between">
-              <div className="flex-1">
-                <h4 className="font-semibold text-foreground text-sm">
+        {visibleAnnouncements.map((announcement) => {
+          const borderColor =
+            announcement.priority === "high"
+              ? "border-red-200 bg-red-50"
+              : announcement.priority === "medium"
+                ? "border-yellow-200 bg-yellow-50"
+                : "border-blue-200 bg-blue-50";
+
+          return (
+            <div
+              key={announcement.id}
+              className={`rounded-lg border p-4 flex flex-col ${borderColor}`}
+            >
+              {announcement.image && (
+                <img
+                  src={announcement.image}
+                  alt={announcement.title}
+                  className="w-full h-32 object-cover rounded mb-3"
+                />
+              )}
+              <div className="flex items-start justify-between mb-2">
+                <h4 className="font-semibold text-foreground text-sm flex-1">
                   {announcement.title}
                 </h4>
-                <p className="text-xs text-foreground/75 mt-2 line-clamp-2">
-                  {announcement.content}
-                </p>
-                <div className="mt-3 flex items-center justify-between">
-                  <span className="text-xs text-foreground/60">
-                    {new Date(announcement.date).toLocaleDateString()}
-                  </span>
-                  <span className="text-xs px-2 py-1 rounded bg-foreground/10">
-                    {announcement.category}
-                  </span>
-                </div>
+                {dismissible && (
+                  <button
+                    onClick={() =>
+                      setDismissed(new Set(dismissed).add(announcement.id))
+                    }
+                    className="ml-2 text-foreground/50 hover:text-foreground flex-shrink-0"
+                    aria-label="Dismiss announcement"
+                  >
+                    <X className="h-4 w-4" />
+                  </button>
+                )}
               </div>
-              {dismissible && (
-                <button
-                  onClick={() =>
-                    setDismissed(new Set(dismissed).add(announcement.id))
-                  }
-                  className="ml-2 text-foreground/50 hover:text-foreground"
-                  aria-label="Dismiss announcement"
-                >
-                  <X className="h-4 w-4" />
-                </button>
+
+              {announcement.type === "circular" && (
+                <span className="inline-block px-2 py-1 text-xs font-medium bg-red-200 text-red-800 rounded w-fit mb-2">
+                  CIRCULAR
+                </span>
               )}
+
+              <p className="text-xs text-foreground/75 mb-3 line-clamp-2">
+                {announcement.content}
+              </p>
+
+              {/* Attachments in card */}
+              {announcement.attachments && announcement.attachments.length > 0 && (
+                <div className="mb-3 space-y-1">
+                  {announcement.attachments.map((attachment) => (
+                    <a
+                      key={attachment.id}
+                      href={attachment.fileUrl}
+                      download={attachment.fileName}
+                      className="flex items-center gap-2 text-xs text-foreground/70 hover:text-foreground transition"
+                    >
+                      <span>{getFileIcon(attachment.fileType)}</span>
+                      <span className="truncate">{attachment.fileName}</span>
+                    </a>
+                  ))}
+                </div>
+              )}
+
+              <div className="mt-auto flex items-center justify-between pt-2">
+                <span className="text-xs text-foreground/60">
+                  {new Date(announcement.date).toLocaleDateString()}
+                </span>
+                <span className="text-xs px-2 py-1 rounded bg-foreground/10">
+                  {announcement.category}
+                </span>
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     );
   }
