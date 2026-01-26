@@ -373,7 +373,6 @@ function HeroVideo() {
   );
 }
 
-function NoticeBoardCarousel() {
 export default function Nursing() {
   const highlights = [
     "State-of-the-art simulation labs with high-fidelity manikins and advanced equipment",

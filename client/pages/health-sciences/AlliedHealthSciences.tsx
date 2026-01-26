@@ -363,7 +363,6 @@ function HeroVideo() {
     </>
   );
 }
-}
 
 export default function AlliedHealthSciences() {
   const highlights = [

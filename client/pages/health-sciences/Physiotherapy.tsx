@@ -395,7 +395,6 @@ function HeroVideo() {
   );
 }
 
-function NoticeBoardCarousel() {
 export default function Physiotherapy() {
   const highlights = [
     "State-of-the-art rehabilitation labs with advanced therapeutic equipment",
