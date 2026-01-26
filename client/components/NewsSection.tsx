@@ -80,6 +80,91 @@ export function NewsSection({
     );
   }
 
+  // Carousel variant - rotating featured item
+  if (variant === "carousel") {
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    useEffect(() => {
+      const interval = setInterval(() => {
+        setCurrentIndex((prev) => (prev + 1) % news.length);
+      }, 6000);
+      return () => clearInterval(interval);
+    }, [news.length]);
+
+    const currentItem = news[currentIndex];
+
+    return (
+      <section className="px-3 py-8">
+        <div className="mx-auto max-w-7xl space-y-4">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              {title && <h2 className="headline-2 font-display mb-2">{title}</h2>}
+              {description && <p className="text-foreground/80 font-body">{description}</p>}
+            </div>
+            <Badge className="w-fit text-xs">{currentIndex + 1} / {news.length}</Badge>
+          </div>
+
+          <Card className="group overflow-hidden rounded-2xl border-2 border-border/30 bg-card/40 backdrop-blur-sm">
+            {currentItem.image && (
+              <div className="relative h-48 overflow-hidden">
+                <img
+                  src={currentItem.image}
+                  alt={currentItem.title}
+                  className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                />
+              </div>
+            )}
+            <CardContent className="p-4 space-y-3">
+              <div className="flex items-start justify-between gap-2">
+                <div className="flex-1">
+                  <h4 className="font-display font-semibold text-sm text-foreground mb-2 line-clamp-2">{currentItem.title}</h4>
+                  <p className="text-xs text-foreground/70 line-clamp-2">{currentItem.excerpt || currentItem.content.substring(0, 100)}</p>
+                </div>
+              </div>
+              <div className="flex items-center justify-between pt-2 border-t border-border/20">
+                <span className="text-xs font-semibold text-foreground/60">{new Date(currentItem.date).toLocaleDateString()}</span>
+              </div>
+            </CardContent>
+          </Card>
+
+          <div className="flex items-center justify-between gap-2">
+            <div className="flex gap-1">
+              {news.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setCurrentIndex(idx)}
+                  className={`h-1.5 rounded-full transition-all ${
+                    idx === currentIndex
+                      ? "bg-brand-blue w-8"
+                      : "bg-border/40 w-1.5 hover:bg-border/60"
+                  }`}
+                />
+              ))}
+            </div>
+            <div className="flex gap-2">
+              <Button
+                variant="outline"
+                size="sm"
+                className="h-8 px-2 text-xs"
+                onClick={() => setCurrentIndex((prev) => (prev - 1 + news.length) % news.length)}
+              >
+                <ChevronLeft className="h-4 w-4" />
+              </Button>
+              <Button
+                variant="outline"
+                size="sm"
+                className="h-8 px-2 text-xs"
+                onClick={() => setCurrentIndex((prev) => (prev + 1) % news.length)}
+              >
+                <ChevronRight className="h-4 w-4" />
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   // Featured variant - large cards with images
   if (variant === "featured") {
     return (
