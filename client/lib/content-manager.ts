@@ -557,9 +557,163 @@ const ALL_EVENTS: Event[] = [
   },
 ];
 
+const ALL_CURRICULA: CurriculumProgram[] = [
+  // ============ HEALTH SCIENCES: NURSING ============
+  {
+    id: "nursing-bsc",
+    label: "B.Sc Nursing",
+    description:
+      "4-year comprehensive nursing program with clinical integration",
+    image:
+      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop",
+    batches: [
+      {
+        year: "2025-26",
+        summary:
+          "Latest curriculum with clinical rotation integration and evidence-based nursing practice across all 8 semesters",
+        documentUrl: "https://www.dsu.edu.in/images/HealthSciences/nursing/BSC-Curriculum-2025-26.pdf",
+        current: true,
+      },
+      {
+        year: "2024-25",
+        summary: "Previous curriculum batch with comprehensive nursing theory and clinical practice",
+        documentUrl: "https://www.dsu.edu.in/images/HealthSciences/nursing/BSC-Curriculum-2024-25.pdf",
+      },
+    ],
+    meta: { level: "Undergraduate", department: "Nursing", school: "Health Sciences" },
+  },
+  {
+    id: "nursing-msc",
+    label: "M.Sc Nursing",
+    description: "2-year postgraduate specialization program",
+    image:
+      "https://images.unsplash.com/photo-1551076805-e1869033e561?w=600&h=400&fit=crop",
+    batches: [
+      {
+        year: "2025-26",
+        summary:
+          "Advanced specializations in Medical Surgical, Child Health, Mental Health, OB-GYN, and Psychiatric Nursing",
+        documentUrl: "https://www.dsu.edu.in/images/HealthSciences/nursing/MSC-Curriculum-2025-26.pdf",
+        current: true,
+      },
+    ],
+    meta: { level: "Postgraduate", department: "Nursing", school: "Health Sciences" },
+  },
+  // ============ HEALTH SCIENCES: PHYSIOTHERAPY ============
+  {
+    id: "physiotherapy-bpt",
+    label: "B.P.T Physiotherapy",
+    description:
+      "4-year comprehensive physiotherapy program with clinical excellence",
+    image:
+      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop",
+    batches: [
+      {
+        year: "2025-26",
+        summary:
+          "Latest curriculum with clinical rotation integration, rehabilitation lab training, and evidence-based physiotherapy practice across all 8 semesters",
+        documentUrl: "https://www.dsu.edu.in/images/HealthSciences/physiotherapy/BPT-Curriculum-2025-26.pdf",
+        current: true,
+      },
+      {
+        year: "2024-25",
+        summary:
+          "Previous curriculum batch with comprehensive physiotherapy theory and clinical practice components",
+        documentUrl: "https://www.dsu.edu.in/images/HealthSciences/physiotherapy/BPT-Curriculum-2024-25.pdf",
+      },
+    ],
+    meta: { level: "Undergraduate", department: "Physiotherapy", school: "Health Sciences" },
+  },
+  {
+    id: "physiotherapy-mpt",
+    label: "Master of Physiotherapy (MPT)",
+    description: "2-year postgraduate specialization in physiotherapy",
+    image:
+      "https://images.unsplash.com/photo-1551076805-e1869033e561?w=600&h=400&fit=crop",
+    batches: [
+      {
+        year: "2025-26",
+        summary:
+          "Advanced specializations in Sports & Musculo Skeletal, Cardio Pulmonary, Women's Health, Neuro, and Community-Based Rehabilitation",
+        documentUrl: "https://www.dsu.edu.in/images/HealthSciences/physiotherapy/MPT-Curriculum-2025-26.pdf",
+        current: true,
+      },
+    ],
+    meta: { level: "Postgraduate", department: "Physiotherapy", school: "Health Sciences" },
+  },
+  // ============ COMMERCE & MANAGEMENT: BBA ============
+  {
+    id: "bba-standard",
+    label: "BBA (Standard)",
+    description: "3-year comprehensive business administration program",
+    image: "https://images.unsplash.com/photo-3184291/pexels-photo-3184291.jpeg",
+    batches: [
+      {
+        year: "2025-26",
+        summary:
+          "Latest BBA curriculum with focus on business management, entrepreneurship, and industry exposure across 6 semesters",
+        documentUrl: "https://www.dsu.edu.in/images/Commerce/BBA-Curriculum-2025-26.pdf",
+        current: true,
+      },
+    ],
+    meta: { level: "Undergraduate", department: "BBA", school: "Commerce & Management" },
+  },
+  // ============ COMMERCE & MANAGEMENT: BCOM ============
+  {
+    id: "bcom-standard",
+    label: "B.Com (Standard)",
+    description:
+      "3-year comprehensive commerce program with accounting focus",
+    image: "https://images.unsplash.com/photo-4386431/pexels-photo-4386431.jpeg",
+    batches: [
+      {
+        year: "2025-26",
+        summary:
+          "Latest B.Com curriculum across 6 semesters with comprehensive accounting, finance, and commerce subjects",
+        documentUrl: "https://www.dsu.edu.in/images/Commerce/B-Com-Curriculum-2025-26.pdf",
+        current: true,
+      },
+    ],
+    meta: { level: "Undergraduate", department: "BCom", school: "Commerce & Management" },
+  },
+  // ============ COMMERCE & MANAGEMENT: MBA ============
+  {
+    id: "mba-standard",
+    label: "MBA (General)",
+    description: "2-year postgraduate management program",
+    image: "https://images.unsplash.com/photo-3184338/pexels-photo-3184338.jpeg",
+    batches: [
+      {
+        year: "2025-27",
+        summary:
+          "Latest MBA curriculum with specializations in Finance, Marketing, Operations, and Business Analytics across 4 semesters",
+        documentUrl: "https://www.dsu.edu.in/images/Commerce/MBA-Curriculum-2025-27.pdf",
+        current: true,
+      },
+    ],
+    meta: { level: "Postgraduate", department: "MBA", school: "Commerce & Management" },
+  },
+];
+
 // ============================================================================
 // FILTERING FUNCTIONS
 // ============================================================================
+
+export function getCurriculumByDepartment(
+  school: string | undefined,
+  department: string | undefined
+): CurriculumProgram[] {
+  if (!school || !department) return [];
+  return ALL_CURRICULA.filter(
+    (c) =>
+      c.meta?.school === school && c.meta?.department === department
+  );
+}
+
+export function getCurriculumBySchool(school: string | undefined): CurriculumProgram[] {
+  if (!school) return [];
+  return ALL_CURRICULA.filter((c) => c.meta?.school === school);
+}
 
 export function getAnnouncementsBySchool(school: string | undefined): Announcement[] {
   if (!school) return ALL_ANNOUNCEMENTS.filter((a) => a.status === "active" && !a.school);
