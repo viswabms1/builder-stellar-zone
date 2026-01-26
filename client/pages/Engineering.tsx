@@ -562,6 +562,17 @@ const INNOVATION_LABS = [
   "IBM Centre of Excellence",
 ];
 
+// Type for carousel items (compatible with centralized data)
+type NoticeItem = {
+  id: string;
+  title: string;
+  category: "Event" | "News" | "Announcement";
+  date: string;
+  description: string;
+  image?: string;
+  link?: string;
+};
+
 // Centralized content is fetched from unified data sources using custom hooks
 // Design remains unchanged - same carousel layout and styling
 function NoticeBoardCarousel() {
