@@ -84,7 +84,7 @@ export function EventsSection({
 
   // Carousel variant - rotating featured event
   if (variant === "carousel") {
-    return <EventsCarousel events={events} title={title} description={description} />;
+    return <EventsCarousel events={events} title={title} description={description} compact={compact} />;
   }
 
   // Upcoming variant - featured events with more details
