@@ -606,19 +606,6 @@ export default function DeptAIML() {
 
 // Supporting Components
 
-interface CurriculumProgram {
-  id: string;
-  label: string;
-  description: string;
-  image: string;
-  batches: CurriculumBatch[];
-}
-
-interface CurriculumBatch {
-  year: string;
-  summary: string;
-  documentUrl?: string;
-}
 
 function EligibilityAndFees() {
   const [expandedProgram, setExpandedProgram] = useState<string | null>(null);
