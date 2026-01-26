@@ -607,6 +607,14 @@ export default function DeptAIML() {
 // Supporting Components
 
 
+interface CurriculumProgram {
+  id: string;
+  label: string;
+  description: string;
+  image: string;
+  batches: any[];
+}
+
 function EligibilityAndFees() {
   const [expandedProgram, setExpandedProgram] = useState<string | null>(null);
   const engineeringSchool = schools.find(s => s.name === "School of Engineering");
