@@ -85,56 +85,53 @@ export function EventsSection({
     const [currentIndex, setCurrentIndex] = useState(0);
 
     useEffect(() => {
+      if (events.length === 0) return;
       const interval = setInterval(() => {
         setCurrentIndex((prev) => (prev + 1) % events.length);
       }, 6000);
       return () => clearInterval(interval);
     }, [events.length]);
 
+    if (events.length === 0) return null;
+
     const currentEvent = events[currentIndex];
 
     return (
-      <section className="px-3 py-8">
+      <div className="px-3 py-8">
         <div className="mx-auto max-w-7xl space-y-4">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              {title && <h2 className="headline-2 font-display mb-2">{title}</h2>}
-              {description && <p className="text-foreground/80 font-body">{description}</p>}
+              {title && <h2 className="text-2xl font-bold text-foreground mb-2">{title}</h2>}
+              {description && <p className="text-foreground/70 text-sm">{description}</p>}
             </div>
             <Badge className="w-fit text-xs">{currentIndex + 1} / {events.length}</Badge>
           </div>
 
-          <Card className="group overflow-hidden rounded-2xl border-2 border-border/30 bg-card/40 backdrop-blur-sm">
+          <Card className="overflow-hidden border border-border/30">
             {currentEvent.image && (
-              <div className="relative h-48 overflow-hidden">
-                <img
-                  src={currentEvent.image}
-                  alt={currentEvent.title}
-                  className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
-                />
-              </div>
+              <img
+                src={currentEvent.image}
+                alt={currentEvent.title}
+                className="w-full h-48 object-cover"
+              />
             )}
-            <CardContent className="p-4 space-y-3">
-              <div className="flex items-start justify-between gap-2">
-                <div className="flex-1">
-                  <h4 className="font-display font-semibold text-sm text-foreground mb-2 line-clamp-2">{currentEvent.title}</h4>
-                  <p className="text-xs text-foreground/70 line-clamp-2">{currentEvent.description}</p>
-                </div>
-              </div>
-              <div className="grid grid-cols-2 gap-2 text-xs text-foreground/60">
-                <div className="flex items-center gap-1">
+            <CardContent className="p-4">
+              <CardTitle className="text-lg mb-2">{currentEvent.title}</CardTitle>
+              <p className="text-sm text-foreground/70 line-clamp-2">{currentEvent.description}</p>
+              <div className="mt-3 space-y-1 text-xs text-foreground/60">
+                <div className="flex items-center gap-2">
                   <Calendar className="h-3 w-3" />
                   <span>{new Date(currentEvent.date).toLocaleDateString()}</span>
                 </div>
                 {currentEvent.time && (
-                  <div className="flex items-center gap-1">
+                  <div className="flex items-center gap-2">
                     <Clock className="h-3 w-3" />
                     <span>{currentEvent.time}</span>
                   </div>
                 )}
-                <div className="flex items-center gap-1">
+                <div className="flex items-center gap-2">
                   <MapPin className="h-3 w-3" />
-                  <span className="truncate">{currentEvent.location}</span>
+                  <span>{currentEvent.location}</span>
                 </div>
               </div>
             </CardContent>
@@ -146,11 +143,10 @@ export function EventsSection({
                 <button
                   key={idx}
                   onClick={() => setCurrentIndex(idx)}
-                  className={`h-1.5 rounded-full transition-all ${
-                    idx === currentIndex
-                      ? "bg-brand-magenta w-8"
-                      : "bg-border/40 w-1.5 hover:bg-border/60"
+                  className={`h-2 rounded-full transition-all ${
+                    idx === currentIndex ? "bg-red-600 w-6" : "bg-gray-300 w-2"
                   }`}
+                  aria-label={`Go to event ${idx + 1}`}
                 />
               ))}
             </div>
@@ -158,23 +154,21 @@ export function EventsSection({
               <Button
                 variant="outline"
                 size="sm"
-                className="h-8 px-2 text-xs"
                 onClick={() => setCurrentIndex((prev) => (prev - 1 + events.length) % events.length)}
               >
-                <ChevronLeft className="h-4 w-4" />
+                ← Previous
               </Button>
               <Button
                 variant="outline"
                 size="sm"
-                className="h-8 px-2 text-xs"
                 onClick={() => setCurrentIndex((prev) => (prev + 1) % events.length)}
               >
-                <ChevronRight className="h-4 w-4" />
+                Next →
               </Button>
             </div>
           </div>
         </div>
-      </section>
+      </div>
     );
   }
 
