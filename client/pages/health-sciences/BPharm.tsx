@@ -520,112 +520,13 @@ interface CurriculumBatch {
   documentUrl?: string;
 }
 
-function CurriculumLibrary() {
-  const [openProgram, setOpenProgram] = React.useState<string | null>(null);
-
-  const programs: CurriculumProgram[] = [
-    {
-      id: "bpharm",
-      label: "B.Pharm Curriculum",
-      description:
-        "4-year comprehensive undergraduate pathway with pharmaceutical chemistry, pharmaceutics, pharmacology, and pharmacognosy",
-      image:
-        "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=600&h=400&fit=crop",
-      batches: [
-        {
-          year: "2025-26",
-          summary:
-            "Latest curriculum with integrated drug synthesis, formulation, analysis, pharmacological screening, and biological standardization across all 8 semesters",
-          documentUrl:
-            "https://www.dsu.edu.in/images/HealthSciences/pharmacy/BPharm-Curriculum-2025-26.pdf",
-        },
-        {
-          year: "2024-25",
-          summary:
-            "Previous curriculum batch with comprehensive pharmaceutical theory and practical laboratory training",
-          documentUrl:
-            "https://www.dsu.edu.in/images/HealthSciences/pharmacy/BPharm-Curriculum-2024-25.pdf",
-        },
-      ],
-    },
-  ];
-
+function CurriculumLibraryComponent() {
+  const programs = getCurriculumByDepartment("Health Sciences", "Pharmacy");
   return (
-    <section className="px-3 py-8 bg-gradient-to-r from-brand-blue/5 via-brand-green/5 to-brand-orange/5">
-      <div className="mx-auto max-w-6xl space-y-4">
-        <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <h2 className="headline-2 mb-3 font-display">
-              <span className="text-foreground">Curriculum </span>
-              <span className="bg-brand-gradient bg-clip-text text-transparent">
-                Library
-              </span>
-            </h2>
-          </div>
-          <div className="text-foreground/70 text-sm">
-            Download pharmaceutical curriculum for different academic batches
-          </div>
-        </div>
-
-        <div className="space-y-3">
-          {programs.map((program) => (
-            <div key={program.id}>
-              <button
-                onClick={() =>
-                  setOpenProgram(openProgram === program.id ? null : program.id)
-                }
-                className="w-full flex items-start justify-between rounded-lg border border-border/50 bg-card/50 p-4 text-left hover:bg-card/70 transition-colors"
-              >
-                <div className="flex-1">
-                  <h3 className="font-display font-semibold text-foreground">
-                    {program.label}
-                  </h3>
-                  <p className="mt-1 text-sm text-foreground/70">
-                    {program.description}
-                  </p>
-                </div>
-                <ChevronDown
-                  className={`h-5 w-5 text-brand-blue transition-transform flex-shrink-0 ml-4 ${
-                    openProgram === program.id ? "rotate-180" : ""
-                  }`}
-                />
-              </button>
-
-              {openProgram === program.id && (
-                <div className="mt-2 space-y-2">
-                  {program.batches.map((batch) => (
-                    <div
-                      key={batch.year}
-                      className="rounded-lg border border-brand-blue/20 bg-brand-blue/5 p-4"
-                    >
-                      <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-                        <div>
-                          <h4 className="font-semibold text-foreground">
-                            {batch.year}
-                          </h4>
-                          <p className="mt-1 text-sm text-foreground/70">
-                            {batch.summary}
-                          </p>
-                        </div>
-                        {batch.documentUrl && (
-                          <a
-                            href={batch.documentUrl}
-                            download
-                            className="inline-flex items-center gap-2 whitespace-nowrap rounded-lg bg-brand-blue/20 px-3 py-1.5 text-xs font-semibold text-brand-blue hover:bg-brand-blue/30 transition-colors flex-shrink-0"
-                          >
-                            <Download className="h-4 w-4" />
-                            Download
-                          </a>
-                        )}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
+    <CurriculumLibrary
+      programs={programs}
+      themeColor="blue"
+      description="Access comprehensive curriculum documentation, course structures, learning outcomes, and downloadable syllabus for the B.Pharm program."
+    />
   );
 }
