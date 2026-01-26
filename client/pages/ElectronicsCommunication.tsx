@@ -41,6 +41,11 @@ import {
   Wifi,
 } from "lucide-react";
 
+function CurriculumLibraryECE() {
+  const programs = getCurriculumByDepartment("Engineering", "ECE");
+  return <CurriculumLibrary programs={programs} themeColor="blue" />;
+}
+
 export default function ElectronicsCommunication() {
   const specializations = [
     { icon: Microchip, label: "GPU-Accelerated VLSI" },
