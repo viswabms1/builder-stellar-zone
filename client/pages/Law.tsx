@@ -32,6 +32,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { DeanSection, type DeanInfo } from "@/components/DeanSection";
+import { SchoolNoticeBoard } from "@/components/SchoolNoticeBoard";
 import {
   getLawEvents,
   getLawNews,
