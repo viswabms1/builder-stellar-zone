@@ -993,10 +993,9 @@ export default function Physiotherapy() {
         </div>
       </section>
 
-      {/* Notice Board */}
-      <section id="notice-board" className="px-3 py-8">
-        <NoticeBoardCarousel />
-      </section>
+      <AnnouncementBanner priority="high" variant="banner" />
+      <NewsSection variant="grid" title="Department News" />
+      <EventsSection variant="upcoming" title="Upcoming Events" />
     </div>
   );
 }
