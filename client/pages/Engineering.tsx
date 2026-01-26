@@ -44,14 +44,11 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import {
-  getDepartmentEvents,
-  getSchoolNews,
-  getSchoolAnnouncements,
-  type NoticeItem as ImportedNoticeItem,
-} from "@/data/engineering-events";
 import { useAutoMuteOnScroll } from "@/hooks/useAutoMuteOnScroll";
 import { schools } from "./Eligibility";
+import { NewsSection } from "@/components/NewsSection";
+import { EventsSection } from "@/components/EventsSection";
+import { AnnouncementBanner } from "@/components/AnnouncementBanner";
 
 const HERO_IMAGE = "https://www.dsu.edu.in/images/Engineering/engg-landing.jpg";
 
