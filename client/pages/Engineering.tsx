@@ -562,20 +562,48 @@ const INNOVATION_LABS = [
   "IBM Centre of Excellence",
 ];
 
-// Centralized content is now managed through:
-// - client/data/announcements.ts
-// - client/data/news.ts
-// - client/data/events.ts
-// Displayed via NewsSection, EventsSection, and AnnouncementBanner components
-
+// Centralized content is fetched from unified data sources using custom hooks
+// Design remains unchanged - same carousel layout and styling
 function NoticeBoardCarousel() {
   const [currentEventIndex, setCurrentEventIndex] = useState(0);
   const [currentNewsIndex, setCurrentNewsIndex] = useState(0);
   const [currentAnnouncementIndex, setCurrentAnnouncementIndex] = useState(0);
 
-  const events = getAllEvents();
-  const news = getSchoolNewsData();
-  const announcements = getSchoolAnnouncementsData();
+  // Fetch data from centralized sources
+  const { announcements: allAnnouncements } = useAnnouncements({ school: "Engineering", limit: 10 });
+  const { news } = useNews({ school: "Engineering", limit: 10 });
+  const { events } = useEvents({ school: "Engineering", limit: 10 });
+
+  // Convert announcement items to match carousel display format
+  const announcements = allAnnouncements.map((a) => ({
+    id: a.id,
+    title: a.title,
+    category: "Announcement" as const,
+    date: a.date,
+    description: a.content,
+    image: a.image,
+    link: a.attachments?.[0]?.fileUrl,
+  }));
+
+  // Convert news items to match carousel display format
+  const newsItems = news.map((n) => ({
+    id: n.id,
+    title: n.title,
+    category: "News" as const,
+    date: n.date,
+    description: n.excerpt || n.content.substring(0, 100),
+    image: n.image,
+  }));
+
+  // Convert event items to match carousel display format
+  const eventItems = events.map((e) => ({
+    id: e.id,
+    title: e.title,
+    category: "Event" as const,
+    date: e.date,
+    description: e.description,
+    image: e.image,
+  }));
 
   useEffect(() => {
     if (events.length === 0) return;
