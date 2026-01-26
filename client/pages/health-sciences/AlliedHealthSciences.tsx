@@ -31,14 +31,6 @@ import {
 import { DeanSection, type DeanInfo } from "@/components/DeanSection";
 import { useAutoMuteOnScroll } from "@/hooks/useAutoMuteOnScroll";
 import { DepartmentNoticeBoard } from "@/components/DepartmentNoticeBoard";
-import {
-  getAlliedHealthEvents,
-  getAlliedHealthNews,
-  getAlliedHealthAnnouncements,
-  type NoticeItem as ImportedNoticeItem,
-} from "@/data/allied-health-events";
-
-type NoticeItem = ImportedNoticeItem;
 
 const DEAN_INFO: DeanInfo = {
   name: "Dr. Nandan.T.M, MBBS, MD, ACME",

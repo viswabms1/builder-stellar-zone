@@ -29,14 +29,6 @@ import {
 } from "lucide-react";
 import { DeanSection, type DeanInfo } from "@/components/DeanSection";
 import { useAutoMuteOnScroll } from "@/hooks/useAutoMuteOnScroll";
-import {
-  getPhysiotherapyEvents,
-  getPhysiotherapyNews,
-  getPhysiotherapyAnnouncements,
-  type NoticeItem as ImportedNoticeItem,
-} from "@/data/physiotherapy-events";
-
-type NoticeItem = ImportedNoticeItem;
 
 const PRINCIPAL_INFO: DeanInfo = {
   name: "Dr. Sathya Guruprasad",
