@@ -167,6 +167,22 @@ const ENGINEERING_ANNOUNCEMENTS: Announcement[] = [
     date: "Jan 20, 2025",
     school: "Engineering",
     status: "active",
+    attachments: [
+      {
+        id: "att-safety-1",
+        fileName: "Lab_Safety_Training_Schedule.pdf",
+        fileUrl: "https://example.com/files/Lab_Safety_Schedule.pdf",
+        fileType: "pdf",
+        fileSize: "0.7 MB",
+      },
+      {
+        id: "att-safety-2",
+        fileName: "Safety_Guidelines.docx",
+        fileUrl: "https://example.com/files/Safety_Guidelines.docx",
+        fileType: "docx",
+        fileSize: "1.2 MB",
+      },
+    ],
   },
 ];
 
