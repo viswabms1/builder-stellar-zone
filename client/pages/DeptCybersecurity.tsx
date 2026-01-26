@@ -276,7 +276,9 @@ export default function DeptCybersecurity() {
 
       <AccreditationDocuments />
 
-      <NoticeBoard />
+      <AnnouncementBanner priority="high" variant="banner" />
+      <NewsSection variant="grid" title="Department News" />
+      <EventsSection variant="upcoming" title="Upcoming Events" />
 
       {/* Quick Links Section */}
       <section className="px-3 py-10">
