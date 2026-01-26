@@ -23,6 +23,11 @@ import {
   Dna,
 } from "lucide-react";
 
+function CurriculumLibraryComponent() {
+  const programs = getCurriculumByDepartment("Health Sciences", "Allied Health Sciences");
+  return <CurriculumLibrary programs={programs} themeColor="blue" />;
+}
+
 export default function AlliedHealthBSc() {
   useEffect(() => {
     window.scrollTo(0, 0);
