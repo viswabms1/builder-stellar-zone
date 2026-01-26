@@ -1818,7 +1818,12 @@ export default function Engineering() {
               </p>
             </div>
           </div>
-          <NoticeBoardCarousel />
+          {/* Centralized News, Events, and Announcements from unified data source */}
+          <div className="space-y-8">
+            <AnnouncementBanner school="Engineering" priority="high" variant="banner" />
+            <NewsSection school="Engineering" variant="featured" title="Engineering News" limit={4} />
+            <EventsSection school="Engineering" variant="upcoming" title="Upcoming Events" limit={5} />
+          </div>
         </div>
       </section>
 
