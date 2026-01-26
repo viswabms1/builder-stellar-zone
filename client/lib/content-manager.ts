@@ -151,6 +151,7 @@ const ALL_EVENTS: Event[] = [
     school: "Engineering",
     department: "CSE",
     category: "Hackathon",
+    image: "https://images.pexels.com/photos/9242838/pexels-photo-9242838.jpeg",
   },
   {
     id: "event-hs-1",
@@ -162,6 +163,7 @@ const ALL_EVENTS: Event[] = [
     status: "upcoming",
     school: "Health Sciences",
     category: "Workshop",
+    image: "https://images.pexels.com/photos/5726794/pexels-photo-5726794.jpeg",
   },
 ];
 
