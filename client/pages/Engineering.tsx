@@ -597,31 +597,7 @@ function NoticeBoardCarousel() {
     return () => clearInterval(interval);
   }, [announcements.length]);
 
-  const getCategoryStyles = (category: "Event" | "News" | "Announcement") => {
-    switch (category) {
-      case "Event":
-        return {
-          borderColor: "border-brand-magenta",
-          bgColor: "bg-brand-magenta/10",
-          textColor: "text-brand-magenta",
-          dotColor: "bg-brand-magenta",
-        };
-      case "News":
-        return {
-          borderColor: "border-brand-orange",
-          bgColor: "bg-brand-orange/10",
-          textColor: "text-brand-orange",
-          dotColor: "bg-brand-orange",
-        };
-      default:
-        return {
-          borderColor: "border-brand-blue",
-          bgColor: "bg-brand-blue/10",
-          textColor: "text-brand-blue",
-          dotColor: "bg-brand-blue",
-        };
-    }
-  };
+  // getCategoryStyles is now imported from content-manager
 
   const renderCarousel = (
     title: string,
