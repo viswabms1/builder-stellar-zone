@@ -46,9 +46,9 @@ import {
 } from "@/components/ui/select";
 import { useAutoMuteOnScroll } from "@/hooks/useAutoMuteOnScroll";
 import { schools } from "./Eligibility";
-import { NewsSection } from "@/components/NewsSection";
-import { EventsSection } from "@/components/EventsSection";
-import { AnnouncementBanner } from "@/components/AnnouncementBanner";
+import { useNews } from "@/hooks/useNews";
+import { useEvents } from "@/hooks/useEvents";
+import { useAnnouncements } from "@/hooks/useAnnouncements";
 
 const HERO_IMAGE = "https://www.dsu.edu.in/images/Engineering/engg-landing.jpg";
 
