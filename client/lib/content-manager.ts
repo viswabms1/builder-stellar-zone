@@ -820,6 +820,230 @@ const ALL_CURRICULA: CurriculumProgram[] = [
     ],
     meta: { level: "Postgraduate", department: "MBA", school: "Commerce & Management" },
   },
+  // ============ ENGINEERING: CSE ============
+  {
+    id: "btech-cse",
+    label: "B.Tech Computer Science Engineering",
+    description: "4-year undergraduate program with AI/ML and cloud computing focus",
+    image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=400&fit=crop",
+    batches: [
+      {
+        year: "2025-29",
+        summary: "Latest curriculum with core CSE, AI/ML specializations, cloud computing, data structures, and software development across 8 semesters",
+        documentUrl: "https://www.dsu.edu.in/images/Engineering/BTech-CSE-Curriculum-2025-29.pdf",
+        current: true,
+      },
+    ],
+    meta: { level: "Undergraduate", department: "CSE", school: "Engineering" },
+  },
+  // ============ ENGINEERING: ECE ============
+  {
+    id: "btech-ece",
+    label: "B.Tech Electronics & Communication Engineering",
+    description: "4-year undergraduate program with VLSI and embedded systems focus",
+    image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=600&h=400&fit=crop",
+    batches: [
+      {
+        year: "2025-29",
+        summary: "Comprehensive curriculum with digital electronics, VLSI design, embedded systems, signal processing, and communication networks",
+        documentUrl: "https://www.dsu.edu.in/images/Engineering/BTech-ECE-Curriculum-2025-29.pdf",
+        current: true,
+      },
+    ],
+    meta: { level: "Undergraduate", department: "ECE", school: "Engineering" },
+  },
+  // ============ ENGINEERING: DATA SCIENCE ============
+  {
+    id: "btech-data-science",
+    label: "B.Tech Data Science Engineering",
+    description: "4-year undergraduate program with big data and AI focus",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
+    batches: [
+      {
+        year: "2025-29",
+        summary: "Advanced curriculum with big data analytics, machine learning, data mining, statistics, and cloud-based data systems",
+        documentUrl: "https://www.dsu.edu.in/images/Engineering/BTech-DataScience-Curriculum-2025-29.pdf",
+        current: true,
+      },
+    ],
+    meta: { level: "Undergraduate", department: "Data Science", school: "Engineering" },
+  },
+  // ============ ENGINEERING: MECHANICAL ============
+  {
+    id: "btech-mechanical",
+    label: "B.Tech Mechanical Engineering",
+    description: "4-year undergraduate program with manufacturing and automation focus",
+    image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=600&h=400&fit=crop",
+    batches: [
+      {
+        year: "2025-29",
+        summary: "Comprehensive curriculum with thermodynamics, mechanics, manufacturing, automation, CAD, and design engineering",
+        documentUrl: "https://www.dsu.edu.in/images/Engineering/BTech-Mechanical-Curriculum-2025-29.pdf",
+        current: true,
+      },
+    ],
+    meta: { level: "Undergraduate", department: "Mechanical", school: "Engineering" },
+  },
+  // ============ ENGINEERING: AEROSPACE ============
+  {
+    id: "btech-aerospace",
+    label: "B.Tech Aerospace Engineering",
+    description: "4-year undergraduate program with aircraft design and propulsion focus",
+    image: "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=600&h=400&fit=crop",
+    batches: [
+      {
+        year: "2025-29",
+        summary: "Advanced curriculum with aerodynamics, flight mechanics, propulsion systems, aircraft design, and composite materials",
+        documentUrl: "https://www.dsu.edu.in/images/Engineering/BTech-Aerospace-Curriculum-2025-29.pdf",
+        current: true,
+      },
+    ],
+    meta: { level: "Undergraduate", department: "Aerospace", school: "Engineering" },
+  },
+  // ============ ENGINEERING: AIML ============
+  {
+    id: "btech-aiml",
+    label: "B.Tech AI & Machine Learning",
+    description: "4-year undergraduate program with deep learning and NLP focus",
+    image: "https://images.unsplash.com/photo-1677442d019cecf4d49f15583663176d36f08e857?w=600&h=400&fit=crop",
+    batches: [
+      {
+        year: "2025-29",
+        summary: "Specialized curriculum with machine learning, deep learning, NLP, computer vision, reinforcement learning, and AI ethics",
+        documentUrl: "https://www.dsu.edu.in/images/Engineering/BTech-AIML-Curriculum-2025-29.pdf",
+        current: true,
+      },
+    ],
+    meta: { level: "Undergraduate", department: "AIML", school: "Engineering" },
+  },
+  // ============ ENGINEERING: AIDS ============
+  {
+    id: "btech-aids",
+    label: "B.Tech Artificial Intelligence & Data Science",
+    description: "4-year undergraduate program with AI systems and analytics focus",
+    image: "https://images.unsplash.com/photo-1677442d019cecf4d49f15583663176d36f08e857?w=600&h=400&fit=crop",
+    batches: [
+      {
+        year: "2025-29",
+        summary: "Comprehensive curriculum combining AI fundamentals, data science, analytics, intelligent systems, and industrial applications",
+        documentUrl: "https://www.dsu.edu.in/images/Engineering/BTech-AIDS-Curriculum-2025-29.pdf",
+        current: true,
+      },
+    ],
+    meta: { level: "Undergraduate", department: "AIDS", school: "Engineering" },
+  },
+  // ============ ENGINEERING: AI ROBOTICS ============
+  {
+    id: "btech-ai-robotics",
+    label: "B.Tech AI & Robotics",
+    description: "4-year undergraduate program with robotics and autonomous systems focus",
+    image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=400&fit=crop",
+    batches: [
+      {
+        year: "2025-29",
+        summary: "Specialized curriculum with robotics, autonomous systems, computer vision, control systems, and AI for robotics",
+        documentUrl: "https://www.dsu.edu.in/images/Engineering/BTech-AIRobotics-Curriculum-2025-29.pdf",
+        current: true,
+      },
+    ],
+    meta: { level: "Undergraduate", department: "AI Robotics", school: "Engineering" },
+  },
+  // ============ ENGINEERING: CYBERSECURITY ============
+  {
+    id: "btech-cybersecurity",
+    label: "B.Tech Cybersecurity",
+    description: "4-year undergraduate program with information security and cryptography focus",
+    image: "https://images.unsplash.com/photo-1516321318423-f06f70a504f0?w=600&h=400&fit=crop",
+    batches: [
+      {
+        year: "2025-29",
+        summary: "Advanced curriculum with cryptography, network security, application security, digital forensics, and ethical hacking",
+        documentUrl: "https://www.dsu.edu.in/images/Engineering/BTech-Cybersecurity-Curriculum-2025-29.pdf",
+        current: true,
+      },
+    ],
+    meta: { level: "Undergraduate", department: "Cybersecurity", school: "Engineering" },
+  },
+  // ============ ENGINEERING: COMPUTER TECHNOLOGY ============
+  {
+    id: "btech-computer-technology",
+    label: "B.Tech Computer Technology",
+    description: "4-year undergraduate program with hardware and software integration focus",
+    image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=400&fit=crop",
+    batches: [
+      {
+        year: "2025-29",
+        summary: "Integrated curriculum with computer architecture, operating systems, embedded systems, and system design",
+        documentUrl: "https://www.dsu.edu.in/images/Engineering/BTech-ComputerTech-Curriculum-2025-29.pdf",
+        current: true,
+      },
+    ],
+    meta: { level: "Undergraduate", department: "Computer Technology", school: "Engineering" },
+  },
+  // ============ DESIGN ============
+  {
+    id: "bdesign-product",
+    label: "B.Design Product Design",
+    description: "4-year undergraduate program with product development and UX focus",
+    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=400&fit=crop",
+    batches: [
+      {
+        year: "2025-29",
+        summary: "Comprehensive curriculum with design thinking, product design, UX/UI, materials, prototyping, and industry collaboration",
+        documentUrl: "https://www.dsu.edu.in/images/Design/BDesign-ProductDesign-Curriculum-2025-29.pdf",
+        current: true,
+      },
+    ],
+    meta: { level: "Undergraduate", department: "Design", school: "Design" },
+  },
+  // ============ MEDICAL ENGINEERING ============
+  {
+    id: "btech-medical-engineering",
+    label: "B.Tech Medical Engineering",
+    description: "4-year undergraduate program with biomedical devices and healthcare tech focus",
+    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop",
+    batches: [
+      {
+        year: "2025-29",
+        summary: "Specialized curriculum with biomedical instrumentation, medical devices, healthcare IT, signal processing, and biomechanics",
+        documentUrl: "https://www.dsu.edu.in/images/Engineering/BTech-MedicalEng-Curriculum-2025-29.pdf",
+        current: true,
+      },
+    ],
+    meta: { level: "Undergraduate", department: "Medical Engineering", school: "Engineering" },
+  },
+  // ============ MCA ============
+  {
+    id: "mca-general",
+    label: "Master of Computer Applications",
+    description: "3-year postgraduate program with advanced software development focus",
+    image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=400&fit=crop",
+    batches: [
+      {
+        year: "2025-28",
+        summary: "Comprehensive MCA curriculum with advanced programming, databases, web technologies, software engineering, and cloud computing",
+        documentUrl: "https://www.dsu.edu.in/images/Engineering/MCA-Curriculum-2025-28.pdf",
+        current: true,
+      },
+    ],
+    meta: { level: "Postgraduate", department: "MCA", school: "Engineering" },
+  },
+  // ============ MSC DATA SCIENCE ============
+  {
+    id: "msc-data-science",
+    label: "M.Sc Data Science",
+    description: "2-year postgraduate program with advanced analytics and AI focus",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
+    batches: [
+      {
+        year: "2025-27",
+        summary: "Advanced curriculum with machine learning, statistical analysis, big data technologies, data visualization, and AI applications",
+        documentUrl: "https://www.dsu.edu.in/images/Engineering/MSc-DataScience-Curriculum-2025-27.pdf",
+        current: true,
+      },
+    ],
+    meta: { level: "Postgraduate", department: "Data Science", school: "Engineering" },
+  },
 ];
 
 // ============================================================================
