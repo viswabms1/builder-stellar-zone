@@ -165,14 +165,31 @@ const ENGINEERING_ANNOUNCEMENTS: Announcement[] = [
 const HEALTH_SCIENCES_ANNOUNCEMENTS: Announcement[] = [
   {
     id: "hs-announce-1",
-    title: "Clinical Internship Batch Assignments",
+    title: "CIRCULAR: Clinical Internship Batch Assignments",
+    type: "circular",
     content:
-      "Clinical internship batch assignments for Spring 2025 have been released. Check the health sciences department portal for details.",
+      "Clinical internship batch assignments for Spring 2025 have been released. Detailed schedules, hospital assignments, and supervision guidelines are attached.",
     category: "Academic",
     priority: "high",
     date: "Jan 21, 2025",
     school: "Health Sciences",
     status: "active",
+    attachments: [
+      {
+        id: "att-6",
+        fileName: "Internship_Batch_Assignments_2025.xlsx",
+        fileUrl: "https://example.com/files/Internship_Assignments_2025.xlsx",
+        fileType: "xlsx",
+        fileSize: "0.3 MB",
+      },
+      {
+        id: "att-7",
+        fileName: "Hospital_Supervision_Guidelines.pdf",
+        fileUrl: "https://example.com/files/Hospital_Guidelines.pdf",
+        fileType: "pdf",
+        fileSize: "1.1 MB",
+      },
+    ],
   },
 ];
 
