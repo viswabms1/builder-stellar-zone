@@ -103,6 +103,15 @@ const UNIVERSITY_ANNOUNCEMENTS: Announcement[] = [
     priority: "high",
     date: "Jan 10, 2025",
     status: "active",
+    attachments: [
+      {
+        id: "att-exam-1",
+        fileName: "ExamSchedule_Feb2025.pdf",
+        fileUrl: "https://example.com/files/ExamSchedule_Feb2025.pdf",
+        fileType: "pdf",
+        fileSize: "0.9 MB",
+      },
+    ],
   },
   {
     id: "univ-announce-5",
