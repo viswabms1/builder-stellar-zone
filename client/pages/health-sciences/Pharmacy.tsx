@@ -9,9 +9,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { NewsSection } from "@/components/NewsSection";
-import { EventsSection } from "@/components/EventsSection";
-import { AnnouncementBanner } from "@/components/AnnouncementBanner";
+import { DepartmentNoticeBoard } from "@/components/DepartmentNoticeBoard";
 import {
   Sparkles,
   GraduationCap,
@@ -640,9 +638,7 @@ export default function Pharmacy() {
         </div>
       </section>
 
-      <AnnouncementBanner priority="high" variant="banner" />
-      <NewsSection variant="carousel" title="Department News" />
-      <EventsSection variant="carousel" title="Upcoming Events" />
+      <DepartmentNoticeBoard school="Health Sciences" department="Pharmacy" />
     </div>
   );
 }
