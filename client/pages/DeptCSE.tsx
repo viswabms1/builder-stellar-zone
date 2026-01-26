@@ -1203,16 +1203,6 @@ interface LabItem {
   image: string;
 }
 
-interface NoticeItem {
-  id: string;
-  title: string;
-  category: "Event" | "News" | "Announcement";
-  date: string;
-  description: string;
-  image?: string;
-  link?: string;
-}
-
 function LabsFacilitiesCarousel() {
   const [currentLabIndex, setCurrentLabIndex] = useState(0);
 
