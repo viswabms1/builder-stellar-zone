@@ -220,7 +220,9 @@ export default function DeptAIRobotics() {
 
       <AccreditationDocuments />
 
-      <NoticeBoard />
+      <AnnouncementBanner priority="high" variant="banner" />
+      <NewsSection variant="grid" title="Department News" />
+      <EventsSection variant="upcoming" title="Upcoming Events" />
 
       <LabsFacilitiesCarousel />
 
