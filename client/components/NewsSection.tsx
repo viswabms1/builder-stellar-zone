@@ -14,6 +14,7 @@ interface NewsSectionProps {
   title?: string;
   description?: string;
   showViewAll?: boolean;
+  compact?: boolean; // Removes outer section wrapper for grid layouts
 }
 
 /**
