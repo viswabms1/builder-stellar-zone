@@ -7,8 +7,6 @@ import { EventsSection } from "@/components/EventsSection";
 import { AnnouncementBanner } from "@/components/AnnouncementBanner";
 import { getDepartmentContent, getCategoryStyles, type CarouselItem } from "@/lib/content-manager";
 import { Badge } from "@/components/ui/badge";
-import { Card, CardContent } from "@/components/ui/card";
-import { Download, ChevronLeft, ChevronRight } from "lucide-react";
 import {
   Card,
   CardContent,
@@ -16,7 +14,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import {
   Bot,
   Brain,
