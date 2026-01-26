@@ -191,7 +191,7 @@ export default function DeptDataScience() {
         </div>
       </section>
 
-      <CurriculumLibrary />
+      <CurriculumLibraryWrapper />
 
       <AccreditationDocuments />
 
