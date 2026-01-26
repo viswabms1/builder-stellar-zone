@@ -59,69 +59,47 @@ export default function EngineeringPage() {
 }
 ```
 
-### 2. Display Department-Specific Content
+### 2. CSE Department Page (Auto-Detects CSE Department)
 
 ```typescript
 // client/pages/DeptCSE.tsx
+// When user visits /deptcse (or any CSE path), the components automatically detect it
 
 import { AnnouncementBanner } from "@/components/AnnouncementBanner";
 import { NewsSection } from "@/components/NewsSection";
 import { EventsSection } from "@/components/EventsSection";
 
 export default function CSEDepartmentPage() {
-  const SCHOOL = "Engineering";
-  const DEPARTMENT = "CSE";
-
   return (
     <div className="space-y-12">
-      {/* CSE department announcements */}
-      <AnnouncementBanner 
-        school={SCHOOL}
-        priority="high"
-        variant="card"
-        limit={3}
-      />
+      {/* ✅ Automatically shows CSE announcements */}
+      <AnnouncementBanner priority="high" variant="card" limit={3} />
 
-      {/* CSE-specific news */}
-      <NewsSection 
-        school={SCHOOL}
-        department={DEPARTMENT}
-        limit={4}
-        variant="list"
-        title="Department Updates"
-      />
+      {/* ✅ Automatically shows CSE news only */}
+      <NewsSection limit={4} variant="list" title="Department Updates" />
 
-      {/* CSE-specific events */}
-      <EventsSection 
-        school={SCHOOL}
-        department={DEPARTMENT}
-        limit={5}
-        variant="grid"
-        title="Department Events"
-      />
+      {/* ✅ Automatically shows CSE events only */}
+      <EventsSection limit={5} variant="grid" title="Department Events" />
     </div>
   );
 }
 ```
 
-### 3. Display School-Wide News with Department Filter
+### 3. Health Sciences Department (Automatic Filtering)
 
 ```typescript
-// Example: Show top 3 news items from Engineering
-<NewsSection 
-  school="Engineering"
-  limit={3}
-  variant="featured"
-/>
+// Any Health Sciences page will auto-filter to Health Sciences content
+<NewsSection limit={6} variant="featured" title="Health Sciences News" />
+<EventsSection limit={5} variant="upcoming" title="Health Sciences Events" />
+```
 
-// Example: Show only workshop events from CSE
-<EventsSection 
-  school="Engineering"
-  department="CSE"
-  category="Workshop"
-  limit={5}
-  variant="list"
-/>
+### 4. Homepage or School Listing (No Auto-Filter)
+
+```typescript
+// Want to show all content or a specific school? Override the auto-detection
+<NewsSection school="Engineering" limit={5} />     // Force Engineering
+<NewsSection school="Health Sciences" limit={5} /> // Force Health Sciences
+<NewsSection limit={5} />                           // Show all universities news
 ```
 
 ## Component Props
