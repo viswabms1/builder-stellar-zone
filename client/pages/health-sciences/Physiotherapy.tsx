@@ -9,6 +9,9 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { NewsSection } from "@/components/NewsSection";
+import { EventsSection } from "@/components/EventsSection";
+import { AnnouncementBanner } from "@/components/AnnouncementBanner";
 import {
   Sparkles,
   GraduationCap,
