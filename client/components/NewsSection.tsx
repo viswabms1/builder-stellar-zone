@@ -41,6 +41,7 @@ export function NewsSection({
   title = "Latest News",
   description,
   showViewAll = false,
+  compact = false,
 }: NewsSectionProps) {
   // Auto-detect school and department from current page context
   const { school: contextSchool, department: contextDepartment } = useContentContext();
