@@ -268,9 +268,10 @@ interface EventsCarouselProps {
   events: any[];
   title?: string;
   description?: string;
+  compact?: boolean;
 }
 
-function EventsCarousel({ events, title, description }: EventsCarouselProps) {
+function EventsCarousel({ events, title, description, compact = false }: EventsCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
