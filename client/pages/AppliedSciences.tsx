@@ -34,6 +34,9 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { NewsSection } from "@/components/NewsSection";
+import { EventsSection } from "@/components/EventsSection";
+import { AnnouncementBanner } from "@/components/AnnouncementBanner";
 import { DeanSection, type DeanInfo } from "@/components/DeanSection";
 import { useAutoMuteOnScroll } from "@/hooks/useAutoMuteOnScroll";
 import {
