@@ -685,9 +685,9 @@ export default function DeptCSE() {
             </div>
           </div>
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            <AnnouncementBanner priority="high" variant="card" />
             <NewsSection variant="carousel" title="Department News" compact={true} />
             <EventsSection variant="carousel" title="Upcoming Events" compact={true} />
+            <AnnouncementBanner priority="high" variant="list" />
           </div>
         </div>
       </section>
