@@ -639,6 +639,10 @@ export default function Pharmacy() {
           </Card>
         </div>
       </section>
+
+      <AnnouncementBanner priority="high" variant="banner" />
+      <NewsSection variant="grid" title="Department News" />
+      <EventsSection variant="upcoming" title="Upcoming Events" />
     </div>
   );
 }
