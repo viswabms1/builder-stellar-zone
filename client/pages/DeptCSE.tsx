@@ -6,6 +6,8 @@ import { NewsSection } from "@/components/NewsSection";
 import { EventsSection } from "@/components/EventsSection";
 import { AnnouncementBanner } from "@/components/AnnouncementBanner";
 import { DepartmentNoticeBoard } from "@/components/DepartmentNoticeBoard";
+import { CurriculumLibrary } from "@/components/CurriculumLibrary";
+import { getCurriculumByDepartment } from "@/lib/content-manager";
 import { Badge } from "@/components/ui/badge";
 import {
   Card,
