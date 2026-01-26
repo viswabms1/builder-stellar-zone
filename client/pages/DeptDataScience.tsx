@@ -195,7 +195,6 @@ export default function DeptDataScience() {
 
       <AccreditationDocuments />
 
-      <AnnouncementBanner priority="high" variant="banner" />
       <DepartmentNoticeBoard department="Data Science" />
 
       <LabsFacilitiesCarousel />
