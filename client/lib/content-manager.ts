@@ -641,6 +641,59 @@ const ALL_CURRICULA: CurriculumProgram[] = [
     ],
     meta: { level: "Postgraduate", department: "Physiotherapy", school: "Health Sciences" },
   },
+  // ============ HEALTH SCIENCES: PHARMACY ============
+  {
+    id: "pharmacy-bpharm",
+    label: "B.Pharm",
+    description: "4-year undergraduate pharmacy program with clinical training",
+    image:
+      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop",
+    batches: [
+      {
+        year: "2025-26",
+        summary:
+          "Comprehensive pharmacy curriculum with pharmaceutical sciences, clinical practice, and industry exposure across 8 semesters",
+        documentUrl: "https://www.dsu.edu.in/images/HealthSciences/pharmacy/BPharm-Curriculum-2025-26.pdf",
+        current: true,
+      },
+    ],
+    meta: { level: "Undergraduate", department: "Pharmacy", school: "Health Sciences" },
+  },
+  {
+    id: "pharmacy-mpharm",
+    label: "M.Pharm",
+    description: "2-year postgraduate pharmacy specialization",
+    image:
+      "https://images.unsplash.com/photo-1551076805-e1869033e561?w=600&h=400&fit=crop",
+    batches: [
+      {
+        year: "2025-26",
+        summary:
+          "Advanced specializations in Pharmaceutics, Pharmacology, Pharmaceutical Analysis, and Pharmacognosy",
+        documentUrl: "https://www.dsu.edu.in/images/HealthSciences/pharmacy/MPharm-Curriculum-2025-26.pdf",
+        current: true,
+      },
+    ],
+    meta: { level: "Postgraduate", department: "Pharmacy", school: "Health Sciences" },
+  },
+  // ============ HEALTH SCIENCES: ALLIED HEALTH ============
+  {
+    id: "allied-health-bsc",
+    label: "B.Sc Allied Health Sciences",
+    description: "4-year undergraduate allied health program",
+    image:
+      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop",
+    batches: [
+      {
+        year: "2025-26",
+        summary:
+          "Comprehensive allied health curriculum with laboratory sciences, diagnostic techniques, and clinical training",
+        documentUrl: "https://www.dsu.edu.in/images/HealthSciences/allied-health/BSC-Curriculum-2025-26.pdf",
+        current: true,
+      },
+    ],
+    meta: { level: "Undergraduate", department: "Allied Health Sciences", school: "Health Sciences" },
+  },
   // ============ COMMERCE & MANAGEMENT: BBA ============
   {
     id: "bba-regular",
