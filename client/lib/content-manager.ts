@@ -269,6 +269,34 @@ export function getCategoryStyles(category: "Event" | "News" | "Announcement") {
 }
 
 // ============================================================================
+// DEPARTMENT-SPECIFIC FILTERS
+// ============================================================================
+
+export function getNewsByDepartment(school: string | undefined, department: string | undefined): NewsItem[] {
+  if (!school || !department) return [];
+  return ALL_NEWS.filter(
+    (n) => n.status === "published" && n.school === school && n.department === department
+  ).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+}
+
+export function getEventsByDepartment(school: string | undefined, department: string | undefined): Event[] {
+  if (!school || !department) return [];
+  return ALL_EVENTS.filter(
+    (e) =>
+      (e.status === "upcoming" || e.status === "ongoing") &&
+      e.school === school &&
+      e.department === department
+  ).sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+}
+
+export function getAnnouncementsByDepartment(school: string | undefined, department: string | undefined): Announcement[] {
+  if (!school || !department) return [];
+  return ALL_ANNOUNCEMENTS.filter(
+    (a) => a.status === "active" && a.school === school
+  ).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+}
+
+// ============================================================================
 // EXPORT SCHOOL-SPECIFIC GETTERS
 // ============================================================================
 
@@ -281,6 +309,20 @@ export function getSchoolContent(school: string | undefined) {
       .map(convertNewsToCarouselItem)
       .slice(0, 10),
     events: getEventsBySchool(school)
+      .map(convertEventToCarouselItem)
+      .slice(0, 10),
+  };
+}
+
+export function getDepartmentContent(school: string | undefined, department: string | undefined) {
+  return {
+    announcements: getAnnouncementsByDepartment(school, department)
+      .map(convertAnnouncementToCarouselItem)
+      .slice(0, 10),
+    news: getNewsByDepartment(school, department)
+      .map(convertNewsToCarouselItem)
+      .slice(0, 10),
+    events: getEventsByDepartment(school, department)
       .map(convertEventToCarouselItem)
       .slice(0, 10),
   };
