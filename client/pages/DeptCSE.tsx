@@ -671,7 +671,7 @@ export default function DeptCSE() {
         </div>
       </section>
 
-      <CurriculumLibrary />
+      <CurriculumLibraryComponent />
 
       <AccreditationDocuments />
 
