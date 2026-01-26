@@ -80,6 +80,104 @@ export function EventsSection({
     );
   }
 
+  // Carousel variant - rotating featured event
+  if (variant === "carousel") {
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    useEffect(() => {
+      const interval = setInterval(() => {
+        setCurrentIndex((prev) => (prev + 1) % events.length);
+      }, 6000);
+      return () => clearInterval(interval);
+    }, [events.length]);
+
+    const currentEvent = events[currentIndex];
+
+    return (
+      <section className="px-3 py-8">
+        <div className="mx-auto max-w-7xl space-y-4">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              {title && <h2 className="headline-2 font-display mb-2">{title}</h2>}
+              {description && <p className="text-foreground/80 font-body">{description}</p>}
+            </div>
+            <Badge className="w-fit text-xs">{currentIndex + 1} / {events.length}</Badge>
+          </div>
+
+          <Card className="group overflow-hidden rounded-2xl border-2 border-border/30 bg-card/40 backdrop-blur-sm">
+            {currentEvent.image && (
+              <div className="relative h-48 overflow-hidden">
+                <img
+                  src={currentEvent.image}
+                  alt={currentEvent.title}
+                  className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                />
+              </div>
+            )}
+            <CardContent className="p-4 space-y-3">
+              <div className="flex items-start justify-between gap-2">
+                <div className="flex-1">
+                  <h4 className="font-display font-semibold text-sm text-foreground mb-2 line-clamp-2">{currentEvent.title}</h4>
+                  <p className="text-xs text-foreground/70 line-clamp-2">{currentEvent.description}</p>
+                </div>
+              </div>
+              <div className="grid grid-cols-2 gap-2 text-xs text-foreground/60">
+                <div className="flex items-center gap-1">
+                  <Calendar className="h-3 w-3" />
+                  <span>{new Date(currentEvent.date).toLocaleDateString()}</span>
+                </div>
+                {currentEvent.time && (
+                  <div className="flex items-center gap-1">
+                    <Clock className="h-3 w-3" />
+                    <span>{currentEvent.time}</span>
+                  </div>
+                )}
+                <div className="flex items-center gap-1">
+                  <MapPin className="h-3 w-3" />
+                  <span className="truncate">{currentEvent.location}</span>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <div className="flex items-center justify-between gap-2">
+            <div className="flex gap-1">
+              {events.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setCurrentIndex(idx)}
+                  className={`h-1.5 rounded-full transition-all ${
+                    idx === currentIndex
+                      ? "bg-brand-magenta w-8"
+                      : "bg-border/40 w-1.5 hover:bg-border/60"
+                  }`}
+                />
+              ))}
+            </div>
+            <div className="flex gap-2">
+              <Button
+                variant="outline"
+                size="sm"
+                className="h-8 px-2 text-xs"
+                onClick={() => setCurrentIndex((prev) => (prev - 1 + events.length) % events.length)}
+              >
+                <ChevronLeft className="h-4 w-4" />
+              </Button>
+              <Button
+                variant="outline"
+                size="sm"
+                className="h-8 px-2 text-xs"
+                onClick={() => setCurrentIndex((prev) => (prev + 1) % events.length)}
+              >
+                <ChevronRight className="h-4 w-4" />
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   // Upcoming variant - featured events with more details
   if (variant === "upcoming") {
     return (
