@@ -974,9 +974,7 @@ export default function Law() {
         </div>
       </section>
 
-      <section id="notice-board" className="px-3 py-8">
-        <NoticeBoardCarousel />
-      </section>
+      <SchoolNoticeBoard school="Law" />
     </div>
   );
 }
