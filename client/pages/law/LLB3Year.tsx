@@ -1,8 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { NewsSection } from "@/components/NewsSection";
-import { EventsSection } from "@/components/EventsSection";
+import { DepartmentNoticeBoard } from "@/components/DepartmentNoticeBoard";
 import { AnnouncementBanner } from "@/components/AnnouncementBanner";
 import { Link } from "react-router-dom";
 import { useState } from "react";
@@ -295,8 +294,7 @@ export default function LLB3Year() {
       </section>
 
       <AnnouncementBanner priority="high" variant="banner" />
-      <NewsSection variant="carousel" title="Department News" />
-      <EventsSection variant="carousel" title="Upcoming Events" />
+      <DepartmentNoticeBoard school="Law" department="LLB (3 Year)" />
     </div>
   );
 }
