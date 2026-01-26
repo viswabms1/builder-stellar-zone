@@ -380,7 +380,7 @@ export default function MPharmPharmacology() {
       </section>
 
       {/* Curriculum Library */}
-      <CurriculumLibrary />
+      <CurriculumLibraryComponent />
 
       {/* Eligibility & Fees */}
       <section className="px-3 py-8 bg-gradient-to-r from-brand-blue/5 via-brand-green/5 to-brand-orange/5">
