@@ -606,20 +606,20 @@ function NoticeBoardCarousel() {
   }));
 
   useEffect(() => {
-    if (events.length === 0) return;
+    if (eventItems.length === 0) return;
     const interval = setInterval(() => {
-      setCurrentEventIndex((prev) => (prev + 1) % events.length);
+      setCurrentEventIndex((prev) => (prev + 1) % eventItems.length);
     }, 6000);
     return () => clearInterval(interval);
-  }, [events.length]);
+  }, [eventItems.length]);
 
   useEffect(() => {
-    if (news.length === 0) return;
+    if (newsItems.length === 0) return;
     const interval = setInterval(() => {
-      setCurrentNewsIndex((prev) => (prev + 1) % news.length);
+      setCurrentNewsIndex((prev) => (prev + 1) % newsItems.length);
     }, 6000);
     return () => clearInterval(interval);
-  }, [news.length]);
+  }, [newsItems.length]);
 
   useEffect(() => {
     if (announcements.length === 0) return;
