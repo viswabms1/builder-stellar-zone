@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { schools } from "./Eligibility";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { useMemo } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { AnnouncementBanner } from "@/components/AnnouncementBanner";
 import { getDepartmentContent, getCategoryStyles, type CarouselItem } from "@/lib/content-manager";
 import {
@@ -27,7 +27,6 @@ import {
   IndianRupee,
   ArrowRight,
 } from "lucide-react";
-import { useState, useEffect } from "react";
 import { aidsFaculty } from "@/data/ai-ds-faculty";
 
 export default function DeptAIDS() {
