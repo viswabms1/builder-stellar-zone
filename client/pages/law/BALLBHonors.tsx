@@ -2,7 +2,6 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { DepartmentNoticeBoard } from "@/components/DepartmentNoticeBoard";
-import { AnnouncementBanner } from "@/components/AnnouncementBanner";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import {
@@ -296,7 +295,6 @@ export default function BALLBHonors() {
         </div>
       </section>
 
-      <AnnouncementBanner priority="high" variant="banner" />
       <DepartmentNoticeBoard school="Law" department="BA.LLB (Hons)" />
     </div>
   );
