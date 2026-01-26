@@ -31,14 +31,19 @@ interface NewsSectionProps {
  * <NewsSection limit={5} variant="featured" />
  */
 export function NewsSection({
-  school,
-  department,
+  school: schoolProp,
+  department: departmentProp,
   limit = 6,
   variant = "grid",
   title = "Latest News",
   description,
   showViewAll = false,
 }: NewsSectionProps) {
+  // Auto-detect school and department from current page context
+  const { school: contextSchool, department: contextDepartment } = useContentContext();
+  const school = schoolProp || contextSchool;
+  const department = departmentProp || contextDepartment;
+
   const { news, loading, error } = useNews({
     school,
     department,
