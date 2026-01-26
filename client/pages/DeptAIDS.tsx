@@ -27,6 +27,7 @@ import {
   IndianRupee,
   ArrowRight,
 } from "lucide-react";
+import { useState, useEffect } from "react";
 import { aidsFaculty } from "@/data/ai-ds-faculty";
 
 export default function DeptAIDS() {
