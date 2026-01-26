@@ -1185,7 +1185,12 @@ function NoticeBoard() {
   );
 }
 
-function CurriculumLibrary() {
+function CurriculumLibraryWrapper() {
+  const programs = getCurriculumByDepartment("Engineering", "AIML");
+  return <CurriculumLibrary programs={programs} themeColor="blue" />;
+}
+
+function OldCurriculumLibrary() {
   const [openProgram, setOpenProgram] = useState<string | null>(null);
 
   const programs: CurriculumProgram[] = [
