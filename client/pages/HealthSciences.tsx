@@ -1039,9 +1039,7 @@ export default function HealthSciences() {
         </div>
       </section>
 
-      <section id="notice-board" className="px-3 py-8">
-        <NoticeBoardCarousel />
-      </section>
+      <SchoolNoticeBoard school="Health Sciences" />
     </div>
   );
 }
