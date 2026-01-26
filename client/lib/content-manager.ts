@@ -113,6 +113,7 @@ const ALL_NEWS: NewsItem[] = [
     status: "published",
     school: "University",
     category: "Accreditation",
+    image: "https://images.pexels.com/photos/8090286/pexels-photo-8090286.jpeg",
   },
   {
     id: "news-eng-1",
@@ -123,6 +124,7 @@ const ALL_NEWS: NewsItem[] = [
     status: "published",
     school: "Engineering",
     category: "Placement",
+    image: "https://images.pexels.com/photos/3862638/pexels-photo-3862638.jpeg",
   },
   {
     id: "news-hs-1",
@@ -133,6 +135,7 @@ const ALL_NEWS: NewsItem[] = [
     status: "published",
     school: "Health Sciences",
     category: "Placement",
+    image: "https://images.pexels.com/photos/1279365/pexels-photo-1279365.jpeg",
   },
 ];
 
