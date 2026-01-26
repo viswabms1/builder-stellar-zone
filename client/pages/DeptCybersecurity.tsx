@@ -3,6 +3,9 @@ import { useEffect, useState, useMemo } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { NewsSection } from "@/components/NewsSection";
+import { EventsSection } from "@/components/EventsSection";
+import { AnnouncementBanner } from "@/components/AnnouncementBanner";
 import {
   Sparkles,
   Shield,
