@@ -108,14 +108,19 @@ export default function CSEDepartmentPage() {
 
 ```typescript
 interface AnnouncementBannerProps {
-  priority?: "high" | "medium" | "low";        // Filter by priority
+  priority?: "high" | "medium" | "low";        // Filter by priority (default: "high")
   category?: "Academic" | "Administrative" | "Event" | "Urgent" | "General";
-  school?: string;                              // Filter by school
-  limit?: number;                               // Max items to show
-  dismissible?: boolean;                        // Allow users to close
-  variant?: "banner" | "card" | "list";         // Display style
+  school?: string;                              // Override auto-detected school
+  limit?: number;                               // Max items to show (default: 3)
+  dismissible?: boolean;                        // Allow users to close (default: true)
+  variant?: "banner" | "card" | "list";         // Display style (default: "banner")
 }
 ```
+
+**How it works:**
+- Components **automatically detect** school/department from current URL
+- If `school` prop is provided, it **overrides** the auto-detection
+- Perfect for showing specific content on any page
 
 **Variants:**
 - `banner` — Single announcement at top (with attachments)
@@ -126,13 +131,13 @@ interface AnnouncementBannerProps {
 
 ```typescript
 interface NewsSectionProps {
-  school?: string;                              // Filter by school
-  department?: string;                          // Filter by department
+  school?: string;                              // Override auto-detected school
+  department?: string;                          // Override auto-detected department
   limit?: number;                               // Max items (default: 6)
-  variant?: "grid" | "list" | "featured";       // Display style
+  variant?: "grid" | "list" | "featured";       // Display style (default: "grid")
   title?: string;                               // Section title
   description?: string;                         // Section description
-  showViewAll?: boolean;                        // Show "View All" button
+  showViewAll?: boolean;                        // Show "View All" button (default: false)
 }
 ```
 
@@ -145,13 +150,13 @@ interface NewsSectionProps {
 
 ```typescript
 interface EventsSectionProps {
-  school?: string;                              // Filter by school
-  department?: string;                          // Filter by department
+  school?: string;                              // Override auto-detected school
+  department?: string;                          // Override auto-detected department
   limit?: number;                               // Max items (default: 6)
-  variant?: "grid" | "list" | "upcoming";       // Display style
+  variant?: "grid" | "list" | "upcoming";       // Display style (default: "grid")
   title?: string;                               // Section title
   description?: string;                         // Section description
-  showViewAll?: boolean;                        // Show "View All" button
+  showViewAll?: boolean;                        // Show "View All" button (default: false)
 }
 ```
 
