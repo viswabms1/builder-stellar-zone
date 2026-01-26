@@ -667,7 +667,10 @@ export default function DeptCSE() {
 
       <AccreditationDocuments />
 
-      <NoticeBoard />
+      {/* Auto-filtered content based on current department context */}
+      <AnnouncementBanner priority="high" variant="banner" />
+      <NewsSection variant="grid" title="Department News" />
+      <EventsSection variant="upcoming" title="Upcoming Events" />
 
       <LabsFacilitiesCarousel />
 
