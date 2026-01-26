@@ -246,7 +246,7 @@ export default function DeptAerospace() {
         </div>
       </section>
 
-      <CurriculumLibrary />
+      <CurriculumLibraryWrapper />
 
       <AccreditationDocuments />
 
