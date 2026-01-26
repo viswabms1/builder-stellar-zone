@@ -5,7 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { useScrollTrigger } from "@/hooks/useScrollTrigger";
 import { useMemo } from "react";
-import { getDepartmentContent, getCategoryStyles, type CarouselItem } from "@/lib/content-manager";
+import { DepartmentNoticeBoard } from "@/components/DepartmentNoticeBoard";
 import { AnnouncementBanner } from "@/components/AnnouncementBanner";
 import {
   Bot,

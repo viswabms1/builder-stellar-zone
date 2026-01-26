@@ -5,7 +5,7 @@ import { computerTechnologyFaculty } from "@/data/computer-technology-faculty";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { AnnouncementBanner } from "@/components/AnnouncementBanner";
-import { getDepartmentContent, getCategoryStyles, type CarouselItem } from "@/lib/content-manager";
+import { DepartmentNoticeBoard } from "@/components/DepartmentNoticeBoard";
 import {
   Code2,
   Cpu,

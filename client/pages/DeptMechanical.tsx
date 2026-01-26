@@ -6,7 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { mechFaculty } from "@/data/mech-faculty";
 import { AnnouncementBanner } from "@/components/AnnouncementBanner";
-import { getDepartmentContent, getCategoryStyles, type CarouselItem } from "@/lib/content-manager";
+import { DepartmentNoticeBoard } from "@/components/DepartmentNoticeBoard";
 import {
   Cog,
   Zap,
