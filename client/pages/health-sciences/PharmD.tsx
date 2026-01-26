@@ -10,6 +10,8 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { DepartmentNoticeBoard } from "@/components/DepartmentNoticeBoard";
+import { CurriculumLibrary } from "@/components/CurriculumLibrary";
+import { getCurriculumByDepartment } from "@/lib/content-manager";
 import {
   Pill,
   Stethoscope,
@@ -25,6 +27,11 @@ import {
   AlertCircle,
   Clipboard,
 } from "lucide-react";
+
+function CurriculumLibraryComponent() {
+  const programs = getCurriculumByDepartment("Health Sciences", "Pharmacy");
+  return <CurriculumLibrary programs={programs} themeColor="blue" />;
+}
 
 export default function PharmD() {
   useEffect(() => {
