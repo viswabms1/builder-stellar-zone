@@ -249,14 +249,30 @@ export function AnnouncementBanner({
                 : "bg-blue-50 border-blue-500"
           }`}
         >
-          <div className="flex-1">
-            <h4 className="font-medium text-foreground text-sm">
-              {announcement.title}
-            </h4>
-            <p className="text-xs text-foreground/70 mt-1">
+          <div className="flex-1 min-w-0">
+            <div className="flex items-center gap-2 mb-1">
+              <h4 className="font-medium text-foreground text-sm">
+                {announcement.title}
+              </h4>
+              {announcement.type === "circular" && (
+                <span className="inline-block px-2 py-0.5 text-xs font-medium bg-red-200 text-red-800 rounded whitespace-nowrap">
+                  CIRCULAR
+                </span>
+              )}
+            </div>
+            <p className="text-xs text-foreground/70">
               {new Date(announcement.date).toLocaleDateString()} •{" "}
               {announcement.category}
             </p>
+            {announcement.attachments && announcement.attachments.length > 0 && (
+              <p className="text-xs text-foreground/60 mt-1 flex items-center gap-1">
+                <Paperclip className="h-3 w-3" />
+                {announcement.attachments.length}{" "}
+                {announcement.attachments.length === 1
+                  ? "attachment"
+                  : "attachments"}
+              </p>
+            )}
           </div>
           {dismissible && (
             <button
