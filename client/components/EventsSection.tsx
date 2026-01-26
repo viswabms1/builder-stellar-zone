@@ -3,13 +3,14 @@ import { useContentContext } from "@/hooks/useContentContext";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Calendar, MapPin, Users, Clock, ArrowRight } from "lucide-react";
+import { Calendar, MapPin, Users, Clock, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { useState, useEffect } from "react";
 
 interface EventsSectionProps {
   school?: string; // Optional override
   department?: string; // Optional override
   limit?: number;
-  variant?: "grid" | "list" | "upcoming";
+  variant?: "grid" | "list" | "upcoming" | "carousel";
   title?: string;
   description?: string;
   showViewAll?: boolean;
