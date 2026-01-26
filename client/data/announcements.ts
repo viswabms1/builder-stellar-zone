@@ -121,18 +121,36 @@ const UNIVERSITY_ANNOUNCEMENTS: Announcement[] = [
 const ENGINEERING_ANNOUNCEMENTS: Announcement[] = [
   {
     id: "eng-announce-1",
-    title: "B.Tech Project Submission Guidelines",
+    title: "CIRCULAR: B.Tech Project Submission Guidelines",
+    type: "circular",
     content:
-      "Final year B.Tech project submissions must follow the new standardized format. Guidelines document is available on the engineering department portal.",
+      "Final year B.Tech project submissions must follow the new standardized format. All guidelines, requirements, and evaluation criteria are detailed in the attached documents.",
     category: "Academic",
     priority: "high",
     date: "Jan 22, 2025",
     school: "Engineering",
     status: "active",
+    attachments: [
+      {
+        id: "att-4",
+        fileName: "BtechProjectGuidelines_2025.pdf",
+        fileUrl: "https://example.com/files/BtechProjectGuidelines_2025.pdf",
+        fileType: "pdf",
+        fileSize: "1.8 MB",
+      },
+      {
+        id: "att-5",
+        fileName: "Project_Report_Template.docx",
+        fileUrl: "https://example.com/files/Project_Report_Template.docx",
+        fileType: "docx",
+        fileSize: "0.5 MB",
+      },
+    ],
   },
   {
     id: "eng-announce-2",
     title: "Engineering Lab Safety Training Mandatory",
+    type: "announcement",
     content:
       "All students using engineering labs must complete the mandatory 2-hour safety training. Sessions scheduled daily from 10 AM to 4 PM.",
     category: "Administrative",
