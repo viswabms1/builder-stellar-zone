@@ -74,33 +74,74 @@ export function AnnouncementBanner({
   // Banner variant (single announcement at top)
   if (variant === "banner" && visibleAnnouncements.length > 0) {
     const announcement = visibleAnnouncements[0];
+    const bgColor =
+      announcement.priority === "high"
+        ? "bg-red-50 border-red-500"
+        : announcement.priority === "medium"
+          ? "bg-yellow-50 border-yellow-500"
+          : "bg-blue-50 border-blue-500";
 
     return (
-      <div
-        className={`mb-6 rounded-lg border-l-4 p-4 ${
-          announcement.priority === "high"
-            ? "bg-red-50 border-red-500"
-            : announcement.priority === "medium"
-              ? "bg-yellow-50 border-yellow-500"
-              : "bg-blue-50 border-blue-500"
-        }`}
-      >
+      <div className={`mb-6 rounded-lg border-l-4 p-4 ${bgColor}`}>
         <div className="flex items-start justify-between">
           <div className="flex-1">
-            <h3 className="font-semibold text-foreground">
-              {announcement.title}
-            </h3>
+            <div className="flex items-center gap-2 mb-2">
+              <h3 className="font-semibold text-foreground">
+                {announcement.title}
+              </h3>
+              {announcement.type === "circular" && (
+                <span className="inline-block px-2 py-1 text-xs font-medium bg-red-200 text-red-800 rounded">
+                  CIRCULAR
+                </span>
+              )}
+            </div>
             <p className="text-sm text-foreground/75 mt-1">
               {announcement.content}
             </p>
-            <p className="text-xs text-foreground/60 mt-2">
+
+            {/* Attachments Section */}
+            {announcement.attachments && announcement.attachments.length > 0 && (
+              <div className="mt-4 space-y-2">
+                <p className="text-xs font-semibold text-foreground/70 flex items-center gap-1">
+                  <Paperclip className="h-3 w-3" />
+                  Attachments:
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {announcement.attachments.map((attachment) => (
+                    <a
+                      key={attachment.id}
+                      href={attachment.fileUrl}
+                      download={attachment.fileName}
+                      className="inline-flex items-center gap-2 px-3 py-2 text-xs bg-white border border-foreground/20 rounded hover:bg-foreground/5 transition"
+                    >
+                      <span className="text-lg">
+                        {getFileIcon(attachment.fileType)}
+                      </span>
+                      <div className="flex flex-col">
+                        <span className="font-medium text-foreground">
+                          {attachment.fileName}
+                        </span>
+                        {attachment.fileSize && (
+                          <span className="text-foreground/60">
+                            {attachment.fileSize}
+                          </span>
+                        )}
+                      </div>
+                      <Download className="h-3 w-3 text-foreground/50 ml-1" />
+                    </a>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            <p className="text-xs text-foreground/60 mt-3">
               Posted: {new Date(announcement.date).toLocaleDateString()}
             </p>
           </div>
           {dismissible && (
             <button
               onClick={() => setDismissed(new Set(dismissed).add(announcement.id))}
-              className="ml-4 text-foreground/50 hover:text-foreground"
+              className="ml-4 text-foreground/50 hover:text-foreground flex-shrink-0"
               aria-label="Dismiss announcement"
             >
               <X className="h-5 w-5" />
