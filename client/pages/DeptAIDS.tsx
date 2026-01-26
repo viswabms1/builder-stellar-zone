@@ -1045,10 +1045,15 @@ function NoticeBoard() {
   );
 }
 
-function CurriculumLibrary() {
+function CurriculumLibraryWrapper() {
+  const programs = getCurriculumByDepartment("Engineering", "AIDS");
+  return <CurriculumLibrary programs={programs} themeColor="blue" />;
+}
+
+function OldCurriculumLibrary() {
   const [openProgram, setOpenProgram] = useState<string | null>(null);
 
-  const programs: CurriculumProgram[] = [
+  const programs: any[] = [
     {
       id: "btech",
       label: "B.Tech CSE (AI & Data Science)",
