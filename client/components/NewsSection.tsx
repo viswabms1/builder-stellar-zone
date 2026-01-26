@@ -241,3 +241,96 @@ export function NewsSection({
     </div>
   );
 }
+
+interface NewsCarouselProps {
+  news: any[];
+  title?: string;
+  description?: string;
+}
+
+function NewsCarousel({ news, title, description }: NewsCarouselProps) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    if (news.length === 0) return;
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % news.length);
+    }, 6000);
+    return () => clearInterval(interval);
+  }, [news.length]);
+
+  if (news.length === 0) {
+    return (
+      <div className="px-3 py-8">
+        <div className="mx-auto max-w-7xl">
+          {title && <h2 className="text-2xl font-bold text-foreground mb-4">{title}</h2>}
+          <div className="text-center py-12 text-foreground/50">
+            <p>No news available at this time.</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  const currentItem = news[currentIndex];
+
+  return (
+    <div className="px-3 py-8">
+      <div className="mx-auto max-w-7xl space-y-4">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            {title && <h2 className="text-2xl font-bold text-foreground mb-2">{title}</h2>}
+            {description && <p className="text-foreground/70 text-sm">{description}</p>}
+          </div>
+          <Badge className="w-fit text-xs">{currentIndex + 1} / {news.length}</Badge>
+        </div>
+
+        <Card className="overflow-hidden border border-border/30">
+          {currentItem.image && (
+            <img
+              src={currentItem.image}
+              alt={currentItem.title}
+              className="w-full h-48 object-cover"
+            />
+          )}
+          <CardContent className="p-4">
+            <CardTitle className="text-lg mb-2">{currentItem.title}</CardTitle>
+            <p className="text-sm text-foreground/70 line-clamp-2">{currentItem.excerpt || (currentItem.content ? currentItem.content.substring(0, 100) : '')}</p>
+            <p className="text-xs text-foreground/60 mt-3">{new Date(currentItem.date).toLocaleDateString()}</p>
+          </CardContent>
+        </Card>
+
+        <div className="flex items-center justify-between gap-2">
+          <div className="flex gap-1">
+            {news.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setCurrentIndex(idx)}
+                className={`h-2 rounded-full transition-all ${
+                  idx === currentIndex ? "bg-blue-600 w-6" : "bg-gray-300 w-2"
+                }`}
+                aria-label={`Go to news ${idx + 1}`}
+              />
+            ))}
+          </div>
+          <div className="flex gap-2">
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => setCurrentIndex((prev) => (prev - 1 + news.length) % news.length)}
+            >
+              ← Previous
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => setCurrentIndex((prev) => (prev + 1) % news.length)}
+            >
+              Next →
+            </Button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
