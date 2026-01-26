@@ -10,7 +10,6 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { DepartmentNoticeBoard } from "@/components/DepartmentNoticeBoard";
-import { AnnouncementBanner } from "@/components/AnnouncementBanner";
 import {
   Sparkles,
   GraduationCap,
@@ -718,7 +717,6 @@ export default function Nursing() {
         </div>
       </section>
 
-      <AnnouncementBanner priority="high" variant="banner" />
       <DepartmentNoticeBoard school="Health Sciences" department="Nursing" />
     </div>
   );
