@@ -63,6 +63,8 @@ const ENGINEERING_EVENTS: Event[] = [
     school: "Engineering",
     department: "CSE",
     category: "Seminar",
+    image:
+      "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&h=300&fit=crop",
     registrationRequired: false,
     tags: ["ai", "ethics", "technology"],
   },
@@ -134,6 +136,8 @@ const ENGINEERING_EVENTS: Event[] = [
     school: "Engineering",
     department: "Aerospace",
     category: "Workshop",
+    image:
+      "https://images.unsplash.com/photo-1446776877081-d282a0f896e2?w=600&h=300&fit=crop",
     registrationRequired: true,
     capacity: 30,
     tags: ["uav", "drone", "technology"],
@@ -151,6 +155,8 @@ const ENGINEERING_EVENTS: Event[] = [
     school: "Engineering",
     department: "ECE",
     category: "Workshop",
+    image:
+      "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=300&fit=crop",
     registrationRequired: true,
     capacity: 40,
     registered: 35,
@@ -172,6 +178,8 @@ const HEALTH_SCIENCES_EVENTS: Event[] = [
     status: "upcoming",
     school: "Health Sciences",
     category: "Workshop",
+    image:
+      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=300&fit=crop",
     registrationRequired: true,
     capacity: 60,
     registered: 55,
@@ -190,6 +198,8 @@ const HEALTH_SCIENCES_EVENTS: Event[] = [
     school: "Health Sciences",
     department: "Pharmacy",
     category: "Seminar",
+    image:
+      "https://images.unsplash.com/photo-1584308666744-24d5f400f6f4?w=600&h=300&fit=crop",
     registrationRequired: false,
     tags: ["pharmacy", "industry"],
   },
@@ -207,6 +217,8 @@ const HEALTH_SCIENCES_EVENTS: Event[] = [
     school: "Health Sciences",
     department: "Nursing",
     category: "Conference",
+    image:
+      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=300&fit=crop",
     registrationRequired: true,
     registrationLink: "https://example.com/nursing-conference-2025",
     capacity: 200,
@@ -230,6 +242,8 @@ const COMMERCE_MANAGEMENT_EVENTS: Event[] = [
     status: "upcoming",
     school: "Commerce & Management",
     category: "Workshop",
+    image:
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=300&fit=crop",
     registrationRequired: true,
     capacity: 50,
     registered: 42,
@@ -248,6 +262,8 @@ const COMMERCE_MANAGEMENT_EVENTS: Event[] = [
     school: "Commerce & Management",
     department: "MBA",
     category: "Conference",
+    image:
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=300&fit=crop",
     registrationRequired: true,
     capacity: 300,
     registered: 250,
@@ -269,6 +285,8 @@ const UNIVERSITY_EVENTS: Event[] = [
     status: "upcoming",
     school: "University",
     category: "Sports",
+    image:
+      "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=600&h=300&fit=crop",
     tags: ["sports", "competition"],
   },
   {
@@ -283,6 +301,8 @@ const UNIVERSITY_EVENTS: Event[] = [
     status: "upcoming",
     school: "University",
     category: "Cultural",
+    image:
+      "https://images.unsplash.com/photo-1501281668479-f3afd8722d47?w=600&h=300&fit=crop",
     tags: ["celebration", "cultural"],
   },
 ];
