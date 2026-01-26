@@ -2,13 +2,15 @@ import { useNews } from "@/hooks/useNews";
 import { useContentContext } from "@/hooks/useContentContext";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, User, ArrowRight } from "lucide-react";
+import { Calendar, User, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
 
 interface NewsSectionProps {
   school?: string; // Optional override
   department?: string; // Optional override
   limit?: number;
-  variant?: "grid" | "list" | "featured";
+  variant?: "grid" | "list" | "featured" | "carousel";
   title?: string;
   description?: string;
   showViewAll?: boolean;
