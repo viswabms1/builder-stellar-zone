@@ -32,14 +32,19 @@ interface EventsSectionProps {
  * <EventsSection limit={5} variant="upcoming" />
  */
 export function EventsSection({
-  school,
-  department,
+  school: schoolProp,
+  department: departmentProp,
   limit = 6,
   variant = "grid",
   title = "Upcoming Events",
   description,
   showViewAll = false,
 }: EventsSectionProps) {
+  // Auto-detect school and department from current page context
+  const { school: contextSchool, department: contextDepartment } = useContentContext();
+  const school = schoolProp || contextSchool;
+  const department = departmentProp || contextDepartment;
+
   const { events, loading, error } = useEvents({
     school,
     department,
