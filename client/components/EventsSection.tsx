@@ -282,92 +282,98 @@ function EventsCarousel({ events, title, description, compact = false }: EventsC
     return () => clearInterval(interval);
   }, [events.length]);
 
-  const carouselContent = (
-    <>
+  if (events.length === 0) {
+    const emptyContent = (
       <div className="flex items-center gap-2 px-4 py-3 rounded-xl border-l-4 border-brand-magenta bg-brand-magenta/10">
         <h3 className="headline-4 font-display text-brand-magenta">{title}</h3>
-        {events.length > 0 && <Badge className="ml-auto text-xs">{currentIndex + 1} / {events.length}</Badge>}
       </div>
+    );
 
-      {events.length > 0 && (
-        <>
-          <Card className="group overflow-hidden rounded-2xl border-2 border-border/30 bg-card/40 backdrop-blur-sm">
-            {events[currentIndex]?.image && (
-              <div className="relative h-48 overflow-hidden">
-                <img
-                  src={events[currentIndex].image}
-                  alt={events[currentIndex].title}
-                  className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
-                />
-              </div>
-            )}
-            <CardContent className="p-4 space-y-3">
-              <div className="flex items-start justify-between gap-2">
-                <div className="flex-1">
-                  <h4 className="font-display font-semibold text-sm text-foreground mb-2 line-clamp-2">{events[currentIndex].title}</h4>
-                  <p className="text-xs text-foreground/70 line-clamp-2">{events[currentIndex].description}</p>
-                </div>
-              </div>
-              <div className="flex items-center justify-between pt-2 border-t border-border/20">
-                <span className="text-xs font-semibold text-foreground/60">{new Date(events[currentIndex].date).toLocaleDateString()}</span>
-              </div>
-            </CardContent>
-          </Card>
-
-          <div className="flex items-center justify-between gap-2">
-            <div className="flex gap-1">
-              {events.map((_, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => setCurrentIndex(idx)}
-                  className={`h-1.5 rounded-full transition-all ${
-                    idx === currentIndex ? "bg-brand-magenta w-6" : "bg-border/40 w-1.5 hover:bg-border/60"
-                  }`}
-                />
-              ))}
-            </div>
-            <div className="flex gap-1">
-              <Button
-                variant="outline"
-                size="sm"
-                className="h-7 px-2 text-xs"
-                onClick={() => setCurrentIndex((prev) => (prev - 1 + events.length) % events.length)}
-              >
-                ←
-              </Button>
-              <Button
-                variant="outline"
-                size="sm"
-                className="h-7 px-2 text-xs"
-                onClick={() => setCurrentIndex((prev) => (prev + 1) % events.length)}
-              >
-                →
-              </Button>
-            </div>
-          </div>
-        </>
-      )}
-    </>
-  );
-
-  if (compact) {
-    return <div className="space-y-4">{carouselContent}</div>;
-  }
-
-  if (events.length === 0) {
+    if (compact) {
+      return <div className="space-y-4">{emptyContent}</div>;
+    }
     return (
       <section className="px-3 py-8">
         <div className="mx-auto max-w-7xl space-y-4">
-          {carouselContent}
+          {emptyContent}
         </div>
       </section>
     );
   }
 
+  const currentEvent = events[currentIndex];
+  const carouselBody = (
+    <>
+      <div className="flex items-center gap-2 px-4 py-3 rounded-xl border-l-4 border-brand-magenta bg-brand-magenta/10">
+        <h3 className="headline-4 font-display text-brand-magenta">{title}</h3>
+        <Badge className="ml-auto text-xs">{currentIndex + 1} / {events.length}</Badge>
+      </div>
+
+      <Card className="group overflow-hidden rounded-2xl border-2 border-border/30 bg-card/40 backdrop-blur-sm">
+        {currentEvent.image && (
+          <div className="relative h-48 overflow-hidden">
+            <img
+              src={currentEvent.image}
+              alt={currentEvent.title}
+              className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
+            />
+          </div>
+        )}
+        <CardContent className="p-4 space-y-3">
+          <div className="flex items-start justify-between gap-2">
+            <div className="flex-1">
+              <h4 className="font-display font-semibold text-sm text-foreground mb-2 line-clamp-2">{currentEvent.title}</h4>
+              <p className="text-xs text-foreground/70 line-clamp-2">{currentEvent.description}</p>
+            </div>
+          </div>
+          <div className="flex items-center justify-between pt-2 border-t border-border/20">
+            <span className="text-xs font-semibold text-foreground/60">{new Date(currentEvent.date).toLocaleDateString()}</span>
+          </div>
+        </CardContent>
+      </Card>
+
+      <div className="flex items-center justify-between gap-2">
+        <div className="flex gap-1">
+          {events.map((_, idx) => (
+            <button
+              key={idx}
+              onClick={() => setCurrentIndex(idx)}
+              className={`h-1.5 rounded-full transition-all ${
+                idx === currentIndex ? "bg-brand-magenta w-6" : "bg-border/40 w-1.5 hover:bg-border/60"
+              }`}
+            />
+          ))}
+        </div>
+        <div className="flex gap-1">
+          <Button
+            variant="outline"
+            size="sm"
+            className="h-7 px-2 text-xs"
+            onClick={() => setCurrentIndex((prev) => (prev - 1 + events.length) % events.length)}
+          >
+            ←
+          </Button>
+          <Button
+            variant="outline"
+            size="sm"
+            className="h-7 px-2 text-xs"
+            onClick={() => setCurrentIndex((prev) => (prev + 1) % events.length)}
+          >
+            →
+          </Button>
+        </div>
+      </div>
+    </>
+  );
+
+  if (compact) {
+    return <div className="space-y-4">{carouselBody}</div>;
+  }
+
   return (
     <section className="px-3 py-8">
       <div className="mx-auto max-w-7xl space-y-4">
-        {carouselContent}
+        {carouselBody}
       </div>
     </section>
   );
