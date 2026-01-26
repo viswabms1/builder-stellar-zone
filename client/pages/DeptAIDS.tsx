@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { schools } from "./Eligibility";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { useState, useEffect, useMemo } from "react";
+import { useMemo } from "react";
 import { AnnouncementBanner } from "@/components/AnnouncementBanner";
 import { getDepartmentContent, getCategoryStyles, type CarouselItem } from "@/lib/content-manager";
 import {
