@@ -5,8 +5,9 @@ import { schools } from "./Eligibility";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { useMemo } from "react";
-import { AnnouncementBanner } from "@/components/AnnouncementBanner";
 import { DepartmentNoticeBoard } from "@/components/DepartmentNoticeBoard";
+import { CurriculumLibrary } from "@/components/CurriculumLibrary";
+import { getCurriculumByDepartment } from "@/lib/content-manager";
 import {
   Brain,
   Database,
