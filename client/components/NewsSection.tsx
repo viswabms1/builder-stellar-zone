@@ -84,7 +84,7 @@ export function NewsSection({
 
   // Carousel variant - rotating featured item
   if (variant === "carousel") {
-    return <NewsCarousel news={news} title={title} description={description} />;
+    return <NewsCarousel news={news} title={title} description={description} compact={compact} />;
   }
 
   // Featured variant - large cards with images
