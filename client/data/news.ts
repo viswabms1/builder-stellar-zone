@@ -98,6 +98,8 @@ const ENGINEERING_NEWS: NewsItem[] = [
     school: "Engineering",
     department: "Mechanical",
     category: "Research",
+    image:
+      "https://images.unsplash.com/photo-1581092162562-40038f51df21?w=600&h=300&fit=crop",
     author: "Department Head",
     tags: ["research", "industry", "automotive"],
   },
@@ -146,6 +148,8 @@ const HEALTH_SCIENCES_NEWS: NewsItem[] = [
     school: "Health Sciences",
     department: "Pharmacy",
     category: "Research",
+    image:
+      "https://images.unsplash.com/photo-1584308666744-24d5f400f6f4?w=600&h=300&fit=crop",
     author: "Pharmacy Department",
     tags: ["research", "pharmacy", "clinical"],
   },
@@ -160,6 +164,8 @@ const HEALTH_SCIENCES_NEWS: NewsItem[] = [
     school: "Health Sciences",
     department: "Nursing",
     category: "Accreditation",
+    image:
+      "https://images.unsplash.com/photo-1576091160671-112d4fbbc593?w=600&h=300&fit=crop",
     tags: ["accreditation", "nursing"],
   },
 ];
@@ -192,6 +198,8 @@ const COMMERCE_MANAGEMENT_NEWS: NewsItem[] = [
     school: "Commerce & Management",
     department: "MBA",
     category: "General",
+    image:
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=300&fit=crop",
     author: "MBA Program Director",
     tags: ["mba", "corporate", "internship"],
   },
