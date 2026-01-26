@@ -1790,10 +1790,10 @@ export default function Engineering() {
                 upcoming opportunities.
               </p>
             </div>
-          </div>
-          <NoticeBoardCarousel />
         </div>
-      </section>
+      </div>
+      <SchoolNoticeBoard school="Engineering" />
+    </section>
 
       <section
         id="related-resources"
