@@ -31,9 +31,10 @@ export interface Announcement {
 const UNIVERSITY_ANNOUNCEMENTS: Announcement[] = [
   {
     id: "univ-announce-1",
-    title: "Spring Semester Registration Extended",
+    title: "CIRCULAR: Spring Semester Registration Extended",
+    type: "circular",
     content:
-      "The spring semester registration deadline has been extended to January 31, 2025. All students must complete their registration by this date to avoid late fee charges.",
+      "The spring semester registration deadline has been extended to January 31, 2025. All students must complete their registration by this date to avoid late fee charges. Detailed instructions are provided in the attached circular.",
     category: "Academic",
     priority: "high",
     date: "Jan 20, 2025",
@@ -41,10 +42,27 @@ const UNIVERSITY_ANNOUNCEMENTS: Announcement[] = [
     status: "active",
     image:
       "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=300&fit=crop",
+    attachments: [
+      {
+        id: "att-1",
+        fileName: "Spring_Semester_Registration_Circular.pdf",
+        fileUrl: "https://example.com/files/Spring_Registration_Circular.pdf",
+        fileType: "pdf",
+        fileSize: "1.2 MB",
+      },
+      {
+        id: "att-2",
+        fileName: "Registration_Portal_Guide.docx",
+        fileUrl: "https://example.com/files/Registration_Guide.docx",
+        fileType: "docx",
+        fileSize: "0.8 MB",
+      },
+    ],
   },
   {
     id: "univ-announce-2",
     title: "Campus Maintenance: Library Renovation",
+    type: "announcement",
     content:
       "Central library will undergo infrastructure renovation from January 28 to February 7, 2025. All reading rooms will be closed. Alternative study spaces are available at departmental libraries.",
     category: "Administrative",
@@ -55,19 +73,30 @@ const UNIVERSITY_ANNOUNCEMENTS: Announcement[] = [
   },
   {
     id: "univ-announce-3",
-    title: "Placement Season 2025 Kickoff",
+    title: "CIRCULAR: Placement Season 2025 Kickoff",
+    type: "circular",
     content:
-      "Recruitment season for 2025 graduating batch begins on February 1. All final-year students must ensure their profiles are updated in the placement portal.",
+      "Recruitment season for 2025 graduating batch begins on February 1. All final-year students must ensure their profiles are updated in the placement portal. Important guidelines and deadlines are attached.",
     category: "Event",
     priority: "high",
     date: "Jan 18, 2025",
     status: "active",
     image:
       "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=300&fit=crop",
+    attachments: [
+      {
+        id: "att-3",
+        fileName: "Placement_Process_2025.pdf",
+        fileUrl: "https://example.com/files/Placement_Process_2025.pdf",
+        fileType: "pdf",
+        fileSize: "2.5 MB",
+      },
+    ],
   },
   {
     id: "univ-announce-4",
     title: "Mid-Semester Exam Schedule Released",
+    type: "announcement",
     content:
       "Mid-semester examinations will commence from February 10, 2025. Detailed timetable with subject codes available on the student portal.",
     category: "Academic",
@@ -78,6 +107,7 @@ const UNIVERSITY_ANNOUNCEMENTS: Announcement[] = [
   {
     id: "univ-announce-5",
     title: "Campus WiFi Upgrade Complete",
+    type: "announcement",
     content:
       "High-speed WiFi infrastructure has been upgraded across campus. All users will experience faster and more reliable connectivity.",
     category: "General",
