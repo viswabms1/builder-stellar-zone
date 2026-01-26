@@ -14,6 +14,18 @@ interface AnnouncementBannerProps {
 }
 
 /**
+ * Get file icon based on file type
+ */
+function getFileIcon(fileType: string) {
+  const lowerType = fileType.toLowerCase();
+  if (lowerType === "pdf") return "📄";
+  if (["doc", "docx", "txt"].includes(lowerType)) return "📝";
+  if (["xls", "xlsx", "csv"].includes(lowerType)) return "📊";
+  if (["ppt", "pptx"].includes(lowerType)) return "🎯";
+  return "📎";
+}
+
+/**
  * Announcement Banner Component
  * Displays announcements with various layouts (banner, card, list)
  * Ready for Directus integration
