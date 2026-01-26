@@ -155,7 +155,7 @@ export default function MBA() {
           {/* Curriculum Library */}
           <div className="space-y-6">
             <h2 className="text-3xl font-bold font-display">Program Curriculum & Specializations</h2>
-            <CurriculumLibrary />
+            <CurriculumLibraryComponent />
           </div>
         </div>
       </section>
