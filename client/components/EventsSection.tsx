@@ -1,0 +1,251 @@
+import { useEvents } from "@/hooks/useEvents";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Calendar, MapPin, Users, Clock, ArrowRight } from "lucide-react";
+
+interface EventsSectionProps {
+  school?: string;
+  department?: string;
+  limit?: number;
+  variant?: "grid" | "list" | "upcoming";
+  title?: string;
+  description?: string;
+  showViewAll?: boolean;
+}
+
+/**
+ * Reusable Events Section Component
+ * Displays events from centralized data filtered by school/department
+ *
+ * @example
+ * // Display all Engineering upcoming events
+ * <EventsSection school="Engineering" title="Engineering Events" />
+ *
+ * @example
+ * // Display CSE department events
+ * <EventsSection school="Engineering" department="CSE" limit={3} variant="list" />
+ *
+ * @example
+ * // Display featured upcoming events
+ * <EventsSection limit={5} variant="upcoming" />
+ */
+export function EventsSection({
+  school,
+  department,
+  limit = 6,
+  variant = "grid",
+  title = "Upcoming Events",
+  description,
+  showViewAll = false,
+}: EventsSectionProps) {
+  const { events, loading, error } = useEvents({
+    school,
+    department,
+    limit,
+  });
+
+  if (loading) {
+    return (
+      <div className="space-y-4">
+        <div className="animate-pulse space-y-3">
+          {[...Array(3)].map((_, i) => (
+            <div key={i} className="h-24 bg-gray-200 rounded" />
+          ))}
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="text-red-600 text-sm">
+        Error loading events: {error}
+      </div>
+    );
+  }
+
+  if (events.length === 0) {
+    return (
+      <div className="text-center py-12 text-foreground/50">
+        <p>No upcoming events at this time.</p>
+      </div>
+    );
+  }
+
+  // Upcoming variant - featured events with more details
+  if (variant === "upcoming") {
+    return (
+      <div className="space-y-6">
+        {title && (
+          <div>
+            <h2 className="text-3xl font-bold text-foreground">{title}</h2>
+            {description && (
+              <p className="text-foreground/70 mt-2">{description}</p>
+            )}
+          </div>
+        )}
+        <div className="space-y-4">
+          {events.map((event) => (
+            <Card key={event.id} className="overflow-hidden hover:shadow-lg transition">
+              <CardHeader className="pb-3">
+                <div className="flex items-start justify-between gap-2 mb-2">
+                  <div>
+                    <CardTitle>{event.title}</CardTitle>
+                    <Badge className="mt-2">{event.category}</Badge>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <p className="text-sm text-foreground/75">{event.description}</p>
+                <div className="grid grid-cols-2 gap-3 text-sm">
+                  <div className="flex items-center gap-2 text-foreground/70">
+                    <Calendar className="h-4 w-4" />
+                    <span>
+                      {new Date(event.date).toLocaleDateString("en-US", {
+                        month: "short",
+                        day: "numeric",
+                      })}
+                    </span>
+                  </div>
+                  {event.time && (
+                    <div className="flex items-center gap-2 text-foreground/70">
+                      <Clock className="h-4 w-4" />
+                      <span>{event.time}</span>
+                    </div>
+                  )}
+                  <div className="flex items-center gap-2 text-foreground/70">
+                    <MapPin className="h-4 w-4" />
+                    <span className="truncate">{event.location}</span>
+                  </div>
+                  {event.capacity && event.registered !== undefined && (
+                    <div className="flex items-center gap-2 text-foreground/70">
+                      <Users className="h-4 w-4" />
+                      <span>{event.registered}/{event.capacity}</span>
+                    </div>
+                  )}
+                </div>
+                {event.registrationRequired && (
+                  <Button
+                    size="sm"
+                    asChild
+                    className={event.registered === event.capacity ? "opacity-50 cursor-not-allowed" : ""}
+                  >
+                    {event.registrationLink ? (
+                      <a href={event.registrationLink}>
+                        {event.registered === event.capacity ? "Full" : "Register Now"}
+                      </a>
+                    ) : (
+                      <span>
+                        {event.registered === event.capacity ? "Full" : "Register Now"}
+                      </span>
+                    )}
+                  </Button>
+                )}
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </div>
+    );
+  }
+
+  // Grid variant - card grid
+  if (variant === "grid") {
+    return (
+      <div className="space-y-6">
+        {title && (
+          <div>
+            <h2 className="text-2xl font-bold text-foreground">{title}</h2>
+            {description && (
+              <p className="text-foreground/70 mt-1">{description}</p>
+            )}
+          </div>
+        )}
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {events.map((event) => (
+            <Card key={event.id} className="hover:shadow-lg transition flex flex-col">
+              <CardHeader className="pb-3">
+                <CardTitle className="text-base line-clamp-2">{event.title}</CardTitle>
+                <Badge variant="outline" className="w-fit text-xs">
+                  {event.category}
+                </Badge>
+              </CardHeader>
+              <CardContent className="space-y-2 flex-1 flex flex-col">
+                <p className="text-xs text-foreground/70 line-clamp-2">
+                  {event.description}
+                </p>
+                <div className="space-y-1 text-xs text-foreground/60 mt-auto">
+                  <div className="flex items-center gap-2">
+                    <Calendar className="h-3 w-3" />
+                    <span>{new Date(event.date).toLocaleDateString()}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <MapPin className="h-3 w-3" />
+                    <span className="truncate">{event.location}</span>
+                  </div>
+                </div>
+                {event.registrationRequired && (
+                  <Button size="sm" variant="outline" className="mt-2 w-full">
+                    Register
+                  </Button>
+                )}
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </div>
+    );
+  }
+
+  // List variant - simple list
+  return (
+    <div className="space-y-4">
+      {title && (
+        <div>
+          <h2 className="text-2xl font-bold text-foreground">{title}</h2>
+          {description && (
+            <p className="text-foreground/70 mt-1">{description}</p>
+          )}
+        </div>
+      )}
+      <div className="space-y-3">
+        {events.map((event) => (
+          <div
+            key={event.id}
+            className="p-4 border rounded-lg hover:bg-foreground/5 transition"
+          >
+            <div className="flex items-start justify-between gap-2 mb-2">
+              <h3 className="font-semibold text-foreground">{event.title}</h3>
+              <Badge variant="outline" className="flex-shrink-0">
+                {event.category}
+              </Badge>
+            </div>
+            <p className="text-sm text-foreground/70 mb-3">{event.description}</p>
+            <div className="grid grid-cols-2 gap-2 text-sm text-foreground/70 mb-3">
+              <div className="flex items-center gap-2">
+                <Calendar className="h-4 w-4" />
+                <span>{new Date(event.date).toLocaleDateString()}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <MapPin className="h-4 w-4" />
+                <span className="truncate">{event.location}</span>
+              </div>
+            </div>
+            {event.registrationRequired && (
+              <Button size="sm" variant="outline">
+                Register Now
+              </Button>
+            )}
+          </div>
+        ))}
+      </div>
+      {showViewAll && (
+        <button className="flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-700">
+          View All Events
+          <ArrowRight className="h-4 w-4" />
+        </button>
+      )}
+    </div>
+  );
+}
