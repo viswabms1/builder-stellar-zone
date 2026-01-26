@@ -479,16 +479,6 @@ interface LabItem {
   image: string;
 }
 
-interface NoticeItem {
-  id: string;
-  title: string;
-  category: "Event" | "News" | "Announcement";
-  date: string;
-  description: string;
-  image?: string;
-  link?: string;
-}
-
 function LabsFacilitiesCarousel() {
   const [currentLabIndex, setCurrentLabIndex] = useState(0);
 
@@ -630,130 +620,44 @@ function AccreditationDocuments() {
   );
 }
 
-function NoticeBoard() {
-  const notices: NoticeItem[] = [
-    {
-      id: "notice-1",
-      title: "Technology Innovation Summit 2025",
-      category: "Event",
-      date: "Feb 12, 2025",
-      description:
-        "Annual summit showcasing enterprise technology solutions, platform engineering innovations, and startup opportunities.",
-      image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=300&fit=crop",
-      link: "https://www.dsu.edu.in/images/Engineering/CST-dept/notices/Tech-Summit-2025.pdf",
-    },
-    {
-      id: "notice-2",
-      title: "Curriculum Registration Window",
-      category: "Announcement",
-      date: "Jan 29, 2025",
-      description:
-        "Students can choose from Software Engineering, Systems Design, and Entrepreneurship specializations till Feb 05.",
-      link: "https://www.dsu.edu.in/images/Engineering/CST-dept/notices/Curriculum-Registration-2025.pdf",
-    },
-    {
-      id: "notice-3",
-      title: "Industry Lecture: Enterprise Architecture",
-      category: "Event",
-      date: "Jan 24, 2025",
-      description:
-        "Guest session on modern enterprise systems and platform engineering. Venue: Innovation Theatre, 10:30 AM.",
-      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=300&fit=crop",
-      link: "https://www.dsu.edu.in/images/Engineering/CST-dept/notices/Enterprise-Architecture-Lecture.pdf",
-    },
-    {
-      id: "notice-4",
-      title: "DSU CST Annual Report 2024-25 Published",
-      category: "News",
-      date: "Jan 18, 2025",
-      description:
-        "The department's comprehensive annual report showcasing innovation, industry partnerships, and student achievements.",
-      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=300&fit=crop",
-      link: "https://www.dsu.edu.in/images/Engineering/CST-dept/notices/Annual-Report-2024-25.pdf",
-    },
-    {
-      id: "notice-5",
-      title: "Research Seminar: Scalable Systems Design",
-      category: "Event",
-      date: "Feb 5, 2025",
-      description:
-        "Join industry experts for an in-depth discussion on designing scalable enterprise systems.",
-      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&h=300&fit=crop",
-    },
-    {
-      id: "notice-6",
-      title: "Faculty Research Publications",
-      category: "News",
-      date: "Jan 25, 2025",
-      description:
-        "Three research papers from CST faculty have been accepted at IEEE and ACM international conferences.",
-      image: "https://images.unsplash.com/photo-1516321318423-f06f70a504f9?w=600&h=300&fit=crop",
-      link: "https://www.dsu.edu.in/images/Engineering/CST-dept/notices/Faculty-Publications-2025.pdf",
-    },
-  ];
+function DepartmentNoticeBoard({ department }: { department: string }) {
+  const { announcements, news: newsItems, events: eventItems } = getDepartmentContent("Engineering", department);
 
-  const getCategoryStyle = (category: NoticeItem["category"]) => {
-    switch (category) {
-      case "Event":
-        return {
-          icon: CalendarDays,
-          label: "Event",
-          className: "bg-brand-orange/15 text-brand-orange",
-        };
-      case "News":
-        return {
-          icon: FileText,
-          label: "News",
-          className: "bg-brand-magenta/15 text-brand-magenta",
-        };
-      case "Announcement":
-        return {
-          icon: ClipboardList,
-          label: "Announcement",
-          className: "bg-brand-blue/15 text-brand-blue",
-        };
-      default:
-        return {
-          icon: ClipboardList,
-          label: category,
-          className: "bg-brand-blue/15 text-brand-blue",
-        };
-    }
-  };
-
-  const events = notices.filter((n) => n.category === "Event");
-  const news = notices.filter((n) => n.category === "News");
-  const announcements = notices.filter((n) => n.category === "Announcement");
-
-  const [currentEventIndex, setCurrentEventIndex] = useState(0);
+  const [currentAnnouncementIndex, setCurrentAnnouncementIndex] = useState(0);
   const [currentNewsIndex, setCurrentNewsIndex] = useState(0);
+  const [currentEventIndex, setCurrentEventIndex] = useState(0);
 
   useEffect(() => {
-    if (events.length === 0) return;
+    if (announcements.length === 0) return;
     const interval = setInterval(() => {
-      setCurrentEventIndex((prev) => (prev + 1) % events.length);
+      setCurrentAnnouncementIndex((prev) => (prev + 1) % announcements.length);
     }, 6000);
     return () => clearInterval(interval);
-  }, [events.length]);
+  }, [announcements.length]);
 
   useEffect(() => {
-    if (news.length === 0) return;
+    if (newsItems.length === 0) return;
     const interval = setInterval(() => {
-      setCurrentNewsIndex((prev) => (prev + 1) % news.length);
+      setCurrentNewsIndex((prev) => (prev + 1) % newsItems.length);
     }, 6000);
     return () => clearInterval(interval);
-  }, [news.length]);
+  }, [newsItems.length]);
 
-  const renderCarousel = (title: string, items: NoticeItem[], color: string, currentIndex: number, setCurrentIndex: (idx: number) => void) => {
+  useEffect(() => {
+    if (eventItems.length === 0) return;
+    const interval = setInterval(() => {
+      setCurrentEventIndex((prev) => (prev + 1) % eventItems.length);
+    }, 6000);
+    return () => clearInterval(interval);
+  }, [eventItems.length]);
+
+  const renderCarousel = (title: string, items: CarouselItem[], currentIndex: number, setCurrentIndex: (idx: number) => void, category: "Announcement" | "News" | "Event") => {
+    const styles = getCategoryStyles(category);
     if (items.length === 0) {
       return (
         <div className="space-y-4">
-          <div className={`flex items-center gap-2 px-4 py-3 rounded-xl border-l-4 ${
-            color === "orange"
-              ? "border-brand-orange bg-brand-orange/10"
-              : "border-brand-magenta bg-brand-magenta/10"
-          }`}>
-            <h3 className={`headline-4 font-display ${color === "orange" ? "text-brand-orange" : "text-brand-magenta"}`}>{title}</h3>
+          <div className={`flex items-center gap-2 px-4 py-3 rounded-xl border-l-4 ${styles.borderColor} ${styles.bgColor}`}>
+            <h3 className={`headline-4 font-display ${styles.textColor}`}>{title}</h3>
           </div>
           <p className="text-xs text-foreground/60 italic p-4 text-center">No items to display</p>
         </div>
@@ -764,12 +668,8 @@ function NoticeBoard() {
 
     return (
       <div className="space-y-4">
-        <div className={`flex items-center gap-2 px-4 py-3 rounded-xl border-l-4 ${
-          color === "orange"
-            ? "border-brand-orange bg-brand-orange/10"
-            : "border-brand-magenta bg-brand-magenta/10"
-        }`}>
-          <h3 className={`headline-4 font-display ${color === "orange" ? "text-brand-orange" : "text-brand-magenta"}`}>{title}</h3>
+        <div className={`flex items-center gap-2 px-4 py-3 rounded-xl border-l-4 ${styles.borderColor} ${styles.bgColor}`}>
+          <h3 className={`headline-4 font-display ${styles.textColor}`}>{title}</h3>
           <Badge className="ml-auto text-xs">{currentIndex + 1} / {items.length}</Badge>
         </div>
 
@@ -817,9 +717,7 @@ function NoticeBoard() {
                 onClick={() => setCurrentIndex(idx)}
                 className={`h-1.5 rounded-full transition-all ${
                   idx === currentIndex
-                    ? color === "orange"
-                      ? "bg-brand-orange w-6"
-                      : "bg-brand-magenta w-6"
+                    ? `${styles.bgColor} w-6`
                     : "bg-border/40 w-1.5 hover:bg-border/60"
                 }`}
               />
@@ -849,75 +747,18 @@ function NoticeBoard() {
   };
 
   return (
-    <section className="px-3 py-8">
+    <section id="notice-board" className="px-3 py-8">
       <div className="mx-auto max-w-7xl space-y-4">
-        <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <h2 className="headline-2 mb-3 font-display">
-              <span className="text-foreground">Department </span>
-              <span className="bg-brand-gradient bg-clip-text text-transparent">
-                Notice Board
-              </span>
-            </h2>
-            <p className="max-w-2xl text-sm text-foreground sm:text-base font-body">
-              Stay updated with upcoming events, news, and important announcements from the CST department.
-            </p>
-          </div>
-          <Badge className="w-fit rounded-full bg-brand-orange/15 px-4 py-2 text-xs font-semibold text-brand-orange border border-brand-orange/20">
-            Updated weekly
-          </Badge>
-        </div>
-
-        <div className="grid lg:grid-cols-2 gap-4">
-          <div>
-            {renderCarousel("Events", events, "orange", currentEventIndex, setCurrentEventIndex)}
-          </div>
-          <div>
-            {renderCarousel("News", news, "magenta", currentNewsIndex, setCurrentNewsIndex)}
-          </div>
-        </div>
-
-        <div className="space-y-4">
-          <div className="flex items-center gap-2 px-4 py-3 rounded-xl border-l-4 border-brand-blue bg-brand-blue/10">
-            <h3 className="headline-4 font-display text-brand-blue">Announcements</h3>
-            <Badge className="ml-auto text-xs">{announcements.length}</Badge>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
-            {announcements.length > 0 ? (
-              announcements.map((notice) => (
-                <Card
-                  key={notice.id}
-                  className="group border border-border/40 bg-card/50 shadow-sm transition hover:-translate-y-1 hover:border-brand-orange/40 hover:shadow-brand-orange/5"
-                >
-                  <CardHeader className="pb-2">
-                    <div className="flex items-start justify-between gap-2 mb-2">
-                      <span className="text-xs font-semibold text-foreground/60">{notice.date}</span>
-                      {notice.link && (
-                        <Button
-                          variant="ghost"
-                          size="sm"
-                          className="h-6 px-2 text-xs bg-brand-blue/10 text-brand-blue hover:bg-brand-blue/20"
-                          asChild
-                        >
-                          <a href={notice.link} target="_blank" rel="noreferrer">
-                            <Download className="h-3 w-3" />
-                          </a>
-                        </Button>
-                      )}
-                    </div>
-                    <CardTitle className="text-sm font-display text-foreground line-clamp-2">
-                      {notice.title}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="pt-0">
-                    <p className="text-xs text-foreground/70 line-clamp-2">{notice.description}</p>
-                  </CardContent>
-                </Card>
-              ))
-            ) : (
-              <p className="text-xs text-foreground/60 italic col-span-full p-4 text-center">No announcements to display</p>
-            )}
-          </div>
+        <h2 className="headline-2 mb-3 font-display">
+          <span className="text-foreground">Department </span>
+          <span className="bg-brand-gradient bg-clip-text text-transparent">
+            Notice Board
+          </span>
+        </h2>
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {renderCarousel("Events", eventItems, currentEventIndex, setCurrentEventIndex, "Event")}
+          {renderCarousel("News", newsItems, currentNewsIndex, setCurrentNewsIndex, "News")}
+          {renderCarousel("Announcements", announcements, currentAnnouncementIndex, setCurrentAnnouncementIndex, "Announcement")}
         </div>
       </div>
     </section>
