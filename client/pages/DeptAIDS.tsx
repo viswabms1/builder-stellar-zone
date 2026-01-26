@@ -298,7 +298,9 @@ export default function DeptAIDS() {
 
       <EligibilityAndFees />
 
-      <NoticeBoard />
+      <AnnouncementBanner priority="high" variant="banner" />
+      <NewsSection variant="grid" title="Department News" />
+      <EventsSection variant="upcoming" title="Upcoming Events" />
 
       <AccreditationDocuments />
 
