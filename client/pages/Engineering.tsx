@@ -792,7 +792,7 @@ function NoticeBoardCarousel() {
         <div>
           {renderCarousel(
             "Events",
-            events,
+            eventItems,
             currentEventIndex,
             setCurrentEventIndex,
             "Event",
@@ -801,7 +801,7 @@ function NoticeBoardCarousel() {
         <div>
           {renderCarousel(
             "News",
-            news,
+            newsItems,
             currentNewsIndex,
             setCurrentNewsIndex,
             "News",
