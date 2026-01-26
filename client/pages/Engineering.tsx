@@ -564,10 +564,11 @@ const INNOVATION_LABS = [
 
 type NoticeItem = ImportedNoticeItem;
 
-// Aggregate events from all departments and school-level news/announcements
-const getAllEvents = () => getDepartmentEvents();
-const getSchoolNewsData = () => getSchoolNews();
-const getSchoolAnnouncementsData = () => getSchoolAnnouncements();
+// Centralized content is now managed through:
+// - client/data/announcements.ts
+// - client/data/news.ts
+// - client/data/events.ts
+// Displayed via NewsSection, EventsSection, and AnnouncementBanner components
 
 function NoticeBoardCarousel() {
   const [currentEventIndex, setCurrentEventIndex] = useState(0);
