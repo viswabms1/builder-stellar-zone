@@ -1,12 +1,13 @@
 import { useEvents } from "@/hooks/useEvents";
+import { useContentContext } from "@/hooks/useContentContext";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Calendar, MapPin, Users, Clock, ArrowRight } from "lucide-react";
 
 interface EventsSectionProps {
-  school?: string;
-  department?: string;
+  school?: string; // Optional override
+  department?: string; // Optional override
   limit?: number;
   variant?: "grid" | "list" | "upcoming";
   title?: string;
