@@ -294,7 +294,7 @@ export default function DeptAIDS() {
         </div>
       </section>
 
-      <CurriculumLibrary />
+      <CurriculumLibraryWrapper />
 
       <EligibilityAndFees />
 
