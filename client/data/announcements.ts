@@ -4,10 +4,19 @@
  * Ready for Directus CMS integration
  */
 
+export interface Attachment {
+  id: string;
+  fileName: string;
+  fileUrl: string;
+  fileType: string; // pdf, doc, docx, xlsx, etc.
+  fileSize?: string; // e.g., "2.5 MB"
+}
+
 export interface Announcement {
   id: string;
   title: string;
   content: string;
+  type: "circular" | "announcement"; // Circular = formal document, Announcement = simple notice
   category: "Academic" | "Administrative" | "Event" | "Urgent" | "General";
   priority: "high" | "medium" | "low";
   date: string;
@@ -15,6 +24,7 @@ export interface Announcement {
   status: "active" | "archived";
   school?: string; // Engineering, Health Sciences, etc.
   image?: string;
+  attachments?: Attachment[]; // Files like PDFs, documents
 }
 
 // University-wide announcements
