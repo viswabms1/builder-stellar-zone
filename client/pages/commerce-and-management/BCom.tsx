@@ -1,5 +1,8 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { NewsSection } from "@/components/NewsSection";
+import { EventsSection } from "@/components/EventsSection";
+import { AnnouncementBanner } from "@/components/AnnouncementBanner";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import {
@@ -331,6 +334,10 @@ export default function BCom() {
           </a>
         </div>
       </section>
+
+      <AnnouncementBanner priority="high" variant="banner" />
+      <NewsSection variant="grid" title="Department News" />
+      <EventsSection variant="upcoming" title="Upcoming Events" />
     </div>
   );
 }
