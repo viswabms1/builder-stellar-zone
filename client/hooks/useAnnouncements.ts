@@ -22,7 +22,7 @@ interface UseAnnouncementsResult {
 
 /**
  * Custom hook for fetching and filtering announcements
- * Fetches from Directus API endpoint with graceful fallback to local data
+ * Fetches directly from Directus API with graceful fallback to local data
  */
 export function useAnnouncements(
   options?: UseAnnouncementsOptions
@@ -40,25 +40,42 @@ export function useAnnouncements(
         let fetchedAnnouncements: Announcement[] = [];
 
         try {
-          // Fetch from Directus API endpoint
-          const response = await fetch("/api/directus/announcements");
+          // Fetch directly from Directus API
+          const directusUrl = "https://dsu-website-headless-cms.directus.app/items/announcements?filter[status][_eq]=active&sort=-date&limit=100";
+          const response = await fetch(directusUrl);
+
           if (response.ok) {
             const data = await response.json();
-            fetchedAnnouncements = data.data || [];
+            // Transform Directus response to match our Announcement interface
+            fetchedAnnouncements = (data.data || []).map((item: any) => ({
+              id: item.id,
+              title: item.title || "",
+              content: item.content || "",
+              type: item.type || "announcement",
+              category: item.category || "General",
+              priority: item.priority || "medium",
+              date: item.date || new Date().toISOString(),
+              expiryDate: item.expiry_date,
+              status: item.status || "active",
+              school: item.school,
+              department: item.department,
+              image: item.image,
+              attachments: item.attachments || [],
+            }));
             console.log(
-              "[useAnnouncements] Fetched from Directus API:",
+              "[useAnnouncements] Fetched from Directus:",
               fetchedAnnouncements.length,
               "announcements"
             );
           } else {
             console.warn(
-              "[useAnnouncements] API returned non-200 status, using local data"
+              "[useAnnouncements] Directus API returned non-200 status, using local data"
             );
             fetchedAnnouncements = getAllAnnouncements();
           }
         } catch (apiError) {
           console.warn(
-            "[useAnnouncements] API fetch failed, falling back to local data:",
+            "[useAnnouncements] Directus fetch failed, falling back to local data:",
             apiError
           );
           // Fall back to local data if API fails
