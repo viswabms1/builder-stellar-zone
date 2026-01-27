@@ -66,3 +66,17 @@ export function getEventsByCategory(category: Event["category"]): Event[] {
 export function getEventsByTag(tag: string): Event[] {
   return [];
 }
+
+/**
+ * Get events by school and department
+ */
+export function getEventsBySchoolAndDepartment(school: string, department: string): Event[] {
+  return [];
+}
+
+/**
+ * Get upcoming events (limited by count)
+ */
+export function getUpcomingEvents(limit: number = 10): Event[] {
+  return [];
+}
