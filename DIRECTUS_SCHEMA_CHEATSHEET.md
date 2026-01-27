@@ -97,7 +97,7 @@ MED  → Medicine
 
 ## TESTING CHECKLIST
 
-- [ ] Schools collection created with 10 records
+- [ ] Schools collection created with 8 records
 - [ ] All departments added to Departments collection
 - [ ] Each department correctly linked to its school
 - [ ] Announcements have both `school` and `department` fields
