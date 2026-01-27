@@ -292,8 +292,8 @@ export const getEvents: RequestHandler = async (req, res) => {
     }
 
     // Fetch from Directus
-    // Filter for upcoming/ongoing events, sorted by date
-    const fetchUrl = `${DIRECTUS_URL}/items/events?filter[status][_in]=upcoming,ongoing&sort=date&limit=100`;
+    // Don't filter by status - let client handle it (some events may not have status field)
+    const fetchUrl = `${DIRECTUS_URL}/items/events?sort=date&limit=100`;
 
     console.log(`[Directus API] Fetching events from: ${fetchUrl}`);
 

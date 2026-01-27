@@ -33,7 +33,8 @@ export function useDepartmentEvents(
         const departmentCode = options.departmentCode.toLowerCase();
 
         // Fetch directly from Directus API with department_code filter
-        const directusUrl = `https://dsu-website-headless-cms.directus.app/items/events?filter[department_code][_eq]=${departmentCode}&filter[status][_in]=upcoming,ongoing&sort=date&limit=${options.limit || 50}`;
+        // Don't filter by status - handle it client-side
+        const directusUrl = `https://dsu-website-headless-cms.directus.app/items/events?filter[department_code][_eq]=${departmentCode}&sort=date&limit=${options.limit || 50}`;
         
         console.log(`[useDepartmentEvents] Fetching for department: ${departmentCode}`);
         
@@ -41,7 +42,15 @@ export function useDepartmentEvents(
 
         if (response.ok) {
           const data = await response.json();
-          const fetchedEvents = data.data || [];
+          let fetchedEvents = data.data || [];
+
+          // Filter for upcoming/ongoing events, or events without status (assume upcoming)
+          const now = new Date();
+          fetchedEvents = fetchedEvents.filter((event: any) => {
+            if (!event.status) return true; // Include events without status
+            return event.status === "upcoming" || event.status === "ongoing";
+          });
+
           setEvents(fetchedEvents);
           console.log(
             `[useDepartmentEvents] Fetched ${fetchedEvents.length} events for ${departmentCode}`

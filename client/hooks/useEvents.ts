@@ -54,12 +54,20 @@ export function useEvents(options?: UseEventsOptions): UseEventsResult {
 
         try {
           // Fetch directly from Directus API
-          const directusUrl = "https://dsu-website-headless-cms.directus.app/items/events?filter[status][_in]=upcoming,ongoing&sort=date&limit=100";
+          // Don't filter by status in API - handle client-side to include events without status
+          const directusUrl = "https://dsu-website-headless-cms.directus.app/items/events?sort=date&limit=100";
           const response = await fetch(directusUrl);
 
           if (response.ok) {
             const data = await response.json();
-            fetchedEvents = data.data || [];
+            let allEvents = data.data || [];
+
+            // Filter for upcoming/ongoing events, or events without status
+            fetchedEvents = allEvents.filter((event: any) => {
+              if (!event.status) return true; // Include events without status
+              return event.status === "upcoming" || event.status === "ongoing";
+            });
+
             console.log(
               "[useEvents] Fetched from Directus:",
               fetchedEvents.length,
