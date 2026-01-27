@@ -42,8 +42,8 @@ const SCHOOLS = [
   { label: "School of Design & Digital Trans-Media", value: "Design & Digital Trans-Media" },
 ];
 
-const CATEGORIES: Array<{ label: string; value: Event["category"] }> = [
-  { label: "All Events", value: "" as Event["category"] },
+const CATEGORIES: Array<{ label: string; value: Event["category"] | "" }> = [
+  { label: "All Events", value: "" },
   { label: "Workshop", value: "Workshop" },
   { label: "Seminar", value: "Seminar" },
   { label: "Conference", value: "Conference" },
