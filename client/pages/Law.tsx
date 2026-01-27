@@ -733,6 +733,8 @@ export default function Law() {
         </div>
       </section>
 
+      <ProgramFinder schoolName="School of Law" themeColor="orange" />
+
       <SchoolNoticeBoard school="Law" />
     </div>
   );
