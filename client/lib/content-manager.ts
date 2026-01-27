@@ -76,7 +76,7 @@ export interface Event {
   school_code?: string; // Directus uses school_code (e.g., ENG, HS, LAW)
   department_code?: string; // Directus uses department_code (e.g., aero, cse)
   category?: "Workshop" | "Seminar" | "Conference" | "Hackathon" | "Sports" | "Cultural" | "Academic";
-  events_image?: string; // Directus uses 'events_image' field
+  events_image?: string | { id: string }; // Can be string ID or object with id
   link?: string;
   registration_required?: boolean; // Directus uses snake_case
   registration_link?: string;
@@ -190,13 +190,14 @@ export function convertNewsToCarouselItem(n: NewsItem): CarouselItem {
 }
 
 export function convertEventToCarouselItem(e: Event): CarouselItem {
+  const imageId = typeof e.events_image === 'string' ? e.events_image : e.events_image?.id;
   return {
     id: e.id,
     title: e.title,
     category: "Event",
     date: e.date,
     description: e.description,
-    image: e.events_image ? `https://dsu-website-headless-cms.directus.app/assets/${e.events_image}` : undefined,
+    image: imageId ? `https://dsu-website-headless-cms.directus.app/assets/${imageId}` : undefined,
   };
 }
 

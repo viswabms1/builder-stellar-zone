@@ -319,7 +319,7 @@ function EventsCarousel({ events, title, description, compact = false }: EventsC
         {currentEvent.events_image && (
           <div className="relative h-48 overflow-hidden">
             <img
-              src={`https://dsu-website-headless-cms.directus.app/assets/${currentEvent.events_image}`}
+              src={`https://dsu-website-headless-cms.directus.app/assets/${typeof currentEvent.events_image === 'string' ? currentEvent.events_image : currentEvent.events_image.id}`}
               alt={currentEvent.title}
               className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
             />
