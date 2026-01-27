@@ -14,11 +14,9 @@ Use these exact names in Directus and React code for consistency:
 | Health Sciences | School of Health Sciences | HS | 5 health-related departments |
 | Law | School of Law | LAW | 4 law programs |
 | Commerce & Management | School of Commerce & Management | CAM | 3 commerce programs |
-| Design | School of Design & Digital Trans-Media | DES | Design programs |
 | Basic & Applied Sciences | School of Basic & Applied Sciences | BAS | Science programs |
 | Computer Applications | School of Computer Applications | CCA | CS-related programs |
-| Arts & Humanities | School of Arts, Design & Humanities | ADH | Liberal arts programs |
-| Journalism | School of Journalism & Mass Communication | JMC | Journalism program |
+| Arts, Design & Humanities | School of Arts, Design & Humanities | ADH | Design, Journalism, humanities |
 | Medicine | School of Medicine | MED | Medical programs |
 
 ---
