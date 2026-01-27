@@ -32,6 +32,10 @@ export function DepartmentNoticeBoard({ school = "Engineering", department }: { 
   const eventItems = directusEvents.map(convertEventToCarouselItem);
   const newsItems = directusNews.map(convertNewsToCarouselItem);
 
+  console.log("[DepartmentNoticeBoard] Department:", department, "Code:", departmentCode);
+  console.log("[DepartmentNoticeBoard] Events from Directus:", directusEvents);
+  console.log("[DepartmentNoticeBoard] Converted event items:", eventItems);
+
   const [currentAnnouncementIndex, setCurrentAnnouncementIndex] = useState(0);
   const [currentNewsIndex, setCurrentNewsIndex] = useState(0);
   const [currentEventIndex, setCurrentEventIndex] = useState(0);
