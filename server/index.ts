@@ -83,6 +83,10 @@ export function createServer() {
   // Usage: GET /api/directus/vision-mission
   app.get("/api/directus/vision-mission", getVisionMission);
 
+  // Fetch Announcements from Directus
+  // Usage: GET /api/directus/announcements
+  app.get("/api/directus/announcements", getAnnouncements);
+
   // Health check for Directus connection
   // Usage: GET /api/directus/health
   app.get("/api/directus/health", checkDirectusHealth);
