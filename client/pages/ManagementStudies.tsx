@@ -1050,6 +1050,11 @@ export default function ManagementStudies() {
         </div>
       </section>
 
+      <ProgramFinder
+        schoolName="School of Commerce & Management"
+        themeColor="magenta"
+      />
+
       <section id="notice-board" className="px-3 py-8">
         <NoticeBoardCarousel />
       </section>
