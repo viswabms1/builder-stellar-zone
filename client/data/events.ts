@@ -1,9 +1,8 @@
 /**
  * Events Data Structure - Centralized for entire university
  * 
- * ⚠️ DEPRECATED: All data has been moved to content-manager.ts
- * This file kept only for interface definitions
- * Data is now managed through Directus CMS
+ * All events data is managed in content-manager.ts
+ * This file provides the interface and re-exports functions
  */
 
 export interface Event {
@@ -16,8 +15,8 @@ export interface Event {
   endTime?: string;
   location: string;
   status: "upcoming" | "ongoing" | "completed";
-  school: string; // "Engineering", "Health Sciences", etc.
-  department?: string; // "CSE", "Mechanical", "Pharmacy", etc. (optional)
+  school: string;
+  department?: string;
   category: "Workshop" | "Seminar" | "Conference" | "Hackathon" | "Sports" | "Cultural" | "Academic";
   image?: string;
   link?: string;
@@ -28,71 +27,94 @@ export interface Event {
   tags?: string[];
 }
 
-// NOTE: All events data is now in content-manager.ts
-// Using local data; will migrate to Directus CMS
+// Get events from centralized manager
+let cachedEvents: Event[] | null = null;
 
-// Import from content-manager for now
-import {
-  getEventsBySchool as getEventsBySchoolCM,
-  getEventsByCategory as getEventsByCategoryCM,
-  Event as CMEvent,
-} from "@/lib/content-manager";
+function getAllEventsFromCache(): Event[] {
+  if (cachedEvents === null) {
+    try {
+      // This will work via the dynamic import during runtime
+      const cm = require("@/lib/content-manager");
+      if (cm && cm.getEventsBySchool) {
+        cachedEvents = cm.getEventsBySchool(undefined) || [];
+      } else {
+        cachedEvents = [];
+      }
+    } catch (e) {
+      cachedEvents = [];
+    }
+  }
+  return cachedEvents;
+}
 
 /**
  * Get all upcoming and ongoing events
- * @returns All upcoming and ongoing events
  */
 export function getAllEvents(): Event[] {
-  // Import locally to avoid circular dependency
-  const contentManager = require("@/lib/content-manager");
-  return contentManager.getEventsBySchool(undefined);
+  const events = getAllEventsFromCache();
+  return events.filter((e) => e.status === "upcoming" || e.status === "ongoing");
 }
 
 /**
  * Get events by school
  */
 export function getEventsBySchool(school: string): Event[] {
-  const contentManager = require("@/lib/content-manager");
-  return contentManager.getEventsBySchool(school);
+  const events = getAllEventsFromCache();
+  return events.filter((e) => 
+    (e.status === "upcoming" || e.status === "ongoing") &&
+    (e.school === school || e.school === "University")
+  );
 }
 
 /**
  * Get events by department
  */
 export function getEventsByDepartment(school: string, department: string): Event[] {
-  const contentManager = require("@/lib/content-manager");
-  return contentManager.getEventsBySchoolAndDepartment(school, department);
+  const events = getAllEventsFromCache();
+  return events.filter((e) =>
+    (e.status === "upcoming" || e.status === "ongoing") &&
+    e.school === school &&
+    e.department === department
+  );
 }
 
 /**
  * Get events by category
  */
 export function getEventsByCategory(category: Event["category"]): Event[] {
-  const contentManager = require("@/lib/content-manager");
-  return contentManager.getEventsByCategory(category);
+  const events = getAllEventsFromCache();
+  return events.filter((e) =>
+    (e.status === "upcoming" || e.status === "ongoing") &&
+    e.category === category
+  );
 }
 
 /**
  * Get events by tag
  */
 export function getEventsByTag(tag: string): Event[] {
-  const contentManager = require("@/lib/content-manager");
-  const allEvents = contentManager.getEventsBySchool(undefined);
-  return allEvents.filter((e: Event) => e.tags?.includes(tag));
+  const events = getAllEventsFromCache();
+  return events.filter((e) =>
+    (e.status === "upcoming" || e.status === "ongoing") &&
+    e.tags?.includes(tag)
+  );
 }
 
 /**
  * Get events by school and department
  */
 export function getEventsBySchoolAndDepartment(school: string, department: string): Event[] {
-  const contentManager = require("@/lib/content-manager");
-  return contentManager.getEventsBySchoolAndDepartment(school, department);
+  const events = getAllEventsFromCache();
+  return events.filter((e) =>
+    (e.status === "upcoming" || e.status === "ongoing") &&
+    e.school === school &&
+    e.department === department
+  );
 }
 
 /**
  * Get upcoming events (limited by count)
  */
 export function getUpcomingEvents(limit: number = 10): Event[] {
-  const contentManager = require("@/lib/content-manager");
-  return contentManager.getEventsBySchool(undefined).slice(0, limit);
+  return getAllEvents().slice(0, limit);
 }
