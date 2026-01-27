@@ -269,6 +269,88 @@ export const getAnnouncements: RequestHandler = async (req, res) => {
 };
 
 /**
+ * Fetch Events from Directus
+ * Endpoint: GET /api/directus/events
+ * Returns all active/upcoming events with optional filtering
+ */
+export const getEvents: RequestHandler = async (req, res) => {
+  try {
+    const cacheKey = "directus:events";
+    const bypassCache = req.query.cache === "false";
+
+    // Check cache first (unless explicitly bypassed)
+    if (!bypassCache) {
+      const cachedData = getFromCache<any>(cacheKey);
+      if (cachedData) {
+        console.log(`[CACHE HIT] ${cacheKey}`);
+        return res.json(cachedData);
+      }
+    }
+
+    if (bypassCache) {
+      console.log(`[CACHE BYPASS] ${cacheKey}`);
+    }
+
+    // Fetch from Directus
+    // Filter for upcoming/ongoing events, sorted by date
+    const fetchUrl = `${DIRECTUS_URL}/items/events?filter[status][_in]=upcoming,ongoing&sort=date&limit=100`;
+
+    console.log(`[Directus API] Fetching events from: ${fetchUrl}`);
+
+    const response = await fetch(fetchUrl, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    console.log(
+      `[Directus API] Response status: ${response.status} ${response.statusText}`,
+    );
+
+    if (!response.ok) {
+      const errorBody = await response.text();
+      console.error(
+        `Directus API error: ${response.status} ${response.statusText}`,
+        errorBody,
+      );
+      throw new Error(
+        `Directus API error: ${response.status} ${response.statusText}`,
+      );
+    }
+
+    const data = await response.json();
+    console.log(
+      "[Directus API] Events response:",
+      JSON.stringify(data, null, 2),
+    );
+
+    // Directus response is already in correct format, just pass through
+    const events = data.data || [];
+
+    const responseData = {
+      success: true,
+      data: events,
+      count: events.length,
+    };
+
+    // Cache the response
+    setCache(cacheKey, responseData);
+
+    res.json(responseData);
+  } catch (error) {
+    console.error("[Directus Events Error]", error);
+    res.status(500).json({
+      success: false,
+      data: [],
+      error:
+        error instanceof Error ? error.message : "Failed to fetch events",
+      fallback: true,
+    });
+  }
+};
+
+/**
  * Clear Directus cache for all entries
  * Endpoint: POST /api/directus/cache/clear
  * This can be called manually to force refresh content
