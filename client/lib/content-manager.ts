@@ -144,7 +144,7 @@ export function getEventsBySchool(school: string | undefined): Event[] {
   return ALL_EVENTS.filter(
     (e) =>
       (e.status === "upcoming" || e.status === "ongoing") &&
-      (e.school === school || e.school === "University")
+      (e.school_code === school || !e.school_code)
   ).sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
 }
 
@@ -238,8 +238,8 @@ export function getEventsByDepartment(school: string | undefined, department: st
   return ALL_EVENTS.filter(
     (e) =>
       (e.status === "upcoming" || e.status === "ongoing") &&
-      e.school === school &&
-      e.department === department
+      e.school_code === school &&
+      e.department_code === department
   ).sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
 }
 
@@ -270,8 +270,8 @@ export function getEventsBySchoolAndDepartment(school: string | undefined, depar
   return ALL_EVENTS.filter(
     (e) =>
       (e.status === "upcoming" || e.status === "ongoing") &&
-      e.school === school &&
-      e.department === department
+      e.school_code === school &&
+      e.department_code === department
   ).sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
 }
 
