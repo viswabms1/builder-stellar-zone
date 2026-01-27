@@ -50,13 +50,13 @@ export interface Announcement {
 export interface NewsItem {
   id: string;
   title: string;
-  content: string;
-  excerpt?: string;
-  date: string;
-  status: "published" | "draft";
-  school: string;
-  department?: string;
-  category: "Achievement" | "Research" | "Placement" | "Accreditation" | "General";
+  summary: string; // Directus uses 'summary'
+  description?: string; // Optional detailed description
+  date?: string;
+  status?: "published" | "draft";
+  school_code?: string; // Directus uses 'school_code' (e.g., ENG, HS, LAW)
+  department_code?: string; // Directus uses 'department_code' (e.g., aero, cse, mech)
+  category?: "Achievement" | "Research" | "Placement" | "Accreditation" | "General";
   image?: string;
   link?: string;
   author?: string;
@@ -133,10 +133,14 @@ export function getAnnouncementsBySchool(school: string | undefined): Announceme
 }
 
 export function getNewsBySchool(school: string | undefined): NewsItem[] {
-  if (!school) return ALL_NEWS.filter((n) => n.status === "published" && n.school === "University");
+  if (!school) return ALL_NEWS.filter((n) => (!n.status || n.status === "published") && !n.school_code);
   return ALL_NEWS.filter(
-    (n) => n.status === "published" && (n.school === school || n.school === "University")
-  ).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+    (n) => (!n.status || n.status === "published") && (n.school_code === school || !n.school_code)
+  ).sort((a, b) => {
+    const dateA = new Date(a.date || 0).getTime();
+    const dateB = new Date(b.date || 0).getTime();
+    return dateB - dateA;
+  });
 }
 
 export function getEventsBySchool(school: string | undefined): Event[] {
@@ -179,9 +183,9 @@ export function convertNewsToCarouselItem(n: NewsItem): CarouselItem {
     id: n.id,
     title: n.title,
     category: "News",
-    date: n.date,
-    description: n.excerpt || n.content.substring(0, 100),
-    image: n.image,
+    date: n.date || new Date().toISOString(),
+    description: n.summary || n.description || "",
+    image: n.image ? `https://dsu-website-headless-cms.directus.app/assets/${n.image}` : undefined,
   };
 }
 
@@ -229,8 +233,12 @@ export function getCategoryStyles(category: "Event" | "News" | "Announcement") {
 export function getNewsByDepartment(school: string | undefined, department: string | undefined): NewsItem[] {
   if (!school || !department) return [];
   return ALL_NEWS.filter(
-    (n) => n.status === "published" && n.school === school && n.department === department
-  ).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+    (n) => (!n.status || n.status === "published") && n.school_code === school && n.department_code === department
+  ).sort((a, b) => {
+    const dateA = new Date(a.date || 0).getTime();
+    const dateB = new Date(b.date || 0).getTime();
+    return dateB - dateA;
+  });
 }
 
 export function getEventsByDepartment(school: string | undefined, department: string | undefined): Event[] {
