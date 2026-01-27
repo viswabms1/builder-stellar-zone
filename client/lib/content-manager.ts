@@ -71,12 +71,12 @@ export interface Event {
   time?: string;
   end_date?: string; // Directus uses snake_case
   end_time?: string;
-  location: string;
-  status: "upcoming" | "ongoing" | "completed";
+  location?: string;
+  status?: "upcoming" | "ongoing" | "completed";
   school_code?: string; // Directus uses school_code (e.g., ENG, HS, LAW)
   department_code?: string; // Directus uses department_code (e.g., aero, cse)
   category?: "Workshop" | "Seminar" | "Conference" | "Hackathon" | "Sports" | "Cultural" | "Academic";
-  image?: string;
+  events_image?: string; // Directus uses 'events_image' field
   link?: string;
   registration_required?: boolean; // Directus uses snake_case
   registration_link?: string;
@@ -196,7 +196,7 @@ export function convertEventToCarouselItem(e: Event): CarouselItem {
     category: "Event",
     date: e.date,
     description: e.description,
-    image: e.image,
+    image: e.events_image ? `https://dsu-website-headless-cms.directus.app/assets/${e.events_image}` : undefined,
   };
 }
 
