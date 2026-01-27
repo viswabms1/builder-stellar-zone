@@ -81,10 +81,10 @@ function EventCard({ event, onSelect }: { event: Event; onSelect: (e: Event) => 
         onClick={() => onSelect(event)}
         className="w-full text-left"
       >
-        {event.image && (
+        {event.events_image && (
           <div className="relative h-48 overflow-hidden bg-gradient-to-br from-brand-blue/10 to-brand-magenta/10">
             <img
-              src={event.image}
+              src={`https://dsu-website-headless-cms.directus.app/assets/${event.events_image}`}
               alt={event.title}
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               loading="lazy"
@@ -188,10 +188,10 @@ function EventModal({ event, onClose }: { event: Event | null; onClose: () => vo
           <X className="w-5 h-5" />
         </button>
 
-        {event.image && (
+        {event.events_image && (
           <div className="relative h-64 overflow-hidden">
             <img
-              src={event.image}
+              src={`https://dsu-website-headless-cms.directus.app/assets/${event.events_image}`}
               alt={event.title}
               className="w-full h-full object-cover"
             />
