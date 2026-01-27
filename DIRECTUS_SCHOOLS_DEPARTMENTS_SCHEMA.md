@@ -26,6 +26,8 @@ Use these exact names in Directus and React code for consistency:
 
 ### 🏭 Engineering School (ENG)
 
+#### **Core Engineering Disciplines**
+
 | Department | Code | Full Name | Type |
 |-----------|------|-----------|------|
 | CSE | cse | Computer Science Engineering | UG |
@@ -41,6 +43,15 @@ Use these exact names in Directus and React code for consistency:
 | Medical Engineering | meeng | Medical Engineering | UG |
 | MCA | mca | Master of Computer Applications | PG |
 | M.Sc Data Science | msds | M.Sc Data Science | PG |
+
+#### **Foundational Departments (Supporting)**
+
+| Department | Code | Full Name | Type |
+|-----------|------|-----------|------|
+| Physics | phys-eng | Physics Department | Foundation |
+| Chemistry | chem-eng | Chemistry Department | Foundation |
+| Mathematics | math-eng | Mathematics Department | Foundation |
+| Humanities & Social Sciences | hss-eng | Humanities & Social Sciences | Foundation |
 
 ### 🏥 Health Sciences School (HS)
 
