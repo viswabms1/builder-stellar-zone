@@ -30,6 +30,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { DeanSection, type DeanInfo } from "@/components/DeanSection";
+import { ProgramFinder } from "@/components/ProgramFinder";
 import { useAutoMuteOnScroll } from "@/hooks/useAutoMuteOnScroll";
 import { SchoolNoticeBoard } from "@/components/SchoolNoticeBoard";
 import {
