@@ -114,7 +114,7 @@ export function NewsSection({
                   <CardTitle className="text-lg">{item.title}</CardTitle>
                   <Badge variant="outline">{item.category}</Badge>
                 </div>
-                <CardDescription>{item.excerpt || item.content.substring(0, 100)}</CardDescription>
+                <CardDescription>{item.summary || item.description?.substring(0, 100) || ''}</CardDescription>
               </CardHeader>
               <CardContent className="space-y-2">
                 <div className="flex items-center text-xs text-foreground/60 gap-4">
@@ -126,7 +126,7 @@ export function NewsSection({
                   )}
                   <div className="flex items-center gap-1">
                     <Calendar className="h-3 w-3" />
-                    {new Date(item.date).toLocaleDateString()}
+                    {item.date ? new Date(item.date).toLocaleDateString() : 'N/A'}
                   </div>
                 </div>
                 {item.tags && item.tags.length > 0 && (
@@ -176,10 +176,10 @@ export function NewsSection({
               </CardHeader>
               <CardContent className="space-y-2">
                 <p className="text-xs text-foreground/70 line-clamp-2">
-                  {item.excerpt || item.content.substring(0, 80)}
+                  {item.summary || item.description?.substring(0, 80) || ''}
                 </p>
                 <div className="flex items-center justify-between text-xs text-foreground/60">
-                  <span>{new Date(item.date).toLocaleDateString()}</span>
+                  <span>{item.date ? new Date(item.date).toLocaleDateString() : 'N/A'}</span>
                   {item.author && <span>{item.author}</span>}
                 </div>
               </CardContent>
@@ -224,10 +224,10 @@ export function NewsSection({
                 </Badge>
               </div>
               <p className="text-xs text-foreground/70 line-clamp-1 mb-1">
-                {item.excerpt || item.content.substring(0, 100)}
+                {item.summary || item.description?.substring(0, 100) || ''}
               </p>
               <div className="flex items-center gap-3 text-xs text-foreground/60">
-                <span>{new Date(item.date).toLocaleDateString()}</span>
+                <span>{item.date ? new Date(item.date).toLocaleDateString() : 'N/A'}</span>
                 {item.author && <span>{item.author}</span>}
               </div>
             </div>
