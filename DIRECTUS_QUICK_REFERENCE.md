@@ -457,16 +457,14 @@ When creating announcements, news, or events, use these field values:
 2. **Exact Case:** Match exact casing ("Active" becomes "active", "Academic" stays "Academic")
 3. **School + Department:** Content should have BOTH school and department fields
 4. **No Spaces in Codes:** Department codes use lowercase with hyphens (e.g., "llm-cc", "bcom-acca")
-5. **School Names:** These 10 schools are definitive:
+5. **School Names:** These 8 schools are definitive:
    - Engineering
    - Health Sciences
    - Law
    - Commerce & Management
-   - Design
    - Basic & Applied Sciences
    - Computer Applications
-   - Arts & Humanities
-   - Journalism
+   - Arts, Design & Humanities
    - Medicine
 
 ---
