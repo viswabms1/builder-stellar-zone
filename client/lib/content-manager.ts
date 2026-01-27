@@ -347,6 +347,28 @@ export function getEventsByDepartment(school: string | undefined, department: st
   ).sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
 }
 
+export function getEventsByCategory(category: Event["category"]): Event[] {
+  return ALL_EVENTS.filter(
+    (e) => (e.status === "upcoming" || e.status === "ongoing") && e.category === category
+  ).sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+}
+
+export function getAllEvents(): Event[] {
+  return ALL_EVENTS.filter((e) => e.status === "upcoming" || e.status === "ongoing").sort(
+    (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()
+  );
+}
+
+export function getUpcomingEvents(limit: number = 10): Event[] {
+  return getAllEvents().slice(0, limit);
+}
+
+export function getEventsByTag(tag: string): Event[] {
+  return ALL_EVENTS.filter(
+    (e) => (e.status === "upcoming" || e.status === "ongoing") && e.tags?.includes(tag)
+  ).sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+}
+
 export function getAnnouncementsByDepartment(school: string | undefined, department: string | undefined): Announcement[] {
   if (!school || !department) return [];
   return ALL_ANNOUNCEMENTS.filter(
