@@ -44,12 +44,20 @@ export function useDepartmentEvents(
           const data = await response.json();
           let fetchedEvents = data.data || [];
 
+          console.log("[useDepartmentEvents] Raw events from API:", fetchedEvents);
+
           // Filter for upcoming/ongoing events, or events without status (assume upcoming)
           const now = new Date();
           fetchedEvents = fetchedEvents.filter((event: any) => {
             if (!event.status) return true; // Include events without status
             return event.status === "upcoming" || event.status === "ongoing";
           });
+
+          console.log("[useDepartmentEvents] Filtered events:", fetchedEvents);
+          if (fetchedEvents.length > 0) {
+            console.log("[useDepartmentEvents] First event sample:", fetchedEvents[0]);
+            console.log("[useDepartmentEvents] First event events_image:", fetchedEvents[0]?.events_image);
+          }
 
           setEvents(fetchedEvents);
           console.log(
