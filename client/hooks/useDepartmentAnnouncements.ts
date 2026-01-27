@@ -14,20 +14,35 @@ interface UseDepartmentAnnouncementsResult {
 
 // Map department names to department codes
 const DEPARTMENT_CODE_MAP: Record<string, string> = {
-  // Engineering
+  // Engineering - Multiple naming variations
   "Computer Science & Engineering": "cse",
+  "CSE": "cse",
+  "Computer Science": "cse",
   "Electronics & Communication": "ece",
+  "ECE": "ece",
+  "Electronics and Communication": "ece",
   "Data Science": "ds",
   "Mechanical": "mech",
+  "Mechanical Engineering": "mech",
   "Aerospace": "aero",
+  "Aerospace Engineering": "aero",
   "AI & ML": "aiml",
+  "AIML": "aiml",
   "AI & DS": "aids",
+  "AIDS": "aids",
   "AI & Robotics": "airo",
+  "AI and Robotics": "airo",
   "Cybersecurity": "cyber",
   "Computer Technology": "ct",
+  "CT": "ct",
   "Mechatronics": "meeng",
   "MCA": "mca",
   "MS Data Science": "msds",
+  // Engineering-specific basic sciences
+  "Physics Engineering": "phys-eng",
+  "Chemistry Engineering": "chem-eng",
+  "Mathematics Engineering": "math-eng",
+  "HSS Engineering": "hss-eng",
   // Basic & Applied Sciences
   "Physics": "phys",
   "Chemistry": "chem",
@@ -37,15 +52,24 @@ const DEPARTMENT_CODE_MAP: Record<string, string> = {
   "Physiotherapy": "phys",
   "Pharmacy": "pharm",
   "Allied Health": "ahs",
+  "Allied Health Sciences": "ahs",
   // Law
   "BA LLB": "ballb",
   "BBA LLB": "bballb",
   "LLB 3 Year": "llb3y",
   "LLM Corporate": "llm-cc",
   "LLM Tech": "llm-tech",
+  "LLM Corporate Commercial": "llm-cc",
+  "LLM Law Technology": "llm-tech",
   // Commerce & Management
   "BBA": "bba",
+  "BBA BFSI": "bba-bfsi",
+  "BBA RO": "bba-ro",
   "BCom": "bcom-std",
+  "BCom Standard": "bcom-std",
+  "BCom ACCA": "bcom-acca",
+  "BCom CMA": "bcom-cma",
+  "BCom CA": "bcom-ca",
   "MBA": "mba",
   // Design
   "Product Design": "des-prod",
@@ -56,6 +80,7 @@ const DEPARTMENT_CODE_MAP: Record<string, string> = {
   "MSc Data Science": "msc-ds",
   // Journalism
   "Journalism": "jmc",
+  "Journalism & Mass Communication": "jmc",
 };
 
 /**
