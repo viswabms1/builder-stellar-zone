@@ -21,6 +21,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { DeanSection, type DeanInfo } from "@/components/DeanSection";
+import { ProgramFinder } from "@/components/ProgramFinder";
 import { useAutoMuteOnScroll } from "@/hooks/useAutoMuteOnScroll";
 import { Download } from "lucide-react";
 import {
