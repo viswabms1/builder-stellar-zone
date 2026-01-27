@@ -22,7 +22,7 @@ interface UseAnnouncementsResult {
 
 /**
  * Custom hook for fetching and filtering announcements
- * Currently uses local data; ready to swap with Directus API endpoint
+ * Fetches from Directus API endpoint with graceful fallback to local data
  */
 export function useAnnouncements(
   options?: UseAnnouncementsOptions
@@ -37,15 +37,33 @@ export function useAnnouncements(
         setLoading(true);
         setError(null);
 
-        // TODO: Replace with Directus API call
-        // const response = await fetch(
-        //   'https://dsu-website-headless-cms.directus.app/items/announcements?filter[status]=active'
-        // );
-        // const data = await response.json();
-        // let fetchedAnnouncements = data.data;
+        let fetchedAnnouncements: Announcement[] = [];
 
-        // For now, use local data
-        let fetchedAnnouncements = getAllAnnouncements();
+        try {
+          // Fetch from Directus API endpoint
+          const response = await fetch("/api/directus/announcements");
+          if (response.ok) {
+            const data = await response.json();
+            fetchedAnnouncements = data.data || [];
+            console.log(
+              "[useAnnouncements] Fetched from Directus API:",
+              fetchedAnnouncements.length,
+              "announcements"
+            );
+          } else {
+            console.warn(
+              "[useAnnouncements] API returned non-200 status, using local data"
+            );
+            fetchedAnnouncements = getAllAnnouncements();
+          }
+        } catch (apiError) {
+          console.warn(
+            "[useAnnouncements] API fetch failed, falling back to local data:",
+            apiError
+          );
+          // Fall back to local data if API fails
+          fetchedAnnouncements = getAllAnnouncements();
+        }
 
         // Apply filters
         if (options?.priority === "high") {
