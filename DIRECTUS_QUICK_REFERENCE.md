@@ -324,7 +324,7 @@ Use this guide to quickly populate Schools and Departments in Directus.
 ]
 ```
 
-### Arts, Design & Humanities School Departments
+### Design School Departments
 
 ```json
 [
@@ -332,16 +332,23 @@ Use this guide to quickly populate Schools and Departments in Directus.
     "code": "des-prod",
     "name": "Product Design",
     "full_name": "B.Design Product Design",
-    "school": "Arts, Design & Humanities",
+    "school": "Design",
     "type": "UG"
   },
   {
     "code": "des-graph",
     "name": "Graphic Design",
     "full_name": "B.Design Graphic Design",
-    "school": "Arts, Design & Humanities",
+    "school": "Design",
     "type": "UG"
-  },
+  }
+]
+```
+
+### Arts, Design & Humanities School Departments
+
+```json
+[
   {
     "code": "jmc",
     "name": "Journalism & Mass Communication",
