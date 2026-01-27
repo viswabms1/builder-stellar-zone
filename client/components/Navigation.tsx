@@ -570,7 +570,6 @@ export default function Navigation() {
     { name: "About", href: "/about" },
     { name: "AI-Infused Academics", href: "/academics" },
     { name: "Admissions", href: "/admissions" },
-    { name: "Events", href: "/events" },
     { name: "Campus Life", href: "/campus-life" },
     { name: "Centre of Excellence", href: "/centre-of-excellence" },
     { name: "Placements", href: "/placements" },
