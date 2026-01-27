@@ -351,7 +351,7 @@ export default function Events() {
     return allEvents.filter((event) => {
       const matchesSchool = !filters.school || event.school === filters.school;
       const matchesCategory =
-        !filters.category || event.category === filters.category;
+        !filters.category || event.category === (filters.category as Event["category"]);
       const matchesStatus =
         !filters.status || event.status === filters.status;
       const matchesSearch =
