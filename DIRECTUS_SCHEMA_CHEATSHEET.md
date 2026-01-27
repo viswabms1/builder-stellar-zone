@@ -47,9 +47,11 @@ MED  → Medicine
 ### BASIC & APPLIED SCIENCES (3 depts)
 - **UG:** Physics | Chemistry | Mathematics
 
-### ARTS, DESIGN & HUMANITIES (4+ depts)
-- **Design UG:** Product Design | Graphic Design
-- **Humanities UG:** Journalism & Mass Communication | Other humanities
+### DESIGN (2 depts)
+- **UG:** Product Design | Graphic Design
+
+### ARTS, DESIGN & HUMANITIES (1 dept)
+- **UG:** Journalism & Mass Communication
 
 ### MEDICINE (1+ depts)
 - Medical programs
