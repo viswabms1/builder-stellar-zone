@@ -926,6 +926,11 @@ export default function JournalismMassComm() {
         </div>
       </section>
 
+      <ProgramFinder
+        schoolName="School of Arts, Design & Humanities"
+        themeColor="green"
+      />
+
       <section id="notice-board" className="px-3 py-8">
         <NoticeBoardCarousel />
       </section>
