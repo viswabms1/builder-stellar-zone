@@ -256,6 +256,7 @@ interface NewsCarouselProps {
 
 function NewsCarousel({ news, title, description, compact = false }: NewsCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [selectedImage, setSelectedImage] = useState<{ src: string; alt: string; title?: string } | null>(null);
 
   useEffect(() => {
     if (news.length === 0) return;
