@@ -6,6 +6,7 @@ import Index from "./pages/Index";
 import Academics from "./pages/Academics";
 import Admissions from "./pages/Admissions";
 import Events from "./pages/Events";
+import TestAnnouncements from "./pages/TestAnnouncements";
 import AdmissionClosingDates from "./pages/AdmissionClosingDates";
 import Eligibility from "./pages/Eligibility";
 import SimpleProgramLookup from "./pages/SimpleProgramLookup";
