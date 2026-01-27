@@ -1742,6 +1742,7 @@ function App() {
                 <Route path="/placements" element={<Placements />} />
                 <Route path="/careers" element={<Careers />} />
                 <Route path="/campus-life" element={<CampusLife />} />
+                <Route path="/events" element={<Events />} />
                 <Route path="/examinations" element={<Examinations />} />
                 <Route path="/research" element={<Research />} />
                 <Route path="/ai-first" element={<AIFirst />} />
