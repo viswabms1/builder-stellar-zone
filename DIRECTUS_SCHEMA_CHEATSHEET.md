@@ -141,7 +141,7 @@ status: "upcoming"
 
 If using codes in your database:
 
-**Schools:** ENG, HS, LAW, CAM, DES, BAS, CCA, ADH, JMC, MED
+**Schools:** ENG, HS, LAW, CAM, BAS, CCA, DES, ADH, MED
 
 **Department Codes:** cse, ece, ds, mech, aero, aiml, aids, airo, cyber, ct, meeng, mca, msds, nurs, phys, pharm, ahs, ballb, bballb, llb3y, llm-cc, llm-tech, bba, bba-bfsi, bba-ro, bcom-std, bcom-acca, bcom-cma, bcom-ca, mba, des-prod, des-graph, bca, bsc-ds, msc-ds
 
