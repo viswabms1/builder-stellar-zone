@@ -34,17 +34,17 @@ export interface CurriculumProgram {
 export interface Announcement {
   id: string;
   title: string;
-  content: string;
-  type: "circular" | "announcement";
-  category: "Academic" | "Administrative" | "Event" | "Urgent" | "General";
-  priority: "high" | "medium" | "low";
-  date: string;
-  expiryDate?: string;
-  status: "active" | "archived";
-  school?: string;
-  department?: string;
+  description: string; // Directus uses 'description' not 'content'
+  type?: "circular" | "announcement";
+  category?: "Academic" | "Administrative" | "Event" | "Urgent" | "General";
+  priority?: "high" | "medium" | "low";
+  date?: string;
+  expiry_date?: string; // Directus uses 'expiry_date'
+  status?: "active" | "archived";
+  school_code?: string; // Directus uses 'school_code' (e.g., ENG, HS, LAW)
+  department_code?: string; // Directus uses 'department_code' (e.g., aero, cse, mech)
   image?: string;
-  attachments?: Array<{ id: string; fileName: string; fileUrl: string; fileType: string; fileSize?: string }>;
+  attachment?: string; // Single attachment field (file ID in Directus)
 }
 
 export interface NewsItem {

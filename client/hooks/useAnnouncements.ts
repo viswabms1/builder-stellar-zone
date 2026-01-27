@@ -41,27 +41,13 @@ export function useAnnouncements(
 
         try {
           // Fetch directly from Directus API
-          const directusUrl = "https://dsu-website-headless-cms.directus.app/items/announcements?filter[status][_eq]=active&sort=-date&limit=100";
+          const directusUrl = "https://dsu-website-headless-cms.directus.app/items/announcements?filter[status][_eq]=active&sort=-expiry_date&limit=100";
           const response = await fetch(directusUrl);
 
           if (response.ok) {
             const data = await response.json();
-            // Transform Directus response to match our Announcement interface
-            fetchedAnnouncements = (data.data || []).map((item: any) => ({
-              id: item.id,
-              title: item.title || "",
-              content: item.content || "",
-              type: item.type || "announcement",
-              category: item.category || "General",
-              priority: item.priority || "medium",
-              date: item.date || new Date().toISOString(),
-              expiryDate: item.expiry_date,
-              status: item.status || "active",
-              school: item.school,
-              department: item.department,
-              image: item.image,
-              attachments: item.attachments || [],
-            }));
+            // Directus response is already in the correct format
+            fetchedAnnouncements = data.data || [];
             console.log(
               "[useAnnouncements] Fetched from Directus:",
               fetchedAnnouncements.length,
@@ -83,24 +69,23 @@ export function useAnnouncements(
         }
 
         // Apply filters
-        if (options?.priority === "high") {
+        if (options?.priority) {
           fetchedAnnouncements = fetchedAnnouncements.filter(
-            (a) => a.priority === "high"
+            (a) => a.priority === options.priority
           );
-        } else if (options?.category) {
+        }
+        if (options?.category) {
           fetchedAnnouncements = fetchedAnnouncements.filter(
             (a) => a.category === options.category
           );
-        } else if (options?.school) {
+        }
+        if (options?.school) {
           fetchedAnnouncements = fetchedAnnouncements.filter(
-            (a) => a.school === options.school || !a.school // Include universal announcements
+            (a) => a.school_code === options.school || !a.school_code // Include universal announcements
           );
         }
 
-        // Sort by date (newest first)
-        fetchedAnnouncements.sort(
-          (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-        );
+        // Already sorted by expiry_date from Directus, no need to re-sort
 
         // Apply limit if specified
         if (options?.limit) {
