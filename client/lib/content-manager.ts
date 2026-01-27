@@ -96,10 +96,8 @@ const ALL_NEWS: NewsItem[] = [];
 
 const ALL_EVENTS: Event[] = [];
 
-const ALL_CURRICULA: CurriculumProgram[] = [
-  // All curriculum data is now managed in Directus CMS
-  // NOTE: All curriculum data is now in Directus CMS
-];
+// NOTE: All curriculum data is now managed in Directus CMS
+const ALL_CURRICULA: CurriculumProgram[] = [];
 
 // ============================================================================
 // FILTERING FUNCTIONS
