@@ -209,11 +209,11 @@ function EventModal({ event, onClose }: { event: Event | null; onClose: () => vo
                   <Badge className="bg-brand-blue/20 text-brand-blue">
                     {event.category}
                   </Badge>
-                  {event.school && (
-                    <Badge variant="outline">{event.school}</Badge>
+                  {event.school_code && (
+                    <Badge variant="outline">{event.school_code}</Badge>
                   )}
-                  {event.department && (
-                    <Badge variant="outline">{event.department}</Badge>
+                  {event.department_code && (
+                    <Badge variant="outline">{event.department_code}</Badge>
                   )}
                 </div>
               </div>
@@ -238,7 +238,7 @@ function EventModal({ event, onClose }: { event: Event | null; onClose: () => vo
                       <Clock className="w-5 h-5 text-brand-blue flex-shrink-0" />
                       <span className="text-foreground font-medium">
                         {event.time}
-                        {event.endTime && ` - ${event.endTime}`}
+                        {event.end_time && ` - ${event.end_time}`}
                       </span>
                     </div>
                   )}
@@ -297,7 +297,7 @@ function EventModal({ event, onClose }: { event: Event | null; onClose: () => vo
                 </div>
               )}
 
-              {event.registrationRequired && (
+              {event.registration_required && (
                 <div>
                   <h3 className="text-sm font-semibold text-foreground/70 uppercase tracking-wide mb-2">
                     Registration
@@ -349,7 +349,7 @@ export default function Events() {
 
   const filteredEvents = useMemo(() => {
     return allEvents.filter((event) => {
-      const matchesSchool = !filters.school || event.school === filters.school;
+      const matchesSchool = !filters.school || event.school_code === filters.school;
       const matchesCategory =
         !filters.category || event.category === (filters.category as Event["category"]);
       const matchesStatus =
