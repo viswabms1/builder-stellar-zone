@@ -338,7 +338,7 @@ function EventModal({ event, onClose }: { event: Event | null; onClose: () => vo
 }
 
 export default function Events() {
-  const { events: allEvents } = useEvents();
+  const { events: allEvents = [], loading, error } = useEvents();
   const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
   const [filters, setFilters] = useState<FilterState>({
     school: "",
