@@ -13,6 +13,7 @@ import {
 } from "./routes/strapi";
 import {
   getVisionMission,
+  getAnnouncements,
   checkDirectusHealth,
   clearDirectusCache,
 } from "./routes/directus";
