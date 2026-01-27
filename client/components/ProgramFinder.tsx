@@ -118,7 +118,7 @@ export function ProgramFinder({
           <CardHeader>
             <div className="flex items-center gap-3">
               <div
-                className={`flex h-10 w-10 items-center justify-center rounded-lg bg-${themeColor}-500/15`}
+                className={`flex h-10 w-10 items-center justify-center rounded-lg ${theme.bgIcon}`}
               >
                 <Filter className={`h-6 w-6 ${theme.icon}`} />
               </div>
