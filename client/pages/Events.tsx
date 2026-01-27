@@ -32,14 +32,15 @@ import type { Event } from "@/data/events";
 
 const SCHOOLS = [
   { label: "All Schools", value: "" },
-  { label: "School of Engineering", value: "Engineering" },
-  { label: "School of Health Sciences", value: "Health Sciences" },
-  { label: "School of Law", value: "Law" },
-  { label: "School of Computer Applications", value: "Computer Applications" },
-  { label: "School of Commerce & Management", value: "Commerce & Management" },
-  { label: "School of Basic & Applied Sciences", value: "Basic & Applied Sciences" },
-  { label: "School of Arts, Design & Humanities", value: "Arts, Design & Humanities" },
-  { label: "School of Design & Digital Trans-Media", value: "Design & Digital Trans-Media" },
+  { label: "School of Engineering", value: "ENG" },
+  { label: "School of Health Sciences", value: "HS" },
+  { label: "School of Law", value: "LAW" },
+  { label: "School of Computer Applications", value: "CCA" },
+  { label: "School of Commerce & Management", value: "CAM" },
+  { label: "School of Basic & Applied Sciences", value: "BAS" },
+  { label: "School of Design", value: "DES" },
+  { label: "School of Allied Health", value: "ADH" },
+  { label: "School of Medicine", value: "MED" },
 ];
 
 const CATEGORIES: Array<{ label: string; value: Event["category"] | "" }> = [
