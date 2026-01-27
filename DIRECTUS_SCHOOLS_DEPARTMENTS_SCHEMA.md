@@ -16,7 +16,8 @@ Use these exact names in Directus and React code for consistency:
 | Commerce & Management | School of Commerce & Management | CAM | 3 commerce programs |
 | Basic & Applied Sciences | School of Basic & Applied Sciences | BAS | Science programs |
 | Computer Applications | School of Computer Applications | CCA | CS-related programs |
-| Arts, Design & Humanities | School of Arts, Design & Humanities | ADH | Design, Journalism, humanities |
+| Design | School of Design & Digital Trans-Media | DES | Design programs |
+| Arts, Design & Humanities | School of Arts, Design & Humanities | ADH | Journalism only |
 | Medicine | School of Medicine | MED | Medical programs |
 
 ---
