@@ -335,7 +335,18 @@ ALTER TABLE announcements ADD COLUMN department VARCHAR(50);
 - Arts, Design & Humanities (Journalism only)
 - Medicine
 
-**Total Departments:** 50+ across all schools
+**Total Departments:** 54+ across all schools
+
+**Breakdown:**
+- Engineering: 17 (13 core + 4 foundational)
+- Health Sciences: 7
+- Law: 5
+- Commerce & Management: 8
+- Basic & Applied Sciences: 3
+- Computer Applications: 3
+- Design: 2
+- Arts, Design & Humanities: 1 (Journalism)
+- Medicine: 1+
 
 For detailed department list by school, see Section 2 above.
 
