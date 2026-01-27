@@ -10,7 +10,7 @@ Use these exact names in Directus and React code for consistency:
 
 | Short Name | Full Name | Code | Usage |
 |-----------|-----------|------|-------|
-| Engineering | School of Engineering | ENG | 12+ engineering departments |
+| Engineering | School of Engineering | ENG | 17 departments (13 core + 4 foundational) |
 | Health Sciences | School of Health Sciences | HS | 5 health-related departments |
 | Law | School of Law | LAW | 4 law programs |
 | Commerce & Management | School of Commerce & Management | CAM | 3 commerce programs |
