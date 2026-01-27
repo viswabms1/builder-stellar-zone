@@ -39,9 +39,6 @@ MED  → Medicine
 - **UG:** BBA | BBA BFSI | BBA RO | B.Com (Standard) | B.Com ACCA | B.Com CMA | B.Com CA
 - **PG:** MBA
 
-### DESIGN (2 depts)
-- **UG:** Product Design | Graphic Design
-
 ### COMPUTER APPLICATIONS (3 depts)
 - **UG:** BCA | B.Sc Data Science
 - **PG:** M.Sc Data Science
@@ -49,11 +46,9 @@ MED  → Medicine
 ### BASIC & APPLIED SCIENCES (3 depts)
 - **UG:** Physics | Chemistry | Mathematics
 
-### ARTS & HUMANITIES (1+ depts)
-- Various humanities programs
-
-### JOURNALISM (1 dept)
-- Journalism
+### ARTS, DESIGN & HUMANITIES (4+ depts)
+- **Design UG:** Product Design | Graphic Design
+- **Humanities UG:** Journalism & Mass Communication | Other humanities
 
 ### MEDICINE (1+ depts)
 - Medical programs
