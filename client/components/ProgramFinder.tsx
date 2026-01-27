@@ -47,6 +47,7 @@ const themeColors = {
     bgCard: "bg-gradient-to-r from-green-500/10 to-emerald-500/10",
     borderCard: "border-green-500/20",
     icon: "text-brand-blue",
+    bgIcon: "bg-brand-blue/15",
   },
   magenta: {
     border: "border-brand-magenta/20",
@@ -54,6 +55,7 @@ const themeColors = {
     bgCard: "bg-gradient-to-r from-green-500/10 to-emerald-500/10",
     borderCard: "border-green-500/20",
     icon: "text-brand-magenta",
+    bgIcon: "bg-brand-magenta/15",
   },
   orange: {
     border: "border-brand-orange/20",
@@ -61,6 +63,7 @@ const themeColors = {
     bgCard: "bg-gradient-to-r from-green-500/10 to-emerald-500/10",
     borderCard: "border-green-500/20",
     icon: "text-brand-orange",
+    bgIcon: "bg-brand-orange/15",
   },
   green: {
     border: "border-green-500/20",
@@ -68,6 +71,7 @@ const themeColors = {
     bgCard: "bg-gradient-to-r from-green-500/10 to-emerald-500/10",
     borderCard: "border-green-500/20",
     icon: "text-green-600",
+    bgIcon: "bg-green-500/15",
   },
 };
 
