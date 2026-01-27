@@ -15,6 +15,7 @@ import {
   getVisionMission,
   getAnnouncements,
   getEvents,
+  getNews,
   checkDirectusHealth,
   clearDirectusCache,
 } from "./routes/directus";
@@ -91,6 +92,10 @@ export function createServer() {
   // Fetch Events from Directus
   // Usage: GET /api/directus/events
   app.get("/api/directus/events", getEvents);
+
+  // Fetch News from Directus
+  // Usage: GET /api/directus/news
+  app.get("/api/directus/news", getNews);
 
   // Health check for Directus connection
   // Usage: GET /api/directus/health

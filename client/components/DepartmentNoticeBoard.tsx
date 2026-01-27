@@ -2,16 +2,14 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { getDepartmentContent, getCategoryStyles, convertAnnouncementToCarouselItem, convertEventToCarouselItem, type CarouselItem } from "@/lib/content-manager";
+import { getCategoryStyles, convertAnnouncementToCarouselItem, convertEventToCarouselItem, convertNewsToCarouselItem, type CarouselItem } from "@/lib/content-manager";
 import { useDepartmentAnnouncements, getDepartmentCode } from "@/hooks/useDepartmentAnnouncements";
 import { useDepartmentEvents } from "@/hooks/useDepartmentEvents";
+import { useDepartmentNews } from "@/hooks/useDepartmentNews";
 import { Download } from "lucide-react";
 
 export function DepartmentNoticeBoard({ school = "Engineering", department }: { school?: string; department: string }) {
-  // Get news from static data (will be migrated to Directus later)
-  const { news: newsItems } = getDepartmentContent(school, department);
-
-  // Fetch announcements and events from Directus using department code
+  // Fetch announcements, events, and news from Directus using department code
   const departmentCode = getDepartmentCode(department);
 
   const { announcements: directusAnnouncements, loading: announcementsLoading } = useDepartmentAnnouncements({
@@ -24,9 +22,15 @@ export function DepartmentNoticeBoard({ school = "Engineering", department }: { 
     limit: 10,
   });
 
+  const { news: directusNews, loading: newsLoading } = useDepartmentNews({
+    departmentCode,
+    limit: 10,
+  });
+
   // Convert Directus data to carousel items
   const announcements = directusAnnouncements.map(convertAnnouncementToCarouselItem);
   const eventItems = directusEvents.map(convertEventToCarouselItem);
+  const newsItems = directusNews.map(convertNewsToCarouselItem);
 
   const [currentAnnouncementIndex, setCurrentAnnouncementIndex] = useState(0);
   const [currentNewsIndex, setCurrentNewsIndex] = useState(0);
