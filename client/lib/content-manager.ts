@@ -567,22 +567,7 @@ const ALL_CURRICULA: CurriculumProgram[] = [
     ],
     meta: { level: "Postgraduate", department: "MCA", school: "Engineering" },
   },
-  // ============ MSC DATA SCIENCE ============
-  {
-    id: "msc-data-science",
-    label: "M.Sc Data Science",
-    description: "2-year postgraduate program with advanced analytics and AI focus",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
-    batches: [
-      {
-        year: "2025-27",
-        summary: "Advanced curriculum with machine learning, statistical analysis, big data technologies, data visualization, and AI applications",
-        documentUrl: "https://www.dsu.edu.in/images/Engineering/MSc-DataScience-Curriculum-2025-27.pdf",
-        current: true,
-      },
-    ],
-    meta: { level: "Postgraduate", department: "Data Science", school: "Engineering" },
-  },
+  // NOTE: All curriculum data is now in Directus CMS
 ];
 
 // ============================================================================
