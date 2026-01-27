@@ -3,6 +3,7 @@ import { useContentContext } from "@/hooks/useContentContext";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { ImageModal } from "@/components/ImageModal";
 import { Calendar, MapPin, Users, Clock, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState, useEffect } from "react";
 
@@ -279,6 +280,7 @@ interface EventsCarouselProps {
 
 function EventsCarousel({ events, title, description, compact = false }: EventsCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [selectedImage, setSelectedImage] = useState<{ src: string; alt: string; title?: string } | null>(null);
 
   useEffect(() => {
     if (events.length === 0) return;
@@ -317,12 +319,36 @@ function EventsCarousel({ events, title, description, compact = false }: EventsC
 
       <Card className="group overflow-hidden rounded-2xl border-2 border-border/30 bg-card/40 backdrop-blur-sm">
         {currentEvent.events_image && (
-          <div className="relative h-48 overflow-hidden">
+          <div
+            className="relative h-48 overflow-hidden cursor-pointer"
+            onClick={() => setSelectedImage({
+              src: `https://dsu-website-headless-cms.directus.app/assets/${typeof currentEvent.events_image === 'string' ? currentEvent.events_image : currentEvent.events_image.id}`,
+              alt: currentEvent.title,
+              title: currentEvent.title
+            })}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                setSelectedImage({
+                  src: `https://dsu-website-headless-cms.directus.app/assets/${typeof currentEvent.events_image === 'string' ? currentEvent.events_image : currentEvent.events_image.id}`,
+                  alt: currentEvent.title,
+                  title: currentEvent.title
+                });
+              }
+            }}
+            aria-label={`Click to view ${currentEvent.title} image in larger size`}
+          >
             <img
               src={`https://dsu-website-headless-cms.directus.app/assets/${typeof currentEvent.events_image === 'string' ? currentEvent.events_image : currentEvent.events_image.id}`}
               alt={currentEvent.title}
               className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
             />
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+              <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity text-sm font-semibold">
+                Click to enlarge
+              </span>
+            </div>
           </div>
         )}
         <CardContent className="p-4 space-y-3">
@@ -373,7 +399,19 @@ function EventsCarousel({ events, title, description, compact = false }: EventsC
   );
 
   if (compact) {
-    return <div className="space-y-4">{carouselBody}</div>;
+    return (
+      <div className="space-y-4">
+        {carouselBody}
+        {selectedImage && (
+          <ImageModal
+            imageSrc={selectedImage.src}
+            imageAlt={selectedImage.alt}
+            title={selectedImage.title}
+            onClose={() => setSelectedImage(null)}
+          />
+        )}
+      </div>
+    );
   }
 
   return (
@@ -381,6 +419,14 @@ function EventsCarousel({ events, title, description, compact = false }: EventsC
       <div className="mx-auto max-w-7xl space-y-4">
         {carouselBody}
       </div>
+      {selectedImage && (
+        <ImageModal
+          imageSrc={selectedImage.src}
+          imageAlt={selectedImage.alt}
+          title={selectedImage.title}
+          onClose={() => setSelectedImage(null)}
+        />
+      )}
     </section>
   );
 }
