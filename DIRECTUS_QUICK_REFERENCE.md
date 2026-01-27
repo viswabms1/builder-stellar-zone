@@ -319,6 +319,34 @@ Use this guide to quickly populate Schools and Departments in Directus.
 ]
 ```
 
+### Arts, Design & Humanities School Departments
+
+```json
+[
+  {
+    "code": "des-prod",
+    "name": "Product Design",
+    "full_name": "B.Design Product Design",
+    "school": "Arts, Design & Humanities",
+    "type": "UG"
+  },
+  {
+    "code": "des-graph",
+    "name": "Graphic Design",
+    "full_name": "B.Design Graphic Design",
+    "school": "Arts, Design & Humanities",
+    "type": "UG"
+  },
+  {
+    "code": "jmc",
+    "name": "Journalism & Mass Communication",
+    "full_name": "BA Journalism & Mass Communication",
+    "school": "Arts, Design & Humanities",
+    "type": "UG"
+  }
+]
+```
+
 ### Other Schools (Remaining Departments)
 
 **Basic & Applied Sciences:**
