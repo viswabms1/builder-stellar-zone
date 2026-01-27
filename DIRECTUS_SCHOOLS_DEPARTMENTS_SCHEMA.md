@@ -101,14 +101,11 @@ Use these exact names in Directus and React code for consistency:
 | B.Sc Data Science | bsc-ds | B.Sc Data Science | UG |
 | M.Sc Data Science | msc-ds | M.Sc Data Science | PG |
 
-### 🎨 Arts, Design & Humanities School (ADH)
+### 📰 Arts, Design & Humanities School (ADH)
 
 | Department | Code | Full Name | Type |
 |-----------|------|-----------|------|
-| Product Design | des-prod | B.Design Product Design | UG |
-| Graphic Design | des-graph | B.Design Graphic Design | UG |
 | Journalism & Mass Communication | jmc | BA Journalism & Mass Communication | UG |
-| Humanities & Social Sciences | hss | Various humanities programs | UG |
 
 ---
 
