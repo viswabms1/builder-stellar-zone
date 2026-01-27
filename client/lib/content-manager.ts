@@ -42,6 +42,7 @@ export interface Announcement {
   expiryDate?: string;
   status: "active" | "archived";
   school?: string;
+  department?: string;
   image?: string;
   attachments?: Array<{ id: string; fileName: string; fileUrl: string; fileType: string; fileSize?: string }>;
 }
