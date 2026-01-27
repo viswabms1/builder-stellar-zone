@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect } from "react";
 import { X, Download, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -22,30 +22,45 @@ export function ImageModal({
 }: ImageModalProps) {
   if (!imageSrc) return null;
 
+  // Add global escape key listener
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        onClose();
+      }
+    };
+
+    window.addEventListener("keydown", handleEscape);
+    return () => window.removeEventListener("keydown", handleEscape);
+  }, [onClose]);
+
+  // Handle backdrop click (click outside the image)
+  const handleBackdropClick = (e: React.MouseEvent) => {
+    if (e.target === e.currentTarget) {
+      onClose();
+    }
+  };
+
   return (
     <>
-      {/* Backdrop */}
+      {/* Backdrop - entire screen */}
       <div
-        className="fixed inset-0 bg-black/80 backdrop-blur-sm z-40 transition-opacity"
-        onClick={onClose}
-        role="button"
-        tabIndex={0}
-        onKeyDown={(e) => {
-          if (e.key === "Escape") onClose();
-        }}
-        aria-label="Close image modal"
+        className="fixed inset-0 bg-black/80 backdrop-blur-sm z-40"
+        onClick={handleBackdropClick}
+        aria-label="Close modal by clicking backdrop"
       />
 
       {/* Modal Container */}
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-        <div className="relative w-full max-w-4xl max-h-[90vh] flex flex-col">
-          {/* Close Button */}
+      <div className="fixed inset-0 z-50 flex items-center justify-center p-4 pointer-events-none">
+        <div className="relative w-full max-w-4xl max-h-[90vh] flex flex-col pointer-events-auto">
+          {/* Close Button - top right inside modal */}
           <button
             onClick={onClose}
-            className="absolute -top-10 right-0 p-2 text-white/80 hover:text-white transition-colors z-10"
+            className="absolute -top-12 right-0 p-2 text-white/80 hover:text-white transition-colors hover:bg-white/10 rounded-lg pointer-events-auto z-10"
             aria-label="Close modal"
+            type="button"
           >
-            <X className="w-6 h-6" />
+            <X className="w-8 h-8" />
           </button>
 
           {/* Image Container */}
@@ -109,7 +124,7 @@ export function ImageModal({
 
           {/* Keyboard hint */}
           <p className="text-white/50 text-xs mt-3 text-center">
-            Press ESC or click backdrop to close
+            Press <kbd className="px-2 py-1 bg-white/10 rounded text-white">ESC</kbd> or click outside image to close
           </p>
         </div>
       </div>
