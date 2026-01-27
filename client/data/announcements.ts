@@ -1,74 +1,58 @@
 /**
- * Announcements Data Structure
- * 
- * ⚠️ DEPRECATED: All data has been moved to content-manager.ts
- * This file kept only for interface definitions
- * Data is now managed through Directus CMS
+ * Announcements Data Structure and Functions
+ *
+ * This file re-exports the Announcement interface from content-manager.ts
+ * and provides helper functions for accessing announcements.
+ *
+ * Data is fetched from Directus CMS via the useAnnouncements hook.
  */
 
-export interface Attachment {
-  id: string;
-  fileName: string;
-  fileUrl: string;
-  fileType: string; // pdf, doc, docx, xlsx, etc.
-  fileSize?: string; // e.g., "2.5 MB"
-}
-
-export interface Announcement {
-  id: string;
-  title: string;
-  content: string;
-  type: "circular" | "announcement"; // Circular = formal document, Announcement = simple notice
-  category: "Academic" | "Administrative" | "Event" | "Urgent" | "General";
-  priority: "high" | "medium" | "low";
-  date: string;
-  expiryDate?: string;
-  status: "active" | "archived";
-  school?: string; // Engineering, Health Sciences, etc.
-  image?: string;
-  attachments?: Attachment[]; // Files like PDFs, documents
-}
-
-// NOTE: All announcement data is now in content-manager.ts
-// Directus CMS integration in progress
+export { type Announcement } from "@/lib/content-manager";
+export {
+  getAnnouncementsBySchool,
+  getAnnouncementsByDepartment,
+  convertAnnouncementToCarouselItem,
+} from "@/lib/content-manager";
 
 /**
  * Get all active announcements
- * @returns Active announcements from content-manager.ts
+ *
+ * NOTE: This returns an empty array as a fallback.
+ * The useAnnouncements hook fetches from the API.
+ * @returns Empty array (use useAnnouncements hook for actual data)
  */
-export function getAllAnnouncements(): Announcement[] {
-  // Import from content-manager.ts when Directus is ready
+export function getAllAnnouncements() {
   return [];
 }
 
 /**
  * Get announcements filtered by priority
+ *
+ * NOTE: Filtering is done in the useAnnouncements hook
+ * @returns Empty array (use useAnnouncements hook with priority option)
  */
 export function getAnnouncementsByPriority(
   priority: "high" | "medium" | "low"
-): Announcement[] {
+) {
   return [];
 }
 
 /**
  * Get announcements by category
+ *
+ * NOTE: Filtering is done in the useAnnouncements hook
+ * @returns Empty array (use useAnnouncements hook with category option)
  */
-export function getAnnouncementsByCategory(
-  category: Announcement["category"]
-): Announcement[] {
-  return [];
-}
-
-/**
- * Get announcements by school
- */
-export function getAnnouncementsBySchool(school: string): Announcement[] {
+export function getAnnouncementsByCategory(category: string) {
   return [];
 }
 
 /**
  * Get high-priority announcements (for homepage banner)
+ *
+ * NOTE: Filtering is done in the useAnnouncements hook
+ * @returns Empty array (use useAnnouncements hook with priority: 'high')
  */
-export function getUrgentAnnouncements(): Announcement[] {
+export function getUrgentAnnouncements() {
   return [];
 }
