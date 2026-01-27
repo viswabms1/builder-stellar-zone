@@ -76,13 +76,6 @@ Use these exact names in Directus and React code for consistency:
 | B.Com CA | bcom-ca | B.Com with CA Foundation Coaching | UG |
 | MBA | mba | Master of Business Administration | PG |
 
-### 🎨 Design School (DES)
-
-| Department | Code | Full Name | Type |
-|-----------|------|-----------|------|
-| Product Design | des-prod | B.Design Product Design | UG |
-| Graphic Design | des-graph | B.Design Graphic Design | UG |
-
 ### 📚 Basic & Applied Sciences School (BAS)
 
 | Department | Code | Full Name | Type |
