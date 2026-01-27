@@ -319,27 +319,6 @@ Use this guide to quickly populate Schools and Departments in Directus.
 ]
 ```
 
-### Design School Departments
-
-```json
-[
-  {
-    "code": "des-prod",
-    "name": "Product Design",
-    "full_name": "B.Design Product Design",
-    "school": "Design",
-    "type": "UG"
-  },
-  {
-    "code": "des-graph",
-    "name": "Graphic Design",
-    "full_name": "B.Design Graphic Design",
-    "school": "Design",
-    "type": "UG"
-  }
-]
-```
-
 ### Other Schools (Remaining Departments)
 
 **Basic & Applied Sciences:**
