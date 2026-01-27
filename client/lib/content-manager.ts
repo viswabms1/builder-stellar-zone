@@ -69,17 +69,17 @@ export interface Event {
   description: string;
   date: string;
   time?: string;
-  endDate?: string;
-  endTime?: string;
+  end_date?: string; // Directus uses snake_case
+  end_time?: string;
   location: string;
   status: "upcoming" | "ongoing" | "completed";
-  school: string;
-  department?: string;
-  category: "Workshop" | "Seminar" | "Conference" | "Hackathon" | "Sports" | "Cultural" | "Academic";
+  school_code?: string; // Directus uses school_code (e.g., ENG, HS, LAW)
+  department_code?: string; // Directus uses department_code (e.g., aero, cse)
+  category?: "Workshop" | "Seminar" | "Conference" | "Hackathon" | "Sports" | "Cultural" | "Academic";
   image?: string;
   link?: string;
-  registrationRequired?: boolean;
-  registrationLink?: string;
+  registration_required?: boolean; // Directus uses snake_case
+  registration_link?: string;
   capacity?: number;
   registered?: number;
   tags?: string[];
