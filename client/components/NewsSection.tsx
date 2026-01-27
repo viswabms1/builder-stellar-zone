@@ -303,11 +303,11 @@ function NewsCarousel({ news, title, description, compact = false }: NewsCarouse
           <div className="flex items-start justify-between gap-2">
             <div className="flex-1">
               <h4 className="font-display font-semibold text-sm text-foreground mb-2 line-clamp-2">{currentItem.title}</h4>
-              <p className="text-xs text-foreground/70 line-clamp-2">{currentItem.excerpt || (currentItem.content ? currentItem.content.substring(0, 100) : '')}</p>
+              <p className="text-xs text-foreground/70 line-clamp-2">{currentItem.summary || currentItem.description?.substring(0, 100) || ''}</p>
             </div>
           </div>
           <div className="flex items-center justify-between pt-2 border-t border-border/20">
-            <span className="text-xs font-semibold text-foreground/60">{new Date(currentItem.date).toLocaleDateString()}</span>
+            <span className="text-xs font-semibold text-foreground/60">{currentItem.date ? new Date(currentItem.date).toLocaleDateString() : 'N/A'}</span>
           </div>
         </CardContent>
       </Card>
