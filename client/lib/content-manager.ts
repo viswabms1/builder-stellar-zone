@@ -99,24 +99,6 @@ const ALL_EVENTS: Event[] = [];
 const ALL_CURRICULA: CurriculumProgram[] = [
   // All curriculum data is now managed in Directus CMS
   {
-    id: "nursing-msc",
-    label: "M.Sc Nursing",
-    description: "2-year postgraduate specialization program",
-    image:
-      "https://images.unsplash.com/photo-1551076805-e1869033e561?w=600&h=400&fit=crop",
-    batches: [
-      {
-        year: "2025-26",
-        summary:
-          "Advanced specializations in Medical Surgical, Child Health, Mental Health, OB-GYN, and Psychiatric Nursing",
-        documentUrl: "https://www.dsu.edu.in/images/HealthSciences/nursing/MSC-Curriculum-2025-26.pdf",
-        current: true,
-      },
-    ],
-    meta: { level: "Postgraduate", department: "Nursing", school: "Health Sciences" },
-  },
-  // ============ HEALTH SCIENCES: PHYSIOTHERAPY ============
-  {
     id: "physiotherapy-bpt",
     label: "B.P.T Physiotherapy",
     description:
