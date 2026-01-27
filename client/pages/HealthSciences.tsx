@@ -796,6 +796,11 @@ export default function HealthSciences() {
         </div>
       </section>
 
+      <ProgramFinder
+        schoolName="School of Health Sciences"
+        themeColor="magenta"
+      />
+
       <SchoolNoticeBoard school="Health Sciences" />
     </div>
   );
