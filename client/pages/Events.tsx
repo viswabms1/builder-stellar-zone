@@ -570,7 +570,10 @@ export default function Events() {
             </div>
           ) : (
             <>
-              <div className="mb-6">
+              <div className="mb-8">
+                <h2 className="text-2xl font-display font-bold text-foreground mb-2">
+                  Upcoming Events
+                </h2>
                 <p className="text-sm text-foreground/70">
                   Showing <span className="font-semibold">{filteredEvents.length}</span>{" "}
                   event{filteredEvents.length !== 1 ? "s" : ""}
@@ -589,6 +592,100 @@ export default function Events() {
           )}
         </div>
       </section>
+
+      {/* Info Section */}
+      {filteredEvents.length === 0 && !error && !loading && (
+        <section className="px-3 py-16 bg-gradient-to-r from-brand-blue/5 via-brand-magenta/5 to-brand-orange/5">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-12">
+              <div>
+                <h3 className="text-2xl font-display font-bold text-foreground mb-6">
+                  Why Attend DSU Events?
+                </h3>
+                <ul className="space-y-4">
+                  <li className="flex gap-4">
+                    <div className="w-6 h-6 rounded-full bg-brand-blue/20 flex items-center justify-center flex-shrink-0 mt-1">
+                      <span className="text-brand-blue font-bold">✓</span>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-foreground mb-1">Network with Industry Experts</h4>
+                      <p className="text-foreground/70">Connect with professionals and leaders in your field</p>
+                    </div>
+                  </li>
+                  <li className="flex gap-4">
+                    <div className="w-6 h-6 rounded-full bg-brand-magenta/20 flex items-center justify-center flex-shrink-0 mt-1">
+                      <span className="text-brand-magenta font-bold">✓</span>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-foreground mb-1">Learn New Skills</h4>
+                      <p className="text-foreground/70">Stay updated with latest trends and technologies</p>
+                    </div>
+                  </li>
+                  <li className="flex gap-4">
+                    <div className="w-6 h-6 rounded-full bg-brand-orange/20 flex items-center justify-center flex-shrink-0 mt-1">
+                      <span className="text-brand-orange font-bold">✓</span>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-foreground mb-1">Build Your Resume</h4>
+                      <p className="text-foreground/70">Add valuable experience and certifications</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="space-y-6">
+                <Card className="border-brand-blue/20 bg-gradient-to-br from-brand-blue/10 to-brand-blue/5">
+                  <CardHeader>
+                    <CardTitle className="flex items-center gap-2">
+                      <Calendar className="w-5 h-5 text-brand-blue" />
+                      How to Register
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-3 text-sm">
+                    <p>
+                      <span className="font-semibold">1. Browse Events</span> - Use filters to find events of interest
+                    </p>
+                    <p>
+                      <span className="font-semibold">2. View Details</span> - Click on any event to see full information
+                    </p>
+                    <p>
+                      <span className="font-semibold">3. Register</span> - Click the "Register" button to sign up
+                    </p>
+                    <p>
+                      <span className="font-semibold">4. Attend</span> - Mark your calendar and don't miss it!
+                    </p>
+                  </CardContent>
+                </Card>
+
+                <Card className="border-brand-magenta/20 bg-gradient-to-br from-brand-magenta/10 to-brand-magenta/5">
+                  <CardHeader>
+                    <CardTitle className="flex items-center gap-2">
+                      <ChevronRight className="w-5 h-5 text-brand-magenta" />
+                      Get Notified
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="text-sm text-foreground/80">
+                    <p className="mb-4">
+                      Events will be populated from our Directus CMS system. New events will be posted regularly across all schools and departments.
+                    </p>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="w-full"
+                      asChild
+                    >
+                      <a href="/campus-life">
+                        Explore Campus Life
+                        <ChevronRight className="w-4 h-4 ml-2" />
+                      </a>
+                    </Button>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Event Detail Modal */}
       <EventModal event={selectedEvent} onClose={() => setSelectedEvent(null)} />
