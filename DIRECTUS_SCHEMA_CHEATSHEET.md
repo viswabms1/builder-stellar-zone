@@ -144,7 +144,9 @@ If using codes in your database:
 
 **Schools:** ENG, HS, LAW, CAM, BAS, CCA, DES, ADH, MED
 
-**Department Codes:** cse, ece, ds, mech, aero, aiml, aids, airo, cyber, ct, meeng, mca, msds, nurs, phys, pharm, ahs, ballb, bballb, llb3y, llm-cc, llm-tech, bba, bba-bfsi, bba-ro, bcom-std, bcom-acca, bcom-cma, bcom-ca, mba, des-prod, des-graph, bca, bsc-ds, msc-ds
+**Department Codes (Engineering):** cse, ece, ds, mech, aero, aiml, aids, airo, cyber, ct, meeng, mca, msds, phys-eng, chem-eng, math-eng, hss-eng
+
+**Department Codes (Other Schools):** nurs, phys, pharm, ahs, ballb, bballb, llb3y, llm-cc, llm-tech, bba, bba-bfsi, bba-ro, bcom-std, bcom-acca, bcom-cma, bcom-ca, mba, des-prod, des-graph, bca, bsc-ds, msc-ds, jmc
 
 ---
 
