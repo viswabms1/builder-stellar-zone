@@ -50,35 +50,59 @@ export function useEvents(options?: UseEventsOptions): UseEventsResult {
         setLoading(true);
         setError(null);
 
-        // TODO: Replace with Directus API call
-        // const response = await fetch(
-        //   'https://dsu-website-headless-cms.directus.app/items/events?filter[status]=upcoming,ongoing'
-        // );
-        // const data = await response.json();
-        // let fetchedEvents = data.data;
-
-        // For now, use local data
         let fetchedEvents: Event[] = [];
 
-        if (options?.school && options?.department) {
-          fetchedEvents = getEventsBySchoolAndDepartment(
-            options.school,
-            options.department
+        try {
+          // Fetch directly from Directus API
+          const directusUrl = "https://dsu-website-headless-cms.directus.app/items/events?filter[status][_in]=upcoming,ongoing&sort=date&limit=100";
+          const response = await fetch(directusUrl);
+
+          if (response.ok) {
+            const data = await response.json();
+            fetchedEvents = data.data || [];
+            console.log(
+              "[useEvents] Fetched from Directus:",
+              fetchedEvents.length,
+              "events"
+            );
+          } else {
+            console.warn(
+              "[useEvents] Directus API returned non-200 status, using local data"
+            );
+            fetchedEvents = getAllEvents();
+          }
+        } catch (apiError) {
+          console.warn(
+            "[useEvents] Directus fetch failed, falling back to local data:",
+            apiError
           );
-        } else if (options?.school) {
-          fetchedEvents = getEventsBySchool(options.school);
-        } else if (options?.tag) {
-          fetchedEvents = getEventsByTag(options.tag);
-        } else if (options?.category) {
-          fetchedEvents = getEventsByCategory(options.category);
-        } else if (options?.limit) {
-          fetchedEvents = getUpcomingEvents(options.limit);
-        } else {
           fetchedEvents = getAllEvents();
         }
 
-        // Apply limit if specified (and not already applied by specific function)
-        if (options?.limit && !options?.school && !options?.department) {
+        // Apply filters
+        if (options?.school) {
+          fetchedEvents = fetchedEvents.filter(
+            (e) => e.school_code === options.school || !e.school_code
+          );
+        }
+        if (options?.department) {
+          fetchedEvents = fetchedEvents.filter(
+            (e) => e.department_code === options.department
+          );
+        }
+        if (options?.category) {
+          fetchedEvents = fetchedEvents.filter(
+            (e) => e.category === options.category
+          );
+        }
+        if (options?.tag) {
+          fetchedEvents = fetchedEvents.filter(
+            (e) => e.tags?.includes(options.tag!)
+          );
+        }
+
+        // Apply limit if specified
+        if (options?.limit) {
           fetchedEvents = fetchedEvents.slice(0, options.limit);
         }
 
