@@ -60,3 +60,17 @@ export function getNewsByCategory(category: NewsItem["category"]): NewsItem[] {
 export function getNewsByTag(tag: string): NewsItem[] {
   return [];
 }
+
+/**
+ * Get news items by school and department
+ */
+export function getNewsBySchoolAndDepartment(school: string, department: string): NewsItem[] {
+  return [];
+}
+
+/**
+ * Get latest news items (limited by count)
+ */
+export function getLatestNews(limit: number = 10): NewsItem[] {
+  return [];
+}
