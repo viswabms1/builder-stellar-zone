@@ -159,6 +159,34 @@ Use this guide to quickly populate Schools and Departments in Directus.
     "full_name": "M.Sc Data Science",
     "school": "Engineering",
     "type": "PG"
+  },
+  {
+    "code": "phys-eng",
+    "name": "Physics",
+    "full_name": "Physics Department",
+    "school": "Engineering",
+    "type": "Foundation"
+  },
+  {
+    "code": "chem-eng",
+    "name": "Chemistry",
+    "full_name": "Chemistry Department",
+    "school": "Engineering",
+    "type": "Foundation"
+  },
+  {
+    "code": "math-eng",
+    "name": "Mathematics",
+    "full_name": "Mathematics Department",
+    "school": "Engineering",
+    "type": "Foundation"
+  },
+  {
+    "code": "hss-eng",
+    "name": "Humanities & Social Sciences",
+    "full_name": "Humanities & Social Sciences",
+    "school": "Engineering",
+    "type": "Foundation"
   }
 ]
 ```
