@@ -311,7 +311,8 @@ ALTER TABLE announcements ADD COLUMN department VARCHAR(50);
 - Commerce & Management
 - Basic & Applied Sciences
 - Computer Applications
-- Arts, Design & Humanities
+- Design
+- Arts, Design & Humanities (Journalism only)
 - Medicine
 
 **Total Departments:** 50+ across all schools
