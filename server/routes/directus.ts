@@ -210,8 +210,8 @@ export const getAnnouncements: RequestHandler = async (req, res) => {
     }
 
     // Fetch from Directus
-    // Filter for active announcements only, sorted by date (newest first)
-    const fetchUrl = `${DIRECTUS_URL}/items/announcements?filter[status][_eq]=active&sort=-date&limit=100`;
+    // Filter for active announcements only, sorted by expiry_date (newest first)
+    const fetchUrl = `${DIRECTUS_URL}/items/announcements?filter[status][_eq]=active&sort=-expiry_date&limit=100`;
 
     console.log(`[Directus API] Fetching announcements from: ${fetchUrl}`);
 
@@ -243,21 +243,8 @@ export const getAnnouncements: RequestHandler = async (req, res) => {
       JSON.stringify(data, null, 2),
     );
 
-    // Extract announcements from Directus response
-    const announcements = (data.data || []).map((item: any) => ({
-      id: item.id,
-      title: item.title || "",
-      content: item.content || "",
-      type: item.type || "announcement",
-      category: item.category || "General",
-      priority: item.priority || "medium",
-      date: item.date || new Date().toISOString(),
-      expiryDate: item.expiry_date,
-      status: item.status || "active",
-      school: item.school,
-      image: item.image,
-      attachments: item.attachments || [],
-    }));
+    // Directus response is already in correct format, just pass through
+    const announcements = data.data || [];
 
     const responseData = {
       success: true,

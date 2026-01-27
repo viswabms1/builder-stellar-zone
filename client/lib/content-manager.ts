@@ -122,10 +122,14 @@ export function getCurriculumBySchool(school: string | undefined): CurriculumPro
 }
 
 export function getAnnouncementsBySchool(school: string | undefined): Announcement[] {
-  if (!school) return ALL_ANNOUNCEMENTS.filter((a) => a.status === "active" && !a.school);
+  if (!school) return ALL_ANNOUNCEMENTS.filter((a) => a.status === "active" && !a.school_code);
   return ALL_ANNOUNCEMENTS.filter(
-    (a) => a.status === "active" && (a.school === school || !a.school)
-  ).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+    (a) => a.status === "active" && (a.school_code === school || !a.school_code)
+  ).sort((a, b) => {
+    const dateA = new Date(a.expiry_date || a.date || 0).getTime();
+    const dateB = new Date(b.expiry_date || b.date || 0).getTime();
+    return dateB - dateA;
+  });
 }
 
 export function getNewsBySchool(school: string | undefined): NewsItem[] {
@@ -163,10 +167,10 @@ export function convertAnnouncementToCarouselItem(a: Announcement): CarouselItem
     id: a.id,
     title: a.title,
     category: "Announcement",
-    date: a.date,
-    description: a.content,
+    date: a.date || a.expiry_date || new Date().toISOString(),
+    description: a.description,
     image: a.image,
-    link: a.attachments?.[0]?.fileUrl,
+    link: a.attachment ? `https://dsu-website-headless-cms.directus.app/assets/${a.attachment}` : undefined,
   };
 }
 
@@ -274,8 +278,12 @@ export function getEventsBySchoolAndDepartment(school: string | undefined, depar
 export function getAnnouncementsByDepartment(school: string | undefined, department: string | undefined): Announcement[] {
   if (!school || !department) return [];
   return ALL_ANNOUNCEMENTS.filter(
-    (a) => a.status === "active" && a.school === school && a.department === department
-  ).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+    (a) => a.status === "active" && a.school_code === school && a.department_code === department
+  ).sort((a, b) => {
+    const dateA = new Date(a.expiry_date || a.date || 0).getTime();
+    const dateB = new Date(b.expiry_date || b.date || 0).getTime();
+    return dateB - dateA;
+  });
 }
 
 // ============================================================================
