@@ -41,8 +41,8 @@ export function useNews(options?: UseNewsOptions): UseNewsResult {
         setLoading(true);
         setError(null);
 
-        // Fetch from Directus API
-        const directusUrl = `https://dsu-website-headless-cms.directus.app/items/news?sort=-date&limit=${options?.limit || 100}`;
+        // Fetch from Directus API (no sorting - some news may not have date field)
+        const directusUrl = `https://dsu-website-headless-cms.directus.app/items/news?limit=${options?.limit || 100}`;
 
         console.log("[useNews] Fetching from:", directusUrl);
 

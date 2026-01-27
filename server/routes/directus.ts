@@ -374,8 +374,8 @@ export const getNews: RequestHandler = async (req, res) => {
     }
 
     // Fetch from Directus
-    // Don't filter by status - let client handle it (some news may not have status field)
-    const fetchUrl = `${DIRECTUS_URL}/items/news?sort=-date&limit=100`;
+    // Don't filter by status or sort - let client handle it (some news may not have status/date fields)
+    const fetchUrl = `${DIRECTUS_URL}/items/news?limit=100`;
 
     console.log(`[Directus API] Fetching news from: ${fetchUrl}`);
 

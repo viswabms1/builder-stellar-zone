@@ -37,7 +37,7 @@ export function useDepartmentNews(
         setError(null);
 
         const departmentCode = options.departmentCode.toLowerCase();
-        const directusUrl = `https://dsu-website-headless-cms.directus.app/items/news?filter[department_code][_eq]=${departmentCode}&sort=-date&limit=${options.limit || 50}`;
+        const directusUrl = `https://dsu-website-headless-cms.directus.app/items/news?filter[department_code][_eq]=${departmentCode}&limit=${options.limit || 50}`;
 
         console.log("[useDepartmentNews] Fetching from:", directusUrl);
 
