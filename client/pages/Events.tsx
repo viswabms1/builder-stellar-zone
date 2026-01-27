@@ -514,18 +514,45 @@ export default function Events() {
               ))}
             </div>
           ) : filteredEvents.length === 0 ? (
-            <div className="text-center py-16">
-              <Filter className="w-12 h-12 text-foreground/30 mx-auto mb-4" />
-              <h3 className="text-xl font-display mb-2">No events found</h3>
-              <p className="text-foreground/70 max-w-md mx-auto">
-                {hasActiveFilters
-                  ? "Try adjusting your filters to find more events."
-                  : "Check back soon for upcoming events!"}
-              </p>
+            <div className="text-center py-20">
+              <div className="mb-12">
+                <Filter className="w-16 h-16 text-foreground/30 mx-auto mb-6" />
+                <h2 className="text-3xl font-display font-bold text-foreground mb-4">
+                  No Events Available
+                </h2>
+                <p className="text-lg text-foreground/70 max-w-2xl mx-auto mb-8">
+                  {hasActiveFilters
+                    ? "Try adjusting your filters to find more events."
+                    : "Events will be posted here as they are scheduled across the university. Check back soon!"}
+                </p>
+              </div>
+
+              {!hasActiveFilters && (
+                <div className="bg-gradient-to-r from-brand-blue/5 via-brand-magenta/5 to-brand-orange/5 border border-border rounded-xl p-8 mb-12">
+                  <h3 className="text-xl font-display font-semibold text-foreground mb-4">
+                    About University Events
+                  </h3>
+                  <div className="text-left max-w-2xl mx-auto space-y-3 text-foreground/80">
+                    <p>
+                      🎓 <span className="font-semibold">Workshops & Seminars</span> - Expert-led sessions on cutting-edge topics in AI, technology, healthcare, law, and business
+                    </p>
+                    <p>
+                      🏆 <span className="font-semibold">Conferences & Hackathons</span> - Major events bringing together students, faculty, and industry leaders for networking and innovation
+                    </p>
+                    <p>
+                      🎭 <span className="font-semibold">Cultural & Sports Events</span> - Celebrating our diverse campus community through various activities and competitions
+                    </p>
+                    <p>
+                      📚 <span className="font-semibold">Academic Events</span> - Research presentations, guest lectures, and knowledge-sharing sessions across all schools
+                    </p>
+                  </div>
+                </div>
+              )}
+
               {hasActiveFilters && (
                 <Button
                   variant="outline"
-                  size="sm"
+                  size="lg"
                   onClick={() =>
                     setFilters({
                       school: "",
@@ -534,8 +561,9 @@ export default function Events() {
                       search: "",
                     })
                   }
-                  className="mt-4"
+                  className="mt-8"
                 >
+                  <X className="w-4 h-4 mr-2" />
                   Clear Filters
                 </Button>
               )}
