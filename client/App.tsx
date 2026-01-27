@@ -1744,6 +1744,7 @@ function App() {
                 <Route path="/careers" element={<Careers />} />
                 <Route path="/campus-life" element={<CampusLife />} />
                 <Route path="/events" element={<Events />} />
+                <Route path="/test-announcements" element={<TestAnnouncements />} />
                 <Route path="/examinations" element={<Examinations />} />
                 <Route path="/research" element={<Research />} />
                 <Route path="/ai-first" element={<AIFirst />} />
