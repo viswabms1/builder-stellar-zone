@@ -2,6 +2,10 @@
 
 Use this guide to quickly populate Schools and Departments in Directus.
 
+⚠️ **NOTE:** Engineering school has **17 departments** total:
+- 13 Core departments (CSE, ECE, Mechanical, Aerospace, etc.)
+- 4 Foundational departments (Physics, Chemistry, Mathematics, Humanities & Social Sciences)
+
 ---
 
 ## Schools - Copy-Paste JSON
