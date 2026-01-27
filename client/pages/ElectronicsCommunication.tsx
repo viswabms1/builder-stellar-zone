@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CurriculumLibrary } from "@/components/CurriculumLibrary";
+import { DepartmentNoticeBoard } from "@/components/DepartmentNoticeBoard";
 import { getCurriculumByDepartment } from "@/lib/content-manager";
 import {
   Bot,
@@ -437,7 +438,7 @@ export default function ElectronicsCommunication() {
 
       <AccreditationDocumentsECE />
 
-      <NoticeBoardECE />
+      <DepartmentNoticeBoard school="Engineering" department="Electronics & Communication" />
 
       <LabsFacilitiesCarouselECE />
 
@@ -1287,4 +1288,3 @@ function NoticeBoardECE() {
     </section>
   );
 }
-
