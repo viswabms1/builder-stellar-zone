@@ -44,6 +44,11 @@ Use this guide to quickly populate Schools and Departments in Directus.
     "full_name": "School of Computer Applications"
   },
   {
+    "code": "DES",
+    "name": "Design",
+    "full_name": "School of Design & Digital Trans-Media"
+  },
+  {
     "code": "ADH",
     "name": "Arts, Design & Humanities",
     "full_name": "School of Arts, Design & Humanities"
