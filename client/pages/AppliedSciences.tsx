@@ -38,6 +38,7 @@ import { NewsSection } from "@/components/NewsSection";
 import { EventsSection } from "@/components/EventsSection";
 import { AnnouncementBanner } from "@/components/AnnouncementBanner";
 import { DeanSection, type DeanInfo } from "@/components/DeanSection";
+import { ProgramFinder } from "@/components/ProgramFinder";
 import { useAutoMuteOnScroll } from "@/hooks/useAutoMuteOnScroll";
 import {
   getAppliedSciencesEvents,
