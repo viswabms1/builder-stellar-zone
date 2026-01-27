@@ -34,11 +34,6 @@ Use this guide to quickly populate Schools and Departments in Directus.
     "full_name": "School of Commerce & Management"
   },
   {
-    "code": "DES",
-    "name": "Design",
-    "full_name": "School of Design & Digital Trans-Media"
-  },
-  {
     "code": "BAS",
     "name": "Basic & Applied Sciences",
     "full_name": "School of Basic & Applied Sciences"
@@ -50,13 +45,8 @@ Use this guide to quickly populate Schools and Departments in Directus.
   },
   {
     "code": "ADH",
-    "name": "Arts & Humanities",
+    "name": "Arts, Design & Humanities",
     "full_name": "School of Arts, Design & Humanities"
-  },
-  {
-    "code": "JMC",
-    "name": "Journalism",
-    "full_name": "School of Journalism & Mass Communication"
   },
   {
     "code": "MED",
