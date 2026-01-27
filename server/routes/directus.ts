@@ -187,6 +187,101 @@ export const checkDirectusHealth: RequestHandler = async (req, res) => {
 };
 
 /**
+ * Fetch Announcements from Directus
+ * Endpoint: GET /api/directus/announcements
+ * Returns all active announcements with optional filtering
+ */
+export const getAnnouncements: RequestHandler = async (req, res) => {
+  try {
+    const cacheKey = "directus:announcements";
+    const bypassCache = req.query.cache === "false";
+
+    // Check cache first (unless explicitly bypassed)
+    if (!bypassCache) {
+      const cachedData = getFromCache<any>(cacheKey);
+      if (cachedData) {
+        console.log(`[CACHE HIT] ${cacheKey}`);
+        return res.json(cachedData);
+      }
+    }
+
+    if (bypassCache) {
+      console.log(`[CACHE BYPASS] ${cacheKey}`);
+    }
+
+    // Fetch from Directus
+    // Filter for active announcements only, sorted by date (newest first)
+    const fetchUrl = `${DIRECTUS_URL}/items/announcements?filter[status][_eq]=active&sort=-date&limit=100`;
+
+    console.log(`[Directus API] Fetching announcements from: ${fetchUrl}`);
+
+    const response = await fetch(fetchUrl, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    console.log(
+      `[Directus API] Response status: ${response.status} ${response.statusText}`,
+    );
+
+    if (!response.ok) {
+      const errorBody = await response.text();
+      console.error(
+        `Directus API error: ${response.status} ${response.statusText}`,
+        errorBody,
+      );
+      throw new Error(
+        `Directus API error: ${response.status} ${response.statusText}`,
+      );
+    }
+
+    const data = await response.json();
+    console.log(
+      "[Directus API] Announcements response:",
+      JSON.stringify(data, null, 2),
+    );
+
+    // Extract announcements from Directus response
+    const announcements = (data.data || []).map((item: any) => ({
+      id: item.id,
+      title: item.title || "",
+      content: item.content || "",
+      type: item.type || "announcement",
+      category: item.category || "General",
+      priority: item.priority || "medium",
+      date: item.date || new Date().toISOString(),
+      expiryDate: item.expiry_date,
+      status: item.status || "active",
+      school: item.school,
+      image: item.image,
+      attachments: item.attachments || [],
+    }));
+
+    const responseData = {
+      success: true,
+      data: announcements,
+      count: announcements.length,
+    };
+
+    // Cache the response
+    setCache(cacheKey, responseData);
+
+    res.json(responseData);
+  } catch (error) {
+    console.error("[Directus Announcements Error]", error);
+    res.status(500).json({
+      success: false,
+      data: [],
+      error:
+        error instanceof Error ? error.message : "Failed to fetch announcements",
+      fallback: true,
+    });
+  }
+};
+
+/**
  * Clear Directus cache for all entries
  * Endpoint: POST /api/directus/cache/clear
  * This can be called manually to force refresh content
