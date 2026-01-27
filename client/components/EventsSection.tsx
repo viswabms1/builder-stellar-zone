@@ -141,14 +141,14 @@ export function EventsSection({
                     </div>
                   )}
                 </div>
-                {event.registrationRequired && (
+                {event.registration_required && (
                   <Button
                     size="sm"
                     asChild
                     className={event.registered === event.capacity ? "opacity-50 cursor-not-allowed" : ""}
                   >
-                    {event.registrationLink ? (
-                      <a href={event.registrationLink}>
+                    {event.registration_link ? (
+                      <a href={event.registration_link}>
                         {event.registered === event.capacity ? "Full" : "Register Now"}
                       </a>
                     ) : (
@@ -203,7 +203,7 @@ export function EventsSection({
                     </div>
                   )}
                 </div>
-                {event.registrationRequired && (
+                {event.registration_required && (
                   <Button size="sm" variant="outline" className="mt-2 w-full">
                     Register
                   </Button>
@@ -252,7 +252,7 @@ export function EventsSection({
                 </div>
               )}
             </div>
-            {event.registrationRequired && (
+            {event.registration_required && (
               <Button size="sm" variant="outline">
                 Register Now
               </Button>
