@@ -246,15 +246,17 @@ function EventModal({ event, onClose }: { event: Event | null; onClose: () => vo
                 </div>
               </div>
 
-              <div>
-                <h3 className="text-sm font-semibold text-foreground/70 uppercase tracking-wide mb-2">
-                  Location
-                </h3>
-                <div className="flex items-start gap-3">
-                  <MapPin className="w-5 h-5 text-brand-magenta flex-shrink-0 mt-0.5" />
-                  <span className="text-foreground">{event.location}</span>
+              {event.location && (
+                <div>
+                  <h3 className="text-sm font-semibold text-foreground/70 uppercase tracking-wide mb-2">
+                    Location
+                  </h3>
+                  <div className="flex items-start gap-3">
+                    <MapPin className="w-5 h-5 text-brand-magenta flex-shrink-0 mt-0.5" />
+                    <span className="text-foreground">{event.location}</span>
+                  </div>
                 </div>
-              </div>
+              )}
 
               {event.registered !== undefined && event.capacity && (
                 <div>
