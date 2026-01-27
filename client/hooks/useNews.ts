@@ -1,13 +1,5 @@
 import { useEffect, useState } from "react";
-import type { NewsItem } from "@/data/news";
-import {
-  getAllNews,
-  getNewsBySchool,
-  getNewsBySchoolAndDepartment,
-  getNewsByCategory,
-  getLatestNews,
-  getNewsByTag,
-} from "@/data/news";
+import type { NewsItem } from "@/lib/content-manager";
 
 interface UseNewsOptions {
   school?: string;
@@ -24,16 +16,15 @@ interface UseNewsResult {
 }
 
 /**
- * Custom hook for fetching and filtering news
- * Currently uses local data; ready to swap with Directus API endpoint
+ * Custom hook for fetching news from Directus CMS
  *
  * @example
  * // Get all news for Engineering school
- * const { news } = useNews({ school: "Engineering" });
+ * const { news } = useNews({ school: "ENG" });
  *
  * @example
  * // Get news for specific department
- * const { news } = useNews({ school: "Engineering", department: "CSE" });
+ * const { news } = useNews({ school: "ENG", department: "cse" });
  *
  * @example
  * // Get latest 5 placement news items
@@ -50,41 +41,61 @@ export function useNews(options?: UseNewsOptions): UseNewsResult {
         setLoading(true);
         setError(null);
 
-        // TODO: Replace with Directus API call
-        // const response = await fetch(
-        //   'https://dsu-website-headless-cms.directus.app/items/news?filter[status]=published'
-        // );
-        // const data = await response.json();
-        // let fetchedNews = data.data;
+        // Fetch from Directus API
+        const directusUrl = `https://dsu-website-headless-cms.directus.app/items/news?sort=-date&limit=${options?.limit || 100}`;
 
-        // For now, use local data
-        let fetchedNews: NewsItem[] = [];
+        console.log("[useNews] Fetching from:", directusUrl);
 
-        if (options?.school && options?.department) {
-          fetchedNews = getNewsBySchoolAndDepartment(
-            options.school,
-            options.department
-          );
-        } else if (options?.school) {
-          fetchedNews = getNewsBySchool(options.school);
-        } else if (options?.tag) {
-          fetchedNews = getNewsByTag(options.tag);
-        } else if (options?.category) {
-          fetchedNews = getNewsByCategory(options.category);
-        } else if (options?.limit) {
-          fetchedNews = getLatestNews(options.limit);
+        const response = await fetch(directusUrl);
+
+        if (response.ok) {
+          const data = await response.json();
+          let fetchedNews = data.data || [];
+
+          // Filter for published news (or news without status)
+          fetchedNews = fetchedNews.filter((newsItem: any) => {
+            if (!newsItem.status) return true; // Include news without status
+            return newsItem.status === "published";
+          });
+
+          // Client-side filtering
+          if (options?.school) {
+            fetchedNews = fetchedNews.filter((n: any) =>
+              n.school_code === options.school || !n.school_code
+            );
+          }
+
+          if (options?.department) {
+            fetchedNews = fetchedNews.filter((n: any) =>
+              n.department_code === options.department
+            );
+          }
+
+          if (options?.category) {
+            fetchedNews = fetchedNews.filter((n: any) =>
+              n.category === options.category
+            );
+          }
+
+          if (options?.tag) {
+            fetchedNews = fetchedNews.filter((n: any) =>
+              n.tags?.includes(options.tag)
+            );
+          }
+
+          // Apply limit after filtering
+          if (options?.limit) {
+            fetchedNews = fetchedNews.slice(0, options.limit);
+          }
+
+          setNews(fetchedNews);
         } else {
-          fetchedNews = getAllNews();
+          throw new Error(`API responded with status ${response.status}`);
         }
-
-        // Apply limit if specified (and not already applied by specific function)
-        if (options?.limit && !options?.school && !options?.department) {
-          fetchedNews = fetchedNews.slice(0, options.limit);
-        }
-
-        setNews(fetchedNews);
       } catch (err) {
+        console.error("[useNews] Error:", err);
         setError(err instanceof Error ? err.message : "Failed to fetch news");
+        setNews([]);
       } finally {
         setLoading(false);
       }
