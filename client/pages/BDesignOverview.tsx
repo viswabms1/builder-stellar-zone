@@ -881,6 +881,11 @@ export default function BDesignOverview() {
         </div>
       </section>
 
+      <ProgramFinder
+        schoolName="School of Design & Digital Trans-Media"
+        themeColor="magenta"
+      />
+
       <section className="px-3 py-8">
         <div className="mx-auto grid max-w-5xl items-start gap-4 lg:grid-cols-2">
           <Card className="rounded-none border border-orange-500/20 bg-orange-500/10">
