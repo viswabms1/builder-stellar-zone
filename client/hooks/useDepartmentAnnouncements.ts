@@ -144,7 +144,25 @@ export function useDepartmentAnnouncements(
 
 /**
  * Helper function to get department code from department name
+ * Handles case-insensitive lookups and common variations
  */
 export function getDepartmentCode(departmentName: string): string {
-  return DEPARTMENT_CODE_MAP[departmentName] || departmentName.toLowerCase();
+  // Try exact match first
+  if (DEPARTMENT_CODE_MAP[departmentName]) {
+    return DEPARTMENT_CODE_MAP[departmentName];
+  }
+
+  // Try case-insensitive match
+  const normalizedName = departmentName.trim();
+  const matchingKey = Object.keys(DEPARTMENT_CODE_MAP).find(
+    key => key.toLowerCase() === normalizedName.toLowerCase()
+  );
+
+  if (matchingKey) {
+    return DEPARTMENT_CODE_MAP[matchingKey];
+  }
+
+  // Fallback: convert to lowercase and remove spaces for code-like names
+  // e.g., "CSE" -> "cse", "AI ML" -> "aiml"
+  return normalizedName.toLowerCase().replace(/\s+/g, '');
 }
