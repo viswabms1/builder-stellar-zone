@@ -1130,6 +1130,11 @@ export default function AppliedSciences() {
         </div>
       </section>
 
+      <ProgramFinder
+        schoolName="School of Basic & Applied Sciences"
+        themeColor="orange"
+      />
+
       <AnnouncementBanner priority="high" variant="banner" />
       <NewsSection variant="carousel" title="Department News" />
       <EventsSection variant="carousel" title="Upcoming Events" />
