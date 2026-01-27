@@ -501,7 +501,19 @@ export default function Events() {
       {/* Events Grid */}
       <section className="px-3 py-12">
         <div className="max-w-7xl mx-auto">
-          {filteredEvents.length === 0 ? (
+          {error && (
+            <div className="mb-6 p-4 bg-red-500/10 border border-red-500/20 rounded-lg text-red-600">
+              Error loading events: {error}
+            </div>
+          )}
+
+          {loading ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[...Array(6)].map((_, i) => (
+                <div key={i} className="h-96 bg-foreground/10 rounded-lg animate-pulse" />
+              ))}
+            </div>
+          ) : filteredEvents.length === 0 ? (
             <div className="text-center py-16">
               <Filter className="w-12 h-12 text-foreground/30 mx-auto mb-4" />
               <h3 className="text-xl font-display mb-2">No events found</h3>
