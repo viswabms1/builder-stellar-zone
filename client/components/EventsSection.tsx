@@ -128,10 +128,12 @@ export function EventsSection({
                       <span>{event.time}</span>
                     </div>
                   )}
-                  <div className="flex items-center gap-2 text-foreground/70">
-                    <MapPin className="h-4 w-4" />
-                    <span className="truncate">{event.location}</span>
-                  </div>
+                  {event.location && (
+                    <div className="flex items-center gap-2 text-foreground/70">
+                      <MapPin className="h-4 w-4" />
+                      <span className="truncate">{event.location}</span>
+                    </div>
+                  )}
                   {event.capacity && event.registered !== undefined && (
                     <div className="flex items-center gap-2 text-foreground/70">
                       <Users className="h-4 w-4" />
@@ -194,10 +196,12 @@ export function EventsSection({
                     <Calendar className="h-3 w-3" />
                     <span>{new Date(event.date).toLocaleDateString()}</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <MapPin className="h-3 w-3" />
-                    <span className="truncate">{event.location}</span>
-                  </div>
+                  {event.location && (
+                    <div className="flex items-center gap-2">
+                      <MapPin className="h-3 w-3" />
+                      <span className="truncate">{event.location}</span>
+                    </div>
+                  )}
                 </div>
                 {event.registrationRequired && (
                   <Button size="sm" variant="outline" className="mt-2 w-full">
@@ -241,10 +245,12 @@ export function EventsSection({
                 <Calendar className="h-4 w-4" />
                 <span>{new Date(event.date).toLocaleDateString()}</span>
               </div>
-              <div className="flex items-center gap-2">
-                <MapPin className="h-4 w-4" />
-                <span className="truncate">{event.location}</span>
-              </div>
+              {event.location && (
+                <div className="flex items-center gap-2">
+                  <MapPin className="h-4 w-4" />
+                  <span className="truncate">{event.location}</span>
+                </div>
+              )}
             </div>
             {event.registrationRequired && (
               <Button size="sm" variant="outline">
@@ -310,10 +316,10 @@ function EventsCarousel({ events, title, description, compact = false }: EventsC
       </div>
 
       <Card className="group overflow-hidden rounded-2xl border-2 border-border/30 bg-card/40 backdrop-blur-sm">
-        {currentEvent.image && (
+        {currentEvent.events_image && (
           <div className="relative h-48 overflow-hidden">
             <img
-              src={currentEvent.image}
+              src={`https://dsu-website-headless-cms.directus.app/assets/${currentEvent.events_image}`}
               alt={currentEvent.title}
               className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
             />
