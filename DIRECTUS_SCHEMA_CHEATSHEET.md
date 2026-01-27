@@ -24,9 +24,10 @@ MED  → Medicine
 
 ## DEPARTMENTS BY SCHOOL
 
-### ENGINEERING (13 depts)
-- **UG:** CSE | ECE | Data Science | Mechanical | Aerospace | AIML | AIDS | AI Robotics | Cybersecurity | Computer Technology | Medical Engineering
-- **PG:** MCA | M.Sc Data Science
+### ENGINEERING (17 depts)
+- **Core UG:** CSE | ECE | Data Science | Mechanical | Aerospace | AIML | AIDS | AI Robotics | Cybersecurity | Computer Technology | Medical Engineering
+- **Core PG:** MCA | M.Sc Data Science
+- **Foundational:** Physics | Chemistry | Mathematics | Humanities & Social Sciences
 
 ### HEALTH SCIENCES (7 depts)
 - **UG:** Nursing | Physiotherapy | Pharmacy | Allied Health Sciences
