@@ -213,6 +213,15 @@ When creating Directus records, use EXACT values:
 - ✅ Correct: `"Engineering"`
 - ❌ Incorrect: `"engineering"` or `"ENGINEERING"`
 
+### Foundational Departments
+Engineering has 4 foundational/supporting departments that back all engineering programs:
+- Physics (code: `phys-eng`)
+- Chemistry (code: `chem-eng`)
+- Mathematics (code: `math-eng`)
+- Humanities & Social Sciences (code: `hss-eng`)
+
+Use these for announcements/news/events related to foundational coursework.
+
 ### School Field Mapping
 **In Directus:** `school` field should contain short name
 ```
