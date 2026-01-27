@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { ImageModal } from "@/components/ImageModal";
 import { getCategoryStyles, convertAnnouncementToCarouselItem, convertEventToCarouselItem, convertNewsToCarouselItem, type CarouselItem } from "@/lib/content-manager";
 import { useDepartmentAnnouncements, getDepartmentCode } from "@/hooks/useDepartmentAnnouncements";
 import { useDepartmentEvents } from "@/hooks/useDepartmentEvents";
@@ -39,6 +40,7 @@ export function DepartmentNoticeBoard({ school = "Engineering", department }: { 
   const [currentAnnouncementIndex, setCurrentAnnouncementIndex] = useState(0);
   const [currentNewsIndex, setCurrentNewsIndex] = useState(0);
   const [currentEventIndex, setCurrentEventIndex] = useState(0);
+  const [selectedImage, setSelectedImage] = useState<{ src: string; alt: string; title?: string } | null>(null);
 
   useEffect(() => {
     if (announcements.length === 0) return;
@@ -88,12 +90,28 @@ export function DepartmentNoticeBoard({ school = "Engineering", department }: { 
 
         <Card className="group overflow-hidden rounded-2xl border-2 border-border/30 bg-card/40 backdrop-blur-sm">
           {currentItem.image && (
-            <div className="relative h-48 overflow-hidden">
+            <div
+              className="relative h-48 overflow-hidden cursor-pointer"
+              onClick={() => setSelectedImage({ src: currentItem.image!, alt: currentItem.title, title: currentItem.title })}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  setSelectedImage({ src: currentItem.image!, alt: currentItem.title, title: currentItem.title });
+                }
+              }}
+              aria-label={`Click to view ${currentItem.title} image in larger size`}
+            >
               <img
                 src={currentItem.image}
                 alt={currentItem.title}
                 className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
               />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity text-sm font-semibold">
+                  Click to enlarge
+                </span>
+              </div>
             </div>
           )}
           <CardContent className="p-4 space-y-3">
@@ -174,6 +192,16 @@ export function DepartmentNoticeBoard({ school = "Engineering", department }: { 
           {renderCarousel("Announcements", announcements, currentAnnouncementIndex, setCurrentAnnouncementIndex, "Announcement")}
         </div>
       </div>
+
+      {/* Image Lightbox Modal */}
+      {selectedImage && (
+        <ImageModal
+          imageSrc={selectedImage.src}
+          imageAlt={selectedImage.alt}
+          title={selectedImage.title}
+          onClose={() => setSelectedImage(null)}
+        />
+      )}
     </section>
   );
 }
