@@ -97,30 +97,7 @@ const ALL_NEWS: NewsItem[] = [];
 const ALL_EVENTS: Event[] = [];
 
 const ALL_CURRICULA: CurriculumProgram[] = [
-  // ============ HEALTH SCIENCES: NURSING ============
-  {
-    id: "nursing-bsc",
-    label: "B.Sc Nursing",
-    description:
-      "4-year comprehensive nursing program with clinical integration",
-    image:
-      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop",
-    batches: [
-      {
-        year: "2025-26",
-        summary:
-          "Latest curriculum with clinical rotation integration and evidence-based nursing practice across all 8 semesters",
-        documentUrl: "https://www.dsu.edu.in/images/HealthSciences/nursing/BSC-Curriculum-2025-26.pdf",
-        current: true,
-      },
-      {
-        year: "2024-25",
-        summary: "Previous curriculum batch with comprehensive nursing theory and clinical practice",
-        documentUrl: "https://www.dsu.edu.in/images/HealthSciences/nursing/BSC-Curriculum-2024-25.pdf",
-      },
-    ],
-    meta: { level: "Undergraduate", department: "Nursing", school: "Health Sciences" },
-  },
+  // All curriculum data is now managed in Directus CMS
   {
     id: "nursing-msc",
     label: "M.Sc Nursing",
