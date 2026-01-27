@@ -4,18 +4,16 @@
 
 ---
 
-## SCHOOLS (10 Total)
+## SCHOOLS (8 Total)
 
 ```
 ENG  → Engineering
 HS   → Health Sciences
 LAW  → Law
 CAM  → Commerce & Management
-DES  → Design
 BAS  → Basic & Applied Sciences
 CCA  → Computer Applications
-ADH  → Arts & Humanities
-JMC  → Journalism
+ADH  → Arts, Design & Humanities
 MED  → Medicine
 ```
 
