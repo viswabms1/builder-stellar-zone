@@ -191,13 +191,20 @@ export function convertNewsToCarouselItem(n: NewsItem): CarouselItem {
 
 export function convertEventToCarouselItem(e: Event): CarouselItem {
   const imageId = typeof e.events_image === 'string' ? e.events_image : e.events_image?.id;
+  const imageUrl = imageId ? `https://dsu-website-headless-cms.directus.app/assets/${imageId}` : undefined;
+
+  console.log("[convertEventToCarouselItem] Event:", e.title);
+  console.log("[convertEventToCarouselItem] events_image:", e.events_image);
+  console.log("[convertEventToCarouselItem] imageId:", imageId);
+  console.log("[convertEventToCarouselItem] imageUrl:", imageUrl);
+
   return {
     id: e.id,
     title: e.title,
     category: "Event",
     date: e.date,
     description: e.description,
-    image: imageId ? `https://dsu-website-headless-cms.directus.app/assets/${imageId}` : undefined,
+    image: imageUrl,
   };
 }
 
