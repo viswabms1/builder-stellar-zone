@@ -101,46 +101,30 @@ export function AnnouncementBanner({
               )}
             </div>
             <p className="text-sm text-foreground/75 mt-1">
-              {announcement.content}
+              {announcement.description}
             </p>
 
-            {/* Attachments Section */}
-            {announcement.attachments && announcement.attachments.length > 0 && (
-              <div className="mt-4 space-y-2">
-                <p className="text-xs font-semibold text-foreground/70 flex items-center gap-1">
+            {/* Attachment Section */}
+            {announcement.attachment && (
+              <div className="mt-4">
+                <a
+                  href={`https://dsu-website-headless-cms.directus.app/assets/${announcement.attachment}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-3 py-2 text-xs bg-white border border-foreground/20 rounded hover:bg-foreground/5 transition"
+                >
                   <Paperclip className="h-3 w-3" />
-                  Attachments:
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {announcement.attachments.map((attachment) => (
-                    <a
-                      key={attachment.id}
-                      href={attachment.fileUrl}
-                      download={attachment.fileName}
-                      className="inline-flex items-center gap-2 px-3 py-2 text-xs bg-white border border-foreground/20 rounded hover:bg-foreground/5 transition"
-                    >
-                      <span className="text-lg">
-                        {getFileIcon(attachment.fileType)}
-                      </span>
-                      <div className="flex flex-col">
-                        <span className="font-medium text-foreground">
-                          {attachment.fileName}
-                        </span>
-                        {attachment.fileSize && (
-                          <span className="text-foreground/60">
-                            {attachment.fileSize}
-                          </span>
-                        )}
-                      </div>
-                      <Download className="h-3 w-3 text-foreground/50 ml-1" />
-                    </a>
-                  ))}
-                </div>
+                  <span className="font-medium text-foreground">
+                    Download Attachment
+                  </span>
+                  <Download className="h-3 w-3 text-foreground/50 ml-1" />
+                </a>
               </div>
             )}
 
             <p className="text-xs text-foreground/60 mt-3">
-              Posted: {new Date(announcement.date).toLocaleDateString()}
+              {announcement.expiry_date && `Expires: ${new Date(announcement.expiry_date).toLocaleDateString()}`}
+              {announcement.date && ` | Posted: ${new Date(announcement.date).toLocaleDateString()}`}
             </p>
           </div>
           {dismissible && (
@@ -205,7 +189,7 @@ export function AnnouncementBanner({
               )}
 
               <p className="text-xs text-foreground/75 mb-3 line-clamp-2">
-                {announcement.content}
+                {announcement.description}
               </p>
 
               {/* Attachments in card */}
