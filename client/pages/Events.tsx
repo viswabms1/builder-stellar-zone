@@ -144,13 +144,13 @@ function EventCard({ event, onSelect }: { event: Event; onSelect: (e: Event) => 
           )}
 
           <div className="flex gap-2">
-            {event.registrationRequired && event.registrationLink && (
+            {event.registrationRequired && event.registration_link && (
               <Button
                 size="sm"
                 className="flex-1 gap-1 bg-brand-magenta text-white hover:bg-brand-magenta/90"
                 asChild
               >
-                <a href={event.registrationLink} target="_blank" rel="noopener noreferrer">
+                <a href={event.registration_link} target="_blank" rel="noopener noreferrer">
                   Register
                   <ExternalLink className="w-3 h-3" />
                 </a>
@@ -305,12 +305,12 @@ function EventModal({ event, onClose }: { event: Event | null; onClose: () => vo
                   <p className="text-sm text-foreground/80 mb-3">
                     Registration is required to attend this event.
                   </p>
-                  {event.registrationLink && (
+                  {event.registration_link && (
                     <Button
                       className="w-full gap-2 bg-brand-magenta text-white hover:bg-brand-magenta/90"
                       asChild
                     >
-                      <a href={event.registrationLink} target="_blank" rel="noopener noreferrer">
+                      <a href={event.registration_link} target="_blank" rel="noopener noreferrer">
                         Register Now
                         <ExternalLink className="w-4 h-4" />
                       </a>
