@@ -31,6 +31,7 @@ export {
   getAllEvents,
   getEventsBySchool,
   getEventsByDepartment,
+  getEventsBySchoolAndDepartment,
   getEventsByCategory,
   getEventsByTag,
   getUpcomingEvents,
