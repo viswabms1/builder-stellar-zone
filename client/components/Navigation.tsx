@@ -135,7 +135,7 @@ export default function Navigation() {
         const navHeight = navBarRef.current?.offsetHeight ?? 60;
 
         setInternationalAdmissionsPosition({
-          top: navTop - 160, // Position above the nav bar (160px for dropdown height + gap)
+          top: navTop + navHeight + 4, // Position below the nav bar with small gap
           left: rect.left,
         });
       }
