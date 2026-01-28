@@ -1348,8 +1348,8 @@ export default function Navigation() {
           <div
             className={`lg:hidden border-t w-full ${
               theme === "light"
-                ? "border-blue-200/30 bg-white"
-                : "border-blue-600/20 bg-slate-900"
+                ? "border-orange-200/30 bg-white"
+                : "border-orange-600/20 bg-slate-900"
             }`}
           >
             <div className="px-2 py-2 space-y-1.5 max-h-[calc(100vh-140px)] sm:max-h-[calc(100vh-180px)] overflow-y-auto w-full">
