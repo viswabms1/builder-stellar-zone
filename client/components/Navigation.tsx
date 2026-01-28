@@ -656,8 +656,8 @@ export default function Navigation() {
                         <div
                           className={`fixed rounded-lg shadow-lg min-w-max backdrop-blur-sm z-[999] py-2 ${
                             theme === "light"
-                              ? "bg-white/95 border border-blue-200/50"
-                              : "bg-slate-800/95 border border-blue-600/30"
+                              ? "bg-white/95 border border-orange-300/50"
+                              : "bg-slate-800/95 border border-orange-600/30"
                           }`}
                           style={{
                             top: `${internationalAdmissionsPosition.top}px`,
