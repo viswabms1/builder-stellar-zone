@@ -1033,7 +1033,7 @@ export default function Navigation() {
                             scrollbarWidth: "thin",
                             scrollbarColor:
                               theme === "light"
-                                ? "rgba(59, 130, 246, 0.5) rgba(59, 130, 246, 0.1)"
+                                ? "rgba(229, 138, 0, 0.5) rgba(229, 138, 0, 0.1)"
                                 : "rgba(255, 255, 255, 0.3) rgba(255, 255, 255, 0.1)",
                           }}
                         >
