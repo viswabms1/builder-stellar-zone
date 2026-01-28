@@ -122,6 +122,38 @@ export default function Navigation() {
     return () => window.removeEventListener("resize", updateHeights);
   }, []);
 
+  // Calculate position for International Admissions submenu - above the nav bar
+  useEffect(() => {
+    const updatePosition = () => {
+      if (
+        internationalAdmissionsMenuOpen &&
+        internationalAdmissionsButtonRef.current
+      ) {
+        const rect =
+          internationalAdmissionsButtonRef.current.getBoundingClientRect();
+        const navTop = navBarRef.current?.getBoundingClientRect().top ?? 0;
+        const navHeight = navBarRef.current?.offsetHeight ?? 60;
+
+        setInternationalAdmissionsPosition({
+          top: navTop - 160, // Position above the nav bar (160px for dropdown height + gap)
+          left: rect.left,
+        });
+      }
+    };
+
+    updatePosition();
+
+    if (internationalAdmissionsMenuOpen) {
+      window.addEventListener("scroll", updatePosition);
+      window.addEventListener("resize", updatePosition);
+
+      return () => {
+        window.removeEventListener("scroll", updatePosition);
+        window.removeEventListener("resize", updatePosition);
+      };
+    }
+  }, [internationalAdmissionsMenuOpen]);
+
   // Handle scroll to fix nav bar when scrolling past top bar
   useEffect(() => {
     const handleScroll = () => {
