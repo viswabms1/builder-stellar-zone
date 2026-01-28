@@ -911,8 +911,8 @@ export default function Navigation() {
                               : "opacity-0 invisible pointer-events-none"
                           } ${
                             theme === "light"
-                              ? "bg-white/95 border border-blue-200/50"
-                              : "bg-slate-800/95 border border-blue-600/30"
+                              ? "bg-white/95 border border-orange-300/50"
+                              : "bg-slate-800/95 border border-orange-600/30"
                           }`}
                           style={{
                             scrollbarWidth: "thin",
