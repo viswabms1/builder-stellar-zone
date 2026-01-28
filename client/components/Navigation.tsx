@@ -648,8 +648,7 @@ export default function Navigation() {
                     </a>
 
                     {/* International Admissions Submenu - Absolute positioning relative to parent */}
-                    {internationalAdmissionsMenuOpen &&
-                      internationalAdmissionsPosition && (
+                    {internationalAdmissionsMenuOpen && (
                         <div
                           className={`absolute rounded-lg shadow-lg min-w-max backdrop-blur-sm z-[10002] py-2 top-full mt-1 left-0 ${
                             theme === "light"
