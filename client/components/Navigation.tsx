@@ -109,35 +109,6 @@ export default function Navigation() {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, []);
 
-  // Calculate position for International Admissions submenu
-  useEffect(() => {
-    const updatePosition = () => {
-      if (
-        internationalAdmissionsMenuOpen &&
-        internationalAdmissionsButtonRef.current
-      ) {
-        const rect =
-          internationalAdmissionsButtonRef.current.getBoundingClientRect();
-        setInternationalAdmissionsPosition({
-          top: rect.bottom + 4,
-          left: rect.left,
-        });
-      }
-    };
-
-    updatePosition();
-
-    if (internationalAdmissionsMenuOpen) {
-      window.addEventListener("scroll", updatePosition);
-      window.addEventListener("resize", updatePosition);
-
-      return () => {
-        window.removeEventListener("scroll", updatePosition);
-        window.removeEventListener("resize", updatePosition);
-      };
-    }
-  }, [internationalAdmissionsMenuOpen]);
-
   useEffect(() => {
     const updateHeights = () => {
       setTopBarHeight(topBarRef.current?.offsetHeight ?? 0);
