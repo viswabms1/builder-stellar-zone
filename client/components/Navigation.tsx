@@ -946,11 +946,11 @@ export default function Navigation() {
                                 {
                                   bg:
                                     theme === "light"
-                                      ? "bg-blue-50"
-                                      : "bg-blue-900/20",
+                                      ? "bg-orange-50"
+                                      : "bg-orange-900/20",
                                   border:
-                                    "border-blue-200/50 dark:border-blue-600/30",
-                                  text: "text-blue-900 dark:text-blue-100",
+                                    "border-orange-200/50 dark:border-orange-600/30",
+                                  text: "text-orange-900 dark:text-orange-100",
                                 },
                                 {
                                   bg:
@@ -1075,12 +1075,12 @@ export default function Navigation() {
                                   },
                                   {
                                     bg:
-                                      theme === "light"
-                                        ? "bg-blue-50"
-                                        : "bg-blue-900/20",
-                                    border:
-                                      "border-blue-200/50 dark:border-blue-600/30",
-                                    text: "text-blue-900 dark:text-blue-100",
+                                    theme === "light"
+                                      ? "bg-orange-50"
+                                      : "bg-orange-900/20",
+                                  border:
+                                    "border-orange-200/50 dark:border-orange-600/30",
+                                  text: "text-orange-900 dark:text-orange-100",
                                   },
                                   {
                                     bg:
