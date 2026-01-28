@@ -1800,8 +1800,8 @@ export default function Navigation() {
                           <div
                             className={`rounded-lg py-2 ml-4 border-l-2 max-h-64 overflow-y-auto ${
                               theme === "light"
-                                ? "bg-blue-100 border-l-blue-300"
-                                : "bg-blue-900/20 border-l-blue-600"
+                                ? "bg-orange-100 border-l-orange-300"
+                                : "bg-orange-900/20 border-l-orange-600"
                             }`}
                           >
                             {librarySubmenus.map((submenu, subIdx) => (
@@ -1814,8 +1814,8 @@ export default function Navigation() {
                                 }}
                                 className={`block px-4 py-1.5 text-base sm:text-lg rounded transition-colors ${
                                   theme === "light"
-                                    ? "text-gray-700 hover:bg-blue-200"
-                                    : "text-white hover:bg-blue-900/40"
+                                    ? "text-gray-700 hover:bg-orange-200"
+                                    : "text-white hover:bg-orange-900/40"
                                 }`}
                               >
                                 {submenu.name}
