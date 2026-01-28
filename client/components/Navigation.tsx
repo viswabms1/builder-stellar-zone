@@ -654,7 +654,7 @@ export default function Navigation() {
                     {internationalAdmissionsMenuOpen &&
                       internationalAdmissionsPosition && (
                         <div
-                          className={`fixed rounded-lg shadow-lg min-w-max backdrop-blur-sm z-[10001] py-2 ${
+                          className={`fixed rounded-lg shadow-lg min-w-max backdrop-blur-sm z-[999] py-2 ${
                             theme === "light"
                               ? "bg-white/95 border border-blue-200/50"
                               : "bg-slate-800/95 border border-blue-600/30"
