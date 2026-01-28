@@ -1857,7 +1857,7 @@ export default function Navigation() {
 
               <div
                 className={`pt-4 space-y-3 border-t ${
-                  theme === "light" ? "border-blue-200" : "border-white/20"
+                  theme === "light" ? "border-orange-200" : "border-white/20"
                 }`}
               >
                 <Button
