@@ -624,7 +624,7 @@ export default function Navigation() {
                 return (
                   <div
                     key={idx}
-                    className="flex-shrink-0 relative"
+                    className="flex-shrink-0 static"
                     onMouseEnter={handleInternationalAdmissionsMenuEnter}
                     onMouseLeave={handleInternationalAdmissionsMenuLeave}
                   >
