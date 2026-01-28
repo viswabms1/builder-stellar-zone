@@ -1638,7 +1638,7 @@ export default function Navigation() {
               {/* Top Menu Items (Below Main Navigation) */}
               <div
                 className={`pt-4 space-y-2 border-t ${
-                  theme === "light" ? "border-blue-200" : "border-white/20"
+                  theme === "light" ? "border-orange-200" : "border-white/20"
                 }`}
               >
                 {topMenuItems.map((item, idx) => {
