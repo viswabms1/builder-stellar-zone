@@ -108,7 +108,17 @@ export default function TestAnnouncements() {
     fetchData();
   }, []);
 
-  if (loading) return <div className="p-8">Loading...</div>;
+  if (loading) return <div className="p-8">Loading announcements...</div>;
+
+  if (allData?.error) {
+    return (
+      <div className="p-8">
+        <h1 className="text-2xl font-bold mb-4 text-red-600">Error Loading Announcements</h1>
+        <p className="text-red-600 mb-4">{allData.error}</p>
+        <p className="text-gray-600">Check the browser console (F12) for more details</p>
+      </div>
+    );
+  }
 
   const allAnnouncementsRaw = Array.isArray(allData) ? allData : (allData?.data || []);
   const cseAnnouncementsRaw = Array.isArray(filteredData) ? filteredData : (filteredData?.data || []);
