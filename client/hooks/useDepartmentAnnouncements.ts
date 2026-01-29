@@ -4,6 +4,7 @@ import type { Announcement } from "@/lib/content-manager";
 /**
  * Converts Strapi rich text format to plain text
  * Strapi returns Description as: [{"type":"paragraph","children":[{"type":"text","text":"..."}]}]
+ * Handles block-based rich text with proper paragraph spacing
  */
 function normalizeDescription(description: any): string {
   if (!description) return "";
@@ -15,14 +16,43 @@ function normalizeDescription(description: any): string {
   if (Array.isArray(description)) {
     return description
       .map((block: any) => {
-        if (block.children && Array.isArray(block.children)) {
+        // Handle paragraph blocks
+        if (block.type === "paragraph" && block.children && Array.isArray(block.children)) {
+          return block.children
+            .map((child: any) => {
+              // Handle text nodes
+              if (typeof child.text === "string") {
+                return child.text;
+              }
+              // Handle bold, italic, underline text
+              if (child.children && Array.isArray(child.children)) {
+                return child.children
+                  .map((c: any) => c.text || "")
+                  .join("");
+              }
+              return "";
+            })
+            .join("");
+        }
+
+        // Handle heading blocks
+        if (block.type?.includes("heading") && block.children && Array.isArray(block.children)) {
           return block.children
             .map((child: any) => child.text || "")
             .join("");
         }
+
+        // Handle list items
+        if ((block.type === "list-item" || block.type === "li") && block.children && Array.isArray(block.children)) {
+          return block.children
+            .map((child: any) => child.text || "")
+            .join("");
+        }
+
         return "";
       })
-      .join(" ");
+      .filter((text) => text.trim().length > 0) // Remove empty blocks
+      .join("\n\n"); // Join with paragraph spacing
   }
 
   return "";
