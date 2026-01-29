@@ -34,9 +34,10 @@ function normalizeAnnouncement(item: any) {
   if (item.pdf_link?.url) {
     const pdfPath = item.pdf_link.url;
     console.log("PDF path from Strapi:", pdfPath);
-    // Use server proxy to access the PDF (server can authenticate with Strapi)
+    // Use direct Strapi URL since public access is now enabled
+    const strapiBaseUrl = "http://72.61.225.136:1340";
     attachment = {
-      url: `/api/strapi/download-pdf?path=${encodeURIComponent(pdfPath)}`,
+      url: `${strapiBaseUrl}${pdfPath}`,
       name: item.pdf_link.name || 'document.pdf'
     };
   } else if (item.attachment) {
