@@ -231,6 +231,7 @@ import UpasanaShilPage from "./pages/faculty/UpasanaShil";
 import HairunesaBeeviPage from "./pages/faculty/HairunesaBeevi";
 import SrinidhiAIMLPage from "./pages/faculty/SrinidhiAIML";
 import FacultyECE from "./pages/FacultyECE";
+import ECEFacultyProfile from "./pages/faculty/ECEFacultyProfile";
 import PuttamadappaECEPage from "./pages/faculty/PuttamadappaECE";
 import ArunBalodiPage from "./pages/faculty/ArunBalodi";
 import SNPrasadECEPage from "./pages/faculty/SNPrasadECE";
