@@ -37,13 +37,9 @@ function normalizeAnnouncement(item: any) {
   if (item.pdf_link?.url) {
     const pdfUrl = item.pdf_link.url;
     console.log("Found PDF URL:", pdfUrl);
-    // If it's a relative URL, prepend the Strapi base URL
-    if (pdfUrl.startsWith('/')) {
-      attachment = `http://72.61.225.136:1340${pdfUrl}`;
-    } else {
-      attachment = pdfUrl;
-    }
-    console.log("Constructed attachment URL:", attachment);
+    // Use server proxy to download PDF (works for both local dev and deployed environments)
+    attachment = `/api/strapi/download-pdf?path=${encodeURIComponent(pdfUrl)}`;
+    console.log("Constructed attachment proxy URL:", attachment);
   } else if (item.attachment) {
     attachment = item.attachment;
     console.log("Using existing attachment:", attachment);
