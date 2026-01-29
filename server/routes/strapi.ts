@@ -283,12 +283,20 @@ export const downloadPdf: RequestHandler = async (req, res) => {
     const fileUrl = `${STRAPI_URL}${filePath}`;
     console.log(`[PDF DOWNLOAD] Downloading from: ${fileUrl}`);
 
-    const response = await fetch(fileUrl);
+    const response = await fetch(fileUrl, {
+      headers: {
+        // Add token if available for authentication
+        ...(STRAPI_API_TOKEN && { Authorization: `Bearer ${STRAPI_API_TOKEN}` }),
+      },
+    });
 
     if (!response.ok) {
       console.error(`[PDF DOWNLOAD] Error: ${response.status} ${response.statusText}`);
+      const errorText = await response.text();
+      console.error(`[PDF DOWNLOAD] Error details: ${errorText}`);
       return res.status(response.status).json({
         error: "Failed to download PDF from Strapi",
+        details: errorText,
       });
     }
 
