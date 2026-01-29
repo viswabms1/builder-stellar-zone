@@ -113,7 +113,14 @@ export function EventsSection({
                 </div>
               </CardHeader>
               <CardContent className="space-y-3">
-                <p className="text-sm text-foreground/75">{event.description}</p>
+                <ReadMore
+                  contentId={event.id}
+                  type="event"
+                  maxLines={2}
+                  className="text-sm text-foreground/75"
+                >
+                  {event.description}
+                </ReadMore>
                 <div className="grid grid-cols-2 gap-3 text-sm">
                   <div className="flex items-center gap-2 text-foreground/70">
                     <Calendar className="h-4 w-4" />
