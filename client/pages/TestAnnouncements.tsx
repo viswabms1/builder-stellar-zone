@@ -5,10 +5,10 @@ export default function TestAnnouncements() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("https://dsu-website-headless-cms.directus.app/items/announcements?filter[department_code][_eq]=aero&sort=-expiry_date")
+    fetch("http://72.61.225.136:1340/api/announcements?filters[department_code][$eq]=aero")
       .then((res) => res.json())
       .then((json) => {
-        console.log("Directus response:", json);
+        console.log("Strapi response:", json);
         setData(json);
         setLoading(false);
       })
