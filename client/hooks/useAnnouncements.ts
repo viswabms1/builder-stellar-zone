@@ -42,10 +42,16 @@ export function useAnnouncements(
         try {
           // Fetch directly from Strapi API
           const strapiUrl = "http://72.61.225.136:1340/api/announcements";
+          console.log(`[useAnnouncements] Fetching from: ${strapiUrl}`);
+
           const response = await fetch(strapiUrl);
+
+          console.log(`[useAnnouncements] Response status: ${response.status}`);
 
           if (response.ok) {
             const data = await response.json();
+            console.log(`[useAnnouncements] Full response:`, data);
+
             // Strapi response returns data array or wrapped in data object
             fetchedAnnouncements = Array.isArray(data) ? data : (data.data || []);
             console.log(
@@ -57,6 +63,8 @@ export function useAnnouncements(
             console.warn(
               "[useAnnouncements] Strapi API returned non-200 status, using local data"
             );
+            const errorText = await response.text();
+            console.warn(`Error response: ${errorText}`);
             fetchedAnnouncements = getAllAnnouncements();
           }
         } catch (apiError) {
