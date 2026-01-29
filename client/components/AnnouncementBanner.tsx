@@ -194,9 +194,14 @@ export function AnnouncementBanner({
                 </span>
               )}
 
-              <p className="text-xs text-foreground/75 mb-3 line-clamp-2">
+              <ReadMore
+                contentId={announcement.id}
+                type="announcement"
+                maxLines={2}
+                className="text-xs text-foreground/75 mb-3"
+              >
                 {announcement.description}
-              </p>
+              </ReadMore>
 
               {/* Attachments in card */}
               {announcement.attachments && announcement.attachments.length > 0 && (
