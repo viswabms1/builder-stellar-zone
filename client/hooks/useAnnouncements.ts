@@ -83,20 +83,36 @@ export function useAnnouncements(
             let strapiAnnouncements = Array.isArray(data) ? data : (data.data || []);
 
             // Normalize Strapi field names to our Announcement interface
-            fetchedAnnouncements = strapiAnnouncements.map((item: any) => ({
-              id: item.id || item.documentId,
-              title: item.Title || item.title,
-              description: normalizeDescription(item.Description || item.description),
-              department_code: item.Department_code || item.department_code,
-              school_code: item.school_code,
-              status: item.Status || item.status || 'active',
-              expiry_date: item.Expirydate || item.expiry_date,
-              date: item.createdAt,
-              attachment: item.pdf_link?.url || item.attachment,
-              category: item.Category || item.category,
-              priority: item.Priority || item.priority,
-              image: item.Image?.url || item.image,
-            }));
+            fetchedAnnouncements = strapiAnnouncements.map((item: any) => {
+              // Handle pdf_link object from Strapi
+              let attachment = null;
+              if (item.pdf_link?.url) {
+                const pdfUrl = item.pdf_link.url;
+                // If it's a relative URL, prepend the Strapi base URL
+                if (pdfUrl.startsWith('/')) {
+                  attachment = `http://72.61.225.136:1340${pdfUrl}`;
+                } else {
+                  attachment = pdfUrl;
+                }
+              } else if (item.attachment) {
+                attachment = item.attachment;
+              }
+
+              return {
+                id: item.id || item.documentId,
+                title: item.Title || item.title,
+                description: normalizeDescription(item.Description || item.description),
+                department_code: item.Department_code || item.department_code,
+                school_code: item.school_code,
+                status: item.Status || item.status || 'active',
+                expiry_date: item.Expirydate || item.expiry_date,
+                date: item.createdAt,
+                attachment: attachment,
+                category: item.Category || item.category,
+                priority: item.Priority || item.priority,
+                image: item.Image?.url || item.image,
+              };
+            });
 
             console.log(
               "[useAnnouncements] Fetched from Strapi:",
