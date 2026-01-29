@@ -24,7 +24,8 @@ export default function NewsDetail() {
     );
   }
 
-  const newsItem = allNews.find((n) => n.id === id);
+  // Fix: Compare both string and number versions of ID to handle type mismatch
+  const newsItem = allNews.find((n) => String(n.id) === String(id));
 
   if (!newsItem) {
     return (
