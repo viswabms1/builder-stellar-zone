@@ -221,9 +221,8 @@ export const getAnnouncements: RequestHandler = async (req, res) => {
   try {
     const departmentCode = req.query.department_code as string | undefined;
 
-    // Build the Strapi URL
-    // Note: Removed sort parameter as Strapi syntax varies - just fetch all and let client sort if needed
-    let query = "?pagination[limit]=100";
+    // Build the Strapi URL with populate parameter to include related fields like pdf_link
+    let query = "?pagination[limit]=100&populate=*";
 
     if (departmentCode) {
       query += `&filters[Department_code][$eq]=${departmentCode}`;
@@ -249,6 +248,9 @@ export const getAnnouncements: RequestHandler = async (req, res) => {
 
     const data = await response.json();
     console.log(`[ANNOUNCEMENTS] Fetched ${data.data?.length || 0} announcements`);
+    if (data.data?.[0]) {
+      console.log(`[ANNOUNCEMENTS] Sample announcement fields:`, Object.keys(data.data[0]));
+    }
 
     res.json(data);
   } catch (error) {
