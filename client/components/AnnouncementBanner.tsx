@@ -101,9 +101,14 @@ export function AnnouncementBanner({
                 </span>
               )}
             </div>
-            <p className="text-sm text-foreground/75 mt-1">
+            <ReadMore
+              contentId={announcement.id}
+              type="announcement"
+              maxLines={2}
+              className="text-sm text-foreground/75 mt-1"
+            >
               {announcement.description}
-            </p>
+            </ReadMore>
 
             {/* Attachment Section */}
             {announcement.attachment && (
