@@ -266,6 +266,49 @@ export default function TestAnnouncements() {
             </ul>
           )}
         </div>
+
+        <div className="mb-6 p-4 bg-yellow-50 rounded border border-yellow-200">
+          <h2 className="text-xl font-bold mb-2">ECE Department Announcements (Filtered)</h2>
+          <p className="mb-2">Total: <strong>{eceAnnouncements.length}</strong></p>
+          {eceAnnouncements.length === 0 ? (
+            <p className="text-gray-500">No ECE announcements found</p>
+          ) : (
+            <ul className="space-y-4">
+              {eceAnnouncements.map((item: any, idx: number) => {
+                const rawItem = eceAnnouncementsRaw[idx];
+                return (
+                  <li key={item.id} className="bg-white p-4 rounded border">
+                    <p className="font-semibold text-lg">{item.title}</p>
+                    <p className="text-sm text-gray-600 mt-2 whitespace-pre-wrap break-words">{item.description}</p>
+                    <p className="text-xs text-gray-500 mt-2">
+                      Department: {item.department_code || 'N/A'} | Status: {item.status || 'N/A'}
+                    </p>
+                    {item.attachment ? (
+                      <p className="text-sm mt-3 p-2 bg-blue-100 rounded">
+                        <button
+                          onClick={() => {
+                            handlePdfDownload(item.attachment.url);
+                          }}
+                          className="text-blue-600 hover:underline font-semibold cursor-pointer"
+                        >
+                          📎 Download PDF: {item.attachment.name}
+                        </button>
+                      </p>
+                    ) : (
+                      <p className="text-xs text-red-500 mt-2">⚠️ No PDF attached</p>
+                    )}
+                    <details className="mt-3 text-xs">
+                      <summary className="cursor-pointer text-gray-600 hover:text-gray-800">Show raw Strapi Description</summary>
+                      <pre className="mt-2 p-2 bg-gray-100 rounded overflow-auto max-h-40 text-xs">
+                        {JSON.stringify(rawItem?.Description, null, 2)}
+                      </pre>
+                    </details>
+                  </li>
+                );
+              })}
+            </ul>
+          )}
+        </div>
       </div>
 
       <details className="border rounded p-4">
