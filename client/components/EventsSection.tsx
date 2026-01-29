@@ -197,9 +197,14 @@ export function EventsSection({
                 </Badge>
               </CardHeader>
               <CardContent className="space-y-2 flex-1 flex flex-col">
-                <p className="text-xs text-foreground/70 line-clamp-2">
+                <ReadMore
+                  contentId={event.id}
+                  type="event"
+                  maxLines={2}
+                  className="text-xs text-foreground/70"
+                >
                   {event.description}
-                </p>
+                </ReadMore>
                 <div className="space-y-1 text-xs text-foreground/60 mt-auto">
                   <div className="flex items-center gap-2">
                     <Calendar className="h-3 w-3" />
