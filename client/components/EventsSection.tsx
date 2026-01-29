@@ -118,6 +118,7 @@ export function EventsSection({
                   type="event"
                   maxLines={2}
                   className="text-sm text-foreground/75"
+                  showReadMore={event.description && event.description.length > 150}
                 >
                   {event.description}
                 </ReadMore>
@@ -202,6 +203,7 @@ export function EventsSection({
                   type="event"
                   maxLines={2}
                   className="text-xs text-foreground/70"
+                  showReadMore={event.description && event.description.length > 150}
                 >
                   {event.description}
                 </ReadMore>
@@ -258,6 +260,7 @@ export function EventsSection({
               type="event"
               maxLines={2}
               className="text-sm text-foreground/70 mb-3"
+              showReadMore={event.description && event.description.length > 150}
             >
               {event.description}
             </ReadMore>
@@ -380,6 +383,7 @@ function EventsCarousel({ events, title, description, compact = false }: EventsC
                 type="event"
                 maxLines={2}
                 className="text-xs text-foreground/70"
+                showReadMore={currentEvent.description && currentEvent.description.length > 150}
               >
                 {currentEvent.description}
               </ReadMore>
