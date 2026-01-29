@@ -47,9 +47,9 @@ export default function TestAnnouncements() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // First fetch all announcements
-    const allUrl = "http://72.61.225.136:1340/api/announcements";
-    const filterUrl = "http://72.61.225.136:1340/api/announcements?filters[Department_code][$eq]=cse";
+    // First fetch all announcements from our server proxy
+    const allUrl = "/api/strapi/announcements";
+    const filterUrl = "/api/strapi/announcements?department_code=cse";
 
     console.log("Fetching from:", allUrl);
     console.log("Filtering from:", filterUrl);
