@@ -71,10 +71,11 @@ function normalizeAnnouncement(item: any) {
 }
 
 /**
- * Handle PDF download by fetching via proxy and creating download
+ * Handle PDF download by opening in new tab
  */
 function handlePdfDownload(pdfUrl: string, filename: string) {
-  console.log("Downloading PDF from:", pdfUrl);
+  console.log("Opening PDF from:", pdfUrl);
+  console.log("Filename:", filename);
 
   // Ensure absolute URL
   const absoluteUrl = pdfUrl.startsWith("http")
@@ -83,28 +84,8 @@ function handlePdfDownload(pdfUrl: string, filename: string) {
 
   console.log("Using absolute URL:", absoluteUrl);
 
-  fetch(absoluteUrl)
-    .then(response => {
-      console.log("PDF fetch response status:", response.status);
-      if (!response.ok) throw new Error(`Failed to download PDF: ${response.status}`);
-      return response.blob();
-    })
-    .then(blob => {
-      console.log("PDF blob size:", blob.size);
-      const url = window.URL.createObjectURL(blob);
-      const link = document.createElement("a");
-      link.href = url;
-      link.download = filename || "document.pdf";
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      window.URL.revokeObjectURL(url);
-      console.log("PDF download completed");
-    })
-    .catch(err => {
-      console.error("PDF download error:", err);
-      alert(`Failed to download PDF: ${err.message}`);
-    });
+  // Open in new tab
+  window.open(absoluteUrl, '_blank');
 }
 
 export default function TestAnnouncements() {
