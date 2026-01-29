@@ -12,6 +12,7 @@ import {
   checkStrapiHealth,
   getAnnouncements as getStrapiAnnouncements,
   downloadPdf,
+  serveImage,
 } from "./routes/strapi";
 import {
   getVisionMission,
