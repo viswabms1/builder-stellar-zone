@@ -32,7 +32,8 @@ export default function EventDetail() {
     );
   }
 
-  const event = allEvents.find((e) => e.id === id);
+  // Fix: Compare both string and number versions of ID to handle type mismatch
+  const event = allEvents.find((e) => String(e.id) === String(id));
 
   if (!event) {
     return (
