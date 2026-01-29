@@ -1,4 +1,3 @@
-import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -12,8 +11,8 @@ interface ReadMoreProps {
 }
 
 /**
- * ReadMore Component - Shows "Read More" link only if content overflows
- * Detects overflow by checking if clamped content is taller than expected
+ * ReadMore Component - Shows "Read More" link if content is substantial
+ * Uses character count heuristic to determine if content warrants a detail page
  */
 export function ReadMore({
   contentId,
@@ -22,48 +21,21 @@ export function ReadMore({
   className = "",
   children,
 }: ReadMoreProps) {
-  const contentRef = useRef<HTMLDivElement>(null);
-  const fullContentRef = useRef<HTMLDivElement>(null);
-  const [isOverflowing, setIsOverflowing] = useState(false);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const checkOverflow = () => {
-      if (contentRef.current && fullContentRef.current) {
-        // Get the full content height (without line clamp)
-        const fullHeight = fullContentRef.current.scrollHeight;
+  // Convert children to string to check length
+  let contentText = "";
+  if (typeof children === "string") {
+    contentText = children;
+  } else if (Array.isArray(children)) {
+    contentText = children
+      .map((c) => (typeof c === "string" ? c : ""))
+      .join("");
+  }
 
-        // Get the computed line-height
-        const styles = window.getComputedStyle(contentRef.current);
-        const lineHeight = parseFloat(styles.lineHeight);
-        const clampedMaxHeight = lineHeight * maxLines;
-
-        // Content overflows if full height is greater than clamped height
-        const isContentOverflowing = fullHeight > clampedMaxHeight + 5; // +5 for margin/padding
-
-        console.log(`[ReadMore] Content overflow check:`, {
-          contentId,
-          fullHeight,
-          clampedMaxHeight,
-          maxLines,
-          lineHeight,
-          isOverflowing: isContentOverflowing
-        });
-
-        setIsOverflowing(isContentOverflowing);
-      }
-    };
-
-    // Use a small delay to ensure DOM is fully rendered
-    const timer = setTimeout(checkOverflow, 100);
-
-    // Check on window resize
-    window.addEventListener("resize", checkOverflow);
-    return () => {
-      clearTimeout(timer);
-      window.removeEventListener("resize", checkOverflow);
-    };
-  }, [maxLines, children, contentId]);
+  // Show Read More if content is longer than ~200 characters (reasonable preview length)
+  // This accounts for ~2-3 lines of text
+  const shouldShowReadMore = contentText.length > 180;
 
   const handleReadMore = () => {
     navigate(`/${type}/${contentId}`);
@@ -71,18 +43,8 @@ export function ReadMore({
 
   return (
     <div className="space-y-3">
-      {/* Hidden full-height reference to check overflow */}
-      <div
-        ref={fullContentRef}
-        className={`invisible absolute pointer-events-none ${className}`}
-        style={{ visibility: "hidden", position: "absolute" }}
-      >
-        {children}
-      </div>
-
       {/* Visible clamped content */}
       <div
-        ref={contentRef}
         className={`${className}`}
         style={{
           display: "-webkit-box",
@@ -94,7 +56,7 @@ export function ReadMore({
         {children}
       </div>
 
-      {isOverflowing && (
+      {shouldShowReadMore && (
         <Button
           variant="ghost"
           size="sm"
