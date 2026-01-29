@@ -116,7 +116,24 @@ export function useDepartmentAnnouncements(
           console.log(`[useDepartmentAnnouncements] Full response:`, data);
 
           // Strapi response returns data array or wrapped in data object
-          const fetchedAnnouncements = Array.isArray(data) ? data : (data.data || []);
+          let fetchedAnnouncements = Array.isArray(data) ? data : (data.data || []);
+
+          // Normalize Strapi field names to our Announcement interface
+          fetchedAnnouncements = fetchedAnnouncements.map((item: any) => ({
+            id: item.id || item.documentId,
+            title: item.Title || item.title,
+            description: normalizeDescription(item.Description || item.description),
+            department_code: item.Department_code || item.department_code,
+            school_code: item.school_code,
+            status: item.Status || item.status || 'active',
+            expiry_date: item.Expirydate || item.expiry_date,
+            date: item.createdAt,
+            attachment: item.pdf_link?.url || item.attachment,
+            category: item.Category || item.category,
+            priority: item.Priority || item.priority,
+            image: item.Image?.url || item.image,
+          }));
+
           setAnnouncements(fetchedAnnouncements);
           console.log(
             `[useDepartmentAnnouncements] Fetched ${fetchedAnnouncements.length} announcements for ${departmentCode}`
