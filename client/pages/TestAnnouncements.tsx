@@ -122,6 +122,13 @@ export default function TestAnnouncements() {
                   <p className="text-xs text-gray-500 mt-2">
                     Department: {item.department_code || 'N/A'} | Status: {item.status || 'N/A'}
                   </p>
+                  {item.attachment && (
+                    <p className="text-xs mt-2">
+                      <a href={item.attachment} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
+                        📎 Download PDF
+                      </a>
+                    </p>
+                  )}
                 </li>
               ))}
             </ul>
