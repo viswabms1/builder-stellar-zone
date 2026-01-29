@@ -68,8 +68,11 @@ export default function TestAnnouncements() {
 
   if (loading) return <div className="p-8">Loading...</div>;
 
-  const allAnnouncements = Array.isArray(allData) ? allData : (allData?.data || []);
-  const cseAnnouncements = Array.isArray(filteredData) ? filteredData : (filteredData?.data || []);
+  const allAnnouncementsRaw = Array.isArray(allData) ? allData : (allData?.data || []);
+  const cseAnnouncementsRaw = Array.isArray(filteredData) ? filteredData : (filteredData?.data || []);
+
+  const allAnnouncements = allAnnouncementsRaw.map(normalizeAnnouncement);
+  const cseAnnouncements = cseAnnouncementsRaw.map(normalizeAnnouncement);
 
   return (
     <section className="p-8 space-y-8">
