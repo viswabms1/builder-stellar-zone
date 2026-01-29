@@ -87,9 +87,12 @@ export function useAnnouncements(
               // Handle pdf_link object from Strapi
               let attachment = null;
               if (item.pdf_link?.url) {
-                const pdfUrl = item.pdf_link.url;
-                // Use server proxy to download PDF (works for both local dev and deployed environments)
-                attachment = `/api/strapi/download-pdf?path=${encodeURIComponent(pdfUrl)}`;
+                const pdfPath = item.pdf_link.url;
+                // Direct URL to Strapi - browser will access it directly
+                attachment = {
+                  url: `http://72.61.225.136:1340${pdfPath}`,
+                  name: item.pdf_link.name || 'document.pdf'
+                };
               } else if (item.attachment) {
                 attachment = item.attachment;
               }
