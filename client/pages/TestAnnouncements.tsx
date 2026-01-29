@@ -30,31 +30,17 @@ function normalizeDescription(description: any): string {
 function normalizeAnnouncement(item: any) {
   let attachment = null;
 
-  console.log("Normalizing item:", item);
-  console.log("pdf_link value:", item.pdf_link);
-  console.log("pdf_link type:", typeof item.pdf_link);
-  console.log("pdf_link.url:", item.pdf_link?.url);
-  console.log("pdf_link.url type:", typeof item.pdf_link?.url);
-
   // Handle pdf_link object from Strapi
   if (item.pdf_link?.url) {
-    let pdfUrl = item.pdf_link.url;
-    console.log("Found PDF URL (raw):", JSON.stringify(pdfUrl));
-    console.log("URL length:", pdfUrl.length);
-    console.log("URL char codes:", Array.from(pdfUrl).map(c => c.charCodeAt(0)));
-
-    // Trim any whitespace
-    pdfUrl = pdfUrl.trim();
-    console.log("PDF URL after trim:", JSON.stringify(pdfUrl));
-
-    // Use server proxy to download PDF (works for both local dev and deployed environments)
-    attachment = `/api/strapi/download-pdf?path=${encodeURIComponent(pdfUrl)}`;
-    console.log("Constructed attachment proxy URL:", JSON.stringify(attachment));
+    const pdfPath = item.pdf_link.url;
+    console.log("PDF path from Strapi:", pdfPath);
+    // Store the full URL - will be opened directly via Strapi proxy
+    attachment = {
+      url: `http://72.61.225.136:1340${pdfPath}`,
+      name: item.pdf_link.name || 'document.pdf'
+    };
   } else if (item.attachment) {
     attachment = item.attachment;
-    console.log("Using existing attachment:", attachment);
-  } else {
-    console.log("No PDF found for item");
   }
 
   return {
