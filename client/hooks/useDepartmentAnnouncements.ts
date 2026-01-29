@@ -134,7 +134,7 @@ export function useDepartmentAnnouncements(
 
         console.log(`[useDepartmentAnnouncements] Fetching URL: ${serverUrl}`);
 
-        const response = await fetch(strapiUrl);
+        const response = await fetch(serverUrl);
 
         console.log(`[useDepartmentAnnouncements] Response status: ${response.status}`);
 
