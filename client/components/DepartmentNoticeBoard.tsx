@@ -119,7 +119,15 @@ export function DepartmentNoticeBoard({ school = "Engineering", department }: { 
             <div className="flex items-start justify-between gap-2">
               <div className="flex-1">
                 <h4 className="font-display font-semibold text-sm text-foreground mb-2 line-clamp-2">{currentItem.title}</h4>
-                <p className="text-xs text-foreground/70 line-clamp-2">{currentItem.description}</p>
+                <ReadMore
+                  contentId={currentItem.id}
+                  type={category.toLowerCase() as "announcement" | "news" | "event"}
+                  maxLines={2}
+                  className="text-xs text-foreground/70"
+                  showReadMore={currentItem.description && currentItem.description.length > 150}
+                >
+                  {currentItem.description}
+                </ReadMore>
               </div>
             </div>
             <div className="flex items-center justify-between pt-2 border-t border-border/20">
