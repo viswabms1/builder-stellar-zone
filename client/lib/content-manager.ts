@@ -167,6 +167,18 @@ export type CarouselItem = {
 };
 
 export function convertAnnouncementToCarouselItem(a: Announcement): CarouselItem {
+  let link: string | undefined;
+
+  if (a.attachment) {
+    // Handle both Strapi (object with url) and Directus (string ID) formats
+    if (typeof a.attachment === 'object' && (a.attachment as any).url) {
+      link = (a.attachment as any).url;
+    } else if (typeof a.attachment === 'string') {
+      // Directus format - file ID
+      link = `https://dsu-website-headless-cms.directus.app/assets/${a.attachment}`;
+    }
+  }
+
   return {
     id: a.id,
     title: a.title,
@@ -174,7 +186,7 @@ export function convertAnnouncementToCarouselItem(a: Announcement): CarouselItem
     date: a.date || a.expiry_date || new Date().toISOString(),
     description: a.description,
     image: a.image,
-    link: a.attachment ? `https://dsu-website-headless-cms.directus.app/assets/${a.attachment}` : undefined,
+    link: link,
   };
 }
 
