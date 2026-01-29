@@ -325,3 +325,31 @@ export const downloadPdf: RequestHandler = async (req, res) => {
     });
   }
 };
+
+/**
+ * Health check endpoint for Strapi connection
+ */
+export const checkStrapiHealth: RequestHandler = async (req, res) => {
+  try {
+    const response = await fetch(`${STRAPI_URL}/api/health`, {
+      headers: {
+        Authorization: `Bearer ${STRAPI_API_TOKEN}`,
+      },
+    });
+
+    if (response.ok) {
+      res.json({ status: "connected", strapi_url: STRAPI_URL });
+    } else {
+      res.status(503).json({
+        status: "error",
+        message: "Strapi service unavailable",
+      });
+    }
+  } catch (error) {
+    res.status(500).json({
+      status: "error",
+      message: "Cannot connect to Strapi",
+      error: error instanceof Error ? error.message : "Unknown error",
+    });
+  }
+};
