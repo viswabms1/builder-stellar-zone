@@ -10,6 +10,7 @@ import {
   getPagesByContentType,
   handleStrapiWebhook,
   checkStrapiHealth,
+  getAnnouncements as getStrapiAnnouncements,
 } from "./routes/strapi";
 import {
   getVisionMission,
