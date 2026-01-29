@@ -219,7 +219,7 @@ export default function TestAnnouncements() {
               {cseAnnouncements.map((item: any) => (
                 <li key={item.id} className="bg-white p-4 rounded border">
                   <p className="font-semibold text-lg">{item.title}</p>
-                  <p className="text-sm text-gray-600 mt-2">{item.description}</p>
+                  <p className="text-sm text-gray-600 mt-2 whitespace-pre-wrap break-words">{item.description}</p>
                   <p className="text-xs text-gray-500 mt-2">
                     Department: {item.department_code || 'N/A'} | Status: {item.status || 'N/A'}
                   </p>
