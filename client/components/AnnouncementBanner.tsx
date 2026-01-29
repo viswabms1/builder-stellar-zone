@@ -200,6 +200,7 @@ export function AnnouncementBanner({
                 type="announcement"
                 maxLines={2}
                 className="text-xs text-foreground/75 mb-3"
+                showReadMore={announcement.description && announcement.description.length > 150}
               >
                 {announcement.description}
               </ReadMore>
