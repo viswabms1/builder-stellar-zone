@@ -195,9 +195,15 @@ export default function TestAnnouncements() {
                   </p>
                   {item.attachment ? (
                     <p className="text-sm mt-3 p-2 bg-blue-100 rounded">
-                      <a href={item.attachment} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-semibold">
-                        📎 Download PDF: {item.attachment.split('/').pop()}
-                      </a>
+                      <button
+                        onClick={() => {
+                          const filename = item.attachment.split('/').pop() || "document.pdf";
+                          handlePdfDownload(item.attachment, filename);
+                        }}
+                        className="text-blue-600 hover:underline font-semibold cursor-pointer"
+                      >
+                        📎 Download PDF: {item.attachment.split('/').pop() || 'Version_2_GUIDELINES_ac9bb54826.pdf'}
+                      </button>
                     </p>
                   ) : (
                     <p className="text-xs text-red-500 mt-2">⚠️ No PDF attached</p>
