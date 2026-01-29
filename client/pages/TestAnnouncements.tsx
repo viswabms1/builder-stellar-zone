@@ -48,11 +48,21 @@ export default function TestAnnouncements() {
 
   useEffect(() => {
     // First fetch all announcements
+    const allUrl = "http://72.61.225.136:1340/api/announcements";
+    const filterUrl = "http://72.61.225.136:1340/api/announcements?filters[Department_code][$eq]=cse";
+
+    console.log("Fetching from:", allUrl);
+    console.log("Filtering from:", filterUrl);
+
     Promise.all([
-      fetch("http://72.61.225.136:1340/api/announcements"),
-      fetch("http://72.61.225.136:1340/api/announcements?filters[department_code][$eq]=cse")
+      fetch(allUrl),
+      fetch(filterUrl)
     ])
-      .then(([res1, res2]) => Promise.all([res1.json(), res2.json()]))
+      .then(([res1, res2]) => {
+        console.log("Response 1 status:", res1.status);
+        console.log("Response 2 status:", res2.status);
+        return Promise.all([res1.json(), res2.json()]);
+      })
       .then(([json1, json2]) => {
         console.log("All announcements:", json1);
         console.log("Filtered CSE announcements:", json2);
@@ -61,7 +71,7 @@ export default function TestAnnouncements() {
         setLoading(false);
       })
       .catch((err) => {
-        console.error("Error:", err);
+        console.error("Fetch error:", err);
         setLoading(false);
       });
   }, []);
