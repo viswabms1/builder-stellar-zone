@@ -375,7 +375,14 @@ function EventsCarousel({ events, title, description, compact = false }: EventsC
           <div className="flex items-start justify-between gap-2">
             <div className="flex-1">
               <h4 className="font-display font-semibold text-sm text-foreground mb-2 line-clamp-2">{currentEvent.title}</h4>
-              <p className="text-xs text-foreground/70 line-clamp-2">{currentEvent.description}</p>
+              <ReadMore
+                contentId={currentEvent.id}
+                type="event"
+                maxLines={2}
+                className="text-xs text-foreground/70"
+              >
+                {currentEvent.description}
+              </ReadMore>
             </div>
           </div>
           <div className="flex items-center justify-between pt-2 border-t border-border/20">
