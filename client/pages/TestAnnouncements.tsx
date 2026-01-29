@@ -84,10 +84,21 @@ function normalizeAnnouncement(item: any) {
     attachment = item.attachment;
   }
 
+  // DEBUG: Log normalization process
+  const rawDescription = item.Description || item.description;
+  const normalizedDescription = normalizeDescription(rawDescription);
+  console.log(`[NORMALIZE] "${item.Title}":`, {
+    rawType: typeof rawDescription,
+    isArray: Array.isArray(rawDescription),
+    arrayLength: Array.isArray(rawDescription) ? rawDescription.length : 'N/A',
+    normalizedLength: normalizedDescription.length,
+    preview: normalizedDescription.substring(0, 100)
+  });
+
   return {
     id: item.id || item.documentId,
     title: item.Title || item.title,
-    description: normalizeDescription(item.Description || item.description),
+    description: normalizedDescription,
     department_code: item.Department_code || item.department_code,
     school_code: item.school_code,
     status: item.Status || item.status || 'active',
