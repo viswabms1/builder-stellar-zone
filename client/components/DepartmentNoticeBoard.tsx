@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ImageModal } from "@/components/ImageModal";
+import { ReadMore } from "@/components/ReadMore";
 import { getCategoryStyles, convertAnnouncementToCarouselItem, convertEventToCarouselItem, convertNewsToCarouselItem, type CarouselItem } from "@/lib/content-manager";
 import { useDepartmentAnnouncements, getDepartmentCode } from "@/hooks/useDepartmentAnnouncements";
 import { useDepartmentEvents } from "@/hooks/useDepartmentEvents";
