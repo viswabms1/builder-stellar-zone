@@ -102,8 +102,8 @@ export function useDepartmentAnnouncements(
 
         const departmentCode = options.departmentCode.toLowerCase();
 
-        // Fetch directly from Strapi API with department_code filter
-        const strapiUrl = `http://72.61.225.136:1340/api/announcements?filters[department_code][$eq]=${departmentCode}&sort=-id&pagination[limit]=${options.limit || 50}`;
+        // Fetch directly from Strapi API with Department_code filter (note the capitalization)
+        const strapiUrl = `http://72.61.225.136:1340/api/announcements?filters[Department_code][$eq]=${departmentCode}&sort=-id&pagination[limit]=${options.limit || 50}`;
 
         console.log(`[useDepartmentAnnouncements] Fetching URL: ${strapiUrl}`);
 
