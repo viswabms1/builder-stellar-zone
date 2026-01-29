@@ -210,6 +210,53 @@ export const handleStrapiWebhook: RequestHandler = async (req, res) => {
 };
 
 /**
+ * Fetch announcements from Strapi
+ * Supports filtering by department_code
+ * Example: /api/strapi/announcements?department_code=cse
+ */
+export const getAnnouncements: RequestHandler = async (req, res) => {
+  try {
+    const departmentCode = req.query.department_code as string | undefined;
+
+    // Build the Strapi URL
+    let query = "?pagination[limit]=100&sort=-createdAt";
+
+    if (departmentCode) {
+      query += `&filters[Department_code][$eq]=${departmentCode}`;
+    }
+
+    const strapiUrl = `${STRAPI_URL}/api/announcements${query}`;
+    console.log(`[ANNOUNCEMENTS] Fetching from: ${strapiUrl}`);
+
+    const response = await fetch(strapiUrl, {
+      headers: {
+        "Content-Type": "application/json",
+        // Add token if available
+        ...(STRAPI_API_TOKEN && { Authorization: `Bearer ${STRAPI_API_TOKEN}` }),
+      },
+    });
+
+    if (!response.ok) {
+      console.error(`[ANNOUNCEMENTS] Error: ${response.status} ${response.statusText}`);
+      const errorText = await response.text();
+      console.error(`[ANNOUNCEMENTS] Error response: ${errorText}`);
+      throw new Error(`Strapi API error: ${response.statusText}`);
+    }
+
+    const data = await response.json();
+    console.log(`[ANNOUNCEMENTS] Fetched ${data.data?.length || 0} announcements`);
+
+    res.json(data);
+  } catch (error) {
+    console.error("[ANNOUNCEMENTS ERROR]", error);
+    res.status(500).json({
+      error: "Failed to fetch announcements",
+      message: error instanceof Error ? error.message : "Unknown error",
+    });
+  }
+};
+
+/**
  * Health check endpoint for Strapi connection
  */
 export const checkStrapiHealth: RequestHandler = async (req, res) => {
