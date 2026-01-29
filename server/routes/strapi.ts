@@ -282,13 +282,20 @@ export const downloadPdf: RequestHandler = async (req, res) => {
     // Construct the full Strapi URL
     const fileUrl = `${STRAPI_URL}${filePath}`;
     console.log(`[PDF DOWNLOAD] Downloading from: ${fileUrl}`);
+    console.log(`[PDF DOWNLOAD] Path query param: ${path}`);
+    console.log(`[PDF DOWNLOAD] File path after processing: ${filePath}`);
+    console.log(`[PDF DOWNLOAD] Using API token: ${STRAPI_API_TOKEN ? 'yes' : 'no'}`);
 
     const response = await fetch(fileUrl, {
+      method: 'GET',
+      credentials: 'include',
       headers: {
         // Add token if available for authentication
         ...(STRAPI_API_TOKEN && { Authorization: `Bearer ${STRAPI_API_TOKEN}` }),
       },
     });
+
+    console.log(`[PDF DOWNLOAD] Response status: ${response.status}`);
 
     if (!response.ok) {
       console.error(`[PDF DOWNLOAD] Error: ${response.status} ${response.statusText}`);
@@ -297,6 +304,8 @@ export const downloadPdf: RequestHandler = async (req, res) => {
       return res.status(response.status).json({
         error: "Failed to download PDF from Strapi",
         details: errorText,
+        statusCode: response.status,
+        url: fileUrl,
       });
     }
 
