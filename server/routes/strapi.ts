@@ -263,29 +263,57 @@ export const getAnnouncements: RequestHandler = async (req, res) => {
 };
 
 /**
- * Health check endpoint for Strapi connection
+ * Proxy for downloading PDF attachments from Strapi
+ * Example: /api/strapi/download-pdf?path=/uploads/Version_2_GUIDELINES_ac9bb54826.pdf
  */
-export const checkStrapiHealth: RequestHandler = async (req, res) => {
+export const downloadPdf: RequestHandler = async (req, res) => {
   try {
-    const response = await fetch(`${STRAPI_URL}/api/health`, {
-      headers: {
-        Authorization: `Bearer ${STRAPI_API_TOKEN}`,
-      },
-    });
+    const { path } = req.query;
 
-    if (response.ok) {
-      res.json({ status: "connected", strapi_url: STRAPI_URL });
-    } else {
-      res.status(503).json({
-        status: "error",
-        message: "Strapi service unavailable",
+    if (!path) {
+      return res.status(400).json({
+        error: "path query parameter is required",
       });
     }
+
+    // Ensure path starts with /
+    const filePath = typeof path === "string" && path.startsWith("/") ? path : `/${path}`;
+
+    // Construct the full Strapi URL
+    const fileUrl = `${STRAPI_URL}${filePath}`;
+    console.log(`[PDF DOWNLOAD] Downloading from: ${fileUrl}`);
+
+    const response = await fetch(fileUrl);
+
+    if (!response.ok) {
+      console.error(`[PDF DOWNLOAD] Error: ${response.status} ${response.statusText}`);
+      return res.status(response.status).json({
+        error: "Failed to download PDF from Strapi",
+      });
+    }
+
+    // Get the content type and size
+    const contentType = response.headers.get("content-type") || "application/pdf";
+    const contentLength = response.headers.get("content-length");
+
+    // Extract filename from path
+    const filename = filePath.split("/").pop() || "document.pdf";
+
+    // Set response headers
+    res.setHeader("Content-Type", contentType);
+    res.setHeader("Content-Disposition", `attachment; filename="${filename}"`);
+    if (contentLength) {
+      res.setHeader("Content-Length", contentLength);
+    }
+
+    // Stream the file
+    const buffer = await response.arrayBuffer();
+    res.send(Buffer.from(buffer));
   } catch (error) {
+    console.error("[PDF DOWNLOAD ERROR]", error);
     res.status(500).json({
-      status: "error",
-      message: "Cannot connect to Strapi",
-      error: error instanceof Error ? error.message : "Unknown error",
+      error: "Failed to download PDF",
+      message: error instanceof Error ? error.message : "Unknown error",
     });
   }
 };
