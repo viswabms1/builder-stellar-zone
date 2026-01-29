@@ -222,7 +222,8 @@ export const getAnnouncements: RequestHandler = async (req, res) => {
     const departmentCode = req.query.department_code as string | undefined;
 
     // Build the Strapi URL
-    let query = "?pagination[limit]=100&sort=-createdAt";
+    // Note: Removed sort parameter as Strapi syntax varies - just fetch all and let client sort if needed
+    let query = "?pagination[limit]=100";
 
     if (departmentCode) {
       query += `&filters[Department_code][$eq]=${departmentCode}`;
