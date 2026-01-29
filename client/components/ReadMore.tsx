@@ -8,11 +8,12 @@ interface ReadMoreProps {
   maxLines?: number;
   className?: string;
   children: React.ReactNode;
+  showReadMore?: boolean; // Explicit flag for showing Read More
 }
 
 /**
- * ReadMore Component - Shows "Read More" link if content is substantial
- * Uses character count heuristic to determine if content warrants a detail page
+ * ReadMore Component - Shows "Read More" link to view full content
+ * Can be explicitly controlled via showReadMore prop, or auto-detected from content length
  */
 export function ReadMore({
   contentId,
@@ -20,22 +21,26 @@ export function ReadMore({
   maxLines = 3,
   className = "",
   children,
+  showReadMore: explicitShowReadMore,
 }: ReadMoreProps) {
   const navigate = useNavigate();
 
-  // Convert children to string to check length
-  let contentText = "";
-  if (typeof children === "string") {
-    contentText = children;
-  } else if (Array.isArray(children)) {
-    contentText = children
-      .map((c) => (typeof c === "string" ? c : ""))
-      .join("");
-  }
+  // Determine if we should show Read More
+  let shouldShowReadMore = explicitShowReadMore;
 
-  // Show Read More if content is longer than ~200 characters (reasonable preview length)
-  // This accounts for ~2-3 lines of text
-  const shouldShowReadMore = contentText.length > 180;
+  if (shouldShowReadMore === undefined) {
+    // Auto-detect based on content length
+    let contentText = "";
+    if (typeof children === "string") {
+      contentText = children;
+    } else if (Array.isArray(children)) {
+      contentText = children
+        .map((c) => (typeof c === "string" ? c : ""))
+        .join("");
+    }
+    // Show Read More if content is longer than ~180 characters
+    shouldShowReadMore = contentText.length > 180;
+  }
 
   const handleReadMore = () => {
     navigate(`/${type}/${contentId}`);
