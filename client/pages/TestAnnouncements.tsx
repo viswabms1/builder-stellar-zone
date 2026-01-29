@@ -59,19 +59,10 @@ function normalizeAnnouncement(item: any) {
 /**
  * Handle PDF download by opening in new tab
  */
-function handlePdfDownload(pdfUrl: string, filename: string) {
+function handlePdfDownload(pdfUrl: string) {
   console.log("Opening PDF from:", pdfUrl);
-  console.log("Filename:", filename);
-
-  // Ensure absolute URL
-  const absoluteUrl = pdfUrl.startsWith("http")
-    ? pdfUrl
-    : `${window.location.origin}${pdfUrl}`;
-
-  console.log("Using absolute URL:", absoluteUrl);
-
   // Open in new tab
-  window.open(absoluteUrl, '_blank');
+  window.open(pdfUrl, '_blank');
 }
 
 export default function TestAnnouncements() {
