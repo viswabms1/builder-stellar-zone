@@ -6,6 +6,7 @@ import { ImageModal } from "@/components/ImageModal";
 import { Calendar, User, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import { ReadMore } from "@/components/ReadMore";
 
 interface NewsSectionProps {
   school?: string; // Optional override
