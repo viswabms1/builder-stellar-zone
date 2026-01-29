@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 /**
  * Converts Strapi rich text format to plain text
+ * Handles block-based rich text from Strapi with proper paragraph spacing
  */
 function normalizeDescription(description: any): string {
   if (!description) return "";
@@ -11,14 +12,43 @@ function normalizeDescription(description: any): string {
   if (Array.isArray(description)) {
     return description
       .map((block: any) => {
-        if (block.children && Array.isArray(block.children)) {
+        // Handle paragraph blocks
+        if (block.type === "paragraph" && block.children && Array.isArray(block.children)) {
+          return block.children
+            .map((child: any) => {
+              // Handle text nodes
+              if (typeof child.text === "string") {
+                return child.text;
+              }
+              // Handle bold, italic, underline text
+              if (child.children && Array.isArray(child.children)) {
+                return child.children
+                  .map((c: any) => c.text || "")
+                  .join("");
+              }
+              return "";
+            })
+            .join("");
+        }
+
+        // Handle heading blocks
+        if (block.type?.includes("heading") && block.children && Array.isArray(block.children)) {
           return block.children
             .map((child: any) => child.text || "")
             .join("");
         }
+
+        // Handle list items
+        if ((block.type === "list-item" || block.type === "li") && block.children && Array.isArray(block.children)) {
+          return block.children
+            .map((child: any) => child.text || "")
+            .join("");
+        }
+
         return "";
       })
-      .join(" ");
+      .filter((text) => text.trim().length > 0) // Remove empty blocks
+      .join("\n\n"); // Join with paragraph spacing
   }
 
   return "";
