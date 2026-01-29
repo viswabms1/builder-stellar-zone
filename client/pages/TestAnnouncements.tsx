@@ -156,20 +156,22 @@ export default function TestAnnouncements() {
           {cseAnnouncements.length === 0 ? (
             <p className="text-gray-500">No CSE announcements found</p>
           ) : (
-            <ul className="space-y-2">
+            <ul className="space-y-4">
               {cseAnnouncements.map((item: any) => (
-                <li key={item.id} className="bg-white p-3 rounded border">
-                  <p className="font-semibold">{item.title}</p>
-                  <p className="text-sm text-gray-600">{item.description}</p>
+                <li key={item.id} className="bg-white p-4 rounded border">
+                  <p className="font-semibold text-lg">{item.title}</p>
+                  <p className="text-sm text-gray-600 mt-2">{item.description}</p>
                   <p className="text-xs text-gray-500 mt-2">
                     Department: {item.department_code || 'N/A'} | Status: {item.status || 'N/A'}
                   </p>
-                  {item.attachment && (
-                    <p className="text-xs mt-2">
-                      <a href={item.attachment} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
-                        📎 Download PDF
+                  {item.attachment ? (
+                    <p className="text-sm mt-3 p-2 bg-blue-100 rounded">
+                      <a href={item.attachment} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-semibold">
+                        📎 Download PDF: {item.attachment.split('/').pop()}
                       </a>
                     </p>
+                  ) : (
+                    <p className="text-xs text-red-500 mt-2">⚠️ No PDF attached</p>
                   )}
                 </li>
               ))}
