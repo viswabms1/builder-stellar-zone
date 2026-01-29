@@ -30,17 +30,25 @@ function normalizeDescription(description: any): string {
 function normalizeAnnouncement(item: any) {
   let attachment = null;
 
+  console.log("Normalizing item:", item);
+  console.log("pdf_link value:", item.pdf_link);
+
   // Handle pdf_link object from Strapi
   if (item.pdf_link?.url) {
     const pdfUrl = item.pdf_link.url;
+    console.log("Found PDF URL:", pdfUrl);
     // If it's a relative URL, prepend the Strapi base URL
     if (pdfUrl.startsWith('/')) {
       attachment = `http://72.61.225.136:1340${pdfUrl}`;
     } else {
       attachment = pdfUrl;
     }
+    console.log("Constructed attachment URL:", attachment);
   } else if (item.attachment) {
     attachment = item.attachment;
+    console.log("Using existing attachment:", attachment);
+  } else {
+    console.log("No PDF found for item");
   }
 
   return {
