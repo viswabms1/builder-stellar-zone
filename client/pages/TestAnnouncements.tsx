@@ -328,6 +328,13 @@ export default function TestAnnouncements() {
               {JSON.stringify(filteredData, null, 2)}
             </pre>
           </div>
+
+          <div>
+            <h3 className="font-bold mb-2">ECE Filtered Response:</h3>
+            <pre className="bg-gray-100 p-3 rounded overflow-auto text-xs max-h-96">
+              {JSON.stringify(eceData, null, 2)}
+            </pre>
+          </div>
         </div>
       </details>
     </section>
