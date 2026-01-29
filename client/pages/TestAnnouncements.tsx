@@ -32,12 +32,12 @@ function normalizeAnnouncement(item: any) {
   let image = null;
   const strapiBaseUrl = "http://72.61.225.136:1340";
 
-  // Handle image from Strapi
+  // Handle image from Strapi - use server proxy to avoid mixed content issues
   if (item.Image?.url) {
     const imagePath = item.Image.url;
-    image = imagePath.startsWith('http') ? imagePath : `${strapiBaseUrl}${imagePath}`;
+    image = `/api/strapi/image?path=${encodeURIComponent(imagePath)}`;
   } else if (item.image && typeof item.image === 'string') {
-    image = item.image.startsWith('http') ? item.image : `${strapiBaseUrl}${item.image}`;
+    image = `/api/strapi/image?path=${encodeURIComponent(item.image)}`;
   }
 
   // Handle pdf_link object from Strapi
