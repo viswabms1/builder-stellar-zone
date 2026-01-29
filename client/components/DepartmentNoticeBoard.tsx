@@ -128,12 +128,17 @@ export function DepartmentNoticeBoard({ school = "Engineering", department }: { 
                   variant="ghost"
                   size="sm"
                   className="h-6 px-2 text-xs bg-brand-blue/10 text-brand-blue hover:bg-brand-blue/20"
-                  asChild
+                  onClick={() => {
+                    // Ensure absolute URL
+                    let absoluteUrl = currentItem.link;
+                    if (!absoluteUrl.startsWith('http')) {
+                      absoluteUrl = `${window.location.origin}${absoluteUrl}`;
+                    }
+                    window.open(absoluteUrl, '_blank');
+                  }}
                 >
-                  <a href={currentItem.link} target="_blank" rel="noreferrer">
-                    <Download className="h-3 w-3 mr-1" />
-                    PDF
-                  </a>
+                  <Download className="h-3 w-3 mr-1" />
+                  PDF
                 </Button>
               )}
             </div>
