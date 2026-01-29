@@ -90,7 +90,7 @@ export default function TestAnnouncements() {
                 <li key={item.id} className="bg-white p-2 rounded border">
                   <p className="font-semibold">{item.title}</p>
                   <p className="text-xs text-gray-500">
-                    Department: {item.department_code || item.department || 'N/A'}
+                    Department: {item.department_code || 'N/A'}
                   </p>
                 </li>
               ))}
