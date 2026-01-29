@@ -122,22 +122,26 @@ export default function TestAnnouncements() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // First fetch all announcements from our server proxy
+    // Fetch announcements from our server proxy
     const allUrl = "/api/strapi/announcements";
     const filterUrl = "/api/strapi/announcements?department_code=cse";
+    const eceUrl = "/api/strapi/announcements?department_code=ece";
 
     console.log("Fetching from:", allUrl);
     console.log("Filtering from:", filterUrl);
+    console.log("ECE from:", eceUrl);
 
     const fetchData = async () => {
       try {
-        const [res1, res2] = await Promise.all([
+        const [res1, res2, res3] = await Promise.all([
           fetch(allUrl),
-          fetch(filterUrl)
+          fetch(filterUrl),
+          fetch(eceUrl)
         ]);
 
         console.log("Response 1 status:", res1.status);
         console.log("Response 2 status:", res2.status);
+        console.log("Response 3 status:", res3.status);
 
         if (!res1.ok) {
           const errorText = await res1.text();
@@ -147,20 +151,28 @@ export default function TestAnnouncements() {
           const errorText = await res2.text();
           console.error("Response 2 error:", errorText);
         }
+        if (!res3.ok) {
+          const errorText = await res3.text();
+          console.error("Response 3 error:", errorText);
+        }
 
         const json1 = await res1.json();
         const json2 = await res2.json();
+        const json3 = await res3.json();
 
         console.log("All announcements:", json1);
         console.log("Filtered CSE announcements:", json2);
+        console.log("Filtered ECE announcements:", json3);
         setAllData(json1);
         setFilteredData(json2);
+        setEceData(json3);
         setLoading(false);
       } catch (err) {
         console.error("Fetch error:", err);
         console.error("Error details:", (err as any)?.message);
         setAllData({ error: "Failed to fetch announcements" });
         setFilteredData({ error: "Failed to fetch CSE announcements" });
+        setEceData({ error: "Failed to fetch ECE announcements" });
         setLoading(false);
       }
     };
