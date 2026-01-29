@@ -336,6 +336,71 @@ export const downloadPdf: RequestHandler = async (req, res) => {
 };
 
 /**
+ * Proxy for serving images from Strapi (handles mixed content issue)
+ * Example: /api/strapi/image?path=/uploads/Chat_GPT_Image_Jan_19_2026_03_01_29_PM_0eb314053c.png
+ */
+export const serveImage: RequestHandler = async (req, res) => {
+  try {
+    const { path } = req.query;
+
+    if (!path) {
+      return res.status(400).json({
+        error: "path query parameter is required",
+      });
+    }
+
+    // Ensure path starts with /
+    const filePath = typeof path === "string" && path.startsWith("/") ? path : `/${path}`;
+
+    // Construct the full Strapi URL
+    const imageUrl = `${STRAPI_URL}${filePath}`;
+    console.log(`[IMAGE PROXY] Fetching from: ${imageUrl}`);
+
+    const response = await fetch(imageUrl, {
+      method: 'GET',
+      credentials: 'include',
+      headers: {
+        // Add token if available for authentication
+        ...(STRAPI_API_TOKEN && { Authorization: `Bearer ${STRAPI_API_TOKEN}` }),
+      },
+    });
+
+    console.log(`[IMAGE PROXY] Response status: ${response.status}`);
+
+    if (!response.ok) {
+      console.error(`[IMAGE PROXY] Error: ${response.status} ${response.statusText}`);
+      const errorText = await response.text();
+      console.error(`[IMAGE PROXY] Error details: ${errorText}`);
+      return res.status(response.status).json({
+        error: "Failed to fetch image from Strapi",
+        details: errorText,
+      });
+    }
+
+    // Get the content type
+    const contentType = response.headers.get("content-type") || "image/png";
+    const contentLength = response.headers.get("content-length");
+
+    // Set response headers
+    res.setHeader("Content-Type", contentType);
+    res.setHeader("Cache-Control", "public, max-age=3600"); // Cache images for 1 hour
+    if (contentLength) {
+      res.setHeader("Content-Length", contentLength);
+    }
+
+    // Stream the image
+    const buffer = await response.arrayBuffer();
+    res.send(Buffer.from(buffer));
+  } catch (error) {
+    console.error("[IMAGE PROXY ERROR]", error);
+    res.status(500).json({
+      error: "Failed to serve image",
+      message: error instanceof Error ? error.message : "Unknown error",
+    });
+  }
+};
+
+/**
  * Health check endpoint for Strapi connection
  */
 export const checkStrapiHealth: RequestHandler = async (req, res) => {
