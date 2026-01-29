@@ -20,11 +20,13 @@ export default function TestAnnouncements() {
 
   if (loading) return <div className="p-8">Loading...</div>;
 
-  if (!data || !data.data) {
+  const announcements = Array.isArray(data) ? data : (data?.data || []);
+
+  if (!data || announcements.length === 0) {
     return (
       <div className="p-8">
         <h1 className="text-2xl font-bold mb-4">Test Announcements - Aerospace</h1>
-        <p>No data received from Directus</p>
+        <p>No data received from Strapi</p>
         <pre className="mt-4 bg-gray-100 p-4 rounded overflow-auto">
           {JSON.stringify(data, null, 2)}
         </pre>
@@ -35,13 +37,13 @@ export default function TestAnnouncements() {
   return (
     <section className="p-8">
       <h1 className="text-2xl font-bold mb-4">Aerospace Department Announcements</h1>
-      <p className="mb-4">Found {data.data.length} announcements</p>
-      
-      {data.data.length === 0 ? (
+      <p className="mb-4">Found {announcements.length} announcements</p>
+
+      {announcements.length === 0 ? (
         <p className="text-gray-500">No announcements yet for Aerospace department.</p>
       ) : (
         <ul className="space-y-4">
-          {data.data.map((item: any) => (
+          {announcements.map((item: any) => (
             <li key={item.id} className="border p-4 rounded">
               <h4 className="font-bold">{item.title}</h4>
               <p className="text-sm text-gray-600">{item.description}</p>
@@ -50,7 +52,7 @@ export default function TestAnnouncements() {
               </p>
               {item.attachment && (
                 <a
-                  href={`https://dsu-website-headless-cms.directus.app/assets/${item.attachment}`}
+                  href={item.attachment}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-blue-500 text-sm mt-2 inline-block"
