@@ -4,8 +4,10 @@ import { PageContent, StrapiResponse } from "@shared/api";
 /**
  * Strapi Configuration
  */
-const STRAPI_URL = process.env.STRAPI_URL || "http://localhost:1337";
+const STRAPI_URL = process.env.STRAPI_URL || "http://72.61.225.136:1340";
 const STRAPI_API_TOKEN = process.env.STRAPI_API_TOKEN || "";
+
+console.log(`[STRAPI] Using URL: ${STRAPI_URL}`);
 
 /**
  * Simple in-memory cache with TTL (Time To Live)
