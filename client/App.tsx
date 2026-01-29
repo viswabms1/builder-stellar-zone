@@ -400,6 +400,9 @@ import LibraryAdvisoryCommittee from "./pages/LibraryAdvisoryCommittee";
 import LibraryContact from "./pages/LibraryContact";
 import NotFound from "./pages/NotFound";
 import { RagChatWidget } from "./components/RagChatWidget";
+import AnnouncementDetail from "./pages/AnnouncementDetail";
+import NewsDetail from "./pages/NewsDetail";
+import EventDetail from "./pages/EventDetail";
 
 function App() {
   return (
