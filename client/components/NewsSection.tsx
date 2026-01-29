@@ -124,6 +124,7 @@ export function NewsSection({
                     type="news"
                     maxLines={2}
                     className="text-sm"
+                    showReadMore={(item.summary || item.description || '').length > 150}
                   >
                     {item.summary || item.description || ''}
                   </ReadMore>
@@ -193,6 +194,7 @@ export function NewsSection({
                   type="news"
                   maxLines={2}
                   className="text-xs text-foreground/70"
+                  showReadMore={(item.summary || item.description || '').length > 150}
                 >
                   {item.summary || item.description || ''}
                 </ReadMore>
@@ -246,6 +248,7 @@ export function NewsSection({
                 type="news"
                 maxLines={1}
                 className="text-xs text-foreground/70 mb-1"
+                showReadMore={(item.summary || item.description || '').length > 150}
               >
                 {item.summary || item.description || ''}
               </ReadMore>
@@ -348,6 +351,7 @@ function NewsCarousel({ news, title, description, compact = false }: NewsCarouse
                 type="news"
                 maxLines={2}
                 className="text-xs text-foreground/70"
+                showReadMore={(currentItem.summary || currentItem.description || '').length > 150}
               >
                 {currentItem.summary || currentItem.description || ''}
               </ReadMore>
