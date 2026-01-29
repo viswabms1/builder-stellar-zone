@@ -66,7 +66,7 @@ export default function TestAnnouncements() {
       )}
       
       <details className="mt-8">
-        <summary className="cursor-pointer font-bold">Raw API Response</summary>
+        <summary className="cursor-pointer font-bold">Raw Strapi API Response</summary>
         <pre className="mt-4 bg-gray-100 p-4 rounded overflow-auto text-xs">
           {JSON.stringify(data, null, 2)}
         </pre>
