@@ -118,7 +118,16 @@ export function NewsSection({
                   <CardTitle className="text-lg">{item.title}</CardTitle>
                   <Badge variant="outline">{item.category}</Badge>
                 </div>
-                <CardDescription>{item.summary || item.description?.substring(0, 100) || ''}</CardDescription>
+                <div className="text-sm text-foreground/70">
+                  <ReadMore
+                    contentId={item.id}
+                    type="news"
+                    maxLines={2}
+                    className="text-sm"
+                  >
+                    {item.summary || item.description || ''}
+                  </ReadMore>
+                </div>
               </CardHeader>
               <CardContent className="space-y-2">
                 <div className="flex items-center text-xs text-foreground/60 gap-4">
