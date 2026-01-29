@@ -110,7 +110,7 @@ export default function TestAnnouncements() {
                   <p className="font-semibold">{item.title}</p>
                   <p className="text-sm text-gray-600">{item.description}</p>
                   <p className="text-xs text-gray-500 mt-2">
-                    Department: {item.department_code || item.department || 'N/A'} | Status: {item.status || 'N/A'}
+                    Department: {item.department_code || 'N/A'} | Status: {item.status || 'N/A'}
                   </p>
                 </li>
               ))}
