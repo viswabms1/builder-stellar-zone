@@ -24,7 +24,8 @@ export default function AnnouncementDetail() {
     );
   }
 
-  const announcement = announcements.find((a) => a.id === id);
+  // Fix: Compare both string and number versions of ID to handle type mismatch
+  const announcement = announcements.find((a) => String(a.id) === String(id));
 
   if (!announcement) {
     return (
