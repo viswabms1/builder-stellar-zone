@@ -44,7 +44,7 @@ export interface Announcement {
   school_code?: string; // Directus uses 'school_code' (e.g., ENG, HS, LAW)
   department_code?: string; // Directus uses 'department_code' (e.g., aero, cse, mech)
   image?: string;
-  attachment?: string; // Single attachment field (file ID in Directus)
+  attachment?: string | { url: string; name: string }; // Directus: file ID string, Strapi: object with url and name
 }
 
 export interface NewsItem {
