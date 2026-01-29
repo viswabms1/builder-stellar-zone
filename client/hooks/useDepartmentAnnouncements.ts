@@ -1,6 +1,33 @@
 import { useEffect, useState } from "react";
 import type { Announcement } from "@/lib/content-manager";
 
+/**
+ * Converts Strapi rich text format to plain text
+ * Strapi returns Description as: [{"type":"paragraph","children":[{"type":"text","text":"..."}]}]
+ */
+function normalizeDescription(description: any): string {
+  if (!description) return "";
+
+  // If it's already a string, return it
+  if (typeof description === "string") return description;
+
+  // If it's a rich text array, extract text content
+  if (Array.isArray(description)) {
+    return description
+      .map((block: any) => {
+        if (block.children && Array.isArray(block.children)) {
+          return block.children
+            .map((child: any) => child.text || "")
+            .join("");
+        }
+        return "";
+      })
+      .join(" ");
+  }
+
+  return "";
+}
+
 interface UseDepartmentAnnouncementsOptions {
   departmentCode: string;
   limit?: number;
