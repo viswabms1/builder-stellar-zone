@@ -253,7 +253,14 @@ export function EventsSection({
                 {event.category}
               </Badge>
             </div>
-            <p className="text-sm text-foreground/70 mb-3">{event.description}</p>
+            <ReadMore
+              contentId={event.id}
+              type="event"
+              maxLines={2}
+              className="text-sm text-foreground/70 mb-3"
+            >
+              {event.description}
+            </ReadMore>
             <div className="grid grid-cols-2 gap-2 text-sm text-foreground/70 mb-3">
               <div className="flex items-center gap-2">
                 <Calendar className="h-4 w-4" />
