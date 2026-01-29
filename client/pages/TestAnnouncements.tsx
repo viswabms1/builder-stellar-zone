@@ -64,12 +64,23 @@ function normalizeAnnouncement(item: any) {
  * Handle PDF download by fetching via proxy and creating download
  */
 function handlePdfDownload(pdfUrl: string, filename: string) {
-  fetch(pdfUrl)
+  console.log("Downloading PDF from:", pdfUrl);
+
+  // Ensure absolute URL
+  const absoluteUrl = pdfUrl.startsWith("http")
+    ? pdfUrl
+    : `${window.location.origin}${pdfUrl}`;
+
+  console.log("Using absolute URL:", absoluteUrl);
+
+  fetch(absoluteUrl)
     .then(response => {
-      if (!response.ok) throw new Error("Failed to download PDF");
+      console.log("PDF fetch response status:", response.status);
+      if (!response.ok) throw new Error(`Failed to download PDF: ${response.status}`);
       return response.blob();
     })
     .then(blob => {
+      console.log("PDF blob size:", blob.size);
       const url = window.URL.createObjectURL(blob);
       const link = document.createElement("a");
       link.href = url;
@@ -78,10 +89,11 @@ function handlePdfDownload(pdfUrl: string, filename: string) {
       link.click();
       document.body.removeChild(link);
       window.URL.revokeObjectURL(url);
+      console.log("PDF download completed");
     })
     .catch(err => {
       console.error("PDF download error:", err);
-      alert("Failed to download PDF");
+      alert(`Failed to download PDF: ${err.message}`);
     });
 }
 
