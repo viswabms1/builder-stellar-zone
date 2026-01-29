@@ -118,6 +118,7 @@ function handlePdfDownload(pdfUrl: string) {
 export default function TestAnnouncements() {
   const [allData, setAllData] = useState<any>(null);
   const [filteredData, setFilteredData] = useState<any>(null);
+  const [eceData, setEceData] = useState<any>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
