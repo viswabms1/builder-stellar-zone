@@ -69,26 +69,43 @@ export default function TestAnnouncements() {
     console.log("Fetching from:", allUrl);
     console.log("Filtering from:", filterUrl);
 
-    Promise.all([
-      fetch(allUrl),
-      fetch(filterUrl)
-    ])
-      .then(([res1, res2]) => {
+    const fetchData = async () => {
+      try {
+        const [res1, res2] = await Promise.all([
+          fetch(allUrl),
+          fetch(filterUrl)
+        ]);
+
         console.log("Response 1 status:", res1.status);
         console.log("Response 2 status:", res2.status);
-        return Promise.all([res1.json(), res2.json()]);
-      })
-      .then(([json1, json2]) => {
+
+        if (!res1.ok) {
+          const errorText = await res1.text();
+          console.error("Response 1 error:", errorText);
+        }
+        if (!res2.ok) {
+          const errorText = await res2.text();
+          console.error("Response 2 error:", errorText);
+        }
+
+        const json1 = await res1.json();
+        const json2 = await res2.json();
+
         console.log("All announcements:", json1);
         console.log("Filtered CSE announcements:", json2);
         setAllData(json1);
         setFilteredData(json2);
         setLoading(false);
-      })
-      .catch((err) => {
+      } catch (err) {
         console.error("Fetch error:", err);
+        console.error("Error details:", (err as any)?.message);
+        setAllData({ error: "Failed to fetch announcements" });
+        setFilteredData({ error: "Failed to fetch CSE announcements" });
         setLoading(false);
-      });
+      }
+    };
+
+    fetchData();
   }, []);
 
   if (loading) return <div className="p-8">Loading...</div>;
