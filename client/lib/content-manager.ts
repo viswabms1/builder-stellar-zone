@@ -170,10 +170,14 @@ export function convertAnnouncementToCarouselItem(a: Announcement): CarouselItem
   let link: string | undefined;
   let image: string | undefined;
 
-  // Handle image - ensure it's a full URL
+  // Handle image - use proxy URL if it's a relative Strapi path
   if (a.image) {
     if (typeof a.image === 'string') {
-      image = a.image.startsWith('http') ? a.image : `http://72.61.225.136:1340${a.image}`;
+      // Image is already processed by hooks to either be:
+      // 1. Full http URL
+      // 2. /api/strapi/image?path=... proxy URL
+      // So just use it as-is
+      image = a.image;
     }
   }
 
