@@ -88,6 +88,10 @@ export function createServer() {
   // Usage: GET /api/strapi/download-pdf?path=/uploads/Version_2_GUIDELINES_ac9bb54826.pdf
   app.get("/api/strapi/download-pdf", downloadPdf);
 
+  // Serve images from Strapi (proxy to handle mixed content HTTPS/HTTP issue)
+  // Usage: GET /api/strapi/image?path=/uploads/Chat_GPT_Image_Jan_19_2026_03_01_29_PM_0eb314053c.png
+  app.get("/api/strapi/image", serveImage);
+
   // ============================================
   // DIRECTUS CMS INTEGRATION ROUTES
   // ============================================
