@@ -1423,6 +1423,10 @@ function App() {
                   element={<TheodoreChandraPage />}
                 />
                 <Route
+                  path="/academics/engineering/electronics-communication/faculty/:slug"
+                  element={<ECEFacultyProfile />}
+                />
+                <Route
                   path="/academics/engineering/cs-medical-engineering"
                   element={<MedicalEngineering />}
                 />
