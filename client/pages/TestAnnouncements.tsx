@@ -1,5 +1,46 @@
 import { useEffect, useState } from "react";
 
+/**
+ * Converts Strapi rich text format to plain text
+ */
+function normalizeDescription(description: any): string {
+  if (!description) return "";
+
+  if (typeof description === "string") return description;
+
+  if (Array.isArray(description)) {
+    return description
+      .map((block: any) => {
+        if (block.children && Array.isArray(block.children)) {
+          return block.children
+            .map((child: any) => child.text || "")
+            .join("");
+        }
+        return "";
+      })
+      .join(" ");
+  }
+
+  return "";
+}
+
+/**
+ * Normalize Strapi announcement to standard format
+ */
+function normalizeAnnouncement(item: any) {
+  return {
+    id: item.id || item.documentId,
+    title: item.Title || item.title,
+    description: normalizeDescription(item.Description || item.description),
+    department_code: item.Department_code || item.department_code,
+    school_code: item.school_code,
+    status: item.Status || item.status || 'active',
+    expiry_date: item.Expirydate || item.expiry_date,
+    date: item.createdAt,
+    attachment: item.pdf_link?.url || item.attachment,
+  };
+}
+
 export default function TestAnnouncements() {
   const [allData, setAllData] = useState<any>(null);
   const [filteredData, setFilteredData] = useState<any>(null);
