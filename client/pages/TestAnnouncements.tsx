@@ -287,16 +287,26 @@ export default function TestAnnouncements() {
             <ul className="space-y-4">
               {eceAnnouncements.map((item: any, idx: number) => {
                 const rawItem = eceAnnouncementsRaw[idx];
+                const descriptionLength = item.description ? item.description.length : 0;
+                const shouldShowReadMore = item.description && item.description.length > 150;
+                console.log(`ECE Announcement "${item.title}":`, {
+                  descriptionLength,
+                  shouldShowReadMore,
+                  firstChars: item.description ? item.description.substring(0, 100) : 'N/A'
+                });
                 return (
                   <li key={item.id} className="bg-white p-4 rounded border">
                     <p className="font-semibold text-lg">{item.title}</p>
+                    <p className="text-xs bg-yellow-100 p-1 rounded mb-2">
+                      Debug: Description length = {descriptionLength} chars | showReadMore = {shouldShowReadMore ? 'YES' : 'NO'}
+                    </p>
                     <div className="mt-2">
                       <ReadMore
                         contentId={item.id}
                         type="announcement"
                         maxLines={3}
                         className="text-sm text-gray-600 whitespace-pre-wrap break-words"
-                        showReadMore={item.description && item.description.length > 150}
+                        showReadMore={shouldShowReadMore}
                       >
                         {item.description}
                       </ReadMore>
