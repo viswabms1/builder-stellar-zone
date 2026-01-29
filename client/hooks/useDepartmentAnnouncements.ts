@@ -84,8 +84,8 @@ const DEPARTMENT_CODE_MAP: Record<string, string> = {
 };
 
 /**
- * Custom hook for fetching announcements by department from Directus
- * Fetches directly from Directus API using department_code filter
+ * Custom hook for fetching announcements by department from Strapi
+ * Fetches directly from Strapi API using department_code filter
  */
 export function useDepartmentAnnouncements(
   options: UseDepartmentAnnouncementsOptions
@@ -102,29 +102,30 @@ export function useDepartmentAnnouncements(
 
         const departmentCode = options.departmentCode.toLowerCase();
 
-        // Fetch directly from Directus API with department_code filter
-        const directusUrl = `https://dsu-website-headless-cms.directus.app/items/announcements?filter[department_code][_eq]=${departmentCode}&sort=-expiry_date&limit=${options.limit || 50}`;
-        
+        // Fetch directly from Strapi API with department_code filter
+        const strapiUrl = `http://72.61.225.136:1340/api/announcements?filters[department_code][$eq]=${departmentCode}&sort=-id&pagination[limit]=${options.limit || 50}`;
+
         console.log(`[useDepartmentAnnouncements] Fetching for department: ${departmentCode}`);
-        
-        const response = await fetch(directusUrl);
+
+        const response = await fetch(strapiUrl);
 
         if (response.ok) {
           const data = await response.json();
-          const fetchedAnnouncements = data.data || [];
+          // Strapi response returns data array or wrapped in data object
+          const fetchedAnnouncements = Array.isArray(data) ? data : (data.data || []);
           setAnnouncements(fetchedAnnouncements);
           console.log(
             `[useDepartmentAnnouncements] Fetched ${fetchedAnnouncements.length} announcements for ${departmentCode}`
           );
         } else {
           console.warn(
-            `[useDepartmentAnnouncements] Directus API returned non-200 status`
+            `[useDepartmentAnnouncements] Strapi API returned non-200 status`
           );
           setAnnouncements([]);
         }
       } catch (apiError) {
         console.warn(
-          "[useDepartmentAnnouncements] Directus fetch failed:",
+          "[useDepartmentAnnouncements] Strapi fetch failed:",
           apiError
         );
         setError(
