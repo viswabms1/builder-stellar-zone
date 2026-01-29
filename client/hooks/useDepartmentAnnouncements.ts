@@ -105,12 +105,16 @@ export function useDepartmentAnnouncements(
         // Fetch directly from Strapi API with department_code filter
         const strapiUrl = `http://72.61.225.136:1340/api/announcements?filters[department_code][$eq]=${departmentCode}&sort=-id&pagination[limit]=${options.limit || 50}`;
 
-        console.log(`[useDepartmentAnnouncements] Fetching for department: ${departmentCode}`);
+        console.log(`[useDepartmentAnnouncements] Fetching URL: ${strapiUrl}`);
 
         const response = await fetch(strapiUrl);
 
+        console.log(`[useDepartmentAnnouncements] Response status: ${response.status}`);
+
         if (response.ok) {
           const data = await response.json();
+          console.log(`[useDepartmentAnnouncements] Full response:`, data);
+
           // Strapi response returns data array or wrapped in data object
           const fetchedAnnouncements = Array.isArray(data) ? data : (data.data || []);
           setAnnouncements(fetchedAnnouncements);
@@ -119,8 +123,10 @@ export function useDepartmentAnnouncements(
           );
         } else {
           console.warn(
-            `[useDepartmentAnnouncements] Strapi API returned non-200 status`
+            `[useDepartmentAnnouncements] Strapi API returned non-200 status: ${response.status}`
           );
+          const errorText = await response.text();
+          console.warn(`Error response: ${errorText}`);
           setAnnouncements([]);
         }
       } catch (apiError) {
