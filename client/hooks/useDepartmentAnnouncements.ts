@@ -151,12 +151,8 @@ export function useDepartmentAnnouncements(
             let attachment = null;
             if (item.pdf_link?.url) {
               const pdfUrl = item.pdf_link.url;
-              // If it's a relative URL, prepend the Strapi base URL
-              if (pdfUrl.startsWith('/')) {
-                attachment = `http://72.61.225.136:1340${pdfUrl}`;
-              } else {
-                attachment = pdfUrl;
-              }
+              // Use server proxy to download PDF (works for both local dev and deployed environments)
+              attachment = `/api/strapi/download-pdf?path=${encodeURIComponent(pdfUrl)}`;
             } else if (item.attachment) {
               attachment = item.attachment;
             }
