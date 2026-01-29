@@ -28,6 +28,21 @@ function normalizeDescription(description: any): string {
  * Normalize Strapi announcement to standard format
  */
 function normalizeAnnouncement(item: any) {
+  let attachment = null;
+
+  // Handle pdf_link object from Strapi
+  if (item.pdf_link?.url) {
+    const pdfUrl = item.pdf_link.url;
+    // If it's a relative URL, prepend the Strapi base URL
+    if (pdfUrl.startsWith('/')) {
+      attachment = `http://72.61.225.136:1340${pdfUrl}`;
+    } else {
+      attachment = pdfUrl;
+    }
+  } else if (item.attachment) {
+    attachment = item.attachment;
+  }
+
   return {
     id: item.id || item.documentId,
     title: item.Title || item.title,
@@ -37,7 +52,7 @@ function normalizeAnnouncement(item: any) {
     status: item.Status || item.status || 'active',
     expiry_date: item.Expirydate || item.expiry_date,
     date: item.createdAt,
-    attachment: item.pdf_link?.url || item.attachment,
+    attachment: attachment,
   };
 }
 
