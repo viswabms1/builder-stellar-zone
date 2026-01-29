@@ -83,6 +83,10 @@ export function createServer() {
   // Usage: GET /api/strapi/announcements or /api/strapi/announcements?department_code=cse
   app.get("/api/strapi/announcements", getStrapiAnnouncements);
 
+  // Download PDF from Strapi (proxy to handle network isolation)
+  // Usage: GET /api/strapi/download-pdf?path=/uploads/Version_2_GUIDELINES_ac9bb54826.pdf
+  app.get("/api/strapi/download-pdf", downloadPdf);
+
   // ============================================
   // DIRECTUS CMS INTEGRATION ROUTES
   // ============================================
