@@ -78,6 +78,10 @@ export function createServer() {
   // Usage: GET /api/strapi/health
   app.get("/api/strapi/health", checkStrapiHealth);
 
+  // Fetch Announcements from Strapi
+  // Usage: GET /api/strapi/announcements or /api/strapi/announcements?department_code=cse
+  app.get("/api/strapi/announcements", getStrapiAnnouncements);
+
   // ============================================
   // DIRECTUS CMS INTEGRATION ROUTES
   // ============================================
