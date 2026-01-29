@@ -11,6 +11,7 @@ import {
   handleStrapiWebhook,
   checkStrapiHealth,
   getAnnouncements as getStrapiAnnouncements,
+  downloadPdf,
 } from "./routes/strapi";
 import {
   getVisionMission,
