@@ -188,9 +188,14 @@ export function NewsSection({
                 <Badge variant="outline" className="w-fit text-xs">{item.category}</Badge>
               </CardHeader>
               <CardContent className="space-y-2">
-                <p className="text-xs text-foreground/70 line-clamp-2">
-                  {item.summary || item.description?.substring(0, 80) || ''}
-                </p>
+                <ReadMore
+                  contentId={item.id}
+                  type="news"
+                  maxLines={2}
+                  className="text-xs text-foreground/70"
+                >
+                  {item.summary || item.description || ''}
+                </ReadMore>
                 <div className="flex items-center justify-between text-xs text-foreground/60">
                   <span>{item.date ? new Date(item.date).toLocaleDateString() : 'N/A'}</span>
                   {item.author && <span>{item.author}</span>}
