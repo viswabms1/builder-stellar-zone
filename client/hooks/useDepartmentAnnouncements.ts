@@ -147,12 +147,21 @@ export function useDepartmentAnnouncements(
 
           // Normalize Strapi field names to our Announcement interface
           fetchedAnnouncements = fetchedAnnouncements.map((item: any) => {
+            const strapiBaseUrl = "http://72.61.225.136:1340";
+
+            // Handle image from Strapi
+            let image = null;
+            if (item.Image?.url) {
+              const imagePath = item.Image.url;
+              image = imagePath.startsWith('http') ? imagePath : `${strapiBaseUrl}${imagePath}`;
+            } else if (item.image && typeof item.image === 'string') {
+              image = item.image.startsWith('http') ? item.image : `${strapiBaseUrl}${item.image}`;
+            }
+
             // Handle pdf_link object from Strapi
             let attachment = null;
             if (item.pdf_link?.url) {
               const pdfPath = item.pdf_link.url;
-              // Use direct Strapi URL since public access is now enabled
-              const strapiBaseUrl = "http://72.61.225.136:1340";
               attachment = {
                 url: `${strapiBaseUrl}${pdfPath}`,
                 name: item.pdf_link.name || 'document.pdf'
@@ -173,7 +182,7 @@ export function useDepartmentAnnouncements(
               attachment: attachment,
               category: item.Category || item.category,
               priority: item.Priority || item.priority,
-              image: item.Image?.url || item.image,
+              image: image,
             };
           });
 
