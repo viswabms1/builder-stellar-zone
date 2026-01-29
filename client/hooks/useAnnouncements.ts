@@ -67,11 +67,11 @@ export function useAnnouncements(
         let fetchedAnnouncements: Announcement[] = [];
 
         try {
-          // Fetch directly from Strapi API
-          const strapiUrl = "http://72.61.225.136:1340/api/announcements";
-          console.log(`[useAnnouncements] Fetching from: ${strapiUrl}`);
+          // Fetch from our server proxy (which connects to Strapi)
+          const serverUrl = "/api/strapi/announcements";
+          console.log(`[useAnnouncements] Fetching from: ${serverUrl}`);
 
-          const response = await fetch(strapiUrl);
+          const response = await fetch(serverUrl);
 
           console.log(`[useAnnouncements] Response status: ${response.status}`);
 
