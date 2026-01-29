@@ -1,15 +1,22 @@
 import { useEffect, useState } from "react";
 
 export default function TestAnnouncements() {
-  const [data, setData] = useState<any>(null);
+  const [allData, setAllData] = useState<any>(null);
+  const [filteredData, setFilteredData] = useState<any>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://72.61.225.136:1340/api/announcements?filters[department_code][$eq]=aero")
-      .then((res) => res.json())
-      .then((json) => {
-        console.log("Strapi response:", json);
-        setData(json);
+    // First fetch all announcements
+    Promise.all([
+      fetch("http://72.61.225.136:1340/api/announcements"),
+      fetch("http://72.61.225.136:1340/api/announcements?filters[department_code][$eq]=cse")
+    ])
+      .then(([res1, res2]) => Promise.all([res1.json(), res2.json()]))
+      .then(([json1, json2]) => {
+        console.log("All announcements:", json1);
+        console.log("Filtered CSE announcements:", json2);
+        setAllData(json1);
+        setFilteredData(json2);
         setLoading(false);
       })
       .catch((err) => {
