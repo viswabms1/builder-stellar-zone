@@ -194,9 +194,11 @@ export default function TestAnnouncements() {
 
   const allAnnouncementsRaw = Array.isArray(allData) ? allData : (allData?.data || []);
   const cseAnnouncementsRaw = Array.isArray(filteredData) ? filteredData : (filteredData?.data || []);
+  const eceAnnouncementsRaw = Array.isArray(eceData) ? eceData : (eceData?.data || []);
 
   const allAnnouncements = allAnnouncementsRaw.map(normalizeAnnouncement);
   const cseAnnouncements = cseAnnouncementsRaw.map(normalizeAnnouncement);
+  const eceAnnouncements = eceAnnouncementsRaw.map(normalizeAnnouncement);
 
   return (
     <section className="p-8 space-y-8">
