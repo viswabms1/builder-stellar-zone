@@ -29,13 +29,22 @@ function normalizeDescription(description: any): string {
  */
 function normalizeAnnouncement(item: any) {
   let attachment = null;
+  let image = null;
+  const strapiBaseUrl = "http://72.61.225.136:1340";
+
+  // Handle image from Strapi
+  if (item.Image?.url) {
+    const imagePath = item.Image.url;
+    image = imagePath.startsWith('http') ? imagePath : `${strapiBaseUrl}${imagePath}`;
+  } else if (item.image && typeof item.image === 'string') {
+    image = item.image.startsWith('http') ? item.image : `${strapiBaseUrl}${item.image}`;
+  }
 
   // Handle pdf_link object from Strapi
   if (item.pdf_link?.url) {
     const pdfPath = item.pdf_link.url;
     console.log("PDF path from Strapi:", pdfPath);
     // Use direct Strapi URL since public access is now enabled
-    const strapiBaseUrl = "http://72.61.225.136:1340";
     attachment = {
       url: `${strapiBaseUrl}${pdfPath}`,
       name: item.pdf_link.name || 'document.pdf'
@@ -54,6 +63,7 @@ function normalizeAnnouncement(item: any) {
     expiry_date: item.Expirydate || item.expiry_date,
     date: item.createdAt,
     attachment: attachment,
+    image: image,
   };
 }
 
