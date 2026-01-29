@@ -168,6 +168,14 @@ export type CarouselItem = {
 
 export function convertAnnouncementToCarouselItem(a: Announcement): CarouselItem {
   let link: string | undefined;
+  let image: string | undefined;
+
+  // Handle image - ensure it's a full URL
+  if (a.image) {
+    if (typeof a.image === 'string') {
+      image = a.image.startsWith('http') ? a.image : `http://72.61.225.136:1340${a.image}`;
+    }
+  }
 
   if (a.attachment) {
     // Handle both Strapi (object with url) and Directus (string ID) formats
@@ -185,7 +193,7 @@ export function convertAnnouncementToCarouselItem(a: Announcement): CarouselItem
     category: "Announcement",
     date: a.date || a.expiry_date || new Date().toISOString(),
     description: a.description,
-    image: a.image,
+    image: image,
     link: link,
   };
 }
