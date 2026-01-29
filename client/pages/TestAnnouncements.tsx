@@ -32,14 +32,24 @@ function normalizeAnnouncement(item: any) {
 
   console.log("Normalizing item:", item);
   console.log("pdf_link value:", item.pdf_link);
+  console.log("pdf_link type:", typeof item.pdf_link);
+  console.log("pdf_link.url:", item.pdf_link?.url);
+  console.log("pdf_link.url type:", typeof item.pdf_link?.url);
 
   // Handle pdf_link object from Strapi
   if (item.pdf_link?.url) {
-    const pdfUrl = item.pdf_link.url;
-    console.log("Found PDF URL:", pdfUrl);
+    let pdfUrl = item.pdf_link.url;
+    console.log("Found PDF URL (raw):", JSON.stringify(pdfUrl));
+    console.log("URL length:", pdfUrl.length);
+    console.log("URL char codes:", Array.from(pdfUrl).map(c => c.charCodeAt(0)));
+
+    // Trim any whitespace
+    pdfUrl = pdfUrl.trim();
+    console.log("PDF URL after trim:", JSON.stringify(pdfUrl));
+
     // Use server proxy to download PDF (works for both local dev and deployed environments)
     attachment = `/api/strapi/download-pdf?path=${encodeURIComponent(pdfUrl)}`;
-    console.log("Constructed attachment proxy URL:", attachment);
+    console.log("Constructed attachment proxy URL:", JSON.stringify(attachment));
   } else if (item.attachment) {
     attachment = item.attachment;
     console.log("Using existing attachment:", attachment);
