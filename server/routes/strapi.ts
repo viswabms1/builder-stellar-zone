@@ -4,7 +4,8 @@ import { PageContent, StrapiResponse } from "@shared/api";
 /**
  * Strapi Configuration
  */
-const STRAPI_URL = process.env.STRAPI_URL || "http://72.61.225.136:1340";
+// Use the local Strapi instance by default
+const STRAPI_URL = "http://72.61.225.136:1340";
 const STRAPI_API_TOKEN = process.env.STRAPI_API_TOKEN || "";
 
 console.log(`[STRAPI] Using URL: ${STRAPI_URL}`);
