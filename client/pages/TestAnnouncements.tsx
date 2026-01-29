@@ -60,6 +60,31 @@ function normalizeAnnouncement(item: any) {
   };
 }
 
+/**
+ * Handle PDF download by fetching via proxy and creating download
+ */
+function handlePdfDownload(pdfUrl: string, filename: string) {
+  fetch(pdfUrl)
+    .then(response => {
+      if (!response.ok) throw new Error("Failed to download PDF");
+      return response.blob();
+    })
+    .then(blob => {
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = filename || "document.pdf";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(url);
+    })
+    .catch(err => {
+      console.error("PDF download error:", err);
+      alert("Failed to download PDF");
+    });
+}
+
 export default function TestAnnouncements() {
   const [allData, setAllData] = useState<any>(null);
   const [filteredData, setFilteredData] = useState<any>(null);
