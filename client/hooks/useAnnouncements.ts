@@ -22,7 +22,7 @@ interface UseAnnouncementsResult {
 
 /**
  * Custom hook for fetching and filtering announcements
- * Fetches directly from Directus API with graceful fallback to local data
+ * Fetches directly from Strapi API with graceful fallback to local data
  */
 export function useAnnouncements(
   options?: UseAnnouncementsOptions
@@ -40,28 +40,28 @@ export function useAnnouncements(
         let fetchedAnnouncements: Announcement[] = [];
 
         try {
-          // Fetch directly from Directus API
-          const directusUrl = "https://dsu-website-headless-cms.directus.app/items/announcements?filter[status][_eq]=active&sort=-expiry_date&limit=100";
-          const response = await fetch(directusUrl);
+          // Fetch directly from Strapi API
+          const strapiUrl = "http://72.61.225.136:1340/api/announcements";
+          const response = await fetch(strapiUrl);
 
           if (response.ok) {
             const data = await response.json();
-            // Directus response is already in the correct format
-            fetchedAnnouncements = data.data || [];
+            // Strapi response returns data array or wrapped in data object
+            fetchedAnnouncements = Array.isArray(data) ? data : (data.data || []);
             console.log(
-              "[useAnnouncements] Fetched from Directus:",
+              "[useAnnouncements] Fetched from Strapi:",
               fetchedAnnouncements.length,
               "announcements"
             );
           } else {
             console.warn(
-              "[useAnnouncements] Directus API returned non-200 status, using local data"
+              "[useAnnouncements] Strapi API returned non-200 status, using local data"
             );
             fetchedAnnouncements = getAllAnnouncements();
           }
         } catch (apiError) {
           console.warn(
-            "[useAnnouncements] Directus fetch failed, falling back to local data:",
+            "[useAnnouncements] Strapi fetch failed, falling back to local data:",
             apiError
           );
           // Fall back to local data if API fails
