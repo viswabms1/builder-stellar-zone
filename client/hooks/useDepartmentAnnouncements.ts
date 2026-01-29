@@ -151,9 +151,9 @@ export function useDepartmentAnnouncements(
             let attachment = null;
             if (item.pdf_link?.url) {
               const pdfPath = item.pdf_link.url;
-              // Direct URL to Strapi - browser will access it directly
+              // Use server proxy to access the PDF (server can authenticate with Strapi)
               attachment = {
-                url: `http://72.61.225.136:1340${pdfPath}`,
+                url: `/api/strapi/download-pdf?path=${encodeURIComponent(pdfPath)}`,
                 name: item.pdf_link.name || 'document.pdf'
               };
             } else if (item.attachment) {
