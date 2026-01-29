@@ -4,6 +4,7 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 import { X, AlertCircle, Info, CheckCircle2, Download, FileText, Paperclip } from "lucide-react";
 import { useState } from "react";
+import { ReadMore } from "@/components/ReadMore";
 
 interface AnnouncementBannerProps {
   priority?: "high" | "medium" | "low";
