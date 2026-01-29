@@ -241,9 +241,14 @@ export function NewsSection({
                   {item.category}
                 </Badge>
               </div>
-              <p className="text-xs text-foreground/70 line-clamp-1 mb-1">
-                {item.summary || item.description?.substring(0, 100) || ''}
-              </p>
+              <ReadMore
+                contentId={item.id}
+                type="news"
+                maxLines={1}
+                className="text-xs text-foreground/70 mb-1"
+              >
+                {item.summary || item.description || ''}
+              </ReadMore>
               <div className="flex items-center gap-3 text-xs text-foreground/60">
                 <span>{item.date ? new Date(item.date).toLocaleDateString() : 'N/A'}</span>
                 {item.author && <span>{item.author}</span>}
