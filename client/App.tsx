@@ -1869,6 +1869,11 @@ function App() {
                     />
                   }
                 />
+                {/* Detail pages for Announcements, News, and Events */}
+                <Route path="/announcement/:id" element={<AnnouncementDetail />} />
+                <Route path="/news/:id" element={<NewsDetail />} />
+                <Route path="/event/:id" element={<EventDetail />} />
+
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                 <Route path="*" element={<NotFound />} />
               </Routes>
