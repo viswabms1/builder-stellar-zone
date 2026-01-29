@@ -177,12 +177,11 @@ export default function TestAnnouncements() {
                     <p className="text-sm mt-3 p-2 bg-blue-100 rounded">
                       <button
                         onClick={() => {
-                          const filename = item.attachment.split('/').pop() || "document.pdf";
-                          handlePdfDownload(item.attachment, filename);
+                          handlePdfDownload(item.attachment.url);
                         }}
                         className="text-blue-600 hover:underline font-semibold cursor-pointer"
                       >
-                        📎 Download PDF: {item.attachment.split('/').pop() || 'Version_2_GUIDELINES_ac9bb54826.pdf'}
+                        📎 Download PDF: {item.attachment.name}
                       </button>
                     </p>
                   ) : (
