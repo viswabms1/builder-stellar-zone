@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { ImageModal } from "@/components/ImageModal";
 import { Calendar, MapPin, Users, Clock, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState, useEffect } from "react";
+import { ReadMore } from "@/components/ReadMore";
 
 interface EventsSectionProps {
   school?: string; // Optional override
