@@ -1,0 +1,167 @@
+{
+  "summary": "Complete list of all image URLs used in Dayananda Sagar University website",
+  "generated_date": "2026-01-30",
+  "total_categories": 8,
+  
+  "external_dsu_images": {
+    "description": "Images hosted on dsu.edu.in domain",
+    "count": 30,
+    "urls": [
+      "https://dsu.edu.in/images/homepage/2024/tedxposter.png",
+      "https://dsu.edu.in/images/Boot-camp.jpg",
+      "https://dsu.edu.in/images/homepage/2024/designer1400x1400.jpg",
+      "https://dsu.edu.in/images/BootcampForInnovators.jpg",
+      "https://dsu.edu.in/images/internationalconference.jpg",
+      "https://dsu.edu.in/images/InternationalRoboticsInitative.jpg",
+      "https://dsu.edu.in/images/imun.jpg",
+      "https://dsu.edu.in/images/StuExchange.jpeg",
+      "https://www.dsu.edu.in/images/Home/vision-mission.jpg",
+      "https://www.dsu.edu.in/images/3.jpg",
+      "https://www.dsu.edu.in/images/Engineering/engg-landing.jpg",
+      "https://www.dsu.edu.in/images/founder.png",
+      "https://www.dsu.edu.in/images/founder2.png",
+      "https://www.dsu.edu.in/images/Home/history.jpg",
+      "https://www.dsu.edu.in/images/demo/chancellor.jpg",
+      "https://www.dsu.edu.in/images/demo/prochancellor1.jpg",
+      "https://www.dsu.edu.in/images/demo/Dr_Puttamadappa.jpg",
+      "https://www.dsu.edu.in/images/Prof_R_Janardhan.jpg",
+      "https://www.dsu.edu.in/images/Dr_Prakash_S.jpg",
+      "https://www.dsu.edu.in/images/Engineering/CSE-dept/abt-cse.JPG",
+      "https://www.dsu.edu.in/images/Engineering/CSE-dept/faculty/Udaya.jpg",
+      "https://www.dsu.edu.in/images/Engineering/CSE-dept/faculty/Girisha_GS.jpg",
+      "https://www.dsu.edu.in/images/Engineering/CSE-dept/faculty/DrBipin_1.jpg",
+      "https://www.dsu.edu.in/images/Engineering/CSE-dept/faculty/Revathi_V.jpg",
+      "https://www.dsu.edu.in/cache/resized/ccb77541cad0917c758d7c8869ab88c3.jpg",
+      "https://www.dsu.edu.in/cache/resized/daee71601a135f97bd8b57033cc23a3b.jpg",
+      "https://www.dsu.edu.in/cache/resized/a4359bd05fb868287dc18844ac2ffd9f.jpg",
+      "https://www.dsu.edu.in/cache/resized/8a4ad3ecd59ce31c851a7b2cf20ecda6.jpg",
+      "https://www.dsu.edu.in/cache/resized/2d89222379562f640d600b5be025d83a.jpg",
+      "https://www.dsu.edu.in/cache/resized/6c2ce349101d1198a3bbbada6d4dcdd3.jpg"
+    ]
+  },
+
+  "unsplash_images": {
+    "description": "Images from Unsplash free stock photo service",
+    "count": 11,
+    "urls": [
+      "https://images.unsplash.com/photo-1534723328310-e82dad3ee43f?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=300&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1516321318423-f06f70a504f0?w=600&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=600&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1620&q=80",
+      "https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?q=80&w=2000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=2000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1580281657521-8a19aa08c8c8?q=80&w=2000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?q=80&w=2000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1559027615-cd2628902d4a?q=80&w=2000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1584984360498-9b5eec6f5c86?q=80&w=2000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1581091870622-5f1e9b8d2f70?q=80&w=2000&auto=format&fit=crop"
+    ]
+  },
+
+  "pexels_images": {
+    "description": "Images from Pexels free stock photo service",
+    "count": 1,
+    "urls": [
+      "https://images.pexels.com/photos/3931561/pexels-photo-3931561.jpeg?auto=compress&cs=tinysrgb&w=1600"
+    ]
+  },
+
+  "cms_patterns": {
+    "description": "Dynamic CMS image URL patterns (Directus, Strapi)",
+    "directus": {
+      "pattern": "https://dsu-website-headless-cms.directus.app/assets/{asset-id}",
+      "usage": "News images, event images, content from Directus CMS",
+      "example": "https://dsu-website-headless-cms.directus.app/assets/12345-abc-def"
+    },
+    "strapi_proxy": {
+      "pattern": "/api/strapi/image?path={image_path}",
+      "usage": "Server-side proxy for Strapi images to avoid CORS issues",
+      "example": "/api/strapi/image?path=/uploads/Chat_GPT_Image_Jan_19_2026_03_01_29_PM_0eb314053c.png"
+    },
+    "strapi_direct": {
+      "pattern": "http://72.61.225.136:1340{image_path}",
+      "usage": "Direct Strapi server URLs",
+      "example": "http://72.61.225.136:1340/uploads/medium_ChatGPT_Image_Jan_19_2026_03_01_29_PM_0eb314053c.png"
+    }
+  },
+
+  "avatar_service": {
+    "description": "Dynamic avatar generation service (UI Avatars)",
+    "pattern": "https://ui-avatars.com/api/?name={name}&background=random&color=fff",
+    "usage": "Faculty profile pictures when no image available",
+    "example": "https://ui-avatars.com/api/?name=John%20Doe&background=random&color=fff"
+  },
+
+  "static_assets": {
+    "description": "Static assets in public folder",
+    "files": [
+      "/favicon.ico",
+      "/placeholder.svg"
+    ]
+  },
+
+  "pdf_and_document_patterns": {
+    "description": "PDFs and documents stored in images folder",
+    "examples": [
+      "https://www.dsu.edu.in/images/Engineering/CSE-dept/notices/HackDSU-2025.pdf",
+      "https://www.dsu.edu.in/images/Engineering/ME-dept/notices/Symposium-2025.pdf",
+      "https://www.dsu.edu.in/images/Admission/brochures/2026/BTech_CSE_Brochure.pdf"
+    ],
+    "pattern": "https://www.dsu.edu.in/images/{department}/{type}/{filename}.pdf"
+  },
+
+  "dynamic_image_fields": {
+    "description": "Common object properties that store image references",
+    "fields": [
+      "image",
+      "imageUrl",
+      "poster",
+      "logo",
+      "mapEmbed",
+      "photo",
+      "avatar",
+      "banner",
+      "thumbnail",
+      "events_image",
+      "Image (Strapi capital I)"
+    ],
+    "usage": "These are properties in data objects (news, events, faculty) that contain image URLs"
+  },
+
+  "files_with_many_images": {
+    "description": "Source files where images are most frequently referenced",
+    "high_usage": [
+      "client/pages/Index.tsx (carousel images, news, hero)",
+      "client/pages/Engineering.tsx (department images)",
+      "client/pages/InternationalAffairs.tsx (DSU images, international programs)",
+      "client/pages/History.tsx (founder images, history visuals)",
+      "client/pages/About.tsx (hero background, about images)",
+      "client/pages/DeptCSE.tsx (CSE department images, faculty)",
+      "client/pages/IQAC.tsx (quality assurance images)",
+      "client/components/AdmissionCarousel.tsx (admission images)",
+      "client/components/AdmissionCarouselNew.tsx (admission carousel)",
+      "client/components/EventsSection.tsx (event images)",
+      "client/components/NewsSection.tsx (news images)",
+      "client/components/AnnouncementBanner.tsx (announcement images)"
+    ],
+    "data_files": [
+      "client/data/faculty files (many image references)",
+      "client/data/events files (event images)",
+      "client/data/news files (news images)"
+    ]
+  },
+
+  "notes": {
+    "note_1": "Many images are referenced dynamically through data objects and component props",
+    "note_2": "Strapi server is at: http://72.61.225.136:1340",
+    "note_3": "Directus CMS base: https://dsu-website-headless-cms.directus.app",
+    "note_4": "Some images use proxy routes (/api/strapi/image?path=...) to avoid CORS issues",
+    "note_5": "Faculty avatars are generated dynamically if no image provided",
+    "note_6": "Most department pages use images from https://www.dsu.edu.in/images/"
+  }
+}
