@@ -1,0 +1,167 @@
+================================================================================
+COMPLETE LIST OF IMAGE URLs - Dayananda Sagar University Website
+================================================================================
+Generated: 2026-01-30
+Total URLs: 40+ (plus CMS dynamic patterns)
+
+================================================================================
+1. DSU HOSTED IMAGES (https://www.dsu.edu.in/images/)
+================================================================================
+
+Homepage & General
+- https://dsu.edu.in/images/homepage/2024/tedxposter.png
+- https://dsu.edu.in/images/homepage/2024/designer1400x1400.jpg
+- https://dsu.edu.in/images/StuExchange.jpeg
+- https://www.dsu.edu.in/images/Home/vision-mission.jpg
+- https://www.dsu.edu.in/images/Home/history.jpg
+- https://www.dsu.edu.in/images/3.jpg
+
+Leadership & Administration
+- https://www.dsu.edu.in/images/founder.png
+- https://www.dsu.edu.in/images/founder2.png
+- https://www.dsu.edu.in/images/demo/chancellor.jpg
+- https://www.dsu.edu.in/images/demo/prochancellor1.jpg
+- https://www.dsu.edu.in/images/demo/Dr_Puttamadappa.jpg
+- https://www.dsu.edu.in/images/Prof_R_Janardhan.jpg
+- https://www.dsu.edu.in/images/Dr_Prakash_S.jpg
+
+Programs & Boot Camps
+- https://dsu.edu.in/images/Boot-camp.jpg
+- https://dsu.edu.in/images/BootcampForInnovators.jpg
+- https://dsu.edu.in/images/internationalconference.jpg
+- https://dsu.edu.in/images/InternationalRoboticsInitative.jpg
+- https://dsu.edu.in/images/imun.jpg
+
+Engineering Department Images
+- https://www.dsu.edu.in/images/Engineering/engg-landing.jpg
+- https://www.dsu.edu.in/images/Engineering/CSE-dept/abt-cse.JPG
+- https://www.dsu.edu.in/images/Engineering/CSE-dept/faculty/Udaya.jpg
+- https://www.dsu.edu.in/images/Engineering/CSE-dept/faculty/Girisha_GS.jpg
+- https://www.dsu.edu.in/images/Engineering/CSE-dept/faculty/DrBipin_1.jpg
+- https://www.dsu.edu.in/images/Engineering/CSE-dept/faculty/Revathi_V.jpg
+
+Cached/Resized Images
+- https://www.dsu.edu.in/cache/resized/ccb77541cad0917c758d7c8869ab88c3.jpg
+- https://www.dsu.edu.in/cache/resized/daee71601a135f97bd8b57033cc23a3b.jpg
+- https://www.dsu.edu.in/cache/resized/a4359bd05fb868287dc18844ac2ffd9f.jpg
+- https://www.dsu.edu.in/cache/resized/8a4ad3ecd59ce31c851a7b2cf20ecda6.jpg
+- https://www.dsu.edu.in/cache/resized/2d89222379562f640d600b5be025d83a.jpg
+- https://www.dsu.edu.in/cache/resized/6c2ce349101d1198a3bbbada6d4dcdd3.jpg
+
+================================================================================
+2. UNSPLASH IMAGES (https://images.unsplash.com/)
+================================================================================
+
+- https://images.unsplash.com/photo-1534723328310-e82dad3ee43f?q=80&w=1600&auto=format&fit=crop
+- https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=300&h=300&fit=crop
+- https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=300&fit=crop
+- https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=300&fit=crop
+- https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=300&fit=crop
+- https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=300&fit=crop
+- https://images.unsplash.com/photo-1516321318423-f06f70a504f0?w=600&h=300&fit=crop
+- https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=600&h=300&fit=crop
+- https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1620&q=80
+- https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?q=80&w=2000&auto=format&fit=crop
+- https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=2000&auto=format&fit=crop
+- https://images.unsplash.com/photo-1580281657521-8a19aa08c8c8?q=80&w=2000&auto=format&fit=crop
+- https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?q=80&w=2000&auto=format&fit=crop
+- https://images.unsplash.com/photo-1559027615-cd2628902d4a?q=80&w=2000&auto=format&fit=crop
+- https://images.unsplash.com/photo-1584984360498-9b5eec6f5c86?q=80&w=2000&auto=format&fit=crop
+- https://images.unsplash.com/photo-1581091870622-5f1e9b8d2f70?q=80&w=2000&auto=format&fit=crop
+
+================================================================================
+3. PEXELS IMAGES (https://images.pexels.com/)
+================================================================================
+
+- https://images.pexels.com/photos/3931561/pexels-photo-3931561.jpeg?auto=compress&cs=tinysrgb&w=1600
+
+================================================================================
+4. DYNAMIC CMS PATTERNS (Content loaded at runtime)
+================================================================================
+
+Directus CMS Assets:
+Pattern: https://dsu-website-headless-cms.directus.app/assets/{asset-id}
+Usage: News images, event images, event posters
+Example: https://dsu-website-headless-cms.directus.app/assets/12345-uuid
+
+Strapi Server (Backend):
+- Server URL: http://72.61.225.136:1340
+- Uploads Path: http://72.61.225.136:1340/uploads/{filename}
+
+Strapi Images via Proxy (Client):
+Pattern: /api/strapi/image?path=/uploads/{filename}
+Usage: Announcements, news, events from Strapi CMS
+Example: /api/strapi/image?path=/uploads/Chat_GPT_Image_Jan_19_2026_03_01_29_PM_0eb314053c.png
+
+================================================================================
+5. AVATAR SERVICE (Dynamic profile pictures)
+================================================================================
+
+Pattern: https://ui-avatars.com/api/?name={name}&background=random&color=fff
+Usage: Faculty profile pictures when no image available
+Example: https://ui-avatars.com/api/?name=John%20Doe&background=random&color=fff
+
+================================================================================
+6. LOCAL/STATIC ASSETS (public folder)
+================================================================================
+
+- /favicon.ico
+- /placeholder.svg
+
+================================================================================
+7. PDF DOCUMENTS (Common pattern)
+================================================================================
+
+Pattern: https://www.dsu.edu.in/images/{department}/{type}/{filename}.pdf
+
+Examples:
+- https://www.dsu.edu.in/images/Engineering/CSE-dept/notices/HackDSU-2025.pdf
+- https://www.dsu.edu.in/images/Engineering/ME-dept/notices/Symposium-2025.pdf
+- https://www.dsu.edu.in/images/Admission/brochures/2026/BTech_CSE_Brochure.pdf
+
+================================================================================
+8. MAIN FILES USING IMAGES
+================================================================================
+
+Pages:
+- client/pages/Index.tsx
+- client/pages/About.tsx
+- client/pages/History.tsx
+- client/pages/Engineering.tsx
+- client/pages/InternationalAffairs.tsx
+- client/pages/DeptCSE.tsx
+- client/pages/IQAC.tsx
+
+Components:
+- client/components/AdmissionCarousel.tsx
+- client/components/AdmissionCarouselNew.tsx
+- client/components/EventsSection.tsx
+- client/components/NewsSection.tsx
+- client/components/AnnouncementBanner.tsx
+- client/components/Footer.tsx
+
+Data Files:
+- client/data/*-faculty.ts (faculty images)
+- client/data/*-events.ts (event images)
+- client/data/news* (news images)
+
+================================================================================
+NOTES & ENDPOINTS
+================================================================================
+
+✓ Total explicit image URLs: 40+
+✓ Dynamic URL patterns: 5 (CMS, proxy, avatar service)
+✓ Image hosts: dsu.edu.in, unsplash.com, pexels.com, directus (CMS)
+
+Backend Servers:
+- Strapi CMS: http://72.61.225.136:1340
+- Directus CMS: https://dsu-website-headless-cms.directus.app
+
+Proxy Routes:
+- GET /api/strapi/image?path={path} - Proxy for Strapi images
+
+Common Image Properties in Data Objects:
+- image, imageUrl, poster, logo, avatar, photo, banner, thumbnail
+- events_image (Directus), Image (Strapi with capital I)
+
+================================================================================
