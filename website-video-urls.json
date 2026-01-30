@@ -1,0 +1,394 @@
+{
+  "summary": "Complete list of all video URLs used in Dayananda Sagar University website",
+  "generated_date": "2026-01-30",
+  "total_videos": 25,
+  "total_categories": 6,
+
+  "youtube_videos": {
+    "description": "YouTube videos and channels",
+    "count": 3,
+    "videos": [
+      {
+        "title": "CDSIMER Hospital Overview",
+        "url": "https://www.youtube.com/embed/10yxPMitlJs",
+        "type": "Embedded Video",
+        "location": "client/pages/CDSIMERHospital.tsx",
+        "video_id": "10yxPMitlJs"
+      }
+    ],
+    "channels": [
+      {
+        "title": "CDSIMER YouTube Channel",
+        "url": "https://www.youtube.com/channel/UCaM-Ha3YDgcH203jPh0iReQ",
+        "locations": [
+          "client/pages/CDSIMER.tsx",
+          "client/pages/CDSIMERLife.tsx",
+          "client/pages/MedicalEducationResearch.tsx"
+        ]
+      },
+      {
+        "title": "Official DSU YouTube Channel",
+        "url": "https://www.youtube.com/@DayanandaSagarUniversity",
+        "location": "client/components/Footer.tsx"
+      }
+    ]
+  },
+
+  "virtual_tour": {
+    "description": "Interactive 360-degree campus virtual tour",
+    "main_url": "https://dsu.edu.in/virtual-tour/",
+    "type": "Interactive Tour",
+    "locations": [
+      "client/components/Footer.tsx",
+      "client/pages/Index.tsx",
+      "client/pages/CampusLife.tsx",
+      "client/pages/Engineering.tsx",
+      "client/components/VirtualTourSection.tsx"
+    ],
+    "campus_specific_tours": [
+      {
+        "name": "Main Campus (Harohalli)",
+        "url": "https://dsu.edu.in/virtual-tour/#DayanandaSagarUniversity_01,2.01108,-3.39268,75,4",
+        "coordinates": "2.01108,-3.39268",
+        "location": "client/components/VirtualTourSection.tsx"
+      },
+      {
+        "name": "School of Engineering Entrance",
+        "url": "https://dsu.edu.in/virtual-tour/#SchoolOfEngineeringEntrance_01,1.14,0,75,4",
+        "coordinates": "1.14,0",
+        "location": "client/pages/Engineering.tsx"
+      }
+    ]
+  },
+
+  "builder_io_videos": {
+    "description": "Videos hosted on Builder.io CDN",
+    "cdn_base": "https://cdn.builder.io/o/assets%2F",
+    "project_id": "4aa279a8430d441dba9c55f659831878",
+    "url_pattern": "https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F{ASSET_ID}?alt=media&token={TOKEN}&apiKey=4aa279a8430d441dba9c55f659831878",
+
+    "hero_videos": {
+      "description": "Full-screen background hero videos",
+      "count": 8,
+      "videos": [
+        {
+          "name": "Homepage Hero",
+          "asset_id": "389ede098f8743368a37b080b1969b8a",
+          "location": "client/pages/Index.tsx",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        },
+        {
+          "name": "Engineering Hero",
+          "asset_id": "6c3245bbc7eb40e8b8f8c3b9b772f3c1",
+          "location": "client/pages/Engineering.tsx"
+        },
+        {
+          "name": "Data Science Hero",
+          "asset_id": "39093d61002645a1bad496661edf3411",
+          "locations": [
+            "client/pages/DataScience.tsx",
+            "client/pages/MSCDataScience.tsx"
+          ]
+        },
+        {
+          "name": "BCA Hero",
+          "asset_id": "4d6884ba52cf49699c442ab329d215e4",
+          "location": "client/pages/BCA.tsx"
+        },
+        {
+          "name": "MCA Hero",
+          "asset_id": "16d8bcd193764af28284ed2d9fc279be",
+          "location": "client/pages/MCA.tsx"
+        },
+        {
+          "name": "Campus Life Hero",
+          "asset_id": "6b0c30504ae64c6aba12aa275eeac2e0",
+          "locations": [
+            "client/pages/CampusLife.tsx",
+            "client/pages/InternationalAdmissions.tsx"
+          ]
+        },
+        {
+          "name": "AI First Hero",
+          "asset_id": "c8e62530406a455cbb76f2d7b42b88e6",
+          "location": "client/pages/AIFirst.tsx",
+          "controls": true
+        }
+      ]
+    },
+
+    "dean_message_videos": {
+      "description": "Dean message/welcome videos with controls",
+      "count": 6,
+      "component": "client/components/DeanSection.tsx",
+      "videos": [
+        {
+          "name": "Engineering Dean",
+          "asset_id": "0c95c62aa88741fca8ebdc32aade53d5",
+          "location": "client/pages/Engineering.tsx"
+        },
+        {
+          "name": "Health Sciences Dean",
+          "asset_id": "84f33b0c1ec44dffa2b88332dd96833b",
+          "location": "client/pages/HealthSciences.tsx"
+        },
+        {
+          "name": "Applied Sciences Dean",
+          "asset_id": "06e31dd773f042938ce9ce8289ec8bc9",
+          "location": "client/pages/AppliedSciences.tsx"
+        },
+        {
+          "name": "B.Design Dean",
+          "asset_id": "8424b7a4848e447e85cd758b83aba08c",
+          "location": "client/pages/BDesignOverview.tsx"
+        },
+        {
+          "name": "Management Studies Dean (Undergraduate)",
+          "asset_id": "5189dc50d1bc4bf294c7cc04b8c457a2",
+          "location": "client/pages/ManagementStudies.tsx"
+        },
+        {
+          "name": "Management Studies Dean (Postgraduate)",
+          "asset_id": "c6b2ba8e319247d79591d68c58b18dad",
+          "location": "client/pages/ManagementStudies.tsx"
+        }
+      ]
+    },
+
+    "featured_news_videos": {
+      "description": "Featured news videos on homepage",
+      "count": 2,
+      "location": "client/pages/Index.tsx",
+      "videos": [
+        {
+          "name": "Featured News Video 1",
+          "asset_id": "d56a1c898842468187e8ff3260f0cdda",
+          "marked_as": "isVideo"
+        },
+        {
+          "name": "Featured News Video 2",
+          "asset_id": "8ee07440d90c4bd685e8ec8da486df8d",
+          "marked_as": "isVideo"
+        }
+      ]
+    },
+
+    "video_posters": {
+      "description": "Thumbnail/poster images for videos",
+      "count": 1,
+      "url_pattern": "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F{ASSET_ID}?format=webp&width=800",
+      "posters": [
+        {
+          "name": "TEDx Featured News Poster",
+          "asset_id": "85cbfdbb2c9047f0b769200939941be9",
+          "location": "client/pages/Index.tsx",
+          "format": "webp",
+          "width": 800
+        }
+      ]
+    }
+  },
+
+  "video_components": {
+    "description": "React components that handle video display",
+    "components": [
+      {
+        "name": "DeanSection",
+        "path": "client/components/DeanSection.tsx",
+        "purpose": "Display dean message videos",
+        "uses": "<video src={videoUrl} />"
+      },
+      {
+        "name": "VirtualTourSection",
+        "path": "client/components/VirtualTourSection.tsx",
+        "purpose": "Display interactive virtual tour",
+        "uses": "<iframe src='https://dsu.edu.in/virtual-tour/...' />"
+      },
+      {
+        "name": "VideoWithFrameCapture",
+        "path": "Various pages",
+        "purpose": "Display videos with poster images",
+        "uses": "<video src={src} poster={poster} />"
+      }
+    ]
+  },
+
+  "video_hooks": {
+    "description": "Custom React hooks for video functionality",
+    "hooks": [
+      {
+        "name": "useAutoMuteOnScroll",
+        "path": "client/hooks/useAutoMuteOnScroll.ts",
+        "purpose": "Automatically mute videos when out of viewport",
+        "used_in": "All hero video sections"
+      }
+    ]
+  },
+
+  "pages_with_videos": {
+    "description": "Pages that contain video content",
+    "pages": [
+      {
+        "name": "Homepage",
+        "path": "client/pages/Index.tsx",
+        "videos": [
+          "Hero background video",
+          "Featured news videos"
+        ]
+      },
+      {
+        "name": "Engineering Department",
+        "path": "client/pages/Engineering.tsx",
+        "videos": [
+          "Hero video",
+          "Dean message video"
+        ]
+      },
+      {
+        "name": "Data Science",
+        "path": "client/pages/DataScience.tsx",
+        "videos": [
+          "Hero video"
+        ]
+      },
+      {
+        "name": "M.Sc. Data Science",
+        "path": "client/pages/MSCDataScience.tsx",
+        "videos": [
+          "Hero video"
+        ]
+      },
+      {
+        "name": "BCA Program",
+        "path": "client/pages/BCA.tsx",
+        "videos": [
+          "Hero video"
+        ]
+      },
+      {
+        "name": "MCA Program",
+        "path": "client/pages/MCA.tsx",
+        "videos": [
+          "Hero video"
+        ]
+      },
+      {
+        "name": "Campus Life",
+        "path": "client/pages/CampusLife.tsx",
+        "videos": [
+          "Hero video",
+          "Virtual tour link"
+        ]
+      },
+      {
+        "name": "International Admissions",
+        "path": "client/pages/InternationalAdmissions.tsx",
+        "videos": [
+          "Hero video"
+        ]
+      },
+      {
+        "name": "Management Studies",
+        "path": "client/pages/ManagementStudies.tsx",
+        "videos": [
+          "Hero video",
+          "Dean message video (UG)",
+          "Dean message video (PG)"
+        ]
+      },
+      {
+        "name": "Health Sciences",
+        "path": "client/pages/HealthSciences.tsx",
+        "videos": [
+          "Hero video",
+          "Dean message video"
+        ]
+      },
+      {
+        "name": "Applied Sciences",
+        "path": "client/pages/AppliedSciences.tsx",
+        "videos": [
+          "Hero video",
+          "Dean message video"
+        ]
+      },
+      {
+        "name": "B.Design Overview",
+        "path": "client/pages/BDesignOverview.tsx",
+        "videos": [
+          "Hero video",
+          "Dean message video"
+        ]
+      },
+      {
+        "name": "AI-First Initiative",
+        "path": "client/pages/AIFirst.tsx",
+        "videos": [
+          "Hero video (with controls)"
+        ]
+      },
+      {
+        "name": "CDSIMER Hospital",
+        "path": "client/pages/CDSIMERHospital.tsx",
+        "videos": [
+          "YouTube embedded video"
+        ]
+      },
+      {
+        "name": "CDSIMER",
+        "path": "client/pages/CDSIMER.tsx",
+        "videos": [
+          "YouTube channel link"
+        ]
+      },
+      {
+        "name": "CDSIMER Life",
+        "path": "client/pages/CDSIMERLife.tsx",
+        "videos": [
+          "YouTube channel link"
+        ]
+      },
+      {
+        "name": "Medical Education Research",
+        "path": "client/pages/MedicalEducationResearch.tsx",
+        "videos": [
+          "YouTube channel link"
+        ]
+      }
+    ]
+  },
+
+  "video_statistics": {
+    "total_hero_videos": 8,
+    "total_dean_videos": 6,
+    "total_news_videos": 2,
+    "total_youtube_embeds": 1,
+    "total_youtube_channels": 2,
+    "total_virtual_tours": 1,
+    "total_video_posters": 1,
+    "total_unique_videos": 25,
+    "video_hosting_services": [
+      "Builder.io CDN",
+      "YouTube",
+      "DSU Virtual Tour (Matterport?)"
+    ]
+  },
+
+  "technical_notes": {
+    "builder_io_videos": {
+      "hosting": "Builder.io CDN",
+      "format": "Likely MP4 or streaming-compatible format",
+      "access": "Requires token and API key",
+      "optimization": "Auto-mute on scroll, lazy loading, responsive sizing"
+    },
+    "video_features": {
+      "hero_videos": "Autoplay, loop, muted for background experience",
+      "dean_videos": "User controls for playback",
+      "featured_news_videos": "Poster/thumbnail for graceful loading",
+      "virtual_tour": "Interactive 360-degree tour with coordinate-based navigation"
+    },
+    "responsive_design": "All videos are responsive and adapt to screen size"
+  }
+}
