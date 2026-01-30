@@ -1,0 +1,277 @@
+================================================================================
+COMPLETE LIST OF VIDEO URLs - Dayananda Sagar University Website
+================================================================================
+Generated: 2026-01-30
+Total Video URLs: 25+ (plus builder.io CDN patterns)
+
+================================================================================
+1. YOUTUBE VIDEOS
+================================================================================
+
+Channel & Embeds:
+- https://www.youtube.com/embed/10yxPMitlJs
+  Location: client/pages/CDSIMERHospital.tsx
+  Type: Embedded iframe
+  Title: CDSIMER Hospital Overview
+
+YouTube Channel Links:
+- https://www.youtube.com/channel/UCaM-Ha3YDgcH203jPh0iReQ
+  Location: client/pages/CDSIMER.tsx, client/pages/CDSIMERLife.tsx, client/pages/MedicalEducationResearch.tsx
+  Type: Link to channel video library
+  Title: CDSIMER YouTube Channel
+
+- https://www.youtube.com/@DayanandaSagarUniversity
+  Location: client/components/Footer.tsx (SOCIAL_LINKS)
+  Type: YouTube channel handle
+  Title: Official DSU YouTube Channel
+
+================================================================================
+2. VIRTUAL TOUR (Interactive 360° Tour)
+================================================================================
+
+Main Virtual Tour Pages:
+- https://dsu.edu.in/virtual-tour/
+  Location: client/components/Footer.tsx, client/pages/Index.tsx, client/pages/CampusLife.tsx, client/pages/Engineering.tsx
+  Type: Virtual tour link / interactive tour
+  Description: Interactive 360-degree campus tour
+
+Campus-Specific Virtual Tour Links:
+- https://dsu.edu.in/virtual-tour/#DayanandaSagarUniversity_01,2.01108,-3.39268,75,4
+  Location: client/components/VirtualTourSection.tsx
+  Type: Virtual tour with specific campus coordinates
+  Campus: Main Campus (Harohalli)
+
+- https://dsu.edu.in/virtual-tour/#SchoolOfEngineeringEntrance_01,1.14,0,75,4
+  Location: client/pages/Engineering.tsx
+  Type: Engineering school entrance virtual tour
+
+- (Other campus-specific virtual tour URLs with different coordinates)
+
+================================================================================
+3. BUILDER.IO HOSTED VIDEOS (HTML5 video src)
+================================================================================
+
+Main Project ID: 4aa279a8430d441dba9c55f659831878
+
+Pattern:
+https://cdn.builder.io/o/assets%2F<PROJECT_ID>%2F<ASSET_ID>?alt=media&token=<TOKEN>&apiKey=<API_KEY>
+
+A. HERO VIDEOS (Homepage & Department Pages)
+================================================================================
+
+Homepage Hero:
+- Asset ID: 389ede098f8743368a37b080b1969b8a
+  Location: client/pages/Index.tsx
+  Type: Full-screen background video (autoplay, loop, muted)
+  Description: Hero video for homepage
+  Full URL: https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F389ede098f8743368a37b080b1969b8a?alt=media&token=101276cc-1be0-485d-a4a8-86f1e71c260f&apiKey=4aa279a8430d441dba9c55f659831878
+
+Engineering Hero:
+- Asset ID: 6c3245bbc7eb40e8b8f8c3b9b772f3c1
+  Location: client/pages/Engineering.tsx
+  Type: Engineering department hero video
+
+Data Science Hero:
+- Asset ID: 39093d61002645a1bad496661edf3411
+  Location: client/pages/DataScience.tsx, client/pages/MSCDataScience.tsx
+  Type: Data Science program hero video
+
+BCA Hero:
+- Asset ID: 4d6884ba52cf49699c442ab329d215e4
+  Location: client/pages/BCA.tsx
+  Type: BCA program hero video
+
+MCA Hero:
+- Asset ID: 16d8bcd193764af28284ed2d9fc279be
+  Location: client/pages/MCA.tsx
+  Type: MCA program hero video
+
+Campus Life Hero:
+- Asset ID: 6b0c30504ae64c6aba12aa275eeac2e0
+  Location: client/pages/CampusLife.tsx, client/pages/InternationalAdmissions.tsx
+  Type: Campus life and international admissions hero video
+
+AI First Hero:
+- Asset ID: c8e62530406a455cbb76f2d7b42b88e6
+  Location: client/pages/AIFirst.tsx
+  Type: AI-First initiative hero video (with controls)
+
+B. DEAN MESSAGE VIDEOS
+================================================================================
+
+Engineering Dean:
+- Asset ID: 0c95c62aa88741fca8ebdc32aade53d5
+  Location: client/pages/Engineering.tsx
+  Type: Dean message video
+  Component: DeanSection.tsx
+
+Health Sciences Dean:
+- Asset ID: 84f33b0c1ec44dffa2b88332dd96833b
+  Location: client/pages/HealthSciences.tsx
+  Type: Dean message video
+
+Applied Sciences Dean:
+- Asset ID: 06e31dd773f042938ce9ce8289ec8bc9
+  Location: client/pages/AppliedSciences.tsx
+  Type: Dean message video
+
+B.Design Dean:
+- Asset ID: 8424b7a4848e447e85cd758b83aba08c
+  Location: client/pages/BDesignOverview.tsx
+  Type: Dean message video
+
+Management Studies Dean (UG):
+- Asset ID: 5189dc50d1bc4bf294c7cc04b8c457a2
+  Location: client/pages/ManagementStudies.tsx
+  Type: Dean message video (Undergraduate)
+
+Management Studies PG Dean:
+- Asset ID: c6b2ba8e319247d79591d68c58b18dad
+  Location: client/pages/ManagementStudies.tsx
+  Type: Dean message video (Postgraduate)
+
+C. FEATURED NEWS VIDEOS (Index page)
+================================================================================
+
+News Video Asset 1:
+- Asset ID: d56a1c898842468187e8ff3260f0cdda
+  Location: client/pages/Index.tsx
+  Type: Featured news video (marked as isVideo)
+
+News Video Asset 2:
+- Asset ID: 8ee07440d90c4bd685e8ec8da486df8d
+  Location: client/pages/Index.tsx
+  Type: Featured news video (marked as isVideo)
+
+================================================================================
+4. VIDEO POSTER/THUMBNAIL IMAGES (builder.io assets)
+================================================================================
+
+Video Poster Pattern:
+https://cdn.builder.io/api/v1/image/assets%2F<PROJECT_ID>%2F<ASSET_ID>?format=webp&width=800
+
+Example:
+- Asset ID: 85cbfdbb2c9047f0b769200939941be9
+  Location: client/pages/Index.tsx (TEDx featured news item)
+  Type: Poster/thumbnail for video content
+  Full URL: https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F85cbfdbb2c9047f0b769200939941be9?format=webp&width=800
+
+================================================================================
+5. PAGES WITH VIDEO CONTENT
+================================================================================
+
+Homepage:
+- client/pages/Index.tsx
+  Videos: Hero background, featured news videos
+
+Department Pages (with Hero Videos + Dean Messages):
+- client/pages/Engineering.tsx (hero + dean)
+- client/pages/DataScience.tsx (hero)
+- client/pages/MSCDataScience.tsx (hero)
+- client/pages/BCA.tsx (hero)
+- client/pages/MCA.tsx (hero)
+- client/pages/CampusLife.tsx (hero)
+- client/pages/InternationalAdmissions.tsx (hero)
+- client/pages/ManagementStudies.tsx (hero + dean UG + dean PG)
+- client/pages/HealthSciences.tsx (hero + dean)
+- client/pages/AppliedSciences.tsx (hero + dean)
+- client/pages/BDesignOverview.tsx (hero + dean)
+- client/pages/AIFirst.tsx (hero with controls)
+- client/pages/CDSIMERHospital.tsx (YouTube embed)
+
+Campus & Life Pages:
+- client/pages/CampusLife.tsx (virtual tour + hero video)
+- client/components/VirtualTourSection.tsx (virtual tour)
+
+Medical Education & Research:
+- client/pages/CDSIMER.tsx (YouTube channel link)
+- client/pages/CDSIMERLife.tsx (YouTube channel link)
+- client/pages/MedicalEducationResearch.tsx (YouTube channel link)
+
+================================================================================
+6. VIDEO COMPONENTS & HOOKS
+================================================================================
+
+Key Components Using Videos:
+- client/components/DeanSection.tsx
+  - Displays dean message videos
+  - Uses: <video src={videoUrl} ... />
+
+- client/components/VirtualTourSection.tsx
+  - Displays 360° virtual tour
+  - Uses: <iframe src="https://dsu.edu.in/virtual-tour/..." />
+
+- VideoWithFrameCapture (in various pages)
+  - Uses: <video src={src} poster={poster} />
+
+Hooks Related to Videos:
+- client/hooks/useAutoMuteOnScroll.ts
+  - Automatically mutes videos when out of view
+  - Used in all hero video sections
+
+================================================================================
+7. BUILDER.IO ASSET IDs REFERENCE TABLE
+================================================================================
+
+ID                              | Type           | Location(s)
+================================|================|=====================================
+389ede098f8743368a37b080b1969b8a | Hero          | Index.tsx
+6c3245bbc7eb40e8b8f8c3b9b772f3c1 | Hero          | Engineering.tsx
+0c95c62aa88741fca8ebdc32aade53d5 | Dean Video    | Engineering.tsx
+39093d61002645a1bad496661edf3411 | Hero          | DataScience, MSCDataScience
+4d6884ba52cf49699c442ab329d215e4 | Hero          | BCA.tsx
+16d8bcd193764af28284ed2d9fc279be | Hero          | MCA.tsx
+6b0c30504ae64c6aba12aa275eeac2e0 | Hero          | CampusLife, InternationalAdmissions
+c8e62530406a455cbb76f2d7b42b88e6 | Hero          | AIFirst.tsx
+84f33b0c1ec44dffa2b88332dd96833b | Dean Video    | HealthSciences.tsx
+06e31dd773f042938ce9ce8289ec8bc9 | Dean Video    | AppliedSciences.tsx
+8424b7a4848e447e85cd758b83aba08c | Dean Video    | BDesignOverview.tsx
+5189dc50d1bc4bf294c7cc04b8c457a2 | Dean Video    | ManagementStudies.tsx (UG)
+c6b2ba8e319247d79591d68c58b18dad | Dean Video    | ManagementStudies.tsx (PG)
+d56a1c898842468187e8ff3260f0cdda | News Video    | Index.tsx
+8ee07440d90c4bd685e8ec8da486df8d | News Video    | Index.tsx
+85cbfdbb2c9047f0b769200939941be9 | Poster/Thumb  | Index.tsx
+
+================================================================================
+8. CDN ENDPOINTS & PATTERNS
+================================================================================
+
+Builder.io CDN Video Pattern:
+https://cdn.builder.io/o/assets%2F4aa279a8430d441dba9c55f659831878%2F{ASSET_ID}?alt=media&token={TOKEN}&apiKey=4aa279a8430d441dba9c55f659831878
+
+Builder.io CDN Image/Poster Pattern:
+https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F{ASSET_ID}?format=webp&width=800
+
+Builder Project ID: 4aa279a8430d441dba9c55f659831878
+
+DSU Virtual Tour Endpoint:
+https://dsu.edu.in/virtual-tour/
+
+================================================================================
+9. NOTES & TECHNICAL DETAILS
+================================================================================
+
+Video Hosting:
+✓ Most videos are hosted on Builder.io CDN (builder.io/o/assets)
+✓ Videos are served as MP4 or streaming-compatible format
+✓ All builder.io URLs use tokens and API keys for access
+
+Video Types:
+1. Hero Background Videos (autoplay, loop, muted)
+2. Dean Message Videos (with controls for user playback)
+3. Featured News Videos (with poster/thumbnail)
+4. YouTube Embeds (external YouTube content)
+5. Virtual Tour (360° interactive tour)
+
+Video Features:
+- useAutoMuteOnScroll hook ensures videos mute when not in viewport
+- Lazy loading and performance optimization
+- Responsive video sizing
+- Poster images for graceful loading
+
+Total Video Assets Found: 25+ unique videos
+Total Builder.io Asset IDs: 16 (13 videos + 2 news + 1 poster)
+YouTube Links: 3
+Virtual Tour: Multiple coordinate-based URLs
+
+================================================================================
