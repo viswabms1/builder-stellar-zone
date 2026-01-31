@@ -135,11 +135,14 @@ export function DepartmentPageMenu({
                   ) as HTMLDetailsElement;
                   if (details) details.open = false;
                 }}
-                className={`w-full text-left flex items-center gap-2 text-sm transition-colors border-t border-border/10 first:border-t-0 ${
+                className={`w-full text-left flex items-center gap-2 transition-colors border-t border-border/10 first:border-t-0 ${
                   active === section.id
                     ? "bg-brand-blue/10 text-brand-blue font-medium"
                     : "text-foreground/80 hover:bg-background/60"
                 }`}
+                style={{
+                  fontSize: "clamp(0.875rem, 1.1vw, 1rem)",
+                }}
                 style={{
                   padding: "clamp(0.625rem, 1.5vw, 0.75rem) 1.5rem",
                 }}
