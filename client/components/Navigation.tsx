@@ -1302,36 +1302,25 @@ export default function Navigation() {
               })}
               </nav>
 
-              {/* CENTER - Logo + NAAC Badge */}
-              <div className="flex items-center gap-3 flex-shrink-0">
-                <Link
-                  to="/"
-                  className="flex items-center group transition-all duration-300"
-                >
-                  <img
-                    src={
-                      theme === "light"
-                        ? "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F359db0babe0948ae98ad938f84bc1474?format=webp&width=800"
-                        : "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F0caf0bf29be6421997005f26cdaae0ed?format=webp&width=800"
-                    }
-                    alt="Dayananda Sagar University Logo"
-                    className={`h-12 w-auto object-contain group-hover:scale-105 transition-all duration-300 ${
-                      theme === "light"
-                        ? "mix-blend-multiply"
-                        : "mix-blend-screen"
-                    }`}
-                  />
-                </Link>
-                {/* NAAC Badge */}
-                <div className={`flex items-center gap-1 px-2 py-1 rounded border ${
-                  theme === "light"
-                    ? "bg-green-50 border-green-300 text-green-800"
-                    : "bg-green-900/30 border-green-500/50 text-green-200"
-                }`}>
-                  <span className="text-[10px] font-bold leading-none">NAAC<br/>GRADE</span>
-                  <span className="text-xl font-black text-green-600">A+</span>
-                </div>
-              </div>
+              {/* CENTER - Logo */}
+              <Link
+                to="/"
+                className="flex items-center group transition-all duration-300 flex-shrink-0"
+              >
+                <img
+                  src={
+                    theme === "light"
+                      ? "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F359db0babe0948ae98ad938f84bc1474?format=webp&width=800"
+                      : "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F0caf0bf29be6421997005f26cdaae0ed?format=webp&width=800"
+                  }
+                  alt="Dayananda Sagar University Logo"
+                  className={`h-16 w-auto object-contain group-hover:scale-105 transition-all duration-300 ${
+                    theme === "light"
+                      ? "mix-blend-multiply"
+                      : "mix-blend-screen"
+                  }`}
+                />
+              </Link>
 
               {/* RIGHT - Remaining menu items + CTAs */}
               <div className="flex items-center gap-2">
