@@ -149,8 +149,10 @@ export default function DeptCSE() {
         </div>
       </section>
 
+      <DepartmentPageMenu sections={menuSections} />
+
       {/* Programs Offered */}
-      <section className="px-3 py-8 bg-gradient-to-r from-brand-magenta/5 via-brand-blue/5 to-brand-orange/5 border-y border-border/30">
+      <section id="programs" className="px-3 py-8 bg-gradient-to-r from-brand-magenta/5 via-brand-blue/5 to-brand-orange/5 border-y border-border/30">
         <div className="max-w-6xl mx-auto">
           <div className="mb-8">
             <h2 className="headline-2 font-display mb-2">Programs Offered</h2>
