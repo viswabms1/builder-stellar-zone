@@ -1288,34 +1288,12 @@ export default function Navigation() {
                   return [
                     itemElement,
                     <Link
-                      key="logo"
-                      to="/"
-                      className="flex items-center group flex-shrink-0 px-0 py-0 !rounded-none transition-all duration-300 !bg-transparent hover:!bg-transparent absolute left-1/2 -translate-x-1/2 z-10"
-                    >
-                      <img
-                        src={
-                          theme === "light"
-                            ? "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F359db0babe0948ae98ad938f84bc1474?format=webp&width=800"
-                            : "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F0caf0bf29be6421997005f26cdaae0ed?format=webp&width=800"
-                        }
-                        alt="Dayananda Sagar University Logo"
-                        className={`max-h-[4.5rem] w-auto object-contain group-hover:scale-105 transition-all duration-300 ${
-                          theme === "light"
-                            ? "mix-blend-multiply"
-                            : "mix-blend-screen"
-                        }`}
-                      />
-                    </Link>,
-                    <Link
                       key="ai-label"
                       to="/ai-first"
                       className={aiFirstClasses}
                       style={sharedStyle}
                     >
-                      <span className="text-center leading-[0.9] flex flex-col items-center gap-0">
-                        <span className="whitespace-nowrap">AI-First @</span>
-                        <span>DSU</span>
-                      </span>
+                      <span className="whitespace-nowrap">AI-First @ DSU</span>
                     </Link>,
                   ];
                 }
