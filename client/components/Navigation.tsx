@@ -840,7 +840,7 @@ export default function Navigation() {
                 const isAbout = item.href === "/about";
                 const isAcademics = item.href === "/academics";
                 const isAdmissions = item.href === "/admissions";
-                const sharedClasses = `flex items-center space-x-1 rounded-lg font-medium font-display transition-all duration-200 group flex-shrink ${
+                const sharedClasses = `flex items-center space-x-1 rounded-lg font-medium font-display transition-all duration-200 group flex-shrink-0 whitespace-nowrap ${
                   isAdmissions ? 'mr-2 ' : ''
                 }${
                   theme === "light"
