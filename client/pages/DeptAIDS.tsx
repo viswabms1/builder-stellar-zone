@@ -234,10 +234,12 @@ export default function DeptAIDS() {
         </div>
       </section>
 
-      <LabsFacilitiesCarousel />
+      <section id="facilities">
+        <LabsFacilitiesCarousel />
+      </section>
 
       {/* Leadership Section */}
-      <section className="px-6 py-16">
+      <section id="leadership" className="px-6 py-16">
         <div className="max-w-7xl mx-auto">
           <h2 className="headline-3 font-display mb-8">Department Leadership</h2>
           <div className="max-w-4xl mb-12 p-6 rounded-2xl bg-card/40 border border-brand-blue/20">
