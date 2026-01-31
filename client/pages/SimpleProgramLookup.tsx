@@ -175,7 +175,7 @@ export default function SimpleProgramLookup() {
                   <SelectTrigger className="h-12 text-base">
                     <SelectValue placeholder="Choose a program from the filtered results..." />
                   </SelectTrigger>
-                  <SelectContent className="max-h-[400px] overflow-y-auto">
+                  <SelectContent className="max-h-[400px]">
                     {filteredPrograms.length === 0 ? (
                       <div className="p-4 text-center text-sm text-foreground/60">
                         No programs match your filters
