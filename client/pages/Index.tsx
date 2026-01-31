@@ -665,7 +665,7 @@ export default function Index() {
             >
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-[#0066AA] via-[#D4A800] to-[#B86B00] hover:from-[#0052AA] hover:via-[#C09700] hover:to-[#A05800] text-white font-bold font-display transition-all duration-300 group shadow-xl hover:shadow-2xl hover:-translate-y-1 w-full sm:w-auto"
+                className="bg-gradient-to-r from-[#0088FF] via-[#FFD700] to-[#FF6B00] hover:from-[#0066FF] hover:via-[#FFC700] hover:to-[#FF5500] text-white font-bold font-display transition-all duration-300 group shadow-xl hover:shadow-2xl hover:-translate-y-1 w-full sm:w-auto animate-gradient bg-[length:200%_auto]"
                 style={{
                   padding: "clamp(0.75rem, 2vw, 1rem) clamp(1.5rem, 4vw, 2rem)",
                   fontSize: "clamp(0.875rem, 2vw, 1rem)",
@@ -725,7 +725,7 @@ export default function Index() {
           >
             <Button
               size="lg"
-              className="bg-gradient-to-r from-[#0066AA] via-[#D4A800] to-[#B86B00] hover:from-[#0052AA] hover:via-[#C09700] hover:to-[#A05800] text-white font-bold font-display transition-all duration-300 group shadow-xl hover:shadow-2xl hover:-translate-y-1 w-full sm:w-auto"
+              className="bg-gradient-to-r from-[#0088FF] via-[#FFD700] to-[#FF6B00] hover:from-[#0066FF] hover:via-[#FFC700] hover:to-[#FF5500] text-white font-bold font-display transition-all duration-300 group shadow-xl hover:shadow-2xl hover:-translate-y-1 w-full sm:w-auto animate-gradient bg-[length:200%_auto]"
               style={{
                 padding: "clamp(0.75rem, 2vw, 1rem) clamp(1.5rem, 4vw, 2rem)",
                 fontSize: "clamp(0.875rem, 2vw, 1rem)",

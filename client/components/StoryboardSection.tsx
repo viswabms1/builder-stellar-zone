@@ -94,7 +94,7 @@ export function StoryboardSection() {
                 <div className="h-px bg-gradient-to-r from-transparent via-foreground/20 to-transparent mb-6" />
 
                 {/* CTA Button */}
-                <Button className="w-full bg-gradient-to-r from-[#0066AA] via-[#D4A800] to-[#B86B00] hover:from-[#0052AA] hover:via-[#C09700] hover:to-[#A05800] text-white font-bold gap-2 transition-all group/btn shadow-lg hover:shadow-xl">
+                <Button className="w-full bg-gradient-to-r from-[#0088FF] via-[#FFD700] to-[#FF6B00] hover:from-[#0066FF] hover:via-[#FFC700] hover:to-[#FF5500] text-white font-bold gap-2 transition-all group/btn shadow-lg hover:shadow-xl animate-gradient bg-[length:200%_auto]">
                   {story.cta}
                   <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                 </Button>
@@ -129,7 +129,7 @@ export function StoryboardSection() {
             target="_blank"
             rel="noreferrer"
           >
-            <Button className="bg-gradient-to-r from-[#0066AA] via-[#D4A800] to-[#B86B00] hover:from-[#0052AA] hover:via-[#C09700] hover:to-[#A05800] text-white px-8 py-3 font-bold gap-2 shadow-lg hover:shadow-xl">
+            <Button className="bg-gradient-to-r from-[#0088FF] via-[#FFD700] to-[#FF6B00] hover:from-[#0066FF] hover:via-[#FFC700] hover:to-[#FF5500] text-white px-8 py-3 font-bold gap-2 shadow-lg hover:shadow-xl animate-gradient bg-[length:200%_auto]">
               Start Your Journey
               <ArrowRight className="w-4 h-4" />
             </Button>

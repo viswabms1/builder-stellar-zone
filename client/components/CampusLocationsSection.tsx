@@ -174,7 +174,7 @@ export function CampusLocationsSection() {
                   rel="noreferrer"
                   className="flex-1"
                 >
-                  <Button className="w-full bg-gradient-to-r from-[#0066AA] via-[#D4A800] to-[#B86B00] hover:from-[#0052AA] hover:via-[#C09700] hover:to-[#A05800] text-white font-bold gap-2 transition-all shadow-lg hover:shadow-xl">
+                  <Button className="w-full bg-gradient-to-r from-[#0088FF] via-[#FFD700] to-[#FF6B00] hover:from-[#0066FF] hover:via-[#FFC700] hover:to-[#FF5500] text-white font-bold gap-2 transition-all shadow-lg hover:shadow-xl animate-gradient bg-[length:200%_auto]">
                     Get Directions
                     <Navigation className="w-4 h-4" />
                   </Button>

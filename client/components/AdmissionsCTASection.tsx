@@ -24,7 +24,7 @@ export function AdmissionsCTASection() {
             >
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-[#0066AA] via-[#D4A800] to-[#B86B00] hover:from-[#0052AA] hover:via-[#C09700] hover:to-[#A05800] hover:shadow-lg hover:shadow-brand-blue/25 text-white px-12 py-6 text-lg font-semibold font-display rounded-2xl transition-all duration-300 group"
+                className="bg-gradient-to-r from-[#0088FF] via-[#FFD700] to-[#FF6B00] hover:from-[#0066FF] hover:via-[#FFC700] hover:to-[#FF5500] hover:shadow-lg hover:shadow-brand-blue/25 text-white px-12 py-6 text-lg font-semibold font-display rounded-2xl transition-all duration-300 group animate-gradient bg-[length:200%_auto]"
               >
                 Apply for 2026 Admissions
                 <GraduationCap className="w-5 h-5 ml-2 group-hover:rotate-12 transition-transform" />
