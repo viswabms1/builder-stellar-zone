@@ -819,7 +819,7 @@ export default function DeptCSE() {
       </section>
 
       {/* Careers */}
-      <section className="px-3 py-8">
+      <section id="careers" className="px-3 py-8">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-5 items-start">
           <div>
             <h2 className="headline-3 mb-4 font-display">
