@@ -37,7 +37,7 @@ export function CampusLocationsSection() {
         "Online Degree Programs",
       ],
       mapEmbed:
-        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.9847558046286!2d77.6312!3d12.9352!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1581c1c1c1c1%3A0x1c1c1c1c1c1c1c1c!2sKudlu%20Gate%2C%20Hosur%20Road%2C%20Bengaluru!5e0!3m2!1sen!2sin!4v1234567890",
+        "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2750.1434741620687!2d77.6409481375623!3d12.889051929147069!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae14b023dade9d%3A0x35272e55303bd711!2sDayananda%20Sagar%20University%20(DSU)%20-%20City%20Campus!5e0!3m2!1sen!2sus!4v1769845468247!5m2!1sen!2sus",
       directionsUrl: "https://maps.app.goo.gl/KudluGateCampus",
       color: "brand-blue",
     },
