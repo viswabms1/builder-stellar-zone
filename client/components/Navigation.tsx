@@ -834,7 +834,7 @@ export default function Navigation() {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center gap-1 justify-center w-full px-6 py-2">
+            <div className="hidden lg:flex items-center gap-1 justify-center w-full px-6 py-2 relative">
               {navigation.map((item, idx) => {
                 const active = !item.external && isActive(item.href);
                 const isAbout = item.href === "/about";
@@ -1290,7 +1290,7 @@ export default function Navigation() {
                     <Link
                       key="logo"
                       to="/"
-                      className="flex items-center group flex-shrink-0 px-0 py-0 mx-4 !rounded-none transition-all duration-300 !bg-transparent hover:!bg-transparent"
+                      className="flex items-center group flex-shrink-0 px-0 py-0 !rounded-none transition-all duration-300 !bg-transparent hover:!bg-transparent absolute left-1/2 -translate-x-1/2 z-10"
                     >
                       <img
                         src={
