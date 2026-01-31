@@ -187,7 +187,7 @@ export default function DeptAIDS() {
       </section>
 
       {/* Overview */}
-      <section className="px-6 py-16">
+      <section id="about" className="px-6 py-16">
         <div className="max-w-6xl mx-auto grid lg:grid-cols-3 gap-10 items-start">
           <div className="lg:col-span-2 space-y-6">
             <div>
