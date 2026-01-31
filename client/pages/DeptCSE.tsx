@@ -300,7 +300,7 @@ export default function DeptCSE() {
       </section>
 
       {/* Overview */}
-      <section className="px-3 py-8">
+      <section id="about" className="px-3 py-8">
         <div className="max-w-6xl mx-auto grid lg:grid-cols-3 gap-5 items-start">
           <div className="lg:col-span-2 space-y-3">
             <h2 className="headline-3 font-display">Overview</h2>
