@@ -30,7 +30,7 @@ import {
 } from "lucide-react";
 import { aidsFaculty } from "@/data/ai-ds-faculty";
 import { DepartmentPageMenu } from "@/components/DepartmentPageMenu";
-import { Users, Briefcase, Mail } from "lucide-react";
+import { Users, Briefcase, Mail, Building } from "lucide-react";
 
 export default function DeptAIDS() {
   const chairperson = useMemo(() => {
