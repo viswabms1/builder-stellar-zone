@@ -833,29 +833,9 @@ export default function Navigation() {
               />
             </Link>
 
-            {/* Desktop Navigation - Logo left, menus center, CTAs right */}
-            <div className="hidden lg:flex items-center justify-between w-full py-1 px-4 gap-4">
-              {/* Left - Logo */}
-              <Link
-                to="/"
-                className="flex items-center group flex-shrink-0 transition-all duration-300"
-              >
-                <img
-                  src={
-                    theme === "light"
-                      ? "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F359db0babe0948ae98ad938f84bc1474?format=webp&width=800"
-                      : "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F0caf0bf29be6421997005f26cdaae0ed?format=webp&width=800"
-                  }
-                  alt="Dayananda Sagar University Logo"
-                  className={`h-14 w-auto object-contain group-hover:scale-105 transition-all duration-300 ${
-                    theme === "light"
-                      ? "mix-blend-multiply"
-                      : "mix-blend-screen"
-                  }`}
-                />
-              </Link>
-
-              {/* Center - Menu Items */}
+            {/* Desktop Navigation - Menu items LEFT | Logo CENTER | Menu items + CTAs RIGHT */}
+            <div className="hidden lg:flex items-center justify-between w-full py-1 px-4">
+              {/* LEFT - First half of menu items */}
               <nav className="flex flex-nowrap items-center gap-1">
               {navigation.map((item, idx) => {
                 const active = !item.external && isActive(item.href);
