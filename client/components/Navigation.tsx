@@ -1309,7 +1309,7 @@ export default function Navigation() {
                         ? "bg-white/20 text-white font-semibold"
                         : "text-white/90 hover:text-white hover:bg-white/10"
                   }`}
-                  style={{ fontSize: "clamp(0.75rem, 0.9vw, 0.875rem)", padding: "0.4rem 0.5rem" }}
+                  style={{ fontSize: "clamp(0.875rem, 1.1vw, 1rem)", padding: "0.4rem 0.5rem" }}
                 >
                   AI-First @ DSU
                 </Link>
