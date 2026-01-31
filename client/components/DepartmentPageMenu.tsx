@@ -141,8 +141,6 @@ export function DepartmentPageMenu({
                 }`}
                 style={{
                   fontSize: "clamp(0.875rem, 1.1vw, 1rem)",
-                }}
-                style={{
                   padding: "clamp(0.625rem, 1.5vw, 0.75rem) 1.5rem",
                 }}
               >
