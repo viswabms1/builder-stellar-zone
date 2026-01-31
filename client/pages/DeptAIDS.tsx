@@ -59,6 +59,16 @@ export default function DeptAIDS() {
     "Graduates work across technology, analytics, fintech, and data-driven sectors",
   ];
 
+  const menuSections = [
+    { id: "programs", label: "Programs", icon: <BookOpen className="w-4 h-4" /> },
+    { id: "about", label: "About", icon: <Users className="w-4 h-4" /> },
+    { id: "facilities", label: "Facilities", icon: <Building className="w-4 h-4" /> },
+    { id: "leadership", label: "Leadership", icon: <Award className="w-4 h-4" /> },
+    { id: "careers", label: "Careers", icon: <Briefcase className="w-4 h-4" /> },
+    { id: "curriculum", label: "Curriculum", icon: <FileText className="w-4 h-4" /> },
+    { id: "contact", label: "Contact", icon: <Mail className="w-4 h-4" /> },
+  ];
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero */}
