@@ -833,8 +833,30 @@ export default function Navigation() {
               />
             </Link>
 
-            {/* Desktop Navigation - Logo is centered, menu items flow around it */}
-            <div className="hidden lg:flex flex-nowrap items-center gap-1 justify-center w-full py-2 relative" style={{ paddingLeft: 'clamp(0.5rem, 8vw, 6rem)', paddingRight: 'clamp(0.5rem, 8vw, 6rem)' }}>
+            {/* Desktop Navigation - Logo left, menus center, CTAs right */}
+            <div className="hidden lg:flex items-center justify-between w-full py-1 px-4 gap-4">
+              {/* Left - Logo */}
+              <Link
+                to="/"
+                className="flex items-center group flex-shrink-0 transition-all duration-300"
+              >
+                <img
+                  src={
+                    theme === "light"
+                      ? "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F359db0babe0948ae98ad938f84bc1474?format=webp&width=800"
+                      : "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F0caf0bf29be6421997005f26cdaae0ed?format=webp&width=800"
+                  }
+                  alt="Dayananda Sagar University Logo"
+                  className={`h-14 w-auto object-contain group-hover:scale-105 transition-all duration-300 ${
+                    theme === "light"
+                      ? "mix-blend-multiply"
+                      : "mix-blend-screen"
+                  }`}
+                />
+              </Link>
+
+              {/* Center - Menu Items */}
+              <nav className="flex flex-nowrap items-center gap-1">
               {navigation.map((item, idx) => {
                 const active = !item.external && isActive(item.href);
                 const isAbout = item.href === "/about";
@@ -1300,6 +1322,49 @@ export default function Navigation() {
 
                 return itemElement;
               })}
+              </nav>
+
+              {/* Right - NAAC Badge and CTAs */}
+              <div className="flex items-center gap-3 flex-shrink-0">
+                {/* NAAC Badge */}
+                <div className={`flex items-center gap-2 px-3 py-1 rounded-lg border ${
+                  theme === "light"
+                    ? "bg-green-50 border-green-200 text-green-800"
+                    : "bg-green-900/30 border-green-600/30 text-green-200"
+                }`}>
+                  <span className="text-xs font-bold">NAAC</span>
+                  <span className="text-lg font-bold">A+</span>
+                </div>
+
+                {/* Apply Now CTA */}
+                <a
+                  href="https://admissions.dsu.edu.in/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Button
+                    size="sm"
+                    className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold px-4 py-2 rounded-md transition-all duration-200 shadow-md hover:shadow-lg"
+                  >
+                    Apply Now
+                  </Button>
+                </a>
+
+                {/* Campus Visit */}
+                <Link to="/campus-life">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className={`font-semibold px-4 py-2 rounded-md transition-all duration-200 ${
+                      theme === "light"
+                        ? "border-orange-300 text-orange-700 hover:bg-orange-50"
+                        : "border-orange-500/50 text-orange-300 hover:bg-orange-500/10"
+                    }`}
+                  >
+                    Campus Visit
+                  </Button>
+                </Link>
+              </div>
             </div>
 
             {/* Mobile menu button */}
