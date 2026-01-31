@@ -110,13 +110,14 @@ export function DepartmentPageMenu({
         <details 
           className="group border-b border-border/20 bg-background/50 backdrop-blur-sm"
         >
-          <summary 
+          <summary
             className="flex items-center justify-between cursor-pointer hover:bg-background/80 transition-colors"
             style={{
               padding: "clamp(0.75rem, 2vw, 1rem) 1.5rem",
+              fontSize: "clamp(0.875rem, 1.1vw, 1rem)",
             }}
           >
-            <span className="font-medium text-foreground text-sm">
+            <span className="font-medium text-foreground">
               {active
                 ? sections.find((s) => s.id === active)?.label || "Navigation"
                 : "Navigation"}
