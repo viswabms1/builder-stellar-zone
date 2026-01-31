@@ -854,7 +854,7 @@ export default function Navigation() {
                 }`;
                 const sharedStyle = {
                   fontSize: "clamp(0.85rem, 1.5vw, 1rem)",
-                  padding: "clamp(0.6rem, 1.2vmin, 0.9rem) clamp(0.5rem, 1vw, 0.75rem)",
+                  padding: "clamp(0.6rem, 1.2vmin, 0.9rem) clamp(0.3rem, 0.8vw, 0.5rem)",
                 };
 
                 const itemElement = (() => {
