@@ -127,12 +127,12 @@ export default function CampusLife() {
       >
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="headline-2 mb-6">
+            <h2 className="headline-2 mb-6 font-youthful-display">
               <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
                 Four Dimensions of Excellence
               </span>
             </h2>
-            <p className="subheadline text-foreground/80 max-w-3xl mx-auto font-display">
+            <p className="subheadline text-foreground/80 max-w-3xl mx-auto font-quicksand">
               How campus experiences at DSU develop research-driven, innovative, and globally competent professionals
             </p>
           </div>
@@ -261,7 +261,7 @@ export default function CampusLife() {
       >
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <h2 className="text-4xl md:text-5xl font-extrabold mb-6 font-youthful-display">
               <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
                 From Projects to Careers
               </span>
@@ -358,7 +358,7 @@ export default function CampusLife() {
       <section className="px-3 py-16 bg-gradient-to-b from-blue-500/10 via-transparent to-blue-500/5">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <h2 className="text-4xl md:text-5xl font-extrabold mb-6 font-youthful-display">
               <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
                 DSU's Entrepreneurship Ecosystem
               </span>
@@ -498,7 +498,7 @@ export default function CampusLife() {
       >
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <h2 className="text-4xl md:text-5xl font-extrabold mb-6 font-youthful-display">
               <span className="text-foreground">World-Class </span>
               <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
                 Infrastructure
@@ -619,7 +619,7 @@ export default function CampusLife() {
       >
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <h2 className="text-4xl md:text-5xl font-extrabold mb-6 font-youthful-display">
               <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
                 Student
               </span>
@@ -662,7 +662,7 @@ export default function CampusLife() {
       >
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <h2 className="text-4xl md:text-5xl font-extrabold mb-4 font-youthful-display">
               <span className="text-foreground">Campus </span>
               <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
                 Moments
@@ -710,7 +710,7 @@ export default function CampusLife() {
       >
         <div className="max-w-4xl mx-auto text-center px-3">
           <div className="bg-gradient-to-r from-orange-500/10 via-red-600/10 to-pink-500/10 rounded-2xl md:rounded-3xl p-8 md:p-12 border border-orange-500/20">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+            <h2 className="text-4xl md:text-5xl font-extrabold mb-6 leading-tight font-youthful-display">
               Ready to build the future at
               <span className="bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
                 {" "}
