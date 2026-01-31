@@ -54,7 +54,7 @@ export function DepartmentPageMenu({
       onSectionClick?.(sectionId);
       
       // Smooth scroll to section
-      const headerOffset = 80; // Account for sticky header if needed
+      const headerOffset = 80;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -67,27 +67,34 @@ export function DepartmentPageMenu({
 
   return (
     <>
-      {/* Desktop Menu - Sticky after hero */}
+      {/* Desktop Menu - Not sticky, flows naturally */}
       <div
-        className={`hidden md:block transition-all duration-300 ${
-          isSticky
-            ? "fixed top-0 left-0 right-0 z-40 bg-background/95 backdrop-blur-sm border-b border-border/50 shadow-sm"
-            : "relative bg-background border-b border-border/20"
-        }`}
+        className={`hidden md:block transition-all duration-300 bg-background border-b border-border/20`}
+        style={{
+          padding: "clamp(0.5rem, 1vw, 0.75rem) 1.5rem",
+        }}
       >
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex items-center justify-center gap-8 py-4">
+        <div className="max-w-7xl mx-auto">
+          <div 
+            className="flex items-center justify-center flex-wrap"
+            style={{
+              gap: "clamp(0.75rem, 2vw, 1.5rem)",
+            }}
+          >
             {sections.map((section) => (
               <button
                 key={section.id}
                 onClick={() => handleClick(section.id)}
-                className={`flex items-center gap-2 text-sm font-medium transition-colors duration-200 py-2 px-3 rounded-md ${
+                className={`inline-flex items-center transition-colors duration-200 text-sm font-medium whitespace-nowrap ${
                   active === section.id
-                    ? "text-brand-blue bg-brand-blue/10"
+                    ? "text-brand-blue"
                     : "text-foreground/70 hover:text-foreground"
                 }`}
+                style={{
+                  padding: "clamp(0.375rem, 0.5vw, 0.5rem) clamp(0.5rem, 1vw, 0.75rem)",
+                }}
               >
-                {section.icon && <span className="w-4 h-4">{section.icon}</span>}
+                {section.icon && <span className="w-4 h-4 mr-1.5 flex-shrink-0">{section.icon}</span>}
                 {section.label}
               </button>
             ))}
@@ -97,14 +104,21 @@ export function DepartmentPageMenu({
 
       {/* Mobile Dropdown Menu */}
       <div className="md:hidden">
-        <details className="group border-b border-border/20 bg-background/50 backdrop-blur-sm">
-          <summary className="flex items-center justify-between px-6 py-4 cursor-pointer hover:bg-background/80 transition-colors">
-            <span className="font-medium text-foreground">
+        <details 
+          className="group border-b border-border/20 bg-background/50 backdrop-blur-sm"
+        >
+          <summary 
+            className="flex items-center justify-between cursor-pointer hover:bg-background/80 transition-colors"
+            style={{
+              padding: "clamp(0.75rem, 2vw, 1rem) 1.5rem",
+            }}
+          >
+            <span className="font-medium text-foreground text-sm">
               {active
                 ? sections.find((s) => s.id === active)?.label || "Navigation"
                 : "Navigation"}
             </span>
-            <ChevronDown className="w-4 h-4 text-foreground/60 group-open:rotate-180 transition-transform" />
+            <ChevronDown className="w-4 h-4 text-foreground/60 group-open:rotate-180 transition-transform flex-shrink-0" />
           </summary>
           <div className="bg-background/80 backdrop-blur-sm border-t border-border/10">
             {sections.map((section) => (
@@ -118,13 +132,16 @@ export function DepartmentPageMenu({
                   ) as HTMLDetailsElement;
                   if (details) details.open = false;
                 }}
-                className={`w-full text-left px-6 py-3 flex items-center gap-2 text-sm transition-colors border-t border-border/10 first:border-t-0 ${
+                className={`w-full text-left flex items-center gap-2 text-sm transition-colors border-t border-border/10 first:border-t-0 ${
                   active === section.id
                     ? "bg-brand-blue/10 text-brand-blue font-medium"
                     : "text-foreground/80 hover:bg-background/60"
                 }`}
+                style={{
+                  padding: "clamp(0.625rem, 1.5vw, 0.75rem) 1.5rem",
+                }}
               >
-                {section.icon && <span className="w-4 h-4">{section.icon}</span>}
+                {section.icon && <span className="w-4 h-4 flex-shrink-0">{section.icon}</span>}
                 {section.label}
               </button>
             ))}
