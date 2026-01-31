@@ -18,7 +18,7 @@ export function CampusLocationsSection() {
         "Dr. Chandramma Dayananda Sagar Institute of Medical Education & Research",
       ],
       mapEmbed:
-        "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7785.59882647443!2d77.444135!3d12.661153!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae5be918ca4309%3A0x1540363bdc6f1ddb!2sDayanand%20Sagar%20University!5e0!3m2!1sen!2sus!4v1769845340844!5m2!1sen!2sus",
+        "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7785.649694515744!2d77.45043220230377!3d12.659486511405653!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae5b32ad06ec57%3A0x95e7a57b8a6b94d2!2sDayananda%20Sagar%20University%20(DSU)%20-%20Main%20Campus!5e0!3m2!1sen!2sus!4v1769845931404!5m2!1sen!2sus",
       directionsUrl: "https://maps.app.goo.gl/hdzXBGufmxskB575A",
       color: "brand-blue",
     },
