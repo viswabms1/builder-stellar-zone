@@ -834,9 +834,9 @@ export default function Navigation() {
             </Link>
 
             {/* Desktop Navigation - Menu items LEFT | Logo CENTER | Menu items + CTAs RIGHT */}
-            <div className="hidden lg:flex items-center justify-center w-full py-1 px-2 gap-4">
+            <div className="hidden lg:flex items-center justify-center w-full py-1 px-2 gap-1">
               {/* LEFT - First half of menu items (indices 0-3) */}
-              <nav className="flex flex-nowrap items-center gap-2">
+              <nav className="flex flex-nowrap items-center gap-0">
               {navigation.slice(0, 4).map((item, idx) => {
                 const active = !item.external && isActive(item.href);
                 const isAbout = item.href === "/about";
