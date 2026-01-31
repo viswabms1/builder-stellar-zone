@@ -687,14 +687,18 @@ export default function DeptCSE() {
         </div>
       </section>
 
-      <CurriculumLibraryComponent />
+      <section id="curriculum">
+        <CurriculumLibraryComponent />
+      </section>
 
       <AccreditationDocuments />
 
       {/* Auto-filtered content based on current department context - 3-column grid layout */}
       <DepartmentNoticeBoard department="CSE" />
 
-      <LabsFacilitiesCarousel />
+      <section id="facilities">
+        <LabsFacilitiesCarousel />
+      </section>
 
       {/* Leadership Section */}
       <section className="px-3 py-8">
