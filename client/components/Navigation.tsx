@@ -1302,19 +1302,72 @@ export default function Navigation() {
               })}
               </nav>
 
-              {/* Right - NAAC Badge and CTAs */}
+              {/* CENTER - Logo + NAAC Badge */}
               <div className="flex items-center gap-3 flex-shrink-0">
+                <Link
+                  to="/"
+                  className="flex items-center group transition-all duration-300"
+                >
+                  <img
+                    src={
+                      theme === "light"
+                        ? "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F359db0babe0948ae98ad938f84bc1474?format=webp&width=800"
+                        : "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F0caf0bf29be6421997005f26cdaae0ed?format=webp&width=800"
+                    }
+                    alt="Dayananda Sagar University Logo"
+                    className={`h-14 w-auto object-contain group-hover:scale-105 transition-all duration-300 ${
+                      theme === "light"
+                        ? "mix-blend-multiply"
+                        : "mix-blend-screen"
+                    }`}
+                  />
+                </Link>
                 {/* NAAC Badge */}
-                <div className={`flex items-center gap-2 px-3 py-1 rounded-lg border ${
+                <div className={`flex items-center gap-1 px-2 py-1 rounded border ${
                   theme === "light"
-                    ? "bg-green-50 border-green-200 text-green-800"
-                    : "bg-green-900/30 border-green-600/30 text-green-200"
+                    ? "bg-green-50 border-green-300 text-green-800"
+                    : "bg-green-900/30 border-green-500/50 text-green-200"
                 }`}>
-                  <span className="text-xs font-bold">NAAC</span>
-                  <span className="text-lg font-bold">A+</span>
+                  <span className="text-[10px] font-bold leading-none">NAAC<br/>GRADE</span>
+                  <span className="text-xl font-black text-green-600">A+</span>
                 </div>
+              </div>
 
-                {/* Apply Now CTA */}
+              {/* RIGHT - Remaining menu items + CTAs */}
+              <div className="flex items-center gap-2">
+                {/* Right menu items */}
+                <nav className="flex flex-nowrap items-center gap-1">
+                  {navigation.slice(4).map((item, idx) => {
+                    const actualIdx = idx + 4;
+                    const active = !item.external && isActive(item.href);
+                    const menuClasses = `flex items-center rounded-md font-medium font-display transition-all duration-200 whitespace-nowrap ${
+                      theme === "light"
+                        ? active
+                          ? "bg-orange-100 text-orange-900 font-semibold"
+                          : "text-gray-700 hover:text-orange-600 hover:bg-orange-50"
+                        : active
+                          ? "bg-white/20 text-white font-semibold"
+                          : "text-white/90 hover:text-white hover:bg-white/10"
+                    }`;
+                    const menuStyle = {
+                      fontSize: "clamp(0.8rem, 1vw, 0.95rem)",
+                      padding: "0.5rem 0.75rem",
+                    };
+
+                    return (
+                      <Link
+                        key={actualIdx}
+                        to={item.href}
+                        className={menuClasses}
+                        style={menuStyle}
+                      >
+                        {item.name}
+                      </Link>
+                    );
+                  })}
+                </nav>
+
+                {/* CTAs */}
                 <a
                   href="https://admissions.dsu.edu.in/"
                   target="_blank"
@@ -1322,18 +1375,17 @@ export default function Navigation() {
                 >
                   <Button
                     size="sm"
-                    className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold px-4 py-2 rounded-md transition-all duration-200 shadow-md hover:shadow-lg"
+                    className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold px-3 py-1.5 text-sm rounded transition-all duration-200 shadow-md hover:shadow-lg"
                   >
                     Apply Now
                   </Button>
                 </a>
 
-                {/* Campus Visit */}
                 <Link to="/campus-life">
                   <Button
                     variant="outline"
                     size="sm"
-                    className={`font-semibold px-4 py-2 rounded-md transition-all duration-200 ${
+                    className={`font-semibold px-3 py-1.5 text-sm rounded transition-all duration-200 ${
                       theme === "light"
                         ? "border-orange-300 text-orange-700 hover:bg-orange-50"
                         : "border-orange-500/50 text-orange-300 hover:bg-orange-500/10"
