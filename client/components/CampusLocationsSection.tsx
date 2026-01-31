@@ -18,7 +18,7 @@ export function CampusLocationsSection() {
         "Dr. Chandramma Dayananda Sagar Institute of Medical Education & Research",
       ],
       mapEmbed:
-        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.5554269548903!2d77.5236!3d12.7539!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3a8b8b8b8b8b%3A0x8b8b8b8b8b8b8b8b!2sDevarakaggalahalli%2C%20Harohalli%2C%20Bengaluru!5e0!3m2!1sen!2sin!4v1234567890",
+        "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7785.59882647443!2d77.444135!3d12.661153!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae5be918ca4309%3A0x1540363bdc6f1ddb!2sDayanand%20Sagar%20University!5e0!3m2!1sen!2sus!4v1769845340844!5m2!1sen!2sus",
       directionsUrl: "https://maps.app.goo.gl/hdzXBGufmxskB575A",
       color: "brand-blue",
     },
