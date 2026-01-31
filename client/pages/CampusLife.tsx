@@ -51,7 +51,7 @@ export default function CampusLife() {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-background text-foreground font-youthful">
       {/* ===== HERO SECTION ===== */}
       <section className="relative h-[600px] overflow-hidden">
         <div className="absolute inset-0 hero-zoom-video">
