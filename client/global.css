@@ -192,6 +192,24 @@
     background: hsl(var(--brand-blue) / 0.8);
   }
 
+  /* Select dropdown scrollbar styling */
+  [role="listbox"]::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  [role="listbox"]::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  [role="listbox"]::-webkit-scrollbar-thumb {
+    background: hsl(var(--brand-blue) / 0.6);
+    border-radius: 4px;
+  }
+
+  [role="listbox"]::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--brand-blue) / 0.9);
+  }
+
   /* Typography utility classes */
   .font-display {
     font-family: "Poppins", "Inter", sans-serif;
