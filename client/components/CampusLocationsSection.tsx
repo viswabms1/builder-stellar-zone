@@ -19,7 +19,7 @@ export function CampusLocationsSection() {
       ],
       mapEmbed:
         "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.5554269548903!2d77.5236!3d12.7539!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3a8b8b8b8b8b%3A0x8b8b8b8b8b8b8b8b!2sDevarakaggalahalli%2C%20Harohalli%2C%20Bengaluru!5e0!3m2!1sen!2sin!4v1234567890",
-      directionsUrl: "https://maps.app.goo.gl/GhhwYuELs9kFdEwXA",
+      directionsUrl: "https://maps.app.goo.gl/hdzXBGufmxskB575A",
       color: "brand-blue",
     },
     {
