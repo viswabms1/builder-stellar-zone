@@ -1316,9 +1316,9 @@ export default function Navigation() {
               </div>
 
               {/* RIGHT - Remaining menu items + CTAs */}
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-1">
                 {/* Right menu items */}
-                <nav className="flex flex-nowrap items-center gap-2">
+                <nav className="flex flex-nowrap items-center gap-0">
                   {navigation.slice(4).map((item, idx) => {
                     const actualIdx = idx + 4;
                     const active = !item.external && isActive(item.href);
