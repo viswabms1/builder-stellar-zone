@@ -201,6 +201,19 @@
     font-family: "Inter", "Poppins", sans-serif;
   }
 
+  /* Youthful fonts for Campus Life */
+  .font-youthful {
+    font-family: "Nunito", "Quicksand", sans-serif;
+  }
+
+  .font-youthful-display {
+    font-family: "Outfit", "Nunito", sans-serif;
+  }
+
+  .font-quicksand {
+    font-family: "Quicksand", "Nunito", sans-serif;
+  }
+
   /* Fluid Typography - Device Agnostic */
   .headline-1 {
     font-size: clamp(2.5rem, 3vw + 1rem, 3.5rem);
