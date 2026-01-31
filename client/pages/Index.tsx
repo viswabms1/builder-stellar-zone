@@ -770,7 +770,8 @@ export default function Index() {
             <h2 className="headline-2 mb-1 md:mb-2">
               Recognized
               <span className="bg-brand-gradient bg-clip-text text-transparent">
-                {" "}Excellence
+                {" "}
+                Excellence
               </span>
             </h2>
             <p className="subheadline text-foreground max-w-3xl mx-auto">
@@ -832,7 +833,8 @@ export default function Index() {
             <h2 className="headline-2 mb-6">
               Academic Excellence
               <span className="bg-brand-gradient bg-clip-text text-transparent">
-                {" "}That Inspires
+                {" "}
+                That Inspires
               </span>
             </h2>
             <p className="subheadline text-foreground max-w-3xl mx-auto">

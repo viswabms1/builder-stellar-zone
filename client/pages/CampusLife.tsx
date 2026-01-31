@@ -36,11 +36,16 @@ export default function CampusLife() {
   const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  const { elementRef: pillarsRef, isVisible: pillarsVisible } = useScrollTrigger();
-  const { elementRef: storiesRef, isVisible: storiesVisible } = useScrollTrigger();
-  const { elementRef: facilitiesRef, isVisible: facilitiesVisible } = useScrollTrigger();
-  const { elementRef: organizationsRef, isVisible: organizationsVisible } = useScrollTrigger();
-  const { elementRef: galleryRef, isVisible: galleryVisible } = useScrollTrigger();
+  const { elementRef: pillarsRef, isVisible: pillarsVisible } =
+    useScrollTrigger();
+  const { elementRef: storiesRef, isVisible: storiesVisible } =
+    useScrollTrigger();
+  const { elementRef: facilitiesRef, isVisible: facilitiesVisible } =
+    useScrollTrigger();
+  const { elementRef: organizationsRef, isVisible: organizationsVisible } =
+    useScrollTrigger();
+  const { elementRef: galleryRef, isVisible: galleryVisible } =
+    useScrollTrigger();
   const { elementRef: ctaRef, isVisible: ctaVisible } = useScrollTrigger();
 
   const toggleMute = () => {
@@ -93,14 +98,25 @@ export default function CampusLife() {
               </span>
             </div>
 
-            <h1 className="hero-title text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight text-white drop-shadow-lg font-campus-display" style={{textShadow: '0 2px 8px rgba(0, 0, 0, 0.8), 0 4px 16px rgba(0, 0, 0, 0.6)'}}>
+            <h1
+              className="hero-title text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight text-white drop-shadow-lg font-campus-display"
+              style={{
+                textShadow:
+                  "0 2px 8px rgba(0, 0, 0, 0.8), 0 4px 16px rgba(0, 0, 0, 0.6)",
+              }}
+            >
               Life That Builds the Future
             </h1>
           </div>
 
           <div className="rounded-none px-4 md:px-8 max-w-3xl mt-auto pb-20 md:pb-32">
-            <p className="hero-title text-sm sm:text-base md:text-lg text-white/95 leading-relaxed max-w-2xl drop-shadow-md" style={{textShadow: '0 1px 4px rgba(0, 0, 0, 0.8)'}}>
-              At India's AI-First University, campus life seamlessly integrates research, innovation, leadership, and community—shaping graduates who drive global impact.
+            <p
+              className="hero-title text-sm sm:text-base md:text-lg text-white/95 leading-relaxed max-w-2xl drop-shadow-md"
+              style={{ textShadow: "0 1px 4px rgba(0, 0, 0, 0.8)" }}
+            >
+              At India's AI-First University, campus life seamlessly integrates
+              research, innovation, leadership, and community—shaping graduates
+              who drive global impact.
             </p>
           </div>
         </div>
@@ -133,7 +149,8 @@ export default function CampusLife() {
               </span>
             </h2>
             <p className="subheadline text-foreground/80 max-w-3xl mx-auto font-raleway">
-              How campus experiences at DSU develop research-driven, innovative, and globally competent professionals
+              How campus experiences at DSU develop research-driven, innovative,
+              and globally competent professionals
             </p>
           </div>
 
@@ -267,7 +284,8 @@ export default function CampusLife() {
               </span>
             </h2>
             <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
-              How hackathons, labs, and innovation challenges launch student careers and startup ideas
+              How hackathons, labs, and innovation challenges launch student
+              careers and startup ideas
             </p>
           </div>
 
@@ -329,7 +347,9 @@ export default function CampusLife() {
                     <h3 className="text-xl font-bold text-foreground group-hover:text-orange-500 transition-colors">
                       {story.name}
                     </h3>
-                    <p className="text-sm text-foreground/70 mt-1">{story.program}</p>
+                    <p className="text-sm text-foreground/70 mt-1">
+                      {story.program}
+                    </p>
                     <Badge
                       variant="secondary"
                       className="mt-2 text-xs bg-orange-500/20 text-orange-300"
@@ -364,7 +384,8 @@ export default function CampusLife() {
               </span>
             </h2>
             <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
-              15+ years of nurturing innovators—from the IEDC (2009) to today's AIC-DSU backed by NITI Aayog & Government of India
+              15+ years of nurturing innovators—from the IEDC (2009) to today's
+              AIC-DSU backed by NITI Aayog & Government of India
             </p>
           </div>
 
@@ -377,12 +398,20 @@ export default function CampusLife() {
                   <Badge className="bg-blue-500/20 text-blue-300 mb-4 text-xs font-bold px-3 py-1">
                     Est. 2009
                   </Badge>
-                  <h3 className="text-2xl font-bold text-foreground mb-2">DERBI Foundation</h3>
-                  <p className="text-sm text-blue-400">Innovation & Entrepreneurship Development Centre</p>
+                  <h3 className="text-2xl font-bold text-foreground mb-2">
+                    DERBI Foundation
+                  </h3>
+                  <p className="text-sm text-blue-400">
+                    Innovation & Entrepreneurship Development Centre
+                  </p>
                 </div>
 
                 <p className="text-foreground/85 leading-relaxed">
-                  "All started with a seed of thought, subsequent small steps and a simple decision"—DERBI was established to nurture entrepreneurship among students and faculty of Dayananda Sagar Institutions, laying the foundation for DSU's innovation culture.
+                  "All started with a seed of thought, subsequent small steps
+                  and a simple decision"—DERBI was established to nurture
+                  entrepreneurship among students and faculty of Dayananda Sagar
+                  Institutions, laying the foundation for DSU's innovation
+                  culture.
                 </p>
 
                 <div className="space-y-2">
@@ -424,12 +453,19 @@ export default function CampusLife() {
                   <Badge className="bg-blue-500/30 text-blue-200 mb-4 text-xs font-bold px-3 py-1">
                     Govt. Backed
                   </Badge>
-                  <h3 className="text-2xl font-bold text-foreground mb-2">AIC-DSU Innovation Foundation</h3>
-                  <p className="text-sm text-blue-300">Atal Incubation Center | NITI Aayog & AIM</p>
+                  <h3 className="text-2xl font-bold text-foreground mb-2">
+                    AIC-DSU Innovation Foundation
+                  </h3>
+                  <p className="text-sm text-blue-300">
+                    Atal Incubation Center | NITI Aayog & AIM
+                  </p>
                 </div>
 
                 <p className="text-foreground/85 leading-relaxed">
-                  Building on DERBI's legacy, AIC-DSU is an official Atal Incubation Center transforming student hackathons and projects into scalable startups with government backing, mentorship, and investor networks.
+                  Building on DERBI's legacy, AIC-DSU is an official Atal
+                  Incubation Center transforming student hackathons and projects
+                  into scalable startups with government backing, mentorship,
+                  and investor networks.
                 </p>
 
                 <div className="space-y-2">
@@ -470,17 +506,39 @@ export default function CampusLife() {
 
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
               {[
-                { year: "2009", title: "DERBI Founded", desc: "Entrepreneurship culture begins" },
-                { year: "2015", title: "Growth Phase", desc: "100+ startups mentored" },
-                { year: "2021", title: "AIC-DSU Launched", desc: "Government recognition" },
-                { year: "Today", title: "Scaling Impact", desc: "25+ active startups" },
+                {
+                  year: "2009",
+                  title: "DERBI Founded",
+                  desc: "Entrepreneurship culture begins",
+                },
+                {
+                  year: "2015",
+                  title: "Growth Phase",
+                  desc: "100+ startups mentored",
+                },
+                {
+                  year: "2021",
+                  title: "AIC-DSU Launched",
+                  desc: "Government recognition",
+                },
+                {
+                  year: "Today",
+                  title: "Scaling Impact",
+                  desc: "25+ active startups",
+                },
               ].map((milestone, idx) => (
                 <div key={idx} className="text-center">
                   <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 border border-blue-500/50 mb-4 mx-auto">
-                    <span className="font-bold text-blue-300 text-sm">{idx + 1}</span>
+                    <span className="font-bold text-blue-300 text-sm">
+                      {idx + 1}
+                    </span>
                   </div>
-                  <p className="text-lg font-bold text-blue-400 mb-1">{milestone.year}</p>
-                  <h4 className="font-semibold text-foreground mb-2">{milestone.title}</h4>
+                  <p className="text-lg font-bold text-blue-400 mb-1">
+                    {milestone.year}
+                  </p>
+                  <h4 className="font-semibold text-foreground mb-2">
+                    {milestone.title}
+                  </h4>
                   <p className="text-sm text-foreground/70">{milestone.desc}</p>
                 </div>
               ))}
@@ -505,7 +563,8 @@ export default function CampusLife() {
               </span>
             </h2>
             <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
-              State-of-the-art facilities enabling research breakthroughs, innovation, and global-quality learning
+              State-of-the-art facilities enabling research breakthroughs,
+              innovation, and global-quality learning
             </p>
           </div>
 
@@ -626,7 +685,8 @@ export default function CampusLife() {
               <span className="text-foreground"> Ecosystem</span>
             </h2>
             <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
-              100+ clubs and organizations aligned with innovation, research, arts, and community impact
+              100+ clubs and organizations aligned with innovation, research,
+              arts, and community impact
             </p>
           </div>
 
@@ -675,12 +735,36 @@ export default function CampusLife() {
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 md:gap-3">
             {[
-              { title: "AI Research Lab", image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=300&h=300&fit=crop" },
-              { title: "Campus Innovation Hub", image: "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fa16295c3fda14368b934b709019e0e30?format=webp&width=300" },
-              { title: "Cultural Performance", image: "https://static.wixstatic.com/media/a57b29_7432beeeab194cf19d467960322ed7b7~mv2.jpg/v1/fit/w_300,h_300,q_90" },
-              { title: "Sports Excellence", image: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=300&h=300&fit=crop" },
-              { title: "Research Symposium", image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=300&h=300&fit=crop" },
-              { title: "Student Community", image: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=300&h=300&fit=crop" },
+              {
+                title: "AI Research Lab",
+                image:
+                  "https://images.unsplash.com/photo-1552664730-d307ca884978?w=300&h=300&fit=crop",
+              },
+              {
+                title: "Campus Innovation Hub",
+                image:
+                  "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2Fa16295c3fda14368b934b709019e0e30?format=webp&width=300",
+              },
+              {
+                title: "Cultural Performance",
+                image:
+                  "https://static.wixstatic.com/media/a57b29_7432beeeab194cf19d467960322ed7b7~mv2.jpg/v1/fit/w_300,h_300,q_90",
+              },
+              {
+                title: "Sports Excellence",
+                image:
+                  "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=300&h=300&fit=crop",
+              },
+              {
+                title: "Research Symposium",
+                image:
+                  "https://images.unsplash.com/photo-1552664730-d307ca884978?w=300&h=300&fit=crop",
+              },
+              {
+                title: "Student Community",
+                image:
+                  "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=300&h=300&fit=crop",
+              },
             ].map((item, index) => (
               <div
                 key={index}
@@ -719,7 +803,8 @@ export default function CampusLife() {
               ?
             </h2>
             <p className="text-lg text-foreground/80 mb-8 max-w-2xl mx-auto leading-relaxed">
-              Join a community where research, innovation, and global collaboration shape the next generation of leaders and innovators.
+              Join a community where research, innovation, and global
+              collaboration shape the next generation of leaders and innovators.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-10">
@@ -764,15 +849,25 @@ export default function CampusLife() {
                   <Badge className="bg-orange-500/20 text-orange-400 mb-2 text-sm font-bold px-4 py-1">
                     NAAC A+ Accredited
                   </Badge>
-                  <p className="text-xs text-foreground/60 mt-1">Assured Quality</p>
+                  <p className="text-xs text-foreground/60 mt-1">
+                    Assured Quality
+                  </p>
                 </div>
                 <div className="flex flex-col items-center">
-                  <p className="text-3xl font-bold bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">25,000+</p>
-                  <p className="text-xs text-foreground/60 mt-1">Active Students</p>
+                  <p className="text-3xl font-bold bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
+                    25,000+
+                  </p>
+                  <p className="text-xs text-foreground/60 mt-1">
+                    Active Students
+                  </p>
                 </div>
                 <div className="flex flex-col items-center">
-                  <p className="text-3xl font-bold bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">100+</p>
-                  <p className="text-xs text-foreground/60 mt-1">Clubs & Societies</p>
+                  <p className="text-3xl font-bold bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
+                    100+
+                  </p>
+                  <p className="text-xs text-foreground/60 mt-1">
+                    Clubs & Societies
+                  </p>
                 </div>
               </div>
             </div>

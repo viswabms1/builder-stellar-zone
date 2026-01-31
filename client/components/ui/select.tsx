@@ -81,7 +81,7 @@ const SelectContent = React.forwardRef<
       position={position}
       style={{
         maxHeight: "24rem",
-        overflow: "hidden"
+        overflow: "hidden",
       }}
       {...props}
     >

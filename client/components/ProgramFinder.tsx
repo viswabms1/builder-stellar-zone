@@ -1,10 +1,5 @@
 import { useState, useEffect } from "react";
-import {
-  CheckCircle2,
-  Filter,
-  GraduationCap,
-  IndianRupee,
-} from "lucide-react";
+import { CheckCircle2, Filter, GraduationCap, IndianRupee } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Card,

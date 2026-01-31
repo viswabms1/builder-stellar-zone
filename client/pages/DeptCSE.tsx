@@ -79,13 +79,37 @@ export default function DeptCSE() {
   ];
 
   const menuSections = [
-    { id: "programs", label: "Programs", icon: <BookOpen className="w-4 h-4" /> },
+    {
+      id: "programs",
+      label: "Programs",
+      icon: <BookOpen className="w-4 h-4" />,
+    },
     { id: "about", label: "About", icon: <Users className="w-4 h-4" /> },
-    { id: "infrastructure", label: "Infrastructure", icon: <Cpu className="w-4 h-4" /> },
-    { id: "facilities", label: "Facilities", icon: <Building className="w-4 h-4" /> },
-    { id: "leadership", label: "Leadership", icon: <Award className="w-4 h-4" /> },
-    { id: "careers", label: "Careers", icon: <Briefcase className="w-4 h-4" /> },
-    { id: "curriculum", label: "Curriculum", icon: <FileText className="w-4 h-4" /> },
+    {
+      id: "infrastructure",
+      label: "Infrastructure",
+      icon: <Cpu className="w-4 h-4" />,
+    },
+    {
+      id: "facilities",
+      label: "Facilities",
+      icon: <Building className="w-4 h-4" />,
+    },
+    {
+      id: "leadership",
+      label: "Leadership",
+      icon: <Award className="w-4 h-4" />,
+    },
+    {
+      id: "careers",
+      label: "Careers",
+      icon: <Briefcase className="w-4 h-4" />,
+    },
+    {
+      id: "curriculum",
+      label: "Curriculum",
+      icon: <FileText className="w-4 h-4" />,
+    },
   ];
 
   return (
@@ -152,7 +176,10 @@ export default function DeptCSE() {
       <DepartmentPageMenu sections={menuSections} />
 
       {/* Programs Offered */}
-      <section id="programs" className="px-3 py-8 bg-gradient-to-r from-brand-magenta/5 via-brand-blue/5 to-brand-orange/5 border-y border-border/30">
+      <section
+        id="programs"
+        className="px-3 py-8 bg-gradient-to-r from-brand-magenta/5 via-brand-blue/5 to-brand-orange/5 border-y border-border/30"
+      >
         <div className="max-w-6xl mx-auto">
           <div className="mb-8">
             <h2 className="headline-2 font-display mb-2">Programs Offered</h2>
@@ -378,7 +405,10 @@ export default function DeptCSE() {
       <EligibilityAndFees />
 
       {/* NVIDIA AI Architecture Section */}
-      <section id="infrastructure" className="px-3 py-20 bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-blue-500/5">
+      <section
+        id="infrastructure"
+        className="px-3 py-20 bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-blue-500/5"
+      >
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/10 rounded-full border border-blue-500/20 mb-4">

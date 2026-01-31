@@ -52,11 +52,12 @@ export function DepartmentPageMenu({
     if (element) {
       setActive(sectionId);
       onSectionClick?.(sectionId);
-      
+
       // Smooth scroll to section
       const headerOffset = 80;
       const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      const offsetPosition =
+        elementPosition + window.pageYOffset - headerOffset;
 
       window.scrollTo({
         top: offsetPosition,
@@ -75,7 +76,7 @@ export function DepartmentPageMenu({
         }}
       >
         <div className="max-w-7xl mx-auto">
-          <div 
+          <div
             className="flex items-center justify-center flex-wrap"
             style={{
               gap: "clamp(0.75rem, 2vw, 1.5rem)",
@@ -92,10 +93,15 @@ export function DepartmentPageMenu({
                 }`}
                 style={{
                   fontSize: "clamp(0.875rem, 1.1vw, 1rem)",
-                  padding: "clamp(0.375rem, 0.5vw, 0.5rem) clamp(0.5rem, 1vw, 0.75rem)",
+                  padding:
+                    "clamp(0.375rem, 0.5vw, 0.5rem) clamp(0.5rem, 1vw, 0.75rem)",
                 }}
               >
-                {section.icon && <span className="w-4 h-4 mr-1.5 flex-shrink-0">{section.icon}</span>}
+                {section.icon && (
+                  <span className="w-4 h-4 mr-1.5 flex-shrink-0">
+                    {section.icon}
+                  </span>
+                )}
                 {section.label}
               </button>
             ))}
@@ -105,9 +111,7 @@ export function DepartmentPageMenu({
 
       {/* Mobile Dropdown Menu */}
       <div className="md:hidden">
-        <details 
-          className="group border-b border-border/20 bg-background/50 backdrop-blur-sm"
-        >
+        <details className="group border-b border-border/20 bg-background/50 backdrop-blur-sm">
           <summary
             className="flex items-center justify-between cursor-pointer hover:bg-background/80 transition-colors"
             style={{
@@ -130,7 +134,7 @@ export function DepartmentPageMenu({
                   handleClick(section.id);
                   // Close the details element
                   const details = document.querySelector(
-                    "details[open]"
+                    "details[open]",
                   ) as HTMLDetailsElement;
                   if (details) details.open = false;
                 }}
@@ -144,7 +148,9 @@ export function DepartmentPageMenu({
                   padding: "clamp(0.625rem, 1.5vw, 0.75rem) 1.5rem",
                 }}
               >
-                {section.icon && <span className="w-4 h-4 flex-shrink-0">{section.icon}</span>}
+                {section.icon && (
+                  <span className="w-4 h-4 flex-shrink-0">{section.icon}</span>
+                )}
                 {section.label}
               </button>
             ))}

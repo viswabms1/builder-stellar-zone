@@ -1390,7 +1390,8 @@ export default function Engineering() {
               <h2 className="headline-2 mb-6">
                 Future-ready engineering
                 <span className="bg-brand-gradient bg-clip-text text-transparent">
-                  {" "}disciplines
+                  {" "}
+                  disciplines
                 </span>
               </h2>
             </div>
@@ -1450,7 +1451,8 @@ export default function Engineering() {
               <h2 className="headline-2 mb-6 mt-4">
                 Foundational departments that power every engineering
                 <span className="bg-brand-gradient bg-clip-text text-transparent">
-                  {" "}discipline
+                  {" "}
+                  discipline
                 </span>
               </h2>
               <p className="mt-4 text-sm text-foreground font-body max-w-3xl">
@@ -1477,7 +1479,8 @@ export default function Engineering() {
             <h2 className="headline-2 mb-2">
               Message from the
               <span className="bg-brand-gradient bg-clip-text text-transparent">
-                {" "}Dean
+                {" "}
+                Dean
               </span>
             </h2>
             <p className="text-sm text-foreground/70 font-body">
@@ -1578,21 +1581,24 @@ export default function Engineering() {
           <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between mb-8">
             <div>
               <h2 className="headline-2 mb-3">
-            <span className="text-foreground">What's </span>
-            <span className="bg-brand-gradient bg-clip-text text-transparent">
-              Happening
-            </span>
-            <span className="text-foreground"> at School of Engineering, DSU</span>
-          </h2>
+                <span className="text-foreground">What's </span>
+                <span className="bg-brand-gradient bg-clip-text text-transparent">
+                  Happening
+                </span>
+                <span className="text-foreground">
+                  {" "}
+                  at School of Engineering, DSU
+                </span>
+              </h2>
               <p className="max-w-2xl text-sm text-foreground sm:text-base font-body">
                 Explore recent achievements, industry collaborations, and
                 upcoming opportunities.
               </p>
             </div>
+          </div>
         </div>
-      </div>
-      <SchoolNoticeBoard school="Engineering" />
-    </section>
+        <SchoolNoticeBoard school="Engineering" />
+      </section>
 
       <section
         id="related-resources"
