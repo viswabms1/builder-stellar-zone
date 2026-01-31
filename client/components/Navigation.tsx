@@ -1348,20 +1348,6 @@ export default function Navigation() {
                     );
                   })}
                 </nav>
-
-                {/* Apply Now CTA */}
-                <a
-                  href="https://admissions.dsu.edu.in/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <Button
-                    size="sm"
-                    className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold px-4 py-1.5 text-sm rounded transition-all duration-200 shadow-md hover:shadow-lg whitespace-nowrap"
-                  >
-                    Apply Now
-                  </Button>
-                </a>
               </div>
             </div>
 
