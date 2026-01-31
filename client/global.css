@@ -201,17 +201,21 @@
     font-family: "Inter", "Poppins", sans-serif;
   }
 
-  /* Youthful fonts for Campus Life */
-  .font-youthful {
-    font-family: "Nunito", "Quicksand", sans-serif;
+  /* Campus Life fonts - Professional & Engaging */
+  .font-campus {
+    font-family: "Open Sans", "Lato", sans-serif;
   }
 
-  .font-youthful-display {
-    font-family: "Outfit", "Nunito", sans-serif;
+  .font-campus-display {
+    font-family: "Montserrat", "Raleway", sans-serif;
   }
 
-  .font-quicksand {
-    font-family: "Quicksand", "Nunito", sans-serif;
+  .font-raleway {
+    font-family: "Raleway", "Montserrat", sans-serif;
+  }
+
+  .font-lato {
+    font-family: "Lato", "Open Sans", sans-serif;
   }
 
   /* Fluid Typography - Device Agnostic */
