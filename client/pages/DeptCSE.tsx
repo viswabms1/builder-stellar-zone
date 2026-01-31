@@ -42,7 +42,11 @@ import {
   Award,
   Microscope,
   IndianRupee,
+  Users,
+  Briefcase,
+  Mail,
 } from "lucide-react";
+import { DepartmentPageMenu } from "@/components/DepartmentPageMenu";
 
 function CurriculumLibraryComponent() {
   const programs = getCurriculumByDepartment("Engineering", "CSE");
@@ -1783,4 +1787,3 @@ function NoticeBoard() {
     </section>
   );
 }
-
