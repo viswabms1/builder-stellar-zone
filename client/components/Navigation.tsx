@@ -1278,25 +1278,42 @@ export default function Navigation() {
               })}
               </nav>
 
-              {/* CENTER - Logo */}
-              <Link
-                to="/"
-                className="flex items-center group transition-all duration-300 flex-shrink-0"
-              >
-                <img
-                  src={
+              {/* CENTER - Logo + AI-First */}
+              <div className="flex items-center gap-3 flex-shrink-0">
+                <Link
+                  to="/"
+                  className="flex items-center group transition-all duration-300"
+                >
+                  <img
+                    src={
+                      theme === "light"
+                        ? "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F359db0babe0948ae98ad938f84bc1474?format=webp&width=800"
+                        : "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F0caf0bf29be6421997005f26cdaae0ed?format=webp&width=800"
+                    }
+                    alt="Dayananda Sagar University Logo"
+                    className={`h-16 w-auto object-contain group-hover:scale-105 transition-all duration-300 ${
+                      theme === "light"
+                        ? "mix-blend-multiply"
+                        : "mix-blend-screen"
+                    }`}
+                  />
+                </Link>
+                <Link
+                  to="/ai-first"
+                  className={`flex items-center rounded-md font-medium font-display transition-all duration-200 whitespace-nowrap ${
                     theme === "light"
-                      ? "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F359db0babe0948ae98ad938f84bc1474?format=webp&width=800"
-                      : "https://cdn.builder.io/api/v1/image/assets%2F4aa279a8430d441dba9c55f659831878%2F0caf0bf29be6421997005f26cdaae0ed?format=webp&width=800"
-                  }
-                  alt="Dayananda Sagar University Logo"
-                  className={`h-16 w-auto object-contain group-hover:scale-105 transition-all duration-300 ${
-                    theme === "light"
-                      ? "mix-blend-multiply"
-                      : "mix-blend-screen"
+                      ? isActive("/ai-first")
+                        ? "bg-orange-100 text-orange-900 font-semibold"
+                        : "text-gray-700 hover:text-orange-600 hover:bg-orange-50"
+                      : isActive("/ai-first")
+                        ? "bg-white/20 text-white font-semibold"
+                        : "text-white/90 hover:text-white hover:bg-white/10"
                   }`}
-                />
-              </Link>
+                  style={{ fontSize: "clamp(0.75rem, 0.9vw, 0.875rem)", padding: "0.4rem 0.5rem" }}
+                >
+                  AI-First @ DSU
+                </Link>
+              </div>
 
               {/* RIGHT - Remaining menu items + CTAs */}
               <div className="flex items-center gap-3">
