@@ -276,7 +276,7 @@ export default function DeptAIDS() {
       </section>
 
       {/* Careers */}
-      <section className="px-6 py-16">
+      <section id="careers" className="px-6 py-16">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-10 items-start">
           <div>
             <h2 className="headline-3 mb-4 font-display">Career Pathways</h2>
