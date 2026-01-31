@@ -1350,8 +1350,8 @@ export default function Navigation() {
                           : "text-white/90 hover:text-white hover:bg-white/10"
                     }`;
                     const menuStyle = {
-                      fontSize: "clamp(0.8rem, 1vw, 0.95rem)",
-                      padding: "0.5rem 0.75rem",
+                      fontSize: "clamp(0.75rem, 0.9vw, 0.875rem)",
+                      padding: "0.4rem 0.5rem",
                     };
 
                     return (
