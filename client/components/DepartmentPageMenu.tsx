@@ -85,11 +85,14 @@ export function DepartmentPageMenu({
               <button
                 key={section.id}
                 onClick={() => handleClick(section.id)}
-                className={`inline-flex items-center transition-colors duration-200 text-sm font-medium whitespace-nowrap ${
+                className={`inline-flex items-center transition-colors duration-200 font-medium whitespace-nowrap ${
                   active === section.id
                     ? "text-brand-blue"
                     : "text-foreground/70 hover:text-foreground"
                 }`}
+                style={{
+                  fontSize: "clamp(0.875rem, 1.1vw, 1rem)",
+                }}
                 style={{
                   padding: "clamp(0.375rem, 0.5vw, 0.5rem) clamp(0.5rem, 1vw, 0.75rem)",
                 }}
