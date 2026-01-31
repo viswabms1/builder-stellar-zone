@@ -1287,7 +1287,7 @@ export default function Navigation() {
                     <Link
                       key="logo"
                       to="/"
-                      className="flex items-center group flex-shrink-0 px-0 py-0 !rounded-none transition-all duration-300 !bg-transparent hover:!bg-transparent"
+                      className="flex items-center group flex-shrink-0 px-0 py-0 mx-4 !rounded-none transition-all duration-300 !bg-transparent hover:!bg-transparent"
                     >
                       <img
                         src={
