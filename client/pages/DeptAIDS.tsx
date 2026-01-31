@@ -310,7 +310,28 @@ export default function DeptAIDS() {
         </div>
       </section>
 
-      <CurriculumLibraryWrapper />
+      <section id="contact" className="px-6 py-16 bg-background/50">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="headline-3 mb-8 font-display">Get in Touch</h2>
+          <Card className="max-w-2xl overflow-hidden border border-border/50 bg-card/50">
+            <div className="relative h-40">
+              <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop" alt="Contact AIIDS" className="w-full h-full object-cover" />
+            </div>
+            <CardHeader>
+              <CardTitle className="font-display">Department Contact</CardTitle>
+              <CardDescription className="font-body">Chairperson, AI & Data Science</CardDescription>
+            </CardHeader>
+            <CardContent className="grid gap-2 text-sm font-body">
+              <div className="flex items-center justify-between"><span>Email</span><a className="font-medium hover:underline" href="mailto:chairman-aiids@dsu.edu.in">chairman-aiids@dsu.edu.in</a></div>
+              <div className="flex items-center justify-between"><span>Phone</span><span className="font-medium">080-49092935</span></div>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      <section id="curriculum">
+        <CurriculumLibraryWrapper />
+      </section>
 
       <EligibilityAndFees />
 
