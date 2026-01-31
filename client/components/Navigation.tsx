@@ -856,8 +856,8 @@ export default function Navigation() {
                       : "text-white/90 hover:text-white hover:bg-white/10"
                 }`;
                 const sharedStyle = {
-                  fontSize: "clamp(0.85rem, 1.5vw, 1rem)",
-                  padding: "clamp(0.6rem, 1.2vmin, 0.9rem) clamp(0.5rem, 1vw, 0.75rem)",
+                  fontSize: "clamp(0.75rem, 1.2vw, 0.9rem)",
+                  padding: "clamp(0.5rem, 1vmin, 0.75rem) clamp(0.25rem, 0.6vw, 0.4rem)",
                 };
 
                 const itemElement = (() => {
