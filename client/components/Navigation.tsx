@@ -1274,30 +1274,6 @@ export default function Navigation() {
                   ];
                 }
 
-                if (idx === 3) {
-                  const aiFirstActive = isActive("/ai-first");
-                  const aiFirstClasses = `flex items-center space-x-1 rounded-lg font-medium font-display transition-all duration-200 group justify-center flex-shrink ${
-                    theme === "light"
-                      ? aiFirstActive
-                        ? "bg-orange-100 text-orange-900 font-semibold shadow-sm"
-                        : "text-gray-700 hover:text-orange-600 hover:bg-orange-50"
-                      : aiFirstActive
-                        ? "bg-white/20 text-white font-semibold shadow-sm"
-                        : "text-white/90 hover:text-white hover:bg-white/10"
-                  }`;
-                  return [
-                    itemElement,
-                    <Link
-                      key="ai-label"
-                      to="/ai-first"
-                      className={aiFirstClasses}
-                      style={sharedStyle}
-                    >
-                      <span className="whitespace-nowrap">AI-First @ DSU</span>
-                    </Link>,
-                  ];
-                }
-
                 return itemElement;
               })}
               </nav>
