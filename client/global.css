@@ -193,20 +193,24 @@
   }
 
   /* Select dropdown scrollbar styling */
-  [role="listbox"]::-webkit-scrollbar {
+  [role="listbox"]::-webkit-scrollbar,
+  .overflow-y-scroll::-webkit-scrollbar {
     width: 8px;
   }
 
-  [role="listbox"]::-webkit-scrollbar-track {
+  [role="listbox"]::-webkit-scrollbar-track,
+  .overflow-y-scroll::-webkit-scrollbar-track {
     background: transparent;
   }
 
-  [role="listbox"]::-webkit-scrollbar-thumb {
+  [role="listbox"]::-webkit-scrollbar-thumb,
+  .overflow-y-scroll::-webkit-scrollbar-thumb {
     background: hsl(var(--brand-blue) / 0.6);
     border-radius: 4px;
   }
 
-  [role="listbox"]::-webkit-scrollbar-thumb:hover {
+  [role="listbox"]::-webkit-scrollbar-thumb:hover,
+  .overflow-y-scroll::-webkit-scrollbar-thumb:hover {
     background: hsl(var(--brand-blue) / 0.9);
   }
 
