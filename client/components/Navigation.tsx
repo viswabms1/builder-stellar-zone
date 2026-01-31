@@ -834,7 +834,7 @@ export default function Navigation() {
             </Link>
 
             {/* Desktop Navigation - Logo is centered, menu items flow around it */}
-            <div className="hidden lg:flex flex-nowrap items-center gap-1 justify-center w-full py-2 relative" style={{ paddingLeft: 'clamp(1rem, 10vw, 8rem)', paddingRight: 'clamp(1rem, 10vw, 8rem)' }}>
+            <div className="hidden lg:flex flex-nowrap items-center gap-1 justify-center w-full py-2 relative" style={{ paddingLeft: 'clamp(0.5rem, 8vw, 6rem)', paddingRight: 'clamp(0.5rem, 8vw, 6rem)' }}>
               {navigation.map((item, idx) => {
                 const active = !item.external && isActive(item.href);
                 const isAbout = item.href === "/about";
