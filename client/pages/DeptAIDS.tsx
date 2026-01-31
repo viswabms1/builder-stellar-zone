@@ -30,17 +30,7 @@ import {
 } from "lucide-react";
 import { aidsFaculty } from "@/data/ai-ds-faculty";
 import { DepartmentPageMenu } from "@/components/DepartmentPageMenu";
-import {
-  BookOpen,
-  Users,
-  Briefcase,
-  Mail,
-  FileText,
-  Zap as Menu,
-  Award as Excellence,
-  Microscope as Research,
-  GraduationCap as Placements,
-} from "lucide-react";
+import { Users, Briefcase, Mail } from "lucide-react";
 
 export default function DeptAIDS() {
   const chairperson = useMemo(() => {
