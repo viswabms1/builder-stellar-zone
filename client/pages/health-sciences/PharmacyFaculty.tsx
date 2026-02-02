@@ -8,7 +8,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { useDepartmentFaculty } from "@/hooks/useDepartmentFaculty";
+import { useDepartmentFaculty, FacultyMember } from "@/hooks/useDepartmentFaculty";
 import { ChevronRight, Pill } from "lucide-react";
 
 export default function PharmacyFaculty() {
