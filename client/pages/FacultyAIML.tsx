@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { useDepartmentFaculty } from "@/hooks/useDepartmentFaculty";
+import { useDepartmentFaculty, FacultyMember } from "@/hooks/useDepartmentFaculty";
 
 export default function FacultyAIML() {
   const { faculty } = useDepartmentFaculty({ departmentCode: "aiml" });
@@ -32,7 +32,7 @@ export default function FacultyAIML() {
   );
 }
 
-type FacultyEntry = (typeof faculty)[number];
+type FacultyEntry = FacultyMember;
 
 type LeadershipSectionProps = {
   leadership: FacultyEntry[];
