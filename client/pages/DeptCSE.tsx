@@ -56,6 +56,8 @@ function CurriculumLibraryComponent() {
 }
 
 export default function DeptCSE() {
+  const { faculty } = useDepartmentFaculty({ departmentCode: "cse" });
+  const chairperson = useMemo(() => faculty?.[0], [faculty]);
   const specializations = [
     { icon: Brain, label: "AI & ML" },
     { icon: Database, label: "Data Science" },
