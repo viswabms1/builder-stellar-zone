@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import { Link } from "react-router-dom";
-
+import { useMemo } from "react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -10,12 +10,13 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { medicalEngineeringFaculty } from "@/data/medical-engineering-faculty";
+import { useDepartmentFaculty } from "@/hooks/useDepartmentFaculty";
 import {
   ChevronRight,
 } from "lucide-react";
 
 export default function FacultyMedicalEngineering() {
+  const { faculty } = useDepartmentFaculty({ departmentCode: "medical-engineering" });
   const leadership = useMemo(
     () => {
       const rank = (title: string) => {
