@@ -84,7 +84,7 @@ function EventCard({ event, onSelect }: { event: Event; onSelect: (e: Event) => 
         {event.events_image && (
           <div className="relative h-48 overflow-hidden bg-gradient-to-br from-brand-blue/10 to-brand-magenta/10">
             <img
-              src={`https://dsu-website-headless-cms.directus.app/assets/${typeof event.events_image === 'string' ? event.events_image : event.events_image.id}`}
+              src={typeof event.events_image === 'string' ? event.events_image : event.events_image?.id || '/placeholder.svg'}
               alt={event.title}
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               loading="lazy"
