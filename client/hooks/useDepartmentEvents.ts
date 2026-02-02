@@ -30,10 +30,8 @@ export function useDepartmentEvents(
       setLoading(true);
       setError(null);
 
-      const departmentCode = options.departmentCode.toLowerCase();
-
       // Fetch from local data
-      const fetchedEvents = getEventsByDepartmentCode(departmentCode);
+      const fetchedEvents = getAllEvents();
 
       console.log(
         `[useDepartmentEvents] Fetched ${fetchedEvents.length} events for ${departmentCode}`
