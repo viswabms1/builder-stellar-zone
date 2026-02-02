@@ -203,7 +203,7 @@ export function DepartmentNoticeBoard({ school = "Engineering", department }: { 
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {renderCarousel("Events", eventItems, currentEventIndex, setCurrentEventIndex, "Event")}
           {renderCarousel("News", newsItems, currentNewsIndex, setCurrentNewsIndex, "News")}
-          {renderCarousel("Announcements", announcements, currentAnnouncementIndex, setCurrentAnnouncementIndex, "Announcement")}
+          {renderCarousel("Announcements", announcementItems, currentAnnouncementIndex, setCurrentAnnouncementIndex, "Announcement")}
         </div>
       </div>
 
