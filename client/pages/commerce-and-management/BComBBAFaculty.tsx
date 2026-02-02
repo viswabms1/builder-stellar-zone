@@ -2,9 +2,10 @@ import { useMemo } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { bcomBbaFaculty } from "@/data/bcom-bba-faculty";
+import { useDepartmentFaculty } from "@/hooks/useDepartmentFaculty";
 
 export default function BComBBAFaculty() {
+  const { faculty } = useDepartmentFaculty({ departmentCode: "bcom-bba" });
   const location = useLocation();
   const isProgramBCom = location.pathname.includes("/bcom/");
   const programName = isProgramBCom ? "B.Com" : "BBA";
@@ -18,9 +19,9 @@ export default function BComBBAFaculty() {
         if (/Assistant Professor/i.test(title)) return 4;
         return 5;
       };
-      return bcomBbaFaculty.sort((a, b) => rank(a.title) - rank(b.title));
+      return faculty.sort((a, b) => rank(a.title) - rank(b.title));
     },
-    [],
+    [faculty],
   );
 
   return (
@@ -34,7 +35,7 @@ export default function BComBBAFaculty() {
   );
 }
 
-type FacultyEntry = (typeof bcomBbaFaculty)[number];
+type FacultyEntry = (typeof faculty)[number];
 
 type LeadershipSectionProps = {
   leadership: FacultyEntry[];
