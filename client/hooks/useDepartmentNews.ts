@@ -32,42 +32,28 @@ export function useDepartmentNews(
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const fetchNews = async () => {
-      try {
-        setLoading(true);
-        setError(null);
+    try {
+      setLoading(true);
+      setError(null);
 
-        const departmentCode = options.departmentCode.toLowerCase();
-        const directusUrl = `https://dsu-website-headless-cms.directus.app/items/news?filter[department_code][_eq]=${departmentCode}&limit=${options.limit || 50}`;
+      const departmentCode = options.departmentCode.toLowerCase();
 
-        console.log("[useDepartmentNews] Fetching from:", directusUrl);
+      // Fetch from local data
+      const fetchedNews = getNewsByDepartmentCode(departmentCode);
 
-        const response = await fetch(directusUrl);
+      // Apply limit if specified
+      const limitedNews = options.limit
+        ? fetchedNews.slice(0, options.limit)
+        : fetchedNews;
 
-        if (response.ok) {
-          const data = await response.json();
-          let fetchedNews = data.data || [];
-
-          // Filter for published news (or news without status)
-          fetchedNews = fetchedNews.filter((newsItem: any) => {
-            if (!newsItem.status) return true; // Include news without status
-            return newsItem.status === "published";
-          });
-
-          setNews(fetchedNews);
-        } else {
-          throw new Error(`API responded with status ${response.status}`);
-        }
-      } catch (apiError) {
-        console.error("[useDepartmentNews] Error:", apiError);
-        setError(apiError instanceof Error ? apiError.message : "Failed to fetch news");
-        setNews([]);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchNews();
+      setNews(limitedNews);
+    } catch (err) {
+      console.error("[useDepartmentNews] Error:", err);
+      setError(err instanceof Error ? err.message : "Failed to fetch news");
+      setNews([]);
+    } finally {
+      setLoading(false);
+    }
   }, [options.departmentCode, options.limit]);
 
   return { news, loading, error };
