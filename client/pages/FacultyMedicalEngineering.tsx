@@ -28,9 +28,9 @@ export default function FacultyMedicalEngineering() {
         if (/Assistant Professor/i.test(title)) return 5;
         return 6;
       };
-      return medicalEngineeringFaculty.sort((a, b) => rank(a.title) - rank(b.title));
+      return faculty.sort((a, b) => rank(a.title) - rank(b.title));
     },
-    [],
+    [faculty],
   );
 
   return (
@@ -44,7 +44,8 @@ export default function FacultyMedicalEngineering() {
   );
 }
 
-type FacultyEntry = (typeof medicalEngineeringFaculty)[number];
+import type { FacultyMember } from "@/hooks/useDepartmentFaculty";
+type FacultyEntry = FacultyMember;
 
 type LeadershipSectionProps = {
   leadership: FacultyEntry[];
