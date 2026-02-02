@@ -1,9 +1,11 @@
 import { useMemo } from "react";
+import { useMemo } from "react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { cybersecurityFaculty } from "@/data/cybersecurity-faculty";
+import { useDepartmentFaculty } from "@/hooks/useDepartmentFaculty";
 import { ChevronRight } from "lucide-react";
 
 export default function FacultyCybersecurity() {
+  const { faculty } = useDepartmentFaculty({ departmentCode: "cybersecurity" });
   const leadership = useMemo(
     () => {
       const rank = (title: string) => {
@@ -14,9 +16,9 @@ export default function FacultyCybersecurity() {
         if (/Assistant Professor/i.test(title)) return 5;
         return 6;
       };
-      return cybersecurityFaculty.sort((a, b) => rank(a.title) - rank(b.title));
+      return faculty.sort((a, b) => rank(a.title) - rank(b.title));
     },
-    [],
+    [faculty],
   );
 
   return (
