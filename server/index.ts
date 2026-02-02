@@ -85,5 +85,9 @@ export function createServer() {
   // Usage: GET /api/strapi/image?path=/uploads/Chat_GPT_Image_Jan_19_2026_03_01_29_PM_0eb314053c.png
   app.get("/api/strapi/image", serveImage);
 
+  // Fetch Staff/Faculty data from Strapi
+  // Usage: GET /api/strapi/staffs or /api/strapi/staffs?department_code=mech&limit=50
+  app.get("/api/strapi/staffs", getStaffs);
+
   return app;
 }
