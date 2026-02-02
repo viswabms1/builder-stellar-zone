@@ -36,10 +36,8 @@ export function useDepartmentNews(
       setLoading(true);
       setError(null);
 
-      const departmentCode = options.departmentCode.toLowerCase();
-
       // Fetch from local data
-      const fetchedNews = getNewsByDepartmentCode(departmentCode);
+      const fetchedNews = getAllNews();
 
       // Apply limit if specified
       const limitedNews = options.limit
