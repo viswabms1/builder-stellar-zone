@@ -1,9 +1,11 @@
 import { useMemo } from "react";
 
+import { useMemo } from "react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { aiRoboticsFaculty } from "@/data/ai-robotics-faculty";
+import { useDepartmentFaculty } from "@/hooks/useDepartmentFaculty";
 
 export default function FacultyAIRobotics() {
+  const { faculty } = useDepartmentFaculty({ departmentCode: "air" });
   const leadership = useMemo(
     () => {
       const rank = (title: string) => {
@@ -15,9 +17,9 @@ export default function FacultyAIRobotics() {
         if (/Assistant Professor/i.test(title)) return 5;
         return 6;
       };
-      return aiRoboticsFaculty.sort((a, b) => rank(a.title) - rank(b.title));
+      return faculty.sort((a, b) => rank(a.title) - rank(b.title));
     },
-    [],
+    [faculty],
   );
 
   return (
