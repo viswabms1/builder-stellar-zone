@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useStaffs } from "./useStaffs";
 
 /**
  * Faculty member base structure
