@@ -286,7 +286,7 @@ export default function DeptMechanical() {
           <div className="grid auto-rows-max gap-3 grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6">
             {/* Chairperson */}
             <div>
-              <Link to={`/academics/engineering/mechanical/faculty/${chairperson.slug}`}>
+              <Link to={`/academics/engineering/mechanical-engineering/faculty/${chairperson.slug}`}>
                 <div className="group relative overflow-hidden rounded-lg border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-orange/10 transition-all cursor-pointer h-full">
                   <div className="relative">
                     <div className="aspect-[1/1.3] w-full"></div>
