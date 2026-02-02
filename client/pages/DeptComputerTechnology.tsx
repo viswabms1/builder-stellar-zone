@@ -30,7 +30,10 @@ import {
 
 export default function DeptComputerTechnology() {
   const { faculty } = useDepartmentFaculty({ departmentCode: "computer-technology" });
-  const chairperson = useMemo(() => faculty?.[0], [faculty]);
+  const chairperson = useMemo(
+    () => faculty?.find((f) => f.title.includes("Chairperson") || f.title.includes("Chairman")),
+    [faculty]
+  );
 
   const specializations = [
     { icon: Code2, label: "Software Engineering" },
