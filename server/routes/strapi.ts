@@ -431,3 +431,88 @@ export const checkStrapiHealth: RequestHandler = async (req, res) => {
     });
   }
 };
+
+/**
+ * Fetch Staff/Faculty data from Strapi
+ * Endpoint: GET /api/strapi/staffs
+ * Query params: ?department_code=mech, ?limit=50, etc.
+ */
+export const getStaffs: RequestHandler = async (req, res) => {
+  try {
+    const cacheKey = "strapi:staffs";
+    const bypassCache = req.query.cache === "false";
+    const limit = (req.query.limit as string) || "100";
+    const departmentCode = (req.query.department_code as string) || "";
+
+    // Check cache first (unless explicitly bypassed)
+    if (!bypassCache) {
+      const cachedData = getFromCache<any>(cacheKey);
+      if (cachedData) {
+        console.log(`[CACHE HIT] ${cacheKey}`);
+        return res.json(cachedData);
+      }
+    }
+
+    // Build query parameters
+    const queryParams = new URLSearchParams({
+      "pagination[limit]": limit,
+      populate: "*", // Populate all relations
+    });
+
+    // Add optional department filter if provided
+    if (departmentCode) {
+      queryParams.append("filters[Department_code][$eq]", departmentCode);
+    }
+
+    // Fetch from Strapi
+    const fetchUrl = `${STRAPI_URL}/api/staffs?${queryParams.toString()}`;
+
+    console.log(`[STAFFS] Fetching from: ${fetchUrl}`);
+
+    const response = await fetch(fetchUrl, {
+      headers: {
+        Authorization: `Bearer ${STRAPI_API_TOKEN}`,
+        "Content-Type": "application/json",
+      },
+    });
+
+    console.log(`[STAFFS] Response status: ${response.status}`);
+
+    if (!response.ok) {
+      const errorBody = await response.text();
+      console.error(
+        `Strapi API error: ${response.status} ${response.statusText}`,
+        errorBody,
+      );
+      throw new Error(
+        `Strapi API error: ${response.status} ${response.statusText}`,
+      );
+    }
+
+    const data = await response.json();
+    console.log("[STAFFS] Response data:", JSON.stringify(data, null, 2));
+
+    // Strapi response should have data array
+    const staffs = data.data || [];
+
+    const responseData = {
+      success: true,
+      data: staffs,
+      count: staffs.length,
+    };
+
+    // Cache the response
+    setCache(cacheKey, responseData);
+
+    res.json(responseData);
+  } catch (error) {
+    console.error("[STAFFS Error]", error);
+    res.status(500).json({
+      success: false,
+      data: [],
+      error:
+        error instanceof Error ? error.message : "Failed to fetch staffs",
+      fallback: true,
+    });
+  }
+};
