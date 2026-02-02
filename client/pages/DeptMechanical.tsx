@@ -27,7 +27,8 @@ import {
 } from "lucide-react";
 
 export default function DeptMechanical() {
-  const chairperson = useMemo(() => mechFaculty[0], []);
+  const { faculty } = useDepartmentFaculty({ departmentCode: "mech" });
+  const chairperson = useMemo(() => faculty[0], [faculty]);
   const specializations = [
     { icon: Cog, label: "Design & CAD" },
     { icon: Flame, label: "GPU-Accelerated CFD" },
