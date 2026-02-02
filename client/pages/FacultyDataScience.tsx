@@ -1,9 +1,10 @@
 import { useMemo } from "react";
 
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { dataScienceFaculty } from "@/data/data-science-faculty";
+import { useDepartmentFaculty } from "@/hooks/useDepartmentFaculty";
 
 export default function FacultyDataScience() {
+  const { faculty } = useDepartmentFaculty({ departmentCode: "data-science" });
   const leadership = useMemo(
     () => {
       const rank = (title: string) => {
@@ -15,9 +16,9 @@ export default function FacultyDataScience() {
         if (/Assistant Professor/i.test(title)) return 5;
         return 6;
       };
-      return dataScienceFaculty.sort((a, b) => rank(a.title) - rank(b.title));
+      return faculty.sort((a, b) => rank(a.title) - rank(b.title));
     },
-    [],
+    [faculty],
   );
 
   return (
@@ -31,7 +32,7 @@ export default function FacultyDataScience() {
   );
 }
 
-type FacultyEntry = (typeof dataScienceFaculty)[number];
+type FacultyEntry = (typeof faculty)[number];
 
 type LeadershipSectionProps = {
   leadership: FacultyEntry[];
