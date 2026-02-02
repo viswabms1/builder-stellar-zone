@@ -13,6 +13,7 @@ import {
   getAnnouncements as getStrapiAnnouncements,
   downloadPdf,
   serveImage,
+  getStaffs,
 } from "./routes/strapi";
 
 // CRITICAL: Force override of cached environment variables
