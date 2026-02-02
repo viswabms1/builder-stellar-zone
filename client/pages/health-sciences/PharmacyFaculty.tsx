@@ -33,7 +33,7 @@ export default function PharmacyFaculty() {
   }, [faculty]);
 
   const titleGroups = useMemo(() => {
-    const groups = new Map<string, typeof faculty>();
+    const groups = new Map<string, FacultyMember[]>();
     sortedFaculty.forEach((faculty) => {
       const key = faculty.title;
       if (!groups.has(key)) {
