@@ -1,9 +1,10 @@
 import { useMemo } from "react";
 
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { aerospaceFaculty } from "@/data/aerospace-faculty";
+import { useDepartmentFaculty } from "@/hooks/useDepartmentFaculty";
 
 export default function FacultyAerospace() {
+  const { faculty } = useDepartmentFaculty({ departmentCode: "aero" });
   const leadership = useMemo(
     () => {
       const rank = (title: string) => {
@@ -16,9 +17,9 @@ export default function FacultyAerospace() {
         if (/Assistant Professor/i.test(title)) return 6;
         return 7;
       };
-      return aerospaceFaculty.sort((a, b) => rank(a.title) - rank(b.title));
+      return faculty.sort((a, b) => rank(a.title) - rank(b.title));
     },
-    [],
+    [faculty],
   );
 
   return (
@@ -32,7 +33,7 @@ export default function FacultyAerospace() {
   );
 }
 
-type FacultyEntry = (typeof aerospaceFaculty)[number];
+type FacultyEntry = (typeof faculty)[number];
 
 type LeadershipSectionProps = {
   leadership: FacultyEntry[];
