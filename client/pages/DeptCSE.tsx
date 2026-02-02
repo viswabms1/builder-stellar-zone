@@ -1,6 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { Link } from "react-router-dom";
-import { useMemo } from "react";
 import { Button } from "@/components/ui/button";
 import { schools } from "./Eligibility";
 import { NewsSection } from "@/components/NewsSection";
