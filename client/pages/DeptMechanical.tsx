@@ -28,7 +28,10 @@ import {
 
 export default function DeptMechanical() {
   const { faculty } = useDepartmentFaculty({ departmentCode: "mech" });
-  const chairperson = useMemo(() => faculty?.[0], [faculty]);
+  const chairperson = useMemo(
+    () => faculty?.find((f) => f.title.includes("Chairperson") || f.title.includes("Chairman")),
+    [faculty]
+  );
   const specializations = [
     { icon: Cog, label: "Design & CAD" },
     { icon: Flame, label: "GPU-Accelerated CFD" },
