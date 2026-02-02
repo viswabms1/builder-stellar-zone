@@ -15,8 +15,8 @@ interface UseDepartmentEventsResult {
 }
 
 /**
- * Custom hook for fetching events by department from Directus
- * Fetches directly from Directus API using department_code filter
+ * Custom hook for fetching events by department
+ * Fetches from local data using department_code filter
  */
 export function useDepartmentEvents(
   options: UseDepartmentEventsOptions
