@@ -273,36 +273,38 @@ export default function DeptMechanical() {
       <LabsFacilitiesCarousel />
 
       {/* Leadership Section */}
-      <section className="px-3 py-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex items-center justify-between mb-8">
-            <h2 className="headline-3 font-display">Department Leadership</h2>
-            <Link to="/academics/engineering/mechanical-engineering/faculty">
-              <Button variant="outline" className="border-brand-orange/40 hover:bg-brand-orange/10">
-                Explore full faculty list
-              </Button>
-            </Link>
-          </div>
-          <div className="grid auto-rows-max gap-3 grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6">
-            {/* Chairperson */}
-            <div>
-              <Link to={`/academics/engineering/mechanical-engineering/faculty/${chairperson.slug}`}>
-                <div className="group relative overflow-hidden rounded-lg border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-orange/10 transition-all cursor-pointer h-full">
-                  <div className="relative">
-                    <div className="aspect-[1/1.3] w-full"></div>
-                    <img src={chairperson.image} alt={chairperson.name} className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-105 transition-transform duration-500" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
-                  </div>
-                  <div className="absolute bottom-0 p-2 w-full">
-                    <div className="text-white text-xs opacity-80 line-clamp-1">Chairperson</div>
-                    <div className="text-white font-semibold text-xs font-display line-clamp-2">{chairperson.name}</div>
-                  </div>
-                </div>
+      {chairperson && (
+        <section className="px-3 py-8">
+          <div className="max-w-7xl mx-auto">
+            <div className="flex items-center justify-between mb-8">
+              <h2 className="headline-3 font-display">Department Leadership</h2>
+              <Link to="/academics/engineering/mechanical-engineering/faculty">
+                <Button variant="outline" className="border-brand-orange/40 hover:bg-brand-orange/10">
+                  Explore full faculty list
+                </Button>
               </Link>
             </div>
+            <div className="grid auto-rows-max gap-3 grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6">
+              {/* Chairperson */}
+              <div>
+                <Link to={`/academics/engineering/mechanical-engineering/faculty/${chairperson.slug}`}>
+                  <div className="group relative overflow-hidden rounded-lg border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-orange/10 transition-all cursor-pointer h-full">
+                    <div className="relative">
+                      <div className="aspect-[1/1.3] w-full"></div>
+                      <img src={chairperson.image} alt={chairperson.name} className="absolute inset-0 h-full w-full object-cover object-center group-hover:scale-105 transition-transform duration-500" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+                    </div>
+                    <div className="absolute bottom-0 p-2 w-full">
+                      <div className="text-white text-xs opacity-80 line-clamp-1">Chairperson</div>
+                      <div className="text-white font-semibold text-xs font-display line-clamp-2">{chairperson.name}</div>
+                    </div>
+                  </div>
+                </Link>
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Careers */}
       <section className="px-3 py-8">
