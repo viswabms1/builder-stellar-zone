@@ -2,11 +2,12 @@ import { useMemo } from "react";
 import { Link } from "react-router-dom";
 
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { nursingFaculty } from "@/data/nursing-faculty";
+import { useDepartmentFaculty } from "@/hooks/useDepartmentFaculty";
 import { ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function NursingFaculty() {
+  const { faculty } = useDepartmentFaculty({ departmentCode: "nursing" });
   const leadership = useMemo(() => {
     const rank = (title: string) => {
       if (/Principal/i.test(title) || /Chairperson/i.test(title)) return 0;
@@ -23,8 +24,8 @@ export default function NursingFaculty() {
       if (/Lecturer/i.test(title)) return 6;
       return 7;
     };
-    return nursingFaculty.sort((a, b) => rank(a.title) - rank(b.title));
-  }, []);
+    return faculty.sort((a, b) => rank(a.title) - rank(b.title));
+  }, [faculty]);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -46,7 +47,7 @@ export default function NursingFaculty() {
   );
 }
 
-type FacultyEntry = (typeof nursingFaculty)[number];
+type FacultyEntry = (typeof faculty)[number];
 
 type LeadershipSectionProps = {
   leadership: FacultyEntry[];
