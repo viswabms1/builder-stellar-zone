@@ -10,12 +10,13 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { computerTechnologyFaculty } from "@/data/computer-technology-faculty";
+import { useDepartmentFaculty } from "@/hooks/useDepartmentFaculty";
 import {
   ChevronRight,
 } from "lucide-react";
 
 export default function FacultyComputerTechnology() {
+  const { faculty } = useDepartmentFaculty({ departmentCode: "computer-technology" });
   const leadership = useMemo(
     () => {
       const rank = (title: string) => {
@@ -27,9 +28,9 @@ export default function FacultyComputerTechnology() {
         if (/Assistant Professor/i.test(title)) return 5;
         return 6;
       };
-      return computerTechnologyFaculty.sort((a, b) => rank(a.title) - rank(b.title));
+      return faculty.sort((a, b) => rank(a.title) - rank(b.title));
     },
-    [],
+    [faculty],
   );
 
   return (
@@ -43,7 +44,7 @@ export default function FacultyComputerTechnology() {
   );
 }
 
-type FacultyEntry = (typeof computerTechnologyFaculty)[number];
+type FacultyEntry = (typeof faculty)[number];
 
 type LeadershipSectionProps = {
   leadership: FacultyEntry[];
