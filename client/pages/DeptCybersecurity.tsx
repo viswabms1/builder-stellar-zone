@@ -25,12 +25,13 @@ import {
   ArrowRight,
   Zap,
 } from "lucide-react";
-import { cybersecurityFaculty } from "@/data/cybersecurity-faculty";
+import { useDepartmentFaculty } from "@/hooks/useDepartmentFaculty";
 
 export default function DeptCybersecurity() {
+  const { faculty } = useDepartmentFaculty({ departmentCode: "cybersecurity" });
   const chairperson = useMemo(() => {
-    return cybersecurityFaculty.find((f) => f.title.includes("Chairperson"));
-  }, []);
+    return faculty.find((f) => f.title.includes("Chairperson"));
+  }, [faculty]);
   const specializations = [
     { icon: Lock, label: "Cryptography" },
     { icon: Shield, label: "Network Security" },
