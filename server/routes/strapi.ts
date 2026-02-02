@@ -439,10 +439,12 @@ export const checkStrapiHealth: RequestHandler = async (req, res) => {
  */
 export const getStaffs: RequestHandler = async (req, res) => {
   try {
-    const cacheKey = "strapi:staffs";
     const bypassCache = req.query.cache === "false";
     const limit = (req.query.limit as string) || "100";
     const departmentCode = (req.query.department_code as string) || "";
+
+    // Create a unique cache key per department to avoid returning wrong data
+    const cacheKey = departmentCode ? `strapi:staffs:${departmentCode}` : "strapi:staffs:all";
 
     // Check cache first (unless explicitly bypassed)
     if (!bypassCache) {
