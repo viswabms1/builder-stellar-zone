@@ -74,7 +74,7 @@ export default function PhysiotherapyFaculty() {
   );
 }
 
-function FacultyGridCard({ faculty }: { faculty: PhysiotherapyFacultyMember }) {
+function FacultyGridCard({ faculty }: { faculty: FacultyMember }) {
   return (
     <div className="group overflow-hidden rounded-2xl border border-brand-blue/10 bg-card/40 backdrop-blur-sm shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:shadow-brand-blue/10">
       <div className="relative overflow-hidden aspect-[4/5]">
