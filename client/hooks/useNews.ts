@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import type { NewsItem } from "@/lib/content-manager";
-import { getNewsBySchool, getNewsBySchoolAndDepartment, getAllNews } from "@/data/news";
+import { getNewsBySchool, getNewsBySchoolAndDepartment, getAllNews } from "@/lib/content-manager";
 
 interface UseNewsOptions {
   school?: string;
