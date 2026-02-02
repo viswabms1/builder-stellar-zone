@@ -17,7 +17,7 @@ interface UseNewsResult {
 }
 
 /**
- * Custom hook for fetching news from Directus CMS
+ * Custom hook for fetching news
  *
  * @example
  * // Get all news for Engineering school
