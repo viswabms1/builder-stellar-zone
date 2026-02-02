@@ -25,12 +25,13 @@ import {
   Cpu,
   ArrowRight,
 } from "lucide-react";
-import { dataScienceFaculty } from "@/data/data-science-faculty";
+import { useDepartmentFaculty } from "@/hooks/useDepartmentFaculty";
 
 export default function DeptDataScience() {
+  const { faculty } = useDepartmentFaculty({ departmentCode: "data-science" });
   const chairperson = useMemo(() => {
-    return dataScienceFaculty.find((f) => f.title.includes("Chairperson"));
-  }, []);
+    return faculty.find((f) => f.title.includes("Chairperson"));
+  }, [faculty]);
   const specializations = [
     { icon: Brain, label: "GPU-Accelerated ML" },
     { icon: BarChart3, label: "RAPIDS Data Analytics" },
