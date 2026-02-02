@@ -66,20 +66,10 @@ export default function VisionMission() {
   const [loading, setLoading] = useState(true);
   const coreValues = DEFAULT_CORE_VALUES;
 
-  // Fetch Vision & Mission directly from Directus
+  // Initialize content and stop loading
   useEffect(() => {
-    fetch("https://dsu-website-headless-cms.directus.app/items/university_info/1")
-      .then((res) => res.json())
-      .then((data) => {
-        console.log("[VisionMission] Directus data fetched:", data.data);
-        setContent(data.data);
-      })
-      .catch((err) => {
-        console.error("[VisionMission] Error fetching data:", err);
-      })
-      .finally(() => {
-        setLoading(false);
-      });
+    // Using default content - can be extended to fetch from CMS if needed
+    setLoading(false);
   }, []);
 
   return (
