@@ -1,5 +1,4 @@
 import { useMemo } from "react";
-import { useMemo } from "react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { useDepartmentFaculty } from "@/hooks/useDepartmentFaculty";
 import { ChevronRight } from "lucide-react";
