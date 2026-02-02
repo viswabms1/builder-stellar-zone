@@ -52,40 +52,8 @@ export function useEvents(options?: UseEventsOptions): UseEventsResult {
 
         let fetchedEvents: Event[] = [];
 
-        try {
-          // Fetch directly from Directus API
-          // Don't filter by status in API - handle client-side to include events without status
-          const directusUrl = "https://dsu-website-headless-cms.directus.app/items/events?sort=date&limit=100";
-          const response = await fetch(directusUrl);
-
-          if (response.ok) {
-            const data = await response.json();
-            let allEvents = data.data || [];
-
-            // Filter for upcoming/ongoing events, or events without status
-            fetchedEvents = allEvents.filter((event: any) => {
-              if (!event.status) return true; // Include events without status
-              return event.status === "upcoming" || event.status === "ongoing";
-            });
-
-            console.log(
-              "[useEvents] Fetched from Directus:",
-              fetchedEvents.length,
-              "events"
-            );
-          } else {
-            console.warn(
-              "[useEvents] Directus API returned non-200 status, using local data"
-            );
-            fetchedEvents = getAllEvents();
-          }
-        } catch (apiError) {
-          console.warn(
-            "[useEvents] Directus fetch failed, falling back to local data:",
-            apiError
-          );
-          fetchedEvents = getAllEvents();
-        }
+        // Use local data
+        fetchedEvents = getAllEvents();
 
         // Apply filters
         if (options?.school) {
