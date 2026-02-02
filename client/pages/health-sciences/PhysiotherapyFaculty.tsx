@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import { Link } from "react-router-dom";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { useDepartmentFaculty } from "@/hooks/useDepartmentFaculty";
+import { useDepartmentFaculty, FacultyMember } from "@/hooks/useDepartmentFaculty";
 import {
   ChevronLeft,
   GraduationCap,
