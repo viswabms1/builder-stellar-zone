@@ -30,7 +30,6 @@ function getFileIcon(fileType: string) {
 /**
  * Announcement Banner Component
  * Displays announcements with various layouts (banner, card, list)
- * Ready for Directus integration
  */
 export function AnnouncementBanner({
   priority = "high",
