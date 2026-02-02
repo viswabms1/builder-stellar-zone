@@ -182,12 +182,12 @@ export function convertAnnouncementToCarouselItem(a: Announcement): CarouselItem
   }
 
   if (a.attachment) {
-    // Handle both Strapi (object with url) and Directus (string ID) formats
+    // Handle Strapi format (object with url)
     if (typeof a.attachment === 'object' && (a.attachment as any).url) {
       link = (a.attachment as any).url;
     } else if (typeof a.attachment === 'string') {
-      // Directus format - file ID
-      link = `https://dsu-website-headless-cms.directus.app/assets/${a.attachment}`;
+      // String format - use as-is
+      link = a.attachment;
     }
   }
 
