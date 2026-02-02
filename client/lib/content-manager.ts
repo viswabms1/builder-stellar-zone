@@ -275,6 +275,11 @@ export function getNewsByDepartment(school: string | undefined, department: stri
   });
 }
 
+// Alias for getNewsByDepartment for backward compatibility
+export function getNewsBySchoolAndDepartment(school: string | undefined, department: string | undefined): NewsItem[] {
+  return getNewsByDepartment(school, department);
+}
+
 export function getEventsByDepartment(school: string | undefined, department: string | undefined): Event[] {
   if (!school || !department) return [];
   return ALL_EVENTS.filter(
