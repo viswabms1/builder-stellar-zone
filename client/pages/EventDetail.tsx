@@ -112,11 +112,11 @@ export default function EventDetail() {
           {event.events_image && (
             <div className="relative w-full h-96 bg-gradient-to-br from-brand-blue/10 to-brand-magenta/10 overflow-hidden">
               <img
-                src={`https://dsu-website-headless-cms.directus.app/assets/${
+                src={
                   typeof event.events_image === "string"
                     ? event.events_image
-                    : event.events_image.id
-                }`}
+                    : event.events_image?.id || "/placeholder.svg"
+                }
                 alt={event.title}
                 className="w-full h-full object-cover"
               />
