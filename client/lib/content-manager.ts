@@ -132,6 +132,14 @@ export function getAnnouncementsBySchool(school: string | undefined): Announceme
   });
 }
 
+export function getAllNews(): NewsItem[] {
+  return ALL_NEWS.filter((n) => !n.status || n.status === "published").sort((a, b) => {
+    const dateA = new Date(a.date || 0).getTime();
+    const dateB = new Date(b.date || 0).getTime();
+    return dateB - dateA;
+  });
+}
+
 export function getNewsBySchool(school: string | undefined): NewsItem[] {
   if (!school) return ALL_NEWS.filter((n) => (!n.status || n.status === "published") && !n.school_code);
   return ALL_NEWS.filter(
