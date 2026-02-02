@@ -114,7 +114,13 @@ export function AnnouncementBanner({
             {announcement.attachment && (
               <div className="mt-4">
                 <a
-                  href={`https://dsu-website-headless-cms.directus.app/assets/${announcement.attachment}`}
+                  href={
+                    typeof announcement.attachment === 'string' && announcement.attachment.startsWith('http')
+                      ? announcement.attachment
+                      : typeof announcement.attachment === 'object' && (announcement.attachment as any).url
+                      ? (announcement.attachment as any).url
+                      : announcement.attachment
+                  }
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-3 py-2 text-xs bg-white border border-foreground/20 rounded hover:bg-foreground/5 transition"
