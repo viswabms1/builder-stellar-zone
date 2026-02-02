@@ -27,12 +27,13 @@ import {
   IndianRupee,
 } from "lucide-react";
 import { schools } from "./Eligibility";
-import { aiRoboticsFaculty } from "@/data/ai-robotics-faculty";
+import { useDepartmentFaculty } from "@/hooks/useDepartmentFaculty";
 
 export default function DeptAIRobotics() {
+  const { faculty } = useDepartmentFaculty({ departmentCode: "air" });
   const chairperson = useMemo(() => {
-    return aiRoboticsFaculty.find((f) => f.title.includes("Chairman") || f.title.includes("Chairperson"));
-  }, []);
+    return faculty.find((f) => f.title.includes("Chairman") || f.title.includes("Chairperson"));
+  }, [faculty]);
   const specializations = [
     { icon: Brain, label: "AI/ML" },
     { icon: Eye, label: "Computer Vision" },
