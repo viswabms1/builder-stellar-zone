@@ -144,10 +144,16 @@ export function useDepartmentFaculty(
           console.log("[useDepartmentFaculty] Using Strapi staffs data:", staffs.length, "faculty members");
 
           fetchedFaculty = staffs.map((staff: any) => {
-            // Map Photo field to image URL
-            const photoUrl = staff.Photo?.url
-              ? `http://72.61.225.136:1340${staff.Photo.url}`
-              : (staff.Image?.url || staff.image || "/placeholder.svg");
+            // Map Photo field to image URL using server proxy to avoid HTTPS/HTTP mixed content issues
+            let photoUrl = "/placeholder.svg";
+            if (staff.Photo?.url) {
+              // Use server proxy endpoint to avoid mixed content (HTTPS/HTTP) issues
+              photoUrl = `/api/strapi/image?path=${encodeURIComponent(staff.Photo.url)}`;
+            } else if (staff.Image?.url) {
+              photoUrl = `/api/strapi/image?path=${encodeURIComponent(staff.Image.url)}`;
+            } else if (staff.image) {
+              photoUrl = staff.image;
+            }
 
             return {
               id: staff.id || staff.documentId,
