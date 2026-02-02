@@ -44,12 +44,12 @@ export function DepartmentNoticeBoard({ school = "Engineering", department }: { 
   const [selectedImage, setSelectedImage] = useState<{ src: string; alt: string; title?: string } | null>(null);
 
   useEffect(() => {
-    if (announcements.length === 0) return;
+    if (announcementItems.length === 0) return;
     const interval = setInterval(() => {
-      setCurrentAnnouncementIndex((prev) => (prev + 1) % announcements.length);
+      setCurrentAnnouncementIndex((prev) => (prev + 1) % announcementItems.length);
     }, 6000);
     return () => clearInterval(interval);
-  }, [announcements.length]);
+  }, [announcementItems.length]);
 
   useEffect(() => {
     if (newsItems.length === 0) return;
