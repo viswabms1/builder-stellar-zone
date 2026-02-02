@@ -26,65 +26,31 @@ export function useDepartmentEvents(
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const fetchEvents = async () => {
-      try {
-        setLoading(true);
-        setError(null);
+    try {
+      setLoading(true);
+      setError(null);
 
-        const departmentCode = options.departmentCode.toLowerCase();
+      const departmentCode = options.departmentCode.toLowerCase();
 
-        // Fetch directly from Directus API with department_code filter
-        // Don't filter by status - handle it client-side
-        const directusUrl = `https://dsu-website-headless-cms.directus.app/items/events?filter[department_code][_eq]=${departmentCode}&sort=date&limit=${options.limit || 50}`;
-        
-        console.log(`[useDepartmentEvents] Fetching for department: ${departmentCode}`);
-        
-        const response = await fetch(directusUrl);
+      // Fetch from local data
+      const fetchedEvents = getEventsByDepartmentCode(departmentCode);
 
-        if (response.ok) {
-          const data = await response.json();
-          let fetchedEvents = data.data || [];
+      console.log(
+        `[useDepartmentEvents] Fetched ${fetchedEvents.length} events for ${departmentCode}`
+      );
 
-          console.log("[useDepartmentEvents] Raw events from API:", fetchedEvents);
+      // Apply limit if specified
+      const limitedEvents = options.limit
+        ? fetchedEvents.slice(0, options.limit)
+        : fetchedEvents;
 
-          // Filter for upcoming/ongoing events, or events without status (assume upcoming)
-          const now = new Date();
-          fetchedEvents = fetchedEvents.filter((event: any) => {
-            if (!event.status) return true; // Include events without status
-            return event.status === "upcoming" || event.status === "ongoing";
-          });
-
-          console.log("[useDepartmentEvents] Filtered events:", fetchedEvents);
-          if (fetchedEvents.length > 0) {
-            console.log("[useDepartmentEvents] First event sample:", fetchedEvents[0]);
-            console.log("[useDepartmentEvents] First event events_image:", fetchedEvents[0]?.events_image);
-          }
-
-          setEvents(fetchedEvents);
-          console.log(
-            `[useDepartmentEvents] Fetched ${fetchedEvents.length} events for ${departmentCode}`
-          );
-        } else {
-          console.warn(
-            `[useDepartmentEvents] Directus API returned non-200 status`
-          );
-          setEvents([]);
-        }
-      } catch (apiError) {
-        console.warn(
-          "[useDepartmentEvents] Directus fetch failed:",
-          apiError
-        );
-        setError(
-          apiError instanceof Error ? apiError.message : "Failed to fetch events"
-        );
-        setEvents([]);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchEvents();
+      setEvents(limitedEvents);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Failed to fetch events");
+      setEvents([]);
+    } finally {
+      setLoading(false);
+    }
   }, [options.departmentCode, options.limit]);
 
   return { events, loading, error };
