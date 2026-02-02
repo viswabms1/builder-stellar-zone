@@ -14,14 +14,6 @@ import {
   downloadPdf,
   serveImage,
 } from "./routes/strapi";
-import {
-  getVisionMission,
-  getAnnouncements,
-  getEvents,
-  getNews,
-  checkDirectusHealth,
-  clearDirectusCache,
-} from "./routes/directus";
 
 // CRITICAL: Force override of cached environment variables
 // This ensures that environment variables set via DevServerControl take precedence
