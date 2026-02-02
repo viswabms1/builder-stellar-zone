@@ -2,10 +2,11 @@ import { useMemo } from "react";
 import { Link } from "react-router-dom";
 
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { appliedSciencesFaculty } from "@/data/applied-sciences-faculty";
+import { useDepartmentFaculty } from "@/hooks/useDepartmentFaculty";
 import { ChevronRight } from "lucide-react";
 
 export default function SBASFaculty() {
+  const { faculty } = useDepartmentFaculty({ departmentCode: "applied-sciences" });
   const leadership = useMemo(() => {
     const rank = (title: string) => {
       if (/Dean/i.test(title)) return 1;
@@ -19,8 +20,8 @@ export default function SBASFaculty() {
       if (/Assistant Professor/i.test(title)) return 4;
       return 5;
     };
-    return appliedSciencesFaculty.sort((a, b) => rank(a.title) - rank(b.title));
-  }, []);
+    return faculty.sort((a, b) => rank(a.title) - rank(b.title));
+  }, [faculty]);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -33,7 +34,7 @@ export default function SBASFaculty() {
   );
 }
 
-type FacultyEntry = (typeof appliedSciencesFaculty)[number];
+type FacultyEntry = (typeof faculty)[number];
 
 type LeadershipSectionProps = {
   leadership: FacultyEntry[];
