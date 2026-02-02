@@ -25,7 +25,7 @@ interface UseEventsResult {
 
 /**
  * Custom hook for fetching and filtering events
- * Currently uses local data; ready to swap with Directus API endpoint
+ * Currently uses local data
  *
  * @example
  * // Get all upcoming events for Engineering school
