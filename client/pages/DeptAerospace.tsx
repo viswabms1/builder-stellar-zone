@@ -25,12 +25,13 @@ import {
   Cpu,
   ArrowRight,
 } from "lucide-react";
-import { aerospaceFaculty } from "@/data/aerospace-faculty";
+import { useDepartmentFaculty } from "@/hooks/useDepartmentFaculty";
 
 export default function DeptAerospace() {
+  const { faculty } = useDepartmentFaculty({ departmentCode: "aero" });
   const chairperson = useMemo(() => {
-    return aerospaceFaculty.find((f) => f.title.includes("Chairman") || f.title.includes("Chairperson"));
-  }, []);
+    return faculty.find((f) => f.title.includes("Chairman") || f.title.includes("Chairperson"));
+  }, [faculty]);
   const specializations = [
     { icon: Rocket, label: "GPU-Accelerated CFD" },
     { icon: Wind, label: "Propulsion Simulation" },
