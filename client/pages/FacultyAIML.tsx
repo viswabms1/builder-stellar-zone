@@ -1,9 +1,10 @@
 import { useMemo } from "react";
 
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { aimlFaculty } from "@/data/aiml-faculty";
+import { useDepartmentFaculty } from "@/hooks/useDepartmentFaculty";
 
 export default function FacultyAIML() {
+  const { faculty } = useDepartmentFaculty({ departmentCode: "aiml" });
   const leadership = useMemo(
     () => {
       const rank = (title: string) => {
@@ -15,9 +16,9 @@ export default function FacultyAIML() {
         if (/Assistant Professor/i.test(title)) return 5;
         return 6;
       };
-      return aimlFaculty.sort((a, b) => rank(a.title) - rank(b.title));
+      return faculty.sort((a, b) => rank(a.title) - rank(b.title));
     },
-    [],
+    [faculty],
   );
 
   return (
@@ -31,7 +32,7 @@ export default function FacultyAIML() {
   );
 }
 
-type FacultyEntry = (typeof aimlFaculty)[number];
+type FacultyEntry = (typeof faculty)[number];
 
 type LeadershipSectionProps = {
   leadership: FacultyEntry[];
