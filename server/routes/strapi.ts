@@ -460,8 +460,9 @@ export const getStaffs: RequestHandler = async (req, res) => {
     });
 
     // Add optional department filter if provided
+    // Note: Using department.Dept_code to filter by department relation
     if (departmentCode) {
-      queryParams.append("filters[Department_code][$eq]", departmentCode);
+      queryParams.append("filters[department][Dept_code][$eq]", departmentCode);
     }
 
     // Fetch from Strapi
