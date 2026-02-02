@@ -209,7 +209,7 @@ export function convertNewsToCarouselItem(n: NewsItem): CarouselItem {
     category: "News",
     date: n.date || new Date().toISOString(),
     description: n.summary || n.description || "",
-    image: n.image ? `https://dsu-website-headless-cms.directus.app/assets/${n.image}` : undefined,
+    image: n.image,
   };
 }
 
