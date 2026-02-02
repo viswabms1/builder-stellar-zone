@@ -1,9 +1,10 @@
 import { useState, useEffect, useMemo } from "react";
 import { Link } from "react-router-dom";
+import { useMemo } from "react";
 import { Button } from "@/components/ui/button";
-import { computerTechnologyFaculty } from "@/data/computer-technology-faculty";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { useDepartmentFaculty } from "@/hooks/useDepartmentFaculty";
 import { AnnouncementBanner } from "@/components/AnnouncementBanner";
 import { DepartmentNoticeBoard } from "@/components/DepartmentNoticeBoard";
 import {
