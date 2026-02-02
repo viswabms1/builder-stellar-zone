@@ -37,72 +37,43 @@ export function useNews(options?: UseNewsOptions): UseNewsResult {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const fetchNews = async () => {
-      try {
-        setLoading(true);
-        setError(null);
+    try {
+      setLoading(true);
+      setError(null);
 
-        // Fetch from Directus API (no sorting - some news may not have date field)
-        const directusUrl = `https://dsu-website-headless-cms.directus.app/items/news?limit=${options?.limit || 100}`;
+      let fetchedNews: NewsItem[] = [];
 
-        console.log("[useNews] Fetching from:", directusUrl);
-
-        const response = await fetch(directusUrl);
-
-        if (response.ok) {
-          const data = await response.json();
-          let fetchedNews = data.data || [];
-
-          // Filter for published news (or news without status)
-          fetchedNews = fetchedNews.filter((newsItem: any) => {
-            if (!newsItem.status) return true; // Include news without status
-            return newsItem.status === "published";
-          });
-
-          // Client-side filtering
-          if (options?.school) {
-            fetchedNews = fetchedNews.filter((n: any) =>
-              n.school_code === options.school || !n.school_code
-            );
-          }
-
-          if (options?.department) {
-            fetchedNews = fetchedNews.filter((n: any) =>
-              n.department_code === options.department
-            );
-          }
-
-          if (options?.category) {
-            fetchedNews = fetchedNews.filter((n: any) =>
-              n.category === options.category
-            );
-          }
-
-          if (options?.tag) {
-            fetchedNews = fetchedNews.filter((n: any) =>
-              n.tags?.includes(options.tag)
-            );
-          }
-
-          // Apply limit after filtering
-          if (options?.limit) {
-            fetchedNews = fetchedNews.slice(0, options.limit);
-          }
-
-          setNews(fetchedNews);
-        } else {
-          throw new Error(`API responded with status ${response.status}`);
-        }
-      } catch (err) {
-        console.error("[useNews] Error:", err);
-        setError(err instanceof Error ? err.message : "Failed to fetch news");
-        setNews([]);
-      } finally {
-        setLoading(false);
+      // Get news from local data
+      if (options?.school && options?.department) {
+        fetchedNews = getNewsBySchoolAndDepartment(options.school, options.department);
+      } else if (options?.school) {
+        fetchedNews = getNewsBySchool(options.school);
+      } else {
+        fetchedNews = getAllNews();
       }
-    };
 
-    fetchNews();
+      // Client-side filtering
+      if (options?.category) {
+        fetchedNews = fetchedNews.filter((n) => n.category === options.category);
+      }
+
+      if (options?.tag) {
+        fetchedNews = fetchedNews.filter((n) => n.tags?.includes(options.tag!));
+      }
+
+      // Apply limit after filtering
+      if (options?.limit) {
+        fetchedNews = fetchedNews.slice(0, options.limit);
+      }
+
+      setNews(fetchedNews);
+    } catch (err) {
+      console.error("[useNews] Error:", err);
+      setError(err instanceof Error ? err.message : "Failed to fetch news");
+      setNews([]);
+    } finally {
+      setLoading(false);
+    }
   }, [options?.school, options?.department, options?.category, options?.tag, options?.limit]);
 
   return { news, loading, error };
