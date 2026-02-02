@@ -15,7 +15,7 @@ interface UseDepartmentNewsResult {
 }
 
 /**
- * Custom hook for fetching department-specific news from Directus
+ * Custom hook for fetching department-specific news
  * Uses department code mapping from useDepartmentAnnouncements
  *
  * @example
