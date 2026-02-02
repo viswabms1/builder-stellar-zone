@@ -14,7 +14,7 @@ import { Button } from "@/components/ui/button";
 export default function PhysiotherapyFaculty() {
   const { faculty } = useDepartmentFaculty({ departmentCode: "physiotherapy" });
   const departments = useMemo(() => {
-    const grouped: Record<string, typeof faculty> = {};
+    const grouped: Record<string, FacultyMember[]> = {};
     faculty.forEach((member: any) => {
       const dept = member.department || "General";
       if (!grouped[dept]) {
