@@ -2,7 +2,7 @@ import { useMemo } from "react";
 import { Link } from "react-router-dom";
 
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { useDepartmentFaculty } from "@/hooks/useDepartmentFaculty";
+import { useDepartmentFaculty, FacultyMember } from "@/hooks/useDepartmentFaculty";
 import {
   ChevronRight,
 } from "lucide-react";
@@ -34,7 +34,7 @@ export default function JournalismFaculty() {
   );
 }
 
-type FacultyEntry = (typeof faculty)[number];
+type FacultyEntry = FacultyMember;
 
 type LeadershipSectionProps = {
   leadership: FacultyEntry[];
