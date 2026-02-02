@@ -2,7 +2,7 @@ import { useMemo } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { useDepartmentFaculty } from "@/hooks/useDepartmentFaculty";
+import { useDepartmentFaculty, FacultyMember } from "@/hooks/useDepartmentFaculty";
 
 export default function BComBBAFaculty() {
   const { faculty } = useDepartmentFaculty({ departmentCode: "bcom-bba" });
@@ -35,7 +35,7 @@ export default function BComBBAFaculty() {
   );
 }
 
-type FacultyEntry = (typeof faculty)[number];
+type FacultyEntry = FacultyMember;
 
 type LeadershipSectionProps = {
   leadership: FacultyEntry[];
