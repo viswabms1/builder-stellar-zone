@@ -11,31 +11,31 @@ import { useDepartmentNews } from "@/hooks/useDepartmentNews";
 import { Download } from "lucide-react";
 
 export function DepartmentNoticeBoard({ school = "Engineering", department }: { school?: string; department: string }) {
-  // Fetch announcements, events, and news from Directus using department code
+  // Fetch announcements, events, and news using department code
   const departmentCode = getDepartmentCode(department);
 
-  const { announcements: directusAnnouncements, loading: announcementsLoading } = useDepartmentAnnouncements({
+  const { announcements, loading: announcementsLoading } = useDepartmentAnnouncements({
     departmentCode,
     limit: 10,
   });
 
-  const { events: directusEvents, loading: eventsLoading } = useDepartmentEvents({
+  const { events, loading: eventsLoading } = useDepartmentEvents({
     departmentCode,
     limit: 10,
   });
 
-  const { news: directusNews, loading: newsLoading } = useDepartmentNews({
+  const { news, loading: newsLoading } = useDepartmentNews({
     departmentCode,
     limit: 10,
   });
 
-  // Convert Directus data to carousel items
-  const announcements = directusAnnouncements.map(convertAnnouncementToCarouselItem);
-  const eventItems = directusEvents.map(convertEventToCarouselItem);
-  const newsItems = directusNews.map(convertNewsToCarouselItem);
+  // Convert data to carousel items
+  const announcementItems = announcements.map(convertAnnouncementToCarouselItem);
+  const eventItems = events.map(convertEventToCarouselItem);
+  const newsItems = news.map(convertNewsToCarouselItem);
 
   console.log("[DepartmentNoticeBoard] Department:", department, "Code:", departmentCode);
-  console.log("[DepartmentNoticeBoard] Events from Directus:", directusEvents);
+  console.log("[DepartmentNoticeBoard] Events:", events);
   console.log("[DepartmentNoticeBoard] Converted event items:", eventItems);
 
   const [currentAnnouncementIndex, setCurrentAnnouncementIndex] = useState(0);
