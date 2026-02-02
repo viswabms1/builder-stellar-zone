@@ -2,12 +2,13 @@ import { useMemo } from "react";
 import { Link } from "react-router-dom";
 
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { eceFaculty } from "@/data/ece-faculty";
+import { useDepartmentFaculty } from "@/hooks/useDepartmentFaculty";
 import {
   ChevronRight,
 } from "lucide-react";
 
 export default function FacultyECE() {
+  const { faculty } = useDepartmentFaculty({ departmentCode: "ece" });
   const leadership = useMemo(
     () => {
       const rank = (title: string) => {
@@ -19,9 +20,9 @@ export default function FacultyECE() {
         if (/Assistant Professor/i.test(title)) return 5;
         return 6;
       };
-      return eceFaculty.sort((a, b) => rank(a.title) - rank(b.title));
+      return faculty.sort((a, b) => rank(a.title) - rank(b.title));
     },
-    [],
+    [faculty],
   );
 
   return (
@@ -35,7 +36,7 @@ export default function FacultyECE() {
   );
 }
 
-type FacultyEntry = (typeof eceFaculty)[number];
+type FacultyEntry = (typeof faculty)[number];
 
 type LeadershipSectionProps = {
   leadership: FacultyEntry[];
