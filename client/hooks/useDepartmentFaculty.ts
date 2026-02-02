@@ -143,19 +143,26 @@ export function useDepartmentFaculty(
         if (staffs && staffs.length > 0) {
           console.log("[useDepartmentFaculty] Using Strapi staffs data:", staffs.length, "faculty members");
 
-          fetchedFaculty = staffs.map((staff: any) => ({
-            id: staff.id || staff.documentId,
-            name: staff.Name || staff.name || "",
-            title: staff.Designation || staff.title || "",
-            image: staff.Image?.url || staff.image || "/placeholder.svg",
-            qualifications: staff.Qualifications || staff.qualifications || "",
-            category: staff.Category || staff.category || "teaching",
-            slug: generateSlug(staff.Name || staff.name || ""),
-            department_code: departmentCode,
-            email: staff.Email || staff.email,
-            phone: staff.Phone || staff.phone,
-            ...staff, // Include any other properties
-          }));
+          fetchedFaculty = staffs.map((staff: any) => {
+            // Map Photo field to image URL
+            const photoUrl = staff.Photo?.url
+              ? `http://72.61.225.136:1340${staff.Photo.url}`
+              : (staff.Image?.url || staff.image || "/placeholder.svg");
+
+            return {
+              id: staff.id || staff.documentId,
+              name: staff.Name || staff.name || "",
+              title: staff.Designation || staff.title || "",
+              image: photoUrl,
+              qualifications: staff.Qualifications || staff.qualifications || "",
+              category: staff.Category || staff.category || "teaching",
+              slug: generateSlug(staff.Name || staff.name || ""),
+              department_code: staff.department?.Dept_code || departmentCode,
+              email: staff.Email || staff.email,
+              phone: staff.Phone || staff.phone,
+              ...staff, // Include any other properties
+            };
+          });
         } else if (staffsError) {
           // Strapi failed, use fallback data
           console.log("[useDepartmentFaculty] Strapi staffs fetch failed, falling back to local data");
