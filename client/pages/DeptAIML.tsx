@@ -38,15 +38,16 @@ import {
   Target,
 } from "lucide-react";
 import { schools } from "./Eligibility";
-import { aimlFaculty } from "@/data/aiml-faculty";
+import { useDepartmentFaculty } from "@/hooks/useDepartmentFaculty";
 
 export default function DeptAIML() {
   const { elementRef: outcomeRef, isVisible: outcomeVisible } = useScrollTrigger();
   const { elementRef: focusRef, isVisible: focusVisible } = useScrollTrigger();
+  const { faculty } = useDepartmentFaculty({ departmentCode: "aiml" });
 
   const chairperson = useMemo(() => {
-    return aimlFaculty.find((f) => f.title.includes("Chairperson"));
-  }, []);
+    return faculty.find((f) => f.title.includes("Chairperson"));
+  }, [faculty]);
   
   const specializations = [
     { icon: Brain, label: "GPU-Accelerated ML" },
