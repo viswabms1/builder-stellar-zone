@@ -345,7 +345,7 @@ function EventsCarousel({ events, title, description, compact = false }: EventsC
           <div
             className="relative h-48 overflow-hidden cursor-pointer"
             onClick={() => setSelectedImage({
-              src: `https://dsu-website-headless-cms.directus.app/assets/${typeof currentEvent.events_image === 'string' ? currentEvent.events_image : currentEvent.events_image.id}`,
+              src: typeof currentEvent.events_image === 'string' ? currentEvent.events_image : (currentEvent.events_image as any)?.url || '/placeholder.svg',
               alt: currentEvent.title,
               title: currentEvent.title
             })}
@@ -354,7 +354,7 @@ function EventsCarousel({ events, title, description, compact = false }: EventsC
             onKeyDown={(e) => {
               if (e.key === "Enter" || e.key === " ") {
                 setSelectedImage({
-                  src: `https://dsu-website-headless-cms.directus.app/assets/${typeof currentEvent.events_image === 'string' ? currentEvent.events_image : currentEvent.events_image.id}`,
+                  src: typeof currentEvent.events_image === 'string' ? currentEvent.events_image : (currentEvent.events_image as any)?.url || '/placeholder.svg',
                   alt: currentEvent.title,
                   title: currentEvent.title
                 });
@@ -363,7 +363,7 @@ function EventsCarousel({ events, title, description, compact = false }: EventsC
             aria-label={`Click to view ${currentEvent.title} image in larger size`}
           >
             <img
-              src={`https://dsu-website-headless-cms.directus.app/assets/${typeof currentEvent.events_image === 'string' ? currentEvent.events_image : currentEvent.events_image.id}`}
+              src={typeof currentEvent.events_image === 'string' ? currentEvent.events_image : (currentEvent.events_image as any)?.url || '/placeholder.svg'}
               alt={currentEvent.title}
               className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
             />
