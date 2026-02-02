@@ -2,12 +2,13 @@ import { useMemo } from "react";
 import { Link } from "react-router-dom";
 
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { journalismFaculty } from "@/data/journalism-faculty";
+import { useDepartmentFaculty } from "@/hooks/useDepartmentFaculty";
 import {
   ChevronRight,
 } from "lucide-react";
 
 export default function JournalismFaculty() {
+  const { faculty } = useDepartmentFaculty({ departmentCode: "journalism" });
   const leadership = useMemo(
     () => {
       const rank = (title: string) => {
@@ -17,9 +18,9 @@ export default function JournalismFaculty() {
         if (/Assistant Professor/i.test(title)) return 4;
         return 5;
       };
-      return journalismFaculty.sort((a, b) => rank(a.title) - rank(b.title));
+      return faculty.sort((a, b) => rank(a.title) - rank(b.title));
     },
-    [],
+    [faculty],
   );
 
   return (
@@ -33,7 +34,7 @@ export default function JournalismFaculty() {
   );
 }
 
-type FacultyEntry = (typeof journalismFaculty)[number];
+type FacultyEntry = (typeof faculty)[number];
 
 type LeadershipSectionProps = {
   leadership: FacultyEntry[];
