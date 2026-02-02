@@ -10,12 +10,13 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { cseFaculty } from "@/data/cse-faculty";
+import { useDepartmentFaculty } from "@/hooks/useDepartmentFaculty";
 import {
   ChevronRight,
 } from "lucide-react";
 
 export default function FacultyCSE() {
+  const { faculty } = useDepartmentFaculty({ departmentCode: "cse" });
   const leadership = useMemo(
     () => {
       const rank = (title: string) => {
@@ -27,9 +28,9 @@ export default function FacultyCSE() {
         if (/Assistant Professor/i.test(title)) return 5;
         return 6;
       };
-      return cseFaculty.sort((a, b) => rank(a.title) - rank(b.title));
+      return faculty.sort((a, b) => rank(a.title) - rank(b.title));
     },
-    [],
+    [faculty],
   );
 
   return (
@@ -43,7 +44,7 @@ export default function FacultyCSE() {
   );
 }
 
-type FacultyEntry = (typeof cseFaculty)[number];
+type FacultyEntry = (typeof faculty)[number];
 
 type LeadershipSectionProps = {
   leadership: FacultyEntry[];
