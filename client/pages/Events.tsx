@@ -191,7 +191,7 @@ function EventModal({ event, onClose }: { event: Event | null; onClose: () => vo
         {event.events_image && (
           <div className="relative h-64 overflow-hidden">
             <img
-              src={`https://dsu-website-headless-cms.directus.app/assets/${typeof event.events_image === 'string' ? event.events_image : event.events_image.id}`}
+              src={typeof event.events_image === 'string' ? event.events_image : event.events_image?.id || '/placeholder.svg'}
               alt={event.title}
               className="w-full h-full object-cover"
             />
