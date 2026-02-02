@@ -119,70 +119,51 @@ const getFallbackFacultyData = async (departmentCode: string): Promise<FacultyMe
 export function useDepartmentFaculty(
   options: UseDepartmentFacultyOptions
 ): UseDepartmentFacultyResult {
+  const departmentCode = options.departmentCode.toLowerCase();
+
+  // Try to fetch from Strapi staffs endpoint first
+  const { staffs, loading: staffsLoading, error: staffsError } = useStaffs({
+    departmentCode,
+    limit: options.limit,
+  });
+
   const [faculty, setFaculty] = useState<FacultyMember[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const fetchFaculty = async () => {
+    const loadFaculty = async () => {
       try {
         setLoading(true);
         setError(null);
 
-        const departmentCode = options.departmentCode.toLowerCase();
-        const limit = options.limit || 100;
-
-        // Try to fetch from Strapi API first
         let fetchedFaculty: FacultyMember[] = [];
-        let hasStrapi = false;
 
-        try {
-          // Attempt to fetch from Strapi
-          const strapiUrl = `/api/strapi/faculty?filter[department_code][_eq]=${departmentCode}&limit=${limit}`;
+        // If we have Strapi staffs data, map it to FacultyMember
+        if (staffs && staffs.length > 0) {
+          console.log("[useDepartmentFaculty] Using Strapi staffs data:", staffs.length, "faculty members");
 
-          console.log("[useDepartmentFaculty] Attempting Strapi fetch from:", strapiUrl);
-
-          const response = await fetch(strapiUrl);
-
-          if (response.ok) {
-            const data = await response.json();
-            fetchedFaculty = Array.isArray(data) ? data : data.data || [];
-
-            // Normalize Strapi field names to our interface
-            fetchedFaculty = fetchedFaculty.map((f: any) => ({
-              id: f.id || f.documentId,
-              name: f.name || f.Name,
-              title: f.title || f.Title,
-              image: f.image || f.Image,
-              qualifications: f.qualifications || f.Qualifications,
-              category: f.category || f.Category || "teaching",
-              slug: f.slug || generateSlug(f.name || f.Name),
-              department_code: departmentCode,
-              specialization: f.specialization || f.Specialization,
-              specialty: f.specialty || f.Specialty,
-              email: f.email || f.Email,
-              phone: f.phone || f.Phone,
-              ...f, // Include any other properties
-            }));
-
-            hasStrapi = true;
-            console.log("[useDepartmentFaculty] Successfully fetched from Strapi:", fetchedFaculty.length, "faculty members");
-          } else {
-            console.warn("[useDepartmentFaculty] Strapi API returned non-200 status, falling back to local data");
-          }
-        } catch (strapiError) {
-          console.warn("[useDepartmentFaculty] Strapi fetch failed:", strapiError);
-        }
-
-        // If Strapi failed, use fallback data
-        if (!hasStrapi) {
-          console.log("[useDepartmentFaculty] Falling back to local data for department:", departmentCode);
+          fetchedFaculty = staffs.map((staff: any) => ({
+            id: staff.id || staff.documentId,
+            name: staff.Name || staff.name || "",
+            title: staff.Designation || staff.title || "",
+            image: staff.Image?.url || staff.image || "/placeholder.svg",
+            qualifications: staff.Qualifications || staff.qualifications || "",
+            category: staff.Category || staff.category || "teaching",
+            slug: generateSlug(staff.Name || staff.name || ""),
+            department_code: departmentCode,
+            email: staff.Email || staff.email,
+            phone: staff.Phone || staff.phone,
+            ...staff, // Include any other properties
+          }));
+        } else if (staffsError) {
+          // Strapi failed, use fallback data
+          console.log("[useDepartmentFaculty] Strapi staffs fetch failed, falling back to local data");
           fetchedFaculty = await getFallbackFacultyData(departmentCode);
-        }
-
-        // Apply limit
-        if (limit && fetchedFaculty.length > limit) {
-          fetchedFaculty = fetchedFaculty.slice(0, limit);
+        } else if (!staffsLoading) {
+          // No staffs data and loading is done but empty
+          console.log("[useDepartmentFaculty] No staffs data available, falling back to local data");
+          fetchedFaculty = await getFallbackFacultyData(departmentCode);
         }
 
         setFaculty(fetchedFaculty);
@@ -196,8 +177,8 @@ export function useDepartmentFaculty(
       }
     };
 
-    fetchFaculty();
-  }, [options.departmentCode, options.limit]);
+    loadFaculty();
+  }, [staffs, staffsError, staffsLoading, departmentCode]);
 
   return { faculty, loading, error };
 }
