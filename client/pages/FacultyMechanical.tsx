@@ -45,7 +45,7 @@ type LeadershipSectionProps = {
 function FacultyGridCard({ faculty }: { faculty: FacultyEntry }) {
   return (
     <Link
-      to={`/academics/engineering/mechanical/faculty/${faculty.slug}`}
+      to={`/academics/engineering/mechanical-engineering/faculty/${faculty.slug}`}
       className="group overflow-hidden rounded-xl border border-border/50 bg-card/70 shadow-md transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg hover:shadow-brand-orange/20 active:scale-95"
     >
       <div className="relative overflow-hidden bg-slate-200 dark:bg-slate-800">
