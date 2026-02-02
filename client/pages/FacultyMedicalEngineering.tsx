@@ -44,7 +44,6 @@ export default function FacultyMedicalEngineering() {
   );
 }
 
-import type { FacultyMember } from "@/hooks/useDepartmentFaculty";
 type FacultyEntry = FacultyMember;
 
 type LeadershipSectionProps = {
