@@ -84,33 +84,5 @@ export function createServer() {
   // Usage: GET /api/strapi/image?path=/uploads/Chat_GPT_Image_Jan_19_2026_03_01_29_PM_0eb314053c.png
   app.get("/api/strapi/image", serveImage);
 
-  // ============================================
-  // DIRECTUS CMS INTEGRATION ROUTES
-  // ============================================
-
-  // Fetch Vision & Mission content from Directus
-  // Usage: GET /api/directus/vision-mission
-  app.get("/api/directus/vision-mission", getVisionMission);
-
-  // Fetch Announcements from Directus
-  // Usage: GET /api/directus/announcements
-  app.get("/api/directus/announcements", getAnnouncements);
-
-  // Fetch Events from Directus
-  // Usage: GET /api/directus/events
-  app.get("/api/directus/events", getEvents);
-
-  // Fetch News from Directus
-  // Usage: GET /api/directus/news
-  app.get("/api/directus/news", getNews);
-
-  // Health check for Directus connection
-  // Usage: GET /api/directus/health
-  app.get("/api/directus/health", checkDirectusHealth);
-
-  // Clear Directus cache (for development/testing)
-  // Usage: POST /api/directus/cache/clear
-  app.post("/api/directus/cache/clear", clearDirectusCache);
-
   return app;
 }
