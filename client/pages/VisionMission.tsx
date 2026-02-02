@@ -21,7 +21,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/providers/theme-provider";
 
-// Type for Directus response
+// Type for Vision/Mission content
 interface VisionMissionContent {
   Vision?: string;
   Mission_?: string;
