@@ -2,12 +2,13 @@ import { useMemo } from "react";
 import { Link } from "react-router-dom";
 
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { mbaFaculty } from "@/data/mba-faculty";
+import { useDepartmentFaculty } from "@/hooks/useDepartmentFaculty";
 import {
   ChevronRight,
 } from "lucide-react";
 
 export default function MBAFaculty() {
+  const { faculty } = useDepartmentFaculty({ departmentCode: "mba" });
   const { regularFaculty, visitingFaculty } = useMemo(
     () => {
       const rank = (title: string) => {
@@ -18,7 +19,7 @@ export default function MBAFaculty() {
         return 5;
       };
 
-      const sorted = mbaFaculty.sort((a, b) => rank(a.title) - rank(b.title));
+      const sorted = faculty.sort((a, b) => rank(a.title) - rank(b.title));
       const visiting = sorted.filter((f) => /International Visiting/i.test(f.title));
       const regular = sorted.filter((f) => !/International Visiting/i.test(f.title));
 
@@ -27,7 +28,7 @@ export default function MBAFaculty() {
         visitingFaculty: visiting,
       };
     },
-    [],
+    [faculty],
   );
 
   return (
@@ -44,7 +45,7 @@ export default function MBAFaculty() {
   );
 }
 
-type FacultyEntry = (typeof mbaFaculty)[number];
+type FacultyEntry = (typeof faculty)[number];
 
 type LeadershipSectionProps = {
   leadership: FacultyEntry[];
