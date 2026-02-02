@@ -8,10 +8,11 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { pharmacyFaculty } from "@/data/pharmacy-faculty";
+import { useDepartmentFaculty } from "@/hooks/useDepartmentFaculty";
 import { ChevronRight, Pill } from "lucide-react";
 
 export default function PharmacyFaculty() {
+  const { faculty } = useDepartmentFaculty({ departmentCode: "pharmacy" });
   const sortedFaculty = useMemo(() => {
     const rank = (title: string) => {
       if (/Principal/i.test(title) || /Chairperson/i.test(title)) return 0;
@@ -28,11 +29,11 @@ export default function PharmacyFaculty() {
       if (/Lecturer/i.test(title)) return 6;
       return 7;
     };
-    return pharmacyFaculty.sort((a, b) => rank(a.title) - rank(b.title));
-  }, []);
+    return faculty.sort((a, b) => rank(a.title) - rank(b.title));
+  }, [faculty]);
 
   const titleGroups = useMemo(() => {
-    const groups = new Map<string, typeof pharmacyFaculty>();
+    const groups = new Map<string, typeof faculty>();
     sortedFaculty.forEach((faculty) => {
       const key = faculty.title;
       if (!groups.has(key)) {
