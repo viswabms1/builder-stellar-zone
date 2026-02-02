@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useMemo } from "react";
 import { Button } from "@/components/ui/button";
 import { schools } from "./Eligibility";
 import { NewsSection } from "@/components/NewsSection";
@@ -8,6 +9,7 @@ import { AnnouncementBanner } from "@/components/AnnouncementBanner";
 import { DepartmentNoticeBoard } from "@/components/DepartmentNoticeBoard";
 import { CurriculumLibrary } from "@/components/CurriculumLibrary";
 import { getCurriculumByDepartment } from "@/lib/content-manager";
+import { useDepartmentFaculty } from "@/hooks/useDepartmentFaculty";
 import { Badge } from "@/components/ui/badge";
 import {
   Card,
