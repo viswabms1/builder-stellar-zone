@@ -34,14 +34,15 @@ import {
   IndianRupee,
   ArrowRight,
 } from "lucide-react";
-import { aidsFaculty } from "@/data/ai-ds-faculty";
+import { useDepartmentFaculty } from "@/hooks/useDepartmentFaculty";
 import { DepartmentPageMenu } from "@/components/DepartmentPageMenu";
 import { Users, Briefcase, Mail, Building } from "lucide-react";
 
 export default function DeptAIDS() {
+  const { faculty } = useDepartmentFaculty({ departmentCode: "ai-ds" });
   const chairperson = useMemo(() => {
-    return aidsFaculty.find((f) => f.title.includes("Chairperson"));
-  }, []);
+    return faculty.find((f) => f.title.includes("Chairperson"));
+  }, [faculty]);
   const specializations = [
     { icon: Brain, label: "Artificial Intelligence" },
     { icon: BarChart3, label: "Data Science" },
