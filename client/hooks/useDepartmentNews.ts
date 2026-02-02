@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import type { NewsItem } from "@/lib/content-manager";
 import { getDepartmentCode } from "./useDepartmentAnnouncements";
-import { getNewsByDepartmentCode } from "@/data/news";
+import { getAllNews } from "@/lib/content-manager";
 
 interface UseDepartmentNewsOptions {
   departmentCode: string;
