@@ -1,10 +1,7 @@
 import { useMemo } from "react";
 import { Link } from "react-router-dom";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import {
-  physiotherapyFaculty,
-  PhysiotherapyFacultyMember,
-} from "@/data/physiotherapy-faculty";
+import { useDepartmentFaculty } from "@/hooks/useDepartmentFaculty";
 import {
   ChevronLeft,
   GraduationCap,
@@ -15,16 +12,18 @@ import {
 import { Button } from "@/components/ui/button";
 
 export default function PhysiotherapyFaculty() {
+  const { faculty } = useDepartmentFaculty({ departmentCode: "physiotherapy" });
   const departments = useMemo(() => {
-    const grouped: Record<string, PhysiotherapyFacultyMember[]> = {};
-    physiotherapyFaculty.forEach((member) => {
-      if (!grouped[member.department]) {
-        grouped[member.department] = [];
+    const grouped: Record<string, typeof faculty> = {};
+    faculty.forEach((member: any) => {
+      const dept = member.department || "General";
+      if (!grouped[dept]) {
+        grouped[dept] = [];
       }
-      grouped[member.department].push(member);
+      grouped[dept].push(member);
     });
     return Object.entries(grouped);
-  }, []);
+  }, [faculty]);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
