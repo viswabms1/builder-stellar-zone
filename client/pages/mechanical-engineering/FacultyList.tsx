@@ -3,10 +3,10 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { mechFaculty } from "@/data/mech-faculty";
+import { useDepartmentFaculty } from "@/hooks/useDepartmentFaculty";
 
 export default function MechanicalEngineeringFacultyList() {
-  const faculty = mechFaculty;
+  const { faculty } = useDepartmentFaculty({ departmentCode: "mech" });
   const chairperson = faculty.filter(f => f.title.includes("Chairperson"));
   const professors = faculty.filter(f => f.title === "Professor");
   const associateProfessors = faculty.filter(f => f.title === "Associate Professor");
