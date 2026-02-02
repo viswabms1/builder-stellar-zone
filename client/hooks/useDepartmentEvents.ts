@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import type { Event } from "@/lib/content-manager";
 import { getDepartmentCode } from "./useDepartmentAnnouncements";
+import { getEventsByDepartmentCode } from "@/data/events";
 
 interface UseDepartmentEventsOptions {
   departmentCode: string;
