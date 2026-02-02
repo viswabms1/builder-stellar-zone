@@ -38,7 +38,7 @@ export default function MechanicalFacultyPageTemplate({ faculty }: MechanicalFac
                     ))}
                   </div>
                 </div>
-                <Link to="/academics/engineering/mechanical/faculty">
+                <Link to="/academics/engineering/mechanical-engineering/faculty">
                   <Button variant="outline" className="hidden sm:inline-flex"><ChevronLeft className="w-4 h-4 mr-2"/>Back</Button>
                 </Link>
               </CardContent>
