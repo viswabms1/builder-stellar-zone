@@ -410,7 +410,7 @@ export default function Leadership() {
                         <CardTitle className="text-lg sm:text-xl md:text-2xl font-display font-bold group-hover:text-brand-blue transition-colors">
                           {leader.name}
                         </CardTitle>
-                        <p className="text-sm font-semibold text-orange-500 mt-1">
+                        <p className="text-xs sm:text-sm font-semibold text-brand-blue mt-1">
                           {leader.role}
                         </p>
                       </div>
@@ -513,7 +513,7 @@ export default function Leadership() {
                         <CardTitle className="text-lg sm:text-xl md:text-2xl font-display font-bold group-hover:text-brand-blue transition-colors">
                           {leader.name}
                         </CardTitle>
-                        <p className="text-sm font-semibold text-orange-500 mt-1">
+                        <p className="text-xs sm:text-sm font-semibold text-brand-blue mt-1">
                           {leader.role}
                         </p>
                       </div>
@@ -619,7 +619,7 @@ export default function Leadership() {
                         <CardTitle className="text-lg sm:text-xl md:text-2xl font-display font-bold group-hover:text-brand-blue transition-colors">
                           {pvc.name}
                         </CardTitle>
-                        <p className="text-sm font-semibold text-orange-500 mt-1">
+                        <p className="text-xs sm:text-sm font-semibold text-brand-blue mt-1">
                           {pvc.role}
                         </p>
                       </div>
