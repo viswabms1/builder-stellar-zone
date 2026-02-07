@@ -51,15 +51,15 @@ export default function Research() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* ===== HERO SECTION: AI-FIRST RESEARCH IDENTITY ===== */}
-      <section className="relative py-10 lg:py-28 bg-gradient-to-br from-slate-900 via-orange-900 to-slate-900 overflow-hidden">
+      <section className="relative py-10 lg:py-28 bg-gradient-to-br from-brand-blue/5 via-brand-magenta/5 to-background dark:from-slate-900 dark:via-brand-magenta/10 dark:to-black overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-0 left-0 w-96 h-96 bg-orange-500/20 rounded-full filter blur-3xl animate-float"></div>
+          <div className="absolute top-0 left-0 w-96 h-96 bg-brand-blue/20 rounded-full filter blur-3xl animate-float"></div>
           <div
-            className="absolute top-1/3 right-0 w-80 h-80 bg-red-600/15 rounded-full filter blur-3xl animate-float"
+            className="absolute top-1/3 right-0 w-80 h-80 bg-brand-magenta/15 rounded-full filter blur-3xl animate-float"
             style={{ animationDelay: "1s" }}
           ></div>
           <div
-            className="absolute bottom-0 left-1/3 w-72 h-72 bg-orange-400/10 rounded-full filter blur-3xl animate-float"
+            className="absolute bottom-0 left-1/3 w-72 h-72 bg-brand-orange/10 rounded-full filter blur-3xl animate-float"
             style={{ animationDelay: "2s" }}
           ></div>
 
@@ -84,27 +84,27 @@ export default function Research() {
             </svg>
           </div>
 
-          <div className="absolute top-10 right-20 w-40 h-40 border-2 border-orange-500/20 rounded-3xl transform rotate-45 animate-pulse"></div>
+          <div className="absolute top-10 right-20 w-40 h-40 border-2 border-brand-blue/20 rounded-3xl transform rotate-45 animate-pulse"></div>
           <div
-            className="absolute bottom-20 left-10 w-32 h-32 border-2 border-red-500/20 rounded-full animate-pulse"
+            className="absolute bottom-20 left-10 w-32 h-32 border-2 border-brand-magenta/20 rounded-full animate-pulse"
             style={{ animationDelay: "1s" }}
           ></div>
         </div>
 
         <div className="relative max-w-7xl mx-auto px-3 text-center">
-          <div className="inline-flex items-center px-3 py-3 bg-gradient-to-r from-orange-500/20 to-red-600/20 backdrop-blur-sm rounded-full border border-orange-500/40 mb-8 shadow-xl hover:shadow-2xl transition-all duration-300">
-            <Brain className="w-5 h-5 text-orange-400 mr-2" />
-            <span className="text-sm font-semibold text-orange-300">
+          <div className="inline-flex items-center px-3 py-3 bg-gradient-to-r from-brand-blue/20 to-brand-magenta/20 backdrop-blur-sm rounded-full border border-brand-blue/40 mb-8 shadow-xl hover:shadow-2xl transition-all duration-300">
+            <Brain className="w-5 h-5 text-brand-blue mr-2" />
+            <span className="text-sm font-semibold text-brand-blue dark:text-brand-blue/90">
               AI-Driven, Industry-Integrated Research at Scale
             </span>
           </div>
 
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
-            <span className="bg-gradient-to-r from-orange-300 via-orange-400 to-red-400 bg-clip-text text-transparent inline-block px-2">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-display leading-tight mb-6">
+            <span className="bg-brand-gradient bg-clip-text text-transparent inline-block px-2">
               Defining India's
             </span>
             <br />
-            <span className="bg-gradient-to-r from-red-400 via-orange-400 to-yellow-300 bg-clip-text text-transparent inline-block px-2">
+            <span className="bg-brand-gradient bg-clip-text text-transparent inline-block px-2">
               AI Research Future
             </span>
           </h1>
