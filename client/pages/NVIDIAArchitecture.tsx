@@ -509,7 +509,7 @@ export default function NVIDIAArchitecture() {
                       <p className="text-xs text-foreground/60">
                         Training Speed
                       </p>
-                      <p className="text-2xl font-bold text-green-500">
+                      <p className="text-2xl font-bold text-brand-blue">
                         3X faster
                       </p>
                       <p className="text-xs text-foreground/60">
@@ -520,7 +520,7 @@ export default function NVIDIAArchitecture() {
                       <p className="text-xs text-foreground/60">
                         Inference Speed
                       </p>
-                      <p className="text-2xl font-bold text-green-500">
+                      <p className="text-2xl font-bold text-brand-blue">
                         15X faster
                       </p>
                       <p className="text-xs text-foreground/60">
@@ -529,7 +529,7 @@ export default function NVIDIAArchitecture() {
                     </div>
                     <div className="border-l-4 border-green-500 pl-4">
                       <p className="text-xs text-foreground/60">Power Used</p>
-                      <p className="text-2xl font-bold text-green-500">
+                      <p className="text-2xl font-bold text-brand-blue">
                         ~14.3 kW
                       </p>
                       <p className="text-xs text-foreground/60">
@@ -540,7 +540,7 @@ export default function NVIDIAArchitecture() {
                       <p className="text-xs text-foreground/60">
                         Physical Size
                       </p>
-                      <p className="text-2xl font-bold text-green-500">
+                      <p className="text-2xl font-bold text-brand-blue">
                         10U Chassis
                       </p>
                       <p className="text-xs text-foreground/60">
