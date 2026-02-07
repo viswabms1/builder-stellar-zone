@@ -436,7 +436,7 @@ export default function Leadership() {
 
                     <Accordion type="single" collapsible className="w-full">
                       <AccordionItem value="message" className="border-none">
-                        <AccordionTrigger className="text-sm font-semibold text-orange-500 hover:text-orange-600 py-2 px-0">
+                        <AccordionTrigger className="text-xs sm:text-sm font-semibold text-brand-blue hover:text-brand-blue/80 py-2 px-0">
                           <span className="flex items-center gap-2">
                             <ChevronDown className="w-4 h-4" />
                             Read {leader.role}'s Message
@@ -539,7 +539,7 @@ export default function Leadership() {
 
                     <Accordion type="single" collapsible className="w-full">
                       <AccordionItem value="message" className="border-none">
-                        <AccordionTrigger className="text-sm font-semibold text-orange-500 hover:text-orange-600 py-2 px-0">
+                        <AccordionTrigger className="text-xs sm:text-sm font-semibold text-brand-blue hover:text-brand-blue/80 py-2 px-0">
                           <span className="flex items-center gap-2">
                             <ChevronDown className="w-4 h-4" />
                             Read {leader.role}'s Message
@@ -662,7 +662,7 @@ export default function Leadership() {
 
                     <Accordion type="single" collapsible className="w-full">
                       <AccordionItem value="message" className="border-none">
-                        <AccordionTrigger className="text-sm font-semibold text-orange-500 hover:text-orange-600 py-2 px-0">
+                        <AccordionTrigger className="text-xs sm:text-sm font-semibold text-brand-blue hover:text-brand-blue/80 py-2 px-0">
                           <span className="flex items-center gap-2">
                             <ChevronDown className="w-4 h-4" />
                             Read {pvc.role}'s Message
