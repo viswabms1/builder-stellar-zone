@@ -212,14 +212,14 @@ export default function VisionMission() {
               return (
                 <Card
                   key={index}
-                  className="bg-card/50 backdrop-blur-sm border border-border/50 hover:border-orange-500/30 transition-all duration-300"
+                  className="group bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur-sm border border-border/50 hover:border-brand-blue/50 hover:shadow-lg hover:shadow-brand-blue/20 transition-all duration-300"
                 >
                   <CardContent className="p-3">
-                    <Icon className="w-10 h-10 text-orange-500 mb-4" />
-                    <h3 className="text-lg font-bold mb-3 text-foreground">
+                    <Icon className="w-10 h-10 text-brand-blue mb-4 group-hover:scale-110 group-hover:text-brand-orange transition-all" />
+                    <h3 className="text-xs sm:text-sm md:text-base lg:text-lg font-bold mb-3 text-foreground font-display group-hover:text-brand-blue transition-colors">
                       {value.title}
                     </h3>
-                    <p className="text-sm text-foreground leading-relaxed">
+                    <p className="text-xs sm:text-xs md:text-sm lg:text-base text-foreground leading-relaxed font-body">
                       {value.description}
                     </p>
                   </CardContent>
