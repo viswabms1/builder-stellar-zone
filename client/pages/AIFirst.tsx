@@ -162,7 +162,7 @@ export default function AIFirst() {
       </section>
 
       {/* AI-Enhanced Classroom Learning */}
-      <section className="py-20 bg-gradient-to-r from-purple-500/5 via-blue-500/5 to-purple-500/5">
+      <section className="py-20 bg-gradient-to-r from-brand-magenta/5 via-brand-blue/5 to-brand-magenta/5">
         <div className="max-w-7xl mx-auto px-3">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
