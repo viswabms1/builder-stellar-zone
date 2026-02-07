@@ -179,10 +179,10 @@ export default function VisionMission() {
               ].map((item, index) => (
                 <div
                   key={index}
-                  className="flex gap-4 items-start p-4 rounded-lg bg-card/50 backdrop-blur-sm border border-border/50 hover:border-orange-500/30 transition-all duration-300"
+                  className="flex gap-4 items-start p-4 rounded-lg bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur-sm border border-border/50 hover:border-brand-blue/50 transition-all duration-300"
                 >
-                  <CheckCircle className="w-6 h-6 text-orange-500 flex-shrink-0 mt-0.5" />
-                  <p className="text-lg text-foreground leading-relaxed">
+                  <CheckCircle className="w-6 h-6 text-brand-blue flex-shrink-0 mt-0.5" />
+                  <p className="text-xs sm:text-sm md:text-base lg:text-lg text-foreground leading-relaxed font-body">
                     {item}
                   </p>
                 </div>
