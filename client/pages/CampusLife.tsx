@@ -327,7 +327,7 @@ export default function CampusLife() {
             ].map((story, index) => (
               <Card
                 key={index}
-                className="group overflow-hidden hover:shadow-lg hover:shadow-orange-500/10 transition-all duration-500 backdrop-blur-sm border rounded-none bg-slate-900/50 border-orange-500/10"
+                className="group overflow-hidden hover:shadow-lg hover:shadow-brand-blue/20 transition-all duration-500 backdrop-blur-sm border border-border/50 bg-gradient-to-br from-card/80 via-card/60 to-card/40"
                 style={{
                   animation: `slideInUp 0.6s ease-out ${index * 0.1}s both`,
                 }}
