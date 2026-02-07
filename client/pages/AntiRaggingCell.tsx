@@ -286,7 +286,7 @@ function AffidavitSection() {
           <h3 className="text-xl font-semibold mb-3">Step-by-Step Guide:</h3>
           <Button
             variant="outline"
-            className="border-orange-500 text-orange-600 hover:bg-orange-50"
+            className="border-brand-blue/30 text-brand-blue hover:text-brand-magenta hover:bg-brand-blue/10"
             asChild
           >
             <a href="#" target="_blank" rel="noreferrer">
