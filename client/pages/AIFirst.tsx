@@ -525,8 +525,8 @@ export default function AIFirst() {
 
               <div className="space-y-6 mb-10">
                 <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-full bg-blue-500/20 flex-shrink-0">
-                    <Brain className="w-6 h-6 text-blue-500" />
+                  <div className="p-3 rounded-full bg-brand-blue/20 flex-shrink-0">
+                    <Brain className="w-6 h-6 text-brand-blue" />
                   </div>
                   <div>
                     <h3 className="font-bold text-lg mb-2">World-Class Infrastructure</h3>
@@ -535,8 +535,8 @@ export default function AIFirst() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-full bg-purple-500/20 flex-shrink-0">
-                    <Users className="w-6 h-6 text-purple-500" />
+                  <div className="p-3 rounded-full bg-brand-magenta/20 flex-shrink-0">
+                    <Users className="w-6 h-6 text-brand-magenta" />
                   </div>
                   <div>
                     <h3 className="font-bold text-lg mb-2">Industry Collaboration</h3>
@@ -545,8 +545,8 @@ export default function AIFirst() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-full bg-pink-500/20 flex-shrink-0">
-                    <Rocket className="w-6 h-6 text-pink-500" />
+                  <div className="p-3 rounded-full bg-brand-orange/20 flex-shrink-0">
+                    <Rocket className="w-6 h-6 text-brand-orange" />
                   </div>
                   <div>
                     <h3 className="font-bold text-lg mb-2">Career & Entrepreneurship</h3>
@@ -555,8 +555,8 @@ export default function AIFirst() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-full bg-green-500/20 flex-shrink-0">
-                    <Award className="w-6 h-6 text-green-500" />
+                  <div className="p-3 rounded-full bg-brand-blue/20 flex-shrink-0">
+                    <Award className="w-6 h-6 text-brand-blue" />
                   </div>
                   <div>
                     <h3 className="font-bold text-lg mb-2">Global Recognition</h3>
