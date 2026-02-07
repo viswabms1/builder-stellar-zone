@@ -108,7 +108,7 @@ export default function LibraryEResources() {
             return (
               <Card
                 key={idx}
-                className="border-none shadow-md hover:shadow-lg transition-shadow"
+                className="border-none shadow-md hover:shadow-lg hover:shadow-brand-blue/20 transition-all bg-gradient-to-br from-card/80 via-card/60 to-card/40"
               >
                 <CardHeader>
                   <div className="flex items-start justify-between">
@@ -118,8 +118,8 @@ export default function LibraryEResources() {
                       </CardTitle>
                       <CardDescription>{resource.category}</CardDescription>
                     </div>
-                    <div className="p-2 rounded-lg bg-purple-500/10 dark:bg-purple-500/30">
-                      <Icon className="h-5 w-5 text-purple-600 dark:text-purple-400" />
+                    <div className="p-2 rounded-lg bg-brand-blue/10">
+                      <Icon className="h-5 w-5 text-brand-blue" />
                     </div>
                   </div>
                 </CardHeader>
@@ -128,7 +128,7 @@ export default function LibraryEResources() {
                   <Button
                     asChild
                     variant="ghost"
-                    className="w-full justify-start"
+                    className="w-full justify-start text-brand-blue hover:text-brand-magenta"
                   >
                     <a
                       href={resource.url}
