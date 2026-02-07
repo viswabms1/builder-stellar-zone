@@ -17,54 +17,54 @@ export default function CentreOfExcellence() {
       title: "State-of-the-Art Cyber Range",
       description:
         "Advanced training, simulation, and research in cybersecurity, ethical hacking, and digital forensics.",
-      color: "from-blue-500 to-blue-600",
-      bgColor: "bg-blue-500/10",
-      borderColor: "border-blue-500/20",
+      color: "from-brand-blue to-brand-blue/80",
+      bgColor: "from-card/80 via-card/60 to-card/40",
+      borderColor: "border-border/50",
     },
     {
       icon: Headset,
       title: "AR & VR Laboratory",
       description:
         "Immersive technologies for engineering, healthcare, design, and education.",
-      color: "from-purple-500 to-purple-600",
-      bgColor: "bg-purple-500/10",
-      borderColor: "border-purple-500/20",
+      color: "from-brand-magenta to-brand-magenta/80",
+      bgColor: "from-card/80 via-card/60 to-card/40",
+      borderColor: "border-border/50",
     },
     {
       icon: Cpu,
       title: "Robotics & Humanoid Laboratory",
       description:
         "Industrial automation, humanoid robots, and collaborative systems.",
-      color: "from-green-500 to-green-600",
-      bgColor: "bg-green-500/10",
-      borderColor: "border-green-500/20",
+      color: "from-brand-blue to-brand-magenta",
+      bgColor: "from-card/80 via-card/60 to-card/40",
+      borderColor: "border-border/50",
     },
     {
       icon: Lightbulb,
       title: "AI Maker Space",
       description:
         "An innovation hub fostering AI-driven product development and prototyping.",
-      color: "from-yellow-500 to-yellow-600",
-      bgColor: "bg-yellow-500/10",
-      borderColor: "border-yellow-500/20",
+      color: "from-brand-orange to-brand-orange/80",
+      bgColor: "from-card/80 via-card/60 to-card/40",
+      borderColor: "border-border/50",
     },
     {
       icon: Zap,
       title: "Quantum Computing Laboratory",
       description:
         "Exploration of quantum algorithms, simulation, and quantum software development.",
-      color: "from-indigo-500 to-indigo-600",
-      bgColor: "bg-indigo-500/10",
-      borderColor: "border-indigo-500/20",
+      color: "from-brand-magenta to-brand-blue",
+      bgColor: "from-card/80 via-card/60 to-card/40",
+      borderColor: "border-border/50",
     },
     {
       icon: Microscope,
       title: "High Performance Computing (HPC) Laboratory",
       description:
         "Supercomputing infrastructure for AI/ML, data science, genomics, and climate research.",
-      color: "from-red-500 to-red-600",
-      bgColor: "bg-red-500/10",
-      borderColor: "border-red-500/20",
+      color: "from-brand-blue to-brand-magenta",
+      bgColor: "from-card/80 via-card/60 to-card/40",
+      borderColor: "border-border/50",
     },
   ];
 
