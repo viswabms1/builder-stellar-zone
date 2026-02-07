@@ -26,25 +26,25 @@ export default function Alumni() {
       icon: Network,
       title: "Alumni Network",
       description: "Connect with fellow alumni across diverse industries and sectors",
-      color: "from-blue-500 to-blue-600",
+      color: "from-brand-blue to-brand-blue/80",
     },
     {
       icon: Briefcase,
       title: "Professional Growth",
       description: "Expand your professional network and career opportunities",
-      color: "from-purple-500 to-purple-600",
+      color: "from-brand-magenta to-brand-magenta/80",
     },
     {
       icon: Heart,
       title: "Give Back",
       description: "Support scholarships, awards, and mentorship programs",
-      color: "from-red-500 to-red-600",
+      color: "from-brand-orange to-brand-orange/80",
     },
     {
       icon: Award,
       title: "Alumni Events",
       description: "Celebrate achievements through exclusive university-hosted events",
-      color: "from-orange-500 to-orange-600",
+      color: "from-brand-blue to-brand-magenta",
     },
   ];
 
