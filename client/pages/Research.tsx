@@ -449,7 +449,7 @@ export default function Research() {
                 <CardContent>
                   <p className="text-foreground mb-4">{spotlight.impact}</p>
                   <div className="pt-4 border-t border-border/30">
-                    <p className="text-sm font-semibold text-orange-500 mb-1">
+                    <p className="text-sm font-semibold text-brand-blue mb-1">
                       Outcome:
                     </p>
                     <p className="text-sm text-foreground">
