@@ -178,7 +178,9 @@ export default function Library() {
       <section className="py-16 px-3 max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
           <div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">About Our Library</h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-display mb-6">
+              <span className="bg-brand-gradient bg-clip-text text-transparent">About Our Library</span>
+            </h2>
             <p className="text-lg text-foreground/80 mb-4">
               The library came into existence with the establishment of DSI in 1969, further expanded with Dayananda Sagar College of Engineering in 1979, and evolved with Dayananda Sagar University in 2014.
             </p>
