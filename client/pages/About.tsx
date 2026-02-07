@@ -340,7 +340,7 @@ export default function About() {
               </span>
               <span className="text-foreground">?</span>
             </h2>
-            <p className="subheadline text-foreground mb-6 md:mb-8 max-w-2xl mx-auto">
+            <p className="subheadline text-foreground mb-6 md:mb-8 max-w-2xl mx-auto font-display">
               Join a university where legacy, innovation, and AI-driven
               education converge.
             </p>
