@@ -723,9 +723,9 @@ export default function CampusLife() {
       >
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-extrabold mb-4 font-campus-display">
+            <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-display">
               <span className="text-foreground">Campus </span>
-              <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
+              <span className="bg-brand-gradient bg-clip-text text-transparent">
                 Moments
               </span>
             </h2>
