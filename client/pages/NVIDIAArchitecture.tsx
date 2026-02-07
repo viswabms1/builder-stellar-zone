@@ -989,7 +989,7 @@ export default function NVIDIAArchitecture() {
               </CardContent>
             </Card>
 
-            <Card className="border-border/50 bg-gradient-to-br from-green-500/10 to-green-500/5 backdrop-blur hover:border-brand-blue/50 transition-all">
+            <Card className="border-border/50 bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur hover:border-brand-blue/50 transition-all hover:shadow-lg hover:shadow-brand-blue/20">
               <CardHeader>
                 <CardTitle className="text-2xl mb-6">
                   Your Competitive Advantage
