@@ -96,24 +96,25 @@ export default function ResearchInnovationCouncil() {
       </section>
 
       {/* Council Members Section */}
-      <section className="px-3 py-10 bg-gradient-to-br from-orange-500/5 via-red-600/5 to-background">
+      <section className="px-3 py-20 bg-gradient-to-br from-brand-blue/5 via-brand-magenta/5 to-background">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-8">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 font-display">
+              <span className="text-foreground">Meet the </span>
+              <span className="bg-brand-gradient bg-clip-text text-transparent">
                 Members
               </span>
             </h2>
-            <p className="text-lg text-foreground max-w-3xl mx-auto">
+            <p className="text-base sm:text-xl md:text-2xl text-foreground max-w-3xl mx-auto font-body">
               Leading researchers and innovators driving academic advancement and collaborative excellence
             </p>
           </div>
 
-          <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl overflow-hidden">
+          <div className="bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur-sm border border-border/50 rounded-2xl overflow-hidden hover:shadow-lg hover:shadow-brand-blue/20 transition-all duration-300">
             <div className="overflow-x-auto">
               <table className="w-full">
                 <thead>
-                  <tr className="border-b border-border/50 bg-orange-500/5">
+                  <tr className="border-b border-border/50 bg-brand-blue/5">
                     <th className="px-3 py-4 text-left text-sm font-semibold text-foreground">Sl. No</th>
                     <th className="px-3 py-4 text-left text-sm font-semibold text-foreground">Name</th>
                     <th className="px-3 py-4 text-left text-sm font-semibold text-foreground">Position</th>
