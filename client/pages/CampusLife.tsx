@@ -278,8 +278,8 @@ export default function CampusLife() {
       >
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-extrabold mb-6 font-campus-display">
-              <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
+            <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-display mb-6">
+              <span className="bg-brand-gradient bg-clip-text text-transparent">
                 From Projects to Careers
               </span>
             </h2>
