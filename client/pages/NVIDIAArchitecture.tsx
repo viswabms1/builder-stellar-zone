@@ -555,7 +555,7 @@ export default function NVIDIAArchitecture() {
 
           {/* Jetson Family */}
           <div>
-            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 font-display">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-8 font-display">
               <span className="text-foreground">Jetson: AI </span>
               <span className="bg-brand-gradient bg-clip-text text-transparent">
                 in Your Hands
