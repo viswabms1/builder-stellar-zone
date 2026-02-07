@@ -88,7 +88,7 @@ export default function About() {
             >
               <Button
                 size="lg"
-                className="bg-brand-blue hover:bg-brand-blue/90 text-white px-8 py-6 text-lg font-semibold rounded-2xl shadow-lg shadow-brand-blue/30 hover:shadow-brand-blue/50 transition-all"
+                className="bg-gradient-to-r from-[#0088FF] via-[#FFD700] to-[#FF6B00] hover:from-[#0066FF] hover:via-[#FFC700] hover:to-[#FF5500] text-white px-8 py-6 text-lg font-semibold rounded-2xl shadow-lg shadow-brand-blue/30 hover:shadow-brand-blue/50 transition-all animate-gradient bg-[length:200%_auto]"
               >
                 Campus Tour
                 <ArrowRight className="w-5 h-5 ml-2" />
