@@ -392,7 +392,7 @@ export default function Leadership() {
                 >
                   {/* Leader Image */}
                   {leader.image && (
-                    <div className="relative w-full bg-gradient-to-br from-orange-500/10 to-red-600/10 flex items-center justify-center h-80">
+                    <div className="relative w-full bg-gradient-to-br from-brand-blue/10 to-brand-magenta/10 flex items-center justify-center h-80">
                       <img
                         src={leader.image}
                         alt={leader.name}
@@ -495,7 +495,7 @@ export default function Leadership() {
                 >
                   {/* Leader Image */}
                   {leader.image && (
-                    <div className="relative w-full bg-gradient-to-br from-orange-500/10 to-red-600/10 flex items-center justify-center h-80">
+                    <div className="relative w-full bg-gradient-to-br from-brand-blue/10 to-brand-magenta/10 flex items-center justify-center h-80">
                       <img
                         src={leader.image}
                         alt={leader.name}
@@ -601,7 +601,7 @@ export default function Leadership() {
                 >
                   {/* Leader Image */}
                   {pvc.image && (
-                    <div className="relative w-full bg-gradient-to-br from-orange-500/10 to-red-600/10 flex items-center justify-center h-80">
+                    <div className="relative w-full bg-gradient-to-br from-brand-blue/10 to-brand-magenta/10 flex items-center justify-center h-80">
                       <img
                         src={pvc.image}
                         alt={pvc.name}
