@@ -1030,7 +1030,7 @@ export default function NVIDIAArchitecture() {
           </div>
 
           {/* The Placement Reality */}
-          <div className="bg-gradient-to-r from-purple-500/10 via-blue-500/10 to-purple-500/10 rounded-2xl p-8 border border-border/50 mb-10">
+          <div className="bg-gradient-to-r from-brand-magenta/10 via-brand-blue/10 to-brand-magenta/10 rounded-2xl p-8 border border-border/50 mb-10">
             <div className="grid md:grid-cols-2 gap-8">
               <div>
                 <h3 className="text-2xl font-bold mb-4 text-foreground">
