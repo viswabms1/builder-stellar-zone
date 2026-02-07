@@ -425,7 +425,7 @@ export default function Research() {
             ].map((spotlight, index) => (
               <Card
                 key={index}
-                className={`bg-card/50 backdrop-blur-sm border border-border/50 hover:border-orange-500/30 transition-all duration-300 transform ${
+                className={`bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur-sm border border-border/50 hover:border-brand-blue/30 transition-all duration-300 transform ${
                   spotlightsVisible
                     ? "scale-100 opacity-100"
                     : "scale-95 opacity-0"
@@ -433,9 +433,9 @@ export default function Research() {
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
                 <CardHeader>
-                  <div className="inline-flex items-center gap-2 px-3 py-1 bg-orange-500/10 rounded-full mb-4 w-fit">
-                    <Target className="w-4 h-4 text-orange-500" />
-                    <span className="text-xs font-semibold text-orange-500">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 bg-brand-blue/10 rounded-full mb-4 w-fit">
+                    <Target className="w-4 h-4 text-brand-blue" />
+                    <span className="text-xs font-semibold text-brand-blue">
                       Real-World Impact
                     </span>
                   </div>
