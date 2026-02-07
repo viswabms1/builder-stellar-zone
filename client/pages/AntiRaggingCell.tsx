@@ -332,7 +332,7 @@ function CommitteeSection() {
         <div className="overflow-x-auto rounded-xl border border-brand-blue/20 bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur-sm">
           <table className="w-full text-sm">
             <thead>
-              <tr className="border-b border-orange-500/20 bg-orange-500/5">
+              <tr className="border-b border-brand-blue/20 bg-brand-blue/5">
                 <th className="px-4 py-3 text-left font-semibold text-foreground">
                   Sl.No
                 </th>
