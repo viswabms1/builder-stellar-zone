@@ -268,12 +268,15 @@ export default function ResearchInnovationCouncil() {
       </section>
 
       {/* CTA Section */}
-      <section className="px-3 py-10">
+      <section className="px-3 py-20">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Learn More About Leadership
+          <h2 className="headline-2 mb-6 font-display">
+            <span className="text-foreground">Learn More About </span>
+            <span className="bg-brand-gradient bg-clip-text text-transparent">
+              Leadership
+            </span>
           </h2>
-          <p className="text-lg text-foreground mb-8 max-w-2xl mx-auto">
+          <p className="text-lg text-foreground mb-8 max-w-2xl mx-auto font-body">
             Explore the complete leadership structure of Dayananda Sagar University.
           </p>
 
@@ -281,7 +284,7 @@ export default function ResearchInnovationCouncil() {
             <Link to="/about/leadership">
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-red-600 hover:to-orange-500 text-foreground px-8 py-6 font-semibold rounded-2xl"
+                className="bg-gradient-to-r from-[#0088FF] via-[#FFD700] to-[#FF6B00] hover:from-[#FF6B00] hover:via-[#FFD700] hover:to-[#0088FF] text-foreground px-8 py-6 font-semibold rounded-2xl animate-gradient bg-[length:200%_auto]"
               >
                 Back to Leadership
                 <ArrowRight className="w-5 h-5 ml-2" />
