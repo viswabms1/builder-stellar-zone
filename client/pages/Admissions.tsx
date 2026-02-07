@@ -687,19 +687,17 @@ function BrochureSection() {
 }
 
 function ContactSection() {
-  const { theme } = useTheme();
   return (
     <section className="px-3 py-8">
       <div className="mx-auto max-w-6xl space-y-10">
         <div className="text-center">
-          <h2
-            className={`text-3xl font-bold md:text-4xl ${
-              theme === "light" ? "text-orange-900" : "text-white"
-            }`}
-          >
-            Connect with Our Admissions Team
+          <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 font-display">
+            <span className="text-foreground">Connect with Our </span>
+            <span className="bg-brand-gradient bg-clip-text text-transparent">
+              Admissions Team
+            </span>
           </h2>
-          <p className="mt-3 text-lg text-foreground">
+          <p className="mt-3 text-base sm:text-xl md:text-2xl text-foreground/80 font-body">
             Visit a DSU campus, schedule virtual counseling, or call the
             helpline numbers below for real-time assistance.
           </p>
@@ -708,7 +706,7 @@ function ContactSection() {
         {/* Campus Contacts */}
         <Accordion type="single" collapsible defaultValue="item-1">
           <AccordionItem value="item-1" className="border-none">
-            <AccordionTrigger className="text-xl font-bold text-orange-500 hover:text-orange-600 py-4">
+            <AccordionTrigger className="text-xl font-bold text-brand-blue hover:text-brand-blue/80 py-4 font-display">
               <MapPin className="h-6 w-6 mr-3" />
               Campus Locations
             </AccordionTrigger>
@@ -717,7 +715,7 @@ function ContactSection() {
                 {campusContacts.map((campus) => (
                   <Card
                     key={campus.title}
-                    className="border border-border/60 bg-card/70 backdrop-blur-sm transition hover:-translate-y-1 hover:border-orange-500/30 hover:shadow-orange-500/10"
+                    className="border border-border/60 bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur-sm transition hover:-translate-y-1 hover:border-brand-blue/30 hover:shadow-brand-blue/20 group"
                   >
                     <CardHeader>
                       <CardTitle className="text-lg font-semibold text-foreground">
