@@ -642,7 +642,7 @@ export default function CampusLife() {
 
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
-                    <facility.icon className="w-8 h-8 text-orange-500 flex-shrink-0 mt-1" />
+                    <facility.icon className="w-8 h-8 text-brand-blue flex-shrink-0 mt-1" />
                     {facility.href ? (
                       <a
                         href={facility.href}
