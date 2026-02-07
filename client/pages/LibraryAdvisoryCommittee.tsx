@@ -257,21 +257,21 @@ export default function LibraryAdvisoryCommittee() {
         </Card>
 
         {/* Contact Section */}
-        <Card className="border-none shadow-lg mt-8">
+        <Card className="border-none shadow-lg mt-8 bg-gradient-to-br from-card/80 via-card/60 to-card/40 hover:shadow-lg hover:shadow-brand-blue/20 transition-all duration-300">
           <CardHeader>
-            <CardTitle>Get Involved</CardTitle>
-            <CardDescription>
+            <CardTitle className="text-xl sm:text-2xl font-display text-foreground">Get Involved</CardTitle>
+            <CardDescription className="text-foreground/70">
               Interested in serving on a library committee?
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <p className="text-foreground/70 mb-4">
+            <p className="text-foreground/70 mb-4 font-body">
               We welcome faculty and student representatives who are interested
               in contributing to library governance and improvement. Contact the
               Chief Librarian for more information about committee
               opportunities.
             </p>
-            <Button asChild className="w-full">
+            <Button asChild className="w-full bg-gradient-to-r from-[#0088FF] via-[#FFD700] to-[#FF6B00] hover:from-[#FF6B00] hover:via-[#FFD700] hover:to-[#0088FF] text-foreground font-semibold rounded-2xl animate-gradient bg-[length:200%_auto]">
               <Link to="/library/contact">
                 Contact Library <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
@@ -280,7 +280,7 @@ export default function LibraryAdvisoryCommittee() {
         </Card>
 
         <div className="mt-12 text-center">
-          <Button asChild className="bg-violet-600 hover:bg-violet-700">
+          <Button asChild className="bg-gradient-to-r from-[#0088FF] via-[#FFD700] to-[#FF6B00] hover:from-[#FF6B00] hover:via-[#FFD700] hover:to-[#0088FF] text-foreground px-6 py-2 font-semibold rounded-2xl animate-gradient bg-[length:200%_auto]">
             <Link to="/library">
               <ArrowLeft className="mr-2 h-4 w-4" />
               Back to Library
