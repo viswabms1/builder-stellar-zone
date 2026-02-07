@@ -286,10 +286,10 @@ export default function Library() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-6 mb-8">
-          <Card className="border-none shadow-md hover:shadow-lg transition-shadow">
+          <Card className="border-none shadow-md hover:shadow-lg hover:shadow-brand-blue/20 transition-all bg-gradient-to-br from-card/80 via-card/60 to-card/40">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <FileText className="h-5 w-5 text-blue-600" />
+                <FileText className="h-5 w-5 text-brand-blue" />
                 Rules & Regulations
               </CardTitle>
               <CardDescription>
@@ -297,7 +297,7 @@ export default function Library() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <Button asChild variant="ghost" className="w-full justify-start">
+              <Button asChild variant="ghost" className="w-full justify-start text-brand-blue hover:text-brand-magenta">
                 <Link to="/library/rules-regulations">
                   View Guidelines <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
@@ -305,10 +305,10 @@ export default function Library() {
             </CardContent>
           </Card>
 
-          <Card className="border-none shadow-md hover:shadow-lg transition-shadow">
+          <Card className="border-none shadow-md hover:shadow-lg hover:shadow-brand-blue/20 transition-all bg-gradient-to-br from-card/80 via-card/60 to-card/40">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <HelpCircle className="h-5 w-5 text-purple-600" />
+                <HelpCircle className="h-5 w-5 text-brand-magenta" />
                 Contact & Support
               </CardTitle>
               <CardDescription>
@@ -316,7 +316,7 @@ export default function Library() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <Button asChild variant="ghost" className="w-full justify-start">
+              <Button asChild variant="ghost" className="w-full justify-start text-brand-magenta hover:text-brand-blue">
                 <Link to="/library/contact">
                   Contact Us <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
