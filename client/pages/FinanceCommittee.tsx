@@ -122,31 +122,31 @@ export default function FinanceCommittee() {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr className="border-b border-border/30 hover:bg-orange-500/5 transition-colors">
+                  <tr className="border-b border-border/30 hover:bg-brand-blue/5 transition-colors">
                     <td className="px-3 py-4 text-sm text-foreground">1</td>
                     <td className="px-3 py-4 text-sm font-medium text-foreground">Dr. D. Hemachandra Sagar</td>
                     <td className="px-3 py-4 text-sm text-foreground">Chancellor, DSU</td>
                     <td className="px-3 py-4 text-sm text-foreground">Chairperson (or his nominee)</td>
                   </tr>
-                  <tr className="border-b border-border/30 hover:bg-orange-500/5 transition-colors">
+                  <tr className="border-b border-border/30 hover:bg-brand-blue/5 transition-colors">
                     <td className="px-3 py-4 text-sm text-foreground">2</td>
                     <td className="px-3 py-4 text-sm font-medium text-foreground">Dr. D. Premachandra Sagar</td>
                     <td className="px-3 py-4 text-sm text-foreground">Pro Chancellor, DSU</td>
                     <td className="px-3 py-4 text-sm text-foreground">Nominee of Sponsoring Body</td>
                   </tr>
-                  <tr className="border-b border-border/30 hover:bg-orange-500/5 transition-colors">
+                  <tr className="border-b border-border/30 hover:bg-brand-blue/5 transition-colors">
                     <td className="px-3 py-4 text-sm text-foreground">3</td>
                     <td className="px-3 py-4 text-sm font-medium text-foreground">Prof. B. S. Satyanarayana</td>
                     <td className="px-3 py-4 text-sm text-foreground">Vice Chancellor, DSU</td>
                     <td className="px-3 py-4 text-sm text-foreground">Member</td>
                   </tr>
-                  <tr className="border-b border-border/30 hover:bg-orange-500/5 transition-colors">
+                  <tr className="border-b border-border/30 hover:bg-brand-blue/5 transition-colors">
                     <td className="px-3 py-4 text-sm text-foreground">4</td>
                     <td className="px-3 py-4 text-sm font-medium text-foreground">Dr. Puttamadappa C</td>
                     <td className="px-3 py-4 text-sm text-foreground">Registrar, DSU</td>
                     <td className="px-3 py-4 text-sm text-foreground">Member</td>
                   </tr>
-                  <tr className="hover:bg-orange-500/5 transition-colors">
+                  <tr className="hover:bg-brand-blue/5 transition-colors">
                     <td className="px-3 py-4 text-sm text-foreground">5</td>
                     <td className="px-3 py-4 text-sm font-medium text-foreground">Mr. D. Ramanathan</td>
                     <td className="px-3 py-4 text-sm text-foreground">Chief Finance Officer, DSU</td>
