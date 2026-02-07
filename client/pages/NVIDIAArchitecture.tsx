@@ -467,7 +467,7 @@ export default function NVIDIAArchitecture() {
                         that's enough to hold an entire library—and access it in
                         milliseconds.
                       </p>
-                      <p className="text-sm text-blue-500 font-semibold">
+                      <p className="text-sm text-brand-blue font-semibold">
                         💾 Why it matters: Train models with 100+ billion
                         parameters
                       </p>
@@ -482,7 +482,7 @@ export default function NVIDIAArchitecture() {
                         sharing information instantly to coordinate on massive
                         problems.
                       </p>
-                      <p className="text-sm text-blue-500 font-semibold">
+                      <p className="text-sm text-brand-blue font-semibold">
                         ⚡ NVIDIA calls this: NVLink technology
                       </p>
                     </div>
@@ -689,7 +689,7 @@ export default function NVIDIAArchitecture() {
             <Card className="border-border/50 bg-card/50 backdrop-blur">
               <CardHeader>
                 <CardTitle className="text-2xl flex items-center gap-3 mb-4">
-                  <Code className="w-8 h-8 text-blue-500" />
+                  <Code className="w-8 h-8 text-brand-blue" />
                   CUDA: Supercharging Your Code
                 </CardTitle>
               </CardHeader>
@@ -705,7 +705,7 @@ export default function NVIDIAArchitecture() {
                     </p>
                     <div className="space-y-3">
                       <div className="flex items-start gap-3">
-                        <span className="text-blue-500 font-bold mt-1">→</span>
+                        <span className="text-brand-blue font-bold mt-1">→</span>
                         <div>
                           <p className="font-semibold text-sm">
                             Write Once, Run Anywhere
@@ -716,7 +716,7 @@ export default function NVIDIAArchitecture() {
                         </div>
                       </div>
                       <div className="flex items-start gap-3">
-                        <span className="text-blue-500 font-bold mt-1">→</span>
+                        <span className="text-brand-blue font-bold mt-1">→</span>
                         <div>
                           <p className="font-semibold text-sm">
                             Industry Standard
@@ -727,7 +727,7 @@ export default function NVIDIAArchitecture() {
                         </div>
                       </div>
                       <div className="flex items-start gap-3">
-                        <span className="text-blue-500 font-bold mt-1">→</span>
+                        <span className="text-brand-blue font-bold mt-1">→</span>
                         <div>
                           <p className="font-semibold text-sm">
                             10-100X Speed Boost
@@ -878,7 +878,7 @@ export default function NVIDIAArchitecture() {
             <Card className="border-border/50 bg-card/50 backdrop-blur">
               <CardHeader>
                 <CardTitle className="flex items-center gap-3">
-                  <Award className="w-6 h-6 text-blue-500" />
+                  <Award className="w-6 h-6 text-brand-blue" />
                   For Your Learning
                 </CardTitle>
               </CardHeader>
@@ -1083,7 +1083,7 @@ export default function NVIDIAArchitecture() {
                 </h3>
                 <div className="space-y-3 text-foreground/80">
                   <p className="flex items-start gap-3">
-                    <span className="font-bold text-blue-500 min-w-fit">
+                    <span className="font-bold text-brand-blue min-w-fit">
                       ✓ Targeted Skills:
                     </span>
                     <span>
@@ -1092,7 +1092,7 @@ export default function NVIDIAArchitecture() {
                     </span>
                   </p>
                   <p className="flex items-start gap-3">
-                    <span className="font-bold text-blue-500 min-w-fit">
+                    <span className="font-bold text-brand-blue min-w-fit">
                       ✓ Real Scale:
                     </span>
                     <span>
@@ -1101,7 +1101,7 @@ export default function NVIDIAArchitecture() {
                     </span>
                   </p>
                   <p className="flex items-start gap-3">
-                    <span className="font-bold text-blue-500 min-w-fit">
+                    <span className="font-bold text-brand-blue min-w-fit">
                       ✓ Proven Track Record:
                     </span>
                     <span>
@@ -1109,7 +1109,7 @@ export default function NVIDIAArchitecture() {
                     </span>
                   </p>
                   <p className="flex items-start gap-3">
-                    <span className="font-bold text-blue-500 min-w-fit">
+                    <span className="font-bold text-brand-blue min-w-fit">
                       ✓ First-Mover Advantage:
                     </span>
                     <span>
