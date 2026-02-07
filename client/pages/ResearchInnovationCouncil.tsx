@@ -7,30 +7,27 @@ export default function ResearchInnovationCouncil() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero Section */}
-      <section className="relative py-10 lg:py-32 bg-gradient-to-br from-orange-500/10 via-red-600/5 to-background">
+      <section className="relative py-20 lg:py-32 bg-gradient-to-br from-brand-blue/10 via-brand-magenta/5 to-background">
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-orange-500/10 rounded-full filter blur-3xl animate-float"></div>
+          <div className="absolute top-20 left-10 w-72 h-72 bg-brand-blue/10 rounded-full filter blur-3xl animate-float"></div>
           <div
-            className="absolute bottom-20 right-10 w-96 h-96 bg-red-600/10 rounded-full filter blur-3xl animate-float"
+            className="absolute bottom-20 right-10 w-96 h-96 bg-brand-magenta/10 rounded-full filter blur-3xl animate-float"
             style={{ animationDelay: "2s" }}
           ></div>
         </div>
 
         <div className="relative max-w-7xl mx-auto px-3 text-center">
-          <div className="inline-flex items-center px-4 py-2 bg-orange-500/10 rounded-full border border-orange-500/20 mb-8">
-            <Award className="w-4 h-4 text-orange-500 mr-2" />
-            <span className="text-sm font-medium text-orange-500">
-              Governance
-            </span>
-          </div>
+          <Badge className="bg-brand-blue/15 text-brand-blue justify-center mb-8">
+            Governance
+          </Badge>
 
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-            <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight font-display text-foreground">
+            <span className="bg-brand-gradient bg-clip-text text-transparent">
               Research & Innovation Council
             </span>
           </h1>
 
-          <p className="text-lg md:text-xl text-foreground mb-8 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-base sm:text-xl md:text-2xl lg:text-3xl text-foreground mb-8 leading-relaxed max-w-3xl mx-auto font-body">
             Driving research excellence and fostering innovation initiatives across the university and beyond.
           </p>
         </div>
