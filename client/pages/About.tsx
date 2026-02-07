@@ -244,7 +244,7 @@ export default function About() {
                     <div className="w-12 h-12 rounded-2xl bg-brand-blue/10 flex items-center justify-center mb-4 group-hover:bg-brand-blue/20 transition-colors">
                       <Icon className="w-6 h-6 text-brand-blue" />
                     </div>
-                    <CardTitle className="text-lg md:text-xl font-display group-hover:text-brand-blue transition-colors">
+                    <CardTitle className="text-base md:text-lg lg:text-xl font-display group-hover:text-brand-blue transition-colors">
                       {section.title}
                     </CardTitle>
                   </CardHeader>
