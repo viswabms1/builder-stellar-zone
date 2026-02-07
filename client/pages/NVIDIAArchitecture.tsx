@@ -619,12 +619,12 @@ export default function NVIDIAArchitecture() {
                 </CardContent>
               </Card>
 
-              <Card className="border-border/50 hover:border-pink-500/50 transition-all bg-card/50 backdrop-blur">
+              <Card className="border-border/50 hover:border-brand-orange/50 transition-all bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur hover:shadow-lg hover:shadow-brand-orange/20">
                 <CardHeader>
-                  <Badge variant="outline" className="w-fit mb-3">
+                  <Badge variant="outline" className="w-fit mb-3 border-brand-orange/30 text-brand-orange">
                     AGX
                   </Badge>
-                  <CardTitle className="text-lg">Jetson AGX Orin</CardTitle>
+                  <CardTitle className="text-lg font-display">Jetson AGX Orin</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-3">
                   <div>
@@ -645,12 +645,12 @@ export default function NVIDIAArchitecture() {
                 </CardContent>
               </Card>
 
-              <Card className="border-border/50 hover:border-yellow-500/50 transition-all bg-card/50 backdrop-blur">
+              <Card className="border-border/50 hover:border-brand-yellow/50 transition-all bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur hover:shadow-lg hover:shadow-brand-yellow/20">
                 <CardHeader>
-                  <Badge variant="outline" className="w-fit mb-3">
+                  <Badge variant="outline" className="w-fit mb-3 border-brand-yellow/30 text-brand-yellow">
                     Xavier
                   </Badge>
-                  <CardTitle className="text-lg">Jetson AGX Xavier</CardTitle>
+                  <CardTitle className="text-lg font-display">Jetson AGX Xavier</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-3">
                   <div>
