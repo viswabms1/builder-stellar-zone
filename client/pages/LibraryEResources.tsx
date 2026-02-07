@@ -145,11 +145,11 @@ export default function LibraryEResources() {
         </div>
 
         {/* Access Information */}
-        <Card className="border-none shadow-lg mb-8">
+        <Card className="border-none shadow-lg mb-8 bg-gradient-to-br from-card/80 via-card/60 to-card/40">
           <CardHeader>
-            <CardTitle className="text-3xl md:text-4xl flex items-center gap-2">
-              <Lock className="h-8 w-8 text-blue-600" />
-              How to Access E-Resources
+            <CardTitle className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-display flex items-center gap-2">
+              <Lock className="h-8 w-8 text-brand-blue" />
+              <span className="bg-brand-gradient bg-clip-text text-transparent">How to Access E-Resources</span>
             </CardTitle>
             <CardDescription className="text-lg">
               Steps to access digital library from on-campus and off-campus
@@ -158,7 +158,7 @@ export default function LibraryEResources() {
           <CardContent className="space-y-6">
             <div>
               <h4 className="font-semibold text-lg mb-2 flex items-center gap-2">
-                <Zap className="h-5 w-5 text-blue-600" />
+                <Zap className="h-5 w-5 text-brand-blue" />
                 On-Campus Access
               </h4>
               <p className="text-foreground/70">
