@@ -168,7 +168,7 @@ export default function LibraryAdvisoryCommittee() {
         </div>
 
         {/* Governance Overview */}
-        <Card className="border-none shadow-lg bg-violet-50 dark:bg-violet-950/30 mb-8">
+        <Card className="border-none shadow-lg bg-gradient-to-br from-card/80 via-card/60 to-card/40 mb-8">
           <CardHeader style={{ backgroundColor: "rgba(0, 0, 0, 1)" }}>
             <CardTitle className="text-3xl md:text-4xl flex items-center gap-2">
               <Users className="h-8 w-8 text-brand-blue" />
