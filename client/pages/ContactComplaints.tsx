@@ -114,10 +114,12 @@ function HeroSection() {
 
 function CommitteeLinksSection() {
   return (
-    <section className="px-3 py-10 bg-gradient-to-b from-orange-500/5 to-transparent">
+    <section className="px-3 py-10 bg-gradient-to-b from-brand-blue/5 via-brand-magenta/5 to-transparent dark:from-brand-magenta/5 dark:via-brand-blue/5 dark:to-transparent">
       <div className="mx-auto max-w-6xl">
         <div className="mb-10 text-center">
-          <h2 className="text-3xl font-bold md:text-4xl">Committee Details</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-display">
+            <span className="bg-brand-gradient bg-clip-text text-transparent">Committee Details</span>
+          </h2>
           <p className="mt-3 text-foreground md:text-lg">
             Quick access to detailed information about DSU support committees.
           </p>
@@ -126,7 +128,7 @@ function CommitteeLinksSection() {
           {COMMITTEE_LINKS.map((link, index) => (
             <Card
               key={index}
-              className="group border border-border/50 bg-card/60 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-orange-500/10 h-full"
+              className="group border border-border/50 bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-brand-blue/10 h-full"
             >
               <CardContent className="p-4 flex flex-col">
                 <Button
