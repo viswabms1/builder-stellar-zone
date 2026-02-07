@@ -582,9 +582,9 @@ export default function AIFirst() {
       </section>
 
       {/* Final CTA */}
-      <section className="px-3 py-20 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-blue-500/20">
+      <section className="px-3 py-20 bg-gradient-to-r from-brand-blue/10 via-brand-magenta/10 to-brand-blue/10">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Shape India's AI Future</h2>
+          <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-display mb-4 text-foreground">Shape India's AI <span className="bg-brand-gradient bg-clip-text text-transparent">Future</span></h2>
           <p className="text-lg text-foreground/70 mb-8 max-w-2xl mx-auto">
             Whether you're a student, researcher, entrepreneur, or industry leader—DSU's AI-First initiative offers unprecedented opportunities for growth, innovation, and impact.
           </p>
