@@ -56,7 +56,7 @@ export default function AIFirst() {
               />
             </div>
             <div className="bg-white dark:bg-black/20 rounded-2xl p-12">
-              <h3 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">What is the AI-First Initiative?</h3>
+              <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-display text-foreground mb-6">What is the AI-First Initiative?</h3>
               <p className="text-lg md:text-xl text-gray-700 dark:text-foreground/80 mb-12 leading-relaxed">
                 The AI-First initiative at DSU represents a fundamental shift in how we design education, conduct research, and foster innovation. Rather than treating AI as a peripheral tool, we place artificial intelligence at the core of every academic and operational aspect of the university.
               </p>
