@@ -330,8 +330,8 @@ export default function About() {
       {/* CTA Section */}
       <section className="px-3 py-10 bg-gradient-to-r from-brand-blue/5 to-brand-magenta/5">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="bg-gradient-to-r from-brand-blue/10 via-brand-magenta/10 to-brand-blue/5 rounded-3xl p-12 border border-brand-blue/20">
-            <h2 className="headline-2 mb-6">
+          <div className="bg-gradient-to-r from-brand-blue/10 via-brand-magenta/10 to-brand-blue/5 rounded-3xl p-8 md:p-12 border border-brand-blue/20">
+            <h2 className="headline-2 mb-4 md:mb-6">
               Ready to build your future with
               <span className="bg-brand-gradient bg-clip-text text-transparent">
                 {" "}
@@ -339,7 +339,7 @@ export default function About() {
               </span>
               ?
             </h2>
-            <p className="subheadline text-foreground mb-8 max-w-2xl mx-auto">
+            <p className="subheadline text-foreground mb-6 md:mb-8 max-w-2xl mx-auto">
               Join a university where legacy, innovation, and AI-driven
               education converge.
             </p>
