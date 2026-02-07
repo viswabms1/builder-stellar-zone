@@ -636,19 +636,17 @@ function QuickLinkCard({ item }: { item: QuickLink }) {
 }
 
 function BrochureSection() {
-  const { theme } = useTheme();
   return (
-    <section className="px-3 py-8 bg-gradient-to-br from-orange-500/5 via-red-500/5 to-background">
+    <section className="px-3 py-8 bg-gradient-to-br from-brand-blue/5 via-brand-magenta/5 to-background dark:from-orange-500/5 dark:via-red-500/5">
       <div className="mx-auto max-w-6xl">
         <div className="mb-10 text-center">
-          <h2
-            className={`text-3xl font-bold md:text-4xl ${
-              theme === "light" ? "text-orange-900" : "text-white"
-            }`}
-          >
-            Program Guides & Brochures
+          <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 font-display">
+            <span className="text-foreground">Program </span>
+            <span className="bg-brand-gradient bg-clip-text text-transparent">
+              Guides & Brochures
+            </span>
           </h2>
-          <p className="mt-3 text-lg text-foreground">
+          <p className="mt-3 text-base sm:text-xl md:text-2xl text-foreground/80 font-body">
             Download detailed brochures for every school and program. Each
             brochure lists eligibility, semester-wise credits, laboratory
             infrastructure, internship partners, and placement support
@@ -659,7 +657,7 @@ function BrochureSection() {
           {brochureResources.map((resource) => (
             <Card
               key={resource.title}
-              className="border border-border/60 bg-card/60 backdrop-blur-sm transition hover:-translate-y-1 hover:border-orange-500/40 hover:shadow-orange-500/10"
+              className="border border-border/60 bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur-sm transition hover:-translate-y-1 hover:border-brand-blue/40 hover:shadow-brand-blue/20 group"
             >
               <CardHeader>
                 <CardTitle className="text-lg font-semibold text-foreground">
