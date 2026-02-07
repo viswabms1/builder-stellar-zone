@@ -1058,10 +1058,12 @@ function GuidelinesSection() {
 
 function ContactSection() {
   return (
-    <section className="bg-gradient-to-r from-orange-500/5 via-red-600/5 to-pink-500/5 px-3 py-10">
+    <section className="bg-gradient-to-r from-brand-blue/5 via-brand-magenta/5 to-brand-blue/5 dark:from-brand-blue/5 dark:via-brand-magenta/5 dark:to-brand-blue/5 px-3 py-10">
       <div className="mx-auto max-w-6xl space-y-12">
         <div className="text-center">
-          <h2 className="text-3xl font-bold md:text-4xl">Need Assistance?</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-display">
+            <span className="bg-brand-gradient bg-clip-text text-transparent">Need Assistance?</span>
+          </h2>
           <p className="mt-3 text-foreground md:text-lg">
             Connect with the examination department between 9:00 AM and 4:00 PM
             for support on applications, schedules, and results.
@@ -1071,10 +1073,10 @@ function ContactSection() {
           {CONTACT_CARDS.map((contact) => (
             <Card
               key={contact.title}
-              className="border border-border/40 bg-card/70 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-orange-500/40 hover:shadow-lg hover:shadow-orange-500/10"
+              className="border border-border/40 bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-brand-blue/40 hover:shadow-lg hover:shadow-brand-blue/10"
             >
               <CardHeader className="space-y-3">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-orange-500/10 text-orange-500">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-blue/10 text-brand-blue">
                   <contact.icon className="h-6 w-6" />
                 </div>
                 <CardTitle className="text-lg font-semibold text-foreground">
