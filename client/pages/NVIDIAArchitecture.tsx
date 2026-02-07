@@ -1139,7 +1139,7 @@ export default function NVIDIAArchitecture() {
 
           {/* Bottom Line */}
           <div className="bg-gradient-to-r from-brand-blue/10 to-brand-magenta/10 rounded-2xl p-8 border border-brand-blue/30 text-center">
-            <h3 className="text-3xl font-bold mb-4">The Bottom Line</h3>
+            <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 font-display">The Bottom Line</h3>
             <p className="text-xl text-foreground/80 leading-relaxed max-w-3xl mx-auto">
               Top AI companies recruit from universities with world-class
               infrastructure. Your degree from DSU isn't just a credential—it's
