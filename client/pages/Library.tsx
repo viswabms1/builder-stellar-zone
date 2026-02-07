@@ -32,27 +32,27 @@ export default function Library() {
       title: "Comprehensive Collections",
       description:
         "Over 5 lakh volumes including books, CDs, DVDs, and periodicals",
-      color: "from-blue-500 to-blue-600",
+      color: "from-brand-blue to-brand-blue/80",
     },
     {
       icon: Globe,
       title: "Digital Library Access",
       description:
         "Online resources and e-books through our digital library platform",
-      color: "from-purple-500 to-purple-600",
+      color: "from-brand-magenta to-brand-magenta/80",
     },
     {
       icon: Users,
       title: "Professional Staff",
       description:
         "Skilled and compassionate librarians dedicated to user assistance",
-      color: "from-green-500 to-green-600",
+      color: "from-brand-orange to-brand-orange/80",
     },
     {
       icon: Award,
       title: "Modern Facilities",
       description: "Seating capacity of 560 students with state-of-the-art infrastructure",
-      color: "from-orange-500 to-orange-600",
+      color: "from-brand-blue to-brand-magenta",
     },
   ];
 
