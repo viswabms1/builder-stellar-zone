@@ -1396,7 +1396,7 @@ export default function Placements() {
                   <p className="text-sm font-medium text-foreground mb-3">
                     {story.company}
                   </p>
-                  <p className="text-sm text-foreground italic border-l-2 border-orange-500 pl-3">
+                  <p className="text-sm text-foreground italic border-l-2 border-brand-blue pl-3">
                     "{story.achievement}"
                   </p>
                 </CardContent>
