@@ -529,8 +529,8 @@ export default function CampusLife() {
                 },
               ].map((milestone, idx) => (
                 <div key={idx} className="text-center">
-                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 border border-blue-500/50 mb-4 mx-auto">
-                    <span className="font-bold text-blue-300 text-sm">
+                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-brand-blue/20 border border-brand-blue/50 mb-4 mx-auto">
+                    <span className="font-bold text-brand-blue text-sm">
                       {idx + 1}
                     </span>
                   </div>
