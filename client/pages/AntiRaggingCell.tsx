@@ -221,7 +221,7 @@ function IntroductionSection() {
               that contradicts our institutional values of respect, dignity, and
               inclusion.
             </p>
-            <div className="bg-orange-500/5 border border-orange-500/20 rounded-xl p-4">
+            <div className="bg-brand-blue/5 border border-brand-blue/20 rounded-xl p-4">
               <p className="font-semibold text-foreground mb-2">
                 DSU's Commitment:
               </p>
