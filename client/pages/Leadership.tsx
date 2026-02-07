@@ -974,7 +974,7 @@ export default function Leadership() {
             </p>
           </div>
 
-          <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-8 md:p-12">
+          <div className="bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur-sm border border-border/50 rounded-2xl p-8 md:p-12">
             <div className="grid md:grid-cols-2 gap-8">
               {principles.map((principle, index) => (
                 <div key={index} className="flex gap-4">
