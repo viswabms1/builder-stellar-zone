@@ -68,8 +68,12 @@ export default function AdministrativeCommittees() {
             <Badge className="bg-brand-magenta/15 text-brand-magenta justify-center">
               University Governance
             </Badge>
-            <h1 className="headline-1">Administrative Committees</h1>
-            <p className="subheadline text-foreground max-w-3xl mx-auto">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-display text-foreground mb-4">
+              <span className="bg-brand-gradient bg-clip-text text-transparent">
+                Administrative Committees
+              </span>
+            </h1>
+            <p className="text-base sm:text-xl md:text-2xl text-foreground max-w-3xl mx-auto font-body">
               Oversight bodies that guide the university's operations, academic
               excellence, and strategic initiatives
             </p>
