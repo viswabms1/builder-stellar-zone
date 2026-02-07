@@ -692,9 +692,9 @@ export default function NVIDIAArchitecture() {
           </div>
 
           <div className="space-y-8">
-            <Card className="border-border/50 bg-card/50 backdrop-blur">
+            <Card className="border-border/50 bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur hover:shadow-lg hover:shadow-brand-blue/20 transition-all duration-300">
               <CardHeader>
-                <CardTitle className="text-2xl flex items-center gap-3 mb-4">
+                <CardTitle className="text-xl sm:text-2xl flex items-center gap-3 mb-4 font-display">
                   <Code className="w-8 h-8 text-brand-blue" />
                   CUDA: Supercharging Your Code
                 </CardTitle>
