@@ -81,15 +81,15 @@ export default function CentreOfExcellence() {
         </div>
 
         <div className="relative max-w-7xl mx-auto px-3 text-center">
-          <div className="inline-flex items-center px-4 py-2 bg-orange-500/10 rounded-full border border-orange-500/20 mb-8">
-            <Lightbulb className="w-4 h-4 text-orange-500 mr-2" />
-            <span className="text-sm font-medium text-orange-500">
+          <div className="inline-flex items-center px-4 py-2 bg-brand-blue/10 rounded-full border border-brand-blue/20 mb-8">
+            <Lightbulb className="w-4 h-4 text-brand-blue mr-2" />
+            <span className="text-sm font-medium text-brand-blue">
               Innovation Hub
             </span>
           </div>
 
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-            <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-display mb-6 leading-tight text-foreground">
+            <span className="bg-brand-gradient bg-clip-text text-transparent">
               Centre of Excellence
             </span>
             <br />
