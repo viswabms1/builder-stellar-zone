@@ -379,70 +379,70 @@ export default function AIFirst() {
 
           {/* Partnership Value Proposition */}
           <div className="mt-20 grid md:grid-cols-3 gap-8">
-            <Card className="border-border/50 bg-gradient-to-br from-blue-500/10 to-blue-500/5 backdrop-blur hover:border-blue-500/50 transition-all">
+            <Card className="border-border/50 bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur hover:border-brand-blue/50 hover:shadow-lg hover:shadow-brand-blue/20 transition-all">
               <CardHeader>
                 <CardTitle className="flex items-center gap-3 text-xl">
-                  <Target className="w-6 h-6 text-blue-500" />
+                  <Target className="w-6 h-6 text-brand-blue" />
                   For Industry Partners
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
                 <div className="flex items-start gap-2">
-                  <CheckCircle className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" />
                   <span className="text-sm">Access top-tier research talent</span>
                 </div>
                 <div className="flex items-start gap-2">
-                  <CheckCircle className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" />
                   <span className="text-sm">Leverage NVIDIA's advanced infrastructure</span>
                 </div>
                 <div className="flex items-start gap-2">
-                  <CheckCircle className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" />
                   <span className="text-sm">Co-develop innovative solutions</span>
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="border-border/50 bg-gradient-to-br from-purple-500/10 to-purple-500/5 backdrop-blur hover:border-purple-500/50 transition-all">
+            <Card className="border-border/50 bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur hover:border-brand-magenta/50 hover:shadow-lg hover:shadow-brand-magenta/20 transition-all">
               <CardHeader>
                 <CardTitle className="flex items-center gap-3 text-xl">
-                  <Lightbulb className="w-6 h-6 text-purple-500" />
+                  <Lightbulb className="w-6 h-6 text-brand-magenta" />
                   For Researchers
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
                 <div className="flex items-start gap-2">
-                  <CheckCircle className="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-5 h-5 text-brand-magenta flex-shrink-0 mt-0.5" />
                   <span className="text-sm">Work on real-world problems</span>
                 </div>
                 <div className="flex items-start gap-2">
-                  <CheckCircle className="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-5 h-5 text-brand-magenta flex-shrink-0 mt-0.5" />
                   <span className="text-sm">Publish groundbreaking research</span>
                 </div>
                 <div className="flex items-start gap-2">
-                  <CheckCircle className="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-5 h-5 text-brand-magenta flex-shrink-0 mt-0.5" />
                   <span className="text-sm">Build industry connections</span>
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="border-border/50 bg-gradient-to-br from-pink-500/10 to-pink-500/5 backdrop-blur hover:border-pink-500/50 transition-all">
+            <Card className="border-border/50 bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur hover:border-brand-orange/50 hover:shadow-lg hover:shadow-brand-orange/20 transition-all">
               <CardHeader>
                 <CardTitle className="flex items-center gap-3 text-xl">
-                  <Code className="w-6 h-6 text-pink-500" />
+                  <Code className="w-6 h-6 text-brand-orange" />
                   For Students
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
                 <div className="flex items-start gap-2">
-                  <CheckCircle className="w-5 h-5 text-pink-500 flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-5 h-5 text-brand-orange flex-shrink-0 mt-0.5" />
                   <span className="text-sm">Gain industry-relevant experience</span>
                 </div>
                 <div className="flex items-start gap-2">
-                  <CheckCircle className="w-5 h-5 text-pink-500 flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-5 h-5 text-brand-orange flex-shrink-0 mt-0.5" />
                   <span className="text-sm">Mentor with world-class experts</span>
                 </div>
                 <div className="flex items-start gap-2">
-                  <CheckCircle className="w-5 h-5 text-pink-500 flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-5 h-5 text-brand-orange flex-shrink-0 mt-0.5" />
                   <span className="text-sm">Build your professional network</span>
                 </div>
               </CardContent>
