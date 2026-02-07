@@ -1064,7 +1064,7 @@ export default function Navigation() {
                                           : "bg-brand-blue/20",
                                       border:
                                         "border-blue-200/50 dark:border-brand-blue/30",
-                                      text: "text-blue-900 dark:text-brand-blue",
+                                      text: "text-blue-900 dark:text-white",
                                     },
                                     {
                                       bg:
@@ -1073,7 +1073,7 @@ export default function Navigation() {
                                           : "bg-brand-magenta/20",
                                       border:
                                         "border-purple-200/50 dark:border-brand-magenta/30",
-                                      text: "text-purple-900 dark:text-brand-magenta",
+                                      text: "text-purple-900 dark:text-white",
                                     },
                                     {
                                       bg:
@@ -1082,7 +1082,7 @@ export default function Navigation() {
                                           : "bg-brand-orange/20",
                                       border:
                                         "border-orange-200/50 dark:border-brand-orange/30",
-                                      text: "text-orange-900 dark:text-brand-orange",
+                                      text: "text-orange-900 dark:text-white",
                                     },
                                     {
                                       bg:
@@ -1091,7 +1091,7 @@ export default function Navigation() {
                                           : "bg-blue-600/20",
                                       border:
                                         "border-indigo-200/50 dark:border-blue-600/30",
-                                      text: "text-indigo-900 dark:text-blue-200",
+                                      text: "text-indigo-900 dark:text-white",
                                     },
                                   ];
                                   const colors =
