@@ -314,10 +314,10 @@ export default function About() {
                   <Card className="h-full group hover:shadow-lg hover:shadow-brand-blue/20 transition-all duration-300 hover:border-brand-blue/50 bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur-sm border border-border/50 cursor-pointer hover:-translate-y-1">
                     <CardContent className="p-3 text-center">
                       <Icon className="w-10 h-10 text-brand-blue mx-auto mb-4 group-hover:scale-110 group-hover:text-brand-orange transition-all" />
-                      <h3 className="font-bold text-sm md:text-base lg:text-lg font-display mb-2 group-hover:text-brand-blue transition-colors">
+                      <h3 className="font-bold text-xs sm:text-sm md:text-base lg:text-lg font-display mb-2 group-hover:text-brand-blue transition-colors">
                         {section.title}
                       </h3>
-                      <p className="text-xs md:text-sm text-foreground font-body">
+                      <p className="text-xs sm:text-sm md:text-base text-foreground font-body">
                         {section.description}
                       </p>
                     </CardContent>
