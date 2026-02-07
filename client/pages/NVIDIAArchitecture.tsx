@@ -360,25 +360,25 @@ export default function NVIDIAArchitecture() {
 
             <Card className="border-border/50 hover:border-brand-magenta/50 transition-all bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur hover:shadow-lg hover:shadow-brand-magenta/20">
               <CardHeader>
-                <CardTitle className="text-2xl mb-4">
+                <CardTitle className="text-2xl mb-4 font-display">
                   Semester 2-3: Acceleration
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex items-start gap-3">
-                  <CheckCircle className="w-6 h-6 text-purple-500 flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-6 h-6 text-brand-magenta flex-shrink-0 mt-0.5" />
                   <p className="text-base">
                     Access Jetson edge devices for real-world projects
                   </p>
                 </div>
                 <div className="flex items-start gap-3">
-                  <CheckCircle className="w-6 h-6 text-purple-500 flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-6 h-6 text-brand-magenta flex-shrink-0 mt-0.5" />
                   <p className="text-base">
                     Learn GPU acceleration and CUDA basics
                   </p>
                 </div>
                 <div className="flex items-start gap-3">
-                  <CheckCircle className="w-6 h-6 text-purple-500 flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-6 h-6 text-brand-magenta flex-shrink-0 mt-0.5" />
                   <p className="text-base">
                     Build autonomous systems and vision applications
                   </p>
@@ -386,27 +386,27 @@ export default function NVIDIAArchitecture() {
               </CardContent>
             </Card>
 
-            <Card className="border-border/50 hover:border-pink-500/50 transition-all bg-card/50 backdrop-blur">
+            <Card className="border-border/50 hover:border-brand-orange/50 transition-all bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur hover:shadow-lg hover:shadow-brand-orange/20">
               <CardHeader>
-                <CardTitle className="text-2xl mb-4">
+                <CardTitle className="text-2xl mb-4 font-display">
                   Semester 4+: Mastery
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex items-start gap-3">
-                  <CheckCircle className="w-6 h-6 text-pink-500 flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-6 h-6 text-brand-orange flex-shrink-0 mt-0.5" />
                   <p className="text-base">
                     Work on DGX B200 for large-scale model training
                   </p>
                 </div>
                 <div className="flex items-start gap-3">
-                  <CheckCircle className="w-6 h-6 text-pink-500 flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-6 h-6 text-brand-orange flex-shrink-0 mt-0.5" />
                   <p className="text-base">
                     Conduct research with industry partners
                   </p>
                 </div>
                 <div className="flex items-start gap-3">
-                  <CheckCircle className="w-6 h-6 text-pink-500 flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-6 h-6 text-brand-orange flex-shrink-0 mt-0.5" />
                   <p className="text-base">
                     Deploy production AI systems at scale
                   </p>
