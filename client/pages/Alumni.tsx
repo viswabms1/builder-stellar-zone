@@ -190,7 +190,7 @@ export default function Alumni() {
             {alumniFeatures.map((feature, idx) => {
               const Icon = feature.icon;
               return (
-                <Card key={idx} className="border-none shadow-md hover:shadow-lg transition-shadow">
+                <Card key={idx} className="border-none shadow-md hover:shadow-lg hover:shadow-brand-blue/20 transition-all bg-gradient-to-br from-card/80 via-card/60 to-card/40">
                   <CardContent className="pt-6">
                     <div className={`p-3 rounded-lg bg-gradient-to-br ${feature.color} w-fit mb-4`}>
                       <Icon className="h-6 w-6 text-white" />
