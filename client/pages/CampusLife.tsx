@@ -393,16 +393,16 @@ export default function CampusLife() {
           {/* Two Pillars: Heritage + Modern */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* DERBI Foundation - Heritage */}
-            <Card className="overflow-hidden border border-blue-500/30 bg-gradient-to-br from-slate-900/60 to-slate-900/30 rounded-lg hover:border-blue-500/50 transition-colors">
+            <Card className="overflow-hidden border border-border/50 bg-gradient-to-br from-card/80 via-card/60 to-card/40 rounded-lg hover:border-brand-blue/50 transition-colors">
               <CardHeader className="space-y-4">
                 <div>
-                  <Badge className="bg-blue-500/20 text-blue-300 mb-4 text-xs font-bold px-3 py-1">
+                  <Badge className="bg-brand-blue/20 text-brand-blue mb-4 text-xs font-bold px-3 py-1">
                     Est. 2009
                   </Badge>
                   <h3 className="text-2xl font-bold text-foreground mb-2">
                     DERBI Foundation
                   </h3>
-                  <p className="text-sm text-blue-400">
+                  <p className="text-sm text-brand-blue">
                     Innovation & Entrepreneurship Development Centre
                   </p>
                 </div>
