@@ -255,7 +255,7 @@ function AffidavitSection() {
           </p>
         </div>
 
-        <Card className="border border-blue-500/20 bg-blue-500/5 backdrop-blur-sm">
+        <Card className="border border-brand-blue/20 bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur-sm">
           <CardContent className="pt-6 space-y-4">
             <p className="text-foreground">
               <strong>Dear Students,</strong> please fill in the online Anti
@@ -263,7 +263,7 @@ function AffidavitSection() {
             </p>
             <Button
               size="lg"
-              className="w-full bg-gradient-to-r from-orange-500 to-red-600 text-foreground"
+              className="w-full bg-gradient-to-r from-[#0088FF] via-[#FFD700] to-[#FF6B00] hover:via-[#FFC500] text-foreground animate-gradient bg-[length:200%_auto]"
               asChild
             >
               <a
