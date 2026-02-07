@@ -281,7 +281,7 @@ export default function About() {
                 About DSU
               </span>
             </h2>
-            <p className="subheadline text-foreground max-w-3xl mx-auto">
+            <p className="subheadline text-foreground max-w-3xl mx-auto font-display">
               Discover DSU's vision, leadership, legacy, and infrastructure that
               shape a future-ready university.
             </p>
