@@ -987,7 +987,7 @@ function FAQSection() {
             <AccordionItem key={index} value={`faq-${index}`}>
               <AccordionTrigger className="text-left text-base font-semibold text-foreground hover:no-underline">
                 <div className="flex items-center gap-3">
-                  <HelpCircle className="h-5 w-5 text-orange-500 flex-shrink-0" />
+                  <HelpCircle className="h-5 w-5 text-brand-blue flex-shrink-0" />
                   {item.question}
                 </div>
               </AccordionTrigger>
