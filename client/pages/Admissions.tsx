@@ -359,7 +359,6 @@ export default function Admissions() {
 }
 
 function HeroSection() {
-  const { theme } = useTheme();
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-brand-blue/10 via-brand-magenta/5 to-background dark:from-orange-500/10 dark:via-red-500/10 py-10 lg:py-28">
       <div className="absolute inset-0">
