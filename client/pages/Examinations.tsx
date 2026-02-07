@@ -828,11 +828,11 @@ function ResultsCarousel() {
   };
 
   return (
-    <section className="px-3 py-10 bg-gradient-to-b from-background to-orange-500/5">
+    <section className="px-3 py-10 bg-gradient-to-b from-background via-brand-blue/5 to-brand-magenta/5 dark:from-black dark:via-brand-blue/5 dark:to-brand-magenta/5">
       <div className="mx-auto max-w-6xl">
         <div className="mb-10 space-y-3 text-center">
-          <h2 className="text-3xl font-bold md:text-4xl">
-            Results & Notifications
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-display">
+            <span className="bg-brand-gradient bg-clip-text text-transparent">Results & Notifications</span>
           </h2>
           <p className="text-foreground md:text-lg">
             Latest examination results, status updates, and official
