@@ -422,7 +422,7 @@ function NodalOfficerSection() {
           </p>
         </div>
 
-        <Card className="border border-orange-500/30 bg-gradient-to-br from-orange-500/10 to-red-500/5 backdrop-blur-sm">
+        <Card className="border border-brand-blue/30 bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur-sm">
           <CardHeader className="space-y-2">
             <CardTitle className="text-2xl">{NODAL_OFFICER.name}</CardTitle>
             <CardDescription className="text-base font-medium text-foreground">
@@ -437,7 +437,7 @@ function NodalOfficerSection() {
                 </p>
                 <a
                   href={`tel:${NODAL_OFFICER.phone}`}
-                  className="flex items-center gap-2 text-lg font-semibold text-orange-600 hover:text-orange-700"
+                  className="flex items-center gap-2 text-lg font-semibold text-brand-blue hover:text-brand-magenta transition-colors"
                 >
                   <Phone className="h-5 w-5" />
                   {NODAL_OFFICER.phone}
@@ -449,7 +449,7 @@ function NodalOfficerSection() {
                 </p>
                 <a
                   href={`mailto:${NODAL_OFFICER.email}`}
-                  className="flex items-center gap-2 text-lg font-semibold text-orange-600 hover:text-orange-700 break-all"
+                  className="flex items-center gap-2 text-lg font-semibold text-brand-blue hover:text-brand-magenta break-all transition-colors"
                 >
                   <Mail className="h-5 w-5" />
                   {NODAL_OFFICER.email}
@@ -459,7 +459,7 @@ function NodalOfficerSection() {
           </CardContent>
         </Card>
 
-        <div className="mt-8 rounded-2xl border border-orange-500/20 bg-orange-500/5 p-6">
+        <div className="mt-8 rounded-2xl border border-brand-blue/20 bg-gradient-to-br from-brand-blue/5 to-brand-magenta/5 p-6">
           <h3 className="text-lg font-semibold text-foreground mb-3">
             National Anti Ragging Helpline
           </h3>
@@ -469,7 +469,7 @@ function NodalOfficerSection() {
           </p>
           <a
             href="tel:1800-180-5522"
-            className="inline-flex items-center gap-2 text-xl font-bold text-orange-600 hover:text-orange-700"
+            className="inline-flex items-center gap-2 text-xl font-bold text-brand-blue hover:text-brand-magenta transition-colors"
           >
             <Phone className="h-6 w-6" />
             1800-180-5522
