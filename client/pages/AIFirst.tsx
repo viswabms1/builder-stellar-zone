@@ -115,7 +115,7 @@ export default function AIFirst() {
               />
             </div>
             <div>
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">Where Knowledge Meets Intelligence</h2>
+              <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-display mb-6 text-foreground">Where Knowledge Meets <span className="bg-brand-gradient bg-clip-text text-transparent">Intelligence</span></h2>
               <p className="text-xl text-foreground/80 mb-6">
                 Learning becomes limitless when powered by artificial intelligence. Our state-of-the-art learning commons provides an environment where traditional pedagogy merges with cutting-edge AI tools and resources.
               </p>
