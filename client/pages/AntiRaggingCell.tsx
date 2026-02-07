@@ -305,8 +305,8 @@ function CommitteeSection() {
     <section className="px-3 py-10">
       <div className="mx-auto max-w-7xl">
         <div className="text-center mb-10">
-          <h2 className="text-3xl font-bold md:text-4xl">
-            Anti Ragging Committee
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-display">
+            <span className="bg-brand-gradient bg-clip-text text-transparent">Anti Ragging Committee</span>
           </h2>
           <p className="mt-3 text-foreground md:text-lg">
             Comprehensive committee with representation from all schools and
@@ -314,7 +314,7 @@ function CommitteeSection() {
           </p>
           <Button
             variant="outline"
-            className="mt-6 border-orange-500/40 text-orange-600 hover:bg-orange-50"
+            className="mt-6 border-brand-blue/30 text-brand-blue hover:text-brand-magenta hover:bg-brand-blue/10"
             asChild
           >
             <a
@@ -329,7 +329,7 @@ function CommitteeSection() {
         </div>
 
         {/* Committee Table */}
-        <div className="overflow-x-auto rounded-xl border border-orange-500/20 bg-card/70 backdrop-blur-sm">
+        <div className="overflow-x-auto rounded-xl border border-brand-blue/20 bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur-sm">
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b border-orange-500/20 bg-orange-500/5">
