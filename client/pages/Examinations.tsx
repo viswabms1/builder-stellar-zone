@@ -1095,7 +1095,7 @@ function ContactSection() {
                       <a
                         key={phone}
                         href={`tel:${phone.replace(/[^0-9+]/g, "")}`}
-                        className="flex items-center gap-2 text-orange-500 hover:underline"
+                        className="flex items-center gap-2 text-brand-blue hover:text-brand-magenta hover:underline transition-colors"
                       >
                         <Phone className="h-4 w-4" />
                         {phone}
@@ -1109,7 +1109,7 @@ function ContactSection() {
                       <a
                         key={email}
                         href={`mailto:${email}`}
-                        className="flex items-center gap-2 text-orange-500 hover:underline"
+                        className="flex items-center gap-2 text-brand-blue hover:text-brand-magenta hover:underline transition-colors"
                       >
                         <Mail className="h-4 w-4" />
                         {email}
