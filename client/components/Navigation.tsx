@@ -1036,10 +1036,7 @@ export default function Navigation() {
                             }`}
                             style={{
                               scrollbarWidth: "thin",
-                              scrollbarColor:
-                                theme === "light"
-                                  ? "rgba(229, 138, 0, 0.5) rgba(229, 138, 0, 0.1)"
-                                  : "rgba(255, 255, 255, 0.3) rgba(255, 255, 255, 0.1)",
+                              scrollbarColor: "rgba(0, 136, 255, 0.5) rgba(0, 136, 255, 0.1)",
                             }}
                           >
                             {/* Academics Overview Link */}
@@ -1048,8 +1045,8 @@ export default function Navigation() {
                               onClick={() => setAcademicsMenuOpen(false)}
                               className={`w-full block rounded-xl p-4 mb-4 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 font-semibold text-sm ${
                                 theme === "light"
-                                  ? "bg-gradient-to-r from-orange-100 to-orange-50 border border-orange-200/50 text-orange-900 hover:bg-orange-100 hover:text-orange-700"
-                                  : "bg-gradient-to-r from-orange-900/30 to-orange-900/10 border border-orange-600/30 text-orange-200 hover:bg-orange-900/40 hover:text-orange-100"
+                                  ? "bg-gradient-to-r from-blue-100 to-blue-50 border border-blue-200/50 text-blue-900 hover:bg-blue-100 hover:text-brand-blue"
+                                  : "bg-gradient-to-r from-brand-blue/30 to-brand-blue/10 border border-brand-blue/30 text-brand-blue hover:bg-brand-blue/40 hover:text-brand-blue"
                               }`}
                             >
                               Explore All Academics
