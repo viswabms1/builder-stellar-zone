@@ -326,7 +326,7 @@ export default function Leadership() {
             {founders.map((founder, index) => (
               <div key={index} className="group text-center">
                 <div className="mb-6 relative inline-block">
-                  <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-red-600/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-brand-blue/20 to-brand-magenta/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-500" />
                   <div className="relative w-48 h-48 md:w-56 md:h-56 flex items-center justify-center">
                     <img
                       src={founder.image}
@@ -335,20 +335,20 @@ export default function Leadership() {
                     />
                   </div>
                 </div>
-                <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
+                <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-2 font-display">
                   {founder.name}
                 </h3>
-                <p className="text-lg font-semibold text-orange-500 mb-4">
+                <p className="text-base sm:text-lg font-semibold text-brand-blue mb-4">
                   {founder.title}
                 </p>
-                <p className="text-foreground/80 text-center mb-4">
+                <p className="text-xs sm:text-sm md:text-base text-foreground/80 text-center mb-4 font-body">
                   {founder.bio}
                 </p>
-                <div className="pt-4 border-t border-orange-500/20">
-                  <p className="text-sm font-semibold text-orange-500 mb-2">
+                <div className="pt-4 border-t border-brand-blue/20">
+                  <p className="text-xs sm:text-sm font-semibold text-brand-blue mb-2">
                     Institutional Impact
                   </p>
-                  <p className="text-foreground/80 text-sm">
+                  <p className="text-xs sm:text-sm text-foreground/80 font-body">
                     {founder.impact}
                   </p>
                 </div>
