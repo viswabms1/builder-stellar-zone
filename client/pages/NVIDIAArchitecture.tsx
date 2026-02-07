@@ -555,21 +555,24 @@ export default function NVIDIAArchitecture() {
 
           {/* Jetson Family */}
           <div>
-            <h3 className="text-3xl font-bold mb-8">
-              Jetson: AI in Your Hands
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 font-display">
+              <span className="text-foreground">Jetson: AI </span>
+              <span className="bg-brand-gradient bg-clip-text text-transparent">
+                in Your Hands
+              </span>
             </h3>
-            <p className="text-lg text-foreground/70 mb-10">
+            <p className="text-base sm:text-lg text-foreground/70 mb-10 font-body">
               Small, powerful computers for building AI applications in the real
               world—robots, drones, smart devices, and autonomous systems.
             </p>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <Card className="border-border/50 hover:border-blue-500/50 transition-all bg-card/50 backdrop-blur">
+              <Card className="border-border/50 hover:border-brand-blue/50 transition-all bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur hover:shadow-lg hover:shadow-brand-blue/20">
                 <CardHeader>
-                  <Badge variant="outline" className="w-fit mb-3">
+                  <Badge variant="outline" className="w-fit mb-3 border-brand-blue/30 text-brand-blue">
                     Nano
                   </Badge>
-                  <CardTitle className="text-lg">Jetson Orin Nano</CardTitle>
+                  <CardTitle className="text-lg font-display">Jetson Orin Nano</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-3">
                   <div>
@@ -590,7 +593,7 @@ export default function NVIDIAArchitecture() {
                 </CardContent>
               </Card>
 
-              <Card className="border-border/50 hover:border-purple-500/50 transition-all bg-card/50 backdrop-blur">
+              <Card className="border-border/50 hover:border-brand-magenta/50 transition-all bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur hover:shadow-lg hover:shadow-brand-magenta/20">
                 <CardHeader>
                   <Badge variant="outline" className="w-fit mb-3">
                     NX
