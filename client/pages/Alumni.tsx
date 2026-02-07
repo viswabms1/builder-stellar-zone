@@ -221,15 +221,15 @@ export default function Alumni() {
               const isExternal = service.external;
 
               return (
-                <Card key={idx} className="border-none shadow-md hover:shadow-lg transition-shadow group">
+                <Card key={idx} className="border-none shadow-md hover:shadow-lg hover:shadow-brand-blue/20 transition-all group bg-gradient-to-br from-card/80 via-card/60 to-card/40">
                   <CardHeader className="pb-3">
                     <div className="flex items-start justify-between">
                       <div className="flex-1">
                         <CardTitle className="text-xl">{service.name}</CardTitle>
                         <CardDescription>{service.description}</CardDescription>
                       </div>
-                      <div className="p-2 rounded-lg bg-blue-500/10 group-hover:bg-blue-500/20 transition-colors">
-                        <Icon className="h-5 w-5 text-blue-600 dark:text-blue-400" />
+                      <div className="p-2 rounded-lg bg-brand-blue/10 group-hover:bg-brand-blue/20 transition-colors">
+                        <Icon className="h-5 w-5 text-brand-blue" />
                       </div>
                     </div>
                   </CardHeader>
@@ -239,14 +239,14 @@ export default function Alumni() {
                         href={service.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-blue-600 dark:text-blue-400 hover:text-blue-700 font-semibold flex items-center gap-2"
+                        className="text-brand-blue hover:text-brand-magenta font-semibold flex items-center gap-2 transition-colors"
                       >
                         Visit Portal <ArrowRight className="h-4 w-4" />
                       </a>
                     ) : (
                       <Link
                         to={service.href}
-                        className="text-blue-600 dark:text-blue-400 hover:text-blue-700 font-semibold flex items-center gap-2"
+                        className="text-brand-blue hover:text-brand-magenta font-semibold flex items-center gap-2 transition-colors"
                       >
                         Learn More <ArrowRight className="h-4 w-4" />
                       </Link>
