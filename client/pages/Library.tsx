@@ -116,7 +116,7 @@ export default function Library() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero Section */}
-      <section className="relative py-10 lg:py-32 bg-gradient-to-br from-blue-500/10 via-purple-600/5 to-background dark:from-slate-800 dark:via-slate-800 dark:to-slate-900 overflow-hidden">
+      <section className="relative py-10 lg:py-32 bg-gradient-to-br from-brand-blue/5 via-brand-magenta/5 to-background dark:from-slate-900 dark:via-black dark:to-black overflow-hidden">
         <div className="absolute inset-0">
           <img
             src={heroBgImage}
@@ -130,19 +130,19 @@ export default function Library() {
         </div>
 
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/10 dark:bg-blue-500/30 rounded-full filter blur-3xl animate-float"></div>
+          <div className="absolute top-20 left-10 w-72 h-72 bg-brand-blue/20 rounded-full filter blur-3xl animate-float"></div>
           <div
-            className="absolute bottom-20 right-10 w-96 h-96 bg-purple-600/10 dark:bg-purple-600/30 rounded-full filter blur-3xl animate-float"
+            className="absolute bottom-20 right-10 w-96 h-96 bg-brand-magenta/20 rounded-full filter blur-3xl animate-float"
             style={{ animationDelay: "2s" }}
           ></div>
         </div>
 
         <div className="relative max-w-7xl mx-auto px-3 text-center">
-          <Badge className="mb-4 bg-blue-500/20 text-blue-300 hover:bg-blue-500/30">
+          <Badge className="mb-4 bg-brand-blue/20 text-white hover:bg-brand-blue/30">
             Knowledge Hub
           </Badge>
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight text-white">
-            DSU Central Library
+          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-display mb-8 leading-tight text-white">
+            <span className="bg-gradient-to-r from-white via-white/90 to-white/80 bg-clip-text text-transparent">DSU Central Library</span>
           </h1>
           <p className="text-xl md:text-2xl font-bold text-white mb-6 max-w-4xl mx-auto leading-relaxed">
             A world-class center of intellectual life with comprehensive resources for learning, research, and innovation
