@@ -586,18 +586,18 @@ export default function Research() {
                 href={item.href}
                 target="_blank"
                 rel="noreferrer"
-                className="group rounded-2xl overflow-hidden border border-border/40 bg-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-orange-500/10 transition-all p-6"
+                className="group rounded-2xl overflow-hidden border border-border/40 bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur-sm hover:shadow-lg hover:shadow-brand-blue/10 transition-all p-6"
               >
                 <div className="flex items-start gap-4 group-hover:translate-x-1 transition-transform">
-                  <div className="w-10 h-10 rounded-lg bg-orange-500/10 flex items-center justify-center flex-shrink-0">
-                    <item.icon className="w-5 h-5 text-orange-500" />
+                  <div className="w-10 h-10 rounded-lg bg-brand-blue/10 flex items-center justify-center flex-shrink-0">
+                    <item.icon className="w-5 h-5 text-brand-blue" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="font-medium text-foreground group-hover:text-orange-500 transition-colors">
+                    <h3 className="font-medium text-foreground group-hover:text-brand-blue transition-colors">
                       {item.title}
                     </h3>
                   </div>
-                  <ChevronRight className="w-4 h-4 text-orange-500/50 group-hover:text-orange-500 transition-colors" />
+                  <ChevronRight className="w-4 h-4 text-brand-blue/50 group-hover:text-brand-blue transition-colors" />
                 </div>
               </a>
             ))}
