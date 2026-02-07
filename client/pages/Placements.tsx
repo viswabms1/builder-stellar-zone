@@ -1217,7 +1217,7 @@ export default function Placements() {
                   </button>
 
                   {expandedSector[key] && (
-                    <div className="border-t border-border/30 px-4 py-8 bg-gradient-to-b from-orange-500/5 to-transparent">
+                    <div className="border-t border-border/30 px-4 py-8 bg-gradient-to-b from-brand-blue/5 dark:from-orange-500/5 to-transparent">
                       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                         {school.recruiters.map((recruiter, recruiterIdx) => (
                           <div
