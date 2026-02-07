@@ -452,7 +452,7 @@ export default function Leadership() {
                       <p className="text-xs font-semibold text-foreground mb-2">
                         📩 CONTACT
                       </p>
-                      <p className="text-xs text-foreground break-all">
+                      <p className="text-xs text-foreground break-all font-body">
                         {leader.contact}
                       </p>
                     </div>
@@ -555,7 +555,7 @@ export default function Leadership() {
                       <p className="text-xs font-semibold text-foreground mb-2">
                         📩 CONTACT
                       </p>
-                      <p className="text-xs text-foreground break-all">
+                      <p className="text-xs text-foreground break-all font-body">
                         {leader.contact}
                       </p>
                     </div>
