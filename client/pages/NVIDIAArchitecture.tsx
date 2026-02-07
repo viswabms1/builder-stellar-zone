@@ -25,10 +25,10 @@ export default function NVIDIAArchitecture() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero Section */}
-      <section className="relative py-8 lg:py-12 bg-gradient-to-b from-slate-900 via-blue-900/20 to-background overflow-hidden">
+      <section className="relative py-8 lg:py-12 bg-gradient-to-b from-brand-blue/5 via-brand-magenta/5 to-background dark:from-slate-900 dark:via-blue-900/20 overflow-hidden">
         {/* Background with grid effect */}
         <div className="absolute inset-0 opacity-30">
-          <div className="absolute inset-0 bg-gradient-to-b from-green-500/5 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-brand-blue/5 to-transparent dark:from-green-500/5"></div>
         </div>
 
         {/* Main Content Grid */}
