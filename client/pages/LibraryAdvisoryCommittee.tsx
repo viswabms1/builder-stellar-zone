@@ -102,10 +102,13 @@ export default function LibraryAdvisoryCommittee() {
       {/* Content Section */}
       <section className="py-16 px-3 max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Committee Structure
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 font-display">
+            <span className="text-foreground">Committee </span>
+            <span className="bg-brand-gradient bg-clip-text text-transparent">
+              Structure
+            </span>
           </h2>
-          <p className="text-lg text-foreground/70">
+          <p className="text-base sm:text-lg text-foreground font-body">
             Multiple specialized committees overseeing different aspects of
             library operations
           </p>
