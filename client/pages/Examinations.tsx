@@ -1121,7 +1121,7 @@ function ContactSection() {
             </Card>
           ))}
         </div>
-        <Card className="border border-orange-500/30 bg-card/70 backdrop-blur-sm">
+        <Card className="border border-brand-blue/30 bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur-sm">
           <CardContent className="flex flex-col gap-4 rounded-3xl p-6 text-sm text-foreground md:flex-row md:items-center md:justify-between md:text-base">
             <div>
               <span className="font-semibold text-foreground">
@@ -1132,7 +1132,7 @@ function ContactSection() {
             </div>
             <Button
               variant="ghost"
-              className="text-orange-500 hover:bg-transparent"
+              className="text-brand-blue hover:text-brand-magenta hover:bg-transparent transition-colors"
               asChild
             >
               <a href="mailto:coe@dsu.edu.in">
