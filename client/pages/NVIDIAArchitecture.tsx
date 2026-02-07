@@ -128,13 +128,16 @@ export default function NVIDIAArchitecture() {
       </section>
 
       {/* DSU's NVIDIA Architecture */}
-      <section id="explore" className="px-3 py-20 bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-blue-500/5">
+      <section id="explore" className="px-3 py-20 bg-gradient-to-r from-brand-blue/5 via-brand-magenta/5 to-brand-blue/5">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-14">
-            <h2 className="text-5xl md:text-6xl font-bold mb-6">
-              DSU's NVIDIA AI Architecture
+            <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 font-display">
+              <span className="text-foreground">DSU's </span>
+              <span className="bg-brand-gradient bg-clip-text text-transparent">
+                NVIDIA AI Architecture
+              </span>
             </h2>
-            <p className="text-2xl text-foreground/70 max-w-4xl mx-auto leading-relaxed mb-8">
+            <p className="text-base sm:text-xl md:text-2xl lg:text-3xl text-foreground/70 max-w-4xl mx-auto leading-relaxed mb-8 font-body">
               Dayananda Sagar University has partnered with NVIDIA to create a AI architecture enables students to build, train, and deploy large-scale AI systems across vision, language, and data-intensive domains.
             </p>
           </div>
