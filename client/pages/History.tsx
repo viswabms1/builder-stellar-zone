@@ -109,34 +109,22 @@ export default function History() {
 
         <div className="relative max-w-7xl mx-auto px-3 py-10 lg:py-32">
           <div className="text-center">
-            <div className={`inline-flex items-center px-4 py-2 rounded-full border mb-8 ${
-              theme === "light"
-                ? "bg-orange-100 border-orange-300"
-                : "bg-orange-500/10 border-orange-500/20"
-            }`}>
-              <Calendar className={`w-4 h-4 mr-2 ${
-                theme === "light" ? "text-orange-700" : "text-orange-500"
-              }`} />
-              <span className={`text-sm font-medium ${
-                theme === "light" ? "text-orange-700" : "text-orange-500"
-              }`}>
+            <div className="inline-flex items-center px-4 py-2 rounded-full border border-brand-blue/40 bg-brand-blue/10 mb-8">
+              <Calendar className="w-4 h-4 mr-2 text-brand-blue" />
+              <span className="text-sm font-medium text-brand-blue">
                 Founding Pillars
               </span>
             </div>
 
-            <h1 className={`text-4xl md:text-5xl font-bold mb-6 leading-tight ${
-              theme === "light" ? "text-orange-900" : "text-white"
-            }`}>
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-2 sm:mb-3 md:mb-4 leading-tight font-display text-white">
               Inspiring the Shape of Things to Come
             </h1>
 
-            <p className={`text-lg md:text-xl font-semibold mb-6 leading-relaxed max-w-3xl mx-auto ${
-              theme === "light" ? "text-orange-700" : "text-white"
-            }`}>
+            <p className="text-base sm:text-xl md:text-2xl lg:text-3xl font-semibold text-white mb-1 sm:mb-2 md:mb-6 leading-tight font-display">
               Tracing six decades of educational leadership culminating in a modern, multidisciplinary university.
             </p>
 
-            <p className="text-lg md:text-xl text-foreground mb-8 leading-relaxed max-w-3xl mx-auto">
+            <p className="text-xs sm:text-base md:text-lg lg:text-xl font-medium text-white/80 mt-2 font-display hidden sm:block">
               A legacy built on vision, excellence, and commitment to transforming lives through quality education. From the Mahatma Gandhi Vidya Peetha Education Trust to Dayananda Sagar University.
             </p>
           </div>
