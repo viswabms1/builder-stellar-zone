@@ -1150,8 +1150,8 @@ export default function Navigation() {
                                                     }
                                                     className={`text-xs font-semibold flex items-center gap-2 transition-all w-full p-2 rounded hover:bg-white/30 dark:hover:bg-white/10 ${
                                                       theme === "light"
-                                                        ? "text-gray-700 hover:text-orange-700"
-                                                        : "text-white/80 hover:text-white"
+                                                        ? "text-gray-700 hover:text-brand-blue"
+                                                        : "text-white/80 hover:text-brand-blue"
                                                     }`}
                                                   >
                                                     <ChevronDown
