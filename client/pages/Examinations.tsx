@@ -667,7 +667,7 @@ function CalendarSection() {
 
 function ResourceSections() {
   return (
-    <section className="bg-gradient-to-b from-orange-500/5 to-transparent px-3 py-10">
+    <section className="bg-gradient-to-b from-brand-magenta/5 via-brand-blue/5 to-transparent dark:from-brand-magenta/5 dark:via-brand-blue/5 dark:to-transparent px-3 py-10">
       <div className="mx-auto flex max-w-7xl flex-col gap-20">
         {EXAM_SECTIONS.map((section) => (
           <ExamResourceSection key={section.id} section={section} />
