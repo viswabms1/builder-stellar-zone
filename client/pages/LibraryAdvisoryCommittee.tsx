@@ -140,7 +140,7 @@ export default function LibraryAdvisoryCommittee() {
                         key={i}
                         className="text-foreground/70 flex items-center gap-2"
                       >
-                        <span className="h-2 w-2 rounded-full bg-violet-600"></span>
+                        <span className="h-2 w-2 rounded-full bg-brand-blue"></span>
                         {member}
                       </li>
                     ))}
@@ -156,7 +156,7 @@ export default function LibraryAdvisoryCommittee() {
                         key={i}
                         className="text-foreground/70 flex items-start gap-2"
                       >
-                        <span className="h-1.5 w-1.5 rounded-full bg-violet-600 mt-1.5 flex-shrink-0"></span>
+                        <span className="h-1.5 w-1.5 rounded-full bg-brand-blue mt-1.5 flex-shrink-0"></span>
                         <span>{resp}</span>
                       </li>
                     ))}
