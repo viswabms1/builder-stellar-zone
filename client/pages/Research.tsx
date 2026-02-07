@@ -156,14 +156,14 @@ export default function Research() {
             ].map((stat, index) => (
               <Card
                 key={index}
-                className={`text-center p-4 bg-card/30 backdrop-blur-sm border border-border/30 hover:border-orange-500/30 transition-all duration-300 transform ${
+                className={`text-center p-4 bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur-sm border border-border/30 hover:border-brand-blue/30 transition-all duration-300 transform ${
                   metricsVisible
                     ? "scale-100 opacity-100"
                     : "scale-95 opacity-0"
                 }`}
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
-                <div className="text-3xl font-bold text-orange-500 mb-2">
+                <div className="text-3xl font-bold text-brand-blue mb-2">
                   {stat.number}
                 </div>
                 <div className="text-sm font-semibold text-foreground mb-2">
