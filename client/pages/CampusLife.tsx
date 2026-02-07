@@ -488,9 +488,9 @@ export default function CampusLife() {
                   href="https://aicdsu.foundation"
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                  className="inline-block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                 >
-                  <Button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 text-sm rounded-lg transition-all duration-300 group w-full">
+                  <Button className="bg-brand-blue hover:bg-brand-blue/90 text-foreground px-6 py-2 text-sm rounded-lg transition-all duration-300 group w-full">
                     Explore AIC-DSU
                     <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                   </Button>
