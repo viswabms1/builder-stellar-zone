@@ -187,8 +187,8 @@ export default function NVIDIAArchitecture() {
                   </p>
 
                   {/* Layer 4: Application Layer */}
-                  <div className="bg-gradient-to-r from-amber-500/10 to-orange-500/10 p-6 rounded-lg border border-orange-500/30">
-                    <h4 className="text-xl font-bold text-orange-500 mb-3">
+                  <div className="bg-gradient-to-r from-brand-blue/10 to-brand-magenta/10 p-6 rounded-lg border border-brand-blue/30">
+                    <h4 className="text-xl font-bold text-brand-blue mb-3 font-display">
                       Layer 4: AI Applications
                     </h4>
                     <p className="text-base text-foreground/80 leading-relaxed mb-3">
@@ -204,8 +204,8 @@ export default function NVIDIAArchitecture() {
                   </div>
 
                   {/* Layer 3: AI Frameworks & Libraries */}
-                  <div className="bg-gradient-to-r from-purple-500/10 to-violet-500/10 p-6 rounded-lg border border-purple-500/30">
-                    <h4 className="text-xl font-bold text-purple-500 mb-3">
+                  <div className="bg-gradient-to-r from-brand-magenta/10 to-brand-blue/10 p-6 rounded-lg border border-brand-magenta/30">
+                    <h4 className="text-xl font-bold text-brand-magenta mb-3 font-display">
                       Layer 3: AI & Deep Learning Frameworks
                     </h4>
                     <p className="text-base text-foreground/80 leading-relaxed mb-3">
@@ -233,8 +233,8 @@ export default function NVIDIAArchitecture() {
                   </div>
 
                   {/* Layer 2: CUDA Layer */}
-                  <div className="bg-gradient-to-r from-blue-500/10 to-cyan-500/10 p-6 rounded-lg border border-blue-500/30">
-                    <h4 className="text-xl font-bold text-blue-500 mb-3">
+                  <div className="bg-gradient-to-r from-brand-blue/10 to-brand-magenta/10 p-6 rounded-lg border border-brand-blue/30">
+                    <h4 className="text-xl font-bold text-brand-blue mb-3 font-display">
                       Layer 2: CUDA - The Parallel Computing Platform
                     </h4>
                     <p className="text-base text-foreground/80 leading-relaxed mb-3">
