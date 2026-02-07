@@ -70,11 +70,11 @@ export default function About() {
         </div>
 
         <div className="relative max-w-7xl mx-auto px-3 text-center">
-          <h1 className="headline-1 font-display mb-8 text-white">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-2 sm:mb-3 md:mb-4 leading-tight font-display">
             Building India's AI-First Academic Ecosystem
           </h1>
 
-          <p className="subheadline font-display text-white mb-6 max-w-4xl mx-auto">
+          <p className="text-base sm:text-xl md:text-2xl lg:text-3xl font-semibold text-white mb-1 sm:mb-2 md:mb-6 leading-tight font-display">
             A multidisciplinary university where legacy education meets
             industry-grade AI, research, and innovation.
           </p>
