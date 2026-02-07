@@ -302,21 +302,22 @@ export default function Leadership() {
       <div className="h-1 bg-gradient-to-r from-transparent via-orange-500/20 to-transparent"></div>
 
       {/* Founders Section */}
-      <section className="px-3 py-20 bg-gradient-to-r from-orange-500/5 via-red-600/5 to-background">
+      <section className="px-3 py-20 bg-gradient-to-r from-brand-blue/5 via-brand-magenta/5 to-background">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <Badge
               variant="outline"
-              className="border-orange-500/20 bg-orange-500/10 text-orange-500 mb-4"
+              className="border-brand-blue/20 bg-brand-blue/10 text-brand-blue mb-4"
             >
               Founding Leadership
             </Badge>
-            <h2 className={`text-4xl md:text-5xl font-bold mb-3 ${
-              theme === "light" ? "text-orange-900" : "text-white"
-            }`}>
-              Our Founders
+            <h2 className="headline-2 mb-6 font-display">
+              <span className="text-foreground">Our </span>
+              <span className="bg-brand-gradient bg-clip-text text-transparent">
+                Founders
+              </span>
             </h2>
-            <p className="text-lg text-foreground max-w-3xl mx-auto">
+            <p className="subheadline text-foreground max-w-3xl mx-auto font-display">
               Visionary leaders whose legacy continues to inspire excellence and innovation
             </p>
           </div>
