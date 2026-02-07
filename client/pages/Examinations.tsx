@@ -652,7 +652,7 @@ function CalendarSection() {
             );
           })}
         </div>
-        <div className="mt-8 rounded-2xl border border-orange-500/20 bg-orange-500/5 p-6">
+        <div className="mt-8 rounded-2xl border border-brand-blue/20 bg-gradient-to-br from-brand-blue/5 to-brand-magenta/5 p-6">
           <p className="text-sm text-foreground">
             <strong>Note:</strong> Calendar events are indicative and subject to
             change. Always refer to official circulars for confirmed dates. New
