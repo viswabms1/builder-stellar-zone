@@ -471,15 +471,15 @@ export default function CampusLife() {
 
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-sm text-foreground">
-                    <span className="w-2 h-2 bg-blue-400 rounded-full"></span>
+                    <span className="w-2 h-2 bg-brand-blue rounded-full"></span>
                     25+ startups incubated
                   </div>
                   <div className="flex items-center gap-2 text-sm text-foreground">
-                    <span className="w-2 h-2 bg-blue-400 rounded-full"></span>
+                    <span className="w-2 h-2 bg-brand-blue rounded-full"></span>
                     ₹50Cr+ funding raised
                   </div>
                   <div className="flex items-center gap-2 text-sm text-foreground">
-                    <span className="w-2 h-2 bg-blue-400 rounded-full"></span>
+                    <span className="w-2 h-2 bg-brand-blue rounded-full"></span>
                     150+ jobs created
                   </div>
                 </div>
