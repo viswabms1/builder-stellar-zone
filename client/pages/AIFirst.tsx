@@ -166,7 +166,7 @@ export default function AIFirst() {
         <div className="max-w-7xl mx-auto px-3">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">Education Amplified by AI</h2>
+              <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-display mb-6 text-foreground">Education Amplified by <span className="bg-brand-gradient bg-clip-text text-transparent">AI</span></h2>
               <p className="text-xl text-foreground/80 mb-8">
                 Knowledge optimized by artificial intelligence ensures every student receives an education tailored to their unique learning needs and aspirations.
               </p>
