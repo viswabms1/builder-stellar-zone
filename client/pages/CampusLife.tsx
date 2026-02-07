@@ -847,7 +847,7 @@ export default function CampusLife() {
               </p>
               <div className="grid grid-cols-3 gap-6 items-center justify-center">
                 <div className="flex flex-col items-center">
-                  <Badge className="bg-orange-500/20 text-orange-400 mb-2 text-sm font-bold px-4 py-1">
+                  <Badge className="bg-brand-blue/20 text-brand-blue mb-2 text-sm font-bold px-4 py-1">
                     NAAC A+ Accredited
                   </Badge>
                   <p className="text-xs text-foreground/60 mt-1">
