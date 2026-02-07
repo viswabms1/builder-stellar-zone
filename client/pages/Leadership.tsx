@@ -951,7 +951,7 @@ export default function Leadership() {
       </section>
 
       {/* Leadership Values Section Divider */}
-      <div className="h-1 bg-gradient-to-r from-transparent via-orange-500/20 to-transparent"></div>
+      <div className="h-1 bg-gradient-to-r from-transparent via-brand-blue/20 to-transparent"></div>
 
       {/* Organizational Values */}
       <section className="px-3 py-20">
