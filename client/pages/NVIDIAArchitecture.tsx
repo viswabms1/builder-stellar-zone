@@ -1154,7 +1154,7 @@ export default function NVIDIAArchitecture() {
       {/* Final CTA */}
       <section className="px-3 py-16 bg-gradient-to-r from-brand-blue/10 via-brand-magenta/10 to-brand-blue/10 dark:to-black">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-8 font-display">
+          <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-8 font-display">
             <span className="text-foreground">Ready to </span>
             <span className="bg-brand-gradient bg-clip-text text-transparent">
               Master AI?
