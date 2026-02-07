@@ -944,10 +944,12 @@ function FAQSection() {
       : FAQ_ITEMS.filter((item) => item.category === selectedCategory);
 
   return (
-    <section id="faqs" className="px-3 py-10">
+    <section id="faqs" className="px-3 py-10 bg-gradient-to-br from-brand-magenta/5 via-brand-blue/5 to-background dark:from-brand-magenta/5 dark:via-brand-blue/5 dark:to-black">
       <div className="mx-auto max-w-5xl">
         <div className="mb-10 text-center">
-          <h2 className="text-3xl font-bold md:text-4xl">Student FAQs</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-display">
+            <span className="bg-brand-gradient bg-clip-text text-transparent">Student FAQs</span>
+          </h2>
           <p className="mt-3 text-foreground md:text-lg">
             Find answers to common questions about examinations, forms, and
             processes.
