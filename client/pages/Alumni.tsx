@@ -259,13 +259,15 @@ export default function Alumni() {
         </div>
 
         {/* Call to Action */}
-        <Card className="border-none shadow-lg bg-gradient-to-r from-blue-600/10 to-purple-600/10 dark:from-blue-950/30 dark:to-purple-950/30">
+        <Card className="border-none shadow-lg bg-gradient-to-r from-brand-blue/10 via-brand-magenta/10 to-brand-blue/10">
           <CardContent className="py-12 text-center">
-            <h3 className="text-2xl md:text-3xl font-bold mb-4">Not Yet a Member?</h3>
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold font-display mb-4">
+              <span className="bg-brand-gradient bg-clip-text text-transparent">Not Yet a Member?</span>
+            </h3>
             <p className="text-lg text-foreground/70 mb-6 max-w-2xl mx-auto">
               Register with the DSU Alumni Portal to join our vibrant community and unlock exclusive benefits
             </p>
-            <Button asChild className="bg-blue-600 hover:bg-blue-700">
+            <Button asChild className="bg-gradient-to-r from-[#0088FF] via-[#FFD700] to-[#FF6B00] hover:via-[#FFC500] text-foreground animate-gradient bg-[length:200%_auto]">
               <a href="https://alumni.dsu.edu.in/" target="_blank" rel="noopener noreferrer">
                 Register Now <ArrowRight className="ml-2 h-4 w-4" />
               </a>
@@ -274,7 +276,7 @@ export default function Alumni() {
         </Card>
 
         <div className="mt-12 text-center">
-          <Button asChild className="bg-blue-600 hover:bg-blue-700">
+          <Button asChild className="bg-gradient-to-r from-[#0088FF] via-[#FFD700] to-[#FF6B00] hover:via-[#FFC500] text-foreground animate-gradient bg-[length:200%_auto]">
             <Link to="/">
               Back to Home <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
