@@ -183,19 +183,16 @@ export default function LibraryEResources() {
         </Card>
 
         {/* Collections Overview */}
-        <Card className="border-none shadow-lg bg-purple-50 dark:bg-slate-800">
-          <CardHeader style={{ backgroundColor: "rgba(0, 0, 0, 1)" }}>
-            <CardTitle className="text-3xl md:text-4xl">
-              Our Digital Collections
+        <Card className="border-none shadow-lg bg-gradient-to-br from-card/80 via-card/60 to-card/40">
+          <CardHeader className="bg-gradient-to-r from-brand-blue/10 via-brand-magenta/10 to-brand-blue/10">
+            <CardTitle className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-display">
+              <span className="bg-brand-gradient bg-clip-text text-transparent">Our Digital Collections</span>
             </CardTitle>
-            <CardDescription className="text-lg">
+            <CardDescription className="text-lg text-foreground/80">
               Comprehensive resources across all academic disciplines
             </CardDescription>
           </CardHeader>
-          <CardContent
-            className="space-y-4"
-            style={{ backgroundColor: "rgba(0, 0, 0, 0.7)" }}
-          >
+          <CardContent className="space-y-4">
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <h4 className="font-semibold text-lg mb-2">
