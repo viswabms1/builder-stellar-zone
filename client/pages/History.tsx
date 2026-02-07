@@ -152,10 +152,10 @@ export default function History() {
               return (
                 <Card
                   key={index}
-                  className="bg-card/50 backdrop-blur-sm border border-border/50 hover:border-orange-500/30 transition-all duration-300 overflow-hidden"
+                  className="group bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur-sm border border-border/50 hover:border-brand-blue/50 hover:shadow-lg hover:shadow-brand-blue/20 transition-all duration-300 overflow-hidden"
                 >
                   {founder.image && (
-                    <div className="w-full h-64 bg-gradient-to-br from-orange-500/10 to-red-600/10 flex items-center justify-center overflow-hidden">
+                    <div className="w-full h-64 bg-gradient-to-br from-brand-blue/10 to-brand-magenta/10 flex items-center justify-center overflow-hidden">
                       <img
                         src={founder.image}
                         alt={founder.name}
@@ -168,33 +168,25 @@ export default function History() {
                   )}
                   <CardHeader>
                     <div className="flex items-start gap-4 mb-2">
-                      <div className={`w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0 ${
-                        theme === "light" ? "bg-orange-100" : "bg-orange-500/20"
-                      }`}>
-                        <Icon className={`w-6 h-6 ${
-                          theme === "light" ? "text-orange-700" : "text-orange-500"
-                        }`} />
+                      <div className="w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0 bg-brand-blue/10 group-hover:bg-brand-blue/20 transition-colors">
+                        <Icon className="w-6 h-6 text-brand-blue group-hover:scale-110 transition-transform" />
                       </div>
                       <div>
-                        <CardTitle className="text-2xl">{founder.name}</CardTitle>
-                        <p className={`text-sm font-semibold mt-1 ${
-                          theme === "light" ? "text-orange-700" : "text-orange-500"
-                        }`}>{founder.title}</p>
+                        <CardTitle className="text-lg sm:text-xl md:text-2xl font-display group-hover:text-brand-blue transition-colors">{founder.name}</CardTitle>
+                        <p className="text-xs sm:text-sm font-semibold mt-1 text-brand-blue">{founder.title}</p>
                       </div>
                     </div>
                   </CardHeader>
                   <CardContent className="space-y-4">
-                    <p className="text-sm text-foreground italic border-l-2 border-orange-500/30 pl-3">
+                    <p className="text-xs sm:text-sm text-foreground italic border-l-2 border-brand-blue/30 pl-3 font-body">
                       {founder.background}
                     </p>
 
-                    <div className="bg-orange-500/5 border border-orange-500/20 rounded-lg p-3">
-                      <h4 className={`text-sm font-semibold mb-2 ${
-                        theme === "light" ? "text-orange-700" : "text-orange-400"
-                      }`}>
+                    <div className="bg-brand-blue/5 border border-brand-blue/20 rounded-lg p-3">
+                      <h4 className="text-xs sm:text-sm font-semibold mb-2 text-brand-blue">
                         {founder.philosophy}
                       </h4>
-                      <p className="text-sm text-foreground leading-relaxed">
+                      <p className="text-xs sm:text-sm text-foreground leading-relaxed font-body">
                         {founder.philosophyText}
                       </p>
                     </div>
@@ -202,10 +194,8 @@ export default function History() {
                     <div className="space-y-2">
                       {founder.achievements.map((achievement, idx) => (
                         <div key={idx} className="flex items-start gap-2">
-                          <CheckCircle className={`w-4 h-4 flex-shrink-0 mt-0.5 ${
-                            theme === "light" ? "text-orange-700" : "text-orange-500"
-                          }`} />
-                          <span className="text-sm text-foreground">
+                          <CheckCircle className="w-4 h-4 flex-shrink-0 mt-0.5 text-brand-blue" />
+                          <span className="text-xs sm:text-sm text-foreground font-body">
                             {achievement}
                           </span>
                         </div>
