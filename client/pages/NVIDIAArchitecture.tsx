@@ -421,10 +421,13 @@ export default function NVIDIAArchitecture() {
       <section className="px-3 py-20">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-14">
-            <h2 className="text-5xl md:text-6xl font-bold mb-6">
-              Your AI Training Arsenal
+            <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 font-display">
+              <span className="text-foreground">Your AI </span>
+              <span className="bg-brand-gradient bg-clip-text text-transparent">
+                Training Arsenal
+              </span>
             </h2>
-            <p className="text-2xl text-foreground/70 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-xl md:text-2xl lg:text-3xl text-foreground/70 max-w-3xl mx-auto leading-relaxed font-body">
               Enterprise-grade hardware that makes complex AI tasks possible
             </p>
           </div>
