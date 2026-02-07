@@ -669,8 +669,7 @@ function BrochureSection() {
               </CardHeader>
               <CardContent>
                 <Button
-                  variant="secondary"
-                  className="w-full justify-center rounded-xl bg-orange-500/10 text-orange-500 hover:bg-orange-500 hover:text-foreground"
+                  className="w-full justify-center rounded-xl bg-brand-blue/10 text-brand-blue hover:bg-brand-blue hover:text-foreground font-semibold"
                   asChild
                 >
                   <a href={resource.href} target="_blank" rel="noreferrer">
