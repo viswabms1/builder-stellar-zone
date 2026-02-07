@@ -113,10 +113,10 @@ export default function About() {
                 className="text-center p-3 bg-white/95 backdrop-blur-sm border border-white/40 hover:border-white/60 transition-all duration-300"
               >
                 <stat.icon className="w-8 h-8 text-brand-blue mx-auto mb-3" />
-                <div className="text-xl md:text-2xl lg:text-3xl font-bold text-slate-900 mb-1 font-display">
+                <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-1 font-display">
                   {stat.number}
                 </div>
-                <div className="text-xs md:text-sm text-slate-700 font-body">{stat.label}</div>
+                <div className="text-xs sm:text-sm md:text-base text-slate-700 font-body">{stat.label}</div>
               </Card>
             ))}
           </div>
