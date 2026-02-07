@@ -128,7 +128,7 @@ export default function About() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-8">
             <h2 className="headline-2 mb-6">
-              <span className="bg-brand-gradient bg-clip-text text-transparent">
+              <span className="bg-brand-gradient bg-clip-text text-transparent font-display">
                 Welcome to DSU
               </span>
             </h2>
