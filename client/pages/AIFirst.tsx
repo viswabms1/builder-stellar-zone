@@ -589,12 +589,12 @@ export default function AIFirst() {
             Whether you're a student, researcher, entrepreneur, or industry leader—DSU's AI-First initiative offers unprecedented opportunities for growth, innovation, and impact.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 text-white">
+            <Button size="lg" className="bg-gradient-to-r from-[#0088FF] via-[#FFD700] to-[#FF6B00] hover:from-[#FF6B00] hover:via-[#FFD700] hover:to-[#0088FF] text-foreground animate-gradient bg-[length:200%_auto]">
               Join Our Community
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
             <Link to="/nvidia-ai-architecture">
-              <Button variant="outline" size="lg" className="border-2 border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white">
+              <Button variant="outline" size="lg" className="border-2 border-brand-blue text-brand-blue hover:bg-brand-blue/10">
                 Learn About Programs
               </Button>
             </Link>
