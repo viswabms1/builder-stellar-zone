@@ -109,7 +109,7 @@ export default function Research() {
             </span>
           </h1>
 
-          <p className="text-lg md:text-xl text-gray-200 mb-8 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-foreground mb-8 leading-relaxed max-w-3xl mx-auto">
             DSU advances AI-enabled research across digital transformation,
             biotechnology, sustainable energy, and healthcare innovation—powered
             by NVIDIA's computing infrastructure and strategic industry
@@ -120,7 +120,7 @@ export default function Research() {
             <a href="#research-centers">
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-red-600 hover:to-orange-500 text-foreground px-8 py-6 text-lg font-semibold rounded-2xl transition-all duration-300"
+                className="bg-gradient-to-r from-[#0088FF] via-[#FFD700] to-[#FF6B00] hover:via-[#FFC500] text-foreground px-8 py-6 text-lg font-semibold rounded-2xl transition-all duration-300 animate-gradient bg-[length:200%_auto]"
               >
                 Explore Research Centers
                 <ArrowRight className="w-5 h-5 ml-2" />
@@ -129,7 +129,7 @@ export default function Research() {
             <Button
               variant="outline"
               size="lg"
-              className="border-orange-500/30 hover:bg-orange-500/10 px-8 py-6 text-lg font-semibold rounded-2xl"
+              className="border-brand-blue/30 hover:bg-brand-blue/10 px-8 py-6 text-lg font-semibold rounded-2xl"
             >
               Research Publications
             </Button>
