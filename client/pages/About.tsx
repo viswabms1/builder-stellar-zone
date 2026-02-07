@@ -348,18 +348,18 @@ export default function About() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
               <a
-                href="https://admissions.dsu.edu.in/"
-                target="_blank"
-                rel="noreferrer"
+              href="https://admissions.dsu.edu.in/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Button
+                size="lg"
+                className="bg-gradient-to-r from-[#0088FF] via-[#FFD700] to-[#FF6B00] hover:from-[#0066FF] hover:via-[#FFC700] hover:to-[#FF5500] text-white px-12 py-6 text-lg font-semibold rounded-2xl shadow-lg shadow-brand-blue/30 hover:shadow-brand-blue/50 transition-all animate-gradient bg-[length:200%_auto]"
               >
-                <Button
-                  size="lg"
-                  className="bg-brand-blue hover:bg-brand-blue/90 text-white px-12 py-6 text-lg font-semibold rounded-2xl shadow-lg shadow-brand-blue/30 hover:shadow-brand-blue/50 transition-all"
-                >
-                  Apply Now
-                  <GraduationCap className="w-5 h-5 ml-2" />
-                </Button>
-              </a>
+                Apply Now
+                <GraduationCap className="w-5 h-5 ml-2" />
+              </Button>
+            </a>
             </div>
 
             <div className="flex flex-wrap justify-center gap-2">
