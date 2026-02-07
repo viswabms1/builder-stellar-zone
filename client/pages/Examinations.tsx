@@ -682,7 +682,9 @@ function ExamResourceSection({ section }: { section: ExamSection }) {
     <div id={section.id} className="space-y-4">
       <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
         <div>
-          <h3 className="text-3xl font-bold md:text-4xl">{section.title}</h3>
+          <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold font-display">
+            <span className="bg-brand-gradient bg-clip-text text-transparent">{section.title}</span>
+          </h3>
           <p className="mt-2 max-w-2xl text-base text-foreground md:text-lg">
             {section.summary}
           </p>
