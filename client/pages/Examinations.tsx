@@ -809,21 +809,21 @@ function ResultsCarousel() {
   const statusStyles = {
     declared: {
       icon: CheckCircle,
-      color: "text-green-600",
-      bg: "bg-green-500/10",
-      badge: "bg-green-500/20 text-green-700",
+      color: "text-brand-blue",
+      bg: "bg-brand-blue/10",
+      badge: "bg-brand-blue/20 text-brand-blue",
     },
     awaiting: {
       icon: Clock,
-      color: "text-orange-600",
-      bg: "bg-orange-500/10",
-      badge: "bg-orange-500/20 text-orange-700",
+      color: "text-brand-magenta",
+      bg: "bg-brand-magenta/10",
+      badge: "bg-brand-magenta/20 text-brand-magenta",
     },
     correction: {
       icon: AlertCircle,
-      color: "text-red-600",
-      bg: "bg-red-500/10",
-      badge: "bg-red-500/20 text-red-700",
+      color: "text-brand-orange",
+      bg: "bg-brand-orange/10",
+      badge: "bg-brand-orange/20 text-brand-orange",
     },
   };
 
