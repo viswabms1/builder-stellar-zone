@@ -168,19 +168,18 @@ export default function LibraryAdvisoryCommittee() {
         </div>
 
         {/* Governance Overview */}
-        <Card className="border-none shadow-lg bg-gradient-to-br from-card/80 via-card/60 to-card/40 mb-8">
-          <CardHeader style={{ backgroundColor: "rgba(0, 0, 0, 1)" }}>
-            <CardTitle className="text-3xl md:text-4xl flex items-center gap-2">
+        <Card className="border-none shadow-lg bg-gradient-to-br from-card/80 via-card/60 to-card/40 mb-8 hover:shadow-lg hover:shadow-brand-blue/20 transition-all duration-300">
+          <CardHeader className="border-b border-border/30">
+            <CardTitle className="text-2xl sm:text-3xl md:text-4xl flex items-center gap-2 font-display text-foreground">
               <Users className="h-8 w-8 text-brand-blue" />
               Library Governance
             </CardTitle>
-            <CardDescription className="text-lg">
+            <CardDescription className="text-base sm:text-lg text-foreground/70">
               Collaborative approach to library management
             </CardDescription>
           </CardHeader>
           <CardContent
             className="space-y-4"
-            style={{ backgroundColor: "rgba(0, 0, 0, 0.6)" }}
           >
             <p className="text-foreground/80">
               The DSU Central Library operates under a well-defined governance
