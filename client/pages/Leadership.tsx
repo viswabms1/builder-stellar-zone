@@ -442,7 +442,7 @@ export default function Leadership() {
                             Read {leader.role}'s Message
                           </span>
                         </AccordionTrigger>
-                        <AccordionContent className="text-sm text-foreground italic border-l-2 border-orange-500/30 pl-3 pb-0">
+                        <AccordionContent className="text-xs sm:text-sm text-foreground italic border-l-2 border-brand-blue/30 pl-3 pb-0 font-body">
                           "{leader.message}"
                         </AccordionContent>
                       </AccordionItem>
@@ -545,7 +545,7 @@ export default function Leadership() {
                             Read {leader.role}'s Message
                           </span>
                         </AccordionTrigger>
-                        <AccordionContent className="text-sm text-foreground italic border-l-2 border-orange-500/30 pl-3 pb-0">
+                        <AccordionContent className="text-xs sm:text-sm text-foreground italic border-l-2 border-brand-blue/30 pl-3 pb-0 font-body">
                           "{leader.message}"
                         </AccordionContent>
                       </AccordionItem>
@@ -668,7 +668,7 @@ export default function Leadership() {
                             Read {pvc.role}'s Message
                           </span>
                         </AccordionTrigger>
-                        <AccordionContent className="text-sm text-foreground italic border-l-2 border-orange-500/30 pl-3 pb-0">
+                        <AccordionContent className="text-xs sm:text-sm text-foreground italic border-l-2 border-brand-blue/30 pl-3 pb-0 font-body">
                           "{pvc.message}"
                         </AccordionContent>
                       </AccordionItem>
