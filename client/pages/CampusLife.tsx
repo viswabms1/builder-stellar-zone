@@ -233,11 +233,11 @@ export default function CampusLife() {
                 <CardHeader className="space-y-4">
                   <div className="flex items-start justify-between">
                     <div>
-                      <h3 className="text-2xl font-bold text-foreground group-hover:text-orange-500 transition-colors mb-2">
+                      <h3 className="text-2xl font-bold text-foreground group-hover:text-brand-blue transition-colors mb-2">
                         {pillar.title}
                       </h3>
                     </div>
-                    <pillar.icon className="w-6 h-6 text-orange-500 flex-shrink-0" />
+                    <pillar.icon className="w-6 h-6 text-brand-blue flex-shrink-0" />
                   </div>
 
                   <p className="text-foreground/80 leading-relaxed">
