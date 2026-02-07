@@ -171,10 +171,10 @@ export default function AIFirst() {
                 Knowledge optimized by artificial intelligence ensures every student receives an education tailored to their unique learning needs and aspirations.
               </p>
               <div className="space-y-6">
-                <Card className="border-border/50 bg-card/50 backdrop-blur">
+                <Card className="border-border/50 bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur hover:shadow-lg hover:shadow-brand-blue/20 transition-all duration-300">
                   <CardHeader>
                     <CardTitle className="flex items-center gap-3 text-lg">
-                      <Cpu className="w-5 h-5 text-blue-500" />
+                      <Cpu className="w-5 h-5 text-brand-blue" />
                       Smart Classrooms
                     </CardTitle>
                   </CardHeader>
@@ -182,10 +182,10 @@ export default function AIFirst() {
                     <p className="text-sm text-foreground/70">AI-powered analytics provide real-time insights into student engagement and learning outcomes</p>
                   </CardContent>
                 </Card>
-                <Card className="border-border/50 bg-card/50 backdrop-blur">
+                <Card className="border-border/50 bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur hover:shadow-lg hover:shadow-brand-magenta/20 transition-all duration-300">
                   <CardHeader>
                     <CardTitle className="flex items-center gap-3 text-lg">
-                      <Brain className="w-5 h-5 text-purple-500" />
+                      <Brain className="w-5 h-5 text-brand-magenta" />
                       Adaptive Learning Systems
                     </CardTitle>
                   </CardHeader>
@@ -193,10 +193,10 @@ export default function AIFirst() {
                     <p className="text-sm text-foreground/70">Dynamic content delivery that adjusts difficulty and pace based on individual student progress</p>
                   </CardContent>
                 </Card>
-                <Card className="border-border/50 bg-card/50 backdrop-blur">
+                <Card className="border-border/50 bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur hover:shadow-lg hover:shadow-brand-orange/20 transition-all duration-300">
                   <CardHeader>
                     <CardTitle className="flex items-center gap-3 text-lg">
-                      <Users className="w-5 h-5 text-pink-500" />
+                      <Users className="w-5 h-5 text-brand-orange" />
                       Collaborative Tools
                     </CardTitle>
                   </CardHeader>
