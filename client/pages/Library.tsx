@@ -195,7 +195,7 @@ export default function Library() {
             {libraryFeatures.map((feature, idx) => {
               const Icon = feature.icon;
               return (
-                <Card key={idx} className="border-none shadow-lg hover:shadow-xl transition-shadow">
+                <Card key={idx} className="border-none shadow-lg hover:shadow-lg hover:shadow-brand-blue/20 transition-all bg-gradient-to-br from-card/80 via-card/60 to-card/40">
                   <CardContent className="pt-6">
                     <div
                       className={`bg-gradient-to-br ${feature.color} p-3 rounded-lg w-fit mb-4`}
