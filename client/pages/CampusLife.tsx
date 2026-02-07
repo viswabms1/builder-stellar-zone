@@ -769,7 +769,7 @@ export default function CampusLife() {
             ].map((item, index) => (
               <div
                 key={index}
-                className="relative group overflow-hidden rounded-none border border-border hover:border-orange-500/50 transition-all duration-300 cursor-pointer aspect-square"
+                className="relative group overflow-hidden rounded-none border border-border hover:border-brand-blue/50 transition-all duration-300 cursor-pointer aspect-square"
               >
                 <img
                   src={item.image}
