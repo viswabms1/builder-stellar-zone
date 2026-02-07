@@ -1138,7 +1138,7 @@ export default function NVIDIAArchitecture() {
           </div>
 
           {/* Bottom Line */}
-          <div className="bg-gradient-to-r from-green-500/20 to-blue-500/20 rounded-2xl p-8 border border-brand-blue/30 text-center">
+          <div className="bg-gradient-to-r from-brand-blue/10 to-brand-magenta/10 rounded-2xl p-8 border border-brand-blue/30 text-center">
             <h3 className="text-3xl font-bold mb-4">The Bottom Line</h3>
             <p className="text-xl text-foreground/80 leading-relaxed max-w-3xl mx-auto">
               Top AI companies recruit from universities with world-class
