@@ -422,10 +422,10 @@ export default function Leadership() {
 
                   <CardContent className="space-y-4 flex-grow flex flex-col">
                     <div>
-                      <p className="text-xs font-semibold text-orange-500 mb-1">
+                      <p className="text-xs font-semibold text-brand-blue mb-1">
                         LEADERSHIP FOCUS
                       </p>
-                      <p className="text-sm font-medium text-foreground">
+                      <p className="text-xs sm:text-sm font-medium text-foreground">
                         {leader.focus}
                       </p>
                     </div>
@@ -525,10 +525,10 @@ export default function Leadership() {
 
                   <CardContent className="space-y-4 flex-grow flex flex-col">
                     <div>
-                      <p className="text-xs font-semibold text-orange-500 mb-1">
+                      <p className="text-xs font-semibold text-brand-blue mb-1">
                         LEADERSHIP FOCUS
                       </p>
-                      <p className="text-sm font-medium text-foreground">
+                      <p className="text-xs sm:text-sm font-medium text-foreground">
                         {leader.focus}
                       </p>
                     </div>
@@ -631,10 +631,10 @@ export default function Leadership() {
 
                   <CardContent className="space-y-4 flex-grow flex flex-col">
                     <div>
-                      <p className="text-xs font-semibold text-orange-500 mb-1">
+                      <p className="text-xs font-semibold text-brand-blue mb-1">
                         LEADERSHIP FOCUS
                       </p>
-                      <p className="text-sm font-medium text-foreground">
+                      <p className="text-xs sm:text-sm font-medium text-foreground">
                         {pvc.focus}
                       </p>
                     </div>
