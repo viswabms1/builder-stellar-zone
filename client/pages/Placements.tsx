@@ -1369,7 +1369,7 @@ export default function Placements() {
             {successStories.map((story, index) => (
               <Card
                 key={index}
-                className={`bg-card/50 backdrop-blur-sm border border-border/50 hover:border-orange-500/30 transition-all duration-300 transform ${
+                className={`bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur-sm border border-border/50 hover:border-brand-blue/30 hover:shadow-lg hover:shadow-brand-blue/20 transition-all duration-300 transform ${
                   storiesVisible
                     ? "scale-100 opacity-100"
                     : "scale-95 opacity-0"
@@ -1385,9 +1385,9 @@ export default function Placements() {
                   <p className="text-sm text-foreground/70 mb-3">
                     {story.program}
                   </p>
-                  <div className="inline-flex items-center gap-2 px-3 py-1 bg-orange-500/10 rounded-full w-fit">
-                    <Briefcase className="w-4 h-4 text-orange-500" />
-                    <span className="text-sm font-semibold text-orange-500">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 bg-brand-blue/20 rounded-full w-fit">
+                    <Briefcase className="w-4 h-4 text-brand-blue" />
+                    <span className="text-sm font-semibold text-brand-blue">
                       {story.role}
                     </span>
                   </div>
