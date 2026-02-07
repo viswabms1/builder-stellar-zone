@@ -68,26 +68,28 @@ export default function LibraryAdvisoryCommittee() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero Section */}
-      <section className="relative py-16 lg:py-24 bg-gradient-to-br from-violet-500/10 via-indigo-600/5 to-background dark:from-slate-800 dark:via-slate-800 dark:to-slate-900 overflow-hidden">
+      <section className="relative py-16 lg:py-24 bg-gradient-to-br from-brand-blue/10 via-brand-magenta/5 to-background overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-violet-500/10 dark:bg-violet-500/30 rounded-full filter blur-3xl animate-float"></div>
+          <div className="absolute top-20 left-10 w-72 h-72 bg-brand-blue/10 rounded-full filter blur-3xl animate-float"></div>
           <div
-            className="absolute bottom-20 right-10 w-96 h-96 bg-indigo-600/10 dark:bg-indigo-600/30 rounded-full filter blur-3xl animate-float"
+            className="absolute bottom-20 right-10 w-96 h-96 bg-brand-magenta/10 rounded-full filter blur-3xl animate-float"
             style={{ animationDelay: "2s" }}
           ></div>
         </div>
 
         <div className="relative max-w-7xl mx-auto px-3">
           <div className="text-center mb-8">
-            <h1 className="text-5xl md:text-6xl font-bold mb-4 text-foreground">
-              Library Advisory Committee
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 text-foreground font-display">
+              <span className="bg-brand-gradient bg-clip-text text-transparent">
+                Library Advisory Committee
+              </span>
             </h1>
-            <p className="text-xl text-foreground/70 max-w-2xl mx-auto">
+            <p className="text-base sm:text-xl md:text-2xl text-foreground max-w-2xl mx-auto font-body">
               Governance and oversight of library operations
             </p>
           </div>
           <div className="flex justify-center">
-            <Button asChild variant="outline">
+            <Button asChild className="bg-gradient-to-r from-[#0088FF] via-[#FFD700] to-[#FF6B00] hover:from-[#FF6B00] hover:via-[#FFD700] hover:to-[#0088FF] text-foreground px-6 py-2 font-semibold rounded-2xl animate-gradient bg-[length:200%_auto]">
               <Link to="/library">
                 <ArrowLeft className="mr-2 h-4 w-4" />
                 Back to Library
