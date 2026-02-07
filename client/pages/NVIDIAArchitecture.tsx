@@ -679,10 +679,13 @@ export default function NVIDIAArchitecture() {
       <section className="px-3 py-20 bg-gradient-to-r from-purple-500/5 via-black/50 to-purple-500/5">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-14">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              The Tools You'll Master
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 font-display">
+              <span className="text-foreground">The Tools You'll </span>
+              <span className="bg-brand-gradient bg-clip-text text-transparent">
+                Master
+              </span>
             </h2>
-            <p className="text-xl text-foreground/70 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-foreground/70 max-w-3xl mx-auto font-body">
               Industry-standard software that accelerates every step of your AI
               journey
             </p>
