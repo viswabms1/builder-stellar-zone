@@ -153,7 +153,7 @@ export default function Library() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               asChild
-              className="bg-white text-blue-600 hover:bg-white/90 font-semibold px-8 py-6 text-lg rounded-lg"
+              className="bg-gradient-to-r from-[#0088FF] via-[#FFD700] to-[#FF6B00] hover:via-[#FFC500] text-foreground font-semibold px-8 py-6 text-lg rounded-lg animate-gradient bg-[length:200%_auto]"
             >
               <a href="https://dsuunivopac.ltsinformatics.com/" target="_blank" rel="noopener noreferrer">
                 Access Digital Library
