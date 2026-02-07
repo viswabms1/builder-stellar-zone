@@ -243,11 +243,11 @@ function IntroductionSection() {
 
 function AffidavitSection() {
   return (
-    <section className="px-3 py-10 bg-gradient-to-b from-orange-500/5 to-transparent">
+    <section className="px-3 py-10 bg-gradient-to-b from-brand-blue/5 via-brand-magenta/5 to-transparent dark:from-brand-magenta/5 dark:via-brand-blue/5 dark:to-transparent">
       <div className="mx-auto max-w-4xl">
         <div className="text-center mb-8">
-          <h2 className="text-3xl font-bold md:text-4xl">
-            Anti Ragging Affidavit
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-display">
+            <span className="bg-brand-gradient bg-clip-text text-transparent">Anti Ragging Affidavit</span>
           </h2>
           <p className="mt-3 text-foreground md:text-lg">
             All students must complete the online anti-ragging affidavit as per
