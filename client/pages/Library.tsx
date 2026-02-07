@@ -251,23 +251,23 @@ export default function Library() {
       </section>
 
       {/* Quick Stats */}
-      <section className="py-16 px-3 bg-gradient-to-r from-blue-500/10 to-purple-600/10">
+      <section className="py-16 px-3 bg-gradient-to-r from-brand-blue/10 via-brand-magenta/10 to-brand-orange/10 dark:from-brand-blue/5 dark:via-brand-magenta/5 dark:to-brand-orange/5">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2">5L+</div>
+              <div className="text-4xl md:text-5xl font-bold text-brand-blue mb-2">5L+</div>
               <p className="text-lg text-foreground/70">Total Volumes</p>
             </div>
             <div>
-              <div className="text-4xl md:text-5xl font-bold text-purple-600 mb-2">560</div>
+              <div className="text-4xl md:text-5xl font-bold text-brand-magenta mb-2">560</div>
               <p className="text-lg text-foreground/70">Seating Capacity</p>
             </div>
             <div>
-              <div className="text-4xl md:text-5xl font-bold text-green-600 mb-2">24/7</div>
+              <div className="text-4xl md:text-5xl font-bold text-brand-blue mb-2">24/7</div>
               <p className="text-lg text-foreground/70">Digital Access</p>
             </div>
             <div>
-              <div className="text-4xl md:text-5xl font-bold text-orange-600 mb-2">100%</div>
+              <div className="text-4xl md:text-5xl font-bold text-brand-orange mb-2">100%</div>
               <p className="text-lg text-foreground/70">Student Access</p>
             </div>
           </div>
