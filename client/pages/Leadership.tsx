@@ -414,8 +414,8 @@ export default function Leadership() {
                           {leader.role}
                         </p>
                       </div>
-                      <div className="w-12 h-12 rounded-2xl bg-orange-500/10 flex items-center justify-center group-hover:bg-orange-500/20 transition-colors flex-shrink-0">
-                        <Icon className="w-6 h-6 text-orange-500" />
+                      <div className="w-12 h-12 rounded-2xl bg-brand-blue/10 flex items-center justify-center group-hover:bg-brand-blue/20 transition-colors flex-shrink-0">
+                        <Icon className="w-6 h-6 text-brand-blue group-hover:scale-110 transition-transform" />
                       </div>
                     </div>
                   </CardHeader>
@@ -517,8 +517,8 @@ export default function Leadership() {
                           {leader.role}
                         </p>
                       </div>
-                      <div className="w-12 h-12 rounded-2xl bg-orange-500/10 flex items-center justify-center group-hover:bg-orange-500/20 transition-colors flex-shrink-0">
-                        <Icon className="w-6 h-6 text-orange-500" />
+                      <div className="w-12 h-12 rounded-2xl bg-brand-blue/10 flex items-center justify-center group-hover:bg-brand-blue/20 transition-colors flex-shrink-0">
+                        <Icon className="w-6 h-6 text-brand-blue group-hover:scale-110 transition-transform" />
                       </div>
                     </div>
                   </CardHeader>
@@ -623,8 +623,8 @@ export default function Leadership() {
                           {pvc.role}
                         </p>
                       </div>
-                      <div className="w-12 h-12 rounded-2xl bg-orange-500/10 flex items-center justify-center group-hover:bg-orange-500/20 transition-colors flex-shrink-0">
-                        <Icon className="w-6 h-6 text-orange-500" />
+                      <div className="w-12 h-12 rounded-2xl bg-brand-blue/10 flex items-center justify-center group-hover:bg-brand-blue/20 transition-colors flex-shrink-0">
+                        <Icon className="w-6 h-6 text-brand-blue group-hover:scale-110 transition-transform" />
                       </div>
                     </div>
                   </CardHeader>
