@@ -91,9 +91,9 @@ export default function CampusLife() {
               </Button>
             </a>
 
-            <div className="hero-badge inline-flex items-center px-4 py-2 bg-orange-500/30 rounded-full border border-orange-500/60 mb-6">
-              <Rocket className="w-4 h-4 text-orange-200 mr-2" />
-              <span className="text-xs md:text-sm font-semibold text-orange-100">
+            <div className="hero-badge inline-flex items-center px-4 py-2 bg-brand-blue/20 rounded-full border border-brand-blue/60 mb-6">
+              <Rocket className="w-4 h-4 text-brand-blue mr-2" />
+              <span className="text-xs md:text-sm font-semibold text-brand-blue">
                 Where Innovation Happens
               </span>
             </div>
