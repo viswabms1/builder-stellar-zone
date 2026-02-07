@@ -178,8 +178,8 @@ export default function Alumni() {
         {/* Key Features */}
         <div className="mb-12">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Why Stay Connected?
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-display mb-4">
+              <span className="bg-brand-gradient bg-clip-text text-transparent">Why Stay Connected?</span>
             </h2>
             <p className="text-lg text-foreground/70">
               Benefits of being an active member of the DSU alumni community
