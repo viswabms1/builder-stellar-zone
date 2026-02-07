@@ -1023,8 +1023,8 @@ function GuidelinesSection() {
     <section className="px-3 py-8">
       <div className="mx-auto flex max-w-5xl flex-col gap-3">
         <div className="text-center">
-          <h2 className="text-3xl font-bold md:text-4xl">
-            How to Use These Resources
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-display">
+            <span className="bg-brand-gradient bg-clip-text text-transparent">How to Use These Resources</span>
           </h2>
           <p className="mt-3 text-foreground md:text-lg">
             Follow these best practices to stay organised during the examination
