@@ -488,7 +488,7 @@ export default function NVIDIAArchitecture() {
                     </div>
                   </div>
 
-                  <div className="bg-green-500/10 p-4 rounded-lg border border-green-500/20">
+                  <div className="bg-green-500/10 p-4 rounded-lg border border-brand-blue/20">
                     <p className="text-sm font-semibold text-foreground mb-2">
                       🎯 What You Can Do:
                     </p>
@@ -505,7 +505,7 @@ export default function NVIDIAArchitecture() {
 
                 <div className="p-8 bg-gradient-to-br from-green-500/10 to-transparent">
                   <div className="space-y-4">
-                    <div className="border-l-4 border-green-500 pl-4">
+                    <div className="border-l-4 border-brand-blue pl-4">
                       <p className="text-xs text-foreground/60">
                         Training Speed
                       </p>
@@ -516,7 +516,7 @@ export default function NVIDIAArchitecture() {
                         than previous generation
                       </p>
                     </div>
-                    <div className="border-l-4 border-green-500 pl-4">
+                    <div className="border-l-4 border-brand-blue pl-4">
                       <p className="text-xs text-foreground/60">
                         Inference Speed
                       </p>
@@ -527,7 +527,7 @@ export default function NVIDIAArchitecture() {
                         running trained models
                       </p>
                     </div>
-                    <div className="border-l-4 border-green-500 pl-4">
+                    <div className="border-l-4 border-brand-blue pl-4">
                       <p className="text-xs text-foreground/60">Power Used</p>
                       <p className="text-2xl font-bold text-brand-blue">
                         ~14.3 kW
@@ -536,7 +536,7 @@ export default function NVIDIAArchitecture() {
                         entire supercomputer
                       </p>
                     </div>
-                    <div className="border-l-4 border-green-500 pl-4">
+                    <div className="border-l-4 border-brand-blue pl-4">
                       <p className="text-xs text-foreground/60">
                         Physical Size
                       </p>
@@ -989,7 +989,7 @@ export default function NVIDIAArchitecture() {
               </CardContent>
             </Card>
 
-            <Card className="border-border/50 bg-gradient-to-br from-green-500/10 to-green-500/5 backdrop-blur hover:border-green-500/50 transition-all">
+            <Card className="border-border/50 bg-gradient-to-br from-green-500/10 to-green-500/5 backdrop-blur hover:border-brand-blue/50 transition-all">
               <CardHeader>
                 <CardTitle className="text-2xl mb-6">
                   Your Competitive Advantage
@@ -1138,7 +1138,7 @@ export default function NVIDIAArchitecture() {
           </div>
 
           {/* Bottom Line */}
-          <div className="bg-gradient-to-r from-green-500/20 to-blue-500/20 rounded-2xl p-8 border border-green-500/30 text-center">
+          <div className="bg-gradient-to-r from-green-500/20 to-blue-500/20 rounded-2xl p-8 border border-brand-blue/30 text-center">
             <h3 className="text-3xl font-bold mb-4">The Bottom Line</h3>
             <p className="text-xl text-foreground/80 leading-relaxed max-w-3xl mx-auto">
               Top AI companies recruit from universities with world-class
