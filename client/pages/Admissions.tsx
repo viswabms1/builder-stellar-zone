@@ -754,14 +754,14 @@ function ContactSection() {
           </AccordionItem>
 
           <AccordionItem value="item-2" className="border-none">
-            <AccordionTrigger className="text-xl font-bold text-orange-500 hover:text-orange-600 py-4">
+            <AccordionTrigger className="text-xl font-bold text-brand-blue hover:text-brand-blue/80 py-4 font-display">
               <Headphones className="h-6 w-6 mr-3" />
               Hotline Directory
             </AccordionTrigger>
             <AccordionContent className="pt-6">
-              <Card className="border border-orange-500/20 bg-card/70 backdrop-blur-sm">
+              <Card className="border border-brand-blue/20 bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur-sm">
                 <CardHeader>
-                  <CardDescription className="text-sm text-foreground">
+                  <CardDescription className="text-sm text-foreground/80 font-body">
                     Reach specialized teams to clarify program requisites,
                     counseling logistics, and post-admission onboarding.
                   </CardDescription>
@@ -770,7 +770,7 @@ function ContactSection() {
                   {helplineGroups.map((group) => (
                     <div
                       key={group.label}
-                      className="rounded-2xl border border-orange-500/20 bg-background/70 p-4"
+                      className="rounded-2xl border border-brand-blue/20 bg-background/70 p-4"
                     >
                       <p className="text-sm font-semibold text-foreground">
                         {group.label}
