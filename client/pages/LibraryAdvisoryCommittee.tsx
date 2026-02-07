@@ -118,7 +118,7 @@ export default function LibraryAdvisoryCommittee() {
           {committees.map((committee, idx) => (
             <Card
               key={idx}
-              className="border-none shadow-md hover:shadow-lg transition-shadow"
+              className="border-none shadow-md bg-gradient-to-br from-card/80 via-card/60 to-card/40 hover:shadow-lg hover:shadow-brand-blue/20 transition-all duration-300"
             >
               <CardHeader>
                 <CardTitle className="text-2xl flex items-center gap-2">
