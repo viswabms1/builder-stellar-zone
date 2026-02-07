@@ -133,7 +133,7 @@ function CommitteeLinksSection() {
               <CardContent className="p-4 flex flex-col">
                 <Button
                   variant="ghost"
-                  className="h-auto w-full justify-start text-left text-sm font-semibold text-foreground hover:text-amber-400 active:text-white p-0 whitespace-normal"
+                  className="h-auto w-full justify-start text-left text-sm font-semibold text-foreground hover:text-brand-magenta active:text-brand-blue p-0 whitespace-normal transition-colors"
                   asChild
                 >
                   <a href={link.path} {...(link.external ? { target: "_blank", rel: "noreferrer" } : {})} className="flex items-start justify-between gap-2">
