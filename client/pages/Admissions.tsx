@@ -516,19 +516,17 @@ function AdmissionRoutesSection() {
 }
 
 function EssentialsSection() {
-  const { theme } = useTheme();
   return (
     <section className="px-3 py-8">
       <div className="mx-auto max-w-6xl">
         <div className="mb-10 text-center">
-          <h2
-            className={`text-3xl font-bold md:text-4xl ${
-              theme === "light" ? "text-orange-900" : "text-white"
-            }`}
-          >
-            Essential Resources
+          <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 font-display">
+            <span className="text-foreground">Essential </span>
+            <span className="bg-brand-gradient bg-clip-text text-transparent">
+              Resources
+            </span>
           </h2>
-          <p className="mt-3 text-lg text-foreground">
+          <p className="mt-3 text-base sm:text-xl md:text-2xl text-foreground/80 font-body">
             Quick access to the information you need at every stage of your
             admission journey.
           </p>
@@ -536,11 +534,7 @@ function EssentialsSection() {
 
         {/* Block 1: Decision-Critical */}
         <div className="mb-12">
-          <h3
-            className={`mb-6 text-xl font-bold ${
-              theme === "light" ? "text-orange-900" : "text-white"
-            }`}
-          >
+          <h3 className="mb-6 text-xl sm:text-2xl md:text-3xl font-bold text-foreground font-display">
             📋 Decision-Critical
           </h3>
           <div className="grid gap-3 md:grid-cols-3">
