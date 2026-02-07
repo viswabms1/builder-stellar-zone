@@ -701,12 +701,12 @@ export default function CampusLife() {
             ].map((org, index) => (
               <Card
                 key={index}
-                className="group hover:shadow-lg hover:shadow-orange-500/10 transition-all duration-500 backdrop-blur-sm border rounded-none bg-slate-900/50 border-orange-500/10 p-6 text-center"
+                className="group hover:shadow-lg hover:shadow-brand-blue/20 transition-all duration-500 backdrop-blur-sm border border-border/50 bg-gradient-to-br from-card/80 via-card/60 to-card/40 p-6 text-center"
                 style={{
                   animation: `slideInUp 0.6s ease-out ${index * 0.08}s both`,
                 }}
               >
-                <org.icon className="w-8 h-8 text-orange-500 mx-auto mb-3" />
+                <org.icon className="w-8 h-8 text-brand-blue mx-auto mb-3" />
                 <h3 className="font-bold text-foreground">{org.category}</h3>
               </Card>
             ))}
