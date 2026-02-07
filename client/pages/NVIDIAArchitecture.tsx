@@ -1078,7 +1078,7 @@ export default function NVIDIAArchitecture() {
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <div className="flex items-center justify-center w-8 h-8 rounded-full bg-orange-500 text-white font-bold flex-shrink-0">
+                    <div className="flex items-center justify-center w-8 h-8 rounded-full bg-brand-orange text-white font-bold flex-shrink-0">
                       4
                     </div>
                     <div>
