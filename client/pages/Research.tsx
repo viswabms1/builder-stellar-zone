@@ -350,7 +350,7 @@ export default function Research() {
                         </Badge>
                         <Badge
                           variant="outline"
-                          className="text-xs border-brand-green/30 text-brand-green"
+                          className="text-xs border-emerald-500/30 text-emerald-500"
                         >
                           {pillar.publications}
                         </Badge>
