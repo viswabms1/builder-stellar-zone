@@ -229,17 +229,17 @@ export default function Library() {
               const Icon = service.icon;
               return (
                 <Link key={idx} to={service.href}>
-                  <Card className="h-full border-none shadow-md hover:shadow-lg hover:scale-105 transition-all cursor-pointer group">
+                  <Card className="h-full border-none shadow-md hover:shadow-lg hover:shadow-brand-blue/20 hover:scale-105 transition-all cursor-pointer group bg-gradient-to-br from-card/80 via-card/60 to-card/40">
                     <CardContent className="pt-6">
                       <div className="flex items-start gap-4">
-                        <div className="p-3 rounded-lg bg-blue-500/10 group-hover:bg-blue-500/20 transition-colors">
-                          <Icon className="h-6 w-6 text-blue-600" />
+                        <div className="p-3 rounded-lg bg-brand-blue/10 group-hover:bg-brand-blue/20 transition-colors">
+                          <Icon className="h-6 w-6 text-brand-blue" />
                         </div>
                         <div className="flex-1">
                           <h3 className="font-semibold text-lg mb-1">{service.name}</h3>
                           <p className="text-sm text-foreground/70">{service.description}</p>
                         </div>
-                        <ArrowRight className="h-5 w-5 text-blue-600 opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0" />
+                        <ArrowRight className="h-5 w-5 text-brand-blue opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0" />
                       </div>
                     </CardContent>
                   </Card>
