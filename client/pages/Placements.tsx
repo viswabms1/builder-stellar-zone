@@ -1561,14 +1561,14 @@ export default function Placements() {
           <div className="space-y-8">
             {contactInfo.map((section, idx) => (
               <div key={idx}>
-                <h3 className="text-2xl font-bold mb-4 text-orange-500">
+                <h3 className="text-2xl font-bold mb-4 text-brand-blue">
                   {section.category}
                 </h3>
                 <div className="grid md:grid-cols-2 gap-3">
                   {section.contacts.map((contact, contactIdx) => (
                     <div
                       key={contactIdx}
-                      className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-4 hover:border-orange-500/30 transition-all duration-300"
+                      className="bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur-sm border border-border/50 rounded-2xl p-4 hover:border-brand-blue/30 hover:shadow-lg hover:shadow-brand-blue/20 transition-all duration-300"
                     >
                       <h4 className="text-base font-bold text-foreground mb-1">
                         {contact.name}
@@ -1579,19 +1579,19 @@ export default function Placements() {
 
                       <div className="space-y-2">
                         <div className="flex items-center gap-2">
-                          <Phone className="w-4 h-4 text-orange-500 flex-shrink-0" />
+                          <Phone className="w-4 h-4 text-brand-blue flex-shrink-0" />
                           <a
                             href={`tel:${contact.phone}`}
-                            className="text-xs text-foreground hover:text-orange-500 transition-colors"
+                            className="text-xs text-foreground hover:text-brand-blue transition-colors"
                           >
                             {contact.phone}
                           </a>
                         </div>
                         <div className="flex items-center gap-2">
-                          <Mail className="w-4 h-4 text-orange-500 flex-shrink-0" />
+                          <Mail className="w-4 h-4 text-brand-blue flex-shrink-0" />
                           <a
                             href={`mailto:${contact.email}`}
-                            className="text-xs text-foreground hover:text-orange-500 transition-colors break-all"
+                            className="text-xs text-foreground hover:text-brand-blue transition-colors break-all"
                           >
                             {contact.email}
                           </a>
