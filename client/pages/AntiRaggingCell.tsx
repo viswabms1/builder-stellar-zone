@@ -356,7 +356,7 @@ function CommitteeSection() {
                   key={index}
                   className={`border-b border-border/30 ${
                     member.role === "Chairperson"
-                      ? "bg-orange-500/10"
+                      ? "bg-brand-blue/10"
                       : "hover:bg-background/50"
                   }`}
                 >
@@ -376,7 +376,7 @@ function CommitteeSection() {
                       }
                       className={
                         member.role === "Chairperson"
-                          ? "bg-orange-600 text-white"
+                          ? "bg-brand-blue text-white"
                           : ""
                       }
                     >
@@ -386,14 +386,14 @@ function CommitteeSection() {
                   <td className="px-4 py-3 text-xs md:text-sm space-y-1">
                     <a
                       href={`tel:${member.phone.replace(/\s+/g, "")}`}
-                      className="flex items-center gap-1 text-orange-600 hover:text-orange-700 font-medium"
+                      className="flex items-center gap-1 text-brand-blue hover:text-brand-magenta font-medium transition-colors"
                     >
                       <Phone className="h-3 w-3" />
                       {member.phone}
                     </a>
                     <a
                       href={`mailto:${member.email}`}
-                      className="flex items-center gap-1 text-orange-600 hover:text-orange-700 font-medium break-all"
+                      className="flex items-center gap-1 text-brand-blue hover:text-brand-magenta font-medium break-all transition-colors"
                     >
                       <Mail className="h-3 w-3 flex-shrink-0" />
                       {member.email}
