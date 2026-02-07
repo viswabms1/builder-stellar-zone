@@ -225,9 +225,11 @@ export default function LibraryEResources() {
         </Card>
 
         {/* Support Section */}
-        <Card className="border-none shadow-lg mt-8">
+        <Card className="border-none shadow-lg mt-8 bg-gradient-to-br from-card/80 via-card/60 to-card/40">
           <CardHeader>
-            <CardTitle>Need Help?</CardTitle>
+            <CardTitle className="text-2xl sm:text-3xl font-bold font-display">
+              <span className="bg-brand-gradient bg-clip-text text-transparent">Need Help?</span>
+            </CardTitle>
             <CardDescription>
               Our library staff is here to assist with e-resource access and
               research
@@ -238,15 +240,12 @@ export default function LibraryEResources() {
               If you experience any issues accessing our digital resources or
               need assistance, please contact our Reference Services team:
             </p>
-            <div
-              className="p-4 rounded-lg"
-              style={{ backgroundColor: "rgba(248, 231, 28, 0.61)" }}
-            >
+            <div className="p-4 rounded-lg bg-gradient-to-r from-brand-blue/10 to-brand-magenta/10 border border-brand-blue/20">
               <p className="font-semibold">
                 Email:{" "}
                 <a
                   href="mailto:e-resources@dsu.edu.in"
-                  className="text-blue-600 dark:text-blue-400 hover:text-blue-700"
+                  className="text-brand-blue hover:text-brand-magenta transition-colors"
                 >
                   e-resources@dsu.edu.in
                 </a>
@@ -255,7 +254,7 @@ export default function LibraryEResources() {
                 Reference Desk:{" "}
                 <a
                   href="mailto:library@dsu.edu.in"
-                  className="text-blue-600 dark:text-blue-400 hover:text-blue-700"
+                  className="text-brand-blue hover:text-brand-magenta transition-colors"
                 >
                   library@dsu.edu.in
                 </a>
@@ -265,7 +264,7 @@ export default function LibraryEResources() {
         </Card>
 
         <div className="mt-12 text-center">
-          <Button asChild className="bg-purple-600 hover:bg-purple-700">
+          <Button asChild className="bg-gradient-to-r from-[#0088FF] via-[#FFD700] to-[#FF6B00] hover:via-[#FFC500] text-foreground animate-gradient bg-[length:200%_auto]">
             <Link to="/library">
               <ArrowLeft className="mr-2 h-4 w-4" />
               Back to Library
