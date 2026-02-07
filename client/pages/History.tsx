@@ -124,7 +124,7 @@ export default function History() {
               Tracing six decades of educational leadership culminating in a modern, multidisciplinary university.
             </p>
 
-            <p className="text-xs sm:text-base md:text-lg lg:text-xl font-medium text-white/80 mt-2 font-display hidden sm:block">
+            <p className="text-xs sm:text-base md:text-lg lg:text-xl font-medium text-foreground/80 mt-2 font-display hidden sm:block">
               A legacy built on vision, excellence, and commitment to transforming lives through quality education. From the Mahatma Gandhi Vidya Peetha Education Trust to Dayananda Sagar University.
             </p>
           </div>
