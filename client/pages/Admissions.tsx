@@ -827,22 +827,20 @@ function ContactSection() {
 }
 
 function SupportCallout() {
-  const { theme } = useTheme();
   return (
     <section className="px-3 pb-20">
-      <div className="mx-auto max-w-4xl rounded-3xl border border-orange-500/20 bg-gradient-to-r from-orange-500/15 via-red-500/15 to-orange-500/15 p-10 text-center shadow-lg shadow-orange-500/10">
-        <div className="inline-flex items-center justify-center gap-2 rounded-full bg-orange-500/20 px-4 py-2 text-sm font-semibold text-orange-500">
+      <div className="mx-auto max-w-4xl rounded-3xl border border-brand-blue/20 bg-gradient-to-r from-brand-blue/15 via-brand-magenta/15 to-brand-blue/15 dark:from-orange-500/15 dark:via-red-500/15 dark:to-orange-500/15 p-10 text-center shadow-lg shadow-brand-blue/10 dark:shadow-orange-500/10">
+        <Badge className="inline-flex items-center justify-center gap-2 bg-brand-blue/20 text-brand-blue">
           <Sparkles className="h-4 w-4" />
           Ready to Start Your DSU Journey?
-        </div>
-        <h2
-          className={`mt-6 text-3xl font-bold md:text-4xl ${
-            theme === "light" ? "text-orange-900" : "text-foreground"
-          }`}
-        >
-          Personalized Counseling is Just a Call Away
+        </Badge>
+        <h2 className="mt-6 text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-display text-foreground">
+          <span className="text-foreground">Personalized </span>
+          <span className="bg-brand-gradient bg-clip-text text-transparent">
+            Counseling is Just a Call Away
+          </span>
         </h2>
-        <p className="mt-4 text-lg text-foreground">
+        <p className="mt-4 text-base sm:text-xl md:text-2xl text-foreground/80 font-body">
           Our counselors are available across campuses, over phone, chat, and
           voice assistance. Book a session to design your academic roadmap with
           DSU.
@@ -851,9 +849,9 @@ function SupportCallout() {
           {supportHighlights.map((highlight) => (
             <div
               key={highlight}
-              className="flex items-center justify-center gap-2 text-sm text-orange-500"
+              className="flex items-center justify-center gap-2 text-sm text-brand-blue font-body"
             >
-              <ListChecks className="h-4 w-4" />
+              <ListChecks className="h-4 w-4 flex-shrink-0" />
               <span>{highlight}</span>
             </div>
           ))}
@@ -861,7 +859,7 @@ function SupportCallout() {
         <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <Button
             size="lg"
-            className="rounded-2xl bg-gradient-to-r from-orange-500 to-red-500 px-8 py-6 text-lg font-semibold text-foreground hover:from-red-500 hover:to-orange-500"
+            className="bg-gradient-to-r from-[#0088FF] via-[#FFD700] to-[#FF6B00] hover:from-[#FF6B00] hover:via-[#FFD700] hover:to-[#0088FF] text-foreground px-8 py-6 text-lg font-semibold rounded-2xl animate-gradient bg-[length:200%_auto]"
             asChild
           >
             <a href="mailto:admissions@dsu.edu.in?subject=Schedule%20a%20Counseling%20Session">
@@ -872,7 +870,7 @@ function SupportCallout() {
           <Button
             size="lg"
             variant="outline"
-            className="rounded-2xl border-2 border-orange-500 px-8 py-6 text-lg font-semibold text-orange-500"
+            className="rounded-2xl border-2 border-brand-blue text-brand-blue hover:bg-brand-blue/10 px-8 py-6 text-lg font-semibold"
             asChild
           >
             <a
