@@ -840,7 +840,7 @@ function ResultsCarousel() {
           </p>
         </div>
         <div className="relative">
-          <div className="overflow-hidden rounded-2xl border border-orange-500/20">
+          <div className="overflow-hidden rounded-2xl border border-brand-blue/20">
             <div className="flex">
               {RESULT_ITEMS.map((item, index) => {
                 const style = statusStyles[item.status];
