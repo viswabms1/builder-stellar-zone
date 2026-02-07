@@ -580,7 +580,7 @@ function QuickLinksSection() {
                 <CardDescription>{item.description}</CardDescription>
                 <Button
                   variant="ghost"
-                  className="w-full justify-between text-orange-500 hover:bg-transparent"
+                  className="w-full justify-between text-brand-blue hover:text-brand-magenta hover:bg-transparent transition-colors"
                   asChild
                 >
                   <a
