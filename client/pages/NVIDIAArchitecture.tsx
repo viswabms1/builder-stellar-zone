@@ -679,7 +679,7 @@ export default function NVIDIAArchitecture() {
       <section className="px-3 py-20 bg-gradient-to-r from-brand-magenta/5 via-brand-magenta/10 to-brand-magenta/5 dark:via-black/50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-14">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 font-display">
+            <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 font-display">
               <span className="text-foreground">The Tools You'll </span>
               <span className="bg-brand-gradient bg-clip-text text-transparent">
                 Master
