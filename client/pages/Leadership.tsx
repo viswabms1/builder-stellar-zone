@@ -367,16 +367,17 @@ export default function Leadership() {
           <div className="text-center mb-16">
             <Badge
               variant="outline"
-              className="border-orange-500/20 bg-orange-500/10 text-orange-500 mb-4"
+              className="border-brand-blue/20 bg-brand-blue/10 text-brand-blue mb-4"
             >
               University Executive Leadership
             </Badge>
-            <h2 className={`text-4xl md:text-5xl font-bold mb-3 ${
-              theme === "light" ? "text-orange-900" : "text-white"
-            }`}>
-              Key Leadership
+            <h2 className="headline-2 mb-6 font-display">
+              <span className="text-foreground">Key </span>
+              <span className="bg-brand-gradient bg-clip-text text-transparent">
+                Leadership
+              </span>
             </h2>
-            <p className="text-lg text-foreground max-w-3xl mx-auto">
+            <p className="subheadline text-foreground max-w-3xl mx-auto font-display">
               Executive team guiding the university's mission and vision
             </p>
           </div>
