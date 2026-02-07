@@ -1165,7 +1165,7 @@ export default function NVIDIAArchitecture() {
             <Link to="/ai-first">
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 text-white"
+                className="bg-gradient-to-r from-[#0088FF] via-[#FFD700] to-[#FF6B00] hover:from-[#FF6B00] hover:via-[#FFD700] hover:to-[#0088FF] text-foreground px-8 py-6 font-semibold rounded-2xl animate-gradient bg-[length:200%_auto]"
               >
                 Explore AI-First @ DSU
                 <ArrowRight className="w-5 h-5 ml-2" />
