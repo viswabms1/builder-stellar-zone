@@ -281,7 +281,7 @@ export default function AIFirst() {
 
         <div className="relative max-w-7xl mx-auto px-3 z-10">
           <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-6xl font-bold mb-6">Research Engagement Opportunities</h2>
+            <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-display mb-6 text-foreground">Research Engagement <span className="bg-brand-gradient bg-clip-text text-transparent">Opportunities</span></h2>
             <p className="text-xl md:text-2xl text-foreground/70 max-w-3xl mx-auto leading-relaxed">
               Transform real-world challenges into breakthrough innovations. Partner with DSU's world-class researchers and NVIDIA's cutting-edge infrastructure to solve industry problems and advance the frontiers of AI.
             </p>
