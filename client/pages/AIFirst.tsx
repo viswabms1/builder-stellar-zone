@@ -566,12 +566,12 @@ export default function AIFirst() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 text-white px-8 py-6 text-base font-semibold rounded-2xl">
+                <Button size="lg" className="bg-gradient-to-r from-[#0088FF] via-[#FFD700] to-[#FF6B00] hover:from-[#FF6B00] hover:via-[#FFD700] hover:to-[#0088FF] text-foreground px-8 py-6 text-base font-semibold rounded-2xl animate-gradient bg-[length:200%_auto]">
                   Get Involved Now
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
                 <Link to="/nvidia-ai-architecture">
-                  <Button variant="outline" size="lg" className="border-2 border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white px-8 py-6 text-base font-semibold rounded-2xl">
+                  <Button variant="outline" size="lg" className="border-2 border-brand-blue text-brand-blue hover:bg-brand-blue/10 px-8 py-6 text-base font-semibold rounded-2xl">
                     Explore Technology
                   </Button>
                 </Link>
