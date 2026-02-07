@@ -546,11 +546,7 @@ function EssentialsSection() {
 
         {/* Block 2: Support & Planning */}
         <div className="mb-12">
-          <h3
-            className={`mb-6 text-xl font-bold ${
-              theme === "light" ? "text-orange-900" : "text-white"
-            }`}
-          >
+          <h3 className="mb-6 text-xl sm:text-2xl md:text-3xl font-bold text-foreground font-display">
             🤝 Support & Planning
           </h3>
           <div className="grid gap-3 md:grid-cols-3">
