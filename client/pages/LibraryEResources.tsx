@@ -169,7 +169,7 @@ export default function LibraryEResources() {
             </div>
             <div>
               <h4 className="font-semibold text-lg mb-2 flex items-center gap-2">
-                <Zap className="h-5 w-5 text-blue-600" />
+                <Zap className="h-5 w-5 text-brand-magenta" />
                 Off-Campus Access
               </h4>
               <ol className="list-decimal list-inside space-y-2 text-foreground/70">
