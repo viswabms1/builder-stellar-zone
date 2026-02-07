@@ -735,7 +735,7 @@ function ContactSection() {
                         <p className="font-semibold text-foreground">Email</p>
                         <a
                           href={`mailto:${campus.email}`}
-                          className="mt-1 inline-flex items-center gap-2 text-orange-500 hover:underline"
+                          className="mt-1 inline-flex items-center gap-2 text-brand-blue hover:underline"
                         >
                           <Mail className="h-4 w-4" />
                           {campus.email}
