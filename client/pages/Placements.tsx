@@ -1609,9 +1609,12 @@ export default function Placements() {
       {/* ===== FINAL CTA ===== */}
       <section className="px-3 py-10 lg:py-16">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="bg-gradient-to-r from-orange-500/10 via-red-600/10 to-pink-500/10 rounded-3xl p-12 border border-orange-500/20">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Begin Your Success Story
+          <div className="bg-gradient-to-br from-brand-blue/10 via-brand-magenta/10 to-background dark:from-orange-500/10 dark:via-red-600/10 dark:to-pink-500/10 rounded-3xl p-12 border border-border/50">
+            <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-display mb-4">
+              <span className="text-foreground">Begin Your </span>
+              <span className="bg-brand-gradient bg-clip-text text-transparent">
+                Success Story
+              </span>
             </h2>
             <p className="text-lg text-foreground mb-8 max-w-2xl mx-auto">
               Join DSU and access opportunities with 500+ global recruiters
@@ -1626,7 +1629,7 @@ export default function Placements() {
               >
                 <Button
                   size="lg"
-                  className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-red-600 hover:to-orange-500 text-foreground px-8 py-6 text-lg font-semibold rounded-2xl transition-all duration-300"
+                  className="bg-gradient-to-r from-[#0088FF] via-[#FFD700] to-[#FF6B00] hover:from-[#FF6B00] hover:via-[#FFD700] hover:to-[#0088FF] text-foreground px-8 py-6 text-lg font-semibold rounded-2xl animate-gradient bg-[length:200%_auto] transition-all duration-300"
                 >
                   Apply Now
                   <ArrowRight className="w-5 h-5 ml-2" />
@@ -1636,7 +1639,7 @@ export default function Placements() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-orange-500/30 hover:bg-orange-500/10 px-8 py-6 text-lg font-semibold rounded-2xl"
+                  className="border-2 border-brand-blue text-brand-blue hover:bg-brand-blue/10 px-8 py-6 text-lg font-semibold rounded-2xl"
                 >
                   Explore Programs
                 </Button>
