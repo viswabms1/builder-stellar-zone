@@ -162,10 +162,11 @@ export default function VisionMission() {
       <section className="px-3 py-10">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${
-              theme === "light" ? "text-orange-900" : "text-white"
-            }`}>
-              How We Translate Vision into Action
+            <h2 className="headline-2 mb-6 font-display">
+              <span className="text-foreground">How We Translate </span>
+              <span className="bg-brand-gradient bg-clip-text text-transparent">
+                Vision into Action
+              </span>
             </h2>
           </div>
 
