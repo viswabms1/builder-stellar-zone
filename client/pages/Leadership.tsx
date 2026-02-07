@@ -465,21 +465,22 @@ export default function Leadership() {
       </section>
 
       {/* Registrar and Vice Chancellor */}
-      <section className="px-3 py-20 bg-gradient-to-br from-orange-500/5 via-red-600/5 to-background">
+      <section className="px-3 py-20 bg-gradient-to-br from-brand-blue/5 via-brand-magenta/5 to-background">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <Badge
               variant="outline"
-              className="border-orange-500/20 bg-orange-500/10 text-orange-500 mb-4"
+              className="border-brand-blue/20 bg-brand-blue/10 text-brand-blue mb-4"
             >
               Administrative Leadership
             </Badge>
-            <h2 className={`text-4xl md:text-5xl font-bold mb-3 ${
-              theme === "light" ? "text-orange-900" : "text-white"
-            }`}>
-              Executive Officers
+            <h2 className="headline-2 mb-6 font-display">
+              <span className="text-foreground">Executive </span>
+              <span className="bg-brand-gradient bg-clip-text text-transparent">
+                Officers
+              </span>
             </h2>
-            <p className="text-lg text-foreground max-w-3xl mx-auto">
+            <p className="subheadline text-foreground max-w-3xl mx-auto font-display">
               Key officers managing university operations and academic affairs
             </p>
           </div>
@@ -570,21 +571,22 @@ export default function Leadership() {
       <div className="h-1 bg-gradient-to-r from-transparent via-orange-500/20 to-transparent"></div>
 
       {/* Pro Vice Chancellors */}
-      <section className="px-3 py-20">
+      <section className="px-3 py-20 bg-gradient-to-br from-brand-blue/5 via-brand-magenta/3 to-background">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <Badge
               variant="outline"
-              className="border-orange-500/20 bg-orange-500/10 text-orange-500 mb-4"
+              className="border-brand-blue/20 bg-brand-blue/10 text-brand-blue mb-4"
             >
               Academic Leadership
             </Badge>
-            <h2 className={`text-4xl md:text-5xl font-bold mb-3 ${
-              theme === "light" ? "text-orange-900" : "text-white"
-            }`}>
-              Pro Vice Chancellors
+            <h2 className="headline-2 mb-6 font-display">
+              <span className="text-foreground">Pro Vice </span>
+              <span className="bg-brand-gradient bg-clip-text text-transparent">
+                Chancellors
+              </span>
             </h2>
-            <p className="text-lg text-foreground max-w-3xl mx-auto">
+            <p className="subheadline text-foreground max-w-3xl mx-auto font-display">
               Academic visionaries shaping the university's future
             </p>
           </div>
@@ -692,30 +694,29 @@ export default function Leadership() {
       <div className="h-1 bg-gradient-to-r from-transparent via-orange-500/20 to-transparent"></div>
 
       {/* Governance Committees */}
-      <section id="administrative-committees" className="px-3 py-20 bg-gradient-to-br from-orange-500/5 via-red-600/5 to-background">
+      <section id="administrative-committees" className="px-3 py-20 bg-gradient-to-br from-brand-blue/5 via-brand-magenta/5 to-background">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <Badge
               variant="outline"
-              className="border-orange-500/20 bg-orange-500/10 text-orange-500 mb-4"
+              className="border-brand-blue/20 bg-brand-blue/10 text-brand-blue mb-4"
             >
               Governance Structure
             </Badge>
-            <h2 className={`text-4xl md:text-5xl font-bold mb-3 ${
-              theme === "light" ? "text-orange-900" : "text-white"
-            }`}>
-              Governance & Committees
+            <h2 className="headline-2 mb-6 font-display">
+              <span className="text-foreground">Governance & </span>
+              <span className="bg-brand-gradient bg-clip-text text-transparent">
+                Committees
+              </span>
             </h2>
-            <p className="text-lg text-foreground max-w-3xl mx-auto mb-8">
+            <p className="subheadline text-foreground max-w-3xl mx-auto mb-8 font-display">
               DSU follows a multi-tier governance model to ensure transparency, academic rigor, and continuous improvement.
             </p>
           </div>
 
           {/* Strategic Governance */}
           <div className="mb-16">
-            <h3 className={`text-2xl font-bold mb-2 ${
-              theme === "light" ? "text-orange-900" : "text-white"
-            }`}>
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2 font-display text-foreground">
               Strategic Governance
             </h3>
             <p className="text-foreground/70 mb-8 max-w-3xl">
@@ -793,9 +794,7 @@ export default function Leadership() {
 
           {/* Academic Governance */}
           <div className="mb-16">
-            <h3 className={`text-2xl font-bold mb-2 ${
-              theme === "light" ? "text-orange-900" : "text-white"
-            }`}>
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2 font-display text-foreground">
               Academic Governance
             </h3>
             <p className="text-foreground/70 mb-8 max-w-3xl">
@@ -873,9 +872,7 @@ export default function Leadership() {
 
           {/* Quality & Compliance */}
           <div>
-            <h3 className={`text-2xl font-bold mb-2 ${
-              theme === "light" ? "text-orange-900" : "text-white"
-            }`}>
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2 font-display text-foreground">
               Quality & Compliance
             </h3>
             <p className="text-foreground/70 mb-8 max-w-3xl">
@@ -962,16 +959,17 @@ export default function Leadership() {
           <div className="text-center mb-16">
             <Badge
               variant="outline"
-              className="border-orange-500/20 bg-orange-500/10 text-orange-500 mb-4"
+              className="border-brand-blue/20 bg-brand-blue/10 text-brand-blue mb-4"
             >
               Leadership Values
             </Badge>
-            <h2 className={`text-3xl md:text-4xl font-bold mb-3 ${
-              theme === "light" ? "text-orange-900" : "text-white"
-            }`}>
-              Leadership Principles
+            <h2 className="headline-2 mb-6 font-display">
+              <span className="text-foreground">Leadership </span>
+              <span className="bg-brand-gradient bg-clip-text text-transparent">
+                Principles
+              </span>
             </h2>
-            <p className="text-lg text-foreground max-w-3xl mx-auto">
+            <p className="subheadline text-foreground max-w-3xl mx-auto font-display">
               Core values guiding DSU's institutional direction and decision-making
             </p>
           </div>
@@ -1001,12 +999,15 @@ export default function Leadership() {
       </section>
 
       {/* CTA Section */}
-      <section className="px-3 py-20 bg-gradient-to-br from-orange-500/5 via-red-600/5 to-background">
+      <section className="px-3 py-20 bg-gradient-to-r from-brand-blue/5 via-brand-magenta/5 to-brand-orange/5">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-3">
-            Connect With Our Team
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 font-display">
+            <span className="text-foreground">Connect With Our </span>
+            <span className="bg-brand-gradient bg-clip-text text-transparent">
+              Team
+            </span>
           </h2>
-          <p className="text-lg text-foreground mb-8 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-foreground mb-6 md:mb-8 max-w-2xl mx-auto font-display leading-tight">
             Have questions? Reach out to our administration for more information about DSU's leadership and governance.
           </p>
 
@@ -1014,7 +1015,7 @@ export default function Leadership() {
             <a href="mailto:info@dsu.edu.in">
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-red-600 hover:to-orange-500 text-foreground px-8 py-6 font-semibold rounded-2xl"
+                className="bg-gradient-to-r from-[#0088FF] via-[#FFD700] to-[#FF6B00] hover:from-[#0066FF] hover:via-[#FFC700] hover:to-[#FF5500] text-white px-8 py-6 text-lg font-semibold rounded-2xl shadow-lg shadow-brand-blue/30 hover:shadow-brand-blue/50 transition-all animate-gradient bg-[length:200%_auto]"
               >
                 Contact Us
                 <ArrowRight className="w-5 h-5 ml-2" />
@@ -1024,7 +1025,7 @@ export default function Leadership() {
               <Button
                 variant="outline"
                 size="lg"
-                className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-foreground px-8 py-6 font-semibold rounded-2xl"
+                className="border-2 border-brand-blue text-brand-blue hover:bg-brand-blue/10 hover:border-brand-blue px-8 py-6 font-semibold rounded-2xl text-base transition-all"
               >
                 Back to About
               </Button>
