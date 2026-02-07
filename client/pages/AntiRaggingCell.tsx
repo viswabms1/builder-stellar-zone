@@ -200,13 +200,13 @@ function IntroductionSection() {
   return (
     <section className="px-3 py-10">
       <div className="mx-auto max-w-4xl">
-        <Card className="border border-orange-500/20 bg-card/70 backdrop-blur-sm">
+        <Card className="border border-brand-blue/20 bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur-sm">
           <CardHeader>
             <div className="flex items-start gap-3">
-              <AlertCircle className="h-6 w-6 text-orange-600 mt-1 flex-shrink-0" />
+              <AlertCircle className="h-6 w-6 text-brand-blue mt-1 flex-shrink-0" />
               <div>
-                <CardTitle className="text-2xl">
-                  What is Ragging?
+                <CardTitle className="text-2xl font-display">
+                  <span className="bg-brand-gradient bg-clip-text text-transparent">What is Ragging?</span>
                 </CardTitle>
                 <CardDescription className="mt-2 text-base">
                   Understanding the issue and DSU's stance
