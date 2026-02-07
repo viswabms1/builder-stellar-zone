@@ -931,38 +931,38 @@ export default function Navigation() {
                                   {
                                     bg:
                                       theme === "light"
-                                        ? "bg-orange-50"
-                                        : "bg-orange-900/20",
+                                        ? "bg-blue-50"
+                                        : "bg-brand-blue/20",
                                     border:
-                                      "border-orange-200/50 dark:border-orange-600/30",
-                                    text: "text-orange-900 dark:text-orange-100",
-                                  },
-                                  {
-                                    bg:
-                                      theme === "light"
-                                        ? "bg-emerald-50"
-                                        : "bg-emerald-900/20",
-                                    border:
-                                      "border-emerald-200/50 dark:border-emerald-600/30",
-                                    text: "text-emerald-900 dark:text-emerald-100",
-                                  },
-                                  {
-                                    bg:
-                                      theme === "light"
-                                        ? "bg-orange-50"
-                                        : "bg-orange-900/20",
-                                    border:
-                                      "border-orange-200/50 dark:border-orange-600/30",
-                                    text: "text-orange-900 dark:text-orange-100",
+                                      "border-blue-200/50 dark:border-brand-blue/30",
+                                    text: "text-blue-900 dark:text-brand-blue",
                                   },
                                   {
                                     bg:
                                       theme === "light"
                                         ? "bg-purple-50"
-                                        : "bg-purple-900/20",
+                                        : "bg-brand-magenta/20",
                                     border:
-                                      "border-purple-200/50 dark:border-purple-600/30",
-                                    text: "text-purple-900 dark:text-purple-100",
+                                      "border-purple-200/50 dark:border-brand-magenta/30",
+                                    text: "text-purple-900 dark:text-brand-magenta",
+                                  },
+                                  {
+                                    bg:
+                                      theme === "light"
+                                        ? "bg-orange-50"
+                                        : "bg-brand-orange/20",
+                                    border:
+                                      "border-orange-200/50 dark:border-brand-orange/30",
+                                    text: "text-orange-900 dark:text-brand-orange",
+                                  },
+                                  {
+                                    bg:
+                                      theme === "light"
+                                        ? "bg-indigo-50"
+                                        : "bg-blue-600/20",
+                                    border:
+                                      "border-indigo-200/50 dark:border-blue-600/30",
+                                    text: "text-indigo-900 dark:text-blue-200",
                                   },
                                 ];
                                 const colors =
