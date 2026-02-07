@@ -1106,17 +1106,17 @@ export default function Placements() {
             </svg>
           </div>
 
-          <div className="absolute top-10 right-20 w-40 h-40 border-2 border-orange-500/20 rounded-3xl transform rotate-45 animate-pulse"></div>
+          <div className="absolute top-10 right-20 w-40 h-40 border-2 border-brand-blue/20 dark:border-orange-500/20 rounded-3xl transform rotate-45 animate-pulse"></div>
           <div
-            className="absolute bottom-20 left-10 w-32 h-32 border-2 border-red-500/20 rounded-full animate-pulse"
+            className="absolute bottom-20 left-10 w-32 h-32 border-2 border-brand-magenta/20 dark:border-red-500/20 rounded-full animate-pulse"
             style={{ animationDelay: "1s" }}
           ></div>
         </div>
 
         <div className="relative max-w-7xl mx-auto px-3 text-center">
-          <div className="inline-flex items-center px-3 py-3 bg-gradient-to-r from-orange-500/20 to-red-600/20 backdrop-blur-sm rounded-full border border-orange-500/40 mb-8 shadow-xl hover:shadow-2xl transition-all duration-300">
-            <TrendingUp className="w-5 h-5 text-orange-400 mr-2" />
-            <span className="text-sm font-semibold text-orange-300">
+          <div className="inline-flex items-center px-3 py-3 bg-gradient-to-r from-brand-blue/10 to-brand-magenta/10 dark:from-orange-500/20 dark:to-red-600/20 backdrop-blur-sm rounded-full border border-brand-blue/20 dark:border-orange-500/40 mb-8 shadow-xl hover:shadow-2xl transition-all duration-300">
+            <TrendingUp className="w-5 h-5 text-brand-blue dark:text-orange-400 mr-2" />
+            <span className="text-sm font-semibold text-brand-blue dark:text-orange-300">
               Career Outcomes Powered by AI-First Education
             </span>
           </div>
