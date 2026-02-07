@@ -88,7 +88,7 @@ export default function AdministrativeCommittees() {
             {committees.map((committee, index) => (
               <Card
                 key={index}
-                className="bg-card/50 backdrop-blur-sm border border-border/50 hover:border-brand-magenta/30 transition-all duration-300 group hover:shadow-lg hover:shadow-brand-magenta/10"
+                className="group bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur-sm border border-border/50 hover:border-brand-magenta/50 transition-all duration-300 hover:shadow-lg hover:shadow-brand-magenta/20"
               >
                 <CardHeader>
                   <div className="w-12 h-12 rounded-2xl bg-brand-magenta/10 flex items-center justify-center mb-4 group-hover:bg-brand-magenta/20 transition-colors">
