@@ -49,12 +49,12 @@ export default function NVIDIAArchitecture() {
             <div className="space-y-4">
               {/* Main Headline */}
               <div>
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-2">
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-blue-300">
+                <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-2 font-display">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-blue via-brand-magenta to-brand-blue">
                     THE WORLD IS BUILDING AI.
                   </span>
                   <br />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-cyan-400">
+                  <span className="bg-brand-gradient bg-clip-text text-transparent">
                     WE ARE BUILDING THE FACTORY.
                   </span>
                 </h1>
