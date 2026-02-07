@@ -1110,7 +1110,7 @@ export default function Navigation() {
                                           className={`block font-bold text-sm mb-2 transition-colors ${
                                             theme === "light"
                                               ? "text-gray-900 group-hover:text-brand-blue"
-                                              : "text-white group-hover:text-brand-blue"
+                                              : "text-white group-hover:text-white/80"
                                           }`}
                                         >
                                           {school.name}
@@ -1124,7 +1124,7 @@ export default function Navigation() {
                                           className={`block font-bold text-sm mb-2 transition-colors ${
                                             theme === "light"
                                               ? "text-gray-900 group-hover:text-brand-blue"
-                                              : "text-white group-hover:text-brand-blue"
+                                              : "text-white group-hover:text-white/80"
                                           }`}
                                         >
                                           {school.name}
