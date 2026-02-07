@@ -352,7 +352,7 @@ export default function CampusLife() {
                     </p>
                     <Badge
                       variant="secondary"
-                      className="mt-2 text-xs bg-orange-500/20 text-orange-300"
+                      className="mt-2 text-xs bg-brand-blue/20 text-brand-blue"
                     >
                       {story.year}
                     </Badge>
