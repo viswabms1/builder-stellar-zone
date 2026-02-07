@@ -221,10 +221,10 @@ export default function LibraryAdvisoryCommittee() {
         </Card>
 
         {/* Meeting Information */}
-        <Card className="border-none shadow-lg">
+        <Card className="border-none shadow-lg bg-gradient-to-br from-card/80 via-card/60 to-card/40 hover:shadow-lg hover:shadow-brand-blue/20 transition-all duration-300">
           <CardHeader>
-            <CardTitle className="text-2xl">Committee Meetings</CardTitle>
-            <CardDescription>
+            <CardTitle className="text-xl sm:text-2xl font-display text-foreground">Committee Meetings</CardTitle>
+            <CardDescription className="text-foreground/70">
               Regular meetings to review and guide library operations
             </CardDescription>
           </CardHeader>
