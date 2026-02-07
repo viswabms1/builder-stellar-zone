@@ -621,9 +621,9 @@ function CalendarSection() {
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {CALENDAR_EVENTS.map((event, index) => {
             const typeColors = {
-              theory: "bg-blue-500/10 border-blue-500/30 text-blue-600",
-              practical: "bg-green-500/10 border-green-500/30 text-green-600",
-              internal: "bg-purple-500/10 border-purple-500/30 text-purple-600",
+              theory: "bg-brand-blue/10 border-brand-blue/30 text-brand-blue",
+              practical: "bg-brand-green/10 border-brand-green/30 text-brand-green",
+              internal: "bg-brand-magenta/10 border-brand-magenta/30 text-brand-magenta",
             };
             return (
               <Card
