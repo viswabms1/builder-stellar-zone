@@ -817,7 +817,7 @@ export default function CampusLife() {
               >
                 <Button
                   size="lg"
-                  className="bg-gradient-to-r from-orange-500 via-red-600 to-pink-500 text-foreground px-8 sm:px-12 py-6 text-sm sm:text-base font-semibold rounded-full hover:shadow-lg hover:shadow-orange-500/30 transition-all duration-300 group w-full sm:w-auto"
+                  className="bg-gradient-to-r from-[#0088FF] via-[#FFD700] to-[#FF6B00] hover:from-[#FF6B00] hover:via-[#FFD700] hover:to-[#0088FF] text-foreground px-8 sm:px-12 py-6 text-sm sm:text-base font-semibold rounded-full animate-gradient bg-[length:200%_auto] transition-all duration-300 group w-full sm:w-auto"
                 >
                   Virtual Tour
                   <MapPin className="w-4 sm:w-5 h-4 sm:h-5 ml-2 group-hover:-translate-y-0.5 transition-transform" />
