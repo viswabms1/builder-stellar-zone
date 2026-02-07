@@ -448,16 +448,16 @@ export default function CampusLife() {
             </Card>
 
             {/* AIC-DSU - Modern */}
-            <Card className="overflow-hidden border border-blue-500/50 bg-gradient-to-br from-blue-500/20 to-blue-600/10 rounded-lg hover:border-blue-400 transition-colors">
+            <Card className="overflow-hidden border border-border/50 bg-gradient-to-br from-card/80 via-card/60 to-card/40 rounded-lg hover:border-brand-blue/50 transition-colors">
               <CardHeader className="space-y-4">
                 <div>
-                  <Badge className="bg-blue-500/30 text-blue-200 mb-4 text-xs font-bold px-3 py-1">
+                  <Badge className="bg-brand-blue/20 text-brand-blue mb-4 text-xs font-bold px-3 py-1">
                     Govt. Backed
                   </Badge>
                   <h3 className="text-2xl font-bold text-foreground mb-2">
                     AIC-DSU Innovation Foundation
                   </h3>
-                  <p className="text-sm text-blue-300">
+                  <p className="text-sm text-brand-blue">
                     Atal Incubation Center | NITI Aayog & AIM
                   </p>
                 </div>
