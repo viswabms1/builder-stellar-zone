@@ -177,11 +177,11 @@ export default function Research() {
       </section>
 
       {/* ===== NATIONAL ALIGNMENT & AI RESEARCH SPINE ===== */}
-      <section className="px-3 py-10 lg:py-16 bg-gradient-to-br from-orange-500/5 via-red-600/5 to-background">
+      <section className="px-3 py-10 lg:py-16 bg-gradient-to-br from-brand-blue/5 via-brand-magenta/5 to-background dark:from-brand-magenta/5 dark:via-brand-blue/5 dark:to-black">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
+            <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-display mb-6">
+              <span className="bg-brand-gradient bg-clip-text text-transparent">
                 Aligned with National Priorities
               </span>
             </h2>
