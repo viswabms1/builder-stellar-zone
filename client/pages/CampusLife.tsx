@@ -375,7 +375,7 @@ export default function CampusLife() {
       </section>
 
       {/* ===== ENTREPRENEURSHIP ECOSYSTEM ===== */}
-      <section className="px-3 py-16 bg-gradient-to-b from-blue-500/10 via-transparent to-blue-500/5">
+      <section className="px-3 py-16 bg-gradient-to-b from-brand-blue/5 via-transparent to-brand-blue/5">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-display mb-6">
