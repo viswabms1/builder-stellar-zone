@@ -434,10 +434,10 @@ export default function NVIDIAArchitecture() {
 
           {/* DGX B200 */}
           <div className="mb-16">
-            <Card className="border-border/50 bg-card/50 backdrop-blur overflow-hidden">
+            <Card className="border-border/50 bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur overflow-hidden hover:shadow-lg hover:shadow-brand-blue/20 transition-all duration-300">
               <div className="grid md:grid-cols-2 gap-0">
                 <div className="p-8 border-r border-border/30">
-                  <h3 className="text-4xl font-bold mb-6">DGX B200</h3>
+                  <h3 className="text-3xl sm:text-4xl font-bold mb-6 font-display">DGX B200</h3>
                   <p className="text-xl text-foreground/70 mb-8 leading-relaxed">
                     A complete supercomputer in a box, designed specifically for
                     training massive AI models
