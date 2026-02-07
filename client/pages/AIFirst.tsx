@@ -462,41 +462,41 @@ export default function AIFirst() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            <Card className="border-border/50 bg-card/50 backdrop-blur">
+            <Card className="border-border/50 bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur hover:shadow-lg hover:shadow-brand-blue/20 transition-all">
               <CardHeader>
-                <CardTitle className="text-2xl text-blue-500">Global Recognition</CardTitle>
+                <CardTitle className="text-2xl text-brand-blue">Global Recognition</CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
                 <div className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" />
                   <p className="text-sm">Positioning DSU among top AI research institutions in India</p>
                 </div>
                 <div className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" />
                   <p className="text-sm">Publishing groundbreaking research in premier journals</p>
                 </div>
                 <div className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" />
                   <p className="text-sm">Building partnerships with global AI leaders</p>
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="border-border/50 bg-card/50 backdrop-blur">
+            <Card className="border-border/50 bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur hover:shadow-lg hover:shadow-brand-magenta/20 transition-all">
               <CardHeader>
-                <CardTitle className="text-2xl text-purple-500">Talent Development</CardTitle>
+                <CardTitle className="text-2xl text-brand-magenta">Talent Development</CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
                 <div className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-5 h-5 text-brand-magenta flex-shrink-0 mt-0.5" />
                   <p className="text-sm">Developing highly skilled AI professionals for industry</p>
                 </div>
                 <div className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-5 h-5 text-brand-magenta flex-shrink-0 mt-0.5" />
                   <p className="text-sm">Creating innovation and entrepreneurship opportunities</p>
                 </div>
                 <div className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-5 h-5 text-brand-magenta flex-shrink-0 mt-0.5" />
                   <p className="text-sm">Building India's AI-first generation of leaders</p>
                 </div>
               </CardContent>
