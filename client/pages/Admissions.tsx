@@ -362,32 +362,31 @@ export default function Admissions() {
 function HeroSection() {
   const { theme } = useTheme();
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-orange-500/10 via-red-500/10 to-background py-10 lg:py-28">
+    <section className="relative overflow-hidden bg-gradient-to-br from-brand-blue/10 via-brand-magenta/5 to-background dark:from-orange-500/10 dark:via-red-500/10 py-10 lg:py-28">
       <div className="absolute inset-0">
-        <div className="absolute -top-10 -left-10 h-64 w-64 rounded-full bg-orange-500/20 blur-3xl" />
-        <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-red-600/20 blur-3xl" />
+        <div className="absolute -top-10 -left-10 h-64 w-64 rounded-full bg-brand-blue/20 dark:bg-orange-500/20 blur-3xl" />
+        <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-brand-magenta/20 dark:bg-red-600/20 blur-3xl" />
       </div>
       <div className="relative mx-auto max-w-6xl px-3 text-center">
-        <div className="inline-flex items-center gap-2 rounded-full border border-orange-500/30 bg-orange-500/10 px-4 py-2 text-sm font-semibold text-orange-500">
-          <GraduationCap className="h-4 w-4" />
+        <Badge className="bg-brand-blue/15 text-brand-blue justify-center mb-8">
+          <GraduationCap className="h-4 w-4 mr-2" />
           Admissions 2025 – Now Open
-        </div>
-        <h1
-          className={`mt-8 text-4xl font-bold leading-tight md:text-6xl ${
-            theme === "light" ? "text-orange-900" : "text-white"
-          }`}
-        >
-          Your Path to AI-First Education
+        </Badge>
+        <h1 className="mt-8 text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight font-display text-foreground">
+          <span className="text-foreground">Your Path to </span>
+          <span className="bg-brand-gradient bg-clip-text text-transparent">
+            AI-First Education
+          </span>
         </h1>
-        <p className="mt-6 text-lg text-white md:text-xl">
+        <p className="mt-6 text-base sm:text-xl md:text-2xl lg:text-3xl text-foreground/80 font-body">
           Multiple admission pathways, flexible programs, and a Bengaluru-based
           advantage. 100% placements with industry partnerships. Choose your
           route: Direct Admissions, International, or Online.
         </p>
-        <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+        <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row flex-wrap">
           <Button
             size="lg"
-            className="rounded-2xl bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 px-8 py-6 text-lg font-semibold text-foreground shadow-lg shadow-orange-500/30 transition hover:shadow-xl"
+            className="bg-gradient-to-r from-[#0088FF] via-[#FFD700] to-[#FF6B00] hover:from-[#FF6B00] hover:via-[#FFD700] hover:to-[#0088FF] text-foreground px-8 py-6 text-lg font-semibold rounded-2xl animate-gradient bg-[length:200%_auto]"
             asChild
           >
             <a
@@ -402,7 +401,7 @@ function HeroSection() {
           <Button
             variant="outline"
             size="lg"
-            className="rounded-2xl border-2 border-orange-500 px-8 py-6 text-lg font-semibold text-orange-500"
+            className="rounded-2xl border-2 border-brand-blue text-brand-blue hover:bg-brand-blue/10 px-8 py-6 text-lg font-semibold"
             asChild
           >
             <a href="/eligibility">
@@ -413,7 +412,7 @@ function HeroSection() {
           <Button
             variant="outline"
             size="lg"
-            className="rounded-2xl border-2 border-orange-500 px-8 py-6 text-lg font-semibold text-orange-500"
+            className="rounded-2xl border-2 border-brand-blue text-brand-blue hover:bg-brand-blue/10 px-8 py-6 text-lg font-semibold"
             asChild
           >
             <a href="#choose-pathway">
@@ -424,7 +423,7 @@ function HeroSection() {
           <Button
             variant="outline"
             size="lg"
-            className="rounded-2xl border-2 border-orange-500 px-8 py-6 text-lg font-semibold text-orange-500"
+            className="rounded-2xl border-2 border-brand-blue text-brand-blue hover:bg-brand-blue/10 px-8 py-6 text-lg font-semibold"
             asChild
           >
             <a href="/admissions/closing-dates">
@@ -438,7 +437,7 @@ function HeroSection() {
             <Badge
               key={code}
               variant="secondary"
-              className="border border-orange-500/30 bg-background/80 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-orange-500 backdrop-blur"
+              className="border border-brand-blue/30 bg-background/80 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-brand-blue backdrop-blur"
             >
               {code}
             </Badge>
