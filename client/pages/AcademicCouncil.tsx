@@ -36,18 +36,19 @@ export default function AcademicCouncil() {
       {/* Council Functions Section */}
       <section className="px-6 py-20">
         <div className="max-w-4xl mx-auto">
-          <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-8 md:p-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
-                Council Functions & Responsibilities
+          <div className="bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur-sm border border-border/50 rounded-2xl p-8 md:p-12 hover:shadow-lg hover:shadow-brand-blue/20 transition-all duration-300">
+            <h2 className="headline-2 mb-6 font-display">
+              <span className="text-foreground">Council </span>
+              <span className="bg-brand-gradient bg-clip-text text-transparent">
+                Functions & Responsibilities
               </span>
             </h2>
 
             <div className="grid md:grid-cols-3 gap-6">
               <div className="flex gap-4">
                 <div className="flex-shrink-0">
-                  <div className="w-10 h-10 rounded-full bg-orange-500/20 flex items-center justify-center">
-                    <span className="text-orange-500 font-bold">1</span>
+                  <div className="w-10 h-10 rounded-full bg-brand-blue/20 flex items-center justify-center">
+                    <span className="text-brand-blue font-bold">1</span>
                   </div>
                 </div>
                 <div>
@@ -61,8 +62,8 @@ export default function AcademicCouncil() {
               </div>
               <div className="flex gap-4">
                 <div className="flex-shrink-0">
-                  <div className="w-10 h-10 rounded-full bg-orange-500/20 flex items-center justify-center">
-                    <span className="text-orange-500 font-bold">2</span>
+                  <div className="w-10 h-10 rounded-full bg-brand-blue/20 flex items-center justify-center">
+                    <span className="text-brand-blue font-bold">2</span>
                   </div>
                 </div>
                 <div>
@@ -76,8 +77,8 @@ export default function AcademicCouncil() {
               </div>
               <div className="flex gap-4">
                 <div className="flex-shrink-0">
-                  <div className="w-10 h-10 rounded-full bg-orange-500/20 flex items-center justify-center">
-                    <span className="text-orange-500 font-bold">3</span>
+                  <div className="w-10 h-10 rounded-full bg-brand-blue/20 flex items-center justify-center">
+                    <span className="text-brand-blue font-bold">3</span>
                   </div>
                 </div>
                 <div>
