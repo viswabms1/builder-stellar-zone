@@ -97,7 +97,7 @@ export default function NVIDIAArchitecture() {
         </div>
 
         {/* Bottom gradient accent */}
-        <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-slate-950 to-transparent"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-background to-transparent"></div>
       </section>
 
       {/* The Technology Behind Your AI Future Section */}
