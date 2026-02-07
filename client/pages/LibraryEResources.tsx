@@ -94,8 +94,8 @@ export default function LibraryEResources() {
       {/* Content Section */}
       <section className="py-16 px-3 max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Digital Resources Available
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-display mb-4">
+            <span className="bg-brand-gradient bg-clip-text text-transparent">Digital Resources Available</span>
           </h2>
           <p className="text-lg text-foreground/70">
             A comprehensive collection of e-resources accessible 24/7
