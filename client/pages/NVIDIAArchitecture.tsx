@@ -1033,7 +1033,7 @@ export default function NVIDIAArchitecture() {
           <div className="bg-gradient-to-r from-brand-magenta/10 via-brand-blue/10 to-brand-magenta/10 rounded-2xl p-8 border border-border/50 mb-10">
             <div className="grid md:grid-cols-2 gap-8">
               <div>
-                <h3 className="text-2xl font-bold mb-4 text-foreground">
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 text-foreground font-display">
                   The Recruitment Pipeline
                 </h3>
                 <p className="text-foreground/80 mb-6">
