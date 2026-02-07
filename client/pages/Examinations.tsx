@@ -768,7 +768,7 @@ function ExamDocumentCard({ document }: { document: ExamDocument }) {
           <Button
             variant="ghost"
             size="sm"
-            className="text-orange-500 hover:bg-transparent"
+            className="text-brand-blue hover:text-brand-magenta hover:bg-transparent transition-colors"
             asChild
           >
             <a href={document.href} target="_blank" rel="noreferrer">
