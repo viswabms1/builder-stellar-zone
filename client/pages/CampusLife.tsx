@@ -534,7 +534,7 @@ export default function CampusLife() {
                       {idx + 1}
                     </span>
                   </div>
-                  <p className="text-lg font-bold text-blue-400 mb-1">
+                  <p className="text-lg font-bold text-brand-blue mb-1">
                     {milestone.year}
                   </p>
                   <h4 className="font-semibold text-foreground mb-2">
