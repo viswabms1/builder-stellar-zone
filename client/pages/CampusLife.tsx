@@ -841,7 +841,7 @@ export default function CampusLife() {
             </div>
 
             {/* Trust Signals */}
-            <div className="pt-8 border-t border-orange-500/20">
+            <div className="pt-8 border-t border-border/50">
               <p className="text-sm text-foreground/70 mb-6">
                 Recognized for excellence by students, faculty, and industry
               </p>
