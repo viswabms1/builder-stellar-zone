@@ -62,16 +62,16 @@ export default function NVIDIAArchitecture() {
 
               {/* Subheadline */}
               <div className="space-y-2">
-                <p className="text-lg sm:text-xl text-gray-300 leading-relaxed">
+                <p className="text-base sm:text-xl text-foreground/80 leading-relaxed font-body">
                   Invitation To Experience India's First AI-Native Research Ecosystem.
                 </p>
                 <div className="space-y-1">
-                  <p className="text-base sm:text-lg text-green-400 font-semibold flex items-center gap-2">
-                    <span className="w-2 h-2 bg-green-400 rounded-full"></span>
+                  <p className="text-base sm:text-lg text-brand-blue font-semibold flex items-center gap-2">
+                    <span className="w-2 h-2 bg-brand-blue rounded-full"></span>
                     20 NVIDIA DGX B200 Nodes
                   </p>
-                  <p className="text-base sm:text-lg text-green-400 font-semibold flex items-center gap-2">
-                    <span className="w-2 h-2 bg-green-400 rounded-full"></span>
+                  <p className="text-base sm:text-lg text-brand-blue font-semibold flex items-center gap-2">
+                    <span className="w-2 h-2 bg-brand-blue rounded-full"></span>
                     One Mission
                   </p>
                 </div>
@@ -81,11 +81,11 @@ export default function NVIDIAArchitecture() {
               <div className="flex flex-col sm:flex-row gap-4 pt-2">
                 <a
                   href="#explore"
-                  className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                  className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                 >
                   <Button
                     size="lg"
-                    className="w-full sm:w-auto bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 text-white px-8 py-6 text-lg font-semibold rounded-2xl"
+                    className="w-full sm:w-auto bg-gradient-to-r from-[#0088FF] via-[#FFD700] to-[#FF6B00] hover:from-[#FF6B00] hover:via-[#FFD700] hover:to-[#0088FF] text-foreground px-8 py-6 text-lg font-semibold rounded-2xl animate-gradient bg-[length:200%_auto]"
                   >
                     Explore the Stack
                     <ArrowRight className="w-5 h-5 ml-2" />
