@@ -330,27 +330,27 @@ export default function NVIDIAArchitecture() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="border-border/50 hover:border-blue-500/50 transition-all bg-card/50 backdrop-blur">
+            <Card className="border-border/50 hover:border-brand-blue/50 transition-all bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur hover:shadow-lg hover:shadow-brand-blue/20">
               <CardHeader>
-                <CardTitle className="text-2xl mb-4">
+                <CardTitle className="text-2xl mb-4 font-display">
                   Semester 1: Foundation
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex items-start gap-3">
-                  <CheckCircle className="w-6 h-6 text-blue-500 flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-6 h-6 text-brand-blue flex-shrink-0 mt-0.5" />
                   <p className="text-base">
                     Learn Python and AI fundamentals on commodity hardware
                   </p>
                 </div>
                 <div className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" />
                   <p className="text-base">
                     Explore popular frameworks like PyTorch and TensorFlow
                   </p>
                 </div>
                 <div className="flex items-start gap-3">
-                  <CheckCircle className="w-6 h-6 text-blue-500 flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-6 h-6 text-brand-blue flex-shrink-0 mt-0.5" />
                   <p className="text-base">
                     Work with small AI models and datasets
                   </p>
@@ -358,7 +358,7 @@ export default function NVIDIAArchitecture() {
               </CardContent>
             </Card>
 
-            <Card className="border-border/50 hover:border-purple-500/50 transition-all bg-card/50 backdrop-blur">
+            <Card className="border-border/50 hover:border-brand-magenta/50 transition-all bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur hover:shadow-lg hover:shadow-brand-magenta/20">
               <CardHeader>
                 <CardTitle className="text-2xl mb-4">
                   Semester 2-3: Acceleration
