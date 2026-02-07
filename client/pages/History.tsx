@@ -299,22 +299,19 @@ export default function History() {
       </section>
 
       {/* Campus Infrastructure Section */}
-      <section className={`px-3 py-10 bg-gradient-to-br ${
-        theme === "light"
-          ? "from-orange-100 via-orange-50 to-background"
-          : "from-orange-500/5 via-red-600/5 to-background"
-      }`}>
+      <section className="px-3 py-10 bg-gradient-to-br from-brand-blue/5 via-brand-magenta/3 to-background">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-8">
-            <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${
-              theme === "light" ? "text-orange-900" : "text-white"
-            }`}>
-              Growth of Campus Infrastructure
+            <h2 className="headline-2 mb-6 font-display">
+              <span className="text-foreground">Growth of </span>
+              <span className="bg-brand-gradient bg-clip-text text-transparent">
+                Campus Infrastructure
+              </span>
             </h2>
-            <p className="text-lg text-foreground max-w-3xl mx-auto mb-6">
+            <p className="subheadline text-foreground max-w-3xl mx-auto mb-6 font-display">
               Infrastructure development at DSU has evolved in parallel with academic growth, ensuring modern learning environments across generations.
             </p>
-            <p className="text-lg text-foreground max-w-3xl mx-auto">
+            <p className="text-xs sm:text-sm md:text-base lg:text-lg text-foreground max-w-3xl mx-auto font-body">
               Facilities supporting academic excellence and holistic development
             </p>
           </div>
