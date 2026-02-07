@@ -648,9 +648,9 @@ export default function CampusLife() {
                         href={facility.href}
                         target="_blank"
                         rel="noreferrer"
-                        className="block hover:text-orange-500 transition-colors"
+                        className="block hover:text-brand-blue transition-colors"
                       >
-                        <h3 className="text-2xl font-bold text-foreground hover:text-orange-500 transition-colors">
+                        <h3 className="text-2xl font-bold text-foreground hover:text-brand-blue transition-colors">
                           {facility.title}
                         </h3>
                       </a>
