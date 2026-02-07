@@ -288,16 +288,10 @@ export default function History() {
             ].map((discipline, index) => (
               <Card
                 key={index}
-                className={`p-6 bg-card/50 backdrop-blur-sm border transition-all duration-300 flex items-center gap-3 ${
-                  theme === "light"
-                    ? "border-border/30 hover:border-orange-300"
-                    : "border-border/30 hover:border-orange-500/30"
-                }`}
+                className="group p-6 bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur-sm border border-border/50 hover:border-brand-blue/50 hover:shadow-lg hover:shadow-brand-blue/20 transition-all duration-300 flex items-center gap-3"
               >
-                <CheckCircle className={`w-5 h-5 flex-shrink-0 ${
-                  theme === "light" ? "text-orange-700" : "text-orange-500"
-                }`} />
-                <span className="text-foreground font-medium">{discipline}</span>
+                <CheckCircle className="w-5 h-5 flex-shrink-0 text-brand-blue group-hover:scale-110 transition-transform" />
+                <span className="text-xs sm:text-sm md:text-base text-foreground font-medium font-body group-hover:text-brand-blue transition-colors">{discipline}</span>
               </Card>
             ))}
           </div>
