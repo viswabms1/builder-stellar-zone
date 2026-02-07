@@ -344,7 +344,7 @@ export default function CampusLife() {
 
                 <CardHeader className="space-y-4">
                   <div>
-                    <h3 className="text-xl font-bold text-foreground group-hover:text-orange-500 transition-colors">
+                    <h3 className="text-xl font-bold text-foreground group-hover:text-brand-blue transition-colors">
                       {story.name}
                     </h3>
                     <p className="text-sm text-foreground/70 mt-1">
