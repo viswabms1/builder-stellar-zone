@@ -417,15 +417,15 @@ export default function CampusLife() {
 
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-sm text-foreground">
-                    <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
+                    <span className="w-2 h-2 bg-brand-blue rounded-full"></span>
                     Student entrepreneurship mentorship
                   </div>
                   <div className="flex items-center gap-2 text-sm text-foreground">
-                    <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
+                    <span className="w-2 h-2 bg-brand-blue rounded-full"></span>
                     Business ideation workshops
                   </div>
                   <div className="flex items-center gap-2 text-sm text-foreground">
-                    <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
+                    <span className="w-2 h-2 bg-brand-blue rounded-full"></span>
                     Early-stage startup support
                   </div>
                 </div>
