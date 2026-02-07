@@ -327,14 +327,10 @@ export default function History() {
             ].map((facility, index) => (
               <Card
                 key={index}
-                className={`p-6 bg-card/50 backdrop-blur-sm border transition-all duration-300 ${
-                  theme === "light"
-                    ? "border-border/30 hover:border-orange-300"
-                    : "border-border/30 hover:border-orange-500/30"
-                }`}
+                className="group p-6 bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur-sm border border-border/50 hover:border-brand-blue/50 hover:shadow-lg hover:shadow-brand-blue/20 transition-all duration-300"
               >
-                <h3 className="text-lg font-semibold text-foreground mb-2">{facility.title}</h3>
-                <p className="text-sm text-foreground">{facility.description}</p>
+                <h3 className="text-sm sm:text-base md:text-lg font-semibold text-foreground mb-2 font-display group-hover:text-brand-blue transition-colors">{facility.title}</h3>
+                <p className="text-xs sm:text-sm text-foreground font-body">{facility.description}</p>
               </Card>
             ))}
           </div>
