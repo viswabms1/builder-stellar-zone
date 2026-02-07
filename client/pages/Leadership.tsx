@@ -984,10 +984,10 @@ export default function Leadership() {
                     </div>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-foreground mb-1">
+                    <h3 className="text-sm md:text-base font-semibold text-foreground mb-1 font-display">
                       {principle.title}
                     </h3>
-                    <p className="text-sm text-foreground/80">
+                    <p className="text-xs sm:text-sm text-foreground/80 font-body">
                       {principle.description}
                     </p>
                   </div>
