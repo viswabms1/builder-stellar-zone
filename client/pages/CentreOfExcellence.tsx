@@ -140,7 +140,7 @@ export default function CentreOfExcellence() {
               return (
                 <Card
                   key={index}
-                  className={`${centre.borderColor} bg-gradient-to-br ${centre.bgColor} to-transparent backdrop-blur-sm hover:shadow-lg transition-all duration-300 hover:border-opacity-100`}
+                  className={`${centre.borderColor} bg-gradient-to-br ${centre.bgColor} backdrop-blur hover:shadow-lg hover:shadow-brand-blue/20 transition-all duration-300`}
                 >
                   <CardContent className="p-3">
                     <div
