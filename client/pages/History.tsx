@@ -340,15 +340,11 @@ export default function History() {
       {/* From Legacy to the Future Section */}
       <section className="px-3 py-10">
         <div className="max-w-7xl mx-auto">
-          <div className={`rounded-2xl p-8 md:p-12 bg-gradient-to-r border ${
-            theme === "light"
-              ? "from-orange-100 to-red-100 border-orange-300"
-              : "from-orange-500/10 to-red-600/10 border-orange-500/30"
-          }`}>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
-              From Legacy to the <span className={theme === "light" ? "text-orange-900" : "text-white"}>Future</span>
+          <div className="rounded-2xl p-8 md:p-12 bg-gradient-to-r from-brand-blue/10 via-brand-magenta/10 to-brand-blue/5 border border-brand-blue/20">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-foreground font-display">
+              From Legacy to the <span className="bg-brand-gradient bg-clip-text text-transparent">Future</span>
             </h2>
-            <p className="text-lg text-foreground leading-relaxed max-w-3xl">
+            <p className="text-xs sm:text-sm md:text-base lg:text-lg text-foreground leading-relaxed max-w-3xl font-body">
               Building on its strong foundation, Dayananda Sagar University continues to evolve as a future-ready institution—integrating emerging technologies, interdisciplinary learning, research-led education, and global engagement to prepare students for a rapidly changing world.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
@@ -356,11 +352,7 @@ export default function History() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className={`border-2 rounded-xl font-semibold ${
-                    theme === "light"
-                      ? "border-orange-600 text-orange-600 hover:bg-orange-600"
-                      : "border-orange-500 text-orange-500 hover:bg-orange-500"
-                  } hover:text-foreground`}
+                  className="border-2 border-brand-blue text-brand-blue hover:bg-brand-blue/10 hover:border-brand-blue rounded-xl font-semibold text-base transition-all"
                 >
                   Explore AI-First @ DSU
                   <ArrowRight className="w-5 h-5 ml-2" />
@@ -370,11 +362,7 @@ export default function History() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className={`border-2 rounded-xl font-semibold ${
-                    theme === "light"
-                      ? "border-orange-600 text-orange-600 hover:bg-orange-600"
-                      : "border-orange-500 text-orange-500 hover:bg-orange-500"
-                  } hover:text-foreground`}
+                  className="border-2 border-brand-blue text-brand-blue hover:bg-brand-blue/10 hover:border-brand-blue rounded-xl font-semibold text-base transition-all"
                 >
                   View Our Academics
                   <ArrowRight className="w-5 h-5 ml-2" />
