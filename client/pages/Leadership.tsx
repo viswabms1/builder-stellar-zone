@@ -271,30 +271,28 @@ export default function Leadership() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 bg-gradient-to-br from-orange-500/10 via-red-600/5 to-background">
+      <section className="relative py-20 lg:py-32 bg-gradient-to-br from-brand-blue/10 via-brand-magenta/5 to-background">
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-orange-500/10 rounded-full filter blur-3xl animate-float"></div>
+          <div className="absolute top-20 left-10 w-72 h-72 bg-brand-blue/10 rounded-full filter blur-3xl animate-float"></div>
           <div
-            className="absolute bottom-20 right-10 w-96 h-96 bg-red-600/10 rounded-full filter blur-3xl animate-float"
+            className="absolute bottom-20 right-10 w-96 h-96 bg-brand-magenta/10 rounded-full filter blur-3xl animate-float"
             style={{ animationDelay: "2s" }}
           ></div>
         </div>
 
         <div className="relative max-w-7xl mx-auto px-3 text-center">
-          <div className="inline-flex items-center px-4 py-2 bg-orange-500/10 rounded-full border border-orange-500/20 mb-8">
-            <Users className="w-4 h-4 text-orange-500 mr-2" />
-            <span className="text-sm font-medium text-orange-500">
+          <div className="inline-flex items-center px-4 py-2 bg-brand-blue/10 rounded-full border border-brand-blue/40 mb-8">
+            <Users className="w-4 h-4 text-brand-blue mr-2" />
+            <span className="text-sm font-medium text-brand-blue">
               Our Team
             </span>
           </div>
 
-          <h1 className={`text-4xl md:text-5xl font-bold mb-3 leading-tight ${
-            theme === "light" ? "text-orange-900" : "text-white"
-          }`}>
+          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-2 sm:mb-3 md:mb-4 leading-tight font-display text-white">
             Leadership & Administration
           </h1>
 
-          <p className="text-lg md:text-xl text-foreground mb-8 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-base sm:text-xl md:text-2xl lg:text-3xl font-semibold text-white mb-1 sm:mb-2 md:mb-6 leading-tight font-display">
             Academic leaders, institutional builders, and administrators shaping DSU's legacy, governance, and future-ready transformation.
           </p>
         </div>
