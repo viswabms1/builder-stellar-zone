@@ -177,13 +177,13 @@ function CommitteeCard({ committee }: { committee: Committee }) {
   const isAntiRaggingCell = committee.name === "Anti Ragging Committee";
 
   return (
-    <Card className="border border-orange-500/20 bg-card/70 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:shadow-orange-500/10 flex flex-col">
+    <Card className="border border-brand-blue/20 bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:shadow-brand-blue/10 flex flex-col">
       <CardHeader className="space-y-3">
         <CardTitle className="text-lg md:text-xl text-foreground leading-snug">
           {committee.name}
         </CardTitle>
         {committee.helpline && (
-          <Badge variant="outline" className="w-fit text-xs border-orange-500/40 text-white">
+          <Badge variant="outline" className="w-fit text-xs border-brand-blue/40 text-brand-blue">
             {committee.helpline}
           </Badge>
         )}
