@@ -122,139 +122,139 @@ export default function ResearchInnovationCouncil() {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr className="border-b border-border/30 hover:bg-orange-500/5 transition-colors">
+                  <tr className="border-b border-border/30 hover:bg-brand-blue/5 transition-colors">
                     <td className="px-3 py-4 text-sm text-foreground">1</td>
                     <td className="px-3 py-4 text-sm font-medium text-foreground">Dr B S Satyanarayana</td>
                     <td className="px-3 py-4 text-sm text-foreground">Vice Chancellor, DSU</td>
                     <td className="px-3 py-4 text-sm text-foreground">Chairman</td>
                   </tr>
-                  <tr className="border-b border-border/30 hover:bg-orange-500/5 transition-colors">
+                  <tr className="border-b border-border/30 hover:bg-brand-blue/5 transition-colors">
                     <td className="px-3 py-4 text-sm text-foreground">2</td>
                     <td className="px-3 py-4 text-sm font-medium text-foreground">Prof Janardhan R</td>
                     <td className="px-3 py-4 text-sm text-foreground">Pro Vice Chancellor, DSU</td>
                     <td className="px-3 py-4 text-sm text-foreground">Member</td>
                   </tr>
-                  <tr className="border-b border-border/30 hover:bg-orange-500/5 transition-colors">
+                  <tr className="border-b border-border/30 hover:bg-brand-blue/5 transition-colors">
                     <td className="px-3 py-4 text-sm text-foreground">3</td>
                     <td className="px-3 py-4 text-sm font-medium text-foreground">Dr Prakash S</td>
                     <td className="px-3 py-4 text-sm text-foreground">Pro Vice Chancellor, DSU</td>
                     <td className="px-3 py-4 text-sm text-foreground">Member</td>
                   </tr>
-                  <tr className="border-b border-border/30 hover:bg-orange-500/5 transition-colors">
+                  <tr className="border-b border-border/30 hover:bg-brand-blue/5 transition-colors">
                     <td className="px-3 py-4 text-sm text-foreground">4</td>
                     <td className="px-3 py-4 text-sm font-medium text-foreground">Dr Y N Srikant</td>
                     <td className="px-3 py-4 text-sm text-foreground">Dean, Engineering, IISC, Bengaluru</td>
                     <td className="px-3 py-4 text-sm text-foreground">Member</td>
                   </tr>
-                  <tr className="border-b border-border/30 hover:bg-orange-500/5 transition-colors">
+                  <tr className="border-b border-border/30 hover:bg-brand-blue/5 transition-colors">
                     <td className="px-3 py-4 text-sm text-foreground">5</td>
                     <td className="px-3 py-4 text-sm font-medium text-foreground">Dr Pradeep V Desai</td>
                     <td className="px-3 py-4 text-sm text-foreground">CEO, Entrepreneurship Centre IISC Campus, Bengaluru</td>
                     <td className="px-3 py-4 text-sm text-foreground">Member</td>
                   </tr>
-                  <tr className="border-b border-border/30 hover:bg-orange-500/5 transition-colors">
+                  <tr className="border-b border-border/30 hover:bg-brand-blue/5 transition-colors">
                     <td className="px-3 py-4 text-sm text-foreground">6</td>
                     <td className="px-3 py-4 text-sm font-medium text-foreground">Dr Lokesh Boregowda</td>
                     <td className="px-3 py-4 text-sm text-foreground">Director, Samsung R&D Institute, Bengaluru</td>
                     <td className="px-3 py-4 text-sm text-foreground">Member</td>
                   </tr>
-                  <tr className="border-b border-border/30 hover:bg-orange-500/5 transition-colors">
+                  <tr className="border-b border-border/30 hover:bg-brand-blue/5 transition-colors">
                     <td className="px-3 py-4 text-sm text-foreground">7</td>
                     <td className="px-3 py-4 text-sm font-medium text-foreground">Dr V Ramasubramanian</td>
                     <td className="px-3 py-4 text-sm text-foreground">Professor, IIITB, Bengaluru</td>
                     <td className="px-3 py-4 text-sm text-foreground">Member</td>
                   </tr>
-                  <tr className="border-b border-border/30 hover:bg-orange-500/5 transition-colors">
+                  <tr className="border-b border-border/30 hover:bg-brand-blue/5 transition-colors">
                     <td className="px-3 py-4 text-sm text-foreground">8</td>
                     <td className="px-3 py-4 text-sm font-medium text-foreground">Dr Kumar N Sivarajan</td>
                     <td className="px-3 py-4 text-sm text-foreground">CTO, Tejas Networks, Bengaluru</td>
                     <td className="px-3 py-4 text-sm text-foreground">Member</td>
                   </tr>
-                  <tr className="border-b border-border/30 hover:bg-orange-500/5 transition-colors">
+                  <tr className="border-b border-border/30 hover:bg-brand-blue/5 transition-colors">
                     <td className="px-3 py-4 text-sm text-foreground">9</td>
                     <td className="px-3 py-4 text-sm font-medium text-foreground">Dr Paturu Kondaiah</td>
                     <td className="px-3 py-4 text-sm text-foreground">INSA Senior Scientist, Dept of Molecular Reproduction, IISc, Bengaluru</td>
                     <td className="px-3 py-4 text-sm text-foreground">Member</td>
                   </tr>
-                  <tr className="border-b border-border/30 hover:bg-orange-500/5 transition-colors">
+                  <tr className="border-b border-border/30 hover:bg-brand-blue/5 transition-colors">
                     <td className="px-3 py-4 text-sm text-foreground">10</td>
                     <td className="px-3 py-4 text-sm font-medium text-foreground">Dr Mahesh Pavan Sathavalli</td>
                     <td className="px-3 py-4 text-sm text-foreground">Program Manager, Mphasis, Bengaluru</td>
                     <td className="px-3 py-4 text-sm text-foreground">Member</td>
                   </tr>
-                  <tr className="border-b border-border/30 hover:bg-orange-500/5 transition-colors">
+                  <tr className="border-b border-border/30 hover:bg-brand-blue/5 transition-colors">
                     <td className="px-3 py-4 text-sm text-foreground">11</td>
                     <td className="px-3 py-4 text-sm font-medium text-foreground">Dr H Rajashekar</td>
                     <td className="px-3 py-4 text-sm text-foreground">Professor of Commerce, Former I/C, Vice Chancellor, University of Mysore</td>
                     <td className="px-3 py-4 text-sm text-foreground">Member</td>
                   </tr>
-                  <tr className="border-b border-border/30 hover:bg-orange-500/5 transition-colors">
+                  <tr className="border-b border-border/30 hover:bg-brand-blue/5 transition-colors">
                     <td className="px-3 py-4 text-sm text-foreground">12</td>
                     <td className="px-3 py-4 text-sm font-medium text-foreground">Dr Puttamadappa C</td>
                     <td className="px-3 py-4 text-sm text-foreground">Registrar, DSU</td>
                     <td className="px-3 py-4 text-sm text-foreground">Member</td>
                   </tr>
-                  <tr className="border-b border-border/30 hover:bg-orange-500/5 transition-colors">
+                  <tr className="border-b border-border/30 hover:bg-brand-blue/5 transition-colors">
                     <td className="px-3 py-4 text-sm text-foreground">13</td>
                     <td className="px-3 py-4 text-sm font-medium text-foreground">Dr Udaya Kumar Reddy K R</td>
                     <td className="px-3 py-4 text-sm text-foreground">Dean-School of Engineering, DSU</td>
                     <td className="px-3 py-4 text-sm text-foreground">Member</td>
                   </tr>
-                  <tr className="border-b border-border/30 hover:bg-orange-500/5 transition-colors">
+                  <tr className="border-b border-border/30 hover:bg-brand-blue/5 transition-colors">
                     <td className="px-3 py-4 text-sm text-foreground">14</td>
                     <td className="px-3 py-4 text-sm font-medium text-foreground">Dr Prashanth Kumar M</td>
                     <td className="px-3 py-4 text-sm text-foreground">Dean & Principal- CDSIMER, DSU</td>
                     <td className="px-3 py-4 text-sm text-foreground">Member</td>
                   </tr>
-                  <tr className="border-b border-border/30 hover:bg-orange-500/5 transition-colors">
+                  <tr className="border-b border-border/30 hover:bg-brand-blue/5 transition-colors">
                     <td className="px-3 py-4 text-sm text-foreground">15</td>
                     <td className="px-3 py-4 text-sm font-medium text-foreground">Dr Sunil S More</td>
                     <td className="px-3 py-4 text-sm text-foreground">Dean, School of Basic & Applied Sciences, DSU</td>
                     <td className="px-3 py-4 text-sm text-foreground">Member</td>
                   </tr>
-                  <tr className="border-b border-border/30 hover:bg-orange-500/5 transition-colors">
+                  <tr className="border-b border-border/30 hover:bg-brand-blue/5 transition-colors">
                     <td className="px-3 py-4 text-sm text-foreground">16</td>
                     <td className="px-3 py-4 text-sm font-medium text-foreground">Dr Pushpa Sarkar</td>
                     <td className="px-3 py-4 text-sm text-foreground">Dean, School of Health Sciences, DSU</td>
                     <td className="px-3 py-4 text-sm text-foreground">Member</td>
                   </tr>
-                  <tr className="border-b border-border/30 hover:bg-orange-500/5 transition-colors">
+                  <tr className="border-b border-border/30 hover:bg-brand-blue/5 transition-colors">
                     <td className="px-3 py-4 text-sm text-foreground">17</td>
                     <td className="px-3 py-4 text-sm font-medium text-foreground">Capt. A. Nagaraj Subbarao</td>
                     <td className="px-3 py-4 text-sm text-foreground">Dean, School of Commerce and Management Studies, DSU</td>
                     <td className="px-3 py-4 text-sm text-foreground">Member</td>
                   </tr>
-                  <tr className="border-b border-border/30 hover:bg-orange-500/5 transition-colors">
+                  <tr className="border-b border-border/30 hover:bg-brand-blue/5 transition-colors">
                     <td className="px-3 py-4 text-sm text-foreground">18</td>
                     <td className="px-3 py-4 text-sm font-medium text-foreground">Prof Dinesh Kulkarni</td>
                     <td className="px-3 py-4 text-sm text-foreground">Dean, School of Design & Digital Transmedia, DSU</td>
                     <td className="px-3 py-4 text-sm text-foreground">Member</td>
                   </tr>
-                  <tr className="border-b border-border/30 hover:bg-orange-500/5 transition-colors">
+                  <tr className="border-b border-border/30 hover:bg-brand-blue/5 transition-colors">
                     <td className="px-3 py-4 text-sm text-foreground">19</td>
                     <td className="px-3 py-4 text-sm font-medium text-foreground">Dr Sai Prasad K</td>
                     <td className="px-3 py-4 text-sm text-foreground">Dean, College of Journalism and Mass Communication</td>
                     <td className="px-3 py-4 text-sm text-foreground">Member</td>
                   </tr>
-                  <tr className="border-b border-border/30 hover:bg-orange-500/5 transition-colors">
+                  <tr className="border-b border-border/30 hover:bg-brand-blue/5 transition-colors">
                     <td className="px-3 py-4 text-sm text-foreground">20</td>
                     <td className="px-3 py-4 text-sm font-medium text-foreground">Dr Truptha Shankar</td>
                     <td className="px-3 py-4 text-sm text-foreground">Dean, School of Commerce and Management Studies, (UG) DSU</td>
                     <td className="px-3 py-4 text-sm text-foreground">Member</td>
                   </tr>
-                  <tr className="border-b border-border/30 hover:bg-orange-500/5 transition-colors">
+                  <tr className="border-b border-border/30 hover:bg-brand-blue/5 transition-colors">
                     <td className="px-3 py-4 text-sm text-foreground">21</td>
                     <td className="px-3 py-4 text-sm font-medium text-foreground">Dr Senthil S</td>
                     <td className="px-3 py-4 text-sm text-foreground">Dean, School of Computer Application, DSU</td>
                     <td className="px-3 py-4 text-sm text-foreground">Member</td>
                   </tr>
-                  <tr className="border-b border-border/30 hover:bg-orange-500/5 transition-colors">
+                  <tr className="border-b border-border/30 hover:bg-brand-blue/5 transition-colors">
                     <td className="px-3 py-4 text-sm text-foreground">22</td>
                     <td className="px-3 py-4 text-sm font-medium text-foreground">Dr Kiran Dennis Gardner</td>
                     <td className="px-3 py-4 text-sm text-foreground">Dean-School of Law, DSU</td>
                     <td className="px-3 py-4 text-sm text-foreground">Member</td>
                   </tr>
-                  <tr className="hover:bg-orange-500/5 transition-colors">
+                  <tr className="hover:bg-brand-blue/5 transition-colors">
                     <td className="px-3 py-4 text-sm text-foreground">23</td>
                     <td className="px-3 py-4 text-sm font-medium text-foreground">Dr Sudarshan T S B</td>
                     <td className="px-3 py-4 text-sm text-foreground">Dean, Research & Development, DSU</td>
