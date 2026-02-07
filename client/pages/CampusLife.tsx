@@ -434,11 +434,11 @@ export default function CampusLife() {
                   href="https://derbifoundation.com"
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                  className="inline-block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                 >
                   <Button
                     variant="outline"
-                    className="border-blue-500/50 text-blue-400 hover:bg-blue-500/10 px-6 py-2 text-sm rounded-lg transition-all duration-300 group w-full"
+                    className="border-2 border-brand-blue text-brand-blue hover:bg-brand-blue/10 px-6 py-2 text-sm rounded-lg transition-all duration-300 group w-full"
                   >
                     Learn More
                     <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
