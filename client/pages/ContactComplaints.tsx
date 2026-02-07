@@ -152,10 +152,12 @@ function CommitteeLinksSection() {
 
 function CommitteeDetailsSection() {
   return (
-    <section id="details" className="px-3 py-10">
+    <section id="details" className="px-3 py-10 bg-gradient-to-br from-brand-magenta/5 via-brand-blue/5 to-background dark:from-brand-magenta/5 dark:via-brand-blue/5 dark:to-black">
       <div className="mx-auto max-w-6xl">
         <div className="mb-10 text-center">
-          <h2 className="text-3xl font-bold md:text-4xl">Committee Contacts</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-display">
+            <span className="bg-brand-gradient bg-clip-text text-transparent">Committee Contacts</span>
+          </h2>
           <p className="mt-3 text-foreground md:text-lg">
             Detailed contact information for all DSU committees and support cells.
           </p>
