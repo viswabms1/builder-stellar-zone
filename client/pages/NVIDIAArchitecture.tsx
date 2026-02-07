@@ -262,8 +262,8 @@ export default function NVIDIAArchitecture() {
                   </div>
 
                   {/* Layer 1: Hardware Foundation */}
-                  <div className="bg-gradient-to-r from-green-500/10 to-emerald-500/10 p-6 rounded-lg border border-green-500/30">
-                    <h4 className="text-xl font-bold text-green-500 mb-3">
+                  <div className="bg-gradient-to-r from-brand-magenta/10 to-brand-blue/10 p-6 rounded-lg border border-brand-magenta/30">
+                    <h4 className="text-xl font-bold text-brand-magenta mb-3 font-display">
                       Layer 1: Hardware Foundation
                     </h4>
                     <p className="text-base text-foreground/80 leading-relaxed mb-3">
