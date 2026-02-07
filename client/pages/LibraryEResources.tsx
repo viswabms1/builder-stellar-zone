@@ -71,7 +71,7 @@ export default function LibraryEResources() {
             </p>
           </div>
           <div className="flex justify-center gap-4 flex-wrap">
-            <Button asChild className="bg-blue-600 hover:bg-blue-700">
+            <Button asChild className="bg-gradient-to-r from-[#0088FF] via-[#FFD700] to-[#FF6B00] hover:via-[#FFC500] text-foreground animate-gradient bg-[length:200%_auto]">
               <a
                 href="https://dsuunivopac.ltsinformatics.com/"
                 target="_blank"
@@ -81,7 +81,7 @@ export default function LibraryEResources() {
                 Access Digital Library
               </a>
             </Button>
-            <Button asChild variant="outline">
+            <Button asChild variant="outline" className="border-brand-blue/30 hover:bg-brand-blue/10">
               <Link to="/library">
                 <ArrowLeft className="mr-2 h-4 w-4" />
                 Back to Library
