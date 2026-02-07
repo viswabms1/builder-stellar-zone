@@ -200,7 +200,7 @@ function CommitteeCard({ committee }: { committee: Committee }) {
           <div className="space-y-2">
             <a
               href={`tel:${committee.phone}`}
-              className="flex items-center gap-2 text-sm text-white hover:text-amber-300 font-medium"
+              className="flex items-center gap-2 text-sm text-brand-blue hover:text-brand-magenta font-medium transition-colors"
             >
               <Phone className="h-4 w-4" />
               {committee.phone}
@@ -212,7 +212,7 @@ function CommitteeCard({ committee }: { committee: Committee }) {
           {committee.email && (
             <a
               href={`mailto:${committee.email}`}
-              className="flex items-start gap-2 text-sm text-white hover:text-amber-300 font-medium break-all"
+              className="flex items-start gap-2 text-sm text-brand-blue hover:text-brand-magenta font-medium break-all transition-colors"
             >
               <Mail className="h-4 w-4 mt-0.5 flex-shrink-0" />
               <span>{committee.email}</span>
@@ -221,7 +221,7 @@ function CommitteeCard({ committee }: { committee: Committee }) {
           {committee.chairEmail && (
             <a
               href={`mailto:${committee.chairEmail}`}
-              className="flex items-start gap-2 text-sm text-white hover:text-amber-300 font-medium break-all"
+              className="flex items-start gap-2 text-sm text-brand-blue hover:text-brand-magenta font-medium break-all transition-colors"
             >
               <Mail className="h-4 w-4 mt-0.5 flex-shrink-0" />
               <span>{committee.chairEmail}</span>
@@ -231,7 +231,7 @@ function CommitteeCard({ committee }: { committee: Committee }) {
 
         {isAntiRaggingCell && (
           <Button
-            className="mt-4 bg-gradient-to-r from-orange-500 to-red-600 text-white font-semibold w-full"
+            className="mt-4 bg-gradient-to-r from-[#0088FF] via-[#FFD700] to-[#FF6B00] hover:via-[#FFC500] text-foreground font-semibold w-full animate-gradient bg-[length:200%_auto]"
             asChild
           >
             <a href="/anti-ragging-cell">
@@ -244,7 +244,7 @@ function CommitteeCard({ committee }: { committee: Committee }) {
         {committee.pdfUrl && (
           <Button
             variant="outline"
-            className="mt-4 border-orange-500/40 text-white hover:text-amber-300 w-full"
+            className="mt-4 border-brand-blue/40 text-brand-blue hover:text-brand-magenta hover:bg-brand-blue/10 w-full transition-colors"
             asChild
           >
             <a href={committee.pdfUrl} target="_blank" rel="noreferrer">
