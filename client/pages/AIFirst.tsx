@@ -236,7 +236,7 @@ export default function AIFirst() {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-3">
           <div className="text-center mb-14">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Research & Innovation Domains</h2>
+            <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-display mb-4 text-foreground">Research & Innovation <span className="bg-brand-gradient bg-clip-text text-transparent">Domains</span></h2>
             <p className="text-xl text-foreground/70 max-w-3xl mx-auto">
               Driving impact across industries through collaborative AI research
             </p>
