@@ -1014,8 +1014,8 @@ export default function Navigation() {
                               <div
                                 className={`w-0.5 h-0.5 rounded-full ${
                                   theme === "light"
-                                    ? "bg-orange-600"
-                                    : "bg-white"
+                                    ? "bg-brand-blue"
+                                    : "bg-brand-blue"
                                 }`}
                               />
                             )}
