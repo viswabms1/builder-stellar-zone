@@ -745,7 +745,7 @@ export default function NVIDIAArchitecture() {
                       </div>
                     </div>
                   </div>
-                  <div className="bg-blue-500/10 p-6 rounded-lg border border-blue-500/20">
+                  <div className="bg-brand-blue/10 p-6 rounded-lg border border-blue-500/20">
                     <p className="font-bold text-foreground mb-4">
                       Real-World Examples
                     </p>
@@ -1042,7 +1042,7 @@ export default function NVIDIAArchitecture() {
                 </p>
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
-                    <div className="flex items-center justify-center w-8 h-8 rounded-full bg-blue-500 text-white font-bold flex-shrink-0">
+                    <div className="flex items-center justify-center w-8 h-8 rounded-full bg-brand-blue text-white font-bold flex-shrink-0">
                       1
                     </div>
                     <div>
