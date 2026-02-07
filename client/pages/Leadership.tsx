@@ -25,10 +25,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { useTheme } from "@/providers/theme-provider";
-
 export default function Leadership() {
-  const { theme } = useTheme();
   const leadershipTeam = [
     {
       role: "Chancellor",
