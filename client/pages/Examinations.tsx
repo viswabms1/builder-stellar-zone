@@ -521,7 +521,7 @@ function HeroSection() {
         <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row">
           <Button
             size="lg"
-            className="bg-gradient-to-r from-orange-500 via-red-600 to-pink-500 text-foreground"
+            className="bg-gradient-to-r from-[#0088FF] via-[#FFD700] to-[#FF6B00] hover:via-[#FFC500] text-foreground animate-gradient bg-[length:200%_auto]"
             asChild
           >
             <a href="#calendar">
@@ -532,7 +532,7 @@ function HeroSection() {
           <Button
             variant="outline"
             size="lg"
-            className="border-orange-500 text-orange-500 hover:bg-orange-500/10"
+            className="border-brand-blue/30 text-brand-blue hover:text-brand-magenta hover:bg-brand-blue/10"
             asChild
           >
             <a
