@@ -228,29 +228,23 @@ export default function History() {
             {heritage.map((era, index) => (
               <Card
                 key={index}
-                className="bg-card/50 backdrop-blur-sm border border-border/50 hover:border-orange-500/30 transition-all duration-300"
+                className="group bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur-sm border border-border/50 hover:border-brand-blue/50 hover:shadow-lg hover:shadow-brand-blue/20 transition-all duration-300"
               >
                 <CardHeader>
-                  <Badge variant="outline" className={`w-fit mb-4 ${
-                    theme === "light"
-                      ? "border-orange-300 bg-orange-100 text-orange-700"
-                      : "border-orange-500/20 bg-orange-500/10 text-orange-500"
-                  }`}>
+                  <Badge variant="outline" className="w-fit mb-4 border-brand-blue/20 bg-brand-blue/10 text-brand-blue">
                     {era.period}
                   </Badge>
-                  <CardTitle className="text-2xl">{era.title}</CardTitle>
+                  <CardTitle className="text-lg sm:text-xl md:text-2xl font-display group-hover:text-brand-blue transition-colors">{era.title}</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  <p className="text-foreground leading-relaxed">
+                  <p className="text-xs sm:text-sm md:text-base text-foreground leading-relaxed font-body">
                     {era.description}
                   </p>
                   <div className="space-y-2">
                     {era.highlights.map((highlight, idx) => (
-                      <div key={idx} className="flex items-center gap-2">
-                        <CheckCircle className={`w-4 h-4 flex-shrink-0 ${
-                          theme === "light" ? "text-orange-700" : "text-orange-500"
-                        }`} />
-                        <span className="text-sm text-foreground">
+                      <div key={idx} className="flex items-start gap-2">
+                        <CheckCircle className="w-4 h-4 flex-shrink-0 mt-0.5 text-brand-blue" />
+                        <span className="text-xs sm:text-sm text-foreground font-body">
                           {highlight}
                         </span>
                       </div>
