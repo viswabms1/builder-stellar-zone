@@ -103,17 +103,15 @@ export default function VisionMission() {
             </span>
           </div>
 
-          <h1 className={`text-4xl md:text-5xl font-bold mb-6 leading-tight ${
-            theme === "light" ? "text-orange-900" : "text-white"
-          }`}>
+          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-2 sm:mb-3 md:mb-4 leading-tight font-display text-white">
             Vision, Mission and Values
           </h1>
 
-          <p className="text-lg md:text-xl font-semibold text-foreground mb-4 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-base sm:text-xl md:text-2xl lg:text-3xl font-semibold text-white mb-1 sm:mb-2 md:mb-6 leading-tight font-display">
             Guiding DSU's transition from a legacy institution to a future-ready, AI-first university
           </p>
 
-          <p className="text-lg md:text-xl text-foreground mb-8 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-xs sm:text-base md:text-lg lg:text-xl font-medium text-white/80 mt-2 font-display hidden sm:block">
             Throwing light on the way forward
           </p>
         </div>
