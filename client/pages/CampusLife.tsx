@@ -794,10 +794,10 @@ export default function CampusLife() {
         }`}
       >
         <div className="max-w-4xl mx-auto text-center px-3">
-          <div className="bg-gradient-to-r from-orange-500/10 via-red-600/10 to-pink-500/10 rounded-2xl md:rounded-3xl p-8 md:p-12 border border-orange-500/20">
-            <h2 className="text-4xl md:text-5xl font-extrabold mb-6 leading-tight font-campus-display">
+          <div className="bg-gradient-to-br from-brand-blue/5 via-brand-magenta/5 to-background dark:from-slate-900/50 dark:to-background rounded-2xl md:rounded-3xl p-8 md:p-12 border border-border/50">
+            <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-display mb-6 leading-tight">
               Ready to build the future at
-              <span className="bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
+              <span className="bg-brand-gradient bg-clip-text text-transparent">
                 {" "}
                 India's AI-First University
               </span>
