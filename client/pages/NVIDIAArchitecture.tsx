@@ -292,11 +292,11 @@ export default function NVIDIAArchitecture() {
                   </div>
                 </div>
 
-                <div className="bg-gradient-to-r from-blue-500/20 to-purple-500/20 p-8 rounded-lg border border-blue-500/30">
-                  <h4 className="text-2xl font-bold text-foreground mb-4">
+                <div className="bg-gradient-to-r from-brand-blue/20 to-brand-magenta/20 p-8 rounded-lg border border-brand-blue/30">
+                  <h4 className="text-2xl font-bold text-foreground mb-4 font-display">
                     Why This Stack Matters
                   </h4>
-                  <p className="text-lg text-foreground/80 leading-relaxed">
+                  <p className="text-lg text-foreground/80 leading-relaxed font-body">
                     This isn't just hardware. It's a complete, integrated
                     ecosystem where every layer is optimized to work together.
                     CUDA enables PyTorch to run at lightning speed on GPUs.
