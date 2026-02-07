@@ -121,21 +121,21 @@ export default function AIFirst() {
               </p>
               <ul className="space-y-4">
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-6 h-6 text-blue-500 flex-shrink-0 mt-1" />
+                  <CheckCircle className="w-6 h-6 text-brand-blue flex-shrink-0 mt-1" />
                   <div>
                     <p className="font-semibold">Personalized Learning Pathways</p>
                     <p className="text-sm text-foreground/70">AI-driven recommendations tailored to each student's learning style</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-6 h-6 text-blue-500 flex-shrink-0 mt-1" />
+                  <CheckCircle className="w-6 h-6 text-brand-blue flex-shrink-0 mt-1" />
                   <div>
                     <p className="font-semibold">24/7 Intelligent Support</p>
                     <p className="text-sm text-foreground/70">AI tutoring systems available round the clock for student assistance</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-6 h-6 text-blue-500 flex-shrink-0 mt-1" />
+                  <CheckCircle className="w-6 h-6 text-brand-blue flex-shrink-0 mt-1" />
                   <div>
                     <p className="font-semibold">Collaborative Innovation Spaces</p>
                     <p className="text-sm text-foreground/70">Modern facilities for student projects and research initiatives</p>
