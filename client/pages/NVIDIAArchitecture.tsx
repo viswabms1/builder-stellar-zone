@@ -453,7 +453,7 @@ export default function NVIDIAArchitecture() {
                         together to solve AI problems incredibly fast. Think of
                         it like having 8 super-brains instead of 1.
                       </p>
-                      <p className="text-sm text-blue-500 font-semibold">
+                      <p className="text-sm text-brand-blue font-semibold">
                         🔧 NVIDIA calls this: 8x Blackwell GPUs
                       </p>
                     </div>
