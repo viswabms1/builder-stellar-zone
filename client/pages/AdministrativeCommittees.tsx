@@ -110,9 +110,9 @@ export default function AdministrativeCommittees() {
       </section>
 
       {/* About Committees Section */}
-      <section className="px-6 py-16 bg-gradient-to-r from-brand-magenta/5 to-brand-orange/5">
+      <section className="px-6 py-16 bg-gradient-to-r from-brand-magenta/5 to-brand-blue/5">
         <div className="max-w-3xl mx-auto">
-          <h2 className="headline-2 mb-8 text-center">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 text-center font-display">
             <span className="text-foreground">Our Commitment to</span>
             <span className="bg-brand-gradient bg-clip-text text-transparent">
               {" "}
