@@ -868,23 +868,26 @@ export default function NVIDIAArchitecture() {
       </section>
 
       {/* Why This Matters */}
-      <section className="px-3 py-20 bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-blue-500/5">
+      <section className="px-3 py-20 bg-gradient-to-r from-brand-blue/5 via-brand-magenta/5 to-brand-blue/5">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-14">
-            <h2 className="text-5xl md:text-6xl font-bold mb-6">
-              Why This Setup Matters
+            <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 font-display">
+              <span className="text-foreground">Why This </span>
+              <span className="bg-brand-gradient bg-clip-text text-transparent">
+                Setup Matters
+              </span>
             </h2>
           </div>
 
-          <div className="mb-8 bg-gradient-to-r from-blue-500/10 to-purple-500/10 p-6 rounded-lg border border-blue-500/30">
-            <p className="text-lg text-foreground/80 leading-relaxed">
+          <div className="mb-8 bg-gradient-to-r from-brand-blue/10 to-brand-magenta/10 p-6 rounded-lg border border-brand-blue/30">
+            <p className="text-base sm:text-lg text-foreground/80 leading-relaxed font-body">
               This infrastructure bridges rigorous academic foundations with
               production-scale AI systems used in global research and industry.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            <Card className="border-border/50 bg-card/50 backdrop-blur">
+            <Card className="border-border/50 bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur hover:shadow-lg hover:shadow-brand-blue/20 transition-all duration-300">
               <CardHeader>
                 <CardTitle className="flex items-center gap-3">
                   <Award className="w-6 h-6 text-brand-blue" />
