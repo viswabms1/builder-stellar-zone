@@ -939,19 +939,22 @@ export default function NVIDIAArchitecture() {
       <section className="px-3 py-20">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-14">
-            <h2 className="text-5xl md:text-6xl font-bold mb-6">
-              Your Gateway to Top Placements
+            <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 font-display">
+              <span className="text-foreground">Your Gateway to </span>
+              <span className="bg-brand-gradient bg-clip-text text-transparent">
+                Top Placements
+              </span>
             </h2>
-            <p className="text-2xl text-foreground/70 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-xl md:text-2xl lg:text-3xl text-foreground/70 max-w-3xl mx-auto leading-relaxed font-body">
               This infrastructure isn't just impressive—it directly transforms
               your career prospects and placement outcomes.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 mb-10">
-            <Card className="border-border/50 bg-gradient-to-br from-blue-500/10 to-blue-500/5 backdrop-blur hover:border-blue-500/50 transition-all">
+            <Card className="border-border/50 bg-gradient-to-br from-brand-blue/10 to-card/40 backdrop-blur hover:border-brand-blue/50 transition-all hover:shadow-lg hover:shadow-brand-blue/20">
               <CardHeader>
-                <CardTitle className="text-2xl mb-6">
+                <CardTitle className="text-xl sm:text-2xl mb-6 font-display">
                   What Employers Want
                 </CardTitle>
               </CardHeader>
