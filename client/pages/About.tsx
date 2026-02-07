@@ -149,10 +149,10 @@ export default function About() {
                 value="story"
                 className="border border-border/50 rounded-lg px-4"
               >
-                <AccordionTrigger className="text-brand-blue hover:text-brand-blue/80 font-semibold">
+                <AccordionTrigger className="text-brand-blue hover:text-brand-blue/80 font-semibold text-sm md:text-base">
                   Read Our Story →
                 </AccordionTrigger>
-                <AccordionContent className="space-y-4 text-foreground leading-relaxed">
+                <AccordionContent className="space-y-4 text-foreground leading-relaxed text-sm md:text-base font-body">
                   <p>
                     Dayananda Sagar Institutions founded in the 60s by one such
                     visionary, late Sri Dayananda Sagar committed to take
