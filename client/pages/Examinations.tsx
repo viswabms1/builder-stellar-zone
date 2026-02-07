@@ -899,14 +899,14 @@ function ResultsCarousel() {
 
           <button
             onClick={goToPrevious}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-16 rounded-full bg-orange-500/20 p-2 text-orange-600 transition hover:bg-orange-500/30"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-16 rounded-full bg-brand-blue/20 p-2 text-brand-blue transition hover:bg-brand-blue/30"
             aria-label="Previous result"
           >
             <ChevronLeft className="h-6 w-6" />
           </button>
           <button
             onClick={goToNext}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-16 rounded-full bg-orange-500/20 p-2 text-orange-600 transition hover:bg-orange-500/30"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-16 rounded-full bg-brand-blue/20 p-2 text-brand-blue transition hover:bg-brand-blue/30"
             aria-label="Next result"
           >
             <ChevronRight className="h-6 w-6" />
@@ -922,8 +922,8 @@ function ResultsCarousel() {
                 }}
                 className={`h-2 rounded-full transition-all ${
                   index === currentSlide
-                    ? "h-3 w-8 bg-orange-500"
-                    : "w-2 bg-orange-500/40 hover:bg-orange-500/60"
+                    ? "h-3 w-8 bg-brand-blue"
+                    : "w-2 bg-brand-blue/40 hover:bg-brand-blue/60"
                 }`}
                 aria-label={`Go to result ${index + 1}`}
               />
