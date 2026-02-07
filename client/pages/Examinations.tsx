@@ -710,10 +710,10 @@ function ExamDocumentCard({ document }: { document: ExamDocument }) {
   const Icon = document.icon;
 
   return (
-    <Card className="group border border-border/50 bg-card/70 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-orange-500/50 hover:shadow-lg hover:shadow-orange-500/10">
+    <Card className="group border border-border/50 bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-brand-blue/50 hover:shadow-lg hover:shadow-brand-blue/10">
       <CardHeader className="space-y-4">
         <div className="flex items-center gap-3">
-          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-orange-500/10 text-orange-500">
+          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-blue/10 text-brand-blue">
             <Icon className="h-6 w-6" />
           </div>
           <div>
@@ -722,7 +722,7 @@ function ExamDocumentCard({ document }: { document: ExamDocument }) {
             </CardTitle>
             <Badge
               variant="outline"
-              className="mt-2 border-orange-500/40 text-xs uppercase tracking-wide text-orange-500"
+              className="mt-2 border-brand-blue/40 text-xs uppercase tracking-wide text-brand-blue"
             >
               {document.tag}
             </Badge>
@@ -738,7 +738,7 @@ function ExamDocumentCard({ document }: { document: ExamDocument }) {
             <DialogTrigger asChild>
               <Button
                 size="sm"
-                className="bg-gradient-to-r from-orange-500 to-red-600 text-foreground"
+                className="bg-gradient-to-r from-[#0088FF] via-[#FFD700] to-[#FF6B00] hover:via-[#FFC500] text-foreground animate-gradient bg-[length:200%_auto]"
               >
                 View PDF
               </Button>
