@@ -976,7 +976,7 @@ export default function Navigation() {
                                     className={`${colors.bg} ${colors.border} border rounded-xl p-4 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 group block text-sm font-semibold ${
                                       theme === "light"
                                         ? "text-gray-900 group-hover:text-brand-blue"
-                                        : "text-white group-hover:text-brand-blue"
+                                        : "text-white group-hover:text-white"
                                     }`}
                                   >
                                     {submenu.name}
