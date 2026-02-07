@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Award } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export default function ResearchInnovationCouncil() {
   return (
