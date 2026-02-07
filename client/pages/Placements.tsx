@@ -1463,15 +1463,15 @@ export default function Placements() {
             {placementData.map((school) => (
               <div
                 key={school.key}
-                className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl overflow-hidden hover:border-orange-500/30 transition-all duration-300"
+                className="bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur-sm border border-border/50 rounded-2xl overflow-hidden hover:border-brand-blue/30 hover:shadow-lg hover:shadow-brand-blue/20 transition-all duration-300"
               >
                 <button
                   onClick={() => toggleSchool(school.key)}
-                  className="w-full px-4 py-6 flex items-center justify-between hover:bg-orange-500/5 transition-colors"
+                  className="w-full px-4 py-6 flex items-center justify-between hover:bg-brand-blue/5 transition-colors"
                 >
                   <div className="flex items-start gap-4 text-left">
-                    <div className="w-10 h-10 rounded-full bg-orange-500/10 flex items-center justify-center flex-shrink-0">
-                      <BookOpen className="w-5 h-5 text-orange-500" />
+                    <div className="w-10 h-10 rounded-full bg-brand-blue/20 flex items-center justify-center flex-shrink-0">
+                      <BookOpen className="w-5 h-5 text-brand-blue" />
                     </div>
                     <div>
                       <h3 className="text-lg font-bold text-foreground mb-1">
@@ -1483,7 +1483,7 @@ export default function Placements() {
                     </div>
                   </div>
                   <ChevronDown
-                    className={`w-5 h-5 text-orange-500 flex-shrink-0 transition-transform duration-300 ${
+                    className={`w-5 h-5 text-brand-blue flex-shrink-0 transition-transform duration-300 ${
                       expandedSchools[school.key] ? "rotate-180" : ""
                     }`}
                   />
