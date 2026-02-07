@@ -430,7 +430,7 @@ export default function Leadership() {
                       </p>
                     </div>
 
-                    <p className="text-sm text-foreground leading-relaxed flex-grow">
+                    <p className="text-xs sm:text-sm text-foreground leading-relaxed flex-grow font-body">
                       {leader.bio}
                     </p>
 
@@ -533,7 +533,7 @@ export default function Leadership() {
                       </p>
                     </div>
 
-                    <p className="text-sm text-foreground leading-relaxed flex-grow">
+                    <p className="text-xs sm:text-sm text-foreground leading-relaxed flex-grow font-body">
                       {leader.bio}
                     </p>
 
