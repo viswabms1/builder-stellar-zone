@@ -388,7 +388,7 @@ export default function Leadership() {
               return (
                 <Card
                   key={index}
-                  className="group hover:shadow-lg hover:shadow-orange-500/10 transition-all duration-300 hover:border-orange-500/30 bg-card/50 backdrop-blur-sm border border-border/50 overflow-hidden flex flex-col"
+                  className="group hover:shadow-lg hover:shadow-brand-blue/20 transition-all duration-300 hover:border-brand-blue/50 bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur-sm border border-border/50 overflow-hidden flex flex-col"
                 >
                   {/* Leader Image */}
                   {leader.image && (
@@ -491,7 +491,7 @@ export default function Leadership() {
               return (
                 <Card
                   key={index}
-                  className="group hover:shadow-lg hover:shadow-orange-500/10 transition-all duration-300 hover:border-orange-500/30 bg-card/50 backdrop-blur-sm border border-border/50 overflow-hidden flex flex-col"
+                  className="group hover:shadow-lg hover:shadow-brand-blue/20 transition-all duration-300 hover:border-brand-blue/50 bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur-sm border border-border/50 overflow-hidden flex flex-col"
                 >
                   {/* Leader Image */}
                   {leader.image && (
@@ -597,7 +597,7 @@ export default function Leadership() {
               return (
                 <Card
                   key={index}
-                  className="group hover:shadow-lg hover:shadow-orange-500/10 transition-all duration-300 hover:border-orange-500/30 bg-card/50 backdrop-blur-sm border border-border/50 overflow-hidden flex flex-col"
+                  className="group hover:shadow-lg hover:shadow-brand-blue/20 transition-all duration-300 hover:border-brand-blue/50 bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur-sm border border-border/50 overflow-hidden flex flex-col"
                 >
                   {/* Leader Image */}
                   {pvc.image && (
