@@ -42,7 +42,7 @@ export default function NVIDIAArchitecture() {
                 className="w-full h-full object-cover rounded-2xl shadow-2xl group-hover:scale-105 transition-transform duration-500"
               />
               {/* Green light effect overlay */}
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-green-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-brand-blue/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl dark:via-green-500/10"></div>
             </div>
 
             {/* Right Side - Content */}
@@ -503,7 +503,7 @@ export default function NVIDIAArchitecture() {
                   </div>
                 </div>
 
-                <div className="p-8 bg-gradient-to-br from-green-500/10 to-transparent">
+                <div className="p-8 bg-gradient-to-br from-brand-blue/10 to-transparent">
                   <div className="space-y-4">
                     <div className="border-l-4 border-brand-blue pl-4">
                       <p className="text-xs text-foreground/60">
