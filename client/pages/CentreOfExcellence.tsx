@@ -117,13 +117,13 @@ export default function CentreOfExcellence() {
           <div className="text-center mb-16">
             <Badge
               variant="outline"
-              className="border-orange-500/20 bg-orange-500/10 text-orange-500 mb-4"
+              className="border-brand-blue/20 bg-brand-blue/10 text-brand-blue mb-4"
             >
               Proposed Centres
             </Badge>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-display mb-6">
               <span className="text-foreground">Our </span>
-              <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
+              <span className="bg-brand-gradient bg-clip-text text-transparent">
                 Centres of Excellence
               </span>
             </h2>
