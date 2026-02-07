@@ -608,8 +608,8 @@ export default function Research() {
       {/* ===== AUTHORITY CTA (RESEARCH LEADERSHIP, NOT MARKETING) ===== */}
       <section className="px-3 py-10 lg:py-16">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="bg-gradient-to-r from-orange-500/10 via-red-600/10 to-pink-500/10 rounded-3xl p-12 border border-orange-500/20">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <div className="bg-gradient-to-r from-brand-blue/10 via-brand-magenta/10 to-brand-blue/10 rounded-3xl p-12 border border-brand-blue/20">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-display mb-4">
               Join India's AI Research Frontier
             </h2>
             <p className="text-lg text-foreground mb-8 max-w-2xl mx-auto">
