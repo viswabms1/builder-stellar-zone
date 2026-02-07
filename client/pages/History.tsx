@@ -374,16 +374,15 @@ export default function History() {
       </section>
 
       {/* CTA Section */}
-      <section className={`px-3 py-10 bg-gradient-to-r ${
-        theme === "light"
-          ? "from-orange-100 to-red-100"
-          : "from-orange-500/5 to-red-600/5"
-      }`}>
+      <section className="px-3 py-10 bg-gradient-to-r from-brand-blue/5 via-brand-magenta/5 to-brand-orange/5">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Begin Your Chapter Here
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 font-display">
+            <span className="text-foreground">Begin Your </span>
+            <span className="bg-brand-gradient bg-clip-text text-transparent">
+              Chapter Here
+            </span>
           </h2>
-          <p className="text-lg text-foreground mb-8 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-foreground mb-6 md:mb-8 max-w-2xl mx-auto font-display leading-tight">
             Join an institution shaped by legacy and driven by innovation—where history informs the future. Shape your future with us.
           </p>
 
@@ -391,7 +390,7 @@ export default function History() {
             <Link to="/admissions">
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-red-600 hover:to-orange-500 text-foreground px-8 py-6 font-semibold rounded-2xl"
+                className="bg-gradient-to-r from-[#0088FF] via-[#FFD700] to-[#FF6B00] hover:from-[#0066FF] hover:via-[#FFC700] hover:to-[#FF5500] text-white px-8 py-6 text-lg font-semibold rounded-2xl shadow-lg shadow-brand-blue/30 hover:shadow-brand-blue/50 transition-all animate-gradient bg-[length:200%_auto]"
               >
                 Start Your Journey
                 <ArrowRight className="w-5 h-5 ml-2" />
@@ -401,11 +400,7 @@ export default function History() {
               <Button
                 variant="outline"
                 size="lg"
-                className={`border-2 px-8 py-6 font-semibold rounded-2xl ${
-                  theme === "light"
-                    ? "border-orange-600 text-orange-600 hover:bg-orange-600"
-                    : "border-orange-500 text-orange-500 hover:bg-orange-500"
-                } hover:text-foreground`}
+                className="border-2 border-brand-blue text-brand-blue hover:bg-brand-blue/10 hover:border-brand-blue px-8 py-6 font-semibold rounded-2xl text-base transition-all"
               >
                 Back to About
               </Button>
