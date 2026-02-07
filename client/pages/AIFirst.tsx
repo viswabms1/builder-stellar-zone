@@ -103,7 +103,7 @@ export default function AIFirst() {
       </section>
 
       {/* Knowledge Meets Intelligence */}
-      <section className="py-20 bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-blue-500/5">
+      <section className="py-20 bg-gradient-to-r from-brand-blue/5 via-brand-magenta/5 to-brand-blue/5">
         <div className="max-w-7xl mx-auto px-3">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="rounded-2xl overflow-hidden shadow-xl">
