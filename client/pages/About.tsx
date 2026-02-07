@@ -135,7 +135,7 @@ export default function About() {
           </div>
 
           <div className="space-y-6">
-            <div className="text-base md:text-lg text-foreground leading-relaxed space-y-3 font-body">
+            <div className="text-sm md:text-base lg:text-lg text-foreground leading-relaxed space-y-3 font-body">
               <p>
                 Founded in the 1960s, the Dayananda Sagar Institutions have
                 shaped generations of learners. As a state university since
