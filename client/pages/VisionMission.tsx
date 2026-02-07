@@ -96,9 +96,9 @@ export default function VisionMission() {
         </div>
 
         <div className="relative max-w-7xl mx-auto px-3 py-10 lg:py-32 text-center">
-          <div className="inline-flex items-center px-4 py-2 bg-orange-500/10 rounded-full border border-orange-500/20 mb-8">
-            <Compass className="w-4 h-4 text-orange-500 mr-2" />
-            <span className="text-sm font-medium text-orange-500">
+          <div className="inline-flex items-center px-4 py-2 bg-brand-blue/10 rounded-full border border-brand-blue/40 mb-8">
+            <Compass className="w-4 h-4 text-brand-blue mr-2" />
+            <span className="text-sm font-medium text-brand-blue">
               Our Direction
             </span>
           </div>
