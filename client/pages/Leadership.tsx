@@ -749,7 +749,7 @@ export default function Leadership() {
                               key={idx}
                               className="flex items-center gap-2 text-sm text-foreground"
                             >
-                              <Star className="w-3 h-3 text-orange-500 flex-shrink-0" />
+                              <Star className="w-3 h-3 text-brand-blue flex-shrink-0" />
                               {func}
                             </div>
                           ))}
@@ -827,7 +827,7 @@ export default function Leadership() {
                               key={idx}
                               className="flex items-center gap-2 text-sm text-foreground"
                             >
-                              <Star className="w-3 h-3 text-orange-500 flex-shrink-0" />
+                              <Star className="w-3 h-3 text-brand-blue flex-shrink-0" />
                               {func}
                             </div>
                           ))}
@@ -905,7 +905,7 @@ export default function Leadership() {
                               key={idx}
                               className="flex items-center gap-2 text-sm text-foreground"
                             >
-                              <Star className="w-3 h-3 text-orange-500 flex-shrink-0" />
+                              <Star className="w-3 h-3 text-brand-blue flex-shrink-0" />
                               {func}
                             </div>
                           ))}
