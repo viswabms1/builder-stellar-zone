@@ -292,42 +292,42 @@ export default function AIFirst() {
               {
                 name: "Automotive & Mobility",
                 icon: Rocket,
-                color: "from-blue-500 to-cyan-500",
+                color: "from-brand-blue to-brand-blue/60",
                 areas: ["Digital Twin", "Safety Systems", "Autonomous Vehicles"],
                 description: "Revolutionize vehicle intelligence and safety"
               },
               {
                 name: "Healthcare & Life Sciences",
                 icon: Shield,
-                color: "from-pink-500 to-rose-500",
+                color: "from-brand-magenta to-brand-magenta/60",
                 areas: ["Medical Imaging", "Drug Discovery", "Diagnostics"],
                 description: "Accelerate medical breakthroughs"
               },
               {
                 name: "Financial Services",
                 icon: Briefcase,
-                color: "from-green-500 to-emerald-500",
+                color: "from-brand-blue to-brand-magenta",
                 areas: ["Risk Management", "Fraud Detection", "Market Analytics"],
                 description: "Enhance financial intelligence"
               },
               {
                 name: "Manufacturing & IoT",
                 icon: Cpu,
-                color: "from-orange-500 to-amber-500",
+                color: "from-brand-orange to-brand-orange/60",
                 areas: ["Smart Factories", "Quality Control", "Predictive Maintenance"],
                 description: "Optimize production intelligence"
               },
               {
                 name: "Cybersecurity & Defense",
                 icon: Network,
-                color: "from-purple-500 to-violet-500",
+                color: "from-brand-magenta to-brand-blue",
                 areas: ["Threat Detection", "Defense Systems", "Data Protection"],
                 description: "Strengthen security intelligence"
               },
               {
                 name: "Supply Chain & Logistics",
                 icon: Database,
-                color: "from-indigo-500 to-blue-500",
+                color: "from-brand-blue to-brand-magenta",
                 areas: ["Forecasting", "Optimization", "Route Planning"],
                 description: "Maximize operational efficiency"
               }
