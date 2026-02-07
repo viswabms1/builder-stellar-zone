@@ -758,36 +758,36 @@ export default function NVIDIAArchitecture() {
             <Card className="border-border/50 bg-card/50 backdrop-blur">
               <CardHeader>
                 <CardTitle className="text-2xl flex items-center gap-3 mb-4">
-                  <Rocket className="w-8 h-8 text-purple-500" />
+                  <Rocket className="w-8 h-8 text-brand-magenta" />
                   Key Software You'll Use
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="grid md:grid-cols-3 gap-6">
-                  <div className="bg-purple-500/10 p-4 rounded-lg">
+                  <div className="bg-brand-magenta/10 p-4 rounded-lg">
                     <h4 className="font-bold mb-2">PyTorch & TensorFlow</h4>
                     <p className="text-sm text-foreground/70 mb-3">
                       Popular AI frameworks that work great on NVIDIA GPUs
                     </p>
-                    <Badge className="bg-purple-500/30 text-purple-400">
+                    <Badge className="bg-brand-magenta/30 text-brand-magenta/80">
                       Framework
                     </Badge>
                   </div>
-                  <div className="bg-purple-500/10 p-4 rounded-lg">
+                  <div className="bg-brand-magenta/10 p-4 rounded-lg">
                     <h4 className="font-bold mb-2">NVIDIA RAPIDS</h4>
                     <p className="text-sm text-foreground/70 mb-3">
                       Process data 50X faster using GPU acceleration
                     </p>
-                    <Badge className="bg-purple-500/30 text-purple-400">
+                    <Badge className="bg-brand-magenta/30 text-brand-magenta/80">
                       Data Tools
                     </Badge>
                   </div>
-                  <div className="bg-purple-500/10 p-4 rounded-lg">
+                  <div className="bg-brand-magenta/10 p-4 rounded-lg">
                     <h4 className="font-bold mb-2">TensorRT</h4>
                     <p className="text-sm text-foreground/70 mb-3">
                       Make trained models run 10X faster in production
                     </p>
-                    <Badge className="bg-purple-500/30 text-purple-400">
+                    <Badge className="bg-brand-magenta/30 text-brand-magenta/80">
                       Deployment
                     </Badge>
                   </div>
@@ -901,7 +901,7 @@ export default function NVIDIAArchitecture() {
             <Card className="border-border/50 bg-card/50 backdrop-blur">
               <CardHeader>
                 <CardTitle className="flex items-center gap-3">
-                  <Brain className="w-6 h-6 text-purple-500" />
+                  <Brain className="w-6 h-6 text-brand-magenta" />
                   For Your Career
                 </CardTitle>
               </CardHeader>
@@ -1039,7 +1039,7 @@ export default function NVIDIAArchitecture() {
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <div className="flex items-center justify-center w-8 h-8 rounded-full bg-purple-500 text-white font-bold flex-shrink-0">
+                    <div className="flex items-center justify-center w-8 h-8 rounded-full bg-brand-magenta text-white font-bold flex-shrink-0">
                       2
                     </div>
                     <div>
