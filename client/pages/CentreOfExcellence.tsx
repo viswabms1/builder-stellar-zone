@@ -105,7 +105,7 @@ export default function CentreOfExcellence() {
           </p>
 
           <div className="flex items-center justify-center space-x-4 text-sm text-foreground">
-            <TrendingUp className="w-5 h-5 text-orange-500" />
+            <TrendingUp className="w-5 h-5 text-brand-blue" />
             <span>Building world-class research infrastructure</span>
           </div>
         </div>
