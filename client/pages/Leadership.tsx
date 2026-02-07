@@ -735,7 +735,7 @@ export default function Leadership() {
                         <div className="w-12 h-12 rounded-2xl bg-brand-blue/10 flex items-center justify-center mb-4 group-hover:bg-brand-blue/20 transition-colors">
                           <Icon className="w-6 h-6 text-brand-blue group-hover:scale-110 transition-transform" />
                         </div>
-                        <CardTitle className="text-lg group-hover:text-orange-500 transition-colors">
+                        <CardTitle className="text-sm sm:text-base md:text-lg font-display group-hover:text-brand-blue transition-colors">
                           {committee.name}
                         </CardTitle>
                         <CardDescription className="text-sm">
@@ -813,7 +813,7 @@ export default function Leadership() {
                         <div className="w-12 h-12 rounded-2xl bg-brand-blue/10 flex items-center justify-center mb-4 group-hover:bg-brand-blue/20 transition-colors">
                           <Icon className="w-6 h-6 text-brand-blue group-hover:scale-110 transition-transform" />
                         </div>
-                        <CardTitle className="text-lg group-hover:text-orange-500 transition-colors">
+                        <CardTitle className="text-sm sm:text-base md:text-lg font-display group-hover:text-brand-blue transition-colors">
                           {committee.name}
                         </CardTitle>
                         <CardDescription className="text-sm">
@@ -891,7 +891,7 @@ export default function Leadership() {
                         <div className="w-12 h-12 rounded-2xl bg-brand-blue/10 flex items-center justify-center mb-4 group-hover:bg-brand-blue/20 transition-colors">
                           <Icon className="w-6 h-6 text-brand-blue group-hover:scale-110 transition-transform" />
                         </div>
-                        <CardTitle className="text-lg group-hover:text-orange-500 transition-colors">
+                        <CardTitle className="text-sm sm:text-base md:text-lg font-display group-hover:text-brand-blue transition-colors">
                           {committee.name}
                         </CardTitle>
                         <CardDescription className="text-sm">
