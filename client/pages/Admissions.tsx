@@ -1,6 +1,5 @@
 import { useEffect, useMemo, useRef, useState, type FormEvent } from "react";
 
-import { useTheme } from "@/providers/theme-provider";
 import AdmissionCarouselNew from "@/components/AdmissionCarouselNew";
 import { Button } from "@/components/ui/button";
 import {
