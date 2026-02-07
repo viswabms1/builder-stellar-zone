@@ -595,10 +595,10 @@ export default function NVIDIAArchitecture() {
 
               <Card className="border-border/50 hover:border-brand-magenta/50 transition-all bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur hover:shadow-lg hover:shadow-brand-magenta/20">
                 <CardHeader>
-                  <Badge variant="outline" className="w-fit mb-3">
+                  <Badge variant="outline" className="w-fit mb-3 border-brand-magenta/30 text-brand-magenta">
                     NX
                   </Badge>
-                  <CardTitle className="text-lg">Jetson Orin NX</CardTitle>
+                  <CardTitle className="text-lg font-display">Jetson Orin NX</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-3">
                   <div>
