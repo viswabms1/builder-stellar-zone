@@ -581,13 +581,13 @@ function QuickLinkCard({ item }: { item: QuickLink }) {
     <Card
       className={`group border transition hover:-translate-y-1 hover:shadow-xl ${
         item.featured
-          ? "border-orange-500/60 bg-gradient-to-br from-orange-500/15 to-red-500/10 backdrop-blur-sm hover:border-orange-500/80 hover:shadow-orange-500/20 relative overflow-hidden"
-          : "border-border/60 bg-card/60 backdrop-blur-sm hover:border-orange-500/40 hover:shadow-orange-500/10"
+          ? "border-brand-blue/60 bg-gradient-to-br from-brand-blue/15 to-brand-magenta/10 backdrop-blur-sm hover:border-brand-blue/80 hover:shadow-brand-blue/20 relative overflow-hidden"
+          : "border-border/60 bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur-sm hover:border-brand-blue/40 hover:shadow-brand-blue/20"
       }`}
     >
       {item.featured && (
         <div className="absolute top-0 right-0">
-          <Badge className="rounded-none rounded-bl-2xl bg-gradient-to-r from-orange-500 to-red-500 text-white text-xs font-bold px-3 py-1">
+          <Badge className="rounded-none rounded-bl-2xl bg-gradient-to-r from-[#0088FF] via-[#FFD700] to-[#FF6B00] text-white text-xs font-bold px-3 py-1">
             RECOMMENDED
           </Badge>
         </div>
@@ -597,33 +597,27 @@ function QuickLinkCard({ item }: { item: QuickLink }) {
           <div
             className={`flex h-12 w-12 items-center justify-center rounded-xl transition ${
               item.featured
-                ? "bg-orange-500 text-foreground"
-                : "bg-orange-500/15 text-orange-500 group-hover:bg-orange-500 group-hover:text-foreground"
+                ? "bg-brand-blue text-foreground"
+                : "bg-brand-blue/15 text-brand-blue group-hover:bg-brand-blue group-hover:text-foreground"
             }`}
           >
             <item.icon className="h-6 w-6" />
           </div>
-          <ExternalLink className="h-5 w-5 text-foreground group-hover:text-orange-500" />
+          <ExternalLink className="h-5 w-5 text-foreground group-hover:text-brand-blue" />
         </div>
-        <CardTitle
-          className={`mt-4 text-lg font-semibold ${
-            item.featured
-              ? "text-orange-600 group-hover:text-orange-500"
-              : "group-hover:text-orange-500"
-          }`}
-        >
+        <CardTitle className="mt-4 text-lg font-semibold text-foreground font-display group-hover:text-brand-blue transition-colors">
           {item.title}
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
-        <CardDescription className="leading-relaxed text-foreground text-sm">
+        <CardDescription className="leading-relaxed text-foreground/80 text-sm font-body">
           {item.description}
         </CardDescription>
         <Button
-          className={`w-full justify-center rounded-xl ${
+          className={`w-full justify-center rounded-xl font-semibold ${
             item.featured
-              ? "bg-gradient-to-r from-orange-500 to-red-500 text-foreground hover:from-orange-600 hover:to-red-600"
-              : "bg-orange-500/10 text-orange-500 hover:bg-orange-500 hover:text-foreground"
+              ? "bg-gradient-to-r from-[#0088FF] via-[#FFD700] to-[#FF6B00] hover:from-[#FF6B00] hover:via-[#FFD700] hover:to-[#0088FF] text-foreground animate-gradient bg-[length:200%_auto]"
+              : "bg-brand-blue/10 text-brand-blue hover:bg-brand-blue hover:text-foreground"
           }`}
           asChild
         >
