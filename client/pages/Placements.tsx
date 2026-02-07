@@ -1073,15 +1073,15 @@ export default function Placements() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* ===== HERO SECTION ===== */}
-      <section className="relative py-10 lg:py-20 bg-gradient-to-br from-slate-900 via-orange-900 to-slate-900 overflow-hidden">
+      <section className="relative py-10 lg:py-20 bg-gradient-to-br from-brand-blue/5 via-brand-magenta/5 to-background dark:from-slate-900 dark:via-orange-900 dark:to-slate-900 overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-0 left-0 w-96 h-96 bg-orange-500/20 rounded-full filter blur-3xl animate-float"></div>
+          <div className="absolute top-0 left-0 w-96 h-96 bg-brand-blue/20 dark:bg-orange-500/20 rounded-full filter blur-3xl animate-float"></div>
           <div
-            className="absolute top-1/3 right-0 w-80 h-80 bg-red-600/15 rounded-full filter blur-3xl animate-float"
+            className="absolute top-1/3 right-0 w-80 h-80 bg-brand-magenta/15 dark:bg-red-600/15 rounded-full filter blur-3xl animate-float"
             style={{ animationDelay: "1s" }}
           ></div>
           <div
-            className="absolute bottom-0 left-1/3 w-72 h-72 bg-orange-400/10 rounded-full filter blur-3xl animate-float"
+            className="absolute bottom-0 left-1/3 w-72 h-72 bg-brand-blue/10 dark:bg-orange-400/10 rounded-full filter blur-3xl animate-float"
             style={{ animationDelay: "2s" }}
           ></div>
 
