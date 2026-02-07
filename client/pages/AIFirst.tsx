@@ -62,25 +62,25 @@ export default function AIFirst() {
               </p>
               <div className="grid grid-cols-1 gap-6">
                 <div className="space-y-2">
-                  <h4 className="text-lg md:text-xl font-semibold text-blue-600 dark:text-blue-400 flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-blue-500"></span>
+                  <h4 className="text-lg md:text-xl font-semibold text-brand-blue flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-brand-blue"></span>
                     Learning
                   </h4>
-                  <p className="text-base md:text-lg text-gray-700 dark:text-foreground/70">AI-enhanced curricula and adaptive learning systems that personalize education for every student</p>
+                  <p className="text-base md:text-lg text-foreground/70">AI-enhanced curricula and adaptive learning systems that personalize education for every student</p>
                 </div>
                 <div className="space-y-2">
-                  <h4 className="text-lg md:text-xl font-semibold text-purple-600 dark:text-purple-400 flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-purple-500"></span>
+                  <h4 className="text-lg md:text-xl font-semibold text-brand-magenta flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-brand-magenta"></span>
                     Research
                   </h4>
-                  <p className="text-base md:text-lg text-gray-700 dark:text-foreground/70">Leveraging AI to accelerate breakthrough discoveries and solve complex real-world problems</p>
+                  <p className="text-base md:text-lg text-foreground/70">Leveraging AI to accelerate breakthrough discoveries and solve complex real-world problems</p>
                 </div>
                 <div className="space-y-2">
-                  <h4 className="text-lg md:text-xl font-semibold text-pink-600 dark:text-pink-400 flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-pink-500"></span>
+                  <h4 className="text-lg md:text-xl font-semibold text-brand-orange flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-brand-orange"></span>
                     Innovation
                   </h4>
-                  <p className="text-base md:text-lg text-gray-700 dark:text-foreground/70">Building an ecosystem where AI drives entrepreneurship and industry partnerships</p>
+                  <p className="text-base md:text-lg text-foreground/70">Building an ecosystem where AI drives entrepreneurship and industry partnerships</p>
                 </div>
               </div>
             </div>
