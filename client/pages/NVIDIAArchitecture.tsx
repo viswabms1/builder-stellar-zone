@@ -1152,7 +1152,7 @@ export default function NVIDIAArchitecture() {
       </section>
 
       {/* Final CTA */}
-      <section className="px-3 py-16 bg-gradient-to-r from-green-500/20 to-black">
+      <section className="px-3 py-16 bg-gradient-to-r from-brand-blue/10 via-brand-magenta/10 to-brand-blue/10 dark:to-black">
         <div className="max-w-7xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-8">
             Ready to Master AI?
