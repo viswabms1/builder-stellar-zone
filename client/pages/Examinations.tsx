@@ -607,11 +607,13 @@ function CalendarSection() {
   return (
     <section
       id="calendar"
-      className="bg-gradient-to-b from-orange-500/5 to-transparent px-3 py-10"
+      className="bg-gradient-to-b from-brand-blue/5 via-brand-magenta/5 to-transparent dark:from-brand-magenta/5 dark:via-brand-blue/5 dark:to-transparent px-3 py-10"
     >
       <div className="mx-auto max-w-6xl">
         <div className="mb-10 space-y-3 text-center">
-          <h2 className="text-3xl font-bold md:text-4xl">Exam Calendar</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-display">
+            <span className="bg-brand-gradient bg-clip-text text-transparent">Exam Calendar</span>
+          </h2>
           <p className="text-foreground md:text-lg">
             Upcoming examination dates and events across all programmes.
           </p>
