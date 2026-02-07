@@ -717,7 +717,7 @@ export default function CampusLife() {
       {/* ===== CURATED CAMPUS GALLERY ===== */}
       <section
         ref={galleryRef}
-        className={`px-3 py-16 bg-gradient-to-r from-orange-500/5 to-red-600/5 transition-opacity duration-700 ${
+        className={`px-3 py-16 bg-gradient-to-r from-brand-blue/5 to-brand-magenta/5 transition-opacity duration-700 ${
           galleryVisible ? "opacity-100" : "opacity-0"
         }`}
       >
