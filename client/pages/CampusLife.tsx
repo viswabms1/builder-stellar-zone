@@ -250,7 +250,7 @@ export default function CampusLife() {
                         key={highlight}
                         className="flex items-center text-foreground/90 text-sm"
                       >
-                        <span className="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>
+                        <span className="w-2 h-2 bg-brand-blue rounded-full mr-3"></span>
                         {highlight}
                       </div>
                     ))}
@@ -258,7 +258,7 @@ export default function CampusLife() {
 
                   <Link
                     to={pillar.link}
-                    className="inline-flex items-center gap-2 text-orange-500 hover:text-orange-400 transition-colors text-sm font-semibold mt-2"
+                    className="inline-flex items-center gap-2 text-brand-blue hover:text-brand-magenta transition-colors text-sm font-semibold mt-2"
                   >
                     Explore <ArrowRight className="w-4 h-4" />
                   </Link>
