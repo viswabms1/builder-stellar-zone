@@ -378,9 +378,10 @@ export default function CampusLife() {
       <section className="px-3 py-16 bg-gradient-to-b from-blue-500/10 via-transparent to-blue-500/5">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-extrabold mb-6 font-campus-display">
-              <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
-                DSU's Entrepreneurship Ecosystem
+            <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-display mb-6">
+              <span className="text-foreground">DSU's </span>
+              <span className="bg-brand-gradient bg-clip-text text-transparent">
+                Entrepreneurship Ecosystem
               </span>
             </h2>
             <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
