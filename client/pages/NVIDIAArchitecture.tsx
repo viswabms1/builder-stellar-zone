@@ -104,10 +104,13 @@ export default function NVIDIAArchitecture() {
       <section className="relative py-16 pt-20 overflow-hidden">
         <div className="max-w-7xl mx-auto px-3">
           <div className="text-center mb-8">
-            <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-foreground mb-4">
-              The Technology Behind Your AI Future
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-4 font-display">
+              <span className="text-foreground">The Technology Behind Your </span>
+              <span className="bg-brand-gradient bg-clip-text text-transparent">
+                AI Future
+              </span>
             </h1>
-            <p className="text-2xl md:text-3xl text-foreground/70 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-xl md:text-2xl lg:text-3xl text-foreground/70 max-w-4xl mx-auto leading-relaxed font-body">
               NVIDIA's complete AI stack—from classroom labs to cutting-edge
               research. Everything you need to master artificial intelligence.
             </p>
