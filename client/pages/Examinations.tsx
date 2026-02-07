@@ -1000,15 +1000,15 @@ function FAQSection() {
           ))}
         </Accordion>
 
-        <div className="mt-8 rounded-2xl border border-orange-500/20 bg-orange-500/5 p-6">
+        <div className="mt-8 rounded-2xl border border-brand-blue/20 bg-gradient-to-br from-brand-blue/5 to-brand-magenta/5 p-6">
           <p className="text-sm text-foreground">
             <strong>Didn't find your answer?</strong> Contact the examination
             department at{" "}
-            <a href="mailto:coe@dsu.edu.in" className="text-orange-600 hover:underline font-semibold">
+            <a href="mailto:coe@dsu.edu.in" className="text-brand-blue hover:text-brand-magenta hover:underline font-semibold transition-colors">
               coe@dsu.edu.in
             </a>{" "}
             or call us at{" "}
-            <a href="tel:+919606022151" className="text-orange-600 hover:underline font-semibold">
+            <a href="tel:+919606022151" className="text-brand-blue hover:text-brand-magenta hover:underline font-semibold transition-colors">
               +91 9606 022 151
             </a>
           </p>
