@@ -855,7 +855,7 @@ export default function CampusLife() {
                   </p>
                 </div>
                 <div className="flex flex-col items-center">
-                  <p className="text-3xl font-bold bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
+                  <p className="text-3xl font-bold bg-brand-gradient bg-clip-text text-transparent">
                     25,000+
                   </p>
                   <p className="text-xs text-foreground/60 mt-1">
@@ -863,7 +863,7 @@ export default function CampusLife() {
                   </p>
                 </div>
                 <div className="flex flex-col items-center">
-                  <p className="text-3xl font-bold bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
+                  <p className="text-3xl font-bold bg-brand-gradient bg-clip-text text-transparent">
                     100+
                   </p>
                   <p className="text-xs text-foreground/60 mt-1">
