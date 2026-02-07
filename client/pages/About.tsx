@@ -238,17 +238,17 @@ export default function About() {
               const Icon = section.icon;
               return (
                 <Card
-                  key={index}
-                  className="group hover:shadow-lg hover:shadow-brand-blue/20 transition-all duration-300 hover:border-brand-blue/30 bg-card/50 backdrop-blur-sm border border-border/50 flex flex-col"
-                >
-                  <CardHeader>
-                    <div className="w-12 h-12 rounded-2xl bg-brand-blue/10 flex items-center justify-center mb-4 group-hover:bg-brand-blue/20 transition-colors">
-                      <Icon className="w-6 h-6 text-brand-blue" />
-                    </div>
-                    <CardTitle className="text-base md:text-lg lg:text-xl font-display group-hover:text-brand-blue transition-colors">
-                      {section.title}
-                    </CardTitle>
-                  </CardHeader>
+                key={index}
+                className="group hover:shadow-lg hover:shadow-brand-blue/20 transition-all duration-300 hover:border-brand-blue/50 bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur-sm border border-border/50 hover:border-brand-blue/30 flex flex-col"
+              >
+                <CardHeader>
+                  <div className="w-12 h-12 rounded-2xl bg-brand-blue/10 flex items-center justify-center mb-4 group-hover:bg-brand-blue/20 transition-colors">
+                    <Icon className="w-6 h-6 text-brand-blue group-hover:scale-110 transition-transform" />
+                  </div>
+                  <CardTitle className="text-base md:text-lg lg:text-xl font-display group-hover:text-brand-blue transition-colors">
+                    {section.title}
+                  </CardTitle>
+                </CardHeader>
                   <CardContent className="flex-1 flex flex-col">
                     <ul className="space-y-2 text-foreground flex-1">
                       {section.bullets.map((bullet, idx) => (
