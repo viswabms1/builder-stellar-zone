@@ -568,7 +568,7 @@ export default function Leadership() {
       </section>
 
       {/* Academic Leadership Section Divider */}
-      <div className="h-1 bg-gradient-to-r from-transparent via-orange-500/20 to-transparent"></div>
+      <div className="h-1 bg-gradient-to-r from-transparent via-brand-blue/20 to-transparent"></div>
 
       {/* Pro Vice Chancellors */}
       <section className="px-3 py-20 bg-gradient-to-br from-brand-blue/5 via-brand-magenta/3 to-background">
