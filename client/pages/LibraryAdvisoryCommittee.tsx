@@ -122,7 +122,7 @@ export default function LibraryAdvisoryCommittee() {
             >
               <CardHeader>
                 <CardTitle className="text-2xl flex items-center gap-2">
-                  <Award className="h-6 w-6 text-violet-600" />
+                  <Award className="h-6 w-6 text-brand-blue" />
                   {committee.name}
                 </CardTitle>
                 <CardDescription className="text-base">
@@ -171,7 +171,7 @@ export default function LibraryAdvisoryCommittee() {
         <Card className="border-none shadow-lg bg-violet-50 dark:bg-violet-950/30 mb-8">
           <CardHeader style={{ backgroundColor: "rgba(0, 0, 0, 1)" }}>
             <CardTitle className="text-3xl md:text-4xl flex items-center gap-2">
-              <Users className="h-8 w-8 text-violet-600" />
+              <Users className="h-8 w-8 text-brand-blue" />
               Library Governance
             </CardTitle>
             <CardDescription className="text-lg">
@@ -192,7 +192,7 @@ export default function LibraryAdvisoryCommittee() {
             <div className="grid md:grid-cols-3 gap-4 mt-6">
               <div className="p-4 border rounded-lg">
                 <h4 className="font-semibold mb-2 flex items-center gap-2">
-                  <Target className="h-5 w-5 text-violet-600" />
+                  <Target className="h-5 w-5 text-brand-blue" />
                   Strategic Planning
                 </h4>
                 <p className="text-sm text-foreground/70">
@@ -201,7 +201,7 @@ export default function LibraryAdvisoryCommittee() {
               </div>
               <div className="p-4 border rounded-lg">
                 <h4 className="font-semibold mb-2 flex items-center gap-2">
-                  <Award className="h-5 w-5 text-violet-600" />
+                  <Award className="h-5 w-5 text-brand-blue" />
                   Quality Assurance
                 </h4>
                 <p className="text-sm text-foreground/70">
@@ -210,7 +210,7 @@ export default function LibraryAdvisoryCommittee() {
               </div>
               <div className="p-4 border rounded-lg">
                 <h4 className="font-semibold mb-2 flex items-center gap-2">
-                  <Users className="h-5 w-5 text-violet-600" />
+                  <Users className="h-5 w-5 text-brand-blue" />
                   Community Input
                 </h4>
                 <p className="text-sm text-foreground/70">
