@@ -411,10 +411,12 @@ function CommitteeSection() {
 
 function NodalOfficerSection() {
   return (
-    <section className="px-3 py-10 bg-gradient-to-b from-background to-orange-500/5">
+    <section className="px-3 py-10 bg-gradient-to-b from-background via-brand-blue/5 to-brand-magenta/5 dark:from-black dark:via-brand-blue/5 dark:to-brand-magenta/5">
       <div className="mx-auto max-w-4xl">
         <div className="text-center mb-8">
-          <h2 className="text-3xl font-bold md:text-4xl">Nodal Officer</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-display">
+            <span className="bg-brand-gradient bg-clip-text text-transparent">Nodal Officer</span>
+          </h2>
           <p className="mt-3 text-foreground md:text-lg">
             Primary point of contact for anti-ragging matters
           </p>
