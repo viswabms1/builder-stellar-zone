@@ -1525,10 +1525,10 @@ export default function Placements() {
                             href={batch.link}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex items-center gap-3 px-4 py-3 bg-card/50 border border-border/30 rounded-xl hover:border-orange-500/50 hover:bg-orange-500/5 transition-all duration-300 group"
+                            className="flex items-center gap-3 px-4 py-3 bg-card/50 border border-border/30 rounded-xl hover:border-brand-blue/50 hover:bg-brand-blue/5 transition-all duration-300 group"
                           >
-                            <FileText className="w-4 h-4 text-orange-500 flex-shrink-0" />
-                            <span className="text-sm font-medium text-foreground group-hover:text-orange-500 transition-colors">
+                            <FileText className="w-4 h-4 text-brand-blue flex-shrink-0" />
+                            <span className="text-sm font-medium text-foreground group-hover:text-brand-blue transition-colors">
                               {batch.year} Batch
                             </span>
                           </a>
