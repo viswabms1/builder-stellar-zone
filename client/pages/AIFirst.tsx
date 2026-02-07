@@ -518,7 +518,7 @@ export default function AIFirst() {
               />
             </div>
             <div>
-              <h2 className="text-4xl md:text-5xl font-bold mb-8">Be Part of the Future</h2>
+              <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-display mb-8 text-foreground">Be Part of the <span className="bg-brand-gradient bg-clip-text text-transparent">Future</span></h2>
               <p className="text-xl text-foreground/80 mb-8 leading-relaxed">
                 Join Dayananda Sagar University's transformative AI-First initiative and shape the future of education, research, and innovation in India.
               </p>
