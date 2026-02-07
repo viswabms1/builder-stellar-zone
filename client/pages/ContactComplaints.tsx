@@ -88,18 +88,18 @@ export default function ContactComplaints() {
 
 function HeroSection() {
   return (
-    <section className="relative overflow-hidden py-10 lg:py-28 bg-gradient-to-br from-orange-500/10 via-red-600/5 to-background">
+    <section className="relative overflow-hidden py-10 lg:py-28 bg-gradient-to-br from-brand-blue/5 via-brand-magenta/5 to-background dark:from-slate-900 dark:via-black dark:to-black">
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute -top-24 left-10 h-72 w-72 rounded-full bg-orange-500/15 blur-3xl" />
-        <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-red-600/10 blur-3xl" />
+        <div className="absolute -top-24 left-10 h-72 w-72 rounded-full bg-brand-blue/15 blur-3xl" />
+        <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-brand-magenta/10 blur-3xl" />
       </div>
       <div className="relative mx-auto flex max-w-6xl flex-col items-center px-3 text-center">
-        <span className="inline-flex items-center gap-2 rounded-full border border-orange-500/30 bg-orange-500/10 px-4 py-2 text-sm font-semibold text-orange-500">
+        <span className="inline-flex items-center gap-2 rounded-full border border-brand-blue/30 bg-brand-blue/10 px-4 py-2 text-sm font-semibold text-brand-blue">
           Support & Grievance
         </span>
-        <h1 className="mt-8 text-4xl font-bold leading-tight md:text-6xl">
+        <h1 className="mt-8 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-display leading-tight">
           Contacts for{" "}
-          <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
+          <span className="bg-brand-gradient bg-clip-text text-transparent">
             Complaints & Grievances
           </span>
         </h1>
