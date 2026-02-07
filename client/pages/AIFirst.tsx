@@ -275,8 +275,8 @@ export default function AIFirst() {
       {/* Industry Partnerships */}
       <section className="relative py-20 overflow-hidden bg-gradient-to-br from-brand-blue/10 via-brand-magenta/10 to-brand-blue/10">
         <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-10 right-10 w-72 h-72 bg-blue-400 rounded-full blur-3xl" />
-          <div className="absolute bottom-10 left-10 w-72 h-72 bg-purple-500 rounded-full blur-3xl" />
+          <div className="absolute top-10 right-10 w-72 h-72 bg-brand-blue rounded-full blur-3xl" />
+          <div className="absolute bottom-10 left-10 w-72 h-72 bg-brand-magenta rounded-full blur-3xl" />
         </div>
 
         <div className="relative max-w-7xl mx-auto px-3 z-10">
