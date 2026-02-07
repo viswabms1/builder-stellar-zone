@@ -1195,22 +1195,22 @@ export default function Placements() {
               return (
                 <div
                   key={key}
-                  className="border border-border/50 rounded-2xl overflow-hidden bg-card/30"
+                  className="border border-border/50 rounded-2xl overflow-hidden bg-gradient-to-br from-card/80 via-card/60 to-card/40"
                 >
                   <button
                     onClick={() => toggleSector(key)}
-                    className="w-full px-4 py-6 flex items-center justify-between hover:bg-orange-500/5 transition-colors text-left"
+                    className="w-full px-4 py-6 flex items-center justify-between hover:bg-brand-blue/5 transition-colors text-left"
                   >
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-lg bg-orange-500/10 flex items-center justify-center">
-                        <SchoolIcon className="w-5 h-5 text-orange-500" />
+                      <div className="w-10 h-10 rounded-lg bg-brand-blue/20 flex items-center justify-center">
+                        <SchoolIcon className="w-5 h-5 text-brand-blue" />
                       </div>
                       <h3 className="text-lg font-bold text-foreground uppercase tracking-wide">
                         {school.name}
                       </h3>
                     </div>
                     <ChevronDown
-                      className={`w-5 h-5 text-orange-500 flex-shrink-0 transition-transform duration-300 ${
+                      className={`w-5 h-5 text-brand-blue flex-shrink-0 transition-transform duration-300 ${
                         expandedSector[key] ? "rotate-180" : ""
                       }`}
                     />
