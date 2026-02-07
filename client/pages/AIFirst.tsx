@@ -452,10 +452,10 @@ export default function AIFirst() {
       </section>
 
       {/* Impact & Recognition */}
-      <section className="py-20 bg-gradient-to-r from-purple-500/5 via-black/50 to-blue-500/5">
+      <section className="py-20 bg-gradient-to-r from-brand-magenta/5 via-background/50 to-brand-blue/5">
         <div className="max-w-7xl mx-auto px-3">
           <div className="text-center mb-14">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Building India's AI Leadership</h2>
+            <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-display mb-4 text-foreground">Building India's AI <span className="bg-brand-gradient bg-clip-text text-transparent">Leadership</span></h2>
             <p className="text-xl text-foreground/70 max-w-3xl mx-auto">
               Establishing DSU as the premier destination for AI research, innovation, and talent development
             </p>
