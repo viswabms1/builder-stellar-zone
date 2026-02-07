@@ -729,7 +729,7 @@ export default function Leadership() {
                   const cardElement = (
                     <Card
                       key={index}
-                      className="group hover:shadow-lg hover:shadow-orange-500/10 transition-all duration-300 hover:border-orange-500/30 bg-card/50 backdrop-blur-sm border border-border/50"
+                      className="group hover:shadow-lg hover:shadow-brand-blue/20 transition-all duration-300 hover:border-brand-blue/50 bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur-sm border border-border/50"
                     >
                       <CardHeader>
                         <div className="w-12 h-12 rounded-2xl bg-orange-500/10 flex items-center justify-center mb-4 group-hover:bg-orange-500/20 transition-colors">
@@ -807,7 +807,7 @@ export default function Leadership() {
                   const cardElement = (
                     <Card
                       key={index}
-                      className="group hover:shadow-lg hover:shadow-orange-500/10 transition-all duration-300 hover:border-orange-500/30 bg-card/50 backdrop-blur-sm border border-border/50"
+                      className="group hover:shadow-lg hover:shadow-brand-blue/20 transition-all duration-300 hover:border-brand-blue/50 bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur-sm border border-border/50"
                     >
                       <CardHeader>
                         <div className="w-12 h-12 rounded-2xl bg-orange-500/10 flex items-center justify-center mb-4 group-hover:bg-orange-500/20 transition-colors">
@@ -885,7 +885,7 @@ export default function Leadership() {
                   const cardElement = (
                     <Card
                       key={index}
-                      className="group hover:shadow-lg hover:shadow-orange-500/10 transition-all duration-300 hover:border-orange-500/30 bg-card/50 backdrop-blur-sm border border-border/50"
+                      className="group hover:shadow-lg hover:shadow-brand-blue/20 transition-all duration-300 hover:border-brand-blue/50 bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur-sm border border-border/50"
                     >
                       <CardHeader>
                         <div className="w-12 h-12 rounded-2xl bg-orange-500/10 flex items-center justify-center mb-4 group-hover:bg-orange-500/20 transition-colors">
