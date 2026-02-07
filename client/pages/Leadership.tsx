@@ -359,7 +359,7 @@ export default function Leadership() {
       </section>
 
       {/* University Executive Leadership Section Divider */}
-      <div className="h-1 bg-gradient-to-r from-transparent via-orange-500/20 to-transparent"></div>
+      <div className="h-1 bg-gradient-to-r from-transparent via-brand-blue/20 to-transparent"></div>
 
       {/* Key Leadership Positions */}
       <section className="px-3 py-20">
