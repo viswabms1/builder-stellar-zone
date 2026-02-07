@@ -449,22 +449,20 @@ function HeroSection() {
 }
 
 function AdmissionRoutesSection() {
-  const { theme } = useTheme();
   return (
     <section
-      className="bg-gradient-to-br from-orange-500/5 via-red-500/5 to-background px-3 py-8"
+      className="bg-gradient-to-br from-brand-blue/5 via-brand-magenta/5 to-background dark:from-orange-500/5 dark:via-red-500/5 px-3 py-8"
       id="choose-pathway"
     >
       <div className="mx-auto max-w-6xl">
         <div className="mb-10 text-center">
-          <h2
-            className={`text-3xl font-bold md:text-4xl ${
-              theme === "light" ? "text-orange-900" : "text-white"
-            }`}
-          >
-            Choose Your Admission Pathway
+          <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 font-display">
+            <span className="text-foreground">Choose Your </span>
+            <span className="bg-brand-gradient bg-clip-text text-transparent">
+              Admission Pathway
+            </span>
           </h2>
-          <p className="mt-3 text-lg text-foreground">
+          <p className="mt-3 text-base sm:text-xl md:text-2xl text-foreground/80 font-body">
             Whether you are an incoming undergraduate, postgraduate, lateral
             entrant, or international learner, DSU has a dedicated channel for
             you.
@@ -474,16 +472,16 @@ function AdmissionRoutesSection() {
           {admissionTracks.map((track) => (
             <Card
               key={track.title}
-              className="flex flex-col border border-orange-500/20 bg-card/70 backdrop-blur-sm transition hover:-translate-y-1 hover:shadow-orange-500/10"
+              className="flex flex-col border border-brand-blue/30 bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur-sm transition hover:-translate-y-1 hover:shadow-brand-blue/20 group"
             >
               <CardHeader>
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-orange-500/15 text-orange-500">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-blue/15 text-brand-blue group-hover:bg-brand-blue/25 transition-colors">
                   <track.icon className="h-6 w-6" />
                 </div>
-                <CardTitle className="mt-4 text-2xl font-semibold text-foreground">
+                <CardTitle className="mt-4 text-2xl font-semibold text-foreground font-display">
                   {track.title}
                 </CardTitle>
-                <CardDescription className="mt-2 text-base leading-relaxed text-foreground">
+                <CardDescription className="mt-2 text-base leading-relaxed text-foreground/80 font-body">
                   {track.description}
                 </CardDescription>
               </CardHeader>
@@ -492,15 +490,15 @@ function AdmissionRoutesSection() {
                   {track.highlights.map((point) => (
                     <div
                       key={point}
-                      className="flex items-start gap-3 text-sm text-foreground"
+                      className="flex items-start gap-3 text-sm text-foreground/80 font-body"
                     >
-                      <ListChecks className="mt-0.5 h-4 w-4 text-orange-500" />
+                      <ListChecks className="mt-0.5 h-4 w-4 text-brand-blue flex-shrink-0" />
                       <span>{point}</span>
                     </div>
                   ))}
                 </div>
                 <Button
-                  className="w-full justify-center rounded-xl bg-gradient-to-r from-orange-500 to-red-500 text-foreground hover:from-red-500 hover:to-orange-500"
+                  className="w-full justify-center rounded-xl bg-gradient-to-r from-[#0088FF] via-[#FFD700] to-[#FF6B00] hover:from-[#FF6B00] hover:via-[#FFD700] hover:to-[#0088FF] text-foreground font-semibold animate-gradient bg-[length:200%_auto]"
                   asChild
                 >
                   <a href={track.href} target="_blank" rel="noreferrer">
