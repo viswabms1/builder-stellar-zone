@@ -253,11 +253,11 @@ export default function AIFirst() {
             ].map((domain, idx) => {
               const Icon = domain.icon;
               return (
-                <Card key={idx} className="border-border/50 hover:border-blue-500/50 transition-all bg-card/50 backdrop-blur">
+                <Card key={idx} className="border-border/50 hover:border-brand-blue/50 transition-all bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur hover:shadow-lg hover:shadow-brand-blue/20">
                   <CardHeader>
                     <div className="flex items-center gap-3 mb-3">
-                      <div className="p-3 rounded-lg bg-blue-500/10">
-                        <Icon className="w-6 h-6 text-blue-500" />
+                      <div className="p-3 rounded-lg bg-brand-blue/15">
+                        <Icon className="w-6 h-6 text-brand-blue" />
                       </div>
                     </div>
                     <CardTitle className="text-lg">{domain.title}</CardTitle>
