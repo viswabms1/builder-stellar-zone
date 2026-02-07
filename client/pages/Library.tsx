@@ -213,10 +213,12 @@ export default function Library() {
       </section>
 
       {/* Services Grid */}
-      <section className="py-16 px-3 bg-muted/30">
+      <section className="py-16 px-3 bg-gradient-to-br from-brand-blue/5 via-brand-magenta/5 to-background dark:from-brand-magenta/5 dark:via-brand-blue/5 dark:to-black">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Library Services & Resources</h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-display mb-4">
+              <span className="bg-brand-gradient bg-clip-text text-transparent">Library Services & Resources</span>
+            </h2>
             <p className="text-xl text-foreground/70">
               Explore our comprehensive range of services and resources
             </p>
