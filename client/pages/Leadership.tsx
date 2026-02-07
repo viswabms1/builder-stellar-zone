@@ -407,7 +407,7 @@ export default function Leadership() {
                   <CardHeader>
                     <div className="flex items-start justify-between gap-4">
                       <div className="flex-grow">
-                        <CardTitle className="text-2xl font-bold group-hover:text-orange-500 transition-colors">
+                        <CardTitle className="text-lg sm:text-xl md:text-2xl font-display font-bold group-hover:text-brand-blue transition-colors">
                           {leader.name}
                         </CardTitle>
                         <p className="text-sm font-semibold text-orange-500 mt-1">
@@ -510,7 +510,7 @@ export default function Leadership() {
                   <CardHeader>
                     <div className="flex items-start justify-between gap-4">
                       <div className="flex-grow">
-                        <CardTitle className="text-2xl font-bold group-hover:text-orange-500 transition-colors">
+                        <CardTitle className="text-lg sm:text-xl md:text-2xl font-display font-bold group-hover:text-brand-blue transition-colors">
                           {leader.name}
                         </CardTitle>
                         <p className="text-sm font-semibold text-orange-500 mt-1">
@@ -616,7 +616,7 @@ export default function Leadership() {
                   <CardHeader>
                     <div className="flex items-start justify-between gap-4">
                       <div className="flex-grow">
-                        <CardTitle className="text-2xl font-bold group-hover:text-orange-500 transition-colors">
+                        <CardTitle className="text-lg sm:text-xl md:text-2xl font-display font-bold group-hover:text-brand-blue transition-colors">
                           {pvc.name}
                         </CardTitle>
                         <p className="text-sm font-semibold text-orange-500 mt-1">
