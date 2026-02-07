@@ -277,7 +277,9 @@ export default function Library() {
       {/* Additional Links */}
       <section className="py-16 px-3 max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Essential Information</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-display mb-4">
+            <span className="bg-brand-gradient bg-clip-text text-transparent">Essential Information</span>
+          </h2>
           <p className="text-lg text-foreground/70">
             Find guides, policies, and additional resources
           </p>
