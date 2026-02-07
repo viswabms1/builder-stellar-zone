@@ -1275,7 +1275,7 @@ export default function Placements() {
               return (
                 <Card
                   key={index}
-                  className={`bg-card/50 backdrop-blur-sm border border-border/50 hover:border-orange-500/30 transition-all duration-300 transform ${
+                  className={`bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur-sm border border-border/50 hover:border-brand-blue/30 hover:shadow-lg hover:shadow-brand-blue/20 transition-all duration-300 transform ${
                     outcomesVisible
                       ? "translate-y-0 opacity-100"
                       : "translate-y-8 opacity-0"
@@ -1285,13 +1285,13 @@ export default function Placements() {
                   }}
                 >
                   <CardHeader>
-                    <div className="w-12 h-12 rounded-2xl bg-orange-500/10 flex items-center justify-center mb-4">
-                      <Icon className="w-6 h-6 text-orange-500" />
+                    <div className="w-12 h-12 rounded-2xl bg-brand-blue/20 flex items-center justify-center mb-4">
+                      <Icon className="w-6 h-6 text-brand-blue" />
                     </div>
                     <CardTitle className="text-foreground text-lg">
                       {card.title}
                     </CardTitle>
-                    <p className="text-sm font-semibold text-orange-500 mt-2">
+                    <p className="text-sm font-semibold text-brand-blue mt-2">
                       {card.outcome}
                     </p>
                   </CardHeader>
