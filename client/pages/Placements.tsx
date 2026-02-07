@@ -1490,7 +1490,7 @@ export default function Placements() {
                 </button>
 
                 {expandedSchools[school.key] && (
-                  <div className="border-t border-border/30 px-4 py-6 bg-gradient-to-b from-orange-500/5 to-transparent">
+                  <div className="border-t border-border/30 px-4 py-6 bg-gradient-to-b from-brand-blue/5 dark:from-orange-500/5 to-transparent">
                     {school.subCategories ? (
                       <div className="space-y-6">
                         {school.subCategories.map((subCategory, subIdx) => (
