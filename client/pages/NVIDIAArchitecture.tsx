@@ -143,10 +143,13 @@ export default function NVIDIAArchitecture() {
           </div>
 
           <div className="space-y-8">
-            <Card className="border-border/50 bg-card/50 backdrop-blur">
+            <Card className="border-border/50 bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur hover:shadow-lg hover:shadow-brand-blue/20 transition-all duration-300">
               <CardHeader>
-                <CardTitle className="text-3xl mb-4">
-                  What DSU Has Built
+                <CardTitle className="text-2xl sm:text-3xl md:text-4xl mb-4 font-display">
+                  <span className="text-foreground">What DSU Has </span>
+                  <span className="bg-brand-gradient bg-clip-text text-transparent">
+                    Built
+                  </span>
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
