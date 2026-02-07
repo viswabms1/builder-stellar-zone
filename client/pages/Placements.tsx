@@ -1121,17 +1121,17 @@ export default function Placements() {
             </span>
           </div>
 
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
-            <span className="bg-gradient-to-r from-orange-300 via-orange-400 to-red-400 bg-clip-text text-transparent inline-block px-2">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-display leading-tight mb-6">
+            <span className="bg-brand-gradient bg-clip-text text-transparent inline-block px-2">
               DSU Graduates
             </span>
             <br />
-            <span className="bg-gradient-to-r from-red-400 via-orange-400 to-yellow-300 bg-clip-text text-transparent inline-block px-2">
+            <span className="bg-brand-gradient bg-clip-text text-transparent inline-block px-2">
               Securing Premium Roles
             </span>
           </h1>
 
-          <p className="text-lg md:text-xl text-gray-200 mb-8 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-foreground/80 mb-8 leading-relaxed max-w-3xl mx-auto">
             DSU graduates secure career-defining roles across technology,
             engineering, management, finance, and research through AI-integrated
             education, industry mentorship, and research excellence.
