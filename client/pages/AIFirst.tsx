@@ -55,7 +55,7 @@ export default function AIFirst() {
                 loading="lazy"
               />
             </div>
-            <div className="rounded-2xl p-12 bg-gradient-to-br from-white/95 to-white/90 dark:from-slate-900 dark:to-slate-900/95 dark:border dark:border-slate-700">
+            <div className="rounded-2xl p-12" style={{ backgroundColor: "hsl(var(--card))" }}>
               <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-display text-foreground mb-6">What is the AI-First Initiative?</h3>
               <p className="text-lg md:text-xl text-foreground/80 mb-12 leading-relaxed">
                 The AI-First initiative at DSU represents a fundamental shift in how we design education, conduct research, and foster innovation. Rather than treating AI as a peripheral tool, we place artificial intelligence at the core of every academic and operational aspect of the university.
