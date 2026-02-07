@@ -554,7 +554,9 @@ function QuickLinksSection() {
     <section className="px-3 py-8">
       <div className="mx-auto max-w-6xl">
         <div className="mb-10 flex flex-col gap-4 text-center">
-          <h2 className="text-3xl font-bold md:text-4xl">Quick Access</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-display">
+            <span className="bg-brand-gradient bg-clip-text text-transparent">Quick Access</span>
+          </h2>
           <p className="text-foreground md:text-lg">
             Jump directly to the section you need or launch the ERP portal for
             hall tickets and personalized updates.
@@ -564,10 +566,10 @@ function QuickLinksSection() {
           {QUICK_LINKS.map((item) => (
             <Card
               key={item.title}
-              className="group border border-border/50 bg-card/60 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-orange-500/10"
+              className="group border border-border/50 bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-brand-blue/10"
             >
               <CardHeader className="space-y-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-orange-500/10 text-orange-500 group-hover:bg-orange-500/20">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-blue/10 text-brand-blue group-hover:bg-brand-blue/20">
                   <item.icon className="h-6 w-6" />
                 </div>
                 <CardTitle className="text-xl font-semibold text-foreground">
