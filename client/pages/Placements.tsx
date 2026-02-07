@@ -1351,12 +1351,12 @@ export default function Placements() {
       {/* ===== OUTCOME-FOCUSED SUCCESS STORIES ===== */}
       <section
         ref={storiesRef}
-        className="px-3 py-10 lg:py-16 bg-gradient-to-br from-red-500/5 via-orange-500/5 to-background"
+        className="px-3 py-10 lg:py-16 bg-gradient-to-br from-brand-magenta/5 via-brand-blue/5 to-background dark:from-red-500/5 dark:via-orange-500/5"
       >
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
+            <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-display mb-6">
+              <span className="bg-brand-gradient bg-clip-text text-transparent">
                 Graduate Success Stories
               </span>
             </h2>
