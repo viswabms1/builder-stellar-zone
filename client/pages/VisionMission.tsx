@@ -122,34 +122,34 @@ export default function VisionMission() {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-4">
             {/* Vision Card */}
-            <Card className="bg-card/50 backdrop-blur-sm border border-blue-500/30 hover:shadow-lg transition-all duration-300">
+            <Card className="group bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur-sm border border-border/50 hover:border-brand-blue/50 hover:shadow-lg hover:shadow-brand-blue/20 transition-all duration-300">
               <CardHeader>
-                <div className="w-16 h-16 rounded-2xl bg-blue-500/20 flex items-center justify-center mb-4">
-                  <Eye className="w-8 h-8 text-blue-500" />
+                <div className="w-16 h-16 rounded-2xl bg-brand-blue/10 flex items-center justify-center mb-4 group-hover:bg-brand-blue/20 transition-colors">
+                  <Eye className="w-8 h-8 text-brand-blue group-hover:scale-110 transition-transform" />
                 </div>
-                <CardTitle className="text-3xl font-bold text-foreground">
+                <CardTitle className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground font-display group-hover:text-brand-blue transition-colors">
                   Vision
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-lg text-foreground leading-relaxed">
+                <p className="text-xs sm:text-sm md:text-base lg:text-lg text-foreground leading-relaxed font-body">
                   {content.Vision || "Loading..."}
                 </p>
               </CardContent>
             </Card>
 
             {/* Mission Card */}
-            <Card className="bg-card/50 backdrop-blur-sm border border-blue-500/30 hover:shadow-lg transition-all duration-300">
+            <Card className="group bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur-sm border border-border/50 hover:border-brand-blue/50 hover:shadow-lg hover:shadow-brand-blue/20 transition-all duration-300">
               <CardHeader>
-                <div className="w-16 h-16 rounded-2xl bg-blue-500/20 flex items-center justify-center mb-4">
-                  <Target className="w-8 h-8 text-blue-500" />
+                <div className="w-16 h-16 rounded-2xl bg-brand-blue/10 flex items-center justify-center mb-4 group-hover:bg-brand-blue/20 transition-colors">
+                  <Target className="w-8 h-8 text-brand-blue group-hover:scale-110 transition-transform" />
                 </div>
-                <CardTitle className="text-3xl font-bold text-foreground">
+                <CardTitle className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground font-display group-hover:text-brand-blue transition-colors">
                   Mission
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-lg text-foreground leading-relaxed">
+                <p className="text-xs sm:text-sm md:text-base lg:text-lg text-foreground leading-relaxed font-body">
                   {content.Mission_ || "Loading..."}
                 </p>
               </CardContent>
