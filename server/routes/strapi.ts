@@ -222,11 +222,11 @@ export const getAnnouncements: RequestHandler = async (req, res) => {
     const departmentCode = req.query.department_code as string | undefined;
 
     // Build the Strapi URL with department relation populated
-    let query = "?pagination[limit]=100&populate=department";
+    let query = "?pagination[limit]=100&populate=*";
 
     if (departmentCode) {
-      // Filter by department's department_code field
-      // The department is a relation, so we filter on department[Dept_code]
+      // Filter by department's Dept_code field (note: Strapi field names are case-sensitive)
+      // Try filtering on the department relation
       query += `&filters[department][Dept_code][$eq]=${departmentCode}`;
     }
 
@@ -236,7 +236,6 @@ export const getAnnouncements: RequestHandler = async (req, res) => {
     const response = await fetch(strapiUrl, {
       headers: {
         "Content-Type": "application/json",
-        // Add token if available
         ...(STRAPI_API_TOKEN && { Authorization: `Bearer ${STRAPI_API_TOKEN}` }),
       },
     });
@@ -245,6 +244,28 @@ export const getAnnouncements: RequestHandler = async (req, res) => {
       console.error(`[ANNOUNCEMENTS] Error: ${response.status} ${response.statusText}`);
       const errorText = await response.text();
       console.error(`[ANNOUNCEMENTS] Error response:`, errorText);
+
+      // If filter fails, fetch all announcements as fallback
+      if (departmentCode) {
+        console.log(`[ANNOUNCEMENTS] Filter with Dept_code failed, fetching all announcements...`);
+        const fallbackUrl = `${STRAPI_URL}/api/announcements?pagination[limit]=100&populate=*`;
+        const fallbackResponse = await fetch(fallbackUrl, {
+          headers: {
+            "Content-Type": "application/json",
+            ...(STRAPI_API_TOKEN && { Authorization: `Bearer ${STRAPI_API_TOKEN}` }),
+          },
+        });
+
+        if (fallbackResponse.ok) {
+          const fallbackData = await fallbackResponse.json();
+          console.log(`[ANNOUNCEMENTS] Fetched ${fallbackData.data?.length || 0} announcements (fallback - all)`);
+          if (fallbackData.data && fallbackData.data.length > 0) {
+            console.log(`[ANNOUNCEMENTS] All announcements:`, JSON.stringify(fallbackData.data, null, 2));
+          }
+          return res.json(fallbackData);
+        }
+      }
+
       throw new Error(`Strapi API error: ${response.statusText}`);
     }
 
@@ -254,10 +275,9 @@ export const getAnnouncements: RequestHandler = async (req, res) => {
     if (data.data && data.data.length > 0) {
       console.log(`[ANNOUNCEMENTS] All announcements:`, JSON.stringify(data.data, null, 2));
       data.data.forEach((announcement: any, index: number) => {
-        console.log(`[ANNOUNCEMENTS] [${index}] Title: "${announcement.Title}", Department: ${announcement.department ? announcement.department.Dept_code : 'null'}`);
+        const deptCode = announcement.department?.Dept_code || 'null';
+        console.log(`[ANNOUNCEMENTS] [${index}] "${announcement.Title}" -> Department: ${deptCode}`);
       });
-    } else {
-      console.log(`[ANNOUNCEMENTS] No announcements found`);
     }
 
     res.json(data);
